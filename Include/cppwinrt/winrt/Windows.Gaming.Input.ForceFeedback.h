@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Gaming.Input.ForceFeedback.2.h"
@@ -192,445 +192,387 @@ template <typename D> void consume_Windows_Gaming_Input_ForceFeedback_IRampForce
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffect> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>
 {
-    HRESULT __stdcall get_Kind(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind));
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) noexcept final
+    int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParameters, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, float, float, float, float, float, float);
             this->shim().SetParameters(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&direction), positiveCoefficient, negativeCoefficient, maxPositiveMagnitude, maxNegativeMagnitude, deadZone, bias);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>
 {
-    HRESULT __stdcall CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind, void** value) noexcept final
+    int32_t WINRT_CALL CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::ConditionForceEffect), Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind const&);
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::ConditionForceEffect>(this->shim().CreateInstance(*reinterpret_cast<Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind const*>(&effectKind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IConstantForceEffect> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>
 {
-    HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 vector, Windows::Foundation::TimeSpan duration) noexcept final
+    int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 vector, Windows::Foundation::TimeSpan duration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParameters, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::TimeSpan const&);
             this->shim().SetParameters(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&vector), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&duration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
+    int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParametersWithEnvelope, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, float, float, float, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, uint32_t);
             this->shim().SetParametersWithEnvelope(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&vector), attackGain, sustainGain, releaseGain, *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&startDelay), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&attackDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&sustainDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&releaseDuration), repeatCount);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
 {
-    HRESULT __stdcall get_Gain(double* value) noexcept final
+    int32_t WINRT_CALL get_Gain(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gain, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Gain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Gain(double value) noexcept final
+    int32_t WINRT_CALL put_Gain(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gain, WINRT_WRAP(void), double);
             this->shim().Gain(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState));
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>
 {
-    HRESULT __stdcall get_AreEffectsPaused(bool* value) noexcept final
+    int32_t WINRT_CALL get_AreEffectsPaused(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AreEffectsPaused, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AreEffectsPaused());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MasterGain(double* value) noexcept final
+    int32_t WINRT_CALL get_MasterGain(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MasterGain, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().MasterGain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MasterGain(double value) noexcept final
+    int32_t WINRT_CALL put_MasterGain(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MasterGain, WINRT_WRAP(void), double);
             this->shim().MasterGain(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedAxes(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes* value) noexcept final
+    int32_t WINRT_CALL get_SupportedAxes(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedAxes, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes));
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes>(this->shim().SupportedAxes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadEffectAsync(void* effect, void** asyncOperation) noexcept final
+    int32_t WINRT_CALL LoadEffectAsync(void* effect, void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadEffectAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::Input::ForceFeedback::ForceFeedbackLoadEffectResult>), Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect const);
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::Input::ForceFeedback::ForceFeedbackLoadEffectResult>>(this->shim().LoadEffectAsync(*reinterpret_cast<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect const*>(&effect)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PauseAllEffects() noexcept final
+    int32_t WINRT_CALL PauseAllEffects() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PauseAllEffects, WINRT_WRAP(void));
             this->shim().PauseAllEffects();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResumeAllEffects() noexcept final
+    int32_t WINRT_CALL ResumeAllEffects() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResumeAllEffects, WINRT_WRAP(void));
             this->shim().ResumeAllEffects();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopAllEffects() noexcept final
+    int32_t WINRT_CALL StopAllEffects() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopAllEffects, WINRT_WRAP(void));
             this->shim().StopAllEffects();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryDisableAsync(void** asyncOperation) noexcept final
+    int32_t WINRT_CALL TryDisableAsync(void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryDisableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryDisableAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEnableAsync(void** asyncOperation) noexcept final
+    int32_t WINRT_CALL TryEnableAsync(void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryEnableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryEnableAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryResetAsync(void** asyncOperation) noexcept final
+    int32_t WINRT_CALL TryResetAsync(void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryResetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryResetAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryUnloadEffectAsync(void* effect, void** asyncOperation) noexcept final
+    int32_t WINRT_CALL TryUnloadEffectAsync(void* effect, void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryUnloadEffectAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect const);
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryUnloadEffectAsync(*reinterpret_cast<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect const*>(&effect)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>
 {
-    HRESULT __stdcall get_Kind(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind));
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, Windows::Foundation::TimeSpan duration) noexcept final
+    int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, Windows::Foundation::TimeSpan duration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParameters, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, float, float, float, Windows::Foundation::TimeSpan const&);
             this->shim().SetParameters(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&vector), frequency, phase, bias, *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&duration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
+    int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParametersWithEnvelope, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, float, float, float, float, float, float, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, uint32_t);
             this->shim().SetParametersWithEnvelope(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&vector), frequency, phase, bias, attackGain, sustainGain, releaseGain, *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&startDelay), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&attackDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&sustainDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&releaseDuration), repeatCount);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>
 {
-    HRESULT __stdcall CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind, void** value) noexcept final
+    int32_t WINRT_CALL CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect), Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind const&);
             *value = detach_from<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect>(this->shim().CreateInstance(*reinterpret_cast<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind const*>(&effectKind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Input::ForceFeedback::IRampForceEffect> : produce_base<D, Windows::Gaming::Input::ForceFeedback::IRampForceEffect>
 {
-    HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, Windows::Foundation::TimeSpan duration) noexcept final
+    int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, Windows::Foundation::TimeSpan duration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParameters, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::TimeSpan const&);
             this->shim().SetParameters(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&startVector), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&endVector), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&duration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
+    int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetParametersWithEnvelope, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float3 const&, float, float, float, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, Windows::Foundation::TimeSpan const&, uint32_t);
             this->shim().SetParametersWithEnvelope(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&startVector), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&endVector), attackGain, sustainGain, releaseGain, *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&startDelay), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&attackDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&sustainDuration), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&releaseDuration), repeatCount);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -639,19 +581,19 @@ struct produce<D, Windows::Gaming::Input::ForceFeedback::IRampForceEffect> : pro
 WINRT_EXPORT namespace winrt::Windows::Gaming::Input::ForceFeedback {
 
 inline ConditionForceEffect::ConditionForceEffect(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind const& effectKind) :
-    ConditionForceEffect(get_activation_factory<ConditionForceEffect, Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>().CreateInstance(effectKind))
+    ConditionForceEffect(impl::call_factory<ConditionForceEffect, Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>([&](auto&& f) { return f.CreateInstance(effectKind); }))
 {}
 
 inline ConstantForceEffect::ConstantForceEffect() :
-    ConstantForceEffect(get_activation_factory<ConstantForceEffect>().ActivateInstance<ConstantForceEffect>())
+    ConstantForceEffect(impl::call_factory<ConstantForceEffect>([](auto&& f) { return f.template ActivateInstance<ConstantForceEffect>(); }))
 {}
 
 inline PeriodicForceEffect::PeriodicForceEffect(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind const& effectKind) :
-    PeriodicForceEffect(get_activation_factory<PeriodicForceEffect, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>().CreateInstance(effectKind))
+    PeriodicForceEffect(impl::call_factory<PeriodicForceEffect, Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>([&](auto&& f) { return f.CreateInstance(effectKind); }))
 {}
 
 inline RampForceEffect::RampForceEffect() :
-    RampForceEffect(get_activation_factory<RampForceEffect>().ActivateInstance<RampForceEffect>())
+    RampForceEffect(impl::call_factory<RampForceEffect>([](auto&& f) { return f.template ActivateInstance<RampForceEffect>(); }))
 {}
 
 }
@@ -673,5 +615,3 @@ template<> struct hash<winrt::Windows::Gaming::Input::ForceFeedback::PeriodicFor
 template<> struct hash<winrt::Windows::Gaming::Input::ForceFeedback::RampForceEffect> : winrt::impl::hash_base<winrt::Windows::Gaming::Input::ForceFeedback::RampForceEffect> {};
 
 }
-
-WINRT_WARNING_POP

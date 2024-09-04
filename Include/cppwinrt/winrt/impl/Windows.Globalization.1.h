@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -84,6 +84,13 @@ struct WINRT_EBO ICurrencyIdentifiersStatics2 :
     impl::consume_t<ICurrencyIdentifiersStatics2>
 {
     ICurrencyIdentifiersStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICurrencyIdentifiersStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICurrencyIdentifiersStatics3>
+{
+    ICurrencyIdentifiersStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IGeographicRegion :

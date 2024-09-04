@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -123,10 +123,10 @@ struct PhoneCallManager
 {
     PhoneCallManager() = delete;
     static void ShowPhoneCallUI(param::hstring const& phoneNumber, param::hstring const& displayName);
-    static event_token CallStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using CallStateChanged_revoker = factory_event_revoker<Windows::ApplicationModel::Calls::IPhoneCallManagerStatics2>;
+    static winrt::event_token CallStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using CallStateChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::Calls::IPhoneCallManagerStatics2, &impl::abi_t<Windows::ApplicationModel::Calls::IPhoneCallManagerStatics2>::remove_CallStateChanged>;
     static CallStateChanged_revoker CallStateChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void CallStateChanged(event_token const& token);
+    static void CallStateChanged(winrt::event_token const& token);
     static bool IsCallActive();
     static bool IsCallIncoming();
     static void ShowPhoneCallSettingsUI();
@@ -162,7 +162,7 @@ struct WINRT_EBO PhoneLine :
     Windows::ApplicationModel::Calls::IPhoneLine
 {
     PhoneLine(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneLine> FromIdAsync(GUID const& lineId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneLine> FromIdAsync(winrt::guid const& lineId);
 };
 
 struct WINRT_EBO PhoneLineCellularDetails :
@@ -197,11 +197,13 @@ struct WINRT_EBO PhoneVoicemail :
 
 struct WINRT_EBO VoipCallCoordinator :
     Windows::ApplicationModel::Calls::IVoipCallCoordinator,
-    impl::require<VoipCallCoordinator, Windows::ApplicationModel::Calls::IVoipCallCoordinator2, Windows::ApplicationModel::Calls::IVoipCallCoordinator3>
+    impl::require<VoipCallCoordinator, Windows::ApplicationModel::Calls::IVoipCallCoordinator2, Windows::ApplicationModel::Calls::IVoipCallCoordinator3, Windows::ApplicationModel::Calls::IVoipCallCoordinator4>
 {
     VoipCallCoordinator(std::nullptr_t) noexcept {}
     using impl::consume_t<VoipCallCoordinator, Windows::ApplicationModel::Calls::IVoipCallCoordinator3>::RequestNewIncomingCall;
     using Windows::ApplicationModel::Calls::IVoipCallCoordinator::RequestNewIncomingCall;
+    using impl::consume_t<VoipCallCoordinator, Windows::ApplicationModel::Calls::IVoipCallCoordinator4>::ReserveCallResourcesAsync;
+    using Windows::ApplicationModel::Calls::IVoipCallCoordinator::ReserveCallResourcesAsync;
     static Windows::ApplicationModel::Calls::VoipCallCoordinator GetDefault();
 };
 

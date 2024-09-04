@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -46,72 +46,64 @@ template <typename D> Windows::Globalization::Collation::CharacterGroupings cons
 template <typename D>
 struct produce<D, Windows::Globalization::Collation::ICharacterGrouping> : produce_base<D, Windows::Globalization::Collation::ICharacterGrouping>
 {
-    HRESULT __stdcall get_First(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_First(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(First, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().First());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Label(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Label(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Label, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Label());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::Collation::ICharacterGroupings> : produce_base<D, Windows::Globalization::Collation::ICharacterGroupings>
 {
-    HRESULT __stdcall Lookup(HSTRING text, HSTRING* result) noexcept final
+    int32_t WINRT_CALL Lookup(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Lookup, WINRT_WRAP(hstring), hstring const&);
             *result = detach_from<hstring>(this->shim().Lookup(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::Collation::ICharacterGroupingsFactory> : produce_base<D, Windows::Globalization::Collation::ICharacterGroupingsFactory>
 {
-    HRESULT __stdcall Create(HSTRING language, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* language, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Globalization::Collation::CharacterGroupings), hstring const&);
             *result = detach_from<Windows::Globalization::Collation::CharacterGroupings>(this->shim().Create(*reinterpret_cast<hstring const*>(&language)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -120,11 +112,11 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGroupingsFactory>
 WINRT_EXPORT namespace winrt::Windows::Globalization::Collation {
 
 inline CharacterGroupings::CharacterGroupings() :
-    CharacterGroupings(get_activation_factory<CharacterGroupings>().ActivateInstance<CharacterGroupings>())
+    CharacterGroupings(impl::call_factory<CharacterGroupings>([](auto&& f) { return f.template ActivateInstance<CharacterGroupings>(); }))
 {}
 
 inline CharacterGroupings::CharacterGroupings(param::hstring const& language) :
-    CharacterGroupings(get_activation_factory<CharacterGroupings, Windows::Globalization::Collation::ICharacterGroupingsFactory>().Create(language))
+    CharacterGroupings(impl::call_factory<CharacterGroupings, Windows::Globalization::Collation::ICharacterGroupingsFactory>([&](auto&& f) { return f.Create(language); }))
 {}
 
 }
@@ -138,5 +130,3 @@ template<> struct hash<winrt::Windows::Globalization::Collation::CharacterGroupi
 template<> struct hash<winrt::Windows::Globalization::Collation::CharacterGroupings> : winrt::impl::hash_base<winrt::Windows::Globalization::Collation::CharacterGroupings> {};
 
 }
-
-WINRT_WARNING_POP

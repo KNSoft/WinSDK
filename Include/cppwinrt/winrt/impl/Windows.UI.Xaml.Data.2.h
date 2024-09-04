@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,6 +18,8 @@ struct CurrentChangingEventHandler : Windows::Foundation::IUnknown
     template <typename L> CurrentChangingEventHandler(L lambda);
     template <typename F> CurrentChangingEventHandler(F* function);
     template <typename O, typename M> CurrentChangingEventHandler(O* object, M method);
+    template <typename O, typename M> CurrentChangingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> CurrentChangingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Data::CurrentChangingEventArgs const& e) const;
 };
 
@@ -27,6 +29,8 @@ struct PropertyChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> PropertyChangedEventHandler(L lambda);
     template <typename F> PropertyChangedEventHandler(F* function);
     template <typename O, typename M> PropertyChangedEventHandler(O* object, M method);
+    template <typename O, typename M> PropertyChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> PropertyChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Data::PropertyChangedEventArgs const& e) const;
 };
 

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -315,33 +315,33 @@ template <> struct name<Windows::Devices::Bluetooth::BluetoothError>{ static con
 template <> struct name<Windows::Devices::Bluetooth::BluetoothMajorClass>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.BluetoothMajorClass" }; };
 template <> struct name<Windows::Devices::Bluetooth::BluetoothMinorClass>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.BluetoothMinorClass" }; };
 template <> struct name<Windows::Devices::Bluetooth::BluetoothServiceCapabilities>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.BluetoothServiceCapabilities" }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothAdapter>{ static constexpr GUID value{ 0x7974F04C,0x5F7A,0x4A34,{ 0x92,0x25,0xA8,0x55,0xF8,0x4B,0x1A,0x8B } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothAdapter2>{ static constexpr GUID value{ 0xAC94CECC,0x24D5,0x41B3,{ 0x91,0x6D,0x10,0x97,0xC5,0x0B,0x10,0x2B } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothAdapterStatics>{ static constexpr GUID value{ 0x8B02FB6A,0xAC4C,0x4741,{ 0x86,0x61,0x8E,0xAB,0x7D,0x17,0xEA,0x9F } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothClassOfDevice>{ static constexpr GUID value{ 0xD640227E,0xD7D7,0x4661,{ 0x94,0x54,0x65,0x03,0x9C,0xA1,0x7A,0x2B } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics>{ static constexpr GUID value{ 0xE46135BD,0x0FA2,0x416C,{ 0x91,0xB4,0xC1,0xE4,0x8C,0xA0,0x61,0xC1 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDevice>{ static constexpr GUID value{ 0x2335B156,0x90D2,0x4A04,{ 0xAE,0xF5,0x0E,0x20,0xB9,0xE6,0xB7,0x07 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDevice2>{ static constexpr GUID value{ 0x0133F954,0xB156,0x4DD0,{ 0xB1,0xF5,0xC1,0x1B,0xC3,0x1A,0x51,0x63 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDevice3>{ static constexpr GUID value{ 0x57FFF78B,0x651A,0x4454,{ 0xB9,0x0F,0xEB,0x21,0xEF,0x0B,0x0D,0x71 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDevice4>{ static constexpr GUID value{ 0x817C34AD,0x0E9C,0x42B2,{ 0xA8,0xDC,0x3E,0x80,0x94,0x94,0x0D,0x12 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDevice5>{ static constexpr GUID value{ 0xB5E0B385,0x5E85,0x4559,{ 0xA1,0x0D,0x1C,0x72,0x81,0x37,0x9F,0x96 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDeviceId>{ static constexpr GUID value{ 0xC17949AF,0x57C1,0x4642,{ 0xBC,0xCE,0xE6,0xC0,0x6B,0x20,0xAE,0x76 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDeviceIdStatics>{ static constexpr GUID value{ 0xA7884E67,0x3EFB,0x4F31,{ 0xBB,0xC2,0x81,0x0E,0x09,0x97,0x74,0x04 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDeviceStatics>{ static constexpr GUID value{ 0x0991DF51,0x57DB,0x4725,{ 0xBB,0xD7,0x84,0xF6,0x43,0x27,0xEC,0x2C } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothDeviceStatics2>{ static constexpr GUID value{ 0xC29E8E2F,0x4E14,0x4477,{ 0xAA,0x1B,0xB8,0xB4,0x7E,0x5B,0x7E,0xCE } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEAppearance>{ static constexpr GUID value{ 0x5D2079F2,0x66A8,0x4258,{ 0x98,0x5E,0x02,0xB4,0xD9,0x50,0x9F,0x18 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics>{ static constexpr GUID value{ 0x6D4D54FE,0x046A,0x4185,{ 0xAA,0xB6,0x82,0x4C,0xF0,0x61,0x08,0x61 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics>{ static constexpr GUID value{ 0xA193C0C7,0x4504,0x4F4A,{ 0x9B,0xA5,0xCD,0x10,0x54,0xE5,0xE0,0x65 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics>{ static constexpr GUID value{ 0xE57BA606,0x2144,0x415A,{ 0x83,0x12,0x71,0xCC,0xF2,0x91,0xF8,0xD1 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDevice>{ static constexpr GUID value{ 0xB5EE2F7B,0x4AD8,0x4642,{ 0xAC,0x48,0x80,0xA0,0xB5,0x00,0xE8,0x87 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDevice2>{ static constexpr GUID value{ 0x26F062B3,0x7AEE,0x4D31,{ 0xBA,0xBA,0xB1,0xB9,0x77,0x5F,0x59,0x16 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDevice3>{ static constexpr GUID value{ 0xAEE9E493,0x44AC,0x40DC,{ 0xAF,0x33,0xB2,0xC1,0x3C,0x01,0xCA,0x46 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDevice4>{ static constexpr GUID value{ 0x2B605031,0x2248,0x4B2F,{ 0xAC,0xF0,0x7C,0xEE,0x36,0xFC,0x58,0x70 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDevice5>{ static constexpr GUID value{ 0x9D6A1260,0x5287,0x458E,{ 0x95,0xBA,0x17,0xC8,0xB7,0xBB,0x32,0x6E } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>{ static constexpr GUID value{ 0xC8CF1A19,0xF0B6,0x4BF0,{ 0x86,0x89,0x41,0x30,0x3D,0xE2,0xD9,0xF4 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2>{ static constexpr GUID value{ 0x5F12C06B,0x3BAC,0x43E8,{ 0xAD,0x16,0x56,0x32,0x71,0xBD,0x41,0xC2 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter>{ static constexpr GUID value{ 0xDF7B7391,0x6BB5,0x4CFE,{ 0x90,0xB1,0x5D,0x73,0x24,0xED,0xCF,0x7F } }; };
-template <> struct guid<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>{ static constexpr GUID value{ 0x17DF0CD8,0xCF74,0x4B21,{ 0xAF,0xE6,0xF5,0x7A,0x11,0xBC,0xDE,0xA0 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothAdapter>{ static constexpr guid value{ 0x7974F04C,0x5F7A,0x4A34,{ 0x92,0x25,0xA8,0x55,0xF8,0x4B,0x1A,0x8B } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothAdapter2>{ static constexpr guid value{ 0xAC94CECC,0x24D5,0x41B3,{ 0x91,0x6D,0x10,0x97,0xC5,0x0B,0x10,0x2B } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothAdapterStatics>{ static constexpr guid value{ 0x8B02FB6A,0xAC4C,0x4741,{ 0x86,0x61,0x8E,0xAB,0x7D,0x17,0xEA,0x9F } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothClassOfDevice>{ static constexpr guid value{ 0xD640227E,0xD7D7,0x4661,{ 0x94,0x54,0x65,0x03,0x9C,0xA1,0x7A,0x2B } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics>{ static constexpr guid value{ 0xE46135BD,0x0FA2,0x416C,{ 0x91,0xB4,0xC1,0xE4,0x8C,0xA0,0x61,0xC1 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDevice>{ static constexpr guid value{ 0x2335B156,0x90D2,0x4A04,{ 0xAE,0xF5,0x0E,0x20,0xB9,0xE6,0xB7,0x07 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDevice2>{ static constexpr guid value{ 0x0133F954,0xB156,0x4DD0,{ 0xB1,0xF5,0xC1,0x1B,0xC3,0x1A,0x51,0x63 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDevice3>{ static constexpr guid value{ 0x57FFF78B,0x651A,0x4454,{ 0xB9,0x0F,0xEB,0x21,0xEF,0x0B,0x0D,0x71 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDevice4>{ static constexpr guid value{ 0x817C34AD,0x0E9C,0x42B2,{ 0xA8,0xDC,0x3E,0x80,0x94,0x94,0x0D,0x12 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDevice5>{ static constexpr guid value{ 0xB5E0B385,0x5E85,0x4559,{ 0xA1,0x0D,0x1C,0x72,0x81,0x37,0x9F,0x96 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDeviceId>{ static constexpr guid value{ 0xC17949AF,0x57C1,0x4642,{ 0xBC,0xCE,0xE6,0xC0,0x6B,0x20,0xAE,0x76 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDeviceIdStatics>{ static constexpr guid value{ 0xA7884E67,0x3EFB,0x4F31,{ 0xBB,0xC2,0x81,0x0E,0x09,0x97,0x74,0x04 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDeviceStatics>{ static constexpr guid value{ 0x0991DF51,0x57DB,0x4725,{ 0xBB,0xD7,0x84,0xF6,0x43,0x27,0xEC,0x2C } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothDeviceStatics2>{ static constexpr guid value{ 0xC29E8E2F,0x4E14,0x4477,{ 0xAA,0x1B,0xB8,0xB4,0x7E,0x5B,0x7E,0xCE } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEAppearance>{ static constexpr guid value{ 0x5D2079F2,0x66A8,0x4258,{ 0x98,0x5E,0x02,0xB4,0xD9,0x50,0x9F,0x18 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics>{ static constexpr guid value{ 0x6D4D54FE,0x046A,0x4185,{ 0xAA,0xB6,0x82,0x4C,0xF0,0x61,0x08,0x61 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics>{ static constexpr guid value{ 0xA193C0C7,0x4504,0x4F4A,{ 0x9B,0xA5,0xCD,0x10,0x54,0xE5,0xE0,0x65 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics>{ static constexpr guid value{ 0xE57BA606,0x2144,0x415A,{ 0x83,0x12,0x71,0xCC,0xF2,0x91,0xF8,0xD1 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDevice>{ static constexpr guid value{ 0xB5EE2F7B,0x4AD8,0x4642,{ 0xAC,0x48,0x80,0xA0,0xB5,0x00,0xE8,0x87 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDevice2>{ static constexpr guid value{ 0x26F062B3,0x7AEE,0x4D31,{ 0xBA,0xBA,0xB1,0xB9,0x77,0x5F,0x59,0x16 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDevice3>{ static constexpr guid value{ 0xAEE9E493,0x44AC,0x40DC,{ 0xAF,0x33,0xB2,0xC1,0x3C,0x01,0xCA,0x46 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDevice4>{ static constexpr guid value{ 0x2B605031,0x2248,0x4B2F,{ 0xAC,0xF0,0x7C,0xEE,0x36,0xFC,0x58,0x70 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDevice5>{ static constexpr guid value{ 0x9D6A1260,0x5287,0x458E,{ 0x95,0xBA,0x17,0xC8,0xB7,0xBB,0x32,0x6E } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>{ static constexpr guid value{ 0xC8CF1A19,0xF0B6,0x4BF0,{ 0x86,0x89,0x41,0x30,0x3D,0xE2,0xD9,0xF4 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2>{ static constexpr guid value{ 0x5F12C06B,0x3BAC,0x43E8,{ 0xAD,0x16,0x56,0x32,0x71,0xBD,0x41,0xC2 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter>{ static constexpr guid value{ 0xDF7B7391,0x6BB5,0x4CFE,{ 0x90,0xB1,0x5D,0x73,0x24,0xED,0xCF,0x7F } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>{ static constexpr guid value{ 0x17DF0CD8,0xCF74,0x4B21,{ 0xAF,0xE6,0xF5,0x7A,0x11,0xBC,0xDE,0xA0 } }; };
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothAdapter>{ using type = Windows::Devices::Bluetooth::IBluetoothAdapter; };
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothClassOfDevice>{ using type = Windows::Devices::Bluetooth::IBluetoothClassOfDevice; };
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothDevice>{ using type = Windows::Devices::Bluetooth::IBluetoothDevice; };
@@ -349,6 +349,267 @@ template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothDevic
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothLEAppearance>{ using type = Windows::Devices::Bluetooth::IBluetoothLEAppearance; };
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothLEDevice>{ using type = Windows::Devices::Bluetooth::IBluetoothLEDevice; };
 template <> struct default_interface<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter>{ using type = Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter; };
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluetoothAddress(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsClassicSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsLowEnergySupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPeripheralRoleSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCentralRoleSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAdvertisementOffloadSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRadioAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AreClassicSecureConnectionsSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AreLowEnergySecureConnectionsSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothClassOfDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RawValue(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MajorClass(Windows::Devices::Bluetooth::BluetoothMajorClass* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinorClass(Windows::Devices::Bluetooth::BluetoothMinorClass* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceCapabilities(Windows::Devices::Bluetooth::BluetoothServiceCapabilities* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromRawValue(uint32_t rawValue, void** classOfDevice) noexcept = 0;
+    virtual int32_t WINRT_CALL FromParts(Windows::Devices::Bluetooth::BluetoothMajorClass majorClass, Windows::Devices::Bluetooth::BluetoothMinorClass minorClass, Windows::Devices::Bluetooth::BluetoothServiceCapabilities serviceCapabilities, void** classOfDevice) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HostName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClassOfDevice(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SdpRecords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RfcommServices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluetoothAddress(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_NameChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_NameChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SdpRecordsChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SdpRecordsChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ConnectionStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ConnectionStatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceAccessInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRfcommServicesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRfcommServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRfcommServicesForIdAsync(void* serviceId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRfcommServicesForIdWithCacheModeAsync(void* serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BluetoothDeviceId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WasSecureConnectionUsedForPairing(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceId>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsClassicDevice(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsLowEnergyDevice(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceIdStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromId(void* deviceId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FromHostNameAsync(void* hostName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FromBluetoothAddressAsync(uint64_t address, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** deviceSelector) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromPairingState(bool pairingState, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromDeviceName(void* deviceName, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromClassOfDevice(void* classOfDevice, void** deviceSelector) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearance>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RawValue(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Category(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubCategory(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uncategorized(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Phone(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Computer(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Watch(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clock(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Display(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteControl(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EyeGlasses(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keyring(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaPlayer(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BarcodeScanner(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thermometer(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeartRate(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BloodPressure(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HumanInterfaceDevice(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GlucoseMeter(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RunningWalking(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Cycling(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PulseOximeter(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WeightScale(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutdoorSportActivity(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromRawValue(uint16_t rawValue, void** appearance) noexcept = 0;
+    virtual int32_t WINRT_CALL FromParts(uint16_t appearanceCategory, uint16_t appearanceSubCategory, void** appearance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Generic(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SportsWatch(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ThermometerEar(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeartRateBelt(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BloodPressureArm(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BloodPressureWrist(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keyboard(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mouse(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Joystick(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gamepad(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DigitizerTablet(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CardReader(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DigitalPen(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BarcodeScanner(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RunningWalkingInShoe(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RunningWalkingOnShoe(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RunningWalkingOnHip(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CyclingComputer(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CyclingSpeedSensor(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CyclingCadenceSensor(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CyclingPowerSensor(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CyclingSpeedCadenceSensor(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OximeterFingertip(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OximeterWristWorn(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationDisplay(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationNavigationDisplay(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationPod(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationNavigationPod(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GattServices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluetoothAddress(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGattService(winrt::guid serviceUuid, void** service) noexcept = 0;
+    virtual int32_t WINRT_CALL add_NameChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_NameChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GattServicesChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GattServicesChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ConnectionStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ConnectionStatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Appearance(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluetoothAddressType(Windows::Devices::Bluetooth::BluetoothAddressType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceAccessInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGattServicesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGattServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGattServicesForUuidAsync(winrt::guid serviceUuid, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGattServicesForUuidWithCacheModeAsync(winrt::guid serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BluetoothDeviceId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WasSecureConnectionUsedForPairing(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FromBluetoothAddressAsync(uint64_t bluetoothAddress, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** deviceSelector) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromPairingState(bool pairingState, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromDeviceName(void* deviceName, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromAppearance(void* appearance, void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL FromBluetoothAddressWithBluetoothAddressTypeAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InRangeThresholdInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InRangeThresholdInDBm(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutOfRangeThresholdInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutOfRangeThresholdInDBm(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutOfRangeTimeout(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutOfRangeTimeout(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SamplingInterval(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SamplingInterval(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromShortId(uint32_t shortId, winrt::guid* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetShortId(winrt::guid uuid, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Bluetooth_IBluetoothAdapter
@@ -407,21 +668,21 @@ struct consume_Windows_Devices_Bluetooth_IBluetoothDevice
     hstring Name() const;
     Windows::Devices::Bluetooth::BluetoothClassOfDevice ClassOfDevice() const;
     Windows::Foundation::Collections::IVectorView<Windows::Storage::Streams::IBuffer> SdpRecords() const;
-    [[deprecated("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommServices() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> RfcommServices() const;
     Windows::Devices::Bluetooth::BluetoothConnectionStatus ConnectionStatus() const;
     uint64_t BluetoothAddress() const;
-    event_token NameChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using NameChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice>;
+    winrt::event_token NameChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using NameChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothDevice>::remove_NameChanged>;
     NameChanged_revoker NameChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void NameChanged(event_token const& token) const;
-    event_token SdpRecordsChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using SdpRecordsChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice>;
+    void NameChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token SdpRecordsChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using SdpRecordsChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothDevice>::remove_SdpRecordsChanged>;
     SdpRecordsChanged_revoker SdpRecordsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void SdpRecordsChanged(event_token const& token) const;
-    event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using ConnectionStatusChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice>;
+    void SdpRecordsChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using ConnectionStatusChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothDevice>::remove_ConnectionStatusChanged>;
     ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void ConnectionStatusChanged(event_token const& token) const;
+    void ConnectionStatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Bluetooth::IBluetoothDevice> { template <typename D> using type = consume_Windows_Devices_Bluetooth_IBluetoothDevice<D>; };
 
@@ -579,22 +840,22 @@ struct consume_Windows_Devices_Bluetooth_IBluetoothLEDevice
 {
     hstring DeviceId() const;
     hstring Name() const;
-    [[deprecated("Use GetGattServicesAsync instead of GattServices.  For more information, see MSDN.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
     Windows::Devices::Bluetooth::BluetoothConnectionStatus ConnectionStatus() const;
     uint64_t BluetoothAddress() const;
-    [[deprecated("Use GetGattServicesForUuidAsync instead of GetGattService.  For more information, see MSDN.")]] Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService GetGattService(GUID const& serviceUuid) const;
-    event_token NameChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using NameChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice>;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService GetGattService(winrt::guid const& serviceUuid) const;
+    winrt::event_token NameChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using NameChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothLEDevice>::remove_NameChanged>;
     NameChanged_revoker NameChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void NameChanged(event_token const& token) const;
-    event_token GattServicesChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using GattServicesChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice>;
+    void NameChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token GattServicesChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using GattServicesChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothLEDevice>::remove_GattServicesChanged>;
     GattServicesChanged_revoker GattServicesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void GattServicesChanged(event_token const& token) const;
-    event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using ConnectionStatusChanged_revoker = event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice>;
+    void GattServicesChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using ConnectionStatusChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::IBluetoothLEDevice, &impl::abi_t<Windows::Devices::Bluetooth::IBluetoothLEDevice>::remove_ConnectionStatusChanged>;
     ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void ConnectionStatusChanged(event_token const& token) const;
+    void ConnectionStatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Bluetooth::IBluetoothLEDevice> { template <typename D> using type = consume_Windows_Devices_Bluetooth_IBluetoothLEDevice<D>; };
 
@@ -614,8 +875,8 @@ struct consume_Windows_Devices_Bluetooth_IBluetoothLEDevice3
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceAccessStatus> RequestAccessAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(GUID const& serviceUuid) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(GUID const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(winrt::guid const& serviceUuid) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(winrt::guid const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const;
 };
 template <> struct consume<Windows::Devices::Bluetooth::IBluetoothLEDevice3> { template <typename D> using type = consume_Windows_Devices_Bluetooth_IBluetoothLEDevice3<D>; };
 
@@ -672,270 +933,9 @@ template <> struct consume<Windows::Devices::Bluetooth::IBluetoothSignalStrength
 template <typename D>
 struct consume_Windows_Devices_Bluetooth_IBluetoothUuidHelperStatics
 {
-    GUID FromShortId(uint32_t shortId) const;
-    Windows::Foundation::IReference<uint32_t> TryGetShortId(GUID const& uuid) const;
+    winrt::guid FromShortId(uint32_t shortId) const;
+    Windows::Foundation::IReference<uint32_t> TryGetShortId(winrt::guid const& uuid) const;
 };
 template <> struct consume<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics> { template <typename D> using type = consume_Windows_Devices_Bluetooth_IBluetoothUuidHelperStatics<D>; };
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluetoothAddress(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsClassicSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsLowEnergySupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPeripheralRoleSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCentralRoleSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAdvertisementOffloadSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetRadioAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AreClassicSecureConnectionsSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AreLowEnergySecureConnectionsSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothAdapterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothClassOfDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RawValue(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MajorClass(Windows::Devices::Bluetooth::BluetoothMajorClass* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinorClass(Windows::Devices::Bluetooth::BluetoothMinorClass* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceCapabilities(Windows::Devices::Bluetooth::BluetoothServiceCapabilities* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromRawValue(uint32_t rawValue, void** classOfDevice) noexcept = 0;
-    virtual HRESULT __stdcall FromParts(Windows::Devices::Bluetooth::BluetoothMajorClass majorClass, Windows::Devices::Bluetooth::BluetoothMinorClass minorClass, Windows::Devices::Bluetooth::BluetoothServiceCapabilities serviceCapabilities, void** classOfDevice) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HostName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClassOfDevice(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SdpRecords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RfcommServices(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluetoothAddress(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall add_NameChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_NameChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SdpRecordsChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SdpRecordsChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ConnectionStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ConnectionStatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceAccessInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetRfcommServicesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetRfcommServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetRfcommServicesForIdAsync(void* serviceId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetRfcommServicesForIdWithCacheModeAsync(void* serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BluetoothDeviceId(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDevice5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WasSecureConnectionUsedForPairing(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceId>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsClassicDevice(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsLowEnergyDevice(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceIdStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromId(HSTRING deviceId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FromHostNameAsync(void* hostName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FromBluetoothAddressAsync(uint64_t address, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* deviceSelector) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothDeviceStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromDeviceName(HSTRING deviceName, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromClassOfDevice(void* classOfDevice, HSTRING* deviceSelector) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearance>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RawValue(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Category(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubCategory(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uncategorized(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Phone(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Computer(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Watch(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Clock(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Display(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteControl(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EyeGlasses(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keyring(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaPlayer(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BarcodeScanner(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thermometer(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeartRate(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BloodPressure(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HumanInterfaceDevice(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GlucoseMeter(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RunningWalking(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Cycling(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PulseOximeter(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WeightScale(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutdoorSportActivity(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromRawValue(uint16_t rawValue, void** appearance) noexcept = 0;
-    virtual HRESULT __stdcall FromParts(uint16_t appearanceCategory, uint16_t appearanceSubCategory, void** appearance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Generic(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SportsWatch(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ThermometerEar(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeartRateBelt(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BloodPressureArm(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BloodPressureWrist(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keyboard(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mouse(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Joystick(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gamepad(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DigitizerTablet(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CardReader(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DigitalPen(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BarcodeScanner(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RunningWalkingInShoe(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RunningWalkingOnShoe(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RunningWalkingOnHip(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CyclingComputer(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CyclingSpeedSensor(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CyclingCadenceSensor(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CyclingPowerSensor(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CyclingSpeedCadenceSensor(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OximeterFingertip(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OximeterWristWorn(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationDisplay(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationNavigationDisplay(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationPod(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationNavigationPod(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GattServices(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluetoothAddress(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetGattService(GUID serviceUuid, void** service) noexcept = 0;
-    virtual HRESULT __stdcall add_NameChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_NameChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_GattServicesChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GattServicesChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ConnectionStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ConnectionStatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Appearance(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluetoothAddressType(Windows::Devices::Bluetooth::BluetoothAddressType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceAccessInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetGattServicesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetGattServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetGattServicesForUuidAsync(GUID serviceUuid, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetGattServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BluetoothDeviceId(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDevice5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WasSecureConnectionUsedForPairing(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FromBluetoothAddressAsync(uint64_t bluetoothAddress, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* deviceSelector) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelectorFromPairingState(bool pairingState, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromDeviceName(HSTRING deviceName, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromAppearance(void* appearance, HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall FromBluetoothAddressWithBluetoothAddressTypeAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InRangeThresholdInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InRangeThresholdInDBm(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutOfRangeThresholdInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutOfRangeThresholdInDBm(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutOfRangeTimeout(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutOfRangeTimeout(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SamplingInterval(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SamplingInterval(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromShortId(uint32_t shortId, GUID* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetShortId(GUID uuid, void** result) noexcept = 0;
-};};
 
 }

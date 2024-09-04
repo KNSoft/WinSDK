@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -67,15 +67,67 @@ template <> struct name<Windows::Data::Pdf::PdfPage>{ static constexpr auto & va
 template <> struct name<Windows::Data::Pdf::PdfPageDimensions>{ static constexpr auto & value{ L"Windows.Data.Pdf.PdfPageDimensions" }; };
 template <> struct name<Windows::Data::Pdf::PdfPageRenderOptions>{ static constexpr auto & value{ L"Windows.Data.Pdf.PdfPageRenderOptions" }; };
 template <> struct name<Windows::Data::Pdf::PdfPageRotation>{ static constexpr auto & value{ L"Windows.Data.Pdf.PdfPageRotation" }; };
-template <> struct guid<Windows::Data::Pdf::IPdfDocument>{ static constexpr GUID value{ 0xAC7EBEDD,0x80FA,0x4089,{ 0x84,0x6E,0x81,0xB7,0x7F,0xF5,0xA8,0x6C } }; };
-template <> struct guid<Windows::Data::Pdf::IPdfDocumentStatics>{ static constexpr GUID value{ 0x433A0B5F,0xC007,0x4788,{ 0x90,0xF2,0x08,0x14,0x3D,0x92,0x25,0x99 } }; };
-template <> struct guid<Windows::Data::Pdf::IPdfPage>{ static constexpr GUID value{ 0x9DB4B0C8,0x5320,0x4CFC,{ 0xAD,0x76,0x49,0x3F,0xDA,0xD0,0xE5,0x94 } }; };
-template <> struct guid<Windows::Data::Pdf::IPdfPageDimensions>{ static constexpr GUID value{ 0x22170471,0x313E,0x44E8,{ 0x83,0x5D,0x63,0xA3,0xE7,0x62,0x4A,0x10 } }; };
-template <> struct guid<Windows::Data::Pdf::IPdfPageRenderOptions>{ static constexpr GUID value{ 0x3C98056F,0xB7CF,0x4C29,{ 0x9A,0x04,0x52,0xD9,0x02,0x67,0xF4,0x25 } }; };
+template <> struct guid_storage<Windows::Data::Pdf::IPdfDocument>{ static constexpr guid value{ 0xAC7EBEDD,0x80FA,0x4089,{ 0x84,0x6E,0x81,0xB7,0x7F,0xF5,0xA8,0x6C } }; };
+template <> struct guid_storage<Windows::Data::Pdf::IPdfDocumentStatics>{ static constexpr guid value{ 0x433A0B5F,0xC007,0x4788,{ 0x90,0xF2,0x08,0x14,0x3D,0x92,0x25,0x99 } }; };
+template <> struct guid_storage<Windows::Data::Pdf::IPdfPage>{ static constexpr guid value{ 0x9DB4B0C8,0x5320,0x4CFC,{ 0xAD,0x76,0x49,0x3F,0xDA,0xD0,0xE5,0x94 } }; };
+template <> struct guid_storage<Windows::Data::Pdf::IPdfPageDimensions>{ static constexpr guid value{ 0x22170471,0x313E,0x44E8,{ 0x83,0x5D,0x63,0xA3,0xE7,0x62,0x4A,0x10 } }; };
+template <> struct guid_storage<Windows::Data::Pdf::IPdfPageRenderOptions>{ static constexpr guid value{ 0x3C98056F,0xB7CF,0x4C29,{ 0x9A,0x04,0x52,0xD9,0x02,0x67,0xF4,0x25 } }; };
 template <> struct default_interface<Windows::Data::Pdf::PdfDocument>{ using type = Windows::Data::Pdf::IPdfDocument; };
 template <> struct default_interface<Windows::Data::Pdf::PdfPage>{ using type = Windows::Data::Pdf::IPdfPage; };
 template <> struct default_interface<Windows::Data::Pdf::PdfPageDimensions>{ using type = Windows::Data::Pdf::IPdfPageDimensions; };
 template <> struct default_interface<Windows::Data::Pdf::PdfPageRenderOptions>{ using type = Windows::Data::Pdf::IPdfPageRenderOptions; };
+
+template <> struct abi<Windows::Data::Pdf::IPdfDocument>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPage(uint32_t pageIndex, void** pdfPage) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPasswordProtected(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Pdf::IPdfDocumentStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadFromFileAsync(void* file, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromFileWithPasswordAsync(void* file, void* password, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromStreamAsync(void* inputStream, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromStreamWithPasswordAsync(void* inputStream, void* password, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Pdf::IPdfPage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RenderToStreamAsync(void* outputStream, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderWithOptionsToStreamAsync(void* outputStream, void* options, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL PreparePageAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Index(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Dimensions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rotation(Windows::Data::Pdf::PdfPageRotation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreferredZoom(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Pdf::IPdfPageDimensions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MediaBox(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CropBox(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BleedBox(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimBox(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ArtBox(Windows::Foundation::Rect* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Pdf::IPdfPageRenderOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourceRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SourceRect(Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DestinationWidth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DestinationWidth(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DestinationHeight(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DestinationHeight(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsIgnoringHighContrast(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsIgnoringHighContrast(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BitmapEncoderId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BitmapEncoderId(winrt::guid value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Data_Pdf_IPdfDocument
@@ -134,61 +186,9 @@ struct consume_Windows_Data_Pdf_IPdfPageRenderOptions
     void BackgroundColor(Windows::UI::Color const& value) const;
     bool IsIgnoringHighContrast() const;
     void IsIgnoringHighContrast(bool value) const;
-    GUID BitmapEncoderId() const;
-    void BitmapEncoderId(GUID const& value) const;
+    winrt::guid BitmapEncoderId() const;
+    void BitmapEncoderId(winrt::guid const& value) const;
 };
 template <> struct consume<Windows::Data::Pdf::IPdfPageRenderOptions> { template <typename D> using type = consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>; };
-
-template <> struct abi<Windows::Data::Pdf::IPdfDocument>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPage(uint32_t pageIndex, void** pdfPage) noexcept = 0;
-    virtual HRESULT __stdcall get_PageCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPasswordProtected(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Pdf::IPdfDocumentStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadFromFileAsync(void* file, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromFileWithPasswordAsync(void* file, HSTRING password, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromStreamAsync(void* inputStream, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromStreamWithPasswordAsync(void* inputStream, HSTRING password, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Pdf::IPdfPage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RenderToStreamAsync(void* outputStream, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall RenderWithOptionsToStreamAsync(void* outputStream, void* options, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall PreparePageAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall get_Index(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Dimensions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rotation(Windows::Data::Pdf::PdfPageRotation* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreferredZoom(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Pdf::IPdfPageDimensions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MediaBox(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CropBox(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BleedBox(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimBox(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ArtBox(Windows::Foundation::Rect* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Pdf::IPdfPageRenderOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourceRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SourceRect(Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall get_DestinationWidth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DestinationWidth(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DestinationHeight(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DestinationHeight(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsIgnoringHighContrast(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsIgnoringHighContrast(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_BitmapEncoderId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BitmapEncoderId(GUID value) noexcept = 0;
-};};
 
 }

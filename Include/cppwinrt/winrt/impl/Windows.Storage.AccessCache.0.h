@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -73,15 +73,58 @@ template <> struct name<Windows::Storage::AccessCache::StorageItemMostRecentlyUs
 template <> struct name<Windows::Storage::AccessCache::AccessCacheOptions>{ static constexpr auto & value{ L"Windows.Storage.AccessCache.AccessCacheOptions" }; };
 template <> struct name<Windows::Storage::AccessCache::RecentStorageItemVisibility>{ static constexpr auto & value{ L"Windows.Storage.AccessCache.RecentStorageItemVisibility" }; };
 template <> struct name<Windows::Storage::AccessCache::AccessListEntry>{ static constexpr auto & value{ L"Windows.Storage.AccessCache.AccessListEntry" }; };
-template <> struct guid<Windows::Storage::AccessCache::IItemRemovedEventArgs>{ static constexpr GUID value{ 0x59677E5C,0x55BE,0x4C66,{ 0xBA,0x66,0x5E,0xAE,0xA7,0x9D,0x26,0x31 } }; };
-template <> struct guid<Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>{ static constexpr GUID value{ 0x4391DFAA,0xD033,0x48F9,{ 0x80,0x60,0x3E,0xC8,0x47,0xD2,0xE3,0xF1 } }; };
-template <> struct guid<Windows::Storage::AccessCache::IStorageItemAccessList>{ static constexpr GUID value{ 0x2CAFF6AD,0xDE90,0x47F5,{ 0xB2,0xC3,0xDD,0x36,0xC9,0xFD,0xD4,0x53 } }; };
-template <> struct guid<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>{ static constexpr GUID value{ 0x016239D5,0x510D,0x411E,{ 0x8C,0xF1,0xC3,0xD1,0xEF,0xFA,0x4C,0x33 } }; };
-template <> struct guid<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>{ static constexpr GUID value{ 0xDA481EA0,0xED8D,0x4731,{ 0xA1,0xDB,0xE4,0x4E,0xE2,0x20,0x40,0x93 } }; };
+template <> struct guid_storage<Windows::Storage::AccessCache::IItemRemovedEventArgs>{ static constexpr guid value{ 0x59677E5C,0x55BE,0x4C66,{ 0xBA,0x66,0x5E,0xAE,0xA7,0x9D,0x26,0x31 } }; };
+template <> struct guid_storage<Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>{ static constexpr guid value{ 0x4391DFAA,0xD033,0x48F9,{ 0x80,0x60,0x3E,0xC8,0x47,0xD2,0xE3,0xF1 } }; };
+template <> struct guid_storage<Windows::Storage::AccessCache::IStorageItemAccessList>{ static constexpr guid value{ 0x2CAFF6AD,0xDE90,0x47F5,{ 0xB2,0xC3,0xDD,0x36,0xC9,0xFD,0xD4,0x53 } }; };
+template <> struct guid_storage<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>{ static constexpr guid value{ 0x016239D5,0x510D,0x411E,{ 0x8C,0xF1,0xC3,0xD1,0xEF,0xFA,0x4C,0x33 } }; };
+template <> struct guid_storage<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>{ static constexpr guid value{ 0xDA481EA0,0xED8D,0x4731,{ 0xA1,0xDB,0xE4,0x4E,0xE2,0x20,0x40,0x93 } }; };
 template <> struct default_interface<Windows::Storage::AccessCache::AccessListEntryView>{ using type = Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>; };
 template <> struct default_interface<Windows::Storage::AccessCache::ItemRemovedEventArgs>{ using type = Windows::Storage::AccessCache::IItemRemovedEventArgs; };
 template <> struct default_interface<Windows::Storage::AccessCache::StorageItemAccessList>{ using type = Windows::Storage::AccessCache::IStorageItemAccessList; };
 template <> struct default_interface<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList>{ using type = Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList; };
+
+template <> struct abi<Windows::Storage::AccessCache::IItemRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemovedEntry(struct struct_Windows_Storage_AccessCache_AccessListEntry* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FutureAccessList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MostRecentlyUsedList(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::AccessCache::IStorageItemAccessList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddOverloadDefaultMetadata(void* file, void** token) noexcept = 0;
+    virtual int32_t WINRT_CALL Add(void* file, void* metadata, void** token) noexcept = 0;
+    virtual int32_t WINRT_CALL AddOrReplaceOverloadDefaultMetadata(void* token, void* file) noexcept = 0;
+    virtual int32_t WINRT_CALL AddOrReplace(void* token, void* file, void* metadata) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemAsync(void* token, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFileAsync(void* token, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFolderAsync(void* token, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFileWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFolderWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* token) noexcept = 0;
+    virtual int32_t WINRT_CALL ContainsItem(void* token, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL CheckAccess(void* file, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Entries(void** entries) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaximumItemsAllowed(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ItemRemoved(void* handler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ItemRemoved(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddWithMetadataAndVisibility(void* file, void* metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility, void** token) noexcept = 0;
+    virtual int32_t WINRT_CALL AddOrReplaceWithMetadataAndVisibility(void* token, void* file, void* metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_AccessCache_IItemRemovedEventArgs
@@ -123,10 +166,10 @@ template <> struct consume<Windows::Storage::AccessCache::IStorageItemAccessList
 template <typename D>
 struct consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList
 {
-    event_token ItemRemoved(Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const;
-    using ItemRemoved_revoker = event_revoker<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>;
+    winrt::event_token ItemRemoved(Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const;
+    using ItemRemoved_revoker = impl::event_revoker<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList, &impl::abi_t<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>::remove_ItemRemoved>;
     ItemRemoved_revoker ItemRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const;
-    void ItemRemoved(event_token const& eventCookie) const;
+    void ItemRemoved(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList> { template <typename D> using type = consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>; };
 
@@ -140,53 +183,10 @@ template <> struct consume<Windows::Storage::AccessCache::IStorageItemMostRecent
 
 struct struct_Windows_Storage_AccessCache_AccessListEntry
 {
-    HSTRING Token;
-    HSTRING Metadata;
+    void* Token;
+    void* Metadata;
 };
 template <> struct abi<Windows::Storage::AccessCache::AccessListEntry>{ using type = struct_Windows_Storage_AccessCache_AccessListEntry; };
 
-
-template <> struct abi<Windows::Storage::AccessCache::IItemRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemovedEntry(struct struct_Windows_Storage_AccessCache_AccessListEntry* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FutureAccessList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MostRecentlyUsedList(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::AccessCache::IStorageItemAccessList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddOverloadDefaultMetadata(void* file, HSTRING* token) noexcept = 0;
-    virtual HRESULT __stdcall Add(void* file, HSTRING metadata, HSTRING* token) noexcept = 0;
-    virtual HRESULT __stdcall AddOrReplaceOverloadDefaultMetadata(HSTRING token, void* file) noexcept = 0;
-    virtual HRESULT __stdcall AddOrReplace(HSTRING token, void* file, HSTRING metadata) noexcept = 0;
-    virtual HRESULT __stdcall GetItemAsync(HSTRING token, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFileAsync(HSTRING token, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFolderAsync(HSTRING token, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFileWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFolderWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall Remove(HSTRING token) noexcept = 0;
-    virtual HRESULT __stdcall ContainsItem(HSTRING token, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall CheckAccess(void* file, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Entries(void** entries) noexcept = 0;
-    virtual HRESULT __stdcall get_MaximumItemsAllowed(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ItemRemoved(void* handler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ItemRemoved(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddWithMetadataAndVisibility(void* file, HSTRING metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility, HSTRING* token) noexcept = 0;
-    virtual HRESULT __stdcall AddOrReplaceWithMetadataAndVisibility(HSTRING token, void* file, HSTRING metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) noexcept = 0;
-};};
 
 }

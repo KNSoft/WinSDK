@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -257,6 +257,7 @@ struct IAutomationElementIdentifiersStatics4;
 struct IAutomationElementIdentifiersStatics5;
 struct IAutomationElementIdentifiersStatics6;
 struct IAutomationElementIdentifiersStatics7;
+struct IAutomationElementIdentifiersStatics8;
 struct IAutomationProperties;
 struct IAutomationPropertiesStatics;
 struct IAutomationPropertiesStatics2;
@@ -265,6 +266,7 @@ struct IAutomationPropertiesStatics4;
 struct IAutomationPropertiesStatics5;
 struct IAutomationPropertiesStatics6;
 struct IAutomationPropertiesStatics7;
+struct IAutomationPropertiesStatics8;
 struct IAutomationProperty;
 struct IDockPatternIdentifiers;
 struct IDockPatternIdentifiersStatics;
@@ -349,6 +351,7 @@ template <> struct category<Windows::UI::Xaml::Automation::IAutomationElementIde
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationProperties>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ using type = interface_category; };
@@ -357,6 +360,7 @@ template <> struct category<Windows::UI::Xaml::Automation::IAutomationProperties
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IAutomationProperty>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ using type = interface_category; };
@@ -457,6 +461,7 @@ template <> struct name<Windows::UI::Xaml::Automation::IAutomationElementIdentif
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7" }; };
+template <> struct name<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationProperties>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationProperties" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics2" }; };
@@ -465,6 +470,7 @@ template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStat
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7" }; };
+template <> struct name<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IAutomationProperty>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IAutomationProperty" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IDockPatternIdentifiers" }; };
 template <> struct name<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.IDockPatternIdentifiersStatics" }; };
@@ -552,68 +558,70 @@ template <> struct name<Windows::UI::Xaml::Automation::ToggleState>{ static cons
 template <> struct name<Windows::UI::Xaml::Automation::WindowInteractionState>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.WindowInteractionState" }; };
 template <> struct name<Windows::UI::Xaml::Automation::WindowVisualState>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.WindowVisualState" }; };
 template <> struct name<Windows::UI::Xaml::Automation::ZoomUnit>{ static constexpr auto & value{ L"Windows.UI.Xaml.Automation.ZoomUnit" }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers>{ static constexpr GUID value{ 0xD475A0C1,0x48B2,0x4E40,{ 0xA6,0xCF,0x3D,0xC4,0xB6,0x38,0xC0,0xDE } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics>{ static constexpr GUID value{ 0xE0E3A35D,0xD167,0x46DC,{ 0x95,0xAB,0x33,0x0A,0xF6,0x1A,0xEB,0xB5 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationAnnotation>{ static constexpr GUID value{ 0xFB3C30CA,0x03D8,0x4618,{ 0x91,0xBF,0xE4,0xD8,0x4F,0x4A,0xF3,0x18 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationAnnotationFactory>{ static constexpr GUID value{ 0x4906FA52,0xDDC0,0x4E69,{ 0xB7,0x6B,0x01,0x9D,0x92,0x8D,0x82,0x2F } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationAnnotationStatics>{ static constexpr GUID value{ 0xE503EAB7,0x4EE5,0x48CB,{ 0xB5,0xB8,0xBB,0xCD,0x46,0xC9,0xD1,0xDA } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiers>{ static constexpr GUID value{ 0xE68A63CF,0x4345,0x4E2D,{ 0x8A,0x6A,0x49,0xCC,0xE1,0xFA,0x2D,0xCC } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics>{ static constexpr GUID value{ 0x4549399F,0x8340,0x4D67,{ 0xB9,0xBF,0x8C,0x2A,0xC6,0xA0,0x77,0x3A } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2>{ static constexpr GUID value{ 0xB5CBB1E2,0xD55F,0x46A9,{ 0x9E,0xDA,0x1A,0x47,0x42,0x51,0x5D,0xC3 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3>{ static constexpr GUID value{ 0x0F5CBEBD,0xB3EB,0x4083,{ 0xAD,0xC7,0x0C,0x2F,0x39,0xBB,0x35,0x43 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4>{ static constexpr GUID value{ 0x5AF51F75,0x5913,0x4D78,{ 0xB3,0x30,0xA6,0xF5,0x0B,0x73,0xED,0x9B } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ static constexpr GUID value{ 0x986A8206,0xDE59,0x42F9,{ 0xA1,0xE7,0x62,0xB8,0xAF,0x9E,0x75,0x6D } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ static constexpr GUID value{ 0xDE52B00D,0x8328,0x4EAE,{ 0x80,0x35,0xF8,0xDB,0x99,0xC8,0xBA,0xC4 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ static constexpr GUID value{ 0x00F1ABB2,0x742C,0x446A,{ 0xA8,0xF6,0x16,0x72,0xB1,0x0D,0x28,0x74 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationProperties>{ static constexpr GUID value{ 0x68D7232C,0xE622,0x48E9,{ 0xAF,0x0B,0x1F,0xFA,0x33,0xCC,0x5C,0xBA } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ static constexpr GUID value{ 0xB618FD7B,0x32D0,0x4970,{ 0x9C,0x42,0x7C,0x03,0x9A,0xC7,0xBE,0x78 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ static constexpr GUID value{ 0x3976547F,0x7089,0x4801,{ 0x8F,0x1D,0xAA,0xB7,0x80,0x90,0xD1,0xA0 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3>{ static constexpr GUID value{ 0x7B75D735,0x5CB1,0x42AD,{ 0x9B,0x57,0x5F,0xAB,0xA8,0xC1,0x86,0x7F } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4>{ static constexpr GUID value{ 0xF7D62655,0x311A,0x4B7C,{ 0xA1,0x31,0x52,0x4E,0x89,0xCD,0x3C,0xF9 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ static constexpr GUID value{ 0x0BE35B26,0xC8F9,0x41A2,{ 0xB4,0xDB,0xE6,0xA7,0xA3,0x2B,0x0C,0x34 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ static constexpr GUID value{ 0xC61E030F,0xEB49,0x4E5D,{ 0xB0,0x12,0x4C,0x1C,0x96,0xC3,0x90,0x1B } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ static constexpr GUID value{ 0xF7E98BF3,0x8F91,0x4068,{ 0xA4,0xAD,0xB7,0xB4,0x02,0xD1,0x0A,0x2C } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IAutomationProperty>{ static constexpr GUID value{ 0xB627195B,0x3227,0x4E16,{ 0x95,0x34,0xDD,0xEC,0xE3,0x0D,0xDB,0x46 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ static constexpr GUID value{ 0xCCD7F4E6,0xE4F9,0x47FF,{ 0xBD,0xE7,0x37,0x8B,0x11,0xF7,0x8E,0x09 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ static constexpr GUID value{ 0x2B87245C,0xED80,0x4FE5,{ 0x8E,0xB4,0x70,0x8A,0x39,0xC8,0x41,0xE5 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDragPatternIdentifiers>{ static constexpr GUID value{ 0x6266E985,0x4D07,0x4E80,{ 0x82,0xEB,0x8F,0x96,0x69,0x0A,0x1A,0x0C } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>{ static constexpr GUID value{ 0x2A05379D,0x1755,0x4082,{ 0x9D,0x90,0x46,0xF1,0x41,0x1D,0x79,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers>{ static constexpr GUID value{ 0x11865133,0xA6FE,0x4634,{ 0xBD,0x18,0x0E,0xF6,0x12,0xB7,0xB2,0x08 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics>{ static constexpr GUID value{ 0x1B693304,0x89FB,0x4B0A,{ 0x94,0x52,0xCA,0x2C,0x66,0xAA,0xF9,0xF3 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers>{ static constexpr GUID value{ 0xB006BAC0,0x751B,0x4D55,{ 0x92,0xCB,0x61,0x3E,0xC1,0xBD,0xF5,0xD0 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics>{ static constexpr GUID value{ 0xD7816FD4,0x6EE0,0x4F38,{ 0x8E,0x14,0x56,0xEF,0x21,0xAD,0xAC,0xFD } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers>{ static constexpr GUID value{ 0x757744F1,0x3285,0x4FB1,{ 0x80,0x3B,0x25,0x45,0xBD,0x43,0x15,0x99 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics>{ static constexpr GUID value{ 0x217D2402,0x5E46,0x4D61,{ 0x87,0x94,0xB8,0xEE,0x8E,0x77,0x47,0x14 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IGridPatternIdentifiers>{ static constexpr GUID value{ 0xC902980F,0x96C5,0x450C,{ 0x90,0x44,0x7E,0x52,0xC2,0x4F,0x9E,0x94 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>{ static constexpr GUID value{ 0x7BC452F3,0xA181,0x4137,{ 0x8D,0xE9,0x1F,0x9B,0x1A,0x83,0x20,0xED } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers>{ static constexpr GUID value{ 0x5D5CD3B8,0x1E12,0x488B,{ 0xB0,0xEA,0x5E,0x6C,0xB8,0x98,0x16,0xE1 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics>{ static constexpr GUID value{ 0xA9CFA66F,0x6B84,0x4D71,{ 0x9E,0x48,0xD7,0x64,0xD3,0xBC,0xDA,0x8E } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers>{ static constexpr GUID value{ 0xF8760F45,0x33C9,0x467D,{ 0xBC,0x9E,0xD1,0x51,0x52,0x63,0xAC,0xE1 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics>{ static constexpr GUID value{ 0xCE23450F,0x1C27,0x457F,{ 0xB8,0x15,0x7A,0x5E,0x46,0x86,0x3D,0xBB } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IScrollPatternIdentifiers>{ static constexpr GUID value{ 0x366B1003,0x425C,0x4951,{ 0xAE,0x83,0xD5,0x21,0xE7,0x3B,0xC6,0x96 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics>{ static constexpr GUID value{ 0x4BF8E0A1,0xFB7F,0x4FA4,{ 0x83,0xB3,0xCF,0xAE,0xB1,0x03,0xA6,0x85 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers>{ static constexpr GUID value{ 0x2DAFA41A,0x3EF8,0x4BB5,{ 0xA0,0x2B,0x3E,0xE1,0xB2,0x27,0x47,0x40 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics>{ static constexpr GUID value{ 0xA918D163,0x487E,0x4E3E,{ 0x9F,0x86,0x7B,0x44,0xAC,0xBE,0x27,0xCE } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers>{ static constexpr GUID value{ 0x4AA66FB0,0xE3F7,0x475F,{ 0xB7,0x8D,0xF8,0xA8,0x3B,0xB7,0x30,0xC4 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics>{ static constexpr GUID value{ 0x93035B4C,0x6B50,0x40A1,{ 0xB2,0x3F,0x5C,0x78,0xDD,0xBD,0x47,0x9A } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers>{ static constexpr GUID value{ 0x84347E19,0xCA4B,0x46A2,{ 0xA7,0x94,0xC8,0x79,0x28,0xA3,0xB1,0xAB } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics>{ static constexpr GUID value{ 0x43658779,0x5380,0x4F12,{ 0xB4,0x68,0xB4,0xF3,0x68,0xAD,0x44,0x99 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IStylesPatternIdentifiers>{ static constexpr GUID value{ 0xB0E4E201,0xE89D,0x436B,{ 0x82,0x87,0x4F,0x79,0x03,0x46,0x68,0x79 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics>{ static constexpr GUID value{ 0x528A457A,0xBC3C,0x4D48,{ 0x94,0xAF,0x1F,0x68,0x70,0x3C,0xA2,0x96 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers>{ static constexpr GUID value{ 0xC326E5AD,0x8077,0x4C64,{ 0x98,0xE4,0xE8,0x3B,0xCF,0x1B,0x43,0x89 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics>{ static constexpr GUID value{ 0x24C4B923,0xE9A2,0x4DE9,{ 0xB2,0xA4,0xA8,0xB2,0x2D,0x0B,0xE3,0x62 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITablePatternIdentifiers>{ static constexpr GUID value{ 0x38D104FE,0x0D0C,0x412A,{ 0xBF,0x8D,0x51,0xED,0xE6,0x83,0xBA,0xF5 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics>{ static constexpr GUID value{ 0x75073D25,0x32C9,0x4903,{ 0xAE,0xCF,0xDC,0x35,0x04,0xCB,0xD2,0x44 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITogglePatternIdentifiers>{ static constexpr GUID value{ 0x7E191F6B,0x34D4,0x4AE7,{ 0x83,0xAC,0x29,0xF8,0x88,0x82,0xD9,0x85 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics>{ static constexpr GUID value{ 0xC7F75544,0x14A5,0x4F2F,{ 0x92,0xFC,0x76,0x05,0x24,0xDE,0x06,0xEA } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITransformPattern2Identifiers>{ static constexpr GUID value{ 0x08AAA03D,0xDEA7,0x402F,{ 0x80,0x97,0x9A,0x27,0x83,0xD6,0x0E,0x5D } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics>{ static constexpr GUID value{ 0x78963644,0x11F0,0x467C,{ 0xA7,0x2B,0x5D,0xAC,0x41,0xC1,0xF6,0xFE } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITransformPatternIdentifiers>{ static constexpr GUID value{ 0xE4115B8C,0xC3C8,0x4A37,{ 0xB9,0x94,0x27,0x09,0xA7,0x81,0x16,0x65 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics>{ static constexpr GUID value{ 0x4570EDAB,0xD705,0x40C4,{ 0xA1,0xDC,0xE9,0xAC,0xFC,0xEF,0x85,0xF6 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IValuePatternIdentifiers>{ static constexpr GUID value{ 0x425BF64C,0x5333,0x4E41,{ 0xB4,0x70,0x2B,0xAD,0x14,0xEC,0xD0,0x85 } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics>{ static constexpr GUID value{ 0xC247E8F7,0xADCC,0x440F,{ 0xB1,0x23,0x33,0x78,0x8A,0x40,0x52,0x5A } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IWindowPatternIdentifiers>{ static constexpr GUID value{ 0x39F78BB4,0x7032,0x41E2,{ 0xB7,0x9E,0x27,0xB7,0x4A,0x86,0x28,0xDE } }; };
-template <> struct guid<Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics>{ static constexpr GUID value{ 0x07D0AD06,0x6302,0x4D29,{ 0x87,0x8B,0x19,0xDA,0x03,0xFC,0x22,0x8D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers>{ static constexpr guid value{ 0xD475A0C1,0x48B2,0x4E40,{ 0xA6,0xCF,0x3D,0xC4,0xB6,0x38,0xC0,0xDE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics>{ static constexpr guid value{ 0xE0E3A35D,0xD167,0x46DC,{ 0x95,0xAB,0x33,0x0A,0xF6,0x1A,0xEB,0xB5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationAnnotation>{ static constexpr guid value{ 0xFB3C30CA,0x03D8,0x4618,{ 0x91,0xBF,0xE4,0xD8,0x4F,0x4A,0xF3,0x18 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationAnnotationFactory>{ static constexpr guid value{ 0x4906FA52,0xDDC0,0x4E69,{ 0xB7,0x6B,0x01,0x9D,0x92,0x8D,0x82,0x2F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationAnnotationStatics>{ static constexpr guid value{ 0xE503EAB7,0x4EE5,0x48CB,{ 0xB5,0xB8,0xBB,0xCD,0x46,0xC9,0xD1,0xDA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiers>{ static constexpr guid value{ 0xE68A63CF,0x4345,0x4E2D,{ 0x8A,0x6A,0x49,0xCC,0xE1,0xFA,0x2D,0xCC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics>{ static constexpr guid value{ 0x4549399F,0x8340,0x4D67,{ 0xB9,0xBF,0x8C,0x2A,0xC6,0xA0,0x77,0x3A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2>{ static constexpr guid value{ 0xB5CBB1E2,0xD55F,0x46A9,{ 0x9E,0xDA,0x1A,0x47,0x42,0x51,0x5D,0xC3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3>{ static constexpr guid value{ 0x0F5CBEBD,0xB3EB,0x4083,{ 0xAD,0xC7,0x0C,0x2F,0x39,0xBB,0x35,0x43 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4>{ static constexpr guid value{ 0x5AF51F75,0x5913,0x4D78,{ 0xB3,0x30,0xA6,0xF5,0x0B,0x73,0xED,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ static constexpr guid value{ 0x986A8206,0xDE59,0x42F9,{ 0xA1,0xE7,0x62,0xB8,0xAF,0x9E,0x75,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ static constexpr guid value{ 0xDE52B00D,0x8328,0x4EAE,{ 0x80,0x35,0xF8,0xDB,0x99,0xC8,0xBA,0xC4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ static constexpr guid value{ 0x00F1ABB2,0x742C,0x446A,{ 0xA8,0xF6,0x16,0x72,0xB1,0x0D,0x28,0x74 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8>{ static constexpr guid value{ 0x8517B060,0x806C,0x5DC5,{ 0xBC,0x41,0x89,0x1B,0xB5,0xA4,0x7A,0xDF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationProperties>{ static constexpr guid value{ 0x68D7232C,0xE622,0x48E9,{ 0xAF,0x0B,0x1F,0xFA,0x33,0xCC,0x5C,0xBA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ static constexpr guid value{ 0xB618FD7B,0x32D0,0x4970,{ 0x9C,0x42,0x7C,0x03,0x9A,0xC7,0xBE,0x78 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ static constexpr guid value{ 0x3976547F,0x7089,0x4801,{ 0x8F,0x1D,0xAA,0xB7,0x80,0x90,0xD1,0xA0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3>{ static constexpr guid value{ 0x7B75D735,0x5CB1,0x42AD,{ 0x9B,0x57,0x5F,0xAB,0xA8,0xC1,0x86,0x7F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4>{ static constexpr guid value{ 0xF7D62655,0x311A,0x4B7C,{ 0xA1,0x31,0x52,0x4E,0x89,0xCD,0x3C,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ static constexpr guid value{ 0x0BE35B26,0xC8F9,0x41A2,{ 0xB4,0xDB,0xE6,0xA7,0xA3,0x2B,0x0C,0x34 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ static constexpr guid value{ 0xC61E030F,0xEB49,0x4E5D,{ 0xB0,0x12,0x4C,0x1C,0x96,0xC3,0x90,0x1B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ static constexpr guid value{ 0xF7E98BF3,0x8F91,0x4068,{ 0xA4,0xAD,0xB7,0xB4,0x02,0xD1,0x0A,0x2C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8>{ static constexpr guid value{ 0x432ECA20,0x171A,0x560D,{ 0x85,0x24,0x3E,0x65,0x1D,0x3A,0xD6,0xCA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IAutomationProperty>{ static constexpr guid value{ 0xB627195B,0x3227,0x4E16,{ 0x95,0x34,0xDD,0xEC,0xE3,0x0D,0xDB,0x46 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ static constexpr guid value{ 0xCCD7F4E6,0xE4F9,0x47FF,{ 0xBD,0xE7,0x37,0x8B,0x11,0xF7,0x8E,0x09 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ static constexpr guid value{ 0x2B87245C,0xED80,0x4FE5,{ 0x8E,0xB4,0x70,0x8A,0x39,0xC8,0x41,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDragPatternIdentifiers>{ static constexpr guid value{ 0x6266E985,0x4D07,0x4E80,{ 0x82,0xEB,0x8F,0x96,0x69,0x0A,0x1A,0x0C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>{ static constexpr guid value{ 0x2A05379D,0x1755,0x4082,{ 0x9D,0x90,0x46,0xF1,0x41,0x1D,0x79,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers>{ static constexpr guid value{ 0x11865133,0xA6FE,0x4634,{ 0xBD,0x18,0x0E,0xF6,0x12,0xB7,0xB2,0x08 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics>{ static constexpr guid value{ 0x1B693304,0x89FB,0x4B0A,{ 0x94,0x52,0xCA,0x2C,0x66,0xAA,0xF9,0xF3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers>{ static constexpr guid value{ 0xB006BAC0,0x751B,0x4D55,{ 0x92,0xCB,0x61,0x3E,0xC1,0xBD,0xF5,0xD0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics>{ static constexpr guid value{ 0xD7816FD4,0x6EE0,0x4F38,{ 0x8E,0x14,0x56,0xEF,0x21,0xAD,0xAC,0xFD } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers>{ static constexpr guid value{ 0x757744F1,0x3285,0x4FB1,{ 0x80,0x3B,0x25,0x45,0xBD,0x43,0x15,0x99 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics>{ static constexpr guid value{ 0x217D2402,0x5E46,0x4D61,{ 0x87,0x94,0xB8,0xEE,0x8E,0x77,0x47,0x14 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IGridPatternIdentifiers>{ static constexpr guid value{ 0xC902980F,0x96C5,0x450C,{ 0x90,0x44,0x7E,0x52,0xC2,0x4F,0x9E,0x94 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>{ static constexpr guid value{ 0x7BC452F3,0xA181,0x4137,{ 0x8D,0xE9,0x1F,0x9B,0x1A,0x83,0x20,0xED } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers>{ static constexpr guid value{ 0x5D5CD3B8,0x1E12,0x488B,{ 0xB0,0xEA,0x5E,0x6C,0xB8,0x98,0x16,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics>{ static constexpr guid value{ 0xA9CFA66F,0x6B84,0x4D71,{ 0x9E,0x48,0xD7,0x64,0xD3,0xBC,0xDA,0x8E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers>{ static constexpr guid value{ 0xF8760F45,0x33C9,0x467D,{ 0xBC,0x9E,0xD1,0x51,0x52,0x63,0xAC,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics>{ static constexpr guid value{ 0xCE23450F,0x1C27,0x457F,{ 0xB8,0x15,0x7A,0x5E,0x46,0x86,0x3D,0xBB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IScrollPatternIdentifiers>{ static constexpr guid value{ 0x366B1003,0x425C,0x4951,{ 0xAE,0x83,0xD5,0x21,0xE7,0x3B,0xC6,0x96 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics>{ static constexpr guid value{ 0x4BF8E0A1,0xFB7F,0x4FA4,{ 0x83,0xB3,0xCF,0xAE,0xB1,0x03,0xA6,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers>{ static constexpr guid value{ 0x2DAFA41A,0x3EF8,0x4BB5,{ 0xA0,0x2B,0x3E,0xE1,0xB2,0x27,0x47,0x40 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics>{ static constexpr guid value{ 0xA918D163,0x487E,0x4E3E,{ 0x9F,0x86,0x7B,0x44,0xAC,0xBE,0x27,0xCE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers>{ static constexpr guid value{ 0x4AA66FB0,0xE3F7,0x475F,{ 0xB7,0x8D,0xF8,0xA8,0x3B,0xB7,0x30,0xC4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics>{ static constexpr guid value{ 0x93035B4C,0x6B50,0x40A1,{ 0xB2,0x3F,0x5C,0x78,0xDD,0xBD,0x47,0x9A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers>{ static constexpr guid value{ 0x84347E19,0xCA4B,0x46A2,{ 0xA7,0x94,0xC8,0x79,0x28,0xA3,0xB1,0xAB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics>{ static constexpr guid value{ 0x43658779,0x5380,0x4F12,{ 0xB4,0x68,0xB4,0xF3,0x68,0xAD,0x44,0x99 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IStylesPatternIdentifiers>{ static constexpr guid value{ 0xB0E4E201,0xE89D,0x436B,{ 0x82,0x87,0x4F,0x79,0x03,0x46,0x68,0x79 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics>{ static constexpr guid value{ 0x528A457A,0xBC3C,0x4D48,{ 0x94,0xAF,0x1F,0x68,0x70,0x3C,0xA2,0x96 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers>{ static constexpr guid value{ 0xC326E5AD,0x8077,0x4C64,{ 0x98,0xE4,0xE8,0x3B,0xCF,0x1B,0x43,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics>{ static constexpr guid value{ 0x24C4B923,0xE9A2,0x4DE9,{ 0xB2,0xA4,0xA8,0xB2,0x2D,0x0B,0xE3,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITablePatternIdentifiers>{ static constexpr guid value{ 0x38D104FE,0x0D0C,0x412A,{ 0xBF,0x8D,0x51,0xED,0xE6,0x83,0xBA,0xF5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics>{ static constexpr guid value{ 0x75073D25,0x32C9,0x4903,{ 0xAE,0xCF,0xDC,0x35,0x04,0xCB,0xD2,0x44 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITogglePatternIdentifiers>{ static constexpr guid value{ 0x7E191F6B,0x34D4,0x4AE7,{ 0x83,0xAC,0x29,0xF8,0x88,0x82,0xD9,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics>{ static constexpr guid value{ 0xC7F75544,0x14A5,0x4F2F,{ 0x92,0xFC,0x76,0x05,0x24,0xDE,0x06,0xEA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITransformPattern2Identifiers>{ static constexpr guid value{ 0x08AAA03D,0xDEA7,0x402F,{ 0x80,0x97,0x9A,0x27,0x83,0xD6,0x0E,0x5D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics>{ static constexpr guid value{ 0x78963644,0x11F0,0x467C,{ 0xA7,0x2B,0x5D,0xAC,0x41,0xC1,0xF6,0xFE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITransformPatternIdentifiers>{ static constexpr guid value{ 0xE4115B8C,0xC3C8,0x4A37,{ 0xB9,0x94,0x27,0x09,0xA7,0x81,0x16,0x65 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics>{ static constexpr guid value{ 0x4570EDAB,0xD705,0x40C4,{ 0xA1,0xDC,0xE9,0xAC,0xFC,0xEF,0x85,0xF6 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IValuePatternIdentifiers>{ static constexpr guid value{ 0x425BF64C,0x5333,0x4E41,{ 0xB4,0x70,0x2B,0xAD,0x14,0xEC,0xD0,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics>{ static constexpr guid value{ 0xC247E8F7,0xADCC,0x440F,{ 0xB1,0x23,0x33,0x78,0x8A,0x40,0x52,0x5A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IWindowPatternIdentifiers>{ static constexpr guid value{ 0x39F78BB4,0x7032,0x41E2,{ 0xB7,0x9E,0x27,0xB7,0x4A,0x86,0x28,0xDE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics>{ static constexpr guid value{ 0x07D0AD06,0x6302,0x4D29,{ 0x87,0x8B,0x19,0xDA,0x03,0xFC,0x22,0x8D } }; };
 template <> struct default_interface<Windows::UI::Xaml::Automation::AnnotationPatternIdentifiers>{ using type = Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers; };
 template <> struct default_interface<Windows::UI::Xaml::Automation::AutomationAnnotation>{ using type = Windows::UI::Xaml::Automation::IAutomationAnnotation; };
 template <> struct default_interface<Windows::UI::Xaml::Automation::AutomationElementIdentifiers>{ using type = Windows::UI::Xaml::Automation::IAutomationElementIdentifiers; };
@@ -639,6 +647,457 @@ template <> struct default_interface<Windows::UI::Xaml::Automation::TransformPat
 template <> struct default_interface<Windows::UI::Xaml::Automation::TransformPatternIdentifiers>{ using type = Windows::UI::Xaml::Automation::ITransformPatternIdentifiers; };
 template <> struct default_interface<Windows::UI::Xaml::Automation::ValuePatternIdentifiers>{ using type = Windows::UI::Xaml::Automation::IValuePatternIdentifiers; };
 template <> struct default_interface<Windows::UI::Xaml::Automation::WindowPatternIdentifiers>{ using type = Windows::UI::Xaml::Automation::IWindowPatternIdentifiers; };
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnnotationTypeIdProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnnotationTypeNameProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthorProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateTimeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::UI::Xaml::Automation::AnnotationType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Type(Windows::UI::Xaml::Automation::AnnotationType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Element(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Element(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithElementParameter(Windows::UI::Xaml::Automation::AnnotationType type, void* element, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AcceleratorKeyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutomationIdProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BoundingRectangleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClassNameProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClickablePointProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasKeyboardFocusProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HelpTextProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsContentElementProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsControlElementProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsKeyboardFocusableProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOffscreenProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPasswordProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRequiredForFormProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemStatusProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LabeledByProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalizedControlTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NameProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OrientationProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LiveSettingProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ControlledPeersProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PositionInSetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SizeOfSetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LevelProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnnotationsProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LandmarkTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalizedLandmarkTypeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsPeripheralProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataValidForFormProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FullDescriptionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DescribedByProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowsToProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowsFromProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CultureProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HeadingLevelProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsDialogProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationProperties>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AcceleratorKeyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAcceleratorKey(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAcceleratorKey(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessKey(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAccessKey(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutomationIdProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAutomationId(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAutomationId(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HelpTextProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHelpText(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetHelpText(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRequiredForFormProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsRequiredForForm(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIsRequiredForForm(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemStatusProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemStatus(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetItemStatus(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemType(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetItemType(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LabeledByProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLabeledBy(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLabeledBy(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NameProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetName(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetName(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LiveSettingProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLiveSetting(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLiveSetting(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccessibilityViewProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessibilityView(void* element, Windows::UI::Xaml::Automation::Peers::AccessibilityView* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAccessibilityView(void* element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlledPeersProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetControlledPeers(void* element, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PositionInSetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPositionInSet(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPositionInSet(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SizeOfSetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSizeOfSet(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSizeOfSet(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LevelProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLevel(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLevel(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnnotationsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAnnotations(void* element, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LandmarkTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLandmarkType(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLandmarkType(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalizedLandmarkTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLocalizedLandmarkType(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLocalizedLandmarkType(void* element, void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsPeripheralProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsPeripheral(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIsPeripheral(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataValidForFormProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsDataValidForForm(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIsDataValidForForm(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FullDescriptionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFullDescription(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetFullDescription(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalizedControlTypeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLocalizedControlType(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLocalizedControlType(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DescribedByProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDescribedBy(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowsToProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFlowsTo(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowsFromProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFlowsFrom(void* element, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CultureProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCulture(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCulture(void* element, int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HeadingLevelProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHeadingLevel(void* element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetHeadingLevel(void* element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsDialogProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsDialog(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIsDialog(void* element, bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IAutomationProperty>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DockPositionProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDragPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DropEffectProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DropEffectsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GrabbedItemsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGrabbedProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DropTargetEffectProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DropTargetEffectsProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExpandCollapseStateProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ColumnProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColumnSpanProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContainingGridProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowSpanProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IGridPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ColumnCountProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowCountProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentViewProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedViewsProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsReadOnlyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LargeChangeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaximumProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinimumProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SmallChangeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ValueProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IScrollPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontallyScrollableProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalScrollPercentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalViewSizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NoScroll(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticallyScrollableProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalScrollPercentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalViewSizeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSelectedProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectionContainerProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanSelectMultipleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSelectionRequiredProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectionProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FormulaProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IStylesPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtendedPropertiesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FillColorProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FillPatternColorProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FillPatternStyleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShapeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StyleIdProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StyleNameProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ColumnHeaderItemsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowHeaderItemsProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITablePatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ColumnHeadersProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowHeadersProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RowOrColumnMajorProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITogglePatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ToggleStateProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITransformPattern2Identifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanZoomProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZoomLevelProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxZoomProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinZoomProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITransformPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanMoveProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanResizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanRotateProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IValuePatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsReadOnlyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ValueProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IWindowPatternIdentifiers>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanMaximizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanMinimizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsModalProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTopmostProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WindowInteractionStateProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WindowVisualStateProperty(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Automation_IAnnotationPatternIdentifiers
@@ -770,6 +1229,13 @@ struct consume_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics7
 template <> struct consume<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7> { template <typename D> using type = consume_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics7<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics8
+{
+    Windows::UI::Xaml::Automation::AutomationProperty IsDialogProperty() const;
+};
+template <> struct consume<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8> { template <typename D> using type = consume_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics8<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Xaml_Automation_IAutomationProperties
 {
 };
@@ -892,6 +1358,15 @@ struct consume_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics7
     void SetHeadingLevel(Windows::UI::Xaml::DependencyObject const& element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel const& value) const;
 };
 template <> struct consume<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7> { template <typename D> using type = consume_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics7<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics8
+{
+    Windows::UI::Xaml::DependencyProperty IsDialogProperty() const;
+    bool GetIsDialog(Windows::UI::Xaml::DependencyObject const& element) const;
+    void SetIsDialog(Windows::UI::Xaml::DependencyObject const& element, bool value) const;
+};
+template <> struct consume<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8> { template <typename D> using type = consume_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics8<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Automation_IAutomationProperty
@@ -1202,444 +1677,5 @@ struct consume_Windows_UI_Xaml_Automation_IWindowPatternIdentifiersStatics
     Windows::UI::Xaml::Automation::AutomationProperty WindowVisualStateProperty() const;
 };
 template <> struct consume<Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics> { template <typename D> using type = consume_Windows_UI_Xaml_Automation_IWindowPatternIdentifiersStatics<D>; };
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnnotationTypeIdProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnnotationTypeNameProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthorProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateTimeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::UI::Xaml::Automation::AnnotationType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Type(Windows::UI::Xaml::Automation::AnnotationType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Element(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Element(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithElementParameter(Windows::UI::Xaml::Automation::AnnotationType type, void* element, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationAnnotationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AcceleratorKeyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutomationIdProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BoundingRectangleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClassNameProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClickablePointProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasKeyboardFocusProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HelpTextProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsContentElementProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsControlElementProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsKeyboardFocusableProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOffscreenProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPasswordProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRequiredForFormProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemStatusProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LabeledByProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalizedControlTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NameProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OrientationProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LiveSettingProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ControlledPeersProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PositionInSetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SizeOfSetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LevelProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnnotationsProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LandmarkTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalizedLandmarkTypeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsPeripheralProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataValidForFormProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FullDescriptionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DescribedByProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowsToProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowsFromProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CultureProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HeadingLevelProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationProperties>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AcceleratorKeyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAcceleratorKey(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetAcceleratorKey(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessKey(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetAccessKey(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutomationIdProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAutomationId(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetAutomationId(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_HelpTextProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetHelpText(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetHelpText(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRequiredForFormProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsRequiredForForm(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetIsRequiredForForm(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemStatusProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetItemStatus(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetItemStatus(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetItemType(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetItemType(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LabeledByProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLabeledBy(void* element, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetLabeledBy(void* element, void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NameProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetName(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetName(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LiveSettingProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLiveSetting(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting* value) noexcept = 0;
-    virtual HRESULT __stdcall SetLiveSetting(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AccessibilityViewProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessibilityView(void* element, Windows::UI::Xaml::Automation::Peers::AccessibilityView* value) noexcept = 0;
-    virtual HRESULT __stdcall SetAccessibilityView(void* element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlledPeersProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetControlledPeers(void* element, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PositionInSetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetPositionInSet(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetPositionInSet(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_SizeOfSetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetSizeOfSet(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetSizeOfSet(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_LevelProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLevel(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetLevel(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnnotationsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAnnotations(void* element, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LandmarkTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLandmarkType(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType* value) noexcept = 0;
-    virtual HRESULT __stdcall SetLandmarkType(void* element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalizedLandmarkTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLocalizedLandmarkType(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetLocalizedLandmarkType(void* element, HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsPeripheralProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsPeripheral(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetIsPeripheral(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataValidForFormProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsDataValidForForm(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetIsDataValidForForm(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_FullDescriptionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFullDescription(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetFullDescription(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalizedControlTypeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLocalizedControlType(void* element, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetLocalizedControlType(void* element, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DescribedByProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDescribedBy(void* element, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowsToProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFlowsTo(void* element, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowsFromProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFlowsFrom(void* element, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CultureProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCulture(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetCulture(void* element, int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HeadingLevelProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetHeadingLevel(void* element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel* value) noexcept = 0;
-    virtual HRESULT __stdcall SetHeadingLevel(void* element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IAutomationProperty>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDockPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DockPositionProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDragPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DropEffectProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DropEffectsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_GrabbedItemsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGrabbedProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DropTargetEffectProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DropTargetEffectsProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExpandCollapseStateProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ColumnProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColumnSpanProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContainingGridProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowSpanProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IGridPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ColumnCountProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowCountProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentViewProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedViewsProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsReadOnlyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LargeChangeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaximumProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinimumProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SmallChangeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ValueProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IScrollPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontallyScrollableProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalScrollPercentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalViewSizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NoScroll(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticallyScrollableProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalScrollPercentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalViewSizeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSelectedProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectionContainerProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanSelectMultipleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSelectionRequiredProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectionProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FormulaProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IStylesPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExtendedPropertiesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FillColorProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FillPatternColorProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FillPatternStyleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShapeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StyleIdProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StyleNameProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ColumnHeaderItemsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowHeaderItemsProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITablePatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ColumnHeadersProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowHeadersProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RowOrColumnMajorProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITogglePatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ToggleStateProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITransformPattern2Identifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanZoomProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZoomLevelProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxZoomProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinZoomProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITransformPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanMoveProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanResizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanRotateProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IValuePatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsReadOnlyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ValueProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IWindowPatternIdentifiers>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanMaximizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanMinimizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsModalProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTopmostProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WindowInteractionStateProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WindowVisualStateProperty(void** value) noexcept = 0;
-};};
 
 }

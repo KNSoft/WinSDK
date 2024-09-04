@@ -360,7 +360,7 @@ __kernel_entry W32KAPI BOOL APIENTRY
 NtGdiGetWidthTable(
     _In_ HDC hdc,
     _In_ ULONG cSpecial,
-    _In_reads_(cwc) WCHAR *pwc,
+    _In_reads_(cwc) const WCHAR *pwc,
     _In_ ULONG cwc,
     _Out_writes_(cwc) USHORT *psWidth,
     _Out_opt_ WIDTHDATA *pwd,
@@ -2552,7 +2552,7 @@ BOOL APIENTRY NtGdiDwmCreatedBitmapRemotingOutput(
 __kernel_entry W32KAPI NTSTATUS APIENTRY
 NtGdiGetCurrentDpiInfo(
     _In_ HMONITOR hmon,
-    _Out_writes_bytes_(sizeof(DPI_INFORMATION)) PVOID pvStruct);
+    _Out_ DPI_INFORMATION* dpiInfo);
 
 _Must_inspect_result_
 _Success_(return == STATUS_SUCCESS)

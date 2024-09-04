@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,20 +16,20 @@ namespace winrt::impl {
 
 WINRT_EXPORT namespace winrt::Windows::System::Power::Diagnostics {
 
-struct [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] BackgroundEnergyDiagnostics
+struct BackgroundEnergyDiagnostics
 {
     BackgroundEnergyDiagnostics() = delete;
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static double DeviceSpecificConversionFactor();
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static uint64_t ComputeTotalEnergyUsage();
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static void ResetTotalEnergyUsage();
+    static double DeviceSpecificConversionFactor();
+    static uint64_t ComputeTotalEnergyUsage();
+    static void ResetTotalEnergyUsage();
 };
 
-struct [[deprecated("Foreground Energy Diagnostics has been deprecated. For more info, see MSDN.")]] ForegroundEnergyDiagnostics
+struct ForegroundEnergyDiagnostics
 {
     ForegroundEnergyDiagnostics() = delete;
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static double DeviceSpecificConversionFactor();
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static uint64_t ComputeTotalEnergyUsage();
-    [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] static void ResetTotalEnergyUsage();
+    static double DeviceSpecificConversionFactor();
+    static uint64_t ComputeTotalEnergyUsage();
+    static void ResetTotalEnergyUsage();
 };
 
 }

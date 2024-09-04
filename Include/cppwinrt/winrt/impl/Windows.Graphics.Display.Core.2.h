@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -50,7 +50,8 @@ struct WINRT_EBO HdmiDisplayInformation :
 };
 
 struct WINRT_EBO HdmiDisplayMode :
-    Windows::Graphics::Display::Core::IHdmiDisplayMode
+    Windows::Graphics::Display::Core::IHdmiDisplayMode,
+    impl::require<HdmiDisplayMode, Windows::Graphics::Display::Core::IHdmiDisplayMode2>
 {
     HdmiDisplayMode(std::nullptr_t) noexcept {}
 };

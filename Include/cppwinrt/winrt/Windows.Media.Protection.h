@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -59,72 +59,72 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Prote
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IHdcpSession)->add_ProtectionChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::IHdcpSession> consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged_revoker consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::IHdcpSession>(this, &abi_t<Windows::Media::Protection::IHdcpSession>::remove_ProtectionChanged, ProtectionChanged(handler));
+    return impl::make_event_revoker<D, ProtectionChanged_revoker>(this, ProtectionChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_IHdcpSession<D>::ProtectionChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::IHdcpSession)->remove_ProtectionChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::IHdcpSession)->remove_ProtectionChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(Windows::Media::Protection::ServiceRequestedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(Windows::Media::Protection::ServiceRequestedEventHandler const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->add_ServiceRequested(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::IMediaProtectionManager> consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(auto_revoke_t, Windows::Media::Protection::ServiceRequestedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested_revoker consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(auto_revoke_t, Windows::Media::Protection::ServiceRequestedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::IMediaProtectionManager>(this, &abi_t<Windows::Media::Protection::IMediaProtectionManager>::remove_ServiceRequested, ServiceRequested(handler));
+    return impl::make_event_revoker<D, ServiceRequested_revoker>(this, ServiceRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::ServiceRequested(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_ServiceRequested(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_ServiceRequested(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(Windows::Media::Protection::RebootNeededEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(Windows::Media::Protection::RebootNeededEventHandler const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->add_RebootNeeded(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::IMediaProtectionManager> consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(auto_revoke_t, Windows::Media::Protection::RebootNeededEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded_revoker consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(auto_revoke_t, Windows::Media::Protection::RebootNeededEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::IMediaProtectionManager>(this, &abi_t<Windows::Media::Protection::IMediaProtectionManager>::remove_RebootNeeded, RebootNeeded(handler));
+    return impl::make_event_revoker<D, RebootNeeded_revoker>(this, RebootNeeded(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::RebootNeeded(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_RebootNeeded(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_RebootNeeded(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(Windows::Media::Protection::ComponentLoadFailedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(Windows::Media::Protection::ComponentLoadFailedEventHandler const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->add_ComponentLoadFailed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::IMediaProtectionManager> consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(auto_revoke_t, Windows::Media::Protection::ComponentLoadFailedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed_revoker consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(auto_revoke_t, Windows::Media::Protection::ComponentLoadFailedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::IMediaProtectionManager>(this, &abi_t<Windows::Media::Protection::IMediaProtectionManager>::remove_ComponentLoadFailed, ComponentLoadFailed(handler));
+    return impl::make_event_revoker<D, ComponentLoadFailed_revoker>(this, ComponentLoadFailed(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_Protection_IMediaProtectionManager<D>::ComponentLoadFailed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_ComponentLoadFailed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::IMediaProtectionManager)->remove_ComponentLoadFailed(get_abi(cookie)));
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet consume_Windows_Media_Protection_IMediaProtectionManager<D>::Properties() const
@@ -153,16 +153,16 @@ template <typename D> void consume_Windows_Media_Protection_IMediaProtectionServ
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionServiceCompletion)->Complete(success));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_IMediaProtectionServiceRequest<D>::ProtectionSystem() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_IMediaProtectionServiceRequest<D>::ProtectionSystem() const
 {
-    GUID system{};
+    winrt::guid system{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionServiceRequest)->get_ProtectionSystem(put_abi(system)));
     return system;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_IMediaProtectionServiceRequest<D>::Type() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_IMediaProtectionServiceRequest<D>::Type() const
 {
-    GUID type{};
+    winrt::guid type{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::IMediaProtectionServiceRequest)->get_Type(put_abi(type)));
     return type;
 }
@@ -244,12 +244,12 @@ template <> struct delegate<Windows::Media::Protection::ComponentLoadFailedEvent
     {
         type(H&& handler) : implements_delegate<Windows::Media::Protection::ComponentLoadFailedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Protection::MediaProtectionManager const*>(&sender), *reinterpret_cast<Windows::Media::Protection::ComponentLoadFailedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -266,12 +266,12 @@ template <> struct delegate<Windows::Media::Protection::RebootNeededEventHandler
     {
         type(H&& handler) : implements_delegate<Windows::Media::Protection::RebootNeededEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Protection::MediaProtectionManager const*>(&sender));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -288,12 +288,12 @@ template <> struct delegate<Windows::Media::Protection::ServiceRequestedEventHan
     {
         type(H&& handler) : implements_delegate<Windows::Media::Protection::ServiceRequestedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Protection::MediaProtectionManager const*>(&sender), *reinterpret_cast<Windows::Media::Protection::ServiceRequestedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -306,488 +306,412 @@ template <> struct delegate<Windows::Media::Protection::ServiceRequestedEventHan
 template <typename D>
 struct produce<D, Windows::Media::Protection::IComponentLoadFailedEventArgs> : produce_base<D, Windows::Media::Protection::IComponentLoadFailedEventArgs>
 {
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Media::Protection::RevocationAndRenewalInformation));
             *value = detach_from<Windows::Media::Protection::RevocationAndRenewalInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Completion(void** value) noexcept final
+    int32_t WINRT_CALL get_Completion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Completion, WINRT_WRAP(Windows::Media::Protection::MediaProtectionServiceCompletion));
             *value = detach_from<Windows::Media::Protection::MediaProtectionServiceCompletion>(this->shim().Completion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IComponentRenewalStatics> : produce_base<D, Windows::Media::Protection::IComponentRenewalStatics>
 {
-    HRESULT __stdcall RenewSystemComponentsAsync(void* information, void** operation) noexcept final
+    int32_t WINRT_CALL RenewSystemComponentsAsync(void* information, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenewSystemComponentsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Protection::RenewalStatus, uint32_t>), Windows::Media::Protection::RevocationAndRenewalInformation const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Protection::RenewalStatus, uint32_t>>(this->shim().RenewSystemComponentsAsync(*reinterpret_cast<Windows::Media::Protection::RevocationAndRenewalInformation const*>(&information)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IHdcpSession> : produce_base<D, Windows::Media::Protection::IHdcpSession>
 {
-    HRESULT __stdcall IsEffectiveProtectionAtLeast(Windows::Media::Protection::HdcpProtection protection, bool* value) noexcept final
+    int32_t WINRT_CALL IsEffectiveProtectionAtLeast(Windows::Media::Protection::HdcpProtection protection, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEffectiveProtectionAtLeast, WINRT_WRAP(bool), Windows::Media::Protection::HdcpProtection const&);
             *value = detach_from<bool>(this->shim().IsEffectiveProtectionAtLeast(*reinterpret_cast<Windows::Media::Protection::HdcpProtection const*>(&protection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEffectiveProtection(void** value) noexcept final
+    int32_t WINRT_CALL GetEffectiveProtection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEffectiveProtection, WINRT_WRAP(Windows::Foundation::IReference<Windows::Media::Protection::HdcpProtection>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Media::Protection::HdcpProtection>>(this->shim().GetEffectiveProtection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection, void** value) noexcept final
+    int32_t WINRT_CALL SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDesiredMinProtectionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::HdcpSetProtectionResult>), Windows::Media::Protection::HdcpProtection const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::HdcpSetProtectionResult>>(this->shim().SetDesiredMinProtectionAsync(*reinterpret_cast<Windows::Media::Protection::HdcpProtection const*>(&protection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ProtectionChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ProtectionChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ProtectionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProtectionChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ProtectionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ProtectionChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ProtectionChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ProtectionChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ProtectionChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ProtectionChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionManager> : produce_base<D, Windows::Media::Protection::IMediaProtectionManager>
 {
-    HRESULT __stdcall add_ServiceRequested(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ServiceRequested(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ServiceRequested(*reinterpret_cast<Windows::Media::Protection::ServiceRequestedEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServiceRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Protection::ServiceRequestedEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ServiceRequested(*reinterpret_cast<Windows::Media::Protection::ServiceRequestedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ServiceRequested(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ServiceRequested(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ServiceRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ServiceRequested(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RebootNeeded(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ServiceRequested(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RebootNeeded, WINRT_WRAP(winrt::event_token), Windows::Media::Protection::RebootNeededEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().RebootNeeded(*reinterpret_cast<Windows::Media::Protection::RebootNeededEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RebootNeeded(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_RebootNeeded(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RebootNeeded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RebootNeeded(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ComponentLoadFailed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().RebootNeeded(*reinterpret_cast<Windows::Media::Protection::RebootNeededEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ComponentLoadFailed, WINRT_WRAP(winrt::event_token), Windows::Media::Protection::ComponentLoadFailedEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ComponentLoadFailed(*reinterpret_cast<Windows::Media::Protection::ComponentLoadFailedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RebootNeeded(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ComponentLoadFailed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RebootNeeded(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ComponentLoadFailed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ComponentLoadFailed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_ComponentLoadFailed(void* handler, event_token* cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ComponentLoadFailed(*reinterpret_cast<Windows::Media::Protection::ComponentLoadFailedEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ComponentLoadFailed(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ComponentLoadFailed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServer> : produce_base<D, Windows::Media::Protection::IMediaProtectionPMPServer>
 {
-    HRESULT __stdcall get_Properties(void** ppProperties) noexcept final
+    int32_t WINRT_CALL get_Properties(void** ppProperties) noexcept final
     {
         try
         {
             *ppProperties = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *ppProperties = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory> : produce_base<D, Windows::Media::Protection::IMediaProtectionPMPServerFactory>
 {
-    HRESULT __stdcall CreatePMPServer(void* pProperties, void** ppObject) noexcept final
+    int32_t WINRT_CALL CreatePMPServer(void* pProperties, void** ppObject) noexcept final
     {
         try
         {
             *ppObject = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePMPServer, WINRT_WRAP(Windows::Media::Protection::MediaProtectionPMPServer), Windows::Foundation::Collections::IPropertySet const&);
             *ppObject = detach_from<Windows::Media::Protection::MediaProtectionPMPServer>(this->shim().CreatePMPServer(*reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&pProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionServiceCompletion> : produce_base<D, Windows::Media::Protection::IMediaProtectionServiceCompletion>
 {
-    HRESULT __stdcall Complete(bool success) noexcept final
+    int32_t WINRT_CALL Complete(bool success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void), bool);
             this->shim().Complete(success);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IMediaProtectionServiceRequest> : produce_base<D, Windows::Media::Protection::IMediaProtectionServiceRequest>
 {
-    HRESULT __stdcall get_ProtectionSystem(GUID* system) noexcept final
+    int32_t WINRT_CALL get_ProtectionSystem(winrt::guid* system) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *system = detach_from<GUID>(this->shim().ProtectionSystem());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProtectionSystem, WINRT_WRAP(winrt::guid));
+            *system = detach_from<winrt::guid>(this->shim().ProtectionSystem());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(GUID* type) noexcept final
+    int32_t WINRT_CALL get_Type(winrt::guid* type) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *type = detach_from<GUID>(this->shim().Type());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(winrt::guid));
+            *type = detach_from<winrt::guid>(this->shim().Type());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IProtectionCapabilities> : produce_base<D, Windows::Media::Protection::IProtectionCapabilities>
 {
-    HRESULT __stdcall IsTypeSupported(HSTRING type, HSTRING keySystem, Windows::Media::Protection::ProtectionCapabilityResult* value) noexcept final
+    int32_t WINRT_CALL IsTypeSupported(void* type, void* keySystem, Windows::Media::Protection::ProtectionCapabilityResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTypeSupported, WINRT_WRAP(Windows::Media::Protection::ProtectionCapabilityResult), hstring const&, hstring const&);
             *value = detach_from<Windows::Media::Protection::ProtectionCapabilityResult>(this->shim().IsTypeSupported(*reinterpret_cast<hstring const*>(&type), *reinterpret_cast<hstring const*>(&keySystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IRevocationAndRenewalInformation> : produce_base<D, Windows::Media::Protection::IRevocationAndRenewalInformation>
 {
-    HRESULT __stdcall get_Items(void** items) noexcept final
+    int32_t WINRT_CALL get_Items(void** items) noexcept final
     {
         try
         {
             *items = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem>));
             *items = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IRevocationAndRenewalItem> : produce_base<D, Windows::Media::Protection::IRevocationAndRenewalItem>
 {
-    HRESULT __stdcall get_Reasons(Windows::Media::Protection::RevocationAndRenewalReasons* reasons) noexcept final
+    int32_t WINRT_CALL get_Reasons(Windows::Media::Protection::RevocationAndRenewalReasons* reasons) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reasons, WINRT_WRAP(Windows::Media::Protection::RevocationAndRenewalReasons));
             *reasons = detach_from<Windows::Media::Protection::RevocationAndRenewalReasons>(this->shim().Reasons());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeaderHash(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HeaderHash(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderHash, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HeaderHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PublicKeyHash(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PublicKeyHash(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PublicKeyHash, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PublicKeyHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* name) noexcept final
+    int32_t WINRT_CALL get_Name(void** name) noexcept final
     {
         try
         {
             *name = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *name = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RenewalId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RenewalId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenewalId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RenewalId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs> : produce_base<D, Windows::Media::Protection::IServiceRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::Media::Protection::IMediaProtectionServiceRequest));
             *value = detach_from<Windows::Media::Protection::IMediaProtectionServiceRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Completion(void** value) noexcept final
+    int32_t WINRT_CALL get_Completion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Completion, WINRT_WRAP(Windows::Media::Protection::MediaProtectionServiceCompletion));
             *value = detach_from<Windows::Media::Protection::MediaProtectionServiceCompletion>(this->shim().Completion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::IServiceRequestedEventArgs2> : produce_base<D, Windows::Media::Protection::IServiceRequestedEventArgs2>
 {
-    HRESULT __stdcall get_MediaPlaybackItem(void** value) noexcept final
+    int32_t WINRT_CALL get_MediaPlaybackItem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaPlaybackItem, WINRT_WRAP(Windows::Media::Playback::MediaPlaybackItem));
             *value = detach_from<Windows::Media::Playback::MediaPlaybackItem>(this->shim().MediaPlaybackItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -797,23 +721,23 @@ WINRT_EXPORT namespace winrt::Windows::Media::Protection {
 
 inline Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Protection::RenewalStatus, uint32_t> ComponentRenewal::RenewSystemComponentsAsync(Windows::Media::Protection::RevocationAndRenewalInformation const& information)
 {
-    return get_activation_factory<ComponentRenewal, Windows::Media::Protection::IComponentRenewalStatics>().RenewSystemComponentsAsync(information);
+    return impl::call_factory<ComponentRenewal, Windows::Media::Protection::IComponentRenewalStatics>([&](auto&& f) { return f.RenewSystemComponentsAsync(information); });
 }
 
 inline HdcpSession::HdcpSession() :
-    HdcpSession(get_activation_factory<HdcpSession>().ActivateInstance<HdcpSession>())
+    HdcpSession(impl::call_factory<HdcpSession>([](auto&& f) { return f.template ActivateInstance<HdcpSession>(); }))
 {}
 
 inline MediaProtectionManager::MediaProtectionManager() :
-    MediaProtectionManager(get_activation_factory<MediaProtectionManager>().ActivateInstance<MediaProtectionManager>())
+    MediaProtectionManager(impl::call_factory<MediaProtectionManager>([](auto&& f) { return f.template ActivateInstance<MediaProtectionManager>(); }))
 {}
 
 inline MediaProtectionPMPServer::MediaProtectionPMPServer(Windows::Foundation::Collections::IPropertySet const& pProperties) :
-    MediaProtectionPMPServer(get_activation_factory<MediaProtectionPMPServer, Windows::Media::Protection::IMediaProtectionPMPServerFactory>().CreatePMPServer(pProperties))
+    MediaProtectionPMPServer(impl::call_factory<MediaProtectionPMPServer, Windows::Media::Protection::IMediaProtectionPMPServerFactory>([&](auto&& f) { return f.CreatePMPServer(pProperties); }))
 {}
 
 inline ProtectionCapabilities::ProtectionCapabilities() :
-    ProtectionCapabilities(get_activation_factory<ProtectionCapabilities>().ActivateInstance<ProtectionCapabilities>())
+    ProtectionCapabilities(impl::call_factory<ProtectionCapabilities>([](auto&& f) { return f.template ActivateInstance<ProtectionCapabilities>(); }))
 {}
 
 template <typename L> ComponentLoadFailedEventHandler::ComponentLoadFailedEventHandler(L handler) :
@@ -821,11 +745,19 @@ template <typename L> ComponentLoadFailedEventHandler::ComponentLoadFailedEventH
 {}
 
 template <typename F> ComponentLoadFailedEventHandler::ComponentLoadFailedEventHandler(F* handler) :
-    ComponentLoadFailedEventHandler([=](auto&&... args) { handler(args...); })
+    ComponentLoadFailedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> ComponentLoadFailedEventHandler::ComponentLoadFailedEventHandler(O* object, M method) :
-    ComponentLoadFailedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    ComponentLoadFailedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> ComponentLoadFailedEventHandler::ComponentLoadFailedEventHandler(com_ptr<O>&& object, M method) :
+    ComponentLoadFailedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> ComponentLoadFailedEventHandler::ComponentLoadFailedEventHandler(weak_ref<O>&& object, M method) :
+    ComponentLoadFailedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void ComponentLoadFailedEventHandler::operator()(Windows::Media::Protection::MediaProtectionManager const& sender, Windows::Media::Protection::ComponentLoadFailedEventArgs const& e) const
@@ -838,11 +770,19 @@ template <typename L> RebootNeededEventHandler::RebootNeededEventHandler(L handl
 {}
 
 template <typename F> RebootNeededEventHandler::RebootNeededEventHandler(F* handler) :
-    RebootNeededEventHandler([=](auto&&... args) { handler(args...); })
+    RebootNeededEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> RebootNeededEventHandler::RebootNeededEventHandler(O* object, M method) :
-    RebootNeededEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    RebootNeededEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> RebootNeededEventHandler::RebootNeededEventHandler(com_ptr<O>&& object, M method) :
+    RebootNeededEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> RebootNeededEventHandler::RebootNeededEventHandler(weak_ref<O>&& object, M method) :
+    RebootNeededEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void RebootNeededEventHandler::operator()(Windows::Media::Protection::MediaProtectionManager const& sender) const
@@ -855,11 +795,19 @@ template <typename L> ServiceRequestedEventHandler::ServiceRequestedEventHandler
 {}
 
 template <typename F> ServiceRequestedEventHandler::ServiceRequestedEventHandler(F* handler) :
-    ServiceRequestedEventHandler([=](auto&&... args) { handler(args...); })
+    ServiceRequestedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> ServiceRequestedEventHandler::ServiceRequestedEventHandler(O* object, M method) :
-    ServiceRequestedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    ServiceRequestedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> ServiceRequestedEventHandler::ServiceRequestedEventHandler(com_ptr<O>&& object, M method) :
+    ServiceRequestedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> ServiceRequestedEventHandler::ServiceRequestedEventHandler(weak_ref<O>&& object, M method) :
+    ServiceRequestedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void ServiceRequestedEventHandler::operator()(Windows::Media::Protection::MediaProtectionManager const& sender, Windows::Media::Protection::ServiceRequestedEventArgs const& e) const
@@ -896,5 +844,3 @@ template<> struct hash<winrt::Windows::Media::Protection::RevocationAndRenewalIt
 template<> struct hash<winrt::Windows::Media::Protection::ServiceRequestedEventArgs> : winrt::impl::hash_base<winrt::Windows::Media::Protection::ServiceRequestedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

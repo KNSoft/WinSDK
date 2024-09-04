@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -12,6 +12,7 @@
 #include "winrt/impl/Windows.ApplicationModel.Contacts.1.h"
 #include "winrt/impl/Windows.ApplicationModel.Contacts.Provider.1.h"
 #include "winrt/impl/Windows.ApplicationModel.Core.1.h"
+#include "winrt/impl/Windows.ApplicationModel.DataTransfer.1.h"
 #include "winrt/impl/Windows.ApplicationModel.DataTransfer.ShareTarget.1.h"
 #include "winrt/impl/Windows.ApplicationModel.Search.1.h"
 #include "winrt/impl/Windows.ApplicationModel.UserDataAccounts.Provider.1.h"
@@ -27,7 +28,12 @@
 #include "winrt/impl/Windows.Storage.Pickers.Provider.1.h"
 #include "winrt/impl/Windows.Storage.Provider.1.h"
 #include "winrt/impl/Windows.Storage.Search.1.h"
+#include "winrt/impl/Windows.Storage.Streams.1.h"
 #include "winrt/impl/Windows.System.1.h"
+#include "winrt/impl/Windows.UI.1.h"
+#include "winrt/impl/Windows.Web.1.h"
+#include "winrt/impl/Windows.Web.Http.1.h"
+#include "winrt/impl/Windows.Web.UI.1.h"
 #include "winrt/impl/Windows.Graphics.Printing.1.h"
 #include "winrt/impl/Windows.UI.WebUI.1.h"
 
@@ -39,7 +45,20 @@ struct ActivatedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ActivatedEventHandler(L lambda);
     template <typename F> ActivatedEventHandler(F* function);
     template <typename O, typename M> ActivatedEventHandler(O* object, M method);
+    template <typename O, typename M> ActivatedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ActivatedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::Activation::IActivatedEventArgs const& eventArgs) const;
+};
+
+struct BackgroundActivatedEventHandler : Windows::Foundation::IUnknown
+{
+    BackgroundActivatedEventHandler(std::nullptr_t = nullptr) noexcept {}
+    template <typename L> BackgroundActivatedEventHandler(L lambda);
+    template <typename F> BackgroundActivatedEventHandler(F* function);
+    template <typename O, typename M> BackgroundActivatedEventHandler(O* object, M method);
+    template <typename O, typename M> BackgroundActivatedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BackgroundActivatedEventHandler(weak_ref<O>&& object, M method);
+    void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs const& eventArgs) const;
 };
 
 struct EnteredBackgroundEventHandler : Windows::Foundation::IUnknown
@@ -48,6 +67,8 @@ struct EnteredBackgroundEventHandler : Windows::Foundation::IUnknown
     template <typename L> EnteredBackgroundEventHandler(L lambda);
     template <typename F> EnteredBackgroundEventHandler(F* function);
     template <typename O, typename M> EnteredBackgroundEventHandler(O* object, M method);
+    template <typename O, typename M> EnteredBackgroundEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> EnteredBackgroundEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::IEnteredBackgroundEventArgs const& e) const;
 };
 
@@ -57,6 +78,8 @@ struct LeavingBackgroundEventHandler : Windows::Foundation::IUnknown
     template <typename L> LeavingBackgroundEventHandler(L lambda);
     template <typename F> LeavingBackgroundEventHandler(F* function);
     template <typename O, typename M> LeavingBackgroundEventHandler(O* object, M method);
+    template <typename O, typename M> LeavingBackgroundEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> LeavingBackgroundEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::ILeavingBackgroundEventArgs const& e) const;
 };
 
@@ -66,6 +89,8 @@ struct NavigatedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NavigatedEventHandler(L lambda);
     template <typename F> NavigatedEventHandler(F* function);
     template <typename O, typename M> NavigatedEventHandler(O* object, M method);
+    template <typename O, typename M> NavigatedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NavigatedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::WebUI::IWebUINavigatedEventArgs const& e) const;
 };
 
@@ -75,6 +100,8 @@ struct ResumingEventHandler : Windows::Foundation::IUnknown
     template <typename L> ResumingEventHandler(L lambda);
     template <typename F> ResumingEventHandler(F* function);
     template <typename O, typename M> ResumingEventHandler(O* object, M method);
+    template <typename O, typename M> ResumingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ResumingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender) const;
 };
 
@@ -84,6 +111,8 @@ struct SuspendingEventHandler : Windows::Foundation::IUnknown
     template <typename L> SuspendingEventHandler(L lambda);
     template <typename F> SuspendingEventHandler(F* function);
     template <typename O, typename M> SuspendingEventHandler(O* object, M method);
+    template <typename O, typename M> SuspendingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SuspendingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::ISuspendingEventArgs const& e) const;
 };
 
@@ -107,6 +136,12 @@ struct WINRT_EBO ActivatedOperation :
     ActivatedOperation(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO BackgroundActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs
+{
+    BackgroundActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO EnteredBackgroundEventArgs :
     Windows::ApplicationModel::IEnteredBackgroundEventArgs
 {
@@ -124,6 +159,12 @@ struct WINRT_EBO LeavingBackgroundEventArgs :
     Windows::ApplicationModel::ILeavingBackgroundEventArgs
 {
     LeavingBackgroundEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO NewWebUIViewCreatedEventArgs :
+    Windows::UI::WebUI::INewWebUIViewCreatedEventArgs
+{
+    NewWebUIViewCreatedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO SuspendingDeferral :
@@ -147,33 +188,41 @@ struct WINRT_EBO SuspendingOperation :
 struct WebUIApplication
 {
     WebUIApplication() = delete;
-    static event_token Activated(Windows::UI::WebUI::ActivatedEventHandler const& handler);
-    using Activated_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics>;
+    static winrt::event_token Activated(Windows::UI::WebUI::ActivatedEventHandler const& handler);
+    using Activated_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics>::remove_Activated>;
     static Activated_revoker Activated(auto_revoke_t, Windows::UI::WebUI::ActivatedEventHandler const& handler);
-    static void Activated(event_token const& token);
-    static event_token Suspending(Windows::UI::WebUI::SuspendingEventHandler const& handler);
-    using Suspending_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics>;
+    static void Activated(winrt::event_token const& token);
+    static winrt::event_token Suspending(Windows::UI::WebUI::SuspendingEventHandler const& handler);
+    using Suspending_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics>::remove_Suspending>;
     static Suspending_revoker Suspending(auto_revoke_t, Windows::UI::WebUI::SuspendingEventHandler const& handler);
-    static void Suspending(event_token const& token);
-    static event_token Resuming(Windows::UI::WebUI::ResumingEventHandler const& handler);
-    using Resuming_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics>;
+    static void Suspending(winrt::event_token const& token);
+    static winrt::event_token Resuming(Windows::UI::WebUI::ResumingEventHandler const& handler);
+    using Resuming_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics>::remove_Resuming>;
     static Resuming_revoker Resuming(auto_revoke_t, Windows::UI::WebUI::ResumingEventHandler const& handler);
-    static void Resuming(event_token const& token);
-    static event_token Navigated(Windows::UI::WebUI::NavigatedEventHandler const& handler);
-    using Navigated_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics>;
+    static void Resuming(winrt::event_token const& token);
+    static winrt::event_token Navigated(Windows::UI::WebUI::NavigatedEventHandler const& handler);
+    using Navigated_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics>::remove_Navigated>;
     static Navigated_revoker Navigated(auto_revoke_t, Windows::UI::WebUI::NavigatedEventHandler const& handler);
-    static void Navigated(event_token const& token);
-    static event_token LeavingBackground(Windows::UI::WebUI::LeavingBackgroundEventHandler const& handler);
-    using LeavingBackground_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics2>;
+    static void Navigated(winrt::event_token const& token);
+    static winrt::event_token LeavingBackground(Windows::UI::WebUI::LeavingBackgroundEventHandler const& handler);
+    using LeavingBackground_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics2, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics2>::remove_LeavingBackground>;
     static LeavingBackground_revoker LeavingBackground(auto_revoke_t, Windows::UI::WebUI::LeavingBackgroundEventHandler const& handler);
-    static void LeavingBackground(event_token const& token);
-    static event_token EnteredBackground(Windows::UI::WebUI::EnteredBackgroundEventHandler const& handler);
-    using EnteredBackground_revoker = factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics2>;
+    static void LeavingBackground(winrt::event_token const& token);
+    static winrt::event_token EnteredBackground(Windows::UI::WebUI::EnteredBackgroundEventHandler const& handler);
+    using EnteredBackground_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics2, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics2>::remove_EnteredBackground>;
     static EnteredBackground_revoker EnteredBackground(auto_revoke_t, Windows::UI::WebUI::EnteredBackgroundEventHandler const& handler);
-    static void EnteredBackground(event_token const& token);
+    static void EnteredBackground(winrt::event_token const& token);
     static void EnablePrelaunch(bool value);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Core::AppRestartFailureReason> RequestRestartAsync(param::hstring const& launchArguments);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Core::AppRestartFailureReason> RequestRestartForUserAsync(Windows::System::User const& user, param::hstring const& launchArguments);
+    static winrt::event_token NewWebUIViewCreated(Windows::Foundation::EventHandler<Windows::UI::WebUI::NewWebUIViewCreatedEventArgs> const& handler);
+    using NewWebUIViewCreated_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics4, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics4>::remove_NewWebUIViewCreated>;
+    static NewWebUIViewCreated_revoker NewWebUIViewCreated(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::WebUI::NewWebUIViewCreatedEventArgs> const& handler);
+    static void NewWebUIViewCreated(winrt::event_token const& token);
+    static winrt::event_token BackgroundActivated(Windows::UI::WebUI::BackgroundActivatedEventHandler const& handler);
+    using BackgroundActivated_revoker = impl::factory_event_revoker<Windows::UI::WebUI::IWebUIActivationStatics4, &impl::abi_t<Windows::UI::WebUI::IWebUIActivationStatics4>::remove_BackgroundActivated>;
+    static BackgroundActivated_revoker BackgroundActivated(auto_revoke_t, Windows::UI::WebUI::BackgroundActivatedEventHandler const& handler);
+    static void BackgroundActivated(winrt::event_token const& token);
 };
 
 struct WINRT_EBO WebUIAppointmentsProviderAddAppointmentActivatedEventArgs :
@@ -485,6 +534,15 @@ struct WINRT_EBO WebUIUserDataAccountProviderActivatedEventArgs :
     impl::require<WebUIUserDataAccountProviderActivatedEventArgs, Windows::UI::WebUI::IActivatedEventArgsDeferral>
 {
     WebUIUserDataAccountProviderActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO WebUIView :
+    Windows::UI::WebUI::IWebUIView,
+    impl::require<WebUIView, Windows::Web::UI::IWebViewControl, Windows::Web::UI::IWebViewControl2>
+{
+    WebUIView(std::nullptr_t) noexcept {}
+    static Windows::Foundation::IAsyncOperation<Windows::UI::WebUI::WebUIView> CreateAsync();
+    static Windows::Foundation::IAsyncOperation<Windows::UI::WebUI::WebUIView> CreateAsync(Windows::Foundation::Uri const& uri);
 };
 
 struct WINRT_EBO WebUIVoiceCommandActivatedEventArgs :

@@ -6205,6 +6205,36 @@ typedef struct _WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS
 
 
 //
+// Parameters for WDI_INDICATION_DEVICE_SERVICE_EVENT
+//
+typedef struct _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS
+{
+    struct _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS_Optional
+    {
+        UINT32 Params_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS_Optional() : Params_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_GUID_CONTAINER DeviceServiceGUID;
+    UINT32_CONTAINER Opcode;
+#ifdef __cplusplus
+    ArrayOfElements<WDI_BYTE_BLOB> Params;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_BYTE_BLOB Params;
+#endif // __cplusplus
+#ifdef __cplusplus
+    _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS() : Opcode( (UINT32_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS, *PWDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS;
+
+
+//
 // this is just a test
 //
 typedef struct _WDI_TASK_TEST_PARAMETERS
@@ -9040,6 +9070,26 @@ extern "C" {
         _Out_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS* pParsedMessage );
     void __stdcall CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv( _In_ WDI_INDICATION_CIPHER_KEY_UPDATED_PARAMETERS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiIndicationDeviceServiceEventFromIhv(
+        _In_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiIndicationDeviceServiceEventFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiIndicationDeviceServiceEventFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiIndicationDeviceServiceEventFromIhv( _In_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiTestTask(
         _In_ WDI_TASK_TEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -9336,6 +9386,8 @@ extern "C" {
 #define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandFromIhv
 #define ParseWdiIndicationCipherKeyUpdated ParseWdiIndicationCipherKeyUpdatedFromIhv
 #define CleanupParsedWdiIndicationCipherKeyUpdated CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv
+#define ParseWdiIndicationDeviceServiceEvent ParseWdiIndicationDeviceServiceEventFromIhv
+#define CleanupParsedWdiIndicationDeviceServiceEvent CleanupParsedWdiIndicationDeviceServiceEventFromIhv
 #define Parse ParseFromIhv
 #define FreeParsed FreeParsedFromIhv
 
@@ -9544,6 +9596,7 @@ extern "C" {
 #define CleanupParsedWdiDeviceServiceCommand CleanupParsedWdiDeviceServiceCommandToIhv
 #define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandFromIhv
 #define GenerateWdiIndicationCipherKeyUpdated GenerateWdiIndicationCipherKeyUpdatedFromIhv
+#define GenerateWdiIndicationDeviceServiceEvent GenerateWdiIndicationDeviceServiceEventFromIhv
 #define Parse ParseToIhv
 #define FreeParsed FreeParsedToIhv
 

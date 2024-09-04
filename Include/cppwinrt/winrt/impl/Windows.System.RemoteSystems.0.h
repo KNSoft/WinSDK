@@ -1,9 +1,15 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
+WINRT_EXPORT namespace winrt::Windows::ApplicationModel::AppService {
+
+struct AppServiceConnection;
+
+}
 
 WINRT_EXPORT namespace winrt::Windows::Foundation {
 
@@ -20,6 +26,18 @@ struct ValueSet;
 WINRT_EXPORT namespace winrt::Windows::Networking {
 
 struct HostName;
+
+}
+
+WINRT_EXPORT namespace winrt::Windows::Security::Credentials {
+
+struct WebAccount;
+
+}
+
+WINRT_EXPORT namespace winrt::Windows::System {
+
+struct User;
 
 }
 
@@ -131,11 +149,19 @@ struct IRemoteSystem;
 struct IRemoteSystem2;
 struct IRemoteSystem3;
 struct IRemoteSystem4;
+struct IRemoteSystem5;
 struct IRemoteSystemAddedEventArgs;
+struct IRemoteSystemApp;
+struct IRemoteSystemAppRegistration;
+struct IRemoteSystemAppRegistrationStatics;
 struct IRemoteSystemAuthorizationKindFilter;
 struct IRemoteSystemAuthorizationKindFilterFactory;
+struct IRemoteSystemConnectionInfo;
+struct IRemoteSystemConnectionInfoStatics;
 struct IRemoteSystemConnectionRequest;
+struct IRemoteSystemConnectionRequest2;
 struct IRemoteSystemConnectionRequestFactory;
+struct IRemoteSystemConnectionRequestStatics;
 struct IRemoteSystemDiscoveryTypeFilter;
 struct IRemoteSystemDiscoveryTypeFilterFactory;
 struct IRemoteSystemEnumerationCompletedEventArgs;
@@ -178,10 +204,15 @@ struct IRemoteSystemUpdatedEventArgs;
 struct IRemoteSystemWatcher;
 struct IRemoteSystemWatcher2;
 struct IRemoteSystemWatcherErrorOccurredEventArgs;
+struct IRemoteSystemWebAccountFilter;
+struct IRemoteSystemWebAccountFilterFactory;
 struct KnownRemoteSystemCapabilities;
 struct RemoteSystem;
 struct RemoteSystemAddedEventArgs;
+struct RemoteSystemApp;
+struct RemoteSystemAppRegistration;
 struct RemoteSystemAuthorizationKindFilter;
+struct RemoteSystemConnectionInfo;
 struct RemoteSystemConnectionRequest;
 struct RemoteSystemDiscoveryTypeFilter;
 struct RemoteSystemEnumerationCompletedEventArgs;
@@ -214,6 +245,7 @@ struct RemoteSystemStatusTypeFilter;
 struct RemoteSystemUpdatedEventArgs;
 struct RemoteSystemWatcher;
 struct RemoteSystemWatcherErrorOccurredEventArgs;
+struct RemoteSystemWebAccountFilter;
 
 }
 
@@ -224,11 +256,19 @@ template <> struct category<Windows::System::RemoteSystems::IRemoteSystem>{ usin
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystem2>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystem3>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystem4>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystem5>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemApp>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemAppRegistration>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemAppRegistrationStatics>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionInfo>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionInfoStatics>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestStatics>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ using type = interface_category; };
@@ -271,10 +311,15 @@ template <> struct category<Windows::System::RemoteSystems::IRemoteSystemUpdated
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter>{ using type = interface_category; };
+template <> struct category<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilterFactory>{ using type = interface_category; };
 template <> struct category<Windows::System::RemoteSystems::KnownRemoteSystemCapabilities>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystem>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemAddedEventArgs>{ using type = class_category; };
+template <> struct category<Windows::System::RemoteSystems::RemoteSystemApp>{ using type = class_category; };
+template <> struct category<Windows::System::RemoteSystems::RemoteSystemAppRegistration>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemAuthorizationKindFilter>{ using type = class_category; };
+template <> struct category<Windows::System::RemoteSystems::RemoteSystemConnectionInfo>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemConnectionRequest>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs>{ using type = class_category; };
@@ -307,6 +352,7 @@ template <> struct category<Windows::System::RemoteSystems::RemoteSystemStatusTy
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemWatcher>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs>{ using type = class_category; };
+template <> struct category<Windows::System::RemoteSystems::RemoteSystemWebAccountFilter>{ using type = class_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemAccessStatus>{ using type = enum_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemAuthorizationKind>{ using type = enum_category; };
 template <> struct category<Windows::System::RemoteSystems::RemoteSystemDiscoveryType>{ using type = enum_category; };
@@ -325,11 +371,19 @@ template <> struct name<Windows::System::RemoteSystems::IRemoteSystem>{ static c
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystem2>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystem2" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystem3>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystem3" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystem4>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystem4" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystem5>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystem5" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemAddedEventArgs" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemApp>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemApp" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemAppRegistration>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemAppRegistration" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemAppRegistrationStatics>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemAppRegistrationStatics" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionInfo>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionInfo" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionInfoStatics>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionInfoStatics" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionRequest" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionRequest2" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestStatics>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemConnectionRequestStatics" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemEnumerationCompletedEventArgs" }; };
@@ -372,10 +426,15 @@ template <> struct name<Windows::System::RemoteSystems::IRemoteSystemUpdatedEven
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemWatcher" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemWatcher2" }; };
 template <> struct name<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemWatcherErrorOccurredEventArgs" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemWebAccountFilter" }; };
+template <> struct name<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilterFactory>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.IRemoteSystemWebAccountFilterFactory" }; };
 template <> struct name<Windows::System::RemoteSystems::KnownRemoteSystemCapabilities>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.KnownRemoteSystemCapabilities" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystem>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystem" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemAddedEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemAddedEventArgs" }; };
+template <> struct name<Windows::System::RemoteSystems::RemoteSystemApp>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemApp" }; };
+template <> struct name<Windows::System::RemoteSystems::RemoteSystemAppRegistration>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemAppRegistration" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemAuthorizationKindFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter" }; };
+template <> struct name<Windows::System::RemoteSystems::RemoteSystemConnectionInfo>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemConnectionInfo" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemConnectionRequest>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemConnectionRequest" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemEnumerationCompletedEventArgs" }; };
@@ -408,6 +467,7 @@ template <> struct name<Windows::System::RemoteSystems::RemoteSystemStatusTypeFi
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemWatcher>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemWatcher" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemWatcherErrorOccurredEventArgs" }; };
+template <> struct name<Windows::System::RemoteSystems::RemoteSystemWebAccountFilter>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemWebAccountFilter" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemAccessStatus>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemAccessStatus" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemAuthorizationKind>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemAuthorizationKind" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemDiscoveryType>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemDiscoveryType" }; };
@@ -421,61 +481,74 @@ template <> struct name<Windows::System::RemoteSystems::RemoteSystemSessionWatch
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemStatus>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemStatus" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemStatusType>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemStatusType" }; };
 template <> struct name<Windows::System::RemoteSystems::RemoteSystemWatcherError>{ static constexpr auto & value{ L"Windows.System.RemoteSystems.RemoteSystemWatcherError" }; };
-template <> struct guid<Windows::System::RemoteSystems::IKnownRemoteSystemCapabilitiesStatics>{ static constexpr GUID value{ 0x8108E380,0x7F8A,0x44E4,{ 0x92,0xCD,0x03,0xB6,0x46,0x9B,0x94,0xA3 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystem>{ static constexpr GUID value{ 0xED5838CD,0x1E10,0x4A8C,{ 0xB4,0xA6,0x4E,0x5F,0xD6,0xF9,0x77,0x21 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystem2>{ static constexpr GUID value{ 0x09DFE4EC,0xFB8B,0x4A08,{ 0xA7,0x58,0x68,0x76,0x43,0x5D,0x76,0x9E } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystem3>{ static constexpr GUID value{ 0x72B4B495,0xB7C6,0x40BE,{ 0x83,0x1B,0x73,0x56,0x2F,0x12,0xFF,0xA8 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystem4>{ static constexpr GUID value{ 0xF164FFE5,0xB987,0x4CA5,{ 0x99,0x26,0xFA,0x04,0x38,0xBE,0x62,0x73 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ static constexpr GUID value{ 0x8F39560F,0xE534,0x4697,{ 0x88,0x36,0x7A,0xBE,0xA1,0x51,0x51,0x6E } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ static constexpr GUID value{ 0x6B0DDE8E,0x04D0,0x40F4,{ 0xA2,0x7F,0xC2,0xAC,0xBB,0xD6,0xB7,0x34 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ static constexpr GUID value{ 0xAD65DF4D,0xB66A,0x45A4,{ 0x81,0x77,0x8C,0xAE,0xD7,0x5D,0x9E,0x5A } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ static constexpr GUID value{ 0x84ED4104,0x8D5E,0x4D72,{ 0x82,0x38,0x76,0x21,0x57,0x6C,0x7A,0x67 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ static constexpr GUID value{ 0xAA0A0A20,0xBAEB,0x4575,{ 0xB5,0x30,0x81,0x0B,0xB9,0x78,0x63,0x34 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ static constexpr GUID value{ 0x42D9041F,0xEE5A,0x43DA,{ 0xAC,0x6A,0x6F,0xEE,0x25,0x46,0x07,0x41 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ static constexpr GUID value{ 0x9F9EB993,0xC260,0x4161,{ 0x92,0xF2,0x9C,0x02,0x1F,0x23,0xFE,0x5D } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ static constexpr GUID value{ 0xC6E83D5F,0x4030,0x4354,{ 0xA0,0x60,0x14,0xF1,0xB2,0x2C,0x54,0x5D } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemFilter>{ static constexpr GUID value{ 0x4A3BA9E4,0x99EB,0x45EB,{ 0xBA,0x16,0x03,0x67,0x72,0x8F,0xF3,0x74 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemKindFilter>{ static constexpr GUID value{ 0x38E1C9EC,0x22C3,0x4EF6,{ 0x90,0x1A,0xBB,0xB1,0xC7,0xAA,0xD4,0xED } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory>{ static constexpr GUID value{ 0xA1FB18EE,0x99EA,0x40BC,{ 0x9A,0x39,0xC6,0x70,0xAA,0x80,0x4A,0x28 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemKindStatics>{ static constexpr GUID value{ 0xF6317633,0xAB14,0x41D0,{ 0x95,0x53,0x79,0x6A,0xAD,0xB8,0x82,0xDB } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemKindStatics2>{ static constexpr GUID value{ 0xB9E3A3D0,0x0466,0x4749,{ 0x91,0xE8,0x65,0xF9,0xD1,0x9A,0x96,0xA5 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>{ static constexpr GUID value{ 0x8B3D16BB,0x7306,0x49EA,{ 0xB7,0xDF,0x67,0xD5,0x71,0x4C,0xB0,0x13 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSession>{ static constexpr GUID value{ 0x69476A01,0x9ADA,0x490F,{ 0x95,0x49,0xD3,0x1C,0xB1,0x4C,0x9E,0x95 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionAddedEventArgs>{ static constexpr GUID value{ 0xD585D754,0xBC97,0x4C39,{ 0x99,0xB4,0xBE,0xCA,0x76,0xE0,0x4C,0x3F } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionController>{ static constexpr GUID value{ 0xE48B2DD2,0x6820,0x4867,{ 0xB4,0x25,0xD8,0x9C,0x0A,0x3E,0xF7,0xBA } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionControllerFactory>{ static constexpr GUID value{ 0xBFCC2F6B,0xAC3D,0x4199,{ 0x82,0xCD,0x66,0x70,0xA7,0x73,0xEF,0x2E } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionCreationResult>{ static constexpr GUID value{ 0xA79812C2,0x37DE,0x448C,{ 0x8B,0x83,0xA3,0x0A,0xA3,0xC4,0xEA,0xD6 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionDisconnectedEventArgs>{ static constexpr GUID value{ 0xDE0BC69B,0x77C5,0x461C,{ 0x82,0x09,0x7C,0x6C,0x5D,0x31,0x11,0xAB } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionInfo>{ static constexpr GUID value{ 0xFF4DF648,0x8B0A,0x4E9A,{ 0x99,0x05,0x69,0xE4,0xB8,0x41,0xC5,0x88 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionInvitation>{ static constexpr GUID value{ 0x3E32CC91,0x51D7,0x4766,{ 0xA1,0x21,0x25,0x51,0x6C,0x3B,0x82,0x94 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>{ static constexpr GUID value{ 0x08F4003F,0xBC71,0x49E1,{ 0x87,0x4A,0x31,0xDD,0xFF,0x9A,0x27,0xB9 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationReceivedEventArgs>{ static constexpr GUID value{ 0x5E964A2D,0xA10D,0x4EDB,{ 0x8D,0xEA,0x54,0xD2,0x0A,0xC1,0x95,0x43 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequest>{ static constexpr GUID value{ 0x20600068,0x7994,0x4331,{ 0x86,0xD1,0xD8,0x9D,0x88,0x25,0x85,0xEE } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequestedEventArgs>{ static constexpr GUID value{ 0xDBCA4FC3,0x82B9,0x4816,{ 0x9C,0x24,0xE4,0x0E,0x61,0x77,0x4B,0xD8 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionJoinResult>{ static constexpr GUID value{ 0xCE7B1F04,0xA03E,0x41A4,{ 0x90,0x0B,0x1E,0x79,0x32,0x8C,0x12,0x67 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>{ static constexpr GUID value{ 0x9524D12A,0x73D9,0x4C10,{ 0xB7,0x51,0xC2,0x67,0x84,0x43,0x71,0x27 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannelFactory>{ static constexpr GUID value{ 0x295E1C4A,0xBD16,0x4298,{ 0xB7,0xCE,0x41,0x54,0x82,0xB0,0xE1,0x1D } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionOptions>{ static constexpr GUID value{ 0x740ED755,0x8418,0x4F01,{ 0x93,0x53,0xE2,0x1C,0x9E,0xCC,0x6C,0xFC } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionParticipant>{ static constexpr GUID value{ 0x7E90058C,0xACF9,0x4729,{ 0x8A,0x17,0x44,0xE7,0xBA,0xED,0x5D,0xCC } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantAddedEventArgs>{ static constexpr GUID value{ 0xD35A57D8,0xC9A1,0x4BB7,{ 0xB6,0xB0,0x79,0xBB,0x91,0xAD,0xF9,0x3D } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantRemovedEventArgs>{ static constexpr GUID value{ 0x866EF088,0xDE68,0x4ABF,{ 0x88,0xA1,0xF9,0x0D,0x16,0x27,0x41,0x92 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>{ static constexpr GUID value{ 0xDCDD02CC,0xAA87,0x4D79,{ 0xB6,0xCC,0x44,0x59,0xB3,0xE9,0x20,0x75 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionRemovedEventArgs>{ static constexpr GUID value{ 0xAF82914E,0x39A1,0x4DEA,{ 0x9D,0x63,0x43,0x79,0x8D,0x5B,0xBB,0xD0 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionStatics>{ static constexpr GUID value{ 0x8524899F,0xFD20,0x44E3,{ 0x95,0x65,0xE7,0x5A,0x3B,0x14,0xC6,0x6E } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionUpdatedEventArgs>{ static constexpr GUID value{ 0x16875069,0x231E,0x4C91,{ 0x8E,0xC8,0xB3,0xA3,0x9D,0x9E,0x55,0xA3 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionValueSetReceivedEventArgs>{ static constexpr GUID value{ 0x06F31785,0x2DA5,0x4E58,{ 0xA7,0x8F,0x9E,0x8D,0x07,0x84,0xEE,0x25 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>{ static constexpr GUID value{ 0x8003E340,0x0C41,0x4A62,{ 0xB6,0xD7,0xBD,0xBE,0x2B,0x19,0xBE,0x2D } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemStatics>{ static constexpr GUID value{ 0xA485B392,0xFF2B,0x4B47,{ 0xBE,0x62,0x74,0x3F,0x2F,0x14,0x0F,0x30 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemStatics2>{ static constexpr GUID value{ 0x0C98EDCA,0x6F99,0x4C52,{ 0xA2,0x72,0xEA,0x4F,0x36,0x47,0x17,0x44 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>{ static constexpr GUID value{ 0x0C39514E,0xCBB6,0x4777,{ 0x85,0x34,0x2E,0x0C,0x52,0x1A,0xFF,0xA2 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory>{ static constexpr GUID value{ 0x33CF78FA,0xD724,0x4125,{ 0xAC,0x7A,0x8D,0x28,0x1E,0x44,0xC9,0x49 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>{ static constexpr GUID value{ 0x7502FF0E,0xDBCB,0x4155,{ 0xB4,0xCA,0xB3,0x0A,0x04,0xF2,0x76,0x27 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ static constexpr GUID value{ 0x5D600C7E,0x2C07,0x48C5,{ 0x88,0x9C,0x45,0x5D,0x2B,0x09,0x97,0x71 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ static constexpr GUID value{ 0x73436700,0x19CA,0x48F9,{ 0xA4,0xCD,0x78,0x0F,0x7A,0xD5,0x8C,0x71 } }; };
-template <> struct guid<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ static constexpr GUID value{ 0x74C5C6AF,0x5114,0x4426,{ 0x92,0x16,0x20,0xD8,0x1F,0x85,0x19,0xAE } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IKnownRemoteSystemCapabilitiesStatics>{ static constexpr guid value{ 0x8108E380,0x7F8A,0x44E4,{ 0x92,0xCD,0x03,0xB6,0x46,0x9B,0x94,0xA3 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystem>{ static constexpr guid value{ 0xED5838CD,0x1E10,0x4A8C,{ 0xB4,0xA6,0x4E,0x5F,0xD6,0xF9,0x77,0x21 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystem2>{ static constexpr guid value{ 0x09DFE4EC,0xFB8B,0x4A08,{ 0xA7,0x58,0x68,0x76,0x43,0x5D,0x76,0x9E } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystem3>{ static constexpr guid value{ 0x72B4B495,0xB7C6,0x40BE,{ 0x83,0x1B,0x73,0x56,0x2F,0x12,0xFF,0xA8 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystem4>{ static constexpr guid value{ 0xF164FFE5,0xB987,0x4CA5,{ 0x99,0x26,0xFA,0x04,0x38,0xBE,0x62,0x73 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystem5>{ static constexpr guid value{ 0xEB2AD723,0xE5E2,0x4AE2,{ 0xA7,0xA7,0xA1,0x09,0x7A,0x09,0x8E,0x90 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ static constexpr guid value{ 0x8F39560F,0xE534,0x4697,{ 0x88,0x36,0x7A,0xBE,0xA1,0x51,0x51,0x6E } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemApp>{ static constexpr guid value{ 0x80E5BCBD,0xD54D,0x41B1,{ 0x9B,0x16,0x68,0x10,0xA8,0x71,0xED,0x4F } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemAppRegistration>{ static constexpr guid value{ 0xB47947B5,0x7035,0x4A5A,{ 0xB8,0xDF,0x96,0x2D,0x8F,0x84,0x31,0xF4 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemAppRegistrationStatics>{ static constexpr guid value{ 0x01B99840,0xCFD2,0x453F,{ 0xAE,0x25,0xC2,0x53,0x9F,0x08,0x6A,0xFD } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ static constexpr guid value{ 0x6B0DDE8E,0x04D0,0x40F4,{ 0xA2,0x7F,0xC2,0xAC,0xBB,0xD6,0xB7,0x34 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ static constexpr guid value{ 0xAD65DF4D,0xB66A,0x45A4,{ 0x81,0x77,0x8C,0xAE,0xD7,0x5D,0x9E,0x5A } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionInfo>{ static constexpr guid value{ 0x23278BC3,0x0D09,0x52CB,{ 0x9C,0x6A,0xEE,0xD2,0x94,0x0B,0xEE,0x43 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionInfoStatics>{ static constexpr guid value{ 0xAC831E2D,0x66C5,0x56D7,{ 0xA4,0xCE,0x70,0x5D,0x94,0x92,0x5A,0xD6 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ static constexpr guid value{ 0x84ED4104,0x8D5E,0x4D72,{ 0x82,0x38,0x76,0x21,0x57,0x6C,0x7A,0x67 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2>{ static constexpr guid value{ 0x12DF6D6F,0xBFFC,0x483A,{ 0x8A,0xBE,0xD3,0x4A,0x6C,0x19,0xF9,0x2B } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ static constexpr guid value{ 0xAA0A0A20,0xBAEB,0x4575,{ 0xB5,0x30,0x81,0x0B,0xB9,0x78,0x63,0x34 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestStatics>{ static constexpr guid value{ 0x86CA143D,0x8214,0x425C,{ 0x89,0x32,0xDB,0x49,0x03,0x2D,0x13,0x06 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ static constexpr guid value{ 0x42D9041F,0xEE5A,0x43DA,{ 0xAC,0x6A,0x6F,0xEE,0x25,0x46,0x07,0x41 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ static constexpr guid value{ 0x9F9EB993,0xC260,0x4161,{ 0x92,0xF2,0x9C,0x02,0x1F,0x23,0xFE,0x5D } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ static constexpr guid value{ 0xC6E83D5F,0x4030,0x4354,{ 0xA0,0x60,0x14,0xF1,0xB2,0x2C,0x54,0x5D } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemFilter>{ static constexpr guid value{ 0x4A3BA9E4,0x99EB,0x45EB,{ 0xBA,0x16,0x03,0x67,0x72,0x8F,0xF3,0x74 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemKindFilter>{ static constexpr guid value{ 0x38E1C9EC,0x22C3,0x4EF6,{ 0x90,0x1A,0xBB,0xB1,0xC7,0xAA,0xD4,0xED } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory>{ static constexpr guid value{ 0xA1FB18EE,0x99EA,0x40BC,{ 0x9A,0x39,0xC6,0x70,0xAA,0x80,0x4A,0x28 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemKindStatics>{ static constexpr guid value{ 0xF6317633,0xAB14,0x41D0,{ 0x95,0x53,0x79,0x6A,0xAD,0xB8,0x82,0xDB } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemKindStatics2>{ static constexpr guid value{ 0xB9E3A3D0,0x0466,0x4749,{ 0x91,0xE8,0x65,0xF9,0xD1,0x9A,0x96,0xA5 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>{ static constexpr guid value{ 0x8B3D16BB,0x7306,0x49EA,{ 0xB7,0xDF,0x67,0xD5,0x71,0x4C,0xB0,0x13 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSession>{ static constexpr guid value{ 0x69476A01,0x9ADA,0x490F,{ 0x95,0x49,0xD3,0x1C,0xB1,0x4C,0x9E,0x95 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionAddedEventArgs>{ static constexpr guid value{ 0xD585D754,0xBC97,0x4C39,{ 0x99,0xB4,0xBE,0xCA,0x76,0xE0,0x4C,0x3F } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionController>{ static constexpr guid value{ 0xE48B2DD2,0x6820,0x4867,{ 0xB4,0x25,0xD8,0x9C,0x0A,0x3E,0xF7,0xBA } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionControllerFactory>{ static constexpr guid value{ 0xBFCC2F6B,0xAC3D,0x4199,{ 0x82,0xCD,0x66,0x70,0xA7,0x73,0xEF,0x2E } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionCreationResult>{ static constexpr guid value{ 0xA79812C2,0x37DE,0x448C,{ 0x8B,0x83,0xA3,0x0A,0xA3,0xC4,0xEA,0xD6 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionDisconnectedEventArgs>{ static constexpr guid value{ 0xDE0BC69B,0x77C5,0x461C,{ 0x82,0x09,0x7C,0x6C,0x5D,0x31,0x11,0xAB } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionInfo>{ static constexpr guid value{ 0xFF4DF648,0x8B0A,0x4E9A,{ 0x99,0x05,0x69,0xE4,0xB8,0x41,0xC5,0x88 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionInvitation>{ static constexpr guid value{ 0x3E32CC91,0x51D7,0x4766,{ 0xA1,0x21,0x25,0x51,0x6C,0x3B,0x82,0x94 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>{ static constexpr guid value{ 0x08F4003F,0xBC71,0x49E1,{ 0x87,0x4A,0x31,0xDD,0xFF,0x9A,0x27,0xB9 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationReceivedEventArgs>{ static constexpr guid value{ 0x5E964A2D,0xA10D,0x4EDB,{ 0x8D,0xEA,0x54,0xD2,0x0A,0xC1,0x95,0x43 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequest>{ static constexpr guid value{ 0x20600068,0x7994,0x4331,{ 0x86,0xD1,0xD8,0x9D,0x88,0x25,0x85,0xEE } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequestedEventArgs>{ static constexpr guid value{ 0xDBCA4FC3,0x82B9,0x4816,{ 0x9C,0x24,0xE4,0x0E,0x61,0x77,0x4B,0xD8 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionJoinResult>{ static constexpr guid value{ 0xCE7B1F04,0xA03E,0x41A4,{ 0x90,0x0B,0x1E,0x79,0x32,0x8C,0x12,0x67 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>{ static constexpr guid value{ 0x9524D12A,0x73D9,0x4C10,{ 0xB7,0x51,0xC2,0x67,0x84,0x43,0x71,0x27 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannelFactory>{ static constexpr guid value{ 0x295E1C4A,0xBD16,0x4298,{ 0xB7,0xCE,0x41,0x54,0x82,0xB0,0xE1,0x1D } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionOptions>{ static constexpr guid value{ 0x740ED755,0x8418,0x4F01,{ 0x93,0x53,0xE2,0x1C,0x9E,0xCC,0x6C,0xFC } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionParticipant>{ static constexpr guid value{ 0x7E90058C,0xACF9,0x4729,{ 0x8A,0x17,0x44,0xE7,0xBA,0xED,0x5D,0xCC } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantAddedEventArgs>{ static constexpr guid value{ 0xD35A57D8,0xC9A1,0x4BB7,{ 0xB6,0xB0,0x79,0xBB,0x91,0xAD,0xF9,0x3D } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantRemovedEventArgs>{ static constexpr guid value{ 0x866EF088,0xDE68,0x4ABF,{ 0x88,0xA1,0xF9,0x0D,0x16,0x27,0x41,0x92 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>{ static constexpr guid value{ 0xDCDD02CC,0xAA87,0x4D79,{ 0xB6,0xCC,0x44,0x59,0xB3,0xE9,0x20,0x75 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionRemovedEventArgs>{ static constexpr guid value{ 0xAF82914E,0x39A1,0x4DEA,{ 0x9D,0x63,0x43,0x79,0x8D,0x5B,0xBB,0xD0 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionStatics>{ static constexpr guid value{ 0x8524899F,0xFD20,0x44E3,{ 0x95,0x65,0xE7,0x5A,0x3B,0x14,0xC6,0x6E } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionUpdatedEventArgs>{ static constexpr guid value{ 0x16875069,0x231E,0x4C91,{ 0x8E,0xC8,0xB3,0xA3,0x9D,0x9E,0x55,0xA3 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionValueSetReceivedEventArgs>{ static constexpr guid value{ 0x06F31785,0x2DA5,0x4E58,{ 0xA7,0x8F,0x9E,0x8D,0x07,0x84,0xEE,0x25 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>{ static constexpr guid value{ 0x8003E340,0x0C41,0x4A62,{ 0xB6,0xD7,0xBD,0xBE,0x2B,0x19,0xBE,0x2D } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemStatics>{ static constexpr guid value{ 0xA485B392,0xFF2B,0x4B47,{ 0xBE,0x62,0x74,0x3F,0x2F,0x14,0x0F,0x30 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemStatics2>{ static constexpr guid value{ 0x0C98EDCA,0x6F99,0x4C52,{ 0xA2,0x72,0xEA,0x4F,0x36,0x47,0x17,0x44 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>{ static constexpr guid value{ 0x0C39514E,0xCBB6,0x4777,{ 0x85,0x34,0x2E,0x0C,0x52,0x1A,0xFF,0xA2 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory>{ static constexpr guid value{ 0x33CF78FA,0xD724,0x4125,{ 0xAC,0x7A,0x8D,0x28,0x1E,0x44,0xC9,0x49 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>{ static constexpr guid value{ 0x7502FF0E,0xDBCB,0x4155,{ 0xB4,0xCA,0xB3,0x0A,0x04,0xF2,0x76,0x27 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ static constexpr guid value{ 0x5D600C7E,0x2C07,0x48C5,{ 0x88,0x9C,0x45,0x5D,0x2B,0x09,0x97,0x71 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ static constexpr guid value{ 0x73436700,0x19CA,0x48F9,{ 0xA4,0xCD,0x78,0x0F,0x7A,0xD5,0x8C,0x71 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ static constexpr guid value{ 0x74C5C6AF,0x5114,0x4426,{ 0x92,0x16,0x20,0xD8,0x1F,0x85,0x19,0xAE } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter>{ static constexpr guid value{ 0x3FB75873,0x87C8,0x5D8F,{ 0x97,0x7E,0xF6,0x9F,0x96,0xD6,0x72,0x38 } }; };
+template <> struct guid_storage<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilterFactory>{ static constexpr guid value{ 0x348A2709,0x5F4D,0x5127,{ 0xB4,0xA7,0xBF,0x99,0xD5,0x25,0x2B,0x1B } }; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystem>{ using type = Windows::System::RemoteSystems::IRemoteSystem; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemAddedEventArgs>{ using type = Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs; };
+template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemApp>{ using type = Windows::System::RemoteSystems::IRemoteSystemApp; };
+template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemAppRegistration>{ using type = Windows::System::RemoteSystems::IRemoteSystemAppRegistration; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemAuthorizationKindFilter>{ using type = Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter; };
+template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemConnectionInfo>{ using type = Windows::System::RemoteSystems::IRemoteSystemConnectionInfo; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemConnectionRequest>{ using type = Windows::System::RemoteSystems::IRemoteSystemConnectionRequest; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter>{ using type = Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs>{ using type = Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs; };
@@ -507,6 +580,393 @@ template <> struct default_interface<Windows::System::RemoteSystems::RemoteSyste
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs>{ using type = Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemWatcher>{ using type = Windows::System::RemoteSystems::IRemoteSystemWatcher; };
 template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs>{ using type = Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs; };
+template <> struct default_interface<Windows::System::RemoteSystems::RemoteSystemWebAccountFilter>{ using type = Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter; };
+
+template <> struct abi<Windows::System::RemoteSystems::IKnownRemoteSystemCapabilitiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppService(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LaunchUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteSession(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpatialEntity(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::System::RemoteSystems::RemoteSystemStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAvailableByProximity(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAvailableBySpatialProximity(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCapabilitySupportedAsync(void* capabilityName, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ManufacturerDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ModelDisplayName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Platform(Windows::System::RemoteSystems::RemoteSystemPlatform* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Apps(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemApp>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAvailableByProximity(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAvailableBySpatialProximity(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attributes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAppRegistration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attributes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAppRegistrationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemAuthorizationKind(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind remoteSystemAuthorizationKind, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsProximal(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreateFromAppServiceConnection(void* connection, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemApp(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* remoteSystem, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateForApp(void* remoteSystemApp, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemDiscoveryType(Windows::System::RemoteSystems::RemoteSystemDiscoveryType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemFilter>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemKinds(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* remoteSystemKinds, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Phone(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hub(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Holographic(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Desktop(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Xbox(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Iot(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tablet(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Laptop(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControllerDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Disconnected(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Disconnected(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateParticipantWatcher(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SendInvitationAsync(void* invitee, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SessionInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_JoinRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_JoinRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveParticipantAsync(void* pParticipant, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSessionAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionControllerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateController(void* displayName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateControllerWithSessionOptions(void* displayName, void* options, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionCreationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::System::RemoteSystems::RemoteSystemSessionCreationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Session(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionDisconnectedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::System::RemoteSystems::RemoteSystemSessionDisconnectedReason* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControllerDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL JoinAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Sender(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SessionInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_InvitationReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_InvitationReceived(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Invitation(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Participant(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Accept() noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_JoinRequest(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::System::RemoteSystems::RemoteSystemSessionJoinStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Session(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Session(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL BroadcastValueSetAsync(void* messageData, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendValueSetAsync(void* messageData, void* participant, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendValueSetToParticipantsAsync(void* messageData, void* participants, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ValueSetReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ValueSetReceived(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannelFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* session, void* channelName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithReliability(void* session, void* channelName, Windows::System::RemoteSystems::RemoteSystemSessionMessageChannelReliability reliability, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsInviteOnly(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsInviteOnly(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipant>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHostNames(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Participant(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Participant(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SessionInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWatcher(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionUpdatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SessionInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionValueSetReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Sender(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::System::RemoteSystems::RemoteSystemSessionWatcherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindByHostNameAsync(void* hostName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcher(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcherWithFilters(void* filters, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsAuthorizationKindEnabled(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind kind, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystemStatusType(Windows::System::RemoteSystems::RemoteSystemStatusType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemoteSystem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_RemoteSystemAdded(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RemoteSystemAdded(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RemoteSystemUpdated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RemoteSystemUpdated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RemoteSystemRemoved(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RemoteSystemRemoved(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ErrorOccurred(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ErrorOccurred(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Error(Windows::System::RemoteSystems::RemoteSystemWatcherError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Account(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* account, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IKnownRemoteSystemCapabilitiesStatics
@@ -553,11 +1013,46 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystem4
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystem4> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystem4<D>; };
 
 template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystem5
+{
+    Windows::Foundation::Collections::IVectorView<Windows::System::RemoteSystems::RemoteSystemApp> Apps() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystem5> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystem5<D>; };
+
+template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemAddedEventArgs
 {
     Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemAddedEventArgs<D>; };
+
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemApp
+{
+    hstring Id() const;
+    hstring DisplayName() const;
+    bool IsAvailableByProximity() const;
+    bool IsAvailableBySpatialProximity() const;
+    Windows::Foundation::Collections::IMapView<hstring, hstring> Attributes() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemApp> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemApp<D>; };
+
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemAppRegistration
+{
+    Windows::System::User User() const;
+    Windows::Foundation::Collections::IMap<hstring, hstring> Attributes() const;
+    Windows::Foundation::IAsyncOperation<bool> SaveAsync() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemAppRegistration> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemAppRegistration<D>; };
+
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemAppRegistrationStatics
+{
+    Windows::System::RemoteSystems::RemoteSystemAppRegistration GetDefault() const;
+    Windows::System::RemoteSystems::RemoteSystemAppRegistration GetForUser(Windows::System::User const& user) const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemAppRegistrationStatics> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemAppRegistrationStatics<D>; };
 
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemAuthorizationKindFilter
@@ -574,6 +1069,20 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemAuthorizationKindFilter
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemAuthorizationKindFilterFactory<D>; };
 
 template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionInfo
+{
+    bool IsProximal() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionInfo> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionInfo<D>; };
+
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionInfoStatics
+{
+    Windows::System::RemoteSystems::RemoteSystemConnectionInfo TryCreateFromAppServiceConnection(Windows::ApplicationModel::AppService::AppServiceConnection const& connection) const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionInfoStatics> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionInfoStatics<D>; };
+
+template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequest
 {
     Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
@@ -581,11 +1090,25 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequest
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequest<D>; };
 
 template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequest2
+{
+    Windows::System::RemoteSystems::RemoteSystemApp RemoteSystemApp() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequest2<D>; };
+
+template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequestFactory
 {
     Windows::System::RemoteSystems::RemoteSystemConnectionRequest Create(Windows::System::RemoteSystems::RemoteSystem const& remoteSystem) const;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequestFactory<D>; };
+
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequestStatics
+{
+    Windows::System::RemoteSystems::RemoteSystemConnectionRequest CreateForApp(Windows::System::RemoteSystems::RemoteSystemApp const& remoteSystemApp) const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestStatics> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemConnectionRequestStatics<D>; };
 
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemDiscoveryTypeFilter
@@ -660,10 +1183,10 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemSession
     hstring Id() const;
     hstring DisplayName() const;
     hstring ControllerDisplayName() const;
-    event_token Disconnected(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSession, Windows::System::RemoteSystems::RemoteSystemSessionDisconnectedEventArgs> const& handler) const;
-    using Disconnected_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSession>;
+    winrt::event_token Disconnected(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSession, Windows::System::RemoteSystems::RemoteSystemSessionDisconnectedEventArgs> const& handler) const;
+    using Disconnected_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSession, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSession>::remove_Disconnected>;
     Disconnected_revoker Disconnected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSession, Windows::System::RemoteSystems::RemoteSystemSessionDisconnectedEventArgs> const& handler) const;
-    void Disconnected(event_token const& token) const;
+    void Disconnected(winrt::event_token const& token) const noexcept;
     Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher CreateParticipantWatcher() const;
     Windows::Foundation::IAsyncOperation<bool> SendInvitationAsync(Windows::System::RemoteSystems::RemoteSystem const& invitee) const;
 };
@@ -679,10 +1202,10 @@ template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionA
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemSessionController
 {
-    event_token JoinRequested(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionController, Windows::System::RemoteSystems::RemoteSystemSessionJoinRequestedEventArgs> const& handler) const;
-    using JoinRequested_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionController>;
+    winrt::event_token JoinRequested(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionController, Windows::System::RemoteSystems::RemoteSystemSessionJoinRequestedEventArgs> const& handler) const;
+    using JoinRequested_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionController, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionController>::remove_JoinRequested>;
     JoinRequested_revoker JoinRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionController, Windows::System::RemoteSystems::RemoteSystemSessionJoinRequestedEventArgs> const& handler) const;
-    void JoinRequested(event_token const& token) const;
+    void JoinRequested(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<bool> RemoveParticipantAsync(Windows::System::RemoteSystems::RemoteSystemSessionParticipant const& pParticipant) const;
     Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystemSessionCreationResult> CreateSessionAsync() const;
 };
@@ -731,10 +1254,10 @@ template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionI
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemSessionInvitationListener
 {
-    event_token InvitationReceived(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionInvitationListener, Windows::System::RemoteSystems::RemoteSystemSessionInvitationReceivedEventArgs> const& handler) const;
-    using InvitationReceived_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>;
+    winrt::event_token InvitationReceived(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionInvitationListener, Windows::System::RemoteSystems::RemoteSystemSessionInvitationReceivedEventArgs> const& handler) const;
+    using InvitationReceived_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>::remove_InvitationReceived>;
     InvitationReceived_revoker InvitationReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionInvitationListener, Windows::System::RemoteSystems::RemoteSystemSessionInvitationReceivedEventArgs> const& handler) const;
-    void InvitationReceived(event_token const& token) const;
+    void InvitationReceived(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemSessionInvitationListener<D>; };
 
@@ -776,10 +1299,10 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemSessionMessageChannel
     Windows::Foundation::IAsyncOperation<bool> BroadcastValueSetAsync(Windows::Foundation::Collections::ValueSet const& messageData) const;
     Windows::Foundation::IAsyncOperation<bool> SendValueSetAsync(Windows::Foundation::Collections::ValueSet const& messageData, Windows::System::RemoteSystems::RemoteSystemSessionParticipant const& participant) const;
     Windows::Foundation::IAsyncOperation<bool> SendValueSetToParticipantsAsync(Windows::Foundation::Collections::ValueSet const& messageData, param::async_iterable<Windows::System::RemoteSystems::RemoteSystemSessionParticipant> const& participants) const;
-    event_token ValueSetReceived(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionMessageChannel, Windows::System::RemoteSystems::RemoteSystemSessionValueSetReceivedEventArgs> const& handler) const;
-    using ValueSetReceived_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>;
+    winrt::event_token ValueSetReceived(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionMessageChannel, Windows::System::RemoteSystems::RemoteSystemSessionValueSetReceivedEventArgs> const& handler) const;
+    using ValueSetReceived_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>::remove_ValueSetReceived>;
     ValueSetReceived_revoker ValueSetReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionMessageChannel, Windows::System::RemoteSystems::RemoteSystemSessionValueSetReceivedEventArgs> const& handler) const;
-    void ValueSetReceived(event_token const& token) const;
+    void ValueSetReceived(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemSessionMessageChannel<D>; };
 
@@ -827,18 +1350,18 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemSessionParticipantWatch
     void Start() const;
     void Stop() const;
     Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcherStatus Status() const;
-    event_token Added(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantAddedEventArgs> const& handler) const;
-    using Added_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>;
+    winrt::event_token Added(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantAddedEventArgs> const& handler) const;
+    using Added_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>::remove_Added>;
     Added_revoker Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantAddedEventArgs> const& handler) const;
-    void Added(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantRemovedEventArgs> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>;
+    void Added(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantRemovedEventArgs> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::System::RemoteSystems::RemoteSystemSessionParticipantRemovedEventArgs> const& handler) const;
-    void Removed(event_token const& token) const;
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>;
+    void Removed(winrt::event_token const& token) const noexcept;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void EnumerationCompleted(event_token const& token) const;
+    void EnumerationCompleted(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemSessionParticipantWatcher<D>; };
 
@@ -877,18 +1400,18 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemSessionWatcher
     void Start() const;
     void Stop() const;
     Windows::System::RemoteSystems::RemoteSystemSessionWatcherStatus Status() const;
-    event_token Added(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionAddedEventArgs> const& handler) const;
-    using Added_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>;
+    winrt::event_token Added(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionAddedEventArgs> const& handler) const;
+    using Added_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>::remove_Added>;
     Added_revoker Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionAddedEventArgs> const& handler) const;
-    void Added(event_token const& token) const;
-    event_token Updated(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionUpdatedEventArgs> const& handler) const;
-    using Updated_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>;
+    void Added(winrt::event_token const& token) const noexcept;
+    winrt::event_token Updated(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionUpdatedEventArgs> const& handler) const;
+    using Updated_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>::remove_Updated>;
     Updated_revoker Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionUpdatedEventArgs> const& handler) const;
-    void Updated(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionRemovedEventArgs> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>;
+    void Updated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionRemovedEventArgs> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemSessionWatcher, Windows::System::RemoteSystems::RemoteSystemSessionRemovedEventArgs> const& handler) const;
-    void Removed(event_token const& token) const;
+    void Removed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemSessionWatcher<D>; };
 
@@ -935,32 +1458,32 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemWatcher
 {
     void Start() const;
     void Stop() const;
-    event_token RemoteSystemAdded(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> const& handler) const;
-    using RemoteSystemAdded_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher>;
+    winrt::event_token RemoteSystemAdded(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> const& handler) const;
+    using RemoteSystemAdded_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemWatcher>::remove_RemoteSystemAdded>;
     RemoteSystemAdded_revoker RemoteSystemAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> const& handler) const;
-    void RemoteSystemAdded(event_token const& token) const;
-    event_token RemoteSystemUpdated(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> const& handler) const;
-    using RemoteSystemUpdated_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher>;
+    void RemoteSystemAdded(winrt::event_token const& token) const noexcept;
+    winrt::event_token RemoteSystemUpdated(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> const& handler) const;
+    using RemoteSystemUpdated_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemWatcher>::remove_RemoteSystemUpdated>;
     RemoteSystemUpdated_revoker RemoteSystemUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> const& handler) const;
-    void RemoteSystemUpdated(event_token const& token) const;
-    event_token RemoteSystemRemoved(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> const& handler) const;
-    using RemoteSystemRemoved_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher>;
+    void RemoteSystemUpdated(winrt::event_token const& token) const noexcept;
+    winrt::event_token RemoteSystemRemoved(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> const& handler) const;
+    using RemoteSystemRemoved_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemWatcher>::remove_RemoteSystemRemoved>;
     RemoteSystemRemoved_revoker RemoteSystemRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> const& handler) const;
-    void RemoteSystemRemoved(event_token const& token) const;
+    void RemoteSystemRemoved(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemWatcher> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemWatcher<D>; };
 
 template <typename D>
 struct consume_Windows_System_RemoteSystems_IRemoteSystemWatcher2
 {
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher2>;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher2, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemWatcher2>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemEnumerationCompletedEventArgs> const& handler) const;
-    void EnumerationCompleted(event_token const& token) const;
-    event_token ErrorOccurred(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs> const& handler) const;
-    using ErrorOccurred_revoker = event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher2>;
+    void EnumerationCompleted(winrt::event_token const& token) const noexcept;
+    winrt::event_token ErrorOccurred(Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs> const& handler) const;
+    using ErrorOccurred_revoker = impl::event_revoker<Windows::System::RemoteSystems::IRemoteSystemWatcher2, &impl::abi_t<Windows::System::RemoteSystems::IRemoteSystemWatcher2>::remove_ErrorOccurred>;
     ErrorOccurred_revoker ErrorOccurred(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemWatcherErrorOccurredEventArgs> const& handler) const;
-    void ErrorOccurred(event_token const& token) const;
+    void ErrorOccurred(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemWatcher2> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemWatcher2<D>; };
 
@@ -971,333 +1494,18 @@ struct consume_Windows_System_RemoteSystems_IRemoteSystemWatcherErrorOccurredEve
 };
 template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemWatcherErrorOccurredEventArgs<D>; };
 
-template <> struct abi<Windows::System::RemoteSystems::IKnownRemoteSystemCapabilitiesStatics>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemWebAccountFilter
 {
-    virtual HRESULT __stdcall get_AppService(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LaunchUri(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteSession(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpatialEntity(HSTRING* value) noexcept = 0;
-};};
+    Windows::Security::Credentials::WebAccount Account() const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemWebAccountFilter<D>; };
 
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_System_RemoteSystems_IRemoteSystemWebAccountFilterFactory
 {
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::System::RemoteSystems::RemoteSystemStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAvailableByProximity(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAvailableBySpatialProximity(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCapabilitySupportedAsync(HSTRING capabilityName, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ManufacturerDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ModelDisplayName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystem4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Platform(Windows::System::RemoteSystems::RemoteSystemPlatform* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystemAuthorizationKind(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind remoteSystemAuthorizationKind, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* remoteSystem, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystemDiscoveryType(Windows::System::RemoteSystems::RemoteSystemDiscoveryType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemEnumerationCompletedEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemFilter>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystemKinds(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* remoteSystemKinds, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Phone(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hub(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Holographic(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Desktop(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Xbox(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemKindStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Iot(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tablet(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Laptop(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystemId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControllerDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Disconnected(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Disconnected(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall CreateParticipantWatcher(void** result) noexcept = 0;
-    virtual HRESULT __stdcall SendInvitationAsync(void* invitee, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SessionInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_JoinRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_JoinRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall RemoveParticipantAsync(void* pParticipant, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateSessionAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionControllerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateController(HSTRING displayName, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateControllerWithSessionOptions(HSTRING displayName, void* options, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionCreationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::System::RemoteSystems::RemoteSystemSessionCreationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Session(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionDisconnectedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::System::RemoteSystems::RemoteSystemSessionDisconnectedReason* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControllerDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall JoinAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Sender(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SessionInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationListener>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_InvitationReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_InvitationReceived(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionInvitationReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Invitation(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Participant(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Accept() noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_JoinRequest(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionJoinResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::System::RemoteSystems::RemoteSystemSessionJoinStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Session(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Session(void** value) noexcept = 0;
-    virtual HRESULT __stdcall BroadcastValueSetAsync(void* messageData, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendValueSetAsync(void* messageData, void* participant, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendValueSetToParticipantsAsync(void* messageData, void* participants, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_ValueSetReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ValueSetReceived(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionMessageChannelFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* session, HSTRING channelName, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithReliability(void* session, HSTRING channelName, Windows::System::RemoteSystems::RemoteSystemSessionMessageChannelReliability reliability, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsInviteOnly(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsInviteOnly(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipant>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetHostNames(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Participant(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Participant(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionParticipantWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::System::RemoteSystems::RemoteSystemSessionParticipantWatcherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Added(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SessionInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWatcher(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionUpdatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SessionInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionValueSetReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Sender(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemSessionWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::System::RemoteSystems::RemoteSystemSessionWatcherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Added(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Updated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindByHostNameAsync(void* hostName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcher(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcherWithFilters(void* filters, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsAuthorizationKindEnabled(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind kind, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystemStatusType(Windows::System::RemoteSystems::RemoteSystemStatusType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemoteSystem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_RemoteSystemAdded(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RemoteSystemAdded(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_RemoteSystemUpdated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RemoteSystemUpdated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_RemoteSystemRemoved(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RemoteSystemRemoved(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcher2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ErrorOccurred(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ErrorOccurred(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Error(Windows::System::RemoteSystems::RemoteSystemWatcherError* value) noexcept = 0;
-};};
+    Windows::System::RemoteSystems::RemoteSystemWebAccountFilter Create(Windows::Security::Credentials::WebAccount const& account) const;
+};
+template <> struct consume<Windows::System::RemoteSystems::IRemoteSystemWebAccountFilterFactory> { template <typename D> using type = consume_Windows_System_RemoteSystems_IRemoteSystemWebAccountFilterFactory<D>; };
 
 }

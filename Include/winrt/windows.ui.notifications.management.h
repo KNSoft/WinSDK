@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.notifications.management.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -718,10 +730,10 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CManagement__CUserNotificationListenerAccessStatus * * result
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CManagement__CUserNotificationListenerAccessStatus * * operation
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAccessStatus(
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus * accessStatus
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus * result
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_NotificationChanged(
                             /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CManagement__CUserNotificationListener_Windows__CUI__CNotifications__CUserNotificationChangedEventArgs * handler,
@@ -732,7 +744,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetNotificationsAsync(
                             /* [in] */ABI::Windows::UI::Notifications::NotificationKinds kinds,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification * * result
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification * * operation
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetNotification(
                             /* [in] */UINT32 notificationId,
@@ -783,7 +795,7 @@ namespace ABI {
                     {
                     public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Current(
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::Management::IUserNotificationListener * * result
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::Management::IUserNotificationListener * * value
                             ) = 0;
                         
                     };
@@ -814,6 +826,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNot
  *    Windows.UI.Notifications.Management.IUserNotificationListener ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -1508,11 +1522,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *RequestAccessAsync )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CManagement__CUserNotificationListenerAccessStatus * * result
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CNotifications__CManagement__CUserNotificationListenerAccessStatus * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *GetAccessStatus )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CNotifications_CManagement_CUserNotificationListenerAccessStatus * accessStatus
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CNotifications_CManagement_CUserNotificationListenerAccessStatus * result
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_NotificationChanged )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * This,
@@ -1526,7 +1540,7 @@ HRESULT ( STDMETHODCALLTYPE *RequestAccessAsync )(
     HRESULT ( STDMETHODCALLTYPE *GetNotificationsAsync )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CNotificationKinds kinds,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification * * result
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CUserNotification * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *GetNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * This,
@@ -1568,11 +1582,11 @@ interface __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationList
 #define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_RequestAccessAsync(This,result) \
-    ( (This)->lpVtbl->RequestAccessAsync(This,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_RequestAccessAsync(This,operation) \
+    ( (This)->lpVtbl->RequestAccessAsync(This,operation) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetAccessStatus(This,accessStatus) \
-    ( (This)->lpVtbl->GetAccessStatus(This,accessStatus) )
+#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetAccessStatus(This,result) \
+    ( (This)->lpVtbl->GetAccessStatus(This,result) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_add_NotificationChanged(This,handler,token) \
     ( (This)->lpVtbl->add_NotificationChanged(This,handler,token) )
@@ -1580,8 +1594,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationList
 #define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_remove_NotificationChanged(This,token) \
     ( (This)->lpVtbl->remove_NotificationChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetNotificationsAsync(This,kinds,result) \
-    ( (This)->lpVtbl->GetNotificationsAsync(This,kinds,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetNotificationsAsync(This,kinds,operation) \
+    ( (This)->lpVtbl->GetNotificationsAsync(This,kinds,operation) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener_GetNotification(This,notificationId,result) \
     ( (This)->lpVtbl->GetNotification(This,notificationId,result) )
@@ -1652,7 +1666,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Current )(
         __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListenerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListener * * value
         );
     END_INTERFACE
     
@@ -1682,8 +1696,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationList
 #define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListenerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListenerStatics_get_Current(This,result) \
-    ( (This)->lpVtbl->get_Current(This,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNotificationListenerStatics_get_Current(This,value) \
+    ( (This)->lpVtbl->get_Current(This,value) )
 
 
 #endif /* COBJMACROS */
@@ -1708,6 +1722,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CManagement_CIUserNot
  *    Windows.UI.Notifications.Management.IUserNotificationListener ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000

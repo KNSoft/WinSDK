@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -285,609 +285,533 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Gaming::Xbox
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult>
 {
-    HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Size(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult>
 {
-    HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfo>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery>
 {
-    HRESULT __stdcall GetBlobInfoAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetBlobInfoAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBlobInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoGetResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoGetResult>>(this->shim().GetBlobInfoAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBlobInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept final
+    int32_t WINRT_CALL GetBlobInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBlobInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoGetResult>), uint32_t, uint32_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoGetResult>>(this->shim().GetBlobInfoAsync(startIndex, maxNumberOfItems));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetItemCountAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetItemCountAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetItemCountAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().GetItemCountAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainer> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainer>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Provider(void** value) noexcept final
+    int32_t WINRT_CALL get_Provider(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Provider, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveProvider));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveProvider>(this->shim().Provider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SubmitUpdatesAsync(void* blobsToWrite, void* blobsToDelete, HSTRING displayName, void** operation) noexcept final
+    int32_t WINRT_CALL SubmitUpdatesAsync(void* blobsToWrite, void* blobsToDelete, void* displayName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubmitUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>), Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer> const, Windows::Foundation::Collections::IIterable<hstring> const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>>(this->shim().SubmitUpdatesAsync(*reinterpret_cast<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer> const*>(&blobsToWrite), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&blobsToDelete), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadAsync(void* blobsToRead, void** action) noexcept final
+    int32_t WINRT_CALL ReadAsync(void* blobsToRead, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>), Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer> const);
             *action = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>>(this->shim().ReadAsync(*reinterpret_cast<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::IBuffer> const*>(&blobsToRead)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAsync(void* blobsToRead, void** operation) noexcept final
+    int32_t WINRT_CALL GetAsync(void* blobsToRead, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobGetResult>), Windows::Foundation::Collections::IIterable<hstring> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveBlobGetResult>>(this->shim().GetAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&blobsToRead)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SubmitPropertySetUpdatesAsync(void* blobsToWrite, void* blobsToDelete, HSTRING displayName, void** operation) noexcept final
+    int32_t WINRT_CALL SubmitPropertySetUpdatesAsync(void* blobsToWrite, void* blobsToDelete, void* displayName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubmitPropertySetUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>), Windows::Foundation::Collections::IPropertySet const, Windows::Foundation::Collections::IIterable<hstring> const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>>(this->shim().SubmitPropertySetUpdatesAsync(*reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&blobsToWrite), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&blobsToDelete), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBlobInfoQuery(HSTRING blobNamePrefix, void** query) noexcept final
+    int32_t WINRT_CALL CreateBlobInfoQuery(void* blobNamePrefix, void** query) noexcept final
     {
         try
         {
             *query = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBlobInfoQuery, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoQuery), hstring const&);
             *query = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoQuery>(this->shim().CreateBlobInfoQuery(*reinterpret_cast<hstring const*>(&blobNamePrefix)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalSize(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalSize(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalSize, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().TotalSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastModifiedTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastModifiedTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastModifiedTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastModifiedTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NeedsSync(bool* value) noexcept final
+    int32_t WINRT_CALL get_NeedsSync(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeedsSync, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NeedsSync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult>
 {
-    HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfo>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery>
 {
-    HRESULT __stdcall GetContainerInfoAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetContainerInfoAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContainerInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoGetResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoGetResult>>(this->shim().GetContainerInfoAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContainerInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept final
+    int32_t WINRT_CALL GetContainerInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContainerInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoGetResult>), uint32_t, uint32_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoGetResult>>(this->shim().GetContainerInfoAsync(startIndex, maxNumberOfItems));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetItemCountAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetItemCountAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetItemCountAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().GetItemCountAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult>
 {
-    HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveProvider> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveProvider>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContainer(HSTRING name, void** result) noexcept final
+    int32_t WINRT_CALL CreateContainer(void* name, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContainer, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveContainer), hstring const&);
             *result = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveContainer>(this->shim().CreateContainer(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteContainerAsync(HSTRING name, void** action) noexcept final
+    int32_t WINRT_CALL DeleteContainerAsync(void* name, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteContainerAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>), hstring const);
             *action = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>>(this->shim().DeleteContainerAsync(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContainerInfoQuery(void** query) noexcept final
+    int32_t WINRT_CALL CreateContainerInfoQuery(void** query) noexcept final
     {
         try
         {
             *query = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContainerInfoQuery, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoQuery));
             *query = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoQuery>(this->shim().CreateContainerInfoQuery());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContainerInfoQueryWithName(HSTRING containerNamePrefix, void** query) noexcept final
+    int32_t WINRT_CALL CreateContainerInfoQueryWithName(void* containerNamePrefix, void** query) noexcept final
     {
         try
         {
             *query = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContainerInfoQuery, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoQuery), hstring const&);
             *query = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveContainerInfoQuery>(this->shim().CreateContainerInfoQuery(*reinterpret_cast<hstring const*>(&containerNamePrefix)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRemainingBytesInQuotaAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetRemainingBytesInQuotaAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRemainingBytesInQuotaAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<int64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<int64_t>>(this->shim().GetRemainingBytesInQuotaAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContainersChangedSinceLastSync(void** value) noexcept final
+    int32_t WINRT_CALL get_ContainersChangedSinceLastSync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContainersChangedSinceLastSync, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().ContainersChangedSinceLastSync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult>
 {
-    HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Gaming::XboxLive::Storage::GameSaveProvider));
             *value = detach_from<Windows::Gaming::XboxLive::Storage::GameSaveProvider>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics> : produce_base<D, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>
 {
-    HRESULT __stdcall GetForUserAsync(void* user, HSTRING serviceConfigId, void** operation) noexcept final
+    int32_t WINRT_CALL GetForUserAsync(void* user, void* serviceConfigId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>), Windows::System::User const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>>(this->shim().GetForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&serviceConfigId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSyncOnDemandForUserAsync(void* user, HSTRING serviceConfigId, void** operation) noexcept final
+    int32_t WINRT_CALL GetSyncOnDemandForUserAsync(void* user, void* serviceConfigId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSyncOnDemandForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>), Windows::System::User const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>>(this->shim().GetSyncOnDemandForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&serviceConfigId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -897,12 +821,12 @@ WINRT_EXPORT namespace winrt::Windows::Gaming::XboxLive::Storage {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult> GameSaveProvider::GetForUserAsync(Windows::System::User const& user, param::hstring const& serviceConfigId)
 {
-    return get_activation_factory<GameSaveProvider, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>().GetForUserAsync(user, serviceConfigId);
+    return impl::call_factory<GameSaveProvider, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>([&](auto&& f) { return f.GetForUserAsync(user, serviceConfigId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult> GameSaveProvider::GetSyncOnDemandForUserAsync(Windows::System::User const& user, param::hstring const& serviceConfigId)
 {
-    return get_activation_factory<GameSaveProvider, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>().GetSyncOnDemandForUserAsync(user, serviceConfigId);
+    return impl::call_factory<GameSaveProvider, Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>([&](auto&& f) { return f.GetSyncOnDemandForUserAsync(user, serviceConfigId); });
 }
 
 }
@@ -934,5 +858,3 @@ template<> struct hash<winrt::Windows::Gaming::XboxLive::Storage::GameSaveProvid
 template<> struct hash<winrt::Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult> : winrt::impl::hash_base<winrt::Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult> {};
 
 }
-
-WINRT_WARNING_POP

@@ -552,10 +552,10 @@ typedef struct FWPM_STATISTICS0_
     UINT64 reauthReasonSocketPropertyChanged;
     UINT64 reauthReasonNewInboundMCastBCastPacket;
     UINT64 reauthReasonEDPPolicyChanged;
-    UINT64 reauthReasonLocalAddressUniFiltersChanged;
-    UINT64 reauthReasonRemoteAddressUniFiltersChanged;
-    UINT64 reauthReasonLocalPortUniFiltersChanges;
-    UINT64 reauthReasonRemotePortUniFiltersChanges;
+    UINT64 reauthReasonPreclassifyLocalAddrLayerChange;
+    UINT64 reauthReasonPreclassifyRemoteAddrLayerChange;
+    UINT64 reauthReasonPreclassifyLocalPortLayerChange;
+    UINT64 reauthReasonPreclassifyRemotePortLayerChange;
     UINT64 reauthReasonProxyHandleChanged;
     } 	FWPM_STATISTICS0;
 
@@ -718,7 +718,8 @@ enum FWPM_NET_EVENT_TYPE_
         FWPM_NET_EVENT_TYPE_CAPABILITY_DROP	= ( FWPM_NET_EVENT_TYPE_CLASSIFY_ALLOW + 1 ) ,
         FWPM_NET_EVENT_TYPE_CAPABILITY_ALLOW	= ( FWPM_NET_EVENT_TYPE_CAPABILITY_DROP + 1 ) ,
         FWPM_NET_EVENT_TYPE_CLASSIFY_DROP_MAC	= ( FWPM_NET_EVENT_TYPE_CAPABILITY_ALLOW + 1 ) ,
-        FWPM_NET_EVENT_TYPE_MAX	= ( FWPM_NET_EVENT_TYPE_CLASSIFY_DROP_MAC + 1 ) 
+        FWPM_NET_EVENT_TYPE_LPM_PACKET_ARRIVAL	= ( FWPM_NET_EVENT_TYPE_CLASSIFY_DROP_MAC + 1 ) ,
+        FWPM_NET_EVENT_TYPE_MAX	= ( FWPM_NET_EVENT_TYPE_LPM_PACKET_ARRIVAL + 1 ) 
     } 	FWPM_NET_EVENT_TYPE;
 
 #define IKEEXT_CERT_HASH_LEN 20
@@ -985,6 +986,13 @@ typedef struct FWPM_NET_EVENT_CAPABILITY_ALLOW0_
     } 	FWPM_NET_EVENT_CAPABILITY_ALLOW0;
 
 #endif //(NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+typedef struct FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_
+    {
+    IPSEC_SA_SPI spi;
+    } 	FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0;
+
+#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS5)
 typedef struct FWPM_NET_EVENT0_
     {
     FWPM_NET_EVENT_HEADER0 header;
@@ -1080,6 +1088,28 @@ typedef struct FWPM_NET_EVENT4_
     } 	FWPM_NET_EVENT4;
 
 #endif //(NTDDI_VERSION >= NTDDI_WIN10_RS4)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+typedef struct FWPM_NET_EVENT5_
+    {
+    FWPM_NET_EVENT_HEADER3 header;
+    FWPM_NET_EVENT_TYPE type;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_MM_FAILURE2 *ikeMmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_QM_FAILURE1 *ikeQmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_IKEEXT_EM_FAILURE1 *ikeEmFailure;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_DROP2 *classifyDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_IPSEC_KERNEL_DROP0 *ipsecDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_IPSEC_DOSP_DROP0 *idpDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_ALLOW0 *classifyAllow;
+        /* [case()][unique] */ FWPM_NET_EVENT_CAPABILITY_DROP0 *capabilityDrop;
+        /* [case()][unique] */ FWPM_NET_EVENT_CAPABILITY_ALLOW0 *capabilityAllow;
+        /* [case()][unique] */ FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 *classifyDropMac;
+        /* [case()][unique] */ FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0 *lpmPacketArrival;
+        } 	;
+    } 	FWPM_NET_EVENT5;
+
+#endif //(NTDDI_VERSION >= NTDDI_WIN10_RS5)
 typedef struct FWPM_NET_EVENT_ENUM_TEMPLATE0_
     {
     FILETIME startTime;

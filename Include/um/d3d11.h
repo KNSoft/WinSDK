@@ -1293,8 +1293,7 @@ typedef RECT D3D11_RECT;
 }
 struct CD3D11_RECT : public D3D11_RECT
 {
-    CD3D11_RECT()
-    {}
+    CD3D11_RECT() = default;
     explicit CD3D11_RECT( const D3D11_RECT& o ) :
         D3D11_RECT( o )
     {}
@@ -1335,8 +1334,7 @@ typedef struct D3D11_BOX
 }
 struct CD3D11_BOX : public D3D11_BOX
 {
-    CD3D11_BOX()
-    {}
+    CD3D11_BOX() = default;
     explicit CD3D11_BOX( const D3D11_BOX& o ) :
         D3D11_BOX( o )
     {}
@@ -1572,8 +1570,7 @@ typedef struct D3D11_DEPTH_STENCIL_DESC
 }
 struct CD3D11_DEPTH_STENCIL_DESC : public D3D11_DEPTH_STENCIL_DESC
 {
-    CD3D11_DEPTH_STENCIL_DESC()
-    {}
+    CD3D11_DEPTH_STENCIL_DESC() = default;
     explicit CD3D11_DEPTH_STENCIL_DESC( const D3D11_DEPTH_STENCIL_DESC& o ) :
         D3D11_DEPTH_STENCIL_DESC( o )
     {}
@@ -1826,8 +1823,7 @@ typedef struct D3D11_BLEND_DESC
 }
 struct CD3D11_BLEND_DESC : public D3D11_BLEND_DESC
 {
-    CD3D11_BLEND_DESC()
-    {}
+    CD3D11_BLEND_DESC() = default;
     explicit CD3D11_BLEND_DESC( const D3D11_BLEND_DESC& o ) :
         D3D11_BLEND_DESC( o )
     {}
@@ -2001,8 +1997,7 @@ typedef struct D3D11_RASTERIZER_DESC
 }
 struct CD3D11_RASTERIZER_DESC : public D3D11_RASTERIZER_DESC
 {
-    CD3D11_RASTERIZER_DESC()
-    {}
+    CD3D11_RASTERIZER_DESC() = default;
     explicit CD3D11_RASTERIZER_DESC( const D3D11_RASTERIZER_DESC& o ) :
         D3D11_RASTERIZER_DESC( o )
     {}
@@ -2367,8 +2362,7 @@ typedef struct D3D11_BUFFER_DESC
 }
 struct CD3D11_BUFFER_DESC : public D3D11_BUFFER_DESC
 {
-    CD3D11_BUFFER_DESC()
-    {}
+    CD3D11_BUFFER_DESC() = default;
     explicit CD3D11_BUFFER_DESC( const D3D11_BUFFER_DESC& o ) :
         D3D11_BUFFER_DESC( o )
     {}
@@ -2564,8 +2558,7 @@ typedef struct D3D11_TEXTURE1D_DESC
 }
 struct CD3D11_TEXTURE1D_DESC : public D3D11_TEXTURE1D_DESC
 {
-    CD3D11_TEXTURE1D_DESC()
-    {}
+    CD3D11_TEXTURE1D_DESC() = default;
     explicit CD3D11_TEXTURE1D_DESC( const D3D11_TEXTURE1D_DESC& o ) :
         D3D11_TEXTURE1D_DESC( o )
     {}
@@ -2767,8 +2760,7 @@ typedef struct D3D11_TEXTURE2D_DESC
 }
 struct CD3D11_TEXTURE2D_DESC : public D3D11_TEXTURE2D_DESC
 {
-    CD3D11_TEXTURE2D_DESC()
-    {}
+    CD3D11_TEXTURE2D_DESC() = default;
     explicit CD3D11_TEXTURE2D_DESC( const D3D11_TEXTURE2D_DESC& o ) :
         D3D11_TEXTURE2D_DESC( o )
     {}
@@ -2975,8 +2967,7 @@ typedef struct D3D11_TEXTURE3D_DESC
 }
 struct CD3D11_TEXTURE3D_DESC : public D3D11_TEXTURE3D_DESC
 {
-    CD3D11_TEXTURE3D_DESC()
-    {}
+    CD3D11_TEXTURE3D_DESC() = default;
     explicit CD3D11_TEXTURE3D_DESC( const D3D11_TEXTURE3D_DESC& o ) :
         D3D11_TEXTURE3D_DESC( o )
     {}
@@ -3416,8 +3407,7 @@ typedef struct D3D11_SHADER_RESOURCE_VIEW_DESC
 }
 struct CD3D11_SHADER_RESOURCE_VIEW_DESC : public D3D11_SHADER_RESOURCE_VIEW_DESC
 {
-    CD3D11_SHADER_RESOURCE_VIEW_DESC()
-    {}
+    CD3D11_SHADER_RESOURCE_VIEW_DESC() = default;
     explicit CD3D11_SHADER_RESOURCE_VIEW_DESC( const D3D11_SHADER_RESOURCE_VIEW_DESC& o ) :
         D3D11_SHADER_RESOURCE_VIEW_DESC( o )
     {}
@@ -3837,8 +3827,7 @@ typedef struct D3D11_RENDER_TARGET_VIEW_DESC
 }
 struct CD3D11_RENDER_TARGET_VIEW_DESC : public D3D11_RENDER_TARGET_VIEW_DESC
 {
-    CD3D11_RENDER_TARGET_VIEW_DESC()
-    {}
+    CD3D11_RENDER_TARGET_VIEW_DESC() = default;
     explicit CD3D11_RENDER_TARGET_VIEW_DESC( const D3D11_RENDER_TARGET_VIEW_DESC& o ) :
         D3D11_RENDER_TARGET_VIEW_DESC( o )
     {}
@@ -4139,8 +4128,7 @@ EXTERN_C const IID IID_ID3D11RenderTargetView;
 }
 struct CD3D11_VIEWPORT : public D3D11_VIEWPORT
 {
-    CD3D11_VIEWPORT()
-    {}
+    CD3D11_VIEWPORT() = default;
     explicit CD3D11_VIEWPORT( const D3D11_VIEWPORT& o ) :
         D3D11_VIEWPORT( o )
     {}
@@ -4344,8 +4332,7 @@ typedef struct D3D11_DEPTH_STENCIL_VIEW_DESC
 }
 struct CD3D11_DEPTH_STENCIL_VIEW_DESC : public D3D11_DEPTH_STENCIL_VIEW_DESC
 {
-    CD3D11_DEPTH_STENCIL_VIEW_DESC()
-    {}
+    CD3D11_DEPTH_STENCIL_VIEW_DESC() = default;
     explicit CD3D11_DEPTH_STENCIL_VIEW_DESC( const D3D11_DEPTH_STENCIL_VIEW_DESC& o ) :
         D3D11_DEPTH_STENCIL_VIEW_DESC( o )
     {}
@@ -4673,8 +4660,7 @@ typedef struct D3D11_UNORDERED_ACCESS_VIEW_DESC
 }
 struct CD3D11_UNORDERED_ACCESS_VIEW_DESC : public D3D11_UNORDERED_ACCESS_VIEW_DESC
 {
-    CD3D11_UNORDERED_ACCESS_VIEW_DESC()
-    {}
+    CD3D11_UNORDERED_ACCESS_VIEW_DESC() = default;
     explicit CD3D11_UNORDERED_ACCESS_VIEW_DESC( const D3D11_UNORDERED_ACCESS_VIEW_DESC& o ) :
         D3D11_UNORDERED_ACCESS_VIEW_DESC( o )
     {}
@@ -5888,8 +5874,7 @@ typedef struct D3D11_SAMPLER_DESC
 }
 struct CD3D11_SAMPLER_DESC : public D3D11_SAMPLER_DESC
 {
-    CD3D11_SAMPLER_DESC()
-    {}
+    CD3D11_SAMPLER_DESC() = default;
     explicit CD3D11_SAMPLER_DESC( const D3D11_SAMPLER_DESC& o ) :
         D3D11_SAMPLER_DESC( o )
     {}
@@ -6300,8 +6285,7 @@ typedef struct D3D11_QUERY_DESC
 }
 struct CD3D11_QUERY_DESC : public D3D11_QUERY_DESC
 {
-    CD3D11_QUERY_DESC()
-    {}
+    CD3D11_QUERY_DESC() = default;
     explicit CD3D11_QUERY_DESC( const D3D11_QUERY_DESC& o ) :
         D3D11_QUERY_DESC( o )
     {}
@@ -6638,8 +6622,7 @@ typedef struct D3D11_COUNTER_DESC
 }
 struct CD3D11_COUNTER_DESC : public D3D11_COUNTER_DESC
 {
-    CD3D11_COUNTER_DESC()
-    {}
+    CD3D11_COUNTER_DESC() = default;
     explicit CD3D11_COUNTER_DESC( const D3D11_COUNTER_DESC& o ) :
         D3D11_COUNTER_DESC( o )
     {}

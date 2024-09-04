@@ -67,6 +67,10 @@ DEFINE_GUID(GUID_TREE_PAYMENT_SERVICE,
 #define PAYMENT_CMD_INTIAL_ENROLL             (0)
 #define PAYMENT_CMD_SET_CDCVM                 (1)
 #define PAYMENT_CMD_CLEAR_CDCVM               (2)
+#define PAYMENT_CMD_BEGIN_FACTORY_RESET       (3)
+#define PAYMENT_CMD_END_FACTORY_RESET         (4)
+// Test command codes, but non-harmful
+#define PAYMENT_CMD_GET_CDCVM                 (256)
 
 //
 // Payment service status codes
@@ -79,7 +83,15 @@ DEFINE_GUID(GUID_TREE_PAYMENT_SERVICE,
 #define PAYMENT_ERROR_CDVCM_BLOCKED           (-5) 
 #define PAYMENT_ERROR_NOT_IMPLEMENTED         (-6)
 #define PAYMENT_ERROR_LINK_FAILURE            (-7)
-#define PAYMENT_ERROR_LINK_OTHER              (-8)
+#define PAYMENT_ERROR_OTHER                   (-8)
+#define PAYMENT_ERROR_VERIFICATION_MISMATCH   (-9)
+#define PAYMENT_ERROR_HASH_FAILURE            (-10)
+#define PAYMENT_ERROR_DECRYPT_FAILURE         (-11)
+#define PAYMENT_ERROR_ENCRYPT_FAILURE         (-12)
+#define PAYMENT_ERROR_CRS_NOT_FOUND           (-13)
+#define PAYMENT_ERROR_CRS_NOT_SUPPORTED       (-14)
+#define PAYMENT_ERROR_GENERATE_RANDOM_PIN     (-15)
+#define PAYMENT_ERROR_STORAGE_FAILURE         (-16)
 
 //
 // These structures are consumed by components running in TrEE.
@@ -94,13 +106,13 @@ DEFINE_GUID(GUID_TREE_PAYMENT_SERVICE,
 
 
 //
-// Input structure for PAYMENT_FUNCTION_PROGRAM_KEY
+// Input structure for PAYMENT_FUNCTION_SEND
 // 
 
 typedef struct _PAYMENT_SERVICE_IN {
     
     //
-    // Status of the program key operation
+    // Command Id
     //
     
     UINT32 CmdId; 
@@ -115,13 +127,13 @@ typedef struct _PAYMENT_SERVICE_IN {
 } PAYMENT_SERVICE_IN, *PPAYMENT_SERVICE_IN;
 
 //
-// Output structure for PAYMENT_SERVICE_OUT
+// Output structure for PAYMENT_FUNCTION_SEND
 // 
 
 typedef struct _PAYMENT_SERVICE_OUT {
     
     //
-    // Status of the program key operation
+    // Status of the command operation
     //
     
     INT32 Status;

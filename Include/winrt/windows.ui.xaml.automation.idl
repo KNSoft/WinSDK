@@ -133,6 +133,8 @@ namespace Windows
 
                 interface IAutomationElementIdentifiersStatics7;
 
+                interface IAutomationElementIdentifiersStatics8;
+
                 interface IAutomationProperties;
 
                 interface IAutomationPropertiesStatics;
@@ -148,6 +150,8 @@ namespace Windows
                 interface IAutomationPropertiesStatics6;
 
                 interface IAutomationPropertiesStatics7;
+
+                interface IAutomationPropertiesStatics8;
 
                 interface IAutomationProperty;
 
@@ -608,8 +612,8 @@ namespace Windows
                 [uuid(4906FA52-DDC0-4E69-B76B-019D928D822F)]
                 interface IAutomationAnnotationFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] Windows.UI.Xaml.Automation.AnnotationType type, [out] [retval] Windows.UI.Xaml.Automation.AutomationAnnotation** instance);
-                    HRESULT CreateWithElementParameter([in] Windows.UI.Xaml.Automation.AnnotationType type, [in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.UI.Xaml.Automation.AutomationAnnotation** instance);
+                    HRESULT CreateInstance([in] Windows.UI.Xaml.Automation.AnnotationType type, [out] [retval] Windows.UI.Xaml.Automation.AutomationAnnotation** value);
+                    HRESULT CreateWithElementParameter([in] Windows.UI.Xaml.Automation.AnnotationType type, [in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.UI.Xaml.Automation.AutomationAnnotation** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -715,6 +719,14 @@ namespace Windows
                     [propget] HRESULT HeadingLevelProperty([out] [retval] Windows.UI.Xaml.Automation.AutomationProperty** value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Automation.AutomationElementIdentifiers)]
+                [uuid(8517B060-806C-5DC5-BC41-891BB5A47ADF)]
+                interface IAutomationElementIdentifiersStatics8 : IInspectable
+                {
+                    [propget] HRESULT IsDialogProperty([out] [retval] Windows.UI.Xaml.Automation.AutomationProperty** value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Automation.AutomationProperties)]
                 [uuid(68D7232C-E622-48E9-AF0B-1FFA33CC5CBA)]
@@ -728,34 +740,34 @@ namespace Windows
                 interface IAutomationPropertiesStatics : IInspectable
                 {
                     [propget] HRESULT AcceleratorKeyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAcceleratorKey([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetAcceleratorKey([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetAcceleratorKey([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT AccessKeyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAccessKey([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetAccessKey([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetAccessKey([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT AutomationIdProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAutomationId([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetAutomationId([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetAutomationId([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT HelpTextProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetHelpText([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetHelpText([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetHelpText([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT IsRequiredForFormProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetIsRequiredForForm([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetIsRequiredForForm([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetIsRequiredForForm([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT ItemStatusProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetItemStatus([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetItemStatus([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetItemStatus([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT ItemTypeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetItemType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetItemType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetItemType([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT LabeledByProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLabeledBy([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.UIElement** value);
+                    HRESULT GetLabeledBy([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.UIElement** result);
                     HRESULT SetLabeledBy([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.UIElement* value);
                     [propget] HRESULT NameProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetName([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetName([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetName([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT LiveSettingProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLiveSetting([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* value);
+                    HRESULT GetLiveSetting([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* result);
                     HRESULT SetLiveSetting([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting value);
                 }
 
@@ -765,10 +777,10 @@ namespace Windows
                 interface IAutomationPropertiesStatics2 : IInspectable
                 {
                     [propget] HRESULT AccessibilityViewProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAccessibilityView([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AccessibilityView* value);
+                    HRESULT GetAccessibilityView([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AccessibilityView* result);
                     HRESULT SetAccessibilityView([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.Automation.Peers.AccessibilityView value);
                     [propget] HRESULT ControlledPeersProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetControlledPeers([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.UIElement*>** value);
+                    HRESULT GetControlledPeers([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.UIElement*>** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -777,16 +789,16 @@ namespace Windows
                 interface IAutomationPropertiesStatics3 : IInspectable
                 {
                     [propget] HRESULT PositionInSetProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetPositionInSet([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetPositionInSet([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetPositionInSet([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT SizeOfSetProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetSizeOfSet([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetSizeOfSet([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetSizeOfSet([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT LevelProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLevel([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetLevel([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetLevel([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT AnnotationsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAnnotations([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Automation.AutomationAnnotation*>** value);
+                    HRESULT GetAnnotations([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Automation.AutomationAnnotation*>** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -795,10 +807,10 @@ namespace Windows
                 interface IAutomationPropertiesStatics4 : IInspectable
                 {
                     [propget] HRESULT LandmarkTypeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* value);
+                    HRESULT GetLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* result);
                     HRESULT SetLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType value);
                     [propget] HRESULT LocalizedLandmarkTypeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLocalizedLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetLocalizedLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetLocalizedLandmarkType([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                 }
 
@@ -808,23 +820,23 @@ namespace Windows
                 interface IAutomationPropertiesStatics5 : IInspectable
                 {
                     [propget] HRESULT IsPeripheralProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetIsPeripheral([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetIsPeripheral([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetIsPeripheral([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT IsDataValidForFormProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetIsDataValidForForm([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetIsDataValidForForm([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetIsDataValidForForm([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT FullDescriptionProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetFullDescription([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetFullDescription([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetFullDescription([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT LocalizedControlTypeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetLocalizedControlType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                    HRESULT GetLocalizedControlType([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                     HRESULT SetLocalizedControlType([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     [propget] HRESULT DescribedByProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetDescribedBy([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** value);
+                    HRESULT GetDescribedBy([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** result);
                     [propget] HRESULT FlowsToProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetFlowsTo([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** value);
+                    HRESULT GetFlowsTo([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** result);
                     [propget] HRESULT FlowsFromProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetFlowsFrom([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** value);
+                    HRESULT GetFlowsFrom([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.DependencyObject*>** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -833,7 +845,7 @@ namespace Windows
                 interface IAutomationPropertiesStatics6 : IInspectable
                 {
                     [propget] HRESULT CultureProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetCulture([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetCulture([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetCulture([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                 }
 
@@ -843,8 +855,18 @@ namespace Windows
                 interface IAutomationPropertiesStatics7 : IInspectable
                 {
                     [propget] HRESULT HeadingLevelProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetHeadingLevel([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationHeadingLevel* value);
+                    HRESULT GetHeadingLevel([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationHeadingLevel* result);
                     HRESULT SetHeadingLevel([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.Automation.Peers.AutomationHeadingLevel value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Automation.AutomationProperties)]
+                [uuid(432ECA20-171A-560D-8524-3E651D3AD6CA)]
+                interface IAutomationPropertiesStatics8 : IInspectable
+                {
+                    [propget] HRESULT IsDialogProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    HRESULT GetIsDialog([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
+                    HRESULT SetIsDialog([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1227,6 +1249,7 @@ namespace Windows
                 [static(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5, Windows.Foundation.UniversalApiContract, 3.0)]
                 [static(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6, Windows.Foundation.UniversalApiContract, 4.0)]
                 [static(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7, Windows.Foundation.UniversalApiContract, 6.0)]
+                [static(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8, Windows.Foundation.UniversalApiContract, 7.0)]
                 [threading(both)]
                 runtimeclass AutomationElementIdentifiers
                 {
@@ -1242,6 +1265,7 @@ namespace Windows
                 [static(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5, Windows.Foundation.UniversalApiContract, 3.0)]
                 [static(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6, Windows.Foundation.UniversalApiContract, 4.0)]
                 [static(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7, Windows.Foundation.UniversalApiContract, 6.0)]
+                [static(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8, Windows.Foundation.UniversalApiContract, 7.0)]
                 [threading(both)]
                 runtimeclass AutomationProperties
                 {
@@ -1250,7 +1274,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass AutomationProperty
                 {
                     [default] interface Windows.UI.Xaml.Automation.IAutomationProperty;

@@ -24,6 +24,11 @@
 #define _CRTIMP3
 #endif	/* CRTDLL3 */
 
+// VSTS 14847240: Locally suppress individual -Wv:17 compiler warnings.
+// For more information, visit https://osgwiki.com/wiki/Windows_C%2B%2B_Toolset_Status.
+#pragma warning(push)
+#pragma warning(disable:4595) // non-member operator new or delete functions may not be declared inline
+
 _STD_BEGIN
 
 extern __declspec(selectany) const char * _bad_alloc_Message = "bad allocation";
@@ -63,9 +68,6 @@ _STD_END
 typedef void (__cdecl *new_handler)();
 extern new_handler _New_hand;
 
-		// new AND delete DECLARATIONS
-void __cdecl operator delete(void *) _THROW0();
-void *__cdecl operator new(size_t) _THROW1(std::bad_alloc);
 #ifndef __NOTHROW_T_DEFINED
 #define __NOTHROW_T_DEFINED
 void *__cdecl operator new(size_t, const std::nothrow_t&)
@@ -91,6 +93,8 @@ inline void __CRTDECL operator delete(void *, void *)
 _CRTIMP
 #endif
 	new_handler __cdecl set_new_handler(new_handler) _THROW0();
+
+#pragma warning(pop) // Wv:17 Warnings
 
 #ifdef  _MSC_VER
 #pragma pack(pop)

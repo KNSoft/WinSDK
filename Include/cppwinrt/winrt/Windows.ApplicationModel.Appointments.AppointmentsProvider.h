@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Appointments.2.h"
@@ -176,398 +176,346 @@ template <typename D> void consume_Windows_ApplicationModel_Appointments_Appoint
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation> : produce_base<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>
 {
-    HRESULT __stdcall get_AppointmentInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_AppointmentInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentInformation, WINRT_WRAP(Windows::ApplicationModel::Appointments::Appointment));
             *value = detach_from<Windows::ApplicationModel::Appointments::Appointment>(this->shim().AppointmentInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SourcePackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCompleted(HSTRING itemId) noexcept final
+    int32_t WINRT_CALL ReportCompleted(void* itemId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCompleted, WINRT_WRAP(void), hstring const&);
             this->shim().ReportCompleted(*reinterpret_cast<hstring const*>(&itemId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCanceled() noexcept final
+    int32_t WINRT_CALL ReportCanceled() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCanceled, WINRT_WRAP(void));
             this->shim().ReportCanceled();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportError(HSTRING value) noexcept final
+    int32_t WINRT_CALL ReportError(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportError, WINRT_WRAP(void), hstring const&);
             this->shim().ReportError(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DismissUI() noexcept final
+    int32_t WINRT_CALL DismissUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DismissUI, WINRT_WRAP(void));
             this->shim().DismissUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics> : produce_base<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>
 {
-    HRESULT __stdcall get_AddAppointment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AddAppointment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAppointment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AddAppointment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReplaceAppointment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ReplaceAppointment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReplaceAppointment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ReplaceAppointment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoveAppointment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoveAppointment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAppointment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoveAppointment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowTimeFrame(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ShowTimeFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowTimeFrame, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ShowTimeFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2> : produce_base<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>
 {
-    HRESULT __stdcall get_ShowAppointmentDetails(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ShowAppointmentDetails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowAppointmentDetails, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ShowAppointmentDetails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation> : produce_base<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>
 {
-    HRESULT __stdcall get_AppointmentId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppointmentId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppointmentId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstanceStartDate(void** value) noexcept final
+    int32_t WINRT_CALL get_InstanceStartDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstanceStartDate, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().InstanceStartDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SourcePackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCompleted() noexcept final
+    int32_t WINRT_CALL ReportCompleted() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCompleted, WINRT_WRAP(void));
             this->shim().ReportCompleted();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCanceled() noexcept final
+    int32_t WINRT_CALL ReportCanceled() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCanceled, WINRT_WRAP(void));
             this->shim().ReportCanceled();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportError(HSTRING value) noexcept final
+    int32_t WINRT_CALL ReportError(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportError, WINRT_WRAP(void), hstring const&);
             this->shim().ReportError(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DismissUI() noexcept final
+    int32_t WINRT_CALL DismissUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DismissUI, WINRT_WRAP(void));
             this->shim().DismissUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation> : produce_base<D, Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>
 {
-    HRESULT __stdcall get_AppointmentId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppointmentId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppointmentId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppointmentInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_AppointmentInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentInformation, WINRT_WRAP(Windows::ApplicationModel::Appointments::Appointment));
             *value = detach_from<Windows::ApplicationModel::Appointments::Appointment>(this->shim().AppointmentInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstanceStartDate(void** value) noexcept final
+    int32_t WINRT_CALL get_InstanceStartDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstanceStartDate, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().InstanceStartDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SourcePackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCompleted(HSTRING itemId) noexcept final
+    int32_t WINRT_CALL ReportCompleted(void* itemId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCompleted, WINRT_WRAP(void), hstring const&);
             this->shim().ReportCompleted(*reinterpret_cast<hstring const*>(&itemId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCanceled() noexcept final
+    int32_t WINRT_CALL ReportCanceled() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCanceled, WINRT_WRAP(void));
             this->shim().ReportCanceled();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportError(HSTRING value) noexcept final
+    int32_t WINRT_CALL ReportError(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportError, WINRT_WRAP(void), hstring const&);
             this->shim().ReportError(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DismissUI() noexcept final
+    int32_t WINRT_CALL DismissUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DismissUI, WINRT_WRAP(void));
             this->shim().DismissUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -577,27 +525,27 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Appointments::Appointme
 
 inline hstring AppointmentsProviderLaunchActionVerbs::AddAppointment()
 {
-    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>().AddAppointment();
+    return impl::call_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>([&](auto&& f) { return f.AddAppointment(); });
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ReplaceAppointment()
 {
-    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>().ReplaceAppointment();
+    return impl::call_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>([&](auto&& f) { return f.ReplaceAppointment(); });
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::RemoveAppointment()
 {
-    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>().RemoveAppointment();
+    return impl::call_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>([&](auto&& f) { return f.RemoveAppointment(); });
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ShowTimeFrame()
 {
-    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>().ShowTimeFrame();
+    return impl::call_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>([&](auto&& f) { return f.ShowTimeFrame(); });
 }
 
 inline hstring AppointmentsProviderLaunchActionVerbs::ShowAppointmentDetails()
 {
-    return get_activation_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>().ShowAppointmentDetails();
+    return impl::call_factory<AppointmentsProviderLaunchActionVerbs, Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>([&](auto&& f) { return f.ShowAppointmentDetails(); });
 }
 
 }
@@ -615,5 +563,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Appointments::Appointme
 template<> struct hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation> {};
 
 }
-
-WINRT_WARNING_POP

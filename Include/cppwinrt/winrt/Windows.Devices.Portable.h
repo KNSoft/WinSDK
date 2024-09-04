@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -22,7 +22,7 @@ template <typename D> hstring consume_Windows_Devices_Portable_IServiceDeviceSta
     return selector;
 }
 
-template <typename D> hstring consume_Windows_Devices_Portable_IServiceDeviceStatics<D>::GetDeviceSelectorFromServiceId(GUID const& serviceId) const
+template <typename D> hstring consume_Windows_Devices_Portable_IServiceDeviceStatics<D>::GetDeviceSelectorFromServiceId(winrt::guid const& serviceId) const
 {
     hstring selector{};
     check_hresult(WINRT_SHIM(Windows::Devices::Portable::IServiceDeviceStatics)->GetDeviceSelectorFromServiceId(get_abi(serviceId), put_abi(selector)));
@@ -46,68 +46,60 @@ template <typename D> hstring consume_Windows_Devices_Portable_IStorageDeviceSta
 template <typename D>
 struct produce<D, Windows::Devices::Portable::IServiceDeviceStatics> : produce_base<D, Windows::Devices::Portable::IServiceDeviceStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(Windows::Devices::Portable::ServiceDeviceType serviceType, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(Windows::Devices::Portable::ServiceDeviceType serviceType, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), Windows::Devices::Portable::ServiceDeviceType const&);
             *selector = detach_from<hstring>(this->shim().GetDeviceSelector(*reinterpret_cast<Windows::Devices::Portable::ServiceDeviceType const*>(&serviceType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorFromServiceId(GUID serviceId, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorFromServiceId(winrt::guid serviceId, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
-            *selector = detach_from<hstring>(this->shim().GetDeviceSelectorFromServiceId(*reinterpret_cast<GUID const*>(&serviceId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorFromServiceId, WINRT_WRAP(hstring), winrt::guid const&);
+            *selector = detach_from<hstring>(this->shim().GetDeviceSelectorFromServiceId(*reinterpret_cast<winrt::guid const*>(&serviceId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Portable::IStorageDeviceStatics> : produce_base<D, Windows::Devices::Portable::IStorageDeviceStatics>
 {
-    HRESULT __stdcall FromId(HSTRING deviceId, void** deviceRoot) noexcept final
+    int32_t WINRT_CALL FromId(void* deviceId, void** deviceRoot) noexcept final
     {
         try
         {
             *deviceRoot = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromId, WINRT_WRAP(Windows::Storage::StorageFolder), hstring const&);
             *deviceRoot = detach_from<Windows::Storage::StorageFolder>(this->shim().FromId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelector(HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *selector = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -117,22 +109,22 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Portable {
 
 inline hstring ServiceDevice::GetDeviceSelector(Windows::Devices::Portable::ServiceDeviceType const& serviceType)
 {
-    return get_activation_factory<ServiceDevice, Windows::Devices::Portable::IServiceDeviceStatics>().GetDeviceSelector(serviceType);
+    return impl::call_factory<ServiceDevice, Windows::Devices::Portable::IServiceDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(serviceType); });
 }
 
-inline hstring ServiceDevice::GetDeviceSelectorFromServiceId(GUID const& serviceId)
+inline hstring ServiceDevice::GetDeviceSelectorFromServiceId(winrt::guid const& serviceId)
 {
-    return get_activation_factory<ServiceDevice, Windows::Devices::Portable::IServiceDeviceStatics>().GetDeviceSelectorFromServiceId(serviceId);
+    return impl::call_factory<ServiceDevice, Windows::Devices::Portable::IServiceDeviceStatics>([&](auto&& f) { return f.GetDeviceSelectorFromServiceId(serviceId); });
 }
 
 inline Windows::Storage::StorageFolder StorageDevice::FromId(param::hstring const& deviceId)
 {
-    return get_activation_factory<StorageDevice, Windows::Devices::Portable::IStorageDeviceStatics>().FromId(deviceId);
+    return impl::call_factory<StorageDevice, Windows::Devices::Portable::IStorageDeviceStatics>([&](auto&& f) { return f.FromId(deviceId); });
 }
 
 inline hstring StorageDevice::GetDeviceSelector()
 {
-    return get_activation_factory<StorageDevice, Windows::Devices::Portable::IStorageDeviceStatics>().GetDeviceSelector();
+    return impl::call_factory<StorageDevice, Windows::Devices::Portable::IStorageDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 }
@@ -145,5 +137,3 @@ template<> struct hash<winrt::Windows::Devices::Portable::ServiceDevice> : winrt
 template<> struct hash<winrt::Windows::Devices::Portable::StorageDevice> : winrt::impl::hash_base<winrt::Windows::Devices::Portable::StorageDevice> {};
 
 }
-
-WINRT_WARNING_POP

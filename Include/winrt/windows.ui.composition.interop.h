@@ -88,10 +88,41 @@ DECLARE_INTERFACE_IID_(ICompositorInterop, IUnknown, "25297D5C-3AD4-4C9C-B5CF-E3
         ) PURE;
 };
 
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
+namespace Interactions
+{
+
+#undef INTERFACE
+#define INTERFACE IVisualInteractionSourceInterop
+DECLARE_INTERFACE_IID_(IVisualInteractionSourceInterop, IUnknown, "11F62CD1-2F9D-42D3-B05F-D6790D9E9F8E")
+{
+    IFACEMETHOD(TryRedirectForManipulation)(
+        _In_ const POINTER_INFO& pointerInfo
+        ) PURE;
+};
+
+} // Interactions
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
 namespace Desktop {
 
     typedef interface IDesktopWindowTarget IDesktopWindowTarget;
 
+
+#undef INTERFACE
+#define INTERFACE ICompositionCapabilitiesInteropFactory
+DECLARE_INTERFACE_IID_(ICompositionCapabilitiesInteropFactory, IInspectable, "2C9DB356-E70D-4642-8298-BC4AA5B4865C")
+{
+    IFACEMETHOD(GetForWindow)(
+        _In_ HWND hwnd,
+        _COM_Outptr_ ICompositionCapabilities ** result
+        ) PURE;
+};
 
 #undef INTERFACE
 #define INTERFACE ICompositorDesktopInterop

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.Effects.2.h"
@@ -90,177 +90,153 @@ template <typename D> void consume_Windows_UI_Composition_Effects_ISceneLighting
 template <typename D>
 struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect> : produce_base<D, Windows::UI::Composition::Effects::ISceneLightingEffect>
 {
-    HRESULT __stdcall get_AmbientAmount(float* value) noexcept final
+    int32_t WINRT_CALL get_AmbientAmount(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AmbientAmount, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().AmbientAmount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AmbientAmount(float value) noexcept final
+    int32_t WINRT_CALL put_AmbientAmount(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AmbientAmount, WINRT_WRAP(void), float);
             this->shim().AmbientAmount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DiffuseAmount(float* value) noexcept final
+    int32_t WINRT_CALL get_DiffuseAmount(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiffuseAmount, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DiffuseAmount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DiffuseAmount(float value) noexcept final
+    int32_t WINRT_CALL put_DiffuseAmount(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiffuseAmount, WINRT_WRAP(void), float);
             this->shim().DiffuseAmount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalMapSource(void** value) noexcept final
+    int32_t WINRT_CALL get_NormalMapSource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalMapSource, WINRT_WRAP(Windows::Graphics::Effects::IGraphicsEffectSource));
             *value = detach_from<Windows::Graphics::Effects::IGraphicsEffectSource>(this->shim().NormalMapSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NormalMapSource(void* value) noexcept final
+    int32_t WINRT_CALL put_NormalMapSource(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalMapSource, WINRT_WRAP(void), Windows::Graphics::Effects::IGraphicsEffectSource const&);
             this->shim().NormalMapSource(*reinterpret_cast<Windows::Graphics::Effects::IGraphicsEffectSource const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpecularAmount(float* value) noexcept final
+    int32_t WINRT_CALL get_SpecularAmount(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpecularAmount, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().SpecularAmount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpecularAmount(float value) noexcept final
+    int32_t WINRT_CALL put_SpecularAmount(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpecularAmount, WINRT_WRAP(void), float);
             this->shim().SpecularAmount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpecularShine(float* value) noexcept final
+    int32_t WINRT_CALL get_SpecularShine(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpecularShine, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().SpecularShine());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpecularShine(float value) noexcept final
+    int32_t WINRT_CALL put_SpecularShine(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpecularShine, WINRT_WRAP(void), float);
             this->shim().SpecularShine(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect2> : produce_base<D, Windows::UI::Composition::Effects::ISceneLightingEffect2>
 {
-    HRESULT __stdcall get_ReflectanceModel(Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel* value) noexcept final
+    int32_t WINRT_CALL get_ReflectanceModel(Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReflectanceModel, WINRT_WRAP(Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel));
             *value = detach_from<Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel>(this->shim().ReflectanceModel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReflectanceModel(Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel value) noexcept final
+    int32_t WINRT_CALL put_ReflectanceModel(Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReflectanceModel, WINRT_WRAP(void), Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel const&);
             this->shim().ReflectanceModel(*reinterpret_cast<Windows::UI::Composition::Effects::SceneLightingEffectReflectanceModel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -269,7 +245,7 @@ struct produce<D, Windows::UI::Composition::Effects::ISceneLightingEffect2> : pr
 WINRT_EXPORT namespace winrt::Windows::UI::Composition::Effects {
 
 inline SceneLightingEffect::SceneLightingEffect() :
-    SceneLightingEffect(get_activation_factory<SceneLightingEffect>().ActivateInstance<SceneLightingEffect>())
+    SceneLightingEffect(impl::call_factory<SceneLightingEffect>([](auto&& f) { return f.template ActivateInstance<SceneLightingEffect>(); }))
 {}
 
 }
@@ -281,5 +257,3 @@ template<> struct hash<winrt::Windows::UI::Composition::Effects::ISceneLightingE
 template<> struct hash<winrt::Windows::UI::Composition::Effects::SceneLightingEffect> : winrt::impl::hash_base<winrt::Windows::UI::Composition::Effects::SceneLightingEffect> {};
 
 }
-
-WINRT_WARNING_POP

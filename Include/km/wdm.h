@@ -459,6 +459,15 @@ typedef struct DECLSPEC_ALIGN(16) _XSAVE_FORMAT {
 
 
 
+//
+// Format for CET_U XSTATE component.
+//
+
+typedef struct _XSAVE_CET_U_FORMAT {
+    ULONG64 Ia32CetUMsr;
+    ULONG64 Ia32Pl3SspMsr;
+} XSAVE_CET_U_FORMAT, *PXSAVE_CET_U_FORMAT;
+
 typedef struct DECLSPEC_ALIGN(8) _XSAVE_AREA_HEADER {
     ULONG64 Mask;
     ULONG64 CompactionMask;
@@ -1986,6 +1995,7 @@ _ReadWriteBarrier (
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
+#define SpeculationFence LoadFence
 
 
 
@@ -3971,7 +3981,7 @@ YieldProcessor (
     )
 {
 }
-#endif
+#endif // defined(_M_CEE_PURE)
 
 
 #if (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)) && defined(_ARM64_)
@@ -6128,6 +6138,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 #define FILE_DEVICE_SDFXHCI             0x0000005c
+#define FILE_DEVICE_UCMUCSI             0x0000005d
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -6341,13 +6352,28 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 //
 // Attributes for FILE_CREATE_TREE_CONNECT opens. These overlap with FILE_ATTRIBUTE_xyz values.
+// Note that only the lower 16 bits of attributes can be specified with a CREATE.
 //
 
 #define TREE_CONNECT_ATTRIBUTE_PRIVACY      0x00004000  
 #define TREE_CONNECT_ATTRIBUTE_INTEGRITY    0x00008000  
 #define TREE_CONNECT_ATTRIBUTE_GLOBAL       0x00000004  
 
-#endif
+#endif  // _WIN32_WINNT_WIN10_RS2
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+
+//
+// Pins the tree connection to memory even after the handle is closed. Prior to RS5, this used
+// to be the default before of a handle opened with the FILE_CREATE_TREE_CONNECTION option. This
+// required every caller to issue a FSCTL_LMR_DELETE_CONNECTION on every tree connect handle
+// opened. With this change, only callers who desire the tree connection to be retained in
+// memory indefinitely need to supply this option.
+//
+
+#define TREE_CONNECT_ATTRIBUTE_PINNED       0x00000002  
+
+#endif  // _WIN32_WINNT_WIN10_RS5
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
 
@@ -6447,6 +6473,18 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_OPEN_FOR_FREE_SPACE_QUERY          0x00800000
 
 
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+
+//
+// Create options that go with FILE_CREATE_TREE_CONNECTION.
+//
+
+#define TREE_CONNECT_NO_CLIENT_BUFFERING          0x00000008  // matches with FILE_NO_INTERMEDIATE_BUFFERING
+#define TREE_CONNECT_WRITE_THROUGH                0x00000002  // matches with FILE_WRITE_THROUGH
+
+#endif  // _WIN32_WINNT_WIN10_RS5
+
 //
 //  The FILE_VALID_OPTION_FLAGS mask cannot be expanded to include the
 //  highest 8 bits of the DWORD because those are used to represent the
@@ -6478,6 +6516,9 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_QUERY_RETURN_SINGLE_ENTRY          0x00000002
 #define FILE_QUERY_INDEX_SPECIFIED              0x00000004
 #define FILE_QUERY_RETURN_ON_DISK_ENTRIES_ONLY  0x00000008
+#endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define FILE_QUERY_NO_CURSOR_UPDATE             0x00000010
 #endif
 
 //
@@ -6631,61 +6672,61 @@ typedef struct _IO_SESSION_CONNECT_INFO {
 //
 
 typedef enum _FILE_INFORMATION_CLASS {
-    FileDirectoryInformation         = 1,
-    FileFullDirectoryInformation,   // 2
-    FileBothDirectoryInformation,   // 3
-    FileBasicInformation,           // 4
-    FileStandardInformation,        // 5
-    FileInternalInformation,        // 6
-    FileEaInformation,              // 7
-    FileAccessInformation,          // 8
-    FileNameInformation,            // 9
-    FileRenameInformation,          // 10
-    FileLinkInformation,            // 11
-    FileNamesInformation,           // 12
-    FileDispositionInformation,     // 13
-    FilePositionInformation,        // 14
-    FileFullEaInformation,          // 15
-    FileModeInformation,            // 16
-    FileAlignmentInformation,       // 17
-    FileAllInformation,             // 18
-    FileAllocationInformation,      // 19
-    FileEndOfFileInformation,       // 20
-    FileAlternateNameInformation,   // 21
-    FileStreamInformation,          // 22
-    FilePipeInformation,            // 23
-    FilePipeLocalInformation,       // 24
-    FilePipeRemoteInformation,      // 25
-    FileMailslotQueryInformation,   // 26
-    FileMailslotSetInformation,     // 27
-    FileCompressionInformation,     // 28
-    FileObjectIdInformation,        // 29
-    FileCompletionInformation,      // 30
-    FileMoveClusterInformation,     // 31
-    FileQuotaInformation,           // 32
-    FileReparsePointInformation,    // 33
-    FileNetworkOpenInformation,     // 34
-    FileAttributeTagInformation,    // 35
-    FileTrackingInformation,        // 36
-    FileIdBothDirectoryInformation, // 37
-    FileIdFullDirectoryInformation, // 38
-    FileValidDataLengthInformation, // 39
-    FileShortNameInformation,       // 40
-    FileIoCompletionNotificationInformation, // 41
-    FileIoStatusBlockRangeInformation,       // 42
-    FileIoPriorityHintInformation,           // 43
-    FileSfioReserveInformation,              // 44
-    FileSfioVolumeInformation,               // 45
-    FileHardLinkInformation,                 // 46
-    FileProcessIdsUsingFileInformation,      // 47
-    FileNormalizedNameInformation,           // 48
-    FileNetworkPhysicalNameInformation,      // 49
-    FileIdGlobalTxDirectoryInformation,      // 50
-    FileIsRemoteDeviceInformation,           // 51
-    FileUnusedInformation,                   // 52
-    FileNumaNodeInformation,                 // 53
-    FileStandardLinkInformation,             // 54
-    FileRemoteProtocolInformation,           // 55
+    FileDirectoryInformation                         = 1,
+    FileFullDirectoryInformation,                   // 2
+    FileBothDirectoryInformation,                   // 3
+    FileBasicInformation,                           // 4
+    FileStandardInformation,                        // 5
+    FileInternalInformation,                        // 6
+    FileEaInformation,                              // 7
+    FileAccessInformation,                          // 8
+    FileNameInformation,                            // 9
+    FileRenameInformation,                          // 10
+    FileLinkInformation,                            // 11
+    FileNamesInformation,                           // 12
+    FileDispositionInformation,                     // 13
+    FilePositionInformation,                        // 14
+    FileFullEaInformation,                          // 15
+    FileModeInformation,                            // 16
+    FileAlignmentInformation,                       // 17
+    FileAllInformation,                             // 18
+    FileAllocationInformation,                      // 19
+    FileEndOfFileInformation,                       // 20
+    FileAlternateNameInformation,                   // 21
+    FileStreamInformation,                          // 22
+    FilePipeInformation,                            // 23
+    FilePipeLocalInformation,                       // 24
+    FilePipeRemoteInformation,                      // 25
+    FileMailslotQueryInformation,                   // 26
+    FileMailslotSetInformation,                     // 27
+    FileCompressionInformation,                     // 28
+    FileObjectIdInformation,                        // 29
+    FileCompletionInformation,                      // 30
+    FileMoveClusterInformation,                     // 31
+    FileQuotaInformation,                           // 32
+    FileReparsePointInformation,                    // 33
+    FileNetworkOpenInformation,                     // 34
+    FileAttributeTagInformation,                    // 35
+    FileTrackingInformation,                        // 36
+    FileIdBothDirectoryInformation,                 // 37
+    FileIdFullDirectoryInformation,                 // 38
+    FileValidDataLengthInformation,                 // 39
+    FileShortNameInformation,                       // 40
+    FileIoCompletionNotificationInformation,        // 41
+    FileIoStatusBlockRangeInformation,              // 42
+    FileIoPriorityHintInformation,                  // 43
+    FileSfioReserveInformation,                     // 44
+    FileSfioVolumeInformation,                      // 45
+    FileHardLinkInformation,                        // 46
+    FileProcessIdsUsingFileInformation,             // 47
+    FileNormalizedNameInformation,                  // 48
+    FileNetworkPhysicalNameInformation,             // 49
+    FileIdGlobalTxDirectoryInformation,             // 50
+    FileIsRemoteDeviceInformation,                  // 51
+    FileUnusedInformation,                          // 52
+    FileNumaNodeInformation,                        // 53
+    FileStandardLinkInformation,                    // 54
+    FileRemoteProtocolInformation,                  // 55
 
         //
         //  These are special versions of these operations (defined earlier)
@@ -6695,27 +6736,31 @@ typedef enum _FILE_INFORMATION_CLASS {
         //  receive these.
         //
 
-    FileRenameInformationBypassAccessCheck,  // 56
-    FileLinkInformationBypassAccessCheck,    // 57
+    FileRenameInformationBypassAccessCheck,         // 56
+    FileLinkInformationBypassAccessCheck,           // 57
 
         //
         // End of special information classes reserved for IOManager.
         //
 
-    FileVolumeNameInformation,               // 58
-    FileIdInformation,                       // 59
-    FileIdExtdDirectoryInformation,          // 60
-    FileReplaceCompletionInformation,        // 61
-    FileHardLinkFullIdInformation,           // 62
-    FileIdExtdBothDirectoryInformation,      // 63
-    FileDispositionInformationEx,            // 64
-    FileRenameInformationEx,                 // 65
-    FileRenameInformationExBypassAccessCheck, // 66
-    FileDesiredStorageClassInformation,      // 67
-    FileStatInformation,                     // 68
-    FileMemoryPartitionInformation,          // 69
-    FileStatLxInformation,                   // 70
-    FileCaseSensitiveInformation,            // 71
+    FileVolumeNameInformation,                      // 58
+    FileIdInformation,                              // 59
+    FileIdExtdDirectoryInformation,                 // 60
+    FileReplaceCompletionInformation,               // 61
+    FileHardLinkFullIdInformation,                  // 62
+    FileIdExtdBothDirectoryInformation,             // 63
+    FileDispositionInformationEx,                   // 64
+    FileRenameInformationEx,                        // 65
+    FileRenameInformationExBypassAccessCheck,       // 66
+    FileDesiredStorageClassInformation,             // 67
+    FileStatInformation,                            // 68
+    FileMemoryPartitionInformation,                 // 69
+    FileStatLxInformation,                          // 70
+    FileCaseSensitiveInformation,                   // 71
+    FileLinkInformationEx,                          // 72
+    FileLinkInformationExBypassAccessCheck,         // 73
+    FileStorageReserveIdInformation,                // 74
+    FileCaseSensitiveInformationForceAccessCheck,   // 75
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
 
@@ -6905,6 +6950,7 @@ typedef enum _FSINFOCLASS {
     FileFsSectorSizeInformation,    // 11
     FileFsDataCopyInformation,      // 12
     FileFsMetadataSizeInformation,  // 13
+    FileFsFullSizeInformationEx,    // 14
     FileFsMaximumInformation
 } FS_INFORMATION_CLASS, *PFS_INFORMATION_CLASS;
 
@@ -6933,7 +6979,7 @@ typedef union _FILE_SEGMENT_ELEMENT {
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 //
-//  Flag defintions for NtFlushBuffersFileEx
+//  Flag definitions for NtFlushBuffersFileEx
 //
 //  If none of the below flags are specified the following will occur for a
 //  given file handle:
@@ -7477,6 +7523,7 @@ typedef struct _KEY_TRUST_INFORMATION {
 
 // end_access
 
+//@[comment("MVI_tracked")]
 typedef struct _OBJECT_NAME_INFORMATION {
     UNICODE_STRING Name;
 } OBJECT_NAME_INFORMATION, *POBJECT_NAME_INFORMATION;
@@ -7487,10 +7534,6 @@ typedef struct _OBJECT_NAME_INFORMATION {
 #define DUPLICATE_SAME_ATTRIBUTES   0x00000004
 
 
-
-//
-// Section Information Structures.
-//
 
 typedef enum _SECTION_INHERIT {
     ViewShare = 1,
@@ -7575,11 +7618,59 @@ typedef enum _SECTION_INHERIT {
 #define MEM_DECOMMIT                    0x00004000  
 #define MEM_RELEASE                     0x00008000  
 #define MEM_FREE                        0x00010000  
+
+typedef struct _MEM_ADDRESS_REQUIREMENTS {
+    PVOID LowestStartingAddress;
+    PVOID HighestEndingAddress;
+    SIZE_T Alignment;
+} MEM_ADDRESS_REQUIREMENTS, *PMEM_ADDRESS_REQUIREMENTS;
+
+#define MEM_EXTENDED_PARAMETER_GRAPHICS     0x00000001
+
+typedef enum MEM_EXTENDED_PARAMETER_TYPE {
+    MemExtendedParameterInvalidType = 0,
+    MemExtendedParameterAddressRequirements,
+    MemExtendedParameterNumaNode,
+    MemExtendedParameterPartitionHandle,
+    MemExtendedParameterUserPhysicalHandle,
+    MemExtendedParameterAttributeFlags,
+    MemExtendedParameterMax
+} MEM_EXTENDED_PARAMETER_TYPE, *PMEM_EXTENDED_PARAMETER_TYPE;
+
+#define MEM_EXTENDED_PARAMETER_TYPE_BITS    8
+
+typedef struct DECLSPEC_ALIGN(8) MEM_EXTENDED_PARAMETER {
+
+    struct {
+        ULONG64 Type : MEM_EXTENDED_PARAMETER_TYPE_BITS;
+        ULONG64 Reserved : 64 - MEM_EXTENDED_PARAMETER_TYPE_BITS;
+    } DUMMYSTRUCTNAME;
+
+    union {
+        ULONG64 ULong64;
+        PVOID Pointer;
+        SIZE_T Size;
+        HANDLE Handle;
+        ULONG ULong;
+    } DUMMYUNIONNAME;
+
+} MEM_EXTENDED_PARAMETER, *PMEM_EXTENDED_PARAMETER;
+
+
 #define SEC_64K_PAGES               0x00080000  
 #define SEC_FILE                    0x00800000  
 #define SEC_RESERVE                 0x04000000  
 #define SEC_COMMIT                  0x08000000  
 #define SEC_LARGE_PAGES             0x80000000  
+
+typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
+    MemSectionExtendedParameterInvalidType = 0,
+    MemSectionExtendedParameterUserPhysicalFlags,
+    MemSectionExtendedParameterNumaNode,
+    MemSectionExtendedParameterMax
+} MEM_SECTION_EXTENDED_PARAMETER_TYPE, *PMEM_SECTION_EXTENDED_PARAMETER_TYPE;
+
+
 #define MEM_PRIVATE                 0x00020000  
 #define MEM_MAPPED                  0x00040000  
 
@@ -7897,6 +7988,15 @@ DEFINE_GUID( GUID_ALLOW_DISPLAY_REQUIRED, 0xA9CEB8DA, 0xCD46, 0x44FB, 0xA9, 0x8B
 // {8EC4B3A5-6868-48c2-BE75-4F3044BE88A7}
 //
 DEFINE_GUID(GUID_VIDEO_CONSOLE_LOCK_TIMEOUT, 0x8ec4b3a5, 0x6868, 0x48c2, 0xbe, 0x75, 0x4f, 0x30, 0x44, 0xbe, 0x88, 0xa7);
+
+//
+// Specifies power settings which will decide whether to
+// prefer visual quality or battery life for an Advanced
+// Color capable display
+//
+// {684C3E69-A4F7-4014-8754-D45179A56167}
+//
+DEFINE_GUID(GUID_ADVANCED_COLOR_QUALITY_BIAS, 0x684c3e69, 0xa4f7, 0x4014, 0x87, 0x54, 0xd4, 0x51, 0x79, 0xa5, 0x61, 0x67);
 
 
 // Adaptive power behavior settings
@@ -8484,6 +8584,14 @@ DEFINE_GUID(GUID_PROCESSOR_PERF_AUTONOMOUS_MODE,
 DEFINE_GUID(GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE,
 0x36687f9e, 0xe3a5, 0x4dbf, 0xb1, 0xdc, 0x15, 0xeb, 0x38, 0x1c, 0x68, 0x63);
 
+//
+// Specifies the tradeoff between performance and energy the processor should
+// make when operating in autonomous mode for class 1 processors.
+//
+// {36687F9E-E3A5-4dbf-B1DC-15EB381C6864}
+DEFINE_GUID(GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_1,
+0x36687f9e, 0xe3a5, 0x4dbf, 0xb1, 0xdc, 0x15, 0xeb, 0x38, 0x1c, 0x68, 0x64);
+
 #define PROCESSOR_PERF_PERFORMANCE_PREFERENCE 0xff
 #define PROCESSOR_PERF_ENERGY_PREFERENCE         0
 
@@ -8919,6 +9027,105 @@ DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
 //
 DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY, 0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
 
+//
+// Processor responsiveness settings
+//
+// Specifies the number of responsiveness events required to disable
+// responsiveness policy overrides.
+//
+// {38B8383D-CCE0-4c79-9E3E-56A4F17CC480}
+//
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD,
+0x38b8383d, 0xcce0, 0x4c79, 0x9e, 0x3e, 0x56, 0xa4, 0xf1, 0x7c, 0xc4, 0x80);
+
+//
+// Specifies the number of responsiveness events required to disable
+// responsiveness policy overrides for efficiency class 1 processors.
+//
+// {38B8383D-CCE0-4c79-9E3E-56A4F17CC481}
+//
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD_1,
+0x38b8383d, 0xcce0, 0x4c79, 0x9e, 0x3e, 0x56, 0xa4, 0xf1, 0x7c, 0xc4, 0x81);
+
+//
+// Specifies the number of responsiveness events required to enable
+// responsiveness policy overrides.
+//
+// {3D44E256-7222-4415-A9ED-9C45FA3DD830}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD,
+0x3d44e256, 0x7222, 0x4415, 0xa9, 0xed, 0x9c, 0x45, 0xfa, 0x3d, 0xd8, 0x30);
+
+//
+// Specifies the number of responsiveness events required to enable
+// responsiveness policy overrides for efficiency class 1 processors.
+//
+// {3D44E256-7222-4415-A9ED-9C45FA3DD831}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1,
+0x3d44e256, 0x7222, 0x4415, 0xa9, 0xed, 0x9c, 0x45, 0xfa, 0x3d, 0xd8, 0x31);
+
+//
+// Specifies the number of consecutive perf checks with a disable hint before
+// responsivenss overrides will be disabled.
+//
+// {F565999F-3FB0-411a-A226-3F0198DEC130}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME, 
+0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x30);
+
+//
+// Specifies the number of consecutive perf checks with a disable hint before
+// responsivenss overrides will be disabled for efficiency class 1 processors.
+//
+// {F565999F-3FB0-411a-A226-3F0198DEC131}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1, 
+0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x31);
+
+//
+// Specifies the number of consecutive perf checks with a enable hint before
+// responsivenss overrides will be enabled.
+//
+// {3D915188-7830-49ae-A79A-0FB0A1E5A200}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME, 
+0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x0);
+
+//
+// Specifies the number of consecutive perf checks with a enable hint before
+// responsivenss overrides will be enabled for efficiency class 1 processors.
+//
+// {3D915188-7830-49ae-A79A-0FB0A1E5A201}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1, 
+0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x1);
+
+//
+// Specifies the ceiling placed on EPP when responsiveness hints are enabled.
+//
+// {4427C73B-9756-4a5c-B84B-C7BDA79C7320}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING, 
+0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x20);
+
+//
+// Specifies the ceiling placed on EPP when responsiveness hints are enabled
+// for efficiency class 1 processors.
+//
+// {4427C73B-9756-4a5c-B84B-C7BDA79C7321}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1, 
+0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x21);
+
+//
+// Specifies the floor placed on processor performance when responsiveness hints
+// are enabled.
+//
+// {CE8E92EE-6A86-4572-BFE0-20C21D03CD40}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR, 
+0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x40);
+
+//
+// Specifies the floor placed on processor performance when responsiveness hints
+// are enabled for efficiency class 1 processors.
+//
+// {CE8E92EE-6A86-4572-BFE0-20C21D03CD41}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1, 
+0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x41);
+
 // Lock Console on Wake
 // --------------------
 //
@@ -9232,14 +9439,15 @@ typedef enum _POWER_STATE_TYPE {
 typedef struct _SYSTEM_POWER_STATE_CONTEXT {
     union {
         struct {
-            ULONG   Reserved1             : 8;
-            ULONG   TargetSystemState     : 4;
-            ULONG   EffectiveSystemState  : 4;
-            ULONG   CurrentSystemState    : 4;
-            ULONG   IgnoreHibernationPath : 1;
-            ULONG   PseudoTransition      : 1;
-            ULONG   KernelSoftReboot      : 1;
-            ULONG   Reserved2             : 9;
+            ULONG   Reserved1               : 8;
+            ULONG   TargetSystemState       : 4;
+            ULONG   EffectiveSystemState    : 4;
+            ULONG   CurrentSystemState      : 4;
+            ULONG   IgnoreHibernationPath   : 1;
+            ULONG   PseudoTransition        : 1;
+            ULONG   KernelSoftReboot        : 1;
+            ULONG   DirectedDripsTransition : 1;
+            ULONG   Reserved2               : 8;
         } DUMMYSTRUCTNAME;
 
         ULONG ContextAsUlong;
@@ -9440,8 +9648,8 @@ typedef enum {
     ExitLatencySamplingPercentage,
     RegisterSpmPowerSettings,
     PlatformIdleStates,
-    ProcessorIdleVeto,
-    PlatformIdleVeto,
+    ProcessorIdleVeto,                              // Deprecated.
+    PlatformIdleVeto,                               // Deprecated.
     SystemBatteryStatePrecise,
     ThermalEvent,
     PowerRequestActionInternal,
@@ -9562,6 +9770,7 @@ typedef enum {
     MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
+    MonitorRequestReasonDirectedDrips,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -9863,6 +10072,9 @@ typedef enum _CM_ERROR_CONTROL_TYPE {
 // CM_SERVICE_WINPE_BOOT_LOAD - Specified if a driver should be promoted
 // on WinPE boot.
 //
+// CM_SERVICE_RAM_DISK_BOOT_LOAD - Specified if a driver should be promoted
+// when booting from a RAM disk.
+//
 
 #define CM_SERVICE_NETWORK_BOOT_LOAD      0x00000001
 #define CM_SERVICE_VIRTUAL_DISK_BOOT_LOAD 0x00000002
@@ -9872,6 +10084,7 @@ typedef enum _CM_ERROR_CONTROL_TYPE {
 #define CM_SERVICE_MEASURED_BOOT_LOAD     0x00000020
 #define CM_SERVICE_VERIFIER_BOOT_LOAD     0x00000040
 #define CM_SERVICE_WINPE_BOOT_LOAD        0x00000080
+#define CM_SERVICE_RAM_DISK_BOOT_LOAD     0x00000100
 
 //
 // Mask defining the legal promotion flag values.
@@ -9884,7 +10097,8 @@ typedef enum _CM_ERROR_CONTROL_TYPE {
                                          CM_SERVICE_USB3_DISK_BOOT_LOAD |     \
                                          CM_SERVICE_MEASURED_BOOT_LOAD |      \
                                          CM_SERVICE_VERIFIER_BOOT_LOAD |      \
-                                         CM_SERVICE_WINPE_BOOT_LOAD)
+                                         CM_SERVICE_WINPE_BOOT_LOAD |         \
+                                         CM_SERVICE_RAM_DISK_BOOT_LOAD)
 
 
 
@@ -11179,6 +11393,7 @@ RtlAssert(
 #define FAST_FAIL_UNHANDLED_LSS_EXCEPTON            54
 #define FAST_FAIL_ADMINLESS_ACCESS_DENIED           55         // Telemetry, nonfatal
 #define FAST_FAIL_UNEXPECTED_CALL                   56
+#define FAST_FAIL_CONTROL_INVALID_RETURN_ADDRESS    57
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -11767,11 +11982,13 @@ RtlUnicodeStringToInt64 (
 
 #ifdef _NTSYSTEM_
 
+// Try to avoid these, the preferred system ACP/OEMCP is UTF-8 and these are then irrelevent
 #define NLS_MB_CODE_PAGE_TAG NlsMbCodePageTag
 #define NLS_MB_OEM_CODE_PAGE_TAG NlsMbOemCodePageTag
 
 #else
 
+// Try to avoid these, the preferred system ACP/OEMCP is UTF-8 and these are then irrelevent
 #define NLS_MB_CODE_PAGE_TAG (*NlsMbCodePageTag)
 #define NLS_MB_OEM_CODE_PAGE_TAG (*NlsMbOemCodePageTag)
 
@@ -11826,6 +12043,35 @@ RtlInitUnicodeString(
 
 
 
+FORCEINLINE
+VOID
+RtlSanitizeUnicodeStringPadding(
+    _Out_ PUNICODE_STRING String
+    )
+{
+
+    ULONG PaddingSize;
+    ULONG PaddingStart;
+
+#if defined(_WIN64)
+
+    PaddingStart = FIELD_OFFSET(UNICODE_STRING, MaximumLength) +
+                   sizeof(String->MaximumLength);
+
+    PaddingSize = FIELD_OFFSET(UNICODE_STRING, Buffer) - PaddingStart;
+
+    memset((PVOID)((ULONG_PTR)String + PaddingStart), 0, PaddingSize);
+
+#else
+
+    UNREFERENCED_PARAMETER(String);
+    UNREFERENCED_PARAMETER(PaddingSize);
+    UNREFERENCED_PARAMETER(PaddingStart);
+
+#endif
+
+}
+
 _At_(UnicodeString->Buffer, _Post_equal_to_(Buffer))
 _At_(UnicodeString->Length, _Post_equal_to_(0))
 _At_(UnicodeString->MaximumLength, _Post_equal_to_(BufferSize))
@@ -11839,7 +12085,7 @@ RtlInitEmptyUnicodeString(
     _In_ USHORT BufferSize
     )
 {
-    UnicodeString->Length = 0;
+    memset(UnicodeString, 0, sizeof(*UnicodeString));
     UnicodeString->MaximumLength = BufferSize;
     UnicodeString->Buffer = Buffer;
 }
@@ -11857,7 +12103,7 @@ RtlInitEmptyAnsiString(
     _In_ USHORT BufferSize
     )
 {
-    AnsiString->Length = 0;
+    memset(AnsiString, 0, sizeof(*AnsiString));
     AnsiString->MaximumLength = BufferSize;
     AnsiString->Buffer = Buffer;
 }
@@ -12194,6 +12440,7 @@ RtlCompareUnicodeString(
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
 NTSYSAPI
@@ -12354,9 +12601,7 @@ RtlxUnicodeStringToAnsiSize(
 //
 
 #define RtlUnicodeStringToAnsiSize(STRING) (                  \
-    NLS_MB_CODE_PAGE_TAG ?                                    \
-    RtlxUnicodeStringToAnsiSize(STRING) :                     \
-    ((STRING)->Length + sizeof(UNICODE_NULL)) / sizeof(WCHAR) \
+    RtlxUnicodeStringToAnsiSize(STRING)                       \
 )
 
 
@@ -12380,9 +12625,7 @@ RtlxAnsiStringToUnicodeSize(
 //
 
 #define RtlAnsiStringToUnicodeSize(STRING) (                 \
-    NLS_MB_CODE_PAGE_TAG ?                                   \
-    RtlxAnsiStringToUnicodeSize(STRING) :                    \
-    ((STRING)->Length + sizeof(ANSI_NULL)) * sizeof(WCHAR) \
+    RtlxAnsiStringToUnicodeSize(STRING)                      \
 )
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
@@ -15780,16 +16023,16 @@ NtPropagationFailed(
 #undef ALIGN_UP_POINTER
 
 #define ALIGN_DOWN_BY(length, alignment) \
-    ((ULONG_PTR)(length) & ~(alignment - 1))
+    ((ULONG_PTR)(length) & ~((ULONG_PTR)(alignment) - 1))
 
 #define ALIGN_UP_BY(length, alignment) \
-    (ALIGN_DOWN_BY(((ULONG_PTR)(length) + alignment - 1), alignment))
+    (ALIGN_DOWN_BY(((ULONG_PTR)(length) + (alignment) - 1), alignment))
 
 #define ALIGN_DOWN_POINTER_BY(address, alignment) \
-    ((PVOID)((ULONG_PTR)(address) & ~((ULONG_PTR)alignment - 1)))
+    ((PVOID)((ULONG_PTR)(address) & ~((ULONG_PTR)(alignment) - 1)))
 
 #define ALIGN_UP_POINTER_BY(address, alignment) \
-    (ALIGN_DOWN_POINTER_BY(((ULONG_PTR)(address) + alignment - 1), alignment))
+    (ALIGN_DOWN_POINTER_BY(((ULONG_PTR)(address) + (alignment) - 1), alignment))
 
 #define ALIGN_DOWN(length, type) \
     ALIGN_DOWN_BY(length, sizeof(type))
@@ -15839,6 +16082,7 @@ NtPropagationFailed(
 #endif
 
 extern ULONG NtGlobalFlag;
+extern ULONG NtGlobalFlag2;
 
 
 
@@ -16483,7 +16727,6 @@ typedef struct _DISPATCHER_HEADER {
 
         struct {                            // Thread
             UCHAR ThreadType;
-
             UCHAR ThreadReserved;
 
             union {
@@ -18034,8 +18277,9 @@ Return Value:
 
 #define KeRaiseIrql(a,b) *(b) = KfRaiseIrql(a)
 
-#if ((NTDDI_VERSION >= NTDDI_WIN8) && \
-     (defined(_NTDRIVER_) || defined(_NTDDK_) || defined(_NTIFS_) || defined(_NTHAL_) || defined(_NTOSP_) || defined(_BLDR_)))
+#if (NTDDI_VERSION >= NTDDI_WIN8) && !defined(NT_INLINE_IRQL)
+
+#if (defined(_NTDRIVER_) || defined(_NTDDK_) || defined(_NTIFS_) || defined(_NTHAL_) || defined(_NTOSP_) || defined(_BLDR_))
 
 _IRQL_requires_max_(HIGH_LEVEL)
 NTKERNELAPI
@@ -18052,6 +18296,29 @@ KIRQL
 KfRaiseIrql (
     _In_ KIRQL NewIrql
     );
+
+#else
+
+_IRQL_requires_max_(HIGH_LEVEL)
+NTKERNELAPI
+VOID
+KzLowerIrql (
+    _In_ _Notliteral_ _IRQL_restores_ KIRQL NewIrql
+   );
+
+_IRQL_requires_max_(HIGH_LEVEL)
+_IRQL_raises_(NewIrql)
+_IRQL_saves_
+NTKERNELAPI
+KIRQL
+KzRaiseIrql (
+    _In_ KIRQL NewIrql
+    );
+
+#define KeLowerIrql KzLowerIrql
+#define KfRaiseIrql KzRaiseIrql
+
+#endif
 
 #else
 
@@ -18975,6 +19242,7 @@ extern "C" {
 
 
 
+
 #if defined(_ARM64_)
 
 //
@@ -19582,11 +19850,14 @@ WRITE_PORT_BUFFER_ULONG (
 
 
 
+
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif
+
 
 
 
@@ -20032,6 +20303,7 @@ typedef struct _SYSTEM_CPU_SET_INFORMATION SYSTEM_CPU_SET_INFORMATION, *PSYSTEM_
 #define PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE 30   
 #define PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE  31   
 #define PF_RDTSCP_INSTRUCTION_AVAILABLE         32   
+#define PF_RDPID_INSTRUCTION_AVAILABLE          33   
 
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
@@ -21619,6 +21891,7 @@ _IRQL_requires_same_
 NTSTATUS
 KeAddTriageDumpDataBlock (
     _Inout_ PKTRIAGE_DUMP_DATA_ARRAY KtriageDumpDataArray,
+    _In_ ULONG MaxDataSize,
     _In_ PVOID Address,
     _In_ SIZE_T Size
     );
@@ -21643,6 +21916,7 @@ KeAddTriageDumpDataBlock (
 #define EXCEPTION_RESERVED_TRAP         0x0F
 #define EXCEPTION_NPX_ERROR             0x10
 #define EXCEPTION_ALIGNMENT_CHECK       0x11
+#define EXCEPTION_CP_FAULT              0x15
 #define EXCEPTION_VIRTUALIZATION_FAULT  0x20
 
 #if (NTDDI_VERSION >= NTDDI_WINXPSP1)
@@ -24249,6 +24523,17 @@ ExIsResourceAcquiredSharedLite (
 #define ExIsResourceAcquiredLite ExIsResourceAcquiredSharedLite
 
 
+#define EX_PUSH_LOCK ULONG_PTR
+#define PEX_PUSH_LOCK PULONG_PTR
+
+#ifndef EX_NO_PUSH_LOCKS
+#if (NTDDI_VERSION < NTDDI_WINBLUE)
+#ifndef EX_LEGACY_PUSH_LOCKS
+#define EX_LEGACY_PUSH_LOCKS
+#endif
+#endif // (NTDDI_VERSION < NTDDI_WINBLUE)
+#endif // EX_NO_PUSH_LOCKS
+
 //
 // Rundown protection structure
 //
@@ -24854,6 +25139,76 @@ ExCleanupRundownProtectionCacheAware (
 #endif
 
 
+#ifndef EX_NO_PUSH_LOCKS
+
+VOID
+ExInitializePushLock (
+    _Out_ PEX_PUSH_LOCK PushLock
+    );
+
+#if !defined(EX_LEGACY_PUSH_LOCKS)
+_IRQL_requires_max_(APC_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+NTKERNELAPI
+VOID
+FASTCALL
+ExAcquirePushLockExclusiveEx (
+    _Inout_ _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+NTKERNELAPI
+VOID
+FASTCALL
+ExAcquirePushLockSharedEx (
+    _Inout_ _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+NTKERNELAPI
+VOID
+FASTCALL
+ExReleasePushLockExclusiveEx (
+    _Inout_ _Requires_lock_held_(*_Curr_) _Releases_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_Requires_lock_held_(_Global_critical_region_)
+NTKERNELAPI
+VOID
+FASTCALL
+ExReleasePushLockSharedEx (
+    _Inout_ _Requires_lock_held_(*_Curr_) _Releases_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    );
+
+#define EX_DEFAULT_PUSH_LOCK_FLAGS      0
+
+#define ExAcquirePushLockExclusive(Lock)   \
+        ExAcquirePushLockExclusiveEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+#define ExAcquirePushLockShared(Lock)   \
+        ExAcquirePushLockSharedEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+#define ExReleasePushLockExclusive(Lock) \
+        ExReleasePushLockExclusiveEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+#define ExReleasePushLockShared(Lock) \
+        ExReleasePushLockSharedEx(Lock, EX_DEFAULT_PUSH_LOCK_FLAGS)
+
+
+#endif // !EX_LEGACY_PUSH_LOCKS
+#endif // EX_NO_PUSH_LOCKS
+
 //
 // Define shared spinlock type and function prototypes.
 //
@@ -25002,6 +25357,8 @@ ExSetFirmwareEnvironmentVariable (
     );
 #endif
 
+
+
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
@@ -25010,6 +25367,8 @@ ExIsManufacturingModeEnabled (
     VOID
     );
 #endif // #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 _IRQL_requires_max_(APC_LEVEL)
@@ -25945,6 +26304,7 @@ MmQuerySystemSize (
 
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -25954,6 +26314,7 @@ MmIsVerifierEnabled (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -25990,7 +26351,7 @@ MmProbeAndLockSelectedPages (
     );
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-//@[comment("MVI_tracked")]
+//@[public, SystemReserved, comment("MVI_tracked")]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 VOID
@@ -26115,6 +26476,7 @@ MmMapMdl (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WS03)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (DISPATCH_LEVEL)
 NTKERNELAPI
 LOGICAL
@@ -27341,6 +27703,7 @@ PsQueryTotalCycleTimeProcess (
 // Minor code 0x0a is reserved
 #define IRP_MN_REGINFO_EX                   0x0b
 // Minor code 0x0c is reserved
+// Minor code 0x0d is reserved
 
 
 
@@ -27977,7 +28340,7 @@ FAST_IO_READ_COMPRESSED (
     _Out_ PVOID Buffer,
     _Out_ PMDL *MdlChain,
     _Out_ PIO_STATUS_BLOCK IoStatus,
-    _Out_ struct _COMPRESSED_DATA_INFO *CompressedDataInfo,
+    _Out_writes_bytes_(CompressedDataInfoLength) struct _COMPRESSED_DATA_INFO *CompressedDataInfo,
     _In_ ULONG CompressedDataInfoLength,
     _In_ struct _DEVICE_OBJECT *DeviceObject
     );
@@ -27996,7 +28359,7 @@ FAST_IO_WRITE_COMPRESSED (
     _In_ PVOID Buffer,
     _Out_ PMDL *MdlChain,
     _Out_ PIO_STATUS_BLOCK IoStatus,
-    _In_ struct _COMPRESSED_DATA_INFO *CompressedDataInfo,
+    _In_reads_bytes_(CompressedDataInfoLength) struct _COMPRESSED_DATA_INFO *CompressedDataInfo,
     _In_ ULONG CompressedDataInfoLength,
     _In_ struct _DEVICE_OBJECT *DeviceObject
     );
@@ -28202,7 +28565,8 @@ typedef struct _WAIT_CONTEXT_BLOCK {
             ULONG SyncCallback : 1;
             ULONG DmaContext : 1;
             ULONG ZeroMapRegisters : 1;
-            ULONG Reserved : 29;
+            ULONG Reserved : 9;
+            ULONG NumberOfRemapPages : 20;
         };
     };
     PDRIVER_CONTROL DeviceRoutine;
@@ -28290,6 +28654,7 @@ typedef struct _DEVICE_OBJECT *PDEVICE_OBJECT;
 
 struct  _DEVICE_OBJECT_POWER_EXTENSION;
 
+////@[comment("MVI_tracked")]
 typedef struct _DEVOBJ_EXTENSION {
 
     CSHORT          Type;
@@ -28362,6 +28727,7 @@ typedef struct _DRIVER_EXTENSION {
 
 } DRIVER_EXTENSION, *PDRIVER_EXTENSION;
 
+//@[comment("MVI_tracked")]
 typedef struct _DRIVER_OBJECT {
     CSHORT Type;
     CSHORT Size;
@@ -28941,16 +29307,44 @@ typedef IO_COMPLETION_ROUTINE *PIO_COMPLETION_ROUTINE;
 #define SL_RETURN_SINGLE_ENTRY          0x02
 #define SL_INDEX_SPECIFIED              0x04
 #define SL_RETURN_ON_DISK_ENTRIES_ONLY  0x08
+#define SL_NO_CURSOR_UPDATE             0x10
 
-#define SL_QUERY_DIRECTORY_MASK         0x0b
+#define SL_QUERY_DIRECTORY_MASK         0x1b
 
 //
-// SL_RETURN_ON_DISK_ENTRIES_ONLY - Instructs any filters that perform
-// directory virtualization or just-in-time expansion to simply pass the
-// request through to the file system and return entries that are currently
-// on disk.
+//  SL_RESTART_SCAN - Instead of this query continuing from the last cursor
+//  saved location this tells the file system to restart the query from the
+//  front of the directory using the given wildcard pattern.
 //
-// SL_QUERY_DIRECTORY_MASK - The set of SL_ flags that are valid for IRP_MJ_DIRECTORY_CONTROL.
+//  SL_RETURN_SINGLE_ENTRY - Normally the return buffer is packed with as many
+//  matching directory entries as will fit.  With this flag only one directory
+//  entry is returned at a time. This does make the operation less efficient.
+//
+//  SL_INDEX_SPECIFIED - Allows the caller to specify a position in the directory
+//  to start scanning at.  How the "position" is specified varies from file system
+//  to file system.  This flag is not supported for query operations via
+//  NtQueryDirectoryFile because of the  per-fileSystem variability.  This flag
+//  can only be set if you generate your own IRP_MJ_DIRECTORY_CONTROL IRP.
+//
+//  SL_RETURN_ON_DISK_ENTRIES_ONLY - Instructs any file system filters that perform
+//  directory virtualization or just-in-time expansion to simply pass the
+//  request through to the file system and return entries that are currently
+//  on disk. Not all file systems support this flag.
+//
+//  SL_NO_CURSOR_UPDATE_QUERY - File Systems maintain per-FileObject directory
+//  cursor information.  When multiple threads do queries using the same FileObject,
+//  access to the per-FileObject structure is single threaded to prevent corruption
+//  of the cursor state.  This flag tells the file system to not update per-FileObject
+//  cursor state information thus allowing multiple threads to query in parallel
+//  using the same handle.  The behaves as if SL_RESTART_SCAN is specified on
+//  each call. If a wild card pattern is given on the next call the operation
+//  will NOT pickup where the last query ended.  This allows for true async
+//  directory query support.  If this flag is used inside a TxF transaction
+//  the operation will be failed.
+//  Note: NOT all file systems support this flag.
+//
+// SL_QUERY_DIRECTORY_MASK - The set of SL_ flags that are valid for
+//  IRP_MJ_DIRECTORY_CONTROL via NtQueryDirectoryFile
 //
 
 //
@@ -28970,12 +29364,23 @@ typedef IO_COMPLETION_ROUTINE *PIO_COMPLETION_ROUTINE;
 
 
 //
-//  SetInformationFile (IRP_MJ_SET_INFORMATION)
+//  SetInformationFile (IRP_MJ_SET_INFORMATION) / QueryInformationFile
+//  (IRP_MJ_QUERY_INFORMATION)
 //
+//  SL_BYPASS_ACCESS_CHECK and SL_INFO_FORCE_ACCESS_CHECK are mutually exclusive
+//  so we overloaded the flag value. SL_FORCE_ACCESS_CHECK having the same value
+//  is just a coincidence.
+//
+//  SL_BYPASS_ACCESS_CHECK
 //      Rename/Link Information
 //
+//  SL_INFO_FORCE_ACCESS_CHECK
+//      FileCaseSensitiveInformation
+//
 
-#define SL_BYPASS_ACCESS_CHECK          0x01
+#define SL_BYPASS_ACCESS_CHECK             0x01
+#define SL_INFO_FORCE_ACCESS_CHECK         0x01
+#define SL_INFO_IGNORE_READONLY_ATTRIBUTE  0x40  // same value as IO_IGNORE_READONLY_ATTRIBUTE
 
 //
 // Define PNP/POWER types required by IRP_MJ_PNP/IRP_MJ_POWER.
@@ -29093,6 +29498,7 @@ typedef ULONG PNP_DEVICE_STATE, *PPNP_DEVICE_STATE;
 #define PNP_DEVICE_RESOURCE_REQUIREMENTS_CHANGED 0x00000010
 #define PNP_DEVICE_NOT_DISABLEABLE               0x00000020
 #define PNP_DEVICE_DISCONNECTED                  0x00000040
+#define PNP_DEVICE_RESOURCE_UPDATED              0x00000080
 
 typedef enum {
     DeviceTextDescription = 0,            // DeviceDesc property
@@ -29190,6 +29596,9 @@ typedef struct _IO_STACK_LOCATION {
         struct {
             ULONG Length;
             ULONG POINTER_ALIGNMENT Key;
+#if defined(_WIN64)
+            ULONG Flags;
+#endif
             LARGE_INTEGER ByteOffset;
         } Read;
 
@@ -29200,6 +29609,9 @@ typedef struct _IO_STACK_LOCATION {
         struct {
             ULONG Length;
             ULONG POINTER_ALIGNMENT Key;
+#if defined(_WIN64)
+            ULONG Flags;
+#endif
             LARGE_INTEGER ByteOffset;
         } Write;
 
@@ -33575,6 +33987,85 @@ typedef struct _FPGA_CONTROL_INTERFACE {
     PFPGA_CONTROL_ERROR_REPORTING       ControlErrorReporting;
 } FPGA_CONTROL_INTERFACE, *PFPGA_CONTROL_INTERFACE;
 
+typedef
+_Function_class_(PTM_DEVICE_QUERY_GRANULARITY)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+PTM_DEVICE_QUERY_GRANULARITY (
+    _In_ PVOID Context,
+    _Out_ PUCHAR Granularity
+    );
+
+typedef PTM_DEVICE_QUERY_GRANULARITY *PPTM_DEVICE_QUERY_GRANULARITY;
+
+typedef
+_Function_class_(PTM_DEVICE_QUERY_TIME_SOURCE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+PTM_DEVICE_QUERY_TIME_SOURCE (
+    _In_ PVOID Context,
+    _Out_ PULONG TimeSource
+    );
+
+typedef PTM_DEVICE_QUERY_TIME_SOURCE *PPTM_DEVICE_QUERY_TIME_SOURCE;
+
+typedef
+_Function_class_(PTM_DEVICE_ENABLE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+PTM_DEVICE_ENABLE (
+    _In_ PVOID Context
+    );
+
+typedef PTM_DEVICE_ENABLE *PPTM_DEVICE_ENABLE;
+
+typedef
+_Function_class_(PTM_DEVICE_DISABLE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+PTM_DEVICE_DISABLE (
+    _In_ PVOID Context
+    );
+
+typedef PTM_DEVICE_DISABLE *PPTM_DEVICE_DISABLE;
+
+typedef struct _PTM_CONTROL_INTERFACE {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PPTM_DEVICE_QUERY_GRANULARITY    QueryGranularity;
+    PPTM_DEVICE_QUERY_TIME_SOURCE    QueryTimeSource;
+    PPTM_DEVICE_ENABLE               Enable;
+    PPTM_DEVICE_DISABLE              Disable;
+} PTM_CONTROL_INTERFACE, *PPTM_CONTROL_INTERFACE;
+
+#define PCI_PTM_TIME_SOURCE_AUX 0xFFFFFFFF
+
+typedef
+_Function_class_(GET_UPDATED_BUS_RESOURCE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+GET_UPDATED_BUS_RESOURCE (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _Out_ PCM_RESOURCE_LIST *UpdatedResourceList,
+    _Out_ PCM_RESOURCE_LIST *UpdatedTranslatedResourceList
+    );
+
+typedef GET_UPDATED_BUS_RESOURCE *PGET_UPDATED_BUS_RESOURCE;
+
+typedef struct _BUS_RESOURCE_UPDATE_INTERFACE {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PGET_UPDATED_BUS_RESOURCE              GetUpdatedBusResource;
+} BUS_RESOURCE_UPDATE_INTERFACE, *PBUS_RESOURCE_UPDATE_INTERFACE;
+
 
 //
 // The following definitions are used in ACPI QueryInterface
@@ -34697,12 +35188,10 @@ typedef struct _DEVICE_DESCRIPTION {
 #define DEVICE_DESCRIPTION_VERSION3 3
 
 //
-// Define the supported version numbers for DMA adapter info and the
-// DMA transfer info structure.
+// Define the supported version numbers for the DMA adapter info structure.
 //
 
 #define DMA_ADAPTER_INFO_VERSION1   1
-#define DMA_TRANSFER_INFO_VERSION1  1
 
 typedef struct _DMA_ADAPTER_INFO_V1 {
     ULONG ReadDmaCounterAvailable;
@@ -34726,16 +35215,31 @@ typedef struct _DMA_ADAPTER_INFO {
 #define ADAPTER_INFO_SYNCHRONOUS_CALLBACK             0x0001
 #define ADAPTER_INFO_API_BYPASS                       0x0002
 
+//
+//  Define the supported version numbers for the DMA transfer info structure.
+//
+
+#define DMA_TRANSFER_INFO_VERSION1  1
+#define DMA_TRANSFER_INFO_VERSION2  2
+
 typedef struct _DMA_TRANSFER_INFO_V1 {
     ULONG MapRegisterCount;
     ULONG ScatterGatherElementCount;
     ULONG ScatterGatherListSize;
 } DMA_TRANSFER_INFO_V1, *PDMA_TRANSFER_INFO_V1;
 
+typedef struct _DMA_TRANSFER_INFO_V2 {
+    ULONG MapRegisterCount;
+    ULONG ScatterGatherElementCount;
+    ULONG ScatterGatherListSize;
+    ULONG LogicalPageCount;
+} DMA_TRANSFER_INFO_V2, *PDMA_TRANSFER_INFO_V2;
+
 typedef struct _DMA_TRANSFER_INFO {
     ULONG Version;
     union {
         DMA_TRANSFER_INFO_V1 V1;
+        DMA_TRANSFER_INFO_V2 V2;
     };
 } DMA_TRANSFER_INFO, *PDMA_TRANSFER_INFO;
 
@@ -35464,6 +35968,50 @@ HalReadDmaCounter(
 typedef struct _IOMMU_DMA_DOMAIN IOMMU_DMA_DOMAIN, *PIOMMU_DMA_DOMAIN;
 
 //
+// Types for fault information.
+//
+
+typedef enum _FAULT_INFORMATION_ARCH {
+    FaultInformationInvalid,
+    FaultInformationArm64,
+} FAULT_INFORMATION_ARCH, *PFAULT_INFORMATION_ARCH;
+
+typedef enum _FAULT_INFORMATION_ARM64_TYPE {
+    UnsupportedUpstreamTransaction,
+    AddressSizeFault,
+    TlbMatchConflict,
+    ExternalFault,
+    PermissionFault,
+    AccessFlagFault,
+    TranslationFault,
+    MaxFaultType
+} FAULT_INFORMATION_ARM64_TYPE, *PFAULT_INFORMATION_ARM64_TYPE;
+
+typedef struct _FAULT_INFORMATION_ARM64_FLAGS {
+    ULONG WriteNotRead : 1;
+    ULONG InstructionNotData : 1;
+    ULONG Privileged : 1;
+    ULONG FaultAddressValid : 1;
+    ULONG Reserved : 28;
+} FAULT_INFORMATION_ARM64_FLAGS, *PFAULT_INFORMATION_ARM64_FLAGS;
+
+typedef struct _FAULT_INFORMATION_ARM64 {
+    PVOID DomainHandle;
+    PVOID FaultAddress;
+    PDEVICE_OBJECT PhysicalDeviceObject;
+    ULONG InputMappingId;
+    FAULT_INFORMATION_ARM64_FLAGS Flags;
+    FAULT_INFORMATION_ARM64_TYPE Type;
+} FAULT_INFORMATION_ARM64, *PFAULT_INFORMATION_ARM64;
+
+typedef struct _FAULT_INFORMATION {
+    FAULT_INFORMATION_ARCH Type;
+    union {
+        FAULT_INFORMATION_ARM64 Arm64;
+    };
+} FAULT_INFORMATION, *PFAULT_INFORMATION;
+
+//
 // Types for domain configuration.
 //
 
@@ -35479,6 +36027,8 @@ typedef struct _DOMAIN_CONFIGURATION_ARM64 {
     ULONG Mair1;
     UCHAR InputSize0;
     UCHAR InputSize1;
+    BOOLEAN CoherentTableWalks;
+    BOOLEAN TranslationEnabled;
 } DOMAIN_CONFIGURATION_ARM64, *PDOMAIN_CONFIGURATION_ARM64;
 
 typedef struct _DOMAIN_CONFIGURATION {
@@ -35489,52 +36039,31 @@ typedef struct _DOMAIN_CONFIGURATION {
 } DOMAIN_CONFIGURATION, *PDOMAIN_CONFIGURATION;
 
 //
-// Types for fault information.
+// Device fault definitions.
 //
 
-typedef enum _FAULT_INFORMATION_ARCH {
-    FaultInformationInvalid,
-    FaultInformationArm64,
-} FAULT_INFORMATION_ARCH, *PFAULT_INFORMATION_ARCH;
+typedef VOID IOMMU_DEVICE_FAULT_HANDLER(
+    PVOID Context,
+    PFAULT_INFORMATION FaultInformation
+    );
 
-typedef struct _FAULT_INFORMATION_ARM64 {
-    PVOID DomainHandle;
-    PVOID FaultAddress;
-    PDEVICE_OBJECT PhysicalDeviceObject;
-    ULONG InputMappingId;
-    struct {
-        ULONG WriteNotRead : 1;
-        ULONG InstructionNotData : 1;
-        ULONG Privileged : 1;
-        ULONG Multi : 1;
-        ULONG Asynchronous : 1;
-        ULONG PageTableWalkFault : 1;
-        ULONG Reserved : 26;
-    } Flags;
-    enum {
-        UnsupportedUpstreamTransaction,
-        AddressSizeFault,
-        TlbMatchConflict,
-        ExternalFault,
-        PermissionFault,
-        AccessFlagFault,
-        TranslationFault,
-    } Type;
-} FAULT_INFORMATION_ARM64, *PFAULT_INFORMATION_ARM64;
+typedef IOMMU_DEVICE_FAULT_HANDLER *PIOMMU_DEVICE_FAULT_HANDLER;
 
-typedef struct _FAULT_INFORMATION {
-    FAULT_INFORMATION_ARCH Type;
-    union {
-        FAULT_INFORMATION_ARM64 Arm64;
-    };
-} FAULT_INFORMATION, *PFAULT_INFORMATION;
+typedef struct _DEVICE_FAULT_CONFIGURATION {
 
-typedef VOID IOMMU_DOMAIN_FAULT_HANDLER (
-            PVOID Context,
-            PFAULT_INFORMATION FaultInformation
-        );
+    //
+    // Pointer to driver supplied fault handler routine. This will be executed
+    // at PASSIVE_LEVEL.
+    //
 
-typedef IOMMU_DOMAIN_FAULT_HANDLER *PIOMMU_DOMAIN_FAULT_HANDLER;
+    PIOMMU_DEVICE_FAULT_HANDLER FaultHandler;
+
+    //
+    // A pointer to the opaque driver-supplied fault context.
+    //
+
+    PVOID FaultContext;
+} DEVICE_FAULT_CONFIGURATION, *PDEVICE_FAULT_CONFIGURATION;
 
 typedef _Function_class_(IOMMU_DOMAIN_CREATE)
 NTSTATUS
@@ -35612,6 +36141,10 @@ Routine Description:
 
     This routine attaches a device to an existing domain.
 
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_DETACH_DEVICE or
+    IOMMU_SET_DEVICE_FAULT_REPORTING calls on the same device.
+
 Arguments:
 
     Domain - Supplies a handle to the domain.
@@ -35651,6 +36184,10 @@ Routine Description:
 
     This routine detaches a device from an existing domain.
 
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_ATTACH_DEVICE or
+    IOMMU_SET_DEVICE_FAULT_REPORTING calls on the same device.
+
 Arguments:
 
     Domain - Supplies a handle to the domain.
@@ -35675,6 +36212,46 @@ Return Value:
 --*/
 
 typedef IOMMU_DOMAIN_DETACH_DEVICE *PIOMMU_DOMAIN_DETACH_DEVICE;
+
+typedef _Function_class_(IOMMU_SET_DEVICE_FAULT_REPORTING)
+NTSTATUS
+IOMMU_SET_DEVICE_FAULT_REPORTING (
+    _In_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ ULONG InputMappingIdBase,
+    _In_ BOOLEAN Enable,
+    _In_opt_ PDEVICE_FAULT_CONFIGURATION FaultConfig
+    );
+
+/*++
+
+Routine Description:
+
+    This routine set the device fault reporting state on an
+    device already attached to a domain.
+
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_ATTACH_DEVICE or
+    IOMMU_DOMAIN_DETACH_DEVICE calls on the same device.
+
+Arguments:
+
+    PhysicalDeviceObject- Supplies a pointer to the PDO.
+
+    InputMappingIdBase - Supplies the base input mapping ID for the device.
+
+    Enable - Supplies a BOOLEAN indicating whether to enable fault reporting
+        for the device.
+
+    FaultConfig - Supplies an optional pointer to DEVICE_FAULT_CONFIGURATION.
+        Only used when enabling fault reporting.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_SET_DEVICE_FAULT_REPORTING *PIOMMU_SET_DEVICE_FAULT_REPORTING;
 
 typedef _Function_class_(IOMMU_DOMAIN_CONFIGURE)
 NTSTATUS
@@ -35705,6 +36282,7 @@ Return Value:
 typedef IOMMU_DOMAIN_CONFIGURE *PIOMMU_DOMAIN_CONFIGURE;
 
 typedef _Function_class_(IOMMU_FLUSH_DOMAIN)
+_IRQL_requires_max_(HIGH_LEVEL)
 NTSTATUS
 IOMMU_FLUSH_DOMAIN (
     _In_ PIOMMU_DMA_DOMAIN Domain
@@ -35951,7 +36529,6 @@ typedef struct _DMA_IOMMU_INTERFACE {
     PIOMMU_DOMAIN_DELETE DeleteDomain;
     PIOMMU_DOMAIN_ATTACH_DEVICE AttachDevice;
     PIOMMU_DOMAIN_DETACH_DEVICE DetachDevice;
-    PIOMMU_DOMAIN_CONFIGURE ConfigureDomain;
     PIOMMU_FLUSH_DOMAIN FlushDomain;
     PIOMMU_FLUSH_DOMAIN_VA_LIST FlushDomainByVaList;
     PIOMMU_QUERY_INPUT_MAPPINGS QueryInputMappings;
@@ -35959,6 +36536,8 @@ typedef struct _DMA_IOMMU_INTERFACE {
     PIOMMU_UNMAP_LOGICAL_RANGE UnmapLogicalRange;
     PIOMMU_MAP_IDENTITY_RANGE MapIdentityRange;
     PIOMMU_UNMAP_IDENTITY_RANGE UnmapIdentityRange;
+    PIOMMU_SET_DEVICE_FAULT_REPORTING SetDeviceFaultReporting;
+    PIOMMU_DOMAIN_CONFIGURE ConfigureDomain;
 } DMA_IOMMU_INTERFACE, *PDMA_IOMMU_INTERFACE;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
@@ -36438,7 +37017,7 @@ typedef struct _PO_FX_PERF_STATE_CHANGE {
         ULONGLONG StateValue;
     };
 } PO_FX_PERF_STATE_CHANGE, *PPO_FX_PERF_STATE_CHANGE;
- 
+
 
 //
 // Driver interfaces for runtime framework.
@@ -36448,6 +37027,7 @@ typedef struct _PO_FX_PERF_STATE_CHANGE {
 #define PO_FX_UNKNOWN_TIME                          0xFFFFFFFFFFFFFFFF
 #define PO_FX_FLAG_BLOCKING                         0x01
 #define PO_FX_FLAG_ASYNC_ONLY                       0x02
+
 
 #define PO_FX_FLAG_PERF_PEP_OPTIONAL                0x01
 #define PO_FX_FLAG_PERF_QUERY_ON_F0                 0x02
@@ -36647,7 +37227,7 @@ NTSTATUS
 PoFxRegisterComponentPerfStates (
     _In_ POHANDLE Handle,
     _In_ ULONG Component,
-    _In_ ULONGLONG Flags, 
+    _In_ ULONGLONG Flags,
     _In_ PPO_FX_COMPONENT_PERF_STATE_CALLBACK ComponentPerfStateCallback,
     _In_ PPO_FX_COMPONENT_PERF_INFO InputStateInfo,
     _Out_ PPO_FX_COMPONENT_PERF_INFO* OutputStateInfo
@@ -36689,7 +37269,7 @@ PoFxQueryCurrentComponentPerfState (
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
-NTSTATUS 
+NTSTATUS
 PoFxSetTargetDripsDevicePowerState(
     _In_ POHANDLE Handle,
     _In_ DEVICE_POWER_STATE TargetState
@@ -36778,6 +37358,7 @@ PoFxRegisterDripsWatchdogCallback (
     _In_opt_ PDRIVER_OBJECT MatchingDriverObject
     );
 #endif
+
 
 //
 // Object Manager types
@@ -37352,6 +37933,7 @@ typedef struct _PCI_COMMON_CONFIG {
 #define PCI_CAPABILITY_ID_MSIX              0x11
 #define PCI_CAPABILITY_ID_SATA_CONFIG       0x12
 #define PCI_CAPABILITY_ID_ADVANCED_FEATURES 0x13
+#define PCI_CAPABILITY_ID_FPB               0x15
 
 //
 // All PCI Capability structures have the following header.
@@ -37803,6 +38385,47 @@ typedef struct _PCI_EXPRESS_PRI_CAPABILITY {
     ULONG PRCapacity;
     ULONG PRAllocation;
 } PCI_EXPRESS_PRI_CAPABILITY, *PPCI_EXPRESS_PRI_CAPABILITY;
+
+//
+// PTM Extended Capability structures.
+//
+
+typedef union _PCI_EXPRESS_PTM_CAPABILITY_REGISTER {
+
+    struct {
+        ULONG RequesterCapable:1;
+        ULONG ResponderCapable:1;
+        ULONG RootCapable:1;
+        ULONG Rsvd:5;
+        ULONG LocalGranularity:8;
+        ULONG Rsvd2:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_PTM_CAPABILITY_REGISTER, *PPCI_EXPRESS_PTM_CAPABILITY_REGISTER;
+
+typedef union _PCI_EXPRESS_PTM_CONTROL_REGISTER {
+
+    struct {
+        ULONG Enable:1;
+        ULONG RootSelect:1;
+        ULONG Rsvd:6;
+        ULONG EffectiveGranularity:8;
+        ULONG Rsvd2:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_PTM_CONTROL_REGISTER, *PPCI_EXPRESS_PTM_CONTROL_REGISTER;
+
+typedef struct _PCI_EXPRESS_PTM_CAPABILITY {
+
+    PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER  Header;
+    PCI_EXPRESS_PTM_CAPABILITY_REGISTER     PtmCapability;
+    PCI_EXPRESS_PTM_CONTROL_REGISTER        PtmControl;
+
+} PCI_EXPRESS_PTM_CAPABILITY, *PPCI_EXPRESS_PTM_CAPABILITY;
 
 //
 // PCI Express Advanced Error Reporting structures.

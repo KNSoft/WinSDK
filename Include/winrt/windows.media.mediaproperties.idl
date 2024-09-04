@@ -101,6 +101,8 @@ namespace Windows
 
             interface IImageEncodingPropertiesStatics2;
 
+            interface IImageEncodingPropertiesStatics3;
+
             interface IMediaEncodingProfile;
 
             interface IMediaEncodingProfile2;
@@ -122,6 +124,8 @@ namespace Windows
             interface IMediaEncodingSubtypesStatics3;
 
             interface IMediaEncodingSubtypesStatics4;
+
+            interface IMediaEncodingSubtypesStatics5;
 
             interface IMediaRatio;
 
@@ -421,6 +425,14 @@ namespace Windows
                 HRESULT CreateBmp([out] [retval] Windows.Media.MediaProperties.ImageEncodingProperties** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.MediaProperties.ImageEncodingProperties)]
+            [uuid(48F4814D-A2FF-48DC-8EA0-E90680663656)]
+            interface IImageEncodingPropertiesStatics3 : IInspectable
+            {
+                HRESULT CreateHeif([out] [retval] Windows.Media.MediaProperties.ImageEncodingProperties** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.MediaProperties.MediaEncodingProfile)]
             [uuid(E7DBF5A8-1DB9-4783-876B-3DFE12ACFDB3)]
@@ -572,6 +584,14 @@ namespace Windows
                 [propget] HRESULT P010([out] [retval] HSTRING* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.MediaProperties.MediaEncodingSubtypes)]
+            [uuid(5AD4A007-FFCE-4760-9828-5D0C99637E6A)]
+            interface IMediaEncodingSubtypesStatics5 : IInspectable
+            {
+                [propget] HRESULT Heif([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.MediaProperties.MediaRatio)]
             [uuid(D2D0FEE5-8929-401D-AC78-7D357E378163)]
@@ -714,6 +734,7 @@ namespace Windows
             [marshaling_behavior(agile)]
             [static(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass ImageEncodingProperties
             {
@@ -742,6 +763,7 @@ namespace Windows
             [static(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2, Windows.Foundation.UniversalApiContract, 4.0)]
             [static(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3, Windows.Foundation.UniversalApiContract, 4.0)]
             [static(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4, Windows.Foundation.UniversalApiContract, 6.0)]
+            [static(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass MediaEncodingSubtypes
             {

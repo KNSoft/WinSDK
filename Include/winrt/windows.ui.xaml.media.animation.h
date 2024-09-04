@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.animation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -315,6 +327,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics ABI::Windows::UI::Xaml::Media::Animation::IBackEaseStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IBasicConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration ABI::Windows::UI::Xaml::Media::Animation::IBasicConnectedAnimationConfiguration
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IBasicConnectedAnimationConfigurationFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory ABI::Windows::UI::Xaml::Media::Animation::IBasicConnectedAnimationConfigurationFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_FWD_DEFINED__
@@ -604,6 +652,60 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IConnectedAnimation3;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation3
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IConnectedAnimationConfigurationFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfigurationFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_FWD_DEFINED__
 namespace ABI {
@@ -729,6 +831,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase ABI::Windows::UI::Xaml::Media::Animation::ICubicEase
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IDirectConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration ABI::Windows::UI::Xaml::Media::Animation::IDirectConnectedAnimationConfiguration
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IDirectConnectedAnimationConfigurationFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory ABI::Windows::UI::Xaml::Media::Animation::IDirectConnectedAnimationConfigurationFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_FWD_DEFINED__
@@ -1539,6 +1677,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics ABI::Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimationStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IGravityConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration ABI::Windows::UI::Xaml::Media::Animation::IGravityConnectedAnimationConfiguration
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface IGravityConnectedAnimationConfigurationFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory ABI::Windows::UI::Xaml::Media::Animation::IGravityConnectedAnimationConfigurationFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_FWD_DEFINED__
@@ -2439,6 +2613,42 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo ABI::Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface ISlideNavigationTransitionInfo2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 ABI::Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface ISlideNavigationTransitionInfoStatics2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 ABI::Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfoStatics2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_FWD_DEFINED__
@@ -4276,6 +4486,21 @@ namespace ABI {
                 namespace Media {
                     namespace Animation {
                         
+                        typedef enum SlideNavigationTransitionEffect : int SlideNavigationTransitionEffect;
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        
                         typedef struct KeyTime KeyTime;
                         
                     } /* Windows */
@@ -4298,6 +4523,17 @@ namespace ABI {
             } /* Xaml */
         } /* Media */
     } /* Animation */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4476,6 +4712,20 @@ namespace ABI {
             namespace Xaml {
                 namespace Media {
                     namespace Animation {
+                        class BasicConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
                         class BeginStoryboard;
                     } /* Windows */
                 } /* UI */
@@ -4576,6 +4826,20 @@ namespace ABI {
             namespace Xaml {
                 namespace Media {
                     namespace Animation {
+                        class ConnectedAnimationConfiguration;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
                         class ConnectedAnimationService;
                     } /* Windows */
                 } /* UI */
@@ -4619,6 +4883,20 @@ namespace ABI {
                 namespace Media {
                     namespace Animation {
                         class CubicEase;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        class DirectConnectedAnimationConfiguration;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -4956,6 +5234,20 @@ namespace ABI {
                 namespace Media {
                     namespace Animation {
                         class FadeOutThemeAnimation;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        class GravityConnectedAnimationConfiguration;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -5687,6 +5979,38 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [v1_enum, contract] */
+                        enum SlideNavigationTransitionEffect : int
+                        {
+                            SlideNavigationTransitionEffect_FromBottom = 0,
+                            SlideNavigationTransitionEffect_FromLeft = 1,
+                            SlideNavigationTransitionEffect_FromRight = 2,
+                        };
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.Media.Animation.KeyTime
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5880,6 +6204,95 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IBasicConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("E675F9B5-A4D6-5353-83E6-C89E7CF8D456"), exclusiveto, contract] */
+                        MIDL_INTERFACE("E675F9B5-A4D6-5353-83E6-C89E7CF8D456")
+                        IBasicConnectedAnimationConfiguration : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IBasicConnectedAnimationConfiguration=_uuidof(IBasicConnectedAnimationConfiguration);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IBasicConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfigurationFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("95E6844A-4377-503C-BEE2-11DFCD5570E6"), exclusiveto, contract] */
+                        MIDL_INTERFACE("95E6844A-4377-503C-BEE2-11DFCD5570E6")
+                        IBasicConnectedAnimationConfigurationFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IBasicConnectedAnimationConfiguration * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IBasicConnectedAnimationConfigurationFactory=_uuidof(IBasicConnectedAnimationConfigurationFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6425,9 +6838,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IColorKeyFrame * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IColorKeyFrame * * value
                                 ) = 0;
                             
                         };
@@ -6575,7 +6988,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsStaggerElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetIsStaggerElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
@@ -6624,7 +7037,7 @@ namespace ABI {
                         {
                         public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Completed(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Completed(
@@ -6632,7 +7045,7 @@ namespace ABI {
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryStart(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * destination,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Cancel(void) = 0;
                             
@@ -6686,7 +7099,7 @@ namespace ABI {
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryStartWithCoordinatedElements(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * destination,
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * coordinatedElements,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetAnimationComponent(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component,
@@ -6706,6 +7119,138 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimation3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimation3[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimation3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("6E3040C6-0430-59C0-A80C-CCEED2E778DD"), exclusiveto, contract] */
+                        MIDL_INTERFACE("6E3040C6-0430-59C0-A80C-CCEED2E778DD")
+                        IConnectedAnimation3 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Configuration(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration * * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Configuration(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IConnectedAnimation3=_uuidof(IConnectedAnimation3);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("00218AAE-CD8C-5651-92A0-C1DB95C03998"), exclusiveto, contract] */
+                        MIDL_INTERFACE("00218AAE-CD8C-5651-92A0-C1DB95C03998")
+                        IConnectedAnimationConfiguration : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IConnectedAnimationConfiguration=_uuidof(IConnectedAnimationConfiguration);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfigurationFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("30F9B84B-DD7E-593E-BF75-E959DC0EC52A"), exclusiveto, contract] */
+                        MIDL_INTERFACE("30F9B84B-DD7E-593E-BF75-E959DC0EC52A")
+                        IConnectedAnimationConfigurationFactory : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IConnectedAnimationConfigurationFactory=_uuidof(IConnectedAnimationConfigurationFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6749,11 +7294,11 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE PrepareToAnimate(
                                 /* [in] */__RPC__in HSTRING key,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * source,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAnimation(
                                 /* [in] */__RPC__in HSTRING key,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation * * result
                                 ) = 0;
                             
                         };
@@ -6798,7 +7343,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationService * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimationService * * result
                                 ) = 0;
                             
                         };
@@ -7000,7 +7545,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsEntranceElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetIsEntranceElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
@@ -7011,7 +7556,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsExitElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetIsExitElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
@@ -7022,7 +7567,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetExitElementContainer(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBase * element,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetExitElementContainer(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBase * element,
@@ -7084,6 +7629,95 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IDirectConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("EE5D736F-5738-5D86-B770-151948CF365E"), exclusiveto, contract] */
+                        MIDL_INTERFACE("EE5D736F-5738-5D86-B770-151948CF365E")
+                        IDirectConnectedAnimationConfiguration : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IDirectConnectedAnimationConfiguration=_uuidof(IDirectConnectedAnimationConfiguration);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IDirectConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfigurationFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("059263E9-D2B3-5A77-9CF4-E26D8B542608"), exclusiveto, contract] */
+                        MIDL_INTERFACE("059263E9-D2B3-5A77-9CF4-E26D8B542608")
+                        IDirectConnectedAnimationConfigurationFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IDirectConnectedAnimationConfiguration * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IDirectConnectedAnimationConfigurationFactory=_uuidof(IDirectConnectedAnimationConfigurationFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7560,9 +8194,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame * * value
                                 ) = 0;
                             
                         };
@@ -8427,7 +9061,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Ease(
                                 /* [in] */DOUBLE normalizedTime,
-                                /* [retval, out] */__RPC__out DOUBLE * returnValue
+                                /* [retval, out] */__RPC__out DOUBLE * result
                                 ) = 0;
                             
                         };
@@ -8893,7 +9527,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsTargetElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetIsTargetElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
@@ -9307,6 +9941,95 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThe
 
 /*
  *
+ * Interface Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IGravityConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("C751A4B7-0459-5142-B891-AEAAC1D41822"), exclusiveto, contract] */
+                        MIDL_INTERFACE("C751A4B7-0459-5142-B891-AEAAC1D41822")
+                        IGravityConnectedAnimationConfiguration : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IGravityConnectedAnimationConfiguration=_uuidof(IGravityConnectedAnimationConfiguration);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IGravityConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfigurationFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("E822C41F-3656-5090-92F5-C217EAACB682"), exclusiveto, contract] */
+                        MIDL_INTERFACE("E822C41F-3656-5090-92F5-C217EAACB682")
+                        IGravityConnectedAnimationConfigurationFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IGravityConnectedAnimationConfiguration * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IGravityConnectedAnimationConfigurationFactory=_uuidof(IGravityConnectedAnimationConfigurationFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Media.Animation.IKeySpline
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9429,7 +10152,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE FromTimeSpan(
                                 /* [in] */ABI::Windows::Foundation::TimeSpan timeSpan,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::KeyTime * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::KeyTime * result
                                 ) = 0;
                             
                         };
@@ -9735,9 +10458,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
                                 ) = 0;
                             
                         };
@@ -9782,7 +10505,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetNavigationStateCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetNavigationStateCore(
                                 /* [in] */__RPC__in HSTRING navigationState
@@ -9980,9 +10703,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IObjectKeyFrame * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IObjectKeyFrame * * value
                                 ) = 0;
                             
                         };
@@ -10447,9 +11170,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IPointKeyFrame * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::IPointKeyFrame * * value
                                 ) = 0;
                             
                         };
@@ -11341,24 +12064,24 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE FromCount(
                                 /* [in] */DOUBLE count,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE FromDuration(
                                 /* [in] */ABI::Windows::Foundation::TimeSpan duration,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetHasCount(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior target,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetHasDuration(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior target,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Equals(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior target,
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior value,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             
                         };
@@ -11704,6 +12427,99 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_ISlideNavigationTransitionInfo2[] = L"Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("90E2D9C0-5C81-5001-8013-4FBFEA4BF139"), exclusiveto, contract] */
+                        MIDL_INTERFACE("90E2D9C0-5C81-5001-8013-4FBFEA4BF139")
+                        ISlideNavigationTransitionInfo2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Effect(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionEffect * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Effect(
+                                /* [in] */ABI::Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionEffect value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ISlideNavigationTransitionInfo2=_uuidof(ISlideNavigationTransitionInfo2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_ISlideNavigationTransitionInfoStatics2[] = L"Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        /* [object, uuid("8A861BAA-981A-5ACE-9F85-CB7FDE648A67"), exclusiveto, contract] */
+                        MIDL_INTERFACE("8A861BAA-981A-5ACE-9F85-CB7FDE648A67")
+                        ISlideNavigationTransitionInfoStatics2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_EffectProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ISlideNavigationTransitionInfoStatics2=_uuidof(ISlideNavigationTransitionInfoStatics2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12388,10 +13204,10 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE Pause(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Resume(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetCurrentState(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::ClockState * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Animation::ClockState * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetCurrentTime(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SeekAlignedToLastTick(
                                 /* [in] */ABI::Windows::Foundation::TimeSpan offset
@@ -12444,7 +13260,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetTargetProperty(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * element,
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * path
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetTargetProperty(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * element,
@@ -12455,7 +13271,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetTargetName(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * element,
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * name
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetTargetName(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * element,
@@ -12808,7 +13624,7 @@ namespace ABI {
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Animation::RepeatBehavior value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Completed(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Completed(
@@ -12857,9 +13673,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::ITimeline * * value
                                 ) = 0;
                             
                         };
@@ -13082,6 +13898,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_BackEase[] = L"Windows.UI.Xaml.Media.Animation.BackEase";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13326,8 +14166,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation ** Default Interface **
  *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -13339,6 +14178,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_ConnectedAnimation[] = L"Windows.UI.Xaml.Media.Animation.ConnectedAnimation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13453,6 +14316,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_CubicEase[] = L"Windows.UI.Xaml.Media.Animation.CubicEase";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -14180,6 +15067,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_FadeOutThemeAnimation[] = L"Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -15015,8 +15926,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass can be activated.
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo ** Default Interface **
+ *    Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -15430,6 +16345,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBeginStoryboard;
@@ -15526,6 +16453,24 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimat
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService;
@@ -15567,6 +16512,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNaviga
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDiscreteColorKeyFrame_FWD_DEFINED__
@@ -15837,6 +16794,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAni
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThemeAnimationStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeySpline_FWD_DEFINED__
@@ -16137,6 +17106,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISineEase __x_AB
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISplineColorKeyFrame_FWD_DEFINED__
@@ -19353,10 +20334,28 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CFillBehavior __x_ABI_
 typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehaviorType __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehaviorType;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CSlideNavigationTransitionEffect __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CSlideNavigationTransitionEffect;
+
+
 typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CKeyTime __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CKeyTime;
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -19698,6 +20697,26 @@ enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehaviorType
 
 /*
  *
+ * Struct Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionEffect
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CSlideNavigationTransitionEffect
+{
+    SlideNavigationTransitionEffect_FromBottom = 0,
+    SlideNavigationTransitionEffect_FromLeft = 1,
+    SlideNavigationTransitionEffect_FromRight = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.Media.Animation.KeyTime
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -20011,6 +21030,187 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBackEaseStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IBasicConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration";
+/* [object, uuid("E675F9B5-A4D6-5353-83E6-C89E7CF8D456"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IBasicConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfigurationFactory";
+/* [object, uuid("95E6844A-4377-503C-BEE2-11DFCD5570E6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfiguration * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIBasicConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -21148,9 +22348,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrame * * value
         );
     END_INTERFACE
     
@@ -21180,8 +22380,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIColorKeyFrameFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -21452,7 +22652,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsStaggerElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsStaggerElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics * This,
@@ -21493,8 +22693,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransit
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_get_IsStaggerElementProperty(This,value) \
     ( (This)->lpVtbl->get_IsStaggerElementProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_GetIsStaggerElement(This,element,value) \
-    ( (This)->lpVtbl->GetIsStaggerElement(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_GetIsStaggerElement(This,element,result) \
+    ( (This)->lpVtbl->GetIsStaggerElement(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICommonNavigationTransitionInfoStatics_SetIsStaggerElement(This,element,value) \
     ( (This)->lpVtbl->SetIsStaggerElement(This,element,value) )
@@ -21559,7 +22759,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Completed )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CAnimation__CConnectedAnimation_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Completed )(
@@ -21569,7 +22769,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TryStart )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * destination,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Cancel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * This
@@ -21602,14 +22802,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_add_Completed(This,value,token) \
-    ( (This)->lpVtbl->add_Completed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_add_Completed(This,handler,token) \
+    ( (This)->lpVtbl->add_Completed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_remove_Completed(This,token) \
     ( (This)->lpVtbl->remove_Completed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_TryStart(This,destination,returnValue) \
-    ( (This)->lpVtbl->TryStart(This,destination,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_TryStart(This,destination,result) \
+    ( (This)->lpVtbl->TryStart(This,destination,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation_Cancel(This) \
     ( (This)->lpVtbl->Cancel(This) )
@@ -21684,7 +22884,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * destination,
         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * coordinatedElements,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAnimationComponent )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2 * This,
@@ -21725,8 +22925,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_put_IsScaleAnimationEnabled(This,value) \
     ( (This)->lpVtbl->put_IsScaleAnimationEnabled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_TryStartWithCoordinatedElements(This,destination,coordinatedElements,returnValue) \
-    ( (This)->lpVtbl->TryStartWithCoordinatedElements(This,destination,coordinatedElements,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_TryStartWithCoordinatedElements(This,destination,coordinatedElements,result) \
+    ( (This)->lpVtbl->TryStartWithCoordinatedElements(This,destination,coordinatedElements,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_SetAnimationComponent(This,component,animation) \
     ( (This)->lpVtbl->SetAnimationComponent(This,component,animation) )
@@ -21738,6 +22938,278 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimation3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimation3[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimation3";
+/* [object, uuid("6E3040C6-0430-59C0-A80C-CCEED2E778DD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Configuration )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Configuration )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_get_Configuration(This,value) \
+    ( (This)->lpVtbl->get_Configuration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_put_Configuration(This,value) \
+    ( (This)->lpVtbl->put_Configuration(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration";
+/* [object, uuid("00218AAE-CD8C-5651-92A0-C1DB95C03998"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfigurationFactory";
+/* [object, uuid("30F9B84B-DD7E-593E-BF75-E959DC0EC52A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -21809,12 +23281,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService * This,
         /* [in] */__RPC__in HSTRING key,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * source,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAnimation )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService * This,
         /* [in] */__RPC__in HSTRING key,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimation * * result
         );
     END_INTERFACE
     
@@ -21856,11 +23328,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServi
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_put_DefaultEasingFunction(This,value) \
     ( (This)->lpVtbl->put_DefaultEasingFunction(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_PrepareToAnimate(This,key,source,returnValue) \
-    ( (This)->lpVtbl->PrepareToAnimate(This,key,source,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_PrepareToAnimate(This,key,source,result) \
+    ( (This)->lpVtbl->PrepareToAnimate(This,key,source,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_GetAnimation(This,key,returnValue) \
-    ( (This)->lpVtbl->GetAnimation(This,key,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService_GetAnimation(This,key,result) \
+    ( (This)->lpVtbl->GetAnimation(This,key,result) )
 
 
 #endif /* COBJMACROS */
@@ -21922,7 +23394,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationService * * result
         );
     END_INTERFACE
     
@@ -21952,8 +23424,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServi
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_GetForCurrentView(This,returnValue) \
-    ( (This)->lpVtbl->GetForCurrentView(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIConnectedAnimationServiceStatics_GetForCurrentView(This,result) \
+    ( (This)->lpVtbl->GetForCurrentView(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -22338,7 +23810,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsEntranceElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsEntranceElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
@@ -22352,7 +23824,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsExitElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsExitElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
@@ -22366,7 +23838,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetExitElementContainer )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListViewBase * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetExitElementContainer )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics * This,
@@ -22407,8 +23879,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTran
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_get_IsEntranceElementProperty(This,value) \
     ( (This)->lpVtbl->get_IsEntranceElementProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetIsEntranceElement(This,element,value) \
-    ( (This)->lpVtbl->GetIsEntranceElement(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetIsEntranceElement(This,element,result) \
+    ( (This)->lpVtbl->GetIsEntranceElement(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_SetIsEntranceElement(This,element,value) \
     ( (This)->lpVtbl->SetIsEntranceElement(This,element,value) )
@@ -22416,8 +23888,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTran
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_get_IsExitElementProperty(This,value) \
     ( (This)->lpVtbl->get_IsExitElementProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetIsExitElement(This,element,value) \
-    ( (This)->lpVtbl->GetIsExitElement(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetIsExitElement(This,element,result) \
+    ( (This)->lpVtbl->GetIsExitElement(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_SetIsExitElement(This,element,value) \
     ( (This)->lpVtbl->SetIsExitElement(This,element,value) )
@@ -22425,8 +23897,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTran
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_get_ExitElementContainerProperty(This,value) \
     ( (This)->lpVtbl->get_ExitElementContainerProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetExitElementContainer(This,element,value) \
-    ( (This)->lpVtbl->GetExitElementContainer(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_GetExitElementContainer(This,element,result) \
+    ( (This)->lpVtbl->GetExitElementContainer(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIContinuumNavigationTransitionInfoStatics_SetExitElementContainer(This,element,value) \
     ( (This)->lpVtbl->SetExitElementContainer(This,element,value) )
@@ -22524,6 +23996,187 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CICubicEase_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IDirectConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration";
+/* [object, uuid("EE5D736F-5738-5D86-B770-151948CF365E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IDirectConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfigurationFactory";
+/* [object, uuid("059263E9-D2B3-5A77-9CF4-E26D8B542608"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfiguration * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDirectConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -23512,9 +25165,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrame * * value
         );
     END_INTERFACE
     
@@ -23544,8 +25197,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIDoubleKeyFrameFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -25321,7 +26974,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *Ease )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase * This,
         /* [in] */DOUBLE normalizedTime,
-        /* [retval, out] */__RPC__out DOUBLE * returnValue
+        /* [retval, out] */__RPC__out DOUBLE * result
         );
     END_INTERFACE
     
@@ -25357,8 +27010,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_put_EasingMode(This,value) \
     ( (This)->lpVtbl->put_EasingMode(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_Ease(This,normalizedTime,returnValue) \
-    ( (This)->lpVtbl->Ease(This,normalizedTime,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEasingFunctionBase_Ease(This,normalizedTime,result) \
+    ( (This)->lpVtbl->Ease(This,normalizedTime,result) )
 
 
 #endif /* COBJMACROS */
@@ -26290,7 +27943,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsTargetElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsTargetElement )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics * This,
@@ -26328,8 +27981,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTrans
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_get_IsTargetElementProperty(This,value) \
     ( (This)->lpVtbl->get_IsTargetElementProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_GetIsTargetElement(This,element,value) \
-    ( (This)->lpVtbl->GetIsTargetElement(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_GetIsTargetElement(This,element,result) \
+    ( (This)->lpVtbl->GetIsTargetElement(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIEntranceNavigationTransitionInfoStatics_SetIsTargetElement(This,element,value) \
     ( (This)->lpVtbl->SetIsTargetElement(This,element,value) )
@@ -27159,6 +28812,187 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIFadeOutThe
 
 /*
  *
+ * Interface Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IGravityConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration";
+/* [object, uuid("C751A4B7-0459-5142-B891-AEAAC1D41822"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfigurationFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_IGravityConnectedAnimationConfigurationFactory[] = L"Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfigurationFactory";
+/* [object, uuid("E822C41F-3656-5090-92F5-C217EAACB682"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfiguration * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIGravityConnectedAnimationConfigurationFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Media.Animation.IKeySpline
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -27409,7 +29243,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *FromTimeSpan )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan timeSpan,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CKeyTime * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CKeyTime * result
         );
     END_INTERFACE
     
@@ -27439,8 +29273,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_FromTimeSpan(This,timeSpan,returnValue) \
-    ( (This)->lpVtbl->FromTimeSpan(This,timeSpan,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIKeyTimeHelperStatics_FromTimeSpan(This,timeSpan,result) \
+    ( (This)->lpVtbl->FromTimeSpan(This,timeSpan,result) )
 
 
 #endif /* COBJMACROS */
@@ -28039,9 +29873,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * * value
         );
     END_INTERFACE
     
@@ -28071,8 +29905,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInf
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28134,7 +29968,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetNavigationStateCore )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetNavigationStateCore )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides * This,
@@ -28168,8 +30002,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInf
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_GetNavigationStateCore(This,returnValue) \
-    ( (This)->lpVtbl->GetNavigationStateCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_GetNavigationStateCore(This,result) \
+    ( (This)->lpVtbl->GetNavigationStateCore(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfoOverrides_SetNavigationStateCore(This,navigationState) \
     ( (This)->lpVtbl->SetNavigationStateCore(This,navigationState) )
@@ -28548,9 +30382,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrame * * value
         );
     END_INTERFACE
     
@@ -28580,8 +30414,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIObjectKeyFrameFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29527,9 +31361,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrame * * value
         );
     END_INTERFACE
     
@@ -29559,8 +31393,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIPointKeyFrameFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31378,28 +33212,28 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *FromCount )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics * This,
         /* [in] */DOUBLE count,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior * result
         );
     HRESULT ( STDMETHODCALLTYPE *FromDuration )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan duration,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetHasCount )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior target,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetHasDuration )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior target,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Equals )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior target,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CRepeatBehavior value,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -31432,20 +33266,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperSta
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_get_Forever(This,value) \
     ( (This)->lpVtbl->get_Forever(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_FromCount(This,count,returnValue) \
-    ( (This)->lpVtbl->FromCount(This,count,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_FromCount(This,count,result) \
+    ( (This)->lpVtbl->FromCount(This,count,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_FromDuration(This,duration,returnValue) \
-    ( (This)->lpVtbl->FromDuration(This,duration,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_FromDuration(This,duration,result) \
+    ( (This)->lpVtbl->FromDuration(This,duration,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_GetHasCount(This,target,value) \
-    ( (This)->lpVtbl->GetHasCount(This,target,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_GetHasCount(This,target,result) \
+    ( (This)->lpVtbl->GetHasCount(This,target,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_GetHasDuration(This,target,value) \
-    ( (This)->lpVtbl->GetHasDuration(This,target,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_GetHasDuration(This,target,result) \
+    ( (This)->lpVtbl->GetHasDuration(This,target,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_Equals(This,target,value,returnValue) \
-    ( (This)->lpVtbl->Equals(This,target,value,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIRepeatBehaviorHelperStatics_Equals(This,target,value,result) \
+    ( (This)->lpVtbl->Equals(This,target,value,result) )
 
 
 #endif /* COBJMACROS */
@@ -32140,6 +33974,199 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransiti
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_ISlideNavigationTransitionInfo2[] = L"Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2";
+/* [object, uuid("90E2D9C0-5C81-5001-8013-4FBFEA4BF139"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Effect )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CSlideNavigationTransitionEffect * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Effect )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CSlideNavigationTransitionEffect value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_get_Effect(This,value) \
+    ( (This)->lpVtbl->get_Effect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_put_Effect(This,value) \
+    ( (This)->lpVtbl->put_Effect(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfo2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_Animation_ISlideNavigationTransitionInfoStatics2[] = L"Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2";
+/* [object, uuid("8A861BAA-981A-5ACE-9F85-CB7FDE648A67"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_EffectProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_get_EffectProperty(This,value) \
+    ( (This)->lpVtbl->get_EffectProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CISlideNavigationTransitionInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -33598,11 +35625,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetCurrentState )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CClockState * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CClockState * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetCurrentTime )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * result
         );
     HRESULT ( STDMETHODCALLTYPE *SeekAlignedToLastTick )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard * This,
@@ -33657,11 +35684,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_Resume(This) \
     ( (This)->lpVtbl->Resume(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_GetCurrentState(This,returnValue) \
-    ( (This)->lpVtbl->GetCurrentState(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_GetCurrentState(This,result) \
+    ( (This)->lpVtbl->GetCurrentState(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_GetCurrentTime(This,returnValue) \
-    ( (This)->lpVtbl->GetCurrentTime(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_GetCurrentTime(This,result) \
+    ( (This)->lpVtbl->GetCurrentTime(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboard_SeekAlignedToLastTick(This,offset) \
     ( (This)->lpVtbl->SeekAlignedToLastTick(This,offset) )
@@ -33734,7 +35761,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetTargetProperty )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * path
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetTargetProperty )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics * This,
@@ -33748,7 +35775,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetTargetName )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * name
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetTargetName )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics * This,
@@ -33791,8 +35818,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_get_TargetPropertyProperty(This,value) \
     ( (This)->lpVtbl->get_TargetPropertyProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_GetTargetProperty(This,element,path) \
-    ( (This)->lpVtbl->GetTargetProperty(This,element,path) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_GetTargetProperty(This,element,result) \
+    ( (This)->lpVtbl->GetTargetProperty(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_SetTargetProperty(This,element,path) \
     ( (This)->lpVtbl->SetTargetProperty(This,element,path) )
@@ -33800,8 +35827,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_get_TargetNameProperty(This,value) \
     ( (This)->lpVtbl->get_TargetNameProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_GetTargetName(This,element,name) \
-    ( (This)->lpVtbl->GetTargetName(This,element,name) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_GetTargetName(This,element,result) \
+    ( (This)->lpVtbl->GetTargetName(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CIStoryboardStatics_SetTargetName(This,element,name) \
     ( (This)->lpVtbl->SetTargetName(This,element,name) )
@@ -34473,7 +36500,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Completed )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Completed )(
@@ -34544,8 +36571,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_put_RepeatBehavior(This,value) \
     ( (This)->lpVtbl->put_RepeatBehavior(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_add_Completed(This,value,token) \
-    ( (This)->lpVtbl->add_Completed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_add_Completed(This,handler,token) \
+    ( (This)->lpVtbl->add_Completed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline_remove_Completed(This,token) \
     ( (This)->lpVtbl->remove_Completed(This,token) )
@@ -34610,9 +36637,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimeline * * value
         );
     END_INTERFACE
     
@@ -34642,8 +36669,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CITimelineFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35027,6 +37054,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IBasicConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_BasicConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.BasicConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Media.Animation.BeginStoryboard
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -35267,8 +37318,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation ** Default Interface **
  *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *    Windows.UI.Xaml.Media.Animation.IConnectedAnimation3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -35280,6 +37330,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_ConnectedAnimation[] = L"Windows.UI.Xaml.Media.Animation.ConnectedAnimation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_ConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.ConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -35394,6 +37468,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_CubicEase[] = L"Windows.UI.Xaml.Media.Animation.CubicEase";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IDirectConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_DirectConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.DirectConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -36121,6 +38219,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_FadeOutThemeAnimation[] = L"Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Media.Animation.IGravityConnectedAnimationConfiguration ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Media_Animation_GravityConnectedAnimationConfiguration[] = L"Windows.UI.Xaml.Media.Animation.GravityConnectedAnimationConfiguration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -36956,8 +39078,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass can be activated.
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfoStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo ** Default Interface **
+ *    Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

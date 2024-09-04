@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.smartcards.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -301,6 +313,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CICardRemovedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                interface IKnownSmartCardAppletIds;
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds ABI::Windows::Devices::SmartCards::IKnownSmartCardAppletIds
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCard_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCard_FWD_DEFINED__
 namespace ABI {
@@ -329,6 +355,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                interface ISmartCardAppletIdGroup2;
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup2
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory_FWD_DEFINED__
 namespace ABI {
@@ -356,6 +396,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                interface ISmartCardAppletIdGroupRegistration2;
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration2
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupStatics_FWD_DEFINED__
@@ -3787,6 +3841,245 @@ typedef IVector<ABI::Windows::Storage::Streams::IBuffer*> __FIVector_1_Windows__
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+
+#ifndef DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20"))
+IKeyValuePair<HSTRING,IInspectable*> : IKeyValuePair_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IKeyValuePair<HSTRING,IInspectable*> __FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>
+//#define __FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8"))
+IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("fe2f3d47-5d47-5499-8374-430c7cda0204"))
+IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Object>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<__FIKeyValuePair_2_HSTRING_IInspectable*> __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t;
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,IInspectable*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIMapView_2_HSTRING_IInspectable_USE
+#define DEF___FIMapView_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e"))
+IMapView<HSTRING,IInspectable*> : IMapView_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMapView`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IMapView<HSTRING,IInspectable*> __FIMapView_2_HSTRING_IInspectable_t;
+#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMapView_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IMapView<HSTRING,IInspectable*>
+//#define __FIMapView_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IMapView<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIMapView_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIMap_2_HSTRING_IInspectable_USE
+#define DEF___FIMap_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca"))
+IMap<HSTRING,IInspectable*> : IMap_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMap`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IMap<HSTRING,IInspectable*> __FIMap_2_HSTRING_IInspectable_t;
+#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IMap<HSTRING,IInspectable*>
+//#define __FIMap_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IMap<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIMap_2_HSTRING_IInspectable_USE */
+
+
+
+
+#ifndef DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#define DEF___FIMapChangedEventArgs_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("60141efb-f2f9-5377-96fd-f8c60d9558b5"))
+IMapChangedEventArgs<HSTRING> : IMapChangedEventArgs_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMapChangedEventArgs`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IMapChangedEventArgs<HSTRING> __FIMapChangedEventArgs_1_HSTRING_t;
+#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::__FIMapChangedEventArgs_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMapChangedEventArgs_1_HSTRING ABI::Windows::Foundation::Collections::IMapChangedEventArgs<HSTRING>
+//#define __FIMapChangedEventArgs_1_HSTRING_t ABI::Windows::Foundation::Collections::IMapChangedEventArgs<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIMapChangedEventArgs_1_HSTRING_USE */
+
+
+
+
+
+#ifndef DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#define DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("24f981e5-ddca-538d-aada-a59906084cf1"))
+MapChangedEventHandler<HSTRING,IInspectable*> : MapChangedEventHandler_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.MapChangedEventHandler`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef MapChangedEventHandler<HSTRING,IInspectable*> __FMapChangedEventHandler_2_HSTRING_IInspectable_t;
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FMapChangedEventHandler_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FMapChangedEventHandler_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING,IInspectable*>
+//#define __FMapChangedEventHandler_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FMapChangedEventHandler_2_HSTRING_IInspectable_USE */
+
+
+
+
+
+#ifndef DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#define DEF___FIObservableMap_2_HSTRING_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("236aac9d-fb12-5c4d-a41c-9e445fb4d7ec"))
+IObservableMap<HSTRING,IInspectable*> : IObservableMap_impl<HSTRING,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IObservableMap`2<String, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IObservableMap<HSTRING,IInspectable*> __FIObservableMap_2_HSTRING_IInspectable_t;
+#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::__FIObservableMap_2_HSTRING_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIObservableMap_2_HSTRING_IInspectable ABI::Windows::Foundation::Collections::IObservableMap<HSTRING,IInspectable*>
+//#define __FIObservableMap_2_HSTRING_IInspectable_t ABI::Windows::Foundation::Collections::IObservableMap<HSTRING,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIObservableMap_2_HSTRING_IInspectable_USE */
+
+
+
+
 #ifndef DEF___FIReference_1_UINT32_USE
 #define DEF___FIReference_1_UINT32_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -3994,6 +4287,33 @@ typedef IAsyncOperation<HSTRING> __FIAsyncOperation_1_HSTRING_t;
 namespace ABI {
     namespace Windows {
         namespace Foundation {
+            namespace Collections {
+                class ValueSet;
+            } /* Windows */
+        } /* Foundation */
+    } /* Collections */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                interface IPropertySet;
+            } /* Windows */
+        } /* Foundation */
+    } /* Collections */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet ABI::Windows::Foundation::Collections::IPropertySet
+
+#endif // ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
             
             typedef struct DateTime DateTime;
             
@@ -4045,6 +4365,21 @@ namespace ABI {
 
 
 
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Streams {
+                interface IRandomAccessStreamReference;
+            } /* Windows */
+        } /* Storage */
+    } /* Streams */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference ABI::Windows::Storage::Streams::IRandomAccessStreamReference
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
 
 
 
@@ -4326,6 +4661,10 @@ namespace ABI {
             } /* Windows */
         } /* Devices */
     } /* SmartCards */} /* ABI */
+
+
+
+
 
 
 
@@ -5352,6 +5691,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CICardRemovedEventA
 
 /*
  *
+ * Interface Windows.Devices.SmartCards.IKnownSmartCardAppletIds
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.KnownSmartCardAppletIds
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_IKnownSmartCardAppletIds[] = L"Windows.Devices.SmartCards.IKnownSmartCardAppletIds";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                /* [object, uuid("7B04D8D8-95B4-4C88-8CEA-411E55511EFC"), exclusiveto, contract] */
+                MIDL_INTERFACE("7B04D8D8-95B4-4C88-8CEA-411E55511EFC")
+                IKnownSmartCardAppletIds : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PaymentSystemEnvironment(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ProximityPaymentSystemEnvironment(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IBuffer * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IKnownSmartCardAppletIds=_uuidof(IKnownSmartCardAppletIds);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Devices.SmartCards.ISmartCard
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -5464,6 +5847,65 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletId
 
 /*
  *
+ * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroup2
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.SmartCardAppletIdGroup
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_ISmartCardAppletIdGroup2[] = L"Windows.Devices.SmartCards.ISmartCardAppletIdGroup2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                /* [object, uuid("6B0EF9DC-9956-4A62-8D4E-D37A68EBC3A6"), exclusiveto, contract] */
+                MIDL_INTERFACE("6B0EF9DC-9956-4A62-8D4E-D37A68EBC3A6")
+                ISmartCardAppletIdGroup2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Logo(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Logo(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Description(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SecureUserAuthenticationRequired(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SecureUserAuthenticationRequired(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISmartCardAppletIdGroup2=_uuidof(ISmartCardAppletIdGroup2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroupFactory
  *
  * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 1.0
@@ -5560,6 +6002,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration_INTERFACE_DEFINED__) */
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.SmartCardAppletIdGroupRegistration
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_ISmartCardAppletIdGroupRegistration2[] = L"Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace SmartCards {
+                /* [object, uuid("5F5508D8-98A7-4F2E-91D9-6CFCCEDA407F"), exclusiveto, contract] */
+                MIDL_INTERFACE("5F5508D8-98A7-4F2E-91D9-6CFCCEDA407F")
+                ISmartCardAppletIdGroupRegistration2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SmartCardReaderId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SetPropertiesAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * props,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISmartCardAppletIdGroupRegistration2=_uuidof(ISmartCardAppletIdGroupRegistration2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* SmartCards */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -7864,6 +8351,25 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.SmartCards.KnownSmartCardAppletIds
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.SmartCards.IKnownSmartCardAppletIds interface starting with version 6.0 of the Windows.Devices.SmartCards.SmartCardEmulatorContract API contract
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#ifndef RUNTIMECLASS_Windows_Devices_SmartCards_KnownSmartCardAppletIds_DEFINED
+#define RUNTIMECLASS_Windows_Devices_SmartCards_KnownSmartCardAppletIds_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_SmartCards_KnownSmartCardAppletIds[] = L"Windows.Devices.SmartCards.KnownSmartCardAppletIds";
+#endif
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Devices.SmartCards.SmartCard
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7903,6 +8409,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.SmartCards.ISmartCardAppletIdGroup ** Default Interface **
+ *    Windows.Devices.SmartCards.ISmartCardAppletIdGroup2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7927,6 +8434,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration ** Default Interface **
+ *    Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8571,6 +9079,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CICardRemovedEventArgs _
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CICardRemovedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds;
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCard_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCard_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCard __x_ABI_CWindows_CDevices_CSmartCards_CISmartCard;
@@ -8583,6 +9097,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2;
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupFactory;
@@ -8594,6 +9114,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup
 typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration;
 
 #endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2;
+
+#endif // ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupStatics_FWD_DEFINED__
@@ -14689,6 +15215,572 @@ interface __FIVector_1_Windows__CStorage__CStreams__CIBuffer
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+
+#if !defined(____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIKeyValuePair_2_HSTRING_IInspectable __FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef struct __FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This,
+            /* [out] */ __RPC__out ULONG *iidCount,
+            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out HSTRING *key);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__deref_out_opt IInspectable * *value);
+    END_INTERFACE
+} __FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_get_Key(This,key)	\
+    ( (This)->lpVtbl -> get_Key(This,key) ) 
+
+#define __FIKeyValuePair_2_HSTRING_IInspectable_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out __FIKeyValuePair_2_HSTRING_IInspectable * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_IInspectable * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable;
+
+typedef  struct __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_IInspectable **first);
+
+    END_INTERFACE
+} __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl;
+
+interface __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIMapView_2_HSTRING_IInspectable __FIMapView_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIMapView_2_HSTRING_IInspectable;
+
+typedef struct __FIMapView_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,/* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *Lookup )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in HSTRING key,
+        /* [retval][out] */ __RPC__deref_out_opt IInspectable * *value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out unsigned int *size);
+    HRESULT ( STDMETHODCALLTYPE *HasKey )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This, /* [in] */ __RPC__in HSTRING key, /* [retval][out] */ __RPC__out boolean *found);
+    HRESULT ( STDMETHODCALLTYPE *Split )(__RPC__in __FIMapView_2_HSTRING_IInspectable * This,/* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable **firstPartition,
+        /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable **secondPartition);
+    END_INTERFACE
+} __FIMapView_2_HSTRING_IInspectableVtbl;
+
+interface __FIMapView_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIMapView_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIMapView_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIMapView_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIMapView_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIMapView_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIMapView_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIMapView_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIMapView_2_HSTRING_IInspectable_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+#define __FIMapView_2_HSTRING_IInspectable_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+#define __FIMapView_2_HSTRING_IInspectable_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+#define __FIMapView_2_HSTRING_IInspectable_Split(This,firstPartition,secondPartition)	\
+    ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIMapView_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIMap_2_HSTRING_IInspectable __FIMap_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIMap_2_HSTRING_IInspectable;
+
+typedef struct __FIMap_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMap_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMap_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMap_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMap_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMap_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMap_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *Lookup )(__RPC__in __FIMap_2_HSTRING_IInspectable * This,
+        /* [in] */ HSTRING key,
+        /* [retval][out] */ __RPC__deref_out_opt IInspectable * **value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )(__RPC__in __FIMap_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__out unsigned int *size);
+    HRESULT ( STDMETHODCALLTYPE *HasKey )(__RPC__in __FIMap_2_HSTRING_IInspectable * This, /* [in] */ HSTRING key, /* [retval][out] */ __RPC__out boolean *found);
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIMap_2_HSTRING_IInspectable * This, /* [retval][out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable **view);
+    HRESULT ( STDMETHODCALLTYPE *Insert )(__RPC__in __FIMap_2_HSTRING_IInspectable * This,
+        /* [in] */ HSTRING key,
+        /* [in] */ __RPC__in_opt IInspectable * *value,
+        /* [retval][out] */ __RPC__out boolean *replaced);
+    HRESULT ( STDMETHODCALLTYPE *Remove )(__RPC__in __FIMap_2_HSTRING_IInspectable * This,/* [in] */ HSTRING key);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIMap_2_HSTRING_IInspectable * This);
+    END_INTERFACE
+} __FIMap_2_HSTRING_IInspectableVtbl;
+
+interface __FIMap_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIMap_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIMap_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIMap_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIMap_2_HSTRING_IInspectable_Lookup(This,key,value)	\
+    ( (This)->lpVtbl -> Lookup(This,key,value) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_HasKey(This,key,found)	\
+    ( (This)->lpVtbl -> HasKey(This,key,found) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_Insert(This,key,value,replaced)	\
+    ( (This)->lpVtbl -> Insert(This,key,value,replaced) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_Remove(This,key)	\
+    ( (This)->lpVtbl -> Remove(This,key) ) 
+
+#define __FIMap_2_HSTRING_IInspectable_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+#if !defined(____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIMapChangedEventArgs_1_HSTRING __FIMapChangedEventArgs_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIMapChangedEventArgs_1_HSTRING;
+
+typedef struct __FIMapChangedEventArgs_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CollectionChange )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This, /* [out] */ __RPC__out __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange *value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )(__RPC__in __FIMapChangedEventArgs_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *value);
+    END_INTERFACE
+} __FIMapChangedEventArgs_1_HSTRINGVtbl;
+
+interface __FIMapChangedEventArgs_1_HSTRING
+{
+    CONST_VTBL struct __FIMapChangedEventArgs_1_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIMapChangedEventArgs_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIMapChangedEventArgs_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIMapChangedEventArgs_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIMapChangedEventArgs_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIMapChangedEventArgs_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIMapChangedEventArgs_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIMapChangedEventArgs_1_HSTRING_get_CollectionChange(This,value)	\
+    ( (This)->lpVtbl -> get_CollectionChange(This,value) ) 
+#define __FIMapChangedEventArgs_1_HSTRING_get_Key(This,value)	\
+    ( (This)->lpVtbl -> get_Key(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIMapChangedEventArgs_1_HSTRING_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FMapChangedEventHandler_2_HSTRING_IInspectable __FMapChangedEventHandler_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FMapChangedEventHandler_2_HSTRING_IInspectable;
+
+//Forward declare IObservableMap and IMapChangedEventArgs
+typedef interface __FIObservableMap_2_HSTRING_IInspectable __FIObservableMap_2_HSTRING_IInspectable;
+typedef interface __FIMapChangedEventArgs_1_HSTRING __FIMapChangedEventArgs_1_HSTRING;
+
+typedef struct __FMapChangedEventHandler_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FMapChangedEventHandler_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FMapChangedEventHandler_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FMapChangedEventHandler_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FMapChangedEventHandler_2_HSTRING_IInspectable * This, 
+        /* [in] */ __RPC__in_opt __FIObservableMap_2_HSTRING_IInspectable *sender, 
+        /* [in] */ __RPC__in_opt __FIMapChangedEventArgs_1_HSTRING *e);
+    END_INTERFACE
+} __FMapChangedEventHandler_2_HSTRING_IInspectableVtbl;
+
+interface __FMapChangedEventHandler_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FMapChangedEventHandler_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FMapChangedEventHandler_2_HSTRING_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FMapChangedEventHandler_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__)
+#define ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIObservableMap_2_HSTRING_IInspectable __FIObservableMap_2_HSTRING_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIObservableMap_2_HSTRING_IInspectable;
+
+typedef struct __FIObservableMap_2_HSTRING_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *add_MapChanged )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This,
+        /* [in] */ __RPC__in_opt __FMapChangedEventHandler_2_HSTRING_IInspectable *handler,
+        /* [retval][out] */ __RPC__out EventRegistrationToken *token);
+    HRESULT ( STDMETHODCALLTYPE *remove_MapChanged )(__RPC__in __FIObservableMap_2_HSTRING_IInspectable * This,
+        /* [in] */ EventRegistrationToken token);
+    END_INTERFACE
+} __FIObservableMap_2_HSTRING_IInspectableVtbl;
+
+interface __FIObservableMap_2_HSTRING_IInspectable
+{
+    CONST_VTBL struct __FIObservableMap_2_HSTRING_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIObservableMap_2_HSTRING_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIObservableMap_2_HSTRING_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIObservableMap_2_HSTRING_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIObservableMap_2_HSTRING_IInspectable_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIObservableMap_2_HSTRING_IInspectable_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIObservableMap_2_HSTRING_IInspectable_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIObservableMap_2_HSTRING_IInspectable_add_MapChanged(This,handler,token)	\
+    ( (This)->lpVtbl -> add_MapChanged(This,handler,token) ) 
+#define __FIObservableMap_2_HSTRING_IInspectable_remove_MapChanged(This,token)	\
+    ( (This)->lpVtbl -> remove_MapChanged(This,token) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIObservableMap_2_HSTRING_IInspectable_INTERFACE_DEFINED__
+
+
 #if !defined(____FIReference_1_UINT32_INTERFACE_DEFINED__)
 #define ____FIReference_1_UINT32_INTERFACE_DEFINED__
 
@@ -15073,6 +16165,16 @@ interface __FIAsyncOperation_1_HSTRING
 
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet;
+
+#endif // ____x_ABI_CWindows_CFoundation_CCollections_CIPropertySet_FWD_DEFINED__
+
+
+
+
+
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
@@ -15099,6 +16201,13 @@ typedef enum __x_ABI_CWindows_CSecurity_CCryptography_CCore_CCryptographicPublic
 
 
 
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
 
 
 
@@ -15180,6 +16289,10 @@ typedef enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardTriggerType __x_ABI
 
 
 typedef enum __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardUnlockPromptingBehavior __x_ABI_CWindows_CDevices_CSmartCards_CSmartCardUnlockPromptingBehavior;
+
+
+
+
 
 
 
@@ -16076,6 +17189,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CICardRemovedEventA
 
 /*
  *
+ * Interface Windows.Devices.SmartCards.IKnownSmartCardAppletIds
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.KnownSmartCardAppletIds
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_IKnownSmartCardAppletIds[] = L"Windows.Devices.SmartCards.IKnownSmartCardAppletIds";
+/* [object, uuid("7B04D8D8-95B4-4C88-8CEA-411E55511EFC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIdsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PaymentSystemEnvironment )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ProximityPaymentSystemEnvironment )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIdsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIdsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_get_PaymentSystemEnvironment(This,value) \
+    ( (This)->lpVtbl->get_PaymentSystemEnvironment(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_get_ProximityPaymentSystemEnvironment(This,value) \
+    ( (This)->lpVtbl->get_ProximityPaymentSystemEnvironment(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CIKnownSmartCardAppletIds_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Devices.SmartCards.ISmartCard
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -16332,6 +17545,141 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletId
 
 /*
  *
+ * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroup2
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.SmartCardAppletIdGroup
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_ISmartCardAppletIdGroup2[] = L"Windows.Devices.SmartCards.ISmartCardAppletIdGroup2";
+/* [object, uuid("6B0EF9DC-9956-4A62-8D4E-D37A68EBC3A6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Logo )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Logo )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Description )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Properties )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SecureUserAuthenticationRequired )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_SecureUserAuthenticationRequired )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_get_Logo(This,value) \
+    ( (This)->lpVtbl->get_Logo(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_put_Logo(This,value) \
+    ( (This)->lpVtbl->put_Logo(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_get_Description(This,value) \
+    ( (This)->lpVtbl->get_Description(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_put_Description(This,value) \
+    ( (This)->lpVtbl->put_Description(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_get_Properties(This,value) \
+    ( (This)->lpVtbl->get_Properties(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_get_SecureUserAuthenticationRequired(This,value) \
+    ( (This)->lpVtbl->get_SecureUserAuthenticationRequired(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_put_SecureUserAuthenticationRequired(This,value) \
+    ( (This)->lpVtbl->put_SecureUserAuthenticationRequired(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroup2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroupFactory
  *
  * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 1.0
@@ -16548,6 +17896,107 @@ interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistra
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration_INTERFACE_DEFINED__) */
 #endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.SmartCards.SmartCardAppletIdGroupRegistration
+ *
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#if !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_SmartCards_ISmartCardAppletIdGroupRegistration2[] = L"Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2";
+/* [object, uuid("5F5508D8-98A7-4F2E-91D9-6CFCCEDA407F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SmartCardReaderId )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetPropertiesAsync )(
+        __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet * props,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_get_SmartCardReaderId(This,value) \
+    ( (This)->lpVtbl->get_SmartCardReaderId(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_SetPropertiesAsync(This,props,operation) \
+    ( (This)->lpVtbl->SetPropertiesAsync(This,props,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSmartCards_CISmartCardAppletIdGroupRegistration2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
 
 
 /*
@@ -21638,6 +23087,25 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.SmartCards.KnownSmartCardAppletIds
+ *
+ * Introduced to Windows.Devices.SmartCards.SmartCardEmulatorContract in version 6.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.SmartCards.IKnownSmartCardAppletIds interface starting with version 6.0 of the Windows.Devices.SmartCards.SmartCardEmulatorContract API contract
+ *
+ */
+#if WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+#ifndef RUNTIMECLASS_Windows_Devices_SmartCards_KnownSmartCardAppletIds_DEFINED
+#define RUNTIMECLASS_Windows_Devices_SmartCards_KnownSmartCardAppletIds_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_SmartCards_KnownSmartCardAppletIds[] = L"Windows.Devices.SmartCards.KnownSmartCardAppletIds";
+#endif
+#endif // WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
  * Class Windows.Devices.SmartCards.SmartCard
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -21677,6 +23145,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.SmartCards.ISmartCardAppletIdGroup ** Default Interface **
+ *    Windows.Devices.SmartCards.ISmartCardAppletIdGroup2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -21701,6 +23170,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration ** Default Interface **
+ *    Windows.Devices.SmartCards.ISmartCardAppletIdGroupRegistration2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

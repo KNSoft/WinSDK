@@ -1,9 +1,10 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.UI.Text.Core.1.h"
 #include "winrt/impl/Windows.Data.Text.1.h"
 
 WINRT_EXPORT namespace winrt::Windows::Data::Text {
@@ -14,6 +15,8 @@ struct SelectableWordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
     template <typename L> SelectableWordSegmentsTokenizingHandler(L lambda);
     template <typename F> SelectableWordSegmentsTokenizingHandler(F* function);
     template <typename O, typename M> SelectableWordSegmentsTokenizingHandler(O* object, M method);
+    template <typename O, typename M> SelectableWordSegmentsTokenizingHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SelectableWordSegmentsTokenizingHandler(weak_ref<O>&& object, M method);
     void operator()(param::iterable<Windows::Data::Text::SelectableWordSegment> const& precedingWords, param::iterable<Windows::Data::Text::SelectableWordSegment> const& words) const;
 };
 
@@ -23,6 +26,8 @@ struct WordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
     template <typename L> WordSegmentsTokenizingHandler(L lambda);
     template <typename F> WordSegmentsTokenizingHandler(F* function);
     template <typename O, typename M> WordSegmentsTokenizingHandler(O* object, M method);
+    template <typename O, typename M> WordSegmentsTokenizingHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WordSegmentsTokenizingHandler(weak_ref<O>&& object, M method);
     void operator()(param::iterable<Windows::Data::Text::WordSegment> const& precedingWords, param::iterable<Windows::Data::Text::WordSegment> const& words) const;
 };
 
@@ -91,10 +96,13 @@ struct WINRT_EBO TextPhoneme :
 };
 
 struct WINRT_EBO TextPredictionGenerator :
-    Windows::Data::Text::ITextPredictionGenerator
+    Windows::Data::Text::ITextPredictionGenerator,
+    impl::require<TextPredictionGenerator, Windows::Data::Text::ITextPredictionGenerator2>
 {
     TextPredictionGenerator(std::nullptr_t) noexcept {}
     TextPredictionGenerator(param::hstring const& languageTag);
+    using impl::consume_t<TextPredictionGenerator, Windows::Data::Text::ITextPredictionGenerator2>::GetCandidatesAsync;
+    using Windows::Data::Text::ITextPredictionGenerator::GetCandidatesAsync;
 };
 
 struct WINRT_EBO TextReverseConversionGenerator :

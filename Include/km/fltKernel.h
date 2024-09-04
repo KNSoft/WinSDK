@@ -97,6 +97,12 @@ extern "C" {
 
 #define FLT_MGR_WIN10_RS3 (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
+//
+//  This defines items that only exist in Windows RedStone 5 or later
+// 
+
+#define FLT_MGR_WIN10_RS5 (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Standard includes
@@ -3238,6 +3244,24 @@ FltTagFile (
     _In_ USHORT DataBufferLength
     );
 
+#if FLT_MGR_WIN10_RS5
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+FLTAPI
+FltTagFileEx (
+    _In_ PFLT_INSTANCE InitiatingInstance,
+    _In_ PFILE_OBJECT FileObject,
+    _In_ ULONG FileTag,
+    _In_opt_ GUID *Guid,
+    _In_reads_bytes_(DataBufferLength) PVOID DataBuffer,
+    _In_ USHORT DataBufferLength,
+    _In_ ULONG ExistingFileTag,
+    _In_opt_ GUID *ExistingGuid,
+    _In_ ULONG Flags
+    );
+#endif
+
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
@@ -5752,6 +5776,29 @@ FLTAPI
 FltFreeOpenReparseList (
     _In_ PFLT_FILTER Filter,
     _In_ PECP_LIST EcpList
+    );
+
+#endif
+
+#if FLT_MGR_WIN10_RS5
+
+_IRQL_requires_max_(APC_LEVEL)
+NTSTATUS
+FLTAPI
+FltRequestFileInfoOnCreateCompletion (
+    _In_ PFLT_FILTER Filter,
+    _In_ PFLT_CALLBACK_DATA Data,
+    _In_ ULONG InfoClassFlags
+    );
+
+_IRQL_requires_max_(APC_LEVEL)
+PVOID
+FLTAPI
+FltRetrieveFileInfoOnCreateCompletion (
+    _In_ PFLT_FILTER Filter,
+    _In_ PFLT_CALLBACK_DATA Data,
+    _In_ ULONG InfoClass,
+    _Out_ PULONG Size
     );
 
 #endif

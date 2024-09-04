@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -63,7 +63,7 @@ struct WINRT_EBO ResourceContext :
 {
     ResourceContext(std::nullptr_t) noexcept {}
     ResourceContext();
-    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] static Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(param::iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> const& result);
+    static Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(param::iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> const& result);
     static Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView();
     static void SetGlobalQualifierValue(param::hstring const& key, param::hstring const& value);
     static void ResetGlobalQualifierValues();

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -102,19 +102,80 @@ template <> struct name<Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffe
 template <> struct name<Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState>{ static constexpr auto & value{ L"Windows.Gaming.Input.ForceFeedback.ForceFeedbackEffectState" }; };
 template <> struct name<Windows::Gaming::Input::ForceFeedback::ForceFeedbackLoadEffectResult>{ static constexpr auto & value{ L"Windows.Gaming.Input.ForceFeedback.ForceFeedbackLoadEffectResult" }; };
 template <> struct name<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind>{ static constexpr auto & value{ L"Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind" }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>{ static constexpr GUID value{ 0x32D1EA68,0x3695,0x4E69,{ 0x85,0xC0,0xCD,0x19,0x44,0x18,0x91,0x40 } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>{ static constexpr GUID value{ 0x91A99264,0x1810,0x4EB6,{ 0xA7,0x73,0xBF,0xD3,0xB8,0xCD,0xDB,0xAB } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>{ static constexpr GUID value{ 0x9BFA0140,0xF3C7,0x415C,{ 0xB0,0x68,0x0F,0x06,0x87,0x34,0xBC,0xE0 } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>{ static constexpr GUID value{ 0xA17FBA0C,0x2AE4,0x48C2,{ 0x80,0x63,0xEA,0xBD,0x07,0x77,0xCB,0x89 } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>{ static constexpr GUID value{ 0x8D3D417C,0xA5EA,0x4516,{ 0x80,0x26,0x2B,0x00,0xF7,0x4E,0xF6,0xE5 } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>{ static constexpr GUID value{ 0x5C5138D7,0xFC75,0x4D52,{ 0x9A,0x0A,0xEF,0xE4,0xCA,0xB5,0xFE,0x64 } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>{ static constexpr GUID value{ 0x6F62EB1A,0x9851,0x477B,{ 0xB3,0x18,0x35,0xEC,0xAA,0x15,0x07,0x0F } }; };
-template <> struct guid<Windows::Gaming::Input::ForceFeedback::IRampForceEffect>{ static constexpr GUID value{ 0xF1F81259,0x1CA6,0x4080,{ 0xB5,0x6D,0xB4,0x3F,0x33,0x54,0xD0,0x52 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>{ static constexpr guid value{ 0x32D1EA68,0x3695,0x4E69,{ 0x85,0xC0,0xCD,0x19,0x44,0x18,0x91,0x40 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>{ static constexpr guid value{ 0x91A99264,0x1810,0x4EB6,{ 0xA7,0x73,0xBF,0xD3,0xB8,0xCD,0xDB,0xAB } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>{ static constexpr guid value{ 0x9BFA0140,0xF3C7,0x415C,{ 0xB0,0x68,0x0F,0x06,0x87,0x34,0xBC,0xE0 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>{ static constexpr guid value{ 0xA17FBA0C,0x2AE4,0x48C2,{ 0x80,0x63,0xEA,0xBD,0x07,0x77,0xCB,0x89 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>{ static constexpr guid value{ 0x8D3D417C,0xA5EA,0x4516,{ 0x80,0x26,0x2B,0x00,0xF7,0x4E,0xF6,0xE5 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>{ static constexpr guid value{ 0x5C5138D7,0xFC75,0x4D52,{ 0x9A,0x0A,0xEF,0xE4,0xCA,0xB5,0xFE,0x64 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>{ static constexpr guid value{ 0x6F62EB1A,0x9851,0x477B,{ 0xB3,0x18,0x35,0xEC,0xAA,0x15,0x07,0x0F } }; };
+template <> struct guid_storage<Windows::Gaming::Input::ForceFeedback::IRampForceEffect>{ static constexpr guid value{ 0xF1F81259,0x1CA6,0x4080,{ 0xB5,0x6D,0xB4,0x3F,0x33,0x54,0xD0,0x52 } }; };
 template <> struct default_interface<Windows::Gaming::Input::ForceFeedback::ConditionForceEffect>{ using type = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect; };
 template <> struct default_interface<Windows::Gaming::Input::ForceFeedback::ConstantForceEffect>{ using type = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect; };
 template <> struct default_interface<Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor>{ using type = Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor; };
 template <> struct default_interface<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect>{ using type = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect; };
 template <> struct default_interface<Windows::Gaming::Input::ForceFeedback::RampForceEffect>{ using type = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect; };
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 vector, Windows::Foundation::TimeSpan duration) noexcept = 0;
+    virtual int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Gain(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Gain(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AreEffectsPaused(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MasterGain(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MasterGain(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedAxes(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes* value) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadEffectAsync(void* effect, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL PauseAllEffects() noexcept = 0;
+    virtual int32_t WINRT_CALL ResumeAllEffects() noexcept = 0;
+    virtual int32_t WINRT_CALL StopAllEffects() noexcept = 0;
+    virtual int32_t WINRT_CALL TryDisableAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryEnableAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryResetAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryUnloadEffectAsync(void* effect, void** asyncOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, Windows::Foundation::TimeSpan duration) noexcept = 0;
+    virtual int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::ForceFeedback::IRampForceEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetParameters(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, Windows::Foundation::TimeSpan duration) noexcept = 0;
+    virtual int32_t WINRT_CALL SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Gaming_Input_ForceFeedback_IConditionForceEffect
@@ -192,66 +253,5 @@ struct consume_Windows_Gaming_Input_ForceFeedback_IRampForceEffect
     void SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 const& startVector, Windows::Foundation::Numerics::float3 const& endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan const& startDelay, Windows::Foundation::TimeSpan const& attackDuration, Windows::Foundation::TimeSpan const& sustainDuration, Windows::Foundation::TimeSpan const& releaseDuration, uint32_t repeatCount) const;
 };
 template <> struct consume<Windows::Gaming::Input::ForceFeedback::IRampForceEffect> { template <typename D> using type = consume_Windows_Gaming_Input_ForceFeedback_IRampForceEffect<D>; };
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind* value) noexcept = 0;
-    virtual HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 vector, Windows::Foundation::TimeSpan duration) noexcept = 0;
-    virtual HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Gain(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Gain(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState* value) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AreEffectsPaused(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MasterGain(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MasterGain(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedAxes(Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes* value) noexcept = 0;
-    virtual HRESULT __stdcall LoadEffectAsync(void* effect, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall PauseAllEffects() noexcept = 0;
-    virtual HRESULT __stdcall ResumeAllEffects() noexcept = 0;
-    virtual HRESULT __stdcall StopAllEffects() noexcept = 0;
-    virtual HRESULT __stdcall TryDisableAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall TryEnableAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall TryResetAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall TryUnloadEffectAsync(void* effect, void** asyncOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind* value) noexcept = 0;
-    virtual HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, Windows::Foundation::TimeSpan duration) noexcept = 0;
-    virtual HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::ForceFeedback::IRampForceEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetParameters(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, Windows::Foundation::TimeSpan duration) noexcept = 0;
-    virtual HRESULT __stdcall SetParametersWithEnvelope(Windows::Foundation::Numerics::float3 startVector, Windows::Foundation::Numerics::float3 endVector, float attackGain, float sustainGain, float releaseGain, Windows::Foundation::TimeSpan startDelay, Windows::Foundation::TimeSpan attackDuration, Windows::Foundation::TimeSpan sustainDuration, Windows::Foundation::TimeSpan releaseDuration, uint32_t repeatCount) noexcept = 0;
-};};
 
 }

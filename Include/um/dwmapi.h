@@ -622,11 +622,18 @@ enum DWM_TAB_WINDOW_REQUIREMENTS
     // The window must use the default window margins for the non-client area.
     DWMTWR_WINDOW_MARGINS           = 0x0020,
 
-    // The window has been explicitly opted out by setting DWMWA_TABBING_ENABLED to DWMTEP_DISABLED.
-    DWMTWR_TABBING_ENABLED    = 0x0040,
+    // The window has been explicitly opted out by setting DWMWA_TABBING_ENABLED to FALSE.
+    DWMTWR_TABBING_ENABLED          = 0x0040,
 
     // The user has configured this application to not participate in tabbing.
-    DWMTWR_USER_POLICY    = 0x0080,
+    DWMTWR_USER_POLICY              = 0x0080,
+
+    // The group policy has configured this application to not participate in tabbing.
+    DWMTWR_GROUP_POLICY             = 0x0100,
+
+    // This is set if app compat has blocked tabs for this window. Can be overridden per window by setting
+    // DWMWA_TABBING_ENABLED to TRUE. That does not override any other tabbing requirements.
+    DWMTWR_APP_COMPAT               = 0x0200
 };
 DEFINE_ENUM_FLAG_OPERATORS(DWM_TAB_WINDOW_REQUIREMENTS);
 
@@ -634,6 +641,7 @@ DEFINE_ENUM_FLAG_OPERATORS(DWM_TAB_WINDOW_REQUIREMENTS);
 DWMAPI DwmGetUnmetTabRequirements(_In_opt_ HWND appWindow, _Out_ enum DWM_TAB_WINDOW_REQUIREMENTS* value);
 
 #endif // NTDDI_WIN10_RS4
+
 
 #include <poppack.h>
 

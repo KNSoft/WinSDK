@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,6 +24,8 @@ struct DispatcherQueueHandler : Windows::Foundation::IUnknown
     template <typename L> DispatcherQueueHandler(L lambda);
     template <typename F> DispatcherQueueHandler(F* function);
     template <typename O, typename M> DispatcherQueueHandler(O* object, M method);
+    template <typename O, typename M> DispatcherQueueHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DispatcherQueueHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -128,6 +130,28 @@ struct WINRT_EBO AppResourceGroupStateReport :
     AppResourceGroupStateReport(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO AppUriHandlerHost :
+    Windows::System::IAppUriHandlerHost
+{
+    AppUriHandlerHost(std::nullptr_t) noexcept {}
+    AppUriHandlerHost();
+    AppUriHandlerHost(param::hstring const& name);
+};
+
+struct WINRT_EBO AppUriHandlerRegistration :
+    Windows::System::IAppUriHandlerRegistration
+{
+    AppUriHandlerRegistration(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO AppUriHandlerRegistrationManager :
+    Windows::System::IAppUriHandlerRegistrationManager
+{
+    AppUriHandlerRegistrationManager(std::nullptr_t) noexcept {}
+    static Windows::System::AppUriHandlerRegistrationManager GetDefault();
+    static Windows::System::AppUriHandlerRegistrationManager GetForUser(Windows::System::User const& user);
+};
+
 struct DateTimeSettings
 {
     DateTimeSettings() = delete;
@@ -215,6 +239,10 @@ struct Launcher
     static Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriStatus> LaunchUriForUserAsync(Windows::System::User const& user, Windows::Foundation::Uri const& uri, Windows::System::LauncherOptions const& options, Windows::Foundation::Collections::ValueSet const& inputData);
     static Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsForUserAsync(Windows::System::User const& user, Windows::Foundation::Uri const& uri, Windows::System::LauncherOptions const& options);
     static Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsForUserAsync(Windows::System::User const& user, Windows::Foundation::Uri const& uri, Windows::System::LauncherOptions const& options, Windows::Foundation::Collections::ValueSet const& inputData);
+    static Windows::Foundation::IAsyncOperation<bool> LaunchFolderPathAsync(param::hstring const& path);
+    static Windows::Foundation::IAsyncOperation<bool> LaunchFolderPathAsync(param::hstring const& path, Windows::System::FolderLauncherOptions const& options);
+    static Windows::Foundation::IAsyncOperation<bool> LaunchFolderPathForUserAsync(Windows::System::User const& user, param::hstring const& path);
+    static Windows::Foundation::IAsyncOperation<bool> LaunchFolderPathForUserAsync(Windows::System::User const& user, param::hstring const& path, Windows::System::FolderLauncherOptions const& options);
 };
 
 struct WINRT_EBO LauncherOptions :
@@ -237,18 +265,18 @@ struct MemoryManager
     static uint64_t AppMemoryUsage();
     static uint64_t AppMemoryUsageLimit();
     static Windows::System::AppMemoryUsageLevel AppMemoryUsageLevel();
-    static event_token AppMemoryUsageIncreased(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using AppMemoryUsageIncreased_revoker = factory_event_revoker<Windows::System::IMemoryManagerStatics>;
+    static winrt::event_token AppMemoryUsageIncreased(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using AppMemoryUsageIncreased_revoker = impl::factory_event_revoker<Windows::System::IMemoryManagerStatics, &impl::abi_t<Windows::System::IMemoryManagerStatics>::remove_AppMemoryUsageIncreased>;
     static AppMemoryUsageIncreased_revoker AppMemoryUsageIncreased(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void AppMemoryUsageIncreased(event_token const& token);
-    static event_token AppMemoryUsageDecreased(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using AppMemoryUsageDecreased_revoker = factory_event_revoker<Windows::System::IMemoryManagerStatics>;
+    static void AppMemoryUsageIncreased(winrt::event_token const& token);
+    static winrt::event_token AppMemoryUsageDecreased(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using AppMemoryUsageDecreased_revoker = impl::factory_event_revoker<Windows::System::IMemoryManagerStatics, &impl::abi_t<Windows::System::IMemoryManagerStatics>::remove_AppMemoryUsageDecreased>;
     static AppMemoryUsageDecreased_revoker AppMemoryUsageDecreased(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void AppMemoryUsageDecreased(event_token const& token);
-    static event_token AppMemoryUsageLimitChanging(Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> const& handler);
-    using AppMemoryUsageLimitChanging_revoker = factory_event_revoker<Windows::System::IMemoryManagerStatics>;
+    static void AppMemoryUsageDecreased(winrt::event_token const& token);
+    static winrt::event_token AppMemoryUsageLimitChanging(Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> const& handler);
+    using AppMemoryUsageLimitChanging_revoker = impl::factory_event_revoker<Windows::System::IMemoryManagerStatics, &impl::abi_t<Windows::System::IMemoryManagerStatics>::remove_AppMemoryUsageLimitChanging>;
     static AppMemoryUsageLimitChanging_revoker AppMemoryUsageLimitChanging(auto_revoke_t, Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> const& handler);
-    static void AppMemoryUsageLimitChanging(event_token const& token);
+    static void AppMemoryUsageLimitChanging(winrt::event_token const& token);
     static Windows::System::AppMemoryReport GetAppMemoryReport();
     static Windows::System::ProcessMemoryReport GetProcessMemoryReport();
     static bool TrySetAppMemoryUsageLimit(uint64_t value);
@@ -355,10 +383,10 @@ struct UserDeviceAssociation
 {
     UserDeviceAssociation() = delete;
     static Windows::System::User FindUserFromDeviceId(param::hstring const& deviceId);
-    static event_token UserDeviceAssociationChanged(Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> const& handler);
-    using UserDeviceAssociationChanged_revoker = factory_event_revoker<Windows::System::IUserDeviceAssociationStatics>;
+    static winrt::event_token UserDeviceAssociationChanged(Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> const& handler);
+    using UserDeviceAssociationChanged_revoker = impl::factory_event_revoker<Windows::System::IUserDeviceAssociationStatics, &impl::abi_t<Windows::System::IUserDeviceAssociationStatics>::remove_UserDeviceAssociationChanged>;
     static UserDeviceAssociationChanged_revoker UserDeviceAssociationChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> const& handler);
-    static void UserDeviceAssociationChanged(event_token const& token);
+    static void UserDeviceAssociationChanged(winrt::event_token const& token);
 };
 
 struct WINRT_EBO UserDeviceAssociationChangedEventArgs :

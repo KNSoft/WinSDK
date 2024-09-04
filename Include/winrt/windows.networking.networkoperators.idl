@@ -725,7 +725,29 @@ namespace Windows
                 ConfirmationCodeMaxRetriesExceeded = 9,
                 CardRemoved                        = 10,
                 CardBusy                           = 11,
-                Other                              = 12
+                Other                              = 12,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                CardGeneralFailure                 = 13,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ConfirmationCodeMissing            = 14,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                InvalidMatchingId                  = 15,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                NoEligibleProfileForThisDevice     = 16,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                OperationAborted                   = 17,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                EidMismatch                        = 18,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ProfileNotAvailableForNewBinding   = 19,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ProfileNotReleasedByOperator       = 20,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                OperationProhibitedByProfileClass  = 21,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ProfileNotPresent                  = 22,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                NoCorrespondingRequest             = 23
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]

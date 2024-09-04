@@ -413,7 +413,7 @@ GetDiskFreeSpaceW(
 #else
 #define GetDiskFreeSpace  GetDiskFreeSpaceA
 #endif // !UNICODE
-    
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -438,6 +438,119 @@ GetDiskFreeSpaceExW(
 #define GetDiskFreeSpaceEx  GetDiskFreeSpaceExW
 #else
 #define GetDiskFreeSpaceEx  GetDiskFreeSpaceExA
+#endif // !UNICODE
+
+//
+//  The structure definition must be same as the one 
+//  (FILE_FS_FULL_SIZE_INFORMATION_EX) defined in ntioapi_x.w
+//
+
+typedef struct DISK_SPACE_INFORMATION {
+
+    //
+    //  AllocationUnits are actually file system clusters.
+    //  AllocationUnits * SectorsPerAllocationUnit * BytesPerSector
+    //  will get you the sizes in bytes.
+    //
+
+    //
+    //  The Actual*AllocationUnits are volume sizes without considering Quota
+    //  setting.
+    //  ActualPoolUnavailableAllocationUnits is the unavailable space for the
+    //  volume due to insufficient free pool space (PoolAvailableAllocationUnits).
+    //  Be aware AllocationUnits are mesured in clusters, see comments at the beginning.
+    //
+    //  ActualTotalAllocationUnits = ActualAvailableAllocationUnits +
+    //                               ActualPoolUnavailableAllocationUnits +
+    //                               UsedAllocationUnits +
+    //                               TotalReservedAllocationUnits
+    //
+
+    ULONGLONG ActualTotalAllocationUnits;
+    ULONGLONG ActualAvailableAllocationUnits;
+    ULONGLONG ActualPoolUnavailableAllocationUnits;
+
+    //
+    //  The Caller*AllocationUnits are limited by Quota setting.
+    //  CallerAvailableAllocationUnits is the unavailable space for the
+    //  volume due to insufficient free pool space (PoolAvailableAllocationUnits).
+    //  Be aware AllocationUnits are mesured in clusters, see comments at the beginning.
+    //
+    //  CallerTotalAllocationUnits = CallerAvailableAllocationUnits +
+    //                               CallerPoolUnavailableAllocationUnits +
+    //                               UsedAllocationUnits +
+    //                               TotalReservedAllocationUnits
+    //
+
+    ULONGLONG CallerTotalAllocationUnits;
+    ULONGLONG CallerAvailableAllocationUnits;
+    ULONGLONG CallerPoolUnavailableAllocationUnits;
+
+    //
+    //  The used space (in clusters) of the volume.
+    //
+
+    ULONGLONG UsedAllocationUnits;
+
+    //
+    //  Total reserved space (in clusters).
+    //
+
+    ULONGLONG TotalReservedAllocationUnits;
+
+    //
+    //  A special type of reserved space (in clusters) for per-volume storage
+    //  reserve and this is included in the above TotalReservedAllocationUnits.
+    //
+
+    ULONGLONG VolumeStorageReserveAllocationUnits;
+
+    //
+    //  This refers to the space (in clusters) that has been committed by
+    //  storage pool but has not been allocated by file system.
+    //
+    //  s1 = (ActualTotalAllocationUnits - UsedAllocationUnits - TotalReservedAllocationUnits)
+    //  s2 = (AvailableCommittedAllocationUnits + PoolAvailableAllocationUnits)
+    //  ActualAvailableAllocationUnits = min( s1, s2 )
+    //
+    //  When s1 >= s2, ActualPoolUnavailableAllocationUnits = 0
+    //  When s1 < s2, ActualPoolUnavailableAllocationUnits = s2 - s1.
+    //
+
+    ULONGLONG AvailableCommittedAllocationUnits;
+
+    //
+    //  Available space (in clusters) in corresponding storage pool. If the volume
+    //  is not a spaces volume, the PoolAvailableAllocationUnits is set to zero.
+    //
+
+    ULONGLONG PoolAvailableAllocationUnits;
+
+    DWORD SectorsPerAllocationUnit;
+    DWORD BytesPerSector;
+
+} DISK_SPACE_INFORMATION;
+
+WINBASEAPI
+HRESULT
+WINAPI
+GetDiskSpaceInformationA(
+    _In_opt_ LPCSTR rootPath,
+    _Out_ DISK_SPACE_INFORMATION* diskSpaceInfo
+    );
+
+WINBASEAPI
+HRESULT
+WINAPI
+GetDiskSpaceInformationW(
+    _In_opt_ LPCWSTR rootPath,
+    _Out_ DISK_SPACE_INFORMATION* diskSpaceInfo
+    );
+
+#ifdef UNICODE
+#define GetDiskSpaceInformation  GetDiskSpaceInformationW
+#else
+#define GetDiskSpaceInformation  GetDiskSpaceInformationA
 #endif // !UNICODE
 
 WINBASEAPI
@@ -1199,12 +1312,12 @@ GetVolumePathNamesForVolumeNameW(
 #if (_WIN32_WINNT >= 0x0602)
 
 typedef struct _CREATEFILE2_EXTENDED_PARAMETERS {
-    DWORD dwSize;   
+    DWORD dwSize;
     DWORD dwFileAttributes;
-    DWORD dwFileFlags;   
-    DWORD dwSecurityQosFlags;	
-    LPSECURITY_ATTRIBUTES lpSecurityAttributes; 
-    HANDLE hTemplateFile;      
+    DWORD dwFileFlags;
+    DWORD dwSecurityQosFlags;
+    LPSECURITY_ATTRIBUTES lpSecurityAttributes;
+    HANDLE hTemplateFile;
 } CREATEFILE2_EXTENDED_PARAMETERS, *PCREATEFILE2_EXTENDED_PARAMETERS, *LPCREATEFILE2_EXTENDED_PARAMETERS;
 
 WINBASEAPI

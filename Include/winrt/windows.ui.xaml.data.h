@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.data.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1910,9 +1922,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IBindingBase * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IBindingBase * * value
                             ) = 0;
                         
                     };
@@ -2122,9 +2134,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IBinding * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IBinding * * value
                             ) = 0;
                         
                     };
@@ -2273,14 +2285,14 @@ namespace ABI {
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CurrentChanged(
-                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CurrentChanged(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CurrentChanging(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CurrentChanging(
@@ -2288,27 +2300,27 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentTo(
                             /* [in] */__RPC__in_opt IInspectable * item,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentToPosition(
                             /* [in] */INT32 index,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentToFirst(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentToLast(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentToNext(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE MoveCurrentToPrevious(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE LoadMoreItemsAsync(
                             /* [in] */UINT32 count,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CData__CLoadMoreItemsResult * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CData__CLoadMoreItemsResult * * operation
                             ) = 0;
                         
                     };
@@ -2596,15 +2608,15 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventArgs * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventArgs * * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE CreateWithCancelableParameter(
                             /* [in] */boolean isCancelable,
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventArgs * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICurrentChangingEventArgs * * value
                             ) = 0;
                         
                     };
@@ -2651,7 +2663,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetValue(
                             /* [in] */__RPC__in_opt IInspectable * target,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetValue(
                             /* [in] */__RPC__in_opt IInspectable * target,
@@ -2660,7 +2672,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE GetIndexedValue(
                             /* [in] */__RPC__in_opt IInspectable * target,
                             /* [in] */__RPC__in_opt IInspectable * index,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetIndexedValue(
                             /* [in] */__RPC__in_opt IInspectable * target,
@@ -2712,15 +2724,15 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE GetCustomProperty(
                             /* [in] */__RPC__in HSTRING name,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICustomProperty * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICustomProperty * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIndexedProperty(
                             /* [in] */__RPC__in HSTRING name,
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName type,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICustomProperty * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::ICustomProperty * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStringRepresentation(
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Type(
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
@@ -2817,9 +2829,9 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */INT32 firstIndex,
                             /* [in] */UINT32 length,
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IItemIndexRange * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IItemIndexRange * * value
                             ) = 0;
                         
                     };
@@ -2904,7 +2916,7 @@ namespace ABI {
                     {
                     public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PropertyChanged(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_PropertyChanged(
@@ -2995,9 +3007,9 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */__RPC__in HSTRING name,
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventArgs * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IPropertyChangedEventArgs * * value
                             ) = 0;
                         
                     };
@@ -3086,9 +3098,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IRelativeSource * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Data::IRelativeSource * * value
                             ) = 0;
                         
                     };
@@ -3135,10 +3147,10 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE IsSelected(
                             /* [in] */INT32 index,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetSelectedRanges(
-                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CData__CItemIndexRange * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CData__CItemIndexRange * * result
                             ) = 0;
                         
                     };
@@ -3226,14 +3238,14 @@ namespace ABI {
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName targetType,
                             /* [in] */__RPC__in_opt IInspectable * parameter,
                             /* [in] */__RPC__in HSTRING language,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE ConvertBack(
                             /* [in] */__RPC__in_opt IInspectable * value,
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName targetType,
                             /* [in] */__RPC__in_opt IInspectable * parameter,
                             /* [in] */__RPC__in HSTRING language,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -5435,9 +5447,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBase * * value
         );
     END_INTERFACE
     
@@ -5467,8 +5479,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBaseFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -5894,9 +5906,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIBindingFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIBinding * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIBinding * * value
         );
     END_INTERFACE
     
@@ -5926,8 +5938,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIBindingFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIBindingFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -6197,7 +6209,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CurrentChanged )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CurrentChanged )(
@@ -6206,7 +6218,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CurrentChanging )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CurrentChanging )(
@@ -6216,33 +6228,33 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentTo )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
         /* [in] */__RPC__in_opt IInspectable * item,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentToPosition )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
         /* [in] */INT32 index,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentToFirst )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentToLast )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentToNext )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveCurrentToPrevious )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *LoadMoreItemsAsync )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView * This,
         /* [in] */UINT32 count,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CData__CLoadMoreItemsResult * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CData__CLoadMoreItemsResult * * operation
         );
     END_INTERFACE
     
@@ -6290,38 +6302,38 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_get_HasMoreItems(This,value) \
     ( (This)->lpVtbl->get_HasMoreItems(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_add_CurrentChanged(This,value,token) \
-    ( (This)->lpVtbl->add_CurrentChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_add_CurrentChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_CurrentChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_remove_CurrentChanged(This,token) \
     ( (This)->lpVtbl->remove_CurrentChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_add_CurrentChanging(This,value,token) \
-    ( (This)->lpVtbl->add_CurrentChanging(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_add_CurrentChanging(This,handler,token) \
+    ( (This)->lpVtbl->add_CurrentChanging(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_remove_CurrentChanging(This,token) \
     ( (This)->lpVtbl->remove_CurrentChanging(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentTo(This,item,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentTo(This,item,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentTo(This,item,result) \
+    ( (This)->lpVtbl->MoveCurrentTo(This,item,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToPosition(This,index,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentToPosition(This,index,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToPosition(This,index,result) \
+    ( (This)->lpVtbl->MoveCurrentToPosition(This,index,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToFirst(This,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentToFirst(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToFirst(This,result) \
+    ( (This)->lpVtbl->MoveCurrentToFirst(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToLast(This,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentToLast(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToLast(This,result) \
+    ( (This)->lpVtbl->MoveCurrentToLast(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToNext(This,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentToNext(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToNext(This,result) \
+    ( (This)->lpVtbl->MoveCurrentToNext(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToPrevious(This,returnValue) \
-    ( (This)->lpVtbl->MoveCurrentToPrevious(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_MoveCurrentToPrevious(This,result) \
+    ( (This)->lpVtbl->MoveCurrentToPrevious(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_LoadMoreItemsAsync(This,count,returnValue) \
-    ( (This)->lpVtbl->LoadMoreItemsAsync(This,count,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICollectionView_LoadMoreItemsAsync(This,count,operation) \
+    ( (This)->lpVtbl->LoadMoreItemsAsync(This,count,operation) )
 
 
 #endif /* COBJMACROS */
@@ -6926,16 +6938,16 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgs * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateWithCancelableParameter )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory * This,
         /* [in] */boolean isCancelable,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgs * * value
         );
     END_INTERFACE
     
@@ -6965,11 +6977,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory_CreateWithCancelableParameter(This,isCancelable,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateWithCancelableParameter(This,isCancelable,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICurrentChangingEventArgsFactory_CreateWithCancelableParameter(This,isCancelable,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateWithCancelableParameter(This,isCancelable,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -7037,7 +7049,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetValue )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * This,
         /* [in] */__RPC__in_opt IInspectable * target,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetValue )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * This,
@@ -7048,7 +7060,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * This,
         /* [in] */__RPC__in_opt IInspectable * target,
         /* [in] */__RPC__in_opt IInspectable * index,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIndexedValue )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * This,
@@ -7098,14 +7110,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_get_Name(This,value) \
     ( (This)->lpVtbl->get_Name(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_GetValue(This,target,returnValue) \
-    ( (This)->lpVtbl->GetValue(This,target,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_GetValue(This,target,result) \
+    ( (This)->lpVtbl->GetValue(This,target,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_SetValue(This,target,value) \
     ( (This)->lpVtbl->SetValue(This,target,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_GetIndexedValue(This,target,index,returnValue) \
-    ( (This)->lpVtbl->GetIndexedValue(This,target,index,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_GetIndexedValue(This,target,index,result) \
+    ( (This)->lpVtbl->GetIndexedValue(This,target,index,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty_SetIndexedValue(This,target,value,index) \
     ( (This)->lpVtbl->SetIndexedValue(This,target,value,index) )
@@ -7174,17 +7186,17 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetCustomProperty )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider * This,
         /* [in] */__RPC__in HSTRING name,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetIndexedProperty )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider * This,
         /* [in] */__RPC__in HSTRING name,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CICustomProperty * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetStringRepresentation )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Type )(
         __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider * This,
@@ -7218,14 +7230,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetCustomProperty(This,name,returnValue) \
-    ( (This)->lpVtbl->GetCustomProperty(This,name,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetCustomProperty(This,name,result) \
+    ( (This)->lpVtbl->GetCustomProperty(This,name,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetIndexedProperty(This,name,type,returnValue) \
-    ( (This)->lpVtbl->GetIndexedProperty(This,name,type,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetIndexedProperty(This,name,type,result) \
+    ( (This)->lpVtbl->GetIndexedProperty(This,name,type,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetStringRepresentation(This,returnValue) \
-    ( (This)->lpVtbl->GetStringRepresentation(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_GetStringRepresentation(This,result) \
+    ( (This)->lpVtbl->GetStringRepresentation(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CICustomPropertyProvider_get_Type(This,value) \
     ( (This)->lpVtbl->get_Type(This,value) )
@@ -7399,9 +7411,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRangeFactory * This,
         /* [in] */INT32 firstIndex,
         /* [in] */UINT32 length,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRange * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRange * * value
         );
     END_INTERFACE
     
@@ -7431,8 +7443,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRangeFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRangeFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRangeFactory_CreateInstance(This,firstIndex,length,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,firstIndex,length,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIItemIndexRangeFactory_CreateInstance(This,firstIndex,length,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,firstIndex,length,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -7586,7 +7598,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_PropertyChanged )(
         __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_PropertyChanged )(
@@ -7621,8 +7633,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged
 #define __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged_add_PropertyChanged(This,value,token) \
-    ( (This)->lpVtbl->add_PropertyChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged_add_PropertyChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_PropertyChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CData_CINotifyPropertyChanged_remove_PropertyChanged(This,token) \
     ( (This)->lpVtbl->remove_PropertyChanged(This,token) )
@@ -7781,9 +7793,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgsFactory * This,
         /* [in] */__RPC__in HSTRING name,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgs * * value
         );
     END_INTERFACE
     
@@ -7813,8 +7825,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgsFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgsFactory_CreateInstance(This,name,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,name,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIPropertyChangedEventArgsFactory_CreateInstance(This,name,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,name,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -7976,9 +7988,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSource * * value
         );
     END_INTERFACE
     
@@ -8008,8 +8020,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIRelativeSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -8077,11 +8089,11 @@ HRESULT ( STDMETHODCALLTYPE *SelectRange )(
     HRESULT ( STDMETHODCALLTYPE *IsSelected )(
         __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo * This,
         /* [in] */INT32 index,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetSelectedRanges )(
         __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CData__CItemIndexRange * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CData__CItemIndexRange * * result
         );
     END_INTERFACE
     
@@ -8117,11 +8129,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo
 #define __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo_DeselectRange(This,itemIndexRange) \
     ( (This)->lpVtbl->DeselectRange(This,itemIndexRange) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo_IsSelected(This,index,returnValue) \
-    ( (This)->lpVtbl->IsSelected(This,index,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo_IsSelected(This,index,result) \
+    ( (This)->lpVtbl->IsSelected(This,index,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo_GetSelectedRanges(This,returnValue) \
-    ( (This)->lpVtbl->GetSelectedRanges(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CISelectionInfo_GetSelectedRanges(This,result) \
+    ( (This)->lpVtbl->GetSelectedRanges(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -8282,7 +8294,7 @@ HRESULT ( STDMETHODCALLTYPE *Convert )(
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName targetType,
         /* [in] */__RPC__in_opt IInspectable * parameter,
         /* [in] */__RPC__in HSTRING language,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *ConvertBack )(
         __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter * This,
@@ -8290,7 +8302,7 @@ HRESULT ( STDMETHODCALLTYPE *Convert )(
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName targetType,
         /* [in] */__RPC__in_opt IInspectable * parameter,
         /* [in] */__RPC__in HSTRING language,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -8320,11 +8332,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter
 #define __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter_Convert(This,value,targetType,parameter,language,returnValue) \
-    ( (This)->lpVtbl->Convert(This,value,targetType,parameter,language,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter_Convert(This,value,targetType,parameter,language,result) \
+    ( (This)->lpVtbl->Convert(This,value,targetType,parameter,language,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter_ConvertBack(This,value,targetType,parameter,language,returnValue) \
-    ( (This)->lpVtbl->ConvertBack(This,value,targetType,parameter,language,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CData_CIValueConverter_ConvertBack(This,value,targetType,parameter,language,result) \
+    ( (This)->lpVtbl->ConvertBack(This,value,targetType,parameter,language,result) )
 
 
 #endif /* COBJMACROS */

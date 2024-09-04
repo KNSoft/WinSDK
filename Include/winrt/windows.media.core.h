@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -253,6 +265,7 @@
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.AppService.h"
+#include "Windows.Graphics.DirectX.Direct3D11.h"
 #include "Windows.Graphics.Imaging.h"
 #include "Windows.Media.h"
 #include "Windows.Media.Capture.h"
@@ -919,6 +932,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaStreamSample2;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 ABI::Windows::Media::Core::IMediaStreamSample2
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties_FWD_DEFINED__
 namespace ABI {
@@ -946,6 +973,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics ABI::Windows::Media::Core::IMediaStreamSampleStatics
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                interface IMediaStreamSampleStatics2;
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 ABI::Windows::Media::Core::IMediaStreamSampleStatics2
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSource_FWD_DEFINED__
@@ -5925,6 +5966,27 @@ namespace ABI {
 
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    interface IDirect3DSurface;
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface
+
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -6812,6 +6874,8 @@ namespace ABI {
             } /* Windows */
         } /* Media */
     } /* Core */} /* ABI */
+
+
 
 
 
@@ -10555,6 +10619,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaStreamSample2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaStreamSample
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaStreamSample2[] = L"Windows.Media.Core.IMediaStreamSample2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("45078691-FCE8-4746-A1C8-10C25D3D7CD3"), exclusiveto, contract] */
+                MIDL_INTERFACE("45078691-FCE8-4746-A1C8-10C25D3D7CD3")
+                IMediaStreamSample2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Direct3D11Surface(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaStreamSample2=_uuidof(IMediaStreamSample2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaStreamSampleProtectionProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10662,6 +10767,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IMediaStreamSampleStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaStreamSample
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaStreamSampleStatics2[] = L"Windows.Media.Core.IMediaStreamSampleStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Core {
+                /* [object, uuid("9EFE9521-6D46-494C-A2F8-D662922E2DD7"), exclusiveto, contract] */
+                MIDL_INTERFACE("9EFE9521-6D46-494C-A2F8-D662922E2DD7")
+                IMediaStreamSampleStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE CreateFromDirect3D11Surface(
+                        /* [in] */__RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * surface,
+                        /* [in] */ABI::Windows::Foundation::TimeSpan timestamp,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::Core::IMediaStreamSample * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaStreamSampleStatics2=_uuidof(IMediaStreamSampleStatics2);
+                
+            } /* Windows */
+        } /* Media */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -14300,10 +14448,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Core.IMediaStreamSampleStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaStreamSampleStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Media.Core.IMediaStreamSample ** Default Interface **
+ *    Windows.Media.Core.IMediaStreamSample2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -15650,6 +15800,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample __x_ABI_CWin
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionProperties;
@@ -15661,6 +15817,12 @@ typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleProtectionPro
 typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics;
 
 #endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2;
+
+#endif // ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSource_FWD_DEFINED__
@@ -24985,6 +25147,17 @@ typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindow
 
 
 
+#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface;
+
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+
+
+
+
+
+
 
 typedef enum __x_ABI_CWindows_CGraphics_CImaging_CBitmapPixelFormat __x_ABI_CWindows_CGraphics_CImaging_CBitmapPixelFormat;
 
@@ -25298,6 +25471,8 @@ typedef struct __x_ABI_CWindows_CMedia_CCore_CTimedTextPoint __x_ABI_CWindows_CM
 
 
 typedef struct __x_ABI_CWindows_CMedia_CCore_CTimedTextSize __x_ABI_CWindows_CMedia_CCore_CTimedTextSize;
+
+
 
 
 
@@ -31495,6 +31670,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample;
 
 /*
  *
+ * Interface Windows.Media.Core.IMediaStreamSample2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaStreamSample
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaStreamSample2[] = L"Windows.Media.Core.IMediaStreamSample2";
+/* [object, uuid("45078691-FCE8-4746-A1C8-10C25D3D7CD3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Direct3D11Surface )(
+        __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_get_Direct3D11Surface(This,value) \
+    ( (This)->lpVtbl->get_Direct3D11Surface(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.Core.IMediaStreamSampleProtectionProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -31730,6 +31998,101 @@ interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics;
 #endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Media.Core.IMediaStreamSampleStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Core.MediaStreamSample
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Core_IMediaStreamSampleStatics2[] = L"Windows.Media.Core.IMediaStreamSampleStatics2";
+/* [object, uuid("9EFE9521-6D46-494C-A2F8-D662922E2DD7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateFromDirect3D11Surface )(
+        __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * surface,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan timestamp,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSample * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_CreateFromDirect3D11Surface(This,surface,timestamp,result) \
+    ( (This)->lpVtbl->CreateFromDirect3D11Surface(This,surface,timestamp,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CCore_CIMediaStreamSampleStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -39000,10 +39363,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Core.IMediaStreamSampleStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Core.IMediaStreamSampleStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Media.Core.IMediaStreamSample ** Default Interface **
+ *    Windows.Media.Core.IMediaStreamSample2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

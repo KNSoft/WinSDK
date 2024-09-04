@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -84,6 +84,7 @@ struct WINRT_EBO AutomationElementIdentifiers :
     static Windows::UI::Xaml::Automation::AutomationProperty FlowsFromProperty();
     static Windows::UI::Xaml::Automation::AutomationProperty CultureProperty();
     static Windows::UI::Xaml::Automation::AutomationProperty HeadingLevelProperty();
+    static Windows::UI::Xaml::Automation::AutomationProperty IsDialogProperty();
 };
 
 struct WINRT_EBO AutomationProperties :
@@ -166,6 +167,9 @@ struct WINRT_EBO AutomationProperties :
     static Windows::UI::Xaml::DependencyProperty HeadingLevelProperty();
     static Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel GetHeadingLevel(Windows::UI::Xaml::DependencyObject const& element);
     static void SetHeadingLevel(Windows::UI::Xaml::DependencyObject const& element, Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel const& value);
+    static Windows::UI::Xaml::DependencyProperty IsDialogProperty();
+    static bool GetIsDialog(Windows::UI::Xaml::DependencyObject const& element);
+    static void SetIsDialog(Windows::UI::Xaml::DependencyObject const& element, bool value);
 };
 
 struct WINRT_EBO AutomationProperty :

@@ -291,6 +291,22 @@ typedef union _CDB {
     } READ_BUFFER_10;
 
     //
+    // Read Buffer(16) command from SPC-5
+    //
+
+    struct _READ_BUFFER_16 {
+
+        UCHAR OperationCode;    // 0x9b - SCSIOP_READ_DATA_BUFF16
+        UCHAR Mode : 5;
+        UCHAR ModeSpecific : 3;
+        UCHAR BufferOffset[8];
+        UCHAR AllocationLength[4];
+        UCHAR BufferId;
+        UCHAR Control;
+
+    } READ_BUFFER_16;
+
+    //
     // Security-related commands from SPC-4
     //
 
@@ -2459,6 +2475,7 @@ typedef struct _PERFORMANCE_DESCRIPTOR {
 #define SCSIOP_ERASE16                  0x93 // tape
 #define SCSIOP_ZBC_OUT                  0x94 // Close Zone, Finish Zone, Open Zone, Reset Write Pointer, etc.
 #define SCSIOP_ZBC_IN                   0x95 // Report Zones, etc.
+#define SCSIOP_READ_DATA_BUFF16         0x9B
 #define SCSIOP_READ_CAPACITY16          0x9E
 #define SCSIOP_GET_LBA_STATUS           0x9E
 #define SCSIOP_GET_PHYSICAL_ELEMENT_STATUS 0x9E
@@ -4002,7 +4019,15 @@ typedef union _SENSE_DATA_EX {
 // SCSI_ADSENSE_ILLEGAL_BLOCK (0x21) qualifiers
 //
 
+#define SCSI_SENSEQ_LOGICAL_ADDRESS_OUT_OF_RANGE 0x00
 #define SCSI_SENSEQ_ILLEGAL_ELEMENT_ADDR         0x01
+#define SCSI_SENSEQ_INVALID_WRITE_ADDRESS        0x02
+#define SCSI_SENSEQ_INVALID_WRITE_CROSSING_LAYER_JUMP 0x03
+#define SCSI_SENSEQ_UNALIGNED_WRITE              0x04
+#define SCSI_SENSEQ_WRITE_BOUNDARY_VIOLATION     0x05
+#define SCSI_SENSEQ_READ_INVALID_DATA            0x06
+#define SCSI_SENSEQ_READ_BOUNDARY_VIOLATION      0x07
+#define SCSI_SENSEQ_MISALIGNED_WRITE             0x08
 
 //
 // SCSI_ADSENSE_INVALID_FIELD_PARAMETER_LIST (0x26) qualifiers
@@ -6011,7 +6036,7 @@ typedef struct _PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA {
 #pragma pack(pop, physical_element_status)
 
 //
-// Definitions related to 0x3C - SCSIOP_READ_DATA_BUFF(Mode 0x1C: Error History)
+// Definitions related to 0x9B - SCSIOP_READ_DATA_BUFF16(Mode 0x1C: Error History)
 //
 
 //

@@ -28,6 +28,8 @@ namespace Windows
     {
         typedef struct DateTime DateTime;
 
+        interface IAsyncAction;
+
         interface IClosable;
 
         typedef struct TimeSpan TimeSpan;
@@ -76,6 +78,8 @@ namespace Windows
 
             typedef enum StoreQueueItemState StoreQueueItemState;
 
+            typedef enum StoreRateAndReviewStatus StoreRateAndReviewStatus;
+
             typedef enum StoreUninstallStorePackageStatus StoreUninstallStorePackageStatus;
 
             typedef struct StorePackageUpdateStatus StorePackageUpdateStatus;
@@ -83,6 +87,8 @@ namespace Windows
             interface IStoreAcquireLicenseResult;
 
             interface IStoreAppLicense;
+
+            interface IStoreAppLicense2;
 
             interface IStoreAvailability;
 
@@ -97,6 +103,8 @@ namespace Windows
             interface IStoreContext2;
 
             interface IStoreContext3;
+
+            interface IStoreContext4;
 
             interface IStoreContextStatics;
 
@@ -134,9 +142,13 @@ namespace Windows
 
             interface IStoreQueueItem;
 
+            interface IStoreQueueItem2;
+
             interface IStoreQueueItemCompletedEventArgs;
 
             interface IStoreQueueItemStatus;
+
+            interface IStoreRateAndReviewResult;
 
             interface IStoreRequestHelperStatics;
 
@@ -199,6 +211,8 @@ namespace Windows
             runtimeclass StoreQueueItemCompletedEventArgs;
 
             runtimeclass StoreQueueItemStatus;
+
+            runtimeclass StoreRateAndReviewResult;
 
             runtimeclass StoreRequestHelper;
 
@@ -304,6 +318,8 @@ namespace Windows
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Services.Store.StorePurchaseResult*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreRateAndReviewResult*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreSendRequestResult*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreUninstallStorePackageResult*>;
@@ -327,7 +343,7 @@ namespace Windows
     {
         namespace Store
         {
-            [contractversion(3.0)]
+            [contractversion(4.0)]
             apicontract StoreContract
             {
             }
@@ -424,6 +440,15 @@ namespace Windows
                 Paused    = 4
             };
 
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            enum StoreRateAndReviewStatus
+            {
+                Succeeded      = 0,
+                CanceledByUser = 1,
+                NetworkError   = 2,
+                Error          = 3
+            };
+
             [contract(Windows.Services.Store.StoreContract, 3.0)]
             enum StoreUninstallStorePackageStatus
             {
@@ -468,6 +493,14 @@ namespace Windows
                 [propget] HRESULT TrialTimeRemaining([out] [retval] Windows.Foundation.TimeSpan* value);
                 [propget] HRESULT IsTrialOwnedByThisUser([out] [retval] boolean* value);
                 [propget] HRESULT TrialUniqueId([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            [exclusiveto(Windows.Services.Store.StoreAppLicense)]
+            [uuid(B4666E91-4443-40B3-993F-28904435BDC6)]
+            interface IStoreAppLicense2 : IInspectable
+            {
+                [propget] HRESULT IsDiscLicense([out] [retval] boolean* value);
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]
@@ -574,6 +607,15 @@ namespace Windows
                 HRESULT RequestUninstallStorePackageByStoreIdAsync([in] HSTRING storeId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreUninstallStorePackageResult*>** operation);
                 HRESULT UninstallStorePackageAsync([in] Windows.ApplicationModel.Package* package, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreUninstallStorePackageResult*>** operation);
                 HRESULT UninstallStorePackageByStoreIdAsync([in] HSTRING storeId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreUninstallStorePackageResult*>** operation);
+            }
+
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            [exclusiveto(Windows.Services.Store.StoreContext)]
+            [uuid(AF9C6F69-BEA1-4BF4-8E74-AE03E206C6B0)]
+            interface IStoreContext4 : IInspectable
+            {
+                HRESULT RequestRateAndReviewAppAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Services.Store.StoreRateAndReviewResult*>** operation);
+                HRESULT SetInstallOrderForAssociatedStoreQueueItemsAsync([in] Windows.Foundation.Collections.IIterable<Windows.Services.Store.StoreQueueItem*>* items, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Services.Store.StoreQueueItem*>*>** operation);
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]
@@ -776,6 +818,16 @@ namespace Windows
                 [eventremove] HRESULT StatusChanged([in] EventRegistrationToken token);
             }
 
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            [exclusiveto(Windows.Services.Store.StoreQueueItem)]
+            [uuid(69491CA8-1AD4-447C-AD8C-A95035F64D82)]
+            interface IStoreQueueItem2 : IInspectable
+            {
+                HRESULT CancelInstallAsync([out] [retval] Windows.Foundation.IAsyncAction** action);
+                HRESULT PauseInstallAsync([out] [retval] Windows.Foundation.IAsyncAction** action);
+                HRESULT ResumeInstallAsync([out] [retval] Windows.Foundation.IAsyncAction** action);
+            }
+
             [contract(Windows.Services.Store.StoreContract, 3.0)]
             [exclusiveto(Windows.Services.Store.StoreQueueItemCompletedEventArgs)]
             [uuid(1247DF6C-B44A-439B-BB07-1D3003D005C2)]
@@ -793,6 +845,17 @@ namespace Windows
                 [propget] HRESULT PackageInstallExtendedState([out] [retval] Windows.Services.Store.StoreQueueItemExtendedState* value);
                 [propget] HRESULT UpdateStatus([out] [retval] Windows.Services.Store.StorePackageUpdateStatus* value);
                 [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+            }
+
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            [exclusiveto(Windows.Services.Store.StoreRateAndReviewResult)]
+            [uuid(9D209D56-A6B5-4121-9B61-EE6D0FBDBDBB)]
+            interface IStoreRateAndReviewResult : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+                [propget] HRESULT ExtendedJsonData([out] [retval] HSTRING* value);
+                [propget] HRESULT WasUpdated([out] [retval] boolean* value);
+                [propget] HRESULT Status([out] [retval] Windows.Services.Store.StoreRateAndReviewStatus* value);
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]
@@ -894,6 +957,7 @@ namespace Windows
             runtimeclass StoreAppLicense
             {
                 [default] interface Windows.Services.Store.IStoreAppLicense;
+                [contract(Windows.Services.Store.StoreContract, 4.0)] interface Windows.Services.Store.IStoreAppLicense2;
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]
@@ -937,6 +1001,7 @@ namespace Windows
                 [default] interface Windows.Services.Store.IStoreContext;
                 [contract(Windows.Services.Store.StoreContract, 2.0)] interface Windows.Services.Store.IStoreContext2;
                 [contract(Windows.Services.Store.StoreContract, 3.0)] interface Windows.Services.Store.IStoreContext3;
+                [contract(Windows.Services.Store.StoreContract, 4.0)] interface Windows.Services.Store.IStoreContext4;
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]
@@ -1063,6 +1128,7 @@ namespace Windows
             runtimeclass StoreQueueItem
             {
                 [default] interface Windows.Services.Store.IStoreQueueItem;
+                [contract(Windows.Services.Store.StoreContract, 4.0)] interface Windows.Services.Store.IStoreQueueItem2;
             }
 
             [contract(Windows.Services.Store.StoreContract, 3.0)]
@@ -1079,6 +1145,14 @@ namespace Windows
             runtimeclass StoreQueueItemStatus
             {
                 [default] interface Windows.Services.Store.IStoreQueueItemStatus;
+            }
+
+            [contract(Windows.Services.Store.StoreContract, 4.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass StoreRateAndReviewResult
+            {
+                [default] interface Windows.Services.Store.IStoreRateAndReviewResult;
             }
 
             [contract(Windows.Services.Store.StoreContract, 1.0)]

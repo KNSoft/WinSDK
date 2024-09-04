@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,6 +18,8 @@ struct DeviceArrivedEventHandler : Windows::Foundation::IUnknown
     template <typename L> DeviceArrivedEventHandler(L lambda);
     template <typename F> DeviceArrivedEventHandler(F* function);
     template <typename O, typename M> DeviceArrivedEventHandler(O* object, M method);
+    template <typename O, typename M> DeviceArrivedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DeviceArrivedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Networking::Proximity::ProximityDevice const& sender) const;
 };
 
@@ -27,6 +29,8 @@ struct DeviceDepartedEventHandler : Windows::Foundation::IUnknown
     template <typename L> DeviceDepartedEventHandler(L lambda);
     template <typename F> DeviceDepartedEventHandler(F* function);
     template <typename O, typename M> DeviceDepartedEventHandler(O* object, M method);
+    template <typename O, typename M> DeviceDepartedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DeviceDepartedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Networking::Proximity::ProximityDevice const& sender) const;
 };
 
@@ -36,6 +40,8 @@ struct MessageReceivedHandler : Windows::Foundation::IUnknown
     template <typename L> MessageReceivedHandler(L lambda);
     template <typename F> MessageReceivedHandler(F* function);
     template <typename O, typename M> MessageReceivedHandler(O* object, M method);
+    template <typename O, typename M> MessageReceivedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> MessageReceivedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Networking::Proximity::ProximityDevice const& sender, Windows::Networking::Proximity::ProximityMessage const& message) const;
 };
 
@@ -45,6 +51,8 @@ struct MessageTransmittedHandler : Windows::Foundation::IUnknown
     template <typename L> MessageTransmittedHandler(L lambda);
     template <typename F> MessageTransmittedHandler(F* function);
     template <typename O, typename M> MessageTransmittedHandler(O* object, M method);
+    template <typename O, typename M> MessageTransmittedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> MessageTransmittedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Networking::Proximity::ProximityDevice const& sender, int64_t messageId) const;
 };
 
@@ -78,14 +86,14 @@ struct PeerFinder
     static void Start();
     static void Start(param::hstring const& peerMessage);
     static void Stop();
-    static event_token TriggeredConnectionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> const& handler);
-    using TriggeredConnectionStateChanged_revoker = factory_event_revoker<Windows::Networking::Proximity::IPeerFinderStatics>;
+    static winrt::event_token TriggeredConnectionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> const& handler);
+    using TriggeredConnectionStateChanged_revoker = impl::factory_event_revoker<Windows::Networking::Proximity::IPeerFinderStatics, &impl::abi_t<Windows::Networking::Proximity::IPeerFinderStatics>::remove_TriggeredConnectionStateChanged>;
     static TriggeredConnectionStateChanged_revoker TriggeredConnectionStateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs> const& handler);
-    static void TriggeredConnectionStateChanged(event_token const& cookie);
-    static event_token ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> const& handler);
-    using ConnectionRequested_revoker = factory_event_revoker<Windows::Networking::Proximity::IPeerFinderStatics>;
+    static void TriggeredConnectionStateChanged(winrt::event_token const& cookie);
+    static winrt::event_token ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> const& handler);
+    using ConnectionRequested_revoker = impl::factory_event_revoker<Windows::Networking::Proximity::IPeerFinderStatics, &impl::abi_t<Windows::Networking::Proximity::IPeerFinderStatics>::remove_ConnectionRequested>;
     static ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Networking::Proximity::ConnectionRequestedEventArgs> const& handler);
-    static void ConnectionRequested(event_token const& cookie);
+    static void ConnectionRequested(winrt::event_token const& cookie);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Proximity::PeerInformation>> FindAllPeersAsync();
     static Windows::Foundation::IAsyncOperation<Windows::Networking::Sockets::StreamSocket> ConnectAsync(Windows::Networking::Proximity::PeerInformation const& peerInformation);
     static Windows::Networking::Proximity::PeerRole Role();

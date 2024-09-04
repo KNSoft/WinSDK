@@ -52,6 +52,8 @@ namespace Windows
     {
         typedef struct Point Point;
 
+        typedef struct TimeSpan TimeSpan;
+
         apicontract UniversalApiContract;
 
         runtimeclass Uri;
@@ -144,6 +146,8 @@ namespace Windows
                     typedef enum MapProjection MapProjection;
 
                     typedef enum MapStyle MapStyle;
+
+                    typedef enum MapTileAnimationState MapTileAnimationState;
 
                     typedef enum MapTileLayer MapTileLayer;
 
@@ -345,21 +349,29 @@ namespace Windows
 
                     interface IMapTileBitmapRequestedEventArgs;
 
+                    interface IMapTileBitmapRequestedEventArgs2;
+
                     interface IMapTileDataSource;
 
                     interface IMapTileDataSourceFactory;
 
                     interface IMapTileSource;
 
+                    interface IMapTileSource2;
+
                     interface IMapTileSourceFactory;
 
                     interface IMapTileSourceStatics;
+
+                    interface IMapTileSourceStatics2;
 
                     interface IMapTileUriRequest;
 
                     interface IMapTileUriRequestDeferral;
 
                     interface IMapTileUriRequestedEventArgs;
+
+                    interface IMapTileUriRequestedEventArgs2;
 
                     interface IStreetsideExperience;
 
@@ -700,6 +712,14 @@ namespace Windows
                         Custom            = 7
                     };
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    enum MapTileAnimationState
+                    {
+                        Stopped = 0,
+                        Paused  = 1,
+                        Playing = 2
+                    };
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     enum MapTileLayer
                     {
@@ -736,7 +756,7 @@ namespace Windows
                     [uuid(65DA384A-2DB1-4BE1-B155-3D0C9ECF4799)]
                     interface ICustomMapTileDataSource : IInspectable
                     {
-                        [eventadd] HRESULT BitmapRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT BitmapRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT BitmapRequested([in] EventRegistrationToken token);
                     }
 
@@ -745,7 +765,7 @@ namespace Windows
                     [uuid(C8477947-C955-4F22-9444-A1D8D744AF11)]
                     interface ICustomMapTileDataSourceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -758,7 +778,7 @@ namespace Windows
                         [propget] HRESULT AdditionalRequestHeaders([out] [retval] Windows.Foundation.Collections.IMap<HSTRING, HSTRING>** value);
                         [propget] HRESULT AllowCaching([out] [retval] boolean* value);
                         [propput] HRESULT AllowCaching([in] boolean value);
-                        [eventadd] HRESULT UriRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT UriRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT UriRequested([in] EventRegistrationToken token);
                     }
 
@@ -767,8 +787,8 @@ namespace Windows
                     [uuid(53B4B107-84DC-4291-89F8-6D0BB612A055)]
                     interface IHttpMapTileDataSourceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource** instance);
-                        HRESULT CreateInstanceWithUriFormatString([in] HSTRING uriFormatString, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource** value);
+                        HRESULT CreateInstanceWithUriFormatString([in] HSTRING uriFormatString, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -778,7 +798,7 @@ namespace Windows
                     {
                         [propget] HRESULT UriFormatString([out] [retval] HSTRING* value);
                         [propput] HRESULT UriFormatString([in] HSTRING value);
-                        [eventadd] HRESULT UriRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT UriRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource*, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT UriRequested([in] EventRegistrationToken token);
                     }
 
@@ -787,8 +807,8 @@ namespace Windows
                     [uuid(C5CFE9FC-72AC-4839-8A0D-011F24693C79)]
                     interface ILocalMapTileDataSourceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource** instance);
-                        HRESULT CreateInstanceWithUriFormatString([in] HSTRING uriFormatString, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource** value);
+                        HRESULT CreateInstanceWithUriFormatString([in] HSTRING uriFormatString, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -844,7 +864,7 @@ namespace Windows
                     [uuid(BE45A4C5-8F09-4B86-AE28-783740EB8B31)]
                     interface IMapBillboardFactory : IInspectable
                     {
-                        HRESULT CreateInstanceFromCamera([in] Windows.UI.Xaml.Controls.Maps.MapCamera* camera, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapBillboard** instance);
+                        HRESULT CreateInstanceFromCamera([in] Windows.UI.Xaml.Controls.Maps.MapCamera* camera, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapBillboard** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -879,10 +899,10 @@ namespace Windows
                     [uuid(EA3B0F16-83AF-4ACE-8E71-10AD9F1E9E7F)]
                     interface IMapCameraFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithLocation([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** instance);
-                        HRESULT CreateInstanceWithLocationAndHeading([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** instance);
-                        HRESULT CreateInstanceWithLocationHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** instance);
-                        HRESULT CreateInstanceWithLocationHeadingPitchRollAndFieldOfView([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [in] DOUBLE rollInDegrees, [in] DOUBLE fieldOfViewInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** instance);
+                        HRESULT CreateInstanceWithLocation([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
+                        HRESULT CreateInstanceWithLocationAndHeading([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
+                        HRESULT CreateInstanceWithLocationHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
+                        HRESULT CreateInstanceWithLocationHeadingPitchRollAndFieldOfView([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [in] DOUBLE rollInDegrees, [in] DOUBLE fieldOfViewInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -932,33 +952,33 @@ namespace Windows
                         [propget] HRESULT MapElements([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>** value);
                         [propget] HRESULT Routes([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapRouteView*>** value);
                         [propget] HRESULT TileSources([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapTileSource*>** value);
-                        [eventadd] HRESULT CenterChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT CenterChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT CenterChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT HeadingChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT HeadingChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT HeadingChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT LoadingStatusChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT LoadingStatusChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT LoadingStatusChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapDoubleTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapDoubleTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapDoubleTapped([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapHolding([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapHolding([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapHolding([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapTapped([in] EventRegistrationToken token);
-                        [eventadd] HRESULT PitchChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT PitchChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT PitchChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT TransformOriginChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT TransformOriginChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT TransformOriginChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT ZoomLevelChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT ZoomLevelChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT ZoomLevelChanged([in] EventRegistrationToken token);
-                        [overload("FindMapElementsAtOffset")] HRESULT FindMapElementsAtOffset([in] Windows.Foundation.Point offset, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>** returnValue);
+                        [overload("FindMapElementsAtOffset")] HRESULT FindMapElementsAtOffset([in] Windows.Foundation.Point offset, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>** result);
                         [overload("GetLocationFromOffset")] HRESULT GetLocationFromOffset([in] Windows.Foundation.Point offset, [out] Windows.Devices.Geolocation.Geopoint** location);
                         HRESULT GetOffsetFromLocation([in] Windows.Devices.Geolocation.Geopoint* location, [out] Windows.Foundation.Point* offset);
                         HRESULT IsLocationInView([in] Windows.Devices.Geolocation.Geopoint* location, [out] boolean* isInView);
-                        HRESULT TrySetViewBoundsAsync([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] Windows.Foundation.IReference<Windows.UI.Xaml.Thickness>* margin, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterAsync([in] Windows.Devices.Geolocation.Geopoint* center, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterAndZoomAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterZoomHeadingAndPitchAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [in] Windows.Foundation.IReference<DOUBLE>* heading, [in] Windows.Foundation.IReference<DOUBLE>* desiredPitch, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [in] Windows.Foundation.IReference<DOUBLE>* heading, [in] Windows.Foundation.IReference<DOUBLE>* desiredPitch, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
+                        HRESULT TrySetViewBoundsAsync([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] Windows.Foundation.IReference<Windows.UI.Xaml.Thickness>* margin, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterAsync([in] Windows.Devices.Geolocation.Geopoint* center, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterAndZoomAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterZoomHeadingAndPitchAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [in] Windows.Foundation.IReference<DOUBLE>* heading, [in] Windows.Foundation.IReference<DOUBLE>* desiredPitch, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetViewAsync")] HRESULT TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync([in] Windows.Devices.Geolocation.Geopoint* center, [in] Windows.Foundation.IReference<DOUBLE>* zoomLevel, [in] Windows.Foundation.IReference<DOUBLE>* heading, [in] Windows.Foundation.IReference<DOUBLE>* desiredPitch, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -986,19 +1006,19 @@ namespace Windows
                         [propget] HRESULT TargetCamera([out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
                         [propget] HRESULT CustomExperience([out] [retval] Windows.UI.Xaml.Controls.Maps.MapCustomExperience** value);
                         [propput] HRESULT CustomExperience([in] Windows.UI.Xaml.Controls.Maps.MapCustomExperience* value);
-                        [eventadd] HRESULT MapElementClick([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementClick([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementClick([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapElementPointerEntered([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementPointerEntered([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementPointerEntered([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapElementPointerExited([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementPointerExited([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementPointerExited([in] EventRegistrationToken token);
-                        [eventadd] HRESULT ActualCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT ActualCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT ActualCameraChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT ActualCameraChanging([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT ActualCameraChanging([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT ActualCameraChanging([in] EventRegistrationToken token);
-                        [eventadd] HRESULT TargetCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT TargetCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT TargetCameraChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT CustomExperienceChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT CustomExperienceChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT CustomExperienceChanged([in] EventRegistrationToken token);
                         HRESULT StartContinuousRotate([in] DOUBLE rateInDegreesPerSecond);
                         HRESULT StopContinuousRotate();
@@ -1006,15 +1026,15 @@ namespace Windows
                         HRESULT StopContinuousTilt();
                         HRESULT StartContinuousZoom([in] DOUBLE rateOfChangePerSecond);
                         HRESULT StopContinuousZoom();
-                        HRESULT TryRotateAsync([in] DOUBLE degrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryRotateToAsync([in] DOUBLE angleInDegrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryTiltAsync([in] DOUBLE degrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryTiltToAsync([in] DOUBLE angleInDegrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryZoomInAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryZoomOutAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryZoomToAsync([in] DOUBLE zoomLevel, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetSceneAsync")] HRESULT TrySetSceneAsync([in] Windows.UI.Xaml.Controls.Maps.MapScene* scene, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        [overload("TrySetSceneAsync")] HRESULT TrySetSceneWithAnimationAsync([in] Windows.UI.Xaml.Controls.Maps.MapScene* scene, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animationKind, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
+                        HRESULT TryRotateAsync([in] DOUBLE degrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryRotateToAsync([in] DOUBLE angleInDegrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryTiltAsync([in] DOUBLE degrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryTiltToAsync([in] DOUBLE angleInDegrees, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryZoomInAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryZoomOutAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryZoomToAsync([in] DOUBLE zoomLevel, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetSceneAsync")] HRESULT TrySetSceneAsync([in] Windows.UI.Xaml.Controls.Maps.MapScene* scene, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        [overload("TrySetSceneAsync")] HRESULT TrySetSceneWithAnimationAsync([in] Windows.UI.Xaml.Controls.Maps.MapScene* scene, [in] Windows.UI.Xaml.Controls.Maps.MapAnimationKind animationKind, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1022,7 +1042,7 @@ namespace Windows
                     [uuid(586328F8-8CDD-40AE-9338-AF2A7BE845E5)]
                     interface IMapControl3 : IInspectable
                     {
-                        [eventadd] HRESULT MapRightTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapRightTapped([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapRightTapped([in] EventRegistrationToken token);
                     }
 
@@ -1035,7 +1055,7 @@ namespace Windows
                         [propput] HRESULT BusinessLandmarksEnabled([in] boolean value);
                         [propget] HRESULT TransitFeaturesEnabled([out] [retval] boolean* value);
                         [propput] HRESULT TransitFeaturesEnabled([in] boolean value);
-                        HRESULT GetVisibleRegion([in] Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind region, [out] [retval] Windows.Devices.Geolocation.Geopath** returnValue);
+                        HRESULT GetVisibleRegion([in] Windows.UI.Xaml.Controls.Maps.MapVisibleRegionKind region, [out] [retval] Windows.Devices.Geolocation.Geopath** result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1049,14 +1069,14 @@ namespace Windows
                         [propput] HRESULT StyleSheet([in] Windows.UI.Xaml.Controls.Maps.MapStyleSheet* value);
                         [propget] HRESULT ViewPadding([out] [retval] Windows.UI.Xaml.Thickness* value);
                         [propput] HRESULT ViewPadding([in] Windows.UI.Xaml.Thickness value);
-                        [eventadd] HRESULT MapContextRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapContextRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapContextRequested([in] EventRegistrationToken token);
-                        [overload("FindMapElementsAtOffset")] HRESULT FindMapElementsAtOffsetWithRadius([in] Windows.Foundation.Point offset, [in] DOUBLE radius, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>** returnValue);
+                        [overload("FindMapElementsAtOffset")] HRESULT FindMapElementsAtOffsetWithRadius([in] Windows.Foundation.Point offset, [in] DOUBLE radius, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>** result);
                         [overload("GetLocationFromOffset")] HRESULT GetLocationFromOffsetWithReferenceSystem([in] Windows.Foundation.Point offset, [in] Windows.Devices.Geolocation.AltitudeReferenceSystem desiredReferenceSystem, [out] Windows.Devices.Geolocation.Geopoint** location);
                         HRESULT StartContinuousPan([in] DOUBLE horizontalPixelsPerSecond, [in] DOUBLE verticalPixelsPerSecond);
                         HRESULT StopContinuousPan();
-                        HRESULT TryPanAsync([in] DOUBLE horizontalPixels, [in] DOUBLE verticalPixels, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
-                        HRESULT TryPanToAsync([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
+                        HRESULT TryPanAsync([in] DOUBLE horizontalPixels, [in] DOUBLE verticalPixels, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                        HRESULT TryPanToAsync([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1181,10 +1201,10 @@ namespace Windows
                         [propget] HRESULT RoutesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT TileSourcesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT LocationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                        HRESULT GetLocation([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        HRESULT GetLocation([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Devices.Geolocation.Geopoint** result);
                         HRESULT SetLocation([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.Devices.Geolocation.Geopoint* value);
                         [propget] HRESULT NormalizedAnchorPointProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                        HRESULT GetNormalizedAnchorPoint([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Point* value);
+                        HRESULT GetNormalizedAnchorPoint([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.Foundation.Point* result);
                         HRESULT SetNormalizedAnchorPoint([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.Foundation.Point value);
                     }
 
@@ -1298,7 +1318,7 @@ namespace Windows
                     [uuid(7A403FB5-A1B1-4E7F-921E-3E6B8D8EBED6)]
                     interface IMapCustomExperienceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCustomExperience** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapCustomExperience** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1389,7 +1409,7 @@ namespace Windows
                     [uuid(4A30D007-0BD6-47A5-860B-7E7CF5F0C573)]
                     interface IMapElementFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapElement** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapElement** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1454,13 +1474,13 @@ namespace Windows
                     {
                         [propget] HRESULT MapElements([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>** value);
                         [propput] HRESULT MapElements([in] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>* value);
-                        [eventadd] HRESULT MapElementClick([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerClickEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementClick([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerClickEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementClick([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapElementPointerEntered([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerEnteredEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementPointerEntered([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerEnteredEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementPointerEntered([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapElementPointerExited([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerExitedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapElementPointerExited([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerExitedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapElementPointerExited([in] EventRegistrationToken token);
-                        [eventadd] HRESULT MapContextRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerContextRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT MapContextRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerContextRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT MapContextRequested([in] EventRegistrationToken token);
                     }
 
@@ -1603,7 +1623,7 @@ namespace Windows
                     [uuid(E02A2207-DEE3-47C8-9825-BD029C5752F7)]
                     interface IMapLayerFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapLayer** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapLayer** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1628,7 +1648,7 @@ namespace Windows
                     [uuid(DF7F0BCC-580A-498B-939B-0119A9DADB9E)]
                     interface IMapModel3DFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapModel3D** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapModel3D** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1636,8 +1656,8 @@ namespace Windows
                     [uuid(4834A480-8E56-4B0F-872D-7EAD103187CD)]
                     interface IMapModel3DStatics : IInspectable
                     {
-                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** returnValue);
-                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFWithShadingOptionAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [in] Windows.UI.Xaml.Controls.Maps.MapModel3DShadingOption shadingOption, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** returnValue);
+                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** operation);
+                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFWithShadingOptionAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [in] Windows.UI.Xaml.Controls.Maps.MapModel3DShadingOption shadingOption, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** operation);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1725,7 +1745,7 @@ namespace Windows
                     [uuid(F083ADDF-0066-4628-82FE-EA78C23CEC1E)]
                     interface IMapRouteViewFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithMapRoute([in] Windows.Services.Maps.MapRoute* route, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapRouteView** instance);
+                        HRESULT CreateInstanceWithMapRoute([in] Windows.Services.Maps.MapRoute* route, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapRouteView** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1734,7 +1754,7 @@ namespace Windows
                     interface IMapScene : IInspectable
                     {
                         [propget] HRESULT TargetCamera([out] [retval] Windows.UI.Xaml.Controls.Maps.MapCamera** value);
-                        [eventadd] HRESULT TargetCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapScene*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT TargetCameraChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapScene*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT TargetCameraChanged([in] EventRegistrationToken token);
                     }
 
@@ -1743,15 +1763,15 @@ namespace Windows
                     [uuid(03E4AD6C-86EC-44D9-9597-FB75B7DEBA0A)]
                     interface IMapSceneStatics : IInspectable
                     {
-                        [overload("CreateFromBoundingBox")] HRESULT CreateFromBoundingBox([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromBoundingBox")] HRESULT CreateFromBoundingBoxWithHeadingAndPitch([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        HRESULT CreateFromCamera([in] Windows.UI.Xaml.Controls.Maps.MapCamera* camera, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocation")] HRESULT CreateFromLocation([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocation")] HRESULT CreateFromLocationWithHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocationAndRadius")] HRESULT CreateFromLocationAndRadius([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocationAndRadius")] HRESULT CreateFromLocationAndRadiusWithHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocations")] HRESULT CreateFromLocations([in] Windows.Foundation.Collections.IIterable<Windows.Devices.Geolocation.Geopoint*>* locations, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
-                        [overload("CreateFromLocations")] HRESULT CreateFromLocationsWithHeadingAndPitch([in] Windows.Foundation.Collections.IIterable<Windows.Devices.Geolocation.Geopoint*>* locations, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** returnValue);
+                        [overload("CreateFromBoundingBox")] HRESULT CreateFromBoundingBox([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromBoundingBox")] HRESULT CreateFromBoundingBoxWithHeadingAndPitch([in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        HRESULT CreateFromCamera([in] Windows.UI.Xaml.Controls.Maps.MapCamera* camera, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocation")] HRESULT CreateFromLocation([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocation")] HRESULT CreateFromLocationWithHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocationAndRadius")] HRESULT CreateFromLocationAndRadius([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocationAndRadius")] HRESULT CreateFromLocationAndRadiusWithHeadingAndPitch([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocations")] HRESULT CreateFromLocations([in] Windows.Foundation.Collections.IIterable<Windows.Devices.Geolocation.Geopoint*>* locations, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
+                        [overload("CreateFromLocations")] HRESULT CreateFromLocationsWithHeadingAndPitch([in] Windows.Foundation.Collections.IIterable<Windows.Devices.Geolocation.Geopoint*>* locations, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapScene** result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1847,14 +1867,14 @@ namespace Windows
                     [uuid(ABBD00AD-0A1C-4335-82F4-61D936AA197D)]
                     interface IMapStyleSheetStatics : IInspectable
                     {
-                        HRESULT Aerial([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT AerialWithOverlay([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT RoadLight([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT RoadDark([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT RoadHighContrastLight([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT RoadHighContrastDark([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT Combine([in] Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapStyleSheet*>* styleSheets, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
-                        HRESULT ParseFromJson([in] HSTRING styleAsJson, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** returnValue);
+                        HRESULT Aerial([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT AerialWithOverlay([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT RoadLight([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT RoadDark([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT RoadHighContrastLight([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT RoadHighContrastDark([out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT Combine([in] Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapStyleSheet*>* styleSheets, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
+                        HRESULT ParseFromJson([in] HSTRING styleAsJson, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** result);
                         HRESULT TryParseFromJson([in] HSTRING styleAsJson, [out] Windows.UI.Xaml.Controls.Maps.MapStyleSheet** styleSheet, [out] [retval] boolean* returnValue);
                     }
 
@@ -1881,7 +1901,7 @@ namespace Windows
                     {
                         [propget] HRESULT PixelData([out] [retval] Windows.Storage.Streams.IRandomAccessStreamReference** value);
                         [propput] HRESULT PixelData([in] Windows.Storage.Streams.IRandomAccessStreamReference* value);
-                        HRESULT GetDeferral([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral** returnValue);
+                        HRESULT GetDeferral([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral** result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1903,6 +1923,14 @@ namespace Windows
                         [propget] HRESULT Request([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest** value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)]
+                    [uuid(0261D114-246A-5296-BC85-590F53AA39C8)]
+                    interface IMapTileBitmapRequestedEventArgs2 : IInspectable
+                    {
+                        [propget] HRESULT FrameIndex([out] [retval] INT32* value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileDataSource)]
                     [uuid(C03D9F5E-BE1F-4C69-9969-79467A513C38)]
@@ -1915,7 +1943,7 @@ namespace Windows
                     [uuid(A3920FBD-E446-4648-A74D-FD2C5D557C06)]
                     interface IMapTileDataSourceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileDataSource** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileDataSource** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1947,16 +1975,33 @@ namespace Windows
                         [propput] HRESULT Visible([in] boolean value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileSource)]
+                    [uuid(8E65EBBD-4095-5C15-99F1-1260B4E8B0A9)]
+                    interface IMapTileSource2 : IInspectable
+                    {
+                        [propget] HRESULT AnimationState([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileAnimationState* value);
+                        [propget] HRESULT AutoPlay([out] [retval] boolean* value);
+                        [propput] HRESULT AutoPlay([in] boolean value);
+                        [propget] HRESULT FrameCount([out] [retval] INT32* value);
+                        [propput] HRESULT FrameCount([in] INT32 value);
+                        [propget] HRESULT FrameDuration([out] [retval] Windows.Foundation.TimeSpan* value);
+                        [propput] HRESULT FrameDuration([in] Windows.Foundation.TimeSpan value);
+                        HRESULT Pause();
+                        HRESULT Play();
+                        HRESULT Stop();
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileSource)]
                     [uuid(CD7F811F-77FA-482B-9D34-71D31D465C48)]
                     interface IMapTileSourceFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** instance);
-                        HRESULT CreateInstanceWithDataSource([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** instance);
-                        HRESULT CreateInstanceWithDataSourceAndZoomRange([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** instance);
-                        HRESULT CreateInstanceWithDataSourceZoomRangeAndBounds([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** instance);
-                        HRESULT CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] INT32 tileSizeInPixels, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** value);
+                        HRESULT CreateInstanceWithDataSource([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** value);
+                        HRESULT CreateInstanceWithDataSourceAndZoomRange([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** value);
+                        HRESULT CreateInstanceWithDataSourceZoomRangeAndBounds([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** value);
+                        HRESULT CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize([in] Windows.UI.Xaml.Controls.Maps.MapTileDataSource* dataSource, [in] Windows.UI.Xaml.Controls.Maps.MapZoomLevelRange zoomLevelRange, [in] Windows.Devices.Geolocation.GeoboundingBox* bounds, [in] INT32 tileSizeInPixels, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileSource** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1977,6 +2022,17 @@ namespace Windows
                         [propget] HRESULT VisibleProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileSource)]
+                    [uuid(75CDD47E-669C-50FD-AD85-5EA5174CF59B)]
+                    interface IMapTileSourceStatics2 : IInspectable
+                    {
+                        [propget] HRESULT AnimationStateProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT AutoPlayProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT FrameCountProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT FrameDurationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileUriRequest)]
                     [uuid(17402335-3127-45B8-87A7-99F87D4E2745)]
@@ -1984,7 +2040,7 @@ namespace Windows
                     {
                         [propget] HRESULT Uri([out] [retval] Windows.Foundation.Uri** value);
                         [propput] HRESULT Uri([in] Windows.Foundation.Uri* value);
-                        HRESULT GetDeferral([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral** returnValue);
+                        HRESULT GetDeferral([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral** result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2004,6 +2060,14 @@ namespace Windows
                         [propget] HRESULT Y([out] [retval] INT32* value);
                         [propget] HRESULT ZoomLevel([out] [retval] INT32* value);
                         [propget] HRESULT Request([out] [retval] Windows.UI.Xaml.Controls.Maps.MapTileUriRequest** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)]
+                    [uuid(2302185D-33B5-5A55-92F5-74A86A22EFA6)]
+                    interface IMapTileUriRequestedEventArgs2 : IInspectable
+                    {
+                        [propget] HRESULT FrameIndex([out] [retval] INT32* value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2030,8 +2094,8 @@ namespace Windows
                     [uuid(7A5BCF3C-649E-4342-9995-68A6CF5961A7)]
                     interface IStreetsideExperienceFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithPanorama([in] Windows.UI.Xaml.Controls.Maps.StreetsidePanorama* panorama, [out] [retval] Windows.UI.Xaml.Controls.Maps.StreetsideExperience** instance);
-                        HRESULT CreateInstanceWithPanoramaHeadingPitchAndFieldOfView([in] Windows.UI.Xaml.Controls.Maps.StreetsidePanorama* panorama, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [in] DOUBLE fieldOfViewInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.StreetsideExperience** instance);
+                        HRESULT CreateInstanceWithPanorama([in] Windows.UI.Xaml.Controls.Maps.StreetsidePanorama* panorama, [out] [retval] Windows.UI.Xaml.Controls.Maps.StreetsideExperience** value);
+                        HRESULT CreateInstanceWithPanoramaHeadingPitchAndFieldOfView([in] Windows.UI.Xaml.Controls.Maps.StreetsidePanorama* panorama, [in] DOUBLE headingInDegrees, [in] DOUBLE pitchInDegrees, [in] DOUBLE fieldOfViewInDegrees, [out] [retval] Windows.UI.Xaml.Controls.Maps.StreetsideExperience** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2047,8 +2111,8 @@ namespace Windows
                     [uuid(D3B47F69-54B3-4EC5-B2A0-4F8204576507)]
                     interface IStreetsidePanoramaStatics : IInspectable
                     {
-                        [overload("FindNearbyAsync")] HRESULT FindNearbyWithLocationAsync([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.StreetsidePanorama*>** returnValue);
-                        [overload("FindNearbyAsync")] HRESULT FindNearbyWithLocationAndRadiusAsync([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.StreetsidePanorama*>** returnValue);
+                        [overload("FindNearbyAsync")] HRESULT FindNearbyWithLocationAsync([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.StreetsidePanorama*>** operation);
+                        [overload("FindNearbyAsync")] HRESULT FindNearbyWithLocationAndRadiusAsync([in] Windows.Devices.Geolocation.Geopoint* location, [in] DOUBLE radiusInMeters, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.StreetsidePanorama*>** operation);
                     }
 
                     [composable(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSourceFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2506,6 +2570,7 @@ namespace Windows
                     runtimeclass MapTileBitmapRequestedEventArgs
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2;
                     }
 
                     [composable(Windows.UI.Xaml.Controls.Maps.IMapTileDataSourceFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2521,10 +2586,12 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [static(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
                     [threading(both)]
                     runtimeclass MapTileSource : Windows.UI.Xaml.DependencyObject
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapTileSource;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Controls.Maps.IMapTileSource2;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2552,6 +2619,7 @@ namespace Windows
                     runtimeclass MapTileUriRequestedEventArgs
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2;
                     }
 
                     [activatable(Windows.UI.Xaml.Controls.Maps.IStreetsideExperienceFactory, Windows.Foundation.UniversalApiContract, 1.0)]

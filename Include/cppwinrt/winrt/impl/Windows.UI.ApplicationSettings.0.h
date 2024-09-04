@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,7 +33,7 @@ struct IUICommand;
 
 WINRT_EXPORT namespace winrt::Windows::UI::ApplicationSettings {
 
-enum class [[deprecated("SettingsEdgeLocation is deprecated and might not work on all platforms. For more info, see MSDN.")]] SettingsEdgeLocation : int32_t
+enum class SettingsEdgeLocation : int32_t
 {
     Right = 0,
     Left = 1,
@@ -172,29 +172,29 @@ template <> struct name<Windows::UI::ApplicationSettings::WebAccountAction>{ sta
 template <> struct name<Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler>{ static constexpr auto & value{ L"Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler" }; };
 template <> struct name<Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler>{ static constexpr auto & value{ L"Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler" }; };
 template <> struct name<Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler>{ static constexpr auto & value{ L"Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler" }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPane>{ static constexpr GUID value{ 0x81EA942C,0x4F09,0x4406,{ 0xA5,0x38,0x83,0x8D,0x9B,0x14,0xB7,0xE6 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs>{ static constexpr GUID value{ 0x3B68C099,0xDB19,0x45D0,{ 0x9A,0xBF,0x95,0xD3,0x77,0x3C,0x93,0x30 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs2>{ static constexpr GUID value{ 0x362F7BAD,0x4E37,0x4967,{ 0x8C,0x40,0xE7,0x8E,0xE7,0xA1,0xE5,0xBB } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral>{ static constexpr GUID value{ 0xCBF25D3F,0xE5BA,0x40EF,{ 0x93,0xDA,0x65,0xE0,0x96,0xE5,0xFB,0x04 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>{ static constexpr GUID value{ 0x561F8B60,0xB0EC,0x4150,{ 0xA8,0xDC,0x20,0x8E,0xE4,0x4B,0x06,0x8A } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2>{ static constexpr GUID value{ 0xD21DF7C2,0xCE0D,0x484F,{ 0xB8,0xE8,0xE8,0x23,0xC2,0x15,0x76,0x5E } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics3>{ static constexpr GUID value{ 0x08410458,0xA2BA,0x4C6F,{ 0xB4,0xAC,0x48,0xF5,0x14,0x33,0x12,0x16 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ICredentialCommand>{ static constexpr GUID value{ 0xA5F665E6,0x6143,0x4A7A,{ 0xA9,0x71,0xB0,0x17,0xBA,0x97,0x8C,0xE2 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ICredentialCommandFactory>{ static constexpr GUID value{ 0x27E88C17,0xBC3E,0x4B80,{ 0x94,0x95,0x4E,0xD7,0x20,0xE4,0x8A,0x91 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsCommandFactory>{ static constexpr GUID value{ 0x68E15B33,0x1C83,0x433A,{ 0xAA,0x5A,0xCE,0xEE,0xA5,0xBD,0x47,0x64 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsCommandStatics>{ static constexpr GUID value{ 0x749AE954,0x2F69,0x4B17,{ 0x8A,0xBA,0xD0,0x5C,0xE5,0x77,0x8E,0x46 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsPane>{ static constexpr GUID value{ 0xB1CD0932,0x4570,0x4C69,{ 0x8D,0x38,0x89,0x44,0x65,0x61,0xAC,0xE0 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest>{ static constexpr GUID value{ 0x44DF23AE,0x5D6E,0x4068,{ 0xA1,0x68,0xF4,0x76,0x43,0x18,0x21,0x14 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs>{ static constexpr GUID value{ 0x205F5D24,0x1B48,0x4629,{ 0xA6,0xCA,0x2F,0xDF,0xED,0xAF,0xB7,0x5D } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::ISettingsPaneStatics>{ static constexpr GUID value{ 0x1C6A52C5,0xFF19,0x471B,{ 0xBA,0x6B,0xF8,0xF3,0x56,0x94,0xAD,0x9A } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IWebAccountCommand>{ static constexpr GUID value{ 0xCAA39398,0x9CFA,0x4246,{ 0xB0,0xC4,0xA9,0x13,0xA3,0x89,0x65,0x41 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IWebAccountCommandFactory>{ static constexpr GUID value{ 0xBFA6CDFF,0x2F2D,0x42F5,{ 0x81,0xDE,0x1D,0x56,0xBA,0xFC,0x49,0x6D } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs>{ static constexpr GUID value{ 0xE7ABCC40,0xA1D8,0x4C5D,{ 0x9A,0x7F,0x1D,0x34,0xB2,0xF9,0x0A,0xD2 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IWebAccountProviderCommand>{ static constexpr GUID value{ 0xD69BDD9A,0xA0A6,0x4E9B,{ 0x88,0xDC,0xC7,0x1E,0x75,0x7A,0x35,0x01 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory>{ static constexpr GUID value{ 0xD5658A1B,0xB176,0x4776,{ 0x84,0x69,0xA9,0xD3,0xFF,0x0B,0x3F,0x59 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler>{ static constexpr GUID value{ 0x61C0E185,0x0977,0x4678,{ 0xB4,0xE2,0x98,0x72,0x7A,0xFB,0xEE,0xD9 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler>{ static constexpr GUID value{ 0x1EE6E459,0x1705,0x4A9A,{ 0xB5,0x99,0xA0,0xC3,0xD6,0x92,0x19,0x73 } }; };
-template <> struct guid<Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler>{ static constexpr GUID value{ 0xB7DE5527,0x4C8F,0x42DD,{ 0x84,0xDA,0x5E,0xC4,0x93,0xAB,0xDB,0x9A } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPane>{ static constexpr guid value{ 0x81EA942C,0x4F09,0x4406,{ 0xA5,0x38,0x83,0x8D,0x9B,0x14,0xB7,0xE6 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs>{ static constexpr guid value{ 0x3B68C099,0xDB19,0x45D0,{ 0x9A,0xBF,0x95,0xD3,0x77,0x3C,0x93,0x30 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs2>{ static constexpr guid value{ 0x362F7BAD,0x4E37,0x4967,{ 0x8C,0x40,0xE7,0x8E,0xE7,0xA1,0xE5,0xBB } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral>{ static constexpr guid value{ 0xCBF25D3F,0xE5BA,0x40EF,{ 0x93,0xDA,0x65,0xE0,0x96,0xE5,0xFB,0x04 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>{ static constexpr guid value{ 0x561F8B60,0xB0EC,0x4150,{ 0xA8,0xDC,0x20,0x8E,0xE4,0x4B,0x06,0x8A } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2>{ static constexpr guid value{ 0xD21DF7C2,0xCE0D,0x484F,{ 0xB8,0xE8,0xE8,0x23,0xC2,0x15,0x76,0x5E } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics3>{ static constexpr guid value{ 0x08410458,0xA2BA,0x4C6F,{ 0xB4,0xAC,0x48,0xF5,0x14,0x33,0x12,0x16 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ICredentialCommand>{ static constexpr guid value{ 0xA5F665E6,0x6143,0x4A7A,{ 0xA9,0x71,0xB0,0x17,0xBA,0x97,0x8C,0xE2 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ICredentialCommandFactory>{ static constexpr guid value{ 0x27E88C17,0xBC3E,0x4B80,{ 0x94,0x95,0x4E,0xD7,0x20,0xE4,0x8A,0x91 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsCommandFactory>{ static constexpr guid value{ 0x68E15B33,0x1C83,0x433A,{ 0xAA,0x5A,0xCE,0xEE,0xA5,0xBD,0x47,0x64 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsCommandStatics>{ static constexpr guid value{ 0x749AE954,0x2F69,0x4B17,{ 0x8A,0xBA,0xD0,0x5C,0xE5,0x77,0x8E,0x46 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsPane>{ static constexpr guid value{ 0xB1CD0932,0x4570,0x4C69,{ 0x8D,0x38,0x89,0x44,0x65,0x61,0xAC,0xE0 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest>{ static constexpr guid value{ 0x44DF23AE,0x5D6E,0x4068,{ 0xA1,0x68,0xF4,0x76,0x43,0x18,0x21,0x14 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs>{ static constexpr guid value{ 0x205F5D24,0x1B48,0x4629,{ 0xA6,0xCA,0x2F,0xDF,0xED,0xAF,0xB7,0x5D } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::ISettingsPaneStatics>{ static constexpr guid value{ 0x1C6A52C5,0xFF19,0x471B,{ 0xBA,0x6B,0xF8,0xF3,0x56,0x94,0xAD,0x9A } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IWebAccountCommand>{ static constexpr guid value{ 0xCAA39398,0x9CFA,0x4246,{ 0xB0,0xC4,0xA9,0x13,0xA3,0x89,0x65,0x41 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IWebAccountCommandFactory>{ static constexpr guid value{ 0xBFA6CDFF,0x2F2D,0x42F5,{ 0x81,0xDE,0x1D,0x56,0xBA,0xFC,0x49,0x6D } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs>{ static constexpr guid value{ 0xE7ABCC40,0xA1D8,0x4C5D,{ 0x9A,0x7F,0x1D,0x34,0xB2,0xF9,0x0A,0xD2 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IWebAccountProviderCommand>{ static constexpr guid value{ 0xD69BDD9A,0xA0A6,0x4E9B,{ 0x88,0xDC,0xC7,0x1E,0x75,0x7A,0x35,0x01 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory>{ static constexpr guid value{ 0xD5658A1B,0xB176,0x4776,{ 0x84,0x69,0xA9,0xD3,0xFF,0x0B,0x3F,0x59 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler>{ static constexpr guid value{ 0x61C0E185,0x0977,0x4678,{ 0xB4,0xE2,0x98,0x72,0x7A,0xFB,0xEE,0xD9 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler>{ static constexpr guid value{ 0x1EE6E459,0x1705,0x4A9A,{ 0xB5,0x99,0xA0,0xC3,0xD6,0x92,0x19,0x73 } }; };
+template <> struct guid_storage<Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler>{ static constexpr guid value{ 0xB7DE5527,0x4C8F,0x42DD,{ 0x84,0xDA,0x5E,0xC4,0x93,0xAB,0xDB,0x9A } }; };
 template <> struct default_interface<Windows::UI::ApplicationSettings::AccountsSettingsPane>{ using type = Windows::UI::ApplicationSettings::IAccountsSettingsPane; };
 template <> struct default_interface<Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs>{ using type = Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs; };
 template <> struct default_interface<Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral>{ using type = Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral; };
@@ -207,13 +207,146 @@ template <> struct default_interface<Windows::UI::ApplicationSettings::WebAccoun
 template <> struct default_interface<Windows::UI::ApplicationSettings::WebAccountInvokedArgs>{ using type = Windows::UI::ApplicationSettings::IWebAccountInvokedArgs; };
 template <> struct default_interface<Windows::UI::ApplicationSettings::WebAccountProviderCommand>{ using type = Windows::UI::ApplicationSettings::IWebAccountProviderCommand; };
 
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPane>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_AccountCommandsRequested(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccountCommandsRequested(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebAccountProviderCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WebAccountCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Commands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** current) noexcept = 0;
+    virtual int32_t WINRT_CALL Show() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowManageAccountsAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAddAccountAsync(void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowManageAccountsForUserAsync(void* user, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAddAccountForUserAsync(void* user, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ICredentialCommand>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PasswordCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialDeleted(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ICredentialCommandFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCredentialCommand(void* passwordCredential, void** instance) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCredentialCommandWithHandler(void* passwordCredential, void* deleted, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsCommandFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSettingsCommand(void* settingsCommandId, void* label, void* handler, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsCommandStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccountsCommand(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPane>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_CommandsRequested(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CommandsRequested(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ApplicationCommands(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** request) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** current) noexcept = 0;
+    virtual int32_t WINRT_CALL Show() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Edge(Windows::UI::ApplicationSettings::SettingsEdgeLocation* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountCommand>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebAccount(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Invoked(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Actions(Windows::UI::ApplicationSettings::SupportedWebAccountActions* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountCommandFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWebAccountCommand(void* webAccount, void* invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Action(Windows::UI::ApplicationSettings::WebAccountAction* action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountProviderCommand>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebAccountProvider(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Invoked(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWebAccountProviderCommand(void* webAccountProvider, void* invoked, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* command) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* command, void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* command) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_UI_ApplicationSettings_IAccountsSettingsPane
 {
-    event_token AccountCommandsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> const& handler) const;
-    using AccountCommandsRequested_revoker = event_revoker<Windows::UI::ApplicationSettings::IAccountsSettingsPane>;
+    winrt::event_token AccountCommandsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> const& handler) const;
+    using AccountCommandsRequested_revoker = impl::event_revoker<Windows::UI::ApplicationSettings::IAccountsSettingsPane, &impl::abi_t<Windows::UI::ApplicationSettings::IAccountsSettingsPane>::remove_AccountCommandsRequested>;
     AccountCommandsRequested_revoker AccountCommandsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> const& handler) const;
-    void AccountCommandsRequested(event_token const& cookie) const;
+    void AccountCommandsRequested(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::IAccountsSettingsPane> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_IAccountsSettingsPane<D>; };
 
@@ -301,33 +434,33 @@ template <> struct consume<Windows::UI::ApplicationSettings::ISettingsCommandSta
 template <typename D>
 struct consume_Windows_UI_ApplicationSettings_ISettingsPane
 {
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token CommandsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::SettingsPane, Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs> const& handler) const;
-    using CommandsRequested_revoker = event_revoker<Windows::UI::ApplicationSettings::ISettingsPane>;
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] CommandsRequested_revoker CommandsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::SettingsPane, Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs> const& handler) const;
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] void CommandsRequested(event_token const& cookie) const;
+    winrt::event_token CommandsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::SettingsPane, Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs> const& handler) const;
+    using CommandsRequested_revoker = impl::event_revoker<Windows::UI::ApplicationSettings::ISettingsPane, &impl::abi_t<Windows::UI::ApplicationSettings::ISettingsPane>::remove_CommandsRequested>;
+    CommandsRequested_revoker CommandsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::SettingsPane, Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs> const& handler) const;
+    void CommandsRequested(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::ISettingsPane> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_ISettingsPane<D>; };
 
 template <typename D>
 struct consume_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequest
 {
-    [[deprecated("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> ApplicationCommands() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> ApplicationCommands() const;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequest<D>; };
 
 template <typename D>
 struct consume_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequestedEventArgs
 {
-    [[deprecated("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::UI::ApplicationSettings::SettingsPaneCommandsRequest Request() const;
+    Windows::UI::ApplicationSettings::SettingsPaneCommandsRequest Request() const;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequestedEventArgs<D>; };
 
 template <typename D>
 struct consume_Windows_UI_ApplicationSettings_ISettingsPaneStatics
 {
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::UI::ApplicationSettings::SettingsPane GetForCurrentView() const;
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Show() const;
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::UI::ApplicationSettings::SettingsEdgeLocation Edge() const;
+    Windows::UI::ApplicationSettings::SettingsPane GetForCurrentView() const;
+    void Show() const;
+    Windows::UI::ApplicationSettings::SettingsEdgeLocation Edge() const;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::ISettingsPaneStatics> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_ISettingsPaneStatics<D>; };
 
@@ -368,138 +501,5 @@ struct consume_Windows_UI_ApplicationSettings_IWebAccountProviderCommandFactory
     Windows::UI::ApplicationSettings::WebAccountProviderCommand CreateWebAccountProviderCommand(Windows::Security::Credentials::WebAccountProvider const& webAccountProvider, Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler const& invoked) const;
 };
 template <> struct consume<Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory> { template <typename D> using type = consume_Windows_UI_ApplicationSettings_IWebAccountProviderCommandFactory<D>; };
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPane>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_AccountCommandsRequested(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccountCommandsRequested(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebAccountProviderCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WebAccountCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Commands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** current) noexcept = 0;
-    virtual HRESULT __stdcall Show() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowManageAccountsAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall ShowAddAccountAsync(void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowManageAccountsForUserAsync(void* user, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ShowAddAccountForUserAsync(void* user, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ICredentialCommand>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PasswordCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialDeleted(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ICredentialCommandFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCredentialCommand(void* passwordCredential, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateCredentialCommandWithHandler(void* passwordCredential, void* deleted, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsCommandFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSettingsCommand(void* settingsCommandId, HSTRING label, void* handler, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsCommandStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AccountsCommand(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPane>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_CommandsRequested(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_CommandsRequested(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ApplicationCommands(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** request) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::ISettingsPaneStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** current) noexcept = 0;
-    virtual HRESULT __stdcall Show() noexcept = 0;
-    virtual HRESULT __stdcall get_Edge(Windows::UI::ApplicationSettings::SettingsEdgeLocation* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountCommand>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebAccount(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Invoked(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Actions(Windows::UI::ApplicationSettings::SupportedWebAccountActions* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountCommandFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWebAccountCommand(void* webAccount, void* invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountInvokedArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Action(Windows::UI::ApplicationSettings::WebAccountAction* action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountProviderCommand>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebAccountProvider(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Invoked(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWebAccountProviderCommand(void* webAccountProvider, void* invoked, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* command) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* command, void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* command) noexcept = 0;
-};};
 
 }

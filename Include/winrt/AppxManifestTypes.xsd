@@ -395,6 +395,13 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_Capability_Uap_7">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="globalMediaControl"/>
+      <xs:enumeration value="gazeInput"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_Capability_Mobile">
     <xs:restriction base="xs:string">
       <xs:enumeration value="recordedCallsFolder"/>
@@ -700,6 +707,14 @@
       <xs:enumeration value="windows.barcodeScannerPreviewProvider"/>
       <!-- Package Extensions -->
       <xs:enumeration value="windows.loaderSearchPathOverride"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ExtensionCategory_Uap7">
+    <xs:restriction base="xs:string">
+      <!-- Package Extensions -->
+      <xs:enumeration value="windows.sharedFonts"/>
+      <xs:enumeration value="windows.enterpriseDataProtection"/>
     </xs:restriction>
   </xs:simpleType>
 

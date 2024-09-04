@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -508,33 +508,33 @@ template <> struct name<Windows::Graphics::Printing::PrintStaple>{ static conste
 template <> struct name<Windows::Graphics::Printing::PrintTaskCompletion>{ static constexpr auto & value{ L"Windows.Graphics.Printing.PrintTaskCompletion" }; };
 template <> struct name<Windows::Graphics::Printing::PrintPageDescription>{ static constexpr auto & value{ L"Windows.Graphics.Printing.PrintPageDescription" }; };
 template <> struct name<Windows::Graphics::Printing::PrintTaskSourceRequestedHandler>{ static constexpr auto & value{ L"Windows.Graphics.Printing.PrintTaskSourceRequestedHandler" }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintDocumentSource>{ static constexpr GUID value{ 0xDEDC0C30,0xF1EB,0x47DF,{ 0xAA,0xE6,0xED,0x54,0x27,0x51,0x1F,0x01 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintManager>{ static constexpr GUID value{ 0xFF2A9694,0x8C99,0x44FD,{ 0xAE,0x4A,0x19,0xD9,0xAA,0x9A,0x0F,0x0A } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintManagerStatic>{ static constexpr GUID value{ 0x58185DCD,0xE634,0x4654,{ 0x84,0xF0,0xE0,0x15,0x2A,0x82,0x17,0xAC } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintManagerStatic2>{ static constexpr GUID value{ 0x35A99955,0xE6AB,0x4139,{ 0x9A,0xBD,0xB8,0x6A,0x72,0x9B,0x35,0x98 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintPageInfo>{ static constexpr GUID value{ 0xDD4BE9C9,0xA6A1,0x4ADA,{ 0x93,0x0E,0xDA,0x87,0x2A,0x4F,0x23,0xD3 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintPageRange>{ static constexpr GUID value{ 0xF8A06C54,0x6E7C,0x51C5,{ 0x57,0xFD,0x06,0x60,0xC2,0xD7,0x15,0x13 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintPageRangeFactory>{ static constexpr GUID value{ 0x408FD45F,0xE047,0x5F85,{ 0x71,0x29,0xFB,0x08,0x5A,0x4F,0xAD,0x14 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintPageRangeOptions>{ static constexpr GUID value{ 0xCE6DB728,0x1357,0x46B2,{ 0xA9,0x23,0x79,0xF9,0x95,0xF4,0x48,0xFC } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTask>{ static constexpr GUID value{ 0x61D80247,0x6CF6,0x4FAD,{ 0x84,0xE2,0xA5,0xE8,0x2E,0x2D,0x4C,0xEB } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTask2>{ static constexpr GUID value{ 0x36234877,0x3E53,0x4D9D,{ 0x8F,0x5E,0x31,0x6A,0xC8,0xDE,0xDA,0xE1 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskCompletedEventArgs>{ static constexpr GUID value{ 0x5BCD34AF,0x24E9,0x4C10,{ 0x8D,0x07,0x14,0xC3,0x46,0xBA,0x3F,0xCE } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskOptions>{ static constexpr GUID value{ 0x5A0A66BB,0xD289,0x41BB,{ 0x96,0xDD,0x57,0xE2,0x83,0x38,0xAE,0x3F } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskOptions2>{ static constexpr GUID value{ 0xEB9B1606,0x9A36,0x4B59,{ 0x86,0x17,0xB2,0x17,0x84,0x92,0x62,0xE1 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskOptionsCore>{ static constexpr GUID value{ 0x1BDBB474,0x4ED1,0x41EB,{ 0xBE,0x3C,0x72,0xD1,0x8E,0xD6,0x73,0x37 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties>{ static constexpr GUID value{ 0xC1B71832,0x9E93,0x4E55,{ 0x81,0x4B,0x33,0x26,0xA5,0x9E,0xFC,0xE1 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration>{ static constexpr GUID value{ 0x62E69E23,0x9A1E,0x4336,{ 0xB7,0x4F,0x3C,0xC7,0xF4,0xCF,0xF7,0x09 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskProgressingEventArgs>{ static constexpr GUID value{ 0x810CD3CB,0xB410,0x4282,{ 0xA0,0x73,0x5A,0xC3,0x78,0x23,0x41,0x74 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskRequest>{ static constexpr GUID value{ 0x6FF61E2E,0x2722,0x4240,{ 0xA6,0x7C,0xF3,0x64,0x84,0x9A,0x17,0xF3 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskRequestedDeferral>{ static constexpr GUID value{ 0xCFEFB3F0,0xCE3E,0x42C7,{ 0x94,0x96,0x64,0x80,0x0C,0x62,0x2C,0x44 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskRequestedEventArgs>{ static constexpr GUID value{ 0xD0AFF924,0xA31B,0x454C,{ 0xA7,0xB6,0x5D,0x0C,0xC5,0x22,0xFC,0x16 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs>{ static constexpr GUID value{ 0xF9F067BE,0xF456,0x41F0,{ 0x9C,0x98,0x5C,0xE7,0x3E,0x85,0x14,0x10 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral>{ static constexpr GUID value{ 0x4A1560D1,0x6992,0x4D9D,{ 0x85,0x55,0x4C,0xA4,0x56,0x3F,0xB1,0x66 } }; };
-template <> struct guid<Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport>{ static constexpr GUID value{ 0x295D70C0,0xC2CB,0x4B7D,{ 0xB0,0xEA,0x93,0x09,0x50,0x91,0xA2,0x20 } }; };
-template <> struct guid<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic>{ static constexpr GUID value{ 0xB4483D26,0x0DD0,0x4CD4,{ 0xBA,0xFF,0x93,0x0F,0xC7,0xD6,0xA5,0x74 } }; };
-template <> struct guid<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>{ static constexpr GUID value{ 0x3BE38BF4,0x7A44,0x4269,{ 0x9A,0x52,0x81,0x26,0x1E,0x28,0x9E,0xE9 } }; };
-template <> struct guid<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic3>{ static constexpr GUID value{ 0xBBF68E86,0x3858,0x41B3,{ 0xA7,0x99,0x55,0xDD,0x98,0x88,0xD4,0x75 } }; };
-template <> struct guid<Windows::Graphics::Printing::PrintTaskSourceRequestedHandler>{ static constexpr GUID value{ 0x6C109FA8,0x5CB6,0x4B3A,{ 0x86,0x63,0xF3,0x9C,0xB0,0x2D,0xC9,0xB4 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintDocumentSource>{ static constexpr guid value{ 0xDEDC0C30,0xF1EB,0x47DF,{ 0xAA,0xE6,0xED,0x54,0x27,0x51,0x1F,0x01 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintManager>{ static constexpr guid value{ 0xFF2A9694,0x8C99,0x44FD,{ 0xAE,0x4A,0x19,0xD9,0xAA,0x9A,0x0F,0x0A } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintManagerStatic>{ static constexpr guid value{ 0x58185DCD,0xE634,0x4654,{ 0x84,0xF0,0xE0,0x15,0x2A,0x82,0x17,0xAC } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintManagerStatic2>{ static constexpr guid value{ 0x35A99955,0xE6AB,0x4139,{ 0x9A,0xBD,0xB8,0x6A,0x72,0x9B,0x35,0x98 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintPageInfo>{ static constexpr guid value{ 0xDD4BE9C9,0xA6A1,0x4ADA,{ 0x93,0x0E,0xDA,0x87,0x2A,0x4F,0x23,0xD3 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintPageRange>{ static constexpr guid value{ 0xF8A06C54,0x6E7C,0x51C5,{ 0x57,0xFD,0x06,0x60,0xC2,0xD7,0x15,0x13 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintPageRangeFactory>{ static constexpr guid value{ 0x408FD45F,0xE047,0x5F85,{ 0x71,0x29,0xFB,0x08,0x5A,0x4F,0xAD,0x14 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintPageRangeOptions>{ static constexpr guid value{ 0xCE6DB728,0x1357,0x46B2,{ 0xA9,0x23,0x79,0xF9,0x95,0xF4,0x48,0xFC } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTask>{ static constexpr guid value{ 0x61D80247,0x6CF6,0x4FAD,{ 0x84,0xE2,0xA5,0xE8,0x2E,0x2D,0x4C,0xEB } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTask2>{ static constexpr guid value{ 0x36234877,0x3E53,0x4D9D,{ 0x8F,0x5E,0x31,0x6A,0xC8,0xDE,0xDA,0xE1 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskCompletedEventArgs>{ static constexpr guid value{ 0x5BCD34AF,0x24E9,0x4C10,{ 0x8D,0x07,0x14,0xC3,0x46,0xBA,0x3F,0xCE } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskOptions>{ static constexpr guid value{ 0x5A0A66BB,0xD289,0x41BB,{ 0x96,0xDD,0x57,0xE2,0x83,0x38,0xAE,0x3F } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskOptions2>{ static constexpr guid value{ 0xEB9B1606,0x9A36,0x4B59,{ 0x86,0x17,0xB2,0x17,0x84,0x92,0x62,0xE1 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskOptionsCore>{ static constexpr guid value{ 0x1BDBB474,0x4ED1,0x41EB,{ 0xBE,0x3C,0x72,0xD1,0x8E,0xD6,0x73,0x37 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties>{ static constexpr guid value{ 0xC1B71832,0x9E93,0x4E55,{ 0x81,0x4B,0x33,0x26,0xA5,0x9E,0xFC,0xE1 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration>{ static constexpr guid value{ 0x62E69E23,0x9A1E,0x4336,{ 0xB7,0x4F,0x3C,0xC7,0xF4,0xCF,0xF7,0x09 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskProgressingEventArgs>{ static constexpr guid value{ 0x810CD3CB,0xB410,0x4282,{ 0xA0,0x73,0x5A,0xC3,0x78,0x23,0x41,0x74 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskRequest>{ static constexpr guid value{ 0x6FF61E2E,0x2722,0x4240,{ 0xA6,0x7C,0xF3,0x64,0x84,0x9A,0x17,0xF3 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskRequestedDeferral>{ static constexpr guid value{ 0xCFEFB3F0,0xCE3E,0x42C7,{ 0x94,0x96,0x64,0x80,0x0C,0x62,0x2C,0x44 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskRequestedEventArgs>{ static constexpr guid value{ 0xD0AFF924,0xA31B,0x454C,{ 0xA7,0xB6,0x5D,0x0C,0xC5,0x22,0xFC,0x16 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs>{ static constexpr guid value{ 0xF9F067BE,0xF456,0x41F0,{ 0x9C,0x98,0x5C,0xE7,0x3E,0x85,0x14,0x10 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral>{ static constexpr guid value{ 0x4A1560D1,0x6992,0x4D9D,{ 0x85,0x55,0x4C,0xA4,0x56,0x3F,0xB1,0x66 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport>{ static constexpr guid value{ 0x295D70C0,0xC2CB,0x4B7D,{ 0xB0,0xEA,0x93,0x09,0x50,0x91,0xA2,0x20 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic>{ static constexpr guid value{ 0xB4483D26,0x0DD0,0x4CD4,{ 0xBA,0xFF,0x93,0x0F,0xC7,0xD6,0xA5,0x74 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>{ static constexpr guid value{ 0x3BE38BF4,0x7A44,0x4269,{ 0x9A,0x52,0x81,0x26,0x1E,0x28,0x9E,0xE9 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic3>{ static constexpr guid value{ 0xBBF68E86,0x3858,0x41B3,{ 0xA7,0x99,0x55,0xDD,0x98,0x88,0xD4,0x75 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing::PrintTaskSourceRequestedHandler>{ static constexpr guid value{ 0x6C109FA8,0x5CB6,0x4B3A,{ 0x86,0x63,0xF3,0x9C,0xB0,0x2D,0xC9,0xB4 } }; };
 template <> struct default_interface<Windows::Graphics::Printing::PrintManager>{ using type = Windows::Graphics::Printing::IPrintManager; };
 template <> struct default_interface<Windows::Graphics::Printing::PrintPageInfo>{ using type = Windows::Graphics::Printing::IPrintPageInfo; };
 template <> struct default_interface<Windows::Graphics::Printing::PrintPageRange>{ using type = Windows::Graphics::Printing::IPrintPageRange; };
@@ -549,6 +549,214 @@ template <> struct default_interface<Windows::Graphics::Printing::PrintTaskReque
 template <> struct default_interface<Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>{ using type = Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs; };
 template <> struct default_interface<Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral>{ using type = Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral; };
 
+template <> struct abi<Windows::Graphics::Printing::IPrintDocumentSource>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_PrintTaskRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PrintTaskRequested(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintManagerStatic>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** printingManager) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowPrintUIAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintManagerStatic2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsSupported(bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintPageInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_MediaSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PageSize(Windows::Foundation::Size value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageSize(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DpiX(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DpiX(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DpiY(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DpiY(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Orientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintPageRange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FirstPageNumber(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastPageNumber(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintPageRangeFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t firstPage, int32_t lastPage, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithSinglePage(int32_t page, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintPageRangeOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_AllowAllPages(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowAllPages(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowCurrentPage(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowCurrentPage(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowCustomSetOfPages(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowCustomSetOfPages(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTask>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Options(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Previewing(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Previewing(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Submitting(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Submitting(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Progressing(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Progressing(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTask2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_IsPreviewEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPreviewEnabled(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Completion(Windows::Graphics::Printing::PrintTaskCompletion* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Bordering(Windows::Graphics::Printing::PrintBordering value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bordering(Windows::Graphics::Printing::PrintBordering* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPagePrintTicket(void* printPageInfo, void** printTicket) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptions2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PageRangeOptions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomPageRanges(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPageDescription(uint32_t jobPageNumber, struct struct_Windows_Graphics_Printing_PrintPageDescription* description) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_MediaSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MediaType(Windows::Graphics::Printing::PrintMediaType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaType(Windows::Graphics::Printing::PrintMediaType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Orientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PrintQuality(Windows::Graphics::Printing::PrintQuality value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrintQuality(Windows::Graphics::Printing::PrintQuality* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ColorMode(Windows::Graphics::Printing::PrintColorMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorMode(Windows::Graphics::Printing::PrintColorMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duplex(Windows::Graphics::Printing::PrintDuplex value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duplex(Windows::Graphics::Printing::PrintDuplex* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Collation(Windows::Graphics::Printing::PrintCollation value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Collation(Windows::Graphics::Printing::PrintCollation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Staple(Windows::Graphics::Printing::PrintStaple value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Staple(Windows::Graphics::Printing::PrintStaple* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HolePunch(Windows::Graphics::Printing::PrintHolePunch value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HolePunch(Windows::Graphics::Printing::PrintHolePunch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Binding(Windows::Graphics::Printing::PrintBinding value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Binding(Windows::Graphics::Printing::PrintBinding* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinCopies(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxCopies(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumberOfCopies(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfCopies(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayedOptions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskProgressingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DocumentPageCount(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePrintTask(void* title, void* handler, void** task) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequestedDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSource(void* source) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_IsPrinterTargetEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPrinterTargetEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Is3DManufacturingTargetEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Is3DManufacturingTargetEnabled(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MediaSize(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrintQuality(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorMode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duplex(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Collation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Staple(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HolePunch(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Binding(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Copies(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NUp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputBin(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Bordering(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CustomPageRanges(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing::PrintTaskSourceRequestedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* args) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Graphics_Printing_IPrintDocumentSource
 {
@@ -558,10 +766,10 @@ template <> struct consume<Windows::Graphics::Printing::IPrintDocumentSource> { 
 template <typename D>
 struct consume_Windows_Graphics_Printing_IPrintManager
 {
-    event_token PrintTaskRequested(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> const& eventHandler) const;
-    using PrintTaskRequested_revoker = event_revoker<Windows::Graphics::Printing::IPrintManager>;
+    winrt::event_token PrintTaskRequested(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> const& eventHandler) const;
+    using PrintTaskRequested_revoker = impl::event_revoker<Windows::Graphics::Printing::IPrintManager, &impl::abi_t<Windows::Graphics::Printing::IPrintManager>::remove_PrintTaskRequested>;
     PrintTaskRequested_revoker PrintTaskRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> const& eventHandler) const;
-    void PrintTaskRequested(event_token const& eventCookie) const;
+    void PrintTaskRequested(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Printing::IPrintManager> { template <typename D> using type = consume_Windows_Graphics_Printing_IPrintManager<D>; };
 
@@ -630,22 +838,22 @@ struct consume_Windows_Graphics_Printing_IPrintTask
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySet Properties() const;
     Windows::Graphics::Printing::IPrintDocumentSource Source() const;
     Windows::Graphics::Printing::PrintTaskOptions Options() const;
-    event_token Previewing(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    using Previewing_revoker = event_revoker<Windows::Graphics::Printing::IPrintTask>;
+    winrt::event_token Previewing(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
+    using Previewing_revoker = impl::event_revoker<Windows::Graphics::Printing::IPrintTask, &impl::abi_t<Windows::Graphics::Printing::IPrintTask>::remove_Previewing>;
     Previewing_revoker Previewing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    void Previewing(event_token const& eventCookie) const;
-    event_token Submitting(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    using Submitting_revoker = event_revoker<Windows::Graphics::Printing::IPrintTask>;
+    void Previewing(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token Submitting(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
+    using Submitting_revoker = impl::event_revoker<Windows::Graphics::Printing::IPrintTask, &impl::abi_t<Windows::Graphics::Printing::IPrintTask>::remove_Submitting>;
     Submitting_revoker Submitting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    void Submitting(event_token const& eventCookie) const;
-    event_token Progressing(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> const& eventHandler) const;
-    using Progressing_revoker = event_revoker<Windows::Graphics::Printing::IPrintTask>;
+    void Submitting(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token Progressing(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> const& eventHandler) const;
+    using Progressing_revoker = impl::event_revoker<Windows::Graphics::Printing::IPrintTask, &impl::abi_t<Windows::Graphics::Printing::IPrintTask>::remove_Progressing>;
     Progressing_revoker Progressing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskProgressingEventArgs> const& eventHandler) const;
-    void Progressing(event_token const& eventCookie) const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> const& eventHandler) const;
-    using Completed_revoker = event_revoker<Windows::Graphics::Printing::IPrintTask>;
+    void Progressing(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> const& eventHandler) const;
+    using Completed_revoker = impl::event_revoker<Windows::Graphics::Printing::IPrintTask, &impl::abi_t<Windows::Graphics::Printing::IPrintTask>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintTask, Windows::Graphics::Printing::PrintTaskCompletedEventArgs> const& eventHandler) const;
-    void Completed(event_token const& eventCookie) const;
+    void Completed(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Printing::IPrintTask> { template <typename D> using type = consume_Windows_Graphics_Printing_IPrintTask<D>; };
 
@@ -823,213 +1031,5 @@ struct struct_Windows_Graphics_Printing_PrintPageDescription
 };
 template <> struct abi<Windows::Graphics::Printing::PrintPageDescription>{ using type = struct_Windows_Graphics_Printing_PrintPageDescription; };
 
-
-template <> struct abi<Windows::Graphics::Printing::IPrintDocumentSource>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_PrintTaskRequested(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PrintTaskRequested(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintManagerStatic>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** printingManager) noexcept = 0;
-    virtual HRESULT __stdcall ShowPrintUIAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintManagerStatic2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsSupported(bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintPageInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_MediaSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PageSize(Windows::Foundation::Size value) noexcept = 0;
-    virtual HRESULT __stdcall get_PageSize(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DpiX(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DpiX(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DpiY(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DpiY(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Orientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintPageRange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FirstPageNumber(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastPageNumber(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintPageRangeFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t firstPage, int32_t lastPage, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithSinglePage(int32_t page, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintPageRangeOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_AllowAllPages(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowAllPages(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowCurrentPage(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowCurrentPage(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowCustomSetOfPages(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowCustomSetOfPages(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTask>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Options(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Previewing(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Previewing(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Submitting(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Submitting(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Progressing(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Progressing(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTask2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_IsPreviewEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPreviewEnabled(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Completion(Windows::Graphics::Printing::PrintTaskCompletion* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Bordering(Windows::Graphics::Printing::PrintBordering value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bordering(Windows::Graphics::Printing::PrintBordering* value) noexcept = 0;
-    virtual HRESULT __stdcall GetPagePrintTicket(void* printPageInfo, void** printTicket) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptions2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PageRangeOptions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomPageRanges(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPageDescription(uint32_t jobPageNumber, struct struct_Windows_Graphics_Printing_PrintPageDescription* description) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_MediaSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MediaType(Windows::Graphics::Printing::PrintMediaType value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaType(Windows::Graphics::Printing::PrintMediaType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Orientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PrintQuality(Windows::Graphics::Printing::PrintQuality value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrintQuality(Windows::Graphics::Printing::PrintQuality* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ColorMode(Windows::Graphics::Printing::PrintColorMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorMode(Windows::Graphics::Printing::PrintColorMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Duplex(Windows::Graphics::Printing::PrintDuplex value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duplex(Windows::Graphics::Printing::PrintDuplex* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Collation(Windows::Graphics::Printing::PrintCollation value) noexcept = 0;
-    virtual HRESULT __stdcall get_Collation(Windows::Graphics::Printing::PrintCollation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Staple(Windows::Graphics::Printing::PrintStaple value) noexcept = 0;
-    virtual HRESULT __stdcall get_Staple(Windows::Graphics::Printing::PrintStaple* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HolePunch(Windows::Graphics::Printing::PrintHolePunch value) noexcept = 0;
-    virtual HRESULT __stdcall get_HolePunch(Windows::Graphics::Printing::PrintHolePunch* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Binding(Windows::Graphics::Printing::PrintBinding value) noexcept = 0;
-    virtual HRESULT __stdcall get_Binding(Windows::Graphics::Printing::PrintBinding* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinCopies(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxCopies(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumberOfCopies(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfCopies(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayedOptions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskProgressingEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DocumentPageCount(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall CreatePrintTask(HSTRING title, void* handler, void** task) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequestedDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall SetSource(void* source) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_IsPrinterTargetEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPrinterTargetEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Is3DManufacturingTargetEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Is3DManufacturingTargetEnabled(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MediaSize(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrintQuality(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorMode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duplex(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Collation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Staple(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HolePunch(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Binding(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Copies(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NUp(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InputBin(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Bordering(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CustomPageRanges(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing::PrintTaskSourceRequestedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* args) noexcept = 0;
-};};
 
 }

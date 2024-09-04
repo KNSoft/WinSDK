@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -92,13 +92,68 @@ template <> struct name<Windows::Devices::SerialCommunication::SerialHandshake>{
 template <> struct name<Windows::Devices::SerialCommunication::SerialParity>{ static constexpr auto & value{ L"Windows.Devices.SerialCommunication.SerialParity" }; };
 template <> struct name<Windows::Devices::SerialCommunication::SerialPinChange>{ static constexpr auto & value{ L"Windows.Devices.SerialCommunication.SerialPinChange" }; };
 template <> struct name<Windows::Devices::SerialCommunication::SerialStopBitCount>{ static constexpr auto & value{ L"Windows.Devices.SerialCommunication.SerialStopBitCount" }; };
-template <> struct guid<Windows::Devices::SerialCommunication::IErrorReceivedEventArgs>{ static constexpr GUID value{ 0xFCC6BF59,0x1283,0x4D8A,{ 0xBF,0xDF,0x56,0x6B,0x33,0xDD,0xB2,0x8F } }; };
-template <> struct guid<Windows::Devices::SerialCommunication::IPinChangedEventArgs>{ static constexpr GUID value{ 0xA2BF1DB0,0xFC9C,0x4607,{ 0x93,0xD0,0xFA,0x5E,0x83,0x43,0xEE,0x22 } }; };
-template <> struct guid<Windows::Devices::SerialCommunication::ISerialDevice>{ static constexpr GUID value{ 0xE187CCC6,0x2210,0x414F,{ 0xB6,0x5A,0xF5,0x55,0x3A,0x03,0x37,0x2A } }; };
-template <> struct guid<Windows::Devices::SerialCommunication::ISerialDeviceStatics>{ static constexpr GUID value{ 0x058C4A70,0x0836,0x4993,{ 0xAE,0x1A,0xB6,0x1A,0xE3,0xBE,0x05,0x6B } }; };
+template <> struct guid_storage<Windows::Devices::SerialCommunication::IErrorReceivedEventArgs>{ static constexpr guid value{ 0xFCC6BF59,0x1283,0x4D8A,{ 0xBF,0xDF,0x56,0x6B,0x33,0xDD,0xB2,0x8F } }; };
+template <> struct guid_storage<Windows::Devices::SerialCommunication::IPinChangedEventArgs>{ static constexpr guid value{ 0xA2BF1DB0,0xFC9C,0x4607,{ 0x93,0xD0,0xFA,0x5E,0x83,0x43,0xEE,0x22 } }; };
+template <> struct guid_storage<Windows::Devices::SerialCommunication::ISerialDevice>{ static constexpr guid value{ 0xE187CCC6,0x2210,0x414F,{ 0xB6,0x5A,0xF5,0x55,0x3A,0x03,0x37,0x2A } }; };
+template <> struct guid_storage<Windows::Devices::SerialCommunication::ISerialDeviceStatics>{ static constexpr guid value{ 0x058C4A70,0x0836,0x4993,{ 0xAE,0x1A,0xB6,0x1A,0xE3,0xBE,0x05,0x6B } }; };
 template <> struct default_interface<Windows::Devices::SerialCommunication::ErrorReceivedEventArgs>{ using type = Windows::Devices::SerialCommunication::IErrorReceivedEventArgs; };
 template <> struct default_interface<Windows::Devices::SerialCommunication::PinChangedEventArgs>{ using type = Windows::Devices::SerialCommunication::IPinChangedEventArgs; };
 template <> struct default_interface<Windows::Devices::SerialCommunication::SerialDevice>{ using type = Windows::Devices::SerialCommunication::ISerialDevice; };
+
+template <> struct abi<Windows::Devices::SerialCommunication::IErrorReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Error(Windows::Devices::SerialCommunication::SerialError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::SerialCommunication::IPinChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PinChange(Windows::Devices::SerialCommunication::SerialPinChange* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::SerialCommunication::ISerialDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaudRate(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaudRate(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BreakSignalState(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BreakSignalState(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BytesReceived(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CarrierDetectState(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClearToSendState(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataBits(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataBits(uint16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataSetReadyState(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Handshake(Windows::Devices::SerialCommunication::SerialHandshake* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handshake(Windows::Devices::SerialCommunication::SerialHandshake value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataTerminalReadyEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsDataTerminalReadyEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRequestToSendEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsRequestToSendEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parity(Windows::Devices::SerialCommunication::SerialParity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Parity(Windows::Devices::SerialCommunication::SerialParity value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PortName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReadTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ReadTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StopBits(Windows::Devices::SerialCommunication::SerialStopBitCount* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StopBits(Windows::Devices::SerialCommunication::SerialStopBitCount value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsbVendorId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsbProductId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WriteTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WriteTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputStream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputStream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ErrorReceived(void* reportHandler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ErrorReceived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PinChanged(void* reportHandler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PinChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::SerialCommunication::ISerialDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromPortName(void* portName, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_SerialCommunication_IErrorReceivedEventArgs
@@ -146,14 +201,14 @@ struct consume_Windows_Devices_SerialCommunication_ISerialDevice
     void WriteTimeout(Windows::Foundation::TimeSpan const& value) const;
     Windows::Storage::Streams::IInputStream InputStream() const;
     Windows::Storage::Streams::IOutputStream OutputStream() const;
-    event_token ErrorReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> const& reportHandler) const;
-    using ErrorReceived_revoker = event_revoker<Windows::Devices::SerialCommunication::ISerialDevice>;
+    winrt::event_token ErrorReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> const& reportHandler) const;
+    using ErrorReceived_revoker = impl::event_revoker<Windows::Devices::SerialCommunication::ISerialDevice, &impl::abi_t<Windows::Devices::SerialCommunication::ISerialDevice>::remove_ErrorReceived>;
     ErrorReceived_revoker ErrorReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> const& reportHandler) const;
-    void ErrorReceived(event_token const& token) const;
-    event_token PinChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> const& reportHandler) const;
-    using PinChanged_revoker = event_revoker<Windows::Devices::SerialCommunication::ISerialDevice>;
+    void ErrorReceived(winrt::event_token const& token) const noexcept;
+    winrt::event_token PinChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> const& reportHandler) const;
+    using PinChanged_revoker = impl::event_revoker<Windows::Devices::SerialCommunication::ISerialDevice, &impl::abi_t<Windows::Devices::SerialCommunication::ISerialDevice>::remove_PinChanged>;
     PinChanged_revoker PinChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> const& reportHandler) const;
-    void PinChanged(event_token const& token) const;
+    void PinChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::SerialCommunication::ISerialDevice> { template <typename D> using type = consume_Windows_Devices_SerialCommunication_ISerialDevice<D>; };
 
@@ -166,60 +221,5 @@ struct consume_Windows_Devices_SerialCommunication_ISerialDeviceStatics
     Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> FromIdAsync(param::hstring const& deviceId) const;
 };
 template <> struct consume<Windows::Devices::SerialCommunication::ISerialDeviceStatics> { template <typename D> using type = consume_Windows_Devices_SerialCommunication_ISerialDeviceStatics<D>; };
-
-template <> struct abi<Windows::Devices::SerialCommunication::IErrorReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Error(Windows::Devices::SerialCommunication::SerialError* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::SerialCommunication::IPinChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PinChange(Windows::Devices::SerialCommunication::SerialPinChange* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::SerialCommunication::ISerialDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaudRate(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BaudRate(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_BreakSignalState(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BreakSignalState(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_BytesReceived(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CarrierDetectState(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClearToSendState(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataBits(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataBits(uint16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataSetReadyState(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Handshake(Windows::Devices::SerialCommunication::SerialHandshake* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handshake(Windows::Devices::SerialCommunication::SerialHandshake value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataTerminalReadyEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsDataTerminalReadyEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRequestToSendEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsRequestToSendEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Parity(Windows::Devices::SerialCommunication::SerialParity* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Parity(Windows::Devices::SerialCommunication::SerialParity value) noexcept = 0;
-    virtual HRESULT __stdcall get_PortName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReadTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ReadTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_StopBits(Windows::Devices::SerialCommunication::SerialStopBitCount* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StopBits(Windows::Devices::SerialCommunication::SerialStopBitCount value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsbVendorId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsbProductId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WriteTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WriteTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_InputStream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputStream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_ErrorReceived(void* reportHandler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ErrorReceived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PinChanged(void* reportHandler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PinChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::SerialCommunication::ISerialDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromPortName(HSTRING portName, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** result) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -171,6 +171,13 @@ struct WINRT_EBO InkUnprocessedInput :
     Windows::UI::Input::Inking::IInkUnprocessedInput
 {
     InkUnprocessedInput(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO PenAndInkSettings :
+    Windows::UI::Input::Inking::IPenAndInkSettings
+{
+    PenAndInkSettings(std::nullptr_t) noexcept {}
+    static Windows::UI::Input::Inking::PenAndInkSettings GetDefault();
 };
 
 }

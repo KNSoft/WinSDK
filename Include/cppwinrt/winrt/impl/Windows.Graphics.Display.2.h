@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -9,12 +9,14 @@
 
 WINRT_EXPORT namespace winrt::Windows::Graphics::Display {
 
-struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayPropertiesEventHandler : Windows::Foundation::IUnknown
+struct DisplayPropertiesEventHandler : Windows::Foundation::IUnknown
 {
     DisplayPropertiesEventHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> DisplayPropertiesEventHandler(L lambda);
     template <typename F> DisplayPropertiesEventHandler(F* function);
     template <typename O, typename M> DisplayPropertiesEventHandler(O* object, M method);
+    template <typename O, typename M> DisplayPropertiesEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DisplayPropertiesEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender) const;
 };
 
@@ -101,43 +103,43 @@ struct WINRT_EBO DisplayInformation :
     static Windows::Graphics::Display::DisplayInformation GetForCurrentView();
     static Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences();
     static void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value);
-    static event_token DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler);
-    using DisplayContentsInvalidated_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayInformationStatics>;
+    static winrt::event_token DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler);
+    using DisplayContentsInvalidated_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayInformationStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayInformationStatics>::remove_DisplayContentsInvalidated>;
     static DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler);
-    static void DisplayContentsInvalidated(event_token const& token);
+    static void DisplayContentsInvalidated(winrt::event_token const& token);
 };
 
-struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayProperties
+struct DisplayProperties
 {
     DisplayProperties() = delete;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static Windows::Graphics::Display::DisplayOrientations CurrentOrientation();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static Windows::Graphics::Display::DisplayOrientations NativeOrientation();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static event_token OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    using OrientationChanged_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static OrientationChanged_revoker OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void OrientationChanged(event_token const& token);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static Windows::Graphics::Display::ResolutionScale ResolutionScale();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static float LogicalDpi();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static event_token LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    using LogicalDpiChanged_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void LogicalDpiChanged(event_token const& token);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static bool StereoEnabled();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static event_token StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    using StereoEnabledChanged_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void StereoEnabledChanged(event_token const& token);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync();
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static event_token ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    using ColorProfileChanged_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void ColorProfileChanged(event_token const& token);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static event_token DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    using DisplayContentsInvalidated_revoker = factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] static void DisplayContentsInvalidated(event_token const& token);
+    static Windows::Graphics::Display::DisplayOrientations CurrentOrientation();
+    static Windows::Graphics::Display::DisplayOrientations NativeOrientation();
+    static Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences();
+    static void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value);
+    static winrt::event_token OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    using OrientationChanged_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_OrientationChanged>;
+    static OrientationChanged_revoker OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    static void OrientationChanged(winrt::event_token const& token);
+    static Windows::Graphics::Display::ResolutionScale ResolutionScale();
+    static float LogicalDpi();
+    static winrt::event_token LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    using LogicalDpiChanged_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_LogicalDpiChanged>;
+    static LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    static void LogicalDpiChanged(winrt::event_token const& token);
+    static bool StereoEnabled();
+    static winrt::event_token StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    using StereoEnabledChanged_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_StereoEnabledChanged>;
+    static StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    static void StereoEnabledChanged(winrt::event_token const& token);
+    static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync();
+    static winrt::event_token ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    using ColorProfileChanged_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_ColorProfileChanged>;
+    static ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    static void ColorProfileChanged(winrt::event_token const& token);
+    static winrt::event_token DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    using DisplayContentsInvalidated_revoker = impl::factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_DisplayContentsInvalidated>;
+    static DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler);
+    static void DisplayContentsInvalidated(winrt::event_token const& token);
 };
 
 }

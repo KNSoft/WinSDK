@@ -160,6 +160,14 @@ namespace Windows
 
             interface IGyrometerStatics2;
 
+            interface IHingeAngleReading;
+
+            interface IHingeAngleSensor;
+
+            interface IHingeAngleSensorReadingChangedEventArgs;
+
+            interface IHingeAngleSensorStatics;
+
             interface IInclinometer;
 
             interface IInclinometer2;
@@ -286,6 +294,8 @@ namespace Windows
 
             interface ISimpleOrientationSensorStatics;
 
+            interface ISimpleOrientationSensorStatics2;
+
             runtimeclass Accelerometer;
 
             runtimeclass AccelerometerReading;
@@ -327,6 +337,12 @@ namespace Windows
             runtimeclass GyrometerReading;
 
             runtimeclass GyrometerReadingChangedEventArgs;
+
+            runtimeclass HingeAngleReading;
+
+            runtimeclass HingeAngleSensor;
+
+            runtimeclass HingeAngleSensorReadingChangedEventArgs;
 
             runtimeclass Inclinometer;
 
@@ -444,6 +460,10 @@ namespace Windows
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Gyrometer*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleReading*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleSensor*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Inclinometer*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.LightSensor*>;
@@ -453,6 +473,8 @@ namespace Windows
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.OrientationSensor*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Pedometer*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.SimpleOrientationSensor*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Devices.Sensors.ActivitySensorReading*>*>;
 
@@ -471,6 +493,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.Compass*, Windows.Devices.Sensors.CompassReadingChangedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.Gyrometer*, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.HingeAngleSensor*, Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.Inclinometer*, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs*>;
 
@@ -1058,6 +1082,49 @@ namespace Windows
             {
                 HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
                 HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Gyrometer*>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Sensors.HingeAngleReading)]
+            [uuid(A3CD45B9-1BF1-4F65-A704-E2DA04F182C0)]
+            interface IHingeAngleReading : IInspectable
+            {
+                [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
+                [propget] HRESULT AngleInDegrees([out] [retval] DOUBLE* value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Sensors.HingeAngleSensor)]
+            [uuid(E9D3BE02-BFDF-437F-8C29-88C77393D309)]
+            interface IHingeAngleSensor : IInspectable
+            {
+                HRESULT GetCurrentReadingAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleReading*>** value);
+                [propget] HRESULT DeviceId([out] [retval] HSTRING* value);
+                [propget] HRESULT MinReportThresholdInDegrees([out] [retval] DOUBLE* value);
+                [propget] HRESULT ReportThresholdInDegrees([out] [retval] DOUBLE* value);
+                [propput] HRESULT ReportThresholdInDegrees([in] DOUBLE value);
+                [eventadd] HRESULT ReadingChanged([in] Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.HingeAngleSensor*, Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT ReadingChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs)]
+            [uuid(24D9558B-FAD0-42B8-A854-78923049A1BA)]
+            interface IHingeAngleSensorReadingChangedEventArgs : IInspectable
+            {
+                [propget] HRESULT Reading([out] [retval] Windows.Devices.Sensors.HingeAngleReading** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Sensors.HingeAngleSensor)]
+            [uuid(B7B63910-FBB1-4123-89CE-4EA34EB0DFCA)]
+            interface IHingeAngleSensorStatics : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
+                HRESULT GetDefaultAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleSensor*>** result);
+                HRESULT GetRelatedToAdjacentPanelsAsync([in] HSTRING firstPanelId, [in] HSTRING secondPanelId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleSensor*>** result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.HingeAngleSensor*>** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1653,6 +1720,15 @@ namespace Windows
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.SimpleOrientationSensor** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Sensors.SimpleOrientationSensor)]
+            [uuid(848F9C7F-B138-4E11-8910-A2A2A3B56D83)]
+            interface ISimpleOrientationSensorStatics2 : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* value);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.SimpleOrientationSensor*>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IAccelerometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1846,6 +1922,31 @@ namespace Windows
             runtimeclass GyrometerReadingChangedEventArgs
             {
                 [default] interface Windows.Devices.Sensors.IGyrometerReadingChangedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass HingeAngleReading
+            {
+                [default] interface Windows.Devices.Sensors.IHingeAngleReading;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Devices.Sensors.IHingeAngleSensorStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass HingeAngleSensor
+            {
+                [default] interface Windows.Devices.Sensors.IHingeAngleSensor;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass HingeAngleSensorReadingChangedEventArgs
+            {
+                [default] interface Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2076,6 +2177,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.ISimpleOrientationSensorStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.ISimpleOrientationSensorStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass SimpleOrientationSensor
             {

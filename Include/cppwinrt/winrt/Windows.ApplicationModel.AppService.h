@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.2.h"
@@ -71,38 +71,38 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return operation;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->add_RequestReceived(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection> consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived_revoker consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::AppService::IAppServiceConnection>(this, &abi_t<Windows::ApplicationModel::AppService::IAppServiceConnection>::remove_RequestReceived, RequestReceived(handler));
+    return impl::make_event_revoker<D, RequestReceived_revoker>(this, RequestReceived(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::RequestReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->remove_RequestReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->remove_RequestReceived(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->add_ServiceClosed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection> consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed_revoker consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::AppService::IAppServiceConnection>(this, &abi_t<Windows::ApplicationModel::AppService::IAppServiceConnection>::remove_ServiceClosed, ServiceClosed(handler));
+    return impl::make_event_revoker<D, ServiceClosed_revoker>(this, ServiceClosed(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>::ServiceClosed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->remove_ServiceClosed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::AppService::IAppServiceConnection)->remove_ServiceClosed(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus> consume_Windows_ApplicationModel_AppService_IAppServiceConnection2<D>::OpenRemoteAsync(Windows::System::RemoteSystems::RemoteSystemConnectionRequest const& remoteSystemConnectionRequest) const
@@ -209,438 +209,376 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceCatalogStatics> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>
 {
-    HRESULT __stdcall FindAppServiceProvidersAsync(HSTRING appServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL FindAppServiceProvidersAsync(void* appServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAppServiceProvidersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>>>(this->shim().FindAppServiceProvidersAsync(*reinterpret_cast<hstring const*>(&appServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::AppService::AppServiceClosedStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::AppService::AppServiceClosedStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::AppService::AppServiceClosedStatus));
             *value = detach_from<Windows::ApplicationModel::AppService::AppServiceClosedStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceConnection>
 {
-    HRESULT __stdcall get_AppServiceName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppServiceName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppServiceName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppServiceName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppServiceName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AppServiceName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppServiceName, WINRT_WRAP(void), hstring const&);
             this->shim().AppServiceName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PackageFamilyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PackageFamilyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(void), hstring const&);
             this->shim().PackageFamilyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenAsync(void** operation) noexcept final
+    int32_t WINRT_CALL OpenAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus>>(this->shim().OpenAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendMessageAsync(void* message, void** operation) noexcept final
+    int32_t WINRT_CALL SendMessageAsync(void* message, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse>), Windows::Foundation::Collections::ValueSet const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse>>(this->shim().SendMessageAsync(*reinterpret_cast<Windows::Foundation::Collections::ValueSet const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RequestReceived(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RequestReceived(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RequestReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RequestReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RequestReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RequestReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RequestReceived(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RequestReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RequestReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ServiceClosed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RequestReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServiceClosed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ServiceClosed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ServiceClosed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ServiceClosed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ServiceClosed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ServiceClosed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ServiceClosed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ServiceClosed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ServiceClosed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceConnection2> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceConnection2>
 {
-    HRESULT __stdcall OpenRemoteAsync(void* remoteSystemConnectionRequest, void** operation) noexcept final
+    int32_t WINRT_CALL OpenRemoteAsync(void* remoteSystemConnectionRequest, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenRemoteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus>), Windows::System::RemoteSystems::RemoteSystemConnectionRequest const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus>>(this->shim().OpenRemoteAsync(*reinterpret_cast<Windows::System::RemoteSystems::RemoteSystemConnectionRequest const*>(&remoteSystemConnectionRequest)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_User(void* value) noexcept final
+    int32_t WINRT_CALL put_User(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(void), Windows::System::User const&);
             this->shim().User(*reinterpret_cast<Windows::System::User const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceDeferral> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequest> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceRequest>
 {
-    HRESULT __stdcall get_Message(void** value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendResponseAsync(void* message, void** operation) noexcept final
+    int32_t WINRT_CALL SendResponseAsync(void* message, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendResponseAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponseStatus>), Windows::Foundation::Collections::ValueSet const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponseStatus>>(this->shim().SendResponseAsync(*reinterpret_cast<Windows::Foundation::Collections::ValueSet const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::ApplicationModel::AppService::AppServiceRequest));
             *value = detach_from<Windows::ApplicationModel::AppService::AppServiceRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::AppService::AppServiceDeferral));
             *value = detach_from<Windows::ApplicationModel::AppService::AppServiceDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceResponse> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceResponse>
 {
-    HRESULT __stdcall get_Message(void** value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::AppService::AppServiceResponseStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::AppService::AppServiceResponseStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::AppService::AppServiceResponseStatus));
             *value = detach_from<Windows::ApplicationModel::AppService::AppServiceResponseStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallerPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppServiceConnection(void** value) noexcept final
+    int32_t WINRT_CALL get_AppServiceConnection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppServiceConnection, WINRT_WRAP(Windows::ApplicationModel::AppService::AppServiceConnection));
             *value = detach_from<Windows::ApplicationModel::AppService::AppServiceConnection>(this->shim().AppServiceConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>
 {
-    HRESULT __stdcall get_IsRemoteSystemConnection(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRemoteSystemConnection(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRemoteSystemConnection, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRemoteSystemConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3> : produce_base<D, Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3>
 {
-    HRESULT __stdcall CheckCallerForCapabilityAsync(HSTRING capabilityName, void** operation) noexcept final
+    int32_t WINRT_CALL CheckCallerForCapabilityAsync(void* capabilityName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckCallerForCapabilityAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().CheckCallerForCapabilityAsync(*reinterpret_cast<hstring const*>(&capabilityName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -650,11 +588,11 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::AppService {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(param::hstring const& appServiceName)
 {
-    return get_activation_factory<AppServiceCatalog, Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>().FindAppServiceProvidersAsync(appServiceName);
+    return impl::call_factory<AppServiceCatalog, Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>([&](auto&& f) { return f.FindAppServiceProvidersAsync(appServiceName); });
 }
 
 inline AppServiceConnection::AppServiceConnection() :
-    AppServiceConnection(get_activation_factory<AppServiceConnection>().ActivateInstance<AppServiceConnection>())
+    AppServiceConnection(impl::call_factory<AppServiceConnection>([](auto&& f) { return f.template ActivateInstance<AppServiceConnection>(); }))
 {}
 
 }
@@ -682,5 +620,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::AppService::AppServiceR
 template<> struct hash<winrt::Windows::ApplicationModel::AppService::AppServiceTriggerDetails> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::AppService::AppServiceTriggerDetails> {};
 
 }
-
-WINRT_WARNING_POP

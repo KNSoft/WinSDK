@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.enumeration.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -428,6 +440,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics ABI::Windows::Devices::Enumeration::IDeviceInformationPairingStatics
 
 #endif // ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Enumeration {
+                interface IDeviceInformationPairingStatics2;
+            } /* Windows */
+        } /* Devices */
+    } /* Enumeration */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 ABI::Windows::Devices::Enumeration::IDeviceInformationPairingStatics2
+
+#endif // ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationStatics_FWD_DEFINED__
@@ -2437,6 +2463,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Devices {
@@ -2612,6 +2639,11 @@ namespace ABI {
                     DeviceInformationKind_AssociationEndpoint = 5,
                     DeviceInformationKind_AssociationEndpointContainer = 6,
                     DeviceInformationKind_AssociationEndpointService = 7,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
+                    DeviceInformationKind_DevicePanel = 8,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
                 };
                 
             } /* Windows */
@@ -3480,6 +3512,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Enumeration.IDeviceInformationPairingStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Enumeration.DeviceInformationPairing
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Enumeration_IDeviceInformationPairingStatics2[] = L"Windows.Devices.Enumeration.IDeviceInformationPairingStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Enumeration {
+                /* [object, uuid("04DE5372-B7B7-476B-A74F-C5836A704D98"), exclusiveto, contract] */
+                MIDL_INTERFACE("04DE5372-B7B7-476B-A74F-C5836A704D98")
+                IDeviceInformationPairingStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE TryRegisterForAllInboundPairingRequestsWithProtectionLevel(
+                        /* [in] */ABI::Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported,
+                        /* [in] */ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel,
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDeviceInformationPairingStatics2=_uuidof(IDeviceInformationPairingStatics2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Enumeration */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4617,6 +4692,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Enumeration.IDeviceInformationPairingStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Enumeration.IDeviceInformationPairingStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -5025,6 +5101,12 @@ typedef interface __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPair
 typedef interface __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics;
 
 #endif // ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2;
+
+#endif // ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationStatics_FWD_DEFINED__
@@ -8228,6 +8310,7 @@ typedef enum __x_ABI_CWindows_CDevices_CEnumeration_CPanel __x_ABI_CWindows_CDev
 
 
 
+
 /*
  *
  * Struct Windows.Devices.Enumeration.DeviceAccessStatus
@@ -8302,6 +8385,11 @@ enum __x_ABI_CWindows_CDevices_CEnumeration_CDeviceInformationKind
     DeviceInformationKind_AssociationEndpoint = 5,
     DeviceInformationKind_AssociationEndpointContainer = 6,
     DeviceInformationKind_AssociationEndpointService = 7,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    DeviceInformationKind_DevicePanel = 8,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -9814,6 +9902,101 @@ interface __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStati
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Enumeration.IDeviceInformationPairingStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Enumeration.DeviceInformationPairing
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Enumeration_IDeviceInformationPairingStatics2[] = L"Windows.Devices.Enumeration.IDeviceInformationPairingStatics2";
+/* [object, uuid("04DE5372-B7B7-476B-A74F-C5836A704D98"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *TryRegisterForAllInboundPairingRequestsWithProtectionLevel )(
+        __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2 * This,
+        /* [in] */__x_ABI_CWindows_CDevices_CEnumeration_CDevicePairingKinds pairingKindsSupported,
+        /* [in] */__x_ABI_CWindows_CDevices_CEnumeration_CDevicePairingProtectionLevel minProtectionLevel,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_TryRegisterForAllInboundPairingRequestsWithProtectionLevel(This,pairingKindsSupported,minProtectionLevel,result) \
+    ( (This)->lpVtbl->TryRegisterForAllInboundPairingRequestsWithProtectionLevel(This,pairingKindsSupported,minProtectionLevel,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CEnumeration_CIDeviceInformationPairingStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12139,6 +12322,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Enumeration.IDeviceInformationPairingStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Enumeration.IDeviceInformationPairingStatics interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:

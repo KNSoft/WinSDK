@@ -4,21 +4,30 @@
 //* Copyright (c) Microsoft Corporation. All Rights Reserved.          *`
 //**********************************************************************`
 #pragma once
-//+
-// Provider Microsoft-Windows-Kernel-WHEA Event Count 31
-//+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Provider "Microsoft-Windows-Kernel-WHEA" event count 32
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Provider GUID = 7b563579-53c8-44e7-8236-0f87b9fe6594
 EXTERN_C __declspec(selectany) const GUID WHEA_ETW_PROVIDER = {0x7b563579, 0x53c8, 0x44e7, {0x82, 0x36, 0x0f, 0x87, 0xb9, 0xfe, 0x65, 0x94}};
+
+#ifndef WHEA_ETW_PROVIDER_Traits
+#define WHEA_ETW_PROVIDER_Traits NULL
+#endif // WHEA_ETW_PROVIDER_Traits
 
 //
 // Channel
 //
 #define WHEA_ETW_PROVIDER_CHANNEL_systemChannel 0x8
 #define WHEA_CHANNEL 0x10
-#define WHEA_INIT_CHANNEL 0x11
+#define WHEA_EVENTLOG_CHANNEL 0x11
+
 //
 // Keyword
 //
 #define WHEA_ERROR_KEYWORD 0x800
+#define WHEA_EVENTLOG_KEYWORD 0x400
 
 //
 // Event Descriptors
@@ -49,6 +58,9 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR WHEA_SQM_EVENT_ADDTOSTREAM
 #define WHEA_SQM_EVENT_ADDTOSTREAM_value 0x28
 EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR EVENT_WHEA_PROCESS_TERMINATE = {0x29, 0x0, 0x10, 0x4, 0x0, 0x0, 0x4000000000000800};
 #define EVENT_WHEA_PROCESS_TERMINATE_value 0x29
+EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR EVENT_WHEA_LOG_ENTRY = {0x2a, 0x0, 0x11, 0x4, 0x0, 0x0, 0x2000000000000400};
+#define EVENT_WHEA_LOG_ENTRY_value 0x2a
+
 #define MSG_CorrectedError_EventMessage      0x00000001L
 #define MSG_UncorrectedError_EventMessage    0x00000002L
 #define MSG_MCAMemHierarchyErr_EventMessage  0x00000006L
@@ -59,6 +71,7 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR EVENT_WHEA_PROCESS_TERMINA
 #define MSG_MCAExternalErr_EventMessage      0x00000010L
 #define MSG_MCAFRCErr_EventMessage           0x00000011L
 #define MSG_PCIeErr_EventMessage             0x00000012L
+#define MSG_WHEA_EVENTLOG_KEYWORD_KeywordMessage 0x1000000BL
 #define MSG_WHEA_ERROR_KEYWORD_KeywordMessage 0x1000000CL
 #define MSG_eventProviderName                0x90000001L
 #define MSG_Init_EventMessage                0xB0000005L
@@ -71,6 +84,7 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR EVENT_WHEA_PROCESS_TERMINA
 #define MSG_WHEA_EventMessage                0xB0000014L
 #define MSG_MemoryOffline_EventMessage       0xB000001FL
 #define MSG_ProcessTerminate_EventMessage    0xB0000029L
+#define MSG_WheaEventLog_EventMessage        0xB000002AL
 #define MSG_mapWHEAPending_No                0xD0000001L
 #define MSG_mapWHEAPending_Yes               0xD0000002L
 #define MSG_mapWHEAPlatformDirected_No       0xD0000003L

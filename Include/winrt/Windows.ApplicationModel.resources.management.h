@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.resources.management.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -88,7 +96,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION 0x10000
+#define WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
@@ -96,7 +104,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -696,11 +704,7 @@ namespace ABI {
                     {
                         IndexedResourceType_String = 0,
                         IndexedResourceType_Path = 1,
-#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
-                        
                         IndexedResourceType_EmbeddedData = 2,
-#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
-                        
                     };
                     
                 } /* Windows */
@@ -835,16 +839,28 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Resources {
                 namespace Management {
-                    /* [object, uuid("2D4CF9A5-E32F-4AB2-8748-96350A016DA3"), exclusiveto, contract] */
+                    /* [object, uuid("2D4CF9A5-E32F-4AB2-8748-96350A016DA3"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("2D4CF9A5-E32F-4AB2-8748-96350A016DA3")
+                    
+                    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+                    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
                     IResourceIndexer : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE IndexFilePath(
+                        
+                        #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+                        #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE IndexFilePath(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * filePath,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Management::IIndexedResourceCandidate * * candidate
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE IndexFileContentsAsync(
+                        
+                        #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+                        #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE IndexFileContentsAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * file,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CResources__CManagement__CIndexedResourceCandidate * * operation
                             ) = 0;
@@ -883,12 +899,20 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Resources {
                 namespace Management {
-                    /* [object, uuid("B8DE3F09-31CD-4D97-BD30-8D39F742BC61"), exclusiveto, contract] */
+                    /* [object, uuid("B8DE3F09-31CD-4D97-BD30-8D39F742BC61"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("B8DE3F09-31CD-4D97-BD30-8D39F742BC61")
+                    
+                    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory.  For more info, see MSDN.")
+                    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
                     IResourceIndexerFactory : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexer(
+                        
+                        #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory.  For more info, see MSDN.")
+                        #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexer(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * projectRoot,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Management::IResourceIndexer * * indexer
                             ) = 0;
@@ -927,12 +951,20 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Resources {
                 namespace Management {
-                    /* [object, uuid("6040F18D-D5E5-4B60-9201-CD279CBCFED9"), exclusiveto, contract] */
+                    /* [object, uuid("6040F18D-D5E5-4B60-9201-CD279CBCFED9"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("6040F18D-D5E5-4B60-9201-CD279CBCFED9")
+                    
+                    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory2.  For more info, see MSDN.")
+                    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
                     IResourceIndexerFactory2 : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexerWithExtension(
+                        
+                        #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory2.  For more info, see MSDN.")
+                        #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE CreateResourceIndexerWithExtension(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * projectRoot,
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * extensionDllPath,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Management::IResourceIndexer * * indexer
@@ -1019,6 +1051,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Resources_Management_ResourceIndexer_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Resources_Management_ResourceIndexer_DEFINED
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of ResourceIndexer.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Resources_Management_ResourceIndexer[] = L"Windows.ApplicationModel.Resources.Management.ResourceIndexer";
 #endif
 #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
@@ -2066,11 +2102,7 @@ enum __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIndexedResourceT
 {
     IndexedResourceType_String = 0,
     IndexedResourceType_Path = 1,
-#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
-    
     IndexedResourceType_EmbeddedData = 2,
-#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
-    
 };
 #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000
 
@@ -2319,8 +2351,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CManagement
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_Management_IResourceIndexer[] = L"Windows.ApplicationModel.Resources.Management.IResourceIndexer";
-/* [object, uuid("2D4CF9A5-E32F-4AB2-8748-96350A016DA3"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerVtbl
+/* [object, uuid("2D4CF9A5-E32F-4AB2-8748-96350A016DA3"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -2353,12 +2389,20 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *IndexFilePath )(
+
+    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *IndexFilePath )(
         __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * filePath,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIIndexedResourceCandidate * * candidate
         );
-    HRESULT ( STDMETHODCALLTYPE *IndexFileContentsAsync )(
+    
+    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *IndexFileContentsAsync )(
         __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * file,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CResources__CManagement__CIndexedResourceCandidate * * operation
@@ -2391,9 +2435,17 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIn
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer_IndexFilePath(This,filePath,candidate) \
     ( (This)->lpVtbl->IndexFilePath(This,filePath,candidate) )
 
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IndexFilePath in mrmsupport.dll instead of IResourceIndexer.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer_IndexFileContentsAsync(This,file,operation) \
     ( (This)->lpVtbl->IndexFileContentsAsync(This,file,operation) )
 
@@ -2421,8 +2473,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CManagement
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_Management_IResourceIndexerFactory[] = L"Windows.ApplicationModel.Resources.Management.IResourceIndexerFactory";
-/* [object, uuid("B8DE3F09-31CD-4D97-BD30-8D39F742BC61"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactoryVtbl
+/* [object, uuid("B8DE3F09-31CD-4D97-BD30-8D39F742BC61"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactoryVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -2455,7 +2511,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *CreateResourceIndexer )(
+
+    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory.  For more info, see MSDN.")
+    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *CreateResourceIndexer )(
         __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * projectRoot,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexer * * indexer
@@ -2488,6 +2548,10 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIn
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory_CreateResourceIndexer(This,projectRoot,indexer) \
     ( (This)->lpVtbl->CreateResourceIndexer(This,projectRoot,indexer) )
 
@@ -2515,8 +2579,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CManagement
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_Management_IResourceIndexerFactory2[] = L"Windows.ApplicationModel.Resources.Management.IResourceIndexerFactory2";
-/* [object, uuid("6040F18D-D5E5-4B60-9201-CD279CBCFED9"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2Vtbl
+/* [object, uuid("6040F18D-D5E5-4B60-9201-CD279CBCFED9"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory2.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2Vtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -2549,7 +2617,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2 * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *CreateResourceIndexerWithExtension )(
+
+    #if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory2.  For more info, see MSDN.")
+    #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *CreateResourceIndexerWithExtension )(
         __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * projectRoot,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * extensionDllPath,
@@ -2583,6 +2655,10 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIn
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of IResourceIndexerFactory2.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CManagement_CIResourceIndexerFactory2_CreateResourceIndexerWithExtension(This,projectRoot,extensionDllPath,indexer) \
     ( (This)->lpVtbl->CreateResourceIndexerWithExtension(This,projectRoot,extensionDllPath,indexer) )
 
@@ -2662,6 +2738,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Resources_Management_ResourceIndexer_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Resources_Management_ResourceIndexer_DEFINED
+
+#if WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use CreateResourceIndexer in mrmsupport.dll instead of ResourceIndexer.  For more info, see MSDN.")
+#endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Resources_Management_ResourceIndexer[] = L"Windows.ApplicationModel.Resources.Management.ResourceIndexer";
 #endif
 #endif // WINDOWS_APPLICATIONMODEL_RESOURCES_MANAGEMENT_RESOURCEINDEXERCONTRACT_VERSION >= 0x10000

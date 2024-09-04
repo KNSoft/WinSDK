@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -44,12 +44,41 @@ template <> struct name<Windows::Devices::Adc::IAdcControllerStatics2>{ static c
 template <> struct name<Windows::Devices::Adc::AdcChannel>{ static constexpr auto & value{ L"Windows.Devices.Adc.AdcChannel" }; };
 template <> struct name<Windows::Devices::Adc::AdcController>{ static constexpr auto & value{ L"Windows.Devices.Adc.AdcController" }; };
 template <> struct name<Windows::Devices::Adc::AdcChannelMode>{ static constexpr auto & value{ L"Windows.Devices.Adc.AdcChannelMode" }; };
-template <> struct guid<Windows::Devices::Adc::IAdcChannel>{ static constexpr GUID value{ 0x040BF414,0x2588,0x4A56,{ 0xAB,0xEF,0x73,0xA2,0x60,0xAC,0xC6,0x0A } }; };
-template <> struct guid<Windows::Devices::Adc::IAdcController>{ static constexpr GUID value{ 0x2A76E4B0,0xA896,0x4219,{ 0x86,0xB6,0xEA,0x8C,0xDC,0xE9,0x8F,0x56 } }; };
-template <> struct guid<Windows::Devices::Adc::IAdcControllerStatics>{ static constexpr GUID value{ 0xCCE98E0C,0x01F8,0x4891,{ 0xBC,0x3B,0xBE,0x53,0xEF,0x27,0x9C,0xA4 } }; };
-template <> struct guid<Windows::Devices::Adc::IAdcControllerStatics2>{ static constexpr GUID value{ 0xA2B93B1D,0x977B,0x4F5A,{ 0xA5,0xFE,0xA6,0xAB,0xAF,0xFE,0x64,0x84 } }; };
+template <> struct guid_storage<Windows::Devices::Adc::IAdcChannel>{ static constexpr guid value{ 0x040BF414,0x2588,0x4A56,{ 0xAB,0xEF,0x73,0xA2,0x60,0xAC,0xC6,0x0A } }; };
+template <> struct guid_storage<Windows::Devices::Adc::IAdcController>{ static constexpr guid value{ 0x2A76E4B0,0xA896,0x4219,{ 0x86,0xB6,0xEA,0x8C,0xDC,0xE9,0x8F,0x56 } }; };
+template <> struct guid_storage<Windows::Devices::Adc::IAdcControllerStatics>{ static constexpr guid value{ 0xCCE98E0C,0x01F8,0x4891,{ 0xBC,0x3B,0xBE,0x53,0xEF,0x27,0x9C,0xA4 } }; };
+template <> struct guid_storage<Windows::Devices::Adc::IAdcControllerStatics2>{ static constexpr guid value{ 0xA2B93B1D,0x977B,0x4F5A,{ 0xA5,0xFE,0xA6,0xAB,0xAF,0xFE,0x64,0x84 } }; };
 template <> struct default_interface<Windows::Devices::Adc::AdcChannel>{ using type = Windows::Devices::Adc::IAdcChannel; };
 template <> struct default_interface<Windows::Devices::Adc::AdcController>{ using type = Windows::Devices::Adc::IAdcController; };
+
+template <> struct abi<Windows::Devices::Adc::IAdcChannel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Controller(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadValue(int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadRatio(double* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Adc::IAdcController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChannelCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolutionInBits(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinValue(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxValue(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelMode(Windows::Devices::Adc::AdcChannelMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChannelMode(Windows::Devices::Adc::AdcChannelMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsChannelModeSupported(Windows::Devices::Adc::AdcChannelMode channelMode, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenChannel(int32_t channelNumber, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Adc::IAdcControllerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Adc::IAdcControllerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Adc_IAdcChannel
@@ -87,34 +116,5 @@ struct consume_Windows_Devices_Adc_IAdcControllerStatics2
     Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> GetDefaultAsync() const;
 };
 template <> struct consume<Windows::Devices::Adc::IAdcControllerStatics2> { template <typename D> using type = consume_Windows_Devices_Adc_IAdcControllerStatics2<D>; };
-
-template <> struct abi<Windows::Devices::Adc::IAdcChannel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Controller(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ReadValue(int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall ReadRatio(double* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Adc::IAdcController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChannelCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolutionInBits(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinValue(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxValue(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelMode(Windows::Devices::Adc::AdcChannelMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ChannelMode(Windows::Devices::Adc::AdcChannelMode value) noexcept = 0;
-    virtual HRESULT __stdcall IsChannelModeSupported(Windows::Devices::Adc::AdcChannelMode channelMode, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall OpenChannel(int32_t channelNumber, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Adc::IAdcControllerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Adc::IAdcControllerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefaultAsync(void** operation) noexcept = 0;
-};};
 
 }

@@ -170,7 +170,7 @@ storvsc.sys or netvsc.sys.  Others are just integrations between the host and
 the guests.  The simpler integrations operate in the least expensive manner.
 Other, higher-performance services require somthing a little bit more complex.
 
-Each VMBus service is made up of one or more channel.  The protocol used with
+Each VMBus service is made up of one or more channels.  The protocol used with
 the channel is identified by a type GUID.  The specific instance of the service
 is identified by an instance GUID.  When the service is offered to the guest VM,
 the server endpoint decides what the properties of the channel(s) are.
@@ -329,7 +329,7 @@ the memory descriptors need to be converted into something interpretable by the
 opposite endpoint, in some cases a handle need to be allocated from a handle table,
 The packet needs to be inserted into the ring buffer, if the ring buffer is full
 then the transaction needs to get enqueued until space frees up, a signal needs to
-be sent to the opposite endpoint, etc.  By allocating an using a packet object,
+be sent to the opposite endpoint, etc.  By allocating and using a packet object,
 all of these mechanics are handled in common code.
 
 When a packet object is allocated, all of the resources necessary for a VMBus
@@ -838,6 +838,55 @@ FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE(
 typedef FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE *PFN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE;
 FN_VMB_CHANNEL_INIT_SET_CLIENT_CONTEXT_SIZE VmbChannelInitSetClientContextSize;
 
+
+/// \page VmbChannelPacketGetClientContext VmbChannelPacketGetClientContext
+/// Returns a pointer to the optional packet context, allocated by KMCL on 
+/// behalf of the client.
+///
+/// \param PacketCompletionContext See \ref VMBPACKETCOMPLETION
+typedef
+PVOID
+FASTCALL
+FN_VMB_CHANNEL_PACKET_GET_CLIENT_CONTEXT(
+    _In_ VMBPACKETCOMPLETION PacketCompletionContext
+    );
+
+typedef FN_VMB_CHANNEL_PACKET_GET_CLIENT_CONTEXT *PFN_VMB_CHANNEL_PACKET_GET_CLIENT_CONTEXT;
+FN_VMB_CHANNEL_PACKET_GET_CLIENT_CONTEXT VmbChannelPacketGetClientContext;
+
+
+/// \page VmbChannelGetTargetDeviceObject VmbChannelGetTargetDeviceObject
+/// Retrieves the target device object for the associated VMBus device.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param TargetDeviceObject Returns a pointer to the target device object.
+typedef
+VOID
+FN_VMB_CHANNEL_GET_TARGET_DEVICE_OBJECT(
+    _In_ VMBCHANNEL Channel,
+    _Out_ PDEVICE_OBJECT *TargetDeviceObject
+    );
+
+typedef FN_VMB_CHANNEL_GET_TARGET_DEVICE_OBJECT *PFN_VMB_CHANNEL_GET_TARGET_DEVICE_OBJECT;
+FN_VMB_CHANNEL_GET_TARGET_DEVICE_OBJECT VmbChannelGetTargetDeviceObject;
+
+
+/// \page VmbChannelGetParentDeviceObject VmbChannelGetParentDeviceObject
+/// Retrieves the parent device object for the associated VMBus device.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param ParentDeviceObject Returns a pointer to the parent device object.
+typedef
+VOID
+FN_VMB_CHANNEL_GET_PARENT_DEVICE_OBJECT(
+    _In_ VMBCHANNEL Channel,
+    _Out_ PDEVICE_OBJECT *ParentDeviceObject
+    );
+
+typedef FN_VMB_CHANNEL_GET_PARENT_DEVICE_OBJECT *PFN_VMB_CHANNEL_GET_PARENT_DEVICE_OBJECT;
+FN_VMB_CHANNEL_GET_PARENT_DEVICE_OBJECT VmbChannelGetParentDeviceObject;
+
+
 /// \page VmbChannelInitSetProcessPacketCallbacks VmbChannelInitSetProcessPacketCallbacks
 /// Sets callbacks for packet processing. Only meaningful if KMCL queue
 /// management is not suppressed.  TODO:  Make previous sentence more precise.
@@ -1332,6 +1381,7 @@ FN_VMB_CHANNEL_RESTORE_FROM_BUFFER(
 typedef FN_VMB_CHANNEL_RESTORE_FROM_BUFFER *PFN_VMB_CHANNEL_RESTORE_FROM_BUFFER;
 FN_VMB_CHANNEL_RESTORE_FROM_BUFFER VmbChannelRestoreFromBuffer;
 
+
 /// \page VmbChannelPacketComplete VmbChannelPacketComplete
 /// This function is called when the client driver is completely finished
 /// processing a packet.  This may be directly from the packet parsing function
@@ -1427,8 +1477,14 @@ FN_VMB_CHANNEL_PACKET_FAIL VmbChannelPacketFail;
 /// \ref VMBUS_CHANNEL_PACKET_EXTERNAL_DATA_FLAG_READ_ONLY - Map MDL as read-only.
 /// \endparblock
 /// \param Mdl A pointer to return the mapped MDL.
+///
+/// \retval STATUS_SUCCESS The mapping was successful.
+/// \retval STATUS_PENDING The regions of the VM need to be paged in. Callers
+///     should do nothing; the packet processing routine will be called again once
+///     the external data is resident.
+/// \retval Another NTSTATUS code. The mapping was unsuccessful.
 typedef
-_Success_(return == STATUS_SUCCESS)
+_Success_(return == 0)
 NTSTATUS
 FN_VMB_CHANNEL_PACKET_GET_EXTERNAL_DATA(
     _In_ VMBPACKETCOMPLETION PacketCompletionContext,
@@ -1657,9 +1713,17 @@ FN_VMB_PACKET_GET_POINTER VmbPacketGetPointer;
 /// in different ways.
 ///
 /// \param PacketObject This is a handle to the \ref VMBPACKET object.
-/// \param PacketBuf Buffer containing the "command" packet which will be sent
+/// \param Buffer Buffer containing the "command" packet which will be sent
 ///     through the VMBus ring buffer.
-/// \param BufSize Size in bytes of the buffer pointed to by PacketBuf.
+/// \param BufferLength Size in bytes of the buffer pointed to by Buffer.
+///     BufferLength is constrained by the size of the ring buffer and the MTU
+///     for all KMCL ring buffers (524,280 bytes). The sum of the internal 
+///     packet header (up to 32 bytes), plus BufferLength, plus additional 
+///     headers for each chained MDL in ExternalDataMdl (8 bytes) and each page 
+///     specified in ExternalDataMdl (8 bytes) must be less than the size of 
+///     the ring buffer and the MTU. 
+///     See \ref VmbClientChannelInitSetRingBufferPageCount for more 
+///     information about setting the size of the outgoing ring buffer.
 /// \param ExternalDataMdl Optional MDL describing a data buffer associated with
 ///     the packet.
 /// \param Flags \parblock
@@ -1698,9 +1762,17 @@ FN_VMB_PACKET_SEND VmbPacketSend;
 /// MDL offset and MDL length.
 ///
 /// \param PacketObject This is a handle to the \ref VMBPACKET object.
-/// \param PacketBuf Buffer containing the "command" packet which will be sent
+/// \param Buffer Buffer containing the "command" packet which will be sent
 ///     through the VMBus ring buffer.
-/// \param BufSize Size in bytes of the buffer pointed to by PacketBuf.
+/// \param BufferLength Size in bytes of the buffer pointed to by Buffer.
+///     BufferLength is constrained by the size of the ring buffer and the MTU
+///     for all KMCL ring buffers (524,280 bytes). The sum of the internal 
+///     packet header (up to 32 bytes), plus BufferLength, plus additional 
+///     headers for each chained MDL in ExternalDataMdl (8 bytes) and each page 
+///     specified in ExternalDataMdl (8 bytes) must be less than the size of 
+///     the ring buffer and the MTU. 
+///     See \ref VmbClientChannelInitSetRingBufferPageCount for more 
+///     information about setting the size of the outgoing ring buffer.
 /// \param ExternalDataMdl Optional MDL describing a data buffer associated with
 ///     the packet.
 /// \param MdlOffset The offset from the buffer described by the MDL where the
@@ -1754,9 +1826,17 @@ FN_VMB_PACKET_SEND_WITH_EXTERNAL_MDL VmbPacketSendWithExternalMdl;
 /// addresses)
 ///
 /// \param PacketObject This is a handle to the \ref VMBPACKET object.
-/// \param PacketBuf Buffer containing the "command" packet which will be sent
+/// \param Buffer Buffer containing the "command" packet which will be sent
 ///     through the VMBus ring buffer.
-/// \param BufSize Size in bytes of the buffer pointed to by PacketBuf.
+/// \param BufferLength Size in bytes of the buffer pointed to by Buffer.
+///     BufferLength is constrained by the size of the ring buffer and the MTU
+///     for all KMCL ring buffers (524,280 bytes). The sum of the internal 
+///     packet header (up to 32 bytes), plus BufferLength, plus additional 
+///     headers for each chained MDL in ExternalDataMdl (8 bytes) and each page 
+///     specified in ExternalDataMdl (8 bytes) must be less than the size of 
+///     the ring buffer and the MTU. 
+///     See \ref VmbClientChannelInitSetRingBufferPageCount for more 
+///     information about setting the size of the outgoing ring buffer.
 /// \param ExternalDataPfns Optional array of Physical Frame
 ///     nubmers describing a data buffer associated with
 ///     the packet.
@@ -1800,7 +1880,15 @@ FN_VMB_PACKET_SEND_WITH_EXTERNAL_PFNS VmbPacketSendWithExternalPfns;
 ///
 /// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
 /// \param Buffer Data to send.
-/// \param BufferSize Size of Buffer in bytes.
+/// \param BufferLength Size in bytes of the buffer pointed to by Buffer.
+///     BufferLength is constrained by the size of the ring buffer and the MTU
+///     for all KMCL ring buffers (524,280 bytes). The sum of the internal 
+///     packet header (up to 32 bytes), plus BufferLength, plus additional 
+///     headers for each chained MDL in ExternalDataMdl (8 bytes) and each page 
+///     specified in ExternalDataMdl (8 bytes) must be less than the size of 
+///     the ring buffer and the MTU. 
+///     See \ref VmbClientChannelInitSetRingBufferPageCount for more 
+///     information about setting the size of the outgoing ring buffer.
 /// \param ExternalDataMdl Optionally, a MDL describing an additional buffer to
 ///     send.
 /// \param Flags Standard flags.
@@ -2112,7 +2200,8 @@ typedef struct _KMCL_SERVER_ONLY_METHODS {
 } KMCL_SERVER_ONLY_METHODS;
 
 #define KMCL_CLIENT_INTERFACE_VERSION_V1     1
-#define KMCL_CLIENT_INTERFACE_VERSION_LATEST KMCL_CLIENT_INTERFACE_VERSION_V1
+#define KMCL_CLIENT_INTERFACE_VERSION_V2     2
+#define KMCL_CLIENT_INTERFACE_VERSION_LATEST KMCL_CLIENT_INTERFACE_VERSION_V2
 /* 4aecb860-e161-42bb-a5ca-77f3a9645905 */
 DEFINE_GUID(KMCL_CLIENT_INTERFACE_TYPE, 0x4aecb860, 0xe161, 0x42bb, 0xa5, 0xca, 0x77, 0xf3, 0xa9, 0x64, 0x59, 0x05);
 
@@ -2172,6 +2261,27 @@ typedef struct _KMCL_CLIENT_INTERFACE_V1 {
 } KMCL_CLIENT_INTERFACE_V1, *PKMCL_CLIENT_INTERFACE_V1;
 
 C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V1) <= MAXUSHORT);
+
+
+#ifdef __cplusplus
+
+typedef struct _KMCL_CLIENT_INTERFACE_V2 : KMCL_CLIENT_INTERFACE_V1 {
+
+#else
+
+typedef struct _KMCL_CLIENT_INTERFACE_V2 {
+    KMCL_CLIENT_INTERFACE_V1;
+
+#endif
+
+    PFN_VMB_CHANNEL_PACKET_GET_CLIENT_CONTEXT               VmbChannelPacketGetClientContext;
+    PFN_VMB_CHANNEL_GET_TARGET_DEVICE_OBJECT                VmbChannelGetTargetDeviceObject;
+    PFN_VMB_CHANNEL_GET_PARENT_DEVICE_OBJECT                VmbChannelGetParentDeviceObject;
+
+} KMCL_CLIENT_INTERFACE_V2, *PKMCL_CLIENT_INTERFACE_V2;
+
+C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V2) <= MAXUSHORT);
+
 
 #define KMCL_SERVER_INTERFACE_VERSION_V1     1
 #define KMCL_SERVER_INTERFACE_VERSION_LATEST KMCL_SERVER_INTERFACE_VERSION_V1

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -22,7 +22,8 @@ namespace winrt::impl {
 WINRT_EXPORT namespace winrt::Windows::UI::Notifications {
 
 struct WINRT_EBO AdaptiveNotificationText :
-    Windows::UI::Notifications::IAdaptiveNotificationText
+    Windows::UI::Notifications::IAdaptiveNotificationText,
+    impl::require<AdaptiveNotificationText, Windows::UI::Notifications::IAdaptiveNotificationContent>
 {
     AdaptiveNotificationText(std::nullptr_t) noexcept {}
     AdaptiveNotificationText();
@@ -140,6 +141,12 @@ struct WINRT_EBO ScheduledToastNotification :
     ScheduledToastNotification(std::nullptr_t) noexcept {}
     ScheduledToastNotification(Windows::Data::Xml::Dom::XmlDocument const& content, Windows::Foundation::DateTime const& deliveryTime);
     ScheduledToastNotification(Windows::Data::Xml::Dom::XmlDocument const& content, Windows::Foundation::DateTime const& deliveryTime, Windows::Foundation::TimeSpan const& snoozeInterval, uint32_t maximumSnoozeCount);
+};
+
+struct WINRT_EBO ScheduledToastNotificationShowingEventArgs :
+    Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs
+{
+    ScheduledToastNotificationShowingEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ShownTileNotification :
@@ -280,7 +287,7 @@ struct WINRT_EBO ToastNotificationManagerForUser :
 
 struct WINRT_EBO ToastNotifier :
     Windows::UI::Notifications::IToastNotifier,
-    impl::require<ToastNotifier, Windows::UI::Notifications::IToastNotifier2>
+    impl::require<ToastNotifier, Windows::UI::Notifications::IToastNotifier2, Windows::UI::Notifications::IToastNotifier3>
 {
     ToastNotifier(std::nullptr_t) noexcept {}
 };

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.services.cortana.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -252,12 +264,56 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+#include "Windows.ApplicationModel.DataTransfer.h"
+#include "Windows.Storage.Streams.h"
 #include "Windows.System.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                interface ICortanaActionableInsights;
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights ABI::Windows::Services::Cortana::ICortanaActionableInsights
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                interface ICortanaActionableInsightsOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions ABI::Windows::Services::Cortana::ICortanaActionableInsightsOptions
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                interface ICortanaActionableInsightsStatics;
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics ABI::Windows::Services::Cortana::ICortanaActionableInsightsStatics
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager_FWD_DEFINED__
 namespace ABI {
@@ -513,8 +569,106 @@ typedef IAsyncOperation<bool> __FIAsyncOperation_1_boolean_t;
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                class DataPackage;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IDataPackage;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage ABI::Windows::ApplicationModel::DataTransfer::IDataPackage
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
 
 
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IAsyncAction;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Uri;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IUriRuntimeClass;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Streams {
+                interface IRandomAccessStreamReference;
+            } /* Windows */
+        } /* Storage */
+    } /* Streams */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference ABI::Windows::Storage::Streams::IRandomAccessStreamReference
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class User;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IUser;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIUser ABI::Windows::System::IUser
+
+#endif // ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
 
 
 
@@ -543,6 +697,29 @@ namespace ABI {
 
 
 
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                class CortanaActionableInsights;
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                class CortanaActionableInsightsOptions;
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
 
 
 namespace ABI {
@@ -635,6 +812,172 @@ namespace ABI {
         } /* Services */
     } /* Cortana */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsights
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsights
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsights[] = L"Windows.Services.Cortana.ICortanaActionableInsights";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                /* [object, uuid("951EC6B1-FC83-586D-8B84-2452C8981625"), exclusiveto, contract] */
+                MIDL_INTERFACE("951EC6B1-FC83-586D-8B84-2452C8981625")
+                ICortanaActionableInsights : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsAvailableAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsForImageAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * imageStream,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsForImageWithOptionsAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * imageStream,
+                        /* [in] */__RPC__in_opt ABI::Windows::Services::Cortana::ICortanaActionableInsightsOptions * options,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsForTextAsync(
+                        /* [in] */__RPC__in HSTRING text,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsForTextWithOptionsAsync(
+                        /* [in] */__RPC__in HSTRING text,
+                        /* [in] */__RPC__in_opt ABI::Windows::Services::Cortana::ICortanaActionableInsightsOptions * options,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * datapackage,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE ShowInsightsWithOptionsAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * datapackage,
+                        /* [in] */__RPC__in_opt ABI::Windows::Services::Cortana::ICortanaActionableInsightsOptions * options,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICortanaActionableInsights=_uuidof(ICortanaActionableInsights);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsightsOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsightsOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsightsOptions[] = L"Windows.Services.Cortana.ICortanaActionableInsightsOptions";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                /* [object, uuid("AAC2BBCF-9782-5420-B81E-7AE56AF31815"), exclusiveto, contract] */
+                MIDL_INTERFACE("AAC2BBCF-9782-5420-B81E-7AE56AF31815")
+                ICortanaActionableInsightsOptions : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentSourceWebLink(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ContentSourceWebLink(
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SurroundingText(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SurroundingText(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICortanaActionableInsightsOptions=_uuidof(ICortanaActionableInsightsOptions);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsightsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsights
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsightsStatics[] = L"Windows.Services.Cortana.ICortanaActionableInsightsStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Services {
+            namespace Cortana {
+                /* [object, uuid("B5DED412-9D2F-5CB5-9B05-356A0B836C10"), exclusiveto, contract] */
+                MIDL_INTERFACE("B5DED412-9D2F-5CB5-9B05-356A0B836C10")
+                ICortanaActionableInsightsStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetDefault(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Cortana::ICortanaActionableInsights * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetForUser(
+                        /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Services::Cortana::ICortanaActionableInsights * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICortanaActionableInsightsStatics=_uuidof(ICortanaActionableInsightsStatics);
+                
+            } /* Windows */
+        } /* Services */
+    } /* Cortana */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -824,6 +1167,60 @@ EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaSettingsStat
 
 /*
  *
+ * Class Windows.Services.Cortana.CortanaActionableInsights
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Services.Cortana.ICortanaActionableInsightsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Cortana.ICortanaActionableInsights ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsights_DEFINED
+#define RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsights_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Cortana_CortanaActionableInsights[] = L"Windows.Services.Cortana.CortanaActionableInsights";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Services.Cortana.CortanaActionableInsightsOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Cortana.ICortanaActionableInsightsOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsightsOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsightsOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Cortana_CortanaActionableInsightsOptions[] = L"Windows.Services.Cortana.CortanaActionableInsightsOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Services.Cortana.CortanaPermissionsManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -878,6 +1275,24 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #else // !defined(__cplusplus)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights;
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions;
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics;
+
+#endif // ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager __x_ABI_CWindows_CServices_CCortana_CICortanaPermissionsManager;
@@ -1284,8 +1699,49 @@ interface __FIAsyncOperation_1_boolean
 
 
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
 
 
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
+
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference;
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference_FWD_DEFINED__
+
+
+
+
+
+
+#ifndef ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIUser __x_ABI_CWindows_CSystem_CIUser;
+
+#endif // ____x_ABI_CWindows_CSystem_CIUser_FWD_DEFINED__
 
 
 
@@ -1295,6 +1751,11 @@ typedef enum __x_ABI_CWindows_CServices_CCortana_CCortanaPermission __x_ABI_CWin
 
 
 typedef enum __x_ABI_CWindows_CServices_CCortana_CCortanaPermissionsChangeResult __x_ABI_CWindows_CServices_CCortana_CCortanaPermissionsChangeResult;
+
+
+
+
+
 
 
 
@@ -1356,6 +1817,372 @@ enum __x_ABI_CWindows_CServices_CCortana_CCortanaPermissionsChangeResult
     CortanaPermissionsChangeResult_DisabledByPolicy = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsights
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsights
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsights[] = L"Windows.Services.Cortana.ICortanaActionableInsights";
+/* [object, uuid("951EC6B1-FC83-586D-8B84-2452C8981625"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsAvailableAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsForImageAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * imageStream,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsForImageWithOptionsAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * imageStream,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * options,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsForTextAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in HSTRING text,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsForTextWithOptionsAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in HSTRING text,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * options,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage * datapackage,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ShowInsightsWithOptionsAsync )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage * datapackage,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * options,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsVtbl;
+
+interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_get_User(This,value) \
+    ( (This)->lpVtbl->get_User(This,value) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_IsAvailableAsync(This,operation) \
+    ( (This)->lpVtbl->IsAvailableAsync(This,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsForImageAsync(This,imageStream,operation) \
+    ( (This)->lpVtbl->ShowInsightsForImageAsync(This,imageStream,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsForImageWithOptionsAsync(This,imageStream,options,operation) \
+    ( (This)->lpVtbl->ShowInsightsForImageWithOptionsAsync(This,imageStream,options,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsForTextAsync(This,text,operation) \
+    ( (This)->lpVtbl->ShowInsightsForTextAsync(This,text,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsForTextWithOptionsAsync(This,text,options,operation) \
+    ( (This)->lpVtbl->ShowInsightsForTextWithOptionsAsync(This,text,options,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsAsync(This,datapackage,operation) \
+    ( (This)->lpVtbl->ShowInsightsAsync(This,datapackage,operation) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_ShowInsightsWithOptionsAsync(This,datapackage,options,operation) \
+    ( (This)->lpVtbl->ShowInsightsWithOptionsAsync(This,datapackage,options,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsightsOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsightsOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsightsOptions[] = L"Windows.Services.Cortana.ICortanaActionableInsightsOptions";
+/* [object, uuid("AAC2BBCF-9782-5420-B81E-7AE56AF31815"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentSourceWebLink )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ContentSourceWebLink )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SurroundingText )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_SurroundingText )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptionsVtbl;
+
+interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_get_ContentSourceWebLink(This,value) \
+    ( (This)->lpVtbl->get_ContentSourceWebLink(This,value) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_put_ContentSourceWebLink(This,value) \
+    ( (This)->lpVtbl->put_ContentSourceWebLink(This,value) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_get_SurroundingText(This,value) \
+    ( (This)->lpVtbl->get_SurroundingText(This,value) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_put_SurroundingText(This,value) \
+    ( (This)->lpVtbl->put_SurroundingText(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Services.Cortana.ICortanaActionableInsightsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Services.Cortana.CortanaActionableInsights
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Services_Cortana_ICortanaActionableInsightsStatics[] = L"Windows.Services.Cortana.ICortanaActionableInsightsStatics";
+/* [object, uuid("B5DED412-9D2F-5CB5-9B05-356A0B836C10"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDefault )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetForUser )(
+        __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsights * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStaticsVtbl;
+
+interface __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_GetDefault(This,result) \
+    ( (This)->lpVtbl->GetDefault(This,result) )
+
+#define __x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_GetForUser(This,user,result) \
+    ( (This)->lpVtbl->GetForUser(This,user,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics;
+#endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaActionableInsightsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1773,6 +2600,60 @@ interface __x_ABI_CWindows_CServices_CCortana_CICortanaSettingsStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CServices_CCortana_CICortanaSettingsStatics;
 #endif /* !defined(____x_ABI_CWindows_CServices_CCortana_CICortanaSettingsStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.Services.Cortana.CortanaActionableInsights
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Services.Cortana.ICortanaActionableInsightsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Cortana.ICortanaActionableInsights ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsights_DEFINED
+#define RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsights_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Cortana_CortanaActionableInsights[] = L"Windows.Services.Cortana.CortanaActionableInsights";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Services.Cortana.CortanaActionableInsightsOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Services.Cortana.ICortanaActionableInsightsOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsightsOptions_DEFINED
+#define RUNTIMECLASS_Windows_Services_Cortana_CortanaActionableInsightsOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Services_Cortana_CortanaActionableInsightsOptions[] = L"Windows.Services.Cortana.CortanaActionableInsightsOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

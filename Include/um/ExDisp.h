@@ -418,7 +418,8 @@ enum BrowserNavConstants
         navReserved3	= 0x8000000,
         navReserved4	= 0x10000000,
         navReserved5	= 0x20000000,
-        navReserved6	= 0x40000000
+        navReserved6	= 0x40000000,
+        navReserved7	= 0x80000000
     } 	BrowserNavConstants;
 
 //;begin_internal
@@ -428,6 +429,7 @@ enum BrowserNavConstants
 #define navVtabSwitchNotUserInitiatedAction navReserved4
 #define navCheckDontShowNeedIE navReserved5
 #define navCheckDontShowNeedHVSI navReserved6
+#define navCheckDontShowHVSINeedHost navReserved7
 //;end_internal
 typedef /* [helpstring][uuid] */  DECLSPEC_UUID("C317C261-A991-11cf-A731-00A0C9082637") 
 enum RefreshConstants

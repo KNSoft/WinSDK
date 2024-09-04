@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt::Windows::UI::ViewManagement::Core {
 
 struct WINRT_EBO CoreInputView :
     Windows::UI::ViewManagement::Core::ICoreInputView,
-    impl::require<CoreInputView, Windows::UI::ViewManagement::Core::ICoreInputView2>
+    impl::require<CoreInputView, Windows::UI::ViewManagement::Core::ICoreInputView2, Windows::UI::ViewManagement::Core::ICoreInputView3>
 {
     CoreInputView(std::nullptr_t) noexcept {}
     static Windows::UI::ViewManagement::Core::CoreInputView GetForCurrentView();

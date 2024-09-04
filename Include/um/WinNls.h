@@ -846,6 +846,7 @@ extern "C" {
 #define CAL_RETURN_NUMBER         LOCALE_RETURN_NUMBER          // return number instead of string
 #endif /* WINVER >= 0x0500 */
 
+
 #if (WINVER >= _WIN32_WINNT_WIN7)
 #define CAL_RETURN_GENITIVE_NAMES LOCALE_RETURN_GENITIVE_NAMES  // return genitive forms of month names
 #endif // winver >= windows 7

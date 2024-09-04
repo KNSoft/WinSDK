@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -69,10 +69,33 @@ template <> struct name<Windows::Security::Authentication::Web::WebAuthenticatio
 template <> struct name<Windows::Security::Authentication::Web::TokenBindingKeyType>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.TokenBindingKeyType" }; };
 template <> struct name<Windows::Security::Authentication::Web::WebAuthenticationOptions>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.WebAuthenticationOptions" }; };
 template <> struct name<Windows::Security::Authentication::Web::WebAuthenticationStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.WebAuthenticationStatus" }; };
-template <> struct guid<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics>{ static constexpr GUID value{ 0x2F149F1A,0xE673,0x40B5,{ 0xBC,0x22,0x20,0x1A,0x68,0x64,0xA3,0x7B } }; };
-template <> struct guid<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2>{ static constexpr GUID value{ 0x73CDFB9E,0x14E7,0x41DA,{ 0xA9,0x71,0xAA,0xF4,0x41,0x0B,0x62,0x1E } }; };
-template <> struct guid<Windows::Security::Authentication::Web::IWebAuthenticationResult>{ static constexpr GUID value{ 0x64002B4B,0xEDE9,0x470A,{ 0xA5,0xCD,0x03,0x23,0xFA,0xF6,0xE2,0x62 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics>{ static constexpr guid value{ 0x2F149F1A,0xE673,0x40B5,{ 0xBC,0x22,0x20,0x1A,0x68,0x64,0xA3,0x7B } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2>{ static constexpr guid value{ 0x73CDFB9E,0x14E7,0x41DA,{ 0xA9,0x71,0xAA,0xF4,0x41,0x0B,0x62,0x1E } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::IWebAuthenticationResult>{ static constexpr guid value{ 0x64002B4B,0xEDE9,0x470A,{ 0xA5,0xCD,0x03,0x23,0xFA,0xF6,0xE2,0x62 } }; };
 template <> struct default_interface<Windows::Security::Authentication::Web::WebAuthenticationResult>{ using type = Windows::Security::Authentication::Web::IWebAuthenticationResult; };
+
+template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AuthenticateWithCallbackUriAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, void* requestUri, void* callbackUri, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateWithoutCallbackUriAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, void* requestUri, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentApplicationCallbackUri(void** callbackUri) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AuthenticateAndContinue(void* requestUri) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateWithCallbackUriAndContinue(void* requestUri, void* callbackUri) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue(void* requestUri, void* callbackUri, void* continuationData, Windows::Security::Authentication::Web::WebAuthenticationOptions options) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateSilentlyAsync(void* requestUri, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateSilentlyWithOptionsAsync(void* requestUri, Windows::Security::Authentication::Web::WebAuthenticationOptions options, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ResponseData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseStatus(Windows::Security::Authentication::Web::WebAuthenticationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseErrorDetail(uint32_t* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Authentication_Web_IWebAuthenticationBrokerStatics
@@ -102,28 +125,5 @@ struct consume_Windows_Security_Authentication_Web_IWebAuthenticationResult
     uint32_t ResponseErrorDetail() const;
 };
 template <> struct consume<Windows::Security::Authentication::Web::IWebAuthenticationResult> { template <typename D> using type = consume_Windows_Security_Authentication_Web_IWebAuthenticationResult<D>; };
-
-template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AuthenticateWithCallbackUriAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, void* requestUri, void* callbackUri, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateWithoutCallbackUriAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, void* requestUri, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentApplicationCallbackUri(void** callbackUri) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AuthenticateAndContinue(void* requestUri) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateWithCallbackUriAndContinue(void* requestUri, void* callbackUri) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue(void* requestUri, void* callbackUri, void* continuationData, Windows::Security::Authentication::Web::WebAuthenticationOptions options) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateSilentlyAsync(void* requestUri, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateSilentlyWithOptionsAsync(void* requestUri, Windows::Security::Authentication::Web::WebAuthenticationOptions options, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::IWebAuthenticationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ResponseData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseStatus(Windows::Security::Authentication::Web::WebAuthenticationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseErrorDetail(uint32_t* value) noexcept = 0;
-};};
 
 }

@@ -36,6 +36,16 @@ namespace Windows
 }
 
 // Generic instantiations
+namespace Windows
+{
+    namespace Graphics
+    {
+        declare
+        {
+            interface Windows.Foundation.IReference<Windows.Graphics.SizeInt32>;
+        }
+    }
+}
 
 // Type definition
 namespace Windows

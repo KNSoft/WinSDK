@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.background.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -9145,7 +9157,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
                         ) = 0;
                     
                 };
@@ -9187,7 +9199,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
                         ) = 0;
                     
                 };
@@ -9229,7 +9241,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE Create(
                         /* [in] */ABI::Windows::UI::Notifications::NotificationKinds notificationKinds,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * trigger
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Background::IBackgroundTrigger * * value
                         ) = 0;
                     
                 };
@@ -10936,6 +10948,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -10962,6 +10976,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -10986,6 +11002,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -24620,7 +24638,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Create )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * trigger
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * value
         );
     END_INTERFACE
     
@@ -24650,8 +24668,8 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActi
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_Create(This,applicationId,trigger) \
-    ( (This)->lpVtbl->Create(This,applicationId,trigger) )
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationActionTriggerFactory_Create(This,applicationId,value) \
+    ( (This)->lpVtbl->Create(This,applicationId,value) )
 
 
 #endif /* COBJMACROS */
@@ -24714,7 +24732,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Create )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * trigger
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * value
         );
     END_INTERFACE
     
@@ -24744,8 +24762,8 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHist
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_Create(This,applicationId,trigger) \
-    ( (This)->lpVtbl->Create(This,applicationId,trigger) )
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIToastNotificationHistoryChangedTriggerFactory_Create(This,applicationId,value) \
+    ( (This)->lpVtbl->Create(This,applicationId,value) )
 
 
 #endif /* COBJMACROS */
@@ -24808,7 +24826,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Create )(
         __x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CNotificationKinds notificationKinds,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * trigger
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CBackground_CIBackgroundTrigger * * value
         );
     END_INTERFACE
     
@@ -24838,8 +24856,8 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChang
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_Create(This,notificationKinds,trigger) \
-    ( (This)->lpVtbl->Create(This,notificationKinds,trigger) )
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIUserNotificationChangedTriggerFactory_Create(This,notificationKinds,value) \
+    ( (This)->lpVtbl->Create(This,notificationKinds,value) )
 
 
 #endif /* COBJMACROS */
@@ -26541,6 +26559,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -26567,6 +26587,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -26591,6 +26613,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000

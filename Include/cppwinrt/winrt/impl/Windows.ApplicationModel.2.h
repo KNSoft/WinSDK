@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -67,6 +67,12 @@ struct WINRT_EBO AppInfo :
     AppInfo(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO AppInstallerInfo :
+    Windows::ApplicationModel::IAppInstallerInfo
+{
+    AppInstallerInfo(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO AppInstance :
     Windows::ApplicationModel::IAppInstance
 {
@@ -106,9 +112,21 @@ struct WINRT_EBO LeavingBackgroundEventArgs :
     LeavingBackgroundEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO LimitedAccessFeatureRequestResult :
+    Windows::ApplicationModel::ILimitedAccessFeatureRequestResult
+{
+    LimitedAccessFeatureRequestResult(std::nullptr_t) noexcept {}
+};
+
+struct LimitedAccessFeatures
+{
+    LimitedAccessFeatures() = delete;
+    static Windows::ApplicationModel::LimitedAccessFeatureRequestResult TryUnlockFeature(param::hstring const& featureId, param::hstring const& token, param::hstring const& attestation);
+};
+
 struct WINRT_EBO Package :
     Windows::ApplicationModel::IPackage,
-    impl::require<Package, Windows::ApplicationModel::IPackage2, Windows::ApplicationModel::IPackage3, Windows::ApplicationModel::IPackage4, Windows::ApplicationModel::IPackage5, Windows::ApplicationModel::IPackageWithMetadata>
+    impl::require<Package, Windows::ApplicationModel::IPackage2, Windows::ApplicationModel::IPackage3, Windows::ApplicationModel::IPackage4, Windows::ApplicationModel::IPackage5, Windows::ApplicationModel::IPackage6, Windows::ApplicationModel::IPackageWithMetadata>
 {
     Package(std::nullptr_t) noexcept {}
     static Windows::ApplicationModel::Package Current();
@@ -196,6 +214,12 @@ struct WINRT_EBO PackageUninstallingEventArgs :
     Windows::ApplicationModel::IPackageUninstallingEventArgs
 {
     PackageUninstallingEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO PackageUpdateAvailabilityResult :
+    Windows::ApplicationModel::IPackageUpdateAvailabilityResult
+{
+    PackageUpdateAvailabilityResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO PackageUpdatingEventArgs :

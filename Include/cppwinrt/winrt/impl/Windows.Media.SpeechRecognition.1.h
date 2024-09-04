@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -198,14 +198,14 @@ struct WINRT_EBO ISpeechRecognizerUIOptions :
     ISpeechRecognizerUIOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] IVoiceCommandManager :
+struct WINRT_EBO IVoiceCommandManager :
     Windows::Foundation::IInspectable,
     impl::consume_t<IVoiceCommandManager>
 {
     IVoiceCommandManager(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]] IVoiceCommandSet :
+struct WINRT_EBO IVoiceCommandSet :
     Windows::Foundation::IInspectable,
     impl::consume_t<IVoiceCommandSet>
 {

@@ -94,6 +94,8 @@ namespace Windows
 
             interface IChatCapabilitiesManagerStatics;
 
+            interface IChatCapabilitiesManagerStatics2;
+
             interface IChatConversation;
 
             interface IChatConversation2;
@@ -181,6 +183,8 @@ namespace Windows
             interface IRcsEndUserMessageManager;
 
             interface IRcsManagerStatics;
+
+            interface IRcsManagerStatics2;
 
             interface IRcsServiceKindSupportedChangedEventArgs;
 
@@ -556,6 +560,15 @@ namespace Windows
             {
                 [overload("GetCachedCapabilitiesAsync")] HRESULT GetCachedCapabilitiesAsync([in] HSTRING address, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Chat.ChatCapabilities*>** result);
                 [overload("GetCapabilitiesFromNetworkAsync")] HRESULT GetCapabilitiesFromNetworkAsync([in] HSTRING address, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Chat.ChatCapabilities*>** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.Chat.ChatCapabilitiesManager)]
+            [uuid(E30D4274-D5C1-4AC9-9FFC-40E69184FEC8)]
+            interface IChatCapabilitiesManagerStatics2 : IInspectable
+            {
+                [overload("GetCachedCapabilitiesAsync")] HRESULT GetCachedCapabilitiesForTransportAsync([in] HSTRING address, [in] HSTRING transportId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Chat.ChatCapabilities*>** operation);
+                [overload("GetCapabilitiesFromNetworkAsync")] HRESULT GetCapabilitiesFromNetworkForTransportAsync([in] HSTRING address, [in] HSTRING transportId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Chat.ChatCapabilities*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1097,6 +1110,15 @@ namespace Windows
                 HRESULT LeaveConversationAsync([in] Windows.ApplicationModel.Chat.ChatConversation* conversation, [out] [retval] Windows.Foundation.IAsyncAction** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.Chat.RcsManager)]
+            [uuid(CD49AD18-AD8A-42AA-8EEB-A798A8808959)]
+            interface IRcsManagerStatics2 : IInspectable
+            {
+                [eventadd] HRESULT TransportListChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT TransportListChanged([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs)]
             [uuid(F47EA244-E783-4866-B3A7-4E5CCF023070)]
@@ -1155,6 +1177,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass ChatCapabilitiesManager
             {
@@ -1414,6 +1437,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.ApplicationModel.Chat.IRcsManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.ApplicationModel.Chat.IRcsManagerStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass RcsManager
             {

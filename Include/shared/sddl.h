@@ -97,6 +97,7 @@ extern "C" {
 #define SDDL_NO_PROPAGATE                   TEXT("NP")  // Inherit no propagate
 #define SDDL_INHERIT_ONLY                   TEXT("IO")  // Inherit only
 #define SDDL_INHERITED                      TEXT("ID")  // Inherited
+#define SDDL_CRITICAL                       TEXT("CR")  // Critical
 #define SDDL_TRUST_PROTECTED_FILTER         TEXT("TP")  // Trust Protected Filter
 #define SDDL_AUDIT_SUCCESS                  TEXT("SA")  // Audit success
 #define SDDL_AUDIT_FAILURE                  TEXT("FA")  // Audit failure

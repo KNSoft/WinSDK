@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -34,8 +34,7 @@ struct WINRT_EBO IFontWeightsStatics :
 
 struct WINRT_EBO IRichEditTextRange :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IRichEditTextRange>,
-    impl::require<IRichEditTextRange, Windows::UI::Text::ITextRange>
+    impl::consume_t<IRichEditTextRange>
 {
     IRichEditTextRange(std::nullptr_t = nullptr) noexcept {}
 };
@@ -63,10 +62,16 @@ struct WINRT_EBO ITextDocument :
 
 struct WINRT_EBO ITextDocument2 :
     Windows::Foundation::IInspectable,
-    impl::consume_t<ITextDocument2>,
-    impl::require<ITextDocument2, Windows::UI::Text::ITextDocument>
+    impl::consume_t<ITextDocument2>
 {
     ITextDocument2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ITextDocument3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ITextDocument3>
+{
+    ITextDocument3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ITextParagraphFormat :

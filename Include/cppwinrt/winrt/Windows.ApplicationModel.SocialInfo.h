@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -390,892 +390,772 @@ template <typename D> void consume_Windows_ApplicationModel_SocialInfo_ISocialUs
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>
 {
-    HRESULT __stdcall get_Author(void** value) noexcept final
+    int32_t WINRT_CALL get_Author(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Author, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialUserInfo));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialUserInfo>(this->shim().Author());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrimaryContent(void** value) noexcept final
+    int32_t WINRT_CALL get_PrimaryContent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryContent, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedContent));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedContent>(this->shim().PrimaryContent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecondaryContent(void** value) noexcept final
+    int32_t WINRT_CALL get_SecondaryContent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondaryContent, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedContent));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedContent>(this->shim().SecondaryContent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().Timestamp(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnails(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnails, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>>(this->shim().Thumbnails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SharedItem(void** value) noexcept final
+    int32_t WINRT_CALL get_SharedItem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharedItem, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem>(this->shim().SharedItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SharedItem(void* value) noexcept final
+    int32_t WINRT_CALL put_SharedItem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharedItem, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const&);
             this->shim().SharedItem(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialFeedContent>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Message(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Message(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(void), hstring const&);
             this->shim().Message(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialFeedItem>
 {
-    HRESULT __stdcall get_Author(void** value) noexcept final
+    int32_t WINRT_CALL get_Author(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Author, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialUserInfo));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialUserInfo>(this->shim().Author());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrimaryContent(void** value) noexcept final
+    int32_t WINRT_CALL get_PrimaryContent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryContent, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedContent));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedContent>(this->shim().PrimaryContent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecondaryContent(void** value) noexcept final
+    int32_t WINRT_CALL get_SecondaryContent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondaryContent, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedContent));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedContent>(this->shim().SecondaryContent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().Timestamp(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnails(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnails, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>>(this->shim().Thumbnails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SharedItem(void** value) noexcept final
+    int32_t WINRT_CALL get_SharedItem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharedItem, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem>(this->shim().SharedItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SharedItem(void* value) noexcept final
+    int32_t WINRT_CALL put_SharedItem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharedItem, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const&);
             this->shim().SharedItem(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle* value) noexcept final
+    int32_t WINRT_CALL get_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BadgeStyle, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle>(this->shim().BadgeStyle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value) noexcept final
+    int32_t WINRT_CALL put_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BadgeStyle, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle const&);
             this->shim().BadgeStyle(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BadgeCountValue(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_BadgeCountValue(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BadgeCountValue, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().BadgeCountValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BadgeCountValue(int32_t value) noexcept final
+    int32_t WINRT_CALL put_BadgeCountValue(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BadgeCountValue, WINRT_WRAP(void), int32_t);
             this->shim().BadgeCountValue(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChildItem(void** value) noexcept final
+    int32_t WINRT_CALL get_ChildItem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChildItem, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedChildItem));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedChildItem>(this->shim().ChildItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ChildItem(void* value) noexcept final
+    int32_t WINRT_CALL put_ChildItem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChildItem, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialFeedChildItem const&);
             this->shim().ChildItem(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialFeedChildItem const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle* value) noexcept final
+    int32_t WINRT_CALL get_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Style, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle>(this->shim().Style());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) noexcept final
+    int32_t WINRT_CALL put_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Style, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle const&);
             this->shim().Style(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>
 {
-    HRESULT __stdcall get_OriginalSource(void** value) noexcept final
+    int32_t WINRT_CALL get_OriginalSource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalSource, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().OriginalSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OriginalSource(void* value) noexcept final
+    int32_t WINRT_CALL put_OriginalSource(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalSource, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().OriginalSource(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialFeedContent));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialFeedContent>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().Timestamp(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Thumbnail(void* value) noexcept final
+    int32_t WINRT_CALL put_Thumbnail(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(void), Windows::ApplicationModel::SocialInfo::SocialItemThumbnail const&);
             this->shim().Thumbnail(*reinterpret_cast<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::ApplicationModel::SocialInfo::SocialItemThumbnail));
             *value = detach_from<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>
 {
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ImageUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ImageUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ImageUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ImageUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize* value) noexcept final
+    int32_t WINRT_CALL get_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapSize, WINRT_WRAP(Windows::Graphics::Imaging::BitmapSize));
             *value = detach_from<Windows::Graphics::Imaging::BitmapSize>(this->shim().BitmapSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept final
+    int32_t WINRT_CALL put_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapSize, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapSize const&);
             this->shim().BitmapSize(*reinterpret_cast<Windows::Graphics::Imaging::BitmapSize const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetImageAsync(void* image, void** operation) noexcept final
+    int32_t WINRT_CALL SetImageAsync(void* image, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetImageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetImageAsync(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&image)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : produce_base<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo>
 {
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UserName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_UserName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(void), hstring const&);
             this->shim().UserName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetUri(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().TargetUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetUri(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().TargetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1284,19 +1164,19 @@ struct produce<D, Windows::ApplicationModel::SocialInfo::ISocialUserInfo> : prod
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::SocialInfo {
 
 inline SocialFeedChildItem::SocialFeedChildItem() :
-    SocialFeedChildItem(get_activation_factory<SocialFeedChildItem>().ActivateInstance<SocialFeedChildItem>())
+    SocialFeedChildItem(impl::call_factory<SocialFeedChildItem>([](auto&& f) { return f.template ActivateInstance<SocialFeedChildItem>(); }))
 {}
 
 inline SocialFeedItem::SocialFeedItem() :
-    SocialFeedItem(get_activation_factory<SocialFeedItem>().ActivateInstance<SocialFeedItem>())
+    SocialFeedItem(impl::call_factory<SocialFeedItem>([](auto&& f) { return f.template ActivateInstance<SocialFeedItem>(); }))
 {}
 
 inline SocialFeedSharedItem::SocialFeedSharedItem() :
-    SocialFeedSharedItem(get_activation_factory<SocialFeedSharedItem>().ActivateInstance<SocialFeedSharedItem>())
+    SocialFeedSharedItem(impl::call_factory<SocialFeedSharedItem>([](auto&& f) { return f.template ActivateInstance<SocialFeedSharedItem>(); }))
 {}
 
 inline SocialItemThumbnail::SocialItemThumbnail() :
-    SocialItemThumbnail(get_activation_factory<SocialItemThumbnail>().ActivateInstance<SocialItemThumbnail>())
+    SocialItemThumbnail(impl::call_factory<SocialItemThumbnail>([](auto&& f) { return f.template ActivateInstance<SocialItemThumbnail>(); }))
 {}
 
 }
@@ -1317,5 +1197,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::SocialInfo::SocialItemT
 template<> struct hash<winrt::Windows::ApplicationModel::SocialInfo::SocialUserInfo> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::SocialInfo::SocialUserInfo> {};
 
 }
-
-WINRT_WARNING_POP

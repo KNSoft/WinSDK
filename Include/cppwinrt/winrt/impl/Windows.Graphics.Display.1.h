@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -129,7 +129,7 @@ struct WINRT_EBO IDisplayInformationStatics :
     IDisplayInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] IDisplayPropertiesStatics :
+struct WINRT_EBO IDisplayPropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IDisplayPropertiesStatics>
 {

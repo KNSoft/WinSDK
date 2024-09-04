@@ -1,3 +1,4 @@
+// begin_consoleapi_h
 /********************************************************************************
 *                                                                               *
 * consoleapi.h -- ApiSet Contract for api-ms-win-core-console-l1                *
@@ -152,7 +153,16 @@ ReadConsoleInputW(
 #else
 #define ReadConsoleInput  ReadConsoleInputA
 #endif // !UNICODE
-    
+
+// end_consoleapi_h
+
+
+
+#ifndef UNICODE
+#define PeekConsoleInput  PeekConsoleInputA
+#endif
+
+// begin_consoleapi_h
 
 WINBASEAPI
 BOOL
@@ -193,7 +203,7 @@ BOOL
 WINAPI
 ReadConsoleA(
     _In_ HANDLE hConsoleInput,
-    _Out_writes_bytes_to_(nNumberOfCharsToRead * sizeof(CHAR),*lpNumberOfCharsRead * sizeof(CHAR)) LPVOID lpBuffer,
+    _Out_writes_bytes_to_(nNumberOfCharsToRead * sizeof(TCHAR%),*lpNumberOfCharsRead * sizeof(TCHAR%)) LPVOID lpBuffer,
     _In_ DWORD nNumberOfCharsToRead,
     _Out_ _Deref_out_range_(<=,nNumberOfCharsToRead) LPDWORD lpNumberOfCharsRead,
     _In_opt_ PCONSOLE_READCONSOLE_CONTROL pInputControl
@@ -205,7 +215,7 @@ BOOL
 WINAPI
 ReadConsoleW(
     _In_ HANDLE hConsoleInput,
-    _Out_writes_bytes_to_(nNumberOfCharsToRead * sizeof(WCHAR),*lpNumberOfCharsRead * sizeof(WCHAR)) LPVOID lpBuffer,
+    _Out_writes_bytes_to_(nNumberOfCharsToRead * sizeof(TCHAR%),*lpNumberOfCharsRead * sizeof(TCHAR%)) LPVOID lpBuffer,
     _In_ DWORD nNumberOfCharsToRead,
     _Out_ _Deref_out_range_(<=,nNumberOfCharsToRead) LPDWORD lpNumberOfCharsRead,
     _In_opt_ PCONSOLE_READCONSOLE_CONTROL pInputControl
@@ -276,7 +286,50 @@ SetConsoleCtrlHandler(
     );
 
 
+
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+// CreatePseudoConsole Flags
+#define PSEUDOCONSOLE_INHERIT_CURSOR (0x1)
+
+WINBASEAPI
+HRESULT
+WINAPI
+CreatePseudoConsole(
+    _In_ COORD size,
+    _In_ HANDLE hInput,
+    _In_ HANDLE hOutput,
+    _In_ DWORD dwFlags,
+    _Out_ HPCON* phPC
+    );
+
+
+WINBASEAPI
+HRESULT
+WINAPI
+ResizePseudoConsole(
+    _In_ HPCON hPC,
+    _In_ COORD size
+    );
+
+
+WINBASEAPI
+VOID
+WINAPI
+ClosePseudoConsole(
+    _In_ HPCON hPC
+    );
+
+
+#endif
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #ifdef __cplusplus
@@ -284,3 +337,4 @@ SetConsoleCtrlHandler(
 #endif
 
 #endif // _APISETCONSOLE_
+// end_consoleapi_h

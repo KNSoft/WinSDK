@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.rcspresence.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -34,6 +34,14 @@
 
 #pragma once
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -50,7 +58,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -564,38 +572,6 @@ typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsSer
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
-
-#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
-#ifndef DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_USE
-#define DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("b22d134f-5141-51ea-b022-131d14a8995d"))
-IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDescription*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDescription*, ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription*>> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Phone.Restricted.Cellular.RcsPresence.RcsServiceDescription>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsServiceDescription*> __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t;
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription*>
-//#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription*>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_USE */
-
-
-#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
 namespace ABI {
     namespace Windows {
         namespace Phone {
@@ -855,38 +831,6 @@ typedef IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAdd
 //#define __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_USE */
-
-
-#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
-
-#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
-#ifndef DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_USE
-#define DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("d9ce6de2-3e28-5eb0-b6e1-2772141d62bf"))
-IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*, ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Phone.Restricted.Cellular.RcsPresence.RcsAddress>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsAddress*> __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t;
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>
-//#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress*>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_USE */
 
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1891,7 +1835,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE PublishCapabilitiesAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * contactUri,
-                                /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * serviceDescriptions,
+                                /* [in] */__RPC__in_opt __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * serviceDescriptions,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse * * operation
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PublishCapabilitiesRequested(
@@ -1914,7 +1858,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SubscribeForCapabilitiesAsync(
                                 /* [in] */ABI::Windows::Phone::Restricted::Cellular::RcsPresence::RcsSubscribeReason reason,
-                                /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * addresses,
+                                /* [in] */__RPC__in_opt __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * addresses,
                                 /* [in] */ABI::Windows::Foundation::TimeSpan expiration,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse * * operation
                                 ) = 0;
@@ -3518,117 +3462,6 @@ interface __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-#if !defined(____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_INTERFACE_DEFINED__)
-#define ____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_INTERFACE_DEFINED__
-
-typedef interface __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription;
-
-typedef struct __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescriptionVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-
-    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This);
-
-    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-                                            /* [out] */ __RPC__out ULONG *iidCount,
-                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-                                         __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-                                         /* [in] */ unsigned int index,
-                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription * *item);
-
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-                                               __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-            /* [in] */ __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription * item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-                                               __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription * *items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-
-        END_INTERFACE
-} __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescriptionVtbl;
-
-interface __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription
-{
-    CONST_VTBL struct __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescriptionVtbl *lpVtbl;
-};
-
-
-
-#ifdef COBJMACROS
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_GetAt(This,index,item)	\
-    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_get_Size(This,size)	\
-    ( (This)->lpVtbl -> get_Size(This,size) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_IndexOf(This,item,index,found)	\
-    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_GetMany(This,startIndex,capacity,items,actual)	\
-    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
-
-#endif /* COBJMACROS */
-
-
-
-#endif // ____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription_INTERFACE_DEFINED__
-
-#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
-
-#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse_INTERFACE_DEFINED__
 
@@ -4007,117 +3840,6 @@ interface __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__
 
 
 #endif // ____FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_INTERFACE_DEFINED__
-
-#endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-
-
-#if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
-#if !defined(____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_INTERFACE_DEFINED__)
-#define ____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_INTERFACE_DEFINED__
-
-typedef interface __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress;
-
-typedef struct __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddressVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-
-    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This);
-
-    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-                                            /* [out] */ __RPC__out ULONG *iidCount,
-                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-        __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-                                         __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-                                         /* [in] */ unsigned int index,
-                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress * *item);
-
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-                                               __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-            /* [in] */ __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress * item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-                                               __RPC__in __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress * *items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-
-        END_INTERFACE
-} __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddressVtbl;
-
-interface __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress
-{
-    CONST_VTBL struct __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddressVtbl *lpVtbl;
-};
-
-
-
-#ifdef COBJMACROS
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_GetAt(This,index,item)	\
-    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_get_Size(This,size)	\
-    ( (This)->lpVtbl -> get_Size(This,size) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_IndexOf(This,item,index,found)	\
-    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
-
-#define __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_GetMany(This,startIndex,capacity,items,actual)	\
-    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
-
-#endif /* COBJMACROS */
-
-
-
-#endif // ____FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress_INTERFACE_DEFINED__
 
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
@@ -5411,7 +5133,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *PublishCapabilitiesAsync )(
         __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * contactUri,
-        /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * serviceDescriptions,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceDescription * serviceDescriptions,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse * * operation
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_PublishCapabilitiesRequested )(
@@ -5440,7 +5162,7 @@ HRESULT ( STDMETHODCALLTYPE *PublishCapabilitiesAsync )(
     HRESULT ( STDMETHODCALLTYPE *SubscribeForCapabilitiesAsync )(
         __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService * This,
         /* [in] */__x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CRcsSubscribeReason reason,
-        /* [in] */__RPC__in_opt __FIVectorView_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * addresses,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsAddress * addresses,
         /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan expiration,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsResponse * * operation
         );

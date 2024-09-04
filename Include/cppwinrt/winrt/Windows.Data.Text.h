@@ -1,14 +1,15 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
+#include "winrt/impl/Windows.UI.Text.Core.2.h"
 #include "winrt/impl/Windows.Data.Text.2.h"
 
 namespace winrt::impl {
@@ -184,6 +185,32 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Data::Text::ITextPredictionGenerator)->GetCandidatesWithMaxCountAsync(get_abi(input), maxCandidates, put_abi(result)));
     return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> consume_Windows_Data_Text_ITextPredictionGenerator2<D>::GetCandidatesAsync(param::hstring const& input, uint32_t maxCandidates, Windows::Data::Text::TextPredictionOptions const& predictionOptions, param::async_iterable<hstring> const& previousStrings) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Data::Text::ITextPredictionGenerator2)->GetCandidatesWithParametersAsync(get_abi(input), maxCandidates, get_abi(predictionOptions), get_abi(previousStrings), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> consume_Windows_Data_Text_ITextPredictionGenerator2<D>::GetNextWordCandidatesAsync(uint32_t maxCandidates, param::async_iterable<hstring> const& previousStrings) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Data::Text::ITextPredictionGenerator2)->GetNextWordCandidatesAsync(maxCandidates, get_abi(previousStrings), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Text::Core::CoreTextInputScope consume_Windows_Data_Text_ITextPredictionGenerator2<D>::InputScope() const
+{
+    Windows::UI::Text::Core::CoreTextInputScope value{};
+    check_hresult(WINRT_SHIM(Windows::Data::Text::ITextPredictionGenerator2)->get_InputScope(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_Data_Text_ITextPredictionGenerator2<D>::InputScope(Windows::UI::Text::Core::CoreTextInputScope const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::Data::Text::ITextPredictionGenerator2)->put_InputScope(get_abi(value)));
 }
 
 template <typename D> Windows::Data::Text::TextPredictionGenerator consume_Windows_Data_Text_ITextPredictionGeneratorFactory<D>::Create(param::hstring const& languageTag) const
@@ -406,12 +433,12 @@ template <> struct delegate<Windows::Data::Text::SelectableWordSegmentsTokenizin
     {
         type(H&& handler) : implements_delegate<Windows::Data::Text::SelectableWordSegmentsTokenizingHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* precedingWords, void* words) noexcept final
+        int32_t WINRT_CALL Invoke(void* precedingWords, void* words) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> const*>(&precedingWords), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> const*>(&words));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -428,12 +455,12 @@ template <> struct delegate<Windows::Data::Text::WordSegmentsTokenizingHandler>
     {
         type(H&& handler) : implements_delegate<Windows::Data::Text::WordSegmentsTokenizingHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* precedingWords, void* words) noexcept final
+        int32_t WINRT_CALL Invoke(void* precedingWords, void* words) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> const*>(&precedingWords), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> const*>(&words));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -446,886 +473,828 @@ template <> struct delegate<Windows::Data::Text::WordSegmentsTokenizingHandler>
 template <typename D>
 struct produce<D, Windows::Data::Text::IAlternateWordForm> : produce_base<D, Windows::Data::Text::IAlternateWordForm>
 {
-    HRESULT __stdcall get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
+    int32_t WINRT_CALL get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceTextSegment, WINRT_WRAP(Windows::Data::Text::TextSegment));
             *value = detach_from<Windows::Data::Text::TextSegment>(this->shim().SourceTextSegment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlternateText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlternateText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlternateText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalizationFormat(Windows::Data::Text::AlternateNormalizationFormat* value) noexcept final
+    int32_t WINRT_CALL get_NormalizationFormat(Windows::Data::Text::AlternateNormalizationFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalizationFormat, WINRT_WRAP(Windows::Data::Text::AlternateNormalizationFormat));
             *value = detach_from<Windows::Data::Text::AlternateNormalizationFormat>(this->shim().NormalizationFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ISelectableWordSegment> : produce_base<D, Windows::Data::Text::ISelectableWordSegment>
 {
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
+    int32_t WINRT_CALL get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceTextSegment, WINRT_WRAP(Windows::Data::Text::TextSegment));
             *value = detach_from<Windows::Data::Text::TextSegment>(this->shim().SourceTextSegment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ISelectableWordsSegmenter> : produce_base<D, Windows::Data::Text::ISelectableWordsSegmenter>
 {
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTokenAt(HSTRING text, uint32_t startIndex, void** result) noexcept final
+    int32_t WINRT_CALL GetTokenAt(void* text, uint32_t startIndex, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTokenAt, WINRT_WRAP(Windows::Data::Text::SelectableWordSegment), hstring const&, uint32_t);
             *result = detach_from<Windows::Data::Text::SelectableWordSegment>(this->shim().GetTokenAt(*reinterpret_cast<hstring const*>(&text), startIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTokens(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL GetTokens(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTokens, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment>), hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment>>(this->shim().GetTokens(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Tokenize(HSTRING text, uint32_t startIndex, void* handler) noexcept final
+    int32_t WINRT_CALL Tokenize(void* text, uint32_t startIndex, void* handler) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tokenize, WINRT_WRAP(void), hstring const&, uint32_t, Windows::Data::Text::SelectableWordSegmentsTokenizingHandler const&);
             this->shim().Tokenize(*reinterpret_cast<hstring const*>(&text), startIndex, *reinterpret_cast<Windows::Data::Text::SelectableWordSegmentsTokenizingHandler const*>(&handler));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ISelectableWordsSegmenterFactory> : produce_base<D, Windows::Data::Text::ISelectableWordsSegmenterFactory>
 {
-    HRESULT __stdcall CreateWithLanguage(HSTRING language, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithLanguage(void* language, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithLanguage, WINRT_WRAP(Windows::Data::Text::SelectableWordsSegmenter), hstring const&);
             *result = detach_from<Windows::Data::Text::SelectableWordsSegmenter>(this->shim().CreateWithLanguage(*reinterpret_cast<hstring const*>(&language)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ISemanticTextQuery> : produce_base<D, Windows::Data::Text::ISemanticTextQuery>
 {
-    HRESULT __stdcall Find(HSTRING content, void** result) noexcept final
+    int32_t WINRT_CALL Find(void* content, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Find, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>), hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>>(this->shim().Find(*reinterpret_cast<hstring const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindInProperty(HSTRING propertyContent, HSTRING propertyName, void** result) noexcept final
+    int32_t WINRT_CALL FindInProperty(void* propertyContent, void* propertyName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindInProperty, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>), hstring const&, hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>>(this->shim().FindInProperty(*reinterpret_cast<hstring const*>(&propertyContent), *reinterpret_cast<hstring const*>(&propertyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ISemanticTextQueryFactory> : produce_base<D, Windows::Data::Text::ISemanticTextQueryFactory>
 {
-    HRESULT __stdcall Create(HSTRING aqsFilter, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* aqsFilter, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Data::Text::SemanticTextQuery), hstring const&);
             *result = detach_from<Windows::Data::Text::SemanticTextQuery>(this->shim().Create(*reinterpret_cast<hstring const*>(&aqsFilter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithLanguage(HSTRING aqsFilter, HSTRING filterLanguage, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithLanguage(void* aqsFilter, void* filterLanguage, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithLanguage, WINRT_WRAP(Windows::Data::Text::SemanticTextQuery), hstring const&, hstring const&);
             *result = detach_from<Windows::Data::Text::SemanticTextQuery>(this->shim().CreateWithLanguage(*reinterpret_cast<hstring const*>(&aqsFilter), *reinterpret_cast<hstring const*>(&filterLanguage)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextConversionGenerator> : produce_base<D, Windows::Data::Text::ITextConversionGenerator>
 {
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool* value) noexcept final
+    int32_t WINRT_CALL get_LanguageAvailableButNotInstalled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageAvailableButNotInstalled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LanguageAvailableButNotInstalled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCandidatesAsync(HSTRING input, void** result) noexcept final
+    int32_t WINRT_CALL GetCandidatesAsync(void* input, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetCandidatesAsync(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCandidatesWithMaxCountAsync(HSTRING input, uint32_t maxCandidates, void** result) noexcept final
+    int32_t WINRT_CALL GetCandidatesWithMaxCountAsync(void* input, uint32_t maxCandidates, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const, uint32_t);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetCandidatesAsync(*reinterpret_cast<hstring const*>(&input), maxCandidates));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextConversionGeneratorFactory> : produce_base<D, Windows::Data::Text::ITextConversionGeneratorFactory>
 {
-    HRESULT __stdcall Create(HSTRING languageTag, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* languageTag, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Data::Text::TextConversionGenerator), hstring const&);
             *result = detach_from<Windows::Data::Text::TextConversionGenerator>(this->shim().Create(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextPhoneme> : produce_base<D, Windows::Data::Text::ITextPhoneme>
 {
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadingText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ReadingText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadingText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ReadingText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextPredictionGenerator> : produce_base<D, Windows::Data::Text::ITextPredictionGenerator>
 {
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool* value) noexcept final
+    int32_t WINRT_CALL get_LanguageAvailableButNotInstalled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageAvailableButNotInstalled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LanguageAvailableButNotInstalled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCandidatesAsync(HSTRING input, void** result) noexcept final
+    int32_t WINRT_CALL GetCandidatesAsync(void* input, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetCandidatesAsync(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCandidatesWithMaxCountAsync(HSTRING input, uint32_t maxCandidates, void** result) noexcept final
+    int32_t WINRT_CALL GetCandidatesWithMaxCountAsync(void* input, uint32_t maxCandidates, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const, uint32_t);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetCandidatesAsync(*reinterpret_cast<hstring const*>(&input), maxCandidates));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Data::Text::ITextPredictionGenerator2> : produce_base<D, Windows::Data::Text::ITextPredictionGenerator2>
+{
+    int32_t WINRT_CALL GetCandidatesWithParametersAsync(void* input, uint32_t maxCandidates, Windows::Data::Text::TextPredictionOptions predictionOptions, void* previousStrings, void** result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const, uint32_t, Windows::Data::Text::TextPredictionOptions const, Windows::Foundation::Collections::IIterable<hstring> const);
+            *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetCandidatesAsync(*reinterpret_cast<hstring const*>(&input), maxCandidates, *reinterpret_cast<Windows::Data::Text::TextPredictionOptions const*>(&predictionOptions), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&previousStrings)));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetNextWordCandidatesAsync(uint32_t maxCandidates, void* previousStrings, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNextWordCandidatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), uint32_t, Windows::Foundation::Collections::IIterable<hstring> const);
+            *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().GetNextWordCandidatesAsync(maxCandidates, *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&previousStrings)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_InputScope(Windows::UI::Text::Core::CoreTextInputScope* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputScope, WINRT_WRAP(Windows::UI::Text::Core::CoreTextInputScope));
+            *value = detach_from<Windows::UI::Text::Core::CoreTextInputScope>(this->shim().InputScope());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_InputScope(Windows::UI::Text::Core::CoreTextInputScope value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputScope, WINRT_WRAP(void), Windows::UI::Text::Core::CoreTextInputScope const&);
+            this->shim().InputScope(*reinterpret_cast<Windows::UI::Text::Core::CoreTextInputScope const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextPredictionGeneratorFactory> : produce_base<D, Windows::Data::Text::ITextPredictionGeneratorFactory>
 {
-    HRESULT __stdcall Create(HSTRING languageTag, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* languageTag, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Data::Text::TextPredictionGenerator), hstring const&);
             *result = detach_from<Windows::Data::Text::TextPredictionGenerator>(this->shim().Create(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator> : produce_base<D, Windows::Data::Text::ITextReverseConversionGenerator>
 {
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LanguageAvailableButNotInstalled(bool* value) noexcept final
+    int32_t WINRT_CALL get_LanguageAvailableButNotInstalled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageAvailableButNotInstalled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LanguageAvailableButNotInstalled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertBackAsync(HSTRING input, void** result) noexcept final
+    int32_t WINRT_CALL ConvertBackAsync(void* input, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertBackAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().ConvertBackAsync(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextReverseConversionGenerator2> : produce_base<D, Windows::Data::Text::ITextReverseConversionGenerator2>
 {
-    HRESULT __stdcall GetPhonemesAsync(HSTRING input, void** result) noexcept final
+    int32_t WINRT_CALL GetPhonemesAsync(void* input, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPhonemesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>>>(this->shim().GetPhonemesAsync(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::ITextReverseConversionGeneratorFactory> : produce_base<D, Windows::Data::Text::ITextReverseConversionGeneratorFactory>
 {
-    HRESULT __stdcall Create(HSTRING languageTag, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* languageTag, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Data::Text::TextReverseConversionGenerator), hstring const&);
             *result = detach_from<Windows::Data::Text::TextReverseConversionGenerator>(this->shim().Create(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::IUnicodeCharactersStatics> : produce_base<D, Windows::Data::Text::IUnicodeCharactersStatics>
 {
-    HRESULT __stdcall GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate, uint32_t* codepoint) noexcept final
+    int32_t WINRT_CALL GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate, uint32_t* codepoint) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCodepointFromSurrogatePair, WINRT_WRAP(uint32_t), uint32_t, uint32_t);
             *codepoint = detach_from<uint32_t>(this->shim().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSurrogatePairFromCodepoint(uint32_t codepoint, char16_t* highSurrogate, char16_t* lowSurrogate) noexcept final
+    int32_t WINRT_CALL GetSurrogatePairFromCodepoint(uint32_t codepoint, char16_t* highSurrogate, char16_t* lowSurrogate) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSurrogatePairFromCodepoint, WINRT_WRAP(void), uint32_t, char16_t&, char16_t&);
             this->shim().GetSurrogatePairFromCodepoint(codepoint, *highSurrogate, *lowSurrogate);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsHighSurrogate(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsHighSurrogate(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHighSurrogate, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsHighSurrogate(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsLowSurrogate(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsLowSurrogate(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLowSurrogate, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsLowSurrogate(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupplementary(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsSupplementary(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupplementary, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsSupplementary(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsNoncharacter(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsNoncharacter(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNoncharacter, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsNoncharacter(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsWhitespace(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsWhitespace(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWhitespace, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsWhitespace(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsAlphabetic(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsAlphabetic(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAlphabetic, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsAlphabetic(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsCased(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsCased(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCased, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsCased(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsUppercase(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsUppercase(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsUppercase, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsUppercase(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsLowercase(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsLowercase(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLowercase, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsLowercase(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsIdStart(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsIdStart(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIdStart, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsIdStart(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsIdContinue(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsIdContinue(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIdContinue, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsIdContinue(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsGraphemeBase(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsGraphemeBase(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGraphemeBase, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsGraphemeBase(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsGraphemeExtend(uint32_t codepoint, bool* value) noexcept final
+    int32_t WINRT_CALL IsGraphemeExtend(uint32_t codepoint, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGraphemeExtend, WINRT_WRAP(bool), uint32_t);
             *value = detach_from<bool>(this->shim().IsGraphemeExtend(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericType(uint32_t codepoint, Windows::Data::Text::UnicodeNumericType* value) noexcept final
+    int32_t WINRT_CALL GetNumericType(uint32_t codepoint, Windows::Data::Text::UnicodeNumericType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericType, WINRT_WRAP(Windows::Data::Text::UnicodeNumericType), uint32_t);
             *value = detach_from<Windows::Data::Text::UnicodeNumericType>(this->shim().GetNumericType(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetGeneralCategory(uint32_t codepoint, Windows::Data::Text::UnicodeGeneralCategory* value) noexcept final
+    int32_t WINRT_CALL GetGeneralCategory(uint32_t codepoint, Windows::Data::Text::UnicodeGeneralCategory* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetGeneralCategory, WINRT_WRAP(Windows::Data::Text::UnicodeGeneralCategory), uint32_t);
             *value = detach_from<Windows::Data::Text::UnicodeGeneralCategory>(this->shim().GetGeneralCategory(codepoint));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::IWordSegment> : produce_base<D, Windows::Data::Text::IWordSegment>
 {
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
+    int32_t WINRT_CALL get_SourceTextSegment(struct struct_Windows_Data_Text_TextSegment* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceTextSegment, WINRT_WRAP(Windows::Data::Text::TextSegment));
             *value = detach_from<Windows::Data::Text::TextSegment>(this->shim().SourceTextSegment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlternateForms(void** value) noexcept final
+    int32_t WINRT_CALL get_AlternateForms(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateForms, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm>>(this->shim().AlternateForms());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::IWordsSegmenter> : produce_base<D, Windows::Data::Text::IWordsSegmenter>
 {
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTokenAt(HSTRING text, uint32_t startIndex, void** result) noexcept final
+    int32_t WINRT_CALL GetTokenAt(void* text, uint32_t startIndex, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTokenAt, WINRT_WRAP(Windows::Data::Text::WordSegment), hstring const&, uint32_t);
             *result = detach_from<Windows::Data::Text::WordSegment>(this->shim().GetTokenAt(*reinterpret_cast<hstring const*>(&text), startIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTokens(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL GetTokens(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTokens, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment>), hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment>>(this->shim().GetTokens(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Tokenize(HSTRING text, uint32_t startIndex, void* handler) noexcept final
+    int32_t WINRT_CALL Tokenize(void* text, uint32_t startIndex, void* handler) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tokenize, WINRT_WRAP(void), hstring const&, uint32_t, Windows::Data::Text::WordSegmentsTokenizingHandler const&);
             this->shim().Tokenize(*reinterpret_cast<hstring const*>(&text), startIndex, *reinterpret_cast<Windows::Data::Text::WordSegmentsTokenizingHandler const*>(&handler));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Text::IWordsSegmenterFactory> : produce_base<D, Windows::Data::Text::IWordsSegmenterFactory>
 {
-    HRESULT __stdcall CreateWithLanguage(HSTRING language, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithLanguage(void* language, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithLanguage, WINRT_WRAP(Windows::Data::Text::WordsSegmenter), hstring const&);
             *result = detach_from<Windows::Data::Text::WordsSegmenter>(this->shim().CreateWithLanguage(*reinterpret_cast<hstring const*>(&language)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1334,116 +1303,116 @@ struct produce<D, Windows::Data::Text::IWordsSegmenterFactory> : produce_base<D,
 WINRT_EXPORT namespace winrt::Windows::Data::Text {
 
 inline SelectableWordsSegmenter::SelectableWordsSegmenter(param::hstring const& language) :
-    SelectableWordsSegmenter(get_activation_factory<SelectableWordsSegmenter, Windows::Data::Text::ISelectableWordsSegmenterFactory>().CreateWithLanguage(language))
+    SelectableWordsSegmenter(impl::call_factory<SelectableWordsSegmenter, Windows::Data::Text::ISelectableWordsSegmenterFactory>([&](auto&& f) { return f.CreateWithLanguage(language); }))
 {}
 
 inline SemanticTextQuery::SemanticTextQuery(param::hstring const& aqsFilter) :
-    SemanticTextQuery(get_activation_factory<SemanticTextQuery, Windows::Data::Text::ISemanticTextQueryFactory>().Create(aqsFilter))
+    SemanticTextQuery(impl::call_factory<SemanticTextQuery, Windows::Data::Text::ISemanticTextQueryFactory>([&](auto&& f) { return f.Create(aqsFilter); }))
 {}
 
 inline SemanticTextQuery::SemanticTextQuery(param::hstring const& aqsFilter, param::hstring const& filterLanguage) :
-    SemanticTextQuery(get_activation_factory<SemanticTextQuery, Windows::Data::Text::ISemanticTextQueryFactory>().CreateWithLanguage(aqsFilter, filterLanguage))
+    SemanticTextQuery(impl::call_factory<SemanticTextQuery, Windows::Data::Text::ISemanticTextQueryFactory>([&](auto&& f) { return f.CreateWithLanguage(aqsFilter, filterLanguage); }))
 {}
 
 inline TextConversionGenerator::TextConversionGenerator(param::hstring const& languageTag) :
-    TextConversionGenerator(get_activation_factory<TextConversionGenerator, Windows::Data::Text::ITextConversionGeneratorFactory>().Create(languageTag))
+    TextConversionGenerator(impl::call_factory<TextConversionGenerator, Windows::Data::Text::ITextConversionGeneratorFactory>([&](auto&& f) { return f.Create(languageTag); }))
 {}
 
 inline TextPredictionGenerator::TextPredictionGenerator(param::hstring const& languageTag) :
-    TextPredictionGenerator(get_activation_factory<TextPredictionGenerator, Windows::Data::Text::ITextPredictionGeneratorFactory>().Create(languageTag))
+    TextPredictionGenerator(impl::call_factory<TextPredictionGenerator, Windows::Data::Text::ITextPredictionGeneratorFactory>([&](auto&& f) { return f.Create(languageTag); }))
 {}
 
 inline TextReverseConversionGenerator::TextReverseConversionGenerator(param::hstring const& languageTag) :
-    TextReverseConversionGenerator(get_activation_factory<TextReverseConversionGenerator, Windows::Data::Text::ITextReverseConversionGeneratorFactory>().Create(languageTag))
+    TextReverseConversionGenerator(impl::call_factory<TextReverseConversionGenerator, Windows::Data::Text::ITextReverseConversionGeneratorFactory>([&](auto&& f) { return f.Create(languageTag); }))
 {}
 
 inline uint32_t UnicodeCharacters::GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate); });
 }
 
 inline void UnicodeCharacters::GetSurrogatePairFromCodepoint(uint32_t codepoint, char16_t& highSurrogate, char16_t& lowSurrogate)
 {
-    get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().GetSurrogatePairFromCodepoint(codepoint, highSurrogate, lowSurrogate);
+    impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.GetSurrogatePairFromCodepoint(codepoint, highSurrogate, lowSurrogate); });
 }
 
 inline bool UnicodeCharacters::IsHighSurrogate(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsHighSurrogate(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsHighSurrogate(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsLowSurrogate(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsLowSurrogate(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsLowSurrogate(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsSupplementary(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsSupplementary(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsSupplementary(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsNoncharacter(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsNoncharacter(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsNoncharacter(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsWhitespace(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsWhitespace(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsWhitespace(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsAlphabetic(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsAlphabetic(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsAlphabetic(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsCased(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsCased(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsCased(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsUppercase(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsUppercase(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsUppercase(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsLowercase(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsLowercase(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsLowercase(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsIdStart(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsIdStart(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsIdStart(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsIdContinue(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsIdContinue(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsIdContinue(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsGraphemeBase(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsGraphemeBase(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsGraphemeBase(codepoint); });
 }
 
 inline bool UnicodeCharacters::IsGraphemeExtend(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().IsGraphemeExtend(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.IsGraphemeExtend(codepoint); });
 }
 
 inline Windows::Data::Text::UnicodeNumericType UnicodeCharacters::GetNumericType(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().GetNumericType(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.GetNumericType(codepoint); });
 }
 
 inline Windows::Data::Text::UnicodeGeneralCategory UnicodeCharacters::GetGeneralCategory(uint32_t codepoint)
 {
-    return get_activation_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>().GetGeneralCategory(codepoint);
+    return impl::call_factory<UnicodeCharacters, Windows::Data::Text::IUnicodeCharactersStatics>([&](auto&& f) { return f.GetGeneralCategory(codepoint); });
 }
 
 inline WordsSegmenter::WordsSegmenter(param::hstring const& language) :
-    WordsSegmenter(get_activation_factory<WordsSegmenter, Windows::Data::Text::IWordsSegmenterFactory>().CreateWithLanguage(language))
+    WordsSegmenter(impl::call_factory<WordsSegmenter, Windows::Data::Text::IWordsSegmenterFactory>([&](auto&& f) { return f.CreateWithLanguage(language); }))
 {}
 
 template <typename L> SelectableWordSegmentsTokenizingHandler::SelectableWordSegmentsTokenizingHandler(L handler) :
@@ -1451,11 +1420,19 @@ template <typename L> SelectableWordSegmentsTokenizingHandler::SelectableWordSeg
 {}
 
 template <typename F> SelectableWordSegmentsTokenizingHandler::SelectableWordSegmentsTokenizingHandler(F* handler) :
-    SelectableWordSegmentsTokenizingHandler([=](auto&&... args) { handler(args...); })
+    SelectableWordSegmentsTokenizingHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> SelectableWordSegmentsTokenizingHandler::SelectableWordSegmentsTokenizingHandler(O* object, M method) :
-    SelectableWordSegmentsTokenizingHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    SelectableWordSegmentsTokenizingHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> SelectableWordSegmentsTokenizingHandler::SelectableWordSegmentsTokenizingHandler(com_ptr<O>&& object, M method) :
+    SelectableWordSegmentsTokenizingHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> SelectableWordSegmentsTokenizingHandler::SelectableWordSegmentsTokenizingHandler(weak_ref<O>&& object, M method) :
+    SelectableWordSegmentsTokenizingHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void SelectableWordSegmentsTokenizingHandler::operator()(param::iterable<Windows::Data::Text::SelectableWordSegment> const& precedingWords, param::iterable<Windows::Data::Text::SelectableWordSegment> const& words) const
@@ -1468,11 +1445,19 @@ template <typename L> WordSegmentsTokenizingHandler::WordSegmentsTokenizingHandl
 {}
 
 template <typename F> WordSegmentsTokenizingHandler::WordSegmentsTokenizingHandler(F* handler) :
-    WordSegmentsTokenizingHandler([=](auto&&... args) { handler(args...); })
+    WordSegmentsTokenizingHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> WordSegmentsTokenizingHandler::WordSegmentsTokenizingHandler(O* object, M method) :
-    WordSegmentsTokenizingHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    WordSegmentsTokenizingHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> WordSegmentsTokenizingHandler::WordSegmentsTokenizingHandler(com_ptr<O>&& object, M method) :
+    WordSegmentsTokenizingHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> WordSegmentsTokenizingHandler::WordSegmentsTokenizingHandler(weak_ref<O>&& object, M method) :
+    WordSegmentsTokenizingHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void WordSegmentsTokenizingHandler::operator()(param::iterable<Windows::Data::Text::WordSegment> const& precedingWords, param::iterable<Windows::Data::Text::WordSegment> const& words) const
@@ -1494,6 +1479,7 @@ template<> struct hash<winrt::Windows::Data::Text::ITextConversionGenerator> : w
 template<> struct hash<winrt::Windows::Data::Text::ITextConversionGeneratorFactory> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextConversionGeneratorFactory> {};
 template<> struct hash<winrt::Windows::Data::Text::ITextPhoneme> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextPhoneme> {};
 template<> struct hash<winrt::Windows::Data::Text::ITextPredictionGenerator> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextPredictionGenerator> {};
+template<> struct hash<winrt::Windows::Data::Text::ITextPredictionGenerator2> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextPredictionGenerator2> {};
 template<> struct hash<winrt::Windows::Data::Text::ITextPredictionGeneratorFactory> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextPredictionGeneratorFactory> {};
 template<> struct hash<winrt::Windows::Data::Text::ITextReverseConversionGenerator> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextReverseConversionGenerator> {};
 template<> struct hash<winrt::Windows::Data::Text::ITextReverseConversionGenerator2> : winrt::impl::hash_base<winrt::Windows::Data::Text::ITextReverseConversionGenerator2> {};
@@ -1515,5 +1501,3 @@ template<> struct hash<winrt::Windows::Data::Text::WordSegment> : winrt::impl::h
 template<> struct hash<winrt::Windows::Data::Text::WordsSegmenter> : winrt::impl::hash_base<winrt::Windows::Data::Text::WordsSegmenter> {};
 
 }
-
-WINRT_WARNING_POP

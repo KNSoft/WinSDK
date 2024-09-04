@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,7 +16,7 @@ struct WINRT_EBO IFileOpenPickerUI :
     IFileOpenPickerUI(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]] IFileRemovedEventArgs :
+struct WINRT_EBO IFileRemovedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFileRemovedEventArgs>
 {

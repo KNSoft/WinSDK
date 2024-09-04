@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.AppService.2.h"
@@ -85,208 +85,208 @@ template <typename D> void consume_Windows_Media_IImageDisplayProperties<D>::Sub
     check_hresult(WINRT_SHIM(Windows::Media::IImageDisplayProperties)->put_Subtitle(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_SoundLevelChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::SoundLevelChanged_revoker consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_SoundLevelChanged, SoundLevelChanged(handler));
+    return impl::make_event_revoker<D, SoundLevelChanged_revoker>(this, SoundLevelChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::SoundLevelChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_SoundLevelChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_SoundLevelChanged(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::PlayPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::PlayPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_PlayPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::PlayPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::PlayPressed_revoker consume_Windows_Media_IMediaControl<D>::PlayPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_PlayPressed, PlayPressed(handler));
+    return impl::make_event_revoker<D, PlayPressed_revoker>(this, PlayPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::PlayPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::PlayPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_PlayPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_PlayPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::PausePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::PausePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_PausePressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::PausePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::PausePressed_revoker consume_Windows_Media_IMediaControl<D>::PausePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_PausePressed, PausePressed(handler));
+    return impl::make_event_revoker<D, PausePressed_revoker>(this, PausePressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::PausePressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::PausePressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_PausePressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_PausePressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::StopPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::StopPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_StopPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::StopPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::StopPressed_revoker consume_Windows_Media_IMediaControl<D>::StopPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_StopPressed, StopPressed(handler));
+    return impl::make_event_revoker<D, StopPressed_revoker>(this, StopPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::StopPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::StopPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_StopPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_StopPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_PlayPauseTogglePressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed_revoker consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_PlayPauseTogglePressed, PlayPauseTogglePressed(handler));
+    return impl::make_event_revoker<D, PlayPauseTogglePressed_revoker>(this, PlayPauseTogglePressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::PlayPauseTogglePressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_PlayPauseTogglePressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_PlayPauseTogglePressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::RecordPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::RecordPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_RecordPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::RecordPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::RecordPressed_revoker consume_Windows_Media_IMediaControl<D>::RecordPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_RecordPressed, RecordPressed(handler));
+    return impl::make_event_revoker<D, RecordPressed_revoker>(this, RecordPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::RecordPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::RecordPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_RecordPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_RecordPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::NextTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::NextTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_NextTrackPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::NextTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::NextTrackPressed_revoker consume_Windows_Media_IMediaControl<D>::NextTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_NextTrackPressed, NextTrackPressed(handler));
+    return impl::make_event_revoker<D, NextTrackPressed_revoker>(this, NextTrackPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::NextTrackPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::NextTrackPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_NextTrackPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_NextTrackPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_PreviousTrackPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed_revoker consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_PreviousTrackPressed, PreviousTrackPressed(handler));
+    return impl::make_event_revoker<D, PreviousTrackPressed_revoker>(this, PreviousTrackPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::PreviousTrackPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_PreviousTrackPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_PreviousTrackPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::FastForwardPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::FastForwardPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_FastForwardPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::FastForwardPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::FastForwardPressed_revoker consume_Windows_Media_IMediaControl<D>::FastForwardPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_FastForwardPressed, FastForwardPressed(handler));
+    return impl::make_event_revoker<D, FastForwardPressed_revoker>(this, FastForwardPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::FastForwardPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::FastForwardPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_FastForwardPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_FastForwardPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::RewindPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::RewindPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_RewindPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::RewindPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::RewindPressed_revoker consume_Windows_Media_IMediaControl<D>::RewindPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_RewindPressed, RewindPressed(handler));
+    return impl::make_event_revoker<D, RewindPressed_revoker>(this, RewindPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::RewindPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::RewindPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_RewindPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_RewindPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_ChannelUpPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::ChannelUpPressed_revoker consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_ChannelUpPressed, ChannelUpPressed(handler));
+    return impl::make_event_revoker<D, ChannelUpPressed_revoker>(this, ChannelUpPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::ChannelUpPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_ChannelUpPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_ChannelUpPressed(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->add_ChannelDownPressed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaControl> consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_IMediaControl<D>::ChannelDownPressed_revoker consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaControl>(this, &abi_t<Windows::Media::IMediaControl>::remove_ChannelDownPressed, ChannelDownPressed(handler));
+    return impl::make_event_revoker<D, ChannelDownPressed_revoker>(this, ChannelDownPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_IMediaControl<D>::ChannelDownPressed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaControl)->remove_ChannelDownPressed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaControl)->remove_ChannelDownPressed(get_abi(cookie)));
 }
 
 template <typename D> Windows::Media::SoundLevel consume_Windows_Media_IMediaControl<D>::SoundLevel() const
@@ -369,42 +369,42 @@ template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::Regi
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterByteStreamHandlerWithSettings(get_abi(activatableClassId), get_abi(fileExtension), get_abi(mimeType), get_abi(configuration)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioDecoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioDecoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterAudioDecoder(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioDecoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioDecoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterAudioDecoderWithSettings(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype), get_abi(configuration)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioEncoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioEncoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterAudioEncoder(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioEncoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterAudioEncoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterAudioEncoderWithSettings(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype), get_abi(configuration)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoDecoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoDecoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterVideoDecoder(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoDecoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoDecoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterVideoDecoderWithSettings(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype), get_abi(configuration)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoEncoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoEncoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterVideoEncoder(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype)));
 }
 
-template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoEncoder(param::hstring const& activatableClassId, GUID const& inputSubtype, GUID const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
+template <typename D> void consume_Windows_Media_IMediaExtensionManager<D>::RegisterVideoEncoder(param::hstring const& activatableClassId, winrt::guid const& inputSubtype, winrt::guid const& outputSubtype, Windows::Foundation::Collections::IPropertySet const& configuration) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::IMediaExtensionManager)->RegisterVideoEncoderWithSettings(get_abi(activatableClassId), get_abi(inputSubtype), get_abi(outputSubtype), get_abi(configuration)));
 }
@@ -571,38 +571,38 @@ template <typename D> Windows::Media::MediaTimelineControllerState consume_Windo
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& positionChangedEventHandler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& positionChangedEventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController)->add_PositionChanged(get_abi(positionChangedEventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaTimelineController> consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& positionChangedEventHandler) const
+template <typename D> typename consume_Windows_Media_IMediaTimelineController<D>::PositionChanged_revoker consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& positionChangedEventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaTimelineController>(this, &abi_t<Windows::Media::IMediaTimelineController>::remove_PositionChanged, PositionChanged(positionChangedEventHandler));
+    return impl::make_event_revoker<D, PositionChanged_revoker>(this, PositionChanged(positionChangedEventHandler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Media_IMediaTimelineController<D>::PositionChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController)->remove_PositionChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaTimelineController)->remove_PositionChanged(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaTimelineController<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& stateChangedEventHandler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaTimelineController<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& stateChangedEventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController)->add_StateChanged(get_abi(stateChangedEventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaTimelineController> consume_Windows_Media_IMediaTimelineController<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& stateChangedEventHandler) const
+template <typename D> typename consume_Windows_Media_IMediaTimelineController<D>::StateChanged_revoker consume_Windows_Media_IMediaTimelineController<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& stateChangedEventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaTimelineController>(this, &abi_t<Windows::Media::IMediaTimelineController>::remove_StateChanged, StateChanged(stateChangedEventHandler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(stateChangedEventHandler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaTimelineController<D>::StateChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Media_IMediaTimelineController<D>::StateChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController)->remove_StateChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaTimelineController)->remove_StateChanged(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> consume_Windows_Media_IMediaTimelineController2<D>::Duration() const
@@ -629,43 +629,43 @@ template <typename D> void consume_Windows_Media_IMediaTimelineController2<D>::I
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController2)->put_IsLoopingEnabled(value));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaTimelineController2<D>::Failed(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaTimelineController2<D>::Failed(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const& eventHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController2)->add_Failed(get_abi(eventHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaTimelineController2> consume_Windows_Media_IMediaTimelineController2<D>::Failed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Media_IMediaTimelineController2<D>::Failed_revoker consume_Windows_Media_IMediaTimelineController2<D>::Failed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaTimelineController2>(this, &abi_t<Windows::Media::IMediaTimelineController2>::remove_Failed, Failed(eventHandler));
+    return impl::make_event_revoker<D, Failed_revoker>(this, Failed(eventHandler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaTimelineController2<D>::Failed(event_token const& token) const
+template <typename D> void consume_Windows_Media_IMediaTimelineController2<D>::Failed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController2)->remove_Failed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaTimelineController2)->remove_Failed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_IMediaTimelineController2<D>::Ended(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Media_IMediaTimelineController2<D>::Ended(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController2)->add_Ended(get_abi(eventHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::IMediaTimelineController2> consume_Windows_Media_IMediaTimelineController2<D>::Ended(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> typename consume_Windows_Media_IMediaTimelineController2<D>::Ended_revoker consume_Windows_Media_IMediaTimelineController2<D>::Ended(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::IMediaTimelineController2>(this, &abi_t<Windows::Media::IMediaTimelineController2>::remove_Ended, Ended(eventHandler));
+    return impl::make_event_revoker<D, Ended_revoker>(this, Ended(eventHandler));
 }
 
-template <typename D> void consume_Windows_Media_IMediaTimelineController2<D>::Ended(event_token const& token) const
+template <typename D> void consume_Windows_Media_IMediaTimelineController2<D>::Ended(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineController2)->remove_Ended(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::IMediaTimelineController2)->remove_Ended(get_abi(token)));
 }
 
-template <typename D> HRESULT consume_Windows_Media_IMediaTimelineControllerFailedEventArgs<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_Media_IMediaTimelineControllerFailedEventArgs<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::Media::IMediaTimelineControllerFailedEventArgs)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -928,38 +928,38 @@ template <typename D> void consume_Windows_Media_ISystemMediaTransportControls<D
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->put_IsChannelDownEnabled(value));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->add_ButtonPressed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls> consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed_revoker consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls>(this, &abi_t<Windows::Media::ISystemMediaTransportControls>::remove_ButtonPressed, ButtonPressed(handler));
+    return impl::make_event_revoker<D, ButtonPressed_revoker>(this, ButtonPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls<D>::ButtonPressed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->remove_ButtonPressed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->remove_ButtonPressed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->add_PropertyChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls> consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged_revoker consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls>(this, &abi_t<Windows::Media::ISystemMediaTransportControls>::remove_PropertyChanged, PropertyChanged(handler));
+    return impl::make_event_revoker<D, PropertyChanged_revoker>(this, PropertyChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls<D>::PropertyChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->remove_PropertyChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls)->remove_PropertyChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Media::MediaPlaybackAutoRepeatMode consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatMode() const
@@ -1003,72 +1003,72 @@ template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->UpdateTimelineProperties(get_abi(timelineProperties)));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->add_PlaybackPositionChangeRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls2> consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested_revoker consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls2>(this, &abi_t<Windows::Media::ISystemMediaTransportControls2>::remove_PlaybackPositionChangeRequested, PlaybackPositionChangeRequested(handler));
+    return impl::make_event_revoker<D, PlaybackPositionChangeRequested_revoker>(this, PlaybackPositionChangeRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackPositionChangeRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_PlaybackPositionChangeRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_PlaybackPositionChangeRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->add_PlaybackRateChangeRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls2> consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested_revoker consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls2>(this, &abi_t<Windows::Media::ISystemMediaTransportControls2>::remove_PlaybackRateChangeRequested, PlaybackRateChangeRequested(handler));
+    return impl::make_event_revoker<D, PlaybackRateChangeRequested_revoker>(this, PlaybackRateChangeRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::PlaybackRateChangeRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_PlaybackRateChangeRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_PlaybackRateChangeRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->add_ShuffleEnabledChangeRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls2> consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested_revoker consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls2>(this, &abi_t<Windows::Media::ISystemMediaTransportControls2>::remove_ShuffleEnabledChangeRequested, ShuffleEnabledChangeRequested(handler));
+    return impl::make_event_revoker<D, ShuffleEnabledChangeRequested_revoker>(this, ShuffleEnabledChangeRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::ShuffleEnabledChangeRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_ShuffleEnabledChangeRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_ShuffleEnabledChangeRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->add_AutoRepeatModeChangeRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::ISystemMediaTransportControls2> consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested_revoker consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::ISystemMediaTransportControls2>(this, &abi_t<Windows::Media::ISystemMediaTransportControls2>::remove_AutoRepeatModeChangeRequested, AutoRepeatModeChangeRequested(handler));
+    return impl::make_event_revoker<D, AutoRepeatModeChangeRequested_revoker>(this, AutoRepeatModeChangeRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_ISystemMediaTransportControls2<D>::AutoRepeatModeChangeRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_AutoRepeatModeChangeRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::ISystemMediaTransportControls2)->remove_AutoRepeatModeChangeRequested(get_abi(token)));
 }
 
 template <typename D> Windows::Media::SystemMediaTransportControlsButton consume_Windows_Media_ISystemMediaTransportControlsButtonPressedEventArgs<D>::Button() const
@@ -1337,2951 +1337,2469 @@ template <typename D> Windows::Media::VideoFrame consume_Windows_Media_IVideoFra
 template <typename D>
 struct produce<D, Windows::Media::IAudioBuffer> : produce_base<D, Windows::Media::IAudioBuffer>
 {
-    HRESULT __stdcall get_Capacity(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Capacity(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capacity, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Capacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Length(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Length(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(void), uint32_t);
             this->shim().Length(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IAudioFrame> : produce_base<D, Windows::Media::IAudioFrame>
 {
-    HRESULT __stdcall LockBuffer(Windows::Media::AudioBufferAccessMode mode, void** value) noexcept final
+    int32_t WINRT_CALL LockBuffer(Windows::Media::AudioBufferAccessMode mode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockBuffer, WINRT_WRAP(Windows::Media::AudioBuffer), Windows::Media::AudioBufferAccessMode const&);
             *value = detach_from<Windows::Media::AudioBuffer>(this->shim().LockBuffer(*reinterpret_cast<Windows::Media::AudioBufferAccessMode const*>(&mode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IAudioFrameFactory> : produce_base<D, Windows::Media::IAudioFrameFactory>
 {
-    HRESULT __stdcall Create(uint32_t capacity, void** value) noexcept final
+    int32_t WINRT_CALL Create(uint32_t capacity, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::AudioFrame), uint32_t);
             *value = detach_from<Windows::Media::AudioFrame>(this->shim().Create(capacity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IAutoRepeatModeChangeRequestedEventArgs> : produce_base<D, Windows::Media::IAutoRepeatModeChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_RequestedAutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode* value) noexcept final
+    int32_t WINRT_CALL get_RequestedAutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedAutoRepeatMode, WINRT_WRAP(Windows::Media::MediaPlaybackAutoRepeatMode));
             *value = detach_from<Windows::Media::MediaPlaybackAutoRepeatMode>(this->shim().RequestedAutoRepeatMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IImageDisplayProperties> : produce_base<D, Windows::Media::IImageDisplayProperties>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subtitle(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Subtitle(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Subtitle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subtitle(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Subtitle(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(void), hstring const&);
             this->shim().Subtitle(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaControl> : produce_base<D, Windows::Media::IMediaControl>
 {
-    HRESULT __stdcall add_SoundLevelChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_SoundLevelChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().SoundLevelChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SoundLevelChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().SoundLevelChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SoundLevelChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_SoundLevelChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SoundLevelChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SoundLevelChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SoundLevelChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_PlayPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_PlayPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().PlayPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PlayPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().PlayPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PlayPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_PlayPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PlayPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PlayPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PlayPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_PausePressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_PausePressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().PausePressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PausePressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().PausePressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PausePressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_PausePressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PausePressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PausePressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PausePressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_StopPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_StopPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().StopPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StopPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().StopPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StopPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_StopPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StopPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StopPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StopPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_PlayPauseTogglePressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_PlayPauseTogglePressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().PlayPauseTogglePressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PlayPauseTogglePressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().PlayPauseTogglePressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PlayPauseTogglePressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_PlayPauseTogglePressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PlayPauseTogglePressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PlayPauseTogglePressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PlayPauseTogglePressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_RecordPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_RecordPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().RecordPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RecordPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().RecordPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RecordPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_RecordPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RecordPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RecordPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RecordPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_NextTrackPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_NextTrackPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().NextTrackPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NextTrackPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().NextTrackPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_NextTrackPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_NextTrackPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().NextTrackPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(NextTrackPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().NextTrackPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_PreviousTrackPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_PreviousTrackPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().PreviousTrackPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PreviousTrackPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().PreviousTrackPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PreviousTrackPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_PreviousTrackPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PreviousTrackPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PreviousTrackPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PreviousTrackPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_FastForwardPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_FastForwardPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().FastForwardPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FastForwardPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().FastForwardPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_FastForwardPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_FastForwardPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().FastForwardPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(FastForwardPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().FastForwardPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_RewindPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_RewindPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().RewindPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RewindPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().RewindPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RewindPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_RewindPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RewindPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RewindPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RewindPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_ChannelUpPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ChannelUpPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ChannelUpPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ChannelUpPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ChannelUpPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ChannelUpPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ChannelUpPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ChannelUpPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ChannelUpPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ChannelUpPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_ChannelDownPressed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ChannelDownPressed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ChannelDownPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ChannelDownPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ChannelDownPressed(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ChannelDownPressed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ChannelDownPressed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ChannelDownPressed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ChannelDownPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ChannelDownPressed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall get_SoundLevel(Windows::Media::SoundLevel* value) noexcept final
+    int32_t WINRT_CALL get_SoundLevel(Windows::Media::SoundLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoundLevel, WINRT_WRAP(Windows::Media::SoundLevel));
             *value = detach_from<Windows::Media::SoundLevel>(this->shim().SoundLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrackName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_TrackName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrackName, WINRT_WRAP(void), hstring const&);
             this->shim().TrackName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrackName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TrackName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrackName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TrackName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ArtistName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ArtistName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArtistName, WINRT_WRAP(void), hstring const&);
             this->shim().ArtistName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ArtistName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ArtistName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArtistName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ArtistName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPlaying(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPlaying(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPlaying, WINRT_WRAP(void), bool);
             this->shim().IsPlaying(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPlaying(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPlaying(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPlaying, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPlaying());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlbumArt(void* value) noexcept final
+    int32_t WINRT_CALL put_AlbumArt(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumArt, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().AlbumArt(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlbumArt(void** value) noexcept final
+    int32_t WINRT_CALL get_AlbumArt(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumArt, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().AlbumArt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaExtension> : produce_base<D, Windows::Media::IMediaExtension>
 {
-    HRESULT __stdcall SetProperties(void* configuration) noexcept final
+    int32_t WINRT_CALL SetProperties(void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetProperties, WINRT_WRAP(void), Windows::Foundation::Collections::IPropertySet const&);
             this->shim().SetProperties(*reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaExtensionManager> : produce_base<D, Windows::Media::IMediaExtensionManager>
 {
-    HRESULT __stdcall RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme) noexcept final
+    int32_t WINRT_CALL RegisterSchemeHandler(void* activatableClassId, void* scheme) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterSchemeHandler, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().RegisterSchemeHandler(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<hstring const*>(&scheme));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterSchemeHandlerWithSettings(void* activatableClassId, void* scheme, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterSchemeHandler, WINRT_WRAP(void), hstring const&, hstring const&, Windows::Foundation::Collections::IPropertySet const&);
             this->shim().RegisterSchemeHandler(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<hstring const*>(&scheme), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType) noexcept final
+    int32_t WINRT_CALL RegisterByteStreamHandler(void* activatableClassId, void* fileExtension, void* mimeType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterByteStreamHandler, WINRT_WRAP(void), hstring const&, hstring const&, hstring const&);
             this->shim().RegisterByteStreamHandler(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<hstring const*>(&fileExtension), *reinterpret_cast<hstring const*>(&mimeType));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterByteStreamHandlerWithSettings(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterByteStreamHandlerWithSettings(void* activatableClassId, void* fileExtension, void* mimeType, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterByteStreamHandler, WINRT_WRAP(void), hstring const&, hstring const&, hstring const&, Windows::Foundation::Collections::IPropertySet const&);
             this->shim().RegisterByteStreamHandler(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<hstring const*>(&fileExtension), *reinterpret_cast<hstring const*>(&mimeType), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype) noexcept final
+    int32_t WINRT_CALL RegisterAudioDecoder(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterAudioDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterAudioDecoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&);
+            this->shim().RegisterAudioDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterAudioDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterAudioDecoderWithSettings(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterAudioDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterAudioDecoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&, Windows::Foundation::Collections::IPropertySet const&);
+            this->shim().RegisterAudioDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype) noexcept final
+    int32_t WINRT_CALL RegisterAudioEncoder(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterAudioEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterAudioEncoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&);
+            this->shim().RegisterAudioEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterAudioEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterAudioEncoderWithSettings(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterAudioEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterAudioEncoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&, Windows::Foundation::Collections::IPropertySet const&);
+            this->shim().RegisterAudioEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype) noexcept final
+    int32_t WINRT_CALL RegisterVideoDecoder(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterVideoDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterVideoDecoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&);
+            this->shim().RegisterVideoDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterVideoDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterVideoDecoderWithSettings(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterVideoDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterVideoDecoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&, Windows::Foundation::Collections::IPropertySet const&);
+            this->shim().RegisterVideoDecoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype) noexcept final
+    int32_t WINRT_CALL RegisterVideoEncoder(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterVideoEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterVideoEncoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&);
+            this->shim().RegisterVideoEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterVideoEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, void* configuration) noexcept final
+    int32_t WINRT_CALL RegisterVideoEncoderWithSettings(void* activatableClassId, winrt::guid inputSubtype, winrt::guid outputSubtype, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegisterVideoEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<GUID const*>(&inputSubtype), *reinterpret_cast<GUID const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegisterVideoEncoder, WINRT_WRAP(void), hstring const&, winrt::guid const&, winrt::guid const&, Windows::Foundation::Collections::IPropertySet const&);
+            this->shim().RegisterVideoEncoder(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<winrt::guid const*>(&inputSubtype), *reinterpret_cast<winrt::guid const*>(&outputSubtype), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaExtensionManager2> : produce_base<D, Windows::Media::IMediaExtensionManager2>
 {
-    HRESULT __stdcall RegisterMediaExtensionForAppService(void* extension, void* connection) noexcept final
+    int32_t WINRT_CALL RegisterMediaExtensionForAppService(void* extension, void* connection) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterMediaExtensionForAppService, WINRT_WRAP(void), Windows::Media::IMediaExtension const&, Windows::ApplicationModel::AppService::AppServiceConnection const&);
             this->shim().RegisterMediaExtensionForAppService(*reinterpret_cast<Windows::Media::IMediaExtension const*>(&extension), *reinterpret_cast<Windows::ApplicationModel::AppService::AppServiceConnection const*>(&connection));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaFrame> : produce_base<D, Windows::Media::IMediaFrame>
 {
-    HRESULT __stdcall get_Type(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Type(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsReadOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsReadOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsReadOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsReadOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativeTime(void* value) noexcept final
+    int32_t WINRT_CALL put_RelativeTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().RelativeTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeTime(void** value) noexcept final
+    int32_t WINRT_CALL get_RelativeTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().RelativeTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemRelativeTime(void* value) noexcept final
+    int32_t WINRT_CALL put_SystemRelativeTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemRelativeTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().SystemRelativeTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemRelativeTime(void** value) noexcept final
+    int32_t WINRT_CALL get_SystemRelativeTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemRelativeTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().SystemRelativeTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Duration(void* value) noexcept final
+    int32_t WINRT_CALL put_Duration(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().Duration(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(void** value) noexcept final
+    int32_t WINRT_CALL get_Duration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsDiscontinuous(bool value) noexcept final
+    int32_t WINRT_CALL put_IsDiscontinuous(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDiscontinuous, WINRT_WRAP(void), bool);
             this->shim().IsDiscontinuous(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDiscontinuous(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDiscontinuous(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDiscontinuous, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDiscontinuous());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_ExtendedProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendedProperties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().ExtendedProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaMarker> : produce_base<D, Windows::Media::IMediaMarker>
 {
-    HRESULT __stdcall get_Time(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Time(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Time, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Time());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediaMarkerType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MediaMarkerType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaMarkerType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MediaMarkerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaMarkerTypesStatics> : produce_base<D, Windows::Media::IMediaMarkerTypesStatics>
 {
-    HRESULT __stdcall get_Bookmark(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Bookmark(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bookmark, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Bookmark());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaMarkers> : produce_base<D, Windows::Media::IMediaMarkers>
 {
-    HRESULT __stdcall get_Markers(void** value) noexcept final
+    int32_t WINRT_CALL get_Markers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Markers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker>>(this->shim().Markers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaProcessingTriggerDetails> : produce_base<D, Windows::Media::IMediaProcessingTriggerDetails>
 {
-    HRESULT __stdcall get_Arguments(void** value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaTimelineController> : produce_base<D, Windows::Media::IMediaTimelineController>
 {
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Position(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Position(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Position(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClockRate(double* value) noexcept final
+    int32_t WINRT_CALL get_ClockRate(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClockRate, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ClockRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClockRate(double value) noexcept final
+    int32_t WINRT_CALL put_ClockRate(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClockRate, WINRT_WRAP(void), double);
             this->shim().ClockRate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Media::MediaTimelineControllerState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Media::MediaTimelineControllerState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Media::MediaTimelineControllerState));
             *value = detach_from<Windows::Media::MediaTimelineControllerState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PositionChanged(void* positionChangedEventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_PositionChanged(void* positionChangedEventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().PositionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&positionChangedEventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PositionChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().PositionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&positionChangedEventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PositionChanged(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_PositionChanged(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PositionChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PositionChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_StateChanged(void* stateChangedEventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().PositionChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&stateChangedEventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* stateChangedEventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&stateChangedEventHandler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_StateChanged(event_token eventCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaTimelineController2> : produce_base<D, Windows::Media::IMediaTimelineController2>
 {
-    HRESULT __stdcall get_Duration(void** value) noexcept final
+    int32_t WINRT_CALL get_Duration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Duration(void* value) noexcept final
+    int32_t WINRT_CALL put_Duration(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().Duration(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsLoopingEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsLoopingEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLoopingEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsLoopingEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsLoopingEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsLoopingEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLoopingEnabled, WINRT_WRAP(void), bool);
             this->shim().IsLoopingEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Failed(void* eventHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Failed(void* eventHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Failed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Failed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Failed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Failed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Failed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Failed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Failed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Ended(void* eventHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Failed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Ended, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Ended(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Ended(void* eventHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Ended(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Ended(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> const*>(&eventHandler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Ended(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Ended(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Ended, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Ended(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMediaTimelineControllerFailedEventArgs> : produce_base<D, Windows::Media::IMediaTimelineControllerFailedEventArgs>
 {
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMusicDisplayProperties> : produce_base<D, Windows::Media::IMusicDisplayProperties>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlbumArtist(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlbumArtist(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumArtist, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlbumArtist());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlbumArtist(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AlbumArtist(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumArtist, WINRT_WRAP(void), hstring const&);
             this->shim().AlbumArtist(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Artist(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Artist(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Artist, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Artist());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Artist(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Artist(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Artist, WINRT_WRAP(void), hstring const&);
             this->shim().Artist(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMusicDisplayProperties2> : produce_base<D, Windows::Media::IMusicDisplayProperties2>
 {
-    HRESULT __stdcall get_AlbumTitle(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlbumTitle(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumTitle, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlbumTitle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlbumTitle(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AlbumTitle(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumTitle, WINRT_WRAP(void), hstring const&);
             this->shim().AlbumTitle(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrackNumber(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TrackNumber(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrackNumber, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TrackNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrackNumber(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_TrackNumber(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrackNumber, WINRT_WRAP(void), uint32_t);
             this->shim().TrackNumber(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Genres(void** value) noexcept final
+    int32_t WINRT_CALL get_Genres(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Genres, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().Genres());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IMusicDisplayProperties3> : produce_base<D, Windows::Media::IMusicDisplayProperties3>
 {
-    HRESULT __stdcall get_AlbumTrackCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_AlbumTrackCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumTrackCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().AlbumTrackCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlbumTrackCount(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_AlbumTrackCount(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlbumTrackCount, WINRT_WRAP(void), uint32_t);
             this->shim().AlbumTrackCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IPlaybackPositionChangeRequestedEventArgs> : produce_base<D, Windows::Media::IPlaybackPositionChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_RequestedPlaybackPosition(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_RequestedPlaybackPosition(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedPlaybackPosition, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().RequestedPlaybackPosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IPlaybackRateChangeRequestedEventArgs> : produce_base<D, Windows::Media::IPlaybackRateChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_RequestedPlaybackRate(double* value) noexcept final
+    int32_t WINRT_CALL get_RequestedPlaybackRate(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedPlaybackRate, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RequestedPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IShuffleEnabledChangeRequestedEventArgs> : produce_base<D, Windows::Media::IShuffleEnabledChangeRequestedEventArgs>
 {
-    HRESULT __stdcall get_RequestedShuffleEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_RequestedShuffleEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedShuffleEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RequestedShuffleEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControls> : produce_base<D, Windows::Media::ISystemMediaTransportControls>
 {
-    HRESULT __stdcall get_PlaybackStatus(Windows::Media::MediaPlaybackStatus* value) noexcept final
+    int32_t WINRT_CALL get_PlaybackStatus(Windows::Media::MediaPlaybackStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackStatus, WINRT_WRAP(Windows::Media::MediaPlaybackStatus));
             *value = detach_from<Windows::Media::MediaPlaybackStatus>(this->shim().PlaybackStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PlaybackStatus(Windows::Media::MediaPlaybackStatus value) noexcept final
+    int32_t WINRT_CALL put_PlaybackStatus(Windows::Media::MediaPlaybackStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackStatus, WINRT_WRAP(void), Windows::Media::MediaPlaybackStatus const&);
             this->shim().PlaybackStatus(*reinterpret_cast<Windows::Media::MediaPlaybackStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayUpdater(void** value) noexcept final
+    int32_t WINRT_CALL get_DisplayUpdater(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayUpdater, WINRT_WRAP(Windows::Media::SystemMediaTransportControlsDisplayUpdater));
             *value = detach_from<Windows::Media::SystemMediaTransportControlsDisplayUpdater>(this->shim().DisplayUpdater());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SoundLevel(Windows::Media::SoundLevel* value) noexcept final
+    int32_t WINRT_CALL get_SoundLevel(Windows::Media::SoundLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoundLevel, WINRT_WRAP(Windows::Media::SoundLevel));
             *value = detach_from<Windows::Media::SoundLevel>(this->shim().SoundLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPlayEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPlayEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPlayEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPlayEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPlayEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPlayEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPlayEnabled, WINRT_WRAP(void), bool);
             this->shim().IsPlayEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStopEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStopEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStopEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStopEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsStopEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsStopEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStopEnabled, WINRT_WRAP(void), bool);
             this->shim().IsStopEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPauseEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPauseEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPauseEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPauseEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPauseEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPauseEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPauseEnabled, WINRT_WRAP(void), bool);
             this->shim().IsPauseEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsRecordEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRecordEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRecordEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRecordEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsRecordEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsRecordEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRecordEnabled, WINRT_WRAP(void), bool);
             this->shim().IsRecordEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFastForwardEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFastForwardEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFastForwardEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFastForwardEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsFastForwardEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsFastForwardEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFastForwardEnabled, WINRT_WRAP(void), bool);
             this->shim().IsFastForwardEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsRewindEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRewindEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRewindEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRewindEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsRewindEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsRewindEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRewindEnabled, WINRT_WRAP(void), bool);
             this->shim().IsRewindEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPreviousEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPreviousEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPreviousEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPreviousEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPreviousEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPreviousEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPreviousEnabled, WINRT_WRAP(void), bool);
             this->shim().IsPreviousEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNextEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNextEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNextEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNextEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsNextEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsNextEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNextEnabled, WINRT_WRAP(void), bool);
             this->shim().IsNextEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsChannelUpEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsChannelUpEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsChannelUpEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsChannelUpEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsChannelUpEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsChannelUpEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsChannelUpEnabled, WINRT_WRAP(void), bool);
             this->shim().IsChannelUpEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsChannelDownEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsChannelDownEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsChannelDownEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsChannelDownEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsChannelDownEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsChannelDownEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsChannelDownEnabled, WINRT_WRAP(void), bool);
             this->shim().IsChannelDownEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ButtonPressed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ButtonPressed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ButtonPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ButtonPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ButtonPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ButtonPressed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ButtonPressed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ButtonPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ButtonPressed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_PropertyChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ButtonPressed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PropertyChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().PropertyChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PropertyChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_PropertyChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().PropertyChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_PropertyChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PropertyChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PropertyChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PropertyChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControls2> : produce_base<D, Windows::Media::ISystemMediaTransportControls2>
 {
-    HRESULT __stdcall get_AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode* value) noexcept final
+    int32_t WINRT_CALL get_AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRepeatMode, WINRT_WRAP(Windows::Media::MediaPlaybackAutoRepeatMode));
             *value = detach_from<Windows::Media::MediaPlaybackAutoRepeatMode>(this->shim().AutoRepeatMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode value) noexcept final
+    int32_t WINRT_CALL put_AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRepeatMode, WINRT_WRAP(void), Windows::Media::MediaPlaybackAutoRepeatMode const&);
             this->shim().AutoRepeatMode(*reinterpret_cast<Windows::Media::MediaPlaybackAutoRepeatMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShuffleEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShuffleEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShuffleEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShuffleEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShuffleEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_ShuffleEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShuffleEnabled, WINRT_WRAP(void), bool);
             this->shim().ShuffleEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlaybackRate(double* value) noexcept final
+    int32_t WINRT_CALL get_PlaybackRate(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackRate, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().PlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PlaybackRate(double value) noexcept final
+    int32_t WINRT_CALL put_PlaybackRate(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackRate, WINRT_WRAP(void), double);
             this->shim().PlaybackRate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateTimelineProperties(void* timelineProperties) noexcept final
+    int32_t WINRT_CALL UpdateTimelineProperties(void* timelineProperties) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateTimelineProperties, WINRT_WRAP(void), Windows::Media::SystemMediaTransportControlsTimelineProperties const&);
             this->shim().UpdateTimelineProperties(*reinterpret_cast<Windows::Media::SystemMediaTransportControlsTimelineProperties const*>(&timelineProperties));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PlaybackPositionChangeRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_PlaybackPositionChangeRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().PlaybackPositionChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PlaybackPositionChangeRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().PlaybackPositionChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackPositionChangeRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PlaybackPositionChangeRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_PlaybackPositionChangeRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PlaybackPositionChangeRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PlaybackPositionChangeRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_PlaybackRateChangeRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().PlaybackPositionChangeRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PlaybackRateChangeRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().PlaybackRateChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PlaybackRateChangeRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_PlaybackRateChangeRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PlaybackRateChangeRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PlaybackRateChangeRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ShuffleEnabledChangeRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().PlaybackRateChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::PlaybackRateChangeRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ShuffleEnabledChangeRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ShuffleEnabledChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PlaybackRateChangeRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ShuffleEnabledChangeRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ShuffleEnabledChangeRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ShuffleEnabledChangeRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_AutoRepeatModeChangeRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().PlaybackRateChangeRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AutoRepeatModeChangeRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AutoRepeatModeChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ShuffleEnabledChangeRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_AutoRepeatModeChangeRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ShuffleEnabledChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::ShuffleEnabledChangeRequestedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ShuffleEnabledChangeRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ShuffleEnabledChangeRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_AutoRepeatModeChangeRequested(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AutoRepeatModeChangeRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::SystemMediaTransportControls, Windows::Media::AutoRepeatModeChangeRequestedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_AutoRepeatModeChangeRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AutoRepeatModeChangeRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AutoRepeatModeChangeRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AutoRepeatModeChangeRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControlsButtonPressedEventArgs> : produce_base<D, Windows::Media::ISystemMediaTransportControlsButtonPressedEventArgs>
 {
-    HRESULT __stdcall get_Button(Windows::Media::SystemMediaTransportControlsButton* value) noexcept final
+    int32_t WINRT_CALL get_Button(Windows::Media::SystemMediaTransportControlsButton* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Button, WINRT_WRAP(Windows::Media::SystemMediaTransportControlsButton));
             *value = detach_from<Windows::Media::SystemMediaTransportControlsButton>(this->shim().Button());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControlsDisplayUpdater> : produce_base<D, Windows::Media::ISystemMediaTransportControlsDisplayUpdater>
 {
-    HRESULT __stdcall get_Type(Windows::Media::MediaPlaybackType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Media::MediaPlaybackType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Media::MediaPlaybackType));
             *value = detach_from<Windows::Media::MediaPlaybackType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(Windows::Media::MediaPlaybackType value) noexcept final
+    int32_t WINRT_CALL put_Type(Windows::Media::MediaPlaybackType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), Windows::Media::MediaPlaybackType const&);
             this->shim().Type(*reinterpret_cast<Windows::Media::MediaPlaybackType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppMediaId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppMediaId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppMediaId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppMediaId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppMediaId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AppMediaId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppMediaId, WINRT_WRAP(void), hstring const&);
             this->shim().AppMediaId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Thumbnail(void* value) noexcept final
+    int32_t WINRT_CALL put_Thumbnail(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(void), Windows::Storage::Streams::RandomAccessStreamReference const&);
             this->shim().Thumbnail(*reinterpret_cast<Windows::Storage::Streams::RandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MusicProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_MusicProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MusicProperties, WINRT_WRAP(Windows::Media::MusicDisplayProperties));
             *value = detach_from<Windows::Media::MusicDisplayProperties>(this->shim().MusicProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoProperties, WINRT_WRAP(Windows::Media::VideoDisplayProperties));
             *value = detach_from<Windows::Media::VideoDisplayProperties>(this->shim().VideoProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageProperties, WINRT_WRAP(Windows::Media::ImageDisplayProperties));
             *value = detach_from<Windows::Media::ImageDisplayProperties>(this->shim().ImageProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyFromFileAsync(Windows::Media::MediaPlaybackType type, void* source, void** operation) noexcept final
+    int32_t WINRT_CALL CopyFromFileAsync(Windows::Media::MediaPlaybackType type, void* source, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Media::MediaPlaybackType const, Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().CopyFromFileAsync(*reinterpret_cast<Windows::Media::MediaPlaybackType const*>(&type), *reinterpret_cast<Windows::Storage::StorageFile const*>(&source)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearAll() noexcept final
+    int32_t WINRT_CALL ClearAll() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearAll, WINRT_WRAP(void));
             this->shim().ClearAll();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Update() noexcept final
+    int32_t WINRT_CALL Update() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Update, WINRT_WRAP(void));
             this->shim().Update();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControlsPropertyChangedEventArgs> : produce_base<D, Windows::Media::ISystemMediaTransportControlsPropertyChangedEventArgs>
 {
-    HRESULT __stdcall get_Property(Windows::Media::SystemMediaTransportControlsProperty* value) noexcept final
+    int32_t WINRT_CALL get_Property(Windows::Media::SystemMediaTransportControlsProperty* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Property, WINRT_WRAP(Windows::Media::SystemMediaTransportControlsProperty));
             *value = detach_from<Windows::Media::SystemMediaTransportControlsProperty>(this->shim().Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControlsStatics> : produce_base<D, Windows::Media::ISystemMediaTransportControlsStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** mediaControl) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** mediaControl) noexcept final
     {
         try
         {
             *mediaControl = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Media::SystemMediaTransportControls));
             *mediaControl = detach_from<Windows::Media::SystemMediaTransportControls>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::ISystemMediaTransportControlsTimelineProperties> : produce_base<D, Windows::Media::ISystemMediaTransportControlsTimelineProperties>
 {
-    HRESULT __stdcall get_StartTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_StartTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().StartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_StartTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().StartTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_EndTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().EndTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_EndTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().EndTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinSeekTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MinSeekTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinSeekTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MinSeekTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinSeekTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_MinSeekTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinSeekTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().MinSeekTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxSeekTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MaxSeekTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSeekTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MaxSeekTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxSeekTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_MaxSeekTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSeekTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().MaxSeekTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Position(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Position(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Position(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoDisplayProperties> : produce_base<D, Windows::Media::IVideoDisplayProperties>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subtitle(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Subtitle(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Subtitle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subtitle(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Subtitle(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(void), hstring const&);
             this->shim().Subtitle(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoDisplayProperties2> : produce_base<D, Windows::Media::IVideoDisplayProperties2>
 {
-    HRESULT __stdcall get_Genres(void** value) noexcept final
+    int32_t WINRT_CALL get_Genres(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Genres, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().Genres());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoEffectsStatics> : produce_base<D, Windows::Media::IVideoEffectsStatics>
 {
-    HRESULT __stdcall get_VideoStabilization(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VideoStabilization(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoStabilization, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VideoStabilization());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoFrame> : produce_base<D, Windows::Media::IVideoFrame>
 {
-    HRESULT __stdcall get_SoftwareBitmap(void** value) noexcept final
+    int32_t WINRT_CALL get_SoftwareBitmap(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoftwareBitmap, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap));
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().SoftwareBitmap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyToAsync(void* frame, void** value) noexcept final
+    int32_t WINRT_CALL CopyToAsync(void* frame, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyToAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::VideoFrame const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().CopyToAsync(*reinterpret_cast<Windows::Media::VideoFrame const*>(&frame)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direct3DSurface(void** value) noexcept final
+    int32_t WINRT_CALL get_Direct3DSurface(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direct3DSurface, WINRT_WRAP(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface));
             *value = detach_from<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>(this->shim().Direct3DSurface());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoFrame2> : produce_base<D, Windows::Media::IVideoFrame2>
 {
-    HRESULT __stdcall CopyToWithBoundsAsync(void* frame, void* sourceBounds, void* destinationBounds, void** operation) noexcept final
+    int32_t WINRT_CALL CopyToWithBoundsAsync(void* frame, void* sourceBounds, void* destinationBounds, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyToAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::VideoFrame const, Windows::Foundation::IReference<Windows::Graphics::Imaging::BitmapBounds> const, Windows::Foundation::IReference<Windows::Graphics::Imaging::BitmapBounds> const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().CopyToAsync(*reinterpret_cast<Windows::Media::VideoFrame const*>(&frame), *reinterpret_cast<Windows::Foundation::IReference<Windows::Graphics::Imaging::BitmapBounds> const*>(&sourceBounds), *reinterpret_cast<Windows::Foundation::IReference<Windows::Graphics::Imaging::BitmapBounds> const*>(&destinationBounds)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoFrameFactory> : produce_base<D, Windows::Media::IVideoFrameFactory>
 {
-    HRESULT __stdcall Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
+    int32_t WINRT_CALL Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t);
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().Create(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithAlpha, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t, Windows::Graphics::Imaging::BitmapAlphaMode const&);
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().CreateWithAlpha(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height, *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alpha)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::IVideoFrameStatics> : produce_base<D, Windows::Media::IVideoFrameStatics>
 {
-    HRESULT __stdcall CreateAsDirect3D11SurfaceBacked(Windows::Graphics::DirectX::DirectXPixelFormat format, int32_t width, int32_t height, void** result) noexcept final
+    int32_t WINRT_CALL CreateAsDirect3D11SurfaceBacked(Windows::Graphics::DirectX::DirectXPixelFormat format, int32_t width, int32_t height, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAsDirect3D11SurfaceBacked, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::DirectX::DirectXPixelFormat const&, int32_t, int32_t);
             *result = detach_from<Windows::Media::VideoFrame>(this->shim().CreateAsDirect3D11SurfaceBacked(*reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&format), width, height));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAsDirect3D11SurfaceBackedWithDevice(Windows::Graphics::DirectX::DirectXPixelFormat format, int32_t width, int32_t height, void* device, void** result) noexcept final
+    int32_t WINRT_CALL CreateAsDirect3D11SurfaceBackedWithDevice(Windows::Graphics::DirectX::DirectXPixelFormat format, int32_t width, int32_t height, void* device, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAsDirect3D11SurfaceBacked, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::DirectX::DirectXPixelFormat const&, int32_t, int32_t, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const&);
             *result = detach_from<Windows::Media::VideoFrame>(this->shim().CreateAsDirect3D11SurfaceBacked(*reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&format), width, height, *reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const*>(&device)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithSoftwareBitmap(void* bitmap, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithSoftwareBitmap(void* bitmap, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithSoftwareBitmap, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::Imaging::SoftwareBitmap const&);
             *result = detach_from<Windows::Media::VideoFrame>(this->shim().CreateWithSoftwareBitmap(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&bitmap)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithDirect3D11Surface(void* surface, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithDirect3D11Surface(void* surface, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithDirect3D11Surface, WINRT_WRAP(Windows::Media::VideoFrame), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const&);
             *result = detach_from<Windows::Media::VideoFrame>(this->shim().CreateWithDirect3D11Surface(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4290,299 +3808,299 @@ struct produce<D, Windows::Media::IVideoFrameStatics> : produce_base<D, Windows:
 WINRT_EXPORT namespace winrt::Windows::Media {
 
 inline AudioFrame::AudioFrame(uint32_t capacity) :
-    AudioFrame(get_activation_factory<AudioFrame, Windows::Media::IAudioFrameFactory>().Create(capacity))
+    AudioFrame(impl::call_factory<AudioFrame, Windows::Media::IAudioFrameFactory>([&](auto&& f) { return f.Create(capacity); }))
 {}
 
-inline event_token MediaControl::SoundLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::SoundLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().SoundLevelChanged(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.SoundLevelChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::SoundLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::SoundLevelChanged_revoker MediaControl::SoundLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_SoundLevelChanged, factory.SoundLevelChanged(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.SoundLevelChanged(handler) };
 }
 
-inline void MediaControl::SoundLevelChanged(event_token const& cookie)
+inline void MediaControl::SoundLevelChanged(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().SoundLevelChanged(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.SoundLevelChanged(cookie); });
 }
 
-inline event_token MediaControl::PlayPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::PlayPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PlayPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PlayPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::PlayPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::PlayPressed_revoker MediaControl::PlayPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_PlayPressed, factory.PlayPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.PlayPressed(handler) };
 }
 
-inline void MediaControl::PlayPressed(event_token const& cookie)
+inline void MediaControl::PlayPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PlayPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PlayPressed(cookie); });
 }
 
-inline event_token MediaControl::PausePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::PausePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PausePressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PausePressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::PausePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::PausePressed_revoker MediaControl::PausePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_PausePressed, factory.PausePressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.PausePressed(handler) };
 }
 
-inline void MediaControl::PausePressed(event_token const& cookie)
+inline void MediaControl::PausePressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PausePressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PausePressed(cookie); });
 }
 
-inline event_token MediaControl::StopPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::StopPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().StopPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.StopPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::StopPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::StopPressed_revoker MediaControl::StopPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_StopPressed, factory.StopPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.StopPressed(handler) };
 }
 
-inline void MediaControl::StopPressed(event_token const& cookie)
+inline void MediaControl::StopPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().StopPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.StopPressed(cookie); });
 }
 
-inline event_token MediaControl::PlayPauseTogglePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::PlayPauseTogglePressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PlayPauseTogglePressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PlayPauseTogglePressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::PlayPauseTogglePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::PlayPauseTogglePressed_revoker MediaControl::PlayPauseTogglePressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_PlayPauseTogglePressed, factory.PlayPauseTogglePressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.PlayPauseTogglePressed(handler) };
 }
 
-inline void MediaControl::PlayPauseTogglePressed(event_token const& cookie)
+inline void MediaControl::PlayPauseTogglePressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PlayPauseTogglePressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PlayPauseTogglePressed(cookie); });
 }
 
-inline event_token MediaControl::RecordPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::RecordPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().RecordPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.RecordPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::RecordPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::RecordPressed_revoker MediaControl::RecordPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_RecordPressed, factory.RecordPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.RecordPressed(handler) };
 }
 
-inline void MediaControl::RecordPressed(event_token const& cookie)
+inline void MediaControl::RecordPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().RecordPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.RecordPressed(cookie); });
 }
 
-inline event_token MediaControl::NextTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::NextTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().NextTrackPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.NextTrackPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::NextTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::NextTrackPressed_revoker MediaControl::NextTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_NextTrackPressed, factory.NextTrackPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.NextTrackPressed(handler) };
 }
 
-inline void MediaControl::NextTrackPressed(event_token const& cookie)
+inline void MediaControl::NextTrackPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().NextTrackPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.NextTrackPressed(cookie); });
 }
 
-inline event_token MediaControl::PreviousTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::PreviousTrackPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PreviousTrackPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PreviousTrackPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::PreviousTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::PreviousTrackPressed_revoker MediaControl::PreviousTrackPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_PreviousTrackPressed, factory.PreviousTrackPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.PreviousTrackPressed(handler) };
 }
 
-inline void MediaControl::PreviousTrackPressed(event_token const& cookie)
+inline void MediaControl::PreviousTrackPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().PreviousTrackPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.PreviousTrackPressed(cookie); });
 }
 
-inline event_token MediaControl::FastForwardPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::FastForwardPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().FastForwardPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.FastForwardPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::FastForwardPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::FastForwardPressed_revoker MediaControl::FastForwardPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_FastForwardPressed, factory.FastForwardPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.FastForwardPressed(handler) };
 }
 
-inline void MediaControl::FastForwardPressed(event_token const& cookie)
+inline void MediaControl::FastForwardPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().FastForwardPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.FastForwardPressed(cookie); });
 }
 
-inline event_token MediaControl::RewindPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::RewindPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().RewindPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.RewindPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::RewindPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::RewindPressed_revoker MediaControl::RewindPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_RewindPressed, factory.RewindPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.RewindPressed(handler) };
 }
 
-inline void MediaControl::RewindPressed(event_token const& cookie)
+inline void MediaControl::RewindPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().RewindPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.RewindPressed(cookie); });
 }
 
-inline event_token MediaControl::ChannelUpPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::ChannelUpPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ChannelUpPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ChannelUpPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::ChannelUpPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::ChannelUpPressed_revoker MediaControl::ChannelUpPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_ChannelUpPressed, factory.ChannelUpPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.ChannelUpPressed(handler) };
 }
 
-inline void MediaControl::ChannelUpPressed(event_token const& cookie)
+inline void MediaControl::ChannelUpPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ChannelUpPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ChannelUpPressed(cookie); });
 }
 
-inline event_token MediaControl::ChannelDownPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token MediaControl::ChannelDownPressed(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ChannelDownPressed(handler);
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ChannelDownPressed(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::IMediaControl> MediaControl::ChannelDownPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline MediaControl::ChannelDownPressed_revoker MediaControl::ChannelDownPressed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
-    return { factory, &impl::abi_t<Windows::Media::IMediaControl>::remove_ChannelDownPressed, factory.ChannelDownPressed(handler) };
+    auto f = get_activation_factory<MediaControl, Windows::Media::IMediaControl>();
+    return { f, f.ChannelDownPressed(handler) };
 }
 
-inline void MediaControl::ChannelDownPressed(event_token const& cookie)
+inline void MediaControl::ChannelDownPressed(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ChannelDownPressed(cookie);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ChannelDownPressed(cookie); });
 }
 
 inline Windows::Media::SoundLevel MediaControl::SoundLevel()
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().SoundLevel();
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.SoundLevel(); });
 }
 
 inline void MediaControl::TrackName(param::hstring const& value)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().TrackName(value);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.TrackName(value); });
 }
 
 inline hstring MediaControl::TrackName()
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().TrackName();
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.TrackName(); });
 }
 
 inline void MediaControl::ArtistName(param::hstring const& value)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ArtistName(value);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ArtistName(value); });
 }
 
 inline hstring MediaControl::ArtistName()
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().ArtistName();
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.ArtistName(); });
 }
 
 inline void MediaControl::IsPlaying(bool value)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().IsPlaying(value);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.IsPlaying(value); });
 }
 
 inline bool MediaControl::IsPlaying()
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().IsPlaying();
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.IsPlaying(); });
 }
 
 inline void MediaControl::AlbumArt(Windows::Foundation::Uri const& value)
 {
-    get_activation_factory<MediaControl, Windows::Media::IMediaControl>().AlbumArt(value);
+    impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.AlbumArt(value); });
 }
 
 inline Windows::Foundation::Uri MediaControl::AlbumArt()
 {
-    return get_activation_factory<MediaControl, Windows::Media::IMediaControl>().AlbumArt();
+    return impl::call_factory<MediaControl, Windows::Media::IMediaControl>([&](auto&& f) { return f.AlbumArt(); });
 }
 
 inline MediaExtensionManager::MediaExtensionManager() :
-    MediaExtensionManager(get_activation_factory<MediaExtensionManager>().ActivateInstance<MediaExtensionManager>())
+    MediaExtensionManager(impl::call_factory<MediaExtensionManager>([](auto&& f) { return f.template ActivateInstance<MediaExtensionManager>(); }))
 {}
 
 inline hstring MediaMarkerTypes::Bookmark()
 {
-    return get_activation_factory<MediaMarkerTypes, Windows::Media::IMediaMarkerTypesStatics>().Bookmark();
+    return impl::call_factory<MediaMarkerTypes, Windows::Media::IMediaMarkerTypesStatics>([&](auto&& f) { return f.Bookmark(); });
 }
 
 inline MediaTimelineController::MediaTimelineController() :
-    MediaTimelineController(get_activation_factory<MediaTimelineController>().ActivateInstance<MediaTimelineController>())
+    MediaTimelineController(impl::call_factory<MediaTimelineController>([](auto&& f) { return f.template ActivateInstance<MediaTimelineController>(); }))
 {}
 
 inline Windows::Media::SystemMediaTransportControls SystemMediaTransportControls::GetForCurrentView()
 {
-    return get_activation_factory<SystemMediaTransportControls, Windows::Media::ISystemMediaTransportControlsStatics>().GetForCurrentView();
+    return impl::call_factory<SystemMediaTransportControls, Windows::Media::ISystemMediaTransportControlsStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline SystemMediaTransportControlsTimelineProperties::SystemMediaTransportControlsTimelineProperties() :
-    SystemMediaTransportControlsTimelineProperties(get_activation_factory<SystemMediaTransportControlsTimelineProperties>().ActivateInstance<SystemMediaTransportControlsTimelineProperties>())
+    SystemMediaTransportControlsTimelineProperties(impl::call_factory<SystemMediaTransportControlsTimelineProperties>([](auto&& f) { return f.template ActivateInstance<SystemMediaTransportControlsTimelineProperties>(); }))
 {}
 
 inline hstring VideoEffects::VideoStabilization()
 {
-    return get_activation_factory<VideoEffects, Windows::Media::IVideoEffectsStatics>().VideoStabilization();
+    return impl::call_factory<VideoEffects, Windows::Media::IVideoEffectsStatics>([&](auto&& f) { return f.VideoStabilization(); });
 }
 
 inline VideoFrame::VideoFrame(Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height) :
-    VideoFrame(get_activation_factory<VideoFrame, Windows::Media::IVideoFrameFactory>().Create(format, width, height))
+    VideoFrame(impl::call_factory<VideoFrame, Windows::Media::IVideoFrameFactory>([&](auto&& f) { return f.Create(format, width, height); }))
 {}
 
 inline VideoFrame::VideoFrame(Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode const& alpha) :
-    VideoFrame(get_activation_factory<VideoFrame, Windows::Media::IVideoFrameFactory>().CreateWithAlpha(format, width, height, alpha))
+    VideoFrame(impl::call_factory<VideoFrame, Windows::Media::IVideoFrameFactory>([&](auto&& f) { return f.CreateWithAlpha(format, width, height, alpha); }))
 {}
 
 inline Windows::Media::VideoFrame VideoFrame::CreateAsDirect3D11SurfaceBacked(Windows::Graphics::DirectX::DirectXPixelFormat const& format, int32_t width, int32_t height)
 {
-    return get_activation_factory<VideoFrame, Windows::Media::IVideoFrameStatics>().CreateAsDirect3D11SurfaceBacked(format, width, height);
+    return impl::call_factory<VideoFrame, Windows::Media::IVideoFrameStatics>([&](auto&& f) { return f.CreateAsDirect3D11SurfaceBacked(format, width, height); });
 }
 
 inline Windows::Media::VideoFrame VideoFrame::CreateAsDirect3D11SurfaceBacked(Windows::Graphics::DirectX::DirectXPixelFormat const& format, int32_t width, int32_t height, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const& device)
 {
-    return get_activation_factory<VideoFrame, Windows::Media::IVideoFrameStatics>().CreateAsDirect3D11SurfaceBacked(format, width, height, device);
+    return impl::call_factory<VideoFrame, Windows::Media::IVideoFrameStatics>([&](auto&& f) { return f.CreateAsDirect3D11SurfaceBacked(format, width, height, device); });
 }
 
 inline Windows::Media::VideoFrame VideoFrame::CreateWithSoftwareBitmap(Windows::Graphics::Imaging::SoftwareBitmap const& bitmap)
 {
-    return get_activation_factory<VideoFrame, Windows::Media::IVideoFrameStatics>().CreateWithSoftwareBitmap(bitmap);
+    return impl::call_factory<VideoFrame, Windows::Media::IVideoFrameStatics>([&](auto&& f) { return f.CreateWithSoftwareBitmap(bitmap); });
 }
 
 inline Windows::Media::VideoFrame VideoFrame::CreateWithDirect3D11Surface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const& surface)
 {
-    return get_activation_factory<VideoFrame, Windows::Media::IVideoFrameStatics>().CreateWithDirect3D11Surface(surface);
+    return impl::call_factory<VideoFrame, Windows::Media::IVideoFrameStatics>([&](auto&& f) { return f.CreateWithDirect3D11Surface(surface); });
 }
 
 }
@@ -4650,5 +4168,3 @@ template<> struct hash<winrt::Windows::Media::VideoEffects> : winrt::impl::hash_
 template<> struct hash<winrt::Windows::Media::VideoFrame> : winrt::impl::hash_base<winrt::Windows::Media::VideoFrame> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -25,93 +25,93 @@ struct WINRT_EBO GattCharacteristic :
     impl::require<GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic2, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic3>
 {
     GattCharacteristic(std::nullptr_t) noexcept {}
-    [[deprecated("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")]] static GUID ConvertShortIdToUuid(uint16_t shortId);
+    static winrt::guid ConvertShortIdToUuid(uint16_t shortId);
 };
 
 struct GattCharacteristicUuids
 {
     GattCharacteristicUuids() = delete;
-    static GUID BatteryLevel();
-    static GUID BloodPressureFeature();
-    static GUID BloodPressureMeasurement();
-    static GUID BodySensorLocation();
-    static GUID CscFeature();
-    static GUID CscMeasurement();
-    static GUID GlucoseFeature();
-    static GUID GlucoseMeasurement();
-    static GUID GlucoseMeasurementContext();
-    static GUID HeartRateControlPoint();
-    static GUID HeartRateMeasurement();
-    static GUID IntermediateCuffPressure();
-    static GUID IntermediateTemperature();
-    static GUID MeasurementInterval();
-    static GUID RecordAccessControlPoint();
-    static GUID RscFeature();
-    static GUID RscMeasurement();
-    static GUID SCControlPoint();
-    static GUID SensorLocation();
-    static GUID TemperatureMeasurement();
-    static GUID TemperatureType();
-    static GUID AlertCategoryId();
-    static GUID AlertCategoryIdBitMask();
-    static GUID AlertLevel();
-    static GUID AlertNotificationControlPoint();
-    static GUID AlertStatus();
-    static GUID GapAppearance();
-    static GUID BootKeyboardInputReport();
-    static GUID BootKeyboardOutputReport();
-    static GUID BootMouseInputReport();
-    static GUID CurrentTime();
-    static GUID CyclingPowerControlPoint();
-    static GUID CyclingPowerFeature();
-    static GUID CyclingPowerMeasurement();
-    static GUID CyclingPowerVector();
-    static GUID DateTime();
-    static GUID DayDateTime();
-    static GUID DayOfWeek();
-    static GUID GapDeviceName();
-    static GUID DstOffset();
-    static GUID ExactTime256();
-    static GUID FirmwareRevisionString();
-    static GUID HardwareRevisionString();
-    static GUID HidControlPoint();
-    static GUID HidInformation();
-    static GUID Ieee1107320601RegulatoryCertificationDataList();
-    static GUID LnControlPoint();
-    static GUID LnFeature();
-    static GUID LocalTimeInformation();
-    static GUID LocationAndSpeed();
-    static GUID ManufacturerNameString();
-    static GUID ModelNumberString();
-    static GUID Navigation();
-    static GUID NewAlert();
-    static GUID GapPeripheralPreferredConnectionParameters();
-    static GUID GapPeripheralPrivacyFlag();
-    static GUID PnpId();
-    static GUID PositionQuality();
-    static GUID ProtocolMode();
-    static GUID GapReconnectionAddress();
-    static GUID ReferenceTimeInformation();
-    static GUID Report();
-    static GUID ReportMap();
-    static GUID RingerControlPoint();
-    static GUID RingerSetting();
-    static GUID ScanIntervalWindow();
-    static GUID ScanRefresh();
-    static GUID SerialNumberString();
-    static GUID GattServiceChanged();
-    static GUID SoftwareRevisionString();
-    static GUID SupportedNewAlertCategory();
-    static GUID SupportUnreadAlertCategory();
-    static GUID SystemId();
-    static GUID TimeAccuracy();
-    static GUID TimeSource();
-    static GUID TimeUpdateControlPoint();
-    static GUID TimeUpdateState();
-    static GUID TimeWithDst();
-    static GUID TimeZone();
-    static GUID TxPowerLevel();
-    static GUID UnreadAlertStatus();
+    static winrt::guid BatteryLevel();
+    static winrt::guid BloodPressureFeature();
+    static winrt::guid BloodPressureMeasurement();
+    static winrt::guid BodySensorLocation();
+    static winrt::guid CscFeature();
+    static winrt::guid CscMeasurement();
+    static winrt::guid GlucoseFeature();
+    static winrt::guid GlucoseMeasurement();
+    static winrt::guid GlucoseMeasurementContext();
+    static winrt::guid HeartRateControlPoint();
+    static winrt::guid HeartRateMeasurement();
+    static winrt::guid IntermediateCuffPressure();
+    static winrt::guid IntermediateTemperature();
+    static winrt::guid MeasurementInterval();
+    static winrt::guid RecordAccessControlPoint();
+    static winrt::guid RscFeature();
+    static winrt::guid RscMeasurement();
+    static winrt::guid SCControlPoint();
+    static winrt::guid SensorLocation();
+    static winrt::guid TemperatureMeasurement();
+    static winrt::guid TemperatureType();
+    static winrt::guid AlertCategoryId();
+    static winrt::guid AlertCategoryIdBitMask();
+    static winrt::guid AlertLevel();
+    static winrt::guid AlertNotificationControlPoint();
+    static winrt::guid AlertStatus();
+    static winrt::guid GapAppearance();
+    static winrt::guid BootKeyboardInputReport();
+    static winrt::guid BootKeyboardOutputReport();
+    static winrt::guid BootMouseInputReport();
+    static winrt::guid CurrentTime();
+    static winrt::guid CyclingPowerControlPoint();
+    static winrt::guid CyclingPowerFeature();
+    static winrt::guid CyclingPowerMeasurement();
+    static winrt::guid CyclingPowerVector();
+    static winrt::guid DateTime();
+    static winrt::guid DayDateTime();
+    static winrt::guid DayOfWeek();
+    static winrt::guid GapDeviceName();
+    static winrt::guid DstOffset();
+    static winrt::guid ExactTime256();
+    static winrt::guid FirmwareRevisionString();
+    static winrt::guid HardwareRevisionString();
+    static winrt::guid HidControlPoint();
+    static winrt::guid HidInformation();
+    static winrt::guid Ieee1107320601RegulatoryCertificationDataList();
+    static winrt::guid LnControlPoint();
+    static winrt::guid LnFeature();
+    static winrt::guid LocalTimeInformation();
+    static winrt::guid LocationAndSpeed();
+    static winrt::guid ManufacturerNameString();
+    static winrt::guid ModelNumberString();
+    static winrt::guid Navigation();
+    static winrt::guid NewAlert();
+    static winrt::guid GapPeripheralPreferredConnectionParameters();
+    static winrt::guid GapPeripheralPrivacyFlag();
+    static winrt::guid PnpId();
+    static winrt::guid PositionQuality();
+    static winrt::guid ProtocolMode();
+    static winrt::guid GapReconnectionAddress();
+    static winrt::guid ReferenceTimeInformation();
+    static winrt::guid Report();
+    static winrt::guid ReportMap();
+    static winrt::guid RingerControlPoint();
+    static winrt::guid RingerSetting();
+    static winrt::guid ScanIntervalWindow();
+    static winrt::guid ScanRefresh();
+    static winrt::guid SerialNumberString();
+    static winrt::guid GattServiceChanged();
+    static winrt::guid SoftwareRevisionString();
+    static winrt::guid SupportedNewAlertCategory();
+    static winrt::guid SupportUnreadAlertCategory();
+    static winrt::guid SystemId();
+    static winrt::guid TimeAccuracy();
+    static winrt::guid TimeSource();
+    static winrt::guid TimeUpdateControlPoint();
+    static winrt::guid TimeUpdateState();
+    static winrt::guid TimeWithDst();
+    static winrt::guid TimeZone();
+    static winrt::guid TxPowerLevel();
+    static winrt::guid UnreadAlertStatus();
 };
 
 struct WINRT_EBO GattCharacteristicsResult :
@@ -132,18 +132,18 @@ struct WINRT_EBO GattDescriptor :
     impl::require<GattDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor2>
 {
     GattDescriptor(std::nullptr_t) noexcept {}
-    [[deprecated("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")]] static GUID ConvertShortIdToUuid(uint16_t shortId);
+    static winrt::guid ConvertShortIdToUuid(uint16_t shortId);
 };
 
 struct GattDescriptorUuids
 {
     GattDescriptorUuids() = delete;
-    static GUID CharacteristicAggregateFormat();
-    static GUID CharacteristicExtendedProperties();
-    static GUID CharacteristicPresentationFormat();
-    static GUID CharacteristicUserDescription();
-    static GUID ClientCharacteristicConfiguration();
-    static GUID ServerCharacteristicConfiguration();
+    static winrt::guid CharacteristicAggregateFormat();
+    static winrt::guid CharacteristicExtendedProperties();
+    static winrt::guid CharacteristicPresentationFormat();
+    static winrt::guid CharacteristicUserDescription();
+    static winrt::guid ClientCharacteristicConfiguration();
+    static winrt::guid ServerCharacteristicConfiguration();
 };
 
 struct WINRT_EBO GattDescriptorsResult :
@@ -158,14 +158,14 @@ struct WINRT_EBO GattDeviceService :
 {
     GattDeviceService(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(param::hstring const& deviceId);
-    static hstring GetDeviceSelectorFromUuid(GUID const& serviceUuid);
-    [[deprecated("Use GetDeviceSelectorFromUuid instead of GetDeviceSelectorFromShortId.  For more information, see MSDN.")]] static hstring GetDeviceSelectorFromShortId(uint16_t serviceShortId);
-    [[deprecated("Use BluetoothUuidHelper instead of ConvertShortIdToUuid.  For more information, see MSDN.")]] static GUID ConvertShortIdToUuid(uint16_t shortId);
+    static hstring GetDeviceSelectorFromUuid(winrt::guid const& serviceUuid);
+    static hstring GetDeviceSelectorFromShortId(uint16_t serviceShortId);
+    static winrt::guid ConvertShortIdToUuid(uint16_t shortId);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(param::hstring const& deviceId, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const& sharingMode);
     static hstring GetDeviceSelectorForBluetoothDeviceId(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId);
     static hstring GetDeviceSelectorForBluetoothDeviceId(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode);
-    static hstring GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid);
-    static hstring GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode);
+    static hstring GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid);
+    static hstring GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode);
 };
 
 struct WINRT_EBO GattDeviceServicesResult :
@@ -324,7 +324,7 @@ struct WINRT_EBO GattServiceProvider :
     Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider
 {
     GattServiceProvider(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> CreateAsync(GUID const& serviceUuid);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> CreateAsync(winrt::guid const& serviceUuid);
 };
 
 struct WINRT_EBO GattServiceProviderAdvertisementStatusChangedEventArgs :
@@ -349,28 +349,28 @@ struct WINRT_EBO GattServiceProviderResult :
 struct GattServiceUuids
 {
     GattServiceUuids() = delete;
-    static GUID Battery();
-    static GUID BloodPressure();
-    static GUID CyclingSpeedAndCadence();
-    static GUID GenericAccess();
-    static GUID GenericAttribute();
-    static GUID Glucose();
-    static GUID HealthThermometer();
-    static GUID HeartRate();
-    static GUID RunningSpeedAndCadence();
-    static GUID AlertNotification();
-    static GUID CurrentTime();
-    static GUID CyclingPower();
-    static GUID DeviceInformation();
-    static GUID HumanInterfaceDevice();
-    static GUID ImmediateAlert();
-    static GUID LinkLoss();
-    static GUID LocationAndNavigation();
-    static GUID NextDstChange();
-    static GUID PhoneAlertStatus();
-    static GUID ReferenceTimeUpdate();
-    static GUID ScanParameters();
-    static GUID TxPower();
+    static winrt::guid Battery();
+    static winrt::guid BloodPressure();
+    static winrt::guid CyclingSpeedAndCadence();
+    static winrt::guid GenericAccess();
+    static winrt::guid GenericAttribute();
+    static winrt::guid Glucose();
+    static winrt::guid HealthThermometer();
+    static winrt::guid HeartRate();
+    static winrt::guid RunningSpeedAndCadence();
+    static winrt::guid AlertNotification();
+    static winrt::guid CurrentTime();
+    static winrt::guid CyclingPower();
+    static winrt::guid DeviceInformation();
+    static winrt::guid HumanInterfaceDevice();
+    static winrt::guid ImmediateAlert();
+    static winrt::guid LinkLoss();
+    static winrt::guid LocationAndNavigation();
+    static winrt::guid NextDstChange();
+    static winrt::guid PhoneAlertStatus();
+    static winrt::guid ReferenceTimeUpdate();
+    static winrt::guid ScanParameters();
+    static winrt::guid TxPower();
 };
 
 struct WINRT_EBO GattSession :

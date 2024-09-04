@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -456,6 +468,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory ABI::Windows::UI::Xaml::Media::IBrushFactory
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    interface IBrushOverrides2;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 ABI::Windows::UI::Xaml::Media::IBrushOverrides2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushStatics_FWD_DEFINED__
@@ -4269,6 +4297,30 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Composition {
+                class AnimationPropertyInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IAnimationPropertyInfo;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo ABI::Windows::UI::Composition::IAnimationPropertyInfo
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
                 class CompositionBrush;
             } /* Windows */
         } /* UI */
@@ -4311,6 +4363,21 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CComposition_CICompositionLight ABI::Windows::UI::Composition::ICompositionLight
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Composition {
+                interface IAnimationObject;
+            } /* Windows */
+        } /* UI */
+    } /* Composition */} /* ABI */
+#define __x_ABI_CWindows_CUI_CComposition_CIAnimationObject ABI::Windows::UI::Composition::IAnimationObject
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
@@ -4784,6 +4851,7 @@ namespace ABI {
             } /* UI */
         } /* Xaml */
     } /* Media */} /* ABI */
+
 
 
 
@@ -6396,7 +6464,7 @@ namespace ABI {
                             /* [in] */ABI::Windows::UI::Xaml::Media::AcrylicBackgroundSource value
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TintColor(
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Color * result
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_TintColor(
                             /* [in] */ABI::Windows::UI::Color value
@@ -6414,7 +6482,7 @@ namespace ABI {
                             /* [in] */ABI::Windows::Foundation::TimeSpan value
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlwaysUseFallback(
-                            /* [retval, out] */__RPC__out boolean * result
+                            /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AlwaysUseFallback(
                             /* [in] */boolean value
@@ -6460,9 +6528,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IAcrylicBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IAcrylicBrush * * value
                             ) = 0;
                         
                     };
@@ -6890,9 +6958,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IBrush * * value
                             ) = 0;
                         
                     };
@@ -6907,6 +6975,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.IBrushOverrides2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Brush
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_IBrushOverrides2[] = L"Windows.UI.Xaml.Media.IBrushOverrides2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    /* [object, uuid("D092B151-D83B-5A81-A71E-A1C7F8AD6963"), exclusiveto, contract] */
+                    MIDL_INTERFACE("D092B151-D83B-5A81-A71E-A1C7F8AD6963")
+                    IBrushOverrides2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE PopulatePropertyInfoOverride(
+                            /* [in] */__RPC__in HSTRING propertyName,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Composition::IAnimationPropertyInfo * animationPropertyInfo
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IBrushOverrides2=_uuidof(IBrushOverrides2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Media */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7024,9 +7136,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ICacheMode * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ICacheMode * * value
                             ) = 0;
                         
                     };
@@ -7270,14 +7382,14 @@ namespace ABI {
                     {
                     public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Rendering(
-                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Rendering(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SurfaceContentsLost(
-                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_SurfaceContentsLost(
@@ -7324,7 +7436,7 @@ namespace ABI {
                     {
                     public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Rendered(
-                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Rendered(
@@ -7522,9 +7634,9 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithName(
                             /* [in] */__RPC__in HSTRING familyName,
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IFontFamily * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IFontFamily * * value
                             ) = 0;
                         
                     };
@@ -7614,7 +7726,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TransformPoint(
                             /* [in] */ABI::Windows::Foundation::Point point,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TryTransform(
                             /* [in] */ABI::Windows::Foundation::Point inPoint,
@@ -7623,7 +7735,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TransformBounds(
                             /* [in] */ABI::Windows::Foundation::Rect rect,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                             ) = 0;
                         
                     };
@@ -7666,9 +7778,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeneralTransform * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGeneralTransform * * value
                             ) = 0;
                         
                     };
@@ -7720,7 +7832,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TransformBoundsCore(
                             /* [in] */ABI::Windows::Foundation::Rect rect,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                             ) = 0;
                         
                     };
@@ -8063,9 +8175,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGradientBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IGradientBrush * * value
                             ) = 0;
                         
                     };
@@ -8264,14 +8376,14 @@ namespace ABI {
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::IImageSource * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ImageFailed(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IExceptionRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IExceptionRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ImageFailed(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ImageOpened(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ImageOpened(
@@ -8682,7 +8794,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithGradientStopCollectionAndAngle(
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CGradientStop * gradientStopCollection,
                             /* [in] */DOUBLE angle,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILinearGradientBrush * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILinearGradientBrush * * value
                             ) = 0;
                         
                     };
@@ -8823,7 +8935,7 @@ namespace ABI {
                             /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LoadCompleted(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LoadCompleted(
@@ -8872,20 +8984,20 @@ namespace ABI {
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartLoadFromUriWithSize(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                             /* [in] */ABI::Windows::Foundation::Size desiredMaxSize,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartLoadFromUri(
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartLoadFromStreamWithSize(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * stream,
                             /* [in] */ABI::Windows::Foundation::Size desiredMaxSize,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartLoadFromStream(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * stream,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ILoadedImageSurface * * result
                             ) = 0;
                         
                     };
@@ -9066,16 +9178,16 @@ namespace ABI {
                             /* [in] */DOUBLE m22,
                             /* [in] */DOUBLE offsetX,
                             /* [in] */DOUBLE offsetY,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Matrix * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Matrix * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIsIdentity(
                             /* [in] */ABI::Windows::UI::Xaml::Media::Matrix target,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Transform(
                             /* [in] */ABI::Windows::UI::Xaml::Media::Matrix target,
                             /* [in] */ABI::Windows::Foundation::Point point,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         
                     };
@@ -9210,7 +9322,7 @@ namespace ABI {
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IInputStream * source
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetDeferral(
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
                             ) = 0;
                         
                     };
@@ -10134,9 +10246,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IProjection * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IProjection * * value
                             ) = 0;
                         
                     };
@@ -10532,9 +10644,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBackgroundBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBackgroundBrush * * value
                             ) = 0;
                         
                     };
@@ -10617,9 +10729,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBorderBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBorderBrush * * value
                             ) = 0;
                         
                     };
@@ -10662,7 +10774,7 @@ namespace ABI {
                     {
                     public:
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Color * result
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                             ) = 0;
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Color(
                             /* [in] */ABI::Windows::UI::Color value
@@ -10674,7 +10786,7 @@ namespace ABI {
                             /* [in] */ABI::Windows::UI::Xaml::ApplicationTheme value
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AlwaysUseFallback(
-                            /* [retval, out] */__RPC__out boolean * result
+                            /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
                         /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AlwaysUseFallback(
                             /* [in] */boolean value
@@ -10720,9 +10832,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IRevealBrush * * value
                             ) = 0;
                         
                     };
@@ -11211,7 +11323,7 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithColor(
                             /* [in] */ABI::Windows::UI::Color color,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ISolidColorBrush * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ISolidColorBrush * * value
                             ) = 0;
                         
                     };
@@ -11355,9 +11467,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ITileBrush * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::ITileBrush * * value
                             ) = 0;
                         
                     };
@@ -11914,37 +12026,37 @@ namespace ABI {
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE FindElementsInHostCoordinatesPoint(
                             /* [in] */ABI::Windows::Foundation::Point intersectingPoint,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * subtree,
-                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindElementsInHostCoordinatesRect(
                             /* [in] */ABI::Windows::Foundation::Rect intersectingRect,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * subtree,
-                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
                             ) = 0;
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE FindAllElementsInHostCoordinatesPoint(
                             /* [in] */ABI::Windows::Foundation::Point intersectingPoint,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * subtree,
                             /* [in] */boolean includeAllElements,
-                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindAllElementsInHostCoordinatesRect(
                             /* [in] */ABI::Windows::Foundation::Rect intersectingRect,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * subtree,
                             /* [in] */boolean includeAllElements,
-                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+                            /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetChild(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * reference,
                             /* [in] */INT32 childIndex,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * child
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetChildrenCount(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * reference,
-                            /* [retval, out] */__RPC__out INT32 * count
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetParent(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * reference,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * parent
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE DisconnectChildrenRecursive(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element
@@ -11991,7 +12103,7 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE GetOpenPopups(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IWindow * window,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimitives__CPopup * * popups
+                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimitives__CPopup * * result
                             ) = 0;
                         
                     };
@@ -12080,9 +12192,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBase * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBase * * value
                             ) = 0;
                         
                     };
@@ -12296,9 +12408,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IXamlLight * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::IXamlLight * * value
                             ) = 0;
                         
                     };
@@ -12341,7 +12453,7 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE GetId(
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE OnConnected(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * newElement
@@ -12592,6 +12704,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IBrush ** Default Interface **
+ *    Windows.UI.Xaml.Media.IBrushOverrides2
+ *    Windows.UI.Composition.IAnimationObject
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13152,8 +13266,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -13291,8 +13403,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -13743,8 +13853,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IRenderedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -13766,8 +13874,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IRenderingEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -14241,8 +14347,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IXamlCompositionBrushBase ** Default Interface **
- *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides
  *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected
+ *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14270,8 +14376,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IXamlLight ** Default Interface **
- *    Windows.UI.Xaml.Media.IXamlLightOverrides
  *    Windows.UI.Xaml.Media.IXamlLightProtected
+ *    Windows.UI.Xaml.Media.IXamlLightOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14363,6 +14469,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrush __x_ABI_CWindows_CUI
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushStatics_FWD_DEFINED__
@@ -19959,6 +20071,13 @@ typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
 
 
 
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo __x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CComposition_CICompositionBrush_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionBrush __x_ABI_CWindows_CUI_CComposition_CICompositionBrush;
@@ -19971,6 +20090,13 @@ typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionBrush __x_ABI_C
 typedef interface __x_ABI_CWindows_CUI_CComposition_CICompositionLight __x_ABI_CWindows_CUI_CComposition_CICompositionLight;
 
 #endif // ____x_ABI_CWindows_CUI_CComposition_CICompositionLight_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CComposition_CIAnimationObject __x_ABI_CWindows_CUI_CComposition_CIAnimationObject;
+
+#endif // ____x_ABI_CWindows_CUI_CComposition_CIAnimationObject_FWD_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CUI_CComposition_CICompositionSurface_FWD_DEFINED__
@@ -20119,6 +20245,7 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CMedia_CSweepDirection __x_ABI_CWindows_
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix;
+
 
 
 
@@ -21000,7 +21127,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TintColor )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_TintColor )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * This,
@@ -21024,7 +21151,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AlwaysUseFallback )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * This,
-        /* [retval, out] */__RPC__out boolean * result
+        /* [retval, out] */__RPC__out boolean * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AlwaysUseFallback )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * This,
@@ -21064,8 +21191,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_put_BackgroundSource(This,value) \
     ( (This)->lpVtbl->put_BackgroundSource(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_get_TintColor(This,result) \
-    ( (This)->lpVtbl->get_TintColor(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_get_TintColor(This,value) \
+    ( (This)->lpVtbl->get_TintColor(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_put_TintColor(This,value) \
     ( (This)->lpVtbl->put_TintColor(This,value) )
@@ -21082,8 +21209,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_put_TintTransitionDuration(This,value) \
     ( (This)->lpVtbl->put_TintTransitionDuration(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_get_AlwaysUseFallback(This,result) \
-    ( (This)->lpVtbl->get_AlwaysUseFallback(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_get_AlwaysUseFallback(This,value) \
+    ( (This)->lpVtbl->get_AlwaysUseFallback(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush_put_AlwaysUseFallback(This,value) \
     ( (This)->lpVtbl->put_AlwaysUseFallback(This,value) )
@@ -21148,9 +21275,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrush * * value
         );
     END_INTERFACE
     
@@ -21180,8 +21307,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIAcrylicBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -22090,9 +22217,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrush * * value
         );
     END_INTERFACE
     
@@ -22122,8 +22249,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -22132,6 +22259,100 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Media.IBrushOverrides2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Media.Brush
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Media_IBrushOverrides2[] = L"Windows.UI.Xaml.Media.IBrushOverrides2";
+/* [object, uuid("D092B151-D83B-5A81-A71E-A1C7F8AD6963"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *PopulatePropertyInfoOverride )(
+        __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2 * This,
+        /* [in] */__RPC__in HSTRING propertyName,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CComposition_CIAnimationPropertyInfo * animationPropertyInfo
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_PopulatePropertyInfoOverride(This,propertyName,animationPropertyInfo) \
+    ( (This)->lpVtbl->PopulatePropertyInfoOverride(This,propertyName,animationPropertyInfo) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMedia_CIBrushOverrides2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -22378,9 +22599,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheModeFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheMode * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheMode * * value
         );
     END_INTERFACE
     
@@ -22410,8 +22631,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheModeFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheModeFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheModeFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICacheModeFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -22920,7 +23141,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Rendering )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Rendering )(
@@ -22929,7 +23150,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_SurfaceContentsLost )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_SurfaceContentsLost )(
@@ -22964,14 +23185,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_add_Rendering(This,value,token) \
-    ( (This)->lpVtbl->add_Rendering(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_add_Rendering(This,handler,token) \
+    ( (This)->lpVtbl->add_Rendering(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_remove_Rendering(This,token) \
     ( (This)->lpVtbl->remove_Rendering(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_add_SurfaceContentsLost(This,value,token) \
-    ( (This)->lpVtbl->add_SurfaceContentsLost(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_add_SurfaceContentsLost(This,handler,token) \
+    ( (This)->lpVtbl->add_SurfaceContentsLost(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics_remove_SurfaceContentsLost(This,token) \
     ( (This)->lpVtbl->remove_SurfaceContentsLost(This,token) )
@@ -23036,7 +23257,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Rendered )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3 * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CMedia__CRenderedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Rendered )(
@@ -23071,8 +23292,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_add_Rendered(This,value,token) \
-    ( (This)->lpVtbl->add_Rendered(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_add_Rendered(This,handler,token) \
+    ( (This)->lpVtbl->add_Rendered(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CICompositionTargetStatics3_remove_Rendered(This,token) \
     ( (This)->lpVtbl->remove_Rendered(This,token) )
@@ -23466,9 +23687,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithName )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamilyFactory * This,
         /* [in] */__RPC__in HSTRING familyName,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamily * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamily * * value
         );
     END_INTERFACE
     
@@ -23498,8 +23719,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamilyFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamilyFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamilyFactory_CreateInstanceWithName(This,familyName,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithName(This,familyName,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIFontFamilyFactory_CreateInstanceWithName(This,familyName,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithName(This,familyName,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -23659,7 +23880,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *TransformPoint )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint point,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     HRESULT ( STDMETHODCALLTYPE *TryTransform )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform * This,
@@ -23670,7 +23891,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *TransformBounds )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect rect,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     END_INTERFACE
     
@@ -23703,14 +23924,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_get_Inverse(This,value) \
     ( (This)->lpVtbl->get_Inverse(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_TransformPoint(This,point,returnValue) \
-    ( (This)->lpVtbl->TransformPoint(This,point,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_TransformPoint(This,point,result) \
+    ( (This)->lpVtbl->TransformPoint(This,point,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_TryTransform(This,inPoint,outPoint,returnValue) \
     ( (This)->lpVtbl->TryTransform(This,inPoint,outPoint,returnValue) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_TransformBounds(This,rect,returnValue) \
-    ( (This)->lpVtbl->TransformBounds(This,rect,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform_TransformBounds(This,rect,result) \
+    ( (This)->lpVtbl->TransformBounds(This,rect,result) )
 
 
 #endif /* COBJMACROS */
@@ -23772,9 +23993,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransform * * value
         );
     END_INTERFACE
     
@@ -23804,8 +24025,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -23878,7 +24099,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *TransformBoundsCore )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformOverrides * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect rect,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     END_INTERFACE
     
@@ -23914,8 +24135,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformOverrides
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformOverrides_TryTransformCore(This,inPoint,outPoint,returnValue) \
     ( (This)->lpVtbl->TryTransformCore(This,inPoint,outPoint,returnValue) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformOverrides_TransformBoundsCore(This,rect,returnValue) \
-    ( (This)->lpVtbl->TransformBoundsCore(This,rect,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGeneralTransformOverrides_TransformBoundsCore(This,rect,result) \
+    ( (This)->lpVtbl->TransformBoundsCore(This,rect,result) )
 
 
 #endif /* COBJMACROS */
@@ -24633,9 +24854,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrush * * value
         );
     END_INTERFACE
     
@@ -24665,8 +24886,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIGradientBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -25064,7 +25285,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ImageFailed )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIExceptionRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIExceptionRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ImageFailed )(
@@ -25073,7 +25294,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ImageOpened )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ImageOpened )(
@@ -25114,14 +25335,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_put_ImageSource(This,value) \
     ( (This)->lpVtbl->put_ImageSource(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_add_ImageFailed(This,value,token) \
-    ( (This)->lpVtbl->add_ImageFailed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_add_ImageFailed(This,handler,token) \
+    ( (This)->lpVtbl->add_ImageFailed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_remove_ImageFailed(This,token) \
     ( (This)->lpVtbl->remove_ImageFailed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_add_ImageOpened(This,value,token) \
-    ( (This)->lpVtbl->add_ImageOpened(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_add_ImageOpened(This,handler,token) \
+    ( (This)->lpVtbl->add_ImageOpened(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIImageBrush_remove_ImageOpened(This,token) \
     ( (This)->lpVtbl->remove_ImageOpened(This,token) )
@@ -25974,7 +26195,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithGradientStopCollectionAndAngle )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrushFactory * This,
         /* [in] */__RPC__in_opt __FIVector_1_Windows__CUI__CXaml__CMedia__CGradientStop * gradientStopCollection,
         /* [in] */DOUBLE angle,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrush * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrush * * value
         );
     END_INTERFACE
     
@@ -26004,8 +26225,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrushFactory_CreateInstanceWithGradientStopCollectionAndAngle(This,gradientStopCollection,angle,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithGradientStopCollectionAndAngle(This,gradientStopCollection,angle,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILinearGradientBrushFactory_CreateInstanceWithGradientStopCollectionAndAngle(This,gradientStopCollection,angle,value) \
+    ( (This)->lpVtbl->CreateInstanceWithGradientStopCollectionAndAngle(This,gradientStopCollection,angle,value) )
 
 
 #endif /* COBJMACROS */
@@ -26272,7 +26493,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LoadCompleted )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CLoadedImageSurface_Windows__CUI__CXaml__CMedia__CLoadedImageSourceLoadCompletedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LoadCompleted )(
@@ -26316,8 +26537,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface_get_NaturalSize(This,value) \
     ( (This)->lpVtbl->get_NaturalSize(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface_add_LoadCompleted(This,value,token) \
-    ( (This)->lpVtbl->add_LoadCompleted(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface_add_LoadCompleted(This,handler,token) \
+    ( (This)->lpVtbl->add_LoadCompleted(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface_remove_LoadCompleted(This,token) \
     ( (This)->lpVtbl->remove_LoadCompleted(This,token) )
@@ -26384,23 +26605,23 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uri,
         /* [in] */__x_ABI_CWindows_CFoundation_CSize desiredMaxSize,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartLoadFromUri )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uri,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartLoadFromStreamWithSize )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * stream,
         /* [in] */__x_ABI_CWindows_CFoundation_CSize desiredMaxSize,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartLoadFromStream )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * stream,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurface * * result
         );
     END_INTERFACE
     
@@ -26430,17 +26651,17 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromUriWithSize(This,uri,desiredMaxSize,returnValue) \
-    ( (This)->lpVtbl->StartLoadFromUriWithSize(This,uri,desiredMaxSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromUriWithSize(This,uri,desiredMaxSize,result) \
+    ( (This)->lpVtbl->StartLoadFromUriWithSize(This,uri,desiredMaxSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromUri(This,uri,returnValue) \
-    ( (This)->lpVtbl->StartLoadFromUri(This,uri,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromUri(This,uri,result) \
+    ( (This)->lpVtbl->StartLoadFromUri(This,uri,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromStreamWithSize(This,stream,desiredMaxSize,returnValue) \
-    ( (This)->lpVtbl->StartLoadFromStreamWithSize(This,stream,desiredMaxSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromStreamWithSize(This,stream,desiredMaxSize,result) \
+    ( (This)->lpVtbl->StartLoadFromStreamWithSize(This,stream,desiredMaxSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromStream(This,stream,returnValue) \
-    ( (This)->lpVtbl->StartLoadFromStream(This,stream,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CILoadedImageSurfaceStatics_StartLoadFromStream(This,stream,result) \
+    ( (This)->lpVtbl->StartLoadFromStream(This,stream,result) )
 
 
 #endif /* COBJMACROS */
@@ -26791,18 +27012,18 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */DOUBLE m22,
         /* [in] */DOUBLE offsetX,
         /* [in] */DOUBLE offsetY,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetIsIdentity )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix target,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Transform )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMatrix target,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint point,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     END_INTERFACE
     
@@ -26835,14 +27056,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_get_Identity(This,value) \
     ( (This)->lpVtbl->get_Identity(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_FromElements(This,m11,m12,m21,m22,offsetX,offsetY,returnValue) \
-    ( (This)->lpVtbl->FromElements(This,m11,m12,m21,m22,offsetX,offsetY,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_FromElements(This,m11,m12,m21,m22,offsetX,offsetY,result) \
+    ( (This)->lpVtbl->FromElements(This,m11,m12,m21,m22,offsetX,offsetY,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_GetIsIdentity(This,target,value) \
-    ( (This)->lpVtbl->GetIsIdentity(This,target,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_GetIsIdentity(This,target,result) \
+    ( (This)->lpVtbl->GetIsIdentity(This,target,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_Transform(This,target,point,returnValue) \
-    ( (This)->lpVtbl->Transform(This,target,point,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMatrixHelperStatics_Transform(This,target,point,result) \
+    ( (This)->lpVtbl->Transform(This,target,point,result) )
 
 
 #endif /* COBJMACROS */
@@ -27101,7 +27322,7 @@ HRESULT ( STDMETHODCALLTYPE *SetThumbnailImage )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral * * result
         );
     END_INTERFACE
     
@@ -27134,8 +27355,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailReq
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs_SetThumbnailImage(This,source) \
     ( (This)->lpVtbl->SetThumbnailImage(This,source) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs_GetDeferral(This,returnValue) \
-    ( (This)->lpVtbl->GetDeferral(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIMediaTransportControlsThumbnailRequestedEventArgs_GetDeferral(This,result) \
+    ( (This)->lpVtbl->GetDeferral(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -29128,9 +29349,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjectionFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjection * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjection * * value
         );
     END_INTERFACE
     
@@ -29160,8 +29381,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjectionFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjectionFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjectionFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIProjectionFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29988,9 +30209,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrush * * value
         );
     END_INTERFACE
     
@@ -30020,8 +30241,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBackgroundBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30169,9 +30390,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrush * * value
         );
     END_INTERFACE
     
@@ -30201,8 +30422,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBorderBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30264,7 +30485,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Color )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Color )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * This,
@@ -30280,7 +30501,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AlwaysUseFallback )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * This,
-        /* [retval, out] */__RPC__out boolean * result
+        /* [retval, out] */__RPC__out boolean * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AlwaysUseFallback )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * This,
@@ -30314,8 +30535,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_get_Color(This,result) \
-    ( (This)->lpVtbl->get_Color(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_get_Color(This,value) \
+    ( (This)->lpVtbl->get_Color(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_put_Color(This,value) \
     ( (This)->lpVtbl->put_Color(This,value) )
@@ -30326,8 +30547,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_put_TargetTheme(This,value) \
     ( (This)->lpVtbl->put_TargetTheme(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_get_AlwaysUseFallback(This,result) \
-    ( (This)->lpVtbl->get_AlwaysUseFallback(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_get_AlwaysUseFallback(This,value) \
+    ( (This)->lpVtbl->get_AlwaysUseFallback(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush_put_AlwaysUseFallback(This,value) \
     ( (This)->lpVtbl->put_AlwaysUseFallback(This,value) )
@@ -30392,9 +30613,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrush * * value
         );
     END_INTERFACE
     
@@ -30424,8 +30645,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIRevealBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31465,7 +31686,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithColor )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrushFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CColor color,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrush * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrush * * value
         );
     END_INTERFACE
     
@@ -31495,8 +31716,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrushFactory_CreateInstanceWithColor(This,color,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithColor(This,color,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CISolidColorBrushFactory_CreateInstanceWithColor(This,color,value) \
+    ( (This)->lpVtbl->CreateInstanceWithColor(This,color,value) )
 
 
 #endif /* COBJMACROS */
@@ -31779,9 +32000,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrushFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrush * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrush * * value
         );
     END_INTERFACE
     
@@ -31811,8 +32032,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrushFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrushFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrushFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CITileBrushFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -32990,43 +33211,43 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint intersectingPoint,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * subtree,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindElementsInHostCoordinatesRect )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect intersectingRect,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * subtree,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
         );
     /* [overload, default_overload] */HRESULT ( STDMETHODCALLTYPE *FindAllElementsInHostCoordinatesPoint )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint intersectingPoint,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * subtree,
         /* [in] */boolean includeAllElements,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindAllElementsInHostCoordinatesRect )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect intersectingRect,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * subtree,
         /* [in] */boolean includeAllElements,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * elements
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CUIElement * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetChild )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * reference,
         /* [in] */INT32 childIndex,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * child
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetChildrenCount )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * reference,
-        /* [retval, out] */__RPC__out INT32 * count
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetParent )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * reference,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * parent
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     HRESULT ( STDMETHODCALLTYPE *DisconnectChildrenRecursive )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics * This,
@@ -33060,26 +33281,26 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,elements) \
-    ( (This)->lpVtbl->FindElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,elements) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,result) \
+    ( (This)->lpVtbl->FindElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindElementsInHostCoordinatesRect(This,intersectingRect,subtree,elements) \
-    ( (This)->lpVtbl->FindElementsInHostCoordinatesRect(This,intersectingRect,subtree,elements) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindElementsInHostCoordinatesRect(This,intersectingRect,subtree,result) \
+    ( (This)->lpVtbl->FindElementsInHostCoordinatesRect(This,intersectingRect,subtree,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindAllElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,includeAllElements,elements) \
-    ( (This)->lpVtbl->FindAllElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,includeAllElements,elements) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindAllElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,includeAllElements,result) \
+    ( (This)->lpVtbl->FindAllElementsInHostCoordinatesPoint(This,intersectingPoint,subtree,includeAllElements,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindAllElementsInHostCoordinatesRect(This,intersectingRect,subtree,includeAllElements,elements) \
-    ( (This)->lpVtbl->FindAllElementsInHostCoordinatesRect(This,intersectingRect,subtree,includeAllElements,elements) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_FindAllElementsInHostCoordinatesRect(This,intersectingRect,subtree,includeAllElements,result) \
+    ( (This)->lpVtbl->FindAllElementsInHostCoordinatesRect(This,intersectingRect,subtree,includeAllElements,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetChild(This,reference,childIndex,child) \
-    ( (This)->lpVtbl->GetChild(This,reference,childIndex,child) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetChild(This,reference,childIndex,result) \
+    ( (This)->lpVtbl->GetChild(This,reference,childIndex,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetChildrenCount(This,reference,count) \
-    ( (This)->lpVtbl->GetChildrenCount(This,reference,count) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetChildrenCount(This,reference,result) \
+    ( (This)->lpVtbl->GetChildrenCount(This,reference,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetParent(This,reference,parent) \
-    ( (This)->lpVtbl->GetParent(This,reference,parent) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_GetParent(This,reference,result) \
+    ( (This)->lpVtbl->GetParent(This,reference,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics_DisconnectChildrenRecursive(This,element) \
     ( (This)->lpVtbl->DisconnectChildrenRecursive(This,element) )
@@ -33145,7 +33366,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetOpenPopups )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIWindow * window,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimitives__CPopup * * popups
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CPrimitives__CPopup * * result
         );
     END_INTERFACE
     
@@ -33175,8 +33396,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics2
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics2_GetOpenPopups(This,window,popups) \
-    ( (This)->lpVtbl->GetOpenPopups(This,window,popups) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIVisualTreeHelperStatics2_GetOpenPopups(This,window,result) \
+    ( (This)->lpVtbl->GetOpenPopups(This,window,result) )
 
 
 #endif /* COBJMACROS */
@@ -33338,9 +33559,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBase * * value
         );
     END_INTERFACE
     
@@ -33370,8 +33591,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlCompositionBrushBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33810,9 +34031,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLight * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLight * * value
         );
     END_INTERFACE
     
@@ -33842,8 +34063,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33905,7 +34126,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetId )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *OnConnected )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides * This,
@@ -33943,8 +34164,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides_GetId(This,returnValue) \
-    ( (This)->lpVtbl->GetId(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides_GetId(This,result) \
+    ( (This)->lpVtbl->GetId(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CIXamlLightOverrides_OnConnected(This,newElement) \
     ( (This)->lpVtbl->OnConnected(This,newElement) )
@@ -34305,6 +34526,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IBrush ** Default Interface **
+ *    Windows.UI.Xaml.Media.IBrushOverrides2
+ *    Windows.UI.Composition.IAnimationObject
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -34865,8 +35088,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -35004,8 +35225,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -35456,8 +35675,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IRenderedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -35479,8 +35696,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IRenderingEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -35954,8 +36169,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IXamlCompositionBrushBase ** Default Interface **
- *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides
  *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected
+ *    Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -35983,8 +36198,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.IXamlLight ** Default Interface **
- *    Windows.UI.Xaml.Media.IXamlLightOverrides
  *    Windows.UI.Xaml.Media.IXamlLightProtected
+ *    Windows.UI.Xaml.Media.IXamlLightOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

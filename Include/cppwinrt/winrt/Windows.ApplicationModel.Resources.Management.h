@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -102,199 +102,175 @@ template <typename D> Windows::ApplicationModel::Resources::Management::Resource
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::Management::IIndexedResourceCandidate> : produce_base<D, Windows::ApplicationModel::Resources::Management::IIndexedResourceCandidate>
 {
-    HRESULT __stdcall get_Type(Windows::ApplicationModel::Resources::Management::IndexedResourceType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::ApplicationModel::Resources::Management::IndexedResourceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::ApplicationModel::Resources::Management::IndexedResourceType));
             *value = detach_from<Windows::ApplicationModel::Resources::Management::IndexedResourceType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Metadata(void** value) noexcept final
+    int32_t WINRT_CALL get_Metadata(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Metadata, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, hstring>>(this->shim().Metadata());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Qualifiers(void** value) noexcept final
+    int32_t WINRT_CALL get_Qualifiers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Qualifiers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Management::IndexedResourceQualifier>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Management::IndexedResourceQualifier>>(this->shim().Qualifiers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ValueAsString(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ValueAsString(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValueAsString, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ValueAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetQualifierValue(HSTRING qualifierName, HSTRING* qualifierValue) noexcept final
+    int32_t WINRT_CALL GetQualifierValue(void* qualifierName, void** qualifierValue) noexcept final
     {
         try
         {
             *qualifierValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetQualifierValue, WINRT_WRAP(hstring), hstring const&);
             *qualifierValue = detach_from<hstring>(this->shim().GetQualifierValue(*reinterpret_cast<hstring const*>(&qualifierName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::Management::IIndexedResourceQualifier> : produce_base<D, Windows::ApplicationModel::Resources::Management::IIndexedResourceQualifier>
 {
-    HRESULT __stdcall get_QualifierName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QualifierName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualifierName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QualifierName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QualifierValue(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QualifierValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualifierValue, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QualifierValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::Management::IResourceIndexer> : produce_base<D, Windows::ApplicationModel::Resources::Management::IResourceIndexer>
 {
-    HRESULT __stdcall IndexFilePath(void* filePath, void** candidate) noexcept final
+    int32_t WINRT_CALL IndexFilePath(void* filePath, void** candidate) noexcept final
     {
         try
         {
             *candidate = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndexFilePath, WINRT_WRAP(Windows::ApplicationModel::Resources::Management::IndexedResourceCandidate), Windows::Foundation::Uri const&);
             *candidate = detach_from<Windows::ApplicationModel::Resources::Management::IndexedResourceCandidate>(this->shim().IndexFilePath(*reinterpret_cast<Windows::Foundation::Uri const*>(&filePath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IndexFileContentsAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL IndexFileContentsAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndexFileContentsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Management::IndexedResourceCandidate>>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Management::IndexedResourceCandidate>>>(this->shim().IndexFileContentsAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory> : produce_base<D, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory>
 {
-    HRESULT __stdcall CreateResourceIndexer(void* projectRoot, void** indexer) noexcept final
+    int32_t WINRT_CALL CreateResourceIndexer(void* projectRoot, void** indexer) noexcept final
     {
         try
         {
             *indexer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateResourceIndexer, WINRT_WRAP(Windows::ApplicationModel::Resources::Management::ResourceIndexer), Windows::Foundation::Uri const&);
             *indexer = detach_from<Windows::ApplicationModel::Resources::Management::ResourceIndexer>(this->shim().CreateResourceIndexer(*reinterpret_cast<Windows::Foundation::Uri const*>(&projectRoot)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory2> : produce_base<D, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory2>
 {
-    HRESULT __stdcall CreateResourceIndexerWithExtension(void* projectRoot, void* extensionDllPath, void** indexer) noexcept final
+    int32_t WINRT_CALL CreateResourceIndexerWithExtension(void* projectRoot, void* extensionDllPath, void** indexer) noexcept final
     {
         try
         {
             *indexer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateResourceIndexerWithExtension, WINRT_WRAP(Windows::ApplicationModel::Resources::Management::ResourceIndexer), Windows::Foundation::Uri const&, Windows::Foundation::Uri const&);
             *indexer = detach_from<Windows::ApplicationModel::Resources::Management::ResourceIndexer>(this->shim().CreateResourceIndexerWithExtension(*reinterpret_cast<Windows::Foundation::Uri const*>(&projectRoot), *reinterpret_cast<Windows::Foundation::Uri const*>(&extensionDllPath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -303,11 +279,11 @@ struct produce<D, Windows::ApplicationModel::Resources::Management::IResourceInd
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Resources::Management {
 
 inline ResourceIndexer::ResourceIndexer(Windows::Foundation::Uri const& projectRoot) :
-    ResourceIndexer(get_activation_factory<ResourceIndexer, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory>().CreateResourceIndexer(projectRoot))
+    ResourceIndexer(impl::call_factory<ResourceIndexer, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory>([&](auto&& f) { return f.CreateResourceIndexer(projectRoot); }))
 {}
 
 inline ResourceIndexer::ResourceIndexer(Windows::Foundation::Uri const& projectRoot, Windows::Foundation::Uri const& extensionDllPath) :
-    ResourceIndexer(get_activation_factory<ResourceIndexer, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory2>().CreateResourceIndexerWithExtension(projectRoot, extensionDllPath))
+    ResourceIndexer(impl::call_factory<ResourceIndexer, Windows::ApplicationModel::Resources::Management::IResourceIndexerFactory2>([&](auto&& f) { return f.CreateResourceIndexerWithExtension(projectRoot, extensionDllPath); }))
 {}
 
 }
@@ -324,5 +300,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Resources::Management::
 template<> struct hash<winrt::Windows::ApplicationModel::Resources::Management::ResourceIndexer> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Resources::Management::ResourceIndexer> {};
 
 }
-
-WINRT_WARNING_POP

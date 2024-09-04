@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -27,7 +27,11 @@ template <> struct name<Windows::Graphics::DisplayAdapterId>{ static constexpr a
 template <> struct name<Windows::Graphics::PointInt32>{ static constexpr auto & value{ L"Windows.Graphics.PointInt32" }; };
 template <> struct name<Windows::Graphics::RectInt32>{ static constexpr auto & value{ L"Windows.Graphics.RectInt32" }; };
 template <> struct name<Windows::Graphics::SizeInt32>{ static constexpr auto & value{ L"Windows.Graphics.SizeInt32" }; };
-template <> struct guid<Windows::Graphics::IGeometrySource2D>{ static constexpr GUID value{ 0xCAFF7902,0x670C,0x4181,{ 0xA6,0x24,0xDA,0x97,0x72,0x03,0xB8,0x45 } }; };
+template <> struct guid_storage<Windows::Graphics::IGeometrySource2D>{ static constexpr guid value{ 0xCAFF7902,0x670C,0x4181,{ 0xA6,0x24,0xDA,0x97,0x72,0x03,0xB8,0x45 } }; };
+
+template <> struct abi<Windows::Graphics::IGeometrySource2D>{ struct type : IInspectable
+{
+};};
 
 template <typename D>
 struct consume_Windows_Graphics_IGeometrySource2D
@@ -68,9 +72,5 @@ struct struct_Windows_Graphics_SizeInt32
 };
 template <> struct abi<Windows::Graphics::SizeInt32>{ using type = struct_Windows_Graphics_SizeInt32; };
 
-
-template <> struct abi<Windows::Graphics::IGeometrySource2D>{ struct type : IInspectable
-{
-};};
 
 }

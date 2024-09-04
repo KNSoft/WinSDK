@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -253,21 +253,21 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::HumanInterfaceDevice::IHidDevice)->add_InputReportReceived(get_abi(reportHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::HumanInterfaceDevice::IHidDevice> consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const
+template <typename D> typename consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived_revoker consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::HumanInterfaceDevice::IHidDevice>(this, &abi_t<Windows::Devices::HumanInterfaceDevice::IHidDevice>::remove_InputReportReceived, InputReportReceived(reportHandler));
+    return impl::make_event_revoker<D, InputReportReceived_revoker>(this, InputReportReceived(reportHandler));
 }
 
-template <typename D> void consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(event_token const& token) const
+template <typename D> void consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>::InputReportReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::HumanInterfaceDevice::IHidDevice)->remove_InputReportReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::HumanInterfaceDevice::IHidDevice)->remove_InputReportReceived(get_abi(token)));
 }
 
 template <typename D> hstring consume_Windows_Devices_HumanInterfaceDevice_IHidDeviceStatics<D>::GetDeviceSelector(uint16_t usagePage, uint16_t usageId) const
@@ -622,1303 +622,1125 @@ template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControl 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsActive(bool value) noexcept final
+    int32_t WINRT_CALL put_IsActive(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsActive, WINRT_WRAP(void), bool);
             this->shim().IsActive(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ControlDescription(void** value) noexcept final
+    int32_t WINRT_CALL get_ControlDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>(this->shim().ControlDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_ReportId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ReportId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept final
+    int32_t WINRT_CALL get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportType, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidReportType));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidReportType>(this->shim().ReportType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParentCollections(void** value) noexcept final
+    int32_t WINRT_CALL get_ParentCollections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentCollections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection>>(this->shim().ParentCollections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>
 {
-    HRESULT __stdcall get_IsAbsolute(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAbsolute(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAbsolute, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAbsolute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidCollection> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidCollection>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(Windows::Devices::HumanInterfaceDevice::HidCollectionType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Devices::HumanInterfaceDevice::HidCollectionType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidCollectionType));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidCollectionType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDevice> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidDevice>
 {
-    HRESULT __stdcall get_VendorId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_VendorId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VendorId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().VendorId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProductId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Version(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Version(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Version());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInputReportAsync(void** value) noexcept final
+    int32_t WINRT_CALL GetInputReportAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInputReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport>>(this->shim().GetInputReportAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInputReportByIdAsync(uint16_t reportId, void** value) noexcept final
+    int32_t WINRT_CALL GetInputReportByIdAsync(uint16_t reportId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInputReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport>), uint16_t);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport>>(this->shim().GetInputReportAsync(reportId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFeatureReportAsync(void** value) noexcept final
+    int32_t WINRT_CALL GetFeatureReportAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFeatureReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>>(this->shim().GetFeatureReportAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFeatureReportByIdAsync(uint16_t reportId, void** value) noexcept final
+    int32_t WINRT_CALL GetFeatureReportByIdAsync(uint16_t reportId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFeatureReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>), uint16_t);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>>(this->shim().GetFeatureReportAsync(reportId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateOutputReport(void** outputReport) noexcept final
+    int32_t WINRT_CALL CreateOutputReport(void** outputReport) noexcept final
     {
         try
         {
             *outputReport = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateOutputReport, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidOutputReport));
             *outputReport = detach_from<Windows::Devices::HumanInterfaceDevice::HidOutputReport>(this->shim().CreateOutputReport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateOutputReportById(uint16_t reportId, void** outputReport) noexcept final
+    int32_t WINRT_CALL CreateOutputReportById(uint16_t reportId, void** outputReport) noexcept final
     {
         try
         {
             *outputReport = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateOutputReport, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidOutputReport), uint16_t);
             *outputReport = detach_from<Windows::Devices::HumanInterfaceDevice::HidOutputReport>(this->shim().CreateOutputReport(reportId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFeatureReport(void** featureReport) noexcept final
+    int32_t WINRT_CALL CreateFeatureReport(void** featureReport) noexcept final
     {
         try
         {
             *featureReport = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFeatureReport, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidFeatureReport));
             *featureReport = detach_from<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>(this->shim().CreateFeatureReport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFeatureReportById(uint16_t reportId, void** featureReport) noexcept final
+    int32_t WINRT_CALL CreateFeatureReportById(uint16_t reportId, void** featureReport) noexcept final
     {
         try
         {
             *featureReport = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFeatureReport, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidFeatureReport), uint16_t);
             *featureReport = detach_from<Windows::Devices::HumanInterfaceDevice::HidFeatureReport>(this->shim().CreateFeatureReport(reportId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendOutputReportAsync(void* outputReport, void** operation) noexcept final
+    int32_t WINRT_CALL SendOutputReportAsync(void* outputReport, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendOutputReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>), Windows::Devices::HumanInterfaceDevice::HidOutputReport const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().SendOutputReportAsync(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidOutputReport const*>(&outputReport)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendFeatureReportAsync(void* featureReport, void** operation) noexcept final
+    int32_t WINRT_CALL SendFeatureReportAsync(void* featureReport, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendFeatureReportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>), Windows::Devices::HumanInterfaceDevice::HidFeatureReport const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().SendFeatureReportAsync(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidFeatureReport const*>(&featureReport)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControlDescriptions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>), Windows::Devices::HumanInterfaceDevice::HidReportType const&, uint16_t, uint16_t);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>>(this->shim().GetBooleanControlDescriptions(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidReportType const*>(&reportType), usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControlDescriptions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>), Windows::Devices::HumanInterfaceDevice::HidReportType const&, uint16_t, uint16_t);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>>(this->shim().GetNumericControlDescriptions(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidReportType const*>(&reportType), usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_InputReportReceived(void* reportHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_InputReportReceived(void* reportHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().InputReportReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const*>(&reportHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InputReportReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().InputReportReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const*>(&reportHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_InputReportReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_InputReportReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().InputReportReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(InputReportReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().InputReportReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(uint16_t usagePage, uint16_t usageId, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(uint16_t usagePage, uint16_t usageId, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), uint16_t, uint16_t);
             *selector = detach_from<hstring>(this->shim().GetDeviceSelector(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorVidPid(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorVidPid(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), uint16_t, uint16_t, uint16_t, uint16_t);
             *selector = detach_from<hstring>(this->shim().GetDeviceSelector(usagePage, usageId, vendorId, productId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, Windows::Storage::FileAccessMode accessMode, void** hidDevice) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, Windows::Storage::FileAccessMode accessMode, void** hidDevice) noexcept final
     {
         try
         {
             *hidDevice = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice>), hstring const, Windows::Storage::FileAccessMode const);
             *hidDevice = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Storage::FileAccessMode const*>(&accessMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>
 {
-    HRESULT __stdcall get_Id(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Data(void* value) noexcept final
+    int32_t WINRT_CALL put_Data(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().Data(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidInputReport>
 {
-    HRESULT __stdcall get_Id(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivatedBooleanControls(void** value) noexcept final
+    int32_t WINRT_CALL get_ActivatedBooleanControls(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivatedBooleanControls, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>>(this->shim().ActivatedBooleanControls());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransitionedBooleanControls(void** value) noexcept final
+    int32_t WINRT_CALL get_TransitionedBooleanControls(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransitionedBooleanControls, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>>(this->shim().TransitionedBooleanControls());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>
 {
-    HRESULT __stdcall get_Report(void** value) noexcept final
+    int32_t WINRT_CALL get_Report(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Report, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidInputReport));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidInputReport>(this->shim().Report());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControl>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGrouped(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGrouped(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGrouped, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGrouped());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_Value(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(int64_t value) noexcept final
+    int32_t WINRT_CALL put_Value(int64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), int64_t);
             this->shim().Value(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaledValue(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_ScaledValue(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledValue, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().ScaledValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaledValue(int64_t value) noexcept final
+    int32_t WINRT_CALL put_ScaledValue(int64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledValue, WINRT_WRAP(void), int64_t);
             this->shim().ScaledValue(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ControlDescription(void** value) noexcept final
+    int32_t WINRT_CALL get_ControlDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>(this->shim().ControlDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_ReportId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ReportId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept final
+    int32_t WINRT_CALL get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportType, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidReportType));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidReportType>(this->shim().ReportType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ReportSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ReportSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ReportCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ReportCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsagePage, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsagePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsageId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsageId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().UsageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogicalMinimum(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LogicalMinimum(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogicalMinimum, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LogicalMinimum());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogicalMaximum(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LogicalMaximum(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogicalMaximum, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LogicalMaximum());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhysicalMinimum(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PhysicalMinimum(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhysicalMinimum, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PhysicalMinimum());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhysicalMaximum(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PhysicalMaximum(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhysicalMaximum, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PhysicalMaximum());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnitExponent(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UnitExponent(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnitExponent, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UnitExponent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Unit(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Unit(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Unit, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Unit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAbsolute(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAbsolute(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAbsolute, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAbsolute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasNull(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasNull(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasNull, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasNull());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParentCollections(void** value) noexcept final
+    int32_t WINRT_CALL get_ParentCollections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentCollections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection>>(this->shim().ParentCollections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport> : produce_base<D, Windows::Devices::HumanInterfaceDevice::IHidOutputReport>
 {
-    HRESULT __stdcall get_Id(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Data(void* value) noexcept final
+    int32_t WINRT_CALL put_Data(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().Data(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidBooleanControl), Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>(this->shim().GetBooleanControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControl, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), uint16_t, uint16_t);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControl(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
+    int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControlByDescription, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidNumericControl), Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const&);
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidNumericControl>(this->shim().GetNumericControlByDescription(*reinterpret_cast<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const*>(&controlDescription)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1928,17 +1750,17 @@ WINRT_EXPORT namespace winrt::Windows::Devices::HumanInterfaceDevice {
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId)
 {
-    return get_activation_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId);
+    return impl::call_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(usagePage, usageId); });
 }
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId)
 {
-    return get_activation_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>().GetDeviceSelector(usagePage, usageId, vendorId, productId);
+    return impl::call_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(usagePage, usageId, vendorId, productId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> HidDevice::FromIdAsync(param::hstring const& deviceId, Windows::Storage::FileAccessMode const& accessMode)
 {
-    return get_activation_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>().FromIdAsync(deviceId, accessMode);
+    return impl::call_factory<HidDevice, Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>([&](auto&& f) { return f.FromIdAsync(deviceId, accessMode); });
 }
 
 }
@@ -1969,5 +1791,3 @@ template<> struct hash<winrt::Windows::Devices::HumanInterfaceDevice::HidNumeric
 template<> struct hash<winrt::Windows::Devices::HumanInterfaceDevice::HidOutputReport> : winrt::impl::hash_base<winrt::Windows::Devices::HumanInterfaceDevice::HidOutputReport> {};
 
 }
-
-WINRT_WARNING_POP

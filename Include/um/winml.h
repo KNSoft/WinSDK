@@ -406,6 +406,15 @@ EXTERN_C const IID IID_IWinMLModel;
 #endif 	/* __IWinMLModel_INTERFACE_DEFINED__ */
 
 
+/* interface __MIDL_itf_winml_0000_0001 */
+/* [local] */ 
+
+#pragma deprecated(IWinMLModel)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_winml_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_winml_0000_0001_v0_0_s_ifspec;
+
 #ifndef __IWinMLEvaluationContext_INTERFACE_DEFINED__
 #define __IWinMLEvaluationContext_INTERFACE_DEFINED__
 
@@ -511,6 +520,15 @@ EXTERN_C const IID IID_IWinMLEvaluationContext;
 
 #endif 	/* __IWinMLEvaluationContext_INTERFACE_DEFINED__ */
 
+
+/* interface __MIDL_itf_winml_0000_0002 */
+/* [local] */ 
+
+#pragma deprecated(IWinMLEvaluationContext)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_winml_0000_0002_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_winml_0000_0002_v0_0_s_ifspec;
 
 #ifndef __IWinMLRuntime_INTERFACE_DEFINED__
 #define __IWinMLRuntime_INTERFACE_DEFINED__
@@ -629,6 +647,7 @@ EXTERN_C const IID IID_IWinMLRuntime;
 /* interface __MIDL_itf_winml_0000_0003 */
 /* [local] */ 
 
+#pragma deprecated(IWinMLRuntime)
 typedef /* [public] */ 
 enum WINML_RUNTIME_TYPE
     {
@@ -729,9 +748,11 @@ EXTERN_C const IID IID_IWinMLRuntimeFactory;
 /* interface __MIDL_itf_winml_0000_0004 */
 /* [local] */ 
 
+#pragma deprecated(IWinMLRuntimeFactory)
 HRESULT WINAPI WinMLCreateRuntime(
     _COM_Outptr_ IWinMLRuntime **runtime
     );
+#pragma deprecated(WinMLCreateRuntime)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_winml_0000_0004_v0_0_c_ifspec;

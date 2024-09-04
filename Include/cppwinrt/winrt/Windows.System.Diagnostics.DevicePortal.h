@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.AppService.2.h"
@@ -18,38 +18,38 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> event_token consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->add_Closed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection> consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed_revoker consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection>(this, &abi_t<Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection>::remove_Closed, Closed(handler));
+    return impl::make_event_revoker<D, Closed_revoker>(this, Closed(handler));
 }
 
-template <typename D> void consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(event_token const& token) const
+template <typename D> void consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::Closed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->remove_Closed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->remove_Closed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->add_RequestReceived(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection> consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived_revoker consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection>(this, &abi_t<Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection>::remove_RequestReceived, RequestReceived(handler));
+    return impl::make_event_revoker<D, RequestReceived_revoker>(this, RequestReceived(handler));
 }
 
-template <typename D> void consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(event_token const& token) const
+template <typename D> void consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnection<D>::RequestReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->remove_RequestReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection)->remove_RequestReceived(get_abi(token)));
 }
 
 template <typename D> Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedReason consume_Windows_System_Diagnostics_DevicePortal_IDevicePortalConnectionClosedEventArgs<D>::Reason() const
@@ -139,258 +139,218 @@ template <typename D> Windows::Foundation::Deferral consume_Windows_System_Diagn
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnection>
 {
-    HRESULT __stdcall add_Closed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Closed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Closed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Closed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Closed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_RequestReceived(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RequestReceived(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RequestReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RequestReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RequestReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RequestReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RequestReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RequestReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RequestReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RequestReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionClosedEventArgs> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionClosedEventArgs>
 {
-    HRESULT __stdcall get_Reason(Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedReason* value) noexcept final
+    int32_t WINRT_CALL get_Reason(Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reason, WINRT_WRAP(Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedReason));
             *value = detach_from<Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionClosedReason>(this->shim().Reason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionRequestReceivedEventArgs> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionRequestReceivedEventArgs>
 {
-    HRESULT __stdcall get_RequestMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestMessage, WINRT_WRAP(Windows::Web::Http::HttpRequestMessage));
             *value = detach_from<Windows::Web::Http::HttpRequestMessage>(this->shim().RequestMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResponseMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_ResponseMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseMessage, WINRT_WRAP(Windows::Web::Http::HttpResponseMessage));
             *value = detach_from<Windows::Web::Http::HttpResponseMessage>(this->shim().ResponseMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionStatics> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionStatics>
 {
-    HRESULT __stdcall GetForAppServiceConnection(void* appServiceConnection, void** value) noexcept final
+    int32_t WINRT_CALL GetForAppServiceConnection(void* appServiceConnection, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForAppServiceConnection, WINRT_WRAP(Windows::System::Diagnostics::DevicePortal::DevicePortalConnection), Windows::ApplicationModel::AppService::AppServiceConnection const&);
             *value = detach_from<Windows::System::Diagnostics::DevicePortal::DevicePortalConnection>(this->shim().GetForAppServiceConnection(*reinterpret_cast<Windows::ApplicationModel::AppService::AppServiceConnection const*>(&appServiceConnection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalWebSocketConnection> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalWebSocketConnection>
 {
-    HRESULT __stdcall GetServerMessageWebSocketForRequest(void* request, void** result) noexcept final
+    int32_t WINRT_CALL GetServerMessageWebSocketForRequest(void* request, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetServerMessageWebSocketForRequest, WINRT_WRAP(Windows::Networking::Sockets::ServerMessageWebSocket), Windows::Web::Http::HttpRequestMessage const&);
             *result = detach_from<Windows::Networking::Sockets::ServerMessageWebSocket>(this->shim().GetServerMessageWebSocketForRequest(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetServerMessageWebSocketForRequest2(void* request, Windows::Networking::Sockets::SocketMessageType messageType, HSTRING protocol, void** result) noexcept final
+    int32_t WINRT_CALL GetServerMessageWebSocketForRequest2(void* request, Windows::Networking::Sockets::SocketMessageType messageType, void* protocol, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetServerMessageWebSocketForRequest, WINRT_WRAP(Windows::Networking::Sockets::ServerMessageWebSocket), Windows::Web::Http::HttpRequestMessage const&, Windows::Networking::Sockets::SocketMessageType const&, hstring const&);
             *result = detach_from<Windows::Networking::Sockets::ServerMessageWebSocket>(this->shim().GetServerMessageWebSocketForRequest(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request), *reinterpret_cast<Windows::Networking::Sockets::SocketMessageType const*>(&messageType), *reinterpret_cast<hstring const*>(&protocol)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetServerMessageWebSocketForRequest3(void* request, Windows::Networking::Sockets::SocketMessageType messageType, HSTRING protocol, uint32_t outboundBufferSizeInBytes, uint32_t maxMessageSize, Windows::Networking::Sockets::MessageWebSocketReceiveMode receiveMode, void** result) noexcept final
+    int32_t WINRT_CALL GetServerMessageWebSocketForRequest3(void* request, Windows::Networking::Sockets::SocketMessageType messageType, void* protocol, uint32_t outboundBufferSizeInBytes, uint32_t maxMessageSize, Windows::Networking::Sockets::MessageWebSocketReceiveMode receiveMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetServerMessageWebSocketForRequest, WINRT_WRAP(Windows::Networking::Sockets::ServerMessageWebSocket), Windows::Web::Http::HttpRequestMessage const&, Windows::Networking::Sockets::SocketMessageType const&, hstring const&, uint32_t, uint32_t, Windows::Networking::Sockets::MessageWebSocketReceiveMode const&);
             *result = detach_from<Windows::Networking::Sockets::ServerMessageWebSocket>(this->shim().GetServerMessageWebSocketForRequest(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request), *reinterpret_cast<Windows::Networking::Sockets::SocketMessageType const*>(&messageType), *reinterpret_cast<hstring const*>(&protocol), outboundBufferSizeInBytes, maxMessageSize, *reinterpret_cast<Windows::Networking::Sockets::MessageWebSocketReceiveMode const*>(&receiveMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetServerStreamWebSocketForRequest(void* request, void** result) noexcept final
+    int32_t WINRT_CALL GetServerStreamWebSocketForRequest(void* request, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetServerStreamWebSocketForRequest, WINRT_WRAP(Windows::Networking::Sockets::ServerStreamWebSocket), Windows::Web::Http::HttpRequestMessage const&);
             *result = detach_from<Windows::Networking::Sockets::ServerStreamWebSocket>(this->shim().GetServerStreamWebSocketForRequest(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetServerStreamWebSocketForRequest2(void* request, HSTRING protocol, uint32_t outboundBufferSizeInBytes, bool noDelay, void** result) noexcept final
+    int32_t WINRT_CALL GetServerStreamWebSocketForRequest2(void* request, void* protocol, uint32_t outboundBufferSizeInBytes, bool noDelay, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetServerStreamWebSocketForRequest, WINRT_WRAP(Windows::Networking::Sockets::ServerStreamWebSocket), Windows::Web::Http::HttpRequestMessage const&, hstring const&, uint32_t, bool);
             *result = detach_from<Windows::Networking::Sockets::ServerStreamWebSocket>(this->shim().GetServerStreamWebSocketForRequest(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request), *reinterpret_cast<hstring const*>(&protocol), outboundBufferSizeInBytes, noDelay));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalWebSocketConnectionRequestReceivedEventArgs> : produce_base<D, Windows::System::Diagnostics::DevicePortal::IDevicePortalWebSocketConnectionRequestReceivedEventArgs>
 {
-    HRESULT __stdcall get_IsWebSocketUpgradeRequest(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsWebSocketUpgradeRequest(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWebSocketUpgradeRequest, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsWebSocketUpgradeRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WebSocketProtocolsRequested(void** value) noexcept final
+    int32_t WINRT_CALL get_WebSocketProtocolsRequested(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebSocketProtocolsRequested, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().WebSocketProtocolsRequested());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -400,7 +360,7 @@ WINRT_EXPORT namespace winrt::Windows::System::Diagnostics::DevicePortal {
 
 inline Windows::System::Diagnostics::DevicePortal::DevicePortalConnection DevicePortalConnection::GetForAppServiceConnection(Windows::ApplicationModel::AppService::AppServiceConnection const& appServiceConnection)
 {
-    return get_activation_factory<DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionStatics>().GetForAppServiceConnection(appServiceConnection);
+    return impl::call_factory<DevicePortalConnection, Windows::System::Diagnostics::DevicePortal::IDevicePortalConnectionStatics>([&](auto&& f) { return f.GetForAppServiceConnection(appServiceConnection); });
 }
 
 }
@@ -418,5 +378,3 @@ template<> struct hash<winrt::Windows::System::Diagnostics::DevicePortal::Device
 template<> struct hash<winrt::Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> : winrt::impl::hash_base<winrt::Windows::System::Diagnostics::DevicePortal::DevicePortalConnectionRequestReceivedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

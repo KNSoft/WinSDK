@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -623,62 +623,62 @@ template <> struct name<Windows::ApplicationModel::Email::EmailQuerySortProperty
 template <> struct name<Windows::ApplicationModel::Email::EmailRecipientResolutionStatus>{ static constexpr auto & value{ L"Windows.ApplicationModel.Email.EmailRecipientResolutionStatus" }; };
 template <> struct name<Windows::ApplicationModel::Email::EmailSpecialFolderKind>{ static constexpr auto & value{ L"Windows.ApplicationModel.Email.EmailSpecialFolderKind" }; };
 template <> struct name<Windows::ApplicationModel::Email::EmailStoreAccessType>{ static constexpr auto & value{ L"Windows.ApplicationModel.Email.EmailStoreAccessType" }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailAttachment>{ static constexpr GUID value{ 0xF353CAF9,0x57C8,0x4ADB,{ 0xB9,0x92,0x60,0xFC,0xEB,0x58,0x4F,0x54 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailAttachment2>{ static constexpr GUID value{ 0x225F1070,0xB0FF,0x4571,{ 0x9D,0x54,0xA7,0x06,0xC4,0x8D,0x55,0xC6 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailAttachmentFactory>{ static constexpr GUID value{ 0x796EAC46,0xED56,0x4979,{ 0x87,0x08,0xAB,0xB8,0xBC,0x85,0x4B,0x7D } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailAttachmentFactory2>{ static constexpr GUID value{ 0x23259435,0x51F9,0x427D,{ 0xAD,0xCD,0x24,0x10,0x23,0xC8,0xCF,0xB7 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailConversation>{ static constexpr GUID value{ 0xDA18C248,0xA0BC,0x4349,{ 0x90,0x2D,0x90,0xF6,0x63,0x89,0xF5,0x1B } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailConversationBatch>{ static constexpr GUID value{ 0xB8C1AB81,0x01C5,0x432A,{ 0x9D,0xF1,0xFE,0x85,0xD9,0x8A,0x27,0x9A } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailConversationReader>{ static constexpr GUID value{ 0xB4630F82,0x2875,0x44C8,{ 0x9B,0x8C,0x85,0xBE,0xB3,0xA3,0xC6,0x53 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailFolder>{ static constexpr GUID value{ 0xA24F7771,0x996C,0x4864,{ 0xB1,0xBA,0xED,0x12,0x40,0xE5,0x7D,0x11 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailIrmInfo>{ static constexpr GUID value{ 0x90F52193,0xB1A0,0x4EBD,{ 0xA6,0xB6,0xDD,0xCA,0x55,0x60,0x6E,0x0E } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailIrmInfoFactory>{ static constexpr GUID value{ 0x314BB18C,0xE3E6,0x4D7B,{ 0xBE,0x8D,0x91,0xA9,0x63,0x11,0xB0,0x1B } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailIrmTemplate>{ static constexpr GUID value{ 0xF327758D,0x546D,0x4BEA,{ 0xA9,0x63,0x54,0xA3,0x8B,0x2C,0xC0,0x16 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>{ static constexpr GUID value{ 0x3DA31876,0x8738,0x4418,{ 0xB9,0xCB,0x47,0x1B,0x93,0x6F,0xE7,0x1E } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailItemCounts>{ static constexpr GUID value{ 0x5BD13321,0xFEC8,0x4BAB,{ 0x83,0xBA,0x0B,0xAF,0x3C,0x1F,0x6C,0xBD } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailbox>{ static constexpr GUID value{ 0xA8790649,0xCF5B,0x411B,{ 0x80,0xB1,0x4A,0x6A,0x14,0x84,0xCE,0x25 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailbox2>{ static constexpr GUID value{ 0x14F8E404,0x6CA2,0x4AB2,{ 0x92,0x41,0x79,0xCD,0x7B,0xF4,0x63,0x46 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailbox3>{ static constexpr GUID value{ 0x3DA5897B,0x458B,0x408A,{ 0x8E,0x37,0xAC,0x8B,0x05,0xD8,0xAF,0x56 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailbox4>{ static constexpr GUID value{ 0x5D1F301B,0xF222,0x48A7,{ 0xB7,0xB6,0x71,0x63,0x56,0xCD,0x26,0xA1 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailbox5>{ static constexpr GUID value{ 0x39967087,0x0092,0x49BE,{ 0xBD,0x0E,0x5D,0x4D,0xC9,0xD9,0x6D,0x90 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxAction>{ static constexpr GUID value{ 0xAC9889FA,0x21FA,0x4927,{ 0x92,0x10,0xD4,0x10,0x58,0x2F,0xDF,0x3E } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxAutoReply>{ static constexpr GUID value{ 0xE223254C,0x8AB4,0x485B,{ 0xB3,0x1F,0x04,0xD1,0x54,0x76,0xBD,0x59 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>{ static constexpr GUID value{ 0xA87A9FA8,0x0AC6,0x4B77,{ 0xBA,0x77,0xA6,0xB9,0x9E,0x9A,0x27,0xB8 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxCapabilities>{ static constexpr GUID value{ 0xEEDEC3A6,0x89DB,0x4305,{ 0x82,0xC4,0x43,0x9E,0x0A,0x33,0xDA,0x11 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>{ static constexpr GUID value{ 0x69723EE4,0x2F21,0x4CBC,{ 0x88,0xAB,0x2E,0x76,0x02,0xA4,0x80,0x6B } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>{ static constexpr GUID value{ 0xF690E944,0x56F2,0x45AA,{ 0x87,0x2C,0x0C,0xE9,0xF3,0xDB,0x0B,0x5C } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxChange>{ static constexpr GUID value{ 0x61EDF54B,0x11EF,0x400C,{ 0xAD,0xDE,0x8C,0xDE,0x65,0xC8,0x5E,0x66 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxChangeReader>{ static constexpr GUID value{ 0xBDBD0EBB,0xC53D,0x4331,{ 0x97,0xBE,0xBE,0x75,0xA2,0x14,0x6A,0x75 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>{ static constexpr GUID value{ 0x7AE48638,0x5166,0x42B7,{ 0x88,0x82,0xFD,0x21,0xC9,0x2B,0xDD,0x4B } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>{ static constexpr GUID value{ 0x779A74C1,0x97C5,0x4B54,{ 0xB3,0x0D,0x30,0x62,0x32,0x62,0x3E,0x6D } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>{ static constexpr GUID value{ 0x3CFD5F6E,0x01D4,0x4E4A,{ 0xA4,0x4C,0xB2,0x2D,0xD4,0x2E,0xC2,0x07 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>{ static constexpr GUID value{ 0xB228557F,0x2885,0x4998,{ 0xB5,0x95,0x8A,0x2D,0x37,0x4C,0xE9,0x50 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxPolicies>{ static constexpr GUID value{ 0x1F3345C5,0x1C3B,0x4DC7,{ 0xB4,0x10,0x63,0x73,0x78,0x3E,0x54,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxPolicies2>{ static constexpr GUID value{ 0xBAB58AFB,0xA14B,0x497C,{ 0xA8,0xE2,0x55,0xEA,0xC2,0x9C,0xC4,0xB5 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxPolicies3>{ static constexpr GUID value{ 0xBDD4A01F,0x4867,0x414A,{ 0x81,0xA2,0x80,0x39,0x19,0xC4,0x41,0x91 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>{ static constexpr GUID value{ 0x517AC55A,0x3591,0x4B5D,{ 0x85,0xBC,0xC7,0x1D,0xDE,0x86,0x22,0x63 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>{ static constexpr GUID value{ 0xCD8DC97E,0x95C1,0x4F89,{ 0x81,0xB7,0xE6,0xAE,0xCB,0x66,0x95,0xFC } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailManagerForUser>{ static constexpr GUID value{ 0xF773DE9F,0x3CA5,0x4B0F,{ 0x90,0xC1,0x15,0x6E,0x40,0x17,0x4C,0xE5 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailManagerStatics>{ static constexpr GUID value{ 0xF5128654,0x55C5,0x4890,{ 0xA8,0x24,0x21,0x6C,0x26,0x18,0xCE,0x7F } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailManagerStatics2>{ static constexpr GUID value{ 0xAC052DA3,0xB194,0x425D,{ 0xB6,0xD9,0xD0,0xF0,0x41,0x35,0xED,0xA2 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailManagerStatics3>{ static constexpr GUID value{ 0x4A722395,0x843E,0x4945,{ 0xB3,0xAA,0x34,0x9E,0x07,0xA3,0x62,0xC5 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMeetingInfo>{ static constexpr GUID value{ 0x31C03FA9,0x7933,0x415F,{ 0xA2,0x75,0xD1,0x65,0xBA,0x07,0x02,0x6B } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMeetingInfo2>{ static constexpr GUID value{ 0x7E59386D,0xB0D9,0x4FE5,{ 0x86,0x7C,0xE3,0x1E,0xD2,0xB5,0x88,0xB8 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessage>{ static constexpr GUID value{ 0x6C6D948D,0x80B5,0x48F8,{ 0xB0,0xB1,0xE0,0x4E,0x43,0x0F,0x44,0xE5 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessage2>{ static constexpr GUID value{ 0xFDC8248B,0x9F1A,0x44DB,{ 0xBD,0x3C,0x65,0xC3,0x84,0x77,0x0F,0x86 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessage3>{ static constexpr GUID value{ 0xA1EA675C,0xE598,0x4D29,{ 0xA0,0x18,0xFC,0x7B,0x7E,0xEC,0xE0,0xA1 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessage4>{ static constexpr GUID value{ 0x317CF181,0x3E7F,0x4A05,{ 0x83,0x94,0x3E,0x10,0x33,0x6D,0xD4,0x35 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessageBatch>{ static constexpr GUID value{ 0x605CD08F,0x25D9,0x4F1B,{ 0x9E,0x51,0x05,0x14,0xC0,0x14,0x96,0x53 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailMessageReader>{ static constexpr GUID value{ 0x2F4ABE9F,0x6213,0x4A85,{ 0xA3,0xB0,0xF9,0x2D,0x1A,0x83,0x9D,0x19 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailQueryOptions>{ static constexpr GUID value{ 0x45504B9B,0x3E7F,0x4D52,{ 0xB6,0xDD,0xD6,0xFD,0x4E,0x1F,0xBD,0x9A } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>{ static constexpr GUID value{ 0x88F1A1B8,0x78AB,0x4EE8,{ 0xB4,0xE3,0x04,0x6D,0x6E,0x2F,0xE5,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailQueryTextSearch>{ static constexpr GUID value{ 0x9FA0A288,0x3C5D,0x46A5,{ 0xA6,0xE2,0x31,0xD6,0xFD,0x17,0xE5,0x40 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailRecipient>{ static constexpr GUID value{ 0xCAE825B3,0x4478,0x4814,{ 0xB9,0x00,0xC9,0x02,0xB5,0xE1,0x9B,0x53 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailRecipientFactory>{ static constexpr GUID value{ 0x5500B84D,0xC79A,0x4EF8,{ 0xB9,0x09,0x72,0x2E,0x18,0xE3,0x93,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>{ static constexpr GUID value{ 0x918338FA,0x8D8D,0x4573,{ 0x80,0xD1,0x07,0x17,0x2A,0x34,0xB9,0x8D } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>{ static constexpr GUID value{ 0x5E420BB6,0xCE5B,0x4BDE,{ 0xB9,0xD4,0xE1,0x6D,0xA0,0xB0,0x9F,0xCA } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailStore>{ static constexpr GUID value{ 0xF803226E,0x9137,0x4F8B,{ 0xA4,0x70,0x27,0x9A,0xC3,0x05,0x8E,0xB6 } }; };
-template <> struct guid<Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails>{ static constexpr GUID value{ 0xCE17563C,0x46E6,0x43C9,{ 0x96,0xF7,0xFA,0xCF,0x7D,0xD7,0x10,0xCB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailAttachment>{ static constexpr guid value{ 0xF353CAF9,0x57C8,0x4ADB,{ 0xB9,0x92,0x60,0xFC,0xEB,0x58,0x4F,0x54 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailAttachment2>{ static constexpr guid value{ 0x225F1070,0xB0FF,0x4571,{ 0x9D,0x54,0xA7,0x06,0xC4,0x8D,0x55,0xC6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailAttachmentFactory>{ static constexpr guid value{ 0x796EAC46,0xED56,0x4979,{ 0x87,0x08,0xAB,0xB8,0xBC,0x85,0x4B,0x7D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailAttachmentFactory2>{ static constexpr guid value{ 0x23259435,0x51F9,0x427D,{ 0xAD,0xCD,0x24,0x10,0x23,0xC8,0xCF,0xB7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailConversation>{ static constexpr guid value{ 0xDA18C248,0xA0BC,0x4349,{ 0x90,0x2D,0x90,0xF6,0x63,0x89,0xF5,0x1B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailConversationBatch>{ static constexpr guid value{ 0xB8C1AB81,0x01C5,0x432A,{ 0x9D,0xF1,0xFE,0x85,0xD9,0x8A,0x27,0x9A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailConversationReader>{ static constexpr guid value{ 0xB4630F82,0x2875,0x44C8,{ 0x9B,0x8C,0x85,0xBE,0xB3,0xA3,0xC6,0x53 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailFolder>{ static constexpr guid value{ 0xA24F7771,0x996C,0x4864,{ 0xB1,0xBA,0xED,0x12,0x40,0xE5,0x7D,0x11 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailIrmInfo>{ static constexpr guid value{ 0x90F52193,0xB1A0,0x4EBD,{ 0xA6,0xB6,0xDD,0xCA,0x55,0x60,0x6E,0x0E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailIrmInfoFactory>{ static constexpr guid value{ 0x314BB18C,0xE3E6,0x4D7B,{ 0xBE,0x8D,0x91,0xA9,0x63,0x11,0xB0,0x1B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailIrmTemplate>{ static constexpr guid value{ 0xF327758D,0x546D,0x4BEA,{ 0xA9,0x63,0x54,0xA3,0x8B,0x2C,0xC0,0x16 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>{ static constexpr guid value{ 0x3DA31876,0x8738,0x4418,{ 0xB9,0xCB,0x47,0x1B,0x93,0x6F,0xE7,0x1E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailItemCounts>{ static constexpr guid value{ 0x5BD13321,0xFEC8,0x4BAB,{ 0x83,0xBA,0x0B,0xAF,0x3C,0x1F,0x6C,0xBD } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailbox>{ static constexpr guid value{ 0xA8790649,0xCF5B,0x411B,{ 0x80,0xB1,0x4A,0x6A,0x14,0x84,0xCE,0x25 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailbox2>{ static constexpr guid value{ 0x14F8E404,0x6CA2,0x4AB2,{ 0x92,0x41,0x79,0xCD,0x7B,0xF4,0x63,0x46 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailbox3>{ static constexpr guid value{ 0x3DA5897B,0x458B,0x408A,{ 0x8E,0x37,0xAC,0x8B,0x05,0xD8,0xAF,0x56 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailbox4>{ static constexpr guid value{ 0x5D1F301B,0xF222,0x48A7,{ 0xB7,0xB6,0x71,0x63,0x56,0xCD,0x26,0xA1 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailbox5>{ static constexpr guid value{ 0x39967087,0x0092,0x49BE,{ 0xBD,0x0E,0x5D,0x4D,0xC9,0xD9,0x6D,0x90 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxAction>{ static constexpr guid value{ 0xAC9889FA,0x21FA,0x4927,{ 0x92,0x10,0xD4,0x10,0x58,0x2F,0xDF,0x3E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxAutoReply>{ static constexpr guid value{ 0xE223254C,0x8AB4,0x485B,{ 0xB3,0x1F,0x04,0xD1,0x54,0x76,0xBD,0x59 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>{ static constexpr guid value{ 0xA87A9FA8,0x0AC6,0x4B77,{ 0xBA,0x77,0xA6,0xB9,0x9E,0x9A,0x27,0xB8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxCapabilities>{ static constexpr guid value{ 0xEEDEC3A6,0x89DB,0x4305,{ 0x82,0xC4,0x43,0x9E,0x0A,0x33,0xDA,0x11 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>{ static constexpr guid value{ 0x69723EE4,0x2F21,0x4CBC,{ 0x88,0xAB,0x2E,0x76,0x02,0xA4,0x80,0x6B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>{ static constexpr guid value{ 0xF690E944,0x56F2,0x45AA,{ 0x87,0x2C,0x0C,0xE9,0xF3,0xDB,0x0B,0x5C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxChange>{ static constexpr guid value{ 0x61EDF54B,0x11EF,0x400C,{ 0xAD,0xDE,0x8C,0xDE,0x65,0xC8,0x5E,0x66 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxChangeReader>{ static constexpr guid value{ 0xBDBD0EBB,0xC53D,0x4331,{ 0x97,0xBE,0xBE,0x75,0xA2,0x14,0x6A,0x75 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>{ static constexpr guid value{ 0x7AE48638,0x5166,0x42B7,{ 0x88,0x82,0xFD,0x21,0xC9,0x2B,0xDD,0x4B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>{ static constexpr guid value{ 0x779A74C1,0x97C5,0x4B54,{ 0xB3,0x0D,0x30,0x62,0x32,0x62,0x3E,0x6D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>{ static constexpr guid value{ 0x3CFD5F6E,0x01D4,0x4E4A,{ 0xA4,0x4C,0xB2,0x2D,0xD4,0x2E,0xC2,0x07 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>{ static constexpr guid value{ 0xB228557F,0x2885,0x4998,{ 0xB5,0x95,0x8A,0x2D,0x37,0x4C,0xE9,0x50 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxPolicies>{ static constexpr guid value{ 0x1F3345C5,0x1C3B,0x4DC7,{ 0xB4,0x10,0x63,0x73,0x78,0x3E,0x54,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxPolicies2>{ static constexpr guid value{ 0xBAB58AFB,0xA14B,0x497C,{ 0xA8,0xE2,0x55,0xEA,0xC2,0x9C,0xC4,0xB5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxPolicies3>{ static constexpr guid value{ 0xBDD4A01F,0x4867,0x414A,{ 0x81,0xA2,0x80,0x39,0x19,0xC4,0x41,0x91 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>{ static constexpr guid value{ 0x517AC55A,0x3591,0x4B5D,{ 0x85,0xBC,0xC7,0x1D,0xDE,0x86,0x22,0x63 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>{ static constexpr guid value{ 0xCD8DC97E,0x95C1,0x4F89,{ 0x81,0xB7,0xE6,0xAE,0xCB,0x66,0x95,0xFC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailManagerForUser>{ static constexpr guid value{ 0xF773DE9F,0x3CA5,0x4B0F,{ 0x90,0xC1,0x15,0x6E,0x40,0x17,0x4C,0xE5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailManagerStatics>{ static constexpr guid value{ 0xF5128654,0x55C5,0x4890,{ 0xA8,0x24,0x21,0x6C,0x26,0x18,0xCE,0x7F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailManagerStatics2>{ static constexpr guid value{ 0xAC052DA3,0xB194,0x425D,{ 0xB6,0xD9,0xD0,0xF0,0x41,0x35,0xED,0xA2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailManagerStatics3>{ static constexpr guid value{ 0x4A722395,0x843E,0x4945,{ 0xB3,0xAA,0x34,0x9E,0x07,0xA3,0x62,0xC5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMeetingInfo>{ static constexpr guid value{ 0x31C03FA9,0x7933,0x415F,{ 0xA2,0x75,0xD1,0x65,0xBA,0x07,0x02,0x6B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMeetingInfo2>{ static constexpr guid value{ 0x7E59386D,0xB0D9,0x4FE5,{ 0x86,0x7C,0xE3,0x1E,0xD2,0xB5,0x88,0xB8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessage>{ static constexpr guid value{ 0x6C6D948D,0x80B5,0x48F8,{ 0xB0,0xB1,0xE0,0x4E,0x43,0x0F,0x44,0xE5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessage2>{ static constexpr guid value{ 0xFDC8248B,0x9F1A,0x44DB,{ 0xBD,0x3C,0x65,0xC3,0x84,0x77,0x0F,0x86 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessage3>{ static constexpr guid value{ 0xA1EA675C,0xE598,0x4D29,{ 0xA0,0x18,0xFC,0x7B,0x7E,0xEC,0xE0,0xA1 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessage4>{ static constexpr guid value{ 0x317CF181,0x3E7F,0x4A05,{ 0x83,0x94,0x3E,0x10,0x33,0x6D,0xD4,0x35 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessageBatch>{ static constexpr guid value{ 0x605CD08F,0x25D9,0x4F1B,{ 0x9E,0x51,0x05,0x14,0xC0,0x14,0x96,0x53 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailMessageReader>{ static constexpr guid value{ 0x2F4ABE9F,0x6213,0x4A85,{ 0xA3,0xB0,0xF9,0x2D,0x1A,0x83,0x9D,0x19 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailQueryOptions>{ static constexpr guid value{ 0x45504B9B,0x3E7F,0x4D52,{ 0xB6,0xDD,0xD6,0xFD,0x4E,0x1F,0xBD,0x9A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>{ static constexpr guid value{ 0x88F1A1B8,0x78AB,0x4EE8,{ 0xB4,0xE3,0x04,0x6D,0x6E,0x2F,0xE5,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailQueryTextSearch>{ static constexpr guid value{ 0x9FA0A288,0x3C5D,0x46A5,{ 0xA6,0xE2,0x31,0xD6,0xFD,0x17,0xE5,0x40 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailRecipient>{ static constexpr guid value{ 0xCAE825B3,0x4478,0x4814,{ 0xB9,0x00,0xC9,0x02,0xB5,0xE1,0x9B,0x53 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailRecipientFactory>{ static constexpr guid value{ 0x5500B84D,0xC79A,0x4EF8,{ 0xB9,0x09,0x72,0x2E,0x18,0xE3,0x93,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>{ static constexpr guid value{ 0x918338FA,0x8D8D,0x4573,{ 0x80,0xD1,0x07,0x17,0x2A,0x34,0xB9,0x8D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>{ static constexpr guid value{ 0x5E420BB6,0xCE5B,0x4BDE,{ 0xB9,0xD4,0xE1,0x6D,0xA0,0xB0,0x9F,0xCA } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailStore>{ static constexpr guid value{ 0xF803226E,0x9137,0x4F8B,{ 0xA4,0x70,0x27,0x9A,0xC3,0x05,0x8E,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails>{ static constexpr guid value{ 0xCE17563C,0x46E6,0x43C9,{ 0x96,0xF7,0xFA,0xCF,0x7D,0xD7,0x10,0xCB } }; };
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailAttachment>{ using type = Windows::ApplicationModel::Email::IEmailAttachment; };
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailConversation>{ using type = Windows::ApplicationModel::Email::IEmailConversation; };
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailConversationBatch>{ using type = Windows::ApplicationModel::Email::IEmailConversationBatch; };
@@ -711,6 +711,603 @@ template <> struct default_interface<Windows::ApplicationModel::Email::EmailReci
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>{ using type = Windows::ApplicationModel::Email::IEmailRecipientResolutionResult; };
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailStore>{ using type = Windows::ApplicationModel::Email::IEmailStore; };
 template <> struct default_interface<Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails>{ using type = Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails; };
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FileName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FileName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachment2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentLocation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentLocation(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EstimatedDownloadSizeInBytes(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EstimatedDownloadSizeInBytes(uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsFromBaseMessage(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsInline(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsInline(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MimeType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MimeType(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachmentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* fileName, void* data, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachmentFactory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* fileName, void* data, void* mimeType, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailConversation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailboxId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasAttachment(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastEmailResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MessageCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MostRecentMessageId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MostRecentMessageTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Preview(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LatestSender(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subject(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnreadMessageCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindMessagesAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindMessagesWithCountAsync(uint32_t count, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailConversationBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Conversations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailConversationReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailFolder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailboxId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ParentFolderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSyncEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsSyncEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailSpecialFolderKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderAsync(void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindChildFoldersAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageCountsAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryMoveAsync(void* newParentFolder, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryMoveWithNewNameAsync(void* newParentFolder, void* newFolderName, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySaveAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveMessageAsync(void* message, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanEdit(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanEdit(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanExtractData(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanExtractData(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanForward(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanForward(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanModifyRecipientsOnResponse(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanModifyRecipientsOnResponse(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanPrintData(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanPrintData(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanRemoveIrmOnResponse(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanRemoveIrmOnResponse(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanReply(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanReply(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanReplyAll(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanReplyAll(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationDate(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsIrmOriginator(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsIrmOriginator(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsProgramaticAccessAllowed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsProgramaticAccessAllowed(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Template(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Template(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Foundation::DateTime expiration, void* irmTemplate, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmTemplate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* id, void* name, void* description, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailItemCounts>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Flagged(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Important(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Total(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Unread(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Capabilities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOwnedByCurrentApp(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataEncryptedUnderLock(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MailAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailAddressAliases(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Policies(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SyncManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFolderAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSpecialFolderAsync(Windows::ApplicationModel::Email::EmailSpecialFolderKind folderType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MarkMessageAsSeenAsync(void* messageId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MarkFolderAsSeenAsync(void* folderId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MarkMessageReadAsync(void* messageId, bool isRead, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeMessageFlagStateAsync(void* messageId, Windows::ApplicationModel::Email::EmailFlagState flagState, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryMoveMessageAsync(void* messageId, void* newParentFolderId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryMoveFolderAsync(void* folderId, void* newParentFolderId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryMoveFolderWithNewNameAsync(void* folderId, void* newParentFolderId, void* newFolderName, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteMessageAsync(void* messageId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MarkFolderSyncEnabledAsync(void* folderId, bool isSyncEnabled, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SendMessageAsync(void* message, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveDraftAsync(void* message, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DownloadMessageAsync(void* messageId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DownloadAttachmentAsync(void* attachmentId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResponseMessageAsync(void* messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, void* subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, void* responseHeader, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryUpdateMeetingResponseAsync(void* meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, void* subject, void* comment, bool sendUpdate, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryForwardMeetingAsync(void* meeting, void* recipients, void* subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, void* forwardHeader, void* comment, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryProposeNewTimeForMeetingAsync(void* meeting, Windows::Foundation::DateTime newStartTime, Windows::Foundation::TimeSpan newDuration, void* subject, void* comment, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_MailboxChanged(void* pHandler, winrt::event_token* pToken) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MailboxChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL SmartSendMessageAsync(void* message, bool smartSend, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySetAutoReplySettingsAsync(void* autoReplySettings, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind requestedFormat, void** autoReplySettings) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LinkedMailboxId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ResolveRecipientsAsync(void* recipients, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ValidateCertificatesAsync(void* certificates, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryEmptyFolderAsync(void* folderId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateFolderAsync(void* parentFolderId, void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryDeleteFolderAsync(void* folderId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RegisterSyncManagerAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailMailboxActionKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChangeNumber(uint64_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAutoReply>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Response(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Response(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StartTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EndTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InternalReply(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KnownExternalReply(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnknownExternalReply(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanForwardMeetings(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanGetAndSetExternalAutoReplies(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanGetAndSetInternalAutoReplies(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanUpdateMeetingResponses(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanServerSearchFolders(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanServerSearchMailbox(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanProposeNewTimeForMeetings(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanSmartSend(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanResolveRecipients(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanValidateCertificates(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanEmptyFolder(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanCreateFolder(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanDeleteFolder(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanMoveFolder(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_CanForwardMeetings(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanGetAndSetExternalAutoReplies(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanGetAndSetInternalAutoReplies(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanUpdateMeetingResponses(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanServerSearchFolders(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanServerSearchMailbox(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanProposeNewTimeForMeetings(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanSmartSend(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanResolveRecipients(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanValidateCertificates(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanEmptyFolder(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanCreateFolder(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanDeleteFolder(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanMoveFolder(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeType(Windows::ApplicationModel::Email::EmailMailboxChangeType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailboxActions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Folder(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangeReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AcceptChanges() noexcept = 0;
+    virtual int32_t WINRT_CALL AcceptChangesThrough(void* lastChangeToAcknowledge) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTracking(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Enable() noexcept = 0;
+    virtual int32_t WINRT_CALL GetChangeReader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Reset() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Folder(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowSmimeSoftCertificates(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequiredSmimeEncryptionAlgorithm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequiredSmimeSigningAlgorithm(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MustEncryptSmimeMessages(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MustSignSmimeMessages(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowSmimeSoftCertificates(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequiredSmimeEncryptionAlgorithm(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequiredSmimeSigningAlgorithm(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MustEncryptSmimeMessages(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MustSignSmimeMessages(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SyncAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SyncStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SyncStatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowComposeNewEmailAsync(void* message, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowComposeNewEmailAsync(void* message, void** asyncAction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMeetingInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowNewTimeProposal(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowNewTimeProposal(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppointmentRoamingId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppointmentRoamingId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppointmentOriginalStartTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppointmentOriginalStartTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAllDay(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAllDay(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsResponseRequested(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsResponseRequested(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Location(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Location(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProposedStartTime(void** proposedStartTime) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProposedStartTime(void* proposedStartTime) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProposedDuration(void** duration) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProposedDuration(void* duration) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecurrenceStartTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RecurrenceStartTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Recurrence(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Recurrence(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteChangeNumber(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteChangeNumber(uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StartTime(Windows::Foundation::DateTime value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMeetingInfo2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsReportedOutOfDateByServer(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Subject(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subject(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Body(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Body(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_To(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CC(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bcc(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attachments(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailboxId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConversationId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FolderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowInternetImages(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowInternetImages(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChangeNumber(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EstimatedDownloadSizeInBytes(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EstimatedDownloadSizeInBytes(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FlagState(Windows::ApplicationModel::Email::EmailFlagState value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasPartialBodies(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Importance(Windows::ApplicationModel::Email::EmailImportance value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InResponseToMessageId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IrmInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IrmInfo(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDraftMessage(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRead(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsRead(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSeen(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsSeen(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsServerSearchMessage(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSmartSendable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MessageClass(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MessageClass(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NormalizedSubject(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginalCodePage(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OriginalCodePage(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Preview(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Preview(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Sender(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Sender(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SentTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SentTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MeetingInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MeetingInfo(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void* stream) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SmimeData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SmimeData(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ReplyTo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SentRepresenting(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SentRepresenting(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessageBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Messages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailMessageReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextSearch(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailQueryKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Email::EmailQueryKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FolderIds(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithText(void* text, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTextAndFields(void* text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryTextSearch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipient>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Address(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Address(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* address, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithName(void* address, void* name, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicKeys(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPublicKeys(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindMailboxesAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMailboxAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConversationAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFolderAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateMailboxAsync(void* accountName, void* accountAddress, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateMailboxInAccountAsync(void* accountName, void* accountAddress, void* userDataAccountId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails>{ struct type : IInspectable
+{
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Email_IEmailAttachment
@@ -937,10 +1534,10 @@ struct consume_Windows_ApplicationModel_Email_IEmailMailbox
     Windows::Foundation::IAsyncOperation<bool> TryUpdateMeetingResponseAsync(Windows::ApplicationModel::Email::EmailMessage const& meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType const& response, param::hstring const& subject, param::hstring const& comment, bool sendUpdate) const;
     Windows::Foundation::IAsyncOperation<bool> TryForwardMeetingAsync(Windows::ApplicationModel::Email::EmailMessage const& meeting, param::async_iterable<Windows::ApplicationModel::Email::EmailRecipient> const& recipients, param::hstring const& subject, Windows::ApplicationModel::Email::EmailMessageBodyKind const& forwardHeaderType, param::hstring const& forwardHeader, param::hstring const& comment) const;
     Windows::Foundation::IAsyncOperation<bool> TryProposeNewTimeForMeetingAsync(Windows::ApplicationModel::Email::EmailMessage const& meeting, Windows::Foundation::DateTime const& newStartTime, Windows::Foundation::TimeSpan const& newDuration, param::hstring const& subject, param::hstring const& comment) const;
-    event_token MailboxChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const;
-    using MailboxChanged_revoker = event_revoker<Windows::ApplicationModel::Email::IEmailMailbox>;
+    winrt::event_token MailboxChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const;
+    using MailboxChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Email::IEmailMailbox, &impl::abi_t<Windows::ApplicationModel::Email::IEmailMailbox>::remove_MailboxChanged>;
     MailboxChanged_revoker MailboxChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const;
-    void MailboxChanged(event_token const& token) const;
+    void MailboxChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncAction SendMessageAsync(Windows::ApplicationModel::Email::EmailMessage const& message, bool smartSend) const;
     Windows::Foundation::IAsyncOperation<bool> TrySetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings const& autoReplySettings) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings> TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind const& requestedFormat) const;
@@ -1150,10 +1747,10 @@ struct consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
     Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
-    event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    using SyncStatusChanged_revoker = event_revoker<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>;
+    winrt::event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const;
+    using SyncStatusChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Email::IEmailMailboxSyncManager, &impl::abi_t<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>::remove_SyncStatusChanged>;
     SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    void SyncStatusChanged(event_token const& token) const;
+    void SyncStatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::Email::IEmailMailboxSyncManager> { template <typename D> using type = consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>; };
 
@@ -1424,602 +2021,5 @@ struct consume_Windows_ApplicationModel_Email_IEmailStoreNotificationTriggerDeta
 {
 };
 template <> struct consume<Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails> { template <typename D> using type = consume_Windows_ApplicationModel_Email_IEmailStoreNotificationTriggerDetails<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FileName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FileName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachment2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentLocation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentLocation(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState value) noexcept = 0;
-    virtual HRESULT __stdcall get_EstimatedDownloadSizeInBytes(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EstimatedDownloadSizeInBytes(uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsFromBaseMessage(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsInline(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsInline(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_MimeType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MimeType(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachmentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING fileName, void* data, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailAttachmentFactory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING fileName, void* data, HSTRING mimeType, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailConversation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasAttachment(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastEmailResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MessageCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MostRecentMessageId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MostRecentMessageTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Preview(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LatestSender(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subject(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnreadMessageCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall FindMessagesAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindMessagesWithCountAsync(uint32_t count, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailConversationBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Conversations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailConversationReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadBatchAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailFolder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ParentFolderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSyncEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsSyncEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailSpecialFolderKind* value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderAsync(HSTRING name, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindChildFoldersAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageCountsAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryMoveAsync(void* newParentFolder, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryMoveWithNewNameAsync(void* newParentFolder, HSTRING newFolderName, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TrySaveAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall SaveMessageAsync(void* message, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanEdit(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanEdit(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanExtractData(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanExtractData(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanForward(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanForward(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanModifyRecipientsOnResponse(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanModifyRecipientsOnResponse(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanPrintData(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanPrintData(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanRemoveIrmOnResponse(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanRemoveIrmOnResponse(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanReply(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanReply(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanReplyAll(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanReplyAll(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationDate(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsIrmOriginator(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsIrmOriginator(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsProgramaticAccessAllowed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsProgramaticAccessAllowed(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Template(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Template(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Foundation::DateTime expiration, void* irmTemplate, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmTemplate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING id, HSTRING name, HSTRING description, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailItemCounts>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Flagged(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Important(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Total(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Unread(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Capabilities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChangeTracker(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOwnedByCurrentApp(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataEncryptedUnderLock(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MailAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailAddressAliases(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_Policies(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SyncManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetFolderAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetSpecialFolderAsync(Windows::ApplicationModel::Email::EmailSpecialFolderKind folderType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall MarkMessageAsSeenAsync(HSTRING messageId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall MarkFolderAsSeenAsync(HSTRING folderId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall MarkMessageReadAsync(HSTRING messageId, bool isRead, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ChangeMessageFlagStateAsync(HSTRING messageId, Windows::ApplicationModel::Email::EmailFlagState flagState, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryMoveMessageAsync(HSTRING messageId, HSTRING newParentFolderId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryMoveFolderAsync(HSTRING folderId, HSTRING newParentFolderId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryMoveFolderWithNewNameAsync(HSTRING folderId, HSTRING newParentFolderId, HSTRING newFolderName, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteMessageAsync(HSTRING messageId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall MarkFolderSyncEnabledAsync(HSTRING folderId, bool isSyncEnabled, void** result) noexcept = 0;
-    virtual HRESULT __stdcall SendMessageAsync(void* message, void** result) noexcept = 0;
-    virtual HRESULT __stdcall SaveDraftAsync(void* message, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DownloadMessageAsync(HSTRING messageId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DownloadAttachmentAsync(HSTRING attachmentId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateResponseMessageAsync(HSTRING messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, HSTRING subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, HSTRING responseHeader, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryUpdateMeetingResponseAsync(void* meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, HSTRING subject, HSTRING comment, bool sendUpdate, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryForwardMeetingAsync(void* meeting, void* recipients, HSTRING subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, HSTRING forwardHeader, HSTRING comment, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryProposeNewTimeForMeetingAsync(void* meeting, Windows::Foundation::DateTime newStartTime, Windows::Foundation::TimeSpan newDuration, HSTRING subject, HSTRING comment, void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_MailboxChanged(void* pHandler, event_token* pToken) noexcept = 0;
-    virtual HRESULT __stdcall remove_MailboxChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall SmartSendMessageAsync(void* message, bool smartSend, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TrySetAutoReplySettingsAsync(void* autoReplySettings, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind requestedFormat, void** autoReplySettings) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LinkedMailboxId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ResolveRecipientsAsync(void* recipients, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ValidateCertificatesAsync(void* certificates, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryEmptyFolderAsync(HSTRING folderId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateFolderAsync(HSTRING parentFolderId, HSTRING name, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryDeleteFolderAsync(HSTRING folderId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RegisterSyncManagerAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailbox5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailMailboxActionKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChangeNumber(uint64_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAutoReply>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Response(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Response(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StartTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_EndTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InternalReply(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KnownExternalReply(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnknownExternalReply(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanForwardMeetings(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanGetAndSetExternalAutoReplies(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanGetAndSetInternalAutoReplies(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanUpdateMeetingResponses(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanServerSearchFolders(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanServerSearchMailbox(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanProposeNewTimeForMeetings(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanSmartSend(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanResolveRecipients(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanValidateCertificates(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanEmptyFolder(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanCreateFolder(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanDeleteFolder(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanMoveFolder(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_CanForwardMeetings(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanGetAndSetExternalAutoReplies(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanGetAndSetInternalAutoReplies(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanUpdateMeetingResponses(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanServerSearchFolders(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanServerSearchMailbox(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanProposeNewTimeForMeetings(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanSmartSend(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanResolveRecipients(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanValidateCertificates(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanEmptyFolder(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanCreateFolder(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanDeleteFolder(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanMoveFolder(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeType(Windows::ApplicationModel::Email::EmailMailboxChangeType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailboxActions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Folder(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangeReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AcceptChanges() noexcept = 0;
-    virtual HRESULT __stdcall AcceptChangesThrough(void* lastChangeToAcknowledge) noexcept = 0;
-    virtual HRESULT __stdcall ReadBatchAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTracking(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Enable() noexcept = 0;
-    virtual HRESULT __stdcall GetChangeReader(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Reset() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Folder(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowSmimeSoftCertificates(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequiredSmimeEncryptionAlgorithm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequiredSmimeSigningAlgorithm(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MustEncryptSmimeMessages(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MustSignSmimeMessages(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxPolicies3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowSmimeSoftCertificates(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequiredSmimeEncryptionAlgorithm(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequiredSmimeSigningAlgorithm(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MustEncryptSmimeMessages(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_MustSignSmimeMessages(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall SyncAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_SyncStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SyncStatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowComposeNewEmailAsync(void* message, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowComposeNewEmailAsync(void* message, void** asyncAction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailManagerStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMeetingInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowNewTimeProposal(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowNewTimeProposal(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppointmentRoamingId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppointmentRoamingId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppointmentOriginalStartTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppointmentOriginalStartTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAllDay(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAllDay(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsResponseRequested(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsResponseRequested(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Location(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Location(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProposedStartTime(void** proposedStartTime) noexcept = 0;
-    virtual HRESULT __stdcall put_ProposedStartTime(void* proposedStartTime) noexcept = 0;
-    virtual HRESULT __stdcall get_ProposedDuration(void** duration) noexcept = 0;
-    virtual HRESULT __stdcall put_ProposedDuration(void* duration) noexcept = 0;
-    virtual HRESULT __stdcall get_RecurrenceStartTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RecurrenceStartTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Recurrence(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Recurrence(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteChangeNumber(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteChangeNumber(uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StartTime(Windows::Foundation::DateTime value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMeetingInfo2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsReportedOutOfDateByServer(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Subject(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subject(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Body(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Body(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_To(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CC(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bcc(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Attachments(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConversationId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FolderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowInternetImages(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowInternetImages(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChangeNumber(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState value) noexcept = 0;
-    virtual HRESULT __stdcall get_EstimatedDownloadSizeInBytes(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EstimatedDownloadSizeInBytes(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FlagState(Windows::ApplicationModel::Email::EmailFlagState value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasPartialBodies(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Importance(Windows::ApplicationModel::Email::EmailImportance value) noexcept = 0;
-    virtual HRESULT __stdcall get_InResponseToMessageId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IrmInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_IrmInfo(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDraftMessage(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRead(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsRead(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSeen(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsSeen(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsServerSearchMessage(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSmartSendable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MessageClass(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MessageClass(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_NormalizedSubject(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginalCodePage(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OriginalCodePage(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Preview(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Preview(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_Sender(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Sender(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SentTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SentTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MeetingInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MeetingInfo(void* value) noexcept = 0;
-    virtual HRESULT __stdcall GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void** result) noexcept = 0;
-    virtual HRESULT __stdcall SetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void* stream) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SmimeData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SmimeData(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessage4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ReplyTo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SentRepresenting(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SentRepresenting(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessageBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Messages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailMessageReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadBatchAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextSearch(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) noexcept = 0;
-    virtual HRESULT __stdcall get_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailQueryKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::Email::EmailQueryKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_FolderIds(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithText(HSTRING text, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTextAndFields(HSTRING text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailQueryTextSearch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) noexcept = 0;
-    virtual HRESULT __stdcall get_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipient>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Address(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Address(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING address, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithName(HSTRING address, HSTRING name, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicKeys(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) noexcept = 0;
-    virtual HRESULT __stdcall SetPublicKeys(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindMailboxesAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMailboxAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetConversationAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetFolderAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateMailboxAsync(HSTRING accountName, HSTRING accountAddress, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateMailboxInAccountAsync(HSTRING accountName, HSTRING accountAddress, HSTRING userDataAccountId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails>{ struct type : IInspectable
-{
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -30,6 +30,8 @@ struct ChatCapabilitiesManager
     ChatCapabilitiesManager() = delete;
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCachedCapabilitiesAsync(param::hstring const& address);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCapabilitiesFromNetworkAsync(param::hstring const& address);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCachedCapabilitiesAsync(param::hstring const& address, param::hstring const& transportId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCapabilitiesFromNetworkAsync(param::hstring const& address, param::hstring const& transportId);
 };
 
 struct WINRT_EBO ChatConversation :
@@ -251,6 +253,10 @@ struct RcsManager
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsTransport>> GetTransportsAsync();
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::RcsTransport> GetTransportAsync(param::hstring const& transportId);
     static Windows::Foundation::IAsyncAction LeaveConversationAsync(Windows::ApplicationModel::Chat::ChatConversation const& conversation);
+    static winrt::event_token TransportListChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using TransportListChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::Chat::IRcsManagerStatics2, &impl::abi_t<Windows::ApplicationModel::Chat::IRcsManagerStatics2>::remove_TransportListChanged>;
+    static TransportListChanged_revoker TransportListChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void TransportListChanged(winrt::event_token const& token);
 };
 
 struct WINRT_EBO RcsServiceKindSupportedChangedEventArgs :

@@ -22,8 +22,8 @@ Revision History:
 #endif
 #include <winapifamily.h>
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Modern Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 
 #ifdef __cplusplus
@@ -110,7 +110,7 @@ struct HiFiCOLOR {
 
 #if _MSC_VER > 1200
 #pragma warning(push)
-#pragma warning(disable:4201)	// nameless struct/union
+#pragma warning(disable:4201)    // nameless struct/union
 #endif
 
 typedef union tagCOLOR {
@@ -177,8 +177,6 @@ typedef COLORTYPE *PCOLORTYPE, *LPCOLORTYPE;
 #define INTENT_SATURATION               2
 #define INTENT_ABSOLUTE_COLORIMETRIC    3
 
-
-
 #if NTDDI_VERSION >= NTDDI_VISTA
 
 typedef enum {
@@ -209,6 +207,12 @@ typedef enum {
 } COLORPROFILESUBTYPE;
 typedef COLORPROFILESUBTYPE *PCOLORPROFILESUBTYPE, *LPCOLORPROFILESUBTYPE;
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 //
 // Device color data type
 //
@@ -219,7 +223,7 @@ typedef enum {
     COLOR_S2DOT13FIXED,          // WORD per channel. data range [-4, +4] using s2.13
     
 //#if NTDDI_VERSION >= NTDDI_WIN7
-    COLOR_10b_R10G10B10A2,	    // Packed WORD per channel.  data range [0, 1]
+    COLOR_10b_R10G10B10A2,        // Packed WORD per channel.  data range [0, 1]
     COLOR_10b_R10G10B10A2_XR,   // Packed extended range WORD per channel.  data range [-1, 3] 
                                 // using 4.0 scale and -1.0 bias.
     COLOR_FLOAT16               // FLOAT16 per channel.
@@ -556,6 +560,12 @@ typedef struct tagENUMTYPEW {
 
 #if NTDDI_VERSION >= NTDDI_VISTA
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Modern Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+
 //
 // WCS profile management scope - system-wide and current-user
 //
@@ -565,6 +575,13 @@ typedef enum
     WCS_PROFILE_MANAGEMENT_SCOPE_SYSTEM_WIDE,
     WCS_PROFILE_MANAGEMENT_SCOPE_CURRENT_USER
 } WCS_PROFILE_MANAGEMENT_SCOPE;
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 
 #endif // NTDDI_VERSION >= NTDDI_VISTA
 
@@ -785,8 +802,27 @@ GetColorDirectoryW(
     );
 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Modern Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+
 BOOL       WINAPI InstallColorProfileA(_In_opt_ PCSTR  pMachineName, _In_ PCSTR  pProfileName);
 BOOL       WINAPI InstallColorProfileW(_In_opt_ PCWSTR pMachineName, _In_ PCWSTR pProfileName);
+
+#ifdef UNICODE
+#define InstallColorProfile                 InstallColorProfileW
+#else
+#define InstallColorProfile                 InstallColorProfileA
+#endif  // !UNICODE
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 BOOL       WINAPI UninstallColorProfileA(_In_opt_ PCSTR  pMachineName, _In_ PCSTR pProfileName,  BOOL bDelete);
 BOOL       WINAPI UninstallColorProfileW(_In_opt_ PCWSTR pMachineName, _In_ PCWSTR pProfileName, BOOL bDelete);
 BOOL       WINAPI EnumColorProfilesA(_In_opt_ PCSTR  pMachineName, _In_ PENUMTYPEA pEnumRecord, _Out_writes_bytes_opt_(*pdwSizeOfEnumerationBuffer) PBYTE pEnumerationBuffer, _Inout_ PDWORD pdwSizeOfEnumerationBuffer, _Out_opt_ PDWORD pnProfiles);
@@ -972,7 +1008,6 @@ WcsCheckColors(
 #define RegisterCMM                         RegisterCMMW
 #define UnregisterCMM                       UnregisterCMMW
 #define GetColorDirectory                   GetColorDirectoryW
-#define InstallColorProfile                 InstallColorProfileW
 #define UninstallColorProfile               UninstallColorProfileW
 #define AssociateColorProfileWithDevice     AssociateColorProfileWithDeviceW
 #define DisassociateColorProfileFromDevice  DisassociateColorProfileFromDeviceW
@@ -998,7 +1033,6 @@ WcsCheckColors(
 #define RegisterCMM                         RegisterCMMA
 #define UnregisterCMM                       UnregisterCMMA
 #define GetColorDirectory                   GetColorDirectoryA
-#define InstallColorProfile                 InstallColorProfileA
 #define UninstallColorProfile               UninstallColorProfileA
 #define AssociateColorProfileWithDevice     AssociateColorProfileWithDeviceA
 #define DisassociateColorProfileFromDevice  DisassociateColorProfileFromDeviceA
@@ -1309,15 +1343,21 @@ HPROFILE WINAPI WcsCreateIccProfile(
 
 #if NTDDI_VERSION >= NTDDI_WIN7
 
-BOOL WcsGetCalibrationManagementState (
+BOOL WINAPI WcsGetCalibrationManagementState (
     _Out_ BOOL *pbIsEnabled
     );
 
-BOOL WcsSetCalibrationManagementState (
+BOOL WINAPI WcsSetCalibrationManagementState (
     _In_ BOOL bIsEnabled
     );
 
 #endif // NTDDI_VERSION >= NTDDI_WIN7
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Modern Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 //
 // APIs and structures for system color state management
@@ -1342,7 +1382,7 @@ typedef struct XYYPoint
 
 #if _MSC_VER > 1200
 #pragma warning(push)
-#pragma warning(disable:4201)	// nameless struct/union
+#pragma warning(disable:4201)    // nameless struct/union
 #endif
 
 //
@@ -1469,13 +1509,131 @@ HRESULT ColorAdapterUnregisterOEMColorService(
     
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS4
 
+#if NTDDI_VERSION >= NTDDI_WIN10_RS5
+
+/*
+ * Associates a color profile (already installed) with a specified display in the
+ * given scope.
+ *
+ * Parameters:
+ *    profileManagementScope   specifies the association as system-wide or user-specific
+ *    profileName              identifies the installed profile to associate
+ *    targetAdapterID          the target adapter of the display
+ *    sourceID                 the source identifier of the display
+ *    setAsDefault             whether or not to set the newly associated profile as the default
+ *    associateAsAdvancedColor specifies to which association list the new profile is added
+ */
+HRESULT WINAPI ColorProfileAddDisplayAssociation(
+    _In_ WCS_PROFILE_MANAGEMENT_SCOPE scope,
+    _In_ PCWSTR profileName,
+    _In_ LUID   targetAdapterID,
+    _In_ UINT32 sourceID,
+    _In_ BOOL   setAsDefault,
+    _In_ BOOL   associateAsAdvancedColor
+);
+
+/*
+ * Disassociates a color profile (already installed) from a specified display in the
+ * given scope.
+ *
+ * Parameters:
+ *    profileManagementScope    specifies the association as system-wide or user-specific
+ *    profileName               identifies the installed profile to associate
+ *    targetAdapterID           the target adapter of the display
+ *    sourceID                  the source identifier of the display
+ *    disassociateAdvancedColor specifies if the association to be removed is Advanced Color
+ */
+HRESULT WINAPI ColorProfileRemoveDisplayAssociation(
+    _In_ WCS_PROFILE_MANAGEMENT_SCOPE scope,
+    _In_ PCWSTR profileName,
+    _In_ LUID   targetAdapterID,
+    _In_ UINT32 sourceID,
+    _In_ BOOL   dissociateAdvancedColor
+);
+
+/*
+ * Sets a given profile (already installed) as the default profile for a specified display in the
+ * given scope.
+ *
+ * Parameters:
+ *    profileManagementScope specifies the association as system-wide or user-specific
+ *    profileName            identifies the installed profile to associate
+ *    profileType            the color profile type (right now will only accept CPT_ICC)
+ *    profileSubtype         the color profile subtype to return
+ *    targetAdapterID        the target adapter of the display
+ *    sourceID               the source identifier of the display  
+ */
+HRESULT WINAPI ColorProfileSetDisplayDefaultAssociation(
+    _In_ WCS_PROFILE_MANAGEMENT_SCOPE scope,
+    _In_ PCWSTR              profileName,
+    _In_ COLORPROFILETYPE    profileType,
+    _In_ COLORPROFILESUBTYPE profileSubType,
+    _In_ LUID                targetAdapterID,
+    _In_ UINT32              sourceID
+);
+
+/*
+ * Retrieves list of profiles associated with a given display in the specified scope
+ *
+ * Parameters:
+ *    scope           specifies the association as system-wide or user-specific
+ *    targetAdapterID the target adapter of the display
+ *    sourceID        the source identifier of the display  
+ *    profileList     pointer to a buffer where the profile names are placed, must be freed with 
+ *                    LocalFree
+ *    profileCount    receives the number of profiles names copied into profileList 
+ */
+HRESULT WINAPI ColorProfileGetDisplayList(
+    _In_  WCS_PROFILE_MANAGEMENT_SCOPE scope, 
+    _In_  LUID        targetAdapterID,
+    _In_  UINT32      sourceID,
+    _Outptr_ LPWSTR** profileList,
+    _Out_ PDWORD      profileCount 
+);
+
+/*
+ * Gets the default color profile for a given display in the specified scope
+ *
+ * Parameters:
+ *    scope           specifies the association as system-wide or user-specific
+ *    targetAdapterID the target adapter of the display
+ *    sourceID        the source identifier of the display  
+ *    profileType     the color profile type to return (currently only CPT_ICC is supported)
+ *    profileSubType  the color profile subtype to return
+ *    profileName     on output will have the default color profile name, must be freed with 
+ *                    LocalFree
+ */
+HRESULT WINAPI ColorProfileGetDisplayDefault(
+    _In_  WCS_PROFILE_MANAGEMENT_SCOPE scope, 
+    _In_  LUID   targetAdapterID,
+    _In_  UINT32 sourceID,
+    _In_  COLORPROFILETYPE profileType,
+    _In_  COLORPROFILESUBTYPE profileSubType, 
+    _Outptr_ LPWSTR* profileName
+);
+
+/*
+ * Gets the currently selected color profile scope of the provided display - either user or system
+ *
+ * Parameters:
+ *    targetAdapterID     the target adapter of the display
+ *    sourceID            the source identifier of the display  
+ *    scope               on output will specify if the display's scope is user or system
+ */
+HRESULT WINAPI ColorProfileGetDisplayUserScope( 
+    _In_  LUID   targetAdapterID,
+    _In_  UINT32 sourceID,
+    _Out_ WCS_PROFILE_MANAGEMENT_SCOPE *scope
+);
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS5
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
 #ifdef __cplusplus
 }
 #endif
-
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
 
 #endif  // ifndef _ICM_H_
 

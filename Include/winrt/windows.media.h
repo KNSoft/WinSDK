@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1037,6 +1049,78 @@ typedef IAsyncOperation<ABI::Windows::Media::VideoFrame*> __FIAsyncOperation_1_W
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            enum MediaPlaybackAutoRepeatMode : int;
+        } /* Windows */
+    } /* Media */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_USE
+#define DEF___FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("50a7f41f-58d5-5c4d-9475-8dd1acd65836"))
+IReference<enum ABI::Windows::Media::MediaPlaybackAutoRepeatMode> : IReference_impl<enum ABI::Windows::Media::MediaPlaybackAutoRepeatMode> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Media.MediaPlaybackAutoRepeatMode>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<enum ABI::Windows::Media::MediaPlaybackAutoRepeatMode> __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_t;
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode ABI::Windows::Foundation::__FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode ABI::Windows::Foundation::IReference<ABI::Windows::Media::MediaPlaybackAutoRepeatMode>
+//#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_t ABI::Windows::Foundation::IReference<ABI::Windows::Media::MediaPlaybackAutoRepeatMode>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            enum MediaPlaybackType : int;
+        } /* Windows */
+    } /* Media */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CMedia__CMediaPlaybackType_USE
+#define DEF___FIReference_1_Windows__CMedia__CMediaPlaybackType_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e289f7d8-6ba7-50ab-9f13-6e4e51d15ca4"))
+IReference<enum ABI::Windows::Media::MediaPlaybackType> : IReference_impl<enum ABI::Windows::Media::MediaPlaybackType> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Media.MediaPlaybackType>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<enum ABI::Windows::Media::MediaPlaybackType> __FIReference_1_Windows__CMedia__CMediaPlaybackType_t;
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType ABI::Windows::Foundation::__FIReference_1_Windows__CMedia__CMediaPlaybackType_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CMedia__CMediaPlaybackType ABI::Windows::Foundation::IReference<ABI::Windows::Media::MediaPlaybackType>
+//#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_t ABI::Windows::Foundation::IReference<ABI::Windows::Media::MediaPlaybackType>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CMedia__CMediaPlaybackType_USE */
+
+
 
 namespace ABI {
     namespace Windows {
@@ -6364,6 +6448,120 @@ interface __FIAsyncOperation_1_Windows__CMedia__CVideoFrame
 #endif // ____FIAsyncOperation_1_Windows__CMedia__CVideoFrame_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+enum __x_ABI_CWindows_CMedia_CMediaPlaybackAutoRepeatMode;
+#if !defined(____FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode;
+
+typedef struct __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatModeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CMediaPlaybackAutoRepeatMode *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatModeVtbl;
+
+interface __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode
+{
+    CONST_VTBL struct __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatModeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CMedia__CMediaPlaybackAutoRepeatMode_INTERFACE_DEFINED__
+
+
+enum __x_ABI_CWindows_CMedia_CMediaPlaybackType;
+#if !defined(____FIReference_1_Windows__CMedia__CMediaPlaybackType_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CMedia__CMediaPlaybackType_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CMedia__CMediaPlaybackType __FIReference_1_Windows__CMedia__CMediaPlaybackType;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CMedia__CMediaPlaybackType;
+
+typedef struct __FIReference_1_Windows__CMedia__CMediaPlaybackTypeVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CMedia__CMediaPlaybackType * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CMedia_CMediaPlaybackType *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CMedia__CMediaPlaybackTypeVtbl;
+
+interface __FIReference_1_Windows__CMedia__CMediaPlaybackType
+{
+    CONST_VTBL struct __FIReference_1_Windows__CMedia__CMediaPlaybackTypeVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CMedia__CMediaPlaybackType_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CMedia__CMediaPlaybackType_INTERFACE_DEFINED__
+
 
 
 

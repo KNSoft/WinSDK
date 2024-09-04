@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -81,13 +81,46 @@ template <> struct name<Windows::Devices::Custom::DeviceAccessMode>{ static cons
 template <> struct name<Windows::Devices::Custom::DeviceSharingMode>{ static constexpr auto & value{ L"Windows.Devices.Custom.DeviceSharingMode" }; };
 template <> struct name<Windows::Devices::Custom::IOControlAccessMode>{ static constexpr auto & value{ L"Windows.Devices.Custom.IOControlAccessMode" }; };
 template <> struct name<Windows::Devices::Custom::IOControlBufferingMethod>{ static constexpr auto & value{ L"Windows.Devices.Custom.IOControlBufferingMethod" }; };
-template <> struct guid<Windows::Devices::Custom::ICustomDevice>{ static constexpr GUID value{ 0xDD30251F,0xC48B,0x43BD,{ 0xBC,0xB1,0xDE,0xC8,0x8F,0x15,0x14,0x3E } }; };
-template <> struct guid<Windows::Devices::Custom::ICustomDeviceStatics>{ static constexpr GUID value{ 0xC8220312,0xEF4C,0x46B1,{ 0xA5,0x8E,0xEE,0xB3,0x08,0xDC,0x89,0x17 } }; };
-template <> struct guid<Windows::Devices::Custom::IIOControlCode>{ static constexpr GUID value{ 0x0E9559E7,0x60C8,0x4375,{ 0xA7,0x61,0x7F,0x88,0x08,0x06,0x6C,0x60 } }; };
-template <> struct guid<Windows::Devices::Custom::IIOControlCodeFactory>{ static constexpr GUID value{ 0x856A7CF0,0x4C11,0x44AE,{ 0xAF,0xC6,0xB8,0xD4,0xA2,0x12,0x78,0x8F } }; };
-template <> struct guid<Windows::Devices::Custom::IKnownDeviceTypesStatics>{ static constexpr GUID value{ 0xEE5479C2,0x5448,0x45DA,{ 0xAD,0x1B,0x24,0x94,0x8C,0x23,0x90,0x94 } }; };
+template <> struct guid_storage<Windows::Devices::Custom::ICustomDevice>{ static constexpr guid value{ 0xDD30251F,0xC48B,0x43BD,{ 0xBC,0xB1,0xDE,0xC8,0x8F,0x15,0x14,0x3E } }; };
+template <> struct guid_storage<Windows::Devices::Custom::ICustomDeviceStatics>{ static constexpr guid value{ 0xC8220312,0xEF4C,0x46B1,{ 0xA5,0x8E,0xEE,0xB3,0x08,0xDC,0x89,0x17 } }; };
+template <> struct guid_storage<Windows::Devices::Custom::IIOControlCode>{ static constexpr guid value{ 0x0E9559E7,0x60C8,0x4375,{ 0xA7,0x61,0x7F,0x88,0x08,0x06,0x6C,0x60 } }; };
+template <> struct guid_storage<Windows::Devices::Custom::IIOControlCodeFactory>{ static constexpr guid value{ 0x856A7CF0,0x4C11,0x44AE,{ 0xAF,0xC6,0xB8,0xD4,0xA2,0x12,0x78,0x8F } }; };
+template <> struct guid_storage<Windows::Devices::Custom::IKnownDeviceTypesStatics>{ static constexpr guid value{ 0xEE5479C2,0x5448,0x45DA,{ 0xAD,0x1B,0x24,0x94,0x8C,0x23,0x90,0x94 } }; };
 template <> struct default_interface<Windows::Devices::Custom::CustomDevice>{ using type = Windows::Devices::Custom::ICustomDevice; };
 template <> struct default_interface<Windows::Devices::Custom::IOControlCode>{ using type = Windows::Devices::Custom::IIOControlCode; };
+
+template <> struct abi<Windows::Devices::Custom::ICustomDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InputStream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputStream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SendIOControlAsync(void* ioControlCode, void* inputBuffer, void* outputBuffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySendIOControlAsync(void* ioControlCode, void* inputBuffer, void* outputBuffer, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Custom::ICustomDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(winrt::guid classGuid, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, Windows::Devices::Custom::DeviceAccessMode desiredAccess, Windows::Devices::Custom::DeviceSharingMode sharingMode, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Custom::IIOControlCode>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccessMode(Windows::Devices::Custom::IOControlAccessMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BufferingMethod(Windows::Devices::Custom::IOControlBufferingMethod* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Function(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceType(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlCode(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Custom::IIOControlCodeFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateIOControlCode(uint16_t deviceType, uint16_t function, Windows::Devices::Custom::IOControlAccessMode accessMode, Windows::Devices::Custom::IOControlBufferingMethod bufferingMethod, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Custom::IKnownDeviceTypesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Unknown(uint16_t* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Custom_ICustomDevice
@@ -102,7 +135,7 @@ template <> struct consume<Windows::Devices::Custom::ICustomDevice> { template <
 template <typename D>
 struct consume_Windows_Devices_Custom_ICustomDeviceStatics
 {
-    hstring GetDeviceSelector(GUID const& classGuid) const;
+    hstring GetDeviceSelector(winrt::guid const& classGuid) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Custom::CustomDevice> FromIdAsync(param::hstring const& deviceId, Windows::Devices::Custom::DeviceAccessMode const& desiredAccess, Windows::Devices::Custom::DeviceSharingMode const& sharingMode) const;
 };
 template <> struct consume<Windows::Devices::Custom::ICustomDeviceStatics> { template <typename D> using type = consume_Windows_Devices_Custom_ICustomDeviceStatics<D>; };
@@ -131,38 +164,5 @@ struct consume_Windows_Devices_Custom_IKnownDeviceTypesStatics
     uint16_t Unknown() const;
 };
 template <> struct consume<Windows::Devices::Custom::IKnownDeviceTypesStatics> { template <typename D> using type = consume_Windows_Devices_Custom_IKnownDeviceTypesStatics<D>; };
-
-template <> struct abi<Windows::Devices::Custom::ICustomDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InputStream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputStream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SendIOControlAsync(void* ioControlCode, void* inputBuffer, void* outputBuffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TrySendIOControlAsync(void* ioControlCode, void* inputBuffer, void* outputBuffer, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Custom::ICustomDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(GUID classGuid, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, Windows::Devices::Custom::DeviceAccessMode desiredAccess, Windows::Devices::Custom::DeviceSharingMode sharingMode, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Custom::IIOControlCode>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AccessMode(Windows::Devices::Custom::IOControlAccessMode* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BufferingMethod(Windows::Devices::Custom::IOControlBufferingMethod* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Function(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceType(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlCode(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Custom::IIOControlCodeFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateIOControlCode(uint16_t deviceType, uint16_t function, Windows::Devices::Custom::IOControlAccessMode accessMode, Windows::Devices::Custom::IOControlBufferingMethod bufferingMethod, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Custom::IKnownDeviceTypesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Unknown(uint16_t* value) noexcept = 0;
-};};
 
 }

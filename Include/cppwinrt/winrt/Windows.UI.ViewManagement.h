@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Enumeration.2.h"
@@ -32,21 +32,21 @@ template <typename D> hstring consume_Windows_UI_ViewManagement_IAccessibilitySe
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IAccessibilitySettings)->add_HighContrastChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IAccessibilitySettings> consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged_revoker consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IAccessibilitySettings>(this, &abi_t<Windows::UI::ViewManagement::IAccessibilitySettings>::remove_HighContrastChanged, HighContrastChanged(handler));
+    return impl::make_event_revoker<D, HighContrastChanged_revoker>(this, HighContrastChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_ViewManagement_IAccessibilitySettings<D>::HighContrastChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IAccessibilitySettings)->remove_HighContrastChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IAccessibilitySettings)->remove_HighContrastChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_UI_ViewManagement_IActivationViewSwitcher<D>::ShowAsStandaloneAsync(int32_t viewId) const
@@ -136,21 +136,21 @@ template <typename D> int32_t consume_Windows_UI_ViewManagement_IApplicationView
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView)->add_Consolidated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IApplicationView> consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated_revoker consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IApplicationView>(this, &abi_t<Windows::UI::ViewManagement::IApplicationView>::remove_Consolidated, Consolidated(handler));
+    return impl::make_event_revoker<D, Consolidated_revoker>(this, Consolidated(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IApplicationView<D>::Consolidated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView)->remove_Consolidated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView)->remove_Consolidated(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_UI_ViewManagement_IApplicationView2<D>::SuppressSystemOverlays() const
@@ -172,21 +172,21 @@ template <typename D> Windows::Foundation::Rect consume_Windows_UI_ViewManagemen
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView2)->add_VisibleBoundsChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IApplicationView2> consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged_revoker consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IApplicationView2>(this, &abi_t<Windows::UI::ViewManagement::IApplicationView2>::remove_VisibleBoundsChanged, VisibleBoundsChanged(handler));
+    return impl::make_event_revoker<D, VisibleBoundsChanged_revoker>(this, VisibleBoundsChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IApplicationView2<D>::VisibleBoundsChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView2)->remove_VisibleBoundsChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IApplicationView2)->remove_VisibleBoundsChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_UI_ViewManagement_IApplicationView2<D>::SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode const& boundsMode) const
@@ -628,38 +628,38 @@ template <typename D> hstring consume_Windows_UI_ViewManagement_IApplicationView
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->add_Showing(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IInputPane> consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IInputPane<D>::Showing_revoker consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IInputPane>(this, &abi_t<Windows::UI::ViewManagement::IInputPane>::remove_Showing, Showing(handler));
+    return impl::make_event_revoker<D, Showing_revoker>(this, Showing(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IInputPane<D>::Showing(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->remove_Showing(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->remove_Showing(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->add_Hiding(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IInputPane> consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding_revoker consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IInputPane>(this, &abi_t<Windows::UI::ViewManagement::IInputPane>::remove_Hiding, Hiding(handler));
+    return impl::make_event_revoker<D, Hiding_revoker>(this, Hiding(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IInputPane<D>::Hiding(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->remove_Hiding(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IInputPane)->remove_Hiding(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Rect consume_Windows_UI_ViewManagement_IInputPane<D>::OccludedRect() const
@@ -749,21 +749,21 @@ template <typename D> bool consume_Windows_UI_ViewManagement_IProjectionManagerS
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IProjectionManagerStatics)->add_ProjectionDisplayAvailableChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IProjectionManagerStatics> consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged_revoker consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IProjectionManagerStatics>(this, &abi_t<Windows::UI::ViewManagement::IProjectionManagerStatics>::remove_ProjectionDisplayAvailableChanged, ProjectionDisplayAvailableChanged(handler));
+    return impl::make_event_revoker<D, ProjectionDisplayAvailableChanged_revoker>(this, ProjectionDisplayAvailableChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IProjectionManagerStatics<D>::ProjectionDisplayAvailableChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IProjectionManagerStatics)->remove_ProjectionDisplayAvailableChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IProjectionManagerStatics)->remove_ProjectionDisplayAvailableChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_UI_ViewManagement_IProjectionManagerStatics2<D>::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Devices::Enumeration::DeviceInformation const& displayDeviceInfo) const
@@ -858,38 +858,38 @@ template <typename D> Windows::Foundation::Rect consume_Windows_UI_ViewManagemen
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->add_Showing(get_abi(eventHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IStatusBar> consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing_revoker consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IStatusBar>(this, &abi_t<Windows::UI::ViewManagement::IStatusBar>::remove_Showing, Showing(eventHandler));
+    return impl::make_event_revoker<D, Showing_revoker>(this, Showing(eventHandler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IStatusBar<D>::Showing(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->remove_Showing(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->remove_Showing(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->add_Hiding(get_abi(eventHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IStatusBar> consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding_revoker consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IStatusBar>(this, &abi_t<Windows::UI::ViewManagement::IStatusBar>::remove_Hiding, Hiding(eventHandler));
+    return impl::make_event_revoker<D, Hiding_revoker>(this, Hiding(eventHandler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(event_token const& token) const
+template <typename D> void consume_Windows_UI_ViewManagement_IStatusBar<D>::Hiding(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->remove_Hiding(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IStatusBar)->remove_Hiding(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_UI_ViewManagement_IStatusBarProgressIndicator<D>::ShowAsync() const
@@ -1035,21 +1035,21 @@ template <typename D> double consume_Windows_UI_ViewManagement_IUISettings2<D>::
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings2)->add_TextScaleFactorChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IUISettings2> consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged_revoker consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IUISettings2>(this, &abi_t<Windows::UI::ViewManagement::IUISettings2>::remove_TextScaleFactorChanged, TextScaleFactorChanged(handler));
+    return impl::make_event_revoker<D, TextScaleFactorChanged_revoker>(this, TextScaleFactorChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_ViewManagement_IUISettings2<D>::TextScaleFactorChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings2)->remove_TextScaleFactorChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IUISettings2)->remove_TextScaleFactorChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::UI::Color consume_Windows_UI_ViewManagement_IUISettings3<D>::GetColorValue(Windows::UI::ViewManagement::UIColorType const& desiredColor) const
@@ -1059,21 +1059,21 @@ template <typename D> Windows::UI::Color consume_Windows_UI_ViewManagement_IUISe
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings3)->add_ColorValuesChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IUISettings3> consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged_revoker consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IUISettings3>(this, &abi_t<Windows::UI::ViewManagement::IUISettings3>::remove_ColorValuesChanged, ColorValuesChanged(handler));
+    return impl::make_event_revoker<D, ColorValuesChanged_revoker>(this, ColorValuesChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_ViewManagement_IUISettings3<D>::ColorValuesChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings3)->remove_ColorValuesChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IUISettings3)->remove_ColorValuesChanged(get_abi(cookie)));
 }
 
 template <typename D> bool consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabled() const
@@ -1083,21 +1083,21 @@ template <typename D> bool consume_Windows_UI_ViewManagement_IUISettings4<D>::Ad
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings4)->add_AdvancedEffectsEnabledChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::ViewManagement::IUISettings4> consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged_revoker consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::ViewManagement::IUISettings4>(this, &abi_t<Windows::UI::ViewManagement::IUISettings4>::remove_AdvancedEffectsEnabledChanged, AdvancedEffectsEnabledChanged(handler));
+    return impl::make_event_revoker<D, AdvancedEffectsEnabledChanged_revoker>(this, AdvancedEffectsEnabledChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_ViewManagement_IUISettings4<D>::AdvancedEffectsEnabledChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::ViewManagement::IUISettings4)->remove_AdvancedEffectsEnabledChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::ViewManagement::IUISettings4)->remove_AdvancedEffectsEnabledChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::UI::ViewManagement::UserInteractionMode consume_Windows_UI_ViewManagement_IUIViewSettings<D>::UserInteractionMode() const
@@ -1148,664 +1148,564 @@ template <typename D> Windows::UI::ViewManagement::ViewModePreferences consume_W
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IAccessibilitySettings> : produce_base<D, Windows::UI::ViewManagement::IAccessibilitySettings>
 {
-    HRESULT __stdcall get_HighContrast(bool* value) noexcept final
+    int32_t WINRT_CALL get_HighContrast(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HighContrast, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HighContrast());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HighContrastScheme(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HighContrastScheme(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HighContrastScheme, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HighContrastScheme());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_HighContrastChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_HighContrastChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().HighContrastChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HighContrastChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().HighContrastChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_HighContrastChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_HighContrastChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().HighContrastChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HighContrastChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HighContrastChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IActivationViewSwitcher> : produce_base<D, Windows::UI::ViewManagement::IActivationViewSwitcher>
 {
-    HRESULT __stdcall ShowAsStandaloneAsync(int32_t viewId, void** operation) noexcept final
+    int32_t WINRT_CALL ShowAsStandaloneAsync(int32_t viewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowAsStandaloneAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowAsStandaloneAsync(viewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowAsStandaloneWithSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, void** operation) noexcept final
+    int32_t WINRT_CALL ShowAsStandaloneWithSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowAsStandaloneAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, Windows::UI::ViewManagement::ViewSizePreference const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowAsStandaloneAsync(viewId, *reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&sizePreference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsViewPresentedOnActivationVirtualDesktop(int32_t viewId, bool* value) noexcept final
+    int32_t WINRT_CALL IsViewPresentedOnActivationVirtualDesktop(int32_t viewId, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsViewPresentedOnActivationVirtualDesktop, WINRT_WRAP(bool), int32_t);
             *value = detach_from<bool>(this->shim().IsViewPresentedOnActivationVirtualDesktop(viewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationView> : produce_base<D, Windows::UI::ViewManagement::IApplicationView>
 {
-    HRESULT __stdcall get_Orientation(Windows::UI::ViewManagement::ApplicationViewOrientation* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(Windows::UI::ViewManagement::ApplicationViewOrientation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewOrientation));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewOrientation>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdjacentToLeftDisplayEdge(bool* value) noexcept final
+    int32_t WINRT_CALL get_AdjacentToLeftDisplayEdge(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdjacentToLeftDisplayEdge, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AdjacentToLeftDisplayEdge());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdjacentToRightDisplayEdge(bool* value) noexcept final
+    int32_t WINRT_CALL get_AdjacentToRightDisplayEdge(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdjacentToRightDisplayEdge, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AdjacentToRightDisplayEdge());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFullScreen(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFullScreen(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFullScreen, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFullScreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOnLockScreen(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOnLockScreen(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOnLockScreen, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOnLockScreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsScreenCaptureEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsScreenCaptureEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsScreenCaptureEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsScreenCaptureEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsScreenCaptureEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsScreenCaptureEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsScreenCaptureEnabled, WINRT_WRAP(void), bool);
             this->shim().IsScreenCaptureEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Consolidated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Consolidated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Consolidated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Consolidated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Consolidated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Consolidated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Consolidated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Consolidated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Consolidated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Consolidated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationView2> : produce_base<D, Windows::UI::ViewManagement::IApplicationView2>
 {
-    HRESULT __stdcall get_SuppressSystemOverlays(bool* value) noexcept final
+    int32_t WINRT_CALL get_SuppressSystemOverlays(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuppressSystemOverlays, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SuppressSystemOverlays());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuppressSystemOverlays(bool value) noexcept final
+    int32_t WINRT_CALL put_SuppressSystemOverlays(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuppressSystemOverlays, WINRT_WRAP(void), bool);
             this->shim().SuppressSystemOverlays(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VisibleBounds(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_VisibleBounds(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VisibleBounds, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().VisibleBounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_VisibleBoundsChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_VisibleBoundsChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().VisibleBoundsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(VisibleBoundsChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().VisibleBoundsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_VisibleBoundsChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_VisibleBoundsChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(VisibleBoundsChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().VisibleBoundsChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode boundsMode, bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().VisibleBoundsChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode boundsMode, bool* success) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDesiredBoundsMode, WINRT_WRAP(bool), Windows::UI::ViewManagement::ApplicationViewBoundsMode const&);
             *success = detach_from<bool>(this->shim().SetDesiredBoundsMode(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewBoundsMode const*>(&boundsMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode* value) noexcept final
+    int32_t WINRT_CALL get_DesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredBoundsMode, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewBoundsMode));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewBoundsMode>(this->shim().DesiredBoundsMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base<D, Windows::UI::ViewManagement::IApplicationView3>
 {
-    HRESULT __stdcall get_TitleBar(void** value) noexcept final
+    int32_t WINRT_CALL get_TitleBar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TitleBar, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewTitleBar));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewTitleBar>(this->shim().TitleBar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode* value) noexcept final
+    int32_t WINRT_CALL get_FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FullScreenSystemOverlayMode, WINRT_WRAP(Windows::UI::ViewManagement::FullScreenSystemOverlayMode));
             *value = detach_from<Windows::UI::ViewManagement::FullScreenSystemOverlayMode>(this->shim().FullScreenSystemOverlayMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode value) noexcept final
+    int32_t WINRT_CALL put_FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FullScreenSystemOverlayMode, WINRT_WRAP(void), Windows::UI::ViewManagement::FullScreenSystemOverlayMode const&);
             this->shim().FullScreenSystemOverlayMode(*reinterpret_cast<Windows::UI::ViewManagement::FullScreenSystemOverlayMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFullScreenMode(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFullScreenMode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFullScreenMode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFullScreenMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEnterFullScreenMode(bool* success) noexcept final
+    int32_t WINRT_CALL TryEnterFullScreenMode(bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryEnterFullScreenMode, WINRT_WRAP(bool));
             *success = detach_from<bool>(this->shim().TryEnterFullScreenMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ExitFullScreenMode() noexcept final
+    int32_t WINRT_CALL ExitFullScreenMode() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitFullScreenMode, WINRT_WRAP(void));
             this->shim().ExitFullScreenMode();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowStandardSystemOverlays() noexcept final
+    int32_t WINRT_CALL ShowStandardSystemOverlays() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowStandardSystemOverlays, WINRT_WRAP(void));
             this->shim().ShowStandardSystemOverlays();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryResizeView(Windows::Foundation::Size value, bool* success) noexcept final
+    int32_t WINRT_CALL TryResizeView(Windows::Foundation::Size value, bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryResizeView, WINRT_WRAP(bool), Windows::Foundation::Size const&);
             *success = detach_from<bool>(this->shim().TryResizeView(*reinterpret_cast<Windows::Foundation::Size const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPreferredMinSize(Windows::Foundation::Size minSize) noexcept final
+    int32_t WINRT_CALL SetPreferredMinSize(Windows::Foundation::Size minSize) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPreferredMinSize, WINRT_WRAP(void), Windows::Foundation::Size const&);
             this->shim().SetPreferredMinSize(*reinterpret_cast<Windows::Foundation::Size const*>(&minSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationView4> : produce_base<D, Windows::UI::ViewManagement::IApplicationView4>
 {
-    HRESULT __stdcall get_ViewMode(Windows::UI::ViewManagement::ApplicationViewMode* value) noexcept final
+    int32_t WINRT_CALL get_ViewMode(Windows::UI::ViewManagement::ApplicationViewMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewMode, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewMode));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewMode>(this->shim().ViewMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsViewModeSupported(Windows::UI::ViewManagement::ApplicationViewMode viewMode, bool* isViewModeSupported) noexcept final
+    int32_t WINRT_CALL IsViewModeSupported(Windows::UI::ViewManagement::ApplicationViewMode viewMode, bool* isViewModeSupported) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsViewModeSupported, WINRT_WRAP(bool), Windows::UI::ViewManagement::ApplicationViewMode const&);
             *isViewModeSupported = detach_from<bool>(this->shim().IsViewModeSupported(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&viewMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, void** operation) noexcept final
+    int32_t WINRT_CALL TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryEnterViewModeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::UI::ViewManagement::ApplicationViewMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryEnterViewModeAsync(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&viewMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEnterViewModeWithPreferencesAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, void* viewModePreferences, void** operation) noexcept final
+    int32_t WINRT_CALL TryEnterViewModeWithPreferencesAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, void* viewModePreferences, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryEnterViewModeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::UI::ViewManagement::ApplicationViewMode const, Windows::UI::ViewManagement::ViewModePreferences const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryEnterViewModeAsync(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&viewMode), *reinterpret_cast<Windows::UI::ViewManagement::ViewModePreferences const*>(&viewModePreferences)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryConsolidateAsync(void** operation) noexcept final
+    int32_t WINRT_CALL TryConsolidateAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryConsolidateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryConsolidateAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs>
 {
-    HRESULT __stdcall get_IsUserInitiated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsUserInitiated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsUserInitiated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsUserInitiated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2>
 {
-    HRESULT __stdcall get_IsAppInitiated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAppInitiated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAppInitiated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAppInitiated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics>
 {
-    HRESULT __stdcall TryUnsnapToFullscreen(bool* success) noexcept final
+    int32_t WINRT_CALL TryUnsnapToFullscreen(bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryUnsnapToFullscreen, WINRT_WRAP(bool));
             *success = detach_from<bool>(this->shim().TryUnsnapToFullscreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewInteropStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewInteropStatics>
 {
-    HRESULT __stdcall GetApplicationViewIdForWindow(void* window, int32_t* id) noexcept final
+    int32_t WINRT_CALL GetApplicationViewIdForWindow(void* window, int32_t* id) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetApplicationViewIdForWindow, WINRT_WRAP(int32_t), Windows::UI::Core::ICoreWindow const&);
             *id = detach_from<int32_t>(this->shim().GetApplicationViewIdForWindow(*reinterpret_cast<Windows::UI::Core::ICoreWindow const*>(&window)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1816,1863 +1716,1587 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewScaling> : produc
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewScalingStatics>
 {
-    HRESULT __stdcall get_DisableLayoutScaling(bool* value) noexcept final
+    int32_t WINRT_CALL get_DisableLayoutScaling(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableLayoutScaling, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().DisableLayoutScaling());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetDisableLayoutScaling(bool disableLayoutScaling, bool* success) noexcept final
+    int32_t WINRT_CALL TrySetDisableLayoutScaling(bool disableLayoutScaling, bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetDisableLayoutScaling, WINRT_WRAP(bool), bool);
             *success = detach_from<bool>(this->shim().TrySetDisableLayoutScaling(disableLayoutScaling));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewStatics>
 {
-    HRESULT __stdcall get_Value(Windows::UI::ViewManagement::ApplicationViewState* value) noexcept final
+    int32_t WINRT_CALL get_Value(Windows::UI::ViewManagement::ApplicationViewState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewState));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewState>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryUnsnap(bool* success) noexcept final
+    int32_t WINRT_CALL TryUnsnap(bool* success) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryUnsnap, WINRT_WRAP(bool));
             *success = detach_from<bool>(this->shim().TryUnsnap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics2> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewStatics2>
 {
-    HRESULT __stdcall GetForCurrentView(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationView));
             *current = detach_from<Windows::UI::ViewManagement::ApplicationView>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TerminateAppOnFinalViewClose(bool* value) noexcept final
+    int32_t WINRT_CALL get_TerminateAppOnFinalViewClose(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TerminateAppOnFinalViewClose, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().TerminateAppOnFinalViewClose());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TerminateAppOnFinalViewClose(bool value) noexcept final
+    int32_t WINRT_CALL put_TerminateAppOnFinalViewClose(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TerminateAppOnFinalViewClose, WINRT_WRAP(void), bool);
             this->shim().TerminateAppOnFinalViewClose(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewStatics3> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewStatics3>
 {
-    HRESULT __stdcall get_PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode* value) noexcept final
+    int32_t WINRT_CALL get_PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredLaunchWindowingMode, WINRT_WRAP(Windows::UI::ViewManagement::ApplicationViewWindowingMode));
             *value = detach_from<Windows::UI::ViewManagement::ApplicationViewWindowingMode>(this->shim().PreferredLaunchWindowingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value) noexcept final
+    int32_t WINRT_CALL put_PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredLaunchWindowingMode, WINRT_WRAP(void), Windows::UI::ViewManagement::ApplicationViewWindowingMode const&);
             this->shim().PreferredLaunchWindowingMode(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewWindowingMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PreferredLaunchViewSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_PreferredLaunchViewSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredLaunchViewSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().PreferredLaunchViewSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PreferredLaunchViewSize(Windows::Foundation::Size value) noexcept final
+    int32_t WINRT_CALL put_PreferredLaunchViewSize(Windows::Foundation::Size value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredLaunchViewSize, WINRT_WRAP(void), Windows::Foundation::Size const&);
             this->shim().PreferredLaunchViewSize(*reinterpret_cast<Windows::Foundation::Size const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>
 {
-    HRESULT __stdcall DisableShowingMainViewOnActivation() noexcept final
+    int32_t WINRT_CALL DisableShowingMainViewOnActivation() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableShowingMainViewOnActivation, WINRT_WRAP(void));
             this->shim().DisableShowingMainViewOnActivation();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryShowAsStandaloneAsync(int32_t viewId, void** operation) noexcept final
+    int32_t WINRT_CALL TryShowAsStandaloneAsync(int32_t viewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShowAsStandaloneAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryShowAsStandaloneAsync(viewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryShowAsStandaloneWithSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, void** operation) noexcept final
+    int32_t WINRT_CALL TryShowAsStandaloneWithSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShowAsStandaloneAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, Windows::UI::ViewManagement::ViewSizePreference const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryShowAsStandaloneAsync(viewId, *reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&sizePreference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference anchorSizePreference, void** operation) noexcept final
+    int32_t WINRT_CALL TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference anchorSizePreference, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShowAsStandaloneAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, Windows::UI::ViewManagement::ViewSizePreference const, int32_t, Windows::UI::ViewManagement::ViewSizePreference const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryShowAsStandaloneAsync(viewId, *reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&sizePreference), anchorViewId, *reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&anchorSizePreference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SwitchAsync(int32_t viewId, void** operation) noexcept final
+    int32_t WINRT_CALL SwitchAsync(int32_t viewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SwitchAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SwitchAsync(viewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SwitchFromViewAsync(int32_t toViewId, int32_t fromViewId, void** operation) noexcept final
+    int32_t WINRT_CALL SwitchFromViewAsync(int32_t toViewId, int32_t fromViewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SwitchAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SwitchAsync(toViewId, fromViewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SwitchFromViewWithOptionsAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL SwitchFromViewWithOptionsAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SwitchAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SwitchAsync(toViewId, fromViewId, *reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrepareForCustomAnimatedSwitchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, int32_t, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, *reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
 {
-    HRESULT __stdcall DisableSystemViewActivationPolicy() noexcept final
+    int32_t WINRT_CALL DisableSystemViewActivationPolicy() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableSystemViewActivationPolicy, WINRT_WRAP(void));
             this->shim().DisableSystemViewActivationPolicy();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>
 {
-    HRESULT __stdcall TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, void** operation) noexcept final
+    int32_t WINRT_CALL TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShowAsViewModeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, Windows::UI::ViewManagement::ApplicationViewMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryShowAsViewModeAsync(viewId, *reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&viewMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryShowAsViewModeWithPreferencesAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, void* viewModePreferences, void** operation) noexcept final
+    int32_t WINRT_CALL TryShowAsViewModeWithPreferencesAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, void* viewModePreferences, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShowAsViewModeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, Windows::UI::ViewManagement::ApplicationViewMode const, Windows::UI::ViewManagement::ViewModePreferences const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryShowAsViewModeAsync(viewId, *reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&viewMode), *reinterpret_cast<Windows::UI::ViewManagement::ViewModePreferences const*>(&viewModePreferences)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewTitleBar> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewTitleBar>
 {
-    HRESULT __stdcall put_ForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonBackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonBackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonBackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonBackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonBackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonBackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonBackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonHoverForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonHoverForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonHoverForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonHoverForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonHoverForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonHoverForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonHoverForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonHoverForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonHoverBackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonHoverBackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonHoverBackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonHoverBackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonHoverBackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonHoverBackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonHoverBackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonHoverBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonPressedForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonPressedForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonPressedForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonPressedForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonPressedForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonPressedForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonPressedForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonPressedForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonPressedBackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonPressedBackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonPressedBackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonPressedBackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonPressedBackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonPressedBackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonPressedBackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonPressedBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InactiveForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_InactiveForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InactiveForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().InactiveForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InactiveForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_InactiveForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InactiveForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().InactiveForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InactiveBackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_InactiveBackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InactiveBackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().InactiveBackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InactiveBackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_InactiveBackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InactiveBackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().InactiveBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonInactiveForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonInactiveForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonInactiveForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonInactiveForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonInactiveForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonInactiveForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonInactiveForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonInactiveForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ButtonInactiveBackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ButtonInactiveBackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonInactiveBackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ButtonInactiveBackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ButtonInactiveBackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ButtonInactiveBackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ButtonInactiveBackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ButtonInactiveBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContext> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewTransferContext>
 {
-    HRESULT __stdcall get_ViewId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ViewId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ViewId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewId(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ViewId(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewId, WINRT_WRAP(void), int32_t);
             this->shim().ViewId(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewTransferContextStatics> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewTransferContextStatics>
 {
-    HRESULT __stdcall get_DataPackageFormatId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DataPackageFormatId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataPackageFormatId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DataPackageFormatId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IInputPane> : produce_base<D, Windows::UI::ViewManagement::IInputPane>
 {
-    HRESULT __stdcall add_Showing(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Showing(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Showing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Showing, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Showing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Showing(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Showing(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Showing(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Showing, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Showing(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Hiding(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Hiding(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Hiding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Hiding, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Hiding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Hiding(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Hiding(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Hiding(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Hiding, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Hiding(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OccludedRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().OccludedRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IInputPane2> : produce_base<D, Windows::UI::ViewManagement::IInputPane2>
 {
-    HRESULT __stdcall TryShow(bool* result) noexcept final
+    int32_t WINRT_CALL TryShow(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryShow, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().TryShow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryHide(bool* result) noexcept final
+    int32_t WINRT_CALL TryHide(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryHide, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().TryHide());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IInputPaneControl> : produce_base<D, Windows::UI::ViewManagement::IInputPaneControl>
 {
-    HRESULT __stdcall get_Visible(bool* value) noexcept final
+    int32_t WINRT_CALL get_Visible(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Visible, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Visible());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Visible(bool value) noexcept final
+    int32_t WINRT_CALL put_Visible(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Visible, WINRT_WRAP(void), bool);
             this->shim().Visible(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IInputPaneStatics> : produce_base<D, Windows::UI::ViewManagement::IInputPaneStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** inputPane) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** inputPane) noexcept final
     {
         try
         {
             *inputPane = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::ViewManagement::InputPane));
             *inputPane = detach_from<Windows::UI::ViewManagement::InputPane>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs> : produce_base<D, Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs>
 {
-    HRESULT __stdcall get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OccludedRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().OccludedRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EnsuredFocusedElementInView(bool value) noexcept final
+    int32_t WINRT_CALL put_EnsuredFocusedElementInView(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnsuredFocusedElementInView, WINRT_WRAP(void), bool);
             this->shim().EnsuredFocusedElementInView(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnsuredFocusedElementInView(bool* value) noexcept final
+    int32_t WINRT_CALL get_EnsuredFocusedElementInView(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnsuredFocusedElementInView, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().EnsuredFocusedElementInView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics> : produce_base<D, Windows::UI::ViewManagement::IProjectionManagerStatics>
 {
-    HRESULT __stdcall StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
+    int32_t WINRT_CALL StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProjectingAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().StartProjectingAsync(projectionViewId, anchorViewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
+    int32_t WINRT_CALL SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SwapDisplaysForViewsAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
+    int32_t WINRT_CALL StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopProjectingAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().StopProjectingAsync(projectionViewId, anchorViewId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProjectionDisplayAvailable(bool* value) noexcept final
+    int32_t WINRT_CALL get_ProjectionDisplayAvailable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionDisplayAvailable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ProjectionDisplayAvailable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ProjectionDisplayAvailableChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ProjectionDisplayAvailableChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProjectionDisplayAvailableChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ProjectionDisplayAvailableChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ProjectionDisplayAvailableChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ProjectionDisplayAvailableChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ProjectionDisplayAvailableChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IProjectionManagerStatics2> : produce_base<D, Windows::UI::ViewManagement::IProjectionManagerStatics2>
 {
-    HRESULT __stdcall StartProjectingWithDeviceInfoAsync(int32_t projectionViewId, int32_t anchorViewId, void* displayDeviceInfo, void** operation) noexcept final
+    int32_t WINRT_CALL StartProjectingWithDeviceInfoAsync(int32_t projectionViewId, int32_t anchorViewId, void* displayDeviceInfo, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProjectingAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t, int32_t, Windows::Devices::Enumeration::DeviceInformation const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().StartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<Windows::Devices::Enumeration::DeviceInformation const*>(&displayDeviceInfo)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect selection, void** operation) noexcept final
+    int32_t WINRT_CALL RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect selection, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStartProjectingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, int32_t, Windows::Foundation::Rect const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<Windows::Foundation::Rect const*>(&selection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestStartProjectingWithPlacementAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement prefferedPlacement, void** operation) noexcept final
+    int32_t WINRT_CALL RequestStartProjectingWithPlacementAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement prefferedPlacement, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStartProjectingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), int32_t, int32_t, Windows::Foundation::Rect const, Windows::UI::Popups::Placement const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestStartProjectingAsync(projectionViewId, anchorViewId, *reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&prefferedPlacement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelector(HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *selector = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IStatusBar> : produce_base<D, Windows::UI::ViewManagement::IStatusBar>
 {
-    HRESULT __stdcall ShowAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL ShowAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HideAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL HideAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HideAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().HideAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundOpacity(double* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundOpacity(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundOpacity, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().BackgroundOpacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundOpacity(double value) noexcept final
+    int32_t WINRT_CALL put_BackgroundOpacity(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundOpacity, WINRT_WRAP(void), double);
             this->shim().BackgroundOpacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_ForegroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().ForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForegroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_ForegroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().ForegroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(void** value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(void* value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProgressIndicator(void** value) noexcept final
+    int32_t WINRT_CALL get_ProgressIndicator(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProgressIndicator, WINRT_WRAP(Windows::UI::ViewManagement::StatusBarProgressIndicator));
             *value = detach_from<Windows::UI::ViewManagement::StatusBarProgressIndicator>(this->shim().ProgressIndicator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_OccludedRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OccludedRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().OccludedRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Showing(void* eventHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Showing(void* eventHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Showing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Showing, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Showing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Showing(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Showing(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Showing, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Showing(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Hiding(void* eventHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Showing(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Hiding, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Hiding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Hiding(void* eventHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Hiding(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Hiding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::StatusBar, Windows::Foundation::IInspectable> const*>(&eventHandler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Hiding(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Hiding(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Hiding, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Hiding(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IStatusBarProgressIndicator> : produce_base<D, Windows::UI::ViewManagement::IStatusBarProgressIndicator>
 {
-    HRESULT __stdcall ShowAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL ShowAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HideAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL HideAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HideAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().HideAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProgressValue(void** value) noexcept final
+    int32_t WINRT_CALL get_ProgressValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProgressValue, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ProgressValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProgressValue(void* value) noexcept final
+    int32_t WINRT_CALL put_ProgressValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProgressValue, WINRT_WRAP(void), Windows::Foundation::IReference<double> const&);
             this->shim().ProgressValue(*reinterpret_cast<Windows::Foundation::IReference<double> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IStatusBarStatics> : produce_base<D, Windows::UI::ViewManagement::IStatusBarStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** value) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::ViewManagement::StatusBar));
             *value = detach_from<Windows::UI::ViewManagement::StatusBar>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUISettings> : produce_base<D, Windows::UI::ViewManagement::IUISettings>
 {
-    HRESULT __stdcall get_HandPreference(Windows::UI::ViewManagement::HandPreference* value) noexcept final
+    int32_t WINRT_CALL get_HandPreference(Windows::UI::ViewManagement::HandPreference* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HandPreference, WINRT_WRAP(Windows::UI::ViewManagement::HandPreference));
             *value = detach_from<Windows::UI::ViewManagement::HandPreference>(this->shim().HandPreference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CursorSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_CursorSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CursorSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().CursorSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScrollBarSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_ScrollBarSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollBarSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().ScrollBarSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScrollBarArrowSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_ScrollBarArrowSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollBarArrowSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().ScrollBarArrowSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScrollBarThumbBoxSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_ScrollBarThumbBoxSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollBarThumbBoxSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().ScrollBarThumbBoxSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageDuration(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MessageDuration(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageDuration, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MessageDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AnimationsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AnimationsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnimationsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AnimationsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CaretBrowsingEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_CaretBrowsingEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaretBrowsingEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CaretBrowsingEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CaretBlinkRate(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_CaretBlinkRate(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaretBlinkRate, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().CaretBlinkRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CaretWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_CaretWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaretWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().CaretWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DoubleClickTime(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_DoubleClickTime(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DoubleClickTime, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().DoubleClickTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MouseHoverTime(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MouseHoverTime(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseHoverTime, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MouseHoverTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UIElementColor(Windows::UI::ViewManagement::UIElementType desiredElement, struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL UIElementColor(Windows::UI::ViewManagement::UIElementType desiredElement, struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UIElementColor, WINRT_WRAP(Windows::UI::Color), Windows::UI::ViewManagement::UIElementType const&);
             *value = detach_from<Windows::UI::Color>(this->shim().UIElementColor(*reinterpret_cast<Windows::UI::ViewManagement::UIElementType const*>(&desiredElement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUISettings2> : produce_base<D, Windows::UI::ViewManagement::IUISettings2>
 {
-    HRESULT __stdcall get_TextScaleFactor(double* value) noexcept final
+    int32_t WINRT_CALL get_TextScaleFactor(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextScaleFactor, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TextScaleFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_TextScaleFactorChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_TextScaleFactorChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().TextScaleFactorChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TextScaleFactorChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().TextScaleFactorChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_TextScaleFactorChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_TextScaleFactorChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().TextScaleFactorChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(TextScaleFactorChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().TextScaleFactorChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, Windows::UI::ViewManagement::IUISettings3>
 {
-    HRESULT __stdcall GetColorValue(Windows::UI::ViewManagement::UIColorType desiredColor, struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL GetColorValue(Windows::UI::ViewManagement::UIColorType desiredColor, struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetColorValue, WINRT_WRAP(Windows::UI::Color), Windows::UI::ViewManagement::UIColorType const&);
             *value = detach_from<Windows::UI::Color>(this->shim().GetColorValue(*reinterpret_cast<Windows::UI::ViewManagement::UIColorType const*>(&desiredColor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ColorValuesChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ColorValuesChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ColorValuesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ColorValuesChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ColorValuesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ColorValuesChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ColorValuesChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ColorValuesChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ColorValuesChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ColorValuesChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUISettings4> : produce_base<D, Windows::UI::ViewManagement::IUISettings4>
 {
-    HRESULT __stdcall get_AdvancedEffectsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AdvancedEffectsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvancedEffectsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AdvancedEffectsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AdvancedEffectsEnabledChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_AdvancedEffectsEnabledChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AdvancedEffectsEnabledChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AdvancedEffectsEnabledChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AdvancedEffectsEnabledChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AdvancedEffectsEnabledChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_AdvancedEffectsEnabledChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AdvancedEffectsEnabledChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AdvancedEffectsEnabledChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AdvancedEffectsEnabledChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUIViewSettings> : produce_base<D, Windows::UI::ViewManagement::IUIViewSettings>
 {
-    HRESULT __stdcall get_UserInteractionMode(Windows::UI::ViewManagement::UserInteractionMode* value) noexcept final
+    int32_t WINRT_CALL get_UserInteractionMode(Windows::UI::ViewManagement::UserInteractionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserInteractionMode, WINRT_WRAP(Windows::UI::ViewManagement::UserInteractionMode));
             *value = detach_from<Windows::UI::ViewManagement::UserInteractionMode>(this->shim().UserInteractionMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUIViewSettingsStatics> : produce_base<D, Windows::UI::ViewManagement::IUIViewSettingsStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::ViewManagement::UIViewSettings));
             *current = detach_from<Windows::UI::ViewManagement::UIViewSettings>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IViewModePreferences> : produce_base<D, Windows::UI::ViewManagement::IViewModePreferences>
 {
-    HRESULT __stdcall get_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept final
+    int32_t WINRT_CALL get_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewSizePreference, WINRT_WRAP(Windows::UI::ViewManagement::ViewSizePreference));
             *value = detach_from<Windows::UI::ViewManagement::ViewSizePreference>(this->shim().ViewSizePreference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference value) noexcept final
+    int32_t WINRT_CALL put_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewSizePreference, WINRT_WRAP(void), Windows::UI::ViewManagement::ViewSizePreference const&);
             this->shim().ViewSizePreference(*reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_CustomSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().CustomSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CustomSize(Windows::Foundation::Size value) noexcept final
+    int32_t WINRT_CALL put_CustomSize(Windows::Foundation::Size value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomSize, WINRT_WRAP(void), Windows::Foundation::Size const&);
             this->shim().CustomSize(*reinterpret_cast<Windows::Foundation::Size const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IViewModePreferencesStatics> : produce_base<D, Windows::UI::ViewManagement::IViewModePreferencesStatics>
 {
-    HRESULT __stdcall CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode, void** result) noexcept final
+    int32_t WINRT_CALL CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDefault, WINRT_WRAP(Windows::UI::ViewManagement::ViewModePreferences), Windows::UI::ViewManagement::ApplicationViewMode const&);
             *result = detach_from<Windows::UI::ViewManagement::ViewModePreferences>(this->shim().CreateDefault(*reinterpret_cast<Windows::UI::ViewManagement::ApplicationViewMode const*>(&mode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3681,216 +3305,216 @@ struct produce<D, Windows::UI::ViewManagement::IViewModePreferencesStatics> : pr
 WINRT_EXPORT namespace winrt::Windows::UI::ViewManagement {
 
 inline AccessibilitySettings::AccessibilitySettings() :
-    AccessibilitySettings(get_activation_factory<AccessibilitySettings>().ActivateInstance<AccessibilitySettings>())
+    AccessibilitySettings(impl::call_factory<AccessibilitySettings>([](auto&& f) { return f.template ActivateInstance<AccessibilitySettings>(); }))
 {}
 
 inline bool ApplicationView::TryUnsnapToFullscreen()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics>().TryUnsnapToFullscreen();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewFullscreenStatics>([&](auto&& f) { return f.TryUnsnapToFullscreen(); });
 }
 
 inline int32_t ApplicationView::GetApplicationViewIdForWindow(Windows::UI::Core::ICoreWindow const& window)
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewInteropStatics>().GetApplicationViewIdForWindow(window);
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewInteropStatics>([&](auto&& f) { return f.GetApplicationViewIdForWindow(window); });
 }
 
 inline Windows::UI::ViewManagement::ApplicationViewState ApplicationView::Value()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics>().Value();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics>([&](auto&& f) { return f.Value(); });
 }
 
 inline bool ApplicationView::TryUnsnap()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics>().TryUnsnap();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics>([&](auto&& f) { return f.TryUnsnap(); });
 }
 
 inline Windows::UI::ViewManagement::ApplicationView ApplicationView::GetForCurrentView()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>().GetForCurrentView();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline bool ApplicationView::TerminateAppOnFinalViewClose()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>().TerminateAppOnFinalViewClose();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>([&](auto&& f) { return f.TerminateAppOnFinalViewClose(); });
 }
 
 inline void ApplicationView::TerminateAppOnFinalViewClose(bool value)
 {
-    get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>().TerminateAppOnFinalViewClose(value);
+    impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics2>([&](auto&& f) { return f.TerminateAppOnFinalViewClose(value); });
 }
 
 inline Windows::UI::ViewManagement::ApplicationViewWindowingMode ApplicationView::PreferredLaunchWindowingMode()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>().PreferredLaunchWindowingMode();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>([&](auto&& f) { return f.PreferredLaunchWindowingMode(); });
 }
 
 inline void ApplicationView::PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode const& value)
 {
-    get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>().PreferredLaunchWindowingMode(value);
+    impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>([&](auto&& f) { return f.PreferredLaunchWindowingMode(value); });
 }
 
 inline Windows::Foundation::Size ApplicationView::PreferredLaunchViewSize()
 {
-    return get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>().PreferredLaunchViewSize();
+    return impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>([&](auto&& f) { return f.PreferredLaunchViewSize(); });
 }
 
 inline void ApplicationView::PreferredLaunchViewSize(Windows::Foundation::Size const& value)
 {
-    get_activation_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>().PreferredLaunchViewSize(value);
+    impl::call_factory<ApplicationView, Windows::UI::ViewManagement::IApplicationViewStatics3>([&](auto&& f) { return f.PreferredLaunchViewSize(value); });
 }
 
 inline bool ApplicationViewScaling::DisableLayoutScaling()
 {
-    return get_activation_factory<ApplicationViewScaling, Windows::UI::ViewManagement::IApplicationViewScalingStatics>().DisableLayoutScaling();
+    return impl::call_factory<ApplicationViewScaling, Windows::UI::ViewManagement::IApplicationViewScalingStatics>([&](auto&& f) { return f.DisableLayoutScaling(); });
 }
 
 inline bool ApplicationViewScaling::TrySetDisableLayoutScaling(bool disableLayoutScaling)
 {
-    return get_activation_factory<ApplicationViewScaling, Windows::UI::ViewManagement::IApplicationViewScalingStatics>().TrySetDisableLayoutScaling(disableLayoutScaling);
+    return impl::call_factory<ApplicationViewScaling, Windows::UI::ViewManagement::IApplicationViewScalingStatics>([&](auto&& f) { return f.TrySetDisableLayoutScaling(disableLayoutScaling); });
 }
 
 inline void ApplicationViewSwitcher::DisableShowingMainViewOnActivation()
 {
-    get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().DisableShowingMainViewOnActivation();
+    impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.DisableShowingMainViewOnActivation(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.TryShowAsStandaloneAsync(viewId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference const& sizePreference)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.TryShowAsStandaloneAsync(viewId, sizePreference); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference const& sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference const& anchorSizePreference)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference); });
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t viewId)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().SwitchAsync(viewId);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.SwitchAsync(viewId); });
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t toViewId, int32_t fromViewId)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.SwitchAsync(toViewId, fromViewId); });
 }
 
 inline Windows::Foundation::IAsyncAction ApplicationViewSwitcher::SwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const& options)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().SwitchAsync(toViewId, fromViewId, options);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.SwitchAsync(toViewId, fromViewId, options); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions const& options)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>().PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>([&](auto&& f) { return f.PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options); });
 }
 
 inline void ApplicationViewSwitcher::DisableSystemViewActivationPolicy()
 {
-    get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>().DisableSystemViewActivationPolicy();
+    impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>([&](auto&& f) { return f.DisableSystemViewActivationPolicy(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode const& viewMode)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>().TryShowAsViewModeAsync(viewId, viewMode);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>([&](auto&& f) { return f.TryShowAsViewModeAsync(viewId, viewMode); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode const& viewMode, Windows::UI::ViewManagement::ViewModePreferences const& viewModePreferences)
 {
-    return get_activation_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>().TryShowAsViewModeAsync(viewId, viewMode, viewModePreferences);
+    return impl::call_factory<ApplicationViewSwitcher, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>([&](auto&& f) { return f.TryShowAsViewModeAsync(viewId, viewMode, viewModePreferences); });
 }
 
 inline ApplicationViewTransferContext::ApplicationViewTransferContext() :
-    ApplicationViewTransferContext(get_activation_factory<ApplicationViewTransferContext>().ActivateInstance<ApplicationViewTransferContext>())
+    ApplicationViewTransferContext(impl::call_factory<ApplicationViewTransferContext>([](auto&& f) { return f.template ActivateInstance<ApplicationViewTransferContext>(); }))
 {}
 
 inline hstring ApplicationViewTransferContext::DataPackageFormatId()
 {
-    return get_activation_factory<ApplicationViewTransferContext, Windows::UI::ViewManagement::IApplicationViewTransferContextStatics>().DataPackageFormatId();
+    return impl::call_factory<ApplicationViewTransferContext, Windows::UI::ViewManagement::IApplicationViewTransferContextStatics>([&](auto&& f) { return f.DataPackageFormatId(); });
 }
 
 inline Windows::UI::ViewManagement::InputPane InputPane::GetForCurrentView()
 {
-    return get_activation_factory<InputPane, Windows::UI::ViewManagement::IInputPaneStatics>().GetForCurrentView();
+    return impl::call_factory<InputPane, Windows::UI::ViewManagement::IInputPaneStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().StartProjectingAsync(projectionViewId, anchorViewId);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.StartProjectingAsync(projectionViewId, anchorViewId); });
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().SwapDisplaysForViewsAsync(projectionViewId, anchorViewId);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.SwapDisplaysForViewsAsync(projectionViewId, anchorViewId); });
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().StopProjectingAsync(projectionViewId, anchorViewId);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.StopProjectingAsync(projectionViewId, anchorViewId); });
 }
 
 inline bool ProjectionManager::ProjectionDisplayAvailable()
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().ProjectionDisplayAvailable();
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.ProjectionDisplayAvailable(); });
 }
 
-inline event_token ProjectionManager::ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token ProjectionManager::ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(handler);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.ProjectionDisplayAvailableChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::UI::ViewManagement::IProjectionManagerStatics> ProjectionManager::ProjectionDisplayAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline ProjectionManager::ProjectionDisplayAvailableChanged_revoker ProjectionManager::ProjectionDisplayAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>();
-    return { factory, &impl::abi_t<Windows::UI::ViewManagement::IProjectionManagerStatics>::remove_ProjectionDisplayAvailableChanged, factory.ProjectionDisplayAvailableChanged(handler) };
+    auto f = get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>();
+    return { f, f.ProjectionDisplayAvailableChanged(handler) };
 }
 
-inline void ProjectionManager::ProjectionDisplayAvailableChanged(event_token const& token)
+inline void ProjectionManager::ProjectionDisplayAvailableChanged(winrt::event_token const& token)
 {
-    get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>().ProjectionDisplayAvailableChanged(token);
+    impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics>([&](auto&& f) { return f.ProjectionDisplayAvailableChanged(token); });
 }
 
 inline Windows::Foundation::IAsyncAction ProjectionManager::StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Devices::Enumeration::DeviceInformation const& displayDeviceInfo)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>().StartProjectingAsync(projectionViewId, anchorViewId, displayDeviceInfo);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>([&](auto&& f) { return f.StartProjectingAsync(projectionViewId, anchorViewId, displayDeviceInfo); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ProjectionManager::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect const& selection)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>([&](auto&& f) { return f.RequestStartProjectingAsync(projectionViewId, anchorViewId, selection); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ProjectionManager::RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& prefferedPlacement)
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>().RequestStartProjectingAsync(projectionViewId, anchorViewId, selection, prefferedPlacement);
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>([&](auto&& f) { return f.RequestStartProjectingAsync(projectionViewId, anchorViewId, selection, prefferedPlacement); });
 }
 
 inline hstring ProjectionManager::GetDeviceSelector()
 {
-    return get_activation_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>().GetDeviceSelector();
+    return impl::call_factory<ProjectionManager, Windows::UI::ViewManagement::IProjectionManagerStatics2>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline Windows::UI::ViewManagement::StatusBar StatusBar::GetForCurrentView()
 {
-    return get_activation_factory<StatusBar, Windows::UI::ViewManagement::IStatusBarStatics>().GetForCurrentView();
+    return impl::call_factory<StatusBar, Windows::UI::ViewManagement::IStatusBarStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline UISettings::UISettings() :
-    UISettings(get_activation_factory<UISettings>().ActivateInstance<UISettings>())
+    UISettings(impl::call_factory<UISettings>([](auto&& f) { return f.template ActivateInstance<UISettings>(); }))
 {}
 
 inline Windows::UI::ViewManagement::UIViewSettings UIViewSettings::GetForCurrentView()
 {
-    return get_activation_factory<UIViewSettings, Windows::UI::ViewManagement::IUIViewSettingsStatics>().GetForCurrentView();
+    return impl::call_factory<UIViewSettings, Windows::UI::ViewManagement::IUIViewSettingsStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::UI::ViewManagement::ViewModePreferences ViewModePreferences::CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode const& mode)
 {
-    return get_activation_factory<ViewModePreferences, Windows::UI::ViewManagement::IViewModePreferencesStatics>().CreateDefault(mode);
+    return impl::call_factory<ViewModePreferences, Windows::UI::ViewManagement::IViewModePreferencesStatics>([&](auto&& f) { return f.CreateDefault(mode); });
 }
 
 }
@@ -3954,5 +3578,3 @@ template<> struct hash<winrt::Windows::UI::ViewManagement::UIViewSettings> : win
 template<> struct hash<winrt::Windows::UI::ViewManagement::ViewModePreferences> : winrt::impl::hash_base<winrt::Windows::UI::ViewManagement::ViewModePreferences> {};
 
 }
-
-WINRT_WARNING_POP

@@ -77,7 +77,11 @@ namespace Windows
     {
         namespace DataTransfer
         {
+            typedef enum ClipboardHistoryItemsResultStatus ClipboardHistoryItemsResultStatus;
+
             typedef enum DataPackageOperation DataPackageOperation;
+
+            typedef enum SetHistoryItemAsContentStatus SetHistoryItemAsContentStatus;
 
             typedef enum ShareUITheme ShareUITheme;
 
@@ -85,7 +89,17 @@ namespace Windows
 
             delegate ShareProviderHandler;
 
+            interface IClipboardContentOptions;
+
+            interface IClipboardHistoryChangedEventArgs;
+
+            interface IClipboardHistoryItem;
+
+            interface IClipboardHistoryItemsResult;
+
             interface IClipboardStatics;
+
+            interface IClipboardStatics2;
 
             interface IDataPackage;
 
@@ -108,6 +122,8 @@ namespace Windows
             interface IDataPackagePropertySetView3;
 
             interface IDataPackagePropertySetView4;
+
+            interface IDataPackagePropertySetView5;
 
             interface IDataPackageView;
 
@@ -169,6 +185,14 @@ namespace Windows
 
             runtimeclass Clipboard;
 
+            runtimeclass ClipboardContentOptions;
+
+            runtimeclass ClipboardHistoryChangedEventArgs;
+
+            runtimeclass ClipboardHistoryItem;
+
+            runtimeclass ClipboardHistoryItemsResult;
+
             runtimeclass DataPackage;
 
             runtimeclass DataPackagePropertySet;
@@ -223,13 +247,23 @@ namespace Windows
         {
             declare
             {
+                interface Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem*>;
+
                 interface Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.DataTransfer.ShareProvider*>;
 
+                interface Windows.Foundation.Collections.IIterator<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem*>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.ApplicationModel.DataTransfer.ShareProvider*>;
+
+                interface Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.DataTransfer.ShareProvider*>;
 
                 interface Windows.Foundation.Collections.IVector<Windows.ApplicationModel.DataTransfer.ShareProvider*>;
+
+                interface Windows.Foundation.EventHandler<Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.DataTransfer.DataPackage*>;
 
@@ -258,6 +292,14 @@ namespace Windows
     {
         namespace DataTransfer
         {
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum ClipboardHistoryItemsResultStatus
+            {
+                Success                  = 0,
+                AccessDenied             = 1,
+                ClipboardHistoryDisabled = 2
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [flags]
             enum DataPackageOperation
@@ -266,6 +308,14 @@ namespace Windows
                 Copy = 0x1,
                 Move = 0x2,
                 Link = 0x4
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum SetHistoryItemAsContentStatus
+            {
+                Success      = 0,
+                AccessDenied = 1,
+                ItemDeleted  = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -286,17 +336,76 @@ namespace Windows
             delegate
                 HRESULT ShareProviderHandler([in] Windows.ApplicationModel.DataTransfer.ShareProviderOperation* operation);
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.ClipboardContentOptions)]
+            [uuid(E888A98C-AD4B-5447-A056-AB3556276D2B)]
+            interface IClipboardContentOptions : IInspectable
+            {
+                [propget] HRESULT IsRoamable([out] [retval] boolean* value);
+                [propput] HRESULT IsRoamable([in] boolean value);
+                [propget] HRESULT IsAllowedInHistory([out] [retval] boolean* value);
+                [propput] HRESULT IsAllowedInHistory([in] boolean value);
+                [propget] HRESULT RoamingFormats([out] [retval] Windows.Foundation.Collections.IVector<HSTRING>** value);
+                [propget] HRESULT HistoryFormats([out] [retval] Windows.Foundation.Collections.IVector<HSTRING>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs)]
+            [uuid(C0BE453F-8EA2-53CE-9ABA-8D2212573452)]
+            interface IClipboardHistoryChangedEventArgs : IInspectable
+            {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem)]
+            [uuid(0173BD8A-AFFF-5C50-AB92-3D19F481EC58)]
+            interface IClipboardHistoryItem : IInspectable
+            {
+                [propget] HRESULT Id([out] [retval] HSTRING* value);
+                [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
+                [propget] HRESULT Content([out] [retval] Windows.ApplicationModel.DataTransfer.DataPackageView** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult)]
+            [uuid(E6DFDEE6-0EE2-52E3-852B-F295DB65939A)]
+            interface IClipboardHistoryItemsResult : IInspectable
+            {
+                [propget] HRESULT Status([out] [retval] Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResultStatus* value);
+                [propget] HRESULT Items([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.DataTransfer.Clipboard)]
             [uuid(C627E291-34E2-4963-8EED-93CBB0EA3D70)]
             interface IClipboardStatics : IInspectable
             {
-                HRESULT GetContent([out] [retval] Windows.ApplicationModel.DataTransfer.DataPackageView** content);
+                HRESULT GetContent([out] [retval] Windows.ApplicationModel.DataTransfer.DataPackageView** result);
                 HRESULT SetContent([in] Windows.ApplicationModel.DataTransfer.DataPackage* content);
                 HRESULT Flush();
                 HRESULT Clear();
-                [eventadd] HRESULT ContentChanged([in] Windows.Foundation.EventHandler<IInspectable*>* changeHandler, [out] [retval] EventRegistrationToken* token);
+                [eventadd] HRESULT ContentChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT ContentChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.Clipboard)]
+            [uuid(D2AC1B6A-D29F-554B-B303-F0452345FE02)]
+            interface IClipboardStatics2 : IInspectable
+            {
+                HRESULT GetHistoryItemsAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult*>** operation);
+                HRESULT ClearHistory([out] [retval] boolean* result);
+                HRESULT DeleteItemFromHistory([in] Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem* item, [out] [retval] boolean* result);
+                HRESULT SetHistoryItemAsContent([in] Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem* item, [out] [retval] Windows.ApplicationModel.DataTransfer.SetHistoryItemAsContentStatus* result);
+                HRESULT IsHistoryEnabled([out] [retval] boolean* result);
+                HRESULT IsRoamingEnabled([out] [retval] boolean* result);
+                HRESULT SetContentWithOptions([in] Windows.ApplicationModel.DataTransfer.DataPackage* content, [in] Windows.ApplicationModel.DataTransfer.ClipboardContentOptions* options, [out] [retval] boolean* result);
+                [eventadd] HRESULT HistoryChanged([in] Windows.Foundation.EventHandler<Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT HistoryChanged([in] EventRegistrationToken token);
+                [eventadd] HRESULT RoamingEnabledChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT RoamingEnabledChanged([in] EventRegistrationToken token);
+                [eventadd] HRESULT HistoryEnabledChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT HistoryEnabledChanged([in] EventRegistrationToken token);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -402,9 +511,6 @@ namespace Windows
             [exclusiveto(Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView)]
             [uuid(B94CEC01-0C1A-4C57-BE55-75D01289735D)]
             interface IDataPackagePropertySetView : IInspectable
-                requires
-                    Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>,
-                    Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, IInspectable*>*>
             {
                 [propget] HRESULT Title([out] [retval] HSTRING* value);
                 [propget] HRESULT Description([out] [retval] HSTRING* value);
@@ -440,6 +546,14 @@ namespace Windows
             interface IDataPackagePropertySetView4 : IInspectable
             {
                 [propget] HRESULT ContentSourceUserActivityJson([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView)]
+            [uuid(6F0A9445-3760-50BB-8523-C4202DED7D78)]
+            interface IDataPackagePropertySetView5 : IInspectable
+            {
+                [propget] HRESULT IsFromRoamingClipboard([out] [retval] boolean* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -726,8 +840,40 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(standard)]
             [static(Windows.ApplicationModel.DataTransfer.IClipboardStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.ApplicationModel.DataTransfer.IClipboardStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
             runtimeclass Clipboard
             {
+            }
+
+            [activatable(Windows.Foundation.UniversalApiContract, 7.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass ClipboardContentOptions
+            {
+                [default] interface Windows.ApplicationModel.DataTransfer.IClipboardContentOptions;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass ClipboardHistoryChangedEventArgs
+            {
+                [default] interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass ClipboardHistoryItem
+            {
+                [default] interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass ClipboardHistoryItemsResult
+            {
+                [default] interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -757,11 +903,12 @@ namespace Windows
             runtimeclass DataPackagePropertySetView
             {
                 [default] interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView;
-                interface Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>;
-                interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, IInspectable*>*>;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5;
+                interface Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>;
+                interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, IInspectable*>*>;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

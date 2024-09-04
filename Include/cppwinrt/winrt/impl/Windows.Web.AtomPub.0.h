@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -77,15 +77,54 @@ template <> struct name<Windows::Web::AtomPub::AtomPubClient>{ static constexpr 
 template <> struct name<Windows::Web::AtomPub::ResourceCollection>{ static constexpr auto & value{ L"Windows.Web.AtomPub.ResourceCollection" }; };
 template <> struct name<Windows::Web::AtomPub::ServiceDocument>{ static constexpr auto & value{ L"Windows.Web.AtomPub.ServiceDocument" }; };
 template <> struct name<Windows::Web::AtomPub::Workspace>{ static constexpr auto & value{ L"Windows.Web.AtomPub.Workspace" }; };
-template <> struct guid<Windows::Web::AtomPub::IAtomPubClient>{ static constexpr GUID value{ 0x35392C38,0xCDED,0x4D4C,{ 0x96,0x37,0x05,0xF1,0x5C,0x1C,0x94,0x06 } }; };
-template <> struct guid<Windows::Web::AtomPub::IAtomPubClientFactory>{ static constexpr GUID value{ 0x49D55012,0x57CB,0x4BDE,{ 0xAB,0x9F,0x26,0x10,0xB1,0x72,0x77,0x7B } }; };
-template <> struct guid<Windows::Web::AtomPub::IResourceCollection>{ static constexpr GUID value{ 0x7F5FD609,0xBC88,0x41D4,{ 0x88,0xFA,0x3D,0xE6,0x70,0x4D,0x42,0x8E } }; };
-template <> struct guid<Windows::Web::AtomPub::IServiceDocument>{ static constexpr GUID value{ 0x8B7EC771,0x2AB3,0x4DBE,{ 0x8B,0xCC,0x77,0x8F,0x92,0xB7,0x5E,0x51 } }; };
-template <> struct guid<Windows::Web::AtomPub::IWorkspace>{ static constexpr GUID value{ 0xB41DA63B,0xA4B8,0x4036,{ 0x89,0xC5,0x83,0xC3,0x12,0x66,0xBA,0x49 } }; };
+template <> struct guid_storage<Windows::Web::AtomPub::IAtomPubClient>{ static constexpr guid value{ 0x35392C38,0xCDED,0x4D4C,{ 0x96,0x37,0x05,0xF1,0x5C,0x1C,0x94,0x06 } }; };
+template <> struct guid_storage<Windows::Web::AtomPub::IAtomPubClientFactory>{ static constexpr guid value{ 0x49D55012,0x57CB,0x4BDE,{ 0xAB,0x9F,0x26,0x10,0xB1,0x72,0x77,0x7B } }; };
+template <> struct guid_storage<Windows::Web::AtomPub::IResourceCollection>{ static constexpr guid value{ 0x7F5FD609,0xBC88,0x41D4,{ 0x88,0xFA,0x3D,0xE6,0x70,0x4D,0x42,0x8E } }; };
+template <> struct guid_storage<Windows::Web::AtomPub::IServiceDocument>{ static constexpr guid value{ 0x8B7EC771,0x2AB3,0x4DBE,{ 0x8B,0xCC,0x77,0x8F,0x92,0xB7,0x5E,0x51 } }; };
+template <> struct guid_storage<Windows::Web::AtomPub::IWorkspace>{ static constexpr guid value{ 0xB41DA63B,0xA4B8,0x4036,{ 0x89,0xC5,0x83,0xC3,0x12,0x66,0xBA,0x49 } }; };
 template <> struct default_interface<Windows::Web::AtomPub::AtomPubClient>{ using type = Windows::Web::AtomPub::IAtomPubClient; };
 template <> struct default_interface<Windows::Web::AtomPub::ResourceCollection>{ using type = Windows::Web::AtomPub::IResourceCollection; };
 template <> struct default_interface<Windows::Web::AtomPub::ServiceDocument>{ using type = Windows::Web::AtomPub::IServiceDocument; };
 template <> struct default_interface<Windows::Web::AtomPub::Workspace>{ using type = Windows::Web::AtomPub::IWorkspace; };
+
+template <> struct abi<Windows::Web::AtomPub::IAtomPubClient>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RetrieveServiceDocumentAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrieveMediaResourceAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrieveResourceAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResourceAsync(void* uri, void* description, void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateMediaResourceAsync(void* uri, void* mediaType, void* description, void* mediaStream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateMediaResourceAsync(void* uri, void* mediaType, void* mediaStream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateResourceAsync(void* uri, void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateResourceItemAsync(void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteResourceAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteResourceItemAsync(void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CancelAsyncOperations() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::AtomPub::IAtomPubClientFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAtomPubClientWithCredentials(void* serverCredential, void** atomPubClient) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::AtomPub::IResourceCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Categories(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Accepts(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::AtomPub::IServiceDocument>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Workspaces(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::AtomPub::IWorkspace>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Collections(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Web_AtomPub_IAtomPubClient
@@ -135,44 +174,5 @@ struct consume_Windows_Web_AtomPub_IWorkspace
     Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> Collections() const;
 };
 template <> struct consume<Windows::Web::AtomPub::IWorkspace> { template <typename D> using type = consume_Windows_Web_AtomPub_IWorkspace<D>; };
-
-template <> struct abi<Windows::Web::AtomPub::IAtomPubClient>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RetrieveServiceDocumentAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RetrieveMediaResourceAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RetrieveResourceAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateResourceAsync(void* uri, HSTRING description, void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateMediaResourceAsync(void* uri, HSTRING mediaType, HSTRING description, void* mediaStream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateMediaResourceAsync(void* uri, HSTRING mediaType, void* mediaStream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateResourceAsync(void* uri, void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateResourceItemAsync(void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteResourceAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteResourceItemAsync(void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CancelAsyncOperations() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::AtomPub::IAtomPubClientFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAtomPubClientWithCredentials(void* serverCredential, void** atomPubClient) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::AtomPub::IResourceCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Categories(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Accepts(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::AtomPub::IServiceDocument>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Workspaces(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::AtomPub::IWorkspace>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Collections(void** value) noexcept = 0;
-};};
 
 }

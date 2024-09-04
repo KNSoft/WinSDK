@@ -10,9 +10,22 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.ApplicationModel.AppService.idl";
 import "Windows.Networking.idl";
+import "Windows.Security.Credentials.idl";
+import "Windows.System.idl";
 
 // Forward Declare
+namespace Windows
+{
+    namespace ApplicationModel
+    {
+        namespace AppService
+        {
+            runtimeclass AppServiceConnection;
+        }
+    }
+}
 namespace Windows
 {
     namespace Foundation
@@ -39,6 +52,23 @@ namespace Windows
     namespace Networking
     {
         runtimeclass HostName;
+    }
+}
+namespace Windows
+{
+    namespace Security
+    {
+        namespace Credentials
+        {
+            runtimeclass WebAccount;
+        }
+    }
+}
+namespace Windows
+{
+    namespace System
+    {
+        runtimeclass User;
     }
 }
 namespace Windows
@@ -83,15 +113,31 @@ namespace Windows
 
             interface IRemoteSystem4;
 
+            interface IRemoteSystem5;
+
             interface IRemoteSystemAddedEventArgs;
+
+            interface IRemoteSystemApp;
+
+            interface IRemoteSystemAppRegistration;
+
+            interface IRemoteSystemAppRegistrationStatics;
 
             interface IRemoteSystemAuthorizationKindFilter;
 
             interface IRemoteSystemAuthorizationKindFilterFactory;
 
+            interface IRemoteSystemConnectionInfo;
+
+            interface IRemoteSystemConnectionInfoStatics;
+
             interface IRemoteSystemConnectionRequest;
 
+            interface IRemoteSystemConnectionRequest2;
+
             interface IRemoteSystemConnectionRequestFactory;
+
+            interface IRemoteSystemConnectionRequestStatics;
 
             interface IRemoteSystemDiscoveryTypeFilter;
 
@@ -177,13 +223,23 @@ namespace Windows
 
             interface IRemoteSystemWatcherErrorOccurredEventArgs;
 
+            interface IRemoteSystemWebAccountFilter;
+
+            interface IRemoteSystemWebAccountFilterFactory;
+
             runtimeclass KnownRemoteSystemCapabilities;
 
             runtimeclass RemoteSystem;
 
             runtimeclass RemoteSystemAddedEventArgs;
 
+            runtimeclass RemoteSystemApp;
+
+            runtimeclass RemoteSystemAppRegistration;
+
             runtimeclass RemoteSystemAuthorizationKindFilter;
+
+            runtimeclass RemoteSystemConnectionInfo;
 
             runtimeclass RemoteSystemConnectionRequest;
 
@@ -248,6 +304,8 @@ namespace Windows
             runtimeclass RemoteSystemWatcher;
 
             runtimeclass RemoteSystemWatcherErrorOccurredEventArgs;
+
+            runtimeclass RemoteSystemWebAccountFilter;
         }
     }
 }
@@ -263,11 +321,17 @@ namespace Windows
             {
                 interface Windows.Foundation.Collections.IIterable<Windows.System.RemoteSystems.IRemoteSystemFilter*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.System.RemoteSystems.RemoteSystemApp*>;
+
                 interface Windows.Foundation.Collections.IIterable<Windows.System.RemoteSystems.RemoteSystemSessionParticipant*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.System.RemoteSystems.IRemoteSystemFilter*>;
 
+                interface Windows.Foundation.Collections.IIterator<Windows.System.RemoteSystems.RemoteSystemApp*>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.System.RemoteSystems.RemoteSystemSessionParticipant*>;
+
+                interface Windows.Foundation.Collections.IVectorView<Windows.System.RemoteSystems.RemoteSystemApp*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.System.RemoteSystems.RemoteSystem*>;
 
@@ -482,12 +546,51 @@ namespace Windows
                 [propget] HRESULT Platform([out] [retval] Windows.System.RemoteSystems.RemoteSystemPlatform* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystem)]
+            [uuid(EB2AD723-E5E2-4AE2-A7A7-A1097A098E90)]
+            interface IRemoteSystem5 : IInspectable
+            {
+                [propget] HRESULT Apps([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.System.RemoteSystems.RemoteSystemApp*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.System.RemoteSystems.RemoteSystemAddedEventArgs)]
             [uuid(8F39560F-E534-4697-8836-7ABEA151516E)]
             interface IRemoteSystemAddedEventArgs : IInspectable
             {
                 [propget] HRESULT RemoteSystem([out] [retval] Windows.System.RemoteSystems.RemoteSystem** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemApp)]
+            [uuid(80E5BCBD-D54D-41B1-9B16-6810A871ED4F)]
+            interface IRemoteSystemApp : IInspectable
+            {
+                [propget] HRESULT Id([out] [retval] HSTRING* value);
+                [propget] HRESULT DisplayName([out] [retval] HSTRING* value);
+                [propget] HRESULT IsAvailableByProximity([out] [retval] boolean* value);
+                [propget] HRESULT IsAvailableBySpatialProximity([out] [retval] boolean* value);
+                [propget] HRESULT Attributes([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemAppRegistration)]
+            [uuid(B47947B5-7035-4A5A-B8DF-962D8F8431F4)]
+            interface IRemoteSystemAppRegistration : IInspectable
+            {
+                [propget] HRESULT User([out] [retval] Windows.System.User** value);
+                [propget] HRESULT Attributes([out] [retval] Windows.Foundation.Collections.IMap<HSTRING, HSTRING>** value);
+                HRESULT SaveAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemAppRegistration)]
+            [uuid(01B99840-CFD2-453F-AE25-C2539F086AFD)]
+            interface IRemoteSystemAppRegistrationStatics : IInspectable
+            {
+                HRESULT GetDefault([out] [retval] Windows.System.RemoteSystems.RemoteSystemAppRegistration** result);
+                HRESULT GetForUser([in] Windows.System.User* user, [out] [retval] Windows.System.RemoteSystems.RemoteSystemAppRegistration** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -503,7 +606,23 @@ namespace Windows
             [uuid(AD65DF4D-B66A-45A4-8177-8CAED75D9E5A)]
             interface IRemoteSystemAuthorizationKindFilterFactory : IInspectable
             {
-                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemAuthorizationKind remoteSystemAuthorizationKind, [out] [retval] Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter** result);
+                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemAuthorizationKind remoteSystemAuthorizationKind, [out] [retval] Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemConnectionInfo)]
+            [uuid(23278BC3-0D09-52CB-9C6A-EED2940BEE43)]
+            interface IRemoteSystemConnectionInfo : IInspectable
+            {
+                [propget] HRESULT IsProximal([out] [retval] boolean* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemConnectionInfo)]
+            [uuid(AC831E2D-66C5-56D7-A4CE-705D94925AD6)]
+            interface IRemoteSystemConnectionInfoStatics : IInspectable
+            {
+                [overload("TryCreateFromAppServiceConnection")] HRESULT TryCreateFromAppServiceConnection([in] Windows.ApplicationModel.AppService.AppServiceConnection* connection, [out] [retval] Windows.System.RemoteSystems.RemoteSystemConnectionInfo** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -514,12 +633,28 @@ namespace Windows
                 [propget] HRESULT RemoteSystem([out] [retval] Windows.System.RemoteSystems.RemoteSystem** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemConnectionRequest)]
+            [uuid(12DF6D6F-BFFC-483A-8ABE-D34A6C19F92B)]
+            interface IRemoteSystemConnectionRequest2 : IInspectable
+            {
+                [propget] HRESULT RemoteSystemApp([out] [retval] Windows.System.RemoteSystems.RemoteSystemApp** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.System.RemoteSystems.RemoteSystemConnectionRequest)]
             [uuid(AA0A0A20-BAEB-4575-B530-810BB9786334)]
             interface IRemoteSystemConnectionRequestFactory : IInspectable
             {
-                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystem* remoteSystem, [out] [retval] Windows.System.RemoteSystems.RemoteSystemConnectionRequest** result);
+                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystem* remoteSystem, [out] [retval] Windows.System.RemoteSystems.RemoteSystemConnectionRequest** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemConnectionRequest)]
+            [uuid(86CA143D-8214-425C-8932-DB49032D1306)]
+            interface IRemoteSystemConnectionRequestStatics : IInspectable
+            {
+                HRESULT CreateForApp([in] Windows.System.RemoteSystems.RemoteSystemApp* remoteSystemApp, [out] [retval] Windows.System.RemoteSystems.RemoteSystemConnectionRequest** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -535,7 +670,7 @@ namespace Windows
             [uuid(9F9EB993-C260-4161-92F2-9C021F23FE5D)]
             interface IRemoteSystemDiscoveryTypeFilterFactory : IInspectable
             {
-                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType, [out] [retval] Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter** result);
+                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType, [out] [retval] Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -564,7 +699,7 @@ namespace Windows
             [uuid(A1FB18EE-99EA-40BC-9A39-C670AA804A28)]
             interface IRemoteSystemKindFilterFactory : IInspectable
             {
-                HRESULT Create([in] Windows.Foundation.Collections.IIterable<HSTRING>* remoteSystemKinds, [out] [retval] Windows.System.RemoteSystems.RemoteSystemKindFilter** result);
+                HRESULT Create([in] Windows.Foundation.Collections.IIterable<HSTRING>* remoteSystemKinds, [out] [retval] Windows.System.RemoteSystems.RemoteSystemKindFilter** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -601,8 +736,6 @@ namespace Windows
             [exclusiveto(Windows.System.RemoteSystems.RemoteSystemSession)]
             [uuid(69476A01-9ADA-490F-9549-D31CB14C9E95)]
             interface IRemoteSystemSession : IInspectable
-                requires
-                    Windows.Foundation.IClosable
             {
                 [propget] HRESULT Id([out] [retval] HSTRING* value);
                 [propget] HRESULT DisplayName([out] [retval] HSTRING* value);
@@ -637,8 +770,8 @@ namespace Windows
             [uuid(BFCC2F6B-AC3D-4199-82CD-6670A773EF2E)]
             interface IRemoteSystemSessionControllerFactory : IInspectable
             {
-                [overload("CreateController")] HRESULT CreateController([in] HSTRING displayName, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionController** result);
-                [overload("CreateController")] HRESULT CreateControllerWithSessionOptions([in] HSTRING displayName, [in] Windows.System.RemoteSystems.RemoteSystemSessionOptions* options, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionController** result);
+                [overload("CreateController")] HRESULT CreateController([in] HSTRING displayName, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionController** value);
+                [overload("CreateController")] HRESULT CreateControllerWithSessionOptions([in] HSTRING displayName, [in] Windows.System.RemoteSystems.RemoteSystemSessionOptions* options, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionController** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -709,7 +842,7 @@ namespace Windows
             interface IRemoteSystemSessionJoinRequestedEventArgs : IInspectable
             {
                 [propget] HRESULT JoinRequest([out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionJoinRequest** value);
-                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -739,8 +872,8 @@ namespace Windows
             [uuid(295E1C4A-BD16-4298-B7CE-415482B0E11D)]
             interface IRemoteSystemSessionMessageChannelFactory : IInspectable
             {
-                [overload("Create")] HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemSession* session, [in] HSTRING channelName, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel** result);
-                [overload("Create")] HRESULT CreateWithReliability([in] Windows.System.RemoteSystems.RemoteSystemSession* session, [in] HSTRING channelName, [in] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel** result);
+                [overload("Create")] HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemSession* session, [in] HSTRING channelName, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel** value);
+                [overload("Create")] HRESULT CreateWithReliability([in] Windows.System.RemoteSystems.RemoteSystemSession* session, [in] HSTRING channelName, [in] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability, [out] [retval] Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -858,7 +991,7 @@ namespace Windows
             [uuid(0C98EDCA-6F99-4C52-A272-EA4F36471744)]
             interface IRemoteSystemStatics2 : IInspectable
             {
-                HRESULT IsAuthorizationKindEnabled([in] Windows.System.RemoteSystems.RemoteSystemAuthorizationKind kind, [out] [retval] boolean* value);
+                HRESULT IsAuthorizationKindEnabled([in] Windows.System.RemoteSystems.RemoteSystemAuthorizationKind kind, [out] [retval] boolean* result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -874,7 +1007,7 @@ namespace Windows
             [uuid(33CF78FA-D724-4125-AC7A-8D281E44C949)]
             interface IRemoteSystemStatusTypeFilterFactory : IInspectable
             {
-                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemStatusType remoteSystemStatusType, [out] [retval] Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter** result);
+                HRESULT Create([in] Windows.System.RemoteSystems.RemoteSystemStatusType remoteSystemStatusType, [out] [retval] Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -919,9 +1052,26 @@ namespace Windows
                 [propget] HRESULT Error([out] [retval] Windows.System.RemoteSystems.RemoteSystemWatcherError* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemWebAccountFilter)]
+            [uuid(3FB75873-87C8-5D8F-977E-F69F96D67238)]
+            interface IRemoteSystemWebAccountFilter : IInspectable
+            {
+                [propget] HRESULT Account([out] [retval] Windows.Security.Credentials.WebAccount** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemWebAccountFilter)]
+            [uuid(348A2709-5F4D-5127-B4A7-BF99D5252B1B)]
+            interface IRemoteSystemWebAccountFilterFactory : IInspectable
+            {
+                HRESULT Create([in] Windows.Security.Credentials.WebAccount* account, [out] [retval] Windows.System.RemoteSystems.RemoteSystemWebAccountFilter** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
             [static(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics, Windows.Foundation.UniversalApiContract, 4.0)]
+            [threading(both)]
             runtimeclass KnownRemoteSystemCapabilities
             {
             }
@@ -937,6 +1087,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.System.RemoteSystems.IRemoteSystem2;
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.System.RemoteSystems.IRemoteSystem3;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.System.RemoteSystems.IRemoteSystem4;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.System.RemoteSystems.IRemoteSystem5;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -946,26 +1097,56 @@ namespace Windows
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemAddedEventArgs;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass RemoteSystemApp
+            {
+                [default] interface Windows.System.RemoteSystems.IRemoteSystemApp;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.RemoteSystems.IRemoteSystemAppRegistrationStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass RemoteSystemAppRegistration
+            {
+                [default] interface Windows.System.RemoteSystems.IRemoteSystemAppRegistration;
+            }
+
             [activatable(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory, Windows.Foundation.UniversalApiContract, 4.0)]
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass RemoteSystemAuthorizationKindFilter
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter;
                 interface Windows.System.RemoteSystems.IRemoteSystemFilter;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.RemoteSystems.IRemoteSystemConnectionInfoStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass RemoteSystemConnectionInfo
+            {
+                [default] interface Windows.System.RemoteSystems.IRemoteSystemConnectionInfo;
+            }
+
             [activatable(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory, Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
+            [static(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
             runtimeclass RemoteSystemConnectionRequest
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemConnectionRequest;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.System.RemoteSystems.IRemoteSystemConnectionRequest2;
             }
 
             [activatable(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory, Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass RemoteSystemDiscoveryTypeFilter
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter;
@@ -974,7 +1155,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemEnumerationCompletedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemEnumerationCompletedEventArgs;
@@ -983,6 +1163,7 @@ namespace Windows
             [activatable(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory, Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass RemoteSystemKindFilter
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemKindFilter;
@@ -990,8 +1171,10 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.System.RemoteSystems.IRemoteSystemKindStatics, Windows.Foundation.UniversalApiContract, 3.0)]
             [static(Windows.System.RemoteSystems.IRemoteSystemKindStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
             runtimeclass RemoteSystemKinds
             {
             }
@@ -1015,7 +1198,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionAddedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionAddedEventArgs;
@@ -1032,7 +1214,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionCreationResult
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult;
@@ -1040,7 +1221,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionDisconnectedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionDisconnectedEventArgs;
@@ -1048,7 +1228,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionInfo
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionInfo;
@@ -1056,7 +1235,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionInvitation
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionInvitation;
@@ -1073,7 +1251,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionInvitationReceivedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs;
@@ -1081,7 +1258,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionJoinRequest
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest;
@@ -1089,7 +1265,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionJoinRequestedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs;
@@ -1097,7 +1272,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionJoinResult
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult;
@@ -1123,7 +1297,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionParticipant
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionParticipant;
@@ -1131,7 +1304,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionParticipantAddedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionParticipantAddedEventArgs;
@@ -1139,7 +1311,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionParticipantRemovedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionParticipantRemovedEventArgs;
@@ -1147,7 +1318,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionParticipantWatcher
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher;
@@ -1155,7 +1325,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionRemovedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionRemovedEventArgs;
@@ -1163,7 +1332,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionUpdatedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionUpdatedEventArgs;
@@ -1171,7 +1339,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionValueSetReceivedEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs;
@@ -1179,7 +1346,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemSessionWatcher
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemSessionWatcher;
@@ -1188,6 +1354,7 @@ namespace Windows
             [activatable(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory, Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass RemoteSystemStatusTypeFilter
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter;
@@ -1211,10 +1378,19 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass RemoteSystemWatcherErrorOccurredEventArgs
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystemWatcherErrorOccurredEventArgs;
+            }
+
+            [activatable(Windows.System.RemoteSystems.IRemoteSystemWebAccountFilterFactory, Windows.Foundation.UniversalApiContract, 7.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass RemoteSystemWebAccountFilter
+            {
+                [default] interface Windows.System.RemoteSystems.IRemoteSystemWebAccountFilter;
+                interface Windows.System.RemoteSystems.IRemoteSystemFilter;
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -142,9 +142,9 @@ enum class ContactFieldType : int32_t
 {
     Email = 0,
     PhoneNumber = 1,
-    Location [[deprecated("Location  may be altered or unavailable for releases after Windows 8.1. Instead, use Address.")]] = 2,
-    InstantMessage [[deprecated("InstantMessage  may be altered or unavailable for releases after Windows 8.1. Instead, use ConnectedServiceAccount.")]] = 3,
-    Custom [[deprecated("Custom may be altered or unavailable for releases after Windows 8.1. Instead, use one of the specific types.")]] = 4,
+    Location = 2,
+    InstantMessage = 3,
+    Custom = 4,
     ConnectedServiceAccount = 5,
     ImportantDate = 6,
     Address = 7,
@@ -687,81 +687,81 @@ template <> struct name<Windows::ApplicationModel::Contacts::ContactRelationship
 template <> struct name<Windows::ApplicationModel::Contacts::ContactSelectionMode>{ static constexpr auto & value{ L"Windows.ApplicationModel.Contacts.ContactSelectionMode" }; };
 template <> struct name<Windows::ApplicationModel::Contacts::ContactStoreAccessType>{ static constexpr auto & value{ L"Windows.ApplicationModel.Contacts.ContactStoreAccessType" }; };
 template <> struct name<Windows::ApplicationModel::Contacts::PinnedContactSurface>{ static constexpr auto & value{ L"Windows.ApplicationModel.Contacts.PinnedContactSurface" }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IAggregateContactManager>{ static constexpr GUID value{ 0x0379D5DD,0xDB5A,0x4FD3,{ 0xB5,0x4E,0x4D,0xF1,0x79,0x17,0xA2,0x12 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IAggregateContactManager2>{ static constexpr GUID value{ 0x5E8CC2D8,0xA9CD,0x4430,{ 0x9C,0x4B,0x01,0x34,0x8D,0xB2,0xCA,0x50 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContact>{ static constexpr GUID value{ 0xEC0072F3,0x2118,0x4049,{ 0x9E,0xBC,0x17,0xF0,0xAB,0x69,0x2B,0x64 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContact2>{ static constexpr GUID value{ 0xF312F365,0xBB77,0x4C94,{ 0x80,0x2D,0x83,0x28,0xCE,0xE4,0x0C,0x08 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContact3>{ static constexpr GUID value{ 0x48201E67,0xE08E,0x42A4,{ 0xB5,0x61,0x41,0xD0,0x8C,0xA9,0x57,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAddress>{ static constexpr GUID value{ 0x9739D39A,0x42CE,0x4872,{ 0x8D,0x70,0x30,0x63,0xAA,0x58,0x4B,0x70 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAnnotation>{ static constexpr GUID value{ 0x821FC2EF,0x7D41,0x44A2,{ 0x84,0xC3,0x60,0xA2,0x81,0xDD,0x7B,0x86 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAnnotation2>{ static constexpr GUID value{ 0xB691ECF3,0x4AB7,0x4A1F,{ 0x99,0x41,0x0C,0x9C,0xF3,0x17,0x1B,0x75 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAnnotationList>{ static constexpr GUID value{ 0x92A486AA,0x5C88,0x45B9,{ 0xAA,0xD0,0x46,0x18,0x88,0xE6,0x8D,0x8A } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAnnotationStore>{ static constexpr GUID value{ 0x23ACF4AA,0x7A77,0x457D,{ 0x82,0x03,0x98,0x7F,0x4B,0x31,0xAF,0x09 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactAnnotationStore2>{ static constexpr GUID value{ 0x7EDE23FD,0x61E7,0x4967,{ 0x8E,0xC5,0xBD,0xF2,0x80,0xA2,0x40,0x63 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactBatch>{ static constexpr GUID value{ 0x35D1972D,0xBFCE,0x46BB,{ 0x93,0xF8,0xA5,0xB0,0x6E,0xC5,0xE2,0x01 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>{ static constexpr GUID value{ 0xB60AF902,0x1546,0x434D,{ 0x86,0x9C,0x6E,0x35,0x20,0x76,0x0E,0xF3 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactCardOptions>{ static constexpr GUID value{ 0x8C0A4F7E,0x6AB6,0x4F3F,{ 0xBE,0x72,0x81,0x72,0x36,0xEE,0xEA,0x5B } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactCardOptions2>{ static constexpr GUID value{ 0x8F271BA0,0xD74B,0x4CC6,{ 0x9F,0x53,0x1B,0x0E,0xB5,0xD1,0x27,0x3C } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChange>{ static constexpr GUID value{ 0x951D4B10,0x6A59,0x4720,{ 0xA4,0xE1,0x36,0x3D,0x98,0xC1,0x35,0xD5 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChangeReader>{ static constexpr GUID value{ 0x217319FA,0x2D0C,0x42E0,{ 0xA9,0xDA,0x3E,0xCD,0x56,0xA7,0x8A,0x47 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChangeTracker>{ static constexpr GUID value{ 0x6E992952,0x309B,0x404D,{ 0x97,0x12,0xB3,0x7B,0xD3,0x02,0x78,0xAA } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChangeTracker2>{ static constexpr GUID value{ 0x7F8AD0FC,0x9321,0x4D18,{ 0x9C,0x09,0xD7,0x08,0xC6,0x3F,0xCD,0x31 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChangedDeferral>{ static constexpr GUID value{ 0xC5143AE8,0x1B03,0x46F8,{ 0xB6,0x94,0xA5,0x23,0xE8,0x3C,0xFC,0xB6 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactChangedEventArgs>{ static constexpr GUID value{ 0x525E7FD1,0x73F3,0x4B7D,{ 0xA9,0x18,0x58,0x0B,0xE4,0x36,0x61,0x21 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>{ static constexpr GUID value{ 0xF6F83553,0xAA27,0x4731,{ 0x8E,0x4A,0x3D,0xEC,0x5C,0xE9,0xEE,0xC9 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactDate>{ static constexpr GUID value{ 0xFE98AE66,0xB205,0x4934,{ 0x91,0x74,0x0F,0xF2,0xB0,0x56,0x57,0x07 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactEmail>{ static constexpr GUID value{ 0x90A219A9,0xE3D3,0x4D63,{ 0x99,0x3B,0x05,0xB9,0xA5,0x39,0x3A,0xBF } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactField>{ static constexpr GUID value{ 0xB176486A,0xD293,0x492C,{ 0xA0,0x58,0xDB,0x57,0x5B,0x3E,0x3C,0x0F } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactFieldFactory>{ static constexpr GUID value{ 0x85E2913F,0x0E4A,0x4A3E,{ 0x89,0x94,0x40,0x6A,0xE7,0xED,0x64,0x6E } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactGroup>{ static constexpr GUID value{ 0x59BDEB01,0x9E9A,0x475D,{ 0xBF,0xE5,0xA3,0x7B,0x80,0x6D,0x85,0x2C } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactInformation>{ static constexpr GUID value{ 0x275EB6D4,0x6A2E,0x4278,{ 0xA9,0x14,0xE4,0x60,0xD5,0xF0,0x88,0xF6 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactInstantMessageField>{ static constexpr GUID value{ 0xCCE33B37,0x0D85,0x41FA,{ 0xB4,0x3D,0xDA,0x59,0x9C,0x3E,0xB0,0x09 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>{ static constexpr GUID value{ 0xBA0B6794,0x91A3,0x4BB2,{ 0xB1,0xB9,0x69,0xA5,0xDF,0xF0,0xBA,0x09 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactJobInfo>{ static constexpr GUID value{ 0x6D117B4C,0xCE50,0x4B43,{ 0x9E,0x69,0xB1,0x82,0x58,0xEA,0x53,0x15 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>{ static constexpr GUID value{ 0xFB1232D6,0xEE73,0x46E7,{ 0x87,0x61,0x11,0xCD,0x01,0x57,0x72,0x8F } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactList>{ static constexpr GUID value{ 0x16DDEC75,0x392C,0x4845,{ 0x9D,0xFB,0x51,0xA3,0xE7,0xEF,0x3E,0x42 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactList2>{ static constexpr GUID value{ 0xCB3943B4,0x4550,0x4DCB,{ 0x92,0x29,0x40,0xFF,0x91,0xFB,0x02,0x03 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactList3>{ static constexpr GUID value{ 0x1578EE57,0x26FC,0x41E8,{ 0xA8,0x50,0x5A,0xA3,0x25,0x14,0xAC,0xA9 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations>{ static constexpr GUID value{ 0xE19813DA,0x4A0B,0x44B8,{ 0x9A,0x1F,0xA0,0xF3,0xD2,0x18,0x17,0x5F } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactListSyncConstraints>{ static constexpr GUID value{ 0xB2B0BF01,0x3062,0x4E2E,{ 0x96,0x9D,0x01,0x8D,0x19,0x87,0xF3,0x14 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactListSyncManager>{ static constexpr GUID value{ 0x146E83BE,0x7925,0x4ACC,{ 0x9D,0xE5,0x21,0xDD,0xD0,0x6F,0x86,0x74 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactListSyncManager2>{ static constexpr GUID value{ 0xA9591247,0xBB55,0x4E23,{ 0x81,0x28,0x37,0x01,0x34,0xA8,0x5D,0x0D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactLocationField>{ static constexpr GUID value{ 0x9EC00F82,0xAB6E,0x4B36,{ 0x89,0xE3,0xB2,0x3B,0xC0,0xA1,0xDA,0xCC } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>{ static constexpr GUID value{ 0xF79932D7,0x2FDF,0x43FE,{ 0x8F,0x18,0x41,0x89,0x73,0x90,0xBC,0xFE } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerForUser>{ static constexpr GUID value{ 0xB74BBA57,0x1076,0x4BEF,{ 0xAE,0xF3,0x54,0x68,0x6D,0x18,0x38,0x7D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerForUser2>{ static constexpr GUID value{ 0x4D469C2E,0x3B75,0x4A73,{ 0xBB,0x30,0x73,0x66,0x45,0x47,0x22,0x56 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerStatics>{ static constexpr GUID value{ 0x81F21AC0,0xF661,0x4708,{ 0xBA,0x4F,0xD3,0x86,0xBD,0x0D,0x62,0x2E } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerStatics2>{ static constexpr GUID value{ 0xA178E620,0x47D8,0x48CC,{ 0x96,0x3C,0x95,0x92,0xB6,0xE5,0x10,0xC6 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerStatics3>{ static constexpr GUID value{ 0xC4CC3D42,0x7586,0x492A,{ 0x93,0x0B,0x7B,0xC1,0x38,0xFC,0x21,0x39 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerStatics4>{ static constexpr GUID value{ 0x24982272,0x347B,0x46DC,{ 0x8D,0x95,0x51,0xBD,0x41,0xE1,0x5A,0xAF } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactManagerStatics5>{ static constexpr GUID value{ 0xF7591A87,0xACB7,0x4FAD,{ 0x90,0xF2,0xA8,0xAB,0x64,0xCD,0xBB,0xA4 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactMatchReason>{ static constexpr GUID value{ 0xBC922504,0xE7D8,0x413E,{ 0x95,0xF4,0xB7,0x5C,0x54,0xC7,0x40,0x77 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactName>{ static constexpr GUID value{ 0xF404E97B,0x9034,0x453C,{ 0x8E,0xBF,0x14,0x0A,0x38,0xC8,0x6F,0x1D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPanel>{ static constexpr GUID value{ 0x41BF1265,0xD2EE,0x4B97,{ 0xA8,0x0A,0x7D,0x8D,0x64,0xCC,0xA6,0xF5 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>{ static constexpr GUID value{ 0x222174D3,0xCF4B,0x46D7,{ 0xB7,0x39,0x6E,0xDC,0x16,0x11,0x0B,0xFB } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>{ static constexpr GUID value{ 0x88D61C0E,0x23B4,0x4BE8,{ 0x8A,0xFC,0x07,0x2C,0x25,0xA4,0x19,0x0D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPhone>{ static constexpr GUID value{ 0x467DAB65,0x2712,0x4F52,{ 0xB7,0x83,0x9E,0xA8,0x11,0x1C,0x63,0xCD } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPicker>{ static constexpr GUID value{ 0x0E09FD91,0x42F8,0x4055,{ 0x90,0xA0,0x89,0x6F,0x96,0x73,0x89,0x36 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPicker2>{ static constexpr GUID value{ 0xB35011CF,0x5CEF,0x4D24,{ 0xAA,0x0C,0x34,0x0C,0x52,0x08,0x72,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPicker3>{ static constexpr GUID value{ 0x0E723315,0xB243,0x4BED,{ 0x85,0x16,0x22,0xB1,0xA7,0xAC,0x0A,0xCE } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactPickerStatics>{ static constexpr GUID value{ 0x7488C029,0x6A53,0x4258,{ 0xA3,0xE9,0x62,0xDF,0xF6,0x78,0x4B,0x6C } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactQueryOptions>{ static constexpr GUID value{ 0x4408CC9E,0x7D7C,0x42F0,{ 0x8A,0xC7,0xF5,0x07,0x33,0xEC,0xDB,0xC1 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>{ static constexpr GUID value{ 0x543FBA47,0x8CE7,0x46CB,{ 0x9D,0xAC,0x9A,0xA4,0x2A,0x1B,0xC8,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactQueryTextSearch>{ static constexpr GUID value{ 0xF7E3F9CB,0xA957,0x439B,{ 0xA0,0xB7,0x1C,0x02,0xA1,0x96,0x3F,0xF0 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactReader>{ static constexpr GUID value{ 0xD397E42E,0x1488,0x42F2,{ 0xBF,0x64,0x25,0x3F,0x48,0x84,0xBF,0xED } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactSignificantOther>{ static constexpr GUID value{ 0x8873B5AB,0xC5FB,0x46D8,{ 0x93,0xFE,0xDA,0x3F,0xF1,0x93,0x40,0x54 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactSignificantOther2>{ static constexpr GUID value{ 0x8D7BD474,0x3F03,0x45F8,{ 0xBA,0x0F,0xC4,0xED,0x37,0xD6,0x42,0x19 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactStore>{ static constexpr GUID value{ 0x2C220B10,0x3A6C,0x4293,{ 0xB9,0xBC,0xFE,0x98,0x7F,0x6E,0x0D,0x52 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactStore2>{ static constexpr GUID value{ 0x18CE1C22,0xEBD5,0x4BFB,{ 0xB6,0x90,0x5F,0x4F,0x27,0xC4,0xF0,0xE8 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactStore3>{ static constexpr GUID value{ 0xCB882C6C,0x004E,0x4050,{ 0x87,0xF0,0x84,0x04,0x07,0xEE,0x68,0x18 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails>{ static constexpr GUID value{ 0xABB298D6,0x878A,0x4F8B,{ 0xA9,0xCE,0x46,0xBB,0x7D,0x1C,0x84,0xCE } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactWebsite>{ static constexpr GUID value{ 0x9F130176,0xDC1B,0x4055,{ 0xAD,0x66,0x65,0x2F,0x39,0xD9,0x90,0xE8 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IContactWebsite2>{ static constexpr GUID value{ 0xF87EE91E,0x5647,0x4068,{ 0xBB,0x5E,0x4B,0x6F,0x43,0x7C,0xE3,0x08 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IFullContactCardOptions>{ static constexpr GUID value{ 0x8744436C,0x5CF9,0x4683,{ 0xBD,0xCA,0xA1,0xFD,0xEB,0xF8,0xDB,0xCE } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>{ static constexpr GUID value{ 0x2E0E1B12,0xD627,0x4FCA,{ 0xBA,0xD4,0x1F,0xAF,0x16,0x8C,0x7D,0x14 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>{ static constexpr GUID value{ 0x7D9B2552,0x1579,0x4DDC,{ 0x87,0x1F,0xA3,0x0A,0x3A,0xEA,0x9B,0xA1 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IPinnedContactManager>{ static constexpr GUID value{ 0xFCBC740C,0xE1D6,0x45C3,{ 0xB8,0xB6,0xA3,0x56,0x04,0xE1,0x67,0xA0 } }; };
-template <> struct guid<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>{ static constexpr GUID value{ 0xF65CCC7E,0xFDF9,0x486A,{ 0xAC,0xE9,0xBC,0x31,0x1D,0x0A,0xE7,0xF0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IAggregateContactManager>{ static constexpr guid value{ 0x0379D5DD,0xDB5A,0x4FD3,{ 0xB5,0x4E,0x4D,0xF1,0x79,0x17,0xA2,0x12 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IAggregateContactManager2>{ static constexpr guid value{ 0x5E8CC2D8,0xA9CD,0x4430,{ 0x9C,0x4B,0x01,0x34,0x8D,0xB2,0xCA,0x50 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContact>{ static constexpr guid value{ 0xEC0072F3,0x2118,0x4049,{ 0x9E,0xBC,0x17,0xF0,0xAB,0x69,0x2B,0x64 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContact2>{ static constexpr guid value{ 0xF312F365,0xBB77,0x4C94,{ 0x80,0x2D,0x83,0x28,0xCE,0xE4,0x0C,0x08 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContact3>{ static constexpr guid value{ 0x48201E67,0xE08E,0x42A4,{ 0xB5,0x61,0x41,0xD0,0x8C,0xA9,0x57,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAddress>{ static constexpr guid value{ 0x9739D39A,0x42CE,0x4872,{ 0x8D,0x70,0x30,0x63,0xAA,0x58,0x4B,0x70 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAnnotation>{ static constexpr guid value{ 0x821FC2EF,0x7D41,0x44A2,{ 0x84,0xC3,0x60,0xA2,0x81,0xDD,0x7B,0x86 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAnnotation2>{ static constexpr guid value{ 0xB691ECF3,0x4AB7,0x4A1F,{ 0x99,0x41,0x0C,0x9C,0xF3,0x17,0x1B,0x75 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAnnotationList>{ static constexpr guid value{ 0x92A486AA,0x5C88,0x45B9,{ 0xAA,0xD0,0x46,0x18,0x88,0xE6,0x8D,0x8A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAnnotationStore>{ static constexpr guid value{ 0x23ACF4AA,0x7A77,0x457D,{ 0x82,0x03,0x98,0x7F,0x4B,0x31,0xAF,0x09 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactAnnotationStore2>{ static constexpr guid value{ 0x7EDE23FD,0x61E7,0x4967,{ 0x8E,0xC5,0xBD,0xF2,0x80,0xA2,0x40,0x63 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactBatch>{ static constexpr guid value{ 0x35D1972D,0xBFCE,0x46BB,{ 0x93,0xF8,0xA5,0xB0,0x6E,0xC5,0xE2,0x01 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>{ static constexpr guid value{ 0xB60AF902,0x1546,0x434D,{ 0x86,0x9C,0x6E,0x35,0x20,0x76,0x0E,0xF3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactCardOptions>{ static constexpr guid value{ 0x8C0A4F7E,0x6AB6,0x4F3F,{ 0xBE,0x72,0x81,0x72,0x36,0xEE,0xEA,0x5B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactCardOptions2>{ static constexpr guid value{ 0x8F271BA0,0xD74B,0x4CC6,{ 0x9F,0x53,0x1B,0x0E,0xB5,0xD1,0x27,0x3C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChange>{ static constexpr guid value{ 0x951D4B10,0x6A59,0x4720,{ 0xA4,0xE1,0x36,0x3D,0x98,0xC1,0x35,0xD5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChangeReader>{ static constexpr guid value{ 0x217319FA,0x2D0C,0x42E0,{ 0xA9,0xDA,0x3E,0xCD,0x56,0xA7,0x8A,0x47 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChangeTracker>{ static constexpr guid value{ 0x6E992952,0x309B,0x404D,{ 0x97,0x12,0xB3,0x7B,0xD3,0x02,0x78,0xAA } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChangeTracker2>{ static constexpr guid value{ 0x7F8AD0FC,0x9321,0x4D18,{ 0x9C,0x09,0xD7,0x08,0xC6,0x3F,0xCD,0x31 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChangedDeferral>{ static constexpr guid value{ 0xC5143AE8,0x1B03,0x46F8,{ 0xB6,0x94,0xA5,0x23,0xE8,0x3C,0xFC,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactChangedEventArgs>{ static constexpr guid value{ 0x525E7FD1,0x73F3,0x4B7D,{ 0xA9,0x18,0x58,0x0B,0xE4,0x36,0x61,0x21 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>{ static constexpr guid value{ 0xF6F83553,0xAA27,0x4731,{ 0x8E,0x4A,0x3D,0xEC,0x5C,0xE9,0xEE,0xC9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactDate>{ static constexpr guid value{ 0xFE98AE66,0xB205,0x4934,{ 0x91,0x74,0x0F,0xF2,0xB0,0x56,0x57,0x07 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactEmail>{ static constexpr guid value{ 0x90A219A9,0xE3D3,0x4D63,{ 0x99,0x3B,0x05,0xB9,0xA5,0x39,0x3A,0xBF } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactField>{ static constexpr guid value{ 0xB176486A,0xD293,0x492C,{ 0xA0,0x58,0xDB,0x57,0x5B,0x3E,0x3C,0x0F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactFieldFactory>{ static constexpr guid value{ 0x85E2913F,0x0E4A,0x4A3E,{ 0x89,0x94,0x40,0x6A,0xE7,0xED,0x64,0x6E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactGroup>{ static constexpr guid value{ 0x59BDEB01,0x9E9A,0x475D,{ 0xBF,0xE5,0xA3,0x7B,0x80,0x6D,0x85,0x2C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactInformation>{ static constexpr guid value{ 0x275EB6D4,0x6A2E,0x4278,{ 0xA9,0x14,0xE4,0x60,0xD5,0xF0,0x88,0xF6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactInstantMessageField>{ static constexpr guid value{ 0xCCE33B37,0x0D85,0x41FA,{ 0xB4,0x3D,0xDA,0x59,0x9C,0x3E,0xB0,0x09 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>{ static constexpr guid value{ 0xBA0B6794,0x91A3,0x4BB2,{ 0xB1,0xB9,0x69,0xA5,0xDF,0xF0,0xBA,0x09 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactJobInfo>{ static constexpr guid value{ 0x6D117B4C,0xCE50,0x4B43,{ 0x9E,0x69,0xB1,0x82,0x58,0xEA,0x53,0x15 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>{ static constexpr guid value{ 0xFB1232D6,0xEE73,0x46E7,{ 0x87,0x61,0x11,0xCD,0x01,0x57,0x72,0x8F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactList>{ static constexpr guid value{ 0x16DDEC75,0x392C,0x4845,{ 0x9D,0xFB,0x51,0xA3,0xE7,0xEF,0x3E,0x42 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactList2>{ static constexpr guid value{ 0xCB3943B4,0x4550,0x4DCB,{ 0x92,0x29,0x40,0xFF,0x91,0xFB,0x02,0x03 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactList3>{ static constexpr guid value{ 0x1578EE57,0x26FC,0x41E8,{ 0xA8,0x50,0x5A,0xA3,0x25,0x14,0xAC,0xA9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations>{ static constexpr guid value{ 0xE19813DA,0x4A0B,0x44B8,{ 0x9A,0x1F,0xA0,0xF3,0xD2,0x18,0x17,0x5F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactListSyncConstraints>{ static constexpr guid value{ 0xB2B0BF01,0x3062,0x4E2E,{ 0x96,0x9D,0x01,0x8D,0x19,0x87,0xF3,0x14 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactListSyncManager>{ static constexpr guid value{ 0x146E83BE,0x7925,0x4ACC,{ 0x9D,0xE5,0x21,0xDD,0xD0,0x6F,0x86,0x74 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactListSyncManager2>{ static constexpr guid value{ 0xA9591247,0xBB55,0x4E23,{ 0x81,0x28,0x37,0x01,0x34,0xA8,0x5D,0x0D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactLocationField>{ static constexpr guid value{ 0x9EC00F82,0xAB6E,0x4B36,{ 0x89,0xE3,0xB2,0x3B,0xC0,0xA1,0xDA,0xCC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>{ static constexpr guid value{ 0xF79932D7,0x2FDF,0x43FE,{ 0x8F,0x18,0x41,0x89,0x73,0x90,0xBC,0xFE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerForUser>{ static constexpr guid value{ 0xB74BBA57,0x1076,0x4BEF,{ 0xAE,0xF3,0x54,0x68,0x6D,0x18,0x38,0x7D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerForUser2>{ static constexpr guid value{ 0x4D469C2E,0x3B75,0x4A73,{ 0xBB,0x30,0x73,0x66,0x45,0x47,0x22,0x56 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerStatics>{ static constexpr guid value{ 0x81F21AC0,0xF661,0x4708,{ 0xBA,0x4F,0xD3,0x86,0xBD,0x0D,0x62,0x2E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerStatics2>{ static constexpr guid value{ 0xA178E620,0x47D8,0x48CC,{ 0x96,0x3C,0x95,0x92,0xB6,0xE5,0x10,0xC6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerStatics3>{ static constexpr guid value{ 0xC4CC3D42,0x7586,0x492A,{ 0x93,0x0B,0x7B,0xC1,0x38,0xFC,0x21,0x39 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerStatics4>{ static constexpr guid value{ 0x24982272,0x347B,0x46DC,{ 0x8D,0x95,0x51,0xBD,0x41,0xE1,0x5A,0xAF } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactManagerStatics5>{ static constexpr guid value{ 0xF7591A87,0xACB7,0x4FAD,{ 0x90,0xF2,0xA8,0xAB,0x64,0xCD,0xBB,0xA4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactMatchReason>{ static constexpr guid value{ 0xBC922504,0xE7D8,0x413E,{ 0x95,0xF4,0xB7,0x5C,0x54,0xC7,0x40,0x77 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactName>{ static constexpr guid value{ 0xF404E97B,0x9034,0x453C,{ 0x8E,0xBF,0x14,0x0A,0x38,0xC8,0x6F,0x1D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPanel>{ static constexpr guid value{ 0x41BF1265,0xD2EE,0x4B97,{ 0xA8,0x0A,0x7D,0x8D,0x64,0xCC,0xA6,0xF5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>{ static constexpr guid value{ 0x222174D3,0xCF4B,0x46D7,{ 0xB7,0x39,0x6E,0xDC,0x16,0x11,0x0B,0xFB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>{ static constexpr guid value{ 0x88D61C0E,0x23B4,0x4BE8,{ 0x8A,0xFC,0x07,0x2C,0x25,0xA4,0x19,0x0D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPhone>{ static constexpr guid value{ 0x467DAB65,0x2712,0x4F52,{ 0xB7,0x83,0x9E,0xA8,0x11,0x1C,0x63,0xCD } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPicker>{ static constexpr guid value{ 0x0E09FD91,0x42F8,0x4055,{ 0x90,0xA0,0x89,0x6F,0x96,0x73,0x89,0x36 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPicker2>{ static constexpr guid value{ 0xB35011CF,0x5CEF,0x4D24,{ 0xAA,0x0C,0x34,0x0C,0x52,0x08,0x72,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPicker3>{ static constexpr guid value{ 0x0E723315,0xB243,0x4BED,{ 0x85,0x16,0x22,0xB1,0xA7,0xAC,0x0A,0xCE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactPickerStatics>{ static constexpr guid value{ 0x7488C029,0x6A53,0x4258,{ 0xA3,0xE9,0x62,0xDF,0xF6,0x78,0x4B,0x6C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactQueryOptions>{ static constexpr guid value{ 0x4408CC9E,0x7D7C,0x42F0,{ 0x8A,0xC7,0xF5,0x07,0x33,0xEC,0xDB,0xC1 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>{ static constexpr guid value{ 0x543FBA47,0x8CE7,0x46CB,{ 0x9D,0xAC,0x9A,0xA4,0x2A,0x1B,0xC8,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactQueryTextSearch>{ static constexpr guid value{ 0xF7E3F9CB,0xA957,0x439B,{ 0xA0,0xB7,0x1C,0x02,0xA1,0x96,0x3F,0xF0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactReader>{ static constexpr guid value{ 0xD397E42E,0x1488,0x42F2,{ 0xBF,0x64,0x25,0x3F,0x48,0x84,0xBF,0xED } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactSignificantOther>{ static constexpr guid value{ 0x8873B5AB,0xC5FB,0x46D8,{ 0x93,0xFE,0xDA,0x3F,0xF1,0x93,0x40,0x54 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactSignificantOther2>{ static constexpr guid value{ 0x8D7BD474,0x3F03,0x45F8,{ 0xBA,0x0F,0xC4,0xED,0x37,0xD6,0x42,0x19 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactStore>{ static constexpr guid value{ 0x2C220B10,0x3A6C,0x4293,{ 0xB9,0xBC,0xFE,0x98,0x7F,0x6E,0x0D,0x52 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactStore2>{ static constexpr guid value{ 0x18CE1C22,0xEBD5,0x4BFB,{ 0xB6,0x90,0x5F,0x4F,0x27,0xC4,0xF0,0xE8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactStore3>{ static constexpr guid value{ 0xCB882C6C,0x004E,0x4050,{ 0x87,0xF0,0x84,0x04,0x07,0xEE,0x68,0x18 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails>{ static constexpr guid value{ 0xABB298D6,0x878A,0x4F8B,{ 0xA9,0xCE,0x46,0xBB,0x7D,0x1C,0x84,0xCE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactWebsite>{ static constexpr guid value{ 0x9F130176,0xDC1B,0x4055,{ 0xAD,0x66,0x65,0x2F,0x39,0xD9,0x90,0xE8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IContactWebsite2>{ static constexpr guid value{ 0xF87EE91E,0x5647,0x4068,{ 0xBB,0x5E,0x4B,0x6F,0x43,0x7C,0xE3,0x08 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IFullContactCardOptions>{ static constexpr guid value{ 0x8744436C,0x5CF9,0x4683,{ 0xBD,0xCA,0xA1,0xFD,0xEB,0xF8,0xDB,0xCE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>{ static constexpr guid value{ 0x2E0E1B12,0xD627,0x4FCA,{ 0xBA,0xD4,0x1F,0xAF,0x16,0x8C,0x7D,0x14 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>{ static constexpr guid value{ 0x7D9B2552,0x1579,0x4DDC,{ 0x87,0x1F,0xA3,0x0A,0x3A,0xEA,0x9B,0xA1 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IPinnedContactManager>{ static constexpr guid value{ 0xFCBC740C,0xE1D6,0x45C3,{ 0xB8,0xB6,0xA3,0x56,0x04,0xE1,0x67,0xA0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>{ static constexpr guid value{ 0xF65CCC7E,0xFDF9,0x486A,{ 0xAC,0xE9,0xBC,0x31,0x1D,0x0A,0xE7,0xF0 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Contacts::AggregateContactManager>{ using type = Windows::ApplicationModel::Contacts::IAggregateContactManager; };
 template <> struct default_interface<Windows::ApplicationModel::Contacts::Contact>{ using type = Windows::ApplicationModel::Contacts::IContact; };
 template <> struct default_interface<Windows::ApplicationModel::Contacts::ContactAddress>{ using type = Windows::ApplicationModel::Contacts::IContactAddress; };
@@ -807,6 +807,732 @@ template <> struct default_interface<Windows::ApplicationModel::Contacts::Contac
 template <> struct default_interface<Windows::ApplicationModel::Contacts::FullContactCardOptions>{ using type = Windows::ApplicationModel::Contacts::IFullContactCardOptions; };
 template <> struct default_interface<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult>{ using type = Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult; };
 template <> struct default_interface<Windows::ApplicationModel::Contacts::PinnedContactManager>{ using type = Windows::ApplicationModel::Contacts::IPinnedContactManager; };
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IAggregateContactManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindRawContactsAsync(void* contact, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryLinkContactsAsync(void* primaryContact, void* secondaryContact, void** contact) noexcept = 0;
+    virtual int32_t WINRT_CALL UnlinkRawContactAsync(void* contact, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySetPreferredSourceForPictureAsync(void* aggregateContact, void* rawContact, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IAggregateContactManager2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetRemoteIdentificationInformationAsync(void* contactListId, void* remoteSourceId, void* accountId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContact>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Thumbnail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Fields(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContact2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Notes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Notes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Phones(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Emails(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Addresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectedServiceAccounts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImportantDates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataSuppliers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_JobInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignificantOthers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Websites(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderProperties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContact3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContactListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsMe(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AggregateId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RingToneToken(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RingToneToken(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisplayPictureManuallySet(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LargeDisplayPicture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SmallDisplayPicture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceDisplayPicture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SourceDisplayPicture(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextToneToken(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextToneToken(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAggregate(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FullName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayNameOverride(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayNameOverride(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Nickname(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Nickname(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SortName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAddress>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StreetAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StreetAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Locality(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Locality(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Region(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Region(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Country(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Country(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PostalCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PostalCode(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnnotationListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContactId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContactId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderProperties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContactListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContactListId(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderPackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySaveAnnotationAsync(void* annotation, void** ppResult) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAnnotationAsync(void* annotationId, void** annotation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAnnotationsByRemoteIdAsync(void* remoteId, void** annotations) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAnnotationsAsync(void** annotations) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAnnotationAsync(void* annotation, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindContactIdsByEmailAsync(void* emailAddress, void** contactIds) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactIdsByPhoneNumberAsync(void* phoneNumber, void** contactIds) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAnnotationsForContactAsync(void* contact, void** annotations) noexcept = 0;
+    virtual int32_t WINRT_CALL DisableAnnotationAsync(void* annotation, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAnnotationListAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAnnotationListInAccountAsync(void* userDataAccountId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAnnotationListAsync(void* annotationListId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAnnotationListsAsync(void** lists) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationStore2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAnnotationsForContactListAsync(void* contactListId, void** annotations) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Contacts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Contacts::ContactBatchStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetData(void* contact) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardOptions2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerSearchContactListIds(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeType(Windows::ApplicationModel::Contacts::ContactChangeType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Contact(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AcceptChanges() noexcept = 0;
+    virtual int32_t WINRT_CALL AcceptChangesThrough(void* lastChangeToAccept) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeTracker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Enable() noexcept = 0;
+    virtual int32_t WINRT_CALL GetChangeReader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Reset() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeTracker2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTracking(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangedDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ServiceName(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactDate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Day(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Day(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Month(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Month(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Year(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Year(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactDateKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactEmail>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Address(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Address(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactField>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::ApplicationModel::Contacts::ContactFieldType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Category(Windows::ApplicationModel::Contacts::ContactFieldCategory* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactFieldFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateField_Default(void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateField_Category(void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateField_Custom(void* name, void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactGroup>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Emails(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Locations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstantMessages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomFields(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL QueryCustomFields(void* customName, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactInstantMessageField>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UserName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Service(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LaunchUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstantMessage_Default(void* userName, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstantMessage_Category(void* userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstantMessage_All(void* userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void* service, void* displayText, void* verb, void** field) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactJobInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompanyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompanyName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompanyYomiName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompanyYomiName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Department(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Department(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Manager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Manager(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Office(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Office(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompanyAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompanyAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Call(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Map(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Post(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoCall(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsHidden(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsHidden(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SyncManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportsServerSearch(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ContactChanged(void* value, winrt::event_token* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ContactChanged(winrt::event_token value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactFromRemoteIdAsync(void* remoteId, void** contact) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMeContactAsync(void** meContact) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactReader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactReaderWithOptions(void* options, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveContactAsync(void* contact, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteContactAsync(void* contact, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactAsync(void* contactId, void** contacts) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactList2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RegisterSyncManagerAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SupportsServerSearch(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SyncConstraints(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactList3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LimitedWriteOperations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreateOrUpdateContactAsync(void* contact, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryDeleteContactAsync(void* contactId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncConstraints>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanSyncDescriptions(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanSyncDescriptions(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxHomePhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxHomePhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxMobilePhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxMobilePhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWorkPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxWorkPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOtherPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxOtherPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPagerPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxPagerPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxBusinessFaxPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxBusinessFaxPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxHomeFaxPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxHomeFaxPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxCompanyPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxCompanyPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAssistantPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxAssistantPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxRadioPhoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxRadioPhoneNumbers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPersonalEmailAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxPersonalEmailAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWorkEmailAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxWorkEmailAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOtherEmailAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxOtherEmailAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxHomeAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxHomeAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWorkAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxWorkAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOtherAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxOtherAddresses(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxBirthdayDates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxBirthdayDates(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAnniversaryDates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxAnniversaryDates(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOtherDates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxOtherDates(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOtherRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxOtherRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSpouseRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxSpouseRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPartnerRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxPartnerRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSiblingRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxSiblingRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxParentRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxParentRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxChildRelationships(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxChildRelationships(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxJobInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxJobInfo(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWebsites(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxWebsites(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SyncAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SyncStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SyncStatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncManager2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactLocationField>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnstructuredAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Street(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_City(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Region(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Country(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PostalCode(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateLocation_Default(void* unstructuredAddress, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLocation_Category(void* unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLocation_All(void* unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void* street, void* city, void* region, void* country, void* postalCode, void** field) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ConvertContactToVCardAsync(void* contact, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertVCardToContactAsync(void* vCard, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerForUser2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowContactCard(void* contact, Windows::Foundation::Rect selection) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowContactCardWithPlacement(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowDelayLoadedContactCard(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** dataLoader) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(void** store) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ConvertContactToVCardAsync(void* contact, void** vCard) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** vCard) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertVCardToContactAsync(void* vCard, void** contact) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestStoreAsyncWithAccessType(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** store) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** store) noexcept = 0;
+    virtual int32_t WINRT_CALL IsShowContactCardSupported(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions) noexcept = 0;
+    virtual int32_t WINRT_CALL IsShowDelayLoadedContactCardSupported(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowDelayLoadedContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions, void** dataLoader) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsShowFullContactCardSupportedAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeMiddleNameInSystemDisplayAndSort(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncludeMiddleNameInSystemDisplayAndSort(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactMatchReason>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Field(Windows::ApplicationModel::Contacts::ContactMatchReasonKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Segments(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactName>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FirstName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FirstName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MiddleName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MiddleName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_YomiGivenName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_YomiGivenName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_YomiFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_YomiFamilyName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HonorificNameSuffix(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HonorificNameSuffix(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HonorificNamePrefix(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HonorificNamePrefix(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_YomiDisplayName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ClosePanel() noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderColor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderColor(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LaunchFullAppRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LaunchFullAppRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Closing(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Closing(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPhone>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Number(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Number(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CommitButtonText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CommitButtonText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredFields(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL PickSingleContactAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PickMultipleContactsAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredFieldsWithContactFieldType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL PickContactAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PickContactsAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactPickerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateForUser(void* user, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsSupportedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextSearch(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContactListIds(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeContactsFromHiddenLists(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncludeContactsFromHiddenLists(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnnotationListIds(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithText(void* text, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTextAndFields(void* text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryTextSearch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMatchingPropertiesWithMatchReason(void* contact, void** ppRetVal) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactSignificantOther>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactSignificantOther2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindContactsAsync(void** contacts) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactsWithSearchTextAsync(void* searchText, void** contacts) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactAsync(void* contactId, void** contacts) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ContactChanged(void* value, winrt::event_token* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ContactChanged(winrt::event_token value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AggregateContactManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactListsAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactListAsync(void* contactListId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContactListAsync(void* displayName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMeContactAsync(void** meContact) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactReader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContactReaderWithOptions(void* options, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContactListInAccountAsync(void* displayName, void* userDataAccountId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactWebsite>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IContactWebsite2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RawValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RawValue(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IFullContactCardOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Email(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhoneNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Location(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstantMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertNameToType(void* name, Windows::ApplicationModel::Contacts::ContactFieldType* type) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type, void** name) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContactIds(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** user) noexcept = 0;
+    virtual int32_t WINRT_CALL IsPinSurfaceSupported(Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsContactPinned(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPinContactsAsync(void* contacts, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestUnpinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SignalContactActivity(void* contact) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPinnedContactIdsAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsSupported(bool* result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Contacts_IAggregateContactManager
@@ -1190,10 +1916,10 @@ struct consume_Windows_ApplicationModel_Contacts_IContactList
     Windows::ApplicationModel::Contacts::ContactListSyncManager SyncManager() const;
     bool SupportsServerSearch() const;
     hstring UserDataAccountId() const;
-    event_token ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
-    using ContactChanged_revoker = event_revoker<Windows::ApplicationModel::Contacts::IContactList>;
+    winrt::event_token ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
+    using ContactChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Contacts::IContactList, &impl::abi_t<Windows::ApplicationModel::Contacts::IContactList>::remove_ContactChanged>;
     ContactChanged_revoker ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
-    void ContactChanged(event_token const& value) const;
+    void ContactChanged(winrt::event_token const& value) const noexcept;
     Windows::Foundation::IAsyncAction SaveAsync() const;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactFromRemoteIdAsync(param::hstring const& remoteId) const;
@@ -1300,10 +2026,10 @@ struct consume_Windows_ApplicationModel_Contacts_IContactListSyncManager
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
     Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
-    event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    using SyncStatusChanged_revoker = event_revoker<Windows::ApplicationModel::Contacts::IContactListSyncManager>;
+    winrt::event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
+    using SyncStatusChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Contacts::IContactListSyncManager, &impl::abi_t<Windows::ApplicationModel::Contacts::IContactListSyncManager>::remove_SyncStatusChanged>;
     SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    void SyncStatusChanged(event_token const& token) const;
+    void SyncStatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::Contacts::IContactListSyncManager> { template <typename D> using type = consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>; };
 
@@ -1449,14 +2175,14 @@ struct consume_Windows_ApplicationModel_Contacts_IContactPanel
     void ClosePanel() const;
     Windows::Foundation::IReference<Windows::UI::Color> HeaderColor() const;
     void HeaderColor(optional<Windows::UI::Color> const& value) const;
-    event_token LaunchFullAppRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const;
-    using LaunchFullAppRequested_revoker = event_revoker<Windows::ApplicationModel::Contacts::IContactPanel>;
+    winrt::event_token LaunchFullAppRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const;
+    using LaunchFullAppRequested_revoker = impl::event_revoker<Windows::ApplicationModel::Contacts::IContactPanel, &impl::abi_t<Windows::ApplicationModel::Contacts::IContactPanel>::remove_LaunchFullAppRequested>;
     LaunchFullAppRequested_revoker LaunchFullAppRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const;
-    void LaunchFullAppRequested(event_token const& token) const;
-    event_token Closing(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const;
-    using Closing_revoker = event_revoker<Windows::ApplicationModel::Contacts::IContactPanel>;
+    void LaunchFullAppRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token Closing(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const;
+    using Closing_revoker = impl::event_revoker<Windows::ApplicationModel::Contacts::IContactPanel, &impl::abi_t<Windows::ApplicationModel::Contacts::IContactPanel>::remove_Closing>;
     Closing_revoker Closing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const;
-    void Closing(event_token const& token) const;
+    void Closing(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::Contacts::IContactPanel> { template <typename D> using type = consume_Windows_ApplicationModel_Contacts_IContactPanel<D>; };
 
@@ -1598,10 +2324,10 @@ template <typename D>
 struct consume_Windows_ApplicationModel_Contacts_IContactStore2
 {
     Windows::ApplicationModel::Contacts::ContactChangeTracker ChangeTracker() const;
-    event_token ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
-    using ContactChanged_revoker = event_revoker<Windows::ApplicationModel::Contacts::IContactStore2>;
+    winrt::event_token ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
+    using ContactChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Contacts::IContactStore2, &impl::abi_t<Windows::ApplicationModel::Contacts::IContactStore2>::remove_ContactChanged>;
     ContactChanged_revoker ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const;
-    void ContactChanged(event_token const& value) const;
+    void ContactChanged(winrt::event_token const& value) const noexcept;
     Windows::ApplicationModel::Contacts::AggregateContactManager AggregateContactManager() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> FindContactListsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> GetContactListAsync(param::hstring const& contactListId) const;
@@ -1655,12 +2381,12 @@ template <> struct consume<Windows::ApplicationModel::Contacts::IFullContactCard
 template <typename D>
 struct consume_Windows_ApplicationModel_Contacts_IKnownContactFieldStatics
 {
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring Email() const;
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring PhoneNumber() const;
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring Location() const;
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring InstantMessage() const;
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(param::hstring const& name) const;
-    [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType const& type) const;
+    hstring Email() const;
+    hstring PhoneNumber() const;
+    hstring Location() const;
+    hstring InstantMessage() const;
+    Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(param::hstring const& name) const;
+    hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType const& type) const;
 };
 template <> struct consume<Windows::ApplicationModel::Contacts::IKnownContactFieldStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Contacts_IKnownContactFieldStatics<D>; };
 
@@ -1693,731 +2419,5 @@ struct consume_Windows_ApplicationModel_Contacts_IPinnedContactManagerStatics
     bool IsSupported() const;
 };
 template <> struct consume<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Contacts_IPinnedContactManagerStatics<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IAggregateContactManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindRawContactsAsync(void* contact, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryLinkContactsAsync(void* primaryContact, void* secondaryContact, void** contact) noexcept = 0;
-    virtual HRESULT __stdcall UnlinkRawContactAsync(void* contact, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TrySetPreferredSourceForPictureAsync(void* aggregateContact, void* rawContact, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IAggregateContactManager2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetRemoteIdentificationInformationAsync(HSTRING contactListId, HSTRING remoteSourceId, HSTRING accountId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContact>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Thumbnail(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Fields(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContact2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Notes(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Notes(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Phones(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Emails(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Addresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectedServiceAccounts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImportantDates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataSuppliers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_JobInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignificantOthers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Websites(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderProperties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContact3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContactListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsMe(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AggregateId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_RingToneToken(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RingToneToken(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDisplayPictureManuallySet(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LargeDisplayPicture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SmallDisplayPicture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceDisplayPicture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SourceDisplayPicture(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextToneToken(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextToneToken(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAggregate(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FullName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayNameOverride(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayNameOverride(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Nickname(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Nickname(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SortName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAddress>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StreetAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StreetAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Locality(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Locality(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Region(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Region(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Country(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Country(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PostalCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PostalCode(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnnotationListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContactId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContactId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDisabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderProperties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContactListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContactListId(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderPackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TrySaveAnnotationAsync(void* annotation, void** ppResult) noexcept = 0;
-    virtual HRESULT __stdcall GetAnnotationAsync(HSTRING annotationId, void** annotation) noexcept = 0;
-    virtual HRESULT __stdcall FindAnnotationsByRemoteIdAsync(HSTRING remoteId, void** annotations) noexcept = 0;
-    virtual HRESULT __stdcall FindAnnotationsAsync(void** annotations) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAnnotationAsync(void* annotation, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindContactIdsByEmailAsync(HSTRING emailAddress, void** contactIds) noexcept = 0;
-    virtual HRESULT __stdcall FindContactIdsByPhoneNumberAsync(HSTRING phoneNumber, void** contactIds) noexcept = 0;
-    virtual HRESULT __stdcall FindAnnotationsForContactAsync(void* contact, void** annotations) noexcept = 0;
-    virtual HRESULT __stdcall DisableAnnotationAsync(void* annotation, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAnnotationListAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAnnotationListInAccountAsync(HSTRING userDataAccountId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAnnotationListAsync(HSTRING annotationListId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall FindAnnotationListsAsync(void** lists) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactAnnotationStore2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAnnotationsForContactListAsync(HSTRING contactListId, void** annotations) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Contacts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Contacts::ContactBatchStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetData(void* contact) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactCardOptions2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerSearchContactListIds(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeType(Windows::ApplicationModel::Contacts::ContactChangeType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Contact(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AcceptChanges() noexcept = 0;
-    virtual HRESULT __stdcall AcceptChangesThrough(void* lastChangeToAccept) noexcept = 0;
-    virtual HRESULT __stdcall ReadBatchAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeTracker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Enable() noexcept = 0;
-    virtual HRESULT __stdcall GetChangeReader(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Reset() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangeTracker2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTracking(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangedDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ServiceName(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactDate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Day(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Day(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Month(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Month(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Year(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Year(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactDateKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactEmail>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Address(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Address(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactField>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::ApplicationModel::Contacts::ContactFieldType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Category(Windows::ApplicationModel::Contacts::ContactFieldCategory* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactFieldFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateField_Default(HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateField_Category(HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateField_Custom(HSTRING name, HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactGroup>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Emails(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Locations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstantMessages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomFields(void** value) noexcept = 0;
-    virtual HRESULT __stdcall QueryCustomFields(HSTRING customName, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactInstantMessageField>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UserName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Service(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LaunchUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstantMessage_Default(HSTRING userName, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstantMessage_Category(HSTRING userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstantMessage_All(HSTRING userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, HSTRING service, HSTRING displayText, void* verb, void** field) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactJobInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompanyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompanyName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompanyYomiName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompanyYomiName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Department(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Department(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Manager(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Manager(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Office(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Office(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompanyAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompanyAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Call(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Map(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Post(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoCall(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsHidden(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsHidden(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChangeTracker(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SyncManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportsServerSearch(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall add_ContactChanged(void* value, event_token* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall remove_ContactChanged(event_token value) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetContactFromRemoteIdAsync(HSTRING remoteId, void** contact) noexcept = 0;
-    virtual HRESULT __stdcall GetMeContactAsync(void** meContact) noexcept = 0;
-    virtual HRESULT __stdcall GetContactReader(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContactReaderWithOptions(void* options, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SaveContactAsync(void* contact, void** value) noexcept = 0;
-    virtual HRESULT __stdcall DeleteContactAsync(void* contact, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContactAsync(HSTRING contactId, void** contacts) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactList2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RegisterSyncManagerAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall put_SupportsServerSearch(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_SyncConstraints(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactList3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LimitedWriteOperations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCreateOrUpdateContactAsync(void* contact, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryDeleteContactAsync(HSTRING contactId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncConstraints>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanSyncDescriptions(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanSyncDescriptions(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxHomePhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxHomePhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxMobilePhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxMobilePhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWorkPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxWorkPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOtherPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxOtherPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPagerPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxPagerPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxBusinessFaxPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxBusinessFaxPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxHomeFaxPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxHomeFaxPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxCompanyPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxCompanyPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAssistantPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxAssistantPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxRadioPhoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxRadioPhoneNumbers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPersonalEmailAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxPersonalEmailAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWorkEmailAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxWorkEmailAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOtherEmailAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxOtherEmailAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxHomeAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxHomeAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWorkAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxWorkAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOtherAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxOtherAddresses(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxBirthdayDates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxBirthdayDates(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAnniversaryDates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxAnniversaryDates(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOtherDates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxOtherDates(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOtherRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxOtherRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSpouseRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxSpouseRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPartnerRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxPartnerRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSiblingRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxSiblingRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxParentRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxParentRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxChildRelationships(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxChildRelationships(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxJobInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxJobInfo(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWebsites(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxWebsites(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall SyncAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_SyncStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SyncStatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactListSyncManager2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactLocationField>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnstructuredAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Street(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_City(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Region(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Country(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PostalCode(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateLocation_Default(HSTRING unstructuredAddress, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateLocation_Category(HSTRING unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept = 0;
-    virtual HRESULT __stdcall CreateLocation_All(HSTRING unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode, void** field) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ConvertContactToVCardAsync(void* contact, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ConvertVCardToContactAsync(void* vCard, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerForUser2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowContactCard(void* contact, Windows::Foundation::Rect selection) noexcept = 0;
-    virtual HRESULT __stdcall ShowContactCardWithPlacement(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept = 0;
-    virtual HRESULT __stdcall ShowDelayLoadedContactCard(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** dataLoader) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(void** store) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ConvertContactToVCardAsync(void* contact, void** vCard) noexcept = 0;
-    virtual HRESULT __stdcall ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** vCard) noexcept = 0;
-    virtual HRESULT __stdcall ConvertVCardToContactAsync(void* vCard, void** contact) noexcept = 0;
-    virtual HRESULT __stdcall RequestStoreAsyncWithAccessType(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** store) noexcept = 0;
-    virtual HRESULT __stdcall RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** store) noexcept = 0;
-    virtual HRESULT __stdcall IsShowContactCardSupported(bool* result) noexcept = 0;
-    virtual HRESULT __stdcall ShowContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions) noexcept = 0;
-    virtual HRESULT __stdcall IsShowDelayLoadedContactCardSupported(bool* result) noexcept = 0;
-    virtual HRESULT __stdcall ShowDelayLoadedContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions, void** dataLoader) noexcept = 0;
-    virtual HRESULT __stdcall ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactManagerStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsShowFullContactCardSupportedAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeMiddleNameInSystemDisplayAndSort(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncludeMiddleNameInSystemDisplayAndSort(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactMatchReason>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Field(Windows::ApplicationModel::Contacts::ContactMatchReasonKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Segments(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactName>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FirstName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FirstName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_MiddleName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MiddleName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_YomiGivenName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_YomiGivenName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_YomiFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_YomiFamilyName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_HonorificNameSuffix(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HonorificNameSuffix(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_HonorificNamePrefix(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HonorificNamePrefix(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_YomiDisplayName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ClosePanel() noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderColor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderColor(void* value) noexcept = 0;
-    virtual HRESULT __stdcall add_LaunchFullAppRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LaunchFullAppRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Closing(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Closing(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPhone>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Number(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Number(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CommitButtonText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CommitButtonText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredFields(void** value) noexcept = 0;
-    virtual HRESULT __stdcall PickSingleContactAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall PickMultipleContactsAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredFieldsWithContactFieldType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall PickContactAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall PickContactsAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPicker3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactPickerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateForUser(void* user, void** result) noexcept = 0;
-    virtual HRESULT __stdcall IsSupportedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextSearch(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContactListIds(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeContactsFromHiddenLists(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncludeContactsFromHiddenLists(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnnotationListIds(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithText(HSTRING text, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTextAndFields(HSTRING text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactQueryTextSearch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadBatchAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetMatchingPropertiesWithMatchReason(void* contact, void** ppRetVal) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactSignificantOther>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactSignificantOther2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindContactsAsync(void** contacts) noexcept = 0;
-    virtual HRESULT __stdcall FindContactsWithSearchTextAsync(HSTRING searchText, void** contacts) noexcept = 0;
-    virtual HRESULT __stdcall GetContactAsync(HSTRING contactId, void** contacts) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeTracker(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_ContactChanged(void* value, event_token* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall remove_ContactChanged(event_token value) noexcept = 0;
-    virtual HRESULT __stdcall get_AggregateContactManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall FindContactListsAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContactListAsync(HSTRING contactListId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateContactListAsync(HSTRING displayName, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetMeContactAsync(void** meContact) noexcept = 0;
-    virtual HRESULT __stdcall GetContactReader(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContactReaderWithOptions(void* options, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactStore3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactWebsite>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IContactWebsite2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RawValue(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RawValue(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IFullContactCardOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Email(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhoneNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Location(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstantMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ConvertNameToType(HSTRING name, Windows::ApplicationModel::Contacts::ContactFieldType* type) noexcept = 0;
-    virtual HRESULT __stdcall ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type, HSTRING* name) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContactIds(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** user) noexcept = 0;
-    virtual HRESULT __stdcall IsPinSurfaceSupported(Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsContactPinned(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall RequestPinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPinContactsAsync(void* contacts, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestUnpinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SignalContactActivity(void* contact) noexcept = 0;
-    virtual HRESULT __stdcall GetPinnedContactIdsAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-    virtual HRESULT __stdcall IsSupported(bool* result) noexcept = 0;
-};};
 
 }

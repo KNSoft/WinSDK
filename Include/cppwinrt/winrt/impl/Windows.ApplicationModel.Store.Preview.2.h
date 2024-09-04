@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -20,6 +20,13 @@ namespace winrt::impl {
 }
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Store::Preview {
+
+struct WINRT_EBO DeliveryOptimizationSettings :
+    Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings
+{
+    DeliveryOptimizationSettings(std::nullptr_t) noexcept {}
+    static Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings GetCurrentSettings();
+};
 
 struct StoreConfiguration
 {
@@ -47,6 +54,11 @@ struct StoreConfiguration
     static hstring GetEnterpriseStoreWebAccountIdForUser(Windows::System::User const& user);
     static bool ShouldRestrictToEnterpriseStoreOnly();
     static bool ShouldRestrictToEnterpriseStoreOnlyForUser(Windows::System::User const& user);
+    static bool IsPinToDesktopSupported();
+    static bool IsPinToTaskbarSupported();
+    static bool IsPinToStartSupported();
+    static void PinToDesktop(param::hstring const& appPackageFamilyName);
+    static void PinToDesktopForUser(Windows::System::User const& user, param::hstring const& appPackageFamilyName);
 };
 
 struct WINRT_EBO StoreHardwareManufacturerInfo :

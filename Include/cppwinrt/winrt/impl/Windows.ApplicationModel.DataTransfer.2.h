@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -20,6 +20,8 @@ struct DataProviderHandler : Windows::Foundation::IUnknown
     template <typename L> DataProviderHandler(L lambda);
     template <typename F> DataProviderHandler(F* function);
     template <typename O, typename M> DataProviderHandler(O* object, M method);
+    template <typename O, typename M> DataProviderHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DataProviderHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::DataTransfer::DataProviderRequest const& request) const;
 };
 
@@ -29,6 +31,8 @@ struct ShareProviderHandler : Windows::Foundation::IUnknown
     template <typename L> ShareProviderHandler(L lambda);
     template <typename F> ShareProviderHandler(F* function);
     template <typename O, typename M> ShareProviderHandler(O* object, M method);
+    template <typename O, typename M> ShareProviderHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ShareProviderHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::DataTransfer::ShareProviderOperation const& operation) const;
 };
 
@@ -47,10 +51,54 @@ struct Clipboard
     static void SetContent(Windows::ApplicationModel::DataTransfer::DataPackage const& content);
     static void Flush();
     static void Clear();
-    static event_token ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler);
-    using ContentChanged_revoker = factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics>;
-    static ContentChanged_revoker ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler);
-    static void ContentChanged(event_token const& token);
+    static winrt::event_token ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using ContentChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged>;
+    static ContentChanged_revoker ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void ContentChanged(winrt::event_token const& token);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> GetHistoryItemsAsync();
+    static bool ClearHistory();
+    static bool DeleteItemFromHistory(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item);
+    static Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus SetHistoryItemAsContent(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item);
+    static bool IsHistoryEnabled();
+    static bool IsRoamingEnabled();
+    static bool SetContentWithOptions(Windows::ApplicationModel::DataTransfer::DataPackage const& content, Windows::ApplicationModel::DataTransfer::ClipboardContentOptions const& options);
+    static winrt::event_token HistoryChanged(Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler);
+    using HistoryChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics2, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics2>::remove_HistoryChanged>;
+    static HistoryChanged_revoker HistoryChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler);
+    static void HistoryChanged(winrt::event_token const& token);
+    static winrt::event_token RoamingEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using RoamingEnabledChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics2, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics2>::remove_RoamingEnabledChanged>;
+    static RoamingEnabledChanged_revoker RoamingEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void RoamingEnabledChanged(winrt::event_token const& token);
+    static winrt::event_token HistoryEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using HistoryEnabledChanged_revoker = impl::factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics2, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics2>::remove_HistoryEnabledChanged>;
+    static HistoryEnabledChanged_revoker HistoryEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void HistoryEnabledChanged(winrt::event_token const& token);
+};
+
+struct WINRT_EBO ClipboardContentOptions :
+    Windows::ApplicationModel::DataTransfer::IClipboardContentOptions
+{
+    ClipboardContentOptions(std::nullptr_t) noexcept {}
+    ClipboardContentOptions();
+};
+
+struct WINRT_EBO ClipboardHistoryChangedEventArgs :
+    Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs
+{
+    ClipboardHistoryChangedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ClipboardHistoryItem :
+    Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem
+{
+    ClipboardHistoryItem(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ClipboardHistoryItemsResult :
+    Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult
+{
+    ClipboardHistoryItemsResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO DataPackage :
@@ -70,7 +118,7 @@ struct WINRT_EBO DataPackagePropertySet :
 
 struct WINRT_EBO DataPackagePropertySetView :
     Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView,
-    impl::require<DataPackagePropertySetView, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4>
+    impl::require<DataPackagePropertySetView, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>
 {
     DataPackagePropertySetView(std::nullptr_t) noexcept {}
 };
@@ -187,7 +235,7 @@ struct StandardDataFormats
 {
     StandardDataFormats() = delete;
     static hstring Text();
-    [[deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")]] static hstring Uri();
+    static hstring Uri();
     static hstring Html();
     static hstring Rtf();
     static hstring Bitmap();

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -26,6 +26,13 @@ struct WINRT_EBO IAppInfo :
     impl::consume_t<IAppInfo>
 {
     IAppInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppInstallerInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppInstallerInfo>
+{
+    IAppInstallerInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IAppInstance :
@@ -77,6 +84,20 @@ struct WINRT_EBO ILeavingBackgroundEventArgs :
     ILeavingBackgroundEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ILimitedAccessFeatureRequestResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ILimitedAccessFeatureRequestResult>
+{
+    ILimitedAccessFeatureRequestResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ILimitedAccessFeaturesStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ILimitedAccessFeaturesStatics>
+{
+    ILimitedAccessFeaturesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IPackage :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPackage>
@@ -110,6 +131,13 @@ struct WINRT_EBO IPackage5 :
     impl::consume_t<IPackage5>
 {
     IPackage5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IPackage6 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IPackage6>
+{
+    IPackage6(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IPackageCatalog :
@@ -257,6 +285,13 @@ struct WINRT_EBO IPackageUninstallingEventArgs :
     impl::consume_t<IPackageUninstallingEventArgs>
 {
     IPackageUninstallingEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IPackageUpdateAvailabilityResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IPackageUpdateAvailabilityResult>
+{
+    IPackageUpdateAvailabilityResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IPackageUpdatingEventArgs :

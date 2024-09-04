@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -41,6 +41,7 @@ struct IMarkupExtensionFactory;
 struct IMarkupExtensionOverrides;
 struct IXamlBinaryWriter;
 struct IXamlBinaryWriterStatics;
+struct IXamlBindScopeDiagnostics;
 struct IXamlBindingHelper;
 struct IXamlBindingHelperStatics;
 struct IXamlMarkupHelper;
@@ -50,6 +51,7 @@ struct IXamlMetadataProvider;
 struct IXamlReader;
 struct IXamlReaderStatics;
 struct IXamlType;
+struct IXamlType2;
 struct MarkupExtension;
 struct XamlBinaryWriter;
 struct XamlBindingHelper;
@@ -70,6 +72,7 @@ template <> struct category<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{
 template <> struct category<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ using type = interface_category; };
@@ -79,6 +82,7 @@ template <> struct category<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ u
 template <> struct category<Windows::UI::Xaml::Markup::IXamlReader>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::IXamlType>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::Markup::IXamlType2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::Markup::MarkupExtension>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::Markup::XamlBinaryWriter>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::Markup::XamlBindingHelper>{ using type = class_category; };
@@ -94,6 +98,7 @@ template <> struct name<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{ sta
 template <> struct name<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IMarkupExtensionOverrides" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlBinaryWriter" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlBinaryWriterStatics" }; };
+template <> struct name<Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlBindingHelper" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlBindingHelperStatics" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlMarkupHelper" }; };
@@ -103,6 +108,7 @@ template <> struct name<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ stati
 template <> struct name<Windows::UI::Xaml::Markup::IXamlReader>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlReader" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlReaderStatics" }; };
 template <> struct name<Windows::UI::Xaml::Markup::IXamlType>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlType" }; };
+template <> struct name<Windows::UI::Xaml::Markup::IXamlType2>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.IXamlType2" }; };
 template <> struct name<Windows::UI::Xaml::Markup::MarkupExtension>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.MarkupExtension" }; };
 template <> struct name<Windows::UI::Xaml::Markup::XamlBinaryWriter>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.XamlBinaryWriter" }; };
 template <> struct name<Windows::UI::Xaml::Markup::XamlBindingHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.XamlBindingHelper" }; };
@@ -110,28 +116,170 @@ template <> struct name<Windows::UI::Xaml::Markup::XamlMarkupHelper>{ static con
 template <> struct name<Windows::UI::Xaml::Markup::XamlReader>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.XamlReader" }; };
 template <> struct name<Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation" }; };
 template <> struct name<Windows::UI::Xaml::Markup::XmlnsDefinition>{ static constexpr auto & value{ L"Windows.UI.Xaml.Markup.XmlnsDefinition" }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IComponentConnector>{ static constexpr GUID value{ 0xF6790987,0xE6E5,0x47F2,{ 0x92,0xC6,0xEC,0xCC,0xE4,0xBA,0x15,0x9A } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IComponentConnector2>{ static constexpr GUID value{ 0xDC8F368B,0xECCC,0x498E,{ 0xB1,0x39,0x91,0x14,0x22,0x54,0xD7,0xAE } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IDataTemplateComponent>{ static constexpr GUID value{ 0x08429DC8,0x8AB0,0x4747,{ 0xAA,0x9A,0xFE,0xAD,0xFC,0x8D,0xA8,0xE1 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IMarkupExtension>{ static constexpr GUID value{ 0x1EE3416D,0x562B,0x486E,{ 0x9E,0xE5,0x0F,0x0C,0xBC,0xC8,0x04,0x8C } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{ static constexpr GUID value{ 0x65329C05,0xFB5A,0x4567,{ 0x9D,0x55,0x5C,0xDF,0xBA,0xDA,0x27,0x39 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ static constexpr GUID value{ 0x393779BF,0xB9C0,0x4FFB,{ 0xA5,0x7F,0x58,0xE7,0x35,0x6E,0x42,0x5F } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ static constexpr GUID value{ 0x829D2AD3,0x620A,0x46F6,{ 0x84,0x5D,0x43,0x6A,0x05,0x92,0x71,0x00 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ static constexpr GUID value{ 0x0D8ED07A,0x9B82,0x4AA8,{ 0xB6,0x8B,0x02,0x6F,0x2D,0xE1,0xCC,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ static constexpr GUID value{ 0xFAA6FB06,0x8AB9,0x4EF7,{ 0x8A,0xE7,0xFB,0xD3,0x0B,0xBF,0xD0,0x6D } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ static constexpr GUID value{ 0xF65CFB71,0xC80C,0x4FFA,{ 0x86,0xEE,0x55,0x87,0x54,0xEE,0x33,0x6D } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ static constexpr GUID value{ 0xD0E6673C,0x5342,0x44EF,{ 0x85,0xA7,0xED,0x32,0x7A,0x73,0x9D,0x9A } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>{ static constexpr GUID value{ 0xC9BC3725,0xF34F,0x445C,{ 0x81,0xA2,0x6B,0x72,0xA5,0xE8,0xF0,0x72 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlMember>{ static constexpr GUID value{ 0xC541F58C,0x43A9,0x4216,{ 0xB7,0x18,0xE0,0xB1,0x1B,0x14,0xE9,0x3E } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ static constexpr GUID value{ 0xB3765D69,0x68A5,0x4B32,{ 0x88,0x61,0xFD,0xB9,0x0C,0x1F,0x58,0x36 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlReader>{ static constexpr GUID value{ 0x24374CF1,0xCCEB,0x48BF,{ 0xA5,0x14,0x41,0xB0,0x18,0x6F,0x84,0xC2 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ static constexpr GUID value{ 0x9891C6BD,0x534F,0x4955,{ 0xB8,0x5A,0x8A,0x8D,0xC0,0xDC,0xA6,0x02 } }; };
-template <> struct guid<Windows::UI::Xaml::Markup::IXamlType>{ static constexpr GUID value{ 0x7920EAB1,0xA2E5,0x479A,{ 0xBD,0x50,0x6C,0xEF,0x3C,0x0B,0x49,0x70 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IComponentConnector>{ static constexpr guid value{ 0xF6790987,0xE6E5,0x47F2,{ 0x92,0xC6,0xEC,0xCC,0xE4,0xBA,0x15,0x9A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IComponentConnector2>{ static constexpr guid value{ 0xDC8F368B,0xECCC,0x498E,{ 0xB1,0x39,0x91,0x14,0x22,0x54,0xD7,0xAE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IDataTemplateComponent>{ static constexpr guid value{ 0x08429DC8,0x8AB0,0x4747,{ 0xAA,0x9A,0xFE,0xAD,0xFC,0x8D,0xA8,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IMarkupExtension>{ static constexpr guid value{ 0x1EE3416D,0x562B,0x486E,{ 0x9E,0xE5,0x0F,0x0C,0xBC,0xC8,0x04,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{ static constexpr guid value{ 0x65329C05,0xFB5A,0x4567,{ 0x9D,0x55,0x5C,0xDF,0xBA,0xDA,0x27,0x39 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ static constexpr guid value{ 0x393779BF,0xB9C0,0x4FFB,{ 0xA5,0x7F,0x58,0xE7,0x35,0x6E,0x42,0x5F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ static constexpr guid value{ 0x829D2AD3,0x620A,0x46F6,{ 0x84,0x5D,0x43,0x6A,0x05,0x92,0x71,0x00 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ static constexpr guid value{ 0x0D8ED07A,0x9B82,0x4AA8,{ 0xB6,0x8B,0x02,0x6F,0x2D,0xE1,0xCC,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics>{ static constexpr guid value{ 0xF264A29D,0xBDED,0x43AA,{ 0xA5,0xB0,0x26,0xAC,0x21,0xA8,0x1E,0xB8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ static constexpr guid value{ 0xFAA6FB06,0x8AB9,0x4EF7,{ 0x8A,0xE7,0xFB,0xD3,0x0B,0xBF,0xD0,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ static constexpr guid value{ 0xF65CFB71,0xC80C,0x4FFA,{ 0x86,0xEE,0x55,0x87,0x54,0xEE,0x33,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ static constexpr guid value{ 0xD0E6673C,0x5342,0x44EF,{ 0x85,0xA7,0xED,0x32,0x7A,0x73,0x9D,0x9A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>{ static constexpr guid value{ 0xC9BC3725,0xF34F,0x445C,{ 0x81,0xA2,0x6B,0x72,0xA5,0xE8,0xF0,0x72 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlMember>{ static constexpr guid value{ 0xC541F58C,0x43A9,0x4216,{ 0xB7,0x18,0xE0,0xB1,0x1B,0x14,0xE9,0x3E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ static constexpr guid value{ 0xB3765D69,0x68A5,0x4B32,{ 0x88,0x61,0xFD,0xB9,0x0C,0x1F,0x58,0x36 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlReader>{ static constexpr guid value{ 0x24374CF1,0xCCEB,0x48BF,{ 0xA5,0x14,0x41,0xB0,0x18,0x6F,0x84,0xC2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ static constexpr guid value{ 0x9891C6BD,0x534F,0x4955,{ 0xB8,0x5A,0x8A,0x8D,0xC0,0xDC,0xA6,0x02 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlType>{ static constexpr guid value{ 0x7920EAB1,0xA2E5,0x479A,{ 0xBD,0x50,0x6C,0xEF,0x3C,0x0B,0x49,0x70 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Markup::IXamlType2>{ static constexpr guid value{ 0x9F0C6E3B,0x433B,0x56AD,{ 0x8F,0x69,0x78,0xA4,0xDD,0x3E,0x64,0xF9 } }; };
 template <> struct default_interface<Windows::UI::Xaml::Markup::MarkupExtension>{ using type = Windows::UI::Xaml::Markup::IMarkupExtension; };
 template <> struct default_interface<Windows::UI::Xaml::Markup::XamlBinaryWriter>{ using type = Windows::UI::Xaml::Markup::IXamlBinaryWriter; };
 template <> struct default_interface<Windows::UI::Xaml::Markup::XamlBindingHelper>{ using type = Windows::UI::Xaml::Markup::IXamlBindingHelper; };
 template <> struct default_interface<Windows::UI::Xaml::Markup::XamlMarkupHelper>{ using type = Windows::UI::Xaml::Markup::IXamlMarkupHelper; };
 template <> struct default_interface<Windows::UI::Xaml::Markup::XamlReader>{ using type = Windows::UI::Xaml::Markup::IXamlReader; };
+
+template <> struct abi<Windows::UI::Xaml::Markup::IComponentConnector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Connect(int32_t connectionId, void* target) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IComponentConnector2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetBindingConnector(int32_t connectionId, void* target, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IDataTemplateComponent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Recycle() noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessBindings(void* item, int32_t itemIndex, int32_t phase, int32_t* nextPhase) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtension>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProvideValue(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Write(void* inputStreams, void* outputStreams, void* xamlMetadataProvider, struct struct_Windows_UI_Xaml_Markup_XamlBinaryWriterErrorInformation* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Disable(int32_t lineNumber, int32_t columnNumber) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataTemplateComponentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDataTemplateComponent(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDataTemplateComponent(void* element, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SuspendRendering(void* target) noexcept = 0;
+    virtual int32_t WINRT_CALL ResumeRendering(void* target) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertValue(struct struct_Windows_UI_Xaml_Interop_TypeName type, void* value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromString(void* dependencyObject, void* propertyToSet, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromBoolean(void* dependencyObject, void* propertyToSet, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromChar16(void* dependencyObject, void* propertyToSet, char16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromDateTime(void* dependencyObject, void* propertyToSet, Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromDouble(void* dependencyObject, void* propertyToSet, double value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromInt32(void* dependencyObject, void* propertyToSet, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromUInt32(void* dependencyObject, void* propertyToSet, uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromInt64(void* dependencyObject, void* propertyToSet, int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromUInt64(void* dependencyObject, void* propertyToSet, uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromSingle(void* dependencyObject, void* propertyToSet, float value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromPoint(void* dependencyObject, void* propertyToSet, Windows::Foundation::Point value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromRect(void* dependencyObject, void* propertyToSet, Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromSize(void* dependencyObject, void* propertyToSet, Windows::Foundation::Size value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromTimeSpan(void* dependencyObject, void* propertyToSet, Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromByte(void* dependencyObject, void* propertyToSet, uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromUri(void* dependencyObject, void* propertyToSet, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyFromObject(void* dependencyObject, void* propertyToSet, void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL UnloadObject(void* element) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlMember>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAttachable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDependencyProperty(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsReadOnly(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetValue(void* instance, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetValue(void* instance, void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetXamlType(struct struct_Windows_UI_Xaml_Interop_TypeName type, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetXamlTypeByFullName(void* fullName, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetXmlnsDefinitions(uint32_t* __resultSize, struct struct_Windows_UI_Xaml_Markup_XmlnsDefinition** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlReader>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Load(void* xaml, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadWithInitialTemplateValidation(void* xaml, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlType>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaseType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FullName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsArray(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCollection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsConstructible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDictionary(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsMarkupExtension(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsBindable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnderlyingType(struct struct_Windows_UI_Xaml_Interop_TypeName* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ActivateInstance(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromString(void* value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMember(void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL AddToVector(void* instance, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddToMap(void* instance, void* key, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RunInitializer() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Markup::IXamlType2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoxedType(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Markup_IComponentConnector
@@ -164,7 +312,7 @@ template <> struct consume<Windows::UI::Xaml::Markup::IMarkupExtension> { templa
 template <typename D>
 struct consume_Windows_UI_Xaml_Markup_IMarkupExtensionFactory
 {
-    Windows::UI::Xaml::Markup::MarkupExtension CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Markup::MarkupExtension CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Markup::IMarkupExtensionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Markup_IMarkupExtensionFactory<D>; };
 
@@ -187,6 +335,13 @@ struct consume_Windows_UI_Xaml_Markup_IXamlBinaryWriterStatics
     Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation Write(param::vector<Windows::Storage::Streams::IRandomAccessStream> const& inputStreams, param::vector<Windows::Storage::Streams::IRandomAccessStream> const& outputStreams, Windows::UI::Xaml::Markup::IXamlMetadataProvider const& xamlMetadataProvider) const;
 };
 template <> struct consume<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics> { template <typename D> using type = consume_Windows_UI_Xaml_Markup_IXamlBinaryWriterStatics<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_Markup_IXamlBindScopeDiagnostics
+{
+    void Disable(int32_t lineNumber, int32_t columnNumber) const;
+};
+template <> struct consume<Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics> { template <typename D> using type = consume_Windows_UI_Xaml_Markup_IXamlBindScopeDiagnostics<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Markup_IXamlBindingHelper
@@ -297,6 +452,13 @@ struct consume_Windows_UI_Xaml_Markup_IXamlType
 };
 template <> struct consume<Windows::UI::Xaml::Markup::IXamlType> { template <typename D> using type = consume_Windows_UI_Xaml_Markup_IXamlType<D>; };
 
+template <typename D>
+struct consume_Windows_UI_Xaml_Markup_IXamlType2
+{
+    Windows::UI::Xaml::Markup::IXamlType BoxedType() const;
+};
+template <> struct consume<Windows::UI::Xaml::Markup::IXamlType2> { template <typename D> using type = consume_Windows_UI_Xaml_Markup_IXamlType2<D>; };
+
 struct struct_Windows_UI_Xaml_Markup_XamlBinaryWriterErrorInformation
 {
     uint32_t InputStreamIndex;
@@ -308,140 +470,10 @@ template <> struct abi<Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformati
 
 struct struct_Windows_UI_Xaml_Markup_XmlnsDefinition
 {
-    HSTRING XmlNamespace;
-    HSTRING Namespace;
+    void* XmlNamespace;
+    void* Namespace;
 };
 template <> struct abi<Windows::UI::Xaml::Markup::XmlnsDefinition>{ using type = struct_Windows_UI_Xaml_Markup_XmlnsDefinition; };
 
-
-template <> struct abi<Windows::UI::Xaml::Markup::IComponentConnector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Connect(int32_t connectionId, void* target) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IComponentConnector2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetBindingConnector(int32_t connectionId, void* target, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IDataTemplateComponent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Recycle() noexcept = 0;
-    virtual HRESULT __stdcall ProcessBindings(void* item, int32_t itemIndex, int32_t phase, int32_t* nextPhase) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtension>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtensionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IMarkupExtensionOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProvideValue(void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlBinaryWriter>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Write(void* inputStreams, void* outputStreams, void* xamlMetadataProvider, struct struct_Windows_UI_Xaml_Markup_XamlBinaryWriterErrorInformation* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlBindingHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataTemplateComponentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDataTemplateComponent(void* element, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetDataTemplateComponent(void* element, void* value) noexcept = 0;
-    virtual HRESULT __stdcall SuspendRendering(void* target) noexcept = 0;
-    virtual HRESULT __stdcall ResumeRendering(void* target) noexcept = 0;
-    virtual HRESULT __stdcall ConvertValue(struct struct_Windows_UI_Xaml_Interop_TypeName type, void* value, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromString(void* dependencyObject, void* propertyToSet, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromBoolean(void* dependencyObject, void* propertyToSet, bool value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromChar16(void* dependencyObject, void* propertyToSet, char16_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromDateTime(void* dependencyObject, void* propertyToSet, Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromDouble(void* dependencyObject, void* propertyToSet, double value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromInt32(void* dependencyObject, void* propertyToSet, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromUInt32(void* dependencyObject, void* propertyToSet, uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromInt64(void* dependencyObject, void* propertyToSet, int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromUInt64(void* dependencyObject, void* propertyToSet, uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromSingle(void* dependencyObject, void* propertyToSet, float value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromPoint(void* dependencyObject, void* propertyToSet, Windows::Foundation::Point value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromRect(void* dependencyObject, void* propertyToSet, Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromSize(void* dependencyObject, void* propertyToSet, Windows::Foundation::Size value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromTimeSpan(void* dependencyObject, void* propertyToSet, Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromByte(void* dependencyObject, void* propertyToSet, uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromUri(void* dependencyObject, void* propertyToSet, void* value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyFromObject(void* dependencyObject, void* propertyToSet, void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlMarkupHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall UnloadObject(void* element) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlMember>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAttachable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDependencyProperty(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsReadOnly(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetValue(void* instance, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetValue(void* instance, void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlMetadataProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetXamlType(struct struct_Windows_UI_Xaml_Interop_TypeName type, void** xamlType) noexcept = 0;
-    virtual HRESULT __stdcall GetXamlTypeByFullName(HSTRING fullName, void** xamlType) noexcept = 0;
-    virtual HRESULT __stdcall GetXmlnsDefinitions(uint32_t* __definitionsSize, struct struct_Windows_UI_Xaml_Markup_XmlnsDefinition** definitions) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlReader>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlReaderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Load(HSTRING xaml, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall LoadWithInitialTemplateValidation(HSTRING xaml, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Markup::IXamlType>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaseType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FullName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsArray(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCollection(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsConstructible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDictionary(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsMarkupExtension(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsBindable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnderlyingType(struct struct_Windows_UI_Xaml_Interop_TypeName* value) noexcept = 0;
-    virtual HRESULT __stdcall ActivateInstance(void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromString(HSTRING value, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall GetMember(HSTRING name, void** xamlMember) noexcept = 0;
-    virtual HRESULT __stdcall AddToVector(void* instance, void* value) noexcept = 0;
-    virtual HRESULT __stdcall AddToMap(void* instance, void* key, void* value) noexcept = 0;
-    virtual HRESULT __stdcall RunInitializer() noexcept = 0;
-};};
 
 }

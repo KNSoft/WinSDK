@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.Imaging.2.h"
@@ -31,38 +31,34 @@ template <typename D> Windows::ApplicationModel::Preview::InkWorkspace::InkWorks
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManager> : produce_base<D, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManager>
 {
-    HRESULT __stdcall SetThumbnailAsync(void* bitmap, void** action) noexcept final
+    int32_t WINRT_CALL SetThumbnailAsync(void* bitmap, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Graphics::Imaging::SoftwareBitmap const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetThumbnailAsync(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&bitmap)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManagerStatics> : produce_base<D, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManagerStatics>
 {
-    HRESULT __stdcall GetForCurrentApp(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentApp(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentApp, WINRT_WRAP(Windows::ApplicationModel::Preview::InkWorkspace::InkWorkspaceHostedAppManager));
             *current = detach_from<Windows::ApplicationModel::Preview::InkWorkspace::InkWorkspaceHostedAppManager>(this->shim().GetForCurrentApp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -72,7 +68,7 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Preview::InkWorkspace {
 
 inline Windows::ApplicationModel::Preview::InkWorkspace::InkWorkspaceHostedAppManager InkWorkspaceHostedAppManager::GetForCurrentApp()
 {
-    return get_activation_factory<InkWorkspaceHostedAppManager, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManagerStatics>().GetForCurrentApp();
+    return impl::call_factory<InkWorkspaceHostedAppManager, Windows::ApplicationModel::Preview::InkWorkspace::IInkWorkspaceHostedAppManagerStatics>([&](auto&& f) { return f.GetForCurrentApp(); });
 }
 
 }
@@ -84,5 +80,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Preview::InkWorkspace::
 template<> struct hash<winrt::Windows::ApplicationModel::Preview::InkWorkspace::InkWorkspaceHostedAppManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Preview::InkWorkspace::InkWorkspaceHostedAppManager> {};
 
 }
-
-WINRT_WARNING_POP

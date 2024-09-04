@@ -1494,6 +1494,7 @@ DEFINE_GUID(DXGKMDT_OPM_GET_ACP_AND_CGMSA_SIGNALING,               0x6629a591, 0
 DEFINE_GUID(DXGKMDT_OPM_GET_OUTPUT_ID,                             0x72cb6df3, 0x244f, 0x40ce, 0xb0, 0x9e, 0x20, 0x50, 0x6a, 0xf6, 0x30, 0x2f);
 DEFINE_GUID(DXGKMDT_OPM_GET_DVI_CHARACTERISTICS,                   0xa470b3bb, 0x5dd7, 0x4172, 0x83, 0x9c, 0x3d, 0x37, 0x76, 0xe0, 0xeb, 0xf5);
 DEFINE_GUID(DXGKMDT_OPM_GET_OUTPUT_HARDWARE_PROTECTION_SUPPORT,    0x3b129589, 0x2af8, 0x4ef0, 0x96, 0xa2, 0x70, 0x4a, 0x84, 0x5a, 0x21, 0x8e);
+DEFINE_GUID(DXGKMDT_OPM_GET_CODEC_INFO,                            0x4f374491, 0x8f5f, 0x4445, 0x9d, 0xba, 0x95, 0x58, 0x8f, 0x6b, 0x58, 0xb4);
 DEFINE_GUID(DXGKMDT_OPM_SET_PROTECTION_LEVEL,                      0x9bb9327c, 0x4eb5, 0x4727, 0x9f, 0x00, 0xb4, 0x2b, 0x09, 0x19, 0xc0, 0xda);
 DEFINE_GUID(DXGKMDT_OPM_SET_ACP_AND_CGMSA_SIGNALING,               0x09a631a5, 0xd684, 0x4c60, 0x8e, 0x4d, 0xd3, 0xbb, 0x0f, 0x0b, 0xe3, 0xee);
 DEFINE_GUID(DXGKMDT_OPM_SET_HDCP_SRM,                              0x8b5ef5d1, 0xc30d, 0x44ff, 0x84, 0xa5, 0xea, 0x71, 0xdc, 0xe7, 0x8f, 0x13);
@@ -1952,7 +1953,21 @@ typedef struct _DXGK_NODEMETADATA_FLAGS
         struct
         {
             UINT ContextSchedulingSupported :  1;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+            UINT RingBufferFenceRelease     :  1;
+            UINT SupportTrackedWorkload     :  1;
+            UINT Reserved                   : 13;
+
+            UINT MaxInFlightHwQueueBuffers  : 16;
+
+#else
+
             UINT Reserved                   : 31;
+
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
         };
         UINT32 Value;
     };
@@ -2002,6 +2017,9 @@ typedef struct _DXGK_NODE_PERFDATA
     ULONG           Voltage;                // out: Voltage of the engine in milli volts mV
     ULONG           VoltageMax;             // out: Max voltage levels in milli volts.
     ULONG           VoltageMaxOC;           // out: Max voltage level while overclocked in milli volts.
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    ULONGLONG       MaxTransitionLatency;   // out: Max transition latency to change the frequency in 100 nanoseconds
+#endif
 } DXGK_NODE_PERFDATA;
 
 typedef struct _DXGK_ADAPTER_PERFDATA
@@ -2065,7 +2083,12 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
             UINT FlipOverwriteSupported    : 1;
             UINT SupportContextlessPresent : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+            UINT SupportSurpriseRemoval    : 1;
+            UINT Reserved                  : 26;
+#else
             UINT Reserved                  : 27;
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 #else
             UINT Reserved                  : 29;
 #endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
@@ -2200,7 +2223,13 @@ typedef union _DXGK_MONITORLINKINFO_CAPABILITIES
         UINT Hdr10Plus                  : 1;    // 0x00000200
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
 
-#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+        UINT DolbyVisionLowLatency      : 1;    // 0x00000400
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+        UINT Reserved                   :21;    // 0xFFFFF800
+#elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
         UINT Reserved                   :22;    // 0xFFFFFC00
 #elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
         UINT Reserved                   :25;    // 0xFFFFFF80
@@ -2243,6 +2272,9 @@ typedef enum _DXGK_DISPLAY_DESCRIPTOR_TYPE: BYTE
 {
     DXGK_DDT_INVALID = 0,
     DXGK_DDT_EDID,
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    DXGK_DDT_DISPLAYID,
+#endif
 } DXGK_DISPLAY_DESCRIPTOR_TYPE, *PDXGK_DISPLAY_DESCRIPTOR_TYPE;
 
 #else

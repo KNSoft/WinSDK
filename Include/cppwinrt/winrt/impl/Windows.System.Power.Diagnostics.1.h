@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -8,14 +8,14 @@
 
 WINRT_EXPORT namespace winrt::Windows::System::Power::Diagnostics {
 
-struct WINRT_EBO [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] IBackgroundEnergyDiagnosticsStatics :
+struct WINRT_EBO IBackgroundEnergyDiagnosticsStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IBackgroundEnergyDiagnosticsStatics>
 {
     IBackgroundEnergyDiagnosticsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Background Energy Diagnostics has been deprecated. For more info, see MSDN.")]] IForegroundEnergyDiagnosticsStatics :
+struct WINRT_EBO IForegroundEnergyDiagnosticsStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IForegroundEnergyDiagnosticsStatics>
 {

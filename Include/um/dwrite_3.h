@@ -3561,4 +3561,71 @@ interface DWRITE_DECLARE_INTERFACE("35D0E0B3-9076-4D2E-A016-A91B568A06B4") IDWri
 
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS4
 
+#if NTDDI_VERSION >= NTDDI_WIN10_RS5
+
+/// <summary>
+/// The font source type identifies the mechanism by which a font came to be included in a font set.
+/// </summary>
+enum DWRITE_FONT_SOURCE_TYPE
+{
+    /// <summary>
+    /// The font source is unknown or is not any of the other defined font source types.
+    /// </summary>
+    DWRITE_FONT_SOURCE_TYPE_UNKNOWN,
+
+    /// <summary>
+    /// The font source is a font file, which is installed for all users on the device.
+    /// </summary>
+    DWRITE_FONT_SOURCE_TYPE_PER_MACHINE,
+
+    /// <summary>
+    /// The font source is a font file, which is installed for the current user.
+    /// </summary>
+    DWRITE_FONT_SOURCE_TYPE_PER_USER,
+
+    /// <summary>
+    /// The font source is an APPX package, which includes one or more font files.
+    /// The font source name is the full name of the package.
+    /// </summary>
+    DWRITE_FONT_SOURCE_TYPE_APPX_PACKAGE,
+
+    /// <summary>
+    /// The font source is a font provider for downloadable fonts.
+    /// </summary>
+    DWRITE_FONT_SOURCE_TYPE_REMOTE_FONT_PROVIDER
+};
+
+interface DWRITE_DECLARE_INTERFACE("7C073EF2-A7F4-4045-8C32-8AB8AE640F90") IDWriteFontSet3 : public IDWriteFontSet2
+{
+    /// <summary>
+    /// Gets the font source type of the specified font.
+    /// </summary>
+    /// <param name="listIndex">Zero-based index of the font.</param>
+    STDMETHOD_(DWRITE_FONT_SOURCE_TYPE, GetFontSourceType)(UINT32 fontIndex) PURE;
+
+    /// <summary>
+    /// Gets the length of the font source name for the specified font.
+    /// </summary>
+    /// <param name="listIndex">Zero-based index of the font.</param>
+    STDMETHOD_(UINT32, GetFontSourceNameLength)(UINT32 listIndex) PURE;
+
+    /// <summary>
+    /// Copies the font source name for the specified font to an output array.
+    /// </summary>
+    /// <param name="listIndex">Zero-based index of the font.</param>
+    /// <param name="stringBuffer">Character array that receives the string.</param>
+    /// <param name="stringBufferSize">Size of the array in characters. The size must include space for the terminating
+    /// null character.</param>
+    /// <returns>
+    /// Standard HRESULT error code.
+    /// </returns>
+    STDMETHOD(GetFontSourceName)(
+        UINT32 listIndex, 
+        _Out_writes_z_(stringBufferSize) WCHAR* stringBuffer, 
+        UINT32 stringBufferSize
+        ) PURE;
+};
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS5
+
 #endif // DWRITE_3_H_INCLUDED

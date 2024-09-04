@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,6 +17,8 @@ struct Print3DTaskSourceRequestedHandler : Windows::Foundation::IUnknown
     template <typename L> Print3DTaskSourceRequestedHandler(L lambda);
     template <typename F> Print3DTaskSourceRequestedHandler(F* function);
     template <typename O, typename M> Print3DTaskSourceRequestedHandler(O* object, M method);
+    template <typename O, typename M> Print3DTaskSourceRequestedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> Print3DTaskSourceRequestedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs const& args) const;
 };
 

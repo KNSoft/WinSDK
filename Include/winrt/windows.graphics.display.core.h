@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.display.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -172,6 +180,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode ABI::Windows::Graphics::Display::Core::IHdmiDisplayMode
 
 #endif // ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                namespace Core {
+                    interface IHdmiDisplayMode2;
+                } /* Windows */
+            } /* Graphics */
+        } /* Display */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 ABI::Windows::Graphics::Display::Core::IHdmiDisplayMode2
+
+#endif // ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -470,6 +494,7 @@ namespace ABI {
 
 
 
+
 /*
  *
  * Struct Windows.Graphics.Display.Core.HdmiDisplayColorSpace
@@ -522,6 +547,11 @@ namespace ABI {
                         HdmiDisplayHdrOption_None = 0,
                         HdmiDisplayHdrOption_EotfSdr = 1,
                         HdmiDisplayHdrOption_Eotf2084 = 2,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        
+                        HdmiDisplayHdrOption_DolbyVisionLowLatency = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        
                     };
                     
                 } /* Windows */
@@ -791,6 +821,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMo
 
 /*
  *
+ * Interface Windows.Graphics.Display.Core.IHdmiDisplayMode2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Display.Core.HdmiDisplayMode
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Display_Core_IHdmiDisplayMode2[] = L"Windows.Graphics.Display.Core.IHdmiDisplayMode2";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Display {
+                namespace Core {
+                    /* [object, uuid("07CD4E9F-4B3C-42B8-84E7-895368718AF2"), exclusiveto, contract] */
+                    MIDL_INTERFACE("07CD4E9F-4B3C-42B8-84E7-895368718AF2")
+                    IHdmiDisplayMode2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDolbyVisionLowLatencySupported(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IHdmiDisplayMode2=_uuidof(IHdmiDisplayMode2);
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* Display */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Graphics.Display.Core.HdmiDisplayInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -825,6 +898,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Display.Core.IHdmiDisplayMode ** Default Interface **
+ *    Windows.Graphics.Display.Core.IHdmiDisplayMode2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -862,6 +936,12 @@ typedef interface __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayInforma
 typedef interface __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode;
 
 #endif // ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2;
+
+#endif // ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -1337,6 +1417,7 @@ typedef struct __x_ABI_CWindows_CGraphics_CDisplay_CCore_CHdmiDisplayHdr2086Meta
 
 
 
+
 /*
  *
  * Struct Windows.Graphics.Display.Core.HdmiDisplayColorSpace
@@ -1374,6 +1455,11 @@ enum __x_ABI_CWindows_CGraphics_CDisplay_CCore_CHdmiDisplayHdrOption
     HdmiDisplayHdrOption_None = 0,
     HdmiDisplayHdrOption_EotfSdr = 1,
     HdmiDisplayHdrOption_Eotf2084 = 2,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    HdmiDisplayHdrOption_DolbyVisionLowLatency = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
@@ -1836,6 +1922,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMo
 
 /*
  *
+ * Interface Windows.Graphics.Display.Core.IHdmiDisplayMode2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Display.Core.HdmiDisplayMode
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Display_Core_IHdmiDisplayMode2[] = L"Windows.Graphics.Display.Core.IHdmiDisplayMode2";
+/* [object, uuid("07CD4E9F-4B3C-42B8-84E7-895368718AF2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsDolbyVisionLowLatencySupported )(
+        __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_get_IsDolbyVisionLowLatencySupported(This,value) \
+    ( (This)->lpVtbl->get_IsDolbyVisionLowLatencySupported(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDisplay_CCore_CIHdmiDisplayMode2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Graphics.Display.Core.HdmiDisplayInformation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -1870,6 +2049,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Display.Core.IHdmiDisplayMode ** Default Interface **
+ *    Windows.Graphics.Display.Core.IHdmiDisplayMode2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

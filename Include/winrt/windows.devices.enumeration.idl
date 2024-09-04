@@ -126,6 +126,8 @@ namespace Windows
 
             interface IDeviceInformationPairingStatics;
 
+            interface IDeviceInformationPairingStatics2;
+
             interface IDeviceInformationStatics;
 
             interface IDeviceInformationStatics2;
@@ -312,7 +314,9 @@ namespace Windows
                 DeviceInterfaceClass         = 4,
                 AssociationEndpoint          = 5,
                 AssociationEndpointContainer = 6,
-                AssociationEndpointService   = 7
+                AssociationEndpointService   = 7,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                DevicePanel                  = 8
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -536,6 +540,14 @@ namespace Windows
             interface IDeviceInformationPairingStatics : IInspectable
             {
                 HRESULT TryRegisterForAllInboundPairingRequests([in] Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, [out] [retval] boolean* result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Devices.Enumeration.DeviceInformationPairing)]
+            [uuid(04DE5372-B7B7-476B-A74F-C5836A704D98)]
+            interface IDeviceInformationPairingStatics2 : IInspectable
+            {
+                HRESULT TryRegisterForAllInboundPairingRequestsWithProtectionLevel([in] Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, [in] Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, [out] [retval] boolean* result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -808,6 +820,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Enumeration.IDeviceInformationPairingStatics, Windows.Foundation.UniversalApiContract, 2.0)]
+            [static(Windows.Devices.Enumeration.IDeviceInformationPairingStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass DeviceInformationPairing
             {

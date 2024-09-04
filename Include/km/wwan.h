@@ -290,6 +290,8 @@ typedef enum _WWAN_ASYNC_GETSET_TYPE {
     WwanAsyncUiccSetReset,
     WwanAsyncSetDeviceReset,
     WwanAsyncGetCellInfo,
+    WwanAsyncGetMPDP,
+    WwanAsyncSetMPDP,
     WWAN_ASYNC_GETSET_TYPE_MAX
 } WWAN_ASYNC_GETSET_TYPE, *PWWAN_ASYNC_GETSET_TYPE;
 
@@ -874,7 +876,10 @@ typedef struct _WWAN_PACKET_SERVICE {
     ULONG           CurrentDataClass;
 } WWAN_PACKET_SERVICE, *PWWAN_PACKET_SERVICE;
 
-#define WWAN_RSSI_UNKNOWN               99
+// for the following constants, refer to https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/wwan/ns-wwan-_wwan_signal_state
+#define WWAN_RSSI_VALID_MIN                 0
+#define WWAN_RSSI_VALID_MAX                 31
+#define WWAN_RSSI_UNKNOWN                   99
 #define WWAN_ERROR_RATE_UNKNOWN             99
 
 typedef struct _WWAN_SIGNAL_STATE {

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.automation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -467,6 +479,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationElementIdentifiersStatics8;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 ABI::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 namespace ABI {
@@ -594,6 +622,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics7
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    interface IAutomationPropertiesStatics8;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics8
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
@@ -2129,6 +2173,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3361,12 +3407,12 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationAnnotation * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationAnnotation * * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE CreateWithElementParameter(
                             /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationAnnotation * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationAnnotation * * value
                             ) = 0;
                         
                     };
@@ -3865,6 +3911,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElemen
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationElementIdentifiers
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics8[] = L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    /* [object, uuid("8517B060-806C-5DC5-BC41-891BB5A47ADF"), exclusiveto, contract] */
+                    MIDL_INTERFACE("8517B060-806C-5DC5-BC41-891BB5A47ADF")
+                    IAutomationElementIdentifiersStatics8 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDialogProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAutomationElementIdentifiersStatics8=_uuidof(IAutomationElementIdentifiersStatics8);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.IAutomationProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3933,7 +4022,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAcceleratorKey(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetAcceleratorKey(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3944,7 +4033,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAccessKey(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetAccessKey(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3955,7 +4044,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAutomationId(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetAutomationId(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3966,7 +4055,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetHelpText(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetHelpText(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3977,7 +4066,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIsRequiredForForm(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetIsRequiredForForm(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3988,7 +4077,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetItemStatus(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetItemStatus(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -3999,7 +4088,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetItemType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetItemType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4010,7 +4099,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLabeledBy(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLabeledBy(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4021,7 +4110,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetName(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetName(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4032,7 +4121,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLiveSetting(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLiveSetting(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4083,7 +4172,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAccessibilityView(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AccessibilityView * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AccessibilityView * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetAccessibilityView(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4094,7 +4183,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetControlledPeers(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CUIElement * * value
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CUIElement * * result
                             ) = 0;
                         
                     };
@@ -4141,7 +4230,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPositionInSet(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetPositionInSet(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4152,7 +4241,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetSizeOfSet(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetSizeOfSet(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4163,7 +4252,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLevel(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLevel(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4174,7 +4263,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAnnotations(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CAutomationAnnotation * * value
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CAutomationAnnotation * * result
                             ) = 0;
                         
                     };
@@ -4221,7 +4310,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLandmarkType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLandmarkType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4232,7 +4321,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLocalizedLandmarkType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLocalizedLandmarkType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4283,7 +4372,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIsPeripheral(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetIsPeripheral(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4294,7 +4383,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIsDataValidForForm(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetIsDataValidForForm(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4305,7 +4394,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetFullDescription(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetFullDescription(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4316,7 +4405,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetLocalizedControlType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetLocalizedControlType(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4327,21 +4416,21 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetDescribedBy(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlowsToProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetFlowsTo(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
                             ) = 0;
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlowsFromProperty(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetFlowsFrom(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
                             ) = 0;
                         
                     };
@@ -4388,7 +4477,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCulture(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetCulture(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4439,7 +4528,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetHeadingLevel(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetHeadingLevel(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -4458,6 +4547,57 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics8[] = L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    /* [object, uuid("432ECA20-171A-560D-8524-3E651D3AD6CA"), exclusiveto, contract] */
+                    MIDL_INTERFACE("432ECA20-171A-560D-8524-3E651D3AD6CA")
+                    IAutomationPropertiesStatics8 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDialogProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE GetIsDialog(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE SetIsDialog(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
+                            /* [in] */boolean value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAutomationPropertiesStatics8=_uuidof(IAutomationPropertiesStatics8);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Automation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6358,6 +6498,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -6391,6 +6532,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -6425,8 +6567,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.IAutomationProperty ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7063,6 +7203,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIden
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics7_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperties;
@@ -7110,6 +7256,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesS
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty_FWD_DEFINED__
@@ -8813,6 +8965,8 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CZoomUnit __x_ABI_CWindows_C
 
 
 
+
+
 /*
  *
  * Struct Windows.UI.Xaml.Automation.AnnotationType
@@ -9735,13 +9889,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotation * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotation * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateWithElementParameter )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType type,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotation * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotation * * value
         );
     END_INTERFACE
     
@@ -9771,11 +9925,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory_CreateInstance(This,type,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,type,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory_CreateInstance(This,type,value) \
+    ( (This)->lpVtbl->CreateInstance(This,type,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory_CreateWithElementParameter(This,type,element,instance) \
-    ( (This)->lpVtbl->CreateWithElementParameter(This,type,element,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationAnnotationFactory_CreateWithElementParameter(This,type,element,value) \
+    ( (This)->lpVtbl->CreateWithElementParameter(This,type,element,value) )
 
 
 #endif /* COBJMACROS */
@@ -10842,6 +10996,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElemen
 
 /*
  *
+ * Interface Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationElementIdentifiers
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationElementIdentifiersStatics8[] = L"Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8";
+/* [object, uuid("8517B060-806C-5DC5-BC41-891BB5A47ADF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsDialogProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_get_IsDialogProperty(This,value) \
+    ( (This)->lpVtbl->get_IsDialogProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationElementIdentifiersStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Automation.IAutomationProperties
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10982,7 +11229,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAcceleratorKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAcceleratorKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -10996,7 +11243,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAccessKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAccessKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11010,7 +11257,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAutomationId )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAutomationId )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11024,7 +11271,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetHelpText )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetHelpText )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11038,7 +11285,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsRequiredForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsRequiredForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11052,7 +11299,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetItemStatus )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetItemStatus )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11066,7 +11313,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetItemType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetItemType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11080,7 +11327,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLabeledBy )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLabeledBy )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11094,7 +11341,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11108,7 +11355,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLiveSetting )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLiveSetting )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics * This,
@@ -11146,8 +11393,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_AcceleratorKeyProperty(This,value) \
     ( (This)->lpVtbl->get_AcceleratorKeyProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAcceleratorKey(This,element,value) \
-    ( (This)->lpVtbl->GetAcceleratorKey(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAcceleratorKey(This,element,result) \
+    ( (This)->lpVtbl->GetAcceleratorKey(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetAcceleratorKey(This,element,value) \
     ( (This)->lpVtbl->SetAcceleratorKey(This,element,value) )
@@ -11155,8 +11402,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_AccessKeyProperty(This,value) \
     ( (This)->lpVtbl->get_AccessKeyProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAccessKey(This,element,value) \
-    ( (This)->lpVtbl->GetAccessKey(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAccessKey(This,element,result) \
+    ( (This)->lpVtbl->GetAccessKey(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetAccessKey(This,element,value) \
     ( (This)->lpVtbl->SetAccessKey(This,element,value) )
@@ -11164,8 +11411,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_AutomationIdProperty(This,value) \
     ( (This)->lpVtbl->get_AutomationIdProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAutomationId(This,element,value) \
-    ( (This)->lpVtbl->GetAutomationId(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetAutomationId(This,element,result) \
+    ( (This)->lpVtbl->GetAutomationId(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetAutomationId(This,element,value) \
     ( (This)->lpVtbl->SetAutomationId(This,element,value) )
@@ -11173,8 +11420,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_HelpTextProperty(This,value) \
     ( (This)->lpVtbl->get_HelpTextProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetHelpText(This,element,value) \
-    ( (This)->lpVtbl->GetHelpText(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetHelpText(This,element,result) \
+    ( (This)->lpVtbl->GetHelpText(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetHelpText(This,element,value) \
     ( (This)->lpVtbl->SetHelpText(This,element,value) )
@@ -11182,8 +11429,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_IsRequiredForFormProperty(This,value) \
     ( (This)->lpVtbl->get_IsRequiredForFormProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetIsRequiredForForm(This,element,value) \
-    ( (This)->lpVtbl->GetIsRequiredForForm(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetIsRequiredForForm(This,element,result) \
+    ( (This)->lpVtbl->GetIsRequiredForForm(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetIsRequiredForForm(This,element,value) \
     ( (This)->lpVtbl->SetIsRequiredForForm(This,element,value) )
@@ -11191,8 +11438,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_ItemStatusProperty(This,value) \
     ( (This)->lpVtbl->get_ItemStatusProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetItemStatus(This,element,value) \
-    ( (This)->lpVtbl->GetItemStatus(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetItemStatus(This,element,result) \
+    ( (This)->lpVtbl->GetItemStatus(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetItemStatus(This,element,value) \
     ( (This)->lpVtbl->SetItemStatus(This,element,value) )
@@ -11200,8 +11447,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_ItemTypeProperty(This,value) \
     ( (This)->lpVtbl->get_ItemTypeProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetItemType(This,element,value) \
-    ( (This)->lpVtbl->GetItemType(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetItemType(This,element,result) \
+    ( (This)->lpVtbl->GetItemType(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetItemType(This,element,value) \
     ( (This)->lpVtbl->SetItemType(This,element,value) )
@@ -11209,8 +11456,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_LabeledByProperty(This,value) \
     ( (This)->lpVtbl->get_LabeledByProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetLabeledBy(This,element,value) \
-    ( (This)->lpVtbl->GetLabeledBy(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetLabeledBy(This,element,result) \
+    ( (This)->lpVtbl->GetLabeledBy(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetLabeledBy(This,element,value) \
     ( (This)->lpVtbl->SetLabeledBy(This,element,value) )
@@ -11218,8 +11465,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_NameProperty(This,value) \
     ( (This)->lpVtbl->get_NameProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetName(This,element,value) \
-    ( (This)->lpVtbl->GetName(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetName(This,element,result) \
+    ( (This)->lpVtbl->GetName(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetName(This,element,value) \
     ( (This)->lpVtbl->SetName(This,element,value) )
@@ -11227,8 +11474,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_get_LiveSettingProperty(This,value) \
     ( (This)->lpVtbl->get_LiveSettingProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetLiveSetting(This,element,value) \
-    ( (This)->lpVtbl->GetLiveSetting(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_GetLiveSetting(This,element,result) \
+    ( (This)->lpVtbl->GetLiveSetting(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics_SetLiveSetting(This,element,value) \
     ( (This)->lpVtbl->SetLiveSetting(This,element,value) )
@@ -11298,7 +11545,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAccessibilityView )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAccessibilityView * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAccessibilityView * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAccessibilityView )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2 * This,
@@ -11312,7 +11559,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetControlledPeers )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CUIElement * * value
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CUIElement * * result
         );
     END_INTERFACE
     
@@ -11345,8 +11592,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_get_AccessibilityViewProperty(This,value) \
     ( (This)->lpVtbl->get_AccessibilityViewProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_GetAccessibilityView(This,element,value) \
-    ( (This)->lpVtbl->GetAccessibilityView(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_GetAccessibilityView(This,element,result) \
+    ( (This)->lpVtbl->GetAccessibilityView(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_SetAccessibilityView(This,element,value) \
     ( (This)->lpVtbl->SetAccessibilityView(This,element,value) )
@@ -11354,8 +11601,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_get_ControlledPeersProperty(This,value) \
     ( (This)->lpVtbl->get_ControlledPeersProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_GetControlledPeers(This,element,value) \
-    ( (This)->lpVtbl->GetControlledPeers(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics2_GetControlledPeers(This,element,result) \
+    ( (This)->lpVtbl->GetControlledPeers(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -11422,7 +11669,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPositionInSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetPositionInSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
@@ -11436,7 +11683,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetSizeOfSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetSizeOfSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
@@ -11450,7 +11697,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
@@ -11464,7 +11711,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAnnotations )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CAutomationAnnotation * * value
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CAutomationAnnotation * * result
         );
     END_INTERFACE
     
@@ -11497,8 +11744,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_get_PositionInSetProperty(This,value) \
     ( (This)->lpVtbl->get_PositionInSetProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetPositionInSet(This,element,value) \
-    ( (This)->lpVtbl->GetPositionInSet(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetPositionInSet(This,element,result) \
+    ( (This)->lpVtbl->GetPositionInSet(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_SetPositionInSet(This,element,value) \
     ( (This)->lpVtbl->SetPositionInSet(This,element,value) )
@@ -11506,8 +11753,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_get_SizeOfSetProperty(This,value) \
     ( (This)->lpVtbl->get_SizeOfSetProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetSizeOfSet(This,element,value) \
-    ( (This)->lpVtbl->GetSizeOfSet(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetSizeOfSet(This,element,result) \
+    ( (This)->lpVtbl->GetSizeOfSet(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_SetSizeOfSet(This,element,value) \
     ( (This)->lpVtbl->SetSizeOfSet(This,element,value) )
@@ -11515,8 +11762,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_get_LevelProperty(This,value) \
     ( (This)->lpVtbl->get_LevelProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetLevel(This,element,value) \
-    ( (This)->lpVtbl->GetLevel(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetLevel(This,element,result) \
+    ( (This)->lpVtbl->GetLevel(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_SetLevel(This,element,value) \
     ( (This)->lpVtbl->SetLevel(This,element,value) )
@@ -11524,8 +11771,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_get_AnnotationsProperty(This,value) \
     ( (This)->lpVtbl->get_AnnotationsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetAnnotations(This,element,value) \
-    ( (This)->lpVtbl->GetAnnotations(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics3_GetAnnotations(This,element,result) \
+    ( (This)->lpVtbl->GetAnnotations(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -11592,7 +11839,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4 * This,
@@ -11606,7 +11853,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLocalizedLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4 * This,
@@ -11644,8 +11891,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_get_LandmarkTypeProperty(This,value) \
     ( (This)->lpVtbl->get_LandmarkTypeProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_GetLandmarkType(This,element,value) \
-    ( (This)->lpVtbl->GetLandmarkType(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_GetLandmarkType(This,element,result) \
+    ( (This)->lpVtbl->GetLandmarkType(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_SetLandmarkType(This,element,value) \
     ( (This)->lpVtbl->SetLandmarkType(This,element,value) )
@@ -11653,8 +11900,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_get_LocalizedLandmarkTypeProperty(This,value) \
     ( (This)->lpVtbl->get_LocalizedLandmarkTypeProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_GetLocalizedLandmarkType(This,element,value) \
-    ( (This)->lpVtbl->GetLocalizedLandmarkType(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_GetLocalizedLandmarkType(This,element,result) \
+    ( (This)->lpVtbl->GetLocalizedLandmarkType(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics4_SetLocalizedLandmarkType(This,element,value) \
     ( (This)->lpVtbl->SetLocalizedLandmarkType(This,element,value) )
@@ -11724,7 +11971,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsPeripheral )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsPeripheral )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11738,7 +11985,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsDataValidForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetIsDataValidForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11752,7 +11999,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetFullDescription )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetFullDescription )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11766,7 +12013,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedControlType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLocalizedControlType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11780,7 +12027,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetDescribedBy )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FlowsToProperty )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11789,7 +12036,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetFlowsTo )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FlowsFromProperty )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
@@ -11798,7 +12045,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetFlowsFrom )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * value
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CDependencyObject * * result
         );
     END_INTERFACE
     
@@ -11831,8 +12078,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_IsPeripheralProperty(This,value) \
     ( (This)->lpVtbl->get_IsPeripheralProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetIsPeripheral(This,element,value) \
-    ( (This)->lpVtbl->GetIsPeripheral(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetIsPeripheral(This,element,result) \
+    ( (This)->lpVtbl->GetIsPeripheral(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_SetIsPeripheral(This,element,value) \
     ( (This)->lpVtbl->SetIsPeripheral(This,element,value) )
@@ -11840,8 +12087,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_IsDataValidForFormProperty(This,value) \
     ( (This)->lpVtbl->get_IsDataValidForFormProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetIsDataValidForForm(This,element,value) \
-    ( (This)->lpVtbl->GetIsDataValidForForm(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetIsDataValidForForm(This,element,result) \
+    ( (This)->lpVtbl->GetIsDataValidForForm(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_SetIsDataValidForForm(This,element,value) \
     ( (This)->lpVtbl->SetIsDataValidForForm(This,element,value) )
@@ -11849,8 +12096,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_FullDescriptionProperty(This,value) \
     ( (This)->lpVtbl->get_FullDescriptionProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFullDescription(This,element,value) \
-    ( (This)->lpVtbl->GetFullDescription(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFullDescription(This,element,result) \
+    ( (This)->lpVtbl->GetFullDescription(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_SetFullDescription(This,element,value) \
     ( (This)->lpVtbl->SetFullDescription(This,element,value) )
@@ -11858,8 +12105,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_LocalizedControlTypeProperty(This,value) \
     ( (This)->lpVtbl->get_LocalizedControlTypeProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetLocalizedControlType(This,element,value) \
-    ( (This)->lpVtbl->GetLocalizedControlType(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetLocalizedControlType(This,element,result) \
+    ( (This)->lpVtbl->GetLocalizedControlType(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_SetLocalizedControlType(This,element,value) \
     ( (This)->lpVtbl->SetLocalizedControlType(This,element,value) )
@@ -11867,20 +12114,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_DescribedByProperty(This,value) \
     ( (This)->lpVtbl->get_DescribedByProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetDescribedBy(This,element,value) \
-    ( (This)->lpVtbl->GetDescribedBy(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetDescribedBy(This,element,result) \
+    ( (This)->lpVtbl->GetDescribedBy(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_FlowsToProperty(This,value) \
     ( (This)->lpVtbl->get_FlowsToProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFlowsTo(This,element,value) \
-    ( (This)->lpVtbl->GetFlowsTo(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFlowsTo(This,element,result) \
+    ( (This)->lpVtbl->GetFlowsTo(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_get_FlowsFromProperty(This,value) \
     ( (This)->lpVtbl->get_FlowsFromProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFlowsFrom(This,element,value) \
-    ( (This)->lpVtbl->GetFlowsFrom(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics5_GetFlowsFrom(This,element,result) \
+    ( (This)->lpVtbl->GetFlowsFrom(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -11947,7 +12194,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCulture )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetCulture )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6 * This,
@@ -11985,8 +12232,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_get_CultureProperty(This,value) \
     ( (This)->lpVtbl->get_CultureProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetCulture(This,element,value) \
-    ( (This)->lpVtbl->GetCulture(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_GetCulture(This,element,result) \
+    ( (This)->lpVtbl->GetCulture(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics6_SetCulture(This,element,value) \
     ( (This)->lpVtbl->SetCulture(This,element,value) )
@@ -12056,7 +12303,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetHeadingLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetHeadingLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7 * This,
@@ -12094,8 +12341,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_get_HeadingLevelProperty(This,value) \
     ( (This)->lpVtbl->get_HeadingLevelProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetHeadingLevel(This,element,value) \
-    ( (This)->lpVtbl->GetHeadingLevel(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_GetHeadingLevel(This,element,result) \
+    ( (This)->lpVtbl->GetHeadingLevel(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_SetHeadingLevel(This,element,value) \
     ( (This)->lpVtbl->SetHeadingLevel(This,element,value) )
@@ -12107,6 +12354,115 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics7_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.AutomationProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_IAutomationPropertiesStatics8[] = L"Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8";
+/* [object, uuid("432ECA20-171A-560D-8524-3E651D3AD6CA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsDialogProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetIsDialog )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetIsDialog )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_get_IsDialogProperty(This,value) \
+    ( (This)->lpVtbl->get_IsDialogProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_GetIsDialog(This,element,result) \
+    ( (This)->lpVtbl->GetIsDialog(This,element,result) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_SetIsDialog(This,element,value) \
+    ( (This)->lpVtbl->SetIsDialog(This,element,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationPropertiesStatics8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -16149,6 +16505,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics8 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -16182,6 +16539,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics8 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics7 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics6 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Automation.IAutomationPropertiesStatics5 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -16216,8 +16574,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.IAutomationProperty ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

@@ -12995,9 +12995,7 @@ RtlUnicodeStringInitWorker(
 
     if (DestinationString || !(dwFlags & STRSAFE_IGNORE_NULLS))
     {
-        DestinationString->Length = 0;
-        DestinationString->MaximumLength = 0;
-        DestinationString->Buffer = NULL;
+        memset(DestinationString, 0, sizeof(*DestinationString));
     }
 
     if (pszSrc)

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -22,6 +22,8 @@ struct RateChangedRoutedEventHandler : Windows::Foundation::IUnknown
     template <typename L> RateChangedRoutedEventHandler(L lambda);
     template <typename F> RateChangedRoutedEventHandler(F* function);
     template <typename O, typename M> RateChangedRoutedEventHandler(O* object, M method);
+    template <typename O, typename M> RateChangedRoutedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RateChangedRoutedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Media::RateChangedRoutedEventArgs const& e) const;
 };
 
@@ -31,6 +33,8 @@ struct TimelineMarkerRoutedEventHandler : Windows::Foundation::IUnknown
     template <typename L> TimelineMarkerRoutedEventHandler(L lambda);
     template <typename F> TimelineMarkerRoutedEventHandler(F* function);
     template <typename O, typename M> TimelineMarkerRoutedEventHandler(O* object, M method);
+    template <typename O, typename M> TimelineMarkerRoutedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> TimelineMarkerRoutedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs const& e) const;
 };
 
@@ -65,7 +69,7 @@ WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Media {
 struct WINRT_EBO AcrylicBrush :
     Windows::UI::Xaml::Media::IAcrylicBrush,
     impl::base<AcrylicBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<AcrylicBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+    impl::require<AcrylicBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
     AcrylicBrush(std::nullptr_t) noexcept {}
     AcrylicBrush();
@@ -114,7 +118,7 @@ struct WINRT_EBO BitmapCache :
 struct WINRT_EBO Brush :
     Windows::UI::Xaml::Media::IBrush,
     impl::base<Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<Brush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<Brush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrushOverrides2>
 {
     Brush(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty OpacityProperty();
@@ -159,18 +163,18 @@ struct WINRT_EBO CompositionTarget :
     Windows::UI::Xaml::Media::ICompositionTarget
 {
     CompositionTarget(std::nullptr_t) noexcept {}
-    static event_token Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value);
-    using Rendering_revoker = factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics>;
-    static Rendering_revoker Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value);
-    static void Rendering(event_token const& token);
-    static event_token SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value);
-    using SurfaceContentsLost_revoker = factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics>;
-    static SurfaceContentsLost_revoker SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value);
-    static void SurfaceContentsLost(event_token const& token);
-    static event_token Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value);
-    using Rendered_revoker = factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics3>;
-    static Rendered_revoker Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value);
-    static void Rendered(event_token const& token);
+    static winrt::event_token Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using Rendering_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_Rendering>;
+    static Rendering_revoker Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void Rendering(winrt::event_token const& token);
+    static winrt::event_token SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using SurfaceContentsLost_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_SurfaceContentsLost>;
+    static SurfaceContentsLost_revoker SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void SurfaceContentsLost(winrt::event_token const& token);
+    static winrt::event_token Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler);
+    using Rendered_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics3, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics3>::remove_Rendered>;
+    static Rendered_revoker Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler);
+    static void Rendered(winrt::event_token const& token);
 };
 
 struct WINRT_EBO DoubleCollection :
@@ -240,7 +244,7 @@ struct WINRT_EBO GeometryGroup :
 struct WINRT_EBO GradientBrush :
     Windows::UI::Xaml::Media::IGradientBrush,
     impl::base<GradientBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<GradientBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+    impl::require<GradientBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2>
 {
     GradientBrush(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty SpreadMethodProperty();
@@ -270,7 +274,7 @@ struct WINRT_EBO GradientStopCollection :
 struct WINRT_EBO ImageBrush :
     Windows::UI::Xaml::Media::IImageBrush,
     impl::base<ImageBrush, Windows::UI::Xaml::Media::TileBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<ImageBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::ITileBrush>
+    impl::require<ImageBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::ITileBrush>
 {
     ImageBrush(std::nullptr_t) noexcept {}
     ImageBrush();
@@ -309,7 +313,7 @@ struct WINRT_EBO LineSegment :
 struct WINRT_EBO LinearGradientBrush :
     Windows::UI::Xaml::Media::ILinearGradientBrush,
     impl::base<LinearGradientBrush, Windows::UI::Xaml::Media::GradientBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<LinearGradientBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IGradientBrush>
+    impl::require<LinearGradientBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IGradientBrush>
 {
     LinearGradientBrush(std::nullptr_t) noexcept {}
     LinearGradientBrush();
@@ -537,7 +541,7 @@ struct WINRT_EBO RenderingEventArgs :
 struct WINRT_EBO RevealBackgroundBrush :
     Windows::UI::Xaml::Media::IRevealBackgroundBrush,
     impl::base<RevealBackgroundBrush, Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<RevealBackgroundBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+    impl::require<RevealBackgroundBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
     RevealBackgroundBrush(std::nullptr_t) noexcept {}
     RevealBackgroundBrush();
@@ -546,7 +550,7 @@ struct WINRT_EBO RevealBackgroundBrush :
 struct WINRT_EBO RevealBorderBrush :
     Windows::UI::Xaml::Media::IRevealBorderBrush,
     impl::base<RevealBorderBrush, Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<RevealBorderBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+    impl::require<RevealBorderBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
     RevealBorderBrush(std::nullptr_t) noexcept {}
     RevealBorderBrush();
@@ -555,7 +559,7 @@ struct WINRT_EBO RevealBorderBrush :
 struct WINRT_EBO RevealBrush :
     Windows::UI::Xaml::Media::IRevealBrush,
     impl::base<RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<RevealBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+    impl::require<RevealBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
     RevealBrush(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty ColorProperty();
@@ -607,7 +611,7 @@ struct WINRT_EBO SkewTransform :
 struct WINRT_EBO SolidColorBrush :
     Windows::UI::Xaml::Media::ISolidColorBrush,
     impl::base<SolidColorBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<SolidColorBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+    impl::require<SolidColorBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2>
 {
     SolidColorBrush(std::nullptr_t) noexcept {}
     SolidColorBrush();
@@ -618,7 +622,7 @@ struct WINRT_EBO SolidColorBrush :
 struct WINRT_EBO TileBrush :
     Windows::UI::Xaml::Media::ITileBrush,
     impl::base<TileBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<TileBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+    impl::require<TileBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2>
 {
     TileBrush(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty AlignmentXProperty();
@@ -708,7 +712,7 @@ struct WINRT_EBO VisualTreeHelper :
 struct WINRT_EBO XamlCompositionBrushBase :
     Windows::UI::Xaml::Media::IXamlCompositionBrushBase,
     impl::base<XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
-    impl::require<XamlCompositionBrushBase, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+    impl::require<XamlCompositionBrushBase, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
     XamlCompositionBrushBase(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty FallbackColorProperty();
@@ -725,6 +729,19 @@ struct WINRT_EBO XamlLight :
     static void RemoveTargetElement(param::hstring const& lightId, Windows::UI::Xaml::UIElement const& element);
     static void AddTargetBrush(param::hstring const& lightId, Windows::UI::Xaml::Media::Brush const& brush);
     static void RemoveTargetBrush(param::hstring const& lightId, Windows::UI::Xaml::Media::Brush const& brush);
+};
+
+template <typename D>
+class IBrushOverrides2T
+{
+    D& shim() noexcept { return *static_cast<D*>(this); }
+    D const& shim() const noexcept { return *static_cast<const D*>(this); }
+
+public:
+
+    using IBrushOverrides2 = winrt::Windows::UI::Xaml::Media::IBrushOverrides2;
+
+    void PopulatePropertyInfoOverride(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo) const;
 };
 
 template <typename D>

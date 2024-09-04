@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -115,6 +115,25 @@ template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicCame
     bool value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicCamera4)->get_CanOverrideViewport(&value));
     return value;
+}
+
+template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicCamera5<D>::IsHardwareContentProtectionSupported() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicCamera5)->get_IsHardwareContentProtectionSupported(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicCamera5<D>::IsHardwareContentProtectionEnabled() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicCamera5)->get_IsHardwareContentProtectionEnabled(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_Graphics_Holographic_IHolographicCamera5<D>::IsHardwareContentProtectionEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicCamera5)->put_IsHardwareContentProtectionEnabled(value));
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCamera consume_Windows_Graphics_Holographic_IHolographicCameraPose<D>::HolographicCamera() const
@@ -498,6 +517,20 @@ template <typename D> void consume_Windows_Graphics_Holographic_IHolographicQuad
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters)->UpdateLocationWithDisplayRelativeMode(get_abi(position), get_abi(orientation)));
 }
 
+template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicQuadLayerUpdateParameters2<D>::CanAcquireWithHardwareProtection() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2)->get_CanAcquireWithHardwareProtection(&value));
+    return value;
+}
+
+template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface consume_Windows_Graphics_Holographic_IHolographicQuadLayerUpdateParameters2<D>::AcquireBufferToUpdateContentWithHardwareProtection() const
+{
+    Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2)->AcquireBufferToUpdateContentWithHardwareProtection(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Graphics::Holographic::HolographicAdapterId consume_Windows_Graphics_Holographic_IHolographicSpace<D>::PrimaryAdapterId() const
 {
     Windows::Graphics::Holographic::HolographicAdapterId value{};
@@ -510,38 +543,38 @@ template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpac
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->SetDirect3D11Device(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->add_CameraAdded(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Holographic::IHolographicSpace> consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded_revoker consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Holographic::IHolographicSpace>(this, &abi_t<Windows::Graphics::Holographic::IHolographicSpace>::remove_CameraAdded, CameraAdded(handler));
+    return impl::make_event_revoker<D, CameraAdded_revoker>(this, CameraAdded(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(event_token const& cookie) const
+template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraAdded(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->remove_CameraAdded(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->remove_CameraAdded(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->add_CameraRemoved(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Holographic::IHolographicSpace> consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved_revoker consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Holographic::IHolographicSpace>(this, &abi_t<Windows::Graphics::Holographic::IHolographicSpace>::remove_CameraRemoved, CameraRemoved(handler));
+    return impl::make_event_revoker<D, CameraRemoved_revoker>(this, CameraRemoved(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(event_token const& cookie) const
+template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CameraRemoved(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->remove_CameraRemoved(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace)->remove_CameraRemoved(get_abi(cookie)));
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicFrame consume_Windows_Graphics_Holographic_IHolographicSpace<D>::CreateNextFrame() const
@@ -558,21 +591,21 @@ template <typename D> Windows::Graphics::Holographic::HolographicSpaceUserPresen
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace2)->add_UserPresenceChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Holographic::IHolographicSpace2> consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged_revoker consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Holographic::IHolographicSpace2>(this, &abi_t<Windows::Graphics::Holographic::IHolographicSpace2>::remove_UserPresenceChanged, UserPresenceChanged(handler));
+    return impl::make_event_revoker<D, UserPresenceChanged_revoker>(this, UserPresenceChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::UserPresenceChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace2)->remove_UserPresenceChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpace2)->remove_UserPresenceChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpace2<D>::WaitForNextFrameReady() const
@@ -634,21 +667,21 @@ template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicSpac
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpaceStatics2)->add_IsAvailableChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Holographic::IHolographicSpaceStatics2> consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged_revoker consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Holographic::IHolographicSpaceStatics2>(this, &abi_t<Windows::Graphics::Holographic::IHolographicSpaceStatics2>::remove_IsAvailableChanged, IsAvailableChanged(handler));
+    return impl::make_event_revoker<D, IsAvailableChanged_revoker>(this, IsAvailableChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Holographic_IHolographicSpaceStatics2<D>::IsAvailableChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpaceStatics2)->remove_IsAvailableChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Holographic::IHolographicSpaceStatics2)->remove_IsAvailableChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicSpaceStatics3<D>::IsConfigured() const
@@ -661,1490 +694,1351 @@ template <typename D> bool consume_Windows_Graphics_Holographic_IHolographicSpac
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera>
 {
-    HRESULT __stdcall get_RenderTargetSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_RenderTargetSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderTargetSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().RenderTargetSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ViewportScaleFactor(double* value) noexcept final
+    int32_t WINRT_CALL get_ViewportScaleFactor(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewportScaleFactor, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ViewportScaleFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewportScaleFactor(double value) noexcept final
+    int32_t WINRT_CALL put_ViewportScaleFactor(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewportScaleFactor, WINRT_WRAP(void), double);
             this->shim().ViewportScaleFactor(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStereo(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStereo(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStereo, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStereo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetNearPlaneDistance(double value) noexcept final
+    int32_t WINRT_CALL SetNearPlaneDistance(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetNearPlaneDistance, WINRT_WRAP(void), double);
             this->shim().SetNearPlaneDistance(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetFarPlaneDistance(double value) noexcept final
+    int32_t WINRT_CALL SetFarPlaneDistance(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFarPlaneDistance, WINRT_WRAP(void), double);
             this->shim().SetFarPlaneDistance(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCamera2> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera2>
 {
-    HRESULT __stdcall get_LeftViewportParameters(void** result) noexcept final
+    int32_t WINRT_CALL get_LeftViewportParameters(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftViewportParameters, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCameraViewportParameters));
             *result = detach_from<Windows::Graphics::Holographic::HolographicCameraViewportParameters>(this->shim().LeftViewportParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightViewportParameters(void** result) noexcept final
+    int32_t WINRT_CALL get_RightViewportParameters(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightViewportParameters, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCameraViewportParameters));
             *result = detach_from<Windows::Graphics::Holographic::HolographicCameraViewportParameters>(this->shim().RightViewportParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Display(void** result) noexcept final
+    int32_t WINRT_CALL get_Display(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Display, WINRT_WRAP(Windows::Graphics::Holographic::HolographicDisplay));
             *result = detach_from<Windows::Graphics::Holographic::HolographicDisplay>(this->shim().Display());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCamera3> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera3>
 {
-    HRESULT __stdcall get_IsPrimaryLayerEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPrimaryLayerEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrimaryLayerEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPrimaryLayerEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPrimaryLayerEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPrimaryLayerEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrimaryLayerEnabled, WINRT_WRAP(void), bool);
             this->shim().IsPrimaryLayerEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxQuadLayerCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxQuadLayerCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxQuadLayerCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxQuadLayerCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QuadLayers(void** value) noexcept final
+    int32_t WINRT_CALL get_QuadLayers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QuadLayers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Graphics::Holographic::HolographicQuadLayer>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Graphics::Holographic::HolographicQuadLayer>>(this->shim().QuadLayers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCamera4> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera4>
 {
-    HRESULT __stdcall get_CanOverrideViewport(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanOverrideViewport(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanOverrideViewport, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanOverrideViewport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicCamera5> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera5>
+{
+    int32_t WINRT_CALL get_IsHardwareContentProtectionSupported(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHardwareContentProtectionSupported, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsHardwareContentProtectionSupported());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_IsHardwareContentProtectionEnabled(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHardwareContentProtectionEnabled, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsHardwareContentProtectionEnabled());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_IsHardwareContentProtectionEnabled(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHardwareContentProtectionEnabled, WINRT_WRAP(void), bool);
+            this->shim().IsHardwareContentProtectionEnabled(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraPose>
 {
-    HRESULT __stdcall get_HolographicCamera(void** value) noexcept final
+    int32_t WINRT_CALL get_HolographicCamera(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HolographicCamera, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCamera));
             *value = detach_from<Windows::Graphics::Holographic::HolographicCamera>(this->shim().HolographicCamera());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Viewport(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Viewport(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Viewport, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Viewport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetViewTransform(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetViewTransform(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetViewTransform, WINRT_WRAP(Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform>>(this->shim().TryGetViewTransform(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProjectionTransform(struct struct_Windows_Graphics_Holographic_HolographicStereoTransform* value) noexcept final
+    int32_t WINRT_CALL get_ProjectionTransform(struct struct_Windows_Graphics_Holographic_HolographicStereoTransform* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionTransform, WINRT_WRAP(Windows::Graphics::Holographic::HolographicStereoTransform));
             *value = detach_from<Windows::Graphics::Holographic::HolographicStereoTransform>(this->shim().ProjectionTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetCullingFrustum(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetCullingFrustum(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetCullingFrustum, WINRT_WRAP(Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum>>(this->shim().TryGetCullingFrustum(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetVisibleFrustum(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetVisibleFrustum(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetVisibleFrustum, WINRT_WRAP(Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum>>(this->shim().TryGetVisibleFrustum(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NearPlaneDistance(double* value) noexcept final
+    int32_t WINRT_CALL get_NearPlaneDistance(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NearPlaneDistance, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().NearPlaneDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FarPlaneDistance(double* value) noexcept final
+    int32_t WINRT_CALL get_FarPlaneDistance(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FarPlaneDistance, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().FarPlaneDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraPose2> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraPose2>
 {
-    HRESULT __stdcall OverrideViewTransform(void* coordinateSystem, struct struct_Windows_Graphics_Holographic_HolographicStereoTransform coordinateSystemToViewTransform) noexcept final
+    int32_t WINRT_CALL OverrideViewTransform(void* coordinateSystem, struct struct_Windows_Graphics_Holographic_HolographicStereoTransform coordinateSystemToViewTransform) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OverrideViewTransform, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Graphics::Holographic::HolographicStereoTransform const&);
             this->shim().OverrideViewTransform(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Graphics::Holographic::HolographicStereoTransform const*>(&coordinateSystemToViewTransform));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OverrideProjectionTransform(struct struct_Windows_Graphics_Holographic_HolographicStereoTransform projectionTransform) noexcept final
+    int32_t WINRT_CALL OverrideProjectionTransform(struct struct_Windows_Graphics_Holographic_HolographicStereoTransform projectionTransform) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OverrideProjectionTransform, WINRT_WRAP(void), Windows::Graphics::Holographic::HolographicStereoTransform const&);
             this->shim().OverrideProjectionTransform(*reinterpret_cast<Windows::Graphics::Holographic::HolographicStereoTransform const*>(&projectionTransform));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OverrideViewport(Windows::Foundation::Rect leftViewport, Windows::Foundation::Rect rightViewport) noexcept final
+    int32_t WINRT_CALL OverrideViewport(Windows::Foundation::Rect leftViewport, Windows::Foundation::Rect rightViewport) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OverrideViewport, WINRT_WRAP(void), Windows::Foundation::Rect const&, Windows::Foundation::Rect const&);
             this->shim().OverrideViewport(*reinterpret_cast<Windows::Foundation::Rect const*>(&leftViewport), *reinterpret_cast<Windows::Foundation::Rect const*>(&rightViewport));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters>
 {
-    HRESULT __stdcall SetFocusPoint(void* coordinateSystem, Windows::Foundation::Numerics::float3 position) noexcept final
+    int32_t WINRT_CALL SetFocusPoint(void* coordinateSystem, Windows::Foundation::Numerics::float3 position) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFocusPoint, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&);
             this->shim().SetFocusPoint(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetFocusPointWithNormal(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::float3 normal) noexcept final
+    int32_t WINRT_CALL SetFocusPointWithNormal(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::float3 normal) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFocusPoint, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float3 const&);
             this->shim().SetFocusPoint(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&normal));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetFocusPointWithNormalLinearVelocity(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::float3 normal, Windows::Foundation::Numerics::float3 linearVelocity) noexcept final
+    int32_t WINRT_CALL SetFocusPointWithNormalLinearVelocity(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::float3 normal, Windows::Foundation::Numerics::float3 linearVelocity) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFocusPoint, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float3 const&);
             this->shim().SetFocusPoint(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&normal), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&linearVelocity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direct3D11Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Direct3D11Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direct3D11Device, WINRT_WRAP(Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice));
             *value = detach_from<Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice>(this->shim().Direct3D11Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direct3D11BackBuffer(void** value) noexcept final
+    int32_t WINRT_CALL get_Direct3D11BackBuffer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direct3D11BackBuffer, WINRT_WRAP(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface));
             *value = detach_from<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>(this->shim().Direct3D11BackBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2>
 {
-    HRESULT __stdcall get_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode* value) noexcept final
+    int32_t WINRT_CALL get_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReprojectionMode, WINRT_WRAP(Windows::Graphics::Holographic::HolographicReprojectionMode));
             *value = detach_from<Windows::Graphics::Holographic::HolographicReprojectionMode>(this->shim().ReprojectionMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode value) noexcept final
+    int32_t WINRT_CALL put_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReprojectionMode, WINRT_WRAP(void), Windows::Graphics::Holographic::HolographicReprojectionMode const&);
             this->shim().ReprojectionMode(*reinterpret_cast<Windows::Graphics::Holographic::HolographicReprojectionMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CommitDirect3D11DepthBuffer(void* value) noexcept final
+    int32_t WINRT_CALL CommitDirect3D11DepthBuffer(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitDirect3D11DepthBuffer, WINRT_WRAP(void), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const&);
             this->shim().CommitDirect3D11DepthBuffer(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters3> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters3>
 {
-    HRESULT __stdcall get_IsContentProtectionEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsContentProtectionEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsContentProtectionEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsContentProtectionEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsContentProtectionEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsContentProtectionEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsContentProtectionEnabled, WINRT_WRAP(void), bool);
             this->shim().IsContentProtectionEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicCameraViewportParameters> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraViewportParameters>
 {
-    HRESULT __stdcall get_HiddenAreaMesh(uint32_t* __valueSize, Windows::Foundation::Numerics::float2** value) noexcept final
+    int32_t WINRT_CALL get_HiddenAreaMesh(uint32_t* __valueSize, Windows::Foundation::Numerics::float2** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HiddenAreaMesh, WINRT_WRAP(com_array<Windows::Foundation::Numerics::float2>));
             std::tie(*__valueSize, *value) = detach_abi(this->shim().HiddenAreaMesh());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VisibleAreaMesh(uint32_t* __valueSize, Windows::Foundation::Numerics::float2** value) noexcept final
+    int32_t WINRT_CALL get_VisibleAreaMesh(uint32_t* __valueSize, Windows::Foundation::Numerics::float2** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VisibleAreaMesh, WINRT_WRAP(com_array<Windows::Foundation::Numerics::float2>));
             std::tie(*__valueSize, *value) = detach_abi(this->shim().VisibleAreaMesh());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicDisplay> : produce_base<D, Windows::Graphics::Holographic::IHolographicDisplay>
 {
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxViewportSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_MaxViewportSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxViewportSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().MaxViewportSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStereo(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStereo(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStereo, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStereo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOpaque(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOpaque(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOpaque, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOpaque());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdapterId(struct struct_Windows_Graphics_Holographic_HolographicAdapterId* value) noexcept final
+    int32_t WINRT_CALL get_AdapterId(struct struct_Windows_Graphics_Holographic_HolographicAdapterId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdapterId, WINRT_WRAP(Windows::Graphics::Holographic::HolographicAdapterId));
             *value = detach_from<Windows::Graphics::Holographic::HolographicAdapterId>(this->shim().AdapterId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpatialLocator(void** value) noexcept final
+    int32_t WINRT_CALL get_SpatialLocator(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpatialLocator, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocator));
             *value = detach_from<Windows::Perception::Spatial::SpatialLocator>(this->shim().SpatialLocator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicDisplay2> : produce_base<D, Windows::Graphics::Holographic::IHolographicDisplay2>
 {
-    HRESULT __stdcall get_RefreshRate(double* value) noexcept final
+    int32_t WINRT_CALL get_RefreshRate(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RefreshRate, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RefreshRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicDisplayStatics> : produce_base<D, Windows::Graphics::Holographic::IHolographicDisplayStatics>
 {
-    HRESULT __stdcall GetDefault(void** result) noexcept final
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Graphics::Holographic::HolographicDisplay));
             *result = detach_from<Windows::Graphics::Holographic::HolographicDisplay>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicFrame> : produce_base<D, Windows::Graphics::Holographic::IHolographicFrame>
 {
-    HRESULT __stdcall get_AddedCameras(void** value) noexcept final
+    int32_t WINRT_CALL get_AddedCameras(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddedCameras, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera>>(this->shim().AddedCameras());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemovedCameras(void** value) noexcept final
+    int32_t WINRT_CALL get_RemovedCameras(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovedCameras, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera>>(this->shim().RemovedCameras());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRenderingParameters(void* cameraPose, void** value) noexcept final
+    int32_t WINRT_CALL GetRenderingParameters(void* cameraPose, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRenderingParameters, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCameraRenderingParameters), Windows::Graphics::Holographic::HolographicCameraPose const&);
             *value = detach_from<Windows::Graphics::Holographic::HolographicCameraRenderingParameters>(this->shim().GetRenderingParameters(*reinterpret_cast<Windows::Graphics::Holographic::HolographicCameraPose const*>(&cameraPose)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentPrediction(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentPrediction(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentPrediction, WINRT_WRAP(Windows::Graphics::Holographic::HolographicFramePrediction));
             *value = detach_from<Windows::Graphics::Holographic::HolographicFramePrediction>(this->shim().CurrentPrediction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateCurrentPrediction() noexcept final
+    int32_t WINRT_CALL UpdateCurrentPrediction() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateCurrentPrediction, WINRT_WRAP(void));
             this->shim().UpdateCurrentPrediction();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PresentUsingCurrentPrediction(Windows::Graphics::Holographic::HolographicFramePresentResult* result) noexcept final
+    int32_t WINRT_CALL PresentUsingCurrentPrediction(Windows::Graphics::Holographic::HolographicFramePresentResult* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentUsingCurrentPrediction, WINRT_WRAP(Windows::Graphics::Holographic::HolographicFramePresentResult));
             *result = detach_from<Windows::Graphics::Holographic::HolographicFramePresentResult>(this->shim().PresentUsingCurrentPrediction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PresentUsingCurrentPredictionWithBehavior(Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior waitBehavior, Windows::Graphics::Holographic::HolographicFramePresentResult* result) noexcept final
+    int32_t WINRT_CALL PresentUsingCurrentPredictionWithBehavior(Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior waitBehavior, Windows::Graphics::Holographic::HolographicFramePresentResult* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentUsingCurrentPrediction, WINRT_WRAP(Windows::Graphics::Holographic::HolographicFramePresentResult), Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior const&);
             *result = detach_from<Windows::Graphics::Holographic::HolographicFramePresentResult>(this->shim().PresentUsingCurrentPrediction(*reinterpret_cast<Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior const*>(&waitBehavior)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WaitForFrameToFinish() noexcept final
+    int32_t WINRT_CALL WaitForFrameToFinish() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForFrameToFinish, WINRT_WRAP(void));
             this->shim().WaitForFrameToFinish();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicFrame2> : produce_base<D, Windows::Graphics::Holographic::IHolographicFrame2>
 {
-    HRESULT __stdcall GetQuadLayerUpdateParameters(void* layer, void** value) noexcept final
+    int32_t WINRT_CALL GetQuadLayerUpdateParameters(void* layer, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetQuadLayerUpdateParameters, WINRT_WRAP(Windows::Graphics::Holographic::HolographicQuadLayerUpdateParameters), Windows::Graphics::Holographic::HolographicQuadLayer const&);
             *value = detach_from<Windows::Graphics::Holographic::HolographicQuadLayerUpdateParameters>(this->shim().GetQuadLayerUpdateParameters(*reinterpret_cast<Windows::Graphics::Holographic::HolographicQuadLayer const*>(&layer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicFramePrediction> : produce_base<D, Windows::Graphics::Holographic::IHolographicFramePrediction>
 {
-    HRESULT __stdcall get_CameraPoses(void** value) noexcept final
+    int32_t WINRT_CALL get_CameraPoses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CameraPoses, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose>>(this->shim().CameraPoses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(void** value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Perception::PerceptionTimestamp));
             *value = detach_from<Windows::Perception::PerceptionTimestamp>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicFramePresentationMonitor> : produce_base<D, Windows::Graphics::Holographic::IHolographicFramePresentationMonitor>
 {
-    HRESULT __stdcall ReadReports(void** result) noexcept final
+    int32_t WINRT_CALL ReadReports(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadReports, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicFramePresentationReport>));
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicFramePresentationReport>>(this->shim().ReadReports());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicFramePresentationReport> : produce_base<D, Windows::Graphics::Holographic::IHolographicFramePresentationReport>
 {
-    HRESULT __stdcall get_CompositorGpuDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_CompositorGpuDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositorGpuDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().CompositorGpuDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppGpuDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_AppGpuDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppGpuDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().AppGpuDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppGpuOverrun(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_AppGpuOverrun(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppGpuOverrun, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().AppGpuOverrun());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MissedPresentationOpportunityCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MissedPresentationOpportunityCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MissedPresentationOpportunityCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MissedPresentationOpportunityCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PresentationCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PresentationCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentationCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PresentationCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicQuadLayer> : produce_base<D, Windows::Graphics::Holographic::IHolographicQuadLayer>
 {
-    HRESULT __stdcall get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelFormat, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().PixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicQuadLayerFactory> : produce_base<D, Windows::Graphics::Holographic::IHolographicQuadLayerFactory>
 {
-    HRESULT __stdcall Create(Windows::Foundation::Size size, void** value) noexcept final
+    int32_t WINRT_CALL Create(Windows::Foundation::Size size, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Graphics::Holographic::HolographicQuadLayer), Windows::Foundation::Size const&);
             *value = detach_from<Windows::Graphics::Holographic::HolographicQuadLayer>(this->shim().Create(*reinterpret_cast<Windows::Foundation::Size const*>(&size)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithPixelFormat(Windows::Foundation::Size size, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithPixelFormat(Windows::Foundation::Size size, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithPixelFormat, WINRT_WRAP(Windows::Graphics::Holographic::HolographicQuadLayer), Windows::Foundation::Size const&, Windows::Graphics::DirectX::DirectXPixelFormat const&);
             *value = detach_from<Windows::Graphics::Holographic::HolographicQuadLayer>(this->shim().CreateWithPixelFormat(*reinterpret_cast<Windows::Foundation::Size const*>(&size), *reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&pixelFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters> : produce_base<D, Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters>
 {
-    HRESULT __stdcall AcquireBufferToUpdateContent(void** value) noexcept final
+    int32_t WINRT_CALL AcquireBufferToUpdateContent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcquireBufferToUpdateContent, WINRT_WRAP(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface));
             *value = detach_from<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>(this->shim().AcquireBufferToUpdateContent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateViewport(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL UpdateViewport(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateViewport, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().UpdateViewport(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateContentProtectionEnabled(bool value) noexcept final
+    int32_t WINRT_CALL UpdateContentProtectionEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateContentProtectionEnabled, WINRT_WRAP(void), bool);
             this->shim().UpdateContentProtectionEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateExtents(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL UpdateExtents(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateExtents, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().UpdateExtents(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateLocationWithStationaryMode(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation) noexcept final
+    int32_t WINRT_CALL UpdateLocationWithStationaryMode(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateLocationWithStationaryMode, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&);
             this->shim().UpdateLocationWithStationaryMode(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&orientation));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateLocationWithDisplayRelativeMode(Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation) noexcept final
+    int32_t WINRT_CALL UpdateLocationWithDisplayRelativeMode(Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateLocationWithDisplayRelativeMode, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&);
             this->shim().UpdateLocationWithDisplayRelativeMode(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&orientation));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2> : produce_base<D, Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2>
+{
+    int32_t WINRT_CALL get_CanAcquireWithHardwareProtection(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanAcquireWithHardwareProtection, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().CanAcquireWithHardwareProtection());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL AcquireBufferToUpdateContentWithHardwareProtection(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcquireBufferToUpdateContentWithHardwareProtection, WINRT_WRAP(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface));
+            *value = detach_from<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>(this->shim().AcquireBufferToUpdateContentWithHardwareProtection());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpace> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpace>
 {
-    HRESULT __stdcall get_PrimaryAdapterId(struct struct_Windows_Graphics_Holographic_HolographicAdapterId* value) noexcept final
+    int32_t WINRT_CALL get_PrimaryAdapterId(struct struct_Windows_Graphics_Holographic_HolographicAdapterId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryAdapterId, WINRT_WRAP(Windows::Graphics::Holographic::HolographicAdapterId));
             *value = detach_from<Windows::Graphics::Holographic::HolographicAdapterId>(this->shim().PrimaryAdapterId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDirect3D11Device(void* value) noexcept final
+    int32_t WINRT_CALL SetDirect3D11Device(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDirect3D11Device, WINRT_WRAP(void), Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const&);
             this->shim().SetDirect3D11Device(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CameraAdded(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_CameraAdded(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().CameraAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CameraAdded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().CameraAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CameraAdded(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_CameraAdded(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CameraAdded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CameraAdded(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_CameraRemoved(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().CameraAdded(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CameraRemoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().CameraRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CameraRemoved(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_CameraRemoved(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().CameraRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CameraRemoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CameraRemoved(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall remove_CameraRemoved(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().CameraRemoved(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall CreateNextFrame(void** value) noexcept final
+    int32_t WINRT_CALL CreateNextFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateNextFrame, WINRT_WRAP(Windows::Graphics::Holographic::HolographicFrame));
             *value = detach_from<Windows::Graphics::Holographic::HolographicFrame>(this->shim().CreateNextFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpace2> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpace2>
 {
-    HRESULT __stdcall get_UserPresence(Windows::Graphics::Holographic::HolographicSpaceUserPresence* value) noexcept final
+    int32_t WINRT_CALL get_UserPresence(Windows::Graphics::Holographic::HolographicSpaceUserPresence* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserPresence, WINRT_WRAP(Windows::Graphics::Holographic::HolographicSpaceUserPresence));
             *value = detach_from<Windows::Graphics::Holographic::HolographicSpaceUserPresence>(this->shim().UserPresence());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_UserPresenceChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_UserPresenceChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().UserPresenceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(UserPresenceChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().UserPresenceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_UserPresenceChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_UserPresenceChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(UserPresenceChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().UserPresenceChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL WaitForNextFrameReady() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().UserPresenceChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall WaitForNextFrameReady() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForNextFrameReady, WINRT_WRAP(void));
             this->shim().WaitForNextFrameReady();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WaitForNextFrameReadyWithHeadStart(Windows::Foundation::TimeSpan requestedHeadStartDuration) noexcept final
+    int32_t WINRT_CALL WaitForNextFrameReadyWithHeadStart(Windows::Foundation::TimeSpan requestedHeadStartDuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForNextFrameReadyWithHeadStart, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().WaitForNextFrameReadyWithHeadStart(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&requestedHeadStartDuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFramePresentationMonitor(uint32_t maxQueuedReports, void** result) noexcept final
+    int32_t WINRT_CALL CreateFramePresentationMonitor(uint32_t maxQueuedReports, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFramePresentationMonitor, WINRT_WRAP(Windows::Graphics::Holographic::HolographicFramePresentationMonitor), uint32_t);
             *result = detach_from<Windows::Graphics::Holographic::HolographicFramePresentationMonitor>(this->shim().CreateFramePresentationMonitor(maxQueuedReports));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs>
 {
-    HRESULT __stdcall get_Camera(void** value) noexcept final
+    int32_t WINRT_CALL get_Camera(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Camera, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCamera));
             *value = detach_from<Windows::Graphics::Holographic::HolographicCamera>(this->shim().Camera());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceCameraRemovedEventArgs> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceCameraRemovedEventArgs>
 {
-    HRESULT __stdcall get_Camera(void** value) noexcept final
+    int32_t WINRT_CALL get_Camera(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Camera, WINRT_WRAP(Windows::Graphics::Holographic::HolographicCamera));
             *value = detach_from<Windows::Graphics::Holographic::HolographicCamera>(this->shim().Camera());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceStatics>
 {
-    HRESULT __stdcall CreateForCoreWindow(void* window, void** value) noexcept final
+    int32_t WINRT_CALL CreateForCoreWindow(void* window, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForCoreWindow, WINRT_WRAP(Windows::Graphics::Holographic::HolographicSpace), Windows::UI::Core::CoreWindow const&);
             *value = detach_from<Windows::Graphics::Holographic::HolographicSpace>(this->shim().CreateForCoreWindow(*reinterpret_cast<Windows::UI::Core::CoreWindow const*>(&window)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics2> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceStatics2>
 {
-    HRESULT __stdcall get_IsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAvailable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAvailable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAvailable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAvailable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_IsAvailableChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_IsAvailableChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().IsAvailableChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsAvailableChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().IsAvailableChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_IsAvailableChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_IsAvailableChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().IsAvailableChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(IsAvailableChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().IsAvailableChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics3> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceStatics3>
 {
-    HRESULT __stdcall get_IsConfigured(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsConfigured(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsConfigured, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsConfigured());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2154,51 +2048,51 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Holographic {
 
 inline Windows::Graphics::Holographic::HolographicDisplay HolographicDisplay::GetDefault()
 {
-    return get_activation_factory<HolographicDisplay, Windows::Graphics::Holographic::IHolographicDisplayStatics>().GetDefault();
+    return impl::call_factory<HolographicDisplay, Windows::Graphics::Holographic::IHolographicDisplayStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline HolographicQuadLayer::HolographicQuadLayer(Windows::Foundation::Size const& size) :
-    HolographicQuadLayer(get_activation_factory<HolographicQuadLayer, Windows::Graphics::Holographic::IHolographicQuadLayerFactory>().Create(size))
+    HolographicQuadLayer(impl::call_factory<HolographicQuadLayer, Windows::Graphics::Holographic::IHolographicQuadLayerFactory>([&](auto&& f) { return f.Create(size); }))
 {}
 
 inline HolographicQuadLayer::HolographicQuadLayer(Windows::Foundation::Size const& size, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat) :
-    HolographicQuadLayer(get_activation_factory<HolographicQuadLayer, Windows::Graphics::Holographic::IHolographicQuadLayerFactory>().CreateWithPixelFormat(size, pixelFormat))
+    HolographicQuadLayer(impl::call_factory<HolographicQuadLayer, Windows::Graphics::Holographic::IHolographicQuadLayerFactory>([&](auto&& f) { return f.CreateWithPixelFormat(size, pixelFormat); }))
 {}
 
 inline Windows::Graphics::Holographic::HolographicSpace HolographicSpace::CreateForCoreWindow(Windows::UI::Core::CoreWindow const& window)
 {
-    return get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics>().CreateForCoreWindow(window);
+    return impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics>([&](auto&& f) { return f.CreateForCoreWindow(window); });
 }
 
 inline bool HolographicSpace::IsSupported()
 {
-    return get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>().IsSupported();
+    return impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>([&](auto&& f) { return f.IsSupported(); });
 }
 
 inline bool HolographicSpace::IsAvailable()
 {
-    return get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>().IsAvailable();
+    return impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>([&](auto&& f) { return f.IsAvailable(); });
 }
 
-inline event_token HolographicSpace::IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token HolographicSpace::IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>().IsAvailableChanged(handler);
+    return impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>([&](auto&& f) { return f.IsAvailableChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Holographic::IHolographicSpaceStatics2> HolographicSpace::IsAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline HolographicSpace::IsAvailableChanged_revoker HolographicSpace::IsAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>();
-    return { factory, &impl::abi_t<Windows::Graphics::Holographic::IHolographicSpaceStatics2>::remove_IsAvailableChanged, factory.IsAvailableChanged(handler) };
+    auto f = get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>();
+    return { f, f.IsAvailableChanged(handler) };
 }
 
-inline void HolographicSpace::IsAvailableChanged(event_token const& token)
+inline void HolographicSpace::IsAvailableChanged(winrt::event_token const& token)
 {
-    get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>().IsAvailableChanged(token);
+    impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics2>([&](auto&& f) { return f.IsAvailableChanged(token); });
 }
 
 inline bool HolographicSpace::IsConfigured()
 {
-    return get_activation_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics3>().IsConfigured();
+    return impl::call_factory<HolographicSpace, Windows::Graphics::Holographic::IHolographicSpaceStatics3>([&](auto&& f) { return f.IsConfigured(); });
 }
 
 }
@@ -2209,6 +2103,7 @@ template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCamera
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCamera2> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCamera2> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCamera3> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCamera3> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCamera4> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCamera4> {};
+template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCamera5> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCamera5> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCameraPose> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCameraPose> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCameraPose2> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCameraPose2> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters> {};
@@ -2226,6 +2121,7 @@ template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicFrameP
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicQuadLayer> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicQuadLayer> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerFactory> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerFactory> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters> {};
+template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicSpace> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicSpace> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicSpace2> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicSpace2> {};
 template<> struct hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs> {};
@@ -2249,5 +2145,3 @@ template<> struct hash<winrt::Windows::Graphics::Holographic::HolographicSpaceCa
 template<> struct hash<winrt::Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> : winrt::impl::hash_base<winrt::Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

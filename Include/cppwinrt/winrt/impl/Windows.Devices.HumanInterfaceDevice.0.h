@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -113,18 +113,18 @@ template <> struct name<Windows::Devices::HumanInterfaceDevice::HidNumericContro
 template <> struct name<Windows::Devices::HumanInterfaceDevice::HidOutputReport>{ static constexpr auto & value{ L"Windows.Devices.HumanInterfaceDevice.HidOutputReport" }; };
 template <> struct name<Windows::Devices::HumanInterfaceDevice::HidCollectionType>{ static constexpr auto & value{ L"Windows.Devices.HumanInterfaceDevice.HidCollectionType" }; };
 template <> struct name<Windows::Devices::HumanInterfaceDevice::HidReportType>{ static constexpr auto & value{ L"Windows.Devices.HumanInterfaceDevice.HidReportType" }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>{ static constexpr GUID value{ 0x524DF48A,0x3695,0x408C,{ 0xBB,0xA2,0xE2,0xEB,0x5A,0xBF,0xBC,0x20 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>{ static constexpr GUID value{ 0x6196E543,0x29D8,0x4A2A,{ 0x86,0x83,0x84,0x9E,0x20,0x7B,0xBE,0x31 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>{ static constexpr GUID value{ 0xC8EED2EA,0x8A77,0x4C36,{ 0xAA,0x00,0x5F,0xF0,0x44,0x9D,0x3E,0x73 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidCollection>{ static constexpr GUID value{ 0x7189F5A3,0x32F1,0x46E3,{ 0xBE,0xFD,0x44,0xD2,0x66,0x3B,0x7E,0x6A } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidDevice>{ static constexpr GUID value{ 0x5F8A14E7,0x2200,0x432E,{ 0x95,0xDA,0xD0,0x9B,0x87,0xD5,0x74,0xA8 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>{ static constexpr GUID value{ 0x9E5981E4,0x9856,0x418C,{ 0x9F,0x73,0x77,0xDE,0x0C,0xD8,0x57,0x54 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>{ static constexpr GUID value{ 0x841D9B79,0x5AE5,0x46E3,{ 0x82,0xEF,0x1F,0xEC,0x5C,0x89,0x42,0xF4 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidInputReport>{ static constexpr GUID value{ 0xC35D0E50,0xF7E7,0x4E8D,{ 0xB2,0x3E,0xCA,0xBB,0xE5,0x6B,0x90,0xE9 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>{ static constexpr GUID value{ 0x7059C5CB,0x59B2,0x4DC2,{ 0x98,0x5C,0x0A,0xDC,0x61,0x36,0xFA,0x2D } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidNumericControl>{ static constexpr GUID value{ 0xE38A12A5,0x35A7,0x4B75,{ 0x89,0xC8,0xFB,0x1F,0x28,0xB1,0x08,0x23 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>{ static constexpr GUID value{ 0x638D5E86,0x1D97,0x4C75,{ 0x92,0x7F,0x5F,0xF5,0x8B,0xA0,0x5E,0x32 } }; };
-template <> struct guid<Windows::Devices::HumanInterfaceDevice::IHidOutputReport>{ static constexpr GUID value{ 0x62CB2544,0xC896,0x4463,{ 0x93,0xC1,0xDF,0x9D,0xB0,0x53,0xC4,0x50 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>{ static constexpr guid value{ 0x524DF48A,0x3695,0x408C,{ 0xBB,0xA2,0xE2,0xEB,0x5A,0xBF,0xBC,0x20 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>{ static constexpr guid value{ 0x6196E543,0x29D8,0x4A2A,{ 0x86,0x83,0x84,0x9E,0x20,0x7B,0xBE,0x31 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>{ static constexpr guid value{ 0xC8EED2EA,0x8A77,0x4C36,{ 0xAA,0x00,0x5F,0xF0,0x44,0x9D,0x3E,0x73 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidCollection>{ static constexpr guid value{ 0x7189F5A3,0x32F1,0x46E3,{ 0xBE,0xFD,0x44,0xD2,0x66,0x3B,0x7E,0x6A } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidDevice>{ static constexpr guid value{ 0x5F8A14E7,0x2200,0x432E,{ 0x95,0xDA,0xD0,0x9B,0x87,0xD5,0x74,0xA8 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>{ static constexpr guid value{ 0x9E5981E4,0x9856,0x418C,{ 0x9F,0x73,0x77,0xDE,0x0C,0xD8,0x57,0x54 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>{ static constexpr guid value{ 0x841D9B79,0x5AE5,0x46E3,{ 0x82,0xEF,0x1F,0xEC,0x5C,0x89,0x42,0xF4 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidInputReport>{ static constexpr guid value{ 0xC35D0E50,0xF7E7,0x4E8D,{ 0xB2,0x3E,0xCA,0xBB,0xE5,0x6B,0x90,0xE9 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>{ static constexpr guid value{ 0x7059C5CB,0x59B2,0x4DC2,{ 0x98,0x5C,0x0A,0xDC,0x61,0x36,0xFA,0x2D } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidNumericControl>{ static constexpr guid value{ 0xE38A12A5,0x35A7,0x4B75,{ 0x89,0xC8,0xFB,0x1F,0x28,0xB1,0x08,0x23 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>{ static constexpr guid value{ 0x638D5E86,0x1D97,0x4C75,{ 0x92,0x7F,0x5F,0xF5,0x8B,0xA0,0x5E,0x32 } }; };
+template <> struct guid_storage<Windows::Devices::HumanInterfaceDevice::IHidOutputReport>{ static constexpr guid value{ 0x62CB2544,0xC896,0x4463,{ 0x93,0xC1,0xDF,0x9D,0xB0,0x53,0xC4,0x50 } }; };
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidBooleanControl>{ using type = Windows::Devices::HumanInterfaceDevice::IHidBooleanControl; };
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>{ using type = Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription; };
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidCollection>{ using type = Windows::Devices::HumanInterfaceDevice::IHidCollection; };
@@ -135,6 +135,141 @@ template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::Hid
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidNumericControl>{ using type = Windows::Devices::HumanInterfaceDevice::IHidNumericControl; };
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>{ using type = Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription; };
 template <> struct default_interface<Windows::Devices::HumanInterfaceDevice::HidOutputReport>{ using type = Windows::Devices::HumanInterfaceDevice::IHidOutputReport; };
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsActive(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlDescription(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ParentCollections(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAbsolute(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::Devices::HumanInterfaceDevice::HidCollectionType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_VendorId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProductId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Version(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetInputReportAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetInputReportByIdAsync(uint16_t reportId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFeatureReportAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFeatureReportByIdAsync(uint16_t reportId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateOutputReport(void** outputReport) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateOutputReportById(uint16_t reportId, void** outputReport) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFeatureReport(void** featureReport) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFeatureReportById(uint16_t reportId, void** featureReport) noexcept = 0;
+    virtual int32_t WINRT_CALL SendOutputReportAsync(void* outputReport, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendFeatureReportAsync(void* featureReport, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_InputReportReceived(void* reportHandler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_InputReportReceived(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(uint16_t usagePage, uint16_t usageId, void** selector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorVidPid(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId, void** selector) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, Windows::Storage::FileAccessMode accessMode, void** hidDevice) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidInputReport>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivatedBooleanControls(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransitionedBooleanControls(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Report(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidNumericControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGrouped(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(int64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScaledValue(int64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScaledValue(int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlDescription(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogicalMinimum(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogicalMaximum(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhysicalMinimum(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhysicalMaximum(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnitExponent(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Unit(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAbsolute(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasNull(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ParentCollections(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidOutputReport>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_HumanInterfaceDevice_IHidBooleanControl
@@ -197,10 +332,10 @@ struct consume_Windows_Devices_HumanInterfaceDevice_IHidDevice
     Windows::Foundation::IAsyncOperation<uint32_t> SendFeatureReportAsync(Windows::Devices::HumanInterfaceDevice::HidFeatureReport const& featureReport) const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType const& reportType, uint16_t usagePage, uint16_t usageId) const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType const& reportType, uint16_t usagePage, uint16_t usageId) const;
-    event_token InputReportReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const;
-    using InputReportReceived_revoker = event_revoker<Windows::Devices::HumanInterfaceDevice::IHidDevice>;
+    winrt::event_token InputReportReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const;
+    using InputReportReceived_revoker = impl::event_revoker<Windows::Devices::HumanInterfaceDevice::IHidDevice, &impl::abi_t<Windows::Devices::HumanInterfaceDevice::IHidDevice>::remove_InputReportReceived>;
     InputReportReceived_revoker InputReportReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> const& reportHandler) const;
-    void InputReportReceived(event_token const& token) const;
+    void InputReportReceived(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::HumanInterfaceDevice::IHidDevice> { template <typename D> using type = consume_Windows_Devices_HumanInterfaceDevice_IHidDevice<D>; };
 
@@ -296,140 +431,5 @@ struct consume_Windows_Devices_HumanInterfaceDevice_IHidOutputReport
     Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControlByDescription(Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription const& controlDescription) const;
 };
 template <> struct consume<Windows::Devices::HumanInterfaceDevice::IHidOutputReport> { template <typename D> using type = consume_Windows_Devices_HumanInterfaceDevice_IHidOutputReport<D>; };
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsActive(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlDescription(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ParentCollections(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAbsolute(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::Devices::HumanInterfaceDevice::HidCollectionType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_VendorId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProductId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Version(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetInputReportAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetInputReportByIdAsync(uint16_t reportId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFeatureReportAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFeatureReportByIdAsync(uint16_t reportId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateOutputReport(void** outputReport) noexcept = 0;
-    virtual HRESULT __stdcall CreateOutputReportById(uint16_t reportId, void** outputReport) noexcept = 0;
-    virtual HRESULT __stdcall CreateFeatureReport(void** featureReport) noexcept = 0;
-    virtual HRESULT __stdcall CreateFeatureReportById(uint16_t reportId, void** featureReport) noexcept = 0;
-    virtual HRESULT __stdcall SendOutputReportAsync(void* outputReport, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendFeatureReportAsync(void* featureReport, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_InputReportReceived(void* reportHandler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_InputReportReceived(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(uint16_t usagePage, uint16_t usageId, HSTRING* selector) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorVidPid(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId, HSTRING* selector) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, Windows::Storage::FileAccessMode accessMode, void** hidDevice) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidInputReport>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivatedBooleanControls(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransitionedBooleanControls(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Report(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidNumericControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGrouped(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(int64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScaledValue(int64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ScaledValue(int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlDescription(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportType(Windows::Devices::HumanInterfaceDevice::HidReportType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogicalMinimum(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogicalMaximum(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhysicalMinimum(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhysicalMaximum(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnitExponent(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Unit(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAbsolute(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasNull(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ParentCollections(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::HumanInterfaceDevice::IHidOutputReport>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetBooleanControlByDescription(void* controlDescription, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControl(uint16_t usagePage, uint16_t usageId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumericControlByDescription(void* controlDescription, void** value) noexcept = 0;
-};};
 
 }

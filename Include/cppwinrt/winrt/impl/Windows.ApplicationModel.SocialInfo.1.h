@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,42 +11,42 @@
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::SocialInfo {
 
-struct WINRT_EBO [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedChildItem :
+struct WINRT_EBO ISocialFeedChildItem :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialFeedChildItem>
 {
     ISocialFeedChildItem(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedContent :
+struct WINRT_EBO ISocialFeedContent :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialFeedContent>
 {
     ISocialFeedContent(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedItem :
+struct WINRT_EBO ISocialFeedItem :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialFeedItem>
 {
     ISocialFeedItem(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedSharedItem :
+struct WINRT_EBO ISocialFeedSharedItem :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialFeedSharedItem>
 {
     ISocialFeedSharedItem(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialItemThumbnail :
+struct WINRT_EBO ISocialItemThumbnail :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialItemThumbnail>
 {
     ISocialItemThumbnail(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialUserInfo :
+struct WINRT_EBO ISocialUserInfo :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialUserInfo>
 {

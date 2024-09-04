@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Haptics.2.h"
@@ -61,55 +61,55 @@ template <typename D> Windows::UI::Input::DraggingState consume_Windows_UI_Input
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IEdgeGesture<D>::Starting(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IEdgeGesture<D>::Starting(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->add_Starting(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IEdgeGesture> consume_Windows_UI_Input_IEdgeGesture<D>::Starting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IEdgeGesture<D>::Starting_revoker consume_Windows_UI_Input_IEdgeGesture<D>::Starting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IEdgeGesture>(this, &abi_t<Windows::UI::Input::IEdgeGesture>::remove_Starting, Starting(handler));
+    return impl::make_event_revoker<D, Starting_revoker>(this, Starting(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Starting(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Starting(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Starting(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Starting(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IEdgeGesture<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IEdgeGesture<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->add_Completed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IEdgeGesture> consume_Windows_UI_Input_IEdgeGesture<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IEdgeGesture<D>::Completed_revoker consume_Windows_UI_Input_IEdgeGesture<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IEdgeGesture>(this, &abi_t<Windows::UI::Input::IEdgeGesture>::remove_Completed, Completed(handler));
+    return impl::make_event_revoker<D, Completed_revoker>(this, Completed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Completed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Completed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Completed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Completed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->add_Canceled(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IEdgeGesture> consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IEdgeGesture<D>::Canceled_revoker consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IEdgeGesture>(this, &abi_t<Windows::UI::Input::IEdgeGesture>::remove_Canceled, Canceled(handler));
+    return impl::make_event_revoker<D, Canceled_revoker>(this, Canceled(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IEdgeGesture<D>::Canceled(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Canceled(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IEdgeGesture)->remove_Canceled(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Input::EdgeGestureKind consume_Windows_UI_Input_IEdgeGestureEventArgs<D>::Kind() const
@@ -364,157 +364,157 @@ template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Compl
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->CompleteGesture());
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_Tapped(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_Tapped, Tapped(handler));
+    return impl::make_event_revoker<D, Tapped_revoker>(this, Tapped(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Tapped(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Tapped(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Tapped(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_RightTapped(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_RightTapped, RightTapped(handler));
+    return impl::make_event_revoker<D, RightTapped_revoker>(this, RightTapped(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::RightTapped(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_RightTapped(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_RightTapped(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_Holding(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::Holding_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_Holding, Holding(handler));
+    return impl::make_event_revoker<D, Holding_revoker>(this, Holding(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Holding(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Holding(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Holding(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_Dragging(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_Dragging, Dragging(handler));
+    return impl::make_event_revoker<D, Dragging_revoker>(this, Dragging(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::Dragging(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Dragging(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_Dragging(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_ManipulationStarted(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_ManipulationStarted, ManipulationStarted(handler));
+    return impl::make_event_revoker<D, ManipulationStarted_revoker>(this, ManipulationStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationStarted(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationStarted(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationStarted(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_ManipulationUpdated(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_ManipulationUpdated, ManipulationUpdated(handler));
+    return impl::make_event_revoker<D, ManipulationUpdated_revoker>(this, ManipulationUpdated(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationUpdated(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationUpdated(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationUpdated(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_ManipulationInertiaStarting(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_ManipulationInertiaStarting, ManipulationInertiaStarting(handler));
+    return impl::make_event_revoker<D, ManipulationInertiaStarting_revoker>(this, ManipulationInertiaStarting(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationInertiaStarting(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationInertiaStarting(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationInertiaStarting(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_ManipulationCompleted(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_ManipulationCompleted, ManipulationCompleted(handler));
+    return impl::make_event_revoker<D, ManipulationCompleted_revoker>(this, ManipulationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::ManipulationCompleted(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationCompleted(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_ManipulationCompleted(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const& handler) const
 {
-    event_token pCookie{};
+    winrt::event_token pCookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->add_CrossSliding(get_abi(handler), put_abi(pCookie)));
     return pCookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IGestureRecognizer> consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding_revoker consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IGestureRecognizer>(this, &abi_t<Windows::UI::Input::IGestureRecognizer>::remove_CrossSliding, CrossSliding(handler));
+    return impl::make_event_revoker<D, CrossSliding_revoker>(this, CrossSliding(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IGestureRecognizer<D>::CrossSliding(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_CrossSliding(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IGestureRecognizer)->remove_CrossSliding(get_abi(cookie)));
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType consume_Windows_UI_Input_IHoldingEventArgs<D>::PointerDeviceType() const
@@ -550,38 +550,38 @@ template <typename D> void consume_Windows_UI_Input_IKeyboardDeliveryInterceptor
     check_hresult(WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->put_IsInterceptionEnabledWhenInForeground(value));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->add_KeyDown(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IKeyboardDeliveryInterceptor> consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown_revoker consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IKeyboardDeliveryInterceptor>(this, &abi_t<Windows::UI::Input::IKeyboardDeliveryInterceptor>::remove_KeyDown, KeyDown(handler));
+    return impl::make_event_revoker<D, KeyDown_revoker>(this, KeyDown(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyDown(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->remove_KeyDown(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->remove_KeyDown(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->add_KeyUp(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IKeyboardDeliveryInterceptor> consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp_revoker consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IKeyboardDeliveryInterceptor>(this, &abi_t<Windows::UI::Input::IKeyboardDeliveryInterceptor>::remove_KeyUp, KeyUp(handler));
+    return impl::make_event_revoker<D, KeyUp_revoker>(this, KeyUp(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IKeyboardDeliveryInterceptor<D>::KeyUp(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->remove_KeyUp(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IKeyboardDeliveryInterceptor)->remove_KeyUp(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Input::KeyboardDeliveryInterceptor consume_Windows_UI_Input_IKeyboardDeliveryInterceptorStatics<D>::GetForCurrentView() const
@@ -1100,174 +1100,174 @@ template <typename D> void consume_Windows_UI_Input_IRadialController<D>::UseAut
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->put_UseAutomaticHapticFeedback(value));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ScreenContactStarted(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted_revoker consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ScreenContactStarted, ScreenContactStarted(handler));
+    return impl::make_event_revoker<D, ScreenContactStarted_revoker>(this, ScreenContactStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactStarted(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactStarted(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactStarted(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ScreenContactEnded(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded_revoker consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ScreenContactEnded, ScreenContactEnded(handler));
+    return impl::make_event_revoker<D, ScreenContactEnded_revoker>(this, ScreenContactEnded(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactEnded(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactEnded(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactEnded(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ScreenContactContinued(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued_revoker consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ScreenContactContinued, ScreenContactContinued(handler));
+    return impl::make_event_revoker<D, ScreenContactContinued_revoker>(this, ScreenContactContinued(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ScreenContactContinued(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactContinued(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ScreenContactContinued(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ControlLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ControlLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ControlLost(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ControlLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ControlLost_revoker consume_Windows_UI_Input_IRadialController<D>::ControlLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ControlLost, ControlLost(handler));
+    return impl::make_event_revoker<D, ControlLost_revoker>(this, ControlLost(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ControlLost(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ControlLost(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ControlLost(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ControlLost(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::RotationChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::RotationChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_RotationChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::RotationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::RotationChanged_revoker consume_Windows_UI_Input_IRadialController<D>::RotationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_RotationChanged, RotationChanged(handler));
+    return impl::make_event_revoker<D, RotationChanged_revoker>(this, RotationChanged(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::RotationChanged(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::RotationChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_RotationChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_RotationChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ButtonClicked(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ButtonClicked_revoker consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ButtonClicked, ButtonClicked(handler));
+    return impl::make_event_revoker<D, ButtonClicked_revoker>(this, ButtonClicked(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ButtonClicked(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ButtonClicked(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ButtonClicked(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->add_ControlAcquired(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController> consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController<D>::ControlAcquired_revoker consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController>(this, &abi_t<Windows::UI::Input::IRadialController>::remove_ControlAcquired, ControlAcquired(handler));
+    return impl::make_event_revoker<D, ControlAcquired_revoker>(this, ControlAcquired(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(event_token const& cookie) const
+template <typename D> void consume_Windows_UI_Input_IRadialController<D>::ControlAcquired(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ControlAcquired(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController)->remove_ControlAcquired(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->add_ButtonPressed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController2> consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed_revoker consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController2>(this, &abi_t<Windows::UI::Input::IRadialController2>::remove_ButtonPressed, ButtonPressed(handler));
+    return impl::make_event_revoker<D, ButtonPressed_revoker>(this, ButtonPressed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonPressed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonPressed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonPressed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->add_ButtonHolding(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController2> consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding_revoker consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController2>(this, &abi_t<Windows::UI::Input::IRadialController2>::remove_ButtonHolding, ButtonHolding(handler));
+    return impl::make_event_revoker<D, ButtonHolding_revoker>(this, ButtonHolding(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonHolding(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonHolding(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonHolding(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->add_ButtonReleased(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialController2> consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased_revoker consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialController2>(this, &abi_t<Windows::UI::Input::IRadialController2>::remove_ButtonReleased, ButtonReleased(handler));
+    return impl::make_event_revoker<D, ButtonReleased_revoker>(this, ButtonReleased(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialController2<D>::ButtonReleased(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonReleased(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialController2)->remove_ButtonReleased(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Input::RadialControllerScreenContact consume_Windows_UI_Input_IRadialControllerButtonClickedEventArgs<D>::Contact() const
@@ -1476,21 +1476,21 @@ template <typename D> void consume_Windows_UI_Input_IRadialControllerMenuItem<D>
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialControllerMenuItem)->put_Tag(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialControllerMenuItem)->add_Invoked(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::IRadialControllerMenuItem> consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked_revoker consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::IRadialControllerMenuItem>(this, &abi_t<Windows::UI::Input::IRadialControllerMenuItem>::remove_Invoked, Invoked(handler));
+    return impl::make_event_revoker<D, Invoked_revoker>(this, Invoked(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_IRadialControllerMenuItem<D>::Invoked(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::IRadialControllerMenuItem)->remove_Invoked(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::IRadialControllerMenuItem)->remove_Invoked(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Input::RadialControllerMenuItem consume_Windows_UI_Input_IRadialControllerMenuItemStatics<D>::CreateFromIcon(param::hstring const& displayText, Windows::Storage::Streams::RandomAccessStreamReference const& icon) const
@@ -1671,3542 +1671,2970 @@ template <typename D> uint32_t consume_Windows_UI_Input_ITappedEventArgs<D>::Tap
 template <typename D>
 struct produce<D, Windows::UI::Input::ICrossSlidingEventArgs> : produce_base<D, Windows::UI::Input::ICrossSlidingEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CrossSlidingState(Windows::UI::Input::CrossSlidingState* value) noexcept final
+    int32_t WINRT_CALL get_CrossSlidingState(Windows::UI::Input::CrossSlidingState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlidingState, WINRT_WRAP(Windows::UI::Input::CrossSlidingState));
             *value = detach_from<Windows::UI::Input::CrossSlidingState>(this->shim().CrossSlidingState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IDraggingEventArgs> : produce_base<D, Windows::UI::Input::IDraggingEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DraggingState(Windows::UI::Input::DraggingState* value) noexcept final
+    int32_t WINRT_CALL get_DraggingState(Windows::UI::Input::DraggingState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DraggingState, WINRT_WRAP(Windows::UI::Input::DraggingState));
             *value = detach_from<Windows::UI::Input::DraggingState>(this->shim().DraggingState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IEdgeGesture> : produce_base<D, Windows::UI::Input::IEdgeGesture>
 {
-    HRESULT __stdcall add_Starting(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Starting(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Starting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Starting, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Starting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Starting(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Starting(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Starting(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Starting, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Starting(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Completed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Completed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Canceled(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Canceled(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Canceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Canceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Canceled(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Canceled(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Canceled(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Canceled(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IEdgeGestureEventArgs> : produce_base<D, Windows::UI::Input::IEdgeGestureEventArgs>
 {
-    HRESULT __stdcall get_Kind(Windows::UI::Input::EdgeGestureKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::UI::Input::EdgeGestureKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::UI::Input::EdgeGestureKind));
             *value = detach_from<Windows::UI::Input::EdgeGestureKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IEdgeGestureStatics> : produce_base<D, Windows::UI::Input::IEdgeGestureStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Input::EdgeGesture));
             *current = detach_from<Windows::UI::Input::EdgeGesture>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IGestureRecognizer> : produce_base<D, Windows::UI::Input::IGestureRecognizer>
 {
-    HRESULT __stdcall get_GestureSettings(Windows::UI::Input::GestureSettings* value) noexcept final
+    int32_t WINRT_CALL get_GestureSettings(Windows::UI::Input::GestureSettings* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GestureSettings, WINRT_WRAP(Windows::UI::Input::GestureSettings));
             *value = detach_from<Windows::UI::Input::GestureSettings>(this->shim().GestureSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GestureSettings(Windows::UI::Input::GestureSettings value) noexcept final
+    int32_t WINRT_CALL put_GestureSettings(Windows::UI::Input::GestureSettings value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GestureSettings, WINRT_WRAP(void), Windows::UI::Input::GestureSettings const&);
             this->shim().GestureSettings(*reinterpret_cast<Windows::UI::Input::GestureSettings const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInertial(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInertial(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInertial, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInertial());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowGestureFeedback(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShowGestureFeedback(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowGestureFeedback, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShowGestureFeedback());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShowGestureFeedback(bool value) noexcept final
+    int32_t WINRT_CALL put_ShowGestureFeedback(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowGestureFeedback, WINRT_WRAP(void), bool);
             this->shim().ShowGestureFeedback(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PivotCenter(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_PivotCenter(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PivotCenter, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().PivotCenter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PivotCenter(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_PivotCenter(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PivotCenter, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().PivotCenter(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PivotRadius(float* value) noexcept final
+    int32_t WINRT_CALL get_PivotRadius(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PivotRadius, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PivotRadius());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PivotRadius(float value) noexcept final
+    int32_t WINRT_CALL put_PivotRadius(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PivotRadius, WINRT_WRAP(void), float);
             this->shim().PivotRadius(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaTranslationDeceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaTranslationDeceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaTranslationDeceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaTranslationDeceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaTranslationDeceleration(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaTranslationDeceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaTranslationDeceleration, WINRT_WRAP(void), float);
             this->shim().InertiaTranslationDeceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaRotationDeceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaRotationDeceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaRotationDeceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaRotationDeceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaRotationDeceleration(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaRotationDeceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaRotationDeceleration, WINRT_WRAP(void), float);
             this->shim().InertiaRotationDeceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaExpansionDeceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaExpansionDeceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaExpansionDeceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaExpansionDeceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaExpansionDeceleration(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaExpansionDeceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaExpansionDeceleration, WINRT_WRAP(void), float);
             this->shim().InertiaExpansionDeceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaTranslationDisplacement(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaTranslationDisplacement(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaTranslationDisplacement, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaTranslationDisplacement());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaTranslationDisplacement(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaTranslationDisplacement(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaTranslationDisplacement, WINRT_WRAP(void), float);
             this->shim().InertiaTranslationDisplacement(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaRotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaRotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaRotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaRotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaRotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaRotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaRotationAngle, WINRT_WRAP(void), float);
             this->shim().InertiaRotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InertiaExpansion(float* value) noexcept final
+    int32_t WINRT_CALL get_InertiaExpansion(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaExpansion, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InertiaExpansion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InertiaExpansion(float value) noexcept final
+    int32_t WINRT_CALL put_InertiaExpansion(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InertiaExpansion, WINRT_WRAP(void), float);
             this->shim().InertiaExpansion(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManipulationExact(bool* value) noexcept final
+    int32_t WINRT_CALL get_ManipulationExact(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManipulationExact, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ManipulationExact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ManipulationExact(bool value) noexcept final
+    int32_t WINRT_CALL put_ManipulationExact(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManipulationExact, WINRT_WRAP(void), bool);
             this->shim().ManipulationExact(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CrossSlideThresholds(struct struct_Windows_UI_Input_CrossSlideThresholds* value) noexcept final
+    int32_t WINRT_CALL get_CrossSlideThresholds(struct struct_Windows_UI_Input_CrossSlideThresholds* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideThresholds, WINRT_WRAP(Windows::UI::Input::CrossSlideThresholds));
             *value = detach_from<Windows::UI::Input::CrossSlideThresholds>(this->shim().CrossSlideThresholds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CrossSlideThresholds(struct struct_Windows_UI_Input_CrossSlideThresholds value) noexcept final
+    int32_t WINRT_CALL put_CrossSlideThresholds(struct struct_Windows_UI_Input_CrossSlideThresholds value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideThresholds, WINRT_WRAP(void), Windows::UI::Input::CrossSlideThresholds const&);
             this->shim().CrossSlideThresholds(*reinterpret_cast<Windows::UI::Input::CrossSlideThresholds const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CrossSlideHorizontally(bool* value) noexcept final
+    int32_t WINRT_CALL get_CrossSlideHorizontally(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideHorizontally, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CrossSlideHorizontally());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CrossSlideHorizontally(bool value) noexcept final
+    int32_t WINRT_CALL put_CrossSlideHorizontally(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideHorizontally, WINRT_WRAP(void), bool);
             this->shim().CrossSlideHorizontally(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CrossSlideExact(bool* value) noexcept final
+    int32_t WINRT_CALL get_CrossSlideExact(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideExact, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CrossSlideExact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CrossSlideExact(bool value) noexcept final
+    int32_t WINRT_CALL put_CrossSlideExact(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CrossSlideExact, WINRT_WRAP(void), bool);
             this->shim().CrossSlideExact(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoProcessInertia(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoProcessInertia(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoProcessInertia, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoProcessInertia());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoProcessInertia(bool value) noexcept final
+    int32_t WINRT_CALL put_AutoProcessInertia(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoProcessInertia, WINRT_WRAP(void), bool);
             this->shim().AutoProcessInertia(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MouseWheelParameters(void** value) noexcept final
+    int32_t WINRT_CALL get_MouseWheelParameters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseWheelParameters, WINRT_WRAP(Windows::UI::Input::MouseWheelParameters));
             *value = detach_from<Windows::UI::Input::MouseWheelParameters>(this->shim().MouseWheelParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanBeDoubleTap(void* value, bool* canBeDoubleTap) noexcept final
+    int32_t WINRT_CALL CanBeDoubleTap(void* value, bool* canBeDoubleTap) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanBeDoubleTap, WINRT_WRAP(bool), Windows::UI::Input::PointerPoint const&);
             *canBeDoubleTap = detach_from<bool>(this->shim().CanBeDoubleTap(*reinterpret_cast<Windows::UI::Input::PointerPoint const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessDownEvent(void* value) noexcept final
+    int32_t WINRT_CALL ProcessDownEvent(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessDownEvent, WINRT_WRAP(void), Windows::UI::Input::PointerPoint const&);
             this->shim().ProcessDownEvent(*reinterpret_cast<Windows::UI::Input::PointerPoint const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessMoveEvents(void* value) noexcept final
+    int32_t WINRT_CALL ProcessMoveEvents(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessMoveEvents, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> const&);
             this->shim().ProcessMoveEvents(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessUpEvent(void* value) noexcept final
+    int32_t WINRT_CALL ProcessUpEvent(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessUpEvent, WINRT_WRAP(void), Windows::UI::Input::PointerPoint const&);
             this->shim().ProcessUpEvent(*reinterpret_cast<Windows::UI::Input::PointerPoint const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessMouseWheelEvent(void* value, bool isShiftKeyDown, bool isControlKeyDown) noexcept final
+    int32_t WINRT_CALL ProcessMouseWheelEvent(void* value, bool isShiftKeyDown, bool isControlKeyDown) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessMouseWheelEvent, WINRT_WRAP(void), Windows::UI::Input::PointerPoint const&, bool, bool);
             this->shim().ProcessMouseWheelEvent(*reinterpret_cast<Windows::UI::Input::PointerPoint const*>(&value), isShiftKeyDown, isControlKeyDown);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessInertia() noexcept final
+    int32_t WINRT_CALL ProcessInertia() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessInertia, WINRT_WRAP(void));
             this->shim().ProcessInertia();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CompleteGesture() noexcept final
+    int32_t WINRT_CALL CompleteGesture() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompleteGesture, WINRT_WRAP(void));
             this->shim().CompleteGesture();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Tapped(void* handler, event_token* pCookie) noexcept final
+    int32_t WINRT_CALL add_Tapped(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().Tapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Tapped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().Tapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::TappedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Tapped(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Tapped(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Tapped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Tapped(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RightTapped(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Tapped(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RightTapped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().RightTapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RightTapped(void* handler, event_token* pCookie) noexcept final
+    int32_t WINRT_CALL remove_RightTapped(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RightTapped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RightTapped(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Holding(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().RightTapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::RightTappedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Holding, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().Holding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RightTapped(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Holding(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Holding, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Holding(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Dragging(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RightTapped(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Dragging, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().Dragging(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Holding(void* handler, event_token* pCookie) noexcept final
+    int32_t WINRT_CALL remove_Dragging(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Dragging, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Dragging(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ManipulationStarted(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().Holding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::HoldingEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().ManipulationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Holding(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ManipulationStarted(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationStarted(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ManipulationUpdated(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Holding(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().ManipulationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Dragging(void* handler, event_token* pCookie) noexcept final
+    int32_t WINRT_CALL remove_ManipulationUpdated(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationUpdated(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ManipulationInertiaStarting(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().Dragging(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::DraggingEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationInertiaStarting, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().ManipulationInertiaStarting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Dragging(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ManipulationInertiaStarting(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationInertiaStarting, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationInertiaStarting(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ManipulationCompleted(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Dragging(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().ManipulationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ManipulationStarted(void* handler, event_token* pCookie) noexcept final
+    int32_t WINRT_CALL remove_ManipulationCompleted(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationCompleted(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_CrossSliding(void* handler, winrt::event_token* pCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().ManipulationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CrossSliding, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const&);
+            *pCookie = detach_from<winrt::event_token>(this->shim().CrossSliding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ManipulationStarted(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_CrossSliding(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationStarted(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ManipulationUpdated(void* handler, event_token* pCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().ManipulationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ManipulationUpdated(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationUpdated(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ManipulationInertiaStarting(void* handler, event_token* pCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().ManipulationInertiaStarting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationInertiaStartingEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ManipulationInertiaStarting(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationInertiaStarting(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ManipulationCompleted(void* handler, event_token* pCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().ManipulationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::ManipulationCompletedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ManipulationCompleted(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationCompleted(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_CrossSliding(void* handler, event_token* pCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *pCookie = detach_from<event_token>(this->shim().CrossSliding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::GestureRecognizer, Windows::UI::Input::CrossSlidingEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_CrossSliding(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().CrossSliding(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CrossSliding, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CrossSliding(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IHoldingEventArgs> : produce_base<D, Windows::UI::Input::IHoldingEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HoldingState(Windows::UI::Input::HoldingState* value) noexcept final
+    int32_t WINRT_CALL get_HoldingState(Windows::UI::Input::HoldingState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HoldingState, WINRT_WRAP(Windows::UI::Input::HoldingState));
             *value = detach_from<Windows::UI::Input::HoldingState>(this->shim().HoldingState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptor> : produce_base<D, Windows::UI::Input::IKeyboardDeliveryInterceptor>
 {
-    HRESULT __stdcall get_IsInterceptionEnabledWhenInForeground(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInterceptionEnabledWhenInForeground(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInterceptionEnabledWhenInForeground, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInterceptionEnabledWhenInForeground());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsInterceptionEnabledWhenInForeground(bool value) noexcept final
+    int32_t WINRT_CALL put_IsInterceptionEnabledWhenInForeground(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInterceptionEnabledWhenInForeground, WINRT_WRAP(void), bool);
             this->shim().IsInterceptionEnabledWhenInForeground(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_KeyDown(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_KeyDown(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().KeyDown(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(KeyDown, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().KeyDown(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_KeyDown(event_token token) noexcept final
+    int32_t WINRT_CALL remove_KeyDown(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(KeyDown, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().KeyDown(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_KeyUp(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().KeyDown(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(KeyUp, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().KeyUp(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_KeyUp(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_KeyUp(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().KeyUp(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_KeyUp(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().KeyUp(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(KeyUp, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().KeyUp(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics> : produce_base<D, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** keyboardDeliverySettings) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** keyboardDeliverySettings) noexcept final
     {
         try
         {
             *keyboardDeliverySettings = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Input::KeyboardDeliveryInterceptor));
             *keyboardDeliverySettings = detach_from<Windows::UI::Input::KeyboardDeliveryInterceptor>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IManipulationCompletedEventArgs> : produce_base<D, Windows::UI::Input::IManipulationCompletedEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cumulative, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Cumulative());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
+    int32_t WINRT_CALL get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Velocities, WINRT_WRAP(Windows::UI::Input::ManipulationVelocities));
             *value = detach_from<Windows::UI::Input::ManipulationVelocities>(this->shim().Velocities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs> : produce_base<D, Windows::UI::Input::IManipulationInertiaStartingEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Delta(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Delta(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delta, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Delta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cumulative, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Cumulative());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
+    int32_t WINRT_CALL get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Velocities, WINRT_WRAP(Windows::UI::Input::ManipulationVelocities));
             *value = detach_from<Windows::UI::Input::ManipulationVelocities>(this->shim().Velocities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IManipulationStartedEventArgs> : produce_base<D, Windows::UI::Input::IManipulationStartedEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cumulative, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Cumulative());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IManipulationUpdatedEventArgs> : produce_base<D, Windows::UI::Input::IManipulationUpdatedEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Delta(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Delta(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delta, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Delta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
+    int32_t WINRT_CALL get_Cumulative(struct struct_Windows_UI_Input_ManipulationDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cumulative, WINRT_WRAP(Windows::UI::Input::ManipulationDelta));
             *value = detach_from<Windows::UI::Input::ManipulationDelta>(this->shim().Cumulative());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
+    int32_t WINRT_CALL get_Velocities(struct struct_Windows_UI_Input_ManipulationVelocities* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Velocities, WINRT_WRAP(Windows::UI::Input::ManipulationVelocities));
             *value = detach_from<Windows::UI::Input::ManipulationVelocities>(this->shim().Velocities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IMouseWheelParameters> : produce_base<D, Windows::UI::Input::IMouseWheelParameters>
 {
-    HRESULT __stdcall get_CharTranslation(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_CharTranslation(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharTranslation, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().CharTranslation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CharTranslation(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_CharTranslation(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharTranslation, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().CharTranslation(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeltaScale(float* value) noexcept final
+    int32_t WINRT_CALL get_DeltaScale(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaScale, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DeltaScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DeltaScale(float value) noexcept final
+    int32_t WINRT_CALL put_DeltaScale(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaScale, WINRT_WRAP(void), float);
             this->shim().DeltaScale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeltaRotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_DeltaRotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaRotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DeltaRotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DeltaRotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_DeltaRotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaRotationAngle, WINRT_WRAP(void), float);
             this->shim().DeltaRotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PageTranslation(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_PageTranslation(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PageTranslation, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().PageTranslation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PageTranslation(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_PageTranslation(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PageTranslation, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().PageTranslation(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerPoint> : produce_base<D, Windows::UI::Input::IPointerPoint>
 {
-    HRESULT __stdcall get_PointerDevice(void** value) noexcept final
+    int32_t WINRT_CALL get_PointerDevice(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDevice, WINRT_WRAP(Windows::Devices::Input::PointerDevice));
             *value = detach_from<Windows::Devices::Input::PointerDevice>(this->shim().PointerDevice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RawPosition(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_RawPosition(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawPosition, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().RawPosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PointerId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PointerId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PointerId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrameId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_FrameId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().FrameId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInContact(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInContact(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInContact, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInContact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::UI::Input::PointerPointProperties));
             *value = detach_from<Windows::UI::Input::PointerPointProperties>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerPointProperties> : produce_base<D, Windows::UI::Input::IPointerPointProperties>
 {
-    HRESULT __stdcall get_Pressure(float* value) noexcept final
+    int32_t WINRT_CALL get_Pressure(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pressure, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Pressure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInverted(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInverted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInverted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInverted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEraser(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEraser(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEraser, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEraser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orientation(float* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XTilt(float* value) noexcept final
+    int32_t WINRT_CALL get_XTilt(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XTilt, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().XTilt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YTilt(float* value) noexcept final
+    int32_t WINRT_CALL get_YTilt(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YTilt, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().YTilt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Twist(float* value) noexcept final
+    int32_t WINRT_CALL get_Twist(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Twist, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Twist());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContactRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_ContactRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().ContactRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContactRectRaw(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_ContactRectRaw(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactRectRaw, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().ContactRectRaw());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TouchConfidence(bool* value) noexcept final
+    int32_t WINRT_CALL get_TouchConfidence(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchConfidence, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().TouchConfidence());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsLeftButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsLeftButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLeftButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsLeftButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsRightButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRightButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRightButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRightButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMiddleButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMiddleButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMiddleButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMiddleButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MouseWheelDelta(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MouseWheelDelta(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseWheelDelta, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MouseWheelDelta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsHorizontalMouseWheel(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsHorizontalMouseWheel(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHorizontalMouseWheel, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsHorizontalMouseWheel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPrimary(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPrimary(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrimary, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPrimary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInRange(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInRange(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInRange, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInRange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsCanceled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCanceled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCanceled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCanceled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsBarrelButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBarrelButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBarrelButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBarrelButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsXButton1Pressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsXButton1Pressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsXButton1Pressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsXButton1Pressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsXButton2Pressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsXButton2Pressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsXButton2Pressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsXButton2Pressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PointerUpdateKind(Windows::UI::Input::PointerUpdateKind* value) noexcept final
+    int32_t WINRT_CALL get_PointerUpdateKind(Windows::UI::Input::PointerUpdateKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerUpdateKind, WINRT_WRAP(Windows::UI::Input::PointerUpdateKind));
             *value = detach_from<Windows::UI::Input::PointerUpdateKind>(this->shim().PointerUpdateKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HasUsage(uint32_t usagePage, uint32_t usageId, bool* value) noexcept final
+    int32_t WINRT_CALL HasUsage(uint32_t usagePage, uint32_t usageId, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasUsage, WINRT_WRAP(bool), uint32_t, uint32_t);
             *value = detach_from<bool>(this->shim().HasUsage(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUsageValue(uint32_t usagePage, uint32_t usageId, int32_t* value) noexcept final
+    int32_t WINRT_CALL GetUsageValue(uint32_t usagePage, uint32_t usageId, int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUsageValue, WINRT_WRAP(int32_t), uint32_t, uint32_t);
             *value = detach_from<int32_t>(this->shim().GetUsageValue(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerPointProperties2> : produce_base<D, Windows::UI::Input::IPointerPointProperties2>
 {
-    HRESULT __stdcall get_ZDistance(void** value) noexcept final
+    int32_t WINRT_CALL get_ZDistance(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZDistance, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().ZDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerPointStatics> : produce_base<D, Windows::UI::Input::IPointerPointStatics>
 {
-    HRESULT __stdcall GetCurrentPoint(uint32_t pointerId, void** pointerPoint) noexcept final
+    int32_t WINRT_CALL GetCurrentPoint(uint32_t pointerId, void** pointerPoint) noexcept final
     {
         try
         {
             *pointerPoint = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentPoint, WINRT_WRAP(Windows::UI::Input::PointerPoint), uint32_t);
             *pointerPoint = detach_from<Windows::UI::Input::PointerPoint>(this->shim().GetCurrentPoint(pointerId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIntermediatePoints(uint32_t pointerId, void** pointerPoints) noexcept final
+    int32_t WINRT_CALL GetIntermediatePoints(uint32_t pointerId, void** pointerPoints) noexcept final
     {
         try
         {
             *pointerPoints = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIntermediatePoints, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>), uint32_t);
             *pointerPoints = detach_from<Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>>(this->shim().GetIntermediatePoints(pointerId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentPointTransformed(uint32_t pointerId, void* transform, void** pointerPoint) noexcept final
+    int32_t WINRT_CALL GetCurrentPointTransformed(uint32_t pointerId, void* transform, void** pointerPoint) noexcept final
     {
         try
         {
             *pointerPoint = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentPoint, WINRT_WRAP(Windows::UI::Input::PointerPoint), uint32_t, Windows::UI::Input::IPointerPointTransform const&);
             *pointerPoint = detach_from<Windows::UI::Input::PointerPoint>(this->shim().GetCurrentPoint(pointerId, *reinterpret_cast<Windows::UI::Input::IPointerPointTransform const*>(&transform)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIntermediatePointsTransformed(uint32_t pointerId, void* transform, void** pointerPoints) noexcept final
+    int32_t WINRT_CALL GetIntermediatePointsTransformed(uint32_t pointerId, void* transform, void** pointerPoints) noexcept final
     {
         try
         {
             *pointerPoints = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIntermediatePoints, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>), uint32_t, Windows::UI::Input::IPointerPointTransform const&);
             *pointerPoints = detach_from<Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint>>(this->shim().GetIntermediatePoints(pointerId, *reinterpret_cast<Windows::UI::Input::IPointerPointTransform const*>(&transform)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerPointTransform> : produce_base<D, Windows::UI::Input::IPointerPointTransform>
 {
-    HRESULT __stdcall get_Inverse(void** value) noexcept final
+    int32_t WINRT_CALL get_Inverse(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Inverse, WINRT_WRAP(Windows::UI::Input::IPointerPointTransform));
             *value = detach_from<Windows::UI::Input::IPointerPointTransform>(this->shim().Inverse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryTransform(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
+    int32_t WINRT_CALL TryTransform(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryTransform, WINRT_WRAP(bool), Windows::Foundation::Point const&, Windows::Foundation::Point&);
             *returnValue = detach_from<bool>(this->shim().TryTransform(*reinterpret_cast<Windows::Foundation::Point const*>(&inPoint), *reinterpret_cast<Windows::Foundation::Point*>(outPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransformBounds(Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept final
+    int32_t WINRT_CALL TransformBounds(Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformBounds, WINRT_WRAP(Windows::Foundation::Rect), Windows::Foundation::Rect const&);
             *returnValue = detach_from<Windows::Foundation::Rect>(this->shim().TransformBounds(*reinterpret_cast<Windows::Foundation::Rect const*>(&rect)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerVisualizationSettings> : produce_base<D, Windows::UI::Input::IPointerVisualizationSettings>
 {
-    HRESULT __stdcall put_IsContactFeedbackEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsContactFeedbackEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsContactFeedbackEnabled, WINRT_WRAP(void), bool);
             this->shim().IsContactFeedbackEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsContactFeedbackEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsContactFeedbackEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsContactFeedbackEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsContactFeedbackEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsBarrelButtonFeedbackEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsBarrelButtonFeedbackEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBarrelButtonFeedbackEnabled, WINRT_WRAP(void), bool);
             this->shim().IsBarrelButtonFeedbackEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsBarrelButtonFeedbackEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBarrelButtonFeedbackEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBarrelButtonFeedbackEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBarrelButtonFeedbackEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IPointerVisualizationSettingsStatics> : produce_base<D, Windows::UI::Input::IPointerVisualizationSettingsStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** visualizationSettings) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** visualizationSettings) noexcept final
     {
         try
         {
             *visualizationSettings = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Input::PointerVisualizationSettings));
             *visualizationSettings = detach_from<Windows::UI::Input::PointerVisualizationSettings>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windows::UI::Input::IRadialController>
 {
-    HRESULT __stdcall get_Menu(void** value) noexcept final
+    int32_t WINRT_CALL get_Menu(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Menu, WINRT_WRAP(Windows::UI::Input::RadialControllerMenu));
             *value = detach_from<Windows::UI::Input::RadialControllerMenu>(this->shim().Menu());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationResolutionInDegrees(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationResolutionInDegrees(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationResolutionInDegrees, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationResolutionInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationResolutionInDegrees(double value) noexcept final
+    int32_t WINRT_CALL put_RotationResolutionInDegrees(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationResolutionInDegrees, WINRT_WRAP(void), double);
             this->shim().RotationResolutionInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UseAutomaticHapticFeedback(bool* value) noexcept final
+    int32_t WINRT_CALL get_UseAutomaticHapticFeedback(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UseAutomaticHapticFeedback, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().UseAutomaticHapticFeedback());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UseAutomaticHapticFeedback(bool value) noexcept final
+    int32_t WINRT_CALL put_UseAutomaticHapticFeedback(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UseAutomaticHapticFeedback, WINRT_WRAP(void), bool);
             this->shim().UseAutomaticHapticFeedback(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ScreenContactStarted(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ScreenContactStarted(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ScreenContactStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScreenContactStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ScreenContactStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ScreenContactStarted(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ScreenContactStarted(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ScreenContactStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ScreenContactStarted(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ScreenContactEnded(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ScreenContactStarted(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScreenContactEnded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ScreenContactEnded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ScreenContactEnded(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_ScreenContactEnded(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ScreenContactEnded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ScreenContactEnded(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ScreenContactContinued(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ScreenContactEnded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScreenContactContinued, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ScreenContactContinued(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ScreenContactEnded(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ScreenContactContinued(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ScreenContactContinued, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ScreenContactContinued(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ControlLost(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ScreenContactEnded(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ControlLost, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ControlLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ScreenContactContinued(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_ControlLost(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ControlLost, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ControlLost(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RotationChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ScreenContactContinued(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RotationChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RotationChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ScreenContactContinued(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_RotationChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RotationChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RotationChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ButtonClicked(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ScreenContactContinued(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ButtonClicked, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ButtonClicked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ControlLost(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_ButtonClicked(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ButtonClicked, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ButtonClicked(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ControlAcquired(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ControlLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ControlAcquired, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ControlAcquired(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ControlLost(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ControlAcquired(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ControlLost(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_RotationChanged(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RotationChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerRotationChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_RotationChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RotationChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ButtonClicked(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ButtonClicked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonClickedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ButtonClicked(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ButtonClicked(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ControlAcquired(void* handler, event_token* cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ControlAcquired(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ControlAcquired(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ControlAcquired(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ControlAcquired, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ControlAcquired(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialController2> : produce_base<D, Windows::UI::Input::IRadialController2>
 {
-    HRESULT __stdcall add_ButtonPressed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ButtonPressed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ButtonPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ButtonPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ButtonPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ButtonPressed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ButtonPressed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ButtonPressed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ButtonPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ButtonPressed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ButtonHolding(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ButtonHolding(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ButtonHolding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ButtonHolding, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ButtonHolding(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ButtonHolding(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ButtonHolding(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ButtonHolding(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ButtonHolding, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ButtonHolding(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ButtonReleased(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ButtonReleased(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ButtonReleased(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ButtonReleased, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ButtonReleased(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ButtonReleased(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ButtonReleased(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ButtonReleased(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ButtonReleased, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ButtonReleased(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs2>
 {
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonHoldingEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonHoldingEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonPressedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonPressedEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonReleasedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonReleasedEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_base<D, Windows::UI::Input::IRadialControllerConfiguration>
 {
-    HRESULT __stdcall SetDefaultMenuItems(void* buttons) noexcept final
+    int32_t WINRT_CALL SetDefaultMenuItems(void* buttons) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDefaultMenuItems, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::UI::Input::RadialControllerSystemMenuItemKind> const&);
             this->shim().SetDefaultMenuItems(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::UI::Input::RadialControllerSystemMenuItemKind> const*>(&buttons));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResetToDefaultMenuItems() noexcept final
+    int32_t WINRT_CALL ResetToDefaultMenuItems() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetToDefaultMenuItems, WINRT_WRAP(void));
             this->shim().ResetToDefaultMenuItems();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type, bool* result) noexcept final
+    int32_t WINRT_CALL TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySelectDefaultMenuItem, WINRT_WRAP(bool), Windows::UI::Input::RadialControllerSystemMenuItemKind const&);
             *result = detach_from<bool>(this->shim().TrySelectDefaultMenuItem(*reinterpret_cast<Windows::UI::Input::RadialControllerSystemMenuItemKind const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerConfiguration2> : produce_base<D, Windows::UI::Input::IRadialControllerConfiguration2>
 {
-    HRESULT __stdcall put_ActiveControllerWhenMenuIsSuppressed(void* value) noexcept final
+    int32_t WINRT_CALL put_ActiveControllerWhenMenuIsSuppressed(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActiveControllerWhenMenuIsSuppressed, WINRT_WRAP(void), Windows::UI::Input::RadialController const&);
             this->shim().ActiveControllerWhenMenuIsSuppressed(*reinterpret_cast<Windows::UI::Input::RadialController const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActiveControllerWhenMenuIsSuppressed(void** value) noexcept final
+    int32_t WINRT_CALL get_ActiveControllerWhenMenuIsSuppressed(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActiveControllerWhenMenuIsSuppressed, WINRT_WRAP(Windows::UI::Input::RadialController));
             *value = detach_from<Windows::UI::Input::RadialController>(this->shim().ActiveControllerWhenMenuIsSuppressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsMenuSuppressed(bool value) noexcept final
+    int32_t WINRT_CALL put_IsMenuSuppressed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMenuSuppressed, WINRT_WRAP(void), bool);
             this->shim().IsMenuSuppressed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMenuSuppressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMenuSuppressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMenuSuppressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMenuSuppressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerConfigurationStatics> : produce_base<D, Windows::UI::Input::IRadialControllerConfigurationStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** configuration) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** configuration) noexcept final
     {
         try
         {
             *configuration = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Input::RadialControllerConfiguration));
             *configuration = detach_from<Windows::UI::Input::RadialControllerConfiguration>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerConfigurationStatics2> : produce_base<D, Windows::UI::Input::IRadialControllerConfigurationStatics2>
 {
-    HRESULT __stdcall put_AppController(void* value) noexcept final
+    int32_t WINRT_CALL put_AppController(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppController, WINRT_WRAP(void), Windows::UI::Input::RadialController const&);
             this->shim().AppController(*reinterpret_cast<Windows::UI::Input::RadialController const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppController(void** value) noexcept final
+    int32_t WINRT_CALL get_AppController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppController, WINRT_WRAP(Windows::UI::Input::RadialController));
             *value = detach_from<Windows::UI::Input::RadialController>(this->shim().AppController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsAppControllerEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsAppControllerEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAppControllerEnabled, WINRT_WRAP(void), bool);
             this->shim().IsAppControllerEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAppControllerEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAppControllerEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAppControllerEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAppControllerEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2>
 {
-    HRESULT __stdcall get_IsButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerMenu> : produce_base<D, Windows::UI::Input::IRadialControllerMenu>
 {
-    HRESULT __stdcall get_Items(void** value) noexcept final
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::UI::Input::RadialControllerMenuItem>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::UI::Input::RadialControllerMenuItem>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSelectedMenuItem(void** result) noexcept final
+    int32_t WINRT_CALL GetSelectedMenuItem(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSelectedMenuItem, WINRT_WRAP(Windows::UI::Input::RadialControllerMenuItem));
             *result = detach_from<Windows::UI::Input::RadialControllerMenuItem>(this->shim().GetSelectedMenuItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectMenuItem(void* menuItem) noexcept final
+    int32_t WINRT_CALL SelectMenuItem(void* menuItem) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectMenuItem, WINRT_WRAP(void), Windows::UI::Input::RadialControllerMenuItem const&);
             this->shim().SelectMenuItem(*reinterpret_cast<Windows::UI::Input::RadialControllerMenuItem const*>(&menuItem));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySelectPreviouslySelectedMenuItem(bool* result) noexcept final
+    int32_t WINRT_CALL TrySelectPreviouslySelectedMenuItem(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySelectPreviouslySelectedMenuItem, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().TrySelectPreviouslySelectedMenuItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerMenuItem> : produce_base<D, Windows::UI::Input::IRadialControllerMenuItem>
 {
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tag(void** value) noexcept final
+    int32_t WINRT_CALL get_Tag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tag, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Tag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Tag(void* value) noexcept final
+    int32_t WINRT_CALL put_Tag(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tag, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().Tag(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Invoked(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Invoked(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Invoked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Invoked, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Invoked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialControllerMenuItem, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Invoked(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Invoked(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Invoked(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Invoked, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Invoked(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produce_base<D, Windows::UI::Input::IRadialControllerMenuItemStatics>
 {
-    HRESULT __stdcall CreateFromIcon(HSTRING displayText, void* icon, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromIcon(void* displayText, void* icon, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIcon, WINRT_WRAP(Windows::UI::Input::RadialControllerMenuItem), hstring const&, Windows::Storage::Streams::RandomAccessStreamReference const&);
             *result = detach_from<Windows::UI::Input::RadialControllerMenuItem>(this->shim().CreateFromIcon(*reinterpret_cast<hstring const*>(&displayText), *reinterpret_cast<Windows::Storage::Streams::RandomAccessStreamReference const*>(&icon)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromKnownIcon(HSTRING displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromKnownIcon(void* displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromKnownIcon, WINRT_WRAP(Windows::UI::Input::RadialControllerMenuItem), hstring const&, Windows::UI::Input::RadialControllerMenuKnownIcon const&);
             *result = detach_from<Windows::UI::Input::RadialControllerMenuItem>(this->shim().CreateFromKnownIcon(*reinterpret_cast<hstring const*>(&displayText), *reinterpret_cast<Windows::UI::Input::RadialControllerMenuKnownIcon const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics2> : produce_base<D, Windows::UI::Input::IRadialControllerMenuItemStatics2>
 {
-    HRESULT __stdcall CreateFromFontGlyph(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromFontGlyph(void* displayText, void* glyph, void* fontFamily, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFontGlyph, WINRT_WRAP(Windows::UI::Input::RadialControllerMenuItem), hstring const&, hstring const&, hstring const&);
             *result = detach_from<Windows::UI::Input::RadialControllerMenuItem>(this->shim().CreateFromFontGlyph(*reinterpret_cast<hstring const*>(&displayText), *reinterpret_cast<hstring const*>(&glyph), *reinterpret_cast<hstring const*>(&fontFamily)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromFontGlyphWithUri(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, void* fontUri, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromFontGlyphWithUri(void* displayText, void* glyph, void* fontFamily, void* fontUri, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFontGlyph, WINRT_WRAP(Windows::UI::Input::RadialControllerMenuItem), hstring const&, hstring const&, hstring const&, Windows::Foundation::Uri const&);
             *result = detach_from<Windows::UI::Input::RadialControllerMenuItem>(this->shim().CreateFromFontGlyph(*reinterpret_cast<hstring const*>(&displayText), *reinterpret_cast<hstring const*>(&glyph), *reinterpret_cast<hstring const*>(&fontFamily), *reinterpret_cast<Windows::Foundation::Uri const*>(&fontUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
 {
-    HRESULT __stdcall get_RotationDeltaInDegrees(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationDeltaInDegrees(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationDeltaInDegrees, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationDeltaInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs2>
 {
-    HRESULT __stdcall get_IsButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContact> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContact>
 {
-    HRESULT __stdcall get_Bounds(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Bounds(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Bounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2>
 {
-    HRESULT __stdcall get_IsButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs>
 {
-    HRESULT __stdcall get_IsButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs>
 {
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::RadialControllerScreenContact));
             *value = detach_from<Windows::UI::Input::RadialControllerScreenContact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2>
 {
-    HRESULT __stdcall get_IsButtonPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsButtonPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsButtonPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsButtonPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerStatics> : produce_base<D, Windows::UI::Input::IRadialControllerStatics>
 {
-    HRESULT __stdcall IsSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateForCurrentView(void** result) noexcept final
+    int32_t WINRT_CALL CreateForCurrentView(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForCurrentView, WINRT_WRAP(Windows::UI::Input::RadialController));
             *result = detach_from<Windows::UI::Input::RadialController>(this->shim().CreateForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::IRightTappedEventArgs> : produce_base<D, Windows::UI::Input::IRightTappedEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::ITappedEventArgs> : produce_base<D, Windows::UI::Input::ITappedEventArgs>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TapCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TapCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TapCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TapCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5216,96 +4644,96 @@ WINRT_EXPORT namespace winrt::Windows::UI::Input {
 
 inline Windows::UI::Input::EdgeGesture EdgeGesture::GetForCurrentView()
 {
-    return get_activation_factory<EdgeGesture, Windows::UI::Input::IEdgeGestureStatics>().GetForCurrentView();
+    return impl::call_factory<EdgeGesture, Windows::UI::Input::IEdgeGestureStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline GestureRecognizer::GestureRecognizer() :
-    GestureRecognizer(get_activation_factory<GestureRecognizer>().ActivateInstance<GestureRecognizer>())
+    GestureRecognizer(impl::call_factory<GestureRecognizer>([](auto&& f) { return f.template ActivateInstance<GestureRecognizer>(); }))
 {}
 
 inline Windows::UI::Input::KeyboardDeliveryInterceptor KeyboardDeliveryInterceptor::GetForCurrentView()
 {
-    return get_activation_factory<KeyboardDeliveryInterceptor, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics>().GetForCurrentView();
+    return impl::call_factory<KeyboardDeliveryInterceptor, Windows::UI::Input::IKeyboardDeliveryInterceptorStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::UI::Input::PointerPoint PointerPoint::GetCurrentPoint(uint32_t pointerId)
 {
-    return get_activation_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>().GetCurrentPoint(pointerId);
+    return impl::call_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>([&](auto&& f) { return f.GetCurrentPoint(pointerId); });
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> PointerPoint::GetIntermediatePoints(uint32_t pointerId)
 {
-    return get_activation_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>().GetIntermediatePoints(pointerId);
+    return impl::call_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>([&](auto&& f) { return f.GetIntermediatePoints(pointerId); });
 }
 
 inline Windows::UI::Input::PointerPoint PointerPoint::GetCurrentPoint(uint32_t pointerId, Windows::UI::Input::IPointerPointTransform const& transform)
 {
-    return get_activation_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>().GetCurrentPoint(pointerId, transform);
+    return impl::call_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>([&](auto&& f) { return f.GetCurrentPoint(pointerId, transform); });
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> PointerPoint::GetIntermediatePoints(uint32_t pointerId, Windows::UI::Input::IPointerPointTransform const& transform)
 {
-    return get_activation_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>().GetIntermediatePoints(pointerId, transform);
+    return impl::call_factory<PointerPoint, Windows::UI::Input::IPointerPointStatics>([&](auto&& f) { return f.GetIntermediatePoints(pointerId, transform); });
 }
 
 inline Windows::UI::Input::PointerVisualizationSettings PointerVisualizationSettings::GetForCurrentView()
 {
-    return get_activation_factory<PointerVisualizationSettings, Windows::UI::Input::IPointerVisualizationSettingsStatics>().GetForCurrentView();
+    return impl::call_factory<PointerVisualizationSettings, Windows::UI::Input::IPointerVisualizationSettingsStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline bool RadialController::IsSupported()
 {
-    return get_activation_factory<RadialController, Windows::UI::Input::IRadialControllerStatics>().IsSupported();
+    return impl::call_factory<RadialController, Windows::UI::Input::IRadialControllerStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 inline Windows::UI::Input::RadialController RadialController::CreateForCurrentView()
 {
-    return get_activation_factory<RadialController, Windows::UI::Input::IRadialControllerStatics>().CreateForCurrentView();
+    return impl::call_factory<RadialController, Windows::UI::Input::IRadialControllerStatics>([&](auto&& f) { return f.CreateForCurrentView(); });
 }
 
 inline Windows::UI::Input::RadialControllerConfiguration RadialControllerConfiguration::GetForCurrentView()
 {
-    return get_activation_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics>().GetForCurrentView();
+    return impl::call_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline void RadialControllerConfiguration::AppController(Windows::UI::Input::RadialController const& value)
 {
-    get_activation_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>().AppController(value);
+    impl::call_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>([&](auto&& f) { return f.AppController(value); });
 }
 
 inline Windows::UI::Input::RadialController RadialControllerConfiguration::AppController()
 {
-    return get_activation_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>().AppController();
+    return impl::call_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>([&](auto&& f) { return f.AppController(); });
 }
 
 inline void RadialControllerConfiguration::IsAppControllerEnabled(bool value)
 {
-    get_activation_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>().IsAppControllerEnabled(value);
+    impl::call_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>([&](auto&& f) { return f.IsAppControllerEnabled(value); });
 }
 
 inline bool RadialControllerConfiguration::IsAppControllerEnabled()
 {
-    return get_activation_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>().IsAppControllerEnabled();
+    return impl::call_factory<RadialControllerConfiguration, Windows::UI::Input::IRadialControllerConfigurationStatics2>([&](auto&& f) { return f.IsAppControllerEnabled(); });
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromIcon(param::hstring const& displayText, Windows::Storage::Streams::RandomAccessStreamReference const& icon)
 {
-    return get_activation_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics>().CreateFromIcon(displayText, icon);
+    return impl::call_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics>([&](auto&& f) { return f.CreateFromIcon(displayText, icon); });
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromKnownIcon(param::hstring const& displayText, Windows::UI::Input::RadialControllerMenuKnownIcon const& value)
 {
-    return get_activation_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics>().CreateFromKnownIcon(displayText, value);
+    return impl::call_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics>([&](auto&& f) { return f.CreateFromKnownIcon(displayText, value); });
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromFontGlyph(param::hstring const& displayText, param::hstring const& glyph, param::hstring const& fontFamily)
 {
-    return get_activation_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics2>().CreateFromFontGlyph(displayText, glyph, fontFamily);
+    return impl::call_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics2>([&](auto&& f) { return f.CreateFromFontGlyph(displayText, glyph, fontFamily); });
 }
 
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromFontGlyph(param::hstring const& displayText, param::hstring const& glyph, param::hstring const& fontFamily, Windows::Foundation::Uri const& fontUri)
 {
-    return get_activation_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics2>().CreateFromFontGlyph(displayText, glyph, fontFamily, fontUri);
+    return impl::call_factory<RadialControllerMenuItem, Windows::UI::Input::IRadialControllerMenuItemStatics2>([&](auto&& f) { return f.CreateFromFontGlyph(displayText, glyph, fontFamily, fontUri); });
 }
 
 }
@@ -5394,5 +4822,3 @@ template<> struct hash<winrt::Windows::UI::Input::RightTappedEventArgs> : winrt:
 template<> struct hash<winrt::Windows::UI::Input::TappedEventArgs> : winrt::impl::hash_base<winrt::Windows::UI::Input::TappedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

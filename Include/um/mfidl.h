@@ -879,6 +879,34 @@ typedef interface IMFSensorActivityMonitor IMFSensorActivityMonitor;
 #endif 	/* __IMFSensorActivityMonitor_FWD_DEFINED__ */
 
 
+#ifndef __IMFExtendedCameraIntrinsicModel_FWD_DEFINED__
+#define __IMFExtendedCameraIntrinsicModel_FWD_DEFINED__
+typedef interface IMFExtendedCameraIntrinsicModel IMFExtendedCameraIntrinsicModel;
+
+#endif 	/* __IMFExtendedCameraIntrinsicModel_FWD_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsicsDistortionModel6KT_FWD_DEFINED__
+#define __IMFExtendedCameraIntrinsicsDistortionModel6KT_FWD_DEFINED__
+typedef interface IMFExtendedCameraIntrinsicsDistortionModel6KT IMFExtendedCameraIntrinsicsDistortionModel6KT;
+
+#endif 	/* __IMFExtendedCameraIntrinsicsDistortionModel6KT_FWD_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsicsDistortionModelArcTan_FWD_DEFINED__
+#define __IMFExtendedCameraIntrinsicsDistortionModelArcTan_FWD_DEFINED__
+typedef interface IMFExtendedCameraIntrinsicsDistortionModelArcTan IMFExtendedCameraIntrinsicsDistortionModelArcTan;
+
+#endif 	/* __IMFExtendedCameraIntrinsicsDistortionModelArcTan_FWD_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsics_FWD_DEFINED__
+#define __IMFExtendedCameraIntrinsics_FWD_DEFINED__
+typedef interface IMFExtendedCameraIntrinsics IMFExtendedCameraIntrinsics;
+
+#endif 	/* __IMFExtendedCameraIntrinsics_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "mfobjects.h"
 #include "mftransform.h"
@@ -15833,6 +15861,10 @@ enum _MF_TRANSCODE_ADJUST_PROFILE_FLAGS
 EXTERN_GUID( MF_TRANSCODE_ENCODINGPROFILE, 0x6947787c, 0xf508, 0x4ea9, 0xb1, 0xe9, 0xa1, 0xfe, 0x3a, 0x49, 0xfb, 0xc9 );
 EXTERN_GUID( MF_TRANSCODE_QUALITYVSSPEED, 0x98332df8, 0x03cd, 0x476b, 0x89, 0xfa, 0x3f, 0x9e, 0x44, 0x2d, 0xec, 0x9f );
 EXTERN_GUID( MF_TRANSCODE_DONOT_INSERT_ENCODER, 0xf45aa7ce, 0xab24, 0x4012, 0xa1, 0x1b, 0xdc, 0x82, 0x20, 0x20, 0x14, 0x10 );
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 typedef 
 enum _MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
     {
@@ -15844,6 +15876,12 @@ EXTERN_GUID( MF_VIDEO_PROCESSOR_ALGORITHM, 0x4a0a1e1f, 0x272c, 0x4fb6, 0x9e, 0xb
 EXTERN_GUID( MF_XVP_DISABLE_FRC, 0x2c0afa19, 0x7a97, 0x4d5a, 0x9e, 0xe8, 0x16, 0xd4, 0xfc, 0x51, 0x8d, 0x8c );
 #if (WINVER >= _WIN32_WINNT_WINBLUE) 
 EXTERN_GUID( MF_XVP_CALLER_ALLOCATES_OUTPUT, 0x4a2cabc, 0xcab, 0x40b1, 0xa1, 0xb9, 0x75, 0xbc, 0x36, 0x58, 0xf0, 0x0 );
+#endif // (WINVER >= _WIN32_WINNT_WINBLUE) 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#if (WINVER >= _WIN32_WINNT_WINBLUE) 
 #if (WINVER < _WIN32_WINNT_WINTHRESHOLD) 
 EXTERN_GUID(CLSID_VideoProcessorMFT, 0x88753b26, 0x5b24, 0x49bd, 0xb2, 0xe7, 0xc, 0x44, 0x5c, 0x78, 0xc9, 0x82);
 #endif // (WINVER < _WIN32_WINNT_WINTHRESHOLD) 
@@ -20282,10 +20320,525 @@ MFCreateSensorActivityMonitor(
     _COM_Outptr_ IMFSensorActivityMonitor** ppActivityMonitor
     );
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+typedef struct _MFCameraIntrinsic_CameraModel
+    {
+    FLOAT FocalLength_x;
+    FLOAT FocalLength_y;
+    FLOAT PrincipalPoint_x;
+    FLOAT PrincipalPoint_y;
+    } 	MFCameraIntrinsic_CameraModel;
+
+typedef struct _MFCameraIntrinsic_DistortionModel6KT
+    {
+    FLOAT Radial_k1;
+    FLOAT Radial_k2;
+    FLOAT Radial_k3;
+    FLOAT Radial_k4;
+    FLOAT Radial_k5;
+    FLOAT Radial_k6;
+    FLOAT Tangential_p1;
+    FLOAT Tangential_p2;
+    } 	MFCameraIntrinsic_DistortionModel6KT;
+
+typedef struct _MFCameraIntrinsic_DistortionModelArcTan
+    {
+    FLOAT Radial_k0;
+    FLOAT DistortionCenter_x;
+    FLOAT DistortionCenter_y;
+    FLOAT Tangential_x;
+    FLOAT Tangential_y;
+    } 	MFCameraIntrinsic_DistortionModelArcTan;
+
+typedef 
+enum _MFCameraIntrinsic_DistortionModelType
+    {
+        MFCameraIntrinsic_DistortionModelType_6KT	= 0,
+        MFCameraIntrinsic_DistortionModelType_ArcTan	= ( MFCameraIntrinsic_DistortionModelType_6KT + 1 ) 
+    } 	MFCameraIntrinsic_DistortionModelType;
+
+typedef struct _MFExtendedCameraIntrinsic_IntrinsicModel
+    {
+    UINT32 Width;
+    UINT32 Height;
+    UINT32 SplitFrameId;
+    MFCameraIntrinsic_CameraModel CameraModel;
+    } 	MFExtendedCameraIntrinsic_IntrinsicModel;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0120_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0120_v0_0_s_ifspec;
+
+#ifndef __IMFExtendedCameraIntrinsicModel_INTERFACE_DEFINED__
+#define __IMFExtendedCameraIntrinsicModel_INTERFACE_DEFINED__
+
+/* interface IMFExtendedCameraIntrinsicModel */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFExtendedCameraIntrinsicModel;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5C595E64-4630-4231-855A-12842F733245")
+    IMFExtendedCameraIntrinsicModel : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetModel( 
+            /* [annotation][out] */ 
+            _Out_  MFExtendedCameraIntrinsic_IntrinsicModel *pIntrinsicModel) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetModel( 
+            /* [annotation][in] */ 
+            _In_  const MFExtendedCameraIntrinsic_IntrinsicModel *pIntrinsicModel) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetDistortionModelType( 
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModelType *pDistortionModelType) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFExtendedCameraIntrinsicModelVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFExtendedCameraIntrinsicModel * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFExtendedCameraIntrinsicModel * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFExtendedCameraIntrinsicModel * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetModel )( 
+            IMFExtendedCameraIntrinsicModel * This,
+            /* [annotation][out] */ 
+            _Out_  MFExtendedCameraIntrinsic_IntrinsicModel *pIntrinsicModel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetModel )( 
+            IMFExtendedCameraIntrinsicModel * This,
+            /* [annotation][in] */ 
+            _In_  const MFExtendedCameraIntrinsic_IntrinsicModel *pIntrinsicModel);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDistortionModelType )( 
+            IMFExtendedCameraIntrinsicModel * This,
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModelType *pDistortionModelType);
+        
+        END_INTERFACE
+    } IMFExtendedCameraIntrinsicModelVtbl;
+
+    interface IMFExtendedCameraIntrinsicModel
+    {
+        CONST_VTBL struct IMFExtendedCameraIntrinsicModelVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFExtendedCameraIntrinsicModel_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFExtendedCameraIntrinsicModel_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFExtendedCameraIntrinsicModel_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFExtendedCameraIntrinsicModel_GetModel(This,pIntrinsicModel)	\
+    ( (This)->lpVtbl -> GetModel(This,pIntrinsicModel) ) 
+
+#define IMFExtendedCameraIntrinsicModel_SetModel(This,pIntrinsicModel)	\
+    ( (This)->lpVtbl -> SetModel(This,pIntrinsicModel) ) 
+
+#define IMFExtendedCameraIntrinsicModel_GetDistortionModelType(This,pDistortionModelType)	\
+    ( (This)->lpVtbl -> GetDistortionModelType(This,pDistortionModelType) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFExtendedCameraIntrinsicModel_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsicsDistortionModel6KT_INTERFACE_DEFINED__
+#define __IMFExtendedCameraIntrinsicsDistortionModel6KT_INTERFACE_DEFINED__
+
+/* interface IMFExtendedCameraIntrinsicsDistortionModel6KT */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFExtendedCameraIntrinsicsDistortionModel6KT;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("74C2653B-5F55-4EB1-9F0F-18B8F68B7D3D")
+    IMFExtendedCameraIntrinsicsDistortionModel6KT : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetDistortionModel( 
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModel6KT *pDistortionModel) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetDistortionModel( 
+            /* [annotation][in] */ 
+            _In_  const MFCameraIntrinsic_DistortionModel6KT *pDistortionModel) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFExtendedCameraIntrinsicsDistortionModel6KTVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFExtendedCameraIntrinsicsDistortionModel6KT * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFExtendedCameraIntrinsicsDistortionModel6KT * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFExtendedCameraIntrinsicsDistortionModel6KT * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDistortionModel )( 
+            IMFExtendedCameraIntrinsicsDistortionModel6KT * This,
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModel6KT *pDistortionModel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetDistortionModel )( 
+            IMFExtendedCameraIntrinsicsDistortionModel6KT * This,
+            /* [annotation][in] */ 
+            _In_  const MFCameraIntrinsic_DistortionModel6KT *pDistortionModel);
+        
+        END_INTERFACE
+    } IMFExtendedCameraIntrinsicsDistortionModel6KTVtbl;
+
+    interface IMFExtendedCameraIntrinsicsDistortionModel6KT
+    {
+        CONST_VTBL struct IMFExtendedCameraIntrinsicsDistortionModel6KTVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFExtendedCameraIntrinsicsDistortionModel6KT_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModel6KT_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModel6KT_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFExtendedCameraIntrinsicsDistortionModel6KT_GetDistortionModel(This,pDistortionModel)	\
+    ( (This)->lpVtbl -> GetDistortionModel(This,pDistortionModel) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModel6KT_SetDistortionModel(This,pDistortionModel)	\
+    ( (This)->lpVtbl -> SetDistortionModel(This,pDistortionModel) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFExtendedCameraIntrinsicsDistortionModel6KT_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsicsDistortionModelArcTan_INTERFACE_DEFINED__
+#define __IMFExtendedCameraIntrinsicsDistortionModelArcTan_INTERFACE_DEFINED__
+
+/* interface IMFExtendedCameraIntrinsicsDistortionModelArcTan */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFExtendedCameraIntrinsicsDistortionModelArcTan;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("812D5F95-B572-45DC-BAFC-AE24199DDDA8")
+    IMFExtendedCameraIntrinsicsDistortionModelArcTan : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetDistortionModel( 
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModelArcTan *pDistortionModel) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetDistortionModel( 
+            /* [annotation][in] */ 
+            _In_  const MFCameraIntrinsic_DistortionModelArcTan *pDistortionModel) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFExtendedCameraIntrinsicsDistortionModelArcTanVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFExtendedCameraIntrinsicsDistortionModelArcTan * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFExtendedCameraIntrinsicsDistortionModelArcTan * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFExtendedCameraIntrinsicsDistortionModelArcTan * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetDistortionModel )( 
+            IMFExtendedCameraIntrinsicsDistortionModelArcTan * This,
+            /* [annotation][out] */ 
+            _Out_  MFCameraIntrinsic_DistortionModelArcTan *pDistortionModel);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetDistortionModel )( 
+            IMFExtendedCameraIntrinsicsDistortionModelArcTan * This,
+            /* [annotation][in] */ 
+            _In_  const MFCameraIntrinsic_DistortionModelArcTan *pDistortionModel);
+        
+        END_INTERFACE
+    } IMFExtendedCameraIntrinsicsDistortionModelArcTanVtbl;
+
+    interface IMFExtendedCameraIntrinsicsDistortionModelArcTan
+    {
+        CONST_VTBL struct IMFExtendedCameraIntrinsicsDistortionModelArcTanVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFExtendedCameraIntrinsicsDistortionModelArcTan_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModelArcTan_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModelArcTan_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFExtendedCameraIntrinsicsDistortionModelArcTan_GetDistortionModel(This,pDistortionModel)	\
+    ( (This)->lpVtbl -> GetDistortionModel(This,pDistortionModel) ) 
+
+#define IMFExtendedCameraIntrinsicsDistortionModelArcTan_SetDistortionModel(This,pDistortionModel)	\
+    ( (This)->lpVtbl -> SetDistortionModel(This,pDistortionModel) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFExtendedCameraIntrinsicsDistortionModelArcTan_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFExtendedCameraIntrinsics_INTERFACE_DEFINED__
+#define __IMFExtendedCameraIntrinsics_INTERFACE_DEFINED__
+
+/* interface IMFExtendedCameraIntrinsics */
+/* [local][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFExtendedCameraIntrinsics;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("687F6DAC-6987-4750-A16A-734D1E7A10FE")
+    IMFExtendedCameraIntrinsics : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE InitializeFromBuffer( 
+            /* [annotation][size_is][in] */ 
+            _In_reads_bytes_(dwBufferSize)  BYTE *pbBuffer,
+            /* [in] */ DWORD dwBufferSize) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetBufferSize( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwBufferSize) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SerializeToBuffer( 
+            /* [annotation][out] */ 
+            _Out_writes_bytes_to_(*pdwBufferSize, *pdwBufferSize)  BYTE *pbBuffer,
+            /* [annotation][out] */ 
+            _Inout_  DWORD *pdwBufferSize) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetIntrinsicModelCount( 
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetIntrinsicModelByIndex( 
+            /* [in] */ DWORD dwIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFExtendedCameraIntrinsicModel **ppIntrinsicModel) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE AddIntrinsicModel( 
+            /* [annotation][in] */ 
+            _In_  IMFExtendedCameraIntrinsicModel *pIntrinsicModel) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFExtendedCameraIntrinsicsVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFExtendedCameraIntrinsics * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFExtendedCameraIntrinsics * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *InitializeFromBuffer )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [annotation][size_is][in] */ 
+            _In_reads_bytes_(dwBufferSize)  BYTE *pbBuffer,
+            /* [in] */ DWORD dwBufferSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetBufferSize )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwBufferSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *SerializeToBuffer )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [annotation][out] */ 
+            _Out_writes_bytes_to_(*pdwBufferSize, *pdwBufferSize)  BYTE *pbBuffer,
+            /* [annotation][out] */ 
+            _Inout_  DWORD *pdwBufferSize);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIntrinsicModelCount )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [annotation][out] */ 
+            _Out_  DWORD *pdwCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetIntrinsicModelByIndex )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [in] */ DWORD dwIndex,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFExtendedCameraIntrinsicModel **ppIntrinsicModel);
+        
+        HRESULT ( STDMETHODCALLTYPE *AddIntrinsicModel )( 
+            IMFExtendedCameraIntrinsics * This,
+            /* [annotation][in] */ 
+            _In_  IMFExtendedCameraIntrinsicModel *pIntrinsicModel);
+        
+        END_INTERFACE
+    } IMFExtendedCameraIntrinsicsVtbl;
+
+    interface IMFExtendedCameraIntrinsics
+    {
+        CONST_VTBL struct IMFExtendedCameraIntrinsicsVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFExtendedCameraIntrinsics_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFExtendedCameraIntrinsics_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFExtendedCameraIntrinsics_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFExtendedCameraIntrinsics_InitializeFromBuffer(This,pbBuffer,dwBufferSize)	\
+    ( (This)->lpVtbl -> InitializeFromBuffer(This,pbBuffer,dwBufferSize) ) 
+
+#define IMFExtendedCameraIntrinsics_GetBufferSize(This,pdwBufferSize)	\
+    ( (This)->lpVtbl -> GetBufferSize(This,pdwBufferSize) ) 
+
+#define IMFExtendedCameraIntrinsics_SerializeToBuffer(This,pbBuffer,pdwBufferSize)	\
+    ( (This)->lpVtbl -> SerializeToBuffer(This,pbBuffer,pdwBufferSize) ) 
+
+#define IMFExtendedCameraIntrinsics_GetIntrinsicModelCount(This,pdwCount)	\
+    ( (This)->lpVtbl -> GetIntrinsicModelCount(This,pdwCount) ) 
+
+#define IMFExtendedCameraIntrinsics_GetIntrinsicModelByIndex(This,dwIndex,ppIntrinsicModel)	\
+    ( (This)->lpVtbl -> GetIntrinsicModelByIndex(This,dwIndex,ppIntrinsicModel) ) 
+
+#define IMFExtendedCameraIntrinsics_AddIntrinsicModel(This,pIntrinsicModel)	\
+    ( (This)->lpVtbl -> AddIntrinsicModel(This,pIntrinsicModel) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFExtendedCameraIntrinsics_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfidl_0000_0124 */
+/* [local] */ 
+
+DEFINE_GUID(MFStreamExtension_ExtendedCameraIntrinsics,
+    0xaa74b3df, 0x9a2c, 0x48d6, 0x83, 0x93, 0x5b, 0xd1, 0xc1, 0xa8, 0x1e, 0x6e);
+DEFINE_GUID(MFSampleExtension_ExtendedCameraIntrinsics,
+    0x560bc4a5, 0x4de0, 0x4113, 0x9c, 0xdc, 0x83, 0x2d, 0xb9, 0x74, 0xf, 0x3d);
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) 
+STDAPI
+MFCreateExtendedCameraIntrinsics(
+    _COM_Outptr_ IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics
+    );
+STDAPI
+MFCreateExtendedCameraIntrinsicModel(
+    const MFCameraIntrinsic_DistortionModelType distortionModelType,
+    _COM_Outptr_ IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel
+    );
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5) 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion 
+
+
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0124_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

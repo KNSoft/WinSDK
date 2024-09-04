@@ -1017,7 +1017,7 @@ enum __MIDL___MIDL_itf_msclus_0000_0000_0004
     {
         CLUSTER_CLOUD_TYPE_NONE	= 0,
         CLUSTER_CLOUD_TYPE_AZURE	= 1,
-        CLUSTER_CLOUD_TYPE_MIXED	= 2,
+        CLUSTER_CLOUD_TYPE_MIXED	= 128,
         CLUSTER_CLOUD_TYPE_UNKNOWN	= -1
     } 	CLUSTER_CLOUD_TYPE;
 
@@ -1763,6 +1763,7 @@ enum CLCTL_CODES
         CLCTL_SCALEOUT_COMMAND	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2917 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_SCALEOUT_CONTROL	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2918 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_SCALEOUT_GET_CLUSTERS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2919 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_RELOAD_AUTOLOGGER_CONFIG	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2932 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_DELETE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 1 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_INSTALL_NODE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 2 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_EVICT_NODE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 3 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
@@ -2103,7 +2104,8 @@ enum CLUSCTL_CLUSTER_CODES
         CLUSCTL_CLUSTER_CLEAR_NODE_CONNECTION_INFO	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_CLEAR_NODE_CONNECTION_INFO ) ,
         CLUSCTL_CLUSTER_SET_DNS_DOMAIN	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_SET_DNS_DOMAIN ) ,
         CLUSCTL_CLUSTER_SET_CLUSTER_S2D_ENABLED	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_SET_CLUSTER_S2D_ENABLED ) ,
-        CLUSCTL_CLUSTER_SET_CLUSTER_S2D_CACHE_METADATA_RESERVE_BYTES	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_SET_CLUSTER_S2D_CACHE_METADATA_RESERVE_BYTES ) 
+        CLUSCTL_CLUSTER_SET_CLUSTER_S2D_CACHE_METADATA_RESERVE_BYTES	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_SET_CLUSTER_S2D_CACHE_METADATA_RESERVE_BYTES ) ,
+        CLUSCTL_CLUSTER_RELOAD_AUTOLOGGER_CONFIG	= ( ( CLUS_OBJECT_CLUSTER << 24 )  | CLCTL_RELOAD_AUTOLOGGER_CONFIG ) 
     } 	CLUSCTL_CLUSTER_CODES;
 
 typedef 

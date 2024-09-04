@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Media.Capture.2.h"
@@ -340,21 +340,21 @@ template <typename D> Windows::Storage::Streams::IBuffer consume_Windows_Media_D
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::IAudioDeviceModulesManager)->add_ModuleNotificationReceived(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::IAudioDeviceModulesManager> consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived_revoker consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::IAudioDeviceModulesManager>(this, &abi_t<Windows::Media::Devices::IAudioDeviceModulesManager>::remove_ModuleNotificationReceived, ModuleNotificationReceived(handler));
+    return impl::make_event_revoker<D, ModuleNotificationReceived_revoker>(this, ModuleNotificationReceived(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::IAudioDeviceModulesManager)->remove_ModuleNotificationReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::IAudioDeviceModulesManager)->remove_ModuleNotificationReceived(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> consume_Windows_Media_Devices_IAudioDeviceModulesManager<D>::FindAllById(param::hstring const& moduleId) const
@@ -409,106 +409,106 @@ template <typename D> bool consume_Windows_Media_Devices_ICallControl<D>::HasRin
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_AnswerRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested_revoker consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_AnswerRequested, AnswerRequested(handler));
+    return impl::make_event_revoker<D, AnswerRequested_revoker>(this, AnswerRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::AnswerRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_AnswerRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_AnswerRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_HangUpRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested_revoker consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_HangUpRequested, HangUpRequested(handler));
+    return impl::make_event_revoker<D, HangUpRequested_revoker>(this, HangUpRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::HangUpRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_HangUpRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_HangUpRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::DialRequested(Windows::Media::Devices::DialRequestedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::DialRequested(Windows::Media::Devices::DialRequestedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_DialRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::DialRequested(auto_revoke_t, Windows::Media::Devices::DialRequestedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::DialRequested_revoker consume_Windows_Media_Devices_ICallControl<D>::DialRequested(auto_revoke_t, Windows::Media::Devices::DialRequestedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_DialRequested, DialRequested(handler));
+    return impl::make_event_revoker<D, DialRequested_revoker>(this, DialRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::DialRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::DialRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_DialRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_DialRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(Windows::Media::Devices::RedialRequestedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(Windows::Media::Devices::RedialRequestedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_RedialRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(auto_revoke_t, Windows::Media::Devices::RedialRequestedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::RedialRequested_revoker consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(auto_revoke_t, Windows::Media::Devices::RedialRequestedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_RedialRequested, RedialRequested(handler));
+    return impl::make_event_revoker<D, RedialRequested_revoker>(this, RedialRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::RedialRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_RedialRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_RedialRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(Windows::Media::Devices::KeypadPressedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(Windows::Media::Devices::KeypadPressedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_KeypadPressed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(auto_revoke_t, Windows::Media::Devices::KeypadPressedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed_revoker consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(auto_revoke_t, Windows::Media::Devices::KeypadPressedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_KeypadPressed, KeypadPressed(handler));
+    return impl::make_event_revoker<D, KeypadPressed_revoker>(this, KeypadPressed(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::KeypadPressed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_KeypadPressed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_KeypadPressed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->add_AudioTransferRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::ICallControl> consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested_revoker consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(auto_revoke_t, Windows::Media::Devices::CallControlEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::ICallControl>(this, &abi_t<Windows::Media::Devices::ICallControl>::remove_AudioTransferRequested, AudioTransferRequested(handler));
+    return impl::make_event_revoker<D, AudioTransferRequested_revoker>(this, AudioTransferRequested(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(event_token const& token) const
+template <typename D> void consume_Windows_Media_Devices_ICallControl<D>::AudioTransferRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_AudioTransferRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::ICallControl)->remove_AudioTransferRequested(get_abi(token)));
 }
 
 template <typename D> Windows::Media::Devices::CallControl consume_Windows_Media_Devices_ICallControlStatics<D>::GetDefault() const
@@ -1375,38 +1375,38 @@ template <typename D> hstring consume_Windows_Media_Devices_IMediaDeviceStatics<
     return deviceId;
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->add_DefaultAudioCaptureDeviceChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::IMediaDeviceStatics> consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged_revoker consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::IMediaDeviceStatics>(this, &abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioCaptureDeviceChanged, DefaultAudioCaptureDeviceChanged(handler));
+    return impl::make_event_revoker<D, DefaultAudioCaptureDeviceChanged_revoker>(this, DefaultAudioCaptureDeviceChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->remove_DefaultAudioCaptureDeviceChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->remove_DefaultAudioCaptureDeviceChanged(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->add_DefaultAudioRenderDeviceChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Media::Devices::IMediaDeviceStatics> consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged_revoker consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Devices::IMediaDeviceStatics>(this, &abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioRenderDeviceChanged, DefaultAudioRenderDeviceChanged(handler));
+    return impl::make_event_revoker<D, DefaultAudioRenderDeviceChanged_revoker>(this, DefaultAudioRenderDeviceChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Media_Devices_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->remove_DefaultAudioRenderDeviceChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Devices::IMediaDeviceStatics)->remove_DefaultAudioRenderDeviceChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::Media::Devices::SendCommandStatus consume_Windows_Media_Devices_IModuleCommandResult<D>::Status() const
@@ -1954,12 +1954,12 @@ template <> struct delegate<Windows::Media::Devices::CallControlEventHandler>
     {
         type(H&& handler) : implements_delegate<Windows::Media::Devices::CallControlEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Devices::CallControl const*>(&sender));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1976,12 +1976,12 @@ template <> struct delegate<Windows::Media::Devices::DialRequestedEventHandler>
     {
         type(H&& handler) : implements_delegate<Windows::Media::Devices::DialRequestedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Devices::CallControl const*>(&sender), *reinterpret_cast<Windows::Media::Devices::DialRequestedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1998,12 +1998,12 @@ template <> struct delegate<Windows::Media::Devices::KeypadPressedEventHandler>
     {
         type(H&& handler) : implements_delegate<Windows::Media::Devices::KeypadPressedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Devices::CallControl const*>(&sender), *reinterpret_cast<Windows::Media::Devices::KeypadPressedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -2020,12 +2020,12 @@ template <> struct delegate<Windows::Media::Devices::RedialRequestedEventHandler
     {
         type(H&& handler) : implements_delegate<Windows::Media::Devices::RedialRequestedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Media::Devices::CallControl const*>(&sender), *reinterpret_cast<Windows::Media::Devices::RedialRequestedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -2038,4300 +2038,3692 @@ template <> struct delegate<Windows::Media::Devices::RedialRequestedEventHandler
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedPhotoCaptureSettings> : produce_base<D, Windows::Media::Devices::IAdvancedPhotoCaptureSettings>
 {
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::AdvancedPhotoMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::AdvancedPhotoMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::AdvancedPhotoMode));
             *value = detach_from<Windows::Media::Devices::AdvancedPhotoMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::AdvancedPhotoMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::AdvancedPhotoMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::AdvancedPhotoMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::AdvancedPhotoMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedPhotoControl> : produce_base<D, Windows::Media::Devices::IAdvancedPhotoControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AdvancedPhotoMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AdvancedPhotoMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::AdvancedPhotoMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::AdvancedPhotoMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::AdvancedPhotoMode));
             *value = detach_from<Windows::Media::Devices::AdvancedPhotoMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Configure(void* settings) noexcept final
+    int32_t WINRT_CALL Configure(void* settings) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configure, WINRT_WRAP(void), Windows::Media::Devices::AdvancedPhotoCaptureSettings const&);
             this->shim().Configure(*reinterpret_cast<Windows::Media::Devices::AdvancedPhotoCaptureSettings const*>(&settings));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController>
 {
-    HRESULT __stdcall SetDeviceProperty(HSTRING propertyId, void* propertyValue) noexcept final
+    int32_t WINRT_CALL SetDeviceProperty(void* propertyId, void* propertyValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDeviceProperty, WINRT_WRAP(void), hstring const&, Windows::Foundation::IInspectable const&);
             this->shim().SetDeviceProperty(*reinterpret_cast<hstring const*>(&propertyId), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&propertyValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceProperty(HSTRING propertyId, void** propertyValue) noexcept final
+    int32_t WINRT_CALL GetDeviceProperty(void* propertyId, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceProperty, WINRT_WRAP(Windows::Foundation::IInspectable), hstring const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().GetDeviceProperty(*reinterpret_cast<hstring const*>(&propertyId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2>
 {
-    HRESULT __stdcall get_LowLagPhotoSequence(void** value) noexcept final
+    int32_t WINRT_CALL get_LowLagPhotoSequence(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LowLagPhotoSequence, WINRT_WRAP(Windows::Media::Devices::LowLagPhotoSequenceControl));
             *value = detach_from<Windows::Media::Devices::LowLagPhotoSequenceControl>(this->shim().LowLagPhotoSequence());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LowLagPhoto(void** value) noexcept final
+    int32_t WINRT_CALL get_LowLagPhoto(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LowLagPhoto, WINRT_WRAP(Windows::Media::Devices::LowLagPhotoControl));
             *value = detach_from<Windows::Media::Devices::LowLagPhotoControl>(this->shim().LowLagPhoto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SceneModeControl(void** value) noexcept final
+    int32_t WINRT_CALL get_SceneModeControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SceneModeControl, WINRT_WRAP(Windows::Media::Devices::SceneModeControl));
             *value = detach_from<Windows::Media::Devices::SceneModeControl>(this->shim().SceneModeControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TorchControl(void** value) noexcept final
+    int32_t WINRT_CALL get_TorchControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TorchControl, WINRT_WRAP(Windows::Media::Devices::TorchControl));
             *value = detach_from<Windows::Media::Devices::TorchControl>(this->shim().TorchControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FlashControl(void** value) noexcept final
+    int32_t WINRT_CALL get_FlashControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlashControl, WINRT_WRAP(Windows::Media::Devices::FlashControl));
             *value = detach_from<Windows::Media::Devices::FlashControl>(this->shim().FlashControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WhiteBalanceControl(void** value) noexcept final
+    int32_t WINRT_CALL get_WhiteBalanceControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WhiteBalanceControl, WINRT_WRAP(Windows::Media::Devices::WhiteBalanceControl));
             *value = detach_from<Windows::Media::Devices::WhiteBalanceControl>(this->shim().WhiteBalanceControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExposureControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposureControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposureControl, WINRT_WRAP(Windows::Media::Devices::ExposureControl));
             *value = detach_from<Windows::Media::Devices::ExposureControl>(this->shim().ExposureControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FocusControl(void** value) noexcept final
+    int32_t WINRT_CALL get_FocusControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocusControl, WINRT_WRAP(Windows::Media::Devices::FocusControl));
             *value = detach_from<Windows::Media::Devices::FocusControl>(this->shim().FocusControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExposureCompensationControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposureCompensationControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposureCompensationControl, WINRT_WRAP(Windows::Media::Devices::ExposureCompensationControl));
             *value = detach_from<Windows::Media::Devices::ExposureCompensationControl>(this->shim().ExposureCompensationControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsoSpeedControl(void** value) noexcept final
+    int32_t WINRT_CALL get_IsoSpeedControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsoSpeedControl, WINRT_WRAP(Windows::Media::Devices::IsoSpeedControl));
             *value = detach_from<Windows::Media::Devices::IsoSpeedControl>(this->shim().IsoSpeedControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegionsOfInterestControl(void** value) noexcept final
+    int32_t WINRT_CALL get_RegionsOfInterestControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegionsOfInterestControl, WINRT_WRAP(Windows::Media::Devices::RegionsOfInterestControl));
             *value = detach_from<Windows::Media::Devices::RegionsOfInterestControl>(this->shim().RegionsOfInterestControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrimaryUse(Windows::Media::Devices::CaptureUse* value) noexcept final
+    int32_t WINRT_CALL get_PrimaryUse(Windows::Media::Devices::CaptureUse* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryUse, WINRT_WRAP(Windows::Media::Devices::CaptureUse));
             *value = detach_from<Windows::Media::Devices::CaptureUse>(this->shim().PrimaryUse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PrimaryUse(Windows::Media::Devices::CaptureUse value) noexcept final
+    int32_t WINRT_CALL put_PrimaryUse(Windows::Media::Devices::CaptureUse value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryUse, WINRT_WRAP(void), Windows::Media::Devices::CaptureUse const&);
             this->shim().PrimaryUse(*reinterpret_cast<Windows::Media::Devices::CaptureUse const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3>
 {
-    HRESULT __stdcall get_VariablePhotoSequenceController(void** value) noexcept final
+    int32_t WINRT_CALL get_VariablePhotoSequenceController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VariablePhotoSequenceController, WINRT_WRAP(Windows::Media::Devices::Core::VariablePhotoSequenceController));
             *value = detach_from<Windows::Media::Devices::Core::VariablePhotoSequenceController>(this->shim().VariablePhotoSequenceController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotoConfirmationControl(void** value) noexcept final
+    int32_t WINRT_CALL get_PhotoConfirmationControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotoConfirmationControl, WINRT_WRAP(Windows::Media::Devices::PhotoConfirmationControl));
             *value = detach_from<Windows::Media::Devices::PhotoConfirmationControl>(this->shim().PhotoConfirmationControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZoomControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ZoomControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZoomControl, WINRT_WRAP(Windows::Media::Devices::ZoomControl));
             *value = detach_from<Windows::Media::Devices::ZoomControl>(this->shim().ZoomControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4>
 {
-    HRESULT __stdcall get_ExposurePriorityVideoControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposurePriorityVideoControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposurePriorityVideoControl, WINRT_WRAP(Windows::Media::Devices::ExposurePriorityVideoControl));
             *value = detach_from<Windows::Media::Devices::ExposurePriorityVideoControl>(this->shim().ExposurePriorityVideoControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization* value) noexcept final
+    int32_t WINRT_CALL get_DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredOptimization, WINRT_WRAP(Windows::Media::Devices::MediaCaptureOptimization));
             *value = detach_from<Windows::Media::Devices::MediaCaptureOptimization>(this->shim().DesiredOptimization());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization value) noexcept final
+    int32_t WINRT_CALL put_DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredOptimization, WINRT_WRAP(void), Windows::Media::Devices::MediaCaptureOptimization const&);
             this->shim().DesiredOptimization(*reinterpret_cast<Windows::Media::Devices::MediaCaptureOptimization const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HdrVideoControl(void** value) noexcept final
+    int32_t WINRT_CALL get_HdrVideoControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HdrVideoControl, WINRT_WRAP(Windows::Media::Devices::HdrVideoControl));
             *value = detach_from<Windows::Media::Devices::HdrVideoControl>(this->shim().HdrVideoControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OpticalImageStabilizationControl(void** value) noexcept final
+    int32_t WINRT_CALL get_OpticalImageStabilizationControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpticalImageStabilizationControl, WINRT_WRAP(Windows::Media::Devices::OpticalImageStabilizationControl));
             *value = detach_from<Windows::Media::Devices::OpticalImageStabilizationControl>(this->shim().OpticalImageStabilizationControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdvancedPhotoControl(void** value) noexcept final
+    int32_t WINRT_CALL get_AdvancedPhotoControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvancedPhotoControl, WINRT_WRAP(Windows::Media::Devices::AdvancedPhotoControl));
             *value = detach_from<Windows::Media::Devices::AdvancedPhotoControl>(this->shim().AdvancedPhotoControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDevicePropertyById(HSTRING propertyId, void* maxPropertyValueSize, void** value) noexcept final
+    int32_t WINRT_CALL GetDevicePropertyById(void* propertyId, void* maxPropertyValueSize, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDevicePropertyById, WINRT_WRAP(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult), hstring const&, Windows::Foundation::IReference<uint32_t> const&);
             *value = detach_from<Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult>(this->shim().GetDevicePropertyById(*reinterpret_cast<hstring const*>(&propertyId), *reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&maxPropertyValueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDevicePropertyById(HSTRING propertyId, void* propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus* value) noexcept final
+    int32_t WINRT_CALL SetDevicePropertyById(void* propertyId, void* propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDevicePropertyById, WINRT_WRAP(Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus), hstring const&, Windows::Foundation::IInspectable const&);
             *value = detach_from<Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus>(this->shim().SetDevicePropertyById(*reinterpret_cast<hstring const*>(&propertyId), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&propertyValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, void* maxPropertyValueSize, void** value) noexcept final
+    int32_t WINRT_CALL GetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, void* maxPropertyValueSize, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDevicePropertyByExtendedId, WINRT_WRAP(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult), array_view<uint8_t const>, Windows::Foundation::IReference<uint32_t> const&);
             *value = detach_from<Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult>(this->shim().GetDevicePropertyByExtendedId(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(extendedPropertyId), reinterpret_cast<uint8_t const *>(extendedPropertyId) + __extendedPropertyIdSize), *reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&maxPropertyValueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, uint32_t __propertyValueSize, uint8_t* propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus* value) noexcept final
+    int32_t WINRT_CALL SetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, uint32_t __propertyValueSize, uint8_t* propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDevicePropertyByExtendedId, WINRT_WRAP(Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus), array_view<uint8_t const>, array_view<uint8_t const>);
             *value = detach_from<Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus>(this->shim().SetDevicePropertyByExtendedId(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(extendedPropertyId), reinterpret_cast<uint8_t const *>(extendedPropertyId) + __extendedPropertyIdSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(propertyValue), reinterpret_cast<uint8_t const *>(propertyValue) + __propertyValueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController6> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController6>
 {
-    HRESULT __stdcall get_VideoTemporalDenoisingControl(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoTemporalDenoisingControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoTemporalDenoisingControl, WINRT_WRAP(Windows::Media::Devices::VideoTemporalDenoisingControl));
             *value = detach_from<Windows::Media::Devices::VideoTemporalDenoisingControl>(this->shim().VideoTemporalDenoisingControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_base<D, Windows::Media::Devices::IAudioDeviceController>
 {
-    HRESULT __stdcall put_Muted(bool value) noexcept final
+    int32_t WINRT_CALL put_Muted(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Muted, WINRT_WRAP(void), bool);
             this->shim().Muted(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Muted(bool* value) noexcept final
+    int32_t WINRT_CALL get_Muted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Muted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Muted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VolumePercent(float value) noexcept final
+    int32_t WINRT_CALL put_VolumePercent(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VolumePercent, WINRT_WRAP(void), float);
             this->shim().VolumePercent(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VolumePercent(float* value) noexcept final
+    int32_t WINRT_CALL get_VolumePercent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VolumePercent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().VolumePercent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceModule> : produce_base<D, Windows::Media::Devices::IAudioDeviceModule>
 {
-    HRESULT __stdcall get_ClassId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ClassId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClassId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ClassId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstanceId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_InstanceId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstanceId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().InstanceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MajorVersion(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MajorVersion(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MajorVersion, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MajorVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinorVersion(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinorVersion(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinorVersion, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MinorVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendCommandAsync(void* Command, void** operation) noexcept final
+    int32_t WINRT_CALL SendCommandAsync(void* Command, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendCommandAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult>>(this->shim().SendCommandAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&Command)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs> : produce_base<D, Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs>
 {
-    HRESULT __stdcall get_Module(void** value) noexcept final
+    int32_t WINRT_CALL get_Module(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Module, WINRT_WRAP(Windows::Media::Devices::AudioDeviceModule));
             *value = detach_from<Windows::Media::Devices::AudioDeviceModule>(this->shim().Module());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NotificationData(void** value) noexcept final
+    int32_t WINRT_CALL get_NotificationData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NotificationData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().NotificationData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceModulesManager> : produce_base<D, Windows::Media::Devices::IAudioDeviceModulesManager>
 {
-    HRESULT __stdcall add_ModuleNotificationReceived(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ModuleNotificationReceived(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ModuleNotificationReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ModuleNotificationReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ModuleNotificationReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ModuleNotificationReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ModuleNotificationReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ModuleNotificationReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ModuleNotificationReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ModuleNotificationReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall FindAllById(HSTRING moduleId, void** modules) noexcept final
+    int32_t WINRT_CALL FindAllById(void* moduleId, void** modules) noexcept final
     {
         try
         {
             *modules = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllById, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>), hstring const&);
             *modules = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>>(this->shim().FindAllById(*reinterpret_cast<hstring const*>(&moduleId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAll(void** modules) noexcept final
+    int32_t WINRT_CALL FindAll(void** modules) noexcept final
     {
         try
         {
             *modules = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAll, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>));
             *modules = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>>(this->shim().FindAll());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceModulesManagerFactory> : produce_base<D, Windows::Media::Devices::IAudioDeviceModulesManagerFactory>
 {
-    HRESULT __stdcall Create(HSTRING deviceId, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* deviceId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Devices::AudioDeviceModulesManager), hstring const&);
             *result = detach_from<Windows::Media::Devices::AudioDeviceModulesManager>(this->shim().Create(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ICallControl> : produce_base<D, Windows::Media::Devices::ICallControl>
 {
-    HRESULT __stdcall IndicateNewIncomingCall(bool enableRinger, HSTRING callerId, uint64_t* callToken) noexcept final
+    int32_t WINRT_CALL IndicateNewIncomingCall(bool enableRinger, void* callerId, uint64_t* callToken) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndicateNewIncomingCall, WINRT_WRAP(uint64_t), bool, hstring const&);
             *callToken = detach_from<uint64_t>(this->shim().IndicateNewIncomingCall(enableRinger, *reinterpret_cast<hstring const*>(&callerId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IndicateNewOutgoingCall(uint64_t* callToken) noexcept final
+    int32_t WINRT_CALL IndicateNewOutgoingCall(uint64_t* callToken) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndicateNewOutgoingCall, WINRT_WRAP(uint64_t));
             *callToken = detach_from<uint64_t>(this->shim().IndicateNewOutgoingCall());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IndicateActiveCall(uint64_t callToken) noexcept final
+    int32_t WINRT_CALL IndicateActiveCall(uint64_t callToken) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndicateActiveCall, WINRT_WRAP(void), uint64_t);
             this->shim().IndicateActiveCall(callToken);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EndCall(uint64_t callToken) noexcept final
+    int32_t WINRT_CALL EndCall(uint64_t callToken) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndCall, WINRT_WRAP(void), uint64_t);
             this->shim().EndCall(callToken);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasRinger(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasRinger(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasRinger, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasRinger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AnswerRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AnswerRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AnswerRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AnswerRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::CallControlEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().AnswerRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AnswerRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AnswerRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AnswerRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AnswerRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_HangUpRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AnswerRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HangUpRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::CallControlEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().HangUpRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_HangUpRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_HangUpRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HangUpRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HangUpRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DialRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().HangUpRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DialRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::DialRequestedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().DialRequested(*reinterpret_cast<Windows::Media::Devices::DialRequestedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_HangUpRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DialRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DialRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DialRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RedialRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().HangUpRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RedialRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::RedialRequestedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().RedialRequested(*reinterpret_cast<Windows::Media::Devices::RedialRequestedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DialRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_RedialRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RedialRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RedialRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_KeypadPressed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DialRequested(*reinterpret_cast<Windows::Media::Devices::DialRequestedEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(KeypadPressed, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::KeypadPressedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().KeypadPressed(*reinterpret_cast<Windows::Media::Devices::KeypadPressedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DialRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_KeypadPressed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(KeypadPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().KeypadPressed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_AudioTransferRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DialRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AudioTransferRequested, WINRT_WRAP(winrt::event_token), Windows::Media::Devices::CallControlEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().AudioTransferRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RedialRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_AudioTransferRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RedialRequested(*reinterpret_cast<Windows::Media::Devices::RedialRequestedEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_RedialRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RedialRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_KeypadPressed(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().KeypadPressed(*reinterpret_cast<Windows::Media::Devices::KeypadPressedEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_KeypadPressed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().KeypadPressed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_AudioTransferRequested(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AudioTransferRequested(*reinterpret_cast<Windows::Media::Devices::CallControlEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_AudioTransferRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AudioTransferRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AudioTransferRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AudioTransferRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ICallControlStatics> : produce_base<D, Windows::Media::Devices::ICallControlStatics>
 {
-    HRESULT __stdcall GetDefault(void** callControl) noexcept final
+    int32_t WINRT_CALL GetDefault(void** callControl) noexcept final
     {
         try
         {
             *callControl = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Media::Devices::CallControl));
             *callControl = detach_from<Windows::Media::Devices::CallControl>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromId(HSTRING deviceId, void** callControl) noexcept final
+    int32_t WINRT_CALL FromId(void* deviceId, void** callControl) noexcept final
     {
         try
         {
             *callControl = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromId, WINRT_WRAP(Windows::Media::Devices::CallControl), hstring const&);
             *callControl = detach_from<Windows::Media::Devices::CallControl>(this->shim().FromId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs> : produce_base<D, Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Role(Windows::Media::Devices::AudioDeviceRole* value) noexcept final
+    int32_t WINRT_CALL get_Role(Windows::Media::Devices::AudioDeviceRole* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Role, WINRT_WRAP(Windows::Media::Devices::AudioDeviceRole));
             *value = detach_from<Windows::Media::Devices::AudioDeviceRole>(this->shim().Role());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IDialRequestedEventArgs> : produce_base<D, Windows::Media::Devices::IDialRequestedEventArgs>
 {
-    HRESULT __stdcall Handled() noexcept final
+    int32_t WINRT_CALL Handled() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void));
             this->shim().Handled();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IExposureCompensationControl> : produce_base<D, Windows::Media::Devices::IExposureCompensationControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(float* value) noexcept final
+    int32_t WINRT_CALL get_Min(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(float* value) noexcept final
+    int32_t WINRT_CALL get_Max(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(float* value) noexcept final
+    int32_t WINRT_CALL get_Step(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(float* value) noexcept final
+    int32_t WINRT_CALL get_Value(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(float value, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(float value, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), float);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IExposureControl> : produce_base<D, Windows::Media::Devices::IExposureControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAutoAsync(bool value, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetAutoAsync(bool value, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAutoAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), bool);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetAutoAsync(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Min(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Max(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Step(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Value(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(Windows::Foundation::TimeSpan shutterDuration, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(Windows::Foundation::TimeSpan shutterDuration, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::TimeSpan const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&shutterDuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IExposurePriorityVideoControl> : produce_base<D, Windows::Media::Devices::IExposurePriorityVideoControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IFlashControl> : produce_base<D, Windows::Media::Devices::IFlashControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_PowerSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().PowerSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedEyeReductionSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_RedEyeReductionSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReductionSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RedEyeReductionSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Auto(bool value) noexcept final
+    int32_t WINRT_CALL put_Auto(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(void), bool);
             this->shim().Auto(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedEyeReduction(bool* value) noexcept final
+    int32_t WINRT_CALL get_RedEyeReduction(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReduction, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RedEyeReduction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RedEyeReduction(bool value) noexcept final
+    int32_t WINRT_CALL put_RedEyeReduction(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReduction, WINRT_WRAP(void), bool);
             this->shim().RedEyeReduction(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerPercent(float* value) noexcept final
+    int32_t WINRT_CALL get_PowerPercent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PowerPercent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PowerPercent(float value) noexcept final
+    int32_t WINRT_CALL put_PowerPercent(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(void), float);
             this->shim().PowerPercent(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IFlashControl2> : produce_base<D, Windows::Media::Devices::IFlashControl2>
 {
-    HRESULT __stdcall get_AssistantLightSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_AssistantLightSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AssistantLightSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AssistantLightSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AssistantLightEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AssistantLightEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AssistantLightEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AssistantLightEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AssistantLightEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_AssistantLightEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AssistantLightEnabled, WINRT_WRAP(void), bool);
             this->shim().AssistantLightEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IFocusControl> : produce_base<D, Windows::Media::Devices::IFocusControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedPresets(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedPresets(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedPresets, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::FocusPreset>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::FocusPreset>>(this->shim().SupportedPresets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Preset(Windows::Media::Devices::FocusPreset* value) noexcept final
+    int32_t WINRT_CALL get_Preset(Windows::Media::Devices::FocusPreset* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preset, WINRT_WRAP(Windows::Media::Devices::FocusPreset));
             *value = detach_from<Windows::Media::Devices::FocusPreset>(this->shim().Preset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPresetAsync(Windows::Media::Devices::FocusPreset preset, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetPresetAsync(Windows::Media::Devices::FocusPreset preset, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPresetAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Devices::FocusPreset const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetPresetAsync(*reinterpret_cast<Windows::Media::Devices::FocusPreset const*>(&preset)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPresetWithCompletionOptionAsync(Windows::Media::Devices::FocusPreset preset, bool completeBeforeFocus, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetPresetWithCompletionOptionAsync(Windows::Media::Devices::FocusPreset preset, bool completeBeforeFocus, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPresetAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Devices::FocusPreset const, bool);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetPresetAsync(*reinterpret_cast<Windows::Media::Devices::FocusPreset const*>(&preset), completeBeforeFocus));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Min(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Max(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Step(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Value(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(uint32_t focus, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(uint32_t focus, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(focus));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FocusAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL FocusAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocusAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().FocusAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IFocusControl2> : produce_base<D, Windows::Media::Devices::IFocusControl2>
 {
-    HRESULT __stdcall get_FocusChangedSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_FocusChangedSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocusChangedSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().FocusChangedSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WaitForFocusSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_WaitForFocusSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForFocusSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WaitForFocusSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedFocusModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedFocusModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedFocusModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::FocusMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::FocusMode>>(this->shim().SupportedFocusModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedFocusDistances(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedFocusDistances(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedFocusDistances, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::ManualFocusDistance>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::ManualFocusDistance>>(this->shim().SupportedFocusDistances());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedFocusRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedFocusRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedFocusRanges, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AutoFocusRange>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AutoFocusRange>>(this->shim().SupportedFocusRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::FocusMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::FocusMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::FocusMode));
             *value = detach_from<Windows::Media::Devices::FocusMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FocusState(Windows::Media::Devices::MediaCaptureFocusState* value) noexcept final
+    int32_t WINRT_CALL get_FocusState(Windows::Media::Devices::MediaCaptureFocusState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocusState, WINRT_WRAP(Windows::Media::Devices::MediaCaptureFocusState));
             *value = detach_from<Windows::Media::Devices::MediaCaptureFocusState>(this->shim().FocusState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnlockAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL UnlockAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnlockAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().UnlockAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LockAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL LockAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().LockAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Configure(void* settings) noexcept final
+    int32_t WINRT_CALL Configure(void* settings) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configure, WINRT_WRAP(void), Windows::Media::Devices::FocusSettings const&);
             this->shim().Configure(*reinterpret_cast<Windows::Media::Devices::FocusSettings const*>(&settings));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IFocusSettings> : produce_base<D, Windows::Media::Devices::IFocusSettings>
 {
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::FocusMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::FocusMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::FocusMode));
             *value = detach_from<Windows::Media::Devices::FocusMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::FocusMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::FocusMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::FocusMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::FocusMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoFocusRange(Windows::Media::Devices::AutoFocusRange* value) noexcept final
+    int32_t WINRT_CALL get_AutoFocusRange(Windows::Media::Devices::AutoFocusRange* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoFocusRange, WINRT_WRAP(Windows::Media::Devices::AutoFocusRange));
             *value = detach_from<Windows::Media::Devices::AutoFocusRange>(this->shim().AutoFocusRange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoFocusRange(Windows::Media::Devices::AutoFocusRange value) noexcept final
+    int32_t WINRT_CALL put_AutoFocusRange(Windows::Media::Devices::AutoFocusRange value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoFocusRange, WINRT_WRAP(void), Windows::Media::Devices::AutoFocusRange const&);
             this->shim().AutoFocusRange(*reinterpret_cast<Windows::Media::Devices::AutoFocusRange const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(void* value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().Value(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Distance(void** value) noexcept final
+    int32_t WINRT_CALL get_Distance(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Distance, WINRT_WRAP(Windows::Foundation::IReference<Windows::Media::Devices::ManualFocusDistance>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Media::Devices::ManualFocusDistance>>(this->shim().Distance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Distance(void* value) noexcept final
+    int32_t WINRT_CALL put_Distance(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Distance, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Media::Devices::ManualFocusDistance> const&);
             this->shim().Distance(*reinterpret_cast<Windows::Foundation::IReference<Windows::Media::Devices::ManualFocusDistance> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WaitForFocus(bool* value) noexcept final
+    int32_t WINRT_CALL get_WaitForFocus(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForFocus, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WaitForFocus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WaitForFocus(bool value) noexcept final
+    int32_t WINRT_CALL put_WaitForFocus(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForFocus, WINRT_WRAP(void), bool);
             this->shim().WaitForFocus(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisableDriverFallback(bool* value) noexcept final
+    int32_t WINRT_CALL get_DisableDriverFallback(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableDriverFallback, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().DisableDriverFallback());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisableDriverFallback(bool value) noexcept final
+    int32_t WINRT_CALL put_DisableDriverFallback(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableDriverFallback, WINRT_WRAP(void), bool);
             this->shim().DisableDriverFallback(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IHdrVideoControl> : produce_base<D, Windows::Media::Devices::IHdrVideoControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::HdrVideoMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::HdrVideoMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::HdrVideoMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::HdrVideoMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::HdrVideoMode));
             *value = detach_from<Windows::Media::Devices::HdrVideoMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::HdrVideoMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::HdrVideoMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::HdrVideoMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::HdrVideoMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IIsoSpeedControl> : produce_base<D, Windows::Media::Devices::IIsoSpeedControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedPresets(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedPresets(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedPresets, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::IsoSpeedPreset>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::IsoSpeedPreset>>(this->shim().SupportedPresets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Preset(Windows::Media::Devices::IsoSpeedPreset* value) noexcept final
+    int32_t WINRT_CALL get_Preset(Windows::Media::Devices::IsoSpeedPreset* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preset, WINRT_WRAP(Windows::Media::Devices::IsoSpeedPreset));
             *value = detach_from<Windows::Media::Devices::IsoSpeedPreset>(this->shim().Preset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPresetAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Devices::IsoSpeedPreset const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetPresetAsync(*reinterpret_cast<Windows::Media::Devices::IsoSpeedPreset const*>(&preset)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IIsoSpeedControl2> : produce_base<D, Windows::Media::Devices::IIsoSpeedControl2>
 {
-    HRESULT __stdcall get_Min(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Min(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Max(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Step(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Value(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(uint32_t isoSpeed, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(uint32_t isoSpeed, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(isoSpeed));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAutoAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetAutoAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAutoAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetAutoAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IKeypadPressedEventArgs> : produce_base<D, Windows::Media::Devices::IKeypadPressedEventArgs>
 {
-    HRESULT __stdcall get_TelephonyKey(Windows::Media::Devices::TelephonyKey* telephonyKey) noexcept final
+    int32_t WINRT_CALL get_TelephonyKey(Windows::Media::Devices::TelephonyKey* telephonyKey) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TelephonyKey, WINRT_WRAP(Windows::Media::Devices::TelephonyKey));
             *telephonyKey = detach_from<Windows::Media::Devices::TelephonyKey>(this->shim().TelephonyKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ILowLagPhotoControl> : produce_base<D, Windows::Media::Devices::ILowLagPhotoControl>
 {
-    HRESULT __stdcall GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
+    int32_t WINRT_CALL GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetHighestConcurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio), Windows::Media::MediaProperties::IMediaEncodingProperties const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<Windows::Media::MediaProperties::IMediaEncodingProperties const*>(&captureProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentFrameRate(void** value) noexcept final
+    int32_t WINRT_CALL GetCurrentFrameRate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio));
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetCurrentFrameRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbnailEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_ThumbnailEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ThumbnailEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ThumbnailEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_ThumbnailEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailEnabled, WINRT_WRAP(void), bool);
             this->shim().ThumbnailEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat* value) noexcept final
+    int32_t WINRT_CALL get_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailFormat, WINRT_WRAP(Windows::Media::MediaProperties::MediaThumbnailFormat));
             *value = detach_from<Windows::Media::MediaProperties::MediaThumbnailFormat>(this->shim().ThumbnailFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) noexcept final
+    int32_t WINRT_CALL put_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailFormat, WINRT_WRAP(void), Windows::Media::MediaProperties::MediaThumbnailFormat const&);
             this->shim().ThumbnailFormat(*reinterpret_cast<Windows::Media::MediaProperties::MediaThumbnailFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredThumbnailSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_DesiredThumbnailSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredThumbnailSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().DesiredThumbnailSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredThumbnailSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_DesiredThumbnailSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredThumbnailSize, WINRT_WRAP(void), uint32_t);
             this->shim().DesiredThumbnailSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareAcceleratedThumbnailSupported(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_HardwareAcceleratedThumbnailSupported(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareAcceleratedThumbnailSupported, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().HardwareAcceleratedThumbnailSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ILowLagPhotoSequenceControl> : produce_base<D, Windows::Media::Devices::ILowLagPhotoSequenceControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPastPhotos(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPastPhotos(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPastPhotos, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPastPhotos());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPhotosPerSecond(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxPhotosPerSecond(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPhotosPerSecond, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxPhotosPerSecond());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PastPhotoLimit(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PastPhotoLimit(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PastPhotoLimit, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PastPhotoLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PastPhotoLimit(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_PastPhotoLimit(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PastPhotoLimit, WINRT_WRAP(void), uint32_t);
             this->shim().PastPhotoLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosPerSecondLimit(float* value) noexcept final
+    int32_t WINRT_CALL get_PhotosPerSecondLimit(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosPerSecondLimit, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PhotosPerSecondLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PhotosPerSecondLimit(float value) noexcept final
+    int32_t WINRT_CALL put_PhotosPerSecondLimit(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosPerSecondLimit, WINRT_WRAP(void), float);
             this->shim().PhotosPerSecondLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
+    int32_t WINRT_CALL GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetHighestConcurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio), Windows::Media::MediaProperties::IMediaEncodingProperties const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<Windows::Media::MediaProperties::IMediaEncodingProperties const*>(&captureProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentFrameRate(void** value) noexcept final
+    int32_t WINRT_CALL GetCurrentFrameRate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio));
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetCurrentFrameRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbnailEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_ThumbnailEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ThumbnailEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ThumbnailEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_ThumbnailEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailEnabled, WINRT_WRAP(void), bool);
             this->shim().ThumbnailEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat* value) noexcept final
+    int32_t WINRT_CALL get_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailFormat, WINRT_WRAP(Windows::Media::MediaProperties::MediaThumbnailFormat));
             *value = detach_from<Windows::Media::MediaProperties::MediaThumbnailFormat>(this->shim().ThumbnailFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) noexcept final
+    int32_t WINRT_CALL put_ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbnailFormat, WINRT_WRAP(void), Windows::Media::MediaProperties::MediaThumbnailFormat const&);
             this->shim().ThumbnailFormat(*reinterpret_cast<Windows::Media::MediaProperties::MediaThumbnailFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredThumbnailSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_DesiredThumbnailSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredThumbnailSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().DesiredThumbnailSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredThumbnailSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_DesiredThumbnailSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredThumbnailSize, WINRT_WRAP(void), uint32_t);
             this->shim().DesiredThumbnailSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareAcceleratedThumbnailSupported(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_HardwareAcceleratedThumbnailSupported(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareAcceleratedThumbnailSupported, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().HardwareAcceleratedThumbnailSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IMediaDeviceControl> : produce_base<D, Windows::Media::Devices::IMediaDeviceControl>
 {
-    HRESULT __stdcall get_Capabilities(void** value) noexcept final
+    int32_t WINRT_CALL get_Capabilities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capabilities, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControlCapabilities));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControlCapabilities>(this->shim().Capabilities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetValue(double* value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryGetValue(double* value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetValue, WINRT_WRAP(bool), double&);
             *succeeded = detach_from<bool>(this->shim().TryGetValue(*value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetValue(double value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetValue(double value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetValue, WINRT_WRAP(bool), double);
             *succeeded = detach_from<bool>(this->shim().TrySetValue(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetAuto(bool* value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryGetAuto(bool* value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetAuto, WINRT_WRAP(bool), bool&);
             *succeeded = detach_from<bool>(this->shim().TryGetAuto(*value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetAuto(bool value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetAuto(bool value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetAuto, WINRT_WRAP(bool), bool);
             *succeeded = detach_from<bool>(this->shim().TrySetAuto(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IMediaDeviceControlCapabilities> : produce_base<D, Windows::Media::Devices::IMediaDeviceControlCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(double* value) noexcept final
+    int32_t WINRT_CALL get_Min(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(double* value) noexcept final
+    int32_t WINRT_CALL get_Max(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(double* value) noexcept final
+    int32_t WINRT_CALL get_Step(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Default(double* value) noexcept final
+    int32_t WINRT_CALL get_Default(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Default, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Default());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoModeSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoModeSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoModeSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoModeSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IMediaDeviceController> : produce_base<D, Windows::Media::Devices::IMediaDeviceController>
 {
-    HRESULT __stdcall GetAvailableMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType, void** value) noexcept final
+    int32_t WINRT_CALL GetAvailableMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAvailableMediaStreamProperties, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties>), Windows::Media::Capture::MediaStreamType const&);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties>>(this->shim().GetAvailableMediaStreamProperties(*reinterpret_cast<Windows::Media::Capture::MediaStreamType const*>(&mediaStreamType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType, void** value) noexcept final
+    int32_t WINRT_CALL GetMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMediaStreamProperties, WINRT_WRAP(Windows::Media::MediaProperties::IMediaEncodingProperties), Windows::Media::Capture::MediaStreamType const&);
             *value = detach_from<Windows::Media::MediaProperties::IMediaEncodingProperties>(this->shim().GetMediaStreamProperties(*reinterpret_cast<Windows::Media::Capture::MediaStreamType const*>(&mediaStreamType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetMediaStreamPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, void* mediaEncodingProperties, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetMediaStreamPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, void* mediaEncodingProperties, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetMediaStreamPropertiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Capture::MediaStreamType const, Windows::Media::MediaProperties::IMediaEncodingProperties const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetMediaStreamPropertiesAsync(*reinterpret_cast<Windows::Media::Capture::MediaStreamType const*>(&mediaStreamType), *reinterpret_cast<Windows::Media::MediaProperties::IMediaEncodingProperties const*>(&mediaEncodingProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D, Windows::Media::Devices::IMediaDeviceStatics>
 {
-    HRESULT __stdcall GetAudioCaptureSelector(HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetAudioCaptureSelector(void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioCaptureSelector, WINRT_WRAP(hstring));
             *selector = detach_from<hstring>(this->shim().GetAudioCaptureSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAudioRenderSelector(HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetAudioRenderSelector(void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioRenderSelector, WINRT_WRAP(hstring));
             *selector = detach_from<hstring>(this->shim().GetAudioRenderSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetVideoCaptureSelector(HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetVideoCaptureSelector(void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVideoCaptureSelector, WINRT_WRAP(hstring));
             *selector = detach_from<hstring>(this->shim().GetVideoCaptureSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role, HSTRING* deviceId) noexcept final
+    int32_t WINRT_CALL GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role, void** deviceId) noexcept final
     {
         try
         {
             *deviceId = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAudioCaptureId, WINRT_WRAP(hstring), Windows::Media::Devices::AudioDeviceRole const&);
             *deviceId = detach_from<hstring>(this->shim().GetDefaultAudioCaptureId(*reinterpret_cast<Windows::Media::Devices::AudioDeviceRole const*>(&role)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role, HSTRING* deviceId) noexcept final
+    int32_t WINRT_CALL GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role, void** deviceId) noexcept final
     {
         try
         {
             *deviceId = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAudioRenderId, WINRT_WRAP(hstring), Windows::Media::Devices::AudioDeviceRole const&);
             *deviceId = detach_from<hstring>(this->shim().GetDefaultAudioRenderId(*reinterpret_cast<Windows::Media::Devices::AudioDeviceRole const*>(&role)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DefaultAudioCaptureDeviceChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_DefaultAudioCaptureDeviceChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DefaultAudioCaptureDeviceChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DefaultAudioCaptureDeviceChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_DefaultAudioCaptureDeviceChanged(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DefaultAudioCaptureDeviceChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DefaultAudioRenderDeviceChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DefaultAudioCaptureDeviceChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DefaultAudioRenderDeviceChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DefaultAudioRenderDeviceChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_DefaultAudioRenderDeviceChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_DefaultAudioRenderDeviceChanged(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DefaultAudioRenderDeviceChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DefaultAudioRenderDeviceChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IModuleCommandResult> : produce_base<D, Windows::Media::Devices::IModuleCommandResult>
 {
-    HRESULT __stdcall get_Status(Windows::Media::Devices::SendCommandStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Media::Devices::SendCommandStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Media::Devices::SendCommandStatus));
             *value = detach_from<Windows::Media::Devices::SendCommandStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Result(void** value) noexcept final
+    int32_t WINRT_CALL get_Result(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Result, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Result());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : produce_base<D, Windows::Media::Devices::IOpticalImageStabilizationControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::OpticalImageStabilizationMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::OpticalImageStabilizationMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::OpticalImageStabilizationMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::OpticalImageStabilizationMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::OpticalImageStabilizationMode));
             *value = detach_from<Windows::Media::Devices::OpticalImageStabilizationMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::OpticalImageStabilizationMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::OpticalImageStabilizationMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::OpticalImageStabilizationMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::OpticalImageStabilizationMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IPhotoConfirmationControl> : produce_base<D, Windows::Media::Devices::IPhotoConfirmationControl>
 {
-    HRESULT __stdcall get_Supported(bool* pbSupported) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* pbSupported) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *pbSupported = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat* format) noexcept final
+    int32_t WINRT_CALL get_PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat* format) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelFormat, WINRT_WRAP(Windows::Media::MediaProperties::MediaPixelFormat));
             *format = detach_from<Windows::Media::MediaProperties::MediaPixelFormat>(this->shim().PixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat format) noexcept final
+    int32_t WINRT_CALL put_PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat format) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelFormat, WINRT_WRAP(void), Windows::Media::MediaProperties::MediaPixelFormat const&);
             this->shim().PixelFormat(*reinterpret_cast<Windows::Media::MediaProperties::MediaPixelFormat const*>(&format));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IRedialRequestedEventArgs> : produce_base<D, Windows::Media::Devices::IRedialRequestedEventArgs>
 {
-    HRESULT __stdcall Handled() noexcept final
+    int32_t WINRT_CALL Handled() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void));
             this->shim().Handled();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IRegionOfInterest> : produce_base<D, Windows::Media::Devices::IRegionOfInterest>
 {
-    HRESULT __stdcall get_AutoFocusEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoFocusEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoFocusEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoFocusEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoFocusEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_AutoFocusEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoFocusEnabled, WINRT_WRAP(void), bool);
             this->shim().AutoFocusEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoWhiteBalanceEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoWhiteBalanceEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoWhiteBalanceEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoWhiteBalanceEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoWhiteBalanceEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_AutoWhiteBalanceEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoWhiteBalanceEnabled, WINRT_WRAP(void), bool);
             this->shim().AutoWhiteBalanceEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoExposureEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoExposureEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoExposureEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoExposureEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoExposureEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_AutoExposureEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoExposureEnabled, WINRT_WRAP(void), bool);
             this->shim().AutoExposureEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bounds(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Bounds(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Bounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Bounds(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_Bounds(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Bounds(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IRegionOfInterest2> : produce_base<D, Windows::Media::Devices::IRegionOfInterest2>
 {
-    HRESULT __stdcall get_Type(Windows::Media::Devices::RegionOfInterestType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Media::Devices::RegionOfInterestType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Media::Devices::RegionOfInterestType));
             *value = detach_from<Windows::Media::Devices::RegionOfInterestType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(Windows::Media::Devices::RegionOfInterestType value) noexcept final
+    int32_t WINRT_CALL put_Type(Windows::Media::Devices::RegionOfInterestType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), Windows::Media::Devices::RegionOfInterestType const&);
             this->shim().Type(*reinterpret_cast<Windows::Media::Devices::RegionOfInterestType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BoundsNormalized(bool* value) noexcept final
+    int32_t WINRT_CALL get_BoundsNormalized(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundsNormalized, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().BoundsNormalized());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BoundsNormalized(bool value) noexcept final
+    int32_t WINRT_CALL put_BoundsNormalized(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundsNormalized, WINRT_WRAP(void), bool);
             this->shim().BoundsNormalized(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Weight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Weight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Weight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Weight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Weight(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Weight(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Weight, WINRT_WRAP(void), uint32_t);
             this->shim().Weight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IRegionsOfInterestControl> : produce_base<D, Windows::Media::Devices::IRegionsOfInterestControl>
 {
-    HRESULT __stdcall get_MaxRegions(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxRegions(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxRegions, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxRegions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRegionsAsync(void* regions, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetRegionsAsync(void* regions, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRegionsAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetRegionsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> const*>(&regions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRegionsWithLockAsync(void* regions, bool lockValues, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetRegionsWithLockAsync(void* regions, bool lockValues, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRegionsAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> const, bool);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetRegionsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> const*>(&regions), lockValues));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearRegionsAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ClearRegionsAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearRegionsAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearRegionsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoFocusSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoFocusSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoFocusSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoFocusSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoWhiteBalanceSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoWhiteBalanceSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoWhiteBalanceSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoWhiteBalanceSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoExposureSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoExposureSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoExposureSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoExposureSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ISceneModeControl> : produce_base<D, Windows::Media::Devices::ISceneModeControl>
 {
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::CaptureSceneMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::CaptureSceneMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(Windows::Media::Devices::CaptureSceneMode* value) noexcept final
+    int32_t WINRT_CALL get_Value(Windows::Media::Devices::CaptureSceneMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Media::Devices::CaptureSceneMode));
             *value = detach_from<Windows::Media::Devices::CaptureSceneMode>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(Windows::Media::Devices::CaptureSceneMode sceneMode, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(Windows::Media::Devices::CaptureSceneMode sceneMode, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Devices::CaptureSceneMode const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(*reinterpret_cast<Windows::Media::Devices::CaptureSceneMode const*>(&sceneMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::ITorchControl> : produce_base<D, Windows::Media::Devices::ITorchControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_PowerSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().PowerSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerPercent(float* value) noexcept final
+    int32_t WINRT_CALL get_PowerPercent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PowerPercent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PowerPercent(float value) noexcept final
+    int32_t WINRT_CALL put_PowerPercent(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(void), float);
             this->shim().PowerPercent(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_base<D, Windows::Media::Devices::IVideoDeviceController>
 {
-    HRESULT __stdcall get_Brightness(void** value) noexcept final
+    int32_t WINRT_CALL get_Brightness(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Brightness, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Brightness());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contrast(void** value) noexcept final
+    int32_t WINRT_CALL get_Contrast(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contrast, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Contrast());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hue(void** value) noexcept final
+    int32_t WINRT_CALL get_Hue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hue, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Hue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WhiteBalance(void** value) noexcept final
+    int32_t WINRT_CALL get_WhiteBalance(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WhiteBalance, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().WhiteBalance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BacklightCompensation(void** value) noexcept final
+    int32_t WINRT_CALL get_BacklightCompensation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BacklightCompensation, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().BacklightCompensation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pan(void** value) noexcept final
+    int32_t WINRT_CALL get_Pan(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pan, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Pan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tilt(void** value) noexcept final
+    int32_t WINRT_CALL get_Tilt(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tilt, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Tilt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Zoom(void** value) noexcept final
+    int32_t WINRT_CALL get_Zoom(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Zoom, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Zoom());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Roll(void** value) noexcept final
+    int32_t WINRT_CALL get_Roll(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Roll, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Roll());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Exposure(void** value) noexcept final
+    int32_t WINRT_CALL get_Exposure(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Exposure, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Exposure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Focus(void** value) noexcept final
+    int32_t WINRT_CALL get_Focus(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Focus, WINRT_WRAP(Windows::Media::Devices::MediaDeviceControl));
             *value = detach_from<Windows::Media::Devices::MediaDeviceControl>(this->shim().Focus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetPowerlineFrequency, WINRT_WRAP(bool), Windows::Media::Capture::PowerlineFrequency const&);
             *succeeded = detach_from<bool>(this->shim().TrySetPowerlineFrequency(*reinterpret_cast<Windows::Media::Capture::PowerlineFrequency const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency* value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryGetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency* value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPowerlineFrequency, WINRT_WRAP(bool), Windows::Media::Capture::PowerlineFrequency&);
             *succeeded = detach_from<bool>(this->shim().TryGetPowerlineFrequency(*reinterpret_cast<Windows::Media::Capture::PowerlineFrequency*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult> : produce_base<D, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult>
 {
-    HRESULT __stdcall get_Status(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus));
             *value = detach_from<Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IVideoTemporalDenoisingControl> : produce_base<D, Windows::Media::Devices::IVideoTemporalDenoisingControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::VideoTemporalDenoisingMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::VideoTemporalDenoisingMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::VideoTemporalDenoisingMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::VideoTemporalDenoisingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::VideoTemporalDenoisingMode));
             *value = detach_from<Windows::Media::Devices::VideoTemporalDenoisingMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::VideoTemporalDenoisingMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::VideoTemporalDenoisingMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::VideoTemporalDenoisingMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::VideoTemporalDenoisingMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<D, Windows::Media::Devices::IWhiteBalanceControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Preset(Windows::Media::Devices::ColorTemperaturePreset* value) noexcept final
+    int32_t WINRT_CALL get_Preset(Windows::Media::Devices::ColorTemperaturePreset* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preset, WINRT_WRAP(Windows::Media::Devices::ColorTemperaturePreset));
             *value = detach_from<Windows::Media::Devices::ColorTemperaturePreset>(this->shim().Preset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPresetAsync(Windows::Media::Devices::ColorTemperaturePreset preset, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetPresetAsync(Windows::Media::Devices::ColorTemperaturePreset preset, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPresetAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Devices::ColorTemperaturePreset const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetPresetAsync(*reinterpret_cast<Windows::Media::Devices::ColorTemperaturePreset const*>(&preset)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Min(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Max(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Step(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Value(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetValueAsync(uint32_t temperature, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetValueAsync(uint32_t temperature, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetValueAsync(temperature));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IZoomControl> : produce_base<D, Windows::Media::Devices::IZoomControl>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(float* value) noexcept final
+    int32_t WINRT_CALL get_Min(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(float* value) noexcept final
+    int32_t WINRT_CALL get_Max(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(float* value) noexcept final
+    int32_t WINRT_CALL get_Step(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(float* value) noexcept final
+    int32_t WINRT_CALL get_Value(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(float value) noexcept final
+    int32_t WINRT_CALL put_Value(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), float);
             this->shim().Value(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IZoomControl2> : produce_base<D, Windows::Media::Devices::IZoomControl2>
 {
-    HRESULT __stdcall get_SupportedModes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedModes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedModes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::ZoomTransitionMode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::ZoomTransitionMode>>(this->shim().SupportedModes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::ZoomTransitionMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::ZoomTransitionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::ZoomTransitionMode));
             *value = detach_from<Windows::Media::Devices::ZoomTransitionMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Configure(void* settings) noexcept final
+    int32_t WINRT_CALL Configure(void* settings) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configure, WINRT_WRAP(void), Windows::Media::Devices::ZoomSettings const&);
             this->shim().Configure(*reinterpret_cast<Windows::Media::Devices::ZoomSettings const*>(&settings));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Windows::Media::Devices::IZoomSettings>
 {
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::ZoomTransitionMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::ZoomTransitionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::ZoomTransitionMode));
             *value = detach_from<Windows::Media::Devices::ZoomTransitionMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::ZoomTransitionMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::ZoomTransitionMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::ZoomTransitionMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::ZoomTransitionMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(float* value) noexcept final
+    int32_t WINRT_CALL get_Value(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(float value) noexcept final
+    int32_t WINRT_CALL put_Value(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), float);
             this->shim().Value(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6340,90 +5732,90 @@ struct produce<D, Windows::Media::Devices::IZoomSettings> : produce_base<D, Wind
 WINRT_EXPORT namespace winrt::Windows::Media::Devices {
 
 inline AdvancedPhotoCaptureSettings::AdvancedPhotoCaptureSettings() :
-    AdvancedPhotoCaptureSettings(get_activation_factory<AdvancedPhotoCaptureSettings>().ActivateInstance<AdvancedPhotoCaptureSettings>())
+    AdvancedPhotoCaptureSettings(impl::call_factory<AdvancedPhotoCaptureSettings>([](auto&& f) { return f.template ActivateInstance<AdvancedPhotoCaptureSettings>(); }))
 {}
 
 inline AudioDeviceModulesManager::AudioDeviceModulesManager(param::hstring const& deviceId) :
-    AudioDeviceModulesManager(get_activation_factory<AudioDeviceModulesManager, Windows::Media::Devices::IAudioDeviceModulesManagerFactory>().Create(deviceId))
+    AudioDeviceModulesManager(impl::call_factory<AudioDeviceModulesManager, Windows::Media::Devices::IAudioDeviceModulesManagerFactory>([&](auto&& f) { return f.Create(deviceId); }))
 {}
 
 inline Windows::Media::Devices::CallControl CallControl::GetDefault()
 {
-    return get_activation_factory<CallControl, Windows::Media::Devices::ICallControlStatics>().GetDefault();
+    return impl::call_factory<CallControl, Windows::Media::Devices::ICallControlStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Media::Devices::CallControl CallControl::FromId(param::hstring const& deviceId)
 {
-    return get_activation_factory<CallControl, Windows::Media::Devices::ICallControlStatics>().FromId(deviceId);
+    return impl::call_factory<CallControl, Windows::Media::Devices::ICallControlStatics>([&](auto&& f) { return f.FromId(deviceId); });
 }
 
 inline FocusSettings::FocusSettings() :
-    FocusSettings(get_activation_factory<FocusSettings>().ActivateInstance<FocusSettings>())
+    FocusSettings(impl::call_factory<FocusSettings>([](auto&& f) { return f.template ActivateInstance<FocusSettings>(); }))
 {}
 
 inline hstring MediaDevice::GetAudioCaptureSelector()
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().GetAudioCaptureSelector();
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.GetAudioCaptureSelector(); });
 }
 
 inline hstring MediaDevice::GetAudioRenderSelector()
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().GetAudioRenderSelector();
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.GetAudioRenderSelector(); });
 }
 
 inline hstring MediaDevice::GetVideoCaptureSelector()
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().GetVideoCaptureSelector();
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.GetVideoCaptureSelector(); });
 }
 
 inline hstring MediaDevice::GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole const& role)
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().GetDefaultAudioCaptureId(role);
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.GetDefaultAudioCaptureId(role); });
 }
 
 inline hstring MediaDevice::GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole const& role)
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().GetDefaultAudioRenderId(role);
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.GetDefaultAudioRenderId(role); });
 }
 
-inline event_token MediaDevice::DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler)
+inline winrt::event_token MediaDevice::DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler)
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(handler);
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.DefaultAudioCaptureDeviceChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics> MediaDevice::DefaultAudioCaptureDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler)
+inline MediaDevice::DefaultAudioCaptureDeviceChanged_revoker MediaDevice::DefaultAudioCaptureDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler)
 {
-    auto factory = get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>();
-    return { factory, &impl::abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioCaptureDeviceChanged, factory.DefaultAudioCaptureDeviceChanged(handler) };
+    auto f = get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>();
+    return { f, f.DefaultAudioCaptureDeviceChanged(handler) };
 }
 
-inline void MediaDevice::DefaultAudioCaptureDeviceChanged(event_token const& cookie)
+inline void MediaDevice::DefaultAudioCaptureDeviceChanged(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().DefaultAudioCaptureDeviceChanged(cookie);
+    impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.DefaultAudioCaptureDeviceChanged(cookie); });
 }
 
-inline event_token MediaDevice::DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler)
+inline winrt::event_token MediaDevice::DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler)
 {
-    return get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(handler);
+    return impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.DefaultAudioRenderDeviceChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics> MediaDevice::DefaultAudioRenderDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler)
+inline MediaDevice::DefaultAudioRenderDeviceChanged_revoker MediaDevice::DefaultAudioRenderDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler)
 {
-    auto factory = get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>();
-    return { factory, &impl::abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioRenderDeviceChanged, factory.DefaultAudioRenderDeviceChanged(handler) };
+    auto f = get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>();
+    return { f, f.DefaultAudioRenderDeviceChanged(handler) };
 }
 
-inline void MediaDevice::DefaultAudioRenderDeviceChanged(event_token const& cookie)
+inline void MediaDevice::DefaultAudioRenderDeviceChanged(winrt::event_token const& cookie)
 {
-    get_activation_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>().DefaultAudioRenderDeviceChanged(cookie);
+    impl::call_factory<MediaDevice, Windows::Media::Devices::IMediaDeviceStatics>([&](auto&& f) { return f.DefaultAudioRenderDeviceChanged(cookie); });
 }
 
 inline RegionOfInterest::RegionOfInterest() :
-    RegionOfInterest(get_activation_factory<RegionOfInterest>().ActivateInstance<RegionOfInterest>())
+    RegionOfInterest(impl::call_factory<RegionOfInterest>([](auto&& f) { return f.template ActivateInstance<RegionOfInterest>(); }))
 {}
 
 inline ZoomSettings::ZoomSettings() :
-    ZoomSettings(get_activation_factory<ZoomSettings>().ActivateInstance<ZoomSettings>())
+    ZoomSettings(impl::call_factory<ZoomSettings>([](auto&& f) { return f.template ActivateInstance<ZoomSettings>(); }))
 {}
 
 template <typename L> CallControlEventHandler::CallControlEventHandler(L handler) :
@@ -6431,11 +5823,19 @@ template <typename L> CallControlEventHandler::CallControlEventHandler(L handler
 {}
 
 template <typename F> CallControlEventHandler::CallControlEventHandler(F* handler) :
-    CallControlEventHandler([=](auto&&... args) { handler(args...); })
+    CallControlEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> CallControlEventHandler::CallControlEventHandler(O* object, M method) :
-    CallControlEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    CallControlEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> CallControlEventHandler::CallControlEventHandler(com_ptr<O>&& object, M method) :
+    CallControlEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> CallControlEventHandler::CallControlEventHandler(weak_ref<O>&& object, M method) :
+    CallControlEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void CallControlEventHandler::operator()(Windows::Media::Devices::CallControl const& sender) const
@@ -6448,11 +5848,19 @@ template <typename L> DialRequestedEventHandler::DialRequestedEventHandler(L han
 {}
 
 template <typename F> DialRequestedEventHandler::DialRequestedEventHandler(F* handler) :
-    DialRequestedEventHandler([=](auto&&... args) { handler(args...); })
+    DialRequestedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> DialRequestedEventHandler::DialRequestedEventHandler(O* object, M method) :
-    DialRequestedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    DialRequestedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> DialRequestedEventHandler::DialRequestedEventHandler(com_ptr<O>&& object, M method) :
+    DialRequestedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> DialRequestedEventHandler::DialRequestedEventHandler(weak_ref<O>&& object, M method) :
+    DialRequestedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void DialRequestedEventHandler::operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::DialRequestedEventArgs const& e) const
@@ -6465,11 +5873,19 @@ template <typename L> KeypadPressedEventHandler::KeypadPressedEventHandler(L han
 {}
 
 template <typename F> KeypadPressedEventHandler::KeypadPressedEventHandler(F* handler) :
-    KeypadPressedEventHandler([=](auto&&... args) { handler(args...); })
+    KeypadPressedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> KeypadPressedEventHandler::KeypadPressedEventHandler(O* object, M method) :
-    KeypadPressedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    KeypadPressedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> KeypadPressedEventHandler::KeypadPressedEventHandler(com_ptr<O>&& object, M method) :
+    KeypadPressedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> KeypadPressedEventHandler::KeypadPressedEventHandler(weak_ref<O>&& object, M method) :
+    KeypadPressedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void KeypadPressedEventHandler::operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::KeypadPressedEventArgs const& e) const
@@ -6482,11 +5898,19 @@ template <typename L> RedialRequestedEventHandler::RedialRequestedEventHandler(L
 {}
 
 template <typename F> RedialRequestedEventHandler::RedialRequestedEventHandler(F* handler) :
-    RedialRequestedEventHandler([=](auto&&... args) { handler(args...); })
+    RedialRequestedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> RedialRequestedEventHandler::RedialRequestedEventHandler(O* object, M method) :
-    RedialRequestedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    RedialRequestedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> RedialRequestedEventHandler::RedialRequestedEventHandler(com_ptr<O>&& object, M method) :
+    RedialRequestedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> RedialRequestedEventHandler::RedialRequestedEventHandler(weak_ref<O>&& object, M method) :
+    RedialRequestedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void RedialRequestedEventHandler::operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::RedialRequestedEventArgs const& e) const
@@ -6589,5 +6013,3 @@ template<> struct hash<winrt::Windows::Media::Devices::ZoomControl> : winrt::imp
 template<> struct hash<winrt::Windows::Media::Devices::ZoomSettings> : winrt::impl::hash_base<winrt::Windows::Media::Devices::ZoomSettings> {};
 
 }
-
-WINRT_WARNING_POP

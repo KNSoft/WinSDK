@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -65,114 +65,100 @@ template <typename D> Windows::Foundation::Collections::ValueSet consume_Windows
 template <typename D>
 struct produce<D, Windows::Management::Update::IPreviewBuildsManager> : produce_base<D, Windows::Management::Update::IPreviewBuildsManager>
 {
-    HRESULT __stdcall get_ArePreviewBuildsAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL get_ArePreviewBuildsAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArePreviewBuildsAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ArePreviewBuildsAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ArePreviewBuildsAllowed(bool value) noexcept final
+    int32_t WINRT_CALL put_ArePreviewBuildsAllowed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArePreviewBuildsAllowed, WINRT_WRAP(void), bool);
             this->shim().ArePreviewBuildsAllowed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentState(void** result) noexcept final
+    int32_t WINRT_CALL GetCurrentState(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentState, WINRT_WRAP(Windows::Management::Update::PreviewBuildsState));
             *result = detach_from<Windows::Management::Update::PreviewBuildsState>(this->shim().GetCurrentState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SyncAsync(void** result) noexcept final
+    int32_t WINRT_CALL SyncAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().SyncAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Update::IPreviewBuildsManagerStatics> : produce_base<D, Windows::Management::Update::IPreviewBuildsManagerStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Management::Update::PreviewBuildsManager));
             *value = detach_from<Windows::Management::Update::PreviewBuildsManager>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Update::IPreviewBuildsState> : produce_base<D, Windows::Management::Update::IPreviewBuildsState>
 {
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -182,12 +168,12 @@ WINRT_EXPORT namespace winrt::Windows::Management::Update {
 
 inline Windows::Management::Update::PreviewBuildsManager PreviewBuildsManager::GetDefault()
 {
-    return get_activation_factory<PreviewBuildsManager, Windows::Management::Update::IPreviewBuildsManagerStatics>().GetDefault();
+    return impl::call_factory<PreviewBuildsManager, Windows::Management::Update::IPreviewBuildsManagerStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline bool PreviewBuildsManager::IsSupported()
 {
-    return get_activation_factory<PreviewBuildsManager, Windows::Management::Update::IPreviewBuildsManagerStatics>().IsSupported();
+    return impl::call_factory<PreviewBuildsManager, Windows::Management::Update::IPreviewBuildsManagerStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 }
@@ -201,5 +187,3 @@ template<> struct hash<winrt::Windows::Management::Update::PreviewBuildsManager>
 template<> struct hash<winrt::Windows::Management::Update::PreviewBuildsState> : winrt::impl::hash_base<winrt::Windows::Management::Update::PreviewBuildsState> {};
 
 }
-
-WINRT_WARNING_POP

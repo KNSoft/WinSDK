@@ -54,6 +54,8 @@ namespace Windows
 
             typedef enum SystemIdentificationSource SystemIdentificationSource;
 
+            typedef enum SystemOutOfBoxExperienceState SystemOutOfBoxExperienceState;
+
             interface IAnalyticsInfoStatics;
 
             interface IAnalyticsInfoStatics2;
@@ -80,6 +82,10 @@ namespace Windows
 
             interface ISystemIdentificationStatics;
 
+            interface ISystemSetupInfoStatics;
+
+            interface IWindowsIntegrityPolicyStatics;
+
             runtimeclass AnalyticsInfo;
 
             runtimeclass AnalyticsVersionInfo;
@@ -101,6 +107,10 @@ namespace Windows
             runtimeclass SystemIdentification;
 
             runtimeclass SystemIdentificationInfo;
+
+            runtimeclass SystemSetupInfo;
+
+            runtimeclass WindowsIntegrityPolicy;
         }
     }
 }
@@ -146,6 +156,14 @@ namespace Windows
                 Uefi     = 2,
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
                 Registry = 3
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum SystemOutOfBoxExperienceState
+            {
+                NotStarted = 0,
+                InProgress = 1,
+                Completed  = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -283,6 +301,29 @@ namespace Windows
                 HRESULT GetSystemIdForUser([in] Windows.System.User* user, [out] [retval] Windows.System.Profile.SystemIdentificationInfo** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.Profile.SystemSetupInfo)]
+            [uuid(2C9620A8-1D88-5E2D-A324-A543AF4247EE)]
+            interface ISystemSetupInfoStatics : IInspectable
+            {
+                [propget] HRESULT OutOfBoxExperienceState([out] [retval] Windows.System.Profile.SystemOutOfBoxExperienceState* value);
+                [eventadd] HRESULT OutOfBoxExperienceStateChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT OutOfBoxExperienceStateChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.System.Profile.WindowsIntegrityPolicy)]
+            [uuid(7D1D81DB-8D63-4789-9EA5-DDCF65A94F3C)]
+            interface IWindowsIntegrityPolicyStatics : IInspectable
+            {
+                [propget] HRESULT IsEnabled([out] [retval] boolean* value);
+                [propget] HRESULT IsEnabledForTrial([out] [retval] boolean* value);
+                [propget] HRESULT CanDisable([out] [retval] boolean* value);
+                [propget] HRESULT IsDisableSupported([out] [retval] boolean* value);
+                [eventadd] HRESULT PolicyChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT PolicyChanged([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.System.Profile.IAnalyticsInfoStatics, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -367,6 +408,22 @@ namespace Windows
             runtimeclass SystemIdentificationInfo
             {
                 [default] interface Windows.System.Profile.ISystemIdentificationInfo;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.Profile.ISystemSetupInfoStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass SystemSetupInfo
+            {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.Profile.IWindowsIntegrityPolicyStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass WindowsIntegrityPolicy
+            {
             }
         }
     }

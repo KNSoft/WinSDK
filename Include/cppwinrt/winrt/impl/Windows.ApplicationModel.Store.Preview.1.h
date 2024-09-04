@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -12,6 +12,20 @@
 #include "winrt/impl/Windows.ApplicationModel.Store.Preview.0.h"
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Store::Preview {
+
+struct WINRT_EBO IDeliveryOptimizationSettings :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDeliveryOptimizationSettings>
+{
+    IDeliveryOptimizationSettings(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDeliveryOptimizationSettingsStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDeliveryOptimizationSettingsStatics>
+{
+    IDeliveryOptimizationSettingsStatics(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct WINRT_EBO IStoreConfigurationStatics :
     Windows::Foundation::IInspectable,
@@ -39,6 +53,13 @@ struct WINRT_EBO IStoreConfigurationStatics4 :
     impl::consume_t<IStoreConfigurationStatics4>
 {
     IStoreConfigurationStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStoreConfigurationStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStoreConfigurationStatics5>
+{
+    IStoreConfigurationStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStoreHardwareManufacturerInfo :

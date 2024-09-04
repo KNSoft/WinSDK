@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -81,10 +81,10 @@ struct PlatformDiagnosticsAndUsageDataSettings
 {
     PlatformDiagnosticsAndUsageDataSettings() = delete;
     static Windows::System::Profile::PlatformDataCollectionLevel CollectionLevel();
-    static event_token CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using CollectionLevelChanged_revoker = factory_event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>;
+    static winrt::event_token CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using CollectionLevelChanged_revoker = impl::factory_event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics, &impl::abi_t<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>::remove_CollectionLevelChanged>;
     static CollectionLevelChanged_revoker CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void CollectionLevelChanged(event_token const& token);
+    static void CollectionLevelChanged(winrt::event_token const& token);
     static bool CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel const& level);
 };
 
@@ -113,6 +113,29 @@ struct WINRT_EBO SystemIdentificationInfo :
     Windows::System::Profile::ISystemIdentificationInfo
 {
     SystemIdentificationInfo(std::nullptr_t) noexcept {}
+};
+
+struct SystemSetupInfo
+{
+    SystemSetupInfo() = delete;
+    static Windows::System::Profile::SystemOutOfBoxExperienceState OutOfBoxExperienceState();
+    static winrt::event_token OutOfBoxExperienceStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using OutOfBoxExperienceStateChanged_revoker = impl::factory_event_revoker<Windows::System::Profile::ISystemSetupInfoStatics, &impl::abi_t<Windows::System::Profile::ISystemSetupInfoStatics>::remove_OutOfBoxExperienceStateChanged>;
+    static OutOfBoxExperienceStateChanged_revoker OutOfBoxExperienceStateChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void OutOfBoxExperienceStateChanged(winrt::event_token const& token);
+};
+
+struct WindowsIntegrityPolicy
+{
+    WindowsIntegrityPolicy() = delete;
+    static bool IsEnabled();
+    static bool IsEnabledForTrial();
+    static bool CanDisable();
+    static bool IsDisableSupported();
+    static winrt::event_token PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using PolicyChanged_revoker = impl::factory_event_revoker<Windows::System::Profile::IWindowsIntegrityPolicyStatics, &impl::abi_t<Windows::System::Profile::IWindowsIntegrityPolicyStatics>::remove_PolicyChanged>;
+    static PolicyChanged_revoker PolicyChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    static void PolicyChanged(winrt::event_token const& token);
 };
 
 }

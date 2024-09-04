@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -86,7 +86,8 @@ struct WINRT_EBO StorageProviderItemPropertyDefinition :
 };
 
 struct WINRT_EBO StorageProviderSyncRootInfo :
-    Windows::Storage::Provider::IStorageProviderSyncRootInfo
+    Windows::Storage::Provider::IStorageProviderSyncRootInfo,
+    impl::require<StorageProviderSyncRootInfo, Windows::Storage::Provider::IStorageProviderSyncRootInfo2>
 {
     StorageProviderSyncRootInfo(std::nullptr_t) noexcept {}
     StorageProviderSyncRootInfo();

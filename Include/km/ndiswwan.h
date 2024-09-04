@@ -1050,9 +1050,15 @@ typedef struct _NDIS_WWAN_BASE_STATIONS_INFO {
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS4 || NDIS_SUPPORT_NDIS680)
 // (may need to restrict to higher NDIS version such as 7.0)
 
+typedef enum _WWAN_MPDP_OPERATION {
+    WwanMPDPOperationCreateChildInterface = 0,      // create a new MPDP child interface
+    WwanMPDPOperationDeleteChildInterface,          // delete an exiting MPDP child interface
+    WwanMPDPOperationMax
+} WWAN_MPDP_OPERATION, *PWWAN_MPDP_OPERATION;
+
 typedef struct _NDIS_WWAN_MPDP_INFO  
 {  
-    ULONG                       Operation;          // 0 -- create a new MPDP child interface; 1 -- delete an exiting MPDP child interface; other -- invalid
+    WWAN_MPDP_OPERATION         Operation;          
     GUID                        ChildInterfaceGUID; // GUID of the child interface to be deleted.
     NDIS_WWAN_MAC_ADDRESS       MacAddr;            // unused at present
 } NDIS_WWAN_MPDP_INFO, *PNDIS_WWAN_MPDP_INFO;

@@ -98,6 +98,8 @@ namespace Windows
         {
             namespace Inking
             {
+                typedef enum HandwritingLineHeight HandwritingLineHeight;
+
                 typedef enum InkDrawingAttributesKind InkDrawingAttributesKind;
 
                 typedef enum InkHighContrastAdjustment InkHighContrastAdjustment;
@@ -115,6 +117,8 @@ namespace Windows
                 typedef enum InkPresenterStencilKind InkPresenterStencilKind;
 
                 typedef enum InkRecognitionTarget InkRecognitionTarget;
+
+                typedef enum PenHandedness PenHandedness;
 
                 typedef enum PenTipShape PenTipShape;
 
@@ -202,6 +206,10 @@ namespace Windows
 
                 interface IInkUnprocessedInput;
 
+                interface IPenAndInkSettings;
+
+                interface IPenAndInkSettingsStatics;
+
                 runtimeclass InkDrawingAttributes;
 
                 runtimeclass InkDrawingAttributesPencilProperties;
@@ -245,6 +253,8 @@ namespace Windows
                 runtimeclass InkSynchronizer;
 
                 runtimeclass InkUnprocessedInput;
+
+                runtimeclass PenAndInkSettings;
             }
         }
     }
@@ -313,6 +323,14 @@ namespace Windows
         {
             namespace Inking
             {
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                enum HandwritingLineHeight
+                {
+                    Small  = 0,
+                    Medium = 1,
+                    Large  = 2
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 enum InkDrawingAttributesKind
                 {
@@ -380,6 +398,13 @@ namespace Windows
                     All      = 0,
                     Selected = 1,
                     Recent   = 2
+                };
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                enum PenHandedness
+                {
+                    Right = 0,
+                    Left  = 1
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -871,6 +896,27 @@ namespace Windows
                     [propget] HRESULT InkPresenter([out] [retval] Windows.UI.Input.Inking.InkPresenter** value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Input.Inking.PenAndInkSettings)]
+                [uuid(BC2CEB8F-0066-44A8-BB7A-B839B3DEB8F5)]
+                interface IPenAndInkSettings : IInspectable
+                {
+                    [propget] HRESULT IsHandwritingDirectlyIntoTextFieldEnabled([out] [retval] boolean* value);
+                    [propget] HRESULT PenHandedness([out] [retval] Windows.UI.Input.Inking.PenHandedness* value);
+                    [propget] HRESULT HandwritingLineHeight([out] [retval] Windows.UI.Input.Inking.HandwritingLineHeight* value);
+                    [propget] HRESULT FontFamilyName([out] [retval] HSTRING* value);
+                    [propget] HRESULT UserConsentsToHandwritingTelemetryCollection([out] [retval] boolean* value);
+                    [propget] HRESULT IsTouchHandwritingEnabled([out] [retval] boolean* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Input.Inking.PenAndInkSettings)]
+                [uuid(ED6DD036-5708-5C3C-96DB-F2F552EAB641)]
+                interface IPenAndInkSettingsStatics : IInspectable
+                {
+                    HRESULT GetDefault([out] [retval] Windows.UI.Input.Inking.PenAndInkSettings** result);
+                }
+
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
@@ -1057,6 +1103,15 @@ namespace Windows
                 runtimeclass InkUnprocessedInput
                 {
                     [default] interface Windows.UI.Input.Inking.IInkUnprocessedInput;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Input.Inking.IPenAndInkSettingsStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+                [threading(both)]
+                runtimeclass PenAndInkSettings
+                {
+                    [default] interface Windows.UI.Input.Inking.IPenAndInkSettings;
                 }
             }
         }

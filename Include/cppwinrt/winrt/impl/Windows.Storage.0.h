@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -497,66 +497,66 @@ template <> struct name<Windows::Storage::StorageOpenOptions>{ static constexpr 
 template <> struct name<Windows::Storage::StreamedFileFailureMode>{ static constexpr auto & value{ L"Windows.Storage.StreamedFileFailureMode" }; };
 template <> struct name<Windows::Storage::ApplicationDataSetVersionHandler>{ static constexpr auto & value{ L"Windows.Storage.ApplicationDataSetVersionHandler" }; };
 template <> struct name<Windows::Storage::StreamedFileDataRequestedHandler>{ static constexpr auto & value{ L"Windows.Storage.StreamedFileDataRequestedHandler" }; };
-template <> struct guid<Windows::Storage::IAppDataPaths>{ static constexpr GUID value{ 0x7301D60A,0x79A2,0x48C9,{ 0x9E,0xC0,0x3F,0xDA,0x09,0x2F,0x79,0xE1 } }; };
-template <> struct guid<Windows::Storage::IAppDataPathsStatics>{ static constexpr GUID value{ 0xD8EB2AFE,0xA9D9,0x4B14,{ 0xB9,0x99,0xE3,0x92,0x13,0x79,0xD9,0x03 } }; };
-template <> struct guid<Windows::Storage::IApplicationData>{ static constexpr GUID value{ 0xC3DA6FB7,0xB744,0x4B45,{ 0xB0,0xB8,0x22,0x3A,0x09,0x38,0xD0,0xDC } }; };
-template <> struct guid<Windows::Storage::IApplicationData2>{ static constexpr GUID value{ 0x9E65CD69,0x0BA3,0x4E32,{ 0xBE,0x29,0xB0,0x2D,0xE6,0x60,0x76,0x38 } }; };
-template <> struct guid<Windows::Storage::IApplicationData3>{ static constexpr GUID value{ 0xDC222CF4,0x2772,0x4C1D,{ 0xAA,0x2C,0xC9,0xF7,0x43,0xAD,0xE8,0xD1 } }; };
-template <> struct guid<Windows::Storage::IApplicationDataContainer>{ static constexpr GUID value{ 0xC5AEFD1E,0xF467,0x40BA,{ 0x85,0x66,0xAB,0x64,0x0A,0x44,0x1E,0x1D } }; };
-template <> struct guid<Windows::Storage::IApplicationDataStatics>{ static constexpr GUID value{ 0x5612147B,0xE843,0x45E3,{ 0x94,0xD8,0x06,0x16,0x9E,0x3C,0x8E,0x17 } }; };
-template <> struct guid<Windows::Storage::IApplicationDataStatics2>{ static constexpr GUID value{ 0xCD606211,0xCF49,0x40A4,{ 0xA4,0x7C,0xC7,0xF0,0xDB,0xBA,0x81,0x07 } }; };
-template <> struct guid<Windows::Storage::ICachedFileManagerStatics>{ static constexpr GUID value{ 0x8FFC224A,0xE782,0x495D,{ 0xB6,0x14,0x65,0x4C,0x4F,0x0B,0x23,0x70 } }; };
-template <> struct guid<Windows::Storage::IDownloadsFolderStatics>{ static constexpr GUID value{ 0x27862ED0,0x404E,0x47DF,{ 0xA1,0xE2,0xE3,0x73,0x08,0xBE,0x7B,0x37 } }; };
-template <> struct guid<Windows::Storage::IDownloadsFolderStatics2>{ static constexpr GUID value{ 0xE93045BD,0x8EF8,0x4F8E,{ 0x8D,0x15,0xAC,0x0E,0x26,0x5F,0x39,0x0D } }; };
-template <> struct guid<Windows::Storage::IFileIOStatics>{ static constexpr GUID value{ 0x887411EB,0x7F54,0x4732,{ 0xA5,0xF0,0x5E,0x43,0xE3,0xB8,0xC2,0xF5 } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersCameraRollStatics>{ static constexpr GUID value{ 0x5D115E66,0x27E8,0x492F,{ 0xB8,0xE5,0x2F,0x90,0x89,0x6C,0xD4,0xCD } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersPlaylistsStatics>{ static constexpr GUID value{ 0xDAD5ECD6,0x306F,0x4D6A,{ 0xB4,0x96,0x46,0xBA,0x8E,0xB1,0x06,0xCE } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersSavedPicturesStatics>{ static constexpr GUID value{ 0x055C93EA,0x253D,0x467C,{ 0xB6,0xCA,0xA9,0x7D,0xA1,0xE9,0xA1,0x8D } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersStatics>{ static constexpr GUID value{ 0x5A2A7520,0x4802,0x452D,{ 0x9A,0xD9,0x43,0x51,0xAD,0xA7,0xEC,0x35 } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersStatics2>{ static constexpr GUID value{ 0x194BD0CD,0xCF6E,0x4D07,{ 0x9D,0x53,0xE9,0x16,0x3A,0x25,0x36,0xE9 } }; };
-template <> struct guid<Windows::Storage::IKnownFoldersStatics3>{ static constexpr GUID value{ 0xC5194341,0x9742,0x4ED5,{ 0x82,0x3D,0xFC,0x14,0x01,0x14,0x87,0x64 } }; };
-template <> struct guid<Windows::Storage::IPathIOStatics>{ static constexpr GUID value{ 0x0F2F3758,0x8EC7,0x4381,{ 0x92,0x2B,0x8F,0x6C,0x07,0xD2,0x88,0xF3 } }; };
-template <> struct guid<Windows::Storage::ISetVersionDeferral>{ static constexpr GUID value{ 0x033508A2,0x781A,0x437A,{ 0xB0,0x78,0x3F,0x32,0xBA,0xDC,0xFE,0x47 } }; };
-template <> struct guid<Windows::Storage::ISetVersionRequest>{ static constexpr GUID value{ 0xB9C76B9B,0x1056,0x4E69,{ 0x83,0x30,0x16,0x26,0x19,0x95,0x6F,0x9B } }; };
-template <> struct guid<Windows::Storage::IStorageFile>{ static constexpr GUID value{ 0xFA3F6186,0x4214,0x428C,{ 0xA6,0x4C,0x14,0xC9,0xAC,0x73,0x15,0xEA } }; };
-template <> struct guid<Windows::Storage::IStorageFile2>{ static constexpr GUID value{ 0x954E4BCF,0x0A77,0x42FB,{ 0xB7,0x77,0xC2,0xED,0x58,0xA5,0x2E,0x44 } }; };
-template <> struct guid<Windows::Storage::IStorageFilePropertiesWithAvailability>{ static constexpr GUID value{ 0xAFCBBE9B,0x582B,0x4133,{ 0x96,0x48,0xE4,0x4C,0xA4,0x6E,0xE4,0x91 } }; };
-template <> struct guid<Windows::Storage::IStorageFileStatics>{ static constexpr GUID value{ 0x5984C710,0xDAF2,0x43C8,{ 0x8B,0xB4,0xA4,0xD3,0xEA,0xCF,0xD0,0x3F } }; };
-template <> struct guid<Windows::Storage::IStorageFolder>{ static constexpr GUID value{ 0x72D1CB78,0xB3EF,0x4F75,{ 0xA8,0x0B,0x6F,0xD9,0xDA,0xE2,0x94,0x4B } }; };
-template <> struct guid<Windows::Storage::IStorageFolder2>{ static constexpr GUID value{ 0xE827E8B9,0x08D9,0x4A8E,{ 0xA0,0xAC,0xFE,0x5E,0xD3,0xCB,0xBB,0xD3 } }; };
-template <> struct guid<Windows::Storage::IStorageFolder3>{ static constexpr GUID value{ 0x9F617899,0xBDE1,0x4124,{ 0xAE,0xB3,0xB0,0x6A,0xD9,0x6F,0x98,0xD4 } }; };
-template <> struct guid<Windows::Storage::IStorageFolderStatics>{ static constexpr GUID value{ 0x08F327FF,0x85D5,0x48B9,{ 0xAE,0xE9,0x28,0x51,0x1E,0x33,0x9F,0x9F } }; };
-template <> struct guid<Windows::Storage::IStorageItem>{ static constexpr GUID value{ 0x4207A996,0xCA2F,0x42F7,{ 0xBD,0xE8,0x8B,0x10,0x45,0x7A,0x7F,0x30 } }; };
-template <> struct guid<Windows::Storage::IStorageItem2>{ static constexpr GUID value{ 0x53F926D2,0x083C,0x4283,{ 0xB4,0x5B,0x81,0xC0,0x07,0x23,0x7E,0x44 } }; };
-template <> struct guid<Windows::Storage::IStorageItemProperties>{ static constexpr GUID value{ 0x86664478,0x8029,0x46FE,{ 0xA7,0x89,0x1C,0x2F,0x3E,0x2F,0xFB,0x5C } }; };
-template <> struct guid<Windows::Storage::IStorageItemProperties2>{ static constexpr GUID value{ 0x8E86A951,0x04B9,0x4BD2,{ 0x92,0x9D,0xFE,0xF3,0xF7,0x16,0x21,0xD0 } }; };
-template <> struct guid<Windows::Storage::IStorageItemPropertiesWithProvider>{ static constexpr GUID value{ 0x861BF39B,0x6368,0x4DEE,{ 0xB4,0x0E,0x74,0x68,0x4A,0x5C,0xE7,0x14 } }; };
-template <> struct guid<Windows::Storage::IStorageLibrary>{ static constexpr GUID value{ 0x1EDD7103,0x0E5E,0x4D6C,{ 0xB5,0xE8,0x93,0x18,0x98,0x3D,0x6A,0x03 } }; };
-template <> struct guid<Windows::Storage::IStorageLibrary2>{ static constexpr GUID value{ 0x5B0CE348,0xFCB3,0x4031,{ 0xAF,0xB0,0xA6,0x8D,0x7B,0xD4,0x45,0x34 } }; };
-template <> struct guid<Windows::Storage::IStorageLibrary3>{ static constexpr GUID value{ 0x8A281291,0x2154,0x4201,{ 0x81,0x13,0xD2,0xC0,0x5C,0xE1,0xAD,0x23 } }; };
-template <> struct guid<Windows::Storage::IStorageLibraryChange>{ static constexpr GUID value{ 0x00980B23,0x2BE2,0x4909,{ 0xAA,0x48,0x15,0x9F,0x52,0x03,0xA5,0x1E } }; };
-template <> struct guid<Windows::Storage::IStorageLibraryChangeReader>{ static constexpr GUID value{ 0xF205BC83,0xFCA2,0x41F9,{ 0x89,0x54,0xEE,0x2E,0x99,0x1E,0xB9,0x6F } }; };
-template <> struct guid<Windows::Storage::IStorageLibraryChangeTracker>{ static constexpr GUID value{ 0x9E157316,0x6073,0x44F6,{ 0x96,0x81,0x74,0x92,0xD1,0x28,0x6C,0x90 } }; };
-template <> struct guid<Windows::Storage::IStorageLibraryStatics>{ static constexpr GUID value{ 0x4208A6DB,0x684A,0x49C6,{ 0x9E,0x59,0x90,0x12,0x1E,0xE0,0x50,0xD6 } }; };
-template <> struct guid<Windows::Storage::IStorageLibraryStatics2>{ static constexpr GUID value{ 0xFFB08DDC,0xFA75,0x4695,{ 0xB9,0xD1,0x7F,0x81,0xF9,0x78,0x32,0xE3 } }; };
-template <> struct guid<Windows::Storage::IStorageProvider>{ static constexpr GUID value{ 0xE705EED4,0xD478,0x47D6,{ 0xBA,0x46,0x1A,0x8E,0xBE,0x11,0x4A,0x20 } }; };
-template <> struct guid<Windows::Storage::IStorageProvider2>{ static constexpr GUID value{ 0x010D1917,0x3404,0x414B,{ 0x9F,0xD7,0xCD,0x44,0x47,0x2E,0xAA,0x39 } }; };
-template <> struct guid<Windows::Storage::IStorageStreamTransaction>{ static constexpr GUID value{ 0xF67CF363,0xA53D,0x4D94,{ 0xAE,0x2C,0x67,0x23,0x2D,0x93,0xAC,0xDD } }; };
-template <> struct guid<Windows::Storage::IStreamedFileDataRequest>{ static constexpr GUID value{ 0x1673FCCE,0xDABD,0x4D50,{ 0xBE,0xEE,0x18,0x0B,0x8A,0x81,0x91,0xB6 } }; };
-template <> struct guid<Windows::Storage::ISystemAudioProperties>{ static constexpr GUID value{ 0x3F8F38B7,0x308C,0x47E1,{ 0x92,0x4D,0x86,0x45,0x34,0x8E,0x5D,0xB7 } }; };
-template <> struct guid<Windows::Storage::ISystemDataPaths>{ static constexpr GUID value{ 0xE32ABF70,0xD8FA,0x45EC,{ 0xA9,0x42,0xD2,0xE2,0x6F,0xB6,0x0B,0xA5 } }; };
-template <> struct guid<Windows::Storage::ISystemDataPathsStatics>{ static constexpr GUID value{ 0xE0F96FD0,0x9920,0x4BCA,{ 0xB3,0x79,0xF9,0x6F,0xDF,0x7C,0xAA,0xD8 } }; };
-template <> struct guid<Windows::Storage::ISystemGPSProperties>{ static constexpr GUID value{ 0xC0F46EB4,0xC174,0x481A,{ 0xBC,0x25,0x92,0x19,0x86,0xF6,0xA6,0xF3 } }; };
-template <> struct guid<Windows::Storage::ISystemImageProperties>{ static constexpr GUID value{ 0x011B2E30,0x8B39,0x4308,{ 0xBE,0xA1,0xE8,0xAA,0x61,0xE4,0x78,0x26 } }; };
-template <> struct guid<Windows::Storage::ISystemMediaProperties>{ static constexpr GUID value{ 0xA42B3316,0x8415,0x40DC,{ 0x8C,0x44,0x98,0x36,0x1D,0x23,0x54,0x30 } }; };
-template <> struct guid<Windows::Storage::ISystemMusicProperties>{ static constexpr GUID value{ 0xB47988D5,0x67AF,0x4BC3,{ 0x8D,0x39,0x5B,0x89,0x02,0x20,0x26,0xA1 } }; };
-template <> struct guid<Windows::Storage::ISystemPhotoProperties>{ static constexpr GUID value{ 0x4734FC3D,0xAB21,0x4424,{ 0xB7,0x35,0xF4,0x35,0x3A,0x56,0xC8,0xFC } }; };
-template <> struct guid<Windows::Storage::ISystemProperties>{ static constexpr GUID value{ 0x917A71C1,0x85F3,0x4DD1,{ 0xB0,0x01,0xA5,0x0B,0xFD,0x21,0xC8,0xD2 } }; };
-template <> struct guid<Windows::Storage::ISystemVideoProperties>{ static constexpr GUID value{ 0x2040F715,0x67F8,0x4322,{ 0x9B,0x80,0x4F,0xA9,0xFE,0xFB,0x83,0xE8 } }; };
-template <> struct guid<Windows::Storage::IUserDataPaths>{ static constexpr GUID value{ 0xF9C53912,0xABC4,0x46FF,{ 0x8A,0x2B,0xDC,0x9D,0x7F,0xA6,0xE5,0x2F } }; };
-template <> struct guid<Windows::Storage::IUserDataPathsStatics>{ static constexpr GUID value{ 0x01B29DEF,0xE062,0x48A1,{ 0x8B,0x0C,0xF2,0xC7,0xA9,0xCA,0x56,0xC0 } }; };
-template <> struct guid<Windows::Storage::ApplicationDataSetVersionHandler>{ static constexpr GUID value{ 0xA05791E6,0xCC9F,0x4687,{ 0xAC,0xAB,0xA3,0x64,0xFD,0x78,0x54,0x63 } }; };
-template <> struct guid<Windows::Storage::StreamedFileDataRequestedHandler>{ static constexpr GUID value{ 0xFEF6A824,0x2FE1,0x4D07,{ 0xA3,0x5B,0xB7,0x7C,0x50,0xB5,0xF4,0xCC } }; };
+template <> struct guid_storage<Windows::Storage::IAppDataPaths>{ static constexpr guid value{ 0x7301D60A,0x79A2,0x48C9,{ 0x9E,0xC0,0x3F,0xDA,0x09,0x2F,0x79,0xE1 } }; };
+template <> struct guid_storage<Windows::Storage::IAppDataPathsStatics>{ static constexpr guid value{ 0xD8EB2AFE,0xA9D9,0x4B14,{ 0xB9,0x99,0xE3,0x92,0x13,0x79,0xD9,0x03 } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationData>{ static constexpr guid value{ 0xC3DA6FB7,0xB744,0x4B45,{ 0xB0,0xB8,0x22,0x3A,0x09,0x38,0xD0,0xDC } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationData2>{ static constexpr guid value{ 0x9E65CD69,0x0BA3,0x4E32,{ 0xBE,0x29,0xB0,0x2D,0xE6,0x60,0x76,0x38 } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationData3>{ static constexpr guid value{ 0xDC222CF4,0x2772,0x4C1D,{ 0xAA,0x2C,0xC9,0xF7,0x43,0xAD,0xE8,0xD1 } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationDataContainer>{ static constexpr guid value{ 0xC5AEFD1E,0xF467,0x40BA,{ 0x85,0x66,0xAB,0x64,0x0A,0x44,0x1E,0x1D } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationDataStatics>{ static constexpr guid value{ 0x5612147B,0xE843,0x45E3,{ 0x94,0xD8,0x06,0x16,0x9E,0x3C,0x8E,0x17 } }; };
+template <> struct guid_storage<Windows::Storage::IApplicationDataStatics2>{ static constexpr guid value{ 0xCD606211,0xCF49,0x40A4,{ 0xA4,0x7C,0xC7,0xF0,0xDB,0xBA,0x81,0x07 } }; };
+template <> struct guid_storage<Windows::Storage::ICachedFileManagerStatics>{ static constexpr guid value{ 0x8FFC224A,0xE782,0x495D,{ 0xB6,0x14,0x65,0x4C,0x4F,0x0B,0x23,0x70 } }; };
+template <> struct guid_storage<Windows::Storage::IDownloadsFolderStatics>{ static constexpr guid value{ 0x27862ED0,0x404E,0x47DF,{ 0xA1,0xE2,0xE3,0x73,0x08,0xBE,0x7B,0x37 } }; };
+template <> struct guid_storage<Windows::Storage::IDownloadsFolderStatics2>{ static constexpr guid value{ 0xE93045BD,0x8EF8,0x4F8E,{ 0x8D,0x15,0xAC,0x0E,0x26,0x5F,0x39,0x0D } }; };
+template <> struct guid_storage<Windows::Storage::IFileIOStatics>{ static constexpr guid value{ 0x887411EB,0x7F54,0x4732,{ 0xA5,0xF0,0x5E,0x43,0xE3,0xB8,0xC2,0xF5 } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersCameraRollStatics>{ static constexpr guid value{ 0x5D115E66,0x27E8,0x492F,{ 0xB8,0xE5,0x2F,0x90,0x89,0x6C,0xD4,0xCD } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersPlaylistsStatics>{ static constexpr guid value{ 0xDAD5ECD6,0x306F,0x4D6A,{ 0xB4,0x96,0x46,0xBA,0x8E,0xB1,0x06,0xCE } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersSavedPicturesStatics>{ static constexpr guid value{ 0x055C93EA,0x253D,0x467C,{ 0xB6,0xCA,0xA9,0x7D,0xA1,0xE9,0xA1,0x8D } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersStatics>{ static constexpr guid value{ 0x5A2A7520,0x4802,0x452D,{ 0x9A,0xD9,0x43,0x51,0xAD,0xA7,0xEC,0x35 } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersStatics2>{ static constexpr guid value{ 0x194BD0CD,0xCF6E,0x4D07,{ 0x9D,0x53,0xE9,0x16,0x3A,0x25,0x36,0xE9 } }; };
+template <> struct guid_storage<Windows::Storage::IKnownFoldersStatics3>{ static constexpr guid value{ 0xC5194341,0x9742,0x4ED5,{ 0x82,0x3D,0xFC,0x14,0x01,0x14,0x87,0x64 } }; };
+template <> struct guid_storage<Windows::Storage::IPathIOStatics>{ static constexpr guid value{ 0x0F2F3758,0x8EC7,0x4381,{ 0x92,0x2B,0x8F,0x6C,0x07,0xD2,0x88,0xF3 } }; };
+template <> struct guid_storage<Windows::Storage::ISetVersionDeferral>{ static constexpr guid value{ 0x033508A2,0x781A,0x437A,{ 0xB0,0x78,0x3F,0x32,0xBA,0xDC,0xFE,0x47 } }; };
+template <> struct guid_storage<Windows::Storage::ISetVersionRequest>{ static constexpr guid value{ 0xB9C76B9B,0x1056,0x4E69,{ 0x83,0x30,0x16,0x26,0x19,0x95,0x6F,0x9B } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFile>{ static constexpr guid value{ 0xFA3F6186,0x4214,0x428C,{ 0xA6,0x4C,0x14,0xC9,0xAC,0x73,0x15,0xEA } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFile2>{ static constexpr guid value{ 0x954E4BCF,0x0A77,0x42FB,{ 0xB7,0x77,0xC2,0xED,0x58,0xA5,0x2E,0x44 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFilePropertiesWithAvailability>{ static constexpr guid value{ 0xAFCBBE9B,0x582B,0x4133,{ 0x96,0x48,0xE4,0x4C,0xA4,0x6E,0xE4,0x91 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFileStatics>{ static constexpr guid value{ 0x5984C710,0xDAF2,0x43C8,{ 0x8B,0xB4,0xA4,0xD3,0xEA,0xCF,0xD0,0x3F } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFolder>{ static constexpr guid value{ 0x72D1CB78,0xB3EF,0x4F75,{ 0xA8,0x0B,0x6F,0xD9,0xDA,0xE2,0x94,0x4B } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFolder2>{ static constexpr guid value{ 0xE827E8B9,0x08D9,0x4A8E,{ 0xA0,0xAC,0xFE,0x5E,0xD3,0xCB,0xBB,0xD3 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFolder3>{ static constexpr guid value{ 0x9F617899,0xBDE1,0x4124,{ 0xAE,0xB3,0xB0,0x6A,0xD9,0x6F,0x98,0xD4 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageFolderStatics>{ static constexpr guid value{ 0x08F327FF,0x85D5,0x48B9,{ 0xAE,0xE9,0x28,0x51,0x1E,0x33,0x9F,0x9F } }; };
+template <> struct guid_storage<Windows::Storage::IStorageItem>{ static constexpr guid value{ 0x4207A996,0xCA2F,0x42F7,{ 0xBD,0xE8,0x8B,0x10,0x45,0x7A,0x7F,0x30 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageItem2>{ static constexpr guid value{ 0x53F926D2,0x083C,0x4283,{ 0xB4,0x5B,0x81,0xC0,0x07,0x23,0x7E,0x44 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageItemProperties>{ static constexpr guid value{ 0x86664478,0x8029,0x46FE,{ 0xA7,0x89,0x1C,0x2F,0x3E,0x2F,0xFB,0x5C } }; };
+template <> struct guid_storage<Windows::Storage::IStorageItemProperties2>{ static constexpr guid value{ 0x8E86A951,0x04B9,0x4BD2,{ 0x92,0x9D,0xFE,0xF3,0xF7,0x16,0x21,0xD0 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageItemPropertiesWithProvider>{ static constexpr guid value{ 0x861BF39B,0x6368,0x4DEE,{ 0xB4,0x0E,0x74,0x68,0x4A,0x5C,0xE7,0x14 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibrary>{ static constexpr guid value{ 0x1EDD7103,0x0E5E,0x4D6C,{ 0xB5,0xE8,0x93,0x18,0x98,0x3D,0x6A,0x03 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibrary2>{ static constexpr guid value{ 0x5B0CE348,0xFCB3,0x4031,{ 0xAF,0xB0,0xA6,0x8D,0x7B,0xD4,0x45,0x34 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibrary3>{ static constexpr guid value{ 0x8A281291,0x2154,0x4201,{ 0x81,0x13,0xD2,0xC0,0x5C,0xE1,0xAD,0x23 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibraryChange>{ static constexpr guid value{ 0x00980B23,0x2BE2,0x4909,{ 0xAA,0x48,0x15,0x9F,0x52,0x03,0xA5,0x1E } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibraryChangeReader>{ static constexpr guid value{ 0xF205BC83,0xFCA2,0x41F9,{ 0x89,0x54,0xEE,0x2E,0x99,0x1E,0xB9,0x6F } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibraryChangeTracker>{ static constexpr guid value{ 0x9E157316,0x6073,0x44F6,{ 0x96,0x81,0x74,0x92,0xD1,0x28,0x6C,0x90 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibraryStatics>{ static constexpr guid value{ 0x4208A6DB,0x684A,0x49C6,{ 0x9E,0x59,0x90,0x12,0x1E,0xE0,0x50,0xD6 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageLibraryStatics2>{ static constexpr guid value{ 0xFFB08DDC,0xFA75,0x4695,{ 0xB9,0xD1,0x7F,0x81,0xF9,0x78,0x32,0xE3 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageProvider>{ static constexpr guid value{ 0xE705EED4,0xD478,0x47D6,{ 0xBA,0x46,0x1A,0x8E,0xBE,0x11,0x4A,0x20 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageProvider2>{ static constexpr guid value{ 0x010D1917,0x3404,0x414B,{ 0x9F,0xD7,0xCD,0x44,0x47,0x2E,0xAA,0x39 } }; };
+template <> struct guid_storage<Windows::Storage::IStorageStreamTransaction>{ static constexpr guid value{ 0xF67CF363,0xA53D,0x4D94,{ 0xAE,0x2C,0x67,0x23,0x2D,0x93,0xAC,0xDD } }; };
+template <> struct guid_storage<Windows::Storage::IStreamedFileDataRequest>{ static constexpr guid value{ 0x1673FCCE,0xDABD,0x4D50,{ 0xBE,0xEE,0x18,0x0B,0x8A,0x81,0x91,0xB6 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemAudioProperties>{ static constexpr guid value{ 0x3F8F38B7,0x308C,0x47E1,{ 0x92,0x4D,0x86,0x45,0x34,0x8E,0x5D,0xB7 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemDataPaths>{ static constexpr guid value{ 0xE32ABF70,0xD8FA,0x45EC,{ 0xA9,0x42,0xD2,0xE2,0x6F,0xB6,0x0B,0xA5 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemDataPathsStatics>{ static constexpr guid value{ 0xE0F96FD0,0x9920,0x4BCA,{ 0xB3,0x79,0xF9,0x6F,0xDF,0x7C,0xAA,0xD8 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemGPSProperties>{ static constexpr guid value{ 0xC0F46EB4,0xC174,0x481A,{ 0xBC,0x25,0x92,0x19,0x86,0xF6,0xA6,0xF3 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemImageProperties>{ static constexpr guid value{ 0x011B2E30,0x8B39,0x4308,{ 0xBE,0xA1,0xE8,0xAA,0x61,0xE4,0x78,0x26 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemMediaProperties>{ static constexpr guid value{ 0xA42B3316,0x8415,0x40DC,{ 0x8C,0x44,0x98,0x36,0x1D,0x23,0x54,0x30 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemMusicProperties>{ static constexpr guid value{ 0xB47988D5,0x67AF,0x4BC3,{ 0x8D,0x39,0x5B,0x89,0x02,0x20,0x26,0xA1 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemPhotoProperties>{ static constexpr guid value{ 0x4734FC3D,0xAB21,0x4424,{ 0xB7,0x35,0xF4,0x35,0x3A,0x56,0xC8,0xFC } }; };
+template <> struct guid_storage<Windows::Storage::ISystemProperties>{ static constexpr guid value{ 0x917A71C1,0x85F3,0x4DD1,{ 0xB0,0x01,0xA5,0x0B,0xFD,0x21,0xC8,0xD2 } }; };
+template <> struct guid_storage<Windows::Storage::ISystemVideoProperties>{ static constexpr guid value{ 0x2040F715,0x67F8,0x4322,{ 0x9B,0x80,0x4F,0xA9,0xFE,0xFB,0x83,0xE8 } }; };
+template <> struct guid_storage<Windows::Storage::IUserDataPaths>{ static constexpr guid value{ 0xF9C53912,0xABC4,0x46FF,{ 0x8A,0x2B,0xDC,0x9D,0x7F,0xA6,0xE5,0x2F } }; };
+template <> struct guid_storage<Windows::Storage::IUserDataPathsStatics>{ static constexpr guid value{ 0x01B29DEF,0xE062,0x48A1,{ 0x8B,0x0C,0xF2,0xC7,0xA9,0xCA,0x56,0xC0 } }; };
+template <> struct guid_storage<Windows::Storage::ApplicationDataSetVersionHandler>{ static constexpr guid value{ 0xA05791E6,0xCC9F,0x4687,{ 0xAC,0xAB,0xA3,0x64,0xFD,0x78,0x54,0x63 } }; };
+template <> struct guid_storage<Windows::Storage::StreamedFileDataRequestedHandler>{ static constexpr guid value{ 0xFEF6A824,0x2FE1,0x4D07,{ 0xA3,0x5B,0xB7,0x7C,0x50,0xB5,0xF4,0xCC } }; };
 template <> struct default_interface<Windows::Storage::AppDataPaths>{ using type = Windows::Storage::IAppDataPaths; };
 template <> struct default_interface<Windows::Storage::ApplicationData>{ using type = Windows::Storage::IApplicationData; };
 template <> struct default_interface<Windows::Storage::ApplicationDataCompositeValue>{ using type = Windows::Foundation::Collections::IPropertySet; };
@@ -582,6 +582,505 @@ template <> struct default_interface<Windows::Storage::SystemMusicProperties>{ u
 template <> struct default_interface<Windows::Storage::SystemPhotoProperties>{ using type = Windows::Storage::ISystemPhotoProperties; };
 template <> struct default_interface<Windows::Storage::SystemVideoProperties>{ using type = Windows::Storage::ISystemVideoProperties; };
 template <> struct default_interface<Windows::Storage::UserDataPaths>{ using type = Windows::Storage::IUserDataPaths; };
+
+template <> struct abi<Windows::Storage::IAppDataPaths>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Cookies(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Desktop(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Documents(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Favorites(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_History(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InternetCache(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalAppData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProgramData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoamingAppData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IAppDataPathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Version(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetVersionAsync(uint32_t desiredVersion, void* handler, void** setVersionOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearAllAsync(void** clearOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearAsync(Windows::Storage::ApplicationDataLocality locality, void** clearOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoamingSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalFolder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoamingFolder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TemporaryFolder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DataChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DataChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL SignalDataChanged() noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoamingStorageQuota(uint64_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationData2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LocalCacheFolder(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationData3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPublisherCacheFolder(void* folderName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearPublisherCacheFolderAsync(void* folderName, void** clearOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharedLocalFolder(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationDataContainer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Locality(Windows::Storage::ApplicationDataLocality* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Values(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Containers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainer(void* name, Windows::Storage::ApplicationDataCreateDisposition disposition, void** container) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteContainer(void* name) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationDataStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IApplicationDataStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUserAsync(void* user, void** getForUserOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ICachedFileManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DeferUpdates(void* file) noexcept = 0;
+    virtual int32_t WINRT_CALL CompleteUpdatesAsync(void* file, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IDownloadsFolderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFileAsync(void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderAsync(void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileWithCollisionOptionAsync(void* desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderWithCollisionOptionAsync(void* desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IDownloadsFolderStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFileForUserAsync(void* user, void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderForUserAsync(void* user, void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileForUserWithCollisionOptionAsync(void* user, void* desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderForUserWithCollisionOptionAsync(void* user, void* desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IFileIOStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadTextAsync(void* file, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadTextWithEncodingAsync(void* file, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteTextAsync(void* file, void* contents, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteTextWithEncodingAsync(void* file, void* contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendTextAsync(void* file, void* contents, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendTextWithEncodingAsync(void* file, void* contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadLinesAsync(void* file, void** linesOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadLinesWithEncodingAsync(void* file, Windows::Storage::Streams::UnicodeEncoding encoding, void** linesOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteLinesAsync(void* file, void* lines, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteLinesWithEncodingAsync(void* file, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendLinesAsync(void* file, void* lines, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendLinesWithEncodingAsync(void* file, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBufferAsync(void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBufferAsync(void* file, void* buffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBytesAsync(void* file, uint32_t __bufferSize, uint8_t* buffer, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersCameraRollStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CameraRoll(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersPlaylistsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Playlists(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersSavedPicturesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SavedPictures(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MusicLibrary(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PicturesLibrary(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideosLibrary(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DocumentsLibrary(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HomeGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemovableDevices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaServerDevices(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Objects3D(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppCaptures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecordedCalls(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IKnownFoldersStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFolderForUserAsync(void* user, Windows::Storage::KnownFolderId folderId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IPathIOStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadTextAsync(void* absolutePath, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadTextWithEncodingAsync(void* absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteTextAsync(void* absolutePath, void* contents, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteTextWithEncodingAsync(void* absolutePath, void* contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendTextAsync(void* absolutePath, void* contents, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendTextWithEncodingAsync(void* absolutePath, void* contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadLinesAsync(void* absolutePath, void** linesOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadLinesWithEncodingAsync(void* absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding, void** linesOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteLinesAsync(void* absolutePath, void* lines, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteLinesWithEncodingAsync(void* absolutePath, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendLinesAsync(void* absolutePath, void* lines, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendLinesWithEncodingAsync(void* absolutePath, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBufferAsync(void* absolutePath, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBufferAsync(void* absolutePath, void* buffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBytesAsync(void* absolutePath, uint32_t __bufferSize, uint8_t* buffer, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISetVersionDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISetVersionRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentVersion(uint32_t* currentVersion) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredVersion(uint32_t* desiredVersion) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FileType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenAsync(Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyOverloadDefaultNameAndOptions(void* destinationFolder, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyOverloadDefaultOptions(void* destinationFolder, void* desiredNewName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyOverload(void* destinationFolder, void* desiredNewName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyAndReplaceAsync(void* fileToReplace, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveOverloadDefaultNameAndOptions(void* destinationFolder, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveOverloadDefaultOptions(void* destinationFolder, void* desiredNewName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveOverload(void* destinationFolder, void* desiredNewName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveAndReplaceAsync(void* fileToReplace, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFile2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OpenWithOptionsAsync(Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteWithOptionsAsync(Windows::Storage::StorageOpenOptions options, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFilePropertiesWithAvailability>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAvailable(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFileStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFileFromPathAsync(void* path, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFileFromApplicationUriAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStreamedFileAsync(void* displayNameWithExtension, void* dataRequested, void* thumbnail, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceWithStreamedFileAsync(void* fileToReplace, void* dataRequested, void* thumbnail, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStreamedFileFromUriAsync(void* displayNameWithExtension, void* uri, void* thumbnail, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceWithStreamedFileFromUriAsync(void* fileToReplace, void* uri, void* thumbnail, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFolder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFileAsyncOverloadDefaultOptions(void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileAsync(void* desiredName, Windows::Storage::CreationCollisionOption options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderAsyncOverloadDefaultOptions(void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderAsync(void* desiredName, Windows::Storage::CreationCollisionOption options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFileAsync(void* name, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFolderAsync(void* name, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemAsync(void* name, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsyncOverloadDefaultOptionsStartAndCount(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsyncOverloadDefaultOptionsStartAndCount(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsAsyncOverloadDefaultStartAndCount(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFolder2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetItemAsync(void* name, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFolder3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetChangeTracker(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageFolderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFolderFromPathAsync(void* path, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RenameAsyncOverloadDefaultOptions(void* desiredName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RenameAsync(void* desiredName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsyncOverloadDefaultOptions(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(Windows::Storage::StorageDeleteOption option, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBasicPropertiesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attributes(Windows::Storage::FileAttributes* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateCreated(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsOfType(Windows::Storage::StorageItemTypes type, bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageItem2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetParentAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEqual(void* item, bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageItemProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailAsyncOverloadDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FolderRelativeId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageItemProperties2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageItemPropertiesWithProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Provider(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibrary>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAddFolderAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestRemoveFolderAsync(void* folder, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Folders(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SaveFolder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DefinitionChanged(void* handler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DefinitionChanged(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibrary2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibrary3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AreFolderSuggestionsAvailableAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibraryChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeType(Windows::Storage::StorageLibraryChangeType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviousPath(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsOfType(Windows::Storage::StorageItemTypes type, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStorageItemAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibraryChangeReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AcceptChangesAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibraryChangeTracker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetChangeReader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Enable() noexcept = 0;
+    virtual int32_t WINRT_CALL Reset() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibraryStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetLibraryAsync(Windows::Storage::KnownLibraryId libraryId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageLibraryStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetLibraryForUserAsync(void* user, Windows::Storage::KnownLibraryId libraryId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageProvider2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsPropertySupportedForPartialFileAsync(void* propertyCanonicalName, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStorageStreamTransaction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Stream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CommitAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IStreamedFileDataRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FailAndClose(Windows::Storage::StreamedFileFailureMode failureMode) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemAudioProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EncodingBitrate(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemDataPaths>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Fonts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProgramData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Public(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicDesktop(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicDocuments(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicDownloads(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicMusic(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicPictures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicVideos(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_System(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemHost(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemX86(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemX64(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemArm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserProfiles(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Windows(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemDataPathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemGPSProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LatitudeDecimal(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LongitudeDecimal(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemImageProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontalSize(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalSize(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemMediaProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Duration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Producer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Publisher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubTitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Writer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Year(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemMusicProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AlbumArtist(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlbumTitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Artist(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Composer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Conductor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayArtist(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Genre(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrackNumber(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemPhotoProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CameraManufacturer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CameraModel(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateTaken(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeopleNames(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Author(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Comment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemNameDisplay(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keywords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rating(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Audio(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GPS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Media(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Music(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Photo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Video(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Image(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ISystemVideoProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Director(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrameHeight(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrameWidth(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TotalBitrate(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IUserDataPaths>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CameraRoll(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Cookies(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Desktop(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Documents(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Downloads(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Favorites(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_History(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InternetCache(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalAppData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalAppDataLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Music(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pictures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Profile(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Recent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoamingAppData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SavedPictures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Screenshots(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Templates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Videos(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::IUserDataPathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::ApplicationDataSetVersionHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* setVersionRequest) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::StreamedFileDataRequestedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* stream) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_IAppDataPaths
@@ -618,10 +1117,10 @@ struct consume_Windows_Storage_IApplicationData
     Windows::Storage::StorageFolder LocalFolder() const;
     Windows::Storage::StorageFolder RoamingFolder() const;
     Windows::Storage::StorageFolder TemporaryFolder() const;
-    event_token DataChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> const& handler) const;
-    using DataChanged_revoker = event_revoker<Windows::Storage::IApplicationData>;
+    winrt::event_token DataChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> const& handler) const;
+    using DataChanged_revoker = impl::event_revoker<Windows::Storage::IApplicationData, &impl::abi_t<Windows::Storage::IApplicationData>::remove_DataChanged>;
     DataChanged_revoker DataChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::Foundation::IInspectable> const& handler) const;
-    void DataChanged(event_token const& token) const;
+    void DataChanged(winrt::event_token const& token) const noexcept;
     void SignalDataChanged() const;
     uint64_t RoamingStorageQuota() const;
 };
@@ -947,10 +1446,10 @@ struct consume_Windows_Storage_IStorageLibrary
     Windows::Foundation::IAsyncOperation<bool> RequestRemoveFolderAsync(Windows::Storage::StorageFolder const& folder) const;
     Windows::Foundation::Collections::IObservableVector<Windows::Storage::StorageFolder> Folders() const;
     Windows::Storage::StorageFolder SaveFolder() const;
-    event_token DefinitionChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> const& handler) const;
-    using DefinitionChanged_revoker = event_revoker<Windows::Storage::IStorageLibrary>;
+    winrt::event_token DefinitionChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> const& handler) const;
+    using DefinitionChanged_revoker = impl::event_revoker<Windows::Storage::IStorageLibrary, &impl::abi_t<Windows::Storage::IStorageLibrary>::remove_DefinitionChanged>;
     DefinitionChanged_revoker DefinitionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::Foundation::IInspectable> const& handler) const;
-    void DefinitionChanged(event_token const& eventCookie) const;
+    void DefinitionChanged(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Storage::IStorageLibrary> { template <typename D> using type = consume_Windows_Storage_IStorageLibrary<D>; };
 
@@ -1191,504 +1690,5 @@ struct consume_Windows_Storage_IUserDataPathsStatics
     Windows::Storage::UserDataPaths GetDefault() const;
 };
 template <> struct consume<Windows::Storage::IUserDataPathsStatics> { template <typename D> using type = consume_Windows_Storage_IUserDataPathsStatics<D>; };
-
-template <> struct abi<Windows::Storage::IAppDataPaths>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Cookies(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Desktop(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Documents(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Favorites(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_History(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InternetCache(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalAppData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProgramData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoamingAppData(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IAppDataPathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Version(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetVersionAsync(uint32_t desiredVersion, void* handler, void** setVersionOperation) noexcept = 0;
-    virtual HRESULT __stdcall ClearAllAsync(void** clearOperation) noexcept = 0;
-    virtual HRESULT __stdcall ClearAsync(Windows::Storage::ApplicationDataLocality locality, void** clearOperation) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoamingSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalFolder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoamingFolder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TemporaryFolder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_DataChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DataChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall SignalDataChanged() noexcept = 0;
-    virtual HRESULT __stdcall get_RoamingStorageQuota(uint64_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationData2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LocalCacheFolder(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationData3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPublisherCacheFolder(HSTRING folderName, void** value) noexcept = 0;
-    virtual HRESULT __stdcall ClearPublisherCacheFolderAsync(HSTRING folderName, void** clearOperation) noexcept = 0;
-    virtual HRESULT __stdcall get_SharedLocalFolder(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationDataContainer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Locality(Windows::Storage::ApplicationDataLocality* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Values(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Containers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainer(HSTRING name, Windows::Storage::ApplicationDataCreateDisposition disposition, void** container) noexcept = 0;
-    virtual HRESULT __stdcall DeleteContainer(HSTRING name) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationDataStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IApplicationDataStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUserAsync(void* user, void** getForUserOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ICachedFileManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DeferUpdates(void* file) noexcept = 0;
-    virtual HRESULT __stdcall CompleteUpdatesAsync(void* file, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IDownloadsFolderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFileAsync(HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderAsync(HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileWithCollisionOptionAsync(HSTRING desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderWithCollisionOptionAsync(HSTRING desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IDownloadsFolderStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFileForUserAsync(void* user, HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderForUserAsync(void* user, HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileForUserWithCollisionOptionAsync(void* user, HSTRING desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderForUserWithCollisionOptionAsync(void* user, HSTRING desiredName, Windows::Storage::CreationCollisionOption option, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IFileIOStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadTextAsync(void* file, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadTextWithEncodingAsync(void* file, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteTextAsync(void* file, HSTRING contents, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteTextWithEncodingAsync(void* file, HSTRING contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall AppendTextAsync(void* file, HSTRING contents, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall AppendTextWithEncodingAsync(void* file, HSTRING contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadLinesAsync(void* file, void** linesOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadLinesWithEncodingAsync(void* file, Windows::Storage::Streams::UnicodeEncoding encoding, void** linesOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteLinesAsync(void* file, void* lines, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteLinesWithEncodingAsync(void* file, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AppendLinesAsync(void* file, void* lines, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AppendLinesWithEncodingAsync(void* file, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadBufferAsync(void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteBufferAsync(void* file, void* buffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteBytesAsync(void* file, uint32_t __bufferSize, uint8_t* buffer, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersCameraRollStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CameraRoll(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersPlaylistsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Playlists(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersSavedPicturesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SavedPictures(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MusicLibrary(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PicturesLibrary(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideosLibrary(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DocumentsLibrary(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HomeGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemovableDevices(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaServerDevices(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Objects3D(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppCaptures(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RecordedCalls(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IKnownFoldersStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFolderForUserAsync(void* user, Windows::Storage::KnownFolderId folderId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IPathIOStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadTextAsync(HSTRING absolutePath, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadTextWithEncodingAsync(HSTRING absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteTextAsync(HSTRING absolutePath, HSTRING contents, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteTextWithEncodingAsync(HSTRING absolutePath, HSTRING contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall AppendTextAsync(HSTRING absolutePath, HSTRING contents, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall AppendTextWithEncodingAsync(HSTRING absolutePath, HSTRING contents, Windows::Storage::Streams::UnicodeEncoding encoding, void** textOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadLinesAsync(HSTRING absolutePath, void** linesOperation) noexcept = 0;
-    virtual HRESULT __stdcall ReadLinesWithEncodingAsync(HSTRING absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding, void** linesOperation) noexcept = 0;
-    virtual HRESULT __stdcall WriteLinesAsync(HSTRING absolutePath, void* lines, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteLinesWithEncodingAsync(HSTRING absolutePath, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AppendLinesAsync(HSTRING absolutePath, void* lines, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AppendLinesWithEncodingAsync(HSTRING absolutePath, void* lines, Windows::Storage::Streams::UnicodeEncoding encoding, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadBufferAsync(HSTRING absolutePath, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteBufferAsync(HSTRING absolutePath, void* buffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall WriteBytesAsync(HSTRING absolutePath, uint32_t __bufferSize, uint8_t* buffer, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISetVersionDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISetVersionRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentVersion(uint32_t* currentVersion) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredVersion(uint32_t* desiredVersion) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FileType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall OpenAsync(Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopyOverloadDefaultNameAndOptions(void* destinationFolder, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopyOverloadDefaultOptions(void* destinationFolder, HSTRING desiredNewName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopyOverload(void* destinationFolder, HSTRING desiredNewName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopyAndReplaceAsync(void* fileToReplace, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall MoveOverloadDefaultNameAndOptions(void* destinationFolder, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall MoveOverloadDefaultOptions(void* destinationFolder, HSTRING desiredNewName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall MoveOverload(void* destinationFolder, HSTRING desiredNewName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall MoveAndReplaceAsync(void* fileToReplace, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFile2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OpenWithOptionsAsync(Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteWithOptionsAsync(Windows::Storage::StorageOpenOptions options, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFilePropertiesWithAvailability>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAvailable(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFileStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFileFromPathAsync(HSTRING path, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFileFromApplicationUriAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateStreamedFileAsync(HSTRING displayNameWithExtension, void* dataRequested, void* thumbnail, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceWithStreamedFileAsync(void* fileToReplace, void* dataRequested, void* thumbnail, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateStreamedFileFromUriAsync(HSTRING displayNameWithExtension, void* uri, void* thumbnail, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceWithStreamedFileFromUriAsync(void* fileToReplace, void* uri, void* thumbnail, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFolder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileAsync(HSTRING desiredName, Windows::Storage::CreationCollisionOption options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderAsync(HSTRING desiredName, Windows::Storage::CreationCollisionOption options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFileAsync(HSTRING name, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFolderAsync(HSTRING name, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemAsync(HSTRING name, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsyncOverloadDefaultOptionsStartAndCount(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsyncOverloadDefaultOptionsStartAndCount(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsAsyncOverloadDefaultStartAndCount(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFolder2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetItemAsync(HSTRING name, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFolder3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetChangeTracker(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageFolderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFolderFromPathAsync(HSTRING path, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RenameAsyncOverloadDefaultOptions(HSTRING desiredName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RenameAsync(HSTRING desiredName, Windows::Storage::NameCollisionOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsyncOverloadDefaultOptions(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(Windows::Storage::StorageDeleteOption option, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetBasicPropertiesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Path(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Attributes(Windows::Storage::FileAttributes* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateCreated(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall IsOfType(Windows::Storage::StorageItemTypes type, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageItem2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetParentAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall IsEqual(void* item, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageItemProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailAsyncOverloadDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FolderRelativeId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageItemProperties2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageItemPropertiesWithProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Provider(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibrary>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAddFolderAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestRemoveFolderAsync(void* folder, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Folders(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SaveFolder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_DefinitionChanged(void* handler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_DefinitionChanged(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibrary2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeTracker(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibrary3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AreFolderSuggestionsAvailableAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibraryChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeType(Windows::Storage::StorageLibraryChangeType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Path(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviousPath(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall IsOfType(Windows::Storage::StorageItemTypes type, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetStorageItemAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibraryChangeReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadBatchAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AcceptChangesAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibraryChangeTracker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetChangeReader(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Enable() noexcept = 0;
-    virtual HRESULT __stdcall Reset() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibraryStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetLibraryAsync(Windows::Storage::KnownLibraryId libraryId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageLibraryStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetLibraryForUserAsync(void* user, Windows::Storage::KnownLibraryId libraryId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageProvider2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsPropertySupportedForPartialFileAsync(HSTRING propertyCanonicalName, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStorageStreamTransaction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Stream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CommitAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IStreamedFileDataRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FailAndClose(Windows::Storage::StreamedFileFailureMode failureMode) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemAudioProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EncodingBitrate(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemDataPaths>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Fonts(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProgramData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Public(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicDesktop(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicDocuments(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicDownloads(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicMusic(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicPictures(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicVideos(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_System(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemHost(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemX86(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemX64(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemArm(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserProfiles(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Windows(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemDataPathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemGPSProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LatitudeDecimal(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LongitudeDecimal(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemImageProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontalSize(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalSize(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemMediaProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Duration(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Producer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Publisher(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubTitle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Writer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Year(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemMusicProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AlbumArtist(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlbumTitle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Artist(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Composer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Conductor(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayArtist(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Genre(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrackNumber(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemPhotoProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CameraManufacturer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CameraModel(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateTaken(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeopleNames(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Author(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Comment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemNameDisplay(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keywords(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rating(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Audio(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_GPS(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Media(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Music(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Photo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Video(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Image(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ISystemVideoProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Director(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrameHeight(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrameWidth(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TotalBitrate(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IUserDataPaths>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CameraRoll(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Cookies(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Desktop(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Documents(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Downloads(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Favorites(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_History(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InternetCache(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalAppData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalAppDataLow(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Music(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pictures(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Profile(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Recent(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoamingAppData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SavedPictures(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Screenshots(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Templates(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Videos(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::IUserDataPathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::ApplicationDataSetVersionHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* setVersionRequest) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::StreamedFileDataRequestedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* stream) noexcept = 0;
-};};
 
 }

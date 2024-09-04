@@ -199,9 +199,9 @@ namespace Windows
                 {
                     [propget] HRESULT Uri([out] [retval] Windows.Foundation.Uri** uri);
                     [propget] HRESULT Candidates([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Resources.Core.ResourceCandidate*>** value);
-                    [deprecated("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] [overload("Resolve")] HRESULT Resolve([out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** result);
+                    [overload("Resolve")] HRESULT Resolve([out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** result);
                     [overload("Resolve")] HRESULT ResolveForContext([in] Windows.ApplicationModel.Resources.Core.ResourceContext* resourceContext, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** result);
-                    [deprecated("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] [overload("ResolveAll")] HRESULT ResolveAll([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Resources.Core.ResourceCandidate*>** result);
+                    [overload("ResolveAll")] HRESULT ResolveAll([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Resources.Core.ResourceCandidate*>** result);
                     [overload("ResolveAll")] HRESULT ResolveAllForContext([in] Windows.ApplicationModel.Resources.Core.ResourceContext* resourceContext, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Resources.Core.ResourceCandidate*>** instances);
                 }
 
@@ -242,12 +242,11 @@ namespace Windows
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-                [deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.ApplicationModel.Resources.Core.ResourceContext)]
                 [uuid(98BE9D6C-6338-4B31-99DF-B2B442F17149)]
                 interface IResourceContextStatics : IInspectable
                 {
-                    [deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] HRESULT CreateMatchingContext([in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Resources.Core.ResourceQualifier*>* result, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceContext** value);
+                    HRESULT CreateMatchingContext([in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Resources.Core.ResourceQualifier*>* result, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceContext** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -277,7 +276,7 @@ namespace Windows
                 {
                     [propget] HRESULT MainResourceMap([out] [retval] Windows.ApplicationModel.Resources.Core.ResourceMap** value);
                     [propget] HRESULT AllResourceMaps([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap*>** maps);
-                    [deprecated("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] [propget] HRESULT DefaultContext([out] [retval] Windows.ApplicationModel.Resources.Core.ResourceContext** value);
+                    [propget] HRESULT DefaultContext([out] [retval] Windows.ApplicationModel.Resources.Core.ResourceContext** value);
                     HRESULT LoadPriFiles([in] Windows.Foundation.Collections.IIterable<Windows.Storage.IStorageFile*>* files);
                     HRESULT UnloadPriFiles([in] Windows.Foundation.Collections.IIterable<Windows.Storage.IStorageFile*>* files);
                 }
@@ -309,7 +308,7 @@ namespace Windows
                         Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource*>*>
                 {
                     [propget] HRESULT Uri([out] [retval] Windows.Foundation.Uri** uri);
-                    [deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] [overload("GetValue")] HRESULT GetValue([in] HSTRING resource, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** value);
+                    [overload("GetValue")] HRESULT GetValue([in] HSTRING resource, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** value);
                     [overload("GetValue")] HRESULT GetValueForContext([in] HSTRING resource, [in] Windows.ApplicationModel.Resources.Core.ResourceContext* context, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceCandidate** value);
                     HRESULT GetSubtree([in] HSTRING reference, [out] [retval] Windows.ApplicationModel.Resources.Core.ResourceMap** map);
                 }
@@ -338,7 +337,7 @@ namespace Windows
                 runtimeclass ResourceCandidate
                 {
                     [default] interface Windows.ApplicationModel.Resources.Core.IResourceCandidate;
-                    [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Resources.Core.IResourceCandidate2;
+                    interface Windows.ApplicationModel.Resources.Core.IResourceCandidate2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -376,7 +375,7 @@ namespace Windows
                 runtimeclass ResourceManager
                 {
                     [default] interface Windows.ApplicationModel.Resources.Core.IResourceManager;
-                    [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Resources.Core.IResourceManager2;
+                    interface Windows.ApplicationModel.Resources.Core.IResourceManager2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

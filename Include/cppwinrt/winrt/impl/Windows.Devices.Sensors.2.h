@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -170,6 +170,28 @@ struct WINRT_EBO GyrometerReadingChangedEventArgs :
     Windows::Devices::Sensors::IGyrometerReadingChangedEventArgs
 {
     GyrometerReadingChangedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO HingeAngleReading :
+    Windows::Devices::Sensors::IHingeAngleReading
+{
+    HingeAngleReading(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO HingeAngleSensor :
+    Windows::Devices::Sensors::IHingeAngleSensor
+{
+    HingeAngleSensor(std::nullptr_t) noexcept {}
+    static hstring GetDeviceSelector();
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::HingeAngleSensor> GetDefaultAsync();
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::HingeAngleSensor> GetRelatedToAdjacentPanelsAsync(param::hstring const& firstPanelId, param::hstring const& secondPanelId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::HingeAngleSensor> FromIdAsync(param::hstring const& deviceId);
+};
+
+struct WINRT_EBO HingeAngleSensorReadingChangedEventArgs :
+    Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs
+{
+    HingeAngleSensorReadingChangedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO Inclinometer :
@@ -360,6 +382,8 @@ struct WINRT_EBO SimpleOrientationSensor :
 {
     SimpleOrientationSensor(std::nullptr_t) noexcept {}
     static Windows::Devices::Sensors::SimpleOrientationSensor GetDefault();
+    static hstring GetDeviceSelector();
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::SimpleOrientationSensor> FromIdAsync(param::hstring const& deviceId);
 };
 
 struct WINRT_EBO SimpleOrientationSensorOrientationChangedEventArgs :

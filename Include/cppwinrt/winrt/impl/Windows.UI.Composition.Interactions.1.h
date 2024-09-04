@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -41,6 +41,13 @@ struct WINRT_EBO ICompositionInteractionSourceCollection :
     ICompositionInteractionSourceCollection(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IInteractionSourceConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IInteractionSourceConfiguration>
+{
+    IInteractionSourceConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IInteractionTracker :
     Windows::Foundation::IInspectable,
     impl::consume_t<IInteractionTracker>
@@ -60,6 +67,13 @@ struct WINRT_EBO IInteractionTracker3 :
     impl::consume_t<IInteractionTracker3>
 {
     IInteractionTracker3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IInteractionTracker4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IInteractionTracker4>
+{
+    IInteractionTracker4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IInteractionTrackerCustomAnimationStateEnteredArgs :
@@ -139,6 +153,13 @@ struct WINRT_EBO IInteractionTrackerInertiaStateEnteredArgs :
     IInteractionTrackerInertiaStateEnteredArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IInteractionTrackerInertiaStateEnteredArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IInteractionTrackerInertiaStateEnteredArgs2>
+{
+    IInteractionTrackerInertiaStateEnteredArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IInteractionTrackerInteractingStateEnteredArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IInteractionTrackerInteractingStateEnteredArgs>
@@ -214,6 +235,13 @@ struct WINRT_EBO IVisualInteractionSource2 :
     impl::consume_t<IVisualInteractionSource2>
 {
     IVisualInteractionSource2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IVisualInteractionSource3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IVisualInteractionSource3>
+{
+    IVisualInteractionSource3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IVisualInteractionSourceObjectFactory :

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,7 +33,7 @@ struct WINRT_EBO BarcodeScanner :
 
 struct WINRT_EBO BarcodeScannerCapabilities :
     Windows::Devices::PointOfService::IBarcodeScannerCapabilities,
-    impl::require<BarcodeScannerCapabilities, Windows::Devices::PointOfService::IBarcodeScannerCapabilities1>
+    impl::require<BarcodeScannerCapabilities, Windows::Devices::PointOfService::IBarcodeScannerCapabilities1, Windows::Devices::PointOfService::IBarcodeScannerCapabilities2>
 {
     BarcodeScannerCapabilities(std::nullptr_t) noexcept {}
 };
@@ -230,15 +230,28 @@ struct WINRT_EBO CashDrawerStatusUpdatedEventArgs :
 
 struct WINRT_EBO ClaimedBarcodeScanner :
     Windows::Devices::PointOfService::IClaimedBarcodeScanner,
-    impl::require<ClaimedBarcodeScanner, Windows::Devices::PointOfService::IClaimedBarcodeScanner1, Windows::Devices::PointOfService::IClaimedBarcodeScanner2, Windows::Devices::PointOfService::IClaimedBarcodeScanner3>
+    impl::require<ClaimedBarcodeScanner, Windows::Devices::PointOfService::IClaimedBarcodeScanner1, Windows::Devices::PointOfService::IClaimedBarcodeScanner2, Windows::Devices::PointOfService::IClaimedBarcodeScanner3, Windows::Devices::PointOfService::IClaimedBarcodeScanner4>
 {
     ClaimedBarcodeScanner(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO ClaimedBarcodeScannerClosedEventArgs :
+    Windows::Devices::PointOfService::IClaimedBarcodeScannerClosedEventArgs
+{
+    ClaimedBarcodeScannerClosedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ClaimedCashDrawer :
-    Windows::Devices::PointOfService::IClaimedCashDrawer
+    Windows::Devices::PointOfService::IClaimedCashDrawer,
+    impl::require<ClaimedCashDrawer, Windows::Devices::PointOfService::IClaimedCashDrawer2>
 {
     ClaimedCashDrawer(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ClaimedCashDrawerClosedEventArgs :
+    Windows::Devices::PointOfService::IClaimedCashDrawerClosedEventArgs
+{
+    ClaimedCashDrawerClosedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ClaimedJournalPrinter :
@@ -249,7 +262,7 @@ struct WINRT_EBO ClaimedJournalPrinter :
 
 struct WINRT_EBO ClaimedLineDisplay :
     Windows::Devices::PointOfService::IClaimedLineDisplay,
-    impl::require<ClaimedLineDisplay, Windows::Devices::PointOfService::IClaimedLineDisplay2>
+    impl::require<ClaimedLineDisplay, Windows::Devices::PointOfService::IClaimedLineDisplay2, Windows::Devices::PointOfService::IClaimedLineDisplay3>
 {
     ClaimedLineDisplay(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> FromIdAsync(param::hstring const& deviceId);
@@ -257,16 +270,36 @@ struct WINRT_EBO ClaimedLineDisplay :
     static hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes const& connectionTypes);
 };
 
+struct WINRT_EBO ClaimedLineDisplayClosedEventArgs :
+    Windows::Devices::PointOfService::IClaimedLineDisplayClosedEventArgs
+{
+    ClaimedLineDisplayClosedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ClaimedMagneticStripeReader :
-    Windows::Devices::PointOfService::IClaimedMagneticStripeReader
+    Windows::Devices::PointOfService::IClaimedMagneticStripeReader,
+    impl::require<ClaimedMagneticStripeReader, Windows::Devices::PointOfService::IClaimedMagneticStripeReader2>
 {
     ClaimedMagneticStripeReader(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO ClaimedMagneticStripeReaderClosedEventArgs :
+    Windows::Devices::PointOfService::IClaimedMagneticStripeReaderClosedEventArgs
+{
+    ClaimedMagneticStripeReaderClosedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ClaimedPosPrinter :
-    Windows::Devices::PointOfService::IClaimedPosPrinter
+    Windows::Devices::PointOfService::IClaimedPosPrinter,
+    impl::require<ClaimedPosPrinter, Windows::Devices::PointOfService::IClaimedPosPrinter2>
 {
     ClaimedPosPrinter(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ClaimedPosPrinterClosedEventArgs :
+    Windows::Devices::PointOfService::IClaimedPosPrinterClosedEventArgs
+{
+    ClaimedPosPrinterClosedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ClaimedReceiptPrinter :

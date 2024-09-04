@@ -29,6 +29,8 @@ namespace Windows
         {
             namespace Core
             {
+                typedef enum CoreInputViewKind CoreInputViewKind;
+
                 typedef enum CoreInputViewOcclusionKind CoreInputViewOcclusionKind;
 
                 typedef enum CoreInputViewXYFocusTransferDirection CoreInputViewXYFocusTransferDirection;
@@ -36,6 +38,8 @@ namespace Windows
                 interface ICoreInputView;
 
                 interface ICoreInputView2;
+
+                interface ICoreInputView3;
 
                 interface ICoreInputViewOcclusion;
 
@@ -94,6 +98,15 @@ namespace Windows
         {
             namespace Core
             {
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                enum CoreInputViewKind
+                {
+                    Default     = 0,
+                    Keyboard    = 1,
+                    Handwriting = 2,
+                    Emoji       = 3
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
                 enum CoreInputViewOcclusionKind
                 {
@@ -133,6 +146,16 @@ namespace Windows
                     [eventadd] HRESULT XYFocusTransferredToPrimaryView([in] Windows.Foundation.TypedEventHandler<Windows.UI.ViewManagement.Core.CoreInputView*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT XYFocusTransferredToPrimaryView([in] EventRegistrationToken token);
                     HRESULT TryTransferXYFocusToPrimaryView([in] Windows.Foundation.Rect origin, [in] Windows.UI.ViewManagement.Core.CoreInputViewXYFocusTransferDirection direction, [out] [retval] boolean* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.ViewManagement.Core.CoreInputView)]
+                [uuid(BC941653-3AB9-4849-8F58-46E7F0353CFC)]
+                interface ICoreInputView3 : IInspectable
+                {
+                    [overload("TryShow")] HRESULT TryShow([out] [retval] boolean* result);
+                    [overload("TryShow")] HRESULT TryShowWithKind([in] Windows.UI.ViewManagement.Core.CoreInputViewKind type, [out] [retval] boolean* result);
+                    HRESULT TryHide([out] [retval] boolean* result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -182,6 +205,7 @@ namespace Windows
                 {
                     [default] interface Windows.UI.ViewManagement.Core.ICoreInputView;
                     [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.UI.ViewManagement.Core.ICoreInputView2;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.ViewManagement.Core.ICoreInputView3;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]

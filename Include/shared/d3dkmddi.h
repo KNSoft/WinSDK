@@ -1565,6 +1565,9 @@ typedef enum _DXGK_QUERYADAPTERINFOTYPE
     DXGKQAITYPE_ADAPTERPERFDATA_CAPS    = 26,
     DXGKQAITYPE_GPUVERSION              = 27,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    DXGKQAITYPE_DEVICE_TYPE_CAPS        = 28,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
 } DXGK_QUERYADAPTERINFOTYPE;
 
 typedef struct _DXGK_GAMMARAMPCAPS
@@ -1990,14 +1993,16 @@ typedef struct _DXGK_DMABUFFERCAPS_DEPRECATED // _ADVSCH_
 
 typedef enum _DXGK_WDDMVERSION // _ADVSCH_
 {
-     DXGKDDI_WDDMv1   = 0x1000,
-     DXGKDDI_WDDMv1_2 = 0x1200,
-     DXGKDDI_WDDMv1_3 = 0x1300,
-     DXGKDDI_WDDMv2   = 0x2000,
-     DXGKDDI_WDDMv2_1 = 0x2100,
-     DXGKDDI_WDDMv2_2 = 0x2200,
-     DXGKDDI_WDDMv2_3 = 0x2300,
-     DXGKDDI_WDDMv2_4 = 0x2400,
+     DXGKDDI_WDDMv1     = 0x1000,
+     DXGKDDI_WDDMv1_2   = 0x1200,
+     DXGKDDI_WDDMv1_3   = 0x1300,
+     DXGKDDI_WDDMv2     = 0x2000,
+     DXGKDDI_WDDMv2_1   = 0x2100,
+     DXGKDDI_WDDMv2_1_5 = 0x2105,   // The WDDM version is added so the latest DDK can be used for drivers, which support GPU-P in RS1.8 and need to return this value.
+     DXGKDDI_WDDMv2_2   = 0x2200,
+     DXGKDDI_WDDMv2_3   = 0x2300,
+     DXGKDDI_WDDMv2_4   = 0x2400,
+     DXGKDDI_WDDMv2_5   = 0x2500,
 } DXGK_WDDMVERSION;
 #endif // DXGKDDI_INTERFACE_VERSION
 
@@ -2063,7 +2068,12 @@ typedef struct _DXGK_DRIVERCAPS
         {
             UINT SupportContextlessPresent : 1;
             UINT Detachable : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+            UINT VirtualGpuOnly             : 1;
+            UINT Reserved                   : 29;
+#else // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
             UINT Reserved : 30;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
         };
         UINT Value;
     } MiscCaps;
@@ -2312,6 +2322,10 @@ typedef struct _DXGK_DISPLAY_DRIVERCAPS_EXTENSION
 #if (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_1)
             UINT    Reserved                :29;    // 0x7FFFFFFC
             UINT    NonSpecificPrimarySupport : 1;  // 0x80000000 Do not use!
+#elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+            UINT    HdrFP16ScanoutSupport   : 1;    // 0x00000004
+            UINT    HdrARGB10ScanoutSupport : 1;    // 0x00000008
+            UINT    Reserved                :28;    // 0xFFFFFFF0
 #else
             UINT    Reserved                :30;    // 0xFFFFFFFC
 #endif
@@ -2371,7 +2385,7 @@ typedef struct _DXGK_COLORIMETRY
     D3DKMDT_2DOFFSET                    BluePoint;
     D3DKMDT_2DOFFSET                    WhitePoint;
 
-    // Luminance limits
+    // Luminance values in (1 / 10000) nits
     ULONG                               MinLuminance;
     ULONG                               MaxLuminance;
     ULONG                               MaxFullFrameLuminance;
@@ -2382,6 +2396,24 @@ typedef struct _DXGK_COLORIMETRY
     // Standard colorimetry support flags
     DXGK_STANDARD_COLORIMETRY_FLAGS     StandardColorimetryFlags;
 } DXGK_COLORIMETRY, *PDXGK_COLORIMETRY;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef struct _DXGK_DEVICE_TYPE_CAPS
+{
+    union
+    {
+        struct
+        {
+            UINT32 Discrete   :  1;
+            UINT32 Detachable :  1;
+            UINT32 Reserved   : 30;
+        };
+        UINT32 Value;
+    };
+} DXGK_DEVICE_TYPE_CAPS;
+
+#endif
 
 typedef struct _DXGK_QUERYINTEGRATEDDISPLAYOUT
 {
@@ -3940,7 +3972,12 @@ typedef struct _DXGK_CREATEPROCESSFLAGS
             UINT    VirtualMachineProcess       : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
             UINT    VirtualMachineWorkerProcess : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+            UINT    SessionIsolatedContainer    : 1;
+            UINT    Reserved                    : 27;
+#else
             UINT    Reserved                    : 28;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 #else
             UINT    Reserved                    : 29;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
@@ -4025,13 +4062,15 @@ DXGKDDI_SUBMITCOMMANDVIRTUAL(
 typedef struct _DXGKARG_SUBMITCOMMANDTOHWQUEUE
 {
     HANDLE                          hHwQueue;
-    UINT64                          HwQueueProgressFenceId; // Hardware queue progress fence ID that will be signaled upon this DMA buffer completion.
+    UINT64                          HwQueueProgressFenceId;     // Fence ID that will be signaled upon this DMA buffer completion.
     D3DGPU_VIRTUAL_ADDRESS          DmaBufferVirtualAddress;
     UINT                            DmaBufferSize;
     UINT                            DmaBufferPrivateDataSize;
     _Field_size_bytes_             (DmaBufferPrivateDataSize)
     VOID*                           pDmaBufferPrivateData;
     DXGK_SUBMITCOMMANDFLAGS         Flags;
+    D3DGPU_VIRTUAL_ADDRESS          HwQueueProgressFenceGpuVa;  // GPU VA of the fence signaled upon this DMA buffer completion.
+    VOID*                           HwQueueProgressFenceCpuVa;  // Kernel mode CPU VA of the fence being signaled.
 } DXGKARG_SUBMITCOMMANDTOHWQUEUE;
 
 typedef _In_ CONST DXGKARG_SUBMITCOMMANDTOHWQUEUE*   IN_CONST_PDXGKARG_SUBMITCOMMANDTOHWQUEUE;
@@ -4137,8 +4176,17 @@ typedef struct _DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE
 
 typedef struct _DXGK_SCHEDULING_LOG_HEADER
 {
-    UINT32          FirstFreeEntryIndex;
-    UINT32          WraparoundCount;
+    union
+    {
+        struct
+        {
+            UINT32          FirstFreeEntryIndex;    // same as LowPart of AtomicWraparoundAndEntryIndex
+            UINT32          WraparoundCount;        // same as HighPart of AtomicWraparoundAndEntryIndex
+        };
+
+        ULARGE_INTEGER      AtomicWraparoundAndEntryIndex;
+    };
+
     UINT64          NumberOfEntries;
     UINT64          Reserved[2];
 } DXGK_SCHEDULING_LOG_HEADER;
@@ -4355,6 +4403,95 @@ DXGKDDI_SETVIRTUALMACHINEDATA(
     );
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef enum _DXGK_KERNEL_SUBMISSION_TYPE
+{
+    DXGK_KERNEL_SUBMISSION_BUILD_PAGING_BUFFER = 0,
+    DXGK_KERNEL_SUBMISSION_RENDERGDI = 1,
+    DXGK_KERNEL_SUBMISSION_PRESENTBLT = 2
+} DXGK_KERNEL_SUBMISSION_TYPE;
+
+typedef struct _DXGKARG_SIGNALMONITOREDFENCE
+{
+    DXGK_KERNEL_SUBMISSION_TYPE     KernelSubmissionType;
+    VOID*                           pDmaBuffer;
+    D3DGPU_VIRTUAL_ADDRESS          DmaBufferGpuVirtualAddress;
+    UINT                            DmaSize;
+    VOID*                           pDmaBufferPrivateData;
+    UINT                            DmaBufferPrivateDataSize;
+    UINT                            MultipassOffset;
+    D3DGPU_VIRTUAL_ADDRESS          MonitoredFenceGpuVa;
+    UINT64                          MonitoredFenceValue;
+    VOID*                           MonitoredFenceCpuVa;        // Kernel mode CPU VA of the fence being signaled.
+    HANDLE                          hHwQueue;
+} DXGKARG_SIGNALMONITOREDFENCE;
+
+typedef _Inout_ DXGKARG_SIGNALMONITOREDFENCE*   INOUT_PDXGKARG_SIGNALMONITOREDFENCE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SIGNALMONITOREDFENCE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SIGNALMONITOREDFENCE(
+    IN_CONST_HANDLE                     hContext,
+    INOUT_PDXGKARG_SIGNALMONITOREDFENCE pSignalMonitoredFence
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_PRESENTTOHWQUEUE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_PRESENTTOHWQUEUE(
+    IN_CONST_HANDLE         hHwQueue,
+    INOUT_PDXGKARG_PRESENT  pPresent
+    );
+
+typedef struct _DXGK_VALIDATESUBMITCOMMANDFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT HardwareQueueSubmission    : 1;   
+            UINT Reserved                   :31;
+        };
+        UINT Value;
+    };
+} DXGK_VALIDATESUBMITCOMMANDFLAGS;
+
+typedef struct _DXGKARG_VALIDATESUBMITCOMMAND
+{
+    D3DGPU_VIRTUAL_ADDRESS              Commands;
+    UINT                                CommandLength;
+    DXGK_VALIDATESUBMITCOMMANDFLAGS     Flags;
+    UINT                                ContextCount;
+    HANDLE               	            Context[D3DDDI_MAX_BROADCAST_CONTEXT];
+    VOID*                               pPrivateDriverData;
+    UINT                                PrivateDriverDataSize;
+    UINT                                UmdPrivateDataSize;
+    UINT64                              HwQueueProgressFenceId;
+} DXGKARG_VALIDATESUBMITCOMMAND;
+
+typedef _Inout_ DXGKARG_VALIDATESUBMITCOMMAND*   INOUT_PDXGKARG_VALIDATESUBMITCOMMAND;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_VALIDATESUBMITCOMMAND)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_VALIDATESUBMITCOMMAND(
+    IN_CONST_HANDLE          hContext,
+    INOUT_PDXGKARG_VALIDATESUBMITCOMMAND pArgs
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 typedef struct _DXGKARG_RENDERGDI
 {
@@ -4996,6 +5133,11 @@ typedef struct _DXGK_MULTIPLANE_OVERLAY_ATTRIBUTES3
     DXGK_MULTIPLANE_OVERLAY_STRETCH_QUALITY      StretchQuality;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
     UINT                                         SDRWhiteLevel;
+#endif
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    UINT                                         DirtyRectCnt;
+    _Field_size_opt_(DirtyRectCnt)
+    CONST RECT*                                  pDirtyRects;
 #endif
 } DXGK_MULTIPLANE_OVERLAY_ATTRIBUTES3;
 
@@ -8302,6 +8444,71 @@ DXGKDDI_RESUMEHWENGINE(
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef struct _DXGK_TRACKEDWORKLOAD_STATE_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT    Saturated              : 1;    // 0x00000001
+            UINT    OptimalLevel           : 1;    // 0x00000002
+            UINT    Reserved               :30;    // 0xFFFFFFFC
+        };
+        UINT Value;
+    };
+} DXGK_TRACKEDWORKLOAD_STATE_FLAGS;
+
+typedef struct _DXGKARG_SETTRACKEDWORKLOADPOWERLEVEL
+{
+    UINT   PowerLevel;                  // in: desired power level
+    UINT   EffectivePowerLevel;         // out: effective power level
+    UINT   Flags;                       // out: DXGK_TRACKEDWORKLOAD_STATE_FLAGS combination
+} DXGKARG_SETTRACKEDWORKLOADPOWERLEVEL;
+
+typedef _Inout_ DXGKARG_SETTRACKEDWORKLOADPOWERLEVEL*    INOUT_PDXGKARG_SETTRACKEDWORKLOADPOWERLEVEL;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL(
+    IN_CONST_HANDLE                 hContext,
+    INOUT_PDXGKARG_SETTRACKEDWORKLOADPOWERLEVEL   pTrackedWorkloadPowerLevel
+    );
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef struct _DXGKARGCB_SIGNALEVENT
+{
+    HANDLE          hDxgkProcess;
+    HANDLE          hEvent;
+    union
+    {
+        struct
+        {
+            UINT Reserved       : 32;
+        };
+        UINT Flags;
+    };
+} DXGKARGCB_SIGNALEVENT;
+
+typedef _In_    CONST DXGKARGCB_SIGNALEVENT *  IN_CONST_PDXGKARGCB_SIGNALEVENT;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_SIGNALEVENT)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_SIGNALEVENT)(IN_CONST_PDXGKARGCB_SIGNALEVENT);
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
+
 //
 //     Function pointer typedefs
 //
@@ -8442,6 +8649,15 @@ typedef DXGKDDI_ENDEXCLUSIVEACCESS              *PDXGKDDI_ENDEXCLUSIVEACCESS;
 typedef DXGKDDI_RESUMEHWENGINE                  *PDXGKDDI_RESUMEHWENGINE;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef DXGKDDI_SIGNALMONITOREDFENCE            *PDXGKDDI_SIGNALMONITOREDFENCE;
+typedef DXGKDDI_PRESENTTOHWQUEUE                *PDXGKDDI_PRESENTTOHWQUEUE;
+typedef DXGKDDI_VALIDATESUBMITCOMMAND           *PDXGKDDI_VALIDATESUBMITCOMMAND; 
+typedef DXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL    *PDXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 #pragma warning(pop)
 

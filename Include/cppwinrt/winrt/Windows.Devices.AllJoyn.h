@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Enumeration.2.h"
@@ -137,14 +137,14 @@ template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>:
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynAboutData)->put_SupportUrl(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>::AppId() const
+template <typename D> winrt::guid consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>::AppId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynAboutData)->get_AppId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>::AppId(GUID const& value) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>::AppId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynAboutData)->put_AppId(get_abi(value)));
 }
@@ -170,9 +170,9 @@ template <typename D> hstring consume_Windows_Devices_AllJoyn_IAllJoynAboutDataV
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_AllJoyn_IAllJoynAboutDataView<D>::AppId() const
+template <typename D> winrt::guid consume_Windows_Devices_AllJoyn_IAllJoynAboutDataView<D>::AppId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynAboutDataView)->get_AppId(put_abi(value)));
     return value;
 }
@@ -393,21 +393,21 @@ template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->Disconnect());
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->add_StateChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::StateChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_StateChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_StateChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationMechanisms() const
@@ -417,55 +417,55 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->add_CredentialsRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_CredentialsRequested, CredentialsRequested(handler));
+    return impl::make_event_revoker<D, CredentialsRequested_revoker>(this, CredentialsRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_CredentialsRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_CredentialsRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->add_CredentialsVerificationRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_CredentialsVerificationRequested, CredentialsVerificationRequested(handler));
+    return impl::make_event_revoker<D, CredentialsVerificationRequested_revoker>(this, CredentialsVerificationRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::CredentialsVerificationRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_CredentialsVerificationRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_CredentialsVerificationRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->add_AuthenticationComplete(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_AuthenticationComplete, AuthenticationComplete(handler));
+    return impl::make_event_revoker<D, AuthenticationComplete_revoker>(this, AuthenticationComplete(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>::AuthenticationComplete(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_AuthenticationComplete(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment)->remove_AuthenticationComplete(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::GetAboutDataAsync(Windows::Devices::AllJoyn::AllJoynServiceInfo const& serviceInfo) const
@@ -482,38 +482,38 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::All
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->add_AcceptSessionJoinerRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>::remove_AcceptSessionJoinerRequested, AcceptSessionJoinerRequested(handler));
+    return impl::make_event_revoker<D, AcceptSessionJoinerRequested_revoker>(this, AcceptSessionJoinerRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::AcceptSessionJoinerRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->remove_AcceptSessionJoinerRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->remove_AcceptSessionJoinerRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->add_SessionJoined(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2> consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>::remove_SessionJoined, SessionJoined(handler));
+    return impl::make_event_revoker<D, SessionJoined_revoker>(this, SessionJoined(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>::SessionJoined(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->remove_SessionJoined(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusAttachment2)->remove_SessionJoined(get_abi(token)));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment consume_Windows_Devices_AllJoyn_IAllJoynBusAttachmentFactory<D>::Create(param::hstring const& connectionSpecification) const
@@ -580,21 +580,21 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynSession consume_Windows_
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusObject)->add_Stopped(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynBusObject> consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped_revoker consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynBusObject>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynBusObject>::remove_Stopped, Stopped(handler));
+    return impl::make_event_revoker<D, Stopped_revoker>(this, Stopped(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>::Stopped(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusObject)->remove_Stopped(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynBusObject)->remove_Stopped(get_abi(token)));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynBusObject consume_Windows_Devices_AllJoyn_IAllJoynBusObjectFactory<D>::Create(param::hstring const& objectPath) const
@@ -860,55 +860,55 @@ template <typename D> Windows::Foundation::IAsyncOperation<int32_t> consume_Wind
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->add_MemberAdded(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynSession> consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded_revoker consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynSession>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_MemberAdded, MemberAdded(handler));
+    return impl::make_event_revoker<D, MemberAdded_revoker>(this, MemberAdded(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberAdded(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_MemberAdded(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_MemberAdded(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->add_MemberRemoved(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynSession> consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved_revoker consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynSession>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_MemberRemoved, MemberRemoved(handler));
+    return impl::make_event_revoker<D, MemberRemoved_revoker>(this, MemberRemoved(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::MemberRemoved(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_MemberRemoved(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_MemberRemoved(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->add_Lost(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::AllJoyn::IAllJoynSession> consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost_revoker consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::AllJoyn::IAllJoynSession>(this, &abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_Lost, Lost(handler));
+    return impl::make_event_revoker<D, Lost_revoker>(this, Lost(handler));
 }
 
-template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(event_token const& token) const
+template <typename D> void consume_Windows_Devices_AllJoyn_IAllJoynSession<D>::Lost(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_Lost(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::AllJoyn::IAllJoynSession)->remove_Lost(get_abi(token)));
 }
 
 template <typename D> Windows::Devices::AllJoyn::AllJoynSession consume_Windows_Devices_AllJoyn_IAllJoynSessionJoinedEventArgs<D>::Session() const
@@ -1124,2469 +1124,2111 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutData> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAboutData>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultAppName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DefaultAppName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultAppName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DefaultAppName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DefaultAppName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DefaultAppName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultAppName, WINRT_WRAP(void), hstring const&);
             this->shim().DefaultAppName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppNames(void** value) noexcept final
+    int32_t WINRT_CALL get_AppNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppNames, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().AppNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DateOfManufacture(void** value) noexcept final
+    int32_t WINRT_CALL get_DateOfManufacture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DateOfManufacture, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().DateOfManufacture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DateOfManufacture(void* value) noexcept final
+    int32_t WINRT_CALL put_DateOfManufacture(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DateOfManufacture, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().DateOfManufacture(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DefaultDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DefaultDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DefaultDescription(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DefaultDescription(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultDescription, WINRT_WRAP(void), hstring const&);
             this->shim().DefaultDescription(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptions(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptions, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().Descriptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultManufacturer(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DefaultManufacturer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultManufacturer, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DefaultManufacturer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DefaultManufacturer(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DefaultManufacturer(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultManufacturer, WINRT_WRAP(void), hstring const&);
             this->shim().DefaultManufacturer(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Manufacturers(void** value) noexcept final
+    int32_t WINRT_CALL get_Manufacturers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manufacturers, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().Manufacturers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ModelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ModelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ModelNumber(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ModelNumber(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelNumber, WINRT_WRAP(void), hstring const&);
             this->shim().ModelNumber(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SoftwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SoftwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoftwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SoftwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SoftwareVersion(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SoftwareVersion(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoftwareVersion, WINRT_WRAP(void), hstring const&);
             this->shim().SoftwareVersion(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().SupportUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SupportUrl(void* value) noexcept final
+    int32_t WINRT_CALL put_SupportUrl(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportUrl, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SupportUrl(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AppId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AppId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AppId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppId(GUID value) noexcept final
+    int32_t WINRT_CALL put_AppId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AppId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().AppId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAboutDataView>
 {
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AJSoftwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AJSoftwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AJSoftwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AJSoftwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AppId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AppId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AppId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DateOfManufacture(void** value) noexcept final
+    int32_t WINRT_CALL get_DateOfManufacture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DateOfManufacture, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().DateOfManufacture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultLanguage(void** value) noexcept final
+    int32_t WINRT_CALL get_DefaultLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultLanguage, WINRT_WRAP(Windows::Globalization::Language));
             *value = detach_from<Windows::Globalization::Language>(this->shim().DefaultLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HardwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HardwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ModelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ModelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SoftwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SoftwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoftwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SoftwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedLanguages(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedLanguages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedLanguages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language>>(this->shim().SupportedLanguages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().SupportUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Manufacturer(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Manufacturer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manufacturer, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Manufacturer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>
 {
-    HRESULT __stdcall GetDataBySessionPortAsync(HSTRING uniqueName, void* busAttachment, uint16_t sessionPort, void** operation) noexcept final
+    int32_t WINRT_CALL GetDataBySessionPortAsync(void* uniqueName, void* busAttachment, uint16_t sessionPort, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataBySessionPortAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>), hstring const, Windows::Devices::AllJoyn::AllJoynBusAttachment const, uint16_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>>(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<hstring const*>(&uniqueName), *reinterpret_cast<Windows::Devices::AllJoyn::AllJoynBusAttachment const*>(&busAttachment), sessionPort));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, void* busAttachment, uint16_t sessionPort, void* language, void** operation) noexcept final
+    int32_t WINRT_CALL GetDataBySessionPortWithLanguageAsync(void* uniqueName, void* busAttachment, uint16_t sessionPort, void* language, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataBySessionPortAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>), hstring const, Windows::Devices::AllJoyn::AllJoynBusAttachment const, uint16_t, Windows::Globalization::Language const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>>(this->shim().GetDataBySessionPortAsync(*reinterpret_cast<hstring const*>(&uniqueName), *reinterpret_cast<Windows::Devices::AllJoyn::AllJoynBusAttachment const*>(&busAttachment), sessionPort, *reinterpret_cast<Windows::Globalization::Language const*>(&language)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>
 {
-    HRESULT __stdcall Accept() noexcept final
+    int32_t WINRT_CALL Accept() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void));
             this->shim().Accept();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SessionPort(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_SessionPort(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SessionPort, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().SessionPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrafficType(Windows::Devices::AllJoyn::AllJoynTrafficType* value) noexcept final
+    int32_t WINRT_CALL get_TrafficType(Windows::Devices::AllJoyn::AllJoynTrafficType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrafficType, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynTrafficType));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynTrafficType>(this->shim().TrafficType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SamePhysicalNode(bool* value) noexcept final
+    int32_t WINRT_CALL get_SamePhysicalNode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SamePhysicalNode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SamePhysicalNode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SameNetwork(bool* value) noexcept final
+    int32_t WINRT_CALL get_SameNetwork(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SameNetwork, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SameNetwork());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Accept() noexcept final
+    int32_t WINRT_CALL Accept() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void));
             this->shim().Accept();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>
 {
-    HRESULT __stdcall Create(HSTRING uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, void* acceptSessionJoiner, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, void* acceptSessionJoiner, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs), hstring const&, uint16_t, Windows::Devices::AllJoyn::AllJoynTrafficType const&, uint8_t, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>(this->shim().Create(*reinterpret_cast<hstring const*>(&uniqueName), sessionPort, *reinterpret_cast<Windows::Devices::AllJoyn::AllJoynTrafficType const*>(&trafficType), proximity, *reinterpret_cast<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner const*>(&acceptSessionJoiner)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>
 {
-    HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationMechanism, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>(this->shim().AuthenticationMechanism());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerUniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PeerUniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Succeeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_Succeeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Succeeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Succeeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment>
 {
-    HRESULT __stdcall get_AboutData(void** value) noexcept final
+    int32_t WINRT_CALL get_AboutData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AboutData, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynAboutData));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynAboutData>(this->shim().AboutData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionSpecification(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionSpecification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionSpecification, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ConnectionSpecification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusAttachmentState));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynBusAttachmentState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PingAsync(HSTRING uniqueName, void** operation) noexcept final
+    int32_t WINRT_CALL PingAsync(void* uniqueName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<int32_t>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<int32_t>>(this->shim().PingAsync(*reinterpret_cast<hstring const*>(&uniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Connect() noexcept final
+    int32_t WINRT_CALL Connect() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Connect, WINRT_WRAP(void));
             this->shim().Connect();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Disconnect() noexcept final
+    int32_t WINRT_CALL Disconnect() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Disconnect, WINRT_WRAP(void));
             this->shim().Disconnect();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StateChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_AuthenticationMechanisms(void** value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationMechanisms(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationMechanisms, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>>(this->shim().AuthenticationMechanisms());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CredentialsRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_CredentialsRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().CredentialsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CredentialsRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().CredentialsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CredentialsRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_CredentialsRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CredentialsRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CredentialsRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_CredentialsVerificationRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().CredentialsRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CredentialsVerificationRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().CredentialsVerificationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CredentialsVerificationRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_CredentialsVerificationRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CredentialsVerificationRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CredentialsVerificationRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_AuthenticationComplete(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().CredentialsVerificationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AuthenticationComplete, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AuthenticationComplete(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CredentialsVerificationRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AuthenticationComplete(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().CredentialsVerificationRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_AuthenticationComplete(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AuthenticationComplete(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_AuthenticationComplete(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AuthenticationComplete(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AuthenticationComplete, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AuthenticationComplete(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachment2>
 {
-    HRESULT __stdcall GetAboutDataAsync(void* serviceInfo, void** operation) noexcept final
+    int32_t WINRT_CALL GetAboutDataAsync(void* serviceInfo, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAboutDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>), Windows::Devices::AllJoyn::AllJoynServiceInfo const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>>(this->shim().GetAboutDataAsync(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynServiceInfo const*>(&serviceInfo)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAboutDataWithLanguageAsync(void* serviceInfo, void* language, void** operation) noexcept final
+    int32_t WINRT_CALL GetAboutDataWithLanguageAsync(void* serviceInfo, void* language, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAboutDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>), Windows::Devices::AllJoyn::AllJoynServiceInfo const, Windows::Globalization::Language const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView>>(this->shim().GetAboutDataAsync(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynServiceInfo const*>(&serviceInfo), *reinterpret_cast<Windows::Globalization::Language const*>(&language)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AcceptSessionJoinerRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AcceptSessionJoinerRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AcceptSessionJoinerRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AcceptSessionJoinerRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AcceptSessionJoinerRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AcceptSessionJoinerRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SessionJoined(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AcceptSessionJoinerRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SessionJoined, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SessionJoined(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SessionJoined(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_SessionJoined(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SessionJoined(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_SessionJoined(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SessionJoined(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SessionJoined, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SessionJoined(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>
 {
-    HRESULT __stdcall Create(HSTRING connectionSpecification, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* connectionSpecification, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusAttachment), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynBusAttachment>(this->shim().Create(*reinterpret_cast<hstring const*>(&connectionSpecification)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>
 {
-    HRESULT __stdcall get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusAttachmentState));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynBusAttachmentState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>
 {
-    HRESULT __stdcall GetDefault(void** defaultBusAttachment) noexcept final
+    int32_t WINRT_CALL GetDefault(void** defaultBusAttachment) noexcept final
     {
         try
         {
             *defaultBusAttachment = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusAttachment));
             *defaultBusAttachment = detach_from<Windows::Devices::AllJoyn::AllJoynBusAttachment>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWatcher(void* requiredInterfaces, void** deviceWatcher) noexcept final
+    int32_t WINRT_CALL GetWatcher(void* requiredInterfaces, void** deviceWatcher) noexcept final
     {
         try
         {
             *deviceWatcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher), Windows::Foundation::Collections::IIterable<hstring> const&);
             *deviceWatcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().GetWatcher(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&requiredInterfaces)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObject> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObject>
 {
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddProducer(void* producer) noexcept final
+    int32_t WINRT_CALL AddProducer(void* producer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddProducer, WINRT_WRAP(void), Windows::Devices::AllJoyn::IAllJoynProducer const&);
             this->shim().AddProducer(*reinterpret_cast<Windows::Devices::AllJoyn::IAllJoynProducer const*>(&producer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BusAttachment(void** value) noexcept final
+    int32_t WINRT_CALL get_BusAttachment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BusAttachment, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusAttachment));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynBusAttachment>(this->shim().BusAttachment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSession));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Stopped(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Stopped(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Stopped(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>
 {
-    HRESULT __stdcall Create(HSTRING objectPath, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* objectPath, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusObject), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynBusObject>(this->shim().Create(*reinterpret_cast<hstring const*>(&objectPath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithBusAttachment(HSTRING objectPath, void* busAttachment, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithBusAttachment(void* objectPath, void* busAttachment, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithBusAttachment, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusObject), hstring const&, Windows::Devices::AllJoyn::AllJoynBusAttachment const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynBusObject>(this->shim().CreateWithBusAttachment(*reinterpret_cast<hstring const*>(&objectPath), *reinterpret_cast<Windows::Devices::AllJoyn::AllJoynBusAttachment const*>(&busAttachment)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>
 {
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>
 {
-    HRESULT __stdcall Create(int32_t status, void** result) noexcept final
+    int32_t WINRT_CALL Create(int32_t status, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs), int32_t);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs>(this->shim().Create(status));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentials> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynCredentials>
 {
-    HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationMechanism, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>(this->shim().AuthenticationMechanism());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Certificate(void** value) noexcept final
+    int32_t WINRT_CALL get_Certificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Certificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().Certificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Certificate(void* value) noexcept final
+    int32_t WINRT_CALL put_Certificate(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Certificate, WINRT_WRAP(void), Windows::Security::Cryptography::Certificates::Certificate const&);
             this->shim().Certificate(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PasswordCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_PasswordCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().PasswordCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PasswordCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_PasswordCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().PasswordCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timeout(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Timeout(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timeout, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Timeout());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Timeout(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Timeout(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timeout, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Timeout(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>
 {
-    HRESULT __stdcall get_AttemptCount(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_AttemptCount(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttemptCount, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().AttemptCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Credentials(void** value) noexcept final
+    int32_t WINRT_CALL get_Credentials(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Credentials, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynCredentials));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynCredentials>(this->shim().Credentials());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerUniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PeerUniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestedUserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RequestedUserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedUserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RequestedUserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>
 {
-    HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationMechanism, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism>(this->shim().AuthenticationMechanism());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerUniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PeerUniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_PeerCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().PeerCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
+    int32_t WINRT_CALL get_PeerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerCertificateErrorSeverity, WINRT_WRAP(Windows::Networking::Sockets::SocketSslErrorSeverity));
             *value = detach_from<Windows::Networking::Sockets::SocketSslErrorSeverity>(this->shim().PeerCertificateErrorSeverity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_PeerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().PeerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeerIntermediateCertificates(void** value) noexcept final
+    int32_t WINRT_CALL get_PeerIntermediateCertificates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeerIntermediateCertificates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().PeerIntermediateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Accept() noexcept final
+    int32_t WINRT_CALL Accept() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void));
             this->shim().Accept();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynMessageInfo>
 {
-    HRESULT __stdcall get_SenderUniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SenderUniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SenderUniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SenderUniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>
 {
-    HRESULT __stdcall Create(HSTRING senderUniqueName, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* senderUniqueName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynMessageInfo), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynMessageInfo>(this->shim().Create(*reinterpret_cast<hstring const*>(&senderUniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducer> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynProducer>
 {
-    HRESULT __stdcall SetBusObject(void* busObject) noexcept final
+    int32_t WINRT_CALL SetBusObject(void* busObject) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBusObject, WINRT_WRAP(void), Windows::Devices::AllJoyn::AllJoynBusObject const&);
             this->shim().SetBusObject(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynBusObject const*>(&busObject));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>
 {
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>
 {
-    HRESULT __stdcall Create(int32_t status, void** result) noexcept final
+    int32_t WINRT_CALL Create(int32_t status, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs), int32_t);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs>(this->shim().Create(status));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfo>
 {
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ObjectPath(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ObjectPath(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ObjectPath, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ObjectPath());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SessionPort(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_SessionPort(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SessionPort, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().SessionPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>
 {
-    HRESULT __stdcall Create(HSTRING uniqueName, HSTRING objectPath, uint16_t sessionPort, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* uniqueName, void* objectPath, uint16_t sessionPort, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynServiceInfo), hstring const&, hstring const&, uint16_t);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynServiceInfo>(this->shim().Create(*reinterpret_cast<hstring const*>(&uniqueName), *reinterpret_cast<hstring const*>(&objectPath), sessionPort));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>
 {
-    HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs>(this->shim().Create(*reinterpret_cast<hstring const*>(&uniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSession> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSession>
 {
-    HRESULT __stdcall get_Id(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveMemberAsync(HSTRING uniqueName, void** operation) noexcept final
+    int32_t WINRT_CALL RemoveMemberAsync(void* uniqueName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveMemberAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<int32_t>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<int32_t>>(this->shim().RemoveMemberAsync(*reinterpret_cast<hstring const*>(&uniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MemberAdded(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_MemberAdded(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MemberAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MemberAdded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MemberAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MemberAdded(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MemberAdded(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MemberAdded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MemberAdded(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_MemberRemoved(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().MemberAdded(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MemberRemoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MemberRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MemberRemoved(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_MemberRemoved(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MemberRemoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MemberRemoved(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Lost(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MemberRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Lost, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Lost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MemberRemoved(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Lost(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MemberRemoved(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_Lost(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Lost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Lost(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Lost(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Lost, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Lost(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSession));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>
 {
-    HRESULT __stdcall Create(void* session, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* session, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs), Windows::Devices::AllJoyn::AllJoynSession const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs>(this->shim().Create(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynSession const*>(&session)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>
 {
-    HRESULT __stdcall get_Reason(Windows::Devices::AllJoyn::AllJoynSessionLostReason* value) noexcept final
+    int32_t WINRT_CALL get_Reason(Windows::Devices::AllJoyn::AllJoynSessionLostReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reason, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSessionLostReason));
             *value = detach_from<Windows::Devices::AllJoyn::AllJoynSessionLostReason>(this->shim().Reason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>
 {
-    HRESULT __stdcall Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, void** result) noexcept final
+    int32_t WINRT_CALL Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs), Windows::Devices::AllJoyn::AllJoynSessionLostReason const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs>(this->shim().Create(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynSessionLostReason const*>(&reason)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>
 {
-    HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>(this->shim().Create(*reinterpret_cast<hstring const*>(&uniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>
 {
-    HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UniqueName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UniqueName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UniqueName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>
 {
-    HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs), hstring const&);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>(this->shim().Create(*reinterpret_cast<hstring const*>(&uniqueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynSessionStatics>
 {
-    HRESULT __stdcall GetFromServiceInfoAsync(void* serviceInfo, void** operation) noexcept final
+    int32_t WINRT_CALL GetFromServiceInfoAsync(void* serviceInfo, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFromServiceInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>), Windows::Devices::AllJoyn::AllJoynServiceInfo const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>>(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynServiceInfo const*>(&serviceInfo)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFromServiceInfoAndBusAttachmentAsync(void* serviceInfo, void* busAttachment, void** operation) noexcept final
+    int32_t WINRT_CALL GetFromServiceInfoAndBusAttachmentAsync(void* serviceInfo, void* busAttachment, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFromServiceInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>), Windows::Devices::AllJoyn::AllJoynServiceInfo const, Windows::Devices::AllJoyn::AllJoynBusAttachment const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession>>(this->shim().GetFromServiceInfoAsync(*reinterpret_cast<Windows::Devices::AllJoyn::AllJoynServiceInfo const*>(&serviceInfo), *reinterpret_cast<Windows::Devices::AllJoyn::AllJoynBusAttachment const*>(&busAttachment)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynStatusStatics>
 {
-    HRESULT __stdcall get_Ok(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Ok(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ok, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Ok());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Fail(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Fail(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fail, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Fail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OperationTimedOut(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_OperationTimedOut(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OperationTimedOut, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().OperationTimedOut());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OtherEndClosed(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_OtherEndClosed(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherEndClosed, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().OtherEndClosed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionRefused(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionRefused(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionRefused, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ConnectionRefused());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationFailed(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationFailed(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationFailed, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().AuthenticationFailed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationRejectedByUser(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationRejectedByUser(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationRejectedByUser, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().AuthenticationRejectedByUser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SslConnectFailed(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SslConnectFailed(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SslConnectFailed, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SslConnectFailed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SslIdentityVerificationFailed(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SslIdentityVerificationFailed(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SslIdentityVerificationFailed, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SslIdentityVerificationFailed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientSecurity(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientSecurity(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientSecurity, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InsufficientSecurity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument1(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument1(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument1, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument2(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument2(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument2, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument3(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument3(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument3, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument4(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument4(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument4, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument4());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument5(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument5(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument5, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument6(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument6(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument6, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument6());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument7(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument7(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument7, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidArgument8(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidArgument8(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidArgument8, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InvalidArgument8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>
 {
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory> : produce_base<D, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>
 {
-    HRESULT __stdcall Create(int32_t status, void** result) noexcept final
+    int32_t WINRT_CALL Create(int32_t status, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs), int32_t);
             *result = detach_from<Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs>(this->shim().Create(status));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3596,191 +3238,191 @@ WINRT_EXPORT namespace winrt::Windows::Devices::AllJoyn {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(param::hstring const& uniqueName, Windows::Devices::AllJoyn::AllJoynBusAttachment const& busAttachment, uint16_t sessionPort)
 {
-    return get_activation_factory<AllJoynAboutDataView, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort);
+    return impl::call_factory<AllJoynAboutDataView, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>([&](auto&& f) { return f.GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> AllJoynAboutDataView::GetDataBySessionPortAsync(param::hstring const& uniqueName, Windows::Devices::AllJoyn::AllJoynBusAttachment const& busAttachment, uint16_t sessionPort, Windows::Globalization::Language const& language)
 {
-    return get_activation_factory<AllJoynAboutDataView, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>().GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language);
+    return impl::call_factory<AllJoynAboutDataView, Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>([&](auto&& f) { return f.GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language); });
 }
 
 inline AllJoynAcceptSessionJoinerEventArgs::AllJoynAcceptSessionJoinerEventArgs(param::hstring const& uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType const& trafficType, uint8_t proximity, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner const& acceptSessionJoiner) :
-    AllJoynAcceptSessionJoinerEventArgs(get_activation_factory<AllJoynAcceptSessionJoinerEventArgs, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>().Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner))
+    AllJoynAcceptSessionJoinerEventArgs(impl::call_factory<AllJoynAcceptSessionJoinerEventArgs, Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>([&](auto&& f) { return f.Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner); }))
 {}
 
 inline AllJoynBusAttachment::AllJoynBusAttachment() :
-    AllJoynBusAttachment(get_activation_factory<AllJoynBusAttachment>().ActivateInstance<AllJoynBusAttachment>())
+    AllJoynBusAttachment(impl::call_factory<AllJoynBusAttachment>([](auto&& f) { return f.template ActivateInstance<AllJoynBusAttachment>(); }))
 {}
 
 inline AllJoynBusAttachment::AllJoynBusAttachment(param::hstring const& connectionSpecification) :
-    AllJoynBusAttachment(get_activation_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>().Create(connectionSpecification))
+    AllJoynBusAttachment(impl::call_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>([&](auto&& f) { return f.Create(connectionSpecification); }))
 {}
 
 inline Windows::Devices::AllJoyn::AllJoynBusAttachment AllJoynBusAttachment::GetDefault()
 {
-    return get_activation_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>().GetDefault();
+    return impl::call_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher AllJoynBusAttachment::GetWatcher(param::iterable<hstring> const& requiredInterfaces)
 {
-    return get_activation_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>().GetWatcher(requiredInterfaces);
+    return impl::call_factory<AllJoynBusAttachment, Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>([&](auto&& f) { return f.GetWatcher(requiredInterfaces); });
 }
 
 inline AllJoynBusObject::AllJoynBusObject() :
-    AllJoynBusObject(get_activation_factory<AllJoynBusObject>().ActivateInstance<AllJoynBusObject>())
+    AllJoynBusObject(impl::call_factory<AllJoynBusObject>([](auto&& f) { return f.template ActivateInstance<AllJoynBusObject>(); }))
 {}
 
 inline AllJoynBusObject::AllJoynBusObject(param::hstring const& objectPath) :
-    AllJoynBusObject(get_activation_factory<AllJoynBusObject, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>().Create(objectPath))
+    AllJoynBusObject(impl::call_factory<AllJoynBusObject, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>([&](auto&& f) { return f.Create(objectPath); }))
 {}
 
 inline AllJoynBusObject::AllJoynBusObject(param::hstring const& objectPath, Windows::Devices::AllJoyn::AllJoynBusAttachment const& busAttachment) :
-    AllJoynBusObject(get_activation_factory<AllJoynBusObject, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>().CreateWithBusAttachment(objectPath, busAttachment))
+    AllJoynBusObject(impl::call_factory<AllJoynBusObject, Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>([&](auto&& f) { return f.CreateWithBusAttachment(objectPath, busAttachment); }))
 {}
 
 inline AllJoynBusObjectStoppedEventArgs::AllJoynBusObjectStoppedEventArgs(int32_t status) :
-    AllJoynBusObjectStoppedEventArgs(get_activation_factory<AllJoynBusObjectStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>().Create(status))
+    AllJoynBusObjectStoppedEventArgs(impl::call_factory<AllJoynBusObjectStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>([&](auto&& f) { return f.Create(status); }))
 {}
 
 inline AllJoynMessageInfo::AllJoynMessageInfo(param::hstring const& senderUniqueName) :
-    AllJoynMessageInfo(get_activation_factory<AllJoynMessageInfo, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>().Create(senderUniqueName))
+    AllJoynMessageInfo(impl::call_factory<AllJoynMessageInfo, Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>([&](auto&& f) { return f.Create(senderUniqueName); }))
 {}
 
 inline AllJoynProducerStoppedEventArgs::AllJoynProducerStoppedEventArgs(int32_t status) :
-    AllJoynProducerStoppedEventArgs(get_activation_factory<AllJoynProducerStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>().Create(status))
+    AllJoynProducerStoppedEventArgs(impl::call_factory<AllJoynProducerStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>([&](auto&& f) { return f.Create(status); }))
 {}
 
 inline AllJoynServiceInfo::AllJoynServiceInfo(param::hstring const& uniqueName, param::hstring const& objectPath, uint16_t sessionPort) :
-    AllJoynServiceInfo(get_activation_factory<AllJoynServiceInfo, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>().Create(uniqueName, objectPath, sessionPort))
+    AllJoynServiceInfo(impl::call_factory<AllJoynServiceInfo, Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>([&](auto&& f) { return f.Create(uniqueName, objectPath, sessionPort); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> AllJoynServiceInfo::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<AllJoynServiceInfo, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<AllJoynServiceInfo, Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline AllJoynServiceInfoRemovedEventArgs::AllJoynServiceInfoRemovedEventArgs(param::hstring const& uniqueName) :
-    AllJoynServiceInfoRemovedEventArgs(get_activation_factory<AllJoynServiceInfoRemovedEventArgs, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>().Create(uniqueName))
+    AllJoynServiceInfoRemovedEventArgs(impl::call_factory<AllJoynServiceInfoRemovedEventArgs, Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>([&](auto&& f) { return f.Create(uniqueName); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> AllJoynSession::GetFromServiceInfoAsync(Windows::Devices::AllJoyn::AllJoynServiceInfo const& serviceInfo)
 {
-    return get_activation_factory<AllJoynSession, Windows::Devices::AllJoyn::IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo);
+    return impl::call_factory<AllJoynSession, Windows::Devices::AllJoyn::IAllJoynSessionStatics>([&](auto&& f) { return f.GetFromServiceInfoAsync(serviceInfo); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> AllJoynSession::GetFromServiceInfoAsync(Windows::Devices::AllJoyn::AllJoynServiceInfo const& serviceInfo, Windows::Devices::AllJoyn::AllJoynBusAttachment const& busAttachment)
 {
-    return get_activation_factory<AllJoynSession, Windows::Devices::AllJoyn::IAllJoynSessionStatics>().GetFromServiceInfoAsync(serviceInfo, busAttachment);
+    return impl::call_factory<AllJoynSession, Windows::Devices::AllJoyn::IAllJoynSessionStatics>([&](auto&& f) { return f.GetFromServiceInfoAsync(serviceInfo, busAttachment); });
 }
 
 inline AllJoynSessionJoinedEventArgs::AllJoynSessionJoinedEventArgs(Windows::Devices::AllJoyn::AllJoynSession const& session) :
-    AllJoynSessionJoinedEventArgs(get_activation_factory<AllJoynSessionJoinedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>().Create(session))
+    AllJoynSessionJoinedEventArgs(impl::call_factory<AllJoynSessionJoinedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>([&](auto&& f) { return f.Create(session); }))
 {}
 
 inline AllJoynSessionLostEventArgs::AllJoynSessionLostEventArgs(Windows::Devices::AllJoyn::AllJoynSessionLostReason const& reason) :
-    AllJoynSessionLostEventArgs(get_activation_factory<AllJoynSessionLostEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>().Create(reason))
+    AllJoynSessionLostEventArgs(impl::call_factory<AllJoynSessionLostEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>([&](auto&& f) { return f.Create(reason); }))
 {}
 
 inline AllJoynSessionMemberAddedEventArgs::AllJoynSessionMemberAddedEventArgs(param::hstring const& uniqueName) :
-    AllJoynSessionMemberAddedEventArgs(get_activation_factory<AllJoynSessionMemberAddedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>().Create(uniqueName))
+    AllJoynSessionMemberAddedEventArgs(impl::call_factory<AllJoynSessionMemberAddedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>([&](auto&& f) { return f.Create(uniqueName); }))
 {}
 
 inline AllJoynSessionMemberRemovedEventArgs::AllJoynSessionMemberRemovedEventArgs(param::hstring const& uniqueName) :
-    AllJoynSessionMemberRemovedEventArgs(get_activation_factory<AllJoynSessionMemberRemovedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>().Create(uniqueName))
+    AllJoynSessionMemberRemovedEventArgs(impl::call_factory<AllJoynSessionMemberRemovedEventArgs, Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>([&](auto&& f) { return f.Create(uniqueName); }))
 {}
 
 inline int32_t AllJoynStatus::Ok()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().Ok();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.Ok(); });
 }
 
 inline int32_t AllJoynStatus::Fail()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().Fail();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.Fail(); });
 }
 
 inline int32_t AllJoynStatus::OperationTimedOut()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().OperationTimedOut();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.OperationTimedOut(); });
 }
 
 inline int32_t AllJoynStatus::OtherEndClosed()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().OtherEndClosed();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.OtherEndClosed(); });
 }
 
 inline int32_t AllJoynStatus::ConnectionRefused()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().ConnectionRefused();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.ConnectionRefused(); });
 }
 
 inline int32_t AllJoynStatus::AuthenticationFailed()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().AuthenticationFailed();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.AuthenticationFailed(); });
 }
 
 inline int32_t AllJoynStatus::AuthenticationRejectedByUser()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().AuthenticationRejectedByUser();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.AuthenticationRejectedByUser(); });
 }
 
 inline int32_t AllJoynStatus::SslConnectFailed()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().SslConnectFailed();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.SslConnectFailed(); });
 }
 
 inline int32_t AllJoynStatus::SslIdentityVerificationFailed()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().SslIdentityVerificationFailed();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.SslIdentityVerificationFailed(); });
 }
 
 inline int32_t AllJoynStatus::InsufficientSecurity()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InsufficientSecurity();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InsufficientSecurity(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument1()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument1();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument1(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument2()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument2();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument2(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument3()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument3();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument3(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument4()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument4();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument4(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument5()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument5();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument5(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument6()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument6();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument6(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument7()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument7();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument7(); });
 }
 
 inline int32_t AllJoynStatus::InvalidArgument8()
 {
-    return get_activation_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>().InvalidArgument8();
+    return impl::call_factory<AllJoynStatus, Windows::Devices::AllJoyn::IAllJoynStatusStatics>([&](auto&& f) { return f.InvalidArgument8(); });
 }
 
 inline AllJoynWatcherStoppedEventArgs::AllJoynWatcherStoppedEventArgs(int32_t status) :
-    AllJoynWatcherStoppedEventArgs(get_activation_factory<AllJoynWatcherStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>().Create(status))
+    AllJoynWatcherStoppedEventArgs(impl::call_factory<AllJoynWatcherStoppedEventArgs, Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>([&](auto&& f) { return f.Create(status); }))
 {}
 
 }
@@ -3853,5 +3495,3 @@ template<> struct hash<winrt::Windows::Devices::AllJoyn::AllJoynStatus> : winrt:
 template<> struct hash<winrt::Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs> : winrt::impl::hash_base<winrt::Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

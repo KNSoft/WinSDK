@@ -503,6 +503,25 @@ class MSFT_PhysicalDisk : MSFT_StorageFaultDomain {
         String ExtendedStatus
         );
 
+    //
+    // Method: SetAttributes2
+    //
+
+    UInt32 SetAttributes2(
+
+        [In]
+        UInt16 MediaType,
+
+        [In]
+        String StorageEnclosureId,
+
+        [In]
+        String StorageScaleUnitId,
+
+        [Out]
+        String ExtendedStatus
+        );
+
 
     //
     // Method: IsDeviceCacheEnabled

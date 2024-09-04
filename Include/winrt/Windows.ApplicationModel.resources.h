@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.resources.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -339,20 +347,12 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Resources {
-                /* [object, uuid("C33A3603-69DC-4285-A077-D5C0E47CCBE8"), exclusiveto, deprecated, contract] */
+                /* [object, uuid("C33A3603-69DC-4285-A077-D5C0E47CCBE8"), exclusiveto, contract] */
                 MIDL_INTERFACE("C33A3603-69DC-4285-A077-D5C0E47CCBE8")
-                
-                #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                DEPRECATED("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-                #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 IResourceLoaderFactory : public IInspectable
                 {
                 public:
-                    
-                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    DEPRECATED("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE CreateResourceLoaderByName(
+                    virtual HRESULT STDMETHODCALLTYPE CreateResourceLoaderByName(
                         /* [in] */__RPC__in HSTRING name,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::IResourceLoader * * loader
                         ) = 0;
@@ -389,20 +389,12 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Resources {
-                /* [object, uuid("BF777CE1-19C8-49C2-953C-47E9227B334E"), exclusiveto, deprecated, contract] */
+                /* [object, uuid("BF777CE1-19C8-49C2-953C-47E9227B334E"), exclusiveto, contract] */
                 MIDL_INTERFACE("BF777CE1-19C8-49C2-953C-47E9227B334E")
-                
-                #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                DEPRECATED("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-                #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                 IResourceLoaderStatics : public IInspectable
                 {
                 public:
-                    
-                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    DEPRECATED("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetStringForReference(
+                    virtual HRESULT STDMETHODCALLTYPE GetStringForReference(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
@@ -762,12 +754,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CIResourceL
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_IResourceLoaderFactory[] = L"Windows.ApplicationModel.Resources.IResourceLoaderFactory";
-/* [object, uuid("C33A3603-69DC-4285-A077-D5C0E47CCBE8"), exclusiveto, deprecated, contract] */
-typedef struct 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-__x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactoryVtbl
+/* [object, uuid("C33A3603-69DC-4285-A077-D5C0E47CCBE8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactoryVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -800,11 +788,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *CreateResourceLoaderByName )(
+HRESULT ( STDMETHODCALLTYPE *CreateResourceLoaderByName )(
         __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory * This,
         /* [in] */__RPC__in HSTRING name,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoader * * loader
@@ -837,10 +821,6 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory
 #define __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderFactory_CreateResourceLoaderByName(This,name,loader) \
     ( (This)->lpVtbl->CreateResourceLoaderByName(This,name,loader) )
 
@@ -868,12 +848,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CIResourceL
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_IResourceLoaderStatics[] = L"Windows.ApplicationModel.Resources.IResourceLoaderStatics";
-/* [object, uuid("BF777CE1-19C8-49C2-953C-47E9227B334E"), exclusiveto, deprecated, contract] */
-typedef struct 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-__x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStaticsVtbl
+/* [object, uuid("BF777CE1-19C8-49C2-953C-47E9227B334E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -906,11 +882,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetStringForReference )(
+HRESULT ( STDMETHODCALLTYPE *GetStringForReference )(
         __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uri,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
@@ -943,10 +915,6 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics
 #define __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CIResourceLoaderStatics_GetStringForReference(This,uri,value) \
     ( (This)->lpVtbl->GetStringForReference(This,uri,value) )
 

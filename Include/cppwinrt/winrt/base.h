@@ -1,56 +1,9 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
-
-#ifndef WINRT_HAS_CXX17
-#if defined(_MSVC_LANG)
-#if _MSVC_LANG > 201402
-#define WINRT_HAS_CXX17	1
-#else
-#define WINRT_HAS_CXX17	0
-#endif
-#else
-#if __cplusplus > 201402
-#define WINRT_HAS_CXX17	1
-#els
-#define WINRT_HAS_CXX17	0
-#endif
-#endif
-#endif
-#if !WINRT_HAS_CXX17
-#error C++/WinRT requires language features only available with C++17.
-#endif 
-#undef WINRT_HAS_CXX17
-
-#if defined(_MSC_FULL_VER) && _MSC_FULL_VER < 191125506
-#define WINRT_STRINGIZE_(x) #x
-#define WINRT_STRINGIZE(x) WINRT_STRINGIZE_(x)
-#pragma message(__FILE__ "(" WINRT_STRINGIZE(__LINE__) ") : warning: Visual Studio 2017 version 15.3 or later is recommended.")
-#endif
-
-#if defined(__clang__) 
-#define WINRT_WARNING_PUSH \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
-_Pragma("clang diagnostic ignored \"-Wdeprecated-implementations\"")
-#define WINRT_WARNING_POP \
-_Pragma("clang diagnostic pop")
-#else
-#define WINRT_WARNING_PUSH \
-__pragma(warning(push)) \
-__pragma(warning(disable: 4996))
-#define WINRT_WARNING_POP \
-__pragma(warning(pop))
-#endif
-
-WINRT_WARNING_PUSH
-
-#include <restrictederrorinfo.h>
-#include <winstring.h>
-#include <ctxtcall.h>
 
 #include <algorithm>
 #include <array>
@@ -59,6 +12,7 @@ WINRT_WARNING_PUSH
 #include <clocale>
 #include <cstddef>
 #include <iterator>
+#include <limits>
 #include <map>
 #include <memory>
 #include <new>
@@ -74,76 +28,18 @@ WINRT_WARNING_PUSH
 #include <vector>
 #include <experimental/coroutine>
 
-extern "C"
-{
-    HRESULT __stdcall WINRT_GetRestrictedErrorInfo(IRestrictedErrorInfo** info) noexcept;
-    HRESULT __stdcall WINRT_RoGetActivationFactory(HSTRING classId, GUID const& iid, void** factory) noexcept;
-    HRESULT __stdcall WINRT_RoInitialize(uint32_t type) noexcept;
-    BOOL    __stdcall WINRT_RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* exception) noexcept;
-    void    __stdcall WINRT_RoUninitialize() noexcept;
-    HRESULT __stdcall WINRT_SetRestrictedErrorInfo(IRestrictedErrorInfo* info) noexcept;
-    HRESULT __stdcall WINRT_RoGetAgileReference(uint32_t options, GUID const& iid, void* object, void** reference) noexcept;
-}
-
-#ifdef _M_IX86
-#pragma comment(linker, "/alternatename:_WINRT_GetRestrictedErrorInfo@4=_GetRestrictedErrorInfo@4")
-#pragma comment(linker, "/alternatename:_WINRT_RoGetActivationFactory@12=_RoGetActivationFactory@12")
-#pragma comment(linker, "/alternatename:_WINRT_RoInitialize@4=_RoInitialize@4")
-#pragma comment(linker, "/alternatename:_WINRT_RoOriginateLanguageException@12=_RoOriginateLanguageException@12")
-#pragma comment(linker, "/alternatename:_WINRT_RoUninitialize@0=_RoUninitialize@0")
-#pragma comment(linker, "/alternatename:_WINRT_SetRestrictedErrorInfo@4=_SetRestrictedErrorInfo@4")
-#pragma comment(linker, "/alternatename:_WINRT_RoGetAgileReference@16=_RoGetAgileReference@16")
-#else
-#pragma comment(linker, "/alternatename:WINRT_GetRestrictedErrorInfo=GetRestrictedErrorInfo")
-#pragma comment(linker, "/alternatename:WINRT_RoGetActivationFactory=RoGetActivationFactory")
-#pragma comment(linker, "/alternatename:WINRT_RoInitialize=RoInitialize")
-#pragma comment(linker, "/alternatename:WINRT_RoOriginateLanguageException=RoOriginateLanguageException")
-#pragma comment(linker, "/alternatename:WINRT_RoUninitialize=RoUninitialize")
-#pragma comment(linker, "/alternatename:WINRT_SetRestrictedErrorInfo=SetRestrictedErrorInfo")
-#pragma comment(linker, "/alternatename:WINRT_RoGetAgileReference=RoGetAgileReference")
-#endif
-
-namespace winrt::impl
-{
-    using namespace std::literals;
-}
-
-#ifdef _DEBUG
-
-#define WINRT_ASSERT _ASSERTE
-#define WINRT_VERIFY WINRT_ASSERT
-#define WINRT_VERIFY_(result, expression) WINRT_ASSERT(result == expression)
-
-template <typename... Args>
-void WINRT_TRACE(char const* const message, Args... args) noexcept
-{
-    char buffer[1024];
-    (void)snprintf(buffer, sizeof(buffer), message, args...);
-    OutputDebugStringA(buffer);
-}
-
-#else
-
-#define WINRT_ASSERT __noop
-#define WINRT_VERIFY(expression) (void)(expression)
-#define WINRT_VERIFY_(result, expression) (void)(expression)
-#define WINRT_TRACE __noop
-
+#if __has_include(<WindowsNumerics.impl.h>)
+#define WINRT_NUMERICS
+#include <directxmath.h>
 #endif
 
 #ifndef WINRT_EXPORT
 #define WINRT_EXPORT
+#else
+export module winrt;
 #endif
 
-#define WINRT_EBO __declspec(empty_bases)
-
-#ifdef _WIN64
-#define WINRT_64
-#endif
-
-#if defined(_MSC_VER) && _ITERATOR_DEBUG_LEVEL != 0
-#define WINRT_CHECKED_ITERATORS
-#endif
+#ifdef WINRT_NUMERICS
 
 #define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
 #define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ WINRT_EXPORT namespace winrt::Windows::Foundation::Numerics
@@ -153,9 +49,6 @@ void WINRT_TRACE(char const* const message, Args... args) noexcept
 #define _XM_NO_INTRINSICS_
 #endif
 
-#if !__has_include(<WindowsNumerics.impl.h>)
-static_assert(false, "Please target platform version 10.0.14393.0 or later.");
-#endif
 #include <WindowsNumerics.impl.h>
 
 #ifdef __clang__
@@ -166,16 +59,429 @@ static_assert(false, "Please target platform version 10.0.14393.0 or later.");
 #undef _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
 #undef _WINDOWS_NUMERICS_END_NAMESPACE_
 
-#define WINRT_SHIM(Type) (*(abi_t<Type>**)&static_cast<Type const&>(static_cast<D const&>(*this)))
+#endif
 
-#undef GetCurrentTime
+#ifdef _DEBUG
+
+#define WINRT_ASSERT _ASSERTE
+#define WINRT_VERIFY WINRT_ASSERT
+#define WINRT_VERIFY_(result, expression) WINRT_ASSERT(result == expression)
+
+#else
+
+#define WINRT_ASSERT(expression) ((void)0)
+#define WINRT_VERIFY(expression) (void)(expression)
+#define WINRT_VERIFY_(result, expression) (void)(expression)
+
+#endif
+
+#if defined(_MSC_VER)
+#define WINRT_EBO __declspec(empty_bases)
+#define WINRT_NOVTABLE __declspec(novtable)
+#define WINRT_CALL __stdcall
+#define WINRT_NOINLINE  __declspec(noinline)
+#define WINRT_FORCEINLINE __forceinline
+#else
+#define WINRT_EBO
+#define WINRT_NOVTABLE
+#define WINRT_CALL
+#define WINRT_NOINLINE
+#define WINRT_FORCEINLINE
+#endif
+
+#if defined(_MSC_VER) && _ITERATOR_DEBUG_LEVEL != 0
+#define WINRT_CHECKED_ITERATORS
+#endif
+
+#define WINRT_SHIM(...) (*(abi_t<__VA_ARGS__>**)&static_cast<__VA_ARGS__ const&>(static_cast<D const&>(*this)))
 
 #ifndef WINRT_EXTERNAL_CATCH_CLAUSE
 #define WINRT_EXTERNAL_CATCH_CLAUSE
 #endif
 
+#if defined(_MSC_VER)
+#ifdef _M_HYBRID
+#define WINRT_LINK(function, count) __pragma(comment(linker, "/alternatename:#WINRT_" #function "@" #count "=#" #function "@" #count))
+#elif _M_IX86
+#define WINRT_LINK(function, count) __pragma(comment(linker, "/alternatename:_WINRT_" #function "@" #count "=_" #function "@" #count))
+#else
+#define WINRT_LINK(function, count) __pragma(comment(linker, "/alternatename:WINRT_" #function "=" #function))
+#endif
+#else
+#define WINRT_LINK(function, count)
+#endif
+
+#if defined _M_ARM
+#define WINRT_INTERLOCKED_READ_MEMORY_BARRIER (__dmb(_ARM_BARRIER_ISH));
+#elif defined _M_ARM64
+#define WINRT_INTERLOCKED_READ_MEMORY_BARRIER (__dmb(_ARM64_BARRIER_ISH));
+#endif
+
+#ifdef __IUnknown_INTERFACE_DEFINED__
+#define WINRT_WINDOWS_ABI
+
 namespace winrt::impl
 {
+    using hresult_type = long;
+    using ref_count_type = unsigned long;
+}
+
+#else
+
+namespace winrt::impl
+{
+    using hresult_type = int32_t;
+    using ref_count_type = uint32_t;
+}
+
+#endif
+
+#if defined(_DEBUG) && defined(_MSC_VER) && !defined(__clang__)
+
+namespace winrt::impl
+{
+    template <typename L, typename T, typename...Args>
+    using invoker_t = decltype(std::declval<L>()(std::declval<T>(), std::declval<Args>()...));
+}
+
+#define WINRT_WRAP(...) __VA_ARGS__
+
+#define WINRT_ASSERT_DECLARATION(M, R, ...) WINRT_ASSERT_DECLARATION_(M, R, __VA_ARGS__)
+
+#define WINRT_ASSERT_DECLARATION_(M, R, ...) \
+{ \
+    auto invocation = [](auto&& d, auto&&... params) -> decltype((R)d.M(params...)) {}; \
+    static_assert(winrt::impl::is_detected_v<winrt::impl::invoker_t, decltype(invocation), D, __VA_ARGS__>, \
+        "\n\n\tC++/WinRT: Could not find method in implementation class:\n\t\t" #R " " #M "(" #__VA_ARGS__ ");\n"); \
+}
+
+#else
+
+#define WINRT_ASSERT_DECLARATION(...) ((void)0)
+
+#endif
+
+#if defined(__clang__) 
+
+#define WINRT_WARNING_PUSH \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
+
+#define WINRT_WARNING_POP \
+_Pragma("clang diagnostic pop")
+
+#else
+
+#define WINRT_WARNING_PUSH
+#define WINRT_WARNING_POP
+
+#endif
+
+namespace winrt::impl
+{
+    using ptp_io = struct tp_io*;
+    using ptp_timer = struct tp_timer*;
+    using ptp_wait = struct tp_wait*;
+    using srwlock = struct srwlock_*;
+    using condition_variable = struct condition_variable_*;
+    using bstr = wchar_t*;
+
+    inline bool is_guid_equal(uint32_t const* const left, uint32_t const* const right) noexcept
+    {
+        return left[0] == right[0] && left[1] == right[1] && left[2] == right[2] && left[3] == right[3];
+    }
+}
+
+WINRT_EXPORT namespace winrt
+{
+    struct guid
+    {
+        uint32_t Data1;
+        uint16_t Data2;
+        uint16_t Data3;
+        uint8_t  Data4[8];
+
+        guid() noexcept = default;
+
+        constexpr guid(uint32_t const Data1, uint16_t const Data2, uint16_t const Data3, std::array<uint8_t, 8> const& Data4) noexcept :
+            Data1(Data1),
+            Data2(Data2),
+            Data3(Data3),
+            Data4{ Data4[0], Data4[1], Data4[2], Data4[3], Data4[4], Data4[5], Data4[6], Data4[7] }
+        {
+        }
+
+#ifdef WINRT_WINDOWS_ABI
+
+        constexpr guid(GUID const& value) noexcept :
+            Data1(value.Data1),
+            Data2(value.Data2),
+            Data3(value.Data3),
+            Data4{ value.Data4[0], value.Data4[1], value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7] }
+        {
+
+        }
+
+        operator GUID const&() const noexcept
+        {
+            return reinterpret_cast<GUID const&>(*this);
+        }
+
+#endif
+    };
+
+    inline bool operator==(guid const& left, guid const& right) noexcept
+    {
+        return impl::is_guid_equal(reinterpret_cast<uint32_t const*>(&left), reinterpret_cast<uint32_t const*>(&right));
+    }
+
+    inline bool operator!=(guid const& left, guid const& right) noexcept
+    {
+        return !(left == right);
+    }
+}
+
+extern "C"
+{
+    int32_t WINRT_CALL WINRT_GetRestrictedErrorInfo(void** info) noexcept;
+    int32_t WINRT_CALL WINRT_RoGetActivationFactory(void* classId, winrt::guid const& iid, void** factory) noexcept;
+    int32_t WINRT_CALL WINRT_RoInitialize(uint32_t type) noexcept;
+    int32_t WINRT_CALL WINRT_RoOriginateLanguageException(int32_t error, void* message, void* exception) noexcept;
+    void    WINRT_CALL WINRT_RoUninitialize() noexcept;
+    int32_t WINRT_CALL WINRT_SetRestrictedErrorInfo(void* info) noexcept;
+    int32_t WINRT_CALL WINRT_RoGetAgileReference(uint32_t options, winrt::guid const& iid, void* object, void** reference) noexcept;
+    int32_t WINRT_CALL WINRT_CoIncrementMTAUsage(void** cookie) noexcept;
+
+    int32_t WINRT_CALL WINRT_WindowsCreateString(wchar_t const* sourceString, uint32_t length, void** string) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsCreateStringReference(wchar_t const* sourceString, uint32_t length, void* hstringHeader, void** string) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsDuplicateString(void* string, void** newString) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsDeleteString(void* string) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsStringHasEmbeddedNull(void* string, int* hasEmbedNull) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsPreallocateStringBuffer(uint32_t length, wchar_t** charBuffer, void** bufferHandle) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsDeleteStringBuffer(void* bufferHandle) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsPromoteStringBuffer(void* bufferHandle, void** string) noexcept;
+    int32_t WINRT_CALL WINRT_WindowsConcatString(void* string1, void* string2, void** newString) noexcept;
+    wchar_t const* WINRT_CALL WINRT_WindowsGetStringRawBuffer(void* string, uint32_t* length) noexcept;
+    uint32_t WINRT_CALL WINRT_WindowsGetStringLen(void* string) noexcept;
+
+    int32_t  WINRT_CALL WINRT_CoCreateFreeThreadedMarshaler(void* outer, void** marshaler) noexcept;
+    int32_t  WINRT_CALL WINRT_CoCreateInstance(winrt::guid const& clsid, void* outer, uint32_t context, winrt::guid const& iid, void** object) noexcept;
+    int32_t  WINRT_CALL WINRT_CoGetCallContext(winrt::guid const& iid, void** object) noexcept;
+    int32_t  WINRT_CALL WINRT_CoGetObjectContext(winrt::guid const& iid, void** object) noexcept;
+    int32_t  WINRT_CALL WINRT_CoGetApartmentType(int32_t* type, int32_t* qualifier) noexcept;
+    void*    WINRT_CALL WINRT_CoTaskMemAlloc(std::size_t size) noexcept;
+    void     WINRT_CALL WINRT_CoTaskMemFree(void* ptr) noexcept;
+    void     WINRT_CALL WINRT_SysFreeString(winrt::impl::bstr string) noexcept;
+    uint32_t WINRT_CALL WINRT_SysStringLen(winrt::impl::bstr string) noexcept;
+    int32_t  WINRT_CALL WINRT_IIDFromString(wchar_t const* string, winrt::guid* iid) noexcept;
+    int32_t  WINRT_CALL WINRT_CloseHandle(void* hObject) noexcept;
+    int32_t  WINRT_CALL WINRT_MultiByteToWideChar(uint32_t codepage, uint32_t flags, char const* in_string, int32_t in_size, wchar_t* out_string, int32_t out_size) noexcept;
+    int32_t  WINRT_CALL WINRT_WideCharToMultiByte(uint32_t codepage, uint32_t flags, wchar_t const* int_string, int32_t in_size, char* out_string, int32_t out_size, char const* default_char, int32_t* default_used) noexcept;
+    int32_t  WINRT_CALL WINRT_HeapFree(void* heap, uint32_t flags, void* value) noexcept;
+    void*    WINRT_CALL WINRT_GetProcessHeap() noexcept;
+    uint32_t WINRT_CALL WINRT_FormatMessageW(uint32_t flags, void const* source, uint32_t code, uint32_t language, wchar_t* buffer, uint32_t size, va_list* arguments) noexcept;
+    uint32_t WINRT_CALL WINRT_GetLastError() noexcept;
+    void     WINRT_CALL WINRT_GetSystemTimePreciseAsFileTime(void* result) noexcept;
+
+    int32_t  WINRT_CALL WINRT_OpenProcessToken(void* process, uint32_t access, void** token) noexcept;
+    void*    WINRT_CALL WINRT_GetCurrentProcess() noexcept;
+    int32_t  WINRT_CALL WINRT_DuplicateToken(void* existing, uint32_t level, void** duplicate) noexcept;
+    int32_t  WINRT_CALL WINRT_OpenThreadToken(void* thread, uint32_t access, int32_t self, void** token) noexcept;
+    void*    WINRT_CALL WINRT_GetCurrentThread() noexcept;
+    int32_t  WINRT_CALL WINRT_SetThreadToken(void** thread, void* token) noexcept;
+
+    void    WINRT_CALL WINRT_AcquireSRWLockExclusive(winrt::impl::srwlock* lock) noexcept;
+    void    WINRT_CALL WINRT_AcquireSRWLockShared(winrt::impl::srwlock* lock) noexcept;
+    uint8_t WINRT_CALL WINRT_TryAcquireSRWLockExclusive(winrt::impl::srwlock* lock) noexcept;
+    uint8_t WINRT_CALL WINRT_TryAcquireSRWLockShared(winrt::impl::srwlock* lock) noexcept;
+    void    WINRT_CALL WINRT_ReleaseSRWLockExclusive(winrt::impl::srwlock* lock) noexcept;
+    void    WINRT_CALL WINRT_ReleaseSRWLockShared(winrt::impl::srwlock* lock) noexcept;
+    int32_t WINRT_CALL WINRT_SleepConditionVariableSRW(winrt::impl::condition_variable* cv, winrt::impl::srwlock* lock, uint32_t milliseconds, uint32_t flags) noexcept;
+    void    WINRT_CALL WINRT_WakeConditionVariable(winrt::impl::condition_variable* cv) noexcept;
+    void    WINRT_CALL WINRT_WakeAllConditionVariable(winrt::impl::condition_variable* cv) noexcept;
+    void    WINRT_CALL WINRT_InitializeSListHead(void* head) noexcept;
+    void*   WINRT_CALL WINRT_InterlockedPushEntrySList(void* head, void* entry) noexcept;
+    void*   WINRT_CALL WINRT_InterlockedFlushSList(void* head) noexcept;
+
+    uint32_t WINRT_CALL WINRT_WaitForSingleObject(void* handle, uint32_t milliseconds) noexcept;
+    int32_t  WINRT_CALL WINRT_TrySubmitThreadpoolCallback(void(WINRT_CALL *callback)(void*, void* context), void* context, void*) noexcept;
+    winrt::impl::ptp_timer WINRT_CALL WINRT_CreateThreadpoolTimer(void(WINRT_CALL *callback)(void*, void* context, void*), void* context, void*) noexcept;
+    void     WINRT_CALL WINRT_SetThreadpoolTimer(winrt::impl::ptp_timer timer, void* time, uint32_t period, uint32_t window) noexcept;
+    void     WINRT_CALL WINRT_CloseThreadpoolTimer(winrt::impl::ptp_timer timer) noexcept;
+    winrt::impl::ptp_wait WINRT_CALL WINRT_CreateThreadpoolWait(void(WINRT_CALL *callback)(void*, void* context, void*, uint32_t result), void* context, void*) noexcept;
+    void     WINRT_CALL WINRT_SetThreadpoolWait(winrt::impl::ptp_wait wait, void* handle, void* timeout) noexcept;
+    void     WINRT_CALL WINRT_CloseThreadpoolWait(winrt::impl::ptp_wait wait) noexcept;
+    winrt::impl::ptp_io WINRT_CALL WINRT_CreateThreadpoolIo(void* object, void(WINRT_CALL *callback)(void*, void* context, void* overlapped, uint32_t result, std::size_t bytes, void*) noexcept, void* context, void*) noexcept;
+    void     WINRT_CALL WINRT_StartThreadpoolIo(winrt::impl::ptp_io io) noexcept;
+    void     WINRT_CALL WINRT_CancelThreadpoolIo(winrt::impl::ptp_io io) noexcept;
+    void     WINRT_CALL WINRT_CloseThreadpoolIo(winrt::impl::ptp_io io) noexcept;
+
+    int32_t WINRT_CALL WINRT_CanUnloadNow() noexcept;
+    int32_t WINRT_CALL WINRT_GetActivationFactory(void* classId, void** factory) noexcept;
+}
+
+WINRT_LINK(GetRestrictedErrorInfo, 4)
+WINRT_LINK(RoGetActivationFactory, 12)
+WINRT_LINK(RoInitialize, 4)
+WINRT_LINK(RoOriginateLanguageException, 12)
+WINRT_LINK(RoUninitialize, 0)
+WINRT_LINK(SetRestrictedErrorInfo, 4)
+WINRT_LINK(RoGetAgileReference, 16)
+WINRT_LINK(CoIncrementMTAUsage, 4)
+
+WINRT_LINK(WindowsCreateString, 12)
+WINRT_LINK(WindowsCreateStringReference, 16)
+WINRT_LINK(WindowsDuplicateString, 8)
+WINRT_LINK(WindowsDeleteString, 4)
+WINRT_LINK(WindowsStringHasEmbeddedNull, 8)
+WINRT_LINK(WindowsPreallocateStringBuffer, 12)
+WINRT_LINK(WindowsDeleteStringBuffer, 4)
+WINRT_LINK(WindowsPromoteStringBuffer, 8)
+WINRT_LINK(WindowsConcatString, 12)
+WINRT_LINK(WindowsGetStringRawBuffer, 8)
+WINRT_LINK(WindowsGetStringLen, 4)
+
+WINRT_LINK(CoCreateFreeThreadedMarshaler, 8)
+WINRT_LINK(CoCreateInstance, 20)
+WINRT_LINK(CoGetCallContext, 8)
+WINRT_LINK(CoGetObjectContext, 8)
+WINRT_LINK(CoGetApartmentType, 8)
+WINRT_LINK(CoTaskMemAlloc, 4)
+WINRT_LINK(CoTaskMemFree, 4)
+WINRT_LINK(SysFreeString, 4)
+WINRT_LINK(SysStringLen, 4)
+WINRT_LINK(IIDFromString, 8)
+WINRT_LINK(CloseHandle, 4)
+WINRT_LINK(MultiByteToWideChar, 24)
+WINRT_LINK(WideCharToMultiByte, 32)
+WINRT_LINK(HeapFree, 12)
+WINRT_LINK(GetProcessHeap, 0)
+WINRT_LINK(FormatMessageW, 28)
+WINRT_LINK(GetLastError, 0)
+WINRT_LINK(GetSystemTimePreciseAsFileTime, 4)
+
+WINRT_LINK(OpenProcessToken, 12)
+WINRT_LINK(GetCurrentProcess, 0)
+WINRT_LINK(DuplicateToken, 12)
+WINRT_LINK(OpenThreadToken, 16)
+WINRT_LINK(GetCurrentThread, 0)
+WINRT_LINK(SetThreadToken, 8)
+
+WINRT_LINK(AcquireSRWLockExclusive, 4)
+WINRT_LINK(AcquireSRWLockShared, 4)
+WINRT_LINK(TryAcquireSRWLockExclusive, 4)
+WINRT_LINK(TryAcquireSRWLockShared, 4)
+WINRT_LINK(ReleaseSRWLockExclusive, 4)
+WINRT_LINK(ReleaseSRWLockShared, 4)
+WINRT_LINK(SleepConditionVariableSRW, 16)
+WINRT_LINK(WakeConditionVariable, 4)
+WINRT_LINK(WakeAllConditionVariable, 4)
+WINRT_LINK(InitializeSListHead, 4)
+WINRT_LINK(InterlockedPushEntrySList, 8)
+WINRT_LINK(InterlockedFlushSList, 4)
+
+WINRT_LINK(WaitForSingleObject, 8)
+WINRT_LINK(TrySubmitThreadpoolCallback, 12)
+WINRT_LINK(CreateThreadpoolTimer, 12)
+WINRT_LINK(SetThreadpoolTimer, 16)
+WINRT_LINK(CloseThreadpoolTimer, 4)
+WINRT_LINK(CreateThreadpoolWait, 12)
+WINRT_LINK(SetThreadpoolWait, 12)
+WINRT_LINK(CloseThreadpoolWait, 4)
+WINRT_LINK(CreateThreadpoolIo, 16)
+WINRT_LINK(StartThreadpoolIo, 4)
+WINRT_LINK(CancelThreadpoolIo, 4)
+WINRT_LINK(CloseThreadpoolIo, 4)
+
+WINRT_EXPORT namespace winrt::Windows::Foundation
+{
+    enum class AsyncStatus : int32_t
+    {
+        Started,
+        Completed,
+        Canceled,
+        Error,
+    };
+
+    enum class TrustLevel : int32_t
+    {
+        BaseTrust,
+        PartialTrust,
+        FullTrust
+    };
+
+    struct IUnknown;
+    struct IInspectable;
+    struct IActivationFactory;
+    struct IAsyncInfo;
+    struct IAsyncAction;
+    struct AsyncActionCompletedHandler;
+    template <typename T> struct IReference;
+    template <typename T> struct IReferenceArray;
+    template <typename TResult> struct AsyncOperationCompletedHandler;
+    template <typename TProgress> struct AsyncActionProgressHandler;
+    template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
+    template <typename TResult> struct IAsyncOperation;
+    template <typename TProgress> struct IAsyncActionWithProgress;
+    template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
+    template <typename T> struct EventHandler;
+    template <typename TSender, typename TArgs> struct TypedEventHandler;
+}
+
+WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
+{
+    enum class CollectionChange : int32_t
+    {
+        Reset,
+        ItemInserted,
+        ItemRemoved,
+        ItemChanged,
+    };
+
+    struct IVectorChangedEventArgs;
+    template <typename K> struct IMapChangedEventArgs;
+    template <typename T> struct VectorChangedEventHandler;
+    template <typename K, typename V> struct MapChangedEventHandler;
+    template <typename T> struct IIterator;
+    template <typename T> struct IIterable;
+    template <typename T> struct IVectorView;
+    template <typename T> struct IVector;
+    template <typename T> struct IObservableVector;
+    template <typename K, typename V> struct IKeyValuePair;
+    template <typename K, typename V> struct IMapView;
+    template <typename K, typename V> struct IMap;
+    template <typename K, typename V> struct IObservableMap;
+}
+
+WINRT_EXPORT namespace winrt
+{
+    struct hresult
+    {
+        int32_t value{};
+
+        constexpr hresult() noexcept = default;
+
+        constexpr hresult(int32_t const value) noexcept : value(value)
+        {
+        }
+
+        constexpr operator int32_t() const noexcept
+        {
+            return value;
+        }
+    };
+
+    template <typename T>
+    using optional = Windows::Foundation::IReference<T>;
+}
+
+namespace winrt::impl
+{
+    using namespace std::literals;
+    namespace wfc = Windows::Foundation::Collections;
+
     template <typename T>
     struct identity
     {
@@ -203,17 +509,11 @@ namespace winrt::impl
     template <typename T, typename H>
     using delegate_t = typename delegate<T>::template type<H>;
 
-    template <typename D, typename I>
-    struct produce;
-
     template <typename T, typename = std::void_t<>>
     struct default_interface
     {
         using type = T;
     };
-
-    template <typename T>
-    using default_interface_t = typename default_interface<T>::type;
 
     struct basic_category;
     struct interface_category;
@@ -231,7 +531,7 @@ namespace winrt::impl
     using category_t = typename category<T>::type;
 
     template <typename T>
-    constexpr bool has_category_v = !std::is_same_v<category_t<T>, void>;
+    inline constexpr bool has_category_v = !std::is_same_v<category_t<T>, void>;
 
     template <typename... Args>
     struct pinterface_category;
@@ -249,21 +549,33 @@ namespace winrt::impl
     };
 
     template <typename T>
-    struct guid
+    struct missing_guid_of
     {
-        static constexpr GUID value = __uuidof(T);
+        static constexpr bool value{};
     };
 
-#ifdef __clang__
     template <typename T>
-    constexpr GUID const guid_v = guid<default_interface_t<T>>::value;
+    struct missing_guid
+    {
+        static_assert(missing_guid_of<T>::value, "Support for non-WinRT interfaces is disabled. To enable, simply #include <unknwn.h> before any C++/WinRT headers.");
+    };
+
+#ifdef WINRT_WINDOWS_ABI
+    template <typename T>
+    struct guid_storage
+    {
+        static constexpr guid value{ __uuidof(T) };
+    };
+#else
+    template <typename T>
+    struct guid_storage : missing_guid<T> {};
 #endif
 
     template <typename T>
     struct is_enum_flag : std::false_type {};
 
     template <typename T>
-    constexpr bool is_enum_flag_v = is_enum_flag<T>::value;
+    inline constexpr bool is_enum_flag_v = is_enum_flag<T>::value;
 
     template <typename T>
     constexpr auto to_underlying_type(T const value) noexcept
@@ -278,84 +590,14 @@ namespace winrt::impl
     struct is_implements<T, std::void_t<typename T::implements_type>> : std::true_type {};
 
     template <typename T>
-    constexpr bool is_implements_v = is_implements<T>::value;
-}
+    inline constexpr bool is_implements_v = is_implements<T>::value;
 
-template <typename T>
-constexpr auto operator|(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    return static_cast<T>(winrt::impl::to_underlying_type(left) | winrt::impl::to_underlying_type(right));
-}
-
-template <typename T>
-constexpr auto operator|=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    left = left | right;
-    return left;
-}
-
-template <typename T>
-constexpr auto operator&(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    return static_cast<T>(winrt::impl::to_underlying_type(left) & winrt::impl::to_underlying_type(right));
-}
-
-template <typename T>
-constexpr auto operator&=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    left = left & right;
-    return left;
-}
-
-template <typename T>
-constexpr auto operator~(T const value) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    return static_cast<T>(~winrt::impl::to_underlying_type(value));
-}
-
-template <typename T>
-constexpr auto operator^(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    return static_cast<T>(winrt::impl::to_underlying_type(left) ^ winrt::impl::to_underlying_type(right));
-}
-
-template <typename T>
-constexpr auto operator^=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
-{
-    left = left ^ right;
-    return left;
-}
-
-WINRT_EXPORT namespace winrt
-{
-    template <typename T>
-    constexpr GUID const& guid_of() noexcept
-    {
-#ifdef __clang__
-        return impl::guid_v<T>;
-#else
-        return impl::guid<impl::default_interface_t<T>>::value;
-#endif
-    }
-
-    struct event_token;
-}
-
-namespace winrt::impl
-{
     template <typename D, typename I>
     struct require_one : consume_t<D, I>
     {
         operator I() const noexcept
         {
-            D const& d = *static_cast<D const*>(this);
-
-            if (d)
-            {
-                return d.template try_as<I>();
-            }
-
-            return nullptr;
+            return static_cast<D const*>(this)->template try_as<I>();
         }
     };
 
@@ -368,14 +610,7 @@ namespace winrt::impl
     {
         operator I() const noexcept
         {
-            D const& d = *static_cast<D const*>(this);
-
-            if (d)
-            {
-                return d.template try_as<I>();
-            }
-
-            return nullptr;
+            return static_cast<D const*>(this)->template try_as<I>();
         }
     };
 
@@ -384,15 +619,156 @@ namespace winrt::impl
     {};
 
     template <typename T>
-    class no_ref : public T
+    T empty_value() noexcept
     {
-        unsigned long __stdcall AddRef() noexcept;
-        unsigned long __stdcall Release() noexcept;
+        if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
+        {
+            return nullptr;
+        }
+        else
+        {
+            return {};
+        }
+    }
+
+    template <typename T, typename Enable = void>
+    struct arg
+    {
+        using in = abi_t<T>;
     };
+
+    template <typename T>
+    struct arg<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    {
+        using in = void*;
+    };
+
+    template <typename T>
+    using arg_in = typename arg<T>::in;
+
+    template <typename T>
+    using arg_out = arg_in<T>*;
+
+    template <template <typename...> typename Trait, typename Enabler, typename... Args>
+    struct is_detected : std::false_type {};
+
+    template <template <typename...> typename Trait, typename... Args>
+    struct is_detected<Trait, std::void_t<Trait<Args...>>, Args...> : std::true_type {};
+
+    template <template <typename...> typename Trait, typename... Args>
+    inline constexpr bool is_detected_v = std::is_same_v<typename is_detected<Trait, void, Args...>::type, std::true_type>;
+
+    template <typename ... Types>
+    struct typelist {};
+
+    template <typename ... Lists>
+    struct typelist_concat;
+
+    template <>
+    struct typelist_concat<> { using type = winrt::impl::typelist<>; };
+
+    template <typename ... List>
+    struct typelist_concat<winrt::impl::typelist<List...>> { using type = winrt::impl::typelist<List...>; };
+
+    template <typename ... List1, typename ... List2, typename ... Rest>
+    struct typelist_concat<winrt::impl::typelist<List1...>, winrt::impl::typelist<List2...>, Rest...>
+        : typelist_concat<winrt::impl::typelist<List1..., List2...>, Rest...>
+    {};
+
+    template <typename T>
+    struct for_each;
+
+    template <typename ... Types>
+    struct for_each<typelist<Types...>>
+    {
+        template <typename Func>
+        static auto apply([[maybe_unused]] Func&& func)
+        {
+            return (func(Types{}), ...);
+        }
+    };
+
+    template <typename T>
+    struct find_if;
+
+    template <typename ... Types>
+    struct find_if<typelist<Types...>>
+    {
+        template <typename Func>
+        static bool apply([[maybe_unused]] Func&& func)
+        {
+            return (func(Types{}) || ...);
+        }
+    };
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator|(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    return static_cast<T>(winrt::impl::to_underlying_type(left) | winrt::impl::to_underlying_type(right));
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator|=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    left = left | right;
+    return left;
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator&(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    return static_cast<T>(winrt::impl::to_underlying_type(left) & winrt::impl::to_underlying_type(right));
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator&=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    left = left & right;
+    return left;
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator~(T const value) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    return static_cast<T>(~winrt::impl::to_underlying_type(value));
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator^(T const left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    return static_cast<T>(winrt::impl::to_underlying_type(left) ^ winrt::impl::to_underlying_type(right));
+}
+
+WINRT_EXPORT template <typename T>
+constexpr auto operator^=(T& left, T const right) noexcept -> std::enable_if_t<winrt::impl::is_enum_flag_v<T>, T>
+{
+    left = left ^ right;
+    return left;
+}
+
+WINRT_EXPORT namespace winrt
+{
+    template <typename T>
+    using default_interface = typename impl::default_interface<T>::type;
+
+    template <typename T>
+    constexpr guid const& guid_of() noexcept
+    {
+        return impl::guid_storage<default_interface<T>>::value;
+    }
+
+    struct event_token;
 }
 
 namespace winrt::impl
 {
+    template <typename T>
+    constexpr bool is_guid_of(guid const& id) noexcept
+    {
+        return id == guid_of<T>();
+    }
+
     template <size_t Size, typename T, size_t... Index>
     constexpr std::array<T, Size> to_array(T const* value, std::index_sequence<Index...> const) noexcept
     {
@@ -428,49 +804,105 @@ namespace winrt::impl
     }
 
     template <typename T, size_t LeftSize, size_t RightSize>
-    constexpr auto operator+(std::array<T, LeftSize> const& left, std::array<T, RightSize> const& right) noexcept
+    constexpr auto concat(std::array<T, LeftSize> const& left, std::array<T, RightSize> const& right) noexcept
     {
         return concat(left, right, std::make_index_sequence<LeftSize>(), std::make_index_sequence<RightSize>());
     }
 
     template <typename T, size_t LeftSize, size_t RightSize>
-    constexpr auto operator+(std::array<T, LeftSize> const& left, T const(&right)[RightSize]) noexcept
+    constexpr auto concat(std::array<T, LeftSize> const& left, T const(&right)[RightSize]) noexcept
     {
-        return left + to_array(right);
+        return concat(left, to_array(right));
     }
 
     template <typename T, size_t LeftSize, size_t RightSize>
-    constexpr auto operator+(T const(&left)[LeftSize], std::array<T, RightSize> const& right) noexcept
+    constexpr auto concat(T const(&left)[LeftSize], std::array<T, RightSize> const& right) noexcept
     {
-        return to_array(left) + right;
+        return concat(to_array(left), right);
     }
 
     template <typename T, size_t LeftSize>
-    constexpr auto operator+(std::array<T, LeftSize> const& left, T const right) noexcept
+    constexpr auto concat(std::array<T, LeftSize> const& left, T const right) noexcept
     {
-        return left + std::array<T, 1>{right};
+        return concat(left, std::array<T, 1>{right});
     }
 
     template <typename T, size_t RightSize>
-    constexpr auto operator+(T const left, std::array<T, RightSize> const& right) noexcept
+    constexpr auto concat(T const left, std::array<T, RightSize> const& right) noexcept
     {
-        return std::array<T, 1>{left} + right;
+        return concat(std::array<T, 1>{left}, right);
     }
 
-    constexpr std::array<uint8_t, 4> to_array(unsigned long value) noexcept
+    template <typename First, typename... Rest>
+    constexpr auto combine(First const& first, Rest const&... rest) noexcept
+    {
+        if constexpr (sizeof...(rest) == 0)
+        {
+            return to_array(first);
+        }
+        else
+        {
+            return concat(first, combine(rest...));
+        }
+    }
+
+    template <typename T, size_t LS, size_t RS, size_t... LI, size_t... RI>
+    constexpr std::array<T, LS + RS - 1> zconcat_base(std::array<T, LS> const& left, std::array<T, RS> const& right, std::index_sequence<LI...> const, std::index_sequence<RI...> const) noexcept
+    {
+        return { left[LI]..., right[RI]..., T{} };
+    }
+
+    template <typename T, size_t LS, size_t RS>
+    constexpr auto zconcat(std::array<T, LS> const& left, std::array<T, RS> const& right) noexcept
+    {
+        return zconcat_base(left, right, std::make_index_sequence<LS - 1>(), std::make_index_sequence<RS - 1>());
+    }
+
+    template <typename T, size_t S, size_t... I>
+    constexpr std::array<T, S> to_zarray_base(T const(&value)[S], std::index_sequence<I...> const) noexcept
+    {
+        return { value[I]... };
+    }
+
+    template <typename T, size_t S>
+    constexpr auto to_zarray(T const(&value)[S]) noexcept
+    {
+        return to_zarray_base(value, std::make_index_sequence<S>());
+    }
+
+    template <typename T, size_t S>
+    constexpr auto to_zarray(std::array<T, S> const& value) noexcept
+    {
+        return value;
+    }
+
+    template <typename First, typename... Rest>
+    constexpr auto zcombine(First const& first, Rest const&... rest) noexcept
+    {
+        if constexpr (sizeof...(rest) == 0)
+        {
+            return to_zarray(first);
+        }
+        else
+        {
+            return zconcat(to_zarray(first), zcombine(rest...));
+        }
+    }
+
+    constexpr std::array<uint8_t, 4> to_array(uint32_t value) noexcept
     {
         return { static_cast<uint8_t>(value & 0x000000ff), static_cast<uint8_t>((value & 0x0000ff00) >> 8), static_cast<uint8_t>((value & 0x00ff0000) >> 16), static_cast<uint8_t>((value & 0xff000000) >> 24) };
     }
 
-    constexpr std::array<uint8_t, 2> to_array(unsigned short value) noexcept
+    constexpr std::array<uint8_t, 2> to_array(uint16_t value) noexcept
     {
         return { static_cast<uint8_t>(value & 0x00ff), static_cast<uint8_t>((value & 0xff00) >> 8) };
     }
 
-    constexpr auto to_array(GUID const& value) noexcept
+    constexpr auto to_array(guid const& value) noexcept
     {
-        return to_array(value.Data1) + to_array(value.Data2) + to_array(value.Data3) +
-            std::array<uint8_t, 8>{ value.Data4[0], value.Data4[1], value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7] };
+        return combine(to_array(value.Data1), to_array(value.Data2), to_array(value.Data3),
+            std::array<uint8_t, 8>{ value.Data4[0], value.Data4[1], value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7] });
     }
 
     template <typename T>
@@ -489,28 +921,30 @@ namespace winrt::impl
     template <typename T>
     constexpr auto uint16_to_hex(uint16_t value) noexcept
     {
-        return uint8_to_hex<T>(static_cast<uint8_t>(value >> 8)) + uint8_to_hex<T>(value & 0xFF);
+        return combine(uint8_to_hex<T>(static_cast<uint8_t>(value >> 8)), uint8_to_hex<T>(value & 0xFF));
     }
 
     template <typename T>
     constexpr auto uint32_to_hex(uint32_t const value) noexcept
     {
-        return uint16_to_hex<T>(value >> 16) + uint16_to_hex<T>(value & 0xFFFF);
+        return combine(uint16_to_hex<T>(value >> 16), uint16_to_hex<T>(value & 0xFFFF));
     }
 
     template <typename T>
-    constexpr auto to_array(GUID const& value) noexcept
+    constexpr auto to_array(guid const& value) noexcept
     {
-        return
-            static_cast<T>('{') +
-            uint32_to_hex<T>(value.Data1) + static_cast<T>('-') +
-            uint16_to_hex<T>(value.Data2) + static_cast<T>('-') +
-            uint16_to_hex<T>(value.Data3) + static_cast<T>('-') +
-            uint16_to_hex<T>(value.Data4[0] << 8 | value.Data4[1]) + static_cast<T>('-') +
-            uint16_to_hex<T>(value.Data4[2] << 8 | value.Data4[3]) +
-            uint16_to_hex<T>(value.Data4[4] << 8 | value.Data4[5]) +
-            uint16_to_hex<T>(value.Data4[6] << 8 | value.Data4[7]) +
-            static_cast<T>('}');
+        return combine
+        (
+            std::array<T, 1>{'{'},
+            uint32_to_hex<T>(value.Data1), std::array<T, 1>{'-'},
+            uint16_to_hex<T>(value.Data2), std::array<T, 1>{'-'},
+            uint16_to_hex<T>(value.Data3), std::array<T, 1>{'-'},
+            uint16_to_hex<T>(value.Data4[0] << 8 | value.Data4[1]), std::array<T, 1>{'-'},
+            uint16_to_hex<T>(value.Data4[2] << 8 | value.Data4[3]),
+            uint16_to_hex<T>(value.Data4[4] << 8 | value.Data4[5]),
+            uint16_to_hex<T>(value.Data4[6] << 8 | value.Data4[7]),
+            std::array<T, 1>{'}'}
+        );
     }
 
     constexpr uint32_t to_guid(uint8_t a, uint8_t b, uint8_t c, uint8_t d) noexcept
@@ -524,14 +958,14 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr GUID to_guid(std::array<uint8_t, Size> const& arr) noexcept
+    constexpr guid to_guid(std::array<uint8_t, Size> const& arr) noexcept
     {
         return
         {
             to_guid(arr[0], arr[1], arr[2], arr[3]),
             to_guid(arr[4], arr[5]),
             to_guid(arr[6], arr[7]),
-            { arr[8], arr[9], arr[10], arr[11], arr[12], arr[13], arr[14], arr[15] }
+        { arr[8], arr[9], arr[10], arr[11], arr[12], arr[13], arr[14], arr[15] }
         };
     }
 
@@ -543,42 +977,27 @@ namespace winrt::impl
     };
 
     template <typename T>
-    constexpr auto& name_v = name<T>::value;
+    inline constexpr auto& name_v = name<T>::value;
 
-    template <typename T, size_t Size>
-    constexpr std::basic_string_view<T> to_string(std::array<T, Size> const& value) noexcept
-    {
-        return { value.data(), Size };
-    }
-
-    template <typename T, size_t Size>
-    constexpr std::wstring_view to_string(T const (&value)[Size]) noexcept
-    {
-        return { value, Size - 1 };
-    }
-
-    constexpr unsigned long endian_swap(unsigned long value) noexcept
+    constexpr uint32_t endian_swap(uint32_t value) noexcept
     {
         return (value & 0xFF000000) >> 24 | (value & 0x00FF0000) >> 8 | (value & 0x0000FF00) << 8 | (value & 0x000000FF) << 24;
     }
 
-    constexpr unsigned short endian_swap(unsigned short value) noexcept
+    constexpr uint16_t endian_swap(uint16_t value) noexcept
     {
         return (value & 0xFF00) >> 8 | (value & 0x00FF) << 8;
     }
 
-    constexpr GUID endian_swap(GUID const& value) noexcept
+    constexpr guid endian_swap(guid value) noexcept
     {
-        return
-        {
-            endian_swap(value.Data1),
-            endian_swap(value.Data2),
-            endian_swap(value.Data3),
-            { value.Data4[0], value.Data4[1], value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7] }
-        };
+        value.Data1 = endian_swap(value.Data1);
+        value.Data2 = endian_swap(value.Data2);
+        value.Data3 = endian_swap(value.Data3);
+        return value;
     }
 
-    constexpr GUID set_named_guid_fields(GUID value) noexcept
+    constexpr guid set_named_guid_fields(guid value) noexcept
     {
         value.Data3 = static_cast<uint16_t>((value.Data3 & 0x0fff) | (5 << 12));
         value.Data4[0] = static_cast<uint8_t>((value.Data4[0] & 0x3f) | 0x80);
@@ -698,7 +1117,7 @@ namespace winrt::impl
     }
 
     template <size_t Size, size_t RemainingSize, size_t... Index>
-    constexpr std::array<uint8_t, RemainingSize + 1> make_remaining(std::array<uint8_t, Size> const& input, uint32_t start_pos, std::index_sequence<Index...>) noexcept
+    constexpr std::array<uint8_t, RemainingSize + 1> make_remaining([[maybe_unused]] std::array<uint8_t, Size> const& input, [[maybe_unused]] uint32_t start_pos, std::index_sequence<Index...>) noexcept
     {
         return { input[Index + start_pos]..., 0x80 };
     }
@@ -719,7 +1138,7 @@ namespace winrt::impl
         auto padding_buffer = std::array<uint8_t, padding_length>{};
         auto length_buffer = size_to_bytes(InputSize * 8);
 
-        return remaining_buffer + padding_buffer + length_buffer;
+        return combine(remaining_buffer, padding_buffer, length_buffer);
     }
 
     template <size_t Size>
@@ -763,11 +1182,11 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr GUID generate_guid(std::array<char, Size> const& value) noexcept
+    constexpr guid generate_guid(std::array<char, Size> const& value) noexcept
     {
-        GUID namespace_guid = { 0xd57af411, 0x737b, 0xc042,{ 0xab, 0xae, 0x87, 0x8b, 0x1e, 0x16, 0xad, 0xee } };
+        guid namespace_guid = { 0xd57af411, 0x737b, 0xc042,{ 0xab, 0xae, 0x87, 0x8b, 0x1e, 0x16, 0xad, 0xee } };
 
-        auto buffer = to_array(namespace_guid) + char_to_byte_array(value, std::make_index_sequence<Size>());
+        auto buffer = combine(to_array(namespace_guid), char_to_byte_array(value, std::make_index_sequence<Size>()));
         auto hash = calculate_sha1(buffer);
         auto big_endian_guid = to_guid(hash);
         auto little_endian_guid = endian_swap(big_endian_guid);
@@ -777,7 +1196,7 @@ namespace winrt::impl
     template <typename TArg, typename... TRest>
     struct arg_collection
     {
-        constexpr static auto data{ to_array(signature<TArg>::data) + ";" + arg_collection<TRest...>::data };
+        constexpr static auto data{ combine(to_array(signature<TArg>::data), ";", arg_collection<TRest...>::data) };
     };
 
     template <typename TArg>
@@ -790,7 +1209,7 @@ namespace winrt::impl
     struct pinterface_guid
     {
 #pragma warning(suppress: 4307)
-        static constexpr GUID value{ generate_guid(signature<T>::data) };
+        static constexpr guid value{ generate_guid(signature<T>::data) };
     };
 
     constexpr size_t to_utf8_size(wchar_t const value) noexcept
@@ -1015,26 +1434,26 @@ namespace winrt::impl
     };
 
     template <>
-    struct name<GUID>
+    struct name<guid>
     {
         static constexpr auto & value{ L"Guid" };
         static constexpr auto & data{ "g16" };
     };
 
     template <>
-    struct category<GUID>
+    struct category<guid>
     {
         using type = basic_category;
     };
 
     template <>
-    struct name<HRESULT>
+    struct name<hresult>
     {
         static constexpr auto & value{ L"Windows.Foundation.HResult" };
     };
 
     template <>
-    struct category<HRESULT>
+    struct category<hresult>
     {
         using type = struct_category<int32_t>;
     };
@@ -1061,25 +1480,25 @@ namespace winrt::impl
     struct category_signature<enum_category, T>
     {
         using enum_type = std::underlying_type_t<T>;
-        constexpr static auto data{ "enum(" + to_utf8<T>() + ";" + signature<enum_type>::data + ")" };
+        constexpr static auto data{ combine("enum(", to_utf8<T>(), ";", signature<enum_type>::data, ")") };
     };
 
     template <typename... Fields, typename T>
     struct category_signature<struct_category<Fields...>, T>
     {
-        constexpr static auto data{ "struct(" + to_utf8<T>() + ";" + arg_collection<Fields...>::data + ")" };
+        constexpr static auto data{ combine("struct(", to_utf8<T>(), ";", arg_collection<Fields...>::data, ")") };
     };
 
     template <typename T>
     struct category_signature<class_category, T>
     {
-        constexpr static auto data{ "rc(" + to_utf8<T>() + ";" + signature<default_interface_t<T>>::data + ")" };
+        constexpr static auto data{ combine("rc(", to_utf8<T>(), ";", signature<winrt::default_interface<T>>::data, ")") };
     };
 
     template <typename... Args, typename T>
     struct category_signature<pinterface_category<Args...>, T>
     {
-        constexpr static auto data{ "pinterface(" + to_array<char>(category<T>::value) + ";" + arg_collection<Args...>::data + ")" };
+        constexpr static auto data{ combine("pinterface(", to_array<char>(category<T>::value), ";", arg_collection<Args...>::data, ")") };
     };
 
     template <typename T>
@@ -1091,16 +1510,28 @@ namespace winrt::impl
     template <typename T>
     struct category_signature<delegate_category, T>
     {
-        constexpr static auto data{ "delegate(" + to_array<char>(guid_of<T>()) + ")" };
+        constexpr static auto data{ combine("delegate(", to_array<char>(guid_of<T>()), ")") };
     };
+
+    template <size_t Size>
+    constexpr std::wstring_view to_wstring_view(std::array<wchar_t, Size> const& value) noexcept
+    {
+        return { value.data(), Size - 1 };
+    }
+
+    template <size_t Size>
+    constexpr std::wstring_view to_wstring_view(wchar_t const (&value)[Size]) noexcept
+    {
+        return { value, Size - 1 };
+    }
 }
 
 WINRT_EXPORT namespace winrt
 {
     template <typename T>
-    constexpr std::wstring_view name_of() noexcept
+    constexpr auto name_of() noexcept
     {
-        return impl::to_string(impl::name_v<T>);
+        return impl::to_wstring_view(impl::name_v<T>);
     }
 }
 
@@ -1113,7 +1544,7 @@ WINRT_EXPORT namespace winrt
 
         handle_type() noexcept = default;
 
-        handle_type(type value) noexcept : m_value(value)
+        explicit handle_type(type value) noexcept : m_value(value)
         {
         }
 
@@ -1186,11 +1617,11 @@ WINRT_EXPORT namespace winrt
 
     struct handle_traits
     {
-        using type = HANDLE;
+        using type = void*;
 
         static void close(type value) noexcept
         {
-            WINRT_VERIFY_(TRUE, CloseHandle(value));
+            WINRT_VERIFY_(1, WINRT_CloseHandle(value));
         }
 
         static constexpr type invalid() noexcept
@@ -1203,16 +1634,16 @@ WINRT_EXPORT namespace winrt
 
     struct file_handle_traits
     {
-        using type = HANDLE;
+        using type = void*;
 
         static void close(type value) noexcept
         {
-            WINRT_VERIFY_(TRUE, CloseHandle(value));
+            WINRT_VERIFY_(1, WINRT_CloseHandle(value));
         }
 
         static type invalid() noexcept
         {
-            return INVALID_HANDLE_VALUE;
+            return reinterpret_cast<type>(-1);
         }
     };
 
@@ -1231,51 +1662,49 @@ WINRT_EXPORT namespace winrt
 
         void lock() noexcept
         {
-            AcquireSRWLockExclusive(&m_lock);
+            WINRT_AcquireSRWLockExclusive(&m_lock);
         }
 
         void lock_shared() noexcept
         {
-            AcquireSRWLockShared(&m_lock);
+            WINRT_AcquireSRWLockShared(&m_lock);
         }
 
         bool try_lock() noexcept
         {
-            return 0 != TryAcquireSRWLockExclusive(&m_lock);
+            return 0 != WINRT_TryAcquireSRWLockExclusive(&m_lock);
         }
 
         bool try_lock_shared() noexcept
         {
-            return 0 != TryAcquireSRWLockShared(&m_lock);
+            return 0 != WINRT_TryAcquireSRWLockShared(&m_lock);
         }
 
         void unlock() noexcept
         {
-            __analysis_assume_lock_acquired(m_lock);
-            ReleaseSRWLockExclusive(&m_lock);
+            WINRT_ReleaseSRWLockExclusive(&m_lock);
         }
 
         void unlock_shared() noexcept
         {
-            __analysis_assume_lock_acquired(m_lock);
-            ReleaseSRWLockShared(&m_lock);
+            WINRT_ReleaseSRWLockShared(&m_lock);
         }
 
     private:
         friend slim_condition_variable;
 
-        PSRWLOCK get() noexcept
+        auto get() noexcept
         {
-            return&m_lock;
+            return &m_lock;
         }
 
-        SRWLOCK m_lock{};
+        impl::srwlock m_lock{};
     };
 
     struct slim_lock_guard
     {
         explicit slim_lock_guard(slim_mutex& m) noexcept :
-            m_mutex(m)
+        m_mutex(m)
         {
             m_mutex.lock();
         }
@@ -1286,13 +1715,13 @@ WINRT_EXPORT namespace winrt
         }
 
     private:
-        slim_mutex & m_mutex;
+        slim_mutex& m_mutex;
     };
 
     struct slim_shared_lock_guard
     {
         explicit slim_shared_lock_guard(slim_mutex& m) noexcept :
-            m_mutex(m)
+        m_mutex(m)
         {
             m_mutex.lock_shared();
         }
@@ -1303,7 +1732,7 @@ WINRT_EXPORT namespace winrt
         }
 
     private:
-        slim_mutex & m_mutex;
+        slim_mutex& m_mutex;
     };
 
     struct slim_condition_variable
@@ -1317,22 +1746,45 @@ WINRT_EXPORT namespace winrt
         {
             while (!predicate())
             {
-                WINRT_VERIFY(SleepConditionVariableSRW(&m_cv, x.get(), INFINITE, 0));
+                WINRT_VERIFY(WINRT_SleepConditionVariableSRW(&m_cv, x.get(), 0xFFFFFFFF /*INFINITE*/, 0));
             }
+        }
+
+        template <typename T>
+        bool wait_for(slim_mutex& x, std::chrono::high_resolution_clock::duration const timeout, T predicate)
+        {
+            auto const until = std::chrono::high_resolution_clock::now() + timeout;
+
+            while (!predicate())
+            {
+                auto const milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::high_resolution_clock::now()).count();
+
+                if (milliseconds <= 0)
+                {
+                    return false;
+                }
+
+                if (!WINRT_SleepConditionVariableSRW(&m_cv, x.get(), static_cast<uint32_t>(milliseconds), 0))
+                {
+                    return predicate();
+                }
+            }
+
+            return true;
         }
 
         void notify_one() noexcept
         {
-            WakeConditionVariable(&m_cv);
+            WINRT_WakeConditionVariable(&m_cv);
         }
 
         void notify_all() noexcept
         {
-            WakeAllConditionVariable(&m_cv);
+            WINRT_WakeAllConditionVariable(&m_cv);
         }
 
     private:
-        CONDITION_VARIABLE m_cv{};
+        impl::condition_variable m_cv{};
     };
 }
 
@@ -1420,24 +1872,395 @@ WINRT_EXPORT namespace winrt
 
 #endif
 
-WINRT_EXPORT namespace winrt::Windows::Foundation
+namespace winrt::impl
 {
-    enum class TrustLevel
+    struct com_callback_args
     {
-        BaseTrust,
-        PartialTrust,
-        FullTrust
+        uint32_t reserved1;
+        uint32_t reserved2;
+        void* data;
     };
 
-    struct IUnknown;
-    struct IInspectable;
-    struct IInspectable;
-    struct IActivationFactory;
+    struct ICallbackWithNoReentrancyToApplicationSTA;
+
+    template <> struct abi<Windows::Foundation::IUnknown>
+    {
+        struct WINRT_NOVTABLE type
+        {
+            virtual int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept = 0;
+            virtual uint32_t WINRT_CALL AddRef() noexcept = 0;
+            virtual uint32_t WINRT_CALL Release() noexcept = 0;
+        };
+    };
+
+    using IUnknown = abi_t<Windows::Foundation::IUnknown>;
+
+    template <> struct abi<Windows::Foundation::IInspectable>
+    {
+        struct WINRT_NOVTABLE type : IUnknown
+        {
+            virtual int32_t WINRT_CALL GetIids(uint32_t* count, guid** ids) noexcept = 0;
+            virtual int32_t WINRT_CALL GetRuntimeClassName(void** name) noexcept = 0;
+            virtual int32_t WINRT_CALL GetTrustLevel(Windows::Foundation::TrustLevel* level) noexcept = 0;
+        };
+    };
+
+    using IInspectable = abi_t<Windows::Foundation::IInspectable>;
+
+    struct WINRT_NOVTABLE IAgileObject : IUnknown
+    {
+    };
+
+    struct WINRT_NOVTABLE IAgileReference : IUnknown
+    {
+        virtual int32_t WINRT_CALL Resolve(guid const& id, void** object) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IMarshal : IUnknown
+    {
+        virtual int32_t WINRT_CALL GetUnmarshalClass(guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags, guid* pCid) noexcept = 0;
+        virtual int32_t WINRT_CALL GetMarshalSizeMax(guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags, uint32_t* pSize) noexcept = 0;
+        virtual int32_t WINRT_CALL MarshalInterface(void* pStm, guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags) noexcept = 0;
+        virtual int32_t WINRT_CALL UnmarshalInterface(void* pStm, guid const& riid, void** ppv) noexcept = 0;
+        virtual int32_t WINRT_CALL ReleaseMarshalData(void* pStm) noexcept = 0;
+        virtual int32_t WINRT_CALL DisconnectObject(uint32_t dwReserved) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IStaticLifetime : IInspectable
+    {
+        virtual int32_t WINRT_CALL unused() noexcept = 0;
+        virtual int32_t WINRT_CALL GetCollection(void** value) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IWeakReference : IUnknown
+    {
+        virtual int32_t WINRT_CALL Resolve(guid const& iid, void** objectReference) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IWeakReferenceSource : IUnknown
+    {
+        virtual int32_t WINRT_CALL GetWeakReference(IWeakReference** weakReference) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IRestrictedErrorInfo : IUnknown
+    {
+        virtual int32_t WINRT_CALL GetErrorDetails(bstr* description, int32_t* error, bstr* restrictedDescription, bstr* capabilitySid) noexcept = 0;
+        virtual int32_t WINRT_CALL GetReference(bstr* reference) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE ILanguageExceptionErrorInfo : IUnknown
+    {
+        virtual int32_t WINRT_CALL GetLanguageException(IUnknown** exception) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo
+    {
+        virtual int32_t WINRT_CALL GetPreviousLanguageExceptionErrorInfo(ILanguageExceptionErrorInfo2** previous) noexcept = 0;
+        virtual int32_t WINRT_CALL CapturePropagationContext(IUnknown* exception) noexcept = 0;
+        virtual int32_t WINRT_CALL GetPropagationContextHead(ILanguageExceptionErrorInfo2** head) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IContextCallback : IUnknown
+    {
+        virtual int32_t WINRT_CALL ContextCallback(int32_t(WINRT_CALL *callback)(com_callback_args*), com_callback_args* args, guid const& iid, int method, IUnknown* reserved) noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IServerSecurity : IUnknown
+    {
+        virtual int32_t WINRT_CALL QueryBlanket(uint32_t*, uint32_t*, wchar_t**, uint32_t*, uint32_t*, void**, uint32_t*) noexcept = 0;
+        virtual int32_t WINRT_CALL ImpersonateClient() noexcept = 0;
+        virtual int32_t WINRT_CALL RevertToSelf() noexcept = 0;
+        virtual int32_t WINRT_CALL IsImpersonating() noexcept = 0;
+    };
+
+    struct WINRT_NOVTABLE IBufferByteAccess : IUnknown
+    {
+        virtual int32_t WINRT_CALL Buffer(uint8_t** value) noexcept = 0;
+    };
+
+    template <> struct abi<Windows::Foundation::IActivationFactory>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL ActivateInstance(void** instance) noexcept = 0;
+        };
+    };
+
+    template <> struct abi<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept = 0;
+        };
+    };
+
+    template <> struct abi<Windows::Foundation::IAsyncInfo>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_Id(uint32_t* id) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Status(Windows::Foundation::AsyncStatus* status) noexcept = 0;
+            virtual int32_t WINRT_CALL get_ErrorCode(int32_t* errorCode) noexcept = 0;
+            virtual int32_t WINRT_CALL Cancel() noexcept = 0;
+            virtual int32_t WINRT_CALL Close() noexcept = 0;
+        };
+    };
+
+    template <> struct abi<Windows::Foundation::IAsyncAction>
+    {
+        struct type : IInspectable
+        {
+            virtual int32_t WINRT_CALL put_Completed(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Completed(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL GetResults() noexcept = 0;
+        };
+    };
+
+    template <> struct abi<wfc::IVectorChangedEventArgs>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Index(uint32_t* value) noexcept = 0;
+        };
+    };
+
+    template <typename TResult> struct abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
+        };
+    };
+
+    template <typename TProgress> struct abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
+        };
+    };
+
+    template <typename TProgress> struct abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
+        };
+    };
+
+    template <typename TResult, typename TProgress> struct abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
+        };
+    };
+
+    template <typename TResult, typename TProgress> struct abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        struct type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
+        };
+    };
+
+    template <typename TResult> struct abi<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL put_Completed(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Completed(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL GetResults(arg_out<TResult> results) noexcept = 0;
+        };
+    };
+
+    template <typename TProgress> struct abi<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL put_Progress(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Progress(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL put_Completed(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Completed(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL GetResults() noexcept = 0;
+        };
+    };
+
+    template <typename TResult, typename TProgress> struct abi<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL put_Progress(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Progress(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL put_Completed(void* handler) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Completed(void** handler) noexcept = 0;
+            virtual int32_t WINRT_CALL GetResults(arg_out<TResult> results) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<Windows::Foundation::IReference<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_Value(arg_out<T> value) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<Windows::Foundation::IReferenceArray<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_Value(uint32_t* __valueSize, arg_out<T>* value) noexcept = 0;
+        };
+    };
+
+    template <typename K> struct abi<wfc::IMapChangedEventArgs<K>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Key(arg_out<K> value) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::VectorChangedEventHandler<T>>
+    {
+        struct WINRT_NOVTABLE type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept = 0;
+        };
+    };
+
+    template <typename K, typename V> struct abi<wfc::MapChangedEventHandler<K, V>>
+    {
+        struct WINRT_NOVTABLE type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::IIterator<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_Current(arg_out<T> current) noexcept = 0;
+            virtual int32_t WINRT_CALL get_HasCurrent(bool* hasCurrent) noexcept = 0;
+            virtual int32_t WINRT_CALL MoveNext(bool* hasCurrent) noexcept = 0;
+            virtual int32_t WINRT_CALL GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::IIterable<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL First(void** first) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::IVectorView<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Size(uint32_t* size) noexcept = 0;
+            virtual int32_t WINRT_CALL IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
+            virtual int32_t WINRT_CALL GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::IVector<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Size(uint32_t* size) noexcept = 0;
+            virtual int32_t WINRT_CALL GetView(void** view) noexcept = 0;
+            virtual int32_t WINRT_CALL IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
+            virtual int32_t WINRT_CALL SetAt(uint32_t index, arg_in<T> item) noexcept = 0;
+            virtual int32_t WINRT_CALL InsertAt(uint32_t index, arg_in<T> item) noexcept = 0;
+            virtual int32_t WINRT_CALL RemoveAt(uint32_t index) noexcept = 0;
+            virtual int32_t WINRT_CALL Append(arg_in<T> item) noexcept = 0;
+            virtual int32_t WINRT_CALL RemoveAtEnd() noexcept = 0;
+            virtual int32_t WINRT_CALL Clear() noexcept = 0;
+            virtual int32_t WINRT_CALL GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
+            virtual int32_t WINRT_CALL ReplaceAll(uint32_t count, arg_out<T> value) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<wfc::IObservableVector<T>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL add_VectorChanged(void* handler, event_token*  token) noexcept = 0;
+            virtual int32_t WINRT_CALL remove_VectorChanged(event_token token) noexcept = 0;
+        };
+    };
+
+    template <typename K, typename V> struct abi<wfc::IKeyValuePair<K, V>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL get_Key(arg_out<K> key) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Value(arg_out<V> value) noexcept = 0;
+        };
+    };
+
+    template <typename K, typename V> struct abi<wfc::IMapView<K, V>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Size(uint32_t* size) noexcept = 0;
+            virtual int32_t WINRT_CALL HasKey(arg_in<K> key, bool* found) noexcept = 0;
+            virtual int32_t WINRT_CALL Split(void** firstPartition, void** secondPartition) noexcept = 0;
+        };
+    };
+
+    template <typename K, typename V> struct abi<wfc::IMap<K, V>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
+            virtual int32_t WINRT_CALL get_Size(uint32_t* size) noexcept = 0;
+            virtual int32_t WINRT_CALL HasKey(arg_in<K> key, bool* found) noexcept = 0;
+            virtual int32_t WINRT_CALL GetView(void** view) noexcept = 0;
+            virtual int32_t WINRT_CALL Insert(arg_in<K> key, arg_in<V> value, bool* replaced) noexcept = 0;
+            virtual int32_t WINRT_CALL Remove(arg_in<K> key) noexcept = 0;
+            virtual int32_t WINRT_CALL Clear() noexcept = 0;
+        };
+    };
+
+    template <typename K, typename V> struct abi<wfc::IObservableMap<K, V>>
+    {
+        struct WINRT_NOVTABLE type : IInspectable
+        {
+            virtual int32_t WINRT_CALL add_MapChanged(void* handler, event_token* token) noexcept = 0;
+            virtual int32_t WINRT_CALL remove_MapChanged(event_token token) noexcept = 0;
+        };
+    };
+
+    template <typename T> struct abi<Windows::Foundation::EventHandler<T>>
+    {
+        struct WINRT_NOVTABLE type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(void* sender, arg_in<T> args) noexcept = 0;
+        };
+    };
+
+    template <typename TSender, typename TArgs> struct abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        struct WINRT_NOVTABLE type : IUnknown
+        {
+            virtual int32_t WINRT_CALL Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept = 0;
+        };
+    };
 }
 
 WINRT_EXPORT namespace winrt
 {
-    void check_hresult(HRESULT result);
+    void check_hresult(hresult result);
 
     template <typename T>
     struct com_ptr;
@@ -1467,7 +2290,7 @@ WINRT_EXPORT namespace winrt
     }
 
     template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, std::decay_t<T>> && !std::is_convertible_v<T, std::wstring_view>>>
-        auto detach_abi(T&& object)
+    auto detach_abi(T&& object)
     {
         impl::abi_t<T> result{};
         reinterpret_cast<T&>(result) = std::move(object);
@@ -1477,117 +2300,6 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
-    template <> struct abi<Windows::Foundation::IUnknown>
-    {
-        struct __declspec(novtable) type
-        {
-            virtual HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept = 0;
-            virtual ULONG __stdcall AddRef() noexcept = 0;
-            virtual ULONG __stdcall Release() noexcept = 0;
-        };
-    };
-
-    using IUnknown = abi_t<Windows::Foundation::IUnknown>;
-
-    template <> struct abi<Windows::Foundation::IInspectable>
-    {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall GetIids(ULONG* count, GUID** ids) noexcept = 0;
-            virtual HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept = 0;
-            virtual HRESULT __stdcall GetTrustLevel(Windows::Foundation::TrustLevel* level) noexcept = 0;
-        };
-    };
-
-    using IInspectable = abi_t<Windows::Foundation::IInspectable>;
-
-    template <> struct abi<Windows::Foundation::IActivationFactory>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall ActivateInstance(void** instance) noexcept = 0;
-        };
-    };
-
-    template <> struct guid<Windows::Foundation::IUnknown>
-    {
-        static constexpr GUID value{ 0x00000000,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
-
-    template <> struct category<Windows::Foundation::IUnknown>
-    {
-        using type = interface_category;
-    };
-
-    template <> struct guid<Windows::Foundation::IInspectable>
-    {
-        static constexpr GUID value{ 0xAF86E2E0,0xB12D,0x4C6A,{ 0x9C,0x5A,0xD7,0xAA,0x65,0x10,0x1E,0x90 } };
-    };
-
-    template <> struct name<Windows::Foundation::IInspectable>
-    {
-        static constexpr auto & value{ L"Object" };
-        static constexpr auto & data{ "cinterface(IInspectable)" };
-    };
-
-    template <> struct category<Windows::Foundation::IInspectable>
-    {
-        using type = basic_category;
-    };
-
-    template <> struct guid<Windows::Foundation::IActivationFactory>
-    {
-        static constexpr GUID value{ 0x00000035,0x0000,0x0000,{ 0xc0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
-
-    template <> struct guid<::IAgileObject>
-    {
-        static constexpr GUID value{ 0x94EA2B94,0xE9CC,0x49E0,{ 0xC0,0xFF,0xEE,0x64,0xCA,0x8F,0x5B,0x90 } };
-    };
-
-    template <> struct name<Windows::Foundation::IActivationFactory>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.IActivationFactory" };
-    };
-
-    template <> struct category<Windows::Foundation::IActivationFactory>
-    {
-        using type = interface_category;
-    };
-
-    template <> struct name<::IAgileObject>
-    {
-        static constexpr auto & value{ L"IAgileObject" };
-    };
-
-    template <> struct guid<::IMarshal>
-    {
-        static constexpr GUID value{ 0x00000003,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
-
-    struct __declspec(novtable) IStaticLifetime : IInspectable
-    {
-        virtual HRESULT __stdcall unused() noexcept = 0;
-        virtual HRESULT __stdcall GetCollection(void** value) noexcept = 0;
-    };
-
-    template <> struct guid<IStaticLifetime>
-    {
-        static constexpr GUID value{ 0x17b0e613,0x942a,0x422d,{ 0x90,0x4c,0xf9,0x0d,0xc7,0x1a,0x7d,0xae } };
-    };
-
-    template <typename D>
-    struct consume_IActivationFactory
-    {
-        template <typename T>
-        T ActivateInstance() const;
-    };
-
-    template <> struct consume<Windows::Foundation::IActivationFactory>
-    {
-        template <typename D> using type = consume_IActivationFactory<D>;
-    };
-
     template <typename T>
     using com_ref = std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>, T, com_ptr<T>>;
 
@@ -1626,9 +2338,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             add_ref();
         }
 
-        IUnknown(IUnknown&& other) noexcept : m_ptr(other.m_ptr)
+        IUnknown(IUnknown&& other) noexcept : m_ptr(std::exchange(other.m_ptr, {}))
         {
-            other.m_ptr = nullptr;
         }
 
         ~IUnknown() noexcept
@@ -1653,8 +2364,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             if (this != &other)
             {
                 release_ref();
-                m_ptr = other.m_ptr;
-                other.m_ptr = nullptr;
+                m_ptr = std::exchange(other.m_ptr, {});
             }
 
             return*this;
@@ -1719,15 +2429,12 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             }
         }
 
-        __declspec(noinline) void unconditional_release_ref() noexcept
+        WINRT_NOINLINE void unconditional_release_ref() noexcept
         {
-            WINRT_ASSERT(m_ptr != nullptr);
-            auto temp = m_ptr;
-            m_ptr = nullptr;
-            temp->Release();
+            std::exchange(m_ptr, {})->Release();
         }
 
-        impl::IUnknown* m_ptr{ nullptr };
+        impl::IUnknown* m_ptr{};
     };
 }
 
@@ -1775,7 +2482,7 @@ WINRT_EXPORT namespace winrt
 
         if (value)
         {
-            static_cast<IUnknown*>(value)->AddRef();
+            static_cast<impl::IUnknown*>(value)->AddRef();
             *put_abi(object) = value;
         }
     }
@@ -1787,14 +2494,18 @@ WINRT_EXPORT namespace winrt
 
         if (value)
         {
-            static_cast<IUnknown*>(value)->AddRef();
+            static_cast<impl::IUnknown*>(value)->AddRef();
         }
     }
+
+#ifdef WINRT_WINDOWS_ABI
 
     inline ::IUnknown* get_unknown(Windows::Foundation::IUnknown const& object) noexcept
     {
         return static_cast<::IUnknown*>(get_abi(object));
     }
+
+#endif
 }
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
@@ -1853,411 +2564,52 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
 namespace winrt::impl
 {
-    template <typename T>
-    auto detach_from(T&& object) noexcept
+    inline constexpr hresult error_ok{ 0 }; // S_OK
+    inline constexpr hresult error_false{ 1 }; // S_FALSE
+    inline constexpr hresult error_fail{ static_cast<hresult>(0x80004005) }; // E_FAIL
+    inline constexpr hresult error_access_denied{ static_cast<hresult>(0x80070005) }; // E_ACCESSDENIED
+    inline constexpr hresult error_wrong_thread{ static_cast<hresult>(0x8001010E) }; // RPC_E_WRONG_THREAD
+    inline constexpr hresult error_not_implemented{ static_cast<hresult>(0x80004001) }; // E_NOTIMPL
+    inline constexpr hresult error_invalid_argument{ static_cast<hresult>(0x80070057) }; // E_INVALIDARG
+    inline constexpr hresult error_out_of_bounds{ static_cast<hresult>(0x8000000B) }; // E_BOUNDS
+    inline constexpr hresult error_no_interface{ static_cast<hresult>(0x80004002) }; // E_NOINTERFACE
+    inline constexpr hresult error_class_not_available{ static_cast<hresult>(0x80040111) }; // CLASS_E_CLASSNOTAVAILABLE
+    inline constexpr hresult error_changed_state{ static_cast<hresult>(0x8000000C) }; // E_CHANGED_STATE
+    inline constexpr hresult error_illegal_method_call{ static_cast<hresult>(0x8000000E) }; // E_ILLEGAL_METHOD_CALL
+    inline constexpr hresult error_illegal_state_change{ static_cast<hresult>(0x8000000D) }; // E_ILLEGAL_STATE_CHANGE
+    inline constexpr hresult error_illegal_delegate_assignment{ static_cast<hresult>(0x80000018) }; // E_ILLEGAL_DELEGATE_ASSIGNMENT
+    inline constexpr hresult error_canceled{ static_cast<hresult>(0x800704C7) }; // HRESULT_FROM_WIN32(ERROR_CANCELLED)
+    inline constexpr hresult error_bad_alloc{ static_cast<hresult>(0x8007000E) }; // E_OUTOFMEMORY
+    inline constexpr hresult error_not_initialized{ static_cast<hresult>(0x800401F0) }; // CO_E_NOTINITIALIZED
+
+    inline void* duplicate_string(void* other)
     {
-        return detach_abi(std::forward<T>(object));
-    }
-
-    template <typename T>
-    T empty_value() noexcept
-    {
-        if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
-        {
-            return nullptr;
-        }
-        else
-        {
-            return {};
-        }
-    }
-
-    template <typename T, typename Enable = void>
-    struct arg
-    {
-        using in = abi_t<T>;
-    };
-
-    template <typename T>
-    struct arg<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
-    {
-        using in = void*;
-    };
-
-    template <typename T>
-    using arg_in = typename arg<T>::in;
-
-    template <typename T>
-    using arg_out = arg_in<T>*;
-}
-
-WINRT_EXPORT namespace winrt
-{
-    template <typename T>
-    struct com_ptr
-    {
-        using type = impl::abi_t<T>;
-
-        com_ptr(std::nullptr_t = nullptr) noexcept {}
-
-        com_ptr(com_ptr const& other) noexcept : m_ptr(other.m_ptr)
-        {
-            add_ref();
-        }
-
-        template <typename U>
-        com_ptr(com_ptr<U> const& other) noexcept : m_ptr(other.m_ptr)
-        {
-            add_ref();
-        }
-
-        template <typename U>
-        com_ptr(com_ptr<U>&& other) noexcept : m_ptr(other.m_ptr)
-        {
-            other.m_ptr = nullptr;
-        }
-
-        ~com_ptr() noexcept
-        {
-            release_ref();
-        }
-
-        com_ptr& operator=(com_ptr const& other) noexcept
-        {
-            copy_ref(other.m_ptr);
-            return*this;
-        }
-
-        template <typename U>
-        com_ptr& operator=(com_ptr<U> const& other) noexcept
-        {
-            copy_ref(other.m_ptr);
-            return*this;
-        }
-
-        template <typename U>
-        com_ptr& operator=(com_ptr<U>&& other) noexcept
-        {
-            if (m_ptr != other.m_ptr)
-            {
-                release_ref();
-                m_ptr = other.m_ptr;
-                other.m_ptr = nullptr;
-            }
-
-            return*this;
-        }
-
-        explicit operator bool() const noexcept
-        {
-            return m_ptr != nullptr;
-        }
-
-        auto operator->() const noexcept
-        {
-            if constexpr (std::is_abstract_v<type>)
-            {
-                return static_cast<impl::no_ref<type>*>(m_ptr);
-            }
-            else
-            {
-                return m_ptr;
-            }
-        }
-
-        T& operator*() const noexcept
-        {
-            return *m_ptr;
-        }
-
-        type* get() const noexcept
-        {
-            return m_ptr;
-        }
-
-        type** put() noexcept
-        {
-            WINRT_ASSERT(m_ptr == nullptr);
-            return &m_ptr;
-        }
-
-        void** put_void() noexcept
-        {
-            return reinterpret_cast<void**>(put());
-        }
-
-        void attach(type* value) noexcept
-        {
-            release_ref();
-            *put() = value;
-        }
-
-        type* detach() noexcept
-        {
-            type* temp = m_ptr;
-            m_ptr = nullptr;
-            return temp;
-        }
-
-        friend void swap(com_ptr& left, com_ptr& right) noexcept
-        {
-            std::swap(left.m_ptr, right.m_ptr);
-        }
-
-        template <typename To>
-        auto as() const
-        {
-            return impl::as<To>(m_ptr);
-        }
-
-        template <typename To>
-        auto try_as() const noexcept
-        {
-            return impl::try_as<To>(m_ptr);
-        }
-
-        template <typename To>
-        void as(To& to) const
-        {
-            to = as<impl::wrapped_type_t<To>>();
-        }
-
-        template <typename To>
-        bool try_as(To& to) const noexcept
-        {
-            to = try_as<impl::wrapped_type_t<To>>();
-            return static_cast<bool>(to);
-        }
-
-        void copy_from(type* other) noexcept
-        {
-            copy_ref(other);
-        }
-
-        void copy_to(type** other) const noexcept
-        {
-            add_ref();
-            *other = m_ptr;
-        }
-
-    private:
-
-        void copy_ref(type* other) noexcept
-        {
-            if (m_ptr != other)
-            {
-                release_ref();
-                m_ptr = other;
-                add_ref();
-            }
-        }
-
-        void add_ref() const noexcept
-        {
-            if (m_ptr)
-            {
-                m_ptr->AddRef();
-            }
-        }
-
-        void release_ref() noexcept
-        {
-            if (m_ptr)
-            {
-                unconditional_release_ref();
-            }
-        }
-
-        __declspec(noinline) void unconditional_release_ref() noexcept
-        {
-            WINRT_ASSERT(m_ptr != nullptr);
-            type* temp = m_ptr;
-            m_ptr = nullptr;
-            temp->Release();
-        }
-
-        template <typename U>
-        friend struct com_ptr;
-
-        type* m_ptr{ nullptr };
-    };
-
-    template <typename T>
-    auto get_abi(com_ptr<T> const& object) noexcept
-    {
-        return object.get();
-    }
-
-    template <typename T>
-    auto put_abi(com_ptr<T>& object) noexcept
-    {
-        return object.put_void();
-    }
-
-    template <typename T>
-    void attach_abi(com_ptr<T>& object, impl::abi_t<T>* value) noexcept
-    {
-        object.attach(value);
-    }
-
-    template <typename T>
-    auto detach_abi(com_ptr<T>& object) noexcept
-    {
-        return object.detach();
-    }
-
-    template <typename T>
-    bool operator==(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return get_abi(left) == get_abi(right);
-    }
-
-    template <typename T>
-    bool operator==(com_ptr<T> const& left, std::nullptr_t) noexcept
-    {
-        return get_abi(left) == nullptr;
-    }
-
-    template <typename T>
-    bool operator==(std::nullptr_t, com_ptr<T> const& right) noexcept
-    {
-        return nullptr == get_abi(right);
-    }
-
-    template <typename T>
-    bool operator!=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return !(left == right);
-    }
-
-    template <typename T>
-    bool operator!=(com_ptr<T> const& left, std::nullptr_t) noexcept
-    {
-        return !(left == nullptr);
-    }
-
-    template <typename T>
-    bool operator!=(std::nullptr_t, com_ptr<T> const& right) noexcept
-    {
-        return !(nullptr == right);
-    }
-
-    template <typename T>
-    bool operator<(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return get_abi(left) < get_abi(right);
-    }
-
-    template <typename T>
-    bool operator>(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return right < left;
-    }
-
-    template <typename T>
-    bool operator<=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return !(right < left);
-    }
-
-    template <typename T>
-    bool operator>=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
-    {
-        return !(left < right);
-    }
-}
-
-namespace winrt::impl
-{
-    template <typename To, typename From>
-    com_ref<To> as(From* ptr)
-    {
-#ifdef WINRT_DIAGNOSTICS
-        get_diagnostics_info().add_query<To>();
-#endif
-
-        com_ref<To> result{ nullptr };
-
-        if constexpr (is_implements_v<To>)
-        {
-            impl::com_ref<impl::default_interface_t<To>> temp;
-            check_hresult(ptr->QueryInterface(guid_of<To>(), put_abi(temp)));
-            attach_abi(result, from_abi<To>(temp));
-            detach_abi(temp);
-        }
-        else
-        {
-            check_hresult(ptr->QueryInterface(guid_of<To>(), put_abi(result)));
-        }
-
+        void* result = nullptr;
+        check_hresult(WINRT_WindowsDuplicateString(other, &result));
         return result;
     }
 
-    template <typename To, typename From>
-    com_ref<To> try_as(From* ptr) noexcept
+    inline void* create_string(wchar_t const* value, uint32_t const length)
     {
-#ifdef WINRT_DIAGNOSTICS
-        get_diagnostics_info().add_query<To>();
-#endif
-
-        com_ref<To> result{ nullptr };
-
-        if constexpr (is_implements_v<To>)
-        {
-            impl::com_ref<impl::default_interface_t<To>> temp;
-            ptr->QueryInterface(guid_of<To>(), put_abi(temp));
-            attach_abi(result, from_abi<To>(temp));
-            detach_abi(temp);
-        }
-        else
-        {
-            ptr->QueryInterface(guid_of<To>(), put_abi(result));
-        }
-
-        return result;
-    }
-}
-namespace winrt::impl
-{
-    inline HSTRING duplicate_string(HSTRING other)
-    {
-        HSTRING result = nullptr;
-        check_hresult(WindowsDuplicateString(other, &result));
+        void* result = nullptr;
+        check_hresult(WINRT_WindowsCreateString(value, length, &result));
         return result;
     }
 
-    inline HSTRING create_string(wchar_t const* value, uint32_t const length)
+    inline bool embedded_null(void* value) noexcept
     {
-        HSTRING result = nullptr;
-        check_hresult(WindowsCreateString(value, length, &result));
-        return result;
-    }
-
-    inline uint32_t string_length(wchar_t const* value) noexcept
-    {
-        size_t length = 0;
-        if (value)
-        {
-            length = wcslen(value);
-        }
-        WINRT_ASSERT(length <= 0xffffffff);
-        return static_cast<uint32_t>(length);
-    }
-
-    inline bool embedded_null(HSTRING value) noexcept
-    {
-        BOOL result = 0;
-        WINRT_VERIFY_(S_OK, WindowsStringHasEmbeddedNull(value, &result));
+        int32_t result = 0;
+        WINRT_VERIFY_(error_ok, WINRT_WindowsStringHasEmbeddedNull(value, &result));
         return 0 != result;
     }
 
     struct hstring_traits
     {
-        using type = HSTRING;
+        using type = void*;
 
         static void close(type value) noexcept
         {
-            WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+            WINRT_VERIFY_(error_ok, WINRT_WindowsDeleteString(value));
         }
 
         static constexpr type invalid() noexcept
@@ -2274,6 +2626,7 @@ WINRT_EXPORT namespace winrt
         using value_type = wchar_t;
         using size_type = uint32_t;
         using const_reference = value_type const&;
+        using pointer = value_type*;
         using const_pointer = value_type const*;
         using const_iterator = const_pointer;
         using const_reverse_iterator = std::reverse_iterator<const_iterator>;
@@ -2286,13 +2639,17 @@ WINRT_EXPORT namespace winrt
 
         hstring& operator=(hstring const& value)
         {
-            m_handle = impl::duplicate_string(value.m_handle.get());
+            m_handle.attach(impl::duplicate_string(value.m_handle.get()));
             return*this;
         }
 
         hstring(hstring&&) noexcept = default;
         hstring& operator=(hstring&&) = default;
         hstring(std::nullptr_t) = delete;
+
+        hstring(std::initializer_list<wchar_t> value) :
+            hstring(value.begin(), static_cast<uint32_t>(value.size()))
+        {}
 
         hstring(wchar_t const* value) :
             hstring(std::wstring_view(value))
@@ -2311,6 +2668,16 @@ WINRT_EXPORT namespace winrt
             return *this = hstring{ value };
         }
 
+        hstring& operator=(wchar_t const* const value)
+        {
+            return *this = hstring{ value };
+        }
+
+        hstring& operator=(std::initializer_list<wchar_t> value)
+        {
+            return *this = hstring{ value };
+        }
+
         void clear() noexcept
         {
             m_handle.close();
@@ -2319,7 +2686,7 @@ WINRT_EXPORT namespace winrt
         operator std::wstring_view() const noexcept
         {
             uint32_t size;
-            wchar_t const* data = WindowsGetStringRawBuffer(m_handle.get(), &size);
+            wchar_t const* data = WINRT_WindowsGetStringRawBuffer(m_handle.get(), &size);
             return std::wstring_view(data, size);
         }
 
@@ -2353,7 +2720,7 @@ WINRT_EXPORT namespace winrt
 
         const_iterator begin() const noexcept
         {
-            return WindowsGetStringRawBuffer(m_handle.get(), nullptr);
+            return WINRT_WindowsGetStringRawBuffer(m_handle.get(), nullptr);
         }
 
         const_iterator cbegin() const noexcept
@@ -2364,7 +2731,7 @@ WINRT_EXPORT namespace winrt
         const_iterator end() const noexcept
         {
             uint32_t length = 0;
-            const_pointer buffer = WindowsGetStringRawBuffer(m_handle.get(), &length);
+            const_pointer buffer = WINRT_WindowsGetStringRawBuffer(m_handle.get(), &length);
             return buffer + length;
         }
 
@@ -2400,7 +2767,7 @@ WINRT_EXPORT namespace winrt
 
         size_type size() const noexcept
         {
-            return WindowsGetStringLen(m_handle.get());
+            return WINRT_WindowsGetStringLen(m_handle.get());
         }
 
         friend void swap(hstring& left, hstring& right) noexcept
@@ -2413,49 +2780,54 @@ WINRT_EXPORT namespace winrt
         handle_type<impl::hstring_traits> m_handle;
     };
 
-    inline HSTRING get_abi(hstring const& object) noexcept
+    inline void* get_abi(hstring const& object) noexcept
     {
-        return *(HSTRING*)(&object);
+        return *(void**)(&object);
     }
 
-    inline HSTRING* put_abi(hstring& object) noexcept
+    inline void** put_abi(hstring& object) noexcept
     {
         WINRT_ASSERT(get_abi(object) == nullptr);
-        return reinterpret_cast<HSTRING*>(&object);
+        return reinterpret_cast<void**>(&object);
     }
 
-    inline void attach_abi(hstring& object, HSTRING value) noexcept
+    inline void attach_abi(hstring& object, void* value) noexcept
     {
         object.clear();
         *put_abi(object) = value;
     }
 
-    inline HSTRING detach_abi(hstring& object) noexcept
+    inline void* detach_abi(hstring& object) noexcept
     {
-        HSTRING temp = get_abi(object);
-        *reinterpret_cast<HSTRING*>(&object) = nullptr;
+        void* temp = get_abi(object);
+        *reinterpret_cast<void**>(&object) = nullptr;
         return temp;
     }
 
-    inline HSTRING detach_abi(hstring&& object) noexcept
+    inline void* detach_abi(hstring&& object) noexcept
     {
         return detach_abi(object);
     }
 
-    inline void copy_from_abi(hstring& object, HSTRING value)
+    inline void copy_from_abi(hstring& object, void* value)
     {
         attach_abi(object, impl::duplicate_string(value));
     }
 
-    inline void copy_to_abi(hstring const& object, HSTRING& value)
+    inline void copy_to_abi(hstring const& object, void*& value)
     {
         WINRT_ASSERT(value == nullptr);
         value = impl::duplicate_string(get_abi(object));
     }
 
-    inline HSTRING detach_abi(std::wstring_view const& value)
+    inline void* detach_abi(std::wstring_view const& value)
     {
         return impl::create_string(value.data(), static_cast<uint32_t>(value.size()));
+    }
+
+    inline void* detach_abi(wchar_t const* const value)
+    {
+        return impl::create_string(value, static_cast<uint32_t>(wcslen(value)));
     }
 }
 
@@ -2463,7 +2835,7 @@ namespace winrt::impl
 {
     template <> struct abi<hstring>
     {
-        using type = HSTRING;
+        using type = void*;
     };
 
     template <> struct name<hstring>
@@ -2507,14 +2879,14 @@ namespace winrt::impl
 
         explicit hstring_builder(uint32_t const size)
         {
-            check_hresult(WindowsPreallocateStringBuffer(size, &m_data, &m_buffer));
+            check_hresult(WINRT_WindowsPreallocateStringBuffer(size, &m_data, &m_buffer));
         }
 
         ~hstring_builder() noexcept
         {
             if (m_buffer != nullptr)
             {
-                WINRT_VERIFY_(S_OK, WindowsDeleteStringBuffer(m_buffer));
+                WINRT_VERIFY_(error_ok, WINRT_WindowsDeleteStringBuffer(m_buffer));
             }
         }
 
@@ -2528,7 +2900,7 @@ namespace winrt::impl
         {
             WINRT_ASSERT(m_buffer != nullptr);
             hstring result;
-            check_hresult(WindowsPromoteStringBuffer(m_buffer, put_abi(result)));
+            check_hresult(WINRT_WindowsPromoteStringBuffer(m_buffer, put_abi(result)));
             m_buffer = nullptr;
             return result;
         }
@@ -2536,7 +2908,7 @@ namespace winrt::impl
     private:
 
         wchar_t* m_data{ nullptr };
-        HSTRING_BUFFER m_buffer{ nullptr };
+        void* m_buffer{ nullptr };
     };
 }
 
@@ -2606,14 +2978,14 @@ WINRT_EXPORT namespace winrt
     inline hstring to_hstring(float value)
     {
         wchar_t buffer[32];
-        _swprintf_s_l(buffer, _countof(buffer), L"%G", impl::get_default_locale(), value);
+        _swprintf_s_l(buffer, std::size(buffer), L"%G", impl::get_default_locale(), value);
         return hstring{ buffer };
     }
 
     inline hstring to_hstring(double value)
     {
         wchar_t buffer[32];
-        _swprintf_s_l(buffer, _countof(buffer), L"%G", impl::get_default_locale(), value);
+        _swprintf_s_l(buffer, std::size(buffer), L"%G", impl::get_default_locale(), value);
         return hstring{ buffer };
     }
 
@@ -2628,7 +3000,8 @@ WINRT_EXPORT namespace winrt
         return value;
     }
 
-    inline hstring to_hstring(bool value)
+    template <typename T, typename = std::enable_if_t<std::is_same_v<T, bool>>>
+    hstring to_hstring(T const value)
     {
         if (value)
         {
@@ -2640,7 +3013,7 @@ WINRT_EXPORT namespace winrt
         }
     }
 
-    inline hstring to_hstring(GUID const& value)
+    inline hstring to_hstring(guid const& value)
     {
         wchar_t buffer[40];
         //{00000000-0000-0000-0000-000000000000}
@@ -2654,7 +3027,7 @@ WINRT_EXPORT namespace winrt
     hstring to_hstring(T const& value)
     {
         std::string_view const view(value);
-        int const size = MultiByteToWideChar(CP_UTF8, 0, view.data(), static_cast<int32_t>(view.size()), nullptr, 0);
+        int const size = WINRT_MultiByteToWideChar(65001 /*CP_UTF8*/, 0, view.data(), static_cast<int32_t>(view.size()), nullptr, 0);
 
         if (size == 0)
         {
@@ -2662,13 +3035,13 @@ WINRT_EXPORT namespace winrt
         }
 
         impl::hstring_builder result(size);
-        WINRT_VERIFY_(size, MultiByteToWideChar(CP_UTF8, 0, view.data(), static_cast<int32_t>(view.size()), result.data(), size));
+        WINRT_VERIFY_(size, WINRT_MultiByteToWideChar(65001 /*CP_UTF8*/, 0, view.data(), static_cast<int32_t>(view.size()), result.data(), size));
         return result.to_hstring();
     }
 
     inline std::string to_string(std::wstring_view value)
     {
-        int const size = WideCharToMultiByte( CP_UTF8, 0, value.data(), static_cast<int32_t>(value.size()), nullptr, 0, nullptr, nullptr);
+        int const size = WINRT_WideCharToMultiByte(65001 /*CP_UTF8*/, 0, value.data(), static_cast<int32_t>(value.size()), nullptr, 0, nullptr, nullptr);
 
         if (size == 0)
         {
@@ -2676,7 +3049,7 @@ WINRT_EXPORT namespace winrt
         }
 
         std::string result(size, '?');
-        WINRT_VERIFY_(size, WideCharToMultiByte(CP_UTF8, 0, value.data(), static_cast<int32_t>(value.size()), result.data(), size, nullptr, nullptr));
+        WINRT_VERIFY_(size, WINRT_WideCharToMultiByte(65001 /*CP_UTF8*/, 0, value.data(), static_cast<int32_t>(value.size()), result.data(), size, nullptr, nullptr));
         return result;
     }
 }
@@ -2696,27 +3069,51 @@ WINRT_EXPORT namespace winrt::param
 
         hstring(std::wstring_view const& value) noexcept
         {
-            WINRT_VERIFY_(S_OK, WindowsCreateStringReference(value.data(), static_cast<uint32_t>(value.size()), &m_header, &m_handle));
+            if (impl::error_ok != WINRT_WindowsCreateStringReference(value.data(), static_cast<uint32_t>(value.size()), &m_header, &m_handle))
+            {
+                std::terminate();
+            }
         }
 
-        hstring(std::wstring const& value) noexcept : hstring(std::wstring_view(value))
+        hstring(std::wstring const& value) noexcept
         {
+            WINRT_VERIFY_(impl::error_ok, WINRT_WindowsCreateStringReference(value.data(), static_cast<uint32_t>(value.size()), &m_header, &m_handle));
         }
 
-        hstring(wchar_t const* const value) noexcept : hstring(std::wstring_view(value))
+        hstring(wchar_t const* const value) noexcept
         {
+            WINRT_VERIFY_(impl::error_ok, WINRT_WindowsCreateStringReference(value, static_cast<uint32_t>(wcslen(value)), &m_header, &m_handle));
         }
 
     private:
 
-        HSTRING m_handle;
-        HSTRING_HEADER m_header;
+        struct header
+        {
+            union
+            {
+                void* Reserved1;
+#ifdef _WIN64
+                char Reserved2[24];
+#else
+                char Reserved2[20];
+#endif
+            } Reserved;
+        };
+        
+        void* m_handle;
+        header m_header;
     };
 
-    inline HSTRING get_abi(hstring const& object) noexcept
+    inline void* get_abi(hstring const& object) noexcept
     {
-        return *(HSTRING*)(&object);
+        return *(void**)(&object);
     }
+}
+
+namespace winrt::impl
+{
+    template <typename T>
+    using param_type = std::conditional_t<std::is_same_v<T, hstring>, param::hstring, T>;
 }
 
 WINRT_EXPORT namespace winrt
@@ -2816,11 +3213,12 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
-    inline hstring concat_hstring(param::hstring const& left, param::hstring const& right)
+    inline hstring concat_hstring(std::wstring_view const& left, std::wstring_view const& right)
     {
-        hstring result;
-        check_hresult(WindowsConcatString(get_abi(left), get_abi(right), put_abi(result)));
-        return result;
+        hstring_builder text(static_cast<uint32_t>(left.size() + right.size()));
+        memcpy_s(text.data(), left.size() * sizeof(wchar_t), left.data(), left.size() * sizeof(wchar_t));
+        memcpy_s(text.data() + left.size(), right.size() * sizeof(wchar_t), right.data(), right.size() * sizeof(wchar_t));
+        return text.to_hstring();
     }
 }
 
@@ -2873,429 +3271,6 @@ WINRT_EXPORT namespace winrt
     inline hstring operator+(std::wstring_view const& left, hstring const& right)
     {
         return impl::concat_hstring(left, right);
-    }
-}
-
-namespace winrt::impl
-{
-    struct heap_traits
-    {
-        using type = wchar_t*;
-
-        static void close(type value) noexcept
-        {
-            WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
-        }
-
-        static constexpr type invalid() noexcept
-        {
-            return nullptr;
-        }
-    };
-
-    struct bstr_traits
-    {
-        using type = BSTR;
-
-        static void close(type value) noexcept
-        {
-            SysFreeString(value);
-        }
-
-        static constexpr type invalid() noexcept
-        {
-            return nullptr;
-        }
-    };
-
-    using bstr_handle = handle_type<bstr_traits>;
-
-    inline hstring trim_hresult_message(wchar_t const* const message, uint32_t size) noexcept
-    {
-        wchar_t const* back = message + size - 1;
-
-        while (size&& iswspace(*back))
-        {
-            --size;
-            --back;
-        }
-
-        hstring result;
-        WindowsCreateString(message, size, put_abi(result));
-        return result;
-    }
-
-    template <> struct guid<::ILanguageExceptionErrorInfo2>
-    {
-        static constexpr GUID value{ 0x5746E5C4,0x5B97,0x424C,{ 0xB6,0x20,0x28,0x22,0x91,0x57,0x34,0xDD } };
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    struct hresult_error
-    {
-        struct from_abi_t {};
-        static constexpr from_abi_t from_abi{};
-
-        hresult_error() noexcept = default;
-        hresult_error(hresult_error&&) = default;
-        hresult_error& operator=(hresult_error&&) = default;
-
-        hresult_error(hresult_error const& other) noexcept :
-        m_code(other.m_code),
-            m_info(other.m_info)
-        {
-        }
-
-        hresult_error& operator=(hresult_error const& other) noexcept
-        {
-            m_code = other.m_code;
-            m_info = other.m_info;
-            return *this;
-        }
-
-        explicit hresult_error(HRESULT const code) noexcept : m_code(code)
-        {
-            WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, nullptr, nullptr));
-            WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
-        }
-
-        hresult_error(HRESULT const code, param::hstring const& message, ::IUnknown* object = nullptr) noexcept : m_code(code)
-        {
-            WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, get_abi(message), object));
-            WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
-        }
-
-        hresult_error(HRESULT const code, from_abi_t) noexcept : m_code(code)
-        {
-            WINRT_GetRestrictedErrorInfo(m_info.put());
-
-            if (m_info == nullptr)
-            {
-                WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, nullptr, nullptr));
-                WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
-            }
-
-            if (m_info != nullptr)
-            {
-                WINRT_VERIFY_(S_OK, m_info->GetReference(m_debug_reference.put()));
-
-                if (com_ptr<ILanguageExceptionErrorInfo2> info2 = m_info.try_as<ILanguageExceptionErrorInfo2>())
-                {
-                    WINRT_VERIFY_(S_OK, info2->CapturePropagationContext(nullptr));
-                }
-            }
-        }
-
-        HRESULT code() const noexcept
-        {
-            return m_code;
-        }
-
-        hstring message() const noexcept
-        {
-            if (m_info)
-            {
-                HRESULT code{};
-                impl::bstr_handle fallback;
-                impl::bstr_handle message;
-                impl::bstr_handle unused;
-
-                if (S_OK == m_info->GetErrorDetails(fallback.put(), &code, message.put(), unused.put()))
-                {
-                    if (code == m_code)
-                    {
-                        if (message)
-                        {
-                            return impl::trim_hresult_message(message.get(), SysStringLen(message.get()));
-                        }
-                        else
-                        {
-                            return impl::trim_hresult_message(fallback.get(), SysStringLen(fallback.get()));
-                        }
-                    }
-                }
-            }
-
-            handle_type<impl::heap_traits> message;
-
-            uint32_t const size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-                nullptr,
-                m_code,
-                MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                reinterpret_cast<wchar_t*>(message.put()),
-                0,
-                nullptr);
-
-            return impl::trim_hresult_message(message.get(), size);
-        }
-
-        com_ptr<IRestrictedErrorInfo> const& info() const noexcept
-        {
-            return m_info;
-        }
-
-        HRESULT to_abi() const noexcept
-        {
-            if (m_info)
-            {
-                WINRT_SetRestrictedErrorInfo(m_info.get());
-            }
-
-            return m_code;
-        }
-
-    private:
-
-        impl::bstr_handle m_debug_reference;
-        uint32_t const m_debug_magic{ 0xAABBCCDD };
-        HRESULT m_code{ E_FAIL };
-        com_ptr<IRestrictedErrorInfo> m_info;
-    };
-
-    struct hresult_access_denied : hresult_error
-    {
-        hresult_access_denied() noexcept : hresult_error(E_ACCESSDENIED) {}
-        hresult_access_denied(param::hstring const& message) noexcept : hresult_error(E_ACCESSDENIED, message) {}
-        hresult_access_denied(from_abi_t) noexcept : hresult_error(E_ACCESSDENIED, from_abi) {}
-    };
-
-    struct hresult_wrong_thread : hresult_error
-    {
-        hresult_wrong_thread() noexcept : hresult_error(RPC_E_WRONG_THREAD) {}
-        hresult_wrong_thread(param::hstring const& message) noexcept : hresult_error(RPC_E_WRONG_THREAD, message) {}
-        hresult_wrong_thread(from_abi_t) noexcept : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
-    };
-
-    struct hresult_not_implemented : hresult_error
-    {
-        hresult_not_implemented() noexcept : hresult_error(E_NOTIMPL) {}
-        hresult_not_implemented(param::hstring const& message) noexcept : hresult_error(E_NOTIMPL, message) {}
-        hresult_not_implemented(from_abi_t) noexcept : hresult_error(E_NOTIMPL, from_abi) {}
-    };
-
-    struct hresult_invalid_argument : hresult_error
-    {
-        hresult_invalid_argument() noexcept : hresult_error(E_INVALIDARG) {}
-        hresult_invalid_argument(param::hstring const& message) noexcept : hresult_error(E_INVALIDARG, message) {}
-        hresult_invalid_argument(from_abi_t) noexcept : hresult_error(E_INVALIDARG, from_abi) {}
-    };
-
-    struct hresult_out_of_bounds : hresult_error
-    {
-        hresult_out_of_bounds() noexcept : hresult_error(E_BOUNDS) {}
-        hresult_out_of_bounds(param::hstring const& message) noexcept : hresult_error(E_BOUNDS, message) {}
-        hresult_out_of_bounds(from_abi_t) noexcept : hresult_error(E_BOUNDS, from_abi) {}
-    };
-
-    struct hresult_no_interface : hresult_error
-    {
-        hresult_no_interface() noexcept : hresult_error(E_NOINTERFACE) {}
-        hresult_no_interface(param::hstring const& message) noexcept : hresult_error(E_NOINTERFACE, message) {}
-        hresult_no_interface(from_abi_t) noexcept : hresult_error(E_NOINTERFACE, from_abi) {}
-    };
-
-    struct hresult_class_not_available : hresult_error
-    {
-        hresult_class_not_available() noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
-        hresult_class_not_available(param::hstring const& message) noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
-        hresult_class_not_available(from_abi_t) noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
-    };
-
-    struct hresult_changed_state : hresult_error
-    {
-        hresult_changed_state() noexcept : hresult_error(E_CHANGED_STATE) {}
-        hresult_changed_state(param::hstring const& message) noexcept : hresult_error(E_CHANGED_STATE, message) {}
-        hresult_changed_state(from_abi_t) noexcept : hresult_error(E_CHANGED_STATE, from_abi) {}
-    };
-
-    struct hresult_illegal_method_call : hresult_error
-    {
-        hresult_illegal_method_call() noexcept : hresult_error(E_ILLEGAL_METHOD_CALL) {}
-        hresult_illegal_method_call(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
-        hresult_illegal_method_call(from_abi_t) noexcept : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
-    };
-
-    struct hresult_illegal_state_change : hresult_error
-    {
-        hresult_illegal_state_change() noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
-        hresult_illegal_state_change(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
-        hresult_illegal_state_change(from_abi_t) noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
-    };
-
-    struct hresult_illegal_delegate_assignment : hresult_error
-    {
-        hresult_illegal_delegate_assignment() noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
-        hresult_illegal_delegate_assignment(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
-        hresult_illegal_delegate_assignment(from_abi_t) noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
-    };
-
-    struct hresult_canceled : hresult_error
-    {
-        hresult_canceled() noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
-        hresult_canceled(param::hstring const& message) noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
-        hresult_canceled(from_abi_t) noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    [[noreturn]] inline __declspec(noinline) void throw_hresult(HRESULT const result)
-    {
-        if (result == E_OUTOFMEMORY)
-        {
-            throw std::bad_alloc();
-        }
-
-        if (result == E_ACCESSDENIED)
-        {
-            throw hresult_access_denied(hresult_error::from_abi);
-        }
-
-        if (result == RPC_E_WRONG_THREAD)
-        {
-            throw hresult_wrong_thread(hresult_error::from_abi);
-        }
-
-        if (result == E_NOTIMPL)
-        {
-            throw hresult_not_implemented(hresult_error::from_abi);
-        }
-
-        if (result == E_INVALIDARG)
-        {
-            throw hresult_invalid_argument(hresult_error::from_abi);
-        }
-
-        if (result == E_BOUNDS)
-        {
-            throw hresult_out_of_bounds(hresult_error::from_abi);
-        }
-
-        if (result == E_NOINTERFACE)
-        {
-            throw hresult_no_interface(hresult_error::from_abi);
-        }
-
-        if (result == CLASS_E_CLASSNOTAVAILABLE)
-        {
-            throw hresult_class_not_available(hresult_error::from_abi);
-        }
-
-        if (result == E_CHANGED_STATE)
-        {
-            throw hresult_changed_state(hresult_error::from_abi);
-        }
-
-        if (result == E_ILLEGAL_METHOD_CALL)
-        {
-            throw hresult_illegal_method_call(hresult_error::from_abi);
-        }
-
-        if (result == E_ILLEGAL_STATE_CHANGE)
-        {
-            throw hresult_illegal_state_change(hresult_error::from_abi);
-        }
-
-        if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
-        {
-            throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
-        }
-
-        if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
-        {
-            throw hresult_canceled(hresult_error::from_abi);
-        }
-
-        throw hresult_error(result, hresult_error::from_abi);
-    }
-
-    inline __declspec(noinline) HRESULT to_hresult() noexcept
-    {
-        try
-        {
-            throw;
-        }
-        catch (hresult_error const& e)
-        {
-            return e.to_abi();
-        }
-        WINRT_EXTERNAL_CATCH_CLAUSE
-        catch (std::bad_alloc const&)
-        {
-            return E_OUTOFMEMORY;
-        }
-        catch (std::out_of_range const& e)
-        {
-            return hresult_out_of_bounds(to_hstring(e.what())).to_abi();
-        }
-        catch (std::invalid_argument const& e)
-        {
-            return hresult_invalid_argument(to_hstring(e.what())).to_abi();
-        }
-        catch (std::exception const& e)
-        {
-            return hresult_error(E_FAIL, to_hstring(e.what())).to_abi();
-        }
-    }
-
-    [[noreturn]] inline void throw_last_error()
-    {
-        throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
-    }
-}
-
-WINRT_EXPORT namespace winrt
-{
-    __forceinline void check_hresult(HRESULT const result)
-    {
-#ifdef WINRT_STRICT_HRESULT
-        if (result != S_OK)
-#else
-        if (result < 0)
-#endif
-        {
-            throw_hresult(result);
-        }
-    }
-
-    template<typename T>
-    void check_nt(T result)
-    {
-        if (result != 0)
-        {
-            throw_hresult(HRESULT_FROM_NT(result));
-        }
-    }
-
-    template<typename T>
-    void check_win32(T result)
-    {
-        if (result != 0)
-        {
-            throw_hresult(HRESULT_FROM_WIN32(result));
-        }
-    }
-
-    template<typename T>
-    void check_bool(T result)
-    {
-        if (!result)
-        {
-            winrt::throw_last_error();
-        }
-    }
-
-    template<typename T>
-    T* check_pointer(T* pointer)
-    {
-        if (!pointer)
-        {
-            throw_last_error();
-        }
-
-        return pointer;
     }
 }
 
@@ -3606,7 +3581,7 @@ WINRT_EXPORT namespace winrt
 
             std::destroy(this->begin(), this->end());
 
-            CoTaskMemFree(this->m_data);
+            WINRT_CoTaskMemFree(this->m_data);
             this->m_data = nullptr;
             this->m_size = 0;
         }
@@ -3625,7 +3600,7 @@ WINRT_EXPORT namespace winrt
 
             if (0 != size)
             {
-                this->m_data = static_cast<value_type*>(CoTaskMemAlloc(size * sizeof(value_type)));
+                this->m_data = static_cast<value_type*>(WINRT_CoTaskMemAlloc(size * sizeof(value_type)));
 
                 if (this->m_data == nullptr)
                 {
@@ -3655,7 +3630,7 @@ WINRT_EXPORT namespace winrt
     template <typename T> bool operator>=(array_view<T> const& left, array_view<T> const& right) noexcept { return !(left < right); }
 
     template <typename T>
-    static auto get_abi(array_view<T> object) noexcept
+    auto get_abi(array_view<T> object) noexcept
     {
         if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
         {
@@ -3772,9 +3747,9 @@ WINRT_EXPORT namespace winrt
         return value;
     }
 
-    inline com_array<GUID> get_interfaces(Windows::Foundation::IInspectable const& object)
+    inline com_array<guid> get_interfaces(Windows::Foundation::IInspectable const& object)
     {
-        com_array<GUID> value;
+        com_array<guid> value;
         check_hresult((*(impl::IInspectable**)&object)->GetIids(impl::put_size_abi(value), put_abi(value)));
         return value;
     }
@@ -3787,32 +3762,361 @@ WINRT_EXPORT namespace winrt
     }
 }
 
+WINRT_EXPORT namespace winrt
+{
+    template <typename T>
+    struct com_ptr
+    {
+        using type = impl::abi_t<T>;
+
+        com_ptr(std::nullptr_t = nullptr) noexcept {}
+
+        com_ptr(com_ptr const& other) noexcept : m_ptr(other.m_ptr)
+        {
+            add_ref();
+        }
+
+        template <typename U>
+        com_ptr(com_ptr<U> const& other) noexcept : m_ptr(other.m_ptr)
+        {
+            add_ref();
+        }
+
+        template <typename U>
+        com_ptr(com_ptr<U>&& other) noexcept : m_ptr(std::exchange(other.m_ptr, {}))
+        {
+        }
+
+        ~com_ptr() noexcept
+        {
+            release_ref();
+        }
+
+        com_ptr& operator=(com_ptr const& other) noexcept
+        {
+            copy_ref(other.m_ptr);
+            return*this;
+        }
+
+        com_ptr& operator=(com_ptr&& other) noexcept
+        {
+            if (this != &other)
+            {
+                release_ref();
+                m_ptr = std::exchange(other.m_ptr, {});
+            }
+
+            return*this;
+        }
+
+        template <typename U>
+        com_ptr& operator=(com_ptr<U> const& other) noexcept
+        {
+            copy_ref(other.m_ptr);
+            return*this;
+        }
+
+        template <typename U>
+        com_ptr& operator=(com_ptr<U>&& other) noexcept
+        {
+            release_ref();
+            m_ptr = std::exchange(other.m_ptr, {});
+            return*this;
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return m_ptr != nullptr;
+        }
+
+        auto operator->() const noexcept
+        {
+            return m_ptr;
+        }
+
+        T& operator*() const noexcept
+        {
+            return *m_ptr;
+        }
+
+        type* get() const noexcept
+        {
+            return m_ptr;
+        }
+
+        type** put() noexcept
+        {
+            WINRT_ASSERT(m_ptr == nullptr);
+            return &m_ptr;
+        }
+
+        void** put_void() noexcept
+        {
+            return reinterpret_cast<void**>(put());
+        }
+
+        void attach(type* value) noexcept
+        {
+            release_ref();
+            *put() = value;
+        }
+
+        type* detach() noexcept
+        {
+            return std::exchange(m_ptr, {});
+        }
+
+        friend void swap(com_ptr& left, com_ptr& right) noexcept
+        {
+            std::swap(left.m_ptr, right.m_ptr);
+        }
+
+        template <typename To>
+        auto as() const
+        {
+            return impl::as<To>(m_ptr);
+        }
+
+        template <typename To>
+        auto try_as() const noexcept
+        {
+            return impl::try_as<To>(m_ptr);
+        }
+
+        template <typename To>
+        void as(To& to) const
+        {
+            to = as<impl::wrapped_type_t<To>>();
+        }
+
+        template <typename To>
+        bool try_as(To& to) const noexcept
+        {
+            to = try_as<impl::wrapped_type_t<To>>();
+            return static_cast<bool>(to);
+        }
+
+        void copy_from(type* other) noexcept
+        {
+            copy_ref(other);
+        }
+
+        void copy_to(type** other) const noexcept
+        {
+            add_ref();
+            *other = m_ptr;
+        }
+
+        template <typename F, typename...Args>
+        void capture(F function, Args&&...args)
+        {
+            check_hresult(function(args..., guid_of<T>(), put_void()));
+        }
+
+        template <typename O, typename M, typename...Args>
+        void capture(com_ptr<O> const& object, M method, Args&&...args)
+        {
+            check_hresult((object.get()->*(method))(args..., guid_of<T>(), put_void()));
+        }
+
+    private:
+
+        void copy_ref(type* other) noexcept
+        {
+            if (m_ptr != other)
+            {
+                release_ref();
+                m_ptr = other;
+                add_ref();
+            }
+        }
+
+        void add_ref() const noexcept
+        {
+            if (m_ptr)
+            {
+                const_cast<std::remove_const_t<type>*>(m_ptr)->AddRef();
+            }
+        }
+
+        void release_ref() noexcept
+        {
+            if (m_ptr)
+            {
+                unconditional_release_ref();
+            }
+        }
+
+        WINRT_NOINLINE void unconditional_release_ref() noexcept
+        {
+            std::exchange(m_ptr, {})->Release();
+        }
+
+        template <typename U>
+        friend struct com_ptr;
+
+        type* m_ptr{};
+    };
+
+    template <typename T, typename F, typename...Args>
+    auto capture(F function, Args&&...args)
+    {
+        com_ptr<T> result;
+        check_hresult(function(args..., guid_of<T>(), result.put_void()));
+        return result;
+    }
+
+    template <typename T, typename O, typename M, typename...Args>
+    auto capture(com_ptr<O> const& object, M method, Args&&...args)
+    {
+        com_ptr<T> result;
+        check_hresult((object.get()->*(method))(args..., guid_of<T>(), result.put_void()));
+        return result;
+    }
+
+    template <typename T>
+    auto get_abi(com_ptr<T> const& object) noexcept
+    {
+        return object.get();
+    }
+
+    template <typename T>
+    auto put_abi(com_ptr<T>& object) noexcept
+    {
+        return object.put_void();
+    }
+
+    template <typename T>
+    void attach_abi(com_ptr<T>& object, impl::abi_t<T>* value) noexcept
+    {
+        object.attach(value);
+    }
+
+    template <typename T>
+    auto detach_abi(com_ptr<T>& object) noexcept
+    {
+        return object.detach();
+    }
+
+    template <typename T>
+    bool operator==(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return get_abi(left) == get_abi(right);
+    }
+
+    template <typename T>
+    bool operator==(com_ptr<T> const& left, std::nullptr_t) noexcept
+    {
+        return get_abi(left) == nullptr;
+    }
+
+    template <typename T>
+    bool operator==(std::nullptr_t, com_ptr<T> const& right) noexcept
+    {
+        return nullptr == get_abi(right);
+    }
+
+    template <typename T>
+    bool operator!=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return !(left == right);
+    }
+
+    template <typename T>
+    bool operator!=(com_ptr<T> const& left, std::nullptr_t) noexcept
+    {
+        return !(left == nullptr);
+    }
+
+    template <typename T>
+    bool operator!=(std::nullptr_t, com_ptr<T> const& right) noexcept
+    {
+        return !(nullptr == right);
+    }
+
+    template <typename T>
+    bool operator<(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return get_abi(left) < get_abi(right);
+    }
+
+    template <typename T>
+    bool operator>(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return right < left;
+    }
+
+    template <typename T>
+    bool operator<=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return !(right < left);
+    }
+
+    template <typename T>
+    bool operator>=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
+    {
+        return !(left < right);
+    }
+
+    template <typename D, typename I>
+    D* get_self(I const& from) noexcept;
+}
+
 namespace winrt::impl
 {
-    struct __declspec(novtable) IWeakReference : IUnknown
+    template <typename To, typename From>
+    com_ref<To> as(From* ptr)
     {
-        virtual HRESULT __stdcall Resolve(GUID const& iid, void** objectReference) noexcept = 0;
-    };
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
 
-    struct __declspec(novtable) IWeakReferenceSource : IUnknown
-    {
-        virtual HRESULT __stdcall GetWeakReference(IWeakReference** weakReference) noexcept = 0;
-    };
+        com_ref<To> result{ nullptr };
 
-    template <> struct guid<IWeakReference>
-    {
-        static constexpr GUID value{ 0x00000037,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
+        if (ptr)
+        {
+            if constexpr (is_implements_v<To>)
+            {
+                impl::com_ref<winrt::default_interface<To>> temp;
+                check_hresult(ptr->QueryInterface(guid_of<To>(), put_abi(temp)));
+                attach_abi(result, get_self<To>(temp));
+                detach_abi(temp);
+            }
+            else
+            {
+                check_hresult(ptr->QueryInterface(guid_of<To>(), put_abi(result)));
+            }
+        }
 
-    template <> struct guid<IWeakReferenceSource>
-    {
-        static constexpr GUID value{ 0x00000038,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
+        return result;
+    }
 
-    template <> struct name<IWeakReferenceSource>
+    template <typename To, typename From>
+    com_ref<To> try_as(From* ptr) noexcept
     {
-        static constexpr auto & value{ L"IWeakReferenceSource" };
-    };
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
+
+        com_ref<To> result{ nullptr };
+
+        if (ptr)
+        {
+            if constexpr (is_implements_v<To>)
+            {
+                impl::com_ref<winrt::default_interface<To>> temp;
+                ptr->QueryInterface(guid_of<To>(), put_abi(temp));
+                attach_abi(result, get_self<To>(temp));
+                detach_abi(temp);
+            }
+            else
+            {
+                ptr->QueryInterface(guid_of<To>(), put_abi(result));
+            }
+        }
+
+        return result;
+    }
 }
 
 WINRT_EXPORT namespace winrt
@@ -3837,7 +4141,7 @@ WINRT_EXPORT namespace winrt
             }
         }
 
-        impl::com_ref<T> get() const noexcept
+        auto get() const noexcept
         {
             impl::com_ref<T> object{ nullptr };
 
@@ -3845,9 +4149,9 @@ WINRT_EXPORT namespace winrt
             {
                 if constexpr(impl::is_implements_v<T>)
                 {
-                    impl::com_ref<impl::default_interface_t<T>> temp;
+                    impl::com_ref<default_interface<T>> temp;
                     m_ref->Resolve(guid_of<T>(), put_abi(temp));
-                    attach_abi(object, from_abi<T>(temp));
+                    attach_abi(object, get_self<T>(temp));
                     detach_abi(temp);
                 }
                 else
@@ -3859,24 +4163,20 @@ WINRT_EXPORT namespace winrt
             return object;
         }
 
+        auto put() noexcept
+        {
+            return m_ref.put();
+        }
+
         explicit operator bool() const noexcept
         {
             return static_cast<bool>(m_ref);
         }
 
-        template <typename T>
-        friend inline auto put_abi(weak_ref<T>& object) noexcept;
-
     private:
 
         com_ptr<impl::IWeakReference> m_ref;
     };
-
-    template <typename T>
-    auto put_abi(weak_ref<T>& object) noexcept
-    {
-        return object.m_ref.put();
-    }
 
     template <typename T>
     weak_ref<impl::wrapped_type_t<T>> make_weak(T const& object)
@@ -3892,18 +4192,23 @@ WINRT_EXPORT namespace winrt
     {
         agile_ref(std::nullptr_t = nullptr) noexcept {}
 
-        agile_ref(T const& object)
+        agile_ref(impl::com_ref<T> const& object)
         {
-            check_hresult(WINRT_RoGetAgileReference(0,
-                guid_of<T>(),
-                winrt::get_abi(object),
-                m_ref.put_void()));
+            if (object)
+            {
+                check_hresult(WINRT_RoGetAgileReference(0, guid_of<T>(), winrt::get_abi(object), m_ref.put_void()));
+            }
         }
 
-        T get() const
+        auto get() const noexcept
         {
-            T result = nullptr;
-            check_hresult(m_ref->Resolve(guid_of<T>(), put_abi(result)));
+            impl::com_ref<T> result{ nullptr };
+
+            if (m_ref)
+            {
+                m_ref->Resolve(guid_of<T>(), put_abi(result));
+            }
+
             return result;
         }
 
@@ -3914,13 +4219,436 @@ WINRT_EXPORT namespace winrt
 
     private:
 
-        com_ptr<IAgileReference> m_ref;
+        com_ptr<impl::IAgileReference> m_ref;
     };
 
     template <typename T>
     agile_ref<T> make_agile(T const& object)
     {
         return object;
+    }
+}
+
+namespace winrt::impl
+{
+    struct heap_traits
+    {
+        using type = wchar_t*;
+
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY(WINRT_HeapFree(WINRT_GetProcessHeap(), 0, value));
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
+    };
+
+    struct bstr_traits
+    {
+        using type = wchar_t*;
+
+        static void close(type value) noexcept
+        {
+            WINRT_SysFreeString(value);
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
+    };
+
+    using bstr_handle = handle_type<bstr_traits>;
+
+    inline hstring trim_hresult_message(wchar_t const* const message, uint32_t size) noexcept
+    {
+        wchar_t const* back = message + size - 1;
+
+        while (size&& iswspace(*back))
+        {
+            --size;
+            --back;
+        }
+
+        return { message, size };
+    }
+
+    constexpr int32_t hresult_from_win32(uint32_t const x) noexcept
+    {
+        return (int32_t)(x) <= 0 ? (int32_t)(x) : (int32_t)(((x) & 0x0000FFFF) | (7 << 16) | 0x80000000);
+    }
+
+    constexpr int32_t hresult_from_nt(uint32_t const x) noexcept
+    {
+        return ((int32_t)((x) | 0x10000000));
+    }
+}
+
+WINRT_EXPORT namespace winrt
+{
+    struct hresult_error
+    {
+        struct from_abi_t {};
+        static constexpr from_abi_t from_abi{};
+
+        hresult_error() noexcept = default;
+        hresult_error(hresult_error&&) = default;
+        hresult_error& operator=(hresult_error&&) = default;
+
+        hresult_error(hresult_error const& other) noexcept :
+            m_code(other.m_code),
+            m_info(other.m_info)
+        {
+        }
+
+        hresult_error& operator=(hresult_error const& other) noexcept
+        {
+            m_code = other.m_code;
+            m_info = other.m_info;
+            return *this;
+        }
+
+        explicit hresult_error(hresult const code) noexcept : m_code(code)
+        {
+            originate(code, nullptr);
+        }
+
+        hresult_error(hresult const code, param::hstring const& message) noexcept : m_code(code)
+        {
+            originate(code, get_abi(message));
+        }
+
+        hresult_error(hresult const code, from_abi_t) noexcept : m_code(code)
+        {
+            WINRT_GetRestrictedErrorInfo(m_info.put_void());
+
+            if (m_info == nullptr)
+            {
+                originate(code, nullptr);
+            }
+            else
+            {
+                WINRT_VERIFY_(impl::error_ok, m_info->GetReference(m_debug_reference.put()));
+
+                if (auto info2 = m_info.try_as<impl::ILanguageExceptionErrorInfo2>())
+                {
+                    WINRT_VERIFY_(impl::error_ok, info2->CapturePropagationContext(nullptr));
+                }
+            }
+        }
+
+        hresult code() const noexcept
+        {
+            return m_code;
+        }
+
+        hstring message() const noexcept
+        {
+            if (m_info)
+            {
+                int32_t code{};
+                impl::bstr_handle fallback;
+                impl::bstr_handle message;
+                impl::bstr_handle unused;
+
+                if (impl::error_ok == m_info->GetErrorDetails(fallback.put(), &code, message.put(), unused.put()))
+                {
+                    if (code == m_code)
+                    {
+                        if (message)
+                        {
+                            return impl::trim_hresult_message(message.get(), WINRT_SysStringLen(message.get()));
+                        }
+                        else
+                        {
+                            return impl::trim_hresult_message(fallback.get(), WINRT_SysStringLen(fallback.get()));
+                        }
+                    }
+                }
+            }
+
+            handle_type<impl::heap_traits> message;
+
+            uint32_t const size = WINRT_FormatMessageW(0x00001300, // FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS
+                nullptr,
+                m_code,
+                0x00000400, // MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT)
+                reinterpret_cast<wchar_t*>(message.put()),
+                0,
+                nullptr);
+
+            return impl::trim_hresult_message(message.get(), size);
+        }
+
+        template <typename To>
+        auto try_as() const noexcept
+        {
+            return m_info.try_as<To>();
+        }
+
+        hresult to_abi() const noexcept
+        {
+            if (m_info)
+            {
+                WINRT_SetRestrictedErrorInfo(m_info.get());
+            }
+
+            return m_code;
+        }
+
+    private:
+
+        void originate(hresult const code, void* message) noexcept
+        {
+            WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, message, nullptr));
+            WINRT_VERIFY_(impl::error_ok, WINRT_GetRestrictedErrorInfo(m_info.put_void()));
+        }
+
+        impl::bstr_handle m_debug_reference;
+        uint32_t const m_debug_magic{ 0xAABBCCDD };
+        hresult m_code{ impl::error_fail };
+        com_ptr<impl::IRestrictedErrorInfo> m_info;
+    };
+
+    struct hresult_access_denied : hresult_error
+    {
+        hresult_access_denied() noexcept : hresult_error(impl::error_access_denied) {}
+        hresult_access_denied(param::hstring const& message) noexcept : hresult_error(impl::error_access_denied, message) {}
+        hresult_access_denied(from_abi_t) noexcept : hresult_error(impl::error_access_denied, from_abi) {}
+    };
+
+    struct hresult_wrong_thread : hresult_error
+    {
+        hresult_wrong_thread() noexcept : hresult_error(impl::error_wrong_thread) {}
+        hresult_wrong_thread(param::hstring const& message) noexcept : hresult_error(impl::error_wrong_thread, message) {}
+        hresult_wrong_thread(from_abi_t) noexcept : hresult_error(impl::error_wrong_thread, from_abi) {}
+    };
+
+    struct hresult_not_implemented : hresult_error
+    {
+        hresult_not_implemented() noexcept : hresult_error(impl::error_not_implemented) {}
+        hresult_not_implemented(param::hstring const& message) noexcept : hresult_error(impl::error_not_implemented, message) {}
+        hresult_not_implemented(from_abi_t) noexcept : hresult_error(impl::error_not_implemented, from_abi) {}
+    };
+
+    struct hresult_invalid_argument : hresult_error
+    {
+        hresult_invalid_argument() noexcept : hresult_error(impl::error_invalid_argument) {}
+        hresult_invalid_argument(param::hstring const& message) noexcept : hresult_error(impl::error_invalid_argument, message) {}
+        hresult_invalid_argument(from_abi_t) noexcept : hresult_error(impl::error_invalid_argument, from_abi) {}
+    };
+
+    struct hresult_out_of_bounds : hresult_error
+    {
+        hresult_out_of_bounds() noexcept : hresult_error(impl::error_out_of_bounds) {}
+        hresult_out_of_bounds(param::hstring const& message) noexcept : hresult_error(impl::error_out_of_bounds, message) {}
+        hresult_out_of_bounds(from_abi_t) noexcept : hresult_error(impl::error_out_of_bounds, from_abi) {}
+    };
+
+    struct hresult_no_interface : hresult_error
+    {
+        hresult_no_interface() noexcept : hresult_error(impl::error_no_interface) {}
+        hresult_no_interface(param::hstring const& message) noexcept : hresult_error(impl::error_no_interface, message) {}
+        hresult_no_interface(from_abi_t) noexcept : hresult_error(impl::error_no_interface, from_abi) {}
+    };
+
+    struct hresult_class_not_available : hresult_error
+    {
+        hresult_class_not_available() noexcept : hresult_error(impl::error_class_not_available) {}
+        hresult_class_not_available(param::hstring const& message) noexcept : hresult_error(impl::error_class_not_available, message) {}
+        hresult_class_not_available(from_abi_t) noexcept : hresult_error(impl::error_class_not_available, from_abi) {}
+    };
+
+    struct hresult_changed_state : hresult_error
+    {
+        hresult_changed_state() noexcept : hresult_error(impl::error_changed_state) {}
+        hresult_changed_state(param::hstring const& message) noexcept : hresult_error(impl::error_changed_state, message) {}
+        hresult_changed_state(from_abi_t) noexcept : hresult_error(impl::error_changed_state, from_abi) {}
+    };
+
+    struct hresult_illegal_method_call : hresult_error
+    {
+        hresult_illegal_method_call() noexcept : hresult_error(impl::error_illegal_method_call) {}
+        hresult_illegal_method_call(param::hstring const& message) noexcept : hresult_error(impl::error_illegal_method_call, message) {}
+        hresult_illegal_method_call(from_abi_t) noexcept : hresult_error(impl::error_illegal_method_call, from_abi) {}
+    };
+
+    struct hresult_illegal_state_change : hresult_error
+    {
+        hresult_illegal_state_change() noexcept : hresult_error(impl::error_illegal_state_change) {}
+        hresult_illegal_state_change(param::hstring const& message) noexcept : hresult_error(impl::error_illegal_state_change, message) {}
+        hresult_illegal_state_change(from_abi_t) noexcept : hresult_error(impl::error_illegal_state_change, from_abi) {}
+    };
+
+    struct hresult_illegal_delegate_assignment : hresult_error
+    {
+        hresult_illegal_delegate_assignment() noexcept : hresult_error(impl::error_illegal_delegate_assignment) {}
+        hresult_illegal_delegate_assignment(param::hstring const& message) noexcept : hresult_error(impl::error_illegal_delegate_assignment, message) {}
+        hresult_illegal_delegate_assignment(from_abi_t) noexcept : hresult_error(impl::error_illegal_delegate_assignment, from_abi) {}
+    };
+
+    struct hresult_canceled : hresult_error
+    {
+        hresult_canceled() noexcept : hresult_error(impl::error_canceled) {}
+        hresult_canceled(param::hstring const& message) noexcept : hresult_error(impl::error_canceled, message) {}
+        hresult_canceled(from_abi_t) noexcept : hresult_error(impl::error_canceled, from_abi) {}
+    };
+
+    [[noreturn]] inline WINRT_NOINLINE void throw_hresult(hresult const result)
+    {
+        if (result == impl::error_bad_alloc)
+        {
+            throw std::bad_alloc();
+        }
+
+        if (result == impl::error_access_denied)
+        {
+            throw hresult_access_denied(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_wrong_thread)
+        {
+            throw hresult_wrong_thread(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_not_implemented)
+        {
+            throw hresult_not_implemented(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_invalid_argument)
+        {
+            throw hresult_invalid_argument(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_out_of_bounds)
+        {
+            throw hresult_out_of_bounds(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_no_interface)
+        {
+            throw hresult_no_interface(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_class_not_available)
+        {
+            throw hresult_class_not_available(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_changed_state)
+        {
+            throw hresult_changed_state(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_illegal_method_call)
+        {
+            throw hresult_illegal_method_call(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_illegal_state_change)
+        {
+            throw hresult_illegal_state_change(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_illegal_delegate_assignment)
+        {
+            throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
+        }
+
+        if (result == impl::error_canceled)
+        {
+            throw hresult_canceled(hresult_error::from_abi);
+        }
+
+        throw hresult_error(result, hresult_error::from_abi);
+    }
+
+    inline WINRT_NOINLINE hresult to_hresult() noexcept
+    {
+        try
+        {
+            throw;
+        }
+        catch (hresult_error const& e)
+        {
+            return e.to_abi();
+        }
+        WINRT_EXTERNAL_CATCH_CLAUSE
+        catch (std::bad_alloc const&)
+        {
+            return impl::error_bad_alloc;
+        }
+        catch (std::out_of_range const& e)
+        {
+            return hresult_out_of_bounds(to_hstring(e.what())).to_abi();
+        }
+        catch (std::invalid_argument const& e)
+        {
+            return hresult_invalid_argument(to_hstring(e.what())).to_abi();
+        }
+        catch (std::exception const& e)
+        {
+            return hresult_error(impl::error_fail, to_hstring(e.what())).to_abi();
+        }
+        catch (...)
+        {
+            std::terminate();
+        }
+    }
+
+    [[noreturn]] inline void throw_last_error()
+    {
+        throw_hresult(impl::hresult_from_win32(WINRT_GetLastError()));
+    }
+
+    inline WINRT_FORCEINLINE void check_hresult(hresult const result)
+    {
+        if (result < 0)
+        {
+            throw_hresult(result);
+        }
+    }
+
+    template<typename T>
+    void check_nt(T result)
+    {
+        if (result != 0)
+        {
+            throw_hresult(impl::hresult_from_nt(result));
+        }
+    }
+
+    template<typename T>
+    void check_win32(T result)
+    {
+        if (result != 0)
+        {
+            throw_hresult(impl::hresult_from_win32(result));
+        }
+    }
+
+    template<typename T>
+    void check_bool(T result)
+    {
+        if (!result)
+        {
+            winrt::throw_last_error();
+        }
+    }
+
+    template<typename T>
+    T* check_pointer(T* pointer)
+    {
+        if (!pointer)
+        {
+            throw_last_error();
+        }
+
+        return pointer;
     }
 }
 
@@ -3942,21 +4670,34 @@ WINRT_EXPORT namespace winrt
     }
 
     struct auto_revoke_t {};
-    constexpr auto_revoke_t auto_revoke{};
+    inline constexpr auto_revoke_t auto_revoke{};
 
     template <typename I>
     struct event_revoker
     {
-        using method_type = HRESULT(__stdcall impl::abi_t<I>::*)(event_token);
+        using method_type = int32_t(WINRT_CALL impl::abi_t<I>::*)(event_token);
 
         event_revoker() noexcept = default;
         event_revoker(event_revoker const&) = delete;
         event_revoker& operator=(event_revoker const&) = delete;
-        event_revoker(event_revoker&&) = default;
-        event_revoker& operator=(event_revoker&&) = default;
+        event_revoker(event_revoker&&) noexcept = default;
 
-        event_revoker(I const& object, method_type method, event_token token) :
-            m_object(object),
+        event_revoker& operator=(event_revoker&& other) noexcept
+        {
+            if (this != &other)
+            {
+                revoke();
+                m_object = std::move(other.m_object);
+                m_method = other.m_method;
+                m_token = other.m_token;
+            }
+
+            return *this;
+        }
+
+        template <typename U>
+        event_revoker(U&& object, method_type method, event_token token) :
+            m_object(std::forward<U>(object)),
             m_method(method),
             m_token(token)
         {}
@@ -3968,22 +4709,15 @@ WINRT_EXPORT namespace winrt
 
         void revoke() noexcept
         {
-            if (!m_object)
-            {
-                return;
-            }
-
-            if (I object = m_object.get())
+            if (I object = std::exchange(m_object, {}).get())
             {
                 ((*reinterpret_cast<impl::abi_t<I>**>(&object))->*(m_method))(m_token);
             }
-
-            m_object = nullptr;
         }
 
         explicit operator bool() const noexcept
         {
-            return static_cast<bool>(m_object);
+            return m_object ? true : false;
         }
 
     private:
@@ -3996,16 +4730,29 @@ WINRT_EXPORT namespace winrt
     template <typename I>
     struct factory_event_revoker
     {
-        using method_type = HRESULT(__stdcall impl::abi_t<I>::*)(event_token);
+        using method_type = int32_t(WINRT_CALL impl::abi_t<I>::*)(event_token);
 
         factory_event_revoker() noexcept = default;
         factory_event_revoker(factory_event_revoker const&) = delete;
         factory_event_revoker& operator=(factory_event_revoker const&) = delete;
-        factory_event_revoker(factory_event_revoker&&) = default;
-        factory_event_revoker& operator=(factory_event_revoker&&) = default;
+        factory_event_revoker(factory_event_revoker&&) noexcept = default;
 
-        factory_event_revoker(I const& object, method_type method, event_token token) :
-            m_object(object),
+        factory_event_revoker& operator=(factory_event_revoker&& other) noexcept
+        {
+            if (this != &other)
+            {
+                revoke();
+                m_object = std::move(other.m_object);
+                m_method = other.m_method;
+                m_token = other.m_token;
+            }
+
+            return *this;
+        }
+
+        template <typename U>
+        factory_event_revoker(U&& object, method_type method, event_token token) noexcept :
+            m_object(std::forward<U>(object)),
             m_method(method),
             m_token(token)
         {}
@@ -4017,18 +4764,15 @@ WINRT_EXPORT namespace winrt
 
         void revoke() noexcept
         {
-            if (!m_object)
+            if (auto object = std::exchange(m_object, {}))
             {
-                return;
+                ((*reinterpret_cast<impl::abi_t<I>**>(&object))->*(m_method))(m_token);
             }
-
-            ((*reinterpret_cast<impl::abi_t<I>**>(&m_object))->*(m_method))(m_token);
-            m_object = nullptr;
         }
 
         explicit operator bool() const noexcept
         {
-            return m_object != nullptr;
+            return m_object ? true : false;
         }
 
     private:
@@ -4041,15 +4785,133 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
-    template <typename D, typename I, typename S, typename M>
-    auto make_event_revoker(S source, M method, event_token token)
+    template <typename I, int32_t(WINRT_CALL abi_t<I>::*Method)(event_token)>
+    struct event_revoker
     {
-        return event_revoker<I>(static_cast<I const&>(static_cast<D const&>(*source)), method, token);
-    }
-}
+        event_revoker() noexcept = default;
+        event_revoker(event_revoker const&) = delete;
+        event_revoker& operator=(event_revoker const&) = delete;
 
-namespace winrt::impl
-{
+        event_revoker(event_revoker&&) noexcept = default;
+        event_revoker& operator=(event_revoker&& other) noexcept
+        {
+            event_revoker(std::move(other)).swap(*this);
+            return *this;
+        }
+
+        event_revoker(I const& object, event_token token)
+            : m_object(object)
+            , m_token(token)
+        {}
+
+        operator winrt::event_revoker<I>() && noexcept
+        {
+            return { std::move(m_object), Method, m_token };
+        }
+
+        ~event_revoker() noexcept
+        {
+            if (m_object)
+            {
+                revoke_impl(m_object.get());
+            }
+        }
+
+        void swap(event_revoker& other) noexcept
+        {
+            std::swap(m_object, other.m_object);
+            std::swap(m_token, other.m_token);
+        }
+
+        void revoke() noexcept
+        {
+            revoke_impl(std::exchange(m_object, {}).get());
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return bool{ m_object };
+        }
+
+    private:
+        void revoke_impl(I object) noexcept
+        {
+            if (object)
+            {
+                ((*reinterpret_cast<impl::abi_t<I>**>(&object))->*(Method))(m_token);
+            }
+        }
+
+        winrt::weak_ref<I> m_object{};
+        event_token m_token{};
+    };
+
+    template <typename I, int32_t(WINRT_CALL abi_t<I>::*Method)(event_token)>
+    struct factory_event_revoker
+    {
+        factory_event_revoker() noexcept = default;
+        factory_event_revoker(factory_event_revoker const&) = delete;
+        factory_event_revoker& operator=(factory_event_revoker const&) = delete;
+
+        factory_event_revoker(factory_event_revoker&&) noexcept = default;
+        factory_event_revoker& operator=(factory_event_revoker&& other) noexcept
+        {
+            factory_event_revoker(std::move(other)).swap(*this);
+            return *this;
+        }
+        factory_event_revoker(I const& object, event_token token)
+            : m_object(object)
+            , m_token(token)
+        {}
+
+        operator winrt::factory_event_revoker<I>() && noexcept
+        {
+            return { std::move(m_object), Method, m_token };
+        }
+
+        ~factory_event_revoker() noexcept
+        {
+            if (m_object)
+            {
+                revoke_impl(m_object);
+            }
+        }
+
+        void swap(factory_event_revoker& other) noexcept
+        {
+            std::swap(m_object, other.m_object);
+            std::swap(m_token, other.m_token);
+        }
+
+        void revoke() noexcept
+        {
+            revoke_impl(std::exchange(m_object, {}));
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return bool{ m_object };
+        }
+
+    private:
+        void revoke_impl(I object) noexcept
+        {
+            if (object)
+            {
+                ((*reinterpret_cast<impl::abi_t<I>**>(&object))->*(Method))(m_token);
+            }
+        }
+    private:
+        I m_object;
+        event_token m_token{};
+    };
+
+    template <typename D, typename Revoker, typename S>
+    Revoker make_event_revoker(S source, event_token token)
+    {
+        return { static_cast<D const&>(*source), token };
+    }
+
     template <typename T>
     struct event_array
     {
@@ -4128,6 +4990,37 @@ namespace winrt::impl
         *put_abi(instance) = new(raw) event_array<T>(capacity);
         return instance;
     }
+
+    template <typename T>
+    T make_agile_delegate(T const& delegate) noexcept
+    {
+        if constexpr (!has_category_v<T>)
+        {
+            return delegate;
+        }
+        else
+        {
+            if (delegate.template try_as<IAgileObject>())
+            {
+                return delegate;
+            }
+
+            com_ptr<IAgileReference> ref;
+            WINRT_RoGetAgileReference(0, guid_of<T>(), get_abi(delegate), ref.put_void());
+
+            if (ref)
+            {
+                return[ref = std::move(ref)](auto&&... args)
+                {
+                    T delegate;
+                    ref->Resolve(guid_of<T>(), put_abi(delegate));
+                    return delegate(args...);
+                };
+            }
+
+            return delegate;
+        }
+    }
 }
 
 WINRT_EXPORT namespace winrt
@@ -4162,22 +5055,7 @@ WINRT_EXPORT namespace winrt
                     std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
                 }
 
-                if constexpr (!impl::has_category_v<delegate_type>)
-                {
-                    new_targets->back() = delegate;
-                }
-                else if (delegate.template try_as<IAgileObject>() || !delegate.template try_as<IMarshal>())
-                {
-                    new_targets->back() = delegate;
-                }
-                else
-                {
-                    new_targets->back() = [delegate = agile_ref<delegate_type>(delegate)](auto&&... args)
-                    {
-                        delegate.get()(args...);
-                    };
-                }
-
+                new_targets->back() = impl::make_agile_delegate(delegate);
                 token = get_token(new_targets->back());
 
                 slim_lock_guard const swap_guard(m_swap);
@@ -4261,9 +5139,9 @@ WINRT_EXPORT namespace winrt
                     }
                     catch (hresult_error const& e)
                     {
-                        if (e.code() == JSCRIPT_E_CANTEXECUTE ||
-                            e.code() == RPC_S_SERVER_UNAVAILABLE ||
-                            e.code() == RPC_E_DISCONNECTED)
+                        if (e.code() == 0x80010108 /*RPC_E_DISCONNECTED*/ ||
+                            e.code() == 0x800706BA /*HRESULT_FROM_WIN32(RPC_S_SERVER_UNAVAILABLE)*/ ||
+                            e.code() == 0x89020001 /*JSCRIPT_E_CANTEXECUTE*/)
                         {
                             remove_delegate = true;
                         }
@@ -4294,122 +5172,1300 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
-    struct free_threaded_marshaler final : ::IMarshal
+    template <typename Async>
+    void blocking_suspend(Async const& async);
+
+    template <typename D> struct consume_IActivationFactory
     {
-        free_threaded_marshaler(impl::IUnknown* object) noexcept
+        template <typename T>
+        T ActivateInstance() const
         {
-            m_object.copy_from(object);
+            Windows::Foundation::IInspectable instance;
+            check_hresult(WINRT_SHIM(Windows::Foundation::IActivationFactory)->ActivateInstance(put_abi(instance)));
+            return instance.try_as<T>();
+        }
+    };
+
+    template <typename D, typename T> struct consume_IReference
+    {
+        T Value() const
+        {
+            T result{};
+            check_hresult(WINRT_SHIM(Windows::Foundation::IReference<T>)->get_Value(put_abi(result)));
+            return result;
+        }
+    };
+
+    template <typename D, typename T> struct consume_IReferenceArray
+    {
+        com_array<T> Value() const
+        {
+            com_array<T> result{};
+            check_hresult(WINRT_SHIM(Windows::Foundation::IReferenceArray<T>)->get_Value(impl::put_size_abi(result), put_abi(result)));
+            return result;
+        }
+    };
+
+    template <typename D> struct consume_IVectorChangedEventArgs
+    {
+        wfc::CollectionChange CollectionChange() const
+        {
+            wfc::CollectionChange value{};
+            check_hresult(WINRT_SHIM(wfc::IVectorChangedEventArgs)->get_CollectionChange(&value));
+            return value;
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept final
+        uint32_t Index() const
         {
-            if (id == guid_of<::IMarshal>())
+            uint32_t index{};
+            check_hresult(WINRT_SHIM(wfc::IVectorChangedEventArgs)->get_Index(&index));
+            return index;
+        }
+    };
+
+    template <typename D, typename K> struct consume_IMapChangedEventArgs
+    {
+        wfc::CollectionChange CollectionChange() const
+        {
+            wfc::CollectionChange value{};
+            check_hresult(WINRT_SHIM(wfc::IMapChangedEventArgs<K>)->get_CollectionChange(&value));
+            return value;
+        }
+
+        K Key() const
+        {
+            K result{ empty_value<K>() };
+            check_hresult(WINRT_SHIM(wfc::IMapChangedEventArgs<K>)->get_Key(put_abi(result)));
+            return result;
+        }
+    };
+
+    template <typename D, typename T> struct consume_IIterator
+    {
+        T Current() const
+        {
+            T result{ empty_value<T>() };
+            check_hresult(WINRT_SHIM(wfc::IIterator<T>)->get_Current(put_abi(result)));
+            return result;
+        }
+
+        bool HasCurrent() const
+        {
+            bool temp{};
+            check_hresult(WINRT_SHIM(wfc::IIterator<T>)->get_HasCurrent(put_abi(temp)));
+            return temp;
+        }
+
+        bool MoveNext() const
+        {
+            bool temp{};
+            check_hresult(WINRT_SHIM(wfc::IIterator<T>)->MoveNext(put_abi(temp)));
+            return temp;
+        }
+
+        uint32_t GetMany(array_view<T> values) const
+        {
+            uint32_t actual{};
+            check_hresult(WINRT_SHIM(wfc::IIterator<T>)->GetMany(values.size(), get_abi(values), &actual));
+            return actual;
+        }
+
+        auto& operator++()
+        {
+            if (!MoveNext())
             {
-                *object = static_cast<::IMarshal*>(this);
-                AddRef();
-                return S_OK;
+                static_cast<D&>(*this) = nullptr;
             }
 
-            return m_object->QueryInterface(id, object);
+            return *this;
         }
 
-        unsigned long __stdcall AddRef() noexcept final
+        T operator*() const
         {
-            return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+            return Current();
+        }
+    };
+
+    template <typename D, typename T> struct consume_IIterable
+    {
+        wfc::IIterator<T> First() const
+        {
+            wfc::IIterator<T> iterator;
+            check_hresult(WINRT_SHIM(wfc::IIterable<T>)->First(put_abi(iterator)));
+            return iterator;
+        }
+    };
+
+    template <typename D, typename T> struct consume_IVectorView
+    {
+        T GetAt(uint32_t const index) const
+        {
+            T result{ empty_value<T>() };
+            check_hresult(WINRT_SHIM(wfc::IVectorView<T>)->GetAt(index, put_abi(result)));
+            return result;
         }
 
-        unsigned long __stdcall Release() noexcept final
+        uint32_t Size() const
         {
-            uint32_t const remaining = m_references.fetch_sub(1, std::memory_order_relaxed) - 1;
+            uint32_t size{};
+            check_hresult(WINRT_SHIM(wfc::IVectorView<T>)->get_Size(&size));
+            return size;
+        }
 
-            if (remaining == 0)
+        bool IndexOf(param_type<T> const& value, uint32_t& index) const
+        {
+            bool found{};
+            check_hresult(WINRT_SHIM(wfc::IVectorView<T>)->IndexOf(get_abi(value), &index, &found));
+            return found;
+        }
+
+        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const
+        {
+            uint32_t actual{};
+            check_hresult(WINRT_SHIM(wfc::IVectorView<T>)->GetMany(startIndex, values.size(), get_abi(values), &actual));
+            return actual;
+        }
+    };
+
+    template <typename D, typename T> struct consume_IVector
+    {
+        T GetAt(uint32_t const index) const
+        {
+            T result{ empty_value<T>() };
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->GetAt(index, put_abi(result)));
+            return result;
+        }
+
+        uint32_t Size() const
+        {
+            uint32_t size = 0;
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->get_Size(&size));
+            return size;
+        }
+
+        wfc::IVectorView<T> GetView() const
+        {
+            wfc::IVectorView<T> view;
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->GetView(put_abi(view)));
+            return view;
+        }
+
+        bool IndexOf(param_type<T> const& value, uint32_t& index) const
+        {
+            bool found{};
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->IndexOf(get_abi(value), &index, &found));
+            return found;
+        }
+
+        void SetAt(uint32_t const index, param_type<T> const& value) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->SetAt(index, get_abi(value)));
+        }
+
+        void InsertAt(uint32_t const index, param_type<T> const& value) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->InsertAt(index, get_abi(value)));
+        }
+
+        void RemoveAt(uint32_t const index) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->RemoveAt(index));
+        }
+
+        void Append(param_type<T> const& value) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->Append(get_abi(value)));
+        }
+
+        void RemoveAtEnd() const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->RemoveAtEnd());
+        }
+
+        void Clear() const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->Clear());
+        }
+
+        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const
+        {
+            uint32_t actual{};
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->GetMany(startIndex, values.size(), get_abi(values), &actual));
+            return actual;
+        }
+
+        void ReplaceAll(array_view<T const> value) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IVector<T>)->ReplaceAll(value.size(), get_abi(value)));
+        }
+    };
+
+    template <typename D, typename T> struct consume_IObservableVector
+    {
+        event_token VectorChanged(wfc::VectorChangedEventHandler<T> const& handler) const
+        {
+            event_token cookie{};
+            check_hresult(WINRT_SHIM(wfc::IObservableVector<T>)->add_VectorChanged(get_abi(handler), &cookie));
+            return cookie;
+        }
+
+        void VectorChanged(event_token const cookie) const noexcept
+        {
+            WINRT_SHIM(wfc::IObservableVector<T>)->remove_VectorChanged(cookie);
+        }
+
+        using VectorChanged_revoker = event_revoker<wfc::IObservableVector<T>, &abi_t<wfc::IObservableVector<T>>::remove_VectorChanged>;
+
+        VectorChanged_revoker VectorChanged(auto_revoke_t, wfc::VectorChangedEventHandler<T> const& handler) const
+        {
+            return make_event_revoker<D, VectorChanged_revoker>(this, VectorChanged(handler));
+        }
+    };
+
+    template <typename D, typename K, typename V> struct consume_IKeyValuePair
+    {
+        K Key() const
+        {
+            K result{ empty_value<K>() };
+            check_hresult(WINRT_SHIM(wfc::IKeyValuePair<K, V>)->get_Key(put_abi(result)));
+            return result;
+        }
+
+        V Value() const
+        {
+            V result{ empty_value<V>() };
+            check_hresult(WINRT_SHIM(wfc::IKeyValuePair<K, V>)->get_Value(put_abi(result)));
+            return result;
+        }
+
+        bool operator==(wfc::IKeyValuePair<K, V> const& other) const
+        {
+            return Key() == other.Key() && Value() == other.Value();
+        }
+
+        bool operator!=(wfc::IKeyValuePair<K, V> const& other) const
+        {
+            return !(*this == other);
+        }
+    };
+
+    template <typename D, typename K, typename V> struct consume_IMapView
+    {
+        V Lookup(param_type<K> const& key) const
+        {
+            V result{ empty_value<V>() };
+            check_hresult(WINRT_SHIM(wfc::IMapView<K, V>)->Lookup(get_abi(key), put_abi(result)));
+            return result;
+        }
+
+        auto TryLookup(param_type<K> const& key) const noexcept
+        {
+            if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, V>)
             {
-                delete this;
+                V result{ nullptr };
+                WINRT_SHIM(wfc::IMapView<K, V>)->Lookup(get_abi(key), put_abi(result));
+                return result;
             }
-
-            return remaining;
-        }
-
-        HRESULT __stdcall GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, CLSID* pCid) noexcept final
-        {
-            if (m_marshaler)
+            else
             {
-                return m_marshaler->GetUnmarshalClass(riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
-            }
+                std::optional<V> result;
+                V value{ empty_value<V>() };
 
-            return E_OUTOFMEMORY;
+                if (error_ok == WINRT_SHIM(wfc::IMapView<K, V>)->Lookup(get_abi(key), put_abi(value)))
+                {
+                    result = std::move(value);
+                }
+
+                return result;
+            }
         }
 
-        HRESULT __stdcall GetMarshalSizeMax(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, DWORD* pSize) noexcept final
+        uint32_t Size() const
         {
-            if (m_marshaler)
+            uint32_t size{};
+            check_hresult(WINRT_SHIM(wfc::IMapView<K, V>)->get_Size(&size));
+            return size;
+        }
+
+        bool HasKey(param_type<K> const& key) const
+        {
+            bool found{};
+            check_hresult(WINRT_SHIM(wfc::IMapView<K, V>)->HasKey(get_abi(key), &found));
+            return found;
+        }
+        void Split(wfc::IMapView<K, V>& firstPartition, wfc::IMapView<K, V>& secondPartition)
+        {
+            check_hresult(WINRT_SHIM(wfc::IMapView<K, V>)->Split(put_abi(firstPartition), put_abi(secondPartition)));
+        }
+    };
+
+    template <typename D, typename K, typename V> struct consume_IMap
+    {
+        V Lookup(param_type<K> const& key) const
+        {
+            V result{ empty_value<V>() };
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->Lookup(get_abi(key), put_abi(result)));
+            return result;
+        }
+
+        auto TryLookup(param_type<K> const& key) const noexcept
+        {
+            if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, V>)
             {
-                return m_marshaler->GetMarshalSizeMax(riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+                V result{ nullptr };
+                WINRT_SHIM(wfc::IMap<K, V>)->Lookup(get_abi(key), put_abi(result));
+                return result;
             }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall MarshalInterface(IStream* pStm, REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags) noexcept final
-        {
-            if (m_marshaler)
+            else
             {
-                return m_marshaler->MarshalInterface(pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+                std::optional<V> result;
+                V value{ empty_value<V>() };
+
+                if (error_ok == WINRT_SHIM(wfc::IMap<K, V>)->Lookup(get_abi(key), put_abi(value)))
+                {
+                    result = std::move(value);
+                }
+
+                return result;
             }
-
-            return E_OUTOFMEMORY;
         }
 
-        HRESULT __stdcall UnmarshalInterface(IStream* pStm, REFIID riid, void** ppv) noexcept final
+        uint32_t Size() const
         {
-            if (m_marshaler)
-            {
-                return m_marshaler->UnmarshalInterface(pStm, riid, ppv);
-            }
-
-            *ppv = nullptr;
-            return E_OUTOFMEMORY;
+            uint32_t size{};
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->get_Size(&size));
+            return size;
         }
 
-        HRESULT __stdcall ReleaseMarshalData(IStream* pStm) noexcept final
+        bool HasKey(param_type<K> const& key) const
         {
-            if (m_marshaler)
-            {
-                return m_marshaler->ReleaseMarshalData(pStm);
-            }
-
-            return E_OUTOFMEMORY;
+            bool found{};
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->HasKey(get_abi(key), &found));
+            return found;
         }
 
-        HRESULT __stdcall DisconnectObject(DWORD dwReserved) noexcept final
+        wfc::IMapView<K, V> GetView() const
         {
-            if (m_marshaler)
-            {
-                return m_marshaler->DisconnectObject(dwReserved);
-            }
-
-            return E_OUTOFMEMORY;
+            wfc::IMapView<K, V> view;
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->GetView(put_abi(view)));
+            return view;
         }
 
-    private:
-
-        static com_ptr<::IMarshal> get_marshaler() noexcept
+        bool Insert(param_type<K> const& key, param_type<V> const& value) const
         {
-            com_ptr<::IUnknown> unknown;
-            WINRT_VERIFY_(S_OK, CoCreateFreeThreadedMarshaler(nullptr, unknown.put()));
-            return unknown ? unknown.try_as<::IMarshal>() : nullptr;
+            bool replaced{};
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->Insert(get_abi(key), get_abi(value), &replaced));
+            return replaced;
         }
 
-        com_ptr<impl::IUnknown> m_object;
-        com_ptr<::IMarshal> m_marshaler{ get_marshaler() };
-        std::atomic<uint32_t> m_references{ 1 };
+        void Remove(param_type<K> const& key) const
+        {
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->Remove(get_abi(key)));
+        }
+
+        void Clear() const
+        {
+            check_hresult(WINRT_SHIM(wfc::IMap<K, V>)->Clear());
+        }
+    };
+
+    template <typename D, typename K, typename V> struct consume_IObservableMap
+    {
+        event_token MapChanged(wfc::MapChangedEventHandler<K, V> const& handler) const
+        {
+            event_token cookie{};
+            check_hresult(WINRT_SHIM(wfc::IObservableMap<K, V>)->add_MapChanged(get_abi(handler), &cookie));
+            return cookie;
+        }
+
+        void MapChanged(event_token const cookie) const noexcept
+        {
+            WINRT_SHIM(wfc::IObservableMap<K, V>)->remove_MapChanged(cookie);
+        }
+
+        using MapChanged_revoker = event_revoker<wfc::IObservableMap<K, V>, &abi_t<wfc::IObservableMap<K, V>>::remove_MapChanged>;
+
+        MapChanged_revoker MapChanged(auto_revoke_t, wfc::MapChangedEventHandler<K, V> const& handler) const
+        {
+            return make_event_revoker<D, MapChanged_revoker>(this, MapChanged(handler));
+        }
+    };
+
+    template <typename D> struct consume_IAsyncInfo
+    {
+        uint32_t Id() const
+        {
+            uint32_t id{};
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncInfo)->get_Id(&id));
+            return id;
+        }
+
+        Windows::Foundation::AsyncStatus Status() const
+        {
+            Windows::Foundation::AsyncStatus status{};
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncInfo)->get_Status(&status));
+            return status;
+        }
+
+        hresult ErrorCode() const
+        {
+            int32_t code{};
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncInfo)->get_ErrorCode(&code));
+            return code;
+        }
+
+        void Cancel() const
+        {
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncInfo)->Cancel());
+        }
+
+        void Close() const
+        {
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncInfo)->Close());
+        }
+    };
+
+    template <typename D> struct consume_IAsyncAction
+    {
+        void Completed(Windows::Foundation::AsyncActionCompletedHandler const& handler) const;
+        Windows::Foundation::AsyncActionCompletedHandler Completed() const;
+
+        void GetResults() const
+        {
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncAction)->GetResults());
+        }
+
+        void get() const
+        {
+            blocking_suspend(static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)));
+            GetResults();
+        }
+    };
+
+    template <typename D, typename TResult> struct consume_IAsyncOperation
+    {
+        void Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const;
+        Windows::Foundation::AsyncOperationCompletedHandler<TResult> Completed() const;
+
+        TResult GetResults() const
+        {
+            TResult result = empty_value<TResult>();
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperation<TResult>)->GetResults(put_abi(result)));
+            return result;
+        }
+
+        TResult get() const
+        {
+            blocking_suspend(static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)));
+            return GetResults();
+        }
+    };
+
+    template <typename D, typename TProgress> struct consume_IAsyncActionWithProgress
+    {
+        void Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const;
+        Windows::Foundation::AsyncActionProgressHandler<TProgress> Progress() const;
+
+        void Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const;
+        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
+
+        void GetResults() const
+        {
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncActionWithProgress<TProgress>)->GetResults());
+        }
+
+        void get() const
+        {
+            blocking_suspend(static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)));
+            GetResults();
+        }
+
+    };
+
+    template <typename D, typename TResult, typename TProgress> struct consume_IAsyncOperationWithProgress
+    {
+        void Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const;
+        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> Progress() const;
+
+        void Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const;
+        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
+
+        TResult GetResults() const
+        {
+            TResult result = empty_value<TResult>();
+            check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>)->GetResults(put_abi(result)));
+            return result;
+        }
+
+        TResult get() const
+        {
+            blocking_suspend(static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)));
+            return GetResults();
+        }
     };
 }
 
-WINRT_EXPORT namespace winrt::Windows::Foundation
+namespace winrt::impl
 {
-    template <typename T> struct EventHandler;
-    template <typename TSender, typename TArgs> struct TypedEventHandler;
+    template <> struct guid_storage<Windows::Foundation::IUnknown>
+    {
+        static constexpr guid value{ 0x00000000,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<Windows::Foundation::IInspectable>
+    {
+        static constexpr guid value{ 0xAF86E2E0,0xB12D,0x4C6A,{ 0x9C,0x5A,0xD7,0xAA,0x65,0x10,0x1E,0x90 } };
+    };
+
+    template <> struct guid_storage<Windows::Foundation::IActivationFactory>
+    {
+        static constexpr guid value{ 0x00000035,0x0000,0x0000,{ 0xc0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<IAgileObject>
+    {
+        static constexpr guid value{ 0x94EA2B94,0xE9CC,0x49E0,{ 0xC0,0xFF,0xEE,0x64,0xCA,0x8F,0x5B,0x90 } };
+    };
+
+    template <> struct guid_storage<IMarshal>
+    {
+        static constexpr guid value{ 0x00000003,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<IStaticLifetime>
+    {
+        static constexpr guid value{ 0x17b0e613,0x942a,0x422d,{ 0x90,0x4c,0xf9,0x0d,0xc7,0x1a,0x7d,0xae } };
+    };
+
+    template <> struct guid_storage<IWeakReference>
+    {
+        static constexpr guid value{ 0x00000037,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<IWeakReferenceSource>
+    {
+        static constexpr guid value{ 0x00000038,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<ILanguageExceptionErrorInfo2>
+    {
+        static constexpr guid value{ 0x5746E5C4,0x5B97,0x424C,{ 0xB6,0x20,0x28,0x22,0x91,0x57,0x34,0xDD } };
+    };
+
+    template <> struct guid_storage<IContextCallback>
+    {
+        static constexpr guid value{ 0x000001da,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<IServerSecurity>
+    {
+        static constexpr guid value{ 0x0000013E,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<ICallbackWithNoReentrancyToApplicationSTA>
+    {
+        static constexpr guid value{ 0x0A299774,0x3E4E,0xFC42,{ 0x1D,0x9D,0x72,0xCE,0xE1,0x05,0xCA,0x57 } };
+    };
+
+    template <> struct guid_storage<IBufferByteAccess>
+    {
+        static constexpr guid value{ 0x905a0fef,0xbc53,0x11df,{ 0x8c,0x49,0x00,0x1e,0x4f,0xc6,0x86,0xda } };
+    };
+
+    template <> struct guid_storage<wfc::IVectorChangedEventArgs>
+    {
+        static constexpr guid value{ 0x575933DF,0x34FE,0x4480,{ 0xAF,0x15,0x07,0x69,0x1F,0x3D,0x5D,0x9B } };
+    };
+
+    template <> struct guid_storage<Windows::Foundation::IAsyncInfo>
+    {
+        static constexpr guid value{ 0x00000036,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
+    };
+
+    template <> struct guid_storage<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        static constexpr guid value{ 0xA4ED5C81,0x76C9,0x40BD,{ 0x8B,0xE6,0xB1,0xD9,0x0F,0xB2,0x0A,0xE7 } };
+    };
+
+    template <> struct guid_storage<Windows::Foundation::IAsyncAction>
+    {
+        static constexpr guid value{ 0x5A648006,0x843A,0x4DA9,{ 0x86,0x5B,0x9D,0x26,0xE5,0xDF,0xAD,0x7B } };
+    };
+
+    template <typename T> struct guid_storage<Windows::Foundation::IReference<T>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::IReference<T>>::value };
+    };
+
+    template <typename T> struct guid_storage<Windows::Foundation::IReferenceArray<T>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::IReferenceArray<T>>::value };
+    };
+
+    template <typename TResult> struct guid_storage<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>::value };
+    };
+
+    template <typename TProgress> struct guid_storage<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>::value };
+    };
+
+    template <typename TProgress> struct guid_storage<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>::value };
+    };
+
+    template <typename TResult, typename TProgress> struct guid_storage<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>::value };
+    };
+
+    template <typename TResult, typename TProgress> struct guid_storage<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>::value };
+    };
+
+    template <typename TResult> struct guid_storage<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::IAsyncOperation<TResult>>::value };
+    };
+
+    template <typename TProgress> struct guid_storage<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::IAsyncActionWithProgress<TProgress>>::value };
+    };
+
+    template <typename TResult, typename TProgress> struct guid_storage<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>::value };
+    };
+
+    template <typename K> struct guid_storage<wfc::IMapChangedEventArgs<K>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IMapChangedEventArgs<K>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::VectorChangedEventHandler<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::VectorChangedEventHandler<T>>::value };
+    };
+
+    template <typename K, typename V> struct guid_storage<wfc::MapChangedEventHandler<K, V>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::MapChangedEventHandler<K, V>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::IIterator<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IIterator<T>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::IIterable<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IIterable<T>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::IVectorView<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IVectorView<T>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::IVector<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IVector<T>>::value };
+    };
+
+    template <typename T> struct guid_storage<wfc::IObservableVector<T>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IObservableVector<T>>::value };
+    };
+
+    template <typename K, typename V> struct guid_storage<wfc::IKeyValuePair<K, V>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IKeyValuePair<K, V>>::value };
+    };
+
+    template <typename K, typename V> struct guid_storage<wfc::IMapView<K, V>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IMapView<K, V>>::value };
+    };
+
+    template <typename K, typename V> struct guid_storage<wfc::IMap<K, V>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IMap<K, V>>::value };
+    };
+
+    template <typename K, typename V> struct guid_storage<wfc::IObservableMap<K, V>>
+    {
+        static constexpr guid value{ pinterface_guid<wfc::IObservableMap<K, V>>::value };
+    };
+
+    template <typename T> struct guid_storage<Windows::Foundation::EventHandler<T>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::EventHandler<T>>::value };
+    };
+
+    template <typename TSender, typename TArgs> struct guid_storage<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        static constexpr guid value{ pinterface_guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>::value };
+    };
+
+    template <> struct consume<Windows::Foundation::IActivationFactory>
+    {
+        template <typename D> using type = consume_IActivationFactory<D>;
+    };
+
+    template <> struct consume<wfc::IVectorChangedEventArgs>
+    {
+        template <typename D> using type = consume_IVectorChangedEventArgs<D>;
+    };
+
+    template <typename TResult> struct consume<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        template <typename D> using type = consume_IAsyncOperation<D, TResult>;
+    };
+
+    template <typename TProgress> struct consume<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        template <typename D> using type = consume_IAsyncActionWithProgress<D, TProgress>;
+    };
+
+    template <typename TResult, typename TProgress> struct consume<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        template <typename D> using type = consume_IAsyncOperationWithProgress<D, TResult, TProgress>;
+    };
+
+    template <> struct consume<Windows::Foundation::IAsyncInfo>
+    {
+        template <typename D> using type = consume_IAsyncInfo<D>;
+    };
+
+    template <> struct consume<Windows::Foundation::IAsyncAction>
+    {
+        template <typename D> using type = consume_IAsyncAction<D>;
+    };
+
+    template <typename T> struct consume<Windows::Foundation::IReference<T>>
+    {
+        template <typename D> using type = consume_IReference<D, T>;
+    };
+
+    template <typename T> struct consume<Windows::Foundation::IReferenceArray<T>>
+    {
+        template <typename D> using type = consume_IReferenceArray<D, T>;
+    };
+
+    template <typename K> struct consume<wfc::IMapChangedEventArgs<K>>
+    {
+        template <typename D> using type = consume_IMapChangedEventArgs<D, K>;
+    };
+
+    template <typename T> struct consume<wfc::IIterator<T>>
+    {
+        template <typename D> using type = consume_IIterator<D, T>;
+    };
+
+    template <typename T> struct consume<wfc::IIterable<T>>
+    {
+        template <typename D> using type = consume_IIterable<D, T>;
+    };
+
+    template <typename T> struct consume<wfc::IVectorView<T>>
+    {
+        template <typename D> using type = consume_IVectorView<D, T>;
+    };
+
+    template <typename T> struct consume<wfc::IVector<T>>
+    {
+        template <typename D> using type = consume_IVector<D, T>;
+    };
+
+    template <typename T> struct consume<wfc::IObservableVector<T>>
+    {
+        template <typename D> using type = consume_IObservableVector<D, T>;
+    };
+
+    template <typename K, typename V> struct consume<wfc::IKeyValuePair<K, V>>
+    {
+        template <typename D> using type = consume_IKeyValuePair<D, K, V>;
+    };
+
+    template <typename K, typename V> struct consume<wfc::IMapView<K, V>>
+    {
+        template <typename D> using type = consume_IMapView<D, K, V>;
+    };
+
+    template <typename K, typename V> struct consume<wfc::IMap<K, V>>
+    {
+        template <typename D> using type = consume_IMap<D, K, V>;
+    };
+
+    template <typename K, typename V> struct consume<wfc::IObservableMap<K, V>>
+    {
+        template <typename D> using type = consume_IObservableMap<D, K, V>;
+    };
+
+    template <> struct name<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.AsyncActionCompletedHandler" };
+    };
+
+    template <typename TResult> struct name<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.AsyncOperationCompletedHandler`1<", name_v<TResult>, L">") };
+    };
+
+    template <typename TProgress> struct name<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<", name_v<TProgress>, L">") };
+    };
+
+    template <typename TProgress> struct name<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.AsyncActionProgressHandler`1<", name_v<TProgress>, L">") };
+    };
+
+    template <typename TResult, typename TProgress> struct name<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.AsyncOperationProgressHandler`2<", name_v<TResult>, L", ", name_v<TProgress>, L">") };
+    };
+
+    template <typename TResult, typename TProgress> struct name<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<", name_v<TResult>, L", ", name_v<TProgress>, L">") };
+    };
+
+    template <> struct name<Windows::Foundation::IAsyncInfo>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.IAsyncInfo" };
+    };
+
+    template <> struct name<Windows::Foundation::IAsyncAction>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.IAsyncAction" };
+    };
+
+    template <typename TResult> struct name<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.IAsyncOperation`1<", name_v<TResult>, L">") };
+    };
+
+    template <typename TProgress> struct name<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.IAsyncActionWithProgress`1<", name_v<TProgress>, L">") };
+    };
+
+    template <typename TResult, typename TProgress> struct name<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.IAsyncOperationWithProgress`2<", name_v<TResult>, L", ", name_v<TProgress>, L">") };
+    };
+
+    template <> struct name<Windows::Foundation::IInspectable>
+    {
+        static constexpr auto & value{ L"Object" };
+        static constexpr auto & data{ "cinterface(IInspectable)" };
+    };
+
+    template <> struct name<Windows::Foundation::IActivationFactory>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.IActivationFactory" };
+    };
+
+    template <> struct name<IAgileObject>
+    {
+        static constexpr auto & value{ L"IAgileObject" };
+    };
+
+    template <> struct name<IWeakReferenceSource>
+    {
+        static constexpr auto & value{ L"IWeakReferenceSource" };
+    };
+
+    template <typename T> struct name<Windows::Foundation::IReference<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.IReference`1<", name_v<T>, L">") };
+    };
+
+    template <typename T> struct name<Windows::Foundation::IReferenceArray<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.IReferenceArray`1<", name_v<T>, L">") };
+    };
+
+    template <> struct name<wfc::IVectorChangedEventArgs>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Collections.IVectorChangedEventArgs" };
+    };
+
+    template <typename K> struct name<wfc::IMapChangedEventArgs<K>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IMapChangedEventArgs`1<", name_v<K>, L">") };
+    };
+
+    template <typename T> struct name<wfc::VectorChangedEventHandler<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.VectorChangedEventHandler`1<", name_v<T>, L">") };
+    };
+
+    template <typename K, typename V> struct name<wfc::MapChangedEventHandler<K, V>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.MapChangedEventHandler`2<", name_v<K>, L", ", name_v<V>, L">") };
+    };
+
+    template <typename T> struct name<wfc::IIterator<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IIterator`1<", name_v<T>, L">") };
+    };
+
+    template <typename T> struct name<wfc::IIterable<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IIterable`1<", name_v<T>, L">") };
+    };
+
+    template <typename T> struct name<wfc::IVectorView<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IVectorView`1<", name_v<T>, L">") };
+    };
+
+    template <typename T> struct name<wfc::IVector<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IVector`1<", name_v<T>, L">") };
+    };
+
+    template <typename T> struct name<wfc::IObservableVector<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IObservableVector`1<", name_v<T>, L">") };
+    };
+
+    template <typename K, typename V> struct name<wfc::IKeyValuePair<K, V>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IKeyValuePair`2<", name_v<K>, L", ", name_v<V>, L">") };
+    };
+
+    template <typename K, typename V> struct name<wfc::IMapView<K, V>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IMapView`2<", name_v<K>, L", ", name_v<V>, L">") };
+    };
+
+    template <typename K, typename V> struct name<wfc::IMap<K, V>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IMap`2<", name_v<K>, L", ", name_v<V>, L">") };
+    };
+
+    template <typename K, typename V> struct name<wfc::IObservableMap<K, V>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.Collections.IObservableMap`2<", name_v<K>, L", ", name_v<V>, L">") };
+    };
+
+    template <typename T> struct name<Windows::Foundation::EventHandler<T>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.EventHandler`1<", name_v<T>, L">") };
+    };
+
+    template <typename TSender, typename TArgs> struct name<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        static constexpr auto value{ zcombine(L"Windows.Foundation.TypedEventHandler`2<", name_v<TSender>, L", ", name_v<TArgs>, L">") };
+    };
+
+    template <> struct category<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        using type = delegate_category;
+    };
+
+    template <typename TResult> struct category<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        using type = pinterface_category<TResult>;
+        static constexpr guid value{ 0xfcdcf02c, 0xe5d8, 0x4478,{ 0x91, 0x5a, 0x4d, 0x90, 0xb7, 0x4b, 0x83, 0xa5 } };
+    };
+
+    template <typename TProgress> struct category<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        using type = pinterface_category<TProgress>;
+        static constexpr guid value{ 0x9c029f91, 0xcc84, 0x44fd,{ 0xac, 0x26, 0x0a, 0x6c, 0x4e, 0x55, 0x52, 0x81 } };
+    };
+
+    template <typename TProgress> struct category<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        using type = pinterface_category<TProgress>;
+        static constexpr guid value{ 0x6d844858, 0x0cff, 0x4590,{ 0xae, 0x89, 0x95, 0xa5, 0xa5, 0xc8, 0xb4, 0xb8 } };
+    };
+
+    template <typename TResult, typename TProgress> struct category<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        using type = pinterface_category<TResult, TProgress>;
+        static constexpr guid value{ 0x55690902, 0x0aab, 0x421a,{ 0x87, 0x78, 0xf8, 0xce, 0x50, 0x26, 0xd7, 0x58 } };
+    };
+
+    template <typename TResult, typename TProgress> struct category<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        using type = pinterface_category<TResult, TProgress>;
+        static constexpr guid value{ 0xe85df41d, 0x6aa7, 0x46e3,{ 0xa8, 0xe2, 0xf0, 0x09, 0xd8, 0x40, 0xc6, 0x27 } };
+    };
+
+    template <> struct category<Windows::Foundation::IAsyncInfo>
+    {
+        using type = interface_category;
+    };
+
+    template <> struct category<Windows::Foundation::IAsyncAction>
+    {
+        using type = interface_category;
+    };
+
+    template <typename TResult> struct category<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        using type = pinterface_category<TResult>;
+        static constexpr guid value{ 0x9fc2b0bb, 0xe446, 0x44e2,{ 0xaa, 0x61, 0x9c, 0xab, 0x8f, 0x63, 0x6a, 0xf2 } };
+    };
+
+    template <typename TProgress> struct category<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        using type = pinterface_category<TProgress>;
+        static constexpr guid value{ 0x1f6db258, 0xe803, 0x48a1,{ 0x95, 0x46, 0xeb, 0x73, 0x53, 0x39, 0x88, 0x84 } };
+    };
+
+    template <typename TResult, typename TProgress> struct category<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        using type = pinterface_category<TResult, TProgress>;
+        static constexpr guid value{ 0xb5d036d7, 0xe297, 0x498f,{ 0xba, 0x60, 0x02, 0x89, 0xe7, 0x6e, 0x23, 0xdd } };
+    };
+
+    template <> struct category<Windows::Foundation::IUnknown>
+    {
+        using type = interface_category;
+    };
+
+    template <> struct category<Windows::Foundation::IInspectable>
+    {
+        using type = basic_category;
+    };
+
+    template <> struct category<Windows::Foundation::IActivationFactory>
+    {
+        using type = interface_category;
+    };
+
+    template <typename T> struct category<Windows::Foundation::IReference<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x61c17706, 0x2d65, 0x11e0,{ 0x9a, 0xe8, 0xd4, 0x85, 0x64, 0x01, 0x54, 0x72 } };
+    };
+
+    template <typename T> struct category<Windows::Foundation::IReferenceArray<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x61c17707, 0x2d65, 0x11e0,{ 0x9a, 0xe8, 0xd4, 0x85, 0x64, 0x01, 0x54, 0x72 } };
+    };
+
+    template <> struct category<wfc::IVectorChangedEventArgs>
+    {
+        using type = interface_category;
+    };
+
+    template <typename K> struct category<wfc::IMapChangedEventArgs<K>>
+    {
+        using type = pinterface_category<K>;
+        static constexpr guid value{ 0x9939f4df, 0x050a, 0x4c0f,{ 0xaa, 0x60, 0x77, 0x07, 0x5f, 0x9c, 0x47, 0x77 } };
+    };
+
+    template <typename T> struct category<wfc::VectorChangedEventHandler<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x0c051752, 0x9fbf, 0x4c70,{ 0xaa, 0x0c, 0x0e, 0x4c, 0x82, 0xd9, 0xa7, 0x61 } };
+    };
+
+    template <typename K, typename V> struct category<wfc::MapChangedEventHandler<K, V>>
+    {
+        using type = pinterface_category<K, V>;
+        static constexpr guid value{ 0x179517f3, 0x94ee, 0x41f8,{ 0xbd, 0xdc, 0x76, 0x8a, 0x89, 0x55, 0x44, 0xf3 } };
+    };
+
+    template <typename T> struct category<wfc::IIterator<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x6a79e863, 0x4300, 0x459a,{ 0x99, 0x66, 0xcb, 0xb6, 0x60, 0x96, 0x3e, 0xe1 } };
+    };
+
+    template <typename T> struct category<wfc::IIterable<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0xfaa585ea, 0x6214, 0x4217,{ 0xaf, 0xda, 0x7f, 0x46, 0xde, 0x58, 0x69, 0xb3 } };
+    };
+
+    template <typename T> struct category<wfc::IVectorView<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0xbbe1fa4c, 0xb0e3, 0x4583,{ 0xba, 0xef, 0x1f, 0x1b, 0x2e, 0x48, 0x3e, 0x56 } };
+    };
+
+    template <typename T> struct category<wfc::IVector<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x913337e9, 0x11a1, 0x4345,{ 0xa3, 0xa2, 0x4e, 0x7f, 0x95, 0x6e, 0x22, 0x2d } };
+    };
+
+    template <typename T> struct category<wfc::IObservableVector<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x5917eb53, 0x50b4, 0x4a0d,{ 0xb3, 0x09, 0x65, 0x86, 0x2b, 0x3f, 0x1d, 0xbc } };
+    };
+
+    template <typename K, typename V> struct category<wfc::IKeyValuePair<K, V>>
+    {
+        using type = pinterface_category<K, V>;
+        static constexpr guid value{ 0x02b51929, 0xc1c4, 0x4a7e,{ 0x89, 0x40, 0x03, 0x12, 0xb5, 0xc1, 0x85, 0x00 } };
+    };
+
+    template <typename K, typename V> struct category<wfc::IMapView<K, V>>
+    {
+        using type = pinterface_category<K, V>;
+        static constexpr guid value{ 0xe480ce40, 0xa338, 0x4ada,{ 0xad, 0xcf, 0x27, 0x22, 0x72, 0xe4, 0x8c, 0xb9 } };
+    };
+
+    template <typename K, typename V> struct category<wfc::IMap<K, V>>
+    {
+        using type = pinterface_category<K, V>;
+        static constexpr guid value{ 0x3c2925fe, 0x8519, 0x45c1,{ 0xaa, 0x79, 0x19, 0x7b, 0x67, 0x18, 0xc1, 0xc1 } };
+    };
+
+    template <typename K, typename V> struct category<wfc::IObservableMap<K, V>>
+    {
+        using type = pinterface_category<K, V>;
+        static constexpr guid value{ 0x65df2bf5, 0xbf39, 0x41b5,{ 0xae, 0xbc, 0x5a, 0x9d, 0x86, 0x5e, 0x47, 0x2b } };
+    };
+
+    template <typename T> struct category<Windows::Foundation::EventHandler<T>>
+    {
+        using type = pinterface_category<T>;
+        static constexpr guid value{ 0x9de1c535, 0x6ae1, 0x11e0,{ 0x84, 0xe1, 0x18, 0xa9, 0x05, 0xbc, 0xc5, 0x3f } };
+    };
+
+    template <typename TSender, typename TArgs> struct category<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        using type = pinterface_category<TSender, TArgs>;
+        static constexpr guid value{ 0x9de1c534, 0x6ae1, 0x11e0,{ 0x84, 0xe1, 0x18, 0xa9, 0x05, 0xbc, 0xc5, 0x3f } };
+    };
+}
+
+namespace winrt::impl
+{
+    inline int32_t make_marshaler(IUnknown* outer, void** result) noexcept
+    {
+        struct marshaler final : IMarshal
+        {
+            marshaler(IUnknown* object) noexcept
+            {
+                m_object.copy_from(object);
+            }
+
+            int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept final
+            {
+                if (is_guid_of<IMarshal>(id))
+                {
+                    *object = static_cast<IMarshal*>(this);
+                    AddRef();
+                    return error_ok;
+                }
+
+                return m_object->QueryInterface(id, object);
+            }
+
+            uint32_t WINRT_CALL AddRef() noexcept final
+            {
+                return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+            }
+
+            uint32_t WINRT_CALL Release() noexcept final
+            {
+                uint32_t const remaining = m_references.fetch_sub(1, std::memory_order_relaxed) - 1;
+
+                if (remaining == 0)
+                {
+                    delete this;
+                }
+
+                return remaining;
+            }
+
+            int32_t WINRT_CALL GetUnmarshalClass(guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags, guid* pCid) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->GetUnmarshalClass(riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+                }
+
+                return error_bad_alloc;
+            }
+
+            int32_t WINRT_CALL GetMarshalSizeMax(guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags, uint32_t* pSize) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->GetMarshalSizeMax(riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+                }
+
+                return error_bad_alloc;
+            }
+
+            int32_t WINRT_CALL MarshalInterface(void* pStm, guid const& riid, void* pv, uint32_t dwDestContext, void* pvDestContext, uint32_t mshlflags) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->MarshalInterface(pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+                }
+
+                return error_bad_alloc;
+            }
+
+            int32_t WINRT_CALL UnmarshalInterface(void* pStm, guid const& riid, void** ppv) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->UnmarshalInterface(pStm, riid, ppv);
+                }
+
+                *ppv = nullptr;
+                return error_bad_alloc;
+            }
+
+            int32_t WINRT_CALL ReleaseMarshalData(void* pStm) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->ReleaseMarshalData(pStm);
+                }
+
+                return error_bad_alloc;
+            }
+
+            int32_t WINRT_CALL DisconnectObject(uint32_t dwReserved) noexcept final
+            {
+                if (m_marshaler)
+                {
+                    return m_marshaler->DisconnectObject(dwReserved);
+                }
+
+                return error_bad_alloc;
+            }
+
+        private:
+
+            static com_ptr<IMarshal> get_marshaler() noexcept
+            {
+                com_ptr<IUnknown> unknown;
+                WINRT_VERIFY_(error_ok, WINRT_CoCreateFreeThreadedMarshaler(nullptr, unknown.put_void()));
+                return unknown ? unknown.try_as<IMarshal>() : nullptr;
+            }
+
+            com_ptr<IUnknown> m_object;
+            com_ptr<IMarshal> m_marshaler{ get_marshaler() };
+            std::atomic<uint32_t> m_references{ 1 };
+        };
+
+        *result = new (std::nothrow) marshaler(outer);
+        return *result ? error_ok : error_bad_alloc;
+    }
 }
 
 namespace winrt::impl
@@ -4419,31 +6475,30 @@ namespace winrt::impl
     {
         implements_delegate(H&& handler) : H(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** result) noexcept final
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** result) noexcept final
         {
-            if (id == guid_of<T>() || id == guid_of<Windows::Foundation::IUnknown>() || id == guid_of<IAgileObject>())
+            if (is_guid_of<T>(id) || is_guid_of<Windows::Foundation::IUnknown>(id) || is_guid_of<IAgileObject>(id))
             {
                 *result = static_cast<abi_t<T>*>(this);
                 AddRef();
-                return S_OK;
+                return error_ok;
             }
 
-            if (id == guid_of<IMarshal>())
+            if (is_guid_of<IMarshal>(id))
             {
-                *result = new (std::nothrow) free_threaded_marshaler(this);
-                return *result ? S_OK : E_OUTOFMEMORY;
+                return make_marshaler(this, result);
             }
 
             *result = nullptr;
-            return E_NOINTERFACE;
+            return error_no_interface;
         }
 
-        unsigned long __stdcall AddRef() noexcept final
+        uint32_t WINRT_CALL AddRef() noexcept final
         {
             return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
         }
 
-        unsigned long __stdcall Release() noexcept final
+        uint32_t WINRT_CALL Release() noexcept final
         {
             uint32_t const target = m_references.fetch_sub(1, std::memory_order_release) - 1;
 
@@ -4469,161 +6524,8 @@ namespace winrt::impl
         return instance;
     }
 
-    template <typename T>
-    struct abi<Windows::Foundation::EventHandler<T>>
-    {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* sender, arg_in<T> args) noexcept = 0;
-        };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct delegate<Windows::Foundation::EventHandler<T>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::EventHandler<T>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::EventHandler<T>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, arg_in<T> args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&sender), *reinterpret_cast<T const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<TSender const*>(&sender), *reinterpret_cast<TArgs const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename T>
-    struct guid<Windows::Foundation::EventHandler<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::EventHandler<T>>::value };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>::value };
-    };
-
-    template <typename T>
-    struct name<Windows::Foundation::EventHandler<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.EventHandler`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct name<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.TypedEventHandler`2<" + to_array(name_v<TSender>) + L", " + to_array(name_v<TArgs>) + L">" };
-    };
-
-    template <typename T>
-    struct category<Windows::Foundation::EventHandler<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x9de1c535, 0x6ae1, 0x11e0,{ 0x84, 0xe1, 0x18, 0xa9, 0x05, 0xbc, 0xc5, 0x3f } };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct category<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        using type = pinterface_category<TSender, TArgs>;
-        static constexpr GUID value{ 0x9de1c534, 0x6ae1, 0x11e0,{ 0x84, 0xe1, 0x18, 0xa9, 0x05, 0xbc, 0xc5, 0x3f } };
-    };
-}
-
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    template <typename T>
-    struct WINRT_EBO EventHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
-        EventHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        EventHandler(L handler) :
-            EventHandler(impl::make_delegate<EventHandler<T>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> EventHandler(F* handler) :
-            EventHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> EventHandler(O* object, M method) :
-            EventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IInspectable const& sender, T const& args) const
-        {
-            check_hresult((*(impl::abi_t<EventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
-    };
-
-    template <typename TSender, typename TArgs>
-    struct WINRT_EBO TypedEventHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TSender>, "TSender must be WinRT type.");
-        static_assert(impl::has_category_v<TArgs>, "TArgs must be WinRT type.");
-        TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        TypedEventHandler(L handler) :
-            TypedEventHandler(impl::make_delegate<TypedEventHandler<TSender, TArgs>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> TypedEventHandler(F* handler) :
-            TypedEventHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> TypedEventHandler(O* object, M method) :
-            TypedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(TSender const& sender, TArgs const& args) const
-        {
-            check_hresult((*(impl::abi_t<TypedEventHandler<TSender, TArgs>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
-    };
-}
-
-namespace winrt::impl
-{
     template <typename... T>
-    struct __declspec(novtable) variadic_delegate_abi : IUnknown
+    struct WINRT_NOVTABLE variadic_delegate_abi : IUnknown
     {
         virtual void invoke(T const&...) = 0;
     };
@@ -4638,25 +6540,25 @@ namespace winrt::impl
             (*this)(args...);
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** result) noexcept final
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** result) noexcept final
         {
-            if (id == guid_of<Windows::Foundation::IUnknown>() || id == guid_of<IAgileObject>())
+            if (is_guid_of<Windows::Foundation::IUnknown>(id) || is_guid_of<IAgileObject>(id))
             {
                 *result = static_cast<IUnknown*>(this);
                 AddRef();
-                return S_OK;
+                return error_ok;
             }
 
             *result = nullptr;
-            return E_NOINTERFACE;
+            return error_no_interface;
         }
 
-        unsigned long __stdcall AddRef() noexcept final
+        uint32_t WINRT_CALL AddRef() noexcept final
         {
             return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
         }
 
-        unsigned long __stdcall Release() noexcept final
+        uint32_t WINRT_CALL Release() noexcept final
         {
             uint32_t const target = m_references.fetch_sub(1, std::memory_order_release) - 1;
 
@@ -4672,7 +6574,6 @@ namespace winrt::impl
     private:
 
         std::atomic<uint32_t> m_references{ 1 };
-
     };
 }
 
@@ -4713,984 +6614,322 @@ WINRT_EXPORT namespace winrt
     };
 }
 
-WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
-    enum class CollectionChange : int32_t
+    struct WINRT_EBO IAsyncInfo :
+        IInspectable,
+        impl::consume_t<IAsyncInfo>
     {
-        Reset,
-        ItemInserted,
-        ItemRemoved,
-        ItemChanged,
+        IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
     };
 
-    struct IVectorChangedEventArgs;
-    template <typename K> struct IMapChangedEventArgs;
-
-    template <typename T> struct VectorChangedEventHandler;
-    template <typename K, typename V> struct MapChangedEventHandler;
-
-    template <typename T> struct IIterator;
-    template <typename T> struct IIterable;
-    template <typename T> struct IVectorView;
-    template <typename T> struct IVector;
-    template <typename T> struct IObservableVector;
-
-    template <typename K, typename V> struct IKeyValuePair;
-    template <typename K, typename V> struct IMapView;
-    template <typename K, typename V> struct IMap;
-    template <typename K, typename V> struct IObservableMap;
-}
-
-namespace winrt::impl
-{
-    namespace wfc = Windows::Foundation::Collections;
-
-    template <>
-    struct abi<wfc::IVectorChangedEventArgs>
+    struct WINRT_EBO IAsyncAction :
+        IInspectable,
+        impl::consume_t<IAsyncAction>,
+        impl::require<IAsyncAction, IAsyncInfo>
     {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
-            virtual HRESULT __stdcall get_Index(uint32_t* value) noexcept = 0;
-        };
+        IAsyncAction(std::nullptr_t = nullptr) noexcept {}
     };
 
-    template <typename D>
-    struct consume_IVectorChangedEventArgs
+    template <typename TProgress>
+    struct WINRT_EBO IAsyncActionWithProgress :
+        IInspectable,
+        impl::consume_t<IAsyncActionWithProgress<TProgress>>,
+        impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
     {
-        wfc::CollectionChange CollectionChange() const
-        {
-            wfc::CollectionChange value{};
-            check_hresult((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
-            return value;
-        }
-
-        uint32_t Index() const
-        {
-            uint32_t index{};
-            check_hresult((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_Index(&index));
-            return index;
-        }
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
     };
 
-    template <typename D, typename K>
-    struct consume_IMapChangedEventArgs
+    template <typename TResult>
+    struct WINRT_EBO IAsyncOperation :
+        IInspectable,
+        impl::consume_t<IAsyncOperation<TResult>>,
+        impl::require<IAsyncOperation<TResult>, IAsyncInfo>
     {
-        wfc::CollectionChange CollectionChange() const
-        {
-            wfc::CollectionChange value{};
-            check_hresult((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
-            return value;
-        }
-
-        K Key() const
-        {
-            K result{ empty_value<K>() };
-            check_hresult((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
-            return result;
-        }
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
     };
 
-    template <typename D, typename T>
-    struct consume_IIterator
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO IAsyncOperationWithProgress :
+        IInspectable,
+        impl::consume_t<IAsyncOperationWithProgress<TResult, TProgress>>,
+        impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
     {
-        T Current() const
-        {
-            T result{ empty_value<T>() };
-            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_Current(put_abi(result)));
-            return result;
-        }
-
-        bool HasCurrent() const
-        {
-            bool temp{};
-            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_HasCurrent(put_abi(temp)));
-            return temp;
-        }
-
-        bool MoveNext() const
-        {
-            bool temp{};
-            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->MoveNext(put_abi(temp)));
-            return temp;
-        }
-
-        uint32_t GetMany(array_view<T> values) const
-        {
-            uint32_t actual{};
-            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->GetMany(values.size(), get_abi(values), &actual));
-            return actual;
-        }
-
-        auto& operator++()
-        {
-            if (!MoveNext())
-            {
-                static_cast<D&>(*this) = nullptr;
-            }
-
-            return *this;
-        }
-
-        T operator*() const
-        {
-            return Current();
-        }
-    };
-
-    template <typename D, typename T>
-    struct consume_IIterable
-    {
-        wfc::IIterator<T> First() const
-        {
-            wfc::IIterator<T> iterator;
-            check_hresult((*(abi_t<wfc::IIterable<T>>**)&static_cast<wfc::IIterable<T> const&>(static_cast<D const&>(*this)))->First(put_abi(iterator)));
-            return iterator;
-        }
-    };
-
-    template <typename D, typename T>
-    struct consume_IVectorView
-    {
-        T GetAt(uint32_t const index) const
-        {
-            T result{ empty_value<T>() };
-            check_hresult((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->GetAt(index, put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->IndexOf(get_abi(value), &index, &found));
-            return found;
-        }
-
-        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const
-        {
-            uint32_t actual{};
-            check_hresult((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->GetMany(startIndex, values.size(), get_abi(values), &actual));
-            return actual;
-        }
-    };
-
-    template <typename D, typename T>
-    struct consume_IVector
-    {
-        T GetAt(uint32_t const index) const
-        {
-            T result{ empty_value<T>() };
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->GetAt(index, put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size = 0;
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        wfc::IVectorView<T> GetView() const
-        {
-            wfc::IVectorView<T> view;
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
-            return view;
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->IndexOf(get_abi(value), &index, &found));
-            return found;
-        }
-
-        void SetAt(uint32_t const index, T const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->SetAt(index, get_abi(value)));
-        }
-
-        void InsertAt(uint32_t const index, T const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->InsertAt(index, get_abi(value)));
-        }
-
-        void RemoveAt(uint32_t const index) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->RemoveAt(index));
-        }
-
-        void Append(T const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->Append(get_abi(value)));
-        }
-
-        void RemoveAtEnd() const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->RemoveAtEnd());
-        }
-
-        void Clear() const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->Clear());
-        }
-
-        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const
-        {
-            uint32_t actual{};
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->GetMany(startIndex, values.size(), get_abi(values), &actual));
-            return actual;
-        }
-
-        void ReplaceAll(array_view<T const> value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->ReplaceAll(value.size(), get_abi(value)));
-        }
-    };
-
-    template <typename D, typename T>
-    struct consume_IObservableVector
-    {
-        event_token VectorChanged(wfc::VectorChangedEventHandler<T> const& handler) const
-        {
-            event_token cookie{};
-            check_hresult((*(abi_t<wfc::IObservableVector<T>>**)&static_cast<wfc::IObservableVector<T> const&>(static_cast<D const&>(*this)))->add_VectorChanged(get_abi(handler), &cookie));
-            return cookie;
-        }
-
-        void VectorChanged(event_token const cookie) const
-        {
-            check_hresult((*(abi_t<wfc::IObservableVector<T>>**)&static_cast<wfc::IObservableVector<T> const&>(static_cast<D const&>(*this)))->remove_VectorChanged(cookie));
-        }
-
-        using VectorChanged_revoker = event_revoker<wfc::IObservableVector<T>>;
-
-        VectorChanged_revoker VectorChanged(auto_revoke_t, wfc::VectorChangedEventHandler<T> const& handler) const
-        {
-            return make_event_revoker<D, wfc::IObservableVector<T>>(this, &abi<wfc::IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct consume_IKeyValuePair
-    {
-        K Key() const
-        {
-            K result{ empty_value<K>() };
-            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
-            return result;
-        }
-
-        V Value() const
-        {
-            V result{ empty_value<V>() };
-            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Value(put_abi(result)));
-            return result;
-        }
-
-        bool operator==(wfc::IKeyValuePair<K, V> const& other) const
-        {
-            return Key() == other.Key() && Value() == other.Value();
-        }
-
-        bool operator!=(wfc::IKeyValuePair<K, V> const& other) const
-        {
-            return !(*this == other);
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct consume_IMapView
-    {
-        V Lookup(K const& key) const
-        {
-            V result{ empty_value<V>() };
-            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        bool HasKey(K const& key) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
-            return found;
-        }
-        void Split(wfc::IMapView<K, V>& firstPartition, wfc::IMapView<K, V>& secondPartition)
-        {
-            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Split(put_abi(firstPartition), put_abi(secondPartition)));
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct consume_IMap
-    {
-        V Lookup(K const& key) const
-        {
-            V result{ empty_value<V>() };
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        bool HasKey(K const& key) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
-            return found;
-        }
-
-        wfc::IMapView<K, V> GetView() const
-        {
-            wfc::IMapView<K, V> view;
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
-            return view;
-        }
-
-        bool Insert(K const& key, V const& value) const
-        {
-            bool replaced{};
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Insert(get_abi(key), get_abi(value), &replaced));
-            return replaced;
-        }
-
-        void Remove(K const& key) const
-        {
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Remove(get_abi(key)));
-        }
-
-        void Clear() const
-        {
-            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Clear());
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct consume_IObservableMap
-    {
-        event_token MapChanged(wfc::MapChangedEventHandler<K, V> const& handler) const
-        {
-            event_token cookie{};
-            check_hresult((*(abi_t<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->add_MapChanged(get_abi(handler), &cookie));
-            return cookie;
-        }
-
-        void MapChanged(event_token const cookie) const
-        {
-            check_hresult((*(abi_t<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->remove_MapChanged(cookie));
-        }
-
-        using MapChanged_revoker = event_revoker<wfc::IObservableMap<K, V>>;
-
-        MapChanged_revoker MapChanged(auto_revoke_t, wfc::MapChangedEventHandler<K, V> const& handler) const
-        {
-            return make_event_revoker<D, wfc::IObservableMap<K, V>>(this, &abi_t<wfc::IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
-        }
-    };
-
-    template <>
-    struct consume<wfc::IVectorChangedEventArgs>
-    {
-        template <typename D> using type = consume_IVectorChangedEventArgs<D>;
-    };
-
-    template <typename K>
-    struct abi<wfc::IMapChangedEventArgs<K>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
-            virtual HRESULT __stdcall get_Key(arg_out<K> value) noexcept = 0;
-        };
-    };
-
-    template <typename K>
-    struct consume<wfc::IMapChangedEventArgs<K>>
-    {
-        template <typename D> using type = consume_IMapChangedEventArgs<D, K>;
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
     };
 
     template <typename T>
-    struct abi<wfc::VectorChangedEventHandler<T>>
+    struct WINRT_EBO EventHandler : IUnknown
     {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct delegate<wfc::VectorChangedEventHandler<T>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<wfc::VectorChangedEventHandler<T>, H>
-        {
-            type(H&& handler) : implements_delegate<wfc::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<wfc::IObservableVector<T> const*>(&sender), *reinterpret_cast<wfc::IVectorChangedEventArgs const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename K, typename V>
-    struct abi<wfc::MapChangedEventHandler<K, V>>
-    {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
-        };
-    };
-
-    template <typename K, typename V>
-    struct delegate<wfc::MapChangedEventHandler<K, V>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>
-        {
-            type(H&& handler) : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<wfc::IObservableMap<K, V> const*>(&sender), *reinterpret_cast<wfc::IMapChangedEventArgs<K> const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename T>
-    struct abi<wfc::IIterator<T>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_Current(arg_out<T> current) noexcept = 0;
-            virtual HRESULT __stdcall get_HasCurrent(bool* hasCurrent) noexcept = 0;
-            virtual HRESULT __stdcall MoveNext(bool* hasCurrent) noexcept = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct consume<wfc::IIterator<T>>
-    {
-        template <typename D> using type = consume_IIterator<D, T>;
-    };
-
-    template <typename T>
-    struct abi<wfc::IIterable<T>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall First(void** first) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct consume<wfc::IIterable<T>>
-    {
-        template <typename D> using type = consume_IIterable<D, T>;
-    };
-
-    template <typename T>
-    struct abi<wfc::IVectorView<T>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
-            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct consume<wfc::IVectorView<T>>
-    {
-        template <typename D> using type = consume_IVectorView<D, T>;
-    };
-
-    template <typename T>
-    struct abi<wfc::IVector<T>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
-            virtual HRESULT __stdcall GetView(void** view) noexcept = 0;
-            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
-            virtual HRESULT __stdcall SetAt(uint32_t index, arg_in<T> item) noexcept = 0;
-            virtual HRESULT __stdcall InsertAt(uint32_t index, arg_in<T> item) noexcept = 0;
-            virtual HRESULT __stdcall RemoveAt(uint32_t index) noexcept = 0;
-            virtual HRESULT __stdcall Append(arg_in<T> item) noexcept = 0;
-            virtual HRESULT __stdcall RemoveAtEnd() noexcept = 0;
-            virtual HRESULT __stdcall Clear() noexcept = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
-            virtual HRESULT __stdcall ReplaceAll(uint32_t count, arg_out<T> value) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct consume<wfc::IVector<T>>
-    {
-        template <typename D> using type = consume_IVector<D, T>;
-    };
-
-    template <typename T>
-    struct abi<wfc::IObservableVector<T>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall add_VectorChanged(void* handler, event_token*  token) noexcept = 0;
-            virtual HRESULT __stdcall remove_VectorChanged(event_token token) noexcept = 0;
-        };
-    };
-
-    template <typename T>
-    struct consume<wfc::IObservableVector<T>>
-    {
-        template <typename D> using type = consume_IObservableVector<D, T>;
-    };
-
-    template <typename K, typename V>
-    struct abi<wfc::IKeyValuePair<K, V>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_Key(arg_out<K> key) noexcept = 0;
-            virtual HRESULT __stdcall get_Value(arg_out<V> value) noexcept = 0;
-        };
-    };
-
-    template <typename K, typename V>
-    struct consume<wfc::IKeyValuePair<K, V>>
-    {
-        template <typename D> using type = consume_IKeyValuePair<D, K, V>;
-    };
-
-    template <typename K, typename V>
-    struct abi<wfc::IMapView<K, V>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
-            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept = 0;
-            virtual HRESULT __stdcall Split(void** firstPartition, void** secondPartition) noexcept = 0;
-        };
-    };
-
-    template <typename K, typename V>
-    struct consume<wfc::IMapView<K, V>>
-    {
-        template <typename D> using type = consume_IMapView<D, K, V>;
-    };
-
-    template <typename K, typename V>
-    struct abi<wfc::IMap<K, V>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
-            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept = 0;
-            virtual HRESULT __stdcall GetView(void** view) noexcept = 0;
-            virtual HRESULT __stdcall Insert(arg_in<K> key, arg_in<V> value, bool* replaced) noexcept = 0;
-            virtual HRESULT __stdcall Remove(arg_in<K> key) noexcept = 0;
-            virtual HRESULT __stdcall Clear() noexcept = 0;
-        };
-    };
-
-    template <typename K, typename V>
-    struct consume<wfc::IMap<K, V>>
-    {
-        template <typename D> using type = consume_IMap<D, K, V>;
-    };
-
-    template <typename K, typename V>
-    struct abi<wfc::IObservableMap<K, V>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall add_MapChanged(void* handler, event_token* token) noexcept = 0;
-            virtual HRESULT __stdcall remove_MapChanged(event_token token) noexcept = 0;
-        };
-    };
-
-    template <typename K, typename V>
-    struct consume<wfc::IObservableMap<K, V>>
-    {
-        template <typename D> using type = consume_IObservableMap<D, K, V>;
-    };
-
-    template <>
-    struct guid<wfc::IVectorChangedEventArgs>
-    {
-        static constexpr GUID value{ 0x575933DF,0x34FE,0x4480,{ 0xAF,0x15,0x07,0x69,0x1F,0x3D,0x5D,0x9B } };
-    };
-
-    template <>
-    struct name<wfc::IVectorChangedEventArgs>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Collections.IVectorChangedEventArgs" };
-    };
-
-    template <>
-    struct category<wfc::IVectorChangedEventArgs>
-    {
-        using type = interface_category;
-    };
-
-    template <typename K>
-    struct guid<wfc::IMapChangedEventArgs<K>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IMapChangedEventArgs<K>>::value };
-    };
-
-    template <typename K>
-    struct name<wfc::IMapChangedEventArgs<K>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IMapChangedEventArgs`1<" + to_array(name_v<K>) + L">" };
-    };
-
-    template <typename K>
-    struct category<wfc::IMapChangedEventArgs<K>>
-    {
-        using type = pinterface_category<K>;
-        static constexpr GUID value{ 0x9939f4df, 0x050a, 0x4c0f,{ 0xaa, 0x60, 0x77, 0x07, 0x5f, 0x9c, 0x47, 0x77 } };
-    };
-
-    template <typename T>
-    struct guid<wfc::VectorChangedEventHandler<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::VectorChangedEventHandler<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::VectorChangedEventHandler<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.VectorChangedEventHandler`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::VectorChangedEventHandler<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x0c051752, 0x9fbf, 0x4c70,{ 0xaa, 0x0c, 0x0e, 0x4c, 0x82, 0xd9, 0xa7, 0x61 } };
-    };
-
-    template <typename K, typename V>
-    struct guid<wfc::MapChangedEventHandler<K, V>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::MapChangedEventHandler<K, V>>::value };
-    };
-
-    template <typename K, typename V>
-    struct name<wfc::MapChangedEventHandler<K, V>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.MapChangedEventHandler`2<" + to_array(name_v<K>) + L", " + to_array(name_v<V>) + L">" };
-    };
-
-    template <typename K, typename V>
-    struct category<wfc::MapChangedEventHandler<K, V>>
-    {
-        using type = pinterface_category<K, V>;
-        static constexpr GUID value{ 0x179517f3, 0x94ee, 0x41f8,{ 0xbd, 0xdc, 0x76, 0x8a, 0x89, 0x55, 0x44, 0xf3 } };
-    };
-
-    template <typename T>
-    struct guid<wfc::IIterator<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IIterator<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::IIterator<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IIterator`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::IIterator<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x6a79e863, 0x4300, 0x459a,{ 0x99, 0x66, 0xcb, 0xb6, 0x60, 0x96, 0x3e, 0xe1 } };
-    };
-
-    template <typename T>
-    struct guid<wfc::IIterable<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IIterable<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::IIterable<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IIterable`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::IIterable<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0xfaa585ea, 0x6214, 0x4217,{ 0xaf, 0xda, 0x7f, 0x46, 0xde, 0x58, 0x69, 0xb3 } };
-    };
-
-    template <typename T>
-    struct guid<wfc::IVectorView<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IVectorView<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::IVectorView<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IVectorView`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::IVectorView<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0xbbe1fa4c, 0xb0e3, 0x4583,{ 0xba, 0xef, 0x1f, 0x1b, 0x2e, 0x48, 0x3e, 0x56 } };
-    };
-
-    template <typename T>
-    struct guid<wfc::IVector<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IVector<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::IVector<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IVector`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::IVector<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x913337e9, 0x11a1, 0x4345,{ 0xa3, 0xa2, 0x4e, 0x7f, 0x95, 0x6e, 0x22, 0x2d } };
-    };
-
-    template <typename T>
-    struct guid<wfc::IObservableVector<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IObservableVector<T>>::value };
-    };
-
-    template <typename T>
-    struct name<wfc::IObservableVector<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IObservableVector`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<wfc::IObservableVector<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x5917eb53, 0x50b4, 0x4a0d,{ 0xb3, 0x09, 0x65, 0x86, 0x2b, 0x3f, 0x1d, 0xbc } };
-    };
-
-    template <typename K, typename V>
-    struct guid<wfc::IKeyValuePair<K, V>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IKeyValuePair<K, V>>::value };
-    };
-
-    template <typename K, typename V>
-    struct name<wfc::IKeyValuePair<K, V>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IKeyValuePair`2<" + to_array(name_v<K>) + L", " + to_array(name_v<V>) + L">" };
-    };
-
-    template <typename K, typename V>
-    struct category<wfc::IKeyValuePair<K, V>>
-    {
-        using type = pinterface_category<K, V>;
-        static constexpr GUID value{ 0x02b51929, 0xc1c4, 0x4a7e,{ 0x89, 0x40, 0x03, 0x12, 0xb5, 0xc1, 0x85, 0x00 } };
-    };
-
-    template <typename K, typename V>
-    struct guid<wfc::IMapView<K, V>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IMapView<K, V>>::value };
-    };
-
-    template <typename K, typename V>
-    struct name<wfc::IMapView<K, V>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IMapView`2<" + to_array(name_v<K>) + L", " + to_array(name_v<V>) + L">" };
-    };
-
-    template <typename K, typename V>
-    struct category<wfc::IMapView<K, V>>
-    {
-        using type = pinterface_category<K, V>;
-        static constexpr GUID value{ 0xe480ce40, 0xa338, 0x4ada,{ 0xad, 0xcf, 0x27, 0x22, 0x72, 0xe4, 0x8c, 0xb9 } };
-    };
-
-    template <typename K, typename V>
-    struct guid<wfc::IMap<K, V>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IMap<K, V>>::value };
-    };
-
-    template <typename K, typename V>
-    struct name<wfc::IMap<K, V>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IMap`2<" + to_array(name_v<K>) + L", " + to_array(name_v<V>) + L">" };
-    };
-
-    template <typename K, typename V>
-    struct category<wfc::IMap<K, V>>
-    {
-        using type = pinterface_category<K, V>;
-        static constexpr GUID value{ 0x3c2925fe, 0x8519, 0x45c1,{ 0xaa, 0x79, 0x19, 0x7b, 0x67, 0x18, 0xc1, 0xc1 } };
-    };
-
-    template <typename K, typename V>
-    struct guid<wfc::IObservableMap<K, V>>
-    {
-        static constexpr GUID value{ pinterface_guid<wfc::IObservableMap<K, V>>::value };
-    };
-
-    template <typename K, typename V>
-    struct name<wfc::IObservableMap<K, V>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IObservableMap`2<" + to_array(name_v<K>) + L", " + to_array(name_v<V>) + L">" };
-    };
-
-    template <typename K, typename V>
-    struct category<wfc::IObservableMap<K, V>>
-    {
-        using type = pinterface_category<K, V>;
-        static constexpr GUID value{ 0x65df2bf5, 0xbf39, 0x41b5,{ 0xae, 0xbc, 0x5a, 0x9d, 0x86, 0x5e, 0x47, 0x2b } };
-    };
-
-    template <typename T>
-    struct fast_iterator
-    {
-        using iterator_category = std::input_iterator_tag;
-        using value_type = T;
-        using difference_type = ptrdiff_t;
-        using pointer = T*;
-        using reference = T&;
-
-        fast_iterator(T const& collection, uint32_t const index) noexcept :
-            m_collection(&collection),
-            m_index(index)
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
+        EventHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        EventHandler(L handler) :
+            EventHandler(impl::make_delegate<EventHandler<T>>(std::forward<L>(handler)))
         {}
 
-        fast_iterator& operator++() noexcept
+        template <typename F> EventHandler(F* handler) :
+            EventHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> EventHandler(O* object, M method) :
+            EventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> EventHandler(com_ptr<O>&& object, M method) :
+            EventHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> EventHandler(weak_ref<O>&& object, M method) :
+            EventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IInspectable const& sender, T const& args) const
         {
-            ++m_index;
-            return*this;
+            check_hresult((*(impl::abi_t<EventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
-
-        auto operator*() const
-        {
-            return m_collection->GetAt(m_index);
-        }
-
-        bool operator==(fast_iterator const& other) const noexcept
-        {
-            WINRT_ASSERT(m_collection == other.m_collection);
-            return m_index == other.m_index;
-        }
-
-        bool operator!=(fast_iterator const& other) const noexcept
-        {
-            return !(*this == other);
-        }
-
-    private:
-
-        T const* m_collection = nullptr;
-        uint32_t m_index = 0;
     };
 
-    template <typename T>
-    class has_GetAt
+    template <typename TSender, typename TArgs>
+    struct WINRT_EBO TypedEventHandler : IUnknown
     {
-        template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
-        template <typename> static constexpr bool get_value(...) { return false; }
+        static_assert(impl::has_category_v<TSender>, "TSender must be WinRT type.");
+        static_assert(impl::has_category_v<TArgs>, "TArgs must be WinRT type.");
+        TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
-    public:
+        template <typename L>
+        TypedEventHandler(L handler) :
+            TypedEventHandler(impl::make_delegate<TypedEventHandler<TSender, TArgs>>(std::forward<L>(handler)))
+        {}
 
-        static constexpr bool value = get_value<T>(0);
+        template <typename F> TypedEventHandler(F* handler) :
+            TypedEventHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> TypedEventHandler(O* object, M method) :
+            TypedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> TypedEventHandler(com_ptr<O>&& object, M method) :
+            TypedEventHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> TypedEventHandler(weak_ref<O>&& object, M method) :
+            TypedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(TSender const& sender, TArgs const& args) const
+        {
+            check_hresult((*(impl::abi_t<TypedEventHandler<TSender, TArgs>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+        }
     };
 
-    template <typename T, std::enable_if_t<!has_GetAt<T>::value>* = nullptr>
-    auto begin(T const& collection) -> decltype(collection.First())
+    struct AsyncActionCompletedHandler : IUnknown
     {
-        auto result = collection.First();
+        AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
 
-        if (!result.HasCurrent())
+        template <typename L>
+        AsyncActionCompletedHandler(L handler) :
+            AsyncActionCompletedHandler(impl::make_delegate<AsyncActionCompletedHandler>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> AsyncActionCompletedHandler(F* handler) :
+            AsyncActionCompletedHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionCompletedHandler(O* object, M method) :
+            AsyncActionCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionCompletedHandler(com_ptr<O>&& object, M method) :
+            AsyncActionCompletedHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionCompletedHandler(weak_ref<O>&& object, M method) :
+            AsyncActionCompletedHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncAction const& sender, AsyncStatus args) const
         {
-            return {};
+            check_hresult((*(impl::abi_t<AsyncActionCompletedHandler>**)this)->Invoke(get_abi(sender), args));
         }
+    };
 
-        return result;
-    }
-
-    template <typename T, std::enable_if_t<!has_GetAt<T>::value>* = nullptr>
-    auto end([[maybe_unused]] T const& collection) noexcept -> decltype(collection.First())
+    template <typename TProgress>
+    struct WINRT_EBO AsyncActionProgressHandler : IUnknown
     {
-        return {};
-    }
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
 
-    template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    fast_iterator<T> begin(T const& collection) noexcept
-    {
-        return fast_iterator<T>(collection, 0);
-    }
+        template <typename L>
+        AsyncActionProgressHandler(L handler) :
+            AsyncActionProgressHandler(impl::make_delegate<AsyncActionProgressHandler<TProgress>>(std::forward<L>(handler)))
+        {}
 
-    template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    fast_iterator<T> end(T const& collection)
+        template <typename F> AsyncActionProgressHandler(F* handler) :
+            AsyncActionProgressHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionProgressHandler(O* object, M method) :
+            AsyncActionProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionProgressHandler(com_ptr<O>&& object, M method) :
+            AsyncActionProgressHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionProgressHandler(weak_ref<O>&& object, M method) :
+            AsyncActionProgressHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncActionWithProgress<TProgress> const& sender, TProgress const& args) const
+        {
+            check_hresult((*(impl::abi_t<AsyncActionProgressHandler<TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+        }
+    };
+
+    template <typename TProgress>
+    struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
     {
-        return fast_iterator<T>(collection, collection.Size());
-    }
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        AsyncActionWithProgressCompletedHandler(L handler) :
+            AsyncActionWithProgressCompletedHandler(impl::make_delegate<AsyncActionWithProgressCompletedHandler<TProgress>>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> AsyncActionWithProgressCompletedHandler(F* handler) :
+            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O* object, M method) :
+            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionWithProgressCompletedHandler(com_ptr<O>&& object, M method) :
+            AsyncActionWithProgressCompletedHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncActionWithProgressCompletedHandler(weak_ref<O>&& object, M method) :
+            AsyncActionWithProgressCompletedHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncActionWithProgress<TProgress> const& sender, AsyncStatus const args) const
+        {
+            check_hresult((*(impl::abi_t<AsyncActionWithProgressCompletedHandler<TProgress>>**)this)->Invoke(get_abi(sender), args));
+        }
+    };
+
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
+    {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        AsyncOperationProgressHandler(L handler) :
+            AsyncOperationProgressHandler(impl::make_delegate<AsyncOperationProgressHandler<TResult, TProgress>>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> AsyncOperationProgressHandler(F* handler) :
+            AsyncOperationProgressHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationProgressHandler(O* object, M method) :
+            AsyncOperationProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationProgressHandler(com_ptr<O>&& object, M method) :
+            AsyncOperationProgressHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationProgressHandler(weak_ref<O>&& object, M method) :
+            AsyncOperationProgressHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, TProgress const& args) const
+        {
+            check_hresult((*(impl::abi_t<AsyncOperationProgressHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+        }
+    };
+
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
+    {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
+        AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        AsyncOperationWithProgressCompletedHandler(L handler) :
+            AsyncOperationWithProgressCompletedHandler(impl::make_delegate<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> AsyncOperationWithProgressCompletedHandler(F* handler) :
+            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O* object, M method) :
+            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(com_ptr<O>&& object, M method) :
+            AsyncOperationWithProgressCompletedHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(weak_ref<O>&& object, M method) :
+            AsyncOperationWithProgressCompletedHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, AsyncStatus const args) const
+        {
+            check_hresult((*(impl::abi_t<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), args));
+        }
+    };
+
+    template <typename TResult>
+    struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
+    {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        AsyncOperationCompletedHandler(L handler) :
+            AsyncOperationCompletedHandler(impl::make_delegate<AsyncOperationCompletedHandler<TResult>>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> AsyncOperationCompletedHandler(F* handler) :
+            AsyncOperationCompletedHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationCompletedHandler(O* object, M method) :
+            AsyncOperationCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationCompletedHandler(com_ptr<O>&& object, M method) :
+            AsyncOperationCompletedHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> AsyncOperationCompletedHandler(weak_ref<O>&& object, M method) :
+            AsyncOperationCompletedHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IAsyncOperation<TResult> const& sender, AsyncStatus args) const
+        {
+            check_hresult((*(impl::abi_t<AsyncOperationCompletedHandler<TResult>>**)this)->Invoke(get_abi(sender), args));
+        }
+    };
 }
 
 WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
-    struct IVectorChangedEventArgs :
-        IInspectable,
-        impl::consume_t<IVectorChangedEventArgs>
-    {
-        IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    };
-
     template <typename K>
     struct WINRT_EBO IMapChangedEventArgs :
         IInspectable,
@@ -5698,57 +6937,6 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
     {
         static_assert(impl::has_category_v<K>, "K must be WinRT type.");
         IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    template <typename T>
-    struct WINRT_EBO VectorChangedEventHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
-        VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        VectorChangedEventHandler(L handler) :
-            VectorChangedEventHandler(impl::make_delegate<VectorChangedEventHandler<T>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> VectorChangedEventHandler(F* handler) :
-            VectorChangedEventHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> VectorChangedEventHandler(O* object, M method) :
-            VectorChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IObservableVector<T> const& sender, IVectorChangedEventArgs const& args) const
-        {
-            check_hresult((*(impl::abi_t<VectorChangedEventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
-    };
-
-    template <typename K, typename V>
-    struct WINRT_EBO MapChangedEventHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
-        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
-        MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        MapChangedEventHandler(L handler) :
-            MapChangedEventHandler(impl::make_delegate<MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> MapChangedEventHandler(F* handler) :
-            MapChangedEventHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> MapChangedEventHandler(O* object, M method) :
-            MapChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IObservableMap<K, V> const& sender, IMapChangedEventArgs<K> const& args) const
-        {
-            check_hresult((*(impl::abi_t<MapChangedEventHandler<K, V>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
     };
 
     template <typename T>
@@ -5762,8 +6950,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         using iterator_category = std::input_iterator_tag;
         using value_type = T;
         using difference_type = ptrdiff_t;
-        using pointer = T*;
-        using reference = T&;
+        using pointer = T * ;
+        using reference = T & ;
     };
 
     template <typename T>
@@ -5847,199 +7035,569 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         IObservableMap(std::nullptr_t = nullptr) noexcept {}
     };
-}
 
-namespace winrt::impl
-{
-    template <typename D>
-    struct consume_IVectorView<D, hstring>
+    struct WINRT_EBO IVectorChangedEventArgs :
+        IInspectable,
+        impl::consume_t<IVectorChangedEventArgs>
     {
-        hstring GetAt(uint32_t const index) const
-        {
-            hstring result;
-            check_hresult((*(abi_t<wfc::IVectorView<hstring>>**)&static_cast<wfc::IVectorView<hstring> const&>(static_cast<D const&>(*this)))->GetAt(index, put_abi(result)));
-            return result;
-        }
+        IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+    };
 
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IVectorView<hstring>>**)&static_cast<wfc::IVectorView<hstring> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
+    template <typename T>
+    struct WINRT_EBO VectorChangedEventHandler : IUnknown
+    {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
+        VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
-        bool IndexOf(param::hstring const& value, uint32_t& index) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IVectorView<hstring>>**)&static_cast<wfc::IVectorView<hstring> const&>(static_cast<D const&>(*this)))->IndexOf(get_abi(value), &index, &found));
-            return found;
-        }
+        template <typename L>
+        VectorChangedEventHandler(L handler) :
+            VectorChangedEventHandler(impl::make_delegate<VectorChangedEventHandler<T>>(std::forward<L>(handler)))
+        {}
 
-        uint32_t GetMany(uint32_t startIndex, array_view<hstring> values) const
+        template <typename F> VectorChangedEventHandler(F* handler) :
+            VectorChangedEventHandler([=](auto&&... args) { handler(args...); })
+        {}
+
+        template <typename O, typename M> VectorChangedEventHandler(O* object, M method) :
+            VectorChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> VectorChangedEventHandler(com_ptr<O>&& object, M method) :
+            VectorChangedEventHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
+
+        template <typename O, typename M> VectorChangedEventHandler(weak_ref<O>&& object, M method) :
+            VectorChangedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
+
+        void operator()(IObservableVector<T> const& sender, IVectorChangedEventArgs const& args) const
         {
-            uint32_t actual{};
-            check_hresult((*(abi_t<wfc::IVectorView<hstring>>**)&static_cast<wfc::IVectorView<hstring> const&>(static_cast<D const&>(*this)))->GetMany(startIndex, values.size(), get_abi(values), &actual));
-            return actual;
+            check_hresult((*(impl::abi_t<VectorChangedEventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 
-    template <typename D>
-    struct consume_IVector<D, hstring>
+    template <typename K, typename V>
+    struct WINRT_EBO MapChangedEventHandler : IUnknown
     {
-        hstring GetAt(uint32_t const index) const
-        {
-            hstring result;
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->GetAt(index, put_abi(result)));
-            return result;
-        }
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
+        MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
-        uint32_t Size() const
-        {
-            uint32_t size = 0;
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
+        template <typename L>
+        MapChangedEventHandler(L handler) :
+            MapChangedEventHandler(impl::make_delegate<MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
+        {}
 
-        wfc::IVectorView<hstring> GetView() const
-        {
-            wfc::IVectorView<hstring> view;
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
-            return view;
-        }
+        template <typename F> MapChangedEventHandler(F* handler) :
+            MapChangedEventHandler([=](auto&&... args) { handler(args...); })
+        {}
 
-        bool IndexOf(param::hstring const& value, uint32_t& index) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->IndexOf(get_abi(value), &index, &found));
-            return found;
-        }
+        template <typename O, typename M> MapChangedEventHandler(O* object, M method) :
+            MapChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+        {}
 
-        void SetAt(uint32_t const index, param::hstring const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->SetAt(index, get_abi(value)));
-        }
+        template <typename O, typename M> MapChangedEventHandler(com_ptr<O>&& object, M method) :
+            MapChangedEventHandler([o = std::move(object), method](auto&&... args) { ((*o).*(method))(args...); })
+        {}
 
-        void InsertAt(uint32_t const index, param::hstring const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->InsertAt(index, get_abi(value)));
-        }
+        template <typename O, typename M> MapChangedEventHandler(weak_ref<O>&& object, M method) :
+            MapChangedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+        {}
 
-        void RemoveAt(uint32_t const index) const
+        void operator()(IObservableMap<K, V> const& sender, IMapChangedEventArgs<K> const& args) const
         {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->RemoveAt(index));
-        }
-
-        void Append(param::hstring const& value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->Append(get_abi(value)));
-        }
-
-        void RemoveAtEnd() const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->RemoveAtEnd());
-        }
-
-        void Clear() const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->Clear());
-        }
-
-        uint32_t GetMany(uint32_t startIndex, array_view<hstring> values) const
-        {
-            uint32_t actual{};
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->GetMany(startIndex, values.size(), get_abi(values), &actual));
-            return actual;
-        }
-
-        void ReplaceAll(array_view<hstring const> value) const
-        {
-            check_hresult((*(abi_t<wfc::IVector<hstring>>**)&static_cast<wfc::IVector<hstring> const&>(static_cast<D const&>(*this)))->ReplaceAll(value.size(), get_abi(value)));
-        }
-    };
-
-    template <typename D, typename V>
-    struct consume_IMapView<D, hstring, V>
-    {
-        V Lookup(param::hstring const& key) const
-        {
-            V result{ empty_value<V>() };
-            check_hresult((*(abi_t<wfc::IMapView<hstring, V>>**)&static_cast<wfc::IMapView<hstring, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IMapView<hstring, V>>**)&static_cast<wfc::IMapView<hstring, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        bool HasKey(param::hstring const& key) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IMapView<hstring, V>>**)&static_cast<wfc::IMapView<hstring, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
-            return found;
-        }
-
-        void Split(wfc::IMapView<hstring, V>& firstPartition, wfc::IMapView<hstring, V>& secondPartition)
-        {
-            check_hresult((*(abi_t<wfc::IMapView<hstring, V>>**)&static_cast<wfc::IMapView<hstring, V> const&>(static_cast<D const&>(*this)))->Split(put_abi(firstPartition), put_abi(secondPartition)));
-        }
-    };
-
-    template <typename D, typename V>
-    struct consume_IMap<D, hstring, V>
-    {
-        V Lookup(param::hstring const& key) const
-        {
-            V result{ empty_value<V>() };
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
-            return result;
-        }
-
-        uint32_t Size() const
-        {
-            uint32_t size{};
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
-            return size;
-        }
-
-        bool HasKey(param::hstring const& key) const
-        {
-            bool found{};
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
-            return found;
-        }
-
-        wfc::IMapView<hstring, V> GetView() const
-        {
-            wfc::IMapView<hstring, V> view;
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
-            return view;
-        }
-
-        bool Insert(param::hstring const& key, V const& value) const
-        {
-            bool replaced{};
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->Insert(get_abi(key), get_abi(value), &replaced));
-            return replaced;
-        }
-
-        void Remove(param::hstring const& key) const
-        {
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->Remove(get_abi(key)));
-        }
-
-        void Clear() const
-        {
-            check_hresult((*(abi_t<wfc::IMap<hstring, V>>**)&static_cast<wfc::IMap<hstring, V> const&>(static_cast<D const&>(*this)))->Clear());
+            check_hresult((*(impl::abi_t<MapChangedEventHandler<K, V>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 }
 
 namespace winrt::impl
 {
-    struct marker {};
+    template <typename D>
+    void consume_IAsyncAction<D>::Completed(Windows::Foundation::AsyncActionCompletedHandler const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncAction)->put_Completed(get_abi(handler)));
+    }
+
+    template <typename D>
+    Windows::Foundation::AsyncActionCompletedHandler consume_IAsyncAction<D>::Completed() const
+    {
+        Windows::Foundation::AsyncActionCompletedHandler handler{};
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncAction)->get_Completed(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TResult>
+    void consume_IAsyncOperation<D, TResult>::Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperation<TResult>)->put_Completed(get_abi(handler)));
+    }
+
+    template <typename D, typename TResult>
+    Windows::Foundation::AsyncOperationCompletedHandler<TResult> consume_IAsyncOperation<D, TResult>::Completed() const
+    {
+        Windows::Foundation::AsyncOperationCompletedHandler<TResult> temp;
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperation<TResult>)->get_Completed(put_abi(temp)));
+        return temp;
+    }
+
+    template <typename D, typename TProgress>
+    void consume_IAsyncActionWithProgress<D, TProgress>::Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncActionWithProgress<TProgress>)->put_Progress(get_abi(handler)));
+    }
+
+    template <typename D, typename TProgress>
+    Windows::Foundation::AsyncActionProgressHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Progress() const
+    {
+        Windows::Foundation::AsyncActionProgressHandler<TProgress> handler;
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncActionWithProgress<TProgress>)->get_Progress(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TProgress>
+    void consume_IAsyncActionWithProgress<D, TProgress>::Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncActionWithProgress<TProgress>)->put_Completed(get_abi(handler)));
+    }
+
+    template <typename D, typename TProgress>
+    Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Completed() const
+    {
+        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> handler;
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncActionWithProgress<TProgress>)->get_Completed(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>)->put_Progress(get_abi(handler)));
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
+    {
+        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> handler;
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>)->get_Progress(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const
+    {
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>)->put_Completed(get_abi(handler)));
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
+    {
+        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
+        check_hresult(WINRT_SHIM(Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>)->get_Completed(put_abi(handler)));
+        return handler;
+    }
+}
+
+WINRT_WARNING_PUSH
+
+WINRT_EXPORT namespace winrt
+{
+    template <typename Interface = Windows::Foundation::IActivationFactory>
+    auto get_activation_factory(param::hstring const& name)
+    {
+        impl::com_ref<Interface> object;
+        hresult hr = WINRT_RoGetActivationFactory(get_abi(name), guid_of<Interface>(), put_abi(object));
+
+        if (hr == impl::error_not_initialized)
+        {
+            void* cookie{};
+            check_hresult(WINRT_CoIncrementMTAUsage(&cookie));
+            hr = WINRT_RoGetActivationFactory(get_abi(name), guid_of<Interface>(), put_abi(object));
+        }
+
+        check_hresult(hr);
+        return object;
+    }
+}
+
+namespace winrt::impl
+{
+    inline int32_t interlocked_read_32(int32_t const volatile* target) noexcept
+    {
+#if defined _M_IX86 || defined _M_X64
+        int32_t const result = *target;
+        _ReadWriteBarrier();
+        return result;
+#elif defined _M_ARM || defined _M_ARM64
+        int32_t const result = __iso_volatile_load32(reinterpret_cast<int32_t const volatile*>(target));
+        WINRT_INTERLOCKED_READ_MEMORY_BARRIER
+            return result;
+#else
+#error Unsupported architecture
+#endif
+    }
+
+#if defined _WIN64
+    inline int64_t interlocked_read_64(int64_t const volatile* target) noexcept
+    {
+#if defined _M_X64
+        int64_t const result = *target;
+        _ReadWriteBarrier();
+        return result;
+#elif defined _M_ARM64
+        int64_t const result = __iso_volatile_load64(target);
+        WINRT_INTERLOCKED_READ_MEMORY_BARRIER
+            return result;
+#else
+#error Unsupported architecture
+#endif
+    }
+#endif
+
+    template <typename T>
+    T* interlocked_read_pointer(T* const volatile* target) noexcept
+    {
+#ifdef _WIN64
+        return (T*)interlocked_read_64((int64_t*)target);
+#else
+        return (T*)interlocked_read_32((int32_t*)target);
+#endif
+    }
+
+#ifdef _WIN64
+    inline constexpr uint32_t memory_allocation_alignment{ 16 };
+#pragma warning(push)
+#pragma warning(disable:4324) // structure was padded due to alignment specifier
+    struct alignas(16) slist_entry
+    {
+        slist_entry* next;
+    };
+    union alignas(16) slist_header
+    {
+        struct
+        {
+            uint64_t reserved1;
+            uint64_t reserved2;
+        } reserved1;
+        struct
+        {
+            uint64_t reserved1 : 16;
+            uint64_t reserved2 : 48;
+            uint64_t reserved3 : 4;
+            uint64_t reserved4 : 60;
+        } reserved2;
+    };
+#pragma warning(pop)
+#else
+    inline constexpr uint32_t memory_allocation_alignment{ 8 };
+    struct slist_entry
+    {
+        slist_entry* next;
+    };
+    union slist_header
+    {
+        uint64_t reserved1;
+        struct
+        {
+            slist_entry reserved1;
+            uint16_t reserved2;
+            uint16_t reserved3;
+        } reserved2;
+    };
+#endif
+
+    struct factory_cache_typeless_entry
+    {
+        struct alignas(sizeof(void*) * 2) object_and_count
+        {
+            IUnknown* pointer;
+            size_t count;
+        };
+
+        object_and_count value;
+        alignas(memory_allocation_alignment) slist_entry next {};
+
+        void clear() noexcept
+        {
+            IUnknown* pointer_value = interlocked_read_pointer(&value.pointer);
+
+            if (pointer_value == nullptr)
+            {
+                return;
+            }
+
+            object_and_count current_value{ pointer_value, 0 };
+
+#if defined _WIN64
+            if (1 == _InterlockedCompareExchange128((int64_t*)this, 0, 0, (int64_t*)&current_value))
+            {
+                pointer_value->Release();
+            }
+#else
+            int64_t const result = _InterlockedCompareExchange64((int64_t*)this, 0, *(int64_t*)&current_value);
+
+            if (result == *(int64_t*)&current_value)
+            {
+                pointer_value->Release();
+            }
+#endif
+        }
+    };
+
+    struct factory_cache
+    {
+        factory_cache(factory_cache const&) = delete;
+        factory_cache& operator=(factory_cache const&) = delete;
+
+        factory_cache() noexcept
+        {
+            WINRT_InitializeSListHead(&m_list);
+        }
+
+        void add(factory_cache_typeless_entry* const entry) noexcept
+        {
+            WINRT_ASSERT(entry);
+            WINRT_InterlockedPushEntrySList(&m_list, &entry->next);
+        }
+
+        void clear() noexcept
+        {
+            slist_entry* entry = static_cast<slist_entry*>(WINRT_InterlockedFlushSList(&m_list));
+
+            while (entry != nullptr)
+            {
+                // entry->Next must be read before entry->clear() is called since the InterlockedCompareExchange
+                // inside clear() will allow another thread to add the entry back to the cache.
+                slist_entry* next = entry->next;
+                reinterpret_cast<factory_cache_typeless_entry*>(reinterpret_cast<uint8_t*>(entry) - offsetof(factory_cache_typeless_entry, next))->clear();
+                entry = next;
+            }
+        }
+
+    private:
+
+        alignas(memory_allocation_alignment) slist_header m_list;
+    };
+
+    inline factory_cache& get_factory_cache() noexcept
+    {
+        static factory_cache cache;
+        return cache;
+    }
+
+    template <typename Class, typename Interface>
+    struct factory_cache_entry
+    {
+        template <typename F>
+        auto call(F&& callback)
+        {
+#ifdef WINRT_DIAGNOSTICS
+            get_diagnostics_info().add_factory<Class>();
+#endif
+
+            {
+                count_guard const guard(m_value.count);
+
+                if (m_value.object)
+                {
+                    return callback(*reinterpret_cast<com_ref<Interface> const*>(&m_value.object));
+                }
+            }
+
+            auto object = get_activation_factory<Interface>(name_of<Class>());
+
+            if (!object.template try_as<IAgileObject>())
+            {
+#ifdef WINRT_DIAGNOSTICS
+                get_diagnostics_info().non_agile_factory<Class>();
+#endif
+                return callback(object);
+            }
+
+            {
+                count_guard const guard(m_value.count);
+
+                if (nullptr == _InterlockedCompareExchangePointer((void**)&m_value.object, get_abi(object), nullptr))
+                {
+                    // This thread successfully updated the entry to hold the factory object. We thus detach, since the
+                    // factory_cache_entry now owns the reference, and add the entry to the cache list. The callback
+                    // may be safely called using the cached object since the count guard is currently being held.
+                    detach_abi(object);
+                    get_factory_cache().add(reinterpret_cast<factory_cache_typeless_entry*>(this));
+                    return callback(*reinterpret_cast<com_ref<Interface> const*>(&m_value.object));
+                }
+                else
+                {
+                    // This thread failed to update the entry since another thread managed to exchange pointers first.
+                    // The callback must still be called and can simply use the temporary factory object before allowing
+                    // it to be released. 
+                    return callback(object);
+                }
+            }
+        }
+
+    private:
+
+        struct count_guard
+        {
+            count_guard(count_guard const&) = delete;
+            count_guard& operator=(count_guard const&) = delete;
+
+            explicit count_guard(size_t& count) noexcept : m_count(count)
+            {
+#ifdef _WIN64
+                _InterlockedIncrement64((int64_t*)&m_count);
+#else
+                _InterlockedIncrement((long*)&m_count);
+#endif
+            }
+
+            ~count_guard() noexcept
+            {
+#ifdef _WIN64
+                _InterlockedDecrement64((int64_t*)&m_count);
+#else
+                _InterlockedDecrement((long*)&m_count);
+#endif
+            }
+
+        private:
+
+            size_t& m_count;
+        };
+
+        struct alignas(sizeof(void*) * 2) object_and_count
+        {
+            void* object;
+            size_t count;
+        };
+
+        object_and_count m_value;
+        alignas(memory_allocation_alignment) slist_entry m_next;
+    };
+
+    template <typename Class, typename Interface>
+    struct factory_storage
+    {
+        static factory_cache_entry<Class, Interface> factory;
+    };
+
+    template <typename Class, typename Interface>
+    factory_cache_entry<Class, Interface> factory_storage<Class, Interface>::factory;
+
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory, typename F>
+    auto call_factory(F&& callback)
+    {
+        static_assert(sizeof(factory_cache_typeless_entry) == sizeof(factory_cache_entry<Class, Interface>));
+        static_assert(std::alignment_of_v<factory_cache_typeless_entry> == std::alignment_of_v<factory_cache_entry<Class, Interface>>);
+        static_assert(std::is_standard_layout_v<factory_cache_typeless_entry>);
+        static_assert(std::is_standard_layout_v<factory_cache_entry<Class, Interface>>);
+
+        return factory_storage<Class, Interface>::factory.call(callback);
+    }
+
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
+    auto try_get_activation_factory(hresult_error* exception = nullptr) noexcept
+    {
+        param::hstring const name{ name_of<Class>() };
+        impl::com_ref<Interface> object;
+        hresult const hr = WINRT_RoGetActivationFactory(get_abi(name), guid_of<Interface>(), put_abi(object));
+
+        if (hr < 0)
+        {
+            // Ensure that the IRestrictedErrorInfo is not left on the thread.
+            hresult_error local_exception{ hr, hresult_error::from_abi };
+
+            if (exception)
+            {
+                // Optionally transfer ownership to the caller.
+                *exception = std::move(local_exception);
+            }
+        }
+
+        return object;
+    }
+}
+
+WINRT_EXPORT namespace winrt
+{
+    namespace Windows::Foundation
+    {
+        struct IActivationFactory :
+            IInspectable,
+            impl::consume_t<IActivationFactory>
+        {
+            IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+        };
+    }
+
+    enum class apartment_type : int32_t
+    {
+        single_threaded,
+        multi_threaded
+    };
+
+    inline void init_apartment(apartment_type const type = apartment_type::multi_threaded)
+    {
+        hresult const result = WINRT_RoInitialize(static_cast<uint32_t>(type));
+
+        if (result < 0)
+        {
+            throw_hresult(result);
+        }
+    }
+
+    inline void uninit_apartment() noexcept
+    {
+        WINRT_RoUninitialize();
+    }
+
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
+    auto get_activation_factory()
+    {
+        // Normally, the callback avoids having to return a ref-counted object and the resulting AddRef/Release bump.
+        // In this case we do want a unique reference, so we use the lambda to return one and thus produce an
+        // AddRef'd object that is returned to the caller. 
+        return impl::call_factory<Class, Interface>([](auto&& factory)
+        {
+            return factory;
+        });
+    }
+
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
+    auto try_get_activation_factory() noexcept
+    {
+        return impl::try_get_activation_factory<Class, Interface>();
+    }
+
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
+    auto try_get_activation_factory(hresult_error& exception) noexcept
+    {
+        return impl::try_get_activation_factory<Class, Interface>(&exception);
+    }
+
+    inline void clear_factory_cache() noexcept
+    {
+        impl::get_factory_cache().clear();
+    }
+
+    template <typename Interface>
+    impl::com_ref<Interface> create_instance(guid const& clsid, uint32_t context = 0x1 /*CLSCTX_INPROC_SERVER*/, void* outer = nullptr)
+    {
+        impl::com_ref<Interface> temp{ nullptr };
+        check_hresult(WINRT_CoCreateInstance(clsid, outer, context, guid_of<Interface>(), put_abi(temp)));
+        return temp;
+    }
+}
+
+WINRT_WARNING_POP
+
+namespace winrt::impl
+{
+    struct marker
+    {
+        marker() = delete;
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -6049,6 +7607,7 @@ WINRT_EXPORT namespace winrt
     struct composing : impl::marker {};
     struct composable : impl::marker {};
     struct no_module_lock : impl::marker {};
+    struct static_lifetime : impl::marker {};
 
     template <typename Interface>
     struct cloaked : Interface {};
@@ -6065,26 +7624,47 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
-    template <typename T>
-    struct is_marker : std::is_base_of<impl::marker, T> {};
+    template<typename...T>
+    using tuple_cat_t = decltype(std::tuple_cat(std::declval<T>()...));
+
+    template <template <typename> typename Condition, typename>
+    struct tuple_if_base;
+
+    template <template <typename> typename Condition, typename...T>
+    struct tuple_if_base<Condition, std::tuple<T...>> { using type = tuple_cat_t<typename std::conditional<Condition<T>::value, std::tuple<T>, std::tuple<>>::type...>; };
+
+    template <template <typename> typename Condition, typename T>
+    using tuple_if = typename tuple_if_base<Condition, T>::type;
+
+#ifdef WINRT_WINDOWS_ABI
 
     template <typename T>
-    constexpr bool is_marker_v = is_marker<T>::value;
+    struct is_interface : std::disjunction<std::is_base_of<Windows::Foundation::IInspectable, T>, std::conjunction<std::is_base_of<::IUnknown, T>, std::negation<is_implements<T>>>> {};
+
+#else
 
     template <typename T>
-    struct uncloak
+    struct is_interface : std::is_base_of<Windows::Foundation::IInspectable, T> {};
+
+#endif
+
+    template <typename T>
+    struct is_marker : std::disjunction<std::is_base_of<marker, T>, std::is_void<T>> {};
+
+    template <typename T>
+    struct uncloak_base
     {
         using type = T;
     };
 
     template <typename T>
-    struct uncloak<cloaked<T>>
+    struct uncloak_base<cloaked<T>>
     {
         using type = T;
     };
 
     template <typename T>
-    using uncloak_t = typename uncloak<T>::type;
+    using uncloak = typename uncloak_base<T>::type;
 
     template <typename I>
     struct is_cloaked : std::disjunction<
@@ -6095,12 +7675,21 @@ namespace winrt::impl
     template <typename I>
     struct is_cloaked<cloaked<I>> : std::true_type {};
 
-    template <typename I>
-    constexpr bool is_cloaked_v = is_cloaked<I>::value;
+    template <typename D, typename I, typename Enable = void>
+    struct producer;
+
+    template <typename D, typename T>
+    struct producers_base;
+
+    template <typename D, typename...T>
+    struct producers_base<D, std::tuple<T...>> : producer<D, T>... {};
+
+    template <typename D, typename...T>
+    using producers = producers_base<D, tuple_if<is_interface, std::tuple<uncloak<T>...>>>;
 
     template <typename D, typename... I>
     struct root_implements;
-    
+
     template <typename T, typename = std::void_t<>>
     struct unwrap_implements
     {
@@ -6140,13 +7729,76 @@ namespace winrt::impl
     template <typename D, typename... I>
     using base_implements = base_implements_impl<D, void, I...>;
 
+    template <typename D, typename I, typename Enable = void>
+    struct produce_base;
+
+    template <typename D, typename I>
+    struct produce : produce_base<D, I>
+    {
+    };
+
+    template <typename T, typename = std::void_t<>>
+    struct has_composable : std::false_type {};
+
+    template <typename T>
+    struct has_composable<T, std::void_t<typename T::composable>> : std::true_type {};
+
+    template <typename T, typename = std::void_t<>>
+    struct has_class_type : std::false_type {};
+
+    template <typename T>
+    struct has_class_type<T, std::void_t<typename T::class_type>> : std::true_type {};
+
+    template <typename>
+    struct has_static_lifetime : std::false_type {};
+
+    template <typename D, typename...I>
+    struct has_static_lifetime<implements<D, I...>> : std::disjunction<std::is_same<static_lifetime, I>...> {};
+
+    template <typename D>
+    inline constexpr bool has_static_lifetime_v = has_static_lifetime<typename D::implements_type>::value;
+
+    template <typename T>
+    void clear_abi(T*) noexcept
+    {}
+
+    template <typename T>
+    void clear_abi(T** value) noexcept
+    {
+        *value = nullptr;
+    }
+}
+
+WINRT_EXPORT namespace winrt
+{
+    template <typename D, typename I>
+    D* get_self(I const& from) noexcept
+    {
+        return &static_cast<impl::produce<D, default_interface<I>>*>(get_abi(from))->shim();
+    }
+
+    template <typename D, typename I>
+    D* from_abi(I const& from) noexcept
+    {
+        return get_self<D>(from);
+    }
+
+    template <typename I, typename D>
+    impl::abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
+    {
+        return reinterpret_cast<impl::abi_t<I>*>(const_cast<impl::producer<D, I>*>(from));
+    }
+}
+
+namespace winrt::impl
+{
     template <typename...> struct interface_list;
 
     template <>
     struct interface_list<>
     {
         template <typename T, typename Predicate>
-        static void* find(const T*, const Predicate&) noexcept
+        static constexpr void* find(const T*, const Predicate&) noexcept
         {
             return nullptr;
         }
@@ -6156,11 +7808,11 @@ namespace winrt::impl
     struct interface_list<First, Rest...>
     {
         template <typename T, typename Predicate>
-        static void* find(const T* obj, const Predicate& pred) noexcept
+        static constexpr void* find(const T* obj, const Predicate& pred) noexcept
         {
             if (pred.template test<First>())
             {
-                return winrt::to_abi<First>(obj);
+                return to_abi<First>(obj);
             }
             return interface_list<Rest...>::find(obj, pred);
         }
@@ -6193,7 +7845,7 @@ namespace winrt::impl
         using type = typename interface_list_append_impl<
             std::conditional_t<
             Predicate<T>::value,
-            interface_list<winrt::impl::uncloak_t<T>>,
+            interface_list<winrt::impl::uncloak<T>>,
             interface_list<>
             >,
             typename filter_impl<Predicate, Rest...>::type
@@ -6219,8 +7871,6 @@ namespace winrt::impl
     };
 
     template <typename T>
-    struct is_interface : std::negation<winrt::impl::is_marker<T>> {};
-    template <typename T>
     using implemented_interfaces = filter<is_interface, typename T::implements_type>;
 
     template <typename T>
@@ -6235,26 +7885,8 @@ namespace winrt::impl
     struct uncloaked_iids<interface_list<T...>>
     {
 #pragma warning(suppress: 4307)
-        static constexpr std::array<GUID, sizeof...(T)> value { winrt::guid_of<T>() ... };
+        static constexpr std::array<guid, sizeof...(T)> value{ winrt::guid_of<T>() ... };
     };
-
-    template <typename D, typename I>
-    struct produce;
-
-    template <typename D, typename I, typename Enable = void>
-    struct producer;
-
-    template <typename T, typename = std::void_t<>>
-    struct has_composable : std::false_type {};
-
-    template <typename T>
-    struct has_composable<T, std::void_t<typename T::composable>> : std::true_type {};
-
-    template <typename T, typename = std::void_t<>>
-    struct has_class_type : std::false_type {};
-
-    template <typename T>
-    struct has_class_type<T, std::void_t<typename T::class_type>> : std::true_type {};
 
     template <typename T, typename = void>
     struct implements_default_interface
@@ -6265,7 +7897,7 @@ namespace winrt::impl
     template <typename T>
     struct implements_default_interface<T, std::void_t<typename T::class_type>>
     {
-        using type = default_interface_t<typename T::class_type>;
+        using type = winrt::default_interface<typename T::class_type>;
     };
 
     template <typename T>
@@ -6276,16 +7908,17 @@ namespace winrt::impl
 
     struct iid_finder
     {
-        const GUID& m_guid;
+        const guid& m_guid;
+
         template <typename I>
         constexpr bool test() const noexcept
         {
-            return winrt::guid_of<I>() == m_guid;
+            return is_guid_of<I>(m_guid);
         }
     };
 
     template <typename T>
-    winrt::impl::IUnknown* find_iid(const T* obj, const GUID& iid) noexcept
+    auto find_iid(const T* obj, const guid& iid) noexcept
     {
         return static_cast<IUnknown*>(implemented_interfaces<T>::find(obj, iid_finder{ iid }));
     }
@@ -6332,91 +7965,47 @@ namespace winrt::impl
     };
 
     template <typename T>
-    void clear_abi(T*) noexcept
-    {}
-
-    template <typename T>
-    void clear_abi(T** value) noexcept
+    struct producer_ref : T
     {
-        *value = nullptr;
-    }
-}
+        producer_ref(producer_ref const&) = delete;
+        producer_ref& operator=(producer_ref const&) = delete;
+        producer_ref(producer_ref&&) = delete;
+        producer_ref& operator=(producer_ref&&) = delete;
 
-WINRT_EXPORT namespace winrt
-{
-    template <typename D, typename I>
-    D* from_abi(I const& from) noexcept
-    {
-        return &static_cast<impl::produce<D, impl::default_interface_t<I>>*>(get_abi(from))->shim();
-    }
+        producer_ref(void* ptr) noexcept : T(nullptr)
+        {
+            *put_abi(*this) = ptr;
+        }
 
-    template <typename I, typename D, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>>* = nullptr>
-    impl::abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
-    {
-        return reinterpret_cast<impl::abi_t<I>*>(const_cast<impl::producer<D, I>*>(from));
-    }
+        ~producer_ref() noexcept
+        {
+            detach_abi(*this);
+        }
+    };
 
-    template <typename I, typename D, std::enable_if_t<std::is_base_of_v< ::IUnknown, I>>* = nullptr>
-    impl::abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
-    {
-        return const_cast<impl::producer<D, I>*>(from);
-    }
-
-    template <typename D, typename... Args, std::enable_if_t<!impl::has_composable<D>::value && !impl::has_class_type<D>::value>* = nullptr>
-    auto make(Args&&... args)
-    {
-        using I = typename impl::implements_default_interface<D>::type;
-        impl::com_ref<I> result{ nullptr };
-        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
-        return result;
-    }
-
-    template <typename D, typename... Args, std::enable_if_t<!impl::has_composable<D>::value && impl::has_class_type<D>::value>* = nullptr>
-    auto make(Args&&... args)
-    {
-        using I = typename impl::implements_default_interface<D>::type;
-        static_assert(std::is_same_v<I, impl::default_interface_t<typename D::class_type>>);
-        typename D::class_type result{ nullptr };
-        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
-        return result;
-    }
-
-    template <typename D, typename... Args, std::enable_if_t<impl::has_composable<D>::value>* = nullptr>
-    auto make(Args&&... args)
-    {
-        using I = typename impl::implements_default_interface<D>::type;
-        impl::com_ref<I> result;
-        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
-        return result.template as<typename D::composable>();
-    }
-
-    template <typename D, typename... Args>
-    auto make_self(Args&&... args)
-    {
-        com_ptr<D> result;
-        *put_abi(result) = new D(std::forward<Args>(args)...);
-        return result;
-    }
-}
-
-namespace winrt::impl
-{
     template <typename D, typename I, typename Enable>
     struct producer
     {
+#if _MSC_VER < 1914
         operator I() const noexcept
         {
             I result = nullptr;
             copy_from_abi(result, const_cast<produce<D, I>*>(&vtable));
             return result;
         }
+#else
+        operator producer_ref<I> const() const noexcept
+        {
+            return { const_cast<produce<D, I>*>(&vtable) };
+        }
+#endif
 
     private:
 
         produce<D, I> vtable;
     };
 
-    template <typename D, typename I>
+    template <typename D, typename I, typename Enable>
     struct produce_base : abi_t<I>
     {
         D& shim() noexcept
@@ -6424,52 +8013,45 @@ namespace winrt::impl
             return*static_cast<D*>(reinterpret_cast<producer<D, I>*>(this));
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept override
         {
             return shim().QueryInterface(id, object);
         }
 
-        unsigned long __stdcall AddRef() noexcept override
+        uint32_t WINRT_CALL AddRef() noexcept override
         {
             return shim().AddRef();
         }
 
-        unsigned long __stdcall Release() noexcept override
+        uint32_t WINRT_CALL Release() noexcept override
         {
             return shim().Release();
         }
 
-        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept override
+        int32_t WINRT_CALL GetIids(uint32_t* count, guid** array) noexcept override
         {
             return shim().GetIids(count, array);
         }
 
-        HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept override
+        int32_t WINRT_CALL GetRuntimeClassName(void** name) noexcept override
         {
             return shim().abi_GetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept final
+        int32_t WINRT_CALL GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept final
         {
             return shim().abi_GetTrustLevel(trustLevel);
         }
     };
 
-    template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<std::is_base_of_v< ::IUnknown, I> && !is_implements_v<I>>> : abi_t<I>
-    {};
+#ifdef WINRT_WINDOWS_ABI
 
     template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<is_marker_v<I>>>
-    {};
+    struct producer<D, I, std::enable_if_t<std::is_base_of_v< ::IUnknown, I> && !is_implements_v<I>>> : I
+    {
+    };
 
-    template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<is_implements_v<I>>>
-    {};
-
-    template <typename D>
-    struct produce<D, Windows::Foundation::IInspectable> : produce_base<D, Windows::Foundation::IInspectable>
-    {};
+#endif
 
     struct INonDelegatingInspectable : Windows::Foundation::IUnknown
     {
@@ -6484,27 +8066,27 @@ namespace winrt::impl
     template <typename D>
     struct produce<D, INonDelegatingInspectable> : produce_base<D, INonDelegatingInspectable>
     {
-        HRESULT __stdcall QueryInterface(const GUID& id, void** object) noexcept final
+        int32_t WINRT_CALL QueryInterface(const guid& id, void** object) noexcept final
         {
             return this->shim().NonDelegatingQueryInterface(id, object);
         }
 
-        unsigned long __stdcall AddRef() noexcept final
+        uint32_t WINRT_CALL AddRef() noexcept final
         {
             return this->shim().NonDelegatingAddRef();
         }
 
-        unsigned long __stdcall Release() noexcept final
+        uint32_t WINRT_CALL Release() noexcept final
         {
             return this->shim().NonDelegatingRelease();
         }
 
-        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept final
+        int32_t WINRT_CALL GetIids(uint32_t* count, guid** array) noexcept final
         {
             return this->shim().NonDelegatingGetIids(count, array);
         }
 
-        HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept final
+        int32_t WINRT_CALL GetRuntimeClassName(void** name) noexcept final
         {
             return this->shim().NonDelegatingGetRuntimeClassName(name);
         }
@@ -6524,33 +8106,33 @@ namespace winrt::impl
             return static_cast<weak_ref<Agile>*>(reinterpret_cast<weak_source_producer<Agile>*>(this));
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept override
         {
-            if (id == guid_of<IWeakReferenceSource>())
+            if (is_guid_of<IWeakReferenceSource>(id))
             {
                 *object = static_cast<IWeakReferenceSource*>(this);
                 that()->increment_strong();
-                return S_OK;
+                return error_ok;
             }
 
             return that()->m_object->QueryInterface(id, object);
         }
 
-        unsigned long __stdcall AddRef() noexcept override
+        uint32_t WINRT_CALL AddRef() noexcept override
         {
             return that()->increment_strong();
         }
 
-        unsigned long __stdcall Release() noexcept override
+        uint32_t WINRT_CALL Release() noexcept override
         {
             return that()->m_object->Release();
         }
 
-        HRESULT __stdcall GetWeakReference(IWeakReference** weakReference) noexcept override
+        int32_t WINRT_CALL GetWeakReference(IWeakReference** weakReference) noexcept override
         {
             *weakReference = that();
             that()->AddRef();
-            return S_OK;
+            return error_ok;
         }
     };
 
@@ -6571,41 +8153,40 @@ namespace winrt::impl
             WINRT_ASSERT(object);
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept override
         {
-            if (id == guid_of<IWeakReference>() || id == guid_of<Windows::Foundation::IUnknown>())
+            if (is_guid_of<IWeakReference>(id) || is_guid_of<Windows::Foundation::IUnknown>(id))
             {
                 *object = static_cast<IWeakReference*>(this);
                 AddRef();
-                return S_OK;
+                return error_ok;
             }
 
             if constexpr (Agile)
             {
-                if (id == guid_of<IAgileObject>())
+                if (is_guid_of<IAgileObject>(id))
                 {
                     *object = static_cast<IUnknown*>(this);
                     AddRef();
-                    return S_OK;
+                    return error_ok;
                 }
 
-                if (id == guid_of<IMarshal>())
+                if (is_guid_of<IMarshal>(id))
                 {
-                    *object = new (std::nothrow) free_threaded_marshaler(this);
-                    return *object ? S_OK : E_OUTOFMEMORY;
+                    return make_marshaler(this, object);
                 }
             }
 
             *object = nullptr;
-            return E_NOINTERFACE;
+            return error_no_interface;
         }
 
-        unsigned long __stdcall AddRef() noexcept override
+        uint32_t WINRT_CALL AddRef() noexcept override
         {
             return 1 + m_weak.fetch_add(1, std::memory_order_relaxed);
         }
 
-        unsigned long __stdcall Release() noexcept override
+        uint32_t WINRT_CALL Release() noexcept override
         {
             uint32_t const target = m_weak.fetch_sub(1, std::memory_order_relaxed) - 1;
 
@@ -6617,7 +8198,7 @@ namespace winrt::impl
             return target;
         }
 
-        HRESULT __stdcall Resolve(GUID const& id, void** objectReference) noexcept override
+        int32_t WINRT_CALL Resolve(guid const& id, void** objectReference) noexcept override
         {
             uint32_t target = m_strong.load(std::memory_order_relaxed);
 
@@ -6626,12 +8207,12 @@ namespace winrt::impl
                 if (target == 0)
                 {
                     *objectReference = nullptr;
-                    return S_OK;
+                    return error_ok;
                 }
 
                 if (m_strong.compare_exchange_weak(target, target + 1, std::memory_order_acquire, std::memory_order_relaxed))
                 {
-                    HRESULT hr = m_object->QueryInterface(id, objectReference);
+                    int32_t hr = m_object->QueryInterface(id, objectReference);
                     m_strong.fetch_sub(1, std::memory_order_relaxed);
                     return hr;
                 }
@@ -6667,7 +8248,7 @@ namespace winrt::impl
         }
 
     private:
-        template <bool Agile>
+        template <bool T>
         friend struct weak_source;
 
         static_assert(sizeof(weak_source_producer<Agile>) == sizeof(weak_source<Agile>));
@@ -6689,7 +8270,7 @@ namespace winrt::impl
     struct WINRT_EBO root_implements_composing_outer<true>
     {
         template <typename Qi>
-        Qi try_as() const noexcept
+        auto try_as() const noexcept
         {
             return m_inner.try_as<Qi>();
         }
@@ -6729,23 +8310,23 @@ namespace winrt::impl
     };
 
     template <typename D, typename... I>
-    struct __declspec(novtable) root_implements
+    struct WINRT_NOVTABLE root_implements
         : root_implements_composing_outer<std::disjunction<std::is_same<composing, I>...>::value>
         , root_implements_composable_inner<D, std::disjunction<std::is_same<composable, I>...>::value>
     {
         using IInspectable = Windows::Foundation::IInspectable;
         using root_implements_type = root_implements;
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept
+        int32_t WINRT_CALL QueryInterface(guid const& id, void** object) noexcept
         {
             if (this->outer())
             {
                 return this->outer()->QueryInterface(id, object);
             }
 
-            HRESULT result = query_interface(id, object);
+            int32_t result = query_interface(id, object);
 
-            if (result == E_NOINTERFACE && this->m_inner)
+            if (result == error_no_interface && this->m_inner)
             {
                 result = static_cast<impl::IUnknown*>(get_abi(this->m_inner))->QueryInterface(id, object);
             }
@@ -6753,7 +8334,7 @@ namespace winrt::impl
             return result;
         }
 
-        unsigned long __stdcall AddRef() noexcept
+        uint32_t WINRT_CALL AddRef() noexcept
         {
             if (this->outer())
             {
@@ -6763,7 +8344,7 @@ namespace winrt::impl
             return NonDelegatingAddRef();
         }
 
-        unsigned long __stdcall Release() noexcept
+        uint32_t WINRT_CALL Release() noexcept
         {
             if (this->outer())
             {
@@ -6791,6 +8372,9 @@ namespace winrt::impl
             D& m_derived;
         };
 
+        void abi_enter() const noexcept {}
+        void abi_exit() const noexcept {}
+
     protected:
 
         root_implements() noexcept
@@ -6809,7 +8393,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
+        int32_t WINRT_CALL GetIids(uint32_t* count, guid** array) noexcept
         {
             if (this->outer())
             {
@@ -6819,7 +8403,7 @@ namespace winrt::impl
             return NonDelegatingGetIids(count, array);
         }
 
-        HRESULT __stdcall abi_GetRuntimeClassName(HSTRING* name) noexcept
+        int32_t WINRT_CALL abi_GetRuntimeClassName(void** name) noexcept
         {
             if (this->outer())
             {
@@ -6829,7 +8413,7 @@ namespace winrt::impl
             return NonDelegatingGetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall abi_GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
+        int32_t WINRT_CALL abi_GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
         {
             if (this->outer())
             {
@@ -6839,7 +8423,7 @@ namespace winrt::impl
             return NonDelegatingGetTrustLevel(trustLevel);
         }
 
-        unsigned long __stdcall NonDelegatingAddRef() noexcept
+        uint32_t WINRT_CALL NonDelegatingAddRef() noexcept
         {
             if constexpr (is_weak_ref_source::value)
             {
@@ -6866,7 +8450,7 @@ namespace winrt::impl
             }
         }
 
-        unsigned long __stdcall NonDelegatingRelease() noexcept
+        uint32_t WINRT_CALL NonDelegatingRelease() noexcept
         {
             uint32_t const target = subtract_reference();
 
@@ -6879,19 +8463,19 @@ namespace winrt::impl
             return target;
         }
 
-        HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
+        int32_t WINRT_CALL NonDelegatingQueryInterface(const guid& id, void** object) noexcept
         {
-            if (id == guid_of<IInspectable>() || id == guid_of<Windows::Foundation::IUnknown>())
+            if (is_guid_of<IInspectable>(id) || is_guid_of<Windows::Foundation::IUnknown>(id))
             {
                 impl::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
                 NonDelegatingAddRef();
                 *object = result;
-                return S_OK;
+                return error_ok;
             }
 
-            HRESULT result = query_interface(id, object);
+            int32_t result = query_interface(id, object);
 
-            if (result == E_NOINTERFACE && this->m_inner)
+            if (result == error_no_interface && this->m_inner)
             {
                 result = static_cast<impl::IUnknown*>(get_abi(this->m_inner))->QueryInterface(id, object);
             }
@@ -6899,20 +8483,20 @@ namespace winrt::impl
             return result;
         }
 
-        HRESULT __stdcall NonDelegatingGetIids(ULONG* count, GUID** array) noexcept
+        int32_t WINRT_CALL NonDelegatingGetIids(uint32_t* count, guid** array) noexcept
         {
             const auto& local_iids = static_cast<D*>(this)->get_local_iids();
             const uint32_t& local_count = local_iids.first;
-            if constexpr(root_implements_type::is_composing)
+            if constexpr (root_implements_type::is_composing)
             {
                 if (local_count > 0)
                 {
-                    const com_array<GUID>& inner_iids = get_interfaces(root_implements_type::m_inner);
+                    const com_array<guid>& inner_iids = get_interfaces(root_implements_type::m_inner);
                     *count = local_count + inner_iids.size();
-                    *array = static_cast<GUID*>(CoTaskMemAlloc(sizeof(GUID)*(*count)));
+                    *array = static_cast<guid*>(WINRT_CoTaskMemAlloc(sizeof(guid)*(*count)));
                     if (*array == nullptr)
                     {
-                        return E_OUTOFMEMORY;
+                        return error_bad_alloc;
                     }
                     auto out = impl::make_array_iterator(*array, *count);
                     out = std::copy(local_iids.second, local_iids.second + local_count, out);
@@ -6928,10 +8512,10 @@ namespace winrt::impl
                 if (local_count > 0)
                 {
                     *count = local_count;
-                    *array = static_cast<GUID*>(CoTaskMemAlloc(sizeof(GUID)*(*count)));
+                    *array = static_cast<guid*>(WINRT_CoTaskMemAlloc(sizeof(guid)*(*count)));
                     if (*array == nullptr)
                     {
-                        return E_OUTOFMEMORY;
+                        return error_bad_alloc;
                     }
                     auto out = impl::make_array_iterator(*array, *count);
                     std::copy(local_iids.second, local_iids.second + local_count, out);
@@ -6942,25 +8526,25 @@ namespace winrt::impl
                     *array = nullptr;
                 }
             }
-            return S_OK;
+            return error_ok;
         }
 
-        HRESULT __stdcall NonDelegatingGetRuntimeClassName(HSTRING* name) noexcept
+        int32_t WINRT_CALL NonDelegatingGetRuntimeClassName(void** name) noexcept
         {
             try
             {
                 *name = detach_abi(static_cast<D*>(this)->GetRuntimeClassName());
-                return S_OK;
+                return error_ok;
             }
             catch (...) { return to_hresult(); }
         }
 
-        HRESULT __stdcall NonDelegatingGetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
+        int32_t WINRT_CALL NonDelegatingGetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
         {
             try
             {
                 *trustLevel = static_cast<D*>(this)->GetTrustLevel();
-                return S_OK;
+                return error_ok;
             }
             catch (...) { return to_hresult(); }
         }
@@ -7004,15 +8588,13 @@ namespace winrt::impl
             attach_abi(source, weak_ref);
 
             winrt::weak_ref<T> result;
-            check_hresult(source->GetWeakReference(put_abi(result)));
+            check_hresult(source->GetWeakReference(result.put()));
             return result;
         }
 
         using is_factory = std::disjunction<std::is_same<Windows::Foundation::IActivationFactory, I>...>;
 
     private:
-        void abi_enter() noexcept {}
-        void abi_exit() noexcept {}
 
         using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I>...>>;
         using is_inspectable = std::disjunction<std::is_base_of<Windows::Foundation::IInspectable, I>...>;
@@ -7020,63 +8602,60 @@ namespace winrt::impl
         using use_module_lock = std::negation<std::disjunction<std::is_same<no_module_lock, I>...>>;
         using weak_ref_t = impl::weak_ref<is_agile::value>;
 
-        static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");
-
         std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references{ 1 };
 
-        HRESULT query_interface(GUID const& id, void** object) noexcept
+        int32_t query_interface(guid const& id, void** object) noexcept
         {
             *object = static_cast<D*>(this)->find_interface(id);
 
             if (*object != nullptr)
             {
                 AddRef();
-                return S_OK;
+                return error_ok;
             }
 
             if constexpr (is_agile::value)
             {
-                if (id == guid_of<IAgileObject>())
+                if (is_guid_of<IAgileObject>(id))
                 {
                     *object = get_unknown();
                     AddRef();
-                    return S_OK;
+                    return error_ok;
                 }
 
-                if (id == guid_of<IMarshal>())
+                if (is_guid_of<IMarshal>(id))
                 {
-                    *object = new (std::nothrow) free_threaded_marshaler(get_unknown());
-                    return *object ? S_OK : E_OUTOFMEMORY;
+                    return make_marshaler(get_unknown(), object);
                 }
             }
 
             if constexpr (is_inspectable::value)
             {
-                if (id == guid_of<IInspectable>())
+                if (is_guid_of<IInspectable>(id))
                 {
                     *object = find_inspectable();
                     AddRef();
-                    return S_OK;
+                    return error_ok;
                 }
             }
 
-            if (id == guid_of<Windows::Foundation::IUnknown>())
+            if (is_guid_of<Windows::Foundation::IUnknown>(id))
             {
                 *object = get_unknown();
                 AddRef();
-                return S_OK;
+                return error_ok;
             }
 
             if constexpr (is_weak_ref_source::value)
             {
-                if (id == guid_of<impl::IWeakReferenceSource>())
+                if (is_guid_of<impl::IWeakReferenceSource>(id))
                 {
                     *object = make_weak_ref();
-                    return*object ? S_OK : E_OUTOFMEMORY;
+                    return *object ? error_ok : error_bad_alloc;
                 }
             }
 
-            return E_NOINTERFACE;
+            return error_no_interface;
         }
 
         impl::IWeakReferenceSource* make_weak_ref() noexcept
@@ -7138,9 +8717,9 @@ namespace winrt::impl
         }
 
         virtual IUnknown* get_unknown() const noexcept = 0;
-        virtual std::pair<uint32_t, const GUID*> get_local_iids() const noexcept = 0;
+        virtual std::pair<uint32_t, const guid*> get_local_iids() const noexcept = 0;
         virtual hstring GetRuntimeClassName() const = 0;
-        virtual void* find_interface(GUID const&) const noexcept = 0;
+        virtual void* find_interface(guid const&) const noexcept = 0;
         virtual impl::IInspectable* find_inspectable() const noexcept = 0;
 
         virtual Windows::Foundation::TrustLevel GetTrustLevel() const noexcept
@@ -7148,18 +8727,106 @@ namespace winrt::impl
             return Windows::Foundation::TrustLevel::BaseTrust;
         }
 
-        template <typename D, typename I>
+        template <typename D, typename I, typename Enable>
         friend struct impl::produce_base;
 
         template <typename D, typename I>
         friend struct impl::produce;
     };
+
+    template <typename D>
+    Windows::Foundation::IActivationFactory make_factory()
+    {
+        if constexpr (!has_static_lifetime_v<D>)
+        {
+            Windows::Foundation::IActivationFactory factory;
+            *put_abi(factory) = to_abi<Windows::Foundation::IActivationFactory>(new D);
+            return factory;
+        }
+        else
+        {
+            static slim_mutex lock;
+            auto const lifetime_factory = get_activation_factory<impl::IStaticLifetime>(L"Windows.ApplicationModel.Core.CoreApplication");
+            Windows::Foundation::IUnknown collection;
+            check_hresult(lifetime_factory->GetCollection(put_abi(collection)));
+            auto const map = collection.as<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>();
+
+            {
+                slim_lock_guard const guard{ lock };
+
+                if (Windows::Foundation::IInspectable value = map.TryLookup(name_of<typename D::instance_type>()))
+                {
+                    Windows::Foundation::IActivationFactory factory;
+                    *put_abi(factory) = detach_abi(value);
+                    return factory;
+                }
+            }
+
+            Windows::Foundation::IActivationFactory object;
+            *put_abi(object) = to_abi<Windows::Foundation::IActivationFactory>(new D);
+
+            {
+                slim_lock_guard const guard{ lock };
+
+                if (Windows::Foundation::IInspectable value = map.TryLookup(name_of<typename D::instance_type>()))
+                {
+                    Windows::Foundation::IActivationFactory factory;
+                    *put_abi(factory) = detach_abi(value);
+                    return factory;
+                }
+                else
+                {
+                    map.Insert(name_of<typename D::instance_type>(), object);
+                    return object;
+                }
+            }
+        }
+    }
 }
 
 WINRT_EXPORT namespace winrt
 {
+    template <typename D, typename... Args>
+    auto make(Args&&... args)
+    {
+        using I = typename impl::implements_default_interface<D>::type;
+
+        if constexpr (std::is_same_v<I, Windows::Foundation::IActivationFactory>)
+        {
+            static_assert(sizeof...(args) == 0);
+            return impl::make_factory<D>();
+        }
+        else if constexpr (impl::has_composable<D>::value)
+        {
+            impl::com_ref<I> result{ nullptr };
+            *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
+            return result.template as<typename D::composable>();
+        }
+        else if constexpr (impl::has_class_type<D>::value)
+        {
+            static_assert(std::is_same_v<I, default_interface<typename D::class_type>>);
+            typename D::class_type result{ nullptr };
+            *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
+            return result;
+        }
+        else
+        {
+            impl::com_ref<I> result{ nullptr };
+            *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
+            return result;
+        }
+    }
+
+    template <typename D, typename... Args>
+    auto make_self(Args&&... args)
+    {
+        com_ptr<D> result;
+        *put_abi(result) = new D(std::forward<Args>(args)...);
+        return result;
+    }
+
     template <typename D, typename... I>
-    struct implements : impl::producer<D, impl::uncloak_t<I>>..., impl::base_implements<D, I...>::type
+    struct implements : impl::producers<D, I...>, impl::base_implements<D, I...>::type
     {
     protected:
 
@@ -7169,24 +8836,14 @@ WINRT_EXPORT namespace winrt
 
         using base_type::base_type;
 
-        void static_lifetime()
-        {
-            static_assert(is_factory::value);
+    public:
 
-            param::hstring classId{ L"Windows.ApplicationModel.Core.CoreApplication" };
-            com_ptr<impl::IStaticLifetime> factory;
-            check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<impl::IStaticLifetime>(), factory.put_void()));
-
-            Windows::Foundation::IUnknown collection;
-            check_hresult(factory->GetCollection(put_abi(collection)));
-
-            auto map = collection.as<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>();
-            map.Insert(GetRuntimeClassName(), *this);
-        }
+        using implements_type = implements;
+        using IInspectable = Windows::Foundation::IInspectable;
 
         weak_ref<D> get_weak()
         {
-            return root_implements_type::get_weak<D>();
+            return root_implements_type::template get_weak<D>();
         }
 
         com_ptr<D> get_strong() noexcept
@@ -7196,11 +8853,6 @@ WINRT_EXPORT namespace winrt
             return result;
         }
 
-    public:
-
-        using implements_type = implements;
-        using IInspectable = Windows::Foundation::IInspectable;
-
         operator IInspectable() const noexcept
         {
             IInspectable result;
@@ -7208,22 +8860,31 @@ WINRT_EXPORT namespace winrt
             return result;
         }
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept
+        impl::hresult_type WINRT_CALL QueryInterface(guid const& id, void** object) noexcept
         {
             return root_implements_type::QueryInterface(id, object);
         }
 
-        unsigned long __stdcall AddRef() noexcept
+#ifdef WINRT_WINDOWS_ABI
+
+        impl::hresult_type WINRT_CALL QueryInterface(GUID const& id, void** object) noexcept
+        {
+            return root_implements_type::QueryInterface(reinterpret_cast<guid const&>(id), object);
+        }
+
+#endif
+
+        impl::ref_count_type WINRT_CALL AddRef() noexcept
         {
             return root_implements_type::AddRef();
         }
 
-        unsigned long __stdcall Release() noexcept
+        impl::ref_count_type WINRT_CALL Release() noexcept
         {
             return root_implements_type::Release();
         }
 
-        void* find_interface(GUID const& id) const noexcept override
+        void* find_interface(guid const& id) const noexcept override
         {
             return impl::find_iid(static_cast<const D*>(this), id);
         }
@@ -7233,7 +8894,7 @@ WINRT_EXPORT namespace winrt
             return impl::find_inspectable(static_cast<const D*>(this));
         }
 
-        std::pair<uint32_t, const GUID*> get_local_iids() const noexcept override
+        std::pair<uint32_t, const guid*> get_local_iids() const noexcept override
         {
             using interfaces = impl::uncloaked_interfaces<D>;
             using local_iids = impl::uncloaked_iids<interfaces>;
@@ -7256,6 +8917,987 @@ WINRT_EXPORT namespace winrt
 
         template <typename T>
         friend struct weak_ref;
+    };
+}
+
+namespace winrt::impl
+{
+    template <typename T>
+    auto detach_from(T&& object) noexcept
+    {
+        return detach_abi(std::forward<T>(object));
+    }
+
+    template <typename D> struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
+    {
+        int32_t WINRT_CALL ActivateInstance(void** instance) noexcept final
+        {
+            try
+            {
+                *instance = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *instance = detach_abi(this->shim().ActivateInstance());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename T> struct delegate<wfc::VectorChangedEventHandler<T>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<wfc::VectorChangedEventHandler<T>, H>
+        {
+            type(H&& handler) : implements_delegate<wfc::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<wfc::IObservableVector<T> const*>(&sender), *reinterpret_cast<wfc::IVectorChangedEventArgs const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename K, typename V> struct delegate<wfc::MapChangedEventHandler<K, V>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>
+        {
+            type(H&& handler) : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<wfc::IObservableMap<K, V> const*>(&sender), *reinterpret_cast<wfc::IMapChangedEventArgs<K> const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename T> struct delegate<Windows::Foundation::EventHandler<T>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::EventHandler<T>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::EventHandler<T>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, arg_in<T> args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&sender), *reinterpret_cast<T const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TSender, typename TArgs> struct delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<TSender const*>(&sender), *reinterpret_cast<TArgs const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename D> struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
+    {
+        int32_t WINRT_CALL put_Completed(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionCompletedHandler const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Completed(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncActionCompletedHandler>(this->shim().Completed());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetResults() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetResults();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D> struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Foundation::IAsyncInfo>
+    {
+        int32_t WINRT_CALL get_Id(uint32_t* id) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *id = this->shim().Id();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Status(winrt::Windows::Foundation::AsyncStatus* status) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *status = this->shim().Status();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_ErrorCode(int32_t* errorCode) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *errorCode = this->shim().ErrorCode();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Cancel() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Cancel();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Close() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Close();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename TProgress> struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        int32_t WINRT_CALL put_Progress(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncActionProgressHandler<TProgress> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Progress(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncActionProgressHandler<TProgress>>(this->shim().Progress());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL put_Completed(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Completed(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>(this->shim().Completed());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetResults() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetResults();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename TResult> struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        int32_t WINRT_CALL put_Completed(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationCompletedHandler<TResult> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Completed(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>(this->shim().Completed());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetResults(arg_out<TResult> results) noexcept final
+        {
+            try
+            {
+                clear_abi(results);
+                typename D::abi_guard guard(this->shim());
+                *results = detach_from<TResult>(this->shim().GetResults());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename TResult, typename TProgress> struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        int32_t WINRT_CALL put_Progress(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Progress(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>(this->shim().Progress());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL put_Completed(void* handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Completed(void** handler) noexcept final
+        {
+            try
+            {
+                *handler = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_from<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(this->shim().Completed());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetResults(arg_out<TResult> results) noexcept final
+        {
+            try
+            {
+                clear_abi(results);
+                typename D::abi_guard guard(this->shim());
+                *results = detach_from<TResult>(this->shim().GetResults());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+
+    template <typename D> struct produce<D, wfc::IVectorChangedEventArgs> : produce_base<D, wfc::IVectorChangedEventArgs>
+    {
+        int32_t WINRT_CALL get_CollectionChange(wfc::CollectionChange* value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Index(uint32_t* value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().Index();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T> struct produce<D, wfc::IIterator<T>> : produce_base<D, wfc::IIterator<T>>
+    {
+        int32_t WINRT_CALL get_Current(arg_out<T> current) noexcept final
+        {
+            try
+            {
+                clear_abi(current);
+                typename D::abi_guard guard(this->shim());
+                *current = detach_from<T>(this->shim().Current());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_HasCurrent(bool* hasCurrent) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *hasCurrent = this->shim().HasCurrent();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL MoveNext(bool* hasCurrent) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *hasCurrent = this->shim().MoveNext();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany(array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T> struct produce<D, wfc::IIterable<T>> : produce_base<D, wfc::IIterable<T>>
+    {
+        int32_t WINRT_CALL First(void** first) noexcept final
+        {
+            try
+            {
+                *first = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *first = detach_from<wfc::IIterator<T>>(this->shim().First());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename K, typename V> struct produce<D, wfc::IKeyValuePair<K, V>> : produce_base<D, wfc::IKeyValuePair<K, V>>
+    {
+        int32_t WINRT_CALL get_Key(arg_out<K> key) noexcept final
+        {
+            try
+            {
+                clear_abi(key);
+                typename D::abi_guard guard(this->shim());
+                *key = detach_from<K>(this->shim().Key());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Value(arg_out<V> value) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_from<V>(this->shim().Value());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T> struct produce<D, wfc::IVectorView<T>> : produce_base<D, wfc::IVectorView<T>>
+    {
+        int32_t WINRT_CALL GetAt(uint32_t index, arg_out<T> item) noexcept final
+        {
+            try
+            {
+                clear_abi(item);
+                typename D::abi_guard guard(this->shim());
+                *item = detach_from<T>(this->shim().GetAt(index));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Size(uint32_t* size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().IndexOf(*reinterpret_cast<T const*>(&value), *index);
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T> struct produce<D, wfc::IVector<T>> : produce_base<D, wfc::IVector<T>>
+    {
+        int32_t WINRT_CALL GetAt(uint32_t index, arg_out<T> item) noexcept final
+        {
+            try
+            {
+                clear_abi(item);
+                typename D::abi_guard guard(this->shim());
+                *item = detach_from<T>(this->shim().GetAt(index));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Size(uint32_t* size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetView(void** view) noexcept final
+        {
+            try
+            {
+                *view = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *view = detach_from<wfc::IVectorView<T>>(this->shim().GetView());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().IndexOf(*reinterpret_cast<T const*>(&value), *index);
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL SetAt(uint32_t index, arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().SetAt(index, *reinterpret_cast<T const*>(&item));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL InsertAt(uint32_t index, arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().InsertAt(index, *reinterpret_cast<T const*>(&item));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL RemoveAt(uint32_t index) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().RemoveAt(index);
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Append(arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Append(*reinterpret_cast<T const*>(&item));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL RemoveAtEnd() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().RemoveAtEnd();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Clear() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Clear();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL ReplaceAll(uint32_t count, arg_out<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().ReplaceAll(array_view<T const>(reinterpret_cast<T const*>(item), reinterpret_cast<T const*>(item) + count));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename K, typename V> struct produce<D, wfc::IMapView<K, V>> : produce_base<D, wfc::IMapView<K, V>>
+    {
+        int32_t WINRT_CALL Lookup(arg_in<K> key, arg_out<V> value) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Size(uint32_t* size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL HasKey(arg_in<K> key, bool* found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().HasKey(*reinterpret_cast<K const*>(&key));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Split(void** firstPartition, void** secondPartition) noexcept final
+        {
+            try
+            {
+                *firstPartition = nullptr;
+                *secondPartition = nullptr;
+                typename D::abi_guard guard(this->shim());
+                this->shim().Split(*reinterpret_cast<wfc::IMapView<K, V>*>(firstPartition), *reinterpret_cast<wfc::IMapView<K, V>*>(secondPartition));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename K, typename V> struct produce<D, wfc::IMap<K, V>> : produce_base<D, wfc::IMap<K, V>>
+    {
+        int32_t WINRT_CALL Lookup(arg_in<K> key, arg_out<V> value) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Size(uint32_t* size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL HasKey(arg_in<K> key, bool* found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().HasKey(*reinterpret_cast<K const*>(&key));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL GetView(void** view) noexcept final
+        {
+            try
+            {
+                *view = nullptr;
+                typename D::abi_guard guard(this->shim());
+                *view = detach_from<wfc::IMapView<K, V>>(this->shim().GetView());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Insert(arg_in<K> key, arg_in<V> value, bool* replaced) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *replaced = this->shim().Insert(*reinterpret_cast<K const*>(&key), *reinterpret_cast<V const*>(&value));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Remove(arg_in<K> key) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Remove(*reinterpret_cast<K const*>(&key));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL Clear() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Clear();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename K> struct produce<D, wfc::IMapChangedEventArgs<K>> : produce_base<D, wfc::IMapChangedEventArgs<K>>
+    {
+        int32_t WINRT_CALL get_CollectionChange(wfc::CollectionChange* value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL get_Key(arg_out<K> value) noexcept final
+        {
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_from<K>(this->shim().Key());
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename K, typename V> struct produce<D, wfc::IObservableMap<K, V>> : produce_base<D, wfc::IObservableMap<K, V>>
+    {
+        int32_t WINRT_CALL add_MapChanged(void* handler, event_token* token) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *token = this->shim().MapChanged(*reinterpret_cast<wfc::MapChangedEventHandler<K, V> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL remove_MapChanged(event_token token) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().MapChanged(token);
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, wfc::IObservableVector<T>> : produce_base<D, wfc::IObservableVector<T>>
+    {
+        int32_t WINRT_CALL add_VectorChanged(void* handler, event_token* token) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *token = this->shim().VectorChanged(*reinterpret_cast<wfc::VectorChangedEventHandler<T> const*>(&handler));
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+
+        int32_t WINRT_CALL remove_VectorChanged(event_token token) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().VectorChanged(token);
+                return error_ok;
+            }
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <> struct delegate<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncAction const*>(&asyncInfo), asyncStatus);
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TResult> struct delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperation<TResult> const*>(&sender), args);
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TProgress> struct delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, arg_in<TProgress> args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const*>(&sender), *reinterpret_cast<TProgress const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TProgress> struct delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const*>(&sender), args);
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TResult, typename TProgress> struct delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, arg_in<TProgress> args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const*>(&sender), *reinterpret_cast<TProgress const*>(&args));
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
+    };
+
+    template <typename TResult, typename TProgress> struct delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        template <typename H>
+        struct type final : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>
+        {
+            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
+
+            int32_t WINRT_CALL Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            {
+                try
+                {
+                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const*>(&sender), args);
+                    return error_ok;
+                }
+                catch (...) { return to_hresult(); }
+            }
+        };
     };
 }
 
@@ -7337,909 +9979,1358 @@ namespace winrt::impl
     };
 }
 
+WINRT_EXPORT namespace winrt::Windows::Foundation
+{
+    struct Point
+    {
+        float X;
+        float Y;
+
+        Point() noexcept = default;
+
+        constexpr Point(float X, float Y) noexcept
+            : X(X), Y(Y)
+        {}
+
+#ifdef WINRT_NUMERICS
+
+        constexpr Point(Numerics::float2 const& value) noexcept
+            : X(value.x), Y(value.y)
+        {}
+
+        operator Numerics::float2() const noexcept
+        {
+            return { X, Y };
+        }
+
+#endif
+    };
+
+    constexpr bool operator==(Point const& left, Point const& right) noexcept
+    {
+        return left.X == right.X && left.Y == right.Y;
+    }
+
+    constexpr bool operator!=(Point const& left, Point const& right) noexcept
+    {
+        return !(left == right);
+    }
+
+    struct Size
+    {
+        float Width;
+        float Height;
+
+        Size() noexcept = default;
+
+        constexpr Size(float Width, float Height) noexcept
+            : Width(Width), Height(Height)
+        {}
+
+#ifdef WINRT_NUMERICS
+
+        constexpr Size(Numerics::float2 const& value) noexcept
+            : Width(value.x), Height(value.y)
+        {}
+
+        operator Numerics::float2() const noexcept
+        {
+            return { Width, Height };
+        }
+
+#endif
+    };
+
+    constexpr bool operator==(Size const& left, Size const& right) noexcept
+    {
+        return left.Width == right.Width && left.Height == right.Height;
+    }
+
+    constexpr bool operator!=(Size const& left, Size const& right) noexcept
+    {
+        return !(left == right);
+    }
+
+    struct Rect
+    {
+        float X;
+        float Y;
+        float Width;
+        float Height;
+
+        Rect() noexcept = default;
+
+        constexpr Rect(float X, float Y, float Width, float Height) noexcept :
+            X(X), Y(Y), Width(Width), Height(Height)
+        {}
+
+        constexpr Rect(Point const& point, Size const& size)  noexcept :
+            X(point.X), Y(point.Y), Width(size.Width), Height(size.Height)
+        {}
+    };
+
+    constexpr bool operator==(Rect const& left, Rect const& right) noexcept
+    {
+        return left.X == right.X && left.Y == right.Y && left.Width == right.Width && left.Height == right.Height;
+    }
+
+    constexpr bool operator!=(Rect const& left, Rect const& right) noexcept
+    {
+        return !(left == right);
+    }
+}
+
 namespace winrt::impl
 {
-    template <typename D> template <typename T>
-    T consume_IActivationFactory<D>::ActivateInstance() const
+    template <> struct name<Windows::Foundation::Point>
     {
-        Windows::Foundation::IInspectable instance;
-        check_hresult(WINRT_SHIM(Windows::Foundation::IActivationFactory)->ActivateInstance(put_abi(instance)));
-        return instance.try_as<T>();
-    }
-
-    template <typename D>
-    struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
-    {
-        HRESULT __stdcall ActivateInstance(void** instance) noexcept final
-        {
-            try
-            {
-                *instance = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *instance = detach_abi(this->shim().ActivateInstance());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
+        static constexpr auto & value{ L"Windows.Foundation.Point" };
     };
 
-    template <typename Class, typename Interface>
-    com_ref<Interface> get_activation_factory()
+    template <> struct category<Windows::Foundation::Point>
     {
-        param::hstring classId{ name_of<Class>() };
-
-        com_ref<Interface> factory;
-        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<Interface>(), put_abi(factory)));
-        return factory;
-    }
-
-    struct factory_cache_typeless_entry
-    {
-        void clear() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-            m_factory = nullptr;
-        }
-
-        factory_cache_typeless_entry* next{ nullptr };
-
-    private:
-
-        slim_mutex m_lock;
-        Windows::Foundation::IUnknown m_factory;
+        using type = struct_category<float, float>;
     };
 
-    struct factory_cache
+    template <> struct name<Windows::Foundation::Size>
     {
-        void add(factory_cache_typeless_entry* entry) noexcept
-        {
-            WINRT_ASSERT(entry);
-            slim_lock_guard const guard(m_lock);
-            entry->next = m_begin;
-            m_begin = entry;
-        }
-
-        void clear() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-
-            while (m_begin != nullptr)
-            {
-                m_begin->clear();
-                m_begin = m_begin->next;
-            }
-        }
-
-    private:
-
-        slim_mutex m_lock;
-        factory_cache_typeless_entry* m_begin{ nullptr };
+        static constexpr auto & value{ L"Windows.Foundation.Size" };
     };
 
-    inline factory_cache& get_factory_cache() noexcept
+    template <> struct category<Windows::Foundation::Size>
     {
-        static factory_cache cache;
-        return cache;
-    }
-
-    template <typename Class, typename Interface>
-    struct factory_cache_entry
+        using type = struct_category<float, float>;
+    };
+    
+    template <> struct name<Windows::Foundation::Rect>
     {
-        factory_cache_entry() {} 
+        static constexpr auto & value{ L"Windows.Foundation.Rect" };
+    };
 
-        com_ref<Interface> get()
-        {
-#ifdef WINRT_DIAGNOSTICS
-            get_diagnostics_info().add_factory<Class>();
+    template <> struct category<Windows::Foundation::Rect>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
+
+#ifdef WINRT_NUMERICS
+
+    template <> struct name<Windows::Foundation::Numerics::float2>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector2" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float2>
+    {
+        using type = struct_category<float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float3>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector3" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float3>
+    {
+        using type = struct_category<float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float4>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector4" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float4>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float3x2>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix3x2" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float3x2>
+    {
+        using type = struct_category<float, float, float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float4x4>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix4x4" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float4x4>
+    {
+        using type = struct_category<
+            float, float, float, float,
+            float, float, float, float,
+            float, float, float, float,
+            float, float, float, float
+        >;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::quaternion>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Quaternion" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::quaternion>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::plane>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Plane" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::plane>
+    {
+        using type = struct_category<Windows::Foundation::Numerics::float3, float>;
+    };
+
 #endif
+}
 
-            {
-                slim_shared_lock_guard const guard(m_lock);
+namespace winrt::impl
+{
+    using filetime_period = std::ratio_multiply<std::ratio<100>, std::nano>;
+}
 
-                if (m_factory)
-                {
-                    return m_factory;
-                }
-            }
+WINRT_EXPORT namespace winrt
+{
+    struct clock;
 
-            com_ref<Interface> factory = get_activation_factory<Class, Interface>();
+    namespace Windows::Foundation
+    {
+        using TimeSpan = std::chrono::duration<int64_t, impl::filetime_period>;
+        using DateTime = std::chrono::time_point<clock, TimeSpan>;
+    }
+}
 
-            if (!factory.template try_as<IAgileObject>())
-            {
-#ifdef WINRT_DIAGNOSTICS
-                get_diagnostics_info().non_agile_factory<Class>();
-#endif
-                return factory;
-            }
+namespace winrt::impl
+{
+    template <> struct name<Windows::Foundation::TimeSpan>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.TimeSpan" };
+    };
 
-            slim_lock_guard const guard(m_lock);
+    template <> struct category<Windows::Foundation::TimeSpan>
+    {
+        using type = struct_category<int64_t>;
+    };
 
-            if (!m_factory)
-            {
-                m_factory = std::move(factory);
-                get_factory_cache().add(reinterpret_cast<factory_cache_typeless_entry*>(this));
-            }
+    template <> struct name<Windows::Foundation::DateTime>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.DateTime" };
+    };
 
-            return m_factory;
-        }
-
-        void clear() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-            m_factory = nullptr;
-        }
-
-    private:
-
-        void* m_next{ nullptr };
-        slim_mutex m_lock;
-        com_ref<Interface> m_factory;
+    template <> struct category<Windows::Foundation::DateTime>
+    {
+        using type = struct_category<int64_t>;
     };
 }
 
 WINRT_EXPORT namespace winrt
 {
-    namespace Windows::Foundation
+    struct file_time
     {
-        struct IActivationFactory :
-            IInspectable,
-            impl::consume_t<IActivationFactory>
-        {
-            IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-        };
-    }
+        uint64_t value{};
 
-    enum class apartment_type : int32_t
-    {
-        single_threaded,
-        multi_threaded
+        file_time() noexcept = default;
+
+        constexpr explicit file_time(uint64_t const value) noexcept : value(value)
+        {
+        }
+
+#ifdef _FILETIME_
+        constexpr file_time(FILETIME const& value) noexcept
+            : value(value.dwLowDateTime | (static_cast<uint64_t>(value.dwHighDateTime) << 32))
+        {
+        }
+
+        operator FILETIME() const noexcept
+        {
+            return { value & 0xFFFFFFFF, (value >> 32) };
+        }
+#endif
     };
 
-    inline void init_apartment(apartment_type const type = apartment_type::multi_threaded)
+    struct clock
     {
-        HRESULT const result = WINRT_RoInitialize(static_cast<uint32_t>(type));
+        using rep = int64_t;
+        using period = impl::filetime_period;
+        using duration = Windows::Foundation::TimeSpan;
+        using time_point = Windows::Foundation::DateTime;
 
-        if (result < 0)
+        static constexpr bool is_steady = false;
+
+        static time_point now() noexcept
         {
-            throw_hresult(result);
-        }
-    }
-
-    inline void uninit_apartment() noexcept
-    {
-        WINRT_RoUninitialize();
-    }
-
-    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
-    impl::com_ref<Interface> get_activation_factory()
-    {
-        static impl::factory_cache_entry<Class, Interface> factory;
-        return factory.get();
-    }
-
-    inline void clear_factory_cache() noexcept
-    {
-        impl::get_factory_cache().clear();
-    }
-
-    template <typename Interface>
-    impl::com_ref<Interface> create_instance(GUID const& clsid, DWORD context = CLSCTX_INPROC_SERVER, ::IUnknown* outer = nullptr)
-    {
-        impl::com_ref<Interface> temp{ nullptr };
-        check_hresult(CoCreateInstance(clsid, outer, context, guid_of<Interface>(), put_abi(temp)));
-        return temp;
-    }
-}
-
-namespace winrt::impl
-{
-    template <typename D>
-    struct produce<D, wfc::IVectorChangedEventArgs> : produce_base<D, wfc::IVectorChangedEventArgs>
-    {
-        HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *value = this->shim().CollectionChange();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            file_time ft;
+            WINRT_GetSystemTimePreciseAsFileTime(&ft);
+            return from_file_time(ft);
         }
 
-        HRESULT __stdcall get_Index(uint32_t* value) noexcept final
+        static time_t to_time_t(time_point const& time) noexcept
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *value = this->shim().Index();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename T>
-    struct produce<D, wfc::IIterator<T>> : produce_base<D, wfc::IIterator<T>>
-    {
-        HRESULT __stdcall get_Current(arg_out<T> current) noexcept final
-        {
-            try
-            {
-                clear_abi(current);
-                typename D::abi_guard guard(this->shim());
-                *current = detach_from<T>(this->shim().Current());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            return std::chrono::duration_cast<time_t_duration>(time - time_t_epoch).count();
         }
 
-        HRESULT __stdcall get_HasCurrent(bool* hasCurrent) noexcept final
+        static time_point from_time_t(time_t time) noexcept
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *hasCurrent = this->shim().HasCurrent();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            return time_t_epoch + time_t_duration{ time };
         }
 
-        HRESULT __stdcall MoveNext(bool* hasCurrent) noexcept final
+        static file_time to_file_time(time_point const& time) noexcept
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *hasCurrent = this->shim().MoveNext();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            return file_time{ static_cast<uint64_t>(time.time_since_epoch().count()) };
         }
 
-        HRESULT __stdcall GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
+        static time_point from_file_time(file_time const& time) noexcept
         {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany(array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename T>
-    struct produce<D, wfc::IIterable<T>> : produce_base<D, wfc::IIterable<T>>
-    {
-        HRESULT __stdcall First(void** first) noexcept final
-        {
-            try
-            {
-                *first = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *first = detach_from<wfc::IIterator<T>>(this->shim().First());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct produce<D, wfc::IKeyValuePair<K, V>> : produce_base<D, wfc::IKeyValuePair<K, V>>
-    {
-        HRESULT __stdcall get_Key(arg_out<K> key) noexcept final
-        {
-            try
-            {
-                clear_abi(key);
-                typename D::abi_guard guard(this->shim());
-                *key = detach_from<K>(this->shim().Key());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            return time_point{ duration{ time.value } };
         }
 
-        HRESULT __stdcall get_Value(arg_out<V> value) noexcept final
+        static auto to_FILETIME(time_point const& time) noexcept
         {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *value = detach_from<V>(this->shim().Value());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename T>
-    struct produce<D, wfc::IVectorView<T>> : produce_base<D, wfc::IVectorView<T>>
-    {
-        HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept final
-        {
-            try
-            {
-                clear_abi(item);
-                typename D::abi_guard guard(this->shim());
-                *item = detach_from<T>(this->shim().GetAt(index));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            return to_file_time(time);
         }
 
-        HRESULT __stdcall get_Size(uint32_t* size) noexcept final
+        static time_point from_FILETIME(file_time const& time) noexcept
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *size = this->shim().Size();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *found = this->shim().IndexOf(*reinterpret_cast<T const*>(&value), *index);
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
-        {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename T>
-    struct produce<D, wfc::IVector<T>> : produce_base<D, wfc::IVector<T>>
-    {
-        HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept final
-        {
-            try
-            {
-                clear_abi(item);
-                typename D::abi_guard guard(this->shim());
-                *item = detach_from<T>(this->shim().GetAt(index));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Size(uint32_t* size) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *size = this->shim().Size();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetView(void** view) noexcept final
-        {
-            try
-            {
-                *view = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *view = detach_from<wfc::IVectorView<T>>(this->shim().GetView());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *found = this->shim().IndexOf(*reinterpret_cast<T const*>(&value), *index);
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall SetAt(uint32_t index, arg_in<T> item) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().SetAt(index, *reinterpret_cast<T const*>(&item));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall InsertAt(uint32_t index, arg_in<T> item) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().InsertAt(index, *reinterpret_cast<T const*>(&item));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall RemoveAt(uint32_t index) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().RemoveAt(index);
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Append(arg_in<T> item) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Append(*reinterpret_cast<T const*>(&item));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall RemoveAtEnd() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().RemoveAtEnd();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Clear() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Clear();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept final
-        {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall ReplaceAll(uint32_t count, arg_out<T> item) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().ReplaceAll(array_view<T const>(reinterpret_cast<T const*>(item), reinterpret_cast<T const*>(item) + count));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct produce<D, wfc::IMapView<K, V>> : produce_base<D, wfc::IMapView<K, V>>
-    {
-        HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept final
-        {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Size(uint32_t* size) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *size = this->shim().Size();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *found = this->shim().HasKey(*reinterpret_cast<K const*>(&key));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Split(void** firstPartition, void** secondPartition) noexcept final
-        {
-            try
-            {
-                *firstPartition = nullptr;
-                *secondPartition = nullptr;
-                typename D::abi_guard guard(this->shim());
-                this->shim().Split(*reinterpret_cast<wfc::IMapView<K, V>*>(firstPartition), *reinterpret_cast<wfc::IMapView<K, V>*>(secondPartition));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct produce<D, wfc::IMap<K, V>> : produce_base<D, wfc::IMap<K, V>>
-    {
-        HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept final
-        {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Size(uint32_t* size) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *size = this->shim().Size();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *found = this->shim().HasKey(*reinterpret_cast<K const*>(&key));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetView(void** view) noexcept final
-        {
-            try
-            {
-                *view = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *view = detach_from<wfc::IMapView<K, V>>(this->shim().GetView());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Insert(arg_in<K> key, arg_in<V> value, bool* replaced) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *replaced = this->shim().Insert(*reinterpret_cast<K const*>(&key), *reinterpret_cast<V const*>(&value));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Remove(arg_in<K> key) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Remove(*reinterpret_cast<K const*>(&key));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Clear() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Clear();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename K>
-    struct produce<D, wfc::IMapChangedEventArgs<K>> : produce_base<D, wfc::IMapChangedEventArgs<K>>
-    {
-        HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *value = this->shim().CollectionChange();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Key(arg_out<K> value) noexcept final
-        {
-            try
-            {
-                clear_abi(value);
-                typename D::abi_guard guard(this->shim());
-                *value = detach_from<K>(this->shim().Key());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename K, typename V>
-    struct produce<D, wfc::IObservableMap<K, V>> : produce_base<D, wfc::IObservableMap<K, V>>
-    {
-        HRESULT __stdcall add_MapChanged(void* handler, event_token* token) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *token = this->shim().MapChanged(*reinterpret_cast<wfc::MapChangedEventHandler<K, V> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall remove_MapChanged(event_token token) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().MapChanged(token);
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename T>
-    struct produce<D, wfc::IObservableVector<T>> : produce_base<D, wfc::IObservableVector<T>>
-    {
-        HRESULT __stdcall add_VectorChanged(void* handler, event_token* token) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *token = this->shim().VectorChanged(*reinterpret_cast<wfc::VectorChangedEventHandler<T> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall remove_VectorChanged(event_token token) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().VectorChanged(token);
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-}
-
-namespace winrt::impl
-{
-    template <typename K, typename V>
-    struct key_value_pair final : implements<key_value_pair<K, V>, wfc::IKeyValuePair<K, V>>
-    {
-        explicit key_value_pair(std::pair<K const, V> const& value) : m_value(value)
-        {}
-
-        K Key() const
-        {
-            return m_value.first;
-        }
-
-        V Value() const
-        {
-            return m_value.second;
+            return from_file_time(time);
         }
 
     private:
 
-        std::pair<K const, V> const m_value;
+        // Define 00:00:00, Jan 1 1970 UTC in FILETIME units.
+        static constexpr time_point time_t_epoch{ duration{ 0x019DB1DED53E8000 } };
+        using time_t_duration = std::chrono::duration<time_t>;
+    };
+}
+
+WINRT_EXPORT namespace winrt
+{
+    struct access_token : handle
+    {
+        static access_token process()
+        {
+            access_token token;
+            check_bool(WINRT_OpenProcessToken(WINRT_GetCurrentProcess(), 0x0002 /*TOKEN_DUPLICATE*/, token.put()));
+            access_token duplicate;
+            check_bool(WINRT_DuplicateToken(token.get(), 2 /*SecurityImpersonation*/, duplicate.put()));
+            return duplicate;
+        }
+
+        static access_token thread()
+        {
+            access_token token;
+
+            if (!WINRT_OpenThreadToken(WINRT_GetCurrentThread(), 0x0004 /*TOKEN_IMPERSONATE*/, 1, token.put()))
+            {
+                uint32_t const error = WINRT_GetLastError();
+
+                if (error != 1008 /*ERROR_NO_TOKEN*/)
+                {
+                    throw_hresult(impl::hresult_from_win32(error));
+                }
+            }
+
+            return token;
+        }
+
+        static access_token client()
+        {
+            struct impersonate_guard
+            {
+                impersonate_guard(com_ptr<impl::IServerSecurity> const& server) : m_server(server)
+                {
+                    check_hresult(m_server->ImpersonateClient());
+                }
+
+                ~impersonate_guard()
+                {
+                    check_hresult(m_server->RevertToSelf());
+                }
+
+            private:
+
+                com_ptr<impl::IServerSecurity> const& m_server;
+            };
+
+            auto server = capture<impl::IServerSecurity>(WINRT_CoGetCallContext);
+            impersonate_guard impersonate(server);
+            return thread();
+        }
+
+        access_token() = default;
+        access_token(access_token&& other) = default;
+        access_token& operator=(access_token&& other) = default;
+
+        access_token impersonate() const
+        {
+            auto previous = thread();
+            check_bool(WINRT_SetThreadToken(nullptr, get()));
+            return previous;
+        }
+
+        void revert() const
+        {
+            check_bool(WINRT_SetThreadToken(nullptr, get()));
+        }
+
+        auto operator()() const
+        {
+            struct guard
+            {
+                guard(access_token&& previous) noexcept : m_previous(std::move(previous))
+                {
+                }
+
+                ~guard()
+                {
+                    m_previous.revert();
+                }
+
+                guard(guard const&)
+                {
+                    // A Visual C++ compiler bug (550631) requires the copy constructor even though it is never called.
+                    WINRT_ASSERT(false);
+                }
+
+            private:
+
+                access_token const m_previous;
+            };
+
+            return guard(impersonate());
+        }
+    };
+}
+
+namespace winrt::impl
+{
+    inline bool is_sta() noexcept
+    {
+        int32_t aptType;
+        int32_t aptTypeQualifier;
+        return (error_ok == WINRT_CoGetApartmentType(&aptType, &aptTypeQualifier)) && ((aptType == 0 /*APTTYPE_STA*/) || (aptType == 3 /*APTTYPE_MAINSTA*/));
+    }
+
+    template <typename Async>
+    void blocking_suspend(Async const& async)
+    {
+        WINRT_ASSERT(!is_sta());
+
+        slim_mutex m;
+        slim_condition_variable cv;
+        bool completed = false;
+        async.Completed([&](auto&&...)
+        {
+            {
+                slim_lock_guard const guard(m);
+                completed = true;
+            }
+            cv.notify_one();
+        });
+
+        slim_lock_guard guard(m);
+        cv.wait(m, [&] { return completed; });
+    }
+
+    template <typename Async>
+    struct await_adapter
+    {
+        Async const& async;
+
+        bool await_ready() const
+        {
+            return async.Status() == Windows::Foundation::AsyncStatus::Completed;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> handle) const
+        {
+            auto context = capture<IContextCallback>(WINRT_CoGetObjectContext);
+
+            async.Completed([handle, context = std::move(context)](auto const&, Windows::Foundation::AsyncStatus)
+            {
+                com_callback_args args{};
+                args.data = handle.address();
+
+                auto callback = [](com_callback_args* args) noexcept -> int32_t
+                {
+                    std::experimental::coroutine_handle<>::from_address(args->data)();
+                    return error_ok;
+                };
+
+                check_hresult(context->ContextCallback(callback, &args, guid_of<impl::ICallbackWithNoReentrancyToApplicationSTA>(), 5, nullptr));
+            });
+        }
+
+        auto await_resume() const
+        {
+            return async.GetResults();
+        }
+    };
+}
+
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
+WINRT_EXPORT namespace winrt::Windows::Foundation
+{
+    inline impl::await_adapter<IAsyncAction> operator co_await(IAsyncAction const& async)
+    {
+        return{ async };
+    }
+
+    template <typename TProgress>
+    impl::await_adapter<IAsyncActionWithProgress<TProgress>> operator co_await(IAsyncActionWithProgress<TProgress> const& async)
+    {
+        return{ async };
+    }
+
+    template <typename TResult>
+    impl::await_adapter<IAsyncOperation<TResult>> operator co_await(IAsyncOperation<TResult> const& async)
+    {
+        return{ async };
+    }
+
+    template <typename TResult, typename TProgress>
+    impl::await_adapter<IAsyncOperationWithProgress<TResult, TProgress>> operator co_await(IAsyncOperationWithProgress<TResult, TProgress> const& async)
+    {
+        return{ async };
+    }
+}
+#endif
+
+WINRT_EXPORT namespace winrt
+{
+    inline auto resume_background()
+    {
+        struct awaitable
+        {
+            bool await_ready() const noexcept
+            {
+                return false;
+            }
+
+            void await_resume() const noexcept
+            {
+            }
+
+            void await_suspend(std::experimental::coroutine_handle<> handle) const
+            {
+                if (!WINRT_TrySubmitThreadpoolCallback(callback, handle.address(), nullptr))
+                {
+                    throw_last_error();
+                }
+            }
+
+        private:
+
+            static void WINRT_CALL callback(void*, void* context) noexcept
+            {
+                std::experimental::coroutine_handle<>::from_address(context)();
+            }
+        };
+
+        return awaitable{};
+    }
+
+    template <typename T>
+    auto resume_background(T&& context)
+    {
+        struct awaitable
+        {
+            awaitable(T&& context) : m_context(std::forward<T>(context))
+            {
+            }
+
+            bool await_ready() const noexcept
+            {
+                return false;
+            }
+
+            void await_resume() const noexcept
+            {
+            }
+
+            void await_suspend(std::experimental::coroutine_handle<> resume)
+            {
+                m_resume = resume;
+
+                if (!WINRT_TrySubmitThreadpoolCallback(callback, this, nullptr))
+                {
+                    throw_last_error();
+                }
+            }
+
+        private:
+
+            static void WINRT_CALL callback(void*, void* context) noexcept
+            {
+                auto that = static_cast<awaitable*>(context);
+                auto guard = that->m_context();
+                that->m_resume();
+            }
+
+            T&& m_context;
+            std::experimental::coroutine_handle<> m_resume{ nullptr };
+        };
+
+        return awaitable{ std::forward<T>(context) };
+    }
+
+    struct apartment_context
+    {
+        apartment_context()
+        {
+            m_context.capture(WINRT_CoGetObjectContext);
+        }
+
+        bool await_ready() const noexcept
+        {
+            return false;
+        }
+
+        void await_resume() const noexcept
+        {
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> handle) const
+        {
+            impl::com_callback_args args{};
+            args.data = handle.address();
+            check_hresult(m_context->ContextCallback(callback, &args, guid_of<impl::ICallbackWithNoReentrancyToApplicationSTA>(), 5, nullptr));
+        }
+
+    private:
+
+        static int32_t WINRT_CALL callback(impl::com_callback_args* args) noexcept
+        {
+            std::experimental::coroutine_handle<>::from_address(args->data)();
+            return impl::error_ok;
+        }
+
+        com_ptr<impl::IContextCallback> m_context;
+    };
+
+    struct resume_after
+    {
+        explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept : m_duration(duration)
+        {
+        }
+
+        bool await_ready() const noexcept
+        {
+            return m_duration.count() <= 0;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> handle)
+        {
+            m_timer.attach(check_pointer(WINRT_CreateThreadpoolTimer(callback, handle.address(), nullptr)));
+            int64_t relative_count = -m_duration.count();
+            WINRT_SetThreadpoolTimer(m_timer.get(), &relative_count, 0, 0);
+        }
+
+        void await_resume() const noexcept
+        {
+        }
+
+    private:
+
+        static void WINRT_CALL callback(void*, void* context, void*) noexcept
+        {
+            std::experimental::coroutine_handle<>::from_address(context)();
+        }
+
+        struct timer_traits
+        {
+            using type = impl::ptp_timer;
+
+            static void close(type value) noexcept
+            {
+                WINRT_CloseThreadpoolTimer(value);
+            }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
+        };
+
+        handle_type<timer_traits> m_timer;
+        Windows::Foundation::TimeSpan m_duration;
+    };
+
+    struct resume_on_signal
+    {
+        explicit resume_on_signal(void* handle) noexcept :
+            m_handle(handle)
+        {}
+
+        resume_on_signal(void* handle, Windows::Foundation::TimeSpan timeout) noexcept :
+            m_timeout(timeout),
+            m_handle(handle)
+        {}
+
+        bool await_ready() const noexcept
+        {
+            return WINRT_WaitForSingleObject(m_handle, 0) == 0;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> resume)
+        {
+            m_resume = resume;
+            m_wait.attach(check_pointer(WINRT_CreateThreadpoolWait(callback, this, nullptr)));
+            int64_t relative_count = -m_timeout.count();
+            int64_t* file_time = relative_count != 0 ? &relative_count : nullptr;
+            WINRT_SetThreadpoolWait(m_wait.get(), m_handle, file_time);
+        }
+
+        bool await_resume() const noexcept
+        {
+            return m_result == 0;
+        }
+
+    private:
+
+        static void WINRT_CALL callback(void*, void* context, void*, uint32_t result) noexcept
+        {
+            auto that = static_cast<resume_on_signal*>(context);
+            that->m_result = result;
+            that->m_resume();
+        }
+
+        struct wait_traits
+        {
+            using type = impl::ptp_wait;
+
+            static void close(type value) noexcept
+            {
+                WINRT_CloseThreadpoolWait(value);
+            }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
+        };
+
+        handle_type<wait_traits> m_wait;
+        Windows::Foundation::TimeSpan m_timeout{ 0 };
+        void* m_handle{};
+        uint32_t m_result{};
+        std::experimental::coroutine_handle<> m_resume{ nullptr };
+    };
+
+    struct overlapped_io
+    {
+        uintptr_t Internal;
+        uintptr_t InternalHigh;
+        union
+        {
+            struct
+            {
+                uint32_t Offset;
+                uint32_t OffsetHigh;
+            } s;
+            void* Pointer;
+        };
+        void* hEvent;
+    };
+
+    struct awaitable_base
+    {
+        static void WINRT_CALL callback(void*, void*, void* overlapped, uint32_t result, std::size_t, void*) noexcept
+        {
+            auto context = static_cast<awaitable_base*>(overlapped);
+            context->m_result = result;
+            context->m_resume();
+        }
+
+    protected:
+
+        overlapped_io m_overlapped{};
+        uint32_t m_result{};
+        std::experimental::coroutine_handle<> m_resume{ nullptr };
+    };
+
+    struct resumable_io
+    {
+        resumable_io(void* object) :
+            m_io(check_pointer(WINRT_CreateThreadpoolIo(object, awaitable_base::callback, nullptr, nullptr)))
+        {
+        }
+
+        template <typename F>
+        auto start(F callback)
+        {
+            struct awaitable : awaitable_base, F
+            {
+                awaitable(impl::ptp_io io, F callback) noexcept :
+                    F(callback),
+                    m_io(io)
+                {}
+
+                bool await_ready() const noexcept
+                {
+                    return false;
+                }
+
+                void await_suspend(std::experimental::coroutine_handle<> resume_handle)
+                {
+                    m_resume = resume_handle;
+                    WINRT_StartThreadpoolIo(m_io);
+
+                    try
+                    {
+                        (*this)(m_overlapped);
+                    }
+                    catch (...)
+                    {
+                        WINRT_CancelThreadpoolIo(m_io);
+                        throw;
+                    }
+                }
+
+                uint32_t await_resume() const
+                {
+                    if (m_result != 38 /*ERROR_HANDLE_EOF*/)
+                    {
+                        check_win32(m_result);
+                    }
+                    return static_cast<uint32_t>(m_overlapped.InternalHigh);
+                }
+
+                impl::ptp_io m_io{};
+            };
+
+            return awaitable(get(), callback);
+        }
+
+        template <typename F>
+        auto start_pending(F callback)
+        {
+            struct awaitable : awaitable_base, F
+            {
+                awaitable(impl::ptp_io io, F callback) noexcept :
+                    F(callback),
+                    m_io(io)
+                {}
+
+                bool await_ready() const noexcept
+                {
+                    return false;
+                }
+
+                bool await_suspend(std::experimental::coroutine_handle<> resume_handle)
+                {
+                    m_resume = resume_handle;
+                    WINRT_StartThreadpoolIo(m_io);
+
+                    try
+                    {
+                        bool const pending = (*this)(m_overlapped);
+
+                        if (!pending)
+                        {
+                            WINRT_CancelThreadpoolIo(m_io);
+                        }
+
+                        return pending;
+                    }
+                    catch (...)
+                    {
+                        WINRT_CancelThreadpoolIo(m_io);
+                        throw;
+                    }
+                }
+
+                uint32_t await_resume() const
+                {
+                    if (m_result != 38 /*ERROR_HANDLE_EOF*/)
+                    {
+                        check_win32(m_result);
+                    }
+                    return static_cast<uint32_t>(m_overlapped.InternalHigh);
+                }
+
+                impl::ptp_io m_io{};
+            };
+
+            return awaitable(get(), callback);
+        }
+
+        impl::ptp_io get() const noexcept
+        {
+            return m_io.get();
+        }
+
+    private:
+
+        struct io_traits
+        {
+            using type = impl::ptp_io;
+
+            static void close(type value) noexcept
+            {
+                WINRT_CloseThreadpoolIo(value);
+            }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
+        };
+
+        handle_type<io_traits> m_io;
+    };
+
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
+    inline auto operator co_await(Windows::Foundation::TimeSpan duration)
+    {
+        return resume_after(duration);
+    }
+#endif
+
+    struct get_progress_token_t {};
+
+    inline get_progress_token_t get_progress_token() noexcept
+    {
+        return{};
+    }
+
+    struct get_cancellation_token_t {};
+
+    inline get_cancellation_token_t get_cancellation_token() noexcept
+    {
+        return{};
+    }
+
+    struct fire_and_forget {};
+}
+
+namespace winrt::impl
+{
+    template <typename Promise>
+    struct cancellation_token
+    {
+        cancellation_token(Promise* promise) noexcept : m_promise(promise)
+        {
+        }
+
+        bool await_ready() const noexcept
+        {
+            return true;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
+        {
+        }
+
+        cancellation_token<Promise> await_resume() const noexcept
+        {
+            return*this;
+        }
+
+        bool operator()() const noexcept
+        {
+            return m_promise->Status() == Windows::Foundation::AsyncStatus::Canceled;
+        }
+
+        void callback(winrt::delegate<>&& cancel) noexcept
+        {
+            m_promise->cancellation_callback(std::move(cancel));
+        }
+
+    private:
+
+        Promise * m_promise;
+    };
+
+    template <typename Promise, typename Progress>
+    struct progress_token
+    {
+        progress_token(Promise* promise) noexcept :
+            m_promise(promise)
+        {
+        }
+
+        bool await_ready() const noexcept
+        {
+            return true;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
+        {
+        }
+
+        progress_token<Promise, Progress> await_resume() const noexcept
+        {
+            return*this;
+        }
+
+        void operator()(Progress const& result)
+        {
+            m_promise->set_progress(result);
+        }
+
+    private:
+
+        Promise * m_promise;
+    };
+
+    template <typename Derived, typename AsyncInterface, typename CompletedHandler, typename TProgress = void>
+    struct promise_base : implements<Derived, AsyncInterface, Windows::Foundation::IAsyncInfo>
+    {
+        using AsyncStatus = Windows::Foundation::AsyncStatus;
+
+        unsigned long WINRT_CALL Release() noexcept
+        {
+            uint32_t const remaining = this->subtract_reference();
+
+            if (remaining == 0)
+            {
+                std::atomic_thread_fence(std::memory_order_acquire);
+                std::experimental::coroutine_handle<Derived>::from_promise(*static_cast<Derived*>(this)).destroy();
+            }
+
+            return remaining;
+        }
+
+        void Completed(CompletedHandler const& handler)
+        {
+            AsyncStatus status;
+
+            {
+                slim_lock_guard const guard(m_lock);
+
+                if (m_completed_assigned)
+                {
+                    throw hresult_illegal_delegate_assignment();
+                }
+
+                m_completed_assigned = true;
+
+                if (m_status == AsyncStatus::Started)
+                {
+                    m_completed = make_agile_delegate(handler);
+                    return;
+                }
+
+                status = m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        CompletedHandler Completed() noexcept
+        {
+            slim_lock_guard const guard(m_lock);
+            return m_completed;
+        }
+
+        uint32_t Id() const noexcept
+        {
+            return 1;
+        }
+
+        AsyncStatus Status() noexcept
+        {
+            slim_lock_guard const guard(m_lock);
+            return m_status;
+        }
+
+        hresult ErrorCode() noexcept
+        {
+            try
+            {
+                slim_lock_guard const guard(m_lock);
+                rethrow_if_failed();
+                return error_ok;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        void Cancel() noexcept
+        {
+            winrt::delegate<> cancel;
+
+            {
+                slim_lock_guard const guard(m_lock);
+
+                if (m_status == AsyncStatus::Started)
+                {
+                    m_status = AsyncStatus::Canceled;
+                    cancel = std::move(m_cancel);
+                }
+            }
+
+            if (cancel)
+            {
+                cancel();
+            }
+        }
+
+        void Close() const noexcept
+        {
+        }
+
+        AsyncInterface get_return_object() const noexcept
+        {
+            return*this;
+        }
+
+        std::experimental::suspend_never initial_suspend() const noexcept
+        {
+            return{};
+        }
+
+        struct final_suspend_type
+        {
+            promise_base* promise;
+
+            bool await_ready() const noexcept
+            {
+                return false;
+            }
+
+            void await_resume() const noexcept
+            {
+            }
+
+            bool await_suspend(std::experimental::coroutine_handle<>) const noexcept
+            {
+                uint32_t const remaining = promise->subtract_reference();
+
+                if (remaining == 0)
+                {
+                    std::atomic_thread_fence(std::memory_order_acquire);
+                }
+
+                return remaining > 0;
+            }
+        };
+
+        final_suspend_type final_suspend() noexcept
+        {
+            return{ this };
+        }
+
+        void unhandled_exception() noexcept
+        {
+            CompletedHandler handler;
+            AsyncStatus status;
+
+            {
+                slim_lock_guard const guard(m_lock);
+                WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
+                m_exception = std::current_exception();
+
+                try
+                {
+                    std::rethrow_exception(m_exception);
+                }
+                catch (hresult_canceled const&)
+                {
+                    m_status = AsyncStatus::Canceled;
+                }
+                catch (...)
+                {
+                    m_status = AsyncStatus::Error;
+                }
+
+                handler = std::move(m_completed);
+                status = m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        template <typename Expression>
+        Expression&& await_transform(Expression&& expression)
+        {
+            if (Status() == AsyncStatus::Canceled)
+            {
+                throw winrt::hresult_canceled();
+            }
+
+            return std::forward<Expression>(expression);
+        }
+
+        cancellation_token<Derived> await_transform(get_cancellation_token_t) noexcept
+        {
+            return{ static_cast<Derived*>(this) };
+        }
+
+        progress_token<Derived, TProgress> await_transform(get_progress_token_t) noexcept
+        {
+            return{ static_cast<Derived*>(this) };
+        }
+
+        void cancellation_callback(winrt::delegate<>&& cancel) noexcept
+        {
+            {
+                slim_lock_guard const guard(m_lock);
+
+                if (m_status != AsyncStatus::Canceled)
+                {
+                    m_cancel = std::move(cancel);
+                    return;
+                }
+            }
+
+            cancel();
+        }
+
+    protected:
+
+        void rethrow_if_failed() const
+        {
+            if (m_status == AsyncStatus::Error || m_status == AsyncStatus::Canceled)
+            {
+                std::rethrow_exception(m_exception);
+            }
+        }
+
+        std::exception_ptr m_exception{};
+        slim_mutex m_lock;
+        CompletedHandler m_completed;
+        winrt::delegate<> m_cancel;
+        AsyncStatus m_status{ AsyncStatus::Started };
+        bool m_completed_assigned{ false };
+    };
+}
+
+namespace winrt::impl
+{
+    template <typename T>
+    struct fast_iterator
+    {
+        using iterator_category = std::input_iterator_tag;
+        using value_type = T;
+        using difference_type = ptrdiff_t;
+        using pointer = T * ;
+        using reference = T & ;
+
+        fast_iterator(T const& collection, uint32_t const index) noexcept :
+        m_collection(&collection),
+            m_index(index)
+        {}
+
+        fast_iterator& operator++() noexcept
+        {
+            ++m_index;
+            return*this;
+        }
+
+        auto operator*() const
+        {
+            return m_collection->GetAt(m_index);
+        }
+
+        bool operator==(fast_iterator const& other) const noexcept
+        {
+            WINRT_ASSERT(m_collection == other.m_collection);
+            return m_index == other.m_index;
+        }
+
+        bool operator!=(fast_iterator const& other) const noexcept
+        {
+            return !(*this == other);
+        }
+
+    private:
+
+        T const* m_collection = nullptr;
+        uint32_t m_index = 0;
     };
 
     template <typename T>
-    struct collection_traits
+    class has_GetAt
     {
-        static T copy(T const& value)
+        template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
+        template <typename> static constexpr bool get_value(...) { return false; }
+
+    public:
+
+        static constexpr bool value = get_value<T>(0);
+    };
+
+    WINRT_EXPORT template <typename T, std::enable_if_t<!has_GetAt<T>::value>* = nullptr>
+    auto begin(T const& collection) -> decltype(collection.First())
+    {
+        auto result = collection.First();
+
+        if (!result.HasCurrent())
         {
-            return value;
+            return {};
         }
 
-        template<typename InputIt, typename Size, typename OutputIt>
-        static auto copy_n(InputIt first, Size count, OutputIt result)
-        {
-            return std::copy_n(first, count, result);
-        }
-    };
+        return result;
+    }
+
+    WINRT_EXPORT template <typename T, std::enable_if_t<!has_GetAt<T>::value>* = nullptr>
+    auto end([[maybe_unused]] T const& collection) noexcept -> decltype(collection.First())
+    {
+        return {};
+    }
+
+    WINRT_EXPORT template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
+    fast_iterator<T> begin(T const& collection) noexcept
+    {
+        return fast_iterator<T>(collection, 0);
+    }
+
+    WINRT_EXPORT template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
+    fast_iterator<T> end(T const& collection)
+    {
+        return fast_iterator<T>(collection, collection.Size());
+    }
+
+    template <typename T>
+    struct key_value_pair;
 
     template <typename K, typename V>
-    struct collection_traits<wfc::IKeyValuePair<K, V>>
+    struct key_value_pair<wfc::IKeyValuePair<K, V>> final : implements<key_value_pair<wfc::IKeyValuePair<K, V>>, wfc::IKeyValuePair<K, V>>
     {
-        static auto copy(std::pair<K const, V> const& value)
+        key_value_pair(K key, V value) :
+            m_key(std::move(key)),
+            m_value(std::move(value))
         {
-            return make<key_value_pair<K, V>>(value);
         }
 
-        template<typename InputIt, typename Size, typename OutputIt>
-        static auto copy_n(InputIt first, Size count, OutputIt result)
+        K Key() const
         {
-            return std::transform(first, std::next(first, count), result, [](std::pair<K const, V> const& value)
-            {
-                return make<key_value_pair<K, V>>(value);
-            });
+            return m_key;
         }
+
+        V Value() const
+        {
+            return m_value;
+        }
+
+    private:
+
+        K const m_key;
+        V const m_value;
     };
+
+    template <typename T>
+    struct is_key_value_pair : std::false_type {};
+
+    template <typename K, typename V>
+    struct is_key_value_pair<wfc::IKeyValuePair<K, V>> : std::true_type {};
 
     struct input_scope
     {
@@ -8260,33 +11351,142 @@ namespace winrt::impl
 
         bool m_invalid{};
     };
-}
 
-namespace winrt::impl
-{
-    template <typename T, typename Container>
-    struct input_iterable final : implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>
+    struct no_collection_version
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
-
-        explicit input_iterable(Container&& values) : m_values(std::forward<Container>(values))
+        struct iterator_type
         {
+            iterator_type(no_collection_version const&) noexcept
+            {
+            }
+
+            void check_version(no_collection_version const&) const noexcept
+            {
+            }
+        };
+    };
+
+    struct collection_version
+    {
+        struct iterator_type
+        {
+            iterator_type(collection_version const& version) noexcept :
+                m_snapshot(version.get_version())
+            {
+            }
+
+            void check_version(collection_version const& version) const
+            {
+                if (version.get_version() != m_snapshot)
+                {
+                    throw hresult_changed_state();
+                }
+            }
+
+        private:
+
+            uint32_t const m_snapshot;
+        };
+
+        uint32_t get_version() const noexcept
+        {
+            return m_version;
         }
 
-        wfc::IIterator<T> First()
+        void increment_version() noexcept
         {
-            return make<iterator>(this);
+            ++m_version;
         }
 
     private:
 
-        Container const m_values;
+        std::atomic<uint32_t> m_version{};
+    };
 
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
+    template <typename T>
+    struct range_container
+    {
+        T const first;
+        T const last;
+
+        auto begin() const noexcept
         {
-            explicit iterator(input_iterable<T, Container>* owner) noexcept :
-            m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
+            return first;
+        }
+
+        auto end() const noexcept
+        {
+            return last;
+        }
+    };
+}
+
+WINRT_EXPORT namespace winrt
+{
+    template <typename D, typename T, typename Version = impl::no_collection_version>
+    struct iterable_base : Version
+    {
+        template <typename U>
+        static constexpr auto const& wrap_value(U const& value) noexcept
+        {
+            return value;
+        }
+
+        template <typename U>
+        static constexpr auto const& unwrap_value(U const& value) noexcept
+        {
+            return value;
+        }
+
+        auto First()
+        {
+            return make<iterator>(static_cast<D*>(this));
+        }
+
+    protected:
+
+        template<typename InputIt, typename Size, typename OutputIt>
+        auto copy_n(InputIt first, Size count, OutputIt result) const
+        {
+            if constexpr (std::is_same_v<T, decltype(*std::declval<D const>().get_container().begin())> && !impl::is_key_value_pair<T>::value)
+            {
+                std::copy_n(first, count, result);
+            }
+            else
+            {
+                return std::transform(first, std::next(first, count), result, [&](auto&& value)
+                {
+                    if constexpr (!impl::is_key_value_pair<T>::value)
+                    {
+                        return static_cast<D const&>(*this).unwrap_value(value);
+                    }
+                    else
+                    {
+                        return make<impl::key_value_pair<T>>(static_cast<D const&>(*this).unwrap_value(value.first), static_cast<D const&>(*this).unwrap_value(value.second));
+                    }
+                });
+            }
+        }
+
+    private:
+
+        struct iterator final : Version::iterator_type, implements<iterator, Windows::Foundation::Collections::IIterator<T>>
+        {
+            void abi_enter()
+            {
+                m_owner->abi_enter();
+                this->check_version(*m_owner);
+            }
+
+            void abi_exit()
+            {
+                m_owner->abi_exit();
+            }
+
+            explicit iterator(D* const owner) noexcept :
+                Version::iterator_type(*owner),
+                m_current(owner->get_container().begin()),
+                m_end(owner->get_container().end())
             {
                 m_owner.copy_from(owner);
             }
@@ -8298,7 +11498,14 @@ namespace winrt::impl
                     throw hresult_out_of_bounds();
                 }
 
-                return collection_traits<T>::copy(*m_current);
+                if constexpr (!impl::is_key_value_pair<T>::value)
+                {
+                    return m_owner->unwrap_value(*m_current);
+                }
+                else
+                {
+                    return make<impl::key_value_pair<T>>(m_owner->unwrap_value(m_current->first), m_owner->unwrap_value(m_current->second));
+                }
             }
 
             bool HasCurrent() const noexcept
@@ -8318,28 +11525,401 @@ namespace winrt::impl
 
             uint32_t GetMany(array_view<T> values)
             {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                collection_traits<T>::copy_n(m_current, actual, values.begin());
+                uint32_t const actual = (std::min)(static_cast<uint32_t>(std::distance(m_current, m_end)), values.size());
+                m_owner->copy_n(m_current, actual, values.begin());
                 std::advance(m_current, actual);
                 return actual;
             }
 
         private:
 
-            com_ptr<input_iterable<T, Container>> m_owner;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
+            com_ptr<D> m_owner;
+            decltype(m_owner->get_container().begin()) m_current;
+            decltype(m_owner->get_container().end()) const m_end;
         };
     };
 
+    template <typename D, typename T, typename Version = impl::no_collection_version>
+    struct vector_view_base : iterable_base<D, T, Version>
+    {
+        T GetAt(uint32_t const index) const
+        {
+            if (index >= Size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            return static_cast<D const&>(*this).unwrap_value(*std::next(static_cast<D const&>(*this).get_container().begin(), index));
+        }
+
+        uint32_t Size() const noexcept
+        {
+            return static_cast<uint32_t>(std::distance(static_cast<D const&>(*this).get_container().begin(), static_cast<D const&>(*this).get_container().end()));
+        }
+
+        bool IndexOf(T const& value, uint32_t& index) const noexcept
+        {
+            auto first = std::find_if(static_cast<D const&>(*this).get_container().begin(), static_cast<D const&>(*this).get_container().end(), [&](auto&& match)
+            {
+                return value == static_cast<D const&>(*this).unwrap_value(match);
+            });
+
+            index = static_cast<uint32_t>(first - static_cast<D const&>(*this).get_container().begin());
+            return index < Size();
+        }
+
+        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
+        {
+            if (startIndex >= Size())
+            {
+                return 0;
+            }
+
+            uint32_t const actual = (std::min)(Size() - startIndex, values.size());
+            this->copy_n(static_cast<D const&>(*this).get_container().begin() + startIndex, actual, values.begin());
+            return actual;
+        }
+    };
+
+    template <typename D, typename T>
+    struct vector_base : vector_view_base<D, T, impl::collection_version>
+    {
+        Windows::Foundation::Collections::IVectorView<T> GetView() const noexcept
+        {
+            return static_cast<D const&>(*this);
+        }
+
+        void SetAt(uint32_t const index, T const& value)
+        {
+            if (index >= static_cast<D const&>(*this).get_container().size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            this->increment_version();
+            static_cast<D&>(*this).get_container()[index] = static_cast<D const&>(*this).wrap_value(value);
+        }
+
+        void InsertAt(uint32_t const index, T const& value)
+        {
+            if (index > static_cast<D const&>(*this).get_container().size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            this->increment_version();
+            static_cast<D&>(*this).get_container().insert(static_cast<D const&>(*this).get_container().begin() + index, static_cast<D const&>(*this).wrap_value(value));
+        }
+
+        void RemoveAt(uint32_t const index)
+        {
+            if (index >= static_cast<D const&>(*this).get_container().size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            this->increment_version();
+            static_cast<D&>(*this).get_container().erase(static_cast<D const&>(*this).get_container().begin() + index);
+        }
+
+        void Append(T const& value)
+        {
+            this->increment_version();
+            static_cast<D&>(*this).get_container().push_back(static_cast<D const&>(*this).wrap_value(value));
+        }
+
+        void RemoveAtEnd()
+        {
+            if (static_cast<D const&>(*this).get_container().empty())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            this->increment_version();
+            static_cast<D&>(*this).get_container().pop_back();
+        }
+
+        void Clear() noexcept
+        {
+            this->increment_version();
+            static_cast<D&>(*this).get_container().clear();
+        }
+
+        void ReplaceAll(array_view<T const> value)
+        {
+            this->increment_version();
+            assign(value.begin(), value.end());
+        }
+
+    private:
+
+        template <typename InputIt>
+        void assign(InputIt first, InputIt last)
+        {
+            using container_type = std::remove_reference_t<decltype(static_cast<D&>(*this).get_container())>;
+
+            if constexpr (std::is_same_v<T, typename container_type::value_type>)
+            {
+                static_cast<D&>(*this).get_container().assign(first, last);
+            }
+            else
+            {
+                auto& container = static_cast<D&>(*this).get_container();
+                container.clear();
+                container.reserve(std::distance(first, last));
+
+                std::transform(first, last, std::back_inserter(container), [&](auto&& value)
+                {
+                    return static_cast<D const&>(*this).wrap_value(value);
+                });
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct observable_vector_base : vector_base<D, T>
+    {
+        event_token VectorChanged(Windows::Foundation::Collections::VectorChangedEventHandler<T> const& handler)
+        {
+            return m_changed.add(handler);
+        }
+
+        void VectorChanged(event_token const cookie)
+        {
+            m_changed.remove(cookie);
+        }
+
+        void SetAt(uint32_t const index, T const& value)
+        {
+            vector_base<D, T>::SetAt(index, value);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemChanged, index);
+        }
+
+        void InsertAt(uint32_t const index, T const& value)
+        {
+            vector_base<D, T>::InsertAt(index, value);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemInserted, index);
+        }
+
+        void RemoveAt(uint32_t const index)
+        {
+            vector_base<D, T>::RemoveAt(index);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemRemoved, index);
+        }
+
+        void Append(T const& value)
+        {
+            vector_base<D, T>::Append(value);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemInserted, this->Size() - 1);
+        }
+
+        void RemoveAtEnd()
+        {
+            vector_base<D, T>::RemoveAtEnd();
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemRemoved, this->Size());
+        }
+
+        void Clear()
+        {
+            vector_base<D, T>::Clear();
+            call_changed(Windows::Foundation::Collections::CollectionChange::Reset, 0);
+        }
+
+        void ReplaceAll(array_view<T const> value)
+        {
+            vector_base<D, T>::ReplaceAll(value);
+            call_changed(Windows::Foundation::Collections::CollectionChange::Reset, 0);
+        }
+
+    private:
+
+        event<Windows::Foundation::Collections::VectorChangedEventHandler<T>> m_changed;
+
+        void call_changed(Windows::Foundation::Collections::CollectionChange const change, uint32_t const index)
+        {
+            m_changed(static_cast<D const&>(*this), make<args>(change, index));
+        }
+
+        struct args final : implements<args, Windows::Foundation::Collections::IVectorChangedEventArgs>
+        {
+            args(Windows::Foundation::Collections::CollectionChange const change, uint32_t const index) noexcept :
+                m_change(change),
+                m_index(index)
+            {
+            }
+
+            Windows::Foundation::Collections::CollectionChange CollectionChange() const noexcept
+            {
+                return m_change;
+            }
+
+            uint32_t Index() const noexcept
+            {
+                return m_index;
+            }
+
+        private:
+
+            Windows::Foundation::Collections::CollectionChange const m_change;
+            uint32_t const m_index;
+        };
+    };
+
+    template <typename D, typename K, typename V, typename Version = impl::no_collection_version>
+    struct map_view_base : iterable_base<D, Windows::Foundation::Collections::IKeyValuePair<K, V>, Version>
+    {
+        V Lookup(K const& key) const
+        {
+            auto pair = static_cast<D const&>(*this).get_container().find(static_cast<D const&>(*this).wrap_value(key));
+
+            if (pair == static_cast<D const&>(*this).get_container().end())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            return static_cast<D const&>(*this).unwrap_value(pair->second);
+        }
+
+        uint32_t Size() const noexcept
+        {
+            return static_cast<uint32_t>(static_cast<D const&>(*this).get_container().size());
+        }
+
+        bool HasKey(K const& key) const noexcept
+        {
+            return static_cast<D const&>(*this).get_container().find(static_cast<D const&>(*this).wrap_value(key)) != static_cast<D const&>(*this).get_container().end();
+        }
+
+        void Split(Windows::Foundation::Collections::IMapView<K, V>& first, Windows::Foundation::Collections::IMapView<K, V>& second) const noexcept
+        {
+            first = nullptr;
+            second = nullptr;
+        }
+    };
+
+    template <typename D, typename K, typename V>
+    struct map_base : map_view_base<D, K, V, impl::collection_version>
+    {
+        Windows::Foundation::Collections::IMapView<K, V> GetView() const
+        {
+            return static_cast<D const&>(*this);
+        }
+
+        bool Insert(K const& key, V const& value)
+        {
+            this->increment_version();
+            auto pair = static_cast<D&>(*this).get_container().insert_or_assign(static_cast<D const&>(*this).wrap_value(key), static_cast<D const&>(*this).wrap_value(value));
+            return !pair.second;
+        }
+
+        void Remove(K const& key)
+        {
+            this->increment_version();
+            static_cast<D&>(*this).get_container().erase(static_cast<D const&>(*this).wrap_value(key));
+        }
+
+        void Clear() noexcept
+        {
+            this->increment_version();
+            static_cast<D&>(*this).get_container().clear();
+        }
+    };
+
+    template <typename D, typename K, typename V>
+    struct observable_map_base : map_base<D, K, V>
+    {
+        event_token MapChanged(Windows::Foundation::Collections::MapChangedEventHandler<K, V> const& handler)
+        {
+            return m_changed.add(handler);
+        }
+
+        void MapChanged(event_token const cookie)
+        {
+            m_changed.remove(cookie);
+        }
+
+        bool Insert(K const& key, V const& value)
+        {
+            bool const result = map_base<D, K, V>::Insert(key, value);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemInserted, key);
+            return result;
+        }
+
+        void Remove(K const& key)
+        {
+            map_base<D, K, V>::Remove(key);
+            call_changed(Windows::Foundation::Collections::CollectionChange::ItemRemoved, key);
+        }
+
+        void Clear() noexcept
+        {
+            map_base<D, K, V>::Clear();
+            call_changed(Windows::Foundation::Collections::CollectionChange::Reset, impl::empty_value<K>());
+        }
+
+    private:
+
+        event<Windows::Foundation::Collections::MapChangedEventHandler<K, V>> m_changed;
+
+        void call_changed(Windows::Foundation::Collections::CollectionChange const change, K const& key)
+        {
+            m_changed(static_cast<D const&>(*this), make<args>(change, key));
+        }
+
+        struct args final : implements<args, Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+        {
+            args(Windows::Foundation::Collections::CollectionChange const change, K const& key) noexcept :
+                m_change(change),
+                m_key(key)
+            {
+            }
+
+            Windows::Foundation::Collections::CollectionChange CollectionChange() const noexcept
+            {
+                return m_change;
+            }
+
+            K Key() const noexcept
+            {
+                return m_key;
+            }
+
+        private:
+
+            Windows::Foundation::Collections::CollectionChange const m_change;
+            K const m_key;
+        };
+    };
+}
+
+namespace winrt::impl
+{
+    template <typename T, typename Container>
+    struct input_iterable final :
+        implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>,
+        iterable_base<input_iterable<T, Container>, T>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit input_iterable(Container&& values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        auto& get_container() const noexcept
+        {
+            return m_values;
+        }
+
+    private:
+
+        Container const m_values;
+    };
+
     template <typename T, typename InputIt>
-    struct scoped_input_iterable final : input_scope, implements<scoped_input_iterable<T, InputIt>, non_agile, no_weak_ref, wfc::IIterable<T>>
+    struct scoped_input_iterable final :
+        input_scope,
+        implements<scoped_input_iterable<T, InputIt>, non_agile, no_weak_ref, wfc::IIterable<T>>,
+        iterable_base<scoped_input_iterable<T, InputIt>, T>
     {
         void abi_enter() const
         {
@@ -8350,75 +11930,15 @@ namespace winrt::impl
         {
         }
 
-        wfc::IIterator<T> First()
+        auto get_container() const noexcept
         {
-            return make<iterator>(this);
+            return range_container<InputIt>{ m_begin, m_end };
         }
 
     private:
 
         InputIt const m_begin;
         InputIt const m_end;
-
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
-        {
-            void abi_enter() const
-            {
-                m_owner->check_scope();
-            }
-
-            explicit iterator(scoped_input_iterable<T, InputIt>* owner) noexcept :
-            m_current(owner->m_begin),
-                m_end(owner->m_end)
-            {
-                m_owner.copy_from(owner);
-            }
-
-            T Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return collection_traits<T>::copy(*m_current);
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<T> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                collection_traits<T>::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<scoped_input_iterable<T, InputIt>> m_owner;
-            InputIt m_current;
-            InputIt const m_end;
-        };
     };
 
     template <typename T, typename Container>
@@ -8476,6 +11996,11 @@ WINRT_EXPORT namespace winrt::param
         }
 
         iterable(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        template <typename U, std::enable_if_t<std::is_convertible_v<U, value_type>>* = nullptr>
+        iterable(std::initializer_list<U> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
         {
         }
 
@@ -8578,7 +12103,7 @@ WINRT_EXPORT namespace winrt::param
     template <typename T>
     auto get_abi(iterable<T> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 
     template <typename T>
@@ -8688,14 +12213,16 @@ WINRT_EXPORT namespace winrt::param
     template <typename T>
     auto get_abi(async_iterable<T> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 }
 
 namespace winrt::impl
 {
     template <typename T, typename Container>
-    struct input_vector_view final : implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
+    struct input_vector_view final :
+        implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>,
+        vector_view_base<input_vector_view<T, Container>, T>
     {
         static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
@@ -8703,112 +12230,21 @@ namespace winrt::impl
         {
         }
 
-        T GetAt(uint32_t const index) const
+        auto& get_container() const noexcept
         {
-            if (index >= Size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return m_values[index];
-        }
-
-        uint32_t Size() const noexcept
-        {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const noexcept
-        {
-            index = static_cast<uint32_t>(std::find(m_values.begin(), m_values.end(), value) - m_values.begin());
-            return index < m_values.size();
-        }
-
-        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
-        {
-            if (startIndex >= Size())
-            {
-                return 0;
-            }
-
-            uint32_t actual = Size() - startIndex;
-
-            if (actual > values.size())
-            {
-                actual = values.size();
-            }
-
-            std::copy_n(m_values.begin() + startIndex, actual, values.begin());
-            return actual;
-        }
-
-        wfc::IIterator<T> First()
-        {
-            return make<iterator>(this);
+            return m_values;
         }
 
     private:
 
         Container const m_values;
-
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
-        {
-            explicit iterator(input_vector_view<T, Container>* owner) noexcept :
-            m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            T Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return*m_current;
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<T> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                std::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<input_vector_view<T, Container>> m_owner;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
-        };
     };
 
     template <typename T, typename InputIt>
-    struct scoped_input_vector_view final : input_scope, implements<scoped_input_vector_view<T, InputIt>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
+    struct scoped_input_vector_view final :
+        input_scope,
+        implements<scoped_input_vector_view<T, InputIt>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>,
+        vector_view_base<scoped_input_vector_view<T, InputIt>, T>
     {
         void abi_enter() const
         {
@@ -8819,114 +12255,15 @@ namespace winrt::impl
         {
         }
 
-        T GetAt(uint32_t const index) const
+        auto get_container() const noexcept
         {
-            if (index >= Size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return*std::next(m_begin, index);
-        }
-
-        uint32_t Size() const noexcept
-        {
-            return static_cast<uint32_t>(std::distance(m_begin, m_end));
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const noexcept
-        {
-            index = static_cast<uint32_t>(std::find(m_begin, m_end, value) - m_begin);
-            return index < Size();
-        }
-
-        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
-        {
-            if (startIndex >= Size())
-            {
-                return 0;
-            }
-
-            uint32_t actual = Size() - startIndex;
-
-            if (actual > values.size())
-            {
-                actual = values.size();
-            }
-
-            std::copy_n(m_begin + startIndex, actual, values.begin());
-            return actual;
-        }
-
-        wfc::IIterator<T> First()
-        {
-            return make<iterator>(this);
+            return range_container<InputIt>{ m_begin, m_end };
         }
 
     private:
 
         InputIt const m_begin;
         InputIt const m_end;
-
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
-        {
-            void abi_enter() const
-            {
-                m_owner->check_scope();
-            }
-
-            explicit iterator(scoped_input_vector_view<T, InputIt>* owner) noexcept :
-            m_current(owner->m_begin),
-                m_end(owner->m_end)
-            {
-                m_owner.copy_from(owner);
-            }
-
-            T Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return*m_current;
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<T> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                std::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<scoped_input_vector_view<T, InputIt>> m_owner;
-            InputIt m_current;
-            InputIt const m_end;
-        };
     };
 
     template <typename T, typename InputIt>
@@ -8981,6 +12318,11 @@ WINRT_EXPORT namespace winrt::param
         {
         }
 
+        template <typename U, std::enable_if_t<std::is_convertible_v<U, value_type>>* = nullptr>
+        vector_view(std::initializer_list<U> values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
+        {
+        }
+
         template<class InputIt>
         vector_view(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_vector_view<value_type>(first, last))
         {
@@ -9008,7 +12350,7 @@ WINRT_EXPORT namespace winrt::param
     template <typename T>
     auto get_abi(vector_view<T> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 
     template <typename T>
@@ -9063,123 +12405,39 @@ WINRT_EXPORT namespace winrt::param
     template <typename T>
     auto get_abi(async_vector_view<T> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 }
 
 namespace winrt::impl
 {
     template <typename K, typename V, typename Container>
-    struct input_map_view final : implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
+    struct input_map_view final :
+        implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>,
+        map_view_base<input_map_view<K, V, Container>, K, V>
     {
         static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
-
-        using value_type = wfc::IKeyValuePair<K, V>;
-        using interface_type = wfc::IMapView<K, V>;
 
         explicit input_map_view(Container&& values) : m_values(std::forward<Container>(values))
         {
         }
 
-        V Lookup(K const& key) const
+        auto& get_container() const noexcept
         {
-            auto pair = m_values.find(key);
-
-            if (pair == m_values.end())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return pair->second;
-        }
-
-        uint32_t Size() const noexcept
-        {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        bool HasKey(K const& key) const noexcept
-        {
-            return m_values.find(key) != m_values.end();
-        }
-
-        void Split(interface_type& first, interface_type& second) const noexcept
-        {
-            first = nullptr;
-            second = nullptr;
-        }
-
-        wfc::IIterator<value_type> First()
-        {
-            return make<iterator>(this);
+            return m_values;
         }
 
     private:
 
         Container const m_values;
-
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
-        {
-            explicit iterator(input_map_view<K, V, Container>* owner) noexcept :
-            m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            value_type Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return collection_traits<value_type>::copy(*m_current);
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<value_type> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<input_map_view<K, V, Container>> m_owner;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
-        };
     };
 
     template <typename K, typename V, typename Container>
-    struct scoped_input_map_view final : input_scope, implements<scoped_input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
+    struct scoped_input_map_view final :
+        input_scope,
+        implements<scoped_input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>,
+        map_view_base<scoped_input_map_view<K, V, Container>, K, V>
     {
-        using value_type = wfc::IKeyValuePair<K, V>;
-        using interface_type = wfc::IMapView<K, V>;
-
         void abi_enter() const
         {
             check_scope();
@@ -9189,102 +12447,14 @@ namespace winrt::impl
         {
         }
 
-        V Lookup(K const& key) const
+        auto& get_container() const noexcept
         {
-            auto pair = m_values.find(key);
-
-            if (pair == m_values.end())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return pair->second;
-        }
-
-        uint32_t Size() const noexcept
-        {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        bool HasKey(K const& key) const noexcept
-        {
-            return m_values.find(key) != m_values.end();
-        }
-
-        void Split(interface_type& first, interface_type& second) const noexcept
-        {
-            first = nullptr;
-            second = nullptr;
-        }
-
-        wfc::IIterator<value_type> First()
-        {
-            return make<iterator>(this);
+            return m_values;
         }
 
     private:
 
         Container const& m_values;
-
-        struct iterator final : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
-        {
-            void abi_enter() const
-            {
-                m_owner->check_scope();
-            }
-
-            explicit iterator(scoped_input_map_view<K, V, Container>* owner) noexcept :
-            m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            value_type Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return collection_traits<value_type>::copy(*m_current);
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<value_type> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<scoped_input_map_view<K, V, Container>> m_owner;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
-        };
     };
 
     template <typename K, typename V, typename Container>
@@ -9377,7 +12547,7 @@ WINRT_EXPORT namespace winrt::param
     template <typename K, typename V>
     auto get_abi(map_view<K, V> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 
     template <typename K, typename V>
@@ -9438,14 +12608,16 @@ WINRT_EXPORT namespace winrt::param
     template <typename K, typename V>
     auto get_abi(async_map_view<K, V> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 }
 
 namespace winrt::impl
 {
     template <typename T, typename Container>
-    struct input_vector final : implements<input_vector<T, Container>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>
+    struct input_vector final :
+        implements<input_vector<T, Container>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>,
+        vector_base<input_vector<T, Container>, T>
     {
         static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
@@ -9453,186 +12625,19 @@ namespace winrt::impl
         {
         }
 
-        T GetAt(uint32_t const index) const
+        auto& get_container() noexcept
         {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return m_values[index];
+            return m_values;
         }
 
-        uint32_t Size() const noexcept
+        auto& get_container() const noexcept
         {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        wfc::IVectorView<T> GetView()
-        {
-            return*this;
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const noexcept
-        {
-            index = static_cast<uint32_t>(std::find(m_values.begin(), m_values.end(), value) - m_values.begin());
-            return index < m_values.size();
-        }
-
-        void SetAt(uint32_t const index, T const& value)
-        {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values[index] = value;
-        }
-
-        void InsertAt(uint32_t const index, T const& value)
-        {
-            if (index > m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.insert(m_values.begin() + index, value);
-        }
-
-        void RemoveAt(uint32_t const index)
-        {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.erase(m_values.begin() + index);
-        }
-
-        void Append(T const& value)
-        {
-            ++m_version;
-            m_values.push_back(value);
-        }
-
-        void RemoveAtEnd()
-        {
-            if (m_values.empty())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.pop_back();
-        }
-
-        void Clear() noexcept
-        {
-            ++m_version;
-            m_values.clear();
-        }
-
-        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
-        {
-            if (startIndex >= m_values.size())
-            {
-                return 0;
-            }
-
-            uint32_t actual = static_cast<uint32_t>(m_values.size() - startIndex);
-
-            if (actual > values.size())
-            {
-                actual = values.size();
-            }
-
-            std::copy_n(m_values.begin() + startIndex, actual, values.begin());
-            return actual;
-        }
-
-        void ReplaceAll(array_view<T const> value)
-        {
-            ++m_version;
-            m_values.assign(value.begin(), value.end());
-        }
-
-        wfc::IIterator<T> First()
-        {
-            return make<iterator>(this);
+            return m_values;
         }
 
     private:
 
         Container m_values;
-        uint32_t m_version{};
-
-        struct iterator final : implements<iterator, wfc::IIterator<T>>
-        {
-            explicit iterator(input_vector<T, Container>* owner) noexcept :
-            m_version(owner->m_version),
-                m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            void abi_enter() const
-            {
-                if (m_version != m_owner->m_version)
-                {
-                    throw hresult_changed_state();
-                }
-            }
-
-            T Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return*m_current;
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<T> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                std::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<input_vector<T, Container>> m_owner;
-            uint32_t const m_version;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
-        };
     };
 }
 
@@ -9690,150 +12695,36 @@ WINRT_EXPORT namespace winrt::param
     template <typename T>
     auto get_abi(vector<T> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
 }
 
 namespace winrt::impl
 {
     template <typename K, typename V, typename Container>
-    struct input_map final : implements<input_map<K, V, Container>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
+    struct input_map final :
+        implements<input_map<K, V, Container>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>,
+        map_base<input_map<K, V, Container>, K, V>
     {
         static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
-
-        using value_type = wfc::IKeyValuePair<K, V>;
 
         explicit input_map(Container&& values) : m_values(std::forward<Container>(values))
         {
         }
 
-        V Lookup(K const& key) const
+        auto& get_container() noexcept
         {
-            auto pair = m_values.find(key);
-
-            if (pair == m_values.end())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return pair->second;
+            return m_values;
         }
 
-        uint32_t Size() const noexcept
+        auto& get_container() const noexcept
         {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        bool HasKey(K const& key) const noexcept
-        {
-            return m_values.find(key) != m_values.end();
-        }
-
-        wfc::IMapView<K, V> GetView() const
-        {
-            return*this;
-        }
-
-        bool Insert(K const& key, V const& value)
-        {
-            ++m_version;
-            auto pair = m_values.insert_or_assign(key, value);
-            return !pair.second;
-
-        }
-
-        void Remove(K const& key)
-        {
-            ++m_version;
-            m_values.erase(key);
-        }
-
-        void Clear() noexcept
-        {
-            ++m_version;
-            m_values.clear();
-        }
-
-        void Split(wfc::IMapView<K, V>& first, wfc::IMapView<K, V>& second) const noexcept
-        {
-            first = nullptr;
-            second = nullptr;
-        }
-
-        wfc::IIterator<value_type> First()
-        {
-            return make<iterator>(this);
+            return m_values;
         }
 
     private:
 
         Container m_values;
-        uint32_t m_version{};
-
-        struct iterator final : implements<iterator, wfc::IIterator<value_type>>
-        {
-            explicit iterator(input_map<K, V, Container>* owner) noexcept :
-            m_version(owner->m_version),
-                m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            void abi_enter() const
-            {
-                if (m_version != m_owner->m_version)
-                {
-                    throw hresult_changed_state();
-                }
-            }
-
-            value_type Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return collection_traits<value_type>::copy(*m_current);
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<value_type> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<input_map<K, V, Container>> m_owner;
-            uint32_t const m_version;
-            typename Container::const_iterator m_current;
-            typename Container::const_iterator const m_end;
-        };
     };
 
     template <typename K, typename V, typename Container>
@@ -9903,8 +12794,37 @@ WINRT_EXPORT namespace winrt::param
     template <typename K, typename V>
     auto get_abi(map<K, V> const& object) noexcept
     {
-        return *(::IUnknown**)(&object);
+        return *(void**)(&object);
     }
+}
+
+namespace winrt::impl
+{
+    template <typename T, typename Container>
+    struct observable_vector final :
+        implements<observable_vector<T, Container>, wfc::IObservableVector<T>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>,
+        observable_vector_base<observable_vector<T, Container>, T>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit observable_vector(Container&& values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        auto& get_container() noexcept
+        {
+            return m_values;
+        }
+
+        auto& get_container() const noexcept
+        {
+            return m_values;
+        }
+
+    private:
+
+        Container m_values;
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -9914,6 +12834,41 @@ WINRT_EXPORT namespace winrt
     {
         return make<impl::input_vector<T, std::vector<T, Allocator>>>(std::move(values));
     }
+
+    template <typename T, typename Allocator = std::allocator<T>>
+    Windows::Foundation::Collections::IObservableVector<T> single_threaded_observable_vector(std::vector<T, Allocator>&& values = {})
+    {
+        return make<impl::observable_vector<T, std::vector<T, Allocator>>>(std::move(values));
+    }
+}
+
+namespace winrt::impl
+{
+    template <typename K, typename V, typename Container>
+    struct observable_map final :
+        implements<observable_map<K, V, Container>, wfc::IObservableMap<K, V>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>,
+        observable_map_base<observable_map<K, V, Container>, K, V>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit observable_map(Container&& values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        auto& get_container() noexcept
+        {
+            return m_values;
+        }
+
+        auto& get_container() const noexcept
+        {
+            return m_values;
+        }
+
+    private:
+
+        Container m_values;
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -9935,2472 +12890,31 @@ WINRT_EXPORT namespace winrt
     {
         return make<impl::input_map<K, V, std::unordered_map<K, V, Hash, KeyEqual, Allocator>>>(std::move(values));
     }
-}
 
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    template <typename T> struct IReference;
-}
-
-namespace winrt::impl
-{
-    template <typename T>
-    struct abi<Windows::Foundation::IReference<T>>
+    template <typename K, typename V, typename Compare = std::less<K>, typename Allocator = std::allocator<std::pair<K const, V>>>
+    Windows::Foundation::Collections::IObservableMap<K, V> single_threaded_observable_map()
     {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_Value(arg_out<T> value) noexcept = 0;
-        };
-    };
-
-    template <typename D, typename T>
-    struct consume_IReference
-    {
-        T Value() const
-        {
-            T result{};
-            check_hresult((*(abi_t<Windows::Foundation::IReference<T>>**)&static_cast<const Windows::Foundation::IReference<T>&>(static_cast<const D&>(*this)))->get_Value(put_abi(result)));
-            return result;
-        }
-    };
-
-    template <typename T>
-    struct consume<Windows::Foundation::IReference<T>>
-    {
-        template <typename D> using type = consume_IReference<D, T>;
-    };
-
-    template <typename T>
-    struct guid<Windows::Foundation::IReference<T>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::IReference<T>>::value };
-    };
-
-    template <typename T> 
-    struct name<Windows::Foundation::IReference<T>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.IReference`1<" + to_array(name_v<T>) + L">" };
-    };
-
-    template <typename T>
-    struct category<Windows::Foundation::IReference<T>>
-    {
-        using type = pinterface_category<T>;
-        static constexpr GUID value{ 0x61c17706, 0x2d65, 0x11e0,{ 0x9a, 0xe8, 0xd4, 0x85, 0x64, 0x01, 0x54, 0x72 } };
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    template <typename T>
-    using optional = Windows::Foundation::IReference<T>;
-}
-
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    struct Point
-    {
-        float X;
-        float Y;
-
-        Point() noexcept = default;
-
-        constexpr Point(float X, float Y) noexcept
-            : X(X), Y(Y)
-        {}
-
-        constexpr Point(Numerics::float2 const& value) noexcept
-            : X(value.x), Y(value.y)
-        {}
-
-        operator Numerics::float2() const noexcept
-        {
-            return { X, Y };
-        }
-    };
-
-    constexpr bool operator==(Point const& left, Point const& right) noexcept
-    {
-        return left.X == right.X && left.Y == right.Y;
+        return make<impl::observable_map<K, V, std::map<K, V, Compare, Allocator>>>(std::map<K, V, Compare, Allocator>{});
     }
 
-    constexpr bool operator!=(Point const& left, Point const& right) noexcept
+    template <typename K, typename V, typename Compare = std::less<K>, typename Allocator = std::allocator<std::pair<K const, V>>>
+    Windows::Foundation::Collections::IObservableMap<K, V> single_threaded_observable_map(std::map<K, V, Compare, Allocator>&& values)
     {
-        return !(left == right);
+        return make<impl::observable_map<K, V, std::map<K, V, Compare, Allocator>>>(std::move(values));
     }
 
-    struct Size
+    template <typename K, typename V, typename Hash = std::hash<K>, typename KeyEqual = std::equal_to<K>, typename Allocator = std::allocator<std::pair<K const, V>>>
+    Windows::Foundation::Collections::IObservableMap<K, V> single_threaded_observable_map(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values)
     {
-        float Width;
-        float Height;
-
-        Size() noexcept = default;
-
-        constexpr Size(float Width, float Height) noexcept
-            : Width(Width), Height(Height)
-        {}
-
-        constexpr Size(Numerics::float2 const& value) noexcept
-            : Width(value.x), Height(value.y)
-        {}
-
-        operator Numerics::float2() const noexcept
-        {
-            return { Width, Height };
-        }
-    };
-
-    constexpr bool operator==(Size const& left, Size const& right) noexcept
-    {
-        return left.Width == right.Width && left.Height == right.Height;
+        return make<impl::observable_map<K, V, std::unordered_map<K, V, Hash, KeyEqual, Allocator>>>(std::move(values));
     }
-
-    constexpr bool operator!=(Size const& left, Size const& right) noexcept
-    {
-        return !(left == right);
-    }
-
-    struct Rect
-    {
-        float X;
-        float Y;
-        float Width;
-        float Height;
-
-        Rect() noexcept = default;
-
-        constexpr Rect(float X, float Y, float Width, float Height) noexcept :
-            X(X), Y(Y), Width(Width), Height(Height)
-        {}
-
-        constexpr Rect(Point const& point, Size const& size)  noexcept :
-            X(point.X), Y(point.Y), Width(size.Width), Height(size.Height)
-        {}
-    };
-
-    constexpr bool operator==(Rect const& left, Rect const& right) noexcept
-    {
-        return left.X == right.X && left.Y == right.Y && left.Width == right.Width && left.Height == right.Height;
-    }
-
-    constexpr bool operator!=(Rect const& left, Rect const& right) noexcept
-    {
-        return !(left == right);
-    }
-}
-
-namespace winrt::impl
-{
-    template <> struct name<Windows::Foundation::Point>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Point" };
-    };
-
-    template <> struct category<Windows::Foundation::Point>
-    {
-        using type = struct_category<float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Size>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Size" };
-    };
-
-    template <> struct category<Windows::Foundation::Size>
-    {
-        using type = struct_category<float, float>;
-    };
-    
-    template <> struct name<Windows::Foundation::Rect>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Rect" };
-    };
-
-    template <> struct category<Windows::Foundation::Rect>
-    {
-        using type = struct_category<float, float, float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::float2>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector2" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::float2>
-    {
-        using type = struct_category<float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::float3>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector3" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::float3>
-    {
-        using type = struct_category<float, float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::float4>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector4" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::float4>
-    {
-        using type = struct_category<float, float, float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::float3x2>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix3x2" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::float3x2>
-    {
-        using type = struct_category<float, float, float, float, float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::float4x4>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix4x4" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::float4x4>
-    {
-        using type = struct_category<
-            float, float, float, float,
-            float, float, float, float,
-            float, float, float, float,
-            float, float, float, float
-        >;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::quaternion>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Quaternion" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::quaternion>
-    {
-        using type = struct_category<float, float, float, float>;
-    };
-
-    template <> struct name<Windows::Foundation::Numerics::plane>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.Numerics.Plane" };
-    };
-
-    template <> struct category<Windows::Foundation::Numerics::plane>
-    {
-        using type = struct_category<Windows::Foundation::Numerics::float3, float>;
-    };
-}
-
-namespace winrt::impl
-{
-    using filetime_period = std::ratio_multiply<std::ratio<100>, std::nano>;
-}
-
-WINRT_EXPORT namespace winrt
-{
-    struct clock;
-
-    namespace Windows::Foundation
-    {
-        using TimeSpan = std::chrono::duration<int64_t, impl::filetime_period>;
-        using DateTime = std::chrono::time_point<clock, TimeSpan>;
-    }
-}
-
-namespace winrt::impl
-{
-    template <> struct name<Windows::Foundation::TimeSpan>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.TimeSpan" };
-    };
-
-    template <> struct category<Windows::Foundation::TimeSpan>
-    {
-        using type = struct_category<int64_t>;
-    };
-
-    template <> struct name<Windows::Foundation::DateTime>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.DateTime" };
-    };
-
-    template <> struct category<Windows::Foundation::DateTime>
-    {
-        using type = struct_category<int64_t>;
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    struct clock
-    {
-        using rep = int64_t;
-        using period = impl::filetime_period;
-        using duration = Windows::Foundation::TimeSpan;
-        using time_point = Windows::Foundation::DateTime;
-
-        static constexpr bool is_steady = false;
-
-        static time_point now() noexcept
-        {
-            FILETIME ft;
-            ::GetSystemTimePreciseAsFileTime(&ft);
-            return from_FILETIME(ft);
-        }
-
-        static time_t to_time_t(time_point const& time) noexcept
-        {
-            return std::chrono::duration_cast<time_t_duration>(time - time_t_epoch).count();
-        }
-
-        static time_point from_time_t(time_t time) noexcept
-        {
-            return time_t_epoch + time_t_duration{ time };
-        }
-
-        // FILETIME is identical to WinRT's DateTime, save for the fact that it's unsigned.
-        // Detect mismatch, but this only matters for dates before 27000 BC or after 29000 AD.
-        static FILETIME to_FILETIME(time_point const& time) noexcept
-        {
-            ULARGE_INTEGER ul;
-            ul.QuadPart = time.time_since_epoch().count();
-            WINRT_ASSERT(static_cast<int32_t>(ul.HighPart) >= 0);
-            return FILETIME{ ul.LowPart, ul.HighPart };
-        }
-
-        static time_point from_FILETIME(FILETIME const& time) noexcept
-        {
-            ULARGE_INTEGER ul{ { time.dwLowDateTime, time.dwHighDateTime } };
-            WINRT_ASSERT(static_cast<int32_t>(ul.HighPart) >= 0);
-            return time_point{ duration{ ul.QuadPart } };
-        }
-
-    private:
-
-        // Define 00:00:00, Jan 1 1970 UTC in FILETIME units.
-        static constexpr time_point time_t_epoch{ duration{ 0x019DB1DED53E8000 } };
-        using time_t_duration = std::chrono::duration<time_t>;
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    struct access_token : handle
-    {
-        static access_token process()
-        {
-            access_token token;
-            check_bool(OpenProcessToken(GetCurrentProcess(), TOKEN_DUPLICATE, token.put()));
-            access_token duplicate;
-            check_bool(DuplicateToken(token.get(), SecurityImpersonation, duplicate.put()));
-            return duplicate;
-        }
-
-        static access_token thread()
-        {
-            access_token token;
-
-            if (!OpenThreadToken(GetCurrentThread(), TOKEN_IMPERSONATE, TRUE, token.put()))
-            {
-                DWORD const error = GetLastError();
-
-                if (error != ERROR_NO_TOKEN)
-                {
-                    throw_hresult(HRESULT_FROM_WIN32(error));
-                }
-            }
-
-            return token;
-        }
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-        static access_token client()
-        {
-            struct impersonate_guard
-            {
-                impersonate_guard(com_ptr<IServerSecurity> const& server) : m_server(server)
-                {
-                    check_hresult(m_server->ImpersonateClient());
-                }
-
-                ~impersonate_guard()
-                {
-                    check_hresult(m_server->RevertToSelf());
-                }
-
-            private:
-
-                com_ptr<IServerSecurity> const& m_server;
-            };
-
-            com_ptr<IServerSecurity> server;
-            check_hresult(CoGetCallContext(__uuidof(server), server.put_void()));
-            impersonate_guard impersonate(server);
-            return thread();
-        }
-#endif
-
-        access_token() = default;
-        access_token(access_token&& other) = default;
-        access_token& operator=(access_token&& other) = default;
-
-        access_token impersonate() const
-        {
-            auto previous = thread();
-            check_bool(SetThreadToken(nullptr, get()));
-            return previous;
-        }
-
-        void revert() const
-        {
-            check_bool(SetThreadToken(nullptr, get()));
-        }
-
-        auto operator()() const
-        {
-            struct guard
-            {
-                guard(access_token&& previous) noexcept : m_previous(std::move(previous))
-                {
-                }
-
-                ~guard()
-                {
-                    m_previous.revert();
-                }
-
-                guard(guard const&)
-                {
-                    // A Visual C++ compiler bug (550631) requires the copy constructor even though it is never called.
-                    WINRT_ASSERT(false);
-                }
-
-            private:
-
-                access_token const m_previous;
-            };
-
-            return guard(impersonate());
-        }
-    };
-}
-
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    enum class AsyncStatus : int32_t
-    {
-        Started,
-        Completed,
-        Canceled,
-        Error,
-    };
-
-    struct AsyncActionCompletedHandler;
-    template <typename TResult> struct AsyncOperationCompletedHandler;
-    template <typename TProgress> struct AsyncActionProgressHandler;
-    template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
-    template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
-    template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
-
-    struct IAsyncInfo;
-    struct IAsyncAction;
-    template <typename TResult> struct IAsyncOperation;
-    template <typename TProgress> struct IAsyncActionWithProgress;
-    template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-}
-
-namespace winrt::impl
-{
-    inline bool is_sta() noexcept
-    {
-        APTTYPE aptType;
-        APTTYPEQUALIFIER aptTypeQualifier;
-        return (S_OK == CoGetApartmentType(&aptType, &aptTypeQualifier)) && ((aptType == APTTYPE_STA) || (aptType == APTTYPE_MAINSTA));
-    }
-
-    template <typename Async>
-    void blocking_suspend(Async const& async)
-    {
-        WINRT_ASSERT(!is_sta());
-
-        if (async.Status() == Windows::Foundation::AsyncStatus::Completed)
-        {
-            return;
-        }
-
-        slim_mutex m;
-        slim_condition_variable cv;
-        bool completed = false;
-        async.Completed([&](Async const&, Windows::Foundation::AsyncStatus)
-        {
-            {
-                slim_lock_guard const guard(m);
-                completed = true;
-            }
-            cv.notify_one();
-        });
-
-        slim_lock_guard guard(m);
-        cv.wait(m, [&] { return completed; }); 
-    }
-
-    template <typename D>
-    struct consume_IAsyncInfo
-    {
-        uint32_t Id() const;
-        Windows::Foundation::AsyncStatus Status() const;
-        HRESULT ErrorCode() const;
-        void Cancel() const;
-        void Close() const;
-    };
-
-
-    template <typename D>
-    struct consume_IAsyncAction
-    {
-        void Completed(Windows::Foundation::AsyncActionCompletedHandler const& handler) const;
-        Windows::Foundation::AsyncActionCompletedHandler Completed() const;
-        void GetResults() const;
-        void get() const;
-    };
-
-    template <typename D, typename TResult>
-    struct consume_IAsyncOperation
-    {
-        void Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const;
-        Windows::Foundation::AsyncOperationCompletedHandler<TResult> Completed() const;
-        TResult GetResults() const;
-        TResult get() const;
-    };
-
-    template <typename D, typename TProgress>
-    struct consume_IAsyncActionWithProgress
-    {
-        void Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const;
-        Windows::Foundation::AsyncActionProgressHandler<TProgress> Progress() const;
-        void Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const;
-        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
-        void GetResults() const;
-        void get() const;
-    };
-
-    template <typename D, typename TResult, typename TProgress>
-    struct consume_IAsyncOperationWithProgress
-    {
-        void Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const;
-        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> Progress() const;
-        void Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const;
-        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
-        TResult GetResults() const;
-        TResult get() const;
-    };
-
-    template <>
-    struct abi<Windows::Foundation::AsyncActionCompletedHandler>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept = 0;
-        };
-    };
-
-    template <typename TResult>
-    struct abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
-        };
-    };
-
-    template <typename TProgress>
-    struct abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
-        };
-    };
-
-    template <typename TProgress>
-    struct abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
-        };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
-        };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-    {
-        struct type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
-        };
-    };
-
-    template <>
-    struct abi<Windows::Foundation::IAsyncInfo>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall get_Id(uint32_t* id) noexcept = 0;
-            virtual HRESULT __stdcall get_Status(Windows::Foundation::AsyncStatus* status) noexcept = 0;
-            virtual HRESULT __stdcall get_ErrorCode(HRESULT* errorCode) noexcept = 0;
-            virtual HRESULT __stdcall Cancel() noexcept = 0;
-            virtual HRESULT __stdcall Close() noexcept = 0;
-        };
-    };
-
-    template <>
-    struct consume<Windows::Foundation::IAsyncInfo>
-    {
-        template <typename D> using type = consume_IAsyncInfo<D>;
-    };
-
-    template <>
-    struct abi<Windows::Foundation::IAsyncAction>
-    {
-        struct type : IInspectable
-        {
-            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall GetResults() noexcept = 0;
-        };
-    };
-
-    template <>
-    struct consume<Windows::Foundation::IAsyncAction>
-    {
-        template <typename D> using type = consume_IAsyncAction<D>;
-    };
-
-    template <>
-    struct delegate<Windows::Foundation::AsyncActionCompletedHandler>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncAction const*>(&asyncInfo), asyncStatus);
-                    return S_OK;
-                }
-                catch (...)
-                {
-                    return to_hresult();
-                }
-            }
-        };
-    };
-
-    template <typename TResult>
-    struct delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperation<TResult> const*>(&sender), args);
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TProgress>
-    struct delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, arg_in<TProgress> args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const*>(&sender), *reinterpret_cast<TProgress const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TProgress>
-    struct delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const*>(&sender), args);
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, arg_in<TProgress> args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const*>(&sender), *reinterpret_cast<TProgress const*>(&args));
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-    {
-        template <typename H>
-        struct type final : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>
-        {
-            type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
-
-            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
-            {
-                try
-                {
-                    (*this)(*reinterpret_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const*>(&sender), args);
-                    return S_OK;
-                }
-                catch (...) { return to_hresult(); }
-            }
-        };
-    };
-
-    template <typename TResult>
-    struct abi<Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept = 0;
-        };
-    };
-
-    template <typename TResult>
-    struct consume<Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        template <typename D> using type = consume_IAsyncOperation<D, TResult>;
-    };
-
-    template <typename TProgress>
-    struct abi<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall put_Progress(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Progress(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall GetResults() noexcept = 0;
-        };
-    };
-
-    template <typename TProgress>
-    struct consume<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        template <typename D> using type = consume_IAsyncActionWithProgress<D, TProgress>;
-    };
-
-    template <typename TResult, typename TProgress>
-    struct abi<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        struct __declspec(novtable) type : IInspectable
-        {
-            virtual HRESULT __stdcall put_Progress(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Progress(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
-            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept = 0;
-        };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct consume<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        template <typename D> using type = consume_IAsyncOperationWithProgress<D, TResult, TProgress>;
-    };
-
-    template <>
-    struct guid<Windows::Foundation::AsyncActionCompletedHandler>
-    {
-        static constexpr GUID value{ 0xA4ED5C81,0x76C9,0x40BD,{ 0x8B,0xE6,0xB1,0xD9,0x0F,0xB2,0x0A,0xE7 } };
-    };
-    
-    template <> 
-    struct name<Windows::Foundation::AsyncActionCompletedHandler>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.AsyncActionCompletedHandler" };
-    };
-
-    template <>
-    struct category<Windows::Foundation::AsyncActionCompletedHandler>
-    {
-        using type = delegate_category;
-    };
-
-    template <typename TResult>
-    struct guid<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>::value };
-    };
-
-    template <typename TResult>
-    struct name<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationCompletedHandler`1<" + to_array(name_v<TResult>) + L">" };
-    };
-
-    template <typename TResult>
-    struct category<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-    {
-        using type = pinterface_category<TResult>;
-        static constexpr GUID value{ 0xfcdcf02c, 0xe5d8, 0x4478,{ 0x91, 0x5a, 0x4d, 0x90, 0xb7, 0x4b, 0x83, 0xa5 } };
-    };
-
-    template <typename TProgress>
-    struct guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>::value };
-    };
-
-    template <typename TProgress>
-    struct name<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<" + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TProgress>
-    struct category<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
-        using type = pinterface_category<TProgress>;
-        static constexpr GUID value{ 0x9c029f91, 0xcc84, 0x44fd,{ 0xac, 0x26, 0x0a, 0x6c, 0x4e, 0x55, 0x52, 0x81 } };
-    };
-
-    template <typename TProgress>
-    struct guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>::value };
-    };
-
-    template <typename TProgress>
-    struct name<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.AsyncActionProgressHandler`1<" + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TProgress>
-    struct category<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        using type = pinterface_category<TProgress>;
-        static constexpr GUID value{ 0x6d844858, 0x0cff, 0x4590,{ 0xae, 0x89, 0x95, 0xa5, 0xa5, 0xc8, 0xb4, 0xb8 } };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct guid<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>::value };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct name<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationProgressHandler`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct category<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-    {
-        using type = pinterface_category<TResult, TProgress>;
-        static constexpr GUID value{ 0x55690902, 0x0aab, 0x421a,{ 0x87, 0x78, 0xf8, 0xce, 0x50, 0x26, 0xd7, 0x58 } };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct guid<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>::value };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct name<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct category<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-    {
-        using type = pinterface_category<TResult, TProgress>;
-        static constexpr GUID value{ 0xe85df41d, 0x6aa7, 0x46e3,{ 0xa8, 0xe2, 0xf0, 0x09, 0xd8, 0x40, 0xc6, 0x27 } };
-    };
-
-    template <>
-    struct guid<Windows::Foundation::IAsyncInfo>
-    {
-        static constexpr GUID value{ 0x00000036,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
-    };
-
-    template <>
-    struct name<Windows::Foundation::IAsyncInfo>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.IAsyncInfo" };
-    };
-
-    template <>
-    struct category<Windows::Foundation::IAsyncInfo>
-    {
-        using type = interface_category;
-    };
-
-    template <>
-    struct guid<Windows::Foundation::IAsyncAction>
-    {
-        static constexpr GUID value{ 0x5A648006,0x843A,0x4DA9,{ 0x86,0x5B,0x9D,0x26,0xE5,0xDF,0xAD,0x7B } };
-    };
-
-    template <>
-    struct name<Windows::Foundation::IAsyncAction>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.IAsyncAction" };
-    };
-
-    template <>
-    struct category<Windows::Foundation::IAsyncAction>
-    {
-        using type = interface_category;
-    };
-
-    template <typename TResult>
-    struct guid<Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::IAsyncOperation<TResult>>::value };
-    };
-
-    template <typename TResult>
-    struct name<Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncOperation`1<" + to_array(name_v<TResult>) + L">" };
-    };
-
-    template <typename TResult>
-    struct category<Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        using type = pinterface_category<TResult>;
-        static constexpr GUID value{ 0x9fc2b0bb, 0xe446, 0x44e2,{ 0xaa, 0x61, 0x9c, 0xab, 0x8f, 0x63, 0x6a, 0xf2 } };
-    };
-
-    template <typename TProgress>
-    struct guid<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::IAsyncActionWithProgress<TProgress>>::value };
-    };
-
-    template <typename TProgress>
-    struct name<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncActionWithProgress`1<" + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TProgress>
-    struct category<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        using type = pinterface_category<TProgress>;
-        static constexpr GUID value{ 0x1f6db258, 0xe803, 0x48a1,{ 0x95, 0x46, 0xeb, 0x73, 0x53, 0x39, 0x88, 0x84 } };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct guid<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>::value };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct name<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncOperationWithProgress`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
-    };
-
-    template <typename TResult, typename TProgress>
-    struct category<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        using type = pinterface_category<TResult, TProgress>;
-        static constexpr GUID value{ 0xb5d036d7, 0xe297, 0x498f,{ 0xba, 0x60, 0x02, 0x89, 0xe7, 0x6e, 0x23, 0xdd } };
-    };
-}
-
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    struct IAsyncInfo :
-        IInspectable,
-        impl::consume_t<IAsyncInfo>
-    {
-        IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    struct IAsyncAction :
-        IInspectable,
-        impl::consume_t<IAsyncAction>,
-        impl::require<IAsyncAction, IAsyncInfo>
-    {
-        IAsyncAction(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    template <typename TProgress>
-    struct WINRT_EBO IAsyncActionWithProgress :
-        IInspectable,
-        impl::consume_t<IAsyncActionWithProgress<TProgress>>,
-        impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
-    {
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    template <typename TResult>
-    struct WINRT_EBO IAsyncOperation :
-        IInspectable,
-        impl::consume_t<IAsyncOperation<TResult>>,
-        impl::require<IAsyncOperation<TResult>, IAsyncInfo>
-    {
-        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
-        IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    template <typename TResult, typename TProgress>
-    struct WINRT_EBO IAsyncOperationWithProgress :
-        IInspectable,
-        impl::consume_t<IAsyncOperationWithProgress<TResult, TProgress>>,
-        impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
-    {
-        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
-    };
-
-    struct AsyncActionCompletedHandler : IUnknown
-    {
-        AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncActionCompletedHandler(L handler) :
-            AsyncActionCompletedHandler(impl::make_delegate<AsyncActionCompletedHandler>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncActionCompletedHandler(F* handler) :
-            AsyncActionCompletedHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncActionCompletedHandler(O* object, M method) :
-            AsyncActionCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncAction const& sender, AsyncStatus args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncActionCompletedHandler>**)this)->Invoke(get_abi(sender), args));
-        }
-    };
-
-    template <typename TProgress>
-    struct WINRT_EBO AsyncActionProgressHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncActionProgressHandler(L handler) :
-            AsyncActionProgressHandler(impl::make_delegate<AsyncActionProgressHandler<TProgress>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncActionProgressHandler(F* handler) :
-            AsyncActionProgressHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncActionProgressHandler(O* object, M method) :
-            AsyncActionProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncActionWithProgress<TProgress> const& sender, TProgress const& args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncActionProgressHandler<TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
-    };
-
-    template <typename TProgress>
-    struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncActionWithProgressCompletedHandler(L handler) :
-            AsyncActionWithProgressCompletedHandler(impl::make_delegate<AsyncActionWithProgressCompletedHandler<TProgress>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncActionWithProgressCompletedHandler(F* handler) :
-            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O* object, M method) :
-            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncActionWithProgress<TProgress> const& sender, AsyncStatus const args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncActionWithProgressCompletedHandler<TProgress>>**)this)->Invoke(get_abi(sender), args));
-        }
-    };
-
-    template <typename TResult, typename TProgress>
-    struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncOperationProgressHandler(L handler) :
-            AsyncOperationProgressHandler(impl::make_delegate<AsyncOperationProgressHandler<TResult, TProgress>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncOperationProgressHandler(F* handler) :
-            AsyncOperationProgressHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncOperationProgressHandler(O* object, M method) :
-            AsyncOperationProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, TProgress const& args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncOperationProgressHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
-        }
-    };
-
-    template <typename TResult, typename TProgress>
-    struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
-        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
-        AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncOperationWithProgressCompletedHandler(L handler) :
-            AsyncOperationWithProgressCompletedHandler(impl::make_delegate<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncOperationWithProgressCompletedHandler(F* handler) :
-            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O* object, M method) :
-            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, AsyncStatus const args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), args));
-        }
-    };
-
-    template <typename TResult>
-    struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
-    {
-        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
-        AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-
-        template <typename L>
-        AsyncOperationCompletedHandler(L handler) :
-            AsyncOperationCompletedHandler(impl::make_delegate<AsyncOperationCompletedHandler<TResult>>(std::forward<L>(handler)))
-        {}
-
-        template <typename F> AsyncOperationCompletedHandler(F* handler) :
-            AsyncOperationCompletedHandler([=](auto&&... args) { handler(args...); })
-        {}
-
-        template <typename O, typename M> AsyncOperationCompletedHandler(O* object, M method) :
-            AsyncOperationCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
-        {}
-
-        void operator()(IAsyncOperation<TResult> const& sender, AsyncStatus args) const
-        {
-            check_hresult((*(impl::abi_t<AsyncOperationCompletedHandler<TResult>>**)this)->Invoke(get_abi(sender), args));
-        }
-    };
-}
-
-namespace winrt::impl
-{
-    template <typename D>
-    uint32_t consume_IAsyncInfo<D>::Id() const
-    {
-        uint32_t id{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Id(&id));
-        return id;
-    }
-
-    template <typename D>
-    Windows::Foundation::AsyncStatus consume_IAsyncInfo<D>::Status() const
-    {
-        Windows::Foundation::AsyncStatus status{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Status(&status));
-        return status;
-    }
-
-    template <typename D>
-    HRESULT consume_IAsyncInfo<D>::ErrorCode() const
-    {
-        HRESULT code = S_OK;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_ErrorCode(&code));
-        return code;
-    }
-
-    template <typename D>
-    void consume_IAsyncInfo<D>::Cancel() const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->Cancel());
-    }
-
-    template <typename D>
-    void consume_IAsyncInfo<D>::Close() const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->Close());
-    }
-
-
-    template <typename D>
-    void consume_IAsyncAction<D>::Completed(const Windows::Foundation::AsyncActionCompletedHandler& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
-    }
-
-    template <typename D>
-    Windows::Foundation::AsyncActionCompletedHandler consume_IAsyncAction<D>::Completed() const
-    {
-        Windows::Foundation::AsyncActionCompletedHandler handler{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
-        return handler;
-    }
-
-    template <typename D>
-    void consume_IAsyncAction<D>::GetResults() const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->GetResults());
-    }
-
-    template <typename D>
-    void consume_IAsyncAction<D>::get() const
-    {
-        blocking_suspend(static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)));
-        GetResults();
-    }
-
-    template <typename D, typename TResult>
-    void consume_IAsyncOperation<D, TResult>::Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
-    }
-
-    template <typename D, typename TResult>
-    Windows::Foundation::AsyncOperationCompletedHandler<TResult> consume_IAsyncOperation<D, TResult>::Completed() const
-    {
-        Windows::Foundation::AsyncOperationCompletedHandler<TResult> temp;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(temp)));
-        return temp;
-    }
-
-    template <typename D, typename TResult>
-    TResult consume_IAsyncOperation<D, TResult>::GetResults() const
-    {
-        TResult result = empty_value<TResult>();
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->GetResults(put_abi(result)));
-        return result;
-    }
-
-    template <typename D, typename TResult>
-    TResult consume_IAsyncOperation<D, TResult>::get() const
-    {
-        blocking_suspend(static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)));
-        return GetResults();
-    }
-
-    template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
-    }
-
-    template <typename D, typename TProgress>
-    Windows::Foundation::AsyncActionProgressHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Progress() const
-    {
-        Windows::Foundation::AsyncActionProgressHandler<TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
-        return handler;
-    }
-
-    template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
-    }
-
-    template <typename D, typename TProgress>
-    Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Completed() const
-    {
-        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
-        return handler;
-    }
-
-    template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::GetResults() const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->GetResults());
-    }
-
-    template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::get() const
-    {
-        blocking_suspend(static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)));
-        GetResults();
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
-    {
-        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
-        return handler;
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const
-    {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
-    {
-        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
-        return handler;
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    TResult consume_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() const
-    {
-        TResult result = empty_value<TResult>();
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->GetResults(put_abi(result)));
-        return result;
-    }
-
-    template <typename D, typename TResult, typename TProgress>
-    TResult consume_IAsyncOperationWithProgress<D, TResult, TProgress>::get() const
-    {
-        blocking_suspend(static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)));
-        return GetResults();
-    }
-}
-
-namespace winrt::impl
-{
-    template <typename D>
-    struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
-    {
-        HRESULT __stdcall put_Completed(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionCompletedHandler const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Completed(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncActionCompletedHandler>(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetResults() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().GetResults();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D>
-    struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Foundation::IAsyncInfo>
-    {
-        HRESULT __stdcall get_Id(uint32_t* id) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *id = this->shim().Id();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus* status) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *status = this->shim().Status();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_ErrorCode(HRESULT* errorCode) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *errorCode = this->shim().ErrorCode();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Cancel() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Cancel();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall Close() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Close();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename TProgress>
-    struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-    {
-        HRESULT __stdcall put_Progress(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncActionProgressHandler<TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Progress(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncActionProgressHandler<TProgress>>(this->shim().Progress());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall put_Completed(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Completed(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetResults() noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().GetResults();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename TResult>
-    struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
-    {
-        HRESULT __stdcall put_Completed(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationCompletedHandler<TResult> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Completed(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept final
-        {
-            try
-            {
-                clear_abi(results);
-                typename D::abi_guard guard(this->shim());
-                *results = detach_from<TResult>(this->shim().GetResults());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-
-    template <typename D, typename TResult, typename TProgress>
-    struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-    {
-        HRESULT __stdcall put_Progress(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Progress(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>(this->shim().Progress());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall put_Completed(void* handler) noexcept final
-        {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall get_Completed(void** handler) noexcept final
-        {
-            try
-            {
-                *handler = nullptr;
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_from<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept final
-        {
-            try
-            {
-                clear_abi(results);
-                typename D::abi_guard guard(this->shim());
-                *results = detach_from<TResult>(this->shim().GetResults());
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-    };
-}
-
-namespace winrt::impl
-{
-    template <typename Async>
-    struct await_adapter
-    {
-        Async const& async;
-
-        bool await_ready() const
-        {
-            return async.Status() == Windows::Foundation::AsyncStatus::Completed;
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<> handle) const
-        {
-            com_ptr<IContextCallback> context;
-            check_hresult(CoGetObjectContext(__uuidof(context), context.put_void()));
-
-            async.Completed([handle, context = std::move(context)](auto const&, Windows::Foundation::AsyncStatus)
-            {
-                ComCallData data = {};
-                data.pUserDefined = handle.address();
-
-                auto callback = [](ComCallData* data)
-                {
-                    std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
-                    return S_OK;
-                };
-
-                check_hresult(context->ContextCallback(callback, &data, IID_ICallbackWithNoReentrancyToApplicationSTA, 5, nullptr));
-            });
-        }
-
-        auto await_resume() const
-        {
-            return async.GetResults();
-        }
-    };
-}
-
-#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    inline impl::await_adapter<IAsyncAction> operator co_await(IAsyncAction const& async)
-    {
-        return{ async };
-    }
-
-    template <typename TProgress>
-    impl::await_adapter<IAsyncActionWithProgress<TProgress>> operator co_await(IAsyncActionWithProgress<TProgress> const& async)
-    {
-        return{ async };
-    }
-
-    template <typename TResult>
-    impl::await_adapter<IAsyncOperation<TResult>> operator co_await(IAsyncOperation<TResult> const& async)
-    {
-        return{ async };
-    }
-
-    template <typename TResult, typename TProgress>
-    impl::await_adapter<IAsyncOperationWithProgress<TResult, TProgress>> operator co_await(IAsyncOperationWithProgress<TResult, TProgress> const& async)
-    {
-        return{ async };
-    }
-}
-#endif
-
-WINRT_EXPORT namespace winrt
-{
-    inline auto resume_background()
-    {
-        struct awaitable
-        {
-            bool await_ready() const noexcept
-            {
-                return false;
-            }
-
-            void await_resume() const noexcept
-            {
-            }
-
-            void await_suspend(std::experimental::coroutine_handle<> handle) const
-            {
-                if (!TrySubmitThreadpoolCallback(callback, handle.address(), nullptr))
-                {
-                    throw_last_error();
-                }
-            }
-
-        private:
-
-            static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
-            {
-                std::experimental::coroutine_handle<>::from_address(context)();
-            }
-        };
-
-        return awaitable{};
-    }
-
-    template <typename T>
-    auto resume_background(T&& context)
-    {
-        struct awaitable
-        {
-            awaitable(T&& context) : m_context(std::forward<T>(context))
-            {
-            }
-
-            bool await_ready() const noexcept
-            {
-                return false;
-            }
-
-            void await_resume() const noexcept
-            {
-            }
-
-            void await_suspend(std::experimental::coroutine_handle<> resume)
-            {
-                m_resume = resume;
-
-                if (!TrySubmitThreadpoolCallback(callback, this, nullptr))
-                {
-                    throw_last_error();
-                }
-            }
-
-        private:
-
-            static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
-            {
-                auto that = static_cast<awaitable*>(context);
-                auto guard = that->m_context();
-                that->m_resume();
-            }
-
-            T&& m_context;
-            std::experimental::coroutine_handle<> m_resume{ nullptr };
-        };
-
-        return awaitable{ std::forward<T>(context) };
-    }
-
-    struct apartment_context
-    {
-        apartment_context()
-        {
-            check_hresult(CoGetObjectContext(__uuidof(m_context), m_context.put_void()));
-        }
-
-        bool await_ready() const noexcept
-        {
-            return false;
-        }
-
-        void await_resume() const noexcept
-        {
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<> handle) const
-        {
-            ComCallData data = {};
-            data.pUserDefined = handle.address();
-            check_hresult(m_context->ContextCallback(callback, &data, IID_ICallbackWithNoReentrancyToApplicationSTA, 5, nullptr));
-        }
-
-    private:
-
-        static HRESULT __stdcall callback(ComCallData* data) noexcept
-        {
-            std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
-            return S_OK;
-        }
-
-        com_ptr<IContextCallback> m_context;
-    };
-
-    struct resume_after
-    {
-        explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept :
-        m_duration(duration)
-        {
-        }
-
-        bool await_ready() const noexcept
-        {
-            return m_duration.count() <= 0;
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<> handle)
-        {
-            m_timer = check_pointer(CreateThreadpoolTimer(callback, handle.address(), nullptr));
-            int64_t relative_count = -m_duration.count();
-            SetThreadpoolTimer(m_timer.get(), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
-        }
-
-        void await_resume() const noexcept
-        {
-        }
-
-    private:
-
-        static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context, PTP_TIMER) noexcept
-        {
-            std::experimental::coroutine_handle<>::from_address(context)();
-        }
-
-        struct timer_traits
-        {
-            using type = PTP_TIMER;
-
-            static void close(type value) noexcept
-            {
-                CloseThreadpoolTimer(value);
-            }
-
-            static constexpr type invalid() noexcept
-            {
-                return nullptr;
-            }
-        };
-
-        handle_type<timer_traits> m_timer;
-        Windows::Foundation::TimeSpan m_duration;
-    };
-
-    struct resume_on_signal
-    {
-        explicit resume_on_signal(HANDLE handle) noexcept :
-            m_handle(handle)
-        {}
-
-        resume_on_signal(HANDLE handle, Windows::Foundation::TimeSpan timeout) noexcept :
-            m_timeout(timeout),
-            m_handle(handle)
-        {}
-
-        bool await_ready() const noexcept
-        {
-            return WaitForSingleObject(m_handle, 0) == WAIT_OBJECT_0;
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<> resume)
-        {
-            m_resume = resume;
-            m_wait = check_pointer(CreateThreadpoolWait(callback, this, nullptr));
-            int64_t relative_count = -m_timeout.count();
-            PFILETIME file_time = relative_count != 0 ? reinterpret_cast<PFILETIME>(&relative_count) : nullptr;
-            SetThreadpoolWait(m_wait.get(), m_handle, file_time);
-        }
-
-        bool await_resume() const noexcept
-        {
-            return m_result == WAIT_OBJECT_0;
-        }
-
-    private:
-
-        static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context, PTP_WAIT, TP_WAIT_RESULT result) noexcept
-        {
-            auto that = static_cast<resume_on_signal*>(context);
-            that->m_result = result;
-            that->m_resume();
-        }
-
-        struct wait_traits
-        {
-            using type = PTP_WAIT;
-
-            static void close(type value) noexcept
-            {
-                CloseThreadpoolWait(value);
-            }
-
-            static constexpr type invalid() noexcept
-            {
-                return nullptr;
-            }
-        };
-
-        handle_type<wait_traits> m_wait;
-        Windows::Foundation::TimeSpan m_timeout{ 0 };
-        HANDLE m_handle{};
-        uint32_t m_result{};
-        std::experimental::coroutine_handle<> m_resume{ nullptr };
-    };
-
-    struct awaitable_base
-    {
-        static void __stdcall callback(PTP_CALLBACK_INSTANCE, void*, void* overlapped, ULONG result, ULONG_PTR, PTP_IO) noexcept
-        {
-            auto context = static_cast<awaitable_base*>(overlapped);
-            context->m_result = result;
-            context->m_resume();
-        }
-
-    protected:
-
-        OVERLAPPED m_overlapped{};
-        uint32_t m_result{};
-        std::experimental::coroutine_handle<> m_resume{ nullptr };
-    };
-
-    struct resumable_io
-    {
-        resumable_io(HANDLE object) :
-            m_io(check_pointer(CreateThreadpoolIo(object, awaitable_base::callback, nullptr, nullptr)))
-        {
-        }
-
-        template <typename F>
-        auto start(F callback)
-        {
-            struct awaitable : awaitable_base, F
-            {
-                awaitable(PTP_IO io, F callback) noexcept :
-                    F(callback),
-                    m_io(io)
-                {}
-
-                bool await_ready() const noexcept
-                {
-                    return false;
-                }
-
-                void await_suspend(std::experimental::coroutine_handle<> resume_handle)
-                {
-                    m_resume = resume_handle;
-                    StartThreadpoolIo(m_io);
-
-                    try
-                    {
-                        (*this)(m_overlapped);
-                    }
-                    catch (...)
-                    {
-                        CancelThreadpoolIo(m_io);
-                        throw;
-                    }
-                }
-
-                uint32_t await_resume() const
-                {
-                    if (m_result != ERROR_HANDLE_EOF)
-                    {
-                        check_win32(m_result);
-                    }
-                    return static_cast<uint32_t>(m_overlapped.InternalHigh);
-                }
-
-                PTP_IO m_io = nullptr;
-            };
-
-            return awaitable(get(), callback);
-        }
-
-        template <typename F>
-        auto start_pending(F callback)
-        {
-            struct awaitable : awaitable_base, F
-            {
-                awaitable(PTP_IO io, F callback) noexcept :
-                    F(callback),
-                    m_io(io)
-                {}
-
-                bool await_ready() const noexcept
-                {
-                    return false;
-                }
-
-                bool await_suspend(std::experimental::coroutine_handle<> resume_handle)
-                {
-                    m_resume = resume_handle;
-                    StartThreadpoolIo(m_io);
-
-                    try
-                    {
-                        bool const pending = (*this)(m_overlapped);
-
-                        if (!pending)
-                        {
-                            CancelThreadpoolIo(m_io);
-                        }
-
-                        return pending;
-                    }
-                    catch (...)
-                    {
-                        CancelThreadpoolIo(m_io);
-                        throw;
-                    }
-                }
-
-                uint32_t await_resume() const
-                {
-                    if (m_result != ERROR_HANDLE_EOF)
-                    {
-                        check_win32(m_result);
-                    }
-                    return static_cast<uint32_t>(m_overlapped.InternalHigh);
-                }
-
-                PTP_IO m_io = nullptr;
-            };
-
-            return awaitable(get(), callback);
-        }
-
-        PTP_IO get() const noexcept
-        {
-            return m_io.get();
-        }
-
-    private:
-
-        struct io_traits
-        {
-            using type = PTP_IO;
-
-            static void close(type value) noexcept
-            {
-                CloseThreadpoolIo(value);
-            }
-
-            static constexpr type invalid() noexcept
-            {
-                return nullptr;
-            }
-        };
-
-        handle_type<io_traits> m_io;
-    };
-
-#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
-    inline auto operator co_await(Windows::Foundation::TimeSpan duration)
-    {
-        return resume_after(duration);
-    }
-#endif
-
-    struct get_progress_token_t {};
-
-    inline get_progress_token_t get_progress_token() noexcept
-    {
-        return{};
-    }
-
-    struct get_cancellation_token_t {};
-
-    inline get_cancellation_token_t get_cancellation_token() noexcept
-    {
-        return{};
-    }
-
-    struct fire_and_forget {};
-}
-
-namespace winrt::impl
-{
-    template <typename Derived, typename AsyncInterface, typename CompletedHandler>
-    struct promise_base : implements<Derived, AsyncInterface, Windows::Foundation::IAsyncInfo>
-    {
-        using AsyncStatus = Windows::Foundation::AsyncStatus;
-
-        unsigned long __stdcall Release() noexcept
-        {
-            uint32_t const remaining = this->subtract_reference();
-
-            if (remaining == 0)
-            {
-                std::atomic_thread_fence(std::memory_order_acquire);
-                std::experimental::coroutine_handle<Derived>::from_promise(*static_cast<Derived*>(this)).destroy();
-            }
-
-            return remaining;
-        }
-
-        void Completed(CompletedHandler const& handler)
-        {
-            AsyncStatus status;
-
-            {
-                slim_lock_guard const guard(m_lock);
-
-                if (m_completed_assigned)
-                {
-                    throw hresult_illegal_delegate_assignment();
-                }
-
-                m_completed_assigned = true;
-
-                if (m_status == AsyncStatus::Started)
-                {
-                    m_completed = handler;
-                    return;
-                }
-
-                status = m_status;
-            }
-
-            if (handler)
-            {
-                handler(*this, status);
-            }
-        }
-
-        CompletedHandler Completed() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-            return m_completed;
-        }
-
-        uint32_t Id() const noexcept
-        {
-            return 1;
-        }
-
-        AsyncStatus Status() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-            return m_status;
-        }
-
-        HRESULT ErrorCode() noexcept
-        {
-            try
-            {
-                slim_lock_guard const guard(m_lock);
-                rethrow_if_failed();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
-        }
-
-        void Cancel() noexcept
-        {
-            slim_lock_guard const guard(m_lock);
-
-            if (m_status == AsyncStatus::Started)
-            {
-                m_status = AsyncStatus::Canceled;
-            }
-        }
-
-        void Close()
-        {
-            slim_lock_guard const guard(m_lock);
-
-            if (m_status == AsyncStatus::Started)
-            {
-                throw hresult_illegal_state_change();
-            }
-        }
-
-        AsyncInterface get_return_object() const noexcept
-        {
-            return*this;
-        }
-
-        std::experimental::suspend_never initial_suspend() const noexcept
-        {
-            return{};
-        }
-
-        struct final_suspend_type
-        {
-            promise_base* promise;
-
-            bool await_ready() const noexcept
-            {
-                return false;
-            }
-
-            void await_resume() const noexcept
-            {
-            }
-
-            bool await_suspend(std::experimental::coroutine_handle<>) const noexcept
-            {
-                uint32_t const remaining = promise->subtract_reference();
-
-                if (remaining == 0)
-                {
-                    std::atomic_thread_fence(std::memory_order_acquire);
-                }
-
-                return remaining > 0;
-            }
-        };
-
-        final_suspend_type final_suspend() noexcept
-        {
-            return{ this };
-        }
-
-        void unhandled_exception() noexcept
-        {
-            CompletedHandler handler;
-            AsyncStatus status;
-
-            {
-                slim_lock_guard const guard(m_lock);
-                WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
-                m_exception = std::current_exception();
-
-                try
-                {
-                    std::rethrow_exception(m_exception.value());
-                }
-                catch (hresult_canceled const&)
-                {
-                    m_status = AsyncStatus::Canceled;
-                }
-                catch (...)
-                {
-                    m_status = AsyncStatus::Error;
-                }
-
-                handler = std::move(m_completed);
-                status = m_status;
-            }
-
-            if (handler)
-            {
-                handler(*this, status);
-            }
-        }
-
-    protected:
-
-        void rethrow_if_failed() const
-        {
-            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
-            {
-                std::rethrow_exception(m_exception.value());
-            }
-        }
-
-        std::optional<std::exception_ptr> m_exception;
-        slim_mutex m_lock;
-        CompletedHandler m_completed;
-        AsyncStatus m_status{ AsyncStatus::Started };
-        bool m_completed_assigned{ false };
-    };
-
-    template <typename Promise>
-    struct cancellation_token
-    {
-        cancellation_token(Promise* promise) noexcept :
-        m_promise(promise)
-        {
-        }
-
-        bool await_ready() const noexcept
-        {
-            return true;
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
-        {
-        }
-
-        cancellation_token<Promise> await_resume() const noexcept
-        {
-            return*this;
-        }
-
-        bool operator()() const noexcept
-        {
-            return m_promise->Status() == Windows::Foundation::AsyncStatus::Canceled;
-        }
-
-    private:
-
-        Promise* m_promise;
-    };
-
-    template <typename Promise, typename Progress>
-    struct progress_token
-    {
-        progress_token(Promise* promise) noexcept :
-        m_promise(promise)
-        {
-        }
-
-        bool await_ready() const noexcept
-        {
-            return true;
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
-        {
-        }
-
-        progress_token<Promise, Progress> await_resume() const noexcept
-        {
-            return*this;
-        }
-
-        void operator()(Progress const& result)
-        {
-            m_promise->set_progress(result);
-        }
-
-    private:
-
-        Promise* m_promise;
-    };
 }
 
 namespace winrt::impl
 {
     inline size_t hash_data(void const* ptr, size_t const bytes) noexcept
     {
-#ifdef WINRT_64
+#ifdef _WIN64
         constexpr size_t fnv_offset_basis = 14695981039346656037ULL;
         constexpr size_t fnv_prime = 1099511628211ULL;
 #else
@@ -12421,13 +12935,7 @@ namespace winrt::impl
 
     inline size_t hash_unknown(Windows::Foundation::IUnknown const& value) noexcept
     {
-        void* abi_value = nullptr;
-
-        if (value)
-        {
-            abi_value = get_abi(value.try_as<Windows::Foundation::IUnknown>());
-        }
-
+        void* const abi_value = get_abi(value.try_as<Windows::Foundation::IUnknown>());
         return std::hash<void*>{}(abi_value);
     }
 
@@ -12448,7 +12956,7 @@ WINRT_EXPORT namespace std
         size_t operator()(winrt::hstring const& value) const noexcept
         {
             uint32_t length = 0;
-            const wchar_t* const buffer = WindowsGetStringRawBuffer(get_abi(value), &length);
+            const wchar_t* const buffer = WINRT_WindowsGetStringRawBuffer(get_abi(value), &length);
             return winrt::impl::hash_data(buffer, length * sizeof(wchar_t));
         }
     };
@@ -12538,22 +13046,6 @@ WINRT_EXPORT namespace std::experimental
                     handler(*this, status);
                 }
             }
-
-            template <typename Expression>
-            Expression&& await_transform(Expression&& expression)
-            {
-                if (this->Status() == AsyncStatus::Canceled)
-                {
-                    throw winrt::hresult_canceled();
-                }
-
-                return forward<Expression>(expression);
-            }
-
-            winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
-            {
-                return{ this };
-            }
         };
     };
 }
@@ -12564,7 +13056,7 @@ WINRT_EXPORT namespace std::experimental
     struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>, Args...>
     {
         struct promise_type final : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>,
-            winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+            winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, TProgress>
         {
             using AsyncStatus = winrt::Windows::Foundation::AsyncStatus;
             using ProgressHandler = winrt::Windows::Foundation::AsyncActionProgressHandler<TProgress>;
@@ -12572,7 +13064,7 @@ WINRT_EXPORT namespace std::experimental
             void Progress(ProgressHandler const& handler)
             {
                 winrt::slim_lock_guard const guard(this->m_lock);
-                m_progress = handler;
+                m_progress = winrt::impl::make_agile_delegate(handler);
             }
 
             ProgressHandler Progress()
@@ -12629,27 +13121,6 @@ WINRT_EXPORT namespace std::experimental
                 {
                     handler(*this, result);
                 }
-            }
-
-            template <typename Expression>
-            Expression&& await_transform(Expression&& expression)
-            {
-                if (this->Status() == AsyncStatus::Canceled)
-                {
-                    throw winrt::hresult_canceled();
-                }
-
-                return forward<Expression>(expression);
-            }
-
-            winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
-            {
-                return{ this };
-            }
-
-            winrt::impl::progress_token<promise_type, TProgress> await_transform(winrt::get_progress_token_t) noexcept
-            {
-                return{ this };
             }
 
             ProgressHandler m_progress;
@@ -12710,22 +13181,6 @@ WINRT_EXPORT namespace std::experimental
                 }
             }
 
-            template <typename Expression>
-            Expression&& await_transform(Expression&& expression)
-            {
-                if (this->Status() == AsyncStatus::Canceled)
-                {
-                    throw winrt::hresult_canceled();
-                }
-
-                return forward<Expression>(expression);
-            }
-
-            winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
-            {
-                return{ this };
-            }
-
             TResult m_result{ winrt::impl::empty_value<TResult>() };
         };
     };
@@ -12737,7 +13192,7 @@ WINRT_EXPORT namespace std::experimental
     struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args...>
     {
         struct promise_type final : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>,
-            winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+            winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, TProgress>
         {
             using AsyncStatus = winrt::Windows::Foundation::AsyncStatus;
             using ProgressHandler = winrt::Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>;
@@ -12745,7 +13200,7 @@ WINRT_EXPORT namespace std::experimental
             void Progress(ProgressHandler const& handler)
             {
                 winrt::slim_lock_guard const guard(this->m_lock);
-                m_progress = handler;
+                m_progress = winrt::impl::make_agile_delegate(handler);
             }
 
             ProgressHandler Progress()
@@ -12805,30 +13260,105 @@ WINRT_EXPORT namespace std::experimental
                 }
             }
 
-            template <typename Expression>
-            Expression&& await_transform(Expression&& expression)
-            {
-                if (this->Status() == AsyncStatus::Canceled)
-                {
-                    throw winrt::hresult_canceled();
-                }
-
-                return forward<Expression>(expression);
-            }
-
-            winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
-            {
-                return{ this };
-            }
-
-            winrt::impl::progress_token<promise_type, TProgress> await_transform(winrt::get_progress_token_t) noexcept
-            {
-                return{ this };
-            }
-
             TResult m_result{ winrt::impl::empty_value<TResult>() };
             ProgressHandler m_progress;
         };
+    };
+}
+
+WINRT_EXPORT namespace winrt::experimental::reflect
+{
+    template <typename T>
+    struct base_type
+    {
+        using type = Windows::Foundation::IInspectable;
+    };
+
+    template <typename T>
+    using base_type_t = typename base_type<T>::type;
+
+    template <typename T>
+    struct named_property {};
+
+    template <typename T>
+    struct properties
+    {
+        using type = impl::typelist<>;
+    };
+
+    template <typename T>
+    using properties_t = typename properties<T>::type;
+
+    template <typename T, typename Func>
+    static constexpr inline auto for_each_property(Func&& func)
+    {
+        return impl::for_each<properties_t<T>>::apply(std::forward<Func>(func));
+    }
+
+    template <typename T, typename Func>
+    static constexpr inline bool find_property_if(Func&& func)
+    {
+        return impl::find_if<properties_t<T>>::apply(std::forward<Func>(func));
+    }
+
+    template <typename MetaProperty>
+    using property_name = typename MetaProperty::name;
+
+    template <typename MetaProperty>
+    inline constexpr std::wstring_view property_name_v = property_name<MetaProperty>::value;
+
+    template <typename MetaProperty>
+    using is_property_readable = typename MetaProperty::is_readable;
+
+    template <typename MetaProperty>
+    inline constexpr bool is_property_readable_v = is_property_readable<MetaProperty>::value;
+
+    template <typename MetaProperty>
+    using is_property_writable = typename MetaProperty::is_writable;
+
+    template <typename MetaProperty>
+    inline constexpr bool is_property_writable_v = is_property_writable<MetaProperty>::value;
+
+    template <typename MetaProperty>
+    using is_property_static = typename MetaProperty::is_static;
+
+    template <typename MetaProperty>
+    inline constexpr bool is_property_static_v = is_property_static<MetaProperty>::value;
+
+    template <typename MetaProperty>
+    struct property_value
+    {
+        using type = typename MetaProperty::property_type;
+    };
+
+    template <typename MetaProperty>
+    using property_value_t = typename property_value<MetaProperty>::type;
+
+    template <typename MetaProperty>
+    struct property_target
+    {
+        using type = typename MetaProperty::target_type;
+    };
+
+    template <typename MetaProperty>
+    using property_target_t = typename property_target<MetaProperty>::type;
+
+    template <typename MetaProperty>
+    using property_getter = typename MetaProperty::getter;
+
+    template <typename MetaProperty>
+    using property_setter = typename MetaProperty::setter;
+
+    template <typename T>
+    struct get_enumerator_names
+    {
+        static_assert(impl::has_category_v<T> && std::is_enum_v<T>, "T must be a WinRT enum type");
+    };
+
+    template <typename T>
+    struct get_enumerator_values
+    {
+        static_assert(impl::has_category_v<T> && std::is_enum_v<T>, "T must be a WinRT enum type");
     };
 }
 
@@ -12842,7 +13372,7 @@ namespace winrt::impl
 {
     struct natvis
     {
-        static auto __stdcall abi_val(::IUnknown* object, wchar_t const * iid_str, int method)
+        static auto WINRT_CALL abi_val(void* object, wchar_t const * iid_str, int method)
         {
             union variant
             {
@@ -12858,17 +13388,17 @@ namespace winrt::impl
                 uint64_t u8;
                 float r4;
                 double r8;
-                GUID g;
-                HSTRING s;
-                BYTE v[1024];
+                guid g;
+                void* s;
+                uint8_t v[1024];
             }
             value{};
-            IID iid{};
-            if (SUCCEEDED(IIDFromString(iid_str, &iid)))
+            guid iid{};
+            if (WINRT_IIDFromString(iid_str, &iid) == error_ok)
             {
                 IInspectable* pinsp;
-                typedef HRESULT(__stdcall IInspectable::* PropertyAccessor)(void*);
-                if (SUCCEEDED(object->QueryInterface(iid, reinterpret_cast<void**>(&pinsp))))
+                typedef int32_t(WINRT_CALL IInspectable::* PropertyAccessor)(void*);
+                if (((IUnknown*)object)->QueryInterface(iid, reinterpret_cast<void**>(&pinsp)) == error_ok)
                 {
                     auto vtbl = *(PropertyAccessor**)pinsp;
                     static const int IInspectable_vtbl_size = 6;
@@ -12880,9 +13410,9 @@ namespace winrt::impl
             return value;
         }
 
-        static auto __stdcall get_val(winrt::Windows::Foundation::IInspectable* object, wchar_t const * iid_str, int method)
+        static auto WINRT_CALL get_val(winrt::Windows::Foundation::IInspectable* object, wchar_t const * iid_str, int method)
         {
-            return abi_val(get_unknown(*object), iid_str, method);
+            return abi_val(static_cast<IUnknown*>(get_abi(*object)), iid_str, method);
         }
     };
 }
@@ -12905,7 +13435,7 @@ decltype(winrt::impl::natvis::get_val) & WINRT_get_val = winrt::impl::natvis::ge
 
 #endif
 
-#define CPPWINRT_VERSION "1.0.180227.3"
+#define CPPWINRT_VERSION "1.0.180821.2"
 
 // WINRT_version is used by Microsoft to analyze C++/WinRT library adoption and inform future product decisions.
 extern "C"
@@ -12939,5 +13469,3 @@ WINRT_EXPORT namespace winrt
         return true;
     }
 }
-
-WINRT_WARNING_POP

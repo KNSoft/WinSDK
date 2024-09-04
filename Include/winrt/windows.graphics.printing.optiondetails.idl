@@ -598,7 +598,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass PrintCustomToggleOptionDetails
                 {
                     [default] interface Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails;
@@ -653,7 +652,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass PrintPageRangeOptionDetails
                 {
                     [default] interface Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails;

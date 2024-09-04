@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
 #include "winrt/Windows.Foundation.h"
@@ -22,15 +22,15 @@ struct produce<D, Windows::Foundation::Collections::IPropertySet> : produce_base
 WINRT_EXPORT namespace winrt::Windows::Foundation::Collections {
 
 inline PropertySet::PropertySet() :
-    PropertySet(get_activation_factory<PropertySet>().ActivateInstance<PropertySet>())
+    PropertySet(impl::call_factory<PropertySet>([](auto&& f) { return f.template ActivateInstance<PropertySet>(); }))
 {}
 
 inline StringMap::StringMap() :
-    StringMap(get_activation_factory<StringMap>().ActivateInstance<StringMap>())
+    StringMap(impl::call_factory<StringMap>([](auto&& f) { return f.template ActivateInstance<StringMap>(); }))
 {}
 
 inline ValueSet::ValueSet() :
-    ValueSet(get_activation_factory<ValueSet>().ActivateInstance<ValueSet>())
+    ValueSet(impl::call_factory<ValueSet>([](auto&& f) { return f.template ActivateInstance<ValueSet>(); }))
 {}
 
 }
@@ -60,5 +60,3 @@ template<> struct hash<winrt::Windows::Foundation::Collections::StringMap> : win
 template<> struct hash<winrt::Windows::Foundation::Collections::ValueSet> : winrt::impl::hash_base<winrt::Windows::Foundation::Collections::ValueSet> {};
 
 }
-
-WINRT_WARNING_POP

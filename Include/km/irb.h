@@ -607,9 +607,8 @@ typedef struct _IDE_ERROR_LOG_ENTRY {
     UCHAR TargetId;
     UCHAR Lun;
     UCHAR UniqueId;
-    UCHAR DumpDataSize;
-    _Field_size_bytes_(DumpDataSize) 
-    UCHAR DumpData[1];
+    UCHAR DumpDataSize; 
+    UCHAR DumpData;
 } IDE_ERROR_LOG_ENTRY, *PIDE_ERROR_LOG_ENTRY;
 
 //

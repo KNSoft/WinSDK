@@ -11,6 +11,7 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.AppService.idl";
+import "Windows.Graphics.DirectX.Direct3D11.idl";
 import "Windows.Graphics.Imaging.idl";
 import "Windows.Media.idl";
 import "Windows.Media.Capture.idl";
@@ -67,6 +68,19 @@ namespace Windows
         apicontract UniversalApiContract;
 
         runtimeclass Uri;
+    }
+}
+namespace Windows
+{
+    namespace Graphics
+    {
+        namespace DirectX
+        {
+            namespace Direct3D11
+            {
+                interface IDirect3DSurface;
+            }
+        }
     }
 }
 namespace Windows
@@ -431,9 +445,13 @@ namespace Windows
 
             interface IMediaStreamSample;
 
+            interface IMediaStreamSample2;
+
             interface IMediaStreamSampleProtectionProperties;
 
             interface IMediaStreamSampleStatics;
+
+            interface IMediaStreamSampleStatics2;
 
             interface IMediaStreamSource;
 
@@ -1672,6 +1690,14 @@ namespace Windows
                 [propget] HRESULT Discontinuous([out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Core.MediaStreamSample)]
+            [uuid(45078691-FCE8-4746-A1C8-10C25D3D7CD3)]
+            interface IMediaStreamSample2 : IInspectable
+            {
+                [propget] HRESULT Direct3D11Surface([out] [retval] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Core.MediaStreamSampleProtectionProperties)]
             [uuid(4EB88292-ECDF-493E-841D-DD4ADD7CACA2)]
@@ -1692,6 +1718,14 @@ namespace Windows
             {
                 HRESULT CreateFromBuffer([in] Windows.Storage.Streams.IBuffer* buffer, [in] Windows.Foundation.TimeSpan timestamp, [out] [retval] Windows.Media.Core.MediaStreamSample** value);
                 HRESULT CreateFromStreamAsync([in] Windows.Storage.Streams.IInputStream* stream, [in] UINT32 count, [in] Windows.Foundation.TimeSpan timestamp, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Media.Core.MediaStreamSample*>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Core.MediaStreamSample)]
+            [uuid(9EFE9521-6D46-494C-A2F8-D662922E2DD7)]
+            interface IMediaStreamSampleStatics2 : IInspectable
+            {
+                HRESULT CreateFromDirect3D11Surface([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* surface, [in] Windows.Foundation.TimeSpan timestamp, [out] [retval] Windows.Media.Core.MediaStreamSample** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2607,10 +2641,12 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Media.Core.IMediaStreamSampleStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Media.Core.IMediaStreamSampleStatics2, Windows.Foundation.UniversalApiContract, 7.0)]
             [threading(both)]
             runtimeclass MediaStreamSample
             {
                 [default] interface Windows.Media.Core.IMediaStreamSample;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Core.IMediaStreamSample2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

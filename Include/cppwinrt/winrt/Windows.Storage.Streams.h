@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -133,9 +133,9 @@ template <typename D> bool consume_Windows_Storage_Streams_IDataReader<D>::ReadB
     return value;
 }
 
-template <typename D> GUID consume_Windows_Storage_Streams_IDataReader<D>::ReadGuid() const
+template <typename D> winrt::guid consume_Windows_Storage_Streams_IDataReader<D>::ReadGuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Storage::Streams::IDataReader)->ReadGuid(put_abi(value)));
     return value;
 }
@@ -308,7 +308,7 @@ template <typename D> void consume_Windows_Storage_Streams_IDataWriter<D>::Write
     check_hresult(WINRT_SHIM(Windows::Storage::Streams::IDataWriter)->WriteBoolean(value));
 }
 
-template <typename D> void consume_Windows_Storage_Streams_IDataWriter<D>::WriteGuid(GUID const& value) const
+template <typename D> void consume_Windows_Storage_Streams_IDataWriter<D>::WriteGuid(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Storage::Streams::IDataWriter)->WriteGuid(get_abi(value)));
 }
@@ -607,1380 +607,1198 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t,
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IBuffer> : produce_base<D, Windows::Storage::Streams::IBuffer>
 {
-    HRESULT __stdcall get_Capacity(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Capacity(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capacity, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Capacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Length(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Length(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(void), uint32_t);
             this->shim().Length(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IBufferFactory> : produce_base<D, Windows::Storage::Streams::IBufferFactory>
 {
-    HRESULT __stdcall Create(uint32_t capacity, void** value) noexcept final
+    int32_t WINRT_CALL Create(uint32_t capacity, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Storage::Streams::Buffer), uint32_t);
             *value = detach_from<Windows::Storage::Streams::Buffer>(this->shim().Create(capacity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IBufferStatics> : produce_base<D, Windows::Storage::Streams::IBufferStatics>
 {
-    HRESULT __stdcall CreateCopyFromMemoryBuffer(void* input, void** value) noexcept final
+    int32_t WINRT_CALL CreateCopyFromMemoryBuffer(void* input, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCopyFromMemoryBuffer, WINRT_WRAP(Windows::Storage::Streams::Buffer), Windows::Foundation::IMemoryBuffer const&);
             *value = detach_from<Windows::Storage::Streams::Buffer>(this->shim().CreateCopyFromMemoryBuffer(*reinterpret_cast<Windows::Foundation::IMemoryBuffer const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMemoryBufferOverIBuffer(void* input, void** value) noexcept final
+    int32_t WINRT_CALL CreateMemoryBufferOverIBuffer(void* input, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMemoryBufferOverIBuffer, WINRT_WRAP(Windows::Foundation::MemoryBuffer), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Foundation::MemoryBuffer>(this->shim().CreateMemoryBufferOverIBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IContentTypeProvider> : produce_base<D, Windows::Storage::Streams::IContentTypeProvider>
 {
-    HRESULT __stdcall get_ContentType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IDataReader> : produce_base<D, Windows::Storage::Streams::IDataReader>
 {
-    HRESULT __stdcall get_UnconsumedBufferLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UnconsumedBufferLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnconsumedBufferLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UnconsumedBufferLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept final
+    int32_t WINRT_CALL get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnicodeEncoding, WINRT_WRAP(Windows::Storage::Streams::UnicodeEncoding));
             *value = detach_from<Windows::Storage::Streams::UnicodeEncoding>(this->shim().UnicodeEncoding());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept final
+    int32_t WINRT_CALL put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnicodeEncoding, WINRT_WRAP(void), Windows::Storage::Streams::UnicodeEncoding const&);
             this->shim().UnicodeEncoding(*reinterpret_cast<Windows::Storage::Streams::UnicodeEncoding const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept final
+    int32_t WINRT_CALL get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ByteOrder, WINRT_WRAP(Windows::Storage::Streams::ByteOrder));
             *value = detach_from<Windows::Storage::Streams::ByteOrder>(this->shim().ByteOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept final
+    int32_t WINRT_CALL put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ByteOrder, WINRT_WRAP(void), Windows::Storage::Streams::ByteOrder const&);
             this->shim().ByteOrder(*reinterpret_cast<Windows::Storage::Streams::ByteOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions* value) noexcept final
+    int32_t WINRT_CALL get_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStreamOptions, WINRT_WRAP(Windows::Storage::Streams::InputStreamOptions));
             *value = detach_from<Windows::Storage::Streams::InputStreamOptions>(this->shim().InputStreamOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) noexcept final
+    int32_t WINRT_CALL put_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStreamOptions, WINRT_WRAP(void), Windows::Storage::Streams::InputStreamOptions const&);
             this->shim().InputStreamOptions(*reinterpret_cast<Windows::Storage::Streams::InputStreamOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadByte(uint8_t* value) noexcept final
+    int32_t WINRT_CALL ReadByte(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadByte, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ReadByte());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadBytes(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL ReadBytes(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBytes, WINRT_WRAP(void), array_view<uint8_t>);
             this->shim().ReadBytes(array_view<uint8_t>(reinterpret_cast<uint8_t*>(value), reinterpret_cast<uint8_t*>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadBuffer(uint32_t length, void** buffer) noexcept final
+    int32_t WINRT_CALL ReadBuffer(uint32_t length, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBuffer, WINRT_WRAP(Windows::Storage::Streams::IBuffer), uint32_t);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ReadBuffer(length));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadBoolean(bool* value) noexcept final
+    int32_t WINRT_CALL ReadBoolean(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBoolean, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ReadBoolean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadGuid(GUID* value) noexcept final
+    int32_t WINRT_CALL ReadGuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ReadGuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReadGuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ReadGuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadInt16(int16_t* value) noexcept final
+    int32_t WINRT_CALL ReadInt16(int16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadInt16, WINRT_WRAP(int16_t));
             *value = detach_from<int16_t>(this->shim().ReadInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadInt32(int32_t* value) noexcept final
+    int32_t WINRT_CALL ReadInt32(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadInt32, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ReadInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadInt64(int64_t* value) noexcept final
+    int32_t WINRT_CALL ReadInt64(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadInt64, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().ReadInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadUInt16(uint16_t* value) noexcept final
+    int32_t WINRT_CALL ReadUInt16(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadUInt16, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ReadUInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadUInt32(uint32_t* value) noexcept final
+    int32_t WINRT_CALL ReadUInt32(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadUInt32, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ReadUInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadUInt64(uint64_t* value) noexcept final
+    int32_t WINRT_CALL ReadUInt64(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadUInt64, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ReadUInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadSingle(float* value) noexcept final
+    int32_t WINRT_CALL ReadSingle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadSingle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().ReadSingle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadDouble(double* value) noexcept final
+    int32_t WINRT_CALL ReadDouble(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadDouble, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ReadDouble());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadString(uint32_t codeUnitCount, HSTRING* value) noexcept final
+    int32_t WINRT_CALL ReadString(uint32_t codeUnitCount, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadString, WINRT_WRAP(hstring), uint32_t);
             *value = detach_from<hstring>(this->shim().ReadString(codeUnitCount));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadDateTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL ReadDateTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadDateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().ReadDateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadTimeSpan(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL ReadTimeSpan(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadTimeSpan, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().ReadTimeSpan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadAsync(uint32_t count, void** operation) noexcept final
+    int32_t WINRT_CALL LoadAsync(uint32_t count, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadAsync, WINRT_WRAP(Windows::Storage::Streams::DataReaderLoadOperation), uint32_t);
             *operation = detach_from<Windows::Storage::Streams::DataReaderLoadOperation>(this->shim().LoadAsync(count));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DetachBuffer(void** buffer) noexcept final
+    int32_t WINRT_CALL DetachBuffer(void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachBuffer, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DetachBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DetachStream(void** stream) noexcept final
+    int32_t WINRT_CALL DetachStream(void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *stream = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().DetachStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IDataReaderFactory> : produce_base<D, Windows::Storage::Streams::IDataReaderFactory>
 {
-    HRESULT __stdcall CreateDataReader(void* inputStream, void** dataReader) noexcept final
+    int32_t WINRT_CALL CreateDataReader(void* inputStream, void** dataReader) noexcept final
     {
         try
         {
             *dataReader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDataReader, WINRT_WRAP(Windows::Storage::Streams::DataReader), Windows::Storage::Streams::IInputStream const&);
             *dataReader = detach_from<Windows::Storage::Streams::DataReader>(this->shim().CreateDataReader(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&inputStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IDataReaderStatics> : produce_base<D, Windows::Storage::Streams::IDataReaderStatics>
 {
-    HRESULT __stdcall FromBuffer(void* buffer, void** dataReader) noexcept final
+    int32_t WINRT_CALL FromBuffer(void* buffer, void** dataReader) noexcept final
     {
         try
         {
             *dataReader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromBuffer, WINRT_WRAP(Windows::Storage::Streams::DataReader), Windows::Storage::Streams::IBuffer const&);
             *dataReader = detach_from<Windows::Storage::Streams::DataReader>(this->shim().FromBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IDataWriter> : produce_base<D, Windows::Storage::Streams::IDataWriter>
 {
-    HRESULT __stdcall get_UnstoredBufferLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UnstoredBufferLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnstoredBufferLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UnstoredBufferLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept final
+    int32_t WINRT_CALL get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnicodeEncoding, WINRT_WRAP(Windows::Storage::Streams::UnicodeEncoding));
             *value = detach_from<Windows::Storage::Streams::UnicodeEncoding>(this->shim().UnicodeEncoding());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept final
+    int32_t WINRT_CALL put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnicodeEncoding, WINRT_WRAP(void), Windows::Storage::Streams::UnicodeEncoding const&);
             this->shim().UnicodeEncoding(*reinterpret_cast<Windows::Storage::Streams::UnicodeEncoding const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept final
+    int32_t WINRT_CALL get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ByteOrder, WINRT_WRAP(Windows::Storage::Streams::ByteOrder));
             *value = detach_from<Windows::Storage::Streams::ByteOrder>(this->shim().ByteOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept final
+    int32_t WINRT_CALL put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ByteOrder, WINRT_WRAP(void), Windows::Storage::Streams::ByteOrder const&);
             this->shim().ByteOrder(*reinterpret_cast<Windows::Storage::Streams::ByteOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteByte(uint8_t value) noexcept final
+    int32_t WINRT_CALL WriteByte(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteByte, WINRT_WRAP(void), uint8_t);
             this->shim().WriteByte(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteBytes(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL WriteBytes(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteBytes, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().WriteBytes(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteBuffer(void* buffer) noexcept final
+    int32_t WINRT_CALL WriteBuffer(void* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteBuffer, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().WriteBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteBufferRange(void* buffer, uint32_t start, uint32_t count) noexcept final
+    int32_t WINRT_CALL WriteBufferRange(void* buffer, uint32_t start, uint32_t count) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteBuffer, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&, uint32_t, uint32_t);
             this->shim().WriteBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer), start, count);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteBoolean(bool value) noexcept final
+    int32_t WINRT_CALL WriteBoolean(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteBoolean, WINRT_WRAP(void), bool);
             this->shim().WriteBoolean(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteGuid(GUID value) noexcept final
+    int32_t WINRT_CALL WriteGuid(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().WriteGuid(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(WriteGuid, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().WriteGuid(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteInt16(int16_t value) noexcept final
+    int32_t WINRT_CALL WriteInt16(int16_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteInt16, WINRT_WRAP(void), int16_t);
             this->shim().WriteInt16(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteInt32(int32_t value) noexcept final
+    int32_t WINRT_CALL WriteInt32(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteInt32, WINRT_WRAP(void), int32_t);
             this->shim().WriteInt32(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteInt64(int64_t value) noexcept final
+    int32_t WINRT_CALL WriteInt64(int64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteInt64, WINRT_WRAP(void), int64_t);
             this->shim().WriteInt64(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteUInt16(uint16_t value) noexcept final
+    int32_t WINRT_CALL WriteUInt16(uint16_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteUInt16, WINRT_WRAP(void), uint16_t);
             this->shim().WriteUInt16(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteUInt32(uint32_t value) noexcept final
+    int32_t WINRT_CALL WriteUInt32(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteUInt32, WINRT_WRAP(void), uint32_t);
             this->shim().WriteUInt32(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteUInt64(uint64_t value) noexcept final
+    int32_t WINRT_CALL WriteUInt64(uint64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteUInt64, WINRT_WRAP(void), uint64_t);
             this->shim().WriteUInt64(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteSingle(float value) noexcept final
+    int32_t WINRT_CALL WriteSingle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteSingle, WINRT_WRAP(void), float);
             this->shim().WriteSingle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteDouble(double value) noexcept final
+    int32_t WINRT_CALL WriteDouble(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteDouble, WINRT_WRAP(void), double);
             this->shim().WriteDouble(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteDateTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL WriteDateTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteDateTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().WriteDateTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteTimeSpan(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL WriteTimeSpan(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteTimeSpan, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().WriteTimeSpan(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteString(HSTRING value, uint32_t* codeUnitCount) noexcept final
+    int32_t WINRT_CALL WriteString(void* value, uint32_t* codeUnitCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteString, WINRT_WRAP(uint32_t), hstring const&);
             *codeUnitCount = detach_from<uint32_t>(this->shim().WriteString(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MeasureString(HSTRING value, uint32_t* codeUnitCount) noexcept final
+    int32_t WINRT_CALL MeasureString(void* value, uint32_t* codeUnitCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MeasureString, WINRT_WRAP(uint32_t), hstring const&);
             *codeUnitCount = detach_from<uint32_t>(this->shim().MeasureString(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StoreAsync(void** operation) noexcept final
+    int32_t WINRT_CALL StoreAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StoreAsync, WINRT_WRAP(Windows::Storage::Streams::DataWriterStoreOperation));
             *operation = detach_from<Windows::Storage::Streams::DataWriterStoreOperation>(this->shim().StoreAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FlushAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FlushAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlushAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().FlushAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DetachBuffer(void** buffer) noexcept final
+    int32_t WINRT_CALL DetachBuffer(void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachBuffer, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DetachBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DetachStream(void** outputStream) noexcept final
+    int32_t WINRT_CALL DetachStream(void** outputStream) noexcept final
     {
         try
         {
             *outputStream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *outputStream = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().DetachStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IDataWriterFactory> : produce_base<D, Windows::Storage::Streams::IDataWriterFactory>
 {
-    HRESULT __stdcall CreateDataWriter(void* outputStream, void** dataWriter) noexcept final
+    int32_t WINRT_CALL CreateDataWriter(void* outputStream, void** dataWriter) noexcept final
     {
         try
         {
             *dataWriter = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDataWriter, WINRT_WRAP(Windows::Storage::Streams::DataWriter), Windows::Storage::Streams::IOutputStream const&);
             *dataWriter = detach_from<Windows::Storage::Streams::DataWriter>(this->shim().CreateDataWriter(*reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&outputStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IFileRandomAccessStreamStatics> : produce_base<D, Windows::Storage::Streams::IFileRandomAccessStreamStatics>
 {
-    HRESULT __stdcall OpenAsync(HSTRING filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept final
+    int32_t WINRT_CALL OpenAsync(void* filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>), hstring const, Windows::Storage::FileAccessMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().OpenAsync(*reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::FileAccessMode const*>(&accessMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenWithOptionsAsync(HSTRING filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
+    int32_t WINRT_CALL OpenWithOptionsAsync(void* filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>), hstring const, Windows::Storage::FileAccessMode const, Windows::Storage::StorageOpenOptions const, Windows::Storage::Streams::FileOpenDisposition const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().OpenAsync(*reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::FileAccessMode const*>(&accessMode), *reinterpret_cast<Windows::Storage::StorageOpenOptions const*>(&sharingOptions), *reinterpret_cast<Windows::Storage::Streams::FileOpenDisposition const*>(&openDisposition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenTransactedWriteAsync(HSTRING filePath, void** operation) noexcept final
+    int32_t WINRT_CALL OpenTransactedWriteAsync(void* filePath, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenTransactedWriteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>>(this->shim().OpenTransactedWriteAsync(*reinterpret_cast<hstring const*>(&filePath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenTransactedWriteWithOptionsAsync(HSTRING filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
+    int32_t WINRT_CALL OpenTransactedWriteWithOptionsAsync(void* filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenTransactedWriteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>), hstring const, Windows::Storage::StorageOpenOptions const, Windows::Storage::Streams::FileOpenDisposition const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>>(this->shim().OpenTransactedWriteAsync(*reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::StorageOpenOptions const*>(&openOptions), *reinterpret_cast<Windows::Storage::Streams::FileOpenDisposition const*>(&openDisposition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenForUserAsync(void* user, HSTRING filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept final
+    int32_t WINRT_CALL OpenForUserAsync(void* user, void* filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>), Windows::System::User const, hstring const, Windows::Storage::FileAccessMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().OpenForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::FileAccessMode const*>(&accessMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenForUserWithOptionsAsync(void* user, HSTRING filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
+    int32_t WINRT_CALL OpenForUserWithOptionsAsync(void* user, void* filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>), Windows::System::User const, hstring const, Windows::Storage::FileAccessMode const, Windows::Storage::StorageOpenOptions const, Windows::Storage::Streams::FileOpenDisposition const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().OpenForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::FileAccessMode const*>(&accessMode), *reinterpret_cast<Windows::Storage::StorageOpenOptions const*>(&sharingOptions), *reinterpret_cast<Windows::Storage::Streams::FileOpenDisposition const*>(&openDisposition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenTransactedWriteForUserAsync(void* user, HSTRING filePath, void** operation) noexcept final
+    int32_t WINRT_CALL OpenTransactedWriteForUserAsync(void* user, void* filePath, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenTransactedWriteForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>), Windows::System::User const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>>(this->shim().OpenTransactedWriteForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&filePath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenTransactedWriteForUserWithOptionsAsync(void* user, HSTRING filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
+    int32_t WINRT_CALL OpenTransactedWriteForUserWithOptionsAsync(void* user, void* filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenTransactedWriteForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>), Windows::System::User const, hstring const, Windows::Storage::StorageOpenOptions const, Windows::Storage::Streams::FileOpenDisposition const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction>>(this->shim().OpenTransactedWriteForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&filePath), *reinterpret_cast<Windows::Storage::StorageOpenOptions const*>(&openOptions), *reinterpret_cast<Windows::Storage::Streams::FileOpenDisposition const*>(&openDisposition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IInputStream> : produce_base<D, Windows::Storage::Streams::IInputStream>
 {
-    HRESULT __stdcall ReadAsync(void* buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL ReadAsync(void* buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t>), Windows::Storage::Streams::IBuffer const, uint32_t, Windows::Storage::Streams::InputStreamOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t>>(this->shim().ReadAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer), count, *reinterpret_cast<Windows::Storage::Streams::InputStreamOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IInputStreamReference> : produce_base<D, Windows::Storage::Streams::IInputStreamReference>
 {
-    HRESULT __stdcall OpenSequentialReadAsync(void** operation) noexcept final
+    int32_t WINRT_CALL OpenSequentialReadAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenSequentialReadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream>>(this->shim().OpenSequentialReadAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IOutputStream> : produce_base<D, Windows::Storage::Streams::IOutputStream>
 {
-    HRESULT __stdcall WriteAsync(void* buffer, void** operation) noexcept final
+    int32_t WINRT_CALL WriteAsync(void* buffer, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>>(this->shim().WriteAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FlushAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FlushAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlushAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().FlushAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IRandomAccessStream> : produce_base<D, Windows::Storage::Streams::IRandomAccessStream>
 {
-    HRESULT __stdcall get_Size(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_Size(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(uint64_t value) noexcept final
+    int32_t WINRT_CALL put_Size(uint64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), uint64_t);
             this->shim().Size(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInputStreamAt(uint64_t position, void** stream) noexcept final
+    int32_t WINRT_CALL GetInputStreamAt(uint64_t position, void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInputStreamAt, WINRT_WRAP(Windows::Storage::Streams::IInputStream), uint64_t);
             *stream = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().GetInputStreamAt(position));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetOutputStreamAt(uint64_t position, void** stream) noexcept final
+    int32_t WINRT_CALL GetOutputStreamAt(uint64_t position, void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOutputStreamAt, WINRT_WRAP(Windows::Storage::Streams::IOutputStream), uint64_t);
             *stream = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().GetOutputStreamAt(position));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_Position(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Seek(uint64_t position) noexcept final
+    int32_t WINRT_CALL Seek(uint64_t position) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Seek, WINRT_WRAP(void), uint64_t);
             this->shim().Seek(position);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CloneStream(void** stream) noexcept final
+    int32_t WINRT_CALL CloneStream(void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CloneStream, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStream));
             *stream = detach_from<Windows::Storage::Streams::IRandomAccessStream>(this->shim().CloneStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanRead(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanRead(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRead, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanRead());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanWrite(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanWrite(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanWrite, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanWrite());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReference> : produce_base<D, Windows::Storage::Streams::IRandomAccessStreamReference>
 {
-    HRESULT __stdcall OpenReadAsync(void** operation) noexcept final
+    int32_t WINRT_CALL OpenReadAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenReadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().OpenReadAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics> : produce_base<D, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>
 {
-    HRESULT __stdcall CreateFromFile(void* file, void** streamReference) noexcept final
+    int32_t WINRT_CALL CreateFromFile(void* file, void** streamReference) noexcept final
     {
         try
         {
             *streamReference = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFile, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference), Windows::Storage::IStorageFile const&);
             *streamReference = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().CreateFromFile(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromUri(void* uri, void** streamReference) noexcept final
+    int32_t WINRT_CALL CreateFromUri(void* uri, void** streamReference) noexcept final
     {
         try
         {
             *streamReference = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromUri, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference), Windows::Foundation::Uri const&);
             *streamReference = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().CreateFromUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromStream(void* stream, void** streamReference) noexcept final
+    int32_t WINRT_CALL CreateFromStream(void* stream, void** streamReference) noexcept final
     {
         try
         {
             *streamReference = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromStream, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference), Windows::Storage::Streams::IRandomAccessStream const&);
             *streamReference = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().CreateFromStream(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Streams::IRandomAccessStreamStatics> : produce_base<D, Windows::Storage::Streams::IRandomAccessStreamStatics>
 {
-    HRESULT __stdcall CopyAsync(void* source, void* destination, void** operation) noexcept final
+    int32_t WINRT_CALL CopyAsync(void* source, void* destination, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>), Windows::Storage::Streams::IInputStream const, Windows::Storage::Streams::IOutputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>>(this->shim().CopyAsync(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&source), *reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&destination)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopySizeAsync(void* source, void* destination, uint64_t bytesToCopy, void** operation) noexcept final
+    int32_t WINRT_CALL CopySizeAsync(void* source, void* destination, uint64_t bytesToCopy, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>), Windows::Storage::Streams::IInputStream const, Windows::Storage::Streams::IOutputStream const, uint64_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>>(this->shim().CopyAsync(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&source), *reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&destination), bytesToCopy));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyAndCloseAsync(void* source, void* destination, void** operation) noexcept final
+    int32_t WINRT_CALL CopyAndCloseAsync(void* source, void* destination, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyAndCloseAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>), Windows::Storage::Streams::IInputStream const, Windows::Storage::Streams::IOutputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>>(this->shim().CopyAndCloseAsync(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&source), *reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&destination)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1993,108 +1811,108 @@ struct produce<D, Windows::Storage::Streams::IRandomAccessStreamWithContentType>
 WINRT_EXPORT namespace winrt::Windows::Storage::Streams {
 
 inline Buffer::Buffer(uint32_t capacity) :
-    Buffer(get_activation_factory<Buffer, Windows::Storage::Streams::IBufferFactory>().Create(capacity))
+    Buffer(impl::call_factory<Buffer, Windows::Storage::Streams::IBufferFactory>([&](auto&& f) { return f.Create(capacity); }))
 {}
 
 inline Windows::Storage::Streams::Buffer Buffer::CreateCopyFromMemoryBuffer(Windows::Foundation::IMemoryBuffer const& input)
 {
-    return get_activation_factory<Buffer, Windows::Storage::Streams::IBufferStatics>().CreateCopyFromMemoryBuffer(input);
+    return impl::call_factory<Buffer, Windows::Storage::Streams::IBufferStatics>([&](auto&& f) { return f.CreateCopyFromMemoryBuffer(input); });
 }
 
 inline Windows::Foundation::MemoryBuffer Buffer::CreateMemoryBufferOverIBuffer(Windows::Storage::Streams::IBuffer const& input)
 {
-    return get_activation_factory<Buffer, Windows::Storage::Streams::IBufferStatics>().CreateMemoryBufferOverIBuffer(input);
+    return impl::call_factory<Buffer, Windows::Storage::Streams::IBufferStatics>([&](auto&& f) { return f.CreateMemoryBufferOverIBuffer(input); });
 }
 
 inline DataReader::DataReader(Windows::Storage::Streams::IInputStream const& inputStream) :
-    DataReader(get_activation_factory<DataReader, Windows::Storage::Streams::IDataReaderFactory>().CreateDataReader(inputStream))
+    DataReader(impl::call_factory<DataReader, Windows::Storage::Streams::IDataReaderFactory>([&](auto&& f) { return f.CreateDataReader(inputStream); }))
 {}
 
 inline Windows::Storage::Streams::DataReader DataReader::FromBuffer(Windows::Storage::Streams::IBuffer const& buffer)
 {
-    return get_activation_factory<DataReader, Windows::Storage::Streams::IDataReaderStatics>().FromBuffer(buffer);
+    return impl::call_factory<DataReader, Windows::Storage::Streams::IDataReaderStatics>([&](auto&& f) { return f.FromBuffer(buffer); });
 }
 
 inline DataWriter::DataWriter() :
-    DataWriter(get_activation_factory<DataWriter>().ActivateInstance<DataWriter>())
+    DataWriter(impl::call_factory<DataWriter>([](auto&& f) { return f.template ActivateInstance<DataWriter>(); }))
 {}
 
 inline DataWriter::DataWriter(Windows::Storage::Streams::IOutputStream const& outputStream) :
-    DataWriter(get_activation_factory<DataWriter, Windows::Storage::Streams::IDataWriterFactory>().CreateDataWriter(outputStream))
+    DataWriter(impl::call_factory<DataWriter, Windows::Storage::Streams::IDataWriterFactory>([&](auto&& f) { return f.CreateDataWriter(outputStream); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> FileRandomAccessStream::OpenAsync(param::hstring const& filePath, Windows::Storage::FileAccessMode const& accessMode)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenAsync(filePath, accessMode);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenAsync(filePath, accessMode); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> FileRandomAccessStream::OpenAsync(param::hstring const& filePath, Windows::Storage::FileAccessMode const& accessMode, Windows::Storage::StorageOpenOptions const& sharingOptions, Windows::Storage::Streams::FileOpenDisposition const& openDisposition)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenAsync(filePath, accessMode, sharingOptions, openDisposition);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenAsync(filePath, accessMode, sharingOptions, openDisposition); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> FileRandomAccessStream::OpenTransactedWriteAsync(param::hstring const& filePath)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenTransactedWriteAsync(filePath);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenTransactedWriteAsync(filePath); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> FileRandomAccessStream::OpenTransactedWriteAsync(param::hstring const& filePath, Windows::Storage::StorageOpenOptions const& openOptions, Windows::Storage::Streams::FileOpenDisposition const& openDisposition)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenTransactedWriteAsync(filePath, openOptions, openDisposition);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenTransactedWriteAsync(filePath, openOptions, openDisposition); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> FileRandomAccessStream::OpenForUserAsync(Windows::System::User const& user, param::hstring const& filePath, Windows::Storage::FileAccessMode const& accessMode)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenForUserAsync(user, filePath, accessMode);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenForUserAsync(user, filePath, accessMode); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> FileRandomAccessStream::OpenForUserAsync(Windows::System::User const& user, param::hstring const& filePath, Windows::Storage::FileAccessMode const& accessMode, Windows::Storage::StorageOpenOptions const& sharingOptions, Windows::Storage::Streams::FileOpenDisposition const& openDisposition)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenForUserAsync(user, filePath, accessMode, sharingOptions, openDisposition);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenForUserAsync(user, filePath, accessMode, sharingOptions, openDisposition); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> FileRandomAccessStream::OpenTransactedWriteForUserAsync(Windows::System::User const& user, param::hstring const& filePath)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenTransactedWriteForUserAsync(user, filePath);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenTransactedWriteForUserAsync(user, filePath); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> FileRandomAccessStream::OpenTransactedWriteForUserAsync(Windows::System::User const& user, param::hstring const& filePath, Windows::Storage::StorageOpenOptions const& openOptions, Windows::Storage::Streams::FileOpenDisposition const& openDisposition)
 {
-    return get_activation_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>().OpenTransactedWriteForUserAsync(user, filePath, openOptions, openDisposition);
+    return impl::call_factory<FileRandomAccessStream, Windows::Storage::Streams::IFileRandomAccessStreamStatics>([&](auto&& f) { return f.OpenTransactedWriteForUserAsync(user, filePath, openOptions, openDisposition); });
 }
 
 inline InMemoryRandomAccessStream::InMemoryRandomAccessStream() :
-    InMemoryRandomAccessStream(get_activation_factory<InMemoryRandomAccessStream>().ActivateInstance<InMemoryRandomAccessStream>())
+    InMemoryRandomAccessStream(impl::call_factory<InMemoryRandomAccessStream>([](auto&& f) { return f.template ActivateInstance<InMemoryRandomAccessStream>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAsync(Windows::Storage::Streams::IInputStream const& source, Windows::Storage::Streams::IOutputStream const& destination)
 {
-    return get_activation_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>().CopyAsync(source, destination);
+    return impl::call_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>([&](auto&& f) { return f.CopyAsync(source, destination); });
 }
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAsync(Windows::Storage::Streams::IInputStream const& source, Windows::Storage::Streams::IOutputStream const& destination, uint64_t bytesToCopy)
 {
-    return get_activation_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>().CopyAsync(source, destination, bytesToCopy);
+    return impl::call_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>([&](auto&& f) { return f.CopyAsync(source, destination, bytesToCopy); });
 }
 
 inline Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> RandomAccessStream::CopyAndCloseAsync(Windows::Storage::Streams::IInputStream const& source, Windows::Storage::Streams::IOutputStream const& destination)
 {
-    return get_activation_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>().CopyAndCloseAsync(source, destination);
+    return impl::call_factory<RandomAccessStream, Windows::Storage::Streams::IRandomAccessStreamStatics>([&](auto&& f) { return f.CopyAndCloseAsync(source, destination); });
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromFile(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>().CreateFromFile(file);
+    return impl::call_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>([&](auto&& f) { return f.CreateFromFile(file); });
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromUri(Windows::Foundation::Uri const& uri)
 {
-    return get_activation_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>().CreateFromUri(uri);
+    return impl::call_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>([&](auto&& f) { return f.CreateFromUri(uri); });
 }
 
 inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStreamReference::CreateFromStream(Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>().CreateFromStream(stream);
+    return impl::call_factory<RandomAccessStreamReference, Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>([&](auto&& f) { return f.CreateFromStream(stream); });
 }
 
 }
@@ -2135,5 +1953,3 @@ template<> struct hash<winrt::Windows::Storage::Streams::RandomAccessStreamOverS
 template<> struct hash<winrt::Windows::Storage::Streams::RandomAccessStreamReference> : winrt::impl::hash_base<winrt::Windows::Storage::Streams::RandomAccessStreamReference> {};
 
 }
-
-WINRT_WARNING_POP

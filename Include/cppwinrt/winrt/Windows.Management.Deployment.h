@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.2.h"
@@ -23,16 +23,16 @@ template <typename D> hstring consume_Windows_Management_Deployment_IDeploymentR
     return value;
 }
 
-template <typename D> GUID consume_Windows_Management_Deployment_IDeploymentResult<D>::ActivityId() const
+template <typename D> winrt::guid consume_Windows_Management_Deployment_IDeploymentResult<D>::ActivityId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Management::Deployment::IDeploymentResult)->get_ActivityId(put_abi(value)));
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_Management_Deployment_IDeploymentResult<D>::ExtendedErrorCode() const
+template <typename D> winrt::hresult consume_Windows_Management_Deployment_IDeploymentResult<D>::ExtendedErrorCode() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::Management::Deployment::IDeploymentResult)->get_ExtendedErrorCode(put_abi(value)));
     return value;
 }
@@ -407,6 +407,13 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> consume_Windows_Management_Deployment_IPackageManager8<D>::DeprovisionPackageForAllUsersAsync(param::hstring const& packageFamilyName) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Management::Deployment::IPackageManager8)->DeprovisionPackageForAllUsersAsync(get_abi(packageFamilyName), put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Management_Deployment_IPackageManagerDebugSettings<D>::SetContentGroupStateAsync(Windows::ApplicationModel::Package const& package, param::hstring const& contentGroupName, Windows::ApplicationModel::PackageContentGroupState const& state) const
 {
     Windows::Foundation::IAsyncAction action{ nullptr };
@@ -599,1299 +606,1148 @@ template <typename D> Windows::Foundation::IAsyncOperation<uint64_t> consume_Win
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IDeploymentResult> : produce_base<D, Windows::Management::Deployment::IDeploymentResult>
 {
-    HRESULT __stdcall get_ErrorText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ErrorText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ErrorText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivityId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ActivityId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ActivityId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ActivityId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedErrorCode(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedErrorCode(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedErrorCode());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedErrorCode, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedErrorCode());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IDeploymentResult2> : produce_base<D, Windows::Management::Deployment::IDeploymentResult2>
 {
-    HRESULT __stdcall get_IsRegistered(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRegistered(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRegistered, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRegistered());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager> : produce_base<D, Windows::Management::Deployment::IPackageManager>
 {
-    HRESULT __stdcall AddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL AddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().AddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdatePackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL UpdatePackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdatePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().UpdatePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemovePackageAsync(HSTRING packageFullName, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RemovePackageAsync(void* packageFullName, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RemovePackageAsync(*reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StagePackageAsync(void* packageUri, void* dependencyPackageUris, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StagePackageAsync(void* packageUri, void* dependencyPackageUris, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StagePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StagePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterPackageAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RegisterPackageAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RegisterPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&manifestUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackages(void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackages(void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>));
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityId(HSTRING userSecurityId, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityId(void* userSecurityId, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByNamePublisher(HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByNamePublisher(void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackages(*reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisher(void* userSecurityId, void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindUsers(HSTRING packageFullName, void** users) noexcept final
+    int32_t WINRT_CALL FindUsers(void* packageFullName, void** users) noexcept final
     {
         try
         {
             *users = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindUsers, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation>), hstring const&);
             *users = detach_from<Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation>>(this->shim().FindUsers(*reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPackageState(HSTRING packageFullName, Windows::Management::Deployment::PackageState packageState) noexcept final
+    int32_t WINRT_CALL SetPackageState(void* packageFullName, Windows::Management::Deployment::PackageState packageState) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPackageState, WINRT_WRAP(void), hstring const&, Windows::Management::Deployment::PackageState const&);
             this->shim().SetPackageState(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::PackageState const*>(&packageState));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageByPackageFullName(HSTRING packageFullName, void** packageInformation) noexcept final
+    int32_t WINRT_CALL FindPackageByPackageFullName(void* packageFullName, void** packageInformation) noexcept final
     {
         try
         {
             *packageInformation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackage, WINRT_WRAP(Windows::ApplicationModel::Package), hstring const&);
             *packageInformation = detach_from<Windows::ApplicationModel::Package>(this->shim().FindPackage(*reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CleanupPackageForUserAsync(HSTRING packageName, HSTRING userSecurityId, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL CleanupPackageForUserAsync(void* packageName, void* userSecurityId, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CleanupPackageForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, hstring const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().CleanupPackageForUserAsync(*reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&userSecurityId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByPackageFamilyName(HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByPackageFamilyName(void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackages(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyName(void* userSecurityId, void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName, void** packageInformation) noexcept final
+    int32_t WINRT_CALL FindPackageByUserSecurityIdPackageFullName(void* userSecurityId, void* packageFullName, void** packageInformation) noexcept final
     {
         try
         {
             *packageInformation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackageForUser, WINRT_WRAP(Windows::ApplicationModel::Package), hstring const&, hstring const&);
             *packageInformation = detach_from<Windows::ApplicationModel::Package>(this->shim().FindPackageForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager2> : produce_base<D, Windows::Management::Deployment::IPackageManager2>
 {
-    HRESULT __stdcall RemovePackageWithOptionsAsync(HSTRING packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RemovePackageWithOptionsAsync(void* packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, Windows::Management::Deployment::RemovalOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RemovePackageAsync(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::RemovalOptions const*>(&removalOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StagePackageWithOptionsAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StagePackageWithOptionsAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StagePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StagePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterPackageByFullNameAsync(HSTRING mainPackageFullName, void* dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RegisterPackageByFullNameAsync(void* mainPackageFullName, void* dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterPackageByFullNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RegisterPackageByFullNameAsync(*reinterpret_cast<hstring const*>(&mainPackageFullName), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&dependencyPackageFullNames), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByNamePublisherWithPackageTypes(HSTRING packageName, HSTRING packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByNamePublisherWithPackageTypes(void* packageName, void* packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(void* userSecurityId, void* packageName, void* packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&, hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByPackageFamilyNameWithPackageTypes(HSTRING packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByPackageFamilyNameWithPackageTypes(void* packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(HSTRING userSecurityId, HSTRING packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(void* userSecurityId, void* packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>), hstring const&, hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StageUserDataAsync(HSTRING packageFullName, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StageUserDataAsync(void* packageFullName, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StageUserDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StageUserDataAsync(*reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager3> : produce_base<D, Windows::Management::Deployment::IPackageManager3>
 {
-    HRESULT __stdcall AddPackageVolumeAsync(HSTRING packageStorePath, void** packageVolume) noexcept final
+    int32_t WINRT_CALL AddPackageVolumeAsync(void* packageStorePath, void** packageVolume) noexcept final
     {
         try
         {
             *packageVolume = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageVolumeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume>), hstring const);
             *packageVolume = detach_from<Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume>>(this->shim().AddPackageVolumeAsync(*reinterpret_cast<hstring const*>(&packageStorePath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddPackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL AddPackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().AddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearPackageStatus(HSTRING packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept final
+    int32_t WINRT_CALL ClearPackageStatus(void* packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearPackageStatus, WINRT_WRAP(void), hstring const&, Windows::Management::Deployment::PackageStatus const&);
             this->shim().ClearPackageStatus(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::PackageStatus const*>(&status));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterPackageWithAppDataVolumeAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RegisterPackageWithAppDataVolumeAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RegisterPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&manifestUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&appDataVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageVolumeByName(HSTRING volumeName, void** volume) noexcept final
+    int32_t WINRT_CALL FindPackageVolumeByName(void* volumeName, void** volume) noexcept final
     {
         try
         {
             *volume = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackageVolume, WINRT_WRAP(Windows::Management::Deployment::PackageVolume), hstring const&);
             *volume = detach_from<Windows::Management::Deployment::PackageVolume>(this->shim().FindPackageVolume(*reinterpret_cast<hstring const*>(&volumeName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageVolumes(void** volumeCollection) noexcept final
+    int32_t WINRT_CALL FindPackageVolumes(void** volumeCollection) noexcept final
     {
         try
         {
             *volumeCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackageVolumes, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageVolume>));
             *volumeCollection = detach_from<Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageVolume>>(this->shim().FindPackageVolumes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultPackageVolume(void** volume) noexcept final
+    int32_t WINRT_CALL GetDefaultPackageVolume(void** volume) noexcept final
     {
         try
         {
             *volume = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultPackageVolume, WINRT_WRAP(Windows::Management::Deployment::PackageVolume));
             *volume = detach_from<Windows::Management::Deployment::PackageVolume>(this->shim().GetDefaultPackageVolume());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MovePackageToVolumeAsync(HSTRING packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL MovePackageToVolumeAsync(void* packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MovePackageToVolumeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().MovePackageToVolumeAsync(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemovePackageVolumeAsync(void* volume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RemovePackageVolumeAsync(void* volume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovePackageVolumeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RemovePackageVolumeAsync(*reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&volume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDefaultPackageVolume(void* volume) noexcept final
+    int32_t WINRT_CALL SetDefaultPackageVolume(void* volume) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDefaultPackageVolume, WINRT_WRAP(void), Windows::Management::Deployment::PackageVolume const&);
             this->shim().SetDefaultPackageVolume(*reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&volume));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPackageStatus(HSTRING packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept final
+    int32_t WINRT_CALL SetPackageStatus(void* packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPackageStatus, WINRT_WRAP(void), hstring const&, Windows::Management::Deployment::PackageStatus const&);
             this->shim().SetPackageStatus(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::PackageStatus const*>(&status));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPackageVolumeOfflineAsync(void* packageVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL SetPackageVolumeOfflineAsync(void* packageVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPackageVolumeOfflineAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().SetPackageVolumeOfflineAsync(*reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&packageVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPackageVolumeOnlineAsync(void* packageVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL SetPackageVolumeOnlineAsync(void* packageVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPackageVolumeOnlineAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().SetPackageVolumeOnlineAsync(*reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&packageVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StagePackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StagePackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StagePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StagePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StageUserDataWithOptionsAsync(HSTRING packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StageUserDataWithOptionsAsync(void* packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StageUserDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, Windows::Management::Deployment::DeploymentOptions const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StageUserDataAsync(*reinterpret_cast<hstring const*>(&packageFullName), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager4> : produce_base<D, Windows::Management::Deployment::IPackageManager4>
 {
-    HRESULT __stdcall GetPackageVolumesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetPackageVolumesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPackageVolumesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Management::Deployment::PackageVolume>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Management::Deployment::PackageVolume>>>(this->shim().GetPackageVolumesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager5> : produce_base<D, Windows::Management::Deployment::IPackageManager5>
 {
-    HRESULT __stdcall AddPackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL AddPackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().AddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&externalPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StagePackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL StagePackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StagePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StagePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&externalPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterPackageByFamilyNameAndOptionalPackagesAsync(HSTRING mainPackageFamilyName, void* dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void* optionalPackageFamilyNames, void** deploymentOperation) noexcept final
+    int32_t WINRT_CALL RegisterPackageByFamilyNameAndOptionalPackagesAsync(void* mainPackageFamilyName, void* dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void* optionalPackageFamilyNames, void** deploymentOperation) noexcept final
     {
         try
         {
             *deploymentOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterPackageByFamilyNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const);
             *deploymentOperation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RegisterPackageByFamilyNameAsync(*reinterpret_cast<hstring const*>(&mainPackageFamilyName), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&dependencyPackageFamilyNames), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&appDataVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DebugSettings(void** value) noexcept final
+    int32_t WINRT_CALL get_DebugSettings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DebugSettings, WINRT_WRAP(Windows::Management::Deployment::PackageManagerDebugSettings));
             *value = detach_from<Windows::Management::Deployment::PackageManagerDebugSettings>(this->shim().DebugSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager6> : produce_base<D, Windows::Management::Deployment::IPackageManager6>
 {
-    HRESULT __stdcall ProvisionPackageForAllUsersAsync(HSTRING packageFamilyName, void** operation) noexcept final
+    int32_t WINRT_CALL ProvisionPackageForAllUsersAsync(void* packageFamilyName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProvisionPackageForAllUsersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().ProvisionPackageForAllUsersAsync(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept final
+    int32_t WINRT_CALL AddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageByAppInstallerFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Management::Deployment::AddPackageByAppInstallerOptions const, Windows::Management::Deployment::PackageVolume const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().AddPackageByAppInstallerFileAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&appInstallerFileUri), *reinterpret_cast<Windows::Management::Deployment::AddPackageByAppInstallerOptions const*>(&options), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAddPackageByAppInstallerFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Management::Deployment::AddPackageByAppInstallerOptions const, Windows::Management::Deployment::PackageVolume const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RequestAddPackageByAppInstallerFileAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&appInstallerFileUri), *reinterpret_cast<Windows::Management::Deployment::AddPackageByAppInstallerOptions const*>(&options), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddPackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept final
+    int32_t WINRT_CALL AddPackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().AddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&options), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&packageUrisToInstall), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&relatedPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StagePackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept final
+    int32_t WINRT_CALL StagePackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StagePackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().StagePackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&options), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&packageUrisToInstall), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&relatedPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RequestAddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&relatedPackageUris)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManager7> : produce_base<D, Windows::Management::Deployment::IPackageManager7>
 {
-    HRESULT __stdcall RequestAddPackageAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void* packageUrisToInstall, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAddPackageAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void* packageUrisToInstall, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAddPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Management::Deployment::DeploymentOptions const, Windows::Management::Deployment::PackageVolume const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().RequestAddPackageAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&packageUri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&dependencyPackageUris), *reinterpret_cast<Windows::Management::Deployment::DeploymentOptions const*>(&deploymentOptions), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&optionalPackageFamilyNames), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&relatedPackageUris), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> const*>(&packageUrisToInstall)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Management::Deployment::IPackageManager8> : produce_base<D, Windows::Management::Deployment::IPackageManager8>
+{
+    int32_t WINRT_CALL DeprovisionPackageForAllUsersAsync(void* packageFamilyName, void** operation) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeprovisionPackageForAllUsersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>), hstring const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>>(this->shim().DeprovisionPackageForAllUsersAsync(*reinterpret_cast<hstring const*>(&packageFamilyName)));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageManagerDebugSettings> : produce_base<D, Windows::Management::Deployment::IPackageManagerDebugSettings>
 {
-    HRESULT __stdcall SetContentGroupStateAsync(void* package, HSTRING contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, void** action) noexcept final
+    int32_t WINRT_CALL SetContentGroupStateAsync(void* package, void* contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetContentGroupStateAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Package const, hstring const, Windows::ApplicationModel::PackageContentGroupState const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetContentGroupStateAsync(*reinterpret_cast<Windows::ApplicationModel::Package const*>(&package), *reinterpret_cast<hstring const*>(&contentGroupName), *reinterpret_cast<Windows::ApplicationModel::PackageContentGroupState const*>(&state)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetContentGroupStateWithPercentageAsync(void* package, HSTRING contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, void** action) noexcept final
+    int32_t WINRT_CALL SetContentGroupStateWithPercentageAsync(void* package, void* contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetContentGroupStateAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Package const, hstring const, Windows::ApplicationModel::PackageContentGroupState const, double);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetContentGroupStateAsync(*reinterpret_cast<Windows::ApplicationModel::Package const*>(&package), *reinterpret_cast<hstring const*>(&contentGroupName), *reinterpret_cast<Windows::ApplicationModel::PackageContentGroupState const*>(&state), completionPercentage));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageUserInformation> : produce_base<D, Windows::Management::Deployment::IPackageUserInformation>
 {
-    HRESULT __stdcall get_UserSecurityId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserSecurityId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserSecurityId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserSecurityId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstallState(Windows::Management::Deployment::PackageInstallState* value) noexcept final
+    int32_t WINRT_CALL get_InstallState(Windows::Management::Deployment::PackageInstallState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallState, WINRT_WRAP(Windows::Management::Deployment::PackageInstallState));
             *value = detach_from<Windows::Management::Deployment::PackageInstallState>(this->shim().InstallState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageVolume> : produce_base<D, Windows::Management::Deployment::IPackageVolume>
 {
-    HRESULT __stdcall get_IsOffline(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOffline(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOffline, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOffline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSystemVolume(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSystemVolume(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSystemVolume, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSystemVolume());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MountPoint(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MountPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MountPoint, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MountPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PackageStorePath(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PackageStorePath(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageStorePath, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PackageStorePath());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportsHardLinks(bool* value) noexcept final
+    int32_t WINRT_CALL get_SupportsHardLinks(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportsHardLinks, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SupportsHardLinks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackages(void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackages(void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>));
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByNamePublisher(HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByNamePublisher(void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackages(*reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByPackageFamilyName(HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByPackageFamilyName(void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackages, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackages(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByNamePublisherWithPackagesTypes(Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByNamePublisherWithPackagesTypes(Windows::Management::Deployment::PackageTypes packageTypes, void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), Windows::Management::Deployment::PackageTypes const&, hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes), *reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByPackageFamilyNameWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByPackageFamilyNameWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), Windows::Management::Deployment::PackageTypes const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesWithPackageTypes(*reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes), *reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageByPackageFullName(HSTRING packageFullName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackageByPackageFullName(void* packageFullName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackage, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackage(*reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityId(HSTRING userSecurityId, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityId(void* userSecurityId, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisher(void* userSecurityId, void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyName(void* userSecurityId, void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, Windows::Management::Deployment::PackageTypes const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void* packageName, void* packagePublisher, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, Windows::Management::Deployment::PackageTypes const&, hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes), *reinterpret_cast<hstring const*>(&packageName), *reinterpret_cast<hstring const*>(&packagePublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageFamilyName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void* packageFamilyName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesForUserWithPackageTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, Windows::Management::Deployment::PackageTypes const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackagesForUserWithPackageTypes(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<Windows::Management::Deployment::PackageTypes const*>(&packageTypes), *reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName, void** packageCollection) noexcept final
+    int32_t WINRT_CALL FindPackageByUserSecurityIdPackageFullName(void* userSecurityId, void* packageFullName, void** packageCollection) noexcept final
     {
         try
         {
             *packageCollection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackageForUser, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>), hstring const&, hstring const&);
             *packageCollection = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package>>(this->shim().FindPackageForUser(*reinterpret_cast<hstring const*>(&userSecurityId), *reinterpret_cast<hstring const*>(&packageFullName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageVolume2> : produce_base<D, Windows::Management::Deployment::IPackageVolume2>
 {
-    HRESULT __stdcall get_IsFullTrustPackageSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFullTrustPackageSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFullTrustPackageSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFullTrustPackageSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAppxInstallSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAppxInstallSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAppxInstallSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAppxInstallSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAvailableSpaceAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetAvailableSpaceAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAvailableSpaceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint64_t>>(this->shim().GetAvailableSpaceAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1900,7 +1756,7 @@ struct produce<D, Windows::Management::Deployment::IPackageVolume2> : produce_ba
 WINRT_EXPORT namespace winrt::Windows::Management::Deployment {
 
 inline PackageManager::PackageManager() :
-    PackageManager(get_activation_factory<PackageManager>().ActivateInstance<PackageManager>())
+    PackageManager(impl::call_factory<PackageManager>([](auto&& f) { return f.template ActivateInstance<PackageManager>(); }))
 {}
 
 }
@@ -1916,6 +1772,7 @@ template<> struct hash<winrt::Windows::Management::Deployment::IPackageManager4>
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageManager5> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageManager5> {};
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageManager6> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageManager6> {};
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageManager7> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageManager7> {};
+template<> struct hash<winrt::Windows::Management::Deployment::IPackageManager8> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageManager8> {};
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageManagerDebugSettings> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageManagerDebugSettings> {};
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageUserInformation> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageUserInformation> {};
 template<> struct hash<winrt::Windows::Management::Deployment::IPackageVolume> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::IPackageVolume> {};
@@ -1927,5 +1784,3 @@ template<> struct hash<winrt::Windows::Management::Deployment::PackageUserInform
 template<> struct hash<winrt::Windows::Management::Deployment::PackageVolume> : winrt::impl::hash_base<winrt::Windows::Management::Deployment::PackageVolume> {};
 
 }
-
-WINRT_WARNING_POP

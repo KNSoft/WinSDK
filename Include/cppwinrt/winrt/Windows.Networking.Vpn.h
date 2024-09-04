@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -98,21 +98,21 @@ template <typename D> Windows::Networking::Vpn::VpnChannelConfiguration consume_
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel)->add_ActivityChange(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::Vpn::IVpnChannel> consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange_revoker consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Vpn::IVpnChannel>(this, &abi_t<Windows::Networking::Vpn::IVpnChannel>::remove_ActivityChange, ActivityChange(handler));
+    return impl::make_event_revoker<D, ActivityChange_revoker>(this, ActivityChange(handler));
 }
 
-template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(event_token const& token) const
+template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel<D>::ActivityChange(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel)->remove_ActivityChange(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel)->remove_ActivityChange(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel<D>::PlugInContext(Windows::Foundation::IInspectable const& value) const
@@ -159,21 +159,21 @@ template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel2<D>::Start
     check_hresult(WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel2)->StartExistingTransports(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved));
 }
 
-template <typename D> event_token consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel2)->add_ActivityStateChange(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::Vpn::IVpnChannel2> consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange_revoker consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Vpn::IVpnChannel2>(this, &abi_t<Windows::Networking::Vpn::IVpnChannel2>::remove_ActivityStateChange, ActivityStateChange(handler));
+    return impl::make_event_revoker<D, ActivityStateChange_revoker>(this, ActivityStateChange(handler));
 }
 
-template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(event_token const& token) const
+template <typename D> void consume_Windows_Networking_Vpn_IVpnChannel2<D>::ActivityStateChange(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel2)->remove_ActivityStateChange(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Vpn::IVpnChannel2)->remove_ActivityStateChange(get_abi(token)));
 }
 
 template <typename D> Windows::Networking::Vpn::VpnPacketBuffer consume_Windows_Networking_Vpn_IVpnChannel2<D>::GetVpnSendPacketBuffer() const
@@ -1364,935 +1364,805 @@ template <typename D> Windows::Networking::Vpn::VpnTrafficFilter consume_Windows
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnAppId> : produce_base<D, Windows::Networking::Vpn::IVpnAppId>
 {
-    HRESULT __stdcall get_Type(Windows::Networking::Vpn::VpnAppIdType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Networking::Vpn::VpnAppIdType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Networking::Vpn::VpnAppIdType));
             *value = detach_from<Windows::Networking::Vpn::VpnAppIdType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(Windows::Networking::Vpn::VpnAppIdType value) noexcept final
+    int32_t WINRT_CALL put_Type(Windows::Networking::Vpn::VpnAppIdType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), Windows::Networking::Vpn::VpnAppIdType const&);
             this->shim().Type(*reinterpret_cast<Windows::Networking::Vpn::VpnAppIdType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), hstring const&);
             this->shim().Value(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnAppIdFactory> : produce_base<D, Windows::Networking::Vpn::IVpnAppIdFactory>
 {
-    HRESULT __stdcall Create(Windows::Networking::Vpn::VpnAppIdType type, HSTRING value, void** result) noexcept final
+    int32_t WINRT_CALL Create(Windows::Networking::Vpn::VpnAppIdType type, void* value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Networking::Vpn::VpnAppId), Windows::Networking::Vpn::VpnAppIdType const&, hstring const&);
             *result = detach_from<Windows::Networking::Vpn::VpnAppId>(this->shim().Create(*reinterpret_cast<Windows::Networking::Vpn::VpnAppIdType const*>(&type), *reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel> : produce_base<D, Windows::Networking::Vpn::IVpnChannel>
 {
-    HRESULT __stdcall AssociateTransport(void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept final
+    int32_t WINRT_CALL AssociateTransport(void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AssociateTransport, WINRT_WRAP(void), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&);
             this->shim().AssociateTransport(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&mainOuterTunnelTransport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&optionalOuterTunnelTransport));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* routeScope, void* namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept final
+    int32_t WINRT_CALL Start(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* routeScope, void* namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Networking::Vpn::VpnInterfaceId const&, Windows::Networking::Vpn::VpnRouteAssignment const&, Windows::Networking::Vpn::VpnNamespaceAssignment const&, uint32_t, uint32_t, bool, Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&);
             this->shim().Start(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv4list), *reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv6list), *reinterpret_cast<Windows::Networking::Vpn::VpnInterfaceId const*>(&vpnInterfaceId), *reinterpret_cast<Windows::Networking::Vpn::VpnRouteAssignment const*>(&routeScope), *reinterpret_cast<Windows::Networking::Vpn::VpnNamespaceAssignment const*>(&namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, *reinterpret_cast<Windows::Foundation::IInspectable const*>(&mainOuterTunnelTransport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&optionalOuterTunnelTransport));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, void* certificate, void** credential) noexcept final
+    int32_t WINRT_CALL RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, void* certificate, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCredentials, WINRT_WRAP(Windows::Networking::Vpn::VpnPickedCredential), Windows::Networking::Vpn::VpnCredentialType const&, bool, bool, Windows::Security::Cryptography::Certificates::Certificate const&);
             *credential = detach_from<Windows::Networking::Vpn::VpnPickedCredential>(this->shim().RequestCredentials(*reinterpret_cast<Windows::Networking::Vpn::VpnCredentialType const*>(&credType), isRetry, isSingleSignOnCredential, *reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&certificate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, void** vpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, void** vpnPacketBuffer) noexcept final
     {
         try
         {
             *vpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestVpnPacketBuffer, WINRT_WRAP(void), Windows::Networking::Vpn::VpnDataPathType const&, Windows::Networking::Vpn::VpnPacketBuffer&);
             this->shim().RequestVpnPacketBuffer(*reinterpret_cast<Windows::Networking::Vpn::VpnDataPathType const*>(&type), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer*>(vpnPacketBuffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LogDiagnosticMessage(HSTRING message) noexcept final
+    int32_t WINRT_CALL LogDiagnosticMessage(void* message) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogDiagnosticMessage, WINRT_WRAP(void), hstring const&);
             this->shim().LogDiagnosticMessage(*reinterpret_cast<hstring const*>(&message));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Configuration(void** value) noexcept final
+    int32_t WINRT_CALL get_Configuration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configuration, WINRT_WRAP(Windows::Networking::Vpn::VpnChannelConfiguration));
             *value = detach_from<Windows::Networking::Vpn::VpnChannelConfiguration>(this->shim().Configuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ActivityChange(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ActivityChange(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ActivityChange(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ActivityChange, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ActivityChange(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ActivityChange(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ActivityChange(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ActivityChange, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ActivityChange(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL put_PlugInContext(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ActivityChange(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall put_PlugInContext(void* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlugInContext, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().PlugInContext(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlugInContext(void** value) noexcept final
+    int32_t WINRT_CALL get_PlugInContext(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlugInContext, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().PlugInContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemHealth(void** value) noexcept final
+    int32_t WINRT_CALL get_SystemHealth(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemHealth, WINRT_WRAP(Windows::Networking::Vpn::VpnSystemHealth));
             *value = detach_from<Windows::Networking::Vpn::VpnSystemHealth>(this->shim().SystemHealth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCustomPrompt(void* customPrompt) noexcept final
+    int32_t WINRT_CALL RequestCustomPrompt(void* customPrompt) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCustomPrompt, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> const&);
             this->shim().RequestCustomPrompt(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> const*>(&customPrompt));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetErrorMessage(HSTRING message) noexcept final
+    int32_t WINRT_CALL SetErrorMessage(void* message) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetErrorMessage, WINRT_WRAP(void), hstring const&);
             this->shim().SetErrorMessage(*reinterpret_cast<hstring const*>(&message));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAllowedSslTlsVersions(void* tunnelTransport, bool useTls12) noexcept final
+    int32_t WINRT_CALL SetAllowedSslTlsVersions(void* tunnelTransport, bool useTls12) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAllowedSslTlsVersions, WINRT_WRAP(void), Windows::Foundation::IInspectable const&, bool);
             this->shim().SetAllowedSslTlsVersions(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&tunnelTransport), useTls12);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel2> : produce_base<D, Windows::Networking::Vpn::IVpnChannel2>
 {
-    HRESULT __stdcall StartWithMainTransport(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, void* mainOuterTunnelTransport) noexcept final
+    int32_t WINRT_CALL StartWithMainTransport(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, void* mainOuterTunnelTransport) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartWithMainTransport, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Networking::Vpn::VpnInterfaceId const&, Windows::Networking::Vpn::VpnRouteAssignment const&, Windows::Networking::Vpn::VpnDomainNameAssignment const&, uint32_t, uint32_t, bool, Windows::Foundation::IInspectable const&);
             this->shim().StartWithMainTransport(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv4list), *reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv6list), *reinterpret_cast<Windows::Networking::Vpn::VpnInterfaceId const*>(&vpnInterfaceId), *reinterpret_cast<Windows::Networking::Vpn::VpnRouteAssignment const*>(&assignedRoutes), *reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameAssignment const*>(&assignedDomainName), mtuSize, maxFrameSize, Reserved, *reinterpret_cast<Windows::Foundation::IInspectable const*>(&mainOuterTunnelTransport));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartExistingTransports(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept final
+    int32_t WINRT_CALL StartExistingTransports(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartExistingTransports, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Networking::Vpn::VpnInterfaceId const&, Windows::Networking::Vpn::VpnRouteAssignment const&, Windows::Networking::Vpn::VpnDomainNameAssignment const&, uint32_t, uint32_t, bool);
             this->shim().StartExistingTransports(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv4list), *reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIPv6list), *reinterpret_cast<Windows::Networking::Vpn::VpnInterfaceId const*>(&vpnInterfaceId), *reinterpret_cast<Windows::Networking::Vpn::VpnRouteAssignment const*>(&assignedRoutes), *reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameAssignment const*>(&assignedDomainName), mtuSize, maxFrameSize, Reserved);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ActivityStateChange(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ActivityStateChange(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ActivityStateChange(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ActivityStateChange, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ActivityStateChange(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ActivityStateChange(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ActivityStateChange(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ActivityStateChange(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ActivityStateChange, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ActivityStateChange(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetVpnSendPacketBuffer(void** vpnSendPacketBuffer) noexcept final
+    int32_t WINRT_CALL GetVpnSendPacketBuffer(void** vpnSendPacketBuffer) noexcept final
     {
         try
         {
             *vpnSendPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVpnSendPacketBuffer, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *vpnSendPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().GetVpnSendPacketBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetVpnReceivePacketBuffer(void** vpnReceivePacketBuffer) noexcept final
+    int32_t WINRT_CALL GetVpnReceivePacketBuffer(void** vpnReceivePacketBuffer) noexcept final
     {
         try
         {
             *vpnReceivePacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVpnReceivePacketBuffer, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *vpnReceivePacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().GetVpnReceivePacketBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCustomPromptAsync(void* customPromptElement, void** action) noexcept final
+    int32_t WINRT_CALL RequestCustomPromptAsync(void* customPromptElement, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCustomPromptAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RequestCustomPromptAsync(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> const*>(&customPromptElement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void* certificate, void** credential) noexcept final
+    int32_t WINRT_CALL RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void* certificate, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCredentialsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>), Windows::Networking::Vpn::VpnCredentialType const, uint32_t, Windows::Security::Cryptography::Certificates::Certificate const);
             *credential = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>>(this->shim().RequestCredentialsAsync(*reinterpret_cast<Windows::Networking::Vpn::VpnCredentialType const*>(&credType), credOptions, *reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&certificate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void** credential) noexcept final
+    int32_t WINRT_CALL RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCredentialsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>), Windows::Networking::Vpn::VpnCredentialType const, uint32_t);
             *credential = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>>(this->shim().RequestCredentialsAsync(*reinterpret_cast<Windows::Networking::Vpn::VpnCredentialType const*>(&credType), credOptions));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, void** credential) noexcept final
+    int32_t WINRT_CALL RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCredentialsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>), Windows::Networking::Vpn::VpnCredentialType const);
             *credential = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential>>(this->shim().RequestCredentialsAsync(*reinterpret_cast<Windows::Networking::Vpn::VpnCredentialType const*>(&credType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TerminateConnection(HSTRING message) noexcept final
+    int32_t WINRT_CALL TerminateConnection(void* message) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TerminateConnection, WINRT_WRAP(void), hstring const&);
             this->shim().TerminateConnection(*reinterpret_cast<hstring const*>(&message));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartWithTrafficFilter(void* assignedClientIpv4List, void* assignedClientIpv6List, void* vpnInterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport, void* assignedTrafficFilters) noexcept final
+    int32_t WINRT_CALL StartWithTrafficFilter(void* assignedClientIpv4List, void* assignedClientIpv6List, void* vpnInterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport, void* assignedTrafficFilters) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartWithTrafficFilter, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const&, Windows::Networking::Vpn::VpnInterfaceId const&, Windows::Networking::Vpn::VpnRouteAssignment const&, Windows::Networking::Vpn::VpnDomainNameAssignment const&, uint32_t, uint32_t, bool, Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&, Windows::Networking::Vpn::VpnTrafficFilterAssignment const&);
             this->shim().StartWithTrafficFilter(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIpv4List), *reinterpret_cast<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> const*>(&assignedClientIpv6List), *reinterpret_cast<Windows::Networking::Vpn::VpnInterfaceId const*>(&vpnInterfaceId), *reinterpret_cast<Windows::Networking::Vpn::VpnRouteAssignment const*>(&assignedRoutes), *reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameAssignment const*>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<Windows::Foundation::IInspectable const*>(&mainOuterTunnelTransport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&optionalOuterTunnelTransport), *reinterpret_cast<Windows::Networking::Vpn::VpnTrafficFilterAssignment const*>(&assignedTrafficFilters));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannel4> : produce_base<D, Windows::Networking::Vpn::IVpnChannel4>
 {
-    HRESULT __stdcall AddAndAssociateTransport(void* transport, void* context) noexcept final
+    int32_t WINRT_CALL AddAndAssociateTransport(void* transport, void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAndAssociateTransport, WINRT_WRAP(void), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&);
             this->shim().AddAndAssociateTransport(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&transport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartWithMultipleTransports(void* assignedClientIpv4Addresses, void* assignedClientIpv6Addresses, void* vpninterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* transports, void* assignedTrafficFilters) noexcept final
+    int32_t WINRT_CALL StartWithMultipleTransports(void* assignedClientIpv4Addresses, void* assignedClientIpv6Addresses, void* vpninterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* transports, void* assignedTrafficFilters) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartWithTrafficFilter, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const&, Windows::Networking::Vpn::VpnInterfaceId const&, Windows::Networking::Vpn::VpnRouteAssignment const&, Windows::Networking::Vpn::VpnDomainNameAssignment const&, uint32_t, uint32_t, bool, Windows::Foundation::Collections::IIterable<Windows::Foundation::IInspectable> const&, Windows::Networking::Vpn::VpnTrafficFilterAssignment const&);
             this->shim().StartWithTrafficFilter(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const*>(&assignedClientIpv4Addresses), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const*>(&assignedClientIpv6Addresses), *reinterpret_cast<Windows::Networking::Vpn::VpnInterfaceId const*>(&vpninterfaceId), *reinterpret_cast<Windows::Networking::Vpn::VpnRouteAssignment const*>(&assignedRoutes), *reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameAssignment const*>(&assignedNamespace), mtuSize, maxFrameSize, reserved, *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::IInspectable> const*>(&transports), *reinterpret_cast<Windows::Networking::Vpn::VpnTrafficFilterAssignment const*>(&assignedTrafficFilters));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReplaceAndAssociateTransport(void* transport, void* context) noexcept final
+    int32_t WINRT_CALL ReplaceAndAssociateTransport(void* transport, void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReplaceAndAssociateTransport, WINRT_WRAP(void), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&);
             this->shim().ReplaceAndAssociateTransport(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&transport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartReconnectingTransport(void* transport, void* context) noexcept final
+    int32_t WINRT_CALL StartReconnectingTransport(void* transport, void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartReconnectingTransport, WINRT_WRAP(void), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable const&);
             this->shim().StartReconnectingTransport(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&transport), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSlotTypeForTransportContext(void* context, Windows::Networking::Sockets::ControlChannelTriggerStatus* slotType) noexcept final
+    int32_t WINRT_CALL GetSlotTypeForTransportContext(void* context, Windows::Networking::Sockets::ControlChannelTriggerStatus* slotType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSlotTypeForTransportContext, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTriggerStatus), Windows::Foundation::IInspectable const&);
             *slotType = detach_from<Windows::Networking::Sockets::ControlChannelTriggerStatus>(this->shim().GetSlotTypeForTransportContext(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&context)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentRequestTransportContext(void** context) noexcept final
+    int32_t WINRT_CALL get_CurrentRequestTransportContext(void** context) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentRequestTransportContext, WINRT_WRAP(Windows::Foundation::IInspectable));
             *context = detach_from<Windows::Foundation::IInspectable>(this->shim().CurrentRequestTransportContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityEventArgs> : produce_base<D, Windows::Networking::Vpn::IVpnChannelActivityEventArgs>
 {
-    HRESULT __stdcall get_Type(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Networking::Vpn::VpnChannelActivityEventType));
             *value = detach_from<Windows::Networking::Vpn::VpnChannelActivityEventType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs> : produce_base<D, Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
 {
-    HRESULT __stdcall get_ActivityState(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept final
+    int32_t WINRT_CALL get_ActivityState(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivityState, WINRT_WRAP(Windows::Networking::Vpn::VpnChannelActivityEventType));
             *value = detach_from<Windows::Networking::Vpn::VpnChannelActivityEventType>(this->shim().ActivityState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration> : produce_base<D, Windows::Networking::Vpn::IVpnChannelConfiguration>
 {
-    HRESULT __stdcall get_ServerServiceName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServerServiceName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerServiceName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServerServiceName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerHostNameList(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerHostNameList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerHostNameList, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>>(this->shim().ServerHostNameList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomField(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomField(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomField, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomField());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelConfiguration2> : produce_base<D, Windows::Networking::Vpn::IVpnChannelConfiguration2>
 {
-    HRESULT __stdcall get_ServerUris(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerUris(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerUris, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>>(this->shim().ServerUris());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnChannelStatics> : produce_base<D, Windows::Networking::Vpn::IVpnChannelStatics>
 {
-    HRESULT __stdcall ProcessEventAsync(void* thirdPartyPlugIn, void* event) noexcept final
+    int32_t WINRT_CALL ProcessEventAsync(void* thirdPartyPlugIn, void* event) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessEventAsync, WINRT_WRAP(void), Windows::Foundation::IInspectable const, Windows::Foundation::IInspectable const);
             this->shim().ProcessEventAsync(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&thirdPartyPlugIn), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&event));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCredential> : produce_base<D, Windows::Networking::Vpn::IVpnCredential>
 {
-    HRESULT __stdcall get_PasskeyCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_PasskeyCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasskeyCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().PasskeyCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CertificateCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_CertificateCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CertificateCredential, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().CertificateCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdditionalPin(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AdditionalPin(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdditionalPin, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AdditionalPin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OldPasswordCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_OldPasswordCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OldPasswordCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().OldPasswordCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomCheckBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomCheckBox>
 {
-    HRESULT __stdcall put_InitialCheckState(bool value) noexcept final
+    int32_t WINRT_CALL put_InitialCheckState(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialCheckState, WINRT_WRAP(void), bool);
             this->shim().InitialCheckState(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialCheckState(bool* value) noexcept final
+    int32_t WINRT_CALL get_InitialCheckState(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialCheckState, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().InitialCheckState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Checked(bool* value) noexcept final
+    int32_t WINRT_CALL get_Checked(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Checked, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Checked());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomComboBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomComboBox>
 {
-    HRESULT __stdcall put_OptionsText(void* value) noexcept final
+    int32_t WINRT_CALL put_OptionsText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OptionsText, WINRT_WRAP(void), Windows::Foundation::Collections::IVectorView<hstring> const&);
             this->shim().OptionsText(*reinterpret_cast<Windows::Foundation::Collections::IVectorView<hstring> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OptionsText(void** value) noexcept final
+    int32_t WINRT_CALL get_OptionsText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OptionsText, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().OptionsText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Selected(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Selected(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Selected, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Selected());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomEditBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomEditBox>
 {
-    HRESULT __stdcall put_DefaultText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DefaultText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultText, WINRT_WRAP(void), hstring const&);
             this->shim().DefaultText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DefaultText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DefaultText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NoEcho(bool value) noexcept final
+    int32_t WINRT_CALL put_NoEcho(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoEcho, WINRT_WRAP(void), bool);
             this->shim().NoEcho(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NoEcho(bool* value) noexcept final
+    int32_t WINRT_CALL get_NoEcho(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoEcho, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NoEcho());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2303,2359 +2173,2053 @@ struct produce<D, Windows::Networking::Vpn::IVpnCustomErrorBox> : produce_base<D
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPrompt> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPrompt>
 {
-    HRESULT __stdcall put_Label(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Label(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Label, WINRT_WRAP(void), hstring const&);
             this->shim().Label(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Label(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Label(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Label, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Label());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Compulsory(bool value) noexcept final
+    int32_t WINRT_CALL put_Compulsory(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compulsory, WINRT_WRAP(void), bool);
             this->shim().Compulsory(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Compulsory(bool* value) noexcept final
+    int32_t WINRT_CALL get_Compulsory(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compulsory, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Compulsory());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Bordered(bool value) noexcept final
+    int32_t WINRT_CALL put_Bordered(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bordered, WINRT_WRAP(void), bool);
             this->shim().Bordered(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bordered(bool* value) noexcept final
+    int32_t WINRT_CALL get_Bordered(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bordered, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Bordered());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>
 {
-    HRESULT __stdcall put_InitialValue(bool value) noexcept final
+    int32_t WINRT_CALL put_InitialValue(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(void), bool);
             this->shim().InitialValue(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialValue(bool* value) noexcept final
+    int32_t WINRT_CALL get_InitialValue(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().InitialValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(bool* value) noexcept final
+    int32_t WINRT_CALL get_Value(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptElement> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptElement>
 {
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Compulsory(bool value) noexcept final
+    int32_t WINRT_CALL put_Compulsory(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compulsory, WINRT_WRAP(void), bool);
             this->shim().Compulsory(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Compulsory(bool* value) noexcept final
+    int32_t WINRT_CALL get_Compulsory(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compulsory, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Compulsory());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Emphasized(bool value) noexcept final
+    int32_t WINRT_CALL put_Emphasized(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Emphasized, WINRT_WRAP(void), bool);
             this->shim().Emphasized(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Emphasized(bool* value) noexcept final
+    int32_t WINRT_CALL get_Emphasized(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Emphasized, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Emphasized());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>
 {
-    HRESULT __stdcall get_Options(void** value) noexcept final
+    int32_t WINRT_CALL get_Options(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Options, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().Options());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedIndex(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedIndex(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedIndex, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptText> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptText>
 {
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput> : produce_base<D, Windows::Networking::Vpn::IVpnCustomPromptTextInput>
 {
-    HRESULT __stdcall put_PlaceholderText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PlaceholderText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaceholderText, WINRT_WRAP(void), hstring const&);
             this->shim().PlaceholderText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlaceholderText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PlaceholderText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaceholderText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PlaceholderText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsTextHidden(bool value) noexcept final
+    int32_t WINRT_CALL put_IsTextHidden(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTextHidden, WINRT_WRAP(void), bool);
             this->shim().IsTextHidden(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTextHidden(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTextHidden(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTextHidden, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTextHidden());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnCustomTextBox> : produce_base<D, Windows::Networking::Vpn::IVpnCustomTextBox>
 {
-    HRESULT __stdcall put_DisplayText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameAssignment>
 {
-    HRESULT __stdcall get_DomainNameList(void** value) noexcept final
+    int32_t WINRT_CALL get_DomainNameList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainNameList, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>>(this->shim().DomainNameList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProxyAutoConfigurationUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ProxyAutoConfigurationUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyAutoConfigurationUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ProxyAutoConfigurationUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProxyAutoConfigurationUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ProxyAutoConfigurationUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyAutoConfigurationUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ProxyAutoConfigurationUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfo>
 {
-    HRESULT __stdcall put_DomainName(void* value) noexcept final
+    int32_t WINRT_CALL put_DomainName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainName, WINRT_WRAP(void), Windows::Networking::HostName const&);
             this->shim().DomainName(*reinterpret_cast<Windows::Networking::HostName const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainName(void** value) noexcept final
+    int32_t WINRT_CALL get_DomainName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainName, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().DomainName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) noexcept final
+    int32_t WINRT_CALL put_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainNameType, WINRT_WRAP(void), Windows::Networking::Vpn::VpnDomainNameType const&);
             this->shim().DomainNameType(*reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType* value) noexcept final
+    int32_t WINRT_CALL get_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainNameType, WINRT_WRAP(Windows::Networking::Vpn::VpnDomainNameType));
             *value = detach_from<Windows::Networking::Vpn::VpnDomainNameType>(this->shim().DomainNameType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DnsServers(void** value) noexcept final
+    int32_t WINRT_CALL get_DnsServers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DnsServers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>>(this->shim().DnsServers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WebProxyServers(void** value) noexcept final
+    int32_t WINRT_CALL get_WebProxyServers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebProxyServers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>>(this->shim().WebProxyServers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfo2> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfo2>
 {
-    HRESULT __stdcall get_WebProxyUris(void** value) noexcept final
+    int32_t WINRT_CALL get_WebProxyUris(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebProxyUris, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>>(this->shim().WebProxyUris());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory> : produce_base<D, Windows::Networking::Vpn::IVpnDomainNameInfoFactory>
 {
-    HRESULT __stdcall CreateVpnDomainNameInfo(HSTRING name, Windows::Networking::Vpn::VpnDomainNameType nameType, void* dnsServerList, void* proxyServerList, void** domainNameInfo) noexcept final
+    int32_t WINRT_CALL CreateVpnDomainNameInfo(void* name, Windows::Networking::Vpn::VpnDomainNameType nameType, void* dnsServerList, void* proxyServerList, void** domainNameInfo) noexcept final
     {
         try
         {
             *domainNameInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVpnDomainNameInfo, WINRT_WRAP(Windows::Networking::Vpn::VpnDomainNameInfo), hstring const&, Windows::Networking::Vpn::VpnDomainNameType const&, Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const&);
             *domainNameInfo = detach_from<Windows::Networking::Vpn::VpnDomainNameInfo>(this->shim().CreateVpnDomainNameInfo(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Networking::Vpn::VpnDomainNameType const*>(&nameType), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const*>(&dnsServerList), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> const*>(&proxyServerList)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnInterfaceId> : produce_base<D, Windows::Networking::Vpn::IVpnInterfaceId>
 {
-    HRESULT __stdcall GetAddressInfo(uint32_t* __idSize, uint8_t** id) noexcept final
+    int32_t WINRT_CALL GetAddressInfo(uint32_t* __idSize, uint8_t** id) noexcept final
     {
         try
         {
             *__idSize = 0;
             *id = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAddressInfo, WINRT_WRAP(void), com_array<uint8_t>&);
             this->shim().GetAddressInfo(detach_abi<uint8_t>(__idSize, id));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory> : produce_base<D, Windows::Networking::Vpn::IVpnInterfaceIdFactory>
 {
-    HRESULT __stdcall CreateVpnInterfaceId(uint32_t __addressSize, uint8_t* address, void** vpnInterfaceId) noexcept final
+    int32_t WINRT_CALL CreateVpnInterfaceId(uint32_t __addressSize, uint8_t* address, void** vpnInterfaceId) noexcept final
     {
         try
         {
             *vpnInterfaceId = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVpnInterfaceId, WINRT_WRAP(Windows::Networking::Vpn::VpnInterfaceId), array_view<uint8_t const>);
             *vpnInterfaceId = detach_from<Windows::Networking::Vpn::VpnInterfaceId>(this->shim().CreateVpnInterfaceId(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(address), reinterpret_cast<uint8_t const *>(address) + __addressSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnManagementAgent> : produce_base<D, Windows::Networking::Vpn::IVpnManagementAgent>
 {
-    HRESULT __stdcall AddProfileFromXmlAsync(HSTRING xml, void** operation) noexcept final
+    int32_t WINRT_CALL AddProfileFromXmlAsync(void* xml, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddProfileFromXmlAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().AddProfileFromXmlAsync(*reinterpret_cast<hstring const*>(&xml)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddProfileFromObjectAsync(void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL AddProfileFromObjectAsync(void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddProfileFromObjectAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().AddProfileFromObjectAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateProfileFromXmlAsync(HSTRING xml, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateProfileFromXmlAsync(void* xml, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateProfileFromXmlAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().UpdateProfileFromXmlAsync(*reinterpret_cast<hstring const*>(&xml)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateProfileFromObjectAsync(void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateProfileFromObjectAsync(void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateProfileFromObjectAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().UpdateProfileFromObjectAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetProfilesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetProfilesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetProfilesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnProfile>>>(this->shim().GetProfilesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteProfileAsync(void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteProfileAsync(void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().DeleteProfileAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectProfileAsync(void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectProfileAsync(void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().ConnectProfileAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectProfileWithPasswordCredentialAsync(void* profile, void* passwordCredential, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectProfileWithPasswordCredentialAsync(void* profile, void* passwordCredential, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectProfileWithPasswordCredentialAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const, Windows::Security::Credentials::PasswordCredential const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().ConnectProfileWithPasswordCredentialAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile), *reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&passwordCredential)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisconnectProfileAsync(void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL DisconnectProfileAsync(void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisconnectProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>), Windows::Networking::Vpn::IVpnProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnManagementErrorStatus>>(this->shim().DisconnectProfileAsync(*reinterpret_cast<Windows::Networking::Vpn::IVpnProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceAssignment>
 {
-    HRESULT __stdcall put_NamespaceList(void* value) noexcept final
+    int32_t WINRT_CALL put_NamespaceList(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NamespaceList, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> const&);
             this->shim().NamespaceList(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NamespaceList(void** value) noexcept final
+    int32_t WINRT_CALL get_NamespaceList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NamespaceList, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo>>(this->shim().NamespaceList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProxyAutoConfigUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ProxyAutoConfigUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyAutoConfigUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ProxyAutoConfigUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProxyAutoConfigUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ProxyAutoConfigUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyAutoConfigUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ProxyAutoConfigUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfo> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceInfo>
 {
-    HRESULT __stdcall put_Namespace(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Namespace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Namespace, WINRT_WRAP(void), hstring const&);
             this->shim().Namespace(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Namespace(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Namespace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Namespace, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Namespace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DnsServers(void* value) noexcept final
+    int32_t WINRT_CALL put_DnsServers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DnsServers, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const&);
             this->shim().DnsServers(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DnsServers(void** value) noexcept final
+    int32_t WINRT_CALL get_DnsServers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DnsServers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>>(this->shim().DnsServers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WebProxyServers(void* value) noexcept final
+    int32_t WINRT_CALL put_WebProxyServers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebProxyServers, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const&);
             this->shim().WebProxyServers(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WebProxyServers(void** value) noexcept final
+    int32_t WINRT_CALL get_WebProxyServers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebProxyServers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::HostName>>(this->shim().WebProxyServers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory> : produce_base<D, Windows::Networking::Vpn::IVpnNamespaceInfoFactory>
 {
-    HRESULT __stdcall CreateVpnNamespaceInfo(HSTRING name, void* dnsServerList, void* proxyServerList, void** namespaceInfo) noexcept final
+    int32_t WINRT_CALL CreateVpnNamespaceInfo(void* name, void* dnsServerList, void* proxyServerList, void** namespaceInfo) noexcept final
     {
         try
         {
             *namespaceInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVpnNamespaceInfo, WINRT_WRAP(Windows::Networking::Vpn::VpnNamespaceInfo), hstring const&, Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const&, Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const&);
             *namespaceInfo = detach_from<Windows::Networking::Vpn::VpnNamespaceInfo>(this->shim().CreateVpnNamespaceInfo(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const*>(&dnsServerList), *reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::HostName> const*>(&proxyServerList)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile> : produce_base<D, Windows::Networking::Vpn::IVpnNativeProfile>
 {
-    HRESULT __stdcall get_Servers(void** value) noexcept final
+    int32_t WINRT_CALL get_Servers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Servers, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().Servers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept final
+    int32_t WINRT_CALL get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoutingPolicyType, WINRT_WRAP(Windows::Networking::Vpn::VpnRoutingPolicyType));
             *value = detach_from<Windows::Networking::Vpn::VpnRoutingPolicyType>(this->shim().RoutingPolicyType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept final
+    int32_t WINRT_CALL put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoutingPolicyType, WINRT_WRAP(void), Windows::Networking::Vpn::VpnRoutingPolicyType const&);
             this->shim().RoutingPolicyType(*reinterpret_cast<Windows::Networking::Vpn::VpnRoutingPolicyType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType* value) noexcept final
+    int32_t WINRT_CALL get_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeProtocolType, WINRT_WRAP(Windows::Networking::Vpn::VpnNativeProtocolType));
             *value = detach_from<Windows::Networking::Vpn::VpnNativeProtocolType>(this->shim().NativeProtocolType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType value) noexcept final
+    int32_t WINRT_CALL put_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeProtocolType, WINRT_WRAP(void), Windows::Networking::Vpn::VpnNativeProtocolType const&);
             this->shim().NativeProtocolType(*reinterpret_cast<Windows::Networking::Vpn::VpnNativeProtocolType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept final
+    int32_t WINRT_CALL get_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserAuthenticationMethod, WINRT_WRAP(Windows::Networking::Vpn::VpnAuthenticationMethod));
             *value = detach_from<Windows::Networking::Vpn::VpnAuthenticationMethod>(this->shim().UserAuthenticationMethod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept final
+    int32_t WINRT_CALL put_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserAuthenticationMethod, WINRT_WRAP(void), Windows::Networking::Vpn::VpnAuthenticationMethod const&);
             this->shim().UserAuthenticationMethod(*reinterpret_cast<Windows::Networking::Vpn::VpnAuthenticationMethod const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept final
+    int32_t WINRT_CALL get_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TunnelAuthenticationMethod, WINRT_WRAP(Windows::Networking::Vpn::VpnAuthenticationMethod));
             *value = detach_from<Windows::Networking::Vpn::VpnAuthenticationMethod>(this->shim().TunnelAuthenticationMethod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept final
+    int32_t WINRT_CALL put_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TunnelAuthenticationMethod, WINRT_WRAP(void), Windows::Networking::Vpn::VpnAuthenticationMethod const&);
             this->shim().TunnelAuthenticationMethod(*reinterpret_cast<Windows::Networking::Vpn::VpnAuthenticationMethod const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EapConfiguration(HSTRING* Value) noexcept final
+    int32_t WINRT_CALL get_EapConfiguration(void** Value) noexcept final
     {
         try
         {
             *Value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EapConfiguration, WINRT_WRAP(hstring));
             *Value = detach_from<hstring>(this->shim().EapConfiguration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EapConfiguration(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EapConfiguration(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EapConfiguration, WINRT_WRAP(void), hstring const&);
             this->shim().EapConfiguration(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnNativeProfile2> : produce_base<D, Windows::Networking::Vpn::IVpnNativeProfile2>
 {
-    HRESULT __stdcall get_RequireVpnClientAppUI(bool* value) noexcept final
+    int32_t WINRT_CALL get_RequireVpnClientAppUI(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireVpnClientAppUI, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RequireVpnClientAppUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequireVpnClientAppUI(bool value) noexcept final
+    int32_t WINRT_CALL put_RequireVpnClientAppUI(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireVpnClientAppUI, WINRT_WRAP(void), bool);
             this->shim().RequireVpnClientAppUI(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionStatus, WINRT_WRAP(Windows::Networking::Vpn::VpnManagementConnectionStatus));
             *value = detach_from<Windows::Networking::Vpn::VpnManagementConnectionStatus>(this->shim().ConnectionStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBuffer>
 {
-    HRESULT __stdcall get_Buffer(void** value) noexcept final
+    int32_t WINRT_CALL get_Buffer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Buffer, WINRT_WRAP(Windows::Storage::Streams::Buffer));
             *value = detach_from<Windows::Storage::Streams::Buffer>(this->shim().Buffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept final
+    int32_t WINRT_CALL put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBufferStatus const&);
             this->shim().Status(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBufferStatus));
             *value = detach_from<Windows::Networking::Vpn::VpnPacketBufferStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransportAffinity(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_TransportAffinity(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportAffinity, WINRT_WRAP(void), uint32_t);
             this->shim().TransportAffinity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransportAffinity(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TransportAffinity(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportAffinity, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TransportAffinity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer2> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBuffer2>
 {
-    HRESULT __stdcall get_AppId(void** value) noexcept final
+    int32_t WINRT_CALL get_AppId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(Windows::Networking::Vpn::VpnAppId));
             *value = detach_from<Windows::Networking::Vpn::VpnAppId>(this->shim().AppId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBuffer3> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBuffer3>
 {
-    HRESULT __stdcall put_TransportContext(void* value) noexcept final
+    int32_t WINRT_CALL put_TransportContext(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportContext, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().TransportContext(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransportContext(void** value) noexcept final
+    int32_t WINRT_CALL get_TransportContext(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportContext, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().TransportContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferFactory> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferFactory>
 {
-    HRESULT __stdcall CreateVpnPacketBuffer(void* parentBuffer, uint32_t offset, uint32_t length, void** vpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL CreateVpnPacketBuffer(void* parentBuffer, uint32_t offset, uint32_t length, void** vpnPacketBuffer) noexcept final
     {
         try
         {
             *vpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVpnPacketBuffer, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer), Windows::Networking::Vpn::VpnPacketBuffer const&, uint32_t, uint32_t);
             *vpnPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().CreateVpnPacketBuffer(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&parentBuffer), offset, length));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferList>
 {
-    HRESULT __stdcall Append(void* nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL Append(void* nextVpnPacketBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Append, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBuffer const&);
             this->shim().Append(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&nextVpnPacketBuffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddAtBegin(void* nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL AddAtBegin(void* nextVpnPacketBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAtBegin, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBuffer const&);
             this->shim().AddAtBegin(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&nextVpnPacketBuffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAtEnd(void** nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL RemoveAtEnd(void** nextVpnPacketBuffer) noexcept final
     {
         try
         {
             *nextVpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAtEnd, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *nextVpnPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().RemoveAtEnd());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAtBegin(void** nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL RemoveAtBegin(void** nextVpnPacketBuffer) noexcept final
     {
         try
         {
             *nextVpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAtBegin, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *nextVpnPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().RemoveAtBegin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept final
+    int32_t WINRT_CALL put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBufferStatus const&);
             this->shim().Status(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBufferStatus));
             *value = detach_from<Windows::Networking::Vpn::VpnPacketBufferStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Size(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPacketBufferList2> : produce_base<D, Windows::Networking::Vpn::IVpnPacketBufferList2>
 {
-    HRESULT __stdcall AddLeadingPacket(void* nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL AddLeadingPacket(void* nextVpnPacketBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddLeadingPacket, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBuffer const&);
             this->shim().AddLeadingPacket(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&nextVpnPacketBuffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveLeadingPacket(void** nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL RemoveLeadingPacket(void** nextVpnPacketBuffer) noexcept final
     {
         try
         {
             *nextVpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveLeadingPacket, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *nextVpnPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().RemoveLeadingPacket());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddTrailingPacket(void* nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL AddTrailingPacket(void* nextVpnPacketBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddTrailingPacket, WINRT_WRAP(void), Windows::Networking::Vpn::VpnPacketBuffer const&);
             this->shim().AddTrailingPacket(*reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&nextVpnPacketBuffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveTrailingPacket(void** nextVpnPacketBuffer) noexcept final
+    int32_t WINRT_CALL RemoveTrailingPacket(void** nextVpnPacketBuffer) noexcept final
     {
         try
         {
             *nextVpnPacketBuffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveTrailingPacket, WINRT_WRAP(Windows::Networking::Vpn::VpnPacketBuffer));
             *nextVpnPacketBuffer = detach_from<Windows::Networking::Vpn::VpnPacketBuffer>(this->shim().RemoveTrailingPacket());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPickedCredential> : produce_base<D, Windows::Networking::Vpn::IVpnPickedCredential>
 {
-    HRESULT __stdcall get_PasskeyCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_PasskeyCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasskeyCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().PasskeyCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdditionalPin(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AdditionalPin(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdditionalPin, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AdditionalPin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OldPasswordCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_OldPasswordCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OldPasswordCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().OldPasswordCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPlugIn> : produce_base<D, Windows::Networking::Vpn::IVpnPlugIn>
 {
-    HRESULT __stdcall Connect(void* channel) noexcept final
+    int32_t WINRT_CALL Connect(void* channel) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Connect, WINRT_WRAP(void), Windows::Networking::Vpn::VpnChannel const&);
             this->shim().Connect(*reinterpret_cast<Windows::Networking::Vpn::VpnChannel const*>(&channel));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Disconnect(void* channel) noexcept final
+    int32_t WINRT_CALL Disconnect(void* channel) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Disconnect, WINRT_WRAP(void), Windows::Networking::Vpn::VpnChannel const&);
             this->shim().Disconnect(*reinterpret_cast<Windows::Networking::Vpn::VpnChannel const*>(&channel));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetKeepAlivePayload(void* channel, void** keepAlivePacket) noexcept final
+    int32_t WINRT_CALL GetKeepAlivePayload(void* channel, void** keepAlivePacket) noexcept final
     {
         try
         {
             *keepAlivePacket = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetKeepAlivePayload, WINRT_WRAP(void), Windows::Networking::Vpn::VpnChannel const&, Windows::Networking::Vpn::VpnPacketBuffer&);
             this->shim().GetKeepAlivePayload(*reinterpret_cast<Windows::Networking::Vpn::VpnChannel const*>(&channel), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer*>(keepAlivePacket));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Encapsulate(void* channel, void* packets, void* encapulatedPackets) noexcept final
+    int32_t WINRT_CALL Encapsulate(void* channel, void* packets, void* encapulatedPackets) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encapsulate, WINRT_WRAP(void), Windows::Networking::Vpn::VpnChannel const&, Windows::Networking::Vpn::VpnPacketBufferList const&, Windows::Networking::Vpn::VpnPacketBufferList const&);
             this->shim().Encapsulate(*reinterpret_cast<Windows::Networking::Vpn::VpnChannel const*>(&channel), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferList const*>(&packets), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferList const*>(&encapulatedPackets));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Decapsulate(void* channel, void* encapBuffer, void* decapsulatedPackets, void* controlPacketsToSend) noexcept final
+    int32_t WINRT_CALL Decapsulate(void* channel, void* encapBuffer, void* decapsulatedPackets, void* controlPacketsToSend) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Decapsulate, WINRT_WRAP(void), Windows::Networking::Vpn::VpnChannel const&, Windows::Networking::Vpn::VpnPacketBuffer const&, Windows::Networking::Vpn::VpnPacketBufferList const&, Windows::Networking::Vpn::VpnPacketBufferList const&);
             this->shim().Decapsulate(*reinterpret_cast<Windows::Networking::Vpn::VpnChannel const*>(&channel), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBuffer const*>(&encapBuffer), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferList const*>(&decapsulatedPackets), *reinterpret_cast<Windows::Networking::Vpn::VpnPacketBufferList const*>(&controlPacketsToSend));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile> : produce_base<D, Windows::Networking::Vpn::IVpnPlugInProfile>
 {
-    HRESULT __stdcall get_ServerUris(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerUris(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerUris, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>>(this->shim().ServerUris());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomConfiguration(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomConfiguration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomConfiguration, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomConfiguration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CustomConfiguration(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CustomConfiguration(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomConfiguration, WINRT_WRAP(void), hstring const&);
             this->shim().CustomConfiguration(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VpnPluginPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VpnPluginPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VpnPluginPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VpnPluginPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VpnPluginPackageFamilyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_VpnPluginPackageFamilyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VpnPluginPackageFamilyName, WINRT_WRAP(void), hstring const&);
             this->shim().VpnPluginPackageFamilyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnPlugInProfile2> : produce_base<D, Windows::Networking::Vpn::IVpnPlugInProfile2>
 {
-    HRESULT __stdcall get_RequireVpnClientAppUI(bool* value) noexcept final
+    int32_t WINRT_CALL get_RequireVpnClientAppUI(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireVpnClientAppUI, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RequireVpnClientAppUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequireVpnClientAppUI(bool value) noexcept final
+    int32_t WINRT_CALL put_RequireVpnClientAppUI(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireVpnClientAppUI, WINRT_WRAP(void), bool);
             this->shim().RequireVpnClientAppUI(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionStatus, WINRT_WRAP(Windows::Networking::Vpn::VpnManagementConnectionStatus));
             *value = detach_from<Windows::Networking::Vpn::VpnManagementConnectionStatus>(this->shim().ConnectionStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnProfile> : produce_base<D, Windows::Networking::Vpn::IVpnProfile>
 {
-    HRESULT __stdcall get_ProfileName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProfileName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProfileName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProfileName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ProfileName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileName, WINRT_WRAP(void), hstring const&);
             this->shim().ProfileName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppTriggers(void** value) noexcept final
+    int32_t WINRT_CALL get_AppTriggers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppTriggers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId>>(this->shim().AppTriggers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Routes(void** value) noexcept final
+    int32_t WINRT_CALL get_Routes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Routes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>>(this->shim().Routes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainNameInfoList(void** value) noexcept final
+    int32_t WINRT_CALL get_DomainNameInfoList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainNameInfoList, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo>>(this->shim().DomainNameInfoList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrafficFilters(void** value) noexcept final
+    int32_t WINRT_CALL get_TrafficFilters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrafficFilters, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>>(this->shim().TrafficFilters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RememberCredentials(bool* value) noexcept final
+    int32_t WINRT_CALL get_RememberCredentials(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RememberCredentials, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RememberCredentials());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RememberCredentials(bool value) noexcept final
+    int32_t WINRT_CALL put_RememberCredentials(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RememberCredentials, WINRT_WRAP(void), bool);
             this->shim().RememberCredentials(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysOn(bool* value) noexcept final
+    int32_t WINRT_CALL get_AlwaysOn(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysOn, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AlwaysOn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysOn(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysOn(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysOn, WINRT_WRAP(void), bool);
             this->shim().AlwaysOn(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRoute> : produce_base<D, Windows::Networking::Vpn::IVpnRoute>
 {
-    HRESULT __stdcall put_Address(void* value) noexcept final
+    int32_t WINRT_CALL put_Address(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(void), Windows::Networking::HostName const&);
             this->shim().Address(*reinterpret_cast<Windows::Networking::HostName const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Address(void** value) noexcept final
+    int32_t WINRT_CALL get_Address(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().Address());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PrefixSize(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_PrefixSize(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrefixSize, WINRT_WRAP(void), uint8_t);
             this->shim().PrefixSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrefixSize(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_PrefixSize(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrefixSize, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().PrefixSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRouteAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnRouteAssignment>
 {
-    HRESULT __stdcall put_Ipv4InclusionRoutes(void* value) noexcept final
+    int32_t WINRT_CALL put_Ipv4InclusionRoutes(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv4InclusionRoutes, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const&);
             this->shim().Ipv4InclusionRoutes(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Ipv6InclusionRoutes(void* value) noexcept final
+    int32_t WINRT_CALL put_Ipv6InclusionRoutes(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv6InclusionRoutes, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const&);
             this->shim().Ipv6InclusionRoutes(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ipv4InclusionRoutes(void** value) noexcept final
+    int32_t WINRT_CALL get_Ipv4InclusionRoutes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv4InclusionRoutes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>>(this->shim().Ipv4InclusionRoutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ipv6InclusionRoutes(void** value) noexcept final
+    int32_t WINRT_CALL get_Ipv6InclusionRoutes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv6InclusionRoutes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>>(this->shim().Ipv6InclusionRoutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Ipv4ExclusionRoutes(void* value) noexcept final
+    int32_t WINRT_CALL put_Ipv4ExclusionRoutes(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv4ExclusionRoutes, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const&);
             this->shim().Ipv4ExclusionRoutes(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Ipv6ExclusionRoutes(void* value) noexcept final
+    int32_t WINRT_CALL put_Ipv6ExclusionRoutes(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv6ExclusionRoutes, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const&);
             this->shim().Ipv6ExclusionRoutes(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ipv4ExclusionRoutes(void** value) noexcept final
+    int32_t WINRT_CALL get_Ipv4ExclusionRoutes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv4ExclusionRoutes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>>(this->shim().Ipv4ExclusionRoutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ipv6ExclusionRoutes(void** value) noexcept final
+    int32_t WINRT_CALL get_Ipv6ExclusionRoutes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ipv6ExclusionRoutes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute>>(this->shim().Ipv6ExclusionRoutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ExcludeLocalSubnets(bool value) noexcept final
+    int32_t WINRT_CALL put_ExcludeLocalSubnets(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExcludeLocalSubnets, WINRT_WRAP(void), bool);
             this->shim().ExcludeLocalSubnets(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExcludeLocalSubnets(bool* value) noexcept final
+    int32_t WINRT_CALL get_ExcludeLocalSubnets(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExcludeLocalSubnets, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ExcludeLocalSubnets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnRouteFactory> : produce_base<D, Windows::Networking::Vpn::IVpnRouteFactory>
 {
-    HRESULT __stdcall CreateVpnRoute(void* address, uint8_t prefixSize, void** route) noexcept final
+    int32_t WINRT_CALL CreateVpnRoute(void* address, uint8_t prefixSize, void** route) noexcept final
     {
         try
         {
             *route = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVpnRoute, WINRT_WRAP(Windows::Networking::Vpn::VpnRoute), Windows::Networking::HostName const&, uint8_t);
             *route = detach_from<Windows::Networking::Vpn::VpnRoute>(this->shim().CreateVpnRoute(*reinterpret_cast<Windows::Networking::HostName const*>(&address), prefixSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnSystemHealth> : produce_base<D, Windows::Networking::Vpn::IVpnSystemHealth>
 {
-    HRESULT __stdcall get_StatementOfHealth(void** value) noexcept final
+    int32_t WINRT_CALL get_StatementOfHealth(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatementOfHealth, WINRT_WRAP(Windows::Storage::Streams::Buffer));
             *value = detach_from<Windows::Storage::Streams::Buffer>(this->shim().StatementOfHealth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilter> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilter>
 {
-    HRESULT __stdcall get_AppId(void** value) noexcept final
+    int32_t WINRT_CALL get_AppId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(Windows::Networking::Vpn::VpnAppId));
             *value = detach_from<Windows::Networking::Vpn::VpnAppId>(this->shim().AppId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppId(void* value) noexcept final
+    int32_t WINRT_CALL put_AppId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppId, WINRT_WRAP(void), Windows::Networking::Vpn::VpnAppId const&);
             this->shim().AppId(*reinterpret_cast<Windows::Networking::Vpn::VpnAppId const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppClaims(void** value) noexcept final
+    int32_t WINRT_CALL get_AppClaims(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppClaims, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().AppClaims());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Protocol(Windows::Networking::Vpn::VpnIPProtocol* value) noexcept final
+    int32_t WINRT_CALL get_Protocol(Windows::Networking::Vpn::VpnIPProtocol* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Protocol, WINRT_WRAP(Windows::Networking::Vpn::VpnIPProtocol));
             *value = detach_from<Windows::Networking::Vpn::VpnIPProtocol>(this->shim().Protocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Protocol(Windows::Networking::Vpn::VpnIPProtocol value) noexcept final
+    int32_t WINRT_CALL put_Protocol(Windows::Networking::Vpn::VpnIPProtocol value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Protocol, WINRT_WRAP(void), Windows::Networking::Vpn::VpnIPProtocol const&);
             this->shim().Protocol(*reinterpret_cast<Windows::Networking::Vpn::VpnIPProtocol const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalPortRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalPortRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalPortRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().LocalPortRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemotePortRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_RemotePortRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemotePortRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().RemotePortRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalAddressRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddressRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddressRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().LocalAddressRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteAddressRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteAddressRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteAddressRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().RemoteAddressRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept final
+    int32_t WINRT_CALL get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoutingPolicyType, WINRT_WRAP(Windows::Networking::Vpn::VpnRoutingPolicyType));
             *value = detach_from<Windows::Networking::Vpn::VpnRoutingPolicyType>(this->shim().RoutingPolicyType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept final
+    int32_t WINRT_CALL put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoutingPolicyType, WINRT_WRAP(void), Windows::Networking::Vpn::VpnRoutingPolicyType const&);
             this->shim().RoutingPolicyType(*reinterpret_cast<Windows::Networking::Vpn::VpnRoutingPolicyType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilterAssignment>
 {
-    HRESULT __stdcall get_TrafficFilterList(void** value) noexcept final
+    int32_t WINRT_CALL get_TrafficFilterList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrafficFilterList, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter>>(this->shim().TrafficFilterList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowOutbound(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowOutbound(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowOutbound, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowOutbound());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowOutbound(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowOutbound(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowOutbound, WINRT_WRAP(void), bool);
             this->shim().AllowOutbound(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowInbound(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowInbound(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowInbound, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowInbound());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowInbound(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowInbound(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowInbound, WINRT_WRAP(void), bool);
             this->shim().AllowInbound(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory> : produce_base<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory>
 {
-    HRESULT __stdcall Create(void* appId, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* appId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Networking::Vpn::VpnTrafficFilter), Windows::Networking::Vpn::VpnAppId const&);
             *result = detach_from<Windows::Networking::Vpn::VpnTrafficFilter>(this->shim().Create(*reinterpret_cast<Windows::Networking::Vpn::VpnAppId const*>(&appId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4664,100 +4228,100 @@ struct produce<D, Windows::Networking::Vpn::IVpnTrafficFilterFactory> : produce_
 WINRT_EXPORT namespace winrt::Windows::Networking::Vpn {
 
 inline VpnAppId::VpnAppId(Windows::Networking::Vpn::VpnAppIdType const& type, param::hstring const& value) :
-    VpnAppId(get_activation_factory<VpnAppId, Windows::Networking::Vpn::IVpnAppIdFactory>().Create(type, value))
+    VpnAppId(impl::call_factory<VpnAppId, Windows::Networking::Vpn::IVpnAppIdFactory>([&](auto&& f) { return f.Create(type, value); }))
 {}
 
 inline void VpnChannel::ProcessEventAsync(Windows::Foundation::IInspectable const& thirdPartyPlugIn, Windows::Foundation::IInspectable const& event)
 {
-    get_activation_factory<VpnChannel, Windows::Networking::Vpn::IVpnChannelStatics>().ProcessEventAsync(thirdPartyPlugIn, event);
+    impl::call_factory<VpnChannel, Windows::Networking::Vpn::IVpnChannelStatics>([&](auto&& f) { return f.ProcessEventAsync(thirdPartyPlugIn, event); });
 }
 
 inline VpnCustomCheckBox::VpnCustomCheckBox() :
-    VpnCustomCheckBox(get_activation_factory<VpnCustomCheckBox>().ActivateInstance<VpnCustomCheckBox>())
+    VpnCustomCheckBox(impl::call_factory<VpnCustomCheckBox>([](auto&& f) { return f.template ActivateInstance<VpnCustomCheckBox>(); }))
 {}
 
 inline VpnCustomComboBox::VpnCustomComboBox() :
-    VpnCustomComboBox(get_activation_factory<VpnCustomComboBox>().ActivateInstance<VpnCustomComboBox>())
+    VpnCustomComboBox(impl::call_factory<VpnCustomComboBox>([](auto&& f) { return f.template ActivateInstance<VpnCustomComboBox>(); }))
 {}
 
 inline VpnCustomEditBox::VpnCustomEditBox() :
-    VpnCustomEditBox(get_activation_factory<VpnCustomEditBox>().ActivateInstance<VpnCustomEditBox>())
+    VpnCustomEditBox(impl::call_factory<VpnCustomEditBox>([](auto&& f) { return f.template ActivateInstance<VpnCustomEditBox>(); }))
 {}
 
 inline VpnCustomErrorBox::VpnCustomErrorBox() :
-    VpnCustomErrorBox(get_activation_factory<VpnCustomErrorBox>().ActivateInstance<VpnCustomErrorBox>())
+    VpnCustomErrorBox(impl::call_factory<VpnCustomErrorBox>([](auto&& f) { return f.template ActivateInstance<VpnCustomErrorBox>(); }))
 {}
 
 inline VpnCustomPromptBooleanInput::VpnCustomPromptBooleanInput() :
-    VpnCustomPromptBooleanInput(get_activation_factory<VpnCustomPromptBooleanInput>().ActivateInstance<VpnCustomPromptBooleanInput>())
+    VpnCustomPromptBooleanInput(impl::call_factory<VpnCustomPromptBooleanInput>([](auto&& f) { return f.template ActivateInstance<VpnCustomPromptBooleanInput>(); }))
 {}
 
 inline VpnCustomPromptOptionSelector::VpnCustomPromptOptionSelector() :
-    VpnCustomPromptOptionSelector(get_activation_factory<VpnCustomPromptOptionSelector>().ActivateInstance<VpnCustomPromptOptionSelector>())
+    VpnCustomPromptOptionSelector(impl::call_factory<VpnCustomPromptOptionSelector>([](auto&& f) { return f.template ActivateInstance<VpnCustomPromptOptionSelector>(); }))
 {}
 
 inline VpnCustomPromptText::VpnCustomPromptText() :
-    VpnCustomPromptText(get_activation_factory<VpnCustomPromptText>().ActivateInstance<VpnCustomPromptText>())
+    VpnCustomPromptText(impl::call_factory<VpnCustomPromptText>([](auto&& f) { return f.template ActivateInstance<VpnCustomPromptText>(); }))
 {}
 
 inline VpnCustomPromptTextInput::VpnCustomPromptTextInput() :
-    VpnCustomPromptTextInput(get_activation_factory<VpnCustomPromptTextInput>().ActivateInstance<VpnCustomPromptTextInput>())
+    VpnCustomPromptTextInput(impl::call_factory<VpnCustomPromptTextInput>([](auto&& f) { return f.template ActivateInstance<VpnCustomPromptTextInput>(); }))
 {}
 
 inline VpnCustomTextBox::VpnCustomTextBox() :
-    VpnCustomTextBox(get_activation_factory<VpnCustomTextBox>().ActivateInstance<VpnCustomTextBox>())
+    VpnCustomTextBox(impl::call_factory<VpnCustomTextBox>([](auto&& f) { return f.template ActivateInstance<VpnCustomTextBox>(); }))
 {}
 
 inline VpnDomainNameAssignment::VpnDomainNameAssignment() :
-    VpnDomainNameAssignment(get_activation_factory<VpnDomainNameAssignment>().ActivateInstance<VpnDomainNameAssignment>())
+    VpnDomainNameAssignment(impl::call_factory<VpnDomainNameAssignment>([](auto&& f) { return f.template ActivateInstance<VpnDomainNameAssignment>(); }))
 {}
 
 inline VpnDomainNameInfo::VpnDomainNameInfo(param::hstring const& name, Windows::Networking::Vpn::VpnDomainNameType const& nameType, param::iterable<Windows::Networking::HostName> const& dnsServerList, param::iterable<Windows::Networking::HostName> const& proxyServerList) :
-    VpnDomainNameInfo(get_activation_factory<VpnDomainNameInfo, Windows::Networking::Vpn::IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
+    VpnDomainNameInfo(impl::call_factory<VpnDomainNameInfo, Windows::Networking::Vpn::IVpnDomainNameInfoFactory>([&](auto&& f) { return f.CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList); }))
 {}
 
 inline VpnInterfaceId::VpnInterfaceId(array_view<uint8_t const> address) :
-    VpnInterfaceId(get_activation_factory<VpnInterfaceId, Windows::Networking::Vpn::IVpnInterfaceIdFactory>().CreateVpnInterfaceId(address))
+    VpnInterfaceId(impl::call_factory<VpnInterfaceId, Windows::Networking::Vpn::IVpnInterfaceIdFactory>([&](auto&& f) { return f.CreateVpnInterfaceId(address); }))
 {}
 
 inline VpnManagementAgent::VpnManagementAgent() :
-    VpnManagementAgent(get_activation_factory<VpnManagementAgent>().ActivateInstance<VpnManagementAgent>())
+    VpnManagementAgent(impl::call_factory<VpnManagementAgent>([](auto&& f) { return f.template ActivateInstance<VpnManagementAgent>(); }))
 {}
 
 inline VpnNamespaceAssignment::VpnNamespaceAssignment() :
-    VpnNamespaceAssignment(get_activation_factory<VpnNamespaceAssignment>().ActivateInstance<VpnNamespaceAssignment>())
+    VpnNamespaceAssignment(impl::call_factory<VpnNamespaceAssignment>([](auto&& f) { return f.template ActivateInstance<VpnNamespaceAssignment>(); }))
 {}
 
 inline VpnNamespaceInfo::VpnNamespaceInfo(param::hstring const& name, param::vector<Windows::Networking::HostName> const& dnsServerList, param::vector<Windows::Networking::HostName> const& proxyServerList) :
-    VpnNamespaceInfo(get_activation_factory<VpnNamespaceInfo, Windows::Networking::Vpn::IVpnNamespaceInfoFactory>().CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList))
+    VpnNamespaceInfo(impl::call_factory<VpnNamespaceInfo, Windows::Networking::Vpn::IVpnNamespaceInfoFactory>([&](auto&& f) { return f.CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList); }))
 {}
 
 inline VpnNativeProfile::VpnNativeProfile() :
-    VpnNativeProfile(get_activation_factory<VpnNativeProfile>().ActivateInstance<VpnNativeProfile>())
+    VpnNativeProfile(impl::call_factory<VpnNativeProfile>([](auto&& f) { return f.template ActivateInstance<VpnNativeProfile>(); }))
 {}
 
 inline VpnPacketBuffer::VpnPacketBuffer(Windows::Networking::Vpn::VpnPacketBuffer const& parentBuffer, uint32_t offset, uint32_t length) :
-    VpnPacketBuffer(get_activation_factory<VpnPacketBuffer, Windows::Networking::Vpn::IVpnPacketBufferFactory>().CreateVpnPacketBuffer(parentBuffer, offset, length))
+    VpnPacketBuffer(impl::call_factory<VpnPacketBuffer, Windows::Networking::Vpn::IVpnPacketBufferFactory>([&](auto&& f) { return f.CreateVpnPacketBuffer(parentBuffer, offset, length); }))
 {}
 
 inline VpnPlugInProfile::VpnPlugInProfile() :
-    VpnPlugInProfile(get_activation_factory<VpnPlugInProfile>().ActivateInstance<VpnPlugInProfile>())
+    VpnPlugInProfile(impl::call_factory<VpnPlugInProfile>([](auto&& f) { return f.template ActivateInstance<VpnPlugInProfile>(); }))
 {}
 
 inline VpnRoute::VpnRoute(Windows::Networking::HostName const& address, uint8_t prefixSize) :
-    VpnRoute(get_activation_factory<VpnRoute, Windows::Networking::Vpn::IVpnRouteFactory>().CreateVpnRoute(address, prefixSize))
+    VpnRoute(impl::call_factory<VpnRoute, Windows::Networking::Vpn::IVpnRouteFactory>([&](auto&& f) { return f.CreateVpnRoute(address, prefixSize); }))
 {}
 
 inline VpnRouteAssignment::VpnRouteAssignment() :
-    VpnRouteAssignment(get_activation_factory<VpnRouteAssignment>().ActivateInstance<VpnRouteAssignment>())
+    VpnRouteAssignment(impl::call_factory<VpnRouteAssignment>([](auto&& f) { return f.template ActivateInstance<VpnRouteAssignment>(); }))
 {}
 
 inline VpnTrafficFilter::VpnTrafficFilter(Windows::Networking::Vpn::VpnAppId const& appId) :
-    VpnTrafficFilter(get_activation_factory<VpnTrafficFilter, Windows::Networking::Vpn::IVpnTrafficFilterFactory>().Create(appId))
+    VpnTrafficFilter(impl::call_factory<VpnTrafficFilter, Windows::Networking::Vpn::IVpnTrafficFilterFactory>([&](auto&& f) { return f.Create(appId); }))
 {}
 
 inline VpnTrafficFilterAssignment::VpnTrafficFilterAssignment() :
-    VpnTrafficFilterAssignment(get_activation_factory<VpnTrafficFilterAssignment>().ActivateInstance<VpnTrafficFilterAssignment>())
+    VpnTrafficFilterAssignment(impl::call_factory<VpnTrafficFilterAssignment>([](auto&& f) { return f.template ActivateInstance<VpnTrafficFilterAssignment>(); }))
 {}
 
 }
@@ -4849,5 +4413,3 @@ template<> struct hash<winrt::Windows::Networking::Vpn::VpnTrafficFilter> : winr
 template<> struct hash<winrt::Windows::Networking::Vpn::VpnTrafficFilterAssignment> : winrt::impl::hash_base<winrt::Windows::Networking::Vpn::VpnTrafficFilterAssignment> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Appointments.AppointmentsProvider.2.h"
@@ -595,21 +595,21 @@ template <typename D> Windows::Foundation::Rect consume_Windows_ApplicationModel
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Activation::ISplashScreen)->add_Dismissed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Activation::ISplashScreen> consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed_revoker consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Activation::ISplashScreen>(this, &abi_t<Windows::ApplicationModel::Activation::ISplashScreen>::remove_Dismissed, Dismissed(handler));
+    return impl::make_event_revoker<D, Dismissed_revoker>(this, Dismissed(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(event_token const& cookie) const
+template <typename D> void consume_Windows_ApplicationModel_Activation_ISplashScreen<D>::Dismissed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Activation::ISplashScreen)->remove_Dismissed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Activation::ISplashScreen)->remove_Dismissed(get_abi(cookie)));
 }
 
 template <typename D> hstring consume_Windows_ApplicationModel_Activation_IStartupTaskActivatedEventArgs<D>::TaskId() const
@@ -699,1650 +699,1458 @@ template <typename D> Windows::Security::Authentication::Web::WebAuthenticationR
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IActivatedEventArgs>
 {
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Activation::ActivationKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Activation::ActivationKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Activation::ActivationKind));
             *value = detach_from<Windows::ApplicationModel::Activation::ActivationKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PreviousExecutionState(Windows::ApplicationModel::Activation::ApplicationExecutionState* value) noexcept final
+    int32_t WINRT_CALL get_PreviousExecutionState(Windows::ApplicationModel::Activation::ApplicationExecutionState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreviousExecutionState, WINRT_WRAP(Windows::ApplicationModel::Activation::ApplicationExecutionState));
             *value = detach_from<Windows::ApplicationModel::Activation::ApplicationExecutionState>(this->shim().PreviousExecutionState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SplashScreen(void** value) noexcept final
+    int32_t WINRT_CALL get_SplashScreen(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SplashScreen, WINRT_WRAP(Windows::ApplicationModel::Activation::SplashScreen));
             *value = detach_from<Windows::ApplicationModel::Activation::SplashScreen>(this->shim().SplashScreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser> : produce_base<D, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs>
 {
-    HRESULT __stdcall get_CurrentlyShownApplicationViewId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_CurrentlyShownApplicationViewId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentlyShownApplicationViewId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().CurrentlyShownApplicationViewId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
 {
-    HRESULT __stdcall get_Verb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Verb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Verb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Verb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs>
 {
-    HRESULT __stdcall get_AddAppointmentOperation(void** value) noexcept final
+    int32_t WINRT_CALL get_AddAppointmentOperation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAppointmentOperation, WINRT_WRAP(Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation));
             *value = detach_from<Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation>(this->shim().AddAppointmentOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs>
 {
-    HRESULT __stdcall get_RemoveAppointmentOperation(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoveAppointmentOperation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAppointmentOperation, WINRT_WRAP(Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation));
             *value = detach_from<Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation>(this->shim().RemoveAppointmentOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs>
 {
-    HRESULT __stdcall get_ReplaceAppointmentOperation(void** value) noexcept final
+    int32_t WINRT_CALL get_ReplaceAppointmentOperation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReplaceAppointmentOperation, WINRT_WRAP(Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation));
             *value = detach_from<Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation>(this->shim().ReplaceAppointmentOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
 {
-    HRESULT __stdcall get_InstanceStartDate(void** value) noexcept final
+    int32_t WINRT_CALL get_InstanceStartDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstanceStartDate, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().InstanceStartDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LocalId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LocalId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoamingId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RoamingId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoamingId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RoamingId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs>
 {
-    HRESULT __stdcall get_TimeToShow(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_TimeToShow(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeToShow, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().TimeToShow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs>
 {
-    HRESULT __stdcall get_TaskInstance(void** value) noexcept final
+    int32_t WINRT_CALL get_TaskInstance(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskInstance, WINRT_WRAP(Windows::ApplicationModel::Background::IBackgroundTaskInstance));
             *value = detach_from<Windows::ApplicationModel::Background::IBackgroundTaskInstance>(this->shim().TaskInstance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IBarcodeScannerPreviewActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IBarcodeScannerPreviewActivatedEventArgs>
 {
-    HRESULT __stdcall get_ConnectionId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ConnectionId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs>
 {
-    HRESULT __stdcall get_CachedFileUpdaterUI(void** value) noexcept final
+    int32_t WINRT_CALL get_CachedFileUpdaterUI(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CachedFileUpdaterUI, WINRT_WRAP(Windows::Storage::Provider::CachedFileUpdaterUI));
             *value = detach_from<Windows::Storage::Provider::CachedFileUpdaterUI>(this->shim().CachedFileUpdaterUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ICameraSettingsActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ICameraSettingsActivatedEventArgs>
 {
-    HRESULT __stdcall get_VideoDeviceController(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoDeviceController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoDeviceController, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().VideoDeviceController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoDeviceExtension(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoDeviceExtension(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoDeviceExtension, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().VideoDeviceExtension());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ICommandLineActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ICommandLineActivatedEventArgs>
 {
-    HRESULT __stdcall get_Operation(void** value) noexcept final
+    int32_t WINRT_CALL get_Operation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Operation, WINRT_WRAP(Windows::ApplicationModel::Activation::CommandLineActivationOperation));
             *value = detach_from<Windows::ApplicationModel::Activation::CommandLineActivationOperation>(this->shim().Operation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ICommandLineActivationOperation> : produce_base<D, Windows::ApplicationModel::Activation::ICommandLineActivationOperation>
 {
-    HRESULT __stdcall get_Arguments(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentDirectoryPath(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CurrentDirectoryPath(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentDirectoryPath, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CurrentDirectoryPath());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ExitCode(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ExitCode(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitCode, WINRT_WRAP(void), int32_t);
             this->shim().ExitCode(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExitCode(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ExitCode(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitCode, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ExitCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactActivatedEventArgs>
 {
-    HRESULT __stdcall get_Verb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Verb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Verb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Verb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactCallActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactCallActivatedEventArgs>
 {
-    HRESULT __stdcall get_ServiceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceUserId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceUserId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceUserId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceUserId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactMapActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactMapActivatedEventArgs>
 {
-    HRESULT __stdcall get_Address(void** value) noexcept final
+    int32_t WINRT_CALL get_Address(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactAddress));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactAddress>(this->shim().Address());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactMessageActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactMessageActivatedEventArgs>
 {
-    HRESULT __stdcall get_ServiceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceUserId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceUserId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceUserId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceUserId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs>
 {
-    HRESULT __stdcall get_ContactPanel(void** value) noexcept final
+    int32_t WINRT_CALL get_ContactPanel(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactPanel, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactPanel));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactPanel>(this->shim().ContactPanel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactPickerActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactPickerActivatedEventArgs>
 {
-    HRESULT __stdcall get_ContactPickerUI(void** value) noexcept final
+    int32_t WINRT_CALL get_ContactPickerUI(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactPickerUI, WINRT_WRAP(Windows::ApplicationModel::Contacts::Provider::ContactPickerUI));
             *value = detach_from<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI>(this->shim().ContactPickerUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactPostActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactPostActivatedEventArgs>
 {
-    HRESULT __stdcall get_ServiceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceUserId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceUserId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceUserId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceUserId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactVideoCallActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactVideoCallActivatedEventArgs>
 {
-    HRESULT __stdcall get_ServiceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceUserId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceUserId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceUserId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceUserId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContactsProviderActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactsProviderActivatedEventArgs>
 {
-    HRESULT __stdcall get_Verb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Verb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Verb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Verb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
-    HRESULT __stdcall get_ContinuationData(void** value) noexcept final
+    int32_t WINRT_CALL get_ContinuationData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinuationData, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().ContinuationData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs>
 {
-    HRESULT __stdcall get_DeviceInformationId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformationId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceInformationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Verb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Verb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Verb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Verb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs>
 {
-    HRESULT __stdcall get_DeviceInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformation, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformation>(this->shim().DeviceInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs>
 {
-    HRESULT __stdcall get_AppName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgs>
 {
-    HRESULT __stdcall get_Files(void** value) noexcept final
+    int32_t WINRT_CALL get_Files(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Files, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>>(this->shim().Files());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Verb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Verb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Verb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Verb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithCallerPackageFamilyName> : produce_base<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithCallerPackageFamilyName>
 {
-    HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallerPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithNeighboringFiles> : produce_base<D, Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithNeighboringFiles>
 {
-    HRESULT __stdcall get_NeighboringFilesQuery(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringFilesQuery(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringFilesQuery, WINRT_WRAP(Windows::Storage::Search::StorageFileQueryResult));
             *value = detach_from<Windows::Storage::Search::StorageFileQueryResult>(this->shim().NeighboringFilesQuery());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs>
 {
-    HRESULT __stdcall get_FileOpenPickerUI(void** value) noexcept final
+    int32_t WINRT_CALL get_FileOpenPickerUI(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileOpenPickerUI, WINRT_WRAP(Windows::Storage::Pickers::Provider::FileOpenPickerUI));
             *value = detach_from<Windows::Storage::Pickers::Provider::FileOpenPickerUI>(this->shim().FileOpenPickerUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs2> : produce_base<D, Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs2>
 {
-    HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallerPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs>
 {
-    HRESULT __stdcall get_Files(void** value) noexcept final
+    int32_t WINRT_CALL get_Files(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Files, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>>(this->shim().Files());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs>
 {
-    HRESULT __stdcall get_FileSavePickerUI(void** value) noexcept final
+    int32_t WINRT_CALL get_FileSavePickerUI(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileSavePickerUI, WINRT_WRAP(Windows::Storage::Pickers::Provider::FileSavePickerUI));
             *value = detach_from<Windows::Storage::Pickers::Provider::FileSavePickerUI>(this->shim().FileSavePickerUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs2> : produce_base<D, Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs2>
 {
-    HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallerPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs>
 {
-    HRESULT __stdcall get_File(void** value) noexcept final
+    int32_t WINRT_CALL get_File(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(File, WINRT_WRAP(Windows::Storage::StorageFile));
             *value = detach_from<Windows::Storage::StorageFile>(this->shim().File());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs>
 {
-    HRESULT __stdcall get_Folder(void** value) noexcept final
+    int32_t WINRT_CALL get_Folder(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Folder, WINRT_WRAP(Windows::Storage::StorageFolder));
             *value = detach_from<Windows::Storage::StorageFolder>(this->shim().Folder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
 {
-    HRESULT __stdcall get_Arguments(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TileId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TileId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TileId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs2> : produce_base<D, Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs2>
 {
-    HRESULT __stdcall get_TileActivatedInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_TileActivatedInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileActivatedInfo, WINRT_WRAP(Windows::ApplicationModel::Activation::TileActivatedInfo));
             *value = detach_from<Windows::ApplicationModel::Activation::TileActivatedInfo>(this->shim().TileActivatedInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs>
 {
-    HRESULT __stdcall get_Info(void** value) noexcept final
+    int32_t WINRT_CALL get_Info(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Info, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Info());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ILockScreenCallActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ILockScreenCallActivatedEventArgs>
 {
-    HRESULT __stdcall get_CallUI(void** value) noexcept final
+    int32_t WINRT_CALL get_CallUI(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallUI, WINRT_WRAP(Windows::ApplicationModel::Calls::LockScreenCallUI));
             *value = detach_from<Windows::ApplicationModel::Calls::LockScreenCallUI>(this->shim().CallUI());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs>
 {
-    HRESULT __stdcall get_PickerOperationId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PickerOperationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickerOperationId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PickerOperationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IPrelaunchActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IPrelaunchActivatedEventArgs>
 {
-    HRESULT __stdcall get_PrelaunchActivated(bool* value) noexcept final
+    int32_t WINRT_CALL get_PrelaunchActivated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrelaunchActivated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().PrelaunchActivated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IPrint3DWorkflowActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IPrint3DWorkflowActivatedEventArgs>
 {
-    HRESULT __stdcall get_Workflow(void** value) noexcept final
+    int32_t WINRT_CALL get_Workflow(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Workflow, WINRT_WRAP(Windows::Devices::Printers::Extensions::Print3DWorkflow));
             *value = detach_from<Windows::Devices::Printers::Extensions::Print3DWorkflow>(this->shim().Workflow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IPrintTaskSettingsActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IPrintTaskSettingsActivatedEventArgs>
 {
-    HRESULT __stdcall get_Configuration(void** value) noexcept final
+    int32_t WINRT_CALL get_Configuration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configuration, WINRT_WRAP(Windows::Devices::Printers::Extensions::PrintTaskConfiguration));
             *value = detach_from<Windows::Devices::Printers::Extensions::PrintTaskConfiguration>(this->shim().Configuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs>
 {
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData> : produce_base<D, Windows::ApplicationModel::Activation::IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>
 {
-    HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallerPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs>
 {
-    HRESULT __stdcall get_ProtocolForResultsOperation(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolForResultsOperation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolForResultsOperation, WINRT_WRAP(Windows::System::ProtocolForResultsOperation));
             *value = detach_from<Windows::System::ProtocolForResultsOperation>(this->shim().ProtocolForResultsOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs>
 {
-    HRESULT __stdcall get_SharedContext(void** value) noexcept final
+    int32_t WINRT_CALL get_SharedContext(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharedContext, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().SharedContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::ISearchActivatedEventArgs>
 {
-    HRESULT __stdcall get_QueryText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QueryText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QueryText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Language(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Language(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Language());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ISearchActivatedEventArgsWithLinguisticDetails> : produce_base<D, Windows::ApplicationModel::Activation::ISearchActivatedEventArgsWithLinguisticDetails>
 {
-    HRESULT __stdcall get_LinguisticDetails(void** value) noexcept final
+    int32_t WINRT_CALL get_LinguisticDetails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinguisticDetails, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails));
             *value = detach_from<Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails>(this->shim().LinguisticDetails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs>
 {
-    HRESULT __stdcall get_ShareOperation(void** value) noexcept final
+    int32_t WINRT_CALL get_ShareOperation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShareOperation, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation>(this->shim().ShareOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ISplashScreen> : produce_base<D, Windows::ApplicationModel::Activation::ISplashScreen>
 {
-    HRESULT __stdcall get_ImageLocation(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_ImageLocation(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageLocation, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().ImageLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Dismissed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_Dismissed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Dismissed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Dismissed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Dismissed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Dismissed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Dismissed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Dismissed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Dismissed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Dismissed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IStartupTaskActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IStartupTaskActivatedEventArgs>
 {
-    HRESULT __stdcall get_TaskId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TaskId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TaskId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::ITileActivatedInfo> : produce_base<D, Windows::ApplicationModel::Activation::ITileActivatedInfo>
 {
-    HRESULT __stdcall get_RecentlyShownNotifications(void** value) noexcept final
+    int32_t WINRT_CALL get_RecentlyShownNotifications(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecentlyShownNotifications, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification>>(this->shim().RecentlyShownNotifications());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs>
 {
-    HRESULT __stdcall get_Argument(HSTRING* argument) noexcept final
+    int32_t WINRT_CALL get_Argument(void** argument) noexcept final
     {
         try
         {
             *argument = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Argument, WINRT_WRAP(hstring));
             *argument = detach_from<hstring>(this->shim().Argument());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserInput(void** value) noexcept final
+    int32_t WINRT_CALL get_UserInput(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserInput, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().UserInput());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs>
 {
-    HRESULT __stdcall get_Operation(void** value) noexcept final
+    int32_t WINRT_CALL get_Operation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Operation, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation>(this->shim().Operation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IViewSwitcherProvider> : produce_base<D, Windows::ApplicationModel::Activation::IViewSwitcherProvider>
 {
-    HRESULT __stdcall get_ViewSwitcher(void** value) noexcept final
+    int32_t WINRT_CALL get_ViewSwitcher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewSwitcher, WINRT_WRAP(Windows::UI::ViewManagement::ActivationViewSwitcher));
             *value = detach_from<Windows::UI::ViewManagement::ActivationViewSwitcher>(this->shim().ViewSwitcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs>
 {
-    HRESULT __stdcall get_Result(void** value) noexcept final
+    int32_t WINRT_CALL get_Result(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Result, WINRT_WRAP(Windows::Media::SpeechRecognition::SpeechRecognitionResult));
             *value = detach_from<Windows::Media::SpeechRecognition::SpeechRecognitionResult>(this->shim().Result());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IWalletActionActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IWalletActionActivatedEventArgs>
 {
-    HRESULT __stdcall get_ItemId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ItemId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ItemId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActionKind(Windows::ApplicationModel::Wallet::WalletActionKind* value) noexcept final
+    int32_t WINRT_CALL get_ActionKind(Windows::ApplicationModel::Wallet::WalletActionKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActionKind, WINRT_WRAP(Windows::ApplicationModel::Wallet::WalletActionKind));
             *value = detach_from<Windows::ApplicationModel::Wallet::WalletActionKind>(this->shim().ActionKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActionId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActionId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActionId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActionId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs>
 {
-    HRESULT __stdcall get_Operation(void** value) noexcept final
+    int32_t WINRT_CALL get_Operation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Operation, WINRT_WRAP(Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation));
             *value = detach_from<Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>(this->shim().Operation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs>
 {
-    HRESULT __stdcall get_WebAuthenticationResult(void** result) noexcept final
+    int32_t WINRT_CALL get_WebAuthenticationResult(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebAuthenticationResult, WINRT_WRAP(Windows::Security::Authentication::Web::WebAuthenticationResult));
             *result = detach_from<Windows::Security::Authentication::Web::WebAuthenticationResult>(this->shim().WebAuthenticationResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2467,5 +2275,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Activation::WebAccountP
 template<> struct hash<winrt::Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

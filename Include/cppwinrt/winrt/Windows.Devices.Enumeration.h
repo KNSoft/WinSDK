@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Background.2.h"
@@ -33,21 +33,21 @@ template <typename D> hstring consume_Windows_Devices_Enumeration_IDeviceAccessC
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceAccessInformation)->add_AccessChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceAccessInformation> consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged_revoker consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceAccessInformation>(this, &abi_t<Windows::Devices::Enumeration::IDeviceAccessInformation>::remove_AccessChanged, AccessChanged(handler));
+    return impl::make_event_revoker<D, AccessChanged_revoker>(this, AccessChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::AccessChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceAccessInformation)->remove_AccessChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceAccessInformation)->remove_AccessChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceAccessStatus consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>::CurrentStatus() const
@@ -64,7 +64,7 @@ template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation con
     return value;
 }
 
-template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation consume_Windows_Devices_Enumeration_IDeviceAccessInformationStatics<D>::CreateFromDeviceClassId(GUID const& deviceClassId) const
+template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation consume_Windows_Devices_Enumeration_IDeviceAccessInformationStatics<D>::CreateFromDeviceClassId(winrt::guid const& deviceClassId) const
 {
     Windows::Devices::Enumeration::DeviceAccessInformation value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceAccessInformationStatics)->CreateFromDeviceClassId(get_abi(deviceClassId), put_abi(value)));
@@ -188,21 +188,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enu
     return result;
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceInformationCustomPairing)->add_PairingRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceInformationCustomPairing> consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested_revoker consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing>(this, &abi_t<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>::remove_PairingRequested, PairingRequested(handler));
+    return impl::make_event_revoker<D, PairingRequested_revoker>(this, PairingRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>::PairingRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceInformationCustomPairing)->remove_PairingRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceInformationCustomPairing)->remove_PairingRequested(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Devices_Enumeration_IDeviceInformationPairing<D>::IsPaired() const
@@ -265,6 +265,13 @@ template <typename D> bool consume_Windows_Devices_Enumeration_IDeviceInformatio
 {
     bool result{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceInformationPairingStatics)->TryRegisterForAllInboundPairingRequests(get_abi(pairingKindsSupported), &result));
+    return result;
+}
+
+template <typename D> bool consume_Windows_Devices_Enumeration_IDeviceInformationPairingStatics2<D>::TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel) const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceInformationPairingStatics2)->TryRegisterForAllInboundPairingRequestsWithProtectionLevel(get_abi(pairingKindsSupported), get_abi(minProtectionLevel), &result));
     return result;
 }
 
@@ -460,55 +467,55 @@ template <typename D> Windows::Foundation::Collections::IVector<hstring> consume
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->add_DeviceSelected(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDevicePicker> consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected_revoker consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDevicePicker>(this, &abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DeviceSelected, DeviceSelected(handler));
+    return impl::make_event_revoker<D, DeviceSelected_revoker>(this, DeviceSelected(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DeviceSelected(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DeviceSelected(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DeviceSelected(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->add_DisconnectButtonClicked(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDevicePicker> consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked_revoker consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDevicePicker>(this, &abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DisconnectButtonClicked, DisconnectButtonClicked(handler));
+    return impl::make_event_revoker<D, DisconnectButtonClicked_revoker>(this, DisconnectButtonClicked(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DisconnectButtonClicked(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DisconnectButtonClicked(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DisconnectButtonClicked(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->add_DevicePickerDismissed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDevicePicker> consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed_revoker consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDevicePicker>(this, &abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DevicePickerDismissed, DevicePickerDismissed(handler));
+    return impl::make_event_revoker<D, DevicePickerDismissed_revoker>(this, DevicePickerDismissed(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::DevicePickerDismissed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DevicePickerDismissed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDevicePicker)->remove_DevicePickerDismissed(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Enumeration_IDevicePicker<D>::Show(Windows::Foundation::Rect const& selection) const
@@ -657,89 +664,89 @@ template <typename D> Windows::Devices::Enumeration::DeviceUnpairingResultStatus
     return status;
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->add_Added(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceWatcher> consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added_revoker consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceWatcher>(this, &abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Added, Added(handler));
+    return impl::make_event_revoker<D, Added_revoker>(this, Added(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Added(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Added(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Added(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->add_Updated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceWatcher> consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated_revoker consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceWatcher>(this, &abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Updated, Updated(handler));
+    return impl::make_event_revoker<D, Updated_revoker>(this, Updated(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Updated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Updated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Updated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->add_Removed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceWatcher> consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed_revoker consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceWatcher>(this, &abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Removed, Removed(handler));
+    return impl::make_event_revoker<D, Removed_revoker>(this, Removed(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Removed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Removed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Removed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->add_EnumerationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceWatcher> consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted_revoker consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceWatcher>(this, &abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_EnumerationCompleted, EnumerationCompleted(handler));
+    return impl::make_event_revoker<D, EnumerationCompleted_revoker>(this, EnumerationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::EnumerationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_EnumerationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_EnumerationCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->add_Stopped(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Enumeration::IDeviceWatcher> consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped_revoker consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Enumeration::IDeviceWatcher>(this, &abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Stopped, Stopped(handler));
+    return impl::make_event_revoker<D, Stopped_revoker>(this, Stopped(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Stopped(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Stopped(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Enumeration::IDeviceWatcher)->remove_Stopped(get_abi(token)));
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceWatcherStatus consume_Windows_Devices_Enumeration_IDeviceWatcher<D>::Status() const
@@ -825,952 +832,840 @@ template <typename D> uint32_t consume_Windows_Devices_Enumeration_IEnclosureLoc
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs> : produce_base<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceAccessStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceAccessStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessStatus));
             *value = detach_from<Windows::Devices::Enumeration::DeviceAccessStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2> : produce_base<D, Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformation> : produce_base<D, Windows::Devices::Enumeration::IDeviceAccessInformation>
 {
-    HRESULT __stdcall add_AccessChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_AccessChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AccessChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccessChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AccessChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AccessChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_AccessChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AccessChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AccessChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AccessChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall get_CurrentStatus(Windows::Devices::Enumeration::DeviceAccessStatus* status) noexcept final
+    int32_t WINRT_CALL get_CurrentStatus(Windows::Devices::Enumeration::DeviceAccessStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentStatus, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessStatus));
             *status = detach_from<Windows::Devices::Enumeration::DeviceAccessStatus>(this->shim().CurrentStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics> : produce_base<D, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>
 {
-    HRESULT __stdcall CreateFromId(HSTRING deviceId, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromId(void* deviceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromId, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessInformation), hstring const&);
             *value = detach_from<Windows::Devices::Enumeration::DeviceAccessInformation>(this->shim().CreateFromId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromDeviceClassId(GUID deviceClassId, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromDeviceClassId(winrt::guid deviceClassId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Devices::Enumeration::DeviceAccessInformation>(this->shim().CreateFromDeviceClassId(*reinterpret_cast<GUID const*>(&deviceClassId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateFromDeviceClassId, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessInformation), winrt::guid const&);
+            *value = detach_from<Windows::Devices::Enumeration::DeviceAccessInformation>(this->shim().CreateFromDeviceClassId(*reinterpret_cast<winrt::guid const*>(&deviceClassId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromDeviceClass, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessInformation), Windows::Devices::Enumeration::DeviceClass const&);
             *value = detach_from<Windows::Devices::Enumeration::DeviceAccessInformation>(this->shim().CreateFromDeviceClass(*reinterpret_cast<Windows::Devices::Enumeration::DeviceClass const*>(&deviceClass)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails> : produce_base<D, Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs> : produce_base<D, Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>
 {
-    HRESULT __stdcall get_Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Device, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformation>(this->shim().Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformation> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformation>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDefault(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDefault(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDefault, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnclosureLocation(void** value) noexcept final
+    int32_t WINRT_CALL get_EnclosureLocation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnclosureLocation, WINRT_WRAP(Windows::Devices::Enumeration::EnclosureLocation));
             *value = detach_from<Windows::Devices::Enumeration::EnclosureLocation>(this->shim().EnclosureLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Update(void* updateInfo) noexcept final
+    int32_t WINRT_CALL Update(void* updateInfo) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Update, WINRT_WRAP(void), Windows::Devices::Enumeration::DeviceInformationUpdate const&);
             this->shim().Update(*reinterpret_cast<Windows::Devices::Enumeration::DeviceInformationUpdate const*>(&updateInfo));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetThumbnailAsync(void** asyncOp) noexcept final
+    int32_t WINRT_CALL GetThumbnailAsync(void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail>));
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail>>(this->shim().GetThumbnailAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetGlyphThumbnailAsync(void** asyncOp) noexcept final
+    int32_t WINRT_CALL GetGlyphThumbnailAsync(void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetGlyphThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail>));
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail>>(this->shim().GetGlyphThumbnailAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformation2> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformation2>
 {
-    HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformationKind));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformationKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pairing(void** value) noexcept final
+    int32_t WINRT_CALL get_Pairing(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pairing, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformationPairing));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformationPairing>(this->shim().Pairing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationCustomPairing>
 {
-    HRESULT __stdcall PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, void** result) noexcept final
+    int32_t WINRT_CALL PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>), Windows::Devices::Enumeration::DevicePairingKinds const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingKinds const*>(&pairingKindsSupported)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept final
+    int32_t WINRT_CALL PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>), Windows::Devices::Enumeration::DevicePairingKinds const, Windows::Devices::Enumeration::DevicePairingProtectionLevel const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingKinds const*>(&pairingKindsSupported), *reinterpret_cast<Windows::Devices::Enumeration::DevicePairingProtectionLevel const*>(&minProtectionLevel)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept final
+    int32_t WINRT_CALL PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>), Windows::Devices::Enumeration::DevicePairingKinds const, Windows::Devices::Enumeration::DevicePairingProtectionLevel const, Windows::Devices::Enumeration::IDevicePairingSettings const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingKinds const*>(&pairingKindsSupported), *reinterpret_cast<Windows::Devices::Enumeration::DevicePairingProtectionLevel const*>(&minProtectionLevel), *reinterpret_cast<Windows::Devices::Enumeration::IDevicePairingSettings const*>(&devicePairingSettings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PairingRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_PairingRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().PairingRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PairingRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().PairingRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PairingRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_PairingRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PairingRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PairingRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PairingRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationPairing>
 {
-    HRESULT __stdcall get_IsPaired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPaired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPaired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPaired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanPair(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanPair(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanPair, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanPair());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PairAsync(void** result) noexcept final
+    int32_t WINRT_CALL PairAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept final
+    int32_t WINRT_CALL PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>), Windows::Devices::Enumeration::DevicePairingProtectionLevel const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingProtectionLevel const*>(&minProtectionLevel)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairing2> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationPairing2>
 {
-    HRESULT __stdcall get_ProtectionLevel(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevel(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(Windows::Devices::Enumeration::DevicePairingProtectionLevel));
             *value = detach_from<Windows::Devices::Enumeration::DevicePairingProtectionLevel>(this->shim().ProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Custom(void** value) noexcept final
+    int32_t WINRT_CALL get_Custom(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Custom, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformationCustomPairing));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformationCustomPairing>(this->shim().Custom());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept final
+    int32_t WINRT_CALL PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>), Windows::Devices::Enumeration::DevicePairingProtectionLevel const, Windows::Devices::Enumeration::IDevicePairingSettings const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult>>(this->shim().PairAsync(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingProtectionLevel const*>(&minProtectionLevel), *reinterpret_cast<Windows::Devices::Enumeration::IDevicePairingSettings const*>(&devicePairingSettings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnpairAsync(void** result) noexcept final
+    int32_t WINRT_CALL UnpairAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnpairAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceUnpairingResult>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceUnpairingResult>>(this->shim().UnpairAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatics> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatics>
 {
-    HRESULT __stdcall TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, bool* result) noexcept final
+    int32_t WINRT_CALL TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryRegisterForAllInboundPairingRequests, WINRT_WRAP(bool), Windows::Devices::Enumeration::DevicePairingKinds const&);
             *result = detach_from<bool>(this->shim().TryRegisterForAllInboundPairingRequests(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingKinds const*>(&pairingKindsSupported)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatics2> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>
+{
+    int32_t WINRT_CALL TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, bool* result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryRegisterForAllInboundPairingRequestsWithProtectionLevel, WINRT_WRAP(bool), Windows::Devices::Enumeration::DevicePairingKinds const&, Windows::Devices::Enumeration::DevicePairingProtectionLevel const&);
+            *result = detach_from<bool>(this->shim().TryRegisterForAllInboundPairingRequestsWithProtectionLevel(*reinterpret_cast<Windows::Devices::Enumeration::DevicePairingKinds const*>(&pairingKindsSupported), *reinterpret_cast<Windows::Devices::Enumeration::DevicePairingProtectionLevel const*>(&minProtectionLevel)));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationStatics>
 {
-    HRESULT __stdcall CreateFromIdAsync(HSTRING deviceId, void** asyncOp) noexcept final
+    int32_t WINRT_CALL CreateFromIdAsync(void* deviceId, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>), hstring const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>>(this->shim().CreateFromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, void* additionalProperties, void** asyncOp) noexcept final
+    int32_t WINRT_CALL CreateFromIdAsyncAdditionalProperties(void* deviceId, void* additionalProperties, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>>(this->shim().CreateFromIdAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsync(void** asyncOp) noexcept final
+    int32_t WINRT_CALL FindAllAsync(void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>));
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>>(this->shim().FindAllAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsyncDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** asyncOp) noexcept final
+    int32_t WINRT_CALL FindAllAsyncDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>), Windows::Devices::Enumeration::DeviceClass const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>>(this->shim().FindAllAsync(*reinterpret_cast<Windows::Devices::Enumeration::DeviceClass const*>(&deviceClass)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsyncAqsFilter(HSTRING aqsFilter, void** asyncOp) noexcept final
+    int32_t WINRT_CALL FindAllAsyncAqsFilter(void* aqsFilter, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>), hstring const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>>(this->shim().FindAllAsync(*reinterpret_cast<hstring const*>(&aqsFilter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, void** asyncOp) noexcept final
+    int32_t WINRT_CALL FindAllAsyncAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>>(this->shim().FindAllAsync(*reinterpret_cast<hstring const*>(&aqsFilter), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcher(void** watcher) noexcept final
+    int32_t WINRT_CALL CreateWatcher(void** watcher) noexcept final
     {
         try
         {
             *watcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher));
             *watcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().CreateWatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcherDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** watcher) noexcept final
+    int32_t WINRT_CALL CreateWatcherDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** watcher) noexcept final
     {
         try
         {
             *watcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher), Windows::Devices::Enumeration::DeviceClass const&);
             *watcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().CreateWatcher(*reinterpret_cast<Windows::Devices::Enumeration::DeviceClass const*>(&deviceClass)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcherAqsFilter(HSTRING aqsFilter, void** watcher) noexcept final
+    int32_t WINRT_CALL CreateWatcherAqsFilter(void* aqsFilter, void** watcher) noexcept final
     {
         try
         {
             *watcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher), hstring const&);
             *watcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().CreateWatcher(*reinterpret_cast<hstring const*>(&aqsFilter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, void** watcher) noexcept final
+    int32_t WINRT_CALL CreateWatcherAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, void** watcher) noexcept final
     {
         try
         {
             *watcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher), hstring const&, Windows::Foundation::Collections::IIterable<hstring> const&);
             *watcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().CreateWatcher(*reinterpret_cast<hstring const*>(&aqsFilter), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationStatics2> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationStatics2>
 {
-    HRESULT __stdcall GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, HSTRING* aqsFilter) noexcept final
+    int32_t WINRT_CALL GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** aqsFilter) noexcept final
     {
         try
         {
             *aqsFilter = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAqsFilterFromDeviceClass, WINRT_WRAP(hstring), Windows::Devices::Enumeration::DeviceClass const&);
             *aqsFilter = detach_from<hstring>(this->shim().GetAqsFilterFromDeviceClass(*reinterpret_cast<Windows::Devices::Enumeration::DeviceClass const*>(&deviceClass)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromIdAsyncWithKindAndAdditionalProperties(HSTRING deviceId, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept final
+    int32_t WINRT_CALL CreateFromIdAsyncWithKindAndAdditionalProperties(void* deviceId, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Devices::Enumeration::DeviceInformationKind const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>>(this->shim().CreateFromIdAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties), *reinterpret_cast<Windows::Devices::Enumeration::DeviceInformationKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsyncWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept final
+    int32_t WINRT_CALL FindAllAsyncWithKindAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>), hstring const, Windows::Foundation::Collections::IIterable<hstring> const, Windows::Devices::Enumeration::DeviceInformationKind const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection>>(this->shim().FindAllAsync(*reinterpret_cast<hstring const*>(&aqsFilter), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties), *reinterpret_cast<Windows::Devices::Enumeration::DeviceInformationKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcherWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** watcher) noexcept final
+    int32_t WINRT_CALL CreateWatcherWithKindAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** watcher) noexcept final
     {
         try
         {
             *watcher = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcher), hstring const&, Windows::Foundation::Collections::IIterable<hstring> const&, Windows::Devices::Enumeration::DeviceInformationKind const&);
             *watcher = detach_from<Windows::Devices::Enumeration::DeviceWatcher>(this->shim().CreateWatcher(*reinterpret_cast<hstring const*>(&aqsFilter), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&additionalProperties), *reinterpret_cast<Windows::Devices::Enumeration::DeviceInformationKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationUpdate>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceInformationUpdate2> : produce_base<D, Windows::Devices::Enumeration::IDeviceInformationUpdate2>
 {
-    HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformationKind));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformationKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs> : produce_base<D, Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>
 {
-    HRESULT __stdcall get_DeviceInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformation, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformation>(this->shim().DeviceInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PairingKind(Windows::Devices::Enumeration::DevicePairingKinds* value) noexcept final
+    int32_t WINRT_CALL get_PairingKind(Windows::Devices::Enumeration::DevicePairingKinds* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PairingKind, WINRT_WRAP(Windows::Devices::Enumeration::DevicePairingKinds));
             *value = detach_from<Windows::Devices::Enumeration::DevicePairingKinds>(this->shim().PairingKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pin(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pin(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pin, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Accept() noexcept final
+    int32_t WINRT_CALL Accept() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void));
             this->shim().Accept();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AcceptWithPin(HSTRING pin) noexcept final
+    int32_t WINRT_CALL AcceptWithPin(void* pin) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void), hstring const&);
             this->shim().Accept(*reinterpret_cast<hstring const*>(&pin));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDevicePairingResult> : produce_base<D, Windows::Devices::Enumeration::IDevicePairingResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DevicePairingResultStatus* status) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DevicePairingResultStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Enumeration::DevicePairingResultStatus));
             *status = detach_from<Windows::Devices::Enumeration::DevicePairingResultStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectionLevelUsed(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevelUsed(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevelUsed, WINRT_WRAP(Windows::Devices::Enumeration::DevicePairingProtectionLevel));
             *value = detach_from<Windows::Devices::Enumeration::DevicePairingProtectionLevel>(this->shim().ProtectionLevelUsed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1781,827 +1676,685 @@ struct produce<D, Windows::Devices::Enumeration::IDevicePairingSettings> : produ
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDevicePicker> : produce_base<D, Windows::Devices::Enumeration::IDevicePicker>
 {
-    HRESULT __stdcall get_Filter(void** filter) noexcept final
+    int32_t WINRT_CALL get_Filter(void** filter) noexcept final
     {
         try
         {
             *filter = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Filter, WINRT_WRAP(Windows::Devices::Enumeration::DevicePickerFilter));
             *filter = detach_from<Windows::Devices::Enumeration::DevicePickerFilter>(this->shim().Filter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Appearance(void** value) noexcept final
+    int32_t WINRT_CALL get_Appearance(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Appearance, WINRT_WRAP(Windows::Devices::Enumeration::DevicePickerAppearance));
             *value = detach_from<Windows::Devices::Enumeration::DevicePickerAppearance>(this->shim().Appearance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestedProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestedProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedProperties, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().RequestedProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DeviceSelected(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_DeviceSelected(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DeviceSelected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceSelected, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DeviceSelected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DeviceSelected(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DeviceSelected(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DeviceSelected, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DeviceSelected(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DisconnectButtonClicked(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DeviceSelected(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DisconnectButtonClicked, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DisconnectButtonClicked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DisconnectButtonClicked(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_DisconnectButtonClicked(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DisconnectButtonClicked, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DisconnectButtonClicked(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DevicePickerDismissed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DisconnectButtonClicked(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DevicePickerDismissed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DevicePickerDismissed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DisconnectButtonClicked(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DevicePickerDismissed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DevicePickerDismissed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DevicePickerDismissed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL Show(Windows::Foundation::Rect selection) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DisconnectButtonClicked(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_DevicePickerDismissed(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DevicePickerDismissed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_DevicePickerDismissed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DevicePickerDismissed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall Show(Windows::Foundation::Rect selection) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Show(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement) noexcept final
+    int32_t WINRT_CALL ShowWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void), Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&);
             this->shim().Show(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&placement));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleDeviceAsync(Windows::Foundation::Rect selection, void** operation) noexcept final
+    int32_t WINRT_CALL PickSingleDeviceAsync(Windows::Foundation::Rect selection, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleDeviceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>), Windows::Foundation::Rect const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>>(this->shim().PickSingleDeviceAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleDeviceAsyncWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement, void** operation) noexcept final
+    int32_t WINRT_CALL PickSingleDeviceAsyncWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleDeviceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>), Windows::Foundation::Rect const, Windows::UI::Popups::Placement const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation>>(this->shim().PickSingleDeviceAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&placement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Hide() noexcept final
+    int32_t WINRT_CALL Hide() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hide, WINRT_WRAP(void));
             this->shim().Hide();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDisplayStatus(void* device, HSTRING status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) noexcept final
+    int32_t WINRT_CALL SetDisplayStatus(void* device, void* status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDisplayStatus, WINRT_WRAP(void), Windows::Devices::Enumeration::DeviceInformation const&, hstring const&, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions const&);
             this->shim().SetDisplayStatus(*reinterpret_cast<Windows::Devices::Enumeration::DeviceInformation const*>(&device), *reinterpret_cast<hstring const*>(&status), *reinterpret_cast<Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions const*>(&options));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDevicePickerAppearance> : produce_base<D, Windows::Devices::Enumeration::IDevicePickerAppearance>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().ForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().ForegroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AccentColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_AccentColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccentColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().AccentColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AccentColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_AccentColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccentColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().AccentColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SelectedForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedForegroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SelectedForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectedForegroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_SelectedForegroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedForegroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().SelectedForegroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SelectedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedBackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SelectedBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectedBackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_SelectedBackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedBackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().SelectedBackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedAccentColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SelectedAccentColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedAccentColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SelectedAccentColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectedAccentColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_SelectedAccentColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedAccentColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().SelectedAccentColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDevicePickerFilter> : produce_base<D, Windows::Devices::Enumeration::IDevicePickerFilter>
 {
-    HRESULT __stdcall get_SupportedDeviceClasses(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedDeviceClasses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedDeviceClasses, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Enumeration::DeviceClass>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Enumeration::DeviceClass>>(this->shim().SupportedDeviceClasses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedDeviceSelectors(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedDeviceSelectors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedDeviceSelectors, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().SupportedDeviceSelectors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceSelectedEventArgs> : produce_base<D, Windows::Devices::Enumeration::IDeviceSelectedEventArgs>
 {
-    HRESULT __stdcall get_SelectedDevice(void** value) noexcept final
+    int32_t WINRT_CALL get_SelectedDevice(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedDevice, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformation>(this->shim().SelectedDevice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceUnpairingResult> : produce_base<D, Windows::Devices::Enumeration::IDeviceUnpairingResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceUnpairingResultStatus* status) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceUnpairingResultStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Enumeration::DeviceUnpairingResultStatus));
             *status = detach_from<Windows::Devices::Enumeration::DeviceUnpairingResultStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher> : produce_base<D, Windows::Devices::Enumeration::IDeviceWatcher>
 {
-    HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Added(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Added(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Added(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Updated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Updated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Updated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Removed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Removed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Removed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().EnumerationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().EnumerationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Stopped(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Stopped(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Stopped(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceWatcherStatus* status) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceWatcherStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcherStatus));
             *status = detach_from<Windows::Devices::Enumeration::DeviceWatcherStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceWatcher2> : produce_base<D, Windows::Devices::Enumeration::IDeviceWatcher2>
 {
-    HRESULT __stdcall GetBackgroundTrigger(void* requestedEventKinds, void** trigger) noexcept final
+    int32_t WINRT_CALL GetBackgroundTrigger(void* requestedEventKinds, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBackgroundTrigger, WINRT_WRAP(Windows::ApplicationModel::Background::DeviceWatcherTrigger), Windows::Foundation::Collections::IIterable<Windows::Devices::Enumeration::DeviceWatcherEventKind> const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::DeviceWatcherTrigger>(this->shim().GetBackgroundTrigger(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Enumeration::DeviceWatcherEventKind> const*>(&requestedEventKinds)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherEvent> : produce_base<D, Windows::Devices::Enumeration::IDeviceWatcherEvent>
 {
-    HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceWatcherEventKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceWatcherEventKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Devices::Enumeration::DeviceWatcherEventKind));
             *value = detach_from<Windows::Devices::Enumeration::DeviceWatcherEventKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformation, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformation>(this->shim().DeviceInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceInformationUpdate(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformationUpdate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformationUpdate, WINRT_WRAP(Windows::Devices::Enumeration::DeviceInformationUpdate));
             *value = detach_from<Windows::Devices::Enumeration::DeviceInformationUpdate>(this->shim().DeviceInformationUpdate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails> : produce_base<D, Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>
 {
-    HRESULT __stdcall get_DeviceWatcherEvents(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceWatcherEvents(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceWatcherEvents, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent>>(this->shim().DeviceWatcherEvents());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation> : produce_base<D, Windows::Devices::Enumeration::IEnclosureLocation>
 {
-    HRESULT __stdcall get_InDock(bool* value) noexcept final
+    int32_t WINRT_CALL get_InDock(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InDock, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().InDock());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InLid(bool* value) noexcept final
+    int32_t WINRT_CALL get_InLid(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InLid, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().InLid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Panel(Windows::Devices::Enumeration::Panel* value) noexcept final
+    int32_t WINRT_CALL get_Panel(Windows::Devices::Enumeration::Panel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Panel, WINRT_WRAP(Windows::Devices::Enumeration::Panel));
             *value = detach_from<Windows::Devices::Enumeration::Panel>(this->shim().Panel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Enumeration::IEnclosureLocation2> : produce_base<D, Windows::Devices::Enumeration::IEnclosureLocation2>
 {
-    HRESULT __stdcall get_RotationAngleInDegreesClockwise(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegreesClockwise(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegreesClockwise, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().RotationAngleInDegreesClockwise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2611,96 +2364,101 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Enumeration {
 
 inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromId(param::hstring const& deviceId)
 {
-    return get_activation_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>().CreateFromId(deviceId);
+    return impl::call_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>([&](auto&& f) { return f.CreateFromId(deviceId); });
 }
 
-inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromDeviceClassId(GUID const& deviceClassId)
+inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromDeviceClassId(winrt::guid const& deviceClassId)
 {
-    return get_activation_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>().CreateFromDeviceClassId(deviceClassId);
+    return impl::call_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>([&](auto&& f) { return f.CreateFromDeviceClassId(deviceClassId); });
 }
 
 inline Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation::CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass const& deviceClass)
 {
-    return get_activation_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>().CreateFromDeviceClass(deviceClass);
+    return impl::call_factory<DeviceAccessInformation, Windows::Devices::Enumeration::IDeviceAccessInformationStatics>([&](auto&& f) { return f.CreateFromDeviceClass(deviceClass); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateFromIdAsync(deviceId);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateFromIdAsync(deviceId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(param::hstring const& deviceId, param::async_iterable<hstring> const& additionalProperties)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateFromIdAsync(deviceId, additionalProperties);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateFromIdAsync(deviceId, additionalProperties); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync()
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().FindAllAsync();
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.FindAllAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(Windows::Devices::Enumeration::DeviceClass const& deviceClass)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().FindAllAsync(deviceClass);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.FindAllAsync(deviceClass); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(param::hstring const& aqsFilter)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().FindAllAsync(aqsFilter);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.FindAllAsync(aqsFilter); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(param::hstring const& aqsFilter, param::async_iterable<hstring> const& additionalProperties)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().FindAllAsync(aqsFilter, additionalProperties);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.FindAllAsync(aqsFilter, additionalProperties); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher()
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateWatcher();
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateWatcher(); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(Windows::Devices::Enumeration::DeviceClass const& deviceClass)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateWatcher(deviceClass);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateWatcher(deviceClass); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(param::hstring const& aqsFilter)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateWatcher(aqsFilter);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateWatcher(aqsFilter); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(param::hstring const& aqsFilter, param::iterable<hstring> const& additionalProperties)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>().CreateWatcher(aqsFilter, additionalProperties);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics>([&](auto&& f) { return f.CreateWatcher(aqsFilter, additionalProperties); });
 }
 
 inline hstring DeviceInformation::GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass const& deviceClass)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>().GetAqsFilterFromDeviceClass(deviceClass);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>([&](auto&& f) { return f.GetAqsFilterFromDeviceClass(deviceClass); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(param::hstring const& deviceId, param::async_iterable<hstring> const& additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind const& kind)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>().CreateFromIdAsync(deviceId, additionalProperties, kind);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>([&](auto&& f) { return f.CreateFromIdAsync(deviceId, additionalProperties, kind); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(param::hstring const& aqsFilter, param::async_iterable<hstring> const& additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind const& kind)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>().FindAllAsync(aqsFilter, additionalProperties, kind);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>([&](auto&& f) { return f.FindAllAsync(aqsFilter, additionalProperties, kind); });
 }
 
 inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(param::hstring const& aqsFilter, param::iterable<hstring> const& additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind const& kind)
 {
-    return get_activation_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>().CreateWatcher(aqsFilter, additionalProperties, kind);
+    return impl::call_factory<DeviceInformation, Windows::Devices::Enumeration::IDeviceInformationStatics2>([&](auto&& f) { return f.CreateWatcher(aqsFilter, additionalProperties, kind); });
 }
 
 inline bool DeviceInformationPairing::TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported)
 {
-    return get_activation_factory<DeviceInformationPairing, Windows::Devices::Enumeration::IDeviceInformationPairingStatics>().TryRegisterForAllInboundPairingRequests(pairingKindsSupported);
+    return impl::call_factory<DeviceInformationPairing, Windows::Devices::Enumeration::IDeviceInformationPairingStatics>([&](auto&& f) { return f.TryRegisterForAllInboundPairingRequests(pairingKindsSupported); });
+}
+
+inline bool DeviceInformationPairing::TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel)
+{
+    return impl::call_factory<DeviceInformationPairing, Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>([&](auto&& f) { return f.TryRegisterForAllInboundPairingRequestsWithProtectionLevel(pairingKindsSupported, minProtectionLevel); });
 }
 
 inline DevicePicker::DevicePicker() :
-    DevicePicker(get_activation_factory<DevicePicker>().ActivateInstance<DevicePicker>())
+    DevicePicker(impl::call_factory<DevicePicker>([](auto&& f) { return f.template ActivateInstance<DevicePicker>(); }))
 {}
 
 }
@@ -2719,6 +2477,7 @@ template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationC
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing> {};
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing2> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing2> {};
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics> {};
+template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics2> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics2> {};
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics> {};
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics2> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics2> {};
 template<> struct hash<winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate> {};
@@ -2760,5 +2519,3 @@ template<> struct hash<winrt::Windows::Devices::Enumeration::DeviceWatcherTrigge
 template<> struct hash<winrt::Windows::Devices::Enumeration::EnclosureLocation> : winrt::impl::hash_base<winrt::Windows::Devices::Enumeration::EnclosureLocation> {};
 
 }
-
-WINRT_WARNING_POP

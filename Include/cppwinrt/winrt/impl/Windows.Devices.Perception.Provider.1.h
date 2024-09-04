@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -13,77 +13,77 @@
 
 WINRT_EXPORT namespace winrt::Windows::Devices::Perception::Provider {
 
-struct WINRT_EBO [[deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IKnownPerceptionFrameKindStatics :
+struct WINRT_EBO IKnownPerceptionFrameKindStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionFrameKindStatics>
 {
     IKnownPerceptionFrameKindStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionControlGroup :
+struct WINRT_EBO IPerceptionControlGroup :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionControlGroup>
 {
     IPerceptionControlGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionControlGroupFactory :
+struct WINRT_EBO IPerceptionControlGroupFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionControlGroupFactory>
 {
     IPerceptionControlGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelation :
+struct WINRT_EBO IPerceptionCorrelation :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionCorrelation>
 {
     IPerceptionCorrelation(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationFactory :
+struct WINRT_EBO IPerceptionCorrelationFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionCorrelationFactory>
 {
     IPerceptionCorrelationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationGroup :
+struct WINRT_EBO IPerceptionCorrelationGroup :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionCorrelationGroup>
 {
     IPerceptionCorrelationGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationGroupFactory :
+struct WINRT_EBO IPerceptionCorrelationGroupFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionCorrelationGroupFactory>
 {
     IPerceptionCorrelationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFaceAuthenticationGroup :
+struct WINRT_EBO IPerceptionFaceAuthenticationGroup :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFaceAuthenticationGroup>
 {
     IPerceptionFaceAuthenticationGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFaceAuthenticationGroupFactory :
+struct WINRT_EBO IPerceptionFaceAuthenticationGroupFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFaceAuthenticationGroupFactory>
 {
     IPerceptionFaceAuthenticationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrame :
+struct WINRT_EBO IPerceptionFrame :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrame>
 {
     IPerceptionFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProvider :
+struct WINRT_EBO IPerceptionFrameProvider :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameProvider>,
     impl::require<IPerceptionFrameProvider, Windows::Foundation::IClosable>
@@ -91,14 +91,14 @@ struct WINRT_EBO [[deprecated("IPerceptionFrameProvider may be unavailable after
     IPerceptionFrameProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderInfo :
+struct WINRT_EBO IPerceptionFrameProviderInfo :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameProviderInfo>
 {
     IPerceptionFrameProviderInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderManager :
+struct WINRT_EBO IPerceptionFrameProviderManager :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameProviderManager>,
     impl::require<IPerceptionFrameProviderManager, Windows::Foundation::IClosable>
@@ -106,21 +106,21 @@ struct WINRT_EBO [[deprecated("IPerceptionFrameProviderManager may be unavailabl
     IPerceptionFrameProviderManager(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderManagerServiceStatics :
+struct WINRT_EBO IPerceptionFrameProviderManagerServiceStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameProviderManagerServiceStatics>
 {
     IPerceptionFrameProviderManagerServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionPropertyChangeRequest :
+struct WINRT_EBO IPerceptionPropertyChangeRequest :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionPropertyChangeRequest>
 {
     IPerceptionPropertyChangeRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionVideoFrameAllocator :
+struct WINRT_EBO IPerceptionVideoFrameAllocator :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionVideoFrameAllocator>,
     impl::require<IPerceptionVideoFrameAllocator, Windows::Foundation::IClosable>
@@ -128,7 +128,7 @@ struct WINRT_EBO [[deprecated("PerceptionVideoFrameAllocator may be unavailable 
     IPerceptionVideoFrameAllocator(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionVideoFrameAllocatorFactory :
+struct WINRT_EBO IPerceptionVideoFrameAllocatorFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionVideoFrameAllocatorFactory>
 {

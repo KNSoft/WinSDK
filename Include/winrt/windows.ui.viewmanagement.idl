@@ -303,7 +303,11 @@ namespace Windows
             {
                 Auto                    = 0,
                 PreferredLaunchViewSize = 1,
-                FullScreen              = 2
+                FullScreen              = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                CompactOverlay          = 3,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                Maximized               = 4
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -898,7 +902,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass ApplicationViewTitleBar
             {
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] [default] interface Windows.UI.ViewManagement.IApplicationViewTitleBar;

@@ -52,6 +52,8 @@ namespace Windows
     {
         typedef struct DateTime DateTime;
 
+        runtimeclass Deferral;
+
         interface IAsyncAction;
 
         typedef struct TimeSpan TimeSpan;
@@ -161,6 +163,8 @@ namespace Windows
 
             interface IScheduledToastNotificationFactory;
 
+            interface IScheduledToastNotificationShowingEventArgs;
+
             interface IShownTileNotification;
 
             interface ITileFlyoutNotification;
@@ -233,6 +237,8 @@ namespace Windows
 
             interface IToastNotifier2;
 
+            interface IToastNotifier3;
+
             interface IUserNotification;
 
             interface IUserNotificationChangedEventArgs;
@@ -264,6 +270,8 @@ namespace Windows
             runtimeclass ScheduledTileNotification;
 
             runtimeclass ScheduledToastNotification;
+
+            runtimeclass ScheduledToastNotificationShowingEventArgs;
 
             runtimeclass ShownTileNotification;
 
@@ -388,6 +396,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, Windows.UI.Notifications.ToastDismissedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, Windows.UI.Notifications.ToastFailedEventArgs*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotifier*, Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs*>;
             }
         }
     }
@@ -775,8 +785,6 @@ namespace Windows
             [exclusiveto(Windows.UI.Notifications.AdaptiveNotificationText)]
             [uuid(46D4A3BE-609A-4326-A40B-BFDE872034A3)]
             interface IAdaptiveNotificationText : IInspectable
-                requires
-                    Windows.UI.Notifications.IAdaptiveNotificationContent
             {
                 [propget] HRESULT Text([out] [retval] HSTRING* value);
                 [propput] HRESULT Text([in] HSTRING value);
@@ -799,7 +807,7 @@ namespace Windows
             [uuid(EDF255CE-0618-4D59-948A-5A61040C52F9)]
             interface IBadgeNotificationFactory : IInspectable
             {
-                HRESULT CreateBadgeNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.BadgeNotification** notification);
+                HRESULT CreateBadgeNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.BadgeNotification** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -818,10 +826,10 @@ namespace Windows
             [uuid(33400FAA-6DD5-4105-AEBC-9B50FCA492DA)]
             interface IBadgeUpdateManagerStatics : IInspectable
             {
-                [overload("CreateBadgeUpdaterForApplication")] HRESULT CreateBadgeUpdaterForApplication([out] [retval] Windows.UI.Notifications.BadgeUpdater** updater);
-                [overload("CreateBadgeUpdaterForApplication")] HRESULT CreateBadgeUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.BadgeUpdater** updater);
-                HRESULT CreateBadgeUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.BadgeUpdater** updater);
-                HRESULT GetTemplateContent([in] Windows.UI.Notifications.BadgeTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** content);
+                [overload("CreateBadgeUpdaterForApplication")] HRESULT CreateBadgeUpdaterForApplication([out] [retval] Windows.UI.Notifications.BadgeUpdater** result);
+                [overload("CreateBadgeUpdaterForApplication")] HRESULT CreateBadgeUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.BadgeUpdater** result);
+                HRESULT CreateBadgeUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.BadgeUpdater** result);
+                HRESULT GetTemplateContent([in] Windows.UI.Notifications.BadgeTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -930,8 +938,8 @@ namespace Windows
             [uuid(23C1E33A-1C10-46FB-8040-DEC384621CF8)]
             interface INotificationDataFactory : IInspectable
             {
-                [overload("CreateNotificationData")] HRESULT CreateNotificationDataWithValuesAndSequenceNumber([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* initialValues, [in] UINT32 sequenceNumber, [out] [retval] Windows.UI.Notifications.NotificationData** result);
-                [overload("CreateNotificationData")] HRESULT CreateNotificationDataWithValues([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* initialValues, [out] [retval] Windows.UI.Notifications.NotificationData** result);
+                [overload("CreateNotificationData")] HRESULT CreateNotificationDataWithValuesAndSequenceNumber([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* initialValues, [in] UINT32 sequenceNumber, [out] [retval] Windows.UI.Notifications.NotificationData** value);
+                [overload("CreateNotificationData")] HRESULT CreateNotificationDataWithValues([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* initialValues, [out] [retval] Windows.UI.Notifications.NotificationData** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -941,7 +949,7 @@ namespace Windows
             {
                 [propget] HRESULT Language([out] [retval] HSTRING* value);
                 [propput] HRESULT Language([in] HSTRING value);
-                [propget] HRESULT Bindings([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Notifications.NotificationBinding*>** result);
+                [propget] HRESULT Bindings([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Notifications.NotificationBinding*>** value);
                 HRESULT GetBinding([in] HSTRING templateName, [out] [retval] Windows.UI.Notifications.NotificationBinding** result);
             }
 
@@ -965,7 +973,7 @@ namespace Windows
             [uuid(3383138A-98C0-4C3B-BBD6-4A633C7CFC29)]
             interface IScheduledTileNotificationFactory : IInspectable
             {
-                HRESULT CreateScheduledTileNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [out] [retval] Windows.UI.Notifications.ScheduledTileNotification** notification);
+                HRESULT CreateScheduledTileNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [out] [retval] Windows.UI.Notifications.ScheduledTileNotification** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1019,8 +1027,19 @@ namespace Windows
             [uuid(E7BED191-0BB9-4189-8394-31761B476FD7)]
             interface IScheduledToastNotificationFactory : IInspectable
             {
-                HRESULT CreateScheduledToastNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [out] [retval] Windows.UI.Notifications.ScheduledToastNotification** notification);
-                HRESULT CreateScheduledToastNotificationRecurring([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [in] Windows.Foundation.TimeSpan snoozeInterval, [in] UINT32 maximumSnoozeCount, [out] [retval] Windows.UI.Notifications.ScheduledToastNotification** notification);
+                HRESULT CreateScheduledToastNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [out] [retval] Windows.UI.Notifications.ScheduledToastNotification** value);
+                HRESULT CreateScheduledToastNotificationRecurring([in] Windows.Data.Xml.Dom.XmlDocument* content, [in] Windows.Foundation.DateTime deliveryTime, [in] Windows.Foundation.TimeSpan snoozeInterval, [in] UINT32 maximumSnoozeCount, [out] [retval] Windows.UI.Notifications.ScheduledToastNotification** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs)]
+            [uuid(6173F6B4-412A-5E2C-A6ED-A0209AEF9A09)]
+            interface IScheduledToastNotificationShowingEventArgs : IInspectable
+            {
+                [propget] HRESULT Cancel([out] [retval] boolean* value);
+                [propput] HRESULT Cancel([in] boolean value);
+                [propget] HRESULT ScheduledToastNotification([out] [retval] Windows.UI.Notifications.ScheduledToastNotification** value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1046,7 +1065,7 @@ namespace Windows
             [uuid(EF556FF5-5226-4F2B-B278-88A35DFE569F)]
             interface ITileFlyoutNotificationFactory : IInspectable
             {
-                HRESULT CreateTileFlyoutNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.TileFlyoutNotification** notification);
+                HRESULT CreateTileFlyoutNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.TileFlyoutNotification** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1054,10 +1073,10 @@ namespace Windows
             [uuid(04363B0B-1AC0-4B99-88E7-ADA83E953D48)]
             interface ITileFlyoutUpdateManagerStatics : IInspectable
             {
-                [overload("CreateTileFlyoutUpdaterForApplication")] HRESULT CreateTileFlyoutUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** updater);
-                [overload("CreateTileFlyoutUpdaterForApplication")] HRESULT CreateTileFlyoutUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** updater);
-                HRESULT CreateTileFlyoutUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** updater);
-                HRESULT GetTemplateContent([in] Windows.UI.Notifications.TileFlyoutTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** content);
+                [overload("CreateTileFlyoutUpdaterForApplication")] HRESULT CreateTileFlyoutUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** result);
+                [overload("CreateTileFlyoutUpdaterForApplication")] HRESULT CreateTileFlyoutUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** result);
+                HRESULT CreateTileFlyoutUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileFlyoutUpdater** result);
+                HRESULT GetTemplateContent([in] Windows.UI.Notifications.TileFlyoutTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1090,7 +1109,7 @@ namespace Windows
             [uuid(C6ABDD6E-4928-46C8-BDBF-81A047DEA0D4)]
             interface ITileNotificationFactory : IInspectable
             {
-                HRESULT CreateTileNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.TileNotification** notification);
+                HRESULT CreateTileNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.TileNotification** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1098,9 +1117,9 @@ namespace Windows
             [uuid(55141348-2EE2-4E2D-9CC1-216A20DECC9F)]
             interface ITileUpdateManagerForUser : IInspectable
             {
-                [overload("CreateTileUpdaterForApplicationForUser")] HRESULT CreateTileUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileUpdater** updater);
-                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileUpdater** updater);
-                HRESULT CreateTileUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileUpdater** updater);
+                [overload("CreateTileUpdaterForApplicationForUser")] HRESULT CreateTileUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileUpdater** result);
+                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileUpdater** result);
+                HRESULT CreateTileUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileUpdater** result);
                 [propget] HRESULT User([out] [retval] Windows.System.User** value);
             }
 
@@ -1109,10 +1128,10 @@ namespace Windows
             [uuid(DA159E5D-3EA9-4986-8D84-B09D5E12276D)]
             interface ITileUpdateManagerStatics : IInspectable
             {
-                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileUpdater** updater);
-                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileUpdater** updater);
-                HRESULT CreateTileUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileUpdater** updater);
-                HRESULT GetTemplateContent([in] Windows.UI.Notifications.TileTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** content);
+                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplication([out] [retval] Windows.UI.Notifications.TileUpdater** result);
+                [overload("CreateTileUpdaterForApplication")] HRESULT CreateTileUpdaterForApplicationWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.TileUpdater** result);
+                HRESULT CreateTileUpdaterForSecondaryTile([in] HSTRING tileId, [out] [retval] Windows.UI.Notifications.TileUpdater** result);
+                HRESULT GetTemplateContent([in] Windows.UI.Notifications.TileTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1134,7 +1153,7 @@ namespace Windows
                 [propget] HRESULT Setting([out] [retval] Windows.UI.Notifications.NotificationSetting* value);
                 HRESULT AddToSchedule([in] Windows.UI.Notifications.ScheduledTileNotification* scheduledTile);
                 HRESULT RemoveFromSchedule([in] Windows.UI.Notifications.ScheduledTileNotification* scheduledTile);
-                HRESULT GetScheduledTileNotifications([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ScheduledTileNotification*>** scheduledTiles);
+                HRESULT GetScheduledTileNotifications([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ScheduledTileNotification*>** result);
                 [overload("StartPeriodicUpdate")] HRESULT StartPeriodicUpdate([in] Windows.Foundation.Uri* tileContent, [in] Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval);
                 [overload("StartPeriodicUpdate")] HRESULT StartPeriodicUpdateAtTime([in] Windows.Foundation.Uri* tileContent, [in] Windows.Foundation.DateTime startTime, [in] Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval);
                 HRESULT StopPeriodicUpdate();
@@ -1179,7 +1198,7 @@ namespace Windows
             [uuid(164DD3D7-73C4-44F7-B4FF-FB6D4BF1F4C6)]
             interface IToastCollectionFactory : IInspectable
             {
-                HRESULT CreateInstance([in] HSTRING collectionId, [in] HSTRING displayName, [in] HSTRING launchArgs, [in] Windows.Foundation.Uri* iconUri, [out] [retval] Windows.UI.Notifications.ToastCollection** result);
+                HRESULT CreateInstance([in] HSTRING collectionId, [in] HSTRING displayName, [in] HSTRING launchArgs, [in] Windows.Foundation.Uri* iconUri, [out] [retval] Windows.UI.Notifications.ToastCollection** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1220,10 +1239,10 @@ namespace Windows
                 [propget] HRESULT Content([out] [retval] Windows.Data.Xml.Dom.XmlDocument** value);
                 [propput] HRESULT ExpirationTime([in] Windows.Foundation.IReference<Windows.Foundation.DateTime>* value);
                 [propget] HRESULT ExpirationTime([out] [retval] Windows.Foundation.IReference<Windows.Foundation.DateTime>** value);
-                [eventadd] HRESULT Dismissed([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, Windows.UI.Notifications.ToastDismissedEventArgs*>* handler, [out] [retval] EventRegistrationToken* cookie);
-                [eventremove] HRESULT Dismissed([in] EventRegistrationToken cookie);
-                [eventadd] HRESULT Activated([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* cookie);
-                [eventremove] HRESULT Activated([in] EventRegistrationToken cookie);
+                [eventadd] HRESULT Dismissed([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, Windows.UI.Notifications.ToastDismissedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT Dismissed([in] EventRegistrationToken token);
+                [eventadd] HRESULT Activated([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT Activated([in] EventRegistrationToken token);
                 [eventadd] HRESULT Failed([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotification*, Windows.UI.Notifications.ToastFailedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT Failed([in] EventRegistrationToken token);
             }
@@ -1268,8 +1287,8 @@ namespace Windows
             [uuid(9445135A-38F3-42F6-96AA-7955B0F03DA2)]
             interface IToastNotificationActionTriggerDetail : IInspectable
             {
-                [propget] HRESULT Argument([out] [retval] HSTRING* argument);
-                [propget] HRESULT UserInput([out] [retval] Windows.Foundation.Collections.ValueSet** inputs);
+                [propget] HRESULT Argument([out] [retval] HSTRING* value);
+                [propget] HRESULT UserInput([out] [retval] Windows.Foundation.Collections.ValueSet** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1277,7 +1296,7 @@ namespace Windows
             [uuid(04124B20-82C6-4229-B109-FD9ED4662B53)]
             interface IToastNotificationFactory : IInspectable
             {
-                HRESULT CreateToastNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.ToastNotification** notification);
+                HRESULT CreateToastNotification([in] Windows.Data.Xml.Dom.XmlDocument* content, [out] [retval] Windows.UI.Notifications.ToastNotification** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1299,8 +1318,8 @@ namespace Windows
             [uuid(3BC3D253-2F31-4092-9129-8AD5ABF067DA)]
             interface IToastNotificationHistory2 : IInspectable
             {
-                [overload("GetHistory")] HRESULT GetHistory([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ToastNotification*>** toasts);
-                [overload("GetHistory")] HRESULT GetHistoryWithId([in] HSTRING applicationId, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ToastNotification*>** toasts);
+                [overload("GetHistory")] HRESULT GetHistory([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ToastNotification*>** result);
+                [overload("GetHistory")] HRESULT GetHistoryWithId([in] HSTRING applicationId, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ToastNotification*>** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1316,7 +1335,7 @@ namespace Windows
             [uuid(0B36E982-C871-49FB-BABB-25BDBC4CC45B)]
             interface IToastNotificationHistoryChangedTriggerDetail2 : IInspectable
             {
-                [propget] HRESULT CollectionId([out] [retval] HSTRING* collectionId);
+                [propget] HRESULT CollectionId([out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1346,9 +1365,9 @@ namespace Windows
             [uuid(50AC103F-D235-4598-BBEF-98FE4D1A3AD4)]
             interface IToastNotificationManagerStatics : IInspectable
             {
-                [overload("CreateToastNotifier")] HRESULT CreateToastNotifier([out] [retval] Windows.UI.Notifications.ToastNotifier** notifier);
-                [overload("CreateToastNotifier")] HRESULT CreateToastNotifierWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.ToastNotifier** notifier);
-                HRESULT GetTemplateContent([in] Windows.UI.Notifications.ToastTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** content);
+                [overload("CreateToastNotifier")] HRESULT CreateToastNotifier([out] [retval] Windows.UI.Notifications.ToastNotifier** result);
+                [overload("CreateToastNotifier")] HRESULT CreateToastNotifierWithId([in] HSTRING applicationId, [out] [retval] Windows.UI.Notifications.ToastNotifier** result);
+                HRESULT GetTemplateContent([in] Windows.UI.Notifications.ToastTemplateType type, [out] [retval] Windows.Data.Xml.Dom.XmlDocument** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1373,7 +1392,7 @@ namespace Windows
             [uuid(D6F5F569-D40D-407C-8989-88CAB42CFD14)]
             interface IToastNotificationManagerStatics5 : IInspectable
             {
-                HRESULT GetDefault([out] [retval] Windows.UI.Notifications.ToastNotificationManagerForUser** value);
+                HRESULT GetDefault([out] [retval] Windows.UI.Notifications.ToastNotificationManagerForUser** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1386,7 +1405,7 @@ namespace Windows
                 [propget] HRESULT Setting([out] [retval] Windows.UI.Notifications.NotificationSetting* value);
                 HRESULT AddToSchedule([in] Windows.UI.Notifications.ScheduledToastNotification* scheduledToast);
                 HRESULT RemoveFromSchedule([in] Windows.UI.Notifications.ScheduledToastNotification* scheduledToast);
-                HRESULT GetScheduledToastNotifications([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ScheduledToastNotification*>** scheduledToasts);
+                HRESULT GetScheduledToastNotifications([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Notifications.ScheduledToastNotification*>** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1396,6 +1415,15 @@ namespace Windows
             {
                 [overload("Update")] HRESULT UpdateWithTagAndGroup([in] Windows.UI.Notifications.NotificationData* data, [in] HSTRING tag, [in] HSTRING group, [out] [retval] Windows.UI.Notifications.NotificationUpdateResult* result);
                 [overload("Update")] HRESULT UpdateWithTag([in] Windows.UI.Notifications.NotificationData* data, [in] HSTRING tag, [out] [retval] Windows.UI.Notifications.NotificationUpdateResult* result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.UI.Notifications.ToastNotifier)]
+            [uuid(AE75A04A-3B0C-51AD-B7E8-B08AB6052549)]
+            interface IToastNotifier3 : IInspectable
+            {
+                [eventadd] HRESULT ScheduledToastNotificationShowing([in] Windows.Foundation.TypedEventHandler<Windows.UI.Notifications.ToastNotifier*, Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT ScheduledToastNotificationShowing([in] EventRegistrationToken token);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1420,6 +1448,8 @@ namespace Windows
 
             [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass AdaptiveNotificationText
             {
                 [default] interface Windows.UI.Notifications.IAdaptiveNotificationText;
@@ -1428,6 +1458,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.IBadgeNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass BadgeNotification
             {
@@ -1435,6 +1466,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.IBadgeUpdateManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.Notifications.IBadgeUpdateManagerStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
             [threading(mta)]
@@ -1444,44 +1476,53 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass BadgeUpdateManagerForUser
             {
                 [default] interface Windows.UI.Notifications.IBadgeUpdateManagerForUser;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             runtimeclass BadgeUpdater
             {
                 [default] interface Windows.UI.Notifications.IBadgeUpdater;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+            [threading(both)]
             runtimeclass KnownAdaptiveNotificationHints
             {
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+            [threading(both)]
             runtimeclass KnownAdaptiveNotificationTextStyles
             {
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.IKnownNotificationBindingsStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+            [threading(both)]
             runtimeclass KnownNotificationBindings
             {
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
             runtimeclass Notification
             {
                 [default] interface Windows.UI.Notifications.INotification;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             runtimeclass NotificationBinding
             {
                 [default] interface Windows.UI.Notifications.INotificationBinding;
@@ -1498,6 +1539,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             runtimeclass NotificationVisual
             {
                 [default] interface Windows.UI.Notifications.INotificationVisual;
@@ -1505,6 +1547,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.IScheduledTileNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ScheduledTileNotification
             {
@@ -1513,6 +1556,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.IScheduledToastNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ScheduledToastNotification
             {
@@ -1520,6 +1564,13 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Notifications.IScheduledToastNotification2;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Notifications.IScheduledToastNotification3;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.UI.Notifications.IScheduledToastNotification4;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass ScheduledToastNotificationShowingEventArgs
+            {
+                [default] interface Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1530,6 +1581,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.ITileFlyoutNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass TileFlyoutNotification
             {
@@ -1537,6 +1589,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [threading(mta)]
             runtimeclass TileFlyoutUpdateManager
@@ -1552,6 +1605,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.ITileNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass TileNotification
             {
@@ -1559,6 +1613,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.ITileUpdateManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.Notifications.ITileUpdateManagerStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
             [threading(mta)]
@@ -1568,13 +1623,13 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass TileUpdateManagerForUser
             {
                 [default] interface Windows.UI.Notifications.ITileUpdateManagerForUser;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             runtimeclass TileUpdater
             {
                 [default] interface Windows.UI.Notifications.ITileUpdater;
@@ -1590,6 +1645,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.IToastCollectionFactory, Windows.Foundation.UniversalApiContract, 4.0)]
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ToastCollection
             {
@@ -1597,18 +1653,21 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+            [marshaling_behavior(agile)]
             runtimeclass ToastCollectionManager
             {
                 [default] interface Windows.UI.Notifications.IToastCollectionManager;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             runtimeclass ToastDismissedEventArgs
             {
                 [default] interface Windows.UI.Notifications.IToastDismissedEventArgs;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             runtimeclass ToastFailedEventArgs
             {
                 [default] interface Windows.UI.Notifications.IToastFailedEventArgs;
@@ -1616,6 +1675,7 @@ namespace Windows
 
             [activatable(Windows.UI.Notifications.IToastNotificationFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ToastNotification
             {
@@ -1634,11 +1694,10 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(standard)]
-            [threading(mta)]
             runtimeclass ToastNotificationHistory
             {
-                [contract(Windows.Foundation.UniversalApiContract, 1.0)] [default] interface Windows.UI.Notifications.IToastNotificationHistory;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Notifications.IToastNotificationHistory2;
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)] [default] interface Windows.UI.Notifications.IToastNotificationHistory;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1650,6 +1709,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.Notifications.IToastNotificationManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.Notifications.IToastNotificationManagerStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.Notifications.IToastNotificationManagerStatics4, Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1661,7 +1721,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass ToastNotificationManagerForUser
             {
                 [default] interface Windows.UI.Notifications.IToastNotificationManagerForUser;
@@ -1669,19 +1728,23 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             runtimeclass ToastNotifier
             {
                 [default] interface Windows.UI.Notifications.IToastNotifier;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Notifications.IToastNotifier2;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Notifications.IToastNotifier3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             runtimeclass UserNotification
             {
                 [default] interface Windows.UI.Notifications.IUserNotification;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             runtimeclass UserNotificationChangedEventArgs
             {
                 [default] interface Windows.UI.Notifications.IUserNotificationChangedEventArgs;

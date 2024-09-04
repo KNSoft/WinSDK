@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.2.h"
@@ -120,55 +120,55 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->add_GameAdded(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded_revoker consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>(this, &abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameAdded, GameAdded(handler));
+    return impl::make_event_revoker<D, GameAdded_revoker>(this, GameAdded(handler));
 }
 
-template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(event_token const& token) const
+template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameAdded(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameAdded(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameAdded(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->add_GameRemoved(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved_revoker consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>(this, &abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameRemoved, GameRemoved(handler));
+    return impl::make_event_revoker<D, GameRemoved_revoker>(this, GameRemoved(handler));
 }
 
-template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(event_token const& token) const
+template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameRemoved(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameRemoved(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameRemoved(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->add_GameUpdated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
+template <typename D> typename consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated_revoker consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>(this, &abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameUpdated, GameUpdated(handler));
+    return impl::make_event_revoker<D, GameUpdated_revoker>(this, GameUpdated(handler));
 }
 
-template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(event_token const& token) const
+template <typename D> void consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics<D>::GameUpdated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameUpdated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Gaming::Preview::GamesEnumeration::IGameListStatics)->remove_GameUpdated(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Gaming::Preview::GamesEnumeration::GameListEntry> consume_Windows_Gaming_Preview_GamesEnumeration_IGameListStatics2<D>::MergeEntriesAsync(Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& left, Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& right) const
@@ -323,12 +323,12 @@ template <> struct delegate<Windows::Gaming::Preview::GamesEnumeration::GameList
     {
         type(H&& handler) : implements_delegate<Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* game) noexcept final
+        int32_t WINRT_CALL Invoke(void* game) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListEntry const*>(&game));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -345,12 +345,12 @@ template <> struct delegate<Windows::Gaming::Preview::GamesEnumeration::GameList
     {
         type(H&& handler) : implements_delegate<Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(HSTRING identifier) noexcept final
+        int32_t WINRT_CALL Invoke(void* identifier) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<hstring const*>(&identifier));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -363,670 +363,570 @@ template <> struct delegate<Windows::Gaming::Preview::GamesEnumeration::GameList
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameListEntry> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameListEntry>
 {
-    HRESULT __stdcall get_DisplayInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_DisplayInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayInfo, WINRT_WRAP(Windows::ApplicationModel::AppDisplayInfo));
             *value = detach_from<Windows::ApplicationModel::AppDisplayInfo>(this->shim().DisplayInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LaunchAsync(void** operation) noexcept final
+    int32_t WINRT_CALL LaunchAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().LaunchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Category(Windows::Gaming::Preview::GamesEnumeration::GameListCategory* value) noexcept final
+    int32_t WINRT_CALL get_Category(Windows::Gaming::Preview::GamesEnumeration::GameListCategory* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Category, WINRT_WRAP(Windows::Gaming::Preview::GamesEnumeration::GameListCategory));
             *value = detach_from<Windows::Gaming::Preview::GamesEnumeration::GameListCategory>(this->shim().Category());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetCategoryAsync(Windows::Gaming::Preview::GamesEnumeration::GameListCategory value, void** action) noexcept final
+    int32_t WINRT_CALL SetCategoryAsync(Windows::Gaming::Preview::GamesEnumeration::GameListCategory value, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetCategoryAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Gaming::Preview::GamesEnumeration::GameListCategory const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetCategoryAsync(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListCategory const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameListEntry2> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameListEntry2>
 {
-    HRESULT __stdcall get_LaunchableState(Windows::Gaming::Preview::GamesEnumeration::GameListEntryLaunchableState* value) noexcept final
+    int32_t WINRT_CALL get_LaunchableState(Windows::Gaming::Preview::GamesEnumeration::GameListEntryLaunchableState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchableState, WINRT_WRAP(Windows::Gaming::Preview::GamesEnumeration::GameListEntryLaunchableState));
             *value = detach_from<Windows::Gaming::Preview::GamesEnumeration::GameListEntryLaunchableState>(this->shim().LaunchableState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LauncherExecutable(void** value) noexcept final
+    int32_t WINRT_CALL get_LauncherExecutable(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LauncherExecutable, WINRT_WRAP(Windows::Storage::IStorageFile));
             *value = detach_from<Windows::Storage::IStorageFile>(this->shim().LauncherExecutable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LaunchParameters(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LaunchParameters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchParameters, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LaunchParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetLauncherExecutableFileAsync(void* executableFile, void** operation) noexcept final
+    int32_t WINRT_CALL SetLauncherExecutableFileAsync(void* executableFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetLauncherExecutableFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetLauncherExecutableFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&executableFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetLauncherExecutableFileWithParamsAsync(void* executableFile, HSTRING launchParams, void** operation) noexcept final
+    int32_t WINRT_CALL SetLauncherExecutableFileWithParamsAsync(void* executableFile, void* launchParams, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetLauncherExecutableFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::IStorageFile const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetLauncherExecutableFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&executableFile), *reinterpret_cast<hstring const*>(&launchParams)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TitleId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TitleId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TitleId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TitleId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetTitleIdAsync(HSTRING id, void** operation) noexcept final
+    int32_t WINRT_CALL SetTitleIdAsync(void* id, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetTitleIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetTitleIdAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GameModeConfiguration(void** value) noexcept final
+    int32_t WINRT_CALL get_GameModeConfiguration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GameModeConfiguration, WINRT_WRAP(Windows::Gaming::Preview::GamesEnumeration::GameModeConfiguration));
             *value = detach_from<Windows::Gaming::Preview::GamesEnumeration::GameModeConfiguration>(this->shim().GameModeConfiguration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>
 {
-    HRESULT __stdcall FindAllAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FindAllAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>>(this->shim().FindAllAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsyncPackageFamilyName(HSTRING packageFamilyName, void** operation) noexcept final
+    int32_t WINRT_CALL FindAllAsyncPackageFamilyName(void* packageFamilyName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>>(this->shim().FindAllAsync(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_GameAdded(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_GameAdded(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GameAdded(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GameAdded, WINRT_WRAP(winrt::event_token), Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().GameAdded(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GameAdded(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GameAdded(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GameAdded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GameAdded(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_GameRemoved(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().GameAdded(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GameRemoved, WINRT_WRAP(winrt::event_token), Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().GameRemoved(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_GameRemoved(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_GameRemoved(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GameRemoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GameRemoved(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_GameUpdated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GameRemoved(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GameUpdated, WINRT_WRAP(winrt::event_token), Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().GameUpdated(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GameRemoved(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GameUpdated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GameRemoved(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_GameUpdated(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GameUpdated(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_GameUpdated(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GameUpdated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GameUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GameUpdated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2>
 {
-    HRESULT __stdcall MergeEntriesAsync(void* left, void* right, void** operation) noexcept final
+    int32_t WINRT_CALL MergeEntriesAsync(void* left, void* right, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MergeEntriesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>), Windows::Gaming::Preview::GamesEnumeration::GameListEntry const, Windows::Gaming::Preview::GamesEnumeration::GameListEntry const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>(this->shim().MergeEntriesAsync(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListEntry const*>(&left), *reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListEntry const*>(&right)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnmergeEntryAsync(void* mergedEntry, void** operation) noexcept final
+    int32_t WINRT_CALL UnmergeEntryAsync(void* mergedEntry, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnmergeEntryAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>), Windows::Gaming::Preview::GamesEnumeration::GameListEntry const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>>>(this->shim().UnmergeEntryAsync(*reinterpret_cast<Windows::Gaming::Preview::GamesEnumeration::GameListEntry const*>(&mergedEntry)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeConfiguration> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeConfiguration>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelatedProcessNames(void** value) noexcept final
+    int32_t WINRT_CALL get_RelatedProcessNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelatedProcessNames, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().RelatedProcessNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PercentGpuTimeAllocatedToGame(void** value) noexcept final
+    int32_t WINRT_CALL get_PercentGpuTimeAllocatedToGame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuTimeAllocatedToGame, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().PercentGpuTimeAllocatedToGame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PercentGpuTimeAllocatedToGame(void* value) noexcept final
+    int32_t WINRT_CALL put_PercentGpuTimeAllocatedToGame(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuTimeAllocatedToGame, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().PercentGpuTimeAllocatedToGame(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PercentGpuMemoryAllocatedToGame(void** value) noexcept final
+    int32_t WINRT_CALL get_PercentGpuMemoryAllocatedToGame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuMemoryAllocatedToGame, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().PercentGpuMemoryAllocatedToGame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PercentGpuMemoryAllocatedToGame(void* value) noexcept final
+    int32_t WINRT_CALL put_PercentGpuMemoryAllocatedToGame(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuMemoryAllocatedToGame, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().PercentGpuMemoryAllocatedToGame(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PercentGpuMemoryAllocatedToSystemCompositor(void** value) noexcept final
+    int32_t WINRT_CALL get_PercentGpuMemoryAllocatedToSystemCompositor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuMemoryAllocatedToSystemCompositor, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().PercentGpuMemoryAllocatedToSystemCompositor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PercentGpuMemoryAllocatedToSystemCompositor(void* value) noexcept final
+    int32_t WINRT_CALL put_PercentGpuMemoryAllocatedToSystemCompositor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentGpuMemoryAllocatedToSystemCompositor, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().PercentGpuMemoryAllocatedToSystemCompositor(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxCpuCount(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxCpuCount(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCpuCount, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxCpuCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxCpuCount(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxCpuCount(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCpuCount, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxCpuCount(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CpuExclusivityMaskLow(void** value) noexcept final
+    int32_t WINRT_CALL get_CpuExclusivityMaskLow(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CpuExclusivityMaskLow, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CpuExclusivityMaskLow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CpuExclusivityMaskLow(void* value) noexcept final
+    int32_t WINRT_CALL put_CpuExclusivityMaskLow(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CpuExclusivityMaskLow, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().CpuExclusivityMaskLow(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CpuExclusivityMaskHigh(void** value) noexcept final
+    int32_t WINRT_CALL get_CpuExclusivityMaskHigh(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CpuExclusivityMaskHigh, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CpuExclusivityMaskHigh());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CpuExclusivityMaskHigh(void* value) noexcept final
+    int32_t WINRT_CALL put_CpuExclusivityMaskHigh(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CpuExclusivityMaskHigh, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().CpuExclusivityMaskHigh(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AffinitizeToExclusiveCpus(bool* value) noexcept final
+    int32_t WINRT_CALL get_AffinitizeToExclusiveCpus(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AffinitizeToExclusiveCpus, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AffinitizeToExclusiveCpus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AffinitizeToExclusiveCpus(bool value) noexcept final
+    int32_t WINRT_CALL put_AffinitizeToExclusiveCpus(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AffinitizeToExclusiveCpus, WINRT_WRAP(void), bool);
             this->shim().AffinitizeToExclusiveCpus(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfiguration> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfiguration>
 {
-    HRESULT __stdcall get_GamingRelatedProcessNames(void** processNames) noexcept final
+    int32_t WINRT_CALL get_GamingRelatedProcessNames(void** processNames) noexcept final
     {
         try
         {
             *processNames = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GamingRelatedProcessNames, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *processNames = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().GamingRelatedProcessNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfigurationStatics> : produce_base<D, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfigurationStatics>
 {
-    HRESULT __stdcall GetDefault(void** userConfiguration) noexcept final
+    int32_t WINRT_CALL GetDefault(void** userConfiguration) noexcept final
     {
         try
         {
             *userConfiguration = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration));
             *userConfiguration = detach_from<Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1036,75 +936,75 @@ WINRT_EXPORT namespace winrt::Windows::Gaming::Preview::GamesEnumeration {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>> GameList::FindAllAsync()
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().FindAllAsync();
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.FindAllAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>> GameList::FindAllAsync(param::hstring const& packageFamilyName)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().FindAllAsync(packageFamilyName);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.FindAllAsync(packageFamilyName); });
 }
 
-inline event_token GameList::GameAdded(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
+inline winrt::event_token GameList::GameAdded(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameAdded(handler);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameAdded(handler); });
 }
 
-inline factory_event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> GameList::GameAdded(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
+inline GameList::GameAdded_revoker GameList::GameAdded(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
 {
-    auto factory = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
-    return { factory, &impl::abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameAdded, factory.GameAdded(handler) };
+    auto f = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
+    return { f, f.GameAdded(handler) };
 }
 
-inline void GameList::GameAdded(event_token const& token)
+inline void GameList::GameAdded(winrt::event_token const& token)
 {
-    get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameAdded(token);
+    impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameAdded(token); });
 }
 
-inline event_token GameList::GameRemoved(Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler)
+inline winrt::event_token GameList::GameRemoved(Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameRemoved(handler);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameRemoved(handler); });
 }
 
-inline factory_event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> GameList::GameRemoved(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler)
+inline GameList::GameRemoved_revoker GameList::GameRemoved(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListRemovedEventHandler const& handler)
 {
-    auto factory = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
-    return { factory, &impl::abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameRemoved, factory.GameRemoved(handler) };
+    auto f = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
+    return { f, f.GameRemoved(handler) };
 }
 
-inline void GameList::GameRemoved(event_token const& token)
+inline void GameList::GameRemoved(winrt::event_token const& token)
 {
-    get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameRemoved(token);
+    impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameRemoved(token); });
 }
 
-inline event_token GameList::GameUpdated(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
+inline winrt::event_token GameList::GameUpdated(Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameUpdated(handler);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameUpdated(handler); });
 }
 
-inline factory_event_revoker<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> GameList::GameUpdated(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
+inline GameList::GameUpdated_revoker GameList::GameUpdated(auto_revoke_t, Windows::Gaming::Preview::GamesEnumeration::GameListChangedEventHandler const& handler)
 {
-    auto factory = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
-    return { factory, &impl::abi_t<Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>::remove_GameUpdated, factory.GameUpdated(handler) };
+    auto f = get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>();
+    return { f, f.GameUpdated(handler) };
 }
 
-inline void GameList::GameUpdated(event_token const& token)
+inline void GameList::GameUpdated(winrt::event_token const& token)
 {
-    get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>().GameUpdated(token);
+    impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics>([&](auto&& f) { return f.GameUpdated(token); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Gaming::Preview::GamesEnumeration::GameListEntry> GameList::MergeEntriesAsync(Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& left, Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& right)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2>().MergeEntriesAsync(left, right);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2>([&](auto&& f) { return f.MergeEntriesAsync(left, right); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Gaming::Preview::GamesEnumeration::GameListEntry>> GameList::UnmergeEntryAsync(Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& mergedEntry)
 {
-    return get_activation_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2>().UnmergeEntryAsync(mergedEntry);
+    return impl::call_factory<GameList, Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2>([&](auto&& f) { return f.UnmergeEntryAsync(mergedEntry); });
 }
 
 inline Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration GameModeUserConfiguration::GetDefault()
 {
-    return get_activation_factory<GameModeUserConfiguration, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfigurationStatics>().GetDefault();
+    return impl::call_factory<GameModeUserConfiguration, Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfigurationStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 template <typename L> GameListChangedEventHandler::GameListChangedEventHandler(L handler) :
@@ -1112,11 +1012,19 @@ template <typename L> GameListChangedEventHandler::GameListChangedEventHandler(L
 {}
 
 template <typename F> GameListChangedEventHandler::GameListChangedEventHandler(F* handler) :
-    GameListChangedEventHandler([=](auto&&... args) { handler(args...); })
+    GameListChangedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> GameListChangedEventHandler::GameListChangedEventHandler(O* object, M method) :
-    GameListChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    GameListChangedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> GameListChangedEventHandler::GameListChangedEventHandler(com_ptr<O>&& object, M method) :
+    GameListChangedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> GameListChangedEventHandler::GameListChangedEventHandler(weak_ref<O>&& object, M method) :
+    GameListChangedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void GameListChangedEventHandler::operator()(Windows::Gaming::Preview::GamesEnumeration::GameListEntry const& game) const
@@ -1129,11 +1037,19 @@ template <typename L> GameListRemovedEventHandler::GameListRemovedEventHandler(L
 {}
 
 template <typename F> GameListRemovedEventHandler::GameListRemovedEventHandler(F* handler) :
-    GameListRemovedEventHandler([=](auto&&... args) { handler(args...); })
+    GameListRemovedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(O* object, M method) :
-    GameListRemovedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    GameListRemovedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(com_ptr<O>&& object, M method) :
+    GameListRemovedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(weak_ref<O>&& object, M method) :
+    GameListRemovedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void GameListRemovedEventHandler::operator()(param::hstring const& identifier) const
@@ -1158,5 +1074,3 @@ template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameMo
 template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration> : winrt::impl::hash_base<winrt::Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration> {};
 
 }
-
-WINRT_WARNING_POP

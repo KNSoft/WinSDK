@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,7 +21,7 @@ WINRT_EXPORT namespace winrt::Windows::UI::Composition::Desktop {
 struct WINRT_EBO DesktopWindowTarget :
     Windows::UI::Composition::Desktop::IDesktopWindowTarget,
     impl::base<DesktopWindowTarget, Windows::UI::Composition::CompositionTarget, Windows::UI::Composition::CompositionObject>,
-    impl::require<DesktopWindowTarget, Windows::Foundation::IClosable, Windows::UI::Composition::ICompositionObject, Windows::UI::Composition::ICompositionObject2, Windows::UI::Composition::ICompositionObject3, Windows::UI::Composition::ICompositionObject4, Windows::UI::Composition::ICompositionTarget>
+    impl::require<DesktopWindowTarget, Windows::Foundation::IClosable, Windows::UI::Composition::IAnimationObject, Windows::UI::Composition::ICompositionObject, Windows::UI::Composition::ICompositionObject2, Windows::UI::Composition::ICompositionObject3, Windows::UI::Composition::ICompositionObject4, Windows::UI::Composition::ICompositionTarget>
 {
     DesktopWindowTarget(std::nullptr_t) noexcept {}
 };

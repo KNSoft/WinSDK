@@ -2282,6 +2282,7 @@ interface IInternetBindInfo : IUnknown
             ,BINDSTRING_PROXY_PASSWORD
             ,BINDSTRING_ENTERPRISE_ID
             ,BINDSTRING_DOC_URL
+            ,BINDSTRING_SAMESITE_COOKIE_LEVEL
         } BINDSTRING;
 
 

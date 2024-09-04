@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -6,6 +6,8 @@
 #pragma once
 #include "winrt/impl/Windows.Devices.PointOfService.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
+#include "winrt/impl/Windows.Graphics.Imaging.1.h"
+#include "winrt/impl/Windows.Storage.Streams.1.h"
 #include "winrt/impl/Windows.Devices.PointOfService.Provider.1.h"
 
 WINRT_EXPORT namespace winrt::Windows::Devices::PointOfService::Provider {
@@ -19,9 +21,12 @@ namespace winrt::impl {
 WINRT_EXPORT namespace winrt::Windows::Devices::PointOfService::Provider {
 
 struct WINRT_EBO BarcodeScannerDisableScannerRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerDisableScannerRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerDisableScannerRequest,
+    impl::require<BarcodeScannerDisableScannerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerDisableScannerRequest2>
 {
     BarcodeScannerDisableScannerRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerDisableScannerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerDisableScannerRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerDisableScannerRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerDisableScannerRequestEventArgs :
@@ -31,9 +36,12 @@ struct WINRT_EBO BarcodeScannerDisableScannerRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerEnableScannerRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerEnableScannerRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerEnableScannerRequest,
+    impl::require<BarcodeScannerEnableScannerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerEnableScannerRequest2>
 {
     BarcodeScannerEnableScannerRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerEnableScannerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerEnableScannerRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerEnableScannerRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerEnableScannerRequestEventArgs :
@@ -42,10 +50,25 @@ struct WINRT_EBO BarcodeScannerEnableScannerRequestEventArgs :
     BarcodeScannerEnableScannerRequestEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO BarcodeScannerFrameReader :
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerFrameReader
+{
+    BarcodeScannerFrameReader(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO BarcodeScannerFrameReaderFrameArrivedEventArgs :
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerFrameReaderFrameArrivedEventArgs
+{
+    BarcodeScannerFrameReaderFrameArrivedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO BarcodeScannerGetSymbologyAttributesRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerGetSymbologyAttributesRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerGetSymbologyAttributesRequest,
+    impl::require<BarcodeScannerGetSymbologyAttributesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerGetSymbologyAttributesRequest2>
 {
     BarcodeScannerGetSymbologyAttributesRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerGetSymbologyAttributesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerGetSymbologyAttributesRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerGetSymbologyAttributesRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerGetSymbologyAttributesRequestEventArgs :
@@ -55,9 +78,12 @@ struct WINRT_EBO BarcodeScannerGetSymbologyAttributesRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerHideVideoPreviewRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerHideVideoPreviewRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerHideVideoPreviewRequest,
+    impl::require<BarcodeScannerHideVideoPreviewRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerHideVideoPreviewRequest2>
 {
     BarcodeScannerHideVideoPreviewRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerHideVideoPreviewRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerHideVideoPreviewRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerHideVideoPreviewRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerHideVideoPreviewRequestEventArgs :
@@ -67,7 +93,8 @@ struct WINRT_EBO BarcodeScannerHideVideoPreviewRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerProviderConnection :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerProviderConnection
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerProviderConnection,
+    impl::require<BarcodeScannerProviderConnection, Windows::Devices::PointOfService::Provider::IBarcodeScannerProviderConnection2>
 {
     BarcodeScannerProviderConnection(std::nullptr_t) noexcept {}
 };
@@ -79,9 +106,12 @@ struct WINRT_EBO BarcodeScannerProviderTriggerDetails :
 };
 
 struct WINRT_EBO BarcodeScannerSetActiveSymbologiesRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerSetActiveSymbologiesRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerSetActiveSymbologiesRequest,
+    impl::require<BarcodeScannerSetActiveSymbologiesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerSetActiveSymbologiesRequest2>
 {
     BarcodeScannerSetActiveSymbologiesRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerSetActiveSymbologiesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerSetActiveSymbologiesRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerSetActiveSymbologiesRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerSetActiveSymbologiesRequestEventArgs :
@@ -91,9 +121,12 @@ struct WINRT_EBO BarcodeScannerSetActiveSymbologiesRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerSetSymbologyAttributesRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerSetSymbologyAttributesRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerSetSymbologyAttributesRequest,
+    impl::require<BarcodeScannerSetSymbologyAttributesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerSetSymbologyAttributesRequest2>
 {
     BarcodeScannerSetSymbologyAttributesRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerSetSymbologyAttributesRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerSetSymbologyAttributesRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerSetSymbologyAttributesRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerSetSymbologyAttributesRequestEventArgs :
@@ -103,9 +136,12 @@ struct WINRT_EBO BarcodeScannerSetSymbologyAttributesRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerStartSoftwareTriggerRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerStartSoftwareTriggerRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerStartSoftwareTriggerRequest,
+    impl::require<BarcodeScannerStartSoftwareTriggerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerStartSoftwareTriggerRequest2>
 {
     BarcodeScannerStartSoftwareTriggerRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerStartSoftwareTriggerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerStartSoftwareTriggerRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerStartSoftwareTriggerRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerStartSoftwareTriggerRequestEventArgs :
@@ -115,15 +151,24 @@ struct WINRT_EBO BarcodeScannerStartSoftwareTriggerRequestEventArgs :
 };
 
 struct WINRT_EBO BarcodeScannerStopSoftwareTriggerRequest :
-    Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequest
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequest,
+    impl::require<BarcodeScannerStopSoftwareTriggerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequest2>
 {
     BarcodeScannerStopSoftwareTriggerRequest(std::nullptr_t) noexcept {}
+    using impl::consume_t<BarcodeScannerStopSoftwareTriggerRequest, Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequest2>::ReportFailedAsync;
+    using Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequest::ReportFailedAsync;
 };
 
 struct WINRT_EBO BarcodeScannerStopSoftwareTriggerRequestEventArgs :
     Windows::Devices::PointOfService::Provider::IBarcodeScannerStopSoftwareTriggerRequestEventArgs
 {
     BarcodeScannerStopSoftwareTriggerRequestEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO BarcodeScannerVideoFrame :
+    Windows::Devices::PointOfService::Provider::IBarcodeScannerVideoFrame
+{
+    BarcodeScannerVideoFrame(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO BarcodeSymbologyAttributesBuilder :

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -31,6 +31,8 @@ struct BackgroundTaskCanceledEventHandler : Windows::Foundation::IUnknown
     template <typename L> BackgroundTaskCanceledEventHandler(L lambda);
     template <typename F> BackgroundTaskCanceledEventHandler(F* function);
     template <typename O, typename M> BackgroundTaskCanceledEventHandler(O* object, M method);
+    template <typename O, typename M> BackgroundTaskCanceledEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BackgroundTaskCanceledEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::Background::IBackgroundTaskInstance const& sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason const& reason) const;
 };
 
@@ -40,6 +42,8 @@ struct BackgroundTaskCompletedEventHandler : Windows::Foundation::IUnknown
     template <typename L> BackgroundTaskCompletedEventHandler(L lambda);
     template <typename F> BackgroundTaskCompletedEventHandler(F* function);
     template <typename O, typename M> BackgroundTaskCompletedEventHandler(O* object, M method);
+    template <typename O, typename M> BackgroundTaskCompletedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BackgroundTaskCompletedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::Background::BackgroundTaskRegistration const& sender, Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs const& args) const;
 };
 
@@ -49,6 +53,8 @@ struct BackgroundTaskProgressEventHandler : Windows::Foundation::IUnknown
     template <typename L> BackgroundTaskProgressEventHandler(L lambda);
     template <typename F> BackgroundTaskProgressEventHandler(F* function);
     template <typename O, typename M> BackgroundTaskProgressEventHandler(O* object, M method);
+    template <typename O, typename M> BackgroundTaskProgressEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BackgroundTaskProgressEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::Background::BackgroundTaskRegistration const& sender, Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs const& args) const;
 };
 
@@ -150,7 +156,7 @@ struct WINRT_EBO BackgroundTaskRegistration :
     impl::require<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistration2, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
 {
     BackgroundTaskRegistration(std::nullptr_t) noexcept {}
-    static Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks();
+    static Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks();
     static Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> AllTaskGroups();
     static Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup GetTaskGroup(param::hstring const& groupId);
 };
@@ -247,11 +253,11 @@ struct WINRT_EBO DeviceConnectionChangeTrigger :
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(param::hstring const& deviceId);
 };
 
-struct WINRT_EBO [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] DeviceManufacturerNotificationTrigger :
+struct WINRT_EBO DeviceManufacturerNotificationTrigger :
     Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger
 {
     DeviceManufacturerNotificationTrigger(std::nullptr_t) noexcept {}
-    [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] DeviceManufacturerNotificationTrigger(param::hstring const& triggerQualifier, bool oneShot);
+    DeviceManufacturerNotificationTrigger(param::hstring const& triggerQualifier, bool oneShot);
 };
 
 struct WINRT_EBO DeviceServicingTrigger :
@@ -295,7 +301,7 @@ struct WINRT_EBO GattServiceProviderTrigger :
     impl::require<GattServiceProviderTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
 {
     GattServiceProviderTrigger(std::nullptr_t) noexcept {}
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(param::hstring const& triggerId, GUID const& serviceUuid);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(param::hstring const& triggerId, winrt::guid const& serviceUuid);
 };
 
 struct WINRT_EBO GattServiceProviderTriggerResult :

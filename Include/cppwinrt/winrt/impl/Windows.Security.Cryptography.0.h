@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,7 +33,22 @@ template <> struct category<Windows::Security::Cryptography::BinaryStringEncodin
 template <> struct name<Windows::Security::Cryptography::ICryptographicBufferStatics>{ static constexpr auto & value{ L"Windows.Security.Cryptography.ICryptographicBufferStatics" }; };
 template <> struct name<Windows::Security::Cryptography::CryptographicBuffer>{ static constexpr auto & value{ L"Windows.Security.Cryptography.CryptographicBuffer" }; };
 template <> struct name<Windows::Security::Cryptography::BinaryStringEncoding>{ static constexpr auto & value{ L"Windows.Security.Cryptography.BinaryStringEncoding" }; };
-template <> struct guid<Windows::Security::Cryptography::ICryptographicBufferStatics>{ static constexpr GUID value{ 0x320B7E22,0x3CB0,0x4CDF,{ 0x86,0x63,0x1D,0x28,0x91,0x00,0x65,0xEB } }; };
+template <> struct guid_storage<Windows::Security::Cryptography::ICryptographicBufferStatics>{ static constexpr guid value{ 0x320B7E22,0x3CB0,0x4CDF,{ 0x86,0x63,0x1D,0x28,0x91,0x00,0x65,0xEB } }; };
+
+template <> struct abi<Windows::Security::Cryptography::ICryptographicBufferStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Compare(void* object1, void* object2, bool* isEqual) noexcept = 0;
+    virtual int32_t WINRT_CALL GenerateRandom(uint32_t length, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL GenerateRandomNumber(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromByteArray(uint32_t __valueSize, uint8_t* value, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyToByteArray(void* buffer, uint32_t* __valueSize, uint8_t** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DecodeFromHexString(void* value, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL EncodeToHexString(void* buffer, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DecodeFromBase64String(void* value, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL EncodeToBase64String(void* buffer, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertStringToBinary(void* value, Windows::Security::Cryptography::BinaryStringEncoding encoding, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, void* buffer, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Cryptography_ICryptographicBufferStatics
@@ -51,20 +66,5 @@ struct consume_Windows_Security_Cryptography_ICryptographicBufferStatics
     hstring ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding const& encoding, Windows::Storage::Streams::IBuffer const& buffer) const;
 };
 template <> struct consume<Windows::Security::Cryptography::ICryptographicBufferStatics> { template <typename D> using type = consume_Windows_Security_Cryptography_ICryptographicBufferStatics<D>; };
-
-template <> struct abi<Windows::Security::Cryptography::ICryptographicBufferStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Compare(void* object1, void* object2, bool* isEqual) noexcept = 0;
-    virtual HRESULT __stdcall GenerateRandom(uint32_t length, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall GenerateRandomNumber(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromByteArray(uint32_t __valueSize, uint8_t* value, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall CopyToByteArray(void* buffer, uint32_t* __valueSize, uint8_t** value) noexcept = 0;
-    virtual HRESULT __stdcall DecodeFromHexString(HSTRING value, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall EncodeToHexString(void* buffer, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall DecodeFromBase64String(HSTRING value, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall EncodeToBase64String(void* buffer, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ConvertStringToBinary(HSTRING value, Windows::Security::Cryptography::BinaryStringEncoding encoding, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, void* buffer, HSTRING* value) noexcept = 0;
-};};
 
 }

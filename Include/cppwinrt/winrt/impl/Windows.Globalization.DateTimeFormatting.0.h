@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -90,11 +90,57 @@ template <> struct name<Windows::Globalization::DateTimeFormatting::MinuteFormat
 template <> struct name<Windows::Globalization::DateTimeFormatting::MonthFormat>{ static constexpr auto & value{ L"Windows.Globalization.DateTimeFormatting.MonthFormat" }; };
 template <> struct name<Windows::Globalization::DateTimeFormatting::SecondFormat>{ static constexpr auto & value{ L"Windows.Globalization.DateTimeFormatting.SecondFormat" }; };
 template <> struct name<Windows::Globalization::DateTimeFormatting::YearFormat>{ static constexpr auto & value{ L"Windows.Globalization.DateTimeFormatting.YearFormat" }; };
-template <> struct guid<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>{ static constexpr GUID value{ 0x95EECA10,0x73E0,0x4E4B,{ 0xA1,0x83,0x3D,0x6A,0xD0,0xBA,0x35,0xEC } }; };
-template <> struct guid<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>{ static constexpr GUID value{ 0x27C91A86,0xBDAA,0x4FD0,{ 0x9E,0x36,0x67,0x1D,0x5A,0xA5,0xEE,0x03 } }; };
-template <> struct guid<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>{ static constexpr GUID value{ 0xEC8D8A53,0x1A2E,0x412D,{ 0x88,0x15,0x3B,0x74,0x5F,0xB1,0xA2,0xA0 } }; };
-template <> struct guid<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>{ static constexpr GUID value{ 0xBFCDE7C0,0xDF4C,0x4A2E,{ 0x90,0x12,0xF4,0x7D,0xAF,0x3F,0x12,0x12 } }; };
+template <> struct guid_storage<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>{ static constexpr guid value{ 0x95EECA10,0x73E0,0x4E4B,{ 0xA1,0x83,0x3D,0x6A,0xD0,0xBA,0x35,0xEC } }; };
+template <> struct guid_storage<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>{ static constexpr guid value{ 0x27C91A86,0xBDAA,0x4FD0,{ 0x9E,0x36,0x67,0x1D,0x5A,0xA5,0xEE,0x03 } }; };
+template <> struct guid_storage<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>{ static constexpr guid value{ 0xEC8D8A53,0x1A2E,0x412D,{ 0x88,0x15,0x3B,0x74,0x5F,0xB1,0xA2,0xA0 } }; };
+template <> struct guid_storage<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>{ static constexpr guid value{ 0xBFCDE7C0,0xDF4C,0x4A2E,{ 0x90,0x12,0xF4,0x7D,0xAF,0x3F,0x12,0x12 } }; };
 template <> struct default_interface<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>{ using type = Windows::Globalization::DateTimeFormatting::IDateTimeFormatter; };
+
+template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Languages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GeographicRegion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Calendar(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clock(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Patterns(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Template(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Format(Windows::Foundation::DateTime value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeYear(Windows::Globalization::DateTimeFormatting::YearFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeMonth(Windows::Globalization::DateTimeFormatting::MonthFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeDayOfWeek(Windows::Globalization::DateTimeFormatting::DayOfWeekFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeDay(Windows::Globalization::DateTimeFormatting::DayFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeHour(Windows::Globalization::DateTimeFormatting::HourFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeMinute(Windows::Globalization::DateTimeFormatting::MinuteFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncludeSecond(Windows::Globalization::DateTimeFormatting::SecondFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedGeographicRegion(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FormatUsingTimeZone(Windows::Foundation::DateTime datetime, void* timeZoneId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDateTimeFormatter(void* formatTemplate, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterLanguages(void* formatTemplate, void* languages, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterContext(void* formatTemplate, void* languages, void* geographicRegion, void* calendar, void* clock, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void* geographicRegion, void* calendar, void* clock, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LongDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LongTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShortDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShortTime(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Globalization_DateTimeFormatting_IDateTimeFormatter
@@ -149,51 +195,5 @@ struct consume_Windows_Globalization_DateTimeFormatting_IDateTimeFormatterStatic
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter ShortTime() const;
 };
 template <> struct consume<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics> { template <typename D> using type = consume_Windows_Globalization_DateTimeFormatting_IDateTimeFormatterStatics<D>; };
-
-template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Languages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_GeographicRegion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Calendar(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Clock(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Patterns(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Template(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall Format(Windows::Foundation::DateTime value, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeYear(Windows::Globalization::DateTimeFormatting::YearFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeMonth(Windows::Globalization::DateTimeFormatting::MonthFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeDayOfWeek(Windows::Globalization::DateTimeFormatting::DayOfWeekFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeDay(Windows::Globalization::DateTimeFormatting::DayFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeHour(Windows::Globalization::DateTimeFormatting::HourFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeMinute(Windows::Globalization::DateTimeFormatting::MinuteFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncludeSecond(Windows::Globalization::DateTimeFormatting::SecondFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedGeographicRegion(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FormatUsingTimeZone(Windows::Foundation::DateTime datetime, HSTRING timeZoneId, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDateTimeFormatter(HSTRING formatTemplate, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterLanguages(HSTRING formatTemplate, void* languages, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterContext(HSTRING formatTemplate, void* languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LongDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LongTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShortDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShortTime(void** value) noexcept = 0;
-};};
 
 }

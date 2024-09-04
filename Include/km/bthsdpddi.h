@@ -208,15 +208,15 @@ typedef NTSTATUS (*PFINDATTRIBUTEINTREE)(_In_ PSDP_TREE_ROOT_NODE Tree,
 _Must_inspect_result_
 _IRQL_requires_same_
 typedef NTSTATUS (*PCONVERTTREETOSTREAM)(_In_ PSDP_TREE_ROOT_NODE Root,
-                                         _Post_ _When_(return==0, __drv_allocatesMem(Mem)) PUCHAR *Stream, 
-                                         _Out_ PULONG Size, 
+                                         _Post_ _When_(return==0, __drv_allocatesMem(Mem)) PUCHAR *Stream,
+                                         _Out_ PULONG Size,
                                          _In_ ULONG tag);
 
 _Must_inspect_result_
 _IRQL_requires_same_
 typedef NTSTATUS (*PCONVERTSTREAMTOTREE)(_In_reads_bytes_(Size) PUCHAR Stream,
                                          _In_ ULONG Size,
-                                         _Out_ PSDP_TREE_ROOT_NODE *Node,
+                                         _Outptr_ _When_(return == 0, _At_(*Node, __drv_allocatesMem(Mem))) PSDP_TREE_ROOT_NODE *Node,
                                          _In_ ULONG tag);
 _IRQL_requires_same_
 typedef VOID (*PGETNEXTELEMENT)(_In_reads_bytes_(StreamSize) PUCHAR Stream,
@@ -228,7 +228,7 @@ typedef VOID (*PGETNEXTELEMENT)(_In_reads_bytes_(StreamSize) PUCHAR Stream,
 typedef VOID (*pReservedFunction)();
 
 
-#ifndef __BTHSDPDDIP_H__  
+#ifndef __BTHSDPDDIP_H__
 
 typedef struct _BTHDDI_SDP_PARSE_INTERFACE {
     INTERFACE               Interface;
@@ -259,7 +259,7 @@ typedef struct _BTHDDI_SDP_PARSE_INTERFACE {
 
 #ifdef __cplusplus
 }
-#endif 
+#endif
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 

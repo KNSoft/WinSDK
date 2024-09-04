@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -20,7 +20,7 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Store::Preview::Install
 
 struct WINRT_EBO AppInstallItem :
     Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem,
-    impl::require<AppInstallItem, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4>
+    impl::require<AppInstallItem, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5>
 {
     AppInstallItem(std::nullptr_t) noexcept {}
     using impl::consume_t<AppInstallItem, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2>::Cancel;
@@ -33,7 +33,7 @@ struct WINRT_EBO AppInstallItem :
 
 struct WINRT_EBO AppInstallManager :
     Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager,
-    impl::require<AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6>
+    impl::require<AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7>
 {
     AppInstallManager(std::nullptr_t) noexcept {}
     AppInstallManager();
@@ -72,7 +72,8 @@ struct WINRT_EBO AppInstallManagerItemEventArgs :
 };
 
 struct WINRT_EBO AppInstallOptions :
-    Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions
+    Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions,
+    impl::require<AppInstallOptions, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2>
 {
     AppInstallOptions(std::nullptr_t) noexcept {}
     AppInstallOptions();
@@ -86,7 +87,8 @@ struct WINRT_EBO AppInstallStatus :
 };
 
 struct WINRT_EBO AppUpdateOptions :
-    Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions
+    Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions,
+    impl::require<AppUpdateOptions, Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2>
 {
     AppUpdateOptions(std::nullptr_t) noexcept {}
     AppUpdateOptions();

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.input.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -257,6 +269,7 @@
 #include "Windows.UI.Core.h"
 #include "Windows.UI.Input.h"
 #include "Windows.UI.Xaml.h"
+#include "Windows.UI.Xaml.Controls.h"
 #include "Windows.UI.Xaml.Documents.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
@@ -535,6 +548,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface ICanExecuteRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs ABI::Windows::UI::Xaml::Input::ICanExecuteRequestedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -599,6 +628,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IExecuteRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs ABI::Windows::UI::Xaml::Input::IExecuteRequestedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
 namespace ABI {
@@ -630,6 +675,38 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager ABI::Windows::UI::Xaml::Input::IFocusManager
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IFocusManagerGotFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs ABI::Windows::UI::Xaml::Input::IFocusManagerGotFocusEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IFocusManagerLostFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs ABI::Windows::UI::Xaml::Input::IFocusManagerLostFocusEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_FWD_DEFINED__
@@ -711,6 +788,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IFocusManagerStatics6;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 ABI::Windows::UI::Xaml::Input::IFocusManagerStatics6
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult_FWD_DEFINED__
 namespace ABI {
@@ -758,6 +851,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2 ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs2
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IGettingFocusEventArgs3;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs3
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_FWD_DEFINED__
@@ -1031,6 +1140,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface ILosingFocusEventArgs3;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs3
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1255,6 +1380,54 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IStandardUICommand;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand ABI::Windows::UI::Xaml::Input::IStandardUICommand
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IStandardUICommandFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory ABI::Windows::UI::Xaml::Input::IStandardUICommandFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IStandardUICommandStatics;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics ABI::Windows::UI::Xaml::Input::IStandardUICommandStatics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1270,6 +1443,54 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs ABI::Windows::UI::Xaml::Input::ITappedRoutedEventArgs
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IXamlUICommand;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand ABI::Windows::UI::Xaml::Input::IXamlUICommand
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IXamlUICommandFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory ABI::Windows::UI::Xaml::Input::IXamlUICommandFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    interface IXamlUICommandStatics;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics ABI::Windows::UI::Xaml::Input::IXamlUICommandStatics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -1664,6 +1885,178 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 namespace Input {
+                    class FocusManagerGotFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("76001564-62e8-5a20-bd3d-695cf5a8ad69"))
+IEventHandler<ABI::Windows::UI::Xaml::Input::FocusManagerGotFocusEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::FocusManagerGotFocusEventArgs*, ABI::Windows::UI::Xaml::Input::IFocusManagerGotFocusEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::Xaml::Input::FocusManagerGotFocusEventArgs*> __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IFocusManagerGotFocusEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IFocusManagerGotFocusEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    class FocusManagerLostFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("27ab0a3b-68b4-5dd3-86c1-cb0c8c2f3919"))
+IEventHandler<ABI::Windows::UI::Xaml::Input::FocusManagerLostFocusEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::FocusManagerLostFocusEventArgs*, ABI::Windows::UI::Xaml::Input::IFocusManagerLostFocusEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::Xaml::Input::FocusManagerLostFocusEventArgs*> __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IFocusManagerLostFocusEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IFocusManagerLostFocusEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    class GettingFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2efa05aa-bdc0-518d-8276-49a629efa642"))
+IEventHandler<ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*, ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.Xaml.Input.GettingFocusEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs*> __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    class LosingFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b17a4f5f-1e9f-5de1-ab5d-6f58df7d0e47"))
+IEventHandler<ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*, ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.Xaml.Input.LosingFocusEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs*> __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
                     class FocusMovementResult;
                 } /* Windows */
             } /* UI */
@@ -1949,6 +2342,109 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
+                namespace Input {
+                    class XamlUICommand;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    class CanExecuteRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("bc9f083e-f27f-51e3-847e-620e047b4a0c"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Input::XamlUICommand*,ABI::Windows::UI::Xaml::Input::CanExecuteRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::XamlUICommand*, ABI::Windows::UI::Xaml::Input::IXamlUICommand*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::CanExecuteRequestedEventArgs*, ABI::Windows::UI::Xaml::Input::ICanExecuteRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Input.XamlUICommand, Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Input::XamlUICommand*,ABI::Windows::UI::Xaml::Input::CanExecuteRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Input::IXamlUICommand*,ABI::Windows::UI::Xaml::Input::ICanExecuteRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Input::IXamlUICommand*,ABI::Windows::UI::Xaml::Input::ICanExecuteRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    class ExecuteRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("35fb4834-1b34-541c-bd97-e6c60be9b4fb"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Input::XamlUICommand*,ABI::Windows::UI::Xaml::Input::ExecuteRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::XamlUICommand*, ABI::Windows::UI::Xaml::Input::IXamlUICommand*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Input::ExecuteRequestedEventArgs*, ABI::Windows::UI::Xaml::Input::IExecuteRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Input.XamlUICommand, Windows.UI.Xaml.Input.ExecuteRequestedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Input::XamlUICommand*,ABI::Windows::UI::Xaml::Input::ExecuteRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Input::IXamlUICommand*,ABI::Windows::UI::Xaml::Input::IExecuteRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Input::IXamlUICommand*,ABI::Windows::UI::Xaml::Input::IExecuteRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
                 class UIElement;
             } /* Windows */
         } /* UI */
@@ -2166,17 +2662,6 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace Xaml {
-                namespace Input {
-                    class GettingFocusEventArgs;
-                } /* Windows */
-            } /* UI */
-        } /* Xaml */
-    } /* Input */} /* ABI */
-
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -2211,17 +2696,6 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::UIElement*,ABI::Windows::UI::
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
-
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace Xaml {
-                namespace Input {
-                    class LosingFocusEventArgs;
-                } /* Windows */
-            } /* UI */
-        } /* Xaml */
-    } /* Input */} /* ABI */
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -2673,6 +3147,38 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
+                namespace Controls {
+                    class IconSource;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface IIconSource;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource ABI::Windows::UI::Xaml::Controls::IIconSource
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
                 class DependencyObject;
             } /* Windows */
         } /* UI */
@@ -2837,6 +3343,19 @@ namespace ABI {
             namespace Xaml {
                 namespace Input {
                     
+                    typedef enum StandardUICommandKind : int StandardUICommandKind;
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    
                     typedef enum XYFocusKeyboardNavigationMode : int XYFocusKeyboardNavigationMode;
                     
                 } /* Windows */
@@ -2936,6 +3455,19 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2950,6 +3482,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2960,6 +3493,7 @@ namespace ABI {
             } /* UI */
         } /* Xaml */
     } /* Input */} /* ABI */
+
 
 
 namespace ABI {
@@ -2984,6 +3518,8 @@ namespace ABI {
             } /* UI */
         } /* Xaml */
     } /* Input */} /* ABI */
+
+
 
 
 
@@ -3168,11 +3704,24 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 namespace Input {
+                    class StandardUICommand;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
                     class TappedRoutedEventArgs;
                 } /* Windows */
             } /* UI */
         } /* Xaml */
     } /* Input */} /* ABI */
+
 
 
 
@@ -3574,6 +4123,50 @@ namespace ABI {
         } /* Xaml */
     } /* Input */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Input.StandardUICommandKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [v1_enum, contract] */
+                    enum StandardUICommandKind : int
+                    {
+                        StandardUICommandKind_None = 0,
+                        StandardUICommandKind_Cut = 1,
+                        StandardUICommandKind_Copy = 2,
+                        StandardUICommandKind_Paste = 3,
+                        StandardUICommandKind_SelectAll = 4,
+                        StandardUICommandKind_Delete = 5,
+                        StandardUICommandKind_Share = 6,
+                        StandardUICommandKind_Save = 7,
+                        StandardUICommandKind_Open = 8,
+                        StandardUICommandKind_Close = 9,
+                        StandardUICommandKind_Pause = 10,
+                        StandardUICommandKind_Play = 11,
+                        StandardUICommandKind_Stop = 12,
+                        StandardUICommandKind_Forward = 13,
+                        StandardUICommandKind_Backward = 14,
+                        StandardUICommandKind_Undo = 15,
+                        StandardUICommandKind_Redo = 16,
+                    };
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4307,7 +4900,7 @@ namespace ABI {
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_IsDisplayModeEnabledChanged(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_IInspectable_IInspectable * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_IInspectable_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_IsDisplayModeEnabledChanged(
@@ -4373,6 +4966,55 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_ICanExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("C8E75256-1950-505D-993B-75907EF96830"), exclusiveto, contract] */
+                    MIDL_INTERFACE("C8E75256-1950-505D-993B-75907EF96830")
+                    ICanExecuteRequestedEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanExecute(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_CanExecute(
+                            /* [in] */boolean value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ICanExecuteRequestedEventArgs=_uuidof(ICanExecuteRequestedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4450,7 +5092,7 @@ namespace ABI {
                     {
                     public:
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CanExecuteChanged(
-                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CanExecuteChanged(
@@ -4458,7 +5100,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE CanExecute(
                             /* [in] */__RPC__in_opt IInspectable * parameter,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Execute(
                             /* [in] */__RPC__in_opt IInspectable * parameter
@@ -4565,7 +5207,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPosition(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         
                     };
@@ -4580,6 +5222,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.ExecuteRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.IExecuteRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("E07FA734-A0B6-5755-9E87-24F54CCA9372"), exclusiveto, contract] */
+                    MIDL_INTERFACE("E07FA734-A0B6-5755-9E87-24F54CCA9372")
+                    IExecuteRequestedEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IExecuteRequestedEventArgs=_uuidof(IExecuteRequestedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4688,6 +5373,98 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager;
 
 /*
  *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerGotFocusEventArgs[] = L"Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("97AA5D83-535B-507A-868E-62B706F06B61"), exclusiveto, contract] */
+                    MIDL_INTERFACE("97AA5D83-535B-507A-868E-62B706F06B61")
+                    IFocusManagerGotFocusEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewFocusedElement(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                            /* [retval, out] */__RPC__out GUID * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IFocusManagerGotFocusEventArgs=_uuidof(IFocusManagerGotFocusEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerLostFocusEventArgs[] = L"Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("3E157E7A-9578-5CD3-AAA8-051B3D391978"), exclusiveto, contract] */
+                    MIDL_INTERFACE("3E157E7A-9578-5CD3-AAA8-051B3D391978")
+                    IFocusManagerLostFocusEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OldFocusedElement(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                            /* [retval, out] */__RPC__out GUID * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IFocusManagerLostFocusEventArgs=_uuidof(IFocusManagerLostFocusEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Input.IFocusManagerStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4712,7 +5489,7 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE GetFocusedElement(
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -4756,7 +5533,7 @@ namespace ABI {
                     public:
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryMoveFocus(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         
                     };
@@ -4850,24 +5627,24 @@ namespace ABI {
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryMoveFocusWithOptions(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IFindNextElementOptions * focusNavigationOptions,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindNextElement(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE FindFirstFocusableElement(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * searchScope,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE FindLastFocusableElement(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * searchScope,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindNextElementWithOptions(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IFindNextElementOptions * focusNavigationOptions,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyObject * * result
                             ) = 0;
                         
                     };
@@ -4912,16 +5689,16 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE TryFocusAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
                             /* [in] */ABI::Windows::UI::Xaml::FocusState value,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryMoveFocusAsync(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryMoveFocusWithOptionsAsync(
                             /* [in] */ABI::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::IFindNextElementOptions * focusNavigationOptions,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
                             ) = 0;
                         
                     };
@@ -4936,6 +5713,74 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerStatics6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerStatics6[] = L"Windows.UI.Xaml.Input.IFocusManagerStatics6";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("3546A1B6-20BF-5007-929D-E6D32E16AFE4"), exclusiveto, contract] */
+                    MIDL_INTERFACE("3546A1B6-20BF-5007-929D-E6D32E16AFE4")
+                    IFocusManagerStatics6 : public IInspectable
+                    {
+                    public:
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GotFocus(
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GotFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LostFocus(
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LostFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GettingFocus(
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GettingFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LosingFocus(
+                            /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LosingFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IFocusManagerStatics6=_uuidof(IFocusManagerStatics6);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5077,11 +5922,11 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE TryCancel(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TrySetNewFocusedElement(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         
                     };
@@ -5096,6 +5941,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IGettingFocusEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.GettingFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IGettingFocusEventArgs3[] = L"Windows.UI.Xaml.Input.IGettingFocusEventArgs3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("4E024891-DB3F-5E78-B75A-62BFC3510735"), exclusiveto, contract] */
+                    MIDL_INTERFACE("4E024891-DB3F-5E78-B75A-62BFC3510735")
+                    IGettingFocusEventArgs3 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                            /* [retval, out] */__RPC__out GUID * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IGettingFocusEventArgs3=_uuidof(IGettingFocusEventArgs3);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5137,7 +6025,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPosition(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         
                     };
@@ -5426,7 +6314,7 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                             /* [in] */ABI::Windows::UI::Xaml::Input::InputScopeNameValue nameValue,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IInputScopeName * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IInputScopeName * * value
                             ) = 0;
                         
                     };
@@ -5631,7 +6519,7 @@ namespace ABI {
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Invoked(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CKeyboardAccelerator_Windows__CUI__CXaml__CInput__CKeyboardAcceleratorInvokedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CKeyboardAccelerator_Windows__CUI__CXaml__CInput__CKeyboardAcceleratorInvokedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Invoked(
@@ -5678,9 +6566,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IKeyboardAccelerator * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IKeyboardAccelerator * * value
                             ) = 0;
                         
                     };
@@ -5937,11 +6825,11 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE TryCancel(
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE TrySetNewFocusedElement(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         
                     };
@@ -5956,6 +6844,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.ILosingFocusEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.LosingFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_ILosingFocusEventArgs3[] = L"Windows.UI.Xaml.Input.ILosingFocusEventArgs3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("C98900BD-0B79-566E-AD1F-436FA513AE22"), exclusiveto, contract] */
+                    MIDL_INTERFACE("C98900BD-0B79-566E-AD1F-436FA513AE22")
+                    ILosingFocusEventArgs3 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                            /* [retval, out] */__RPC__out GUID * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILosingFocusEventArgs3=_uuidof(ILosingFocusEventArgs3);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6249,7 +7180,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithCenterAndRadius(
                             /* [in] */ABI::Windows::Foundation::Point center,
                             /* [in] */DOUBLE radius,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IManipulationPivot * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IManipulationPivot * * value
                             ) = 0;
                         
                     };
@@ -6351,9 +7282,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs * * value
                             ) = 0;
                         
                     };
@@ -6577,11 +7508,11 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCurrentPoint(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IPointerPoint * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Input::IPointerPoint * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetIntermediatePoints(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CPointerPoint * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CPointerPoint * * result
                             ) = 0;
                         
                     };
@@ -6729,7 +7660,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPosition(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         
                     };
@@ -6744,6 +7675,143 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommand[] = L"Windows.UI.Xaml.Input.IStandardUICommand";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("D2BF7F43-0504-52D0-8AA6-0CB0F756EB27"), exclusiveto, contract] */
+                    MIDL_INTERFACE("D2BF7F43-0504-52D0-8AA6-0CB0F756EB27")
+                    IStandardUICommand : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Kind(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Input::StandardUICommandKind * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IStandardUICommand=_uuidof(IStandardUICommand);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommandFactory[] = L"Windows.UI.Xaml.Input.IStandardUICommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("8F1A7590-DCE1-56E4-AB63-F5CE3CE4EBF6"), exclusiveto, contract] */
+                    MIDL_INTERFACE("8F1A7590-DCE1-56E4-AB63-F5CE3CE4EBF6")
+                    IStandardUICommandFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IStandardUICommand * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithKind(
+                            /* [in] */ABI::Windows::UI::Xaml::Input::StandardUICommandKind kind,
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IStandardUICommand * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IStandardUICommandFactory=_uuidof(IStandardUICommandFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommandStatics[] = L"Windows.UI.Xaml.Input.IStandardUICommandStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("7EA87ED9-2978-5533-9B2E-6759CE88569F"), exclusiveto, contract] */
+                    MIDL_INTERFACE("7EA87ED9-2978-5533-9B2E-6759CE88569F")
+                    IStandardUICommandStatics : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KindProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IStandardUICommandStatics=_uuidof(IStandardUICommandStatics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6782,7 +7850,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPosition(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * relativeTo,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                             ) = 0;
                         
                     };
@@ -6797,6 +7865,197 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommand[] = L"Windows.UI.Xaml.Input.IXamlUICommand";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("8494F8D4-EAD1-5F01-AD2E-A8CAD4F9DC0E"), exclusiveto, contract] */
+                    MIDL_INTERFACE("8494F8D4-EAD1-5F01-AD2E-A8CAD4F9DC0E")
+                    IXamlUICommand : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Label(
+                            /* [in] */__RPC__in HSTRING value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IconSource(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::IIconSource * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IconSource(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IIconSource * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAccelerators(
+                            /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CInput__CKeyboardAccelerator * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccessKey(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AccessKey(
+                            /* [in] */__RPC__in HSTRING value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Description(
+                            /* [in] */__RPC__in HSTRING value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Command(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::ICommand * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Command(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Input::ICommand * value
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ExecuteRequested(
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ExecuteRequested(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CanExecuteRequested(
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CanExecuteRequested(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE NotifyCanExecuteChanged(void) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlUICommand=_uuidof(IXamlUICommand);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommandFactory[] = L"Windows.UI.Xaml.Input.IXamlUICommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("1EEC08C3-E061-5E10-9F2A-2BAA840885C2"), exclusiveto, contract] */
+                    MIDL_INTERFACE("1EEC08C3-E061-5E10-9F2A-2BAA840885C2")
+                    IXamlUICommandFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Input::IXamlUICommand * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlUICommandFactory=_uuidof(IXamlUICommandFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommandStatics[] = L"Windows.UI.Xaml.Input.IXamlUICommandStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Input {
+                    /* [object, uuid("66BC457C-1A0C-58ED-876E-71533F966DB6"), exclusiveto, contract] */
+                    MIDL_INTERFACE("66BC457C-1A0C-58ED-876E-71533F966DB6")
+                    IXamlUICommandStatics : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LabelProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IconSourceProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyboardAcceleratorsProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccessKeyProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DescriptionProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CommandProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlUICommandStatics=_uuidof(IXamlUICommandStatics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Input */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6910,6 +8169,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -6988,6 +8269,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.ExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IExecuteRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.ExecuteRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.FindNextElementOptions
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -7021,6 +8324,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics6 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics5 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics4 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -7046,6 +8350,50 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs[] = L"Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs[] = L"Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.FocusMovementResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
@@ -7053,8 +8401,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IFocusMovementResult ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7078,6 +8424,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IGettingFocusEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.IGettingFocusEventArgs2
+ *    Windows.UI.Xaml.Input.IGettingFocusEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7130,8 +8477,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaExpansionBehavior ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7154,8 +8499,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaRotationBehavior ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7177,8 +8520,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaTranslationBehavior ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7311,8 +8652,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs2
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7335,6 +8674,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.ILosingFocusEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.ILosingFocusEventArgs2
+ *    Windows.UI.Xaml.Input.ILosingFocusEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7544,8 +8884,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IPointer ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7593,8 +8931,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IProcessKeyboardAcceleratorEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7636,6 +8972,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.StandardUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IStandardUICommandStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IStandardUICommand ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_StandardUICommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_StandardUICommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_StandardUICommand[] = L"Windows.UI.Xaml.Input.StandardUICommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.TappedRoutedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7659,6 +9022,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_TappedRoutedEventArgs[] = L"Windows.UI.Xaml.Input.TappedRoutedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Input.XamlUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IXamlUICommandStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IXamlUICommand ** Default Interface **
+ *    Windows.UI.Xaml.Input.ICommand
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_XamlUICommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_XamlUICommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_XamlUICommand[] = L"Windows.UI.Xaml.Input.XamlUICommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 
@@ -7768,6 +9159,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2 _
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CICharacterReceivedRoutedEventArgs;
@@ -7792,6 +9189,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArg
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions;
@@ -7803,6 +9206,18 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions __x
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_FWD_DEFINED__
@@ -7834,6 +9249,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5 __x_A
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusMovementResult;
@@ -7851,6 +9272,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs __x_
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2 __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_FWD_DEFINED__
@@ -7954,6 +9381,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2 __x_
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationCompletedRoutedEventArgs;
@@ -8038,11 +9471,47 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -9153,6 +10622,190 @@ interface __FIVector_1_Windows__CUI__CXaml__CInput__CKeyboardAccelerator
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CInput__CFocusMovementResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CXaml__CInput__CFocusMovementResult_INTERFACE_DEFINED__
@@ -9484,6 +11137,112 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CKeyboardAccelera
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIUIElement_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIUIElement_FWD_DEFINED__
@@ -10526,6 +12285,17 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CManipulationVelocities __x_ABI_CWind
 
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource __x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource_FWD_DEFINED__
+
+
+
+
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CIDependencyObject_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CIDependencyObject_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CIDependencyObject __x_ABI_CWindows_CUI_CXaml_CIDependencyObject;
@@ -10577,6 +12347,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CKeyboardNavigationMode __x_ABI_C
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CManipulationModes __x_ABI_CWindows_CUI_CXaml_CInput_CManipulationModes;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CStandardUICommandKind __x_ABI_CWindows_CUI_CXaml_CInput_CStandardUICommandKind;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusKeyboardNavigationMode __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusKeyboardNavigationMode;
 
 
@@ -10584,6 +12357,25 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategy __x_AB
 
 
 typedef enum __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride __x_ABI_CWindows_CUI_CXaml_CInput_CXYFocusNavigationStrategyOverride;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -11008,6 +12800,40 @@ enum __x_ABI_CWindows_CUI_CXaml_CInput_CManipulationModes
     ManipulationModes_System = 0x10000,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Input.StandardUICommandKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CInput_CStandardUICommandKind
+{
+    StandardUICommandKind_None = 0,
+    StandardUICommandKind_Cut = 1,
+    StandardUICommandKind_Copy = 2,
+    StandardUICommandKind_Paste = 3,
+    StandardUICommandKind_SelectAll = 4,
+    StandardUICommandKind_Delete = 5,
+    StandardUICommandKind_Share = 6,
+    StandardUICommandKind_Save = 7,
+    StandardUICommandKind_Open = 8,
+    StandardUICommandKind_Close = 9,
+    StandardUICommandKind_Pause = 10,
+    StandardUICommandKind_Play = 11,
+    StandardUICommandKind_Stop = 12,
+    StandardUICommandKind_Forward = 13,
+    StandardUICommandKind_Backward = 14,
+    StandardUICommandKind_Undo = 15,
+    StandardUICommandKind_Redo = 16,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12175,7 +14001,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_IsDisplayModeEnabledChanged )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_IInspectable_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_IInspectable_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_IsDisplayModeEnabledChanged )(
@@ -12216,8 +14042,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_get_IsDisplayModeEnabled(This,value) \
     ( (This)->lpVtbl->get_IsDisplayModeEnabled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_add_IsDisplayModeEnabledChanged(This,value,token) \
-    ( (This)->lpVtbl->add_IsDisplayModeEnabledChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_add_IsDisplayModeEnabledChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_IsDisplayModeEnabledChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics_remove_IsDisplayModeEnabledChanged(This,token) \
     ( (This)->lpVtbl->remove_IsDisplayModeEnabledChanged(This,token) )
@@ -12332,6 +14158,113 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIAccessKeyManagerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_ICanExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs";
+/* [object, uuid("C8E75256-1950-505D-993B-75907EF96830"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Parameter )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanExecute )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_CanExecute )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_get_Parameter(This,value) \
+    ( (This)->lpVtbl->get_Parameter(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_get_CanExecute(This,value) \
+    ( (This)->lpVtbl->get_CanExecute(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_put_CanExecute(This,value) \
+    ( (This)->lpVtbl->put_CanExecute(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CICanExecuteRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12496,7 +14429,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CanExecuteChanged )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CICommand * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CanExecuteChanged )(
@@ -12506,7 +14439,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *CanExecute )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CICommand * This,
         /* [in] */__RPC__in_opt IInspectable * parameter,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Execute )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CICommand * This,
@@ -12540,14 +14473,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CICommand
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_add_CanExecuteChanged(This,value,token) \
-    ( (This)->lpVtbl->add_CanExecuteChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_add_CanExecuteChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_CanExecuteChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_remove_CanExecuteChanged(This,token) \
     ( (This)->lpVtbl->remove_CanExecuteChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_CanExecute(This,parameter,returnValue) \
-    ( (This)->lpVtbl->CanExecute(This,parameter,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_CanExecute(This,parameter,result) \
+    ( (This)->lpVtbl->CanExecute(This,parameter,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CICommand_Execute(This,parameter) \
     ( (This)->lpVtbl->Execute(This,parameter) )
@@ -12734,7 +14667,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPosition )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     END_INTERFACE
     
@@ -12773,8 +14706,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_put_Handled(This,value) \
     ( (This)->lpVtbl->put_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_GetPosition(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetPosition(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_GetPosition(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetPosition(This,relativeTo,result) )
 
 
 #endif /* COBJMACROS */
@@ -12783,6 +14716,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIDoubleTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.ExecuteRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.IExecuteRequestedEventArgs";
+/* [object, uuid("E07FA734-A0B6-5755-9E87-24F54CCA9372"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Parameter )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_get_Parameter(This,value) \
+    ( (This)->lpVtbl->get_Parameter(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIExecuteRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13015,6 +15041,206 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManager;
 
 /*
  *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerGotFocusEventArgs[] = L"Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs";
+/* [object, uuid("97AA5D83-535B-507A-868E-62B706F06B61"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NewFocusedElement )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_get_NewFocusedElement(This,value) \
+    ( (This)->lpVtbl->get_NewFocusedElement(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_get_CorrelationId(This,value) \
+    ( (This)->lpVtbl->get_CorrelationId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerGotFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerLostFocusEventArgs[] = L"Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs";
+/* [object, uuid("3E157E7A-9578-5CD3-AAA8-051B3D391978"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OldFocusedElement )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_get_OldFocusedElement(This,value) \
+    ( (This)->lpVtbl->get_OldFocusedElement(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_get_CorrelationId(This,value) \
+    ( (This)->lpVtbl->get_CorrelationId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerLostFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Input.IFocusManagerStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -13064,7 +15290,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetFocusedElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -13094,8 +15320,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_GetFocusedElement(This,returnValue) \
-    ( (This)->lpVtbl->GetFocusedElement(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics_GetFocusedElement(This,result) \
+    ( (This)->lpVtbl->GetFocusedElement(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -13158,7 +15384,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *TryMoveFocus )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -13188,8 +15414,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_TryMoveFocus(This,focusNavigationDirection,returnValue) \
-    ( (This)->lpVtbl->TryMoveFocus(This,focusNavigationDirection,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics2_TryMoveFocus(This,focusNavigationDirection,result) \
+    ( (This)->lpVtbl->TryMoveFocus(This,focusNavigationDirection,result) )
 
 
 #endif /* COBJMACROS */
@@ -13356,28 +15582,28 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * focusNavigationOptions,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindNextElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     HRESULT ( STDMETHODCALLTYPE *FindFirstFocusableElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * searchScope,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     HRESULT ( STDMETHODCALLTYPE *FindLastFocusableElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * searchScope,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindNextElementWithOptions )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * focusNavigationOptions,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * * result
         );
     END_INTERFACE
     
@@ -13407,20 +15633,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) \
-    ( (This)->lpVtbl->TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,result) \
+    ( (This)->lpVtbl->TryMoveFocusWithOptions(This,focusNavigationDirection,focusNavigationOptions,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElement(This,focusNavigationDirection,returnValue) \
-    ( (This)->lpVtbl->FindNextElement(This,focusNavigationDirection,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElement(This,focusNavigationDirection,result) \
+    ( (This)->lpVtbl->FindNextElement(This,focusNavigationDirection,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindFirstFocusableElement(This,searchScope,returnValue) \
-    ( (This)->lpVtbl->FindFirstFocusableElement(This,searchScope,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindFirstFocusableElement(This,searchScope,result) \
+    ( (This)->lpVtbl->FindFirstFocusableElement(This,searchScope,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindLastFocusableElement(This,searchScope,returnValue) \
-    ( (This)->lpVtbl->FindLastFocusableElement(This,searchScope,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindLastFocusableElement(This,searchScope,result) \
+    ( (This)->lpVtbl->FindLastFocusableElement(This,searchScope,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) \
-    ( (This)->lpVtbl->FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics4_FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,result) \
+    ( (This)->lpVtbl->FindNextElementWithOptions(This,focusNavigationDirection,focusNavigationOptions,result) )
 
 
 #endif /* COBJMACROS */
@@ -13484,18 +15710,18 @@ HRESULT ( STDMETHODCALLTYPE *TryFocusAsync )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CFocusState value,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TryMoveFocusAsync )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TryMoveFocusWithOptionsAsync )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CFocusNavigationDirection focusNavigationDirection,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIFindNextElementOptions * focusNavigationOptions,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CInput__CFocusMovementResult * * operation
         );
     END_INTERFACE
     
@@ -13525,14 +15751,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryFocusAsync(This,element,value,returnValue) \
-    ( (This)->lpVtbl->TryFocusAsync(This,element,value,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryFocusAsync(This,element,value,operation) \
+    ( (This)->lpVtbl->TryFocusAsync(This,element,value,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryMoveFocusAsync(This,focusNavigationDirection,returnValue) \
-    ( (This)->lpVtbl->TryMoveFocusAsync(This,focusNavigationDirection,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryMoveFocusAsync(This,focusNavigationDirection,operation) \
+    ( (This)->lpVtbl->TryMoveFocusAsync(This,focusNavigationDirection,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryMoveFocusWithOptionsAsync(This,focusNavigationDirection,focusNavigationOptions,returnValue) \
-    ( (This)->lpVtbl->TryMoveFocusWithOptionsAsync(This,focusNavigationDirection,focusNavigationOptions,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_TryMoveFocusWithOptionsAsync(This,focusNavigationDirection,focusNavigationOptions,operation) \
+    ( (This)->lpVtbl->TryMoveFocusWithOptionsAsync(This,focusNavigationDirection,focusNavigationOptions,operation) )
 
 
 #endif /* COBJMACROS */
@@ -13541,6 +15767,152 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics5_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IFocusManagerStatics6
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.FocusManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IFocusManagerStatics6[] = L"Windows.UI.Xaml.Input.IFocusManagerStatics6";
+/* [object, uuid("3546A1B6-20BF-5007-929D-E6D32E16AFE4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerGotFocusEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LostFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CFocusManagerLostFocusEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LostFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GettingFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CGettingFocusEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GettingFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LosingFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CXaml__CInput__CLosingFocusEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LosingFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_add_GotFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_GotFocus(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_remove_GotFocus(This,token) \
+    ( (This)->lpVtbl->remove_GotFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_add_LostFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_LostFocus(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_remove_LostFocus(This,token) \
+    ( (This)->lpVtbl->remove_LostFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_add_GettingFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_GettingFocus(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_remove_GettingFocus(This,token) \
+    ( (This)->lpVtbl->remove_GettingFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_add_LosingFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_LosingFocus(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_remove_LosingFocus(This,token) \
+    ( (This)->lpVtbl->remove_LosingFocus(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIFocusManagerStatics6_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13843,12 +16215,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *TryCancel )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *TrySetNewFocusedElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -13878,11 +16250,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_TryCancel(This,returnValue) \
-    ( (This)->lpVtbl->TryCancel(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_TryCancel(This,result) \
+    ( (This)->lpVtbl->TryCancel(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_TrySetNewFocusedElement(This,element,returnValue) \
-    ( (This)->lpVtbl->TrySetNewFocusedElement(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_TrySetNewFocusedElement(This,element,result) \
+    ( (This)->lpVtbl->TrySetNewFocusedElement(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -13891,6 +16263,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IGettingFocusEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.GettingFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IGettingFocusEventArgs3[] = L"Windows.UI.Xaml.Input.IGettingFocusEventArgs3";
+/* [object, uuid("4E024891-DB3F-5E78-B75A-62BFC3510735"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3 * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_get_CorrelationId(This,value) \
+    ( (This)->lpVtbl->get_CorrelationId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIGettingFocusEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13961,7 +16426,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPosition )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     END_INTERFACE
     
@@ -14003,8 +16468,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_put_Handled(This,value) \
     ( (This)->lpVtbl->put_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_GetPosition(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetPosition(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIHoldingRoutedEventArgs_GetPosition(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetPosition(This,relativeTo,result) )
 
 
 #endif /* COBJMACROS */
@@ -14602,7 +17067,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CInputScopeNameValue nameValue,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeName * * value
         );
     END_INTERFACE
     
@@ -14632,8 +17097,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_CreateInstance(This,nameValue,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,nameValue,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIInputScopeNameFactory_CreateInstance(This,nameValue,value) \
+    ( (This)->lpVtbl->CreateInstance(This,nameValue,value) )
 
 
 #endif /* COBJMACROS */
@@ -15027,7 +17492,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Invoked )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CKeyboardAccelerator_Windows__CUI__CXaml__CInput__CKeyboardAcceleratorInvokedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CKeyboardAccelerator_Windows__CUI__CXaml__CInput__CKeyboardAcceleratorInvokedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Invoked )(
@@ -15086,8 +17551,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator_put_ScopeOwner(This,value) \
     ( (This)->lpVtbl->put_ScopeOwner(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator_add_Invoked(This,value,token) \
-    ( (This)->lpVtbl->add_Invoked(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator_add_Invoked(This,handler,token) \
+    ( (This)->lpVtbl->add_Invoked(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator_remove_Invoked(This,token) \
     ( (This)->lpVtbl->remove_Invoked(This,token) )
@@ -15152,9 +17617,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAccelerator * * value
         );
     END_INTERFACE
     
@@ -15184,8 +17649,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorFactory
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIKeyboardAcceleratorFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -15717,12 +18182,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *TryCancel )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *TrySetNewFocusedElement )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -15752,11 +18217,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_TryCancel(This,returnValue) \
-    ( (This)->lpVtbl->TryCancel(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_TryCancel(This,result) \
+    ( (This)->lpVtbl->TryCancel(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_TrySetNewFocusedElement(This,element,returnValue) \
-    ( (This)->lpVtbl->TrySetNewFocusedElement(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_TrySetNewFocusedElement(This,element,result) \
+    ( (This)->lpVtbl->TrySetNewFocusedElement(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -15765,6 +18230,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.ILosingFocusEventArgs3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.LosingFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_ILosingFocusEventArgs3[] = L"Windows.UI.Xaml.Input.ILosingFocusEventArgs3";
+/* [object, uuid("C98900BD-0B79-566E-AD1F-436FA513AE22"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3 * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_get_CorrelationId(This,value) \
+    ( (This)->lpVtbl->get_CorrelationId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CILosingFocusEventArgs3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -16408,7 +18966,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithCenterAndRadius )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint center,
         /* [in] */DOUBLE radius,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivot * * value
         );
     END_INTERFACE
     
@@ -16438,8 +18996,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_CreateInstanceWithCenterAndRadius(This,center,radius,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithCenterAndRadius(This,center,radius,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationPivotFactory_CreateInstanceWithCenterAndRadius(This,center,radius,value) \
+    ( (This)->lpVtbl->CreateInstanceWithCenterAndRadius(This,center,radius,value) )
 
 
 #endif /* COBJMACROS */
@@ -16635,9 +19193,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs * * value
         );
     END_INTERFACE
     
@@ -16667,8 +19225,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIManipulationStartedRoutedEventArgsFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -17117,12 +19675,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCurrentPoint )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIPointerPoint * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CInput_CIPointerPoint * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetIntermediatePoints )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CPointerPoint * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CInput__CPointerPoint * * result
         );
     END_INTERFACE
     
@@ -17164,11 +19722,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_put_Handled(This,value) \
     ( (This)->lpVtbl->put_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_GetCurrentPoint(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetCurrentPoint(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_GetCurrentPoint(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetCurrentPoint(This,relativeTo,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_GetIntermediatePoints(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetIntermediatePoints(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIPointerRoutedEventArgs_GetIntermediatePoints(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetIntermediatePoints(This,relativeTo,result) )
 
 
 #endif /* COBJMACROS */
@@ -17450,7 +20008,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPosition )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     END_INTERFACE
     
@@ -17489,8 +20047,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_put_Handled(This,value) \
     ( (This)->lpVtbl->put_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_GetPosition(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetPosition(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_GetPosition(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetPosition(This,relativeTo,result) )
 
 
 #endif /* COBJMACROS */
@@ -17499,6 +20057,297 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIRightTappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommand[] = L"Windows.UI.Xaml.Input.IStandardUICommand";
+/* [object, uuid("D2BF7F43-0504-52D0-8AA6-0CB0F756EB27"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Kind )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInput_CStandardUICommandKind * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_get_Kind(This,value) \
+    ( (This)->lpVtbl->get_Kind(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommandFactory[] = L"Windows.UI.Xaml.Input.IStandardUICommandFactory";
+/* [object, uuid("8F1A7590-DCE1-56E4-AB63-F5CE3CE4EBF6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithKind )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInput_CStandardUICommandKind kind,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommand * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_CreateInstanceWithKind(This,kind,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithKind(This,kind,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IStandardUICommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.StandardUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IStandardUICommandStatics[] = L"Windows.UI.Xaml.Input.IStandardUICommandStatics";
+/* [object, uuid("7EA87ED9-2978-5533-9B2E-6759CE88569F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KindProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_get_KindProperty(This,value) \
+    ( (This)->lpVtbl->get_KindProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIStandardUICommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -17565,7 +20414,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPosition )(
         __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * relativeTo,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     END_INTERFACE
     
@@ -17604,8 +20453,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs
 #define __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_put_Handled(This,value) \
     ( (This)->lpVtbl->put_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_GetPosition(This,relativeTo,returnValue) \
-    ( (This)->lpVtbl->GetPosition(This,relativeTo,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_GetPosition(This,relativeTo,result) \
+    ( (This)->lpVtbl->GetPosition(This,relativeTo,result) )
 
 
 #endif /* COBJMACROS */
@@ -17614,6 +20463,428 @@ interface __x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CITappedRoutedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommand[] = L"Windows.UI.Xaml.Input.IXamlUICommand";
+/* [object, uuid("8494F8D4-EAD1-5F01-AD2E-A8CAD4F9DC0E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Label )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Label )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IconSource )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IconSource )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIIconSource * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAccelerators )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CInput__CKeyboardAccelerator * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AccessKey )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AccessKey )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Description )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Command )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CICommand * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Command )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CInput_CICommand * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ExecuteRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CExecuteRequestedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ExecuteRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CanExecuteRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CInput__CXamlUICommand_Windows__CUI__CXaml__CInput__CCanExecuteRequestedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CanExecuteRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This,
+        /* [in] */EventRegistrationToken token
+        );
+    HRESULT ( STDMETHODCALLTYPE *NotifyCanExecuteChanged )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_Label(This,value) \
+    ( (This)->lpVtbl->get_Label(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_put_Label(This,value) \
+    ( (This)->lpVtbl->put_Label(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_IconSource(This,value) \
+    ( (This)->lpVtbl->get_IconSource(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_put_IconSource(This,value) \
+    ( (This)->lpVtbl->put_IconSource(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_KeyboardAccelerators(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAccelerators(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_AccessKey(This,value) \
+    ( (This)->lpVtbl->get_AccessKey(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_put_AccessKey(This,value) \
+    ( (This)->lpVtbl->put_AccessKey(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_Description(This,value) \
+    ( (This)->lpVtbl->get_Description(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_put_Description(This,value) \
+    ( (This)->lpVtbl->put_Description(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_get_Command(This,value) \
+    ( (This)->lpVtbl->get_Command(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_put_Command(This,value) \
+    ( (This)->lpVtbl->put_Command(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_add_ExecuteRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_ExecuteRequested(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_remove_ExecuteRequested(This,token) \
+    ( (This)->lpVtbl->remove_ExecuteRequested(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_add_CanExecuteRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_CanExecuteRequested(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_remove_CanExecuteRequested(This,token) \
+    ( (This)->lpVtbl->remove_CanExecuteRequested(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_NotifyCanExecuteChanged(This) \
+    ( (This)->lpVtbl->NotifyCanExecuteChanged(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommandFactory[] = L"Windows.UI.Xaml.Input.IXamlUICommandFactory";
+/* [object, uuid("1EEC08C3-E061-5E10-9F2A-2BAA840885C2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommand * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Input.IXamlUICommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Input.XamlUICommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Input_IXamlUICommandStatics[] = L"Windows.UI.Xaml.Input.IXamlUICommandStatics";
+/* [object, uuid("66BC457C-1A0C-58ED-876E-71533F966DB6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LabelProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IconSourceProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyboardAcceleratorsProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AccessKeyProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DescriptionProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CommandProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_LabelProperty(This,value) \
+    ( (This)->lpVtbl->get_LabelProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_IconSourceProperty(This,value) \
+    ( (This)->lpVtbl->get_IconSourceProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_KeyboardAcceleratorsProperty(This,value) \
+    ( (This)->lpVtbl->get_KeyboardAcceleratorsProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_AccessKeyProperty(This,value) \
+    ( (This)->lpVtbl->get_AccessKeyProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_DescriptionProperty(This,value) \
+    ( (This)->lpVtbl->get_DescriptionProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_get_CommandProperty(This,value) \
+    ( (This)->lpVtbl->get_CommandProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CInput_CIXamlUICommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -17727,6 +20998,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_CanExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -17805,6 +21098,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.ExecuteRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IExecuteRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_ExecuteRequestedEventArgs[] = L"Windows.UI.Xaml.Input.ExecuteRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.FindNextElementOptions
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -17838,6 +21153,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics6 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics5 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics4 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Input.IFocusManagerStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -17863,6 +21179,50 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FocusManagerGotFocusEventArgs[] = L"Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_FocusManagerLostFocusEventArgs[] = L"Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.FocusMovementResult
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
@@ -17870,8 +21230,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IFocusMovementResult ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -17895,6 +21253,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IGettingFocusEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.IGettingFocusEventArgs2
+ *    Windows.UI.Xaml.Input.IGettingFocusEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -17947,8 +21306,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaExpansionBehavior ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -17971,8 +21328,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaRotationBehavior ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -17994,8 +21349,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IInertiaTranslationBehavior ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -18128,8 +21481,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs2
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -18152,6 +21503,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.ILosingFocusEventArgs ** Default Interface **
  *    Windows.UI.Xaml.Input.ILosingFocusEventArgs2
+ *    Windows.UI.Xaml.Input.ILosingFocusEventArgs3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -18361,8 +21713,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IPointer ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -18410,8 +21760,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Input.IProcessKeyboardAcceleratorEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -18453,6 +21801,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Input.StandardUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IStandardUICommandStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IStandardUICommand ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_StandardUICommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_StandardUICommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_StandardUICommand[] = L"Windows.UI.Xaml.Input.StandardUICommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Input.TappedRoutedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -18476,6 +21851,34 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_TappedRoutedEventArgs[] = L"Windows.UI.Xaml.Input.TappedRoutedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Input.XamlUICommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Input.IXamlUICommandStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Input.IXamlUICommand ** Default Interface **
+ *    Windows.UI.Xaml.Input.ICommand
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Input_XamlUICommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Input_XamlUICommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Input_XamlUICommand[] = L"Windows.UI.Xaml.Input.XamlUICommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 

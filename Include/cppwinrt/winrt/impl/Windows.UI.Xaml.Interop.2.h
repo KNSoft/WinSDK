@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -14,6 +14,8 @@ struct BindableVectorChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> BindableVectorChangedEventHandler(L lambda);
     template <typename F> BindableVectorChangedEventHandler(F* function);
     template <typename O, typename M> BindableVectorChangedEventHandler(O* object, M method);
+    template <typename O, typename M> BindableVectorChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BindableVectorChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Xaml::Interop::IBindableObservableVector const& vector, Windows::Foundation::IInspectable const& e) const;
 };
 
@@ -23,6 +25,8 @@ struct NotifyCollectionChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NotifyCollectionChangedEventHandler(L lambda);
     template <typename F> NotifyCollectionChangedEventHandler(F* function);
     template <typename O, typename M> NotifyCollectionChangedEventHandler(O* object, M method);
+    template <typename O, typename M> NotifyCollectionChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NotifyCollectionChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs const& e) const;
 };
 

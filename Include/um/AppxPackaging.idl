@@ -32,6 +32,17 @@ typedef [v1_enum] enum APPX_COMPRESSION_OPTION
     APPX_COMPRESSION_OPTION_SUPERFAST = 4
 } APPX_COMPRESSION_OPTION;
 
+typedef struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
+{
+    // Source of the payload
+    IStream* inputStream;
+    
+    // Name and metadata to use when writing the payload into the appx package
+    LPCWSTR fileName;
+    LPCWSTR contentType;
+    APPX_COMPRESSION_OPTION compressionOption;
+} APPX_PACKAGE_WRITER_PAYLOAD_STREAM;
+
 typedef [v1_enum] enum APPX_FOOTPRINT_FILE_TYPE
 {
     APPX_FOOTPRINT_FILE_TYPE_MANIFEST = 0,
@@ -76,6 +87,18 @@ typedef [v1_enum] enum APPX_PACKAGE_ARCHITECTURE
     APPX_PACKAGE_ARCHITECTURE_ARM64 = 12 // PROCESSOR_ARCHITECTURE_ARM64
 } APPX_PACKAGE_ARCHITECTURE;
 
+typedef [v1_enum] enum APPX_PACKAGE_ARCHITECTURE2
+{
+    // Must match APPX_PACKAGE_ARCHITECTURE
+    APPX_PACKAGE_ARCHITECTURE2_X86 = 0, // PROCESSOR_ARCHITECTURE_INTEL
+    APPX_PACKAGE_ARCHITECTURE2_ARM = 5, // PROCESSOR_ARCHITECTURE_ARM
+    APPX_PACKAGE_ARCHITECTURE2_X64 = 9, // PROCESSOR_ARCHITECTURE_AMD64
+    APPX_PACKAGE_ARCHITECTURE2_NEUTRAL = 11, // PROCESSOR_ARCHITECTURE_NEUTRAL
+    APPX_PACKAGE_ARCHITECTURE2_ARM64 = 12, // PROCESSOR_ARCHITECTURE_ARM64
+    APPX_PACKAGE_ARCHITECTURE2_X86_ON_ARM64 = 14, // PROCESSOR_ARCHITECTURE_IA32_ON_ARM64
+    APPX_PACKAGE_ARCHITECTURE2_UNKNOWN = 0xFFFF // PROCESSOR_ARCHITECTURE_UNKNOWN
+} APPX_PACKAGE_ARCHITECTURE2;
+
 typedef [v1_enum] enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE
 {
     APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION = 0,
@@ -100,6 +123,14 @@ typedef [v1_enum] enum APPX_CAPABILITY_CLASS_TYPE
     APPX_CAPABILITY_CLASS_CUSTOM        = 0x00000008
 } APPX_CAPABILITY_CLASS_TYPE;
 
+typedef [v1_enum] enum APPX_PACKAGING_CONTEXT_CHANGE_TYPE
+{
+    APPX_PACKAGING_CONTEXT_CHANGE_TYPE_START = 0,
+    APPX_PACKAGING_CONTEXT_CHANGE_TYPE_CHANGE = 1,
+    APPX_PACKAGING_CONTEXT_CHANGE_TYPE_DETAILS = 2,
+    APPX_PACKAGING_CONTEXT_CHANGE_TYPE_END = 3
+} APPX_PACKAGING_CONTEXT_CHANGE_TYPE;
+
 interface IAppxPackageWriter;
 interface IAppxPackageReader;
 interface IAppxFile;
@@ -113,6 +144,7 @@ interface IAppxManifestApplicationsEnumerator;
 interface IAppxManifestApplication;
 interface IAppxManifestDeviceCapabilitiesEnumerator;
 interface IAppxManifestPackageId;
+interface IAppxManifestPackageId2;
 interface IAppxManifestPackageDependency;
 interface IAppxManifestPackageDependenciesEnumerator;
 interface IAppxManifestProperties;
@@ -120,11 +152,14 @@ interface IAppxManifestReader;
 interface IAppxBundleFactory;
 interface IAppxBundleWriter;
 interface IAppxBundleWriter2;
+interface IAppxBundleWriter3;
+interface IAppxBundleWriter4;
 interface IAppxBundleReader;
 interface IAppxBundleManifestReader;
 interface IAppxBundleManifestReader2;
 interface IAppxBundleManifestPackageInfoEnumerator;
 interface IAppxBundleManifestPackageInfo;
+interface IAppxBundleManifestPackageInfo2;
 interface IAppxBundleManifestOptionalBundleInfoEnumerator;
 interface IAppxBundleManifestOptionalBundleInfo;
 interface IAppxManifestQualifiedResourcesEnumerator;
@@ -143,6 +178,8 @@ interface IAppxSourceContentGroupMapReader;
 interface IAppxContentGroupMapWriter;
 interface IAppxManifestMainPackageDependenciesEnumerator;
 interface IAppxManifestMainPackageDependency;
+interface IAppxPackagingEventSink;
+interface IAppxPackagingEventSinkManager;
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 #pragma region Desktop Family
@@ -151,6 +188,7 @@ interface IAppxEncryptionFactory;
 interface IAppxEncryptedPackageWriter;
 interface IAppxEncryptedBundleWriter;
 interface IAppxEncryptedBundleWriter2;
+interface IAppxEncryptedBundleWriter3;
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion
 #pragma region Application Family
@@ -301,6 +339,21 @@ interface IAppxPackageWriter2 : IUnknown
     Close(
         [in]        IStream*       manifest,
         [in]        IStream*       contentGroupMap
+    );
+}
+
+[
+    object,
+    uuid(a83aacd3-41c0-4501-b8a3-74164f50b2fd),
+    pointer_default(ref)
+]
+interface IAppxPackageWriter3 : IUnknown
+{
+    HRESULT
+    AddPayloadFiles(
+        [in]                        UINT32                              fileCount,
+        [in, size_is(fileCount)]    APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles,
+        [in]                        UINT64                              memoryLimit
     );
 }
 
@@ -602,6 +655,19 @@ interface IAppxManifestReader5 : IUnknown
 
 [
     object,
+    uuid(34DEACA4-D3C0-4E3E-B312-E42625E3807E),
+    pointer_default(ref)
+]
+interface IAppxManifestReader6 : IUnknown
+{
+    HRESULT
+    GetIsNonQualifiedResourcePackage(
+        [out, retval] BOOL* isNonQualifiedResourcePackage
+    );
+}
+
+[
+    object,
     uuid(2634847D-5B5D-4FE5-A243-002FF95EDC7E),
     pointer_default(ref)
 ]
@@ -710,6 +776,19 @@ interface IAppxManifestPackageId : IUnknown
     HRESULT
     GetPackageFamilyName(
         [out, string, retval]   LPWSTR *    packageFamilyName
+    );
+}
+
+[
+    object,
+    uuid(2256999d-d617-42f1-880e-0ba4542319d5),
+    pointer_default(ref)
+]
+interface IAppxManifestPackageId2 : IAppxManifestPackageId
+{
+    HRESULT
+    GetArchitecture2(
+        [out, retval]   APPX_PACKAGE_ARCHITECTURE2 *   architecture
     );
 }
 
@@ -1049,6 +1128,49 @@ interface IAppxBundleWriter2 : IUnknown
 
 [
     object,
+    uuid(AD711152-F969-4193-82D5-9DDF2786D21A),
+    pointer_default(ref)
+]
+interface IAppxBundleWriter3 : IUnknown
+{
+    HRESULT AddPackageReference(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  inputStream
+    );
+
+    HRESULT Close(
+        [in, string]  LPCWSTR   hashMethodString
+    );
+}
+
+[
+    object,
+    uuid(9CD9D523-5009-4C01-9882-DC029FBD47A3),
+    pointer_default(ref)
+]
+interface IAppxBundleWriter4 : IUnknown
+{
+    HRESULT AddPayloadPackage(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  packageStream,
+        [in]          BOOL      isDefaultApplicablePackage
+    );
+
+    HRESULT AddPackageReference(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  inputStream,
+        [in]          BOOL      isDefaultApplicablePackage
+    );
+
+    HRESULT AddExternalPackageReference(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  inputStream,
+        [in]          BOOL      isDefaultApplicablePackage
+    );
+}
+
+[
+    object,
     uuid(DD75B8C0-BA76-43B0-AE0F-68656A1DC5C8),
     pointer_default(ref)
 ]
@@ -1158,6 +1280,26 @@ interface IAppxBundleManifestPackageInfo : IUnknown
 
     HRESULT GetResources(
         [out, retval]  IAppxManifestQualifiedResourcesEnumerator**  resources
+    );
+}
+
+[
+    object,
+    uuid(44C2ACBC-B2CF-4CCB-BBDB-9C6DA8C3BC9E),
+    pointer_default(ref)
+]
+interface IAppxBundleManifestPackageInfo2 : IUnknown
+{
+    HRESULT GetIsPackageReference(
+        [out, retval] BOOL* isPackageReference
+    );
+
+    HRESULT GetIsNonQualifiedResourcePackage(
+        [out, retval] BOOL* isNonQualifiedResourcePackage
+    );
+
+    HRESULT GetIsDefaultApplicablePackage(
+        [out, retval] BOOL* isDefaultApplicablePackage
     );
 }
 
@@ -1320,6 +1462,35 @@ interface IAppxContentGroupMapWriter : IUnknown
 
     HRESULT
     Close();
+}
+
+[
+    object,
+    uuid(17239D47-6ADB-45D2-80F6-F9CBC3BF059D),
+    pointer_default(ref)
+]
+interface IAppxPackagingDiagnosticEventSink : IUnknown
+{
+    HRESULT ReportContextChange(
+        [in] APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType,
+        [in] LONG contextId,
+        [in, string] LPCSTR contextName,
+        [in, string] LPCWSTR contextMessage,
+        [in, string] LPCWSTR detailsMessage);
+
+    HRESULT ReportError(
+        [in, string] LPCWSTR errorMessage);
+}
+
+[
+    object,
+    uuid(369648FA-A7EB-4909-A15D-6954A078F18A),
+    pointer_default(ref)
+]
+interface IAppxPackagingDiagnosticEventSinkManager : IUnknown
+{
+    HRESULT SetSinkForProcess(
+        [in] IAppxPackagingDiagnosticEventSink* sink);
 }
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
@@ -1493,6 +1664,23 @@ interface IAppxEncryptionFactory3 : IUnknown
 
 [
     object,
+    uuid(A879611F-12FD-41fe-85D5-06AE779BBAF5),
+    pointer_default(ref)
+]
+interface IAppxEncryptionFactory4 : IUnknown
+{
+    HRESULT EncryptPackage(
+        [in]  IStream *                                   inputStream,
+        [in]  IStream *                                   outputStream,
+        [in]  const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *    settings,
+        [in]  const APPX_KEY_INFO *                       keyInfo,
+        [in]  const APPX_ENCRYPTED_EXEMPTIONS *           exemptedFiles,
+        [in]  UINT64                                      memoryLimit
+    );
+}
+
+[
+    object,
     uuid(F43D0B0B-1379-40E2-9B29-682EA2BF42AF),
     pointer_default(ref)
 ]
@@ -1505,6 +1693,21 @@ interface IAppxEncryptedPackageWriter : IUnknown
     );
 
     HRESULT Close();
+}
+
+[
+    object,
+    uuid(3E475447-3A25-40b5-8AD2-F953AE50C92D),
+    pointer_default(ref)
+]
+interface IAppxEncryptedPackageWriter2 : IUnknown
+{
+    HRESULT
+    AddPayloadFilesEncrypted(
+        [in]                        UINT32                                fileCount,
+        [in, size_is(fileCount)]    APPX_PACKAGE_WRITER_PAYLOAD_STREAM*   payloadFiles,
+        [in]                        UINT64                                memoryLimit
+    );
 }
 
 [
@@ -1532,6 +1735,85 @@ interface IAppxEncryptedBundleWriter2 : IUnknown
     HRESULT AddExternalPackageReference(
         [in, string]  LPCWSTR   fileName,
         [in]          IStream*  inputStream
+    );
+}
+
+typedef [v1_enum] enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION
+{
+    APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA = 0x00,
+} APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION;
+
+typedef [v1_enum] enum APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS
+{
+    APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_NONE = 0x00,
+    APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_SKIP_VALIDATION = 0x01,
+    APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_LOCALIZED = 0x02
+} APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS);")
+
+[
+    object,
+    uuid(0D34DEB3-5CAE-4DD3-977C-504932A51D31),
+    pointer_default(ref)
+]
+interface IAppxEncryptedBundleWriter3 : IUnknown
+{
+    HRESULT AddPayloadPackageEncrypted(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  packageStream,
+        [in]          BOOL      isDefaultApplicablePackage
+    );
+
+    HRESULT AddExternalPackageReference(
+        [in, string]  LPCWSTR   fileName,
+        [in]          IStream*  inputStream,
+        [in]          BOOL      isDefaultApplicablePackage
+    );
+}
+
+[
+    object,
+    uuid(E2ADB6DC-5E71-4416-86B6-86E5F5291A6B),
+    pointer_default(ref)
+]
+interface IAppxPackageEditor : IUnknown
+{
+    HRESULT SetWorkingDirectory(
+        [in, string]  LPCWSTR   workingDirectory
+    );
+
+    HRESULT CreateDeltaPackage(
+        [in]  IStream*   updatedPackageStream,
+        [in]  IStream*   baselinePackageStream,
+        [in]  IStream*   deltaPackageStream
+    );
+
+    HRESULT CreateDeltaPackageUsingBaselineBlockMap(
+        [in]  IStream*   updatedPackageStream,
+        [in]  IStream*   baselineBlockMapStream,
+        [in, string]  LPCWSTR baselinePackageFullName,
+        [in]  IStream*   deltaPackageStream
+    );
+
+    HRESULT UpdatePackage(
+        [in]  IStream*   baselinePackageStream,
+        [in]  IStream*   deltaPackageStream,
+        [in]  APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption
+    );
+
+    HRESULT UpdateEncryptedPackage(
+        [in]  IStream*   baselineEncryptedPackageStream,
+        [in]  IStream*   deltaPackageStream,
+        [in]  APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption,
+        [in]  const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *    settings,
+        [in]  const APPX_KEY_INFO* keyInfo
+    );
+
+    HRESULT UpdatePackageManifest(
+        [in]  IStream*   packageStream,
+        [in]  IStream*   updatedManifestStream,
+        [in]  BOOL       isPackageEncrypted,
+        [in]  APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options
     );
 }
 
@@ -1563,6 +1845,14 @@ coclass AppxBundleFactory
 {
     interface IAppxBundleFactory;
 };
+
+[
+    uuid(50CA0A46-1588-4161-8ED2-EF9E469CED5D)
+]
+coclass AppxPackagingDiagnosticEventSinkManager
+{
+    [default] interface IAppxPackagingDiagnosticEventSinkManager;
+};
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
 
@@ -1576,6 +1866,14 @@ coclass AppxEncryptionFactory
     interface IAppxEncryptionFactory3;
     interface IAppxEncryptionFactory2;
     [default] interface IAppxEncryptionFactory;
+};
+
+[
+    uuid(F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB)
+]
+coclass AppxPackageEditor
+{
+    [default] interface IAppxPackageEditor;
 };
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion

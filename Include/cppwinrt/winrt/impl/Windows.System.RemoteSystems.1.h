@@ -1,12 +1,15 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.ApplicationModel.AppService.0.h"
 #include "winrt/impl/Windows.Foundation.0.h"
 #include "winrt/impl/Windows.Foundation.Collections.0.h"
 #include "winrt/impl/Windows.Networking.0.h"
+#include "winrt/impl/Windows.Security.Credentials.0.h"
+#include "winrt/impl/Windows.System.0.h"
 #include "winrt/impl/Windows.System.RemoteSystems.0.h"
 
 WINRT_EXPORT namespace winrt::Windows::System::RemoteSystems {
@@ -46,11 +49,39 @@ struct WINRT_EBO IRemoteSystem4 :
     IRemoteSystem4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IRemoteSystem5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystem5>
+{
+    IRemoteSystem5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IRemoteSystemAddedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IRemoteSystemAddedEventArgs>
 {
     IRemoteSystemAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemApp :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemApp>
+{
+    IRemoteSystemApp(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemAppRegistration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemAppRegistration>
+{
+    IRemoteSystemAppRegistration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemAppRegistrationStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemAppRegistrationStatics>
+{
+    IRemoteSystemAppRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IRemoteSystemAuthorizationKindFilter :
@@ -67,6 +98,20 @@ struct WINRT_EBO IRemoteSystemAuthorizationKindFilterFactory :
     IRemoteSystemAuthorizationKindFilterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IRemoteSystemConnectionInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemConnectionInfo>
+{
+    IRemoteSystemConnectionInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemConnectionInfoStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemConnectionInfoStatics>
+{
+    IRemoteSystemConnectionInfoStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IRemoteSystemConnectionRequest :
     Windows::Foundation::IInspectable,
     impl::consume_t<IRemoteSystemConnectionRequest>
@@ -74,11 +119,25 @@ struct WINRT_EBO IRemoteSystemConnectionRequest :
     IRemoteSystemConnectionRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IRemoteSystemConnectionRequest2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemConnectionRequest2>
+{
+    IRemoteSystemConnectionRequest2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IRemoteSystemConnectionRequestFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IRemoteSystemConnectionRequestFactory>
 {
     IRemoteSystemConnectionRequestFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemConnectionRequestStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemConnectionRequestStatics>
+{
+    IRemoteSystemConnectionRequestStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IRemoteSystemDiscoveryTypeFilter :
@@ -146,8 +205,7 @@ struct WINRT_EBO IRemoteSystemRemovedEventArgs :
 
 struct WINRT_EBO IRemoteSystemSession :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IRemoteSystemSession>,
-    impl::require<IRemoteSystemSession, Windows::Foundation::IClosable>
+    impl::consume_t<IRemoteSystemSession>
 {
     IRemoteSystemSession(std::nullptr_t = nullptr) noexcept {}
 };
@@ -374,6 +432,20 @@ struct WINRT_EBO IRemoteSystemWatcherErrorOccurredEventArgs :
     impl::consume_t<IRemoteSystemWatcherErrorOccurredEventArgs>
 {
     IRemoteSystemWatcherErrorOccurredEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemWebAccountFilter :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemWebAccountFilter>
+{
+    IRemoteSystemWebAccountFilter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRemoteSystemWebAccountFilterFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRemoteSystemWebAccountFilterFactory>
+{
+    IRemoteSystemWebAccountFilterFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

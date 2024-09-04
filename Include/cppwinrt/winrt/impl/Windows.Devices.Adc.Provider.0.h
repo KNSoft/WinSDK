@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -26,8 +26,27 @@ template <> struct category<Windows::Devices::Adc::Provider::ProviderAdcChannelM
 template <> struct name<Windows::Devices::Adc::Provider::IAdcControllerProvider>{ static constexpr auto & value{ L"Windows.Devices.Adc.Provider.IAdcControllerProvider" }; };
 template <> struct name<Windows::Devices::Adc::Provider::IAdcProvider>{ static constexpr auto & value{ L"Windows.Devices.Adc.Provider.IAdcProvider" }; };
 template <> struct name<Windows::Devices::Adc::Provider::ProviderAdcChannelMode>{ static constexpr auto & value{ L"Windows.Devices.Adc.Provider.ProviderAdcChannelMode" }; };
-template <> struct guid<Windows::Devices::Adc::Provider::IAdcControllerProvider>{ static constexpr GUID value{ 0xBE545828,0x816D,0x4DE5,{ 0xA0,0x48,0xAB,0xA0,0x69,0x58,0xAA,0xA8 } }; };
-template <> struct guid<Windows::Devices::Adc::Provider::IAdcProvider>{ static constexpr GUID value{ 0x28953668,0x9359,0x4C57,{ 0xBC,0x88,0xE2,0x75,0xE8,0x16,0x38,0xC9 } }; };
+template <> struct guid_storage<Windows::Devices::Adc::Provider::IAdcControllerProvider>{ static constexpr guid value{ 0xBE545828,0x816D,0x4DE5,{ 0xA0,0x48,0xAB,0xA0,0x69,0x58,0xAA,0xA8 } }; };
+template <> struct guid_storage<Windows::Devices::Adc::Provider::IAdcProvider>{ static constexpr guid value{ 0x28953668,0x9359,0x4C57,{ 0xBC,0x88,0xE2,0x75,0xE8,0x16,0x38,0xC9 } }; };
+
+template <> struct abi<Windows::Devices::Adc::Provider::IAdcControllerProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChannelCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolutionInBits(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinValue(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxValue(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL AcquireChannel(int32_t channel) noexcept = 0;
+    virtual int32_t WINRT_CALL ReleaseChannel(int32_t channel) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadValue(int32_t channelNumber, int32_t* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Adc::Provider::IAdcProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetControllers(void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Adc_Provider_IAdcControllerProvider
@@ -51,24 +70,5 @@ struct consume_Windows_Devices_Adc_Provider_IAdcProvider
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> GetControllers() const;
 };
 template <> struct consume<Windows::Devices::Adc::Provider::IAdcProvider> { template <typename D> using type = consume_Windows_Devices_Adc_Provider_IAdcProvider<D>; };
-
-template <> struct abi<Windows::Devices::Adc::Provider::IAdcControllerProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChannelCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolutionInBits(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinValue(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxValue(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) noexcept = 0;
-    virtual HRESULT __stdcall IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall AcquireChannel(int32_t channel) noexcept = 0;
-    virtual HRESULT __stdcall ReleaseChannel(int32_t channel) noexcept = 0;
-    virtual HRESULT __stdcall ReadValue(int32_t channelNumber, int32_t* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Adc::Provider::IAdcProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetControllers(void** result) noexcept = 0;
-};};
 
 }

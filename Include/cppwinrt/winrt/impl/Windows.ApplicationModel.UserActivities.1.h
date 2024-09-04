@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,6 +24,13 @@ struct WINRT_EBO IUserActivity2 :
     impl::consume_t<IUserActivity2>
 {
     IUserActivity2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IUserActivity3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IUserActivity3>
+{
+    IUserActivity3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IUserActivityAttribution :
@@ -63,8 +70,7 @@ struct WINRT_EBO IUserActivityChannelStatics :
 
 struct WINRT_EBO IUserActivityChannelStatics2 :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IUserActivityChannelStatics2>,
-    impl::require<IUserActivityChannelStatics2, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>
+    impl::consume_t<IUserActivityChannelStatics2>
 {
     IUserActivityChannelStatics2(std::nullptr_t = nullptr) noexcept {}
 };
@@ -120,8 +126,7 @@ struct WINRT_EBO IUserActivityRequestedEventArgs :
 
 struct WINRT_EBO IUserActivitySession :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IUserActivitySession>,
-    impl::require<IUserActivitySession, Windows::Foundation::IClosable>
+    impl::consume_t<IUserActivitySession>
 {
     IUserActivitySession(std::nullptr_t = nullptr) noexcept {}
 };

@@ -5,6 +5,7 @@
 * Copyright (c) Microsoft Corporation. All rights reserved.                      *
 *                                                                                *
 *********************************************************************************/
+
 #ifndef _FILEAPIFROMAPP_H_
 #define _FILEAPIFROMAPP_H_
 
@@ -17,11 +18,6 @@
 #include <minwindef.h>
 #include <minwinbase.h>
 #include <fileapi.h>
-
-/* APISET_NAME: api-ms-win-core-file-fromapp-l1 */
-/* APISET_TAG: public */
-
-
 
 #ifdef __cplusplus
 extern "C" {
@@ -147,8 +143,7 @@ SetFileAttributesFromAppW(
 
 
 #endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
- // !defined(_CONTRACT_GEN) || (_APISET_FILEFROMAPP_VER >= 0x0100)
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+ #endif/* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #ifdef __cplusplus

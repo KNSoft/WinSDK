@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -71,13 +71,42 @@ template <> struct name<Windows::Services::Maps::OfflineMaps::OfflineMapPackageS
 template <> struct name<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus>{ static constexpr auto & value{ L"Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus" }; };
 template <> struct name<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus>{ static constexpr auto & value{ L"Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus" }; };
 template <> struct name<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus>{ static constexpr auto & value{ L"Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus" }; };
-template <> struct guid<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>{ static constexpr GUID value{ 0xA797673B,0xA5B5,0x4144,{ 0xB5,0x25,0xE6,0x8C,0x88,0x62,0x66,0x4B } }; };
-template <> struct guid<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult>{ static constexpr GUID value{ 0x55585411,0x39E1,0x4E41,{ 0xA4,0xE1,0x5F,0x48,0x72,0xBE,0xE1,0x99 } }; };
-template <> struct guid<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult>{ static constexpr GUID value{ 0xD965B918,0xD4D6,0x4AFE,{ 0x93,0x78,0x3E,0xC7,0x1E,0xF1,0x1C,0x3D } }; };
-template <> struct guid<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>{ static constexpr GUID value{ 0x185E7922,0xA831,0x4AB0,{ 0x94,0x1F,0x69,0x98,0xFA,0x92,0x92,0x85 } }; };
+template <> struct guid_storage<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>{ static constexpr guid value{ 0xA797673B,0xA5B5,0x4144,{ 0xB5,0x25,0xE6,0x8C,0x88,0x62,0x66,0x4B } }; };
+template <> struct guid_storage<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult>{ static constexpr guid value{ 0x55585411,0x39E1,0x4E41,{ 0xA4,0xE1,0x5F,0x48,0x72,0xBE,0xE1,0x99 } }; };
+template <> struct guid_storage<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult>{ static constexpr guid value{ 0xD965B918,0xD4D6,0x4AFE,{ 0x93,0x78,0x3E,0xC7,0x1E,0xF1,0x1C,0x3D } }; };
+template <> struct guid_storage<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>{ static constexpr guid value{ 0x185E7922,0xA831,0x4AB0,{ 0x94,0x1F,0x69,0x98,0xFA,0x92,0x92,0x85 } }; };
 template <> struct default_interface<Windows::Services::Maps::OfflineMaps::OfflineMapPackage>{ using type = Windows::Services::Maps::OfflineMaps::IOfflineMapPackage; };
 template <> struct default_interface<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>{ using type = Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult; };
 template <> struct default_interface<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult>{ using type = Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult; };
+
+template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EnclosingRegionName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EstimatedSizeInBytes(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StatusChanged(void* value, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestStartDownloadAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Packages(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindPackagesAsync(void* queryPoint, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesInBoundingBoxAsync(void* queryBoundingBox, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesInGeocircleAsync(void* queryCircle, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage
@@ -86,9 +115,9 @@ struct consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage
     hstring DisplayName() const;
     hstring EnclosingRegionName() const;
     uint64_t EstimatedSizeInBytes() const;
-    void StatusChanged(event_token const& token) const;
-    event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const;
-    using StatusChanged_revoker = event_revoker<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>;
+    void StatusChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const;
+    using StatusChanged_revoker = impl::event_revoker<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage, &impl::abi_t<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>::remove_StatusChanged>;
     StatusChanged_revoker StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult> RequestStartDownloadAsync() const;
 };
@@ -117,34 +146,5 @@ struct consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackageStatics
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult> FindPackagesInGeocircleAsync(Windows::Devices::Geolocation::Geocircle const& queryCircle) const;
 };
 template <> struct consume<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics> { template <typename D> using type = consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackageStatics<D>; };
-
-template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EnclosingRegionName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EstimatedSizeInBytes(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall remove_StatusChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_StatusChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall RequestStartDownloadAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Packages(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindPackagesAsync(void* queryPoint, void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesInBoundingBoxAsync(void* queryBoundingBox, void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesInGeocircleAsync(void* queryCircle, void** result) noexcept = 0;
-};};
 
 }

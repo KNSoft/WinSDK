@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -125,6 +125,13 @@ struct WINRT_EBO IAutomationPeer8 :
     IAutomationPeer8(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IAutomationPeer9 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAutomationPeer9>
+{
+    IAutomationPeer9(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IAutomationPeerAnnotation :
     Windows::Foundation::IInspectable,
     impl::consume_t<IAutomationPeerAnnotation>
@@ -200,6 +207,13 @@ struct WINRT_EBO IAutomationPeerOverrides8 :
     impl::consume_t<IAutomationPeerOverrides8>
 {
     IAutomationPeerOverrides8(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAutomationPeerOverrides9 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAutomationPeerOverrides9>
+{
+    IAutomationPeerOverrides9(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IAutomationPeerProtected :
@@ -837,6 +851,34 @@ struct WINRT_EBO IMediaTransportControlsAutomationPeerFactory :
     impl::consume_t<IMediaTransportControlsAutomationPeerFactory>
 {
     IMediaTransportControlsAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMenuBarAutomationPeer :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMenuBarAutomationPeer>
+{
+    IMenuBarAutomationPeer(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMenuBarAutomationPeerFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMenuBarAutomationPeerFactory>
+{
+    IMenuBarAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMenuBarItemAutomationPeer :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMenuBarItemAutomationPeer>
+{
+    IMenuBarItemAutomationPeer(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMenuBarItemAutomationPeerFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMenuBarItemAutomationPeerFactory>
+{
+    IMenuBarItemAutomationPeerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IMenuFlyoutItemAutomationPeer :

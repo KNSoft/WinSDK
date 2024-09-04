@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -69,6 +69,7 @@ enum class BackgroundTransferPriority : int32_t
 {
     Default = 0,
     High = 1,
+    Low = 2,
 };
 
 enum class BackgroundTransferStatus : int32_t
@@ -254,42 +255,42 @@ template <> struct name<Windows::Networking::BackgroundTransfer::BackgroundTrans
 template <> struct name<Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress>{ static constexpr auto & value{ L"Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress" }; };
 template <> struct name<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>{ static constexpr auto & value{ L"Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange" }; };
 template <> struct name<Windows::Networking::BackgroundTransfer::BackgroundUploadProgress>{ static constexpr auto & value{ L"Windows.Networking.BackgroundTransfer.BackgroundUploadProgress" }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloader>{ static constexpr GUID value{ 0xC1C79333,0x6649,0x4B1D,{ 0xA8,0x26,0xA4,0xB3,0xDD,0x23,0x4D,0x0B } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>{ static constexpr GUID value{ 0xA94A5847,0x348D,0x4A35,{ 0x89,0x0E,0x8A,0x1E,0xF3,0x79,0x84,0x79 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>{ static constexpr GUID value{ 0xD11A8C48,0x86E8,0x48E2,{ 0xB6,0x15,0x69,0x76,0xAA,0xBF,0x86,0x1D } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>{ static constexpr GUID value{ 0x26836C24,0xD89E,0x46F4,{ 0xA2,0x9A,0x4F,0x4D,0x4F,0x14,0x41,0x55 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>{ static constexpr GUID value{ 0x52A65A35,0xC64E,0x426C,{ 0x99,0x19,0x54,0x0D,0x0D,0x21,0xA6,0x50 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>{ static constexpr GUID value{ 0x2FAA1327,0x1AD4,0x4CA5,{ 0xB2,0xCD,0x08,0xDB,0xF0,0x74,0x6A,0xFE } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>{ static constexpr GUID value{ 0x5D14E906,0x9266,0x4808,{ 0xBD,0x71,0x59,0x25,0xF2,0xA3,0x13,0x0A } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>{ static constexpr GUID value{ 0x2A9DA250,0xC769,0x458C,{ 0xAF,0xE8,0xFE,0xB8,0xD4,0xD3,0xB2,0xEF } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>{ static constexpr GUID value{ 0x2D930225,0x986B,0x574D,{ 0x79,0x50,0x0A,0xDD,0x47,0xF5,0xD7,0x06 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>{ static constexpr GUID value{ 0x7B6BE286,0x6E47,0x5136,{ 0x7F,0xCB,0xFA,0x43,0x89,0xF4,0x6F,0x5B } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>{ static constexpr GUID value{ 0xE8E15657,0xD7D1,0x4ED8,{ 0x83,0x8E,0x67,0x4A,0xC2,0x17,0xAC,0xE6 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>{ static constexpr GUID value{ 0x90EF98A9,0x7A01,0x4A0B,{ 0x9F,0x80,0xA0,0xB0,0xBB,0x37,0x0F,0x8D } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>{ static constexpr GUID value{ 0xAAD33B04,0x1192,0x4BF4,{ 0x8B,0x68,0x39,0xC5,0xAD,0xD2,0x44,0xE2 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>{ static constexpr GUID value{ 0xD8C3E3E4,0x6459,0x4540,{ 0x85,0xEB,0xAA,0xA1,0xC8,0x90,0x36,0x77 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>{ static constexpr GUID value{ 0x02EC50B2,0x7D18,0x495B,{ 0xAA,0x22,0x32,0xA9,0x7D,0x45,0xD3,0xE2 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>{ static constexpr GUID value{ 0xDED06846,0x90CA,0x44FB,{ 0x8F,0xB1,0x12,0x41,0x54,0xC0,0xD5,0x39 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>{ static constexpr GUID value{ 0x04854327,0x5254,0x4B3A,{ 0x91,0x5E,0x0A,0xA4,0x92,0x75,0xC0,0xF9 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs>{ static constexpr GUID value{ 0x3EBC7453,0xBF48,0x4A88,{ 0x92,0x48,0xB0,0xC1,0x65,0x18,0x4F,0x5C } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploader>{ static constexpr GUID value{ 0xC595C9AE,0xCEAD,0x465B,{ 0x88,0x01,0xC5,0x5A,0xC9,0x0A,0x01,0xCE } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploader2>{ static constexpr GUID value{ 0x8E0612CE,0x0C34,0x4463,{ 0x80,0x7F,0x19,0x8A,0x1B,0x8B,0xD4,0xAD } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploader3>{ static constexpr GUID value{ 0xB95E9439,0x5BF0,0x4B3A,{ 0x8C,0x47,0x2C,0x61,0x99,0xA8,0x54,0xB9 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>{ static constexpr GUID value{ 0x736203C7,0x10E7,0x48A0,{ 0xAC,0x3C,0x1A,0xC7,0x10,0x95,0xEC,0x57 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>{ static constexpr GUID value{ 0xF2875CFB,0x9B05,0x4741,{ 0x91,0x21,0x74,0x0A,0x83,0xE2,0x47,0xDF } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>{ static constexpr GUID value{ 0xE919AC62,0xEA08,0x42F0,{ 0xA2,0xAC,0x07,0xE4,0x67,0x54,0x90,0x80 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>{ static constexpr GUID value{ 0x3BB384CB,0x0760,0x461D,{ 0x90,0x7F,0x51,0x38,0xF8,0x4D,0x44,0xC1 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IContentPrefetcher>{ static constexpr GUID value{ 0xA8D6F754,0x7DC1,0x4CD9,{ 0x88,0x10,0x2A,0x6A,0xA9,0x41,0x7E,0x11 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>{ static constexpr GUID value{ 0xE361FD08,0x132A,0x4FDE,{ 0xA7,0xCC,0xFC,0xB0,0xE6,0x65,0x23,0xAF } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IDownloadOperation>{ static constexpr GUID value{ 0xBD87EBB0,0x5714,0x4E09,{ 0xBA,0x68,0xBE,0xF7,0x39,0x03,0xB0,0xD7 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IDownloadOperation2>{ static constexpr GUID value{ 0xA3CCED40,0x8F9C,0x4353,{ 0x9C,0xD4,0x29,0x0D,0xEE,0x38,0x7C,0x38 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IDownloadOperation3>{ static constexpr GUID value{ 0x5027351C,0x7D5E,0x4ADC,{ 0xB8,0xD3,0xDF,0x5C,0x60,0x31,0xB9,0xCC } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IDownloadOperation4>{ static constexpr GUID value{ 0x0CDAAEF4,0x8CEF,0x404A,{ 0x96,0x6D,0xF0,0x58,0x40,0x0B,0xED,0x80 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IResponseInformation>{ static constexpr GUID value{ 0xF8BB9A12,0xF713,0x4792,{ 0x8B,0x68,0xD9,0xD2,0x97,0xF9,0x1D,0x2E } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>{ static constexpr GUID value{ 0x4C24B81F,0xD944,0x4112,{ 0xA9,0x8E,0x6A,0x69,0x52,0x2B,0x7E,0xBB } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IUploadOperation>{ static constexpr GUID value{ 0x3E5624E0,0x7389,0x434C,{ 0x8B,0x35,0x42,0x7F,0xD3,0x6B,0xBD,0xAE } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IUploadOperation2>{ static constexpr GUID value{ 0x556189F2,0x2774,0x4DF6,{ 0x9F,0xA5,0x20,0x9F,0x2B,0xFB,0x12,0xF7 } }; };
-template <> struct guid<Windows::Networking::BackgroundTransfer::IUploadOperation3>{ static constexpr GUID value{ 0x42C92CA3,0xDE39,0x4546,{ 0xBC,0x62,0x37,0x74,0xB4,0x29,0x4D,0xE3 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloader>{ static constexpr guid value{ 0xC1C79333,0x6649,0x4B1D,{ 0xA8,0x26,0xA4,0xB3,0xDD,0x23,0x4D,0x0B } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>{ static constexpr guid value{ 0xA94A5847,0x348D,0x4A35,{ 0x89,0x0E,0x8A,0x1E,0xF3,0x79,0x84,0x79 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>{ static constexpr guid value{ 0xD11A8C48,0x86E8,0x48E2,{ 0xB6,0x15,0x69,0x76,0xAA,0xBF,0x86,0x1D } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>{ static constexpr guid value{ 0x26836C24,0xD89E,0x46F4,{ 0xA2,0x9A,0x4F,0x4D,0x4F,0x14,0x41,0x55 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>{ static constexpr guid value{ 0x52A65A35,0xC64E,0x426C,{ 0x99,0x19,0x54,0x0D,0x0D,0x21,0xA6,0x50 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>{ static constexpr guid value{ 0x2FAA1327,0x1AD4,0x4CA5,{ 0xB2,0xCD,0x08,0xDB,0xF0,0x74,0x6A,0xFE } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>{ static constexpr guid value{ 0x5D14E906,0x9266,0x4808,{ 0xBD,0x71,0x59,0x25,0xF2,0xA3,0x13,0x0A } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>{ static constexpr guid value{ 0x2A9DA250,0xC769,0x458C,{ 0xAF,0xE8,0xFE,0xB8,0xD4,0xD3,0xB2,0xEF } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>{ static constexpr guid value{ 0x2D930225,0x986B,0x574D,{ 0x79,0x50,0x0A,0xDD,0x47,0xF5,0xD7,0x06 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>{ static constexpr guid value{ 0x7B6BE286,0x6E47,0x5136,{ 0x7F,0xCB,0xFA,0x43,0x89,0xF4,0x6F,0x5B } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>{ static constexpr guid value{ 0xE8E15657,0xD7D1,0x4ED8,{ 0x83,0x8E,0x67,0x4A,0xC2,0x17,0xAC,0xE6 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>{ static constexpr guid value{ 0x90EF98A9,0x7A01,0x4A0B,{ 0x9F,0x80,0xA0,0xB0,0xBB,0x37,0x0F,0x8D } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>{ static constexpr guid value{ 0xAAD33B04,0x1192,0x4BF4,{ 0x8B,0x68,0x39,0xC5,0xAD,0xD2,0x44,0xE2 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>{ static constexpr guid value{ 0xD8C3E3E4,0x6459,0x4540,{ 0x85,0xEB,0xAA,0xA1,0xC8,0x90,0x36,0x77 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>{ static constexpr guid value{ 0x02EC50B2,0x7D18,0x495B,{ 0xAA,0x22,0x32,0xA9,0x7D,0x45,0xD3,0xE2 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>{ static constexpr guid value{ 0xDED06846,0x90CA,0x44FB,{ 0x8F,0xB1,0x12,0x41,0x54,0xC0,0xD5,0x39 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>{ static constexpr guid value{ 0x04854327,0x5254,0x4B3A,{ 0x91,0x5E,0x0A,0xA4,0x92,0x75,0xC0,0xF9 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs>{ static constexpr guid value{ 0x3EBC7453,0xBF48,0x4A88,{ 0x92,0x48,0xB0,0xC1,0x65,0x18,0x4F,0x5C } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploader>{ static constexpr guid value{ 0xC595C9AE,0xCEAD,0x465B,{ 0x88,0x01,0xC5,0x5A,0xC9,0x0A,0x01,0xCE } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploader2>{ static constexpr guid value{ 0x8E0612CE,0x0C34,0x4463,{ 0x80,0x7F,0x19,0x8A,0x1B,0x8B,0xD4,0xAD } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploader3>{ static constexpr guid value{ 0xB95E9439,0x5BF0,0x4B3A,{ 0x8C,0x47,0x2C,0x61,0x99,0xA8,0x54,0xB9 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>{ static constexpr guid value{ 0x736203C7,0x10E7,0x48A0,{ 0xAC,0x3C,0x1A,0xC7,0x10,0x95,0xEC,0x57 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>{ static constexpr guid value{ 0xF2875CFB,0x9B05,0x4741,{ 0x91,0x21,0x74,0x0A,0x83,0xE2,0x47,0xDF } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>{ static constexpr guid value{ 0xE919AC62,0xEA08,0x42F0,{ 0xA2,0xAC,0x07,0xE4,0x67,0x54,0x90,0x80 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>{ static constexpr guid value{ 0x3BB384CB,0x0760,0x461D,{ 0x90,0x7F,0x51,0x38,0xF8,0x4D,0x44,0xC1 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IContentPrefetcher>{ static constexpr guid value{ 0xA8D6F754,0x7DC1,0x4CD9,{ 0x88,0x10,0x2A,0x6A,0xA9,0x41,0x7E,0x11 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>{ static constexpr guid value{ 0xE361FD08,0x132A,0x4FDE,{ 0xA7,0xCC,0xFC,0xB0,0xE6,0x65,0x23,0xAF } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IDownloadOperation>{ static constexpr guid value{ 0xBD87EBB0,0x5714,0x4E09,{ 0xBA,0x68,0xBE,0xF7,0x39,0x03,0xB0,0xD7 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IDownloadOperation2>{ static constexpr guid value{ 0xA3CCED40,0x8F9C,0x4353,{ 0x9C,0xD4,0x29,0x0D,0xEE,0x38,0x7C,0x38 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IDownloadOperation3>{ static constexpr guid value{ 0x5027351C,0x7D5E,0x4ADC,{ 0xB8,0xD3,0xDF,0x5C,0x60,0x31,0xB9,0xCC } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IDownloadOperation4>{ static constexpr guid value{ 0x0CDAAEF4,0x8CEF,0x404A,{ 0x96,0x6D,0xF0,0x58,0x40,0x0B,0xED,0x80 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IResponseInformation>{ static constexpr guid value{ 0xF8BB9A12,0xF713,0x4792,{ 0x8B,0x68,0xD9,0xD2,0x97,0xF9,0x1D,0x2E } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>{ static constexpr guid value{ 0x4C24B81F,0xD944,0x4112,{ 0xA9,0x8E,0x6A,0x69,0x52,0x2B,0x7E,0xBB } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IUploadOperation>{ static constexpr guid value{ 0x3E5624E0,0x7389,0x434C,{ 0x8B,0x35,0x42,0x7F,0xD3,0x6B,0xBD,0xAE } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IUploadOperation2>{ static constexpr guid value{ 0x556189F2,0x2774,0x4DF6,{ 0x9F,0xA5,0x20,0x9F,0x2B,0xFB,0x12,0xF7 } }; };
+template <> struct guid_storage<Windows::Networking::BackgroundTransfer::IUploadOperation3>{ static constexpr guid value{ 0x42C92CA3,0xDE39,0x4546,{ 0xBC,0x62,0x37,0x74,0xB4,0x29,0x4D,0xE3 } }; };
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::BackgroundDownloader>{ using type = Windows::Networking::BackgroundTransfer::IBackgroundDownloader; };
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup>{ using type = Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup; };
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroupTriggerDetails>{ using type = Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails; };
@@ -301,6 +302,261 @@ template <> struct default_interface<Windows::Networking::BackgroundTransfer::Do
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::ResponseInformation>{ using type = Windows::Networking::BackgroundTransfer::IResponseInformation; };
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>{ using type = Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult; };
 template <> struct default_interface<Windows::Networking::BackgroundTransfer::UploadOperation>{ using type = Windows::Networking::BackgroundTransfer::IUploadOperation; };
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDownload(void* uri, void* resultFile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDownloadFromFile(void* uri, void* resultFile, void* requestBodyFile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDownloadAsync(void* uri, void* resultFile, void* requestBodyStream, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TransferGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransferGroup(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuccessToastNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuccessToastNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FailureToastNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FailureToastNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuccessTileNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuccessTileNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FailureTileNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FailureTileNotification(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompletionGroup(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithCompletionGroup(void* completionGroup, void** backgroundDownloader) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCurrentDownloadsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentDownloadsForGroupAsync(void* group, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCurrentDownloadsForTransferGroupAsync(void* group, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestUnconstrainedDownloadsAsync(void* operations, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetRequestHeader(void* headerName, void* headerValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCredential(void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ServerCredential(void* credential) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProxyCredential(void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProxyCredential(void* credential) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Method(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Method(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Group(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Group(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Trigger(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Enable() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Downloads(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uploads(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetHeader(void* headerName, void* headerValue) noexcept = 0;
+    virtual int32_t WINRT_CALL SetText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetFile(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithName(void* name, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithNameAndFileName(void* name, void* fileName, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateGroup(void* name, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Guid(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestedUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Method(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Group(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetResultStreamAt(uint64_t position, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetResponseInformation(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WasDownloadRestarted(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AddedRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateUpload(void* uri, void* sourceFile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateUploadFromStreamAsync(void* uri, void* sourceStream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateUploadWithFormDataAndAutoBoundaryAsync(void* uri, void* parts, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateUploadWithSubTypeAsync(void* uri, void* parts, void* subType, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateUploadWithSubTypeAndBoundaryAsync(void* uri, void* parts, void* subType, void* boundary, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TransferGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransferGroup(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuccessToastNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuccessToastNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FailureToastNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FailureToastNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuccessTileNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuccessTileNotification(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FailureTileNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FailureTileNotification(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompletionGroup(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithCompletionGroup(void* completionGroup, void** backgroundUploader) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCurrentUploadsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentUploadsForGroupAsync(void* group, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCurrentUploadsForTransferGroupAsync(void* group, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestUnconstrainedUploadsAsync(void* operations, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IContentPrefetcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContentUris(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IndirectContentUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IndirectContentUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LastSuccessfulPrefetchTime(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ResultFile(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundDownloadProgress* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AttachAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL Pause() noexcept = 0;
+    virtual int32_t WINRT_CALL Resume() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TransferGroup(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsRandomAccessRequired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsRandomAccessRequired(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetResultRandomAccessStreamReference(void** stream) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDownloadedRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RangesDownloaded(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RangesDownloaded(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestedUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecoverableWebErrorStatuses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentWebErrorStatus(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL MakeCurrentInTransferGroup() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IResponseInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsResumable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StatusCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Headers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsUnconstrained(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourceFile(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AttachAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TransferGroup(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL MakeCurrentInTransferGroup() noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundDownloader
@@ -345,7 +601,7 @@ template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundDownloaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync() const;
-    [[deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(param::hstring const& group) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(param::hstring const& group) const;
 };
 template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods> { template <typename D> using type = consume_Windows_Networking_BackgroundTransfer_IBackgroundDownloaderStaticMethods<D>; };
 
@@ -359,7 +615,7 @@ template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundD
 template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundDownloaderUserConsent
 {
-    [[deprecated("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::DownloadOperation> const& operations) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::DownloadOperation> const& operations) const;
 };
 template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent> { template <typename D> using type = consume_Windows_Networking_BackgroundTransfer_IBackgroundDownloaderUserConsent<D>; };
 
@@ -373,8 +629,8 @@ struct consume_Windows_Networking_BackgroundTransfer_IBackgroundTransferBase
     void ProxyCredential(Windows::Security::Credentials::PasswordCredential const& credential) const;
     hstring Method() const;
     void Method(param::hstring const& value) const;
-    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] hstring Group() const;
-    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] void Group(param::hstring const& value) const;
+    hstring Group() const;
+    void Group(param::hstring const& value) const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
     void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const& value) const;
 };
@@ -440,10 +696,10 @@ template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundT
 template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundTransferOperation
 {
-    GUID Guid() const;
+    winrt::guid Guid() const;
     Windows::Foundation::Uri RequestedUri() const;
     hstring Method() const;
-    [[deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")]] hstring Group() const;
+    hstring Group() const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
     void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const& value) const;
     Windows::Storage::Streams::IInputStream GetResultStreamAt(uint64_t position) const;
@@ -513,7 +769,7 @@ template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundUploaderStaticMethods
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync() const;
-    [[deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(param::hstring const& group) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(param::hstring const& group) const;
 };
 template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods> { template <typename D> using type = consume_Windows_Networking_BackgroundTransfer_IBackgroundUploaderStaticMethods<D>; };
 
@@ -527,7 +783,7 @@ template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundU
 template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IBackgroundUploaderUserConsent
 {
-    [[deprecated("RequestUnconstrainedUploadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::UploadOperation> const& operations) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::UploadOperation> const& operations) const;
 };
 template <> struct consume<Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent> { template <typename D> using type = consume_Windows_Networking_BackgroundTransfer_IBackgroundUploaderUserConsent<D>; };
 
@@ -573,10 +829,10 @@ struct consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3
     void IsRandomAccessRequired(bool value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference GetResultRandomAccessStreamReference() const;
     Windows::Foundation::Collections::IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange> GetDownloadedRanges() const;
-    event_token RangesDownloaded(Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const;
-    using RangesDownloaded_revoker = event_revoker<Windows::Networking::BackgroundTransfer::IDownloadOperation3>;
+    winrt::event_token RangesDownloaded(Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const;
+    using RangesDownloaded_revoker = impl::event_revoker<Windows::Networking::BackgroundTransfer::IDownloadOperation3, &impl::abi_t<Windows::Networking::BackgroundTransfer::IDownloadOperation3>::remove_RangesDownloaded>;
     RangesDownloaded_revoker RangesDownloaded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const;
-    void RangesDownloaded(event_token const& eventCookie) const;
+    void RangesDownloaded(winrt::event_token const& eventCookie) const noexcept;
     void RequestedUri(Windows::Foundation::Uri const& value) const;
     Windows::Foundation::Collections::IVector<Windows::Web::WebErrorStatus> RecoverableWebErrorStatuses() const;
     Windows::Foundation::IReference<Windows::Web::WebErrorStatus> CurrentWebErrorStatus() const;
@@ -603,7 +859,7 @@ template <> struct consume<Windows::Networking::BackgroundTransfer::IResponseInf
 template <typename D>
 struct consume_Windows_Networking_BackgroundTransfer_IUnconstrainedTransferRequestResult
 {
-    [[deprecated("IsUnconstrained is deprecated and may not work on all platforms. For more info, see MSDN.")]] bool IsUnconstrained() const;
+    bool IsUnconstrained() const;
 };
 template <> struct consume<Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult> { template <typename D> using type = consume_Windows_Networking_BackgroundTransfer_IUnconstrainedTransferRequestResult<D>; };
 
@@ -662,260 +918,5 @@ struct struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress
 };
 template <> struct abi<Windows::Networking::BackgroundTransfer::BackgroundUploadProgress>{ using type = struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress; };
 
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDownload(void* uri, void* resultFile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateDownloadFromFile(void* uri, void* resultFile, void* requestBodyFile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateDownloadAsync(void* uri, void* resultFile, void* requestBodyStream, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TransferGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransferGroup(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuccessToastNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuccessToastNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FailureToastNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FailureToastNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuccessTileNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuccessTileNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FailureTileNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FailureTileNotification(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompletionGroup(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithCompletionGroup(void* completionGroup, void** backgroundDownloader) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCurrentDownloadsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentDownloadsForGroupAsync(HSTRING group, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCurrentDownloadsForTransferGroupAsync(void* group, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestUnconstrainedDownloadsAsync(void* operations, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetRequestHeader(HSTRING headerName, HSTRING headerValue) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCredential(void** credential) noexcept = 0;
-    virtual HRESULT __stdcall put_ServerCredential(void* credential) noexcept = 0;
-    virtual HRESULT __stdcall get_ProxyCredential(void** credential) noexcept = 0;
-    virtual HRESULT __stdcall put_ProxyCredential(void* credential) noexcept = 0;
-    virtual HRESULT __stdcall get_Method(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Method(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Group(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Group(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Trigger(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Enable() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Downloads(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uploads(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetHeader(HSTRING headerName, HSTRING headerValue) noexcept = 0;
-    virtual HRESULT __stdcall SetText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall SetFile(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithName(HSTRING name, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithNameAndFileName(HSTRING name, HSTRING fileName, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateGroup(HSTRING name, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Guid(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestedUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Method(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Group(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept = 0;
-    virtual HRESULT __stdcall GetResultStreamAt(uint64_t position, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetResponseInformation(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WasDownloadRestarted(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AddedRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateUpload(void* uri, void* sourceFile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateUploadFromStreamAsync(void* uri, void* sourceStream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateUploadWithFormDataAndAutoBoundaryAsync(void* uri, void* parts, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateUploadWithSubTypeAsync(void* uri, void* parts, HSTRING subType, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateUploadWithSubTypeAndBoundaryAsync(void* uri, void* parts, HSTRING subType, HSTRING boundary, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TransferGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransferGroup(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuccessToastNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuccessToastNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FailureToastNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FailureToastNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuccessTileNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuccessTileNotification(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FailureTileNotification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FailureTileNotification(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploader3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompletionGroup(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithCompletionGroup(void* completionGroup, void** backgroundUploader) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCurrentUploadsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentUploadsForGroupAsync(HSTRING group, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCurrentUploadsForTransferGroupAsync(void* group, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestUnconstrainedUploadsAsync(void* operations, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IContentPrefetcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContentUris(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_IndirectContentUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IndirectContentUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LastSuccessfulPrefetchTime(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ResultFile(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundDownloadProgress* value) noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AttachAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall Pause() noexcept = 0;
-    virtual HRESULT __stdcall Resume() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TransferGroup(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsRandomAccessRequired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsRandomAccessRequired(bool value) noexcept = 0;
-    virtual HRESULT __stdcall GetResultRandomAccessStreamReference(void** stream) noexcept = 0;
-    virtual HRESULT __stdcall GetDownloadedRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_RangesDownloaded(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_RangesDownloaded(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestedUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RecoverableWebErrorStatuses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentWebErrorStatus(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IDownloadOperation4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall MakeCurrentInTransferGroup() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IResponseInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsResumable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StatusCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Headers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsUnconstrained(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourceFile(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress* value) noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AttachAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TransferGroup(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::BackgroundTransfer::IUploadOperation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall MakeCurrentInTransferGroup() noexcept = 0;
-};};
 
 }

@@ -3412,6 +3412,7 @@ LsaLookupSids(
     );
 
 NTSTATUS
+NTAPI
 LsaLookupSids2(
     _In_ LSA_HANDLE PolicyHandle,
     _In_ ULONG LookupOptions,

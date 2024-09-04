@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.System.Diagnostics.TraceReporting.2.h"
@@ -14,14 +14,14 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> bool consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::IsScenarioEnabled(GUID const& scenarioId) const
+template <typename D> bool consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::IsScenarioEnabled(winrt::guid const& scenarioId) const
 {
     bool isActive{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics)->IsScenarioEnabled(get_abi(scenarioId), &isActive));
     return isActive;
 }
 
-template <typename D> bool consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::TryEscalateScenario(GUID const& scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const& escalationType, param::hstring const& outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, param::map_view<hstring, hstring> const& triggers) const
+template <typename D> bool consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::TryEscalateScenario(winrt::guid const& scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const& escalationType, param::hstring const& outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, param::map_view<hstring, hstring> const& triggers) const
 {
     bool result{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics)->TryEscalateScenario(get_abi(scenarioId), get_abi(escalationType), get_abi(outputDirectory), timestampOutputDirectory, forceEscalationUpload, get_abi(triggers), &result));
@@ -35,9 +35,9 @@ template <typename D> Windows::System::Diagnostics::TraceReporting::PlatformDiag
     return result;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<GUID> consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::GetActiveScenarioList() const
+template <typename D> Windows::Foundation::Collections::IVectorView<winrt::guid> consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::GetActiveScenarioList() const
 {
-    Windows::Foundation::Collections::IVectorView<GUID> scenarioIds{ nullptr };
+    Windows::Foundation::Collections::IVectorView<winrt::guid> scenarioIds{ nullptr };
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics)->GetActiveScenarioList(put_abi(scenarioIds)));
     return scenarioIds;
 }
@@ -49,7 +49,7 @@ template <typename D> Windows::System::Diagnostics::TraceReporting::PlatformDiag
     return result;
 }
 
-template <typename D> Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType, GUID const& scenarioId, uint64_t traceProfileHash) const
+template <typename D> Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticActionsStatics<D>::IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType, winrt::guid const& scenarioId, uint64_t traceProfileHash) const
 {
     Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState slotState{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics)->IsTraceRunning(get_abi(slotType), get_abi(scenarioId), traceProfileHash, put_abi(slotState)));
@@ -70,9 +70,9 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Sys
     return traceInfo;
 }
 
-template <typename D> GUID consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticTraceInfo<D>::ScenarioId() const
+template <typename D> winrt::guid consume_Windows_System_Diagnostics_TraceReporting_IPlatformDiagnosticTraceInfo<D>::ScenarioId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticTraceInfo)->get_ScenarioId(put_abi(value)));
     return value;
 }
@@ -129,239 +129,207 @@ template <typename D> int64_t consume_Windows_System_Diagnostics_TraceReporting_
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics> : produce_base<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>
 {
-    HRESULT __stdcall IsScenarioEnabled(GUID scenarioId, bool* isActive) noexcept final
+    int32_t WINRT_CALL IsScenarioEnabled(winrt::guid scenarioId, bool* isActive) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *isActive = detach_from<bool>(this->shim().IsScenarioEnabled(*reinterpret_cast<GUID const*>(&scenarioId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsScenarioEnabled, WINRT_WRAP(bool), winrt::guid const&);
+            *isActive = detach_from<bool>(this->shim().IsScenarioEnabled(*reinterpret_cast<winrt::guid const*>(&scenarioId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEscalateScenario(GUID scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, void* triggers, bool* result) noexcept final
+    int32_t WINRT_CALL TryEscalateScenario(winrt::guid scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType escalationType, void* outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, void* triggers, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<bool>(this->shim().TryEscalateScenario(*reinterpret_cast<GUID const*>(&scenarioId), *reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const*>(&escalationType), *reinterpret_cast<hstring const*>(&outputDirectory), timestampOutputDirectory, forceEscalationUpload, *reinterpret_cast<Windows::Foundation::Collections::IMapView<hstring, hstring> const*>(&triggers)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TryEscalateScenario, WINRT_WRAP(bool), winrt::guid const&, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const&, hstring const&, bool, bool, Windows::Foundation::Collections::IMapView<hstring, hstring> const&);
+            *result = detach_from<bool>(this->shim().TryEscalateScenario(*reinterpret_cast<winrt::guid const*>(&scenarioId), *reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const*>(&escalationType), *reinterpret_cast<hstring const*>(&outputDirectory), timestampOutputDirectory, forceEscalationUpload, *reinterpret_cast<Windows::Foundation::Collections::IMapView<hstring, hstring> const*>(&triggers)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState* result) noexcept final
+    int32_t WINRT_CALL DownloadLatestSettingsForNamespace(void* partner, void* feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadLatestSettingsForNamespace, WINRT_WRAP(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState), hstring const&, hstring const&, bool, bool, bool);
             *result = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState>(this->shim().DownloadLatestSettingsForNamespace(*reinterpret_cast<hstring const*>(&partner), *reinterpret_cast<hstring const*>(&feature), isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetActiveScenarioList(void** scenarioIds) noexcept final
+    int32_t WINRT_CALL GetActiveScenarioList(void** scenarioIds) noexcept final
     {
         try
         {
             *scenarioIds = nullptr;
             typename D::abi_guard guard(this->shim());
-            *scenarioIds = detach_from<Windows::Foundation::Collections::IVectorView<GUID>>(this->shim().GetActiveScenarioList());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetActiveScenarioList, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<winrt::guid>));
+            *scenarioIds = detach_from<Windows::Foundation::Collections::IVectorView<winrt::guid>>(this->shim().GetActiveScenarioList());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ForceUpload(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState* result) noexcept final
+    int32_t WINRT_CALL ForceUpload(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForceUpload, WINRT_WRAP(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState), Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEventBufferLatencies const&, bool, bool);
             *result = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState>(this->shim().ForceUpload(*reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEventBufferLatencies const*>(&latency), uploadOverCostedNetwork, uploadOverBattery));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, GUID scenarioId, uint64_t traceProfileHash, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState* slotState) noexcept final
+    int32_t WINRT_CALL IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, winrt::guid scenarioId, uint64_t traceProfileHash, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState* slotState) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *slotState = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState>(this->shim().IsTraceRunning(*reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const*>(&slotType), *reinterpret_cast<GUID const*>(&scenarioId), traceProfileHash));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsTraceRunning, WINRT_WRAP(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState), Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const&, winrt::guid const&, uint64_t);
+            *slotState = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState>(this->shim().IsTraceRunning(*reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const*>(&slotType), *reinterpret_cast<winrt::guid const*>(&scenarioId), traceProfileHash));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetActiveTraceRuntime(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, void** traceRuntimeInfo) noexcept final
+    int32_t WINRT_CALL GetActiveTraceRuntime(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, void** traceRuntimeInfo) noexcept final
     {
         try
         {
             *traceRuntimeInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetActiveTraceRuntime, WINRT_WRAP(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceRuntimeInfo), Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const&);
             *traceRuntimeInfo = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceRuntimeInfo>(this->shim().GetActiveTraceRuntime(*reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const*>(&slotType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetKnownTraceList(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, void** traceInfo) noexcept final
+    int32_t WINRT_CALL GetKnownTraceList(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType slotType, void** traceInfo) noexcept final
     {
         try
         {
             *traceInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetKnownTraceList, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceInfo>), Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const&);
             *traceInfo = detach_from<Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceInfo>>(this->shim().GetKnownTraceList(*reinterpret_cast<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const*>(&slotType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticTraceInfo> : produce_base<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticTraceInfo>
 {
-    HRESULT __stdcall get_ScenarioId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ScenarioId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ScenarioId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScenarioId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ScenarioId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProfileHash(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_ProfileHash(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileHash, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ProfileHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsExclusive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsExclusive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsExclusive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsExclusive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAutoLogger(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAutoLogger(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAutoLogger, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAutoLogger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxTraceDurationFileTime(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxTraceDurationFileTime(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxTraceDurationFileTime, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().MaxTraceDurationFileTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Priority(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTracePriority* value) noexcept final
+    int32_t WINRT_CALL get_Priority(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTracePriority* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Priority, WINRT_WRAP(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTracePriority));
             *value = detach_from<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTracePriority>(this->shim().Priority());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticTraceRuntimeInfo> : produce_base<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticTraceRuntimeInfo>
 {
-    HRESULT __stdcall get_RuntimeFileTime(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_RuntimeFileTime(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RuntimeFileTime, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().RuntimeFileTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EtwRuntimeFileTime(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_EtwRuntimeFileTime(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EtwRuntimeFileTime, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().EtwRuntimeFileTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -369,44 +337,44 @@ struct produce<D, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnos
 
 WINRT_EXPORT namespace winrt::Windows::System::Diagnostics::TraceReporting {
 
-inline bool PlatformDiagnosticActions::IsScenarioEnabled(GUID const& scenarioId)
+inline bool PlatformDiagnosticActions::IsScenarioEnabled(winrt::guid const& scenarioId)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().IsScenarioEnabled(scenarioId);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.IsScenarioEnabled(scenarioId); });
 }
 
-inline bool PlatformDiagnosticActions::TryEscalateScenario(GUID const& scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const& escalationType, param::hstring const& outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, param::map_view<hstring, hstring> const& triggers)
+inline bool PlatformDiagnosticActions::TryEscalateScenario(winrt::guid const& scenarioId, Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEscalationType const& escalationType, param::hstring const& outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, param::map_view<hstring, hstring> const& triggers)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers); });
 }
 
 inline Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState PlatformDiagnosticActions::DownloadLatestSettingsForNamespace(param::hstring const& partner, param::hstring const& feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery); });
 }
 
-inline Windows::Foundation::Collections::IVectorView<GUID> PlatformDiagnosticActions::GetActiveScenarioList()
+inline Windows::Foundation::Collections::IVectorView<winrt::guid> PlatformDiagnosticActions::GetActiveScenarioList()
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().GetActiveScenarioList();
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.GetActiveScenarioList(); });
 }
 
 inline Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticActionState PlatformDiagnosticActions::ForceUpload(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticEventBufferLatencies const& latency, bool uploadOverCostedNetwork, bool uploadOverBattery)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().ForceUpload(latency, uploadOverCostedNetwork, uploadOverBattery);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.ForceUpload(latency, uploadOverCostedNetwork, uploadOverBattery); });
 }
 
-inline Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState PlatformDiagnosticActions::IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType, GUID const& scenarioId, uint64_t traceProfileHash)
+inline Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotState PlatformDiagnosticActions::IsTraceRunning(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType, winrt::guid const& scenarioId, uint64_t traceProfileHash)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().IsTraceRunning(slotType, scenarioId, traceProfileHash);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.IsTraceRunning(slotType, scenarioId, traceProfileHash); });
 }
 
 inline Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceRuntimeInfo PlatformDiagnosticActions::GetActiveTraceRuntime(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().GetActiveTraceRuntime(slotType);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.GetActiveTraceRuntime(slotType); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceInfo> PlatformDiagnosticActions::GetKnownTraceList(Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceSlotType const& slotType)
 {
-    return get_activation_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>().GetKnownTraceList(slotType);
+    return impl::call_factory<PlatformDiagnosticActions, Windows::System::Diagnostics::TraceReporting::IPlatformDiagnosticActionsStatics>([&](auto&& f) { return f.GetKnownTraceList(slotType); });
 }
 
 }
@@ -421,5 +389,3 @@ template<> struct hash<winrt::Windows::System::Diagnostics::TraceReporting::Plat
 template<> struct hash<winrt::Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceRuntimeInfo> : winrt::impl::hash_base<winrt::Windows::System::Diagnostics::TraceReporting::PlatformDiagnosticTraceRuntimeInfo> {};
 
 }
-
-WINRT_WARNING_POP

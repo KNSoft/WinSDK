@@ -71,6 +71,7 @@ namespace Windows
             [contract(Windows.Foundation.FoundationContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Foundation.Metadata.IApiInformationStatics, Windows.Foundation.FoundationContract, 1.0)]
+            [threading(both)]
             runtimeclass ApiInformation
             {
             }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -101,7 +101,21 @@ template <> struct name<Windows::Foundation::Metadata::GCPressureAmount>{ static
 template <> struct name<Windows::Foundation::Metadata::MarshalingType>{ static constexpr auto & value{ L"Windows.Foundation.Metadata.MarshalingType" }; };
 template <> struct name<Windows::Foundation::Metadata::Platform>{ static constexpr auto & value{ L"Windows.Foundation.Metadata.Platform" }; };
 template <> struct name<Windows::Foundation::Metadata::ThreadingModel>{ static constexpr auto & value{ L"Windows.Foundation.Metadata.ThreadingModel" }; };
-template <> struct guid<Windows::Foundation::Metadata::IApiInformationStatics>{ static constexpr GUID value{ 0x997439FE,0xF681,0x4A11,{ 0xB4,0x16,0xC1,0x3A,0x47,0xE8,0xBA,0x36 } }; };
+template <> struct guid_storage<Windows::Foundation::Metadata::IApiInformationStatics>{ static constexpr guid value{ 0x997439FE,0xF681,0x4A11,{ 0xB4,0x16,0xC1,0x3A,0x47,0xE8,0xBA,0x36 } }; };
+
+template <> struct abi<Windows::Foundation::Metadata::IApiInformationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsTypePresent(void* typeName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsMethodPresent(void* typeName, void* methodName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsMethodPresentWithArity(void* typeName, void* methodName, uint32_t inputParameterCount, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEventPresent(void* typeName, void* eventName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsPropertyPresent(void* typeName, void* propertyName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsReadOnlyPropertyPresent(void* typeName, void* propertyName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsWriteablePropertyPresent(void* typeName, void* propertyName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEnumNamedValuePresent(void* enumTypeName, void* valueName, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsApiContractPresentByMajor(void* contractName, uint16_t majorVersion, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsApiContractPresentByMajorAndMinor(void* contractName, uint16_t majorVersion, uint16_t minorVersion, bool* result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Foundation_Metadata_IApiInformationStatics
@@ -118,19 +132,5 @@ struct consume_Windows_Foundation_Metadata_IApiInformationStatics
     bool IsApiContractPresent(param::hstring const& contractName, uint16_t majorVersion, uint16_t minorVersion) const;
 };
 template <> struct consume<Windows::Foundation::Metadata::IApiInformationStatics> { template <typename D> using type = consume_Windows_Foundation_Metadata_IApiInformationStatics<D>; };
-
-template <> struct abi<Windows::Foundation::Metadata::IApiInformationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsTypePresent(HSTRING typeName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsMethodPresent(HSTRING typeName, HSTRING methodName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsMethodPresentWithArity(HSTRING typeName, HSTRING methodName, uint32_t inputParameterCount, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsEventPresent(HSTRING typeName, HSTRING eventName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsPropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsReadOnlyPropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsWriteablePropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsEnumNamedValuePresent(HSTRING enumTypeName, HSTRING valueName, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsApiContractPresentByMajor(HSTRING contractName, uint16_t majorVersion, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsApiContractPresentByMajorAndMinor(HSTRING contractName, uint16_t majorVersion, uint16_t minorVersion, bool* result) noexcept = 0;
-};};
 
 }

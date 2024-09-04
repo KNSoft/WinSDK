@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.profile.systemmanufacturers.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -108,7 +116,7 @@
 #endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION 0x20000
+#define WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
@@ -159,6 +167,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISmbiosInformationStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                namespace SystemManufacturers {
+                    interface ISystemSupportDeviceInfo;
+                } /* Windows */
+            } /* System */
+        } /* Profile */
+    } /* SystemManufacturers */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo ABI::Windows::System::Profile::SystemManufacturers::ISystemSupportDeviceInfo
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
 namespace ABI {
@@ -174,6 +198,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics ABI::Windows::System::Profile::SystemManufacturers::ISystemSupportInfoStatics
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                namespace SystemManufacturers {
+                    interface ISystemSupportInfoStatics2;
+                } /* Windows */
+            } /* System */
+        } /* Profile */
+    } /* SystemManufacturers */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 ABI::Windows::System::Profile::SystemManufacturers::ISystemSupportInfoStatics2
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
 
 
 namespace ABI {
@@ -202,6 +242,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -213,6 +255,18 @@ namespace ABI {
         } /* Profile */
     } /* SystemManufacturers */} /* ABI */
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                namespace SystemManufacturers {
+                    class SystemSupportDeviceInfo;
+                } /* Windows */
+            } /* System */
+        } /* Profile */
+    } /* SystemManufacturers */} /* ABI */
 
 
 
@@ -316,6 +370,67 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CI
 
 /*
  *
+ * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_SystemManufacturers_ISystemSupportDeviceInfo[] = L"Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                namespace SystemManufacturers {
+                    /* [object, uuid("05880B99-8247-441B-A996-A1784BAB79A8"), exclusiveto, contract] */
+                    MIDL_INTERFACE("05880B99-8247-441B-A996-A1784BAB79A8")
+                    ISystemSupportDeviceInfo : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OperatingSystem(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FriendlyName(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemManufacturer(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemProductName(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemSku(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemHardwareVersion(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SystemFirmwareVersion(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ISystemSupportDeviceInfo=_uuidof(ISystemSupportDeviceInfo);
+                    
+                } /* Windows */
+            } /* System */
+        } /* Profile */
+    } /* SystemManufacturers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics
  *
  * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 2.0
@@ -358,6 +473,49 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemManufacturers.SystemSupportInfo
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_SystemManufacturers_ISystemSupportInfoStatics2[] = L"Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                namespace SystemManufacturers {
+                    /* [object, uuid("33F349A4-3FA1-4986-AA4B-057420455E6D"), exclusiveto, contract] */
+                    MIDL_INTERFACE("33F349A4-3FA1-4986-AA4B-057420455E6D")
+                    ISystemSupportInfoStatics2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LocalDeviceInfo(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::Profile::SystemManufacturers::ISystemSupportDeviceInfo * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ISystemSupportInfoStatics2=_uuidof(ISystemSupportInfoStatics2);
+                    
+                } /* Windows */
+            } /* System */
+        } /* Profile */
+    } /* SystemManufacturers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -407,12 +565,37 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo[] = L"Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo";
+#endif
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.System.Profile.SystemManufacturers.SystemSupportInfo
  *
  * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 2.0
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2 interface starting with version 3.0 of the Windows.System.Profile.SystemManufacturers.SystemManufacturersContract API contract
  *   Static Methods exist on the Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics interface starting with version 2.0 of the Windows.System.Profile.SystemManufacturers.SystemManufacturersContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -445,17 +628,32 @@ typedef interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISmbio
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISmbiosInformationStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics;
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
 
 #endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
+
 
 
 
@@ -675,6 +873,141 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CI
 
 /*
  *
+ * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_SystemManufacturers_ISystemSupportDeviceInfo[] = L"Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo";
+/* [object, uuid("05880B99-8247-441B-A996-A1784BAB79A8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OperatingSystem )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FriendlyName )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SystemManufacturer )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SystemProductName )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SystemSku )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SystemHardwareVersion )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SystemFirmwareVersion )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfoVtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfoVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_OperatingSystem(This,value) \
+    ( (This)->lpVtbl->get_OperatingSystem(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_FriendlyName(This,value) \
+    ( (This)->lpVtbl->get_FriendlyName(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_SystemManufacturer(This,value) \
+    ( (This)->lpVtbl->get_SystemManufacturer(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_SystemProductName(This,value) \
+    ( (This)->lpVtbl->get_SystemProductName(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_SystemSku(This,value) \
+    ( (This)->lpVtbl->get_SystemSku(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_SystemHardwareVersion(This,value) \
+    ( (This)->lpVtbl->get_SystemHardwareVersion(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_get_SystemFirmwareVersion(This,value) \
+    ( (This)->lpVtbl->get_SystemFirmwareVersion(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics
  *
  * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 2.0
@@ -775,6 +1108,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CI
 
 /*
  *
+ * Interface Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemManufacturers.SystemSupportInfo
+ *
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_SystemManufacturers_ISystemSupportInfoStatics2[] = L"Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2";
+/* [object, uuid("33F349A4-3FA1-4986-AA4B-057420455E6D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LocalDeviceInfo )(
+        __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportDeviceInfo * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_get_LocalDeviceInfo(This,value) \
+    ( (This)->lpVtbl->get_LocalDeviceInfo(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CSystemManufacturers_CISystemSupportInfoStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.System.Profile.SystemManufacturers.OemSupportInfo
  *
  * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 2.0
@@ -820,12 +1246,37 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo
+ *
+ * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.Profile.SystemManufacturers.ISystemSupportDeviceInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SystemManufacturers_SystemSupportDeviceInfo[] = L"Windows.System.Profile.SystemManufacturers.SystemSupportDeviceInfo";
+#endif
+#endif // WINDOWS_SYSTEM_PROFILE_SYSTEMMANUFACTURERS_SYSTEMMANUFACTURERSCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Class Windows.System.Profile.SystemManufacturers.SystemSupportInfo
  *
  * Introduced to Windows.System.Profile.SystemManufacturers.SystemManufacturersContract in version 2.0
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics2 interface starting with version 3.0 of the Windows.System.Profile.SystemManufacturers.SystemManufacturersContract API contract
  *   Static Methods exist on the Windows.System.Profile.SystemManufacturers.ISystemSupportInfoStatics interface starting with version 2.0 of the Windows.System.Profile.SystemManufacturers.SystemManufacturersContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment

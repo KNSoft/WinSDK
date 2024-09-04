@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.DirectX.2.h"
@@ -17,9 +17,9 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> GUID consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceInfo<D>::Id() const
+template <typename D> winrt::guid consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceInfo<D>::Id() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo)->get_Id(put_abi(value)));
     return value;
 }
@@ -191,9 +191,9 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gra
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::GetObservedSurfaces() const
+template <typename D> Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::GetObservedSurfaces() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> value{ nullptr };
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver)->GetObservedSurfaces(put_abi(value)));
     return value;
 }
@@ -208,21 +208,21 @@ template <typename D> void consume_Windows_Perception_Spatial_Surfaces_ISpatialS
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver)->SetBoundingVolumes(get_abi(bounds)));
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver)->add_ObservedSurfacesChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver> consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged_revoker consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver>(this, &abi_t<Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver>::remove_ObservedSurfacesChanged, ObservedSurfacesChanged(handler));
+    return impl::make_event_revoker<D, ObservedSurfacesChanged_revoker>(this, ObservedSurfacesChanged(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(event_token const& token) const
+template <typename D> void consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver)->remove_ObservedSurfacesChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver)->remove_ObservedSurfacesChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> consume_Windows_Perception_Spatial_Surfaces_ISpatialSurfaceObserverStatics<D>::RequestAccessAsync() const
@@ -242,508 +242,438 @@ template <typename D> bool consume_Windows_Perception_Spatial_Surfaces_ISpatialS
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo>
 {
-    HRESULT __stdcall get_Id(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Id(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Id());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Id());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UpdateTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_UpdateTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().UpdateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetBounds(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetBounds(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetBounds, WINRT_WRAP(Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingOrientedBox>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingOrientedBox>>(this->shim().TryGetBounds(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, void** value) noexcept final
+    int32_t WINRT_CALL TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryComputeLatestMeshAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>), double);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>>(this->shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, void* options, void** value) noexcept final
+    int32_t WINRT_CALL TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, void* options, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryComputeLatestMeshAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>), double, Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>>(this->shim().TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, *reinterpret_cast<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh>
 {
-    HRESULT __stdcall get_SurfaceInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_SurfaceInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SurfaceInfo, WINRT_WRAP(Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo));
             *value = detach_from<Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>(this->shim().SurfaceInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CoordinateSystem(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSystem, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem));
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().CoordinateSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TriangleIndices(void** value) noexcept final
+    int32_t WINRT_CALL get_TriangleIndices(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriangleIndices, WINRT_WRAP(Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer));
             *value = detach_from<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer>(this->shim().TriangleIndices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VertexPositions(void** value) noexcept final
+    int32_t WINRT_CALL get_VertexPositions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexPositions, WINRT_WRAP(Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer));
             *value = detach_from<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer>(this->shim().VertexPositions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VertexPositionScale(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_VertexPositionScale(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexPositionScale, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().VertexPositionScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VertexNormals(void** value) noexcept final
+    int32_t WINRT_CALL get_VertexNormals(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexNormals, WINRT_WRAP(Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer));
             *value = detach_from<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer>(this->shim().VertexNormals());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer>
 {
-    HRESULT __stdcall get_Format(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_Format(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().Format());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Stride(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Stride(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stride, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Stride());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ElementCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ElementCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ElementCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ElementCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions>
 {
-    HRESULT __stdcall get_VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexPositionFormat, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().VertexPositionFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
+    int32_t WINRT_CALL put_VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexPositionFormat, WINRT_WRAP(void), Windows::Graphics::DirectX::DirectXPixelFormat const&);
             this->shim().VertexPositionFormat(*reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TriangleIndexFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_TriangleIndexFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriangleIndexFormat, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().TriangleIndexFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TriangleIndexFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
+    int32_t WINRT_CALL put_TriangleIndexFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriangleIndexFormat, WINRT_WRAP(void), Windows::Graphics::DirectX::DirectXPixelFormat const&);
             this->shim().TriangleIndexFormat(*reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VertexNormalFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_VertexNormalFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexNormalFormat, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().VertexNormalFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VertexNormalFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
+    int32_t WINRT_CALL put_VertexNormalFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VertexNormalFormat, WINRT_WRAP(void), Windows::Graphics::DirectX::DirectXPixelFormat const&);
             this->shim().VertexNormalFormat(*reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeVertexNormals(bool* value) noexcept final
+    int32_t WINRT_CALL get_IncludeVertexNormals(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeVertexNormals, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IncludeVertexNormals());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncludeVertexNormals(bool value) noexcept final
+    int32_t WINRT_CALL put_IncludeVertexNormals(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeVertexNormals, WINRT_WRAP(void), bool);
             this->shim().IncludeVertexNormals(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>
 {
-    HRESULT __stdcall get_SupportedVertexPositionFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedVertexPositionFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedVertexPositionFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>>(this->shim().SupportedVertexPositionFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedTriangleIndexFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedTriangleIndexFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedTriangleIndexFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>>(this->shim().SupportedTriangleIndexFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedVertexNormalFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedVertexNormalFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedVertexNormalFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat>>(this->shim().SupportedVertexNormalFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver>
 {
-    HRESULT __stdcall GetObservedSurfaces(void** value) noexcept final
+    int32_t WINRT_CALL GetObservedSurfaces(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>>(this->shim().GetObservedSurfaces());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetObservedSurfaces, WINRT_WRAP(Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>));
+            *value = detach_from<Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>>(this->shim().GetObservedSurfaces());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBoundingVolume(void* bounds) noexcept final
+    int32_t WINRT_CALL SetBoundingVolume(void* bounds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBoundingVolume, WINRT_WRAP(void), Windows::Perception::Spatial::SpatialBoundingVolume const&);
             this->shim().SetBoundingVolume(*reinterpret_cast<Windows::Perception::Spatial::SpatialBoundingVolume const*>(&bounds));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBoundingVolumes(void* bounds) noexcept final
+    int32_t WINRT_CALL SetBoundingVolumes(void* bounds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBoundingVolumes, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> const&);
             this->shim().SetBoundingVolumes(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> const*>(&bounds));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ObservedSurfacesChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ObservedSurfacesChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ObservedSurfacesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ObservedSurfacesChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ObservedSurfacesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ObservedSurfacesChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ObservedSurfacesChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ObservedSurfacesChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ObservedSurfacesChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ObservedSurfacesChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>
 {
-    HRESULT __stdcall RequestAccessAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>
 {
-    HRESULT __stdcall IsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -752,36 +682,36 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
 WINRT_EXPORT namespace winrt::Windows::Perception::Spatial::Surfaces {
 
 inline SpatialSurfaceMeshOptions::SpatialSurfaceMeshOptions() :
-    SpatialSurfaceMeshOptions(get_activation_factory<SpatialSurfaceMeshOptions>().ActivateInstance<SpatialSurfaceMeshOptions>())
+    SpatialSurfaceMeshOptions(impl::call_factory<SpatialSurfaceMeshOptions>([](auto&& f) { return f.template ActivateInstance<SpatialSurfaceMeshOptions>(); }))
 {}
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedVertexPositionFormats()
 {
-    return get_activation_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>().SupportedVertexPositionFormats();
+    return impl::call_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>([&](auto&& f) { return f.SupportedVertexPositionFormats(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedTriangleIndexFormats()
 {
-    return get_activation_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>().SupportedTriangleIndexFormats();
+    return impl::call_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>([&](auto&& f) { return f.SupportedTriangleIndexFormats(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::DirectXPixelFormat> SpatialSurfaceMeshOptions::SupportedVertexNormalFormats()
 {
-    return get_activation_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>().SupportedVertexNormalFormats();
+    return impl::call_factory<SpatialSurfaceMeshOptions, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>([&](auto&& f) { return f.SupportedVertexNormalFormats(); });
 }
 
 inline SpatialSurfaceObserver::SpatialSurfaceObserver() :
-    SpatialSurfaceObserver(get_activation_factory<SpatialSurfaceObserver>().ActivateInstance<SpatialSurfaceObserver>())
+    SpatialSurfaceObserver(impl::call_factory<SpatialSurfaceObserver>([](auto&& f) { return f.template ActivateInstance<SpatialSurfaceObserver>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialSurfaceObserver::RequestAccessAsync()
 {
-    return get_activation_factory<SpatialSurfaceObserver, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>().RequestAccessAsync();
+    return impl::call_factory<SpatialSurfaceObserver, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 inline bool SpatialSurfaceObserver::IsSupported()
 {
-    return get_activation_factory<SpatialSurfaceObserver, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>().IsSupported();
+    return impl::call_factory<SpatialSurfaceObserver, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>([&](auto&& f) { return f.IsSupported(); });
 }
 
 }
@@ -803,5 +733,3 @@ template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSur
 template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver> {};
 
 }
-
-WINRT_WARNING_POP

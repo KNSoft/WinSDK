@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.DirectX.Direct3D11.2.h"
@@ -505,1101 +505,957 @@ template <typename D> Windows::Media::Editing::MediaOverlayLayer consume_Windows
 template <typename D>
 struct produce<D, Windows::Media::Editing::IBackgroundAudioTrack> : produce_base<D, Windows::Media::Editing::IBackgroundAudioTrack>
 {
-    HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromStart, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimTimeFromStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromStart, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimTimeFromStart(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromEnd, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimTimeFromEnd());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromEnd, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimTimeFromEnd(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().OriginalDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimmedDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimmedDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserData(void** value) noexcept final
+    int32_t WINRT_CALL get_UserData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserData, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().UserData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Delay(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Delay(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delay, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Delay(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delay, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Delay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Volume(double value) noexcept final
+    int32_t WINRT_CALL put_Volume(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Volume, WINRT_WRAP(void), double);
             this->shim().Volume(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Volume(double* value) noexcept final
+    int32_t WINRT_CALL get_Volume(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Volume, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Volume());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clone(void** value) noexcept final
+    int32_t WINRT_CALL Clone(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Media::Editing::BackgroundAudioTrack));
             *value = detach_from<Windows::Media::Editing::BackgroundAudioTrack>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAudioEncodingProperties(void** value) noexcept final
+    int32_t WINRT_CALL GetAudioEncodingProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioEncodingProperties, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().GetAudioEncodingProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioEffectDefinitions(void** value) noexcept final
+    int32_t WINRT_CALL get_AudioEffectDefinitions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioEffectDefinitions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>>(this->shim().AudioEffectDefinitions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IBackgroundAudioTrackStatics> : produce_base<D, Windows::Media::Editing::IBackgroundAudioTrackStatics>
 {
-    HRESULT __stdcall CreateFromEmbeddedAudioTrack(void* embeddedAudioTrack, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromEmbeddedAudioTrack(void* embeddedAudioTrack, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromEmbeddedAudioTrack, WINRT_WRAP(Windows::Media::Editing::BackgroundAudioTrack), Windows::Media::Editing::EmbeddedAudioTrack const&);
             *value = detach_from<Windows::Media::Editing::BackgroundAudioTrack>(this->shim().CreateFromEmbeddedAudioTrack(*reinterpret_cast<Windows::Media::Editing::EmbeddedAudioTrack const*>(&embeddedAudioTrack)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromFileAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL CreateFromFileAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack>>(this->shim().CreateFromFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IEmbeddedAudioTrack> : produce_base<D, Windows::Media::Editing::IEmbeddedAudioTrack>
 {
-    HRESULT __stdcall GetAudioEncodingProperties(void** value) noexcept final
+    int32_t WINRT_CALL GetAudioEncodingProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioEncodingProperties, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().GetAudioEncodingProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaClip> : produce_base<D, Windows::Media::Editing::IMediaClip>
 {
-    HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromStart, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimTimeFromStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromStart, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimTimeFromStart(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromEnd, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimTimeFromEnd());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimTimeFromEnd, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimTimeFromEnd(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().OriginalDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimmedDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimmedDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserData(void** value) noexcept final
+    int32_t WINRT_CALL get_UserData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserData, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().UserData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clone(void** result) noexcept final
+    int32_t WINRT_CALL Clone(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Media::Editing::MediaClip));
             *result = detach_from<Windows::Media::Editing::MediaClip>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_StartTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTimeInComposition, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().StartTimeInComposition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_EndTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTimeInComposition, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().EndTimeInComposition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EmbeddedAudioTracks(void** value) noexcept final
+    int32_t WINRT_CALL get_EmbeddedAudioTracks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EmbeddedAudioTracks, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Editing::EmbeddedAudioTrack>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Editing::EmbeddedAudioTrack>>(this->shim().EmbeddedAudioTracks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedEmbeddedAudioTrackIndex(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedEmbeddedAudioTrackIndex(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedEmbeddedAudioTrackIndex, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedEmbeddedAudioTrackIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectedEmbeddedAudioTrackIndex(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_SelectedEmbeddedAudioTrackIndex(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedEmbeddedAudioTrackIndex, WINRT_WRAP(void), uint32_t);
             this->shim().SelectedEmbeddedAudioTrackIndex(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Volume(double value) noexcept final
+    int32_t WINRT_CALL put_Volume(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Volume, WINRT_WRAP(void), double);
             this->shim().Volume(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Volume(double* value) noexcept final
+    int32_t WINRT_CALL get_Volume(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Volume, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Volume());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetVideoEncodingProperties(void** value) noexcept final
+    int32_t WINRT_CALL GetVideoEncodingProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVideoEncodingProperties, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().GetVideoEncodingProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioEffectDefinitions(void** value) noexcept final
+    int32_t WINRT_CALL get_AudioEffectDefinitions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioEffectDefinitions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition>>(this->shim().AudioEffectDefinitions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoEffectDefinitions(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoEffectDefinitions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoEffectDefinitions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Effects::IVideoEffectDefinition>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Effects::IVideoEffectDefinition>>(this->shim().VideoEffectDefinitions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaClipStatics> : produce_base<D, Windows::Media::Editing::IMediaClipStatics>
 {
-    HRESULT __stdcall CreateFromColor(struct struct_Windows_UI_Color color, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromColor(struct struct_Windows_UI_Color color, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromColor, WINRT_WRAP(Windows::Media::Editing::MediaClip), Windows::UI::Color const&, Windows::Foundation::TimeSpan const&);
             *value = detach_from<Windows::Media::Editing::MediaClip>(this->shim().CreateFromColor(*reinterpret_cast<Windows::UI::Color const*>(&color), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&originalDuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromFileAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL CreateFromFileAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip>>(this->shim().CreateFromFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromImageFileAsync(void* file, Windows::Foundation::TimeSpan originalDuration, void** operation) noexcept final
+    int32_t WINRT_CALL CreateFromImageFileAsync(void* file, Windows::Foundation::TimeSpan originalDuration, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromImageFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip>), Windows::Storage::IStorageFile const, Windows::Foundation::TimeSpan const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip>>(this->shim().CreateFromImageFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&originalDuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaClipStatics2> : produce_base<D, Windows::Media::Editing::IMediaClipStatics2>
 {
-    HRESULT __stdcall CreateFromSurface(void* surface, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromSurface(void* surface, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromSurface, WINRT_WRAP(Windows::Media::Editing::MediaClip), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const&, Windows::Foundation::TimeSpan const&);
             *value = detach_from<Windows::Media::Editing::MediaClip>(this->shim().CreateFromSurface(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&surface), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&originalDuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaComposition> : produce_base<D, Windows::Media::Editing::IMediaComposition>
 {
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clips(void** value) noexcept final
+    int32_t WINRT_CALL get_Clips(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clips, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip>>(this->shim().Clips());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundAudioTracks(void** value) noexcept final
+    int32_t WINRT_CALL get_BackgroundAudioTracks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundAudioTracks, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Editing::BackgroundAudioTrack>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Editing::BackgroundAudioTrack>>(this->shim().BackgroundAudioTracks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserData(void** value) noexcept final
+    int32_t WINRT_CALL get_UserData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserData, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().UserData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clone(void** result) noexcept final
+    int32_t WINRT_CALL Clone(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Media::Editing::MediaComposition));
             *result = detach_from<Windows::Media::Editing::MediaComposition>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetThumbnailAsync(Windows::Foundation::TimeSpan timeFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept final
+    int32_t WINRT_CALL GetThumbnailAsync(Windows::Foundation::TimeSpan timeFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>), Windows::Foundation::TimeSpan const, int32_t, int32_t, Windows::Media::Editing::VideoFramePrecision const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>>(this->shim().GetThumbnailAsync(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&timeFromStart), scaledWidth, scaledHeight, *reinterpret_cast<Windows::Media::Editing::VideoFramePrecision const*>(&framePrecision)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetThumbnailsAsync(void* timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept final
+    int32_t WINRT_CALL GetThumbnailsAsync(void* timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThumbnailsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>>), Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> const, int32_t, int32_t, Windows::Media::Editing::VideoFramePrecision const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>>>(this->shim().GetThumbnailsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> const*>(&timesFromStart), scaledWidth, scaledHeight, *reinterpret_cast<Windows::Media::Editing::VideoFramePrecision const*>(&framePrecision)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RenderToFileAsync(void* destination, void** operation) noexcept final
+    int32_t WINRT_CALL RenderToFileAsync(void* destination, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderToFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>>(this->shim().RenderToFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&destination)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RenderToFileWithTrimmingPreferenceAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void** operation) noexcept final
+    int32_t WINRT_CALL RenderToFileWithTrimmingPreferenceAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderToFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>), Windows::Storage::IStorageFile const, Windows::Media::Editing::MediaTrimmingPreference const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>>(this->shim().RenderToFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&destination), *reinterpret_cast<Windows::Media::Editing::MediaTrimmingPreference const*>(&trimmingPreference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RenderToFileWithProfileAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void* encodingProfile, void** operation) noexcept final
+    int32_t WINRT_CALL RenderToFileWithProfileAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void* encodingProfile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderToFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>), Windows::Storage::IStorageFile const, Windows::Media::Editing::MediaTrimmingPreference const, Windows::Media::MediaProperties::MediaEncodingProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Transcoding::TranscodeFailureReason, double>>(this->shim().RenderToFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&destination), *reinterpret_cast<Windows::Media::Editing::MediaTrimmingPreference const*>(&trimmingPreference), *reinterpret_cast<Windows::Media::MediaProperties::MediaEncodingProfile const*>(&encodingProfile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDefaultEncodingProfile(void** value) noexcept final
+    int32_t WINRT_CALL CreateDefaultEncodingProfile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDefaultEncodingProfile, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile));
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateDefaultEncodingProfile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GenerateMediaStreamSource(void** value) noexcept final
+    int32_t WINRT_CALL GenerateMediaStreamSource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GenerateMediaStreamSource, WINRT_WRAP(Windows::Media::Core::MediaStreamSource));
             *value = detach_from<Windows::Media::Core::MediaStreamSource>(this->shim().GenerateMediaStreamSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GenerateMediaStreamSourceWithProfile(void* encodingProfile, void** value) noexcept final
+    int32_t WINRT_CALL GenerateMediaStreamSourceWithProfile(void* encodingProfile, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GenerateMediaStreamSource, WINRT_WRAP(Windows::Media::Core::MediaStreamSource), Windows::Media::MediaProperties::MediaEncodingProfile const&);
             *value = detach_from<Windows::Media::Core::MediaStreamSource>(this->shim().GenerateMediaStreamSource(*reinterpret_cast<Windows::Media::MediaProperties::MediaEncodingProfile const*>(&encodingProfile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight, void** value) noexcept final
+    int32_t WINRT_CALL GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeneratePreviewMediaStreamSource, WINRT_WRAP(Windows::Media::Core::MediaStreamSource), int32_t, int32_t);
             *value = detach_from<Windows::Media::Core::MediaStreamSource>(this->shim().GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaComposition2> : produce_base<D, Windows::Media::Editing::IMediaComposition2>
 {
-    HRESULT __stdcall get_OverlayLayers(void** value) noexcept final
+    int32_t WINRT_CALL get_OverlayLayers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OverlayLayers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer>>(this->shim().OverlayLayers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaCompositionStatics> : produce_base<D, Windows::Media::Editing::IMediaCompositionStatics>
 {
-    HRESULT __stdcall LoadAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL LoadAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition>), Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition>>(this->shim().LoadAsync(*reinterpret_cast<Windows::Storage::StorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaOverlay> : produce_base<D, Windows::Media::Editing::IMediaOverlay>
 {
-    HRESULT __stdcall get_Position(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Position(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_Position(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Position(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Delay(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Delay(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delay, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Delay(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delay, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Delay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Opacity(double* value) noexcept final
+    int32_t WINRT_CALL get_Opacity(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Opacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Opacity(double value) noexcept final
+    int32_t WINRT_CALL put_Opacity(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(void), double);
             this->shim().Opacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clone(void** result) noexcept final
+    int32_t WINRT_CALL Clone(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Media::Editing::MediaOverlay));
             *result = detach_from<Windows::Media::Editing::MediaOverlay>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clip(void** value) noexcept final
+    int32_t WINRT_CALL get_Clip(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clip, WINRT_WRAP(Windows::Media::Editing::MediaClip));
             *value = detach_from<Windows::Media::Editing::MediaClip>(this->shim().Clip());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AudioEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AudioEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AudioEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_AudioEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioEnabled, WINRT_WRAP(void), bool);
             this->shim().AudioEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaOverlayFactory> : produce_base<D, Windows::Media::Editing::IMediaOverlayFactory>
 {
-    HRESULT __stdcall Create(void* clip, void** mediaOverlay) noexcept final
+    int32_t WINRT_CALL Create(void* clip, void** mediaOverlay) noexcept final
     {
         try
         {
             *mediaOverlay = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Editing::MediaOverlay), Windows::Media::Editing::MediaClip const&);
             *mediaOverlay = detach_from<Windows::Media::Editing::MediaOverlay>(this->shim().Create(*reinterpret_cast<Windows::Media::Editing::MediaClip const*>(&clip)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithPositionAndOpacity(void* clip, Windows::Foundation::Rect position, double opacity, void** mediaOverlay) noexcept final
+    int32_t WINRT_CALL CreateWithPositionAndOpacity(void* clip, Windows::Foundation::Rect position, double opacity, void** mediaOverlay) noexcept final
     {
         try
         {
             *mediaOverlay = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithPositionAndOpacity, WINRT_WRAP(Windows::Media::Editing::MediaOverlay), Windows::Media::Editing::MediaClip const&, Windows::Foundation::Rect const&, double);
             *mediaOverlay = detach_from<Windows::Media::Editing::MediaOverlay>(this->shim().CreateWithPositionAndOpacity(*reinterpret_cast<Windows::Media::Editing::MediaClip const*>(&clip), *reinterpret_cast<Windows::Foundation::Rect const*>(&position), opacity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaOverlayLayer> : produce_base<D, Windows::Media::Editing::IMediaOverlayLayer>
 {
-    HRESULT __stdcall Clone(void** result) noexcept final
+    int32_t WINRT_CALL Clone(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Media::Editing::MediaOverlayLayer));
             *result = detach_from<Windows::Media::Editing::MediaOverlayLayer>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Overlays(void** value) noexcept final
+    int32_t WINRT_CALL get_Overlays(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Overlays, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay>>(this->shim().Overlays());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomCompositorDefinition(void** value) noexcept final
+    int32_t WINRT_CALL get_CustomCompositorDefinition(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomCompositorDefinition, WINRT_WRAP(Windows::Media::Effects::IVideoCompositorDefinition));
             *value = detach_from<Windows::Media::Effects::IVideoCompositorDefinition>(this->shim().CustomCompositorDefinition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Editing::IMediaOverlayLayerFactory> : produce_base<D, Windows::Media::Editing::IMediaOverlayLayerFactory>
 {
-    HRESULT __stdcall CreateWithCompositorDefinition(void* compositorDefinition, void** mediaOverlayLayer) noexcept final
+    int32_t WINRT_CALL CreateWithCompositorDefinition(void* compositorDefinition, void** mediaOverlayLayer) noexcept final
     {
         try
         {
             *mediaOverlayLayer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithCompositorDefinition, WINRT_WRAP(Windows::Media::Editing::MediaOverlayLayer), Windows::Media::Effects::IVideoCompositorDefinition const&);
             *mediaOverlayLayer = detach_from<Windows::Media::Editing::MediaOverlayLayer>(this->shim().CreateWithCompositorDefinition(*reinterpret_cast<Windows::Media::Effects::IVideoCompositorDefinition const*>(&compositorDefinition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1609,57 +1465,57 @@ WINRT_EXPORT namespace winrt::Windows::Media::Editing {
 
 inline Windows::Media::Editing::BackgroundAudioTrack BackgroundAudioTrack::CreateFromEmbeddedAudioTrack(Windows::Media::Editing::EmbeddedAudioTrack const& embeddedAudioTrack)
 {
-    return get_activation_factory<BackgroundAudioTrack, Windows::Media::Editing::IBackgroundAudioTrackStatics>().CreateFromEmbeddedAudioTrack(embeddedAudioTrack);
+    return impl::call_factory<BackgroundAudioTrack, Windows::Media::Editing::IBackgroundAudioTrackStatics>([&](auto&& f) { return f.CreateFromEmbeddedAudioTrack(embeddedAudioTrack); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> BackgroundAudioTrack::CreateFromFileAsync(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<BackgroundAudioTrack, Windows::Media::Editing::IBackgroundAudioTrackStatics>().CreateFromFileAsync(file);
+    return impl::call_factory<BackgroundAudioTrack, Windows::Media::Editing::IBackgroundAudioTrackStatics>([&](auto&& f) { return f.CreateFromFileAsync(file); });
 }
 
 inline Windows::Media::Editing::MediaClip MediaClip::CreateFromColor(Windows::UI::Color const& color, Windows::Foundation::TimeSpan const& originalDuration)
 {
-    return get_activation_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>().CreateFromColor(color, originalDuration);
+    return impl::call_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>([&](auto&& f) { return f.CreateFromColor(color, originalDuration); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> MediaClip::CreateFromFileAsync(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>().CreateFromFileAsync(file);
+    return impl::call_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>([&](auto&& f) { return f.CreateFromFileAsync(file); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> MediaClip::CreateFromImageFileAsync(Windows::Storage::IStorageFile const& file, Windows::Foundation::TimeSpan const& originalDuration)
 {
-    return get_activation_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>().CreateFromImageFileAsync(file, originalDuration);
+    return impl::call_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics>([&](auto&& f) { return f.CreateFromImageFileAsync(file, originalDuration); });
 }
 
 inline Windows::Media::Editing::MediaClip MediaClip::CreateFromSurface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const& surface, Windows::Foundation::TimeSpan const& originalDuration)
 {
-    return get_activation_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics2>().CreateFromSurface(surface, originalDuration);
+    return impl::call_factory<MediaClip, Windows::Media::Editing::IMediaClipStatics2>([&](auto&& f) { return f.CreateFromSurface(surface, originalDuration); });
 }
 
 inline MediaComposition::MediaComposition() :
-    MediaComposition(get_activation_factory<MediaComposition>().ActivateInstance<MediaComposition>())
+    MediaComposition(impl::call_factory<MediaComposition>([](auto&& f) { return f.template ActivateInstance<MediaComposition>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> MediaComposition::LoadAsync(Windows::Storage::StorageFile const& file)
 {
-    return get_activation_factory<MediaComposition, Windows::Media::Editing::IMediaCompositionStatics>().LoadAsync(file);
+    return impl::call_factory<MediaComposition, Windows::Media::Editing::IMediaCompositionStatics>([&](auto&& f) { return f.LoadAsync(file); });
 }
 
 inline MediaOverlay::MediaOverlay(Windows::Media::Editing::MediaClip const& clip) :
-    MediaOverlay(get_activation_factory<MediaOverlay, Windows::Media::Editing::IMediaOverlayFactory>().Create(clip))
+    MediaOverlay(impl::call_factory<MediaOverlay, Windows::Media::Editing::IMediaOverlayFactory>([&](auto&& f) { return f.Create(clip); }))
 {}
 
 inline MediaOverlay::MediaOverlay(Windows::Media::Editing::MediaClip const& clip, Windows::Foundation::Rect const& position, double opacity) :
-    MediaOverlay(get_activation_factory<MediaOverlay, Windows::Media::Editing::IMediaOverlayFactory>().CreateWithPositionAndOpacity(clip, position, opacity))
+    MediaOverlay(impl::call_factory<MediaOverlay, Windows::Media::Editing::IMediaOverlayFactory>([&](auto&& f) { return f.CreateWithPositionAndOpacity(clip, position, opacity); }))
 {}
 
 inline MediaOverlayLayer::MediaOverlayLayer() :
-    MediaOverlayLayer(get_activation_factory<MediaOverlayLayer>().ActivateInstance<MediaOverlayLayer>())
+    MediaOverlayLayer(impl::call_factory<MediaOverlayLayer>([](auto&& f) { return f.template ActivateInstance<MediaOverlayLayer>(); }))
 {}
 
 inline MediaOverlayLayer::MediaOverlayLayer(Windows::Media::Effects::IVideoCompositorDefinition const& compositorDefinition) :
-    MediaOverlayLayer(get_activation_factory<MediaOverlayLayer, Windows::Media::Editing::IMediaOverlayLayerFactory>().CreateWithCompositorDefinition(compositorDefinition))
+    MediaOverlayLayer(impl::call_factory<MediaOverlayLayer, Windows::Media::Editing::IMediaOverlayLayerFactory>([&](auto&& f) { return f.CreateWithCompositorDefinition(compositorDefinition); }))
 {}
 
 }
@@ -1687,5 +1543,3 @@ template<> struct hash<winrt::Windows::Media::Editing::MediaOverlay> : winrt::im
 template<> struct hash<winrt::Windows::Media::Editing::MediaOverlayLayer> : winrt::impl::hash_base<winrt::Windows::Media::Editing::MediaOverlayLayer> {};
 
 }
-
-WINRT_WARNING_POP

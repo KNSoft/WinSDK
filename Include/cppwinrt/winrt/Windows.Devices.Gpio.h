@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Gpio.Provider.2.h"
@@ -219,21 +219,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Gpi
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Gpio::IGpioPin)->add_ValueChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Gpio::IGpioPin> consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged_revoker consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Gpio::IGpioPin>(this, &abi_t<Windows::Devices::Gpio::IGpioPin>::remove_ValueChanged, ValueChanged(handler));
+    return impl::make_event_revoker<D, ValueChanged_revoker>(this, ValueChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Gpio_IGpioPin<D>::ValueChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Gpio::IGpioPin)->remove_ValueChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Gpio::IGpioPin)->remove_ValueChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan consume_Windows_Devices_Gpio_IGpioPin<D>::DebounceTimeout() const
@@ -303,649 +303,559 @@ template <typename D> Windows::Devices::Gpio::GpioPinEdge consume_Windows_Device
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioChangeCounter> : produce_base<D, Windows::Devices::Gpio::IGpioChangeCounter>
 {
-    HRESULT __stdcall put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept final
+    int32_t WINRT_CALL put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(void), Windows::Devices::Gpio::GpioChangePolarity const&);
             this->shim().Polarity(*reinterpret_cast<Windows::Devices::Gpio::GpioChangePolarity const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept final
+    int32_t WINRT_CALL get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(Windows::Devices::Gpio::GpioChangePolarity));
             *value = detach_from<Windows::Devices::Gpio::GpioChangePolarity>(this->shim().Polarity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStarted(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStarted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStarted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStarted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Read(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept final
+    int32_t WINRT_CALL Read(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Read, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeCount));
             *value = detach_from<Windows::Devices::Gpio::GpioChangeCount>(this->shim().Read());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Reset(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept final
+    int32_t WINRT_CALL Reset(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reset, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeCount));
             *value = detach_from<Windows::Devices::Gpio::GpioChangeCount>(this->shim().Reset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioChangeCounterFactory> : produce_base<D, Windows::Devices::Gpio::IGpioChangeCounterFactory>
 {
-    HRESULT __stdcall Create(void* pin, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* pin, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeCounter), Windows::Devices::Gpio::GpioPin const&);
             *value = detach_from<Windows::Devices::Gpio::GpioChangeCounter>(this->shim().Create(*reinterpret_cast<Windows::Devices::Gpio::GpioPin const*>(&pin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioChangeReader> : produce_base<D, Windows::Devices::Gpio::IGpioChangeReader>
 {
-    HRESULT __stdcall get_Capacity(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Capacity(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capacity, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Capacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEmpty(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEmpty(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEmpty, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEmpty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOverflowed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOverflowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOverflowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOverflowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept final
+    int32_t WINRT_CALL put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(void), Windows::Devices::Gpio::GpioChangePolarity const&);
             this->shim().Polarity(*reinterpret_cast<Windows::Devices::Gpio::GpioChangePolarity const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept final
+    int32_t WINRT_CALL get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(Windows::Devices::Gpio::GpioChangePolarity));
             *value = detach_from<Windows::Devices::Gpio::GpioChangePolarity>(this->shim().Polarity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStarted(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStarted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStarted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStarted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept final
+    int32_t WINRT_CALL GetNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNextItem, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeRecord));
             *value = detach_from<Windows::Devices::Gpio::GpioChangeRecord>(this->shim().GetNextItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PeekNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept final
+    int32_t WINRT_CALL PeekNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeekNextItem, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeRecord));
             *value = detach_from<Windows::Devices::Gpio::GpioChangeRecord>(this->shim().PeekNextItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAllItems(void** value) noexcept final
+    int32_t WINRT_CALL GetAllItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAllItems, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Gpio::GpioChangeRecord>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Gpio::GpioChangeRecord>>(this->shim().GetAllItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WaitForItemsAsync(int32_t count, void** operation) noexcept final
+    int32_t WINRT_CALL WaitForItemsAsync(int32_t count, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().WaitForItemsAsync(count));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioChangeReaderFactory> : produce_base<D, Windows::Devices::Gpio::IGpioChangeReaderFactory>
 {
-    HRESULT __stdcall Create(void* pin, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* pin, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeReader), Windows::Devices::Gpio::GpioPin const&);
             *value = detach_from<Windows::Devices::Gpio::GpioChangeReader>(this->shim().Create(*reinterpret_cast<Windows::Devices::Gpio::GpioPin const*>(&pin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithCapacity(void* pin, int32_t minCapacity, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithCapacity(void* pin, int32_t minCapacity, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithCapacity, WINRT_WRAP(Windows::Devices::Gpio::GpioChangeReader), Windows::Devices::Gpio::GpioPin const&, int32_t);
             *value = detach_from<Windows::Devices::Gpio::GpioChangeReader>(this->shim().CreateWithCapacity(*reinterpret_cast<Windows::Devices::Gpio::GpioPin const*>(&pin), minCapacity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Windows::Devices::Gpio::IGpioController>
 {
-    HRESULT __stdcall get_PinCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PinCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PinCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenPin(int32_t pinNumber, void** pin) noexcept final
+    int32_t WINRT_CALL OpenPin(int32_t pinNumber, void** pin) noexcept final
     {
         try
         {
             *pin = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenPin, WINRT_WRAP(Windows::Devices::Gpio::GpioPin), int32_t);
             *pin = detach_from<Windows::Devices::Gpio::GpioPin>(this->shim().OpenPin(pinNumber));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenPinWithSharingMode(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin) noexcept final
+    int32_t WINRT_CALL OpenPinWithSharingMode(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin) noexcept final
     {
         try
         {
             *pin = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenPin, WINRT_WRAP(Windows::Devices::Gpio::GpioPin), int32_t, Windows::Devices::Gpio::GpioSharingMode const&);
             *pin = detach_from<Windows::Devices::Gpio::GpioPin>(this->shim().OpenPin(pinNumber, *reinterpret_cast<Windows::Devices::Gpio::GpioSharingMode const*>(&sharingMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin, Windows::Devices::Gpio::GpioOpenStatus* openStatus, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin, Windows::Devices::Gpio::GpioOpenStatus* openStatus, bool* succeeded) noexcept final
     {
         try
         {
             *pin = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryOpenPin, WINRT_WRAP(bool), int32_t, Windows::Devices::Gpio::GpioSharingMode const&, Windows::Devices::Gpio::GpioPin&, Windows::Devices::Gpio::GpioOpenStatus&);
             *succeeded = detach_from<bool>(this->shim().TryOpenPin(pinNumber, *reinterpret_cast<Windows::Devices::Gpio::GpioSharingMode const*>(&sharingMode), *reinterpret_cast<Windows::Devices::Gpio::GpioPin*>(pin), *reinterpret_cast<Windows::Devices::Gpio::GpioOpenStatus*>(openStatus)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioControllerStatics> : produce_base<D, Windows::Devices::Gpio::IGpioControllerStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Devices::Gpio::GpioController));
             *value = detach_from<Windows::Devices::Gpio::GpioController>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioControllerStatics2> : produce_base<D, Windows::Devices::Gpio::IGpioControllerStatics2>
 {
-    HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept final
+    int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetControllersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>>), Windows::Devices::Gpio::Provider::IGpioProvider const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>>>(this->shim().GetControllersAsync(*reinterpret_cast<Windows::Devices::Gpio::Provider::IGpioProvider const*>(&provider)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController>>(this->shim().GetDefaultAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioPin> : produce_base<D, Windows::Devices::Gpio::IGpioPin>
 {
-    HRESULT __stdcall add_ValueChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ValueChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ValueChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ValueChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ValueChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ValueChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ValueChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ValueChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ValueChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ValueChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_DebounceTimeout(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DebounceTimeout(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DebounceTimeout, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DebounceTimeout());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DebounceTimeout(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_DebounceTimeout(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DebounceTimeout, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().DebounceTimeout(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PinNumber(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PinNumber(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinNumber, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PinNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SharingMode(Windows::Devices::Gpio::GpioSharingMode* value) noexcept final
+    int32_t WINRT_CALL get_SharingMode(Windows::Devices::Gpio::GpioSharingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharingMode, WINRT_WRAP(Windows::Devices::Gpio::GpioSharingMode));
             *value = detach_from<Windows::Devices::Gpio::GpioSharingMode>(this->shim().SharingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode, bool* supported) noexcept final
+    int32_t WINRT_CALL IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode, bool* supported) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDriveModeSupported, WINRT_WRAP(bool), Windows::Devices::Gpio::GpioPinDriveMode const&);
             *supported = detach_from<bool>(this->shim().IsDriveModeSupported(*reinterpret_cast<Windows::Devices::Gpio::GpioPinDriveMode const*>(&driveMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode* value) noexcept final
+    int32_t WINRT_CALL GetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDriveMode, WINRT_WRAP(Windows::Devices::Gpio::GpioPinDriveMode));
             *value = detach_from<Windows::Devices::Gpio::GpioPinDriveMode>(this->shim().GetDriveMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) noexcept final
+    int32_t WINRT_CALL SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDriveMode, WINRT_WRAP(void), Windows::Devices::Gpio::GpioPinDriveMode const&);
             this->shim().SetDriveMode(*reinterpret_cast<Windows::Devices::Gpio::GpioPinDriveMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Write(Windows::Devices::Gpio::GpioPinValue value) noexcept final
+    int32_t WINRT_CALL Write(Windows::Devices::Gpio::GpioPinValue value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Write, WINRT_WRAP(void), Windows::Devices::Gpio::GpioPinValue const&);
             this->shim().Write(*reinterpret_cast<Windows::Devices::Gpio::GpioPinValue const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Read(Windows::Devices::Gpio::GpioPinValue* value) noexcept final
+    int32_t WINRT_CALL Read(Windows::Devices::Gpio::GpioPinValue* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Read, WINRT_WRAP(Windows::Devices::Gpio::GpioPinValue));
             *value = detach_from<Windows::Devices::Gpio::GpioPinValue>(this->shim().Read());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Gpio::IGpioPinValueChangedEventArgs> : produce_base<D, Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>
 {
-    HRESULT __stdcall get_Edge(Windows::Devices::Gpio::GpioPinEdge* value) noexcept final
+    int32_t WINRT_CALL get_Edge(Windows::Devices::Gpio::GpioPinEdge* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Edge, WINRT_WRAP(Windows::Devices::Gpio::GpioPinEdge));
             *value = detach_from<Windows::Devices::Gpio::GpioPinEdge>(this->shim().Edge());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -954,30 +864,30 @@ struct produce<D, Windows::Devices::Gpio::IGpioPinValueChangedEventArgs> : produ
 WINRT_EXPORT namespace winrt::Windows::Devices::Gpio {
 
 inline GpioChangeCounter::GpioChangeCounter(Windows::Devices::Gpio::GpioPin const& pin) :
-    GpioChangeCounter(get_activation_factory<GpioChangeCounter, Windows::Devices::Gpio::IGpioChangeCounterFactory>().Create(pin))
+    GpioChangeCounter(impl::call_factory<GpioChangeCounter, Windows::Devices::Gpio::IGpioChangeCounterFactory>([&](auto&& f) { return f.Create(pin); }))
 {}
 
 inline GpioChangeReader::GpioChangeReader(Windows::Devices::Gpio::GpioPin const& pin) :
-    GpioChangeReader(get_activation_factory<GpioChangeReader, Windows::Devices::Gpio::IGpioChangeReaderFactory>().Create(pin))
+    GpioChangeReader(impl::call_factory<GpioChangeReader, Windows::Devices::Gpio::IGpioChangeReaderFactory>([&](auto&& f) { return f.Create(pin); }))
 {}
 
 inline GpioChangeReader::GpioChangeReader(Windows::Devices::Gpio::GpioPin const& pin, int32_t minCapacity) :
-    GpioChangeReader(get_activation_factory<GpioChangeReader, Windows::Devices::Gpio::IGpioChangeReaderFactory>().CreateWithCapacity(pin, minCapacity))
+    GpioChangeReader(impl::call_factory<GpioChangeReader, Windows::Devices::Gpio::IGpioChangeReaderFactory>([&](auto&& f) { return f.CreateWithCapacity(pin, minCapacity); }))
 {}
 
 inline Windows::Devices::Gpio::GpioController GpioController::GetDefault()
 {
-    return get_activation_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics>().GetDefault();
+    return impl::call_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> GpioController::GetControllersAsync(Windows::Devices::Gpio::Provider::IGpioProvider const& provider)
 {
-    return get_activation_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics2>().GetControllersAsync(provider);
+    return impl::call_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics2>([&](auto&& f) { return f.GetControllersAsync(provider); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> GpioController::GetDefaultAsync()
 {
-    return get_activation_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics2>().GetDefaultAsync();
+    return impl::call_factory<GpioController, Windows::Devices::Gpio::IGpioControllerStatics2>([&](auto&& f) { return f.GetDefaultAsync(); });
 }
 
 }
@@ -1000,5 +910,3 @@ template<> struct hash<winrt::Windows::Devices::Gpio::GpioPin> : winrt::impl::ha
 template<> struct hash<winrt::Windows::Devices::Gpio::GpioPinValueChangedEventArgs> : winrt::impl::hash_base<winrt::Windows::Devices::Gpio::GpioPinValueChangedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

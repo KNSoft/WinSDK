@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -437,58 +437,58 @@ template <> struct name<Windows::Networking::Vpn::VpnManagementErrorStatus>{ sta
 template <> struct name<Windows::Networking::Vpn::VpnNativeProtocolType>{ static constexpr auto & value{ L"Windows.Networking.Vpn.VpnNativeProtocolType" }; };
 template <> struct name<Windows::Networking::Vpn::VpnPacketBufferStatus>{ static constexpr auto & value{ L"Windows.Networking.Vpn.VpnPacketBufferStatus" }; };
 template <> struct name<Windows::Networking::Vpn::VpnRoutingPolicyType>{ static constexpr auto & value{ L"Windows.Networking.Vpn.VpnRoutingPolicyType" }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnAppId>{ static constexpr GUID value{ 0x7B06A635,0x5C58,0x41D9,{ 0x94,0xA7,0xBF,0xBC,0xF1,0xD8,0xCA,0x54 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnAppIdFactory>{ static constexpr GUID value{ 0x46ADFD2A,0x0AAB,0x4FDB,{ 0x82,0x1D,0xD3,0xDD,0xC9,0x19,0x78,0x8B } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannel>{ static constexpr GUID value{ 0x4AC78D07,0xD1A8,0x4303,{ 0xA0,0x91,0xC8,0xD2,0xE0,0x91,0x5B,0xC3 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannel2>{ static constexpr GUID value{ 0x2255D165,0x993B,0x4629,{ 0xAD,0x60,0xF1,0xC3,0xF3,0x53,0x7F,0x50 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannel4>{ static constexpr GUID value{ 0xD7266EDE,0x2937,0x419D,{ 0x95,0x70,0x48,0x6A,0xEB,0xB8,0x18,0x03 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannelActivityEventArgs>{ static constexpr GUID value{ 0xA36C88F2,0xAFDC,0x4775,{ 0x85,0x5D,0xD4,0xAC,0x0A,0x35,0xFC,0x55 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>{ static constexpr GUID value{ 0x3D750565,0xFDC0,0x4BBE,{ 0xA2,0x3B,0x45,0xFF,0xFC,0x6D,0x97,0xA1 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannelConfiguration>{ static constexpr GUID value{ 0x0E2DDCA2,0x2012,0x4FE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x7E } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannelConfiguration2>{ static constexpr GUID value{ 0xF30B574C,0x7824,0x471C,{ 0xA1,0x18,0x63,0xDB,0xC9,0x3A,0xE4,0xC7 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnChannelStatics>{ static constexpr GUID value{ 0x88EB062D,0xE818,0x4FFD,{ 0x98,0xA6,0x36,0x3E,0x37,0x36,0xC9,0x5D } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCredential>{ static constexpr GUID value{ 0xB7E78AF3,0xA46D,0x404B,{ 0x87,0x29,0x18,0x32,0x52,0x28,0x53,0xAC } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomCheckBox>{ static constexpr GUID value{ 0x43878753,0x03C5,0x4E61,{ 0x93,0xD7,0xA9,0x57,0x71,0x4C,0x42,0x82 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomComboBox>{ static constexpr GUID value{ 0x9A24158E,0xDBA1,0x4C6F,{ 0x82,0x70,0xDC,0xF3,0xC9,0x76,0x1C,0x4C } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomEditBox>{ static constexpr GUID value{ 0x3002D9A0,0xCFBF,0x4C0B,{ 0x8F,0x3C,0x66,0xF5,0x03,0xC2,0x0B,0x39 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomErrorBox>{ static constexpr GUID value{ 0x9EC4EFB2,0xC942,0x42AF,{ 0xB2,0x23,0x58,0x8B,0x48,0x32,0x87,0x21 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPrompt>{ static constexpr GUID value{ 0x9B2EBE7B,0x87D5,0x433C,{ 0xB4,0xF6,0xEE,0xE6,0xAA,0x68,0xA2,0x44 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>{ static constexpr GUID value{ 0xC4C9A69E,0xFF47,0x4527,{ 0x9F,0x27,0xA4,0x92,0x92,0x01,0x99,0x79 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPromptElement>{ static constexpr GUID value{ 0x73BD5638,0x6F04,0x404D,{ 0x93,0xDD,0x50,0xA4,0x49,0x24,0xA3,0x8B } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>{ static constexpr GUID value{ 0x3B8F34D9,0x8EC1,0x4E95,{ 0x9A,0x4E,0x7B,0xA6,0x4D,0x38,0xF3,0x30 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPromptText>{ static constexpr GUID value{ 0x3BC8BDEE,0x3A42,0x49A3,{ 0xAB,0xDD,0x07,0xB2,0xED,0xEA,0x75,0x2D } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomPromptTextInput>{ static constexpr GUID value{ 0xC9DA9C75,0x913C,0x47D5,{ 0x88,0xBA,0x48,0xFC,0x48,0x93,0x02,0x35 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnCustomTextBox>{ static constexpr GUID value{ 0xDAA4C3CA,0x8F23,0x4D36,{ 0x91,0xF1,0x76,0xD9,0x37,0x82,0x79,0x42 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnDomainNameAssignment>{ static constexpr GUID value{ 0x4135B141,0xCCDB,0x49B5,{ 0x94,0x01,0x03,0x9A,0x8A,0xE7,0x67,0xE9 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnDomainNameInfo>{ static constexpr GUID value{ 0xAD2EB82F,0xEA8E,0x4F7A,{ 0x84,0x3E,0x1A,0x87,0xE3,0x2E,0x1B,0x9A } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnDomainNameInfo2>{ static constexpr GUID value{ 0xAB871151,0x6C53,0x4828,{ 0x98,0x83,0xD8,0x86,0xDE,0x10,0x44,0x07 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnDomainNameInfoFactory>{ static constexpr GUID value{ 0x2507BB75,0x028F,0x4688,{ 0x8D,0x3A,0xC4,0x53,0x1D,0xF3,0x7D,0xA8 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnInterfaceId>{ static constexpr GUID value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x11 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnInterfaceIdFactory>{ static constexpr GUID value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x00 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnManagementAgent>{ static constexpr GUID value{ 0x193696CD,0xA5C4,0x4ABE,{ 0x85,0x2B,0x78,0x5B,0xE4,0xCB,0x3E,0x34 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnNamespaceAssignment>{ static constexpr GUID value{ 0xD7F7DB18,0x307D,0x4C0E,{ 0xBD,0x62,0x8F,0xA2,0x70,0xBB,0xAD,0xD6 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnNamespaceInfo>{ static constexpr GUID value{ 0x30EDFB43,0x444F,0x44C5,{ 0x81,0x67,0xA3,0x5A,0x91,0xF1,0xAF,0x94 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnNamespaceInfoFactory>{ static constexpr GUID value{ 0xCB3E951A,0xB0CE,0x442B,{ 0xAC,0xBB,0x5F,0x99,0xB2,0x02,0xC3,0x1C } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnNativeProfile>{ static constexpr GUID value{ 0xA4AEE29E,0x6417,0x4333,{ 0x98,0x42,0xF0,0xA6,0x6D,0xB6,0x98,0x02 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnNativeProfile2>{ static constexpr GUID value{ 0x0FEC2467,0xCDB5,0x4AC7,{ 0xB5,0xA3,0x0A,0xFB,0x5E,0xC4,0x76,0x82 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBuffer>{ static constexpr GUID value{ 0xC2F891FC,0x4D5C,0x4A63,{ 0xB7,0x0D,0x4E,0x30,0x7E,0xAC,0xCE,0x55 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBuffer2>{ static constexpr GUID value{ 0x665E91F0,0x8805,0x4BF5,{ 0xA6,0x19,0x2E,0x84,0x88,0x2E,0x6B,0x4F } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBuffer3>{ static constexpr GUID value{ 0xE256072F,0x107B,0x4C40,{ 0xB1,0x27,0x5B,0xC5,0x3E,0x0A,0xD9,0x60 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBufferFactory>{ static constexpr GUID value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x99,0x99 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBufferList>{ static constexpr GUID value{ 0xC2F891FC,0x4D5C,0x4A63,{ 0xB7,0x0D,0x4E,0x30,0x7E,0xAC,0xCE,0x77 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPacketBufferList2>{ static constexpr GUID value{ 0x3E7ACFE5,0xEA1E,0x482A,{ 0x8D,0x98,0xC0,0x65,0xF5,0x7D,0x89,0xEA } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPickedCredential>{ static constexpr GUID value{ 0x9A793AC7,0x8854,0x4E52,{ 0xAD,0x97,0x24,0xDD,0x9A,0x84,0x2B,0xCE } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPlugIn>{ static constexpr GUID value{ 0xCEB78D07,0xD0A8,0x4703,{ 0xA0,0x91,0xC8,0xC2,0xC0,0x91,0x5B,0xC4 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPlugInProfile>{ static constexpr GUID value{ 0x0EDF0DA4,0x4F00,0x4589,{ 0x8D,0x7B,0x4B,0xF9,0x88,0xF6,0x54,0x2C } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnPlugInProfile2>{ static constexpr GUID value{ 0x611C4892,0xCF94,0x4AD6,{ 0xBA,0x99,0x00,0xF4,0xFF,0x34,0x56,0x5E } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnProfile>{ static constexpr GUID value{ 0x7875B751,0xB0D7,0x43DB,{ 0x8A,0x93,0xD3,0xFE,0x24,0x79,0xE5,0x6A } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnRoute>{ static constexpr GUID value{ 0xB5731B83,0x0969,0x4699,{ 0x93,0x8E,0x77,0x76,0xDB,0x29,0xCF,0xB3 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnRouteAssignment>{ static constexpr GUID value{ 0xDB64DE22,0xCE39,0x4A76,{ 0x95,0x50,0xF6,0x10,0x39,0xF8,0x0E,0x48 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnRouteFactory>{ static constexpr GUID value{ 0xBDEAB5FF,0x45CF,0x4B99,{ 0x83,0xFB,0xDB,0x3B,0xC2,0x67,0x2B,0x02 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnSystemHealth>{ static constexpr GUID value{ 0x99A8F8AF,0xC0EE,0x4E75,{ 0x81,0x7A,0xF2,0x31,0xAE,0xE5,0x12,0x3D } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnTrafficFilter>{ static constexpr GUID value{ 0x2F691B60,0x6C9F,0x47F5,{ 0xAC,0x36,0xBB,0x1B,0x04,0x2E,0x2C,0x50 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnTrafficFilterAssignment>{ static constexpr GUID value{ 0x56CCD45C,0xE664,0x471E,{ 0x89,0xCD,0x60,0x16,0x03,0xB9,0xE0,0xF3 } }; };
-template <> struct guid<Windows::Networking::Vpn::IVpnTrafficFilterFactory>{ static constexpr GUID value{ 0x480D41D5,0x7F99,0x474C,{ 0x86,0xEE,0x96,0xDF,0x16,0x83,0x18,0xF1 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnAppId>{ static constexpr guid value{ 0x7B06A635,0x5C58,0x41D9,{ 0x94,0xA7,0xBF,0xBC,0xF1,0xD8,0xCA,0x54 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnAppIdFactory>{ static constexpr guid value{ 0x46ADFD2A,0x0AAB,0x4FDB,{ 0x82,0x1D,0xD3,0xDD,0xC9,0x19,0x78,0x8B } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannel>{ static constexpr guid value{ 0x4AC78D07,0xD1A8,0x4303,{ 0xA0,0x91,0xC8,0xD2,0xE0,0x91,0x5B,0xC3 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannel2>{ static constexpr guid value{ 0x2255D165,0x993B,0x4629,{ 0xAD,0x60,0xF1,0xC3,0xF3,0x53,0x7F,0x50 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannel4>{ static constexpr guid value{ 0xD7266EDE,0x2937,0x419D,{ 0x95,0x70,0x48,0x6A,0xEB,0xB8,0x18,0x03 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannelActivityEventArgs>{ static constexpr guid value{ 0xA36C88F2,0xAFDC,0x4775,{ 0x85,0x5D,0xD4,0xAC,0x0A,0x35,0xFC,0x55 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>{ static constexpr guid value{ 0x3D750565,0xFDC0,0x4BBE,{ 0xA2,0x3B,0x45,0xFF,0xFC,0x6D,0x97,0xA1 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannelConfiguration>{ static constexpr guid value{ 0x0E2DDCA2,0x2012,0x4FE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x7E } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannelConfiguration2>{ static constexpr guid value{ 0xF30B574C,0x7824,0x471C,{ 0xA1,0x18,0x63,0xDB,0xC9,0x3A,0xE4,0xC7 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnChannelStatics>{ static constexpr guid value{ 0x88EB062D,0xE818,0x4FFD,{ 0x98,0xA6,0x36,0x3E,0x37,0x36,0xC9,0x5D } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCredential>{ static constexpr guid value{ 0xB7E78AF3,0xA46D,0x404B,{ 0x87,0x29,0x18,0x32,0x52,0x28,0x53,0xAC } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomCheckBox>{ static constexpr guid value{ 0x43878753,0x03C5,0x4E61,{ 0x93,0xD7,0xA9,0x57,0x71,0x4C,0x42,0x82 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomComboBox>{ static constexpr guid value{ 0x9A24158E,0xDBA1,0x4C6F,{ 0x82,0x70,0xDC,0xF3,0xC9,0x76,0x1C,0x4C } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomEditBox>{ static constexpr guid value{ 0x3002D9A0,0xCFBF,0x4C0B,{ 0x8F,0x3C,0x66,0xF5,0x03,0xC2,0x0B,0x39 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomErrorBox>{ static constexpr guid value{ 0x9EC4EFB2,0xC942,0x42AF,{ 0xB2,0x23,0x58,0x8B,0x48,0x32,0x87,0x21 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPrompt>{ static constexpr guid value{ 0x9B2EBE7B,0x87D5,0x433C,{ 0xB4,0xF6,0xEE,0xE6,0xAA,0x68,0xA2,0x44 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>{ static constexpr guid value{ 0xC4C9A69E,0xFF47,0x4527,{ 0x9F,0x27,0xA4,0x92,0x92,0x01,0x99,0x79 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPromptElement>{ static constexpr guid value{ 0x73BD5638,0x6F04,0x404D,{ 0x93,0xDD,0x50,0xA4,0x49,0x24,0xA3,0x8B } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>{ static constexpr guid value{ 0x3B8F34D9,0x8EC1,0x4E95,{ 0x9A,0x4E,0x7B,0xA6,0x4D,0x38,0xF3,0x30 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPromptText>{ static constexpr guid value{ 0x3BC8BDEE,0x3A42,0x49A3,{ 0xAB,0xDD,0x07,0xB2,0xED,0xEA,0x75,0x2D } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomPromptTextInput>{ static constexpr guid value{ 0xC9DA9C75,0x913C,0x47D5,{ 0x88,0xBA,0x48,0xFC,0x48,0x93,0x02,0x35 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnCustomTextBox>{ static constexpr guid value{ 0xDAA4C3CA,0x8F23,0x4D36,{ 0x91,0xF1,0x76,0xD9,0x37,0x82,0x79,0x42 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnDomainNameAssignment>{ static constexpr guid value{ 0x4135B141,0xCCDB,0x49B5,{ 0x94,0x01,0x03,0x9A,0x8A,0xE7,0x67,0xE9 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnDomainNameInfo>{ static constexpr guid value{ 0xAD2EB82F,0xEA8E,0x4F7A,{ 0x84,0x3E,0x1A,0x87,0xE3,0x2E,0x1B,0x9A } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnDomainNameInfo2>{ static constexpr guid value{ 0xAB871151,0x6C53,0x4828,{ 0x98,0x83,0xD8,0x86,0xDE,0x10,0x44,0x07 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnDomainNameInfoFactory>{ static constexpr guid value{ 0x2507BB75,0x028F,0x4688,{ 0x8D,0x3A,0xC4,0x53,0x1D,0xF3,0x7D,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnInterfaceId>{ static constexpr guid value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x11 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnInterfaceIdFactory>{ static constexpr guid value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x10,0x00 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnManagementAgent>{ static constexpr guid value{ 0x193696CD,0xA5C4,0x4ABE,{ 0x85,0x2B,0x78,0x5B,0xE4,0xCB,0x3E,0x34 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnNamespaceAssignment>{ static constexpr guid value{ 0xD7F7DB18,0x307D,0x4C0E,{ 0xBD,0x62,0x8F,0xA2,0x70,0xBB,0xAD,0xD6 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnNamespaceInfo>{ static constexpr guid value{ 0x30EDFB43,0x444F,0x44C5,{ 0x81,0x67,0xA3,0x5A,0x91,0xF1,0xAF,0x94 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnNamespaceInfoFactory>{ static constexpr guid value{ 0xCB3E951A,0xB0CE,0x442B,{ 0xAC,0xBB,0x5F,0x99,0xB2,0x02,0xC3,0x1C } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnNativeProfile>{ static constexpr guid value{ 0xA4AEE29E,0x6417,0x4333,{ 0x98,0x42,0xF0,0xA6,0x6D,0xB6,0x98,0x02 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnNativeProfile2>{ static constexpr guid value{ 0x0FEC2467,0xCDB5,0x4AC7,{ 0xB5,0xA3,0x0A,0xFB,0x5E,0xC4,0x76,0x82 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBuffer>{ static constexpr guid value{ 0xC2F891FC,0x4D5C,0x4A63,{ 0xB7,0x0D,0x4E,0x30,0x7E,0xAC,0xCE,0x55 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBuffer2>{ static constexpr guid value{ 0x665E91F0,0x8805,0x4BF5,{ 0xA6,0x19,0x2E,0x84,0x88,0x2E,0x6B,0x4F } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBuffer3>{ static constexpr guid value{ 0xE256072F,0x107B,0x4C40,{ 0xB1,0x27,0x5B,0xC5,0x3E,0x0A,0xD9,0x60 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBufferFactory>{ static constexpr guid value{ 0x9E2DDCA2,0x1712,0x4CE4,{ 0xB1,0x79,0x8C,0x65,0x2C,0x6D,0x99,0x99 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBufferList>{ static constexpr guid value{ 0xC2F891FC,0x4D5C,0x4A63,{ 0xB7,0x0D,0x4E,0x30,0x7E,0xAC,0xCE,0x77 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPacketBufferList2>{ static constexpr guid value{ 0x3E7ACFE5,0xEA1E,0x482A,{ 0x8D,0x98,0xC0,0x65,0xF5,0x7D,0x89,0xEA } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPickedCredential>{ static constexpr guid value{ 0x9A793AC7,0x8854,0x4E52,{ 0xAD,0x97,0x24,0xDD,0x9A,0x84,0x2B,0xCE } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPlugIn>{ static constexpr guid value{ 0xCEB78D07,0xD0A8,0x4703,{ 0xA0,0x91,0xC8,0xC2,0xC0,0x91,0x5B,0xC4 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPlugInProfile>{ static constexpr guid value{ 0x0EDF0DA4,0x4F00,0x4589,{ 0x8D,0x7B,0x4B,0xF9,0x88,0xF6,0x54,0x2C } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnPlugInProfile2>{ static constexpr guid value{ 0x611C4892,0xCF94,0x4AD6,{ 0xBA,0x99,0x00,0xF4,0xFF,0x34,0x56,0x5E } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnProfile>{ static constexpr guid value{ 0x7875B751,0xB0D7,0x43DB,{ 0x8A,0x93,0xD3,0xFE,0x24,0x79,0xE5,0x6A } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnRoute>{ static constexpr guid value{ 0xB5731B83,0x0969,0x4699,{ 0x93,0x8E,0x77,0x76,0xDB,0x29,0xCF,0xB3 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnRouteAssignment>{ static constexpr guid value{ 0xDB64DE22,0xCE39,0x4A76,{ 0x95,0x50,0xF6,0x10,0x39,0xF8,0x0E,0x48 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnRouteFactory>{ static constexpr guid value{ 0xBDEAB5FF,0x45CF,0x4B99,{ 0x83,0xFB,0xDB,0x3B,0xC2,0x67,0x2B,0x02 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnSystemHealth>{ static constexpr guid value{ 0x99A8F8AF,0xC0EE,0x4E75,{ 0x81,0x7A,0xF2,0x31,0xAE,0xE5,0x12,0x3D } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnTrafficFilter>{ static constexpr guid value{ 0x2F691B60,0x6C9F,0x47F5,{ 0xAC,0x36,0xBB,0x1B,0x04,0x2E,0x2C,0x50 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnTrafficFilterAssignment>{ static constexpr guid value{ 0x56CCD45C,0xE664,0x471E,{ 0x89,0xCD,0x60,0x16,0x03,0xB9,0xE0,0xF3 } }; };
+template <> struct guid_storage<Windows::Networking::Vpn::IVpnTrafficFilterFactory>{ static constexpr guid value{ 0x480D41D5,0x7F99,0x474C,{ 0x86,0xEE,0x96,0xDF,0x16,0x83,0x18,0xF1 } }; };
 template <> struct default_interface<Windows::Networking::Vpn::VpnAppId>{ using type = Windows::Networking::Vpn::IVpnAppId; };
 template <> struct default_interface<Windows::Networking::Vpn::VpnChannel>{ using type = Windows::Networking::Vpn::IVpnChannel; };
 template <> struct default_interface<Windows::Networking::Vpn::VpnChannelActivityEventArgs>{ using type = Windows::Networking::Vpn::IVpnChannelActivityEventArgs; };
@@ -521,6 +521,428 @@ template <> struct default_interface<Windows::Networking::Vpn::VpnSystemHealth>{
 template <> struct default_interface<Windows::Networking::Vpn::VpnTrafficFilter>{ using type = Windows::Networking::Vpn::IVpnTrafficFilter; };
 template <> struct default_interface<Windows::Networking::Vpn::VpnTrafficFilterAssignment>{ using type = Windows::Networking::Vpn::IVpnTrafficFilterAssignment; };
 
+template <> struct abi<Windows::Networking::Vpn::IVpnAppId>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::Networking::Vpn::VpnAppIdType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Type(Windows::Networking::Vpn::VpnAppIdType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnAppIdFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Networking::Vpn::VpnAppIdType type, void* value, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AssociateTransport(void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept = 0;
+    virtual int32_t WINRT_CALL Start(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* routeScope, void* namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, void* certificate, void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, void** vpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL LogDiagnosticMessage(void* message) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Configuration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ActivityChange(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ActivityChange(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PlugInContext(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PlugInContext(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemHealth(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCustomPrompt(void* customPrompt) noexcept = 0;
+    virtual int32_t WINRT_CALL SetErrorMessage(void* message) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAllowedSslTlsVersions(void* tunnelTransport, bool useTls12) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannel2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL StartWithMainTransport(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, void* mainOuterTunnelTransport) noexcept = 0;
+    virtual int32_t WINRT_CALL StartExistingTransports(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ActivityStateChange(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ActivityStateChange(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVpnSendPacketBuffer(void** vpnSendPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVpnReceivePacketBuffer(void** vpnReceivePacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCustomPromptAsync(void* customPromptElement, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void* certificate, void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL TerminateConnection(void* message) noexcept = 0;
+    virtual int32_t WINRT_CALL StartWithTrafficFilter(void* assignedClientIpv4List, void* assignedClientIpv6List, void* vpnInterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport, void* assignedTrafficFilters) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannel4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddAndAssociateTransport(void* transport, void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL StartWithMultipleTransports(void* assignedClientIpv4Addresses, void* assignedClientIpv6Addresses, void* vpninterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* transports, void* assignedTrafficFilters) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceAndAssociateTransport(void* transport, void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL StartReconnectingTransport(void* transport, void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSlotTypeForTransportContext(void* context, Windows::Networking::Sockets::ControlChannelTriggerStatus* slotType) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentRequestTransportContext(void** context) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannelActivityEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivityState(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannelConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerServiceName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerHostNameList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomField(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannelConfiguration2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerUris(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnChannelStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProcessEventAsync(void* thirdPartyPlugIn, void* event) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCredential>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PasskeyCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CertificateCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdditionalPin(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OldPasswordCredential(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomCheckBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_InitialCheckState(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialCheckState(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Checked(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomComboBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_OptionsText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OptionsText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Selected(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomEditBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DefaultText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NoEcho(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NoEcho(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomErrorBox>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPrompt>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Label(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Label(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Compulsory(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Compulsory(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Bordered(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bordered(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_InitialValue(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialValue(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Compulsory(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Compulsory(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Emphasized(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Emphasized(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Options(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedIndex(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptText>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptTextInput>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_PlaceholderText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PlaceholderText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTextHidden(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTextHidden(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnCustomTextBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DisplayText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayText(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameAssignment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DomainNameList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProxyAutoConfigurationUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProxyAutoConfigurationUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DomainName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DomainName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DnsServers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WebProxyServers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfo2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebProxyUris(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateVpnDomainNameInfo(void* name, Windows::Networking::Vpn::VpnDomainNameType nameType, void* dnsServerList, void* proxyServerList, void** domainNameInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnInterfaceId>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAddressInfo(uint32_t* __idSize, uint8_t** id) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnInterfaceIdFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateVpnInterfaceId(uint32_t __addressSize, uint8_t* address, void** vpnInterfaceId) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnManagementAgent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddProfileFromXmlAsync(void* xml, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AddProfileFromObjectAsync(void* profile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateProfileFromXmlAsync(void* xml, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateProfileFromObjectAsync(void* profile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetProfilesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteProfileAsync(void* profile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectProfileAsync(void* profile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectProfileWithPasswordCredentialAsync(void* profile, void* passwordCredential, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DisconnectProfileAsync(void* profile, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceAssignment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_NamespaceList(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NamespaceList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProxyAutoConfigUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProxyAutoConfigUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Namespace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Namespace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DnsServers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DnsServers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WebProxyServers(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WebProxyServers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateVpnNamespaceInfo(void* name, void* dnsServerList, void* proxyServerList, void** namespaceInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnNativeProfile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Servers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EapConfiguration(void** Value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EapConfiguration(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnNativeProfile2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequireVpnClientAppUI(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequireVpnClientAppUI(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Buffer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransportAffinity(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransportAffinity(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_TransportContext(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransportContext(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateVpnPacketBuffer(void* parentBuffer, uint32_t offset, uint32_t length, void** vpnPacketBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Append(void* nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL AddAtBegin(void* nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAtEnd(void** nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAtBegin(void** nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferList2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddLeadingPacket(void* nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveLeadingPacket(void** nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTrailingPacket(void* nextVpnPacketBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveTrailingPacket(void** nextVpnPacketBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPickedCredential>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PasskeyCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdditionalPin(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OldPasswordCredential(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPlugIn>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Connect(void* channel) noexcept = 0;
+    virtual int32_t WINRT_CALL Disconnect(void* channel) noexcept = 0;
+    virtual int32_t WINRT_CALL GetKeepAlivePayload(void* channel, void** keepAlivePacket) noexcept = 0;
+    virtual int32_t WINRT_CALL Encapsulate(void* channel, void* packets, void* encapulatedPackets) noexcept = 0;
+    virtual int32_t WINRT_CALL Decapsulate(void* channel, void* encapBuffer, void* decapsulatedPackets, void* controlPacketsToSend) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPlugInProfile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerUris(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomConfiguration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CustomConfiguration(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VpnPluginPackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VpnPluginPackageFamilyName(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnPlugInProfile2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequireVpnClientAppUI(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequireVpnClientAppUI(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnProfile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ProfileName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProfileName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppTriggers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Routes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DomainNameInfoList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrafficFilters(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RememberCredentials(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RememberCredentials(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlwaysOn(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlwaysOn(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnRoute>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Address(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Address(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PrefixSize(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrefixSize(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnRouteAssignment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Ipv4InclusionRoutes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Ipv6InclusionRoutes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ipv4InclusionRoutes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ipv6InclusionRoutes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Ipv4ExclusionRoutes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Ipv6ExclusionRoutes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ipv4ExclusionRoutes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ipv6ExclusionRoutes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExcludeLocalSubnets(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExcludeLocalSubnets(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnRouteFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateVpnRoute(void* address, uint8_t prefixSize, void** route) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnSystemHealth>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StatementOfHealth(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppClaims(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Protocol(Windows::Networking::Vpn::VpnIPProtocol* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Protocol(Windows::Networking::Vpn::VpnIPProtocol value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalPortRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemotePortRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalAddressRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteAddressRanges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilterAssignment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TrafficFilterList(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowOutbound(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowOutbound(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowInbound(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowInbound(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* appId, void** result) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Networking_Vpn_IVpnAppId
 {
@@ -549,10 +971,10 @@ struct consume_Windows_Networking_Vpn_IVpnChannel
     void LogDiagnosticMessage(param::hstring const& message) const;
     uint32_t Id() const;
     Windows::Networking::Vpn::VpnChannelConfiguration Configuration() const;
-    event_token ActivityChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const;
-    using ActivityChange_revoker = event_revoker<Windows::Networking::Vpn::IVpnChannel>;
+    winrt::event_token ActivityChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const;
+    using ActivityChange_revoker = impl::event_revoker<Windows::Networking::Vpn::IVpnChannel, &impl::abi_t<Windows::Networking::Vpn::IVpnChannel>::remove_ActivityChange>;
     ActivityChange_revoker ActivityChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityEventArgs> const& handler) const;
-    void ActivityChange(event_token const& token) const;
+    void ActivityChange(winrt::event_token const& token) const noexcept;
     void PlugInContext(Windows::Foundation::IInspectable const& value) const;
     Windows::Foundation::IInspectable PlugInContext() const;
     Windows::Networking::Vpn::VpnSystemHealth SystemHealth() const;
@@ -567,10 +989,10 @@ struct consume_Windows_Networking_Vpn_IVpnChannel2
 {
     void StartWithMainTransport(param::vector_view<Windows::Networking::HostName> const& assignedClientIPv4list, param::vector_view<Windows::Networking::HostName> const& assignedClientIPv6list, Windows::Networking::Vpn::VpnInterfaceId const& vpnInterfaceId, Windows::Networking::Vpn::VpnRouteAssignment const& assignedRoutes, Windows::Networking::Vpn::VpnDomainNameAssignment const& assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, Windows::Foundation::IInspectable const& mainOuterTunnelTransport) const;
     void StartExistingTransports(param::vector_view<Windows::Networking::HostName> const& assignedClientIPv4list, param::vector_view<Windows::Networking::HostName> const& assignedClientIPv6list, Windows::Networking::Vpn::VpnInterfaceId const& vpnInterfaceId, Windows::Networking::Vpn::VpnRouteAssignment const& assignedRoutes, Windows::Networking::Vpn::VpnDomainNameAssignment const& assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const;
-    event_token ActivityStateChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const;
-    using ActivityStateChange_revoker = event_revoker<Windows::Networking::Vpn::IVpnChannel2>;
+    winrt::event_token ActivityStateChange(Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const;
+    using ActivityStateChange_revoker = impl::event_revoker<Windows::Networking::Vpn::IVpnChannel2, &impl::abi_t<Windows::Networking::Vpn::IVpnChannel2>::remove_ActivityStateChange>;
     ActivityStateChange_revoker ActivityStateChange(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> const& handler) const;
-    void ActivityStateChange(event_token const& token) const;
+    void ActivityStateChange(winrt::event_token const& token) const noexcept;
     Windows::Networking::Vpn::VpnPacketBuffer GetVpnSendPacketBuffer() const;
     Windows::Networking::Vpn::VpnPacketBuffer GetVpnReceivePacketBuffer() const;
     Windows::Foundation::IAsyncAction RequestCustomPromptAsync(param::async_vector_view<Windows::Networking::Vpn::IVpnCustomPromptElement> const& customPromptElement) const;
@@ -1050,427 +1472,5 @@ struct consume_Windows_Networking_Vpn_IVpnTrafficFilterFactory
     Windows::Networking::Vpn::VpnTrafficFilter Create(Windows::Networking::Vpn::VpnAppId const& appId) const;
 };
 template <> struct consume<Windows::Networking::Vpn::IVpnTrafficFilterFactory> { template <typename D> using type = consume_Windows_Networking_Vpn_IVpnTrafficFilterFactory<D>; };
-
-template <> struct abi<Windows::Networking::Vpn::IVpnAppId>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::Networking::Vpn::VpnAppIdType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Type(Windows::Networking::Vpn::VpnAppIdType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnAppIdFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Networking::Vpn::VpnAppIdType type, HSTRING value, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AssociateTransport(void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept = 0;
-    virtual HRESULT __stdcall Start(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* routeScope, void* namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport) noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, void* certificate, void** credential) noexcept = 0;
-    virtual HRESULT __stdcall RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, void** vpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall LogDiagnosticMessage(HSTRING message) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Configuration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_ActivityChange(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ActivityChange(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall put_PlugInContext(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PlugInContext(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemHealth(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RequestCustomPrompt(void* customPrompt) noexcept = 0;
-    virtual HRESULT __stdcall SetErrorMessage(HSTRING message) noexcept = 0;
-    virtual HRESULT __stdcall SetAllowedSslTlsVersions(void* tunnelTransport, bool useTls12) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannel2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall StartWithMainTransport(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, void* mainOuterTunnelTransport) noexcept = 0;
-    virtual HRESULT __stdcall StartExistingTransports(void* assignedClientIPv4list, void* assignedClientIPv6list, void* vpnInterfaceId, void* assignedRoutes, void* assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) noexcept = 0;
-    virtual HRESULT __stdcall add_ActivityStateChange(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ActivityStateChange(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetVpnSendPacketBuffer(void** vpnSendPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall GetVpnReceivePacketBuffer(void** vpnReceivePacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall RequestCustomPromptAsync(void* customPromptElement, void** action) noexcept = 0;
-    virtual HRESULT __stdcall RequestCredentialsWithCertificateAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void* certificate, void** credential) noexcept = 0;
-    virtual HRESULT __stdcall RequestCredentialsWithOptionsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, void** credential) noexcept = 0;
-    virtual HRESULT __stdcall RequestCredentialsSimpleAsync(Windows::Networking::Vpn::VpnCredentialType credType, void** credential) noexcept = 0;
-    virtual HRESULT __stdcall TerminateConnection(HSTRING message) noexcept = 0;
-    virtual HRESULT __stdcall StartWithTrafficFilter(void* assignedClientIpv4List, void* assignedClientIpv6List, void* vpnInterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* mainOuterTunnelTransport, void* optionalOuterTunnelTransport, void* assignedTrafficFilters) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannel4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddAndAssociateTransport(void* transport, void* context) noexcept = 0;
-    virtual HRESULT __stdcall StartWithMultipleTransports(void* assignedClientIpv4Addresses, void* assignedClientIpv6Addresses, void* vpninterfaceId, void* assignedRoutes, void* assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, void* transports, void* assignedTrafficFilters) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceAndAssociateTransport(void* transport, void* context) noexcept = 0;
-    virtual HRESULT __stdcall StartReconnectingTransport(void* transport, void* context) noexcept = 0;
-    virtual HRESULT __stdcall GetSlotTypeForTransportContext(void* context, Windows::Networking::Sockets::ControlChannelTriggerStatus* slotType) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentRequestTransportContext(void** context) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannelActivityEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivityState(Windows::Networking::Vpn::VpnChannelActivityEventType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannelConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerServiceName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerHostNameList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomField(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannelConfiguration2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerUris(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnChannelStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProcessEventAsync(void* thirdPartyPlugIn, void* event) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCredential>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PasskeyCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CertificateCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdditionalPin(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OldPasswordCredential(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomCheckBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_InitialCheckState(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialCheckState(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Checked(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomComboBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_OptionsText(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OptionsText(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Selected(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomEditBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DefaultText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NoEcho(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_NoEcho(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomErrorBox>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPrompt>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Label(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Label(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Compulsory(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Compulsory(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Bordered(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bordered(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_InitialValue(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialValue(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Compulsory(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Compulsory(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Emphasized(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Emphasized(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Options(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedIndex(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptText>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomPromptTextInput>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_PlaceholderText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PlaceholderText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTextHidden(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTextHidden(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnCustomTextBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DisplayText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameAssignment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DomainNameList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProxyAutoConfigurationUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProxyAutoConfigurationUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DomainName(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DomainName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) noexcept = 0;
-    virtual HRESULT __stdcall get_DomainNameType(Windows::Networking::Vpn::VpnDomainNameType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DnsServers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WebProxyServers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfo2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebProxyUris(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnDomainNameInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateVpnDomainNameInfo(HSTRING name, Windows::Networking::Vpn::VpnDomainNameType nameType, void* dnsServerList, void* proxyServerList, void** domainNameInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnInterfaceId>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAddressInfo(uint32_t* __idSize, uint8_t** id) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnInterfaceIdFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateVpnInterfaceId(uint32_t __addressSize, uint8_t* address, void** vpnInterfaceId) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnManagementAgent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddProfileFromXmlAsync(HSTRING xml, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AddProfileFromObjectAsync(void* profile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateProfileFromXmlAsync(HSTRING xml, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateProfileFromObjectAsync(void* profile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetProfilesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteProfileAsync(void* profile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ConnectProfileAsync(void* profile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ConnectProfileWithPasswordCredentialAsync(void* profile, void* passwordCredential, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DisconnectProfileAsync(void* profile, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceAssignment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_NamespaceList(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NamespaceList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProxyAutoConfigUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProxyAutoConfigUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Namespace(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Namespace(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DnsServers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DnsServers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_WebProxyServers(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WebProxyServers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnNamespaceInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateVpnNamespaceInfo(HSTRING name, void* dnsServerList, void* proxyServerList, void** namespaceInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnNativeProfile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Servers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept = 0;
-    virtual HRESULT __stdcall get_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NativeProtocolType(Windows::Networking::Vpn::VpnNativeProtocolType value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UserAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept = 0;
-    virtual HRESULT __stdcall get_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TunnelAuthenticationMethod(Windows::Networking::Vpn::VpnAuthenticationMethod value) noexcept = 0;
-    virtual HRESULT __stdcall get_EapConfiguration(HSTRING* Value) noexcept = 0;
-    virtual HRESULT __stdcall put_EapConfiguration(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnNativeProfile2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequireVpnClientAppUI(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequireVpnClientAppUI(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Buffer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransportAffinity(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransportAffinity(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppId(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBuffer3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_TransportContext(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransportContext(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateVpnPacketBuffer(void* parentBuffer, uint32_t offset, uint32_t length, void** vpnPacketBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Append(void* nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall AddAtBegin(void* nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAtEnd(void** nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAtBegin(void** nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall put_Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Networking::Vpn::VpnPacketBufferStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPacketBufferList2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddLeadingPacket(void* nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall RemoveLeadingPacket(void** nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall AddTrailingPacket(void* nextVpnPacketBuffer) noexcept = 0;
-    virtual HRESULT __stdcall RemoveTrailingPacket(void** nextVpnPacketBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPickedCredential>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PasskeyCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdditionalPin(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OldPasswordCredential(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPlugIn>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Connect(void* channel) noexcept = 0;
-    virtual HRESULT __stdcall Disconnect(void* channel) noexcept = 0;
-    virtual HRESULT __stdcall GetKeepAlivePayload(void* channel, void** keepAlivePacket) noexcept = 0;
-    virtual HRESULT __stdcall Encapsulate(void* channel, void* packets, void* encapulatedPackets) noexcept = 0;
-    virtual HRESULT __stdcall Decapsulate(void* channel, void* encapBuffer, void* decapsulatedPackets, void* controlPacketsToSend) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPlugInProfile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerUris(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomConfiguration(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CustomConfiguration(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_VpnPluginPackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VpnPluginPackageFamilyName(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnPlugInProfile2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequireVpnClientAppUI(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequireVpnClientAppUI(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Networking::Vpn::VpnManagementConnectionStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnProfile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ProfileName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProfileName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppTriggers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Routes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DomainNameInfoList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrafficFilters(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RememberCredentials(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RememberCredentials(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlwaysOn(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlwaysOn(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnRoute>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Address(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Address(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PrefixSize(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrefixSize(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnRouteAssignment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Ipv4InclusionRoutes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Ipv6InclusionRoutes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ipv4InclusionRoutes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ipv6InclusionRoutes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Ipv4ExclusionRoutes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Ipv6ExclusionRoutes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ipv4ExclusionRoutes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ipv6ExclusionRoutes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExcludeLocalSubnets(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExcludeLocalSubnets(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnRouteFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateVpnRoute(void* address, uint8_t prefixSize, void** route) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnSystemHealth>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StatementOfHealth(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppId(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppClaims(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Protocol(Windows::Networking::Vpn::VpnIPProtocol* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Protocol(Windows::Networking::Vpn::VpnIPProtocol value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalPortRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemotePortRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalAddressRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteAddressRanges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilterAssignment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TrafficFilterList(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowOutbound(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowOutbound(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowInbound(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowInbound(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::Vpn::IVpnTrafficFilterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* appId, void** result) noexcept = 0;
-};};
 
 }

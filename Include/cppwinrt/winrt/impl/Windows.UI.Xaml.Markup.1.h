@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -68,6 +68,13 @@ struct WINRT_EBO IXamlBinaryWriterStatics :
     IXamlBinaryWriterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IXamlBindScopeDiagnostics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlBindScopeDiagnostics>
+{
+    IXamlBindScopeDiagnostics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IXamlBindingHelper :
     Windows::Foundation::IInspectable,
     impl::consume_t<IXamlBindingHelper>
@@ -129,6 +136,14 @@ struct WINRT_EBO IXamlType :
     impl::consume_t<IXamlType>
 {
     IXamlType(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlType2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlType2>,
+    impl::require<IXamlType2, Windows::UI::Xaml::Markup::IXamlType>
+{
+    IXamlType2(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

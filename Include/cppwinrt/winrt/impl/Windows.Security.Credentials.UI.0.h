@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -88,12 +88,60 @@ template <> struct name<Windows::Security::Credentials::UI::AuthenticationProtoc
 template <> struct name<Windows::Security::Credentials::UI::CredentialSaveOption>{ static constexpr auto & value{ L"Windows.Security.Credentials.UI.CredentialSaveOption" }; };
 template <> struct name<Windows::Security::Credentials::UI::UserConsentVerificationResult>{ static constexpr auto & value{ L"Windows.Security.Credentials.UI.UserConsentVerificationResult" }; };
 template <> struct name<Windows::Security::Credentials::UI::UserConsentVerifierAvailability>{ static constexpr auto & value{ L"Windows.Security.Credentials.UI.UserConsentVerifierAvailability" }; };
-template <> struct guid<Windows::Security::Credentials::UI::ICredentialPickerOptions>{ static constexpr GUID value{ 0x965A0B4C,0x95FA,0x467F,{ 0x99,0x2B,0x0B,0x22,0xE5,0x85,0x9B,0xF6 } }; };
-template <> struct guid<Windows::Security::Credentials::UI::ICredentialPickerResults>{ static constexpr GUID value{ 0x1948F99A,0xCC30,0x410C,{ 0x9C,0x38,0xCC,0x08,0x84,0xC5,0xB3,0xD7 } }; };
-template <> struct guid<Windows::Security::Credentials::UI::ICredentialPickerStatics>{ static constexpr GUID value{ 0xAA3A5C73,0xC9EA,0x4782,{ 0x99,0xFB,0xE6,0xD7,0xE9,0x38,0xE1,0x2D } }; };
-template <> struct guid<Windows::Security::Credentials::UI::IUserConsentVerifierStatics>{ static constexpr GUID value{ 0xAF4F3F91,0x564C,0x4DDC,{ 0xB8,0xB5,0x97,0x34,0x47,0x62,0x7C,0x65 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::UI::ICredentialPickerOptions>{ static constexpr guid value{ 0x965A0B4C,0x95FA,0x467F,{ 0x99,0x2B,0x0B,0x22,0xE5,0x85,0x9B,0xF6 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::UI::ICredentialPickerResults>{ static constexpr guid value{ 0x1948F99A,0xCC30,0x410C,{ 0x9C,0x38,0xCC,0x08,0x84,0xC5,0xB3,0xD7 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::UI::ICredentialPickerStatics>{ static constexpr guid value{ 0xAA3A5C73,0xC9EA,0x4782,{ 0x99,0xFB,0xE6,0xD7,0xE9,0x38,0xE1,0x2D } }; };
+template <> struct guid_storage<Windows::Security::Credentials::UI::IUserConsentVerifierStatics>{ static constexpr guid value{ 0xAF4F3F91,0x564C,0x4DDC,{ 0xB8,0xB5,0x97,0x34,0x47,0x62,0x7C,0x65 } }; };
 template <> struct default_interface<Windows::Security::Credentials::UI::CredentialPickerOptions>{ using type = Windows::Security::Credentials::UI::ICredentialPickerOptions; };
 template <> struct default_interface<Windows::Security::Credentials::UI::CredentialPickerResults>{ using type = Windows::Security::Credentials::UI::ICredentialPickerResults; };
+
+template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Caption(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Caption(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Message(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ErrorCode(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ErrorCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CustomAuthenticationProtocol(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomAuthenticationProtocol(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PreviousCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviousCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlwaysDisplayDialog(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlwaysDisplayDialog(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CallerSavesCredential(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CallerSavesCredential(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerResults>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialSaved(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Credential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialDomainName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialUserName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CredentialPassword(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL PickWithOptionsAsync(void* options, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PickWithMessageAsync(void* targetName, void* message, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PickWithCaptionAsync(void* targetName, void* message, void* caption, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::UI::IUserConsentVerifierStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CheckAvailabilityAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestVerificationAsync(void* message, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Credentials_UI_ICredentialPickerOptions
@@ -150,53 +198,5 @@ struct consume_Windows_Security_Credentials_UI_IUserConsentVerifierStatics
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerificationResult> RequestVerificationAsync(param::hstring const& message) const;
 };
 template <> struct consume<Windows::Security::Credentials::UI::IUserConsentVerifierStatics> { template <typename D> using type = consume_Windows_Security_Credentials_UI_IUserConsentVerifierStatics<D>; };
-
-template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Caption(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Caption(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Message(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ErrorCode(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ErrorCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CustomAuthenticationProtocol(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomAuthenticationProtocol(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PreviousCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviousCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlwaysDisplayDialog(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlwaysDisplayDialog(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CallerSavesCredential(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CallerSavesCredential(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerResults>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialSaved(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Credential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialDomainName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialUserName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CredentialPassword(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::UI::ICredentialPickerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall PickWithOptionsAsync(void* options, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PickWithMessageAsync(HSTRING targetName, HSTRING message, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::UI::IUserConsentVerifierStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CheckAvailabilityAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestVerificationAsync(HSTRING message, void** result) noexcept = 0;
-};};
 
 }

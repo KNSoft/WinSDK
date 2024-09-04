@@ -914,6 +914,19 @@ interface IAudioProcessingObject : IUnknown{
 
 }; // IAudioProcessingObject
 
+[
+    object,
+    local,
+    uuid(98F37DAC-D0B6-49F5-896A-AA4D169A4C48),
+    nonextensible,
+    helpstring("IAudioDeviceModulesClient"),
+    pointer_default(unique)
+]
+interface IAudioDeviceModulesClient : IUnknown
+{
+    HRESULT SetAudioDeviceModulesManager([in, annotation("_In_")] IUnknown* pAudioDeviceModulesManager);
+};
+
 cpp_quote("//")
 cpp_quote("// APO registration functions")
 cpp_quote("//")

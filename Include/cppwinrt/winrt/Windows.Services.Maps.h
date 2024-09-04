@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Geolocation.2.h"
@@ -769,1761 +769,1539 @@ template <typename D> Windows::Services::Maps::PlaceInfo consume_Windows_Service
 template <typename D>
 struct produce<D, Windows::Services::Maps::IEnhancedWaypoint> : produce_base<D, Windows::Services::Maps::IEnhancedWaypoint>
 {
-    HRESULT __stdcall get_Point(void** value) noexcept final
+    int32_t WINRT_CALL get_Point(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(Windows::Devices::Geolocation::Geopoint));
             *value = detach_from<Windows::Devices::Geolocation::Geopoint>(this->shim().Point());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Services::Maps::WaypointKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Services::Maps::WaypointKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Services::Maps::WaypointKind));
             *value = detach_from<Windows::Services::Maps::WaypointKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IEnhancedWaypointFactory> : produce_base<D, Windows::Services::Maps::IEnhancedWaypointFactory>
 {
-    HRESULT __stdcall Create(void* point, Windows::Services::Maps::WaypointKind kind, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* point, Windows::Services::Maps::WaypointKind kind, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Services::Maps::EnhancedWaypoint), Windows::Devices::Geolocation::Geopoint const&, Windows::Services::Maps::WaypointKind const&);
             *value = detach_from<Windows::Services::Maps::EnhancedWaypoint>(this->shim().Create(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&point), *reinterpret_cast<Windows::Services::Maps::WaypointKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IManeuverWarning> : produce_base<D, Windows::Services::Maps::IManeuverWarning>
 {
-    HRESULT __stdcall get_Kind(Windows::Services::Maps::ManeuverWarningKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Services::Maps::ManeuverWarningKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Services::Maps::ManeuverWarningKind));
             *value = detach_from<Windows::Services::Maps::ManeuverWarningKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Severity(Windows::Services::Maps::ManeuverWarningSeverity* value) noexcept final
+    int32_t WINRT_CALL get_Severity(Windows::Services::Maps::ManeuverWarningSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Severity, WINRT_WRAP(Windows::Services::Maps::ManeuverWarningSeverity));
             *value = detach_from<Windows::Services::Maps::ManeuverWarningSeverity>(this->shim().Severity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Windows::Services::Maps::IMapAddress>
 {
-    HRESULT __stdcall get_BuildingName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BuildingName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildingName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BuildingName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BuildingFloor(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BuildingFloor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildingFloor, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BuildingFloor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BuildingRoom(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BuildingRoom(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildingRoom, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BuildingRoom());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BuildingWing(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BuildingWing(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildingWing, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BuildingWing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StreetNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StreetNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreetNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StreetNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Street(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Street(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Street, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Street());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Neighborhood(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Neighborhood(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Neighborhood, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Neighborhood());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_District(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_District(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(District, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().District());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Town(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Town(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Town, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Town());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Region(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Region(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Region, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Region());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegionCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RegionCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegionCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RegionCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Country(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Country(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Country, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Country());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CountryCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CountryCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CountryCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CountryCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PostCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PostCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PostCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Continent(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Continent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Continent, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Continent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapAddress2> : produce_base<D, Windows::Services::Maps::IMapAddress2>
 {
-    HRESULT __stdcall get_FormattedAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FormattedAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormattedAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FormattedAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapLocation> : produce_base<D, Windows::Services::Maps::IMapLocation>
 {
-    HRESULT __stdcall get_Point(void** value) noexcept final
+    int32_t WINRT_CALL get_Point(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(Windows::Devices::Geolocation::Geopoint));
             *value = detach_from<Windows::Devices::Geolocation::Geopoint>(this->shim().Point());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Address(void** value) noexcept final
+    int32_t WINRT_CALL get_Address(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(Windows::Services::Maps::MapAddress));
             *value = detach_from<Windows::Services::Maps::MapAddress>(this->shim().Address());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapLocationFinderResult> : produce_base<D, Windows::Services::Maps::IMapLocationFinderResult>
 {
-    HRESULT __stdcall get_Locations(void** value) noexcept final
+    int32_t WINRT_CALL get_Locations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation>>(this->shim().Locations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Services::Maps::MapLocationFinderStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Services::Maps::MapLocationFinderStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Services::Maps::MapLocationFinderStatus));
             *value = detach_from<Windows::Services::Maps::MapLocationFinderStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics> : produce_base<D, Windows::Services::Maps::IMapLocationFinderStatics>
 {
-    HRESULT __stdcall FindLocationsAtAsync(void* queryPoint, void** result) noexcept final
+    int32_t WINRT_CALL FindLocationsAtAsync(void* queryPoint, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindLocationsAtAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>), Windows::Devices::Geolocation::Geopoint const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>>(this->shim().FindLocationsAtAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&queryPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindLocationsAsync(HSTRING searchText, void* referencePoint, void** result) noexcept final
+    int32_t WINRT_CALL FindLocationsAsync(void* searchText, void* referencePoint, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindLocationsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>), hstring const, Windows::Devices::Geolocation::Geopoint const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>>(this->shim().FindLocationsAsync(*reinterpret_cast<hstring const*>(&searchText), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&referencePoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindLocationsWithMaxCountAsync(HSTRING searchText, void* referencePoint, uint32_t maxCount, void** result) noexcept final
+    int32_t WINRT_CALL FindLocationsWithMaxCountAsync(void* searchText, void* referencePoint, uint32_t maxCount, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindLocationsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>), hstring const, Windows::Devices::Geolocation::Geopoint const, uint32_t);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>>(this->shim().FindLocationsAsync(*reinterpret_cast<hstring const*>(&searchText), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&referencePoint), maxCount));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapLocationFinderStatics2> : produce_base<D, Windows::Services::Maps::IMapLocationFinderStatics2>
 {
-    HRESULT __stdcall FindLocationsAtWithAccuracyAsync(void* queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy, void** result) noexcept final
+    int32_t WINRT_CALL FindLocationsAtWithAccuracyAsync(void* queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindLocationsAtAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Services::Maps::MapLocationDesiredAccuracy const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult>>(this->shim().FindLocationsAtAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&queryPoint), *reinterpret_cast<Windows::Services::Maps::MapLocationDesiredAccuracy const*>(&accuracy)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapManagerStatics> : produce_base<D, Windows::Services::Maps::IMapManagerStatics>
 {
-    HRESULT __stdcall ShowDownloadedMapsUI() noexcept final
+    int32_t WINRT_CALL ShowDownloadedMapsUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowDownloadedMapsUI, WINRT_WRAP(void));
             this->shim().ShowDownloadedMapsUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowMapsUpdateUI() noexcept final
+    int32_t WINRT_CALL ShowMapsUpdateUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowMapsUpdateUI, WINRT_WRAP(void));
             this->shim().ShowMapsUpdateUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRoute> : produce_base<D, Windows::Services::Maps::IMapRoute>
 {
-    HRESULT __stdcall get_BoundingBox(void** value) noexcept final
+    int32_t WINRT_CALL get_BoundingBox(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingBox, WINRT_WRAP(Windows::Devices::Geolocation::GeoboundingBox));
             *value = detach_from<Windows::Devices::Geolocation::GeoboundingBox>(this->shim().BoundingBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LengthInMeters(double* value) noexcept final
+    int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LengthInMeters, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LengthInMeters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().EstimatedDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(void** value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(Windows::Devices::Geolocation::Geopath));
             *value = detach_from<Windows::Devices::Geolocation::Geopath>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Legs(void** value) noexcept final
+    int32_t WINRT_CALL get_Legs(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Legs, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteLeg>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteLeg>>(this->shim().Legs());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTrafficBased(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTrafficBased(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTrafficBased, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTrafficBased());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRoute2> : produce_base<D, Windows::Services::Maps::IMapRoute2>
 {
-    HRESULT __stdcall get_ViolatedRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept final
+    int32_t WINRT_CALL get_ViolatedRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViolatedRestrictions, WINRT_WRAP(Windows::Services::Maps::MapRouteRestrictions));
             *value = detach_from<Windows::Services::Maps::MapRouteRestrictions>(this->shim().ViolatedRestrictions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasBlockedRoads(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasBlockedRoads(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasBlockedRoads, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasBlockedRoads());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRoute3> : produce_base<D, Windows::Services::Maps::IMapRoute3>
 {
-    HRESULT __stdcall get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DurationWithoutTraffic, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DurationWithoutTraffic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept final
+    int32_t WINRT_CALL get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrafficCongestion, WINRT_WRAP(Windows::Services::Maps::TrafficCongestion));
             *value = detach_from<Windows::Services::Maps::TrafficCongestion>(this->shim().TrafficCongestion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRoute4> : produce_base<D, Windows::Services::Maps::IMapRoute4>
 {
-    HRESULT __stdcall get_IsScenic(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsScenic(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsScenic, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsScenic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_base<D, Windows::Services::Maps::IMapRouteDrivingOptions>
 {
-    HRESULT __stdcall get_MaxAlternateRouteCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxAlternateRouteCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAlternateRouteCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxAlternateRouteCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxAlternateRouteCount(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxAlternateRouteCount(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAlternateRouteCount, WINRT_WRAP(void), uint32_t);
             this->shim().MaxAlternateRouteCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialHeading(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialHeading(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialHeading, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().InitialHeading());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialHeading(void* value) noexcept final
+    int32_t WINRT_CALL put_InitialHeading(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialHeading, WINRT_WRAP(void), Windows::Foundation::IReference<double> const&);
             this->shim().InitialHeading(*reinterpret_cast<Windows::Foundation::IReference<double> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RouteOptimization(Windows::Services::Maps::MapRouteOptimization* value) noexcept final
+    int32_t WINRT_CALL get_RouteOptimization(Windows::Services::Maps::MapRouteOptimization* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RouteOptimization, WINRT_WRAP(Windows::Services::Maps::MapRouteOptimization));
             *value = detach_from<Windows::Services::Maps::MapRouteOptimization>(this->shim().RouteOptimization());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) noexcept final
+    int32_t WINRT_CALL put_RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RouteOptimization, WINRT_WRAP(void), Windows::Services::Maps::MapRouteOptimization const&);
             this->shim().RouteOptimization(*reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept final
+    int32_t WINRT_CALL get_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RouteRestrictions, WINRT_WRAP(Windows::Services::Maps::MapRouteRestrictions));
             *value = detach_from<Windows::Services::Maps::MapRouteRestrictions>(this->shim().RouteRestrictions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) noexcept final
+    int32_t WINRT_CALL put_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RouteRestrictions, WINRT_WRAP(void), Windows::Services::Maps::MapRouteRestrictions const&);
             this->shim().RouteRestrictions(*reinterpret_cast<Windows::Services::Maps::MapRouteRestrictions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions2> : produce_base<D, Windows::Services::Maps::IMapRouteDrivingOptions2>
 {
-    HRESULT __stdcall get_DepartureTime(void** value) noexcept final
+    int32_t WINRT_CALL get_DepartureTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DepartureTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().DepartureTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DepartureTime(void* value) noexcept final
+    int32_t WINRT_CALL put_DepartureTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DepartureTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().DepartureTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteFinderResult> : produce_base<D, Windows::Services::Maps::IMapRouteFinderResult>
 {
-    HRESULT __stdcall get_Route(void** value) noexcept final
+    int32_t WINRT_CALL get_Route(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Route, WINRT_WRAP(Windows::Services::Maps::MapRoute));
             *value = detach_from<Windows::Services::Maps::MapRoute>(this->shim().Route());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Services::Maps::MapRouteFinderStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Services::Maps::MapRouteFinderStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Services::Maps::MapRouteFinderStatus));
             *value = detach_from<Windows::Services::Maps::MapRouteFinderStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteFinderResult2> : produce_base<D, Windows::Services::Maps::IMapRouteFinderResult2>
 {
-    HRESULT __stdcall get_AlternateRoutes(void** value) noexcept final
+    int32_t WINRT_CALL get_AlternateRoutes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateRoutes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute>>(this->shim().AlternateRoutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics> : produce_base<D, Windows::Services::Maps::IMapRouteFinderStatics>
 {
-    HRESULT __stdcall GetDrivingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteWithOptimizationAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteWithOptimizationAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const, Windows::Services::Maps::MapRouteOptimization const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteWithOptimizationAndRestrictionsAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteWithOptimizationAndRestrictionsAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const, Windows::Services::Maps::MapRouteOptimization const, Windows::Services::Maps::MapRouteRestrictions const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization), *reinterpret_cast<Windows::Services::Maps::MapRouteRestrictions const*>(&restrictions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const, Windows::Services::Maps::MapRouteOptimization const, Windows::Services::Maps::MapRouteRestrictions const, double);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization), *reinterpret_cast<Windows::Services::Maps::MapRouteRestrictions const*>(&restrictions), headingInDegrees));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const*>(&wayPoints)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteFromWaypointsAndOptimizationAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromWaypointsAndOptimizationAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const, Windows::Services::Maps::MapRouteOptimization const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const*>(&wayPoints), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const, Windows::Services::Maps::MapRouteOptimization const, Windows::Services::Maps::MapRouteRestrictions const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const*>(&wayPoints), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization), *reinterpret_cast<Windows::Services::Maps::MapRouteRestrictions const*>(&restrictions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const, Windows::Services::Maps::MapRouteOptimization const, Windows::Services::Maps::MapRouteRestrictions const, double);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const*>(&wayPoints), *reinterpret_cast<Windows::Services::Maps::MapRouteOptimization const*>(&optimization), *reinterpret_cast<Windows::Services::Maps::MapRouteRestrictions const*>(&restrictions), headingInDegrees));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWalkingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept final
+    int32_t WINRT_CALL GetWalkingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWalkingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetWalkingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWalkingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept final
+    int32_t WINRT_CALL GetWalkingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWalkingRouteFromWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetWalkingRouteFromWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> const*>(&wayPoints)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics2> : produce_base<D, Windows::Services::Maps::IMapRouteFinderStatics2>
 {
-    HRESULT __stdcall GetDrivingRouteWithOptionsAsync(void* startPoint, void* endPoint, void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteWithOptionsAsync(void* startPoint, void* endPoint, void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Devices::Geolocation::Geopoint const, Windows::Devices::Geolocation::Geopoint const, Windows::Services::Maps::MapRouteDrivingOptions const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&startPoint), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&endPoint), *reinterpret_cast<Windows::Services::Maps::MapRouteDrivingOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics3> : produce_base<D, Windows::Services::Maps::IMapRouteFinderStatics3>
 {
-    HRESULT __stdcall GetDrivingRouteFromEnhancedWaypointsAsync(void* waypoints, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromEnhancedWaypointsAsync(void* waypoints, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromEnhancedWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromEnhancedWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> const*>(&waypoints)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(void* waypoints, void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(void* waypoints, void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDrivingRouteFromEnhancedWaypointsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>), Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> const, Windows::Services::Maps::MapRouteDrivingOptions const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>>(this->shim().GetDrivingRouteFromEnhancedWaypointsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> const*>(&waypoints), *reinterpret_cast<Windows::Services::Maps::MapRouteDrivingOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windows::Services::Maps::IMapRouteLeg>
 {
-    HRESULT __stdcall get_BoundingBox(void** value) noexcept final
+    int32_t WINRT_CALL get_BoundingBox(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingBox, WINRT_WRAP(Windows::Devices::Geolocation::GeoboundingBox));
             *value = detach_from<Windows::Devices::Geolocation::GeoboundingBox>(this->shim().BoundingBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(void** value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(Windows::Devices::Geolocation::Geopath));
             *value = detach_from<Windows::Devices::Geolocation::Geopath>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LengthInMeters(double* value) noexcept final
+    int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LengthInMeters, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LengthInMeters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().EstimatedDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Maneuvers(void** value) noexcept final
+    int32_t WINRT_CALL get_Maneuvers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Maneuvers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver>>(this->shim().Maneuvers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteLeg2> : produce_base<D, Windows::Services::Maps::IMapRouteLeg2>
 {
-    HRESULT __stdcall get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DurationWithoutTraffic, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DurationWithoutTraffic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept final
+    int32_t WINRT_CALL get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrafficCongestion, WINRT_WRAP(Windows::Services::Maps::TrafficCongestion));
             *value = detach_from<Windows::Services::Maps::TrafficCongestion>(this->shim().TrafficCongestion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteManeuver> : produce_base<D, Windows::Services::Maps::IMapRouteManeuver>
 {
-    HRESULT __stdcall get_StartingPoint(void** value) noexcept final
+    int32_t WINRT_CALL get_StartingPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartingPoint, WINRT_WRAP(Windows::Devices::Geolocation::Geopoint));
             *value = detach_from<Windows::Devices::Geolocation::Geopoint>(this->shim().StartingPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LengthInMeters(double* value) noexcept final
+    int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LengthInMeters, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LengthInMeters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstructionText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_InstructionText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstructionText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().InstructionText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Services::Maps::MapRouteManeuverKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Services::Maps::MapRouteManeuverKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Services::Maps::MapRouteManeuverKind));
             *value = detach_from<Windows::Services::Maps::MapRouteManeuverKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExitNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ExitNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ExitNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManeuverNotices(Windows::Services::Maps::MapManeuverNotices* value) noexcept final
+    int32_t WINRT_CALL get_ManeuverNotices(Windows::Services::Maps::MapManeuverNotices* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManeuverNotices, WINRT_WRAP(Windows::Services::Maps::MapManeuverNotices));
             *value = detach_from<Windows::Services::Maps::MapManeuverNotices>(this->shim().ManeuverNotices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteManeuver2> : produce_base<D, Windows::Services::Maps::IMapRouteManeuver2>
 {
-    HRESULT __stdcall get_StartHeading(double* value) noexcept final
+    int32_t WINRT_CALL get_StartHeading(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartHeading, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().StartHeading());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndHeading(double* value) noexcept final
+    int32_t WINRT_CALL get_EndHeading(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndHeading, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().EndHeading());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StreetName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StreetName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreetName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StreetName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteManeuver3> : produce_base<D, Windows::Services::Maps::IMapRouteManeuver3>
 {
-    HRESULT __stdcall get_Warnings(void** value) noexcept final
+    int32_t WINRT_CALL get_Warnings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Warnings, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::ManeuverWarning>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::ManeuverWarning>>(this->shim().Warnings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapServiceStatics> : produce_base<D, Windows::Services::Maps::IMapServiceStatics>
 {
-    HRESULT __stdcall put_ServiceToken(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ServiceToken(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceToken, WINRT_WRAP(void), hstring const&);
             this->shim().ServiceToken(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceToken(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceToken(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceToken, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceToken());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapServiceStatics2> : produce_base<D, Windows::Services::Maps::IMapServiceStatics2>
 {
-    HRESULT __stdcall get_WorldViewRegionCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WorldViewRegionCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WorldViewRegionCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WorldViewRegionCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapServiceStatics3> : produce_base<D, Windows::Services::Maps::IMapServiceStatics3>
 {
-    HRESULT __stdcall get_DataAttributions(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DataAttributions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataAttributions, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DataAttributions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IMapServiceStatics4> : produce_base<D, Windows::Services::Maps::IMapServiceStatics4>
 {
-    HRESULT __stdcall put_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) noexcept final
+    int32_t WINRT_CALL put_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataUsagePreference, WINRT_WRAP(void), Windows::Services::Maps::MapServiceDataUsagePreference const&);
             this->shim().DataUsagePreference(*reinterpret_cast<Windows::Services::Maps::MapServiceDataUsagePreference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference* value) noexcept final
+    int32_t WINRT_CALL get_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataUsagePreference, WINRT_WRAP(Windows::Services::Maps::MapServiceDataUsagePreference));
             *value = detach_from<Windows::Services::Maps::MapServiceDataUsagePreference>(this->shim().DataUsagePreference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IPlaceInfo> : produce_base<D, Windows::Services::Maps::IPlaceInfo>
 {
-    HRESULT __stdcall Show(Windows::Foundation::Rect selection) noexcept final
+    int32_t WINRT_CALL Show(Windows::Foundation::Rect selection) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Show(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowWithPreferredPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept final
+    int32_t WINRT_CALL ShowWithPreferredPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void), Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&);
             this->shim().Show(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Identifier(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Identifier(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Identifier, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Identifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Geoshape(void** value) noexcept final
+    int32_t WINRT_CALL get_Geoshape(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Geoshape, WINRT_WRAP(Windows::Devices::Geolocation::IGeoshape));
             *value = detach_from<Windows::Devices::Geolocation::IGeoshape>(this->shim().Geoshape());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IPlaceInfoCreateOptions> : produce_base<D, Windows::Services::Maps::IPlaceInfoCreateOptions>
 {
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayAddress, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IPlaceInfoStatics> : produce_base<D, Windows::Services::Maps::IPlaceInfoStatics>
 {
-    HRESULT __stdcall Create(void* referencePoint, void** resultValue) noexcept final
+    int32_t WINRT_CALL Create(void* referencePoint, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), Windows::Devices::Geolocation::Geopoint const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().Create(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&referencePoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithGeopointAndOptions(void* referencePoint, void* options, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateWithGeopointAndOptions(void* referencePoint, void* options, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), Windows::Devices::Geolocation::Geopoint const&, Windows::Services::Maps::PlaceInfoCreateOptions const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().Create(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&referencePoint), *reinterpret_cast<Windows::Services::Maps::PlaceInfoCreateOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromIdentifier(HSTRING identifier, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateFromIdentifier(void* identifier, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIdentifier, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), hstring const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().CreateFromIdentifier(*reinterpret_cast<hstring const*>(&identifier)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromIdentifierWithOptions(HSTRING identifier, void* defaultPoint, void* options, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateFromIdentifierWithOptions(void* identifier, void* defaultPoint, void* options, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromIdentifier, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), hstring const&, Windows::Devices::Geolocation::Geopoint const&, Windows::Services::Maps::PlaceInfoCreateOptions const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().CreateFromIdentifier(*reinterpret_cast<hstring const*>(&identifier), *reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&defaultPoint), *reinterpret_cast<Windows::Services::Maps::PlaceInfoCreateOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromMapLocation(void* location, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateFromMapLocation(void* location, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromMapLocation, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), Windows::Services::Maps::MapLocation const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().CreateFromMapLocation(*reinterpret_cast<Windows::Services::Maps::MapLocation const*>(&location)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsShowSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsShowSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsShowSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsShowSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::IPlaceInfoStatics2> : produce_base<D, Windows::Services::Maps::IPlaceInfoStatics2>
 {
-    HRESULT __stdcall CreateFromAddress(HSTRING displayAddress, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateFromAddress(void* displayAddress, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromAddress, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), hstring const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().CreateFromAddress(*reinterpret_cast<hstring const*>(&displayAddress)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromAddressWithName(HSTRING displayAddress, HSTRING displayName, void** resultValue) noexcept final
+    int32_t WINRT_CALL CreateFromAddressWithName(void* displayAddress, void* displayName, void** resultValue) noexcept final
     {
         try
         {
             *resultValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromAddress, WINRT_WRAP(Windows::Services::Maps::PlaceInfo), hstring const&, hstring const&);
             *resultValue = detach_from<Windows::Services::Maps::PlaceInfo>(this->shim().CreateFromAddress(*reinterpret_cast<hstring const*>(&displayAddress), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2532,180 +2310,180 @@ struct produce<D, Windows::Services::Maps::IPlaceInfoStatics2> : produce_base<D,
 WINRT_EXPORT namespace winrt::Windows::Services::Maps {
 
 inline EnhancedWaypoint::EnhancedWaypoint(Windows::Devices::Geolocation::Geopoint const& point, Windows::Services::Maps::WaypointKind const& kind) :
-    EnhancedWaypoint(get_activation_factory<EnhancedWaypoint, Windows::Services::Maps::IEnhancedWaypointFactory>().Create(point, kind))
+    EnhancedWaypoint(impl::call_factory<EnhancedWaypoint, Windows::Services::Maps::IEnhancedWaypointFactory>([&](auto&& f) { return f.Create(point, kind); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAtAsync(Windows::Devices::Geolocation::Geopoint const& queryPoint)
 {
-    return get_activation_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>().FindLocationsAtAsync(queryPoint);
+    return impl::call_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>([&](auto&& f) { return f.FindLocationsAtAsync(queryPoint); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(param::hstring const& searchText, Windows::Devices::Geolocation::Geopoint const& referencePoint)
 {
-    return get_activation_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>().FindLocationsAsync(searchText, referencePoint);
+    return impl::call_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>([&](auto&& f) { return f.FindLocationsAsync(searchText, referencePoint); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAsync(param::hstring const& searchText, Windows::Devices::Geolocation::Geopoint const& referencePoint, uint32_t maxCount)
 {
-    return get_activation_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>().FindLocationsAsync(searchText, referencePoint, maxCount);
+    return impl::call_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics>([&](auto&& f) { return f.FindLocationsAsync(searchText, referencePoint, maxCount); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAtAsync(Windows::Devices::Geolocation::Geopoint const& queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy const& accuracy)
 {
-    return get_activation_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics2>().FindLocationsAtAsync(queryPoint, accuracy);
+    return impl::call_factory<MapLocationFinder, Windows::Services::Maps::IMapLocationFinderStatics2>([&](auto&& f) { return f.FindLocationsAtAsync(queryPoint, accuracy); });
 }
 
 inline void MapManager::ShowDownloadedMapsUI()
 {
-    get_activation_factory<MapManager, Windows::Services::Maps::IMapManagerStatics>().ShowDownloadedMapsUI();
+    impl::call_factory<MapManager, Windows::Services::Maps::IMapManagerStatics>([&](auto&& f) { return f.ShowDownloadedMapsUI(); });
 }
 
 inline void MapManager::ShowMapsUpdateUI()
 {
-    get_activation_factory<MapManager, Windows::Services::Maps::IMapManagerStatics>().ShowMapsUpdateUI();
+    impl::call_factory<MapManager, Windows::Services::Maps::IMapManagerStatics>([&](auto&& f) { return f.ShowMapsUpdateUI(); });
 }
 
 inline MapRouteDrivingOptions::MapRouteDrivingOptions() :
-    MapRouteDrivingOptions(get_activation_factory<MapRouteDrivingOptions>().ActivateInstance<MapRouteDrivingOptions>())
+    MapRouteDrivingOptions(impl::call_factory<MapRouteDrivingOptions>([](auto&& f) { return f.template ActivateInstance<MapRouteDrivingOptions>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteAsync(startPoint, endPoint);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteAsync(startPoint, endPoint); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint, Windows::Services::Maps::MapRouteOptimization const& optimization)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteAsync(startPoint, endPoint, optimization);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteAsync(startPoint, endPoint, optimization); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint, Windows::Services::Maps::MapRouteOptimization const& optimization, Windows::Services::Maps::MapRouteRestrictions const& restrictions)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint, Windows::Services::Maps::MapRouteOptimization const& optimization, Windows::Services::Maps::MapRouteRestrictions const& restrictions, double headingInDegrees)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(param::async_iterable<Windows::Devices::Geolocation::Geopoint> const& wayPoints)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteFromWaypointsAsync(wayPoints); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(param::async_iterable<Windows::Devices::Geolocation::Geopoint> const& wayPoints, Windows::Services::Maps::MapRouteOptimization const& optimization)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteFromWaypointsAsync(wayPoints, optimization); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(param::async_iterable<Windows::Devices::Geolocation::Geopoint> const& wayPoints, Windows::Services::Maps::MapRouteOptimization const& optimization, Windows::Services::Maps::MapRouteRestrictions const& restrictions)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(param::async_iterable<Windows::Devices::Geolocation::Geopoint> const& wayPoints, Windows::Services::Maps::MapRouteOptimization const& optimization, Windows::Services::Maps::MapRouteRestrictions const& restrictions, double headingInDegrees)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions, headingInDegrees);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions, headingInDegrees); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetWalkingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetWalkingRouteAsync(startPoint, endPoint);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetWalkingRouteAsync(startPoint, endPoint); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetWalkingRouteFromWaypointsAsync(param::async_iterable<Windows::Devices::Geolocation::Geopoint> const& wayPoints)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>().GetWalkingRouteFromWaypointsAsync(wayPoints);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics>([&](auto&& f) { return f.GetWalkingRouteFromWaypointsAsync(wayPoints); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteAsync(Windows::Devices::Geolocation::Geopoint const& startPoint, Windows::Devices::Geolocation::Geopoint const& endPoint, Windows::Services::Maps::MapRouteDrivingOptions const& options)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics2>().GetDrivingRouteAsync(startPoint, endPoint, options);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics2>([&](auto&& f) { return f.GetDrivingRouteAsync(startPoint, endPoint, options); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromEnhancedWaypointsAsync(param::async_iterable<Windows::Services::Maps::EnhancedWaypoint> const& waypoints)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics3>().GetDrivingRouteFromEnhancedWaypointsAsync(waypoints);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics3>([&](auto&& f) { return f.GetDrivingRouteFromEnhancedWaypointsAsync(waypoints); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromEnhancedWaypointsAsync(param::async_iterable<Windows::Services::Maps::EnhancedWaypoint> const& waypoints, Windows::Services::Maps::MapRouteDrivingOptions const& options)
 {
-    return get_activation_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics3>().GetDrivingRouteFromEnhancedWaypointsAsync(waypoints, options);
+    return impl::call_factory<MapRouteFinder, Windows::Services::Maps::IMapRouteFinderStatics3>([&](auto&& f) { return f.GetDrivingRouteFromEnhancedWaypointsAsync(waypoints, options); });
 }
 
 inline void MapService::ServiceToken(param::hstring const& value)
 {
-    get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics>().ServiceToken(value);
+    impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics>([&](auto&& f) { return f.ServiceToken(value); });
 }
 
 inline hstring MapService::ServiceToken()
 {
-    return get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics>().ServiceToken();
+    return impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics>([&](auto&& f) { return f.ServiceToken(); });
 }
 
 inline hstring MapService::WorldViewRegionCode()
 {
-    return get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics2>().WorldViewRegionCode();
+    return impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics2>([&](auto&& f) { return f.WorldViewRegionCode(); });
 }
 
 inline hstring MapService::DataAttributions()
 {
-    return get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics3>().DataAttributions();
+    return impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics3>([&](auto&& f) { return f.DataAttributions(); });
 }
 
 inline void MapService::DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference const& value)
 {
-    get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics4>().DataUsagePreference(value);
+    impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics4>([&](auto&& f) { return f.DataUsagePreference(value); });
 }
 
 inline Windows::Services::Maps::MapServiceDataUsagePreference MapService::DataUsagePreference()
 {
-    return get_activation_factory<MapService, Windows::Services::Maps::IMapServiceStatics4>().DataUsagePreference();
+    return impl::call_factory<MapService, Windows::Services::Maps::IMapServiceStatics4>([&](auto&& f) { return f.DataUsagePreference(); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::Create(Windows::Devices::Geolocation::Geopoint const& referencePoint)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().Create(referencePoint);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.Create(referencePoint); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::Create(Windows::Devices::Geolocation::Geopoint const& referencePoint, Windows::Services::Maps::PlaceInfoCreateOptions const& options)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().Create(referencePoint, options);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.Create(referencePoint, options); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::CreateFromIdentifier(param::hstring const& identifier)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().CreateFromIdentifier(identifier);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.CreateFromIdentifier(identifier); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::CreateFromIdentifier(param::hstring const& identifier, Windows::Devices::Geolocation::Geopoint const& defaultPoint, Windows::Services::Maps::PlaceInfoCreateOptions const& options)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().CreateFromIdentifier(identifier, defaultPoint, options);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.CreateFromIdentifier(identifier, defaultPoint, options); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::CreateFromMapLocation(Windows::Services::Maps::MapLocation const& location)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().CreateFromMapLocation(location);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.CreateFromMapLocation(location); });
 }
 
 inline bool PlaceInfo::IsShowSupported()
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>().IsShowSupported();
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics>([&](auto&& f) { return f.IsShowSupported(); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::CreateFromAddress(param::hstring const& displayAddress)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics2>().CreateFromAddress(displayAddress);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics2>([&](auto&& f) { return f.CreateFromAddress(displayAddress); });
 }
 
 inline Windows::Services::Maps::PlaceInfo PlaceInfo::CreateFromAddress(param::hstring const& displayAddress, param::hstring const& displayName)
 {
-    return get_activation_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics2>().CreateFromAddress(displayAddress, displayName);
+    return impl::call_factory<PlaceInfo, Windows::Services::Maps::IPlaceInfoStatics2>([&](auto&& f) { return f.CreateFromAddress(displayAddress, displayName); });
 }
 
 inline PlaceInfoCreateOptions::PlaceInfoCreateOptions() :
-    PlaceInfoCreateOptions(get_activation_factory<PlaceInfoCreateOptions>().ActivateInstance<PlaceInfoCreateOptions>())
+    PlaceInfoCreateOptions(impl::call_factory<PlaceInfoCreateOptions>([](auto&& f) { return f.template ActivateInstance<PlaceInfoCreateOptions>(); }))
 {}
 
 }
@@ -2764,5 +2542,3 @@ template<> struct hash<winrt::Windows::Services::Maps::PlaceInfo> : winrt::impl:
 template<> struct hash<winrt::Windows::Services::Maps::PlaceInfoCreateOptions> : winrt::impl::hash_base<winrt::Windows::Services::Maps::PlaceInfoCreateOptions> {};
 
 }
-
-WINRT_WARNING_POP

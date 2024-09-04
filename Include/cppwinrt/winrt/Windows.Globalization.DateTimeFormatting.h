@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Globalization.DateTimeFormatting.2.h"
@@ -225,458 +225,398 @@ template <typename D> Windows::Globalization::DateTimeFormatting::DateTimeFormat
 template <typename D>
 struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter> : produce_base<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>
 {
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Calendar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Calendar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Calendar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Calendar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clock(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Clock(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clock, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Clock());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumeralSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(void), hstring const&);
             this->shim().NumeralSystem(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Patterns(void** value) noexcept final
+    int32_t WINRT_CALL get_Patterns(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Patterns, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Patterns());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Template(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Template(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Template, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Template());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Format(Windows::Foundation::DateTime value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL Format(Windows::Foundation::DateTime value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(hstring), Windows::Foundation::DateTime const&);
             *result = detach_from<hstring>(this->shim().Format(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeYear(Windows::Globalization::DateTimeFormatting::YearFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeYear(Windows::Globalization::DateTimeFormatting::YearFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeYear, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::YearFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::YearFormat>(this->shim().IncludeYear());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeMonth(Windows::Globalization::DateTimeFormatting::MonthFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeMonth(Windows::Globalization::DateTimeFormatting::MonthFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeMonth, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::MonthFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::MonthFormat>(this->shim().IncludeMonth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeDayOfWeek(Windows::Globalization::DateTimeFormatting::DayOfWeekFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeDayOfWeek(Windows::Globalization::DateTimeFormatting::DayOfWeekFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeDayOfWeek, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DayOfWeekFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DayOfWeekFormat>(this->shim().IncludeDayOfWeek());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeDay(Windows::Globalization::DateTimeFormatting::DayFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeDay(Windows::Globalization::DateTimeFormatting::DayFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeDay, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DayFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DayFormat>(this->shim().IncludeDay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeHour(Windows::Globalization::DateTimeFormatting::HourFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeHour(Windows::Globalization::DateTimeFormatting::HourFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeHour, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::HourFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::HourFormat>(this->shim().IncludeHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeMinute(Windows::Globalization::DateTimeFormatting::MinuteFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeMinute(Windows::Globalization::DateTimeFormatting::MinuteFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeMinute, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::MinuteFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::MinuteFormat>(this->shim().IncludeMinute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeSecond(Windows::Globalization::DateTimeFormatting::SecondFormat* value) noexcept final
+    int32_t WINRT_CALL get_IncludeSecond(Windows::Globalization::DateTimeFormatting::SecondFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeSecond, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::SecondFormat));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::SecondFormat>(this->shim().IncludeSecond());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedGeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedGeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedGeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedGeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2> : produce_base<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>
 {
-    HRESULT __stdcall FormatUsingTimeZone(Windows::Foundation::DateTime datetime, HSTRING timeZoneId, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatUsingTimeZone(Windows::Foundation::DateTime datetime, void* timeZoneId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(hstring), Windows::Foundation::DateTime const&, hstring const&);
             *result = detach_from<hstring>(this->shim().Format(*reinterpret_cast<Windows::Foundation::DateTime const*>(&datetime), *reinterpret_cast<hstring const*>(&timeZoneId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory> : produce_base<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>
 {
-    HRESULT __stdcall CreateDateTimeFormatter(HSTRING formatTemplate, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatter(void* formatTemplate, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatter, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), hstring const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatter(*reinterpret_cast<hstring const*>(&formatTemplate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterLanguages(HSTRING formatTemplate, void* languages, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterLanguages(void* formatTemplate, void* languages, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterLanguages, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), hstring const&, Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterLanguages(*reinterpret_cast<hstring const*>(&formatTemplate), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterContext(HSTRING formatTemplate, void* languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterContext(void* formatTemplate, void* languages, void* geographicRegion, void* calendar, void* clock, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterContext, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), hstring const&, Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&, hstring const&, hstring const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterContext(*reinterpret_cast<hstring const*>(&formatTemplate), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion), *reinterpret_cast<hstring const*>(&calendar), *reinterpret_cast<hstring const*>(&clock)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterDate, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), Windows::Globalization::DateTimeFormatting::YearFormat const&, Windows::Globalization::DateTimeFormatting::MonthFormat const&, Windows::Globalization::DateTimeFormatting::DayFormat const&, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterDate(*reinterpret_cast<Windows::Globalization::DateTimeFormatting::YearFormat const*>(&yearFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MonthFormat const*>(&monthFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayFormat const*>(&dayFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const*>(&dayOfWeekFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterTime, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), Windows::Globalization::DateTimeFormatting::HourFormat const&, Windows::Globalization::DateTimeFormatting::MinuteFormat const&, Windows::Globalization::DateTimeFormatting::SecondFormat const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterTime(*reinterpret_cast<Windows::Globalization::DateTimeFormatting::HourFormat const*>(&hourFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MinuteFormat const*>(&minuteFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::SecondFormat const*>(&secondFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterDateTimeLanguages, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), Windows::Globalization::DateTimeFormatting::YearFormat const&, Windows::Globalization::DateTimeFormatting::MonthFormat const&, Windows::Globalization::DateTimeFormatting::DayFormat const&, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const&, Windows::Globalization::DateTimeFormatting::HourFormat const&, Windows::Globalization::DateTimeFormatting::MinuteFormat const&, Windows::Globalization::DateTimeFormatting::SecondFormat const&, Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterDateTimeLanguages(*reinterpret_cast<Windows::Globalization::DateTimeFormatting::YearFormat const*>(&yearFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MonthFormat const*>(&monthFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayFormat const*>(&dayFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const*>(&dayOfWeekFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::HourFormat const*>(&hourFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MinuteFormat const*>(&minuteFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::SecondFormat const*>(&secondFormat), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock, void** result) noexcept final
+    int32_t WINRT_CALL CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, void* languages, void* geographicRegion, void* calendar, void* clock, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeFormatterDateTimeContext, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter), Windows::Globalization::DateTimeFormatting::YearFormat const&, Windows::Globalization::DateTimeFormatting::MonthFormat const&, Windows::Globalization::DateTimeFormatting::DayFormat const&, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const&, Windows::Globalization::DateTimeFormatting::HourFormat const&, Windows::Globalization::DateTimeFormatting::MinuteFormat const&, Windows::Globalization::DateTimeFormatting::SecondFormat const&, Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&, hstring const&, hstring const&);
             *result = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().CreateDateTimeFormatterDateTimeContext(*reinterpret_cast<Windows::Globalization::DateTimeFormatting::YearFormat const*>(&yearFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MonthFormat const*>(&monthFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayFormat const*>(&dayFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const*>(&dayOfWeekFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::HourFormat const*>(&hourFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::MinuteFormat const*>(&minuteFormat), *reinterpret_cast<Windows::Globalization::DateTimeFormatting::SecondFormat const*>(&secondFormat), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion), *reinterpret_cast<hstring const*>(&calendar), *reinterpret_cast<hstring const*>(&clock)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics> : produce_base<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>
 {
-    HRESULT __stdcall get_LongDate(void** value) noexcept final
+    int32_t WINRT_CALL get_LongDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LongDate, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().LongDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LongTime(void** value) noexcept final
+    int32_t WINRT_CALL get_LongTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LongTime, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().LongTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShortDate(void** value) noexcept final
+    int32_t WINRT_CALL get_ShortDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShortDate, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().ShortDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShortTime(void** value) noexcept final
+    int32_t WINRT_CALL get_ShortTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShortTime, WINRT_WRAP(Windows::Globalization::DateTimeFormatting::DateTimeFormatter));
             *value = detach_from<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>(this->shim().ShortTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -685,51 +625,51 @@ struct produce<D, Windows::Globalization::DateTimeFormatting::IDateTimeFormatter
 WINRT_EXPORT namespace winrt::Windows::Globalization::DateTimeFormatting {
 
 inline DateTimeFormatter::DateTimeFormatter(param::hstring const& formatTemplate) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatter(formatTemplate))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatter(formatTemplate); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(param::hstring const& formatTemplate, param::iterable<hstring> const& languages) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterLanguages(formatTemplate, languages))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterLanguages(formatTemplate, languages); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(param::hstring const& formatTemplate, param::iterable<hstring> const& languages, param::hstring const& geographicRegion, param::hstring const& calendar, param::hstring const& clock) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterContext(formatTemplate, languages, geographicRegion, calendar, clock))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterContext(formatTemplate, languages, geographicRegion, calendar, clock); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::YearFormat const& yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat const& monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat const& dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const& dayOfWeekFormat) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterDate(yearFormat, monthFormat, dayFormat, dayOfWeekFormat))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterDate(yearFormat, monthFormat, dayFormat, dayOfWeekFormat); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::HourFormat const& hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat const& minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat const& secondFormat) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterTime(hourFormat, minuteFormat, secondFormat))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterTime(hourFormat, minuteFormat, secondFormat); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::YearFormat const& yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat const& monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat const& dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const& dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat const& hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat const& minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat const& secondFormat, param::iterable<hstring> const& languages) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages); }))
 {}
 
 inline DateTimeFormatter::DateTimeFormatter(Windows::Globalization::DateTimeFormatting::YearFormat const& yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat const& monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat const& dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat const& dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat const& hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat const& minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat const& secondFormat, param::iterable<hstring> const& languages, param::hstring const& geographicRegion, param::hstring const& calendar, param::hstring const& clock) :
-    DateTimeFormatter(get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>().CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, geographicRegion, calendar, clock))
+    DateTimeFormatter(impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>([&](auto&& f) { return f.CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, geographicRegion, calendar, clock); }))
 {}
 
 inline Windows::Globalization::DateTimeFormatting::DateTimeFormatter DateTimeFormatter::LongDate()
 {
-    return get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>().LongDate();
+    return impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>([&](auto&& f) { return f.LongDate(); });
 }
 
 inline Windows::Globalization::DateTimeFormatting::DateTimeFormatter DateTimeFormatter::LongTime()
 {
-    return get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>().LongTime();
+    return impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>([&](auto&& f) { return f.LongTime(); });
 }
 
 inline Windows::Globalization::DateTimeFormatting::DateTimeFormatter DateTimeFormatter::ShortDate()
 {
-    return get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>().ShortDate();
+    return impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>([&](auto&& f) { return f.ShortDate(); });
 }
 
 inline Windows::Globalization::DateTimeFormatting::DateTimeFormatter DateTimeFormatter::ShortTime()
 {
-    return get_activation_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>().ShortTime();
+    return impl::call_factory<DateTimeFormatter, Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>([&](auto&& f) { return f.ShortTime(); });
 }
 
 }
@@ -743,5 +683,3 @@ template<> struct hash<winrt::Windows::Globalization::DateTimeFormatting::IDateT
 template<> struct hash<winrt::Windows::Globalization::DateTimeFormatting::DateTimeFormatter> : winrt::impl::hash_base<winrt::Windows::Globalization::DateTimeFormatting::DateTimeFormatter> {};
 
 }
-
-WINRT_WARNING_POP

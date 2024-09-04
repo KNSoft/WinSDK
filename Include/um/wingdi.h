@@ -2818,6 +2818,7 @@ typedef enum
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SDTVDONGLE              = 14,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST                = 15,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_WIRED          = 16,
+    DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_VIRTUAL        = 17,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL                = 0x80000000,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_FORCE_UINT32            = 0xFFFFFFFF
 } DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY;
@@ -3039,6 +3040,7 @@ typedef enum
       DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32                = 0xFFFFFFFF
 } DISPLAYCONFIG_DEVICE_INFO_TYPE;
 
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
@@ -3112,6 +3114,7 @@ typedef struct DISPLAYCONFIG_TARGET_BASE_TYPE {
     DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY baseOutputTechnology;
 } DISPLAYCONFIG_TARGET_BASE_TYPE;
 
+
 typedef struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
 {
     DISPLAYCONFIG_DEVICE_INFO_HEADER    header;
@@ -3157,10 +3160,11 @@ typedef struct _DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     {
         struct
         {
-          UINT32 advancedColorSupported  :1;    // A type of advanced color is supported
-          UINT32 advancedColorEnabled    :1;    // A type of advanced color is enabled
-          UINT32 wideColorEnforced       :1;    // Wide color gamut is enabled
-          UINT32 reserved                :29;
+          UINT32 advancedColorSupported        :1;    // A type of advanced color is supported
+          UINT32 advancedColorEnabled          :1;    // A type of advanced color is enabled
+          UINT32 wideColorEnforced             :1;    // Wide color gamut is enabled
+          UINT32 advancedColorForceDisabled    :1;    // Advanced color is force disabled due to system/OS policy
+          UINT32 reserved                      :28;
         } DUMMYSTRUCTNAME;
 
         UINT32 value;

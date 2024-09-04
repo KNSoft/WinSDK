@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -324,47 +324,47 @@ template <> struct name<Windows::Graphics::Printing3D::Printing3DPackageCompress
 template <> struct name<Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior>{ static constexpr auto & value{ L"Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior" }; };
 template <> struct name<Windows::Graphics::Printing3D::Printing3DBufferDescription>{ static constexpr auto & value{ L"Windows.Graphics.Printing3D.Printing3DBufferDescription" }; };
 template <> struct name<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler>{ static constexpr auto & value{ L"Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler" }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DManager>{ static constexpr GUID value{ 0x4D2FCB0A,0x7366,0x4971,{ 0x8B,0xD5,0x17,0xC4,0xE3,0xE8,0xC6,0xC0 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DManagerStatics>{ static constexpr GUID value{ 0x0EF1CAFE,0xA9AD,0x4C08,{ 0xA9,0x17,0x1D,0x1F,0x86,0x3E,0xAB,0xCB } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTask>{ static constexpr GUID value{ 0x8CE3D080,0x2118,0x4C28,{ 0x80,0xDE,0xF4,0x26,0xD7,0x01,0x91,0xAE } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>{ static constexpr GUID value{ 0xCC1914AF,0x2614,0x4F1D,{ 0xAC,0xCC,0xD6,0xFC,0x4F,0xDA,0x54,0x55 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTaskRequest>{ static constexpr GUID value{ 0x2595C46F,0x2245,0x4C5A,{ 0x87,0x31,0x0D,0x60,0x4D,0xC6,0xBC,0x3C } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>{ static constexpr GUID value{ 0x150CB77F,0x18C5,0x40D7,{ 0x9F,0x40,0xFA,0xB3,0x09,0x6E,0x05,0xA9 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs>{ static constexpr GUID value{ 0x5BCD34AF,0x24E9,0x4C10,{ 0x8D,0x07,0x14,0xC3,0x46,0xBA,0x3F,0xCF } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs>{ static constexpr GUID value{ 0xC77C9ABA,0x24AF,0x424D,{ 0xA3,0xBF,0x92,0x25,0x0C,0x35,0x56,0x02 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3D3MFPackage>{ static constexpr GUID value{ 0xF64DD5C8,0x2AB7,0x45A9,{ 0xA1,0xB7,0x26,0x7E,0x94,0x8D,0x5B,0x18 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3D3MFPackage2>{ static constexpr GUID value{ 0x965C7AC4,0x93CB,0x4430,{ 0x92,0xB8,0x78,0x9C,0xD4,0x54,0xF8,0x83 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics>{ static constexpr GUID value{ 0x7058D9AF,0x7A9A,0x4787,{ 0xB8,0x17,0xF6,0xF4,0x59,0x21,0x48,0x23 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DBaseMaterial>{ static constexpr GUID value{ 0xD0F0E743,0xC50C,0x4BCB,{ 0x9D,0x04,0xFC,0x16,0xAD,0xCE,0xA2,0xC9 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup>{ static constexpr GUID value{ 0x94F070B8,0x2515,0x4A8D,{ 0xA1,0xF0,0xD0,0xFC,0x13,0xD0,0x60,0x21 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory>{ static constexpr GUID value{ 0x5C1546DC,0x8697,0x4193,{ 0x97,0x6B,0x84,0xBB,0x41,0x16,0xE5,0xBF } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>{ static constexpr GUID value{ 0x815A47BC,0x374A,0x476D,{ 0xBE,0x92,0x3E,0xCF,0xD1,0xCB,0x97,0x76 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DColorMaterial>{ static constexpr GUID value{ 0xE1899928,0x7CE7,0x4285,{ 0xA3,0x5D,0xF1,0x45,0xC9,0x51,0x0C,0x7B } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DColorMaterial2>{ static constexpr GUID value{ 0xFAB0E852,0x0AEF,0x44E9,{ 0x9D,0xDD,0x36,0xEE,0xEA,0x5A,0xCD,0x44 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup>{ static constexpr GUID value{ 0x001A6BD0,0xAADF,0x4226,{ 0xAF,0xE9,0xF3,0x69,0xA0,0xB4,0x50,0x04 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory>{ static constexpr GUID value{ 0x71D38D6D,0xB1EA,0x4A5B,{ 0xBC,0x54,0x19,0xC6,0x5F,0x3D,0xF0,0x44 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DComponent>{ static constexpr GUID value{ 0x7E287845,0xBF7F,0x4CDB,{ 0xA2,0x7F,0x30,0xA0,0x14,0x37,0xFE,0xDE } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>{ static constexpr GUID value{ 0x3279F335,0x0EF0,0x456B,{ 0x9A,0x21,0x49,0xBE,0xBE,0x8B,0x51,0xC2 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial>{ static constexpr GUID value{ 0x462238DD,0x562E,0x4F6C,{ 0x88,0x2D,0xF4,0xD8,0x41,0xFD,0x63,0xC7 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup>{ static constexpr GUID value{ 0x8D946A5B,0x40F1,0x496D,{ 0xA5,0xFB,0x34,0x0A,0x5A,0x67,0x8E,0x30 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2>{ static constexpr GUID value{ 0x06E86D62,0x7D3B,0x41E1,{ 0x94,0x4C,0xBA,0xFD,0xE4,0x55,0x54,0x83 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory>{ static constexpr GUID value{ 0xD08ECD13,0x92FF,0x43AA,{ 0xA6,0x27,0x8D,0x43,0xC2,0x2C,0x81,0x7E } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions>{ static constexpr GUID value{ 0xBBFED397,0x2D74,0x46F7,{ 0xBE,0x85,0x99,0xA6,0x7B,0xBB,0x66,0x29 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMaterial>{ static constexpr GUID value{ 0x378DB256,0xED62,0x4952,{ 0xB8,0x5B,0x03,0x56,0x7D,0x7C,0x46,0x5E } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMesh>{ static constexpr GUID value{ 0x192E90DC,0x0228,0x2E01,{ 0xBC,0x20,0xC5,0x29,0x0C,0xBF,0x32,0xC4 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult>{ static constexpr GUID value{ 0x195671BA,0xE93A,0x4E8A,{ 0xA4,0x6F,0xDE,0xA8,0xE8,0x52,0x19,0x7E } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DModel>{ static constexpr GUID value{ 0x2D012EF0,0x52FB,0x919A,{ 0x77,0xB0,0x4B,0x1A,0x3B,0x80,0x32,0x4F } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DModel2>{ static constexpr GUID value{ 0xC92069C7,0xC841,0x47F3,{ 0xA8,0x4E,0xA1,0x49,0xFD,0x08,0xB6,0x57 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DModelTexture>{ static constexpr GUID value{ 0x5DAFCF01,0xB59D,0x483C,{ 0x97,0xBB,0xA4,0xD5,0x46,0xD1,0xC7,0x5C } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial>{ static constexpr GUID value{ 0x25A6254B,0xC6E9,0x484D,{ 0xA2,0x14,0xA2,0x5E,0x57,0x76,0xBA,0x62 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup>{ static constexpr GUID value{ 0xF0950519,0xAEB9,0x4515,{ 0xA3,0x9B,0xA0,0x88,0xFB,0xBB,0x27,0x7C } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory>{ static constexpr GUID value{ 0x323E196E,0xD4C6,0x451E,{ 0xA8,0x14,0x4D,0x78,0xA2,0x10,0xFE,0x53 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial>{ static constexpr GUID value{ 0x8D844BFB,0x07E9,0x4986,{ 0x98,0x33,0x8D,0xD3,0xD4,0x8C,0x68,0x59 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup>{ static constexpr GUID value{ 0x627D7CA7,0x6D90,0x4FB9,{ 0x9F,0xC4,0x9F,0xEF,0xF3,0xDF,0xA8,0x92 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2>{ static constexpr GUID value{ 0x69FBDBBA,0xB12E,0x429B,{ 0x83,0x86,0xDF,0x52,0x84,0xF6,0xE8,0x0F } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory>{ static constexpr GUID value{ 0xCBB049B0,0x468A,0x4C6F,{ 0xB2,0xA2,0x8E,0xB8,0xBA,0x8D,0xEA,0x48 } }; };
-template <> struct guid<Windows::Graphics::Printing3D::IPrinting3DTextureResource>{ static constexpr GUID value{ 0xA70DF32D,0x6AB1,0x44AE,{ 0xBC,0x45,0xA2,0x73,0x82,0xC0,0xD3,0x8C } }; };
-template <> struct guid<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler>{ static constexpr GUID value{ 0xE9175E70,0xC917,0x46DE,{ 0xBB,0x51,0xD9,0xA9,0x4D,0xB3,0x71,0x1F } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DManager>{ static constexpr guid value{ 0x4D2FCB0A,0x7366,0x4971,{ 0x8B,0xD5,0x17,0xC4,0xE3,0xE8,0xC6,0xC0 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DManagerStatics>{ static constexpr guid value{ 0x0EF1CAFE,0xA9AD,0x4C08,{ 0xA9,0x17,0x1D,0x1F,0x86,0x3E,0xAB,0xCB } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTask>{ static constexpr guid value{ 0x8CE3D080,0x2118,0x4C28,{ 0x80,0xDE,0xF4,0x26,0xD7,0x01,0x91,0xAE } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>{ static constexpr guid value{ 0xCC1914AF,0x2614,0x4F1D,{ 0xAC,0xCC,0xD6,0xFC,0x4F,0xDA,0x54,0x55 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTaskRequest>{ static constexpr guid value{ 0x2595C46F,0x2245,0x4C5A,{ 0x87,0x31,0x0D,0x60,0x4D,0xC6,0xBC,0x3C } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>{ static constexpr guid value{ 0x150CB77F,0x18C5,0x40D7,{ 0x9F,0x40,0xFA,0xB3,0x09,0x6E,0x05,0xA9 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs>{ static constexpr guid value{ 0x5BCD34AF,0x24E9,0x4C10,{ 0x8D,0x07,0x14,0xC3,0x46,0xBA,0x3F,0xCF } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs>{ static constexpr guid value{ 0xC77C9ABA,0x24AF,0x424D,{ 0xA3,0xBF,0x92,0x25,0x0C,0x35,0x56,0x02 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3D3MFPackage>{ static constexpr guid value{ 0xF64DD5C8,0x2AB7,0x45A9,{ 0xA1,0xB7,0x26,0x7E,0x94,0x8D,0x5B,0x18 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3D3MFPackage2>{ static constexpr guid value{ 0x965C7AC4,0x93CB,0x4430,{ 0x92,0xB8,0x78,0x9C,0xD4,0x54,0xF8,0x83 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics>{ static constexpr guid value{ 0x7058D9AF,0x7A9A,0x4787,{ 0xB8,0x17,0xF6,0xF4,0x59,0x21,0x48,0x23 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DBaseMaterial>{ static constexpr guid value{ 0xD0F0E743,0xC50C,0x4BCB,{ 0x9D,0x04,0xFC,0x16,0xAD,0xCE,0xA2,0xC9 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup>{ static constexpr guid value{ 0x94F070B8,0x2515,0x4A8D,{ 0xA1,0xF0,0xD0,0xFC,0x13,0xD0,0x60,0x21 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory>{ static constexpr guid value{ 0x5C1546DC,0x8697,0x4193,{ 0x97,0x6B,0x84,0xBB,0x41,0x16,0xE5,0xBF } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>{ static constexpr guid value{ 0x815A47BC,0x374A,0x476D,{ 0xBE,0x92,0x3E,0xCF,0xD1,0xCB,0x97,0x76 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DColorMaterial>{ static constexpr guid value{ 0xE1899928,0x7CE7,0x4285,{ 0xA3,0x5D,0xF1,0x45,0xC9,0x51,0x0C,0x7B } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DColorMaterial2>{ static constexpr guid value{ 0xFAB0E852,0x0AEF,0x44E9,{ 0x9D,0xDD,0x36,0xEE,0xEA,0x5A,0xCD,0x44 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup>{ static constexpr guid value{ 0x001A6BD0,0xAADF,0x4226,{ 0xAF,0xE9,0xF3,0x69,0xA0,0xB4,0x50,0x04 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory>{ static constexpr guid value{ 0x71D38D6D,0xB1EA,0x4A5B,{ 0xBC,0x54,0x19,0xC6,0x5F,0x3D,0xF0,0x44 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DComponent>{ static constexpr guid value{ 0x7E287845,0xBF7F,0x4CDB,{ 0xA2,0x7F,0x30,0xA0,0x14,0x37,0xFE,0xDE } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>{ static constexpr guid value{ 0x3279F335,0x0EF0,0x456B,{ 0x9A,0x21,0x49,0xBE,0xBE,0x8B,0x51,0xC2 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial>{ static constexpr guid value{ 0x462238DD,0x562E,0x4F6C,{ 0x88,0x2D,0xF4,0xD8,0x41,0xFD,0x63,0xC7 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup>{ static constexpr guid value{ 0x8D946A5B,0x40F1,0x496D,{ 0xA5,0xFB,0x34,0x0A,0x5A,0x67,0x8E,0x30 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2>{ static constexpr guid value{ 0x06E86D62,0x7D3B,0x41E1,{ 0x94,0x4C,0xBA,0xFD,0xE4,0x55,0x54,0x83 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory>{ static constexpr guid value{ 0xD08ECD13,0x92FF,0x43AA,{ 0xA6,0x27,0x8D,0x43,0xC2,0x2C,0x81,0x7E } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions>{ static constexpr guid value{ 0xBBFED397,0x2D74,0x46F7,{ 0xBE,0x85,0x99,0xA6,0x7B,0xBB,0x66,0x29 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMaterial>{ static constexpr guid value{ 0x378DB256,0xED62,0x4952,{ 0xB8,0x5B,0x03,0x56,0x7D,0x7C,0x46,0x5E } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMesh>{ static constexpr guid value{ 0x192E90DC,0x0228,0x2E01,{ 0xBC,0x20,0xC5,0x29,0x0C,0xBF,0x32,0xC4 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult>{ static constexpr guid value{ 0x195671BA,0xE93A,0x4E8A,{ 0xA4,0x6F,0xDE,0xA8,0xE8,0x52,0x19,0x7E } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DModel>{ static constexpr guid value{ 0x2D012EF0,0x52FB,0x919A,{ 0x77,0xB0,0x4B,0x1A,0x3B,0x80,0x32,0x4F } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DModel2>{ static constexpr guid value{ 0xC92069C7,0xC841,0x47F3,{ 0xA8,0x4E,0xA1,0x49,0xFD,0x08,0xB6,0x57 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DModelTexture>{ static constexpr guid value{ 0x5DAFCF01,0xB59D,0x483C,{ 0x97,0xBB,0xA4,0xD5,0x46,0xD1,0xC7,0x5C } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial>{ static constexpr guid value{ 0x25A6254B,0xC6E9,0x484D,{ 0xA2,0x14,0xA2,0x5E,0x57,0x76,0xBA,0x62 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup>{ static constexpr guid value{ 0xF0950519,0xAEB9,0x4515,{ 0xA3,0x9B,0xA0,0x88,0xFB,0xBB,0x27,0x7C } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory>{ static constexpr guid value{ 0x323E196E,0xD4C6,0x451E,{ 0xA8,0x14,0x4D,0x78,0xA2,0x10,0xFE,0x53 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial>{ static constexpr guid value{ 0x8D844BFB,0x07E9,0x4986,{ 0x98,0x33,0x8D,0xD3,0xD4,0x8C,0x68,0x59 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup>{ static constexpr guid value{ 0x627D7CA7,0x6D90,0x4FB9,{ 0x9F,0xC4,0x9F,0xEF,0xF3,0xDF,0xA8,0x92 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2>{ static constexpr guid value{ 0x69FBDBBA,0xB12E,0x429B,{ 0x83,0x86,0xDF,0x52,0x84,0xF6,0xE8,0x0F } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory>{ static constexpr guid value{ 0xCBB049B0,0x468A,0x4C6F,{ 0xB2,0xA2,0x8E,0xB8,0xBA,0x8D,0xEA,0x48 } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::IPrinting3DTextureResource>{ static constexpr guid value{ 0xA70DF32D,0x6AB1,0x44AE,{ 0xBC,0x45,0xA2,0x73,0x82,0xC0,0xD3,0x8C } }; };
+template <> struct guid_storage<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler>{ static constexpr guid value{ 0xE9175E70,0xC917,0x46DE,{ 0xBB,0x51,0xD9,0xA9,0x4D,0xB3,0x71,0x1F } }; };
 template <> struct default_interface<Windows::Graphics::Printing3D::Print3DManager>{ using type = Windows::Graphics::Printing3D::IPrint3DManager; };
 template <> struct default_interface<Windows::Graphics::Printing3D::Print3DTask>{ using type = Windows::Graphics::Printing3D::IPrint3DTask; };
 template <> struct default_interface<Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs>{ using type = Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs; };
@@ -393,13 +393,330 @@ template <> struct default_interface<Windows::Graphics::Printing3D::Printing3DTe
 template <> struct default_interface<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup>{ using type = Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup; };
 template <> struct default_interface<Windows::Graphics::Printing3D::Printing3DTextureResource>{ using type = Windows::Graphics::Printing3D::IPrinting3DTextureResource; };
 
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_TaskRequested(void* eventHandler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_TaskRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowPrintUIAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTask>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Submitting(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Submitting(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SourceChanged(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SourceChanged(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Completion(Windows::Graphics::Printing3D::Print3DTaskCompletion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedStatus(Windows::Graphics::Printing3D::Print3DTaskDetail* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTask(void* title, void* printerId, void* handler, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetSource(void* source) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SaveAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrintTicket(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PrintTicket(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ModelPart(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ModelPart(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Thumbnail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Textures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadModelFromPackageAsync(void* value, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveModelToPackageAsync(void* value, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackage2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Compression(Windows::Graphics::Printing3D::Printing3DPackageCompression* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Compression(Windows::Graphics::Printing3D::Printing3DPackageCompression value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadAsync(void* value, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Color(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Bases(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupId(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Abs(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pla(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Value(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterial2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Colors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupId(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DComponent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mesh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mesh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Components(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Thumbnail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::Graphics::Printing3D::Printing3DObjectType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Type(Windows::Graphics::Printing3D::Printing3DObjectType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PartNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PartNumber(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Component(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Component(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Matrix(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Matrix(Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Values(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Composites(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialIndices(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaseMaterialGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseMaterialGroup(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxReductionArea(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxReductionArea(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetTriangleCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetTriangleCount(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxEdgeLength(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxEdgeLength(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaseGroups(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorGroups(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Texture2CoordGroups(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompositeGroups(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MultiplePropertyGroups(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMesh>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_VertexCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VertexCount(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IndexCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IndexCount(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VertexPositionsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VertexPositionsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VertexNormalsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VertexNormalsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TriangleIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TriangleIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TriangleMaterialIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TriangleMaterialIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVertexPositions(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVertexPositions(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVertexNormals(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVertexNormals(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTriangleIndices(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTriangleIndices(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTriangleMaterialIndices(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTriangleMaterialIndices(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BufferDescriptionSet(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BufferSet(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL VerifyAsync(Windows::Graphics::Printing3D::Printing3DMeshVerificationMode value, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsValid(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NonmanifoldTriangles(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReversedNormalTriangles(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Unit(Windows::Graphics::Printing3D::Printing3DModelUnit* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Unit(Windows::Graphics::Printing3D::Printing3DModelUnit value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Textures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Meshes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Components(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Material(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Material(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Build(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Build(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Version(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Version(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequiredExtensions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Metadata(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RepairAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModel2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryPartialRepairAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryPartialRepairWithTimeAsync(Windows::Foundation::TimeSpan maxWaitTime, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryReduceFacesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryReduceFacesWithOptionsAsync(void* printing3DFaceReductionOptions, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryReduceFacesWithOptionsAndTimeAsync(void* printing3DFaceReductionOptions, Windows::Foundation::TimeSpan maxWait, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RepairWithProgressAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModelTexture>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextureResource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextureResource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TileStyleU(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TileStyleU(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TileStyleV(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TileStyleV(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaterialIndices(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MultipleProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupIndices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupId(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Texture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Texture(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_U(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_U(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_V(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_V(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Texture2Coords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaterialGroupId(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Texture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Texture(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTextureResource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextureData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextureData(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* args) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Graphics_Printing3D_IPrint3DManager
 {
-    event_token TaskRequested(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> const& eventHandler) const;
-    using TaskRequested_revoker = event_revoker<Windows::Graphics::Printing3D::IPrint3DManager>;
+    winrt::event_token TaskRequested(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> const& eventHandler) const;
+    using TaskRequested_revoker = impl::event_revoker<Windows::Graphics::Printing3D::IPrint3DManager, &impl::abi_t<Windows::Graphics::Printing3D::IPrint3DManager>::remove_TaskRequested>;
     TaskRequested_revoker TaskRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> const& eventHandler) const;
-    void TaskRequested(event_token const& token) const;
+    void TaskRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Printing3D::IPrint3DManager> { template <typename D> using type = consume_Windows_Graphics_Printing3D_IPrint3DManager<D>; };
 
@@ -415,18 +732,18 @@ template <typename D>
 struct consume_Windows_Graphics_Printing3D_IPrint3DTask
 {
     Windows::Graphics::Printing3D::Printing3D3MFPackage Source() const;
-    event_token Submitting(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    using Submitting_revoker = event_revoker<Windows::Graphics::Printing3D::IPrint3DTask>;
+    winrt::event_token Submitting(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> const& eventHandler) const;
+    using Submitting_revoker = impl::event_revoker<Windows::Graphics::Printing3D::IPrint3DTask, &impl::abi_t<Windows::Graphics::Printing3D::IPrint3DTask>::remove_Submitting>;
     Submitting_revoker Submitting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Foundation::IInspectable> const& eventHandler) const;
-    void Submitting(event_token const& eventCookie) const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> const& eventHandler) const;
-    using Completed_revoker = event_revoker<Windows::Graphics::Printing3D::IPrint3DTask>;
+    void Submitting(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> const& eventHandler) const;
+    using Completed_revoker = impl::event_revoker<Windows::Graphics::Printing3D::IPrint3DTask, &impl::abi_t<Windows::Graphics::Printing3D::IPrint3DTask>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs> const& eventHandler) const;
-    void Completed(event_token const& eventCookie) const;
-    event_token SourceChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> const& eventHandler) const;
-    using SourceChanged_revoker = event_revoker<Windows::Graphics::Printing3D::IPrint3DTask>;
+    void Completed(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token SourceChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> const& eventHandler) const;
+    using SourceChanged_revoker = impl::event_revoker<Windows::Graphics::Printing3D::IPrint3DTask, &impl::abi_t<Windows::Graphics::Printing3D::IPrint3DTask>::remove_SourceChanged>;
     SourceChanged_revoker SourceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs> const& eventHandler) const;
-    void SourceChanged(event_token const& eventCookie) const;
+    void SourceChanged(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Printing3D::IPrint3DTask> { template <typename D> using type = consume_Windows_Graphics_Printing3D_IPrint3DTask<D>; };
 
@@ -800,322 +1117,5 @@ struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription
 };
 template <> struct abi<Windows::Graphics::Printing3D::Printing3DBufferDescription>{ using type = struct_Windows_Graphics_Printing3D_Printing3DBufferDescription; };
 
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_TaskRequested(void* eventHandler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_TaskRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** result) noexcept = 0;
-    virtual HRESULT __stdcall ShowPrintUIAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTask>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Submitting(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Submitting(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_SourceChanged(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_SourceChanged(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Completion(Windows::Graphics::Printing3D::Print3DTaskCompletion* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedStatus(Windows::Graphics::Printing3D::Print3DTaskDetail* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTask(HSTRING title, HSTRING printerId, void* handler, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetSource(void* source) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SaveAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_PrintTicket(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PrintTicket(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ModelPart(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ModelPart(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Thumbnail(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Textures(void** value) noexcept = 0;
-    virtual HRESULT __stdcall LoadModelFromPackageAsync(void* value, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SaveModelToPackageAsync(void* value, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackage2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Compression(Windows::Graphics::Printing3D::Printing3DPackageCompression* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Compression(Windows::Graphics::Printing3D::Printing3DPackageCompression value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadAsync(void* value, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Color(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Bases(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupId(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Abs(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pla(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterial2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Colors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupId(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DComponent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mesh(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mesh(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Components(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Thumbnail(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::Graphics::Printing3D::Printing3DObjectType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Type(Windows::Graphics::Printing3D::Printing3DObjectType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PartNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PartNumber(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Component(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Component(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Matrix(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Matrix(Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Values(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Composites(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialIndices(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaseMaterialGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_BaseMaterialGroup(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxReductionArea(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxReductionArea(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetTriangleCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetTriangleCount(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxEdgeLength(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxEdgeLength(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaseGroups(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorGroups(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Texture2CoordGroups(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompositeGroups(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MultiplePropertyGroups(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMesh>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_VertexCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VertexCount(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IndexCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IndexCount(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_VertexPositionsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VertexPositionsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
-    virtual HRESULT __stdcall get_VertexNormalsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VertexNormalsDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
-    virtual HRESULT __stdcall get_TriangleIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TriangleIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
-    virtual HRESULT __stdcall get_TriangleMaterialIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TriangleMaterialIndicesDescription(struct struct_Windows_Graphics_Printing3D_Printing3DBufferDescription value) noexcept = 0;
-    virtual HRESULT __stdcall GetVertexPositions(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall CreateVertexPositions(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall GetVertexNormals(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall CreateVertexNormals(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall GetTriangleIndices(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall CreateTriangleIndices(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall GetTriangleMaterialIndices(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall CreateTriangleMaterialIndices(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_BufferDescriptionSet(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BufferSet(void** value) noexcept = 0;
-    virtual HRESULT __stdcall VerifyAsync(Windows::Graphics::Printing3D::Printing3DMeshVerificationMode value, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsValid(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NonmanifoldTriangles(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReversedNormalTriangles(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Unit(Windows::Graphics::Printing3D::Printing3DModelUnit* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Unit(Windows::Graphics::Printing3D::Printing3DModelUnit value) noexcept = 0;
-    virtual HRESULT __stdcall get_Textures(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Meshes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Components(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Material(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Material(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Build(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Build(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Version(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Version(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequiredExtensions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Metadata(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RepairAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModel2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryPartialRepairAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryPartialRepairWithTimeAsync(Windows::Foundation::TimeSpan maxWaitTime, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryReduceFacesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryReduceFacesWithOptionsAsync(void* printing3DFaceReductionOptions, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryReduceFacesWithOptionsAndTimeAsync(void* printing3DFaceReductionOptions, Windows::Foundation::TimeSpan maxWait, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RepairWithProgressAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DModelTexture>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextureResource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextureResource(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TileStyleU(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TileStyleU(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall get_TileStyleV(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TileStyleV(Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaterialIndices(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MultipleProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupIndices(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupId(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Texture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Texture(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_U(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_U(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_V(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_V(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Texture2Coords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaterialGroupId(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Texture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Texture(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t MaterialGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::IPrinting3DTextureResource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextureData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextureData(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* args) noexcept = 0;
-};};
 
 }

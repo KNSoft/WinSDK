@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -103,16 +103,82 @@ template <> struct name<Windows::Web::Http::Filters::HttpServerCustomValidationR
 template <> struct name<Windows::Web::Http::Filters::HttpCacheReadBehavior>{ static constexpr auto & value{ L"Windows.Web.Http.Filters.HttpCacheReadBehavior" }; };
 template <> struct name<Windows::Web::Http::Filters::HttpCacheWriteBehavior>{ static constexpr auto & value{ L"Windows.Web.Http.Filters.HttpCacheWriteBehavior" }; };
 template <> struct name<Windows::Web::Http::Filters::HttpCookieUsageBehavior>{ static constexpr auto & value{ L"Windows.Web.Http.Filters.HttpCookieUsageBehavior" }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpBaseProtocolFilter>{ static constexpr GUID value{ 0x71C89B09,0xE131,0x4B54,{ 0xA5,0x3C,0xEB,0x43,0xFF,0x37,0xE9,0xBB } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpBaseProtocolFilter2>{ static constexpr GUID value{ 0x2EC30013,0x9427,0x4900,{ 0xA0,0x17,0xFA,0x7D,0xA3,0xB5,0xC9,0xAE } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpBaseProtocolFilter3>{ static constexpr GUID value{ 0xD43F4D4C,0xBD42,0x43AE,{ 0x87,0x17,0xAD,0x2C,0x8F,0x4B,0x29,0x37 } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>{ static constexpr GUID value{ 0x9FE36CCF,0x2983,0x4893,{ 0x94,0x1F,0xEB,0x51,0x8C,0xA8,0xCE,0xF9 } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpCacheControl>{ static constexpr GUID value{ 0xC77E1CB4,0x3CEA,0x4EB5,{ 0xAC,0x85,0x04,0xE1,0x86,0xE6,0x3A,0xB7 } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpFilter>{ static constexpr GUID value{ 0xA4CB6DD5,0x0902,0x439E,{ 0xBF,0xD7,0xE1,0x25,0x52,0xB1,0x65,0xCE } }; };
-template <> struct guid<Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs>{ static constexpr GUID value{ 0x3165FE32,0xE7DD,0x48B7,{ 0xA3,0x61,0x93,0x9C,0x75,0x0E,0x63,0xCC } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpBaseProtocolFilter>{ static constexpr guid value{ 0x71C89B09,0xE131,0x4B54,{ 0xA5,0x3C,0xEB,0x43,0xFF,0x37,0xE9,0xBB } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpBaseProtocolFilter2>{ static constexpr guid value{ 0x2EC30013,0x9427,0x4900,{ 0xA0,0x17,0xFA,0x7D,0xA3,0xB5,0xC9,0xAE } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpBaseProtocolFilter3>{ static constexpr guid value{ 0xD43F4D4C,0xBD42,0x43AE,{ 0x87,0x17,0xAD,0x2C,0x8F,0x4B,0x29,0x37 } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>{ static constexpr guid value{ 0x9FE36CCF,0x2983,0x4893,{ 0x94,0x1F,0xEB,0x51,0x8C,0xA8,0xCE,0xF9 } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpCacheControl>{ static constexpr guid value{ 0xC77E1CB4,0x3CEA,0x4EB5,{ 0xAC,0x85,0x04,0xE1,0x86,0xE6,0x3A,0xB7 } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpFilter>{ static constexpr guid value{ 0xA4CB6DD5,0x0902,0x439E,{ 0xBF,0xD7,0xE1,0x25,0x52,0xB1,0x65,0xCE } }; };
+template <> struct guid_storage<Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs>{ static constexpr guid value{ 0x3165FE32,0xE7DD,0x48B7,{ 0xA3,0x61,0x93,0x9C,0x75,0x0E,0x63,0xCC } }; };
 template <> struct default_interface<Windows::Web::Http::Filters::HttpBaseProtocolFilter>{ using type = Windows::Web::Http::Filters::IHttpBaseProtocolFilter; };
 template <> struct default_interface<Windows::Web::Http::Filters::HttpCacheControl>{ using type = Windows::Web::Http::Filters::IHttpCacheControl; };
 template <> struct default_interface<Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs>{ using type = Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs; };
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowAutoRedirect(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowAutoRedirect(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowUI(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowUI(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutomaticDecompression(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutomaticDecompression(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CacheControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CookieManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClientCertificate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ClientCertificate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IgnorableServerCertificateErrors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxConnectionsPerServer(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxConnectionsPerServer(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProxyCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProxyCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ServerCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UseProxy(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UseProxy(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxVersion(Windows::Web::Http::HttpVersion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxVersion(Windows::Web::Http::HttpVersion value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ServerCustomValidationRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ServerCustomValidationRequested(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearAuthenticationCache() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpCacheControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendRequestAsync(void* request, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequestMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Reject() noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Web_Http_Filters_IHttpBaseProtocolFilter
@@ -158,10 +224,10 @@ template <> struct consume<Windows::Web::Http::Filters::IHttpBaseProtocolFilter3
 template <typename D>
 struct consume_Windows_Web_Http_Filters_IHttpBaseProtocolFilter4
 {
-    event_token ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> const& eventHandler) const;
-    using ServerCustomValidationRequested_revoker = event_revoker<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>;
+    winrt::event_token ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> const& eventHandler) const;
+    using ServerCustomValidationRequested_revoker = impl::event_revoker<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4, &impl::abi_t<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>::remove_ServerCustomValidationRequested>;
     ServerCustomValidationRequested_revoker ServerCustomValidationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> const& eventHandler) const;
-    void ServerCustomValidationRequested(event_token const& eventCookie) const;
+    void ServerCustomValidationRequested(winrt::event_token const& eventCookie) const noexcept;
     void ClearAuthenticationCache() const;
 };
 template <> struct consume<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4> { template <typename D> using type = consume_Windows_Web_Http_Filters_IHttpBaseProtocolFilter4<D>; };
@@ -195,71 +261,5 @@ struct consume_Windows_Web_Http_Filters_IHttpServerCustomValidationRequestedEven
     Windows::Foundation::Deferral GetDeferral() const;
 };
 template <> struct consume<Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs> { template <typename D> using type = consume_Windows_Web_Http_Filters_IHttpServerCustomValidationRequestedEventArgs<D>; };
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowAutoRedirect(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowAutoRedirect(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowUI(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowUI(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutomaticDecompression(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutomaticDecompression(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CacheControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CookieManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClientCertificate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ClientCertificate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IgnorableServerCertificateErrors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxConnectionsPerServer(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxConnectionsPerServer(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProxyCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProxyCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ServerCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UseProxy(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UseProxy(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxVersion(Windows::Web::Http::HttpVersion* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxVersion(Windows::Web::Http::HttpVersion value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ServerCustomValidationRequested(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ServerCustomValidationRequested(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall ClearAuthenticationCache() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpCacheControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall get_WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendRequestAsync(void* request, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequestMessage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCertificate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Reject() noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
 
 }

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/impl/Windows.Foundation.Metadata.2.h"
 #include "winrt/Windows.Foundation.h"
 
@@ -85,144 +85,124 @@ template <typename D> bool consume_Windows_Foundation_Metadata_IApiInformationSt
 template <typename D>
 struct produce<D, Windows::Foundation::Metadata::IApiInformationStatics> : produce_base<D, Windows::Foundation::Metadata::IApiInformationStatics>
 {
-    HRESULT __stdcall IsTypePresent(HSTRING typeName, bool* result) noexcept final
+    int32_t WINRT_CALL IsTypePresent(void* typeName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTypePresent, WINRT_WRAP(bool), hstring const&);
             *result = detach_from<bool>(this->shim().IsTypePresent(*reinterpret_cast<hstring const*>(&typeName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsMethodPresent(HSTRING typeName, HSTRING methodName, bool* result) noexcept final
+    int32_t WINRT_CALL IsMethodPresent(void* typeName, void* methodName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMethodPresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsMethodPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&methodName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsMethodPresentWithArity(HSTRING typeName, HSTRING methodName, uint32_t inputParameterCount, bool* result) noexcept final
+    int32_t WINRT_CALL IsMethodPresentWithArity(void* typeName, void* methodName, uint32_t inputParameterCount, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMethodPresent, WINRT_WRAP(bool), hstring const&, hstring const&, uint32_t);
             *result = detach_from<bool>(this->shim().IsMethodPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&methodName), inputParameterCount));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsEventPresent(HSTRING typeName, HSTRING eventName, bool* result) noexcept final
+    int32_t WINRT_CALL IsEventPresent(void* typeName, void* eventName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEventPresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsEventPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&eventName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsPropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept final
+    int32_t WINRT_CALL IsPropertyPresent(void* typeName, void* propertyName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPropertyPresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsPropertyPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&propertyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsReadOnlyPropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept final
+    int32_t WINRT_CALL IsReadOnlyPropertyPresent(void* typeName, void* propertyName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsReadOnlyPropertyPresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsReadOnlyPropertyPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&propertyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsWriteablePropertyPresent(HSTRING typeName, HSTRING propertyName, bool* result) noexcept final
+    int32_t WINRT_CALL IsWriteablePropertyPresent(void* typeName, void* propertyName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWriteablePropertyPresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsWriteablePropertyPresent(*reinterpret_cast<hstring const*>(&typeName), *reinterpret_cast<hstring const*>(&propertyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsEnumNamedValuePresent(HSTRING enumTypeName, HSTRING valueName, bool* result) noexcept final
+    int32_t WINRT_CALL IsEnumNamedValuePresent(void* enumTypeName, void* valueName, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnumNamedValuePresent, WINRT_WRAP(bool), hstring const&, hstring const&);
             *result = detach_from<bool>(this->shim().IsEnumNamedValuePresent(*reinterpret_cast<hstring const*>(&enumTypeName), *reinterpret_cast<hstring const*>(&valueName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsApiContractPresentByMajor(HSTRING contractName, uint16_t majorVersion, bool* result) noexcept final
+    int32_t WINRT_CALL IsApiContractPresentByMajor(void* contractName, uint16_t majorVersion, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsApiContractPresent, WINRT_WRAP(bool), hstring const&, uint16_t);
             *result = detach_from<bool>(this->shim().IsApiContractPresent(*reinterpret_cast<hstring const*>(&contractName), majorVersion));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsApiContractPresentByMajorAndMinor(HSTRING contractName, uint16_t majorVersion, uint16_t minorVersion, bool* result) noexcept final
+    int32_t WINRT_CALL IsApiContractPresentByMajorAndMinor(void* contractName, uint16_t majorVersion, uint16_t minorVersion, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsApiContractPresent, WINRT_WRAP(bool), hstring const&, uint16_t, uint16_t);
             *result = detach_from<bool>(this->shim().IsApiContractPresent(*reinterpret_cast<hstring const*>(&contractName), majorVersion, minorVersion));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -232,52 +212,52 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Metadata {
 
 inline bool ApiInformation::IsTypePresent(param::hstring const& typeName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsTypePresent(typeName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsTypePresent(typeName); });
 }
 
 inline bool ApiInformation::IsMethodPresent(param::hstring const& typeName, param::hstring const& methodName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsMethodPresent(typeName, methodName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsMethodPresent(typeName, methodName); });
 }
 
 inline bool ApiInformation::IsMethodPresent(param::hstring const& typeName, param::hstring const& methodName, uint32_t inputParameterCount)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsMethodPresent(typeName, methodName, inputParameterCount);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsMethodPresent(typeName, methodName, inputParameterCount); });
 }
 
 inline bool ApiInformation::IsEventPresent(param::hstring const& typeName, param::hstring const& eventName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsEventPresent(typeName, eventName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsEventPresent(typeName, eventName); });
 }
 
 inline bool ApiInformation::IsPropertyPresent(param::hstring const& typeName, param::hstring const& propertyName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsPropertyPresent(typeName, propertyName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsPropertyPresent(typeName, propertyName); });
 }
 
 inline bool ApiInformation::IsReadOnlyPropertyPresent(param::hstring const& typeName, param::hstring const& propertyName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsReadOnlyPropertyPresent(typeName, propertyName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsReadOnlyPropertyPresent(typeName, propertyName); });
 }
 
 inline bool ApiInformation::IsWriteablePropertyPresent(param::hstring const& typeName, param::hstring const& propertyName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsWriteablePropertyPresent(typeName, propertyName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsWriteablePropertyPresent(typeName, propertyName); });
 }
 
 inline bool ApiInformation::IsEnumNamedValuePresent(param::hstring const& enumTypeName, param::hstring const& valueName)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsEnumNamedValuePresent(enumTypeName, valueName);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsEnumNamedValuePresent(enumTypeName, valueName); });
 }
 
 inline bool ApiInformation::IsApiContractPresent(param::hstring const& contractName, uint16_t majorVersion)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsApiContractPresent(contractName, majorVersion); });
 }
 
 inline bool ApiInformation::IsApiContractPresent(param::hstring const& contractName, uint16_t majorVersion, uint16_t minorVersion)
 {
-    return get_activation_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>().IsApiContractPresent(contractName, majorVersion, minorVersion);
+    return impl::call_factory<ApiInformation, Windows::Foundation::Metadata::IApiInformationStatics>([&](auto&& f) { return f.IsApiContractPresent(contractName, majorVersion, minorVersion); });
 }
 
 }
@@ -288,5 +268,3 @@ template<> struct hash<winrt::Windows::Foundation::Metadata::IApiInformationStat
 template<> struct hash<winrt::Windows::Foundation::Metadata::ApiInformation> : winrt::impl::hash_base<winrt::Windows::Foundation::Metadata::ApiInformation> {};
 
 }
-
-WINRT_WARNING_POP

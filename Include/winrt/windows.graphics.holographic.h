@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.holographic.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -318,6 +330,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 ABI::Windows::Graphics::Holographic::IHolographicCamera4
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicCamera5;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 ABI::Windows::Graphics::Holographic::IHolographicCamera5
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
@@ -556,6 +582,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters ABI::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                interface IHolographicQuadLayerUpdateParameters2;
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 ABI::Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
@@ -1721,6 +1761,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -2172,6 +2214,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4;
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicCamera5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCamera
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCamera5[] = L"Windows.Graphics.Holographic.IHolographicCamera5";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("229706F2-628D-4EF5-9C08-A63FDD7787C6"), exclusiveto, contract] */
+                MIDL_INTERFACE("229706F2-628D-4EF5-9C08-A63FDD7787C6")
+                IHolographicCamera5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsHardwareContentProtectionSupported(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsHardwareContentProtectionEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsHardwareContentProtectionEnabled(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicCamera5=_uuidof(IHolographicCamera5);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3034,6 +3123,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuad
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicQuadLayerUpdateParameters2[] = L"Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace Holographic {
+                /* [object, uuid("4F33D32D-82C1-46C1-8980-3CB70D98182B"), exclusiveto, contract] */
+                MIDL_INTERFACE("4F33D32D-82C1-46C1-8980-3CB70D98182B")
+                IHolographicQuadLayerUpdateParameters2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanAcquireWithHardwareProtection(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE AcquireBufferToUpdateContentWithHardwareProtection(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHolographicQuadLayerUpdateParameters2=_uuidof(IHolographicQuadLayerUpdateParameters2);
+                
+            } /* Windows */
+        } /* Graphics */
+    } /* Holographic */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicSpace
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -3380,6 +3513,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
  *    Windows.Graphics.Holographic.IHolographicCamera2
  *    Windows.Graphics.Holographic.IHolographicCamera3
  *    Windows.Graphics.Holographic.IHolographicCamera4
+ *    Windows.Graphics.Holographic.IHolographicCamera5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3629,6 +3763,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3750,6 +3885,12 @@ typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4 _
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCameraPose;
@@ -3851,6 +3992,12 @@ typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayer
 typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters;
 
 #endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2;
+
+#endif // ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpace_FWD_DEFINED__
@@ -5624,6 +5771,8 @@ typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CHolographicStereoTransfo
 
 
 
+
+
 /*
  *
  * Struct Windows.Graphics.Holographic.HolographicFramePresentResult
@@ -6196,6 +6345,113 @@ interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4;
 #endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Graphics.Holographic.IHolographicCamera5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicCamera
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicCamera5[] = L"Windows.Graphics.Holographic.IHolographicCamera5";
+/* [object, uuid("229706F2-628D-4EF5-9C08-A63FDD7787C6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsHardwareContentProtectionSupported )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsHardwareContentProtectionEnabled )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsHardwareContentProtectionEnabled )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_get_IsHardwareContentProtectionSupported(This,value) \
+    ( (This)->lpVtbl->get_IsHardwareContentProtectionSupported(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_get_IsHardwareContentProtectionEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsHardwareContentProtectionEnabled(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_put_IsHardwareContentProtectionEnabled(This,value) \
+    ( (This)->lpVtbl->put_IsHardwareContentProtectionEnabled(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicCamera5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -8112,6 +8368,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuad
 
 /*
  *
+ * Interface Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_Holographic_IHolographicQuadLayerUpdateParameters2[] = L"Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2";
+/* [object, uuid("4F33D32D-82C1-46C1-8980-3CB70D98182B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanAcquireWithHardwareProtection )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *AcquireBufferToUpdateContentWithHardwareProtection )(
+        __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2Vtbl;
+
+interface __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_get_CanAcquireWithHardwareProtection(This,value) \
+    ( (This)->lpVtbl->get_CanAcquireWithHardwareProtection(This,value) )
+
+#define __x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_AcquireBufferToUpdateContentWithHardwareProtection(This,value) \
+    ( (This)->lpVtbl->AcquireBufferToUpdateContentWithHardwareProtection(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CHolographic_CIHolographicQuadLayerUpdateParameters2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Graphics.Holographic.IHolographicSpace
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -8883,6 +9239,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CHolographic_CIHolographicSpac
  *    Windows.Graphics.Holographic.IHolographicCamera2
  *    Windows.Graphics.Holographic.IHolographicCamera3
  *    Windows.Graphics.Holographic.IHolographicCamera4
+ *    Windows.Graphics.Holographic.IHolographicCamera5
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9132,6 +9489,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters ** Default Interface **
+ *    Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

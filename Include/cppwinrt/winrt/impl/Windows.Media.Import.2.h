@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -58,7 +58,8 @@ struct WINRT_EBO PhotoImportImportItemsResult :
 };
 
 struct WINRT_EBO PhotoImportItem :
-    Windows::Media::Import::IPhotoImportItem
+    Windows::Media::Import::IPhotoImportItem,
+    impl::require<PhotoImportItem, Windows::Media::Import::IPhotoImportItem2>
 {
     PhotoImportItem(std::nullptr_t) noexcept {}
 };

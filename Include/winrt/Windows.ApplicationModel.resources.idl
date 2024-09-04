@@ -68,21 +68,19 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-            [deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Resources.ResourceLoader)]
             [uuid(C33A3603-69DC-4285-A077-D5C0E47CCBE8)]
             interface IResourceLoaderFactory : IInspectable
             {
-                [deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] HRESULT CreateResourceLoaderByName([in] HSTRING name, [out] [retval] Windows.ApplicationModel.Resources.ResourceLoader** loader);
+                HRESULT CreateResourceLoaderByName([in] HSTRING name, [out] [retval] Windows.ApplicationModel.Resources.ResourceLoader** loader);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-            [deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Resources.ResourceLoader)]
             [uuid(BF777CE1-19C8-49C2-953C-47E9227B334E)]
             interface IResourceLoaderStatics : IInspectable
             {
-                [deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.", deprecate, Windows.Foundation.UniversalApiContract, 1.0)] HRESULT GetStringForReference([in] Windows.Foundation.Uri* uri, [out] [retval] HSTRING* value);
+                HRESULT GetStringForReference([in] Windows.Foundation.Uri* uri, [out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -106,7 +104,7 @@ namespace Windows
             runtimeclass ResourceLoader
             {
                 [default] interface Windows.ApplicationModel.Resources.IResourceLoader;
-                [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Resources.IResourceLoader2;
+                interface Windows.ApplicationModel.Resources.IResourceLoader2;
             }
         }
     }

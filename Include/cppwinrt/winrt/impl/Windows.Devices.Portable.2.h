@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,7 +21,7 @@ struct ServiceDevice
 {
     ServiceDevice() = delete;
     static hstring GetDeviceSelector(Windows::Devices::Portable::ServiceDeviceType const& serviceType);
-    static hstring GetDeviceSelectorFromServiceId(GUID const& serviceId);
+    static hstring GetDeviceSelectorFromServiceId(winrt::guid const& serviceId);
 };
 
 struct StorageDevice

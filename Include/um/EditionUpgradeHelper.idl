@@ -101,6 +101,25 @@ interface IContainerActivationHelper: IUnknown
     );
 };
 
+[
+object,
+dual,
+oleautomation,
+nonextensible,
+uuid(C39948F0-6142-44FD-98CA-E1681A8D68B5)
+]
+interface IClipServiceNotificationHelper: IUnknown
+{
+    HRESULT
+    ShowToast(
+        [in, string]                    BSTR                                titleText,
+        [in, string]                    BSTR                                bodyText,
+        [in, string]                    BSTR                                packageName,
+        [in, string]                    BSTR                                appId,
+        [in, string]                    BSTR                                launchCommand
+    );
+};
+
 
 [
 uuid(09C6A793-92DC-4D27-A11D-3921C9314DED),
@@ -124,6 +143,7 @@ library EditionUpgradeHelperLib
     {
         [default] interface IEditionUpgradeBroker;
         interface IContainerActivationHelper;
+        interface IClipServiceNotificationHelper;
     }
 
 };

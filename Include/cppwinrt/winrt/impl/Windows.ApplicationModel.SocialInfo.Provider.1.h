@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -10,21 +10,21 @@
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::SocialInfo::Provider {
 
-struct WINRT_EBO [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialDashboardItemUpdater :
+struct WINRT_EBO ISocialDashboardItemUpdater :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialDashboardItemUpdater>
 {
     ISocialDashboardItemUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedUpdater :
+struct WINRT_EBO ISocialFeedUpdater :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialFeedUpdater>
 {
     ISocialFeedUpdater(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialInfoProviderManagerStatics :
+struct WINRT_EBO ISocialInfoProviderManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISocialInfoProviderManagerStatics>
 {

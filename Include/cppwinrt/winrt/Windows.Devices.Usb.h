@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -456,14 +456,14 @@ template <typename D> uint8_t consume_Windows_Devices_Usb_IUsbDeviceDescriptor<D
     return value;
 }
 
-template <typename D> hstring consume_Windows_Devices_Usb_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID const& winUsbInterfaceClass) const
+template <typename D> hstring consume_Windows_Devices_Usb_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid const& winUsbInterfaceClass) const
 {
     hstring value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Usb::IUsbDeviceStatics)->GetDeviceSelector(vendorId, productId, get_abi(winUsbInterfaceClass), put_abi(value)));
     return value;
 }
 
-template <typename D> hstring consume_Windows_Devices_Usb_IUsbDeviceStatics<D>::GetDeviceSelector(GUID const& winUsbInterfaceClass) const
+template <typename D> hstring consume_Windows_Devices_Usb_IUsbDeviceStatics<D>::GetDeviceSelector(winrt::guid const& winUsbInterfaceClass) const
 {
     hstring value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Usb::IUsbDeviceStatics)->GetDeviceSelectorGuidOnly(get_abi(winUsbInterfaceClass), put_abi(value)));
@@ -757,21 +757,21 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Devices_
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Usb::IUsbInterruptInPipe)->add_DataReceived(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Usb::IUsbInterruptInPipe> consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived_revoker consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Usb::IUsbInterruptInPipe>(this, &abi_t<Windows::Devices::Usb::IUsbInterruptInPipe>::remove_DataReceived, DataReceived(handler));
+    return impl::make_event_revoker<D, DataReceived_revoker>(this, DataReceived(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>::DataReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Usb::IUsbInterruptInPipe)->remove_DataReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Usb::IUsbInterruptInPipe)->remove_DataReceived(get_abi(token)));
 }
 
 template <typename D> uint32_t consume_Windows_Devices_Usb_IUsbInterruptOutEndpointDescriptor<D>::MaxPacketSize() const
@@ -905,780 +905,678 @@ template <typename D> Windows::Devices::Usb::UsbSetupPacket consume_Windows_Devi
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>
 {
-    HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPacketSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPacketSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EndpointNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pipe(void** value) noexcept final
+    int32_t WINRT_CALL get_Pipe(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pipe, WINRT_WRAP(Windows::Devices::Usb::UsbBulkInPipe));
             *value = detach_from<Windows::Devices::Usb::UsbBulkInPipe>(this->shim().Pipe());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbBulkInPipe> : produce_base<D, Windows::Devices::Usb::IUsbBulkInPipe>
 {
-    HRESULT __stdcall get_MaxTransferSizeBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxTransferSizeBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxTransferSizeBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxTransferSizeBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbBulkInEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>(this->shim().EndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearStallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearStallAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearStallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReadOptions(Windows::Devices::Usb::UsbReadOptions value) noexcept final
+    int32_t WINRT_CALL put_ReadOptions(Windows::Devices::Usb::UsbReadOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadOptions, WINRT_WRAP(void), Windows::Devices::Usb::UsbReadOptions const&);
             this->shim().ReadOptions(*reinterpret_cast<Windows::Devices::Usb::UsbReadOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadOptions(Windows::Devices::Usb::UsbReadOptions* value) noexcept final
+    int32_t WINRT_CALL get_ReadOptions(Windows::Devices::Usb::UsbReadOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadOptions, WINRT_WRAP(Windows::Devices::Usb::UsbReadOptions));
             *value = detach_from<Windows::Devices::Usb::UsbReadOptions>(this->shim().ReadOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FlushBuffer() noexcept final
+    int32_t WINRT_CALL FlushBuffer() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlushBuffer, WINRT_WRAP(void));
             this->shim().FlushBuffer();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_InputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *value = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().InputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>
 {
-    HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPacketSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPacketSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EndpointNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pipe(void** value) noexcept final
+    int32_t WINRT_CALL get_Pipe(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pipe, WINRT_WRAP(Windows::Devices::Usb::UsbBulkOutPipe));
             *value = detach_from<Windows::Devices::Usb::UsbBulkOutPipe>(this->shim().Pipe());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbBulkOutPipe> : produce_base<D, Windows::Devices::Usb::IUsbBulkOutPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbBulkOutEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>(this->shim().EndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearStallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearStallAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearStallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept final
+    int32_t WINRT_CALL put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteOptions, WINRT_WRAP(void), Windows::Devices::Usb::UsbWriteOptions const&);
             this->shim().WriteOptions(*reinterpret_cast<Windows::Devices::Usb::UsbWriteOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept final
+    int32_t WINRT_CALL get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteOptions, WINRT_WRAP(Windows::Devices::Usb::UsbWriteOptions));
             *value = detach_from<Windows::Devices::Usb::UsbWriteOptions>(this->shim().WriteOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbConfiguration> : produce_base<D, Windows::Devices::Usb::IUsbConfiguration>
 {
-    HRESULT __stdcall get_UsbInterfaces(void** value) noexcept final
+    int32_t WINRT_CALL get_UsbInterfaces(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsbInterfaces, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface>>(this->shim().UsbInterfaces());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConfigurationDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_ConfigurationDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfigurationDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbConfigurationDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbConfigurationDescriptor>(this->shim().ConfigurationDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptors(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>>(this->shim().Descriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbConfigurationDescriptor>
 {
-    HRESULT __stdcall get_ConfigurationValue(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_ConfigurationValue(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfigurationValue, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ConfigurationValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPowerMilliamps(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPowerMilliamps(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPowerMilliamps, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPowerMilliamps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelfPowered(bool* value) noexcept final
+    int32_t WINRT_CALL get_SelfPowered(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelfPowered, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SelfPowered());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteWakeup(bool* value) noexcept final
+    int32_t WINRT_CALL get_RemoteWakeup(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteWakeup, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RemoteWakeup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>
 {
-    HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept final
+    int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), Windows::Devices::Usb::UsbDescriptor const&, Windows::Devices::Usb::UsbConfigurationDescriptor&);
             *success = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor), *reinterpret_cast<Windows::Devices::Usb::UsbConfigurationDescriptor*>(parsed)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept final
+    int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Devices::Usb::UsbConfigurationDescriptor), Windows::Devices::Usb::UsbDescriptor const&);
             *parsed = detach_from<Windows::Devices::Usb::UsbConfigurationDescriptor>(this->shim().Parse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbControlRequestType> : produce_base<D, Windows::Devices::Usb::IUsbControlRequestType>
 {
-    HRESULT __stdcall get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept final
+    int32_t WINRT_CALL get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(Windows::Devices::Usb::UsbTransferDirection));
             *value = detach_from<Windows::Devices::Usb::UsbTransferDirection>(this->shim().Direction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Direction(Windows::Devices::Usb::UsbTransferDirection value) noexcept final
+    int32_t WINRT_CALL put_Direction(Windows::Devices::Usb::UsbTransferDirection value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(void), Windows::Devices::Usb::UsbTransferDirection const&);
             this->shim().Direction(*reinterpret_cast<Windows::Devices::Usb::UsbTransferDirection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType* value) noexcept final
+    int32_t WINRT_CALL get_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlTransferType, WINRT_WRAP(Windows::Devices::Usb::UsbControlTransferType));
             *value = detach_from<Windows::Devices::Usb::UsbControlTransferType>(this->shim().ControlTransferType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType value) noexcept final
+    int32_t WINRT_CALL put_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlTransferType, WINRT_WRAP(void), Windows::Devices::Usb::UsbControlTransferType const&);
             this->shim().ControlTransferType(*reinterpret_cast<Windows::Devices::Usb::UsbControlTransferType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Recipient(Windows::Devices::Usb::UsbControlRecipient* value) noexcept final
+    int32_t WINRT_CALL get_Recipient(Windows::Devices::Usb::UsbControlRecipient* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Recipient, WINRT_WRAP(Windows::Devices::Usb::UsbControlRecipient));
             *value = detach_from<Windows::Devices::Usb::UsbControlRecipient>(this->shim().Recipient());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Recipient(Windows::Devices::Usb::UsbControlRecipient value) noexcept final
+    int32_t WINRT_CALL put_Recipient(Windows::Devices::Usb::UsbControlRecipient value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Recipient, WINRT_WRAP(void), Windows::Devices::Usb::UsbControlRecipient const&);
             this->shim().Recipient(*reinterpret_cast<Windows::Devices::Usb::UsbControlRecipient const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AsByte(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_AsByte(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsByte, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().AsByte());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AsByte(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_AsByte(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsByte, WINRT_WRAP(void), uint8_t);
             this->shim().AsByte(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbDescriptor>
 {
-    HRESULT __stdcall get_Length(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DescriptorType(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_DescriptorType(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DescriptorType, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().DescriptorType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadDescriptorBuffer(void* buffer) noexcept final
+    int32_t WINRT_CALL ReadDescriptorBuffer(void* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadDescriptorBuffer, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().ReadDescriptorBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDevice> : produce_base<D, Windows::Devices::Usb::IUsbDevice>
 {
-    HRESULT __stdcall SendControlOutTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept final
+    int32_t WINRT_CALL SendControlOutTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendControlOutTransferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>), Windows::Devices::Usb::UsbSetupPacket const, Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().SendControlOutTransferAsync(*reinterpret_cast<Windows::Devices::Usb::UsbSetupPacket const*>(&setupPacket), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendControlOutTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept final
+    int32_t WINRT_CALL SendControlOutTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendControlOutTransferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<uint32_t>), Windows::Devices::Usb::UsbSetupPacket const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<uint32_t>>(this->shim().SendControlOutTransferAsync(*reinterpret_cast<Windows::Devices::Usb::UsbSetupPacket const*>(&setupPacket)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendControlInTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept final
+    int32_t WINRT_CALL SendControlInTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendControlInTransferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>), Windows::Devices::Usb::UsbSetupPacket const, Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>>(this->shim().SendControlInTransferAsync(*reinterpret_cast<Windows::Devices::Usb::UsbSetupPacket const*>(&setupPacket), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendControlInTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept final
+    int32_t WINRT_CALL SendControlInTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendControlInTransferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>), Windows::Devices::Usb::UsbSetupPacket const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>>(this->shim().SendControlInTransferAsync(*reinterpret_cast<Windows::Devices::Usb::UsbSetupPacket const*>(&setupPacket)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultInterface(void** value) noexcept final
+    int32_t WINRT_CALL get_DefaultInterface(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultInterface, WINRT_WRAP(Windows::Devices::Usb::UsbInterface));
             *value = detach_from<Windows::Devices::Usb::UsbInterface>(this->shim().DefaultInterface());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceDescriptor>(this->shim().DeviceDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Configuration(void** value) noexcept final
+    int32_t WINRT_CALL get_Configuration(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Configuration, WINRT_WRAP(Windows::Devices::Usb::UsbConfiguration));
             *value = detach_from<Windows::Devices::Usb::UsbConfiguration>(this->shim().Configuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceClass> : produce_base<D, Windows::Devices::Usb::IUsbDeviceClass>
 {
-    HRESULT __stdcall get_ClassCode(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_ClassCode(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClassCode, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ClassCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClassCode(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_ClassCode(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClassCode, WINRT_WRAP(void), uint8_t);
             this->shim().ClassCode(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubclassCode(void** value) noexcept final
+    int32_t WINRT_CALL get_SubclassCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubclassCode, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().SubclassCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SubclassCode(void* value) noexcept final
+    int32_t WINRT_CALL put_SubclassCode(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubclassCode, WINRT_WRAP(void), Windows::Foundation::IReference<uint8_t> const&);
             this->shim().SubclassCode(*reinterpret_cast<Windows::Foundation::IReference<uint8_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolCode(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolCode, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtocolCode(void* value) noexcept final
+    int32_t WINRT_CALL put_ProtocolCode(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolCode, WINRT_WRAP(void), Windows::Foundation::IReference<uint8_t> const&);
             this->shim().ProtocolCode(*reinterpret_cast<Windows::Foundation::IReference<uint8_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1689,1229 +1587,1065 @@ struct produce<D, Windows::Devices::Usb::IUsbDeviceClasses> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceClassesStatics> : produce_base<D, Windows::Devices::Usb::IUsbDeviceClassesStatics>
 {
-    HRESULT __stdcall get_CdcControl(void** value) noexcept final
+    int32_t WINRT_CALL get_CdcControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CdcControl, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().CdcControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Physical(void** value) noexcept final
+    int32_t WINRT_CALL get_Physical(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Physical, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().Physical());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PersonalHealthcare(void** value) noexcept final
+    int32_t WINRT_CALL get_PersonalHealthcare(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PersonalHealthcare, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().PersonalHealthcare());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActiveSync(void** value) noexcept final
+    int32_t WINRT_CALL get_ActiveSync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActiveSync, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().ActiveSync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PalmSync(void** value) noexcept final
+    int32_t WINRT_CALL get_PalmSync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PalmSync, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().PalmSync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceFirmwareUpdate(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceFirmwareUpdate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceFirmwareUpdate, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().DeviceFirmwareUpdate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Irda(void** value) noexcept final
+    int32_t WINRT_CALL get_Irda(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Irda, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().Irda());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Measurement(void** value) noexcept final
+    int32_t WINRT_CALL get_Measurement(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Measurement, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().Measurement());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VendorSpecific(void** value) noexcept final
+    int32_t WINRT_CALL get_VendorSpecific(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VendorSpecific, WINRT_WRAP(Windows::Devices::Usb::UsbDeviceClass));
             *value = detach_from<Windows::Devices::Usb::UsbDeviceClass>(this->shim().VendorSpecific());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbDeviceDescriptor>
 {
-    HRESULT __stdcall get_BcdUsb(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_BcdUsb(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BcdUsb, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().BcdUsb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPacketSize0(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPacketSize0(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPacketSize0, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().MaxPacketSize0());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VendorId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_VendorId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VendorId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().VendorId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProductId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BcdDeviceRevision(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_BcdDeviceRevision(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BcdDeviceRevision, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().BcdDeviceRevision());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfConfigurations(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfConfigurations(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfConfigurations, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().NumberOfConfigurations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbDeviceStatics> : produce_base<D, Windows::Devices::Usb::IUsbDeviceStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid winUsbInterfaceClass, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<hstring>(this->shim().GetDeviceSelector(vendorId, productId, *reinterpret_cast<GUID const*>(&winUsbInterfaceClass)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), uint32_t, uint32_t, winrt::guid const&);
+            *value = detach_from<hstring>(this->shim().GetDeviceSelector(vendorId, productId, *reinterpret_cast<winrt::guid const*>(&winUsbInterfaceClass)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorGuidOnly(winrt::guid winUsbInterfaceClass, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<hstring>(this->shim().GetDeviceSelector(*reinterpret_cast<GUID const*>(&winUsbInterfaceClass)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), winrt::guid const&);
+            *value = detach_from<hstring>(this->shim().GetDeviceSelector(*reinterpret_cast<winrt::guid const*>(&winUsbInterfaceClass)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), uint32_t, uint32_t);
             *value = detach_from<hstring>(this->shim().GetDeviceSelector(vendorId, productId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceClassSelector(void* usbClass, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceClassSelector(void* usbClass, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceClassSelector, WINRT_WRAP(hstring), Windows::Devices::Usb::UsbDeviceClass const&);
             *value = detach_from<hstring>(this->shim().GetDeviceClassSelector(*reinterpret_cast<Windows::Devices::Usb::UsbDeviceClass const*>(&usbClass)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbEndpointDescriptor>
 {
-    HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EndpointNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept final
+    int32_t WINRT_CALL get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(Windows::Devices::Usb::UsbTransferDirection));
             *value = detach_from<Windows::Devices::Usb::UsbTransferDirection>(this->shim().Direction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointType(Windows::Devices::Usb::UsbEndpointType* value) noexcept final
+    int32_t WINRT_CALL get_EndpointType(Windows::Devices::Usb::UsbEndpointType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointType, WINRT_WRAP(Windows::Devices::Usb::UsbEndpointType));
             *value = detach_from<Windows::Devices::Usb::UsbEndpointType>(this->shim().EndpointType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AsBulkInEndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_AsBulkInEndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsBulkInEndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbBulkInEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>(this->shim().AsBulkInEndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AsInterruptInEndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_AsInterruptInEndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsInterruptInEndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptInEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>(this->shim().AsInterruptInEndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AsBulkOutEndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_AsBulkOutEndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsBulkOutEndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbBulkOutEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>(this->shim().AsBulkOutEndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AsInterruptOutEndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_AsInterruptOutEndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AsInterruptOutEndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>(this->shim().AsInterruptOutEndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>
 {
-    HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept final
+    int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), Windows::Devices::Usb::UsbDescriptor const&, Windows::Devices::Usb::UsbEndpointDescriptor&);
             *success = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor), *reinterpret_cast<Windows::Devices::Usb::UsbEndpointDescriptor*>(parsed)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept final
+    int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Devices::Usb::UsbEndpointDescriptor), Windows::Devices::Usb::UsbDescriptor const&);
             *parsed = detach_from<Windows::Devices::Usb::UsbEndpointDescriptor>(this->shim().Parse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterface> : produce_base<D, Windows::Devices::Usb::IUsbInterface>
 {
-    HRESULT __stdcall get_BulkInPipes(void** value) noexcept final
+    int32_t WINRT_CALL get_BulkInPipes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BulkInPipes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe>>(this->shim().BulkInPipes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterruptInPipes(void** value) noexcept final
+    int32_t WINRT_CALL get_InterruptInPipes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterruptInPipes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe>>(this->shim().InterruptInPipes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BulkOutPipes(void** value) noexcept final
+    int32_t WINRT_CALL get_BulkOutPipes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BulkOutPipes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe>>(this->shim().BulkOutPipes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterruptOutPipes(void** value) noexcept final
+    int32_t WINRT_CALL get_InterruptOutPipes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterruptOutPipes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe>>(this->shim().InterruptOutPipes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterfaceSettings(void** value) noexcept final
+    int32_t WINRT_CALL get_InterfaceSettings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterfaceSettings, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting>>(this->shim().InterfaceSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterfaceNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InterfaceNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterfaceNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InterfaceNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptors(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>>(this->shim().Descriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbInterfaceDescriptor>
 {
-    HRESULT __stdcall get_ClassCode(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_ClassCode(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClassCode, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ClassCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubclassCode(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SubclassCode(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubclassCode, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SubclassCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolCode(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_ProtocolCode(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolCode, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ProtocolCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlternateSettingNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_AlternateSettingNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateSettingNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().AlternateSettingNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterfaceNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InterfaceNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterfaceNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InterfaceNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics> : produce_base<D, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>
 {
-    HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept final
+    int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), Windows::Devices::Usb::UsbDescriptor const&, Windows::Devices::Usb::UsbInterfaceDescriptor&);
             *success = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor), *reinterpret_cast<Windows::Devices::Usb::UsbInterfaceDescriptor*>(parsed)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept final
+    int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept final
     {
         try
         {
             *parsed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Devices::Usb::UsbInterfaceDescriptor), Windows::Devices::Usb::UsbDescriptor const&);
             *parsed = detach_from<Windows::Devices::Usb::UsbInterfaceDescriptor>(this->shim().Parse(*reinterpret_cast<Windows::Devices::Usb::UsbDescriptor const*>(&descriptor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterfaceSetting> : produce_base<D, Windows::Devices::Usb::IUsbInterfaceSetting>
 {
-    HRESULT __stdcall get_BulkInEndpoints(void** value) noexcept final
+    int32_t WINRT_CALL get_BulkInEndpoints(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BulkInEndpoints, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>>(this->shim().BulkInEndpoints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterruptInEndpoints(void** value) noexcept final
+    int32_t WINRT_CALL get_InterruptInEndpoints(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterruptInEndpoints, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>>(this->shim().InterruptInEndpoints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BulkOutEndpoints(void** value) noexcept final
+    int32_t WINRT_CALL get_BulkOutEndpoints(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BulkOutEndpoints, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>>(this->shim().BulkOutEndpoints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterruptOutEndpoints(void** value) noexcept final
+    int32_t WINRT_CALL get_InterruptOutEndpoints(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterruptOutEndpoints, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>>(this->shim().InterruptOutEndpoints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Selected(bool* value) noexcept final
+    int32_t WINRT_CALL get_Selected(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Selected, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Selected());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectSettingAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SelectSettingAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectSettingAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SelectSettingAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterfaceDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_InterfaceDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterfaceDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbInterfaceDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbInterfaceDescriptor>(this->shim().InterfaceDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptors(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor>>(this->shim().Descriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>
 {
-    HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPacketSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPacketSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EndpointNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Interval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Interval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Interval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Interval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pipe(void** value) noexcept final
+    int32_t WINRT_CALL get_Pipe(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pipe, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptInPipe));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptInPipe>(this->shim().Pipe());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptInEventArgs> : produce_base<D, Windows::Devices::Usb::IUsbInterruptInEventArgs>
 {
-    HRESULT __stdcall get_InterruptData(void** value) noexcept final
+    int32_t WINRT_CALL get_InterruptData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterruptData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().InterruptData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptInPipe> : produce_base<D, Windows::Devices::Usb::IUsbInterruptInPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptInEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>(this->shim().EndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearStallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearStallAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearStallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DataReceived(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_DataReceived(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DataReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DataReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DataReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DataReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DataReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DataReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor> : produce_base<D, Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>
 {
-    HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPacketSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPacketSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointNumber, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EndpointNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Interval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Interval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Interval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Interval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pipe(void** value) noexcept final
+    int32_t WINRT_CALL get_Pipe(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pipe, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptOutPipe));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptOutPipe>(this->shim().Pipe());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbInterruptOutPipe> : produce_base<D, Windows::Devices::Usb::IUsbInterruptOutPipe>
 {
-    HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndpointDescriptor, WINRT_WRAP(Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor));
             *value = detach_from<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>(this->shim().EndpointDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearStallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearStallAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearStallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept final
+    int32_t WINRT_CALL put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteOptions, WINRT_WRAP(void), Windows::Devices::Usb::UsbWriteOptions const&);
             this->shim().WriteOptions(*reinterpret_cast<Windows::Devices::Usb::UsbWriteOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept final
+    int32_t WINRT_CALL get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteOptions, WINRT_WRAP(Windows::Devices::Usb::UsbWriteOptions));
             *value = detach_from<Windows::Devices::Usb::UsbWriteOptions>(this->shim().WriteOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbSetupPacket> : produce_base<D, Windows::Devices::Usb::IUsbSetupPacket>
 {
-    HRESULT __stdcall get_RequestType(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestType, WINRT_WRAP(Windows::Devices::Usb::UsbControlRequestType));
             *value = detach_from<Windows::Devices::Usb::UsbControlRequestType>(this->shim().RequestType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequestType(void* value) noexcept final
+    int32_t WINRT_CALL put_RequestType(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestType, WINRT_WRAP(void), Windows::Devices::Usb::UsbControlRequestType const&);
             this->shim().RequestType(*reinterpret_cast<Windows::Devices::Usb::UsbControlRequestType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Request(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Request(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Request(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_Request(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(void), uint8_t);
             this->shim().Request(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Value(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Value(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), uint32_t);
             this->shim().Value(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Index(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Index(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Index, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Index());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Index(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Index(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Index, WINRT_WRAP(void), uint32_t);
             this->shim().Index(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Length(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Length(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(void), uint32_t);
             this->shim().Length(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Usb::IUsbSetupPacketFactory> : produce_base<D, Windows::Devices::Usb::IUsbSetupPacketFactory>
 {
-    HRESULT __stdcall CreateWithEightByteBuffer(void* eightByteBuffer, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithEightByteBuffer(void* eightByteBuffer, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithEightByteBuffer, WINRT_WRAP(Windows::Devices::Usb::UsbSetupPacket), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Devices::Usb::UsbSetupPacket>(this->shim().CreateWithEightByteBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&eightByteBuffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2921,118 +2655,118 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Usb {
 
 inline bool UsbConfigurationDescriptor::TryParse(Windows::Devices::Usb::UsbDescriptor const& descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor& parsed)
 {
-    return get_activation_factory<UsbConfigurationDescriptor, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>().TryParse(descriptor, parsed);
+    return impl::call_factory<UsbConfigurationDescriptor, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>([&](auto&& f) { return f.TryParse(descriptor, parsed); });
 }
 
 inline Windows::Devices::Usb::UsbConfigurationDescriptor UsbConfigurationDescriptor::Parse(Windows::Devices::Usb::UsbDescriptor const& descriptor)
 {
-    return get_activation_factory<UsbConfigurationDescriptor, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>().Parse(descriptor);
+    return impl::call_factory<UsbConfigurationDescriptor, Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>([&](auto&& f) { return f.Parse(descriptor); });
 }
 
 inline UsbControlRequestType::UsbControlRequestType() :
-    UsbControlRequestType(get_activation_factory<UsbControlRequestType>().ActivateInstance<UsbControlRequestType>())
+    UsbControlRequestType(impl::call_factory<UsbControlRequestType>([](auto&& f) { return f.template ActivateInstance<UsbControlRequestType>(); }))
 {}
 
-inline hstring UsbDevice::GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID const& winUsbInterfaceClass)
+inline hstring UsbDevice::GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid const& winUsbInterfaceClass)
 {
-    return get_activation_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId, winUsbInterfaceClass);
+    return impl::call_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(vendorId, productId, winUsbInterfaceClass); });
 }
 
-inline hstring UsbDevice::GetDeviceSelector(GUID const& winUsbInterfaceClass)
+inline hstring UsbDevice::GetDeviceSelector(winrt::guid const& winUsbInterfaceClass)
 {
-    return get_activation_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>().GetDeviceSelector(winUsbInterfaceClass);
+    return impl::call_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(winUsbInterfaceClass); });
 }
 
 inline hstring UsbDevice::GetDeviceSelector(uint32_t vendorId, uint32_t productId)
 {
-    return get_activation_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>().GetDeviceSelector(vendorId, productId);
+    return impl::call_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(vendorId, productId); });
 }
 
 inline hstring UsbDevice::GetDeviceClassSelector(Windows::Devices::Usb::UsbDeviceClass const& usbClass)
 {
-    return get_activation_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>().GetDeviceClassSelector(usbClass);
+    return impl::call_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>([&](auto&& f) { return f.GetDeviceClassSelector(usbClass); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> UsbDevice::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<UsbDevice, Windows::Devices::Usb::IUsbDeviceStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline UsbDeviceClass::UsbDeviceClass() :
-    UsbDeviceClass(get_activation_factory<UsbDeviceClass>().ActivateInstance<UsbDeviceClass>())
+    UsbDeviceClass(impl::call_factory<UsbDeviceClass>([](auto&& f) { return f.template ActivateInstance<UsbDeviceClass>(); }))
 {}
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::CdcControl()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().CdcControl();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.CdcControl(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Physical()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().Physical();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.Physical(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::PersonalHealthcare()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().PersonalHealthcare();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.PersonalHealthcare(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::ActiveSync()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().ActiveSync();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.ActiveSync(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::PalmSync()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().PalmSync();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.PalmSync(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::DeviceFirmwareUpdate()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().DeviceFirmwareUpdate();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.DeviceFirmwareUpdate(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Irda()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().Irda();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.Irda(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::Measurement()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().Measurement();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.Measurement(); });
 }
 
 inline Windows::Devices::Usb::UsbDeviceClass UsbDeviceClasses::VendorSpecific()
 {
-    return get_activation_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>().VendorSpecific();
+    return impl::call_factory<UsbDeviceClasses, Windows::Devices::Usb::IUsbDeviceClassesStatics>([&](auto&& f) { return f.VendorSpecific(); });
 }
 
 inline bool UsbEndpointDescriptor::TryParse(Windows::Devices::Usb::UsbDescriptor const& descriptor, Windows::Devices::Usb::UsbEndpointDescriptor& parsed)
 {
-    return get_activation_factory<UsbEndpointDescriptor, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>().TryParse(descriptor, parsed);
+    return impl::call_factory<UsbEndpointDescriptor, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>([&](auto&& f) { return f.TryParse(descriptor, parsed); });
 }
 
 inline Windows::Devices::Usb::UsbEndpointDescriptor UsbEndpointDescriptor::Parse(Windows::Devices::Usb::UsbDescriptor const& descriptor)
 {
-    return get_activation_factory<UsbEndpointDescriptor, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>().Parse(descriptor);
+    return impl::call_factory<UsbEndpointDescriptor, Windows::Devices::Usb::IUsbEndpointDescriptorStatics>([&](auto&& f) { return f.Parse(descriptor); });
 }
 
 inline bool UsbInterfaceDescriptor::TryParse(Windows::Devices::Usb::UsbDescriptor const& descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor& parsed)
 {
-    return get_activation_factory<UsbInterfaceDescriptor, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>().TryParse(descriptor, parsed);
+    return impl::call_factory<UsbInterfaceDescriptor, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>([&](auto&& f) { return f.TryParse(descriptor, parsed); });
 }
 
 inline Windows::Devices::Usb::UsbInterfaceDescriptor UsbInterfaceDescriptor::Parse(Windows::Devices::Usb::UsbDescriptor const& descriptor)
 {
-    return get_activation_factory<UsbInterfaceDescriptor, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>().Parse(descriptor);
+    return impl::call_factory<UsbInterfaceDescriptor, Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>([&](auto&& f) { return f.Parse(descriptor); });
 }
 
 inline UsbSetupPacket::UsbSetupPacket() :
-    UsbSetupPacket(get_activation_factory<UsbSetupPacket>().ActivateInstance<UsbSetupPacket>())
+    UsbSetupPacket(impl::call_factory<UsbSetupPacket>([](auto&& f) { return f.template ActivateInstance<UsbSetupPacket>(); }))
 {}
 
 inline UsbSetupPacket::UsbSetupPacket(Windows::Storage::Streams::IBuffer const& eightByteBuffer) :
-    UsbSetupPacket(get_activation_factory<UsbSetupPacket, Windows::Devices::Usb::IUsbSetupPacketFactory>().CreateWithEightByteBuffer(eightByteBuffer))
+    UsbSetupPacket(impl::call_factory<UsbSetupPacket, Windows::Devices::Usb::IUsbSetupPacketFactory>([&](auto&& f) { return f.CreateWithEightByteBuffer(eightByteBuffer); }))
 {}
 
 }
@@ -3091,5 +2825,3 @@ template<> struct hash<winrt::Windows::Devices::Usb::UsbInterruptOutPipe> : winr
 template<> struct hash<winrt::Windows::Devices::Usb::UsbSetupPacket> : winrt::impl::hash_base<winrt::Windows::Devices::Usb::UsbSetupPacket> {};
 
 }
-
-WINRT_WARNING_POP

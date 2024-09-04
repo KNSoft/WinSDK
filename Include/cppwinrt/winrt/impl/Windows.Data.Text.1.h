@@ -1,9 +1,10 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.UI.Text.Core.0.h"
 #include "winrt/impl/Windows.Data.Text.0.h"
 
 WINRT_EXPORT namespace winrt::Windows::Data::Text {
@@ -76,6 +77,13 @@ struct WINRT_EBO ITextPredictionGenerator :
     impl::consume_t<ITextPredictionGenerator>
 {
     ITextPredictionGenerator(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ITextPredictionGenerator2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ITextPredictionGenerator2>
+{
+    ITextPredictionGenerator2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ITextPredictionGeneratorFactory :

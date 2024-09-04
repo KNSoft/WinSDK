@@ -1757,6 +1757,9 @@ float  neon_sqrdmulhs32 (float,  float);
 #define vmlsq_u16(dst, src1, src2) neon_mlsq16(dst, src1, src2)
 #define vmlsq_u32(dst, src1, src2) neon_mlsq32(dst, src1, src2)
 #define vmlsq_u8(dst, src1, src2) neon_mlsq8(dst, src1, src2)
+#define vfmaq_f32(dst, src1, src2) neon_fmlaq32(dst, src1, src2)
+#define vfmsq_f32(dst, src1, src2) neon_fmlsq32(dst, src1, src2)
+
 //  Multiply by scalar
 #define vmul_n_s16(Vd, Rt)             vmul_lane_s16((Vd), vmov_n_s16(Rt), 0)
 #define vmul_n_s32(Vd, Rt)             vmul_lane_s32((Vd), vmov_n_s32(Rt), 0)

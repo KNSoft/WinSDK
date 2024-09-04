@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -74,140 +74,124 @@ template <typename D> Windows::ApplicationModel::Resources::ResourceLoader consu
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoader>
 {
-    HRESULT __stdcall GetString(HSTRING resource, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetString(void* resource, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetString, WINRT_WRAP(hstring), hstring const&);
             *value = detach_from<hstring>(this->shim().GetString(*reinterpret_cast<hstring const*>(&resource)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoader2> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoader2>
 {
-    HRESULT __stdcall GetStringForUri(void* uri, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetStringForUri(void* uri, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStringForUri, WINRT_WRAP(hstring), Windows::Foundation::Uri const&);
             *value = detach_from<hstring>(this->shim().GetStringForUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderFactory>
 {
-    HRESULT __stdcall CreateResourceLoaderByName(HSTRING name, void** loader) noexcept final
+    int32_t WINRT_CALL CreateResourceLoaderByName(void* name, void** loader) noexcept final
     {
         try
         {
             *loader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateResourceLoaderByName, WINRT_WRAP(Windows::ApplicationModel::Resources::ResourceLoader), hstring const&);
             *loader = detach_from<Windows::ApplicationModel::Resources::ResourceLoader>(this->shim().CreateResourceLoaderByName(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics>
 {
-    HRESULT __stdcall GetStringForReference(void* uri, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetStringForReference(void* uri, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStringForReference, WINRT_WRAP(hstring), Windows::Foundation::Uri const&);
             *value = detach_from<hstring>(this->shim().GetStringForReference(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2> : produce_base<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
 {
-    HRESULT __stdcall GetForCurrentView(void** loader) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** loader) noexcept final
     {
         try
         {
             *loader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::ApplicationModel::Resources::ResourceLoader));
             *loader = detach_from<Windows::ApplicationModel::Resources::ResourceLoader>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForCurrentViewWithName(HSTRING name, void** loader) noexcept final
+    int32_t WINRT_CALL GetForCurrentViewWithName(void* name, void** loader) noexcept final
     {
         try
         {
             *loader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::ApplicationModel::Resources::ResourceLoader), hstring const&);
             *loader = detach_from<Windows::ApplicationModel::Resources::ResourceLoader>(this->shim().GetForCurrentView(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForViewIndependentUse(void** loader) noexcept final
+    int32_t WINRT_CALL GetForViewIndependentUse(void** loader) noexcept final
     {
         try
         {
             *loader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForViewIndependentUse, WINRT_WRAP(Windows::ApplicationModel::Resources::ResourceLoader));
             *loader = detach_from<Windows::ApplicationModel::Resources::ResourceLoader>(this->shim().GetForViewIndependentUse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForViewIndependentUseWithName(HSTRING name, void** loader) noexcept final
+    int32_t WINRT_CALL GetForViewIndependentUseWithName(void* name, void** loader) noexcept final
     {
         try
         {
             *loader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForViewIndependentUse, WINRT_WRAP(Windows::ApplicationModel::Resources::ResourceLoader), hstring const&);
             *loader = detach_from<Windows::ApplicationModel::Resources::ResourceLoader>(this->shim().GetForViewIndependentUse(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -216,36 +200,36 @@ struct produce<D, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Resources {
 
 inline ResourceLoader::ResourceLoader() :
-    ResourceLoader(get_activation_factory<ResourceLoader>().ActivateInstance<ResourceLoader>())
+    ResourceLoader(impl::call_factory<ResourceLoader>([](auto&& f) { return f.template ActivateInstance<ResourceLoader>(); }))
 {}
 
 inline ResourceLoader::ResourceLoader(param::hstring const& name) :
-    ResourceLoader(get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderFactory>().CreateResourceLoaderByName(name))
+    ResourceLoader(impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderFactory>([&](auto&& f) { return f.CreateResourceLoaderByName(name); }))
 {}
 
 inline hstring ResourceLoader::GetStringForReference(Windows::Foundation::Uri const& uri)
 {
-    return get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics>().GetStringForReference(uri);
+    return impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics>([&](auto&& f) { return f.GetStringForReference(uri); });
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView()
 {
-    return get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>().GetForCurrentView();
+    return impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForCurrentView(param::hstring const& name)
 {
-    return get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>().GetForCurrentView(name);
+    return impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>([&](auto&& f) { return f.GetForCurrentView(name); });
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse()
 {
-    return get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>().GetForViewIndependentUse();
+    return impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>([&](auto&& f) { return f.GetForViewIndependentUse(); });
 }
 
 inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetForViewIndependentUse(param::hstring const& name)
 {
-    return get_activation_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>().GetForViewIndependentUse(name);
+    return impl::call_factory<ResourceLoader, Windows::ApplicationModel::Resources::IResourceLoaderStatics2>([&](auto&& f) { return f.GetForViewIndependentUse(name); });
 }
 
 }
@@ -260,5 +244,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Resources::IResourceLoa
 template<> struct hash<winrt::Windows::ApplicationModel::Resources::ResourceLoader> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Resources::ResourceLoader> {};
 
 }
-
-WINRT_WARNING_POP

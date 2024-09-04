@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -7,6 +7,7 @@
 #include "winrt/impl/Windows.ApplicationModel.AppService.0.h"
 #include "winrt/impl/Windows.Foundation.0.h"
 #include "winrt/impl/Windows.Foundation.Collections.0.h"
+#include "winrt/impl/Windows.Graphics.DirectX.Direct3D11.0.h"
 #include "winrt/impl/Windows.Graphics.Imaging.0.h"
 #include "winrt/impl/Windows.Media.Capture.0.h"
 #include "winrt/impl/Windows.Media.Capture.Frames.0.h"
@@ -363,6 +364,13 @@ struct WINRT_EBO IMediaStreamSample :
     IMediaStreamSample(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IMediaStreamSample2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMediaStreamSample2>
+{
+    IMediaStreamSample2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IMediaStreamSampleProtectionProperties :
     Windows::Foundation::IInspectable,
     impl::consume_t<IMediaStreamSampleProtectionProperties>
@@ -375,6 +383,13 @@ struct WINRT_EBO IMediaStreamSampleStatics :
     impl::consume_t<IMediaStreamSampleStatics>
 {
     IMediaStreamSampleStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMediaStreamSampleStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMediaStreamSampleStatics2>
+{
+    IMediaStreamSampleStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IMediaStreamSource :

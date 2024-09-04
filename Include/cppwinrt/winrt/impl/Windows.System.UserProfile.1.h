@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,6 +33,20 @@ struct WINRT_EBO IAdvertisingManagerStatics2 :
     impl::consume_t<IAdvertisingManagerStatics2>
 {
     IAdvertisingManagerStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAssignedAccessSettings :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAssignedAccessSettings>
+{
+    IAssignedAccessSettings(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAssignedAccessSettingsStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAssignedAccessSettingsStatics>
+{
+    IAssignedAccessSettingsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IDiagnosticsSettings :

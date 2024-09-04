@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.networking.connectivity.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -398,6 +410,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4 ABI::Windows::Networking::Connectivity::IConnectionProfile4
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                interface IConnectionProfile5;
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 ABI::Windows::Networking::Connectivity::IConnectionProfile5
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_FWD_DEFINED__
@@ -1798,6 +1824,74 @@ namespace ABI {
     namespace Windows {
         namespace Networking {
             namespace Connectivity {
+                enum ConnectionProfileDeleteStatus : int;
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("3a0fb210-36c4-5df2-9707-5f325369a9b0"))
+IAsyncOperationCompletedHandler<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Networking.Connectivity.ConnectionProfileDeleteStatus>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE */
+
+
+
+
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE
+#define DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("2ffebc9e-4bed-5f3d-8e55-5abc2598e144"))
+IAsyncOperation<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> : IAsyncOperation_impl<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Networking.Connectivity.ConnectionProfileDeleteStatus>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<enum ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus> __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t;
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+//#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
                 class ConnectionSession;
             } /* Windows */
         } /* Networking */
@@ -2837,6 +2931,17 @@ namespace ABI {
         namespace Networking {
             namespace Connectivity {
                 
+                typedef enum ConnectionProfileDeleteStatus : int ConnectionProfileDeleteStatus;
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                
                 typedef enum DataUsageGranularity : int DataUsageGranularity;
                 
             } /* Windows */
@@ -2974,6 +3079,7 @@ namespace ABI {
             } /* Windows */
         } /* Networking */
     } /* Connectivity */} /* ABI */
+
 
 
 
@@ -3208,6 +3314,35 @@ namespace ABI {
         } /* Networking */
     } /* Connectivity */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.Connectivity.ConnectionProfileDeleteStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [v1_enum, contract] */
+                enum ConnectionProfileDeleteStatus : int
+                {
+                    ConnectionProfileDeleteStatus_Success = 0,
+                    ConnectionProfileDeleteStatus_DeniedByUser = 1,
+                    ConnectionProfileDeleteStatus_DeniedBySystem = 2,
+                    ConnectionProfileDeleteStatus_UnknownError = 3,
+                };
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4149,6 +4284,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.Connectivity.IConnectionProfile5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.ConnectionProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IConnectionProfile5[] = L"Windows.Networking.Connectivity.IConnectionProfile5";
+namespace ABI {
+    namespace Windows {
+        namespace Networking {
+            namespace Connectivity {
+                /* [object, uuid("85361EC7-9C73-4BE0-8F14-578EEC71EE0E"), exclusiveto, contract] */
+                MIDL_INTERFACE("85361EC7-9C73-4BE0-8F14-578EEC71EE0E")
+                IConnectionProfile5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanDelete(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TryDeleteAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IConnectionProfile5=_uuidof(IConnectionProfile5);
+                
+            } /* Windows */
+        } /* Networking */
+    } /* Connectivity */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5549,6 +5728,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.Connectivity.IConnectionProfile2
  *    Windows.Networking.Connectivity.IConnectionProfile3
  *    Windows.Networking.Connectivity.IConnectionProfile4
+ *    Windows.Networking.Connectivity.IConnectionProfile5
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -6105,6 +6285,12 @@ typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile
 typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4 __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4;
 
 #endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5;
+
+#endif // ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfileFilter_FWD_DEFINED__
@@ -8599,6 +8785,117 @@ interface __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionP
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+enum __x_ABI_CWindows_CNetworking_CConnectivity_CConnectionProfileDeleteStatus;
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__
+
+
+
+#if !defined(____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus;
+
+typedef struct __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CNetworking_CConnectivity_CConnectionProfileDeleteStatus *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl;
+
+interface __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatusVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus_INTERFACE_DEFINED__
+
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CNetworking__CConnectivity__CConnectionSession_INTERFACE_DEFINED__)
@@ -10846,6 +11143,9 @@ typedef interface __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReferen
 typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CCellularApnAuthenticationType __x_ABI_CWindows_CNetworking_CConnectivity_CCellularApnAuthenticationType;
 
 
+typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CConnectionProfileDeleteStatus __x_ABI_CWindows_CNetworking_CConnectivity_CConnectionProfileDeleteStatus;
+
+
 typedef enum __x_ABI_CWindows_CNetworking_CConnectivity_CDataUsageGranularity __x_ABI_CWindows_CNetworking_CConnectivity_CDataUsageGranularity;
 
 
@@ -10955,6 +11255,7 @@ typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CNetworkUsageStates __
 
 
 
+
 /*
  *
  * Struct Windows.Networking.Connectivity.CellularApnAuthenticationType
@@ -10974,6 +11275,27 @@ enum __x_ABI_CWindows_CNetworking_CConnectivity_CCellularApnAuthenticationType
     CellularApnAuthenticationType_Mschapv2 = 3,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Networking.Connectivity.ConnectionProfileDeleteStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CNetworking_CConnectivity_CConnectionProfileDeleteStatus
+{
+    ConnectionProfileDeleteStatus_Success = 0,
+    ConnectionProfileDeleteStatus_DeniedByUser = 1,
+    ConnectionProfileDeleteStatus_DeniedBySystem = 2,
+    ConnectionProfileDeleteStatus_UnknownError = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12445,6 +12767,106 @@ interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4
 EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4;
 #endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Networking.Connectivity.IConnectionProfile5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Networking.Connectivity.ConnectionProfile
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Networking_Connectivity_IConnectionProfile5[] = L"Windows.Networking.Connectivity.IConnectionProfile5";
+/* [object, uuid("85361EC7-9C73-4BE0-8F14-578EEC71EE0E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanDelete )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryDeleteAsync )(
+        __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfileDeleteStatus * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5Vtbl;
+
+interface __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_get_CanDelete(This,value) \
+    ( (This)->lpVtbl->get_CanDelete(This,value) )
+
+#define __x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_TryDeleteAsync(This,operation) \
+    ( (This)->lpVtbl->TryDeleteAsync(This,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5;
+#endif /* !defined(____x_ABI_CWindows_CNetworking_CConnectivity_CIConnectionProfile5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -15501,6 +15923,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Networking.Connectivity.IConnectionProfile2
  *    Windows.Networking.Connectivity.IConnectionProfile3
  *    Windows.Networking.Connectivity.IConnectionProfile4
+ *    Windows.Networking.Connectivity.IConnectionProfile5
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

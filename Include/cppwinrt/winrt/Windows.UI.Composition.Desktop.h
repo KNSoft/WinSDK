@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -26,18 +26,16 @@ template <typename D> bool consume_Windows_UI_Composition_Desktop_IDesktopWindow
 template <typename D>
 struct produce<D, Windows::UI::Composition::Desktop::IDesktopWindowTarget> : produce_base<D, Windows::UI::Composition::Desktop::IDesktopWindowTarget>
 {
-    HRESULT __stdcall get_IsTopmost(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTopmost(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTopmost, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTopmost());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -53,5 +51,3 @@ template<> struct hash<winrt::Windows::UI::Composition::Desktop::IDesktopWindowT
 template<> struct hash<winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget> : winrt::impl::hash_base<winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget> {};
 
 }
-
-WINRT_WARNING_POP

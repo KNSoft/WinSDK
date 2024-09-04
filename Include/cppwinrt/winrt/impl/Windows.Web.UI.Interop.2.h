@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -27,7 +27,7 @@ WINRT_EXPORT namespace winrt::Windows::Web::UI::Interop {
 
 struct WINRT_EBO WebViewControl :
     Windows::Web::UI::IWebViewControl,
-    impl::require<WebViewControl, Windows::Web::UI::Interop::IWebViewControlSite>
+    impl::require<WebViewControl, Windows::Web::UI::IWebViewControl2, Windows::Web::UI::Interop::IWebViewControlSite, Windows::Web::UI::Interop::IWebViewControlSite2>
 {
     WebViewControl(std::nullptr_t) noexcept {}
 };

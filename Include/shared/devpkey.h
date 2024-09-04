@@ -208,6 +208,7 @@ DEFINE_DEVPROPKEY(DEVPKEY_Device_AdditionalSoftwareRequested, 0xa8b865dd, 0x2e3d
 DEFINE_DEVPROPKEY(DEVPKEY_Device_SafeRemovalRequired,         0xafd97640, 0x86a3, 0x4210, 0xb6, 0x7c, 0x28, 0x9c, 0x41, 0xaa, 0xbe, 0x55, 2); // DEVPROP_TYPE_BOOLEAN
 DEFINE_DEVPROPKEY(DEVPKEY_Device_SafeRemovalRequiredOverride, 0xafd97640, 0x86a3, 0x4210, 0xb6, 0x7c, 0x28, 0x9c, 0x41, 0xaa, 0xbe, 0x55, 3); // DEVPROP_TYPE_BOOLEAN
 
+
 //
 // Device properties
 // These DEVPKEYs may be set by the driver package installed for a device.

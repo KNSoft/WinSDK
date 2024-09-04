@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -99,6 +99,20 @@ struct WINRT_EBO SpatialAnchor :
     static Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Foundation::Numerics::float3 const& position, Windows::Foundation::Numerics::quaternion const& orientation);
 };
 
+struct WINRT_EBO SpatialAnchorExportSufficiency :
+    Windows::Perception::Spatial::ISpatialAnchorExportSufficiency
+{
+    SpatialAnchorExportSufficiency(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SpatialAnchorExporter :
+    Windows::Perception::Spatial::ISpatialAnchorExporter
+{
+    SpatialAnchorExporter(std::nullptr_t) noexcept {}
+    static Windows::Perception::Spatial::SpatialAnchorExporter GetDefault();
+    static Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync();
+};
+
 struct SpatialAnchorManager
 {
     SpatialAnchorManager() = delete;
@@ -117,12 +131,12 @@ struct WINRT_EBO SpatialAnchorStore :
     SpatialAnchorStore(std::nullptr_t) noexcept {}
 };
 
-struct [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] SpatialAnchorTransferManager
+struct SpatialAnchorTransferManager
 {
     SpatialAnchorTransferManager() = delete;
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(Windows::Storage::Streams::IInputStream const& stream);
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const& anchors, Windows::Storage::Streams::IOutputStream const& stream);
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync();
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(Windows::Storage::Streams::IInputStream const& stream);
+    static Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const& anchors, Windows::Storage::Streams::IOutputStream const& stream);
+    static Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync();
 };
 
 struct WINRT_EBO SpatialBoundingVolume :
@@ -182,7 +196,8 @@ struct WINRT_EBO SpatialEntityWatcher :
 };
 
 struct WINRT_EBO SpatialLocation :
-    Windows::Perception::Spatial::ISpatialLocation
+    Windows::Perception::Spatial::ISpatialLocation,
+    impl::require<SpatialLocation, Windows::Perception::Spatial::ISpatialLocation2>
 {
     SpatialLocation(std::nullptr_t) noexcept {}
 };
@@ -211,10 +226,10 @@ struct WINRT_EBO SpatialStageFrameOfReference :
 {
     SpatialStageFrameOfReference(std::nullptr_t) noexcept {}
     static Windows::Perception::Spatial::SpatialStageFrameOfReference Current();
-    static event_token CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using CurrentChanged_revoker = factory_event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>;
+    static winrt::event_token CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using CurrentChanged_revoker = impl::factory_event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics, &impl::abi_t<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>::remove_CurrentChanged>;
     static CurrentChanged_revoker CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void CurrentChanged(event_token const& cookie);
+    static void CurrentChanged(winrt::event_token const& cookie);
     static Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> RequestNewStageAsync();
 };
 

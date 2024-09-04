@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.media3d.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -827,7 +839,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE Multiply(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D matrix1,
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D matrix2,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE FromElements(
                                 /* [in] */DOUBLE m11,
@@ -846,19 +858,19 @@ namespace ABI {
                                 /* [in] */DOUBLE offsetY,
                                 /* [in] */DOUBLE offsetZ,
                                 /* [in] */DOUBLE m44,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetHasInverse(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D target,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsIdentity(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D target,
-                                /* [retval, out] */__RPC__out boolean * value
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Invert(
                                 /* [in] */ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D target,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Media::Media3D::Matrix3D * result
                                 ) = 0;
                             
                         };
@@ -1056,9 +1068,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Media3D::ITransform3D * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Media3D::ITransform3D * * value
                                 ) = 0;
                             
                         };
@@ -1875,7 +1887,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D matrix1,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D matrix2,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * result
         );
     HRESULT ( STDMETHODCALLTYPE *FromElements )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics * This,
@@ -1895,22 +1907,22 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */DOUBLE offsetY,
         /* [in] */DOUBLE offsetZ,
         /* [in] */DOUBLE m44,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetHasInverse )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D target,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetIsIdentity )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D target,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Invert )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D target,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CMatrix3D * result
         );
     END_INTERFACE
     
@@ -1943,20 +1955,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_get_Identity(This,value) \
     ( (This)->lpVtbl->get_Identity(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_Multiply(This,matrix1,matrix2,returnValue) \
-    ( (This)->lpVtbl->Multiply(This,matrix1,matrix2,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_Multiply(This,matrix1,matrix2,result) \
+    ( (This)->lpVtbl->Multiply(This,matrix1,matrix2,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_FromElements(This,m11,m12,m13,m14,m21,m22,m23,m24,m31,m32,m33,m34,offsetX,offsetY,offsetZ,m44,returnValue) \
-    ( (This)->lpVtbl->FromElements(This,m11,m12,m13,m14,m21,m22,m23,m24,m31,m32,m33,m34,offsetX,offsetY,offsetZ,m44,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_FromElements(This,m11,m12,m13,m14,m21,m22,m23,m24,m31,m32,m33,m34,offsetX,offsetY,offsetZ,m44,result) \
+    ( (This)->lpVtbl->FromElements(This,m11,m12,m13,m14,m21,m22,m23,m24,m31,m32,m33,m34,offsetX,offsetY,offsetZ,m44,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_GetHasInverse(This,target,value) \
-    ( (This)->lpVtbl->GetHasInverse(This,target,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_GetHasInverse(This,target,result) \
+    ( (This)->lpVtbl->GetHasInverse(This,target,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_GetIsIdentity(This,target,value) \
-    ( (This)->lpVtbl->GetIsIdentity(This,target,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_GetIsIdentity(This,target,result) \
+    ( (This)->lpVtbl->GetIsIdentity(This,target,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_Invert(This,target,returnValue) \
-    ( (This)->lpVtbl->Invert(This,target,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CIMatrix3DHelperStatics_Invert(This,target,result) \
+    ( (This)->lpVtbl->Invert(This,target,result) )
 
 
 #endif /* COBJMACROS */
@@ -2339,9 +2351,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3DFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3D * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3D * * value
         );
     END_INTERFACE
     
@@ -2371,8 +2383,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3DFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3DFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3DFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CMedia3D_CITransform3DFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */

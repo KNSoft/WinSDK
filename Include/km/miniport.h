@@ -2017,6 +2017,7 @@ _ReadWriteBarrier (
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
+#define SpeculationFence LoadFence
 
 // begin_sdfwdm
 // begin_wudfpwdm
@@ -3968,7 +3969,7 @@ YieldProcessor (
     )
 {
 }
-#endif
+#endif // defined(_M_CEE_PURE)
 
 
 #endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
@@ -6741,6 +6742,528 @@ WRITE_PORT_BUFFER_ULONG (
 #if defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #endif // defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+
+#if defined(_ARM64_)
+
+//
+// I/O space read and write macros.
+//
+//  The READ/WRITE_REGISTER_* calls manipulate I/O registers in MEMORY space.
+//
+//  N.B. This implementation assumes that the memory mapped registers
+//       have been mapped using the OS concept of uncached memory
+//       which is implemented using the ARMv7 strongly ordered memory
+//       type.  In addition, the register access is bracketed by a
+//       compiler barrier to ensure that the compiler does not
+//       re-order the I/O accesses with other accesses and a data
+//       synchronization barrier to ensure that any side effects of
+//       the access have started (but not necessarily completed).
+//
+//  The READ/WRITE_PORT_* calls manipulate I/O registers in PORT
+//  space.  The ARM architecture doesn't have a seperate I/O space.
+//  These operations bugcheck so as to identify incorrect code.
+//
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+__forceinline
+UCHAR
+READ_REGISTER_NOFENCE_UCHAR (
+    _In_ _Notliteral_ volatile UCHAR *Register
+    )
+{
+
+    return ReadUCharNoFence(Register);
+}
+
+__forceinline
+USHORT
+READ_REGISTER_NOFENCE_USHORT (
+    _In_ _Notliteral_ volatile USHORT *Register
+    )
+{
+
+    return ReadUShortNoFence(Register);
+}
+
+__forceinline
+ULONG
+READ_REGISTER_NOFENCE_ULONG (
+    _In_ _Notliteral_ volatile ULONG *Register
+    )
+{
+
+    return ReadULongNoFence(Register);
+}
+
+__forceinline
+ULONG64
+READ_REGISTER_NOFENCE_ULONG64 (
+    _In_ _Notliteral_ volatile ULONG64 *Register
+    )
+{
+
+    return ReadULong64NoFence(Register);
+}
+
+__forceinline
+VOID
+READ_REGISTER_NOFENCE_BUFFER_UCHAR (
+    _In_reads_(Count) _Notliteral_ volatile UCHAR *Register,
+    _Out_writes_all_(Count) PUCHAR Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    volatile UCHAR *registerBuffer =  Register;
+    PUCHAR readBuffer = Buffer;
+    ULONG readCount;
+
+    for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        *readBuffer = ReadUCharNoFence(registerBuffer);
+    }
+
+
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_NOFENCE_BUFFER_USHORT (
+    _In_reads_(Count) _Notliteral_ volatile USHORT *Register,
+    _Out_writes_all_(Count) PUSHORT Buffer,
+    _In_ ULONG Count
+    )
+{
+    volatile USHORT *registerBuffer =  Register;
+    PUSHORT readBuffer = Buffer;
+    ULONG readCount;
+
+    for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        *readBuffer = ReadUShortNoFence(registerBuffer);
+    }
+
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_NOFENCE_BUFFER_ULONG (
+    _In_reads_(Count) _Notliteral_ volatile ULONG *Register,
+    _Out_writes_all_(Count) PULONG Buffer,
+    _In_ ULONG Count
+    )
+{
+    volatile ULONG *registerBuffer =  Register;
+    PULONG readBuffer = Buffer;
+    ULONG readCount;
+
+    for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        *readBuffer = ReadULongNoFence(registerBuffer);
+    }
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_NOFENCE_BUFFER_ULONG64 (
+    _In_reads_(Count) _Notliteral_ volatile ULONG64 *Register,
+    _Out_writes_all_(Count) PULONG64 Buffer,
+    _In_ ULONG Count
+    )
+{
+    volatile ULONG64 *registerBuffer =  Register;
+    PULONG64 readBuffer = Buffer;
+    ULONG readCount;
+
+    for (readCount = Count; readCount--; readBuffer++, registerBuffer++) {
+        *readBuffer = ReadULong64NoFence(registerBuffer);
+    }
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_UCHAR (
+    _In_ _Notliteral_ volatile UCHAR *Register,
+    _In_ UCHAR Value
+    )
+{
+
+    WriteUCharNoFence(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_USHORT (
+    _In_ _Notliteral_ volatile USHORT *Register,
+    _In_ USHORT Value
+    )
+{
+
+    WriteUShortNoFence(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_ULONG (
+    _In_ _Notliteral_ volatile ULONG *Register,
+    _In_ ULONG Value
+    )
+{
+
+    WriteULongNoFence(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_ULONG64 (
+    _In_ _Notliteral_ volatile ULONG64 *Register,
+    _In_ ULONG64 Value
+    )
+{
+
+    WriteULong64NoFence(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_BUFFER_UCHAR (
+    _Out_writes_(Count) _Notliteral_ volatile UCHAR *Register,
+    _In_reads_(Count) PUCHAR Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    volatile UCHAR *registerBuffer = Register;
+    PUCHAR writeBuffer = Buffer;
+    ULONG writeCount;
+
+    for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        WriteUCharNoFence(registerBuffer, *writeBuffer);
+    }
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_BUFFER_USHORT (
+    _Out_writes_(Count) _Notliteral_ volatile USHORT *Register,
+    _In_reads_(Count) PUSHORT Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    volatile USHORT *registerBuffer = Register;
+    PUSHORT writeBuffer = Buffer;
+    ULONG writeCount;
+
+    for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        WriteUShortNoFence(registerBuffer, *writeBuffer);
+    }
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_BUFFER_ULONG (
+    _Out_writes_(Count) _Notliteral_ volatile ULONG *Register,
+    _In_reads_(Count) PULONG Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    volatile ULONG *registerBuffer = Register;
+    PULONG writeBuffer = Buffer;
+    ULONG writeCount;
+
+    for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        WriteULongNoFence(registerBuffer, *writeBuffer);
+    }
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_NOFENCE_BUFFER_ULONG64 (
+    _Out_writes_(Count) _Notliteral_ volatile ULONG64 *Register,
+    _In_reads_(Count) PULONG64 Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    volatile ULONG64 *registerBuffer = Register;
+    PULONG64 writeBuffer = Buffer;
+    ULONG writeCount;
+
+    for (writeCount = Count; writeCount--; writeBuffer++, registerBuffer++) {
+        WriteULong64NoFence(registerBuffer, *writeBuffer);
+    }
+
+    return;
+}
+
+__forceinline
+VOID
+REGISTER_FENCE (
+    VOID
+    )
+{
+
+    _DataSynchronizationBarrier();
+}
+
+__forceinline
+UCHAR
+READ_REGISTER_UCHAR (
+    _In_ _Notliteral_ volatile UCHAR *Register
+    )
+{
+    UCHAR Value;
+
+    _DataSynchronizationBarrier();
+    Value = READ_REGISTER_NOFENCE_UCHAR(Register);
+
+    return Value;
+}
+
+__forceinline
+USHORT
+READ_REGISTER_USHORT (
+    _In_ _Notliteral_ volatile USHORT *Register
+    )
+{
+    USHORT Value;
+
+    _DataSynchronizationBarrier();
+    Value = READ_REGISTER_NOFENCE_USHORT(Register);
+
+    return Value;
+}
+
+__forceinline
+ULONG
+READ_REGISTER_ULONG (
+    _In_ _Notliteral_ volatile ULONG *Register
+    )
+{
+    ULONG Value;
+
+    _DataSynchronizationBarrier();
+    Value = READ_REGISTER_NOFENCE_ULONG(Register);
+
+    return Value;
+}
+
+__forceinline
+ULONG64
+READ_REGISTER_ULONG64 (
+    _In_ _Notliteral_ volatile ULONG64 *Register
+    )
+{
+    ULONG64 Value;
+
+    _DataSynchronizationBarrier();
+    Value = READ_REGISTER_NOFENCE_ULONG64(Register);
+
+    return Value;
+}
+
+__forceinline
+VOID
+READ_REGISTER_BUFFER_UCHAR (
+    _In_reads_(Count) _Notliteral_ volatile UCHAR *Register,
+    _Out_writes_all_(Count) PUCHAR Buffer,
+    _In_ ULONG Count
+    )
+{
+    _DataSynchronizationBarrier();
+    READ_REGISTER_NOFENCE_BUFFER_UCHAR(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_BUFFER_USHORT (
+    _In_reads_(Count) _Notliteral_ volatile USHORT *Register,
+    _Out_writes_all_(Count) PUSHORT Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    READ_REGISTER_NOFENCE_BUFFER_USHORT(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_BUFFER_ULONG (
+    _In_reads_(Count) _Notliteral_ volatile ULONG *Register,
+    _Out_writes_all_(Count) PULONG Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    READ_REGISTER_NOFENCE_BUFFER_ULONG(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+READ_REGISTER_BUFFER_ULONG64 (
+    _In_reads_(Count) _Notliteral_ volatile ULONG64 *Register,
+    _Out_writes_all_(Count) PULONG64 Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    READ_REGISTER_NOFENCE_BUFFER_ULONG64(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_UCHAR (
+    _In_ _Notliteral_ volatile UCHAR *Register,
+    _In_ UCHAR Value
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_UCHAR(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_USHORT (
+    _In_ _Notliteral_ volatile USHORT *Register,
+    _In_ USHORT Value
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_USHORT(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_ULONG (
+    _In_ _Notliteral_ volatile ULONG *Register,
+    _In_ ULONG Value
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_ULONG(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_ULONG64 (
+    _In_ _Notliteral_ volatile ULONG64 *Register,
+    _In_ ULONG64 Value
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_ULONG64(Register, Value);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_BUFFER_UCHAR (
+    _Out_writes_(Count) _Notliteral_ volatile UCHAR *Register,
+    _In_reads_(Count) PUCHAR Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_BUFFER_UCHAR(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_BUFFER_USHORT (
+    _Out_writes_(Count) _Notliteral_ volatile USHORT *Register,
+    _In_reads_(Count) PUSHORT Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_BUFFER_USHORT(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_BUFFER_ULONG (
+    _Out_writes_(Count) _Notliteral_ volatile ULONG *Register,
+    _In_reads_(Count) PULONG Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_BUFFER_ULONG(Register, Buffer, Count);
+
+    return;
+}
+
+__forceinline
+VOID
+WRITE_REGISTER_BUFFER_ULONG64 (
+    _Out_writes_(Count) _Notliteral_ volatile ULONG64 *Register,
+    _In_reads_(Count) PULONG64 Buffer,
+    _In_ ULONG Count
+    )
+{
+
+    _DataSynchronizationBarrier();
+    WRITE_REGISTER_NOFENCE_BUFFER_ULONG64(Register, Buffer, Count);
+
+    return;
+}
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+
 // begin_ntoshvp
 //
 // Interrupt modes.
@@ -6989,6 +7512,7 @@ typedef struct _PCI_COMMON_CONFIG {
 #define PCI_CAPABILITY_ID_MSIX              0x11
 #define PCI_CAPABILITY_ID_SATA_CONFIG       0x12
 #define PCI_CAPABILITY_ID_ADVANCED_FEATURES 0x13
+#define PCI_CAPABILITY_ID_FPB               0x15
 
 //
 // All PCI Capability structures have the following header.
@@ -7577,6 +8101,161 @@ typedef struct _PCI_ROOT_BUS_HARDWARE_CAPABILITY {
     PCI_ROOT_BUS_OSC_CONTROL_FIELD OscControlGranted;
 
 } PCI_ROOT_BUS_HARDWARE_CAPABILITY, *PPCI_ROOT_BUS_HARDWARE_CAPABILITY;
+
+typedef struct _PCI_FPB_CAPABILITY_HEADER {
+    PCI_CAPABILITIES_HEADER Header;
+    USHORT Reserved;
+} PCI_FPB_CAPABILITY_HEADER, *PPCI_FPB_CAPABILITY_HEADER;
+
+typedef union _PCI_FPB_CAPABILITIES_REGISTER {
+
+    struct {
+        ULONG RidDecodeMechanismSupported:1;
+        ULONG MemLowDecodeMechanismSupported:1;
+        ULONG MemHighDecodeMechanismSupported:1;
+        ULONG NumSecDev:5;
+        ULONG RidVectorSizeSupported:3;
+        ULONG Rsvd0:5;
+        ULONG MemLowVectorSizeSupported:3;
+        ULONG Rsvd1:5;
+        ULONG MemHighVectorSizeSupported:3;
+        ULONG Rsvd2:5;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_CAPABILITIES_REGISTER, *PPCI_FPB_CAPABILITIES_REGISTER;
+
+typedef union _PCI_FPB_RID_VECTOR_CONTROL1_REGISTER {
+
+    struct {
+        ULONG RidDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG RidVectorGranularity:4;
+        ULONG Rsvd1:11;
+        ULONG RidVectorStart:13;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_RID_VECTOR_CONTROL1_REGISTER, *PPCI_FPB_RID_VECTOR_CONTROL1_REGISTER;
+
+typedef union _PCI_FPB_RID_VECTOR_CONTROL2_REGISTER {
+
+    struct {
+        ULONG Rsvd0:3;
+        ULONG RidSecondaryStart:13;
+        ULONG Rsvd1:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_RID_VECTOR_CONTROL2_REGISTER, *PPCI_FPB_RID_VECTOR_CONTROL2_REGISTER;
+
+typedef union _PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER {
+
+    struct {
+        ULONG MemLowDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG MemLowVectorGranularity:4;
+        ULONG Rsvd1:12;
+        ULONG MemLowVectorStart:12;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER, *PPCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER;
+
+typedef union _PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER {
+
+    struct {
+        ULONG MemHighDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG MemHighVectorGranularity:4;
+        ULONG Rsvd1:20;
+        ULONG MemHighVectorStartLower:4;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER, *PPCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER;
+
+typedef struct _PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER {
+    ULONG MemHighVectorStartUpper;
+} PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER, *PPCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER;
+
+typedef union _PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER {
+
+    struct {
+        ULONG VectorAccessOffset:8;
+        ULONG Rsvd0:6;
+        ULONG VectorSelect:2;
+        ULONG Rsvd1:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER, *PPCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER;
+
+typedef struct _PCI_FPB_VECTOR_ACCESS_DATA_REGISTER {
+    ULONG VectorAccessData;
+} PCI_FPB_VECTOR_ACCESS_DATA_REGISTER, *PPCI_FPB_VECTOR_ACCESS_DATA_REGISTER;
+
+typedef struct _PCI_FPB_CAPABILITY {
+    PCI_FPB_CAPABILITY_HEADER Header;
+    PCI_FPB_CAPABILITIES_REGISTER CapabilitiesRegister;
+    PCI_FPB_RID_VECTOR_CONTROL1_REGISTER RidVectorControl1Register;
+    PCI_FPB_RID_VECTOR_CONTROL2_REGISTER RidVectorControl2Register;
+    PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER MemLowVectorControlRegister;
+    PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER MemHighVectorControl1Register;
+    PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER MemHighVectorControl2Register;
+    PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER VectorAccessControlRegister;
+    PCI_FPB_VECTOR_ACCESS_DATA_REGISTER VectorAccessDataRegister;
+} PCI_FPB_CAPABILITY, *PPCI_FPB_CAPABILITY;
+
+#define FPB_VECTOR_SIZE_SUPPORTED_256BITS   0x0
+#define FPB_VECTOR_SIZE_SUPPORTED_512BITS   0x1
+#define FPB_VECTOR_SIZE_SUPPORTED_1KBITS    0x2
+#define FPB_VECTOR_SIZE_SUPPORTED_2KBITS    0x3
+#define FPB_VECTOR_SIZE_SUPPORTED_4KBITS    0x4
+#define FPB_VECTOR_SIZE_SUPPORTED_8KBITS    0x5
+
+#define FPB_RID_VECTOR_GRANULARITY_8RIDS    0x0
+#define FPB_RID_VECTOR_GRANULARITY_64RIDS   0x3
+#define FPB_RID_VECTOR_GRANULARITY_256RIDS  0x5
+
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_1MB      0x0
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_2MB      0x1
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_4MB      0x2
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_8MB      0x3
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_16MB     0x4
+
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_256MB   0x0
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_512MB   0x1
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_1GB     0x2
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_2GB     0x3
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_4GB     0x4
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_8GB     0x5
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_16GB    0x6
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_32GB    0x7
+
+//
+// A special value that is not defined in the FPB spec. This is used to identify
+// byte granularity.
+//
+
+#define FPB_MEM_VECTOR_GRANULARITY_1B           0x8
+
+//
+// A special value that is not defined in the FPB spec. This is used to identify
+// 1 MB granularity for memory high vector.
+//
+
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_1MB     0x9
+
+#define FPB_VECTOR_SELECT_RID       0x0
+#define FPB_VECTOR_SELECT_MEM_LOW   0x1
+#define FPB_VECTOR_SELECT_MEM_HIGH  0x2
 
 //
 // PCI Express Capability
@@ -8373,6 +9052,47 @@ typedef struct _PCI_EXPRESS_PRI_CAPABILITY {
 } PCI_EXPRESS_PRI_CAPABILITY, *PPCI_EXPRESS_PRI_CAPABILITY;
 
 //
+// PTM Extended Capability structures.
+//
+
+typedef union _PCI_EXPRESS_PTM_CAPABILITY_REGISTER {
+
+    struct {
+        ULONG RequesterCapable:1;
+        ULONG ResponderCapable:1;
+        ULONG RootCapable:1;
+        ULONG Rsvd:5;
+        ULONG LocalGranularity:8;
+        ULONG Rsvd2:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_PTM_CAPABILITY_REGISTER, *PPCI_EXPRESS_PTM_CAPABILITY_REGISTER;
+
+typedef union _PCI_EXPRESS_PTM_CONTROL_REGISTER {
+
+    struct {
+        ULONG Enable:1;
+        ULONG RootSelect:1;
+        ULONG Rsvd:6;
+        ULONG EffectiveGranularity:8;
+        ULONG Rsvd2:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_EXPRESS_PTM_CONTROL_REGISTER, *PPCI_EXPRESS_PTM_CONTROL_REGISTER;
+
+typedef struct _PCI_EXPRESS_PTM_CAPABILITY {
+
+    PCI_EXPRESS_ENHANCED_CAPABILITY_HEADER  Header;
+    PCI_EXPRESS_PTM_CAPABILITY_REGISTER     PtmCapability;
+    PCI_EXPRESS_PTM_CONTROL_REGISTER        PtmControl;
+
+} PCI_EXPRESS_PTM_CAPABILITY, *PPCI_EXPRESS_PTM_CAPABILITY;
+
+//
 // PCI Express Advanced Error Reporting structures.
 //
 
@@ -9111,6 +9831,7 @@ VOID
 // Minor code 0x0a is reserved
 #define IRP_MN_REGINFO_EX                   0x0b
 // Minor code 0x0c is reserved
+// Minor code 0x0d is reserved
 
 
 // workaround overloaded definition (rpc generated headers all define INTERFACE
@@ -9142,16 +9863,16 @@ typedef struct _INTERFACE {
 #undef ALIGN_UP_POINTER
 
 #define ALIGN_DOWN_BY(length, alignment) \
-    ((ULONG_PTR)(length) & ~(alignment - 1))
+    ((ULONG_PTR)(length) & ~((ULONG_PTR)(alignment) - 1))
 
 #define ALIGN_UP_BY(length, alignment) \
-    (ALIGN_DOWN_BY(((ULONG_PTR)(length) + alignment - 1), alignment))
+    (ALIGN_DOWN_BY(((ULONG_PTR)(length) + (alignment) - 1), alignment))
 
 #define ALIGN_DOWN_POINTER_BY(address, alignment) \
-    ((PVOID)((ULONG_PTR)(address) & ~((ULONG_PTR)alignment - 1)))
+    ((PVOID)((ULONG_PTR)(address) & ~((ULONG_PTR)(alignment) - 1)))
 
 #define ALIGN_UP_POINTER_BY(address, alignment) \
-    (ALIGN_DOWN_POINTER_BY(((ULONG_PTR)(address) + alignment - 1), alignment))
+    (ALIGN_DOWN_POINTER_BY(((ULONG_PTR)(address) + (alignment) - 1), alignment))
 
 #define ALIGN_DOWN(length, type) \
     ALIGN_DOWN_BY(length, sizeof(type))

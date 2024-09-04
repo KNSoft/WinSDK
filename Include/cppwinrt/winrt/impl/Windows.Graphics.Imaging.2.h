@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -88,16 +88,18 @@ struct WINRT_EBO BitmapDecoder :
     impl::require<BitmapDecoder, Windows::Graphics::Imaging::IBitmapFrame, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap>
 {
     BitmapDecoder(std::nullptr_t) noexcept {}
-    static GUID BmpDecoderId();
-    static GUID JpegDecoderId();
-    static GUID PngDecoderId();
-    static GUID TiffDecoderId();
-    static GUID GifDecoderId();
-    static GUID JpegXRDecoderId();
-    static GUID IcoDecoderId();
+    static winrt::guid BmpDecoderId();
+    static winrt::guid JpegDecoderId();
+    static winrt::guid PngDecoderId();
+    static winrt::guid TiffDecoderId();
+    static winrt::guid GifDecoderId();
+    static winrt::guid JpegXRDecoderId();
+    static winrt::guid IcoDecoderId();
     static Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> GetDecoderInformationEnumerator();
     static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> CreateAsync(Windows::Storage::Streams::IRandomAccessStream const& stream);
-    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> CreateAsync(GUID const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream);
+    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> CreateAsync(winrt::guid const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream);
+    static winrt::guid HeifDecoderId();
+    static winrt::guid WebpDecoderId();
 };
 
 struct WINRT_EBO BitmapEncoder :
@@ -105,17 +107,18 @@ struct WINRT_EBO BitmapEncoder :
     impl::require<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap>
 {
     BitmapEncoder(std::nullptr_t) noexcept {}
-    static GUID BmpEncoderId();
-    static GUID JpegEncoderId();
-    static GUID PngEncoderId();
-    static GUID TiffEncoderId();
-    static GUID GifEncoderId();
-    static GUID JpegXREncoderId();
+    static winrt::guid BmpEncoderId();
+    static winrt::guid JpegEncoderId();
+    static winrt::guid PngEncoderId();
+    static winrt::guid TiffEncoderId();
+    static winrt::guid GifEncoderId();
+    static winrt::guid JpegXREncoderId();
     static Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> GetEncoderInformationEnumerator();
-    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream);
-    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions);
+    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream);
+    static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions);
     static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateForTranscodingAsync(Windows::Storage::Streams::IRandomAccessStream const& stream, Windows::Graphics::Imaging::BitmapDecoder const& bitmapDecoder);
     static Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateForInPlacePropertyEncodingAsync(Windows::Graphics::Imaging::BitmapDecoder const& bitmapDecoder);
+    static winrt::guid HeifEncoderId();
 };
 
 struct WINRT_EBO BitmapFrame :

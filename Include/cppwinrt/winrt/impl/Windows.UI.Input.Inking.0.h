@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -32,6 +32,13 @@ struct PointerPoint;
 }
 
 WINRT_EXPORT namespace winrt::Windows::UI::Input::Inking {
+
+enum class HandwritingLineHeight : int32_t
+{
+    Small = 0,
+    Medium = 1,
+    Large = 2,
+};
 
 enum class InkDrawingAttributesKind : int32_t
 {
@@ -92,6 +99,12 @@ enum class InkRecognitionTarget : int32_t
     Recent = 2,
 };
 
+enum class PenHandedness : int32_t
+{
+    Right = 0,
+    Left = 1,
+};
+
 enum class PenTipShape : int32_t
 {
     Circle = 0,
@@ -140,6 +153,8 @@ struct IInkStrokesCollectedEventArgs;
 struct IInkStrokesErasedEventArgs;
 struct IInkSynchronizer;
 struct IInkUnprocessedInput;
+struct IPenAndInkSettings;
+struct IPenAndInkSettingsStatics;
 struct InkDrawingAttributes;
 struct InkDrawingAttributesPencilProperties;
 struct InkInputConfiguration;
@@ -162,6 +177,7 @@ struct InkStrokesCollectedEventArgs;
 struct InkStrokesErasedEventArgs;
 struct InkSynchronizer;
 struct InkUnprocessedInput;
+struct PenAndInkSettings;
 
 }
 
@@ -209,6 +225,8 @@ template <> struct category<Windows::UI::Input::Inking::IInkStrokesCollectedEven
 template <> struct category<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Input::Inking::IInkSynchronizer>{ using type = interface_category; };
 template <> struct category<Windows::UI::Input::Inking::IInkUnprocessedInput>{ using type = interface_category; };
+template <> struct category<Windows::UI::Input::Inking::IPenAndInkSettings>{ using type = interface_category; };
+template <> struct category<Windows::UI::Input::Inking::IPenAndInkSettingsStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Input::Inking::InkDrawingAttributes>{ using type = class_category; };
 template <> struct category<Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties>{ using type = class_category; };
 template <> struct category<Windows::UI::Input::Inking::InkInputConfiguration>{ using type = class_category; };
@@ -231,6 +249,8 @@ template <> struct category<Windows::UI::Input::Inking::InkStrokesCollectedEvent
 template <> struct category<Windows::UI::Input::Inking::InkStrokesErasedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Input::Inking::InkSynchronizer>{ using type = class_category; };
 template <> struct category<Windows::UI::Input::Inking::InkUnprocessedInput>{ using type = class_category; };
+template <> struct category<Windows::UI::Input::Inking::PenAndInkSettings>{ using type = class_category; };
+template <> struct category<Windows::UI::Input::Inking::HandwritingLineHeight>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::InkDrawingAttributesKind>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::InkHighContrastAdjustment>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::InkInputProcessingMode>{ using type = enum_category; };
@@ -240,6 +260,7 @@ template <> struct category<Windows::UI::Input::Inking::InkPersistenceFormat>{ u
 template <> struct category<Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::InkPresenterStencilKind>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::InkRecognitionTarget>{ using type = enum_category; };
+template <> struct category<Windows::UI::Input::Inking::PenHandedness>{ using type = enum_category; };
 template <> struct category<Windows::UI::Input::Inking::PenTipShape>{ using type = enum_category; };
 template <> struct name<Windows::UI::Input::Inking::IInkDrawingAttributes>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IInkDrawingAttributes" }; };
 template <> struct name<Windows::UI::Input::Inking::IInkDrawingAttributes2>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IInkDrawingAttributes2" }; };
@@ -283,6 +304,8 @@ template <> struct name<Windows::UI::Input::Inking::IInkStrokesCollectedEventArg
 template <> struct name<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IInkStrokesErasedEventArgs" }; };
 template <> struct name<Windows::UI::Input::Inking::IInkSynchronizer>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IInkSynchronizer" }; };
 template <> struct name<Windows::UI::Input::Inking::IInkUnprocessedInput>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IInkUnprocessedInput" }; };
+template <> struct name<Windows::UI::Input::Inking::IPenAndInkSettings>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IPenAndInkSettings" }; };
+template <> struct name<Windows::UI::Input::Inking::IPenAndInkSettingsStatics>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.IPenAndInkSettingsStatics" }; };
 template <> struct name<Windows::UI::Input::Inking::InkDrawingAttributes>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkDrawingAttributes" }; };
 template <> struct name<Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties" }; };
 template <> struct name<Windows::UI::Input::Inking::InkInputConfiguration>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkInputConfiguration" }; };
@@ -305,6 +328,8 @@ template <> struct name<Windows::UI::Input::Inking::InkStrokesCollectedEventArgs
 template <> struct name<Windows::UI::Input::Inking::InkStrokesErasedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkStrokesErasedEventArgs" }; };
 template <> struct name<Windows::UI::Input::Inking::InkSynchronizer>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkSynchronizer" }; };
 template <> struct name<Windows::UI::Input::Inking::InkUnprocessedInput>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkUnprocessedInput" }; };
+template <> struct name<Windows::UI::Input::Inking::PenAndInkSettings>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.PenAndInkSettings" }; };
+template <> struct name<Windows::UI::Input::Inking::HandwritingLineHeight>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.HandwritingLineHeight" }; };
 template <> struct name<Windows::UI::Input::Inking::InkDrawingAttributesKind>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkDrawingAttributesKind" }; };
 template <> struct name<Windows::UI::Input::Inking::InkHighContrastAdjustment>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkHighContrastAdjustment" }; };
 template <> struct name<Windows::UI::Input::Inking::InkInputProcessingMode>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkInputProcessingMode" }; };
@@ -314,49 +339,52 @@ template <> struct name<Windows::UI::Input::Inking::InkPersistenceFormat>{ stati
 template <> struct name<Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkPresenterPredefinedConfiguration" }; };
 template <> struct name<Windows::UI::Input::Inking::InkPresenterStencilKind>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkPresenterStencilKind" }; };
 template <> struct name<Windows::UI::Input::Inking::InkRecognitionTarget>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.InkRecognitionTarget" }; };
+template <> struct name<Windows::UI::Input::Inking::PenHandedness>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.PenHandedness" }; };
 template <> struct name<Windows::UI::Input::Inking::PenTipShape>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.PenTipShape" }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributes>{ static constexpr GUID value{ 0x97A2176C,0x6774,0x48AD,{ 0x84,0xF0,0x48,0xF5,0xA9,0xBE,0x74,0xF9 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributes2>{ static constexpr GUID value{ 0x7CAB6508,0x8EC4,0x42FD,{ 0xA5,0xA5,0xE4,0xB7,0xD1,0xD5,0x31,0x6D } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributes3>{ static constexpr GUID value{ 0x72020002,0x7D5B,0x4690,{ 0x8A,0xF4,0xE6,0x64,0xCB,0xE2,0xB7,0x4F } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributes4>{ static constexpr GUID value{ 0xEF65DC25,0x9F19,0x456D,{ 0x91,0xA3,0xBC,0x3A,0x3D,0x91,0xC5,0xFB } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributes5>{ static constexpr GUID value{ 0xD11AA0BB,0x0775,0x4852,{ 0xAE,0x64,0x41,0x14,0x3A,0x7A,0xE6,0xC9 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>{ static constexpr GUID value{ 0x4F2534CB,0x2D86,0x41BB,{ 0xB0,0xE8,0xE4,0xC2,0xA0,0x25,0x3C,0x52 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkDrawingAttributesStatics>{ static constexpr GUID value{ 0xF731E03F,0x1A65,0x4862,{ 0x96,0xCB,0x6E,0x16,0x65,0xE1,0x7F,0x6D } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkInputConfiguration>{ static constexpr GUID value{ 0x93A68DC4,0x0B7B,0x49D7,{ 0xB3,0x4F,0x99,0x01,0xE5,0x24,0xDC,0xF2 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkInputProcessingConfiguration>{ static constexpr GUID value{ 0x2778D85E,0x33CA,0x4B06,{ 0xA6,0xD3,0xAC,0x39,0x45,0x11,0x6D,0x37 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkManager>{ static constexpr GUID value{ 0x4744737D,0x671B,0x4163,{ 0x9C,0x95,0x4E,0x8D,0x7A,0x03,0x5F,0xE1 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkModelerAttributes>{ static constexpr GUID value{ 0xBAD31F27,0x0CD9,0x4BFD,{ 0xB6,0xF3,0x9E,0x03,0xBA,0x8D,0x74,0x54 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPoint>{ static constexpr GUID value{ 0x9F87272B,0x858C,0x46A5,{ 0x9B,0x41,0xD1,0x95,0x97,0x04,0x59,0xFD } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPoint2>{ static constexpr GUID value{ 0xFBA9C3F7,0xAE56,0x4D5C,{ 0xBD,0x2F,0x0A,0xC4,0x5F,0x5E,0x4A,0xF9 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPointFactory>{ static constexpr GUID value{ 0x29E5D51C,0xC98F,0x405D,{ 0x9F,0x3B,0xE5,0x3E,0x31,0x06,0x8D,0x4D } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPointFactory2>{ static constexpr GUID value{ 0xE0145E85,0xDAFF,0x45F2,{ 0xAD,0x69,0x05,0x0D,0x82,0x56,0xA2,0x09 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenter>{ static constexpr GUID value{ 0xA69B70E2,0x887B,0x458F,{ 0xB1,0x73,0x4F,0xE4,0x43,0x89,0x30,0xA3 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenter2>{ static constexpr GUID value{ 0xCF53E612,0x9A34,0x11E6,{ 0x9F,0x33,0xA2,0x4F,0xC0,0xD9,0x64,0x9C } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenter3>{ static constexpr GUID value{ 0x51E1CE89,0xD37D,0x4A90,{ 0x83,0xFC,0x7F,0x5E,0x9D,0xFB,0xF2,0x17 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterProtractor>{ static constexpr GUID value{ 0x7DE3F2AA,0xEF6C,0x4E91,{ 0xA7,0x3B,0x5B,0x70,0xD5,0x6F,0xBD,0x17 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterProtractorFactory>{ static constexpr GUID value{ 0x320103C9,0x68FA,0x47E9,{ 0x81,0x27,0x83,0x70,0x71,0x1F,0xC4,0x6C } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterRuler>{ static constexpr GUID value{ 0x6CDA7D5A,0xDEC7,0x4DD7,{ 0x87,0x7A,0x21,0x33,0xF1,0x83,0xD4,0x8A } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterRuler2>{ static constexpr GUID value{ 0x45130DC1,0xBC61,0x44D4,{ 0xA4,0x23,0x54,0x71,0x2A,0xE6,0x71,0xC4 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterRulerFactory>{ static constexpr GUID value{ 0x34361BEB,0x9001,0x4A4B,{ 0xA6,0x90,0x69,0xDB,0xAF,0x63,0xE5,0x01 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkPresenterStencil>{ static constexpr GUID value{ 0x30D12D6D,0x3E06,0x4D02,{ 0xB1,0x16,0x27,0x7F,0xB5,0xD8,0xAD,0xDC } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkRecognitionResult>{ static constexpr GUID value{ 0x36461A94,0x5068,0x40EF,{ 0x8A,0x05,0x2C,0x2F,0xB6,0x09,0x08,0xA2 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkRecognizer>{ static constexpr GUID value{ 0x077CCEA3,0x904D,0x442A,{ 0xB1,0x51,0xAA,0xCA,0x36,0x31,0xC4,0x3B } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkRecognizerContainer>{ static constexpr GUID value{ 0xA74D9A31,0x8047,0x4698,{ 0xA9,0x12,0xF8,0x2A,0x50,0x85,0x01,0x2F } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStroke>{ static constexpr GUID value{ 0x15144D60,0xCCE3,0x4FCF,{ 0x9D,0x52,0x11,0x51,0x8A,0xB6,0xAF,0xD4 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStroke2>{ static constexpr GUID value{ 0x5DB9E4F4,0xBAFA,0x4DE1,{ 0x89,0xD3,0x20,0x1B,0x1E,0xD7,0xD8,0x9B } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStroke3>{ static constexpr GUID value{ 0x4A807374,0x9499,0x411D,{ 0xA1,0xC4,0x68,0x85,0x5D,0x03,0xD6,0x5F } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeBuilder>{ static constexpr GUID value{ 0x82BBD1DC,0x1C63,0x41DC,{ 0x9E,0x07,0x4B,0x4A,0x70,0xCE,0xD8,0x01 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeBuilder2>{ static constexpr GUID value{ 0xBD82BC27,0x731F,0x4CBC,{ 0xBB,0xBF,0x6D,0x46,0x80,0x44,0xF1,0xE5 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeBuilder3>{ static constexpr GUID value{ 0xB2C71FCD,0x5472,0x46B1,{ 0xA8,0x1D,0xC3,0x7A,0x3D,0x16,0x94,0x41 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeContainer>{ static constexpr GUID value{ 0x22ACCBC6,0xFAA9,0x4F14,{ 0xB6,0x8C,0xF6,0xCE,0xE6,0x70,0xAE,0x16 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeContainer2>{ static constexpr GUID value{ 0x8901D364,0xDA36,0x4BCF,{ 0x9E,0x5C,0xD1,0x95,0x82,0x59,0x95,0xB4 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeContainer3>{ static constexpr GUID value{ 0x3D07BEA5,0xBAEA,0x4C82,{ 0xA7,0x19,0x7B,0x83,0xDA,0x10,0x67,0xD2 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeInput>{ static constexpr GUID value{ 0xCF2FFE7B,0x5E10,0x43C6,{ 0xA0,0x80,0x88,0xF2,0x6E,0x1D,0xC6,0x7D } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokeRenderingSegment>{ static constexpr GUID value{ 0x68510F1F,0x88E3,0x477A,{ 0xA2,0xFA,0x56,0x9F,0x5F,0x1F,0x9B,0xD5 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs>{ static constexpr GUID value{ 0xC4F3F229,0x1938,0x495C,{ 0xB4,0xD9,0x6D,0xE4,0xB0,0x8D,0x48,0x11 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ static constexpr GUID value{ 0xA4216A22,0x1503,0x4EBF,{ 0x8F,0xF5,0x2D,0xE8,0x45,0x84,0xA8,0xAA } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkSynchronizer>{ static constexpr GUID value{ 0x9B9EA160,0xAE9B,0x45F9,{ 0x84,0x07,0x4B,0x49,0x3B,0x16,0x36,0x61 } }; };
-template <> struct guid<Windows::UI::Input::Inking::IInkUnprocessedInput>{ static constexpr GUID value{ 0xDB4445E0,0x8398,0x4921,{ 0xAC,0x3B,0xAB,0x97,0x8C,0x5B,0xA2,0x56 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributes>{ static constexpr guid value{ 0x97A2176C,0x6774,0x48AD,{ 0x84,0xF0,0x48,0xF5,0xA9,0xBE,0x74,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributes2>{ static constexpr guid value{ 0x7CAB6508,0x8EC4,0x42FD,{ 0xA5,0xA5,0xE4,0xB7,0xD1,0xD5,0x31,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributes3>{ static constexpr guid value{ 0x72020002,0x7D5B,0x4690,{ 0x8A,0xF4,0xE6,0x64,0xCB,0xE2,0xB7,0x4F } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributes4>{ static constexpr guid value{ 0xEF65DC25,0x9F19,0x456D,{ 0x91,0xA3,0xBC,0x3A,0x3D,0x91,0xC5,0xFB } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributes5>{ static constexpr guid value{ 0xD11AA0BB,0x0775,0x4852,{ 0xAE,0x64,0x41,0x14,0x3A,0x7A,0xE6,0xC9 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>{ static constexpr guid value{ 0x4F2534CB,0x2D86,0x41BB,{ 0xB0,0xE8,0xE4,0xC2,0xA0,0x25,0x3C,0x52 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkDrawingAttributesStatics>{ static constexpr guid value{ 0xF731E03F,0x1A65,0x4862,{ 0x96,0xCB,0x6E,0x16,0x65,0xE1,0x7F,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkInputConfiguration>{ static constexpr guid value{ 0x93A68DC4,0x0B7B,0x49D7,{ 0xB3,0x4F,0x99,0x01,0xE5,0x24,0xDC,0xF2 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkInputProcessingConfiguration>{ static constexpr guid value{ 0x2778D85E,0x33CA,0x4B06,{ 0xA6,0xD3,0xAC,0x39,0x45,0x11,0x6D,0x37 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkManager>{ static constexpr guid value{ 0x4744737D,0x671B,0x4163,{ 0x9C,0x95,0x4E,0x8D,0x7A,0x03,0x5F,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkModelerAttributes>{ static constexpr guid value{ 0xBAD31F27,0x0CD9,0x4BFD,{ 0xB6,0xF3,0x9E,0x03,0xBA,0x8D,0x74,0x54 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPoint>{ static constexpr guid value{ 0x9F87272B,0x858C,0x46A5,{ 0x9B,0x41,0xD1,0x95,0x97,0x04,0x59,0xFD } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPoint2>{ static constexpr guid value{ 0xFBA9C3F7,0xAE56,0x4D5C,{ 0xBD,0x2F,0x0A,0xC4,0x5F,0x5E,0x4A,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPointFactory>{ static constexpr guid value{ 0x29E5D51C,0xC98F,0x405D,{ 0x9F,0x3B,0xE5,0x3E,0x31,0x06,0x8D,0x4D } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPointFactory2>{ static constexpr guid value{ 0xE0145E85,0xDAFF,0x45F2,{ 0xAD,0x69,0x05,0x0D,0x82,0x56,0xA2,0x09 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenter>{ static constexpr guid value{ 0xA69B70E2,0x887B,0x458F,{ 0xB1,0x73,0x4F,0xE4,0x43,0x89,0x30,0xA3 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenter2>{ static constexpr guid value{ 0xCF53E612,0x9A34,0x11E6,{ 0x9F,0x33,0xA2,0x4F,0xC0,0xD9,0x64,0x9C } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenter3>{ static constexpr guid value{ 0x51E1CE89,0xD37D,0x4A90,{ 0x83,0xFC,0x7F,0x5E,0x9D,0xFB,0xF2,0x17 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterProtractor>{ static constexpr guid value{ 0x7DE3F2AA,0xEF6C,0x4E91,{ 0xA7,0x3B,0x5B,0x70,0xD5,0x6F,0xBD,0x17 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterProtractorFactory>{ static constexpr guid value{ 0x320103C9,0x68FA,0x47E9,{ 0x81,0x27,0x83,0x70,0x71,0x1F,0xC4,0x6C } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterRuler>{ static constexpr guid value{ 0x6CDA7D5A,0xDEC7,0x4DD7,{ 0x87,0x7A,0x21,0x33,0xF1,0x83,0xD4,0x8A } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterRuler2>{ static constexpr guid value{ 0x45130DC1,0xBC61,0x44D4,{ 0xA4,0x23,0x54,0x71,0x2A,0xE6,0x71,0xC4 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterRulerFactory>{ static constexpr guid value{ 0x34361BEB,0x9001,0x4A4B,{ 0xA6,0x90,0x69,0xDB,0xAF,0x63,0xE5,0x01 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkPresenterStencil>{ static constexpr guid value{ 0x30D12D6D,0x3E06,0x4D02,{ 0xB1,0x16,0x27,0x7F,0xB5,0xD8,0xAD,0xDC } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkRecognitionResult>{ static constexpr guid value{ 0x36461A94,0x5068,0x40EF,{ 0x8A,0x05,0x2C,0x2F,0xB6,0x09,0x08,0xA2 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkRecognizer>{ static constexpr guid value{ 0x077CCEA3,0x904D,0x442A,{ 0xB1,0x51,0xAA,0xCA,0x36,0x31,0xC4,0x3B } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkRecognizerContainer>{ static constexpr guid value{ 0xA74D9A31,0x8047,0x4698,{ 0xA9,0x12,0xF8,0x2A,0x50,0x85,0x01,0x2F } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStroke>{ static constexpr guid value{ 0x15144D60,0xCCE3,0x4FCF,{ 0x9D,0x52,0x11,0x51,0x8A,0xB6,0xAF,0xD4 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStroke2>{ static constexpr guid value{ 0x5DB9E4F4,0xBAFA,0x4DE1,{ 0x89,0xD3,0x20,0x1B,0x1E,0xD7,0xD8,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStroke3>{ static constexpr guid value{ 0x4A807374,0x9499,0x411D,{ 0xA1,0xC4,0x68,0x85,0x5D,0x03,0xD6,0x5F } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeBuilder>{ static constexpr guid value{ 0x82BBD1DC,0x1C63,0x41DC,{ 0x9E,0x07,0x4B,0x4A,0x70,0xCE,0xD8,0x01 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeBuilder2>{ static constexpr guid value{ 0xBD82BC27,0x731F,0x4CBC,{ 0xBB,0xBF,0x6D,0x46,0x80,0x44,0xF1,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeBuilder3>{ static constexpr guid value{ 0xB2C71FCD,0x5472,0x46B1,{ 0xA8,0x1D,0xC3,0x7A,0x3D,0x16,0x94,0x41 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeContainer>{ static constexpr guid value{ 0x22ACCBC6,0xFAA9,0x4F14,{ 0xB6,0x8C,0xF6,0xCE,0xE6,0x70,0xAE,0x16 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeContainer2>{ static constexpr guid value{ 0x8901D364,0xDA36,0x4BCF,{ 0x9E,0x5C,0xD1,0x95,0x82,0x59,0x95,0xB4 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeContainer3>{ static constexpr guid value{ 0x3D07BEA5,0xBAEA,0x4C82,{ 0xA7,0x19,0x7B,0x83,0xDA,0x10,0x67,0xD2 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeInput>{ static constexpr guid value{ 0xCF2FFE7B,0x5E10,0x43C6,{ 0xA0,0x80,0x88,0xF2,0x6E,0x1D,0xC6,0x7D } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokeRenderingSegment>{ static constexpr guid value{ 0x68510F1F,0x88E3,0x477A,{ 0xA2,0xFA,0x56,0x9F,0x5F,0x1F,0x9B,0xD5 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs>{ static constexpr guid value{ 0xC4F3F229,0x1938,0x495C,{ 0xB4,0xD9,0x6D,0xE4,0xB0,0x8D,0x48,0x11 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ static constexpr guid value{ 0xA4216A22,0x1503,0x4EBF,{ 0x8F,0xF5,0x2D,0xE8,0x45,0x84,0xA8,0xAA } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkSynchronizer>{ static constexpr guid value{ 0x9B9EA160,0xAE9B,0x45F9,{ 0x84,0x07,0x4B,0x49,0x3B,0x16,0x36,0x61 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IInkUnprocessedInput>{ static constexpr guid value{ 0xDB4445E0,0x8398,0x4921,{ 0xAC,0x3B,0xAB,0x97,0x8C,0x5B,0xA2,0x56 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IPenAndInkSettings>{ static constexpr guid value{ 0xBC2CEB8F,0x0066,0x44A8,{ 0xBB,0x7A,0xB8,0x39,0xB3,0xDE,0xB8,0xF5 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::IPenAndInkSettingsStatics>{ static constexpr guid value{ 0xED6DD036,0x5708,0x5C3C,{ 0x96,0xDB,0xF2,0xF5,0x52,0xEA,0xB6,0x41 } }; };
 template <> struct default_interface<Windows::UI::Input::Inking::InkDrawingAttributes>{ using type = Windows::UI::Input::Inking::IInkDrawingAttributes; };
 template <> struct default_interface<Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties>{ using type = Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties; };
 template <> struct default_interface<Windows::UI::Input::Inking::InkInputConfiguration>{ using type = Windows::UI::Input::Inking::IInkInputConfiguration; };
@@ -379,6 +407,374 @@ template <> struct default_interface<Windows::UI::Input::Inking::InkStrokesColle
 template <> struct default_interface<Windows::UI::Input::Inking::InkStrokesErasedEventArgs>{ using type = Windows::UI::Input::Inking::IInkStrokesErasedEventArgs; };
 template <> struct default_interface<Windows::UI::Input::Inking::InkSynchronizer>{ using type = Windows::UI::Input::Inking::IInkSynchronizer; };
 template <> struct default_interface<Windows::UI::Input::Inking::InkUnprocessedInput>{ using type = Windows::UI::Input::Inking::IInkUnprocessedInput; };
+template <> struct default_interface<Windows::UI::Input::Inking::PenAndInkSettings>{ using type = Windows::UI::Input::Inking::IPenAndInkSettings; };
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PenTip(Windows::UI::Input::Inking::PenTipShape* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PenTip(Windows::UI::Input::Inking::PenTipShape value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(Windows::Foundation::Size value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IgnorePressure(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IgnorePressure(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FitToCurve(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FitToCurve(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PenTipTransform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PenTipTransform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DrawAsHighlighter(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DrawAsHighlighter(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::UI::Input::Inking::InkDrawingAttributesKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PencilProperties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IgnoreTilt(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IgnoreTilt(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ModelerAttributes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Opacity(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateForPencil(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkInputConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsPrimaryBarrelButtonInputEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsPrimaryBarrelButtonInputEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEraserInputEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEraserInputEnabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkInputProcessingConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mode(Windows::UI::Input::Inking::InkInputProcessingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mode(Windows::UI::Input::Inking::InkInputProcessingMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mode(Windows::UI::Input::Inking::InkManipulationMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mode(Windows::UI::Input::Inking::InkManipulationMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessPointerDown(void* pointerPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessPointerUpdate(void* pointerPoint, void** updateInformation) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessPointerUp(void* pointerPoint, Windows::Foundation::Rect* updateRectangle) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDefaultDrawingAttributes(void* drawingAttributes) noexcept = 0;
+    virtual int32_t WINRT_CALL RecognizeAsync2(Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, void** recognitionResults) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkModelerAttributes>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PredictionTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PredictionTime(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScalingFactor(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScalingFactor(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPoint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPoint2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TiltX(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TiltY(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(uint64_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPointFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInkPoint(Windows::Foundation::Point position, float pressure, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPointFactory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInkPointWithTiltAndTimestamp(Windows::Foundation::Point position, float pressure, float tiltX, float tiltY, uint64_t timestamp, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsInputEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsInputEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnprocessedInput(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeInput(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputProcessingConfiguration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeContainer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeContainer(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyDefaultDrawingAttributes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateDefaultDrawingAttributes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ActivateCustomDrying(void** inkSynchronizer) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPredefinedConfiguration(Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StrokesCollected(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokesCollected(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StrokesErased(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokesErased(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenter3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InputConfiguration(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterProtractor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AreTickMarksVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AreTickMarksVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AreRaysVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AreRaysVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCenterMarkerVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsCenterMarkerVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAngleReadoutVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAngleReadoutVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsResizable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsResizable(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Radius(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Radius(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterProtractorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* inkPresenter, void** inkPresenterProtractor) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRuler>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Length(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Length(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Width(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRuler2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AreTickMarksVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AreTickMarksVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCompassVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsCompassVisible(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRulerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* inkPresenter, void** inkPresenterRuler) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkPresenterStencil>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::UI::Input::Inking::InkPresenterStencilKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Transform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Transform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkRecognitionResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* boundingRect) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTextCandidates(void** textCandidates) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStrokes(void** strokes) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkRecognizer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkRecognizerContainer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetDefaultRecognizer(void* recognizer) noexcept = 0;
+    virtual int32_t WINRT_CALL RecognizeAsync(void* strokeCollection, Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, void** recognitionResults) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRecognizers(void** recognizerView) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStroke>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DrawingAttributes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DrawingAttributes(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Selected(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Selected(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Recognized(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRenderingSegments(void** renderingSegments) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** clonedStroke) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStroke2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PointTransform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PointTransform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetInkPoints(void** inkPoints) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStroke3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeStartedTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeStartedTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeDuration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeDuration(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL BeginStroke(void* pointerPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendToStroke(void* pointerPoint, void** previousPointerPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL EndStroke(void* pointerPoint, void** stroke) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStroke(void* points, void** stroke) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDefaultDrawingAttributes(void* drawingAttributes) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateStrokeFromInkPoints(void* inkPoints, Windows::Foundation::Numerics::float3x2 transform, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateStrokeFromInkPoints(void* inkPoints, Windows::Foundation::Numerics::float3x2 transform, void* strokeStartedTime, void* strokeDuration, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStroke(void* stroke) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteSelected(Windows::Foundation::Rect* invalidatedRect) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveSelected(Windows::Foundation::Point translation, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectWithPolyLine(void* polyline, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectWithLine(Windows::Foundation::Point from, Windows::Foundation::Point to, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
+    virtual int32_t WINRT_CALL CopySelectedToClipboard() noexcept = 0;
+    virtual int32_t WINRT_CALL PasteFromClipboard(Windows::Foundation::Point position, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
+    virtual int32_t WINRT_CALL CanPasteFromClipboard(bool* canPaste) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadAsync(void* inputStream, void** loadAction) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void* outputStream, void** outputStreamOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateRecognitionResults(void* recognitionResults) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStrokes(void** strokeView) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRecognitionResults(void** recognitionResults) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddStrokes(void* strokes) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SaveWithFormatAsync(void* outputStream, Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat, void** outputStreamOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStrokeById(uint32_t id, void** stroke) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeInput>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_StrokeStarted(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokeStarted(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StrokeContinued(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokeContinued(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StrokeEnded(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokeEnded(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StrokeCanceled(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StrokeCanceled(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InkPresenter(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokeRenderingSegment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BezierControlPoint1(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BezierControlPoint2(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TiltX(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TiltY(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Twist(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Strokes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Strokes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkSynchronizer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL BeginDry(void** inkStrokes) noexcept = 0;
+    virtual int32_t WINRT_CALL EndDry() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IInkUnprocessedInput>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_PointerEntered(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerEntered(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerHovered(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerHovered(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerExited(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerExited(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerPressed(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerPressed(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerMoved(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerMoved(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerReleased(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerReleased(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerLost(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerLost(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InkPresenter(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IPenAndInkSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsHandwritingDirectlyIntoTextFieldEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PenHandedness(Windows::UI::Input::Inking::PenHandedness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HandwritingLineHeight(Windows::UI::Input::Inking::HandwritingLineHeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserConsentsToHandwritingTelemetryCollection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTouchHandwritingEnabled(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::IPenAndInkSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Input_Inking_IInkDrawingAttributes
@@ -534,14 +930,14 @@ struct consume_Windows_UI_Input_Inking_IInkPresenter
     void UpdateDefaultDrawingAttributes(Windows::UI::Input::Inking::InkDrawingAttributes const& value) const;
     Windows::UI::Input::Inking::InkSynchronizer ActivateCustomDrying() const;
     void SetPredefinedConfiguration(Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration const& value) const;
-    event_token StrokesCollected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> const& handler) const;
-    using StrokesCollected_revoker = event_revoker<Windows::UI::Input::Inking::IInkPresenter>;
+    winrt::event_token StrokesCollected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> const& handler) const;
+    using StrokesCollected_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkPresenter, &impl::abi_t<Windows::UI::Input::Inking::IInkPresenter>::remove_StrokesCollected>;
     StrokesCollected_revoker StrokesCollected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> const& handler) const;
-    void StrokesCollected(event_token const& cookie) const;
-    event_token StrokesErased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> const& handler) const;
-    using StrokesErased_revoker = event_revoker<Windows::UI::Input::Inking::IInkPresenter>;
+    void StrokesCollected(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token StrokesErased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> const& handler) const;
+    using StrokesErased_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkPresenter, &impl::abi_t<Windows::UI::Input::Inking::IInkPresenter>::remove_StrokesErased>;
     StrokesErased_revoker StrokesErased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> const& handler) const;
-    void StrokesErased(event_token const& cookie) const;
+    void StrokesErased(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::UI::Input::Inking::IInkPresenter> { template <typename D> using type = consume_Windows_UI_Input_Inking_IInkPresenter<D>; };
 
@@ -752,22 +1148,22 @@ template <> struct consume<Windows::UI::Input::Inking::IInkStrokeContainer3> { t
 template <typename D>
 struct consume_Windows_UI_Input_Inking_IInkStrokeInput
 {
-    event_token StrokeStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using StrokeStarted_revoker = event_revoker<Windows::UI::Input::Inking::IInkStrokeInput>;
+    winrt::event_token StrokeStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using StrokeStarted_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkStrokeInput, &impl::abi_t<Windows::UI::Input::Inking::IInkStrokeInput>::remove_StrokeStarted>;
     StrokeStarted_revoker StrokeStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void StrokeStarted(event_token const& cookie) const;
-    event_token StrokeContinued(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using StrokeContinued_revoker = event_revoker<Windows::UI::Input::Inking::IInkStrokeInput>;
+    void StrokeStarted(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token StrokeContinued(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using StrokeContinued_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkStrokeInput, &impl::abi_t<Windows::UI::Input::Inking::IInkStrokeInput>::remove_StrokeContinued>;
     StrokeContinued_revoker StrokeContinued(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void StrokeContinued(event_token const& cookie) const;
-    event_token StrokeEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using StrokeEnded_revoker = event_revoker<Windows::UI::Input::Inking::IInkStrokeInput>;
+    void StrokeContinued(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token StrokeEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using StrokeEnded_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkStrokeInput, &impl::abi_t<Windows::UI::Input::Inking::IInkStrokeInput>::remove_StrokeEnded>;
     StrokeEnded_revoker StrokeEnded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void StrokeEnded(event_token const& cookie) const;
-    event_token StrokeCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using StrokeCanceled_revoker = event_revoker<Windows::UI::Input::Inking::IInkStrokeInput>;
+    void StrokeEnded(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token StrokeCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using StrokeCanceled_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkStrokeInput, &impl::abi_t<Windows::UI::Input::Inking::IInkStrokeInput>::remove_StrokeCanceled>;
     StrokeCanceled_revoker StrokeCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void StrokeCanceled(event_token const& cookie) const;
+    void StrokeCanceled(winrt::event_token const& cookie) const noexcept;
     Windows::UI::Input::Inking::InkPresenter InkPresenter() const;
 };
 template <> struct consume<Windows::UI::Input::Inking::IInkStrokeInput> { template <typename D> using type = consume_Windows_UI_Input_Inking_IInkStrokeInput<D>; };
@@ -810,388 +1206,55 @@ template <> struct consume<Windows::UI::Input::Inking::IInkSynchronizer> { templ
 template <typename D>
 struct consume_Windows_UI_Input_Inking_IInkUnprocessedInput
 {
-    event_token PointerEntered(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerEntered_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    winrt::event_token PointerEntered(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerEntered_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerEntered>;
     PointerEntered_revoker PointerEntered(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerEntered(event_token const& cookie) const;
-    event_token PointerHovered(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerHovered_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerEntered(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerHovered(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerHovered_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerHovered>;
     PointerHovered_revoker PointerHovered(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerHovered(event_token const& cookie) const;
-    event_token PointerExited(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerExited_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerHovered(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerExited(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerExited_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerExited>;
     PointerExited_revoker PointerExited(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerExited(event_token const& cookie) const;
-    event_token PointerPressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerPressed_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerExited(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerPressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerPressed_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerPressed>;
     PointerPressed_revoker PointerPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerPressed(event_token const& cookie) const;
-    event_token PointerMoved(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerMoved_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerPressed(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerMoved(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerMoved_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerMoved>;
     PointerMoved_revoker PointerMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerMoved(event_token const& cookie) const;
-    event_token PointerReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerReleased_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerMoved(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerReleased_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerReleased>;
     PointerReleased_revoker PointerReleased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerReleased(event_token const& cookie) const;
-    event_token PointerLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    using PointerLost_revoker = event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput>;
+    void PointerReleased(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PointerLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
+    using PointerLost_revoker = impl::event_revoker<Windows::UI::Input::Inking::IInkUnprocessedInput, &impl::abi_t<Windows::UI::Input::Inking::IInkUnprocessedInput>::remove_PointerLost>;
     PointerLost_revoker PointerLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> const& handler) const;
-    void PointerLost(event_token const& cookie) const;
+    void PointerLost(winrt::event_token const& cookie) const noexcept;
     Windows::UI::Input::Inking::InkPresenter InkPresenter() const;
 };
 template <> struct consume<Windows::UI::Input::Inking::IInkUnprocessedInput> { template <typename D> using type = consume_Windows_UI_Input_Inking_IInkUnprocessedInput<D>; };
 
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_UI_Input_Inking_IPenAndInkSettings
 {
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_PenTip(Windows::UI::Input::Inking::PenTipShape* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PenTip(Windows::UI::Input::Inking::PenTipShape value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(Windows::Foundation::Size value) noexcept = 0;
-    virtual HRESULT __stdcall get_IgnorePressure(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IgnorePressure(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_FitToCurve(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FitToCurve(bool value) noexcept = 0;
-};};
+    bool IsHandwritingDirectlyIntoTextFieldEnabled() const;
+    Windows::UI::Input::Inking::PenHandedness PenHandedness() const;
+    Windows::UI::Input::Inking::HandwritingLineHeight HandwritingLineHeight() const;
+    hstring FontFamilyName() const;
+    bool UserConsentsToHandwritingTelemetryCollection() const;
+    bool IsTouchHandwritingEnabled() const;
+};
+template <> struct consume<Windows::UI::Input::Inking::IPenAndInkSettings> { template <typename D> using type = consume_Windows_UI_Input_Inking_IPenAndInkSettings<D>; };
 
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes2>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_UI_Input_Inking_IPenAndInkSettingsStatics
 {
-    virtual HRESULT __stdcall get_PenTipTransform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PenTipTransform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_DrawAsHighlighter(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DrawAsHighlighter(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::UI::Input::Inking::InkDrawingAttributesKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PencilProperties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IgnoreTilt(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IgnoreTilt(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributes5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ModelerAttributes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Opacity(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkDrawingAttributesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateForPencil(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkInputConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsPrimaryBarrelButtonInputEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsPrimaryBarrelButtonInputEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEraserInputEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEraserInputEnabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkInputProcessingConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mode(Windows::UI::Input::Inking::InkInputProcessingMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mode(Windows::UI::Input::Inking::InkInputProcessingMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mode(Windows::UI::Input::Inking::InkManipulationMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mode(Windows::UI::Input::Inking::InkManipulationMode value) noexcept = 0;
-    virtual HRESULT __stdcall ProcessPointerDown(void* pointerPoint) noexcept = 0;
-    virtual HRESULT __stdcall ProcessPointerUpdate(void* pointerPoint, void** updateInformation) noexcept = 0;
-    virtual HRESULT __stdcall ProcessPointerUp(void* pointerPoint, Windows::Foundation::Rect* updateRectangle) noexcept = 0;
-    virtual HRESULT __stdcall SetDefaultDrawingAttributes(void* drawingAttributes) noexcept = 0;
-    virtual HRESULT __stdcall RecognizeAsync2(Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, void** recognitionResults) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkModelerAttributes>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PredictionTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PredictionTime(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScalingFactor(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ScalingFactor(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPoint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPoint2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TiltX(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TiltY(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(uint64_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPointFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInkPoint(Windows::Foundation::Point position, float pressure, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPointFactory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInkPointWithTiltAndTimestamp(Windows::Foundation::Point position, float pressure, float tiltX, float tiltY, uint64_t timestamp, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsInputEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsInputEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnprocessedInput(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeInput(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InputProcessingConfiguration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeContainer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeContainer(void* value) noexcept = 0;
-    virtual HRESULT __stdcall CopyDefaultDrawingAttributes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall UpdateDefaultDrawingAttributes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall ActivateCustomDrying(void** inkSynchronizer) noexcept = 0;
-    virtual HRESULT __stdcall SetPredefinedConfiguration(Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration value) noexcept = 0;
-    virtual HRESULT __stdcall add_StrokesCollected(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokesCollected(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_StrokesErased(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokesErased(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenter3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InputConfiguration(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterProtractor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AreTickMarksVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AreTickMarksVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AreRaysVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AreRaysVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCenterMarkerVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsCenterMarkerVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAngleReadoutVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAngleReadoutVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsResizable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsResizable(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Radius(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Radius(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterProtractorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* inkPresenter, void** inkPresenterProtractor) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRuler>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Length(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Length(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Width(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRuler2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AreTickMarksVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AreTickMarksVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCompassVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsCompassVisible(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterRulerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* inkPresenter, void** inkPresenterRuler) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkPresenterStencil>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::UI::Input::Inking::InkPresenterStencilKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Transform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Transform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkRecognitionResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* boundingRect) noexcept = 0;
-    virtual HRESULT __stdcall GetTextCandidates(void** textCandidates) noexcept = 0;
-    virtual HRESULT __stdcall GetStrokes(void** strokes) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkRecognizer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkRecognizerContainer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetDefaultRecognizer(void* recognizer) noexcept = 0;
-    virtual HRESULT __stdcall RecognizeAsync(void* strokeCollection, Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget, void** recognitionResults) noexcept = 0;
-    virtual HRESULT __stdcall GetRecognizers(void** recognizerView) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStroke>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DrawingAttributes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DrawingAttributes(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Selected(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Selected(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Recognized(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetRenderingSegments(void** renderingSegments) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** clonedStroke) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStroke2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PointTransform(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PointTransform(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-    virtual HRESULT __stdcall GetInkPoints(void** inkPoints) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStroke3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeStartedTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeStartedTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeDuration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeDuration(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall BeginStroke(void* pointerPoint) noexcept = 0;
-    virtual HRESULT __stdcall AppendToStroke(void* pointerPoint, void** previousPointerPoint) noexcept = 0;
-    virtual HRESULT __stdcall EndStroke(void* pointerPoint, void** stroke) noexcept = 0;
-    virtual HRESULT __stdcall CreateStroke(void* points, void** stroke) noexcept = 0;
-    virtual HRESULT __stdcall SetDefaultDrawingAttributes(void* drawingAttributes) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateStrokeFromInkPoints(void* inkPoints, Windows::Foundation::Numerics::float3x2 transform, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeBuilder3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateStrokeFromInkPoints(void* inkPoints, Windows::Foundation::Numerics::float3x2 transform, void* strokeStartedTime, void* strokeDuration, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall AddStroke(void* stroke) noexcept = 0;
-    virtual HRESULT __stdcall DeleteSelected(Windows::Foundation::Rect* invalidatedRect) noexcept = 0;
-    virtual HRESULT __stdcall MoveSelected(Windows::Foundation::Point translation, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
-    virtual HRESULT __stdcall SelectWithPolyLine(void* polyline, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
-    virtual HRESULT __stdcall SelectWithLine(Windows::Foundation::Point from, Windows::Foundation::Point to, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
-    virtual HRESULT __stdcall CopySelectedToClipboard() noexcept = 0;
-    virtual HRESULT __stdcall PasteFromClipboard(Windows::Foundation::Point position, Windows::Foundation::Rect* invalidatedRectangle) noexcept = 0;
-    virtual HRESULT __stdcall CanPasteFromClipboard(bool* canPaste) noexcept = 0;
-    virtual HRESULT __stdcall LoadAsync(void* inputStream, void** loadAction) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void* outputStream, void** outputStreamOperation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateRecognitionResults(void* recognitionResults) noexcept = 0;
-    virtual HRESULT __stdcall GetStrokes(void** strokeView) noexcept = 0;
-    virtual HRESULT __stdcall GetRecognitionResults(void** recognitionResults) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddStrokes(void* strokes) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeContainer3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SaveWithFormatAsync(void* outputStream, Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat, void** outputStreamOperation) noexcept = 0;
-    virtual HRESULT __stdcall GetStrokeById(uint32_t id, void** stroke) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeInput>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_StrokeStarted(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokeStarted(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_StrokeContinued(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokeContinued(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_StrokeEnded(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokeEnded(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_StrokeCanceled(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StrokeCanceled(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall get_InkPresenter(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokeRenderingSegment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BezierControlPoint1(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BezierControlPoint2(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TiltX(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TiltY(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Twist(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Strokes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Strokes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkSynchronizer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall BeginDry(void** inkStrokes) noexcept = 0;
-    virtual HRESULT __stdcall EndDry() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::IInkUnprocessedInput>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_PointerEntered(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerEntered(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerHovered(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerHovered(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerExited(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerExited(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerPressed(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerPressed(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerMoved(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerMoved(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerReleased(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerReleased(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerLost(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerLost(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall get_InkPresenter(void** value) noexcept = 0;
-};};
+    Windows::UI::Input::Inking::PenAndInkSettings GetDefault() const;
+};
+template <> struct consume<Windows::UI::Input::Inking::IPenAndInkSettingsStatics> { template <typename D> using type = consume_Windows_UI_Input_Inking_IPenAndInkSettingsStatics<D>; };
 
 }

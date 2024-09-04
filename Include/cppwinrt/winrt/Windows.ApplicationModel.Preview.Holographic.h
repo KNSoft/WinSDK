@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Activation.2.h"
@@ -31,32 +31,28 @@ template <typename D> bool consume_Windows_ApplicationModel_Preview_Holographic_
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics> : produce_base<D, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>
 {
-    HRESULT __stdcall IsCurrentViewPresentedOnHolographicDisplay(bool* result) noexcept final
+    int32_t WINRT_CALL IsCurrentViewPresentedOnHolographicDisplay(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCurrentViewPresentedOnHolographicDisplay, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsCurrentViewPresentedOnHolographicDisplay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsHolographicActivation(void* activatedEventArgs, bool* result) noexcept final
+    int32_t WINRT_CALL IsHolographicActivation(void* activatedEventArgs, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHolographicActivation, WINRT_WRAP(bool), Windows::ApplicationModel::Activation::IActivatedEventArgs const&);
             *result = detach_from<bool>(this->shim().IsHolographicActivation(*reinterpret_cast<Windows::ApplicationModel::Activation::IActivatedEventArgs const*>(&activatedEventArgs)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -66,12 +62,12 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Preview::Holographic {
 
 inline bool HolographicApplicationPreview::IsCurrentViewPresentedOnHolographicDisplay()
 {
-    return get_activation_factory<HolographicApplicationPreview, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>().IsCurrentViewPresentedOnHolographicDisplay();
+    return impl::call_factory<HolographicApplicationPreview, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>([&](auto&& f) { return f.IsCurrentViewPresentedOnHolographicDisplay(); });
 }
 
 inline bool HolographicApplicationPreview::IsHolographicActivation(Windows::ApplicationModel::Activation::IActivatedEventArgs const& activatedEventArgs)
 {
-    return get_activation_factory<HolographicApplicationPreview, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>().IsHolographicActivation(activatedEventArgs);
+    return impl::call_factory<HolographicApplicationPreview, Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>([&](auto&& f) { return f.IsHolographicActivation(activatedEventArgs); });
 }
 
 }
@@ -82,5 +78,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Preview::Holographic::I
 template<> struct hash<winrt::Windows::ApplicationModel::Preview::Holographic::HolographicApplicationPreview> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Preview::Holographic::HolographicApplicationPreview> {};
 
 }
-
-WINRT_WARNING_POP

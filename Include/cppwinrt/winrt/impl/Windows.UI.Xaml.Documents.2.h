@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.UI.Xaml.Input.1.h"
 #include "winrt/impl/Windows.UI.Xaml.Media.1.h"
 #include "winrt/impl/Windows.Foundation.Collections.1.h"
+#include "winrt/impl/Windows.UI.Composition.1.h"
 #include "winrt/impl/Windows.UI.Xaml.Documents.1.h"
 
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Documents {
@@ -114,7 +115,8 @@ struct WINRT_EBO ContentLinkProvider :
 };
 
 struct WINRT_EBO ContentLinkProviderCollection :
-    Windows::UI::Xaml::Documents::IContentLinkProviderCollection
+    Windows::UI::Xaml::Documents::IContentLinkProviderCollection,
+    impl::require<ContentLinkProviderCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Documents::ContentLinkProvider>, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::ContentLinkProvider>>
 {
     ContentLinkProviderCollection(std::nullptr_t) noexcept {}
     ContentLinkProviderCollection();
@@ -123,7 +125,7 @@ struct WINRT_EBO ContentLinkProviderCollection :
 struct WINRT_EBO Glyphs :
     Windows::UI::Xaml::Documents::IGlyphs,
     impl::base<Glyphs, Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DependencyObject>,
-    impl::require<Glyphs, Windows::UI::Xaml::Documents::IGlyphs2, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8>
+    impl::require<Glyphs, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::Documents::IGlyphs2, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElement7, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IFrameworkElementProtected7, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElement9, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8, Windows::UI::Xaml::IUIElementOverrides9>
 {
     Glyphs(std::nullptr_t) noexcept {}
     Glyphs();

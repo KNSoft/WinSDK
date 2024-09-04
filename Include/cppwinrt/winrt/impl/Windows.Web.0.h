@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -94,8 +94,18 @@ template <> struct name<Windows::Web::IUriToStreamResolver>{ static constexpr au
 template <> struct name<Windows::Web::IWebErrorStatics>{ static constexpr auto & value{ L"Windows.Web.IWebErrorStatics" }; };
 template <> struct name<Windows::Web::WebError>{ static constexpr auto & value{ L"Windows.Web.WebError" }; };
 template <> struct name<Windows::Web::WebErrorStatus>{ static constexpr auto & value{ L"Windows.Web.WebErrorStatus" }; };
-template <> struct guid<Windows::Web::IUriToStreamResolver>{ static constexpr GUID value{ 0xB0ABA86A,0x9AEB,0x4D3A,{ 0x95,0x90,0x00,0x3E,0x3C,0xA7,0xE2,0x90 } }; };
-template <> struct guid<Windows::Web::IWebErrorStatics>{ static constexpr GUID value{ 0xFE616766,0xBF27,0x4064,{ 0x87,0xB7,0x65,0x63,0xBB,0x11,0xCE,0x2E } }; };
+template <> struct guid_storage<Windows::Web::IUriToStreamResolver>{ static constexpr guid value{ 0xB0ABA86A,0x9AEB,0x4D3A,{ 0x95,0x90,0x00,0x3E,0x3C,0xA7,0xE2,0x90 } }; };
+template <> struct guid_storage<Windows::Web::IWebErrorStatics>{ static constexpr guid value{ 0xFE616766,0xBF27,0x4064,{ 0x87,0xB7,0x65,0x63,0xBB,0x11,0xCE,0x2E } }; };
+
+template <> struct abi<Windows::Web::IUriToStreamResolver>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL UriToStreamAsync(void* uri, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::IWebErrorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Web_IUriToStreamResolver
@@ -110,15 +120,5 @@ struct consume_Windows_Web_IWebErrorStatics
     Windows::Web::WebErrorStatus GetStatus(int32_t hresult) const;
 };
 template <> struct consume<Windows::Web::IWebErrorStatics> { template <typename D> using type = consume_Windows_Web_IWebErrorStatics<D>; };
-
-template <> struct abi<Windows::Web::IUriToStreamResolver>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall UriToStreamAsync(void* uri, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::IWebErrorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept = 0;
-};};
 
 }

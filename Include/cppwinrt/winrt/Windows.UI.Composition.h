@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.2.h"
@@ -104,6 +104,28 @@ template <typename D> float consume_Windows_UI_Composition_IAnimationControllerS
     float value{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::IAnimationControllerStatics)->get_MinPlaybackRate(&value));
     return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_IAnimationObject<D>::PopulatePropertyInfo(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& propertyInfo) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IAnimationObject)->PopulatePropertyInfo(get_abi(propertyName), get_abi(propertyInfo)));
+}
+
+template <typename D> Windows::UI::Composition::AnimationPropertyAccessMode consume_Windows_UI_Composition_IAnimationPropertyInfo<D>::AccessMode() const
+{
+    Windows::UI::Composition::AnimationPropertyAccessMode value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IAnimationPropertyInfo)->get_AccessMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_IAnimationPropertyInfo<D>::AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IAnimationPropertyInfo)->put_AccessMode(get_abi(value)));
+}
+
+template <typename D> void consume_Windows_UI_Composition_IBooleanKeyFrameAnimation<D>::InsertKeyFrame(float normalizedProgressKey, bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IBooleanKeyFrameAnimation)->InsertKeyFrame(normalizedProgressKey, value));
 }
 
 template <typename D> float consume_Windows_UI_Composition_IBounceScalarNaturalMotionAnimation<D>::Acceleration() const
@@ -279,6 +301,11 @@ template <typename D> Windows::UI::Composition::InitialValueExpressionCollection
     return value;
 }
 
+template <typename D> void consume_Windows_UI_Composition_ICompositionAnimation4<D>::SetExpressionReferenceParameter(param::hstring const& parameterName, Windows::UI::Composition::IAnimationObject const& source) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionAnimation4)->SetExpressionReferenceParameter(get_abi(parameterName), get_abi(source)));
+}
+
 template <typename D> int32_t consume_Windows_UI_Composition_ICompositionAnimationGroup<D>::Count() const
 {
     int32_t value{};
@@ -315,21 +342,21 @@ template <typename D> bool consume_Windows_UI_Composition_ICompositionCapabiliti
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionCapabilities)->add_Changed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Composition::ICompositionCapabilities> consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed_revoker consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Composition::ICompositionCapabilities>(this, &abi_t<Windows::UI::Composition::ICompositionCapabilities>::remove_Changed, Changed(handler));
+    return impl::make_event_revoker<D, Changed_revoker>(this, Changed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Composition_ICompositionCapabilities<D>::Changed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionCapabilities)->remove_Changed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Composition::ICompositionCapabilities)->remove_Changed(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionCapabilities consume_Windows_UI_Composition_ICompositionCapabilitiesStatics<D>::GetForCurrentView() const
@@ -473,21 +500,21 @@ template <typename D> bool consume_Windows_UI_Composition_ICompositionCommitBatc
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionCommitBatch)->add_Completed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Composition::ICompositionCommitBatch> consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed_revoker consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Composition::ICompositionCommitBatch>(this, &abi_t<Windows::UI::Composition::ICompositionCommitBatch>::remove_Completed, Completed(handler));
+    return impl::make_event_revoker<D, Completed_revoker>(this, Completed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Composition_ICompositionCommitBatch<D>::Completed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionCommitBatch)->remove_Completed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Composition::ICompositionCommitBatch)->remove_Completed(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionShapeCollection consume_Windows_UI_Composition_ICompositionContainerShape<D>::Shapes() const
@@ -569,9 +596,9 @@ template <typename D> Windows::UI::Composition::CompositionEffectBrush consume_W
     return result;
 }
 
-template <typename D> HRESULT consume_Windows_UI_Composition_ICompositionEffectFactory<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_UI_Composition_ICompositionEffectFactory<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionEffectFactory)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -619,6 +646,30 @@ template <typename D> Windows::Foundation::Numerics::float2 consume_Windows_UI_C
 template <typename D> void consume_Windows_UI_Composition_ICompositionEllipseGeometry<D>::Radius(Windows::Foundation::Numerics::float2 const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionEllipseGeometry)->put_Radius(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Composition::CompositionGeometry consume_Windows_UI_Composition_ICompositionGeometricClip<D>::Geometry() const
+{
+    Windows::UI::Composition::CompositionGeometry value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGeometricClip)->get_Geometry(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_ICompositionGeometricClip<D>::Geometry(Windows::UI::Composition::CompositionGeometry const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGeometricClip)->put_Geometry(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Composition::CompositionViewBox consume_Windows_UI_Composition_ICompositionGeometricClip<D>::ViewBox() const
+{
+    Windows::UI::Composition::CompositionViewBox value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGeometricClip)->get_ViewBox(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_ICompositionGeometricClip<D>::ViewBox(Windows::UI::Composition::CompositionViewBox const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGeometricClip)->put_ViewBox(get_abi(value)));
 }
 
 template <typename D> float consume_Windows_UI_Composition_ICompositionGeometry<D>::TrimEnd() const
@@ -772,6 +823,18 @@ template <typename D> void consume_Windows_UI_Composition_ICompositionGradientBr
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGradientBrush)->put_TransformMatrix(get_abi(value)));
 }
 
+template <typename D> Windows::UI::Composition::CompositionMappingMode consume_Windows_UI_Composition_ICompositionGradientBrush2<D>::MappingMode() const
+{
+    Windows::UI::Composition::CompositionMappingMode value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGradientBrush2)->get_MappingMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_ICompositionGradientBrush2<D>::MappingMode(Windows::UI::Composition::CompositionMappingMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGradientBrush2)->put_MappingMode(get_abi(value)));
+}
+
 template <typename D> Windows::UI::Composition::CompositionDrawingSurface consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::CreateDrawingSurface(Windows::Foundation::Size const& sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode const& alphaMode) const
 {
     Windows::UI::Composition::CompositionDrawingSurface result{ nullptr };
@@ -779,21 +842,21 @@ template <typename D> Windows::UI::Composition::CompositionDrawingSurface consum
     return result;
 }
 
-template <typename D> event_token consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGraphicsDevice)->add_RenderingDeviceReplaced(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Composition::ICompositionGraphicsDevice> consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced_revoker consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Composition::ICompositionGraphicsDevice>(this, &abi_t<Windows::UI::Composition::ICompositionGraphicsDevice>::remove_RenderingDeviceReplaced, RenderingDeviceReplaced(handler));
+    return impl::make_event_revoker<D, RenderingDeviceReplaced_revoker>(this, RenderingDeviceReplaced(handler));
 }
 
-template <typename D> void consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(event_token const& token) const
+template <typename D> void consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionGraphicsDevice)->remove_RenderingDeviceReplaced(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Composition::ICompositionGraphicsDevice)->remove_RenderingDeviceReplaced(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionDrawingSurface consume_Windows_UI_Composition_ICompositionGraphicsDevice2<D>::CreateDrawingSurface2(Windows::Graphics::SizeInt32 const& sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode const& alphaMode) const
@@ -1122,9 +1185,19 @@ template <typename D> Windows::System::DispatcherQueue consume_Windows_UI_Compos
 
 template <typename D> Windows::UI::Composition::AnimationController consume_Windows_UI_Composition_ICompositionObject4<D>::TryGetAnimationController(param::hstring const& propertyName) const
 {
-    Windows::UI::Composition::AnimationController animationController{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionObject4)->TryGetAnimationController(get_abi(propertyName), put_abi(animationController)));
-    return animationController;
+    Windows::UI::Composition::AnimationController result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionObject4)->TryGetAnimationController(get_abi(propertyName), put_abi(result)));
+    return result;
+}
+
+template <typename D> void consume_Windows_UI_Composition_ICompositionObjectStatics<D>::StartAnimationWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, param::hstring const& propertyName, Windows::UI::Composition::CompositionAnimation const& animation) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionObjectStatics)->StartAnimationWithIAnimationObject(get_abi(target), get_abi(propertyName), get_abi(animation)));
+}
+
+template <typename D> void consume_Windows_UI_Composition_ICompositionObjectStatics<D>::StartAnimationGroupWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, Windows::UI::Composition::ICompositionAnimationBase const& animation) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionObjectStatics)->StartAnimationGroupWithIAnimationObject(get_abi(target), get_abi(animation)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionPath consume_Windows_UI_Composition_ICompositionPathFactory<D>::Create(Windows::Graphics::IGeometrySource2D const& source) const
@@ -1343,21 +1416,21 @@ template <typename D> void consume_Windows_UI_Composition_ICompositionScopedBatc
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionScopedBatch)->Suspend());
 }
 
-template <typename D> event_token consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionScopedBatch)->add_Completed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Composition::ICompositionScopedBatch> consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed_revoker consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Composition::ICompositionScopedBatch>(this, &abi_t<Windows::UI::Composition::ICompositionScopedBatch>::remove_Completed, Completed(handler));
+    return impl::make_event_revoker<D, Completed_revoker>(this, Completed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Composition_ICompositionScopedBatch<D>::Completed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositionScopedBatch)->remove_Completed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Composition::ICompositionScopedBatch)->remove_Completed(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float2 consume_Windows_UI_Composition_ICompositionShape<D>::CenterPoint() const
@@ -2236,6 +2309,41 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_UI_Compo
     return action;
 }
 
+template <typename D> Windows::UI::Composition::CompositionGeometricClip consume_Windows_UI_Composition_ICompositor6<D>::CreateGeometricClip() const
+{
+    Windows::UI::Composition::CompositionGeometricClip result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositor6)->CreateGeometricClip(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::CompositionGeometricClip consume_Windows_UI_Composition_ICompositor6<D>::CreateGeometricClip(Windows::UI::Composition::CompositionGeometry const& geometry) const
+{
+    Windows::UI::Composition::CompositionGeometricClip result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositor6)->CreateGeometricClipWithGeometry(get_abi(geometry), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::RedirectVisual consume_Windows_UI_Composition_ICompositor6<D>::CreateRedirectVisual() const
+{
+    Windows::UI::Composition::RedirectVisual result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositor6)->CreateRedirectVisual(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::RedirectVisual consume_Windows_UI_Composition_ICompositor6<D>::CreateRedirectVisual(Windows::UI::Composition::Visual const& source) const
+{
+    Windows::UI::Composition::RedirectVisual result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositor6)->CreateRedirectVisualWithSourceVisual(get_abi(source), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::BooleanKeyFrameAnimation consume_Windows_UI_Composition_ICompositor6<D>::CreateBooleanKeyFrameAnimation() const
+{
+    Windows::UI::Composition::BooleanKeyFrameAnimation result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::ICompositor6)->CreateBooleanKeyFrameAnimation(put_abi(result)));
+    return result;
+}
+
 template <typename D> float consume_Windows_UI_Composition_ICompositorStatics<D>::MaxGlobalPlaybackRate() const
 {
     float value{};
@@ -2738,6 +2846,18 @@ template <typename D> void consume_Windows_UI_Composition_IQuaternionKeyFrameAni
 template <typename D> void consume_Windows_UI_Composition_IQuaternionKeyFrameAnimation<D>::InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion const& value, Windows::UI::Composition::CompositionEasingFunction const& easingFunction) const
 {
     check_hresult(WINRT_SHIM(Windows::UI::Composition::IQuaternionKeyFrameAnimation)->InsertKeyFrameWithEasingFunction(normalizedProgressKey, get_abi(value), get_abi(easingFunction)));
+}
+
+template <typename D> Windows::UI::Composition::Visual consume_Windows_UI_Composition_IRedirectVisual<D>::Source() const
+{
+    Windows::UI::Composition::Visual value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IRedirectVisual)->get_Source(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Composition_IRedirectVisual<D>::Source(Windows::UI::Composition::Visual const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Composition::IRedirectVisual)->put_Source(get_abi(value)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionGraphicsDevice consume_Windows_UI_Composition_IRenderingDeviceReplacedEventArgs<D>::GraphicsDevice() const
@@ -3559,676 +3679,662 @@ template <typename D> void consume_Windows_UI_Composition_IVisualUnorderedCollec
 template <typename D>
 struct produce<D, Windows::UI::Composition::IAmbientLight> : produce_base<D, Windows::UI::Composition::IAmbientLight>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IAmbientLight2> : produce_base<D, Windows::UI::Composition::IAmbientLight2>
 {
-    HRESULT __stdcall get_Intensity(float* value) noexcept final
+    int32_t WINRT_CALL get_Intensity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Intensity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Intensity(float value) noexcept final
+    int32_t WINRT_CALL put_Intensity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(void), float);
             this->shim().Intensity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IAnimationController> : produce_base<D, Windows::UI::Composition::IAnimationController>
 {
-    HRESULT __stdcall get_PlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_PlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PlaybackRate(float value) noexcept final
+    int32_t WINRT_CALL put_PlaybackRate(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaybackRate, WINRT_WRAP(void), float);
             this->shim().PlaybackRate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Progress(float* value) noexcept final
+    int32_t WINRT_CALL get_Progress(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Progress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Progress(float value) noexcept final
+    int32_t WINRT_CALL put_Progress(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(void), float);
             this->shim().Progress(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior* value) noexcept final
+    int32_t WINRT_CALL get_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProgressBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationControllerProgressBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationControllerProgressBehavior>(this->shim().ProgressBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior value) noexcept final
+    int32_t WINRT_CALL put_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProgressBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationControllerProgressBehavior const&);
             this->shim().ProgressBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationControllerProgressBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IAnimationControllerStatics> : produce_base<D, Windows::UI::Composition::IAnimationControllerStatics>
 {
-    HRESULT __stdcall get_MaxPlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxPlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinPlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_MinPlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MinPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::IAnimationObject> : produce_base<D, Windows::UI::Composition::IAnimationObject>
+{
+    int32_t WINRT_CALL PopulatePropertyInfo(void* propertyName, void* propertyInfo) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PopulatePropertyInfo, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::AnimationPropertyInfo const&);
+            this->shim().PopulatePropertyInfo(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Composition::AnimationPropertyInfo const*>(&propertyInfo));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::IAnimationPropertyInfo> : produce_base<D, Windows::UI::Composition::IAnimationPropertyInfo>
+{
+    int32_t WINRT_CALL get_AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccessMode, WINRT_WRAP(Windows::UI::Composition::AnimationPropertyAccessMode));
+            *value = detach_from<Windows::UI::Composition::AnimationPropertyAccessMode>(this->shim().AccessMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccessMode, WINRT_WRAP(void), Windows::UI::Composition::AnimationPropertyAccessMode const&);
+            this->shim().AccessMode(*reinterpret_cast<Windows::UI::Composition::AnimationPropertyAccessMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::IBooleanKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IBooleanKeyFrameAnimation>
+{
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, bool);
+            this->shim().InsertKeyFrame(normalizedProgressKey, value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IBounceScalarNaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>
 {
-    HRESULT __stdcall get_Acceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_Acceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Acceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Acceleration(float value) noexcept final
+    int32_t WINRT_CALL put_Acceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(void), float);
             this->shim().Acceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Restitution(float* value) noexcept final
+    int32_t WINRT_CALL get_Restitution(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Restitution());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Restitution(float value) noexcept final
+    int32_t WINRT_CALL put_Restitution(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(void), float);
             this->shim().Restitution(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IBounceVector2NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_Acceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_Acceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Acceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Acceleration(float value) noexcept final
+    int32_t WINRT_CALL put_Acceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(void), float);
             this->shim().Acceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Restitution(float* value) noexcept final
+    int32_t WINRT_CALL get_Restitution(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Restitution());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Restitution(float value) noexcept final
+    int32_t WINRT_CALL put_Restitution(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(void), float);
             this->shim().Restitution(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IBounceVector3NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_Acceleration(float* value) noexcept final
+    int32_t WINRT_CALL get_Acceleration(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Acceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Acceleration(float value) noexcept final
+    int32_t WINRT_CALL put_Acceleration(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Acceleration, WINRT_WRAP(void), float);
             this->shim().Acceleration(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Restitution(float* value) noexcept final
+    int32_t WINRT_CALL get_Restitution(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Restitution());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Restitution(float value) noexcept final
+    int32_t WINRT_CALL put_Restitution(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restitution, WINRT_WRAP(void), float);
             this->shim().Restitution(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IColorKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IColorKeyFrameAnimation>
 {
-    HRESULT __stdcall get_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept final
+    int32_t WINRT_CALL get_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationColorSpace, WINRT_WRAP(Windows::UI::Composition::CompositionColorSpace));
             *value = detach_from<Windows::UI::Composition::CompositionColorSpace>(this->shim().InterpolationColorSpace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept final
+    int32_t WINRT_CALL put_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationColorSpace, WINRT_WRAP(void), Windows::UI::Composition::CompositionColorSpace const&);
             this->shim().InterpolationColorSpace(*reinterpret_cast<Windows::UI::Composition::CompositionColorSpace const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::UI::Color const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, struct struct_Windows_UI_Color value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, struct struct_Windows_UI_Color value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::UI::Color const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::UI::Color const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionAnimation> : produce_base<D, Windows::UI::Composition::ICompositionAnimation>
 {
-    HRESULT __stdcall ClearAllParameters() noexcept final
+    int32_t WINRT_CALL ClearAllParameters() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearAllParameters, WINRT_WRAP(void));
             this->shim().ClearAllParameters();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearParameter(HSTRING key) noexcept final
+    int32_t WINRT_CALL ClearParameter(void* key) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearParameter, WINRT_WRAP(void), hstring const&);
             this->shim().ClearParameter(*reinterpret_cast<hstring const*>(&key));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetColorParameter(HSTRING key, struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL SetColorParameter(void* key, struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetColorParameter, WINRT_WRAP(void), hstring const&, Windows::UI::Color const&);
             this->shim().SetColorParameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetMatrix3x2Parameter(HSTRING key, Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL SetMatrix3x2Parameter(void* key, Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetMatrix3x2Parameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float3x2 const&);
             this->shim().SetMatrix3x2Parameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetMatrix4x4Parameter(HSTRING key, Windows::Foundation::Numerics::float4x4 value) noexcept final
+    int32_t WINRT_CALL SetMatrix4x4Parameter(void* key, Windows::Foundation::Numerics::float4x4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetMatrix4x4Parameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float4x4 const&);
             this->shim().SetMatrix4x4Parameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::float4x4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetQuaternionParameter(HSTRING key, Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL SetQuaternionParameter(void* key, Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetQuaternionParameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::quaternion const&);
             this->shim().SetQuaternionParameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetReferenceParameter(HSTRING key, void* compositionObject) noexcept final
+    int32_t WINRT_CALL SetReferenceParameter(void* key, void* compositionObject) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetReferenceParameter, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::CompositionObject const&);
             this->shim().SetReferenceParameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::UI::Composition::CompositionObject const*>(&compositionObject));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetScalarParameter(HSTRING key, float value) noexcept final
+    int32_t WINRT_CALL SetScalarParameter(void* key, float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetScalarParameter, WINRT_WRAP(void), hstring const&, float);
             this->shim().SetScalarParameter(*reinterpret_cast<hstring const*>(&key), value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetVector2Parameter(HSTRING key, Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL SetVector2Parameter(void* key, Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetVector2Parameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float2 const&);
             this->shim().SetVector2Parameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetVector3Parameter(HSTRING key, Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL SetVector3Parameter(void* key, Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetVector3Parameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float3 const&);
             this->shim().SetVector3Parameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetVector4Parameter(HSTRING key, Windows::Foundation::Numerics::float4 value) noexcept final
+    int32_t WINRT_CALL SetVector4Parameter(void* key, Windows::Foundation::Numerics::float4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetVector4Parameter, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float4 const&);
             this->shim().SetVector4Parameter(*reinterpret_cast<hstring const*>(&key), *reinterpret_cast<Windows::Foundation::Numerics::float4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionAnimation2> : produce_base<D, Windows::UI::Composition::ICompositionAnimation2>
 {
-    HRESULT __stdcall SetBooleanParameter(HSTRING key, bool value) noexcept final
+    int32_t WINRT_CALL SetBooleanParameter(void* key, bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBooleanParameter, WINRT_WRAP(void), hstring const&, bool);
             this->shim().SetBooleanParameter(*reinterpret_cast<hstring const*>(&key), value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Target(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Target(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Target, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Target());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Target(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Target(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Target, WINRT_WRAP(void), hstring const&);
             this->shim().Target(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionAnimation3> : produce_base<D, Windows::UI::Composition::ICompositionAnimation3>
 {
-    HRESULT __stdcall get_InitialValueExpressions(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialValueExpressions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValueExpressions, WINRT_WRAP(Windows::UI::Composition::InitialValueExpressionCollection));
             *value = detach_from<Windows::UI::Composition::InitialValueExpressionCollection>(this->shim().InitialValueExpressions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionAnimation4> : produce_base<D, Windows::UI::Composition::ICompositionAnimation4>
+{
+    int32_t WINRT_CALL SetExpressionReferenceParameter(void* parameterName, void* source) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetExpressionReferenceParameter, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::IAnimationObject const&);
+            this->shim().SetExpressionReferenceParameter(*reinterpret_cast<hstring const*>(&parameterName), *reinterpret_cast<Windows::UI::Composition::IAnimationObject const*>(&source));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4243,60 +4349,52 @@ struct produce<D, Windows::UI::Composition::ICompositionAnimationFactory> : prod
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionAnimationGroup> : produce_base<D, Windows::UI::Composition::ICompositionAnimationGroup>
 {
-    HRESULT __stdcall get_Count(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Count(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Count, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Count());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Add(void* value) noexcept final
+    int32_t WINRT_CALL Add(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::UI::Composition::CompositionAnimation const&);
             this->shim().Add(*reinterpret_cast<Windows::UI::Composition::CompositionAnimation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(void* value) noexcept final
+    int32_t WINRT_CALL Remove(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), Windows::UI::Composition::CompositionAnimation const&);
             this->shim().Remove(*reinterpret_cast<Windows::UI::Composition::CompositionAnimation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAll() noexcept final
+    int32_t WINRT_CALL RemoveAll() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAll, WINRT_WRAP(void));
             this->shim().RemoveAll();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4319,79 +4417,65 @@ struct produce<D, Windows::UI::Composition::ICompositionBrushFactory> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionCapabilities> : produce_base<D, Windows::UI::Composition::ICompositionCapabilities>
 {
-    HRESULT __stdcall AreEffectsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL AreEffectsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AreEffectsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AreEffectsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AreEffectsFast(bool* value) noexcept final
+    int32_t WINRT_CALL AreEffectsFast(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AreEffectsFast, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AreEffectsFast());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Changed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Changed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Changed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Changed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Changed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Changed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Changed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Changed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Changed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Changed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionCapabilitiesStatics> : produce_base<D, Windows::UI::Composition::ICompositionCapabilitiesStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Composition::CompositionCapabilities));
             *current = detach_from<Windows::UI::Composition::CompositionCapabilities>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4402,200 +4486,172 @@ struct produce<D, Windows::UI::Composition::ICompositionClip> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionClip2> : produce_base<D, Windows::UI::Composition::ICompositionClip2>
 {
-    HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().AnchorPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().AnchorPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().CenterPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().CenterPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), float);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().RotationAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Scale(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
+    int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(Windows::Foundation::Numerics::float3x2));
             *value = detach_from<Windows::Foundation::Numerics::float3x2>(this->shim().TransformMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(void), Windows::Foundation::Numerics::float3x2 const&);
             this->shim().TransformMatrix(*reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4606,92 +4662,80 @@ struct produce<D, Windows::UI::Composition::ICompositionClipFactory> : produce_b
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionColorBrush> : produce_base<D, Windows::UI::Composition::ICompositionColorBrush>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionColorGradientStop> : produce_base<D, Windows::UI::Composition::ICompositionColorGradientStop>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(float* value) noexcept final
+    int32_t WINRT_CALL get_Offset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(float value) noexcept final
+    int32_t WINRT_CALL put_Offset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), float);
             this->shim().Offset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4702,213 +4746,181 @@ struct produce<D, Windows::UI::Composition::ICompositionColorGradientStopCollect
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionCommitBatch> : produce_base<D, Windows::UI::Composition::ICompositionCommitBatch>
 {
-    HRESULT __stdcall get_IsActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnded(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Completed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Completed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionContainerShape> : produce_base<D, Windows::UI::Composition::ICompositionContainerShape>
 {
-    HRESULT __stdcall get_Shapes(void** value) noexcept final
+    int32_t WINRT_CALL get_Shapes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shapes, WINRT_WRAP(Windows::UI::Composition::CompositionShapeCollection));
             *value = detach_from<Windows::UI::Composition::CompositionShapeCollection>(this->shim().Shapes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface> : produce_base<D, Windows::UI::Composition::ICompositionDrawingSurface>
 {
-    HRESULT __stdcall get_AlphaMode(Windows::Graphics::DirectX::DirectXAlphaMode* value) noexcept final
+    int32_t WINRT_CALL get_AlphaMode(Windows::Graphics::DirectX::DirectXAlphaMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlphaMode, WINRT_WRAP(Windows::Graphics::DirectX::DirectXAlphaMode));
             *value = detach_from<Windows::Graphics::DirectX::DirectXAlphaMode>(this->shim().AlphaMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelFormat, WINRT_WRAP(Windows::Graphics::DirectX::DirectXPixelFormat));
             *value = detach_from<Windows::Graphics::DirectX::DirectXPixelFormat>(this->shim().PixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface2> : produce_base<D, Windows::UI::Composition::ICompositionDrawingSurface2>
 {
-    HRESULT __stdcall get_SizeInt32(struct struct_Windows_Graphics_SizeInt32* value) noexcept final
+    int32_t WINRT_CALL get_SizeInt32(struct struct_Windows_Graphics_SizeInt32* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SizeInt32, WINRT_WRAP(Windows::Graphics::SizeInt32));
             *value = detach_from<Windows::Graphics::SizeInt32>(this->shim().SizeInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resize(struct struct_Windows_Graphics_SizeInt32 sizePixels) noexcept final
+    int32_t WINRT_CALL Resize(struct struct_Windows_Graphics_SizeInt32 sizePixels) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resize, WINRT_WRAP(void), Windows::Graphics::SizeInt32 const&);
             this->shim().Resize(*reinterpret_cast<Windows::Graphics::SizeInt32 const*>(&sizePixels));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Scroll(struct struct_Windows_Graphics_PointInt32 offset) noexcept final
+    int32_t WINRT_CALL Scroll(struct struct_Windows_Graphics_PointInt32 offset) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scroll, WINRT_WRAP(void), Windows::Graphics::PointInt32 const&);
             this->shim().Scroll(*reinterpret_cast<Windows::Graphics::PointInt32 const*>(&offset));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ScrollRect(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept final
+    int32_t WINRT_CALL ScrollRect(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scroll, WINRT_WRAP(void), Windows::Graphics::PointInt32 const&, Windows::Graphics::RectInt32 const&);
             this->shim().Scroll(*reinterpret_cast<Windows::Graphics::PointInt32 const*>(&offset), *reinterpret_cast<Windows::Graphics::RectInt32 const*>(&scrollRect));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ScrollWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect) noexcept final
+    int32_t WINRT_CALL ScrollWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollWithClip, WINRT_WRAP(void), Windows::Graphics::PointInt32 const&, Windows::Graphics::RectInt32 const&);
             this->shim().ScrollWithClip(*reinterpret_cast<Windows::Graphics::PointInt32 const*>(&offset), *reinterpret_cast<Windows::Graphics::RectInt32 const*>(&clipRect));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ScrollRectWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept final
+    int32_t WINRT_CALL ScrollRectWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollWithClip, WINRT_WRAP(void), Windows::Graphics::PointInt32 const&, Windows::Graphics::RectInt32 const&, Windows::Graphics::RectInt32 const&);
             this->shim().ScrollWithClip(*reinterpret_cast<Windows::Graphics::PointInt32 const*>(&offset), *reinterpret_cast<Windows::Graphics::RectInt32 const*>(&clipRect), *reinterpret_cast<Windows::Graphics::RectInt32 const*>(&scrollRect));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4927,266 +4939,286 @@ struct produce<D, Windows::UI::Composition::ICompositionEasingFunctionFactory> :
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEffectBrush> : produce_base<D, Windows::UI::Composition::ICompositionEffectBrush>
 {
-    HRESULT __stdcall GetSourceParameter(HSTRING name, void** result) noexcept final
+    int32_t WINRT_CALL GetSourceParameter(void* name, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSourceParameter, WINRT_WRAP(Windows::UI::Composition::CompositionBrush), hstring const&);
             *result = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().GetSourceParameter(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetSourceParameter(HSTRING name, void* source) noexcept final
+    int32_t WINRT_CALL SetSourceParameter(void* name, void* source) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetSourceParameter, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::CompositionBrush const&);
             this->shim().SetSourceParameter(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&source));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEffectFactory> : produce_base<D, Windows::UI::Composition::ICompositionEffectFactory>
 {
-    HRESULT __stdcall CreateBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBrush, WINRT_WRAP(Windows::UI::Composition::CompositionEffectBrush));
             *result = detach_from<Windows::UI::Composition::CompositionEffectBrush>(this->shim().CreateBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LoadStatus(Windows::UI::Composition::CompositionEffectFactoryLoadStatus* value) noexcept final
+    int32_t WINRT_CALL get_LoadStatus(Windows::UI::Composition::CompositionEffectFactoryLoadStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadStatus, WINRT_WRAP(Windows::UI::Composition::CompositionEffectFactoryLoadStatus));
             *value = detach_from<Windows::UI::Composition::CompositionEffectFactoryLoadStatus>(this->shim().LoadStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEffectSourceParameter> : produce_base<D, Windows::UI::Composition::ICompositionEffectSourceParameter>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEffectSourceParameterFactory> : produce_base<D, Windows::UI::Composition::ICompositionEffectSourceParameterFactory>
 {
-    HRESULT __stdcall Create(HSTRING name, void** instance) noexcept final
+    int32_t WINRT_CALL Create(void* name, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::UI::Composition::CompositionEffectSourceParameter), hstring const&);
             *instance = detach_from<Windows::UI::Composition::CompositionEffectSourceParameter>(this->shim().Create(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEllipseGeometry> : produce_base<D, Windows::UI::Composition::ICompositionEllipseGeometry>
 {
-    HRESULT __stdcall get_Center(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Center(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Center, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Center());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Center(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Center(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Center, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Center(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Radius(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Radius(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Radius, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Radius());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Radius(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Radius(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Radius, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Radius(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionGeometricClip> : produce_base<D, Windows::UI::Composition::ICompositionGeometricClip>
+{
+    int32_t WINRT_CALL get_Geometry(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Geometry, WINRT_WRAP(Windows::UI::Composition::CompositionGeometry));
+            *value = detach_from<Windows::UI::Composition::CompositionGeometry>(this->shim().Geometry());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_Geometry(void* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Geometry, WINRT_WRAP(void), Windows::UI::Composition::CompositionGeometry const&);
+            this->shim().Geometry(*reinterpret_cast<Windows::UI::Composition::CompositionGeometry const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_ViewBox(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewBox, WINRT_WRAP(Windows::UI::Composition::CompositionViewBox));
+            *value = detach_from<Windows::UI::Composition::CompositionViewBox>(this->shim().ViewBox());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_ViewBox(void* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewBox, WINRT_WRAP(void), Windows::UI::Composition::CompositionViewBox const&);
+            this->shim().ViewBox(*reinterpret_cast<Windows::UI::Composition::CompositionViewBox const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionGeometry> : produce_base<D, Windows::UI::Composition::ICompositionGeometry>
 {
-    HRESULT __stdcall get_TrimEnd(float* value) noexcept final
+    int32_t WINRT_CALL get_TrimEnd(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimEnd, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TrimEnd());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimEnd(float value) noexcept final
+    int32_t WINRT_CALL put_TrimEnd(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimEnd, WINRT_WRAP(void), float);
             this->shim().TrimEnd(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimOffset(float* value) noexcept final
+    int32_t WINRT_CALL get_TrimOffset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimOffset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TrimOffset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimOffset(float value) noexcept final
+    int32_t WINRT_CALL put_TrimOffset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimOffset, WINRT_WRAP(void), float);
             this->shim().TrimOffset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimStart(float* value) noexcept final
+    int32_t WINRT_CALL get_TrimStart(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStart, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TrimStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimStart(float value) noexcept final
+    int32_t WINRT_CALL put_TrimStart(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStart, WINRT_WRAP(void), float);
             this->shim().TrimStart(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5197,271 +5229,261 @@ struct produce<D, Windows::UI::Composition::ICompositionGeometryFactory> : produ
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionGradientBrush> : produce_base<D, Windows::UI::Composition::ICompositionGradientBrush>
 {
-    HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().AnchorPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().AnchorPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().CenterPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().CenterPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ColorStops(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorStops(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorStops, WINRT_WRAP(Windows::UI::Composition::CompositionColorGradientStopCollection));
             *value = detach_from<Windows::UI::Composition::CompositionColorGradientStopCollection>(this->shim().ColorStops());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode* value) noexcept final
+    int32_t WINRT_CALL get_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendMode, WINRT_WRAP(Windows::UI::Composition::CompositionGradientExtendMode));
             *value = detach_from<Windows::UI::Composition::CompositionGradientExtendMode>(this->shim().ExtendMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode value) noexcept final
+    int32_t WINRT_CALL put_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendMode, WINRT_WRAP(void), Windows::UI::Composition::CompositionGradientExtendMode const&);
             this->shim().ExtendMode(*reinterpret_cast<Windows::UI::Composition::CompositionGradientExtendMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept final
+    int32_t WINRT_CALL get_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationSpace, WINRT_WRAP(Windows::UI::Composition::CompositionColorSpace));
             *value = detach_from<Windows::UI::Composition::CompositionColorSpace>(this->shim().InterpolationSpace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept final
+    int32_t WINRT_CALL put_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationSpace, WINRT_WRAP(void), Windows::UI::Composition::CompositionColorSpace const&);
             this->shim().InterpolationSpace(*reinterpret_cast<Windows::UI::Composition::CompositionColorSpace const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), float);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().RotationAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Scale(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
+    int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(Windows::Foundation::Numerics::float3x2));
             *value = detach_from<Windows::Foundation::Numerics::float3x2>(this->shim().TransformMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(void), Windows::Foundation::Numerics::float3x2 const&);
             this->shim().TransformMatrix(*reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionGradientBrush2> : produce_base<D, Windows::UI::Composition::ICompositionGradientBrush2>
+{
+    int32_t WINRT_CALL get_MappingMode(Windows::UI::Composition::CompositionMappingMode* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MappingMode, WINRT_WRAP(Windows::UI::Composition::CompositionMappingMode));
+            *value = detach_from<Windows::UI::Composition::CompositionMappingMode>(this->shim().MappingMode());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_MappingMode(Windows::UI::Composition::CompositionMappingMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MappingMode, WINRT_WRAP(void), Windows::UI::Composition::CompositionMappingMode const&);
+            this->shim().MappingMode(*reinterpret_cast<Windows::UI::Composition::CompositionMappingMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5472,151 +5494,129 @@ struct produce<D, Windows::UI::Composition::ICompositionGradientBrushFactory> : 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice> : produce_base<D, Windows::UI::Composition::ICompositionGraphicsDevice>
 {
-    HRESULT __stdcall CreateDrawingSurface(Windows::Foundation::Size sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
+    int32_t WINRT_CALL CreateDrawingSurface(Windows::Foundation::Size sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDrawingSurface, WINRT_WRAP(Windows::UI::Composition::CompositionDrawingSurface), Windows::Foundation::Size const&, Windows::Graphics::DirectX::DirectXPixelFormat const&, Windows::Graphics::DirectX::DirectXAlphaMode const&);
             *result = detach_from<Windows::UI::Composition::CompositionDrawingSurface>(this->shim().CreateDrawingSurface(*reinterpret_cast<Windows::Foundation::Size const*>(&sizePixels), *reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::DirectX::DirectXAlphaMode const*>(&alphaMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RenderingDeviceReplaced(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RenderingDeviceReplaced(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RenderingDeviceReplaced(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RenderingDeviceReplaced, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RenderingDeviceReplaced(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RenderingDeviceReplaced(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RenderingDeviceReplaced(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RenderingDeviceReplaced(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RenderingDeviceReplaced, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RenderingDeviceReplaced(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice2> : produce_base<D, Windows::UI::Composition::ICompositionGraphicsDevice2>
 {
-    HRESULT __stdcall CreateDrawingSurface2(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
+    int32_t WINRT_CALL CreateDrawingSurface2(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDrawingSurface2, WINRT_WRAP(Windows::UI::Composition::CompositionDrawingSurface), Windows::Graphics::SizeInt32 const&, Windows::Graphics::DirectX::DirectXPixelFormat const&, Windows::Graphics::DirectX::DirectXAlphaMode const&);
             *result = detach_from<Windows::UI::Composition::CompositionDrawingSurface>(this->shim().CreateDrawingSurface2(*reinterpret_cast<Windows::Graphics::SizeInt32 const*>(&sizePixels), *reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::DirectX::DirectXAlphaMode const*>(&alphaMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateVirtualDrawingSurface(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
+    int32_t WINRT_CALL CreateVirtualDrawingSurface(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVirtualDrawingSurface, WINRT_WRAP(Windows::UI::Composition::CompositionVirtualDrawingSurface), Windows::Graphics::SizeInt32 const&, Windows::Graphics::DirectX::DirectXPixelFormat const&, Windows::Graphics::DirectX::DirectXAlphaMode const&);
             *result = detach_from<Windows::UI::Composition::CompositionVirtualDrawingSurface>(this->shim().CreateVirtualDrawingSurface(*reinterpret_cast<Windows::Graphics::SizeInt32 const*>(&sizePixels), *reinterpret_cast<Windows::Graphics::DirectX::DirectXPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::DirectX::DirectXAlphaMode const*>(&alphaMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionLight> : produce_base<D, Windows::UI::Composition::ICompositionLight>
 {
-    HRESULT __stdcall get_Targets(void** value) noexcept final
+    int32_t WINRT_CALL get_Targets(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Targets, WINRT_WRAP(Windows::UI::Composition::VisualUnorderedCollection));
             *value = detach_from<Windows::UI::Composition::VisualUnorderedCollection>(this->shim().Targets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionLight2> : produce_base<D, Windows::UI::Composition::ICompositionLight2>
 {
-    HRESULT __stdcall get_ExclusionsFromTargets(void** value) noexcept final
+    int32_t WINRT_CALL get_ExclusionsFromTargets(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExclusionsFromTargets, WINRT_WRAP(Windows::UI::Composition::VisualUnorderedCollection));
             *value = detach_from<Windows::UI::Composition::VisualUnorderedCollection>(this->shim().ExclusionsFromTargets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionLight3> : produce_base<D, Windows::UI::Composition::ICompositionLight3>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5627,728 +5627,630 @@ struct produce<D, Windows::UI::Composition::ICompositionLightFactory> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionLineGeometry> : produce_base<D, Windows::UI::Composition::ICompositionLineGeometry>
 {
-    HRESULT __stdcall get_Start(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Start(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Start());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Start(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Start(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Start(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_End(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_End(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(End, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().End());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_End(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_End(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(End, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().End(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionLinearGradientBrush> : produce_base<D, Windows::UI::Composition::ICompositionLinearGradientBrush>
 {
-    HRESULT __stdcall get_EndPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_EndPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().EndPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_EndPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().EndPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_StartPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().StartPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_StartPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().StartPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionMaskBrush> : produce_base<D, Windows::UI::Composition::ICompositionMaskBrush>
 {
-    HRESULT __stdcall get_Mask(void** value) noexcept final
+    int32_t WINRT_CALL get_Mask(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mask, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().Mask());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mask(void* value) noexcept final
+    int32_t WINRT_CALL put_Mask(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mask, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().Mask(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(void** value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Source(void* value) noexcept final
+    int32_t WINRT_CALL put_Source(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().Source(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionNineGridBrush> : produce_base<D, Windows::UI::Composition::ICompositionNineGridBrush>
 {
-    HRESULT __stdcall get_BottomInset(float* value) noexcept final
+    int32_t WINRT_CALL get_BottomInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().BottomInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BottomInset(float value) noexcept final
+    int32_t WINRT_CALL put_BottomInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInset, WINRT_WRAP(void), float);
             this->shim().BottomInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BottomInsetScale(float* value) noexcept final
+    int32_t WINRT_CALL get_BottomInsetScale(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInsetScale, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().BottomInsetScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BottomInsetScale(float value) noexcept final
+    int32_t WINRT_CALL put_BottomInsetScale(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInsetScale, WINRT_WRAP(void), float);
             this->shim().BottomInsetScale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsCenterHollow(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCenterHollow(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCenterHollow, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCenterHollow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsCenterHollow(bool value) noexcept final
+    int32_t WINRT_CALL put_IsCenterHollow(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCenterHollow, WINRT_WRAP(void), bool);
             this->shim().IsCenterHollow(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftInset(float* value) noexcept final
+    int32_t WINRT_CALL get_LeftInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LeftInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftInset(float value) noexcept final
+    int32_t WINRT_CALL put_LeftInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInset, WINRT_WRAP(void), float);
             this->shim().LeftInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftInsetScale(float* value) noexcept final
+    int32_t WINRT_CALL get_LeftInsetScale(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInsetScale, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LeftInsetScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftInsetScale(float value) noexcept final
+    int32_t WINRT_CALL put_LeftInsetScale(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInsetScale, WINRT_WRAP(void), float);
             this->shim().LeftInsetScale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightInset(float* value) noexcept final
+    int32_t WINRT_CALL get_RightInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RightInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightInset(float value) noexcept final
+    int32_t WINRT_CALL put_RightInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInset, WINRT_WRAP(void), float);
             this->shim().RightInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightInsetScale(float* value) noexcept final
+    int32_t WINRT_CALL get_RightInsetScale(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInsetScale, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RightInsetScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightInsetScale(float value) noexcept final
+    int32_t WINRT_CALL put_RightInsetScale(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInsetScale, WINRT_WRAP(void), float);
             this->shim().RightInsetScale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(void** value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Source(void* value) noexcept final
+    int32_t WINRT_CALL put_Source(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().Source(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TopInset(float* value) noexcept final
+    int32_t WINRT_CALL get_TopInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TopInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TopInset(float value) noexcept final
+    int32_t WINRT_CALL put_TopInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInset, WINRT_WRAP(void), float);
             this->shim().TopInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TopInsetScale(float* value) noexcept final
+    int32_t WINRT_CALL get_TopInsetScale(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInsetScale, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TopInsetScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TopInsetScale(float value) noexcept final
+    int32_t WINRT_CALL put_TopInsetScale(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInsetScale, WINRT_WRAP(void), float);
             this->shim().TopInsetScale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetInsets(float inset) noexcept final
+    int32_t WINRT_CALL SetInsets(float inset) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetInsets, WINRT_WRAP(void), float);
             this->shim().SetInsets(inset);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetInsetsWithValues(float left, float top, float right, float bottom) noexcept final
+    int32_t WINRT_CALL SetInsetsWithValues(float left, float top, float right, float bottom) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetInsets, WINRT_WRAP(void), float, float, float, float);
             this->shim().SetInsets(left, top, right, bottom);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetInsetScales(float scale) noexcept final
+    int32_t WINRT_CALL SetInsetScales(float scale) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetInsetScales, WINRT_WRAP(void), float);
             this->shim().SetInsetScales(scale);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetInsetScalesWithValues(float left, float top, float right, float bottom) noexcept final
+    int32_t WINRT_CALL SetInsetScalesWithValues(float left, float top, float right, float bottom) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetInsetScales, WINRT_WRAP(void), float, float, float, float);
             this->shim().SetInsetScales(left, top, right, bottom);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionObject> : produce_base<D, Windows::UI::Composition::ICompositionObject>
 {
-    HRESULT __stdcall get_Compositor(void** value) noexcept final
+    int32_t WINRT_CALL get_Compositor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compositor, WINRT_WRAP(Windows::UI::Composition::Compositor));
             *value = detach_from<Windows::UI::Composition::Compositor>(this->shim().Compositor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Dispatcher(void** value) noexcept final
+    int32_t WINRT_CALL get_Dispatcher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Dispatcher, WINRT_WRAP(Windows::UI::Core::CoreDispatcher));
             *value = detach_from<Windows::UI::Core::CoreDispatcher>(this->shim().Dispatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::UI::Composition::CompositionPropertySet));
             *value = detach_from<Windows::UI::Composition::CompositionPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAnimation(HSTRING propertyName, void* animation) noexcept final
+    int32_t WINRT_CALL StartAnimation(void* propertyName, void* animation) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAnimation, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::CompositionAnimation const&);
             this->shim().StartAnimation(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Composition::CompositionAnimation const*>(&animation));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopAnimation(HSTRING propertyName) noexcept final
+    int32_t WINRT_CALL StopAnimation(void* propertyName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopAnimation, WINRT_WRAP(void), hstring const&);
             this->shim().StopAnimation(*reinterpret_cast<hstring const*>(&propertyName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionObject2> : produce_base<D, Windows::UI::Composition::ICompositionObject2>
 {
-    HRESULT __stdcall get_Comment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Comment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Comment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Comment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Comment(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Comment(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Comment, WINRT_WRAP(void), hstring const&);
             this->shim().Comment(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImplicitAnimations(void** value) noexcept final
+    int32_t WINRT_CALL get_ImplicitAnimations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImplicitAnimations, WINRT_WRAP(Windows::UI::Composition::ImplicitAnimationCollection));
             *value = detach_from<Windows::UI::Composition::ImplicitAnimationCollection>(this->shim().ImplicitAnimations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ImplicitAnimations(void* value) noexcept final
+    int32_t WINRT_CALL put_ImplicitAnimations(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImplicitAnimations, WINRT_WRAP(void), Windows::UI::Composition::ImplicitAnimationCollection const&);
             this->shim().ImplicitAnimations(*reinterpret_cast<Windows::UI::Composition::ImplicitAnimationCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAnimationGroup(void* value) noexcept final
+    int32_t WINRT_CALL StartAnimationGroup(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAnimationGroup, WINRT_WRAP(void), Windows::UI::Composition::ICompositionAnimationBase const&);
             this->shim().StartAnimationGroup(*reinterpret_cast<Windows::UI::Composition::ICompositionAnimationBase const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopAnimationGroup(void* value) noexcept final
+    int32_t WINRT_CALL StopAnimationGroup(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopAnimationGroup, WINRT_WRAP(void), Windows::UI::Composition::ICompositionAnimationBase const&);
             this->shim().StopAnimationGroup(*reinterpret_cast<Windows::UI::Composition::ICompositionAnimationBase const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionObject3> : produce_base<D, Windows::UI::Composition::ICompositionObject3>
 {
-    HRESULT __stdcall get_DispatcherQueue(void** value) noexcept final
+    int32_t WINRT_CALL get_DispatcherQueue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DispatcherQueue, WINRT_WRAP(Windows::System::DispatcherQueue));
             *value = detach_from<Windows::System::DispatcherQueue>(this->shim().DispatcherQueue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionObject4> : produce_base<D, Windows::UI::Composition::ICompositionObject4>
 {
-    HRESULT __stdcall TryGetAnimationController(HSTRING propertyName, void** animationController) noexcept final
+    int32_t WINRT_CALL TryGetAnimationController(void* propertyName, void** result) noexcept final
     {
         try
         {
-            *animationController = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *animationController = detach_from<Windows::UI::Composition::AnimationController>(this->shim().TryGetAnimationController(*reinterpret_cast<hstring const*>(&propertyName)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TryGetAnimationController, WINRT_WRAP(Windows::UI::Composition::AnimationController), hstring const&);
+            *result = detach_from<Windows::UI::Composition::AnimationController>(this->shim().TryGetAnimationController(*reinterpret_cast<hstring const*>(&propertyName)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6357,568 +6259,516 @@ struct produce<D, Windows::UI::Composition::ICompositionObjectFactory> : produce
 {};
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionObjectStatics> : produce_base<D, Windows::UI::Composition::ICompositionObjectStatics>
+{
+    int32_t WINRT_CALL StartAnimationWithIAnimationObject(void* target, void* propertyName, void* animation) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAnimationWithIAnimationObject, WINRT_WRAP(void), Windows::UI::Composition::IAnimationObject const&, hstring const&, Windows::UI::Composition::CompositionAnimation const&);
+            this->shim().StartAnimationWithIAnimationObject(*reinterpret_cast<Windows::UI::Composition::IAnimationObject const*>(&target), *reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Composition::CompositionAnimation const*>(&animation));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL StartAnimationGroupWithIAnimationObject(void* target, void* animation) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAnimationGroupWithIAnimationObject, WINRT_WRAP(void), Windows::UI::Composition::IAnimationObject const&, Windows::UI::Composition::ICompositionAnimationBase const&);
+            this->shim().StartAnimationGroupWithIAnimationObject(*reinterpret_cast<Windows::UI::Composition::IAnimationObject const*>(&target), *reinterpret_cast<Windows::UI::Composition::ICompositionAnimationBase const*>(&animation));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionPath> : produce_base<D, Windows::UI::Composition::ICompositionPath>
 {};
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionPathFactory> : produce_base<D, Windows::UI::Composition::ICompositionPathFactory>
 {
-    HRESULT __stdcall Create(void* source, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* source, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::UI::Composition::CompositionPath), Windows::Graphics::IGeometrySource2D const&);
             *result = detach_from<Windows::UI::Composition::CompositionPath>(this->shim().Create(*reinterpret_cast<Windows::Graphics::IGeometrySource2D const*>(&source)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionPathGeometry> : produce_base<D, Windows::UI::Composition::ICompositionPathGeometry>
 {
-    HRESULT __stdcall get_Path(void** value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(Windows::UI::Composition::CompositionPath));
             *value = detach_from<Windows::UI::Composition::CompositionPath>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Path(void* value) noexcept final
+    int32_t WINRT_CALL put_Path(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(void), Windows::UI::Composition::CompositionPath const&);
             this->shim().Path(*reinterpret_cast<Windows::UI::Composition::CompositionPath const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionPropertySet> : produce_base<D, Windows::UI::Composition::ICompositionPropertySet>
 {
-    HRESULT __stdcall InsertColor(HSTRING propertyName, struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL InsertColor(void* propertyName, struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertColor, WINRT_WRAP(void), hstring const&, Windows::UI::Color const&);
             this->shim().InsertColor(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertMatrix3x2(HSTRING propertyName, Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL InsertMatrix3x2(void* propertyName, Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertMatrix3x2, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float3x2 const&);
             this->shim().InsertMatrix3x2(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertMatrix4x4(HSTRING propertyName, Windows::Foundation::Numerics::float4x4 value) noexcept final
+    int32_t WINRT_CALL InsertMatrix4x4(void* propertyName, Windows::Foundation::Numerics::float4x4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertMatrix4x4, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float4x4 const&);
             this->shim().InsertMatrix4x4(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float4x4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertQuaternion(HSTRING propertyName, Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL InsertQuaternion(void* propertyName, Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertQuaternion, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::quaternion const&);
             this->shim().InsertQuaternion(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertScalar(HSTRING propertyName, float value) noexcept final
+    int32_t WINRT_CALL InsertScalar(void* propertyName, float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertScalar, WINRT_WRAP(void), hstring const&, float);
             this->shim().InsertScalar(*reinterpret_cast<hstring const*>(&propertyName), value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertVector2(HSTRING propertyName, Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL InsertVector2(void* propertyName, Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertVector2, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float2 const&);
             this->shim().InsertVector2(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertVector3(HSTRING propertyName, Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL InsertVector3(void* propertyName, Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertVector3, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float3 const&);
             this->shim().InsertVector3(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertVector4(HSTRING propertyName, Windows::Foundation::Numerics::float4 value) noexcept final
+    int32_t WINRT_CALL InsertVector4(void* propertyName, Windows::Foundation::Numerics::float4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertVector4, WINRT_WRAP(void), hstring const&, Windows::Foundation::Numerics::float4 const&);
             this->shim().InsertVector4(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetColor(HSTRING propertyName, struct struct_Windows_UI_Color* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetColor(void* propertyName, struct struct_Windows_UI_Color* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetColor, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::UI::Color&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetColor(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Color*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetMatrix3x2(HSTRING propertyName, Windows::Foundation::Numerics::float3x2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetMatrix3x2(void* propertyName, Windows::Foundation::Numerics::float3x2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetMatrix3x2, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::float3x2&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetMatrix3x2(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float3x2*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetMatrix4x4(HSTRING propertyName, Windows::Foundation::Numerics::float4x4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetMatrix4x4(void* propertyName, Windows::Foundation::Numerics::float4x4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetMatrix4x4, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::float4x4&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetMatrix4x4(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float4x4*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetQuaternion(HSTRING propertyName, Windows::Foundation::Numerics::quaternion* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetQuaternion(void* propertyName, Windows::Foundation::Numerics::quaternion* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetQuaternion, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::quaternion&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetQuaternion(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::quaternion*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetScalar(HSTRING propertyName, float* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetScalar(void* propertyName, float* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetScalar, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, float&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetScalar(*reinterpret_cast<hstring const*>(&propertyName), *value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetVector2(HSTRING propertyName, Windows::Foundation::Numerics::float2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetVector2(void* propertyName, Windows::Foundation::Numerics::float2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetVector2, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::float2&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetVector2(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float2*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetVector3(HSTRING propertyName, Windows::Foundation::Numerics::float3* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetVector3(void* propertyName, Windows::Foundation::Numerics::float3* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetVector3, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::float3&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetVector3(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float3*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetVector4(HSTRING propertyName, Windows::Foundation::Numerics::float4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetVector4(void* propertyName, Windows::Foundation::Numerics::float4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetVector4, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, Windows::Foundation::Numerics::float4&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetVector4(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::Foundation::Numerics::float4*>(value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionPropertySet2> : produce_base<D, Windows::UI::Composition::ICompositionPropertySet2>
 {
-    HRESULT __stdcall InsertBoolean(HSTRING propertyName, bool value) noexcept final
+    int32_t WINRT_CALL InsertBoolean(void* propertyName, bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertBoolean, WINRT_WRAP(void), hstring const&, bool);
             this->shim().InsertBoolean(*reinterpret_cast<hstring const*>(&propertyName), value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetBoolean(HSTRING propertyName, bool* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
+    int32_t WINRT_CALL TryGetBoolean(void* propertyName, bool* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetBoolean, WINRT_WRAP(Windows::UI::Composition::CompositionGetValueStatus), hstring const&, bool&);
             *result = detach_from<Windows::UI::Composition::CompositionGetValueStatus>(this->shim().TryGetBoolean(*reinterpret_cast<hstring const*>(&propertyName), *value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionRectangleGeometry> : produce_base<D, Windows::UI::Composition::ICompositionRectangleGeometry>
 {
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Size(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionRoundedRectangleGeometry> : produce_base<D, Windows::UI::Composition::ICompositionRoundedRectangleGeometry>
 {
-    HRESULT __stdcall get_CornerRadius(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_CornerRadius(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CornerRadius, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().CornerRadius());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CornerRadius(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_CornerRadius(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CornerRadius, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().CornerRadius(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Size(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionScopedBatch> : produce_base<D, Windows::UI::Composition::ICompositionScopedBatch>
 {
-    HRESULT __stdcall get_IsActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnded(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall End() noexcept final
+    int32_t WINRT_CALL End() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(End, WINRT_WRAP(void));
             this->shim().End();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Suspend() noexcept final
+    int32_t WINRT_CALL Suspend() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Suspend, WINRT_WRAP(void));
             this->shim().Suspend();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Completed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Completed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
@@ -6933,172 +6783,148 @@ struct produce<D, Windows::UI::Composition::ICompositionShadowFactory> : produce
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionShape> : produce_base<D, Windows::UI::Composition::ICompositionShape>
 {
-    HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().CenterPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().CenterPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), float);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().RotationAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Scale(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
+    int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(Windows::Foundation::Numerics::float3x2));
             *value = detach_from<Windows::Foundation::Numerics::float3x2>(this->shim().TransformMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(void), Windows::Foundation::Numerics::float3x2 const&);
             this->shim().TransformMatrix(*reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7109,330 +6935,284 @@ struct produce<D, Windows::UI::Composition::ICompositionShapeFactory> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionSpriteShape> : produce_base<D, Windows::UI::Composition::ICompositionSpriteShape>
 {
-    HRESULT __stdcall get_FillBrush(void** value) noexcept final
+    int32_t WINRT_CALL get_FillBrush(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillBrush, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().FillBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FillBrush(void* value) noexcept final
+    int32_t WINRT_CALL put_FillBrush(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillBrush, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().FillBrush(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Geometry(void** value) noexcept final
+    int32_t WINRT_CALL get_Geometry(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Geometry, WINRT_WRAP(Windows::UI::Composition::CompositionGeometry));
             *value = detach_from<Windows::UI::Composition::CompositionGeometry>(this->shim().Geometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Geometry(void* value) noexcept final
+    int32_t WINRT_CALL put_Geometry(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Geometry, WINRT_WRAP(void), Windows::UI::Composition::CompositionGeometry const&);
             this->shim().Geometry(*reinterpret_cast<Windows::UI::Composition::CompositionGeometry const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStrokeNonScaling(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStrokeNonScaling(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStrokeNonScaling, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStrokeNonScaling());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsStrokeNonScaling(bool value) noexcept final
+    int32_t WINRT_CALL put_IsStrokeNonScaling(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStrokeNonScaling, WINRT_WRAP(void), bool);
             this->shim().IsStrokeNonScaling(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeBrush(void** value) noexcept final
+    int32_t WINRT_CALL get_StrokeBrush(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeBrush, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().StrokeBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeBrush(void* value) noexcept final
+    int32_t WINRT_CALL put_StrokeBrush(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeBrush, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().StrokeBrush(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeDashArray(void** value) noexcept final
+    int32_t WINRT_CALL get_StrokeDashArray(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeDashArray, WINRT_WRAP(Windows::UI::Composition::CompositionStrokeDashArray));
             *value = detach_from<Windows::UI::Composition::CompositionStrokeDashArray>(this->shim().StrokeDashArray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
+    int32_t WINRT_CALL get_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeDashCap, WINRT_WRAP(Windows::UI::Composition::CompositionStrokeCap));
             *value = detach_from<Windows::UI::Composition::CompositionStrokeCap>(this->shim().StrokeDashCap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
+    int32_t WINRT_CALL put_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeDashCap, WINRT_WRAP(void), Windows::UI::Composition::CompositionStrokeCap const&);
             this->shim().StrokeDashCap(*reinterpret_cast<Windows::UI::Composition::CompositionStrokeCap const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeDashOffset(float* value) noexcept final
+    int32_t WINRT_CALL get_StrokeDashOffset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeDashOffset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().StrokeDashOffset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeDashOffset(float value) noexcept final
+    int32_t WINRT_CALL put_StrokeDashOffset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeDashOffset, WINRT_WRAP(void), float);
             this->shim().StrokeDashOffset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
+    int32_t WINRT_CALL get_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeEndCap, WINRT_WRAP(Windows::UI::Composition::CompositionStrokeCap));
             *value = detach_from<Windows::UI::Composition::CompositionStrokeCap>(this->shim().StrokeEndCap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
+    int32_t WINRT_CALL put_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeEndCap, WINRT_WRAP(void), Windows::UI::Composition::CompositionStrokeCap const&);
             this->shim().StrokeEndCap(*reinterpret_cast<Windows::UI::Composition::CompositionStrokeCap const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin* value) noexcept final
+    int32_t WINRT_CALL get_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeLineJoin, WINRT_WRAP(Windows::UI::Composition::CompositionStrokeLineJoin));
             *value = detach_from<Windows::UI::Composition::CompositionStrokeLineJoin>(this->shim().StrokeLineJoin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin value) noexcept final
+    int32_t WINRT_CALL put_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeLineJoin, WINRT_WRAP(void), Windows::UI::Composition::CompositionStrokeLineJoin const&);
             this->shim().StrokeLineJoin(*reinterpret_cast<Windows::UI::Composition::CompositionStrokeLineJoin const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeMiterLimit(float* value) noexcept final
+    int32_t WINRT_CALL get_StrokeMiterLimit(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeMiterLimit, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().StrokeMiterLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeMiterLimit(float value) noexcept final
+    int32_t WINRT_CALL put_StrokeMiterLimit(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeMiterLimit, WINRT_WRAP(void), float);
             this->shim().StrokeMiterLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
+    int32_t WINRT_CALL get_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeStartCap, WINRT_WRAP(Windows::UI::Composition::CompositionStrokeCap));
             *value = detach_from<Windows::UI::Composition::CompositionStrokeCap>(this->shim().StrokeStartCap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
+    int32_t WINRT_CALL put_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeStartCap, WINRT_WRAP(void), Windows::UI::Composition::CompositionStrokeCap const&);
             this->shim().StrokeStartCap(*reinterpret_cast<Windows::UI::Composition::CompositionStrokeCap const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StrokeThickness(float* value) noexcept final
+    int32_t WINRT_CALL get_StrokeThickness(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeThickness, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().StrokeThickness());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StrokeThickness(float value) noexcept final
+    int32_t WINRT_CALL put_StrokeThickness(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StrokeThickness, WINRT_WRAP(void), float);
             this->shim().StrokeThickness(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7443,378 +7223,326 @@ struct produce<D, Windows::UI::Composition::ICompositionSurface> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush> : produce_base<D, Windows::UI::Composition::ICompositionSurfaceBrush>
 {
-    HRESULT __stdcall get_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode* value) noexcept final
+    int32_t WINRT_CALL get_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapInterpolationMode, WINRT_WRAP(Windows::UI::Composition::CompositionBitmapInterpolationMode));
             *value = detach_from<Windows::UI::Composition::CompositionBitmapInterpolationMode>(this->shim().BitmapInterpolationMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) noexcept final
+    int32_t WINRT_CALL put_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapInterpolationMode, WINRT_WRAP(void), Windows::UI::Composition::CompositionBitmapInterpolationMode const&);
             this->shim().BitmapInterpolationMode(*reinterpret_cast<Windows::UI::Composition::CompositionBitmapInterpolationMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HorizontalAlignmentRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_HorizontalAlignmentRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalAlignmentRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().HorizontalAlignmentRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HorizontalAlignmentRatio(float value) noexcept final
+    int32_t WINRT_CALL put_HorizontalAlignmentRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalAlignmentRatio, WINRT_WRAP(void), float);
             this->shim().HorizontalAlignmentRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept final
+    int32_t WINRT_CALL get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(Windows::UI::Composition::CompositionStretch));
             *value = detach_from<Windows::UI::Composition::CompositionStretch>(this->shim().Stretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept final
+    int32_t WINRT_CALL put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(void), Windows::UI::Composition::CompositionStretch const&);
             this->shim().Stretch(*reinterpret_cast<Windows::UI::Composition::CompositionStretch const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Surface(void** value) noexcept final
+    int32_t WINRT_CALL get_Surface(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Surface, WINRT_WRAP(Windows::UI::Composition::ICompositionSurface));
             *value = detach_from<Windows::UI::Composition::ICompositionSurface>(this->shim().Surface());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Surface(void* value) noexcept final
+    int32_t WINRT_CALL put_Surface(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Surface, WINRT_WRAP(void), Windows::UI::Composition::ICompositionSurface const&);
             this->shim().Surface(*reinterpret_cast<Windows::UI::Composition::ICompositionSurface const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VerticalAlignmentRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_VerticalAlignmentRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerticalAlignmentRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().VerticalAlignmentRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VerticalAlignmentRatio(float value) noexcept final
+    int32_t WINRT_CALL put_VerticalAlignmentRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerticalAlignmentRatio, WINRT_WRAP(void), float);
             this->shim().VerticalAlignmentRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionSurfaceBrush2> : produce_base<D, Windows::UI::Composition::ICompositionSurfaceBrush2>
 {
-    HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().AnchorPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().AnchorPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().CenterPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().CenterPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), float);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().RotationAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Scale(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
+    int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(Windows::Foundation::Numerics::float3x2));
             *value = detach_from<Windows::Foundation::Numerics::float3x2>(this->shim().TransformMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
+    int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(void), Windows::Foundation::Numerics::float3x2 const&);
             this->shim().TransformMatrix(*reinterpret_cast<Windows::Foundation::Numerics::float3x2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionTarget> : produce_base<D, Windows::UI::Composition::ICompositionTarget>
 {
-    HRESULT __stdcall get_Root(void** value) noexcept final
+    int32_t WINRT_CALL get_Root(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Root, WINRT_WRAP(Windows::UI::Composition::Visual));
             *value = detach_from<Windows::UI::Composition::Visual>(this->shim().Root());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Root(void* value) noexcept final
+    int32_t WINRT_CALL put_Root(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Root, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().Root(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7825,162 +7553,140 @@ struct produce<D, Windows::UI::Composition::ICompositionTargetFactory> : produce
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionViewBox> : produce_base<D, Windows::UI::Composition::ICompositionViewBox>
 {
-    HRESULT __stdcall get_HorizontalAlignmentRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_HorizontalAlignmentRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalAlignmentRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().HorizontalAlignmentRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HorizontalAlignmentRatio(float value) noexcept final
+    int32_t WINRT_CALL put_HorizontalAlignmentRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalAlignmentRatio, WINRT_WRAP(void), float);
             this->shim().HorizontalAlignmentRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Size(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept final
+    int32_t WINRT_CALL get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(Windows::UI::Composition::CompositionStretch));
             *value = detach_from<Windows::UI::Composition::CompositionStretch>(this->shim().Stretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept final
+    int32_t WINRT_CALL put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(void), Windows::UI::Composition::CompositionStretch const&);
             this->shim().Stretch(*reinterpret_cast<Windows::UI::Composition::CompositionStretch const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VerticalAlignmentRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_VerticalAlignmentRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerticalAlignmentRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().VerticalAlignmentRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VerticalAlignmentRatio(float value) noexcept final
+    int32_t WINRT_CALL put_VerticalAlignmentRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerticalAlignmentRatio, WINRT_WRAP(void), float);
             this->shim().VerticalAlignmentRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionVirtualDrawingSurface> : produce_base<D, Windows::UI::Composition::ICompositionVirtualDrawingSurface>
 {
-    HRESULT __stdcall Trim(uint32_t __rectsSize, struct struct_Windows_Graphics_RectInt32* rects) noexcept final
+    int32_t WINRT_CALL Trim(uint32_t __rectsSize, struct struct_Windows_Graphics_RectInt32* rects) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Trim, WINRT_WRAP(void), array_view<Windows::Graphics::RectInt32 const>);
             this->shim().Trim(array_view<Windows::Graphics::RectInt32 const>(reinterpret_cast<Windows::Graphics::RectInt32 const *>(rects), reinterpret_cast<Windows::Graphics::RectInt32 const *>(rects) + __rectsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7991,1028 +7697,963 @@ struct produce<D, Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFac
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windows::UI::Composition::ICompositor>
 {
-    HRESULT __stdcall CreateColorKeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateColorKeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateColorKeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::ColorKeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::ColorKeyFrameAnimation>(this->shim().CreateColorKeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateColorBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateColorBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateColorBrush, WINRT_WRAP(Windows::UI::Composition::CompositionColorBrush));
             *result = detach_from<Windows::UI::Composition::CompositionColorBrush>(this->shim().CreateColorBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateColorBrushWithColor(struct struct_Windows_UI_Color color, void** result) noexcept final
+    int32_t WINRT_CALL CreateColorBrushWithColor(struct struct_Windows_UI_Color color, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateColorBrush, WINRT_WRAP(Windows::UI::Composition::CompositionColorBrush), Windows::UI::Color const&);
             *result = detach_from<Windows::UI::Composition::CompositionColorBrush>(this->shim().CreateColorBrush(*reinterpret_cast<Windows::UI::Color const*>(&color)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContainerVisual(void** result) noexcept final
+    int32_t WINRT_CALL CreateContainerVisual(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContainerVisual, WINRT_WRAP(Windows::UI::Composition::ContainerVisual));
             *result = detach_from<Windows::UI::Composition::ContainerVisual>(this->shim().CreateContainerVisual());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCubicBezierEasingFunction(Windows::Foundation::Numerics::float2 controlPoint1, Windows::Foundation::Numerics::float2 controlPoint2, void** result) noexcept final
+    int32_t WINRT_CALL CreateCubicBezierEasingFunction(Windows::Foundation::Numerics::float2 controlPoint1, Windows::Foundation::Numerics::float2 controlPoint2, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCubicBezierEasingFunction, WINRT_WRAP(Windows::UI::Composition::CubicBezierEasingFunction), Windows::Foundation::Numerics::float2 const&, Windows::Foundation::Numerics::float2 const&);
             *result = detach_from<Windows::UI::Composition::CubicBezierEasingFunction>(this->shim().CreateCubicBezierEasingFunction(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&controlPoint1), *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&controlPoint2)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateEffectFactory(void* graphicsEffect, void** result) noexcept final
+    int32_t WINRT_CALL CreateEffectFactory(void* graphicsEffect, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateEffectFactory, WINRT_WRAP(Windows::UI::Composition::CompositionEffectFactory), Windows::Graphics::Effects::IGraphicsEffect const&);
             *result = detach_from<Windows::UI::Composition::CompositionEffectFactory>(this->shim().CreateEffectFactory(*reinterpret_cast<Windows::Graphics::Effects::IGraphicsEffect const*>(&graphicsEffect)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateEffectFactoryWithProperties(void* graphicsEffect, void* animatableProperties, void** result) noexcept final
+    int32_t WINRT_CALL CreateEffectFactoryWithProperties(void* graphicsEffect, void* animatableProperties, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateEffectFactory, WINRT_WRAP(Windows::UI::Composition::CompositionEffectFactory), Windows::Graphics::Effects::IGraphicsEffect const&, Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<Windows::UI::Composition::CompositionEffectFactory>(this->shim().CreateEffectFactory(*reinterpret_cast<Windows::Graphics::Effects::IGraphicsEffect const*>(&graphicsEffect), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&animatableProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateExpressionAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateExpressionAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateExpressionAnimation, WINRT_WRAP(Windows::UI::Composition::ExpressionAnimation));
             *result = detach_from<Windows::UI::Composition::ExpressionAnimation>(this->shim().CreateExpressionAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateExpressionAnimationWithExpression(HSTRING expression, void** result) noexcept final
+    int32_t WINRT_CALL CreateExpressionAnimationWithExpression(void* expression, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateExpressionAnimation, WINRT_WRAP(Windows::UI::Composition::ExpressionAnimation), hstring const&);
             *result = detach_from<Windows::UI::Composition::ExpressionAnimation>(this->shim().CreateExpressionAnimation(*reinterpret_cast<hstring const*>(&expression)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInsetClip(void** result) noexcept final
+    int32_t WINRT_CALL CreateInsetClip(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInsetClip, WINRT_WRAP(Windows::UI::Composition::InsetClip));
             *result = detach_from<Windows::UI::Composition::InsetClip>(this->shim().CreateInsetClip());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset, void** result) noexcept final
+    int32_t WINRT_CALL CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInsetClip, WINRT_WRAP(Windows::UI::Composition::InsetClip), float, float, float, float);
             *result = detach_from<Windows::UI::Composition::InsetClip>(this->shim().CreateInsetClip(leftInset, topInset, rightInset, bottomInset));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLinearEasingFunction(void** result) noexcept final
+    int32_t WINRT_CALL CreateLinearEasingFunction(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLinearEasingFunction, WINRT_WRAP(Windows::UI::Composition::LinearEasingFunction));
             *result = detach_from<Windows::UI::Composition::LinearEasingFunction>(this->shim().CreateLinearEasingFunction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePropertySet(void** result) noexcept final
+    int32_t WINRT_CALL CreatePropertySet(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePropertySet, WINRT_WRAP(Windows::UI::Composition::CompositionPropertySet));
             *result = detach_from<Windows::UI::Composition::CompositionPropertySet>(this->shim().CreatePropertySet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateQuaternionKeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateQuaternionKeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateQuaternionKeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::QuaternionKeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::QuaternionKeyFrameAnimation>(this->shim().CreateQuaternionKeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateScalarKeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateScalarKeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateScalarKeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::ScalarKeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::ScalarKeyFrameAnimation>(this->shim().CreateScalarKeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateScopedBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept final
+    int32_t WINRT_CALL CreateScopedBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateScopedBatch, WINRT_WRAP(Windows::UI::Composition::CompositionScopedBatch), Windows::UI::Composition::CompositionBatchTypes const&);
             *result = detach_from<Windows::UI::Composition::CompositionScopedBatch>(this->shim().CreateScopedBatch(*reinterpret_cast<Windows::UI::Composition::CompositionBatchTypes const*>(&batchType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpriteVisual(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpriteVisual(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpriteVisual, WINRT_WRAP(Windows::UI::Composition::SpriteVisual));
             *result = detach_from<Windows::UI::Composition::SpriteVisual>(this->shim().CreateSpriteVisual());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSurfaceBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateSurfaceBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSurfaceBrush, WINRT_WRAP(Windows::UI::Composition::CompositionSurfaceBrush));
             *result = detach_from<Windows::UI::Composition::CompositionSurfaceBrush>(this->shim().CreateSurfaceBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSurfaceBrushWithSurface(void* surface, void** result) noexcept final
+    int32_t WINRT_CALL CreateSurfaceBrushWithSurface(void* surface, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSurfaceBrush, WINRT_WRAP(Windows::UI::Composition::CompositionSurfaceBrush), Windows::UI::Composition::ICompositionSurface const&);
             *result = detach_from<Windows::UI::Composition::CompositionSurfaceBrush>(this->shim().CreateSurfaceBrush(*reinterpret_cast<Windows::UI::Composition::ICompositionSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateTargetForCurrentView(void** result) noexcept final
+    int32_t WINRT_CALL CreateTargetForCurrentView(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateTargetForCurrentView, WINRT_WRAP(Windows::UI::Composition::CompositionTarget));
             *result = detach_from<Windows::UI::Composition::CompositionTarget>(this->shim().CreateTargetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateVector2KeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateVector2KeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVector2KeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::Vector2KeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::Vector2KeyFrameAnimation>(this->shim().CreateVector2KeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateVector3KeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateVector3KeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVector3KeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::Vector3KeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::Vector3KeyFrameAnimation>(this->shim().CreateVector3KeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateVector4KeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateVector4KeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateVector4KeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::Vector4KeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::Vector4KeyFrameAnimation>(this->shim().CreateVector4KeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCommitBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept final
+    int32_t WINRT_CALL GetCommitBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCommitBatch, WINRT_WRAP(Windows::UI::Composition::CompositionCommitBatch), Windows::UI::Composition::CompositionBatchTypes const&);
             *result = detach_from<Windows::UI::Composition::CompositionCommitBatch>(this->shim().GetCommitBatch(*reinterpret_cast<Windows::UI::Composition::CompositionBatchTypes const*>(&batchType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Windows::UI::Composition::ICompositor2>
 {
-    HRESULT __stdcall CreateAmbientLight(void** result) noexcept final
+    int32_t WINRT_CALL CreateAmbientLight(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAmbientLight, WINRT_WRAP(Windows::UI::Composition::AmbientLight));
             *result = detach_from<Windows::UI::Composition::AmbientLight>(this->shim().CreateAmbientLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAnimationGroup(void** result) noexcept final
+    int32_t WINRT_CALL CreateAnimationGroup(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAnimationGroup, WINRT_WRAP(Windows::UI::Composition::CompositionAnimationGroup));
             *result = detach_from<Windows::UI::Composition::CompositionAnimationGroup>(this->shim().CreateAnimationGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBackdropBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateBackdropBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBackdropBrush, WINRT_WRAP(Windows::UI::Composition::CompositionBackdropBrush));
             *result = detach_from<Windows::UI::Composition::CompositionBackdropBrush>(this->shim().CreateBackdropBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDistantLight(void** result) noexcept final
+    int32_t WINRT_CALL CreateDistantLight(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDistantLight, WINRT_WRAP(Windows::UI::Composition::DistantLight));
             *result = detach_from<Windows::UI::Composition::DistantLight>(this->shim().CreateDistantLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDropShadow(void** result) noexcept final
+    int32_t WINRT_CALL CreateDropShadow(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDropShadow, WINRT_WRAP(Windows::UI::Composition::DropShadow));
             *result = detach_from<Windows::UI::Composition::DropShadow>(this->shim().CreateDropShadow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateImplicitAnimationCollection(void** result) noexcept final
+    int32_t WINRT_CALL CreateImplicitAnimationCollection(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateImplicitAnimationCollection, WINRT_WRAP(Windows::UI::Composition::ImplicitAnimationCollection));
             *result = detach_from<Windows::UI::Composition::ImplicitAnimationCollection>(this->shim().CreateImplicitAnimationCollection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLayerVisual(void** result) noexcept final
+    int32_t WINRT_CALL CreateLayerVisual(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLayerVisual, WINRT_WRAP(Windows::UI::Composition::LayerVisual));
             *result = detach_from<Windows::UI::Composition::LayerVisual>(this->shim().CreateLayerVisual());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMaskBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateMaskBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMaskBrush, WINRT_WRAP(Windows::UI::Composition::CompositionMaskBrush));
             *result = detach_from<Windows::UI::Composition::CompositionMaskBrush>(this->shim().CreateMaskBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateNineGridBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateNineGridBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateNineGridBrush, WINRT_WRAP(Windows::UI::Composition::CompositionNineGridBrush));
             *result = detach_from<Windows::UI::Composition::CompositionNineGridBrush>(this->shim().CreateNineGridBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePointLight(void** result) noexcept final
+    int32_t WINRT_CALL CreatePointLight(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePointLight, WINRT_WRAP(Windows::UI::Composition::PointLight));
             *result = detach_from<Windows::UI::Composition::PointLight>(this->shim().CreatePointLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpotLight(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpotLight(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpotLight, WINRT_WRAP(Windows::UI::Composition::SpotLight));
             *result = detach_from<Windows::UI::Composition::SpotLight>(this->shim().CreateSpotLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStepEasingFunction(void** result) noexcept final
+    int32_t WINRT_CALL CreateStepEasingFunction(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStepEasingFunction, WINRT_WRAP(Windows::UI::Composition::StepEasingFunction));
             *result = detach_from<Windows::UI::Composition::StepEasingFunction>(this->shim().CreateStepEasingFunction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStepEasingFunctionWithStepCount(int32_t stepCount, void** result) noexcept final
+    int32_t WINRT_CALL CreateStepEasingFunctionWithStepCount(int32_t stepCount, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStepEasingFunction, WINRT_WRAP(Windows::UI::Composition::StepEasingFunction), int32_t);
             *result = detach_from<Windows::UI::Composition::StepEasingFunction>(this->shim().CreateStepEasingFunction(stepCount));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor3> : produce_base<D, Windows::UI::Composition::ICompositor3>
 {
-    HRESULT __stdcall CreateHostBackdropBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateHostBackdropBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHostBackdropBrush, WINRT_WRAP(Windows::UI::Composition::CompositionBackdropBrush));
             *result = detach_from<Windows::UI::Composition::CompositionBackdropBrush>(this->shim().CreateHostBackdropBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor4> : produce_base<D, Windows::UI::Composition::ICompositor4>
 {
-    HRESULT __stdcall CreateColorGradientStop(void** result) noexcept final
+    int32_t WINRT_CALL CreateColorGradientStop(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateColorGradientStop, WINRT_WRAP(Windows::UI::Composition::CompositionColorGradientStop));
             *result = detach_from<Windows::UI::Composition::CompositionColorGradientStop>(this->shim().CreateColorGradientStop());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateColorGradientStopWithOffsetAndColor(float offset, struct struct_Windows_UI_Color color, void** result) noexcept final
+    int32_t WINRT_CALL CreateColorGradientStopWithOffsetAndColor(float offset, struct struct_Windows_UI_Color color, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateColorGradientStop, WINRT_WRAP(Windows::UI::Composition::CompositionColorGradientStop), float, Windows::UI::Color const&);
             *result = detach_from<Windows::UI::Composition::CompositionColorGradientStop>(this->shim().CreateColorGradientStop(offset, *reinterpret_cast<Windows::UI::Color const*>(&color)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLinearGradientBrush(void** result) noexcept final
+    int32_t WINRT_CALL CreateLinearGradientBrush(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLinearGradientBrush, WINRT_WRAP(Windows::UI::Composition::CompositionLinearGradientBrush));
             *result = detach_from<Windows::UI::Composition::CompositionLinearGradientBrush>(this->shim().CreateLinearGradientBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpringScalarAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpringScalarAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpringScalarAnimation, WINRT_WRAP(Windows::UI::Composition::SpringScalarNaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::SpringScalarNaturalMotionAnimation>(this->shim().CreateSpringScalarAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpringVector2Animation(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpringVector2Animation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpringVector2Animation, WINRT_WRAP(Windows::UI::Composition::SpringVector2NaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::SpringVector2NaturalMotionAnimation>(this->shim().CreateSpringVector2Animation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpringVector3Animation(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpringVector3Animation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpringVector3Animation, WINRT_WRAP(Windows::UI::Composition::SpringVector3NaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::SpringVector3NaturalMotionAnimation>(this->shim().CreateSpringVector3Animation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor5> : produce_base<D, Windows::UI::Composition::ICompositor5>
 {
-    HRESULT __stdcall get_Comment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Comment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Comment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Comment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Comment(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Comment(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Comment, WINRT_WRAP(void), hstring const&);
             this->shim().Comment(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalPlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_GlobalPlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalPlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().GlobalPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GlobalPlaybackRate(float value) noexcept final
+    int32_t WINRT_CALL put_GlobalPlaybackRate(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalPlaybackRate, WINRT_WRAP(void), float);
             this->shim().GlobalPlaybackRate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBounceScalarAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreateBounceScalarAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBounceScalarAnimation, WINRT_WRAP(Windows::UI::Composition::BounceScalarNaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::BounceScalarNaturalMotionAnimation>(this->shim().CreateBounceScalarAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBounceVector2Animation(void** result) noexcept final
+    int32_t WINRT_CALL CreateBounceVector2Animation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBounceVector2Animation, WINRT_WRAP(Windows::UI::Composition::BounceVector2NaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::BounceVector2NaturalMotionAnimation>(this->shim().CreateBounceVector2Animation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBounceVector3Animation(void** result) noexcept final
+    int32_t WINRT_CALL CreateBounceVector3Animation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBounceVector3Animation, WINRT_WRAP(Windows::UI::Composition::BounceVector3NaturalMotionAnimation));
             *result = detach_from<Windows::UI::Composition::BounceVector3NaturalMotionAnimation>(this->shim().CreateBounceVector3Animation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContainerShape(void** result) noexcept final
+    int32_t WINRT_CALL CreateContainerShape(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContainerShape, WINRT_WRAP(Windows::UI::Composition::CompositionContainerShape));
             *result = detach_from<Windows::UI::Composition::CompositionContainerShape>(this->shim().CreateContainerShape());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateEllipseGeometry(void** result) noexcept final
+    int32_t WINRT_CALL CreateEllipseGeometry(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateEllipseGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionEllipseGeometry));
             *result = detach_from<Windows::UI::Composition::CompositionEllipseGeometry>(this->shim().CreateEllipseGeometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLineGeometry(void** result) noexcept final
+    int32_t WINRT_CALL CreateLineGeometry(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLineGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionLineGeometry));
             *result = detach_from<Windows::UI::Composition::CompositionLineGeometry>(this->shim().CreateLineGeometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePathGeometry(void** result) noexcept final
+    int32_t WINRT_CALL CreatePathGeometry(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePathGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionPathGeometry));
             *result = detach_from<Windows::UI::Composition::CompositionPathGeometry>(this->shim().CreatePathGeometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePathGeometryWithPath(void* path, void** result) noexcept final
+    int32_t WINRT_CALL CreatePathGeometryWithPath(void* path, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePathGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionPathGeometry), Windows::UI::Composition::CompositionPath const&);
             *result = detach_from<Windows::UI::Composition::CompositionPathGeometry>(this->shim().CreatePathGeometry(*reinterpret_cast<Windows::UI::Composition::CompositionPath const*>(&path)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePathKeyFrameAnimation(void** result) noexcept final
+    int32_t WINRT_CALL CreatePathKeyFrameAnimation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePathKeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::PathKeyFrameAnimation));
             *result = detach_from<Windows::UI::Composition::PathKeyFrameAnimation>(this->shim().CreatePathKeyFrameAnimation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateRectangleGeometry(void** result) noexcept final
+    int32_t WINRT_CALL CreateRectangleGeometry(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRectangleGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionRectangleGeometry));
             *result = detach_from<Windows::UI::Composition::CompositionRectangleGeometry>(this->shim().CreateRectangleGeometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateRoundedRectangleGeometry(void** result) noexcept final
+    int32_t WINRT_CALL CreateRoundedRectangleGeometry(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRoundedRectangleGeometry, WINRT_WRAP(Windows::UI::Composition::CompositionRoundedRectangleGeometry));
             *result = detach_from<Windows::UI::Composition::CompositionRoundedRectangleGeometry>(this->shim().CreateRoundedRectangleGeometry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateShapeVisual(void** result) noexcept final
+    int32_t WINRT_CALL CreateShapeVisual(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateShapeVisual, WINRT_WRAP(Windows::UI::Composition::ShapeVisual));
             *result = detach_from<Windows::UI::Composition::ShapeVisual>(this->shim().CreateShapeVisual());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpriteShape(void** result) noexcept final
+    int32_t WINRT_CALL CreateSpriteShape(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpriteShape, WINRT_WRAP(Windows::UI::Composition::CompositionSpriteShape));
             *result = detach_from<Windows::UI::Composition::CompositionSpriteShape>(this->shim().CreateSpriteShape());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSpriteShapeWithGeometry(void* geometry, void** result) noexcept final
+    int32_t WINRT_CALL CreateSpriteShapeWithGeometry(void* geometry, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSpriteShape, WINRT_WRAP(Windows::UI::Composition::CompositionSpriteShape), Windows::UI::Composition::CompositionGeometry const&);
             *result = detach_from<Windows::UI::Composition::CompositionSpriteShape>(this->shim().CreateSpriteShape(*reinterpret_cast<Windows::UI::Composition::CompositionGeometry const*>(&geometry)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateViewBox(void** result) noexcept final
+    int32_t WINRT_CALL CreateViewBox(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateViewBox, WINRT_WRAP(Windows::UI::Composition::CompositionViewBox));
             *result = detach_from<Windows::UI::Composition::CompositionViewBox>(this->shim().CreateViewBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCommitAsync(void** action) noexcept final
+    int32_t WINRT_CALL RequestCommitAsync(void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCommitAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RequestCommitAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositor6> : produce_base<D, Windows::UI::Composition::ICompositor6>
+{
+    int32_t WINRT_CALL CreateGeometricClip(void** result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateGeometricClip, WINRT_WRAP(Windows::UI::Composition::CompositionGeometricClip));
+            *result = detach_from<Windows::UI::Composition::CompositionGeometricClip>(this->shim().CreateGeometricClip());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL CreateGeometricClipWithGeometry(void* geometry, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateGeometricClip, WINRT_WRAP(Windows::UI::Composition::CompositionGeometricClip), Windows::UI::Composition::CompositionGeometry const&);
+            *result = detach_from<Windows::UI::Composition::CompositionGeometricClip>(this->shim().CreateGeometricClip(*reinterpret_cast<Windows::UI::Composition::CompositionGeometry const*>(&geometry)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL CreateRedirectVisual(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRedirectVisual, WINRT_WRAP(Windows::UI::Composition::RedirectVisual));
+            *result = detach_from<Windows::UI::Composition::RedirectVisual>(this->shim().CreateRedirectVisual());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL CreateRedirectVisualWithSourceVisual(void* source, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRedirectVisual, WINRT_WRAP(Windows::UI::Composition::RedirectVisual), Windows::UI::Composition::Visual const&);
+            *result = detach_from<Windows::UI::Composition::RedirectVisual>(this->shim().CreateRedirectVisual(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&source)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL CreateBooleanKeyFrameAnimation(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBooleanKeyFrameAnimation, WINRT_WRAP(Windows::UI::Composition::BooleanKeyFrameAnimation));
+            *result = detach_from<Windows::UI::Composition::BooleanKeyFrameAnimation>(this->shim().CreateBooleanKeyFrameAnimation());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositorStatics> : produce_base<D, Windows::UI::Composition::ICompositorStatics>
 {
-    HRESULT __stdcall get_MaxGlobalPlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxGlobalPlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxGlobalPlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxGlobalPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinGlobalPlaybackRate(float* value) noexcept final
+    int32_t WINRT_CALL get_MinGlobalPlaybackRate(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinGlobalPlaybackRate, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MinGlobalPlaybackRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IContainerVisual> : produce_base<D, Windows::UI::Composition::IContainerVisual>
 {
-    HRESULT __stdcall get_Children(void** value) noexcept final
+    int32_t WINRT_CALL get_Children(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(Windows::UI::Composition::VisualCollection));
             *value = detach_from<Windows::UI::Composition::VisualCollection>(this->shim().Children());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9023,363 +8664,315 @@ struct produce<D, Windows::UI::Composition::IContainerVisualFactory> : produce_b
 template <typename D>
 struct produce<D, Windows::UI::Composition::ICubicBezierEasingFunction> : produce_base<D, Windows::UI::Composition::ICubicBezierEasingFunction>
 {
-    HRESULT __stdcall get_ControlPoint1(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_ControlPoint1(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlPoint1, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().ControlPoint1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ControlPoint2(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_ControlPoint2(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlPoint2, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().ControlPoint2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IDistantLight> : produce_base<D, Windows::UI::Composition::IDistantLight>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CoordinateSpace(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(Windows::UI::Composition::Visual));
             *value = detach_from<Windows::UI::Composition::Visual>(this->shim().CoordinateSpace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CoordinateSpace(void* value) noexcept final
+    int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().CoordinateSpace(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direction(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Direction(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Direction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Direction(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Direction(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Direction(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IDistantLight2> : produce_base<D, Windows::UI::Composition::IDistantLight2>
 {
-    HRESULT __stdcall get_Intensity(float* value) noexcept final
+    int32_t WINRT_CALL get_Intensity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Intensity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Intensity(float value) noexcept final
+    int32_t WINRT_CALL put_Intensity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(void), float);
             this->shim().Intensity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IDropShadow> : produce_base<D, Windows::UI::Composition::IDropShadow>
 {
-    HRESULT __stdcall get_BlurRadius(float* value) noexcept final
+    int32_t WINRT_CALL get_BlurRadius(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BlurRadius, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().BlurRadius());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BlurRadius(float value) noexcept final
+    int32_t WINRT_CALL put_BlurRadius(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BlurRadius, WINRT_WRAP(void), float);
             this->shim().BlurRadius(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mask(void** value) noexcept final
+    int32_t WINRT_CALL get_Mask(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mask, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().Mask());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mask(void* value) noexcept final
+    int32_t WINRT_CALL put_Mask(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mask, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().Mask(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Opacity(float* value) noexcept final
+    int32_t WINRT_CALL get_Opacity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Opacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Opacity(float value) noexcept final
+    int32_t WINRT_CALL put_Opacity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(void), float);
             this->shim().Opacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IDropShadow2> : produce_base<D, Windows::UI::Composition::IDropShadow2>
 {
-    HRESULT __stdcall get_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy* value) noexcept final
+    int32_t WINRT_CALL get_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePolicy, WINRT_WRAP(Windows::UI::Composition::CompositionDropShadowSourcePolicy));
             *value = detach_from<Windows::UI::Composition::CompositionDropShadowSourcePolicy>(this->shim().SourcePolicy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy value) noexcept final
+    int32_t WINRT_CALL put_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePolicy, WINRT_WRAP(void), Windows::UI::Composition::CompositionDropShadowSourcePolicy const&);
             this->shim().SourcePolicy(*reinterpret_cast<Windows::UI::Composition::CompositionDropShadowSourcePolicy const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IExpressionAnimation> : produce_base<D, Windows::UI::Composition::IExpressionAnimation>
 {
-    HRESULT __stdcall get_Expression(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Expression(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Expression, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Expression());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Expression(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Expression(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Expression, WINRT_WRAP(void), hstring const&);
             this->shim().Expression(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9390,366 +8983,316 @@ struct produce<D, Windows::UI::Composition::IImplicitAnimationCollection> : prod
 template <typename D>
 struct produce<D, Windows::UI::Composition::IInsetClip> : produce_base<D, Windows::UI::Composition::IInsetClip>
 {
-    HRESULT __stdcall get_BottomInset(float* value) noexcept final
+    int32_t WINRT_CALL get_BottomInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().BottomInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BottomInset(float value) noexcept final
+    int32_t WINRT_CALL put_BottomInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BottomInset, WINRT_WRAP(void), float);
             this->shim().BottomInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftInset(float* value) noexcept final
+    int32_t WINRT_CALL get_LeftInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LeftInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftInset(float value) noexcept final
+    int32_t WINRT_CALL put_LeftInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftInset, WINRT_WRAP(void), float);
             this->shim().LeftInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightInset(float* value) noexcept final
+    int32_t WINRT_CALL get_RightInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RightInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightInset(float value) noexcept final
+    int32_t WINRT_CALL put_RightInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightInset, WINRT_WRAP(void), float);
             this->shim().RightInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TopInset(float* value) noexcept final
+    int32_t WINRT_CALL get_TopInset(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInset, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().TopInset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TopInset(float value) noexcept final
+    int32_t WINRT_CALL put_TopInset(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TopInset, WINRT_WRAP(void), float);
             this->shim().TopInset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IKeyFrameAnimation>
 {
-    HRESULT __stdcall get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DelayTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DelayTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_DelayTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().DelayTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Duration(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Duration(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior* value) noexcept final
+    int32_t WINRT_CALL get_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IterationBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationIterationBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationIterationBehavior>(this->shim().IterationBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior value) noexcept final
+    int32_t WINRT_CALL put_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IterationBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationIterationBehavior const&);
             this->shim().IterationBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationIterationBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IterationCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_IterationCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IterationCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().IterationCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IterationCount(int32_t value) noexcept final
+    int32_t WINRT_CALL put_IterationCount(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IterationCount, WINRT_WRAP(void), int32_t);
             this->shim().IterationCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeyFrameCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_KeyFrameCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyFrameCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().KeyFrameCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept final
+    int32_t WINRT_CALL get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationStopBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationStopBehavior>(this->shim().StopBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept final
+    int32_t WINRT_CALL put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationStopBehavior const&);
             this->shim().StopBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationStopBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value) noexcept final
+    int32_t WINRT_CALL InsertExpressionKeyFrame(float normalizedProgressKey, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertExpressionKeyFrame, WINRT_WRAP(void), float, hstring const&);
             this->shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, void* value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertExpressionKeyFrame, WINRT_WRAP(void), float, hstring const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertExpressionKeyFrame(normalizedProgressKey, *reinterpret_cast<hstring const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IKeyFrameAnimation2> : produce_base<D, Windows::UI::Composition::IKeyFrameAnimation2>
 {
-    HRESULT __stdcall get_Direction(Windows::UI::Composition::AnimationDirection* value) noexcept final
+    int32_t WINRT_CALL get_Direction(Windows::UI::Composition::AnimationDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(Windows::UI::Composition::AnimationDirection));
             *value = detach_from<Windows::UI::Composition::AnimationDirection>(this->shim().Direction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Direction(Windows::UI::Composition::AnimationDirection value) noexcept final
+    int32_t WINRT_CALL put_Direction(Windows::UI::Composition::AnimationDirection value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(void), Windows::UI::Composition::AnimationDirection const&);
             this->shim().Direction(*reinterpret_cast<Windows::UI::Composition::AnimationDirection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IKeyFrameAnimation3> : produce_base<D, Windows::UI::Composition::IKeyFrameAnimation3>
 {
-    HRESULT __stdcall get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept final
+    int32_t WINRT_CALL get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationDelayBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationDelayBehavior>(this->shim().DelayBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept final
+    int32_t WINRT_CALL put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationDelayBehavior const&);
             this->shim().DelayBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationDelayBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9760,66 +9303,58 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimationFactory> : produce
 template <typename D>
 struct produce<D, Windows::UI::Composition::ILayerVisual> : produce_base<D, Windows::UI::Composition::ILayerVisual>
 {
-    HRESULT __stdcall get_Effect(void** value) noexcept final
+    int32_t WINRT_CALL get_Effect(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Effect, WINRT_WRAP(Windows::UI::Composition::CompositionEffectBrush));
             *value = detach_from<Windows::UI::Composition::CompositionEffectBrush>(this->shim().Effect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Effect(void* value) noexcept final
+    int32_t WINRT_CALL put_Effect(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Effect, WINRT_WRAP(void), Windows::UI::Composition::CompositionEffectBrush const&);
             this->shim().Effect(*reinterpret_cast<Windows::UI::Composition::CompositionEffectBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ILayerVisual2> : produce_base<D, Windows::UI::Composition::ILayerVisual2>
 {
-    HRESULT __stdcall get_Shadow(void** value) noexcept final
+    int32_t WINRT_CALL get_Shadow(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shadow, WINRT_WRAP(Windows::UI::Composition::CompositionShadow));
             *value = detach_from<Windows::UI::Composition::CompositionShadow>(this->shim().Shadow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Shadow(void* value) noexcept final
+    int32_t WINRT_CALL put_Shadow(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shadow, WINRT_WRAP(void), Windows::UI::Composition::CompositionShadow const&);
             this->shim().Shadow(*reinterpret_cast<Windows::UI::Composition::CompositionShadow const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9830,88 +9365,76 @@ struct produce<D, Windows::UI::Composition::ILinearEasingFunction> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Composition::INaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::INaturalMotionAnimation>
 {
-    HRESULT __stdcall get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept final
+    int32_t WINRT_CALL get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationDelayBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationDelayBehavior>(this->shim().DelayBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept final
+    int32_t WINRT_CALL put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationDelayBehavior const&);
             this->shim().DelayBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationDelayBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DelayTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DelayTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_DelayTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().DelayTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept final
+    int32_t WINRT_CALL get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopBehavior, WINRT_WRAP(Windows::UI::Composition::AnimationStopBehavior));
             *value = detach_from<Windows::UI::Composition::AnimationStopBehavior>(this->shim().StopBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept final
+    int32_t WINRT_CALL put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopBehavior, WINRT_WRAP(void), Windows::UI::Composition::AnimationStopBehavior const&);
             this->shim().StopBehavior(*reinterpret_cast<Windows::UI::Composition::AnimationStopBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9922,470 +9445,437 @@ struct produce<D, Windows::UI::Composition::INaturalMotionAnimationFactory> : pr
 template <typename D>
 struct produce<D, Windows::UI::Composition::IPathKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IPathKeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, void* path) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, void* path) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::UI::Composition::CompositionPath const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::UI::Composition::CompositionPath const*>(&path));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, void* path, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, void* path, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::UI::Composition::CompositionPath const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::UI::Composition::CompositionPath const*>(&path), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IPointLight> : produce_base<D, Windows::UI::Composition::IPointLight>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConstantAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_ConstantAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConstantAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().ConstantAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ConstantAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_ConstantAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConstantAttenuation, WINRT_WRAP(void), float);
             this->shim().ConstantAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CoordinateSpace(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(Windows::UI::Composition::Visual));
             *value = detach_from<Windows::UI::Composition::Visual>(this->shim().CoordinateSpace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CoordinateSpace(void* value) noexcept final
+    int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().CoordinateSpace(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinearAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_LinearAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinearAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LinearAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LinearAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_LinearAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinearAttenuation, WINRT_WRAP(void), float);
             this->shim().LinearAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QuadraticAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_QuadraticAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QuadraticAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().QuadraticAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_QuadraticAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_QuadraticAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QuadraticAttenuation, WINRT_WRAP(void), float);
             this->shim().QuadraticAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IPointLight2> : produce_base<D, Windows::UI::Composition::IPointLight2>
 {
-    HRESULT __stdcall get_Intensity(float* value) noexcept final
+    int32_t WINRT_CALL get_Intensity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Intensity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Intensity(float value) noexcept final
+    int32_t WINRT_CALL put_Intensity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Intensity, WINRT_WRAP(void), float);
             this->shim().Intensity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IPointLight3> : produce_base<D, Windows::UI::Composition::IPointLight3>
 {
-    HRESULT __stdcall get_MinAttenuationCutoff(float* value) noexcept final
+    int32_t WINRT_CALL get_MinAttenuationCutoff(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinAttenuationCutoff, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MinAttenuationCutoff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinAttenuationCutoff(float value) noexcept final
+    int32_t WINRT_CALL put_MinAttenuationCutoff(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinAttenuationCutoff, WINRT_WRAP(void), float);
             this->shim().MinAttenuationCutoff(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxAttenuationCutoff(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxAttenuationCutoff(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAttenuationCutoff, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxAttenuationCutoff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxAttenuationCutoff(float value) noexcept final
+    int32_t WINRT_CALL put_MaxAttenuationCutoff(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAttenuationCutoff, WINRT_WRAP(void), float);
             this->shim().MaxAttenuationCutoff(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IQuaternionKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IQuaternionKeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::quaternion const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::quaternion const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::IRedirectVisual> : produce_base<D, Windows::UI::Composition::IRedirectVisual>
+{
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::UI::Composition::Visual));
+            *value = detach_from<Windows::UI::Composition::Visual>(this->shim().Source());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_Source(void* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
+            this->shim().Source(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IRenderingDeviceReplacedEventArgs> : produce_base<D, Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>
 {
-    HRESULT __stdcall get_GraphicsDevice(void** value) noexcept final
+    int32_t WINRT_CALL get_GraphicsDevice(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GraphicsDevice, WINRT_WRAP(Windows::UI::Composition::CompositionGraphicsDevice));
             *value = detach_from<Windows::UI::Composition::CompositionGraphicsDevice>(this->shim().GraphicsDevice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IScalarKeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IScalarKeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, float value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, float);
             this->shim().InsertKeyFrame(normalizedProgressKey, value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, float, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, value, *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IScalarNaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IScalarNaturalMotionAnimation>
 {
-    HRESULT __stdcall get_FinalValue(void** value) noexcept final
+    int32_t WINRT_CALL get_FinalValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().FinalValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FinalValue(void* value) noexcept final
+    int32_t WINRT_CALL put_FinalValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(void), Windows::Foundation::IReference<float> const&);
             this->shim().FinalValue(*reinterpret_cast<Windows::Foundation::IReference<float> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialValue(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().InitialValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialValue(void* value) noexcept final
+    int32_t WINRT_CALL put_InitialValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(void), Windows::Foundation::IReference<float> const&);
             this->shim().InitialValue(*reinterpret_cast<Windows::Foundation::IReference<float> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialVelocity(float* value) noexcept final
+    int32_t WINRT_CALL get_InitialVelocity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InitialVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialVelocity(float value) noexcept final
+    int32_t WINRT_CALL put_InitialVelocity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(void), float);
             this->shim().InitialVelocity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -10396,1021 +9886,883 @@ struct produce<D, Windows::UI::Composition::IScalarNaturalMotionAnimationFactory
 template <typename D>
 struct produce<D, Windows::UI::Composition::IShapeVisual> : produce_base<D, Windows::UI::Composition::IShapeVisual>
 {
-    HRESULT __stdcall get_Shapes(void** value) noexcept final
+    int32_t WINRT_CALL get_Shapes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shapes, WINRT_WRAP(Windows::UI::Composition::CompositionShapeCollection));
             *value = detach_from<Windows::UI::Composition::CompositionShapeCollection>(this->shim().Shapes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ViewBox(void** value) noexcept final
+    int32_t WINRT_CALL get_ViewBox(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewBox, WINRT_WRAP(Windows::UI::Composition::CompositionViewBox));
             *value = detach_from<Windows::UI::Composition::CompositionViewBox>(this->shim().ViewBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewBox(void* value) noexcept final
+    int32_t WINRT_CALL put_ViewBox(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewBox, WINRT_WRAP(void), Windows::UI::Composition::CompositionViewBox const&);
             this->shim().ViewBox(*reinterpret_cast<Windows::UI::Composition::CompositionViewBox const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpotLight> : produce_base<D, Windows::UI::Composition::ISpotLight>
 {
-    HRESULT __stdcall get_ConstantAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_ConstantAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConstantAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().ConstantAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ConstantAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_ConstantAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConstantAttenuation, WINRT_WRAP(void), float);
             this->shim().ConstantAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CoordinateSpace(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(Windows::UI::Composition::Visual));
             *value = detach_from<Windows::UI::Composition::Visual>(this->shim().CoordinateSpace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CoordinateSpace(void* value) noexcept final
+    int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSpace, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().CoordinateSpace(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Direction(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Direction(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Direction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Direction(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Direction(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Direction, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Direction(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InnerConeAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_InnerConeAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InnerConeAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InnerConeAngle(float value) noexcept final
+    int32_t WINRT_CALL put_InnerConeAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeAngle, WINRT_WRAP(void), float);
             this->shim().InnerConeAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InnerConeAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_InnerConeAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InnerConeAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InnerConeAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_InnerConeAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().InnerConeAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InnerConeColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_InnerConeColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().InnerConeColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InnerConeColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_InnerConeColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().InnerConeColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinearAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_LinearAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinearAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LinearAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LinearAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_LinearAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinearAttenuation, WINRT_WRAP(void), float);
             this->shim().LinearAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OuterConeAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_OuterConeAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().OuterConeAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OuterConeAngle(float value) noexcept final
+    int32_t WINRT_CALL put_OuterConeAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeAngle, WINRT_WRAP(void), float);
             this->shim().OuterConeAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OuterConeAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_OuterConeAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().OuterConeAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OuterConeAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_OuterConeAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().OuterConeAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OuterConeColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_OuterConeColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().OuterConeColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OuterConeColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_OuterConeColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().OuterConeColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QuadraticAttenuation(float* value) noexcept final
+    int32_t WINRT_CALL get_QuadraticAttenuation(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QuadraticAttenuation, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().QuadraticAttenuation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_QuadraticAttenuation(float value) noexcept final
+    int32_t WINRT_CALL put_QuadraticAttenuation(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QuadraticAttenuation, WINRT_WRAP(void), float);
             this->shim().QuadraticAttenuation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpotLight2> : produce_base<D, Windows::UI::Composition::ISpotLight2>
 {
-    HRESULT __stdcall get_InnerConeIntensity(float* value) noexcept final
+    int32_t WINRT_CALL get_InnerConeIntensity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeIntensity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().InnerConeIntensity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InnerConeIntensity(float value) noexcept final
+    int32_t WINRT_CALL put_InnerConeIntensity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InnerConeIntensity, WINRT_WRAP(void), float);
             this->shim().InnerConeIntensity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OuterConeIntensity(float* value) noexcept final
+    int32_t WINRT_CALL get_OuterConeIntensity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeIntensity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().OuterConeIntensity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OuterConeIntensity(float value) noexcept final
+    int32_t WINRT_CALL put_OuterConeIntensity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OuterConeIntensity, WINRT_WRAP(void), float);
             this->shim().OuterConeIntensity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpotLight3> : produce_base<D, Windows::UI::Composition::ISpotLight3>
 {
-    HRESULT __stdcall get_MinAttenuationCutoff(float* value) noexcept final
+    int32_t WINRT_CALL get_MinAttenuationCutoff(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinAttenuationCutoff, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MinAttenuationCutoff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinAttenuationCutoff(float value) noexcept final
+    int32_t WINRT_CALL put_MinAttenuationCutoff(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinAttenuationCutoff, WINRT_WRAP(void), float);
             this->shim().MinAttenuationCutoff(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxAttenuationCutoff(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxAttenuationCutoff(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAttenuationCutoff, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxAttenuationCutoff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxAttenuationCutoff(float value) noexcept final
+    int32_t WINRT_CALL put_MaxAttenuationCutoff(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAttenuationCutoff, WINRT_WRAP(void), float);
             this->shim().MaxAttenuationCutoff(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpringScalarNaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::ISpringScalarNaturalMotionAnimation>
 {
-    HRESULT __stdcall get_DampingRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_DampingRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DampingRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DampingRatio(float value) noexcept final
+    int32_t WINRT_CALL put_DampingRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(void), float);
             this->shim().DampingRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Period());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Period(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpringVector2NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::ISpringVector2NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_DampingRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_DampingRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DampingRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DampingRatio(float value) noexcept final
+    int32_t WINRT_CALL put_DampingRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(void), float);
             this->shim().DampingRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Period());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Period(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpringVector3NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::ISpringVector3NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_DampingRatio(float* value) noexcept final
+    int32_t WINRT_CALL get_DampingRatio(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DampingRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DampingRatio(float value) noexcept final
+    int32_t WINRT_CALL put_DampingRatio(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DampingRatio, WINRT_WRAP(void), float);
             this->shim().DampingRatio(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Period());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Period(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpriteVisual> : produce_base<D, Windows::UI::Composition::ISpriteVisual>
 {
-    HRESULT __stdcall get_Brush(void** value) noexcept final
+    int32_t WINRT_CALL get_Brush(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Brush, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().Brush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Brush(void* value) noexcept final
+    int32_t WINRT_CALL put_Brush(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Brush, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().Brush(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::ISpriteVisual2> : produce_base<D, Windows::UI::Composition::ISpriteVisual2>
 {
-    HRESULT __stdcall get_Shadow(void** value) noexcept final
+    int32_t WINRT_CALL get_Shadow(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shadow, WINRT_WRAP(Windows::UI::Composition::CompositionShadow));
             *value = detach_from<Windows::UI::Composition::CompositionShadow>(this->shim().Shadow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Shadow(void* value) noexcept final
+    int32_t WINRT_CALL put_Shadow(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shadow, WINRT_WRAP(void), Windows::UI::Composition::CompositionShadow const&);
             this->shim().Shadow(*reinterpret_cast<Windows::UI::Composition::CompositionShadow const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IStepEasingFunction> : produce_base<D, Windows::UI::Composition::IStepEasingFunction>
 {
-    HRESULT __stdcall get_FinalStep(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FinalStep(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalStep, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FinalStep());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FinalStep(int32_t value) noexcept final
+    int32_t WINRT_CALL put_FinalStep(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalStep, WINRT_WRAP(void), int32_t);
             this->shim().FinalStep(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialStep(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_InitialStep(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialStep, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().InitialStep());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialStep(int32_t value) noexcept final
+    int32_t WINRT_CALL put_InitialStep(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialStep, WINRT_WRAP(void), int32_t);
             this->shim().InitialStep(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFinalStepSingleFrame(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFinalStepSingleFrame(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFinalStepSingleFrame, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFinalStepSingleFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsFinalStepSingleFrame(bool value) noexcept final
+    int32_t WINRT_CALL put_IsFinalStepSingleFrame(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFinalStepSingleFrame, WINRT_WRAP(void), bool);
             this->shim().IsFinalStepSingleFrame(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInitialStepSingleFrame(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInitialStepSingleFrame(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInitialStepSingleFrame, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInitialStepSingleFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsInitialStepSingleFrame(bool value) noexcept final
+    int32_t WINRT_CALL put_IsInitialStepSingleFrame(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInitialStepSingleFrame, WINRT_WRAP(void), bool);
             this->shim().IsInitialStepSingleFrame(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StepCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_StepCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StepCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().StepCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StepCount(int32_t value) noexcept final
+    int32_t WINRT_CALL put_StepCount(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StepCount, WINRT_WRAP(void), int32_t);
             this->shim().StepCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVector2KeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IVector2KeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float2 const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float2 const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVector2NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IVector2NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_FinalValue(void** value) noexcept final
+    int32_t WINRT_CALL get_FinalValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float2>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float2>>(this->shim().FinalValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FinalValue(void* value) noexcept final
+    int32_t WINRT_CALL put_FinalValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::Numerics::float2> const&);
             this->shim().FinalValue(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::Numerics::float2> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialValue(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float2>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float2>>(this->shim().InitialValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialValue(void* value) noexcept final
+    int32_t WINRT_CALL put_InitialValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::Numerics::float2> const&);
             this->shim().InitialValue(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::Numerics::float2> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialVelocity(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_InitialVelocity(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().InitialVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialVelocity(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_InitialVelocity(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().InitialVelocity(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -11421,122 +10773,106 @@ struct produce<D, Windows::UI::Composition::IVector2NaturalMotionAnimationFactor
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVector3KeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IVector3KeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float3 const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float3 const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVector3NaturalMotionAnimation> : produce_base<D, Windows::UI::Composition::IVector3NaturalMotionAnimation>
 {
-    HRESULT __stdcall get_FinalValue(void** value) noexcept final
+    int32_t WINRT_CALL get_FinalValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().FinalValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FinalValue(void* value) noexcept final
+    int32_t WINRT_CALL put_FinalValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalValue, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> const&);
             this->shim().FinalValue(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialValue(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().InitialValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialValue(void* value) noexcept final
+    int32_t WINRT_CALL put_InitialValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialValue, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> const&);
             this->shim().InitialValue(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialVelocity(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_InitialVelocity(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().InitialVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialVelocity(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_InitialVelocity(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialVelocity, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().InitialVelocity(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -11547,691 +10883,595 @@ struct produce<D, Windows::UI::Composition::IVector3NaturalMotionAnimationFactor
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVector4KeyFrameAnimation> : produce_base<D, Windows::UI::Composition::IVector4KeyFrameAnimation>
 {
-    HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value) noexcept final
+    int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float4 const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value, void* easingFunction) noexcept final
+    int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value, void* easingFunction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertKeyFrame, WINRT_WRAP(void), float, Windows::Foundation::Numerics::float4 const&, Windows::UI::Composition::CompositionEasingFunction const&);
             this->shim().InsertKeyFrame(normalizedProgressKey, *reinterpret_cast<Windows::Foundation::Numerics::float4 const*>(&value), *reinterpret_cast<Windows::UI::Composition::CompositionEasingFunction const*>(&easingFunction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::UI::Composition::IVisual>
 {
-    HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().AnchorPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnchorPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().AnchorPoint(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility* value) noexcept final
+    int32_t WINRT_CALL get_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackfaceVisibility, WINRT_WRAP(Windows::UI::Composition::CompositionBackfaceVisibility));
             *value = detach_from<Windows::UI::Composition::CompositionBackfaceVisibility>(this->shim().BackfaceVisibility());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility value) noexcept final
+    int32_t WINRT_CALL put_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackfaceVisibility, WINRT_WRAP(void), Windows::UI::Composition::CompositionBackfaceVisibility const&);
             this->shim().BackfaceVisibility(*reinterpret_cast<Windows::UI::Composition::CompositionBackfaceVisibility const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BorderMode(Windows::UI::Composition::CompositionBorderMode* value) noexcept final
+    int32_t WINRT_CALL get_BorderMode(Windows::UI::Composition::CompositionBorderMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BorderMode, WINRT_WRAP(Windows::UI::Composition::CompositionBorderMode));
             *value = detach_from<Windows::UI::Composition::CompositionBorderMode>(this->shim().BorderMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BorderMode(Windows::UI::Composition::CompositionBorderMode value) noexcept final
+    int32_t WINRT_CALL put_BorderMode(Windows::UI::Composition::CompositionBorderMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BorderMode, WINRT_WRAP(void), Windows::UI::Composition::CompositionBorderMode const&);
             this->shim().BorderMode(*reinterpret_cast<Windows::UI::Composition::CompositionBorderMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().CenterPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterPoint, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().CenterPoint(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clip(void** value) noexcept final
+    int32_t WINRT_CALL get_Clip(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clip, WINRT_WRAP(Windows::UI::Composition::CompositionClip));
             *value = detach_from<Windows::UI::Composition::CompositionClip>(this->shim().Clip());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Clip(void* value) noexcept final
+    int32_t WINRT_CALL put_Clip(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clip, WINRT_WRAP(void), Windows::UI::Composition::CompositionClip const&);
             this->shim().Clip(*reinterpret_cast<Windows::UI::Composition::CompositionClip const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CompositeMode(Windows::UI::Composition::CompositionCompositeMode* value) noexcept final
+    int32_t WINRT_CALL get_CompositeMode(Windows::UI::Composition::CompositionCompositeMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositeMode, WINRT_WRAP(Windows::UI::Composition::CompositionCompositeMode));
             *value = detach_from<Windows::UI::Composition::CompositionCompositeMode>(this->shim().CompositeMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompositeMode(Windows::UI::Composition::CompositionCompositeMode value) noexcept final
+    int32_t WINRT_CALL put_CompositeMode(Windows::UI::Composition::CompositionCompositeMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositeMode, WINRT_WRAP(void), Windows::UI::Composition::CompositionCompositeMode const&);
             this->shim().CompositeMode(*reinterpret_cast<Windows::UI::Composition::CompositionCompositeMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsVisible(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsVisible(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsVisible, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsVisible());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsVisible(bool value) noexcept final
+    int32_t WINRT_CALL put_IsVisible(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsVisible, WINRT_WRAP(void), bool);
             this->shim().IsVisible(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Offset(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Opacity(float* value) noexcept final
+    int32_t WINRT_CALL get_Opacity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Opacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Opacity(float value) noexcept final
+    int32_t WINRT_CALL put_Opacity(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(void), float);
             this->shim().Opacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Orientation(Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL put_Orientation(Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(void), Windows::Foundation::Numerics::quaternion const&);
             this->shim().Orientation(*reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Parent(void** value) noexcept final
+    int32_t WINRT_CALL get_Parent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parent, WINRT_WRAP(Windows::UI::Composition::ContainerVisual));
             *value = detach_from<Windows::UI::Composition::ContainerVisual>(this->shim().Parent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), float);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RotationAngleInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept final
+    int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleInDegrees, WINRT_WRAP(void), float);
             this->shim().RotationAngleInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAxis(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_RotationAxis(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAxis, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().RotationAxis());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAxis(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_RotationAxis(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAxis, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().RotationAxis(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().Scale(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().Size(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float4x4* value) noexcept final
+    int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float4x4* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(Windows::Foundation::Numerics::float4x4));
             *value = detach_from<Windows::Foundation::Numerics::float4x4>(this->shim().TransformMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) noexcept final
+    int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformMatrix, WINRT_WRAP(void), Windows::Foundation::Numerics::float4x4 const&);
             this->shim().TransformMatrix(*reinterpret_cast<Windows::Foundation::Numerics::float4x4 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVisual2> : produce_base<D, Windows::UI::Composition::IVisual2>
 {
-    HRESULT __stdcall get_ParentForTransform(void** value) noexcept final
+    int32_t WINRT_CALL get_ParentForTransform(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentForTransform, WINRT_WRAP(Windows::UI::Composition::Visual));
             *value = detach_from<Windows::UI::Composition::Visual>(this->shim().ParentForTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ParentForTransform(void* value) noexcept final
+    int32_t WINRT_CALL put_ParentForTransform(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentForTransform, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().ParentForTransform(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeOffsetAdjustment, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().RelativeOffsetAdjustment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeOffsetAdjustment, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().RelativeOffsetAdjustment(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeSizeAdjustment, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().RelativeSizeAdjustment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 value) noexcept final
+    int32_t WINRT_CALL put_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeSizeAdjustment, WINRT_WRAP(void), Windows::Foundation::Numerics::float2 const&);
             this->shim().RelativeSizeAdjustment(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D, Windows::UI::Composition::IVisualCollection>
 {
-    HRESULT __stdcall get_Count(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Count(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Count, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Count());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertAbove(void* newChild, void* sibling) noexcept final
+    int32_t WINRT_CALL InsertAbove(void* newChild, void* sibling) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertAbove, WINRT_WRAP(void), Windows::UI::Composition::Visual const&, Windows::UI::Composition::Visual const&);
             this->shim().InsertAbove(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&newChild), *reinterpret_cast<Windows::UI::Composition::Visual const*>(&sibling));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertAtBottom(void* newChild) noexcept final
+    int32_t WINRT_CALL InsertAtBottom(void* newChild) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertAtBottom, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().InsertAtBottom(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&newChild));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertAtTop(void* newChild) noexcept final
+    int32_t WINRT_CALL InsertAtTop(void* newChild) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertAtTop, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().InsertAtTop(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&newChild));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertBelow(void* newChild, void* sibling) noexcept final
+    int32_t WINRT_CALL InsertBelow(void* newChild, void* sibling) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertBelow, WINRT_WRAP(void), Windows::UI::Composition::Visual const&, Windows::UI::Composition::Visual const&);
             this->shim().InsertBelow(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&newChild), *reinterpret_cast<Windows::UI::Composition::Visual const*>(&sibling));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(void* child) noexcept final
+    int32_t WINRT_CALL Remove(void* child) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().Remove(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&child));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAll() noexcept final
+    int32_t WINRT_CALL RemoveAll() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAll, WINRT_WRAP(void));
             this->shim().RemoveAll();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -12242,60 +11482,52 @@ struct produce<D, Windows::UI::Composition::IVisualFactory> : produce_base<D, Wi
 template <typename D>
 struct produce<D, Windows::UI::Composition::IVisualUnorderedCollection> : produce_base<D, Windows::UI::Composition::IVisualUnorderedCollection>
 {
-    HRESULT __stdcall get_Count(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Count(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Count, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Count());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Add(void* newVisual) noexcept final
+    int32_t WINRT_CALL Add(void* newVisual) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().Add(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&newVisual));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(void* visual) noexcept final
+    int32_t WINRT_CALL Remove(void* visual) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().Remove(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&visual));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAll() noexcept final
+    int32_t WINRT_CALL RemoveAll() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAll, WINRT_WRAP(void));
             this->shim().RemoveAll();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -12305,39 +11537,49 @@ WINRT_EXPORT namespace winrt::Windows::UI::Composition {
 
 inline float AnimationController::MaxPlaybackRate()
 {
-    return get_activation_factory<AnimationController, Windows::UI::Composition::IAnimationControllerStatics>().MaxPlaybackRate();
+    return impl::call_factory<AnimationController, Windows::UI::Composition::IAnimationControllerStatics>([&](auto&& f) { return f.MaxPlaybackRate(); });
 }
 
 inline float AnimationController::MinPlaybackRate()
 {
-    return get_activation_factory<AnimationController, Windows::UI::Composition::IAnimationControllerStatics>().MinPlaybackRate();
+    return impl::call_factory<AnimationController, Windows::UI::Composition::IAnimationControllerStatics>([&](auto&& f) { return f.MinPlaybackRate(); });
 }
 
 inline Windows::UI::Composition::CompositionCapabilities CompositionCapabilities::GetForCurrentView()
 {
-    return get_activation_factory<CompositionCapabilities, Windows::UI::Composition::ICompositionCapabilitiesStatics>().GetForCurrentView();
+    return impl::call_factory<CompositionCapabilities, Windows::UI::Composition::ICompositionCapabilitiesStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline CompositionEffectSourceParameter::CompositionEffectSourceParameter(param::hstring const& name) :
-    CompositionEffectSourceParameter(get_activation_factory<CompositionEffectSourceParameter, Windows::UI::Composition::ICompositionEffectSourceParameterFactory>().Create(name))
+    CompositionEffectSourceParameter(impl::call_factory<CompositionEffectSourceParameter, Windows::UI::Composition::ICompositionEffectSourceParameterFactory>([&](auto&& f) { return f.Create(name); }))
 {}
 
+inline void CompositionObject::StartAnimationWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, param::hstring const& propertyName, Windows::UI::Composition::CompositionAnimation const& animation)
+{
+    impl::call_factory<CompositionObject, Windows::UI::Composition::ICompositionObjectStatics>([&](auto&& f) { return f.StartAnimationWithIAnimationObject(target, propertyName, animation); });
+}
+
+inline void CompositionObject::StartAnimationGroupWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, Windows::UI::Composition::ICompositionAnimationBase const& animation)
+{
+    impl::call_factory<CompositionObject, Windows::UI::Composition::ICompositionObjectStatics>([&](auto&& f) { return f.StartAnimationGroupWithIAnimationObject(target, animation); });
+}
+
 inline CompositionPath::CompositionPath(Windows::Graphics::IGeometrySource2D const& source) :
-    CompositionPath(get_activation_factory<CompositionPath, Windows::UI::Composition::ICompositionPathFactory>().Create(source))
+    CompositionPath(impl::call_factory<CompositionPath, Windows::UI::Composition::ICompositionPathFactory>([&](auto&& f) { return f.Create(source); }))
 {}
 
 inline Compositor::Compositor() :
-    Compositor(get_activation_factory<Compositor>().ActivateInstance<Compositor>())
+    Compositor(impl::call_factory<Compositor>([](auto&& f) { return f.template ActivateInstance<Compositor>(); }))
 {}
 
 inline float Compositor::MaxGlobalPlaybackRate()
 {
-    return get_activation_factory<Compositor, Windows::UI::Composition::ICompositorStatics>().MaxGlobalPlaybackRate();
+    return impl::call_factory<Compositor, Windows::UI::Composition::ICompositorStatics>([&](auto&& f) { return f.MaxGlobalPlaybackRate(); });
 }
 
 inline float Compositor::MinGlobalPlaybackRate()
 {
-    return get_activation_factory<Compositor, Windows::UI::Composition::ICompositorStatics>().MinGlobalPlaybackRate();
+    return impl::call_factory<Compositor, Windows::UI::Composition::ICompositorStatics>([&](auto&& f) { return f.MinGlobalPlaybackRate(); });
 }
 
 }
@@ -12348,6 +11590,9 @@ template<> struct hash<winrt::Windows::UI::Composition::IAmbientLight> : winrt::
 template<> struct hash<winrt::Windows::UI::Composition::IAmbientLight2> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IAmbientLight2> {};
 template<> struct hash<winrt::Windows::UI::Composition::IAnimationController> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IAnimationController> {};
 template<> struct hash<winrt::Windows::UI::Composition::IAnimationControllerStatics> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IAnimationControllerStatics> {};
+template<> struct hash<winrt::Windows::UI::Composition::IAnimationObject> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IAnimationObject> {};
+template<> struct hash<winrt::Windows::UI::Composition::IAnimationPropertyInfo> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IAnimationPropertyInfo> {};
+template<> struct hash<winrt::Windows::UI::Composition::IBooleanKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IBooleanKeyFrameAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::IBounceScalarNaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IBounceScalarNaturalMotionAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::IBounceVector2NaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IBounceVector2NaturalMotionAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::IBounceVector3NaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IBounceVector3NaturalMotionAnimation> {};
@@ -12355,6 +11600,7 @@ template<> struct hash<winrt::Windows::UI::Composition::IColorKeyFrameAnimation>
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimation2> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimation2> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimation3> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimation3> {};
+template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimation4> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimation4> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimationBase> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimationBase> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimationFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimationFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionAnimationGroup> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionAnimationGroup> {};
@@ -12382,9 +11628,11 @@ template<> struct hash<winrt::Windows::UI::Composition::ICompositionEffectFactor
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionEffectSourceParameter> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionEffectSourceParameter> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionEffectSourceParameterFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionEffectSourceParameterFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionEllipseGeometry> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionEllipseGeometry> {};
+template<> struct hash<winrt::Windows::UI::Composition::ICompositionGeometricClip> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGeometricClip> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGeometry> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGeometry> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGeometryFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGeometryFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGradientBrush> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGradientBrush> {};
+template<> struct hash<winrt::Windows::UI::Composition::ICompositionGradientBrush2> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGradientBrush2> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGradientBrushFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGradientBrushFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGraphicsDevice> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGraphicsDevice> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionGraphicsDevice2> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionGraphicsDevice2> {};
@@ -12401,6 +11649,7 @@ template<> struct hash<winrt::Windows::UI::Composition::ICompositionObject2> : w
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionObject3> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionObject3> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionObject4> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionObject4> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionObjectFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionObjectFactory> {};
+template<> struct hash<winrt::Windows::UI::Composition::ICompositionObjectStatics> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionObjectStatics> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionPath> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionPath> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionPathFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionPathFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositionPathGeometry> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositionPathGeometry> {};
@@ -12427,6 +11676,7 @@ template<> struct hash<winrt::Windows::UI::Composition::ICompositor2> : winrt::i
 template<> struct hash<winrt::Windows::UI::Composition::ICompositor3> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositor3> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositor4> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositor4> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositor5> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositor5> {};
+template<> struct hash<winrt::Windows::UI::Composition::ICompositor6> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositor6> {};
 template<> struct hash<winrt::Windows::UI::Composition::ICompositorStatics> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ICompositorStatics> {};
 template<> struct hash<winrt::Windows::UI::Composition::IContainerVisual> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IContainerVisual> {};
 template<> struct hash<winrt::Windows::UI::Composition::IContainerVisualFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IContainerVisualFactory> {};
@@ -12452,6 +11702,7 @@ template<> struct hash<winrt::Windows::UI::Composition::IPointLight> : winrt::im
 template<> struct hash<winrt::Windows::UI::Composition::IPointLight2> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IPointLight2> {};
 template<> struct hash<winrt::Windows::UI::Composition::IPointLight3> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IPointLight3> {};
 template<> struct hash<winrt::Windows::UI::Composition::IQuaternionKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IQuaternionKeyFrameAnimation> {};
+template<> struct hash<winrt::Windows::UI::Composition::IRedirectVisual> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IRedirectVisual> {};
 template<> struct hash<winrt::Windows::UI::Composition::IRenderingDeviceReplacedEventArgs> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IRenderingDeviceReplacedEventArgs> {};
 template<> struct hash<winrt::Windows::UI::Composition::IScalarKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IScalarKeyFrameAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::IScalarNaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IScalarNaturalMotionAnimation> {};
@@ -12480,6 +11731,8 @@ template<> struct hash<winrt::Windows::UI::Composition::IVisualFactory> : winrt:
 template<> struct hash<winrt::Windows::UI::Composition::IVisualUnorderedCollection> : winrt::impl::hash_base<winrt::Windows::UI::Composition::IVisualUnorderedCollection> {};
 template<> struct hash<winrt::Windows::UI::Composition::AmbientLight> : winrt::impl::hash_base<winrt::Windows::UI::Composition::AmbientLight> {};
 template<> struct hash<winrt::Windows::UI::Composition::AnimationController> : winrt::impl::hash_base<winrt::Windows::UI::Composition::AnimationController> {};
+template<> struct hash<winrt::Windows::UI::Composition::AnimationPropertyInfo> : winrt::impl::hash_base<winrt::Windows::UI::Composition::AnimationPropertyInfo> {};
+template<> struct hash<winrt::Windows::UI::Composition::BooleanKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::BooleanKeyFrameAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::BounceScalarNaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::BounceScalarNaturalMotionAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::BounceVector2NaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::BounceVector2NaturalMotionAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::BounceVector3NaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::BounceVector3NaturalMotionAnimation> {};
@@ -12502,6 +11755,7 @@ template<> struct hash<winrt::Windows::UI::Composition::CompositionEffectBrush> 
 template<> struct hash<winrt::Windows::UI::Composition::CompositionEffectFactory> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionEffectFactory> {};
 template<> struct hash<winrt::Windows::UI::Composition::CompositionEffectSourceParameter> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionEffectSourceParameter> {};
 template<> struct hash<winrt::Windows::UI::Composition::CompositionEllipseGeometry> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionEllipseGeometry> {};
+template<> struct hash<winrt::Windows::UI::Composition::CompositionGeometricClip> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionGeometricClip> {};
 template<> struct hash<winrt::Windows::UI::Composition::CompositionGeometry> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionGeometry> {};
 template<> struct hash<winrt::Windows::UI::Composition::CompositionGradientBrush> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionGradientBrush> {};
 template<> struct hash<winrt::Windows::UI::Composition::CompositionGraphicsDevice> : winrt::impl::hash_base<winrt::Windows::UI::Composition::CompositionGraphicsDevice> {};
@@ -12542,6 +11796,7 @@ template<> struct hash<winrt::Windows::UI::Composition::NaturalMotionAnimation> 
 template<> struct hash<winrt::Windows::UI::Composition::PathKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::PathKeyFrameAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::PointLight> : winrt::impl::hash_base<winrt::Windows::UI::Composition::PointLight> {};
 template<> struct hash<winrt::Windows::UI::Composition::QuaternionKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::QuaternionKeyFrameAnimation> {};
+template<> struct hash<winrt::Windows::UI::Composition::RedirectVisual> : winrt::impl::hash_base<winrt::Windows::UI::Composition::RedirectVisual> {};
 template<> struct hash<winrt::Windows::UI::Composition::RenderingDeviceReplacedEventArgs> : winrt::impl::hash_base<winrt::Windows::UI::Composition::RenderingDeviceReplacedEventArgs> {};
 template<> struct hash<winrt::Windows::UI::Composition::ScalarKeyFrameAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ScalarKeyFrameAnimation> {};
 template<> struct hash<winrt::Windows::UI::Composition::ScalarNaturalMotionAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Composition::ScalarNaturalMotionAnimation> {};
@@ -12562,5 +11817,3 @@ template<> struct hash<winrt::Windows::UI::Composition::VisualCollection> : winr
 template<> struct hash<winrt::Windows::UI::Composition::VisualUnorderedCollection> : winrt::impl::hash_base<winrt::Windows::UI::Composition::VisualUnorderedCollection> {};
 
 }
-
-WINRT_WARNING_POP

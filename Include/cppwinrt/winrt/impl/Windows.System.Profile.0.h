@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -35,6 +35,13 @@ enum class SystemIdentificationSource : int32_t
     Registry = 3,
 };
 
+enum class SystemOutOfBoxExperienceState : int32_t
+{
+    NotStarted = 0,
+    InProgress = 1,
+    Completed = 2,
+};
+
 struct IAnalyticsInfoStatics;
 struct IAnalyticsInfoStatics2;
 struct IAnalyticsVersionInfo;
@@ -48,6 +55,8 @@ struct ISharedModeSettingsStatics;
 struct ISharedModeSettingsStatics2;
 struct ISystemIdentificationInfo;
 struct ISystemIdentificationStatics;
+struct ISystemSetupInfoStatics;
+struct IWindowsIntegrityPolicyStatics;
 struct AnalyticsInfo;
 struct AnalyticsVersionInfo;
 struct EducationSettings;
@@ -59,6 +68,8 @@ struct RetailInfo;
 struct SharedModeSettings;
 struct SystemIdentification;
 struct SystemIdentificationInfo;
+struct SystemSetupInfo;
+struct WindowsIntegrityPolicy;
 
 }
 
@@ -77,6 +88,8 @@ template <> struct category<Windows::System::Profile::ISharedModeSettingsStatics
 template <> struct category<Windows::System::Profile::ISharedModeSettingsStatics2>{ using type = interface_category; };
 template <> struct category<Windows::System::Profile::ISystemIdentificationInfo>{ using type = interface_category; };
 template <> struct category<Windows::System::Profile::ISystemIdentificationStatics>{ using type = interface_category; };
+template <> struct category<Windows::System::Profile::ISystemSetupInfoStatics>{ using type = interface_category; };
+template <> struct category<Windows::System::Profile::IWindowsIntegrityPolicyStatics>{ using type = interface_category; };
 template <> struct category<Windows::System::Profile::AnalyticsInfo>{ using type = class_category; };
 template <> struct category<Windows::System::Profile::AnalyticsVersionInfo>{ using type = class_category; };
 template <> struct category<Windows::System::Profile::EducationSettings>{ using type = class_category; };
@@ -88,8 +101,11 @@ template <> struct category<Windows::System::Profile::RetailInfo>{ using type = 
 template <> struct category<Windows::System::Profile::SharedModeSettings>{ using type = class_category; };
 template <> struct category<Windows::System::Profile::SystemIdentification>{ using type = class_category; };
 template <> struct category<Windows::System::Profile::SystemIdentificationInfo>{ using type = class_category; };
+template <> struct category<Windows::System::Profile::SystemSetupInfo>{ using type = class_category; };
+template <> struct category<Windows::System::Profile::WindowsIntegrityPolicy>{ using type = class_category; };
 template <> struct category<Windows::System::Profile::PlatformDataCollectionLevel>{ using type = enum_category; };
 template <> struct category<Windows::System::Profile::SystemIdentificationSource>{ using type = enum_category; };
+template <> struct category<Windows::System::Profile::SystemOutOfBoxExperienceState>{ using type = enum_category; };
 template <> struct name<Windows::System::Profile::IAnalyticsInfoStatics>{ static constexpr auto & value{ L"Windows.System.Profile.IAnalyticsInfoStatics" }; };
 template <> struct name<Windows::System::Profile::IAnalyticsInfoStatics2>{ static constexpr auto & value{ L"Windows.System.Profile.IAnalyticsInfoStatics2" }; };
 template <> struct name<Windows::System::Profile::IAnalyticsVersionInfo>{ static constexpr auto & value{ L"Windows.System.Profile.IAnalyticsVersionInfo" }; };
@@ -103,6 +119,8 @@ template <> struct name<Windows::System::Profile::ISharedModeSettingsStatics>{ s
 template <> struct name<Windows::System::Profile::ISharedModeSettingsStatics2>{ static constexpr auto & value{ L"Windows.System.Profile.ISharedModeSettingsStatics2" }; };
 template <> struct name<Windows::System::Profile::ISystemIdentificationInfo>{ static constexpr auto & value{ L"Windows.System.Profile.ISystemIdentificationInfo" }; };
 template <> struct name<Windows::System::Profile::ISystemIdentificationStatics>{ static constexpr auto & value{ L"Windows.System.Profile.ISystemIdentificationStatics" }; };
+template <> struct name<Windows::System::Profile::ISystemSetupInfoStatics>{ static constexpr auto & value{ L"Windows.System.Profile.ISystemSetupInfoStatics" }; };
+template <> struct name<Windows::System::Profile::IWindowsIntegrityPolicyStatics>{ static constexpr auto & value{ L"Windows.System.Profile.IWindowsIntegrityPolicyStatics" }; };
 template <> struct name<Windows::System::Profile::AnalyticsInfo>{ static constexpr auto & value{ L"Windows.System.Profile.AnalyticsInfo" }; };
 template <> struct name<Windows::System::Profile::AnalyticsVersionInfo>{ static constexpr auto & value{ L"Windows.System.Profile.AnalyticsVersionInfo" }; };
 template <> struct name<Windows::System::Profile::EducationSettings>{ static constexpr auto & value{ L"Windows.System.Profile.EducationSettings" }; };
@@ -114,24 +132,142 @@ template <> struct name<Windows::System::Profile::RetailInfo>{ static constexpr 
 template <> struct name<Windows::System::Profile::SharedModeSettings>{ static constexpr auto & value{ L"Windows.System.Profile.SharedModeSettings" }; };
 template <> struct name<Windows::System::Profile::SystemIdentification>{ static constexpr auto & value{ L"Windows.System.Profile.SystemIdentification" }; };
 template <> struct name<Windows::System::Profile::SystemIdentificationInfo>{ static constexpr auto & value{ L"Windows.System.Profile.SystemIdentificationInfo" }; };
+template <> struct name<Windows::System::Profile::SystemSetupInfo>{ static constexpr auto & value{ L"Windows.System.Profile.SystemSetupInfo" }; };
+template <> struct name<Windows::System::Profile::WindowsIntegrityPolicy>{ static constexpr auto & value{ L"Windows.System.Profile.WindowsIntegrityPolicy" }; };
 template <> struct name<Windows::System::Profile::PlatformDataCollectionLevel>{ static constexpr auto & value{ L"Windows.System.Profile.PlatformDataCollectionLevel" }; };
 template <> struct name<Windows::System::Profile::SystemIdentificationSource>{ static constexpr auto & value{ L"Windows.System.Profile.SystemIdentificationSource" }; };
-template <> struct guid<Windows::System::Profile::IAnalyticsInfoStatics>{ static constexpr GUID value{ 0x1D5EE066,0x188D,0x5BA9,{ 0x43,0x87,0xAC,0xAE,0xB0,0xE7,0xE3,0x05 } }; };
-template <> struct guid<Windows::System::Profile::IAnalyticsInfoStatics2>{ static constexpr GUID value{ 0x101704EA,0xA7F9,0x46D2,{ 0xAB,0x94,0x01,0x68,0x65,0xAF,0xDB,0x25 } }; };
-template <> struct guid<Windows::System::Profile::IAnalyticsVersionInfo>{ static constexpr GUID value{ 0x926130B8,0x9955,0x4C74,{ 0xBD,0xC1,0x7C,0xD0,0xDE,0xCF,0x9B,0x03 } }; };
-template <> struct guid<Windows::System::Profile::IEducationSettingsStatics>{ static constexpr GUID value{ 0xFC53F0EF,0x4D3E,0x4E13,{ 0x9B,0x23,0x50,0x5F,0x4D,0x09,0x1E,0x92 } }; };
-template <> struct guid<Windows::System::Profile::IHardwareIdentificationStatics>{ static constexpr GUID value{ 0x971260E0,0xF170,0x4A42,{ 0xBD,0x55,0xA9,0x00,0xB2,0x12,0xDA,0xE2 } }; };
-template <> struct guid<Windows::System::Profile::IHardwareToken>{ static constexpr GUID value{ 0x28F6D4C0,0xFB12,0x40A4,{ 0x81,0x67,0x7F,0x4E,0x03,0xD2,0x72,0x4C } }; };
-template <> struct guid<Windows::System::Profile::IKnownRetailInfoPropertiesStatics>{ static constexpr GUID value{ 0x99571178,0x500F,0x487E,{ 0x8E,0x75,0x29,0xE5,0x51,0x72,0x87,0x12 } }; };
-template <> struct guid<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>{ static constexpr GUID value{ 0xB6E24C1B,0x7B1C,0x4B32,{ 0x8C,0x62,0xA6,0x65,0x97,0xCE,0x72,0x3A } }; };
-template <> struct guid<Windows::System::Profile::IRetailInfoStatics>{ static constexpr GUID value{ 0x0712C6B8,0x8B92,0x4F2A,{ 0x84,0x99,0x03,0x1F,0x17,0x98,0xD6,0xEF } }; };
-template <> struct guid<Windows::System::Profile::ISharedModeSettingsStatics>{ static constexpr GUID value{ 0x893DF40E,0xCAD6,0x4D50,{ 0x8C,0x49,0x6F,0xCF,0xC0,0x3E,0xDB,0x29 } }; };
-template <> struct guid<Windows::System::Profile::ISharedModeSettingsStatics2>{ static constexpr GUID value{ 0x608988A4,0xCCF1,0x4EE8,{ 0xA5,0xE2,0xFD,0x6A,0x1D,0x0C,0xFA,0xC8 } }; };
-template <> struct guid<Windows::System::Profile::ISystemIdentificationInfo>{ static constexpr GUID value{ 0x0C659E7D,0xC3C2,0x4D33,{ 0xA2,0xDF,0x21,0xBC,0x41,0x91,0x6E,0xB3 } }; };
-template <> struct guid<Windows::System::Profile::ISystemIdentificationStatics>{ static constexpr GUID value{ 0x5581F42A,0xD3DF,0x4D93,{ 0xA3,0x7D,0xC4,0x1A,0x61,0x6C,0x6D,0x01 } }; };
+template <> struct name<Windows::System::Profile::SystemOutOfBoxExperienceState>{ static constexpr auto & value{ L"Windows.System.Profile.SystemOutOfBoxExperienceState" }; };
+template <> struct guid_storage<Windows::System::Profile::IAnalyticsInfoStatics>{ static constexpr guid value{ 0x1D5EE066,0x188D,0x5BA9,{ 0x43,0x87,0xAC,0xAE,0xB0,0xE7,0xE3,0x05 } }; };
+template <> struct guid_storage<Windows::System::Profile::IAnalyticsInfoStatics2>{ static constexpr guid value{ 0x101704EA,0xA7F9,0x46D2,{ 0xAB,0x94,0x01,0x68,0x65,0xAF,0xDB,0x25 } }; };
+template <> struct guid_storage<Windows::System::Profile::IAnalyticsVersionInfo>{ static constexpr guid value{ 0x926130B8,0x9955,0x4C74,{ 0xBD,0xC1,0x7C,0xD0,0xDE,0xCF,0x9B,0x03 } }; };
+template <> struct guid_storage<Windows::System::Profile::IEducationSettingsStatics>{ static constexpr guid value{ 0xFC53F0EF,0x4D3E,0x4E13,{ 0x9B,0x23,0x50,0x5F,0x4D,0x09,0x1E,0x92 } }; };
+template <> struct guid_storage<Windows::System::Profile::IHardwareIdentificationStatics>{ static constexpr guid value{ 0x971260E0,0xF170,0x4A42,{ 0xBD,0x55,0xA9,0x00,0xB2,0x12,0xDA,0xE2 } }; };
+template <> struct guid_storage<Windows::System::Profile::IHardwareToken>{ static constexpr guid value{ 0x28F6D4C0,0xFB12,0x40A4,{ 0x81,0x67,0x7F,0x4E,0x03,0xD2,0x72,0x4C } }; };
+template <> struct guid_storage<Windows::System::Profile::IKnownRetailInfoPropertiesStatics>{ static constexpr guid value{ 0x99571178,0x500F,0x487E,{ 0x8E,0x75,0x29,0xE5,0x51,0x72,0x87,0x12 } }; };
+template <> struct guid_storage<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>{ static constexpr guid value{ 0xB6E24C1B,0x7B1C,0x4B32,{ 0x8C,0x62,0xA6,0x65,0x97,0xCE,0x72,0x3A } }; };
+template <> struct guid_storage<Windows::System::Profile::IRetailInfoStatics>{ static constexpr guid value{ 0x0712C6B8,0x8B92,0x4F2A,{ 0x84,0x99,0x03,0x1F,0x17,0x98,0xD6,0xEF } }; };
+template <> struct guid_storage<Windows::System::Profile::ISharedModeSettingsStatics>{ static constexpr guid value{ 0x893DF40E,0xCAD6,0x4D50,{ 0x8C,0x49,0x6F,0xCF,0xC0,0x3E,0xDB,0x29 } }; };
+template <> struct guid_storage<Windows::System::Profile::ISharedModeSettingsStatics2>{ static constexpr guid value{ 0x608988A4,0xCCF1,0x4EE8,{ 0xA5,0xE2,0xFD,0x6A,0x1D,0x0C,0xFA,0xC8 } }; };
+template <> struct guid_storage<Windows::System::Profile::ISystemIdentificationInfo>{ static constexpr guid value{ 0x0C659E7D,0xC3C2,0x4D33,{ 0xA2,0xDF,0x21,0xBC,0x41,0x91,0x6E,0xB3 } }; };
+template <> struct guid_storage<Windows::System::Profile::ISystemIdentificationStatics>{ static constexpr guid value{ 0x5581F42A,0xD3DF,0x4D93,{ 0xA3,0x7D,0xC4,0x1A,0x61,0x6C,0x6D,0x01 } }; };
+template <> struct guid_storage<Windows::System::Profile::ISystemSetupInfoStatics>{ static constexpr guid value{ 0x2C9620A8,0x1D88,0x5E2D,{ 0xA3,0x24,0xA5,0x43,0xAF,0x42,0x47,0xEE } }; };
+template <> struct guid_storage<Windows::System::Profile::IWindowsIntegrityPolicyStatics>{ static constexpr guid value{ 0x7D1D81DB,0x8D63,0x4789,{ 0x9E,0xA5,0xDD,0xCF,0x65,0xA9,0x4F,0x3C } }; };
 template <> struct default_interface<Windows::System::Profile::AnalyticsVersionInfo>{ using type = Windows::System::Profile::IAnalyticsVersionInfo; };
 template <> struct default_interface<Windows::System::Profile::HardwareToken>{ using type = Windows::System::Profile::IHardwareToken; };
 template <> struct default_interface<Windows::System::Profile::SystemIdentificationInfo>{ using type = Windows::System::Profile::ISystemIdentificationInfo; };
+
+template <> struct abi<Windows::System::Profile::IAnalyticsInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_VersionInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceForm(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IAnalyticsInfoStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetSystemPropertiesAsync(void* attributeNames, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IAnalyticsVersionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceFamily(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceFamilyVersion(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IEducationSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEducationEnvironment(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IHardwareIdentificationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPackageSpecificToken(void* nonce, void** packageSpecificHardwareToken) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IHardwareToken>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Signature(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Certificate(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IKnownRetailInfoPropertiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RetailAccessCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManufacturerName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ModelName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayModelName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Price(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsFeatured(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FormFactor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScreenSize(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Weight(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BatteryLifeDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProcessorDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Memory(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StorageDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GraphicsDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrontCameraDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RearCameraDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasNfc(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasSdSlot(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasOpticalDrive(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOfficeInstalled(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WindowsEdition(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CollectionLevel(Windows::System::Profile::PlatformDataCollectionLevel* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CollectionLevelChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CollectionLevelChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IRetailInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsDemoModeEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::ISharedModeSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::ISharedModeSettingsStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ShouldAvoidLocalStorage(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::ISystemIdentificationInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(Windows::System::Profile::SystemIdentificationSource* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::ISystemIdentificationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetSystemIdForPublisher(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSystemIdForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::ISystemSetupInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OutOfBoxExperienceState(Windows::System::Profile::SystemOutOfBoxExperienceState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OutOfBoxExperienceStateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OutOfBoxExperienceStateChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Profile::IWindowsIntegrityPolicyStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabledForTrial(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanDisable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisableSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PolicyChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PolicyChanged(winrt::event_token token) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_System_Profile_IAnalyticsInfoStatics
@@ -211,10 +347,10 @@ template <typename D>
 struct consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics
 {
     Windows::System::Profile::PlatformDataCollectionLevel CollectionLevel() const;
-    event_token CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    using CollectionLevelChanged_revoker = event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>;
+    winrt::event_token CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using CollectionLevelChanged_revoker = impl::event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics, &impl::abi_t<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>::remove_CollectionLevelChanged>;
     CollectionLevelChanged_revoker CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    void CollectionLevelChanged(event_token const& token) const;
+    void CollectionLevelChanged(winrt::event_token const& token) const noexcept;
     bool CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel const& level) const;
 };
 template <> struct consume<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics> { template <typename D> using type = consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>; };
@@ -257,100 +393,29 @@ struct consume_Windows_System_Profile_ISystemIdentificationStatics
 };
 template <> struct consume<Windows::System::Profile::ISystemIdentificationStatics> { template <typename D> using type = consume_Windows_System_Profile_ISystemIdentificationStatics<D>; };
 
-template <> struct abi<Windows::System::Profile::IAnalyticsInfoStatics>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_System_Profile_ISystemSetupInfoStatics
 {
-    virtual HRESULT __stdcall get_VersionInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceForm(HSTRING* value) noexcept = 0;
-};};
+    Windows::System::Profile::SystemOutOfBoxExperienceState OutOfBoxExperienceState() const;
+    winrt::event_token OutOfBoxExperienceStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using OutOfBoxExperienceStateChanged_revoker = impl::event_revoker<Windows::System::Profile::ISystemSetupInfoStatics, &impl::abi_t<Windows::System::Profile::ISystemSetupInfoStatics>::remove_OutOfBoxExperienceStateChanged>;
+    OutOfBoxExperienceStateChanged_revoker OutOfBoxExperienceStateChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    void OutOfBoxExperienceStateChanged(winrt::event_token const& token) const noexcept;
+};
+template <> struct consume<Windows::System::Profile::ISystemSetupInfoStatics> { template <typename D> using type = consume_Windows_System_Profile_ISystemSetupInfoStatics<D>; };
 
-template <> struct abi<Windows::System::Profile::IAnalyticsInfoStatics2>{ struct type : IInspectable
+template <typename D>
+struct consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics
 {
-    virtual HRESULT __stdcall GetSystemPropertiesAsync(void* attributeNames, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IAnalyticsVersionInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceFamily(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceFamilyVersion(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IEducationSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEducationEnvironment(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IHardwareIdentificationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPackageSpecificToken(void* nonce, void** packageSpecificHardwareToken) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IHardwareToken>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Signature(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Certificate(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IKnownRetailInfoPropertiesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RetailAccessCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManufacturerName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ModelName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayModelName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Price(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsFeatured(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FormFactor(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScreenSize(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Weight(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BatteryLifeDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProcessorDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Memory(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StorageDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GraphicsDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrontCameraDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RearCameraDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasNfc(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasSdSlot(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasOpticalDrive(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOfficeInstalled(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WindowsEdition(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CollectionLevel(Windows::System::Profile::PlatformDataCollectionLevel* value) noexcept = 0;
-    virtual HRESULT __stdcall add_CollectionLevelChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CollectionLevelChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::IRetailInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsDemoModeEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::ISharedModeSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::ISharedModeSettingsStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ShouldAvoidLocalStorage(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::ISystemIdentificationInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(Windows::System::Profile::SystemIdentificationSource* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Profile::ISystemIdentificationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetSystemIdForPublisher(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetSystemIdForUser(void* user, void** result) noexcept = 0;
-};};
+    bool IsEnabled() const;
+    bool IsEnabledForTrial() const;
+    bool CanDisable() const;
+    bool IsDisableSupported() const;
+    winrt::event_token PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using PolicyChanged_revoker = impl::event_revoker<Windows::System::Profile::IWindowsIntegrityPolicyStatics, &impl::abi_t<Windows::System::Profile::IWindowsIntegrityPolicyStatics>::remove_PolicyChanged>;
+    PolicyChanged_revoker PolicyChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    void PolicyChanged(winrt::event_token const& token) const noexcept;
+};
+template <> struct consume<Windows::System::Profile::IWindowsIntegrityPolicyStatics> { template <typename D> using type = consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>; };
 
 }

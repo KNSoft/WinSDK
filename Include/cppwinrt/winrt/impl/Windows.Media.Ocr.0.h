@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -51,15 +51,49 @@ template <> struct name<Windows::Media::Ocr::OcrEngine>{ static constexpr auto &
 template <> struct name<Windows::Media::Ocr::OcrLine>{ static constexpr auto & value{ L"Windows.Media.Ocr.OcrLine" }; };
 template <> struct name<Windows::Media::Ocr::OcrResult>{ static constexpr auto & value{ L"Windows.Media.Ocr.OcrResult" }; };
 template <> struct name<Windows::Media::Ocr::OcrWord>{ static constexpr auto & value{ L"Windows.Media.Ocr.OcrWord" }; };
-template <> struct guid<Windows::Media::Ocr::IOcrEngine>{ static constexpr GUID value{ 0x5A14BC41,0x5B76,0x3140,{ 0xB6,0x80,0x88,0x25,0x56,0x26,0x83,0xAC } }; };
-template <> struct guid<Windows::Media::Ocr::IOcrEngineStatics>{ static constexpr GUID value{ 0x5BFFA85A,0x3384,0x3540,{ 0x99,0x40,0x69,0x91,0x20,0xD4,0x28,0xA8 } }; };
-template <> struct guid<Windows::Media::Ocr::IOcrLine>{ static constexpr GUID value{ 0x0043A16F,0xE31F,0x3A24,{ 0x89,0x9C,0xD4,0x44,0xBD,0x08,0x81,0x24 } }; };
-template <> struct guid<Windows::Media::Ocr::IOcrResult>{ static constexpr GUID value{ 0x9BD235B2,0x175B,0x3D6A,{ 0x92,0xE2,0x38,0x8C,0x20,0x6E,0x2F,0x63 } }; };
-template <> struct guid<Windows::Media::Ocr::IOcrWord>{ static constexpr GUID value{ 0x3C2A477A,0x5CD9,0x3525,{ 0xBA,0x2A,0x23,0xD1,0xE0,0xA6,0x8A,0x1D } }; };
+template <> struct guid_storage<Windows::Media::Ocr::IOcrEngine>{ static constexpr guid value{ 0x5A14BC41,0x5B76,0x3140,{ 0xB6,0x80,0x88,0x25,0x56,0x26,0x83,0xAC } }; };
+template <> struct guid_storage<Windows::Media::Ocr::IOcrEngineStatics>{ static constexpr guid value{ 0x5BFFA85A,0x3384,0x3540,{ 0x99,0x40,0x69,0x91,0x20,0xD4,0x28,0xA8 } }; };
+template <> struct guid_storage<Windows::Media::Ocr::IOcrLine>{ static constexpr guid value{ 0x0043A16F,0xE31F,0x3A24,{ 0x89,0x9C,0xD4,0x44,0xBD,0x08,0x81,0x24 } }; };
+template <> struct guid_storage<Windows::Media::Ocr::IOcrResult>{ static constexpr guid value{ 0x9BD235B2,0x175B,0x3D6A,{ 0x92,0xE2,0x38,0x8C,0x20,0x6E,0x2F,0x63 } }; };
+template <> struct guid_storage<Windows::Media::Ocr::IOcrWord>{ static constexpr guid value{ 0x3C2A477A,0x5CD9,0x3525,{ 0xBA,0x2A,0x23,0xD1,0xE0,0xA6,0x8A,0x1D } }; };
 template <> struct default_interface<Windows::Media::Ocr::OcrEngine>{ using type = Windows::Media::Ocr::IOcrEngine; };
 template <> struct default_interface<Windows::Media::Ocr::OcrLine>{ using type = Windows::Media::Ocr::IOcrLine; };
 template <> struct default_interface<Windows::Media::Ocr::OcrResult>{ using type = Windows::Media::Ocr::IOcrResult; };
 template <> struct default_interface<Windows::Media::Ocr::OcrWord>{ using type = Windows::Media::Ocr::IOcrWord; };
+
+template <> struct abi<Windows::Media::Ocr::IOcrEngine>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RecognizeAsync(void* bitmap, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecognizerLanguage(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Ocr::IOcrEngineStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxImageDimension(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AvailableRecognizerLanguages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsLanguageSupported(void* language, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateFromLanguage(void* language, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateFromUserProfileLanguages(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Ocr::IOcrLine>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Words(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Ocr::IOcrResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Lines(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextAngle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Ocr::IOcrWord>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_Ocr_IOcrEngine
@@ -104,39 +138,5 @@ struct consume_Windows_Media_Ocr_IOcrWord
     hstring Text() const;
 };
 template <> struct consume<Windows::Media::Ocr::IOcrWord> { template <typename D> using type = consume_Windows_Media_Ocr_IOcrWord<D>; };
-
-template <> struct abi<Windows::Media::Ocr::IOcrEngine>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RecognizeAsync(void* bitmap, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_RecognizerLanguage(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Ocr::IOcrEngineStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxImageDimension(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AvailableRecognizerLanguages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall IsLanguageSupported(void* language, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateFromLanguage(void* language, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateFromUserProfileLanguages(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Ocr::IOcrLine>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Words(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Ocr::IOcrResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Lines(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextAngle(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Ocr::IOcrWord>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
 
 }

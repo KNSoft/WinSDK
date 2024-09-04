@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Media.MediaProperties.2.h"
@@ -544,1216 +544,1056 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsics>
 {
-    HRESULT __stdcall get_FocalLength(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_FocalLength(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocalLength, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().FocalLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrincipalPoint(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_PrincipalPoint(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrincipalPoint, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().PrincipalPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadialDistortion(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_RadialDistortion(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadialDistortion, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().RadialDistortion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TangentialDistortion(Windows::Foundation::Numerics::float2* value) noexcept final
+    int32_t WINRT_CALL get_TangentialDistortion(Windows::Foundation::Numerics::float2* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TangentialDistortion, WINRT_WRAP(Windows::Foundation::Numerics::float2));
             *value = detach_from<Windows::Foundation::Numerics::float2>(this->shim().TangentialDistortion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ImageWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ImageWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ImageHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ImageHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProjectOntoFrame(Windows::Foundation::Numerics::float3 coordinate, Windows::Foundation::Point* result) noexcept final
+    int32_t WINRT_CALL ProjectOntoFrame(Windows::Foundation::Numerics::float3 coordinate, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectOntoFrame, WINRT_WRAP(Windows::Foundation::Point), Windows::Foundation::Numerics::float3 const&);
             *result = detach_from<Windows::Foundation::Point>(this->shim().ProjectOntoFrame(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&coordinate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnprojectAtUnitDepth(Windows::Foundation::Point pixelCoordinate, Windows::Foundation::Numerics::float2* result) noexcept final
+    int32_t WINRT_CALL UnprojectAtUnitDepth(Windows::Foundation::Point pixelCoordinate, Windows::Foundation::Numerics::float2* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnprojectAtUnitDepth, WINRT_WRAP(Windows::Foundation::Numerics::float2), Windows::Foundation::Point const&);
             *result = detach_from<Windows::Foundation::Numerics::float2>(this->shim().UnprojectAtUnitDepth(*reinterpret_cast<Windows::Foundation::Point const*>(&pixelCoordinate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProjectManyOntoFrame(uint32_t __coordinatesSize, Windows::Foundation::Numerics::float3* coordinates, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
+    int32_t WINRT_CALL ProjectManyOntoFrame(uint32_t __coordinatesSize, Windows::Foundation::Numerics::float3* coordinates, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectManyOntoFrame, WINRT_WRAP(void), array_view<Windows::Foundation::Numerics::float3 const>, array_view<Windows::Foundation::Point>);
             this->shim().ProjectManyOntoFrame(array_view<Windows::Foundation::Numerics::float3 const>(reinterpret_cast<Windows::Foundation::Numerics::float3 const *>(coordinates), reinterpret_cast<Windows::Foundation::Numerics::float3 const *>(coordinates) + __coordinatesSize), array_view<Windows::Foundation::Point>(reinterpret_cast<Windows::Foundation::Point*>(results), reinterpret_cast<Windows::Foundation::Point*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, Windows::Foundation::Point* pixelCoordinates, uint32_t __resultsSize, Windows::Foundation::Numerics::float2* results) noexcept final
+    int32_t WINRT_CALL UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, Windows::Foundation::Point* pixelCoordinates, uint32_t __resultsSize, Windows::Foundation::Numerics::float2* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnprojectPixelsAtUnitDepth, WINRT_WRAP(void), array_view<Windows::Foundation::Point const>, array_view<Windows::Foundation::Numerics::float2>);
             this->shim().UnprojectPixelsAtUnitDepth(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(pixelCoordinates), reinterpret_cast<Windows::Foundation::Point const *>(pixelCoordinates) + __pixelCoordinatesSize), array_view<Windows::Foundation::Numerics::float2>(reinterpret_cast<Windows::Foundation::Numerics::float2*>(results), reinterpret_cast<Windows::Foundation::Numerics::float2*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsics2> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsics2>
 {
-    HRESULT __stdcall get_UndistortedProjectionTransform(Windows::Foundation::Numerics::float4x4* value) noexcept final
+    int32_t WINRT_CALL get_UndistortedProjectionTransform(Windows::Foundation::Numerics::float4x4* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndistortedProjectionTransform, WINRT_WRAP(Windows::Foundation::Numerics::float4x4));
             *value = detach_from<Windows::Foundation::Numerics::float4x4>(this->shim().UndistortedProjectionTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept final
+    int32_t WINRT_CALL DistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DistortPoint, WINRT_WRAP(Windows::Foundation::Point), Windows::Foundation::Point const&);
             *result = detach_from<Windows::Foundation::Point>(this->shim().DistortPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
+    int32_t WINRT_CALL DistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DistortPoints, WINRT_WRAP(void), array_view<Windows::Foundation::Point const>, array_view<Windows::Foundation::Point>);
             this->shim().DistortPoints(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(inputs), reinterpret_cast<Windows::Foundation::Point const *>(inputs) + __inputsSize), array_view<Windows::Foundation::Point>(reinterpret_cast<Windows::Foundation::Point*>(results), reinterpret_cast<Windows::Foundation::Point*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UndistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept final
+    int32_t WINRT_CALL UndistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndistortPoint, WINRT_WRAP(Windows::Foundation::Point), Windows::Foundation::Point const&);
             *result = detach_from<Windows::Foundation::Point>(this->shim().UndistortPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UndistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
+    int32_t WINRT_CALL UndistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndistortPoints, WINRT_WRAP(void), array_view<Windows::Foundation::Point const>, array_view<Windows::Foundation::Point>);
             this->shim().UndistortPoints(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(inputs), reinterpret_cast<Windows::Foundation::Point const *>(inputs) + __inputsSize), array_view<Windows::Foundation::Point>(reinterpret_cast<Windows::Foundation::Point*>(results), reinterpret_cast<Windows::Foundation::Point*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory> : produce_base<D, Windows::Media::Devices::Core::ICameraIntrinsicsFactory>
 {
-    HRESULT __stdcall Create(Windows::Foundation::Numerics::float2 focalLength, Windows::Foundation::Numerics::float2 principalPoint, Windows::Foundation::Numerics::float3 radialDistortion, Windows::Foundation::Numerics::float2 tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, void** result) noexcept final
+    int32_t WINRT_CALL Create(Windows::Foundation::Numerics::float2 focalLength, Windows::Foundation::Numerics::float2 principalPoint, Windows::Foundation::Numerics::float3 radialDistortion, Windows::Foundation::Numerics::float2 tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Devices::Core::CameraIntrinsics), Windows::Foundation::Numerics::float2 const&, Windows::Foundation::Numerics::float2 const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::float2 const&, uint32_t, uint32_t);
             *result = detach_from<Windows::Media::Devices::Core::CameraIntrinsics>(this->shim().Create(*reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&focalLength), *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&principalPoint), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&radialDistortion), *reinterpret_cast<Windows::Foundation::Numerics::float2 const*>(&tangentialDistortion), imageWidth, imageHeight));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper> : produce_base<D, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>
 {
-    HRESULT __stdcall UnprojectPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, Windows::Foundation::Numerics::float3* result) noexcept final
+    int32_t WINRT_CALL UnprojectPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, Windows::Foundation::Numerics::float3* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnprojectPoint, WINRT_WRAP(Windows::Foundation::Numerics::float3), Windows::Foundation::Point const&, Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *result = detach_from<Windows::Foundation::Numerics::float3>(this->shim().UnprojectPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&sourcePoint), *reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&targetCoordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnprojectPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, uint32_t __resultsSize, Windows::Foundation::Numerics::float3* results) noexcept final
+    int32_t WINRT_CALL UnprojectPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, uint32_t __resultsSize, Windows::Foundation::Numerics::float3* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnprojectPoints, WINRT_WRAP(void), array_view<Windows::Foundation::Point const>, Windows::Perception::Spatial::SpatialCoordinateSystem const&, array_view<Windows::Foundation::Numerics::float3>);
             this->shim().UnprojectPoints(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(sourcePoints), reinterpret_cast<Windows::Foundation::Point const *>(sourcePoints) + __sourcePointsSize), *reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&targetCoordinateSystem), array_view<Windows::Foundation::Numerics::float3>(reinterpret_cast<Windows::Foundation::Numerics::float3*>(results), reinterpret_cast<Windows::Foundation::Numerics::float3*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MapPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, void* targetCameraIntrinsics, Windows::Foundation::Point* result) noexcept final
+    int32_t WINRT_CALL MapPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, void* targetCameraIntrinsics, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MapPoint, WINRT_WRAP(Windows::Foundation::Point), Windows::Foundation::Point const&, Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Media::Devices::Core::CameraIntrinsics const&);
             *result = detach_from<Windows::Foundation::Point>(this->shim().MapPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&sourcePoint), *reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&targetCoordinateSystem), *reinterpret_cast<Windows::Media::Devices::Core::CameraIntrinsics const*>(&targetCameraIntrinsics)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MapPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, void* targetCameraIntrinsics, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
+    int32_t WINRT_CALL MapPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, void* targetCameraIntrinsics, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MapPoints, WINRT_WRAP(void), array_view<Windows::Foundation::Point const>, Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Media::Devices::Core::CameraIntrinsics const&, array_view<Windows::Foundation::Point>);
             this->shim().MapPoints(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(sourcePoints), reinterpret_cast<Windows::Foundation::Point const *>(sourcePoints) + __sourcePointsSize), *reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&targetCoordinateSystem), *reinterpret_cast<Windows::Media::Devices::Core::CameraIntrinsics const*>(&targetCameraIntrinsics), array_view<Windows::Foundation::Point>(reinterpret_cast<Windows::Foundation::Point*>(results), reinterpret_cast<Windows::Foundation::Point*>(results) + __resultsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameControlCapabilities>
 {
-    HRESULT __stdcall get_Exposure(void** value) noexcept final
+    int32_t WINRT_CALL get_Exposure(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Exposure, WINRT_WRAP(Windows::Media::Devices::Core::FrameExposureCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameExposureCapabilities>(this->shim().Exposure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExposureCompensation(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposureCompensation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposureCompensation, WINRT_WRAP(Windows::Media::Devices::Core::FrameExposureCompensationCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameExposureCompensationCapabilities>(this->shim().ExposureCompensation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsoSpeed(void** value) noexcept final
+    int32_t WINRT_CALL get_IsoSpeed(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsoSpeed, WINRT_WRAP(Windows::Media::Devices::Core::FrameIsoSpeedCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameIsoSpeedCapabilities>(this->shim().IsoSpeed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Focus(void** value) noexcept final
+    int32_t WINRT_CALL get_Focus(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Focus, WINRT_WRAP(Windows::Media::Devices::Core::FrameFocusCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameFocusCapabilities>(this->shim().Focus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotoConfirmationSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_PhotoConfirmationSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotoConfirmationSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().PhotoConfirmationSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameControlCapabilities2> : produce_base<D, Windows::Media::Devices::Core::IFrameControlCapabilities2>
 {
-    HRESULT __stdcall get_Flash(void** value) noexcept final
+    int32_t WINRT_CALL get_Flash(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flash, WINRT_WRAP(Windows::Media::Devices::Core::FrameFlashCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameFlashCapabilities>(this->shim().Flash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameController> : produce_base<D, Windows::Media::Devices::Core::IFrameController>
 {
-    HRESULT __stdcall get_ExposureControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposureControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposureControl, WINRT_WRAP(Windows::Media::Devices::Core::FrameExposureControl));
             *value = detach_from<Windows::Media::Devices::Core::FrameExposureControl>(this->shim().ExposureControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExposureCompensationControl(void** value) noexcept final
+    int32_t WINRT_CALL get_ExposureCompensationControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExposureCompensationControl, WINRT_WRAP(Windows::Media::Devices::Core::FrameExposureCompensationControl));
             *value = detach_from<Windows::Media::Devices::Core::FrameExposureCompensationControl>(this->shim().ExposureCompensationControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsoSpeedControl(void** value) noexcept final
+    int32_t WINRT_CALL get_IsoSpeedControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsoSpeedControl, WINRT_WRAP(Windows::Media::Devices::Core::FrameIsoSpeedControl));
             *value = detach_from<Windows::Media::Devices::Core::FrameIsoSpeedControl>(this->shim().IsoSpeedControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FocusControl(void** value) noexcept final
+    int32_t WINRT_CALL get_FocusControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FocusControl, WINRT_WRAP(Windows::Media::Devices::Core::FrameFocusControl));
             *value = detach_from<Windows::Media::Devices::Core::FrameFocusControl>(this->shim().FocusControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotoConfirmationEnabled(void** value) noexcept final
+    int32_t WINRT_CALL get_PhotoConfirmationEnabled(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotoConfirmationEnabled, WINRT_WRAP(Windows::Foundation::IReference<bool>));
             *value = detach_from<Windows::Foundation::IReference<bool>>(this->shim().PhotoConfirmationEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PhotoConfirmationEnabled(void* value) noexcept final
+    int32_t WINRT_CALL put_PhotoConfirmationEnabled(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotoConfirmationEnabled, WINRT_WRAP(void), Windows::Foundation::IReference<bool> const&);
             this->shim().PhotoConfirmationEnabled(*reinterpret_cast<Windows::Foundation::IReference<bool> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameController2> : produce_base<D, Windows::Media::Devices::Core::IFrameController2>
 {
-    HRESULT __stdcall get_FlashControl(void** value) noexcept final
+    int32_t WINRT_CALL get_FlashControl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlashControl, WINRT_WRAP(Windows::Media::Devices::Core::FrameFlashControl));
             *value = detach_from<Windows::Media::Devices::Core::FrameFlashControl>(this->shim().FlashControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameExposureCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameExposureCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Min(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Max(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Step(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(float* value) noexcept final
+    int32_t WINRT_CALL get_Min(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(float* value) noexcept final
+    int32_t WINRT_CALL get_Max(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(float* value) noexcept final
+    int32_t WINRT_CALL get_Step(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameExposureCompensationControl> : produce_base<D, Windows::Media::Devices::Core::IFrameExposureCompensationControl>
 {
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(void* value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), Windows::Foundation::IReference<float> const&);
             this->shim().Value(*reinterpret_cast<Windows::Foundation::IReference<float> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameExposureControl> : produce_base<D, Windows::Media::Devices::Core::IFrameExposureControl>
 {
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Auto(bool value) noexcept final
+    int32_t WINRT_CALL put_Auto(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(void), bool);
             this->shim().Auto(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(void* value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().Value(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameFlashCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameFlashCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedEyeReductionSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_RedEyeReductionSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReductionSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RedEyeReductionSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_PowerSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().PowerSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameFlashControl> : produce_base<D, Windows::Media::Devices::Core::IFrameFlashControl>
 {
-    HRESULT __stdcall get_Mode(Windows::Media::Devices::Core::FrameFlashMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Media::Devices::Core::FrameFlashMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Media::Devices::Core::FrameFlashMode));
             *value = detach_from<Windows::Media::Devices::Core::FrameFlashMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Media::Devices::Core::FrameFlashMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Media::Devices::Core::FrameFlashMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Media::Devices::Core::FrameFlashMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Media::Devices::Core::FrameFlashMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Auto(bool value) noexcept final
+    int32_t WINRT_CALL put_Auto(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(void), bool);
             this->shim().Auto(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedEyeReduction(bool* value) noexcept final
+    int32_t WINRT_CALL get_RedEyeReduction(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReduction, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RedEyeReduction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RedEyeReduction(bool value) noexcept final
+    int32_t WINRT_CALL put_RedEyeReduction(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedEyeReduction, WINRT_WRAP(void), bool);
             this->shim().RedEyeReduction(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerPercent(float* value) noexcept final
+    int32_t WINRT_CALL get_PowerPercent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PowerPercent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PowerPercent(float value) noexcept final
+    int32_t WINRT_CALL put_PowerPercent(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerPercent, WINRT_WRAP(void), float);
             this->shim().PowerPercent(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameFocusCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameFocusCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Min(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Max(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Step(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameFocusControl> : produce_base<D, Windows::Media::Devices::Core::IFrameFocusControl>
 {
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(void* value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().Value(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities> : produce_base<D, Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Min(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Min(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Min, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Min());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Max(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Max(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Max, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Max());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Step(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Step(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Step, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Step());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl> : produce_base<D, Windows::Media::Devices::Core::IFrameIsoSpeedControl>
 {
-    HRESULT __stdcall get_Auto(bool* value) noexcept final
+    int32_t WINRT_CALL get_Auto(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Auto());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Auto(bool value) noexcept final
+    int32_t WINRT_CALL put_Auto(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Auto, WINRT_WRAP(void), bool);
             this->shim().Auto(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(void* value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().Value(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceController> : produce_base<D, Windows::Media::Devices::Core::IVariablePhotoSequenceController>
 {
-    HRESULT __stdcall get_Supported(bool* value) noexcept final
+    int32_t WINRT_CALL get_Supported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Supported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Supported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPhotosPerSecond(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxPhotosPerSecond(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPhotosPerSecond, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxPhotosPerSecond());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosPerSecondLimit(float* value) noexcept final
+    int32_t WINRT_CALL get_PhotosPerSecondLimit(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosPerSecondLimit, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PhotosPerSecondLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PhotosPerSecondLimit(float value) noexcept final
+    int32_t WINRT_CALL put_PhotosPerSecondLimit(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosPerSecondLimit, WINRT_WRAP(void), float);
             this->shim().PhotosPerSecondLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
+    int32_t WINRT_CALL GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetHighestConcurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio), Windows::Media::MediaProperties::IMediaEncodingProperties const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetHighestConcurrentFrameRate(*reinterpret_cast<Windows::Media::MediaProperties::IMediaEncodingProperties const*>(&captureProperties)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentFrameRate(void** value) noexcept final
+    int32_t WINRT_CALL GetCurrentFrameRate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentFrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio));
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().GetCurrentFrameRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrameCapabilities(void** value) noexcept final
+    int32_t WINRT_CALL get_FrameCapabilities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameCapabilities, WINRT_WRAP(Windows::Media::Devices::Core::FrameControlCapabilities));
             *value = detach_from<Windows::Media::Devices::Core::FrameControlCapabilities>(this->shim().FrameCapabilities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredFrameControllers(void** items) noexcept final
+    int32_t WINRT_CALL get_DesiredFrameControllers(void** items) noexcept final
     {
         try
         {
             *items = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredFrameControllers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController>));
             *items = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController>>(this->shim().DesiredFrameControllers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1761,8 +1601,12 @@ struct produce<D, Windows::Media::Devices::Core::IVariablePhotoSequenceControlle
 
 WINRT_EXPORT namespace winrt::Windows::Media::Devices::Core {
 
+inline CameraIntrinsics::CameraIntrinsics(Windows::Foundation::Numerics::float2 const& focalLength, Windows::Foundation::Numerics::float2 const& principalPoint, Windows::Foundation::Numerics::float3 const& radialDistortion, Windows::Foundation::Numerics::float2 const& tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight) :
+    CameraIntrinsics(impl::call_factory<CameraIntrinsics, Windows::Media::Devices::Core::ICameraIntrinsicsFactory>([&](auto&& f) { return f.Create(focalLength, principalPoint, radialDistortion, tangentialDistortion, imageWidth, imageHeight); }))
+{}
+
 inline FrameController::FrameController() :
-    FrameController(get_activation_factory<FrameController>().ActivateInstance<FrameController>())
+    FrameController(impl::call_factory<FrameController>([](auto&& f) { return f.template ActivateInstance<FrameController>(); }))
 {}
 
 }
@@ -1805,5 +1649,3 @@ template<> struct hash<winrt::Windows::Media::Devices::Core::FrameIsoSpeedContro
 template<> struct hash<winrt::Windows::Media::Devices::Core::VariablePhotoSequenceController> : winrt::impl::hash_base<winrt::Windows::Media::Devices::Core::VariablePhotoSequenceController> {};
 
 }
-
-WINRT_WARNING_POP

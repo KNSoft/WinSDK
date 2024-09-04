@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.webui.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -259,6 +271,7 @@
 #include "Windows.ApplicationModel.Wallet.h"
 #include "Windows.Graphics.Printing.h"
 #include "Windows.System.h"
+#include "Windows.Web.UI.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
 
@@ -277,6 +290,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler ABI::Windows::UI::WebUI::IActivatedEventHandler
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                interface IBackgroundActivatedEventHandler;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+#define __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler ABI::Windows::UI::WebUI::IBackgroundActivatedEventHandler
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler_FWD_DEFINED__
@@ -404,6 +431,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIHtmlPrintDocumentSource_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                interface INewWebUIViewCreatedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs ABI::Windows::UI::WebUI::INewWebUIViewCreatedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics_FWD_DEFINED__
 namespace ABI {
@@ -445,6 +486,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3 ABI::Windows::UI::WebUI::IWebUIActivationStatics3
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                interface IWebUIActivationStatics4;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 ABI::Windows::UI::WebUI::IWebUIActivationStatics4
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIBackgroundTaskInstance_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIBackgroundTaskInstance_FWD_DEFINED__
@@ -516,9 +571,184 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUINavigatedOperation_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                interface IWebUIView;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView ABI::Windows::UI::WebUI::IWebUIView
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                interface IWebUIViewStatics;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics ABI::Windows::UI::WebUI::IWebUIViewStatics
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+
 // Parameterized interface forward declarations (C++)
 
 // Collection interface definitions
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                class NewWebUIViewCreatedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4b085412-b382-5bb4-8ced-a40f247917dd"))
+IEventHandler<ABI::Windows::UI::WebUI::NewWebUIViewCreatedEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::WebUI::NewWebUIViewCreatedEventArgs*, ABI::Windows::UI::WebUI::INewWebUIViewCreatedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.UI.WebUI.NewWebUIViewCreatedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::UI::WebUI::NewWebUIViewCreatedEventArgs*> __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_t;
+#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::WebUI::INewWebUIViewCreatedEventArgs*>
+//#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::WebUI::INewWebUIViewCreatedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                class WebUIView;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4ca655dd-3902-5030-bd60-5b4f472fd535"))
+IAsyncOperationCompletedHandler<ABI::Windows::UI::WebUI::WebUIView*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::WebUI::WebUIView*, ABI::Windows::UI::WebUI::IWebUIView*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.UI.WebUI.WebUIView>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::UI::WebUI::WebUIView*> __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::WebUI::IWebUIView*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::WebUI::IWebUIView*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_USE
+#define DEF___FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("43b17969-e5df-5639-9a5c-8f18477c637e"))
+IAsyncOperation<ABI::Windows::UI::WebUI::WebUIView*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::WebUI::WebUIView*, ABI::Windows::UI::WebUI::IWebUIView*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.UI.WebUI.WebUIView>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::UI::WebUI::WebUIView*> __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_t;
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::WebUI::IWebUIView*>
+//#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::WebUI::IWebUIView*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("46fce4c3-528a-5192-a389-0d521b17cc24"))
+ITypedEventHandler<ABI::Windows::UI::WebUI::WebUIView*,IInspectable*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::WebUI::WebUIView*, ABI::Windows::UI::WebUI::IWebUIView*>,IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.WebUI.WebUIView, Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::WebUI::WebUIView*,IInspectable*> __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_t;
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WebUI::IWebUIView*,IInspectable*>
+//#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WebUI::IWebUIView*,IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -588,10 +818,6 @@ typedef IAsyncOperation<enum ABI::Windows::ApplicationModel::Core::AppRestartFai
 
 
 
-
-
-
-
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -605,6 +831,45 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("8a4231a8-c4cb-5130-ba5b-b4963b42b60d"))
+ITypedEventHandler<ABI::Windows::UI::WebUI::WebUIView*,ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::WebUI::WebUIView*, ABI::Windows::UI::WebUI::IWebUIView*>,ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.WebUI.WebUIView, Windows.ApplicationModel.Activation.IActivatedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::WebUI::WebUIView*,ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WebUI::IWebUIView*,ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WebUI::IWebUIView*,ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+
+
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_FWD_DEFINED__
@@ -725,6 +990,21 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Activation {
+                interface IBackgroundActivatedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Activation */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
@@ -1524,6 +1804,26 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Deferral;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IDeferral;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIDeferral ABI::Windows::Foundation::IDeferral
+
+#endif // ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 namespace ABI {
@@ -1536,6 +1836,26 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Uri;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IUriRuntimeClass;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 
 
 
@@ -1580,6 +1900,39 @@ namespace ABI {
 
 
 
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                interface IWebViewControl;
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl ABI::Windows::Web::UI::IWebViewControl
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                interface IWebViewControl2;
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 ABI::Windows::Web::UI::IWebViewControl2
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -1590,6 +1943,11 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* WebUI */} /* ABI */
+
+
+
+
+
 
 
 
@@ -1633,6 +1991,16 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace WebUI {
+                class BackgroundActivatedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
                 class EnteredBackgroundEventArgs;
             } /* Windows */
         } /* UI */
@@ -1657,6 +2025,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* WebUI */} /* ABI */
+
 
 
 namespace ABI {
@@ -2131,6 +2500,7 @@ namespace ABI {
     } /* WebUI */} /* ABI */
 
 
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2169,6 +2539,10 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* WebUI */} /* ABI */
+
+
+
+
 
 
 
@@ -2240,6 +2614,44 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler;
 #endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.WebUI.BackgroundActivatedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                /* [object, uuid("EDB19FBB-0761-47CC-9A77-24D7072965CA"), contract] */
+                MIDL_INTERFACE("EDB19FBB-0761-47CC-9A77-24D7072965CA")
+                IBackgroundActivatedEventHandler : public IUnknown
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Invoke(
+                        /* [in] */__RPC__in_opt IInspectable * sender,
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs * eventArgs
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBackgroundActivatedEventHandler=_uuidof(IBackgroundActivatedEventHandler);
+                
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2648,6 +3060,56 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIHtmlPrintDocumentSource;
 
 /*
  *
+ * Interface Windows.UI.WebUI.INewWebUIViewCreatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.NewWebUIViewCreatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_INewWebUIViewCreatedEventArgs[] = L"Windows.UI.WebUI.INewWebUIViewCreatedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                /* [object, uuid("E8E1B216-BE2B-4C9E-85E7-083143EC4BE7"), exclusiveto, contract] */
+                MIDL_INTERFACE("E8E1B216-BE2B-4C9E-85E7-083143EC4BE7")
+                INewWebUIViewCreatedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebUIView(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::WebUI::IWebUIView * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ActivatedEventArgs(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasPendingNavigate(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDeferral(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_INewWebUIViewCreatedEventArgs=_uuidof(INewWebUIViewCreatedEventArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.WebUI.IWebUIActivationStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2812,6 +3274,58 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3;
 #endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.WebUI.IWebUIActivationStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIApplication
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIActivationStatics4[] = L"Windows.UI.WebUI.IWebUIActivationStatics4";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                /* [object, uuid("5E391429-183F-478D-8A25-67F80D03935B"), exclusiveto, contract] */
+                MIDL_INTERFACE("5E391429-183F-478D-8A25-67F80D03935B")
+                IWebUIActivationStatics4 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_NewWebUIViewCreated(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_NewWebUIViewCreated(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BackgroundActivated(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::WebUI::IBackgroundActivatedEventHandler  * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_BackgroundActivated(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebUIActivationStatics4=_uuidof(IWebUIActivationStatics4);
+                
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3016,6 +3530,112 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUINavigatedOperation;
 
 /*
  *
+ * Interface Windows.UI.WebUI.IWebUIView
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIView[] = L"Windows.UI.WebUI.IWebUIView";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                /* [object, uuid("6783F64F-52DA-4FD7-BE69-8EF6284B423C"), exclusiveto, contract] */
+                MIDL_INTERFACE("6783F64F-52DA-4FD7-BE69-8EF6284B423C")
+                IWebUIView : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationViewId(
+                        /* [retval, out] */__RPC__out INT32 * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Activated(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Activated(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IgnoreApplicationContentUriRulesNavigationRestrictions(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IgnoreApplicationContentUriRulesNavigationRestrictions(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebUIView=_uuidof(IWebUIView);
+                
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIView;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.WebUI.IWebUIViewStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIViewStatics[] = L"Windows.UI.WebUI.IWebUIViewStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace WebUI {
+                /* [object, uuid("B591E668-8E59-44F9-8803-1B24C9149D30"), exclusiveto, contract] */
+                MIDL_INTERFACE("B591E668-8E59-44F9-8803-1B24C9149D30")
+                IWebUIViewStatics : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateWithUriAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uri,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebUIViewStatics=_uuidof(IWebUIViewStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* WebUI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.WebUI.ActivatedDeferral
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3056,6 +3676,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_ActivatedOperation[] = L"Windows.UI.WebUI.ActivatedOperation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.WebUI.BackgroundActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_BackgroundActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_BackgroundActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_BackgroundActivatedEventArgs[] = L"Windows.UI.WebUI.BackgroundActivatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3124,6 +3766,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_LeavingBackgroundEventArgs[] = L"Windows.UI.WebUI.LeavingBackgroundEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.WebUI.NewWebUIViewCreatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.WebUI.INewWebUIViewCreatedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs[] = L"Windows.UI.WebUI.NewWebUIViewCreatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3200,6 +3864,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics4 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -4344,6 +5009,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.WebUI.WebUIView
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.WebUI.IWebUIViewStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.WebUI.IWebUIView ** Default Interface **
+ *    Windows.Web.UI.IWebViewControl
+ *    Windows.Web.UI.IWebViewControl2
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIView_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIView_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIView[] = L"Windows.UI.WebUI.WebUIView";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.WebUI.WebUIVoiceCommandActivatedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4451,6 +5143,12 @@ typedef interface __x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler __x_ABI_CW
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler;
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler __x_ABI_CWindows_CUI_CWebUI_CIEnteredBackgroundEventHandler;
@@ -4505,6 +5203,12 @@ typedef interface __x_ABI_CWindows_CUI_CWebUI_CIHtmlPrintDocumentSource __x_ABI_
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIHtmlPrintDocumentSource_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics;
@@ -4522,6 +5226,12 @@ typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics2 __x_ABI_
 typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3 __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3;
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4;
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIBackgroundTaskInstance_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIBackgroundTaskInstance_FWD_DEFINED__
@@ -4553,9 +5263,233 @@ typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUINavigatedOperation __x_ABI_
 
 #endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUINavigatedOperation_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIView __x_ABI_CWindows_CUI_CWebUI_CIWebUIView;
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_FWD_DEFINED__
+
 // Parameterized interface forward declarations (C)
 
 // Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIViewVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIViewVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIViewVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView;
+
+typedef struct __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIViewVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CUI__CWebUI__CWebUIView **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIViewVtbl;
+
+interface __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIViewVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectableVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
 enum __x_ABI_CWindows_CApplicationModel_CCore_CAppRestartFailureReason;
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCore__CAppRestartFailureReason_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CCore__CAppRestartFailureReason_INTERFACE_DEFINED__
@@ -4668,14 +5602,67 @@ interface __FIAsyncOperation_1_Windows__CApplicationModel__CCore__CAppRestartFai
 
 
 
-
-
-
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs_FWD_DEFINED__
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgsWithUser_FWD_DEFINED__
@@ -4732,6 +5719,13 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsP
 typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIAppointmentsProviderShowTimeFrameActivatedEventArgs_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs_FWD_DEFINED__
 
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CActivation_CIBarcodeScannerPreviewActivatedEventArgs_FWD_DEFINED__
@@ -5117,12 +6111,26 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CISuspendingOperation __x_A
 
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIDeferral __x_ABI_CWindows_CFoundation_CIDeferral;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIClosable __x_ABI_CWindows_CFoundation_CIClosable;
 
 #endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 
 
 
@@ -5146,8 +6154,37 @@ typedef interface __x_ABI_CWindows_CSystem_CIUser __x_ABI_CWindows_CSystem_CIUse
 
 
 
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl __x_ABI_CWindows_CWeb_CUI_CIWebViewControl;
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2;
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+
+
+
+
+
 
 typedef enum __x_ABI_CWindows_CUI_CWebUI_CPrintContent __x_ABI_CWindows_CUI_CWebUI_CPrintContent;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5310,6 +6347,68 @@ interface __x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler;
 #endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIActivatedEventHandler_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.WebUI.BackgroundActivatedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("EDB19FBB-0761-47CC-9A77-24D7072965CA"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CActivation_CIBackgroundActivatedEventArgs * eventArgs
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandlerVtbl;
+
+interface __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandlerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_Invoke(This,sender,eventArgs) \
+    ( (This)->lpVtbl->Invoke(This,sender,eventArgs) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6115,6 +7214,120 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIHtmlPrintDocumentSource;
 
 /*
  *
+ * Interface Windows.UI.WebUI.INewWebUIViewCreatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.NewWebUIViewCreatedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_INewWebUIViewCreatedEventArgs[] = L"Windows.UI.WebUI.INewWebUIViewCreatedEventArgs";
+/* [object, uuid("E8E1B216-BE2B-4C9E-85E7-083143EC4BE7"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WebUIView )(
+        __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ActivatedEventArgs )(
+        __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CActivation_CIActivatedEventArgs * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HasPendingNavigate )(
+        __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
+        __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_get_WebUIView(This,value) \
+    ( (This)->lpVtbl->get_WebUIView(This,value) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_get_ActivatedEventArgs(This,value) \
+    ( (This)->lpVtbl->get_ActivatedEventArgs(This,value) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_get_HasPendingNavigate(This,value) \
+    ( (This)->lpVtbl->get_HasPendingNavigate(This,value) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_GetDeferral(This,result) \
+    ( (This)->lpVtbl->GetDeferral(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CINewWebUIViewCreatedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.WebUI.IWebUIActivationStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6483,6 +7696,122 @@ interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3;
 #endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.WebUI.IWebUIActivationStatics4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIApplication
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIActivationStatics4[] = L"Windows.UI.WebUI.IWebUIActivationStatics4";
+/* [object, uuid("5E391429-183F-478D-8A25-67F80D03935B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_NewWebUIViewCreated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CUI__CWebUI__CNewWebUIViewCreatedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_NewWebUIViewCreated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_BackgroundActivated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CWebUI_CIBackgroundActivatedEventHandler  * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_BackgroundActivated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4Vtbl;
+
+interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_add_NewWebUIViewCreated(This,handler,token) \
+    ( (This)->lpVtbl->add_NewWebUIViewCreated(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_remove_NewWebUIViewCreated(This,token) \
+    ( (This)->lpVtbl->remove_NewWebUIViewCreated(This,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_add_BackgroundActivated(This,handler,token) \
+    ( (This)->lpVtbl->add_BackgroundActivated(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_remove_BackgroundActivated(This,token) \
+    ( (This)->lpVtbl->remove_BackgroundActivated(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIActivationStatics4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6952,6 +8281,244 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUINavigatedOperation;
 
 /*
  *
+ * Interface Windows.UI.WebUI.IWebUIView
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIView[] = L"Windows.UI.WebUI.IWebUIView";
+/* [object, uuid("6783F64F-52DA-4FD7-BE69-8EF6284B423C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ApplicationViewId )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Activated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CWebUI__CWebUIView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Activated )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IgnoreApplicationContentUriRulesNavigationRestrictions )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IgnoreApplicationContentUriRulesNavigationRestrictions )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIView * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewVtbl;
+
+interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIView
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_get_ApplicationViewId(This,value) \
+    ( (This)->lpVtbl->get_ApplicationViewId(This,value) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_add_Activated(This,handler,token) \
+    ( (This)->lpVtbl->add_Activated(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_remove_Activated(This,token) \
+    ( (This)->lpVtbl->remove_Activated(This,token) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_get_IgnoreApplicationContentUriRulesNavigationRestrictions(This,value) \
+    ( (This)->lpVtbl->get_IgnoreApplicationContentUriRulesNavigationRestrictions(This,value) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIView_put_IgnoreApplicationContentUriRulesNavigationRestrictions(This,value) \
+    ( (This)->lpVtbl->put_IgnoreApplicationContentUriRulesNavigationRestrictions(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIView;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIView_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.WebUI.IWebUIViewStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.WebUI.WebUIView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_WebUI_IWebUIViewStatics[] = L"Windows.UI.WebUI.IWebUIViewStatics";
+/* [object, uuid("B591E668-8E59-44F9-8803-1B24C9149D30"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateAsync )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateWithUriAsync )(
+        __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uri,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CWebUI__CWebUIView * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_CreateAsync(This,operation) \
+    ( (This)->lpVtbl->CreateAsync(This,operation) )
+
+#define __x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_CreateWithUriAsync(This,uri,operation) \
+    ( (This)->lpVtbl->CreateWithUriAsync(This,uri,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CWebUI_CIWebUIViewStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.WebUI.ActivatedDeferral
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6992,6 +8559,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_ActivatedOperation[] = L"Windows.UI.WebUI.ActivatedOperation";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.WebUI.BackgroundActivatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_BackgroundActivatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_BackgroundActivatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_BackgroundActivatedEventArgs[] = L"Windows.UI.WebUI.BackgroundActivatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7060,6 +8649,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_LeavingBackgroundEventArgs[] = L"Windows.UI.WebUI.LeavingBackgroundEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.WebUI.NewWebUIViewCreatedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.WebUI.INewWebUIViewCreatedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_NewWebUIViewCreatedEventArgs[] = L"Windows.UI.WebUI.NewWebUIViewCreatedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7136,6 +8747,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics4 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.WebUI.IWebUIActivationStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -8276,6 +9888,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIUserDataAccountProviderActivatedEventArgs[] = L"Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.WebUI.WebUIView
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.WebUI.IWebUIViewStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.WebUI.IWebUIView ** Default Interface **
+ *    Windows.Web.UI.IWebViewControl
+ *    Windows.Web.UI.IWebViewControl2
+ *
+ * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_WebUI_WebUIView_DEFINED
+#define RUNTIMECLASS_Windows_UI_WebUI_WebUIView_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_WebUI_WebUIView[] = L"Windows.UI.WebUI.WebUIView";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

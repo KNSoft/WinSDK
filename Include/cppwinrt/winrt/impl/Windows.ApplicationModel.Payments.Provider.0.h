@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -54,16 +54,58 @@ template <> struct name<Windows::ApplicationModel::Payments::Provider::PaymentAp
 template <> struct name<Windows::ApplicationModel::Payments::Provider::PaymentAppManager>{ static constexpr auto & value{ L"Windows.ApplicationModel.Payments.Provider.PaymentAppManager" }; };
 template <> struct name<Windows::ApplicationModel::Payments::Provider::PaymentTransaction>{ static constexpr auto & value{ L"Windows.ApplicationModel.Payments.Provider.PaymentTransaction" }; };
 template <> struct name<Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult>{ static constexpr auto & value{ L"Windows.ApplicationModel.Payments.Provider.PaymentTransactionAcceptResult" }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails>{ static constexpr GUID value{ 0x0CE201F0,0x8B93,0x4EB6,{ 0x8C,0x46,0x2E,0x4A,0x6C,0x6A,0x26,0xF6 } }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentAppManager>{ static constexpr GUID value{ 0x0E47AA53,0x8521,0x4969,{ 0xA9,0x57,0xDF,0x25,0x38,0xA3,0xA9,0x8F } }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>{ static constexpr GUID value{ 0xA341AC28,0xFC89,0x4406,{ 0xB4,0xD9,0x34,0xE7,0xFE,0x79,0xDF,0xB6 } }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentTransaction>{ static constexpr GUID value{ 0x62581DA0,0x26A5,0x4E9B,{ 0xA6,0xEB,0x66,0x60,0x6C,0xF0,0x01,0xD3 } }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult>{ static constexpr GUID value{ 0x060E3276,0xD30C,0x4817,{ 0x95,0xA2,0xDF,0x7A,0xE9,0x27,0x3B,0x56 } }; };
-template <> struct guid<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>{ static constexpr GUID value{ 0x8D639750,0xEE0A,0x4DF5,{ 0x9B,0x1E,0x1C,0x0F,0x9E,0xC5,0x98,0x81 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails>{ static constexpr guid value{ 0x0CE201F0,0x8B93,0x4EB6,{ 0x8C,0x46,0x2E,0x4A,0x6C,0x6A,0x26,0xF6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentAppManager>{ static constexpr guid value{ 0x0E47AA53,0x8521,0x4969,{ 0xA9,0x57,0xDF,0x25,0x38,0xA3,0xA9,0x8F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>{ static constexpr guid value{ 0xA341AC28,0xFC89,0x4406,{ 0xB4,0xD9,0x34,0xE7,0xFE,0x79,0xDF,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentTransaction>{ static constexpr guid value{ 0x62581DA0,0x26A5,0x4E9B,{ 0xA6,0xEB,0x66,0x60,0x6C,0xF0,0x01,0xD3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult>{ static constexpr guid value{ 0x060E3276,0xD30C,0x4817,{ 0x95,0xA2,0xDF,0x7A,0xE9,0x27,0x3B,0x56 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>{ static constexpr guid value{ 0x8D639750,0xEE0A,0x4DF5,{ 0x9B,0x1E,0x1C,0x0F,0x9E,0xC5,0x98,0x81 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Payments::Provider::PaymentAppCanMakePaymentTriggerDetails>{ using type = Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails; };
 template <> struct default_interface<Windows::ApplicationModel::Payments::Provider::PaymentAppManager>{ using type = Windows::ApplicationModel::Payments::Provider::IPaymentAppManager; };
 template <> struct default_interface<Windows::ApplicationModel::Payments::Provider::PaymentTransaction>{ using type = Windows::ApplicationModel::Payments::Provider::IPaymentTransaction; };
 template <> struct default_interface<Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult>{ using type = Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult; };
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCanMakePaymentResult(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RegisterAsync(void* supportedPaymentMethodIds, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnregisterAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransaction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PaymentRequest(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PayerEmail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PayerEmail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PayerName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PayerName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PayerPhoneNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PayerPhoneNumber(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateShippingAddressAsync(void* shippingAddress, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateSelectedShippingOptionAsync(void* selectedShippingOption, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL AcceptAsync(void* paymentToken, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL Reject() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* id, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Payments_Provider_IPaymentAppCanMakePaymentTriggerDetails
@@ -118,47 +160,5 @@ struct consume_Windows_ApplicationModel_Payments_Provider_IPaymentTransactionSta
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransaction> FromIdAsync(param::hstring const& id) const;
 };
 template <> struct consume<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Payments_Provider_IPaymentTransactionStatics<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportCanMakePaymentResult(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RegisterAsync(void* supportedPaymentMethodIds, void** result) noexcept = 0;
-    virtual HRESULT __stdcall UnregisterAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransaction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PaymentRequest(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PayerEmail(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PayerEmail(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PayerName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PayerName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PayerPhoneNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PayerPhoneNumber(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall UpdateShippingAddressAsync(void* shippingAddress, void** result) noexcept = 0;
-    virtual HRESULT __stdcall UpdateSelectedShippingOptionAsync(void* selectedShippingOption, void** result) noexcept = 0;
-    virtual HRESULT __stdcall AcceptAsync(void* paymentToken, void** result) noexcept = 0;
-    virtual HRESULT __stdcall Reject() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING id, void** result) noexcept = 0;
-};};
 
 }

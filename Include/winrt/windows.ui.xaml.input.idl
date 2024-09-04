@@ -15,6 +15,7 @@ import "Windows.System.idl";
 import "Windows.UI.Core.idl";
 import "Windows.UI.Input.idl";
 import "Windows.UI.Xaml.idl";
+import "Windows.UI.Xaml.Controls.idl";
 import "Windows.UI.Xaml.Documents.idl";
 
 // Forward Declare
@@ -80,6 +81,19 @@ namespace Windows
     {
         namespace Xaml
         {
+            namespace Controls
+            {
+                runtimeclass IconSource;
+            }
+        }
+    }
+}
+namespace Windows
+{
+    namespace UI
+    {
+        namespace Xaml
+        {
             runtimeclass DependencyObject;
 
             runtimeclass DependencyProperty;
@@ -133,6 +147,8 @@ namespace Windows
 
                 typedef enum ManipulationModes ManipulationModes;
 
+                typedef enum StandardUICommandKind StandardUICommandKind;
+
                 typedef enum XYFocusKeyboardNavigationMode XYFocusKeyboardNavigationMode;
 
                 typedef enum XYFocusNavigationStrategy XYFocusNavigationStrategy;
@@ -173,6 +189,8 @@ namespace Windows
 
                 interface IAccessKeyManagerStatics2;
 
+                interface ICanExecuteRequestedEventArgs;
+
                 interface ICharacterReceivedRoutedEventArgs;
 
                 interface ICommand;
@@ -181,9 +199,15 @@ namespace Windows
 
                 interface IDoubleTappedRoutedEventArgs;
 
+                interface IExecuteRequestedEventArgs;
+
                 interface IFindNextElementOptions;
 
                 interface IFocusManager;
+
+                interface IFocusManagerGotFocusEventArgs;
+
+                interface IFocusManagerLostFocusEventArgs;
 
                 interface IFocusManagerStatics;
 
@@ -195,11 +219,15 @@ namespace Windows
 
                 interface IFocusManagerStatics5;
 
+                interface IFocusManagerStatics6;
+
                 interface IFocusMovementResult;
 
                 interface IGettingFocusEventArgs;
 
                 interface IGettingFocusEventArgs2;
+
+                interface IGettingFocusEventArgs3;
 
                 interface IHoldingRoutedEventArgs;
 
@@ -235,6 +263,8 @@ namespace Windows
 
                 interface ILosingFocusEventArgs2;
 
+                interface ILosingFocusEventArgs3;
+
                 interface IManipulationCompletedRoutedEventArgs;
 
                 interface IManipulationDeltaRoutedEventArgs;
@@ -263,7 +293,19 @@ namespace Windows
 
                 interface IRightTappedRoutedEventArgs;
 
+                interface IStandardUICommand;
+
+                interface IStandardUICommandFactory;
+
+                interface IStandardUICommandStatics;
+
                 interface ITappedRoutedEventArgs;
+
+                interface IXamlUICommand;
+
+                interface IXamlUICommandFactory;
+
+                interface IXamlUICommandStatics;
 
                 runtimeclass AccessKeyDisplayDismissedEventArgs;
 
@@ -273,15 +315,23 @@ namespace Windows
 
                 runtimeclass AccessKeyManager;
 
+                runtimeclass CanExecuteRequestedEventArgs;
+
                 runtimeclass CharacterReceivedRoutedEventArgs;
 
                 runtimeclass ContextRequestedEventArgs;
 
                 runtimeclass DoubleTappedRoutedEventArgs;
 
+                runtimeclass ExecuteRequestedEventArgs;
+
                 runtimeclass FindNextElementOptions;
 
                 runtimeclass FocusManager;
+
+                runtimeclass FocusManagerGotFocusEventArgs;
+
+                runtimeclass FocusManagerLostFocusEventArgs;
 
                 runtimeclass FocusMovementResult;
 
@@ -329,7 +379,11 @@ namespace Windows
 
                 runtimeclass RightTappedRoutedEventArgs;
 
+                runtimeclass StandardUICommand;
+
                 runtimeclass TappedRoutedEventArgs;
+
+                runtimeclass XamlUICommand;
             }
         }
     }
@@ -368,6 +422,14 @@ namespace Windows
 
                     interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Input.KeyboardAccelerator*>;
 
+                    interface Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs*>;
+
+                    interface Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs*>;
+
+                    interface Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.GettingFocusEventArgs*>;
+
+                    interface Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.LosingFocusEventArgs*>;
+
                     interface Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>;
@@ -377,6 +439,10 @@ namespace Windows
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.KeyboardAccelerator*, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.XamlUICommand*, Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.XamlUICommand*, Windows.UI.Xaml.Input.ExecuteRequestedEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>;
 
@@ -556,6 +622,28 @@ namespace Windows
                     System           = 0x10000
                 };
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                enum StandardUICommandKind
+                {
+                    None      = 0,
+                    Cut       = 1,
+                    Copy      = 2,
+                    Paste     = 3,
+                    SelectAll = 4,
+                    Delete    = 5,
+                    Share     = 6,
+                    Save      = 7,
+                    Open      = 8,
+                    Close     = 9,
+                    Pause     = 10,
+                    Play      = 11,
+                    Stop      = 12,
+                    Forward   = 13,
+                    Backward  = 14,
+                    Undo      = 15,
+                    Redo      = 16
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 enum XYFocusKeyboardNavigationMode
                 {
@@ -675,7 +763,7 @@ namespace Windows
                 interface IAccessKeyManagerStatics : IInspectable
                 {
                     [propget] HRESULT IsDisplayModeEnabled([out] [retval] boolean* value);
-                    [eventadd] HRESULT IsDisplayModeEnabledChanged([in] Windows.Foundation.TypedEventHandler<IInspectable*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT IsDisplayModeEnabledChanged([in] Windows.Foundation.TypedEventHandler<IInspectable*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT IsDisplayModeEnabledChanged([in] EventRegistrationToken token);
                     HRESULT ExitDisplayMode();
                 }
@@ -687,6 +775,16 @@ namespace Windows
                 {
                     [propget] HRESULT AreKeyTipsEnabled([out] [retval] boolean* value);
                     [propput] HRESULT AreKeyTipsEnabled([in] boolean value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs)]
+                [uuid(C8E75256-1950-505D-993B-75907EF96830)]
+                interface ICanExecuteRequestedEventArgs : IInspectable
+                {
+                    [propget] HRESULT Parameter([out] [retval] IInspectable** value);
+                    [propget] HRESULT CanExecute([out] [retval] boolean* value);
+                    [propput] HRESULT CanExecute([in] boolean value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -704,9 +802,9 @@ namespace Windows
                 [uuid(E5AF3542-CA67-4081-995B-709DD13792DF)]
                 interface ICommand : IInspectable
                 {
-                    [eventadd] HRESULT CanExecuteChanged([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT CanExecuteChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT CanExecuteChanged([in] EventRegistrationToken token);
-                    HRESULT CanExecute([in] IInspectable* parameter, [out] [retval] boolean* returnValue);
+                    HRESULT CanExecute([in] IInspectable* parameter, [out] [retval] boolean* result);
                     HRESULT Execute([in] IInspectable* parameter);
                 }
 
@@ -728,7 +826,15 @@ namespace Windows
                     [propget] HRESULT PointerDeviceType([out] [retval] Windows.Devices.Input.PointerDeviceType* value);
                     [propget] HRESULT Handled([out] [retval] boolean* value);
                     [propput] HRESULT Handled([in] boolean value);
-                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* returnValue);
+                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.ExecuteRequestedEventArgs)]
+                [uuid(E07FA734-A0B6-5755-9E87-24F54CCA9372)]
+                interface IExecuteRequestedEventArgs : IInspectable
+                {
+                    [propget] HRESULT Parameter([out] [retval] IInspectable** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -753,12 +859,30 @@ namespace Windows
                 {
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs)]
+                [uuid(97AA5D83-535B-507A-868E-62B706F06B61)]
+                interface IFocusManagerGotFocusEventArgs : IInspectable
+                {
+                    [propget] HRESULT NewFocusedElement([out] [retval] Windows.UI.Xaml.DependencyObject** value);
+                    [propget] HRESULT CorrelationId([out] [retval] GUID* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs)]
+                [uuid(3E157E7A-9578-5CD3-AAA8-051B3D391978)]
+                interface IFocusManagerLostFocusEventArgs : IInspectable
+                {
+                    [propget] HRESULT OldFocusedElement([out] [retval] Windows.UI.Xaml.DependencyObject** value);
+                    [propget] HRESULT CorrelationId([out] [retval] GUID* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Input.FocusManager)]
                 [uuid(1ECCD326-8182-4482-826A-0918E9ED9AF7)]
                 interface IFocusManagerStatics : IInspectable
                 {
-                    HRESULT GetFocusedElement([out] [retval] IInspectable** returnValue);
+                    HRESULT GetFocusedElement([out] [retval] IInspectable** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -766,7 +890,7 @@ namespace Windows
                 [uuid(A920D761-DD87-4F31-BEDA-EF417FE7C04A)]
                 interface IFocusManagerStatics2 : IInspectable
                 {
-                    [overload("TryMoveFocus")] HRESULT TryMoveFocus([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] boolean* returnValue);
+                    [overload("TryMoveFocus")] HRESULT TryMoveFocus([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] boolean* result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -783,11 +907,11 @@ namespace Windows
                 [uuid(29276E9C-1C6C-414A-BA1C-96EFD5962BCD)]
                 interface IFocusManagerStatics4 : IInspectable
                 {
-                    [overload("TryMoveFocus")] HRESULT TryMoveFocusWithOptions([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] boolean* returnValue);
-                    [overload("FindNextElement")] HRESULT FindNextElement([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] Windows.UI.Xaml.DependencyObject** returnValue);
-                    HRESULT FindFirstFocusableElement([in] Windows.UI.Xaml.DependencyObject* searchScope, [out] [retval] Windows.UI.Xaml.DependencyObject** returnValue);
-                    HRESULT FindLastFocusableElement([in] Windows.UI.Xaml.DependencyObject* searchScope, [out] [retval] Windows.UI.Xaml.DependencyObject** returnValue);
-                    [overload("FindNextElement")] HRESULT FindNextElementWithOptions([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] Windows.UI.Xaml.DependencyObject** returnValue);
+                    [overload("TryMoveFocus")] HRESULT TryMoveFocusWithOptions([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] boolean* result);
+                    [overload("FindNextElement")] HRESULT FindNextElement([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] Windows.UI.Xaml.DependencyObject** result);
+                    HRESULT FindFirstFocusableElement([in] Windows.UI.Xaml.DependencyObject* searchScope, [out] [retval] Windows.UI.Xaml.DependencyObject** result);
+                    HRESULT FindLastFocusableElement([in] Windows.UI.Xaml.DependencyObject* searchScope, [out] [retval] Windows.UI.Xaml.DependencyObject** result);
+                    [overload("FindNextElement")] HRESULT FindNextElementWithOptions([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] Windows.UI.Xaml.DependencyObject** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -795,9 +919,24 @@ namespace Windows
                 [uuid(280EDC61-207A-4D7B-B98F-CE165E1B2015)]
                 interface IFocusManagerStatics5 : IInspectable
                 {
-                    HRESULT TryFocusAsync([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FocusState value, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** returnValue);
-                    [overload("TryMoveFocusAsync")] HRESULT TryMoveFocusAsync([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** returnValue);
-                    [overload("TryMoveFocusAsync")] HRESULT TryMoveFocusWithOptionsAsync([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** returnValue);
+                    HRESULT TryFocusAsync([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FocusState value, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** operation);
+                    [overload("TryMoveFocusAsync")] HRESULT TryMoveFocusAsync([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** operation);
+                    [overload("TryMoveFocusAsync")] HRESULT TryMoveFocusWithOptionsAsync([in] Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, [in] Windows.UI.Xaml.Input.FindNextElementOptions* focusNavigationOptions, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Input.FocusMovementResult*>** operation);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.FocusManager)]
+                [uuid(3546A1B6-20BF-5007-929D-E6D32E16AFE4)]
+                interface IFocusManagerStatics6 : IInspectable
+                {
+                    [eventadd] HRESULT GotFocus([in] Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.FocusManagerGotFocusEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT GotFocus([in] EventRegistrationToken token);
+                    [eventadd] HRESULT LostFocus([in] Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.FocusManagerLostFocusEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT LostFocus([in] EventRegistrationToken token);
+                    [eventadd] HRESULT GettingFocus([in] Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.GettingFocusEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT GettingFocus([in] EventRegistrationToken token);
+                    [eventadd] HRESULT LosingFocus([in] Windows.Foundation.EventHandler<Windows.UI.Xaml.Input.LosingFocusEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT LosingFocus([in] EventRegistrationToken token);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -830,8 +969,16 @@ namespace Windows
                 [uuid(88754D7B-B4B9-4959-8BCE-89BF212ED4EB)]
                 interface IGettingFocusEventArgs2 : IInspectable
                 {
-                    HRESULT TryCancel([out] [retval] boolean* returnValue);
-                    HRESULT TrySetNewFocusedElement([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* returnValue);
+                    HRESULT TryCancel([out] [retval] boolean* result);
+                    HRESULT TrySetNewFocusedElement([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.GettingFocusEventArgs)]
+                [uuid(4E024891-DB3F-5E78-B75A-62BFC3510735)]
+                interface IGettingFocusEventArgs3 : IInspectable
+                {
+                    [propget] HRESULT CorrelationId([out] [retval] GUID* value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -843,7 +990,7 @@ namespace Windows
                     [propget] HRESULT HoldingState([out] [retval] Windows.UI.Input.HoldingState* value);
                     [propget] HRESULT Handled([out] [retval] boolean* value);
                     [propput] HRESULT Handled([in] boolean value);
-                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* returnValue);
+                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -901,7 +1048,7 @@ namespace Windows
                 [uuid(4A40BB52-4BD7-4E54-8617-1CDA8A1EDA7F)]
                 interface IInputScopeNameFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] Windows.UI.Xaml.Input.InputScopeNameValue nameValue, [out] [retval] Windows.UI.Xaml.Input.InputScopeName** instance);
+                    HRESULT CreateInstance([in] Windows.UI.Xaml.Input.InputScopeNameValue nameValue, [out] [retval] Windows.UI.Xaml.Input.InputScopeName** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -944,7 +1091,7 @@ namespace Windows
                     [propput] HRESULT IsEnabled([in] boolean value);
                     [propget] HRESULT ScopeOwner([out] [retval] Windows.UI.Xaml.DependencyObject** value);
                     [propput] HRESULT ScopeOwner([in] Windows.UI.Xaml.DependencyObject* value);
-                    [eventadd] HRESULT Invoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.KeyboardAccelerator*, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT Invoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.KeyboardAccelerator*, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT Invoked([in] EventRegistrationToken token);
                 }
 
@@ -953,7 +1100,7 @@ namespace Windows
                 [uuid(44D88A99-4BFD-4A47-A893-515F388623F6)]
                 interface IKeyboardAcceleratorFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Input.KeyboardAccelerator** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Input.KeyboardAccelerator** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1007,8 +1154,16 @@ namespace Windows
                 [uuid(0493FAD9-C27F-469F-8E62-52B3A4F7CD54)]
                 interface ILosingFocusEventArgs2 : IInspectable
                 {
-                    HRESULT TryCancel([out] [retval] boolean* returnValue);
-                    HRESULT TrySetNewFocusedElement([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* returnValue);
+                    HRESULT TryCancel([out] [retval] boolean* result);
+                    HRESULT TrySetNewFocusedElement([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.LosingFocusEventArgs)]
+                [uuid(C98900BD-0B79-566E-AD1F-436FA513AE22)]
+                interface ILosingFocusEventArgs3 : IInspectable
+                {
+                    [propget] HRESULT CorrelationId([out] [retval] GUID* value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1079,7 +1234,7 @@ namespace Windows
                 [uuid(6D05B039-3702-4396-AD9B-A825EFA63A3B)]
                 interface IManipulationPivotFactory : IInspectable
                 {
-                    HRESULT CreateInstanceWithCenterAndRadius([in] Windows.Foundation.Point center, [in] DOUBLE radius, [out] [retval] Windows.UI.Xaml.Input.ManipulationPivot** instance);
+                    HRESULT CreateInstanceWithCenterAndRadius([in] Windows.Foundation.Point center, [in] DOUBLE radius, [out] [retval] Windows.UI.Xaml.Input.ManipulationPivot** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1101,7 +1256,7 @@ namespace Windows
                 [uuid(84C1DAA7-7272-4463-B6C3-A40B9BA151FC)]
                 interface IManipulationStartedRoutedEventArgsFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1150,8 +1305,8 @@ namespace Windows
                     [propget] HRESULT KeyModifiers([out] [retval] Windows.System.VirtualKeyModifiers* value);
                     [propget] HRESULT Handled([out] [retval] boolean* value);
                     [propput] HRESULT Handled([in] boolean value);
-                    HRESULT GetCurrentPoint([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.UI.Input.PointerPoint** returnValue);
-                    HRESULT GetIntermediatePoints([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Input.PointerPoint*>** returnValue);
+                    HRESULT GetCurrentPoint([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.UI.Input.PointerPoint** result);
+                    HRESULT GetIntermediatePoints([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Input.PointerPoint*>** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1181,7 +1336,32 @@ namespace Windows
                     [propget] HRESULT PointerDeviceType([out] [retval] Windows.Devices.Input.PointerDeviceType* value);
                     [propget] HRESULT Handled([out] [retval] boolean* value);
                     [propput] HRESULT Handled([in] boolean value);
-                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* returnValue);
+                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.StandardUICommand)]
+                [uuid(D2BF7F43-0504-52D0-8AA6-0CB0F756EB27)]
+                interface IStandardUICommand : IInspectable
+                {
+                    [propget] HRESULT Kind([out] [retval] Windows.UI.Xaml.Input.StandardUICommandKind* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.StandardUICommand)]
+                [uuid(8F1A7590-DCE1-56E4-AB63-F5CE3CE4EBF6)]
+                interface IStandardUICommandFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Input.StandardUICommand** value);
+                    HRESULT CreateInstanceWithKind([in] Windows.UI.Xaml.Input.StandardUICommandKind kind, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Input.StandardUICommand** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.StandardUICommand)]
+                [uuid(7EA87ED9-2978-5533-9B2E-6759CE88569F)]
+                interface IStandardUICommandStatics : IInspectable
+                {
+                    [propget] HRESULT KindProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1192,7 +1372,51 @@ namespace Windows
                     [propget] HRESULT PointerDeviceType([out] [retval] Windows.Devices.Input.PointerDeviceType* value);
                     [propget] HRESULT Handled([out] [retval] boolean* value);
                     [propput] HRESULT Handled([in] boolean value);
-                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* returnValue);
+                    HRESULT GetPosition([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Point* result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.XamlUICommand)]
+                [uuid(8494F8D4-EAD1-5F01-AD2E-A8CAD4F9DC0E)]
+                interface IXamlUICommand : IInspectable
+                {
+                    [propget] HRESULT Label([out] [retval] HSTRING* value);
+                    [propput] HRESULT Label([in] HSTRING value);
+                    [propget] HRESULT IconSource([out] [retval] Windows.UI.Xaml.Controls.IconSource** value);
+                    [propput] HRESULT IconSource([in] Windows.UI.Xaml.Controls.IconSource* value);
+                    [propget] HRESULT KeyboardAccelerators([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Input.KeyboardAccelerator*>** value);
+                    [propget] HRESULT AccessKey([out] [retval] HSTRING* value);
+                    [propput] HRESULT AccessKey([in] HSTRING value);
+                    [propget] HRESULT Description([out] [retval] HSTRING* value);
+                    [propput] HRESULT Description([in] HSTRING value);
+                    [propget] HRESULT Command([out] [retval] Windows.UI.Xaml.Input.ICommand** value);
+                    [propput] HRESULT Command([in] Windows.UI.Xaml.Input.ICommand* value);
+                    [eventadd] HRESULT ExecuteRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.XamlUICommand*, Windows.UI.Xaml.Input.ExecuteRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT ExecuteRequested([in] EventRegistrationToken token);
+                    [eventadd] HRESULT CanExecuteRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.XamlUICommand*, Windows.UI.Xaml.Input.CanExecuteRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT CanExecuteRequested([in] EventRegistrationToken token);
+                    HRESULT NotifyCanExecuteChanged();
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.XamlUICommand)]
+                [uuid(1EEC08C3-E061-5E10-9F2A-2BAA840885C2)]
+                interface IXamlUICommandFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Input.XamlUICommand** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.XamlUICommand)]
+                [uuid(66BC457C-1A0C-58ED-876E-71533F966DB6)]
+                interface IXamlUICommandStatics : IInspectable
+                {
+                    [propget] HRESULT LabelProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT IconSourceProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT KeyboardAcceleratorsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT AccessKeyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT DescriptionProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT CommandProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1232,6 +1456,13 @@ namespace Windows
                     [default] interface Windows.UI.Xaml.Input.IAccessKeyManager;
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                runtimeclass CanExecuteRequestedEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.ICanExecuteRequestedEventArgs;
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
                 [marshaling_behavior(agile)]
                 [threading(both)]
@@ -1258,6 +1489,13 @@ namespace Windows
                     [default] interface Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs;
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                runtimeclass ExecuteRequestedEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.IExecuteRequestedEventArgs;
+                }
+
                 [activatable(Windows.Foundation.UniversalApiContract, 4.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [marshaling_behavior(agile)]
@@ -1274,15 +1512,29 @@ namespace Windows
                 [static(Windows.UI.Xaml.Input.IFocusManagerStatics3, Windows.Foundation.UniversalApiContract, 1.0)]
                 [static(Windows.UI.Xaml.Input.IFocusManagerStatics4, Windows.Foundation.UniversalApiContract, 4.0)]
                 [static(Windows.UI.Xaml.Input.IFocusManagerStatics5, Windows.Foundation.UniversalApiContract, 6.0)]
+                [static(Windows.UI.Xaml.Input.IFocusManagerStatics6, Windows.Foundation.UniversalApiContract, 7.0)]
                 [threading(both)]
                 runtimeclass FocusManager
                 {
                     [default] interface Windows.UI.Xaml.Input.IFocusManager;
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                runtimeclass FocusManagerGotFocusEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.IFocusManagerGotFocusEventArgs;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                runtimeclass FocusManagerLostFocusEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.IFocusManagerLostFocusEventArgs;
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass FocusMovementResult
                 {
                     [default] interface Windows.UI.Xaml.Input.IFocusMovementResult;
@@ -1295,6 +1547,7 @@ namespace Windows
                 {
                     [default] interface Windows.UI.Xaml.Input.IGettingFocusEventArgs;
                     [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.UI.Xaml.Input.IGettingFocusEventArgs2;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Input.IGettingFocusEventArgs3;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1308,7 +1561,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass InertiaExpansionBehavior
                 {
                     [default] interface Windows.UI.Xaml.Input.IInertiaExpansionBehavior;
@@ -1316,7 +1568,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass InertiaRotationBehavior
                 {
                     [default] interface Windows.UI.Xaml.Input.IInertiaRotationBehavior;
@@ -1324,7 +1575,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass InertiaTranslationBehavior
                 {
                     [default] interface Windows.UI.Xaml.Input.IInertiaTranslationBehavior;
@@ -1371,7 +1621,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass KeyboardAcceleratorInvokedEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs;
@@ -1385,6 +1634,7 @@ namespace Windows
                 {
                     [default] interface Windows.UI.Xaml.Input.ILosingFocusEventArgs;
                     [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.UI.Xaml.Input.ILosingFocusEventArgs2;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Input.ILosingFocusEventArgs3;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1452,7 +1702,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass Pointer
                 {
                     [default] interface Windows.UI.Xaml.Input.IPointer;
@@ -1469,7 +1718,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass ProcessKeyboardAcceleratorEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Input.IProcessKeyboardAcceleratorEventArgs;
@@ -1484,6 +1732,16 @@ namespace Windows
                     [default] interface Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs;
                 }
 
+                [composable(Windows.UI.Xaml.Input.IStandardUICommandFactory, public, Windows.Foundation.UniversalApiContract, 7.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Input.IStandardUICommandStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+                [threading(both)]
+                runtimeclass StandardUICommand : Windows.UI.Xaml.Input.XamlUICommand
+                {
+                    [default] interface Windows.UI.Xaml.Input.IStandardUICommand;
+                }
+
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
@@ -1491,6 +1749,17 @@ namespace Windows
                 runtimeclass TappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Input.ITappedRoutedEventArgs;
+                }
+
+                [composable(Windows.UI.Xaml.Input.IXamlUICommandFactory, public, Windows.Foundation.UniversalApiContract, 7.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Input.IXamlUICommandStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+                [threading(both)]
+                runtimeclass XamlUICommand : Windows.UI.Xaml.DependencyObject
+                {
+                    [default] interface Windows.UI.Xaml.Input.IXamlUICommand;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Input.ICommand;
                 }
             }
         }

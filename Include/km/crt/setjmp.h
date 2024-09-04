@@ -203,13 +203,13 @@ extern "C"
 #pragma warning(push)
 #pragma warning(disable:4987) /* nonstandard extension: throw (...) */
 #endif
-_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_ jmp_buf _Buf, _In_ int _Value) throw(...);
+_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_reads_(_JBLEN) jmp_buf _Buf, _In_ int _Value) throw(...);
 #if _MSC_VER >= 1200
 #pragma warning(pop)
 #endif
 }
 #else
-_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_ jmp_buf _Buf, _In_ int _Value);
+_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_reads_(_JBLEN) jmp_buf _Buf, _In_ int _Value);
 #endif
 
 #ifdef  _MSC_VER

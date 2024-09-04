@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -165,19 +165,19 @@ template <> struct name<Windows::ApplicationModel::Wallet::WalletBarcodeSymbolog
 template <> struct name<Windows::ApplicationModel::Wallet::WalletDetailViewPosition>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.WalletDetailViewPosition" }; };
 template <> struct name<Windows::ApplicationModel::Wallet::WalletItemKind>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.WalletItemKind" }; };
 template <> struct name<Windows::ApplicationModel::Wallet::WalletSummaryViewPosition>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.WalletSummaryViewPosition" }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletBarcode>{ static constexpr GUID value{ 0x4F857B29,0xDE80,0x4EA4,{ 0xA1,0xCD,0x81,0xCD,0x08,0x4D,0xAC,0x27 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletBarcodeFactory>{ static constexpr GUID value{ 0x30117161,0xED9C,0x469E,{ 0xBB,0xFD,0x30,0x6C,0x95,0xEA,0x71,0x08 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItem>{ static constexpr GUID value{ 0x20B54BE8,0x118D,0x4EC4,{ 0x99,0x6C,0xB9,0x63,0xE7,0xBD,0x3E,0x74 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItemCustomProperty>{ static constexpr GUID value{ 0xB94B40F3,0xFA00,0x40FD,{ 0x98,0xDC,0x9D,0xE4,0x66,0x97,0xF1,0xE7 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory>{ static constexpr GUID value{ 0xD0046A44,0x61A1,0x41AA,{ 0xB2,0x59,0xA5,0x61,0x0A,0xB5,0xD5,0x75 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItemFactory>{ static constexpr GUID value{ 0x53E27470,0x4F0B,0x4A3E,{ 0x99,0xE5,0x0B,0xBB,0x1E,0xAB,0x38,0xD4 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItemStore>{ static constexpr GUID value{ 0x7160484B,0x6D49,0x48F8,{ 0x91,0xA9,0x40,0xA1,0xD0,0xF1,0x3E,0xF4 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletItemStore2>{ static constexpr GUID value{ 0x65E682F0,0x7009,0x4A15,{ 0xBD,0x54,0x4F,0xFF,0x37,0x9B,0xFF,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletManagerStatics>{ static constexpr GUID value{ 0x5111D6B8,0xC9A4,0x4C64,{ 0xB4,0xDD,0xE1,0xE5,0x48,0x00,0x1C,0x0D } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletRelevantLocation>{ static constexpr GUID value{ 0x9FD8782A,0xE3F9,0x4DE1,{ 0xBA,0xB3,0xBB,0x19,0x2E,0x46,0xB3,0xF3 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletTransaction>{ static constexpr GUID value{ 0x40E1E940,0x2606,0x4519,{ 0x81,0xCB,0xBF,0xF1,0xC6,0x0D,0x1F,0x79 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletVerb>{ static constexpr GUID value{ 0x17B826D6,0xE3C1,0x4C74,{ 0x8A,0x94,0x21,0x7A,0xAD,0xBC,0x48,0x84 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::IWalletVerbFactory>{ static constexpr GUID value{ 0x76012771,0xBE58,0x4D5E,{ 0x83,0xED,0x58,0xB1,0x66,0x9C,0x7A,0xD9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletBarcode>{ static constexpr guid value{ 0x4F857B29,0xDE80,0x4EA4,{ 0xA1,0xCD,0x81,0xCD,0x08,0x4D,0xAC,0x27 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletBarcodeFactory>{ static constexpr guid value{ 0x30117161,0xED9C,0x469E,{ 0xBB,0xFD,0x30,0x6C,0x95,0xEA,0x71,0x08 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItem>{ static constexpr guid value{ 0x20B54BE8,0x118D,0x4EC4,{ 0x99,0x6C,0xB9,0x63,0xE7,0xBD,0x3E,0x74 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItemCustomProperty>{ static constexpr guid value{ 0xB94B40F3,0xFA00,0x40FD,{ 0x98,0xDC,0x9D,0xE4,0x66,0x97,0xF1,0xE7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory>{ static constexpr guid value{ 0xD0046A44,0x61A1,0x41AA,{ 0xB2,0x59,0xA5,0x61,0x0A,0xB5,0xD5,0x75 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItemFactory>{ static constexpr guid value{ 0x53E27470,0x4F0B,0x4A3E,{ 0x99,0xE5,0x0B,0xBB,0x1E,0xAB,0x38,0xD4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItemStore>{ static constexpr guid value{ 0x7160484B,0x6D49,0x48F8,{ 0x91,0xA9,0x40,0xA1,0xD0,0xF1,0x3E,0xF4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletItemStore2>{ static constexpr guid value{ 0x65E682F0,0x7009,0x4A15,{ 0xBD,0x54,0x4F,0xFF,0x37,0x9B,0xFF,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletManagerStatics>{ static constexpr guid value{ 0x5111D6B8,0xC9A4,0x4C64,{ 0xB4,0xDD,0xE1,0xE5,0x48,0x00,0x1C,0x0D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletRelevantLocation>{ static constexpr guid value{ 0x9FD8782A,0xE3F9,0x4DE1,{ 0xBA,0xB3,0xBB,0x19,0x2E,0x46,0xB3,0xF3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletTransaction>{ static constexpr guid value{ 0x40E1E940,0x2606,0x4519,{ 0x81,0xCB,0xBF,0xF1,0xC6,0x0D,0x1F,0x79 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletVerb>{ static constexpr guid value{ 0x17B826D6,0xE3C1,0x4C74,{ 0x8A,0x94,0x21,0x7A,0xAD,0xBC,0x48,0x84 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::IWalletVerbFactory>{ static constexpr guid value{ 0x76012771,0xBE58,0x4D5E,{ 0x83,0xED,0x58,0xB1,0x66,0x9C,0x7A,0xD9 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletBarcode>{ using type = Windows::ApplicationModel::Wallet::IWalletBarcode; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletItem>{ using type = Windows::ApplicationModel::Wallet::IWalletItem; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletItemCustomProperty>{ using type = Windows::ApplicationModel::Wallet::IWalletItemCustomProperty; };
@@ -185,6 +185,159 @@ template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletIt
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletRelevantLocation>{ using type = Windows::ApplicationModel::Wallet::IWalletRelevantLocation; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletTransaction>{ using type = Windows::ApplicationModel::Wallet::IWalletTransaction; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::WalletVerb>{ using type = Windows::ApplicationModel::Wallet::IWalletVerb; };
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletBarcode>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Symbology(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetImageAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletBarcodeFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, void* value, void** barcode) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCustomWalletBarcode(void* streamToBarcodeImage, void** barcode) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAcknowledged(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAcknowledged(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IssuerDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IssuerDisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastUpdated(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastUpdated(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Wallet::WalletItemKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Barcode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Barcode(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationDate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Logo159x159(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Logo159x159(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Logo336x336(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Logo336x336(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Logo99x99(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Logo99x99(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayMessage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisplayMessageLaunchable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsDisplayMessageLaunchable(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogoText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LogoText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BodyColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BodyColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderFontColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BodyFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BodyFontColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderBackgroundImage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HeaderBackgroundImage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BodyBackgroundImage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BodyBackgroundImage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogoImage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LogoImage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PromotionalImage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PromotionalImage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelevantDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelevantDate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelevantDateDisplayMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelevantDateDisplayMessage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransactionHistory(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelevantLocations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsMoreTransactionHistoryLaunchable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsMoreTransactionHistoryLaunchable(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Verbs(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemCustomProperty>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoDetectLinks(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoDetectLinks(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DetailViewPosition(Windows::ApplicationModel::Wallet::WalletDetailViewPosition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DetailViewPosition(Windows::ApplicationModel::Wallet::WalletDetailViewPosition value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SummaryViewPosition(Windows::ApplicationModel::Wallet::WalletSummaryViewPosition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SummaryViewPosition(Windows::ApplicationModel::Wallet::WalletSummaryViewPosition value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWalletItemCustomProperty(void* name, void* value, void** walletItemCustomProperty) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, void* displayName, void** walletItem) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddAsync(void* id, void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWalletItemAsync(void* id, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsWithKindAsync(Windows::ApplicationModel::Wallet::WalletItemKind kind, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ImportItemAsync(void* stream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void* id, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowItemAsync(void* id, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateAsync(void* item, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemStore2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ItemsChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ItemsChanged(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletRelevantLocation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayMessage(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletTransaction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayAmount(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayAmount(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IgnoreTimeOfDay(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IgnoreTimeOfDay(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayLocation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayLocation(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransactionDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransactionDate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsLaunchable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsLaunchable(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletVerb>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::IWalletVerbFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWalletVerb(void* name, void** WalletVerb) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Wallet_IWalletBarcode
@@ -310,10 +463,10 @@ template <> struct consume<Windows::ApplicationModel::Wallet::IWalletItemStore> 
 template <typename D>
 struct consume_Windows_ApplicationModel_Wallet_IWalletItemStore2
 {
-    event_token ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> const& handler) const;
-    using ItemsChanged_revoker = event_revoker<Windows::ApplicationModel::Wallet::IWalletItemStore2>;
+    winrt::event_token ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> const& handler) const;
+    using ItemsChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Wallet::IWalletItemStore2, &impl::abi_t<Windows::ApplicationModel::Wallet::IWalletItemStore2>::remove_ItemsChanged>;
     ItemsChanged_revoker ItemsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::Foundation::IInspectable> const& handler) const;
-    void ItemsChanged(event_token const& cookie) const;
+    void ItemsChanged(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::Wallet::IWalletItemStore2> { template <typename D> using type = consume_Windows_ApplicationModel_Wallet_IWalletItemStore2<D>; };
 
@@ -366,158 +519,5 @@ struct consume_Windows_ApplicationModel_Wallet_IWalletVerbFactory
     Windows::ApplicationModel::Wallet::WalletVerb CreateWalletVerb(param::hstring const& name) const;
 };
 template <> struct consume<Windows::ApplicationModel::Wallet::IWalletVerbFactory> { template <typename D> using type = consume_Windows_ApplicationModel_Wallet_IWalletVerbFactory<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletBarcode>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Symbology(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetImageAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletBarcodeFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, HSTRING value, void** barcode) noexcept = 0;
-    virtual HRESULT __stdcall CreateCustomWalletBarcode(void* streamToBarcodeImage, void** barcode) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAcknowledged(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAcknowledged(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IssuerDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IssuerDisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastUpdated(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastUpdated(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::Wallet::WalletItemKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Barcode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Barcode(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationDate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Logo159x159(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Logo159x159(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Logo336x336(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Logo336x336(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Logo99x99(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Logo99x99(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayMessage(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDisplayMessageLaunchable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsDisplayMessageLaunchable(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogoText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LogoText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_BodyColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BodyColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderFontColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_BodyFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BodyFontColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderBackgroundImage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_HeaderBackgroundImage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BodyBackgroundImage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_BodyBackgroundImage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogoImage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_LogoImage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PromotionalImage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PromotionalImage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelevantDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelevantDate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelevantDateDisplayMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelevantDateDisplayMessage(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransactionHistory(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelevantLocations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsMoreTransactionHistoryLaunchable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsMoreTransactionHistoryLaunchable(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Verbs(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemCustomProperty>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoDetectLinks(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoDetectLinks(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DetailViewPosition(Windows::ApplicationModel::Wallet::WalletDetailViewPosition* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DetailViewPosition(Windows::ApplicationModel::Wallet::WalletDetailViewPosition value) noexcept = 0;
-    virtual HRESULT __stdcall get_SummaryViewPosition(Windows::ApplicationModel::Wallet::WalletSummaryViewPosition* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SummaryViewPosition(Windows::ApplicationModel::Wallet::WalletSummaryViewPosition value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWalletItemCustomProperty(HSTRING name, HSTRING value, void** walletItemCustomProperty) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, HSTRING displayName, void** walletItem) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddAsync(HSTRING id, void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ClearAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetWalletItemAsync(HSTRING id, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsWithKindAsync(Windows::ApplicationModel::Wallet::WalletItemKind kind, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ImportItemAsync(void* stream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(HSTRING id, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ShowAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ShowItemAsync(HSTRING id, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateAsync(void* item, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletItemStore2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ItemsChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ItemsChanged(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletRelevantLocation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayMessage(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletTransaction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayAmount(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayAmount(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IgnoreTimeOfDay(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IgnoreTimeOfDay(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayLocation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayLocation(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransactionDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransactionDate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsLaunchable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsLaunchable(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletVerb>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::IWalletVerbFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWalletVerb(HSTRING name, void** WalletVerb) noexcept = 0;
-};};
 
 }

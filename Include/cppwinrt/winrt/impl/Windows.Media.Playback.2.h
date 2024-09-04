@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -30,22 +30,22 @@ namespace winrt::impl {
 
 WINRT_EXPORT namespace winrt::Windows::Media::Playback {
 
-struct [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] BackgroundMediaPlayer
+struct BackgroundMediaPlayer
 {
     BackgroundMediaPlayer() = delete;
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static Windows::Media::Playback::MediaPlayer Current();
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static event_token MessageReceivedFromBackground(Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
-    using MessageReceivedFromBackground_revoker = factory_event_revoker<Windows::Media::Playback::IBackgroundMediaPlayerStatics>;
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static MessageReceivedFromBackground_revoker MessageReceivedFromBackground(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static void MessageReceivedFromBackground(event_token const& token);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static event_token MessageReceivedFromForeground(Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
-    using MessageReceivedFromForeground_revoker = factory_event_revoker<Windows::Media::Playback::IBackgroundMediaPlayerStatics>;
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static MessageReceivedFromForeground_revoker MessageReceivedFromForeground(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static void MessageReceivedFromForeground(event_token const& token);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static void SendMessageToBackground(Windows::Foundation::Collections::ValueSet const& value);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static void SendMessageToForeground(Windows::Foundation::Collections::ValueSet const& value);
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static bool IsMediaPlaying();
-    [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] static void Shutdown();
+    static Windows::Media::Playback::MediaPlayer Current();
+    static winrt::event_token MessageReceivedFromBackground(Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
+    using MessageReceivedFromBackground_revoker = impl::factory_event_revoker<Windows::Media::Playback::IBackgroundMediaPlayerStatics, &impl::abi_t<Windows::Media::Playback::IBackgroundMediaPlayerStatics>::remove_MessageReceivedFromBackground>;
+    static MessageReceivedFromBackground_revoker MessageReceivedFromBackground(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
+    static void MessageReceivedFromBackground(winrt::event_token const& token);
+    static winrt::event_token MessageReceivedFromForeground(Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
+    using MessageReceivedFromForeground_revoker = impl::factory_event_revoker<Windows::Media::Playback::IBackgroundMediaPlayerStatics, &impl::abi_t<Windows::Media::Playback::IBackgroundMediaPlayerStatics>::remove_MessageReceivedFromForeground>;
+    static MessageReceivedFromForeground_revoker MessageReceivedFromForeground(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> const& value);
+    static void MessageReceivedFromForeground(winrt::event_token const& token);
+    static void SendMessageToBackground(Windows::Foundation::Collections::ValueSet const& value);
+    static void SendMessageToForeground(Windows::Foundation::Collections::ValueSet const& value);
+    static bool IsMediaPlaying();
+    static void Shutdown();
 };
 
 struct WINRT_EBO CurrentMediaPlaybackItemChangedEventArgs :

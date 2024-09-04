@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -137,21 +137,107 @@ template <> struct name<Windows::ApplicationModel::UserDataAccounts::UserDataAcc
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds" }; };
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountOtherAppReadAccess" }; };
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreAccessType" }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>{ static constexpr GUID value{ 0xB9C4367E,0xB348,0x4910,{ 0xBE,0x94,0x4A,0xD4,0xBB,0xA6,0xDE,0xA7 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2>{ static constexpr GUID value{ 0x078CD89F,0xDE82,0x404B,{ 0x81,0x95,0xC8,0xA3,0xAC,0x19,0x8F,0x60 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3>{ static constexpr GUID value{ 0x01533845,0x6C43,0x4286,{ 0x9D,0x69,0x3E,0x17,0x09,0xA1,0xF2,0x66 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>{ static constexpr GUID value{ 0xC4315210,0xEAE5,0x4F0A,{ 0xA8,0xB2,0x1C,0xCA,0x11,0x5E,0x00,0x8F } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>{ static constexpr GUID value{ 0x56A6E8DB,0xDB8F,0x41AB,{ 0xA6,0x5F,0x8C,0x59,0x71,0xAA,0xC9,0x82 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics>{ static constexpr GUID value{ 0x0D9B89EA,0x1928,0x4A20,{ 0x86,0xD5,0x3C,0x73,0x7F,0x7D,0xC3,0xB0 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2>{ static constexpr GUID value{ 0x6A3DED88,0x316B,0x435E,{ 0xB5,0x34,0xF7,0xD4,0xB4,0xB7,0xDB,0xA6 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>{ static constexpr GUID value{ 0x2073B0AD,0x7D0A,0x4E76,{ 0xBF,0x45,0x23,0x68,0xF9,0x78,0xA5,0x9A } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>{ static constexpr GUID value{ 0xB1E0AEF7,0x9560,0x4631,{ 0x8A,0xF0,0x06,0x1D,0x30,0x16,0x14,0x69 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>{ static constexpr GUID value{ 0x8142C094,0xF3C9,0x478B,{ 0xB1,0x17,0x65,0x85,0xBE,0xBB,0x67,0x89 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>{ static constexpr GUID value{ 0x84E3E2E5,0x8820,0x4512,{ 0xB1,0xF6,0x2E,0x03,0x5B,0xE1,0x07,0x2C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>{ static constexpr guid value{ 0xB9C4367E,0xB348,0x4910,{ 0xBE,0x94,0x4A,0xD4,0xBB,0xA6,0xDE,0xA7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2>{ static constexpr guid value{ 0x078CD89F,0xDE82,0x404B,{ 0x81,0x95,0xC8,0xA3,0xAC,0x19,0x8F,0x60 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3>{ static constexpr guid value{ 0x01533845,0x6C43,0x4286,{ 0x9D,0x69,0x3E,0x17,0x09,0xA1,0xF2,0x66 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>{ static constexpr guid value{ 0xC4315210,0xEAE5,0x4F0A,{ 0xA8,0xB2,0x1C,0xCA,0x11,0x5E,0x00,0x8F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>{ static constexpr guid value{ 0x56A6E8DB,0xDB8F,0x41AB,{ 0xA6,0x5F,0x8C,0x59,0x71,0xAA,0xC9,0x82 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics>{ static constexpr guid value{ 0x0D9B89EA,0x1928,0x4A20,{ 0x86,0xD5,0x3C,0x73,0x7F,0x7D,0xC3,0xB0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2>{ static constexpr guid value{ 0x6A3DED88,0x316B,0x435E,{ 0xB5,0x34,0xF7,0xD4,0xB4,0xB7,0xDB,0xA6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>{ static constexpr guid value{ 0x2073B0AD,0x7D0A,0x4E76,{ 0xBF,0x45,0x23,0x68,0xF9,0x78,0xA5,0x9A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>{ static constexpr guid value{ 0xB1E0AEF7,0x9560,0x4631,{ 0x8A,0xF0,0x06,0x1D,0x30,0x16,0x14,0x69 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>{ static constexpr guid value{ 0x8142C094,0xF3C9,0x478B,{ 0xB1,0x17,0x65,0x85,0xBE,0xBB,0x67,0x89 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>{ static constexpr guid value{ 0x84E3E2E5,0x8820,0x4512,{ 0xB1,0xF6,0x2E,0x03,0x5B,0xE1,0x07,0x2C } }; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>{ using type = Windows::ApplicationModel::UserDataAccounts::IUserDataAccount; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser>{ using type = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore>{ using type = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs>{ using type = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs; };
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UserDisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Icon(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceAccountTypeId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAppointmentCalendarsAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindEmailMailboxesAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactListsAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactAnnotationListsAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsProtectedUnderLock(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExplictReadAccessPackageFamilyNames(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanShowCreateContactGroup(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanShowCreateContactGroup(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindUserDataTaskListsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindContactGroupsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryShowCreateContactGroupAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsProtectedUnderLock(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Icon(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAccountSettingsAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowAccountErrorResolverAsync(void* id, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAccountsAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccountAsync(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAccountAsync(void* userDisplayName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAccountWithPackageRelativeAppIdAsync(void* userDisplayName, void* packageRelativeAppId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StoreChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StoreChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(void* userDisplayName, void* packageRelativeAppId, void* enterpriseId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_UserDataAccounts_IUserDataAccount
@@ -242,10 +328,10 @@ template <typename D>
 struct consume_Windows_ApplicationModel_UserDataAccounts_IUserDataAccountStore2
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(param::hstring const& userDisplayName, param::hstring const& packageRelativeAppId) const;
-    event_token StoreChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> const& handler) const;
-    using StoreChanged_revoker = event_revoker<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>;
+    winrt::event_token StoreChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> const& handler) const;
+    using StoreChanged_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2, &impl::abi_t<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>::remove_StoreChanged>;
     StoreChanged_revoker StoreChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> const& handler) const;
-    void StoreChanged(event_token const& token) const;
+    void StoreChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataAccounts_IUserDataAccountStore2<D>; };
 
@@ -262,91 +348,5 @@ struct consume_Windows_ApplicationModel_UserDataAccounts_IUserDataAccountStoreCh
     Windows::Foundation::Deferral GetDeferral() const;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataAccounts_IUserDataAccountStoreChangedEventArgs<D>; };
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UserDisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::UserDataAccounts::UserDataAccountOtherAppReadAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_Icon(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceAccountTypeId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindAppointmentCalendarsAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindEmailMailboxesAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindContactListsAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindContactAnnotationListsAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsProtectedUnderLock(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExplictReadAccessPackageFamilyNames(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanShowCreateContactGroup(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanShowCreateContactGroup(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall FindUserDataTaskListsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindContactGroupsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryShowCreateContactGroupAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall put_IsProtectedUnderLock(bool value) noexcept = 0;
-    virtual HRESULT __stdcall put_Icon(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ShowAccountSettingsAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ShowAccountErrorResolverAsync(HSTRING id, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAccountsAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetAccountAsync(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateAccountAsync(HSTRING userDisplayName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_StoreChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StoreChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
 
 }

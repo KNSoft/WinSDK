@@ -4276,6 +4276,15 @@ typedef HRESULT
 //
 // Methods available in V7.0 and later
 //
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _Out_ SIZE_T *SecureIdentityCount,
+    _Outptr_result_buffer_(*SecureIdentityCount) PWINBIO_IDENTITY *SecureIdentities
+    );
+
 typedef HRESULT
 (WINAPI *PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN)(
     _Inout_ PWINBIO_PIPELINE Pipeline,
@@ -4407,6 +4416,7 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     //
     // (Upcalls...)
     //
+    PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN         QueryAuthorizedEnrollments;
     PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN                       DecryptSample;
 #endif
 
@@ -5654,6 +5664,43 @@ WbioFrameworkReleaseSecureBuffer(
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+inline HRESULT
+WbioFramweworkVsmQueryAuthorizedEnrollments(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ PWINBIO_IDENTITY Identity,
+    _Out_ SIZE_T *SecureIdentityCount,
+    _Outptr_result_buffer_(*SecureIdentityCount) PWINBIO_IDENTITY *SecureIdentities
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_7_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->QueryAuthorizedEnrollments))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->QueryAuthorizedEnrollments(
+                                                    Pipeline,
+                                                    Identity,
+                                                    SecureIdentityCount,
+                                                    SecureIdentities
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
 
 inline HRESULT
 WbioFrameworkVsmDecryptSample(

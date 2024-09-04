@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
 #include "winrt/impl/Windows.Foundation.2.h"
 
@@ -36,6 +36,27 @@ template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundati
     return factory;
 }
 
+template <typename D> winrt::guid consume_Windows_Foundation_IGuidHelperStatics<D>::CreateNewGuid() const
+{
+    winrt::guid result{};
+    check_hresult(WINRT_SHIM(Windows::Foundation::IGuidHelperStatics)->CreateNewGuid(put_abi(result)));
+    return result;
+}
+
+template <typename D> winrt::guid consume_Windows_Foundation_IGuidHelperStatics<D>::Empty() const
+{
+    winrt::guid value{};
+    check_hresult(WINRT_SHIM(Windows::Foundation::IGuidHelperStatics)->get_Empty(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool consume_Windows_Foundation_IGuidHelperStatics<D>::Equals(winrt::guid const& target, winrt::guid const& value) const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::Foundation::IGuidHelperStatics)->Equals(get_abi(target), get_abi(value), &result));
+    return result;
+}
+
 template <typename D> Windows::Foundation::IMemoryBufferReference consume_Windows_Foundation_IMemoryBuffer<D>::CreateReference() const
 {
     Windows::Foundation::IMemoryBufferReference reference{ nullptr };
@@ -57,21 +78,21 @@ template <typename D> uint32_t consume_Windows_Foundation_IMemoryBufferReference
     return value;
 }
 
-template <typename D> event_token consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Foundation::IMemoryBufferReference)->add_Closed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Foundation::IMemoryBufferReference> consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Foundation_IMemoryBufferReference<D>::Closed_revoker consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Foundation::IMemoryBufferReference>(this, &abi_t<Windows::Foundation::IMemoryBufferReference>::remove_Closed, Closed(handler));
+    return impl::make_event_revoker<D, Closed_revoker>(this, Closed(handler));
 }
 
-template <typename D> void consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(event_token const& cookie) const
+template <typename D> void consume_Windows_Foundation_IMemoryBufferReference<D>::Closed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Foundation::IMemoryBufferReference)->remove_Closed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Foundation::IMemoryBufferReference)->remove_Closed(get_abi(cookie)));
 }
 
 template <typename D> Windows::Foundation::PropertyType consume_Windows_Foundation_IPropertyValue<D>::Type() const
@@ -172,9 +193,9 @@ template <typename D> hstring consume_Windows_Foundation_IPropertyValue<D>::GetS
     return value;
 }
 
-template <typename D> GUID consume_Windows_Foundation_IPropertyValue<D>::GetGuid() const
+template <typename D> winrt::guid consume_Windows_Foundation_IPropertyValue<D>::GetGuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Foundation::IPropertyValue)->GetGuid(put_abi(value)));
     return value;
 }
@@ -279,7 +300,7 @@ template <typename D> void consume_Windows_Foundation_IPropertyValue<D>::GetInsp
     check_hresult(WINRT_SHIM(Windows::Foundation::IPropertyValue)->GetInspectableArray(impl::put_size_abi(value), put_abi(value)));
 }
 
-template <typename D> void consume_Windows_Foundation_IPropertyValue<D>::GetGuidArray(com_array<GUID>& value) const
+template <typename D> void consume_Windows_Foundation_IPropertyValue<D>::GetGuidArray(com_array<winrt::guid>& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Foundation::IPropertyValue)->GetGuidArray(impl::put_size_abi(value), put_abi(value)));
 }
@@ -407,7 +428,7 @@ template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundati
     return propertyValue;
 }
 
-template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundation_IPropertyValueStatics<D>::CreateGuid(GUID const& value) const
+template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundation_IPropertyValueStatics<D>::CreateGuid(winrt::guid const& value) const
 {
     Windows::Foundation::IInspectable propertyValue{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Foundation::IPropertyValueStatics)->CreateGuid(get_abi(value), put_abi(propertyValue)));
@@ -540,7 +561,7 @@ template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundati
     return propertyValue;
 }
 
-template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundation_IPropertyValueStatics<D>::CreateGuidArray(array_view<GUID const> value) const
+template <typename D> Windows::Foundation::IInspectable consume_Windows_Foundation_IPropertyValueStatics<D>::CreateGuidArray(array_view<winrt::guid const> value) const
 {
     Windows::Foundation::IInspectable propertyValue{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Foundation::IPropertyValueStatics)->CreateGuidArray(value.size(), get_abi(value), put_abi(propertyValue)));
@@ -785,12 +806,12 @@ template <> struct delegate<Windows::Foundation::DeferralCompletedHandler>
     {
         type(H&& handler) : implements_delegate<Windows::Foundation::DeferralCompletedHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke() noexcept final
+        int32_t WINRT_CALL Invoke() noexcept final
         {
             try
             {
                 (*this)();
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -803,1785 +824,1591 @@ template <> struct delegate<Windows::Foundation::DeferralCompletedHandler>
 template <typename D>
 struct produce<D, Windows::Foundation::IClosable> : produce_base<D, Windows::Foundation::IClosable>
 {
-    HRESULT __stdcall Close() noexcept final
+    int32_t WINRT_CALL Close() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void));
             this->shim().Close();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IDeferral> : produce_base<D, Windows::Foundation::IDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IDeferralFactory> : produce_base<D, Windows::Foundation::IDeferralFactory>
 {
-    HRESULT __stdcall Create(void* handler, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* handler, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Foundation::Deferral), Windows::Foundation::DeferralCompletedHandler const&);
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().Create(*reinterpret_cast<Windows::Foundation::DeferralCompletedHandler const*>(&handler)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IGetActivationFactory> : produce_base<D, Windows::Foundation::IGetActivationFactory>
 {
-    HRESULT __stdcall GetActivationFactory(HSTRING activatableClassId, void** factory) noexcept final
+    int32_t WINRT_CALL GetActivationFactory(void* activatableClassId, void** factory) noexcept final
     {
         try
         {
             *factory = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetActivationFactory, WINRT_WRAP(Windows::Foundation::IInspectable), hstring const&);
             *factory = detach_from<Windows::Foundation::IInspectable>(this->shim().GetActivationFactory(*reinterpret_cast<hstring const*>(&activatableClassId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Foundation::IGuidHelperStatics> : produce_base<D, Windows::Foundation::IGuidHelperStatics>
+{
+    int32_t WINRT_CALL CreateNewGuid(winrt::guid* result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateNewGuid, WINRT_WRAP(winrt::guid));
+            *result = detach_from<winrt::guid>(this->shim().CreateNewGuid());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_Empty(winrt::guid* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Empty, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Empty());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL Equals(winrt::guid const& target, winrt::guid const& value, bool* result) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Equals, WINRT_WRAP(bool), winrt::guid const&, winrt::guid const&);
+            *result = detach_from<bool>(this->shim().Equals(*reinterpret_cast<winrt::guid const*>(&target), *reinterpret_cast<winrt::guid const*>(&value)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IMemoryBuffer> : produce_base<D, Windows::Foundation::IMemoryBuffer>
 {
-    HRESULT __stdcall CreateReference(void** reference) noexcept final
+    int32_t WINRT_CALL CreateReference(void** reference) noexcept final
     {
         try
         {
             *reference = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateReference, WINRT_WRAP(Windows::Foundation::IMemoryBufferReference));
             *reference = detach_from<Windows::Foundation::IMemoryBufferReference>(this->shim().CreateReference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IMemoryBufferFactory> : produce_base<D, Windows::Foundation::IMemoryBufferFactory>
 {
-    HRESULT __stdcall Create(uint32_t capacity, void** value) noexcept final
+    int32_t WINRT_CALL Create(uint32_t capacity, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Foundation::MemoryBuffer), uint32_t);
             *value = detach_from<Windows::Foundation::MemoryBuffer>(this->shim().Create(capacity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IMemoryBufferReference> : produce_base<D, Windows::Foundation::IMemoryBufferReference>
 {
-    HRESULT __stdcall get_Capacity(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Capacity(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capacity, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Capacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Closed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_Closed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Closed(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Closed(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Closed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows::Foundation::IPropertyValue>
 {
-    HRESULT __stdcall get_Type(Windows::Foundation::PropertyType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Foundation::PropertyType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Foundation::PropertyType));
             *value = detach_from<Windows::Foundation::PropertyType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNumericScalar(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNumericScalar(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNumericScalar, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNumericScalar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt8(uint8_t* value) noexcept final
+    int32_t WINRT_CALL GetUInt8(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt8, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().GetUInt8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt16(int16_t* value) noexcept final
+    int32_t WINRT_CALL GetInt16(int16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt16, WINRT_WRAP(int16_t));
             *value = detach_from<int16_t>(this->shim().GetInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt16(uint16_t* value) noexcept final
+    int32_t WINRT_CALL GetUInt16(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt16, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().GetUInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt32(int32_t* value) noexcept final
+    int32_t WINRT_CALL GetInt32(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt32, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().GetInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt32(uint32_t* value) noexcept final
+    int32_t WINRT_CALL GetUInt32(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt32, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().GetUInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt64(int64_t* value) noexcept final
+    int32_t WINRT_CALL GetInt64(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt64, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().GetInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt64(uint64_t* value) noexcept final
+    int32_t WINRT_CALL GetUInt64(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt64, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().GetUInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSingle(float* value) noexcept final
+    int32_t WINRT_CALL GetSingle(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSingle, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().GetSingle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDouble(double* value) noexcept final
+    int32_t WINRT_CALL GetDouble(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDouble, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().GetDouble());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChar16(char16_t* value) noexcept final
+    int32_t WINRT_CALL GetChar16(char16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChar16, WINRT_WRAP(char16_t));
             *value = detach_from<char16_t>(this->shim().GetChar16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBoolean(bool* value) noexcept final
+    int32_t WINRT_CALL GetBoolean(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBoolean, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().GetBoolean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetString(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetString(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetString, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetGuid(GUID* value) noexcept final
+    int32_t WINRT_CALL GetGuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GetGuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetGuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GetGuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDateTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL GetDateTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().GetDateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTimeSpan(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL GetTimeSpan(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTimeSpan, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().GetTimeSpan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL GetPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().GetPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL GetSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().GetSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL GetRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().GetRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt8Array(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetUInt8Array(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt8Array, WINRT_WRAP(void), com_array<uint8_t>&);
             this->shim().GetUInt8Array(detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt16Array(uint32_t* __valueSize, int16_t** value) noexcept final
+    int32_t WINRT_CALL GetInt16Array(uint32_t* __valueSize, int16_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt16Array, WINRT_WRAP(void), com_array<int16_t>&);
             this->shim().GetInt16Array(detach_abi<int16_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt16Array(uint32_t* __valueSize, uint16_t** value) noexcept final
+    int32_t WINRT_CALL GetUInt16Array(uint32_t* __valueSize, uint16_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt16Array, WINRT_WRAP(void), com_array<uint16_t>&);
             this->shim().GetUInt16Array(detach_abi<uint16_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt32Array(uint32_t* __valueSize, int32_t** value) noexcept final
+    int32_t WINRT_CALL GetInt32Array(uint32_t* __valueSize, int32_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt32Array, WINRT_WRAP(void), com_array<int32_t>&);
             this->shim().GetInt32Array(detach_abi<int32_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt32Array(uint32_t* __valueSize, uint32_t** value) noexcept final
+    int32_t WINRT_CALL GetUInt32Array(uint32_t* __valueSize, uint32_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt32Array, WINRT_WRAP(void), com_array<uint32_t>&);
             this->shim().GetUInt32Array(detach_abi<uint32_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInt64Array(uint32_t* __valueSize, int64_t** value) noexcept final
+    int32_t WINRT_CALL GetInt64Array(uint32_t* __valueSize, int64_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInt64Array, WINRT_WRAP(void), com_array<int64_t>&);
             this->shim().GetInt64Array(detach_abi<int64_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUInt64Array(uint32_t* __valueSize, uint64_t** value) noexcept final
+    int32_t WINRT_CALL GetUInt64Array(uint32_t* __valueSize, uint64_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUInt64Array, WINRT_WRAP(void), com_array<uint64_t>&);
             this->shim().GetUInt64Array(detach_abi<uint64_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSingleArray(uint32_t* __valueSize, float** value) noexcept final
+    int32_t WINRT_CALL GetSingleArray(uint32_t* __valueSize, float** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSingleArray, WINRT_WRAP(void), com_array<float>&);
             this->shim().GetSingleArray(detach_abi<float>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDoubleArray(uint32_t* __valueSize, double** value) noexcept final
+    int32_t WINRT_CALL GetDoubleArray(uint32_t* __valueSize, double** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDoubleArray, WINRT_WRAP(void), com_array<double>&);
             this->shim().GetDoubleArray(detach_abi<double>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChar16Array(uint32_t* __valueSize, char16_t** value) noexcept final
+    int32_t WINRT_CALL GetChar16Array(uint32_t* __valueSize, char16_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChar16Array, WINRT_WRAP(void), com_array<char16_t>&);
             this->shim().GetChar16Array(detach_abi<char16_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanArray(uint32_t* __valueSize, bool** value) noexcept final
+    int32_t WINRT_CALL GetBooleanArray(uint32_t* __valueSize, bool** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanArray, WINRT_WRAP(void), com_array<bool>&);
             this->shim().GetBooleanArray(detach_abi<bool>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStringArray(uint32_t* __valueSize, HSTRING** value) noexcept final
+    int32_t WINRT_CALL GetStringArray(uint32_t* __valueSize, void*** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStringArray, WINRT_WRAP(void), com_array<hstring>&);
             this->shim().GetStringArray(detach_abi<hstring>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInspectableArray(uint32_t* __valueSize, void*** value) noexcept final
+    int32_t WINRT_CALL GetInspectableArray(uint32_t* __valueSize, void*** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInspectableArray, WINRT_WRAP(void), com_array<Windows::Foundation::IInspectable>&);
             this->shim().GetInspectableArray(detach_abi<Windows::Foundation::IInspectable>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetGuidArray(uint32_t* __valueSize, GUID** value) noexcept final
+    int32_t WINRT_CALL GetGuidArray(uint32_t* __valueSize, winrt::guid** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            this->shim().GetGuidArray(detach_abi<GUID>(__valueSize, value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetGuidArray, WINRT_WRAP(void), com_array<winrt::guid>&);
+            this->shim().GetGuidArray(detach_abi<winrt::guid>(__valueSize, value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDateTimeArray(uint32_t* __valueSize, Windows::Foundation::DateTime** value) noexcept final
+    int32_t WINRT_CALL GetDateTimeArray(uint32_t* __valueSize, Windows::Foundation::DateTime** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDateTimeArray, WINRT_WRAP(void), com_array<Windows::Foundation::DateTime>&);
             this->shim().GetDateTimeArray(detach_abi<Windows::Foundation::DateTime>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTimeSpanArray(uint32_t* __valueSize, Windows::Foundation::TimeSpan** value) noexcept final
+    int32_t WINRT_CALL GetTimeSpanArray(uint32_t* __valueSize, Windows::Foundation::TimeSpan** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTimeSpanArray, WINRT_WRAP(void), com_array<Windows::Foundation::TimeSpan>&);
             this->shim().GetTimeSpanArray(detach_abi<Windows::Foundation::TimeSpan>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPointArray(uint32_t* __valueSize, Windows::Foundation::Point** value) noexcept final
+    int32_t WINRT_CALL GetPointArray(uint32_t* __valueSize, Windows::Foundation::Point** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPointArray, WINRT_WRAP(void), com_array<Windows::Foundation::Point>&);
             this->shim().GetPointArray(detach_abi<Windows::Foundation::Point>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSizeArray(uint32_t* __valueSize, Windows::Foundation::Size** value) noexcept final
+    int32_t WINRT_CALL GetSizeArray(uint32_t* __valueSize, Windows::Foundation::Size** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSizeArray, WINRT_WRAP(void), com_array<Windows::Foundation::Size>&);
             this->shim().GetSizeArray(detach_abi<Windows::Foundation::Size>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRectArray(uint32_t* __valueSize, Windows::Foundation::Rect** value) noexcept final
+    int32_t WINRT_CALL GetRectArray(uint32_t* __valueSize, Windows::Foundation::Rect** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRectArray, WINRT_WRAP(void), com_array<Windows::Foundation::Rect>&);
             this->shim().GetRectArray(detach_abi<Windows::Foundation::Rect>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, Windows::Foundation::IPropertyValueStatics>
 {
-    HRESULT __stdcall CreateEmpty(void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateEmpty(void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateEmpty, WINRT_WRAP(Windows::Foundation::IInspectable));
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateEmpty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt8(uint8_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt8(uint8_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt8, WINRT_WRAP(Windows::Foundation::IInspectable), uint8_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt8(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt16(int16_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt16(int16_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt16, WINRT_WRAP(Windows::Foundation::IInspectable), int16_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt16(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt16(uint16_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt16(uint16_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt16, WINRT_WRAP(Windows::Foundation::IInspectable), uint16_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt16(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt32(int32_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt32(int32_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt32, WINRT_WRAP(Windows::Foundation::IInspectable), int32_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt32(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt32(uint32_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt32(uint32_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt32, WINRT_WRAP(Windows::Foundation::IInspectable), uint32_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt32(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt64(int64_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt64(int64_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt64, WINRT_WRAP(Windows::Foundation::IInspectable), int64_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt64(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt64(uint64_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt64(uint64_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt64, WINRT_WRAP(Windows::Foundation::IInspectable), uint64_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt64(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSingle(float value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateSingle(float value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSingle, WINRT_WRAP(Windows::Foundation::IInspectable), float);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateSingle(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDouble(double value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateDouble(double value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDouble, WINRT_WRAP(Windows::Foundation::IInspectable), double);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateDouble(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateChar16(char16_t value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateChar16(char16_t value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateChar16, WINRT_WRAP(Windows::Foundation::IInspectable), char16_t);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateChar16(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBoolean(bool value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateBoolean(bool value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBoolean, WINRT_WRAP(Windows::Foundation::IInspectable), bool);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateBoolean(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateString(HSTRING value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateString(void* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateString, WINRT_WRAP(Windows::Foundation::IInspectable), hstring const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateString(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInspectable(void* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInspectable(void* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInspectable, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::IInspectable const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInspectable(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateGuid(GUID value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateGuid(winrt::guid value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateGuid(*reinterpret_cast<GUID const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateGuid, WINRT_WRAP(Windows::Foundation::IInspectable), winrt::guid const&);
+            *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateGuid(*reinterpret_cast<winrt::guid const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTime(Windows::Foundation::DateTime value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateDateTime(Windows::Foundation::DateTime value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTime, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::DateTime const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateDateTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateTimeSpan(Windows::Foundation::TimeSpan value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateTimeSpan(Windows::Foundation::TimeSpan value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateTimeSpan, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::TimeSpan const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateTimeSpan(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePoint(Windows::Foundation::Point value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreatePoint(Windows::Foundation::Point value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePoint, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::Point const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreatePoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSize(Windows::Foundation::Size value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateSize(Windows::Foundation::Size value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSize, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::Size const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateSize(*reinterpret_cast<Windows::Foundation::Size const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateRect(Windows::Foundation::Rect value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateRect(Windows::Foundation::Rect value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRect, WINRT_WRAP(Windows::Foundation::IInspectable), Windows::Foundation::Rect const&);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateRect(*reinterpret_cast<Windows::Foundation::Rect const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt8Array(uint32_t __valueSize, uint8_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt8Array(uint32_t __valueSize, uint8_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt8Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<uint8_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt8Array(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt16Array(uint32_t __valueSize, int16_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt16Array(uint32_t __valueSize, int16_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt16Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<int16_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt16Array(array_view<int16_t const>(reinterpret_cast<int16_t const *>(value), reinterpret_cast<int16_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt16Array(uint32_t __valueSize, uint16_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt16Array(uint32_t __valueSize, uint16_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt16Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<uint16_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt16Array(array_view<uint16_t const>(reinterpret_cast<uint16_t const *>(value), reinterpret_cast<uint16_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt32Array(uint32_t __valueSize, int32_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt32Array(uint32_t __valueSize, int32_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt32Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<int32_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt32Array(array_view<int32_t const>(reinterpret_cast<int32_t const *>(value), reinterpret_cast<int32_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt32Array(uint32_t __valueSize, uint32_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt32Array(uint32_t __valueSize, uint32_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt32Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<uint32_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt32Array(array_view<uint32_t const>(reinterpret_cast<uint32_t const *>(value), reinterpret_cast<uint32_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInt64Array(uint32_t __valueSize, int64_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInt64Array(uint32_t __valueSize, int64_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInt64Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<int64_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInt64Array(array_view<int64_t const>(reinterpret_cast<int64_t const *>(value), reinterpret_cast<int64_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUInt64Array(uint32_t __valueSize, uint64_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateUInt64Array(uint32_t __valueSize, uint64_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUInt64Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<uint64_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateUInt64Array(array_view<uint64_t const>(reinterpret_cast<uint64_t const *>(value), reinterpret_cast<uint64_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSingleArray(uint32_t __valueSize, float* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateSingleArray(uint32_t __valueSize, float* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSingleArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<float const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateSingleArray(array_view<float const>(reinterpret_cast<float const *>(value), reinterpret_cast<float const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDoubleArray(uint32_t __valueSize, double* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateDoubleArray(uint32_t __valueSize, double* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDoubleArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<double const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateDoubleArray(array_view<double const>(reinterpret_cast<double const *>(value), reinterpret_cast<double const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateChar16Array(uint32_t __valueSize, char16_t* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateChar16Array(uint32_t __valueSize, char16_t* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateChar16Array, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<char16_t const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateChar16Array(array_view<char16_t const>(reinterpret_cast<char16_t const *>(value), reinterpret_cast<char16_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBooleanArray(uint32_t __valueSize, bool* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateBooleanArray(uint32_t __valueSize, bool* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBooleanArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<bool const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateBooleanArray(array_view<bool const>(reinterpret_cast<bool const *>(value), reinterpret_cast<bool const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStringArray(uint32_t __valueSize, HSTRING* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateStringArray(uint32_t __valueSize, void** value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStringArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<hstring const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateStringArray(array_view<hstring const>(reinterpret_cast<hstring const *>(value), reinterpret_cast<hstring const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInspectableArray(uint32_t __valueSize, void** value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateInspectableArray(uint32_t __valueSize, void** value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInspectableArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::IInspectable const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateInspectableArray(array_view<Windows::Foundation::IInspectable const>(reinterpret_cast<Windows::Foundation::IInspectable const *>(value), reinterpret_cast<Windows::Foundation::IInspectable const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateGuidArray(uint32_t __valueSize, GUID* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateGuidArray(uint32_t __valueSize, winrt::guid* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateGuidArray(array_view<GUID const>(reinterpret_cast<GUID const *>(value), reinterpret_cast<GUID const *>(value) + __valueSize)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateGuidArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<winrt::guid const>);
+            *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateGuidArray(array_view<winrt::guid const>(reinterpret_cast<winrt::guid const *>(value), reinterpret_cast<winrt::guid const *>(value) + __valueSize)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDateTimeArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::DateTime const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateDateTimeArray(array_view<Windows::Foundation::DateTime const>(reinterpret_cast<Windows::Foundation::DateTime const *>(value), reinterpret_cast<Windows::Foundation::DateTime const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateTimeSpanArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::TimeSpan const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateTimeSpanArray(array_view<Windows::Foundation::TimeSpan const>(reinterpret_cast<Windows::Foundation::TimeSpan const *>(value), reinterpret_cast<Windows::Foundation::TimeSpan const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePointArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::Point const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreatePointArray(array_view<Windows::Foundation::Point const>(reinterpret_cast<Windows::Foundation::Point const *>(value), reinterpret_cast<Windows::Foundation::Point const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSizeArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::Size const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateSizeArray(array_view<Windows::Foundation::Size const>(reinterpret_cast<Windows::Foundation::Size const *>(value), reinterpret_cast<Windows::Foundation::Size const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect* value, void** propertyValue) noexcept final
+    int32_t WINRT_CALL CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect* value, void** propertyValue) noexcept final
     {
         try
         {
             *propertyValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateRectArray, WINRT_WRAP(Windows::Foundation::IInspectable), array_view<Windows::Foundation::Rect const>);
             *propertyValue = detach_from<Windows::Foundation::IInspectable>(this->shim().CreateRectArray(array_view<Windows::Foundation::Rect const>(reinterpret_cast<Windows::Foundation::Rect const *>(value), reinterpret_cast<Windows::Foundation::Rect const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::Foundation::IStringable>
 {
-    HRESULT __stdcall ToString(HSTRING* value) noexcept final
+    int32_t WINRT_CALL ToString(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToString, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ToString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IUriEscapeStatics> : produce_base<D, Windows::Foundation::IUriEscapeStatics>
 {
-    HRESULT __stdcall UnescapeComponent(HSTRING toUnescape, HSTRING* value) noexcept final
+    int32_t WINRT_CALL UnescapeComponent(void* toUnescape, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnescapeComponent, WINRT_WRAP(hstring), hstring const&);
             *value = detach_from<hstring>(this->shim().UnescapeComponent(*reinterpret_cast<hstring const*>(&toUnescape)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EscapeComponent(HSTRING toEscape, HSTRING* value) noexcept final
+    int32_t WINRT_CALL EscapeComponent(void* toEscape, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EscapeComponent, WINRT_WRAP(hstring), hstring const&);
             *value = detach_from<hstring>(this->shim().EscapeComponent(*reinterpret_cast<hstring const*>(&toEscape)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IUriRuntimeClass> : produce_base<D, Windows::Foundation::IUriRuntimeClass>
 {
-    HRESULT __stdcall get_AbsoluteUri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteUri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AbsoluteUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayUri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayUri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Domain(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Domain(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Domain, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Domain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Extension(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Extension(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Extension, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Extension());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Fragment(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Fragment(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fragment, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Fragment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Host(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Host(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Host, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Host());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Password(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Password(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Password, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Password());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Query(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Query(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Query, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Query());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryParsed(void** ppWwwFormUrlDecoder) noexcept final
+    int32_t WINRT_CALL get_QueryParsed(void** ppWwwFormUrlDecoder) noexcept final
     {
         try
         {
             *ppWwwFormUrlDecoder = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryParsed, WINRT_WRAP(Windows::Foundation::WwwFormUrlDecoder));
             *ppWwwFormUrlDecoder = detach_from<Windows::Foundation::WwwFormUrlDecoder>(this->shim().QueryParsed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RawUri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RawUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawUri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RawUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SchemeName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SchemeName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SchemeName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SchemeName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Port(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Port(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Port, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Port());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Suspicious(bool* value) noexcept final
+    int32_t WINRT_CALL get_Suspicious(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Suspicious, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Suspicious());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Equals(void* pUri, bool* value) noexcept final
+    int32_t WINRT_CALL Equals(void* pUri, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Equals, WINRT_WRAP(bool), Windows::Foundation::Uri const&);
             *value = detach_from<bool>(this->shim().Equals(*reinterpret_cast<Windows::Foundation::Uri const*>(&pUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CombineUri(HSTRING relativeUri, void** instance) noexcept final
+    int32_t WINRT_CALL CombineUri(void* relativeUri, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CombineUri, WINRT_WRAP(Windows::Foundation::Uri), hstring const&);
             *instance = detach_from<Windows::Foundation::Uri>(this->shim().CombineUri(*reinterpret_cast<hstring const*>(&relativeUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IUriRuntimeClassFactory> : produce_base<D, Windows::Foundation::IUriRuntimeClassFactory>
 {
-    HRESULT __stdcall CreateUri(HSTRING uri, void** instance) noexcept final
+    int32_t WINRT_CALL CreateUri(void* uri, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUri, WINRT_WRAP(Windows::Foundation::Uri), hstring const&);
             *instance = detach_from<Windows::Foundation::Uri>(this->shim().CreateUri(*reinterpret_cast<hstring const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithRelativeUri(HSTRING baseUri, HSTRING relativeUri, void** instance) noexcept final
+    int32_t WINRT_CALL CreateWithRelativeUri(void* baseUri, void* relativeUri, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithRelativeUri, WINRT_WRAP(Windows::Foundation::Uri), hstring const&, hstring const&);
             *instance = detach_from<Windows::Foundation::Uri>(this->shim().CreateWithRelativeUri(*reinterpret_cast<hstring const*>(&baseUri), *reinterpret_cast<hstring const*>(&relativeUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri> : produce_base<D, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
 {
-    HRESULT __stdcall get_AbsoluteCanonicalUri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteCanonicalUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteCanonicalUri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AbsoluteCanonicalUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayIri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayIri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayIri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayIri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IWwwFormUrlDecoderEntry> : produce_base<D, Windows::Foundation::IWwwFormUrlDecoderEntry>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClass> : produce_base<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClass>
 {
-    HRESULT __stdcall GetFirstValueByName(HSTRING name, HSTRING* phstrValue) noexcept final
+    int32_t WINRT_CALL GetFirstValueByName(void* name, void** phstrValue) noexcept final
     {
         try
         {
             *phstrValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFirstValueByName, WINRT_WRAP(hstring), hstring const&);
             *phstrValue = detach_from<hstring>(this->shim().GetFirstValueByName(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> : produce_base<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory>
 {
-    HRESULT __stdcall CreateWwwFormUrlDecoder(HSTRING query, void** instance) noexcept final
+    int32_t WINRT_CALL CreateWwwFormUrlDecoder(void* query, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWwwFormUrlDecoder, WINRT_WRAP(Windows::Foundation::WwwFormUrlDecoder), hstring const&);
             *instance = detach_from<Windows::Foundation::WwwFormUrlDecoder>(this->shim().CreateWwwFormUrlDecoder(*reinterpret_cast<hstring const*>(&query)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2590,228 +2417,243 @@ struct produce<D, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> : 
 WINRT_EXPORT namespace winrt::Windows::Foundation {
 
 inline Deferral::Deferral(Windows::Foundation::DeferralCompletedHandler const& handler) :
-    Deferral(get_activation_factory<Deferral, Windows::Foundation::IDeferralFactory>().Create(handler))
+    Deferral(impl::call_factory<Deferral, Windows::Foundation::IDeferralFactory>([&](auto&& f) { return f.Create(handler); }))
 {}
 
+inline winrt::guid GuidHelper::CreateNewGuid()
+{
+    return impl::call_factory<GuidHelper, Windows::Foundation::IGuidHelperStatics>([&](auto&& f) { return f.CreateNewGuid(); });
+}
+
+inline winrt::guid GuidHelper::Empty()
+{
+    return impl::call_factory<GuidHelper, Windows::Foundation::IGuidHelperStatics>([&](auto&& f) { return f.Empty(); });
+}
+
+inline bool GuidHelper::Equals(winrt::guid const& target, winrt::guid const& value)
+{
+    return impl::call_factory<GuidHelper, Windows::Foundation::IGuidHelperStatics>([&](auto&& f) { return f.Equals(target, value); });
+}
+
 inline MemoryBuffer::MemoryBuffer(uint32_t capacity) :
-    MemoryBuffer(get_activation_factory<MemoryBuffer, Windows::Foundation::IMemoryBufferFactory>().Create(capacity))
+    MemoryBuffer(impl::call_factory<MemoryBuffer, Windows::Foundation::IMemoryBufferFactory>([&](auto&& f) { return f.Create(capacity); }))
 {}
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateEmpty()
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateEmpty();
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateEmpty(); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8(uint8_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt8(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt8(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt16(int16_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt16(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt16(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16(uint16_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt16(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt16(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt32(int32_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt32(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt32(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32(uint32_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt32(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt32(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt64(int64_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt64(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt64(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64(uint64_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt64(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt64(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateSingle(float value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateSingle(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateSingle(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateDouble(double value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateDouble(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateDouble(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateChar16(char16_t value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateChar16(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateChar16(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateBoolean(bool value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateBoolean(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateBoolean(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateString(param::hstring const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateString(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateString(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInspectable(Windows::Foundation::IInspectable const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInspectable(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInspectable(value); });
 }
 
-inline Windows::Foundation::IInspectable PropertyValue::CreateGuid(GUID const& value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateGuid(winrt::guid const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateGuid(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateGuid(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateDateTime(Windows::Foundation::DateTime const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateDateTime(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateDateTime(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpan(Windows::Foundation::TimeSpan const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateTimeSpan(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateTimeSpan(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreatePoint(Windows::Foundation::Point const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreatePoint(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreatePoint(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateSize(Windows::Foundation::Size const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateSize(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateSize(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateRect(Windows::Foundation::Rect const& value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateRect(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateRect(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8Array(array_view<uint8_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt8Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt8Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt16Array(array_view<int16_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt16Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt16Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16Array(array_view<uint16_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt16Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt16Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt32Array(array_view<int32_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt32Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt32Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32Array(array_view<uint32_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt32Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt32Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInt64Array(array_view<int64_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInt64Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInt64Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64Array(array_view<uint64_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateUInt64Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateUInt64Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateSingleArray(array_view<float const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateSingleArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateSingleArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateDoubleArray(array_view<double const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateDoubleArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateDoubleArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateChar16Array(array_view<char16_t const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateChar16Array(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateChar16Array(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateBooleanArray(array_view<bool const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateBooleanArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateBooleanArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateStringArray(array_view<hstring const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateStringArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateStringArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateInspectableArray(array_view<Windows::Foundation::IInspectable const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateInspectableArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateInspectableArray(value); });
 }
 
-inline Windows::Foundation::IInspectable PropertyValue::CreateGuidArray(array_view<GUID const> value)
+inline Windows::Foundation::IInspectable PropertyValue::CreateGuidArray(array_view<winrt::guid const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateGuidArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateGuidArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateDateTimeArray(array_view<Windows::Foundation::DateTime const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateDateTimeArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateDateTimeArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpanArray(array_view<Windows::Foundation::TimeSpan const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateTimeSpanArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateTimeSpanArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreatePointArray(array_view<Windows::Foundation::Point const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreatePointArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreatePointArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateSizeArray(array_view<Windows::Foundation::Size const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateSizeArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateSizeArray(value); });
 }
 
 inline Windows::Foundation::IInspectable PropertyValue::CreateRectArray(array_view<Windows::Foundation::Rect const> value)
 {
-    return get_activation_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>().CreateRectArray(value);
+    return impl::call_factory<PropertyValue, Windows::Foundation::IPropertyValueStatics>([&](auto&& f) { return f.CreateRectArray(value); });
 }
 
 inline Uri::Uri(param::hstring const& uri) :
-    Uri(get_activation_factory<Uri, Windows::Foundation::IUriRuntimeClassFactory>().CreateUri(uri))
+    Uri(impl::call_factory<Uri, Windows::Foundation::IUriRuntimeClassFactory>([&](auto&& f) { return f.CreateUri(uri); }))
 {}
 
 inline Uri::Uri(param::hstring const& baseUri, param::hstring const& relativeUri) :
-    Uri(get_activation_factory<Uri, Windows::Foundation::IUriRuntimeClassFactory>().CreateWithRelativeUri(baseUri, relativeUri))
+    Uri(impl::call_factory<Uri, Windows::Foundation::IUriRuntimeClassFactory>([&](auto&& f) { return f.CreateWithRelativeUri(baseUri, relativeUri); }))
 {}
 
 inline hstring Uri::UnescapeComponent(param::hstring const& toUnescape)
 {
-    return get_activation_factory<Uri, Windows::Foundation::IUriEscapeStatics>().UnescapeComponent(toUnescape);
+    return impl::call_factory<Uri, Windows::Foundation::IUriEscapeStatics>([&](auto&& f) { return f.UnescapeComponent(toUnescape); });
 }
 
 inline hstring Uri::EscapeComponent(param::hstring const& toEscape)
 {
-    return get_activation_factory<Uri, Windows::Foundation::IUriEscapeStatics>().EscapeComponent(toEscape);
+    return impl::call_factory<Uri, Windows::Foundation::IUriEscapeStatics>([&](auto&& f) { return f.EscapeComponent(toEscape); });
 }
 
 inline WwwFormUrlDecoder::WwwFormUrlDecoder(param::hstring const& query) :
-    WwwFormUrlDecoder(get_activation_factory<WwwFormUrlDecoder, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory>().CreateWwwFormUrlDecoder(query))
+    WwwFormUrlDecoder(impl::call_factory<WwwFormUrlDecoder, Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory>([&](auto&& f) { return f.CreateWwwFormUrlDecoder(query); }))
 {}
 
 template <typename L> DeferralCompletedHandler::DeferralCompletedHandler(L handler) :
@@ -2819,11 +2661,19 @@ template <typename L> DeferralCompletedHandler::DeferralCompletedHandler(L handl
 {}
 
 template <typename F> DeferralCompletedHandler::DeferralCompletedHandler(F* handler) :
-    DeferralCompletedHandler([=](auto&&... args) { handler(args...); })
+    DeferralCompletedHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> DeferralCompletedHandler::DeferralCompletedHandler(O* object, M method) :
-    DeferralCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    DeferralCompletedHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> DeferralCompletedHandler::DeferralCompletedHandler(com_ptr<O>&& object, M method) :
+    DeferralCompletedHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> DeferralCompletedHandler::DeferralCompletedHandler(weak_ref<O>&& object, M method) :
+    DeferralCompletedHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void DeferralCompletedHandler::operator()() const
@@ -2838,18 +2688,32 @@ namespace winrt::impl
     template <typename D, typename T>
     struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
     {
-        HRESULT __stdcall get_Value(arg_out<T> value) noexcept final
+        int32_t WINRT_CALL get_Value(arg_out<T> value) noexcept final
         {
             try
             {
                 typename D::abi_guard guard(this->shim());
                 *value = detach_from<T>(this->shim().Value());
-                return S_OK;
+                return error_ok;
             }
-            catch (...)
+            catch (...) { return to_hresult(); }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::IReferenceArray<T>> : produce_base<D, Windows::Foundation::IReferenceArray<T>>
+    {
+        int32_t WINRT_CALL get_Value(uint32_t* __valueSize, arg_out<T>* value) noexcept final
+        {
+            try
             {
-                return to_hresult();
+                *__valueSize = 0;
+                *value = nullptr;
+                typename D::abi_guard guard(this->shim());
+                std::tie(*__valueSize, *value) = detach_abi(this->shim().Value());
+                return error_ok;
             }
+            catch (...) { return to_hresult(); }
         }
     };
 
@@ -2915,7 +2779,7 @@ namespace winrt::impl
         char16_t GetChar16() { throw hresult_not_implemented(); }
         bool GetBoolean() { throw hresult_not_implemented(); }
         hstring GetString() { throw hresult_not_implemented(); }
-        GUID GetGuid() { throw hresult_not_implemented(); }
+        guid GetGuid() { throw hresult_not_implemented(); }
         Windows::Foundation::DateTime GetDateTime() { throw hresult_not_implemented(); }
         Windows::Foundation::TimeSpan GetTimeSpan() { throw hresult_not_implemented(); }
         Windows::Foundation::Point GetPoint() { throw hresult_not_implemented(); }
@@ -2934,7 +2798,7 @@ namespace winrt::impl
         void GetBooleanArray(com_array<bool> &) { throw hresult_not_implemented(); }
         void GetStringArray(com_array<hstring> &) { throw hresult_not_implemented(); }
         void GetInspectableArray(com_array<Windows::Foundation::IInspectable> &) { throw hresult_not_implemented(); }
-        void GetGuidArray(com_array<GUID> &) { throw hresult_not_implemented(); }
+        void GetGuidArray(com_array<guid> &) { throw hresult_not_implemented(); }
         void GetDateTimeArray(com_array<Windows::Foundation::DateTime> &) { throw hresult_not_implemented(); }
         void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> &) { throw hresult_not_implemented(); }
         void GetPointArray(com_array<Windows::Foundation::Point> &) { throw hresult_not_implemented(); }
@@ -3044,9 +2908,9 @@ namespace winrt::impl
     };
 
     template <>
-    struct reference_traits<GUID>
+    struct reference_traits<guid>
     {
-        static auto make(GUID const& value) { return Windows::Foundation::PropertyValue::CreateGuid(value); }
+        static auto make(guid const& value) { return Windows::Foundation::PropertyValue::CreateGuid(value); }
     };
 
     template <>
@@ -3123,6 +2987,16 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     {
         return !(left == right);
     }
+
+    template <typename T>
+    struct WINRT_EBO IReferenceArray :
+        IInspectable,
+        impl::consume_t<IReferenceArray<T>>,
+        impl::require<IReferenceArray<T>, IPropertyValue>
+    {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
+        IReferenceArray<T>(std::nullptr_t = nullptr) noexcept {}
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -3246,6 +3120,7 @@ template<> struct hash<winrt::Windows::Foundation::IClosable> : winrt::impl::has
 template<> struct hash<winrt::Windows::Foundation::IDeferral> : winrt::impl::hash_base<winrt::Windows::Foundation::IDeferral> {};
 template<> struct hash<winrt::Windows::Foundation::IDeferralFactory> : winrt::impl::hash_base<winrt::Windows::Foundation::IDeferralFactory> {};
 template<> struct hash<winrt::Windows::Foundation::IGetActivationFactory> : winrt::impl::hash_base<winrt::Windows::Foundation::IGetActivationFactory> {};
+template<> struct hash<winrt::Windows::Foundation::IGuidHelperStatics> : winrt::impl::hash_base<winrt::Windows::Foundation::IGuidHelperStatics> {};
 template<> struct hash<winrt::Windows::Foundation::IMemoryBuffer> : winrt::impl::hash_base<winrt::Windows::Foundation::IMemoryBuffer> {};
 template<> struct hash<winrt::Windows::Foundation::IMemoryBufferFactory> : winrt::impl::hash_base<winrt::Windows::Foundation::IMemoryBufferFactory> {};
 template<> struct hash<winrt::Windows::Foundation::IMemoryBufferReference> : winrt::impl::hash_base<winrt::Windows::Foundation::IMemoryBufferReference> {};
@@ -3260,6 +3135,7 @@ template<> struct hash<winrt::Windows::Foundation::IWwwFormUrlDecoderEntry> : wi
 template<> struct hash<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClass> : winrt::impl::hash_base<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClass> {};
 template<> struct hash<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> : winrt::impl::hash_base<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory> {};
 template<> struct hash<winrt::Windows::Foundation::Deferral> : winrt::impl::hash_base<winrt::Windows::Foundation::Deferral> {};
+template<> struct hash<winrt::Windows::Foundation::GuidHelper> : winrt::impl::hash_base<winrt::Windows::Foundation::GuidHelper> {};
 template<> struct hash<winrt::Windows::Foundation::MemoryBuffer> : winrt::impl::hash_base<winrt::Windows::Foundation::MemoryBuffer> {};
 template<> struct hash<winrt::Windows::Foundation::PropertyValue> : winrt::impl::hash_base<winrt::Windows::Foundation::PropertyValue> {};
 template<> struct hash<winrt::Windows::Foundation::Uri> : winrt::impl::hash_base<winrt::Windows::Foundation::Uri> {};
@@ -3267,5 +3143,3 @@ template<> struct hash<winrt::Windows::Foundation::WwwFormUrlDecoder> : winrt::i
 template<> struct hash<winrt::Windows::Foundation::WwwFormUrlDecoderEntry> : winrt::impl::hash_base<winrt::Windows::Foundation::WwwFormUrlDecoderEntry> {};
 
 }
-
-WINRT_WARNING_POP

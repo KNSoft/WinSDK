@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -140,55 +140,55 @@ template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->StopOverride());
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->add_IsSupportedChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IBrightnessOverride> consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged_revoker consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IBrightnessOverride>(this, &abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_IsSupportedChanged, IsSupportedChanged(handler));
+    return impl::make_event_revoker<D, IsSupportedChanged_revoker>(this, IsSupportedChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsSupportedChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_IsSupportedChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_IsSupportedChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->add_IsOverrideActiveChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IBrightnessOverride> consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged_revoker consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IBrightnessOverride>(this, &abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_IsOverrideActiveChanged, IsOverrideActiveChanged(handler));
+    return impl::make_event_revoker<D, IsOverrideActiveChanged_revoker>(this, IsOverrideActiveChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::IsOverrideActiveChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_IsOverrideActiveChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_IsOverrideActiveChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->add_BrightnessLevelChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IBrightnessOverride> consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged_revoker consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IBrightnessOverride>(this, &abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_BrightnessLevelChanged, BrightnessLevelChanged(handler));
+    return impl::make_event_revoker<D, BrightnessLevelChanged_revoker>(this, BrightnessLevelChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IBrightnessOverride<D>::BrightnessLevelChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_BrightnessLevelChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IBrightnessOverride)->remove_BrightnessLevelChanged(get_abi(token)));
 }
 
 template <typename D> double consume_Windows_Graphics_Display_IBrightnessOverrideSettings<D>::DesiredLevel() const
@@ -316,55 +316,55 @@ template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementO
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->StopOverride());
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->add_CanOverrideChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride> consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged_revoker consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayEnhancementOverride>(this, &abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_CanOverrideChanged, CanOverrideChanged(handler));
+    return impl::make_event_revoker<D, CanOverrideChanged_revoker>(this, CanOverrideChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::CanOverrideChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_CanOverrideChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_CanOverrideChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->add_IsOverrideActiveChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride> consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged_revoker consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayEnhancementOverride>(this, &abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_IsOverrideActiveChanged, IsOverrideActiveChanged(handler));
+    return impl::make_event_revoker<D, IsOverrideActiveChanged_revoker>(this, IsOverrideActiveChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::IsOverrideActiveChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_IsOverrideActiveChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_IsOverrideActiveChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->add_DisplayEnhancementOverrideCapabilitiesChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride> consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged_revoker consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayEnhancementOverride>(this, &abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_DisplayEnhancementOverrideCapabilitiesChanged, DisplayEnhancementOverrideCapabilitiesChanged(handler));
+    return impl::make_event_revoker<D, DisplayEnhancementOverrideCapabilitiesChanged_revoker>(this, DisplayEnhancementOverrideCapabilitiesChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>::DisplayEnhancementOverrideCapabilitiesChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_DisplayEnhancementOverrideCapabilitiesChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayEnhancementOverride)->remove_DisplayEnhancementOverrideCapabilitiesChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Graphics_Display_IDisplayEnhancementOverrideCapabilities<D>::IsBrightnessControlSupported() const
@@ -416,21 +416,21 @@ template <typename D> Windows::Graphics::Display::DisplayOrientations consume_Wi
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->add_OrientationChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformation> consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged_revoker consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformation>(this, &abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_OrientationChanged, OrientationChanged(handler));
+    return impl::make_event_revoker<D, OrientationChanged_revoker>(this, OrientationChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::OrientationChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_OrientationChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_OrientationChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Graphics::Display::ResolutionScale consume_Windows_Graphics_Display_IDisplayInformation<D>::ResolutionScale() const
@@ -461,21 +461,21 @@ template <typename D> float consume_Windows_Graphics_Display_IDisplayInformation
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->add_DpiChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformation> consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged_revoker consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformation>(this, &abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_DpiChanged, DpiChanged(handler));
+    return impl::make_event_revoker<D, DpiChanged_revoker>(this, DpiChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::DpiChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_DpiChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_DpiChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabled() const
@@ -485,21 +485,21 @@ template <typename D> bool consume_Windows_Graphics_Display_IDisplayInformation<
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->add_StereoEnabledChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformation> consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged_revoker consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformation>(this, &abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_StereoEnabledChanged, StereoEnabledChanged(handler));
+    return impl::make_event_revoker<D, StereoEnabledChanged_revoker>(this, StereoEnabledChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::StereoEnabledChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_StereoEnabledChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_StereoEnabledChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> consume_Windows_Graphics_Display_IDisplayInformation<D>::GetColorProfileAsync() const
@@ -509,21 +509,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return asyncInfo;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->add_ColorProfileChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformation> consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged_revoker consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformation>(this, &abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_ColorProfileChanged, ColorProfileChanged(handler));
+    return impl::make_event_revoker<D, ColorProfileChanged_revoker>(this, ColorProfileChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation<D>::ColorProfileChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_ColorProfileChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation)->remove_ColorProfileChanged(get_abi(token)));
 }
 
 template <typename D> double consume_Windows_Graphics_Display_IDisplayInformation2<D>::RawPixelsPerViewPixel() const
@@ -561,21 +561,21 @@ template <typename D> Windows::Graphics::Display::AdvancedColorInfo consume_Wind
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation5)->add_AdvancedColorInfoChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformation5> consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged_revoker consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformation5>(this, &abi_t<Windows::Graphics::Display::IDisplayInformation5>::remove_AdvancedColorInfoChanged, AdvancedColorInfoChanged(handler));
+    return impl::make_event_revoker<D, AdvancedColorInfoChanged_revoker>(this, AdvancedColorInfoChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformation5<D>::AdvancedColorInfoChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation5)->remove_AdvancedColorInfoChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformation5)->remove_AdvancedColorInfoChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayInformation consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::GetForCurrentView() const
@@ -597,21 +597,21 @@ template <typename D> void consume_Windows_Graphics_Display_IDisplayInformationS
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformationStatics)->put_AutoRotationPreferences(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformationStatics)->add_DisplayContentsInvalidated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayInformationStatics> consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated_revoker consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayInformationStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayInformationStatics>::remove_DisplayContentsInvalidated, DisplayContentsInvalidated(handler));
+    return impl::make_event_revoker<D, DisplayContentsInvalidated_revoker>(this, DisplayContentsInvalidated(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayInformationStatics<D>::DisplayContentsInvalidated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayInformationStatics)->remove_DisplayContentsInvalidated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayInformationStatics)->remove_DisplayContentsInvalidated(get_abi(token)));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::CurrentOrientation() const
@@ -640,21 +640,21 @@ template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesSt
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->put_AutoRotationPreferences(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->add_OrientationChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged_revoker consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayPropertiesStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_OrientationChanged, OrientationChanged(handler));
+    return impl::make_event_revoker<D, OrientationChanged_revoker>(this, OrientationChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::OrientationChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_OrientationChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_OrientationChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Graphics::Display::ResolutionScale consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ResolutionScale() const
@@ -671,21 +671,21 @@ template <typename D> float consume_Windows_Graphics_Display_IDisplayPropertiesS
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->add_LogicalDpiChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged_revoker consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayPropertiesStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_LogicalDpiChanged, LogicalDpiChanged(handler));
+    return impl::make_event_revoker<D, LogicalDpiChanged_revoker>(this, LogicalDpiChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::LogicalDpiChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_LogicalDpiChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_LogicalDpiChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabled() const
@@ -695,21 +695,21 @@ template <typename D> bool consume_Windows_Graphics_Display_IDisplayPropertiesSt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->add_StereoEnabledChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged_revoker consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayPropertiesStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_StereoEnabledChanged, StereoEnabledChanged(handler));
+    return impl::make_event_revoker<D, StereoEnabledChanged_revoker>(this, StereoEnabledChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::StereoEnabledChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_StereoEnabledChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_StereoEnabledChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::GetColorProfileAsync() const
@@ -719,38 +719,38 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return asyncInfo;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->add_ColorProfileChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged_revoker consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayPropertiesStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_ColorProfileChanged, ColorProfileChanged(handler));
+    return impl::make_event_revoker<D, ColorProfileChanged_revoker>(this, ColorProfileChanged(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::ColorProfileChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_ColorProfileChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_ColorProfileChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->add_DisplayContentsInvalidated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
+template <typename D> typename consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated_revoker consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Display::IDisplayPropertiesStatics>(this, &abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_DisplayContentsInvalidated, DisplayContentsInvalidated(handler));
+    return impl::make_event_revoker<D, DisplayContentsInvalidated_revoker>(this, DisplayContentsInvalidated(handler));
 }
 
-template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(event_token const& token) const
+template <typename D> void consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_DisplayContentsInvalidated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Display::IDisplayPropertiesStatics)->remove_DisplayContentsInvalidated(get_abi(token)));
 }
 
 template <> struct delegate<Windows::Graphics::Display::DisplayPropertiesEventHandler>
@@ -760,12 +760,12 @@ template <> struct delegate<Windows::Graphics::Display::DisplayPropertiesEventHa
     {
         type(H&& handler) : implements_delegate<Windows::Graphics::Display::DisplayPropertiesEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&sender));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -778,1504 +778,1234 @@ template <> struct delegate<Windows::Graphics::Display::DisplayPropertiesEventHa
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IAdvancedColorInfo> : produce_base<D, Windows::Graphics::Display::IAdvancedColorInfo>
 {
-    HRESULT __stdcall get_CurrentAdvancedColorKind(Windows::Graphics::Display::AdvancedColorKind* value) noexcept final
+    int32_t WINRT_CALL get_CurrentAdvancedColorKind(Windows::Graphics::Display::AdvancedColorKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentAdvancedColorKind, WINRT_WRAP(Windows::Graphics::Display::AdvancedColorKind));
             *value = detach_from<Windows::Graphics::Display::AdvancedColorKind>(this->shim().CurrentAdvancedColorKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedPrimary(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_RedPrimary(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedPrimary, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().RedPrimary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GreenPrimary(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_GreenPrimary(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GreenPrimary, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().GreenPrimary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BluePrimary(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_BluePrimary(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BluePrimary, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().BluePrimary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WhitePoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_WhitePoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WhitePoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().WhitePoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxLuminanceInNits(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxLuminanceInNits(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxLuminanceInNits, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxLuminanceInNits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinLuminanceInNits(float* value) noexcept final
+    int32_t WINRT_CALL get_MinLuminanceInNits(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinLuminanceInNits, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MinLuminanceInNits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxAverageFullFrameLuminanceInNits(float* value) noexcept final
+    int32_t WINRT_CALL get_MaxAverageFullFrameLuminanceInNits(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAverageFullFrameLuminanceInNits, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().MaxAverageFullFrameLuminanceInNits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SdrWhiteLevelInNits(float* value) noexcept final
+    int32_t WINRT_CALL get_SdrWhiteLevelInNits(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SdrWhiteLevelInNits, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().SdrWhiteLevelInNits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsHdrMetadataFormatCurrentlySupported(Windows::Graphics::Display::HdrMetadataFormat format, bool* result) noexcept final
+    int32_t WINRT_CALL IsHdrMetadataFormatCurrentlySupported(Windows::Graphics::Display::HdrMetadataFormat format, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHdrMetadataFormatCurrentlySupported, WINRT_WRAP(bool), Windows::Graphics::Display::HdrMetadataFormat const&);
             *result = detach_from<bool>(this->shim().IsHdrMetadataFormatCurrentlySupported(*reinterpret_cast<Windows::Graphics::Display::HdrMetadataFormat const*>(&format)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsAdvancedColorKindAvailable(Windows::Graphics::Display::AdvancedColorKind kind, bool* result) noexcept final
+    int32_t WINRT_CALL IsAdvancedColorKindAvailable(Windows::Graphics::Display::AdvancedColorKind kind, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAdvancedColorKindAvailable, WINRT_WRAP(bool), Windows::Graphics::Display::AdvancedColorKind const&);
             *result = detach_from<bool>(this->shim().IsAdvancedColorKindAvailable(*reinterpret_cast<Windows::Graphics::Display::AdvancedColorKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IBrightnessOverride> : produce_base<D, Windows::Graphics::Display::IBrightnessOverride>
 {
-    HRESULT __stdcall get_IsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOverrideActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOverrideActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOverrideActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOverrideActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrightnessLevel(double* level) noexcept final
+    int32_t WINRT_CALL get_BrightnessLevel(double* level) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrightnessLevel, WINRT_WRAP(double));
             *level = detach_from<double>(this->shim().BrightnessLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept final
+    int32_t WINRT_CALL SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBrightnessLevel, WINRT_WRAP(void), double, Windows::Graphics::Display::DisplayBrightnessOverrideOptions const&);
             this->shim().SetBrightnessLevel(brightnessLevel, *reinterpret_cast<Windows::Graphics::Display::DisplayBrightnessOverrideOptions const*>(&options));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept final
+    int32_t WINRT_CALL SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBrightnessScenario, WINRT_WRAP(void), Windows::Graphics::Display::DisplayBrightnessScenario const&, Windows::Graphics::Display::DisplayBrightnessOverrideOptions const&);
             this->shim().SetBrightnessScenario(*reinterpret_cast<Windows::Graphics::Display::DisplayBrightnessScenario const*>(&scenario), *reinterpret_cast<Windows::Graphics::Display::DisplayBrightnessOverrideOptions const*>(&options));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, double* brightnessLevel) noexcept final
+    int32_t WINRT_CALL GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, double* brightnessLevel) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetLevelForScenario, WINRT_WRAP(double), Windows::Graphics::Display::DisplayBrightnessScenario const&);
             *brightnessLevel = detach_from<double>(this->shim().GetLevelForScenario(*reinterpret_cast<Windows::Graphics::Display::DisplayBrightnessScenario const*>(&scenario)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartOverride() noexcept final
+    int32_t WINRT_CALL StartOverride() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartOverride, WINRT_WRAP(void));
             this->shim().StartOverride();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopOverride() noexcept final
+    int32_t WINRT_CALL StopOverride() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopOverride, WINRT_WRAP(void));
             this->shim().StopOverride();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_IsSupportedChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_IsSupportedChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().IsSupportedChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsSupportedChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().IsSupportedChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_IsSupportedChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_IsSupportedChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(IsSupportedChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().IsSupportedChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_IsOverrideActiveChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().IsSupportedChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsOverrideActiveChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().IsOverrideActiveChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_IsOverrideActiveChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_IsOverrideActiveChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(IsOverrideActiveChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().IsOverrideActiveChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_BrightnessLevelChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().IsOverrideActiveChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BrightnessLevelChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().BrightnessLevelChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_BrightnessLevelChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().IsOverrideActiveChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_BrightnessLevelChanged(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().BrightnessLevelChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_BrightnessLevelChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().BrightnessLevelChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(BrightnessLevelChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().BrightnessLevelChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IBrightnessOverrideSettings> : produce_base<D, Windows::Graphics::Display::IBrightnessOverrideSettings>
 {
-    HRESULT __stdcall get_DesiredLevel(double* value) noexcept final
+    int32_t WINRT_CALL get_DesiredLevel(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredLevel, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DesiredLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredNits(float* value) noexcept final
+    int32_t WINRT_CALL get_DesiredNits(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredNits, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DesiredNits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics> : produce_base<D, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>
 {
-    HRESULT __stdcall CreateFromLevel(double level, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromLevel(double level, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromLevel, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverrideSettings), double);
             *result = detach_from<Windows::Graphics::Display::BrightnessOverrideSettings>(this->shim().CreateFromLevel(level));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromNits(float nits, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromNits(float nits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNits, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverrideSettings), float);
             *result = detach_from<Windows::Graphics::Display::BrightnessOverrideSettings>(this->shim().CreateFromNits(nits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromDisplayBrightnessOverrideScenario(Windows::Graphics::Display::DisplayBrightnessOverrideScenario overrideScenario, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromDisplayBrightnessOverrideScenario(Windows::Graphics::Display::DisplayBrightnessOverrideScenario overrideScenario, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromDisplayBrightnessOverrideScenario, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverrideSettings), Windows::Graphics::Display::DisplayBrightnessOverrideScenario const&);
             *result = detach_from<Windows::Graphics::Display::BrightnessOverrideSettings>(this->shim().CreateFromDisplayBrightnessOverrideScenario(*reinterpret_cast<Windows::Graphics::Display::DisplayBrightnessOverrideScenario const*>(&overrideScenario)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IBrightnessOverrideStatics> : produce_base<D, Windows::Graphics::Display::IBrightnessOverrideStatics>
 {
-    HRESULT __stdcall GetDefaultForSystem(void** value) noexcept final
+    int32_t WINRT_CALL GetDefaultForSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultForSystem, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverride));
             *value = detach_from<Windows::Graphics::Display::BrightnessOverride>(this->shim().GetDefaultForSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForCurrentView(void** value) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverride));
             *value = detach_from<Windows::Graphics::Display::BrightnessOverride>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveForSystemAsync(void* value, void** operation) noexcept final
+    int32_t WINRT_CALL SaveForSystemAsync(void* value, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveForSystemAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Graphics::Display::BrightnessOverride const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().SaveForSystemAsync(*reinterpret_cast<Windows::Graphics::Display::BrightnessOverride const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IColorOverrideSettings> : produce_base<D, Windows::Graphics::Display::IColorOverrideSettings>
 {
-    HRESULT __stdcall get_DesiredDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario* value) noexcept final
+    int32_t WINRT_CALL get_DesiredDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredDisplayColorOverrideScenario, WINRT_WRAP(Windows::Graphics::Display::DisplayColorOverrideScenario));
             *value = detach_from<Windows::Graphics::Display::DisplayColorOverrideScenario>(this->shim().DesiredDisplayColorOverrideScenario());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IColorOverrideSettingsStatics> : produce_base<D, Windows::Graphics::Display::IColorOverrideSettingsStatics>
 {
-    HRESULT __stdcall CreateFromDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario overrideScenario, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario overrideScenario, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromDisplayColorOverrideScenario, WINRT_WRAP(Windows::Graphics::Display::ColorOverrideSettings), Windows::Graphics::Display::DisplayColorOverrideScenario const&);
             *result = detach_from<Windows::Graphics::Display::ColorOverrideSettings>(this->shim().CreateFromDisplayColorOverrideScenario(*reinterpret_cast<Windows::Graphics::Display::DisplayColorOverrideScenario const*>(&overrideScenario)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayEnhancementOverride> : produce_base<D, Windows::Graphics::Display::IDisplayEnhancementOverride>
 {
-    HRESULT __stdcall get_ColorOverrideSettings(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorOverrideSettings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorOverrideSettings, WINRT_WRAP(Windows::Graphics::Display::ColorOverrideSettings));
             *value = detach_from<Windows::Graphics::Display::ColorOverrideSettings>(this->shim().ColorOverrideSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ColorOverrideSettings(void* value) noexcept final
+    int32_t WINRT_CALL put_ColorOverrideSettings(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorOverrideSettings, WINRT_WRAP(void), Windows::Graphics::Display::ColorOverrideSettings const&);
             this->shim().ColorOverrideSettings(*reinterpret_cast<Windows::Graphics::Display::ColorOverrideSettings const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrightnessOverrideSettings(void** value) noexcept final
+    int32_t WINRT_CALL get_BrightnessOverrideSettings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrightnessOverrideSettings, WINRT_WRAP(Windows::Graphics::Display::BrightnessOverrideSettings));
             *value = detach_from<Windows::Graphics::Display::BrightnessOverrideSettings>(this->shim().BrightnessOverrideSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BrightnessOverrideSettings(void* value) noexcept final
+    int32_t WINRT_CALL put_BrightnessOverrideSettings(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrightnessOverrideSettings, WINRT_WRAP(void), Windows::Graphics::Display::BrightnessOverrideSettings const&);
             this->shim().BrightnessOverrideSettings(*reinterpret_cast<Windows::Graphics::Display::BrightnessOverrideSettings const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanOverride(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanOverride(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanOverride, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanOverride());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOverrideActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOverrideActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOverrideActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOverrideActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentDisplayEnhancementOverrideCapabilities(void** value) noexcept final
+    int32_t WINRT_CALL GetCurrentDisplayEnhancementOverrideCapabilities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentDisplayEnhancementOverrideCapabilities, WINRT_WRAP(Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities));
             *value = detach_from<Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities>(this->shim().GetCurrentDisplayEnhancementOverrideCapabilities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestOverride() noexcept final
+    int32_t WINRT_CALL RequestOverride() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestOverride, WINRT_WRAP(void));
             this->shim().RequestOverride();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopOverride() noexcept final
+    int32_t WINRT_CALL StopOverride() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopOverride, WINRT_WRAP(void));
             this->shim().StopOverride();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CanOverrideChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_CanOverrideChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().CanOverrideChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanOverrideChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().CanOverrideChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CanOverrideChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_CanOverrideChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CanOverrideChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CanOverrideChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_IsOverrideActiveChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().CanOverrideChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsOverrideActiveChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().IsOverrideActiveChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_IsOverrideActiveChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_IsOverrideActiveChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(IsOverrideActiveChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().IsOverrideActiveChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DisplayEnhancementOverrideCapabilitiesChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().IsOverrideActiveChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DisplayEnhancementOverrideCapabilitiesChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DisplayEnhancementOverrideCapabilitiesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DisplayEnhancementOverrideCapabilitiesChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().IsOverrideActiveChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_DisplayEnhancementOverrideCapabilitiesChanged(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DisplayEnhancementOverrideCapabilitiesChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_DisplayEnhancementOverrideCapabilitiesChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DisplayEnhancementOverrideCapabilitiesChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DisplayEnhancementOverrideCapabilitiesChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DisplayEnhancementOverrideCapabilitiesChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities> : produce_base<D, Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities>
 {
-    HRESULT __stdcall get_IsBrightnessControlSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBrightnessControlSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBrightnessControlSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBrightnessControlSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsBrightnessNitsControlSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBrightnessNitsControlSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBrightnessNitsControlSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBrightnessNitsControlSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSupportedNitRanges(void** result) noexcept final
+    int32_t WINRT_CALL GetSupportedNitRanges(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSupportedNitRanges, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Display::NitRange>));
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Display::NitRange>>(this->shim().GetSupportedNitRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs> : produce_base<D, Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>
 {
-    HRESULT __stdcall get_Capabilities(void** value) noexcept final
+    int32_t WINRT_CALL get_Capabilities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capabilities, WINRT_WRAP(Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities));
             *value = detach_from<Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities>(this->shim().Capabilities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayEnhancementOverrideStatics> : produce_base<D, Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** result) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Graphics::Display::DisplayEnhancementOverride));
             *result = detach_from<Windows::Graphics::Display::DisplayEnhancementOverride>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_base<D, Windows::Graphics::Display::IDisplayInformation>
 {
-    HRESULT __stdcall get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentOrientation, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().CurrentOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeOrientation, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().NativeOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_OrientationChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_OrientationChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().OrientationChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(OrientationChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().OrientationChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_OrientationChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_OrientationChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(OrientationChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().OrientationChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OrientationChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolutionScale, WINRT_WRAP(Windows::Graphics::Display::ResolutionScale));
             *value = detach_from<Windows::Graphics::Display::ResolutionScale>(this->shim().ResolutionScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogicalDpi(float* value) noexcept final
+    int32_t WINRT_CALL get_LogicalDpi(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogicalDpi, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LogicalDpi());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RawDpiX(float* value) noexcept final
+    int32_t WINRT_CALL get_RawDpiX(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawDpiX, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RawDpiX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RawDpiY(float* value) noexcept final
+    int32_t WINRT_CALL get_RawDpiY(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawDpiY, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RawDpiY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DpiChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_DpiChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DpiChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DpiChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DpiChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DpiChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DpiChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DpiChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DpiChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_StereoEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DpiChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_StereoEnabled(bool* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StereoEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().StereoEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StereoEnabledChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StereoEnabledChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StereoEnabledChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StereoEnabledChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StereoEnabledChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StereoEnabledChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StereoEnabledChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StereoEnabledChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StereoEnabledChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StereoEnabledChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetColorProfileAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetColorProfileAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetColorProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().GetColorProfileAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ColorProfileChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ColorProfileChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ColorProfileChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ColorProfileChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ColorProfileChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ColorProfileChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ColorProfileChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ColorProfileChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ColorProfileChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ColorProfileChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation2> : produce_base<D, Windows::Graphics::Display::IDisplayInformation2>
 {
-    HRESULT __stdcall get_RawPixelsPerViewPixel(double* value) noexcept final
+    int32_t WINRT_CALL get_RawPixelsPerViewPixel(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawPixelsPerViewPixel, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RawPixelsPerViewPixel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation3> : produce_base<D, Windows::Graphics::Display::IDisplayInformation3>
 {
-    HRESULT __stdcall get_DiagonalSizeInInches(void** value) noexcept final
+    int32_t WINRT_CALL get_DiagonalSizeInInches(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiagonalSizeInInches, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().DiagonalSizeInInches());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation4> : produce_base<D, Windows::Graphics::Display::IDisplayInformation4>
 {
-    HRESULT __stdcall get_ScreenWidthInRawPixels(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ScreenWidthInRawPixels(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScreenWidthInRawPixels, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ScreenWidthInRawPixels());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScreenHeightInRawPixels(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ScreenHeightInRawPixels(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScreenHeightInRawPixels, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ScreenHeightInRawPixels());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation5> : produce_base<D, Windows::Graphics::Display::IDisplayInformation5>
 {
-    HRESULT __stdcall GetAdvancedColorInfo(void** value) noexcept final
+    int32_t WINRT_CALL GetAdvancedColorInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAdvancedColorInfo, WINRT_WRAP(Windows::Graphics::Display::AdvancedColorInfo));
             *value = detach_from<Windows::Graphics::Display::AdvancedColorInfo>(this->shim().GetAdvancedColorInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AdvancedColorInfoChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AdvancedColorInfoChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AdvancedColorInfoChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AdvancedColorInfoChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AdvancedColorInfoChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AdvancedColorInfoChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AdvancedColorInfoChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AdvancedColorInfoChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AdvancedColorInfoChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AdvancedColorInfoChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformationStatics> : produce_base<D, Windows::Graphics::Display::IDisplayInformationStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** current) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** current) noexcept final
     {
         try
         {
             *current = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Graphics::Display::DisplayInformation));
             *current = detach_from<Windows::Graphics::Display::DisplayInformation>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRotationPreferences, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().AutoRotationPreferences());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept final
+    int32_t WINRT_CALL put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRotationPreferences, WINRT_WRAP(void), Windows::Graphics::Display::DisplayOrientations const&);
             this->shim().AutoRotationPreferences(*reinterpret_cast<Windows::Graphics::Display::DisplayOrientations const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DisplayContentsInvalidated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_DisplayContentsInvalidated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DisplayContentsInvalidated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DisplayContentsInvalidated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DisplayContentsInvalidated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DisplayContentsInvalidated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_DisplayContentsInvalidated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DisplayContentsInvalidated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DisplayContentsInvalidated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DisplayContentsInvalidated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayPropertiesStatics> : produce_base<D, Windows::Graphics::Display::IDisplayPropertiesStatics>
 {
-    HRESULT __stdcall get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentOrientation, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().CurrentOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeOrientation, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().NativeOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
+    int32_t WINRT_CALL get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRotationPreferences, WINRT_WRAP(Windows::Graphics::Display::DisplayOrientations));
             *value = detach_from<Windows::Graphics::Display::DisplayOrientations>(this->shim().AutoRotationPreferences());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept final
+    int32_t WINRT_CALL put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoRotationPreferences, WINRT_WRAP(void), Windows::Graphics::Display::DisplayOrientations const&);
             this->shim().AutoRotationPreferences(*reinterpret_cast<Windows::Graphics::Display::DisplayOrientations const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_OrientationChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_OrientationChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().OrientationChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(OrientationChanged, WINRT_WRAP(winrt::event_token), Windows::Graphics::Display::DisplayPropertiesEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().OrientationChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_OrientationChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_OrientationChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(OrientationChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().OrientationChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OrientationChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolutionScale, WINRT_WRAP(Windows::Graphics::Display::ResolutionScale));
             *value = detach_from<Windows::Graphics::Display::ResolutionScale>(this->shim().ResolutionScale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogicalDpi(float* value) noexcept final
+    int32_t WINRT_CALL get_LogicalDpi(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogicalDpi, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LogicalDpi());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_LogicalDpiChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_LogicalDpiChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().LogicalDpiChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LogicalDpiChanged, WINRT_WRAP(winrt::event_token), Windows::Graphics::Display::DisplayPropertiesEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().LogicalDpiChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_LogicalDpiChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_LogicalDpiChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LogicalDpiChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LogicalDpiChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_StereoEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().LogicalDpiChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_StereoEnabled(bool* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StereoEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().StereoEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StereoEnabledChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StereoEnabledChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StereoEnabledChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StereoEnabledChanged, WINRT_WRAP(winrt::event_token), Windows::Graphics::Display::DisplayPropertiesEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().StereoEnabledChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StereoEnabledChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StereoEnabledChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StereoEnabledChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StereoEnabledChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StereoEnabledChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetColorProfileAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetColorProfileAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetColorProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().GetColorProfileAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ColorProfileChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ColorProfileChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ColorProfileChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ColorProfileChanged, WINRT_WRAP(winrt::event_token), Windows::Graphics::Display::DisplayPropertiesEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().ColorProfileChanged(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ColorProfileChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ColorProfileChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ColorProfileChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ColorProfileChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DisplayContentsInvalidated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ColorProfileChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DisplayContentsInvalidated, WINRT_WRAP(winrt::event_token), Windows::Graphics::Display::DisplayPropertiesEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().DisplayContentsInvalidated(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DisplayContentsInvalidated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_DisplayContentsInvalidated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DisplayContentsInvalidated(*reinterpret_cast<Windows::Graphics::Display::DisplayPropertiesEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_DisplayContentsInvalidated(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DisplayContentsInvalidated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DisplayContentsInvalidated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DisplayContentsInvalidated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
@@ -2285,193 +2015,193 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Display {
 
 inline Windows::Graphics::Display::BrightnessOverride BrightnessOverride::GetDefaultForSystem()
 {
-    return get_activation_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>().GetDefaultForSystem();
+    return impl::call_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>([&](auto&& f) { return f.GetDefaultForSystem(); });
 }
 
 inline Windows::Graphics::Display::BrightnessOverride BrightnessOverride::GetForCurrentView()
 {
-    return get_activation_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>().GetForCurrentView();
+    return impl::call_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> BrightnessOverride::SaveForSystemAsync(Windows::Graphics::Display::BrightnessOverride const& value)
 {
-    return get_activation_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>().SaveForSystemAsync(value);
+    return impl::call_factory<BrightnessOverride, Windows::Graphics::Display::IBrightnessOverrideStatics>([&](auto&& f) { return f.SaveForSystemAsync(value); });
 }
 
 inline Windows::Graphics::Display::BrightnessOverrideSettings BrightnessOverrideSettings::CreateFromLevel(double level)
 {
-    return get_activation_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>().CreateFromLevel(level);
+    return impl::call_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>([&](auto&& f) { return f.CreateFromLevel(level); });
 }
 
 inline Windows::Graphics::Display::BrightnessOverrideSettings BrightnessOverrideSettings::CreateFromNits(float nits)
 {
-    return get_activation_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>().CreateFromNits(nits);
+    return impl::call_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>([&](auto&& f) { return f.CreateFromNits(nits); });
 }
 
 inline Windows::Graphics::Display::BrightnessOverrideSettings BrightnessOverrideSettings::CreateFromDisplayBrightnessOverrideScenario(Windows::Graphics::Display::DisplayBrightnessOverrideScenario const& overrideScenario)
 {
-    return get_activation_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>().CreateFromDisplayBrightnessOverrideScenario(overrideScenario);
+    return impl::call_factory<BrightnessOverrideSettings, Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>([&](auto&& f) { return f.CreateFromDisplayBrightnessOverrideScenario(overrideScenario); });
 }
 
 inline Windows::Graphics::Display::ColorOverrideSettings ColorOverrideSettings::CreateFromDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario const& overrideScenario)
 {
-    return get_activation_factory<ColorOverrideSettings, Windows::Graphics::Display::IColorOverrideSettingsStatics>().CreateFromDisplayColorOverrideScenario(overrideScenario);
+    return impl::call_factory<ColorOverrideSettings, Windows::Graphics::Display::IColorOverrideSettingsStatics>([&](auto&& f) { return f.CreateFromDisplayColorOverrideScenario(overrideScenario); });
 }
 
 inline Windows::Graphics::Display::DisplayEnhancementOverride DisplayEnhancementOverride::GetForCurrentView()
 {
-    return get_activation_factory<DisplayEnhancementOverride, Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>().GetForCurrentView();
+    return impl::call_factory<DisplayEnhancementOverride, Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Graphics::Display::DisplayInformation DisplayInformation::GetForCurrentView()
 {
-    return get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>().GetForCurrentView();
+    return impl::call_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayInformation::AutoRotationPreferences()
 {
-    return get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>().AutoRotationPreferences();
+    return impl::call_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>([&](auto&& f) { return f.AutoRotationPreferences(); });
 }
 
 inline void DisplayInformation::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value)
 {
-    get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>().AutoRotationPreferences(value);
+    impl::call_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>([&](auto&& f) { return f.AutoRotationPreferences(value); });
 }
 
-inline event_token DisplayInformation::DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token DisplayInformation::DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>().DisplayContentsInvalidated(handler);
+    return impl::call_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>([&](auto&& f) { return f.DisplayContentsInvalidated(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayInformationStatics> DisplayInformation::DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler)
+inline DisplayInformation::DisplayContentsInvalidated_revoker DisplayInformation::DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayInformationStatics>::remove_DisplayContentsInvalidated, factory.DisplayContentsInvalidated(handler) };
+    auto f = get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>();
+    return { f, f.DisplayContentsInvalidated(handler) };
 }
 
-inline void DisplayInformation::DisplayContentsInvalidated(event_token const& token)
+inline void DisplayInformation::DisplayContentsInvalidated(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>().DisplayContentsInvalidated(token);
+    impl::call_factory<DisplayInformation, Windows::Graphics::Display::IDisplayInformationStatics>([&](auto&& f) { return f.DisplayContentsInvalidated(token); });
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::CurrentOrientation()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().CurrentOrientation();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.CurrentOrientation(); });
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::NativeOrientation()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().NativeOrientation();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.NativeOrientation(); });
 }
 
 inline Windows::Graphics::Display::DisplayOrientations DisplayProperties::AutoRotationPreferences()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().AutoRotationPreferences();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.AutoRotationPreferences(); });
 }
 
 inline void DisplayProperties::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().AutoRotationPreferences(value);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.AutoRotationPreferences(value); });
 }
 
-inline event_token DisplayProperties::OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline winrt::event_token DisplayProperties::OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().OrientationChanged(handler);
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.OrientationChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> DisplayProperties::OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline DisplayProperties::OrientationChanged_revoker DisplayProperties::OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    auto factory = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_OrientationChanged, factory.OrientationChanged(handler) };
+    auto f = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
+    return { f, f.OrientationChanged(handler) };
 }
 
-inline void DisplayProperties::OrientationChanged(event_token const& token)
+inline void DisplayProperties::OrientationChanged(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().OrientationChanged(token);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.OrientationChanged(token); });
 }
 
 inline Windows::Graphics::Display::ResolutionScale DisplayProperties::ResolutionScale()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().ResolutionScale();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.ResolutionScale(); });
 }
 
 inline float DisplayProperties::LogicalDpi()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().LogicalDpi();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.LogicalDpi(); });
 }
 
-inline event_token DisplayProperties::LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline winrt::event_token DisplayProperties::LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().LogicalDpiChanged(handler);
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.LogicalDpiChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> DisplayProperties::LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline DisplayProperties::LogicalDpiChanged_revoker DisplayProperties::LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    auto factory = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_LogicalDpiChanged, factory.LogicalDpiChanged(handler) };
+    auto f = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
+    return { f, f.LogicalDpiChanged(handler) };
 }
 
-inline void DisplayProperties::LogicalDpiChanged(event_token const& token)
+inline void DisplayProperties::LogicalDpiChanged(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().LogicalDpiChanged(token);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.LogicalDpiChanged(token); });
 }
 
 inline bool DisplayProperties::StereoEnabled()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().StereoEnabled();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.StereoEnabled(); });
 }
 
-inline event_token DisplayProperties::StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline winrt::event_token DisplayProperties::StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().StereoEnabledChanged(handler);
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.StereoEnabledChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> DisplayProperties::StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline DisplayProperties::StereoEnabledChanged_revoker DisplayProperties::StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    auto factory = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_StereoEnabledChanged, factory.StereoEnabledChanged(handler) };
+    auto f = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
+    return { f, f.StereoEnabledChanged(handler) };
 }
 
-inline void DisplayProperties::StereoEnabledChanged(event_token const& token)
+inline void DisplayProperties::StereoEnabledChanged(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().StereoEnabledChanged(token);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.StereoEnabledChanged(token); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> DisplayProperties::GetColorProfileAsync()
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().GetColorProfileAsync();
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.GetColorProfileAsync(); });
 }
 
-inline event_token DisplayProperties::ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline winrt::event_token DisplayProperties::ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().ColorProfileChanged(handler);
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.ColorProfileChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> DisplayProperties::ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline DisplayProperties::ColorProfileChanged_revoker DisplayProperties::ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    auto factory = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_ColorProfileChanged, factory.ColorProfileChanged(handler) };
+    auto f = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
+    return { f, f.ColorProfileChanged(handler) };
 }
 
-inline void DisplayProperties::ColorProfileChanged(event_token const& token)
+inline void DisplayProperties::ColorProfileChanged(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().ColorProfileChanged(token);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.ColorProfileChanged(token); });
 }
 
-inline event_token DisplayProperties::DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline winrt::event_token DisplayProperties::DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    return get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().DisplayContentsInvalidated(handler);
+    return impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.DisplayContentsInvalidated(handler); });
 }
 
-inline factory_event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics> DisplayProperties::DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
+inline DisplayProperties::DisplayContentsInvalidated_revoker DisplayProperties::DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler)
 {
-    auto factory = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
-    return { factory, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_DisplayContentsInvalidated, factory.DisplayContentsInvalidated(handler) };
+    auto f = get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>();
+    return { f, f.DisplayContentsInvalidated(handler) };
 }
 
-inline void DisplayProperties::DisplayContentsInvalidated(event_token const& token)
+inline void DisplayProperties::DisplayContentsInvalidated(winrt::event_token const& token)
 {
-    get_activation_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>().DisplayContentsInvalidated(token);
+    impl::call_factory<DisplayProperties, Windows::Graphics::Display::IDisplayPropertiesStatics>([&](auto&& f) { return f.DisplayContentsInvalidated(token); });
 }
 
 template <typename L> DisplayPropertiesEventHandler::DisplayPropertiesEventHandler(L handler) :
@@ -2479,11 +2209,19 @@ template <typename L> DisplayPropertiesEventHandler::DisplayPropertiesEventHandl
 {}
 
 template <typename F> DisplayPropertiesEventHandler::DisplayPropertiesEventHandler(F* handler) :
-    DisplayPropertiesEventHandler([=](auto&&... args) { handler(args...); })
+    DisplayPropertiesEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> DisplayPropertiesEventHandler::DisplayPropertiesEventHandler(O* object, M method) :
-    DisplayPropertiesEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    DisplayPropertiesEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> DisplayPropertiesEventHandler::DisplayPropertiesEventHandler(com_ptr<O>&& object, M method) :
+    DisplayPropertiesEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> DisplayPropertiesEventHandler::DisplayPropertiesEventHandler(weak_ref<O>&& object, M method) :
+    DisplayPropertiesEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void DisplayPropertiesEventHandler::operator()(Windows::Foundation::IInspectable const& sender) const
@@ -2524,5 +2262,3 @@ template<> struct hash<winrt::Windows::Graphics::Display::DisplayInformation> : 
 template<> struct hash<winrt::Windows::Graphics::Display::DisplayProperties> : winrt::impl::hash_base<winrt::Windows::Graphics::Display::DisplayProperties> {};
 
 }
-
-WINRT_WARNING_POP

@@ -8,9 +8,9 @@ Module Name:
 
 Abstract:
 
-    Public IOCTL codes and structure common to BTHMINI and its Bluetooth 
+    Public IOCTL codes and structure common to BTHMINI and its Bluetooth
     extensible transport driver.
-    
+
 Environment:
 
     Kernel mode only
@@ -42,7 +42,7 @@ typedef enum _BTHX_HCI_PACKET_TYPE {
 
 
 //
-// IOCTL definitions. 
+// IOCTL definitions.
 //
 #define BTHX_IOCTL_BASE      0
 
@@ -52,7 +52,7 @@ typedef enum _BTHX_HCI_PACKET_TYPE {
                                      FILE_ANY_ACCESS)
 
 //
-// kernel-level (internal) IOCTLs 
+// kernel-level (internal) IOCTLs
 //
 
 #define IOCTL_BTHX_GET_VERSION              BTHX_CTL(BTHX_IOCTL_BASE+0x100)
@@ -66,10 +66,10 @@ typedef enum _BTHX_HCI_PACKET_TYPE {
 
 //
 // BTH XDDI Interface Version Structure
-// 
+//
 typedef struct _BTHX_VERSION {
     ULONG Version;
-} BTHX_VERSION, *PBTHX_VERSION;    
+} BTHX_VERSION, *PBTHX_VERSION;
 
 //
 // Initialize the version data
@@ -100,8 +100,8 @@ typedef struct _BTHX_CAPABILITIES {
 
 #include <PSHPACK1.H>
 
-// 
-// READ/WRITE context 
+//
+// READ/WRITE context
 //
 typedef struct _BTHX_HCI_READ_WRITE_CONTEXT {
     ULONG   DataLen;    // Size of Data

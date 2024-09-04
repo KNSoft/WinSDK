@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -140,18 +140,18 @@ template <> struct name<Windows::UI::Input::Inking::Analysis::InkAnalysisDrawing
 template <> struct name<Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind" }; };
 template <> struct name<Windows::UI::Input::Inking::Analysis::InkAnalysisStatus>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.Analysis.InkAnalysisStatus" }; };
 template <> struct name<Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind>{ static constexpr auto & value{ L"Windows.UI.Input.Inking.Analysis.InkAnalysisStrokeKind" }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet>{ static constexpr GUID value{ 0xEE049368,0x6110,0x4136,{ 0x95,0xF9,0xEE,0x80,0x9F,0xC2,0x00,0x30 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing>{ static constexpr GUID value{ 0x6A85ED1F,0x1FE4,0x4E15,{ 0x89,0x8C,0x8E,0x11,0x23,0x77,0xE0,0x21 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord>{ static constexpr GUID value{ 0x4BD228AD,0x83AF,0x4034,{ 0x8F,0x3B,0xF8,0x68,0x7D,0xFF,0xF4,0x36 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisLine>{ static constexpr GUID value{ 0xA06D048D,0x2B8D,0x4754,{ 0xAD,0x5A,0xD0,0x87,0x11,0x93,0xA9,0x56 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem>{ static constexpr GUID value{ 0xB4E3C23F,0xC4C3,0x4C3A,{ 0xA1,0xA6,0x9D,0x85,0x54,0x7E,0xE5,0x86 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>{ static constexpr GUID value{ 0x30831F05,0x5F64,0x4A2C,{ 0xBA,0x37,0x4F,0x48,0x87,0x87,0x95,0x74 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph>{ static constexpr GUID value{ 0xD9AD045C,0x0CD1,0x4DD4,{ 0xA6,0x8B,0xEB,0x1F,0x12,0xB3,0xD7,0x27 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisResult>{ static constexpr GUID value{ 0x8948BA79,0xA243,0x4AA3,{ 0xA2,0x94,0x1F,0x98,0xBD,0x0F,0xF5,0x80 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot>{ static constexpr GUID value{ 0x3FB6A3C4,0x2FDE,0x4061,{ 0x85,0x02,0xA9,0x0F,0x32,0x54,0x5B,0x84 } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion>{ static constexpr GUID value{ 0xDD6D6231,0xBD16,0x4663,{ 0xB5,0xAE,0x94,0x1D,0x30,0x43,0xEF,0x5B } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalyzer>{ static constexpr GUID value{ 0xF12B8F95,0x0866,0x4DC5,{ 0x8C,0x77,0xF8,0x86,0x14,0xDF,0xE3,0x8C } }; };
-template <> struct guid<Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory>{ static constexpr GUID value{ 0x29138686,0x1963,0x49D8,{ 0x95,0x89,0xE1,0x43,0x84,0xC7,0x69,0xE3 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet>{ static constexpr guid value{ 0xEE049368,0x6110,0x4136,{ 0x95,0xF9,0xEE,0x80,0x9F,0xC2,0x00,0x30 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing>{ static constexpr guid value{ 0x6A85ED1F,0x1FE4,0x4E15,{ 0x89,0x8C,0x8E,0x11,0x23,0x77,0xE0,0x21 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord>{ static constexpr guid value{ 0x4BD228AD,0x83AF,0x4034,{ 0x8F,0x3B,0xF8,0x68,0x7D,0xFF,0xF4,0x36 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisLine>{ static constexpr guid value{ 0xA06D048D,0x2B8D,0x4754,{ 0xAD,0x5A,0xD0,0x87,0x11,0x93,0xA9,0x56 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem>{ static constexpr guid value{ 0xB4E3C23F,0xC4C3,0x4C3A,{ 0xA1,0xA6,0x9D,0x85,0x54,0x7E,0xE5,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>{ static constexpr guid value{ 0x30831F05,0x5F64,0x4A2C,{ 0xBA,0x37,0x4F,0x48,0x87,0x87,0x95,0x74 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph>{ static constexpr guid value{ 0xD9AD045C,0x0CD1,0x4DD4,{ 0xA6,0x8B,0xEB,0x1F,0x12,0xB3,0xD7,0x27 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisResult>{ static constexpr guid value{ 0x8948BA79,0xA243,0x4AA3,{ 0xA2,0x94,0x1F,0x98,0xBD,0x0F,0xF5,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot>{ static constexpr guid value{ 0x3FB6A3C4,0x2FDE,0x4061,{ 0x85,0x02,0xA9,0x0F,0x32,0x54,0x5B,0x84 } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion>{ static constexpr guid value{ 0xDD6D6231,0xBD16,0x4663,{ 0xB5,0xAE,0x94,0x1D,0x30,0x43,0xEF,0x5B } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalyzer>{ static constexpr guid value{ 0xF12B8F95,0x0866,0x4DC5,{ 0x8C,0x77,0xF8,0x86,0x14,0xDF,0xE3,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory>{ static constexpr guid value{ 0x29138686,0x1963,0x49D8,{ 0x95,0x89,0xE1,0x43,0x84,0xC7,0x69,0xE3 } }; };
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalysisInkBullet>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet; };
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalysisInkDrawing>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing; };
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalysisInkWord>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord; };
@@ -163,6 +163,86 @@ template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAn
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalysisRoot>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot; };
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalysisWritingRegion>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion; };
 template <> struct default_interface<Windows::UI::Input::Inking::Analysis::InkAnalyzer>{ using type = Windows::UI::Input::Inking::Analysis::IInkAnalyzer; };
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DrawingKind(Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Center(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Points(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextAlternates(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisLine>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IndentLevel(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotatedBoundingRect(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Children(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStrokeIds(void** strokeIds) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::UI::Input::Inking::Analysis::InkAnalysisStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindNodes(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind nodeKind, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RecognizedText(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalyzer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnalysisRoot(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAnalyzing(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDataForStroke(void* stroke) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDataForStrokes(void* strokes) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearDataForAllStrokes() noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveDataForStroke(uint32_t strokeId) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveDataForStrokes(void* strokeIds) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceDataForStroke(void* stroke) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStrokeDataKind(uint32_t strokeId, Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind strokeKind) noexcept = 0;
+    virtual int32_t WINRT_CALL AnalyzeAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAnalyzer(void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Input_Inking_Analysis_IInkAnalysisInkBullet
@@ -267,85 +347,5 @@ struct consume_Windows_UI_Input_Inking_Analysis_IInkAnalyzerFactory
     Windows::UI::Input::Inking::Analysis::InkAnalyzer CreateAnalyzer() const;
 };
 template <> struct consume<Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory> { template <typename D> using type = consume_Windows_UI_Input_Inking_Analysis_IInkAnalyzerFactory<D>; };
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DrawingKind(Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Center(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Points(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextAlternates(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisLine>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IndentLevel(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotatedBoundingRect(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Children(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Parent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStrokeIds(void** strokeIds) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::UI::Input::Inking::Analysis::InkAnalysisStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall FindNodes(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind nodeKind, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalyzer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnalysisRoot(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAnalyzing(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall AddDataForStroke(void* stroke) noexcept = 0;
-    virtual HRESULT __stdcall AddDataForStrokes(void* strokes) noexcept = 0;
-    virtual HRESULT __stdcall ClearDataForAllStrokes() noexcept = 0;
-    virtual HRESULT __stdcall RemoveDataForStroke(uint32_t strokeId) noexcept = 0;
-    virtual HRESULT __stdcall RemoveDataForStrokes(void* strokeIds) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceDataForStroke(void* stroke) noexcept = 0;
-    virtual HRESULT __stdcall SetStrokeDataKind(uint32_t strokeId, Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind strokeKind) noexcept = 0;
-    virtual HRESULT __stdcall AnalyzeAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAnalyzer(void** result) noexcept = 0;
-};};
 
 }

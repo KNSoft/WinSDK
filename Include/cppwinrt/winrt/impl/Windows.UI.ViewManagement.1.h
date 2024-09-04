@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -68,7 +68,7 @@ struct WINRT_EBO IApplicationViewConsolidatedEventArgs2 :
     IApplicationViewConsolidatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] IApplicationViewFullscreenStatics :
+struct WINRT_EBO IApplicationViewFullscreenStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IApplicationViewFullscreenStatics>
 {
@@ -96,7 +96,7 @@ struct WINRT_EBO IApplicationViewScalingStatics :
     IApplicationViewScalingStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ApplicationView static methods may be altered or unavailable for releases after Windows 8.1. Instead, use ApplicationView.GetForCurrentView to get an instance of ApplicationView.")]] IApplicationViewStatics :
+struct WINRT_EBO IApplicationViewStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IApplicationViewStatics>
 {

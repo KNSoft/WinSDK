@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.Storage.Streams.0.h"
 #include "winrt/impl/Windows.UI.0.h"
 #include "winrt/impl/Windows.UI.Xaml.0.h"
+#include "winrt/impl/Windows.UI.Composition.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Controls.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Controls.Maps.0.h"
 
@@ -688,6 +689,13 @@ struct WINRT_EBO IMapTileBitmapRequestedEventArgs :
     IMapTileBitmapRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IMapTileBitmapRequestedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMapTileBitmapRequestedEventArgs2>
+{
+    IMapTileBitmapRequestedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IMapTileDataSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IMapTileDataSource>
@@ -709,6 +717,13 @@ struct WINRT_EBO IMapTileSource :
     IMapTileSource(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IMapTileSource2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMapTileSource2>
+{
+    IMapTileSource2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IMapTileSourceFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IMapTileSourceFactory>
@@ -721,6 +736,13 @@ struct WINRT_EBO IMapTileSourceStatics :
     impl::consume_t<IMapTileSourceStatics>
 {
     IMapTileSourceStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMapTileSourceStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMapTileSourceStatics2>
+{
+    IMapTileSourceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IMapTileUriRequest :
@@ -742,6 +764,13 @@ struct WINRT_EBO IMapTileUriRequestedEventArgs :
     impl::consume_t<IMapTileUriRequestedEventArgs>
 {
     IMapTileUriRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMapTileUriRequestedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMapTileUriRequestedEventArgs2>
+{
+    IMapTileUriRequestedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStreetsideExperience :

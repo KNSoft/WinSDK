@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -141,14 +141,14 @@ struct WINRT_EBO ArcadeStick :
     impl::require<ArcadeStick, Windows::Gaming::Input::IGameControllerBatteryInfo>
 {
     ArcadeStick(std::nullptr_t) noexcept {}
-    static event_token ArcadeStickAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
-    using ArcadeStickAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IArcadeStickStatics>;
+    static winrt::event_token ArcadeStickAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
+    using ArcadeStickAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IArcadeStickStatics, &impl::abi_t<Windows::Gaming::Input::IArcadeStickStatics>::remove_ArcadeStickAdded>;
     static ArcadeStickAdded_revoker ArcadeStickAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
-    static void ArcadeStickAdded(event_token const& token);
-    static event_token ArcadeStickRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
-    using ArcadeStickRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IArcadeStickStatics>;
+    static void ArcadeStickAdded(winrt::event_token const& token);
+    static winrt::event_token ArcadeStickRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
+    using ArcadeStickRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IArcadeStickStatics, &impl::abi_t<Windows::Gaming::Input::IArcadeStickStatics>::remove_ArcadeStickRemoved>;
     static ArcadeStickRemoved_revoker ArcadeStickRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> const& value);
-    static void ArcadeStickRemoved(event_token const& token);
+    static void ArcadeStickRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> ArcadeSticks();
     static Windows::Gaming::Input::ArcadeStick FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };
@@ -158,14 +158,14 @@ struct WINRT_EBO FlightStick :
     impl::require<FlightStick, Windows::Gaming::Input::IGameControllerBatteryInfo>
 {
     FlightStick(std::nullptr_t) noexcept {}
-    static event_token FlightStickAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
-    using FlightStickAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IFlightStickStatics>;
+    static winrt::event_token FlightStickAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
+    using FlightStickAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IFlightStickStatics, &impl::abi_t<Windows::Gaming::Input::IFlightStickStatics>::remove_FlightStickAdded>;
     static FlightStickAdded_revoker FlightStickAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
-    static void FlightStickAdded(event_token const& token);
-    static event_token FlightStickRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
-    using FlightStickRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IFlightStickStatics>;
+    static void FlightStickAdded(winrt::event_token const& token);
+    static winrt::event_token FlightStickRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
+    using FlightStickRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IFlightStickStatics, &impl::abi_t<Windows::Gaming::Input::IFlightStickStatics>::remove_FlightStickRemoved>;
     static FlightStickRemoved_revoker FlightStickRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::FlightStick> const& value);
-    static void FlightStickRemoved(event_token const& token);
+    static void FlightStickRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::FlightStick> FlightSticks();
     static Windows::Gaming::Input::FlightStick FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };
@@ -175,14 +175,14 @@ struct WINRT_EBO Gamepad :
     impl::require<Gamepad, Windows::Gaming::Input::IGameControllerBatteryInfo, Windows::Gaming::Input::IGamepad2>
 {
     Gamepad(std::nullptr_t) noexcept {}
-    static event_token GamepadAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
-    using GamepadAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IGamepadStatics>;
+    static winrt::event_token GamepadAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
+    using GamepadAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IGamepadStatics, &impl::abi_t<Windows::Gaming::Input::IGamepadStatics>::remove_GamepadAdded>;
     static GamepadAdded_revoker GamepadAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
-    static void GamepadAdded(event_token const& token);
-    static event_token GamepadRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
-    using GamepadRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IGamepadStatics>;
+    static void GamepadAdded(winrt::event_token const& token);
+    static winrt::event_token GamepadRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
+    using GamepadRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IGamepadStatics, &impl::abi_t<Windows::Gaming::Input::IGamepadStatics>::remove_GamepadRemoved>;
     static GamepadRemoved_revoker GamepadRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> const& value);
-    static void GamepadRemoved(event_token const& token);
+    static void GamepadRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> Gamepads();
     static Windows::Gaming::Input::Gamepad FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };
@@ -199,14 +199,14 @@ struct WINRT_EBO RacingWheel :
     impl::require<RacingWheel, Windows::Gaming::Input::IGameControllerBatteryInfo>
 {
     RacingWheel(std::nullptr_t) noexcept {}
-    static event_token RacingWheelAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
-    using RacingWheelAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IRacingWheelStatics>;
+    static winrt::event_token RacingWheelAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
+    using RacingWheelAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IRacingWheelStatics, &impl::abi_t<Windows::Gaming::Input::IRacingWheelStatics>::remove_RacingWheelAdded>;
     static RacingWheelAdded_revoker RacingWheelAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
-    static void RacingWheelAdded(event_token const& token);
-    static event_token RacingWheelRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
-    using RacingWheelRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IRacingWheelStatics>;
+    static void RacingWheelAdded(winrt::event_token const& token);
+    static winrt::event_token RacingWheelRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
+    using RacingWheelRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IRacingWheelStatics, &impl::abi_t<Windows::Gaming::Input::IRacingWheelStatics>::remove_RacingWheelRemoved>;
     static RacingWheelRemoved_revoker RacingWheelRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> const& value);
-    static void RacingWheelRemoved(event_token const& token);
+    static void RacingWheelRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> RacingWheels();
     static Windows::Gaming::Input::RacingWheel FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };
@@ -216,14 +216,14 @@ struct WINRT_EBO RawGameController :
     impl::require<RawGameController, Windows::Gaming::Input::IGameControllerBatteryInfo, Windows::Gaming::Input::IRawGameController2>
 {
     RawGameController(std::nullptr_t) noexcept {}
-    static event_token RawGameControllerAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
-    using RawGameControllerAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IRawGameControllerStatics>;
+    static winrt::event_token RawGameControllerAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
+    using RawGameControllerAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IRawGameControllerStatics, &impl::abi_t<Windows::Gaming::Input::IRawGameControllerStatics>::remove_RawGameControllerAdded>;
     static RawGameControllerAdded_revoker RawGameControllerAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
-    static void RawGameControllerAdded(event_token const& token);
-    static event_token RawGameControllerRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
-    using RawGameControllerRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IRawGameControllerStatics>;
+    static void RawGameControllerAdded(winrt::event_token const& token);
+    static winrt::event_token RawGameControllerRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
+    using RawGameControllerRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IRawGameControllerStatics, &impl::abi_t<Windows::Gaming::Input::IRawGameControllerStatics>::remove_RawGameControllerRemoved>;
     static RawGameControllerRemoved_revoker RawGameControllerRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::RawGameController> const& value);
-    static void RawGameControllerRemoved(event_token const& token);
+    static void RawGameControllerRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RawGameController> RawGameControllers();
     static Windows::Gaming::Input::RawGameController FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };
@@ -233,14 +233,14 @@ struct WINRT_EBO UINavigationController :
     impl::require<UINavigationController, Windows::Gaming::Input::IGameControllerBatteryInfo>
 {
     UINavigationController(std::nullptr_t) noexcept {}
-    static event_token UINavigationControllerAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
-    using UINavigationControllerAdded_revoker = factory_event_revoker<Windows::Gaming::Input::IUINavigationControllerStatics>;
+    static winrt::event_token UINavigationControllerAdded(Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
+    using UINavigationControllerAdded_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IUINavigationControllerStatics, &impl::abi_t<Windows::Gaming::Input::IUINavigationControllerStatics>::remove_UINavigationControllerAdded>;
     static UINavigationControllerAdded_revoker UINavigationControllerAdded(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
-    static void UINavigationControllerAdded(event_token const& token);
-    static event_token UINavigationControllerRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
-    using UINavigationControllerRemoved_revoker = factory_event_revoker<Windows::Gaming::Input::IUINavigationControllerStatics>;
+    static void UINavigationControllerAdded(winrt::event_token const& token);
+    static winrt::event_token UINavigationControllerRemoved(Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
+    using UINavigationControllerRemoved_revoker = impl::factory_event_revoker<Windows::Gaming::Input::IUINavigationControllerStatics, &impl::abi_t<Windows::Gaming::Input::IUINavigationControllerStatics>::remove_UINavigationControllerRemoved>;
     static UINavigationControllerRemoved_revoker UINavigationControllerRemoved(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> const& value);
-    static void UINavigationControllerRemoved(event_token const& token);
+    static void UINavigationControllerRemoved(winrt::event_token const& token);
     static Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> UINavigationControllers();
     static Windows::Gaming::Input::UINavigationController FromGameController(Windows::Gaming::Input::IGameController const& gameController);
 };

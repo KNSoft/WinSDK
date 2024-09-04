@@ -1553,7 +1553,12 @@ typedef struct _DXGK_DIAGNOSTIC_CATEGORIES
         struct
         {
             UINT Notifications  : 1; // 0x00000001
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+            UINT Progressions   : 1; // 0x00000002
+            UINT Reserved       :30; // 0xFFFFFFFC
+#elif (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_5)
             UINT Reserved       :31; // 0xFFFFFFFE
+#endif (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_5)
         };
         UINT Value;
     };
@@ -1561,7 +1566,14 @@ typedef struct _DXGK_DIAGNOSTIC_CATEGORIES
 
 #define DXGK_DIAGCAT_NOTIFICATIONS_BIT 0
 #define DXGK_DIAGCAT_NOTIFICATIONS_MASK (1<<DXGK_DIAGCAT_NOTIFICATIONS_BIT)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+#define DXGK_DIAGCAT_PROGRESSIONS_BIT 1
+#define DXGK_DIAGCAT_PROGRESSIONS_MASK (1<<DXGK_DIAGCAT_PROGRESSIONS_BIT)
+#define DXGK_DIAGCAT_BITCOUNT 2
+#elif (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 #define DXGK_DIAGCAT_BITCOUNT 1
+#endif (DXGKDDI_INTERFACE_VERSION < DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 typedef struct _DXGK_DIAGTYPE_NOTIFICATIONS
 {
@@ -1583,11 +1595,33 @@ typedef struct _DXGK_DIAGTYPE_NOTIFICATIONS
 #define DXGK_DIAG_NOTIFICATIONS_PSR_HW_MASK (1<<DXGK_DIAG_NOTIFICATIONS_PSR_HW_BIT)
 #define DXGK_DIAG_NOTIFICATIONS_BITCOUNT 2
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+typedef struct _DXGK_DIAGTYPE_PROGRESSIONS
+{
+    union
+    {
+        struct
+        {
+            UINT SyncLockEnableSync   : 1; // 0x00000001
+            UINT Reserved             :31; // 0xFFFFFFFE
+        };
+        UINT Value;
+    };
+} DXGK_DIAGTYPE_PROGRESSIONS;
+
+#define DXGK_DIAG_PROGRESSIONS_SYNCLOCK_ENABLE_SYNC_BIT 0
+#define DXGK_DIAG_PROGRESSIONS_SYNCLOCK_ENABLE_SYNC_MASK (1<<DXGK_DIAG_PROGRESSIONS_SYNCLOCK_ENABLE_SYNC_BIT)
+#define DXGK_DIAG_PROGRESSIONS_BITCOUNT 1
+#endif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
 typedef struct _DXGK_DIAGNOSTIC_TYPES
 {
     union
     {
         DXGK_DIAGTYPE_NOTIFICATIONS Notifications;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+        DXGK_DIAGTYPE_PROGRESSIONS  Progressions;
+#endif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
         UINT                        Value;
     };
 } DXGK_DIAGNOSTIC_TYPES;
@@ -1615,25 +1649,49 @@ typedef struct _DXGK_DIAGNOSTIC_HEADER
     };
 } DXGK_DIAGNOSTIC_HEADER;
 
+typedef union _DXGK_DIAGNOSTIC_PSR_REFRESH_REASON
+{
+    struct
+    {
+        UINT Present                    : 1;    // 0x00000001
+        UINT CursorUpdate               : 1;    // 0x00000002
+        UINT VSyncEnabled               : 1;    // 0x00000004
+        UINT ColorTransformationChange  : 1;    // 0x00000008
+        UINT BrightnessChange           : 1;    // 0x00000010
+        UINT SinkRequest                : 1;    // 0x00000020
+        UINT Other                      : 1;    // 0x00000040
+        UINT Reserved                   :25;    // 0xFFFFFF80
+    };
+    UINT                                Value;
+} DXGK_DIAGNOSTIC_PSR_REFRESH_REASON;
+
 typedef struct _DXGK_DIAGNOSTIC_PSR
 {
-    DXGK_DIAGNOSTIC_HEADER   Header;
+    DXGK_DIAGNOSTIC_HEADER              Header;
+    union
+    {
+        DXGK_DIAGNOSTIC_PSR_REFRESH_REASON  RefreshReason;
+        UINT                                Value;
+    };
+} DXGK_DIAGNOSTIC_PSR;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+typedef struct _DXGK_DIAGNOSTIC_SYNCLOCK_ENABLESYNC
+{
+    DXGK_DIAGNOSTIC_HEADER              Header;
     union
     {
         struct
         {
-            UINT Present                    : 1;    // 0x00000001
-            UINT CursorUpdate               : 1;    // 0x00000002
-            UINT VSyncEnabled               : 1;    // 0x00000004
-            UINT ColorTransformationChange  : 1;    // 0x00000008
-            UINT BrightnessChange           : 1;    // 0x00000010
-            UINT SinkRequest                : 1;    // 0x00000020
-            UINT Other                      : 1;    // 0x00000040
-            UINT Reserved                   :25;    // 0xFFFFFF80
-        } RefreshReason;
-        UINT    Value;
+            UINT DuringSetTiming      : 1;
+            UINT EnableSyncStart      : 1;
+            UINT EnableSyncEnd        : 1;
+            UINT Reserved             :29;
+        } SyncLockEnableSync;
+        UINT                          Value;
     };
-} DXGK_DIAGNOSTIC_PSR;
+} DXGK_DIAGNOSTIC_SYNCLOCK_ENABLESYNC;
+#endif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 typedef _In_ DXGK_DIAGNOSTIC_HEADER*   IN_PDXGK_DIAGNOSTIC_HEADER;
 
@@ -1748,6 +1806,10 @@ typedef struct _DXGKRNL_INTERFACE {
     DXGKCB_UNMAPMDLFROMIOMMU                DxgkCbUnmapMdlFromIoMmu;
     DXGKCB_REPORT_DIAGNOSTIC                DxgkCbReportDiagnostic;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    DXGKCB_SIGNALEVENT                      DxgkCbSignalEvent;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 } DXGKRNL_INTERFACE, *PDXGKRNL_INTERFACE;
 
@@ -2039,6 +2101,29 @@ DXGKDDI_CONTROLDIAGNOSTICREPORTING(
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef struct _DXGKARG_SETTARGETADJUSTEDCOLORIMETRY2
+{
+    _In_  D3DDDI_VIDEO_PRESENT_TARGET_ID              TargetId;
+    _In_  DXGK_COLORIMETRY                            AdjustedColorimetry;
+    _In_  UINT                                        SdrWhiteLevel;            // SDR white level in integer nits
+} DXGKARG_SETTARGETADJUSTEDCOLORIMETRY2, *PDXGKARG_SETTARGETADJUSTEDCOLORIMETRY2;
+typedef _In_    PDXGKARG_SETTARGETADJUSTEDCOLORIMETRY2  IN_PDXGKARG_SETTARGETADJUSTEDCOLORIMETRY2;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY2)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY2(
+    IN_CONST_HANDLE                                 hAdapter,
+    IN_PDXGKARG_SETTARGETADJUSTEDCOLORIMETRY2       pArgSetTargetAdjustedColorimetry
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
 //
 //     Function pointer typedefs
 //
@@ -2068,7 +2153,9 @@ typedef DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY    *PDXGKDDI_SETTARGETADJUSTEDCOLOR
 typedef DXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT     *PDXGKDDI_QUERYDIAGNOSTICTYPESSUPPORT;
 typedef DXGKDDI_CONTROLDIAGNOSTICREPORTING      *PDXGKDDI_CONTROLDIAGNOSTICREPORTING;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
-
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+typedef DXGKDDI_SETTARGETADJUSTEDCOLORIMETRY2   *PDXGKDDI_SETTARGETADJUSTEDCOLORIMETRY2;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
 
@@ -2461,6 +2548,15 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
     PDXGKDDI_RESUMEHWENGINE                 DxgkDdiResumeHwEngine;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+    PDXGKDDI_SIGNALMONITOREDFENCE           DxgkDdiSignalMonitoredFence;
+    PDXGKDDI_PRESENTTOHWQUEUE               DxgkDdiPresentToHwQueue;
+    PDXGKDDI_VALIDATESUBMITCOMMAND          DxgkDdiValidateSubmitCommand;
+    PDXGKDDI_SETTARGETADJUSTEDCOLORIMETRY2  DxgkDdiSetTargetAdjustedColorimetry2;
+    PDXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL   DxgkDdiSetTrackedWorkloadPowerLevel;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
 
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 
@@ -3526,6 +3622,99 @@ typedef struct _DXGKDDI_MITIGABLE_DEVICE_INTERFACE
 } DXGKDDI_MITIGABLE_DEVICE_INTERFACE, *PDXGKDDI_MITIGABLE_DEVICE_INTERFACE;
 
 #define DXGKDDI_MITIGABLE_DEVICE_INTERFACE_VERSION 1
+
+//////////////// DXGKDDI_FLEXIOV_DEVICE_INTERFACE ///////////////////////////////////
+
+// {7B73A997-48E8-4CAB-9FAB-E0774B44F599}
+DEFINE_GUID(GUID_DXGKDDI_FLEXIOV_DEVICE_INTERFACE, 0x7b73a997, 0x48e8, 0x4cab, 0x9f, 0xab, 0xe0, 0x77, 0x4b, 0x44, 0xf5, 0x99);
+
+#define DXGKDDI_MAX_FLEXIOV_RESOURCES 32
+
+typedef struct _DXGKARG_GETBACKINGRESOURCE
+{
+   _In_ ULONG  VirtualFunctionIndex;
+   _In_range_(0, DXGKDDI_MAX_FLEXIOV_RESOURCES) USHORT ResourceIndex;
+   _Out_ PCM_PARTIAL_RESOURCE_DESCRIPTOR Resource;
+   _Out_ PMDL pMdl;
+} DXGKARG_GETBACKINGRESOURCE, *PDXGKARG_GETBACKINGRESOURCE;
+
+typedef
+_Function_class_(DXGKDDI_GETBACKINGRESOURCE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_GETBACKINGRESOURCE (
+    _In_ HANDLE  Context,
+    _Inout_ DXGKARG_GETBACKINGRESOURCE * pArgs
+    );
+
+typedef DXGKDDI_GETBACKINGRESOURCE *PDXGKDDI_GETBACKINGRESOURCE;
+
+typedef struct _DXGKARG_GETMMIORANGECOUNT
+{
+    _In_  ULONG VirtualFunctionIndex;
+    _Out_ ULONG RangeCount[PCI_TYPE0_ADDRESSES];
+} DXGKARG_GETMMIORANGECOUNT, *PDXGKARG_GETMMIORANGECOUNT;
+
+typedef
+_Function_class_(DXGKDDI_GETMMIORANGECOUNT)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_GETMMIORANGECOUNT(
+    _In_ HANDLE  Context,
+    _Inout_ DXGKARG_GETMMIORANGECOUNT * pArgs
+    );
+
+typedef DXGKDDI_GETMMIORANGECOUNT *PDXGKDDI_GETMMIORANGECOUNT;
+
+//
+// if a range is fully mitigated (InterceptReads and InterceptWrites are TRUE), use this define 
+// for BasePhysicalPageNumber and set BasePhysicalResourceNumber to 0.
+//
+#define DXGK_MMIO_RANGES_EMULATED_PAGE 0xFFFFFFFFFFFFFFFF
+
+typedef struct _DXGK_MMIORANGEINFO
+{
+    _Out_ ULONG64 BasePageNumber;
+    _Out_ ULONG64 BasePhysicalPageNumber;
+    _Out_ UCHAR   BasePhysicalResourceNumber;
+    _Out_ BOOLEAN InterceptReads;
+    _Out_ BOOLEAN InterceptWrites;
+    _Out_ ULONG   PageCount;
+} DXGK_MMIORANGEINFO, *PDXGK_MMIORANGEINFO;
+
+typedef struct _DXGKARG_GETMMIORANGES
+{
+    _In_  ULONG   VirtualFunctionIndex;
+    _In_  ULONG   BarIndex;
+    _In_  ULONG   NumRanges;
+    _Out_writes_(NumRanges) DXGK_MMIORANGEINFO* pMmioRanges;
+} DXGKARG_GETMMIORANGES, *PDXGKARG_GETMMIORANGES;
+
+typedef
+_Function_class_(DXGKDDI_GETMMIORANGES)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_GETMMIORANGES (
+    _In_ HANDLE  Context,
+    _Inout_ PDXGKARG_GETMMIORANGES pArgs
+    );
+
+typedef DXGKDDI_GETMMIORANGES *PDXGKDDI_GETMMIORANGES;
+
+typedef struct _DXGKDDI_FLEXIOV_DEVICE_INTERFACE
+{
+    IN USHORT                            Size;
+    IN USHORT                            Version;
+    OUT PVOID                            Context;
+    OUT PINTERFACE_REFERENCE             InterfaceReference;
+    OUT PINTERFACE_DEREFERENCE           InterfaceDereference;
+
+    OUT PDXGKDDI_GETBACKINGRESOURCE      DxgkDdiGetBackingResource;
+    OUT PDXGKDDI_GETMMIORANGECOUNT       DxgkDdiGetMmioRangeCount;
+    OUT PDXGKDDI_GETMMIORANGES           DxgkDdiGetMmioRanges;
+} DXGKDDI_FLEXIOV_DEVICE_INTERFACE, *PDXGKDDI_FLEXIOV_DEVICE_INTERFACE;
+
+#define DXGKDDI_FLEXIOV_DEVICE_INTERFACE_VERSION 1
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
 

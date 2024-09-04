@@ -431,12 +431,14 @@ typedef struct _D3DKMT_COMPOSITION_PRESENTHISTORYTOKEN
 typedef struct _D3DKMT_FLIPMANAGER_PRESENTHISTORYTOKEN
 {
     ULONG64 hPrivateData;
+    ULONGLONG PresentAtQpc;
     union
     {
         struct
         {
-            UINT Discard : 1;
-            UINT Reserved : 31;
+            UINT Discard   : 1;
+            UINT PresentAt : 1;
+            UINT Reserved  : 30;
         };
         UINT Value;
     }Flags;
@@ -682,6 +684,17 @@ typedef struct _D3DKMT_SUBMITPRESENTBLTTOHWQUEUE
     UINT64          HwQueueProgressFenceId;
     D3DKMT_PRESENT  PrivatePresentData;
 } D3DKMT_SUBMITPRESENTBLTTOHWQUEUE;
+
+#endif 
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef struct _D3DKMT_SUBMITPRESENTTOHWQUEUE
+{
+    _Field_size_(PrivatePresentData.BroadcastContextCount + 1)
+    D3DKMT_HANDLE*  hHwQueues;
+    D3DKMT_PRESENT  PrivatePresentData;
+} D3DKMT_SUBMITPRESENTTOHWQUEUE;
 
 #endif 
 
@@ -1596,6 +1609,9 @@ typedef enum _QAI_DRIVERVERSION
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
     KMT_DRIVERVERSION_WDDM_2_4 = 2400,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    KMT_DRIVERVERSION_WDDM_2_5 = 2500,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
 } D3DKMT_DRIVERVERSION;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -1843,6 +1859,9 @@ typedef struct _D3DKMT_NODE_PERFDATA
     ULONG           Voltage;                // out: Voltage of the engine in milli volts mV
     ULONG           VoltageMax;             // out: Max voltage levels in milli volts.
     ULONG           VoltageMaxOC;           // out: Max voltage level while overclocked in milli volts.
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    ULONGLONG       MaxTransitionLatency;   // out: Max transition latency to change the frequency in 100 nanoseconds
+#endif
 } D3DKMT_NODE_PERFDATA;
 
 typedef struct _D3DKMT_ADAPTER_PERFDATA
@@ -1959,7 +1978,6 @@ typedef enum _KMTQUERYADAPTERINFOTYPE
      KMTQAITYPE_ADAPTERPERFDATA_CAPS    = 63,
      KMTQUITYPE_GPUVERSION              = 64,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_4
-
 } KMTQUERYADAPTERINFOTYPE;
 
 typedef struct _D3DKMT_QUERYADAPTERINFO
@@ -2102,7 +2120,7 @@ typedef enum _D3DKMT_ESCAPETYPE
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
     D3DKMT_ESCAPE_FORCE_BDDFALLBACK_HEADLESS    = 24,
     D3DKMT_ESCAPE_REQUEST_MACHINE_CRASH         = 25,
-    D3DKMT_ESCAPE_HMD_GET_EDID_BASE_BLOCK       = 26,
+    // unused (26 was previously D3DKMT_ESCAPE_HMD_GET_EDID_BASE_BLOCK)
     D3DKMT_ESCAPE_SOFTGPU_ENABLE_DISABLE_HMD    = 27,
     D3DKMT_ESCAPE_PROCESS_VERIFIER_OPTION       = 28,
     D3DKMT_ESCAPE_ADAPTER_VERIFIER_OPTION       = 29,
@@ -2136,11 +2154,12 @@ typedef enum _D3DKMT_ESCAPETYPE
     D3DKMT_ESCAPE_WIN32K_BDD_FALLBACK           = 1029,
     D3DKMT_ESCAPE_WIN32K_DDA_TEST_CTL           = 1030,
     D3DKMT_ESCAPE_WIN32K_USER_DETECTED_BLACK_SCREEN = 1031,
-    D3DKMT_ESCAPE_WIN32K_HMD_ENUM               = 1032,
-    D3DKMT_ESCAPE_WIN32K_HMD_CONTROL            = 1033,
+    // unused (1032 was previously D3DKMT_ESCAPE_WIN32K_HMD_ENUM)
+    // unused (1033 was previously D3DKMT_ESCAPE_WIN32K_HMD_CONTROL)
     D3DKMT_ESCAPE_WIN32K_LPMDISPLAY_CONTROL     = 1034,
-#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
-#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+    D3DKMT_ESCAPE_WIN32K_DISPBROKER_TEST        = 1035,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_0
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM1_3
 #endif // DXGKDDI_INTERFACE_VERSION_WIN8
@@ -3659,16 +3678,19 @@ typedef struct _D3DKMT_GETSHAREDRESOURCEADAPTERLUID
     LUID AdapterLuid;           // out: adapter LUID
 } D3DKMT_GETSHAREDRESOURCEADAPTERLUID;
 
-typedef enum _D3DKMT_HYBRID_QUERY_STATE
+typedef enum _D3DKMT_GPU_PREFERENCE_QUERY_STATE
 {
-    D3DKMT_HYBRID_QUERY_STATE_UNINITIALIZED,
-    D3DKMT_HYBRID_QUERY_STATE_DISCRETE,
-    D3DKMT_HYBRID_QUERY_STATE_INTEGRATED
-} D3DKMT_HYBRID_QUERY_STATE;
+    D3DKMT_GPU_PREFERENCE_STATE_UNINITIALIZED,
+    D3DKMT_GPU_PREFERENCE_STATE_HIGH_PERFORMANCE,
+    D3DKMT_GPU_PREFERENCE_STATE_MINIMUM_POWER,
+    D3DKMT_GPU_PREFERENCE_STATE_UNSPECIFIED
+} D3DKMT_GPU_PREFERENCE_QUERY_STATE;
 
 typedef struct _D3DKMT_HYBRID_LIST
 {
-    D3DKMT_HYBRID_QUERY_STATE State;
+    D3DKMT_GPU_PREFERENCE_QUERY_STATE State;    // Gpu preference query state
+    LUID AdapterLuid;                           // in,opt: Adapter luid to per-adapter DList state. Optional, if bUserPreferenceQuery is true
+    BOOL bUserPreferenceQuery;                  // Whether referring to user gpu preference, or per-adapter DList query
 } D3DKMT_HYBRID_LIST;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
@@ -3717,6 +3739,7 @@ typedef struct _D3DKMT_MIRACAST_DISPLAY_DEVICE_CAPS
 {
     BOOLEAN HdcpSupported;
     ULONG DefaultControlPort;
+    BOOLEAN UsesIhvSolution;
 } D3DKMT_MIRACAST_DISPLAY_DEVICE_CAPS, *PD3DKMT_MIRACAST_DISPLAY_DEVICE_CAPS;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
@@ -4280,6 +4303,130 @@ typedef struct _D3DKMT_GETPROCESSDEVICEREMOVALSUPPORT
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+typedef enum _D3DKMT_TRACKEDWORKLOADPOLICY
+{
+       D3DKMT_TRACKEDWORKLOADPOLICY_NORMAL           = 0,
+       D3DKMT_TRACKEDWORKLOADPOLICY_ENERGY_EFFICIENT = 1,
+       D3DKMT_TRACKEDWORKLOADPOLICY_HIGH_SPEED       = 2
+} D3DKMT_TRACKEDWORKLOADPOLICY;
+
+typedef enum _D3DKMT_TRACKEDWORKLOADDEADLINETYPE
+{
+       D3DKMT_TRACKEDWORKLOADDEADLINETYPE_ABSOLUTE = 0,
+       D3DKMT_TRACKEDWORKLOADDEADLINETYPE_VBLANK = 1,
+} D3DKMT_TRACKEDWORKLOADDEADLINETYPE;
+
+typedef struct _D3DKMT_TRACKEDWORKLOADDEADLINE {
+    D3DKMT_TRACKEDWORKLOADDEADLINETYPE Type;
+    union {
+        UINT64 VBlankOffsetHundredsNS;
+        UINT64 AbsoluteQPC;
+    };
+} D3DKMT_TRACKEDWORKLOADDEADLINE;
+
+typedef struct _D3DKMT_TRACKEDWORKLOADFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT Periodic    : 1;                   // 0x00000001 - workload instances occur at a periodic rate
+            UINT SimilarLoad : 1;                   // 0x00000002 - workload instances have a similar load
+            UINT Reserved    : 30;
+        };
+        UINT Value;
+    };
+} D3DKMT_TRACKEDWORKLOADFLAGS;
+
+#define D3DKMT_MAX_TRACKED_WORKLOAD_INSTANCES 32
+
+typedef struct _D3DKMT_CREATETRACKEDWORKLOAD
+{
+    ULONG                        ContextCount;             // in: Specifies the number of contexts to create the workload
+    _Field_size_(ContextCount)
+    const D3DKMT_HANDLE         *ContextArray;             // in: Specifies context handles in which to create the workload
+    D3DKMT_TRACKEDWORKLOADFLAGS  Flags;                    // in: Flags to create the workload with
+    D3DKMT_TRACKEDWORKLOADPOLICY Policy;                   // in: Which policy to use
+    UINT                         MaxInstances;             // in: maximum number of instances this workload can have
+    D3DKMT_HANDLE                hResourceQueryTimestamps; // in: buffer which will contain the resolved query timestamps for the tracked workloads
+    D3DKMT_HANDLE                hTrackedWorkload;         // out: the tracked workload handle
+} D3DKMT_CREATETRACKEDWORKLOAD;
+
+typedef struct _D3DKMT_DESTROYTRACKEDWORKLOAD
+{
+    D3DKMT_HANDLE                hDevice;                  // in: device handle
+    D3DKMT_HANDLE                hTrackedWorkload;         // in: tracked workload handle
+} D3DKMT_DESTROYTRACKEDWORKLOAD;
+
+typedef struct _D3DKMT_UPDATETRACKEDWORKLOAD
+{
+    D3DKMT_HANDLE                   hDevice;                  // in: device handle
+    D3DKMT_HANDLE                   hTrackedWorkload;         // in: tracked workload handle
+    D3DKMT_TRACKEDWORKLOADDEADLINE  FinishDeadline;           // in: specifies the deadline by which this workload should be finished
+    UINT                            BeginTrackedWorkloadIndex;// in: slot for the timestamp for the start of this workload pair (index in buffer pointed to by hResourceQueryTimestamps)
+    UINT                            EndTrackedWorkloadIndex;  // in: slot for the timestamp for the end of this workload pair (index in buffer pointed to by hResourceQueryTimestamps)
+    UINT64                          FenceSubmissionValue;     // in: fence value for the submission of this workload
+    UINT64                          FenceCompletedValue;      // in: fence value for the completed workloads
+    UINT64                          GPUTimestampFrequency;    // in: GPU timestamp frequency for resolving query timestamps
+    UINT64                          GPUCalibrationTimestamp;  // in: value of the GPU calibration timestamp counter
+    UINT64                          CPUCalibrationTimestamp;  // in: value of the CPU calibration timestamp counter
+} D3DKMT_UPDATETRACKEDWORKLOAD;
+
+typedef struct _D3DKMT_ENDTRACKEDWORKLOAD
+{
+    D3DKMT_HANDLE                hTrackedWorkload;         // in: tracked workload handle
+} D3DKMT_ENDTRACKEDWORKLOAD;
+
+typedef struct _D3DKMT_GETAVAILABLETRACKEDWORKLOADINDEX
+{
+    D3DKMT_HANDLE                hDevice;                       // in: device handle
+    D3DKMT_HANDLE                hTrackedWorkload;              // in: tracked workload handle
+    UINT64                       FenceCompletedValue;           // in: fence value for the completed workloads
+    UINT                         AvailableTrackedWorkloadIndex; // out: first available tracked workload slot
+} D3DKMT_GETAVAILABLETRACKEDWORKLOADINDEX;
+
+typedef struct _D3DKMT_TRACKEDWORKLOADSTATEFLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT Saturated : 1;                      // 0x00000001 - in the current state of execution, tracked workload cannot meet its deadline.
+            UINT Reserved  : 31;
+        };
+        UINT Value;
+    };
+} D3DKMT_TRACKEDWORKLOADSTATEFLAGS;
+
+typedef struct _D3DKMT_TRACKEDWORKLOAD_STATISTICS
+{
+    INT64 Mean;
+    INT64 Minimum;
+    INT64 Maximum;
+    INT64 Variance;
+} D3DKMT_TRACKEDWORKLOAD_STATISTICS;
+
+typedef struct _D3DKMT_GETTRACKEDWORKLOADSTATISTICS
+{
+    D3DKMT_HANDLE                      hDevice;                                                 // in: device handle
+    D3DKMT_HANDLE                      hTrackedWorkload;                                        // in: tracked workload handle
+    D3DKMT_TRACKEDWORKLOAD_STATISTICS  DeadlineOffsetHundredsNS;                                // out: statistics for the offset of the deadline achieved of the tracked workload in hundreds of nanosecs
+    UINT64                             MissedDeadlines;                                         // out: count of missed deadlines
+    D3DKMT_TRACKEDWORKLOADSTATEFLAGS   Flags;                                                   // out: current state flags
+} D3DKMT_GETTRACKEDWORKLOADSTATISTICS;
+
+typedef struct _D3DKMT_RESETTRACKEDWORKLOAD
+{
+    D3DKMT_HANDLE                    hDevice;             // in: device handle
+    D3DKMT_HANDLE                    hTrackedWorkload;    // in: tracked workload handle
+} D3DKMT_RESETTRACKEDWORKLOAD;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_5
+
+
+
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_CREATEALLOCATION)(_Inout_ D3DKMT_CREATEALLOCATION*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_CREATEALLOCATION2)(_Inout_ D3DKMT_CREATEALLOCATION*); // _ADVSCH_
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_QUERYRESOURCEINFO)(_Inout_ D3DKMT_QUERYRESOURCEINFO*);
@@ -4402,7 +4549,7 @@ typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETCONTEXTINPROCESSSCHEDULI
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_PRESENTMULTIPLANEOVERLAY)(_In_ CONST D3DKMT_PRESENT_MULTIPLANE_OVERLAY*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETSHAREDRESOURCEADAPTERLUID)(_Inout_ D3DKMT_GETSHAREDRESOURCEADAPTERLUID*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_SETSTEREOENABLED)(_In_ BOOL);
-typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_QUERYHYBRIDLISTVALUE)(_Out_ D3DKMT_HYBRID_LIST*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_QUERYHYBRIDLISTVALUE)(_Inout_ D3DKMT_HYBRID_LIST*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_SETHYBRIDLISTVVALUE)(_Inout_ D3DKMT_HYBRID_LIST*);
 #endif
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
@@ -4499,6 +4646,19 @@ typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_ADDSURFACETOSWAPCHAIN)(_In_
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_REMOVESURFACEFROMSWAPCHAIN)(_In_ CONST D3DKMT_REMOVESURFACEFROMSWAPCHAIN*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_UNORDEREDPRESENTSWAPCHAIN)(_In_ CONST D3DKMT_UNORDEREDPRESENTSWAPCHAIN*);
 #endif
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_SUBMITPRESENTTOHWQUEUE)(_In_ CONST D3DKMT_SUBMITPRESENTTOHWQUEUE*);
+
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_CREATETRACKEDWORKLOAD)(_Inout_ D3DKMT_CREATETRACKEDWORKLOAD*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_DESTROYTRACKEDWORKLOAD)(_In_ D3DKMT_DESTROYTRACKEDWORKLOAD*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETAVAILABLETRACKEDWORKLOADINDEX)(_Inout_ D3DKMT_GETAVAILABLETRACKEDWORKLOADINDEX*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_UPDATETRACKEDWORKLOAD)(_In_ D3DKMT_UPDATETRACKEDWORKLOAD*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_ENDTRACKEDWORKLOAD)(_In_ D3DKMT_ENDTRACKEDWORKLOAD*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETTRACKEDWORKLOADSTATISTICS)(_Inout_ D3DKMT_GETTRACKEDWORKLOADSTATISTICS*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_RESETTRACKEDWORKLOAD)(_In_ D3DKMT_RESETTRACKEDWORKLOAD*);
+
+#endif  // DXGKDDI_INTERFACE_VERSION_WDDM2_5
 
 #if !defined(D3DKMDT_SPECIAL_MULTIPLATFORM_TOOL)
 
@@ -4729,6 +4889,20 @@ EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTOpenKeyedMutexFromNtHandle(_Inou
 
 
 EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSubmitPresentBltToHwQueue(_In_ CONST D3DKMT_SUBMITPRESENTBLTTOHWQUEUE*);
+
+#endif
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSubmitPresentToHwQueue(_In_ CONST D3DKMT_SUBMITPRESENTTOHWQUEUE*);
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTCreateTrackedWorkload(_Inout_ D3DKMT_CREATETRACKEDWORKLOAD*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTDestroyTrackedWorkload(_In_ D3DKMT_DESTROYTRACKEDWORKLOAD*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetAvailableTrackedWorkloadIndex(_Inout_ D3DKMT_GETAVAILABLETRACKEDWORKLOADINDEX*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTUpdateTrackedWorkload(_In_ D3DKMT_UPDATETRACKEDWORKLOAD*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTEndTrackedWorkload(_In_ D3DKMT_ENDTRACKEDWORKLOAD*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetTrackedWorkloadStatistics(_Inout_ D3DKMT_GETTRACKEDWORKLOADSTATISTICS*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTResetTrackedWorkload (_In_ D3DKMT_RESETTRACKEDWORKLOAD*);
 
 #endif
 

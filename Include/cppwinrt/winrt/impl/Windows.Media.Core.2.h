@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -7,6 +7,7 @@
 #include "winrt/impl/Windows.ApplicationModel.AppService.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
 #include "winrt/impl/Windows.Foundation.Collections.1.h"
+#include "winrt/impl/Windows.Graphics.DirectX.Direct3D11.1.h"
 #include "winrt/impl/Windows.Graphics.Imaging.1.h"
 #include "winrt/impl/Windows.Media.Capture.1.h"
 #include "winrt/impl/Windows.Media.Capture.Frames.1.h"
@@ -362,15 +363,17 @@ struct WINRT_EBO MediaSourceStateChangedEventArgs :
 };
 
 struct WINRT_EBO MediaStreamSample :
-    Windows::Media::Core::IMediaStreamSample
+    Windows::Media::Core::IMediaStreamSample,
+    impl::require<MediaStreamSample, Windows::Media::Core::IMediaStreamSample2>
 {
     MediaStreamSample(std::nullptr_t) noexcept {}
     static Windows::Media::Core::MediaStreamSample CreateFromBuffer(Windows::Storage::Streams::IBuffer const& buffer, Windows::Foundation::TimeSpan const& timestamp);
     static Windows::Foundation::IAsyncOperation<Windows::Media::Core::MediaStreamSample> CreateFromStreamAsync(Windows::Storage::Streams::IInputStream const& stream, uint32_t count, Windows::Foundation::TimeSpan const& timestamp);
+    static Windows::Media::Core::MediaStreamSample CreateFromDirect3D11Surface(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const& surface, Windows::Foundation::TimeSpan const& timestamp);
 };
 
 struct WINRT_EBO MediaStreamSamplePropertySet :
-    Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>
+    Windows::Foundation::Collections::IMap<winrt::guid, Windows::Foundation::IInspectable>
 {
     MediaStreamSamplePropertySet(std::nullptr_t) noexcept {}
 };

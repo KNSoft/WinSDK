@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -230,34 +230,34 @@ template <> struct name<Windows::Devices::Usb::UsbEndpointType>{ static constexp
 template <> struct name<Windows::Devices::Usb::UsbReadOptions>{ static constexpr auto & value{ L"Windows.Devices.Usb.UsbReadOptions" }; };
 template <> struct name<Windows::Devices::Usb::UsbTransferDirection>{ static constexpr auto & value{ L"Windows.Devices.Usb.UsbTransferDirection" }; };
 template <> struct name<Windows::Devices::Usb::UsbWriteOptions>{ static constexpr auto & value{ L"Windows.Devices.Usb.UsbWriteOptions" }; };
-template <> struct guid<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>{ static constexpr GUID value{ 0x3C6E4846,0x06CF,0x42A9,{ 0x9D,0xC2,0x97,0x1C,0x1B,0x14,0xB6,0xE3 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbBulkInPipe>{ static constexpr GUID value{ 0xF01D2D3B,0x4548,0x4D50,{ 0xB3,0x26,0xD8,0x2C,0xDA,0xBE,0x12,0x20 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>{ static constexpr GUID value{ 0x2820847A,0xFFEE,0x4F60,{ 0x9B,0xE1,0x95,0x6C,0xAC,0x3E,0xCB,0x65 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbBulkOutPipe>{ static constexpr GUID value{ 0xA8E9EE6E,0x0115,0x45AA,{ 0x8B,0x21,0x37,0xB2,0x25,0xBC,0xCE,0xE7 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbConfiguration>{ static constexpr GUID value{ 0x68177429,0x36A9,0x46D7,{ 0xB8,0x73,0xFC,0x68,0x92,0x51,0xEC,0x30 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbConfigurationDescriptor>{ static constexpr GUID value{ 0xF2176D92,0xB442,0x407A,{ 0x82,0x07,0x7D,0x64,0x6C,0x03,0x85,0xF3 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>{ static constexpr GUID value{ 0x424CED93,0xE740,0x40A1,{ 0x92,0xBD,0xDA,0x12,0x0E,0xA0,0x49,0x14 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbControlRequestType>{ static constexpr GUID value{ 0x8E9465A6,0xD73D,0x46DE,{ 0x94,0xBE,0xAA,0xE7,0xF0,0x7C,0x0F,0x5C } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDescriptor>{ static constexpr GUID value{ 0x0A89F216,0x5F9D,0x4874,{ 0x89,0x04,0xDA,0x9A,0xD3,0xF5,0x52,0x8F } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDevice>{ static constexpr GUID value{ 0x5249B992,0xC456,0x44D5,{ 0xAD,0x5E,0x24,0xF5,0xA0,0x89,0xF6,0x3B } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDeviceClass>{ static constexpr GUID value{ 0x051942F9,0x845E,0x47EB,{ 0xB1,0x2A,0x38,0xF2,0xF6,0x17,0xAF,0xE7 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDeviceClasses>{ static constexpr GUID value{ 0x686F955D,0x9B92,0x4B30,{ 0x97,0x81,0xC2,0x2C,0x55,0xAC,0x35,0xCB } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDeviceClassesStatics>{ static constexpr GUID value{ 0xB20B0527,0xC580,0x4599,{ 0xA1,0x65,0x98,0x1B,0x4F,0xD0,0x32,0x30 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDeviceDescriptor>{ static constexpr GUID value{ 0x1F48D1F6,0xBA97,0x4322,{ 0xB9,0x2C,0xB5,0xB1,0x89,0x21,0x65,0x88 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbDeviceStatics>{ static constexpr GUID value{ 0x066B85A2,0x09B7,0x4446,{ 0x85,0x02,0x6F,0xE6,0xDC,0xAA,0x73,0x09 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbEndpointDescriptor>{ static constexpr GUID value{ 0x6B4862D9,0x8DF7,0x4B40,{ 0xAC,0x83,0x57,0x8F,0x13,0x9F,0x05,0x75 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbEndpointDescriptorStatics>{ static constexpr GUID value{ 0xC890B201,0x9A6A,0x495E,{ 0xA8,0x2C,0x29,0x5B,0x9E,0x70,0x81,0x06 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterface>{ static constexpr GUID value{ 0xA0322B95,0x7F47,0x48AB,{ 0xA7,0x27,0x67,0x8C,0x25,0xBE,0x21,0x12 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterfaceDescriptor>{ static constexpr GUID value{ 0x199670C7,0xB7EE,0x4F90,{ 0x8C,0xD5,0x94,0xA2,0xE2,0x57,0x59,0x8A } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>{ static constexpr GUID value{ 0xE34A9FF5,0x77D6,0x48B6,{ 0xB0,0xBE,0x16,0xC6,0x42,0x23,0x16,0xFE } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterfaceSetting>{ static constexpr GUID value{ 0x1827BBA7,0x8DA7,0x4AF7,{ 0x8F,0x4C,0x7F,0x30,0x32,0xE7,0x81,0xF5 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>{ static constexpr GUID value{ 0xC0528967,0xC911,0x4C3A,{ 0x86,0xB2,0x41,0x9C,0x2D,0xA8,0x90,0x39 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterruptInEventArgs>{ static constexpr GUID value{ 0xB7B04092,0x1418,0x4936,{ 0x82,0x09,0x29,0x9C,0xF5,0x60,0x55,0x83 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterruptInPipe>{ static constexpr GUID value{ 0xFA007116,0x84D7,0x48C7,{ 0x8A,0x3F,0x4C,0x0B,0x23,0x5F,0x2E,0xA6 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>{ static constexpr GUID value{ 0xCC9FED81,0x10CA,0x4533,{ 0x95,0x2D,0x9E,0x27,0x83,0x41,0xE8,0x0F } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbInterruptOutPipe>{ static constexpr GUID value{ 0xE984C8A9,0xAAF9,0x49D0,{ 0xB9,0x6C,0xF6,0x61,0xAB,0x4A,0x7F,0x95 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbSetupPacket>{ static constexpr GUID value{ 0x104BA132,0xC78F,0x4C51,{ 0xB6,0x54,0xE4,0x9D,0x02,0xF2,0xCB,0x03 } }; };
-template <> struct guid<Windows::Devices::Usb::IUsbSetupPacketFactory>{ static constexpr GUID value{ 0xC9257D50,0x1B2E,0x4A41,{ 0xA2,0xA7,0x33,0x8F,0x0C,0xEF,0x3C,0x14 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>{ static constexpr guid value{ 0x3C6E4846,0x06CF,0x42A9,{ 0x9D,0xC2,0x97,0x1C,0x1B,0x14,0xB6,0xE3 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbBulkInPipe>{ static constexpr guid value{ 0xF01D2D3B,0x4548,0x4D50,{ 0xB3,0x26,0xD8,0x2C,0xDA,0xBE,0x12,0x20 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>{ static constexpr guid value{ 0x2820847A,0xFFEE,0x4F60,{ 0x9B,0xE1,0x95,0x6C,0xAC,0x3E,0xCB,0x65 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbBulkOutPipe>{ static constexpr guid value{ 0xA8E9EE6E,0x0115,0x45AA,{ 0x8B,0x21,0x37,0xB2,0x25,0xBC,0xCE,0xE7 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbConfiguration>{ static constexpr guid value{ 0x68177429,0x36A9,0x46D7,{ 0xB8,0x73,0xFC,0x68,0x92,0x51,0xEC,0x30 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbConfigurationDescriptor>{ static constexpr guid value{ 0xF2176D92,0xB442,0x407A,{ 0x82,0x07,0x7D,0x64,0x6C,0x03,0x85,0xF3 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>{ static constexpr guid value{ 0x424CED93,0xE740,0x40A1,{ 0x92,0xBD,0xDA,0x12,0x0E,0xA0,0x49,0x14 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbControlRequestType>{ static constexpr guid value{ 0x8E9465A6,0xD73D,0x46DE,{ 0x94,0xBE,0xAA,0xE7,0xF0,0x7C,0x0F,0x5C } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDescriptor>{ static constexpr guid value{ 0x0A89F216,0x5F9D,0x4874,{ 0x89,0x04,0xDA,0x9A,0xD3,0xF5,0x52,0x8F } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDevice>{ static constexpr guid value{ 0x5249B992,0xC456,0x44D5,{ 0xAD,0x5E,0x24,0xF5,0xA0,0x89,0xF6,0x3B } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDeviceClass>{ static constexpr guid value{ 0x051942F9,0x845E,0x47EB,{ 0xB1,0x2A,0x38,0xF2,0xF6,0x17,0xAF,0xE7 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDeviceClasses>{ static constexpr guid value{ 0x686F955D,0x9B92,0x4B30,{ 0x97,0x81,0xC2,0x2C,0x55,0xAC,0x35,0xCB } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDeviceClassesStatics>{ static constexpr guid value{ 0xB20B0527,0xC580,0x4599,{ 0xA1,0x65,0x98,0x1B,0x4F,0xD0,0x32,0x30 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDeviceDescriptor>{ static constexpr guid value{ 0x1F48D1F6,0xBA97,0x4322,{ 0xB9,0x2C,0xB5,0xB1,0x89,0x21,0x65,0x88 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbDeviceStatics>{ static constexpr guid value{ 0x066B85A2,0x09B7,0x4446,{ 0x85,0x02,0x6F,0xE6,0xDC,0xAA,0x73,0x09 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbEndpointDescriptor>{ static constexpr guid value{ 0x6B4862D9,0x8DF7,0x4B40,{ 0xAC,0x83,0x57,0x8F,0x13,0x9F,0x05,0x75 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbEndpointDescriptorStatics>{ static constexpr guid value{ 0xC890B201,0x9A6A,0x495E,{ 0xA8,0x2C,0x29,0x5B,0x9E,0x70,0x81,0x06 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterface>{ static constexpr guid value{ 0xA0322B95,0x7F47,0x48AB,{ 0xA7,0x27,0x67,0x8C,0x25,0xBE,0x21,0x12 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterfaceDescriptor>{ static constexpr guid value{ 0x199670C7,0xB7EE,0x4F90,{ 0x8C,0xD5,0x94,0xA2,0xE2,0x57,0x59,0x8A } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>{ static constexpr guid value{ 0xE34A9FF5,0x77D6,0x48B6,{ 0xB0,0xBE,0x16,0xC6,0x42,0x23,0x16,0xFE } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterfaceSetting>{ static constexpr guid value{ 0x1827BBA7,0x8DA7,0x4AF7,{ 0x8F,0x4C,0x7F,0x30,0x32,0xE7,0x81,0xF5 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>{ static constexpr guid value{ 0xC0528967,0xC911,0x4C3A,{ 0x86,0xB2,0x41,0x9C,0x2D,0xA8,0x90,0x39 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterruptInEventArgs>{ static constexpr guid value{ 0xB7B04092,0x1418,0x4936,{ 0x82,0x09,0x29,0x9C,0xF5,0x60,0x55,0x83 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterruptInPipe>{ static constexpr guid value{ 0xFA007116,0x84D7,0x48C7,{ 0x8A,0x3F,0x4C,0x0B,0x23,0x5F,0x2E,0xA6 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>{ static constexpr guid value{ 0xCC9FED81,0x10CA,0x4533,{ 0x95,0x2D,0x9E,0x27,0x83,0x41,0xE8,0x0F } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbInterruptOutPipe>{ static constexpr guid value{ 0xE984C8A9,0xAAF9,0x49D0,{ 0xB9,0x6C,0xF6,0x61,0xAB,0x4A,0x7F,0x95 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbSetupPacket>{ static constexpr guid value{ 0x104BA132,0xC78F,0x4C51,{ 0xB6,0x54,0xE4,0x9D,0x02,0xF2,0xCB,0x03 } }; };
+template <> struct guid_storage<Windows::Devices::Usb::IUsbSetupPacketFactory>{ static constexpr guid value{ 0xC9257D50,0x1B2E,0x4A41,{ 0xA2,0xA7,0x33,0x8F,0x0C,0xEF,0x3C,0x14 } }; };
 template <> struct default_interface<Windows::Devices::Usb::UsbBulkInEndpointDescriptor>{ using type = Windows::Devices::Usb::IUsbBulkInEndpointDescriptor; };
 template <> struct default_interface<Windows::Devices::Usb::UsbBulkInPipe>{ using type = Windows::Devices::Usb::IUsbBulkInPipe; };
 template <> struct default_interface<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>{ using type = Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor; };
@@ -280,6 +280,249 @@ template <> struct default_interface<Windows::Devices::Usb::UsbInterruptInPipe>{
 template <> struct default_interface<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>{ using type = Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor; };
 template <> struct default_interface<Windows::Devices::Usb::UsbInterruptOutPipe>{ using type = Windows::Devices::Usb::IUsbInterruptOutPipe; };
 template <> struct default_interface<Windows::Devices::Usb::UsbSetupPacket>{ using type = Windows::Devices::Usb::IUsbSetupPacket; };
+
+template <> struct abi<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pipe(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbBulkInPipe>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxTransferSizeBytes(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ReadOptions(Windows::Devices::Usb::UsbReadOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReadOptions(Windows::Devices::Usb::UsbReadOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FlushBuffer() noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputStream(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pipe(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbBulkOutPipe>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputStream(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UsbInterfaces(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConfigurationDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Descriptors(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbConfigurationDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ConfigurationValue(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPowerMilliamps(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelfPowered(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteWakeup(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
+    virtual int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbControlRequestType>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Direction(Windows::Devices::Usb::UsbTransferDirection value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Recipient(Windows::Devices::Usb::UsbControlRecipient* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Recipient(Windows::Devices::Usb::UsbControlRecipient value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AsByte(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AsByte(uint8_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Length(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DescriptorType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadDescriptorBuffer(void* buffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendControlOutTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendControlOutTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendControlInTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendControlInTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultInterface(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Configuration(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDeviceClass>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ClassCode(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ClassCode(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubclassCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SubclassCode(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProtocolCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProtocolCode(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDeviceClasses>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDeviceClassesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CdcControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Physical(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PersonalHealthcare(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActiveSync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PalmSync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceFirmwareUpdate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Irda(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Measurement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VendorSpecific(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDeviceDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BcdUsb(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPacketSize0(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VendorId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProductId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BcdDeviceRevision(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfConfigurations(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid winUsbInterfaceClass, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorGuidOnly(winrt::guid winUsbInterfaceClass, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceClassSelector(void* usbClass, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbEndpointDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointType(Windows::Devices::Usb::UsbEndpointType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AsBulkInEndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AsInterruptInEndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AsBulkOutEndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AsInterruptOutEndpointDescriptor(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbEndpointDescriptorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
+    virtual int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterface>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BulkInPipes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterruptInPipes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BulkOutPipes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterruptOutPipes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterfaceSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterfaceNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Descriptors(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterfaceDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ClassCode(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubclassCode(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProtocolCode(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlternateSettingNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterfaceNumber(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
+    virtual int32_t WINRT_CALL Parse(void* descriptor, void** parsed) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterfaceSetting>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BulkInEndpoints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterruptInEndpoints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BulkOutEndpoints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterruptOutEndpoints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Selected(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectSettingAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterfaceDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Descriptors(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pipe(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterruptInEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InterruptData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterruptInPipe>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DataReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DataReceived(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPacketSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointNumber(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pipe(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbInterruptOutPipe>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndpointDescriptor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearStallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputStream(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbSetupPacket>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequestType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestType(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Request(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Request(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Index(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Index(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Length(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Usb::IUsbSetupPacketFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithEightByteBuffer(void* eightByteBuffer, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Usb_IUsbBulkInEndpointDescriptor
@@ -434,8 +677,8 @@ template <> struct consume<Windows::Devices::Usb::IUsbDeviceDescriptor> { templa
 template <typename D>
 struct consume_Windows_Devices_Usb_IUsbDeviceStatics
 {
-    hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID const& winUsbInterfaceClass) const;
-    hstring GetDeviceSelector(GUID const& winUsbInterfaceClass) const;
+    hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid const& winUsbInterfaceClass) const;
+    hstring GetDeviceSelector(winrt::guid const& winUsbInterfaceClass) const;
     hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId) const;
     hstring GetDeviceClassSelector(Windows::Devices::Usb::UsbDeviceClass const& usbClass) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> FromIdAsync(param::hstring const& deviceId) const;
@@ -531,10 +774,10 @@ struct consume_Windows_Devices_Usb_IUsbInterruptInPipe
 {
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor EndpointDescriptor() const;
     Windows::Foundation::IAsyncAction ClearStallAsync() const;
-    event_token DataReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const;
-    using DataReceived_revoker = event_revoker<Windows::Devices::Usb::IUsbInterruptInPipe>;
+    winrt::event_token DataReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const;
+    using DataReceived_revoker = impl::event_revoker<Windows::Devices::Usb::IUsbInterruptInPipe, &impl::abi_t<Windows::Devices::Usb::IUsbInterruptInPipe>::remove_DataReceived>;
     DataReceived_revoker DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> const& handler) const;
-    void DataReceived(event_token const& token) const;
+    void DataReceived(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Usb::IUsbInterruptInPipe> { template <typename D> using type = consume_Windows_Devices_Usb_IUsbInterruptInPipe<D>; };
 
@@ -581,248 +824,5 @@ struct consume_Windows_Devices_Usb_IUsbSetupPacketFactory
     Windows::Devices::Usb::UsbSetupPacket CreateWithEightByteBuffer(Windows::Storage::Streams::IBuffer const& eightByteBuffer) const;
 };
 template <> struct consume<Windows::Devices::Usb::IUsbSetupPacketFactory> { template <typename D> using type = consume_Windows_Devices_Usb_IUsbSetupPacketFactory<D>; };
-
-template <> struct abi<Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pipe(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbBulkInPipe>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxTransferSizeBytes(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ClearStallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall put_ReadOptions(Windows::Devices::Usb::UsbReadOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReadOptions(Windows::Devices::Usb::UsbReadOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall FlushBuffer() noexcept = 0;
-    virtual HRESULT __stdcall get_InputStream(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pipe(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbBulkOutPipe>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ClearStallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputStream(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UsbInterfaces(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConfigurationDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Descriptors(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbConfigurationDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ConfigurationValue(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPowerMilliamps(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelfPowered(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteWakeup(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
-    virtual HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbControlRequestType>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Direction(Windows::Devices::Usb::UsbTransferDirection value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ControlTransferType(Windows::Devices::Usb::UsbControlTransferType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Recipient(Windows::Devices::Usb::UsbControlRecipient* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Recipient(Windows::Devices::Usb::UsbControlRecipient value) noexcept = 0;
-    virtual HRESULT __stdcall get_AsByte(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AsByte(uint8_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Length(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DescriptorType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadDescriptorBuffer(void* buffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendControlOutTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendControlOutTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendControlInTransferAsync(void* setupPacket, void* buffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendControlInTransferAsyncNoBuffer(void* setupPacket, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultInterface(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Configuration(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDeviceClass>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ClassCode(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ClassCode(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubclassCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SubclassCode(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProtocolCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProtocolCode(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDeviceClasses>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDeviceClassesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CdcControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Physical(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PersonalHealthcare(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActiveSync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PalmSync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceFirmwareUpdate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Irda(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Measurement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VendorSpecific(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDeviceDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BcdUsb(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPacketSize0(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VendorId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProductId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BcdDeviceRevision(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfConfigurations(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorVidPidOnly(uint32_t vendorId, uint32_t productId, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceClassSelector(void* usbClass, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbEndpointDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Direction(Windows::Devices::Usb::UsbTransferDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointType(Windows::Devices::Usb::UsbEndpointType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AsBulkInEndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AsInterruptInEndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AsBulkOutEndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AsInterruptOutEndpointDescriptor(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbEndpointDescriptorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
-    virtual HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterface>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BulkInPipes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterruptInPipes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BulkOutPipes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterruptOutPipes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterfaceSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterfaceNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Descriptors(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterfaceDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ClassCode(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubclassCode(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProtocolCode(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlternateSettingNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterfaceNumber(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryParse(void* descriptor, void** parsed, bool* success) noexcept = 0;
-    virtual HRESULT __stdcall Parse(void* descriptor, void** parsed) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterfaceSetting>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BulkInEndpoints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterruptInEndpoints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BulkOutEndpoints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterruptOutEndpoints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Selected(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SelectSettingAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_InterfaceDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Descriptors(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pipe(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterruptInEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InterruptData(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterruptInPipe>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ClearStallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_DataReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DataReceived(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPacketSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointNumber(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pipe(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbInterruptOutPipe>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndpointDescriptor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ClearStallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall put_WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_WriteOptions(Windows::Devices::Usb::UsbWriteOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputStream(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbSetupPacket>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequestType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestType(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Request(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Request(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Index(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Index(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Length(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Usb::IUsbSetupPacketFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithEightByteBuffer(void* eightByteBuffer, void** value) noexcept = 0;
-};};
 
 }

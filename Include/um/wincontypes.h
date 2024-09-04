@@ -1,4 +1,4 @@
-/*++ 
+/*++
 
 Copyright (c) Microsoft Corporation. All rights reserved.
 
@@ -152,6 +152,8 @@ typedef struct _CONSOLE_FONT_INFO {
     DWORD  nFont;
     COORD  dwFontSize;
 } CONSOLE_FONT_INFO, *PCONSOLE_FONT_INFO;
+
+typedef VOID* HPCON;
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.controls.primitives.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -697,6 +709,60 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface ICommandBarFlyoutCommandBar;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar ABI::Windows::UI::Xaml::Controls::Primitives::ICommandBarFlyoutCommandBar
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface ICommandBarFlyoutCommandBarFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory ABI::Windows::UI::Xaml::Controls::Primitives::ICommandBarFlyoutCommandBarFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface ICommandBarFlyoutCommandBarTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::ICommandBarFlyoutCommandBarTemplateSettings
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings_FWD_DEFINED__
 namespace ABI {
@@ -931,6 +997,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase4_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutBase5;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase5
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -1056,6 +1140,60 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutBaseStatics5;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics5
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutShowOptions;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutShowOptions
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface IFlyoutShowOptionsFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutShowOptionsFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_FWD_DEFINED__
@@ -1560,6 +1698,60 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings ABI::Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutPresenterTemplateSettings
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface INavigationViewItemPresenter;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter ABI::Windows::UI::Xaml::Controls::Primitives::INavigationViewItemPresenter
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface INavigationViewItemPresenterFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory ABI::Windows::UI::Xaml::Controls::Primitives::INavigationViewItemPresenterFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        interface INavigationViewItemPresenterStatics;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics ABI::Windows::UI::Xaml::Controls::Primitives::INavigationViewItemPresenterStatics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_FWD_DEFINED__
@@ -2649,6 +2841,80 @@ typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            struct Point;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CPoint_USE
+#define DEF___FIReference_1_Windows__CFoundation__CPoint_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("84f14c22-a00a-5272-8d3d-82112e66df00"))
+IReference<struct ABI::Windows::Foundation::Point> : IReference_impl<struct ABI::Windows::Foundation::Point> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Foundation.Point>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Foundation::Point> __FIReference_1_Windows__CFoundation__CPoint_t;
+#define __FIReference_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CPoint_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CFoundation__CPoint ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Point>
+//#define __FIReference_1_Windows__CFoundation__CPoint_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Point>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CFoundation__CPoint_USE */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            struct Rect;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CFoundation__CRect_USE
+#define DEF___FIReference_1_Windows__CFoundation__CRect_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("80423f11-054f-5eac-afd3-63b6ce15e77b"))
+IReference<struct ABI::Windows::Foundation::Rect> : IReference_impl<struct ABI::Windows::Foundation::Rect> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Foundation.Rect>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Foundation::Rect> __FIReference_1_Windows__CFoundation__CRect_t;
+#define __FIReference_1_Windows__CFoundation__CRect ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CRect_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CFoundation__CRect ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Rect>
+//#define __FIReference_1_Windows__CFoundation__CRect_t ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Rect>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CFoundation__CRect_USE */
+
+
+
 
 
 #ifndef DEF___FIIterator_1_IInspectable_USE
@@ -3064,6 +3330,15 @@ namespace ABI {
     namespace Windows {
         namespace Foundation {
             
+            typedef struct Point Point;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
             typedef struct Rect Rect;
             
         } /* Windows */
@@ -3188,6 +3463,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CIInsertionPanel ABI::Windows::UI::Xaml::Controls::IInsertionPanel
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIInsertionPanel_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    class IconElement;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface IIconElement;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement ABI::Windows::UI::Xaml::Controls::IIconElement
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
 
 
 namespace ABI {
@@ -3660,6 +3963,21 @@ namespace ABI {
                 namespace Controls {
                     namespace Primitives {
                         
+                        typedef enum FlyoutShowMode : int FlyoutShowMode;
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        
                         typedef enum GeneratorDirection : int GeneratorDirection;
                         
                     } /* Windows */
@@ -3920,6 +4238,16 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -4053,6 +4381,34 @@ namespace ABI {
             namespace Xaml {
                 namespace Controls {
                     namespace Primitives {
+                        class CommandBarFlyoutCommandBar;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class CommandBarFlyoutCommandBarTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
                         class CommandBarTemplateSettings;
                     } /* Windows */
                 } /* UI */
@@ -4103,6 +4459,20 @@ namespace ABI {
     } /* Primitives */} /* ABI */
 
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class FlyoutShowOptions;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
 
 
 namespace ABI {
@@ -4294,6 +4664,20 @@ namespace ABI {
                 namespace Controls {
                     namespace Primitives {
                         class MenuFlyoutPresenterTemplateSettings;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        class NavigationViewItemPresenter;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -4729,6 +5113,51 @@ namespace ABI {
                             FlyoutPlacementMode_Left = 2,
                             FlyoutPlacementMode_Right = 3,
                             FlyoutPlacementMode_Full = 4,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_TopEdgeAlignedLeft = 5,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_TopEdgeAlignedRight = 6,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_BottomEdgeAlignedLeft = 7,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_BottomEdgeAlignedRight = 8,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_LeftEdgeAlignedTop = 9,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_LeftEdgeAlignedBottom = 10,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_RightEdgeAlignedTop = 11,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_RightEdgeAlignedBottom = 12,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
+                            FlyoutPlacementMode_Auto = 13,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            
                         };
                         
                     } /* Windows */
@@ -4737,6 +5166,39 @@ namespace ABI {
         } /* Controls */
     } /* Primitives */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [v1_enum, contract] */
+                        enum FlyoutShowMode : int
+                        {
+                            FlyoutShowMode_Auto = 0,
+                            FlyoutShowMode_Standard = 1,
+                            FlyoutShowMode_Transient = 2,
+                            FlyoutShowMode_TransientWithDismissOnPointerMoveAway = 3,
+                        };
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5520,7 +5982,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt IInspectable * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Click(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Click(
@@ -5569,9 +6031,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IButtonBase * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IButtonBase * * value
                                 ) = 0;
                             
                         };
@@ -5858,7 +6320,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE MakeVisible(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * visual,
                                 /* [in] */ABI::Windows::Foundation::Rect rectangle,
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                                 ) = 0;
                             
                         };
@@ -5903,9 +6365,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ICarouselPanel * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ICarouselPanel * * value
                                 ) = 0;
                             
                         };
@@ -5950,7 +6412,7 @@ namespace ABI {
                         {
                         public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ColorChannel(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorPickerHsvChannel * result
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorPickerHsvChannel * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ColorChannel(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::ColorPickerHsvChannel value
@@ -5998,9 +6460,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorPickerSlider * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorPickerSlider * * value
                                 ) = 0;
                             
                         };
@@ -6090,67 +6552,67 @@ namespace ABI {
                         {
                         public:
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Color(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Color * result
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Color * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Color(
                                 /* [in] */ABI::Windows::UI::Color value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HsvColor(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector4 * result
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector4 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HsvColor(
                                 /* [in] */ABI::Windows::Foundation::Numerics::Vector4 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinHue(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinHue(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxHue(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxHue(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinSaturation(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinSaturation(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxSaturation(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxSaturation(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinValue(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinValue(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxValue(
-                                /* [retval, out] */__RPC__out INT32 * result
+                                /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxValue(
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shape(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorSpectrumShape * result
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorSpectrumShape * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Shape(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::ColorSpectrumShape value
                                 ) = 0;
                             /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Components(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorSpectrumComponents * result
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::ColorSpectrumComponents * value
                                 ) = 0;
                             /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Components(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::ColorSpectrumComponents value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ColorChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ColorChanged(
@@ -6199,9 +6661,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorSpectrum * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorSpectrum * * value
                                 ) = 0;
                             
                         };
@@ -6388,6 +6850,200 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBar[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("14146E7C-38C4-55C4-B706-CE18F6061E7E"), exclusiveto, contract] */
+                        MIDL_INTERFACE("14146E7C-38C4-55C4-B706-CE18F6061E7E")
+                        ICommandBarFlyoutCommandBar : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FlyoutTemplateSettings(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ICommandBarFlyoutCommandBarTemplateSettings * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ICommandBarFlyoutCommandBar=_uuidof(ICommandBarFlyoutCommandBar);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBarFactory[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("F8236F9F-5559-5697-8E6F-20D70CA17DD0"), exclusiveto, contract] */
+                        MIDL_INTERFACE("F8236F9F-5559-5697-8E6F-20D70CA17DD0")
+                        ICommandBarFlyoutCommandBarFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ICommandBarFlyoutCommandBar * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ICommandBarFlyoutCommandBarFactory=_uuidof(ICommandBarFlyoutCommandBarFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("47642C44-26FF-5D14-9CFC-77DC64F3A447"), exclusiveto, contract] */
+                        MIDL_INTERFACE("47642C44-26FF-5D14-9CFC-77DC64F3A447")
+                        ICommandBarFlyoutCommandBarTemplateSettings : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenAnimationStartPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OpenAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CloseAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CurrentWidth(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandedWidth(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WidthExpansionDelta(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WidthExpansionAnimationStartPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WidthExpansionAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WidthExpansionMoreButtonAnimationStartPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WidthExpansionMoreButtonAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandUpOverflowVerticalPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandDownOverflowVerticalPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandUpAnimationStartPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandUpAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandUpAnimationHoldPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandDownAnimationStartPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandDownAnimationEndPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExpandDownAnimationHoldPosition(
+                                /* [retval, out] */__RPC__out DOUBLE * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ContentClipRect(
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OverflowContentClipRect(
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_ICommandBarFlyoutCommandBarTemplateSettings=_uuidof(ICommandBarFlyoutCommandBarTemplateSettings);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6624,9 +7280,9 @@ namespace ABI {
                                 /* [in] */DOUBLE horizontalChange,
                                 /* [in] */DOUBLE verticalChange,
                                 /* [in] */boolean canceled,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs * * value
                                 ) = 0;
                             
                         };
@@ -6721,9 +7377,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHorizontalChangeAndVerticalChange(
                                 /* [in] */DOUBLE horizontalChange,
                                 /* [in] */DOUBLE verticalChange,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs * * value
                                 ) = 0;
                             
                         };
@@ -6818,9 +7474,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHorizontalOffsetAndVerticalOffset(
                                 /* [in] */DOUBLE horizontalOffset,
                                 /* [in] */DOUBLE verticalOffset,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs * * value
                                 ) = 0;
                             
                         };
@@ -6871,21 +7527,21 @@ namespace ABI {
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutPlacementMode value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Opened(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Opened(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Opening(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Opening(
@@ -6965,7 +7621,7 @@ namespace ABI {
                                 /* [in] */ABI::Windows::UI::Xaml::ElementSoundMode value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closing(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBase_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBaseClosingEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBase_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBaseClosingEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closing(
@@ -7082,6 +7738,70 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBase5[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("AD3EC0C7-12BB-5A73-B78E-105192CA73D6"), exclusiveto, contract] */
+                        MIDL_INTERFACE("AD3EC0C7-12BB-5A73-B78E-105192CA73D6")
+                        IFlyoutBase5 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShowMode(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutShowMode * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ShowMode(
+                                /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutShowMode value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputDevicePrefersPrimaryCommands(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreOpenCloseAnimationsEnabled(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AreOpenCloseAnimationsEnabled(
+                                /* [in] */boolean value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsOpen(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE ShowAt(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * placementTarget,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutShowOptions * showOptions
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IFlyoutBase5=_uuidof(IFlyoutBase5);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -7155,9 +7875,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * * value
                                 ) = 0;
                             
                         };
@@ -7202,7 +7922,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreatePresenter(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::IControl * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::IControl * * result
                                 ) = 0;
                             
                         };
@@ -7299,7 +8019,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAttachedFlyout(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * element,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * * value
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetAttachedFlyout(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * element,
@@ -7425,6 +8145,176 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBaseStatics5[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("69EDB25C-992A-542B-BCFF-2F7F855523BD"), exclusiveto, contract] */
+                        MIDL_INTERFACE("69EDB25C-992A-542B-BCFF-2F7F855523BD")
+                        IFlyoutBaseStatics5 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_TargetProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShowModeProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputDevicePrefersPrimaryCommandsProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AreOpenCloseAnimationsEnabledProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsOpenProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IFlyoutBaseStatics5=_uuidof(IFlyoutBaseStatics5);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutShowOptions[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("57D693AD-0C74-54DD-B110-1EE43FABADD9"), exclusiveto, contract] */
+                        MIDL_INTERFACE("57D693AD-0C74-54DD-B110-1EE43FABADD9")
+                        IFlyoutShowOptions : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Position(
+                                /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CPoint * * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Position(
+                                /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CPoint * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExclusionRect(
+                                /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CRect * * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ExclusionRect(
+                                /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CRect * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ShowMode(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutShowMode * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ShowMode(
+                                /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutShowMode value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Placement(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutPlacementMode * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Placement(
+                                /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutPlacementMode value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IFlyoutShowOptions=_uuidof(IFlyoutShowOptions);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptionsFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutShowOptionsFactory[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptionsFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("CE596F61-2EB4-5B4E-AF69-F9AF42320EEE"), exclusiveto, contract] */
+                        MIDL_INTERFACE("CE596F61-2EB4-5B4E-AF69-F9AF42320EEE")
+                        IFlyoutShowOptionsFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutShowOptions * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IFlyoutShowOptionsFactory=_uuidof(IFlyoutShowOptionsFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelper
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7494,7 +8384,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE FromIndexAndOffset(
                                 /* [in] */INT32 index,
                                 /* [in] */INT32 offset,
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::GeneratorPosition * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Primitives::GeneratorPosition * result
                                 ) = 0;
                             
                         };
@@ -7737,9 +8627,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter * * value
                                 ) = 0;
                             
                         };
@@ -8253,11 +9143,11 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetLayoutExceptionElement(
                                 /* [in] */__RPC__in_opt IInspectable * dispatcher,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * element
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLayoutSlot(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * element,
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * slot
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                                 ) = 0;
                             
                         };
@@ -8303,7 +9193,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetAvailableSize(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * availableSize
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Size * result
                                 ) = 0;
                             
                         };
@@ -8690,9 +9580,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter * * value
                                 ) = 0;
                             
                         };
@@ -9058,7 +9948,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDataTemplate * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SelectionChanged(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISelectionChangedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISelectionChangedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_SelectionChanged(
@@ -9319,6 +10209,146 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFl
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenter[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("9956D3FC-4693-59CB-B6BF-37249058BE96"), exclusiveto, contract] */
+                        MIDL_INTERFACE("9956D3FC-4693-59CB-B6BF-37249058BE96")
+                        INavigationViewItemPresenter : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Icon(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::IIconElement * * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Icon(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IIconElement * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_INavigationViewItemPresenter=_uuidof(INavigationViewItemPresenter);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenterFactory[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("BB062C50-4A36-52E7-9459-E89D02F3FC42"), exclusiveto, contract] */
+                        MIDL_INTERFACE("BB062C50-4A36-52E7-9459-E89D02F3FC42")
+                        INavigationViewItemPresenterFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::INavigationViewItemPresenter * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_INavigationViewItemPresenterFactory=_uuidof(INavigationViewItemPresenterFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenterStatics[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Primitives {
+                        /* [object, uuid("52814604-CFC1-5AD5-A3AA-FA355BE6BD76"), exclusiveto, contract] */
+                        MIDL_INTERFACE("52814604-CFC1-5AD5-A3AA-FA355BE6BD76")
+                        INavigationViewItemPresenterStatics : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IconProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_INavigationViewItemPresenterStatics=_uuidof(INavigationViewItemPresenterStatics);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Primitives */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9400,7 +10430,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE MakeVisible(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * visual,
                                 /* [in] */ABI::Windows::Foundation::Rect rectangle,
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                                 ) = 0;
                             
                         };
@@ -9529,9 +10559,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase * * value
                                 ) = 0;
                             
                         };
@@ -9577,7 +10607,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE OnConfirmed(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ShouldShowConfirmationButtons(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             
                         };
@@ -9626,7 +10656,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetTitle(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetTitle(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -9717,9 +10747,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem * * value
                                 ) = 0;
                             
                         };
@@ -9884,14 +10914,14 @@ namespace ABI {
                                 /* [in] */boolean value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Opened(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Opened(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
@@ -10237,7 +11267,7 @@ namespace ABI {
                                 /* [in] */DOUBLE value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ValueChanged(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ValueChanged(
@@ -10286,9 +11316,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBase * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBase * * value
                                 ) = 0;
                             
                         };
@@ -10612,7 +11642,7 @@ namespace ABI {
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::ScrollingIndicatorMode value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Scroll(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IScrollEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IScrollEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Scroll(
@@ -10763,14 +11793,14 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_HorizontalSnapPointsChanged(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_HorizontalSnapPointsChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_VerticalSnapPointsChanged(
-                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_VerticalSnapPointsChanged(
@@ -10779,7 +11809,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE GetIrregularSnapPoints(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Orientation orientation,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Primitives::SnapPointsAlignment alignment,
-                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_float * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_float * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetRegularSnapPoints(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Orientation orientation,
@@ -10860,7 +11890,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt __FIReference_1_boolean * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_SelectionChanged(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISelectionChangedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISelectionChangedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_SelectionChanged(
@@ -10999,9 +12029,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ISelectorItem * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::ISelectorItem * * value
                                 ) = 0;
                             
                         };
@@ -11107,7 +12137,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetIsSelectionActive(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             
                         };
@@ -11275,21 +12305,21 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DragStarted(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragStartedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragStartedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_DragStarted(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DragDelta(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_DragDelta(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DragCompleted(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_DragCompleted(
@@ -11489,21 +12519,21 @@ namespace ABI {
                                 /* [in] */boolean value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Checked(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Checked(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Unchecked(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Unchecked(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Indeterminate(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Indeterminate(
@@ -11552,9 +12582,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButton * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButton * * value
                                 ) = 0;
                             
                         };
@@ -12033,6 +13063,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar[] = L"Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12137,16 +13215,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase ** Default Interface **
- *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase4
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -12173,8 +13253,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -12185,6 +13263,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_FlyoutBaseClosingEventArgs[] = L"Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions[] = L"Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12274,8 +13376,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -12556,6 +13656,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutPresenterTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter[] = L"Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -13298,6 +14425,24 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTem
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings;
@@ -13376,6 +14521,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase4
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase4_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseClosingEventArgs;
@@ -13417,6 +14568,24 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseS
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3 __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelper_FWD_DEFINED__
@@ -13585,6 +14754,24 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutI
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFlyoutPresenterTemplateSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_FWD_DEFINED__
@@ -14286,6 +15473,122 @@ interface __FIEventHandler_1_IInspectable
 
 
 #endif // ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+
+struct __x_ABI_CWindows_CFoundation_CPoint;
+
+#if !defined(____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CFoundation__CPoint __FIReference_1_Windows__CFoundation__CPoint;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CPoint;
+
+typedef struct __FIReference_1_Windows__CFoundation__CPointVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CPoint * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CPoint * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CPoint * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CPoint * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CPoint * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CPoint * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CPoint * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CPoint *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CFoundation__CPointVtbl;
+
+interface __FIReference_1_Windows__CFoundation__CPoint
+{
+    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CPointVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CFoundation__CPoint_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CFoundation__CPoint_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CFoundation__CPoint_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CFoundation__CPoint_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CFoundation__CPoint_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CFoundation__CPoint_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CFoundation__CPoint_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CFoundation__CPoint_INTERFACE_DEFINED__
+
+
+struct __x_ABI_CWindows_CFoundation_CRect;
+
+#if !defined(____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CFoundation__CRect __FIReference_1_Windows__CFoundation__CRect;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CFoundation__CRect;
+
+typedef struct __FIReference_1_Windows__CFoundation__CRectVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CFoundation__CRect * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CFoundation__CRect * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CFoundation__CRect * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CFoundation__CRect * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CFoundation__CRect * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CFoundation__CRect * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CFoundation__CRect * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CFoundation_CRect *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CFoundation__CRectVtbl;
+
+interface __FIReference_1_Windows__CFoundation__CRect
+{
+    CONST_VTBL struct __FIReference_1_Windows__CFoundation__CRectVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CFoundation__CRect_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CFoundation__CRect_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CFoundation__CRect_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CFoundation__CRect_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CFoundation__CRect_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CFoundation__CRect_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CFoundation__CRect_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CFoundation__CRect_INTERFACE_DEFINED__
 
 
 
@@ -15446,6 +16749,9 @@ typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CVector4 __x_ABI_CWindows_
 
 
 
+typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_CPoint;
+
+
 typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_CRect;
 
 
@@ -15484,6 +16790,13 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIControl __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIInsertionPanel __x_ABI_CWindows_CUI_CXaml_CControls_CIInsertionPanel;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIInsertionPanel_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement __x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement_FWD_DEFINED__
 
 
 
@@ -15635,6 +16948,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CEdgeTransitionLoc
 typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutPlacementMode __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutPlacementMode;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorDirection __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorDirection;
 
 
@@ -15663,6 +16979,20 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CTickPlacement __x
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -15924,8 +17254,74 @@ enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutPlacementMode
     FlyoutPlacementMode_Left = 2,
     FlyoutPlacementMode_Right = 3,
     FlyoutPlacementMode_Full = 4,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_TopEdgeAlignedLeft = 5,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_TopEdgeAlignedRight = 6,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_BottomEdgeAlignedLeft = 7,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_BottomEdgeAlignedRight = 8,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_LeftEdgeAlignedTop = 9,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_LeftEdgeAlignedBottom = 10,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_RightEdgeAlignedTop = 11,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_RightEdgeAlignedBottom = 12,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    FlyoutPlacementMode_Auto = 13,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode
+{
+    FlyoutShowMode_Auto = 0,
+    FlyoutShowMode_Standard = 1,
+    FlyoutShowMode_Transient = 2,
+    FlyoutShowMode_TransientWithDismissOnPointerMoveAway = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -16909,7 +18305,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Click )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Click )(
@@ -16968,8 +18364,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_put_CommandParameter(This,value) \
     ( (This)->lpVtbl->put_CommandParameter(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_add_Click(This,value,token) \
-    ( (This)->lpVtbl->add_Click(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_add_Click(This,handler,token) \
+    ( (This)->lpVtbl->add_Click(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase_remove_Click(This,token) \
     ( (This)->lpVtbl->remove_Click(This,token) )
@@ -17034,9 +18430,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase * * value
         );
     END_INTERFACE
     
@@ -17066,8 +18462,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBaseFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -17621,7 +19017,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * visual,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect rectangle,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     END_INTERFACE
     
@@ -17729,8 +19125,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel_SetVerticalOffset(This,offset) \
     ( (This)->lpVtbl->SetVerticalOffset(This,offset) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel_MakeVisible(This,visual,rectangle,returnValue) \
-    ( (This)->lpVtbl->MakeVisible(This,visual,rectangle,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel_MakeVisible(This,visual,rectangle,result) \
+    ( (This)->lpVtbl->MakeVisible(This,visual,rectangle,result) )
 
 
 #endif /* COBJMACROS */
@@ -17792,9 +19188,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanelFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanel * * value
         );
     END_INTERFACE
     
@@ -17824,8 +19220,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanelFactor
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanelFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanelFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICarouselPanelFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -17887,7 +19283,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ColorChannel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorPickerHsvChannel * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorPickerHsvChannel * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ColorChannel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider * This,
@@ -17921,8 +19317,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider_get_ColorChannel(This,result) \
-    ( (This)->lpVtbl->get_ColorChannel(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider_get_ColorChannel(This,value) \
+    ( (This)->lpVtbl->get_ColorChannel(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider_put_ColorChannel(This,value) \
     ( (This)->lpVtbl->put_ColorChannel(This,value) )
@@ -17987,9 +19383,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSliderFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider * * value
         );
     END_INTERFACE
     
@@ -18019,8 +19415,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSliderFa
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSliderFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSliderFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSliderFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -18175,7 +19571,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Color )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CColor * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Color )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18183,7 +19579,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HsvColor )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector4 * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector4 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HsvColor )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18191,7 +19587,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinHue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinHue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18199,7 +19595,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxHue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxHue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18207,7 +19603,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinSaturation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinSaturation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18215,7 +19611,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxSaturation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxSaturation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18223,7 +19619,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinValue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinValue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18231,7 +19627,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxValue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out INT32 * result
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxValue )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18239,7 +19635,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Shape )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorSpectrumShape * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorSpectrumShape * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Shape )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18247,7 +19643,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Components )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorSpectrumComponents * result
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CColorSpectrumComponents * value
         );
     /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Components )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
@@ -18255,7 +19651,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ColorChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CColorSpectrum_Windows__CUI__CXaml__CControls__CColorChangedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ColorChanged )(
@@ -18290,68 +19686,68 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Color(This,result) \
-    ( (This)->lpVtbl->get_Color(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Color(This,value) \
+    ( (This)->lpVtbl->get_Color(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_Color(This,value) \
     ( (This)->lpVtbl->put_Color(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_HsvColor(This,result) \
-    ( (This)->lpVtbl->get_HsvColor(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_HsvColor(This,value) \
+    ( (This)->lpVtbl->get_HsvColor(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_HsvColor(This,value) \
     ( (This)->lpVtbl->put_HsvColor(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinHue(This,result) \
-    ( (This)->lpVtbl->get_MinHue(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinHue(This,value) \
+    ( (This)->lpVtbl->get_MinHue(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MinHue(This,value) \
     ( (This)->lpVtbl->put_MinHue(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxHue(This,result) \
-    ( (This)->lpVtbl->get_MaxHue(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxHue(This,value) \
+    ( (This)->lpVtbl->get_MaxHue(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MaxHue(This,value) \
     ( (This)->lpVtbl->put_MaxHue(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinSaturation(This,result) \
-    ( (This)->lpVtbl->get_MinSaturation(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinSaturation(This,value) \
+    ( (This)->lpVtbl->get_MinSaturation(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MinSaturation(This,value) \
     ( (This)->lpVtbl->put_MinSaturation(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxSaturation(This,result) \
-    ( (This)->lpVtbl->get_MaxSaturation(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxSaturation(This,value) \
+    ( (This)->lpVtbl->get_MaxSaturation(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MaxSaturation(This,value) \
     ( (This)->lpVtbl->put_MaxSaturation(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinValue(This,result) \
-    ( (This)->lpVtbl->get_MinValue(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MinValue(This,value) \
+    ( (This)->lpVtbl->get_MinValue(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MinValue(This,value) \
     ( (This)->lpVtbl->put_MinValue(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxValue(This,result) \
-    ( (This)->lpVtbl->get_MaxValue(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_MaxValue(This,value) \
+    ( (This)->lpVtbl->get_MaxValue(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_MaxValue(This,value) \
     ( (This)->lpVtbl->put_MaxValue(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Shape(This,result) \
-    ( (This)->lpVtbl->get_Shape(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Shape(This,value) \
+    ( (This)->lpVtbl->get_Shape(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_Shape(This,value) \
     ( (This)->lpVtbl->put_Shape(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Components(This,result) \
-    ( (This)->lpVtbl->get_Components(This,result) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_get_Components(This,value) \
+    ( (This)->lpVtbl->get_Components(This,value) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_put_Components(This,value) \
     ( (This)->lpVtbl->put_Components(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_add_ColorChanged(This,value,token) \
-    ( (This)->lpVtbl->add_ColorChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_add_ColorChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ColorChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum_remove_ColorChanged(This,token) \
     ( (This)->lpVtbl->remove_ColorChanged(This,token) )
@@ -18416,9 +19812,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrumFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * * value
         );
     END_INTERFACE
     
@@ -18448,8 +19844,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrumFactor
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrumFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrumFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrumFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -18821,6 +20217,420 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSet
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBar[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar";
+/* [object, uuid("14146E7C-38C4-55C4-B706-CE18F6061E7E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FlyoutTemplateSettings )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_get_FlyoutTemplateSettings(This,value) \
+    ( (This)->lpVtbl->get_FlyoutTemplateSettings(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBarFactory[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarFactory";
+/* [object, uuid("F8236F9F-5559-5697-8E6F-20D70CA17DD0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBar * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_ICommandBarFlyoutCommandBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings";
+/* [object, uuid("47642C44-26FF-5D14-9CFC-77DC64F3A447"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OpenAnimationStartPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OpenAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CloseAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CurrentWidth )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandedWidth )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WidthExpansionDelta )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WidthExpansionAnimationStartPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WidthExpansionAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WidthExpansionMoreButtonAnimationStartPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WidthExpansionMoreButtonAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandUpOverflowVerticalPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandDownOverflowVerticalPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandUpAnimationStartPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandUpAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandUpAnimationHoldPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandDownAnimationStartPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandDownAnimationEndPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExpandDownAnimationHoldPosition )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ContentClipRect )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OverflowContentClipRect )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettingsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_OpenAnimationStartPosition(This,value) \
+    ( (This)->lpVtbl->get_OpenAnimationStartPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_OpenAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_OpenAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_CloseAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_CloseAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_CurrentWidth(This,value) \
+    ( (This)->lpVtbl->get_CurrentWidth(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandedWidth(This,value) \
+    ( (This)->lpVtbl->get_ExpandedWidth(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_WidthExpansionDelta(This,value) \
+    ( (This)->lpVtbl->get_WidthExpansionDelta(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_WidthExpansionAnimationStartPosition(This,value) \
+    ( (This)->lpVtbl->get_WidthExpansionAnimationStartPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_WidthExpansionAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_WidthExpansionAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_WidthExpansionMoreButtonAnimationStartPosition(This,value) \
+    ( (This)->lpVtbl->get_WidthExpansionMoreButtonAnimationStartPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_WidthExpansionMoreButtonAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_WidthExpansionMoreButtonAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandUpOverflowVerticalPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandUpOverflowVerticalPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandDownOverflowVerticalPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandDownOverflowVerticalPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandUpAnimationStartPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandUpAnimationStartPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandUpAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandUpAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandUpAnimationHoldPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandUpAnimationHoldPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandDownAnimationStartPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandDownAnimationStartPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandDownAnimationEndPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandDownAnimationEndPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ExpandDownAnimationHoldPosition(This,value) \
+    ( (This)->lpVtbl->get_ExpandDownAnimationHoldPosition(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_ContentClipRect(This,value) \
+    ( (This)->lpVtbl->get_ContentClipRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_get_OverflowContentClipRect(This,value) \
+    ( (This)->lpVtbl->get_OverflowContentClipRect(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CICommandBarFlyoutCommandBarTemplateSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -19305,9 +21115,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithHorizontalChangeVerticalChangeAnd
         /* [in] */DOUBLE horizontalChange,
         /* [in] */DOUBLE verticalChange,
         /* [in] */boolean canceled,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventArgs * * value
         );
     END_INTERFACE
     
@@ -19337,8 +21147,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventA
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventArgsFactory_CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(This,horizontalChange,verticalChange,canceled,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(This,horizontalChange,verticalChange,canceled,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventArgsFactory_CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(This,horizontalChange,verticalChange,canceled,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled(This,horizontalChange,verticalChange,canceled,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -19502,9 +21312,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithHorizontalChangeAndVerticalChange
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgsFactory * This,
         /* [in] */DOUBLE horizontalChange,
         /* [in] */DOUBLE verticalChange,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgs * * value
         );
     END_INTERFACE
     
@@ -19534,8 +21344,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgsF
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgsFactory_CreateInstanceWithHorizontalChangeAndVerticalChange(This,horizontalChange,verticalChange,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithHorizontalChangeAndVerticalChange(This,horizontalChange,verticalChange,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventArgsFactory_CreateInstanceWithHorizontalChangeAndVerticalChange(This,horizontalChange,verticalChange,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithHorizontalChangeAndVerticalChange(This,horizontalChange,verticalChange,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -19699,9 +21509,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithHorizontalOffsetAndVerticalOffset
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgsFactory * This,
         /* [in] */DOUBLE horizontalOffset,
         /* [in] */DOUBLE verticalOffset,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgs * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgs * * value
         );
     END_INTERFACE
     
@@ -19731,8 +21541,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArg
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgsFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgsFactory_CreateInstanceWithHorizontalOffsetAndVerticalOffset(This,horizontalOffset,verticalOffset,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithHorizontalOffsetAndVerticalOffset(This,horizontalOffset,verticalOffset,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventArgsFactory_CreateInstanceWithHorizontalOffsetAndVerticalOffset(This,horizontalOffset,verticalOffset,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithHorizontalOffsetAndVerticalOffset(This,horizontalOffset,verticalOffset,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -19802,7 +21612,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Opened )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Opened )(
@@ -19811,7 +21621,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
@@ -19820,7 +21630,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Opening )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Opening )(
@@ -19868,20 +21678,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_put_Placement(This,value) \
     ( (This)->lpVtbl->put_Placement(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Opened(This,value,token) \
-    ( (This)->lpVtbl->add_Opened(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Opened(This,handler,token) \
+    ( (This)->lpVtbl->add_Opened(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_remove_Opened(This,token) \
     ( (This)->lpVtbl->remove_Opened(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Closed(This,value,token) \
-    ( (This)->lpVtbl->add_Closed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_remove_Closed(This,token) \
     ( (This)->lpVtbl->remove_Closed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Opening(This,value,token) \
-    ( (This)->lpVtbl->add_Opening(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_add_Opening(This,handler,token) \
+    ( (This)->lpVtbl->add_Opening(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase_remove_Opening(This,token) \
     ( (This)->lpVtbl->remove_Opening(This,token) )
@@ -19988,7 +21798,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closing )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBase_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBaseClosingEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBase_Windows__CUI__CXaml__CControls__CPrimitives__CFlyoutBaseClosingEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closing )(
@@ -20050,8 +21860,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2_put_ElementSoundMode(This,value) \
     ( (This)->lpVtbl->put_ElementSoundMode(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2_add_Closing(This,value,token) \
-    ( (This)->lpVtbl->add_Closing(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2_add_Closing(This,handler,token) \
+    ( (This)->lpVtbl->add_Closing(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase2_remove_Closing(This,token) \
     ( (This)->lpVtbl->remove_Closing(This,token) )
@@ -20260,6 +22070,142 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBase5[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5";
+/* [object, uuid("AD3EC0C7-12BB-5A73-B78E-105192CA73D6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ShowMode )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ShowMode )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InputDevicePrefersPrimaryCommands )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AreOpenCloseAnimationsEnabled )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AreOpenCloseAnimationsEnabled )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsOpen )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *ShowAt )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * placementTarget,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * showOptions
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_get_ShowMode(This,value) \
+    ( (This)->lpVtbl->get_ShowMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_put_ShowMode(This,value) \
+    ( (This)->lpVtbl->put_ShowMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_get_InputDevicePrefersPrimaryCommands(This,value) \
+    ( (This)->lpVtbl->get_InputDevicePrefersPrimaryCommands(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_get_AreOpenCloseAnimationsEnabled(This,value) \
+    ( (This)->lpVtbl->get_AreOpenCloseAnimationsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_put_AreOpenCloseAnimationsEnabled(This,value) \
+    ( (This)->lpVtbl->put_AreOpenCloseAnimationsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_get_IsOpen(This,value) \
+    ( (This)->lpVtbl->get_IsOpen(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_ShowAt(This,placementTarget,showOptions) \
+    ( (This)->lpVtbl->ShowAt(This,placementTarget,showOptions) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
@@ -20409,9 +22355,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * * value
         );
     END_INTERFACE
     
@@ -20441,8 +22387,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -20504,7 +22450,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreatePresenter )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIControl * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIControl * * result
         );
     END_INTERFACE
     
@@ -20534,8 +22480,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_CreatePresenter(This,returnValue) \
-    ( (This)->lpVtbl->CreatePresenter(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseOverrides_CreatePresenter(This,result) \
+    ( (This)->lpVtbl->CreatePresenter(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -20699,7 +22645,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAttachedFlyout )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIFrameworkElement * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAttachedFlyout )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics * This,
@@ -20744,8 +22690,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_get_AttachedFlyoutProperty(This,value) \
     ( (This)->lpVtbl->get_AttachedFlyoutProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_GetAttachedFlyout(This,element,value) \
-    ( (This)->lpVtbl->GetAttachedFlyout(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_GetAttachedFlyout(This,element,result) \
+    ( (This)->lpVtbl->GetAttachedFlyout(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics_SetAttachedFlyout(This,element,value) \
     ( (This)->lpVtbl->SetAttachedFlyout(This,element,value) )
@@ -20971,6 +22917,364 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyout
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutBase
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutBaseStatics5[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5";
+/* [object, uuid("69EDB25C-992A-542B-BCFF-2F7F855523BD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_TargetProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ShowModeProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InputDevicePrefersPrimaryCommandsProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AreOpenCloseAnimationsEnabledProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsOpenProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_get_TargetProperty(This,value) \
+    ( (This)->lpVtbl->get_TargetProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_get_ShowModeProperty(This,value) \
+    ( (This)->lpVtbl->get_ShowModeProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_get_InputDevicePrefersPrimaryCommandsProperty(This,value) \
+    ( (This)->lpVtbl->get_InputDevicePrefersPrimaryCommandsProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_get_AreOpenCloseAnimationsEnabledProperty(This,value) \
+    ( (This)->lpVtbl->get_AreOpenCloseAnimationsEnabledProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_get_IsOpenProperty(This,value) \
+    ( (This)->lpVtbl->get_IsOpenProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutBaseStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutShowOptions[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions";
+/* [object, uuid("57D693AD-0C74-54DD-B110-1EE43FABADD9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Position )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CPoint * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Position )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CPoint * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExclusionRect )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CRect * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ExclusionRect )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [in] */__RPC__in_opt __FIReference_1_Windows__CFoundation__CRect * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ShowMode )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ShowMode )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutShowMode value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Placement )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutPlacementMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Placement )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CFlyoutPlacementMode value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_get_Position(This,value) \
+    ( (This)->lpVtbl->get_Position(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_put_Position(This,value) \
+    ( (This)->lpVtbl->put_Position(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_get_ExclusionRect(This,value) \
+    ( (This)->lpVtbl->get_ExclusionRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_put_ExclusionRect(This,value) \
+    ( (This)->lpVtbl->put_ExclusionRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_get_ShowMode(This,value) \
+    ( (This)->lpVtbl->get_ShowMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_put_ShowMode(This,value) \
+    ( (This)->lpVtbl->put_ShowMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_get_Placement(This,value) \
+    ( (This)->lpVtbl->get_Placement(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_put_Placement(This,value) \
+    ( (This)->lpVtbl->put_Placement(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptionsFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_IFlyoutShowOptionsFactory[] = L"Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptionsFactory";
+/* [object, uuid("CE596F61-2EB4-5B4E-AF69-F9AF42320EEE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptions * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIFlyoutShowOptionsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelper
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -21108,7 +23412,7 @@ HRESULT ( STDMETHODCALLTYPE *FromIndexAndOffset )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics * This,
         /* [in] */INT32 index,
         /* [in] */INT32 offset,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CGeneratorPosition * result
         );
     END_INTERFACE
     
@@ -21138,8 +23442,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHe
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_FromIndexAndOffset(This,index,offset,returnValue) \
-    ( (This)->lpVtbl->FromIndexAndOffset(This,index,offset,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGeneratorPositionHelperStatics_FromIndexAndOffset(This,index,offset,result) \
+    ( (This)->lpVtbl->FromIndexAndOffset(This,index,offset,result) )
 
 
 #endif /* COBJMACROS */
@@ -21643,9 +23947,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenter * * value
         );
     END_INTERFACE
     
@@ -21675,8 +23979,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresent
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIGridViewItemPresenterFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -22731,12 +25035,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetLayoutExceptionElement )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics * This,
         /* [in] */__RPC__in_opt IInspectable * dispatcher,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * element
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLayoutSlot )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIFrameworkElement * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * slot
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     END_INTERFACE
     
@@ -22766,11 +25070,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationSt
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_GetLayoutExceptionElement(This,dispatcher,element) \
-    ( (This)->lpVtbl->GetLayoutExceptionElement(This,dispatcher,element) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_GetLayoutExceptionElement(This,dispatcher,result) \
+    ( (This)->lpVtbl->GetLayoutExceptionElement(This,dispatcher,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_GetLayoutSlot(This,element,slot) \
-    ( (This)->lpVtbl->GetLayoutSlot(This,element,slot) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics_GetLayoutSlot(This,element,result) \
+    ( (This)->lpVtbl->GetLayoutSlot(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -22833,7 +25137,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetAvailableSize )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CSize * availableSize
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CSize * result
         );
     END_INTERFACE
     
@@ -22863,8 +25167,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationSt
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics2_GetAvailableSize(This,element,availableSize) \
-    ( (This)->lpVtbl->GetAvailableSize(This,element,availableSize) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILayoutInformationStatics2_GetAvailableSize(This,element,result) \
+    ( (This)->lpVtbl->GetAvailableSize(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -23680,9 +25984,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenter * * value
         );
     END_INTERFACE
     
@@ -23712,8 +26016,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresent
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIListViewItemPresenterFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -24430,7 +26734,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_SelectionChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISelectionChangedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISelectionChangedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_SelectionChanged )(
@@ -24507,8 +26811,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_put_ItemTemplate(This,value) \
     ( (This)->lpVtbl->put_ItemTemplate(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_add_SelectionChanged(This,value,token) \
-    ( (This)->lpVtbl->add_SelectionChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_add_SelectionChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_SelectionChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CILoopingSelector_remove_SelectionChanged(This,token) \
     ( (This)->lpVtbl->remove_SelectionChanged(This,token) )
@@ -25017,6 +27321,294 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIMenuFl
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenter[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter";
+/* [object, uuid("9956D3FC-4693-59CB-B6BF-37249058BE96"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Icon )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Icon )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIIconElement * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_get_Icon(This,value) \
+    ( (This)->lpVtbl->get_Icon(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_put_Icon(This,value) \
+    ( (This)->lpVtbl->put_Icon(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenterFactory[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterFactory";
+/* [object, uuid("BB062C50-4A36-52E7-9459-E89D02F3FC42"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenter * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Primitives_INavigationViewItemPresenterStatics[] = L"Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics";
+/* [object, uuid("52814604-CFC1-5AD5-A3AA-FA355BE6BD76"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IconProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_get_IconProperty(This,value) \
+    ( (This)->lpVtbl->get_IconProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CINavigationViewItemPresenterStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanel
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -25160,7 +27752,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * visual,
         /* [in] */__x_ABI_CWindows_CFoundation_CRect rectangle,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     END_INTERFACE
     
@@ -25268,8 +27860,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizin
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_SetVerticalOffset(This,offset) \
     ( (This)->lpVtbl->SetVerticalOffset(This,offset) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_MakeVisible(This,visual,rectangle,returnValue) \
-    ( (This)->lpVtbl->MakeVisible(This,visual,rectangle,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIOrientedVirtualizingPanel_MakeVisible(This,visual,rectangle,result) \
+    ( (This)->lpVtbl->MakeVisible(This,visual,rectangle,result) )
 
 
 #endif /* COBJMACROS */
@@ -25503,9 +28095,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBase * * value
         );
     END_INTERFACE
     
@@ -25535,8 +28127,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFac
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -25601,7 +28193,7 @@ HRESULT ( STDMETHODCALLTYPE *OnConfirmed )(
         );
     HRESULT ( STDMETHODCALLTYPE *ShouldShowConfirmationButtons )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -25634,8 +28226,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOve
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_OnConfirmed(This) \
     ( (This)->lpVtbl->OnConfirmed(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_ShouldShowConfirmationButtons(This,returnValue) \
-    ( (This)->lpVtbl->ShouldShowConfirmationButtons(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseOverrides_ShouldShowConfirmationButtons(This,result) \
+    ( (This)->lpVtbl->ShouldShowConfirmationButtons(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -25702,7 +28294,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetTitle )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetTitle )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics * This,
@@ -25740,8 +28332,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseSta
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_get_TitleProperty(This,value) \
     ( (This)->lpVtbl->get_TitleProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_GetTitle(This,element,value) \
-    ( (This)->lpVtbl->GetTitle(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_GetTitle(This,element,result) \
+    ( (This)->lpVtbl->GetTitle(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPickerFlyoutBaseStatics_SetTitle(This,element,value) \
     ( (This)->lpVtbl->SetTitle(This,element,value) )
@@ -25892,9 +28484,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItem * * value
         );
     END_INTERFACE
     
@@ -25924,8 +28516,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFact
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPivotHeaderItemFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -26207,7 +28799,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Opened )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Opened )(
@@ -26216,7 +28808,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
@@ -26287,14 +28879,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_put_IsLightDismissEnabled(This,value) \
     ( (This)->lpVtbl->put_IsLightDismissEnabled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_add_Opened(This,value,token) \
-    ( (This)->lpVtbl->add_Opened(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_add_Opened(This,handler,token) \
+    ( (This)->lpVtbl->add_Opened(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_remove_Opened(This,token) \
     ( (This)->lpVtbl->remove_Opened(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_add_Closed(This,value,token) \
-    ( (This)->lpVtbl->add_Closed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIPopup_remove_Closed(This,token) \
     ( (This)->lpVtbl->remove_Closed(This,token) )
@@ -26962,7 +29554,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ValueChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseValueChangedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ValueChanged )(
@@ -27027,8 +29619,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_put_Value(This,value) \
     ( (This)->lpVtbl->put_Value(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_add_ValueChanged(This,value,token) \
-    ( (This)->lpVtbl->add_ValueChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_add_ValueChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ValueChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase_remove_ValueChanged(This,token) \
     ( (This)->lpVtbl->remove_ValueChanged(This,token) )
@@ -27093,9 +29685,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase * * value
         );
     END_INTERFACE
     
@@ -27125,8 +29717,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBaseFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27757,7 +30349,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Scroll )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Scroll )(
@@ -27810,8 +30402,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_put_IndicatorMode(This,value) \
     ( (This)->lpVtbl->put_IndicatorMode(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_add_Scroll(This,value,token) \
-    ( (This)->lpVtbl->add_Scroll(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_add_Scroll(This,handler,token) \
+    ( (This)->lpVtbl->add_Scroll(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar_remove_Scroll(This,token) \
     ( (This)->lpVtbl->remove_Scroll(This,token) )
@@ -28088,7 +30680,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_HorizontalSnapPointsChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_HorizontalSnapPointsChanged )(
@@ -28097,7 +30689,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_VerticalSnapPointsChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * value,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_VerticalSnapPointsChanged )(
@@ -28108,7 +30700,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_COrientation orientation,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CSnapPointsAlignment alignment,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_float * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_float * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetRegularSnapPoints )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo * This,
@@ -28151,20 +30743,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInf
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_get_AreVerticalSnapPointsRegular(This,value) \
     ( (This)->lpVtbl->get_AreVerticalSnapPointsRegular(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_add_HorizontalSnapPointsChanged(This,value,token) \
-    ( (This)->lpVtbl->add_HorizontalSnapPointsChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_add_HorizontalSnapPointsChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_HorizontalSnapPointsChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_remove_HorizontalSnapPointsChanged(This,token) \
     ( (This)->lpVtbl->remove_HorizontalSnapPointsChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_add_VerticalSnapPointsChanged(This,value,token) \
-    ( (This)->lpVtbl->add_VerticalSnapPointsChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_add_VerticalSnapPointsChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_VerticalSnapPointsChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_remove_VerticalSnapPointsChanged(This,token) \
     ( (This)->lpVtbl->remove_VerticalSnapPointsChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_GetIrregularSnapPoints(This,orientation,alignment,returnValue) \
-    ( (This)->lpVtbl->GetIrregularSnapPoints(This,orientation,alignment,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_GetIrregularSnapPoints(This,orientation,alignment,result) \
+    ( (This)->lpVtbl->GetIrregularSnapPoints(This,orientation,alignment,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollSnapPointsInfo_GetRegularSnapPoints(This,orientation,alignment,offset,returnValue) \
     ( (This)->lpVtbl->GetRegularSnapPoints(This,orientation,alignment,offset,returnValue) )
@@ -28269,7 +30861,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_SelectionChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISelectionChangedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISelectionChangedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_SelectionChanged )(
@@ -28334,8 +30926,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_put_IsSynchronizedWithCurrentItem(This,value) \
     ( (This)->lpVtbl->put_IsSynchronizedWithCurrentItem(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_add_SelectionChanged(This,value,token) \
-    ( (This)->lpVtbl->add_SelectionChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_add_SelectionChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_SelectionChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector_remove_SelectionChanged(This,token) \
     ( (This)->lpVtbl->remove_SelectionChanged(This,token) )
@@ -28586,9 +31178,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItem * * value
         );
     END_INTERFACE
     
@@ -28618,8 +31210,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorItemFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28795,7 +31387,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetIsSelectionActive )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -28840,8 +31432,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_get_IsSynchronizedWithCurrentItemProperty(This,value) \
     ( (This)->lpVtbl->get_IsSynchronizedWithCurrentItemProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_GetIsSelectionActive(This,element,returnValue) \
-    ( (This)->lpVtbl->GetIsSelectionActive(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelectorStatics_GetIsSelectionActive(This,element,result) \
+    ( (This)->lpVtbl->GetIsSelectionActive(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -29163,7 +31755,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_DragStarted )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragStartedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_DragStarted )(
@@ -29172,7 +31764,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_DragDelta )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragDeltaEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_DragDelta )(
@@ -29181,7 +31773,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_DragCompleted )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIDragCompletedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_DragCompleted )(
@@ -29222,20 +31814,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_get_IsDragging(This,value) \
     ( (This)->lpVtbl->get_IsDragging(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragStarted(This,value,token) \
-    ( (This)->lpVtbl->add_DragStarted(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragStarted(This,handler,token) \
+    ( (This)->lpVtbl->add_DragStarted(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_remove_DragStarted(This,token) \
     ( (This)->lpVtbl->remove_DragStarted(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragDelta(This,value,token) \
-    ( (This)->lpVtbl->add_DragDelta(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragDelta(This,handler,token) \
+    ( (This)->lpVtbl->add_DragDelta(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_remove_DragDelta(This,token) \
     ( (This)->lpVtbl->remove_DragDelta(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragCompleted(This,value,token) \
-    ( (This)->lpVtbl->add_DragCompleted(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_add_DragCompleted(This,handler,token) \
+    ( (This)->lpVtbl->add_DragCompleted(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb_remove_DragCompleted(This,token) \
     ( (This)->lpVtbl->remove_DragCompleted(This,token) )
@@ -29605,7 +32197,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Checked )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Checked )(
@@ -29614,7 +32206,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Unchecked )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Unchecked )(
@@ -29623,7 +32215,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Indeterminate )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Indeterminate )(
@@ -29670,20 +32262,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_put_IsThreeState(This,value) \
     ( (This)->lpVtbl->put_IsThreeState(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Checked(This,value,token) \
-    ( (This)->lpVtbl->add_Checked(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Checked(This,handler,token) \
+    ( (This)->lpVtbl->add_Checked(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_remove_Checked(This,token) \
     ( (This)->lpVtbl->remove_Checked(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Unchecked(This,value,token) \
-    ( (This)->lpVtbl->add_Unchecked(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Unchecked(This,handler,token) \
+    ( (This)->lpVtbl->add_Unchecked(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_remove_Unchecked(This,token) \
     ( (This)->lpVtbl->remove_Unchecked(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Indeterminate(This,value,token) \
-    ( (This)->lpVtbl->add_Indeterminate(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_add_Indeterminate(This,handler,token) \
+    ( (This)->lpVtbl->add_Indeterminate(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton_remove_Indeterminate(This,token) \
     ( (This)->lpVtbl->remove_Indeterminate(This,token) )
@@ -29748,9 +32340,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * * value
         );
     END_INTERFACE
     
@@ -29780,8 +32372,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButtonFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30482,6 +33074,54 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBar[] = L"Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_CommandBarFlyoutCommandBarTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -30586,16 +33226,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase ** Default Interface **
- *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase4
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -30622,8 +33264,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -30634,6 +33274,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_FlyoutBaseClosingEventArgs[] = L"Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_FlyoutShowOptions[] = L"Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -30723,8 +33387,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -31005,6 +33667,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_MenuFlyoutPresenterTemplateSettings[] = L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Controls_Primitives_NavigationViewItemPresenter[] = L"Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

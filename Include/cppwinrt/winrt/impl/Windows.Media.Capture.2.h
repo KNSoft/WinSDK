@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -29,6 +29,8 @@ struct MediaCaptureFailedEventHandler : Windows::Foundation::IUnknown
     template <typename L> MediaCaptureFailedEventHandler(L lambda);
     template <typename F> MediaCaptureFailedEventHandler(F* function);
     template <typename O, typename M> MediaCaptureFailedEventHandler(O* object, M method);
+    template <typename O, typename M> MediaCaptureFailedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> MediaCaptureFailedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Capture::MediaCapture const& sender, Windows::Media::Capture::MediaCaptureFailedEventArgs const& errorEventArgs) const;
 };
 
@@ -38,6 +40,8 @@ struct RecordLimitationExceededEventHandler : Windows::Foundation::IUnknown
     template <typename L> RecordLimitationExceededEventHandler(L lambda);
     template <typename F> RecordLimitationExceededEventHandler(F* function);
     template <typename O, typename M> RecordLimitationExceededEventHandler(O* object, M method);
+    template <typename O, typename M> RecordLimitationExceededEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RecordLimitationExceededEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Capture::MediaCapture const& sender) const;
 };
 

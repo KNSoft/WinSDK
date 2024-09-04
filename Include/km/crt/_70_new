@@ -17,6 +17,11 @@
 
 #include <crtdefs.h>
 
+// VSTS 14847240: Locally suppress individual -Wv:17 compiler warnings.
+// For more information, visit https://osgwiki.com/wiki/Windows_C%2B%2B_Toolset_Status.
+#pragma warning(push)
+#pragma warning(disable:4595) // non-member operator new or delete functions may not be declared inline
+
 #if defined (_HAS_EXCEPTIONS)
 #if !_HAS_EXCEPTIONS
 #error "_HAS_EXCEPTIONS == 0 is not supported."
@@ -86,11 +91,6 @@ _CRTIMP2 new_handler __cdecl set_new_handler(new_handler)
 #endif
 _STD_END
 
-		// new AND delete DECLARATIONS (NB: NOT IN std)
-#pragma prefast(suppress: __WARNING_UNMATCHED_DECL_FIRST, "Can't put attributes on compiler builtins")
-void __CRTDECL operator delete(_Pre_maybenull_ void *) _THROW0();
-_Ret_notnull_ _Post_writable_byte_size_(_Size)
-void *__CRTDECL operator new(size_t _Size) _THROW1(std::bad_alloc);
 
  #ifndef __PLACEMENT_NEW_INLINE
   #define __PLACEMENT_NEW_INLINE
@@ -153,6 +153,8 @@ void __CRTDECL operator delete[](_Pre_maybenull_ void *, const std::nothrow_t&)
  #if !defined(_INC_NEW) || !defined(_MSC_EXTENSIONS)
 using std::new_handler;
  #endif /* !defined(_INC_NEW) || !defined(_MSC_EXTENSIONS) */
+
+#pragma warning(pop) // Wv:17 Warnings
 
 #ifdef  _MSC_VER
   #pragma pop_macro("new")

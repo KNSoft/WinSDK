@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -45,7 +45,7 @@ struct WINRT_EBO RfcommServiceId :
     Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId
 {
     RfcommServiceId(std::nullptr_t) noexcept {}
-    static Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId FromUuid(GUID const& uuid);
+    static Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId FromUuid(winrt::guid const& uuid);
     static Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId FromShortId(uint32_t shortId);
     static Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId SerialPort();
     static Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ObexObjectPush();

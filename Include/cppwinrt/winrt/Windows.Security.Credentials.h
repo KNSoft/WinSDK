@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -352,788 +352,690 @@ template <typename D> Windows::Security::Credentials::WebAccountProvider consume
 template <typename D>
 struct produce<D, Windows::Security::Credentials::ICredentialFactory> : produce_base<D, Windows::Security::Credentials::ICredentialFactory>
 {
-    HRESULT __stdcall CreatePasswordCredential(HSTRING resource, HSTRING userName, HSTRING password, void** credential) noexcept final
+    int32_t WINRT_CALL CreatePasswordCredential(void* resource, void* userName, void* password, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePasswordCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential), hstring const&, hstring const&, hstring const&);
             *credential = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().CreatePasswordCredential(*reinterpret_cast<hstring const*>(&resource), *reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<hstring const*>(&password)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IKeyCredential> : produce_base<D, Windows::Security::Credentials::IKeyCredential>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrievePublicKeyWithDefaultBlobType(void** value) noexcept final
+    int32_t WINRT_CALL RetrievePublicKeyWithDefaultBlobType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrievePublicKey, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().RetrievePublicKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrievePublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType, void** value) noexcept final
+    int32_t WINRT_CALL RetrievePublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrievePublicKey, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().RetrievePublicKey(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const*>(&blobType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestSignAsync(void* data, void** value) noexcept final
+    int32_t WINRT_CALL RequestSignAsync(void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestSignAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult>), Windows::Storage::Streams::IBuffer const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult>>(this->shim().RequestSignAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAttestationAsync(void** value) noexcept final
+    int32_t WINRT_CALL GetAttestationAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAttestationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult>>(this->shim().GetAttestationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IKeyCredentialAttestationResult> : produce_base<D, Windows::Security::Credentials::IKeyCredentialAttestationResult>
 {
-    HRESULT __stdcall get_CertificateChainBuffer(void** value) noexcept final
+    int32_t WINRT_CALL get_CertificateChainBuffer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CertificateChainBuffer, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().CertificateChainBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttestationBuffer(void** value) noexcept final
+    int32_t WINRT_CALL get_AttestationBuffer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttestationBuffer, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().AttestationBuffer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialAttestationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialAttestationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Security::Credentials::KeyCredentialAttestationStatus));
             *value = detach_from<Windows::Security::Credentials::KeyCredentialAttestationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IKeyCredentialManagerStatics> : produce_base<D, Windows::Security::Credentials::IKeyCredentialManagerStatics>
 {
-    HRESULT __stdcall IsSupportedAsync(void** value) noexcept final
+    int32_t WINRT_CALL IsSupportedAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupportedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsSupportedAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RenewAttestationAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RenewAttestationAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenewAttestationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RenewAttestationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCreateAsync(HSTRING name, Windows::Security::Credentials::KeyCredentialCreationOption option, void** value) noexcept final
+    int32_t WINRT_CALL RequestCreateAsync(void* name, Windows::Security::Credentials::KeyCredentialCreationOption option, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult>), hstring const, Windows::Security::Credentials::KeyCredentialCreationOption const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult>>(this->shim().RequestCreateAsync(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Security::Credentials::KeyCredentialCreationOption const*>(&option)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenAsync(HSTRING name, void** value) noexcept final
+    int32_t WINRT_CALL OpenAsync(void* name, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult>>(this->shim().OpenAsync(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAsync(HSTRING name, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void* name, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAsync(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IKeyCredentialOperationResult> : produce_base<D, Windows::Security::Credentials::IKeyCredentialOperationResult>
 {
-    HRESULT __stdcall get_Result(void** value) noexcept final
+    int32_t WINRT_CALL get_Result(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Result, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Result());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Security::Credentials::KeyCredentialStatus));
             *value = detach_from<Windows::Security::Credentials::KeyCredentialStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult> : produce_base<D, Windows::Security::Credentials::IKeyCredentialRetrievalResult>
 {
-    HRESULT __stdcall get_Credential(void** value) noexcept final
+    int32_t WINRT_CALL get_Credential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Credential, WINRT_WRAP(Windows::Security::Credentials::KeyCredential));
             *value = detach_from<Windows::Security::Credentials::KeyCredential>(this->shim().Credential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Security::Credentials::KeyCredentialStatus));
             *value = detach_from<Windows::Security::Credentials::KeyCredentialStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IPasswordCredential> : produce_base<D, Windows::Security::Credentials::IPasswordCredential>
 {
-    HRESULT __stdcall get_Resource(HSTRING* resource) noexcept final
+    int32_t WINRT_CALL get_Resource(void** resource) noexcept final
     {
         try
         {
             *resource = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resource, WINRT_WRAP(hstring));
             *resource = detach_from<hstring>(this->shim().Resource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Resource(HSTRING resource) noexcept final
+    int32_t WINRT_CALL put_Resource(void* resource) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resource, WINRT_WRAP(void), hstring const&);
             this->shim().Resource(*reinterpret_cast<hstring const*>(&resource));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserName(HSTRING* userName) noexcept final
+    int32_t WINRT_CALL get_UserName(void** userName) noexcept final
     {
         try
         {
             *userName = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(hstring));
             *userName = detach_from<hstring>(this->shim().UserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UserName(HSTRING userName) noexcept final
+    int32_t WINRT_CALL put_UserName(void* userName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(void), hstring const&);
             this->shim().UserName(*reinterpret_cast<hstring const*>(&userName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Password(HSTRING* password) noexcept final
+    int32_t WINRT_CALL get_Password(void** password) noexcept final
     {
         try
         {
             *password = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Password, WINRT_WRAP(hstring));
             *password = detach_from<hstring>(this->shim().Password());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Password(HSTRING password) noexcept final
+    int32_t WINRT_CALL put_Password(void* password) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Password, WINRT_WRAP(void), hstring const&);
             this->shim().Password(*reinterpret_cast<hstring const*>(&password));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrievePassword() noexcept final
+    int32_t WINRT_CALL RetrievePassword() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrievePassword, WINRT_WRAP(void));
             this->shim().RetrievePassword();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** props) noexcept final
+    int32_t WINRT_CALL get_Properties(void** props) noexcept final
     {
         try
         {
             *props = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *props = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IPasswordVault> : produce_base<D, Windows::Security::Credentials::IPasswordVault>
 {
-    HRESULT __stdcall Add(void* credential) noexcept final
+    int32_t WINRT_CALL Add(void* credential) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().Add(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&credential));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(void* credential) noexcept final
+    int32_t WINRT_CALL Remove(void* credential) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().Remove(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&credential));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Retrieve(HSTRING resource, HSTRING userName, void** credential) noexcept final
+    int32_t WINRT_CALL Retrieve(void* resource, void* userName, void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Retrieve, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential), hstring const&, hstring const&);
             *credential = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().Retrieve(*reinterpret_cast<hstring const*>(&resource), *reinterpret_cast<hstring const*>(&userName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllByResource(HSTRING resource, void** credentials) noexcept final
+    int32_t WINRT_CALL FindAllByResource(void* resource, void** credentials) noexcept final
     {
         try
         {
             *credentials = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllByResource, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>), hstring const&);
             *credentials = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>>(this->shim().FindAllByResource(*reinterpret_cast<hstring const*>(&resource)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllByUserName(HSTRING userName, void** credentials) noexcept final
+    int32_t WINRT_CALL FindAllByUserName(void* userName, void** credentials) noexcept final
     {
         try
         {
             *credentials = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllByUserName, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>), hstring const&);
             *credentials = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>>(this->shim().FindAllByUserName(*reinterpret_cast<hstring const*>(&userName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrieveAll(void** credentials) noexcept final
+    int32_t WINRT_CALL RetrieveAll(void** credentials) noexcept final
     {
         try
         {
             *credentials = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrieveAll, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>));
             *credentials = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential>>(this->shim().RetrieveAll());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccount> : produce_base<D, Windows::Security::Credentials::IWebAccount>
 {
-    HRESULT __stdcall get_WebAccountProvider(void** value) noexcept final
+    int32_t WINRT_CALL get_WebAccountProvider(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebAccountProvider, WINRT_WRAP(Windows::Security::Credentials::WebAccountProvider));
             *value = detach_from<Windows::Security::Credentials::WebAccountProvider>(this->shim().WebAccountProvider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Security::Credentials::WebAccountState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Security::Credentials::WebAccountState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Security::Credentials::WebAccountState));
             *value = detach_from<Windows::Security::Credentials::WebAccountState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccount2> : produce_base<D, Windows::Security::Credentials::IWebAccount2>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, hstring>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPictureAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>), Windows::Security::Credentials::WebAccountPictureSize const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream>>(this->shim().GetPictureAsync(*reinterpret_cast<Windows::Security::Credentials::WebAccountPictureSize const*>(&desizedSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SignOutAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SignOutAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignOutAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SignOutAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SignOutWithClientIdAsync(HSTRING clientId, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SignOutWithClientIdAsync(void* clientId, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignOutAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SignOutAsync(*reinterpret_cast<hstring const*>(&clientId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountFactory> : produce_base<D, Windows::Security::Credentials::IWebAccountFactory>
 {
-    HRESULT __stdcall CreateWebAccount(void* webAccountProvider, HSTRING userName, Windows::Security::Credentials::WebAccountState state, void** instance) noexcept final
+    int32_t WINRT_CALL CreateWebAccount(void* webAccountProvider, void* userName, Windows::Security::Credentials::WebAccountState state, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWebAccount, WINRT_WRAP(Windows::Security::Credentials::WebAccount), Windows::Security::Credentials::WebAccountProvider const&, hstring const&, Windows::Security::Credentials::WebAccountState const&);
             *instance = detach_from<Windows::Security::Credentials::WebAccount>(this->shim().CreateWebAccount(*reinterpret_cast<Windows::Security::Credentials::WebAccountProvider const*>(&webAccountProvider), *reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<Windows::Security::Credentials::WebAccountState const*>(&state)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountProvider> : produce_base<D, Windows::Security::Credentials::IWebAccountProvider>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IconUri(void** value) noexcept final
+    int32_t WINRT_CALL get_IconUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IconUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().IconUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountProvider2> : produce_base<D, Windows::Security::Credentials::IWebAccountProvider2>
 {
-    HRESULT __stdcall get_DisplayPurpose(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayPurpose(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayPurpose, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayPurpose());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Authority(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Authority(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Authority, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Authority());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountProvider3> : produce_base<D, Windows::Security::Credentials::IWebAccountProvider3>
 {
-    HRESULT __stdcall get_User(void** user) noexcept final
+    int32_t WINRT_CALL get_User(void** user) noexcept final
     {
         try
         {
             *user = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *user = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountProvider4> : produce_base<D, Windows::Security::Credentials::IWebAccountProvider4>
 {
-    HRESULT __stdcall get_IsSystemProvider(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSystemProvider(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSystemProvider, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSystemProvider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::IWebAccountProviderFactory> : produce_base<D, Windows::Security::Credentials::IWebAccountProviderFactory>
 {
-    HRESULT __stdcall CreateWebAccountProvider(HSTRING id, HSTRING displayName, void* iconUri, void** instance) noexcept final
+    int32_t WINRT_CALL CreateWebAccountProvider(void* id, void* displayName, void* iconUri, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWebAccountProvider, WINRT_WRAP(Windows::Security::Credentials::WebAccountProvider), hstring const&, hstring const&, Windows::Foundation::Uri const&);
             *instance = detach_from<Windows::Security::Credentials::WebAccountProvider>(this->shim().CreateWebAccountProvider(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<Windows::Foundation::Uri const*>(&iconUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1143,51 +1045,51 @@ WINRT_EXPORT namespace winrt::Windows::Security::Credentials {
 
 inline Windows::Foundation::IAsyncOperation<bool> KeyCredentialManager::IsSupportedAsync()
 {
-    return get_activation_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>().IsSupportedAsync();
+    return impl::call_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>([&](auto&& f) { return f.IsSupportedAsync(); });
 }
 
 inline Windows::Foundation::IAsyncAction KeyCredentialManager::RenewAttestationAsync()
 {
-    return get_activation_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>().RenewAttestationAsync();
+    return impl::call_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>([&](auto&& f) { return f.RenewAttestationAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::RequestCreateAsync(param::hstring const& name, Windows::Security::Credentials::KeyCredentialCreationOption const& option)
 {
-    return get_activation_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>().RequestCreateAsync(name, option);
+    return impl::call_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>([&](auto&& f) { return f.RequestCreateAsync(name, option); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> KeyCredentialManager::OpenAsync(param::hstring const& name)
 {
-    return get_activation_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>().OpenAsync(name);
+    return impl::call_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>([&](auto&& f) { return f.OpenAsync(name); });
 }
 
 inline Windows::Foundation::IAsyncAction KeyCredentialManager::DeleteAsync(param::hstring const& name)
 {
-    return get_activation_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>().DeleteAsync(name);
+    return impl::call_factory<KeyCredentialManager, Windows::Security::Credentials::IKeyCredentialManagerStatics>([&](auto&& f) { return f.DeleteAsync(name); });
 }
 
 inline PasswordCredential::PasswordCredential() :
-    PasswordCredential(get_activation_factory<PasswordCredential>().ActivateInstance<PasswordCredential>())
+    PasswordCredential(impl::call_factory<PasswordCredential>([](auto&& f) { return f.template ActivateInstance<PasswordCredential>(); }))
 {}
 
 inline PasswordCredential::PasswordCredential(param::hstring const& resource, param::hstring const& userName, param::hstring const& password) :
-    PasswordCredential(get_activation_factory<PasswordCredential, Windows::Security::Credentials::ICredentialFactory>().CreatePasswordCredential(resource, userName, password))
+    PasswordCredential(impl::call_factory<PasswordCredential, Windows::Security::Credentials::ICredentialFactory>([&](auto&& f) { return f.CreatePasswordCredential(resource, userName, password); }))
 {}
 
 inline PasswordCredentialPropertyStore::PasswordCredentialPropertyStore() :
-    PasswordCredentialPropertyStore(get_activation_factory<PasswordCredentialPropertyStore>().ActivateInstance<PasswordCredentialPropertyStore>())
+    PasswordCredentialPropertyStore(impl::call_factory<PasswordCredentialPropertyStore>([](auto&& f) { return f.template ActivateInstance<PasswordCredentialPropertyStore>(); }))
 {}
 
 inline PasswordVault::PasswordVault() :
-    PasswordVault(get_activation_factory<PasswordVault>().ActivateInstance<PasswordVault>())
+    PasswordVault(impl::call_factory<PasswordVault>([](auto&& f) { return f.template ActivateInstance<PasswordVault>(); }))
 {}
 
 inline WebAccount::WebAccount(Windows::Security::Credentials::WebAccountProvider const& webAccountProvider, param::hstring const& userName, Windows::Security::Credentials::WebAccountState const& state) :
-    WebAccount(get_activation_factory<WebAccount, Windows::Security::Credentials::IWebAccountFactory>().CreateWebAccount(webAccountProvider, userName, state))
+    WebAccount(impl::call_factory<WebAccount, Windows::Security::Credentials::IWebAccountFactory>([&](auto&& f) { return f.CreateWebAccount(webAccountProvider, userName, state); }))
 {}
 
 inline WebAccountProvider::WebAccountProvider(param::hstring const& id, param::hstring const& displayName, Windows::Foundation::Uri const& iconUri) :
-    WebAccountProvider(get_activation_factory<WebAccountProvider, Windows::Security::Credentials::IWebAccountProviderFactory>().CreateWebAccountProvider(id, displayName, iconUri))
+    WebAccountProvider(impl::call_factory<WebAccountProvider, Windows::Security::Credentials::IWebAccountProviderFactory>([&](auto&& f) { return f.CreateWebAccountProvider(id, displayName, iconUri); }))
 {}
 
 }
@@ -1222,5 +1124,3 @@ template<> struct hash<winrt::Windows::Security::Credentials::WebAccount> : winr
 template<> struct hash<winrt::Windows::Security::Credentials::WebAccountProvider> : winrt::impl::hash_base<winrt::Windows::Security::Credentials::WebAccountProvider> {};
 
 }
-
-WINRT_WARNING_POP

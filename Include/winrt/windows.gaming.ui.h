@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.gaming.ui.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -232,11 +240,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -336,34 +348,6 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CGaming_CUI_CIGameChatOverlayStatics_FWD_DEFINED__
 
-#ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                interface IGameMonitor;
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor ABI::Windows::Gaming::UI::IGameMonitor
-
-#endif // ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-
-#ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                interface IGameMonitorStatics;
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics ABI::Windows::Gaming::UI::IGameMonitorStatics
-
-#endif // ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-
 #ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -381,74 +365,6 @@ namespace ABI {
 // Parameterized interface forward declarations (C++)
 
 // Collection interface definitions
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                enum GameMonitoringPermission : int;
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE
-#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("b30d8404-94e7-5267-9c7a-bd79727b815a"))
-IAsyncOperationCompletedHandler<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> : IAsyncOperationCompletedHandler_impl<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Gaming.UI.GameMonitoringPermission>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IAsyncOperationCompletedHandler<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_t;
-#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Gaming::UI::GameMonitoringPermission>
-//#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Gaming::UI::GameMonitoringPermission>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE */
-
-
-
-
-
-#ifndef DEF___FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE
-#define DEF___FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation {
-template <>
-struct __declspec(uuid("5a3bf49f-d58f-58c3-a7e1-1ed05470baa6"))
-IAsyncOperation<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> : IAsyncOperation_impl<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.IAsyncOperation`1<Windows.Gaming.UI.GameMonitoringPermission>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IAsyncOperation<enum ABI::Windows::Gaming::UI::GameMonitoringPermission> __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_t;
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_t
-/* ABI */ } /* Windows */ } /* Foundation */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Gaming::UI::GameMonitoringPermission>
-//#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Gaming::UI::GameMonitoringPermission>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_USE */
-
-
-
 namespace ABI {
     namespace Windows {
         namespace Gaming {
@@ -854,19 +770,6 @@ namespace ABI {
         } /* Gaming */
     } /* UI */} /* ABI */
 
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                
-                typedef enum GameMonitoringPermission : int GameMonitoringPermission;
-                
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-
-
-
 
 
 
@@ -884,16 +787,6 @@ namespace ABI {
         } /* Gaming */
     } /* UI */} /* ABI */
 
-
-
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                class GameMonitor;
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
 
 
 namespace ABI {
@@ -974,34 +867,6 @@ namespace ABI {
         } /* Gaming */
     } /* UI */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-
-
-/*
- *
- * Struct Windows.Gaming.UI.GameMonitoringPermission
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- */
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                /* [v1_enum, contract] */
-                enum GameMonitoringPermission : int
-                {
-                    GameMonitoringPermission_Allowed = 0,
-                    GameMonitoringPermission_DeniedByUser = 1,
-                    GameMonitoringPermission_DeniedBySystem = 2,
-                };
-                
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 /*
@@ -1255,88 +1120,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameChatOverlayStatics;
 
 /*
  *
- * Interface Windows.Gaming.UI.IGameMonitor
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * Interface is a part of the implementation of type Windows.Gaming.UI.GameMonitor
- *
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-#if !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_UI_IGameMonitor[] = L"Windows.Gaming.UI.IGameMonitor";
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                /* [object, uuid("12234358-DD09-4511-ADCD-8D5975D81028"), exclusiveto, contract] */
-                MIDL_INTERFACE("12234358-DD09-4511-ADCD-8D5975D81028")
-                IGameMonitor : public IInspectable
-                {
-                public:
-                    virtual HRESULT STDMETHODCALLTYPE RequestPermissionAsync(
-                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * * operation
-                        ) = 0;
-                    
-                };
-
-                extern MIDL_CONST_ID IID & IID_IGameMonitor=_uuidof(IGameMonitor);
-                
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-
-EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameMonitor;
-#endif /* !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-
-/*
- *
- * Interface Windows.Gaming.UI.IGameMonitorStatics
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * Interface is a part of the implementation of type Windows.Gaming.UI.GameMonitor
- *
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-#if !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_UI_IGameMonitorStatics[] = L"Windows.Gaming.UI.IGameMonitorStatics";
-namespace ABI {
-    namespace Windows {
-        namespace Gaming {
-            namespace UI {
-                /* [object, uuid("11674B34-5AE0-4BB4-B91F-8ACB48159A71"), exclusiveto, contract] */
-                MIDL_INTERFACE("11674B34-5AE0-4BB4-B91F-8ACB48159A71")
-                IGameMonitorStatics : public IInspectable
-                {
-                public:
-                    virtual HRESULT STDMETHODCALLTYPE GetDefault(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Gaming::UI::IGameMonitor * * gameMonitor
-                        ) = 0;
-                    
-                };
-
-                extern MIDL_CONST_ID IID & IID_IGameMonitorStatics=_uuidof(IGameMonitorStatics);
-                
-            } /* Windows */
-        } /* Gaming */
-    } /* UI */} /* ABI */
-
-EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics;
-#endif /* !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-
-/*
- *
  * Interface Windows.Gaming.UI.IGameUIProviderActivatedEventArgs
  *
  * Introduced to Windows.Gaming.UI.GamingUIProviderContract in version 1.0
@@ -1484,33 +1267,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
- * Class Windows.Gaming.UI.GameMonitor
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Gaming.UI.IGameMonitorStatics interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
- *
- * Class implements the following interfaces:
- *    Windows.Gaming.UI.IGameMonitor ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
- * Class Marshaling Behavior:  Agile - Class is agile
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-#ifndef RUNTIMECLASS_Windows_Gaming_UI_GameMonitor_DEFINED
-#define RUNTIMECLASS_Windows_Gaming_UI_GameMonitor_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_UI_GameMonitor[] = L"Windows.Gaming.UI.GameMonitor";
-#endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-
-/*
- *
  * Class Windows.Gaming.UI.GameUIProviderActivatedEventArgs
  *
  * Introduced to Windows.Gaming.UI.GamingUIProviderContract in version 1.0
@@ -1568,18 +1324,6 @@ typedef interface __x_ABI_CWindows_CGaming_CUI_CIGameChatOverlayStatics __x_ABI_
 
 #endif // ____x_ABI_CWindows_CGaming_CUI_CIGameChatOverlayStatics_FWD_DEFINED__
 
-#ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGaming_CUI_CIGameMonitor __x_ABI_CWindows_CGaming_CUI_CIGameMonitor;
-
-#endif // ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_FWD_DEFINED__
-
-#ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics;
-
-#endif // ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_FWD_DEFINED__
-
 #ifndef ____x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs __x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArgs;
@@ -1589,117 +1333,6 @@ typedef interface __x_ABI_CWindows_CGaming_CUI_CIGameUIProviderActivatedEventArg
 // Parameterized interface forward declarations (C)
 
 // Collection interface definitions
-enum __x_ABI_CWindows_CGaming_CUI_CGameMonitoringPermission;
-#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__)
-#define ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__
-
-typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission;
-
-// Forward declare the async operation.
-typedef interface __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission;
-
-typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission * This);
-
-    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission *asyncInfo, /* [in] */ AsyncStatus status);
-    END_INTERFACE
-} __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl;
-
-interface __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission
-{
-    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_Invoke(This,asyncInfo,status)	\
-    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__
-
-
-
-#if !defined(____FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__)
-#define ____FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__
-
-typedef interface __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission;
-
-typedef struct __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This,
-        /* [out] */ __RPC__out ULONG *iidCount,
-        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission *handler);
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CGaming__CUI__CGameMonitoringPermission **handler);
-    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * This, /* [retval][out] */ __RPC__out enum __x_ABI_CWindows_CGaming_CUI_CGameMonitoringPermission *results);
-    END_INTERFACE
-} __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl;
-
-interface __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission
-{
-    CONST_VTBL struct __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermissionVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_put_Completed(This,handler)	\
-    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_get_Completed(This,handler)	\
-    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
-#define __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_GetResults(This,results)	\
-    ( (This)->lpVtbl -> GetResults(This,results) ) 
-#endif /* COBJMACROS */
-
-
-#endif // ____FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission_INTERFACE_DEFINED__
-
-
 
 
 #if WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
@@ -2399,12 +2032,6 @@ typedef enum __x_ABI_CWindows_CGaming_CUI_CGameChatMessageOrigin __x_ABI_CWindow
 typedef enum __x_ABI_CWindows_CGaming_CUI_CGameChatOverlayPosition __x_ABI_CWindows_CGaming_CUI_CGameChatOverlayPosition;
 
 
-typedef enum __x_ABI_CWindows_CGaming_CUI_CGameMonitoringPermission __x_ABI_CWindows_CGaming_CUI_CGameMonitoringPermission;
-
-
-
-
-
 
 
 
@@ -2467,26 +2094,6 @@ enum __x_ABI_CWindows_CGaming_CUI_CGameChatOverlayPosition
     GameChatOverlayPosition_TopRight = 7,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-
-
-/*
- *
- * Struct Windows.Gaming.UI.GameMonitoringPermission
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- */
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CGaming_CUI_CGameMonitoringPermission
-{
-    GameMonitoringPermission_Allowed = 0,
-    GameMonitoringPermission_DeniedByUser = 1,
-    GameMonitoringPermission_DeniedBySystem = 2,
-};
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 /*
@@ -3052,192 +2659,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameChatOverlayStatics;
 
 /*
  *
- * Interface Windows.Gaming.UI.IGameMonitor
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * Interface is a part of the implementation of type Windows.Gaming.UI.GameMonitor
- *
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-#if !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_UI_IGameMonitor[] = L"Windows.Gaming.UI.IGameMonitor";
-/* [object, uuid("12234358-DD09-4511-ADCD-8D5975D81028"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CGaming_CUI_CIGameMonitorVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This,
-    /* [in] */ __RPC__in REFIID riid,
-    /* [annotation][iid_is][out] */
-    _COM_Outptr_  void **ppvObject
-    );
-
-ULONG ( STDMETHODCALLTYPE *AddRef )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This
-    );
-
-ULONG ( STDMETHODCALLTYPE *Release )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetIids )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This,
-    /* [out] */ __RPC__out ULONG *iidCount,
-    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This,
-    /* [out] */ __RPC__deref_out_opt HSTRING *className
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This,
-    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
-    );
-HRESULT ( STDMETHODCALLTYPE *RequestPermissionAsync )(
-        __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CGaming__CUI__CGameMonitoringPermission * * operation
-        );
-    END_INTERFACE
-    
-} __x_ABI_CWindows_CGaming_CUI_CIGameMonitorVtbl;
-
-interface __x_ABI_CWindows_CGaming_CUI_CIGameMonitor
-{
-    CONST_VTBL struct __x_ABI_CWindows_CGaming_CUI_CIGameMonitorVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_QueryInterface(This,riid,ppvObject) \
-( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_AddRef(This) \
-        ( (This)->lpVtbl->AddRef(This) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_Release(This) \
-        ( (This)->lpVtbl->Release(This) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_GetIids(This,iidCount,iids) \
-        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_GetRuntimeClassName(This,className) \
-        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_GetTrustLevel(This,trustLevel) \
-        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitor_RequestPermissionAsync(This,operation) \
-    ( (This)->lpVtbl->RequestPermissionAsync(This,operation) )
-
-
-#endif /* COBJMACROS */
-
-
-EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameMonitor;
-#endif /* !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitor_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-
-/*
- *
- * Interface Windows.Gaming.UI.IGameMonitorStatics
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * Interface is a part of the implementation of type Windows.Gaming.UI.GameMonitor
- *
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-#if !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Gaming_UI_IGameMonitorStatics[] = L"Windows.Gaming.UI.IGameMonitorStatics";
-/* [object, uuid("11674B34-5AE0-4BB4-B91F-8ACB48159A71"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStaticsVtbl
-{
-    BEGIN_INTERFACE
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This,
-    /* [in] */ __RPC__in REFIID riid,
-    /* [annotation][iid_is][out] */
-    _COM_Outptr_  void **ppvObject
-    );
-
-ULONG ( STDMETHODCALLTYPE *AddRef )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This
-    );
-
-ULONG ( STDMETHODCALLTYPE *Release )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetIids )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This,
-    /* [out] */ __RPC__out ULONG *iidCount,
-    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This,
-    /* [out] */ __RPC__deref_out_opt HSTRING *className
-    );
-
-HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
-    __RPC__in __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This,
-    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
-    );
-HRESULT ( STDMETHODCALLTYPE *GetDefault )(
-        __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CGaming_CUI_CIGameMonitor * * gameMonitor
-        );
-    END_INTERFACE
-    
-} __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStaticsVtbl;
-
-interface __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics
-{
-    CONST_VTBL struct __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStaticsVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_QueryInterface(This,riid,ppvObject) \
-( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_AddRef(This) \
-        ( (This)->lpVtbl->AddRef(This) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_Release(This) \
-        ( (This)->lpVtbl->Release(This) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_GetIids(This,iidCount,iids) \
-        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_GetRuntimeClassName(This,className) \
-        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_GetTrustLevel(This,trustLevel) \
-        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
-
-#define __x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_GetDefault(This,gameMonitor) \
-    ( (This)->lpVtbl->GetDefault(This,gameMonitor) )
-
-
-#endif /* COBJMACROS */
-
-
-EXTERN_C const IID IID___x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics;
-#endif /* !defined(____x_ABI_CWindows_CGaming_CUI_CIGameMonitorStatics_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-
-/*
- *
  * Interface Windows.Gaming.UI.IGameUIProviderActivatedEventArgs
  *
  * Introduced to Windows.Gaming.UI.GamingUIProviderContract in version 1.0
@@ -3437,33 +2858,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_UI_GameChatOverlayMessageSource[] = L"Windows.Gaming.UI.GameChatOverlayMessageSource";
 #endif
 #endif // WINDOWS_GAMING_UI_GAMECHATOVERLAYCONTRACT_VERSION >= 0x10000
-
-
-/*
- *
- * Class Windows.Gaming.UI.GameMonitor
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
- *
- *
- * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Gaming.UI.IGameMonitorStatics interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
- *
- * Class implements the following interfaces:
- *    Windows.Gaming.UI.IGameMonitor ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
- * Class Marshaling Behavior:  Agile - Class is agile
- *
- */
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
-
-#ifndef RUNTIMECLASS_Windows_Gaming_UI_GameMonitor_DEFINED
-#define RUNTIMECLASS_Windows_Gaming_UI_GameMonitor_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Gaming_UI_GameMonitor[] = L"Windows.Gaming.UI.GameMonitor";
-#endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
 /*

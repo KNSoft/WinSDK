@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -9,6 +9,7 @@
 #include "winrt/impl/Windows.UI.Core.1.h"
 #include "winrt/impl/Windows.UI.Input.1.h"
 #include "winrt/impl/Windows.UI.Xaml.1.h"
+#include "winrt/impl/Windows.UI.Xaml.Controls.1.h"
 #include "winrt/impl/Windows.UI.Xaml.Input.1.h"
 
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Input {
@@ -19,6 +20,8 @@ struct DoubleTappedEventHandler : Windows::Foundation::IUnknown
     template <typename L> DoubleTappedEventHandler(L lambda);
     template <typename F> DoubleTappedEventHandler(F* function);
     template <typename O, typename M> DoubleTappedEventHandler(O* object, M method);
+    template <typename O, typename M> DoubleTappedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DoubleTappedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs const& e) const;
 };
 
@@ -28,6 +31,8 @@ struct HoldingEventHandler : Windows::Foundation::IUnknown
     template <typename L> HoldingEventHandler(L lambda);
     template <typename F> HoldingEventHandler(F* function);
     template <typename O, typename M> HoldingEventHandler(O* object, M method);
+    template <typename O, typename M> HoldingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> HoldingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::HoldingRoutedEventArgs const& e) const;
 };
 
@@ -37,6 +42,8 @@ struct KeyEventHandler : Windows::Foundation::IUnknown
     template <typename L> KeyEventHandler(L lambda);
     template <typename F> KeyEventHandler(F* function);
     template <typename O, typename M> KeyEventHandler(O* object, M method);
+    template <typename O, typename M> KeyEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> KeyEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 };
 
@@ -46,6 +53,8 @@ struct ManipulationCompletedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ManipulationCompletedEventHandler(L lambda);
     template <typename F> ManipulationCompletedEventHandler(F* function);
     template <typename O, typename M> ManipulationCompletedEventHandler(O* object, M method);
+    template <typename O, typename M> ManipulationCompletedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ManipulationCompletedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs const& e) const;
 };
 
@@ -55,6 +64,8 @@ struct ManipulationDeltaEventHandler : Windows::Foundation::IUnknown
     template <typename L> ManipulationDeltaEventHandler(L lambda);
     template <typename F> ManipulationDeltaEventHandler(F* function);
     template <typename O, typename M> ManipulationDeltaEventHandler(O* object, M method);
+    template <typename O, typename M> ManipulationDeltaEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ManipulationDeltaEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs const& e) const;
 };
 
@@ -64,6 +75,8 @@ struct ManipulationInertiaStartingEventHandler : Windows::Foundation::IUnknown
     template <typename L> ManipulationInertiaStartingEventHandler(L lambda);
     template <typename F> ManipulationInertiaStartingEventHandler(F* function);
     template <typename O, typename M> ManipulationInertiaStartingEventHandler(O* object, M method);
+    template <typename O, typename M> ManipulationInertiaStartingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ManipulationInertiaStartingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs const& e) const;
 };
 
@@ -73,6 +86,8 @@ struct ManipulationStartedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ManipulationStartedEventHandler(L lambda);
     template <typename F> ManipulationStartedEventHandler(F* function);
     template <typename O, typename M> ManipulationStartedEventHandler(O* object, M method);
+    template <typename O, typename M> ManipulationStartedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ManipulationStartedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs const& e) const;
 };
 
@@ -82,6 +97,8 @@ struct ManipulationStartingEventHandler : Windows::Foundation::IUnknown
     template <typename L> ManipulationStartingEventHandler(L lambda);
     template <typename F> ManipulationStartingEventHandler(F* function);
     template <typename O, typename M> ManipulationStartingEventHandler(O* object, M method);
+    template <typename O, typename M> ManipulationStartingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ManipulationStartingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs const& e) const;
 };
 
@@ -91,6 +108,8 @@ struct PointerEventHandler : Windows::Foundation::IUnknown
     template <typename L> PointerEventHandler(L lambda);
     template <typename F> PointerEventHandler(F* function);
     template <typename O, typename M> PointerEventHandler(O* object, M method);
+    template <typename O, typename M> PointerEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> PointerEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e) const;
 };
 
@@ -100,6 +119,8 @@ struct RightTappedEventHandler : Windows::Foundation::IUnknown
     template <typename L> RightTappedEventHandler(L lambda);
     template <typename F> RightTappedEventHandler(F* function);
     template <typename O, typename M> RightTappedEventHandler(O* object, M method);
+    template <typename O, typename M> RightTappedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RightTappedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::RightTappedRoutedEventArgs const& e) const;
 };
 
@@ -109,6 +130,8 @@ struct TappedEventHandler : Windows::Foundation::IUnknown
     template <typename L> TappedEventHandler(L lambda);
     template <typename F> TappedEventHandler(F* function);
     template <typename O, typename M> TappedEventHandler(O* object, M method);
+    template <typename O, typename M> TappedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> TappedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Input::TappedRoutedEventArgs const& e) const;
 };
 
@@ -146,13 +169,19 @@ struct WINRT_EBO AccessKeyManager :
 {
     AccessKeyManager(std::nullptr_t) noexcept {}
     static bool IsDisplayModeEnabled();
-    static event_token IsDisplayModeEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> const& value);
-    using IsDisplayModeEnabledChanged_revoker = factory_event_revoker<Windows::UI::Xaml::Input::IAccessKeyManagerStatics>;
-    static IsDisplayModeEnabledChanged_revoker IsDisplayModeEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> const& value);
-    static void IsDisplayModeEnabledChanged(event_token const& token);
+    static winrt::event_token IsDisplayModeEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> const& handler);
+    using IsDisplayModeEnabledChanged_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Input::IAccessKeyManagerStatics, &impl::abi_t<Windows::UI::Xaml::Input::IAccessKeyManagerStatics>::remove_IsDisplayModeEnabledChanged>;
+    static IsDisplayModeEnabledChanged_revoker IsDisplayModeEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> const& handler);
+    static void IsDisplayModeEnabledChanged(winrt::event_token const& token);
     static void ExitDisplayMode();
     static bool AreKeyTipsEnabled();
     static void AreKeyTipsEnabled(bool value);
+};
+
+struct WINRT_EBO CanExecuteRequestedEventArgs :
+    Windows::UI::Xaml::Input::ICanExecuteRequestedEventArgs
+{
+    CanExecuteRequestedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CharacterReceivedRoutedEventArgs :
@@ -181,6 +210,12 @@ struct WINRT_EBO DoubleTappedRoutedEventArgs :
     DoubleTappedRoutedEventArgs();
 };
 
+struct WINRT_EBO ExecuteRequestedEventArgs :
+    Windows::UI::Xaml::Input::IExecuteRequestedEventArgs
+{
+    ExecuteRequestedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO FindNextElementOptions :
     Windows::UI::Xaml::Input::IFindNextElementOptions
 {
@@ -204,6 +239,34 @@ struct WINRT_EBO FocusManager :
     static Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Input::FocusMovementResult> TryFocusAsync(Windows::UI::Xaml::DependencyObject const& element, Windows::UI::Xaml::FocusState const& value);
     static Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Input::FocusMovementResult> TryMoveFocusAsync(Windows::UI::Xaml::Input::FocusNavigationDirection const& focusNavigationDirection);
     static Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Input::FocusMovementResult> TryMoveFocusAsync(Windows::UI::Xaml::Input::FocusNavigationDirection const& focusNavigationDirection, Windows::UI::Xaml::Input::FindNextElementOptions const& focusNavigationOptions);
+    static winrt::event_token GotFocus(Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::FocusManagerGotFocusEventArgs> const& handler);
+    using GotFocus_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Input::IFocusManagerStatics6, &impl::abi_t<Windows::UI::Xaml::Input::IFocusManagerStatics6>::remove_GotFocus>;
+    static GotFocus_revoker GotFocus(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::FocusManagerGotFocusEventArgs> const& handler);
+    static void GotFocus(winrt::event_token const& token);
+    static winrt::event_token LostFocus(Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::FocusManagerLostFocusEventArgs> const& handler);
+    using LostFocus_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Input::IFocusManagerStatics6, &impl::abi_t<Windows::UI::Xaml::Input::IFocusManagerStatics6>::remove_LostFocus>;
+    static LostFocus_revoker LostFocus(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::FocusManagerLostFocusEventArgs> const& handler);
+    static void LostFocus(winrt::event_token const& token);
+    static winrt::event_token GettingFocus(Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::GettingFocusEventArgs> const& handler);
+    using GettingFocus_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Input::IFocusManagerStatics6, &impl::abi_t<Windows::UI::Xaml::Input::IFocusManagerStatics6>::remove_GettingFocus>;
+    static GettingFocus_revoker GettingFocus(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::GettingFocusEventArgs> const& handler);
+    static void GettingFocus(winrt::event_token const& token);
+    static winrt::event_token LosingFocus(Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::LosingFocusEventArgs> const& handler);
+    using LosingFocus_revoker = impl::factory_event_revoker<Windows::UI::Xaml::Input::IFocusManagerStatics6, &impl::abi_t<Windows::UI::Xaml::Input::IFocusManagerStatics6>::remove_LosingFocus>;
+    static LosingFocus_revoker LosingFocus(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Input::LosingFocusEventArgs> const& handler);
+    static void LosingFocus(winrt::event_token const& token);
+};
+
+struct WINRT_EBO FocusManagerGotFocusEventArgs :
+    Windows::UI::Xaml::Input::IFocusManagerGotFocusEventArgs
+{
+    FocusManagerGotFocusEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO FocusManagerLostFocusEventArgs :
+    Windows::UI::Xaml::Input::IFocusManagerLostFocusEventArgs
+{
+    FocusManagerLostFocusEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO FocusMovementResult :
@@ -215,7 +278,7 @@ struct WINRT_EBO FocusMovementResult :
 struct WINRT_EBO GettingFocusEventArgs :
     Windows::UI::Xaml::Input::IGettingFocusEventArgs,
     impl::base<GettingFocusEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
-    impl::require<GettingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::IGettingFocusEventArgs2>
+    impl::require<GettingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::IGettingFocusEventArgs2, Windows::UI::Xaml::Input::IGettingFocusEventArgs3>
 {
     GettingFocusEventArgs(std::nullptr_t) noexcept {}
 };
@@ -297,7 +360,7 @@ struct WINRT_EBO KeyboardAcceleratorInvokedEventArgs :
 struct WINRT_EBO LosingFocusEventArgs :
     Windows::UI::Xaml::Input::ILosingFocusEventArgs,
     impl::base<LosingFocusEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
-    impl::require<LosingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::ILosingFocusEventArgs2>
+    impl::require<LosingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs, Windows::UI::Xaml::Input::ILosingFocusEventArgs2, Windows::UI::Xaml::Input::ILosingFocusEventArgs3>
 {
     LosingFocusEventArgs(std::nullptr_t) noexcept {}
 };
@@ -392,6 +455,17 @@ struct WINRT_EBO RightTappedRoutedEventArgs :
     RightTappedRoutedEventArgs();
 };
 
+struct WINRT_EBO StandardUICommand :
+    Windows::UI::Xaml::Input::IStandardUICommand,
+    impl::base<StandardUICommand, Windows::UI::Xaml::Input::XamlUICommand, Windows::UI::Xaml::DependencyObject>,
+    impl::require<StandardUICommand, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Input::ICommand, Windows::UI::Xaml::Input::IXamlUICommand>
+{
+    StandardUICommand(std::nullptr_t) noexcept {}
+    StandardUICommand();
+    StandardUICommand(Windows::UI::Xaml::Input::StandardUICommandKind const& kind);
+    static Windows::UI::Xaml::DependencyProperty KindProperty();
+};
+
 struct WINRT_EBO TappedRoutedEventArgs :
     Windows::UI::Xaml::Input::ITappedRoutedEventArgs,
     impl::base<TappedRoutedEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
@@ -399,6 +473,21 @@ struct WINRT_EBO TappedRoutedEventArgs :
 {
     TappedRoutedEventArgs(std::nullptr_t) noexcept {}
     TappedRoutedEventArgs();
+};
+
+struct WINRT_EBO XamlUICommand :
+    Windows::UI::Xaml::Input::IXamlUICommand,
+    impl::base<XamlUICommand, Windows::UI::Xaml::DependencyObject>,
+    impl::require<XamlUICommand, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Input::ICommand>
+{
+    XamlUICommand(std::nullptr_t) noexcept {}
+    XamlUICommand();
+    static Windows::UI::Xaml::DependencyProperty LabelProperty();
+    static Windows::UI::Xaml::DependencyProperty IconSourceProperty();
+    static Windows::UI::Xaml::DependencyProperty KeyboardAcceleratorsProperty();
+    static Windows::UI::Xaml::DependencyProperty AccessKeyProperty();
+    static Windows::UI::Xaml::DependencyProperty DescriptionProperty();
+    static Windows::UI::Xaml::DependencyProperty CommandProperty();
 };
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -31,6 +31,12 @@ struct RemoteSystemSession;
 }
 
 WINRT_EXPORT namespace winrt::Windows::Perception::Spatial {
+
+enum class SpatialAnchorExportPurpose : int32_t
+{
+    Relocalization = 0,
+    Sharing = 1,
+};
 
 enum class SpatialEntityWatcherStatus : int32_t
 {
@@ -73,6 +79,9 @@ enum class SpatialPerceptionAccessStatus : int32_t
 
 struct ISpatialAnchor;
 struct ISpatialAnchor2;
+struct ISpatialAnchorExportSufficiency;
+struct ISpatialAnchorExporter;
+struct ISpatialAnchorExporterStatics;
 struct ISpatialAnchorManagerStatics;
 struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
 struct ISpatialAnchorStatics;
@@ -90,6 +99,7 @@ struct ISpatialEntityStoreStatics;
 struct ISpatialEntityUpdatedEventArgs;
 struct ISpatialEntityWatcher;
 struct ISpatialLocation;
+struct ISpatialLocation2;
 struct ISpatialLocator;
 struct ISpatialLocatorAttachedFrameOfReference;
 struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
@@ -98,6 +108,8 @@ struct ISpatialStageFrameOfReference;
 struct ISpatialStageFrameOfReferenceStatics;
 struct ISpatialStationaryFrameOfReference;
 struct SpatialAnchor;
+struct SpatialAnchorExportSufficiency;
+struct SpatialAnchorExporter;
 struct SpatialAnchorManager;
 struct SpatialAnchorRawCoordinateSystemAdjustedEventArgs;
 struct SpatialAnchorStore;
@@ -127,6 +139,9 @@ namespace winrt::impl {
 
 template <> struct category<Windows::Perception::Spatial::ISpatialAnchor>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialAnchor2>{ using type = interface_category; };
+template <> struct category<Windows::Perception::Spatial::ISpatialAnchorExportSufficiency>{ using type = interface_category; };
+template <> struct category<Windows::Perception::Spatial::ISpatialAnchorExporter>{ using type = interface_category; };
+template <> struct category<Windows::Perception::Spatial::ISpatialAnchorExporterStatics>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialAnchorStatics>{ using type = interface_category; };
@@ -144,6 +159,7 @@ template <> struct category<Windows::Perception::Spatial::ISpatialEntityStoreSta
 template <> struct category<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialEntityWatcher>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialLocation>{ using type = interface_category; };
+template <> struct category<Windows::Perception::Spatial::ISpatialLocation2>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialLocator>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ using type = interface_category; };
@@ -152,6 +168,8 @@ template <> struct category<Windows::Perception::Spatial::ISpatialStageFrameOfRe
 template <> struct category<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ using type = interface_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialAnchor>{ using type = class_category; };
+template <> struct category<Windows::Perception::Spatial::SpatialAnchorExportSufficiency>{ using type = class_category; };
+template <> struct category<Windows::Perception::Spatial::SpatialAnchorExporter>{ using type = class_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialAnchorManager>{ using type = class_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialAnchorStore>{ using type = class_category; };
@@ -170,6 +188,7 @@ template <> struct category<Windows::Perception::Spatial::SpatialLocatorAttached
 template <> struct category<Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs>{ using type = class_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialStageFrameOfReference>{ using type = class_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>{ using type = class_category; };
+template <> struct category<Windows::Perception::Spatial::SpatialAnchorExportPurpose>{ using type = enum_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialEntityWatcherStatus>{ using type = enum_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialLocatability>{ using type = enum_category; };
 template <> struct category<Windows::Perception::Spatial::SpatialLookDirectionRange>{ using type = enum_category; };
@@ -181,6 +200,9 @@ template <> struct category<Windows::Perception::Spatial::SpatialBoundingOriente
 template <> struct category<Windows::Perception::Spatial::SpatialBoundingSphere>{ using type = struct_category<Windows::Foundation::Numerics::float3,float>; };
 template <> struct name<Windows::Perception::Spatial::ISpatialAnchor>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchor" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialAnchor2>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchor2" }; };
+template <> struct name<Windows::Perception::Spatial::ISpatialAnchorExportSufficiency>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorExportSufficiency" }; };
+template <> struct name<Windows::Perception::Spatial::ISpatialAnchorExporter>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorExporter" }; };
+template <> struct name<Windows::Perception::Spatial::ISpatialAnchorExporterStatics>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorExporterStatics" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorManagerStatics" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorRawCoordinateSystemAdjustedEventArgs" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialAnchorStatics>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialAnchorStatics" }; };
@@ -198,6 +220,7 @@ template <> struct name<Windows::Perception::Spatial::ISpatialEntityStoreStatics
 template <> struct name<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialEntityUpdatedEventArgs" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialEntityWatcher>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialEntityWatcher" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialLocation>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialLocation" }; };
+template <> struct name<Windows::Perception::Spatial::ISpatialLocation2>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialLocation2" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialLocator>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialLocator" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialLocatorAttachedFrameOfReference" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialLocatorPositionalTrackingDeactivatingEventArgs" }; };
@@ -206,6 +229,8 @@ template <> struct name<Windows::Perception::Spatial::ISpatialStageFrameOfRefere
 template <> struct name<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialStageFrameOfReferenceStatics" }; };
 template <> struct name<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ static constexpr auto & value{ L"Windows.Perception.Spatial.ISpatialStationaryFrameOfReference" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialAnchor>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchor" }; };
+template <> struct name<Windows::Perception::Spatial::SpatialAnchorExportSufficiency>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorExportSufficiency" }; };
+template <> struct name<Windows::Perception::Spatial::SpatialAnchorExporter>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorExporter" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialAnchorManager>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorManager" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialAnchorStore>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorStore" }; };
@@ -224,6 +249,7 @@ template <> struct name<Windows::Perception::Spatial::SpatialLocatorAttachedFram
 template <> struct name<Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialStageFrameOfReference>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialStageFrameOfReference" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialStationaryFrameOfReference" }; };
+template <> struct name<Windows::Perception::Spatial::SpatialAnchorExportPurpose>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialAnchorExportPurpose" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialEntityWatcherStatus>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialEntityWatcherStatus" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialLocatability>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialLocatability" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialLookDirectionRange>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialLookDirectionRange" }; };
@@ -233,33 +259,39 @@ template <> struct name<Windows::Perception::Spatial::SpatialBoundingBox>{ stati
 template <> struct name<Windows::Perception::Spatial::SpatialBoundingFrustum>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialBoundingFrustum" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialBoundingOrientedBox>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialBoundingOrientedBox" }; };
 template <> struct name<Windows::Perception::Spatial::SpatialBoundingSphere>{ static constexpr auto & value{ L"Windows.Perception.Spatial.SpatialBoundingSphere" }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchor>{ static constexpr GUID value{ 0x0529E5CE,0x1D34,0x3702,{ 0xBC,0xEC,0xEA,0xBF,0xF5,0x78,0xA8,0x69 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchor2>{ static constexpr GUID value{ 0xED17C908,0xA695,0x4CF6,{ 0x92,0xFD,0x97,0x26,0x3B,0xA7,0x10,0x47 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ static constexpr GUID value{ 0x88E30EAB,0xF3B7,0x420B,{ 0xB0,0x86,0x8A,0x80,0xC0,0x7D,0x91,0x0D } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ static constexpr GUID value{ 0xA1E81EB8,0x56C7,0x3117,{ 0xA2,0xE4,0x81,0xE0,0xFC,0xF2,0x8E,0x00 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchorStatics>{ static constexpr GUID value{ 0xA9928642,0x0174,0x311C,{ 0xAE,0x79,0x0E,0x51,0x07,0x66,0x9F,0x16 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchorStore>{ static constexpr GUID value{ 0xB0BC3636,0x486A,0x3CB0,{ 0x9E,0x6F,0x12,0x45,0x16,0x5C,0x4D,0xB6 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>{ static constexpr GUID value{ 0x03BBF9B9,0x12D8,0x4BCE,{ 0x88,0x35,0xC5,0xDF,0x3A,0xC0,0xAD,0xAB } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialBoundingVolume>{ static constexpr GUID value{ 0xFB2065DA,0x68C3,0x33DF,{ 0xB7,0xAF,0x4C,0x78,0x72,0x07,0x99,0x9C } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>{ static constexpr GUID value{ 0x05889117,0xB3E1,0x36D8,{ 0xB0,0x17,0x56,0x61,0x81,0xA5,0xB1,0x96 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialCoordinateSystem>{ static constexpr GUID value{ 0x69EBCA4B,0x60A3,0x3586,{ 0xA6,0x53,0x59,0xA7,0xBD,0x67,0x6D,0x07 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntity>{ static constexpr GUID value{ 0x166DE955,0xE1EB,0x454C,{ 0xBA,0x08,0xE6,0xC0,0x66,0x8D,0xDC,0x65 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>{ static constexpr GUID value{ 0xA397F49B,0x156A,0x4707,{ 0xAC,0x2C,0xD3,0x1D,0x57,0x0E,0xD3,0x99 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityFactory>{ static constexpr GUID value{ 0xE1F1E325,0x349F,0x4225,{ 0xA2,0xF3,0x4B,0x01,0xC1,0x5F,0xE0,0x56 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>{ static constexpr GUID value{ 0x91741800,0x536D,0x4E9F,{ 0xAB,0xF6,0x41,0x5B,0x54,0x44,0xD6,0x51 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityStore>{ static constexpr GUID value{ 0x329788BA,0xE513,0x4F06,{ 0x88,0x9D,0x1B,0xE3,0x0E,0xCF,0x43,0xE6 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityStoreStatics>{ static constexpr GUID value{ 0x6B4B389E,0x7C50,0x4E92,{ 0x8A,0x62,0x4D,0x1D,0x4B,0x7C,0xCD,0x3E } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ static constexpr GUID value{ 0xE5671766,0x627B,0x43CB,{ 0xA4,0x9F,0xB3,0xBE,0x6D,0x47,0xDE,0xED } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialEntityWatcher>{ static constexpr GUID value{ 0xB3B85FA0,0x6D5E,0x4BBC,{ 0x80,0x5D,0x5F,0xE5,0xB9,0xBA,0x19,0x59 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialLocation>{ static constexpr GUID value{ 0x1D81D29D,0x24A1,0x37D5,{ 0x8F,0xA1,0x39,0xB4,0xF9,0xAD,0x67,0xE2 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialLocator>{ static constexpr GUID value{ 0xF6478925,0x9E0C,0x3BB6,{ 0x99,0x7E,0xB6,0x4E,0xCC,0xA2,0x4C,0xF4 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ static constexpr GUID value{ 0xE1774EF6,0x1F4F,0x499C,{ 0x96,0x25,0xEF,0x5E,0x6E,0xD7,0xA0,0x48 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ static constexpr GUID value{ 0xB8A84063,0xE3F4,0x368B,{ 0x90,0x61,0x9E,0xA9,0xD1,0xD6,0xCC,0x16 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialLocatorStatics>{ static constexpr GUID value{ 0xB76E3340,0xA7C2,0x361B,{ 0xBB,0x82,0x56,0xE9,0x3B,0x89,0xB1,0xBB } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialStageFrameOfReference>{ static constexpr GUID value{ 0x7A8A3464,0xAD0D,0x4590,{ 0xAB,0x86,0x33,0x06,0x2B,0x67,0x49,0x26 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ static constexpr GUID value{ 0xF78D5C4D,0xA0A4,0x499C,{ 0x8D,0x91,0xA8,0xC9,0x65,0xD4,0x06,0x54 } }; };
-template <> struct guid<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ static constexpr GUID value{ 0x09DBCCB9,0xBCF8,0x3E7F,{ 0xBE,0x7E,0x7E,0xDC,0xCB,0xB1,0x78,0xA8 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchor>{ static constexpr guid value{ 0x0529E5CE,0x1D34,0x3702,{ 0xBC,0xEC,0xEA,0xBF,0xF5,0x78,0xA8,0x69 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchor2>{ static constexpr guid value{ 0xED17C908,0xA695,0x4CF6,{ 0x92,0xFD,0x97,0x26,0x3B,0xA7,0x10,0x47 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorExportSufficiency>{ static constexpr guid value{ 0x77C25B2B,0x3409,0x4088,{ 0xB9,0x1B,0xFD,0xFD,0x05,0xD1,0x64,0x8F } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorExporter>{ static constexpr guid value{ 0x9A2A4338,0x24FB,0x4269,{ 0x89,0xC5,0x88,0x30,0x4A,0xEE,0xF2,0x0F } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorExporterStatics>{ static constexpr guid value{ 0xED2507B8,0x2475,0x439C,{ 0x85,0xFF,0x7F,0xED,0x34,0x1F,0xDC,0x88 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ static constexpr guid value{ 0x88E30EAB,0xF3B7,0x420B,{ 0xB0,0x86,0x8A,0x80,0xC0,0x7D,0x91,0x0D } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ static constexpr guid value{ 0xA1E81EB8,0x56C7,0x3117,{ 0xA2,0xE4,0x81,0xE0,0xFC,0xF2,0x8E,0x00 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorStatics>{ static constexpr guid value{ 0xA9928642,0x0174,0x311C,{ 0xAE,0x79,0x0E,0x51,0x07,0x66,0x9F,0x16 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorStore>{ static constexpr guid value{ 0xB0BC3636,0x486A,0x3CB0,{ 0x9E,0x6F,0x12,0x45,0x16,0x5C,0x4D,0xB6 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>{ static constexpr guid value{ 0x03BBF9B9,0x12D8,0x4BCE,{ 0x88,0x35,0xC5,0xDF,0x3A,0xC0,0xAD,0xAB } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialBoundingVolume>{ static constexpr guid value{ 0xFB2065DA,0x68C3,0x33DF,{ 0xB7,0xAF,0x4C,0x78,0x72,0x07,0x99,0x9C } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>{ static constexpr guid value{ 0x05889117,0xB3E1,0x36D8,{ 0xB0,0x17,0x56,0x61,0x81,0xA5,0xB1,0x96 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialCoordinateSystem>{ static constexpr guid value{ 0x69EBCA4B,0x60A3,0x3586,{ 0xA6,0x53,0x59,0xA7,0xBD,0x67,0x6D,0x07 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntity>{ static constexpr guid value{ 0x166DE955,0xE1EB,0x454C,{ 0xBA,0x08,0xE6,0xC0,0x66,0x8D,0xDC,0x65 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>{ static constexpr guid value{ 0xA397F49B,0x156A,0x4707,{ 0xAC,0x2C,0xD3,0x1D,0x57,0x0E,0xD3,0x99 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityFactory>{ static constexpr guid value{ 0xE1F1E325,0x349F,0x4225,{ 0xA2,0xF3,0x4B,0x01,0xC1,0x5F,0xE0,0x56 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>{ static constexpr guid value{ 0x91741800,0x536D,0x4E9F,{ 0xAB,0xF6,0x41,0x5B,0x54,0x44,0xD6,0x51 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityStore>{ static constexpr guid value{ 0x329788BA,0xE513,0x4F06,{ 0x88,0x9D,0x1B,0xE3,0x0E,0xCF,0x43,0xE6 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityStoreStatics>{ static constexpr guid value{ 0x6B4B389E,0x7C50,0x4E92,{ 0x8A,0x62,0x4D,0x1D,0x4B,0x7C,0xCD,0x3E } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ static constexpr guid value{ 0xE5671766,0x627B,0x43CB,{ 0xA4,0x9F,0xB3,0xBE,0x6D,0x47,0xDE,0xED } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialEntityWatcher>{ static constexpr guid value{ 0xB3B85FA0,0x6D5E,0x4BBC,{ 0x80,0x5D,0x5F,0xE5,0xB9,0xBA,0x19,0x59 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocation>{ static constexpr guid value{ 0x1D81D29D,0x24A1,0x37D5,{ 0x8F,0xA1,0x39,0xB4,0xF9,0xAD,0x67,0xE2 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocation2>{ static constexpr guid value{ 0x117F2416,0x38A7,0x4A18,{ 0xB4,0x04,0xAB,0x8F,0xAB,0xE1,0xD7,0x8B } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocator>{ static constexpr guid value{ 0xF6478925,0x9E0C,0x3BB6,{ 0x99,0x7E,0xB6,0x4E,0xCC,0xA2,0x4C,0xF4 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ static constexpr guid value{ 0xE1774EF6,0x1F4F,0x499C,{ 0x96,0x25,0xEF,0x5E,0x6E,0xD7,0xA0,0x48 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ static constexpr guid value{ 0xB8A84063,0xE3F4,0x368B,{ 0x90,0x61,0x9E,0xA9,0xD1,0xD6,0xCC,0x16 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialLocatorStatics>{ static constexpr guid value{ 0xB76E3340,0xA7C2,0x361B,{ 0xBB,0x82,0x56,0xE9,0x3B,0x89,0xB1,0xBB } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialStageFrameOfReference>{ static constexpr guid value{ 0x7A8A3464,0xAD0D,0x4590,{ 0xAB,0x86,0x33,0x06,0x2B,0x67,0x49,0x26 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ static constexpr guid value{ 0xF78D5C4D,0xA0A4,0x499C,{ 0x8D,0x91,0xA8,0xC9,0x65,0xD4,0x06,0x54 } }; };
+template <> struct guid_storage<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ static constexpr guid value{ 0x09DBCCB9,0xBCF8,0x3E7F,{ 0xBE,0x7E,0x7E,0xDC,0xCB,0xB1,0x78,0xA8 } }; };
 template <> struct default_interface<Windows::Perception::Spatial::SpatialAnchor>{ using type = Windows::Perception::Spatial::ISpatialAnchor; };
+template <> struct default_interface<Windows::Perception::Spatial::SpatialAnchorExportSufficiency>{ using type = Windows::Perception::Spatial::ISpatialAnchorExportSufficiency; };
+template <> struct default_interface<Windows::Perception::Spatial::SpatialAnchorExporter>{ using type = Windows::Perception::Spatial::ISpatialAnchorExporter; };
 template <> struct default_interface<Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ using type = Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs; };
 template <> struct default_interface<Windows::Perception::Spatial::SpatialAnchorStore>{ using type = Windows::Perception::Spatial::ISpatialAnchorStore; };
 template <> struct default_interface<Windows::Perception::Spatial::SpatialBoundingVolume>{ using type = Windows::Perception::Spatial::ISpatialBoundingVolume; };
@@ -277,15 +309,230 @@ template <> struct default_interface<Windows::Perception::Spatial::SpatialLocato
 template <> struct default_interface<Windows::Perception::Spatial::SpatialStageFrameOfReference>{ using type = Windows::Perception::Spatial::ISpatialStageFrameOfReference; };
 template <> struct default_interface<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>{ using type = Windows::Perception::Spatial::ISpatialStationaryFrameOfReference; };
 
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RawCoordinateSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RawCoordinateSystemAdjusted(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RawCoordinateSystemAdjusted(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchor2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RemovedByUser(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorExportSufficiency>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsMinimallySufficient(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SufficiencyLevel(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecommendedSufficiencyLevel(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorExporter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAnchorExportSufficiencyAsync(void* anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryExportAnchorAsync(void* anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose, void* stream, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorExporterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreateRelativeTo(void* coordinateSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateWithPositionRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateWithPositionAndOrientationRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAllSavedAnchors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySave(void* id, void* anchor, bool* succeeded) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* id) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryImportAnchorsAsync(void* stream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryExportAnchorsAsync(void* anchors, void* stream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialBoundingVolume>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingBox box, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromOrientedBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingOrientedBox box, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromSphere(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingSphere sphere, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromFrustum(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingFrustum frustum, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialCoordinateSystem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetTransformTo(void* target, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Anchor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Entity(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithSpatialAnchor(void* spatialAnchor, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithSpatialAnchorAndProperties(void* spatialAnchor, void* propertySet, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Entity(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SaveAsync(void* entity, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAsync(void* entity, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEntityWatcher(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityStoreStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetForRemoteSystemSession(void* session, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Entity(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialEntityWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Perception::Spatial::SpatialEntityWatcherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AbsoluteLinearVelocity(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AbsoluteLinearAcceleration(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AbsoluteAngularVelocity(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AbsoluteAngularAcceleration(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AbsoluteAngularVelocityAxisAngle(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AbsoluteAngularAccelerationAxisAngle(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Locatability(Windows::Perception::Spatial::SpatialLocatability* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LocatabilityChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LocatabilityChanged(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PositionalTrackingDeactivating(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PositionalTrackingDeactivating(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL TryLocateAtTimestamp(void* timestamp, void* coordinateSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeading(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RelativePosition(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelativePosition(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelativeOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelativeOrientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+    virtual int32_t WINRT_CALL AdjustHeading(double headingOffsetInRadians) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStationaryCoordinateSystemAtTimestamp(void* timestamp, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetRelativeHeadingAtTimestamp(void* timestamp, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Canceled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Canceled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialStageFrameOfReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MovementRange(Windows::Perception::Spatial::SpatialMovementRange* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LookDirectionRange(Windows::Perception::Spatial::SpatialLookDirectionRange* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCoordinateSystemAtCurrentLocation(void* locator, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetMovementBounds(void* coordinateSystem, uint32_t* __valueSize, Windows::Foundation::Numerics::float3** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CurrentChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CurrentChanged(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestNewStageAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialAnchor
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem RawCoordinateSystem() const;
-    event_token RawCoordinateSystemAdjusted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const;
-    using RawCoordinateSystemAdjusted_revoker = event_revoker<Windows::Perception::Spatial::ISpatialAnchor>;
+    winrt::event_token RawCoordinateSystemAdjusted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const;
+    using RawCoordinateSystemAdjusted_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialAnchor, &impl::abi_t<Windows::Perception::Spatial::ISpatialAnchor>::remove_RawCoordinateSystemAdjusted>;
     RawCoordinateSystemAdjusted_revoker RawCoordinateSystemAdjusted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const;
-    void RawCoordinateSystemAdjusted(event_token const& cookie) const;
+    void RawCoordinateSystemAdjusted(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::Perception::Spatial::ISpatialAnchor> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchor<D>; };
 
@@ -295,6 +542,31 @@ struct consume_Windows_Perception_Spatial_ISpatialAnchor2
     bool RemovedByUser() const;
 };
 template <> struct consume<Windows::Perception::Spatial::ISpatialAnchor2> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchor2<D>; };
+
+template <typename D>
+struct consume_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency
+{
+    bool IsMinimallySufficient() const;
+    double SufficiencyLevel() const;
+    double RecommendedSufficiencyLevel() const;
+};
+template <> struct consume<Windows::Perception::Spatial::ISpatialAnchorExportSufficiency> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency<D>; };
+
+template <typename D>
+struct consume_Windows_Perception_Spatial_ISpatialAnchorExporter
+{
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorExportSufficiency> GetAnchorExportSufficiencyAsync(Windows::Perception::Spatial::SpatialAnchor const& anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose const& purpose) const;
+    Windows::Foundation::IAsyncOperation<bool> TryExportAnchorAsync(Windows::Perception::Spatial::SpatialAnchor const& anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose const& purpose, Windows::Storage::Streams::IOutputStream const& stream) const;
+};
+template <> struct consume<Windows::Perception::Spatial::ISpatialAnchorExporter> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchorExporter<D>; };
+
+template <typename D>
+struct consume_Windows_Perception_Spatial_ISpatialAnchorExporterStatics
+{
+    Windows::Perception::Spatial::SpatialAnchorExporter GetDefault() const;
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
+};
+template <> struct consume<Windows::Perception::Spatial::ISpatialAnchorExporterStatics> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchorExporterStatics<D>; };
 
 template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialAnchorManagerStatics
@@ -332,9 +604,9 @@ template <> struct consume<Windows::Perception::Spatial::ISpatialAnchorStore> { 
 template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialAnchorTransferManagerStatics
 {
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(Windows::Storage::Streams::IInputStream const& stream) const;
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const& anchors, Windows::Storage::Streams::IOutputStream const& stream) const;
-    [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(Windows::Storage::Streams::IInputStream const& stream) const;
+    Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const& anchors, Windows::Storage::Streams::IOutputStream const& stream) const;
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
 };
 template <> struct consume<Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialAnchorTransferManagerStatics<D>; };
 
@@ -420,22 +692,22 @@ template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialEntityWatcher
 {
     Windows::Perception::Spatial::SpatialEntityWatcherStatus Status() const;
-    event_token Added(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const;
-    using Added_revoker = event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher>;
+    winrt::event_token Added(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const;
+    using Added_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher, &impl::abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Added>;
     Added_revoker Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const;
-    void Added(event_token const& token) const;
-    event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const;
-    using Updated_revoker = event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher>;
+    void Added(winrt::event_token const& token) const noexcept;
+    winrt::event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const;
+    using Updated_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher, &impl::abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Updated>;
     Updated_revoker Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const;
-    void Updated(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher>;
+    void Updated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher, &impl::abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const;
-    void Removed(event_token const& token) const;
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher>;
+    void Removed(winrt::event_token const& token) const noexcept;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher, &impl::abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void EnumerationCompleted(event_token const& token) const;
+    void EnumerationCompleted(winrt::event_token const& token) const noexcept;
     void Start() const;
     void Stop() const;
 };
@@ -454,17 +726,25 @@ struct consume_Windows_Perception_Spatial_ISpatialLocation
 template <> struct consume<Windows::Perception::Spatial::ISpatialLocation> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialLocation<D>; };
 
 template <typename D>
+struct consume_Windows_Perception_Spatial_ISpatialLocation2
+{
+    Windows::Foundation::Numerics::float3 AbsoluteAngularVelocityAxisAngle() const;
+    Windows::Foundation::Numerics::float3 AbsoluteAngularAccelerationAxisAngle() const;
+};
+template <> struct consume<Windows::Perception::Spatial::ISpatialLocation2> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialLocation2<D>; };
+
+template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialLocator
 {
     Windows::Perception::Spatial::SpatialLocatability Locatability() const;
-    event_token LocatabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const;
-    using LocatabilityChanged_revoker = event_revoker<Windows::Perception::Spatial::ISpatialLocator>;
+    winrt::event_token LocatabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const;
+    using LocatabilityChanged_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialLocator, &impl::abi_t<Windows::Perception::Spatial::ISpatialLocator>::remove_LocatabilityChanged>;
     LocatabilityChanged_revoker LocatabilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const;
-    void LocatabilityChanged(event_token const& cookie) const;
-    event_token PositionalTrackingDeactivating(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const;
-    using PositionalTrackingDeactivating_revoker = event_revoker<Windows::Perception::Spatial::ISpatialLocator>;
+    void LocatabilityChanged(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token PositionalTrackingDeactivating(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const;
+    using PositionalTrackingDeactivating_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialLocator, &impl::abi_t<Windows::Perception::Spatial::ISpatialLocator>::remove_PositionalTrackingDeactivating>;
     PositionalTrackingDeactivating_revoker PositionalTrackingDeactivating(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const;
-    void PositionalTrackingDeactivating(event_token const& cookie) const;
+    void PositionalTrackingDeactivating(winrt::event_token const& cookie) const noexcept;
     Windows::Perception::Spatial::SpatialLocation TryLocateAtTimestamp(Windows::Perception::PerceptionTimestamp const& timestamp, Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem) const;
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading() const;
     Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(Windows::Foundation::Numerics::float3 const& relativePosition) const;
@@ -520,10 +800,10 @@ template <typename D>
 struct consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics
 {
     Windows::Perception::Spatial::SpatialStageFrameOfReference Current() const;
-    event_token CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    using CurrentChanged_revoker = event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>;
+    winrt::event_token CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using CurrentChanged_revoker = impl::event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics, &impl::abi_t<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>::remove_CurrentChanged>;
     CurrentChanged_revoker CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    void CurrentChanged(event_token const& cookie) const;
+    void CurrentChanged(winrt::event_token const& cookie) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> RequestNewStageAsync() const;
 };
 template <> struct consume<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> { template <typename D> using type = consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>; };
@@ -571,195 +851,5 @@ struct struct_Windows_Perception_Spatial_SpatialBoundingSphere
 };
 template <> struct abi<Windows::Perception::Spatial::SpatialBoundingSphere>{ using type = struct_Windows_Perception_Spatial_SpatialBoundingSphere; };
 
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CoordinateSystem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RawCoordinateSystem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_RawCoordinateSystemAdjusted(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_RawCoordinateSystemAdjusted(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchor2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RemovedByUser(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCreateRelativeTo(void* coordinateSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateWithPositionRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateWithPositionAndOrientationRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAllSavedAnchors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TrySave(HSTRING id, void* anchor, bool* succeeded) noexcept = 0;
-    virtual HRESULT __stdcall Remove(HSTRING id) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryImportAnchorsAsync(void* stream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryExportAnchorsAsync(void* anchors, void* stream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialBoundingVolume>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingBox box, void** value) noexcept = 0;
-    virtual HRESULT __stdcall FromOrientedBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingOrientedBox box, void** value) noexcept = 0;
-    virtual HRESULT __stdcall FromSphere(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingSphere sphere, void** value) noexcept = 0;
-    virtual HRESULT __stdcall FromFrustum(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingFrustum frustum, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialCoordinateSystem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetTransformTo(void* target, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Anchor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Entity(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithSpatialAnchor(void* spatialAnchor, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithSpatialAnchorAndProperties(void* spatialAnchor, void* propertySet, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Entity(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SaveAsync(void* entity, void** action) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAsync(void* entity, void** action) noexcept = 0;
-    virtual HRESULT __stdcall CreateEntityWatcher(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityStoreStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall TryGetForRemoteSystemSession(void* session, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Entity(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialEntityWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Perception::Spatial::SpatialEntityWatcherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Added(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Updated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialLocation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AbsoluteLinearVelocity(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AbsoluteLinearAcceleration(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AbsoluteAngularVelocity(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AbsoluteAngularAcceleration(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialLocator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Locatability(Windows::Perception::Spatial::SpatialLocatability* value) noexcept = 0;
-    virtual HRESULT __stdcall add_LocatabilityChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_LocatabilityChanged(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PositionalTrackingDeactivating(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PositionalTrackingDeactivating(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall TryLocateAtTimestamp(void* timestamp, void* coordinateSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeading(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RelativePosition(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelativePosition(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelativeOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelativeOrientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-    virtual HRESULT __stdcall AdjustHeading(double headingOffsetInRadians) noexcept = 0;
-    virtual HRESULT __stdcall GetStationaryCoordinateSystemAtTimestamp(void* timestamp, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryGetRelativeHeadingAtTimestamp(void* timestamp, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Canceled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Canceled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialLocatorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialStageFrameOfReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CoordinateSystem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MovementRange(Windows::Perception::Spatial::SpatialMovementRange* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LookDirectionRange(Windows::Perception::Spatial::SpatialLookDirectionRange* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCoordinateSystemAtCurrentLocation(void* locator, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetMovementBounds(void* coordinateSystem, uint32_t* __valueSize, Windows::Foundation::Numerics::float3** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_CurrentChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_CurrentChanged(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall RequestNewStageAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CoordinateSystem(void** value) noexcept = 0;
-};};
 
 }

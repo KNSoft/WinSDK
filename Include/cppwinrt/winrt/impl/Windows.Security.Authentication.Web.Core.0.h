@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -127,22 +127,22 @@ template <> struct name<Windows::Security::Authentication::Web::Core::WebTokenRe
 template <> struct name<Windows::Security::Authentication::Web::Core::FindAllWebAccountsStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.Core.FindAllWebAccountsStatus" }; };
 template <> struct name<Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType" }; };
 template <> struct name<Windows::Security::Authentication::Web::Core::WebTokenRequestStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.Web.Core.WebTokenRequestStatus" }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IFindAllAccountsResult>{ static constexpr GUID value{ 0xA5812B5D,0xB72E,0x420C,{ 0x86,0xAB,0xAA,0xC0,0xD7,0xB7,0x26,0x1F } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAccountEventArgs>{ static constexpr GUID value{ 0x6FB7037D,0x424E,0x44EC,{ 0x97,0x7C,0xEF,0x24,0x15,0x46,0x2A,0x5A } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>{ static constexpr GUID value{ 0x7445F5FD,0xAA9D,0x4619,{ 0x8D,0x5D,0xC1,0x38,0xA4,0xED,0xE3,0xE5 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>{ static constexpr GUID value{ 0x6ACA7C92,0xA581,0x4479,{ 0x9C,0x10,0x75,0x2E,0xFF,0x44,0xFD,0x34 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics2>{ static constexpr GUID value{ 0xF584184A,0x8B57,0x4820,{ 0xB6,0xA4,0x70,0xA5,0xB6,0xFC,0xF4,0x4A } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics3>{ static constexpr GUID value{ 0x2404EEB2,0x8924,0x4D93,{ 0xAB,0x3A,0x99,0x68,0x8B,0x41,0x9D,0x56 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics4>{ static constexpr GUID value{ 0x54E633FE,0x96E0,0x41E8,{ 0x98,0x32,0x12,0x98,0x89,0x7C,0x2A,0xAF } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebProviderError>{ static constexpr GUID value{ 0xDB191BB1,0x50C5,0x4809,{ 0x8D,0xCA,0x09,0xC9,0x94,0x10,0x24,0x5C } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebProviderErrorFactory>{ static constexpr GUID value{ 0xE3C40A2D,0x89EF,0x4E37,{ 0x84,0x7F,0xA8,0xB9,0xD5,0xA3,0x29,0x10 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenRequest>{ static constexpr GUID value{ 0xB77B4D68,0xADCB,0x4673,{ 0xB3,0x64,0x0C,0xF7,0xB3,0x5C,0xAF,0x97 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenRequest2>{ static constexpr GUID value{ 0xD700C079,0x30C8,0x4397,{ 0x96,0x54,0x96,0x1C,0x3B,0xE8,0xB8,0x55 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenRequest3>{ static constexpr GUID value{ 0x5A755B51,0x3BB1,0x41A5,{ 0xA6,0x3D,0x90,0xBC,0x32,0xC7,0xDB,0x9A } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>{ static constexpr GUID value{ 0x6CF2141C,0x0FF0,0x4C67,{ 0xB8,0x4F,0x99,0xDD,0xBE,0x4A,0x72,0xC9 } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenRequestResult>{ static constexpr GUID value{ 0xC12A8305,0xD1F8,0x4483,{ 0x8D,0x54,0x38,0xFE,0x29,0x27,0x84,0xFF } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenResponse>{ static constexpr GUID value{ 0x67A7C5CA,0x83F6,0x44C6,{ 0xA3,0xB1,0x0E,0xB6,0x9E,0x41,0xFA,0x8A } }; };
-template <> struct guid<Windows::Security::Authentication::Web::Core::IWebTokenResponseFactory>{ static constexpr GUID value{ 0xAB6BF7F8,0x5450,0x4EF6,{ 0x97,0xF7,0x05,0x2B,0x04,0x31,0xC0,0xF0 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IFindAllAccountsResult>{ static constexpr guid value{ 0xA5812B5D,0xB72E,0x420C,{ 0x86,0xAB,0xAA,0xC0,0xD7,0xB7,0x26,0x1F } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAccountEventArgs>{ static constexpr guid value{ 0x6FB7037D,0x424E,0x44EC,{ 0x97,0x7C,0xEF,0x24,0x15,0x46,0x2A,0x5A } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>{ static constexpr guid value{ 0x7445F5FD,0xAA9D,0x4619,{ 0x8D,0x5D,0xC1,0x38,0xA4,0xED,0xE3,0xE5 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>{ static constexpr guid value{ 0x6ACA7C92,0xA581,0x4479,{ 0x9C,0x10,0x75,0x2E,0xFF,0x44,0xFD,0x34 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics2>{ static constexpr guid value{ 0xF584184A,0x8B57,0x4820,{ 0xB6,0xA4,0x70,0xA5,0xB6,0xFC,0xF4,0x4A } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics3>{ static constexpr guid value{ 0x2404EEB2,0x8924,0x4D93,{ 0xAB,0x3A,0x99,0x68,0x8B,0x41,0x9D,0x56 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics4>{ static constexpr guid value{ 0x54E633FE,0x96E0,0x41E8,{ 0x98,0x32,0x12,0x98,0x89,0x7C,0x2A,0xAF } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebProviderError>{ static constexpr guid value{ 0xDB191BB1,0x50C5,0x4809,{ 0x8D,0xCA,0x09,0xC9,0x94,0x10,0x24,0x5C } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebProviderErrorFactory>{ static constexpr guid value{ 0xE3C40A2D,0x89EF,0x4E37,{ 0x84,0x7F,0xA8,0xB9,0xD5,0xA3,0x29,0x10 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenRequest>{ static constexpr guid value{ 0xB77B4D68,0xADCB,0x4673,{ 0xB3,0x64,0x0C,0xF7,0xB3,0x5C,0xAF,0x97 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenRequest2>{ static constexpr guid value{ 0xD700C079,0x30C8,0x4397,{ 0x96,0x54,0x96,0x1C,0x3B,0xE8,0xB8,0x55 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenRequest3>{ static constexpr guid value{ 0x5A755B51,0x3BB1,0x41A5,{ 0xA6,0x3D,0x90,0xBC,0x32,0xC7,0xDB,0x9A } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>{ static constexpr guid value{ 0x6CF2141C,0x0FF0,0x4C67,{ 0xB8,0x4F,0x99,0xDD,0xBE,0x4A,0x72,0xC9 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenRequestResult>{ static constexpr guid value{ 0xC12A8305,0xD1F8,0x4483,{ 0x8D,0x54,0x38,0xFE,0x29,0x27,0x84,0xFF } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenResponse>{ static constexpr guid value{ 0x67A7C5CA,0x83F6,0x44C6,{ 0xA3,0xB1,0x0E,0xB6,0x9E,0x41,0xFA,0x8A } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Web::Core::IWebTokenResponseFactory>{ static constexpr guid value{ 0xAB6BF7F8,0x5450,0x4EF6,{ 0x97,0xF7,0x05,0x2B,0x04,0x31,0xC0,0xF0 } }; };
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::FindAllAccountsResult>{ using type = Windows::Security::Authentication::Web::Core::IFindAllAccountsResult; };
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::WebAccountEventArgs>{ using type = Windows::Security::Authentication::Web::Core::IWebAccountEventArgs; };
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::WebAccountMonitor>{ using type = Windows::Security::Authentication::Web::Core::IWebAccountMonitor; };
@@ -150,6 +150,121 @@ template <> struct default_interface<Windows::Security::Authentication::Web::Cor
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::WebTokenRequest>{ using type = Windows::Security::Authentication::Web::Core::IWebTokenRequest; };
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>{ using type = Windows::Security::Authentication::Web::Core::IWebTokenRequestResult; };
 template <> struct default_interface<Windows::Security::Authentication::Web::Core::WebTokenResponse>{ using type = Windows::Security::Authentication::Web::Core::IWebTokenResponse; };
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IFindAllAccountsResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Accounts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Security::Authentication::Web::Core::FindAllWebAccountsStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderError(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAccountEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Account(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DefaultSignInAccountChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DefaultSignInAccountChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTokenSilentlyAsync(void* request, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTokenSilentlyWithWebAccountAsync(void* request, void* webAccount, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestTokenAsync(void* request, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestTokenWithWebAccountAsync(void* request, void* webAccount, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAccountAsync(void* provider, void* webAccountId, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAccountProviderAsync(void* webAccountProviderId, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAccountProviderWithAuthorityAsync(void* webAccountProviderId, void* authority, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAccountProviderWithAuthorityForUserAsync(void* webAccountProviderId, void* authority, void* user, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWebAccountMonitor(void* webAccounts, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAllAccountsAsync(void* provider, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAccountsWithClientIdAsync(void* provider, void* clientId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindSystemAccountProviderAsync(void* webAccountProviderId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindSystemAccountProviderWithAuthorityAsync(void* webAccountProviderId, void* authority, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindSystemAccountProviderWithAuthorityForUserAsync(void* webAccountProviderId, void* authority, void* user, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebProviderError>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ErrorMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebProviderErrorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t errorCode, void* errorMessage, void** webProviderError) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebAccountProvider(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scope(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClientId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PromptType(Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** requestProperties) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppProperties(void** requestProperties) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CorrelationId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CorrelationId(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* provider, void* scope, void* clientId, void** webTokenRequest) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithPromptType(void* provider, void* scope, void* clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType, void** webTokenRequest) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithProvider(void* provider, void** webTokenRequest) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithScope(void* provider, void* scope, void** webTokenRequest) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequestResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ResponseData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseStatus(Windows::Security::Authentication::Web::Core::WebTokenRequestStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseError(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL InvalidateCacheAsync(void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenResponse>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Token(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderError(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WebAccount(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenResponseFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithToken(void* token, void** webTokenResponse) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTokenAndAccount(void* token, void* webAccount, void** webTokenResponse) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTokenAccountAndError(void* token, void* webAccount, void* error, void** webTokenResponse) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Authentication_Web_Core_IFindAllAccountsResult
@@ -170,18 +285,18 @@ template <> struct consume<Windows::Security::Authentication::Web::Core::IWebAcc
 template <typename D>
 struct consume_Windows_Security_Authentication_Web_Core_IWebAccountMonitor
 {
-    event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
-    using Updated_revoker = event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>;
+    winrt::event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
+    using Updated_revoker = impl::event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor, &impl::abi_t<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>::remove_Updated>;
     Updated_revoker Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
-    void Updated(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>;
+    void Updated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor, &impl::abi_t<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> const& handler) const;
-    void Removed(event_token const& token) const;
-    event_token DefaultSignInAccountChanged(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> const& handler) const;
-    using DefaultSignInAccountChanged_revoker = event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>;
+    void Removed(winrt::event_token const& token) const noexcept;
+    winrt::event_token DefaultSignInAccountChanged(Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> const& handler) const;
+    using DefaultSignInAccountChanged_revoker = impl::event_revoker<Windows::Security::Authentication::Web::Core::IWebAccountMonitor, &impl::abi_t<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>::remove_DefaultSignInAccountChanged>;
     DefaultSignInAccountChanged_revoker DefaultSignInAccountChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Foundation::IInspectable> const& handler) const;
-    void DefaultSignInAccountChanged(event_token const& token) const;
+    void DefaultSignInAccountChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Security::Authentication::Web::Core::IWebAccountMonitor> { template <typename D> using type = consume_Windows_Security_Authentication_Web_Core_IWebAccountMonitor<D>; };
 
@@ -303,120 +418,5 @@ struct consume_Windows_Security_Authentication_Web_Core_IWebTokenResponseFactory
     Windows::Security::Authentication::Web::Core::WebTokenResponse CreateWithTokenAccountAndError(param::hstring const& token, Windows::Security::Credentials::WebAccount const& webAccount, Windows::Security::Authentication::Web::Core::WebProviderError const& error) const;
 };
 template <> struct consume<Windows::Security::Authentication::Web::Core::IWebTokenResponseFactory> { template <typename D> using type = consume_Windows_Security_Authentication_Web_Core_IWebTokenResponseFactory<D>; };
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IFindAllAccountsResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Accounts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Security::Authentication::Web::Core::FindAllWebAccountsStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderError(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAccountEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Account(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAccountMonitor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Updated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DefaultSignInAccountChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DefaultSignInAccountChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTokenSilentlyAsync(void* request, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetTokenSilentlyWithWebAccountAsync(void* request, void* webAccount, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall RequestTokenAsync(void* request, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall RequestTokenWithWebAccountAsync(void* request, void* webAccount, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall FindAccountAsync(void* provider, HSTRING webAccountId, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall FindAccountProviderAsync(HSTRING webAccountProviderId, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, void* user, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWebAccountMonitor(void* webAccounts, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebAuthenticationCoreManagerStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAllAccountsAsync(void* provider, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAccountsWithClientIdAsync(void* provider, HSTRING clientId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindSystemAccountProviderAsync(HSTRING webAccountProviderId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindSystemAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindSystemAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, void* user, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebProviderError>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ErrorMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebProviderErrorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t errorCode, HSTRING errorMessage, void** webProviderError) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebAccountProvider(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scope(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClientId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PromptType(Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** requestProperties) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppProperties(void** requestProperties) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequest3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CorrelationId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CorrelationId(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* provider, HSTRING scope, HSTRING clientId, void** webTokenRequest) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithPromptType(void* provider, HSTRING scope, HSTRING clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType, void** webTokenRequest) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithProvider(void* provider, void** webTokenRequest) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithScope(void* provider, HSTRING scope, void** webTokenRequest) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenRequestResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ResponseData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseStatus(Windows::Security::Authentication::Web::Core::WebTokenRequestStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseError(void** value) noexcept = 0;
-    virtual HRESULT __stdcall InvalidateCacheAsync(void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenResponse>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Token(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderError(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WebAccount(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Web::Core::IWebTokenResponseFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithToken(HSTRING token, void** webTokenResponse) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTokenAndAccount(HSTRING token, void* webAccount, void** webTokenResponse) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTokenAccountAndError(HSTRING token, void* webAccount, void* error, void** webTokenResponse) noexcept = 0;
-};};
 
 }

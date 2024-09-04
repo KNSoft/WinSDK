@@ -282,6 +282,15 @@ DEFINE_GUID( GUID_ALLOW_DISPLAY_REQUIRED, 0xA9CEB8DA, 0xCD46, 0x44FB, 0xA9, 0x8B
 //
 DEFINE_GUID(GUID_VIDEO_CONSOLE_LOCK_TIMEOUT, 0x8ec4b3a5, 0x6868, 0x48c2, 0xbe, 0x75, 0x4f, 0x30, 0x44, 0xbe, 0x88, 0xa7);
 
+//
+// Specifies power settings which will decide whether to
+// prefer visual quality or battery life for an Advanced
+// Color capable display
+//
+// {684C3E69-A4F7-4014-8754-D45179A56167}
+//
+DEFINE_GUID(GUID_ADVANCED_COLOR_QUALITY_BIAS, 0x684c3e69, 0xa4f7, 0x4014, 0x87, 0x54, 0xd4, 0x51, 0x79, 0xa5, 0x61, 0x67);
+
 
 // Adaptive power behavior settings
 // --------------------------------
@@ -868,6 +877,14 @@ DEFINE_GUID(GUID_PROCESSOR_PERF_AUTONOMOUS_MODE,
 DEFINE_GUID(GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE,
 0x36687f9e, 0xe3a5, 0x4dbf, 0xb1, 0xdc, 0x15, 0xeb, 0x38, 0x1c, 0x68, 0x63);
 
+//
+// Specifies the tradeoff between performance and energy the processor should
+// make when operating in autonomous mode for class 1 processors.
+//
+// {36687F9E-E3A5-4dbf-B1DC-15EB381C6864}
+DEFINE_GUID(GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_1,
+0x36687f9e, 0xe3a5, 0x4dbf, 0xb1, 0xdc, 0x15, 0xeb, 0x38, 0x1c, 0x68, 0x64);
+
 #define PROCESSOR_PERF_PERFORMANCE_PREFERENCE 0xff
 #define PROCESSOR_PERF_ENERGY_PREFERENCE         0
 
@@ -1303,6 +1320,105 @@ DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
 //
 DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY, 0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
 
+//
+// Processor responsiveness settings
+//
+// Specifies the number of responsiveness events required to disable
+// responsiveness policy overrides.
+//
+// {38B8383D-CCE0-4c79-9E3E-56A4F17CC480}
+//
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD,
+0x38b8383d, 0xcce0, 0x4c79, 0x9e, 0x3e, 0x56, 0xa4, 0xf1, 0x7c, 0xc4, 0x80);
+
+//
+// Specifies the number of responsiveness events required to disable
+// responsiveness policy overrides for efficiency class 1 processors.
+//
+// {38B8383D-CCE0-4c79-9E3E-56A4F17CC481}
+//
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD_1,
+0x38b8383d, 0xcce0, 0x4c79, 0x9e, 0x3e, 0x56, 0xa4, 0xf1, 0x7c, 0xc4, 0x81);
+
+//
+// Specifies the number of responsiveness events required to enable
+// responsiveness policy overrides.
+//
+// {3D44E256-7222-4415-A9ED-9C45FA3DD830}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD,
+0x3d44e256, 0x7222, 0x4415, 0xa9, 0xed, 0x9c, 0x45, 0xfa, 0x3d, 0xd8, 0x30);
+
+//
+// Specifies the number of responsiveness events required to enable
+// responsiveness policy overrides for efficiency class 1 processors.
+//
+// {3D44E256-7222-4415-A9ED-9C45FA3DD831}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1,
+0x3d44e256, 0x7222, 0x4415, 0xa9, 0xed, 0x9c, 0x45, 0xfa, 0x3d, 0xd8, 0x31);
+
+//
+// Specifies the number of consecutive perf checks with a disable hint before
+// responsivenss overrides will be disabled.
+//
+// {F565999F-3FB0-411a-A226-3F0198DEC130}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME, 
+0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x30);
+
+//
+// Specifies the number of consecutive perf checks with a disable hint before
+// responsivenss overrides will be disabled for efficiency class 1 processors.
+//
+// {F565999F-3FB0-411a-A226-3F0198DEC131}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1, 
+0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x31);
+
+//
+// Specifies the number of consecutive perf checks with a enable hint before
+// responsivenss overrides will be enabled.
+//
+// {3D915188-7830-49ae-A79A-0FB0A1E5A200}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME, 
+0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x0);
+
+//
+// Specifies the number of consecutive perf checks with a enable hint before
+// responsivenss overrides will be enabled for efficiency class 1 processors.
+//
+// {3D915188-7830-49ae-A79A-0FB0A1E5A201}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1, 
+0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x1);
+
+//
+// Specifies the ceiling placed on EPP when responsiveness hints are enabled.
+//
+// {4427C73B-9756-4a5c-B84B-C7BDA79C7320}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING, 
+0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x20);
+
+//
+// Specifies the ceiling placed on EPP when responsiveness hints are enabled
+// for efficiency class 1 processors.
+//
+// {4427C73B-9756-4a5c-B84B-C7BDA79C7321}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1, 
+0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x21);
+
+//
+// Specifies the floor placed on processor performance when responsiveness hints
+// are enabled.
+//
+// {CE8E92EE-6A86-4572-BFE0-20C21D03CD40}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR, 
+0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x40);
+
+//
+// Specifies the floor placed on processor performance when responsiveness hints
+// are enabled for efficiency class 1 processors.
+//
+// {CE8E92EE-6A86-4572-BFE0-20C21D03CD41}
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1, 
+0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x41);
+
 // Lock Console on Wake
 // --------------------
 //
@@ -1640,14 +1756,15 @@ typedef enum _POWER_STATE_TYPE {
 typedef struct _SYSTEM_POWER_STATE_CONTEXT {
     union {
         struct {
-            ULONG   Reserved1             : 8;
-            ULONG   TargetSystemState     : 4;
-            ULONG   EffectiveSystemState  : 4;
-            ULONG   CurrentSystemState    : 4;
-            ULONG   IgnoreHibernationPath : 1;
-            ULONG   PseudoTransition      : 1;
-            ULONG   KernelSoftReboot      : 1;
-            ULONG   Reserved2             : 9;
+            ULONG   Reserved1               : 8;
+            ULONG   TargetSystemState       : 4;
+            ULONG   EffectiveSystemState    : 4;
+            ULONG   CurrentSystemState      : 4;
+            ULONG   IgnoreHibernationPath   : 1;
+            ULONG   PseudoTransition        : 1;
+            ULONG   KernelSoftReboot        : 1;
+            ULONG   DirectedDripsTransition : 1;
+            ULONG   Reserved2               : 8;
         } DUMMYSTRUCTNAME;
 
         ULONG ContextAsUlong;
@@ -1853,8 +1970,8 @@ typedef enum {
     ExitLatencySamplingPercentage,
     RegisterSpmPowerSettings,
     PlatformIdleStates,
-    ProcessorIdleVeto,
-    PlatformIdleVeto,
+    ProcessorIdleVeto,                              // Deprecated.
+    PlatformIdleVeto,                               // Deprecated.
     SystemBatteryStatePrecise,
     ThermalEvent,
     PowerRequestActionInternal,
@@ -1975,6 +2092,7 @@ typedef enum {
     MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
+    MonitorRequestReasonDirectedDrips,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 

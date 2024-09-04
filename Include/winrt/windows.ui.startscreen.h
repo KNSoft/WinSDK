@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.startscreen.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -457,6 +469,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager ABI::Windows::UI::StartScreen::IStartScreenManager
 
 #endif // ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface IStartScreenManager2;
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 ABI::Windows::UI::StartScreen::IStartScreenManager2
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
@@ -1388,6 +1414,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* StartScreen */} /* ABI */
+
 
 
 
@@ -2612,6 +2639,56 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager;
 
 /*
  *
+ * Interface Windows.UI.StartScreen.IStartScreenManager2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.StartScreen.StartScreenManager
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.StartScreen.IStartScreenManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_IStartScreenManager2[] = L"Windows.UI.StartScreen.IStartScreenManager2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                /* [object, uuid("08A716B6-316B-4AD9-ACB8-FE9CF00BD608"), exclusiveto, contract] */
+                MIDL_INTERFACE("08A716B6-316B-4AD9-ACB8-FE9CF00BD608")
+                IStartScreenManager2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ContainsSecondaryTileAsync(
+                        /* [in] */__RPC__in HSTRING tileId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TryRemoveSecondaryTileAsync(
+                        /* [in] */__RPC__in HSTRING tileId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IStartScreenManager2=_uuidof(IStartScreenManager2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.StartScreen.IStartScreenManagerStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -2948,6 +3025,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ISecondaryTile ** Default Interface **
  *    Windows.UI.StartScreen.ISecondaryTile2
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -2971,7 +3050,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ISecondaryTileVisualElements3
  *    Windows.UI.StartScreen.ISecondaryTileVisualElements4
  *
- * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -2995,6 +3074,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.StartScreen.IStartScreenManager ** Default Interface **
+ *    Windows.UI.StartScreen.IStartScreenManager2
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -3017,7 +3099,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ITileMixedRealityModel ** Default Interface **
  *    Windows.UI.StartScreen.ITileMixedRealityModel2
  *
- * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
@@ -3182,6 +3264,12 @@ typedef interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTileVisualElement
 typedef interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager;
 
 #endif // ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2;
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManagerStatics_FWD_DEFINED__
@@ -4714,6 +4802,7 @@ typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileOptions __x_ABI_CWindows_CUI
 
 
 typedef enum __x_ABI_CWindows_CUI_CStartScreen_CTileSize __x_ABI_CWindows_CUI_CStartScreen_CTileSize;
+
 
 
 
@@ -6988,6 +7077,112 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager;
 
 /*
  *
+ * Interface Windows.UI.StartScreen.IStartScreenManager2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.StartScreen.StartScreenManager
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.StartScreen.IStartScreenManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_StartScreen_IStartScreenManager2[] = L"Windows.UI.StartScreen.IStartScreenManager2";
+/* [object, uuid("08A716B6-316B-4AD9-ACB8-FE9CF00BD608"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ContainsSecondaryTileAsync )(
+        __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+        /* [in] */__RPC__in HSTRING tileId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryRemoveSecondaryTileAsync )(
+        __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2 * This,
+        /* [in] */__RPC__in HSTRING tileId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_ContainsSecondaryTileAsync(This,tileId,operation) \
+    ( (This)->lpVtbl->ContainsSecondaryTileAsync(This,tileId,operation) )
+
+#define __x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_TryRemoveSecondaryTileAsync(This,tileId,operation) \
+    ( (This)->lpVtbl->TryRemoveSecondaryTileAsync(This,tileId,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CStartScreen_CIStartScreenManager2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.StartScreen.IStartScreenManagerStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -7669,6 +7864,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ISecondaryTile ** Default Interface **
  *    Windows.UI.StartScreen.ISecondaryTile2
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -7692,7 +7889,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ISecondaryTileVisualElements3
  *    Windows.UI.StartScreen.ISecondaryTileVisualElements4
  *
- * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -7716,6 +7913,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.StartScreen.IStartScreenManager ** Default Interface **
+ *    Windows.UI.StartScreen.IStartScreenManager2
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -7738,7 +7938,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.StartScreen.ITileMixedRealityModel ** Default Interface **
  *    Windows.UI.StartScreen.ITileMixedRealityModel2
  *
- * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000

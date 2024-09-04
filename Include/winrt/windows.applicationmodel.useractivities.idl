@@ -71,6 +71,8 @@ namespace Windows
 
             interface IUserActivity2;
 
+            interface IUserActivity3;
+
             interface IUserActivityAttribution;
 
             interface IUserActivityAttributionFactory;
@@ -209,6 +211,15 @@ namespace Windows
                 HRESULT ToJson([out] [retval] HSTRING* result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.ApplicationModel.UserActivities.UserActivity)]
+            [uuid(E7697744-E1A2-5147-8E06-55F1EEEF271C)]
+            interface IUserActivity3 : IInspectable
+            {
+                [propget] HRESULT IsRoamable([out] [retval] boolean* value);
+                [propput] HRESULT IsRoamable([in] boolean value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 5.0)]
             [exclusiveto(Windows.ApplicationModel.UserActivities.UserActivityAttribution)]
             [uuid(34A5C8B5-86DD-4AEC-A491-6A4FAEA5D22E)]
@@ -227,7 +238,7 @@ namespace Windows
             [uuid(E62BD252-C566-4F42-9974-916C4D76377E)]
             interface IUserActivityAttributionFactory : IInspectable
             {
-                HRESULT CreateWithUri([in] Windows.Foundation.Uri* iconUri, [out] [retval] Windows.ApplicationModel.UserActivities.UserActivityAttribution** result);
+                HRESULT CreateWithUri([in] Windows.Foundation.Uri* iconUri, [out] [retval] Windows.ApplicationModel.UserActivities.UserActivityAttribution** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -254,15 +265,13 @@ namespace Windows
             [uuid(C8C005AB-198D-4D80-ABB2-C9775EC4A729)]
             interface IUserActivityChannelStatics : IInspectable
             {
-                HRESULT GetDefault([out] [retval] Windows.ApplicationModel.UserActivities.UserActivityChannel** value);
+                HRESULT GetDefault([out] [retval] Windows.ApplicationModel.UserActivities.UserActivityChannel** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [exclusiveto(Windows.ApplicationModel.UserActivities.UserActivityChannel)]
             [uuid(8E87DE30-AA4F-4624-9AD0-D40F3BA0317C)]
             interface IUserActivityChannelStatics2 : IInspectable
-                requires
-                    Windows.ApplicationModel.UserActivities.IUserActivityChannelStatics
             {
                 HRESULT DisableAutoSessionCreation();
                 HRESULT TryGetForWebAccount([in] Windows.Security.Credentials.WebAccount* account, [out] [retval] Windows.ApplicationModel.UserActivities.UserActivityChannel** result);
@@ -288,7 +297,7 @@ namespace Windows
             [uuid(7C385758-361D-4A67-8A3B-34CA2978F9A3)]
             interface IUserActivityFactory : IInspectable
             {
-                HRESULT CreateWithActivityId([in] HSTRING activityId, [out] [retval] Windows.ApplicationModel.UserActivities.UserActivity** result);
+                HRESULT CreateWithActivityId([in] HSTRING activityId, [out] [retval] Windows.ApplicationModel.UserActivities.UserActivity** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -329,8 +338,6 @@ namespace Windows
             [exclusiveto(Windows.ApplicationModel.UserActivities.UserActivitySession)]
             [uuid(AE434D78-24FA-44A3-AD48-6EDA61AA1924)]
             interface IUserActivitySession : IInspectable
-                requires
-                    Windows.Foundation.IClosable
             {
                 [propget] HRESULT ActivityId([out] [retval] HSTRING* value);
             }
@@ -385,10 +392,12 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 5.0)]
             [marshaling_behavior(agile)]
             [static(Windows.ApplicationModel.UserActivities.IUserActivityStatics, Windows.Foundation.UniversalApiContract, 6.0)]
+            [threading(both)]
             runtimeclass UserActivity
             {
                 [default] interface Windows.ApplicationModel.UserActivities.IUserActivity;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.ApplicationModel.UserActivities.IUserActivity2;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.UserActivities.IUserActivity3;
             }
 
             [activatable(Windows.ApplicationModel.UserActivities.IUserActivityAttributionFactory, Windows.Foundation.UniversalApiContract, 5.0)]
@@ -405,6 +414,7 @@ namespace Windows
             [marshaling_behavior(agile)]
             [static(Windows.ApplicationModel.UserActivities.IUserActivityChannelStatics, Windows.Foundation.UniversalApiContract, 5.0)]
             [static(Windows.ApplicationModel.UserActivities.IUserActivityChannelStatics2, Windows.Foundation.UniversalApiContract, 6.0)]
+            [threading(both)]
             runtimeclass UserActivityChannel
             {
                 [default] interface Windows.ApplicationModel.UserActivities.IUserActivityChannel;
@@ -452,7 +462,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass UserActivitySessionHistoryItem
             {
                 [default] interface Windows.ApplicationModel.UserActivities.IUserActivitySessionHistoryItem;

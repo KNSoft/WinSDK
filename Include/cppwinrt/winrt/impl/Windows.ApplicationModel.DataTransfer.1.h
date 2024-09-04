@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -14,11 +14,46 @@
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::DataTransfer {
 
+struct WINRT_EBO IClipboardContentOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClipboardContentOptions>
+{
+    IClipboardContentOptions(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClipboardHistoryChangedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClipboardHistoryChangedEventArgs>
+{
+    IClipboardHistoryChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClipboardHistoryItem :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClipboardHistoryItem>
+{
+    IClipboardHistoryItem(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClipboardHistoryItemsResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClipboardHistoryItemsResult>
+{
+    IClipboardHistoryItemsResult(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IClipboardStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IClipboardStatics>
 {
     IClipboardStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClipboardStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClipboardStatics2>
+{
+    IClipboardStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IDataPackage :
@@ -73,8 +108,7 @@ struct WINRT_EBO IDataPackagePropertySet4 :
 
 struct WINRT_EBO IDataPackagePropertySetView :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IDataPackagePropertySetView>,
-    impl::require<IDataPackagePropertySetView, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>, Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>
+    impl::consume_t<IDataPackagePropertySetView>
 {
     IDataPackagePropertySetView(std::nullptr_t = nullptr) noexcept {}
 };
@@ -98,6 +132,13 @@ struct WINRT_EBO IDataPackagePropertySetView4 :
     impl::consume_t<IDataPackagePropertySetView4>
 {
     IDataPackagePropertySetView4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDataPackagePropertySetView5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDataPackagePropertySetView5>
+{
+    IDataPackagePropertySetView5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IDataPackageView :

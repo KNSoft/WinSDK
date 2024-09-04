@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -285,38 +285,38 @@ template <typename D> Windows::Devices::Sms::SmsDeviceStatus consume_Windows_Dev
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(Windows::Devices::Sms::SmsMessageReceivedEventHandler const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(Windows::Devices::Sms::SmsMessageReceivedEventHandler const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->add_SmsMessageReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Sms::ISmsDevice> consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(auto_revoke_t, Windows::Devices::Sms::SmsMessageReceivedEventHandler const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived_revoker consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(auto_revoke_t, Windows::Devices::Sms::SmsMessageReceivedEventHandler const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Sms::ISmsDevice>(this, &abi_t<Windows::Devices::Sms::ISmsDevice>::remove_SmsMessageReceived, SmsMessageReceived(eventHandler));
+    return impl::make_event_revoker<D, SmsMessageReceived_revoker>(this, SmsMessageReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Sms_ISmsDevice<D>::SmsMessageReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->remove_SmsMessageReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->remove_SmsMessageReceived(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->add_SmsDeviceStatusChanged(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Sms::ISmsDevice> consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(auto_revoke_t, Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged_revoker consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(auto_revoke_t, Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Sms::ISmsDevice>(this, &abi_t<Windows::Devices::Sms::ISmsDevice>::remove_SmsDeviceStatusChanged, SmsDeviceStatusChanged(eventHandler));
+    return impl::make_event_revoker<D, SmsDeviceStatusChanged_revoker>(this, SmsDeviceStatusChanged(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Sms_ISmsDevice<D>::SmsDeviceStatusChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->remove_SmsDeviceStatusChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Sms::ISmsDevice)->remove_SmsDeviceStatusChanged(get_abi(eventCookie)));
 }
 
 template <typename D> hstring consume_Windows_Devices_Sms_ISmsDevice2<D>::SmscAddress() const
@@ -380,21 +380,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sms
     return asyncInfo;
 }
 
-template <typename D> event_token consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice2)->add_DeviceStatusChanged(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Sms::ISmsDevice2> consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged_revoker consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Sms::ISmsDevice2>(this, &abi_t<Windows::Devices::Sms::ISmsDevice2>::remove_DeviceStatusChanged, DeviceStatusChanged(eventHandler));
+    return impl::make_event_revoker<D, DeviceStatusChanged_revoker>(this, DeviceStatusChanged(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Sms_ISmsDevice2<D>::DeviceStatusChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsDevice2)->remove_DeviceStatusChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Sms::ISmsDevice2)->remove_DeviceStatusChanged(get_abi(eventCookie)));
 }
 
 template <typename D> hstring consume_Windows_Devices_Sms_ISmsDevice2Statics<D>::GetDeviceSelector() const
@@ -746,21 +746,21 @@ template <typename D> void consume_Windows_Devices_Sms_ISmsMessageRegistration<D
     check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsMessageRegistration)->Unregister());
 }
 
-template <typename D> event_token consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsMessageRegistration)->add_MessageReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Sms::ISmsMessageRegistration> consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived_revoker consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Sms::ISmsMessageRegistration>(this, &abi_t<Windows::Devices::Sms::ISmsMessageRegistration>::remove_MessageReceived, MessageReceived(eventHandler));
+    return impl::make_event_revoker<D, MessageReceived_revoker>(this, MessageReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Sms_ISmsMessageRegistration<D>::MessageReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Sms::ISmsMessageRegistration)->remove_MessageReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Sms::ISmsMessageRegistration)->remove_MessageReceived(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> consume_Windows_Devices_Sms_ISmsMessageRegistrationStatics<D>::AllRegistrations() const
@@ -1184,12 +1184,12 @@ template <> struct delegate<Windows::Devices::Sms::SmsDeviceStatusChangedEventHa
     {
         type(H&& handler) : implements_delegate<Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Devices::Sms::SmsDevice const*>(&sender));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1206,12 +1206,12 @@ template <> struct delegate<Windows::Devices::Sms::SmsMessageReceivedEventHandle
     {
         type(H&& handler) : implements_delegate<Windows::Devices::Sms::SmsMessageReceivedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Devices::Sms::SmsDevice const*>(&sender), *reinterpret_cast<Windows::Devices::Sms::SmsMessageReceivedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1224,2601 +1224,2241 @@ template <> struct delegate<Windows::Devices::Sms::SmsMessageReceivedEventHandle
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsAppMessage> : produce_base<D, Windows::Devices::Sms::ISmsAppMessage>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_To(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_To(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(void), hstring const&);
             this->shim().To(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_From(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_From(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().From());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Body(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Body(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(void), hstring const&);
             this->shim().Body(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CallbackNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallbackNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallbackNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallbackNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CallbackNumber(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CallbackNumber(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallbackNumber, WINRT_WRAP(void), hstring const&);
             this->shim().CallbackNumber(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDeliveryNotificationEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDeliveryNotificationEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDeliveryNotificationEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDeliveryNotificationEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsDeliveryNotificationEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsDeliveryNotificationEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDeliveryNotificationEnabled, WINRT_WRAP(void), bool);
             this->shim().IsDeliveryNotificationEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RetryAttemptCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_RetryAttemptCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetryAttemptCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().RetryAttemptCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RetryAttemptCount(int32_t value) noexcept final
+    int32_t WINRT_CALL put_RetryAttemptCount(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetryAttemptCount, WINRT_WRAP(void), int32_t);
             this->shim().RetryAttemptCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
+    int32_t WINRT_CALL get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(Windows::Devices::Sms::SmsEncoding));
             *value = detach_from<Windows::Devices::Sms::SmsEncoding>(this->shim().Encoding());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
+    int32_t WINRT_CALL put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(void), Windows::Devices::Sms::SmsEncoding const&);
             this->shim().Encoding(*reinterpret_cast<Windows::Devices::Sms::SmsEncoding const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PortNumber(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PortNumber(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PortNumber, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PortNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PortNumber(int32_t value) noexcept final
+    int32_t WINRT_CALL put_PortNumber(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PortNumber, WINRT_WRAP(void), int32_t);
             this->shim().PortNumber(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TeleserviceId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TeleserviceId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TeleserviceId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TeleserviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TeleserviceId(int32_t value) noexcept final
+    int32_t WINRT_CALL put_TeleserviceId(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TeleserviceId, WINRT_WRAP(void), int32_t);
             this->shim().TeleserviceId(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ProtocolId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ProtocolId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtocolId(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ProtocolId(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolId, WINRT_WRAP(void), int32_t);
             this->shim().ProtocolId(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BinaryBody(void** value) noexcept final
+    int32_t WINRT_CALL get_BinaryBody(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BinaryBody, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().BinaryBody());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BinaryBody(void* value) noexcept final
+    int32_t WINRT_CALL put_BinaryBody(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BinaryBody, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().BinaryBody(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsBinaryMessage> : produce_base<D, Windows::Devices::Sms::ISmsBinaryMessage>
 {
-    HRESULT __stdcall get_Format(Windows::Devices::Sms::SmsDataFormat* value) noexcept final
+    int32_t WINRT_CALL get_Format(Windows::Devices::Sms::SmsDataFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(Windows::Devices::Sms::SmsDataFormat));
             *value = detach_from<Windows::Devices::Sms::SmsDataFormat>(this->shim().Format());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Format(Windows::Devices::Sms::SmsDataFormat value) noexcept final
+    int32_t WINRT_CALL put_Format(Windows::Devices::Sms::SmsDataFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(void), Windows::Devices::Sms::SmsDataFormat const&);
             this->shim().Format(*reinterpret_cast<Windows::Devices::Sms::SmsDataFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetData(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetData(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetData, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__valueSize, *value) = detach_abi(this->shim().GetData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetData(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL SetData(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetData, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().SetData(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsBroadcastMessage> : produce_base<D, Windows::Devices::Sms::ISmsBroadcastMessage>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Channel(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Channel(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Channel, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Channel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GeographicalScope(Windows::Devices::Sms::SmsGeographicalScope* value) noexcept final
+    int32_t WINRT_CALL get_GeographicalScope(Windows::Devices::Sms::SmsGeographicalScope* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeographicalScope, WINRT_WRAP(Windows::Devices::Sms::SmsGeographicalScope));
             *value = detach_from<Windows::Devices::Sms::SmsGeographicalScope>(this->shim().GeographicalScope());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageCode(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MessageCode(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageCode, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MessageCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UpdateNumber(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_UpdateNumber(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateNumber, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().UpdateNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BroadcastType(Windows::Devices::Sms::SmsBroadcastType* value) noexcept final
+    int32_t WINRT_CALL get_BroadcastType(Windows::Devices::Sms::SmsBroadcastType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BroadcastType, WINRT_WRAP(Windows::Devices::Sms::SmsBroadcastType));
             *value = detach_from<Windows::Devices::Sms::SmsBroadcastType>(this->shim().BroadcastType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEmergencyAlert(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEmergencyAlert(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEmergencyAlert, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEmergencyAlert());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsUserPopupRequested(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsUserPopupRequested(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsUserPopupRequested, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsUserPopupRequested());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDevice> : produce_base<D, Windows::Devices::Sms::ISmsDevice>
 {
-    HRESULT __stdcall SendMessageAsync(void* message, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SendMessageAsync(void* message, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAsync, WINRT_WRAP(Windows::Devices::Sms::SendSmsMessageOperation), Windows::Devices::Sms::ISmsMessage const);
             *asyncInfo = detach_from<Windows::Devices::Sms::SendSmsMessageOperation>(this->shim().SendMessageAsync(*reinterpret_cast<Windows::Devices::Sms::ISmsMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CalculateLength(void* message, struct struct_Windows_Devices_Sms_SmsEncodedLength* encodedLength) noexcept final
+    int32_t WINRT_CALL CalculateLength(void* message, struct struct_Windows_Devices_Sms_SmsEncodedLength* encodedLength) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalculateLength, WINRT_WRAP(Windows::Devices::Sms::SmsEncodedLength), Windows::Devices::Sms::SmsTextMessage const&);
             *encodedLength = detach_from<Windows::Devices::Sms::SmsEncodedLength>(this->shim().CalculateLength(*reinterpret_cast<Windows::Devices::Sms::SmsTextMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AccountPhoneNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AccountPhoneNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountPhoneNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AccountPhoneNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageStore(void** value) noexcept final
+    int32_t WINRT_CALL get_MessageStore(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageStore, WINRT_WRAP(Windows::Devices::Sms::SmsDeviceMessageStore));
             *value = detach_from<Windows::Devices::Sms::SmsDeviceMessageStore>(this->shim().MessageStore());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceStatus(Windows::Devices::Sms::SmsDeviceStatus* value) noexcept final
+    int32_t WINRT_CALL get_DeviceStatus(Windows::Devices::Sms::SmsDeviceStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceStatus, WINRT_WRAP(Windows::Devices::Sms::SmsDeviceStatus));
             *value = detach_from<Windows::Devices::Sms::SmsDeviceStatus>(this->shim().DeviceStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SmsMessageReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_SmsMessageReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().SmsMessageReceived(*reinterpret_cast<Windows::Devices::Sms::SmsMessageReceivedEventHandler const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SmsMessageReceived, WINRT_WRAP(winrt::event_token), Windows::Devices::Sms::SmsMessageReceivedEventHandler const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().SmsMessageReceived(*reinterpret_cast<Windows::Devices::Sms::SmsMessageReceivedEventHandler const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SmsMessageReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_SmsMessageReceived(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SmsMessageReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SmsMessageReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SmsDeviceStatusChanged(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SmsMessageReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SmsDeviceStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().SmsDeviceStatusChanged(*reinterpret_cast<Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SmsDeviceStatusChanged(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL remove_SmsDeviceStatusChanged(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().SmsDeviceStatusChanged(*reinterpret_cast<Windows::Devices::Sms::SmsDeviceStatusChangedEventHandler const*>(&eventHandler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_SmsDeviceStatusChanged(event_token eventCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SmsDeviceStatusChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SmsDeviceStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SmsDeviceStatusChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDevice2> : produce_base<D, Windows::Devices::Sms::ISmsDevice2>
 {
-    HRESULT __stdcall get_SmscAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SmscAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmscAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SmscAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SmscAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SmscAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmscAddress, WINRT_WRAP(void), hstring const&);
             this->shim().SmscAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParentDeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ParentDeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentDeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ParentDeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AccountPhoneNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AccountPhoneNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountPhoneNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AccountPhoneNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceStatus(Windows::Devices::Sms::SmsDeviceStatus* value) noexcept final
+    int32_t WINRT_CALL get_DeviceStatus(Windows::Devices::Sms::SmsDeviceStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceStatus, WINRT_WRAP(Windows::Devices::Sms::SmsDeviceStatus));
             *value = detach_from<Windows::Devices::Sms::SmsDeviceStatus>(this->shim().DeviceStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CalculateLength(void* message, struct struct_Windows_Devices_Sms_SmsEncodedLength* value) noexcept final
+    int32_t WINRT_CALL CalculateLength(void* message, struct struct_Windows_Devices_Sms_SmsEncodedLength* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalculateLength, WINRT_WRAP(Windows::Devices::Sms::SmsEncodedLength), Windows::Devices::Sms::ISmsMessageBase const&);
             *value = detach_from<Windows::Devices::Sms::SmsEncodedLength>(this->shim().CalculateLength(*reinterpret_cast<Windows::Devices::Sms::ISmsMessageBase const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendMessageAndGetResultAsync(void* message, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SendMessageAndGetResultAsync(void* message, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAndGetResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult>), Windows::Devices::Sms::ISmsMessageBase const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult>>(this->shim().SendMessageAndGetResultAsync(*reinterpret_cast<Windows::Devices::Sms::ISmsMessageBase const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DeviceStatusChanged(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_DeviceStatusChanged(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().DeviceStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().DeviceStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::Foundation::IInspectable> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DeviceStatusChanged(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_DeviceStatusChanged(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DeviceStatusChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DeviceStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DeviceStatusChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDevice2Statics> : produce_base<D, Windows::Devices::Sms::ISmsDevice2Statics>
 {
-    HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromId(HSTRING deviceId, void** value) noexcept final
+    int32_t WINRT_CALL FromId(void* deviceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromId, WINRT_WRAP(Windows::Devices::Sms::SmsDevice2), hstring const&);
             *value = detach_from<Windows::Devices::Sms::SmsDevice2>(this->shim().FromId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Devices::Sms::SmsDevice2));
             *value = detach_from<Windows::Devices::Sms::SmsDevice2>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromParentId(HSTRING parentDeviceId, void** value) noexcept final
+    int32_t WINRT_CALL FromParentId(void* parentDeviceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromParentId, WINRT_WRAP(Windows::Devices::Sms::SmsDevice2), hstring const&);
             *value = detach_from<Windows::Devices::Sms::SmsDevice2>(this->shim().FromParentId(*reinterpret_cast<hstring const*>(&parentDeviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDeviceMessageStore> : produce_base<D, Windows::Devices::Sms::ISmsDeviceMessageStore>
 {
-    HRESULT __stdcall DeleteMessageAsync(uint32_t messageId, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL DeleteMessageAsync(uint32_t messageId, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteMessageAsync(messageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteMessagesAsync(Windows::Devices::Sms::SmsMessageFilter messageFilter, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL DeleteMessagesAsync(Windows::Devices::Sms::SmsMessageFilter messageFilter, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteMessagesAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Devices::Sms::SmsMessageFilter const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteMessagesAsync(*reinterpret_cast<Windows::Devices::Sms::SmsMessageFilter const*>(&messageFilter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageAsync(uint32_t messageId, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetMessageAsync(uint32_t messageId, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::ISmsMessage>), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::ISmsMessage>>(this->shim().GetMessageAsync(messageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessagesAsync(Windows::Devices::Sms::SmsMessageFilter messageFilter, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetMessagesAsync(Windows::Devices::Sms::SmsMessageFilter messageFilter, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessagesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::ISmsMessage>, int32_t>), Windows::Devices::Sms::SmsMessageFilter const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::ISmsMessage>, int32_t>>(this->shim().GetMessagesAsync(*reinterpret_cast<Windows::Devices::Sms::SmsMessageFilter const*>(&messageFilter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxMessages(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxMessages(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxMessages, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxMessages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDeviceStatics> : produce_base<D, Windows::Devices::Sms::ISmsDeviceStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(HSTRING* phstrDeviceClassSelector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** phstrDeviceClassSelector) noexcept final
     {
         try
         {
             *phstrDeviceClassSelector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *phstrDeviceClassSelector = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetDefaultAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>>(this->shim().GetDefaultAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsDeviceStatics2> : produce_base<D, Windows::Devices::Sms::ISmsDeviceStatics2>
 {
-    HRESULT __stdcall FromNetworkAccountIdAsync(HSTRING networkAccountId, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL FromNetworkAccountIdAsync(void* networkAccountId, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromNetworkAccountIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice>>(this->shim().FromNetworkAccountIdAsync(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsFilterRule> : produce_base<D, Windows::Devices::Sms::ISmsFilterRule>
 {
-    HRESULT __stdcall get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Devices::Sms::SmsMessageType));
             *value = detach_from<Windows::Devices::Sms::SmsMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImsiPrefixes(void** value) noexcept final
+    int32_t WINRT_CALL get_ImsiPrefixes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImsiPrefixes, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().ImsiPrefixes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceIds(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().DeviceIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SenderNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_SenderNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SenderNumbers, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().SenderNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextMessagePrefixes(void** value) noexcept final
+    int32_t WINRT_CALL get_TextMessagePrefixes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextMessagePrefixes, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().TextMessagePrefixes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PortNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_PortNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PortNumbers, WINRT_WRAP(Windows::Foundation::Collections::IVector<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVector<int32_t>>(this->shim().PortNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CellularClass(Windows::Devices::Sms::CellularClass value) noexcept final
+    int32_t WINRT_CALL put_CellularClass(Windows::Devices::Sms::CellularClass value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(void), Windows::Devices::Sms::CellularClass const&);
             this->shim().CellularClass(*reinterpret_cast<Windows::Devices::Sms::CellularClass const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolIds(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVector<int32_t>>(this->shim().ProtocolIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TeleserviceIds(void** value) noexcept final
+    int32_t WINRT_CALL get_TeleserviceIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TeleserviceIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVector<int32_t>>(this->shim().TeleserviceIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WapApplicationIds(void** value) noexcept final
+    int32_t WINRT_CALL get_WapApplicationIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WapApplicationIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().WapApplicationIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WapContentTypes(void** value) noexcept final
+    int32_t WINRT_CALL get_WapContentTypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WapContentTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().WapContentTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BroadcastTypes(void** value) noexcept final
+    int32_t WINRT_CALL get_BroadcastTypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BroadcastTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsBroadcastType>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsBroadcastType>>(this->shim().BroadcastTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BroadcastChannels(void** value) noexcept final
+    int32_t WINRT_CALL get_BroadcastChannels(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BroadcastChannels, WINRT_WRAP(Windows::Foundation::Collections::IVector<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVector<int32_t>>(this->shim().BroadcastChannels());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsFilterRuleFactory> : produce_base<D, Windows::Devices::Sms::ISmsFilterRuleFactory>
 {
-    HRESULT __stdcall CreateFilterRule(Windows::Devices::Sms::SmsMessageType messageType, void** value) noexcept final
+    int32_t WINRT_CALL CreateFilterRule(Windows::Devices::Sms::SmsMessageType messageType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFilterRule, WINRT_WRAP(Windows::Devices::Sms::SmsFilterRule), Windows::Devices::Sms::SmsMessageType const&);
             *value = detach_from<Windows::Devices::Sms::SmsFilterRule>(this->shim().CreateFilterRule(*reinterpret_cast<Windows::Devices::Sms::SmsMessageType const*>(&messageType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsFilterRules> : produce_base<D, Windows::Devices::Sms::ISmsFilterRules>
 {
-    HRESULT __stdcall get_ActionType(Windows::Devices::Sms::SmsFilterActionType* value) noexcept final
+    int32_t WINRT_CALL get_ActionType(Windows::Devices::Sms::SmsFilterActionType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActionType, WINRT_WRAP(Windows::Devices::Sms::SmsFilterActionType));
             *value = detach_from<Windows::Devices::Sms::SmsFilterActionType>(this->shim().ActionType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rules(void** value) noexcept final
+    int32_t WINRT_CALL get_Rules(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rules, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule>>(this->shim().Rules());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsFilterRulesFactory> : produce_base<D, Windows::Devices::Sms::ISmsFilterRulesFactory>
 {
-    HRESULT __stdcall CreateFilterRules(Windows::Devices::Sms::SmsFilterActionType actionType, void** value) noexcept final
+    int32_t WINRT_CALL CreateFilterRules(Windows::Devices::Sms::SmsFilterActionType actionType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFilterRules, WINRT_WRAP(Windows::Devices::Sms::SmsFilterRules), Windows::Devices::Sms::SmsFilterActionType const&);
             *value = detach_from<Windows::Devices::Sms::SmsFilterRules>(this->shim().CreateFilterRules(*reinterpret_cast<Windows::Devices::Sms::SmsFilterActionType const*>(&actionType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessage> : produce_base<D, Windows::Devices::Sms::ISmsMessage>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
+    int32_t WINRT_CALL get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageClass, WINRT_WRAP(Windows::Devices::Sms::SmsMessageClass));
             *value = detach_from<Windows::Devices::Sms::SmsMessageClass>(this->shim().MessageClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessageBase> : produce_base<D, Windows::Devices::Sms::ISmsMessageBase>
 {
-    HRESULT __stdcall get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Devices::Sms::SmsMessageType));
             *value = detach_from<Windows::Devices::Sms::SmsMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
+    int32_t WINRT_CALL get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageClass, WINRT_WRAP(Windows::Devices::Sms::SmsMessageClass));
             *value = detach_from<Windows::Devices::Sms::SmsMessageClass>(this->shim().MessageClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimIccId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimIccId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimIccId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimIccId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedEventArgs> : produce_base<D, Windows::Devices::Sms::ISmsMessageReceivedEventArgs>
 {
-    HRESULT __stdcall get_TextMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_TextMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextMessage, WINRT_WRAP(Windows::Devices::Sms::SmsTextMessage));
             *value = detach_from<Windows::Devices::Sms::SmsTextMessage>(this->shim().TextMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BinaryMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_BinaryMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BinaryMessage, WINRT_WRAP(Windows::Devices::Sms::SmsBinaryMessage));
             *value = detach_from<Windows::Devices::Sms::SmsBinaryMessage>(this->shim().BinaryMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails> : produce_base<D, Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails>
 {
-    HRESULT __stdcall get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Devices::Sms::SmsMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Devices::Sms::SmsMessageType));
             *value = detach_from<Windows::Devices::Sms::SmsMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_TextMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextMessage, WINRT_WRAP(Windows::Devices::Sms::SmsTextMessage2));
             *value = detach_from<Windows::Devices::Sms::SmsTextMessage2>(this->shim().TextMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WapMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_WapMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WapMessage, WINRT_WRAP(Windows::Devices::Sms::SmsWapMessage));
             *value = detach_from<Windows::Devices::Sms::SmsWapMessage>(this->shim().WapMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_AppMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppMessage, WINRT_WRAP(Windows::Devices::Sms::SmsAppMessage));
             *value = detach_from<Windows::Devices::Sms::SmsAppMessage>(this->shim().AppMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BroadcastMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_BroadcastMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BroadcastMessage, WINRT_WRAP(Windows::Devices::Sms::SmsBroadcastMessage));
             *value = detach_from<Windows::Devices::Sms::SmsBroadcastMessage>(this->shim().BroadcastMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VoicemailMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_VoicemailMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VoicemailMessage, WINRT_WRAP(Windows::Devices::Sms::SmsVoicemailMessage));
             *value = detach_from<Windows::Devices::Sms::SmsVoicemailMessage>(this->shim().VoicemailMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StatusMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_StatusMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatusMessage, WINRT_WRAP(Windows::Devices::Sms::SmsStatusMessage));
             *value = detach_from<Windows::Devices::Sms::SmsStatusMessage>(this->shim().StatusMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Drop() noexcept final
+    int32_t WINRT_CALL Drop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Drop, WINRT_WRAP(void));
             this->shim().Drop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Accept() noexcept final
+    int32_t WINRT_CALL Accept() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accept, WINRT_WRAP(void));
             this->shim().Accept();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessageRegistration> : produce_base<D, Windows::Devices::Sms::ISmsMessageRegistration>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Unregister() noexcept final
+    int32_t WINRT_CALL Unregister() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Unregister, WINRT_WRAP(void));
             this->shim().Unregister();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MessageReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_MessageReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MessageReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_MessageReceived(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MessageReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MessageReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsMessageRegistrationStatics> : produce_base<D, Windows::Devices::Sms::ISmsMessageRegistrationStatics>
 {
-    HRESULT __stdcall get_AllRegistrations(void** value) noexcept final
+    int32_t WINRT_CALL get_AllRegistrations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllRegistrations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration>>(this->shim().AllRegistrations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Register(HSTRING id, void* filterRules, void** value) noexcept final
+    int32_t WINRT_CALL Register(void* id, void* filterRules, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Register, WINRT_WRAP(Windows::Devices::Sms::SmsMessageRegistration), hstring const&, Windows::Devices::Sms::SmsFilterRules const&);
             *value = detach_from<Windows::Devices::Sms::SmsMessageRegistration>(this->shim().Register(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<Windows::Devices::Sms::SmsFilterRules const*>(&filterRules)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsReceivedEventDetails> : produce_base<D, Windows::Devices::Sms::ISmsReceivedEventDetails>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageIndex(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MessageIndex(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageIndex, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MessageIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsReceivedEventDetails2> : produce_base<D, Windows::Devices::Sms::ISmsReceivedEventDetails2>
 {
-    HRESULT __stdcall get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
+    int32_t WINRT_CALL get_MessageClass(Windows::Devices::Sms::SmsMessageClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageClass, WINRT_WRAP(Windows::Devices::Sms::SmsMessageClass));
             *value = detach_from<Windows::Devices::Sms::SmsMessageClass>(this->shim().MessageClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BinaryMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_BinaryMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BinaryMessage, WINRT_WRAP(Windows::Devices::Sms::SmsBinaryMessage));
             *value = detach_from<Windows::Devices::Sms::SmsBinaryMessage>(this->shim().BinaryMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsSendMessageResult> : produce_base<D, Windows::Devices::Sms::ISmsSendMessageResult>
 {
-    HRESULT __stdcall get_IsSuccessful(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSuccessful(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSuccessful, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSuccessful());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageReferenceNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MessageReferenceNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageReferenceNumbers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<int32_t>>(this->shim().MessageReferenceNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModemErrorCode(Windows::Devices::Sms::SmsModemErrorCode* value) noexcept final
+    int32_t WINRT_CALL get_ModemErrorCode(Windows::Devices::Sms::SmsModemErrorCode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModemErrorCode, WINRT_WRAP(Windows::Devices::Sms::SmsModemErrorCode));
             *value = detach_from<Windows::Devices::Sms::SmsModemErrorCode>(this->shim().ModemErrorCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsErrorTransient(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsErrorTransient(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsErrorTransient, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsErrorTransient());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkCauseCode(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NetworkCauseCode(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkCauseCode, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NetworkCauseCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransportFailureCause(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TransportFailureCause(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportFailureCause, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TransportFailureCause());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsStatusMessage> : produce_base<D, Windows::Devices::Sms::ISmsStatusMessage>
 {
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_From(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_From(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().From());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageReferenceNumber(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MessageReferenceNumber(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageReferenceNumber, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MessageReferenceNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceCenterTimestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_ServiceCenterTimestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceCenterTimestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().ServiceCenterTimestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DischargeTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_DischargeTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DischargeTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().DischargeTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsTextMessage> : produce_base<D, Windows::Devices::Sms::ISmsTextMessage>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PartReferenceId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PartReferenceId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PartReferenceId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PartReferenceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PartNumber(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PartNumber(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PartNumber, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PartNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PartCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PartCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PartCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PartCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_To(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_To(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(void), hstring const&);
             this->shim().To(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_From(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_From(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().From());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_From(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_From(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(void), hstring const&);
             this->shim().From(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Body(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Body(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(void), hstring const&);
             this->shim().Body(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
+    int32_t WINRT_CALL get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(Windows::Devices::Sms::SmsEncoding));
             *value = detach_from<Windows::Devices::Sms::SmsEncoding>(this->shim().Encoding());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
+    int32_t WINRT_CALL put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(void), Windows::Devices::Sms::SmsEncoding const&);
             this->shim().Encoding(*reinterpret_cast<Windows::Devices::Sms::SmsEncoding const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ToBinaryMessages(Windows::Devices::Sms::SmsDataFormat format, void** messages) noexcept final
+    int32_t WINRT_CALL ToBinaryMessages(Windows::Devices::Sms::SmsDataFormat format, void** messages) noexcept final
     {
         try
         {
             *messages = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToBinaryMessages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::ISmsBinaryMessage>), Windows::Devices::Sms::SmsDataFormat const&);
             *messages = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::ISmsBinaryMessage>>(this->shim().ToBinaryMessages(*reinterpret_cast<Windows::Devices::Sms::SmsDataFormat const*>(&format)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsTextMessage2> : produce_base<D, Windows::Devices::Sms::ISmsTextMessage2>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_To(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_To(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(void), hstring const&);
             this->shim().To(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_From(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_From(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().From());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Body(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Body(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(void), hstring const&);
             this->shim().Body(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
+    int32_t WINRT_CALL get_Encoding(Windows::Devices::Sms::SmsEncoding* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(Windows::Devices::Sms::SmsEncoding));
             *value = detach_from<Windows::Devices::Sms::SmsEncoding>(this->shim().Encoding());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
+    int32_t WINRT_CALL put_Encoding(Windows::Devices::Sms::SmsEncoding value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encoding, WINRT_WRAP(void), Windows::Devices::Sms::SmsEncoding const&);
             this->shim().Encoding(*reinterpret_cast<Windows::Devices::Sms::SmsEncoding const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CallbackNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CallbackNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallbackNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CallbackNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CallbackNumber(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CallbackNumber(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallbackNumber, WINRT_WRAP(void), hstring const&);
             this->shim().CallbackNumber(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDeliveryNotificationEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDeliveryNotificationEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDeliveryNotificationEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDeliveryNotificationEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsDeliveryNotificationEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsDeliveryNotificationEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDeliveryNotificationEnabled, WINRT_WRAP(void), bool);
             this->shim().IsDeliveryNotificationEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RetryAttemptCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_RetryAttemptCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetryAttemptCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().RetryAttemptCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RetryAttemptCount(int32_t value) noexcept final
+    int32_t WINRT_CALL put_RetryAttemptCount(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetryAttemptCount, WINRT_WRAP(void), int32_t);
             this->shim().RetryAttemptCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TeleserviceId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TeleserviceId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TeleserviceId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TeleserviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ProtocolId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ProtocolId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsTextMessageStatics> : produce_base<D, Windows::Devices::Sms::ISmsTextMessageStatics>
 {
-    HRESULT __stdcall FromBinaryMessage(void* binaryMessage, void** textMessage) noexcept final
+    int32_t WINRT_CALL FromBinaryMessage(void* binaryMessage, void** textMessage) noexcept final
     {
         try
         {
             *textMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromBinaryMessage, WINRT_WRAP(Windows::Devices::Sms::SmsTextMessage), Windows::Devices::Sms::SmsBinaryMessage const&);
             *textMessage = detach_from<Windows::Devices::Sms::SmsTextMessage>(this->shim().FromBinaryMessage(*reinterpret_cast<Windows::Devices::Sms::SmsBinaryMessage const*>(&binaryMessage)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromBinaryData(Windows::Devices::Sms::SmsDataFormat format, uint32_t __valueSize, uint8_t* value, void** textMessage) noexcept final
+    int32_t WINRT_CALL FromBinaryData(Windows::Devices::Sms::SmsDataFormat format, uint32_t __valueSize, uint8_t* value, void** textMessage) noexcept final
     {
         try
         {
             *textMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromBinaryData, WINRT_WRAP(Windows::Devices::Sms::SmsTextMessage), Windows::Devices::Sms::SmsDataFormat const&, array_view<uint8_t const>);
             *textMessage = detach_from<Windows::Devices::Sms::SmsTextMessage>(this->shim().FromBinaryData(*reinterpret_cast<Windows::Devices::Sms::SmsDataFormat const*>(&format), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsVoicemailMessage> : produce_base<D, Windows::Devices::Sms::ISmsVoicemailMessage>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageCount(void** value) noexcept final
+    int32_t WINRT_CALL get_MessageCount(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageCount, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MessageCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windows::Devices::Sms::ISmsWapMessage>
 {
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_From(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_From(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(From, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().From());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ApplicationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ApplicationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BinaryBody(void** value) noexcept final
+    int32_t WINRT_CALL get_BinaryBody(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BinaryBody, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().BinaryBody());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Headers(void** value) noexcept final
+    int32_t WINRT_CALL get_Headers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Headers, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().Headers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3827,87 +3467,87 @@ struct produce<D, Windows::Devices::Sms::ISmsWapMessage> : produce_base<D, Windo
 WINRT_EXPORT namespace winrt::Windows::Devices::Sms {
 
 inline SmsAppMessage::SmsAppMessage() :
-    SmsAppMessage(get_activation_factory<SmsAppMessage>().ActivateInstance<SmsAppMessage>())
+    SmsAppMessage(impl::call_factory<SmsAppMessage>([](auto&& f) { return f.template ActivateInstance<SmsAppMessage>(); }))
 {}
 
 inline SmsBinaryMessage::SmsBinaryMessage() :
-    SmsBinaryMessage(get_activation_factory<SmsBinaryMessage>().ActivateInstance<SmsBinaryMessage>())
+    SmsBinaryMessage(impl::call_factory<SmsBinaryMessage>([](auto&& f) { return f.template ActivateInstance<SmsBinaryMessage>(); }))
 {}
 
 inline hstring SmsDevice::GetDeviceSelector()
 {
-    return get_activation_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>().GetDeviceSelector();
+    return impl::call_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> SmsDevice::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> SmsDevice::GetDefaultAsync()
 {
-    return get_activation_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>().GetDefaultAsync();
+    return impl::call_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics>([&](auto&& f) { return f.GetDefaultAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsDevice> SmsDevice::FromNetworkAccountIdAsync(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics2>().FromNetworkAccountIdAsync(networkAccountId);
+    return impl::call_factory<SmsDevice, Windows::Devices::Sms::ISmsDeviceStatics2>([&](auto&& f) { return f.FromNetworkAccountIdAsync(networkAccountId); });
 }
 
 inline hstring SmsDevice2::GetDeviceSelector()
 {
-    return get_activation_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>().GetDeviceSelector();
+    return impl::call_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromId(param::hstring const& deviceId)
 {
-    return get_activation_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>().FromId(deviceId);
+    return impl::call_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>([&](auto&& f) { return f.FromId(deviceId); });
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::GetDefault()
 {
-    return get_activation_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>().GetDefault();
+    return impl::call_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Devices::Sms::SmsDevice2 SmsDevice2::FromParentId(param::hstring const& parentDeviceId)
 {
-    return get_activation_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>().FromParentId(parentDeviceId);
+    return impl::call_factory<SmsDevice2, Windows::Devices::Sms::ISmsDevice2Statics>([&](auto&& f) { return f.FromParentId(parentDeviceId); });
 }
 
 inline SmsFilterRule::SmsFilterRule(Windows::Devices::Sms::SmsMessageType const& messageType) :
-    SmsFilterRule(get_activation_factory<SmsFilterRule, Windows::Devices::Sms::ISmsFilterRuleFactory>().CreateFilterRule(messageType))
+    SmsFilterRule(impl::call_factory<SmsFilterRule, Windows::Devices::Sms::ISmsFilterRuleFactory>([&](auto&& f) { return f.CreateFilterRule(messageType); }))
 {}
 
 inline SmsFilterRules::SmsFilterRules(Windows::Devices::Sms::SmsFilterActionType const& actionType) :
-    SmsFilterRules(get_activation_factory<SmsFilterRules, Windows::Devices::Sms::ISmsFilterRulesFactory>().CreateFilterRules(actionType))
+    SmsFilterRules(impl::call_factory<SmsFilterRules, Windows::Devices::Sms::ISmsFilterRulesFactory>([&](auto&& f) { return f.CreateFilterRules(actionType); }))
 {}
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> SmsMessageRegistration::AllRegistrations()
 {
-    return get_activation_factory<SmsMessageRegistration, Windows::Devices::Sms::ISmsMessageRegistrationStatics>().AllRegistrations();
+    return impl::call_factory<SmsMessageRegistration, Windows::Devices::Sms::ISmsMessageRegistrationStatics>([&](auto&& f) { return f.AllRegistrations(); });
 }
 
 inline Windows::Devices::Sms::SmsMessageRegistration SmsMessageRegistration::Register(param::hstring const& id, Windows::Devices::Sms::SmsFilterRules const& filterRules)
 {
-    return get_activation_factory<SmsMessageRegistration, Windows::Devices::Sms::ISmsMessageRegistrationStatics>().Register(id, filterRules);
+    return impl::call_factory<SmsMessageRegistration, Windows::Devices::Sms::ISmsMessageRegistrationStatics>([&](auto&& f) { return f.Register(id, filterRules); });
 }
 
 inline SmsTextMessage::SmsTextMessage() :
-    SmsTextMessage(get_activation_factory<SmsTextMessage>().ActivateInstance<SmsTextMessage>())
+    SmsTextMessage(impl::call_factory<SmsTextMessage>([](auto&& f) { return f.template ActivateInstance<SmsTextMessage>(); }))
 {}
 
 inline Windows::Devices::Sms::SmsTextMessage SmsTextMessage::FromBinaryMessage(Windows::Devices::Sms::SmsBinaryMessage const& binaryMessage)
 {
-    return get_activation_factory<SmsTextMessage, Windows::Devices::Sms::ISmsTextMessageStatics>().FromBinaryMessage(binaryMessage);
+    return impl::call_factory<SmsTextMessage, Windows::Devices::Sms::ISmsTextMessageStatics>([&](auto&& f) { return f.FromBinaryMessage(binaryMessage); });
 }
 
 inline Windows::Devices::Sms::SmsTextMessage SmsTextMessage::FromBinaryData(Windows::Devices::Sms::SmsDataFormat const& format, array_view<uint8_t const> value)
 {
-    return get_activation_factory<SmsTextMessage, Windows::Devices::Sms::ISmsTextMessageStatics>().FromBinaryData(format, value);
+    return impl::call_factory<SmsTextMessage, Windows::Devices::Sms::ISmsTextMessageStatics>([&](auto&& f) { return f.FromBinaryData(format, value); });
 }
 
 inline SmsTextMessage2::SmsTextMessage2() :
-    SmsTextMessage2(get_activation_factory<SmsTextMessage2>().ActivateInstance<SmsTextMessage2>())
+    SmsTextMessage2(impl::call_factory<SmsTextMessage2>([](auto&& f) { return f.template ActivateInstance<SmsTextMessage2>(); }))
 {}
 
 template <typename L> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChangedEventHandler(L handler) :
@@ -3915,11 +3555,19 @@ template <typename L> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChanged
 {}
 
 template <typename F> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChangedEventHandler(F* handler) :
-    SmsDeviceStatusChangedEventHandler([=](auto&&... args) { handler(args...); })
+    SmsDeviceStatusChangedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChangedEventHandler(O* object, M method) :
-    SmsDeviceStatusChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    SmsDeviceStatusChangedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChangedEventHandler(com_ptr<O>&& object, M method) :
+    SmsDeviceStatusChangedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> SmsDeviceStatusChangedEventHandler::SmsDeviceStatusChangedEventHandler(weak_ref<O>&& object, M method) :
+    SmsDeviceStatusChangedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void SmsDeviceStatusChangedEventHandler::operator()(Windows::Devices::Sms::SmsDevice const& sender) const
@@ -3932,11 +3580,19 @@ template <typename L> SmsMessageReceivedEventHandler::SmsMessageReceivedEventHan
 {}
 
 template <typename F> SmsMessageReceivedEventHandler::SmsMessageReceivedEventHandler(F* handler) :
-    SmsMessageReceivedEventHandler([=](auto&&... args) { handler(args...); })
+    SmsMessageReceivedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> SmsMessageReceivedEventHandler::SmsMessageReceivedEventHandler(O* object, M method) :
-    SmsMessageReceivedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    SmsMessageReceivedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> SmsMessageReceivedEventHandler::SmsMessageReceivedEventHandler(com_ptr<O>&& object, M method) :
+    SmsMessageReceivedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> SmsMessageReceivedEventHandler::SmsMessageReceivedEventHandler(weak_ref<O>&& object, M method) :
+    SmsMessageReceivedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void SmsMessageReceivedEventHandler::operator()(Windows::Devices::Sms::SmsDevice const& sender, Windows::Devices::Sms::SmsMessageReceivedEventArgs const& e) const
@@ -4002,5 +3658,3 @@ template<> struct hash<winrt::Windows::Devices::Sms::SmsVoicemailMessage> : winr
 template<> struct hash<winrt::Windows::Devices::Sms::SmsWapMessage> : winrt::impl::hash_base<winrt::Windows::Devices::Sms::SmsWapMessage> {};
 
 }
-
-WINRT_WARNING_POP

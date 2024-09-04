@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -176,22 +176,22 @@ template <> struct name<Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus
 template <> struct name<Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType>{ static constexpr auto & value{ L"Windows.Devices.WiFiDirect.WiFiDirectDeviceSelectorType" }; };
 template <> struct name<Windows::Devices::WiFiDirect::WiFiDirectError>{ static constexpr auto & value{ L"Windows.Devices.WiFiDirect.WiFiDirectError" }; };
 template <> struct name<Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure>{ static constexpr auto & value{ L"Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure" }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>{ static constexpr GUID value{ 0xAB511A2D,0x2A06,0x49A1,{ 0xA5,0x84,0x61,0x43,0x5C,0x79,0x05,0xA6 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>{ static constexpr GUID value{ 0xB759AA46,0xD816,0x491B,{ 0x91,0x7A,0xB4,0x0D,0x7D,0xC4,0x03,0xA2 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>{ static constexpr GUID value{ 0xB35A2D1A,0x9B1F,0x45D9,{ 0x92,0x5A,0x69,0x4D,0x66,0xDF,0x68,0xEF } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>{ static constexpr GUID value{ 0xAAFDE53C,0x5481,0x46E6,{ 0x90,0xDD,0x32,0x11,0x65,0x18,0xF1,0x92 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>{ static constexpr GUID value{ 0x699C1B0D,0x8D13,0x4EE9,{ 0xB9,0xEC,0x9C,0x72,0xF8,0x25,0x1F,0x7D } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>{ static constexpr GUID value{ 0xB2E55405,0x5702,0x4B16,{ 0xA0,0x2C,0xBB,0xCD,0x21,0xEF,0x60,0x98 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>{ static constexpr GUID value{ 0xAB3B0FBE,0xAA82,0x44B4,{ 0x88,0xC8,0xE3,0x05,0x6B,0x89,0x80,0x1D } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics>{ static constexpr GUID value{ 0x598AF493,0x7642,0x456F,{ 0xB9,0xD8,0xE8,0xA9,0xEB,0x1F,0x40,0x1A } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>{ static constexpr GUID value{ 0x8EB99605,0x914F,0x49C3,{ 0xA6,0x14,0xD1,0x8D,0xC5,0xB1,0x9B,0x43 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>{ static constexpr GUID value{ 0xF99D20BE,0xD38D,0x484F,{ 0x82,0x15,0xE7,0xB6,0x5A,0xBF,0x24,0x4C } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectDevice>{ static constexpr GUID value{ 0x72DEAAA8,0x72EB,0x4DAE,{ 0x8A,0x28,0x85,0x13,0x35,0x5D,0x27,0x77 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>{ static constexpr GUID value{ 0xE86CB57C,0x3AAC,0x4851,{ 0xA7,0x92,0x48,0x2A,0xAF,0x93,0x1B,0x04 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>{ static constexpr GUID value{ 0x1A953E49,0xB103,0x437E,{ 0x92,0x26,0xAB,0x67,0x97,0x13,0x42,0xF9 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>{ static constexpr GUID value{ 0xAFFB72D6,0x76BB,0x497E,{ 0xAC,0x8B,0xDC,0x72,0x83,0x8B,0xC3,0x09 } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>{ static constexpr GUID value{ 0xDBD02F16,0x11A5,0x4E60,{ 0x8C,0xAA,0x34,0x77,0x21,0x48,0x37,0x8A } }; };
-template <> struct guid<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings>{ static constexpr GUID value{ 0xA64FDBBA,0xF2FD,0x4567,{ 0xA9,0x1B,0xF5,0xC2,0xF5,0x32,0x10,0x57 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>{ static constexpr guid value{ 0xAB511A2D,0x2A06,0x49A1,{ 0xA5,0x84,0x61,0x43,0x5C,0x79,0x05,0xA6 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>{ static constexpr guid value{ 0xB759AA46,0xD816,0x491B,{ 0x91,0x7A,0xB4,0x0D,0x7D,0xC4,0x03,0xA2 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>{ static constexpr guid value{ 0xB35A2D1A,0x9B1F,0x45D9,{ 0x92,0x5A,0x69,0x4D,0x66,0xDF,0x68,0xEF } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>{ static constexpr guid value{ 0xAAFDE53C,0x5481,0x46E6,{ 0x90,0xDD,0x32,0x11,0x65,0x18,0xF1,0x92 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>{ static constexpr guid value{ 0x699C1B0D,0x8D13,0x4EE9,{ 0xB9,0xEC,0x9C,0x72,0xF8,0x25,0x1F,0x7D } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>{ static constexpr guid value{ 0xB2E55405,0x5702,0x4B16,{ 0xA0,0x2C,0xBB,0xCD,0x21,0xEF,0x60,0x98 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>{ static constexpr guid value{ 0xAB3B0FBE,0xAA82,0x44B4,{ 0x88,0xC8,0xE3,0x05,0x6B,0x89,0x80,0x1D } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics>{ static constexpr guid value{ 0x598AF493,0x7642,0x456F,{ 0xB9,0xD8,0xE8,0xA9,0xEB,0x1F,0x40,0x1A } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>{ static constexpr guid value{ 0x8EB99605,0x914F,0x49C3,{ 0xA6,0x14,0xD1,0x8D,0xC5,0xB1,0x9B,0x43 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>{ static constexpr guid value{ 0xF99D20BE,0xD38D,0x484F,{ 0x82,0x15,0xE7,0xB6,0x5A,0xBF,0x24,0x4C } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectDevice>{ static constexpr guid value{ 0x72DEAAA8,0x72EB,0x4DAE,{ 0x8A,0x28,0x85,0x13,0x35,0x5D,0x27,0x77 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>{ static constexpr guid value{ 0xE86CB57C,0x3AAC,0x4851,{ 0xA7,0x92,0x48,0x2A,0xAF,0x93,0x1B,0x04 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>{ static constexpr guid value{ 0x1A953E49,0xB103,0x437E,{ 0x92,0x26,0xAB,0x67,0x97,0x13,0x42,0xF9 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>{ static constexpr guid value{ 0xAFFB72D6,0x76BB,0x497E,{ 0xAC,0x8B,0xDC,0x72,0x83,0x8B,0xC3,0x09 } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>{ static constexpr guid value{ 0xDBD02F16,0x11A5,0x4E60,{ 0x8C,0xAA,0x34,0x77,0x21,0x48,0x37,0x8A } }; };
+template <> struct guid_storage<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings>{ static constexpr guid value{ 0xA64FDBBA,0xF2FD,0x4567,{ 0xA9,0x1B,0xF5,0xC2,0xF5,0x32,0x10,0x57 } }; };
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectAdvertisement>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement; };
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher; };
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs; };
@@ -202,6 +202,119 @@ template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectCon
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectDevice>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectDevice; };
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectInformationElement>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectInformationElement; };
 template <> struct default_interface<Windows::Devices::WiFiDirect::WiFiDirectLegacySettings>{ using type = Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings; };
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InformationElements(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InformationElements(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAutonomousGroupOwnerEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAutonomousGroupOwnerEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LegacySettings(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SupportedConfigurationMethods(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Advertisement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Error(Windows::Devices::WiFiDirect::WiFiDirectError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ConnectionRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ConnectionRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GroupOwnerIntent(int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_GroupOwnerIntent(int16_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PreferenceOrderedConfigurationMethods(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod, Windows::Devices::Enumeration::DevicePairingKinds* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetConnectionRequest(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ConnectionStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ConnectionStatusChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConnectionEndpointPairs(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** asyncOp) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void* connectionParameters, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Oui(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Oui(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OuiType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OuiType(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromBuffer(void* buffer, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromDeviceInformation(void* deviceInformation, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ssid(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Ssid(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Passphrase(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Passphrase(void* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_WiFiDirect_IWiFiDirectAdvertisement
@@ -228,10 +341,10 @@ struct consume_Windows_Devices_WiFiDirect_IWiFiDirectAdvertisementPublisher
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisement Advertisement() const;
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus Status() const;
-    event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
-    using StatusChanged_revoker = event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>;
+    winrt::event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
+    using StatusChanged_revoker = impl::event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher, &impl::abi_t<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>::remove_StatusChanged>;
     StatusChanged_revoker StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
-    void StatusChanged(event_token const& token) const;
+    void StatusChanged(winrt::event_token const& token) const noexcept;
     void Start() const;
     void Stop() const;
 };
@@ -248,10 +361,10 @@ template <> struct consume<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisemen
 template <typename D>
 struct consume_Windows_Devices_WiFiDirect_IWiFiDirectConnectionListener
 {
-    event_token ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> const& handler) const;
-    using ConnectionRequested_revoker = event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>;
+    winrt::event_token ConnectionRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> const& handler) const;
+    using ConnectionRequested_revoker = impl::event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener, &impl::abi_t<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>::remove_ConnectionRequested>;
     ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> const& handler) const;
-    void ConnectionRequested(event_token const& token) const;
+    void ConnectionRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener> { template <typename D> using type = consume_Windows_Devices_WiFiDirect_IWiFiDirectConnectionListener<D>; };
 
@@ -298,10 +411,10 @@ struct consume_Windows_Devices_WiFiDirect_IWiFiDirectDevice
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus ConnectionStatus() const;
     hstring DeviceId() const;
-    event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> const& handler) const;
-    using ConnectionStatusChanged_revoker = event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectDevice>;
+    winrt::event_token ConnectionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> const& handler) const;
+    using ConnectionStatusChanged_revoker = impl::event_revoker<Windows::Devices::WiFiDirect::IWiFiDirectDevice, &impl::abi_t<Windows::Devices::WiFiDirect::IWiFiDirectDevice>::remove_ConnectionStatusChanged>;
     ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> const& handler) const;
-    void ConnectionStatusChanged(event_token const& token) const;
+    void ConnectionStatusChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetConnectionEndpointPairs() const;
 };
 template <> struct consume<Windows::Devices::WiFiDirect::IWiFiDirectDevice> { template <typename D> using type = consume_Windows_Devices_WiFiDirect_IWiFiDirectDevice<D>; };
@@ -353,118 +466,5 @@ struct consume_Windows_Devices_WiFiDirect_IWiFiDirectLegacySettings
     void Passphrase(Windows::Security::Credentials::PasswordCredential const& value) const;
 };
 template <> struct consume<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings> { template <typename D> using type = consume_Windows_Devices_WiFiDirect_IWiFiDirectLegacySettings<D>; };
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InformationElements(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InformationElements(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAutonomousGroupOwnerEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAutonomousGroupOwnerEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_LegacySettings(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SupportedConfigurationMethods(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Advertisement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall add_StatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StatusChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Error(Windows::Devices::WiFiDirect::WiFiDirectError* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ConnectionRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ConnectionRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GroupOwnerIntent(int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_GroupOwnerIntent(int16_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PreferenceOrderedConfigurationMethods(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod, Windows::Devices::Enumeration::DevicePairingKinds* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetConnectionRequest(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall add_ConnectionStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ConnectionStatusChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetConnectionEndpointPairs(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** asyncOp) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void* connectionParameters, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Oui(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Oui(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OuiType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OuiType(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromBuffer(void* buffer, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromDeviceInformation(void* deviceInformation, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ssid(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Ssid(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Passphrase(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Passphrase(void* value) noexcept = 0;
-};};
 
 }

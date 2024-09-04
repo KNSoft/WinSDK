@@ -866,7 +866,6 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [marshaling_behavior(agile)]
-            [threading(both)]
             runtimeclass PrintPageRangeOptions
             {
                 [default] interface Windows.Graphics.Printing.IPrintPageRangeOptions;

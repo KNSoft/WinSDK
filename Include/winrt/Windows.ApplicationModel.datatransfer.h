@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.datatransfer.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -289,6 +301,62 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIShareProviderHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IClipboardContentOptions;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions ABI::Windows::ApplicationModel::DataTransfer::IClipboardContentOptions
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IClipboardHistoryChangedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IClipboardHistoryItem;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IClipboardHistoryItemsResult;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
 namespace ABI {
@@ -302,6 +370,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IClipboardStatics2;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics2
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
@@ -456,6 +538,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                interface IDataPackagePropertySetView5;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 ABI::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
@@ -870,6 +966,79 @@ namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace DataTransfer {
+                class ClipboardHistoryItem;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#define DEF___FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("63fac521-1395-5c95-aaff-9736378a4f2f"))
+IIterator<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t;
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+//#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#define DEF___FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5c3705f4-8e46-5ae5-97bf-88220cccffd9"))
+IIterable<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t;
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+//#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
                 class ShareProvider;
             } /* Windows */
         } /* ApplicationModel */
@@ -940,6 +1109,38 @@ typedef IIterable<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider*> 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#define DEF___FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("c91de16d-13ff-55b0-897d-18a131d57ac9"))
+IVectorView<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem*> __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t;
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+//#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 #ifndef DEF___FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_USE
@@ -1002,6 +1203,120 @@ typedef IVector<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider*> __
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                class ClipboardHistoryChangedEventArgs;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_USE
+#define DEF___FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("df4aac23-4002-5d4c-a237-2526e344978d"))
+IEventHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs*> : IEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs*> __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t;
+#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs*>
+//#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                class ClipboardHistoryItemsResult;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("841da82d-a32c-5997-8450-f54af1d5477e"))
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE
+#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("677b06b8-0134-5692-b487-4c8e2408ca01"))
+IAsyncOperation<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*, ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult*> __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t;
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 namespace ABI {
     namespace Windows {
@@ -1405,6 +1720,122 @@ typedef ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTra
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#ifndef DEF___FIIterator_1_HSTRING_USE
+#define DEF___FIIterator_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236"))
+IIterator<HSTRING> : IIterator_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<HSTRING> __FIIterator_1_HSTRING_t;
+#define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterator_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+//#define __FIIterator_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_HSTRING_USE
+#define DEF___FIIterable_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e"))
+IIterable<HSTRING> : IIterable_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<HSTRING> __FIIterable_1_HSTRING_t;
+#define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+//#define __FIIterable_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIVectorView_1_HSTRING_USE
+#define DEF___FIVectorView_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e"))
+IVectorView<HSTRING> : IVectorView_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<HSTRING> __FIVectorView_1_HSTRING_t;
+#define __FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
+//#define __FIVectorView_1_HSTRING_t ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_HSTRING_USE */
+
+
+
+
+#ifndef DEF___FIVector_1_HSTRING_USE
+#define DEF___FIVector_1_HSTRING_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90"))
+IVector<HSTRING> : IVector_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<String>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<HSTRING> __FIVector_1_HSTRING_t;
+#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::IVector<HSTRING>
+//#define __FIVector_1_HSTRING_t ABI::Windows::Foundation::Collections::IVector<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_HSTRING_USE */
+
+
 
 
 
@@ -1844,122 +2275,6 @@ typedef IIterable<ABI::Windows::Storage::IStorageItem*> __FIIterable_1_Windows__
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-
-#ifndef DEF___FIIterator_1_HSTRING_USE
-#define DEF___FIIterator_1_HSTRING_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236"))
-IIterator<HSTRING> : IIterator_impl<HSTRING> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IIterator`1<String>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IIterator<HSTRING> __FIIterator_1_HSTRING_t;
-#define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterator_1_HSTRING_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::IIterator<HSTRING>
-//#define __FIIterator_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterator<HSTRING>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIIterator_1_HSTRING_USE */
-
-
-
-
-#ifndef DEF___FIIterable_1_HSTRING_USE
-#define DEF___FIIterable_1_HSTRING_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e"))
-IIterable<HSTRING> : IIterable_impl<HSTRING> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IIterable`1<String>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IIterable<HSTRING> __FIIterable_1_HSTRING_t;
-#define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::IIterable<HSTRING>
-//#define __FIIterable_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterable<HSTRING>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIIterable_1_HSTRING_USE */
-
-
-
-
-#ifndef DEF___FIVectorView_1_HSTRING_USE
-#define DEF___FIVectorView_1_HSTRING_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e"))
-IVectorView<HSTRING> : IVectorView_impl<HSTRING> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IVectorView`1<String>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IVectorView<HSTRING> __FIVectorView_1_HSTRING_t;
-#define __FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIVectorView_1_HSTRING ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
-//#define __FIVectorView_1_HSTRING_t ABI::Windows::Foundation::Collections::IVectorView<HSTRING>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIVectorView_1_HSTRING_USE */
-
-
-
-
-#ifndef DEF___FIVector_1_HSTRING_USE
-#define DEF___FIVector_1_HSTRING_USE
-#if !defined(RO_NO_TEMPLATE_NAME)
-namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-template <>
-struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90"))
-IVector<HSTRING> : IVector_impl<HSTRING> 
-{
-    static const wchar_t* z_get_rc_name_impl() 
-    {
-        return L"Windows.Foundation.Collections.IVector`1<String>"; 
-    }
-};
-// Define a typedef for the parameterized interface specialization's mangled name.
-// This allows code which uses the mangled name for the parameterized interface to access the
-// correct parameterized interface specialization.
-typedef IVector<HSTRING> __FIVector_1_HSTRING_t;
-#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t
-/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-
-////  Define an alias for the C version of the interface for compatibility purposes.
-//#define __FIVector_1_HSTRING ABI::Windows::Foundation::Collections::IVector<HSTRING>
-//#define __FIVector_1_HSTRING_t ABI::Windows::Foundation::Collections::IVector<HSTRING>
-#endif // !defined(RO_NO_TEMPLATE_NAME)
-#endif /* DEF___FIVector_1_HSTRING_USE */
-
-
 
 
 
@@ -2658,7 +2973,29 @@ namespace ABI {
         namespace ApplicationModel {
             namespace DataTransfer {
                 
+                typedef enum ClipboardHistoryItemsResultStatus : int ClipboardHistoryItemsResultStatus;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                
                 typedef enum DataPackageOperation : unsigned int DataPackageOperation;
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                
+                typedef enum SetHistoryItemAsContentStatus : int SetHistoryItemAsContentStatus;
                 
             } /* Windows */
         } /* ApplicationModel */
@@ -2714,6 +3051,25 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                class ClipboardContentOptions;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
 
 
 
@@ -2840,6 +3196,34 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResultStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [v1_enum, contract] */
+                enum ClipboardHistoryItemsResultStatus : int
+                {
+                    ClipboardHistoryItemsResultStatus_Success = 0,
+                    ClipboardHistoryItemsResultStatus_AccessDenied = 1,
+                    ClipboardHistoryItemsResultStatus_ClipboardHistoryDisabled = 2,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Struct Windows.ApplicationModel.DataTransfer.DataPackageOperation
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2867,6 +3251,34 @@ namespace ABI {
         } /* ApplicationModel */
     } /* DataTransfer */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.DataTransfer.SetHistoryItemAsContentStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [v1_enum, contract] */
+                enum SetHistoryItemAsContentStatus : int
+                {
+                    SetHistoryItemAsContentStatus_Success = 0,
+                    SetHistoryItemAsContentStatus_AccessDenied = 1,
+                    SetHistoryItemAsContentStatus_ItemDeleted = 2,
+                };
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2973,6 +3385,191 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIShareP
 
 /*
  *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardContentOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardContentOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions[] = L"Windows.ApplicationModel.DataTransfer.IClipboardContentOptions";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("E888A98C-AD4B-5447-A056-AB3556276D2B"), exclusiveto, contract] */
+                MIDL_INTERFACE("E888A98C-AD4B-5447-A056-AB3556276D2B")
+                IClipboardContentOptions : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsRoamable(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsRoamable(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAllowedInHistory(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsAllowedInHistory(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RoamingFormats(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HistoryFormats(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClipboardContentOptions=_uuidof(IClipboardContentOptions);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryChangedEventArgs[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("C0BE453F-8EA2-53CE-9ABA-8D2212573452"), exclusiveto, contract] */
+                MIDL_INTERFACE("C0BE453F-8EA2-53CE-9ABA-8D2212573452")
+                IClipboardHistoryChangedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClipboardHistoryChangedEventArgs=_uuidof(IClipboardHistoryChangedEventArgs);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItem[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("0173BD8A-AFFF-5C50-AB92-3D19F481EC58"), exclusiveto, contract] */
+                MIDL_INTERFACE("0173BD8A-AFFF-5C50-AB92-3D19F481EC58")
+                IClipboardHistoryItem : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Id(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClipboardHistoryItem=_uuidof(IClipboardHistoryItem);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItemsResult[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("E6DFDEE6-0EE2-52E3-852B-F295DB65939A"), exclusiveto, contract] */
+                MIDL_INTERFACE("E6DFDEE6-0EE2-52E3-852B-F295DB65939A")
+                IClipboardHistoryItemsResult : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Status(
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Items(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClipboardHistoryItemsResult=_uuidof(IClipboardHistoryItemsResult);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.DataTransfer.IClipboardStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2996,7 +3593,7 @@ namespace ABI {
                 {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE GetContent(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * content
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE SetContent(
                         /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * content
@@ -3004,7 +3601,7 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE Flush(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE Clear(void) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ContentChanged(
-                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * changeHandler,
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
                         ) = 0;
                     /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ContentChanged(
@@ -3022,6 +3619,90 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.Clipboard
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardStatics2[] = L"Windows.ApplicationModel.DataTransfer.IClipboardStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("D2AC1B6A-D29F-554B-B303-F0452345FE02"), exclusiveto, contract] */
+                MIDL_INTERFACE("D2AC1B6A-D29F-554B-B303-F0452345FE02")
+                IClipboardStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetHistoryItemsAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ClearHistory(
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE DeleteItemFromHistory(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem * item,
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SetHistoryItemAsContent(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem * item,
+                        /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsHistoryEnabled(
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsRoamingEnabled(
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE SetContentWithOptions(
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IDataPackage * content,
+                        /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::DataTransfer::IClipboardContentOptions * options,
+                        /* [retval, out] */__RPC__out boolean * result
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_HistoryChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_HistoryChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_RoamingEnabledChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_RoamingEnabledChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_HistoryEnabledChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_HistoryEnabledChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClipboardStatics2=_uuidof(IClipboardStatics2);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3456,11 +4137,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPa
  * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
- *     Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_INTERFACE_DEFINED__)
@@ -3640,6 +4316,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySetView5[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace DataTransfer {
+                /* [object, uuid("6F0A9445-3760-50BB-8523-C4202DED7D78"), exclusiveto, contract] */
+                MIDL_INTERFACE("6F0A9445-3760-50BB-8523-C4202DED7D78")
+                IDataPackagePropertySetView5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsFromRoamingClipboard(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IDataPackagePropertySetView5=_uuidof(IDataPackagePropertySetView5);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* DataTransfer */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5001,7 +5718,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CITarget
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IClipboardStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IClipboardStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -5012,6 +5732,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CITarget
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_Clipboard[] = L"Windows.ApplicationModel.DataTransfer.Clipboard";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardContentOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardContentOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions[] = L"Windows.ApplicationModel.DataTransfer.ClipboardContentOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5077,11 +5890,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView ** Default Interface **
- *    Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
- *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5
+ *    Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
+ *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5522,11 +6336,41 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIShareProvid
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIShareProviderHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage_FWD_DEFINED__
@@ -5593,6 +6437,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage
 typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView_FWD_DEFINED__
@@ -5772,6 +6622,168 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CITargetAppli
 
 // Collection interface definitions
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+typedef struct __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl;
+
+interface __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+typedef  struct __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl;
+
+interface __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____FIIterator_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_INTERFACE_DEFINED__
@@ -5932,6 +6944,117 @@ interface __FIIterable_1_Windows__CApplicationModel__CDataTransfer__CShareProvid
 #endif // ____FIIterable_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem;
+
+typedef struct __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+            /* [in] */ __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl;
+
+interface __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -6186,6 +7309,167 @@ interface __FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider
 #endif // ____FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs;
+
+typedef struct __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * *e);
+    END_INTERFACE
+} __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgsVtbl;
+
+interface __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs
+{
+    CONST_VTBL struct __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult;
+
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl;
+
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -6728,6 +8012,410 @@ interface __FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDa
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_HSTRING;
+
+typedef struct __FIIterator_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out HSTRING *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_HSTRING * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_HSTRINGVtbl;
+
+interface __FIIterator_1_HSTRING
+{
+    CONST_VTBL struct __FIIterator_1_HSTRINGVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_HSTRING_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_HSTRING_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_HSTRING_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_HSTRING_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_HSTRING;
+
+typedef  struct __FIIterable_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_HSTRING * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_HSTRING * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_HSTRING **first);
+
+    END_INTERFACE
+} __FIIterable_1_HSTRINGVtbl;
+
+interface __FIIterable_1_HSTRING
+{
+    CONST_VTBL struct __FIIterable_1_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_HSTRING_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVectorView_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_HSTRING;
+
+typedef struct __FIVectorView_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_HSTRING * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_HSTRING * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_HSTRING * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_HSTRING * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_HSTRING * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out HSTRING *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_HSTRING * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_HSTRING * This,
+            /* [in] */ HSTRING item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_HSTRING * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_HSTRINGVtbl;
+
+interface __FIVectorView_1_HSTRING
+{
+    CONST_VTBL struct __FIVectorView_1_HSTRINGVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_HSTRING_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_HSTRING_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_HSTRING_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_HSTRING_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVector_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIVector_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_HSTRING __FIVector_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_HSTRING;
+
+typedef struct __FIVector_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_HSTRING * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt HSTRING *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_HSTRING * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_HSTRING **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ __RPC__in HSTRING item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in HSTRING item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in HSTRING item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ __RPC__in HSTRING item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_HSTRING * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) HSTRING *value);
+
+    END_INTERFACE
+} __FIVector_1_HSTRINGVtbl;
+
+interface __FIVector_1_HSTRING
+{
+    CONST_VTBL struct __FIVector_1_HSTRINGVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_HSTRING_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_HSTRING_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_HSTRING_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_HSTRING_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_HSTRING_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_HSTRING_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_HSTRING_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_HSTRING_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_HSTRING_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_HSTRING_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_HSTRING_INTERFACE_DEFINED__
+
 
 
 #if !defined(____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__)
@@ -7736,410 +9424,6 @@ interface __FIIterable_1_Windows__CStorage__CIStorageItem
 #endif // ____FIIterable_1_Windows__CStorage__CIStorageItem_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-#if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
-#define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
-
-typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIIterator_1_HSTRING;
-
-typedef struct __FIIterator_1_HSTRINGVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIIterator_1_HSTRING * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_HSTRING * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_HSTRING * This);
-    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_HSTRING * This,
-        /* [out] */ __RPC__out ULONG *iidCount,
-        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out HSTRING *current);
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
-    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
-    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_HSTRING * This,
-        /* [in] */ unsigned int capacity,
-        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
-        /* [retval][out] */ __RPC__out unsigned int *actual);
-
-    END_INTERFACE
-} __FIIterator_1_HSTRINGVtbl;
-
-interface __FIIterator_1_HSTRING
-{
-    CONST_VTBL struct __FIIterator_1_HSTRINGVtbl *lpVtbl;
-};
-
-
-
-#ifdef COBJMACROS
-
-
-#define __FIIterator_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIIterator_1_HSTRING_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIIterator_1_HSTRING_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIIterator_1_HSTRING_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIIterator_1_HSTRING_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIIterator_1_HSTRING_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIIterator_1_HSTRING_get_Current(This,current)	\
-    ( (This)->lpVtbl -> get_Current(This,current) ) 
-
-#define __FIIterator_1_HSTRING_get_HasCurrent(This,hasCurrent)	\
-    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
-
-#define __FIIterator_1_HSTRING_MoveNext(This,hasCurrent)	\
-    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
-
-#define __FIIterator_1_HSTRING_GetMany(This,capacity,items,actual)	\
-    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif // ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
-
-
-#if !defined(____FIIterable_1_HSTRING_INTERFACE_DEFINED__)
-#define ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
-
-typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIIterable_1_HSTRING;
-
-typedef  struct __FIIterable_1_HSTRINGVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIIterable_1_HSTRING * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_HSTRING * This);
-
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_HSTRING * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_HSTRING * This,
-                                           /* [out] */ __RPC__out ULONG *iidCount,
-                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_HSTRING **first);
-
-    END_INTERFACE
-} __FIIterable_1_HSTRINGVtbl;
-
-interface __FIIterable_1_HSTRING
-{
-    CONST_VTBL struct __FIIterable_1_HSTRINGVtbl *lpVtbl;
-};
-
-#ifdef COBJMACROS
-
-#define __FIIterable_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIIterable_1_HSTRING_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIIterable_1_HSTRING_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIIterable_1_HSTRING_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIIterable_1_HSTRING_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIIterable_1_HSTRING_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIIterable_1_HSTRING_First(This,first)	\
-    ( (This)->lpVtbl -> First(This,first) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif // ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
-
-
-#if !defined(____FIVectorView_1_HSTRING_INTERFACE_DEFINED__)
-#define ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
-
-typedef interface __FIVectorView_1_HSTRING __FIVectorView_1_HSTRING;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIVectorView_1_HSTRING;
-
-typedef struct __FIVectorView_1_HSTRINGVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIVectorView_1_HSTRING * This,
-        /* [in] */ __RPC__in REFIID riid,
-        /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-
-    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_HSTRING * This);
-
-    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_HSTRING * This);
-
-    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_HSTRING * This,
-                                            /* [out] */ __RPC__out ULONG *iidCount,
-                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-        __RPC__in __FIVectorView_1_HSTRING * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-        __RPC__in __FIVectorView_1_HSTRING * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-                                         __RPC__in __FIVectorView_1_HSTRING * This,
-                                         /* [in] */ unsigned int index,
-                                         /* [retval][out] */ __RPC__out HSTRING *item);
-
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVectorView_1_HSTRING * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-                                               __RPC__in __FIVectorView_1_HSTRING * This,
-            /* [in] */ HSTRING item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-                                               __RPC__in __FIVectorView_1_HSTRING * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-
-        END_INTERFACE
-} __FIVectorView_1_HSTRINGVtbl;
-
-interface __FIVectorView_1_HSTRING
-{
-    CONST_VTBL struct __FIVectorView_1_HSTRINGVtbl *lpVtbl;
-};
-
-
-
-#ifdef COBJMACROS
-
-
-#define __FIVectorView_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIVectorView_1_HSTRING_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIVectorView_1_HSTRING_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIVectorView_1_HSTRING_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIVectorView_1_HSTRING_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIVectorView_1_HSTRING_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIVectorView_1_HSTRING_GetAt(This,index,item)	\
-    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
-
-#define __FIVectorView_1_HSTRING_get_Size(This,size)	\
-    ( (This)->lpVtbl -> get_Size(This,size) ) 
-
-#define __FIVectorView_1_HSTRING_IndexOf(This,item,index,found)	\
-    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
-
-#define __FIVectorView_1_HSTRING_GetMany(This,startIndex,capacity,items,actual)	\
-    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
-
-#endif /* COBJMACROS */
-
-
-
-#endif // ____FIVectorView_1_HSTRING_INTERFACE_DEFINED__
-
-
-#if !defined(____FIVector_1_HSTRING_INTERFACE_DEFINED__)
-#define ____FIVector_1_HSTRING_INTERFACE_DEFINED__
-
-typedef interface __FIVector_1_HSTRING __FIVector_1_HSTRING;
-
-//  Declare the parameterized interface IID.
-EXTERN_C const IID IID___FIVector_1_HSTRING;
-
-typedef struct __FIVector_1_HSTRINGVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-        __RPC__in __FIVector_1_HSTRING * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-        _COM_Outptr_  void **ppvObject);
-
-    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_HSTRING * This);
-    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_HSTRING * This);
-    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [out] */ __RPC__out ULONG *iidCount,
-        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-
-    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
-    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
-
-    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ unsigned int index,
-        /* [retval][out] */ __RPC__deref_out_opt HSTRING *item);
-
-    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-        __RPC__in __FIVector_1_HSTRING * This,
-        /* [retval][out] */ __RPC__out unsigned int *size);
-
-    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_HSTRING **view);
-
-    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ __RPC__in HSTRING item,
-        /* [out] */ __RPC__out unsigned int *index,
-        /* [retval][out] */ __RPC__out boolean *found);
-
-    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ unsigned int index,
-        /* [in] */ __RPC__in HSTRING item);
-
-    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ unsigned int index,
-        /* [in] */ __RPC__in HSTRING item);
-
-    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ unsigned int index);
-    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_HSTRING * This, /* [in] */ __RPC__in HSTRING item);
-    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_HSTRING * This);
-    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_HSTRING * This);
-    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ unsigned int startIndex,
-        /* [in] */ unsigned int capacity,
-        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
-        /* [retval][out] */ __RPC__out unsigned int *actual);
-
-    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_HSTRING * This,
-        /* [in] */ unsigned int count,
-        /* [size_is][in] */ __RPC__in_ecount_full(count) HSTRING *value);
-
-    END_INTERFACE
-} __FIVector_1_HSTRINGVtbl;
-
-interface __FIVector_1_HSTRING
-{
-    CONST_VTBL struct __FIVector_1_HSTRINGVtbl *lpVtbl;
-};
-
-
-
-#ifdef COBJMACROS
-
-
-#define __FIVector_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __FIVector_1_HSTRING_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __FIVector_1_HSTRING_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __FIVector_1_HSTRING_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __FIVector_1_HSTRING_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __FIVector_1_HSTRING_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __FIVector_1_HSTRING_GetAt(This,index,item)	\
-    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
-
-#define __FIVector_1_HSTRING_get_Size(This,size)	\
-    ( (This)->lpVtbl -> get_Size(This,size) ) 
-
-#define __FIVector_1_HSTRING_GetView(This,view)	\
-    ( (This)->lpVtbl -> GetView(This,view) ) 
-
-#define __FIVector_1_HSTRING_IndexOf(This,item,index,found)	\
-    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
-
-#define __FIVector_1_HSTRING_SetAt(This,index,item)	\
-    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
-
-#define __FIVector_1_HSTRING_InsertAt(This,index,item)	\
-    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
-
-#define __FIVector_1_HSTRING_RemoveAt(This,index)	\
-    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
-
-#define __FIVector_1_HSTRING_Append(This,item)	\
-    ( (This)->lpVtbl -> Append(This,item) ) 
-
-#define __FIVector_1_HSTRING_RemoveAtEnd(This)	\
-    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
-
-#define __FIVector_1_HSTRING_Clear(This)	\
-    ( (This)->lpVtbl -> Clear(This) ) 
-
-#define __FIVector_1_HSTRING_GetMany(This,startIndex,capacity,items,actual)	\
-    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
-
-#define __FIVector_1_HSTRING_ReplaceAll(This,count,value)	\
-    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
-
-#endif /* COBJMACROS */
-
-
-
-#endif // ____FIVector_1_HSTRING_INTERFACE_DEFINED__
-
 
 
 #if !defined(____FIAsyncOperationCompletedHandler_1_IInspectable_INTERFACE_DEFINED__)
@@ -9268,7 +10552,13 @@ typedef struct __x_ABI_CWindows_CUI_CColor __x_ABI_CWindows_CUI_CColor;
 
 
 
+typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CClipboardHistoryItemsResultStatus __x_ABI_CWindows_CApplicationModel_CDataTransfer_CClipboardHistoryItemsResultStatus;
+
+
 typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CDataPackageOperation __x_ABI_CWindows_CApplicationModel_CDataTransfer_CDataPackageOperation;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CSetHistoryItemAsContentStatus __x_ABI_CWindows_CApplicationModel_CDataTransfer_CSetHistoryItemAsContentStatus;
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CShareUITheme __x_ABI_CWindows_CApplicationModel_CDataTransfer_CShareUITheme;
@@ -9346,6 +10636,36 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CShareUITheme __x_
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResultStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CClipboardHistoryItemsResultStatus
+{
+    ClipboardHistoryItemsResultStatus_Success = 0,
+    ClipboardHistoryItemsResultStatus_AccessDenied = 1,
+    ClipboardHistoryItemsResultStatus_ClipboardHistoryDisabled = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 /*
  *
  * Struct Windows.ApplicationModel.DataTransfer.DataPackageOperation
@@ -9365,6 +10685,26 @@ enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CDataPackageOperation
     DataPackageOperation_Link = 0x4,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.DataTransfer.SetHistoryItemAsContentStatus
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CDataTransfer_CSetHistoryItemAsContentStatus
+{
+    SetHistoryItemAsContentStatus_Success = 0,
+    SetHistoryItemAsContentStatus_AccessDenied = 1,
+    SetHistoryItemAsContentStatus_ItemDeleted = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -9511,6 +10851,427 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIShareP
 
 /*
  *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardContentOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardContentOptions
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions[] = L"Windows.ApplicationModel.DataTransfer.IClipboardContentOptions";
+/* [object, uuid("E888A98C-AD4B-5447-A056-AB3556276D2B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptionsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsRoamable )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsRoamable )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsAllowedInHistory )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsAllowedInHistory )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RoamingFormats )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HistoryFormats )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_HSTRING * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptionsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptionsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_get_IsRoamable(This,value) \
+    ( (This)->lpVtbl->get_IsRoamable(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_put_IsRoamable(This,value) \
+    ( (This)->lpVtbl->put_IsRoamable(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_get_IsAllowedInHistory(This,value) \
+    ( (This)->lpVtbl->get_IsAllowedInHistory(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_put_IsAllowedInHistory(This,value) \
+    ( (This)->lpVtbl->put_IsAllowedInHistory(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_get_RoamingFormats(This,value) \
+    ( (This)->lpVtbl->get_RoamingFormats(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_get_HistoryFormats(This,value) \
+    ( (This)->lpVtbl->get_HistoryFormats(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryChangedEventArgs[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs";
+/* [object, uuid("C0BE453F-8EA2-53CE-9ABA-8D2212573452"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItem[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem";
+/* [object, uuid("0173BD8A-AFFF-5C50-AB92-3D19F481EC58"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Id )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Timestamp )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CDateTime * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Content )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_get_Id(This,value) \
+    ( (This)->lpVtbl->get_Id(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_get_Timestamp(This,value) \
+    ( (This)->lpVtbl->get_Timestamp(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_get_Content(This,value) \
+    ( (This)->lpVtbl->get_Content(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItemsResult[] = L"Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult";
+/* [object, uuid("E6DFDEE6-0EE2-52E3-852B-F295DB65939A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Status )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CDataTransfer_CClipboardHistoryItemsResultStatus * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Items )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResultVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_get_Status(This,value) \
+    ( (This)->lpVtbl->get_Status(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_get_Items(This,value) \
+    ( (This)->lpVtbl->get_Items(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItemsResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.DataTransfer.IClipboardStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -9560,7 +11321,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetContent )(
         __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView * * content
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageView * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetContent )(
         __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics * This,
@@ -9574,7 +11335,7 @@ HRESULT ( STDMETHODCALLTYPE *GetContent )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ContentChanged )(
         __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics * This,
-        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * changeHandler,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ContentChanged )(
@@ -9609,8 +11370,8 @@ interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_GetContent(This,content) \
-    ( (This)->lpVtbl->GetContent(This,content) )
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_GetContent(This,result) \
+    ( (This)->lpVtbl->GetContent(This,result) )
 
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_SetContent(This,content) \
     ( (This)->lpVtbl->SetContent(This,content) )
@@ -9621,8 +11382,8 @@ interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_Clear(This) \
     ( (This)->lpVtbl->Clear(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_add_ContentChanged(This,changeHandler,token) \
-    ( (This)->lpVtbl->add_ContentChanged(This,changeHandler,token) )
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_add_ContentChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ContentChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_remove_ContentChanged(This,token) \
     ( (This)->lpVtbl->remove_ContentChanged(This,token) )
@@ -9634,6 +11395,190 @@ interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IClipboardStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.Clipboard
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IClipboardStatics2[] = L"Windows.ApplicationModel.DataTransfer.IClipboardStatics2";
+/* [object, uuid("D2AC1B6A-D29F-554B-B303-F0452345FE02"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetHistoryItemsAsync )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *ClearHistory )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *DeleteItemFromHistory )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * item,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetHistoryItemAsContent )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardHistoryItem * item,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CDataTransfer_CSetHistoryItemAsContentStatus * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsHistoryEnabled )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsRoamingEnabled )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetContentWithOptions )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackage * content,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardContentOptions * options,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_HistoryChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_HistoryChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_RoamingEnabledChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_RoamingEnabledChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_HistoryEnabledChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_HistoryEnabledChanged )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_GetHistoryItemsAsync(This,operation) \
+    ( (This)->lpVtbl->GetHistoryItemsAsync(This,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_ClearHistory(This,result) \
+    ( (This)->lpVtbl->ClearHistory(This,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_DeleteItemFromHistory(This,item,result) \
+    ( (This)->lpVtbl->DeleteItemFromHistory(This,item,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_SetHistoryItemAsContent(This,item,result) \
+    ( (This)->lpVtbl->SetHistoryItemAsContent(This,item,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_IsHistoryEnabled(This,result) \
+    ( (This)->lpVtbl->IsHistoryEnabled(This,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_IsRoamingEnabled(This,result) \
+    ( (This)->lpVtbl->IsRoamingEnabled(This,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_SetContentWithOptions(This,content,options,result) \
+    ( (This)->lpVtbl->SetContentWithOptions(This,content,options,result) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_add_HistoryChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_HistoryChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_remove_HistoryChanged(This,token) \
+    ( (This)->lpVtbl->remove_HistoryChanged(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_add_RoamingEnabledChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_RoamingEnabledChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_remove_RoamingEnabledChanged(This,token) \
+    ( (This)->lpVtbl->remove_RoamingEnabledChanged(This,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_add_HistoryEnabledChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_HistoryEnabledChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_remove_HistoryEnabledChanged(This,token) \
+    ( (This)->lpVtbl->remove_HistoryEnabledChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIClipboardStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -10596,11 +12541,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPa
  * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
- *     Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView_INTERFACE_DEFINED__)
@@ -11024,6 +12964,99 @@ interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackageProperty
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySetView5[] = L"Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5";
+/* [object, uuid("6F0A9445-3760-50BB-8523-C4202DED7D78"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsFromRoamingClipboard )(
+        __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_get_IsFromRoamingClipboard(This,value) \
+    ( (This)->lpVtbl->get_IsFromRoamingClipboard(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CDataTransfer_CIDataPackagePropertySetView5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -14101,7 +16134,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CITarget
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IClipboardStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.DataTransfer.IClipboardStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -14112,6 +16148,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CDataTransfer_CITarget
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_Clipboard[] = L"Windows.ApplicationModel.DataTransfer.Clipboard";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardContentOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardContentOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardContentOptions[] = L"Windows.ApplicationModel.DataTransfer.ClipboardContentOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryChangedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryChangedEventArgs[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryChangedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryItem ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItem[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryItem";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.DataTransfer.IClipboardHistoryItemsResult ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_DataTransfer_ClipboardHistoryItemsResult[] = L"Windows.ApplicationModel.DataTransfer.ClipboardHistoryItemsResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -14177,11 +16306,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView ** Default Interface **
- *    Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
- *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
  *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView4
+ *    Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView5
+ *    Windows.Foundation.Collections.IMapView_2_HSTRING,IInspectable
+ *    Windows.Foundation.Collections.IIterable_1___FIKeyValuePair_2_HSTRING_IInspectable
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

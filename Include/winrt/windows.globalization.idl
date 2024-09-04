@@ -61,6 +61,8 @@ namespace Windows
 
         interface ICurrencyIdentifiersStatics2;
 
+        interface ICurrencyIdentifiersStatics3;
+
         interface IGeographicRegion;
 
         interface IGeographicRegionFactory;
@@ -524,6 +526,17 @@ namespace Windows
             [propget] HRESULT BYN([out] [retval] HSTRING* value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.Globalization.CurrencyIdentifiers)]
+        [uuid(4FB23BFA-ED25-4F4D-857F-237F1748C21C)]
+        interface ICurrencyIdentifiersStatics3 : IInspectable
+        {
+            [propget] HRESULT MRU([out] [retval] HSTRING* value);
+            [propget] HRESULT SSP([out] [retval] HSTRING* value);
+            [propget] HRESULT STN([out] [retval] HSTRING* value);
+            [propget] HRESULT VES([out] [retval] HSTRING* value);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [exclusiveto(Windows.Globalization.GeographicRegion)]
         [uuid(01E9A621-4A64-4ED9-954F-9EDEB07BD903)]
@@ -741,6 +754,7 @@ namespace Windows
         [marshaling_behavior(agile)]
         [static(Windows.Globalization.ICurrencyIdentifiersStatics, Windows.Foundation.UniversalApiContract, 1.0)]
         [static(Windows.Globalization.ICurrencyIdentifiersStatics2, Windows.Foundation.UniversalApiContract, 4.0)]
+        [static(Windows.Globalization.ICurrencyIdentifiersStatics3, Windows.Foundation.UniversalApiContract, 7.0)]
         [threading(both)]
         runtimeclass CurrencyIdentifiers
         {

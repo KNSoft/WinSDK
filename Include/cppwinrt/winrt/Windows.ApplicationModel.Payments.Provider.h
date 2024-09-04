@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Payments.2.h"
@@ -134,288 +134,252 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppCanMakePaymentTriggerDetails>
 {
-    HRESULT __stdcall get_Request(void** result) noexcept final
+    int32_t WINRT_CALL get_Request(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::ApplicationModel::Payments::PaymentRequest));
             *result = detach_from<Windows::ApplicationModel::Payments::PaymentRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCanMakePaymentResult(void* value) noexcept final
+    int32_t WINRT_CALL ReportCanMakePaymentResult(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCanMakePaymentResult, WINRT_WRAP(void), Windows::ApplicationModel::Payments::PaymentCanMakePaymentResult const&);
             this->shim().ReportCanMakePaymentResult(*reinterpret_cast<Windows::ApplicationModel::Payments::PaymentCanMakePaymentResult const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppManager> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppManager>
 {
-    HRESULT __stdcall RegisterAsync(void* supportedPaymentMethodIds, void** result) noexcept final
+    int32_t WINRT_CALL RegisterAsync(void* supportedPaymentMethodIds, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<hstring> const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RegisterAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&supportedPaymentMethodIds)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnregisterAsync(void** result) noexcept final
+    int32_t WINRT_CALL UnregisterAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnregisterAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().UnregisterAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>
 {
-    HRESULT __stdcall get_Current(void** value) noexcept final
+    int32_t WINRT_CALL get_Current(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Current, WINRT_WRAP(Windows::ApplicationModel::Payments::Provider::PaymentAppManager));
             *value = detach_from<Windows::ApplicationModel::Payments::Provider::PaymentAppManager>(this->shim().Current());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransaction> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransaction>
 {
-    HRESULT __stdcall get_PaymentRequest(void** value) noexcept final
+    int32_t WINRT_CALL get_PaymentRequest(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaymentRequest, WINRT_WRAP(Windows::ApplicationModel::Payments::PaymentRequest));
             *value = detach_from<Windows::ApplicationModel::Payments::PaymentRequest>(this->shim().PaymentRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PayerEmail(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PayerEmail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerEmail, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PayerEmail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PayerEmail(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PayerEmail(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerEmail, WINRT_WRAP(void), hstring const&);
             this->shim().PayerEmail(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PayerName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PayerName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PayerName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PayerName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PayerName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerName, WINRT_WRAP(void), hstring const&);
             this->shim().PayerName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PayerPhoneNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PayerPhoneNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerPhoneNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PayerPhoneNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PayerPhoneNumber(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PayerPhoneNumber(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayerPhoneNumber, WINRT_WRAP(void), hstring const&);
             this->shim().PayerPhoneNumber(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateShippingAddressAsync(void* shippingAddress, void** result) noexcept final
+    int32_t WINRT_CALL UpdateShippingAddressAsync(void* shippingAddress, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateShippingAddressAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::PaymentRequestChangedResult>), Windows::ApplicationModel::Payments::PaymentAddress const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::PaymentRequestChangedResult>>(this->shim().UpdateShippingAddressAsync(*reinterpret_cast<Windows::ApplicationModel::Payments::PaymentAddress const*>(&shippingAddress)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateSelectedShippingOptionAsync(void* selectedShippingOption, void** result) noexcept final
+    int32_t WINRT_CALL UpdateSelectedShippingOptionAsync(void* selectedShippingOption, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateSelectedShippingOptionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::PaymentRequestChangedResult>), Windows::ApplicationModel::Payments::PaymentShippingOption const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::PaymentRequestChangedResult>>(this->shim().UpdateSelectedShippingOptionAsync(*reinterpret_cast<Windows::ApplicationModel::Payments::PaymentShippingOption const*>(&selectedShippingOption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AcceptAsync(void* paymentToken, void** result) noexcept final
+    int32_t WINRT_CALL AcceptAsync(void* paymentToken, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult>), Windows::ApplicationModel::Payments::PaymentToken const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult>>(this->shim().AcceptAsync(*reinterpret_cast<Windows::ApplicationModel::Payments::PaymentToken const*>(&paymentToken)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Reject() noexcept final
+    int32_t WINRT_CALL Reject() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reject, WINRT_WRAP(void));
             this->shim().Reject();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionAcceptResult>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus));
             *value = detach_from<Windows::ApplicationModel::Payments::PaymentRequestCompletionStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics> : produce_base<D, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransaction>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransaction>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -425,12 +389,12 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Payments::Provider {
 
 inline Windows::ApplicationModel::Payments::Provider::PaymentAppManager PaymentAppManager::Current()
 {
-    return get_activation_factory<PaymentAppManager, Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>().Current();
+    return impl::call_factory<PaymentAppManager, Windows::ApplicationModel::Payments::Provider::IPaymentAppManagerStatics>([&](auto&& f) { return f.Current(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Payments::Provider::PaymentTransaction> PaymentTransaction::FromIdAsync(param::hstring const& id)
 {
-    return get_activation_factory<PaymentTransaction, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>().FromIdAsync(id);
+    return impl::call_factory<PaymentTransaction, Windows::ApplicationModel::Payments::Provider::IPaymentTransactionStatics>([&](auto&& f) { return f.FromIdAsync(id); });
 }
 
 }
@@ -449,5 +413,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Payments::Provider::Pay
 template<> struct hash<winrt::Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Payments::Provider::PaymentTransactionAcceptResult> {};
 
 }
-
-WINRT_WARNING_POP

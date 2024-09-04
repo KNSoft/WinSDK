@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -96,18 +96,18 @@ template <> struct name<Windows::ApplicationModel::UserDataTasks::DataProvider::
 template <> struct name<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSkipOccurrenceRequestEventArgs>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSkipOccurrenceRequestEventArgs" }; };
 template <> struct name<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequest>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequest" }; };
 template <> struct name<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequestEventArgs>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.DataProvider.UserDataTaskListSyncManagerSyncRequestEventArgs" }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>{ static constexpr GUID value{ 0x9FF39D1D,0xA447,0x428B,{ 0xAF,0xE9,0xE5,0x40,0x2B,0xDE,0xB0,0x41 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderTriggerDetails>{ static constexpr GUID value{ 0xAE273202,0xB1C9,0x453E,{ 0xAF,0xC5,0xB3,0x0A,0xF3,0xBD,0x21,0x7D } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest>{ static constexpr GUID value{ 0xF65E14A3,0x1A42,0x49DA,{ 0x85,0x52,0x28,0x73,0xE5,0x2C,0x55,0xEB } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequestEventArgs>{ static constexpr GUID value{ 0xD77C393D,0x4CF2,0x48AD,{ 0x87,0xFD,0x96,0x3F,0x0E,0xAA,0x7A,0x95 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequest>{ static constexpr GUID value{ 0x2133772C,0x55C2,0x4300,{ 0x82,0x79,0x04,0x32,0x6E,0x07,0xCC,0xE4 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequestEventArgs>{ static constexpr GUID value{ 0x12C55A52,0xE378,0x419B,{ 0xAE,0x38,0xA5,0xE9,0xE6,0x04,0x47,0x6E } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequest>{ static constexpr GUID value{ 0x4B863C68,0x7657,0x4F3D,{ 0xB0,0x74,0xD4,0x7E,0xC8,0xDF,0x07,0xE7 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequestEventArgs>{ static constexpr GUID value{ 0x6063DAD9,0xF562,0x4145,{ 0x8E,0xFE,0xD5,0x00,0x78,0xC9,0x2B,0x7F } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequest>{ static constexpr GUID value{ 0xAB87E34D,0x1CD3,0x431C,{ 0x9F,0x58,0x08,0x9A,0xA4,0x33,0x8D,0x85 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequestEventArgs>{ static constexpr GUID value{ 0x7A3B924A,0xCC2F,0x4E7B,{ 0xAA,0xCD,0xA5,0xB9,0xD2,0x9C,0xFA,0x4E } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest>{ static constexpr GUID value{ 0x40A73807,0x7590,0x4149,{ 0xAE,0x19,0xB2,0x11,0x43,0x1A,0x9F,0x48 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs>{ static constexpr GUID value{ 0x8EAD1C12,0x768E,0x43BD,{ 0x83,0x85,0x5C,0xDC,0x35,0x1F,0xFD,0xEA } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>{ static constexpr guid value{ 0x9FF39D1D,0xA447,0x428B,{ 0xAF,0xE9,0xE5,0x40,0x2B,0xDE,0xB0,0x41 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderTriggerDetails>{ static constexpr guid value{ 0xAE273202,0xB1C9,0x453E,{ 0xAF,0xC5,0xB3,0x0A,0xF3,0xBD,0x21,0x7D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest>{ static constexpr guid value{ 0xF65E14A3,0x1A42,0x49DA,{ 0x85,0x52,0x28,0x73,0xE5,0x2C,0x55,0xEB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequestEventArgs>{ static constexpr guid value{ 0xD77C393D,0x4CF2,0x48AD,{ 0x87,0xFD,0x96,0x3F,0x0E,0xAA,0x7A,0x95 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequest>{ static constexpr guid value{ 0x2133772C,0x55C2,0x4300,{ 0x82,0x79,0x04,0x32,0x6E,0x07,0xCC,0xE4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequestEventArgs>{ static constexpr guid value{ 0x12C55A52,0xE378,0x419B,{ 0xAE,0x38,0xA5,0xE9,0xE6,0x04,0x47,0x6E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequest>{ static constexpr guid value{ 0x4B863C68,0x7657,0x4F3D,{ 0xB0,0x74,0xD4,0x7E,0xC8,0xDF,0x07,0xE7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequestEventArgs>{ static constexpr guid value{ 0x6063DAD9,0xF562,0x4145,{ 0x8E,0xFE,0xD5,0x00,0x78,0xC9,0x2B,0x7F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequest>{ static constexpr guid value{ 0xAB87E34D,0x1CD3,0x431C,{ 0x9F,0x58,0x08,0x9A,0xA4,0x33,0x8D,0x85 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequestEventArgs>{ static constexpr guid value{ 0x7A3B924A,0xCC2F,0x4E7B,{ 0xAA,0xCD,0xA5,0xB9,0xD2,0x9C,0xFA,0x4E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest>{ static constexpr guid value{ 0x40A73807,0x7590,0x4149,{ 0xAE,0x19,0xB2,0x11,0x43,0x1A,0x9F,0x48 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs>{ static constexpr guid value{ 0x8EAD1C12,0x768E,0x43BD,{ 0x83,0x85,0x5C,0xDC,0x35,0x1F,0xFD,0xEA } }; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection>{ using type = Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderTriggerDetails>{ using type = Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderTriggerDetails; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCompleteTaskRequest>{ using type = Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest; };
@@ -121,29 +121,118 @@ template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::D
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequest>{ using type = Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequestEventArgs>{ using type = Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs; };
 
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_CreateOrUpdateTaskRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CreateOrUpdateTaskRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SyncRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SyncRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SkipOccurrenceRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SkipOccurrenceRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CompleteTaskRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CompleteTaskRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DeleteTaskRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DeleteTaskRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Connection(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TaskId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedAsync(void* completedTaskId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequestEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Task(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedAsync(void* createdOrUpdatedUserDataTask, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequestEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TaskId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequestEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TaskId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequestEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailedAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_ApplicationModel_UserDataTasks_DataProvider_IUserDataTaskDataProviderConnection
 {
-    event_token CreateOrUpdateTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCreateOrUpdateTaskRequestEventArgs> const& handler) const;
-    using CreateOrUpdateTaskRequested_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>;
+    winrt::event_token CreateOrUpdateTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCreateOrUpdateTaskRequestEventArgs> const& handler) const;
+    using CreateOrUpdateTaskRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>::remove_CreateOrUpdateTaskRequested>;
     CreateOrUpdateTaskRequested_revoker CreateOrUpdateTaskRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCreateOrUpdateTaskRequestEventArgs> const& handler) const;
-    void CreateOrUpdateTaskRequested(event_token const& token) const;
-    event_token SyncRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequestEventArgs> const& handler) const;
-    using SyncRequested_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>;
+    void CreateOrUpdateTaskRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token SyncRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequestEventArgs> const& handler) const;
+    using SyncRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>::remove_SyncRequested>;
     SyncRequested_revoker SyncRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSyncManagerSyncRequestEventArgs> const& handler) const;
-    void SyncRequested(event_token const& token) const;
-    event_token SkipOccurrenceRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSkipOccurrenceRequestEventArgs> const& handler) const;
-    using SkipOccurrenceRequested_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>;
+    void SyncRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token SkipOccurrenceRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSkipOccurrenceRequestEventArgs> const& handler) const;
+    using SkipOccurrenceRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>::remove_SkipOccurrenceRequested>;
     SkipOccurrenceRequested_revoker SkipOccurrenceRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListSkipOccurrenceRequestEventArgs> const& handler) const;
-    void SkipOccurrenceRequested(event_token const& token) const;
-    event_token CompleteTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCompleteTaskRequestEventArgs> const& handler) const;
-    using CompleteTaskRequested_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>;
+    void SkipOccurrenceRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token CompleteTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCompleteTaskRequestEventArgs> const& handler) const;
+    using CompleteTaskRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>::remove_CompleteTaskRequested>;
     CompleteTaskRequested_revoker CompleteTaskRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListCompleteTaskRequestEventArgs> const& handler) const;
-    void CompleteTaskRequested(event_token const& token) const;
-    event_token DeleteTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListDeleteTaskRequestEventArgs> const& handler) const;
-    using DeleteTaskRequested_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>;
+    void CompleteTaskRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token DeleteTaskRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListDeleteTaskRequestEventArgs> const& handler) const;
+    using DeleteTaskRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>::remove_DeleteTaskRequested>;
     DeleteTaskRequested_revoker DeleteTaskRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskDataProviderConnection, Windows::ApplicationModel::UserDataTasks::DataProvider::UserDataTaskListDeleteTaskRequestEventArgs> const& handler) const;
-    void DeleteTaskRequested(event_token const& token) const;
+    void DeleteTaskRequested(winrt::event_token const& token) const noexcept;
     void Start() const;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataTasks_DataProvider_IUserDataTaskDataProviderConnection<D>; };
@@ -243,94 +332,5 @@ struct consume_Windows_ApplicationModel_UserDataTasks_DataProvider_IUserDataTask
     Windows::Foundation::Deferral GetDeferral() const;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataTasks_DataProvider_IUserDataTaskListSyncManagerSyncRequestEventArgs<D>; };
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderConnection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_CreateOrUpdateTaskRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CreateOrUpdateTaskRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SyncRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SyncRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SkipOccurrenceRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SkipOccurrenceRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_CompleteTaskRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CompleteTaskRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DeleteTaskRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DeleteTaskRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskDataProviderTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Connection(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TaskId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedAsync(HSTRING completedTaskId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCompleteTaskRequestEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Task(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedAsync(void* createdOrUpdatedUserDataTask, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListCreateOrUpdateTaskRequestEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TaskId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListDeleteTaskRequestEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TaskId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSkipOccurrenceRequestEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailedAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::DataProvider::IUserDataTaskListSyncManagerSyncRequestEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
 
 }

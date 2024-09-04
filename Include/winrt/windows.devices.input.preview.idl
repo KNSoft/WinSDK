@@ -271,7 +271,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeDevicePreview
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeDevicePreview;
@@ -279,7 +278,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeDeviceWatcherAddedPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeDeviceWatcherAddedPreviewEventArgs;
@@ -287,7 +285,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeDeviceWatcherPreview
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeDeviceWatcherPreview;
@@ -295,7 +292,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeDeviceWatcherRemovedPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeDeviceWatcherRemovedPreviewEventArgs;
@@ -303,7 +299,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeDeviceWatcherUpdatedPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeDeviceWatcherUpdatedPreviewEventArgs;
@@ -311,7 +306,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeEnteredPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeEnteredPreviewEventArgs;
@@ -319,7 +313,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeExitedPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeExitedPreviewEventArgs;
@@ -328,6 +321,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
                 [static(Windows.Devices.Input.Preview.IGazeInputSourcePreviewStatics, Windows.Foundation.UniversalApiContract, 6.0)]
+                [threading(both)]
                 runtimeclass GazeInputSourcePreview
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeInputSourcePreview;
@@ -335,7 +329,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazeMovedPreviewEventArgs
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazeMovedPreviewEventArgs;
@@ -343,7 +336,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass GazePointPreview
                 {
                     [default] interface Windows.Devices.Input.Preview.IGazePointPreview;

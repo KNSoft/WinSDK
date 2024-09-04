@@ -69,18 +69,7 @@ public:
     inline istream& operator>>(unsigned char &);
     inline istream& operator>>(signed char &);
     istream& operator>>(short &);
-#if defined(_STREAM_WCHAR_T_HAZARD)
-private:
-#if defined(_NATIVE_WCHAR_T_DEFINED)
-    istream& operator>>(wchar_t &);
     istream& operator>>(unsigned short &);
-#else
-    istream& operator>>(unsigned short &);
-#endif
-public:
-#else
-    istream& operator>>(unsigned short &);
-#endif
     istream& operator>>(int &);
     istream& operator>>(unsigned int &);
     istream& operator>>(long &);

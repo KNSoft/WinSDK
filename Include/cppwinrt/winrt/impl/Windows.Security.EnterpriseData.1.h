@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -68,7 +68,7 @@ struct WINRT_EBO IFileProtectionManagerStatics3 :
     IFileProtectionManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] IFileRevocationManagerStatics :
+struct WINRT_EBO IFileRevocationManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFileRevocationManagerStatics>
 {

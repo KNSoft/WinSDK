@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -116,19 +116,111 @@ template <> struct name<Windows::Devices::Scanners::ImageScannerColorMode>{ stat
 template <> struct name<Windows::Devices::Scanners::ImageScannerFormat>{ static constexpr auto & value{ L"Windows.Devices.Scanners.ImageScannerFormat" }; };
 template <> struct name<Windows::Devices::Scanners::ImageScannerScanSource>{ static constexpr auto & value{ L"Windows.Devices.Scanners.ImageScannerScanSource" }; };
 template <> struct name<Windows::Devices::Scanners::ImageScannerResolution>{ static constexpr auto & value{ L"Windows.Devices.Scanners.ImageScannerResolution" }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScanner>{ static constexpr GUID value{ 0x53A88F78,0x5298,0x48A0,{ 0x8D,0xA3,0x80,0x87,0x51,0x96,0x65,0xE0 } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerFeederConfiguration>{ static constexpr GUID value{ 0x74BDACEE,0xFA97,0x4C17,{ 0x82,0x80,0x40,0xE3,0x9C,0x6D,0xCC,0x67 } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerFormatConfiguration>{ static constexpr GUID value{ 0xAE275D11,0xDADF,0x4010,{ 0xBF,0x10,0xCC,0xA5,0xC8,0x3D,0xCB,0xB0 } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerPreviewResult>{ static constexpr GUID value{ 0x08B7FE8E,0x8891,0x441D,{ 0xBE,0x9C,0x17,0x6F,0xA1,0x09,0xC8,0xBB } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerScanResult>{ static constexpr GUID value{ 0xC91624CD,0x9037,0x4E48,{ 0x84,0xC1,0xAC,0x09,0x75,0x07,0x6B,0xC5 } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerSourceConfiguration>{ static constexpr GUID value{ 0xBFB50055,0x0B44,0x4C82,{ 0x9E,0x89,0x20,0x5F,0x9C,0x23,0x4E,0x59 } }; };
-template <> struct guid<Windows::Devices::Scanners::IImageScannerStatics>{ static constexpr GUID value{ 0xBC57E70E,0xD804,0x4477,{ 0x9F,0xB5,0xB9,0x11,0xB5,0x47,0x38,0x97 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScanner>{ static constexpr guid value{ 0x53A88F78,0x5298,0x48A0,{ 0x8D,0xA3,0x80,0x87,0x51,0x96,0x65,0xE0 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerFeederConfiguration>{ static constexpr guid value{ 0x74BDACEE,0xFA97,0x4C17,{ 0x82,0x80,0x40,0xE3,0x9C,0x6D,0xCC,0x67 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerFormatConfiguration>{ static constexpr guid value{ 0xAE275D11,0xDADF,0x4010,{ 0xBF,0x10,0xCC,0xA5,0xC8,0x3D,0xCB,0xB0 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerPreviewResult>{ static constexpr guid value{ 0x08B7FE8E,0x8891,0x441D,{ 0xBE,0x9C,0x17,0x6F,0xA1,0x09,0xC8,0xBB } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerScanResult>{ static constexpr guid value{ 0xC91624CD,0x9037,0x4E48,{ 0x84,0xC1,0xAC,0x09,0x75,0x07,0x6B,0xC5 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerSourceConfiguration>{ static constexpr guid value{ 0xBFB50055,0x0B44,0x4C82,{ 0x9E,0x89,0x20,0x5F,0x9C,0x23,0x4E,0x59 } }; };
+template <> struct guid_storage<Windows::Devices::Scanners::IImageScannerStatics>{ static constexpr guid value{ 0xBC57E70E,0xD804,0x4477,{ 0x9F,0xB5,0xB9,0x11,0xB5,0x47,0x38,0x97 } }; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScanner>{ using type = Windows::Devices::Scanners::IImageScanner; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScannerAutoConfiguration>{ using type = Windows::Devices::Scanners::IImageScannerFormatConfiguration; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScannerFeederConfiguration>{ using type = Windows::Devices::Scanners::IImageScannerFormatConfiguration; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScannerFlatbedConfiguration>{ using type = Windows::Devices::Scanners::IImageScannerFormatConfiguration; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScannerPreviewResult>{ using type = Windows::Devices::Scanners::IImageScannerPreviewResult; };
 template <> struct default_interface<Windows::Devices::Scanners::ImageScannerScanResult>{ using type = Windows::Devices::Scanners::IImageScannerScanResult; };
+
+template <> struct abi<Windows::Devices::Scanners::IImageScanner>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultScanSource(Windows::Devices::Scanners::ImageScannerScanSource* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsScanSourceSupported(Windows::Devices::Scanners::ImageScannerScanSource value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlatbedConfiguration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FeederConfiguration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoConfiguration(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsPreviewSupported(Windows::Devices::Scanners::ImageScannerScanSource scanSource, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ScanPreviewToStreamAsync(Windows::Devices::Scanners::ImageScannerScanSource scanSource, void* targetStream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ScanFilesToFolderAsync(Windows::Devices::Scanners::ImageScannerScanSource scanSource, void* storageFolder, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerFeederConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanAutoDetectPageSize(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoDetectPageSize(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoDetectPageSize(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PageSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageOrientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PageOrientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageSizeDimensions(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsPageSizeSupported(Windows::Graphics::Printing::PrintMediaSize pageSize, Windows::Graphics::Printing::PrintOrientation pageOrientation, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxNumberOfPages(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxNumberOfPages(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanScanDuplex(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duplex(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duplex(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanScanAhead(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScanAhead(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScanAhead(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerFormatConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DefaultFormat(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Format(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Format(Windows::Devices::Scanners::ImageScannerFormat value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsFormatSupported(Windows::Devices::Scanners::ImageScannerFormat value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerPreviewResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Succeeded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Format(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerScanResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ScannedFiles(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerSourceConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinScanArea(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxScanArea(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedScanRegion(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectedScanRegion(Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoCroppingMode(Windows::Devices::Scanners::ImageScannerAutoCroppingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoCroppingMode(Windows::Devices::Scanners::ImageScannerAutoCroppingMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsAutoCroppingModeSupported(Windows::Devices::Scanners::ImageScannerAutoCroppingMode value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OpticalResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultColorMode(Windows::Devices::Scanners::ImageScannerColorMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorMode(Windows::Devices::Scanners::ImageScannerColorMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ColorMode(Windows::Devices::Scanners::ImageScannerColorMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsColorModeSupported(Windows::Devices::Scanners::ImageScannerColorMode value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinBrightness(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxBrightness(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BrightnessStep(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultBrightness(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Brightness(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Brightness(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinContrast(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxContrast(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContrastStep(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultContrast(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Contrast(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Contrast(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Scanners::IImageScannerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** selector) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Scanners_IImageScanner
@@ -243,97 +335,5 @@ struct struct_Windows_Devices_Scanners_ImageScannerResolution
 };
 template <> struct abi<Windows::Devices::Scanners::ImageScannerResolution>{ using type = struct_Windows_Devices_Scanners_ImageScannerResolution; };
 
-
-template <> struct abi<Windows::Devices::Scanners::IImageScanner>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultScanSource(Windows::Devices::Scanners::ImageScannerScanSource* value) noexcept = 0;
-    virtual HRESULT __stdcall IsScanSourceSupported(Windows::Devices::Scanners::ImageScannerScanSource value, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_FlatbedConfiguration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FeederConfiguration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoConfiguration(void** value) noexcept = 0;
-    virtual HRESULT __stdcall IsPreviewSupported(Windows::Devices::Scanners::ImageScannerScanSource scanSource, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall ScanPreviewToStreamAsync(Windows::Devices::Scanners::ImageScannerScanSource scanSource, void* targetStream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ScanFilesToFolderAsync(Windows::Devices::Scanners::ImageScannerScanSource scanSource, void* storageFolder, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerFeederConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanAutoDetectPageSize(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoDetectPageSize(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoDetectPageSize(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_PageSize(Windows::Graphics::Printing::PrintMediaSize* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PageSize(Windows::Graphics::Printing::PrintMediaSize value) noexcept = 0;
-    virtual HRESULT __stdcall get_PageOrientation(Windows::Graphics::Printing::PrintOrientation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PageOrientation(Windows::Graphics::Printing::PrintOrientation value) noexcept = 0;
-    virtual HRESULT __stdcall get_PageSizeDimensions(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall IsPageSizeSupported(Windows::Graphics::Printing::PrintMediaSize pageSize, Windows::Graphics::Printing::PrintOrientation pageOrientation, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxNumberOfPages(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxNumberOfPages(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanScanDuplex(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duplex(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Duplex(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanScanAhead(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScanAhead(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ScanAhead(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerFormatConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DefaultFormat(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Format(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Format(Windows::Devices::Scanners::ImageScannerFormat value) noexcept = 0;
-    virtual HRESULT __stdcall IsFormatSupported(Windows::Devices::Scanners::ImageScannerFormat value, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerPreviewResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Succeeded(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Format(Windows::Devices::Scanners::ImageScannerFormat* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerScanResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ScannedFiles(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerSourceConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinScanArea(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxScanArea(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedScanRegion(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectedScanRegion(Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoCroppingMode(Windows::Devices::Scanners::ImageScannerAutoCroppingMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoCroppingMode(Windows::Devices::Scanners::ImageScannerAutoCroppingMode value) noexcept = 0;
-    virtual HRESULT __stdcall IsAutoCroppingModeSupported(Windows::Devices::Scanners::ImageScannerAutoCroppingMode value, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_MinResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OpticalResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualResolution(struct struct_Windows_Devices_Scanners_ImageScannerResolution* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultColorMode(Windows::Devices::Scanners::ImageScannerColorMode* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorMode(Windows::Devices::Scanners::ImageScannerColorMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ColorMode(Windows::Devices::Scanners::ImageScannerColorMode value) noexcept = 0;
-    virtual HRESULT __stdcall IsColorModeSupported(Windows::Devices::Scanners::ImageScannerColorMode value, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_MinBrightness(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxBrightness(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BrightnessStep(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultBrightness(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Brightness(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Brightness(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinContrast(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxContrast(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContrastStep(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultContrast(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Contrast(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Contrast(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Scanners::IImageScannerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* selector) noexcept = 0;
-};};
 
 }

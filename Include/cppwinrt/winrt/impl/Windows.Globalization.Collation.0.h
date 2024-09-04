@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -27,11 +27,27 @@ template <> struct name<Windows::Globalization::Collation::ICharacterGroupings>{
 template <> struct name<Windows::Globalization::Collation::ICharacterGroupingsFactory>{ static constexpr auto & value{ L"Windows.Globalization.Collation.ICharacterGroupingsFactory" }; };
 template <> struct name<Windows::Globalization::Collation::CharacterGrouping>{ static constexpr auto & value{ L"Windows.Globalization.Collation.CharacterGrouping" }; };
 template <> struct name<Windows::Globalization::Collation::CharacterGroupings>{ static constexpr auto & value{ L"Windows.Globalization.Collation.CharacterGroupings" }; };
-template <> struct guid<Windows::Globalization::Collation::ICharacterGrouping>{ static constexpr GUID value{ 0xFAE761BB,0x805D,0x4BB0,{ 0x95,0xBB,0xC1,0xF7,0xC3,0xE8,0xEB,0x8E } }; };
-template <> struct guid<Windows::Globalization::Collation::ICharacterGroupings>{ static constexpr GUID value{ 0xB8D20A75,0xD4CF,0x4055,{ 0x80,0xE5,0xCE,0x16,0x9C,0x22,0x64,0x96 } }; };
-template <> struct guid<Windows::Globalization::Collation::ICharacterGroupingsFactory>{ static constexpr GUID value{ 0x99EA9FD9,0x886D,0x4401,{ 0x9F,0x98,0x69,0xC8,0x2D,0x4C,0x2F,0x78 } }; };
+template <> struct guid_storage<Windows::Globalization::Collation::ICharacterGrouping>{ static constexpr guid value{ 0xFAE761BB,0x805D,0x4BB0,{ 0x95,0xBB,0xC1,0xF7,0xC3,0xE8,0xEB,0x8E } }; };
+template <> struct guid_storage<Windows::Globalization::Collation::ICharacterGroupings>{ static constexpr guid value{ 0xB8D20A75,0xD4CF,0x4055,{ 0x80,0xE5,0xCE,0x16,0x9C,0x22,0x64,0x96 } }; };
+template <> struct guid_storage<Windows::Globalization::Collation::ICharacterGroupingsFactory>{ static constexpr guid value{ 0x99EA9FD9,0x886D,0x4401,{ 0x9F,0x98,0x69,0xC8,0x2D,0x4C,0x2F,0x78 } }; };
 template <> struct default_interface<Windows::Globalization::Collation::CharacterGrouping>{ using type = Windows::Globalization::Collation::ICharacterGrouping; };
 template <> struct default_interface<Windows::Globalization::Collation::CharacterGroupings>{ using type = Windows::Globalization::Collation::ICharacterGroupings; };
+
+template <> struct abi<Windows::Globalization::Collation::ICharacterGrouping>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_First(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Label(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::Collation::ICharacterGroupings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Lookup(void* text, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::Collation::ICharacterGroupingsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* language, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Globalization_Collation_ICharacterGrouping
@@ -54,21 +70,5 @@ struct consume_Windows_Globalization_Collation_ICharacterGroupingsFactory
     Windows::Globalization::Collation::CharacterGroupings Create(param::hstring const& language) const;
 };
 template <> struct consume<Windows::Globalization::Collation::ICharacterGroupingsFactory> { template <typename D> using type = consume_Windows_Globalization_Collation_ICharacterGroupingsFactory<D>; };
-
-template <> struct abi<Windows::Globalization::Collation::ICharacterGrouping>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_First(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Label(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::Collation::ICharacterGroupings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Lookup(HSTRING text, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::Collation::ICharacterGroupingsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING language, void** result) noexcept = 0;
-};};
 
 }

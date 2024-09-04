@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -38,19 +38,36 @@ template <> struct name<Windows::UI::Notifications::Management::IUserNotificatio
 template <> struct name<Windows::UI::Notifications::Management::IUserNotificationListenerStatics>{ static constexpr auto & value{ L"Windows.UI.Notifications.Management.IUserNotificationListenerStatics" }; };
 template <> struct name<Windows::UI::Notifications::Management::UserNotificationListener>{ static constexpr auto & value{ L"Windows.UI.Notifications.Management.UserNotificationListener" }; };
 template <> struct name<Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus>{ static constexpr auto & value{ L"Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus" }; };
-template <> struct guid<Windows::UI::Notifications::Management::IUserNotificationListener>{ static constexpr GUID value{ 0x62553E41,0x8A06,0x4CEF,{ 0x82,0x15,0x60,0x33,0xA5,0xBE,0x4B,0x03 } }; };
-template <> struct guid<Windows::UI::Notifications::Management::IUserNotificationListenerStatics>{ static constexpr GUID value{ 0xFF6123CF,0x4386,0x4AA3,{ 0xB7,0x3D,0xB8,0x04,0xE5,0xB6,0x3B,0x23 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::Management::IUserNotificationListener>{ static constexpr guid value{ 0x62553E41,0x8A06,0x4CEF,{ 0x82,0x15,0x60,0x33,0xA5,0xBE,0x4B,0x03 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::Management::IUserNotificationListenerStatics>{ static constexpr guid value{ 0xFF6123CF,0x4386,0x4AA3,{ 0xB7,0x3D,0xB8,0x04,0xE5,0xB6,0x3B,0x23 } }; };
 template <> struct default_interface<Windows::UI::Notifications::Management::UserNotificationListener>{ using type = Windows::UI::Notifications::Management::IUserNotificationListener; };
+
+template <> struct abi<Windows::UI::Notifications::Management::IUserNotificationListener>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessStatus(Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_NotificationChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_NotificationChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNotification(uint32_t notificationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearNotifications() noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveNotification(uint32_t notificationId) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::Management::IUserNotificationListenerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Notifications_Management_IUserNotificationListener
 {
     Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> RequestAccessAsync() const;
     Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus GetAccessStatus() const;
-    event_token NotificationChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> const& handler) const;
-    using NotificationChanged_revoker = event_revoker<Windows::UI::Notifications::Management::IUserNotificationListener>;
+    winrt::event_token NotificationChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> const& handler) const;
+    using NotificationChanged_revoker = impl::event_revoker<Windows::UI::Notifications::Management::IUserNotificationListener, &impl::abi_t<Windows::UI::Notifications::Management::IUserNotificationListener>::remove_NotificationChanged>;
     NotificationChanged_revoker NotificationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> const& handler) const;
-    void NotificationChanged(event_token const& token) const;
+    void NotificationChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds const& kinds) const;
     Windows::UI::Notifications::UserNotification GetNotification(uint32_t notificationId) const;
     void ClearNotifications() const;
@@ -64,22 +81,5 @@ struct consume_Windows_UI_Notifications_Management_IUserNotificationListenerStat
     Windows::UI::Notifications::Management::UserNotificationListener Current() const;
 };
 template <> struct consume<Windows::UI::Notifications::Management::IUserNotificationListenerStatics> { template <typename D> using type = consume_Windows_UI_Notifications_Management_IUserNotificationListenerStatics<D>; };
-
-template <> struct abi<Windows::UI::Notifications::Management::IUserNotificationListener>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAccessAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessStatus(Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus* accessStatus) noexcept = 0;
-    virtual HRESULT __stdcall add_NotificationChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_NotificationChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetNotification(uint32_t notificationId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ClearNotifications() noexcept = 0;
-    virtual HRESULT __stdcall RemoveNotification(uint32_t notificationId) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::Management::IUserNotificationListenerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** result) noexcept = 0;
-};};
 
 }

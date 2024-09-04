@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -87,7 +87,7 @@ template <typename D> void consume_Windows_ApplicationModel_Calls_Provider_IPhon
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics)->ShowPhoneCallOriginSettingsUI());
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Calls_Provider_IPhoneCallOriginManagerStatics<D>::SetCallOrigin(GUID const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin) const
+template <typename D> void consume_Windows_ApplicationModel_Calls_Provider_IPhoneCallOriginManagerStatics<D>::SetCallOrigin(winrt::guid const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin) const
 {
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics)->SetCallOrigin(get_abi(requestId), get_abi(callOrigin)));
 }
@@ -102,222 +102,194 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin> : produce_base<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin>
 {
-    HRESULT __stdcall get_Category(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Category(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Category, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Category());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Category(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Category(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Category, WINRT_WRAP(void), hstring const&);
             this->shim().Category(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CategoryDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CategoryDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CategoryDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CategoryDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CategoryDescription(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CategoryDescription(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CategoryDescription, WINRT_WRAP(void), hstring const&);
             this->shim().CategoryDescription(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Location(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Location(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Location());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Location(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Location(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(void), hstring const&);
             this->shim().Location(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin2> : produce_base<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin2>
 {
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin3> : produce_base<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOrigin3>
 {
-    HRESULT __stdcall get_DisplayPicture(void** value) noexcept final
+    int32_t WINRT_CALL get_DisplayPicture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayPicture, WINRT_WRAP(Windows::Storage::StorageFile));
             *value = detach_from<Windows::Storage::StorageFile>(this->shim().DisplayPicture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayPicture(void* value) noexcept final
+    int32_t WINRT_CALL put_DisplayPicture(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayPicture, WINRT_WRAP(void), Windows::Storage::StorageFile const&);
             this->shim().DisplayPicture(*reinterpret_cast<Windows::Storage::StorageFile const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics> : produce_base<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>
 {
-    HRESULT __stdcall get_IsCurrentAppActiveCallOriginApp(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCurrentAppActiveCallOriginApp(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCurrentAppActiveCallOriginApp, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCurrentAppActiveCallOriginApp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowPhoneCallOriginSettingsUI() noexcept final
+    int32_t WINRT_CALL ShowPhoneCallOriginSettingsUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowPhoneCallOriginSettingsUI, WINRT_WRAP(void));
             this->shim().ShowPhoneCallOriginSettingsUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetCallOrigin(GUID requestId, void* callOrigin) noexcept final
+    int32_t WINRT_CALL SetCallOrigin(winrt::guid requestId, void* callOrigin) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SetCallOrigin(*reinterpret_cast<GUID const*>(&requestId), *reinterpret_cast<Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const*>(&callOrigin));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SetCallOrigin, WINRT_WRAP(void), winrt::guid const&, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const&);
+            this->shim().SetCallOrigin(*reinterpret_cast<winrt::guid const*>(&requestId), *reinterpret_cast<Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const*>(&callOrigin));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics2> : produce_base<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics2>
 {
-    HRESULT __stdcall RequestSetAsActiveCallOriginAppAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestSetAsActiveCallOriginAppAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestSetAsActiveCallOriginAppAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestSetAsActiveCallOriginAppAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -326,27 +298,27 @@ struct produce<D, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginMa
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Calls::Provider {
 
 inline PhoneCallOrigin::PhoneCallOrigin() :
-    PhoneCallOrigin(get_activation_factory<PhoneCallOrigin>().ActivateInstance<PhoneCallOrigin>())
+    PhoneCallOrigin(impl::call_factory<PhoneCallOrigin>([](auto&& f) { return f.template ActivateInstance<PhoneCallOrigin>(); }))
 {}
 
 inline bool PhoneCallOriginManager::IsCurrentAppActiveCallOriginApp()
 {
-    return get_activation_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>().IsCurrentAppActiveCallOriginApp();
+    return impl::call_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>([&](auto&& f) { return f.IsCurrentAppActiveCallOriginApp(); });
 }
 
 inline void PhoneCallOriginManager::ShowPhoneCallOriginSettingsUI()
 {
-    get_activation_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>().ShowPhoneCallOriginSettingsUI();
+    impl::call_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>([&](auto&& f) { return f.ShowPhoneCallOriginSettingsUI(); });
 }
 
-inline void PhoneCallOriginManager::SetCallOrigin(GUID const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin)
+inline void PhoneCallOriginManager::SetCallOrigin(winrt::guid const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin)
 {
-    get_activation_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>().SetCallOrigin(requestId, callOrigin);
+    impl::call_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics>([&](auto&& f) { return f.SetCallOrigin(requestId, callOrigin); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> PhoneCallOriginManager::RequestSetAsActiveCallOriginAppAsync()
 {
-    return get_activation_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics2>().RequestSetAsActiveCallOriginAppAsync();
+    return impl::call_factory<PhoneCallOriginManager, Windows::ApplicationModel::Calls::Provider::IPhoneCallOriginManagerStatics2>([&](auto&& f) { return f.RequestSetAsActiveCallOriginAppAsync(); });
 }
 
 }
@@ -362,5 +334,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Calls::Provider::PhoneC
 template<> struct hash<winrt::Windows::ApplicationModel::Calls::Provider::PhoneCallOriginManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Calls::Provider::PhoneCallOriginManager> {};
 
 }
-
-WINRT_WARNING_POP

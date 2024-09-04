@@ -40,7 +40,9 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
-        680         Windows 10  RS3 Release
+        682         Windows 10, RS5 Release
+        681         Windows 10, version 1803
+        680         Windows 10, version 1709
         670         Windows 10, version 1703
         660         Windows 10, version 1607 / Windows Server 2016
         651         Windows 10, version 1511
@@ -234,8 +236,8 @@ typedef enum _NET_DEVICE_POWER_STATE
 // of requiring the client to do it.
 //
 
-#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2))
-#  if (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1 || NET_ADAPTER_CX_1_2 == 1)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
+#  if (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1 || NET_ADAPTER_CX_1_2 == 1 || NET_ADAPTER_CX_1_3 == 1)
 #    if (defined(NDIS_MINIPORT_DRIVER) || \
          defined(NDIS_WDF)             || \
          defined(NDIS680_MINIPORT)     || \
@@ -254,7 +256,9 @@ typedef enum _NET_DEVICE_POWER_STATE
 #    endif
 #    define NDIS_MINIPORT_DRIVER 1
 #    define NDIS_WDF 1
-#    if (NET_ADAPTER_CX_1_2 == 1)
+#    if (NET_ADAPTER_CX_1_3 == 1)
+#        define NDIS682_MINIPORT 1
+#    elif (NET_ADAPTER_CX_1_2 == 1)
 #        define NDIS681_MINIPORT 1
 #    elif (NET_ADAPTER_CX_1_1 == 1)
 #        define NDIS680_MINIPORT 1
@@ -265,8 +269,8 @@ typedef enum _NET_DEVICE_POWER_STATE
 #        undef NDIS_WDM
 #    endif
 #    define NDIS_WDM 1
-#  endif // (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1 || NET_ADAPTER_CX_1_2 == 1)
-#endif // ((defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#  endif // (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1 || NET_ADAPTER_CX_1_2 == 1 || NET_ADAPTER_CX_1_3 == 1)
+#endif // ((defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
 
 
 //
@@ -371,7 +375,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // for Miniports versions 5.0 and up, provide a consistent way to match
 // Ndis version in their characteristics with their makefile defines
 //
-#if (defined(NDIS681_MINIPORT))
+#if (defined(NDIS682_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 82
+#elif (defined(NDIS681_MINIPORT))
 #define NDIS_MINIPORT_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINOR_VERSION 81
 #elif (defined(NDIS680_MINIPORT))
@@ -465,12 +472,16 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #elif (defined(NDIS681_MINIPORT))
 #define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 81
+#elif (defined(NDIS682_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 82
 #endif
 
 //
 // Disallow invalid major/minor combination
 //
 #if ((NDIS_MINIPORT_MAJOR_VERSION == 6) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 82) && \
        (NDIS_MINIPORT_MINOR_VERSION != 81) && \
        (NDIS_MINIPORT_MINOR_VERSION != 80) && \
        (NDIS_MINIPORT_MINOR_VERSION != 70) && \
@@ -490,13 +501,15 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #endif
 
 
-
-
 //
 // Make sure the target platform is consistent with miniport version
 //
-#if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && \
-     ((NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || /* TODO: Update once RS4 DDI is defined */ \
+#ifndef NTDDI_WIN10_RS5
+#define NTDDI_WIN10_RS5 WDK_NTDDI_VERSION
+#endif // NTDDI_WIN10_RS5
+#if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && (\
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS4)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 80 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10_RS2)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10_RS1)  || \
@@ -531,7 +544,12 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // a protocol only or filter driver
 //
 
-#if (defined(NDIS681))
+#if (defined(NDIS682))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 82
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 82
+#elif (defined(NDIS681))
 #define NDIS_PROTOCOL_MAJOR_VERSION 6
 #define NDIS_PROTOCOL_MINOR_VERSION 81
 #define NDIS_FILTER_MAJOR_VERSION 6
@@ -669,6 +687,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 81
 #define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
 #define NDIS_FILTER_MINIMUM_MINOR_VERSION 81
+#elif (defined(NDIS682))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 82
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 82
 #endif
 
 
@@ -700,6 +723,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_FILTER_MAJOR_VERSION == 6) && \
+     (NDIS_FILTER_MINOR_VERSION != 82) && \
      (NDIS_FILTER_MINOR_VERSION != 81) && \
      (NDIS_FILTER_MINOR_VERSION != 80) && \
      (NDIS_FILTER_MINOR_VERSION != 70) && \
@@ -726,6 +750,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_PROTOCOL_MAJOR_VERSION == 6) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 82) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 81) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 80) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 70) && \
@@ -750,8 +775,15 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 //
 // Make sure the target platform is consistent with protocol version
 //
-#if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && \
-     ((NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || /* TODO: Update once RS4 DDI is defined */ \
+//
+// Make sure the target platform is consistent with miniport version
+//
+#ifndef NTDDI_WIN10_RS5
+#define NTDDI_WIN10_RS5 WDK_NTDDI_VERSION
+#endif // NTDDI_WIN10_RS5
+#if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && ( \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS4)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 80 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10_RS2)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10_RS1)  || \
@@ -968,6 +1000,27 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #endif // !defined(NDIS_SUPPORT_NDIS681)
 
 //
+// and something to identify new (RS5 and up) drivers + NDIS itself
+//
+#if !defined(NDIS_SUPPORT_NDIS682)
+#if  (((defined (NDIS_MINIPORT_MAJOR_VERSION) && (NDIS_MINIPORT_MAJOR_VERSION >= 6)) && \
+       (defined (NDIS_MINIPORT_MINOR_VERSION) && (NDIS_MINIPORT_MINOR_VERSION >= 82))) || \
+      (defined (NDIS682)) || NDIS_WRAPPER)
+#define NDIS_SUPPORT_NDIS682      1
+#else
+#define NDIS_SUPPORT_NDIS682      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS682)
+
+//
+// Enable NDIS681 defines for NDIS 682 drivers
+//
+#if (NDIS_SUPPORT_NDIS682)
+#undef NDIS_SUPPORT_NDIS681
+#define NDIS_SUPPORT_NDIS681      1
+#endif
+
+//
 // Enable NDIS680 defines for NDIS 681 drivers
 //
 #if (NDIS_SUPPORT_NDIS681)
@@ -1077,6 +1130,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_RUNTIME_VERSION_670    ((6 << 16) | 70)
 #define NDIS_RUNTIME_VERSION_680    ((6 << 16) | 80)
 #define NDIS_RUNTIME_VERSION_681    ((6 << 16) | 81)
+#define NDIS_RUNTIME_VERSION_682    ((6 << 16) | 82)
 
 
 #define NDIS_DECLARE_CONTEXT_INNER(datatype,purpose) \
@@ -2081,6 +2135,7 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_RECEIVE_QUEUE_STATE         ((NDIS_STATUS)0x4002000DL)
 #endif
 
+
 #if (NDIS_SUPPORT_NDIS630)
 #define NDIS_STATUS_VF_CONFIG_STATE             ((NDIS_STATUS)0x4002000EL)
 #define NDIS_STATUS_RECEIVE_FILTER_CURRENT_CAPABILITIES     ((NDIS_STATUS)0x40020010L)
@@ -2116,6 +2171,14 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_CURRENT_MAC_ADDRESS_CHANGE          ((NDIS_STATUS)0x400200b0L)
 #define NDIS_STATUS_L2_MTU_SIZE_CHANGE                  ((NDIS_STATUS)0x400200b1L)
 #endif // (NDIS_SUPPORT_NDIS650)
+
+
+#if (NDIS_SUPPORT_NDIS682)
+
+#define NDIS_STATUS_TIMESTAMP_CAPABILITY                 ((NDIS_STATUS)0x40051000L)
+#define NDIS_STATUS_TIMESTAMP_CURRENT_CONFIG             ((NDIS_STATUS)0x40051001L)
+
+#endif // NDIS_SUPPORT_NDIS682
 
 //
 // 802.11 specific status indication codes
@@ -2167,6 +2230,7 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_DOT11_WDI_RESERVED_2                                ((NDIS_STATUS)0x4003002CL)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_3                                ((NDIS_STATUS)0x4003002DL)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_5                                ((NDIS_STATUS)0x4003002EL)
+#define NDIS_STATUS_DOT11_WDI_RESERVED_6                                ((NDIS_STATUS)0x4003002FL)
 
 //
 // Add WWAN specific status indication codes
@@ -2371,6 +2435,7 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_INVALID_STATE               ((NDIS_STATUS)STATUS_INVALID_DEVICE_STATE)
 #define NDIS_STATUS_MEDIA_DISCONNECTED          ((NDIS_STATUS)STATUS_NDIS_MEDIA_DISCONNECTED)
 #define NDIS_STATUS_LOW_POWER_STATE             ((NDIS_STATUS)STATUS_NDIS_LOW_POWER_STATE)
+#define NDIS_STATUS_NO_QUEUES                   ((NDIS_STATUS)STATUS_NDIS_NO_QUEUES)
 
 #define NDIS_STATUS_DOT11_AUTO_CONFIG_ENABLED   ((NDIS_STATUS)STATUS_NDIS_DOT11_AUTO_CONFIG_ENABLED)
 #define NDIS_STATUS_DOT11_MEDIA_IN_USE          ((NDIS_STATUS)STATUS_NDIS_DOT11_MEDIA_IN_USE)
@@ -6677,7 +6742,7 @@ typedef struct _NET_BUFFER
             PMDL        MdlChain;
             ULONG       DataOffset;
         };
-        
+
         SLIST_HEADER    Link;
 
         // Duplicate of the above union, for source-compatibility
@@ -6749,11 +6814,16 @@ typedef enum _NDIS_NET_BUFFER_LIST_INFO
 
 #if (NDIS_SUPPORT_NDIS630)
 
-#if (_AMD64_) || (_ARM64_)
+#if defined(_AMD64_) || defined(_ARM64_)
+    //
+    // This is a public header where the existing enumerations _CANNOT_ change.
+    // The 32b compatible enumerations are listed separately below under
+    // 32b compilation only.
+    //
     SwitchForwardingReserved,
     SwitchForwardingDetail,
     VirtualSubnetInfo,
-#endif // (_AMD64_) || (_ARM64_)
+#endif // defined(_AMD64_) || defined(_ARM64_)
 
     IMReserved,
     TcpRecvSegCoalesceInfo,
@@ -6761,10 +6831,10 @@ typedef enum _NDIS_NET_BUFFER_LIST_INFO
     TcpSendOffloadsSupplementalNetBufferListInfo = RscTcpTimestampDelta,
 
 #if (NDIS_SUPPORT_NDIS650)
-#if (_AMD64_) || (_ARM64_)
+#if defined(_AMD64_) || defined(_ARM64_)
     GftOffloadInformation,
     GftFlowEntryId,
-#endif // (_AMD64_) || (_ARM64_)
+#endif // defined(_AMD64_) || defined(_ARM64_)
 
 #if (NDIS_SUPPORT_NDIS680)
 #if _WIN64
@@ -6780,6 +6850,45 @@ typedef enum _NDIS_NET_BUFFER_LIST_INFO
 #endif // (NDIS_SUPPORT_NDIS630)
 
 #endif // (NDIS_SUPPORT_NDIS620)
+
+#if (NDIS_SUPPORT_NDIS682)
+#if !defined(_AMD64_) && !defined(_ARM64_)
+    //
+    // 32b compilation only avaiable in NDIS682 and higher.  The enumeration
+    // repetition here is necessary to preserve backwards compat with existing
+    // ordering.
+    //
+    // The _NET_BUFFER_LIST->NetBufferListInfo[] (ie. NBL OOB) contract requires
+    // that content be of pointer size. See details below.
+    //
+    //     SwitchForwardingReserved:
+    //         - Fully 32b/64b compat.
+    //         - Always used as a pointer in both set and get operations via
+    //           VmsNblHelperGetPacketExt() and VmsNblHelperSetPacketExt(),
+    //           using PVMS_PACKET_EXT_HEADER type.
+    //
+    //     SwitchForwardingDetail:
+    //         - Not compliant with OOB contract since the contents are of
+    //           _NDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO type which
+    //           assumes a 64b OOB container.
+    //         - This is addressed by using two members in
+    //           _NET_BUFFER_LIST->NetBufferListInfo[] to allow for fitting the
+    //           64b OOB data.
+    //         - Access also occurs via NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL
+    //           which requires 64b read.
+    //         - Since this is only present in 32b, there's no backwards compat
+    //           issue.
+    //
+    //     VirtualSubnetInfo:
+    //         - Fully 32b/64b compat via preprocessor conditionals.
+    //         - See _NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO for details.
+    //
+    SwitchForwardingReserved,
+    SwitchForwardingDetail_b0_to_b31,
+    SwitchForwardingDetail_b32_to_b63,
+    VirtualSubnetInfo,
+#endif // !defined(_AMD64_) && !defined(_ARM64_)
+#endif //(NDIS_SUPPORT_NDIS682)
 
 #if NDIS_WRAPPER == 1
     NetBufferListInfoReserved1,
@@ -6816,13 +6925,13 @@ typedef struct _NET_BUFFER_LIST
             PNET_BUFFER_LIST Next;           // Next NetBufferList in the chain
             PNET_BUFFER FirstNetBuffer; // First NetBuffer on this NetBufferList
         };
-        
-        SLIST_HEADER Link;           // used in SLIST of free NetBuffers in the block        
+
+        SLIST_HEADER Link;           // used in SLIST of free NetBuffers in the block
 
         // Duplicate of the above, for source-compatibility
         NET_BUFFER_LIST_HEADER NetBufferListHeader;
     };
-    
+
     PNET_BUFFER_LIST_CONTEXT    Context;
     PNET_BUFFER_LIST            ParentNetBufferList;
     NDIS_HANDLE                 NdisPoolHandle;
@@ -6975,7 +7084,6 @@ C_ASSERT(sizeof(NDIS_SWITCH_NIC_INDEX) == sizeof(USHORT));
 #define NDIS_SWITCH_DEFAULT_PORT_ID     0
 #define NDIS_SWITCH_DEFAULT_NIC_INDEX   0
 
-#if defined(_WIN64)
 
 //
 // Defines NBL forwarding information
@@ -7007,14 +7115,14 @@ typedef union _NDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO
         // This flag MUST NOT be written to by any extension.
         //
         UINT32                      NativeForwardingRequired:1;
-        //  
-        // Reserved for internal use.  
-        //  
+        //
+        // Reserved for internal use.
+        //
         UINT32                      Reserved1:1;
 #else // !(NDIS_SUPPORT_NDIS640)
-        //  
-        // Reserved for internal use.  
-        //  
+        //
+        // Reserved for internal use.
+        //
         UINT32                      Reserved1:2;
 #endif // (NDIS_SUPPORT_NDIS640)
         //
@@ -7047,12 +7155,50 @@ C_ASSERT(sizeof(NDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO) == sizeof(UI
 //
 // Macro for accessing NBL switch forwarding detail
 //
+// The macros below differ because SwitchForwardingDetail access of
+// PNDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO in 32b mode
+// will yield incomplete data.  It conflicts with the contract from
+// _NET_BUFFER_LIST->NetBufferListInfo[], which requires OOB data to be of
+// pointer size.
+//
+// To harden the code, the SwitchForwardingDetail is ommited from 32b mode,
+// so as to avoid accidental errors by copy+paste logic on field consumption.
+//
+#if defined(_AMD64_) || defined(_ARM64_)
+
 #define NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL(_NBL)\
-            ((PNDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO)\
-            &(NET_BUFFER_LIST_INFO((_NBL), SwitchForwardingDetail)))
+    ((PNDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO)\
+    &(NET_BUFFER_LIST_INFO((_NBL), SwitchForwardingDetail)))
+
+#define NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL_CLEAR(_NBL) \
+    (_NBL)->NetBufferListInfo[SwitchForwardingDetail] = 0
+
+#else
+
+#if (NDIS_SUPPORT_NDIS682)
+
+#define NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL(_NBL)\
+    ((PNDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO)\
+    &(NET_BUFFER_LIST_INFO((_NBL), SwitchForwardingDetail_b0_to_b31)))
+
+#define NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL_CLEAR(_NBL) \
+do { \
+    (_NBL)->NetBufferListInfo[SwitchForwardingDetail_b0_to_b31] = 0; \
+    (_NBL)->NetBufferListInfo[SwitchForwardingDetail_b32_to_b63] = 0; \
+} while (0)
+
+#endif // (NDIS_SUPPORT_NDIS682)
+
+#endif  // defined(_AMD64_) || defined(_ARM64_)
+
 
 //
 // Defines NBL Group Network information
+//
+// This public structure was implemented assuming 64b mode only.  In 32b mode, it
+// conflicts with the _NET_BUFFER_LIST->NetBufferListInfo[] contract of pointer sized
+// OOB data.  The preprocessors around the reserved member allow the structure to
+// comply with the OOB contract in both 64b and 32b modes.
 //
 typedef struct _NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO
 {
@@ -7065,7 +7211,10 @@ typedef struct _NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO
             //
             UINT32  VirtualSubnetId:24;
             UINT32  ReservedVsidBits:8;
+
+            #if defined(_WIN64)
             UINT32  Reserved;
+            #endif // defined(_WIN64)
         };
         PVOID   Value;
     };
@@ -7074,7 +7223,7 @@ typedef struct _NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO
 //
 // NET_BUFFER_LIST_INFO structures should fit within ULONG_PTR
 //
-C_ASSERT(sizeof(NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO) <= sizeof(UINT64));
+C_ASSERT(sizeof(NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO) == sizeof(PVOID));
 
 #define NDIS_GET_NET_BUFFER_LIST_VIRTUAL_SUBNET_ID(_NBL)                   \
     ((*((NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO *)                       \
@@ -7143,7 +7292,6 @@ C_ASSERT(sizeof(NDIS_NET_BUFFER_LIST_GFT_OFFLOAD_INFO) <= sizeof(UINT64));
 
 #endif //(NDIS_SUPPORT_NDIS650)
 
-#endif // defined(_WIN64)
 
 //
 // Defines the destination switch port for an NBL within the destination
@@ -7453,6 +7601,101 @@ C_ASSERT(sizeof(NDIS_RSC_NBL_INFO)==sizeof(PVOID));
 #endif // (NDIS_SUPPORT_NDIS630)
 
 #endif // (NDIS_SUPPORT_NDIS620)
+
+#if (NDIS_SUPPORT_NDIS682)
+
+//
+// NBL timestamp related stuff
+//
+
+#define NDIS_NBL_FLAGS_CAPTURE_TIMESTAMP_ON_TRANSMIT 0x00010000
+
+typedef struct _NET_BUFFER_LIST_TIMESTAMP
+{
+    ULONG64 Timestamp;
+} NET_BUFFER_LIST_TIMESTAMP, *PNET_BUFFER_LIST_TIMESTAMP;
+
+#if _WIN64
+
+__inline
+void
+NdisSetNblTimestampInfo(
+    _Inout_ PNET_BUFFER_LIST      Nbl,
+    _In_    NET_BUFFER_LIST_TIMESTAMP const *NblTimestamp
+    )
+{
+    *((ULONG64*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]) = NblTimestamp->Timestamp;
+}
+
+__inline
+void
+NdisGetNblTimestampInfo(
+    _In_    PNET_BUFFER_LIST      Nbl,
+    _Out_ PNET_BUFFER_LIST_TIMESTAMP NblTimestamp
+    )
+{
+    NblTimestamp->Timestamp = ((PNET_BUFFER_LIST_TIMESTAMP)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3])->Timestamp;
+}
+
+__inline
+void
+NdisCopyNblTimestampInfo(
+    _Inout_ PNET_BUFFER_LIST NblDest,
+    _In_    PNET_BUFFER_LIST NblSrc
+    )
+{
+    NblDest->NetBufferListInfo[NetBufferListInfoReserved3] =
+        NblSrc->NetBufferListInfo[NetBufferListInfoReserved3];
+}
+
+#else
+
+__inline
+void
+NdisSetNblTimestampInfo(
+    _Inout_ PNET_BUFFER_LIST      Nbl,
+    _In_ NET_BUFFER_LIST_TIMESTAMP const *NblTimestamp
+    )
+{
+    ULARGE_INTEGER ul;
+
+    ul.QuadPart = NblTimestamp->Timestamp;
+
+    *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]) = ul.LowPart;
+    *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved4]) = ul.HighPart;
+}
+
+__inline
+void
+NdisGetNblTimestampInfo(
+    _In_    PNET_BUFFER_LIST      Nbl,
+    _Out_ PNET_BUFFER_LIST_TIMESTAMP NblTimestamp
+    )
+{
+    ULARGE_INTEGER ul;
+
+    ul.LowPart = *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]);
+    ul.HighPart = *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved4]);
+
+    NblTimestamp->Timestamp = ul.QuadPart;
+}
+
+__inline
+void
+NdisCopyNblTimestampInfo(
+    _Inout_ PNET_BUFFER_LIST NblDest,
+    _In_    PNET_BUFFER_LIST NblSrc
+    )
+{
+    NblDest->NetBufferListInfo[NetBufferListInfoReserved3] =
+        NblSrc->NetBufferListInfo[NetBufferListInfoReserved3];
+    NblDest->NetBufferListInfo[NetBufferListInfoReserved4] =
+        NblSrc->NetBufferListInfo[NetBufferListInfoReserved4];
+}
+
+#endif // _WIN64
+
+#endif // (NDIS_SUPPORT_NDIS682)
 
 
 #define NdisQueryMdl(_Mdl, _VirtualAddress, _Length, _Priority)             \
@@ -14518,7 +14761,7 @@ typedef struct _NDIS_SWITCH_OPTIONAL_HANDLERS
 // NdisMTriggerPDDrainNotification calls on a PD queue before the PD provider
 // returns from NdisPDFreeQueue or NdisPDReleaseReceiveQueues for that PD queue.
 //
-_When_(Isr==FALSE, _IRQL_requires_(DISPATCH_LEVEL))
+_When_(Isr==FALSE, _IRQL_requires_max_(DISPATCH_LEVEL))
 _When_(Isr, _IRQL_requires_max_(HIGH_LEVEL))
 EXPORT
 VOID

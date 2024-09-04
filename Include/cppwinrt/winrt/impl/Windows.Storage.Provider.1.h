@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -116,6 +116,13 @@ struct WINRT_EBO IStorageProviderSyncRootInfo :
     impl::consume_t<IStorageProviderSyncRootInfo>
 {
     IStorageProviderSyncRootInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStorageProviderSyncRootInfo2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStorageProviderSyncRootInfo2>
+{
+    IStorageProviderSyncRootInfo2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStorageProviderSyncRootManagerStatics :

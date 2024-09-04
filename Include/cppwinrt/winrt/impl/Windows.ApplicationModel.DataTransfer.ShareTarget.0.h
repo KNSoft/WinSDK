@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -48,12 +48,47 @@ template <> struct name<Windows::ApplicationModel::DataTransfer::ShareTarget::IS
 template <> struct name<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3>{ static constexpr auto & value{ L"Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation3" }; };
 template <> struct name<Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink>{ static constexpr auto & value{ L"Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink" }; };
 template <> struct name<Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation>{ static constexpr auto & value{ L"Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation" }; };
-template <> struct guid<Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink>{ static constexpr GUID value{ 0x603E4308,0xF0BE,0x4ADC,{ 0xAC,0xC9,0x8B,0x27,0xAB,0x9C,0xF5,0x56 } }; };
-template <> struct guid<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation>{ static constexpr GUID value{ 0x2246BAB8,0xD0F8,0x41C1,{ 0xA8,0x2A,0x41,0x37,0xDB,0x65,0x04,0xFB } }; };
-template <> struct guid<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2>{ static constexpr GUID value{ 0x0FFB97C1,0x9778,0x4A09,{ 0x8E,0x5B,0xCB,0x5E,0x48,0x2D,0x05,0x55 } }; };
-template <> struct guid<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3>{ static constexpr GUID value{ 0x5EF6B382,0xB7A7,0x4571,{ 0xA2,0xA6,0x99,0x4A,0x03,0x49,0x88,0xB2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink>{ static constexpr guid value{ 0x603E4308,0xF0BE,0x4ADC,{ 0xAC,0xC9,0x8B,0x27,0xAB,0x9C,0xF5,0x56 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation>{ static constexpr guid value{ 0x2246BAB8,0xD0F8,0x41C1,{ 0xA8,0x2A,0x41,0x37,0xDB,0x65,0x04,0xFB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2>{ static constexpr guid value{ 0x0FFB97C1,0x9778,0x4A09,{ 0x8E,0x5B,0xCB,0x5E,0x48,0x2D,0x05,0x55 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3>{ static constexpr guid value{ 0x5EF6B382,0xB7A7,0x4571,{ 0xA2,0xA6,0x99,0x4A,0x03,0x49,0x88,0xB2 } }; };
 template <> struct default_interface<Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink>{ using type = Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink; };
 template <> struct default_interface<Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation>{ using type = Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation; };
+
+template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Thumbnail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedDataFormats(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedFileTypes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_QuickLinkId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveThisQuickLink() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportStarted() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportDataRetrieved() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportSubmittedBackgroundTask() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompletedWithQuickLink(void* quicklink) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompleted() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportError(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DismissUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Contacts(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_DataTransfer_ShareTarget_IQuickLink
@@ -97,40 +132,5 @@ struct consume_Windows_ApplicationModel_DataTransfer_ShareTarget_IShareOperation
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact> Contacts() const;
 };
 template <> struct consume<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3> { template <typename D> using type = consume_Windows_ApplicationModel_DataTransfer_ShareTarget_IShareOperation3<D>; };
-
-template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Thumbnail(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedDataFormats(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedFileTypes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_QuickLinkId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveThisQuickLink() noexcept = 0;
-    virtual HRESULT __stdcall ReportStarted() noexcept = 0;
-    virtual HRESULT __stdcall ReportDataRetrieved() noexcept = 0;
-    virtual HRESULT __stdcall ReportSubmittedBackgroundTask() noexcept = 0;
-    virtual HRESULT __stdcall ReportCompletedWithQuickLink(void* quicklink) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompleted() noexcept = 0;
-    virtual HRESULT __stdcall ReportError(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DismissUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Contacts(void** value) noexcept = 0;
-};};
 
 }

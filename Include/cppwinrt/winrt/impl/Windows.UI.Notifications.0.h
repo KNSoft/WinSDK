@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -19,6 +19,7 @@ struct XmlDocument;
 
 WINRT_EXPORT namespace winrt::Windows::Foundation {
 
+struct Deferral;
 struct Uri;
 
 }
@@ -92,52 +93,52 @@ enum class TileFlyoutTemplateType : int32_t
 
 enum class TileTemplateType : int32_t
 {
-    TileSquareImage [[deprecated("TileSquareImage may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Image.")]] = 0,
-    TileSquareBlock [[deprecated("TileSquareBlock may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Block.")]] = 1,
-    TileSquareText01 [[deprecated("TileSquareText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Text01.")]] = 2,
-    TileSquareText02 [[deprecated("TileSquareText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Text02.")]] = 3,
-    TileSquareText03 [[deprecated("TileSquareText03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Text03.")]] = 4,
-    TileSquareText04 [[deprecated("TileSquareText04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150Text04.")]] = 5,
-    TileSquarePeekImageAndText01 [[deprecated("TileSquarePeekImageAndText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150PeekImageAndText01.")]] = 6,
-    TileSquarePeekImageAndText02 [[deprecated("TileSquarePeekImageAndText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150PeekImageAndText02.")]] = 7,
-    TileSquarePeekImageAndText03 [[deprecated("TileSquarePeekImageAndText03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150PeekImageAndText03.")]] = 8,
-    TileSquarePeekImageAndText04 [[deprecated("TileSquarePeekImageAndText04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileSquare150x150PeekImageAndText04.")]] = 9,
-    TileWideImage [[deprecated("TileWideImage may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Image.")]] = 10,
-    TileWideImageCollection [[deprecated("TileWideImageCollection may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150ImageCollection.")]] = 11,
-    TileWideImageAndText01 [[deprecated("TileWideImageAndText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150ImageAndText01.")]] = 12,
-    TileWideImageAndText02 [[deprecated("TileWideImageAndText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150ImageAndText02.")]] = 13,
-    TileWideBlockAndText01 [[deprecated("TileWideBlockAndText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150BlockAndText01.")]] = 14,
-    TileWideBlockAndText02 [[deprecated("TileWideBlockAndText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150BlockAndText02.")]] = 15,
-    TileWidePeekImageCollection01 [[deprecated("TileWidePeekImageCollection01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection01.")]] = 16,
-    TileWidePeekImageCollection02 [[deprecated("TileWidePeekImageCollection02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection02.")]] = 17,
-    TileWidePeekImageCollection03 [[deprecated("TileWidePeekImageCollection03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection03.")]] = 18,
-    TileWidePeekImageCollection04 [[deprecated("TileWidePeekImageCollection04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection04.")]] = 19,
-    TileWidePeekImageCollection05 [[deprecated("TileWidePeekImageCollection05 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection05.")]] = 20,
-    TileWidePeekImageCollection06 [[deprecated("TileWidePeekImageCollection06 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageCollection06.")]] = 21,
-    TileWidePeekImageAndText01 [[deprecated("TileWidePeekImageAndText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageAndText01.")]] = 22,
-    TileWidePeekImageAndText02 [[deprecated("TileWidePeekImageAndText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImageAndText02.")]] = 23,
-    TileWidePeekImage01 [[deprecated("TileWidePeekImage01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage01.")]] = 24,
-    TileWidePeekImage02 [[deprecated("TileWidePeekImage02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage02.")]] = 25,
-    TileWidePeekImage03 [[deprecated("TileWidePeekImage03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage03.")]] = 26,
-    TileWidePeekImage04 [[deprecated("TileWidePeekImage04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage04.")]] = 27,
-    TileWidePeekImage05 [[deprecated("TileWidePeekImage05 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage05.")]] = 28,
-    TileWidePeekImage06 [[deprecated("TileWidePeekImage06 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150PeekImage06.")]] = 29,
-    TileWideSmallImageAndText01 [[deprecated("TileWideSmallImageAndText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150SmallImageAndText01.")]] = 30,
-    TileWideSmallImageAndText02 [[deprecated("TileWideSmallImageAndText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150SmallImageAndText02.")]] = 31,
-    TileWideSmallImageAndText03 [[deprecated("TileWideSmallImageAndText03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150SmallImageAndText03.")]] = 32,
-    TileWideSmallImageAndText04 [[deprecated("TileWideSmallImageAndText04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150SmallImageAndText04.")]] = 33,
-    TileWideSmallImageAndText05 [[deprecated("TileWideSmallImageAndText05 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150SmallImageAndText05.")]] = 34,
-    TileWideText01 [[deprecated("TileWideText01 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text01.")]] = 35,
-    TileWideText02 [[deprecated("TileWideText02 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text02.")]] = 36,
-    TileWideText03 [[deprecated("TileWideText03 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text03.")]] = 37,
-    TileWideText04 [[deprecated("TileWideText04 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text04.")]] = 38,
-    TileWideText05 [[deprecated("TileWideText05 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text05.")]] = 39,
-    TileWideText06 [[deprecated("TileWideText06 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text06.")]] = 40,
-    TileWideText07 [[deprecated("TileWideText07 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text07.")]] = 41,
-    TileWideText08 [[deprecated("TileWideText08 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text08.")]] = 42,
-    TileWideText09 [[deprecated("TileWideText09 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text09.")]] = 43,
-    TileWideText10 [[deprecated("TileWideText10 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text10.")]] = 44,
-    TileWideText11 [[deprecated("TileWideText11 may be altered or unavailable for releases after Windows 8.1. Instead, use TileWide310x150Text11.")]] = 45,
+    TileSquareImage = 0,
+    TileSquareBlock = 1,
+    TileSquareText01 = 2,
+    TileSquareText02 = 3,
+    TileSquareText03 = 4,
+    TileSquareText04 = 5,
+    TileSquarePeekImageAndText01 = 6,
+    TileSquarePeekImageAndText02 = 7,
+    TileSquarePeekImageAndText03 = 8,
+    TileSquarePeekImageAndText04 = 9,
+    TileWideImage = 10,
+    TileWideImageCollection = 11,
+    TileWideImageAndText01 = 12,
+    TileWideImageAndText02 = 13,
+    TileWideBlockAndText01 = 14,
+    TileWideBlockAndText02 = 15,
+    TileWidePeekImageCollection01 = 16,
+    TileWidePeekImageCollection02 = 17,
+    TileWidePeekImageCollection03 = 18,
+    TileWidePeekImageCollection04 = 19,
+    TileWidePeekImageCollection05 = 20,
+    TileWidePeekImageCollection06 = 21,
+    TileWidePeekImageAndText01 = 22,
+    TileWidePeekImageAndText02 = 23,
+    TileWidePeekImage01 = 24,
+    TileWidePeekImage02 = 25,
+    TileWidePeekImage03 = 26,
+    TileWidePeekImage04 = 27,
+    TileWidePeekImage05 = 28,
+    TileWidePeekImage06 = 29,
+    TileWideSmallImageAndText01 = 30,
+    TileWideSmallImageAndText02 = 31,
+    TileWideSmallImageAndText03 = 32,
+    TileWideSmallImageAndText04 = 33,
+    TileWideSmallImageAndText05 = 34,
+    TileWideText01 = 35,
+    TileWideText02 = 36,
+    TileWideText03 = 37,
+    TileWideText04 = 38,
+    TileWideText05 = 39,
+    TileWideText06 = 40,
+    TileWideText07 = 41,
+    TileWideText08 = 42,
+    TileWideText09 = 43,
+    TileWideText10 = 44,
+    TileWideText11 = 45,
     TileSquare150x150Image = 0,
     TileSquare150x150Block = 1,
     TileSquare150x150Text01 = 2,
@@ -282,6 +283,7 @@ struct IScheduledToastNotification2;
 struct IScheduledToastNotification3;
 struct IScheduledToastNotification4;
 struct IScheduledToastNotificationFactory;
+struct IScheduledToastNotificationShowingEventArgs;
 struct IShownTileNotification;
 struct ITileFlyoutNotification;
 struct ITileFlyoutNotificationFactory;
@@ -318,6 +320,7 @@ struct IToastNotificationManagerStatics4;
 struct IToastNotificationManagerStatics5;
 struct IToastNotifier;
 struct IToastNotifier2;
+struct IToastNotifier3;
 struct IUserNotification;
 struct IUserNotificationChangedEventArgs;
 struct AdaptiveNotificationText;
@@ -334,6 +337,7 @@ struct NotificationData;
 struct NotificationVisual;
 struct ScheduledTileNotification;
 struct ScheduledToastNotification;
+struct ScheduledToastNotificationShowingEventArgs;
 struct ShownTileNotification;
 struct TileFlyoutNotification;
 struct TileFlyoutUpdateManager;
@@ -385,6 +389,7 @@ template <> struct category<Windows::UI::Notifications::IScheduledToastNotificat
 template <> struct category<Windows::UI::Notifications::IScheduledToastNotification3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IScheduledToastNotification4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IShownTileNotification>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::ITileFlyoutNotification>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ using type = interface_category; };
@@ -421,6 +426,7 @@ template <> struct category<Windows::UI::Notifications::IToastNotificationManage
 template <> struct category<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IToastNotifier>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IToastNotifier2>{ using type = interface_category; };
+template <> struct category<Windows::UI::Notifications::IToastNotifier3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IUserNotification>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Notifications::AdaptiveNotificationText>{ using type = class_category; };
@@ -437,6 +443,7 @@ template <> struct category<Windows::UI::Notifications::NotificationData>{ using
 template <> struct category<Windows::UI::Notifications::NotificationVisual>{ using type = class_category; };
 template <> struct category<Windows::UI::Notifications::ScheduledTileNotification>{ using type = class_category; };
 template <> struct category<Windows::UI::Notifications::ScheduledToastNotification>{ using type = class_category; };
+template <> struct category<Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Notifications::ShownTileNotification>{ using type = class_category; };
 template <> struct category<Windows::UI::Notifications::TileFlyoutNotification>{ using type = class_category; };
 template <> struct category<Windows::UI::Notifications::TileFlyoutUpdateManager>{ using type = class_category; };
@@ -496,6 +503,7 @@ template <> struct name<Windows::UI::Notifications::IScheduledToastNotification2
 template <> struct name<Windows::UI::Notifications::IScheduledToastNotification3>{ static constexpr auto & value{ L"Windows.UI.Notifications.IScheduledToastNotification3" }; };
 template <> struct name<Windows::UI::Notifications::IScheduledToastNotification4>{ static constexpr auto & value{ L"Windows.UI.Notifications.IScheduledToastNotification4" }; };
 template <> struct name<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ static constexpr auto & value{ L"Windows.UI.Notifications.IScheduledToastNotificationFactory" }; };
+template <> struct name<Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs>{ static constexpr auto & value{ L"Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs" }; };
 template <> struct name<Windows::UI::Notifications::IShownTileNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.IShownTileNotification" }; };
 template <> struct name<Windows::UI::Notifications::ITileFlyoutNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.ITileFlyoutNotification" }; };
 template <> struct name<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ static constexpr auto & value{ L"Windows.UI.Notifications.ITileFlyoutNotificationFactory" }; };
@@ -532,6 +540,7 @@ template <> struct name<Windows::UI::Notifications::IToastNotificationManagerSta
 template <> struct name<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ static constexpr auto & value{ L"Windows.UI.Notifications.IToastNotificationManagerStatics5" }; };
 template <> struct name<Windows::UI::Notifications::IToastNotifier>{ static constexpr auto & value{ L"Windows.UI.Notifications.IToastNotifier" }; };
 template <> struct name<Windows::UI::Notifications::IToastNotifier2>{ static constexpr auto & value{ L"Windows.UI.Notifications.IToastNotifier2" }; };
+template <> struct name<Windows::UI::Notifications::IToastNotifier3>{ static constexpr auto & value{ L"Windows.UI.Notifications.IToastNotifier3" }; };
 template <> struct name<Windows::UI::Notifications::IUserNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.IUserNotification" }; };
 template <> struct name<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Notifications.IUserNotificationChangedEventArgs" }; };
 template <> struct name<Windows::UI::Notifications::AdaptiveNotificationText>{ static constexpr auto & value{ L"Windows.UI.Notifications.AdaptiveNotificationText" }; };
@@ -548,6 +557,7 @@ template <> struct name<Windows::UI::Notifications::NotificationData>{ static co
 template <> struct name<Windows::UI::Notifications::NotificationVisual>{ static constexpr auto & value{ L"Windows.UI.Notifications.NotificationVisual" }; };
 template <> struct name<Windows::UI::Notifications::ScheduledTileNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.ScheduledTileNotification" }; };
 template <> struct name<Windows::UI::Notifications::ScheduledToastNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.ScheduledToastNotification" }; };
+template <> struct name<Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs>{ static constexpr auto & value{ L"Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs" }; };
 template <> struct name<Windows::UI::Notifications::ShownTileNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.ShownTileNotification" }; };
 template <> struct name<Windows::UI::Notifications::TileFlyoutNotification>{ static constexpr auto & value{ L"Windows.UI.Notifications.TileFlyoutNotification" }; };
 template <> struct name<Windows::UI::Notifications::TileFlyoutUpdateManager>{ static constexpr auto & value{ L"Windows.UI.Notifications.TileFlyoutUpdateManager" }; };
@@ -584,67 +594,69 @@ template <> struct name<Windows::UI::Notifications::ToastHistoryChangedType>{ st
 template <> struct name<Windows::UI::Notifications::ToastNotificationPriority>{ static constexpr auto & value{ L"Windows.UI.Notifications.ToastNotificationPriority" }; };
 template <> struct name<Windows::UI::Notifications::ToastTemplateType>{ static constexpr auto & value{ L"Windows.UI.Notifications.ToastTemplateType" }; };
 template <> struct name<Windows::UI::Notifications::UserNotificationChangedKind>{ static constexpr auto & value{ L"Windows.UI.Notifications.UserNotificationChangedKind" }; };
-template <> struct guid<Windows::UI::Notifications::IAdaptiveNotificationContent>{ static constexpr GUID value{ 0xEB0DBE66,0x7448,0x448D,{ 0x9D,0xB8,0xD7,0x8A,0xCD,0x2A,0xBB,0xA9 } }; };
-template <> struct guid<Windows::UI::Notifications::IAdaptiveNotificationText>{ static constexpr GUID value{ 0x46D4A3BE,0x609A,0x4326,{ 0xA4,0x0B,0xBF,0xDE,0x87,0x20,0x34,0xA3 } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeNotification>{ static constexpr GUID value{ 0x075CB4CA,0xD08A,0x4E2F,{ 0x92,0x33,0x7E,0x28,0x9C,0x1F,0x77,0x22 } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeNotificationFactory>{ static constexpr GUID value{ 0xEDF255CE,0x0618,0x4D59,{ 0x94,0x8A,0x5A,0x61,0x04,0x0C,0x52,0xF9 } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeUpdateManagerForUser>{ static constexpr GUID value{ 0x996B21BC,0x0386,0x44E5,{ 0xBA,0x8D,0x0C,0x10,0x77,0xA6,0x2E,0x92 } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeUpdateManagerStatics>{ static constexpr GUID value{ 0x33400FAA,0x6DD5,0x4105,{ 0xAE,0xBC,0x9B,0x50,0xFC,0xA4,0x92,0xDA } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeUpdateManagerStatics2>{ static constexpr GUID value{ 0x979A35CE,0xF940,0x48BF,{ 0x94,0xE8,0xCA,0x24,0x4D,0x40,0x0B,0x41 } }; };
-template <> struct guid<Windows::UI::Notifications::IBadgeUpdater>{ static constexpr GUID value{ 0xB5FA1FD4,0x7562,0x4F6C,{ 0xBF,0xA3,0x1B,0x6E,0xD2,0xE5,0x7F,0x2F } }; };
-template <> struct guid<Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics>{ static constexpr GUID value{ 0x06206598,0xD496,0x497D,{ 0x86,0x92,0x4F,0x7D,0x7C,0x27,0x70,0xDF } }; };
-template <> struct guid<Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics>{ static constexpr GUID value{ 0x202192D7,0x8996,0x45AA,{ 0x8B,0xA1,0xD4,0x61,0xD7,0x2C,0x2A,0x1B } }; };
-template <> struct guid<Windows::UI::Notifications::IKnownNotificationBindingsStatics>{ static constexpr GUID value{ 0x79427BAE,0xA8B7,0x4D58,{ 0x89,0xEA,0x76,0xA7,0xB7,0xBC,0xCD,0xED } }; };
-template <> struct guid<Windows::UI::Notifications::INotification>{ static constexpr GUID value{ 0x108037FE,0xEB76,0x4F82,{ 0x97,0xBC,0xDA,0x07,0x53,0x0A,0x2E,0x20 } }; };
-template <> struct guid<Windows::UI::Notifications::INotificationBinding>{ static constexpr GUID value{ 0xF29E4B85,0x0370,0x4AD3,{ 0xB4,0xEA,0xDA,0x9E,0x35,0xE7,0xEA,0xBF } }; };
-template <> struct guid<Windows::UI::Notifications::INotificationData>{ static constexpr GUID value{ 0x9FFD2312,0x9D6A,0x4AAF,{ 0xB6,0xAC,0xFF,0x17,0xF0,0xC1,0xF2,0x80 } }; };
-template <> struct guid<Windows::UI::Notifications::INotificationDataFactory>{ static constexpr GUID value{ 0x23C1E33A,0x1C10,0x46FB,{ 0x80,0x40,0xDE,0xC3,0x84,0x62,0x1C,0xF8 } }; };
-template <> struct guid<Windows::UI::Notifications::INotificationVisual>{ static constexpr GUID value{ 0x68835B8E,0xAA56,0x4E11,{ 0x86,0xD3,0x5F,0x9A,0x69,0x57,0xBC,0x5B } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledTileNotification>{ static constexpr GUID value{ 0x0ABCA6D5,0x99DC,0x4C78,{ 0xA1,0x1C,0xC9,0xE7,0xF8,0x6D,0x7E,0xF7 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledTileNotificationFactory>{ static constexpr GUID value{ 0x3383138A,0x98C0,0x4C3B,{ 0xBB,0xD6,0x4A,0x63,0x3C,0x7C,0xFC,0x29 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledToastNotification>{ static constexpr GUID value{ 0x79F577F8,0x0DE7,0x48CD,{ 0x97,0x40,0x9B,0x37,0x04,0x90,0xC8,0x38 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledToastNotification2>{ static constexpr GUID value{ 0xA66EA09C,0x31B4,0x43B0,{ 0xB5,0xDD,0x7A,0x40,0xE8,0x53,0x63,0xB1 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledToastNotification3>{ static constexpr GUID value{ 0x98429E8B,0xBD32,0x4A3B,{ 0x9D,0x15,0x22,0xAE,0xA4,0x94,0x62,0xA1 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledToastNotification4>{ static constexpr GUID value{ 0x1D4761FD,0xBDEF,0x4E4A,{ 0x96,0xBE,0x01,0x01,0x36,0x9B,0x58,0xD2 } }; };
-template <> struct guid<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ static constexpr GUID value{ 0xE7BED191,0x0BB9,0x4189,{ 0x83,0x94,0x31,0x76,0x1B,0x47,0x6F,0xD7 } }; };
-template <> struct guid<Windows::UI::Notifications::IShownTileNotification>{ static constexpr GUID value{ 0x342D8988,0x5AF2,0x481A,{ 0xA6,0xA3,0xF2,0xFD,0xC7,0x8D,0xE8,0x8E } }; };
-template <> struct guid<Windows::UI::Notifications::ITileFlyoutNotification>{ static constexpr GUID value{ 0x9A53B261,0xC70C,0x42BE,{ 0xB2,0xF3,0xF4,0x2A,0xA9,0x7D,0x34,0xE5 } }; };
-template <> struct guid<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ static constexpr GUID value{ 0xEF556FF5,0x5226,0x4F2B,{ 0xB2,0x78,0x88,0xA3,0x5D,0xFE,0x56,0x9F } }; };
-template <> struct guid<Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics>{ static constexpr GUID value{ 0x04363B0B,0x1AC0,0x4B99,{ 0x88,0xE7,0xAD,0xA8,0x3E,0x95,0x3D,0x48 } }; };
-template <> struct guid<Windows::UI::Notifications::ITileFlyoutUpdater>{ static constexpr GUID value{ 0x8D40C76A,0xC465,0x4052,{ 0xA7,0x40,0x5C,0x26,0x54,0xC1,0xA0,0x89 } }; };
-template <> struct guid<Windows::UI::Notifications::ITileNotification>{ static constexpr GUID value{ 0xEBAEC8FA,0x50EC,0x4C18,{ 0xB4,0xD0,0x3A,0xF0,0x2E,0x55,0x40,0xAB } }; };
-template <> struct guid<Windows::UI::Notifications::ITileNotificationFactory>{ static constexpr GUID value{ 0xC6ABDD6E,0x4928,0x46C8,{ 0xBD,0xBF,0x81,0xA0,0x47,0xDE,0xA0,0xD4 } }; };
-template <> struct guid<Windows::UI::Notifications::ITileUpdateManagerForUser>{ static constexpr GUID value{ 0x55141348,0x2EE2,0x4E2D,{ 0x9C,0xC1,0x21,0x6A,0x20,0xDE,0xCC,0x9F } }; };
-template <> struct guid<Windows::UI::Notifications::ITileUpdateManagerStatics>{ static constexpr GUID value{ 0xDA159E5D,0x3EA9,0x4986,{ 0x8D,0x84,0xB0,0x9D,0x5E,0x12,0x27,0x6D } }; };
-template <> struct guid<Windows::UI::Notifications::ITileUpdateManagerStatics2>{ static constexpr GUID value{ 0x731C1DDC,0x8E14,0x4B7C,{ 0xA3,0x4B,0x9D,0x22,0xDE,0x76,0xC8,0x4D } }; };
-template <> struct guid<Windows::UI::Notifications::ITileUpdater>{ static constexpr GUID value{ 0x0942A48B,0x1D91,0x44EC,{ 0x92,0x43,0xC1,0xE8,0x21,0xC2,0x9A,0x20 } }; };
-template <> struct guid<Windows::UI::Notifications::ITileUpdater2>{ static constexpr GUID value{ 0xA2266E12,0x15EE,0x43ED,{ 0x83,0xF5,0x65,0xB3,0x52,0xBB,0x1A,0x84 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastActivatedEventArgs>{ static constexpr GUID value{ 0xE3BF92F3,0xC197,0x436F,{ 0x82,0x65,0x06,0x25,0x82,0x4F,0x8D,0xAC } }; };
-template <> struct guid<Windows::UI::Notifications::IToastCollection>{ static constexpr GUID value{ 0x0A8BC3B0,0xE0BE,0x4858,{ 0xBC,0x2A,0x89,0xDF,0xE0,0xB3,0x28,0x63 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastCollectionFactory>{ static constexpr GUID value{ 0x164DD3D7,0x73C4,0x44F7,{ 0xB4,0xFF,0xFB,0x6D,0x4B,0xF1,0xF4,0xC6 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastCollectionManager>{ static constexpr GUID value{ 0x2A1821FE,0x179D,0x49BC,{ 0xB7,0x9D,0xA5,0x27,0x92,0x0D,0x36,0x65 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastDismissedEventArgs>{ static constexpr GUID value{ 0x3F89D935,0xD9CB,0x4538,{ 0xA0,0xF0,0xFF,0xE7,0x65,0x99,0x38,0xF8 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastFailedEventArgs>{ static constexpr GUID value{ 0x35176862,0xCFD4,0x44F8,{ 0xAD,0x64,0xF5,0x00,0xFD,0x89,0x6C,0x3B } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotification>{ static constexpr GUID value{ 0x997E2675,0x059E,0x4E60,{ 0x8B,0x06,0x17,0x60,0x91,0x7C,0x8B,0x80 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotification2>{ static constexpr GUID value{ 0x9DFB9FD1,0x143A,0x490E,{ 0x90,0xBF,0xB9,0xFB,0xA7,0x13,0x2D,0xE7 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotification3>{ static constexpr GUID value{ 0x31E8AED8,0x8141,0x4F99,{ 0xBC,0x0A,0xC4,0xED,0x21,0x29,0x7D,0x77 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotification4>{ static constexpr GUID value{ 0x15154935,0x28EA,0x4727,{ 0x88,0xE9,0xC5,0x86,0x80,0xE2,0xD1,0x18 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationActionTriggerDetail>{ static constexpr GUID value{ 0x9445135A,0x38F3,0x42F6,{ 0x96,0xAA,0x79,0x55,0xB0,0xF0,0x3D,0xA2 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationFactory>{ static constexpr GUID value{ 0x04124B20,0x82C6,0x4229,{ 0xB1,0x09,0xFD,0x9E,0xD4,0x66,0x2B,0x53 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationHistory>{ static constexpr GUID value{ 0x5CADDC63,0x01D3,0x4C97,{ 0x98,0x6F,0x05,0x33,0x48,0x3F,0xEE,0x14 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationHistory2>{ static constexpr GUID value{ 0x3BC3D253,0x2F31,0x4092,{ 0x91,0x29,0x8A,0xD5,0xAB,0xF0,0x67,0xDA } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail>{ static constexpr GUID value{ 0xDB037FFA,0x0068,0x412C,{ 0x9C,0x83,0x26,0x7C,0x37,0xF6,0x56,0x70 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>{ static constexpr GUID value{ 0x0B36E982,0xC871,0x49FB,{ 0xBA,0xBB,0x25,0xBD,0xBC,0x4C,0xC4,0x5B } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerForUser>{ static constexpr GUID value{ 0x79AB57F6,0x43FE,0x487B,{ 0x8A,0x7F,0x99,0x56,0x72,0x00,0xAE,0x94 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerForUser2>{ static constexpr GUID value{ 0x679C64B7,0x81AB,0x42C2,{ 0x88,0x19,0xC9,0x58,0x76,0x77,0x53,0xF4 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerStatics>{ static constexpr GUID value{ 0x50AC103F,0xD235,0x4598,{ 0xBB,0xEF,0x98,0xFE,0x4D,0x1A,0x3A,0xD4 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerStatics2>{ static constexpr GUID value{ 0x7AB93C52,0x0E48,0x4750,{ 0xBA,0x9D,0x1A,0x41,0x13,0x98,0x18,0x47 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerStatics4>{ static constexpr GUID value{ 0x8F993FD3,0xE516,0x45FB,{ 0x81,0x30,0x39,0x8E,0x93,0xFA,0x52,0xC3 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ static constexpr GUID value{ 0xD6F5F569,0xD40D,0x407C,{ 0x89,0x89,0x88,0xCA,0xB4,0x2C,0xFD,0x14 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotifier>{ static constexpr GUID value{ 0x75927B93,0x03F3,0x41EC,{ 0x91,0xD3,0x6E,0x5B,0xAC,0x1B,0x38,0xE7 } }; };
-template <> struct guid<Windows::UI::Notifications::IToastNotifier2>{ static constexpr GUID value{ 0x354389C6,0x7C01,0x4BD5,{ 0x9C,0x20,0x60,0x43,0x40,0xCD,0x2B,0x74 } }; };
-template <> struct guid<Windows::UI::Notifications::IUserNotification>{ static constexpr GUID value{ 0xADF7E52F,0x4E53,0x42D5,{ 0x9C,0x33,0xEB,0x5E,0xA5,0x15,0xB2,0x3E } }; };
-template <> struct guid<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ static constexpr GUID value{ 0xB6BD6839,0x79CF,0x4B25,{ 0x82,0xC0,0x0C,0xE1,0xEE,0xF8,0x1F,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IAdaptiveNotificationContent>{ static constexpr guid value{ 0xEB0DBE66,0x7448,0x448D,{ 0x9D,0xB8,0xD7,0x8A,0xCD,0x2A,0xBB,0xA9 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IAdaptiveNotificationText>{ static constexpr guid value{ 0x46D4A3BE,0x609A,0x4326,{ 0xA4,0x0B,0xBF,0xDE,0x87,0x20,0x34,0xA3 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeNotification>{ static constexpr guid value{ 0x075CB4CA,0xD08A,0x4E2F,{ 0x92,0x33,0x7E,0x28,0x9C,0x1F,0x77,0x22 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeNotificationFactory>{ static constexpr guid value{ 0xEDF255CE,0x0618,0x4D59,{ 0x94,0x8A,0x5A,0x61,0x04,0x0C,0x52,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeUpdateManagerForUser>{ static constexpr guid value{ 0x996B21BC,0x0386,0x44E5,{ 0xBA,0x8D,0x0C,0x10,0x77,0xA6,0x2E,0x92 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeUpdateManagerStatics>{ static constexpr guid value{ 0x33400FAA,0x6DD5,0x4105,{ 0xAE,0xBC,0x9B,0x50,0xFC,0xA4,0x92,0xDA } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeUpdateManagerStatics2>{ static constexpr guid value{ 0x979A35CE,0xF940,0x48BF,{ 0x94,0xE8,0xCA,0x24,0x4D,0x40,0x0B,0x41 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IBadgeUpdater>{ static constexpr guid value{ 0xB5FA1FD4,0x7562,0x4F6C,{ 0xBF,0xA3,0x1B,0x6E,0xD2,0xE5,0x7F,0x2F } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics>{ static constexpr guid value{ 0x06206598,0xD496,0x497D,{ 0x86,0x92,0x4F,0x7D,0x7C,0x27,0x70,0xDF } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics>{ static constexpr guid value{ 0x202192D7,0x8996,0x45AA,{ 0x8B,0xA1,0xD4,0x61,0xD7,0x2C,0x2A,0x1B } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IKnownNotificationBindingsStatics>{ static constexpr guid value{ 0x79427BAE,0xA8B7,0x4D58,{ 0x89,0xEA,0x76,0xA7,0xB7,0xBC,0xCD,0xED } }; };
+template <> struct guid_storage<Windows::UI::Notifications::INotification>{ static constexpr guid value{ 0x108037FE,0xEB76,0x4F82,{ 0x97,0xBC,0xDA,0x07,0x53,0x0A,0x2E,0x20 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::INotificationBinding>{ static constexpr guid value{ 0xF29E4B85,0x0370,0x4AD3,{ 0xB4,0xEA,0xDA,0x9E,0x35,0xE7,0xEA,0xBF } }; };
+template <> struct guid_storage<Windows::UI::Notifications::INotificationData>{ static constexpr guid value{ 0x9FFD2312,0x9D6A,0x4AAF,{ 0xB6,0xAC,0xFF,0x17,0xF0,0xC1,0xF2,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::INotificationDataFactory>{ static constexpr guid value{ 0x23C1E33A,0x1C10,0x46FB,{ 0x80,0x40,0xDE,0xC3,0x84,0x62,0x1C,0xF8 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::INotificationVisual>{ static constexpr guid value{ 0x68835B8E,0xAA56,0x4E11,{ 0x86,0xD3,0x5F,0x9A,0x69,0x57,0xBC,0x5B } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledTileNotification>{ static constexpr guid value{ 0x0ABCA6D5,0x99DC,0x4C78,{ 0xA1,0x1C,0xC9,0xE7,0xF8,0x6D,0x7E,0xF7 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledTileNotificationFactory>{ static constexpr guid value{ 0x3383138A,0x98C0,0x4C3B,{ 0xBB,0xD6,0x4A,0x63,0x3C,0x7C,0xFC,0x29 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotification>{ static constexpr guid value{ 0x79F577F8,0x0DE7,0x48CD,{ 0x97,0x40,0x9B,0x37,0x04,0x90,0xC8,0x38 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotification2>{ static constexpr guid value{ 0xA66EA09C,0x31B4,0x43B0,{ 0xB5,0xDD,0x7A,0x40,0xE8,0x53,0x63,0xB1 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotification3>{ static constexpr guid value{ 0x98429E8B,0xBD32,0x4A3B,{ 0x9D,0x15,0x22,0xAE,0xA4,0x94,0x62,0xA1 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotification4>{ static constexpr guid value{ 0x1D4761FD,0xBDEF,0x4E4A,{ 0x96,0xBE,0x01,0x01,0x36,0x9B,0x58,0xD2 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ static constexpr guid value{ 0xE7BED191,0x0BB9,0x4189,{ 0x83,0x94,0x31,0x76,0x1B,0x47,0x6F,0xD7 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs>{ static constexpr guid value{ 0x6173F6B4,0x412A,0x5E2C,{ 0xA6,0xED,0xA0,0x20,0x9A,0xEF,0x9A,0x09 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IShownTileNotification>{ static constexpr guid value{ 0x342D8988,0x5AF2,0x481A,{ 0xA6,0xA3,0xF2,0xFD,0xC7,0x8D,0xE8,0x8E } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileFlyoutNotification>{ static constexpr guid value{ 0x9A53B261,0xC70C,0x42BE,{ 0xB2,0xF3,0xF4,0x2A,0xA9,0x7D,0x34,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ static constexpr guid value{ 0xEF556FF5,0x5226,0x4F2B,{ 0xB2,0x78,0x88,0xA3,0x5D,0xFE,0x56,0x9F } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics>{ static constexpr guid value{ 0x04363B0B,0x1AC0,0x4B99,{ 0x88,0xE7,0xAD,0xA8,0x3E,0x95,0x3D,0x48 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileFlyoutUpdater>{ static constexpr guid value{ 0x8D40C76A,0xC465,0x4052,{ 0xA7,0x40,0x5C,0x26,0x54,0xC1,0xA0,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileNotification>{ static constexpr guid value{ 0xEBAEC8FA,0x50EC,0x4C18,{ 0xB4,0xD0,0x3A,0xF0,0x2E,0x55,0x40,0xAB } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileNotificationFactory>{ static constexpr guid value{ 0xC6ABDD6E,0x4928,0x46C8,{ 0xBD,0xBF,0x81,0xA0,0x47,0xDE,0xA0,0xD4 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileUpdateManagerForUser>{ static constexpr guid value{ 0x55141348,0x2EE2,0x4E2D,{ 0x9C,0xC1,0x21,0x6A,0x20,0xDE,0xCC,0x9F } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileUpdateManagerStatics>{ static constexpr guid value{ 0xDA159E5D,0x3EA9,0x4986,{ 0x8D,0x84,0xB0,0x9D,0x5E,0x12,0x27,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileUpdateManagerStatics2>{ static constexpr guid value{ 0x731C1DDC,0x8E14,0x4B7C,{ 0xA3,0x4B,0x9D,0x22,0xDE,0x76,0xC8,0x4D } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileUpdater>{ static constexpr guid value{ 0x0942A48B,0x1D91,0x44EC,{ 0x92,0x43,0xC1,0xE8,0x21,0xC2,0x9A,0x20 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::ITileUpdater2>{ static constexpr guid value{ 0xA2266E12,0x15EE,0x43ED,{ 0x83,0xF5,0x65,0xB3,0x52,0xBB,0x1A,0x84 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastActivatedEventArgs>{ static constexpr guid value{ 0xE3BF92F3,0xC197,0x436F,{ 0x82,0x65,0x06,0x25,0x82,0x4F,0x8D,0xAC } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastCollection>{ static constexpr guid value{ 0x0A8BC3B0,0xE0BE,0x4858,{ 0xBC,0x2A,0x89,0xDF,0xE0,0xB3,0x28,0x63 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastCollectionFactory>{ static constexpr guid value{ 0x164DD3D7,0x73C4,0x44F7,{ 0xB4,0xFF,0xFB,0x6D,0x4B,0xF1,0xF4,0xC6 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastCollectionManager>{ static constexpr guid value{ 0x2A1821FE,0x179D,0x49BC,{ 0xB7,0x9D,0xA5,0x27,0x92,0x0D,0x36,0x65 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastDismissedEventArgs>{ static constexpr guid value{ 0x3F89D935,0xD9CB,0x4538,{ 0xA0,0xF0,0xFF,0xE7,0x65,0x99,0x38,0xF8 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastFailedEventArgs>{ static constexpr guid value{ 0x35176862,0xCFD4,0x44F8,{ 0xAD,0x64,0xF5,0x00,0xFD,0x89,0x6C,0x3B } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotification>{ static constexpr guid value{ 0x997E2675,0x059E,0x4E60,{ 0x8B,0x06,0x17,0x60,0x91,0x7C,0x8B,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotification2>{ static constexpr guid value{ 0x9DFB9FD1,0x143A,0x490E,{ 0x90,0xBF,0xB9,0xFB,0xA7,0x13,0x2D,0xE7 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotification3>{ static constexpr guid value{ 0x31E8AED8,0x8141,0x4F99,{ 0xBC,0x0A,0xC4,0xED,0x21,0x29,0x7D,0x77 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotification4>{ static constexpr guid value{ 0x15154935,0x28EA,0x4727,{ 0x88,0xE9,0xC5,0x86,0x80,0xE2,0xD1,0x18 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationActionTriggerDetail>{ static constexpr guid value{ 0x9445135A,0x38F3,0x42F6,{ 0x96,0xAA,0x79,0x55,0xB0,0xF0,0x3D,0xA2 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationFactory>{ static constexpr guid value{ 0x04124B20,0x82C6,0x4229,{ 0xB1,0x09,0xFD,0x9E,0xD4,0x66,0x2B,0x53 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationHistory>{ static constexpr guid value{ 0x5CADDC63,0x01D3,0x4C97,{ 0x98,0x6F,0x05,0x33,0x48,0x3F,0xEE,0x14 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationHistory2>{ static constexpr guid value{ 0x3BC3D253,0x2F31,0x4092,{ 0x91,0x29,0x8A,0xD5,0xAB,0xF0,0x67,0xDA } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail>{ static constexpr guid value{ 0xDB037FFA,0x0068,0x412C,{ 0x9C,0x83,0x26,0x7C,0x37,0xF6,0x56,0x70 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>{ static constexpr guid value{ 0x0B36E982,0xC871,0x49FB,{ 0xBA,0xBB,0x25,0xBD,0xBC,0x4C,0xC4,0x5B } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerForUser>{ static constexpr guid value{ 0x79AB57F6,0x43FE,0x487B,{ 0x8A,0x7F,0x99,0x56,0x72,0x00,0xAE,0x94 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerForUser2>{ static constexpr guid value{ 0x679C64B7,0x81AB,0x42C2,{ 0x88,0x19,0xC9,0x58,0x76,0x77,0x53,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerStatics>{ static constexpr guid value{ 0x50AC103F,0xD235,0x4598,{ 0xBB,0xEF,0x98,0xFE,0x4D,0x1A,0x3A,0xD4 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerStatics2>{ static constexpr guid value{ 0x7AB93C52,0x0E48,0x4750,{ 0xBA,0x9D,0x1A,0x41,0x13,0x98,0x18,0x47 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerStatics4>{ static constexpr guid value{ 0x8F993FD3,0xE516,0x45FB,{ 0x81,0x30,0x39,0x8E,0x93,0xFA,0x52,0xC3 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ static constexpr guid value{ 0xD6F5F569,0xD40D,0x407C,{ 0x89,0x89,0x88,0xCA,0xB4,0x2C,0xFD,0x14 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotifier>{ static constexpr guid value{ 0x75927B93,0x03F3,0x41EC,{ 0x91,0xD3,0x6E,0x5B,0xAC,0x1B,0x38,0xE7 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotifier2>{ static constexpr guid value{ 0x354389C6,0x7C01,0x4BD5,{ 0x9C,0x20,0x60,0x43,0x40,0xCD,0x2B,0x74 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IToastNotifier3>{ static constexpr guid value{ 0xAE75A04A,0x3B0C,0x51AD,{ 0xB7,0xE8,0xB0,0x8A,0xB6,0x05,0x25,0x49 } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IUserNotification>{ static constexpr guid value{ 0xADF7E52F,0x4E53,0x42D5,{ 0x9C,0x33,0xEB,0x5E,0xA5,0x15,0xB2,0x3E } }; };
+template <> struct guid_storage<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ static constexpr guid value{ 0xB6BD6839,0x79CF,0x4B25,{ 0x82,0xC0,0x0C,0xE1,0xEE,0xF8,0x1F,0x8C } }; };
 template <> struct default_interface<Windows::UI::Notifications::AdaptiveNotificationText>{ using type = Windows::UI::Notifications::IAdaptiveNotificationText; };
 template <> struct default_interface<Windows::UI::Notifications::BadgeNotification>{ using type = Windows::UI::Notifications::IBadgeNotification; };
 template <> struct default_interface<Windows::UI::Notifications::BadgeUpdateManagerForUser>{ using type = Windows::UI::Notifications::IBadgeUpdateManagerForUser; };
@@ -655,6 +667,7 @@ template <> struct default_interface<Windows::UI::Notifications::NotificationDat
 template <> struct default_interface<Windows::UI::Notifications::NotificationVisual>{ using type = Windows::UI::Notifications::INotificationVisual; };
 template <> struct default_interface<Windows::UI::Notifications::ScheduledTileNotification>{ using type = Windows::UI::Notifications::IScheduledTileNotification; };
 template <> struct default_interface<Windows::UI::Notifications::ScheduledToastNotification>{ using type = Windows::UI::Notifications::IScheduledToastNotification; };
+template <> struct default_interface<Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs>{ using type = Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs; };
 template <> struct default_interface<Windows::UI::Notifications::ShownTileNotification>{ using type = Windows::UI::Notifications::IShownTileNotification; };
 template <> struct default_interface<Windows::UI::Notifications::TileFlyoutNotification>{ using type = Windows::UI::Notifications::ITileFlyoutNotification; };
 template <> struct default_interface<Windows::UI::Notifications::TileFlyoutUpdater>{ using type = Windows::UI::Notifications::ITileFlyoutUpdater; };
@@ -674,6 +687,491 @@ template <> struct default_interface<Windows::UI::Notifications::ToastNotificati
 template <> struct default_interface<Windows::UI::Notifications::ToastNotifier>{ using type = Windows::UI::Notifications::IToastNotifier; };
 template <> struct default_interface<Windows::UI::Notifications::UserNotification>{ using type = Windows::UI::Notifications::IUserNotification; };
 template <> struct default_interface<Windows::UI::Notifications::UserNotificationChangedEventArgs>{ using type = Windows::UI::Notifications::IUserNotificationChangedEventArgs; };
+
+template <> struct abi<Windows::UI::Notifications::IAdaptiveNotificationContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::UI::Notifications::AdaptiveNotificationContentKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hints(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IAdaptiveNotificationText>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateBadgeNotification(void* content, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForApplication(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForApplicationWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForSecondaryTile(void* tileId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForApplication(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForApplicationWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBadgeUpdaterForSecondaryTile(void* tileId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTemplateContent(Windows::UI::Notifications::BadgeTemplateType type, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IBadgeUpdater>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Update(void* notification) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdate(void* badgeContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdateAtTime(void* badgeContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StopPeriodicUpdate() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Style(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Wrap(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxLines(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinLines(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextStacking(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Align(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Caption(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Body(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Base(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subtitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subheader(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Header(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TitleNumeral(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubheaderNumeral(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderNumeral(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CaptionSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BodySubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubtitleSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TitleSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubheaderSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubheaderNumeralSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderSubtle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeaderNumeralSubtle(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IKnownNotificationBindingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ToastGeneric(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::INotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Visual(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Visual(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::INotificationBinding>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Template(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Template(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTextElements(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::INotificationData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Values(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SequenceNumber(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SequenceNumber(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::INotificationDataFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateNotificationDataWithValuesAndSequenceNumber(void* initialValues, uint32_t sequenceNumber, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateNotificationDataWithValues(void* initialValues, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::INotificationVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bindings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBinding(void* templateName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledTileNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeliveryTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledTileNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateScheduledTileNotification(void* content, Windows::Foundation::DateTime deliveryTime, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeliveryTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SnoozeInterval(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaximumSnoozeCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Group(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Group(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuppressPopup(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuppressPopup(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateScheduledToastNotification(void* content, Windows::Foundation::DateTime deliveryTime, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateScheduledToastNotificationRecurring(void* content, Windows::Foundation::DateTime deliveryTime, Windows::Foundation::TimeSpan snoozeInterval, uint32_t maximumSnoozeCount, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Cancel(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Cancel(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScheduledToastNotification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IShownTileNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Arguments(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileFlyoutNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTileFlyoutNotification(void* content, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTileFlyoutUpdaterForApplication(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileFlyoutUpdaterForApplicationWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileFlyoutUpdaterForSecondaryTile(void* tileId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTemplateContent(Windows::UI::Notifications::TileFlyoutTemplateType type, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileFlyoutUpdater>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Update(void* notification) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdate(void* tileFlyoutContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdateAtTime(void* tileFlyoutContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StopPeriodicUpdate() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTileNotification(void* content, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTileUpdaterForApplication(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileUpdaterForApplicationWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileUpdaterForSecondaryTile(void* tileId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateTileUpdaterForApplication(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileUpdaterForApplicationWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTileUpdaterForSecondaryTile(void* tileId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTemplateContent(Windows::UI::Notifications::TileTemplateType type, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileUpdater>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Update(void* notification) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL EnableNotificationQueue(bool enable) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddToSchedule(void* scheduledTile) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveFromSchedule(void* scheduledTile) noexcept = 0;
+    virtual int32_t WINRT_CALL GetScheduledTileNotifications(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdate(void* tileContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdateAtTime(void* tileContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StopPeriodicUpdate() noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdateBatch(void* tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+    virtual int32_t WINRT_CALL StartPeriodicUpdateBatchAtTime(void* tileContents, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::ITileUpdater2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL EnableNotificationQueueForSquare150x150(bool enable) noexcept = 0;
+    virtual int32_t WINRT_CALL EnableNotificationQueueForWide310x150(bool enable) noexcept = 0;
+    virtual int32_t WINRT_CALL EnableNotificationQueueForSquare310x310(bool enable) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastActivatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Arguments(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LaunchArgs(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LaunchArgs(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Icon(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Icon(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastCollectionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* collectionId, void* displayName, void* launchArgs, void* iconUri, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastCollectionManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SaveToastCollectionAsync(void* collection, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllToastCollectionsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetToastCollectionAsync(void* collectionId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveToastCollectionAsync(void* collectionId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAllToastCollectionsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastDismissedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::UI::Notifications::ToastDismissalReason* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastFailedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorCode(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExpirationTime(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Dismissed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Dismissed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Activated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Activated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Failed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Failed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotification2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Group(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Group(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SuppressPopup(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuppressPopup(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotification3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotification4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Priority(Windows::UI::Notifications::ToastNotificationPriority* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Priority(Windows::UI::Notifications::ToastNotificationPriority value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationActionTriggerDetail>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Argument(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserInput(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateToastNotification(void* content, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationHistory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RemoveGroup(void* group) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveGroupWithId(void* group, void* applicationId) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveGroupedTagWithId(void* tag, void* group, void* applicationId) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveGroupedTag(void* tag, void* group) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* tag) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL ClearWithId(void* applicationId) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationHistory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetHistory(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHistoryWithId(void* applicationId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeType(Windows::UI::Notifications::ToastHistoryChangedType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CollectionId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateToastNotifier(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateToastNotifierWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_History(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerForUser2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetToastNotifierForToastCollectionIdAsync(void* collectionId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHistoryForToastCollectionIdAsync(void* collectionId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetToastCollectionManager(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetToastCollectionManagerWithAppId(void* appId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateToastNotifier(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateToastNotifierWithId(void* applicationId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_History(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotifier>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Show(void* notification) noexcept = 0;
+    virtual int32_t WINRT_CALL Hide(void* notification) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddToSchedule(void* scheduledToast) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveFromSchedule(void* scheduledToast) noexcept = 0;
+    virtual int32_t WINRT_CALL GetScheduledToastNotifications(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotifier2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL UpdateWithTagAndGroup(void* data, void* tag, void* group, Windows::UI::Notifications::NotificationUpdateResult* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateWithTag(void* data, void* tag, Windows::UI::Notifications::NotificationUpdateResult* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IToastNotifier3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ScheduledToastNotificationShowing(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ScheduledToastNotificationShowing(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IUserNotification>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Notification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CreationTime(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChangeKind(Windows::UI::Notifications::UserNotificationChangedKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserNotificationId(uint32_t* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Notifications_IAdaptiveNotificationContent
@@ -912,6 +1410,16 @@ struct consume_Windows_UI_Notifications_IScheduledToastNotificationFactory
 template <> struct consume<Windows::UI::Notifications::IScheduledToastNotificationFactory> { template <typename D> using type = consume_Windows_UI_Notifications_IScheduledToastNotificationFactory<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Notifications_IScheduledToastNotificationShowingEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::UI::Notifications::ScheduledToastNotification ScheduledToastNotification() const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+template <> struct consume<Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs> { template <typename D> using type = consume_Windows_UI_Notifications_IScheduledToastNotificationShowingEventArgs<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Notifications_IShownTileNotification
 {
     hstring Arguments() const;
@@ -1078,7 +1586,7 @@ template <> struct consume<Windows::UI::Notifications::IToastDismissedEventArgs>
 template <typename D>
 struct consume_Windows_UI_Notifications_IToastFailedEventArgs
 {
-    HRESULT ErrorCode() const;
+    winrt::hresult ErrorCode() const;
 };
 template <> struct consume<Windows::UI::Notifications::IToastFailedEventArgs> { template <typename D> using type = consume_Windows_UI_Notifications_IToastFailedEventArgs<D>; };
 
@@ -1088,18 +1596,18 @@ struct consume_Windows_UI_Notifications_IToastNotification
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(optional<Windows::Foundation::DateTime> const& value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
-    event_token Dismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> const& handler) const;
-    using Dismissed_revoker = event_revoker<Windows::UI::Notifications::IToastNotification>;
+    winrt::event_token Dismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> const& handler) const;
+    using Dismissed_revoker = impl::event_revoker<Windows::UI::Notifications::IToastNotification, &impl::abi_t<Windows::UI::Notifications::IToastNotification>::remove_Dismissed>;
     Dismissed_revoker Dismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> const& handler) const;
-    void Dismissed(event_token const& cookie) const;
-    event_token Activated(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> const& handler) const;
-    using Activated_revoker = event_revoker<Windows::UI::Notifications::IToastNotification>;
+    void Dismissed(winrt::event_token const& token) const noexcept;
+    winrt::event_token Activated(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> const& handler) const;
+    using Activated_revoker = impl::event_revoker<Windows::UI::Notifications::IToastNotification, &impl::abi_t<Windows::UI::Notifications::IToastNotification>::remove_Activated>;
     Activated_revoker Activated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::Foundation::IInspectable> const& handler) const;
-    void Activated(event_token const& cookie) const;
-    event_token Failed(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> const& handler) const;
-    using Failed_revoker = event_revoker<Windows::UI::Notifications::IToastNotification>;
+    void Activated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Failed(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> const& handler) const;
+    using Failed_revoker = impl::event_revoker<Windows::UI::Notifications::IToastNotification, &impl::abi_t<Windows::UI::Notifications::IToastNotification>::remove_Failed>;
     Failed_revoker Failed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> const& handler) const;
-    void Failed(event_token const& token) const;
+    void Failed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Notifications::IToastNotification> { template <typename D> using type = consume_Windows_UI_Notifications_IToastNotification<D>; };
 
@@ -1257,6 +1765,16 @@ struct consume_Windows_UI_Notifications_IToastNotifier2
 template <> struct consume<Windows::UI::Notifications::IToastNotifier2> { template <typename D> using type = consume_Windows_UI_Notifications_IToastNotifier2<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Notifications_IToastNotifier3
+{
+    winrt::event_token ScheduledToastNotificationShowing(Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotifier, Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs> const& handler) const;
+    using ScheduledToastNotificationShowing_revoker = impl::event_revoker<Windows::UI::Notifications::IToastNotifier3, &impl::abi_t<Windows::UI::Notifications::IToastNotifier3>::remove_ScheduledToastNotificationShowing>;
+    ScheduledToastNotificationShowing_revoker ScheduledToastNotificationShowing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotifier, Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs> const& handler) const;
+    void ScheduledToastNotificationShowing(winrt::event_token const& token) const noexcept;
+};
+template <> struct consume<Windows::UI::Notifications::IToastNotifier3> { template <typename D> using type = consume_Windows_UI_Notifications_IToastNotifier3<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Notifications_IUserNotification
 {
     Windows::UI::Notifications::Notification Notification() const;
@@ -1273,476 +1791,5 @@ struct consume_Windows_UI_Notifications_IUserNotificationChangedEventArgs
     uint32_t UserNotificationId() const;
 };
 template <> struct consume<Windows::UI::Notifications::IUserNotificationChangedEventArgs> { template <typename D> using type = consume_Windows_UI_Notifications_IUserNotificationChangedEventArgs<D>; };
-
-template <> struct abi<Windows::UI::Notifications::IAdaptiveNotificationContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::UI::Notifications::AdaptiveNotificationContentKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hints(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IAdaptiveNotificationText>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateBadgeNotification(void* content, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateBadgeUpdaterForApplication(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateBadgeUpdaterForSecondaryTile(HSTRING tileId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateBadgeUpdaterForApplication(void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateBadgeUpdaterForSecondaryTile(HSTRING tileId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall GetTemplateContent(Windows::UI::Notifications::BadgeTemplateType type, void** content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeUpdateManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IBadgeUpdater>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Update(void* notification) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdate(void* badgeContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdateAtTime(void* badgeContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StopPeriodicUpdate() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Style(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Wrap(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxLines(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinLines(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextStacking(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Align(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Caption(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Body(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Base(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subtitle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subheader(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Header(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TitleNumeral(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubheaderNumeral(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderNumeral(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CaptionSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BodySubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubtitleSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TitleSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubheaderSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubheaderNumeralSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderSubtle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeaderNumeralSubtle(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IKnownNotificationBindingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ToastGeneric(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::INotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Visual(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Visual(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::INotificationBinding>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Template(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Template(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetTextElements(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::INotificationData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Values(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SequenceNumber(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SequenceNumber(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::INotificationDataFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateNotificationDataWithValuesAndSequenceNumber(void* initialValues, uint32_t sequenceNumber, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateNotificationDataWithValues(void* initialValues, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::INotificationVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bindings(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetBinding(HSTRING templateName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledTileNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeliveryTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Tag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledTileNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateScheduledTileNotification(void* content, Windows::Foundation::DateTime deliveryTime, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeliveryTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SnoozeInterval(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaximumSnoozeCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Tag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Group(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Group(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuppressPopup(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuppressPopup(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledToastNotification4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IScheduledToastNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateScheduledToastNotification(void* content, Windows::Foundation::DateTime deliveryTime, void** notification) noexcept = 0;
-    virtual HRESULT __stdcall CreateScheduledToastNotificationRecurring(void* content, Windows::Foundation::DateTime deliveryTime, Windows::Foundation::TimeSpan snoozeInterval, uint32_t maximumSnoozeCount, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IShownTileNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Arguments(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileFlyoutNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileFlyoutNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTileFlyoutNotification(void* content, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTileFlyoutUpdaterForApplication(void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileFlyoutUpdaterForApplicationWithId(HSTRING applicationId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileFlyoutUpdaterForSecondaryTile(HSTRING tileId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall GetTemplateContent(Windows::UI::Notifications::TileFlyoutTemplateType type, void** content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileFlyoutUpdater>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Update(void* notification) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdate(void* tileFlyoutContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdateAtTime(void* tileFlyoutContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StopPeriodicUpdate() noexcept = 0;
-    virtual HRESULT __stdcall get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Tag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTileNotification(void* content, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTileUpdaterForApplication(void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileUpdaterForApplicationWithId(HSTRING applicationId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileUpdaterForSecondaryTile(HSTRING tileId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateTileUpdaterForApplication(void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileUpdaterForApplicationWithId(HSTRING applicationId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall CreateTileUpdaterForSecondaryTile(HSTRING tileId, void** updater) noexcept = 0;
-    virtual HRESULT __stdcall GetTemplateContent(Windows::UI::Notifications::TileTemplateType type, void** content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileUpdateManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileUpdater>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Update(void* notification) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall EnableNotificationQueue(bool enable) noexcept = 0;
-    virtual HRESULT __stdcall get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
-    virtual HRESULT __stdcall AddToSchedule(void* scheduledTile) noexcept = 0;
-    virtual HRESULT __stdcall RemoveFromSchedule(void* scheduledTile) noexcept = 0;
-    virtual HRESULT __stdcall GetScheduledTileNotifications(void** scheduledTiles) noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdate(void* tileContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdateAtTime(void* tileContent, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StopPeriodicUpdate() noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdateBatch(void* tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-    virtual HRESULT __stdcall StartPeriodicUpdateBatchAtTime(void* tileContents, Windows::Foundation::DateTime startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::ITileUpdater2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall EnableNotificationQueueForSquare150x150(bool enable) noexcept = 0;
-    virtual HRESULT __stdcall EnableNotificationQueueForWide310x150(bool enable) noexcept = 0;
-    virtual HRESULT __stdcall EnableNotificationQueueForSquare310x310(bool enable) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastActivatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Arguments(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LaunchArgs(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LaunchArgs(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Icon(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Icon(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastCollectionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(HSTRING collectionId, HSTRING displayName, HSTRING launchArgs, void* iconUri, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastCollectionManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SaveToastCollectionAsync(void* collection, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FindAllToastCollectionsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetToastCollectionAsync(HSTRING collectionId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RemoveToastCollectionAsync(HSTRING collectionId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAllToastCollectionsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastDismissedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::UI::Notifications::ToastDismissalReason* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastFailedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorCode(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExpirationTime(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Dismissed(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Dismissed(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Activated(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Activated(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Failed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Failed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotification2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Tag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Group(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Group(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SuppressPopup(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_SuppressPopup(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotification3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotification4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Priority(Windows::UI::Notifications::ToastNotificationPriority* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Priority(Windows::UI::Notifications::ToastNotificationPriority value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationActionTriggerDetail>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Argument(HSTRING* argument) noexcept = 0;
-    virtual HRESULT __stdcall get_UserInput(void** inputs) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateToastNotification(void* content, void** notification) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationHistory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RemoveGroup(HSTRING group) noexcept = 0;
-    virtual HRESULT __stdcall RemoveGroupWithId(HSTRING group, HSTRING applicationId) noexcept = 0;
-    virtual HRESULT __stdcall RemoveGroupedTagWithId(HSTRING tag, HSTRING group, HSTRING applicationId) noexcept = 0;
-    virtual HRESULT __stdcall RemoveGroupedTag(HSTRING tag, HSTRING group) noexcept = 0;
-    virtual HRESULT __stdcall Remove(HSTRING tag) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall ClearWithId(HSTRING applicationId) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationHistory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetHistory(void** toasts) noexcept = 0;
-    virtual HRESULT __stdcall GetHistoryWithId(HSTRING applicationId, void** toasts) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeType(Windows::UI::Notifications::ToastHistoryChangedType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CollectionId(HSTRING* collectionId) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateToastNotifier(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateToastNotifierWithId(HSTRING applicationId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_History(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerForUser2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetHistoryForToastCollectionIdAsync(HSTRING collectionId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetToastCollectionManager(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetToastCollectionManagerWithAppId(HSTRING appId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateToastNotifier(void** notifier) noexcept = 0;
-    virtual HRESULT __stdcall CreateToastNotifierWithId(HSTRING applicationId, void** notifier) noexcept = 0;
-    virtual HRESULT __stdcall GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type, void** content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_History(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotificationManagerStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotifier>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Show(void* notification) noexcept = 0;
-    virtual HRESULT __stdcall Hide(void* notification) noexcept = 0;
-    virtual HRESULT __stdcall get_Setting(Windows::UI::Notifications::NotificationSetting* value) noexcept = 0;
-    virtual HRESULT __stdcall AddToSchedule(void* scheduledToast) noexcept = 0;
-    virtual HRESULT __stdcall RemoveFromSchedule(void* scheduledToast) noexcept = 0;
-    virtual HRESULT __stdcall GetScheduledToastNotifications(void** scheduledToasts) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IToastNotifier2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall UpdateWithTagAndGroup(void* data, HSTRING tag, HSTRING group, Windows::UI::Notifications::NotificationUpdateResult* result) noexcept = 0;
-    virtual HRESULT __stdcall UpdateWithTag(void* data, HSTRING tag, Windows::UI::Notifications::NotificationUpdateResult* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IUserNotification>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Notification(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CreationTime(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Notifications::IUserNotificationChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChangeKind(Windows::UI::Notifications::UserNotificationChangedKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserNotificationId(uint32_t* value) noexcept = 0;
-};};
 
 }

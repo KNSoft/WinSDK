@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.text.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -370,6 +382,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CText_CITextDocument2 ABI::Windows::UI::Text::ITextDocument2
 
 #endif // ____x_ABI_CWindows_CUI_CText_CITextDocument2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                interface ITextDocument3;
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3 ABI::Windows::UI::Text::ITextDocument3
+
+#endif // ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
@@ -833,6 +859,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* Text */} /* ABI */
+
 
 
 
@@ -2072,10 +2099,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIFontWeightsStatics;
  * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextRange
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Text.ITextRange
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #if !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__)
@@ -2276,11 +2299,11 @@ namespace ABI {
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextCharacterFormat * value
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetClone(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextCharacterFormat * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextCharacterFormat * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsEqual(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextCharacterFormat * format,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     
                 };
@@ -2401,40 +2424,40 @@ namespace ABI {
                         /* [in] */UINT32 value
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CanCopy(
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CanPaste(
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CanRedo(
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CanUndo(
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE ApplyDisplayUpdates(
-                        /* [retval, out] */__RPC__out INT32 * count
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE BatchDisplayUpdates(
-                        /* [retval, out] */__RPC__out INT32 * count
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE BeginUndoGroup(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE EndUndoGroup(void) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultCharacterFormat(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextCharacterFormat * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextCharacterFormat * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetDefaultParagraphFormat(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextParagraphFormat * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextParagraphFormat * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetRange(
                         /* [in] */INT32 startPosition,
                         /* [in] */INT32 endPosition,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetRangeFromPoint(
                         /* [in] */ABI::Windows::Foundation::Point point,
                         /* [in] */ABI::Windows::UI::Text::PointOptions options,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetText(
                         /* [in] */ABI::Windows::UI::Text::TextGetOptions options,
@@ -2484,10 +2507,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument;
  * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextDocument
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Text.ITextDocument
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if !defined(____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__)
@@ -2526,6 +2545,45 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Text.ITextDocument3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextDocument
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_ITextDocument3[] = L"Windows.UI.Text.ITextDocument3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                /* [object, uuid("75AB03A1-A6F8-441D-AA18-0A851D6E5E3C"), exclusiveto, contract] */
+                MIDL_INTERFACE("75AB03A1-A6F8-441D-AA18-0A851D6E5E3C")
+                ITextDocument3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE ClearUndoRedoHistory(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITextDocument3=_uuidof(ITextDocument3);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Text */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2676,7 +2734,7 @@ namespace ABI {
                         /* [in] */FLOAT position
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetClone(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextParagraphFormat * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextParagraphFormat * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetTab(
                         /* [in] */INT32 index,
@@ -2686,7 +2744,7 @@ namespace ABI {
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsEqual(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextParagraphFormat * format,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE SetClone(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextParagraphFormat * format
@@ -2766,7 +2824,7 @@ namespace ABI {
                         /* [in] */ABI::Windows::UI::Text::RangeGravity value
                         ) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Length(
-                        /* [retval, out] */__RPC__out INT32 * length
+                        /* [retval, out] */__RPC__out INT32 * value
                         ) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Link(
                         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
@@ -2797,7 +2855,7 @@ namespace ABI {
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CanPaste(
                         /* [in] */INT32 format,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE ChangeCase(
                         /* [in] */ABI::Windows::UI::Text::LetterCase value
@@ -2810,33 +2868,33 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE Delete(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE EndOf(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE Expand(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE FindText(
                         /* [in] */__RPC__in HSTRING value,
                         /* [in] */INT32 scanLength,
                         /* [in] */ABI::Windows::UI::Text::FindOptions options,
-                        /* [retval, out] */__RPC__out INT32 * length
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetCharacterUtf32(
                         /* [out] */__RPC__out UINT32 * value,
                         /* [in] */INT32 offset
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetClone(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::ITextRange * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetIndex(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
-                        /* [retval, out] */__RPC__out INT32 * index
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetPoint(
                         /* [in] */ABI::Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign,
@@ -2859,7 +2917,7 @@ namespace ABI {
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE InRange(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextRange * range,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE InsertImage(
                         /* [in] */INT32 width,
@@ -2871,26 +2929,26 @@ namespace ABI {
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE InStory(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextRange * range,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE IsEqual(
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Text::ITextRange * range,
-                        /* [retval, out] */__RPC__out boolean * value
+                        /* [retval, out] */__RPC__out boolean * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE Move(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveEnd(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveStart(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE Paste(
                         /* [in] */INT32 format
@@ -2924,7 +2982,7 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE StartOf(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     
                 };
@@ -2977,36 +3035,36 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE EndKey(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE HomeKey(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveDown(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveLeft(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveRight(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE MoveUp(
                         /* [in] */ABI::Windows::UI::Text::TextRangeUnit unit,
                         /* [in] */INT32 count,
                         /* [in] */boolean extend,
-                        /* [retval, out] */__RPC__out INT32 * delta
+                        /* [retval, out] */__RPC__out INT32 * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE TypeText(
                         /* [in] */__RPC__in HSTRING value
@@ -3087,8 +3145,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Text.ITextDocument ** Default Interface **
  *    Windows.UI.Text.ITextDocument2
+ *    Windows.UI.Text.ITextDocument3
+ *    Windows.UI.Text.ITextDocument ** Default Interface **
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3110,8 +3169,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Text.ITextRange ** Default Interface **
  *    Windows.UI.Text.IRichEditTextRange
+ *    Windows.UI.Text.ITextRange ** Default Interface **
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3199,6 +3258,12 @@ typedef interface __x_ABI_CWindows_CUI_CText_CITextDocument __x_ABI_CWindows_CUI
 typedef interface __x_ABI_CWindows_CUI_CText_CITextDocument2 __x_ABI_CWindows_CUI_CText_CITextDocument2;
 
 #endif // ____x_ABI_CWindows_CUI_CText_CITextDocument2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CITextDocument3 __x_ABI_CWindows_CUI_CText_CITextDocument3;
+
+#endif // ____x_ABI_CWindows_CUI_CText_CITextDocument3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CITextParagraphFormat_FWD_DEFINED__
@@ -3393,6 +3458,7 @@ typedef enum __x_ABI_CWindows_CUI_CText_CVerticalCharacterAlignment __x_ABI_CWin
 
 
 typedef struct __x_ABI_CWindows_CUI_CText_CFontWeight __x_ABI_CWindows_CUI_CText_CFontWeight;
+
 
 
 
@@ -4588,10 +4654,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CIFontWeightsStatics;
  * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextRange
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Text.ITextRange
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #if !defined(____x_ABI_CWindows_CUI_CText_CIRichEditTextRange_INTERFACE_DEFINED__)
@@ -4922,12 +4984,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetClone )(
         __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEqual )(
         __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * format,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -5101,11 +5163,11 @@ interface __x_ABI_CWindows_CUI_CText_CITextCharacterFormat
 #define __x_ABI_CWindows_CUI_CText_CITextCharacterFormat_SetClone(This,value) \
     ( (This)->lpVtbl->SetClone(This,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextCharacterFormat_GetClone(This,value) \
-    ( (This)->lpVtbl->GetClone(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextCharacterFormat_GetClone(This,result) \
+    ( (This)->lpVtbl->GetClone(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextCharacterFormat_IsEqual(This,format,value) \
-    ( (This)->lpVtbl->IsEqual(This,format,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextCharacterFormat_IsEqual(This,format,result) \
+    ( (This)->lpVtbl->IsEqual(This,format,result) )
 
 
 #endif /* COBJMACROS */
@@ -5334,27 +5396,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *CanCopy )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *CanPaste )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *CanRedo )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *CanUndo )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *ApplyDisplayUpdates )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out INT32 * count
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *BatchDisplayUpdates )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__out INT32 * count
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *BeginUndoGroup )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This
@@ -5364,23 +5426,23 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetDefaultCharacterFormat )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextCharacterFormat * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetDefaultParagraphFormat )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetRange )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
         /* [in] */INT32 startPosition,
         /* [in] */INT32 endPosition,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetRangeFromPoint )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint point,
         /* [in] */__x_ABI_CWindows_CUI_CText_CPointOptions options,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetText )(
         __x_ABI_CWindows_CUI_CText_CITextDocument * This,
@@ -5465,23 +5527,23 @@ interface __x_ABI_CWindows_CUI_CText_CITextDocument
 #define __x_ABI_CWindows_CUI_CText_CITextDocument_put_UndoLimit(This,value) \
     ( (This)->lpVtbl->put_UndoLimit(This,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanCopy(This,value) \
-    ( (This)->lpVtbl->CanCopy(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanCopy(This,result) \
+    ( (This)->lpVtbl->CanCopy(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanPaste(This,value) \
-    ( (This)->lpVtbl->CanPaste(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanPaste(This,result) \
+    ( (This)->lpVtbl->CanPaste(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanRedo(This,value) \
-    ( (This)->lpVtbl->CanRedo(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanRedo(This,result) \
+    ( (This)->lpVtbl->CanRedo(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanUndo(This,value) \
-    ( (This)->lpVtbl->CanUndo(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_CanUndo(This,result) \
+    ( (This)->lpVtbl->CanUndo(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_ApplyDisplayUpdates(This,count) \
-    ( (This)->lpVtbl->ApplyDisplayUpdates(This,count) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_ApplyDisplayUpdates(This,result) \
+    ( (This)->lpVtbl->ApplyDisplayUpdates(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_BatchDisplayUpdates(This,count) \
-    ( (This)->lpVtbl->BatchDisplayUpdates(This,count) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_BatchDisplayUpdates(This,result) \
+    ( (This)->lpVtbl->BatchDisplayUpdates(This,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextDocument_BeginUndoGroup(This) \
     ( (This)->lpVtbl->BeginUndoGroup(This) )
@@ -5489,17 +5551,17 @@ interface __x_ABI_CWindows_CUI_CText_CITextDocument
 #define __x_ABI_CWindows_CUI_CText_CITextDocument_EndUndoGroup(This) \
     ( (This)->lpVtbl->EndUndoGroup(This) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetDefaultCharacterFormat(This,value) \
-    ( (This)->lpVtbl->GetDefaultCharacterFormat(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetDefaultCharacterFormat(This,result) \
+    ( (This)->lpVtbl->GetDefaultCharacterFormat(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetDefaultParagraphFormat(This,value) \
-    ( (This)->lpVtbl->GetDefaultParagraphFormat(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetDefaultParagraphFormat(This,result) \
+    ( (This)->lpVtbl->GetDefaultParagraphFormat(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetRange(This,startPosition,endPosition,value) \
-    ( (This)->lpVtbl->GetRange(This,startPosition,endPosition,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetRange(This,startPosition,endPosition,result) \
+    ( (This)->lpVtbl->GetRange(This,startPosition,endPosition,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetRangeFromPoint(This,point,options,value) \
-    ( (This)->lpVtbl->GetRangeFromPoint(This,point,options,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextDocument_GetRangeFromPoint(This,point,options,result) \
+    ( (This)->lpVtbl->GetRangeFromPoint(This,point,options,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextDocument_GetText(This,options,value) \
     ( (This)->lpVtbl->GetText(This,options,value) )
@@ -5542,10 +5604,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument;
  *
  *
  * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextDocument
- *
- *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Text.ITextDocument
  *
  *
  */
@@ -5650,6 +5708,98 @@ interface __x_ABI_CWindows_CUI_CText_CITextDocument2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextDocument2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Text.ITextDocument3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.RichEditTextDocument
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_ITextDocument3[] = L"Windows.UI.Text.ITextDocument3";
+/* [object, uuid("75AB03A1-A6F8-441D-AA18-0A851D6E5E3C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CText_CITextDocument3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CITextDocument3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ClearUndoRedoHistory )(
+        __x_ABI_CWindows_CUI_CText_CITextDocument3 * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CText_CITextDocument3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CText_CITextDocument3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CText_CITextDocument3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CText_CITextDocument3_ClearUndoRedoHistory(This) \
+    ( (This)->lpVtbl->ClearUndoRedoHistory(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CITextDocument3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CITextDocument3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5869,7 +6019,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetClone )(
         __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetTab )(
         __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * This,
@@ -5881,7 +6031,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *IsEqual )(
         __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * format,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetClone )(
         __x_ABI_CWindows_CUI_CText_CITextParagraphFormat * This,
@@ -6052,14 +6202,14 @@ interface __x_ABI_CWindows_CUI_CText_CITextParagraphFormat
 #define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_DeleteTab(This,position) \
     ( (This)->lpVtbl->DeleteTab(This,position) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_GetClone(This,value) \
-    ( (This)->lpVtbl->GetClone(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_GetClone(This,result) \
+    ( (This)->lpVtbl->GetClone(This,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_GetTab(This,index,position,align,leader) \
     ( (This)->lpVtbl->GetTab(This,index,position,align,leader) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_IsEqual(This,format,value) \
-    ( (This)->lpVtbl->IsEqual(This,format,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_IsEqual(This,format,result) \
+    ( (This)->lpVtbl->IsEqual(This,format,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextParagraphFormat_SetClone(This,format) \
     ( (This)->lpVtbl->SetClone(This,format) )
@@ -6167,7 +6317,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Length )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
-        /* [retval, out] */__RPC__out INT32 * length
+        /* [retval, out] */__RPC__out INT32 * value
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Link )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6208,7 +6358,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *CanPaste )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */INT32 format,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *ChangeCase )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6228,25 +6378,25 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *EndOf )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *Expand )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *FindText )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__RPC__in HSTRING value,
         /* [in] */INT32 scanLength,
         /* [in] */__x_ABI_CWindows_CUI_CText_CFindOptions options,
-        /* [retval, out] */__RPC__out INT32 * length
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetCharacterUtf32 )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6255,12 +6405,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetClone )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CITextRange * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetIndex )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
-        /* [retval, out] */__RPC__out INT32 * index
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetPoint )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6288,7 +6438,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *InRange )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CITextRange * range,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *InsertImage )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6302,30 +6452,30 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *InStory )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CITextRange * range,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEqual )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CText_CITextRange * range,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *Move )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveEnd )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveStart )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *Paste )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
@@ -6369,7 +6519,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CText_CITextRange * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     END_INTERFACE
     
@@ -6429,8 +6579,8 @@ interface __x_ABI_CWindows_CUI_CText_CITextRange
 #define __x_ABI_CWindows_CUI_CText_CITextRange_put_Gravity(This,value) \
     ( (This)->lpVtbl->put_Gravity(This,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_get_Length(This,length) \
-    ( (This)->lpVtbl->get_Length(This,length) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_get_Length(This,value) \
+    ( (This)->lpVtbl->get_Length(This,value) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_get_Link(This,value) \
     ( (This)->lpVtbl->get_Link(This,value) )
@@ -6459,8 +6609,8 @@ interface __x_ABI_CWindows_CUI_CText_CITextRange
 #define __x_ABI_CWindows_CUI_CText_CITextRange_put_Text(This,value) \
     ( (This)->lpVtbl->put_Text(This,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_CanPaste(This,format,value) \
-    ( (This)->lpVtbl->CanPaste(This,format,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_CanPaste(This,format,result) \
+    ( (This)->lpVtbl->CanPaste(This,format,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_ChangeCase(This,value) \
     ( (This)->lpVtbl->ChangeCase(This,value) )
@@ -6474,26 +6624,26 @@ interface __x_ABI_CWindows_CUI_CText_CITextRange
 #define __x_ABI_CWindows_CUI_CText_CITextRange_Cut(This) \
     ( (This)->lpVtbl->Cut(This) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_Delete(This,unit,count,delta) \
-    ( (This)->lpVtbl->Delete(This,unit,count,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_Delete(This,unit,count,result) \
+    ( (This)->lpVtbl->Delete(This,unit,count,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_EndOf(This,unit,extend,delta) \
-    ( (This)->lpVtbl->EndOf(This,unit,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_EndOf(This,unit,extend,result) \
+    ( (This)->lpVtbl->EndOf(This,unit,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_Expand(This,unit,delta) \
-    ( (This)->lpVtbl->Expand(This,unit,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_Expand(This,unit,result) \
+    ( (This)->lpVtbl->Expand(This,unit,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_FindText(This,value,scanLength,options,length) \
-    ( (This)->lpVtbl->FindText(This,value,scanLength,options,length) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_FindText(This,value,scanLength,options,result) \
+    ( (This)->lpVtbl->FindText(This,value,scanLength,options,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_GetCharacterUtf32(This,value,offset) \
     ( (This)->lpVtbl->GetCharacterUtf32(This,value,offset) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_GetClone(This,value) \
-    ( (This)->lpVtbl->GetClone(This,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_GetClone(This,result) \
+    ( (This)->lpVtbl->GetClone(This,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_GetIndex(This,unit,index) \
-    ( (This)->lpVtbl->GetIndex(This,unit,index) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_GetIndex(This,unit,result) \
+    ( (This)->lpVtbl->GetIndex(This,unit,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_GetPoint(This,horizontalAlign,verticalAlign,options,point) \
     ( (This)->lpVtbl->GetPoint(This,horizontalAlign,verticalAlign,options,point) )
@@ -6507,26 +6657,26 @@ interface __x_ABI_CWindows_CUI_CText_CITextRange
 #define __x_ABI_CWindows_CUI_CText_CITextRange_GetTextViaStream(This,options,value) \
     ( (This)->lpVtbl->GetTextViaStream(This,options,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_InRange(This,range,value) \
-    ( (This)->lpVtbl->InRange(This,range,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_InRange(This,range,result) \
+    ( (This)->lpVtbl->InRange(This,range,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_InsertImage(This,width,height,ascent,verticalAlign,alternateText,value) \
     ( (This)->lpVtbl->InsertImage(This,width,height,ascent,verticalAlign,alternateText,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_InStory(This,range,value) \
-    ( (This)->lpVtbl->InStory(This,range,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_InStory(This,range,result) \
+    ( (This)->lpVtbl->InStory(This,range,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_IsEqual(This,range,value) \
-    ( (This)->lpVtbl->IsEqual(This,range,value) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_IsEqual(This,range,result) \
+    ( (This)->lpVtbl->IsEqual(This,range,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_Move(This,unit,count,delta) \
-    ( (This)->lpVtbl->Move(This,unit,count,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_Move(This,unit,count,result) \
+    ( (This)->lpVtbl->Move(This,unit,count,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_MoveEnd(This,unit,count,delta) \
-    ( (This)->lpVtbl->MoveEnd(This,unit,count,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_MoveEnd(This,unit,count,result) \
+    ( (This)->lpVtbl->MoveEnd(This,unit,count,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_MoveStart(This,unit,count,delta) \
-    ( (This)->lpVtbl->MoveStart(This,unit,count,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_MoveStart(This,unit,count,result) \
+    ( (This)->lpVtbl->MoveStart(This,unit,count,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextRange_Paste(This,format) \
     ( (This)->lpVtbl->Paste(This,format) )
@@ -6552,8 +6702,8 @@ interface __x_ABI_CWindows_CUI_CText_CITextRange
 #define __x_ABI_CWindows_CUI_CText_CITextRange_SetTextViaStream(This,options,value) \
     ( (This)->lpVtbl->SetTextViaStream(This,options,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextRange_StartOf(This,unit,extend,delta) \
-    ( (This)->lpVtbl->StartOf(This,unit,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextRange_StartOf(This,unit,extend,result) \
+    ( (This)->lpVtbl->StartOf(This,unit,extend,result) )
 
 
 #endif /* COBJMACROS */
@@ -6630,41 +6780,41 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *HomeKey )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveDown )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveLeft )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveRight )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveUp )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
         /* [in] */__x_ABI_CWindows_CUI_CText_CTextRangeUnit unit,
         /* [in] */INT32 count,
         /* [in] */boolean extend,
-        /* [retval, out] */__RPC__out INT32 * delta
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *TypeText )(
         __x_ABI_CWindows_CUI_CText_CITextSelection * This,
@@ -6707,23 +6857,23 @@ interface __x_ABI_CWindows_CUI_CText_CITextSelection
 #define __x_ABI_CWindows_CUI_CText_CITextSelection_get_Type(This,value) \
     ( (This)->lpVtbl->get_Type(This,value) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_EndKey(This,unit,extend,delta) \
-    ( (This)->lpVtbl->EndKey(This,unit,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_EndKey(This,unit,extend,result) \
+    ( (This)->lpVtbl->EndKey(This,unit,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_HomeKey(This,unit,extend,delta) \
-    ( (This)->lpVtbl->HomeKey(This,unit,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_HomeKey(This,unit,extend,result) \
+    ( (This)->lpVtbl->HomeKey(This,unit,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveDown(This,unit,count,extend,delta) \
-    ( (This)->lpVtbl->MoveDown(This,unit,count,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveDown(This,unit,count,extend,result) \
+    ( (This)->lpVtbl->MoveDown(This,unit,count,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveLeft(This,unit,count,extend,delta) \
-    ( (This)->lpVtbl->MoveLeft(This,unit,count,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveLeft(This,unit,count,extend,result) \
+    ( (This)->lpVtbl->MoveLeft(This,unit,count,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveRight(This,unit,count,extend,delta) \
-    ( (This)->lpVtbl->MoveRight(This,unit,count,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveRight(This,unit,count,extend,result) \
+    ( (This)->lpVtbl->MoveRight(This,unit,count,extend,result) )
 
-#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveUp(This,unit,count,extend,delta) \
-    ( (This)->lpVtbl->MoveUp(This,unit,count,extend,delta) )
+#define __x_ABI_CWindows_CUI_CText_CITextSelection_MoveUp(This,unit,count,extend,result) \
+    ( (This)->lpVtbl->MoveUp(This,unit,count,extend,result) )
 
 #define __x_ABI_CWindows_CUI_CText_CITextSelection_TypeText(This,value) \
     ( (This)->lpVtbl->TypeText(This,value) )
@@ -6799,8 +6949,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Text.ITextDocument ** Default Interface **
  *    Windows.UI.Text.ITextDocument2
+ *    Windows.UI.Text.ITextDocument3
+ *    Windows.UI.Text.ITextDocument ** Default Interface **
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -6822,8 +6973,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Text.ITextRange ** Default Interface **
  *    Windows.UI.Text.IRichEditTextRange
+ *    Windows.UI.Text.ITextRange ** Default Interface **
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

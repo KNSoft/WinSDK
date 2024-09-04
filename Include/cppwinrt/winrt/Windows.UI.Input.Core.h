@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Core.2.h"
@@ -49,72 +49,64 @@ template <typename D> Windows::UI::Input::Core::RadialControllerIndependentInput
 template <typename D>
 struct produce<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSource> : produce_base<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSource>
 {
-    HRESULT __stdcall get_Controller(void** value) noexcept final
+    int32_t WINRT_CALL get_Controller(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Controller, WINRT_WRAP(Windows::UI::Input::RadialController));
             *value = detach_from<Windows::UI::Input::RadialController>(this->shim().Controller());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Dispatcher(void** value) noexcept final
+    int32_t WINRT_CALL get_Dispatcher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Dispatcher, WINRT_WRAP(Windows::UI::Core::CoreDispatcher));
             *value = detach_from<Windows::UI::Core::CoreDispatcher>(this->shim().Dispatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSource2> : produce_base<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>
 {
-    HRESULT __stdcall get_DispatcherQueue(void** value) noexcept final
+    int32_t WINRT_CALL get_DispatcherQueue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DispatcherQueue, WINRT_WRAP(Windows::System::DispatcherQueue));
             *value = detach_from<Windows::System::DispatcherQueue>(this->shim().DispatcherQueue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics> : produce_base<D, Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>
 {
-    HRESULT __stdcall CreateForView(void* view, void** result) noexcept final
+    int32_t WINRT_CALL CreateForView(void* view, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForView, WINRT_WRAP(Windows::UI::Input::Core::RadialControllerIndependentInputSource), Windows::ApplicationModel::Core::CoreApplicationView const&);
             *result = detach_from<Windows::UI::Input::Core::RadialControllerIndependentInputSource>(this->shim().CreateForView(*reinterpret_cast<Windows::ApplicationModel::Core::CoreApplicationView const*>(&view)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -124,7 +116,7 @@ WINRT_EXPORT namespace winrt::Windows::UI::Input::Core {
 
 inline Windows::UI::Input::Core::RadialControllerIndependentInputSource RadialControllerIndependentInputSource::CreateForView(Windows::ApplicationModel::Core::CoreApplicationView const& view)
 {
-    return get_activation_factory<RadialControllerIndependentInputSource, Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>().CreateForView(view);
+    return impl::call_factory<RadialControllerIndependentInputSource, Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>([&](auto&& f) { return f.CreateForView(view); });
 }
 
 }
@@ -137,5 +129,3 @@ template<> struct hash<winrt::Windows::UI::Input::Core::IRadialControllerIndepen
 template<> struct hash<winrt::Windows::UI::Input::Core::RadialControllerIndependentInputSource> : winrt::impl::hash_base<winrt::Windows::UI::Input::Core::RadialControllerIndependentInputSource> {};
 
 }
-
-WINRT_WARNING_POP

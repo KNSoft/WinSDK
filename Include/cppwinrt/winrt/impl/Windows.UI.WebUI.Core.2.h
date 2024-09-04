@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,6 +16,8 @@ struct MenuClosedEventHandler : Windows::Foundation::IUnknown
     template <typename L> MenuClosedEventHandler(L lambda);
     template <typename F> MenuClosedEventHandler(F* function);
     template <typename O, typename M> MenuClosedEventHandler(O* object, M method);
+    template <typename O, typename M> MenuClosedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> MenuClosedEventHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -25,6 +27,8 @@ struct MenuOpenedEventHandler : Windows::Foundation::IUnknown
     template <typename L> MenuOpenedEventHandler(L lambda);
     template <typename F> MenuOpenedEventHandler(F* function);
     template <typename O, typename M> MenuOpenedEventHandler(O* object, M method);
+    template <typename O, typename M> MenuOpenedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> MenuOpenedEventHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -34,6 +38,8 @@ struct SizeChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> SizeChangedEventHandler(L lambda);
     template <typename F> SizeChangedEventHandler(F* function);
     template <typename O, typename M> SizeChangedEventHandler(O* object, M method);
+    template <typename O, typename M> SizeChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SizeChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::WebUI::Core::WebUICommandBarSizeChangedEventArgs const& eventArgs) const;
 };
 

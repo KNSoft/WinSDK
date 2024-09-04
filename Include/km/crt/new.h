@@ -34,7 +34,7 @@
 
 #ifdef  _MSC_EXTENSIONS
 typedef void (__cdecl * new_handler) ();
-_CRTIMP new_handler __cdecl set_new_handler(_In_opt_ new_handler _NewHandler);
+_CRTIMP new_handler __cdecl set_new_handler(_In_opt_ new_handler _NewHandler) throw();
 #endif
 
 #endif

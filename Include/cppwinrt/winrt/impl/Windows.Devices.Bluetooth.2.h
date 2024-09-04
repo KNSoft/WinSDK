@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -159,8 +159,8 @@ struct WINRT_EBO BluetoothSignalStrengthFilter :
 struct BluetoothUuidHelper
 {
     BluetoothUuidHelper() = delete;
-    static GUID FromShortId(uint32_t shortId);
-    static Windows::Foundation::IReference<uint32_t> TryGetShortId(GUID const& uuid);
+    static winrt::guid FromShortId(uint32_t shortId);
+    static Windows::Foundation::IReference<uint32_t> TryGetShortId(winrt::guid const& uuid);
 };
 
 }

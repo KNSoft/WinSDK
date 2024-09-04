@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -105,6 +105,13 @@ struct WINRT_EBO IImageEncodingPropertiesStatics2 :
     IImageEncodingPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IImageEncodingPropertiesStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IImageEncodingPropertiesStatics3>
+{
+    IImageEncodingPropertiesStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IMediaEncodingProfile :
     Windows::Foundation::IInspectable,
     impl::consume_t<IMediaEncodingProfile>
@@ -180,6 +187,13 @@ struct WINRT_EBO IMediaEncodingSubtypesStatics4 :
     impl::consume_t<IMediaEncodingSubtypesStatics4>
 {
     IMediaEncodingSubtypesStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IMediaEncodingSubtypesStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IMediaEncodingSubtypesStatics5>
+{
+    IMediaEncodingSubtypesStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IMediaRatio :

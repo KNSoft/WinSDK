@@ -1,9 +1,10 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.Foundation.Collections.1.h"
 #include "winrt/impl/Windows.Security.Cryptography.Core.1.h"
 #include "winrt/impl/Windows.Storage.Streams.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
@@ -17,6 +18,8 @@ struct SmartCardPinResetHandler : Windows::Foundation::IUnknown
     template <typename L> SmartCardPinResetHandler(L lambda);
     template <typename F> SmartCardPinResetHandler(F* function);
     template <typename O, typename M> SmartCardPinResetHandler(O* object, M method);
+    template <typename O, typename M> SmartCardPinResetHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SmartCardPinResetHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Devices::SmartCards::SmartCardProvisioning const& sender, Windows::Devices::SmartCards::SmartCardPinResetRequest const& request) const;
 };
 
@@ -40,6 +43,13 @@ struct WINRT_EBO CardRemovedEventArgs :
     CardRemovedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct KnownSmartCardAppletIds
+{
+    KnownSmartCardAppletIds() = delete;
+    static Windows::Storage::Streams::IBuffer PaymentSystemEnvironment();
+    static Windows::Storage::Streams::IBuffer ProximityPaymentSystemEnvironment();
+};
+
 struct WINRT_EBO SmartCard :
     Windows::Devices::SmartCards::ISmartCard,
     impl::require<SmartCard, Windows::Devices::SmartCards::ISmartCardConnect>
@@ -48,7 +58,8 @@ struct WINRT_EBO SmartCard :
 };
 
 struct WINRT_EBO SmartCardAppletIdGroup :
-    Windows::Devices::SmartCards::ISmartCardAppletIdGroup
+    Windows::Devices::SmartCards::ISmartCardAppletIdGroup,
+    impl::require<SmartCardAppletIdGroup, Windows::Devices::SmartCards::ISmartCardAppletIdGroup2>
 {
     SmartCardAppletIdGroup(std::nullptr_t) noexcept {}
     SmartCardAppletIdGroup();
@@ -57,7 +68,8 @@ struct WINRT_EBO SmartCardAppletIdGroup :
 };
 
 struct WINRT_EBO SmartCardAppletIdGroupRegistration :
-    Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration
+    Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration,
+    impl::require<SmartCardAppletIdGroupRegistration, Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration2>
 {
     SmartCardAppletIdGroupRegistration(std::nullptr_t) noexcept {}
 };
@@ -213,10 +225,10 @@ struct WINRT_EBO SmartCardProvisioning :
     SmartCardProvisioning(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> FromSmartCardAsync(Windows::Devices::SmartCards::SmartCard const& card);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy, GUID const& cardId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy, winrt::guid const& cardId);
     static Windows::Foundation::IAsyncOperation<bool> RequestVirtualSmartCardDeletionAsync(Windows::Devices::SmartCards::SmartCard const& card);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy, GUID const& cardId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(param::hstring const& friendlyName, Windows::Storage::Streams::IBuffer const& administrativeKey, Windows::Devices::SmartCards::SmartCardPinPolicy const& pinPolicy, winrt::guid const& cardId);
 };
 
 struct WINRT_EBO SmartCardReader :

@@ -157,6 +157,8 @@ namespace Windows
 {
     namespace System
     {
+        apicontract AndromedaPlaceholderContract;
+
         apicontract SystemManagementContract;
 
         typedef enum AppDiagnosticInfoWatcherStatus AppDiagnosticInfoWatcherStatus;
@@ -245,6 +247,16 @@ namespace Windows
 
         interface IAppResourceGroupStateReport;
 
+        interface IAppUriHandlerHost;
+
+        interface IAppUriHandlerHostFactory;
+
+        interface IAppUriHandlerRegistration;
+
+        interface IAppUriHandlerRegistrationManager;
+
+        interface IAppUriHandlerRegistrationManagerStatics;
+
         interface IDateTimeSettingsStatics;
 
         interface IDispatcherQueue;
@@ -280,6 +292,8 @@ namespace Windows
         interface ILauncherStatics3;
 
         interface ILauncherStatics4;
+
+        interface ILauncherStatics5;
 
         interface ILauncherUIOptions;
 
@@ -363,6 +377,12 @@ namespace Windows
 
         runtimeclass AppResourceGroupStateReport;
 
+        runtimeclass AppUriHandlerHost;
+
+        runtimeclass AppUriHandlerRegistration;
+
+        runtimeclass AppUriHandlerRegistrationManager;
+
         runtimeclass DateTimeSettings;
 
         runtimeclass DispatcherQueue;
@@ -436,6 +456,8 @@ namespace Windows
 
             interface Windows.Foundation.Collections.IIterable<Windows.System.AppResourceGroupInfo*>;
 
+            interface Windows.Foundation.Collections.IIterable<Windows.System.AppUriHandlerHost*>;
+
             interface Windows.Foundation.Collections.IIterable<Windows.System.User*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.System.AppDiagnosticInfo*>;
@@ -443,6 +465,8 @@ namespace Windows
             interface Windows.Foundation.Collections.IIterator<Windows.System.AppResourceGroupBackgroundTaskReport*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.System.AppResourceGroupInfo*>;
+
+            interface Windows.Foundation.Collections.IIterator<Windows.System.AppUriHandlerHost*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.System.User*>;
 
@@ -452,6 +476,8 @@ namespace Windows
 
             interface Windows.Foundation.Collections.IVectorView<Windows.System.AppResourceGroupInfo*>;
 
+            interface Windows.Foundation.Collections.IVectorView<Windows.System.AppUriHandlerHost*>;
+
             interface Windows.Foundation.Collections.IVectorView<Windows.System.User*>;
 
             interface Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>;
@@ -460,6 +486,8 @@ namespace Windows
 
             interface Windows.Foundation.Collections.IVector<Windows.System.AppResourceGroupInfo*>;
 
+            interface Windows.Foundation.Collections.IVector<Windows.System.AppUriHandlerHost*>;
+
             interface Windows.Foundation.EventHandler<Windows.System.AppMemoryUsageLimitChangingEventArgs*>;
 
             interface Windows.Foundation.EventHandler<Windows.System.UserDeviceAssociationChangedEventArgs*>;
@@ -467,6 +495,8 @@ namespace Windows
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.System.User*>*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>;
+
+            interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppUriHandlerHost*>*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.System.AppActivationResult*>;
 
@@ -520,7 +550,12 @@ namespace Windows
 {
     namespace System
     {
-        [contractversion(5.0)]
+        [contractversion(1.0)]
+        apicontract AndromedaPlaceholderContract
+        {
+        }
+
+        [contractversion(6.0)]
         apicontract SystemManagementContract
         {
         }
@@ -1148,6 +1183,52 @@ namespace Windows
             [propget] HRESULT EnergyQuotaState([out] [retval] Windows.System.AppResourceGroupEnergyQuotaState* value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.AppUriHandlerHost)]
+        [uuid(5D50CAC5-92D2-5409-B56F-7F73E10EA4C3)]
+        interface IAppUriHandlerHost : IInspectable
+        {
+            [propget] HRESULT Name([out] [retval] HSTRING* value);
+            [propput] HRESULT Name([in] HSTRING value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.AppUriHandlerHost)]
+        [uuid(257C3C96-CE04-5F98-96BB-3EBD3E9275BB)]
+        interface IAppUriHandlerHostFactory : IInspectable
+        {
+            HRESULT CreateInstance([in] HSTRING name, [out] [retval] Windows.System.AppUriHandlerHost** value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.AppUriHandlerRegistration)]
+        [uuid(6F73AEB1-4569-5C3F-9BA0-99123EEA32C3)]
+        interface IAppUriHandlerRegistration : IInspectable
+        {
+            [propget] HRESULT Name([out] [retval] HSTRING* value);
+            [propget] HRESULT User([out] [retval] Windows.System.User** value);
+            HRESULT GetAppAddedHostsAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppUriHandlerHost*>*>** operation);
+            HRESULT SetAppAddedHostsAsync([in] Windows.Foundation.Collections.IIterable<Windows.System.AppUriHandlerHost*>* hosts, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.AppUriHandlerRegistrationManager)]
+        [uuid(E62C9A52-AC94-5750-AC1B-6CFB6F250263)]
+        interface IAppUriHandlerRegistrationManager : IInspectable
+        {
+            [propget] HRESULT User([out] [retval] Windows.System.User** value);
+            HRESULT TryGetRegistration([in] HSTRING name, [out] [retval] Windows.System.AppUriHandlerRegistration** result);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.AppUriHandlerRegistrationManager)]
+        [uuid(D5CEDD9F-5729-5B76-A1D4-0285F295C124)]
+        interface IAppUriHandlerRegistrationManagerStatics : IInspectable
+        {
+            HRESULT GetDefault([out] [retval] Windows.System.AppUriHandlerRegistrationManager** result);
+            HRESULT GetForUser([in] Windows.System.User* user, [out] [retval] Windows.System.AppUriHandlerRegistrationManager** result);
+        }
+
         [contract(Windows.System.SystemManagementContract, 4.0)]
         [exclusiveto(Windows.System.DateTimeSettings)]
         [uuid(5D2150D1-47EE-48AB-A52B-9F1954278D82)]
@@ -1351,6 +1432,17 @@ namespace Windows
             [overload("LaunchUriForUserAsync")] HRESULT LaunchUriWithDataForUserAsync([in] Windows.System.User* user, [in] Windows.Foundation.Uri* uri, [in] Windows.System.LauncherOptions* options, [in] Windows.Foundation.Collections.ValueSet* inputData, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.System.LaunchUriStatus>** operation);
             [overload("LaunchUriForResultsForUserAsync")] HRESULT LaunchUriForResultsForUserAsync([in] Windows.System.User* user, [in] Windows.Foundation.Uri* uri, [in] Windows.System.LauncherOptions* options, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.System.LaunchUriResult*>** operation);
             [overload("LaunchUriForResultsForUserAsync")] HRESULT LaunchUriForResultsWithDataForUserAsync([in] Windows.System.User* user, [in] Windows.Foundation.Uri* uri, [in] Windows.System.LauncherOptions* options, [in] Windows.Foundation.Collections.ValueSet* inputData, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.System.LaunchUriResult*>** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.System.Launcher)]
+        [uuid(5B24EF84-D895-5FEA-9153-1AC49AED9BA9)]
+        interface ILauncherStatics5 : IInspectable
+        {
+            [overload("LaunchFolderPathAsync")] HRESULT LaunchFolderPathAsync([in] HSTRING path, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            [overload("LaunchFolderPathAsync")] HRESULT LaunchFolderPathWithOptionsAsync([in] HSTRING path, [in] Windows.System.FolderLauncherOptions* options, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            [overload("LaunchFolderPathForUserAsync")] HRESULT LaunchFolderPathForUserAsync([in] Windows.System.User* user, [in] HSTRING path, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            [overload("LaunchFolderPathForUserAsync")] HRESULT LaunchFolderPathWithOptionsForUserAsync([in] Windows.System.User* user, [in] HSTRING path, [in] Windows.System.FolderLauncherOptions* options, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1756,6 +1848,32 @@ namespace Windows
             [default] interface Windows.System.IAppResourceGroupStateReport;
         }
 
+        [activatable(Windows.Foundation.UniversalApiContract, 7.0)]
+        [activatable(Windows.System.IAppUriHandlerHostFactory, Windows.Foundation.UniversalApiContract, 7.0)]
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppUriHandlerHost
+        {
+            [default] interface Windows.System.IAppUriHandlerHost;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        runtimeclass AppUriHandlerRegistration
+        {
+            [default] interface Windows.System.IAppUriHandlerRegistration;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        [static(Windows.System.IAppUriHandlerRegistrationManagerStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+        [threading(both)]
+        runtimeclass AppUriHandlerRegistrationManager
+        {
+            [default] interface Windows.System.IAppUriHandlerRegistrationManager;
+        }
+
         [contract(Windows.System.SystemManagementContract, 4.0)]
         [marshaling_behavior(agile)]
         [static(Windows.System.IDateTimeSettingsStatics, Windows.System.SystemManagementContract, 4.0)]
@@ -1801,6 +1919,7 @@ namespace Windows
         [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [marshaling_behavior(agile)]
+        [threading(both)]
         runtimeclass FolderLauncherOptions
         {
             [default] interface Windows.System.IFolderLauncherOptions;
@@ -1815,6 +1934,7 @@ namespace Windows
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+        [marshaling_behavior(agile)]
         runtimeclass LaunchUriResult
         {
             [default] interface Windows.System.ILaunchUriResult;
@@ -1826,6 +1946,8 @@ namespace Windows
         [static(Windows.System.ILauncherStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
         [static(Windows.System.ILauncherStatics3, Windows.Foundation.UniversalApiContract, 1.0)]
         [static(Windows.System.ILauncherStatics4, Windows.Foundation.UniversalApiContract, 3.0)]
+        [static(Windows.System.ILauncherStatics5, Windows.Foundation.UniversalApiContract, 7.0)]
+        [threading(both)]
         runtimeclass Launcher
         {
         }
@@ -1833,13 +1955,14 @@ namespace Windows
         [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [marshaling_behavior(agile)]
+        [threading(both)]
         runtimeclass LauncherOptions
         {
+            interface Windows.System.ILauncherOptions2;
             [default] interface Windows.System.ILauncherOptions;
-            [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.System.ILauncherViewOptions;
-            [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.System.ILauncherOptions2;
             [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.System.ILauncherOptions3;
             [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.System.ILauncherOptions4;
+            interface Windows.System.ILauncherViewOptions;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1900,6 +2023,7 @@ namespace Windows
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
         [marshaling_behavior(standard)]
         [static(Windows.System.IRemoteLauncherStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+        [threading(both)]
         runtimeclass RemoteLauncher
         {
         }
@@ -1907,6 +2031,7 @@ namespace Windows
         [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
         [marshaling_behavior(agile)]
+        [threading(both)]
         runtimeclass RemoteLauncherOptions
         {
             [default] interface Windows.System.IRemoteLauncherOptions;

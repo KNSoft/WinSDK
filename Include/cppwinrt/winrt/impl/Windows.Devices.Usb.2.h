@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -73,8 +73,8 @@ struct WINRT_EBO UsbDevice :
     Windows::Devices::Usb::IUsbDevice
 {
     UsbDevice(std::nullptr_t) noexcept {}
-    static hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID const& winUsbInterfaceClass);
-    static hstring GetDeviceSelector(GUID const& winUsbInterfaceClass);
+    static hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId, winrt::guid const& winUsbInterfaceClass);
+    static hstring GetDeviceSelector(winrt::guid const& winUsbInterfaceClass);
     static hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId);
     static hstring GetDeviceClassSelector(Windows::Devices::Usb::UsbDeviceClass const& usbClass);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> FromIdAsync(param::hstring const& deviceId);

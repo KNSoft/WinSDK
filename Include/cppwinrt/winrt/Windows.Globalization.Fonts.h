@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.Text.2.h"
@@ -137,263 +137,229 @@ template <typename D> Windows::Globalization::Fonts::LanguageFontGroup consume_W
 template <typename D>
 struct produce<D, Windows::Globalization::Fonts::ILanguageFont> : produce_base<D, Windows::Globalization::Fonts::ILanguageFont>
 {
-    HRESULT __stdcall get_FontFamily(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FontFamily(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontFamily, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FontFamily());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FontWeight(struct struct_Windows_UI_Text_FontWeight* weight) noexcept final
+    int32_t WINRT_CALL get_FontWeight(struct struct_Windows_UI_Text_FontWeight* weight) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontWeight, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *weight = detach_from<Windows::UI::Text::FontWeight>(this->shim().FontWeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FontStretch(Windows::UI::Text::FontStretch* stretch) noexcept final
+    int32_t WINRT_CALL get_FontStretch(Windows::UI::Text::FontStretch* stretch) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStretch, WINRT_WRAP(Windows::UI::Text::FontStretch));
             *stretch = detach_from<Windows::UI::Text::FontStretch>(this->shim().FontStretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FontStyle(Windows::UI::Text::FontStyle* style) noexcept final
+    int32_t WINRT_CALL get_FontStyle(Windows::UI::Text::FontStyle* style) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStyle, WINRT_WRAP(Windows::UI::Text::FontStyle));
             *style = detach_from<Windows::UI::Text::FontStyle>(this->shim().FontStyle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleFactor(double* scale) noexcept final
+    int32_t WINRT_CALL get_ScaleFactor(double* scale) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleFactor, WINRT_WRAP(double));
             *scale = detach_from<double>(this->shim().ScaleFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroup> : produce_base<D, Windows::Globalization::Fonts::ILanguageFontGroup>
 {
-    HRESULT __stdcall get_UITextFont(void** value) noexcept final
+    int32_t WINRT_CALL get_UITextFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UITextFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().UITextFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UIHeadingFont(void** value) noexcept final
+    int32_t WINRT_CALL get_UIHeadingFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UIHeadingFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().UIHeadingFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UITitleFont(void** value) noexcept final
+    int32_t WINRT_CALL get_UITitleFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UITitleFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().UITitleFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UICaptionFont(void** value) noexcept final
+    int32_t WINRT_CALL get_UICaptionFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UICaptionFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().UICaptionFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UINotificationHeadingFont(void** value) noexcept final
+    int32_t WINRT_CALL get_UINotificationHeadingFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UINotificationHeadingFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().UINotificationHeadingFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TraditionalDocumentFont(void** value) noexcept final
+    int32_t WINRT_CALL get_TraditionalDocumentFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TraditionalDocumentFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().TraditionalDocumentFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModernDocumentFont(void** value) noexcept final
+    int32_t WINRT_CALL get_ModernDocumentFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModernDocumentFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().ModernDocumentFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DocumentHeadingFont(void** value) noexcept final
+    int32_t WINRT_CALL get_DocumentHeadingFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DocumentHeadingFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().DocumentHeadingFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FixedWidthTextFont(void** value) noexcept final
+    int32_t WINRT_CALL get_FixedWidthTextFont(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FixedWidthTextFont, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().FixedWidthTextFont());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DocumentAlternate1Font(void** value) noexcept final
+    int32_t WINRT_CALL get_DocumentAlternate1Font(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DocumentAlternate1Font, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().DocumentAlternate1Font());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DocumentAlternate2Font(void** value) noexcept final
+    int32_t WINRT_CALL get_DocumentAlternate2Font(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DocumentAlternate2Font, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFont));
             *value = detach_from<Windows::Globalization::Fonts::LanguageFont>(this->shim().DocumentAlternate2Font());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroupFactory> : produce_base<D, Windows::Globalization::Fonts::ILanguageFontGroupFactory>
 {
-    HRESULT __stdcall CreateLanguageFontGroup(HSTRING languageTag, void** recommendedFonts) noexcept final
+    int32_t WINRT_CALL CreateLanguageFontGroup(void* languageTag, void** recommendedFonts) noexcept final
     {
         try
         {
             *recommendedFonts = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLanguageFontGroup, WINRT_WRAP(Windows::Globalization::Fonts::LanguageFontGroup), hstring const&);
             *recommendedFonts = detach_from<Windows::Globalization::Fonts::LanguageFontGroup>(this->shim().CreateLanguageFontGroup(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -402,7 +368,7 @@ struct produce<D, Windows::Globalization::Fonts::ILanguageFontGroupFactory> : pr
 WINRT_EXPORT namespace winrt::Windows::Globalization::Fonts {
 
 inline LanguageFontGroup::LanguageFontGroup(param::hstring const& languageTag) :
-    LanguageFontGroup(get_activation_factory<LanguageFontGroup, Windows::Globalization::Fonts::ILanguageFontGroupFactory>().CreateLanguageFontGroup(languageTag))
+    LanguageFontGroup(impl::call_factory<LanguageFontGroup, Windows::Globalization::Fonts::ILanguageFontGroupFactory>([&](auto&& f) { return f.CreateLanguageFontGroup(languageTag); }))
 {}
 
 }
@@ -416,5 +382,3 @@ template<> struct hash<winrt::Windows::Globalization::Fonts::LanguageFont> : win
 template<> struct hash<winrt::Windows::Globalization::Fonts::LanguageFontGroup> : winrt::impl::hash_base<winrt::Windows::Globalization::Fonts::LanguageFontGroup> {};
 
 }
-
-WINRT_WARNING_POP

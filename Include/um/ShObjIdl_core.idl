@@ -28,8 +28,6 @@ cpp_quote("#define SHSTDAPI_(type)   EXTERN_C DECLSPEC_IMPORT type STDAPICALLTYP
 cpp_quote("#endif")
 cpp_quote("#endif // SHSTDAPI")
 
-cpp_quote("")
-cpp_quote("//===========================================================================")
 cpp_quote("//")
 cpp_quote("// IContextMenu interface")
 cpp_quote("//")
@@ -135,7 +133,6 @@ cpp_quote("//   pwReserved -- Reserved (must pass NULL when calling, must ignore
 cpp_quote("//   pszName -- Specifies the string buffer.")
 cpp_quote("//   cchMax -- Specifies the size of the string buffer.")
 cpp_quote("//")
-cpp_quote("//===========================================================================")
 cpp_quote("")
 cpp_quote("// QueryContextMenu uFlags")
 cpp_quote("#define CMF_NORMAL              0x00000000")
@@ -663,21 +660,22 @@ typedef DWORD SHGDNF;
 // IShellFolder::EnumObjects grfFlags bits
 [v1_enum] enum _SHCONTF
 {
-    SHCONTF_CHECKING_FOR_CHILDREN   = 0x00010,   // hint that client is checking if (what) child items the folder contains - not all details (e.g. short file name) are needed
-    SHCONTF_FOLDERS                 = 0x00020,   // only want folders enumerated (SFGAO_FOLDER)
-    SHCONTF_NONFOLDERS              = 0x00040,   // include non folders (items without SFGAO_FOLDER)
-    SHCONTF_INCLUDEHIDDEN           = 0x00080,   // show items normally hidden (items with SFGAO_HIDDEN)
-    SHCONTF_INIT_ON_FIRST_NEXT      = 0x00100,   // DEFUNCT - this is always assumed
-    SHCONTF_NETPRINTERSRCH          = 0x00200,   // hint that client is looking for printers
-    SHCONTF_SHAREABLE               = 0x00400,   // hint that client is looking sharable resources (local drives or hidden root shares)
-    SHCONTF_STORAGE                 = 0x00800,   // include all items with accessible storage and their ancestors including hidden items
-    SHCONTF_NAVIGATION_ENUM         = 0x01000,   // mark child folders to indicate that they should provide a "navigation" enumeration by default
-    SHCONTF_FASTITEMS               = 0x02000,   // hint that client is only interested in items that can be enumerated quickly
-    SHCONTF_FLATLIST                = 0x04000,   // enumerate items as flat list even if folder is stacked
-    SHCONTF_ENABLE_ASYNC            = 0x08000,   // inform enumerator that client is listening for change notifications so enumerator does not need to be complete, items can be reported via change notifications
-    SHCONTF_INCLUDESUPERHIDDEN      = 0x10000,   // show system items that are hidden
+    SHCONTF_CHECKING_FOR_CHILDREN   = 0x00000010,   // hint that client is checking if (what) child items the folder contains - not all details (e.g. short file name) are needed
+    SHCONTF_FOLDERS                 = 0x00000020,   // only want folders enumerated (SFGAO_FOLDER)
+    SHCONTF_NONFOLDERS              = 0x00000040,   // include non folders (items without SFGAO_FOLDER)
+    SHCONTF_INCLUDEHIDDEN           = 0x00000080,   // show items normally hidden (items with SFGAO_HIDDEN)
+    SHCONTF_INIT_ON_FIRST_NEXT      = 0x00000100,   // DEFUNCT - this is always assumed
+    SHCONTF_NETPRINTERSRCH          = 0x00000200,   // hint that client is looking for printers
+    SHCONTF_SHAREABLE               = 0x00000400,   // hint that client is looking sharable resources (local drives or hidden root shares)
+    SHCONTF_STORAGE                 = 0x00000800,   // include all items with accessible storage and their ancestors including hidden items
+    SHCONTF_NAVIGATION_ENUM         = 0x00001000,   // mark child folders to indicate that they should provide a "navigation" enumeration by default
+    SHCONTF_FASTITEMS               = 0x00002000,   // hint that client is only interested in items that can be enumerated quickly
+    SHCONTF_FLATLIST                = 0x00004000,   // enumerate items as flat list even if folder is stacked
+    SHCONTF_ENABLE_ASYNC            = 0x00008000,   // inform enumerator that client is listening for change notifications so enumerator does not need to be complete, items can be reported via change notifications
+    SHCONTF_INCLUDESUPERHIDDEN      = 0x00010000,   // show system items that are hidden
 };
 typedef DWORD SHCONTF;
+
 
 // IShellFolder::CompareIDs lParam flags
 // *these should only be used if the folder supports IShellFolder2*
@@ -768,6 +766,7 @@ typedef [v1_enum] enum SYNC_TRANSFER_STATUS
     STS_HASWARNING             = 0x00000080,  // An error was encountered on the last sync
     STS_EXCLUDED               = 0x00000100,  // The file won't be synced by the sync engine
     STS_INCOMPLETE             = 0x00000200,  // The reported state may be missing states due to indexing delays
+    STS_PLACEHOLDER_IFEMPTY    = 0x00000400,  // If the folder is empty, treat it as a dehydrated item (placeholder)
 } SYNC_TRANSFER_STATUS;
 
 cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(SYNC_TRANSFER_STATUS)")
@@ -2121,14 +2120,12 @@ interface IFolderFilter : IUnknown
 }
 //cpp_quote("#endif  // NTDDI_WINXP")
 
-//==========================================================================
 // IInputObjectSite/IInputObject interfaces
 //
 // These interfaces allow us (or ISVs) to install/update external Internet
 // Toolbar for IE and the shell. The frame will simply get the CLSID from
 // registry (to be defined) and CoCreateInstance it.
 //
-//==========================================================================
 
 // A site implements this interface so the object can communicate
 // focus change to it.
@@ -2182,8 +2179,6 @@ interface IInputObject2 : IInputObject
 }
 //cpp_quote("#endif  // NTDDI_VISTA")
 
-//===========================================================================
-//
 // IShellIcon Interface
 //
 // used to get a icon index for a IShellFolder object.
@@ -2217,8 +2212,6 @@ interface IInputObject2 : IInputObject
 //      S_FALSE, if unable to get icon for this object, go through
 //               GetUIObject, IExtractIcon, methods.
 //
-//===========================================================================
-
 [
     uuid(000214E5-0000-0000-C000-000000000046), // IID_IShellIcon
     object,
@@ -6970,6 +6963,32 @@ cpp_quote("#define SID_ExecuteCreatingProcess __uuidof(ICreatingProcess)")
 
 cpp_quote("#endif  // NTDDI_VISTA")
 
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)") // not yet functional
+
+// SID_LaunchUIContextProvider/ILaunchUIContextProvider
+// A service implemented by callers of ShellExecute or other launching APIs that
+// allows them to specify information that controls the window management user experience
+// of the window created as the result of the launch. This includes
+// the associated window and controlling tabbing behavior.
+// See SEE_MASK_FLAG_HINST_IS_SITE for details on how to provide this service.
+
+[uuid(1791e8f6-21c7-4340-882a-a6a93e3fd73b)]
+interface ILaunchUIContext : IUnknown
+{
+    HRESULT SetAssociatedWindow([in] HWND value);
+    HRESULT SetTabGroupingPreference([in] DWORD /* Windows::UI::ViewManagement::ViewGrouping */ value);
+}
+
+[uuid(0d12c4c8-a3d9-4e24-94c1-0e20c5a956c4)]
+interface ILaunchUIContextProvider : IUnknown
+{
+    HRESULT UpdateContext([in] ILaunchUIContext* context);
+}
+
+cpp_quote("#define SID_LaunchUIContextProvider __uuidof(ILaunchUIContextProvider)")
+
+cpp_quote("#endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS4)")
+
 [v1_enum] enum _NMCII_FLAGS
 {
     NMCII_NONE         = 0x0000, // New for NTDDI_WIN8
@@ -8042,6 +8061,21 @@ interface IApplicationActivationManager : IUnknown
 
 cpp_quote("#endif // NTDDI_WIN8")
 
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)")
+
+[
+    uuid(a5cd92ff-29be-454c-8d04-d82879fb3f1b),
+    object,
+]
+interface IVirtualDesktopManager : IUnknown
+{
+    HRESULT IsWindowOnCurrentVirtualDesktop([in] HWND topLevelWindow, [out] BOOL *onCurrentDesktop);
+    HRESULT GetWindowDesktopId([in] HWND topLevelWindow, [out] GUID* desktopId);
+    HRESULT MoveWindowToDesktop([in] HWND topLevelWindow, [in] REFGUID desktopId);
+}
+
+cpp_quote("#endif // NTDDI_WINTHRESHOLD")
+
 //  NOTE - this typelib is never registered anywhere
 [
     uuid(56f9f44f-f74c-4e38-99bc-9f3ebd3d696a),
@@ -8175,7 +8209,6 @@ library ShellCoreObjects
 
     // CLSID_ApplicationDesignModeSettings
     [ uuid(958a6fb5-dcb2-4faf-aafd-7fb054ad1a3b) ] coclass ApplicationDesignModeSettings { interface IApplicationDesignModeSettings2; }
-
 };
 
 cpp_quote("#if (NTDDI_VERSION >= NTDDI_VISTA)")
@@ -8881,6 +8914,17 @@ interface IHandlerInfo : IUnknown
 // Used to retrieve an IHandlerInfo instance
 cpp_quote("#define SID_HandlerInfo IID_IHandlerInfo")
 
+[
+    uuid(31cca04c-04d3-4ea9-90de-97b15e87a532),
+    object,
+    pointer_default(unique)
+]
+interface IHandlerInfo2 : IHandlerInfo
+{
+    // Get the AppId of the application that will be launched.
+    HRESULT GetApplicationId([out] LPWSTR *value);
+}
+
 // Clients of shell item activation including callers of ShellExecuteEx() and
 // IContextMenu::InvokeCommand() can implement IHandlerActivationHost
 // to be given a chance to veto or perform some action before the activation of verb handlers.
@@ -8979,8 +9023,6 @@ cpp_quote("#endif // NTDDI_WINBLUE")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 
-//===========================================================================
-//
 // IShellIconOverlayIdentifier
 //
 // Used to identify a file as a member of the group of files that have this specific
@@ -9010,8 +9052,6 @@ cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 //
 // IShellIconOverlayIdentifier::GetPriority(int * pIPriority) PURE;
 //      pIPriority     the priority of this Overlay Identifier
-//
-//===========================================================================
 
 [
     uuid(0c6c4200-c589-11d0-999a-00c04fd655e1),

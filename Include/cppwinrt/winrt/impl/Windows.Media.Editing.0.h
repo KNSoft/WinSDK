@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -138,25 +138,149 @@ template <> struct name<Windows::Media::Editing::MediaOverlay>{ static constexpr
 template <> struct name<Windows::Media::Editing::MediaOverlayLayer>{ static constexpr auto & value{ L"Windows.Media.Editing.MediaOverlayLayer" }; };
 template <> struct name<Windows::Media::Editing::MediaTrimmingPreference>{ static constexpr auto & value{ L"Windows.Media.Editing.MediaTrimmingPreference" }; };
 template <> struct name<Windows::Media::Editing::VideoFramePrecision>{ static constexpr auto & value{ L"Windows.Media.Editing.VideoFramePrecision" }; };
-template <> struct guid<Windows::Media::Editing::IBackgroundAudioTrack>{ static constexpr GUID value{ 0x4B91B3BD,0x9E21,0x4266,{ 0xA9,0xC2,0x67,0xDD,0x01,0x1A,0x23,0x57 } }; };
-template <> struct guid<Windows::Media::Editing::IBackgroundAudioTrackStatics>{ static constexpr GUID value{ 0xD9B1C0D7,0xD018,0x42A8,{ 0xA5,0x59,0xCB,0x4D,0x9E,0x97,0xE6,0x64 } }; };
-template <> struct guid<Windows::Media::Editing::IEmbeddedAudioTrack>{ static constexpr GUID value{ 0x55EE5A7A,0x2D30,0x3FBA,{ 0xA1,0x90,0x4F,0x1A,0x64,0x54,0xF8,0x8F } }; };
-template <> struct guid<Windows::Media::Editing::IMediaClip>{ static constexpr GUID value{ 0x53F25366,0x5FBA,0x3EA4,{ 0x86,0x93,0x24,0x76,0x18,0x11,0x14,0x0A } }; };
-template <> struct guid<Windows::Media::Editing::IMediaClipStatics>{ static constexpr GUID value{ 0xFA402B68,0x928F,0x43C4,{ 0xBC,0x6E,0x78,0x3A,0x1A,0x35,0x96,0x56 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaClipStatics2>{ static constexpr GUID value{ 0x5B1DD7B3,0x854E,0x4D9B,{ 0x87,0x7D,0x47,0x74,0xA5,0x56,0xCD,0x12 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaComposition>{ static constexpr GUID value{ 0x2E06E605,0xDC71,0x41D6,{ 0xB8,0x37,0x2D,0x2B,0xC1,0x4A,0x29,0x47 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaComposition2>{ static constexpr GUID value{ 0xA59E5372,0x2366,0x492C,{ 0xBE,0xC8,0xE6,0xDF,0xBA,0x6D,0x02,0x81 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaCompositionStatics>{ static constexpr GUID value{ 0x87A08F04,0xE32A,0x45CE,{ 0x8F,0x66,0xA3,0x0D,0xF0,0x76,0x62,0x24 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaOverlay>{ static constexpr GUID value{ 0xA902AE5D,0x7869,0x4830,{ 0x8A,0xB1,0x94,0xDC,0x01,0xC0,0x5F,0xA4 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaOverlayFactory>{ static constexpr GUID value{ 0xB584828A,0x6188,0x4F8F,{ 0xA2,0xE0,0xAA,0x55,0x2D,0x59,0x8E,0x18 } }; };
-template <> struct guid<Windows::Media::Editing::IMediaOverlayLayer>{ static constexpr GUID value{ 0xA6D9BA57,0xEEDA,0x46C6,{ 0xBB,0xE5,0xE3,0x98,0xC8,0x41,0x68,0xAC } }; };
-template <> struct guid<Windows::Media::Editing::IMediaOverlayLayerFactory>{ static constexpr GUID value{ 0x947CB473,0xA39E,0x4362,{ 0xAB,0xBF,0x9F,0x8B,0x50,0x70,0xA0,0x62 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IBackgroundAudioTrack>{ static constexpr guid value{ 0x4B91B3BD,0x9E21,0x4266,{ 0xA9,0xC2,0x67,0xDD,0x01,0x1A,0x23,0x57 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IBackgroundAudioTrackStatics>{ static constexpr guid value{ 0xD9B1C0D7,0xD018,0x42A8,{ 0xA5,0x59,0xCB,0x4D,0x9E,0x97,0xE6,0x64 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IEmbeddedAudioTrack>{ static constexpr guid value{ 0x55EE5A7A,0x2D30,0x3FBA,{ 0xA1,0x90,0x4F,0x1A,0x64,0x54,0xF8,0x8F } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaClip>{ static constexpr guid value{ 0x53F25366,0x5FBA,0x3EA4,{ 0x86,0x93,0x24,0x76,0x18,0x11,0x14,0x0A } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaClipStatics>{ static constexpr guid value{ 0xFA402B68,0x928F,0x43C4,{ 0xBC,0x6E,0x78,0x3A,0x1A,0x35,0x96,0x56 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaClipStatics2>{ static constexpr guid value{ 0x5B1DD7B3,0x854E,0x4D9B,{ 0x87,0x7D,0x47,0x74,0xA5,0x56,0xCD,0x12 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaComposition>{ static constexpr guid value{ 0x2E06E605,0xDC71,0x41D6,{ 0xB8,0x37,0x2D,0x2B,0xC1,0x4A,0x29,0x47 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaComposition2>{ static constexpr guid value{ 0xA59E5372,0x2366,0x492C,{ 0xBE,0xC8,0xE6,0xDF,0xBA,0x6D,0x02,0x81 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaCompositionStatics>{ static constexpr guid value{ 0x87A08F04,0xE32A,0x45CE,{ 0x8F,0x66,0xA3,0x0D,0xF0,0x76,0x62,0x24 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaOverlay>{ static constexpr guid value{ 0xA902AE5D,0x7869,0x4830,{ 0x8A,0xB1,0x94,0xDC,0x01,0xC0,0x5F,0xA4 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaOverlayFactory>{ static constexpr guid value{ 0xB584828A,0x6188,0x4F8F,{ 0xA2,0xE0,0xAA,0x55,0x2D,0x59,0x8E,0x18 } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaOverlayLayer>{ static constexpr guid value{ 0xA6D9BA57,0xEEDA,0x46C6,{ 0xBB,0xE5,0xE3,0x98,0xC8,0x41,0x68,0xAC } }; };
+template <> struct guid_storage<Windows::Media::Editing::IMediaOverlayLayerFactory>{ static constexpr guid value{ 0x947CB473,0xA39E,0x4362,{ 0xAB,0xBF,0x9F,0x8B,0x50,0x70,0xA0,0x62 } }; };
 template <> struct default_interface<Windows::Media::Editing::BackgroundAudioTrack>{ using type = Windows::Media::Editing::IBackgroundAudioTrack; };
 template <> struct default_interface<Windows::Media::Editing::EmbeddedAudioTrack>{ using type = Windows::Media::Editing::IEmbeddedAudioTrack; };
 template <> struct default_interface<Windows::Media::Editing::MediaClip>{ using type = Windows::Media::Editing::IMediaClip; };
 template <> struct default_interface<Windows::Media::Editing::MediaComposition>{ using type = Windows::Media::Editing::IMediaComposition; };
 template <> struct default_interface<Windows::Media::Editing::MediaOverlay>{ using type = Windows::Media::Editing::IMediaOverlay; };
 template <> struct default_interface<Windows::Media::Editing::MediaOverlayLayer>{ using type = Windows::Media::Editing::IMediaOverlayLayer; };
+
+template <> struct abi<Windows::Media::Editing::IBackgroundAudioTrack>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Delay(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Volume(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Volume(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAudioEncodingProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AudioEffectDefinitions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IBackgroundAudioTrackStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromEmbeddedAudioTrack(void* embeddedAudioTrack, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromFileAsync(void* file, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IEmbeddedAudioTrack>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAudioEncodingProperties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaClip>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EmbeddedAudioTracks(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedEmbeddedAudioTrackIndex(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectedEmbeddedAudioTrackIndex(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Volume(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Volume(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVideoEncodingProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AudioEffectDefinitions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoEffectDefinitions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaClipStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromColor(struct struct_Windows_UI_Color color, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromFileAsync(void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromImageFileAsync(void* file, Windows::Foundation::TimeSpan originalDuration, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaClipStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromSurface(void* surface, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaComposition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clips(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundAudioTracks(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailAsync(Windows::Foundation::TimeSpan timeFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailsAsync(void* timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderToFileAsync(void* destination, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderToFileWithTrimmingPreferenceAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderToFileWithProfileAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void* encodingProfile, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDefaultEncodingProfile(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GenerateMediaStreamSource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GenerateMediaStreamSourceWithProfile(void* encodingProfile, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaComposition2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OverlayLayers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaCompositionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadAsync(void* file, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaOverlay>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Position(Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Delay(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opacity(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clip(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AudioEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AudioEnabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaOverlayFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* clip, void** mediaOverlay) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithPositionAndOpacity(void* clip, Windows::Foundation::Rect position, double opacity, void** mediaOverlay) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaOverlayLayer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Clone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Overlays(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomCompositorDefinition(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Editing::IMediaOverlayLayerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithCompositorDefinition(void* compositorDefinition, void** mediaOverlayLayer) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_Editing_IBackgroundAudioTrack
@@ -307,129 +431,5 @@ struct consume_Windows_Media_Editing_IMediaOverlayLayerFactory
     Windows::Media::Editing::MediaOverlayLayer CreateWithCompositorDefinition(Windows::Media::Effects::IVideoCompositorDefinition const& compositorDefinition) const;
 };
 template <> struct consume<Windows::Media::Editing::IMediaOverlayLayerFactory> { template <typename D> using type = consume_Windows_Media_Editing_IMediaOverlayLayerFactory<D>; };
-
-template <> struct abi<Windows::Media::Editing::IBackgroundAudioTrack>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Delay(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Volume(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Volume(double* value) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAudioEncodingProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AudioEffectDefinitions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IBackgroundAudioTrackStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromEmbeddedAudioTrack(void* embeddedAudioTrack, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromFileAsync(void* file, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IEmbeddedAudioTrack>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAudioEncodingProperties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaClip>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TrimTimeFromStart(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimTimeFromStart(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimTimeFromEnd(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimTimeFromEnd(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginalDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimmedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_StartTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndTimeInComposition(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EmbeddedAudioTracks(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedEmbeddedAudioTrackIndex(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectedEmbeddedAudioTrackIndex(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall put_Volume(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Volume(double* value) noexcept = 0;
-    virtual HRESULT __stdcall GetVideoEncodingProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AudioEffectDefinitions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoEffectDefinitions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaClipStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromColor(struct struct_Windows_UI_Color color, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromFileAsync(void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromImageFileAsync(void* file, Windows::Foundation::TimeSpan originalDuration, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaClipStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromSurface(void* surface, Windows::Foundation::TimeSpan originalDuration, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaComposition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Clips(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundAudioTracks(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** result) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailAsync(Windows::Foundation::TimeSpan timeFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailsAsync(void* timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RenderToFileAsync(void* destination, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RenderToFileWithTrimmingPreferenceAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RenderToFileWithProfileAsync(void* destination, Windows::Media::Editing::MediaTrimmingPreference trimmingPreference, void* encodingProfile, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateDefaultEncodingProfile(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GenerateMediaStreamSource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GenerateMediaStreamSourceWithProfile(void* encodingProfile, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GeneratePreviewMediaStreamSource(int32_t scaledWidth, int32_t scaledHeight, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaComposition2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OverlayLayers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaCompositionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadAsync(void* file, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaOverlay>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Position(Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall put_Delay(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opacity(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(double value) noexcept = 0;
-    virtual HRESULT __stdcall Clone(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_Clip(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AudioEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AudioEnabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaOverlayFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* clip, void** mediaOverlay) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithPositionAndOpacity(void* clip, Windows::Foundation::Rect position, double opacity, void** mediaOverlay) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaOverlayLayer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Clone(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_Overlays(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomCompositorDefinition(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Editing::IMediaOverlayLayerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithCompositorDefinition(void* compositorDefinition, void** mediaOverlayLayer) noexcept = 0;
-};};
 
 }

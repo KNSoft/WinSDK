@@ -67,6 +67,13 @@ typedef interface IContainerActivationHelper IContainerActivationHelper;
 #endif 	/* __IContainerActivationHelper_FWD_DEFINED__ */
 
 
+#ifndef __IClipServiceNotificationHelper_FWD_DEFINED__
+#define __IClipServiceNotificationHelper_FWD_DEFINED__
+typedef interface IClipServiceNotificationHelper IClipServiceNotificationHelper;
+
+#endif 	/* __IClipServiceNotificationHelper_FWD_DEFINED__ */
+
+
 #ifndef __EditionUpgradeHelper_FWD_DEFINED__
 #define __EditionUpgradeHelper_FWD_DEFINED__
 
@@ -493,6 +500,94 @@ EXTERN_C const IID IID_IContainerActivationHelper;
 #endif 	/* __IContainerActivationHelper_INTERFACE_DEFINED__ */
 
 
+#ifndef __IClipServiceNotificationHelper_INTERFACE_DEFINED__
+#define __IClipServiceNotificationHelper_INTERFACE_DEFINED__
+
+/* interface IClipServiceNotificationHelper */
+/* [uuid][nonextensible][oleautomation][dual][object] */ 
+
+
+EXTERN_C const IID IID_IClipServiceNotificationHelper;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("C39948F0-6142-44FD-98CA-E1681A8D68B5")
+    IClipServiceNotificationHelper : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE ShowToast( 
+            /* [string][in] */ __RPC__in_string BSTR titleText,
+            /* [string][in] */ __RPC__in_string BSTR bodyText,
+            /* [string][in] */ __RPC__in_string BSTR packageName,
+            /* [string][in] */ __RPC__in_string BSTR appId,
+            /* [string][in] */ __RPC__in_string BSTR launchCommand) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IClipServiceNotificationHelperVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IClipServiceNotificationHelper * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IClipServiceNotificationHelper * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IClipServiceNotificationHelper * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *ShowToast )( 
+            __RPC__in IClipServiceNotificationHelper * This,
+            /* [string][in] */ __RPC__in_string BSTR titleText,
+            /* [string][in] */ __RPC__in_string BSTR bodyText,
+            /* [string][in] */ __RPC__in_string BSTR packageName,
+            /* [string][in] */ __RPC__in_string BSTR appId,
+            /* [string][in] */ __RPC__in_string BSTR launchCommand);
+        
+        END_INTERFACE
+    } IClipServiceNotificationHelperVtbl;
+
+    interface IClipServiceNotificationHelper
+    {
+        CONST_VTBL struct IClipServiceNotificationHelperVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IClipServiceNotificationHelper_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IClipServiceNotificationHelper_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IClipServiceNotificationHelper_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IClipServiceNotificationHelper_ShowToast(This,titleText,bodyText,packageName,appId,launchCommand)	\
+    ( (This)->lpVtbl -> ShowToast(This,titleText,bodyText,packageName,appId,launchCommand) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IClipServiceNotificationHelper_INTERFACE_DEFINED__ */
+
+
 
 #ifndef __EditionUpgradeHelperLib_LIBRARY_DEFINED__
 #define __EditionUpgradeHelperLib_LIBRARY_DEFINED__
@@ -520,15 +615,15 @@ EditionUpgradeBroker;
 #endif
 #endif /* __EditionUpgradeHelperLib_LIBRARY_DEFINED__ */
 
-/* interface __MIDL_itf_editionupgradehelper_0000_0005 */
+/* interface __MIDL_itf_editionupgradehelper_0000_0006 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0005_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0006_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_editionupgradehelper_0000_0006_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

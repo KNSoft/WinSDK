@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -14,6 +14,8 @@ struct UICommandInvokedHandler : Windows::Foundation::IUnknown
     template <typename L> UICommandInvokedHandler(L lambda);
     template <typename F> UICommandInvokedHandler(F* function);
     template <typename O, typename M> UICommandInvokedHandler(O* object, M method);
+    template <typename O, typename M> UICommandInvokedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> UICommandInvokedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Popups::IUICommand const& command) const;
 };
 

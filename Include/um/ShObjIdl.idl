@@ -1298,17 +1298,6 @@ interface IDesktopGadget : IUnknown
 
 cpp_quote("#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)")
 
-[
-    uuid(a5cd92ff-29be-454c-8d04-d82879fb3f1b),
-    object,
-]
-interface IVirtualDesktopManager : IUnknown
-{
-    HRESULT IsWindowOnCurrentVirtualDesktop([in] HWND topLevelWindow, [out] BOOL *onCurrentDesktop);
-    HRESULT GetWindowDesktopId([in] HWND topLevelWindow, [out] GUID* desktopId);
-    HRESULT MoveWindowToDesktop([in] HWND topLevelWindow, [in] REFGUID desktopId);
-}
-
 
 cpp_quote("#endif // NTDDI_WINTHRESHOLD")
 

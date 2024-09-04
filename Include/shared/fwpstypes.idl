@@ -284,9 +284,11 @@ cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN7)")
 
 cpp_quote("#define FWPS_RIGHT_ACTION_WRITE          (0x00000001)")
 
-cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_ABSORB                      (0x00000001)")
-cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_BUFFER_LIMIT_REACHED        (0x00000002)")
-cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_NO_MORE_DATA                (0x00000004)")
+cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_ABSORB                         (0x00000001)")
+cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_BUFFER_LIMIT_REACHED           (0x00000002)")
+cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_NO_MORE_DATA                   (0x00000004)")
+cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_ALE_FAST_CACHE_CHECK           (0x00000008)")
+cpp_quote("#define FWPS_CLASSIFY_OUT_FLAG_ALE_FAST_CACHE_POSSIBLE        (0x00000010)")
 
 // Used to return the outcome of classification to the shim.
 typedef struct FWPS_CLASSIFY_OUT0_

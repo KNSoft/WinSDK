@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Geolocation.2.h"
@@ -43,21 +43,21 @@ template <typename D> uint64_t consume_Windows_Services_Maps_OfflineMaps_IOfflin
     return value;
 }
 
-template <typename D> void consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::OfflineMaps::IOfflineMapPackage)->remove_StatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::OfflineMaps::IOfflineMapPackage)->remove_StatusChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::OfflineMaps::IOfflineMapPackage)->add_StatusChanged(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage> consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const
+template <typename D> typename consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged_revoker consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>(this, &abi_t<Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>::remove_StatusChanged, StatusChanged(value));
+    return impl::make_event_revoker<D, StatusChanged_revoker>(this, StatusChanged(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult> consume_Windows_Services_Maps_OfflineMaps_IOfflineMapPackage<D>::RequestStartDownloadAsync() const
@@ -112,205 +112,175 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
 template <typename D>
 struct produce<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackage> : produce_base<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackage>
 {
-    HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus));
             *value = detach_from<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnclosingRegionName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnclosingRegionName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnclosingRegionName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnclosingRegionName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EstimatedSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_EstimatedSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().EstimatedSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StatusChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_StatusChanged(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StatusChanged(void* value, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::OfflineMaps::OfflineMapPackage, Windows::Foundation::IInspectable> const*>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall RequestStartDownloadAsync(void** value) noexcept final
+    int32_t WINRT_CALL RequestStartDownloadAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStartDownloadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult>>(this->shim().RequestStartDownloadAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult> : produce_base<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageQueryResult>
 {
-    HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus));
             *value = detach_from<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Packages(void** value) noexcept final
+    int32_t WINRT_CALL get_Packages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Packages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::OfflineMaps::OfflineMapPackage>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::OfflineMaps::OfflineMapPackage>>(this->shim().Packages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult> : produce_base<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStartDownloadResult>
 {
-    HRESULT __stdcall get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus));
             *value = detach_from<Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics> : produce_base<D, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>
 {
-    HRESULT __stdcall FindPackagesAsync(void* queryPoint, void** result) noexcept final
+    int32_t WINRT_CALL FindPackagesAsync(void* queryPoint, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>), Windows::Devices::Geolocation::Geopoint const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>>(this->shim().FindPackagesAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geopoint const*>(&queryPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesInBoundingBoxAsync(void* queryBoundingBox, void** result) noexcept final
+    int32_t WINRT_CALL FindPackagesInBoundingBoxAsync(void* queryBoundingBox, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesInBoundingBoxAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>), Windows::Devices::Geolocation::GeoboundingBox const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>>(this->shim().FindPackagesInBoundingBoxAsync(*reinterpret_cast<Windows::Devices::Geolocation::GeoboundingBox const*>(&queryBoundingBox)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindPackagesInGeocircleAsync(void* queryCircle, void** result) noexcept final
+    int32_t WINRT_CALL FindPackagesInGeocircleAsync(void* queryCircle, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindPackagesInGeocircleAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>), Windows::Devices::Geolocation::Geocircle const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult>>(this->shim().FindPackagesInGeocircleAsync(*reinterpret_cast<Windows::Devices::Geolocation::Geocircle const*>(&queryCircle)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -320,17 +290,17 @@ WINRT_EXPORT namespace winrt::Windows::Services::Maps::OfflineMaps {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult> OfflineMapPackage::FindPackagesAsync(Windows::Devices::Geolocation::Geopoint const& queryPoint)
 {
-    return get_activation_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>().FindPackagesAsync(queryPoint);
+    return impl::call_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>([&](auto&& f) { return f.FindPackagesAsync(queryPoint); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult> OfflineMapPackage::FindPackagesInBoundingBoxAsync(Windows::Devices::Geolocation::GeoboundingBox const& queryBoundingBox)
 {
-    return get_activation_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>().FindPackagesInBoundingBoxAsync(queryBoundingBox);
+    return impl::call_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>([&](auto&& f) { return f.FindPackagesInBoundingBoxAsync(queryBoundingBox); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::OfflineMaps::OfflineMapPackageQueryResult> OfflineMapPackage::FindPackagesInGeocircleAsync(Windows::Devices::Geolocation::Geocircle const& queryCircle)
 {
-    return get_activation_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>().FindPackagesInGeocircleAsync(queryCircle);
+    return impl::call_factory<OfflineMapPackage, Windows::Services::Maps::OfflineMaps::IOfflineMapPackageStatics>([&](auto&& f) { return f.FindPackagesInGeocircleAsync(queryCircle); });
 }
 
 }
@@ -346,5 +316,3 @@ template<> struct hash<winrt::Windows::Services::Maps::OfflineMaps::OfflineMapPa
 template<> struct hash<winrt::Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult> : winrt::impl::hash_base<winrt::Windows::Services::Maps::OfflineMaps::OfflineMapPackageStartDownloadResult> {};
 
 }
-
-WINRT_WARNING_POP

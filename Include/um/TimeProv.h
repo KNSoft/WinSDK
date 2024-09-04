@@ -84,7 +84,7 @@ typedef enum TimeSysInfo {
     TSI_LastSyncTime,   // (unsigned __int64 *)pvInfo, NtTimeEpoch, in (10^-7)s
     TSI_ClockTickSize,  // (unsigned __int64 *)pvInfo, NtTimePeriod, in (10^-7)s
     TSI_ClockPrecision, // (  signed __int32 *)pvInfo, ClockTickSize, in log2(s)
-    TSI_CurrentTime,    // (unsigned __int64 *)pvInfo, NtTimeEpoch, in (10^-7)s
+    TSI_CurrentTime,    // (unsigned __int64 *)pvInfo, UTC-compatible NtTimeEpoch, in (10^-7)s. This removes the leap seconds, if any, from the system time.
     TSI_PhaseOffset,    // (  signed __int64 *)pvInfo, opaque
     TSI_TickCount,      // (unsigned __int64 *)pvInfo, opaque
     TSI_LeapFlags,      // (            BYTE *)pvInfo, a warning of an impending leap second or loss of synchronization
@@ -95,6 +95,11 @@ typedef enum TimeSysInfo {
     TSI_RootDispersion, // (unsigned __int64 *)pvInfo, NtTimePeriod, in (10^-7)s
     TSI_TSFlags,        // (           DWORD *)pvInfo, Time source flags
     TSI_SeriviceRole,   // (           DWORD *)pvInfo, Time service role flags
+    TSI_CurrentUtcOffset, // (  signed __int64 *)pvInfo, Number of leap seconds elapsed since 12:00 AM June 1st 2018.
+                          // This can be a +ve or -ve number. Add this number to the time value after June 1st 2018 
+                          // obtained using TSI_CurrentTime to determine the approximate invariant time. This can be
+                          // used with loose consistency for time computations. The consistency around leap second roll over
+                          // is undefined.
 } TimeSysInfo;
 
 // flags which provide information about a time jump

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -75,15 +75,60 @@ template <> struct name<Windows::Devices::I2c::I2cBusSpeed>{ static constexpr au
 template <> struct name<Windows::Devices::I2c::I2cSharingMode>{ static constexpr auto & value{ L"Windows.Devices.I2c.I2cSharingMode" }; };
 template <> struct name<Windows::Devices::I2c::I2cTransferStatus>{ static constexpr auto & value{ L"Windows.Devices.I2c.I2cTransferStatus" }; };
 template <> struct name<Windows::Devices::I2c::I2cTransferResult>{ static constexpr auto & value{ L"Windows.Devices.I2c.I2cTransferResult" }; };
-template <> struct guid<Windows::Devices::I2c::II2cConnectionSettings>{ static constexpr GUID value{ 0xF2DB1307,0xAB6F,0x4639,{ 0xA7,0x67,0x54,0x53,0x6D,0xC3,0x46,0x0F } }; };
-template <> struct guid<Windows::Devices::I2c::II2cConnectionSettingsFactory>{ static constexpr GUID value{ 0x81B586B3,0x9693,0x41B1,{ 0xA2,0x43,0xDE,0xD4,0xF6,0xE6,0x69,0x26 } }; };
-template <> struct guid<Windows::Devices::I2c::II2cController>{ static constexpr GUID value{ 0xC48AB1B2,0x87A0,0x4166,{ 0x8E,0x3E,0xB4,0xB8,0xF9,0x7C,0xD7,0x29 } }; };
-template <> struct guid<Windows::Devices::I2c::II2cControllerStatics>{ static constexpr GUID value{ 0x40FC0365,0x5F05,0x4E7E,{ 0x84,0xBD,0x10,0x0D,0xB8,0xE0,0xAE,0xC5 } }; };
-template <> struct guid<Windows::Devices::I2c::II2cDevice>{ static constexpr GUID value{ 0x8636C136,0xB9C5,0x4F70,{ 0x94,0x49,0xCC,0x46,0xDC,0x6F,0x57,0xEB } }; };
-template <> struct guid<Windows::Devices::I2c::II2cDeviceStatics>{ static constexpr GUID value{ 0x91A33BE3,0x7334,0x4512,{ 0x96,0xBC,0xFB,0xAE,0x94,0x59,0xF5,0xF6 } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cConnectionSettings>{ static constexpr guid value{ 0xF2DB1307,0xAB6F,0x4639,{ 0xA7,0x67,0x54,0x53,0x6D,0xC3,0x46,0x0F } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cConnectionSettingsFactory>{ static constexpr guid value{ 0x81B586B3,0x9693,0x41B1,{ 0xA2,0x43,0xDE,0xD4,0xF6,0xE6,0x69,0x26 } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cController>{ static constexpr guid value{ 0xC48AB1B2,0x87A0,0x4166,{ 0x8E,0x3E,0xB4,0xB8,0xF9,0x7C,0xD7,0x29 } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cControllerStatics>{ static constexpr guid value{ 0x40FC0365,0x5F05,0x4E7E,{ 0x84,0xBD,0x10,0x0D,0xB8,0xE0,0xAE,0xC5 } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cDevice>{ static constexpr guid value{ 0x8636C136,0xB9C5,0x4F70,{ 0x94,0x49,0xCC,0x46,0xDC,0x6F,0x57,0xEB } }; };
+template <> struct guid_storage<Windows::Devices::I2c::II2cDeviceStatics>{ static constexpr guid value{ 0x91A33BE3,0x7334,0x4512,{ 0x96,0xBC,0xFB,0xAE,0x94,0x59,0xF5,0xF6 } }; };
 template <> struct default_interface<Windows::Devices::I2c::I2cConnectionSettings>{ using type = Windows::Devices::I2c::II2cConnectionSettings; };
 template <> struct default_interface<Windows::Devices::I2c::I2cController>{ using type = Windows::Devices::I2c::II2cController; };
 template <> struct default_interface<Windows::Devices::I2c::I2cDevice>{ using type = Windows::Devices::I2c::II2cDevice; };
+
+template <> struct abi<Windows::Devices::I2c::II2cConnectionSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SlaveAddress(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SlaveAddress(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BusSpeed(Windows::Devices::I2c::I2cBusSpeed* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BusSpeed(Windows::Devices::I2c::I2cBusSpeed value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharingMode(Windows::Devices::I2c::I2cSharingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SharingMode(Windows::Devices::I2c::I2cSharingMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::I2c::II2cConnectionSettingsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t slaveAddress, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::I2c::II2cController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDevice(void* settings, void** device) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::I2c::II2cControllerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::I2c::II2cDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Write(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL WritePartial(uint32_t __bufferSize, uint8_t* buffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Read(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadPartial(uint32_t __bufferSize, uint8_t* buffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteRead(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteReadPartial(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::I2c::II2cDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromFriendlyName(void* friendlyName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void* settings, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_I2c_II2cConnectionSettings
@@ -149,50 +194,5 @@ struct struct_Windows_Devices_I2c_I2cTransferResult
 };
 template <> struct abi<Windows::Devices::I2c::I2cTransferResult>{ using type = struct_Windows_Devices_I2c_I2cTransferResult; };
 
-
-template <> struct abi<Windows::Devices::I2c::II2cConnectionSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SlaveAddress(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SlaveAddress(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_BusSpeed(Windows::Devices::I2c::I2cBusSpeed* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BusSpeed(Windows::Devices::I2c::I2cBusSpeed value) noexcept = 0;
-    virtual HRESULT __stdcall get_SharingMode(Windows::Devices::I2c::I2cSharingMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SharingMode(Windows::Devices::I2c::I2cSharingMode value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::I2c::II2cConnectionSettingsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t slaveAddress, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::I2c::II2cController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDevice(void* settings, void** device) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::I2c::II2cControllerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::I2c::II2cDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Write(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
-    virtual HRESULT __stdcall WritePartial(uint32_t __bufferSize, uint8_t* buffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
-    virtual HRESULT __stdcall Read(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
-    virtual HRESULT __stdcall ReadPartial(uint32_t __bufferSize, uint8_t* buffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
-    virtual HRESULT __stdcall WriteRead(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
-    virtual HRESULT __stdcall WriteReadPartial(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer, struct struct_Windows_Devices_I2c_I2cTransferResult* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::I2c::II2cDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void* settings, void** operation) noexcept = 0;
-};};
 
 }

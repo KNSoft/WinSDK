@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -61,106 +61,94 @@ template <typename D> Windows::Storage::Compression::Decompressor consume_Window
 template <typename D>
 struct produce<D, Windows::Storage::Compression::ICompressor> : produce_base<D, Windows::Storage::Compression::ICompressor>
 {
-    HRESULT __stdcall FinishAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FinishAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinishAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().FinishAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DetachStream(void** stream) noexcept final
+    int32_t WINRT_CALL DetachStream(void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *stream = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().DetachStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Compression::ICompressorFactory> : produce_base<D, Windows::Storage::Compression::ICompressorFactory>
 {
-    HRESULT __stdcall CreateCompressor(void* underlyingStream, void** createdCompressor) noexcept final
+    int32_t WINRT_CALL CreateCompressor(void* underlyingStream, void** createdCompressor) noexcept final
     {
         try
         {
             *createdCompressor = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCompressor, WINRT_WRAP(Windows::Storage::Compression::Compressor), Windows::Storage::Streams::IOutputStream const&);
             *createdCompressor = detach_from<Windows::Storage::Compression::Compressor>(this->shim().CreateCompressor(*reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&underlyingStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCompressorEx(void* underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize, void** createdCompressor) noexcept final
+    int32_t WINRT_CALL CreateCompressorEx(void* underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize, void** createdCompressor) noexcept final
     {
         try
         {
             *createdCompressor = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCompressorEx, WINRT_WRAP(Windows::Storage::Compression::Compressor), Windows::Storage::Streams::IOutputStream const&, Windows::Storage::Compression::CompressAlgorithm const&, uint32_t);
             *createdCompressor = detach_from<Windows::Storage::Compression::Compressor>(this->shim().CreateCompressorEx(*reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&underlyingStream), *reinterpret_cast<Windows::Storage::Compression::CompressAlgorithm const*>(&algorithm), blockSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Compression::IDecompressor> : produce_base<D, Windows::Storage::Compression::IDecompressor>
 {
-    HRESULT __stdcall DetachStream(void** stream) noexcept final
+    int32_t WINRT_CALL DetachStream(void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *stream = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().DetachStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Compression::IDecompressorFactory> : produce_base<D, Windows::Storage::Compression::IDecompressorFactory>
 {
-    HRESULT __stdcall CreateDecompressor(void* underlyingStream, void** createdDecompressor) noexcept final
+    int32_t WINRT_CALL CreateDecompressor(void* underlyingStream, void** createdDecompressor) noexcept final
     {
         try
         {
             *createdDecompressor = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDecompressor, WINRT_WRAP(Windows::Storage::Compression::Decompressor), Windows::Storage::Streams::IInputStream const&);
             *createdDecompressor = detach_from<Windows::Storage::Compression::Decompressor>(this->shim().CreateDecompressor(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&underlyingStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -169,15 +157,15 @@ struct produce<D, Windows::Storage::Compression::IDecompressorFactory> : produce
 WINRT_EXPORT namespace winrt::Windows::Storage::Compression {
 
 inline Compressor::Compressor(Windows::Storage::Streams::IOutputStream const& underlyingStream) :
-    Compressor(get_activation_factory<Compressor, Windows::Storage::Compression::ICompressorFactory>().CreateCompressor(underlyingStream))
+    Compressor(impl::call_factory<Compressor, Windows::Storage::Compression::ICompressorFactory>([&](auto&& f) { return f.CreateCompressor(underlyingStream); }))
 {}
 
 inline Compressor::Compressor(Windows::Storage::Streams::IOutputStream const& underlyingStream, Windows::Storage::Compression::CompressAlgorithm const& algorithm, uint32_t blockSize) :
-    Compressor(get_activation_factory<Compressor, Windows::Storage::Compression::ICompressorFactory>().CreateCompressorEx(underlyingStream, algorithm, blockSize))
+    Compressor(impl::call_factory<Compressor, Windows::Storage::Compression::ICompressorFactory>([&](auto&& f) { return f.CreateCompressorEx(underlyingStream, algorithm, blockSize); }))
 {}
 
 inline Decompressor::Decompressor(Windows::Storage::Streams::IInputStream const& underlyingStream) :
-    Decompressor(get_activation_factory<Decompressor, Windows::Storage::Compression::IDecompressorFactory>().CreateDecompressor(underlyingStream))
+    Decompressor(impl::call_factory<Decompressor, Windows::Storage::Compression::IDecompressorFactory>([&](auto&& f) { return f.CreateDecompressor(underlyingStream); }))
 {}
 
 }
@@ -192,5 +180,3 @@ template<> struct hash<winrt::Windows::Storage::Compression::Compressor> : winrt
 template<> struct hash<winrt::Windows::Storage::Compression::Decompressor> : winrt::impl::hash_base<winrt::Windows::Storage::Compression::Decompressor> {};
 
 }
-
-WINRT_WARNING_POP

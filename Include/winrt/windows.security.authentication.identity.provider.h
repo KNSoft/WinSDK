@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.security.authentication.identity.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1463,7 +1475,11 @@ namespace ABI {
                             SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock = 7,
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                             
-                            SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence = 8,
+                            SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATEDENUMERATOR("CheckingDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                             = 8,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
                             
                         };
@@ -1533,7 +1549,11 @@ namespace ABI {
                             SecondaryAuthenticationFactorDeviceCapabilities_SecureStorage = 0x1,
                             SecondaryAuthenticationFactorDeviceCapabilities_StoreKeys = 0x2,
                             SecondaryAuthenticationFactorDeviceCapabilities_ConfirmUserIntentToAuthenticate = 0x4,
-                            SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck = 0x8,
+                            SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATEDENUMERATOR("SupportSecureUserPresenceCheck is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                             = 0x8,
                             SecondaryAuthenticationFactorDeviceCapabilities_TransmittedDataIsEncrypted = 0x10,
                             SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256 = 0x20,
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -1600,8 +1620,12 @@ namespace ABI {
             namespace Authentication {
                 namespace Identity {
                     namespace Provider {
-                        /* [v1_enum, contract] */
-                        enum SecondaryAuthenticationFactorDevicePresence : int
+                        /* [v1_enum, deprecated, contract] */
+                        enum 
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        DEPRECATED("SecondaryAuthenticationFactorDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        SecondaryAuthenticationFactorDevicePresence : int
                         {
                             SecondaryAuthenticationFactorDevicePresence_Absent = 0,
                             SecondaryAuthenticationFactorDevicePresence_Present = 1,
@@ -1631,8 +1655,12 @@ namespace ABI {
             namespace Authentication {
                 namespace Identity {
                     namespace Provider {
-                        /* [v1_enum, contract] */
-                        enum SecondaryAuthenticationFactorDevicePresenceMonitoringMode : int
+                        /* [v1_enum, deprecated, contract] */
+                        enum 
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        DEPRECATED("SecondaryAuthenticationFactorDevicePresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        SecondaryAuthenticationFactorDevicePresenceMonitoringMode : int
                         {
                             SecondaryAuthenticationFactorDevicePresenceMonitoringMode_Unsupported = 0,
                             SecondaryAuthenticationFactorDevicePresenceMonitoringMode_AppManaged = 1,
@@ -1663,8 +1691,12 @@ namespace ABI {
             namespace Authentication {
                 namespace Identity {
                     namespace Provider {
-                        /* [v1_enum, contract] */
-                        enum SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus : int
+                        /* [v1_enum, deprecated, contract] */
+                        enum 
+                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        DEPRECATED("SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus is deprecated and might not work on all platforms. For more info, see MSDN.")
+                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                        SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus : int
                         {
                             SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Unsupported = 0,
                             SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Succeeded = 1,
@@ -2040,13 +2072,21 @@ namespace ABI {
                         ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : public IInspectable
                         {
                         public:
-                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringAsync(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("RegisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringAsync(
                                 /* [in] */__RPC__in HSTRING deviceId,
                                 /* [in] */__RPC__in HSTRING deviceInstancePath,
                                 /* [in] */ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * * operation
                                 ) = 0;
-                            /* [overload] */virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringWithNewDeviceAsync(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("RegisterDevicePresenceMonitoringWithNewDeviceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE RegisterDevicePresenceMonitoringWithNewDeviceAsync(
                                 /* [in] */__RPC__in HSTRING deviceId,
                                 /* [in] */__RPC__in HSTRING deviceInstancePath,
                                 /* [in] */ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
@@ -2055,11 +2095,19 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * deviceConfigurationData,
                                 /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * * operation
                                 ) = 0;
-                            virtual HRESULT STDMETHODCALLTYPE UnregisterDevicePresenceMonitoringAsync(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("UnregisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE UnregisterDevicePresenceMonitoringAsync(
                                 /* [in] */__RPC__in HSTRING deviceId,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
                                 ) = 0;
-                            virtual HRESULT STDMETHODCALLTYPE IsDevicePresenceMonitoringSupported(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("IsDevicePresenceMonitoringSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE IsDevicePresenceMonitoringSupported(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
                             
@@ -2162,14 +2210,26 @@ namespace ABI {
                         ISecondaryAuthenticationFactorInfo2 : public IInspectable
                         {
                         public:
-                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PresenceMonitoringMode(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("PresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_PresenceMonitoringMode(
                                 /* [retval, out] */__RPC__out ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode * value
                                 ) = 0;
-                            virtual HRESULT STDMETHODCALLTYPE UpdateDevicePresenceAsync(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("UpdateDevicePresenceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE UpdateDevicePresenceAsync(
                                 /* [in] */ABI::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresence presenceState,
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * result
                                 ) = 0;
-                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsAuthenticationSupported(
+                            
+                            #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            DEPRECATED("IsAuthenticationSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+                            #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                            /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_IsAuthenticationSupported(
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
                             
@@ -3810,7 +3870,11 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
     SecondaryAuthenticationFactorAuthenticationStage_ReadyForLock = 7,
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
     
-    SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence = 8,
+    SecondaryAuthenticationFactorAuthenticationStage_CheckingDevicePresence
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATEDENUMERATOR("CheckingDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+     = 8,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
     
 };
@@ -3856,7 +3920,11 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
     SecondaryAuthenticationFactorDeviceCapabilities_SecureStorage = 0x1,
     SecondaryAuthenticationFactorDeviceCapabilities_StoreKeys = 0x2,
     SecondaryAuthenticationFactorDeviceCapabilities_ConfirmUserIntentToAuthenticate = 0x4,
-    SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck = 0x8,
+    SecondaryAuthenticationFactorDeviceCapabilities_SupportSecureUserPresenceCheck
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATEDENUMERATOR("SupportSecureUserPresenceCheck is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+     = 0x8,
     SecondaryAuthenticationFactorDeviceCapabilities_TransmittedDataIsEncrypted = 0x10,
     SecondaryAuthenticationFactorDeviceCapabilities_HMacSha256 = 0x20,
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -3897,8 +3965,12 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
  */
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("SecondaryAuthenticationFactorDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+__x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence
 {
     SecondaryAuthenticationFactorDevicePresence_Absent = 0,
     SecondaryAuthenticationFactorDevicePresence_Present = 1,
@@ -3916,8 +3988,12 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
  */
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("SecondaryAuthenticationFactorDevicePresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+__x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode
 {
     SecondaryAuthenticationFactorDevicePresenceMonitoringMode_Unsupported = 0,
     SecondaryAuthenticationFactorDevicePresenceMonitoringMode_AppManaged = 1,
@@ -3936,8 +4012,12 @@ enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAu
  */
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+__x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
 {
     SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Unsupported = 0,
     SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus_Succeeded = 1,
@@ -4594,14 +4674,22 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [overload] */HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringAsync )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("RegisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringAsync )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
         /* [in] */__RPC__in HSTRING deviceId,
         /* [in] */__RPC__in HSTRING deviceInstancePath,
         /* [in] */__x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * * operation
         );
-    /* [overload] */HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringWithNewDeviceAsync )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("RegisterDevicePresenceMonitoringWithNewDeviceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *RegisterDevicePresenceMonitoringWithNewDeviceAsync )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
         /* [in] */__RPC__in HSTRING deviceId,
         /* [in] */__RPC__in HSTRING deviceInstancePath,
@@ -4611,12 +4699,20 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * deviceConfigurationData,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CIdentity__CProvider__CSecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *UnregisterDevicePresenceMonitoringAsync )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("UnregisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *UnregisterDevicePresenceMonitoringAsync )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
         /* [in] */__RPC__in HSTRING deviceId,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * result
         );
-    HRESULT ( STDMETHODCALLTYPE *IsDevicePresenceMonitoringSupported )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("IsDevicePresenceMonitoringSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *IsDevicePresenceMonitoringSupported )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics * This,
         /* [retval, out] */__RPC__out boolean * value
         );
@@ -4648,15 +4744,31 @@ interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecon
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("RegisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_RegisterDevicePresenceMonitoringAsync(This,deviceId,deviceInstancePath,monitoringMode,operation) \
     ( (This)->lpVtbl->RegisterDevicePresenceMonitoringAsync(This,deviceId,deviceInstancePath,monitoringMode,operation) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("RegisterDevicePresenceMonitoringWithNewDeviceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_RegisterDevicePresenceMonitoringWithNewDeviceAsync(This,deviceId,deviceInstancePath,monitoringMode,deviceFriendlyName,deviceModelNumber,deviceConfigurationData,operation) \
     ( (This)->lpVtbl->RegisterDevicePresenceMonitoringWithNewDeviceAsync(This,deviceId,deviceInstancePath,monitoringMode,deviceFriendlyName,deviceModelNumber,deviceConfigurationData,operation) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("UnregisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_UnregisterDevicePresenceMonitoringAsync(This,deviceId,result) \
     ( (This)->lpVtbl->UnregisterDevicePresenceMonitoringAsync(This,deviceId,result) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("IsDevicePresenceMonitoringSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_IsDevicePresenceMonitoringSupported(This,value) \
     ( (This)->lpVtbl->IsDevicePresenceMonitoringSupported(This,value) )
 
@@ -4836,16 +4948,28 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PresenceMonitoringMode )(
+
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("PresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_PresenceMonitoringMode )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresenceMonitoringMode * value
         );
-    HRESULT ( STDMETHODCALLTYPE *UpdateDevicePresenceAsync )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("UpdateDevicePresenceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *UpdateDevicePresenceAsync )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
         /* [in] */__x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CSecondaryAuthenticationFactorDevicePresence presenceState,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * result
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsAuthenticationSupported )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("IsAuthenticationSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_IsAuthenticationSupported )(
         __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2 * This,
         /* [retval, out] */__RPC__out boolean * value
         );
@@ -4877,12 +5001,24 @@ interface __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecon
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("PresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_get_PresenceMonitoringMode(This,value) \
     ( (This)->lpVtbl->get_PresenceMonitoringMode(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("UpdateDevicePresenceAsync is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_UpdateDevicePresenceAsync(This,presenceState,result) \
     ( (This)->lpVtbl->UpdateDevicePresenceAsync(This,presenceState,result) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("IsAuthenticationSupported is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CSecurity_CAuthentication_CIdentity_CProvider_CISecondaryAuthenticationFactorInfo2_get_IsAuthenticationSupported(This,value) \
     ( (This)->lpVtbl->get_IsAuthenticationSupported(This,value) )
 

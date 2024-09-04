@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.pointofservice.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -315,6 +327,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1 ABI::Windows::Devices::PointOfService::IBarcodeScannerCapabilities1
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IBarcodeScannerCapabilities2;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 ABI::Windows::Devices::PointOfService::IBarcodeScannerCapabilities2
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_FWD_DEFINED__
@@ -652,6 +678,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedBarcodeScanner4;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner4
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedBarcodeScannerClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs ABI::Windows::Devices::PointOfService::IClaimedBarcodeScannerClosedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 namespace ABI {
@@ -665,6 +719,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer ABI::Windows::Devices::PointOfService::IClaimedCashDrawer
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedCashDrawer2;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 ABI::Windows::Devices::PointOfService::IClaimedCashDrawer2
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedCashDrawerClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs ABI::Windows::Devices::PointOfService::IClaimedCashDrawerClosedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_FWD_DEFINED__
@@ -708,6 +790,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedLineDisplay3;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 ABI::Windows::Devices::PointOfService::IClaimedLineDisplay3
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedLineDisplayClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs ABI::Windows::Devices::PointOfService::IClaimedLineDisplayClosedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
 namespace ABI {
@@ -736,6 +846,34 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedMagneticStripeReader2;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader2
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedMagneticStripeReaderClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReaderClosedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
 namespace ABI {
@@ -749,6 +887,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter ABI::Windows::Devices::PointOfService::IClaimedPosPrinter
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedPosPrinter2;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 ABI::Windows::Devices::PointOfService::IClaimedPosPrinter2
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                interface IClaimedPosPrinterClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs ABI::Windows::Devices::PointOfService::IClaimedPosPrinterClosedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_FWD_DEFINED__
@@ -2978,6 +3144,50 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedBarcode
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                class ClaimedBarcodeScannerClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("832b28d4-6f20-56d8-a9ab-818fbb922c78"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedBarcodeScanner*,ABI::Windows::Devices::PointOfService::ClaimedBarcodeScannerClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedBarcodeScanner*, ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedBarcodeScannerClosedEventArgs*, ABI::Windows::Devices::PointOfService::IClaimedBarcodeScannerClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedBarcodeScanner*,ABI::Windows::Devices::PointOfService::ClaimedBarcodeScannerClosedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner*,ABI::Windows::Devices::PointOfService::IClaimedBarcodeScannerClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner*,ABI::Windows::Devices::PointOfService::IClaimedBarcodeScannerClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -3011,6 +3221,50 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedCashDra
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                class ClaimedCashDrawerClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b2e562de-ce59-52ee-96fc-dcb3773e8783"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedCashDrawer*,ABI::Windows::Devices::PointOfService::ClaimedCashDrawerClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedCashDrawer*, ABI::Windows::Devices::PointOfService::IClaimedCashDrawer*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedCashDrawerClosedEventArgs*, ABI::Windows::Devices::PointOfService::IClaimedCashDrawerClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedCashDrawer, Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedCashDrawer*,ABI::Windows::Devices::PointOfService::ClaimedCashDrawerClosedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedCashDrawer*,ABI::Windows::Devices::PointOfService::IClaimedCashDrawerClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedCashDrawer*,ABI::Windows::Devices::PointOfService::IClaimedCashDrawerClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
@@ -3042,6 +3296,50 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDis
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                class ClaimedLineDisplayClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("53ab62d6-b038-5261-a934-cc206f1756e6"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*,ABI::Windows::Devices::PointOfService::ClaimedLineDisplayClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*, ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedLineDisplayClosedEventArgs*, ABI::Windows::Devices::PointOfService::IClaimedLineDisplayClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedLineDisplay, Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDisplay*,ABI::Windows::Devices::PointOfService::ClaimedLineDisplayClosedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*,ABI::Windows::Devices::PointOfService::IClaimedLineDisplayClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedLineDisplay*,ABI::Windows::Devices::PointOfService::IClaimedLineDisplayClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 namespace ABI {
@@ -3086,6 +3384,50 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedLineDis
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                class ClaimedMagneticStripeReaderClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9132fe4d-a48a-5578-8e76-9ec03a62f94a"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReader*,ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReaderClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReader*, ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReaderClosedEventArgs*, ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReaderClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReader*,ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReaderClosedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader*,ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReaderClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader*,ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReaderClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 namespace ABI {
@@ -3262,6 +3604,50 @@ typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedMagneti
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                class ClaimedPosPrinterClosedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("5a2247b1-84ac-55f3-a26b-d37c551ad58e"))
+ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedPosPrinter*,ABI::Windows::Devices::PointOfService::ClaimedPosPrinterClosedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedPosPrinter*, ABI::Windows::Devices::PointOfService::IClaimedPosPrinter*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::PointOfService::ClaimedPosPrinterClosedEventArgs*, ABI::Windows::Devices::PointOfService::IClaimedPosPrinterClosedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::PointOfService::ClaimedPosPrinter*,ABI::Windows::Devices::PointOfService::ClaimedPosPrinterClosedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedPosPrinter*,ABI::Windows::Devices::PointOfService::IClaimedPosPrinterClosedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::PointOfService::IClaimedPosPrinter*,ABI::Windows::Devices::PointOfService::IClaimedPosPrinterClosedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 namespace ABI {
@@ -4810,6 +5196,17 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Devices {
@@ -4864,6 +5261,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Devices {
@@ -4872,6 +5271,9 @@ namespace ABI {
             } /* Windows */
         } /* Devices */
     } /* PointOfService */} /* ABI */
+
+
+
 
 
 
@@ -6420,6 +6822,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScanne
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IBarcodeScannerCapabilities2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.BarcodeScannerCapabilities
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IBarcodeScannerCapabilities2[] = L"Windows.Devices.PointOfService.IBarcodeScannerCapabilities2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("F211CFEC-E1A1-4EA8-9ABC-92B1596270AB"), exclusiveto, contract] */
+                MIDL_INTERFACE("F211CFEC-E1A1-4EA8-9ABC-92B1596270AB")
+                IBarcodeScannerCapabilities2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsVideoPreviewSupported(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IBarcodeScannerCapabilities2=_uuidof(IBarcodeScannerCapabilities2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IBarcodeScannerDataReceivedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7949,6 +8392,89 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcod
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedBarcodeScanner4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedBarcodeScanner
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedBarcodeScanner4[] = L"Windows.Devices.PointOfService.IClaimedBarcodeScanner4";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("5D501F97-376A-41A8-A230-2F37C1949DDE"), exclusiveto, contract] */
+                MIDL_INTERFACE("5D501F97-376A-41A8-A230-2F37C1949DDE")
+                IClaimedBarcodeScanner4 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedBarcodeScanner4=_uuidof(IClaimedBarcodeScanner4);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedBarcodeScannerClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("CF7D5489-A22C-4C65-A901-88D77D833954"), exclusiveto, contract] */
+                MIDL_INTERFACE("CF7D5489-A22C-4C65-A901-88D77D833954")
+                IClaimedBarcodeScannerClosedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedBarcodeScannerClosedEventArgs=_uuidof(IClaimedBarcodeScannerClosedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedCashDrawer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -8026,6 +8552,89 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedCashDrawer2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedCashDrawer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedCashDrawer2[] = L"Windows.Devices.PointOfService.IClaimedCashDrawer2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("9CBAB5A2-DE42-4D5B-B0C1-9B57A2BA89C3"), exclusiveto, contract] */
+                MIDL_INTERFACE("9CBAB5A2-DE42-4D5B-B0C1-9B57A2BA89C3")
+                IClaimedCashDrawer2 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedCashDrawer2=_uuidof(IClaimedCashDrawer2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedCashDrawerClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("CC573F33-3F34-4C5C-BAAE-DEADF16CD7FA"), exclusiveto, contract] */
+                MIDL_INTERFACE("CC573F33-3F34-4C5C-BAAE-DEADF16CD7FA")
+                IClaimedCashDrawerClosedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedCashDrawerClosedEventArgs=_uuidof(IClaimedCashDrawerClosedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -8258,6 +8867,89 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDi
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedLineDisplay3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedLineDisplay
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplay3[] = L"Windows.Devices.PointOfService.IClaimedLineDisplay3";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("642ECD92-E9D4-4ECC-AF75-329C274CD18F"), exclusiveto, contract] */
+                MIDL_INTERFACE("642ECD92-E9D4-4ECC-AF75-329C274CD18F")
+                IClaimedLineDisplay3 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedLineDisplay3=_uuidof(IClaimedLineDisplay3);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplayClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("F915F364-D3D5-4F10-B511-90939EDFACD8"), exclusiveto, contract] */
+                MIDL_INTERFACE("F915F364-D3D5-4F10-B511-90939EDFACD8")
+                IClaimedLineDisplayClosedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedLineDisplayClosedEventArgs=_uuidof(IClaimedLineDisplayClosedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedLineDisplayStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -8459,6 +9151,89 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagnet
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedMagneticStripeReader2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedMagneticStripeReader
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedMagneticStripeReader2[] = L"Windows.Devices.PointOfService.IClaimedMagneticStripeReader2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("236FAFDF-E2DC-4D7D-9C78-060DF2BF2928"), exclusiveto, contract] */
+                MIDL_INTERFACE("236FAFDF-E2DC-4D7D-9C78-060DF2BF2928")
+                IClaimedMagneticStripeReader2 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedMagneticStripeReader2=_uuidof(IClaimedMagneticStripeReader2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedMagneticStripeReaderClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("14ADA93A-ADCD-4C80-ACDA-C3EAED2647E1"), exclusiveto, contract] */
+                MIDL_INTERFACE("14ADA93A-ADCD-4C80-ACDA-C3EAED2647E1")
+                IClaimedMagneticStripeReaderClosedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedMagneticStripeReaderClosedEventArgs=_uuidof(IClaimedMagneticStripeReaderClosedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedPosPrinter
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -8557,6 +9332,89 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedPosPrinter2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedPosPrinter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedPosPrinter2[] = L"Windows.Devices.PointOfService.IClaimedPosPrinter2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("5BF7A3D5-5198-437A-82DF-589993FA77E1"), exclusiveto, contract] */
+                MIDL_INTERFACE("5BF7A3D5-5198-437A-82DF-589993FA77E1")
+                IClaimedPosPrinter2 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Closed(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Closed(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedPosPrinter2=_uuidof(IClaimedPosPrinter2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedPosPrinterClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace PointOfService {
+                /* [object, uuid("E2B7A27B-4D40-471D-92ED-63375B18C788"), exclusiveto, contract] */
+                MIDL_INTERFACE("E2B7A27B-4D40-471D-92ED-63375B18C788")
+                IClaimedPosPrinterClosedEventArgs : public IInspectable
+                {
+                public:
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IClaimedPosPrinterClosedEventArgs=_uuidof(IClaimedPosPrinterClosedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* PointOfService */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -11469,6 +12327,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities ** Default Interface **
  *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities1
+ *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -11853,6 +12712,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner1
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner2
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner3
+ *    Windows.Devices.PointOfService.IClaimedBarcodeScanner4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11870,6 +12730,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedCashDrawer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11878,6 +12762,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedCashDrawer ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedCashDrawer2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11891,6 +12776,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedCashDrawer[] = L"Windows.Devices.PointOfService.ClaimedCashDrawer";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -11932,6 +12841,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Devices.PointOfService.IClaimedLineDisplay ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.Devices.PointOfService.IClaimedLineDisplay2
+ *    Windows.Devices.PointOfService.IClaimedLineDisplay3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11949,6 +12859,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedMagneticStripeReader
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11957,6 +12891,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedMagneticStripeReader ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedMagneticStripeReader2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11974,6 +12909,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedPosPrinter
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11982,6 +12941,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedPosPrinter ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedPosPrinter2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -11995,6 +12955,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedPosPrinter[] = L"Windows.Devices.PointOfService.ClaimedPosPrinter";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -12915,6 +13899,12 @@ typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapa
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerDataReceivedEventArgs;
@@ -13059,11 +14049,35 @@ typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScan
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer;
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedJournalPrinter_FWD_DEFINED__
@@ -13083,6 +14097,18 @@ typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayStatics;
@@ -13095,11 +14121,35 @@ typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStr
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter;
 
 #endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedReceiptPrinter_FWD_DEFINED__
@@ -15788,6 +16838,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBa
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__
 
@@ -15835,6 +16938,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCa
 #endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_IInspectable_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 
@@ -15890,6 +17046,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLi
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 #if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CLineDisplayStatusUpdatedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CLineDisplayStatusUpdatedEventArgs_INTERFACE_DEFINED__
@@ -15939,6 +17148,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLi
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 
@@ -16151,6 +17413,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMa
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 
@@ -18548,6 +19863,22 @@ typedef enum __x_ABI_CWindows_CDevices_CPointOfService_CUnifiedPosPowerReporting
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  *
  * Struct Windows.Devices.PointOfService.BarcodeScannerStatus
@@ -19807,6 +21138,99 @@ interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities1_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IBarcodeScannerCapabilities2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.BarcodeScannerCapabilities
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IBarcodeScannerCapabilities2[] = L"Windows.Devices.PointOfService.IBarcodeScannerCapabilities2";
+/* [object, uuid("F211CFEC-E1A1-4EA8-9ABC-92B1596270AB"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsVideoPreviewSupported )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_get_IsVideoPreviewSupported(This,value) \
+    ( (This)->lpVtbl->get_IsVideoPreviewSupported(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIBarcodeScannerCapabilities2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -23274,6 +24698,193 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcod
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedBarcodeScanner4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedBarcodeScanner
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedBarcodeScanner4[] = L"Windows.Devices.PointOfService.IClaimedBarcodeScanner4";
+/* [object, uuid("5D501F97-376A-41A8-A230-2F37C1949DDE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedBarcodeScanner_Windows__CDevices__CPointOfService__CClaimedBarcodeScannerClosedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScanner4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedBarcodeScannerClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs";
+/* [object, uuid("CF7D5489-A22C-4C65-A901-88D77D833954"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedBarcodeScannerClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedCashDrawer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -23447,6 +25058,193 @@ interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedCashDrawer2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedCashDrawer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedCashDrawer2[] = L"Windows.Devices.PointOfService.IClaimedCashDrawer2";
+/* [object, uuid("9CBAB5A2-DE42-4D5B-B0C1-9B57A2BA89C3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedCashDrawer_Windows__CDevices__CPointOfService__CClaimedCashDrawerClosedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawer2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedCashDrawerClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs";
+/* [object, uuid("CC573F33-3F34-4C5C-BAAE-DEADF16CD7FA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedCashDrawerClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -23940,6 +25738,193 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDi
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedLineDisplay3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedLineDisplay
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplay3[] = L"Windows.Devices.PointOfService.IClaimedLineDisplay3";
+/* [object, uuid("642ECD92-E9D4-4ECC-AF75-329C274CD18F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedLineDisplay_Windows__CDevices__CPointOfService__CClaimedLineDisplayClosedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplay3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedLineDisplayClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs";
+/* [object, uuid("F915F364-D3D5-4F10-B511-90939EDFACD8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedLineDisplayClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedLineDisplayStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -24382,6 +26367,193 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagnet
 
 /*
  *
+ * Interface Windows.Devices.PointOfService.IClaimedMagneticStripeReader2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedMagneticStripeReader
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedMagneticStripeReader2[] = L"Windows.Devices.PointOfService.IClaimedMagneticStripeReader2";
+/* [object, uuid("236FAFDF-E2DC-4D7D-9C78-060DF2BF2928"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReader_Windows__CDevices__CPointOfService__CClaimedMagneticStripeReaderClosedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReader2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedMagneticStripeReaderClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs";
+/* [object, uuid("14ADA93A-ADCD-4C80-ACDA-C3EAED2647E1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedMagneticStripeReaderClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Devices.PointOfService.IClaimedPosPrinter
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -24604,6 +26776,193 @@ interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedPosPrinter2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedPosPrinter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedPosPrinter2[] = L"Windows.Devices.PointOfService.IClaimedPosPrinter2";
+/* [object, uuid("5BF7A3D5-5198-437A-82DF-589993FA77E1"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CPointOfService__CClaimedPosPrinter_Windows__CDevices__CPointOfService__CClaimedPosPrinterClosedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Closed )(
+        __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_add_Closed(This,handler,token) \
+    ( (This)->lpVtbl->add_Closed(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_remove_Closed(This,token) \
+    ( (This)->lpVtbl->remove_Closed(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinter2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_PointOfService_IClaimedPosPrinterClosedEventArgs[] = L"Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs";
+/* [object, uuid("E2B7A27B-4D40-471D-92ED-63375B18C788"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CPointOfService_CIClaimedPosPrinterClosedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -31076,6 +33435,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities ** Default Interface **
  *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities1
+ *    Windows.Devices.PointOfService.IBarcodeScannerCapabilities2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -31460,6 +33820,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner1
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner2
  *    Windows.Devices.PointOfService.IClaimedBarcodeScanner3
+ *    Windows.Devices.PointOfService.IClaimedBarcodeScanner4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -31477,6 +33838,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedBarcodeScannerClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedBarcodeScannerClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedBarcodeScannerClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedCashDrawer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -31485,6 +33870,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedCashDrawer ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedCashDrawer2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -31498,6 +33884,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedCashDrawer[] = L"Windows.Devices.PointOfService.ClaimedCashDrawer";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedCashDrawerClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedCashDrawerClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedCashDrawerClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -31539,6 +33949,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Devices.PointOfService.IClaimedLineDisplay ** Default Interface **
  *    Windows.Foundation.IClosable
  *    Windows.Devices.PointOfService.IClaimedLineDisplay2
+ *    Windows.Devices.PointOfService.IClaimedLineDisplay3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -31556,6 +33967,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedLineDisplayClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedLineDisplayClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedLineDisplayClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedMagneticStripeReader
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -31564,6 +33999,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedMagneticStripeReader ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedMagneticStripeReader2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -31581,6 +34017,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedMagneticStripeReaderClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedMagneticStripeReaderClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedMagneticStripeReaderClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.PointOfService.ClaimedPosPrinter
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -31589,6 +34049,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.PointOfService.IClaimedPosPrinter ** Default Interface **
  *    Windows.Foundation.IClosable
+ *    Windows.Devices.PointOfService.IClaimedPosPrinter2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -31602,6 +34063,30 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedPosPrinter[] = L"Windows.Devices.PointOfService.ClaimedPosPrinter";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.PointOfService.IClaimedPosPrinterClosedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_PointOfService_ClaimedPosPrinterClosedEventArgs[] = L"Windows.Devices.PointOfService.ClaimedPosPrinterClosedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

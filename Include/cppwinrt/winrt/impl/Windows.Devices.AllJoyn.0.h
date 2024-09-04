@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -48,10 +48,10 @@ WINRT_EXPORT namespace winrt::Windows::Devices::AllJoyn {
 enum class AllJoynAuthenticationMechanism : int32_t
 {
     None = 0,
-    SrpAnonymous [[deprecated("SrpAnonymous is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 1,
-    SrpLogon [[deprecated("SrpLogon is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 2,
+    SrpAnonymous = 1,
+    SrpLogon = 2,
     EcdheNull = 3,
-    EcdhePsk [[deprecated("EcdhePsk is deprecated and might not work on all platforms. For more info, see MSDN.")]] = 4,
+    EcdhePsk = 4,
     EcdheEcdsa = 5,
     EcdheSpeke = 6,
 };
@@ -287,48 +287,48 @@ template <> struct name<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanis
 template <> struct name<Windows::Devices::AllJoyn::AllJoynBusAttachmentState>{ static constexpr auto & value{ L"Windows.Devices.AllJoyn.AllJoynBusAttachmentState" }; };
 template <> struct name<Windows::Devices::AllJoyn::AllJoynSessionLostReason>{ static constexpr auto & value{ L"Windows.Devices.AllJoyn.AllJoynSessionLostReason" }; };
 template <> struct name<Windows::Devices::AllJoyn::AllJoynTrafficType>{ static constexpr auto & value{ L"Windows.Devices.AllJoyn.AllJoynTrafficType" }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAboutData>{ static constexpr GUID value{ 0xE5A9BF00,0x1FA2,0x4839,{ 0x93,0xEF,0xF9,0xDF,0x40,0x48,0x90,0xF7 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAboutDataView>{ static constexpr GUID value{ 0x6823111F,0x6212,0x4934,{ 0x9C,0x48,0xE1,0x9C,0xA4,0x98,0x42,0x88 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>{ static constexpr GUID value{ 0x57EDB688,0x0C5E,0x416E,{ 0x88,0xB5,0x39,0xB3,0x2D,0x25,0xC4,0x7D } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>{ static constexpr GUID value{ 0x4DA817D2,0xCD1D,0x4023,{ 0xA7,0xC4,0x16,0xDE,0xF8,0x9C,0x28,0xDF } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>{ static constexpr GUID value{ 0x4EFB5365,0x3E8A,0x4257,{ 0x8F,0x10,0x53,0x9C,0xE0,0xD5,0x6C,0x0F } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>{ static constexpr GUID value{ 0xB4435BC0,0x6145,0x429E,{ 0x84,0xDB,0xD5,0xBF,0xE7,0x72,0xB1,0x4F } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>{ static constexpr GUID value{ 0x97B4701C,0x15DC,0x4B53,{ 0xB6,0xA4,0x7D,0x13,0x43,0x00,0xD7,0xBF } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusAttachment>{ static constexpr GUID value{ 0xF309F153,0x1EED,0x42C3,{ 0xA2,0x0E,0x43,0x6D,0x41,0xFE,0x62,0xF6 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>{ static constexpr GUID value{ 0x3474CB1E,0x2368,0x43B2,{ 0xB4,0x3E,0x6A,0x3A,0xC1,0x27,0x8D,0x98 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>{ static constexpr GUID value{ 0x642EF1A4,0xAD85,0x4DDF,{ 0x90,0xAE,0x60,0x44,0x52,0xB2,0x22,0x88 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>{ static constexpr GUID value{ 0xD82E75F4,0xC02A,0x41EC,{ 0xA8,0xD5,0xEA,0xB1,0x55,0x89,0x53,0xAA } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>{ static constexpr GUID value{ 0x839D4D3D,0x1051,0x40D7,{ 0x87,0x2A,0x8D,0x01,0x41,0x11,0x5B,0x1F } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusObject>{ static constexpr GUID value{ 0xE8FD825E,0xF73A,0x490C,{ 0x88,0x04,0x04,0xE0,0x26,0x64,0x30,0x47 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>{ static constexpr GUID value{ 0x2C2F9F0B,0x8E02,0x4F9C,{ 0xAC,0x27,0xEA,0x6D,0xAD,0x5D,0x3B,0x50 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>{ static constexpr GUID value{ 0xDE102115,0xEF8E,0x4D42,{ 0xB9,0x3B,0xA2,0xAE,0x74,0x51,0x97,0x66 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>{ static constexpr GUID value{ 0x6B22FD48,0xD0A3,0x4255,{ 0x95,0x3A,0x47,0x72,0xB4,0x02,0x80,0x73 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynCredentials>{ static constexpr GUID value{ 0x824650F2,0xA190,0x40B1,{ 0xAB,0xAB,0x34,0x9E,0xC2,0x44,0xDF,0xAA } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>{ static constexpr GUID value{ 0x6A87E34E,0xB069,0x4B80,{ 0x9E,0x1A,0x41,0xBC,0x83,0x7C,0x65,0xD2 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>{ static constexpr GUID value{ 0x800A7612,0xB805,0x44AF,{ 0xA2,0xE1,0x79,0x2A,0xB6,0x55,0xA2,0xD0 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynMessageInfo>{ static constexpr GUID value{ 0xFF2B0127,0x2C12,0x4859,{ 0xAA,0x3A,0xC7,0x44,0x61,0xEE,0x81,0x4C } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>{ static constexpr GUID value{ 0x34664C2A,0x8289,0x43D4,{ 0xB4,0xA8,0x3F,0x4D,0xE3,0x59,0xF0,0x43 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynProducer>{ static constexpr GUID value{ 0x9D084679,0x469B,0x495A,{ 0xA7,0x10,0xAC,0x50,0xF1,0x23,0x06,0x9F } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>{ static constexpr GUID value{ 0x51309770,0x4937,0x492D,{ 0x80,0x80,0x23,0x64,0x39,0x98,0x7C,0xEB } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>{ static constexpr GUID value{ 0x56529961,0xB219,0x4D6E,{ 0x9F,0x78,0xFA,0x3F,0x99,0xFA,0x8F,0xE5 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynServiceInfo>{ static constexpr GUID value{ 0x4CBE8209,0xB93E,0x4182,{ 0x99,0x9B,0xDD,0xD0,0x00,0xF9,0xC5,0x75 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>{ static constexpr GUID value{ 0x7581DABD,0xFE03,0x4F4B,{ 0x94,0xA4,0xF0,0x2F,0xDC,0xBD,0x11,0xB8 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>{ static constexpr GUID value{ 0x3057A95F,0x1D3F,0x41F3,{ 0x89,0x69,0xE3,0x27,0x92,0x62,0x73,0x96 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>{ static constexpr GUID value{ 0x0DBF8627,0x9AFF,0x4955,{ 0x92,0x27,0x69,0x53,0xBA,0xF4,0x15,0x69 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>{ static constexpr GUID value{ 0x5678570A,0x603A,0x49FC,{ 0xB7,0x50,0x0E,0xF1,0x36,0x09,0x21,0x3C } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSession>{ static constexpr GUID value{ 0xE8D11B0C,0xC0D4,0x406C,{ 0x88,0xA9,0xA9,0x3E,0xFA,0x85,0xD4,0xB1 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>{ static constexpr GUID value{ 0x9E9F5BD0,0xB5D7,0x47C5,{ 0x8D,0xAB,0xB0,0x40,0xCC,0x19,0x28,0x71 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>{ static constexpr GUID value{ 0x6824D689,0xD6CB,0x4D9E,{ 0xA0,0x9E,0x35,0x80,0x68,0x70,0xB1,0x7F } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>{ static constexpr GUID value{ 0xE766A48A,0x8BB8,0x4954,{ 0xAE,0x67,0xD2,0xFA,0x43,0xD1,0xF9,0x6B } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>{ static constexpr GUID value{ 0x13BBFD32,0xD2F4,0x49C9,{ 0x98,0x0E,0x28,0x05,0xE1,0x35,0x86,0xB1 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>{ static constexpr GUID value{ 0x49A2798A,0x0DD1,0x46C1,{ 0x9C,0xD6,0x27,0x19,0x0E,0x50,0x3A,0x5E } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>{ static constexpr GUID value{ 0x341DE352,0x1D33,0x40A1,{ 0xA1,0xD3,0xE5,0x77,0x70,0x20,0xE1,0xF1 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>{ static constexpr GUID value{ 0x409A219F,0xAA4A,0x4893,{ 0xB4,0x30,0xBA,0xA1,0xB6,0x3C,0x62,0x19 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>{ static constexpr GUID value{ 0xC4D355E8,0x42B8,0x4B67,{ 0xB7,0x57,0xD0,0xCF,0xCA,0xD5,0x92,0x80 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynSessionStatics>{ static constexpr GUID value{ 0x9E05D604,0xA06C,0x46D4,{ 0xB4,0x6C,0x0B,0x0B,0x54,0x10,0x5B,0x44 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynStatusStatics>{ static constexpr GUID value{ 0xD0B7A17E,0x0D29,0x4DA9,{ 0x8A,0xC6,0x54,0xC5,0x54,0xBE,0xDB,0xC5 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>{ static constexpr GUID value{ 0xC9FCA03B,0x701D,0x4AA8,{ 0x97,0xDD,0xA2,0xBB,0x0A,0x8F,0x5F,0xA3 } }; };
-template <> struct guid<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>{ static constexpr GUID value{ 0x878FA5A8,0x2D50,0x47E1,{ 0x90,0x4A,0x20,0xBF,0x0D,0x48,0xC7,0x82 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAboutData>{ static constexpr guid value{ 0xE5A9BF00,0x1FA2,0x4839,{ 0x93,0xEF,0xF9,0xDF,0x40,0x48,0x90,0xF7 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAboutDataView>{ static constexpr guid value{ 0x6823111F,0x6212,0x4934,{ 0x9C,0x48,0xE1,0x9C,0xA4,0x98,0x42,0x88 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>{ static constexpr guid value{ 0x57EDB688,0x0C5E,0x416E,{ 0x88,0xB5,0x39,0xB3,0x2D,0x25,0xC4,0x7D } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>{ static constexpr guid value{ 0x4DA817D2,0xCD1D,0x4023,{ 0xA7,0xC4,0x16,0xDE,0xF8,0x9C,0x28,0xDF } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>{ static constexpr guid value{ 0x4EFB5365,0x3E8A,0x4257,{ 0x8F,0x10,0x53,0x9C,0xE0,0xD5,0x6C,0x0F } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>{ static constexpr guid value{ 0xB4435BC0,0x6145,0x429E,{ 0x84,0xDB,0xD5,0xBF,0xE7,0x72,0xB1,0x4F } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>{ static constexpr guid value{ 0x97B4701C,0x15DC,0x4B53,{ 0xB6,0xA4,0x7D,0x13,0x43,0x00,0xD7,0xBF } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusAttachment>{ static constexpr guid value{ 0xF309F153,0x1EED,0x42C3,{ 0xA2,0x0E,0x43,0x6D,0x41,0xFE,0x62,0xF6 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>{ static constexpr guid value{ 0x3474CB1E,0x2368,0x43B2,{ 0xB4,0x3E,0x6A,0x3A,0xC1,0x27,0x8D,0x98 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>{ static constexpr guid value{ 0x642EF1A4,0xAD85,0x4DDF,{ 0x90,0xAE,0x60,0x44,0x52,0xB2,0x22,0x88 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>{ static constexpr guid value{ 0xD82E75F4,0xC02A,0x41EC,{ 0xA8,0xD5,0xEA,0xB1,0x55,0x89,0x53,0xAA } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>{ static constexpr guid value{ 0x839D4D3D,0x1051,0x40D7,{ 0x87,0x2A,0x8D,0x01,0x41,0x11,0x5B,0x1F } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusObject>{ static constexpr guid value{ 0xE8FD825E,0xF73A,0x490C,{ 0x88,0x04,0x04,0xE0,0x26,0x64,0x30,0x47 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>{ static constexpr guid value{ 0x2C2F9F0B,0x8E02,0x4F9C,{ 0xAC,0x27,0xEA,0x6D,0xAD,0x5D,0x3B,0x50 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>{ static constexpr guid value{ 0xDE102115,0xEF8E,0x4D42,{ 0xB9,0x3B,0xA2,0xAE,0x74,0x51,0x97,0x66 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>{ static constexpr guid value{ 0x6B22FD48,0xD0A3,0x4255,{ 0x95,0x3A,0x47,0x72,0xB4,0x02,0x80,0x73 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynCredentials>{ static constexpr guid value{ 0x824650F2,0xA190,0x40B1,{ 0xAB,0xAB,0x34,0x9E,0xC2,0x44,0xDF,0xAA } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>{ static constexpr guid value{ 0x6A87E34E,0xB069,0x4B80,{ 0x9E,0x1A,0x41,0xBC,0x83,0x7C,0x65,0xD2 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>{ static constexpr guid value{ 0x800A7612,0xB805,0x44AF,{ 0xA2,0xE1,0x79,0x2A,0xB6,0x55,0xA2,0xD0 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynMessageInfo>{ static constexpr guid value{ 0xFF2B0127,0x2C12,0x4859,{ 0xAA,0x3A,0xC7,0x44,0x61,0xEE,0x81,0x4C } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>{ static constexpr guid value{ 0x34664C2A,0x8289,0x43D4,{ 0xB4,0xA8,0x3F,0x4D,0xE3,0x59,0xF0,0x43 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynProducer>{ static constexpr guid value{ 0x9D084679,0x469B,0x495A,{ 0xA7,0x10,0xAC,0x50,0xF1,0x23,0x06,0x9F } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>{ static constexpr guid value{ 0x51309770,0x4937,0x492D,{ 0x80,0x80,0x23,0x64,0x39,0x98,0x7C,0xEB } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>{ static constexpr guid value{ 0x56529961,0xB219,0x4D6E,{ 0x9F,0x78,0xFA,0x3F,0x99,0xFA,0x8F,0xE5 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynServiceInfo>{ static constexpr guid value{ 0x4CBE8209,0xB93E,0x4182,{ 0x99,0x9B,0xDD,0xD0,0x00,0xF9,0xC5,0x75 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>{ static constexpr guid value{ 0x7581DABD,0xFE03,0x4F4B,{ 0x94,0xA4,0xF0,0x2F,0xDC,0xBD,0x11,0xB8 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>{ static constexpr guid value{ 0x3057A95F,0x1D3F,0x41F3,{ 0x89,0x69,0xE3,0x27,0x92,0x62,0x73,0x96 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>{ static constexpr guid value{ 0x0DBF8627,0x9AFF,0x4955,{ 0x92,0x27,0x69,0x53,0xBA,0xF4,0x15,0x69 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>{ static constexpr guid value{ 0x5678570A,0x603A,0x49FC,{ 0xB7,0x50,0x0E,0xF1,0x36,0x09,0x21,0x3C } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSession>{ static constexpr guid value{ 0xE8D11B0C,0xC0D4,0x406C,{ 0x88,0xA9,0xA9,0x3E,0xFA,0x85,0xD4,0xB1 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>{ static constexpr guid value{ 0x9E9F5BD0,0xB5D7,0x47C5,{ 0x8D,0xAB,0xB0,0x40,0xCC,0x19,0x28,0x71 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>{ static constexpr guid value{ 0x6824D689,0xD6CB,0x4D9E,{ 0xA0,0x9E,0x35,0x80,0x68,0x70,0xB1,0x7F } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>{ static constexpr guid value{ 0xE766A48A,0x8BB8,0x4954,{ 0xAE,0x67,0xD2,0xFA,0x43,0xD1,0xF9,0x6B } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>{ static constexpr guid value{ 0x13BBFD32,0xD2F4,0x49C9,{ 0x98,0x0E,0x28,0x05,0xE1,0x35,0x86,0xB1 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>{ static constexpr guid value{ 0x49A2798A,0x0DD1,0x46C1,{ 0x9C,0xD6,0x27,0x19,0x0E,0x50,0x3A,0x5E } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>{ static constexpr guid value{ 0x341DE352,0x1D33,0x40A1,{ 0xA1,0xD3,0xE5,0x77,0x70,0x20,0xE1,0xF1 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>{ static constexpr guid value{ 0x409A219F,0xAA4A,0x4893,{ 0xB4,0x30,0xBA,0xA1,0xB6,0x3C,0x62,0x19 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>{ static constexpr guid value{ 0xC4D355E8,0x42B8,0x4B67,{ 0xB7,0x57,0xD0,0xCF,0xCA,0xD5,0x92,0x80 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynSessionStatics>{ static constexpr guid value{ 0x9E05D604,0xA06C,0x46D4,{ 0xB4,0x6C,0x0B,0x0B,0x54,0x10,0x5B,0x44 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynStatusStatics>{ static constexpr guid value{ 0xD0B7A17E,0x0D29,0x4DA9,{ 0x8A,0xC6,0x54,0xC5,0x54,0xBE,0xDB,0xC5 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>{ static constexpr guid value{ 0xC9FCA03B,0x701D,0x4AA8,{ 0x97,0xDD,0xA2,0xBB,0x0A,0x8F,0x5F,0xA3 } }; };
+template <> struct guid_storage<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>{ static constexpr guid value{ 0x878FA5A8,0x2D50,0x47E1,{ 0x90,0x4A,0x20,0xBF,0x0D,0x48,0xC7,0x82 } }; };
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynAboutData>{ using type = Windows::Devices::AllJoyn::IAllJoynAboutData; };
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynAboutDataView>{ using type = Windows::Devices::AllJoyn::IAllJoynAboutDataView; };
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>{ using type = Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs; };
@@ -350,6 +350,333 @@ template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynSessionLo
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>{ using type = Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs; };
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>{ using type = Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs; };
 template <> struct default_interface<Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs>{ using type = Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs; };
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultAppName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DefaultAppName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppNames(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateOfManufacture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DateOfManufacture(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DefaultDescription(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Descriptions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultManufacturer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DefaultManufacturer(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Manufacturers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ModelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ModelNumber(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SoftwareVersion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SoftwareVersion(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SupportUrl(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppId(winrt::guid value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutDataView>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AJSoftwareVersion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateOfManufacture(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HardwareVersion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ModelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SoftwareVersion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedLanguages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Manufacturer(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDataBySessionPortAsync(void* uniqueName, void* busAttachment, uint16_t sessionPort, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDataBySessionPortWithLanguageAsync(void* uniqueName, void* busAttachment, uint16_t sessionPort, void* language, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Accept() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SessionPort(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrafficType(Windows::Devices::AllJoyn::AllJoynTrafficType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SamePhysicalNode(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SameNetwork(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Accept() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, void* acceptSessionJoiner, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Succeeded(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachment>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AboutData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionSpecification(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL PingAsync(void* uniqueName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL Connect() noexcept = 0;
+    virtual int32_t WINRT_CALL Disconnect() noexcept = 0;
+    virtual int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationMechanisms(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CredentialsRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CredentialsRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CredentialsVerificationRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CredentialsVerificationRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AuthenticationComplete(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AuthenticationComplete(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAboutDataAsync(void* serviceInfo, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAboutDataWithLanguageAsync(void* serviceInfo, void* language, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AcceptSessionJoinerRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AcceptSessionJoinerRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SessionJoined(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SessionJoined(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* connectionSpecification, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** defaultBusAttachment) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWatcher(void* requiredInterfaces, void** deviceWatcher) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObject>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL AddProducer(void* producer) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BusAttachment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Session(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* objectPath, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithBusAttachment(void* objectPath, void* busAttachment, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t status, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentials>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Certificate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Certificate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PasswordCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PasswordCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Timeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AttemptCount(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Credentials(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestedUserName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerUniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerCertificate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerCertificateErrors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeerIntermediateCertificates(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Accept() noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynMessageInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SenderUniqueName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* senderUniqueName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetBusObject(void* busObject) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t status, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ObjectPath(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SessionPort(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uniqueName, void* objectPath, uint16_t sessionPort, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveMemberAsync(void* uniqueName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_MemberAdded(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MemberAdded(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_MemberRemoved(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MemberRemoved(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Lost(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Lost(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Session(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* session, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::Devices::AllJoyn::AllJoynSessionLostReason* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UniqueName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uniqueName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFromServiceInfoAsync(void* serviceInfo, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFromServiceInfoAndBusAttachmentAsync(void* serviceInfo, void* busAttachment, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynStatusStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Ok(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Fail(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OperationTimedOut(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherEndClosed(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionRefused(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationFailed(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationRejectedByUser(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SslConnectFailed(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SslIdentityVerificationFailed(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InsufficientSecurity(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument1(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument2(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument3(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument4(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument5(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument6(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument7(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InvalidArgument8(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t status, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_AllJoyn_IAllJoynAboutData
@@ -373,8 +700,8 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynAboutData
     void SoftwareVersion(param::hstring const& value) const;
     Windows::Foundation::Uri SupportUrl() const;
     void SupportUrl(Windows::Foundation::Uri const& value) const;
-    GUID AppId() const;
-    void AppId(GUID const& value) const;
+    winrt::guid AppId() const;
+    void AppId(winrt::guid const& value) const;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynAboutData> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynAboutData<D>; };
 
@@ -384,7 +711,7 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynAboutDataView
     int32_t Status() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
     hstring AJSoftwareVersion() const;
-    GUID AppId() const;
+    winrt::guid AppId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;
     Windows::Globalization::Language DefaultLanguage() const;
     hstring DeviceId() const;
@@ -453,23 +780,23 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment
     Windows::Foundation::IAsyncOperation<int32_t> PingAsync(param::hstring const& uniqueName) const;
     void Connect() const;
     void Disconnect() const;
-    event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const;
-    using StateChanged_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment>;
+    winrt::event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const;
+    using StateChanged_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_StateChanged>;
     StateChanged_revoker StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> const& handler) const;
-    void StateChanged(event_token const& token) const;
+    void StateChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::Collections::IVector<Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> AuthenticationMechanisms() const;
-    event_token CredentialsRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const;
-    using CredentialsRequested_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment>;
+    winrt::event_token CredentialsRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const;
+    using CredentialsRequested_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_CredentialsRequested>;
     CredentialsRequested_revoker CredentialsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> const& handler) const;
-    void CredentialsRequested(event_token const& token) const;
-    event_token CredentialsVerificationRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const;
-    using CredentialsVerificationRequested_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment>;
+    void CredentialsRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token CredentialsVerificationRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const;
+    using CredentialsVerificationRequested_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_CredentialsVerificationRequested>;
     CredentialsVerificationRequested_revoker CredentialsVerificationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> const& handler) const;
-    void CredentialsVerificationRequested(event_token const& token) const;
-    event_token AuthenticationComplete(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const;
-    using AuthenticationComplete_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment>;
+    void CredentialsVerificationRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token AuthenticationComplete(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const;
+    using AuthenticationComplete_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment>::remove_AuthenticationComplete>;
     AuthenticationComplete_revoker AuthenticationComplete(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> const& handler) const;
-    void AuthenticationComplete(event_token const& token) const;
+    void AuthenticationComplete(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynBusAttachment> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment<D>; };
 
@@ -478,14 +805,14 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(Windows::Devices::AllJoyn::AllJoynServiceInfo const& serviceInfo) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(Windows::Devices::AllJoyn::AllJoynServiceInfo const& serviceInfo, Windows::Globalization::Language const& language) const;
-    event_token AcceptSessionJoinerRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const;
-    using AcceptSessionJoinerRequested_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>;
+    winrt::event_token AcceptSessionJoinerRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const;
+    using AcceptSessionJoinerRequested_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>::remove_AcceptSessionJoinerRequested>;
     AcceptSessionJoinerRequested_revoker AcceptSessionJoinerRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> const& handler) const;
-    void AcceptSessionJoinerRequested(event_token const& token) const;
-    event_token SessionJoined(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const;
-    using SessionJoined_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>;
+    void AcceptSessionJoinerRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token SessionJoined(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const;
+    using SessionJoined_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusAttachment2, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>::remove_SessionJoined>;
     SessionJoined_revoker SessionJoined(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> const& handler) const;
-    void SessionJoined(event_token const& token) const;
+    void SessionJoined(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynBusAttachment2> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynBusAttachment2<D>; };
 
@@ -520,10 +847,10 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynBusObject
     void AddProducer(Windows::Devices::AllJoyn::IAllJoynProducer const& producer) const;
     Windows::Devices::AllJoyn::AllJoynBusAttachment BusAttachment() const;
     Windows::Devices::AllJoyn::AllJoynSession Session() const;
-    event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const;
-    using Stopped_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynBusObject>;
+    winrt::event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const;
+    using Stopped_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynBusObject, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynBusObject>::remove_Stopped>;
     Stopped_revoker Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> const& handler) const;
-    void Stopped(event_token const& token) const;
+    void Stopped(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynBusObject> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynBusObject<D>; };
 
@@ -665,18 +992,18 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynSession
     int32_t Id() const;
     int32_t Status() const;
     Windows::Foundation::IAsyncOperation<int32_t> RemoveMemberAsync(param::hstring const& uniqueName) const;
-    event_token MemberAdded(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const;
-    using MemberAdded_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynSession>;
+    winrt::event_token MemberAdded(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const;
+    using MemberAdded_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynSession, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_MemberAdded>;
     MemberAdded_revoker MemberAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> const& handler) const;
-    void MemberAdded(event_token const& token) const;
-    event_token MemberRemoved(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const;
-    using MemberRemoved_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynSession>;
+    void MemberAdded(winrt::event_token const& token) const noexcept;
+    winrt::event_token MemberRemoved(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const;
+    using MemberRemoved_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynSession, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_MemberRemoved>;
     MemberRemoved_revoker MemberRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> const& handler) const;
-    void MemberRemoved(event_token const& token) const;
-    event_token Lost(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const;
-    using Lost_revoker = event_revoker<Windows::Devices::AllJoyn::IAllJoynSession>;
+    void MemberRemoved(winrt::event_token const& token) const noexcept;
+    winrt::event_token Lost(Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const;
+    using Lost_revoker = impl::event_revoker<Windows::Devices::AllJoyn::IAllJoynSession, &impl::abi_t<Windows::Devices::AllJoyn::IAllJoynSession>::remove_Lost>;
     Lost_revoker Lost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> const& handler) const;
-    void Lost(event_token const& token) const;
+    void Lost(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynSession> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynSession<D>; };
 
@@ -781,332 +1108,5 @@ struct consume_Windows_Devices_AllJoyn_IAllJoynWatcherStoppedEventArgsFactory
     Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs Create(int32_t status) const;
 };
 template <> struct consume<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory> { template <typename D> using type = consume_Windows_Devices_AllJoyn_IAllJoynWatcherStoppedEventArgsFactory<D>; };
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultAppName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DefaultAppName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppNames(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateOfManufacture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DateOfManufacture(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DefaultDescription(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Descriptions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultManufacturer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DefaultManufacturer(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Manufacturers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ModelNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ModelNumber(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SoftwareVersion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SoftwareVersion(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SupportUrl(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppId(GUID value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutDataView>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AJSoftwareVersion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateOfManufacture(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultLanguage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HardwareVersion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ModelNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SoftwareVersion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedLanguages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Manufacturer(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDataBySessionPortAsync(HSTRING uniqueName, void* busAttachment, uint16_t sessionPort, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, void* busAttachment, uint16_t sessionPort, void* language, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Accept() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SessionPort(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrafficType(Windows::Devices::AllJoyn::AllJoynTrafficType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SamePhysicalNode(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SameNetwork(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Accept() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, void* acceptSessionJoiner, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Succeeded(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachment>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AboutData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionSpecification(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall PingAsync(HSTRING uniqueName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall Connect() noexcept = 0;
-    virtual HRESULT __stdcall Disconnect() noexcept = 0;
-    virtual HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StateChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationMechanisms(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_CredentialsRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CredentialsRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_CredentialsVerificationRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CredentialsVerificationRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AuthenticationComplete(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AuthenticationComplete(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachment2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAboutDataAsync(void* serviceInfo, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAboutDataWithLanguageAsync(void* serviceInfo, void* language, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_AcceptSessionJoinerRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AcceptSessionJoinerRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SessionJoined(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SessionJoined(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING connectionSpecification, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_State(Windows::Devices::AllJoyn::AllJoynBusAttachmentState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** defaultBusAttachment) noexcept = 0;
-    virtual HRESULT __stdcall GetWatcher(void* requiredInterfaces, void** deviceWatcher) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObject>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall AddProducer(void* producer) noexcept = 0;
-    virtual HRESULT __stdcall get_BusAttachment(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Session(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Stopped(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING objectPath, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithBusAttachment(HSTRING objectPath, void* busAttachment, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t status, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentials>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Certificate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Certificate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PasswordCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PasswordCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Timeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AttemptCount(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Credentials(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestedUserName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AuthenticationMechanism(Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerUniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerCertificate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerCertificateErrors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeerIntermediateCertificates(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Accept() noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynMessageInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SenderUniqueName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING senderUniqueName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetBusObject(void* busObject) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t status, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ObjectPath(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SessionPort(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING uniqueName, HSTRING objectPath, uint16_t sessionPort, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveMemberAsync(HSTRING uniqueName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_MemberAdded(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_MemberAdded(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_MemberRemoved(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_MemberRemoved(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Lost(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Lost(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Session(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* session, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::Devices::AllJoyn::AllJoynSessionLostReason* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UniqueName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING uniqueName, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynSessionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFromServiceInfoAsync(void* serviceInfo, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFromServiceInfoAndBusAttachmentAsync(void* serviceInfo, void* busAttachment, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynStatusStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Ok(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Fail(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OperationTimedOut(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherEndClosed(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionRefused(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationFailed(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationRejectedByUser(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SslConnectFailed(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SslIdentityVerificationFailed(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InsufficientSecurity(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument1(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument2(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument3(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument4(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument5(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument6(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument7(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InvalidArgument8(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t status, void** result) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -120,18 +120,18 @@ template <> struct name<Windows::Gaming::XboxLive::Storage::GameSaveOperationRes
 template <> struct name<Windows::Gaming::XboxLive::Storage::GameSaveProvider>{ static constexpr auto & value{ L"Windows.Gaming.XboxLive.Storage.GameSaveProvider" }; };
 template <> struct name<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>{ static constexpr auto & value{ L"Windows.Gaming.XboxLive.Storage.GameSaveProviderGetResult" }; };
 template <> struct name<Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus>{ static constexpr auto & value{ L"Windows.Gaming.XboxLive.Storage.GameSaveErrorStatus" }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult>{ static constexpr GUID value{ 0x917281E0,0x7201,0x4953,{ 0xAA,0x2C,0x40,0x08,0xF0,0x3A,0xEF,0x45 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo>{ static constexpr GUID value{ 0xADD38034,0xBAF0,0x4645,{ 0xB6,0xD0,0x46,0xED,0xAF,0xFB,0x3C,0x2B } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult>{ static constexpr GUID value{ 0xC7578582,0x3697,0x42BF,{ 0x98,0x9C,0x66,0x5D,0x92,0x3B,0x52,0x31 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery>{ static constexpr GUID value{ 0x9FDD74B2,0xEEEE,0x447B,{ 0xA9,0xD2,0x7F,0x96,0xC0,0xF8,0x32,0x08 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveContainer>{ static constexpr GUID value{ 0xC3C08F89,0x563F,0x4ECD,{ 0x9C,0x6F,0x33,0xFD,0x0E,0x32,0x3D,0x10 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo>{ static constexpr GUID value{ 0xB7E27300,0x155D,0x4BB4,{ 0xB2,0xBA,0x93,0x03,0x06,0xF3,0x91,0xB5 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult>{ static constexpr GUID value{ 0xFFC50D74,0xC581,0x4F9D,{ 0x9E,0x39,0x30,0xA1,0x0C,0x1E,0x4C,0x50 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery>{ static constexpr GUID value{ 0x3C94E863,0x6F80,0x4327,{ 0x93,0x27,0xFF,0xC1,0x1A,0xFD,0x42,0xB3 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult>{ static constexpr GUID value{ 0xCF0F1A05,0x24A0,0x4582,{ 0x9A,0x55,0xB1,0xBB,0xBB,0x93,0x88,0xD8 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveProvider>{ static constexpr GUID value{ 0x90A60394,0x80FE,0x4211,{ 0x97,0xF8,0xA5,0xDE,0x14,0xDD,0x95,0xD2 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult>{ static constexpr GUID value{ 0x3AB90816,0xD393,0x4D65,{ 0xAC,0x16,0x41,0xC3,0xE6,0x7A,0xB9,0x45 } }; };
-template <> struct guid<Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>{ static constexpr GUID value{ 0xD01D3ED0,0x7B03,0x449D,{ 0x8C,0xBD,0x34,0x02,0x84,0x2A,0x10,0x48 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult>{ static constexpr guid value{ 0x917281E0,0x7201,0x4953,{ 0xAA,0x2C,0x40,0x08,0xF0,0x3A,0xEF,0x45 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo>{ static constexpr guid value{ 0xADD38034,0xBAF0,0x4645,{ 0xB6,0xD0,0x46,0xED,0xAF,0xFB,0x3C,0x2B } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult>{ static constexpr guid value{ 0xC7578582,0x3697,0x42BF,{ 0x98,0x9C,0x66,0x5D,0x92,0x3B,0x52,0x31 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery>{ static constexpr guid value{ 0x9FDD74B2,0xEEEE,0x447B,{ 0xA9,0xD2,0x7F,0x96,0xC0,0xF8,0x32,0x08 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveContainer>{ static constexpr guid value{ 0xC3C08F89,0x563F,0x4ECD,{ 0x9C,0x6F,0x33,0xFD,0x0E,0x32,0x3D,0x10 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo>{ static constexpr guid value{ 0xB7E27300,0x155D,0x4BB4,{ 0xB2,0xBA,0x93,0x03,0x06,0xF3,0x91,0xB5 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult>{ static constexpr guid value{ 0xFFC50D74,0xC581,0x4F9D,{ 0x9E,0x39,0x30,0xA1,0x0C,0x1E,0x4C,0x50 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery>{ static constexpr guid value{ 0x3C94E863,0x6F80,0x4327,{ 0x93,0x27,0xFF,0xC1,0x1A,0xFD,0x42,0xB3 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult>{ static constexpr guid value{ 0xCF0F1A05,0x24A0,0x4582,{ 0x9A,0x55,0xB1,0xBB,0xBB,0x93,0x88,0xD8 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveProvider>{ static constexpr guid value{ 0x90A60394,0x80FE,0x4211,{ 0x97,0xF8,0xA5,0xDE,0x14,0xDD,0x95,0xD2 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult>{ static constexpr guid value{ 0x3AB90816,0xD393,0x4D65,{ 0xAC,0x16,0x41,0xC3,0xE6,0x7A,0xB9,0x45 } }; };
+template <> struct guid_storage<Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>{ static constexpr guid value{ 0xD01D3ED0,0x7B03,0x449D,{ 0x8C,0xBD,0x34,0x02,0x84,0x2A,0x10,0x48 } }; };
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveBlobGetResult>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult; };
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfo>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo; };
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveBlobInfoGetResult>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult; };
@@ -143,6 +143,92 @@ template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSav
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveOperationResult>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult; };
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveProvider>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveProvider; };
 template <> struct default_interface<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult>{ using type = Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult; };
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetBlobInfoAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBlobInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemCountAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Provider(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SubmitUpdatesAsync(void* blobsToWrite, void* blobsToDelete, void* displayName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadAsync(void* blobsToRead, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAsync(void* blobsToRead, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SubmitPropertySetUpdatesAsync(void* blobsToWrite, void* blobsToDelete, void* displayName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBlobInfoQuery(void* blobNamePrefix, void** query) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TotalSize(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastModifiedTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NeedsSync(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetContainerInfoAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContainerInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemCountAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainer(void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteContainerAsync(void* name, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainerInfoQuery(void** query) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainerInfoQueryWithName(void* containerNamePrefix, void** query) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRemainingBytesInQuotaAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContainersChangedSinceLastSync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForUserAsync(void* user, void* serviceConfigId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSyncOnDemandForUserAsync(void* user, void* serviceConfigId, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Gaming_XboxLive_Storage_IGameSaveBlobGetResult
@@ -253,91 +339,5 @@ struct consume_Windows_Gaming_XboxLive_Storage_IGameSaveProviderStatics
     Windows::Foundation::IAsyncOperation<Windows::Gaming::XboxLive::Storage::GameSaveProviderGetResult> GetSyncOnDemandForUserAsync(Windows::System::User const& user, param::hstring const& serviceConfigId) const;
 };
 template <> struct consume<Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics> { template <typename D> using type = consume_Windows_Gaming_XboxLive_Storage_IGameSaveProviderStatics<D>; };
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobGetResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoGetResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveBlobInfoQuery>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetBlobInfoAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetBlobInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemCountAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Provider(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SubmitUpdatesAsync(void* blobsToWrite, void* blobsToDelete, HSTRING displayName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadAsync(void* blobsToRead, void** action) noexcept = 0;
-    virtual HRESULT __stdcall GetAsync(void* blobsToRead, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SubmitPropertySetUpdatesAsync(void* blobsToWrite, void* blobsToDelete, HSTRING displayName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateBlobInfoQuery(HSTRING blobNamePrefix, void** query) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TotalSize(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastModifiedTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NeedsSync(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoGetResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveContainerInfoQuery>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetContainerInfoAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetContainerInfoWithIndexAndMaxAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemCountAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveOperationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainer(HSTRING name, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteContainerAsync(HSTRING name, void** action) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainerInfoQuery(void** query) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainerInfoQueryWithName(HSTRING containerNamePrefix, void** query) noexcept = 0;
-    virtual HRESULT __stdcall GetRemainingBytesInQuotaAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_ContainersChangedSinceLastSync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProviderGetResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::XboxLive::Storage::GameSaveErrorStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::XboxLive::Storage::IGameSaveProviderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForUserAsync(void* user, HSTRING serviceConfigId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetSyncOnDemandForUserAsync(void* user, HSTRING serviceConfigId, void** operation) noexcept = 0;
-};};
 
 }

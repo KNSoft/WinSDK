@@ -313,7 +313,7 @@ template<typename TDelegateInterface, typename TLambda>
 ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(TLambda&& callback) throw()
 {
     using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
-    return DelegateHelper::Traits::Callback<TDelegateInterface, typename DelegateHelper::Interface>(Details::Forward<TLambda>(callback));
+    return DelegateHelper::Traits::template Callback<TDelegateInterface, typename DelegateHelper::Interface>(Details::Forward<TLambda>(callback));
 }
 
 // Construct a COM/WinRT delegate, an object with an Invoke() method, from a raw function.
@@ -321,7 +321,7 @@ template<typename TDelegateInterface, typename TFunc>
 ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TFunc* callback) throw()
 {
     using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
-    return DelegateHelper::Traits::Callback<TDelegateInterface, typename DelegateHelper::Interface>(
+    return DelegateHelper::Traits::template Callback<TDelegateInterface, typename DelegateHelper::Interface>(
         [=](auto&& ...args)
     {
         return callback(Details::Forward<decltype(args)>(args)...);

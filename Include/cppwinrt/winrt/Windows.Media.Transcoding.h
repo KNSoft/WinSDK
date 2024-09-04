@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -149,310 +149,268 @@ template <typename D> Windows::Foundation::IAsyncActionWithProgress<double> cons
 template <typename D>
 struct produce<D, Windows::Media::Transcoding::IMediaTranscoder> : produce_base<D, Windows::Media::Transcoding::IMediaTranscoder>
 {
-    HRESULT __stdcall put_TrimStartTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimStartTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStartTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimStartTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimStartTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimStartTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStartTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimStartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TrimStopTime(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TrimStopTime(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStopTime, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TrimStopTime(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimStopTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TrimStopTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimStopTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TrimStopTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysReencode(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysReencode(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysReencode, WINRT_WRAP(void), bool);
             this->shim().AlwaysReencode(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysReencode(bool* value) noexcept final
+    int32_t WINRT_CALL get_AlwaysReencode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysReencode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AlwaysReencode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HardwareAccelerationEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_HardwareAccelerationEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareAccelerationEnabled, WINRT_WRAP(void), bool);
             this->shim().HardwareAccelerationEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareAccelerationEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_HardwareAccelerationEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareAccelerationEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HardwareAccelerationEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddAudioEffect(HSTRING activatableClassId) noexcept final
+    int32_t WINRT_CALL AddAudioEffect(void* activatableClassId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAudioEffect, WINRT_WRAP(void), hstring const&);
             this->shim().AddAudioEffect(*reinterpret_cast<hstring const*>(&activatableClassId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddAudioEffectWithSettings(HSTRING activatableClassId, bool effectRequired, void* configuration) noexcept final
+    int32_t WINRT_CALL AddAudioEffectWithSettings(void* activatableClassId, bool effectRequired, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAudioEffect, WINRT_WRAP(void), hstring const&, bool, Windows::Foundation::Collections::IPropertySet const&);
             this->shim().AddAudioEffect(*reinterpret_cast<hstring const*>(&activatableClassId), effectRequired, *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddVideoEffect(HSTRING activatableClassId) noexcept final
+    int32_t WINRT_CALL AddVideoEffect(void* activatableClassId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddVideoEffect, WINRT_WRAP(void), hstring const&);
             this->shim().AddVideoEffect(*reinterpret_cast<hstring const*>(&activatableClassId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddVideoEffectWithSettings(HSTRING activatableClassId, bool effectRequired, void* configuration) noexcept final
+    int32_t WINRT_CALL AddVideoEffectWithSettings(void* activatableClassId, bool effectRequired, void* configuration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddVideoEffect, WINRT_WRAP(void), hstring const&, bool, Windows::Foundation::Collections::IPropertySet const&);
             this->shim().AddVideoEffect(*reinterpret_cast<hstring const*>(&activatableClassId), effectRequired, *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearEffects() noexcept final
+    int32_t WINRT_CALL ClearEffects() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearEffects, WINRT_WRAP(void));
             this->shim().ClearEffects();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PrepareFileTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL PrepareFileTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrepareFileTranscodeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>), Windows::Storage::IStorageFile const, Windows::Storage::IStorageFile const, Windows::Media::MediaProperties::MediaEncodingProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>>(this->shim().PrepareFileTranscodeAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&source), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&destination), *reinterpret_cast<Windows::Media::MediaProperties::MediaEncodingProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PrepareStreamTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL PrepareStreamTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrepareStreamTranscodeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>), Windows::Storage::Streams::IRandomAccessStream const, Windows::Storage::Streams::IRandomAccessStream const, Windows::Media::MediaProperties::MediaEncodingProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>>(this->shim().PrepareStreamTranscodeAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&source), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&destination), *reinterpret_cast<Windows::Media::MediaProperties::MediaEncodingProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Transcoding::IMediaTranscoder2> : produce_base<D, Windows::Media::Transcoding::IMediaTranscoder2>
 {
-    HRESULT __stdcall PrepareMediaStreamSourceTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
+    int32_t WINRT_CALL PrepareMediaStreamSourceTranscodeAsync(void* source, void* destination, void* profile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrepareMediaStreamSourceTranscodeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>), Windows::Media::Core::IMediaSource const, Windows::Storage::Streams::IRandomAccessStream const, Windows::Media::MediaProperties::MediaEncodingProfile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult>>(this->shim().PrepareMediaStreamSourceTranscodeAsync(*reinterpret_cast<Windows::Media::Core::IMediaSource const*>(&source), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&destination), *reinterpret_cast<Windows::Media::MediaProperties::MediaEncodingProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept final
+    int32_t WINRT_CALL put_VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoProcessingAlgorithm, WINRT_WRAP(void), Windows::Media::Transcoding::MediaVideoProcessingAlgorithm const&);
             this->shim().VideoProcessingAlgorithm(*reinterpret_cast<Windows::Media::Transcoding::MediaVideoProcessingAlgorithm const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoProcessingAlgorithm, WINRT_WRAP(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm));
             *value = detach_from<Windows::Media::Transcoding::MediaVideoProcessingAlgorithm>(this->shim().VideoProcessingAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Transcoding::IPrepareTranscodeResult> : produce_base<D, Windows::Media::Transcoding::IPrepareTranscodeResult>
 {
-    HRESULT __stdcall get_CanTranscode(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanTranscode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanTranscode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanTranscode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FailureReason(Windows::Media::Transcoding::TranscodeFailureReason* value) noexcept final
+    int32_t WINRT_CALL get_FailureReason(Windows::Media::Transcoding::TranscodeFailureReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureReason, WINRT_WRAP(Windows::Media::Transcoding::TranscodeFailureReason));
             *value = detach_from<Windows::Media::Transcoding::TranscodeFailureReason>(this->shim().FailureReason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TranscodeAsync(void** operation) noexcept final
+    int32_t WINRT_CALL TranscodeAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranscodeAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<double>));
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<double>>(this->shim().TranscodeAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -461,7 +419,7 @@ struct produce<D, Windows::Media::Transcoding::IPrepareTranscodeResult> : produc
 WINRT_EXPORT namespace winrt::Windows::Media::Transcoding {
 
 inline MediaTranscoder::MediaTranscoder() :
-    MediaTranscoder(get_activation_factory<MediaTranscoder>().ActivateInstance<MediaTranscoder>())
+    MediaTranscoder(impl::call_factory<MediaTranscoder>([](auto&& f) { return f.template ActivateInstance<MediaTranscoder>(); }))
 {}
 
 }
@@ -475,5 +433,3 @@ template<> struct hash<winrt::Windows::Media::Transcoding::MediaTranscoder> : wi
 template<> struct hash<winrt::Windows::Media::Transcoding::PrepareTranscodeResult> : winrt::impl::hash_base<winrt::Windows::Media::Transcoding::PrepareTranscodeResult> {};
 
 }
-
-WINRT_WARNING_POP

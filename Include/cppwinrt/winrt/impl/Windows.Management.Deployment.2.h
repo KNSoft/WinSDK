@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -43,7 +43,7 @@ struct WINRT_EBO DeploymentResult :
 
 struct WINRT_EBO PackageManager :
     Windows::Management::Deployment::IPackageManager,
-    impl::require<PackageManager, Windows::Management::Deployment::IPackageManager2, Windows::Management::Deployment::IPackageManager3, Windows::Management::Deployment::IPackageManager4, Windows::Management::Deployment::IPackageManager5, Windows::Management::Deployment::IPackageManager6, Windows::Management::Deployment::IPackageManager7>
+    impl::require<PackageManager, Windows::Management::Deployment::IPackageManager2, Windows::Management::Deployment::IPackageManager3, Windows::Management::Deployment::IPackageManager4, Windows::Management::Deployment::IPackageManager5, Windows::Management::Deployment::IPackageManager6, Windows::Management::Deployment::IPackageManager7, Windows::Management::Deployment::IPackageManager8>
 {
     PackageManager(std::nullptr_t) noexcept {}
     PackageManager();

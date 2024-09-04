@@ -88,6 +88,8 @@ namespace Windows
 
             interface IPhotoImportItem;
 
+            interface IPhotoImportItem2;
+
             interface IPhotoImportItemImportedEventArgs;
 
             interface IPhotoImportManagerStatics;
@@ -237,9 +239,11 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum PhotoImportContentTypeFilter
             {
-                OnlyImages      = 0,
-                OnlyVideos      = 1,
-                ImagesAndVideos = 2
+                OnlyImages                    = 0,
+                OnlyVideos                    = 1,
+                ImagesAndVideos               = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ImagesAndVideosFromCameraRoll = 3
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -432,6 +436,14 @@ namespace Windows
                 [propget] HRESULT DeletedFileNames([out] [retval] Windows.Foundation.Collections.IVectorView<HSTRING>** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Import.PhotoImportItem)]
+            [uuid(F1053505-F53B-46A3-9E30-3610791A9110)]
+            interface IPhotoImportItem2 : IInspectable
+            {
+                [propget] HRESULT Path([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Import.PhotoImportItemImportedEventArgs)]
             [uuid(42CB2FDD-7D68-47B5-BC7C-CEB73E0C77DC)]
@@ -598,6 +610,7 @@ namespace Windows
             runtimeclass PhotoImportItem
             {
                 [default] interface Windows.Media.Import.IPhotoImportItem;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Import.IPhotoImportItem2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

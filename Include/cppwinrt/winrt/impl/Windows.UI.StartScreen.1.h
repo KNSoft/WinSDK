@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -112,6 +112,14 @@ struct WINRT_EBO IStartScreenManager :
     impl::consume_t<IStartScreenManager>
 {
     IStartScreenManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStartScreenManager2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStartScreenManager2>,
+    impl::require<IStartScreenManager2, Windows::UI::StartScreen::IStartScreenManager>
+{
+    IStartScreenManager2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStartScreenManagerStatics :

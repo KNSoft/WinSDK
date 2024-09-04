@@ -461,7 +461,7 @@ public:
 
     // since this is designed to be used inside of an RuntimeClass<> template, we can 
     // only have a default constructor
-    AsyncBase() : 
+    AsyncBase() :
         progressDelegate_(nullptr),
         progressDelegateBucketAssist_(nullptr)
     {
@@ -480,7 +480,7 @@ public:
                 progressDelegateBucketAssist_ = Microsoft::WRL::Details::GetDelegateBucketAssist(progressDelegate_.Get());
             }
 
-            TraceDelegateAssigned();
+            this->TraceDelegateAssigned();
         }
         return hr;
     }
@@ -710,7 +710,7 @@ public:
                 // as perceived from FireCompletion on another thread.
                 MemoryBarrier();
 
-                TraceDelegateAssigned();
+                this->TraceDelegateAssigned();
 
                 // in the "hot start" case, put_Completed could have been called after the async operation has hit
                 // a terminal state.  If so, fire the completion immediately. 

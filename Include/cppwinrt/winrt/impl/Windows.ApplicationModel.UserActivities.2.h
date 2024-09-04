@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -22,7 +22,7 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::UserActivities {
 
 struct WINRT_EBO UserActivity :
     Windows::ApplicationModel::UserActivities::IUserActivity,
-    impl::require<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivity2>
+    impl::require<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivity2, Windows::ApplicationModel::UserActivities::IUserActivity3>
 {
     UserActivity(std::nullptr_t) noexcept {}
     UserActivity(param::hstring const& activityId);
@@ -76,7 +76,8 @@ struct WINRT_EBO UserActivityRequestedEventArgs :
 };
 
 struct WINRT_EBO UserActivitySession :
-    Windows::ApplicationModel::UserActivities::IUserActivitySession
+    Windows::ApplicationModel::UserActivities::IUserActivitySession,
+    impl::require<UserActivitySession, Windows::Foundation::IClosable>
 {
     UserActivitySession(std::nullptr_t) noexcept {}
 };

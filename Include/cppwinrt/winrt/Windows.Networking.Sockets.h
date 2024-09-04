@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Background.2.h"
@@ -208,21 +208,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IDatagramSocket)->add_MessageReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IDatagramSocket> consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived_revoker consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IDatagramSocket>(this, &abi_t<Windows::Networking::Sockets::IDatagramSocket>::remove_MessageReceived, MessageReceived(eventHandler));
+    return impl::make_event_revoker<D, MessageReceived_revoker>(this, MessageReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket<D>::MessageReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IDatagramSocket)->remove_MessageReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IDatagramSocket)->remove_MessageReceived(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networking_Sockets_IDatagramSocket2<D>::BindServiceNameAsync(param::hstring const& localServiceName, Windows::Networking::Connectivity::NetworkAdapter const& adapter) const
@@ -239,12 +239,12 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networki
     return operation;
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket3<D>::EnableTransferOwnership(GUID const& taskId) const
+template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket3<D>::EnableTransferOwnership(winrt::guid const& taskId) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IDatagramSocket3)->EnableTransferOwnership(get_abi(taskId)));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket3<D>::EnableTransferOwnership(GUID const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
+template <typename D> void consume_Windows_Networking_Sockets_IDatagramSocket3<D>::EnableTransferOwnership(winrt::guid const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IDatagramSocket3)->EnableTransferOwnershipWithConnectedStandbyAction(get_abi(taskId), get_abi(connectedStandbyAction)));
 }
@@ -415,38 +415,38 @@ template <typename D> Windows::Networking::Sockets::MessageWebSocketInformation 
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket)->add_MessageReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IMessageWebSocket> consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived_revoker consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IMessageWebSocket>(this, &abi_t<Windows::Networking::Sockets::IMessageWebSocket>::remove_MessageReceived, MessageReceived(eventHandler));
+    return impl::make_event_revoker<D, MessageReceived_revoker>(this, MessageReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IMessageWebSocket<D>::MessageReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket)->remove_MessageReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket)->remove_MessageReceived(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket2)->add_ServerCustomValidationRequested(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IMessageWebSocket2> consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested_revoker consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IMessageWebSocket2>(this, &abi_t<Windows::Networking::Sockets::IMessageWebSocket2>::remove_ServerCustomValidationRequested, ServerCustomValidationRequested(eventHandler));
+    return impl::make_event_revoker<D, ServerCustomValidationRequested_revoker>(this, ServerCustomValidationRequested(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IMessageWebSocket2<D>::ServerCustomValidationRequested(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket2)->remove_ServerCustomValidationRequested(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IMessageWebSocket2)->remove_ServerCustomValidationRequested(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> consume_Windows_Networking_Sockets_IMessageWebSocket3<D>::SendNonfinalFrameAsync(Windows::Storage::Streams::IBuffer const& data) const
@@ -558,21 +558,21 @@ template <typename D> bool consume_Windows_Networking_Sockets_IMessageWebSocketM
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->add_MessageReceived(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IServerMessageWebSocket> consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived_revoker consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IServerMessageWebSocket>(this, &abi_t<Windows::Networking::Sockets::IServerMessageWebSocket>::remove_MessageReceived, MessageReceived(value));
+    return impl::make_event_revoker<D, MessageReceived_revoker>(this, MessageReceived(value));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(event_token const& token) const
+template <typename D> void consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::MessageReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->remove_MessageReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->remove_MessageReceived(get_abi(token)));
 }
 
 template <typename D> Windows::Networking::Sockets::ServerMessageWebSocketControl consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Control() const
@@ -596,21 +596,21 @@ template <typename D> Windows::Storage::Streams::IOutputStream consume_Windows_N
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->add_Closed(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IServerMessageWebSocket> consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed_revoker consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IServerMessageWebSocket>(this, &abi_t<Windows::Networking::Sockets::IServerMessageWebSocket>::remove_Closed, Closed(value));
+    return impl::make_event_revoker<D, Closed_revoker>(this, Closed(value));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(event_token const& token) const
+template <typename D> void consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Closed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->remove_Closed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IServerMessageWebSocket)->remove_Closed(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Networking_Sockets_IServerMessageWebSocket<D>::Close(uint16_t code, param::hstring const& reason) const
@@ -672,21 +672,21 @@ template <typename D> Windows::Storage::Streams::IOutputStream consume_Windows_N
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerStreamWebSocket)->add_Closed(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IServerStreamWebSocket> consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed_revoker consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IServerStreamWebSocket>(this, &abi_t<Windows::Networking::Sockets::IServerStreamWebSocket>::remove_Closed, Closed(value));
+    return impl::make_event_revoker<D, Closed_revoker>(this, Closed(value));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(event_token const& token) const
+template <typename D> void consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Closed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IServerStreamWebSocket)->remove_Closed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IServerStreamWebSocket)->remove_Closed(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Networking_Sockets_IServerStreamWebSocket<D>::Close(uint16_t code, param::hstring const& reason) const
@@ -729,9 +729,9 @@ template <typename D> Windows::Networking::Sockets::SocketActivityContext consum
     return context;
 }
 
-template <typename D> GUID consume_Windows_Networking_Sockets_ISocketActivityInformation<D>::TaskId() const
+template <typename D> winrt::guid consume_Windows_Networking_Sockets_ISocketActivityInformation<D>::TaskId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::ISocketActivityInformation)->get_TaskId(put_abi(value)));
     return value;
 }
@@ -883,12 +883,12 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networki
     return operation;
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamSocket3<D>::EnableTransferOwnership(GUID const& taskId) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamSocket3<D>::EnableTransferOwnership(winrt::guid const& taskId) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocket3)->EnableTransferOwnership(get_abi(taskId)));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamSocket3<D>::EnableTransferOwnership(GUID const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamSocket3<D>::EnableTransferOwnership(winrt::guid const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocket3)->EnableTransferOwnershipWithConnectedStandbyAction(get_abi(taskId), get_abi(connectedStandbyAction)));
 }
@@ -1137,21 +1137,21 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networki
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocketListener)->add_ConnectionReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IStreamSocketListener> consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived_revoker consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IStreamSocketListener>(this, &abi_t<Windows::Networking::Sockets::IStreamSocketListener>::remove_ConnectionReceived, ConnectionReceived(eventHandler));
+    return impl::make_event_revoker<D, ConnectionReceived_revoker>(this, ConnectionReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener<D>::ConnectionReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocketListener)->remove_ConnectionReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IStreamSocketListener)->remove_ConnectionReceived(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networking_Sockets_IStreamSocketListener2<D>::BindServiceNameAsync(param::hstring const& localServiceName, Windows::Networking::Sockets::SocketProtectionLevel const& protectionLevel) const
@@ -1175,12 +1175,12 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networki
     return operation;
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener3<D>::EnableTransferOwnership(GUID const& taskId) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener3<D>::EnableTransferOwnership(winrt::guid const& taskId) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocketListener3)->EnableTransferOwnership(get_abi(taskId)));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener3<D>::EnableTransferOwnership(GUID const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamSocketListener3<D>::EnableTransferOwnership(winrt::guid const& taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const& connectedStandbyAction) const
 {
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamSocketListener3)->EnableTransferOwnershipWithConnectedStandbyAction(get_abi(taskId), get_abi(connectedStandbyAction)));
 }
@@ -1304,21 +1304,21 @@ template <typename D> Windows::Storage::Streams::IInputStream consume_Windows_Ne
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamWebSocket2)->add_ServerCustomValidationRequested(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IStreamWebSocket2> consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested_revoker consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IStreamWebSocket2>(this, &abi_t<Windows::Networking::Sockets::IStreamWebSocket2>::remove_ServerCustomValidationRequested, ServerCustomValidationRequested(eventHandler));
+    return impl::make_event_revoker<D, ServerCustomValidationRequested_revoker>(this, ServerCustomValidationRequested(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IStreamWebSocket2<D>::ServerCustomValidationRequested(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IStreamWebSocket2)->remove_ServerCustomValidationRequested(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IStreamWebSocket2)->remove_ServerCustomValidationRequested(get_abi(eventCookie)));
 }
 
 template <typename D> bool consume_Windows_Networking_Sockets_IStreamWebSocketControl<D>::NoDelay() const
@@ -1383,21 +1383,21 @@ template <typename D> void consume_Windows_Networking_Sockets_IWebSocket<D>::Set
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IWebSocket)->SetRequestHeader(get_abi(headerName), get_abi(headerValue)));
 }
 
-template <typename D> event_token consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IWebSocket)->add_Closed(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::Sockets::IWebSocket> consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_Sockets_IWebSocket<D>::Closed_revoker consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::Sockets::IWebSocket>(this, &abi_t<Windows::Networking::Sockets::IWebSocket>::remove_Closed, Closed(eventHandler));
+    return impl::make_event_revoker<D, Closed_revoker>(this, Closed(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_Sockets_IWebSocket<D>::Closed(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::Sockets::IWebSocket)->remove_Closed(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::Sockets::IWebSocket)->remove_Closed(get_abi(eventCookie)));
 }
 
 template <typename D> void consume_Windows_Networking_Sockets_IWebSocket<D>::Close(uint16_t code, param::hstring const& reason) const
@@ -1568,3601 +1568,3101 @@ template <typename D> Windows::Foundation::Deferral consume_Windows_Networking_S
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IControlChannelTrigger> : produce_base<D, Windows::Networking::Sockets::IControlChannelTrigger>
 {
-    HRESULT __stdcall get_ControlChannelTriggerId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ControlChannelTriggerId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlChannelTriggerId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ControlChannelTriggerId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerKeepAliveIntervalInMinutes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ServerKeepAliveIntervalInMinutes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerKeepAliveIntervalInMinutes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ServerKeepAliveIntervalInMinutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServerKeepAliveIntervalInMinutes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_ServerKeepAliveIntervalInMinutes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerKeepAliveIntervalInMinutes, WINRT_WRAP(void), uint32_t);
             this->shim().ServerKeepAliveIntervalInMinutes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentKeepAliveIntervalInMinutes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_CurrentKeepAliveIntervalInMinutes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentKeepAliveIntervalInMinutes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().CurrentKeepAliveIntervalInMinutes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransportObject(void** value) noexcept final
+    int32_t WINRT_CALL get_TransportObject(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportObject, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().TransportObject());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeepAliveTrigger(void** trigger) noexcept final
+    int32_t WINRT_CALL get_KeepAliveTrigger(void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepAliveTrigger, WINRT_WRAP(Windows::ApplicationModel::Background::IBackgroundTrigger));
             *trigger = detach_from<Windows::ApplicationModel::Background::IBackgroundTrigger>(this->shim().KeepAliveTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PushNotificationTrigger(void** trigger) noexcept final
+    int32_t WINRT_CALL get_PushNotificationTrigger(void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PushNotificationTrigger, WINRT_WRAP(Windows::ApplicationModel::Background::IBackgroundTrigger));
             *trigger = detach_from<Windows::ApplicationModel::Background::IBackgroundTrigger>(this->shim().PushNotificationTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UsingTransport(void* transport) noexcept final
+    int32_t WINRT_CALL UsingTransport(void* transport) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsingTransport, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().UsingTransport(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&transport));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WaitForPushEnabled(Windows::Networking::Sockets::ControlChannelTriggerStatus* channelTriggerStatus) noexcept final
+    int32_t WINRT_CALL WaitForPushEnabled(Windows::Networking::Sockets::ControlChannelTriggerStatus* channelTriggerStatus) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitForPushEnabled, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTriggerStatus));
             *channelTriggerStatus = detach_from<Windows::Networking::Sockets::ControlChannelTriggerStatus>(this->shim().WaitForPushEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DecreaseNetworkKeepAliveInterval() noexcept final
+    int32_t WINRT_CALL DecreaseNetworkKeepAliveInterval() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecreaseNetworkKeepAliveInterval, WINRT_WRAP(void));
             this->shim().DecreaseNetworkKeepAliveInterval();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FlushTransport() noexcept final
+    int32_t WINRT_CALL FlushTransport() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlushTransport, WINRT_WRAP(void));
             this->shim().FlushTransport();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IControlChannelTrigger2> : produce_base<D, Windows::Networking::Sockets::IControlChannelTrigger2>
 {
-    HRESULT __stdcall get_IsWakeFromLowPowerSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsWakeFromLowPowerSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWakeFromLowPowerSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsWakeFromLowPowerSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IControlChannelTriggerEventDetails> : produce_base<D, Windows::Networking::Sockets::IControlChannelTriggerEventDetails>
 {
-    HRESULT __stdcall get_ControlChannelTrigger(void** value) noexcept final
+    int32_t WINRT_CALL get_ControlChannelTrigger(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControlChannelTrigger, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTrigger));
             *value = detach_from<Windows::Networking::Sockets::ControlChannelTrigger>(this->shim().ControlChannelTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IControlChannelTriggerFactory> : produce_base<D, Windows::Networking::Sockets::IControlChannelTriggerFactory>
 {
-    HRESULT __stdcall CreateControlChannelTrigger(HSTRING channelId, uint32_t serverKeepAliveIntervalInMinutes, void** notificationChannel) noexcept final
+    int32_t WINRT_CALL CreateControlChannelTrigger(void* channelId, uint32_t serverKeepAliveIntervalInMinutes, void** notificationChannel) noexcept final
     {
         try
         {
             *notificationChannel = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateControlChannelTrigger, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTrigger), hstring const&, uint32_t);
             *notificationChannel = detach_from<Windows::Networking::Sockets::ControlChannelTrigger>(this->shim().CreateControlChannelTrigger(*reinterpret_cast<hstring const*>(&channelId), serverKeepAliveIntervalInMinutes));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateControlChannelTriggerEx(HSTRING channelId, uint32_t serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType, void** notificationChannel) noexcept final
+    int32_t WINRT_CALL CreateControlChannelTriggerEx(void* channelId, uint32_t serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType resourceRequestType, void** notificationChannel) noexcept final
     {
         try
         {
             *notificationChannel = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateControlChannelTriggerEx, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTrigger), hstring const&, uint32_t, Windows::Networking::Sockets::ControlChannelTriggerResourceType const&);
             *notificationChannel = detach_from<Windows::Networking::Sockets::ControlChannelTrigger>(this->shim().CreateControlChannelTriggerEx(*reinterpret_cast<hstring const*>(&channelId), serverKeepAliveIntervalInMinutes, *reinterpret_cast<Windows::Networking::Sockets::ControlChannelTriggerResourceType const*>(&resourceRequestType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IControlChannelTriggerResetEventDetails> : produce_base<D, Windows::Networking::Sockets::IControlChannelTriggerResetEventDetails>
 {
-    HRESULT __stdcall get_ResetReason(Windows::Networking::Sockets::ControlChannelTriggerResetReason* value) noexcept final
+    int32_t WINRT_CALL get_ResetReason(Windows::Networking::Sockets::ControlChannelTriggerResetReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetReason, WINRT_WRAP(Windows::Networking::Sockets::ControlChannelTriggerResetReason));
             *value = detach_from<Windows::Networking::Sockets::ControlChannelTriggerResetReason>(this->shim().ResetReason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareSlotReset(bool* value) noexcept final
+    int32_t WINRT_CALL get_HardwareSlotReset(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareSlotReset, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HardwareSlotReset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SoftwareSlotReset(bool* value) noexcept final
+    int32_t WINRT_CALL get_SoftwareSlotReset(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SoftwareSlotReset, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SoftwareSlotReset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocket> : produce_base<D, Windows::Networking::Sockets::IDatagramSocket>
 {
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::DatagramSocketControl));
             *value = detach_from<Windows::Networking::Sockets::DatagramSocketControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::DatagramSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::DatagramSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectAsync(void* remoteHostName, HSTRING remoteServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectAsync(void* remoteHostName, void* remoteServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectWithEndpointPairAsync(void* endpointPair, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectWithEndpointPairAsync(void* endpointPair, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::EndpointPair const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::EndpointPair const*>(&endpointPair)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindServiceNameAsync(HSTRING localServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL BindServiceNameAsync(void* localServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindServiceNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindServiceNameAsync(*reinterpret_cast<hstring const*>(&localServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindEndpointAsync(void* localHostName, HSTRING localServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL BindEndpointAsync(void* localHostName, void* localServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindEndpointAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindEndpointAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&localHostName), *reinterpret_cast<hstring const*>(&localServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall JoinMulticastGroup(void* host) noexcept final
+    int32_t WINRT_CALL JoinMulticastGroup(void* host) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JoinMulticastGroup, WINRT_WRAP(void), Windows::Networking::HostName const&);
             this->shim().JoinMulticastGroup(*reinterpret_cast<Windows::Networking::HostName const*>(&host));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetOutputStreamAsync(void* remoteHostName, HSTRING remoteServiceName, void** value) noexcept final
+    int32_t WINRT_CALL GetOutputStreamAsync(void* remoteHostName, void* remoteServiceName, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOutputStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream>), Windows::Networking::HostName const, hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream>>(this->shim().GetOutputStreamAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetOutputStreamWithEndpointPairAsync(void* endpointPair, void** value) noexcept final
+    int32_t WINRT_CALL GetOutputStreamWithEndpointPairAsync(void* endpointPair, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOutputStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream>), Windows::Networking::EndpointPair const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream>>(this->shim().GetOutputStreamAsync(*reinterpret_cast<Windows::Networking::EndpointPair const*>(&endpointPair)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MessageReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_MessageReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MessageReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_MessageReceived(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MessageReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MessageReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocket2> : produce_base<D, Windows::Networking::Sockets::IDatagramSocket2>
 {
-    HRESULT __stdcall BindServiceNameAndAdapterAsync(HSTRING localServiceName, void* adapter, void** operation) noexcept final
+    int32_t WINRT_CALL BindServiceNameAndAdapterAsync(void* localServiceName, void* adapter, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindServiceNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, Windows::Networking::Connectivity::NetworkAdapter const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindServiceNameAsync(*reinterpret_cast<hstring const*>(&localServiceName), *reinterpret_cast<Windows::Networking::Connectivity::NetworkAdapter const*>(&adapter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocket3> : produce_base<D, Windows::Networking::Sockets::IDatagramSocket3>
 {
-    HRESULT __stdcall CancelIOAsync(void** operation) noexcept final
+    int32_t WINRT_CALL CancelIOAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelIOAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().CancelIOAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnership(GUID taskId) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnership(winrt::guid taskId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnershipWithConnectedStandbyAction(winrt::guid taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnership(HSTRING socketId) noexcept final
+    int32_t WINRT_CALL TransferOwnership(void* socketId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnershipWithContext(HSTRING socketId, void* data) noexcept final
+    int32_t WINRT_CALL TransferOwnershipWithContext(void* socketId, void* data) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&, Windows::Networking::Sockets::SocketActivityContext const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityContext const*>(&data));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, void* data, Windows::Foundation::TimeSpan keepAliveTime) noexcept final
+    int32_t WINRT_CALL TransferOwnershipWithContextAndKeepAliveTime(void* socketId, void* data, Windows::Foundation::TimeSpan keepAliveTime) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&, Windows::Networking::Sockets::SocketActivityContext const&, Windows::Foundation::TimeSpan const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityContext const*>(&data), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&keepAliveTime));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketControl>
 {
-    HRESULT __stdcall get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
+    int32_t WINRT_CALL get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(Windows::Networking::Sockets::SocketQualityOfService));
             *value = detach_from<Windows::Networking::Sockets::SocketQualityOfService>(this->shim().QualityOfService());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
+    int32_t WINRT_CALL put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(void), Windows::Networking::Sockets::SocketQualityOfService const&);
             this->shim().QualityOfService(*reinterpret_cast<Windows::Networking::Sockets::SocketQualityOfService const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().OutboundUnicastHopLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundUnicastHopLimit(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(void), uint8_t);
             this->shim().OutboundUnicastHopLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl2> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketControl2>
 {
-    HRESULT __stdcall get_InboundBufferSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_InboundBufferSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InboundBufferSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().InboundBufferSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InboundBufferSizeInBytes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_InboundBufferSizeInBytes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InboundBufferSizeInBytes, WINRT_WRAP(void), uint32_t);
             this->shim().InboundBufferSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DontFragment(bool* value) noexcept final
+    int32_t WINRT_CALL get_DontFragment(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DontFragment, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().DontFragment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DontFragment(bool value) noexcept final
+    int32_t WINRT_CALL put_DontFragment(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DontFragment, WINRT_WRAP(void), bool);
             this->shim().DontFragment(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketControl3> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketControl3>
 {
-    HRESULT __stdcall get_MulticastOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_MulticastOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MulticastOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MulticastOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MulticastOnly(bool value) noexcept final
+    int32_t WINRT_CALL put_MulticastOnly(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MulticastOnly, WINRT_WRAP(void), bool);
             this->shim().MulticastOnly(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketInformation> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketInformation>
 {
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalPort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LocalPort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalPort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LocalPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().RemoteAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemotePort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemotePort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemotePort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemotePort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEventArgs> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketMessageReceivedEventArgs>
 {
-    HRESULT __stdcall get_RemoteAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().RemoteAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemotePort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemotePort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemotePort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemotePort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataReader(void** dataReader) noexcept final
+    int32_t WINRT_CALL GetDataReader(void** dataReader) noexcept final
     {
         try
         {
             *dataReader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataReader, WINRT_WRAP(Windows::Storage::Streams::DataReader));
             *dataReader = detach_from<Windows::Storage::Streams::DataReader>(this->shim().GetDataReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataStream(void** inputStream) noexcept final
+    int32_t WINRT_CALL GetDataStream(void** inputStream) noexcept final
     {
         try
         {
             *inputStream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *inputStream = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().GetDataStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IDatagramSocketStatics> : produce_base<D, Windows::Networking::Sockets::IDatagramSocketStatics>
 {
-    HRESULT __stdcall GetEndpointPairsAsync(void* remoteHostName, HSTRING remoteServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL GetEndpointPairsAsync(void* remoteHostName, void* remoteServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEndpointPairsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>>(this->shim().GetEndpointPairsAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEndpointPairsWithSortOptionsAsync(void* remoteHostName, HSTRING remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions, void** operation) noexcept final
+    int32_t WINRT_CALL GetEndpointPairsWithSortOptionsAsync(void* remoteHostName, void* remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEndpointPairsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>), Windows::Networking::HostName const, hstring const, Windows::Networking::HostNameSortOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>>(this->shim().GetEndpointPairsAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName), *reinterpret_cast<Windows::Networking::HostNameSortOptions const*>(&sortOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocket> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocket>
 {
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::MessageWebSocketControl));
             *value = detach_from<Windows::Networking::Sockets::MessageWebSocketControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::MessageWebSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::MessageWebSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MessageReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_MessageReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MessageReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_MessageReceived(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MessageReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MessageReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocket2> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocket2>
 {
-    HRESULT __stdcall add_ServerCustomValidationRequested(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_ServerCustomValidationRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().ServerCustomValidationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServerCustomValidationRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().ServerCustomValidationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ServerCustomValidationRequested(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_ServerCustomValidationRequested(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ServerCustomValidationRequested(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ServerCustomValidationRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ServerCustomValidationRequested(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocket3> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocket3>
 {
-    HRESULT __stdcall SendNonfinalFrameAsync(void* data, void** operation) noexcept final
+    int32_t WINRT_CALL SendNonfinalFrameAsync(void* data, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendNonfinalFrameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>>(this->shim().SendNonfinalFrameAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendFinalFrameAsync(void* data, void** operation) noexcept final
+    int32_t WINRT_CALL SendFinalFrameAsync(void* data, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendFinalFrameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>>(this->shim().SendFinalFrameAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocketControl>
 {
-    HRESULT __stdcall get_MaxMessageSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxMessageSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxMessageSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxMessageSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxMessageSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxMessageSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxMessageSize, WINRT_WRAP(void), uint32_t);
             this->shim().MaxMessageSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Networking::Sockets::SocketMessageType));
             *value = detach_from<Windows::Networking::Sockets::SocketMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MessageType(Windows::Networking::Sockets::SocketMessageType value) noexcept final
+    int32_t WINRT_CALL put_MessageType(Windows::Networking::Sockets::SocketMessageType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(void), Windows::Networking::Sockets::SocketMessageType const&);
             this->shim().MessageType(*reinterpret_cast<Windows::Networking::Sockets::SocketMessageType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocketControl2> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocketControl2>
 {
-    HRESULT __stdcall get_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredUnsolicitedPongInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DesiredUnsolicitedPongInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredUnsolicitedPongInterval, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().DesiredUnsolicitedPongInterval(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActualUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_ActualUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActualUnsolicitedPongInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().ActualUnsolicitedPongInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReceiveMode(Windows::Networking::Sockets::MessageWebSocketReceiveMode* value) noexcept final
+    int32_t WINRT_CALL get_ReceiveMode(Windows::Networking::Sockets::MessageWebSocketReceiveMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceiveMode, WINRT_WRAP(Windows::Networking::Sockets::MessageWebSocketReceiveMode));
             *value = detach_from<Windows::Networking::Sockets::MessageWebSocketReceiveMode>(this->shim().ReceiveMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReceiveMode(Windows::Networking::Sockets::MessageWebSocketReceiveMode value) noexcept final
+    int32_t WINRT_CALL put_ReceiveMode(Windows::Networking::Sockets::MessageWebSocketReceiveMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceiveMode, WINRT_WRAP(void), Windows::Networking::Sockets::MessageWebSocketReceiveMode const&);
             this->shim().ReceiveMode(*reinterpret_cast<Windows::Networking::Sockets::MessageWebSocketReceiveMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ClientCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ClientCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClientCertificate(void* value) noexcept final
+    int32_t WINRT_CALL put_ClientCertificate(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(void), Windows::Security::Cryptography::Certificates::Certificate const&);
             this->shim().ClientCertificate(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs>
 {
-    HRESULT __stdcall get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Networking::Sockets::SocketMessageType));
             *value = detach_from<Windows::Networking::Sockets::SocketMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataReader(void** dataReader) noexcept final
+    int32_t WINRT_CALL GetDataReader(void** dataReader) noexcept final
     {
         try
         {
             *dataReader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataReader, WINRT_WRAP(Windows::Storage::Streams::DataReader));
             *dataReader = detach_from<Windows::Storage::Streams::DataReader>(this->shim().GetDataReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataStream(void** inputStream) noexcept final
+    int32_t WINRT_CALL GetDataStream(void** inputStream) noexcept final
     {
         try
         {
             *inputStream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *inputStream = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().GetDataStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs2> : produce_base<D, Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs2>
 {
-    HRESULT __stdcall get_IsMessageComplete(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMessageComplete(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMessageComplete, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMessageComplete());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IServerMessageWebSocket> : produce_base<D, Windows::Networking::Sockets::IServerMessageWebSocket>
 {
-    HRESULT __stdcall add_MessageReceived(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_MessageReceived(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MessageReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MessageReceived(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MessageReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MessageReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MessageReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MessageReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::ServerMessageWebSocketControl));
             *value = detach_from<Windows::Networking::Sockets::ServerMessageWebSocketControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::ServerMessageWebSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::ServerMessageWebSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Closed(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Closed(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerMessageWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Closed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Closed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL CloseWithStatus(uint16_t code, void* reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Closed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall CloseWithStatus(uint16_t code, HSTRING reason) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), uint16_t, hstring const&);
             this->shim().Close(code, *reinterpret_cast<hstring const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IServerMessageWebSocketControl> : produce_base<D, Windows::Networking::Sockets::IServerMessageWebSocketControl>
 {
-    HRESULT __stdcall get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
+    int32_t WINRT_CALL get_MessageType(Windows::Networking::Sockets::SocketMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(Windows::Networking::Sockets::SocketMessageType));
             *value = detach_from<Windows::Networking::Sockets::SocketMessageType>(this->shim().MessageType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MessageType(Windows::Networking::Sockets::SocketMessageType value) noexcept final
+    int32_t WINRT_CALL put_MessageType(Windows::Networking::Sockets::SocketMessageType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageType, WINRT_WRAP(void), Windows::Networking::Sockets::SocketMessageType const&);
             this->shim().MessageType(*reinterpret_cast<Windows::Networking::Sockets::SocketMessageType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IServerMessageWebSocketInformation> : produce_base<D, Windows::Networking::Sockets::IServerMessageWebSocketInformation>
 {
-    HRESULT __stdcall get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
+    int32_t WINRT_CALL get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BandwidthStatistics, WINRT_WRAP(Windows::Networking::Sockets::BandwidthStatistics));
             *value = detach_from<Windows::Networking::Sockets::BandwidthStatistics>(this->shim().BandwidthStatistics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Protocol(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Protocol(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Protocol, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Protocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IServerStreamWebSocket> : produce_base<D, Windows::Networking::Sockets::IServerStreamWebSocket>
 {
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::ServerStreamWebSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::ServerStreamWebSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_InputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *value = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().InputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Closed(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Closed(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::ServerStreamWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Closed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Closed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL CloseWithStatus(uint16_t code, void* reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Closed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall CloseWithStatus(uint16_t code, HSTRING reason) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), uint16_t, hstring const&);
             this->shim().Close(code, *reinterpret_cast<hstring const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IServerStreamWebSocketInformation> : produce_base<D, Windows::Networking::Sockets::IServerStreamWebSocketInformation>
 {
-    HRESULT __stdcall get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
+    int32_t WINRT_CALL get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BandwidthStatistics, WINRT_WRAP(Windows::Networking::Sockets::BandwidthStatistics));
             *value = detach_from<Windows::Networking::Sockets::BandwidthStatistics>(this->shim().BandwidthStatistics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Protocol(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Protocol(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Protocol, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Protocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketActivityContext> : produce_base<D, Windows::Networking::Sockets::ISocketActivityContext>
 {
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketActivityContextFactory> : produce_base<D, Windows::Networking::Sockets::ISocketActivityContextFactory>
 {
-    HRESULT __stdcall Create(void* data, void** context) noexcept final
+    int32_t WINRT_CALL Create(void* data, void** context) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Networking::Sockets::SocketActivityContext), Windows::Storage::Streams::IBuffer const&);
             *context = detach_from<Windows::Networking::Sockets::SocketActivityContext>(this->shim().Create(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketActivityInformation> : produce_base<D, Windows::Networking::Sockets::ISocketActivityInformation>
 {
-    HRESULT __stdcall get_TaskId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TaskId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TaskId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TaskId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TaskId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SocketKind(Windows::Networking::Sockets::SocketActivityKind* value) noexcept final
+    int32_t WINRT_CALL get_SocketKind(Windows::Networking::Sockets::SocketActivityKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SocketKind, WINRT_WRAP(Windows::Networking::Sockets::SocketActivityKind));
             *value = detach_from<Windows::Networking::Sockets::SocketActivityKind>(this->shim().SocketKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Context(void** value) noexcept final
+    int32_t WINRT_CALL get_Context(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Context, WINRT_WRAP(Windows::Networking::Sockets::SocketActivityContext));
             *value = detach_from<Windows::Networking::Sockets::SocketActivityContext>(this->shim().Context());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DatagramSocket(void** value) noexcept final
+    int32_t WINRT_CALL get_DatagramSocket(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DatagramSocket, WINRT_WRAP(Windows::Networking::Sockets::DatagramSocket));
             *value = detach_from<Windows::Networking::Sockets::DatagramSocket>(this->shim().DatagramSocket());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StreamSocket(void** value) noexcept final
+    int32_t WINRT_CALL get_StreamSocket(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreamSocket, WINRT_WRAP(Windows::Networking::Sockets::StreamSocket));
             *value = detach_from<Windows::Networking::Sockets::StreamSocket>(this->shim().StreamSocket());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StreamSocketListener(void** value) noexcept final
+    int32_t WINRT_CALL get_StreamSocketListener(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreamSocketListener, WINRT_WRAP(Windows::Networking::Sockets::StreamSocketListener));
             *value = detach_from<Windows::Networking::Sockets::StreamSocketListener>(this->shim().StreamSocketListener());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketActivityInformationStatics> : produce_base<D, Windows::Networking::Sockets::ISocketActivityInformationStatics>
 {
-    HRESULT __stdcall get_AllSockets(void** sockets) noexcept final
+    int32_t WINRT_CALL get_AllSockets(void** sockets) noexcept final
     {
         try
         {
             *sockets = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllSockets, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation>));
             *sockets = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation>>(this->shim().AllSockets());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketActivityTriggerDetails> : produce_base<D, Windows::Networking::Sockets::ISocketActivityTriggerDetails>
 {
-    HRESULT __stdcall get_Reason(Windows::Networking::Sockets::SocketActivityTriggerReason* value) noexcept final
+    int32_t WINRT_CALL get_Reason(Windows::Networking::Sockets::SocketActivityTriggerReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reason, WINRT_WRAP(Windows::Networking::Sockets::SocketActivityTriggerReason));
             *value = detach_from<Windows::Networking::Sockets::SocketActivityTriggerReason>(this->shim().Reason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SocketInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_SocketInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SocketInformation, WINRT_WRAP(Windows::Networking::Sockets::SocketActivityInformation));
             *value = detach_from<Windows::Networking::Sockets::SocketActivityInformation>(this->shim().SocketInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::ISocketErrorStatics> : produce_base<D, Windows::Networking::Sockets::ISocketErrorStatics>
 {
-    HRESULT __stdcall GetStatus(int32_t hresult, Windows::Networking::Sockets::SocketErrorStatus* status) noexcept final
+    int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Networking::Sockets::SocketErrorStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStatus, WINRT_WRAP(Windows::Networking::Sockets::SocketErrorStatus), int32_t);
             *status = detach_from<Windows::Networking::Sockets::SocketErrorStatus>(this->shim().GetStatus(hresult));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocket> : produce_base<D, Windows::Networking::Sockets::IStreamSocket>
 {
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::StreamSocketControl));
             *value = detach_from<Windows::Networking::Sockets::StreamSocketControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::StreamSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::StreamSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_InputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *value = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().InputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectWithEndpointPairAsync(void* endpointPair, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectWithEndpointPairAsync(void* endpointPair, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::EndpointPair const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::EndpointPair const*>(&endpointPair)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectAsync(void* remoteHostName, HSTRING remoteServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectAsync(void* remoteHostName, void* remoteServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectWithEndpointPairAndProtectionLevelAsync(void* endpointPair, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectWithEndpointPairAndProtectionLevelAsync(void* endpointPair, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::EndpointPair const, Windows::Networking::Sockets::SocketProtectionLevel const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::EndpointPair const*>(&endpointPair), *reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectWithProtectionLevelAsync(void* remoteHostName, HSTRING remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectWithProtectionLevelAsync(void* remoteHostName, void* remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const, Windows::Networking::Sockets::SocketProtectionLevel const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName), *reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* validationHostName, void** operation) noexcept final
+    int32_t WINRT_CALL UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* validationHostName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpgradeToSslAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::Sockets::SocketProtectionLevel const, Windows::Networking::HostName const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().UpgradeToSslAsync(*reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel), *reinterpret_cast<Windows::Networking::HostName const*>(&validationHostName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocket2> : produce_base<D, Windows::Networking::Sockets::IStreamSocket2>
 {
-    HRESULT __stdcall ConnectWithProtectionLevelAndAdapterAsync(void* remoteHostName, HSTRING remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* adapter, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectWithProtectionLevelAndAdapterAsync(void* remoteHostName, void* remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* adapter, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const, Windows::Networking::Sockets::SocketProtectionLevel const, Windows::Networking::Connectivity::NetworkAdapter const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName), *reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel), *reinterpret_cast<Windows::Networking::Connectivity::NetworkAdapter const*>(&adapter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocket3> : produce_base<D, Windows::Networking::Sockets::IStreamSocket3>
 {
-    HRESULT __stdcall CancelIOAsync(void** operation) noexcept final
+    int32_t WINRT_CALL CancelIOAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelIOAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().CancelIOAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnership(GUID taskId) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnership(winrt::guid taskId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnershipWithConnectedStandbyAction(winrt::guid taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnership(HSTRING socketId) noexcept final
+    int32_t WINRT_CALL TransferOwnership(void* socketId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnershipWithContext(HSTRING socketId, void* data) noexcept final
+    int32_t WINRT_CALL TransferOwnershipWithContext(void* socketId, void* data) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&, Windows::Networking::Sockets::SocketActivityContext const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityContext const*>(&data));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, void* data, Windows::Foundation::TimeSpan keepAliveTime) noexcept final
+    int32_t WINRT_CALL TransferOwnershipWithContextAndKeepAliveTime(void* socketId, void* data, Windows::Foundation::TimeSpan keepAliveTime) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&, Windows::Networking::Sockets::SocketActivityContext const&, Windows::Foundation::TimeSpan const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityContext const*>(&data), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&keepAliveTime));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketControl> : produce_base<D, Windows::Networking::Sockets::IStreamSocketControl>
 {
-    HRESULT __stdcall get_NoDelay(bool* value) noexcept final
+    int32_t WINRT_CALL get_NoDelay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NoDelay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NoDelay(bool value) noexcept final
+    int32_t WINRT_CALL put_NoDelay(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(void), bool);
             this->shim().NoDelay(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeepAlive(bool* value) noexcept final
+    int32_t WINRT_CALL get_KeepAlive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepAlive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().KeepAlive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KeepAlive(bool value) noexcept final
+    int32_t WINRT_CALL put_KeepAlive(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepAlive, WINRT_WRAP(void), bool);
             this->shim().KeepAlive(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().OutboundBufferSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(void), uint32_t);
             this->shim().OutboundBufferSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
+    int32_t WINRT_CALL get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(Windows::Networking::Sockets::SocketQualityOfService));
             *value = detach_from<Windows::Networking::Sockets::SocketQualityOfService>(this->shim().QualityOfService());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
+    int32_t WINRT_CALL put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(void), Windows::Networking::Sockets::SocketQualityOfService const&);
             this->shim().QualityOfService(*reinterpret_cast<Windows::Networking::Sockets::SocketQualityOfService const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().OutboundUnicastHopLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundUnicastHopLimit(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(void), uint8_t);
             this->shim().OutboundUnicastHopLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketControl2> : produce_base<D, Windows::Networking::Sockets::IStreamSocketControl2>
 {
-    HRESULT __stdcall get_IgnorableServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_IgnorableServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IgnorableServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().IgnorableServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketControl3> : produce_base<D, Windows::Networking::Sockets::IStreamSocketControl3>
 {
-    HRESULT __stdcall get_SerializeConnectionAttempts(bool* value) noexcept final
+    int32_t WINRT_CALL get_SerializeConnectionAttempts(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SerializeConnectionAttempts, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SerializeConnectionAttempts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SerializeConnectionAttempts(bool value) noexcept final
+    int32_t WINRT_CALL put_SerializeConnectionAttempts(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SerializeConnectionAttempts, WINRT_WRAP(void), bool);
             this->shim().SerializeConnectionAttempts(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ClientCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ClientCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClientCertificate(void* value) noexcept final
+    int32_t WINRT_CALL put_ClientCertificate(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(void), Windows::Security::Cryptography::Certificates::Certificate const&);
             this->shim().ClientCertificate(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketControl4> : produce_base<D, Windows::Networking::Sockets::IStreamSocketControl4>
 {
-    HRESULT __stdcall get_MinProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_MinProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinProtectionLevel, WINRT_WRAP(Windows::Networking::Sockets::SocketProtectionLevel));
             *value = detach_from<Windows::Networking::Sockets::SocketProtectionLevel>(this->shim().MinProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_MinProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinProtectionLevel, WINRT_WRAP(void), Windows::Networking::Sockets::SocketProtectionLevel const&);
             this->shim().MinProtectionLevel(*reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation> : produce_base<D, Windows::Networking::Sockets::IStreamSocketInformation>
 {
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalPort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LocalPort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalPort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LocalPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteHostName(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteHostName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteHostName, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().RemoteHostName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().RemoteAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteServiceName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteServiceName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteServiceName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteServiceName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemotePort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemotePort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemotePort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemotePort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoundTripTimeStatistics(struct struct_Windows_Networking_Sockets_RoundTripTimeStatistics* value) noexcept final
+    int32_t WINRT_CALL get_RoundTripTimeStatistics(struct struct_Windows_Networking_Sockets_RoundTripTimeStatistics* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundTripTimeStatistics, WINRT_WRAP(Windows::Networking::Sockets::RoundTripTimeStatistics));
             *value = detach_from<Windows::Networking::Sockets::RoundTripTimeStatistics>(this->shim().RoundTripTimeStatistics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
+    int32_t WINRT_CALL get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BandwidthStatistics, WINRT_WRAP(Windows::Networking::Sockets::BandwidthStatistics));
             *value = detach_from<Windows::Networking::Sockets::BandwidthStatistics>(this->shim().BandwidthStatistics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(Windows::Networking::Sockets::SocketProtectionLevel));
             *value = detach_from<Windows::Networking::Sockets::SocketProtectionLevel>(this->shim().ProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SessionKey(void** value) noexcept final
+    int32_t WINRT_CALL get_SessionKey(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SessionKey, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().SessionKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketInformation2> : produce_base<D, Windows::Networking::Sockets::IStreamSocketInformation2>
 {
-    HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrorSeverity, WINRT_WRAP(Windows::Networking::Sockets::SocketSslErrorSeverity));
             *value = detach_from<Windows::Networking::Sockets::SocketSslErrorSeverity>(this->shim().ServerCertificateErrorSeverity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().ServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ServerCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerIntermediateCertificates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().ServerIntermediateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListener> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListener>
 {
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::StreamSocketListenerControl));
             *value = detach_from<Windows::Networking::Sockets::StreamSocketListenerControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::StreamSocketListenerInformation));
             *value = detach_from<Windows::Networking::Sockets::StreamSocketListenerInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindServiceNameAsync(HSTRING localServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL BindServiceNameAsync(void* localServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindServiceNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindServiceNameAsync(*reinterpret_cast<hstring const*>(&localServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindEndpointAsync(void* localHostName, HSTRING localServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL BindEndpointAsync(void* localHostName, void* localServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindEndpointAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindEndpointAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&localHostName), *reinterpret_cast<hstring const*>(&localServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ConnectionReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_ConnectionReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().ConnectionReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ConnectionReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().ConnectionReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ConnectionReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_ConnectionReceived(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ConnectionReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ConnectionReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ConnectionReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListener2> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListener2>
 {
-    HRESULT __stdcall BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
+    int32_t WINRT_CALL BindServiceNameWithProtectionLevelAsync(void* localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindServiceNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, Windows::Networking::Sockets::SocketProtectionLevel const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindServiceNameAsync(*reinterpret_cast<hstring const*>(&localServiceName), *reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindServiceNameWithProtectionLevelAndAdapterAsync(HSTRING localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* adapter, void** operation) noexcept final
+    int32_t WINRT_CALL BindServiceNameWithProtectionLevelAndAdapterAsync(void* localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, void* adapter, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BindServiceNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, Windows::Networking::Sockets::SocketProtectionLevel const, Windows::Networking::Connectivity::NetworkAdapter const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BindServiceNameAsync(*reinterpret_cast<hstring const*>(&localServiceName), *reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&protectionLevel), *reinterpret_cast<Windows::Networking::Connectivity::NetworkAdapter const*>(&adapter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListener3> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListener3>
 {
-    HRESULT __stdcall CancelIOAsync(void** operation) noexcept final
+    int32_t WINRT_CALL CancelIOAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelIOAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().CancelIOAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnership(GUID taskId) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnership(winrt::guid taskId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
+    int32_t WINRT_CALL EnableTransferOwnershipWithConnectedStandbyAction(winrt::guid taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnableTransferOwnership(*reinterpret_cast<GUID const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnableTransferOwnership, WINRT_WRAP(void), winrt::guid const&, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const&);
+            this->shim().EnableTransferOwnership(*reinterpret_cast<winrt::guid const*>(&taskId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityConnectedStandbyAction const*>(&connectedStandbyAction));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnership(HSTRING socketId) noexcept final
+    int32_t WINRT_CALL TransferOwnership(void* socketId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferOwnershipWithContext(HSTRING socketId, void* data) noexcept final
+    int32_t WINRT_CALL TransferOwnershipWithContext(void* socketId, void* data) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferOwnership, WINRT_WRAP(void), hstring const&, Windows::Networking::Sockets::SocketActivityContext const&);
             this->shim().TransferOwnership(*reinterpret_cast<hstring const*>(&socketId), *reinterpret_cast<Windows::Networking::Sockets::SocketActivityContext const*>(&data));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerConnectionReceivedEventArgs> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListenerConnectionReceivedEventArgs>
 {
-    HRESULT __stdcall get_Socket(void** value) noexcept final
+    int32_t WINRT_CALL get_Socket(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Socket, WINRT_WRAP(Windows::Networking::Sockets::StreamSocket));
             *value = detach_from<Windows::Networking::Sockets::StreamSocket>(this->shim().Socket());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListenerControl>
 {
-    HRESULT __stdcall get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
+    int32_t WINRT_CALL get_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(Windows::Networking::Sockets::SocketQualityOfService));
             *value = detach_from<Windows::Networking::Sockets::SocketQualityOfService>(this->shim().QualityOfService());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
+    int32_t WINRT_CALL put_QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QualityOfService, WINRT_WRAP(void), Windows::Networking::Sockets::SocketQualityOfService const&);
             this->shim().QualityOfService(*reinterpret_cast<Windows::Networking::Sockets::SocketQualityOfService const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerControl2> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListenerControl2>
 {
-    HRESULT __stdcall get_NoDelay(bool* value) noexcept final
+    int32_t WINRT_CALL get_NoDelay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NoDelay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NoDelay(bool value) noexcept final
+    int32_t WINRT_CALL put_NoDelay(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(void), bool);
             this->shim().NoDelay(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeepAlive(bool* value) noexcept final
+    int32_t WINRT_CALL get_KeepAlive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepAlive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().KeepAlive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KeepAlive(bool value) noexcept final
+    int32_t WINRT_CALL put_KeepAlive(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepAlive, WINRT_WRAP(void), bool);
             this->shim().KeepAlive(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().OutboundBufferSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(void), uint32_t);
             this->shim().OutboundBufferSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundUnicastHopLimit(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().OutboundUnicastHopLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundUnicastHopLimit(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundUnicastHopLimit(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundUnicastHopLimit, WINRT_WRAP(void), uint8_t);
             this->shim().OutboundUnicastHopLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketListenerInformation> : produce_base<D, Windows::Networking::Sockets::IStreamSocketListenerInformation>
 {
-    HRESULT __stdcall get_LocalPort(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LocalPort(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalPort, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LocalPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamSocketStatics> : produce_base<D, Windows::Networking::Sockets::IStreamSocketStatics>
 {
-    HRESULT __stdcall GetEndpointPairsAsync(void* remoteHostName, HSTRING remoteServiceName, void** operation) noexcept final
+    int32_t WINRT_CALL GetEndpointPairsAsync(void* remoteHostName, void* remoteServiceName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEndpointPairsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>), Windows::Networking::HostName const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>>(this->shim().GetEndpointPairsAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEndpointPairsWithSortOptionsAsync(void* remoteHostName, HSTRING remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions, void** operation) noexcept final
+    int32_t WINRT_CALL GetEndpointPairsWithSortOptionsAsync(void* remoteHostName, void* remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEndpointPairsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>), Windows::Networking::HostName const, hstring const, Windows::Networking::HostNameSortOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>>>(this->shim().GetEndpointPairsAsync(*reinterpret_cast<Windows::Networking::HostName const*>(&remoteHostName), *reinterpret_cast<hstring const*>(&remoteServiceName), *reinterpret_cast<Windows::Networking::HostNameSortOptions const*>(&sortOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamWebSocket> : produce_base<D, Windows::Networking::Sockets::IStreamWebSocket>
 {
-    HRESULT __stdcall get_Control(void** value) noexcept final
+    int32_t WINRT_CALL get_Control(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control, WINRT_WRAP(Windows::Networking::Sockets::StreamWebSocketControl));
             *value = detach_from<Windows::Networking::Sockets::StreamWebSocketControl>(this->shim().Control());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Information(void** value) noexcept final
+    int32_t WINRT_CALL get_Information(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Information, WINRT_WRAP(Windows::Networking::Sockets::StreamWebSocketInformation));
             *value = detach_from<Windows::Networking::Sockets::StreamWebSocketInformation>(this->shim().Information());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_InputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputStream, WINRT_WRAP(Windows::Storage::Streams::IInputStream));
             *value = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().InputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamWebSocket2> : produce_base<D, Windows::Networking::Sockets::IStreamWebSocket2>
 {
-    HRESULT __stdcall add_ServerCustomValidationRequested(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_ServerCustomValidationRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().ServerCustomValidationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServerCustomValidationRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().ServerCustomValidationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ServerCustomValidationRequested(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_ServerCustomValidationRequested(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ServerCustomValidationRequested(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ServerCustomValidationRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ServerCustomValidationRequested(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamWebSocketControl> : produce_base<D, Windows::Networking::Sockets::IStreamWebSocketControl>
 {
-    HRESULT __stdcall get_NoDelay(bool* value) noexcept final
+    int32_t WINRT_CALL get_NoDelay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NoDelay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NoDelay(bool value) noexcept final
+    int32_t WINRT_CALL put_NoDelay(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoDelay, WINRT_WRAP(void), bool);
             this->shim().NoDelay(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IStreamWebSocketControl2> : produce_base<D, Windows::Networking::Sockets::IStreamWebSocketControl2>
 {
-    HRESULT __stdcall get_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredUnsolicitedPongInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DesiredUnsolicitedPongInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_DesiredUnsolicitedPongInterval(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredUnsolicitedPongInterval, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().DesiredUnsolicitedPongInterval(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActualUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_ActualUnsolicitedPongInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActualUnsolicitedPongInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().ActualUnsolicitedPongInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ClientCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ClientCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClientCertificate(void* value) noexcept final
+    int32_t WINRT_CALL put_ClientCertificate(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCertificate, WINRT_WRAP(void), Windows::Security::Cryptography::Certificates::Certificate const&);
             this->shim().ClientCertificate(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocket> : produce_base<D, Windows::Networking::Sockets::IWebSocket>
 {
-    HRESULT __stdcall get_OutputStream(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputStream, WINRT_WRAP(Windows::Storage::Streams::IOutputStream));
             *value = detach_from<Windows::Storage::Streams::IOutputStream>(this->shim().OutputStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConnectAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL ConnectAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConnectAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRequestHeader(HSTRING headerName, HSTRING headerValue) noexcept final
+    int32_t WINRT_CALL SetRequestHeader(void* headerName, void* headerValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRequestHeader, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().SetRequestHeader(*reinterpret_cast<hstring const*>(&headerName), *reinterpret_cast<hstring const*>(&headerValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Closed(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_Closed(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().Closed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Closed(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_Closed(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closed(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL CloseWithStatus(uint16_t code, void* reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Closed(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall CloseWithStatus(uint16_t code, HSTRING reason) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), uint16_t, hstring const&);
             this->shim().Close(code, *reinterpret_cast<hstring const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketClosedEventArgs> : produce_base<D, Windows::Networking::Sockets::IWebSocketClosedEventArgs>
 {
-    HRESULT __stdcall get_Code(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Code(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Code, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Code());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Reason(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Reason(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reason, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Reason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketControl> : produce_base<D, Windows::Networking::Sockets::IWebSocketControl>
 {
-    HRESULT __stdcall get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_OutboundBufferSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().OutboundBufferSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_OutboundBufferSizeInBytes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundBufferSizeInBytes, WINRT_WRAP(void), uint32_t);
             this->shim().OutboundBufferSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ServerCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServerCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_ServerCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ServerCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProxyCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_ProxyCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ProxyCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProxyCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_ProxyCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ProxyCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedProtocols(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedProtocols(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedProtocols, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().SupportedProtocols());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketControl2> : produce_base<D, Windows::Networking::Sockets::IWebSocketControl2>
 {
-    HRESULT __stdcall get_IgnorableServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_IgnorableServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IgnorableServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().IgnorableServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketErrorStatics> : produce_base<D, Windows::Networking::Sockets::IWebSocketErrorStatics>
 {
-    HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept final
+    int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStatus, WINRT_WRAP(Windows::Web::WebErrorStatus), int32_t);
             *status = detach_from<Windows::Web::WebErrorStatus>(this->shim().GetStatus(hresult));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketInformation> : produce_base<D, Windows::Networking::Sockets::IWebSocketInformation>
 {
-    HRESULT __stdcall get_LocalAddress(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalAddress, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().LocalAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
+    int32_t WINRT_CALL get_BandwidthStatistics(struct struct_Windows_Networking_Sockets_BandwidthStatistics* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BandwidthStatistics, WINRT_WRAP(Windows::Networking::Sockets::BandwidthStatistics));
             *value = detach_from<Windows::Networking::Sockets::BandwidthStatistics>(this->shim().BandwidthStatistics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Protocol(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Protocol(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Protocol, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Protocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketInformation2> : produce_base<D, Windows::Networking::Sockets::IWebSocketInformation2>
 {
-    HRESULT __stdcall get_ServerCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ServerCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrorSeverity, WINRT_WRAP(Windows::Networking::Sockets::SocketSslErrorSeverity));
             *value = detach_from<Windows::Networking::Sockets::SocketSslErrorSeverity>(this->shim().ServerCertificateErrorSeverity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().ServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerIntermediateCertificates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().ServerIntermediateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidationRequestedEventArgs> : produce_base<D, Windows::Networking::Sockets::IWebSocketServerCustomValidationRequestedEventArgs>
 {
-    HRESULT __stdcall get_ServerCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ServerCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrorSeverity, WINRT_WRAP(Windows::Networking::Sockets::SocketSslErrorSeverity));
             *value = detach_from<Windows::Networking::Sockets::SocketSslErrorSeverity>(this->shim().ServerCertificateErrorSeverity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().ServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerIntermediateCertificates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().ServerIntermediateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Reject() noexcept final
+    int32_t WINRT_CALL Reject() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reject, WINRT_WRAP(void));
             this->shim().Reject();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5171,74 +4671,74 @@ struct produce<D, Windows::Networking::Sockets::IWebSocketServerCustomValidation
 WINRT_EXPORT namespace winrt::Windows::Networking::Sockets {
 
 inline ControlChannelTrigger::ControlChannelTrigger(param::hstring const& channelId, uint32_t serverKeepAliveIntervalInMinutes) :
-    ControlChannelTrigger(get_activation_factory<ControlChannelTrigger, Windows::Networking::Sockets::IControlChannelTriggerFactory>().CreateControlChannelTrigger(channelId, serverKeepAliveIntervalInMinutes))
+    ControlChannelTrigger(impl::call_factory<ControlChannelTrigger, Windows::Networking::Sockets::IControlChannelTriggerFactory>([&](auto&& f) { return f.CreateControlChannelTrigger(channelId, serverKeepAliveIntervalInMinutes); }))
 {}
 
 inline ControlChannelTrigger::ControlChannelTrigger(param::hstring const& channelId, uint32_t serverKeepAliveIntervalInMinutes, Windows::Networking::Sockets::ControlChannelTriggerResourceType const& resourceRequestType) :
-    ControlChannelTrigger(get_activation_factory<ControlChannelTrigger, Windows::Networking::Sockets::IControlChannelTriggerFactory>().CreateControlChannelTriggerEx(channelId, serverKeepAliveIntervalInMinutes, resourceRequestType))
+    ControlChannelTrigger(impl::call_factory<ControlChannelTrigger, Windows::Networking::Sockets::IControlChannelTriggerFactory>([&](auto&& f) { return f.CreateControlChannelTriggerEx(channelId, serverKeepAliveIntervalInMinutes, resourceRequestType); }))
 {}
 
 inline DatagramSocket::DatagramSocket() :
-    DatagramSocket(get_activation_factory<DatagramSocket>().ActivateInstance<DatagramSocket>())
+    DatagramSocket(impl::call_factory<DatagramSocket>([](auto&& f) { return f.template ActivateInstance<DatagramSocket>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(Windows::Networking::HostName const& remoteHostName, param::hstring const& remoteServiceName)
 {
-    return get_activation_factory<DatagramSocket, Windows::Networking::Sockets::IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
+    return impl::call_factory<DatagramSocket, Windows::Networking::Sockets::IDatagramSocketStatics>([&](auto&& f) { return f.GetEndpointPairsAsync(remoteHostName, remoteServiceName); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> DatagramSocket::GetEndpointPairsAsync(Windows::Networking::HostName const& remoteHostName, param::hstring const& remoteServiceName, Windows::Networking::HostNameSortOptions const& sortOptions)
 {
-    return get_activation_factory<DatagramSocket, Windows::Networking::Sockets::IDatagramSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
+    return impl::call_factory<DatagramSocket, Windows::Networking::Sockets::IDatagramSocketStatics>([&](auto&& f) { return f.GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions); });
 }
 
 inline MessageWebSocket::MessageWebSocket() :
-    MessageWebSocket(get_activation_factory<MessageWebSocket>().ActivateInstance<MessageWebSocket>())
+    MessageWebSocket(impl::call_factory<MessageWebSocket>([](auto&& f) { return f.template ActivateInstance<MessageWebSocket>(); }))
 {}
 
 inline SocketActivityContext::SocketActivityContext(Windows::Storage::Streams::IBuffer const& data) :
-    SocketActivityContext(get_activation_factory<SocketActivityContext, Windows::Networking::Sockets::ISocketActivityContextFactory>().Create(data))
+    SocketActivityContext(impl::call_factory<SocketActivityContext, Windows::Networking::Sockets::ISocketActivityContextFactory>([&](auto&& f) { return f.Create(data); }))
 {}
 
 inline Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> SocketActivityInformation::AllSockets()
 {
-    return get_activation_factory<SocketActivityInformation, Windows::Networking::Sockets::ISocketActivityInformationStatics>().AllSockets();
+    return impl::call_factory<SocketActivityInformation, Windows::Networking::Sockets::ISocketActivityInformationStatics>([&](auto&& f) { return f.AllSockets(); });
 }
 
 inline Windows::Networking::Sockets::SocketErrorStatus SocketError::GetStatus(int32_t hresult)
 {
-    return get_activation_factory<SocketError, Windows::Networking::Sockets::ISocketErrorStatics>().GetStatus(hresult);
+    return impl::call_factory<SocketError, Windows::Networking::Sockets::ISocketErrorStatics>([&](auto&& f) { return f.GetStatus(hresult); });
 }
 
 inline StreamSocket::StreamSocket() :
-    StreamSocket(get_activation_factory<StreamSocket>().ActivateInstance<StreamSocket>())
+    StreamSocket(impl::call_factory<StreamSocket>([](auto&& f) { return f.template ActivateInstance<StreamSocket>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(Windows::Networking::HostName const& remoteHostName, param::hstring const& remoteServiceName)
 {
-    return get_activation_factory<StreamSocket, Windows::Networking::Sockets::IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName);
+    return impl::call_factory<StreamSocket, Windows::Networking::Sockets::IStreamSocketStatics>([&](auto&& f) { return f.GetEndpointPairsAsync(remoteHostName, remoteServiceName); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> StreamSocket::GetEndpointPairsAsync(Windows::Networking::HostName const& remoteHostName, param::hstring const& remoteServiceName, Windows::Networking::HostNameSortOptions const& sortOptions)
 {
-    return get_activation_factory<StreamSocket, Windows::Networking::Sockets::IStreamSocketStatics>().GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions);
+    return impl::call_factory<StreamSocket, Windows::Networking::Sockets::IStreamSocketStatics>([&](auto&& f) { return f.GetEndpointPairsAsync(remoteHostName, remoteServiceName, sortOptions); });
 }
 
 inline StreamSocketListener::StreamSocketListener() :
-    StreamSocketListener(get_activation_factory<StreamSocketListener>().ActivateInstance<StreamSocketListener>())
+    StreamSocketListener(impl::call_factory<StreamSocketListener>([](auto&& f) { return f.template ActivateInstance<StreamSocketListener>(); }))
 {}
 
 inline StreamWebSocket::StreamWebSocket() :
-    StreamWebSocket(get_activation_factory<StreamWebSocket>().ActivateInstance<StreamWebSocket>())
+    StreamWebSocket(impl::call_factory<StreamWebSocket>([](auto&& f) { return f.template ActivateInstance<StreamWebSocket>(); }))
 {}
 
 inline Windows::Web::WebErrorStatus WebSocketError::GetStatus(int32_t hresult)
 {
-    return get_activation_factory<WebSocketError, Windows::Networking::Sockets::IWebSocketErrorStatics>().GetStatus(hresult);
+    return impl::call_factory<WebSocketError, Windows::Networking::Sockets::IWebSocketErrorStatics>([&](auto&& f) { return f.GetStatus(hresult); });
 }
 
 inline WebSocketKeepAlive::WebSocketKeepAlive() :
-    WebSocketKeepAlive(get_activation_factory<WebSocketKeepAlive>().ActivateInstance<WebSocketKeepAlive>())
+    WebSocketKeepAlive(impl::call_factory<WebSocketKeepAlive>([](auto&& f) { return f.template ActivateInstance<WebSocketKeepAlive>(); }))
 {}
 
 }
@@ -5340,5 +4840,3 @@ template<> struct hash<winrt::Windows::Networking::Sockets::WebSocketKeepAlive> 
 template<> struct hash<winrt::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> : winrt::impl::hash_base<winrt::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

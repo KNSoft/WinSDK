@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.CommunicationBlocking.2.h"
@@ -74,140 +74,122 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
 template <typename D>
 struct produce<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics> : produce_base<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>
 {
-    HRESULT __stdcall get_IsBlockingActive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBlockingActive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBlockingActive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBlockingActive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsBlockedNumberAsync(HSTRING number, void** result) noexcept final
+    int32_t WINRT_CALL IsBlockedNumberAsync(void* number, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBlockedNumberAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsBlockedNumberAsync(*reinterpret_cast<hstring const*>(&number)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowBlockNumbersUI(void* phoneNumbers, bool* value) noexcept final
+    int32_t WINRT_CALL ShowBlockNumbersUI(void* phoneNumbers, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowBlockNumbersUI, WINRT_WRAP(bool), Windows::Foundation::Collections::IIterable<hstring> const&);
             *value = detach_from<bool>(this->shim().ShowBlockNumbersUI(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&phoneNumbers)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowUnblockNumbersUI(void* phoneNumbers, bool* value) noexcept final
+    int32_t WINRT_CALL ShowUnblockNumbersUI(void* phoneNumbers, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowUnblockNumbersUI, WINRT_WRAP(bool), Windows::Foundation::Collections::IIterable<hstring> const&);
             *value = detach_from<bool>(this->shim().ShowUnblockNumbersUI(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&phoneNumbers)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowBlockedCallsUI() noexcept final
+    int32_t WINRT_CALL ShowBlockedCallsUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowBlockedCallsUI, WINRT_WRAP(void));
             this->shim().ShowBlockedCallsUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowBlockedMessagesUI() noexcept final
+    int32_t WINRT_CALL ShowBlockedMessagesUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowBlockedMessagesUI, WINRT_WRAP(void));
             this->shim().ShowBlockedMessagesUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics> : produce_base<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics>
 {
-    HRESULT __stdcall get_IsCurrentAppActiveBlockingApp(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCurrentAppActiveBlockingApp(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCurrentAppActiveBlockingApp, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCurrentAppActiveBlockingApp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowCommunicationBlockingSettingsUI() noexcept final
+    int32_t WINRT_CALL ShowCommunicationBlockingSettingsUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowCommunicationBlockingSettingsUI, WINRT_WRAP(void));
             this->shim().ShowCommunicationBlockingSettingsUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics2> : produce_base<D, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics2>
 {
-    HRESULT __stdcall RequestSetAsActiveBlockingAppAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestSetAsActiveBlockingAppAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestSetAsActiveBlockingAppAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestSetAsActiveBlockingAppAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -217,47 +199,47 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::CommunicationBlocking {
 
 inline bool CommunicationBlockingAccessManager::IsBlockingActive()
 {
-    return get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().IsBlockingActive();
+    return impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.IsBlockingActive(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> CommunicationBlockingAccessManager::IsBlockedNumberAsync(param::hstring const& number)
 {
-    return get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().IsBlockedNumberAsync(number);
+    return impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.IsBlockedNumberAsync(number); });
 }
 
 inline bool CommunicationBlockingAccessManager::ShowBlockNumbersUI(param::iterable<hstring> const& phoneNumbers)
 {
-    return get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().ShowBlockNumbersUI(phoneNumbers);
+    return impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.ShowBlockNumbersUI(phoneNumbers); });
 }
 
 inline bool CommunicationBlockingAccessManager::ShowUnblockNumbersUI(param::iterable<hstring> const& phoneNumbers)
 {
-    return get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().ShowUnblockNumbersUI(phoneNumbers);
+    return impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.ShowUnblockNumbersUI(phoneNumbers); });
 }
 
 inline void CommunicationBlockingAccessManager::ShowBlockedCallsUI()
 {
-    get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().ShowBlockedCallsUI();
+    impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.ShowBlockedCallsUI(); });
 }
 
 inline void CommunicationBlockingAccessManager::ShowBlockedMessagesUI()
 {
-    get_activation_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>().ShowBlockedMessagesUI();
+    impl::call_factory<CommunicationBlockingAccessManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAccessManagerStatics>([&](auto&& f) { return f.ShowBlockedMessagesUI(); });
 }
 
 inline bool CommunicationBlockingAppManager::IsCurrentAppActiveBlockingApp()
 {
-    return get_activation_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics>().IsCurrentAppActiveBlockingApp();
+    return impl::call_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics>([&](auto&& f) { return f.IsCurrentAppActiveBlockingApp(); });
 }
 
 inline void CommunicationBlockingAppManager::ShowCommunicationBlockingSettingsUI()
 {
-    get_activation_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics>().ShowCommunicationBlockingSettingsUI();
+    impl::call_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics>([&](auto&& f) { return f.ShowCommunicationBlockingSettingsUI(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> CommunicationBlockingAppManager::RequestSetAsActiveBlockingAppAsync()
 {
-    return get_activation_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics2>().RequestSetAsActiveBlockingAppAsync();
+    return impl::call_factory<CommunicationBlockingAppManager, Windows::ApplicationModel::CommunicationBlocking::ICommunicationBlockingAppManagerStatics2>([&](auto&& f) { return f.RequestSetAsActiveBlockingAppAsync(); });
 }
 
 }
@@ -271,5 +253,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::CommunicationBlocking::
 template<> struct hash<winrt::Windows::ApplicationModel::CommunicationBlocking::CommunicationBlockingAppManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::CommunicationBlocking::CommunicationBlockingAppManager> {};
 
 }
-
-WINRT_WARNING_POP

@@ -921,6 +921,24 @@ typedef struct DXGIDDICB_SUBMITPRESENTBLTTOHWQUEUE
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
+typedef struct DXGIDDICB_SUBMITPRESENTTOHWQUEUE
+{
+    void *                      pDXGIContext;               // opaque: Fill this with the value in DXGI_DDI_ARG_PRESENT.pDXGIContext
+    _Field_size_(BroadcastHwQueueCount)
+    D3DKMT_HANDLE*              BroadcastSrcAllocations;    // in: allocations which content will be presented
+    _Field_size_opt_(BroadcastHwQueueCount)
+    D3DKMT_HANDLE*              BroadcastDstAllocations;    // in: if non-zero, it's the destination allocations of the present
+    HANDLE*                     hHwQueues;                  // in: hardware queues being submitted to.
+    UINT                        BroadcastHwQueueCount;      // in: the number of broadcast hardware queues
+    UINT                        PrivateDriverDataSize;      // in: private driver data size in bytes
+    _Field_size_bytes_(PrivateDriverDataSize)
+    PVOID                       pPrivateDriverData;         // in: private driver data to pass to DdiPresent
+} DXGIDDICB_SUBMITPRESENTTOHWQUEUE;
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
 
 
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_PRESENTCB)(
@@ -943,6 +961,13 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_SUBMITPRESENTBLTT
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFNDDXGIDDI_SUBMITPRESENTTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _In_ DXGIDDICB_SUBMITPRESENTTOHWQUEUE*);
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
 //--------------------------------------------------------------------------------------------------------
 typedef struct DXGI_DDI_BASE_CALLBACKS
 {
@@ -959,6 +984,10 @@ typedef struct DXGI_DDI_BASE_CALLBACKS
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
     PFNDDXGIDDI_SUBMITPRESENTBLTTOHWQUEUECB pfnSubmitPresentBltToHwQueueCb;
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+    PFNDDXGIDDI_SUBMITPRESENTTOHWQUEUECB pfnSubmitPresentToHwQueueCb;
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
 } DXGI_DDI_BASE_CALLBACKS;
 
 //========================================================================================================

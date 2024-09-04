@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Adc.Provider.2.h"
@@ -88,163 +88,141 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 template <typename D>
 struct produce<D, Windows::Devices::Adc::Provider::IAdcControllerProvider> : produce_base<D, Windows::Devices::Adc::Provider::IAdcControllerProvider>
 {
-    HRESULT __stdcall get_ChannelCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ChannelCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ChannelCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolutionInBits(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ResolutionInBits(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolutionInBits, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ResolutionInBits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinValue(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinValue(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinValue, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MinValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxValue(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxValue(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxValue, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MaxValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode* value) noexcept final
+    int32_t WINRT_CALL get_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelMode, WINRT_WRAP(Windows::Devices::Adc::Provider::ProviderAdcChannelMode));
             *value = detach_from<Windows::Devices::Adc::Provider::ProviderAdcChannelMode>(this->shim().ChannelMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) noexcept final
+    int32_t WINRT_CALL put_ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelMode, WINRT_WRAP(void), Windows::Devices::Adc::Provider::ProviderAdcChannelMode const&);
             this->shim().ChannelMode(*reinterpret_cast<Windows::Devices::Adc::Provider::ProviderAdcChannelMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode, bool* result) noexcept final
+    int32_t WINRT_CALL IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsChannelModeSupported, WINRT_WRAP(bool), Windows::Devices::Adc::Provider::ProviderAdcChannelMode const&);
             *result = detach_from<bool>(this->shim().IsChannelModeSupported(*reinterpret_cast<Windows::Devices::Adc::Provider::ProviderAdcChannelMode const*>(&channelMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AcquireChannel(int32_t channel) noexcept final
+    int32_t WINRT_CALL AcquireChannel(int32_t channel) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcquireChannel, WINRT_WRAP(void), int32_t);
             this->shim().AcquireChannel(channel);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReleaseChannel(int32_t channel) noexcept final
+    int32_t WINRT_CALL ReleaseChannel(int32_t channel) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReleaseChannel, WINRT_WRAP(void), int32_t);
             this->shim().ReleaseChannel(channel);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadValue(int32_t channelNumber, int32_t* result) noexcept final
+    int32_t WINRT_CALL ReadValue(int32_t channelNumber, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadValue, WINRT_WRAP(int32_t), int32_t);
             *result = detach_from<int32_t>(this->shim().ReadValue(channelNumber));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Adc::Provider::IAdcProvider> : produce_base<D, Windows::Devices::Adc::Provider::IAdcProvider>
 {
-    HRESULT __stdcall GetControllers(void** result) noexcept final
+    int32_t WINRT_CALL GetControllers(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetControllers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider>));
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider>>(this->shim().GetControllers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -260,5 +238,3 @@ template<> struct hash<winrt::Windows::Devices::Adc::Provider::IAdcControllerPro
 template<> struct hash<winrt::Windows::Devices::Adc::Provider::IAdcProvider> : winrt::impl::hash_base<winrt::Windows::Devices::Adc::Provider::IAdcProvider> {};
 
 }
-
-WINRT_WARNING_POP

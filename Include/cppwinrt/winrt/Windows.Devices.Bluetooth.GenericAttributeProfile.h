@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Bluetooth.2.h"
@@ -18,7 +18,7 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::GetDescriptors(GUID const& descriptorUuid) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::GetDescriptors(winrt::guid const& descriptorUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic)->GetDescriptors(get_abi(descriptorUuid), put_abi(value)));
@@ -51,9 +51,9 @@ template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttribute
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic)->get_Uuid(put_abi(value)));
     return value;
 }
@@ -114,21 +114,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return asyncOp;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const& valueChangedHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const& valueChangedHandler) const
 {
-    event_token valueChangedEventCookie{};
+    winrt::event_token valueChangedEventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic)->add_ValueChanged(get_abi(valueChangedHandler), put_abi(valueChangedEventCookie)));
     return valueChangedEventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const& valueChangedHandler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const& valueChangedHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>::remove_ValueChanged, ValueChanged(valueChangedHandler));
+    return impl::make_event_revoker<D, ValueChanged_revoker>(this, ValueChanged(valueChangedHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(event_token const& valueChangedEventCookie) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic<D>::ValueChanged(winrt::event_token const& valueChangedEventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic)->remove_ValueChanged(get_abi(valueChangedEventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic)->remove_ValueChanged(get_abi(valueChangedEventCookie)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic2<D>::Service() const
@@ -159,14 +159,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic3<D>::GetDescriptorsForUuidAsync(GUID const& descriptorUuid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic3<D>::GetDescriptorsForUuidAsync(winrt::guid const& descriptorUuid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic3)->GetDescriptorsForUuidAsync(get_abi(descriptorUuid), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic3<D>::GetDescriptorsForUuidAsync(GUID const& descriptorUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristic3<D>::GetDescriptorsForUuidAsync(winrt::guid const& descriptorUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic3)->GetDescriptorsForUuidWithCacheModeAsync(get_abi(descriptorUuid), get_abi(cacheMode), put_abi(operation)));
@@ -194,576 +194,576 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return operation;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
-    GUID characteristicUuid{};
+    winrt::guid characteristicUuid{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics)->ConvertShortIdToUuid(shortId, put_abi(characteristicUuid)));
     return characteristicUuid;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BatteryLevel() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BatteryLevel() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_BatteryLevel(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BloodPressureFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BloodPressureFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_BloodPressureFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BloodPressureMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BloodPressureMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_BloodPressureMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BodySensorLocation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::BodySensorLocation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_BodySensorLocation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::CscFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::CscFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_CscFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::CscMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::CscMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_CscMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_GlucoseFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_GlucoseMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurementContext() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurementContext() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_GlucoseMeasurementContext(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::HeartRateControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::HeartRateControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_HeartRateControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::HeartRateMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::HeartRateMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_HeartRateMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::IntermediateCuffPressure() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::IntermediateCuffPressure() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_IntermediateCuffPressure(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::IntermediateTemperature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::IntermediateTemperature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_IntermediateTemperature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::MeasurementInterval() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::MeasurementInterval() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_MeasurementInterval(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RecordAccessControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RecordAccessControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_RecordAccessControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RscFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RscFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_RscFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RscMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::RscMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_RscMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::SCControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::SCControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_SCControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::SensorLocation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::SensorLocation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_SensorLocation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::TemperatureMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::TemperatureMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_TemperatureMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::TemperatureType() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics<D>::TemperatureType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics)->get_TemperatureType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertCategoryId() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertCategoryId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_AlertCategoryId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertCategoryIdBitMask() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertCategoryIdBitMask() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_AlertCategoryIdBitMask(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertLevel() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertLevel() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_AlertLevel(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertNotificationControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertNotificationControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_AlertNotificationControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertStatus() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::AlertStatus() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_AlertStatus(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapAppearance() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapAppearance() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GapAppearance(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootKeyboardInputReport() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootKeyboardInputReport() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_BootKeyboardInputReport(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootKeyboardOutputReport() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootKeyboardOutputReport() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_BootKeyboardOutputReport(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootMouseInputReport() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::BootMouseInputReport() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_BootMouseInputReport(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CurrentTime() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CurrentTime() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_CurrentTime(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_CyclingPowerControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_CyclingPowerFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerMeasurement() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerMeasurement() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_CyclingPowerMeasurement(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerVector() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::CyclingPowerVector() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_CyclingPowerVector(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DateTime() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DateTime() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_DateTime(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DayDateTime() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DayDateTime() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_DayDateTime(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DayOfWeek() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DayOfWeek() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_DayOfWeek(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapDeviceName() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapDeviceName() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GapDeviceName(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DstOffset() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::DstOffset() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_DstOffset(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ExactTime256() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ExactTime256() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ExactTime256(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::FirmwareRevisionString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::FirmwareRevisionString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_FirmwareRevisionString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HardwareRevisionString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HardwareRevisionString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_HardwareRevisionString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HidControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HidControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_HidControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HidInformation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::HidInformation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_HidInformation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Ieee1107320601RegulatoryCertificationDataList() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Ieee1107320601RegulatoryCertificationDataList() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_Ieee1107320601RegulatoryCertificationDataList(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LnControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LnControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_LnControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LnFeature() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LnFeature() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_LnFeature(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LocalTimeInformation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LocalTimeInformation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_LocalTimeInformation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LocationAndSpeed() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::LocationAndSpeed() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_LocationAndSpeed(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ManufacturerNameString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ManufacturerNameString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ManufacturerNameString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ModelNumberString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ModelNumberString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ModelNumberString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Navigation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Navigation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_Navigation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::NewAlert() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::NewAlert() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_NewAlert(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPreferredConnectionParameters() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPreferredConnectionParameters() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GapPeripheralPreferredConnectionParameters(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPrivacyFlag() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPrivacyFlag() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GapPeripheralPrivacyFlag(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::PnpId() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::PnpId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_PnpId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::PositionQuality() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::PositionQuality() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_PositionQuality(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ProtocolMode() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ProtocolMode() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ProtocolMode(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapReconnectionAddress() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GapReconnectionAddress() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GapReconnectionAddress(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ReferenceTimeInformation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ReferenceTimeInformation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ReferenceTimeInformation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Report() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::Report() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_Report(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ReportMap() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ReportMap() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ReportMap(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::RingerControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::RingerControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_RingerControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::RingerSetting() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::RingerSetting() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_RingerSetting(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ScanIntervalWindow() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ScanIntervalWindow() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ScanIntervalWindow(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ScanRefresh() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::ScanRefresh() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_ScanRefresh(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SerialNumberString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SerialNumberString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_SerialNumberString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GattServiceChanged() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::GattServiceChanged() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_GattServiceChanged(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SoftwareRevisionString() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SoftwareRevisionString() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_SoftwareRevisionString(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SupportedNewAlertCategory() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SupportedNewAlertCategory() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_SupportedNewAlertCategory(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SupportUnreadAlertCategory() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SupportUnreadAlertCategory() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_SupportUnreadAlertCategory(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SystemId() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::SystemId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_SystemId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeAccuracy() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeAccuracy() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeAccuracy(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeSource() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeSource() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeSource(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeUpdateControlPoint() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeUpdateControlPoint() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeUpdateControlPoint(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeUpdateState() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeUpdateState() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeUpdateState(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeWithDst() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeWithDst() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeWithDst(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeZone() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TimeZone() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TimeZone(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TxPowerLevel() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::TxPowerLevel() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_TxPowerLevel(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::UnreadAlertStatus() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattCharacteristicUuidsStatics2<D>::UnreadAlertStatus() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2)->get_UnreadAlertStatus(put_abi(value)));
     return value;
 }
@@ -829,9 +829,9 @@ template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributePro
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor)->put_ProtectionLevel(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptor<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptor<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor)->get_Uuid(put_abi(value)));
     return value;
 }
@@ -871,51 +871,51 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return operation;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
-    GUID descriptorUuid{};
+    winrt::guid descriptorUuid{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics)->ConvertShortIdToUuid(shortId, put_abi(descriptorUuid)));
     return descriptorUuid;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicAggregateFormat() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicAggregateFormat() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_CharacteristicAggregateFormat(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicExtendedProperties() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicExtendedProperties() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_CharacteristicExtendedProperties(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicPresentationFormat() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicPresentationFormat() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_CharacteristicPresentationFormat(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicUserDescription() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::CharacteristicUserDescription() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_CharacteristicUserDescription(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::ClientCharacteristicConfiguration() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::ClientCharacteristicConfiguration() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_ClientCharacteristicConfiguration(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::ServerCharacteristicConfiguration() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDescriptorUuidsStatics<D>::ServerCharacteristicConfiguration() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics)->get_ServerCharacteristicConfiguration(put_abi(value)));
     return value;
 }
@@ -941,14 +941,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::GetCharacteristics(GUID const& characteristicUuid) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::GetCharacteristics(winrt::guid const& characteristicUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService)->GetCharacteristics(get_abi(characteristicUuid), put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::GetIncludedServices(GUID const& serviceUuid) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::GetIncludedServices(winrt::guid const& serviceUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService)->GetIncludedServices(get_abi(serviceUuid), put_abi(value)));
@@ -962,9 +962,9 @@ template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttribute
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService)->get_Uuid(put_abi(value)));
     return value;
 }
@@ -1053,14 +1053,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetCharacteristicsForUuidAsync(GUID const& characteristicUuid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetCharacteristicsForUuidAsync(winrt::guid const& characteristicUuid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3)->GetCharacteristicsForUuidAsync(get_abi(characteristicUuid), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetCharacteristicsForUuidAsync(GUID const& characteristicUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetCharacteristicsForUuidAsync(winrt::guid const& characteristicUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3)->GetCharacteristicsForUuidWithCacheModeAsync(get_abi(characteristicUuid), get_abi(cacheMode), put_abi(operation)));
@@ -1081,14 +1081,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetIncludedServicesForUuidAsync(GUID const& serviceUuid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetIncludedServicesForUuidAsync(winrt::guid const& serviceUuid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3)->GetIncludedServicesForUuidAsync(get_abi(serviceUuid), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetIncludedServicesForUuidAsync(GUID const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceService3<D>::GetIncludedServicesForUuidAsync(winrt::guid const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3)->GetIncludedServicesForUuidWithCacheModeAsync(get_abi(serviceUuid), get_abi(cacheMode), put_abi(operation)));
@@ -1102,7 +1102,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Blu
     return asyncOp;
 }
 
-template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics<D>::GetDeviceSelectorFromUuid(GUID const& serviceUuid) const
+template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics<D>::GetDeviceSelectorFromUuid(winrt::guid const& serviceUuid) const
 {
     hstring selector{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics)->GetDeviceSelectorFromUuid(get_abi(serviceUuid), put_abi(selector)));
@@ -1116,9 +1116,9 @@ template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttribute
     return selector;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
-    GUID serviceUuid{};
+    winrt::guid serviceUuid{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics)->ConvertShortIdToUuid(shortId, put_abi(serviceUuid)));
     return serviceUuid;
 }
@@ -1144,14 +1144,14 @@ template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttribute
     return result;
 }
 
-template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics2<D>::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid) const
+template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics2<D>::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid) const
 {
     hstring result{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2)->GetDeviceSelectorForBluetoothDeviceIdAndUuid(get_abi(bluetoothDeviceId), get_abi(serviceUuid), put_abi(result)));
     return result;
 }
 
-template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics2<D>::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
+template <typename D> hstring consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattDeviceServiceStatics2<D>::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode) const
 {
     hstring result{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2)->GetDeviceSelectorForBluetoothDeviceIdAndUuidWithCacheMode(get_abi(bluetoothDeviceId), get_abi(serviceUuid), get_abi(cacheMode), put_abi(result)));
@@ -1179,9 +1179,9 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->get_Uuid(put_abi(value)));
     return value;
 }
@@ -1214,7 +1214,7 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::CreateDescriptorAsync(GUID const& descriptorUuid, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorParameters const& parameters) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::CreateDescriptorAsync(winrt::guid const& descriptorUuid, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorParameters const& parameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->CreateDescriptorAsync(get_abi(descriptorUuid), get_abi(parameters), put_abi(operation)));
@@ -1249,55 +1249,55 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->add_SubscribedClientsChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>::remove_SubscribedClientsChanged, SubscribedClientsChanged(handler));
+    return impl::make_event_revoker<D, SubscribedClientsChanged_revoker>(this, SubscribedClientsChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::SubscribedClientsChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_SubscribedClientsChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_SubscribedClientsChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->add_ReadRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>::remove_ReadRequested, ReadRequested(handler));
+    return impl::make_event_revoker<D, ReadRequested_revoker>(this, ReadRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::ReadRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_ReadRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_ReadRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->add_WriteRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>::remove_WriteRequested, WriteRequested(handler));
+    return impl::make_event_revoker<D, WriteRequested_revoker>(this, WriteRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::WriteRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_WriteRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic)->remove_WriteRequested(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult>> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalCharacteristic<D>::NotifyValueAsync(Windows::Storage::Streams::IBuffer const& value) const
@@ -1395,9 +1395,9 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError consume_Window
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->get_Uuid(put_abi(value)));
     return value;
 }
@@ -1423,38 +1423,38 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->add_ReadRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor>::remove_ReadRequested, ReadRequested(handler));
+    return impl::make_event_revoker<D, ReadRequested_revoker>(this, ReadRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::ReadRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->remove_ReadRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->remove_ReadRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->add_WriteRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor>::remove_WriteRequested, WriteRequested(handler));
+    return impl::make_event_revoker<D, WriteRequested_revoker>(this, WriteRequested(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptor<D>::WriteRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->remove_WriteRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor)->remove_WriteRequested(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalDescriptorParameters<D>::StaticValue(Windows::Storage::Streams::IBuffer const& value) const
@@ -1507,14 +1507,14 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError consume_Window
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalService<D>::Uuid() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalService<D>::Uuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService)->get_Uuid(put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalService<D>::CreateCharacteristicAsync(GUID const& characteristicUuid, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicParameters const& parameters) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattLocalService<D>::CreateCharacteristicAsync(winrt::guid const& characteristicUuid, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicParameters const& parameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService)->CreateCharacteristicAsync(get_abi(characteristicUuid), get_abi(parameters), put_abi(operation)));
@@ -1927,21 +1927,21 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest)->add_StateChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::StateChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest)->remove_StateChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest)->remove_StateChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattReadRequest<D>::RespondWithValue(Windows::Storage::Streams::IBuffer const& value) const
@@ -2043,21 +2043,21 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider)->add_AdvertisementStatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider>::remove_AdvertisementStatusChanged, AdvertisementStatusChanged(handler));
+    return impl::make_event_revoker<D, AdvertisementStatusChanged_revoker>(this, AdvertisementStatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::AdvertisementStatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider)->remove_AdvertisementStatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider)->remove_AdvertisementStatusChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider<D>::StartAdvertising() const
@@ -2127,163 +2127,163 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderStatics<D>::CreateAsync(GUID const& serviceUuid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderStatics<D>::CreateAsync(winrt::guid const& serviceUuid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderStatics)->CreateAsync(get_abi(serviceUuid), put_abi(operation)));
     return operation;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::Battery() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::Battery() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_Battery(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::BloodPressure() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::BloodPressure() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_BloodPressure(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::CyclingSpeedAndCadence() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::CyclingSpeedAndCadence() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_CyclingSpeedAndCadence(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::GenericAccess() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::GenericAccess() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_GenericAccess(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::GenericAttribute() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::GenericAttribute() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_GenericAttribute(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::Glucose() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::Glucose() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_Glucose(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::HealthThermometer() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::HealthThermometer() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_HealthThermometer(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::HeartRate() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::HeartRate() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_HeartRate(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::RunningSpeedAndCadence() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics<D>::RunningSpeedAndCadence() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics)->get_RunningSpeedAndCadence(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::AlertNotification() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::AlertNotification() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_AlertNotification(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::CurrentTime() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::CurrentTime() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_CurrentTime(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::CyclingPower() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::CyclingPower() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_CyclingPower(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::DeviceInformation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::DeviceInformation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_DeviceInformation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::HumanInterfaceDevice() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::HumanInterfaceDevice() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_HumanInterfaceDevice(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ImmediateAlert() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ImmediateAlert() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_ImmediateAlert(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::LinkLoss() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::LinkLoss() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_LinkLoss(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::LocationAndNavigation() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::LocationAndNavigation() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_LocationAndNavigation(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::NextDstChange() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::NextDstChange() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_NextDstChange(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::PhoneAlertStatus() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::PhoneAlertStatus() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_PhoneAlertStatus(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ReferenceTimeUpdate() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ReferenceTimeUpdate() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_ReferenceTimeUpdate(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ScanParameters() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::ScanParameters() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_ScanParameters(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::TxPower() const
+template <typename D> winrt::guid consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceUuidsStatics2<D>::TxPower() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2)->get_TxPower(put_abi(value)));
     return value;
 }
@@ -2328,38 +2328,38 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->add_MaxPduSizeChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession>::remove_MaxPduSizeChanged, MaxPduSizeChanged(handler));
+    return impl::make_event_revoker<D, MaxPduSizeChanged_revoker>(this, MaxPduSizeChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::MaxPduSizeChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->remove_MaxPduSizeChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->remove_MaxPduSizeChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->add_SessionStatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession>::remove_SessionStatusChanged, SessionStatusChanged(handler));
+    return impl::make_event_revoker<D, SessionStatusChanged_revoker>(this, SessionStatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSession<D>::SessionStatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->remove_SessionStatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession)->remove_SessionStatusChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSessionStatics<D>::FromDeviceIdAsync(Windows::Devices::Bluetooth::BluetoothDeviceId const& deviceId) const
@@ -2397,21 +2397,21 @@ template <typename D> uint16_t consume_Windows_Devices_Bluetooth_GenericAttribut
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient)->add_MaxNotificationSizeChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient>::remove_MaxNotificationSizeChanged, MaxNotificationSizeChanged(handler));
+    return impl::make_event_revoker<D, MaxNotificationSizeChanged_revoker>(this, MaxNotificationSizeChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattSubscribedClient<D>::MaxNotificationSizeChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient)->remove_MaxNotificationSizeChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient)->remove_MaxNotificationSizeChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattValueChangedEventArgs<D>::CharacteristicValue() const
@@ -2456,21 +2456,21 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest)->add_StateChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest> consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged_revoker consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest>(this, &abi_t<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::StateChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest)->remove_StateChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest)->remove_StateChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattWriteRequest<D>::Respond() const
@@ -2521,5331 +2521,4567 @@ template <typename D> Windows::Foundation::IReference<uint8_t> consume_Windows_D
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>
 {
-    HRESULT __stdcall GetDescriptors(GUID descriptorUuid, void** value) noexcept final
+    int32_t WINRT_CALL GetDescriptors(winrt::guid descriptorUuid, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>>(this->shim().GetDescriptors(*reinterpret_cast<GUID const*>(&descriptorUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDescriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>), winrt::guid const&);
+            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>>(this->shim().GetDescriptors(*reinterpret_cast<winrt::guid const*>(&descriptorUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacteristicProperties, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties>(this->shim().CharacteristicProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().ProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeHandle(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_AttributeHandle(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeHandle, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().AttributeHandle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PresentationFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_PresentationFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentationFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>>(this->shim().PresentationFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadValueAsync(void** value) noexcept final
+    int32_t WINRT_CALL ReadValueAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>>(this->shim().ReadValueAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadValueWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** value) noexcept final
+    int32_t WINRT_CALL ReadValueWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>), Windows::Devices::Bluetooth::BluetoothCacheMode const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>>(this->shim().ReadValueAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteValueAsync(void* value, void** asyncOp) noexcept final
+    int32_t WINRT_CALL WriteValueAsync(void* value, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>), Windows::Storage::Streams::IBuffer const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>>(this->shim().WriteValueAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteValueWithOptionAsync(void* value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption, void** asyncOp) noexcept final
+    int32_t WINRT_CALL WriteValueWithOptionAsync(void* value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>), Windows::Storage::Streams::IBuffer const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>>(this->shim().WriteValueAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption const*>(&writeOption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadClientCharacteristicConfigurationDescriptorAsync(void** asyncOp) noexcept final
+    int32_t WINRT_CALL ReadClientCharacteristicConfigurationDescriptorAsync(void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadClientCharacteristicConfigurationDescriptorAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult>));
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult>>(this->shim().ReadClientCharacteristicConfigurationDescriptorAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteClientCharacteristicConfigurationDescriptorAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, void** asyncOp) noexcept final
+    int32_t WINRT_CALL WriteClientCharacteristicConfigurationDescriptorAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteClientCharacteristicConfigurationDescriptorAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>), Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>>(this->shim().WriteClientCharacteristicConfigurationDescriptorAsync(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue const*>(&clientCharacteristicConfigurationDescriptorValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ValueChanged(void* valueChangedHandler, event_token* valueChangedEventCookie) noexcept final
+    int32_t WINRT_CALL add_ValueChanged(void* valueChangedHandler, winrt::event_token* valueChangedEventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *valueChangedEventCookie = detach_from<event_token>(this->shim().ValueChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const*>(&valueChangedHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ValueChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const&);
+            *valueChangedEventCookie = detach_from<winrt::event_token>(this->shim().ValueChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> const*>(&valueChangedHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ValueChanged(event_token valueChangedEventCookie) noexcept final
+    int32_t WINRT_CALL remove_ValueChanged(winrt::event_token valueChangedEventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ValueChanged(*reinterpret_cast<event_token const*>(&valueChangedEventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ValueChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ValueChanged(*reinterpret_cast<winrt::event_token const*>(&valueChangedEventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic2>
 {
-    HRESULT __stdcall get_Service(void** value) noexcept final
+    int32_t WINRT_CALL get_Service(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Service, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>(this->shim().Service());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAllDescriptors(void** descriptors) noexcept final
+    int32_t WINRT_CALL GetAllDescriptors(void** descriptors) noexcept final
     {
         try
         {
             *descriptors = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAllDescriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>));
             *descriptors = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>>(this->shim().GetAllDescriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic3> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic3>
 {
-    HRESULT __stdcall GetDescriptorsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDescriptorsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDescriptorsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDescriptorsWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetDescriptorsWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDescriptorsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>), Windows::Devices::Bluetooth::BluetoothCacheMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDescriptorsForUuidAsync(GUID descriptorUuid, void** operation) noexcept final
+    int32_t WINRT_CALL GetDescriptorsForUuidAsync(winrt::guid descriptorUuid, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsForUuidAsync(*reinterpret_cast<GUID const*>(&descriptorUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDescriptorsForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>), winrt::guid const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsForUuidAsync(*reinterpret_cast<winrt::guid const*>(&descriptorUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDescriptorsForUuidWithCacheModeAsync(GUID descriptorUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetDescriptorsForUuidWithCacheModeAsync(winrt::guid descriptorUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsForUuidAsync(*reinterpret_cast<GUID const*>(&descriptorUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDescriptorsForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>), winrt::guid const, Windows::Devices::Bluetooth::BluetoothCacheMode const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult>>(this->shim().GetDescriptorsForUuidAsync(*reinterpret_cast<winrt::guid const*>(&descriptorUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteValueWithResultAsync(void* value, void** operation) noexcept final
+    int32_t WINRT_CALL WriteValueWithResultAsync(void* value, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueWithResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>>(this->shim().WriteValueWithResultAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteValueWithResultAndOptionAsync(void* value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption, void** operation) noexcept final
+    int32_t WINRT_CALL WriteValueWithResultAndOptionAsync(void* value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueWithResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>), Windows::Storage::Streams::IBuffer const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>>(this->shim().WriteValueWithResultAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption const*>(&writeOption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteClientCharacteristicConfigurationDescriptorWithResultAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, void** operation) noexcept final
+    int32_t WINRT_CALL WriteClientCharacteristicConfigurationDescriptorWithResultAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteClientCharacteristicConfigurationDescriptorWithResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>), Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>>(this->shim().WriteClientCharacteristicConfigurationDescriptorWithResultAsync(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue const*>(&clientCharacteristicConfigurationDescriptorValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics>
 {
-    HRESULT __stdcall ConvertShortIdToUuid(uint16_t shortId, GUID* characteristicUuid) noexcept final
+    int32_t WINRT_CALL ConvertShortIdToUuid(uint16_t shortId, winrt::guid* characteristicUuid) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *characteristicUuid = detach_from<GUID>(this->shim().ConvertShortIdToUuid(shortId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ConvertShortIdToUuid, WINRT_WRAP(winrt::guid), uint16_t);
+            *characteristicUuid = detach_from<winrt::guid>(this->shim().ConvertShortIdToUuid(shortId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>
 {
-    HRESULT __stdcall get_BatteryLevel(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BatteryLevel(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BatteryLevel());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BatteryLevel, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BatteryLevel());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BloodPressureFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BloodPressureFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BloodPressureFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BloodPressureFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BloodPressureFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BloodPressureMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BloodPressureMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BloodPressureMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BloodPressureMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BloodPressureMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BodySensorLocation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BodySensorLocation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BodySensorLocation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BodySensorLocation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BodySensorLocation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CscFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CscFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CscFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CscFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CscFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CscMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CscMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CscMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CscMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CscMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlucoseFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GlucoseFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GlucoseFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GlucoseFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GlucoseFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlucoseMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GlucoseMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GlucoseMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GlucoseMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GlucoseMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlucoseMeasurementContext(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GlucoseMeasurementContext(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GlucoseMeasurementContext());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GlucoseMeasurementContext, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GlucoseMeasurementContext());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeartRateControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HeartRateControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HeartRateControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HeartRateControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HeartRateControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeartRateMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HeartRateMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HeartRateMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HeartRateMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HeartRateMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IntermediateCuffPressure(GUID* value) noexcept final
+    int32_t WINRT_CALL get_IntermediateCuffPressure(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().IntermediateCuffPressure());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IntermediateCuffPressure, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().IntermediateCuffPressure());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IntermediateTemperature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_IntermediateTemperature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().IntermediateTemperature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IntermediateTemperature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().IntermediateTemperature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MeasurementInterval(GUID* value) noexcept final
+    int32_t WINRT_CALL get_MeasurementInterval(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().MeasurementInterval());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MeasurementInterval, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().MeasurementInterval());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RecordAccessControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RecordAccessControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RecordAccessControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RecordAccessControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RecordAccessControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RscFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RscFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RscFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RscFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RscFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RscMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RscMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RscMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RscMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RscMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SCControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SCControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SCControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SCControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SCControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SensorLocation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SensorLocation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SensorLocation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SensorLocation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SensorLocation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TemperatureMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TemperatureMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TemperatureMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TemperatureMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TemperatureMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TemperatureType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TemperatureType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TemperatureType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TemperatureType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TemperatureType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>
 {
-    HRESULT __stdcall get_AlertCategoryId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertCategoryId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertCategoryId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertCategoryId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertCategoryId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlertCategoryIdBitMask(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertCategoryIdBitMask(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertCategoryIdBitMask());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertCategoryIdBitMask, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertCategoryIdBitMask());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlertLevel(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertLevel(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertLevel());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertLevel, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertLevel());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlertNotificationControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertNotificationControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertNotificationControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertNotificationControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertNotificationControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlertStatus(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertStatus(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertStatus());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertStatus, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertStatus());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GapAppearance(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GapAppearance(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GapAppearance());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GapAppearance, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GapAppearance());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BootKeyboardInputReport(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BootKeyboardInputReport(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BootKeyboardInputReport());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BootKeyboardInputReport, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BootKeyboardInputReport());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BootKeyboardOutputReport(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BootKeyboardOutputReport(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BootKeyboardOutputReport());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BootKeyboardOutputReport, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BootKeyboardOutputReport());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BootMouseInputReport(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BootMouseInputReport(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BootMouseInputReport());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BootMouseInputReport, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BootMouseInputReport());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentTime(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CurrentTime(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CurrentTime());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CurrentTime, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CurrentTime());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingPowerControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingPowerControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingPowerControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingPowerControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingPowerControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingPowerFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingPowerFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingPowerFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingPowerFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingPowerFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingPowerMeasurement(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingPowerMeasurement(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingPowerMeasurement());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingPowerMeasurement, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingPowerMeasurement());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingPowerVector(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingPowerVector(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingPowerVector());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingPowerVector, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingPowerVector());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DateTime(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DateTime(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DateTime());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DateTime, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DateTime());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DayDateTime(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DayDateTime(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DayDateTime());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DayDateTime, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DayDateTime());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DayOfWeek(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DayOfWeek(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DayOfWeek());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DayOfWeek, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DayOfWeek());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GapDeviceName(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GapDeviceName(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GapDeviceName());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GapDeviceName, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GapDeviceName());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DstOffset(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DstOffset(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DstOffset());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DstOffset, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DstOffset());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExactTime256(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ExactTime256(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ExactTime256());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExactTime256, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ExactTime256());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirmwareRevisionString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_FirmwareRevisionString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().FirmwareRevisionString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FirmwareRevisionString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().FirmwareRevisionString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareRevisionString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HardwareRevisionString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HardwareRevisionString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HardwareRevisionString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HardwareRevisionString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HidControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HidControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HidControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HidControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HidControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HidInformation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HidInformation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HidInformation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HidInformation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HidInformation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ieee1107320601RegulatoryCertificationDataList(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Ieee1107320601RegulatoryCertificationDataList(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Ieee1107320601RegulatoryCertificationDataList());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Ieee1107320601RegulatoryCertificationDataList, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Ieee1107320601RegulatoryCertificationDataList());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LnControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LnControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LnControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LnControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LnControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LnFeature(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LnFeature(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LnFeature());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LnFeature, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LnFeature());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalTimeInformation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LocalTimeInformation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LocalTimeInformation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LocalTimeInformation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LocalTimeInformation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocationAndSpeed(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LocationAndSpeed(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LocationAndSpeed());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LocationAndSpeed, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LocationAndSpeed());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManufacturerNameString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ManufacturerNameString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ManufacturerNameString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManufacturerNameString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ManufacturerNameString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelNumberString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ModelNumberString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ModelNumberString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ModelNumberString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ModelNumberString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Navigation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Navigation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Navigation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Navigation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Navigation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NewAlert(GUID* value) noexcept final
+    int32_t WINRT_CALL get_NewAlert(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().NewAlert());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NewAlert, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().NewAlert());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GapPeripheralPreferredConnectionParameters(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GapPeripheralPreferredConnectionParameters(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GapPeripheralPreferredConnectionParameters());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GapPeripheralPreferredConnectionParameters, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GapPeripheralPreferredConnectionParameters());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GapPeripheralPrivacyFlag(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GapPeripheralPrivacyFlag(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GapPeripheralPrivacyFlag());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GapPeripheralPrivacyFlag, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GapPeripheralPrivacyFlag());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PnpId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_PnpId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().PnpId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PnpId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().PnpId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PositionQuality(GUID* value) noexcept final
+    int32_t WINRT_CALL get_PositionQuality(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().PositionQuality());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PositionQuality, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().PositionQuality());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolMode(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ProtocolMode(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ProtocolMode());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProtocolMode, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ProtocolMode());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GapReconnectionAddress(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GapReconnectionAddress(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GapReconnectionAddress());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GapReconnectionAddress, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GapReconnectionAddress());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReferenceTimeInformation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ReferenceTimeInformation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ReferenceTimeInformation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReferenceTimeInformation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ReferenceTimeInformation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Report(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Report(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Report());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Report, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Report());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportMap(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ReportMap(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ReportMap());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReportMap, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ReportMap());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RingerControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RingerControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RingerControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RingerControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RingerControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RingerSetting(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RingerSetting(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RingerSetting());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RingerSetting, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RingerSetting());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScanIntervalWindow(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ScanIntervalWindow(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ScanIntervalWindow());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScanIntervalWindow, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ScanIntervalWindow());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScanRefresh(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ScanRefresh(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ScanRefresh());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScanRefresh, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ScanRefresh());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SerialNumberString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SerialNumberString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SerialNumberString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SerialNumberString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SerialNumberString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GattServiceChanged(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GattServiceChanged(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GattServiceChanged());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GattServiceChanged, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GattServiceChanged());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SoftwareRevisionString(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SoftwareRevisionString(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SoftwareRevisionString());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SoftwareRevisionString, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SoftwareRevisionString());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedNewAlertCategory(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SupportedNewAlertCategory(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SupportedNewAlertCategory());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SupportedNewAlertCategory, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SupportedNewAlertCategory());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportUnreadAlertCategory(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SupportUnreadAlertCategory(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SupportUnreadAlertCategory());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SupportUnreadAlertCategory, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SupportUnreadAlertCategory());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SystemId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SystemId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SystemId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SystemId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeAccuracy(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeAccuracy(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeAccuracy());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeAccuracy, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeAccuracy());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeSource(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeSource(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeSource());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeSource, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeSource());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeUpdateControlPoint(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeUpdateControlPoint(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeUpdateControlPoint());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeUpdateControlPoint, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeUpdateControlPoint());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeUpdateState(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeUpdateState(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeUpdateState());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeUpdateState, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeUpdateState());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeWithDst(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeWithDst(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeWithDst());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeWithDst, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeWithDst());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeZone(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TimeZone(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TimeZone());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TimeZone, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TimeZone());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TxPowerLevel(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TxPowerLevel(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TxPowerLevel());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TxPowerLevel, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TxPowerLevel());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnreadAlertStatus(GUID* value) noexcept final
+    int32_t WINRT_CALL get_UnreadAlertStatus(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().UnreadAlertStatus());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(UnreadAlertStatus, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().UnreadAlertStatus());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicsResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicsResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Characteristics(void** value) noexcept final
+    int32_t WINRT_CALL get_Characteristics(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Characteristics, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(this->shim().Characteristics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattClientNotificationResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattClientNotificationResult>
 {
-    HRESULT __stdcall get_SubscribedClient(void** value) noexcept final
+    int32_t WINRT_CALL get_SubscribedClient(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubscribedClient, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient>(this->shim().SubscribedClient());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattClientNotificationResult2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattClientNotificationResult2>
 {
-    HRESULT __stdcall get_BytesSent(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_BytesSent(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BytesSent, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().BytesSent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor>
 {
-    HRESULT __stdcall get_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().ProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeHandle(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_AttributeHandle(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeHandle, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().AttributeHandle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadValueAsync(void** value) noexcept final
+    int32_t WINRT_CALL ReadValueAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>>(this->shim().ReadValueAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadValueWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** value) noexcept final
+    int32_t WINRT_CALL ReadValueWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>), Windows::Devices::Bluetooth::BluetoothCacheMode const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>>(this->shim().ReadValueAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteValueAsync(void* value, void** action) noexcept final
+    int32_t WINRT_CALL WriteValueAsync(void* value, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>), Windows::Storage::Streams::IBuffer const);
             *action = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>>(this->shim().WriteValueAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor2>
 {
-    HRESULT __stdcall WriteValueWithResultAsync(void* value, void** operation) noexcept final
+    int32_t WINRT_CALL WriteValueWithResultAsync(void* value, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValueWithResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>>(this->shim().WriteValueWithResultAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics>
 {
-    HRESULT __stdcall ConvertShortIdToUuid(uint16_t shortId, GUID* descriptorUuid) noexcept final
+    int32_t WINRT_CALL ConvertShortIdToUuid(uint16_t shortId, winrt::guid* descriptorUuid) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *descriptorUuid = detach_from<GUID>(this->shim().ConvertShortIdToUuid(shortId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ConvertShortIdToUuid, WINRT_WRAP(winrt::guid), uint16_t);
+            *descriptorUuid = detach_from<winrt::guid>(this->shim().ConvertShortIdToUuid(shortId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>
 {
-    HRESULT __stdcall get_CharacteristicAggregateFormat(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicAggregateFormat(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CharacteristicAggregateFormat());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CharacteristicAggregateFormat, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CharacteristicAggregateFormat());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicExtendedProperties(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicExtendedProperties(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CharacteristicExtendedProperties());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CharacteristicExtendedProperties, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CharacteristicExtendedProperties());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicPresentationFormat(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicPresentationFormat(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CharacteristicPresentationFormat());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CharacteristicPresentationFormat, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CharacteristicPresentationFormat());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicUserDescription(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicUserDescription(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CharacteristicUserDescription());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CharacteristicUserDescription, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CharacteristicUserDescription());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCharacteristicConfiguration(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ClientCharacteristicConfiguration(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ClientCharacteristicConfiguration());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ClientCharacteristicConfiguration, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ClientCharacteristicConfiguration());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCharacteristicConfiguration(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ServerCharacteristicConfiguration(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ServerCharacteristicConfiguration());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServerCharacteristicConfiguration, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ServerCharacteristicConfiguration());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorsResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorsResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptors(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>>(this->shim().Descriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService>
 {
-    HRESULT __stdcall GetCharacteristics(GUID characteristicUuid, void** value) noexcept final
+    int32_t WINRT_CALL GetCharacteristics(winrt::guid characteristicUuid, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(this->shim().GetCharacteristics(*reinterpret_cast<GUID const*>(&characteristicUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetCharacteristics, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>), winrt::guid const&);
+            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(this->shim().GetCharacteristics(*reinterpret_cast<winrt::guid const*>(&characteristicUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIncludedServices(GUID serviceUuid, void** value) noexcept final
+    int32_t WINRT_CALL GetIncludedServices(winrt::guid serviceUuid, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().GetIncludedServices(*reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIncludedServices, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>), winrt::guid const&);
+            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().GetIncludedServices(*reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeHandle(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_AttributeHandle(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeHandle, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().AttributeHandle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService2>
 {
-    HRESULT __stdcall get_Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Device, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothLEDevice));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothLEDevice>(this->shim().Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParentServices(void** value) noexcept final
+    int32_t WINRT_CALL get_ParentServices(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentServices, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().ParentServices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAllCharacteristics(void** characteristics) noexcept final
+    int32_t WINRT_CALL GetAllCharacteristics(void** characteristics) noexcept final
     {
         try
         {
             *characteristics = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAllCharacteristics, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>));
             *characteristics = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>>(this->shim().GetAllCharacteristics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAllIncludedServices(void** includedServices) noexcept final
+    int32_t WINRT_CALL GetAllIncludedServices(void** includedServices) noexcept final
     {
         try
         {
             *includedServices = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAllIncludedServices, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>));
             *includedServices = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().GetAllIncludedServices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService3>
 {
-    HRESULT __stdcall get_DeviceAccessInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceAccessInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceAccessInformation, WINRT_WRAP(Windows::Devices::Enumeration::DeviceAccessInformation));
             *value = detach_from<Windows::Devices::Enumeration::DeviceAccessInformation>(this->shim().DeviceAccessInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SharingMode(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode* value) noexcept final
+    int32_t WINRT_CALL get_SharingMode(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharingMode, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode>(this->shim().SharingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAccessAsync(void** value) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceAccessStatus>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode sharingMode, void** operation) noexcept final
+    int32_t WINRT_CALL OpenAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode sharingMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattOpenStatus>), Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattOpenStatus>>(this->shim().OpenAsync(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const*>(&sharingMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCharacteristicsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetCharacteristicsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCharacteristicsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCharacteristicsWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetCharacteristicsWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCharacteristicsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>), Windows::Devices::Bluetooth::BluetoothCacheMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCharacteristicsForUuidAsync(GUID characteristicUuid, void** operation) noexcept final
+    int32_t WINRT_CALL GetCharacteristicsForUuidAsync(winrt::guid characteristicUuid, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsForUuidAsync(*reinterpret_cast<GUID const*>(&characteristicUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetCharacteristicsForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>), winrt::guid const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsForUuidAsync(*reinterpret_cast<winrt::guid const*>(&characteristicUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCharacteristicsForUuidWithCacheModeAsync(GUID characteristicUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetCharacteristicsForUuidWithCacheModeAsync(winrt::guid characteristicUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsForUuidAsync(*reinterpret_cast<GUID const*>(&characteristicUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetCharacteristicsForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>), winrt::guid const, Windows::Devices::Bluetooth::BluetoothCacheMode const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult>>(this->shim().GetCharacteristicsForUuidAsync(*reinterpret_cast<winrt::guid const*>(&characteristicUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIncludedServicesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetIncludedServicesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIncludedServicesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIncludedServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetIncludedServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIncludedServicesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>), Windows::Devices::Bluetooth::BluetoothCacheMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIncludedServicesForUuidAsync(GUID serviceUuid, void** operation) noexcept final
+    int32_t WINRT_CALL GetIncludedServicesForUuidAsync(winrt::guid serviceUuid, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesForUuidAsync(*reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIncludedServicesForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>), winrt::guid const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesForUuidAsync(*reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIncludedServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
+    int32_t WINRT_CALL GetIncludedServicesForUuidWithCacheModeAsync(winrt::guid serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesForUuidAsync(*reinterpret_cast<GUID const*>(&serviceUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIncludedServicesForUuidAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>), winrt::guid const, Windows::Devices::Bluetooth::BluetoothCacheMode const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>>(this->shim().GetIncludedServicesForUuidAsync(*reinterpret_cast<winrt::guid const*>(&serviceUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** asyncOp) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>), hstring const);
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorFromUuid(GUID serviceUuid, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorFromUuid(winrt::guid serviceUuid, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
-            *selector = detach_from<hstring>(this->shim().GetDeviceSelectorFromUuid(*reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorFromUuid, WINRT_WRAP(hstring), winrt::guid const&);
+            *selector = detach_from<hstring>(this->shim().GetDeviceSelectorFromUuid(*reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorFromShortId(uint16_t serviceShortId, HSTRING* selector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorFromShortId(uint16_t serviceShortId, void** selector) noexcept final
     {
         try
         {
             *selector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorFromShortId, WINRT_WRAP(hstring), uint16_t);
             *selector = detach_from<hstring>(this->shim().GetDeviceSelectorFromShortId(serviceShortId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertShortIdToUuid(uint16_t shortId, GUID* serviceUuid) noexcept final
+    int32_t WINRT_CALL ConvertShortIdToUuid(uint16_t shortId, winrt::guid* serviceUuid) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *serviceUuid = detach_from<GUID>(this->shim().ConvertShortIdToUuid(shortId));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ConvertShortIdToUuid, WINRT_WRAP(winrt::guid), uint16_t);
+            *serviceUuid = detach_from<winrt::guid>(this->shim().ConvertShortIdToUuid(shortId));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>
 {
-    HRESULT __stdcall FromIdWithSharingModeAsync(HSTRING deviceId, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode sharingMode, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdWithSharingModeAsync(void* deviceId, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode sharingMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>), hstring const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const*>(&sharingMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorForBluetoothDeviceId(void* bluetoothDeviceId, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorForBluetoothDeviceId(void* bluetoothDeviceId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorForBluetoothDeviceId, WINRT_WRAP(hstring), Windows::Devices::Bluetooth::BluetoothDeviceId const&);
             *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceId(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorForBluetoothDeviceIdWithCacheMode(void* bluetoothDeviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorForBluetoothDeviceIdWithCacheMode(void* bluetoothDeviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorForBluetoothDeviceId, WINRT_WRAP(hstring), Windows::Devices::Bluetooth::BluetoothDeviceId const&, Windows::Devices::Bluetooth::BluetoothCacheMode const&);
             *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceId(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorForBluetoothDeviceIdAndUuid(void* bluetoothDeviceId, GUID serviceUuid, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorForBluetoothDeviceIdAndUuid(void* bluetoothDeviceId, winrt::guid serviceUuid, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceIdAndUuid(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId), *reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorForBluetoothDeviceIdAndUuid, WINRT_WRAP(hstring), Windows::Devices::Bluetooth::BluetoothDeviceId const&, winrt::guid const&);
+            *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceIdAndUuid(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId), *reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorForBluetoothDeviceIdAndUuidWithCacheMode(void* bluetoothDeviceId, GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorForBluetoothDeviceIdAndUuidWithCacheMode(void* bluetoothDeviceId, winrt::guid serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceIdAndUuid(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId), *reinterpret_cast<GUID const*>(&serviceUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceSelectorForBluetoothDeviceIdAndUuid, WINRT_WRAP(hstring), Windows::Devices::Bluetooth::BluetoothDeviceId const&, winrt::guid const&, Windows::Devices::Bluetooth::BluetoothCacheMode const&);
+            *result = detach_from<hstring>(this->shim().GetDeviceSelectorForBluetoothDeviceIdAndUuid(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&bluetoothDeviceId), *reinterpret_cast<winrt::guid const*>(&serviceUuid), *reinterpret_cast<Windows::Devices::Bluetooth::BluetoothCacheMode const*>(&cacheMode)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServicesResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServicesResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Services(void** value) noexcept final
+    int32_t WINRT_CALL get_Services(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Services, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>>(this->shim().Services());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristic>
 {
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaticValue(void** value) noexcept final
+    int32_t WINRT_CALL get_StaticValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().StaticValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacteristicProperties, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties>(this->shim().CharacteristicProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ReadProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().WriteProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDescriptorAsync(GUID descriptorUuid, void* parameters, void** operation) noexcept final
+    int32_t WINRT_CALL CreateDescriptorAsync(winrt::guid descriptorUuid, void* parameters, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult>>(this->shim().CreateDescriptorAsync(*reinterpret_cast<GUID const*>(&descriptorUuid), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorParameters const*>(&parameters)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateDescriptorAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult>), winrt::guid const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorParameters const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult>>(this->shim().CreateDescriptorAsync(*reinterpret_cast<winrt::guid const*>(&descriptorUuid), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorParameters const*>(&parameters)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Descriptors(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor>>(this->shim().Descriptors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PresentationFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_PresentationFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentationFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>>(this->shim().PresentationFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubscribedClients(void** value) noexcept final
+    int32_t WINRT_CALL get_SubscribedClients(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubscribedClients, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient>>(this->shim().SubscribedClients());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SubscribedClientsChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SubscribedClientsChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SubscribedClientsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SubscribedClientsChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SubscribedClientsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SubscribedClientsChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SubscribedClientsChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SubscribedClientsChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SubscribedClientsChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ReadRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SubscribedClientsChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReadRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ReadRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ReadRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ReadRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ReadRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ReadRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_WriteRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ReadRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(WriteRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().WriteRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ReadRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_WriteRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ReadRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(WriteRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().WriteRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_WriteRequested(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().WriteRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_WriteRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().WriteRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall NotifyValueAsync(void* value, void** operation) noexcept final
+    int32_t WINRT_CALL NotifyValueAsync(void* value, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NotifyValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult>>), Windows::Storage::Streams::IBuffer const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult>>>(this->shim().NotifyValueAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall NotifyValueForSubscribedClientAsync(void* value, void* subscribedClient, void** operation) noexcept final
+    int32_t WINRT_CALL NotifyValueForSubscribedClientAsync(void* value, void* subscribedClient, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NotifyValueAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult>), Windows::Storage::Streams::IBuffer const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult>>(this->shim().NotifyValueAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient const*>(&subscribedClient)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters>
 {
-    HRESULT __stdcall put_StaticValue(void* value) noexcept final
+    int32_t WINRT_CALL put_StaticValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().StaticValue(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaticValue(void** value) noexcept final
+    int32_t WINRT_CALL get_StaticValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().StaticValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties value) noexcept final
+    int32_t WINRT_CALL put_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacteristicProperties, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties const&);
             this->shim().CharacteristicProperties(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicProperties(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacteristicProperties, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties>(this->shim().CharacteristicProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().ReadProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ReadProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().WriteProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().WriteProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UserDescription(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_UserDescription(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDescription, WINRT_WRAP(void), hstring const&);
             this->shim().UserDescription(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PresentationFormats(void** value) noexcept final
+    int32_t WINRT_CALL get_PresentationFormats(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentationFormats, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>>(this->shim().PresentationFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicResult>
 {
-    HRESULT __stdcall get_Characteristic(void** value) noexcept final
+    int32_t WINRT_CALL get_Characteristic(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Characteristic, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic>(this->shim().Characteristic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptor>
 {
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaticValue(void** value) noexcept final
+    int32_t WINRT_CALL get_StaticValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().StaticValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ReadProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().WriteProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ReadRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ReadRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ReadRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReadRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ReadRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ReadRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ReadRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ReadRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ReadRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_WriteRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ReadRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(WriteRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().WriteRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_WriteRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_WriteRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().WriteRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_WriteRequested(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().WriteRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(WriteRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().WriteRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptorParameters> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptorParameters>
 {
-    HRESULT __stdcall put_StaticValue(void* value) noexcept final
+    int32_t WINRT_CALL put_StaticValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().StaticValue(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaticValue(void** value) noexcept final
+    int32_t WINRT_CALL get_StaticValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaticValue, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().StaticValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().ReadProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ReadProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().ReadProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const&);
             this->shim().WriteProtectionLevel(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_WriteProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteProtectionLevel, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel>(this->shim().WriteProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptorResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalDescriptorResult>
 {
-    HRESULT __stdcall get_Descriptor(void** value) noexcept final
+    int32_t WINRT_CALL get_Descriptor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Descriptor, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor>(this->shim().Descriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService>
 {
-    HRESULT __stdcall get_Uuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Uuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Uuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Uuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Uuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCharacteristicAsync(GUID characteristicUuid, void* parameters, void** operation) noexcept final
+    int32_t WINRT_CALL CreateCharacteristicAsync(winrt::guid characteristicUuid, void* parameters, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult>>(this->shim().CreateCharacteristicAsync(*reinterpret_cast<GUID const*>(&characteristicUuid), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicParameters const*>(&parameters)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateCharacteristicAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult>), winrt::guid const, Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicParameters const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult>>(this->shim().CreateCharacteristicAsync(*reinterpret_cast<winrt::guid const*>(&characteristicUuid), *reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicParameters const*>(&parameters)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Characteristics(void** value) noexcept final
+    int32_t WINRT_CALL get_Characteristics(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Characteristics, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic>>(this->shim().Characteristics());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormat> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormat>
 {
-    HRESULT __stdcall get_FormatType(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_FormatType(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormatType, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().FormatType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Exponent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Exponent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Exponent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Exponent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Unit(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Unit(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Unit, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Unit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Namespace(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Namespace(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Namespace, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Namespace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Description(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics>
 {
-    HRESULT __stdcall get_BluetoothSigAssignedNumbers(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_BluetoothSigAssignedNumbers(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BluetoothSigAssignedNumbers, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().BluetoothSigAssignedNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics2>
 {
-    HRESULT __stdcall FromParts(uint8_t formatType, int32_t exponent, uint16_t unit, uint8_t namespaceId, uint16_t description, void** result) noexcept final
+    int32_t WINRT_CALL FromParts(uint8_t formatType, int32_t exponent, uint16_t unit, uint8_t namespaceId, uint16_t description, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromParts, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat), uint8_t, int32_t, uint16_t, uint8_t, uint16_t);
             *result = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>(this->shim().FromParts(formatType, exponent, unit, namespaceId, description));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>
 {
-    HRESULT __stdcall get_Boolean(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Boolean(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Boolean, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Boolean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bit2(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Bit2(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bit2, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Bit2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nibble(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Nibble(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nibble, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Nibble());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt8(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt8(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt8, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt12(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt12(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt12, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt12());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt16(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt16(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt16, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt24(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt24(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt24, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt24());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt32(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt32(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt32, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt48(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt48(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt48, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt48());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt64(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt64(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt64, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UInt128(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UInt128(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UInt128, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UInt128());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt8(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt8(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt8, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt12(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt12(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt12, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt12());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt16(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt16(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt16, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt24(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt24(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt24, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt24());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt32(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt32(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt32, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt48(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt48(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt48, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt48());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt64(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt64(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt64, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SInt128(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SInt128(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SInt128, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SInt128());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Float32(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Float32(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Float32, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Float32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Float64(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Float64(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Float64, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Float64());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SFloat(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_SFloat(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SFloat, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().SFloat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Float(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Float(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Float, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Float());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DUInt16(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_DUInt16(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DUInt16, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().DUInt16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Utf8(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Utf8(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Utf8, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Utf8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Utf16(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Utf16(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Utf16, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Utf16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Struct(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_Struct(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Struct, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().Struct());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>
 {
-    HRESULT __stdcall get_InvalidHandle(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidHandle(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidHandle, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InvalidHandle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadNotPermitted(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_ReadNotPermitted(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadNotPermitted, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().ReadNotPermitted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteNotPermitted(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_WriteNotPermitted(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteNotPermitted, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().WriteNotPermitted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidPdu(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidPdu(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidPdu, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InvalidPdu());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientAuthentication(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientAuthentication(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientAuthentication, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InsufficientAuthentication());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestNotSupported(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_RequestNotSupported(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestNotSupported, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().RequestNotSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidOffset(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidOffset(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidOffset, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InvalidOffset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientAuthorization(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientAuthorization(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientAuthorization, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InsufficientAuthorization());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrepareQueueFull(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_PrepareQueueFull(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrepareQueueFull, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().PrepareQueueFull());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeNotFound(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_AttributeNotFound(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeNotFound, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().AttributeNotFound());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeNotLong(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_AttributeNotLong(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeNotLong, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().AttributeNotLong());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientEncryptionKeySize(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientEncryptionKeySize(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientEncryptionKeySize, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InsufficientEncryptionKeySize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InvalidAttributeValueLength(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InvalidAttributeValueLength(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvalidAttributeValueLength, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InvalidAttributeValueLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnlikelyError(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UnlikelyError(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnlikelyError, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UnlikelyError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientEncryption(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientEncryption(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientEncryption, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InsufficientEncryption());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnsupportedGroupType(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_UnsupportedGroupType(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnsupportedGroupType, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().UnsupportedGroupType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InsufficientResources(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_InsufficientResources(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsufficientResources, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().InsufficientResources());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCharacteristicConfigurationDescriptor(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue* value) noexcept final
+    int32_t WINRT_CALL get_ClientCharacteristicConfigurationDescriptor(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCharacteristicConfigurationDescriptor, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue>(this->shim().ClientCharacteristicConfigurationDescriptor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult2>
 {
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequest>
 {
-    HRESULT __stdcall get_Offset(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Offset(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StateChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL RespondWithValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall RespondWithValue(void* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RespondWithValue, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().RespondWithValue(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RespondWithProtocolError(uint8_t protocolError) noexcept final
+    int32_t WINRT_CALL RespondWithProtocolError(uint8_t protocolError) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RespondWithProtocolError, WINRT_WRAP(void), uint8_t);
             this->shim().RespondWithProtocolError(protocolError);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequestedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadRequestedEventArgs>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRequestAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetRequestAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest>>(this->shim().GetRequestAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult2>
 {
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction>
 {
-    HRESULT __stdcall WriteValue(void* characteristic, void* value) noexcept final
+    int32_t WINRT_CALL WriteValue(void* characteristic, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteValue, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const&, Windows::Storage::Streams::IBuffer const&);
             this->shim().WriteValue(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const*>(&characteristic), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CommitAsync(void** asyncOp) noexcept final
+    int32_t WINRT_CALL CommitAsync(void** asyncOp) noexcept final
     {
         try
         {
             *asyncOp = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>));
             *asyncOp = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>>(this->shim().CommitAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction2>
 {
-    HRESULT __stdcall CommitWithResultAsync(void** operation) noexcept final
+    int32_t WINRT_CALL CommitWithResultAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitWithResultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult>>(this->shim().CommitWithResultAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRequestStateChangedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattRequestStateChangedEventArgs>
 {
-    HRESULT __stdcall get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider>
 {
-    HRESULT __stdcall get_Service(void** value) noexcept final
+    int32_t WINRT_CALL get_Service(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Service, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService>(this->shim().Service());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdvertisementStatus(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus* value) noexcept final
+    int32_t WINRT_CALL get_AdvertisementStatus(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisementStatus, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus>(this->shim().AdvertisementStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AdvertisementStatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AdvertisementStatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AdvertisementStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AdvertisementStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AdvertisementStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AdvertisementStatusChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AdvertisementStatusChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AdvertisementStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AdvertisementStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL StartAdvertising() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AdvertisementStatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall StartAdvertising() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAdvertising, WINRT_WRAP(void));
             this->shim().StartAdvertising();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAdvertisingWithParameters(void* parameters) noexcept final
+    int32_t WINRT_CALL StartAdvertisingWithParameters(void* parameters) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAdvertising, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters const&);
             this->shim().StartAdvertising(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters const*>(&parameters));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopAdvertising() noexcept final
+    int32_t WINRT_CALL StopAdvertising() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopAdvertising, WINRT_WRAP(void));
             this->shim().StopAdvertising();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisementStatusChangedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisementStatusChangedEventArgs>
 {
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters>
 {
-    HRESULT __stdcall put_IsConnectable(bool value) noexcept final
+    int32_t WINRT_CALL put_IsConnectable(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsConnectable, WINRT_WRAP(void), bool);
             this->shim().IsConnectable(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsConnectable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsConnectable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsConnectable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsConnectable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsDiscoverable(bool value) noexcept final
+    int32_t WINRT_CALL put_IsDiscoverable(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDiscoverable, WINRT_WRAP(void), bool);
             this->shim().IsDiscoverable(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDiscoverable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDiscoverable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDiscoverable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDiscoverable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderResult>
 {
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceProvider(void** value) noexcept final
+    int32_t WINRT_CALL get_ServiceProvider(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceProvider, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider>(this->shim().ServiceProvider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderStatics>
 {
-    HRESULT __stdcall CreateAsync(GUID serviceUuid, void** operation) noexcept final
+    int32_t WINRT_CALL CreateAsync(winrt::guid serviceUuid, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult>>(this->shim().CreateAsync(*reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult>), winrt::guid const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult>>(this->shim().CreateAsync(*reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>
 {
-    HRESULT __stdcall get_Battery(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Battery(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Battery());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Battery, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Battery());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BloodPressure(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BloodPressure(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BloodPressure());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BloodPressure, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BloodPressure());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingSpeedAndCadence(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingSpeedAndCadence(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingSpeedAndCadence());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingSpeedAndCadence, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingSpeedAndCadence());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GenericAccess(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GenericAccess(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GenericAccess());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GenericAccess, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GenericAccess());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GenericAttribute(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GenericAttribute(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GenericAttribute());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GenericAttribute, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GenericAttribute());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Glucose(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Glucose(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Glucose());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Glucose, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Glucose());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HealthThermometer(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HealthThermometer(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HealthThermometer());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HealthThermometer, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HealthThermometer());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeartRate(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HeartRate(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HeartRate());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HeartRate, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HeartRate());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RunningSpeedAndCadence(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RunningSpeedAndCadence(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RunningSpeedAndCadence());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RunningSpeedAndCadence, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RunningSpeedAndCadence());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>
 {
-    HRESULT __stdcall get_AlertNotification(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AlertNotification(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AlertNotification());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlertNotification, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AlertNotification());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentTime(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CurrentTime(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CurrentTime());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CurrentTime, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CurrentTime());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CyclingPower(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CyclingPower(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CyclingPower());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CyclingPower, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CyclingPower());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceInformation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DeviceInformation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceInformation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DeviceInformation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HumanInterfaceDevice(GUID* value) noexcept final
+    int32_t WINRT_CALL get_HumanInterfaceDevice(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().HumanInterfaceDevice());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HumanInterfaceDevice, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HumanInterfaceDevice());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImmediateAlert(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ImmediateAlert(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ImmediateAlert());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ImmediateAlert, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ImmediateAlert());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinkLoss(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LinkLoss(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LinkLoss());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LinkLoss, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LinkLoss());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocationAndNavigation(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LocationAndNavigation(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LocationAndNavigation());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LocationAndNavigation, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LocationAndNavigation());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextDstChange(GUID* value) noexcept final
+    int32_t WINRT_CALL get_NextDstChange(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().NextDstChange());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NextDstChange, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().NextDstChange());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhoneAlertStatus(GUID* value) noexcept final
+    int32_t WINRT_CALL get_PhoneAlertStatus(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().PhoneAlertStatus());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PhoneAlertStatus, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().PhoneAlertStatus());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReferenceTimeUpdate(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ReferenceTimeUpdate(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ReferenceTimeUpdate());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReferenceTimeUpdate, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ReferenceTimeUpdate());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScanParameters(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ScanParameters(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ScanParameters());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ScanParameters, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ScanParameters());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TxPower(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TxPower(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TxPower());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TxPower, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TxPower());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSession>
 {
-    HRESULT __stdcall get_DeviceId(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothDeviceId));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothDeviceId>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanMaintainConnection(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanMaintainConnection(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanMaintainConnection, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanMaintainConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaintainConnection(bool value) noexcept final
+    int32_t WINRT_CALL put_MaintainConnection(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaintainConnection, WINRT_WRAP(void), bool);
             this->shim().MaintainConnection(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaintainConnection(bool* value) noexcept final
+    int32_t WINRT_CALL get_MaintainConnection(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaintainConnection, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MaintainConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPduSize(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPduSize(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPduSize, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().MaxPduSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SessionStatus(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus* value) noexcept final
+    int32_t WINRT_CALL get_SessionStatus(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SessionStatus, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus>(this->shim().SessionStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MaxPduSizeChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_MaxPduSizeChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MaxPduSizeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MaxPduSizeChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MaxPduSizeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MaxPduSizeChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MaxPduSizeChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MaxPduSizeChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MaxPduSizeChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SessionStatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().MaxPduSizeChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SessionStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SessionStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SessionStatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_SessionStatusChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SessionStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_SessionStatusChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SessionStatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SessionStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SessionStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatics> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatics>
 {
-    HRESULT __stdcall FromDeviceIdAsync(void* deviceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromDeviceIdAsync(void* deviceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromDeviceIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>), Windows::Devices::Bluetooth::BluetoothDeviceId const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>>(this->shim().FromDeviceIdAsync(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothDeviceId const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatusChangedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatusChangedEventArgs>
 {
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSubscribedClient>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxNotificationSize(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxNotificationSize(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxNotificationSize, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().MaxNotificationSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MaxNotificationSizeChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_MaxNotificationSizeChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MaxNotificationSizeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MaxNotificationSizeChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MaxNotificationSizeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MaxNotificationSizeChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MaxNotificationSizeChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MaxNotificationSizeChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MaxNotificationSizeChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MaxNotificationSizeChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattValueChangedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattValueChangedEventArgs>
 {
-    HRESULT __stdcall get_CharacteristicValue(void** value) noexcept final
+    int32_t WINRT_CALL get_CharacteristicValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacteristicValue, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().CharacteristicValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* timestamp) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* timestamp) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *timestamp = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequest>
 {
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Offset(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Option(Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption* value) noexcept final
+    int32_t WINRT_CALL get_Option(Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Option, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption>(this->shim().Option());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest, Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StateChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL Respond() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall Respond() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Respond, WINRT_WRAP(void));
             this->shim().Respond();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RespondWithProtocolError(uint8_t protocolError) noexcept final
+    int32_t WINRT_CALL RespondWithProtocolError(uint8_t protocolError) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RespondWithProtocolError, WINRT_WRAP(void), uint8_t);
             this->shim().RespondWithProtocolError(protocolError);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequestedEventArgs> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteRequestedEventArgs>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRequestAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetRequestAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest>>(this->shim().GetRequestAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteResult> : produce_base<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWriteResult>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtocolError(void** value) noexcept final
+    int32_t WINRT_CALL get_ProtocolError(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtocolError, WINRT_WRAP(Windows::Foundation::IReference<uint8_t>));
             *value = detach_from<Windows::Foundation::IReference<uint8_t>>(this->shim().ProtocolError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7853,860 +7089,860 @@ struct produce<D, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattWri
 
 WINRT_EXPORT namespace winrt::Windows::Devices::Bluetooth::GenericAttributeProfile {
 
-inline GUID GattCharacteristic::ConvertShortIdToUuid(uint16_t shortId)
+inline winrt::guid GattCharacteristic::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return get_activation_factory<GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics>().ConvertShortIdToUuid(shortId);
+    return impl::call_factory<GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics>([&](auto&& f) { return f.ConvertShortIdToUuid(shortId); });
 }
 
-inline GUID GattCharacteristicUuids::BatteryLevel()
+inline winrt::guid GattCharacteristicUuids::BatteryLevel()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().BatteryLevel();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.BatteryLevel(); });
 }
 
-inline GUID GattCharacteristicUuids::BloodPressureFeature()
+inline winrt::guid GattCharacteristicUuids::BloodPressureFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().BloodPressureFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.BloodPressureFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::BloodPressureMeasurement()
+inline winrt::guid GattCharacteristicUuids::BloodPressureMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().BloodPressureMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.BloodPressureMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::BodySensorLocation()
+inline winrt::guid GattCharacteristicUuids::BodySensorLocation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().BodySensorLocation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.BodySensorLocation(); });
 }
 
-inline GUID GattCharacteristicUuids::CscFeature()
+inline winrt::guid GattCharacteristicUuids::CscFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().CscFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.CscFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::CscMeasurement()
+inline winrt::guid GattCharacteristicUuids::CscMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().CscMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.CscMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::GlucoseFeature()
+inline winrt::guid GattCharacteristicUuids::GlucoseFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().GlucoseFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.GlucoseFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::GlucoseMeasurement()
+inline winrt::guid GattCharacteristicUuids::GlucoseMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().GlucoseMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.GlucoseMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::GlucoseMeasurementContext()
+inline winrt::guid GattCharacteristicUuids::GlucoseMeasurementContext()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().GlucoseMeasurementContext();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.GlucoseMeasurementContext(); });
 }
 
-inline GUID GattCharacteristicUuids::HeartRateControlPoint()
+inline winrt::guid GattCharacteristicUuids::HeartRateControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().HeartRateControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.HeartRateControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::HeartRateMeasurement()
+inline winrt::guid GattCharacteristicUuids::HeartRateMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().HeartRateMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.HeartRateMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::IntermediateCuffPressure()
+inline winrt::guid GattCharacteristicUuids::IntermediateCuffPressure()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().IntermediateCuffPressure();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.IntermediateCuffPressure(); });
 }
 
-inline GUID GattCharacteristicUuids::IntermediateTemperature()
+inline winrt::guid GattCharacteristicUuids::IntermediateTemperature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().IntermediateTemperature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.IntermediateTemperature(); });
 }
 
-inline GUID GattCharacteristicUuids::MeasurementInterval()
+inline winrt::guid GattCharacteristicUuids::MeasurementInterval()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().MeasurementInterval();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.MeasurementInterval(); });
 }
 
-inline GUID GattCharacteristicUuids::RecordAccessControlPoint()
+inline winrt::guid GattCharacteristicUuids::RecordAccessControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().RecordAccessControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.RecordAccessControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::RscFeature()
+inline winrt::guid GattCharacteristicUuids::RscFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().RscFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.RscFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::RscMeasurement()
+inline winrt::guid GattCharacteristicUuids::RscMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().RscMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.RscMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::SCControlPoint()
+inline winrt::guid GattCharacteristicUuids::SCControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().SCControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.SCControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::SensorLocation()
+inline winrt::guid GattCharacteristicUuids::SensorLocation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().SensorLocation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.SensorLocation(); });
 }
 
-inline GUID GattCharacteristicUuids::TemperatureMeasurement()
+inline winrt::guid GattCharacteristicUuids::TemperatureMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().TemperatureMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.TemperatureMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::TemperatureType()
+inline winrt::guid GattCharacteristicUuids::TemperatureType()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>().TemperatureType();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>([&](auto&& f) { return f.TemperatureType(); });
 }
 
-inline GUID GattCharacteristicUuids::AlertCategoryId()
+inline winrt::guid GattCharacteristicUuids::AlertCategoryId()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().AlertCategoryId();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.AlertCategoryId(); });
 }
 
-inline GUID GattCharacteristicUuids::AlertCategoryIdBitMask()
+inline winrt::guid GattCharacteristicUuids::AlertCategoryIdBitMask()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().AlertCategoryIdBitMask();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.AlertCategoryIdBitMask(); });
 }
 
-inline GUID GattCharacteristicUuids::AlertLevel()
+inline winrt::guid GattCharacteristicUuids::AlertLevel()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().AlertLevel();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.AlertLevel(); });
 }
 
-inline GUID GattCharacteristicUuids::AlertNotificationControlPoint()
+inline winrt::guid GattCharacteristicUuids::AlertNotificationControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().AlertNotificationControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.AlertNotificationControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::AlertStatus()
+inline winrt::guid GattCharacteristicUuids::AlertStatus()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().AlertStatus();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.AlertStatus(); });
 }
 
-inline GUID GattCharacteristicUuids::GapAppearance()
+inline winrt::guid GattCharacteristicUuids::GapAppearance()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GapAppearance();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GapAppearance(); });
 }
 
-inline GUID GattCharacteristicUuids::BootKeyboardInputReport()
+inline winrt::guid GattCharacteristicUuids::BootKeyboardInputReport()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().BootKeyboardInputReport();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.BootKeyboardInputReport(); });
 }
 
-inline GUID GattCharacteristicUuids::BootKeyboardOutputReport()
+inline winrt::guid GattCharacteristicUuids::BootKeyboardOutputReport()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().BootKeyboardOutputReport();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.BootKeyboardOutputReport(); });
 }
 
-inline GUID GattCharacteristicUuids::BootMouseInputReport()
+inline winrt::guid GattCharacteristicUuids::BootMouseInputReport()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().BootMouseInputReport();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.BootMouseInputReport(); });
 }
 
-inline GUID GattCharacteristicUuids::CurrentTime()
+inline winrt::guid GattCharacteristicUuids::CurrentTime()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().CurrentTime();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.CurrentTime(); });
 }
 
-inline GUID GattCharacteristicUuids::CyclingPowerControlPoint()
+inline winrt::guid GattCharacteristicUuids::CyclingPowerControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().CyclingPowerControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.CyclingPowerControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::CyclingPowerFeature()
+inline winrt::guid GattCharacteristicUuids::CyclingPowerFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().CyclingPowerFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.CyclingPowerFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::CyclingPowerMeasurement()
+inline winrt::guid GattCharacteristicUuids::CyclingPowerMeasurement()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().CyclingPowerMeasurement();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.CyclingPowerMeasurement(); });
 }
 
-inline GUID GattCharacteristicUuids::CyclingPowerVector()
+inline winrt::guid GattCharacteristicUuids::CyclingPowerVector()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().CyclingPowerVector();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.CyclingPowerVector(); });
 }
 
-inline GUID GattCharacteristicUuids::DateTime()
+inline winrt::guid GattCharacteristicUuids::DateTime()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().DateTime();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.DateTime(); });
 }
 
-inline GUID GattCharacteristicUuids::DayDateTime()
+inline winrt::guid GattCharacteristicUuids::DayDateTime()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().DayDateTime();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.DayDateTime(); });
 }
 
-inline GUID GattCharacteristicUuids::DayOfWeek()
+inline winrt::guid GattCharacteristicUuids::DayOfWeek()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().DayOfWeek();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.DayOfWeek(); });
 }
 
-inline GUID GattCharacteristicUuids::GapDeviceName()
+inline winrt::guid GattCharacteristicUuids::GapDeviceName()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GapDeviceName();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GapDeviceName(); });
 }
 
-inline GUID GattCharacteristicUuids::DstOffset()
+inline winrt::guid GattCharacteristicUuids::DstOffset()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().DstOffset();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.DstOffset(); });
 }
 
-inline GUID GattCharacteristicUuids::ExactTime256()
+inline winrt::guid GattCharacteristicUuids::ExactTime256()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ExactTime256();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ExactTime256(); });
 }
 
-inline GUID GattCharacteristicUuids::FirmwareRevisionString()
+inline winrt::guid GattCharacteristicUuids::FirmwareRevisionString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().FirmwareRevisionString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.FirmwareRevisionString(); });
 }
 
-inline GUID GattCharacteristicUuids::HardwareRevisionString()
+inline winrt::guid GattCharacteristicUuids::HardwareRevisionString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().HardwareRevisionString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.HardwareRevisionString(); });
 }
 
-inline GUID GattCharacteristicUuids::HidControlPoint()
+inline winrt::guid GattCharacteristicUuids::HidControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().HidControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.HidControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::HidInformation()
+inline winrt::guid GattCharacteristicUuids::HidInformation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().HidInformation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.HidInformation(); });
 }
 
-inline GUID GattCharacteristicUuids::Ieee1107320601RegulatoryCertificationDataList()
+inline winrt::guid GattCharacteristicUuids::Ieee1107320601RegulatoryCertificationDataList()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().Ieee1107320601RegulatoryCertificationDataList();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.Ieee1107320601RegulatoryCertificationDataList(); });
 }
 
-inline GUID GattCharacteristicUuids::LnControlPoint()
+inline winrt::guid GattCharacteristicUuids::LnControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().LnControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.LnControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::LnFeature()
+inline winrt::guid GattCharacteristicUuids::LnFeature()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().LnFeature();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.LnFeature(); });
 }
 
-inline GUID GattCharacteristicUuids::LocalTimeInformation()
+inline winrt::guid GattCharacteristicUuids::LocalTimeInformation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().LocalTimeInformation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.LocalTimeInformation(); });
 }
 
-inline GUID GattCharacteristicUuids::LocationAndSpeed()
+inline winrt::guid GattCharacteristicUuids::LocationAndSpeed()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().LocationAndSpeed();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.LocationAndSpeed(); });
 }
 
-inline GUID GattCharacteristicUuids::ManufacturerNameString()
+inline winrt::guid GattCharacteristicUuids::ManufacturerNameString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ManufacturerNameString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ManufacturerNameString(); });
 }
 
-inline GUID GattCharacteristicUuids::ModelNumberString()
+inline winrt::guid GattCharacteristicUuids::ModelNumberString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ModelNumberString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ModelNumberString(); });
 }
 
-inline GUID GattCharacteristicUuids::Navigation()
+inline winrt::guid GattCharacteristicUuids::Navigation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().Navigation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.Navigation(); });
 }
 
-inline GUID GattCharacteristicUuids::NewAlert()
+inline winrt::guid GattCharacteristicUuids::NewAlert()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().NewAlert();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.NewAlert(); });
 }
 
-inline GUID GattCharacteristicUuids::GapPeripheralPreferredConnectionParameters()
+inline winrt::guid GattCharacteristicUuids::GapPeripheralPreferredConnectionParameters()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GapPeripheralPreferredConnectionParameters();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GapPeripheralPreferredConnectionParameters(); });
 }
 
-inline GUID GattCharacteristicUuids::GapPeripheralPrivacyFlag()
+inline winrt::guid GattCharacteristicUuids::GapPeripheralPrivacyFlag()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GapPeripheralPrivacyFlag();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GapPeripheralPrivacyFlag(); });
 }
 
-inline GUID GattCharacteristicUuids::PnpId()
+inline winrt::guid GattCharacteristicUuids::PnpId()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().PnpId();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.PnpId(); });
 }
 
-inline GUID GattCharacteristicUuids::PositionQuality()
+inline winrt::guid GattCharacteristicUuids::PositionQuality()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().PositionQuality();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.PositionQuality(); });
 }
 
-inline GUID GattCharacteristicUuids::ProtocolMode()
+inline winrt::guid GattCharacteristicUuids::ProtocolMode()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ProtocolMode();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ProtocolMode(); });
 }
 
-inline GUID GattCharacteristicUuids::GapReconnectionAddress()
+inline winrt::guid GattCharacteristicUuids::GapReconnectionAddress()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GapReconnectionAddress();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GapReconnectionAddress(); });
 }
 
-inline GUID GattCharacteristicUuids::ReferenceTimeInformation()
+inline winrt::guid GattCharacteristicUuids::ReferenceTimeInformation()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ReferenceTimeInformation();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ReferenceTimeInformation(); });
 }
 
-inline GUID GattCharacteristicUuids::Report()
+inline winrt::guid GattCharacteristicUuids::Report()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().Report();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.Report(); });
 }
 
-inline GUID GattCharacteristicUuids::ReportMap()
+inline winrt::guid GattCharacteristicUuids::ReportMap()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ReportMap();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ReportMap(); });
 }
 
-inline GUID GattCharacteristicUuids::RingerControlPoint()
+inline winrt::guid GattCharacteristicUuids::RingerControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().RingerControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.RingerControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::RingerSetting()
+inline winrt::guid GattCharacteristicUuids::RingerSetting()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().RingerSetting();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.RingerSetting(); });
 }
 
-inline GUID GattCharacteristicUuids::ScanIntervalWindow()
+inline winrt::guid GattCharacteristicUuids::ScanIntervalWindow()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ScanIntervalWindow();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ScanIntervalWindow(); });
 }
 
-inline GUID GattCharacteristicUuids::ScanRefresh()
+inline winrt::guid GattCharacteristicUuids::ScanRefresh()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().ScanRefresh();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.ScanRefresh(); });
 }
 
-inline GUID GattCharacteristicUuids::SerialNumberString()
+inline winrt::guid GattCharacteristicUuids::SerialNumberString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().SerialNumberString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.SerialNumberString(); });
 }
 
-inline GUID GattCharacteristicUuids::GattServiceChanged()
+inline winrt::guid GattCharacteristicUuids::GattServiceChanged()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().GattServiceChanged();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.GattServiceChanged(); });
 }
 
-inline GUID GattCharacteristicUuids::SoftwareRevisionString()
+inline winrt::guid GattCharacteristicUuids::SoftwareRevisionString()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().SoftwareRevisionString();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.SoftwareRevisionString(); });
 }
 
-inline GUID GattCharacteristicUuids::SupportedNewAlertCategory()
+inline winrt::guid GattCharacteristicUuids::SupportedNewAlertCategory()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().SupportedNewAlertCategory();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.SupportedNewAlertCategory(); });
 }
 
-inline GUID GattCharacteristicUuids::SupportUnreadAlertCategory()
+inline winrt::guid GattCharacteristicUuids::SupportUnreadAlertCategory()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().SupportUnreadAlertCategory();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.SupportUnreadAlertCategory(); });
 }
 
-inline GUID GattCharacteristicUuids::SystemId()
+inline winrt::guid GattCharacteristicUuids::SystemId()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().SystemId();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.SystemId(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeAccuracy()
+inline winrt::guid GattCharacteristicUuids::TimeAccuracy()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeAccuracy();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeAccuracy(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeSource()
+inline winrt::guid GattCharacteristicUuids::TimeSource()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeSource();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeSource(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeUpdateControlPoint()
+inline winrt::guid GattCharacteristicUuids::TimeUpdateControlPoint()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeUpdateControlPoint();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeUpdateControlPoint(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeUpdateState()
+inline winrt::guid GattCharacteristicUuids::TimeUpdateState()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeUpdateState();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeUpdateState(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeWithDst()
+inline winrt::guid GattCharacteristicUuids::TimeWithDst()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeWithDst();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeWithDst(); });
 }
 
-inline GUID GattCharacteristicUuids::TimeZone()
+inline winrt::guid GattCharacteristicUuids::TimeZone()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TimeZone();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TimeZone(); });
 }
 
-inline GUID GattCharacteristicUuids::TxPowerLevel()
+inline winrt::guid GattCharacteristicUuids::TxPowerLevel()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().TxPowerLevel();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.TxPowerLevel(); });
 }
 
-inline GUID GattCharacteristicUuids::UnreadAlertStatus()
+inline winrt::guid GattCharacteristicUuids::UnreadAlertStatus()
 {
-    return get_activation_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>().UnreadAlertStatus();
+    return impl::call_factory<GattCharacteristicUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>([&](auto&& f) { return f.UnreadAlertStatus(); });
 }
 
-inline GUID GattDescriptor::ConvertShortIdToUuid(uint16_t shortId)
+inline winrt::guid GattDescriptor::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return get_activation_factory<GattDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics>().ConvertShortIdToUuid(shortId);
+    return impl::call_factory<GattDescriptor, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics>([&](auto&& f) { return f.ConvertShortIdToUuid(shortId); });
 }
 
-inline GUID GattDescriptorUuids::CharacteristicAggregateFormat()
+inline winrt::guid GattDescriptorUuids::CharacteristicAggregateFormat()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().CharacteristicAggregateFormat();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.CharacteristicAggregateFormat(); });
 }
 
-inline GUID GattDescriptorUuids::CharacteristicExtendedProperties()
+inline winrt::guid GattDescriptorUuids::CharacteristicExtendedProperties()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().CharacteristicExtendedProperties();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.CharacteristicExtendedProperties(); });
 }
 
-inline GUID GattDescriptorUuids::CharacteristicPresentationFormat()
+inline winrt::guid GattDescriptorUuids::CharacteristicPresentationFormat()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().CharacteristicPresentationFormat();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.CharacteristicPresentationFormat(); });
 }
 
-inline GUID GattDescriptorUuids::CharacteristicUserDescription()
+inline winrt::guid GattDescriptorUuids::CharacteristicUserDescription()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().CharacteristicUserDescription();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.CharacteristicUserDescription(); });
 }
 
-inline GUID GattDescriptorUuids::ClientCharacteristicConfiguration()
+inline winrt::guid GattDescriptorUuids::ClientCharacteristicConfiguration()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().ClientCharacteristicConfiguration();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.ClientCharacteristicConfiguration(); });
 }
 
-inline GUID GattDescriptorUuids::ServerCharacteristicConfiguration()
+inline winrt::guid GattDescriptorUuids::ServerCharacteristicConfiguration()
 {
-    return get_activation_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>().ServerCharacteristicConfiguration();
+    return impl::call_factory<GattDescriptorUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>([&](auto&& f) { return f.ServerCharacteristicConfiguration(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattDeviceService::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
-inline hstring GattDeviceService::GetDeviceSelectorFromUuid(GUID const& serviceUuid)
+inline hstring GattDeviceService::GetDeviceSelectorFromUuid(winrt::guid const& serviceUuid)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>().GetDeviceSelectorFromUuid(serviceUuid);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>([&](auto&& f) { return f.GetDeviceSelectorFromUuid(serviceUuid); });
 }
 
 inline hstring GattDeviceService::GetDeviceSelectorFromShortId(uint16_t serviceShortId)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>().GetDeviceSelectorFromShortId(serviceShortId);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>([&](auto&& f) { return f.GetDeviceSelectorFromShortId(serviceShortId); });
 }
 
-inline GUID GattDeviceService::ConvertShortIdToUuid(uint16_t shortId)
+inline winrt::guid GattDeviceService::ConvertShortIdToUuid(uint16_t shortId)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>().ConvertShortIdToUuid(shortId);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>([&](auto&& f) { return f.ConvertShortIdToUuid(shortId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattDeviceService::FromIdAsync(param::hstring const& deviceId, Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode const& sharingMode)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>().FromIdAsync(deviceId, sharingMode);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>([&](auto&& f) { return f.FromIdAsync(deviceId, sharingMode); });
 }
 
 inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceId(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceId(bluetoothDeviceId);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>([&](auto&& f) { return f.GetDeviceSelectorForBluetoothDeviceId(bluetoothDeviceId); });
 }
 
 inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceId(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceId(bluetoothDeviceId, cacheMode);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>([&](auto&& f) { return f.GetDeviceSelectorForBluetoothDeviceId(bluetoothDeviceId, cacheMode); });
 }
 
-inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid)
+inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceIdAndUuid(bluetoothDeviceId, serviceUuid);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>([&](auto&& f) { return f.GetDeviceSelectorForBluetoothDeviceIdAndUuid(bluetoothDeviceId, serviceUuid); });
 }
 
-inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, GUID const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode)
+inline hstring GattDeviceService::GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows::Devices::Bluetooth::BluetoothDeviceId const& bluetoothDeviceId, winrt::guid const& serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode const& cacheMode)
 {
-    return get_activation_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>().GetDeviceSelectorForBluetoothDeviceIdAndUuid(bluetoothDeviceId, serviceUuid, cacheMode);
+    return impl::call_factory<GattDeviceService, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics2>([&](auto&& f) { return f.GetDeviceSelectorForBluetoothDeviceIdAndUuid(bluetoothDeviceId, serviceUuid, cacheMode); });
 }
 
 inline GattLocalCharacteristicParameters::GattLocalCharacteristicParameters() :
-    GattLocalCharacteristicParameters(get_activation_factory<GattLocalCharacteristicParameters>().ActivateInstance<GattLocalCharacteristicParameters>())
+    GattLocalCharacteristicParameters(impl::call_factory<GattLocalCharacteristicParameters>([](auto&& f) { return f.template ActivateInstance<GattLocalCharacteristicParameters>(); }))
 {}
 
 inline GattLocalDescriptorParameters::GattLocalDescriptorParameters() :
-    GattLocalDescriptorParameters(get_activation_factory<GattLocalDescriptorParameters>().ActivateInstance<GattLocalDescriptorParameters>())
+    GattLocalDescriptorParameters(impl::call_factory<GattLocalDescriptorParameters>([](auto&& f) { return f.template ActivateInstance<GattLocalDescriptorParameters>(); }))
 {}
 
 inline uint8_t GattPresentationFormat::BluetoothSigAssignedNumbers()
 {
-    return get_activation_factory<GattPresentationFormat, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics>().BluetoothSigAssignedNumbers();
+    return impl::call_factory<GattPresentationFormat, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics>([&](auto&& f) { return f.BluetoothSigAssignedNumbers(); });
 }
 
 inline Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat GattPresentationFormat::FromParts(uint8_t formatType, int32_t exponent, uint16_t unit, uint8_t namespaceId, uint16_t description)
 {
-    return get_activation_factory<GattPresentationFormat, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics2>().FromParts(formatType, exponent, unit, namespaceId, description);
+    return impl::call_factory<GattPresentationFormat, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics2>([&](auto&& f) { return f.FromParts(formatType, exponent, unit, namespaceId, description); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Boolean()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Boolean();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Boolean(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Bit2()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Bit2();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Bit2(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Nibble()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Nibble();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Nibble(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt8()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt8();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt8(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt12()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt12();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt12(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt16()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt16();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt16(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt24()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt24();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt24(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt32()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt32();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt32(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt48()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt48();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt48(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt64()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt64();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt64(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::UInt128()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().UInt128();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.UInt128(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt8()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt8();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt8(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt12()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt12();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt12(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt16()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt16();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt16(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt24()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt24();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt24(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt32()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt32();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt32(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt48()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt48();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt48(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt64()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt64();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt64(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SInt128()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SInt128();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SInt128(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Float32()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Float32();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Float32(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Float64()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Float64();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Float64(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::SFloat()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().SFloat();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.SFloat(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Float()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Float();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Float(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::DUInt16()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().DUInt16();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.DUInt16(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Utf8()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Utf8();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Utf8(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Utf16()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Utf16();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Utf16(); });
 }
 
 inline uint8_t GattPresentationFormatTypes::Struct()
 {
-    return get_activation_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>().Struct();
+    return impl::call_factory<GattPresentationFormatTypes, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>([&](auto&& f) { return f.Struct(); });
 }
 
 inline uint8_t GattProtocolError::InvalidHandle()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InvalidHandle();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InvalidHandle(); });
 }
 
 inline uint8_t GattProtocolError::ReadNotPermitted()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().ReadNotPermitted();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.ReadNotPermitted(); });
 }
 
 inline uint8_t GattProtocolError::WriteNotPermitted()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().WriteNotPermitted();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.WriteNotPermitted(); });
 }
 
 inline uint8_t GattProtocolError::InvalidPdu()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InvalidPdu();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InvalidPdu(); });
 }
 
 inline uint8_t GattProtocolError::InsufficientAuthentication()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InsufficientAuthentication();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InsufficientAuthentication(); });
 }
 
 inline uint8_t GattProtocolError::RequestNotSupported()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().RequestNotSupported();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.RequestNotSupported(); });
 }
 
 inline uint8_t GattProtocolError::InvalidOffset()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InvalidOffset();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InvalidOffset(); });
 }
 
 inline uint8_t GattProtocolError::InsufficientAuthorization()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InsufficientAuthorization();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InsufficientAuthorization(); });
 }
 
 inline uint8_t GattProtocolError::PrepareQueueFull()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().PrepareQueueFull();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.PrepareQueueFull(); });
 }
 
 inline uint8_t GattProtocolError::AttributeNotFound()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().AttributeNotFound();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.AttributeNotFound(); });
 }
 
 inline uint8_t GattProtocolError::AttributeNotLong()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().AttributeNotLong();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.AttributeNotLong(); });
 }
 
 inline uint8_t GattProtocolError::InsufficientEncryptionKeySize()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InsufficientEncryptionKeySize();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InsufficientEncryptionKeySize(); });
 }
 
 inline uint8_t GattProtocolError::InvalidAttributeValueLength()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InvalidAttributeValueLength();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InvalidAttributeValueLength(); });
 }
 
 inline uint8_t GattProtocolError::UnlikelyError()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().UnlikelyError();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.UnlikelyError(); });
 }
 
 inline uint8_t GattProtocolError::InsufficientEncryption()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InsufficientEncryption();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InsufficientEncryption(); });
 }
 
 inline uint8_t GattProtocolError::UnsupportedGroupType()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().UnsupportedGroupType();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.UnsupportedGroupType(); });
 }
 
 inline uint8_t GattProtocolError::InsufficientResources()
 {
-    return get_activation_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>().InsufficientResources();
+    return impl::call_factory<GattProtocolError, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattProtocolErrorStatics>([&](auto&& f) { return f.InsufficientResources(); });
 }
 
 inline GattReliableWriteTransaction::GattReliableWriteTransaction() :
-    GattReliableWriteTransaction(get_activation_factory<GattReliableWriteTransaction>().ActivateInstance<GattReliableWriteTransaction>())
+    GattReliableWriteTransaction(impl::call_factory<GattReliableWriteTransaction>([](auto&& f) { return f.template ActivateInstance<GattReliableWriteTransaction>(); }))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> GattServiceProvider::CreateAsync(GUID const& serviceUuid)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult> GattServiceProvider::CreateAsync(winrt::guid const& serviceUuid)
 {
-    return get_activation_factory<GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderStatics>().CreateAsync(serviceUuid);
+    return impl::call_factory<GattServiceProvider, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderStatics>([&](auto&& f) { return f.CreateAsync(serviceUuid); });
 }
 
 inline GattServiceProviderAdvertisingParameters::GattServiceProviderAdvertisingParameters() :
-    GattServiceProviderAdvertisingParameters(get_activation_factory<GattServiceProviderAdvertisingParameters>().ActivateInstance<GattServiceProviderAdvertisingParameters>())
+    GattServiceProviderAdvertisingParameters(impl::call_factory<GattServiceProviderAdvertisingParameters>([](auto&& f) { return f.template ActivateInstance<GattServiceProviderAdvertisingParameters>(); }))
 {}
 
-inline GUID GattServiceUuids::Battery()
+inline winrt::guid GattServiceUuids::Battery()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().Battery();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.Battery(); });
 }
 
-inline GUID GattServiceUuids::BloodPressure()
+inline winrt::guid GattServiceUuids::BloodPressure()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().BloodPressure();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.BloodPressure(); });
 }
 
-inline GUID GattServiceUuids::CyclingSpeedAndCadence()
+inline winrt::guid GattServiceUuids::CyclingSpeedAndCadence()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().CyclingSpeedAndCadence();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.CyclingSpeedAndCadence(); });
 }
 
-inline GUID GattServiceUuids::GenericAccess()
+inline winrt::guid GattServiceUuids::GenericAccess()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().GenericAccess();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.GenericAccess(); });
 }
 
-inline GUID GattServiceUuids::GenericAttribute()
+inline winrt::guid GattServiceUuids::GenericAttribute()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().GenericAttribute();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.GenericAttribute(); });
 }
 
-inline GUID GattServiceUuids::Glucose()
+inline winrt::guid GattServiceUuids::Glucose()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().Glucose();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.Glucose(); });
 }
 
-inline GUID GattServiceUuids::HealthThermometer()
+inline winrt::guid GattServiceUuids::HealthThermometer()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().HealthThermometer();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.HealthThermometer(); });
 }
 
-inline GUID GattServiceUuids::HeartRate()
+inline winrt::guid GattServiceUuids::HeartRate()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().HeartRate();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.HeartRate(); });
 }
 
-inline GUID GattServiceUuids::RunningSpeedAndCadence()
+inline winrt::guid GattServiceUuids::RunningSpeedAndCadence()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>().RunningSpeedAndCadence();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>([&](auto&& f) { return f.RunningSpeedAndCadence(); });
 }
 
-inline GUID GattServiceUuids::AlertNotification()
+inline winrt::guid GattServiceUuids::AlertNotification()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().AlertNotification();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.AlertNotification(); });
 }
 
-inline GUID GattServiceUuids::CurrentTime()
+inline winrt::guid GattServiceUuids::CurrentTime()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().CurrentTime();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.CurrentTime(); });
 }
 
-inline GUID GattServiceUuids::CyclingPower()
+inline winrt::guid GattServiceUuids::CyclingPower()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().CyclingPower();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.CyclingPower(); });
 }
 
-inline GUID GattServiceUuids::DeviceInformation()
+inline winrt::guid GattServiceUuids::DeviceInformation()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().DeviceInformation();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.DeviceInformation(); });
 }
 
-inline GUID GattServiceUuids::HumanInterfaceDevice()
+inline winrt::guid GattServiceUuids::HumanInterfaceDevice()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().HumanInterfaceDevice();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.HumanInterfaceDevice(); });
 }
 
-inline GUID GattServiceUuids::ImmediateAlert()
+inline winrt::guid GattServiceUuids::ImmediateAlert()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().ImmediateAlert();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.ImmediateAlert(); });
 }
 
-inline GUID GattServiceUuids::LinkLoss()
+inline winrt::guid GattServiceUuids::LinkLoss()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().LinkLoss();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.LinkLoss(); });
 }
 
-inline GUID GattServiceUuids::LocationAndNavigation()
+inline winrt::guid GattServiceUuids::LocationAndNavigation()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().LocationAndNavigation();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.LocationAndNavigation(); });
 }
 
-inline GUID GattServiceUuids::NextDstChange()
+inline winrt::guid GattServiceUuids::NextDstChange()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().NextDstChange();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.NextDstChange(); });
 }
 
-inline GUID GattServiceUuids::PhoneAlertStatus()
+inline winrt::guid GattServiceUuids::PhoneAlertStatus()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().PhoneAlertStatus();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.PhoneAlertStatus(); });
 }
 
-inline GUID GattServiceUuids::ReferenceTimeUpdate()
+inline winrt::guid GattServiceUuids::ReferenceTimeUpdate()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().ReferenceTimeUpdate();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.ReferenceTimeUpdate(); });
 }
 
-inline GUID GattServiceUuids::ScanParameters()
+inline winrt::guid GattServiceUuids::ScanParameters()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().ScanParameters();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.ScanParameters(); });
 }
 
-inline GUID GattServiceUuids::TxPower()
+inline winrt::guid GattServiceUuids::TxPower()
 {
-    return get_activation_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>().TxPower();
+    return impl::call_factory<GattServiceUuids, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>([&](auto&& f) { return f.TxPower(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession> GattSession::FromDeviceIdAsync(Windows::Devices::Bluetooth::BluetoothDeviceId const& deviceId)
 {
-    return get_activation_factory<GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatics>().FromDeviceIdAsync(deviceId);
+    return impl::call_factory<GattSession, Windows::Devices::Bluetooth::GenericAttributeProfile::IGattSessionStatics>([&](auto&& f) { return f.FromDeviceIdAsync(deviceId); });
 }
 
 }
@@ -8808,5 +8044,3 @@ template<> struct hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfi
 template<> struct hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult> : winrt::impl::hash_base<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult> {};
 
 }
-
-WINRT_WARNING_POP

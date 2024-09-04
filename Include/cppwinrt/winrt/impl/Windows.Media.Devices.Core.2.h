@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,6 +24,7 @@ struct WINRT_EBO CameraIntrinsics :
     impl::require<CameraIntrinsics, Windows::Media::Devices::Core::ICameraIntrinsics2>
 {
     CameraIntrinsics(std::nullptr_t) noexcept {}
+    CameraIntrinsics(Windows::Foundation::Numerics::float2 const& focalLength, Windows::Foundation::Numerics::float2 const& principalPoint, Windows::Foundation::Numerics::float3 const& radialDistortion, Windows::Foundation::Numerics::float2 const& tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight);
 };
 
 struct WINRT_EBO DepthCorrelatedCoordinateMapper :

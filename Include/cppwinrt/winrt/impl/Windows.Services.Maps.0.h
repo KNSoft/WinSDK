@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -359,40 +359,40 @@ template <> struct name<Windows::Services::Maps::MapRouteRestrictions>{ static c
 template <> struct name<Windows::Services::Maps::MapServiceDataUsagePreference>{ static constexpr auto & value{ L"Windows.Services.Maps.MapServiceDataUsagePreference" }; };
 template <> struct name<Windows::Services::Maps::TrafficCongestion>{ static constexpr auto & value{ L"Windows.Services.Maps.TrafficCongestion" }; };
 template <> struct name<Windows::Services::Maps::WaypointKind>{ static constexpr auto & value{ L"Windows.Services.Maps.WaypointKind" }; };
-template <> struct guid<Windows::Services::Maps::IEnhancedWaypoint>{ static constexpr GUID value{ 0xED268C74,0x5913,0x11E6,{ 0x8B,0x77,0x86,0xF3,0x0C,0xA8,0x93,0xD3 } }; };
-template <> struct guid<Windows::Services::Maps::IEnhancedWaypointFactory>{ static constexpr GUID value{ 0xAF868477,0xA2AA,0x46DD,{ 0xB6,0x45,0x23,0xB3,0x1B,0x8A,0xA6,0xC7 } }; };
-template <> struct guid<Windows::Services::Maps::IManeuverWarning>{ static constexpr GUID value{ 0xC1A36D8A,0x2630,0x4378,{ 0x9E,0x4A,0x6E,0x44,0x25,0x3D,0xCE,0xBA } }; };
-template <> struct guid<Windows::Services::Maps::IMapAddress>{ static constexpr GUID value{ 0xCFA7A973,0xA3B4,0x4494,{ 0xB3,0xFF,0xCB,0xA9,0x4D,0xB6,0x96,0x99 } }; };
-template <> struct guid<Windows::Services::Maps::IMapAddress2>{ static constexpr GUID value{ 0x75CD6DF1,0xE5AD,0x45A9,{ 0xBF,0x40,0x6C,0xF2,0x56,0xC1,0xDD,0x13 } }; };
-template <> struct guid<Windows::Services::Maps::IMapLocation>{ static constexpr GUID value{ 0x3C073F57,0x0DA4,0x42E8,{ 0x9E,0xE2,0xA9,0x6F,0xCF,0x23,0x71,0xDC } }; };
-template <> struct guid<Windows::Services::Maps::IMapLocationFinderResult>{ static constexpr GUID value{ 0x43F1F179,0xE8CC,0x45F6,{ 0xBE,0xD2,0x54,0xCC,0xBF,0x96,0x5D,0x9A } }; };
-template <> struct guid<Windows::Services::Maps::IMapLocationFinderStatics>{ static constexpr GUID value{ 0x318ADB5D,0x1C5D,0x4F35,{ 0xA2,0xDF,0xAA,0xCA,0x94,0x95,0x95,0x17 } }; };
-template <> struct guid<Windows::Services::Maps::IMapLocationFinderStatics2>{ static constexpr GUID value{ 0x959A8B96,0x6485,0x4DFD,{ 0x85,0x1A,0x33,0xAC,0x31,0x7E,0x3A,0xF6 } }; };
-template <> struct guid<Windows::Services::Maps::IMapManagerStatics>{ static constexpr GUID value{ 0x37E3E515,0x82B4,0x4D54,{ 0x8F,0xD9,0xAF,0x26,0x24,0xB3,0x01,0x1C } }; };
-template <> struct guid<Windows::Services::Maps::IMapRoute>{ static constexpr GUID value{ 0xFB07B732,0x584D,0x4583,{ 0x9C,0x60,0x64,0x1F,0xEA,0x27,0x43,0x49 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRoute2>{ static constexpr GUID value{ 0xD1C5D40C,0x2213,0x4AB0,{ 0xA2,0x60,0x46,0xB3,0x81,0x69,0xBE,0xAC } }; };
-template <> struct guid<Windows::Services::Maps::IMapRoute3>{ static constexpr GUID value{ 0x858D1EAE,0xF2AD,0x429F,{ 0xBB,0x37,0xCD,0x21,0x09,0x4F,0xFC,0x92 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRoute4>{ static constexpr GUID value{ 0x366C8CA5,0x3053,0x4FA1,{ 0x80,0xFF,0xD4,0x75,0xF3,0xED,0x1E,0x6E } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteDrivingOptions>{ static constexpr GUID value{ 0x6815364D,0xC6DC,0x4697,{ 0xA4,0x52,0xB1,0x8F,0x8F,0x0B,0x67,0xA1 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteDrivingOptions2>{ static constexpr GUID value{ 0x35DC8670,0xC298,0x48D0,{ 0xB5,0xAD,0x82,0x54,0x60,0x64,0x56,0x03 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteFinderResult>{ static constexpr GUID value{ 0xA868A31A,0x9422,0x46AC,{ 0x8C,0xA1,0xB1,0x61,0x4D,0x4B,0xFB,0xE2 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteFinderResult2>{ static constexpr GUID value{ 0x20709C6D,0xD90C,0x46C8,{ 0x91,0xC6,0x7D,0x4B,0xE4,0xEF,0xB2,0x15 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteFinderStatics>{ static constexpr GUID value{ 0xB8A5C50F,0x1C64,0x4C3A,{ 0x81,0xEB,0x1F,0x7C,0x15,0x2A,0xFB,0xBB } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteFinderStatics2>{ static constexpr GUID value{ 0xAFCC2C73,0x7760,0x49AF,{ 0xB3,0xBD,0xBA,0xF1,0x35,0xB7,0x03,0xE1 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteFinderStatics3>{ static constexpr GUID value{ 0xF6098134,0x5913,0x11E6,{ 0x8B,0x77,0x86,0xF3,0x0C,0xA8,0x93,0xD3 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteLeg>{ static constexpr GUID value{ 0x96F8B2F6,0x5BBA,0x4D17,{ 0x9D,0xB6,0x1A,0x26,0x3F,0xEC,0x74,0x71 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteLeg2>{ static constexpr GUID value{ 0x02E2062D,0xC9C6,0x45B8,{ 0x8E,0x54,0x1A,0x10,0xB5,0x7A,0x17,0xE8 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteManeuver>{ static constexpr GUID value{ 0xED5C17F0,0xA6AB,0x4D65,{ 0xA0,0x86,0xFA,0x8A,0x7E,0x34,0x0D,0xF2 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteManeuver2>{ static constexpr GUID value{ 0x5D7BCD9C,0x7C9B,0x41DF,{ 0x83,0x8B,0xEA,0xE2,0x1E,0x4B,0x05,0xA9 } }; };
-template <> struct guid<Windows::Services::Maps::IMapRouteManeuver3>{ static constexpr GUID value{ 0xA6A138DF,0x0483,0x4166,{ 0x85,0xBE,0xB9,0x93,0x36,0xC1,0x18,0x75 } }; };
-template <> struct guid<Windows::Services::Maps::IMapServiceStatics>{ static constexpr GUID value{ 0x0144AD85,0xC04C,0x4CDD,{ 0x87,0x1A,0xA0,0x72,0x6D,0x09,0x7C,0xD4 } }; };
-template <> struct guid<Windows::Services::Maps::IMapServiceStatics2>{ static constexpr GUID value{ 0xF8193EED,0x9C85,0x40A9,{ 0x88,0x96,0x0F,0xC3,0xFD,0x2B,0x7C,0x2A } }; };
-template <> struct guid<Windows::Services::Maps::IMapServiceStatics3>{ static constexpr GUID value{ 0x0A11CE20,0x63A7,0x4854,{ 0xB3,0x55,0xD6,0xDC,0xDA,0x22,0x3D,0x1B } }; };
-template <> struct guid<Windows::Services::Maps::IMapServiceStatics4>{ static constexpr GUID value{ 0x088A2862,0x6ABC,0x420E,{ 0x94,0x5F,0x4C,0xFD,0x89,0xC6,0x73,0x56 } }; };
-template <> struct guid<Windows::Services::Maps::IPlaceInfo>{ static constexpr GUID value{ 0x9A0810B6,0x31C8,0x4F6A,{ 0x9F,0x18,0x95,0x0B,0x4C,0x38,0x95,0x1A } }; };
-template <> struct guid<Windows::Services::Maps::IPlaceInfoCreateOptions>{ static constexpr GUID value{ 0xCD33C125,0x67F1,0x4BB3,{ 0x99,0x07,0xEC,0xCE,0x93,0x9B,0x03,0x99 } }; };
-template <> struct guid<Windows::Services::Maps::IPlaceInfoStatics>{ static constexpr GUID value{ 0x82B9FF71,0x6CD0,0x48A4,{ 0xAF,0xD9,0x5E,0xD8,0x20,0x97,0x93,0x6B } }; };
-template <> struct guid<Windows::Services::Maps::IPlaceInfoStatics2>{ static constexpr GUID value{ 0x730F0249,0x4047,0x44A3,{ 0x8F,0x81,0x25,0x50,0xA5,0x21,0x63,0x70 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IEnhancedWaypoint>{ static constexpr guid value{ 0xED268C74,0x5913,0x11E6,{ 0x8B,0x77,0x86,0xF3,0x0C,0xA8,0x93,0xD3 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IEnhancedWaypointFactory>{ static constexpr guid value{ 0xAF868477,0xA2AA,0x46DD,{ 0xB6,0x45,0x23,0xB3,0x1B,0x8A,0xA6,0xC7 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IManeuverWarning>{ static constexpr guid value{ 0xC1A36D8A,0x2630,0x4378,{ 0x9E,0x4A,0x6E,0x44,0x25,0x3D,0xCE,0xBA } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapAddress>{ static constexpr guid value{ 0xCFA7A973,0xA3B4,0x4494,{ 0xB3,0xFF,0xCB,0xA9,0x4D,0xB6,0x96,0x99 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapAddress2>{ static constexpr guid value{ 0x75CD6DF1,0xE5AD,0x45A9,{ 0xBF,0x40,0x6C,0xF2,0x56,0xC1,0xDD,0x13 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapLocation>{ static constexpr guid value{ 0x3C073F57,0x0DA4,0x42E8,{ 0x9E,0xE2,0xA9,0x6F,0xCF,0x23,0x71,0xDC } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapLocationFinderResult>{ static constexpr guid value{ 0x43F1F179,0xE8CC,0x45F6,{ 0xBE,0xD2,0x54,0xCC,0xBF,0x96,0x5D,0x9A } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapLocationFinderStatics>{ static constexpr guid value{ 0x318ADB5D,0x1C5D,0x4F35,{ 0xA2,0xDF,0xAA,0xCA,0x94,0x95,0x95,0x17 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapLocationFinderStatics2>{ static constexpr guid value{ 0x959A8B96,0x6485,0x4DFD,{ 0x85,0x1A,0x33,0xAC,0x31,0x7E,0x3A,0xF6 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapManagerStatics>{ static constexpr guid value{ 0x37E3E515,0x82B4,0x4D54,{ 0x8F,0xD9,0xAF,0x26,0x24,0xB3,0x01,0x1C } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRoute>{ static constexpr guid value{ 0xFB07B732,0x584D,0x4583,{ 0x9C,0x60,0x64,0x1F,0xEA,0x27,0x43,0x49 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRoute2>{ static constexpr guid value{ 0xD1C5D40C,0x2213,0x4AB0,{ 0xA2,0x60,0x46,0xB3,0x81,0x69,0xBE,0xAC } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRoute3>{ static constexpr guid value{ 0x858D1EAE,0xF2AD,0x429F,{ 0xBB,0x37,0xCD,0x21,0x09,0x4F,0xFC,0x92 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRoute4>{ static constexpr guid value{ 0x366C8CA5,0x3053,0x4FA1,{ 0x80,0xFF,0xD4,0x75,0xF3,0xED,0x1E,0x6E } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteDrivingOptions>{ static constexpr guid value{ 0x6815364D,0xC6DC,0x4697,{ 0xA4,0x52,0xB1,0x8F,0x8F,0x0B,0x67,0xA1 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteDrivingOptions2>{ static constexpr guid value{ 0x35DC8670,0xC298,0x48D0,{ 0xB5,0xAD,0x82,0x54,0x60,0x64,0x56,0x03 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteFinderResult>{ static constexpr guid value{ 0xA868A31A,0x9422,0x46AC,{ 0x8C,0xA1,0xB1,0x61,0x4D,0x4B,0xFB,0xE2 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteFinderResult2>{ static constexpr guid value{ 0x20709C6D,0xD90C,0x46C8,{ 0x91,0xC6,0x7D,0x4B,0xE4,0xEF,0xB2,0x15 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteFinderStatics>{ static constexpr guid value{ 0xB8A5C50F,0x1C64,0x4C3A,{ 0x81,0xEB,0x1F,0x7C,0x15,0x2A,0xFB,0xBB } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteFinderStatics2>{ static constexpr guid value{ 0xAFCC2C73,0x7760,0x49AF,{ 0xB3,0xBD,0xBA,0xF1,0x35,0xB7,0x03,0xE1 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteFinderStatics3>{ static constexpr guid value{ 0xF6098134,0x5913,0x11E6,{ 0x8B,0x77,0x86,0xF3,0x0C,0xA8,0x93,0xD3 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteLeg>{ static constexpr guid value{ 0x96F8B2F6,0x5BBA,0x4D17,{ 0x9D,0xB6,0x1A,0x26,0x3F,0xEC,0x74,0x71 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteLeg2>{ static constexpr guid value{ 0x02E2062D,0xC9C6,0x45B8,{ 0x8E,0x54,0x1A,0x10,0xB5,0x7A,0x17,0xE8 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteManeuver>{ static constexpr guid value{ 0xED5C17F0,0xA6AB,0x4D65,{ 0xA0,0x86,0xFA,0x8A,0x7E,0x34,0x0D,0xF2 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteManeuver2>{ static constexpr guid value{ 0x5D7BCD9C,0x7C9B,0x41DF,{ 0x83,0x8B,0xEA,0xE2,0x1E,0x4B,0x05,0xA9 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapRouteManeuver3>{ static constexpr guid value{ 0xA6A138DF,0x0483,0x4166,{ 0x85,0xBE,0xB9,0x93,0x36,0xC1,0x18,0x75 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapServiceStatics>{ static constexpr guid value{ 0x0144AD85,0xC04C,0x4CDD,{ 0x87,0x1A,0xA0,0x72,0x6D,0x09,0x7C,0xD4 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapServiceStatics2>{ static constexpr guid value{ 0xF8193EED,0x9C85,0x40A9,{ 0x88,0x96,0x0F,0xC3,0xFD,0x2B,0x7C,0x2A } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapServiceStatics3>{ static constexpr guid value{ 0x0A11CE20,0x63A7,0x4854,{ 0xB3,0x55,0xD6,0xDC,0xDA,0x22,0x3D,0x1B } }; };
+template <> struct guid_storage<Windows::Services::Maps::IMapServiceStatics4>{ static constexpr guid value{ 0x088A2862,0x6ABC,0x420E,{ 0x94,0x5F,0x4C,0xFD,0x89,0xC6,0x73,0x56 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IPlaceInfo>{ static constexpr guid value{ 0x9A0810B6,0x31C8,0x4F6A,{ 0x9F,0x18,0x95,0x0B,0x4C,0x38,0x95,0x1A } }; };
+template <> struct guid_storage<Windows::Services::Maps::IPlaceInfoCreateOptions>{ static constexpr guid value{ 0xCD33C125,0x67F1,0x4BB3,{ 0x99,0x07,0xEC,0xCE,0x93,0x9B,0x03,0x99 } }; };
+template <> struct guid_storage<Windows::Services::Maps::IPlaceInfoStatics>{ static constexpr guid value{ 0x82B9FF71,0x6CD0,0x48A4,{ 0xAF,0xD9,0x5E,0xD8,0x20,0x97,0x93,0x6B } }; };
+template <> struct guid_storage<Windows::Services::Maps::IPlaceInfoStatics2>{ static constexpr guid value{ 0x730F0249,0x4047,0x44A3,{ 0x8F,0x81,0x25,0x50,0xA5,0x21,0x63,0x70 } }; };
 template <> struct default_interface<Windows::Services::Maps::EnhancedWaypoint>{ using type = Windows::Services::Maps::IEnhancedWaypoint; };
 template <> struct default_interface<Windows::Services::Maps::ManeuverWarning>{ using type = Windows::Services::Maps::IManeuverWarning; };
 template <> struct default_interface<Windows::Services::Maps::MapAddress>{ using type = Windows::Services::Maps::IMapAddress; };
@@ -405,6 +405,253 @@ template <> struct default_interface<Windows::Services::Maps::MapRouteLeg>{ usin
 template <> struct default_interface<Windows::Services::Maps::MapRouteManeuver>{ using type = Windows::Services::Maps::IMapRouteManeuver; };
 template <> struct default_interface<Windows::Services::Maps::PlaceInfo>{ using type = Windows::Services::Maps::IPlaceInfo; };
 template <> struct default_interface<Windows::Services::Maps::PlaceInfoCreateOptions>{ using type = Windows::Services::Maps::IPlaceInfoCreateOptions; };
+
+template <> struct abi<Windows::Services::Maps::IEnhancedWaypoint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Point(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::Services::Maps::WaypointKind* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IEnhancedWaypointFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* point, Windows::Services::Maps::WaypointKind kind, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IManeuverWarning>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Services::Maps::ManeuverWarningKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Severity(Windows::Services::Maps::ManeuverWarningSeverity* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapAddress>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BuildingName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BuildingFloor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BuildingRoom(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BuildingWing(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StreetNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Street(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Neighborhood(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_District(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Town(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Region(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegionCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Country(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CountryCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PostCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Continent(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapAddress2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FormattedAddress(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapLocation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Point(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Address(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapLocationFinderResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Locations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Maps::MapLocationFinderStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapLocationFinderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindLocationsAtAsync(void* queryPoint, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindLocationsAsync(void* searchText, void* referencePoint, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindLocationsWithMaxCountAsync(void* searchText, void* referencePoint, uint32_t maxCount, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapLocationFinderStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindLocationsAtWithAccuracyAsync(void* queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ShowDownloadedMapsUI() noexcept = 0;
+    virtual int32_t WINRT_CALL ShowMapsUpdateUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRoute>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoundingBox(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Legs(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTrafficBased(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRoute2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ViolatedRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasBlockedRoads(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRoute3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRoute4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsScenic(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteDrivingOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxAlternateRouteCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxAlternateRouteCount(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialHeading(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialHeading(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RouteOptimization(Windows::Services::Maps::MapRouteOptimization* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteDrivingOptions2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DepartureTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DepartureTime(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteFinderResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Route(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Maps::MapRouteFinderStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteFinderResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AlternateRoutes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDrivingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteWithOptimizationAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteWithOptimizationAndRestrictionsAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteFromWaypointsAndOptimizationAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWalkingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWalkingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDrivingRouteWithOptionsAsync(void* startPoint, void* endPoint, void* options, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDrivingRouteFromEnhancedWaypointsAsync(void* waypoints, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(void* waypoints, void* options, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteLeg>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BoundingBox(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Maneuvers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteLeg2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteManeuver>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StartingPoint(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LengthInMeters(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstructionText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::Services::Maps::MapRouteManeuverKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExitNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManeuverNotices(Windows::Services::Maps::MapManeuverNotices* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteManeuver2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StartHeading(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndHeading(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StreetName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapRouteManeuver3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Warnings(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapServiceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_ServiceToken(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceToken(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapServiceStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WorldViewRegionCode(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapServiceStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataAttributions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IMapServiceStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IPlaceInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Show(Windows::Foundation::Rect selection) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowWithPreferredPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Identifier(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Geoshape(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IPlaceInfoCreateOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayAddress(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IPlaceInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* referencePoint, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithGeopointAndOptions(void* referencePoint, void* options, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromIdentifier(void* identifier, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromIdentifierWithOptions(void* identifier, void* defaultPoint, void* options, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromMapLocation(void* location, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsShowSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Maps::IPlaceInfoStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromAddress(void* displayAddress, void** resultValue) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromAddressWithName(void* displayAddress, void* displayName, void** resultValue) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Services_Maps_IEnhancedWaypoint
@@ -720,252 +967,5 @@ struct consume_Windows_Services_Maps_IPlaceInfoStatics2
     Windows::Services::Maps::PlaceInfo CreateFromAddress(param::hstring const& displayAddress, param::hstring const& displayName) const;
 };
 template <> struct consume<Windows::Services::Maps::IPlaceInfoStatics2> { template <typename D> using type = consume_Windows_Services_Maps_IPlaceInfoStatics2<D>; };
-
-template <> struct abi<Windows::Services::Maps::IEnhancedWaypoint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Point(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::Services::Maps::WaypointKind* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IEnhancedWaypointFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* point, Windows::Services::Maps::WaypointKind kind, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IManeuverWarning>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Services::Maps::ManeuverWarningKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Severity(Windows::Services::Maps::ManeuverWarningSeverity* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapAddress>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BuildingName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BuildingFloor(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BuildingRoom(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BuildingWing(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StreetNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Street(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Neighborhood(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_District(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Town(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Region(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegionCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Country(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CountryCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PostCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Continent(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapAddress2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FormattedAddress(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapLocation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Point(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Address(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapLocationFinderResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Locations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Services::Maps::MapLocationFinderStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapLocationFinderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindLocationsAtAsync(void* queryPoint, void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindLocationsAsync(HSTRING searchText, void* referencePoint, void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindLocationsWithMaxCountAsync(HSTRING searchText, void* referencePoint, uint32_t maxCount, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapLocationFinderStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindLocationsAtWithAccuracyAsync(void* queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ShowDownloadedMapsUI() noexcept = 0;
-    virtual HRESULT __stdcall ShowMapsUpdateUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRoute>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BoundingBox(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LengthInMeters(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Path(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Legs(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTrafficBased(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRoute2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ViolatedRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasBlockedRoads(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRoute3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRoute4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsScenic(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteDrivingOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxAlternateRouteCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxAlternateRouteCount(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialHeading(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialHeading(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RouteOptimization(Windows::Services::Maps::MapRouteOptimization* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) noexcept = 0;
-    virtual HRESULT __stdcall get_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteDrivingOptions2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DepartureTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DepartureTime(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteFinderResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Route(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Services::Maps::MapRouteFinderStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteFinderResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AlternateRoutes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDrivingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteWithOptimizationAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteWithOptimizationAndRestrictionsAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(void* startPoint, void* endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteFromWaypointsAndOptimizationAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(void* wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetWalkingRouteAsync(void* startPoint, void* endPoint, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetWalkingRouteFromWaypointsAsync(void* wayPoints, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDrivingRouteWithOptionsAsync(void* startPoint, void* endPoint, void* options, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteFinderStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDrivingRouteFromEnhancedWaypointsAsync(void* waypoints, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(void* waypoints, void* options, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteLeg>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BoundingBox(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Path(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LengthInMeters(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EstimatedDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Maneuvers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteLeg2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DurationWithoutTraffic(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteManeuver>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StartingPoint(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LengthInMeters(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstructionText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::Services::Maps::MapRouteManeuverKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExitNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManeuverNotices(Windows::Services::Maps::MapManeuverNotices* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteManeuver2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StartHeading(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndHeading(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StreetName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapRouteManeuver3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Warnings(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapServiceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_ServiceToken(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceToken(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapServiceStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WorldViewRegionCode(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapServiceStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataAttributions(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IMapServiceStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IPlaceInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Show(Windows::Foundation::Rect selection) noexcept = 0;
-    virtual HRESULT __stdcall ShowWithPreferredPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept = 0;
-    virtual HRESULT __stdcall get_Identifier(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Geoshape(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IPlaceInfoCreateOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayAddress(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IPlaceInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* referencePoint, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithGeopointAndOptions(void* referencePoint, void* options, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromIdentifier(HSTRING identifier, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromIdentifierWithOptions(HSTRING identifier, void* defaultPoint, void* options, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromMapLocation(void* location, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall get_IsShowSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Maps::IPlaceInfoStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromAddress(HSTRING displayAddress, void** resultValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromAddressWithName(HSTRING displayAddress, HSTRING displayName, void** resultValue) noexcept = 0;
-};};
 
 }

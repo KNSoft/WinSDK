@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.HumanInterfaceDevice.2.h"
@@ -71,72 +71,72 @@ template <typename D> Windows::Devices::Input::Preview::GazeDevicePreview consum
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->add_Added(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview> consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added_revoker consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>::remove_Added, Added(handler));
+    return impl::make_event_revoker<D, Added_revoker>(this, Added(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Added(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Added(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Added(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->add_Removed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview> consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed_revoker consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>::remove_Removed, Removed(handler));
+    return impl::make_event_revoker<D, Removed_revoker>(this, Removed(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Removed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Removed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Removed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->add_Updated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview> consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated_revoker consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>::remove_Updated, Updated(handler));
+    return impl::make_event_revoker<D, Updated_revoker>(this, Updated(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Updated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Updated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_Updated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->add_EnumerationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview> consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted_revoker consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>::remove_EnumerationCompleted, EnumerationCompleted(handler));
+    return impl::make_event_revoker<D, EnumerationCompleted_revoker>(this, EnumerationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::EnumerationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_EnumerationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview)->remove_EnumerationCompleted(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Devices_Input_Preview_IGazeDeviceWatcherPreview<D>::Start() const
@@ -201,55 +201,55 @@ template <typename D> Windows::Devices::Input::Preview::GazePointPreview consume
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->add_GazeMoved(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeInputSourcePreview> consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved_revoker consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeInputSourcePreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeInputSourcePreview>::remove_GazeMoved, GazeMoved(handler));
+    return impl::make_event_revoker<D, GazeMoved_revoker>(this, GazeMoved(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeMoved(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeMoved(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeMoved(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->add_GazeEntered(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeInputSourcePreview> consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered_revoker consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeInputSourcePreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeInputSourcePreview>::remove_GazeEntered, GazeEntered(handler));
+    return impl::make_event_revoker<D, GazeEntered_revoker>(this, GazeEntered(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeEntered(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeEntered(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeEntered(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->add_GazeExited(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::Preview::IGazeInputSourcePreview> consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited_revoker consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::Preview::IGazeInputSourcePreview>(this, &abi_t<Windows::Devices::Input::Preview::IGazeInputSourcePreview>::remove_GazeExited, GazeExited(handler));
+    return impl::make_event_revoker<D, GazeExited_revoker>(this, GazeExited(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(event_token const& token) const
+template <typename D> void consume_Windows_Devices_Input_Preview_IGazeInputSourcePreview<D>::GazeExited(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeExited(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::Preview::IGazeInputSourcePreview)->remove_GazeExited(get_abi(token)));
 }
 
 template <typename D> Windows::Devices::Input::Preview::GazeInputSourcePreview consume_Windows_Devices_Input_Preview_IGazeInputSourcePreviewStatics<D>::GetForCurrentView() const
@@ -330,662 +330,548 @@ template <typename D> Windows::Devices::HumanInterfaceDevice::HidInputReport con
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeDevicePreview> : produce_base<D, Windows::Devices::Input::Preview::IGazeDevicePreview>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanTrackEyes(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanTrackEyes(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanTrackEyes, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanTrackEyes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanTrackHead(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanTrackHead(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanTrackHead, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanTrackHead());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConfigurationState(Windows::Devices::Input::Preview::GazeDeviceConfigurationStatePreview* value) noexcept final
+    int32_t WINRT_CALL get_ConfigurationState(Windows::Devices::Input::Preview::GazeDeviceConfigurationStatePreview* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfigurationState, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDeviceConfigurationStatePreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazeDeviceConfigurationStatePreview>(this->shim().ConfigurationState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCalibrationAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestCalibrationAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCalibrationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestCalibrationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumericControlDescriptions(uint16_t usagePage, uint16_t usageId, void** result) noexcept final
+    int32_t WINRT_CALL GetNumericControlDescriptions(uint16_t usagePage, uint16_t usageId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumericControlDescriptions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>), uint16_t, uint16_t);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>>(this->shim().GetNumericControlDescriptions(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanControlDescriptions(uint16_t usagePage, uint16_t usageId, void** result) noexcept final
+    int32_t WINRT_CALL GetBooleanControlDescriptions(uint16_t usagePage, uint16_t usageId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanControlDescriptions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>), uint16_t, uint16_t);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>>(this->shim().GetBooleanControlDescriptions(usagePage, usageId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherAddedPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherAddedPreviewEventArgs>
 {
-    HRESULT __stdcall get_Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Device, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDevicePreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazeDevicePreview>(this->shim().Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview> : produce_base<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherPreview>
 {
-    HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherAddedPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Added(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Added(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Added(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherRemovedPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Removed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Removed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Removed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Devices::Input::Preview::GazeDeviceWatcherUpdatedPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Updated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Updated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Updated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().EnumerationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().EnumerationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherRemovedPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherRemovedPreviewEventArgs>
 {
-    HRESULT __stdcall get_Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Device, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDevicePreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazeDevicePreview>(this->shim().Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherUpdatedPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeDeviceWatcherUpdatedPreviewEventArgs>
 {
-    HRESULT __stdcall get_Device(void** value) noexcept final
+    int32_t WINRT_CALL get_Device(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Device, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDevicePreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazeDevicePreview>(this->shim().Device());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeEnteredPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeEnteredPreviewEventArgs>
 {
-    HRESULT __stdcall get_Handled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Handled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Handled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Handled(bool value) noexcept final
+    int32_t WINRT_CALL put_Handled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void), bool);
             this->shim().Handled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentPoint(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentPoint, WINRT_WRAP(Windows::Devices::Input::Preview::GazePointPreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazePointPreview>(this->shim().CurrentPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeExitedPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeExitedPreviewEventArgs>
 {
-    HRESULT __stdcall get_Handled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Handled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Handled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Handled(bool value) noexcept final
+    int32_t WINRT_CALL put_Handled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void), bool);
             this->shim().Handled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentPoint(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentPoint, WINRT_WRAP(Windows::Devices::Input::Preview::GazePointPreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazePointPreview>(this->shim().CurrentPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeInputSourcePreview> : produce_base<D, Windows::Devices::Input::Preview::IGazeInputSourcePreview>
 {
-    HRESULT __stdcall add_GazeMoved(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_GazeMoved(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GazeMoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GazeMoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().GazeMoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeMovedPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GazeMoved(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GazeMoved(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GazeMoved(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GazeMoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GazeMoved(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_GazeEntered(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_GazeEntered(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GazeEntered(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GazeEntered, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().GazeEntered(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeEnteredPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GazeEntered(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GazeEntered(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GazeEntered(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GazeEntered, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GazeEntered(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_GazeExited(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_GazeExited(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GazeExited(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GazeExited, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().GazeExited(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::Preview::GazeInputSourcePreview, Windows::Devices::Input::Preview::GazeExitedPreviewEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GazeExited(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GazeExited(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GazeExited(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GazeExited, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GazeExited(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics> : produce_base<D, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** result) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Devices::Input::Preview::GazeInputSourcePreview));
             *result = detach_from<Windows::Devices::Input::Preview::GazeInputSourcePreview>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWatcher(void** result) noexcept final
+    int32_t WINRT_CALL CreateWatcher(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWatcher, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDeviceWatcherPreview));
             *result = detach_from<Windows::Devices::Input::Preview::GazeDeviceWatcherPreview>(this->shim().CreateWatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazeMovedPreviewEventArgs> : produce_base<D, Windows::Devices::Input::Preview::IGazeMovedPreviewEventArgs>
 {
-    HRESULT __stdcall get_Handled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Handled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Handled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Handled(bool value) noexcept final
+    int32_t WINRT_CALL put_Handled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void), bool);
             this->shim().Handled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentPoint(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentPoint, WINRT_WRAP(Windows::Devices::Input::Preview::GazePointPreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazePointPreview>(this->shim().CurrentPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIntermediatePoints(void** result) noexcept final
+    int32_t WINRT_CALL GetIntermediatePoints(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIntermediatePoints, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Input::Preview::GazePointPreview>));
             *result = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Input::Preview::GazePointPreview>>(this->shim().GetIntermediatePoints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::Preview::IGazePointPreview> : produce_base<D, Windows::Devices::Input::Preview::IGazePointPreview>
 {
-    HRESULT __stdcall get_SourceDevice(void** value) noexcept final
+    int32_t WINRT_CALL get_SourceDevice(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceDevice, WINRT_WRAP(Windows::Devices::Input::Preview::GazeDevicePreview));
             *value = detach_from<Windows::Devices::Input::Preview::GazeDevicePreview>(this->shim().SourceDevice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EyeGazePosition(void** value) noexcept final
+    int32_t WINRT_CALL get_EyeGazePosition(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EyeGazePosition, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Point>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Point>>(this->shim().EyeGazePosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeadGazePosition(void** value) noexcept final
+    int32_t WINRT_CALL get_HeadGazePosition(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeadGazePosition, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Point>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Point>>(this->shim().HeadGazePosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HidInputReport(void** value) noexcept final
+    int32_t WINRT_CALL get_HidInputReport(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HidInputReport, WINRT_WRAP(Windows::Devices::HumanInterfaceDevice::HidInputReport));
             *value = detach_from<Windows::Devices::HumanInterfaceDevice::HidInputReport>(this->shim().HidInputReport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -995,12 +881,12 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Input::Preview {
 
 inline Windows::Devices::Input::Preview::GazeInputSourcePreview GazeInputSourcePreview::GetForCurrentView()
 {
-    return get_activation_factory<GazeInputSourcePreview, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics>().GetForCurrentView();
+    return impl::call_factory<GazeInputSourcePreview, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Devices::Input::Preview::GazeDeviceWatcherPreview GazeInputSourcePreview::CreateWatcher()
 {
-    return get_activation_factory<GazeInputSourcePreview, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics>().CreateWatcher();
+    return impl::call_factory<GazeInputSourcePreview, Windows::Devices::Input::Preview::IGazeInputSourcePreviewStatics>([&](auto&& f) { return f.CreateWatcher(); });
 }
 
 }
@@ -1030,5 +916,3 @@ template<> struct hash<winrt::Windows::Devices::Input::Preview::GazeMovedPreview
 template<> struct hash<winrt::Windows::Devices::Input::Preview::GazePointPreview> : winrt::impl::hash_base<winrt::Windows::Devices::Input::Preview::GazePointPreview> {};
 
 }
-
-WINRT_WARNING_POP

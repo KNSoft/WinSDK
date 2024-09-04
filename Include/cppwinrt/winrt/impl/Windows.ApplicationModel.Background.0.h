@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -143,9 +143,9 @@ enum class BackgroundAccessRequestKind : int32_t
 enum class BackgroundAccessStatus : int32_t
 {
     Unspecified = 0,
-    AllowedWithAlwaysOnRealTimeConnectivity [[deprecated("Use AlwaysAllowed or AllowedSubjectToSystemPolicy instead of AllowedWithAlwaysOnRealTimeConnectivity. For more info, see MSDN.")]] = 1,
-    AllowedMayUseActiveRealTimeConnectivity [[deprecated("Use AlwaysAllowed or AllowedSubjectToSystemPolicy instead of AllowedMayUseActiveRealTimeConnectivity. For more info, see MSDN.")]] = 2,
-    Denied [[deprecated("Use DeniedByUser or DeniedBySystemPolicy instead of Denied. For more info, see MSDN.")]] = 3,
+    AllowedWithAlwaysOnRealTimeConnectivity = 1,
+    AllowedMayUseActiveRealTimeConnectivity = 2,
+    Denied = 3,
     AlwaysAllowed = 4,
     AllowedSubjectToSystemPolicy = 5,
     DeniedBySystemPolicy = 6,
@@ -162,7 +162,7 @@ enum class BackgroundTaskCancellationReason : int32_t
     Uninstall = 5,
     ConditionLoss = 6,
     SystemPolicy = 7,
-    QuietHoursEntered [[deprecated("QuietHoursEntered is deprecated after Windows 8.1")]] = 8,
+    QuietHoursEntered = 8,
     ExecutionTimeExceeded = 9,
     ResourceRevocation = 10,
     EnergySaver = 11,
@@ -753,101 +753,101 @@ template <> struct name<Windows::ApplicationModel::Background::SystemTriggerType
 template <> struct name<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>{ static constexpr auto & value{ L"Windows.ApplicationModel.Background.BackgroundTaskCanceledEventHandler" }; };
 template <> struct name<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler>{ static constexpr auto & value{ L"Windows.ApplicationModel.Background.BackgroundTaskCompletedEventHandler" }; };
 template <> struct name<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler>{ static constexpr auto & value{ L"Windows.ApplicationModel.Background.BackgroundTaskProgressEventHandler" }; };
-template <> struct guid<Windows::ApplicationModel::Background::IActivitySensorTrigger>{ static constexpr GUID value{ 0xD0DD4342,0xE37B,0x4823,{ 0xA5,0xFE,0x6B,0x31,0xDF,0xEF,0xDE,0xB0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>{ static constexpr GUID value{ 0xA72691C3,0x3837,0x44F7,{ 0x83,0x1B,0x01,0x32,0xCC,0x87,0x2B,0xC3 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>{ static constexpr GUID value{ 0xCA03FA3B,0xCCE6,0x4DE2,{ 0xB0,0x9B,0x96,0x28,0xBD,0x33,0xBB,0xBE } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IAppBroadcastTrigger>{ static constexpr GUID value{ 0x74D4F496,0x8D37,0x44EC,{ 0x94,0x81,0x2A,0x0B,0x98,0x54,0xEB,0x48 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>{ static constexpr GUID value{ 0x280B9F44,0x22F4,0x4618,{ 0xA0,0x2E,0xE7,0xE4,0x11,0xEB,0x72,0x38 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo>{ static constexpr GUID value{ 0xF219352D,0x9DE8,0x4420,{ 0x9C,0xE2,0x5E,0xFF,0x8F,0x17,0x37,0x6B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IApplicationTrigger>{ static constexpr GUID value{ 0x0B468630,0x9574,0x492C,{ 0x9E,0x93,0x1A,0x3A,0xE6,0x33,0x5F,0xE9 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IApplicationTriggerDetails>{ static constexpr GUID value{ 0x97DC6AB2,0x2219,0x4A9E,{ 0x9C,0x5E,0x41,0xD0,0x47,0xF7,0x6E,0x82 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger>{ static constexpr GUID value{ 0x64D4040C,0xC201,0x42AD,{ 0xAA,0x2A,0xE2,0x1B,0xA3,0x42,0x5B,0x6D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundCondition>{ static constexpr GUID value{ 0xAE48A1EE,0x8951,0x400A,{ 0x83,0x02,0x9C,0x9C,0x9A,0x2A,0x3A,0x3B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>{ static constexpr GUID value{ 0xE826EA58,0x66A9,0x4D41,{ 0x83,0xD4,0xB4,0xC1,0x8C,0x87,0xB8,0x46 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>{ static constexpr GUID value{ 0x469B24EF,0x9BBB,0x4E18,{ 0x99,0x9A,0xFD,0x65,0x12,0x93,0x1B,0xE9 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTask>{ static constexpr GUID value{ 0x7D13D534,0xFD12,0x43CE,{ 0x8C,0x22,0xEA,0x1F,0xF1,0x3C,0x06,0xDF } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskBuilder>{ static constexpr GUID value{ 0x0351550E,0x3E64,0x4572,{ 0xA9,0x3A,0x84,0x07,0x5A,0x37,0xC9,0x17 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>{ static constexpr GUID value{ 0x6AE7CFB1,0x104F,0x406D,{ 0x8D,0xB6,0x84,0x4A,0x57,0x0F,0x42,0xBB } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>{ static constexpr GUID value{ 0x28C74F4A,0x8BA9,0x4C09,{ 0xA2,0x4F,0x19,0x68,0x3E,0x2C,0x92,0x4C } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>{ static constexpr GUID value{ 0x4755E522,0xCBA2,0x4E35,{ 0xBD,0x16,0xA6,0xDA,0x7F,0x1C,0x19,0xAA } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>{ static constexpr GUID value{ 0x565D25CF,0xF209,0x48F4,{ 0x99,0x67,0x2B,0x18,0x4F,0x7B,0xFB,0xF0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskDeferral>{ static constexpr GUID value{ 0x93CC156D,0xAF27,0x4DD3,{ 0x84,0x6E,0x24,0xEE,0x40,0xCA,0xDD,0x25 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskInstance>{ static constexpr GUID value{ 0x865BDA7A,0x21D8,0x4573,{ 0x8F,0x32,0x92,0x8A,0x1B,0x06,0x41,0xF6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskInstance2>{ static constexpr GUID value{ 0x4F7D0176,0x0C76,0x4FB4,{ 0x89,0x6D,0x5D,0xE1,0x86,0x41,0x22,0xF6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskInstance4>{ static constexpr GUID value{ 0x7F29F23C,0xAA04,0x4B08,{ 0x97,0xB0,0x06,0xD8,0x74,0xCD,0xAB,0xF5 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>{ static constexpr GUID value{ 0xFB1468AC,0x8332,0x4D0A,{ 0x95,0x32,0x03,0xEA,0xE6,0x84,0xDA,0x31 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>{ static constexpr GUID value{ 0x10654CC2,0xA26E,0x43BF,{ 0x8C,0x12,0x1F,0xB4,0x0D,0xBF,0xBF,0xA0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>{ static constexpr GUID value{ 0x6138C703,0xBB86,0x4112,{ 0xAF,0xC3,0x7F,0x93,0x9B,0x16,0x6E,0x3B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>{ static constexpr GUID value{ 0xFE338195,0x9423,0x4D8B,{ 0x83,0x0D,0xB1,0xDD,0x2C,0x7B,0xAD,0xD5 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>{ static constexpr GUID value{ 0x2AB1919A,0x871B,0x4167,{ 0x8A,0x76,0x05,0x5C,0xD6,0x7B,0x5B,0x23 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>{ static constexpr GUID value{ 0x83D92B69,0x44CF,0x4631,{ 0x97,0x40,0x03,0xC7,0xD8,0x74,0x1B,0xC5 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>{ static constexpr GUID value{ 0x4C542F69,0xB000,0x42BA,{ 0xA0,0x93,0x6A,0x56,0x3C,0x65,0xE3,0xF8 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>{ static constexpr GUID value{ 0x174B671E,0xB20D,0x4FA9,{ 0xAD,0x9A,0xE9,0x3A,0xD6,0xC7,0x1E,0x01 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundTrigger>{ static constexpr GUID value{ 0x84B3A058,0x6027,0x4B87,{ 0x97,0x90,0xBD,0xF3,0xF7,0x57,0xDB,0xD7 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>{ static constexpr GUID value{ 0xC740A662,0xC310,0x4B82,{ 0xB3,0xE3,0x3B,0xCF,0xB9,0xE4,0xC7,0x7D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>{ static constexpr GUID value{ 0xAB3E2612,0x25D3,0x48AE,{ 0x87,0x24,0xD8,0x18,0x77,0xAE,0x61,0x29 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>{ static constexpr GUID value{ 0x1AAB1819,0xBCE1,0x48EB,{ 0xA8,0x27,0x59,0xFB,0x7C,0xEE,0x52,0xA6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger>{ static constexpr GUID value{ 0xE21CAEEB,0x32F2,0x4D31,{ 0xB5,0x53,0xB9,0xE0,0x1B,0xDE,0x37,0xE0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>{ static constexpr GUID value{ 0x71838C13,0x1314,0x47B4,{ 0x95,0x97,0xDC,0x7E,0x24,0x8C,0x17,0xCC } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IChatMessageNotificationTrigger>{ static constexpr GUID value{ 0x513B43BF,0x1D40,0x5C5D,{ 0x78,0xF5,0xC9,0x23,0xFE,0xE3,0x73,0x9E } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger>{ static constexpr GUID value{ 0x3EA3760E,0xBAF5,0x4077,{ 0x88,0xE9,0x06,0x0C,0xF6,0xF0,0xC6,0xD5 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ICommunicationBlockingAppSetAsActiveTrigger>{ static constexpr GUID value{ 0xFB91F28A,0x16A5,0x486D,{ 0x97,0x4C,0x78,0x35,0xA8,0x47,0x7B,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IContactStoreNotificationTrigger>{ static constexpr GUID value{ 0xC833419B,0x4705,0x4571,{ 0x9A,0x16,0x06,0xB9,0x97,0xBF,0x9C,0x96 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IContentPrefetchTrigger>{ static constexpr GUID value{ 0x710627EE,0x04FA,0x440B,{ 0x80,0xC0,0x17,0x32,0x02,0x19,0x9E,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>{ static constexpr GUID value{ 0xC2643EDA,0x8A03,0x409E,{ 0xB8,0xC4,0x88,0x81,0x4C,0x28,0xCC,0xB6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ICustomSystemEventTrigger>{ static constexpr GUID value{ 0xF3596798,0xCF6B,0x4EF4,{ 0xA0,0xCA,0x29,0xCF,0x4A,0x27,0x8C,0x87 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>{ static constexpr GUID value{ 0x6BCB16C5,0xF2DC,0x41B2,{ 0x9E,0xFD,0xB9,0x6B,0xDC,0xD1,0x3C,0xED } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>{ static constexpr GUID value{ 0x90875E64,0x3CDD,0x4EFB,{ 0xAB,0x1C,0x5B,0x3B,0x6A,0x60,0xCE,0x34 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>{ static constexpr GUID value{ 0xC3EA246A,0x4EFD,0x4498,{ 0xAA,0x60,0xA4,0xE4,0xE3,0xB1,0x7A,0xB9 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>{ static constexpr GUID value{ 0x81278AB5,0x41AB,0x16DA,{ 0x86,0xC2,0x7F,0x7B,0xF0,0x91,0x2F,0x5B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>{ static constexpr GUID value{ 0x7955DE75,0x25BB,0x4153,{ 0xA1,0xA2,0x30,0x29,0xFC,0xAB,0xB6,0x52 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceServicingTrigger>{ static constexpr GUID value{ 0x1AB217AD,0x6E34,0x49D3,{ 0x9E,0x6F,0x17,0xF1,0xB6,0xDF,0xA8,0x81 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceUseTrigger>{ static constexpr GUID value{ 0x0DA68011,0x334F,0x4D57,{ 0xB6,0xEC,0x6D,0xCA,0x64,0xB4,0x12,0xE4 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IDeviceWatcherTrigger>{ static constexpr GUID value{ 0xA4617FDD,0x8573,0x4260,{ 0xBE,0xFC,0x5B,0xEC,0x89,0xCB,0x69,0x3D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger>{ static constexpr GUID value{ 0x986D06DA,0x47EB,0x4268,{ 0xA4,0xF2,0xF3,0xF7,0x71,0x88,0x38,0x8A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>{ static constexpr GUID value{ 0xE25F8FC8,0x0696,0x474F,{ 0xA7,0x32,0xF2,0x92,0xB0,0xCE,0xBC,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>{ static constexpr GUID value{ 0x9322A2C4,0xAE0E,0x42F2,{ 0xB2,0x8C,0xF5,0x13,0x72,0xE6,0x92,0x45 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>{ static constexpr GUID value{ 0x57BA1995,0xB143,0x4575,{ 0x9F,0x6B,0xFD,0x59,0xD9,0x3A,0xCE,0x1A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>{ static constexpr GUID value{ 0x5998E91F,0x8A53,0x4E9F,{ 0xA3,0x2C,0x23,0xCD,0x33,0x66,0x4C,0xEE } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattServiceProviderTrigger>{ static constexpr GUID value{ 0xDDC6A3E9,0x1557,0x4BD8,{ 0x85,0x42,0x46,0x8A,0xA0,0xC6,0x96,0xF6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>{ static constexpr GUID value{ 0x3C4691B1,0xB198,0x4E84,{ 0xBA,0xD4,0xCF,0x4A,0xD2,0x99,0xED,0x3A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>{ static constexpr GUID value{ 0xB413A36A,0xE294,0x4591,{ 0xA5,0xA6,0x64,0x89,0x1A,0x82,0x81,0x53 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IGeovisitTrigger>{ static constexpr GUID value{ 0x4818EDAA,0x04E1,0x4127,{ 0x9A,0x4C,0x19,0x35,0x1B,0x8A,0x80,0xA4 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ILocationTrigger>{ static constexpr GUID value{ 0x47666A1C,0x6877,0x481E,{ 0x80,0x26,0xFF,0x7E,0x14,0xA8,0x11,0xA0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ILocationTriggerFactory>{ static constexpr GUID value{ 0x1106BB07,0xFF69,0x4E09,{ 0xAA,0x8B,0x13,0x84,0xEA,0x47,0x5E,0x98 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IMaintenanceTrigger>{ static constexpr GUID value{ 0x68184C83,0xFC22,0x4CE5,{ 0x84,0x1A,0x72,0x39,0xA9,0x81,0x00,0x47 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>{ static constexpr GUID value{ 0x4B3DDB2E,0x97DD,0x4629,{ 0x88,0xB0,0xB0,0x6C,0xF9,0x48,0x2A,0xE5 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IMediaProcessingTrigger>{ static constexpr GUID value{ 0x9A95BE65,0x8A52,0x4B30,{ 0x90,0x11,0xCF,0x38,0x04,0x0E,0xA8,0xB0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger>{ static constexpr GUID value{ 0xE756C791,0x3001,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>{ static constexpr GUID value{ 0x90089CC6,0x63CD,0x480C,{ 0x95,0xD1,0x6E,0x6A,0xEF,0x80,0x1E,0x4A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>{ static constexpr GUID value{ 0x0A223E00,0x27D7,0x4353,{ 0xAD,0xB9,0x92,0x65,0xAA,0xEA,0x57,0x9D } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IPhoneTrigger>{ static constexpr GUID value{ 0x8DCFE99B,0xD4C5,0x49F1,{ 0xB7,0xD3,0x82,0xE8,0x7A,0x0E,0x9D,0xDE } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IPhoneTriggerFactory>{ static constexpr GUID value{ 0xA0D93CDA,0x5FC1,0x48FB,{ 0xA5,0x46,0x32,0x26,0x20,0x40,0x15,0x7B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>{ static constexpr GUID value{ 0x6DD8ED1B,0x458E,0x4FC2,{ 0xBC,0x2E,0xD5,0x66,0x4F,0x77,0xED,0x19 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger>{ static constexpr GUID value{ 0x986D0D6A,0xB2F6,0x467F,{ 0xA9,0x78,0xA4,0x40,0x91,0xC1,0x1A,0x66 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IRfcommConnectionTrigger>{ static constexpr GUID value{ 0xE8C4CAE2,0x0B53,0x4464,{ 0x93,0x94,0xFD,0x87,0x56,0x54,0xDE,0x64 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger>{ static constexpr GUID value{ 0xF237F327,0x5181,0x4F24,{ 0x96,0xA7,0x70,0x0A,0x4E,0x5F,0xAC,0x62 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISensorDataThresholdTrigger>{ static constexpr GUID value{ 0x5BC0F372,0xD48B,0x4B7F,{ 0xAB,0xEC,0x15,0xF9,0xBA,0xCC,0x12,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>{ static constexpr GUID value{ 0x921FE675,0x7DF0,0x4DA3,{ 0x97,0xB3,0xE5,0x44,0xEE,0x85,0x7F,0xE6 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISmartCardTrigger>{ static constexpr GUID value{ 0xF53BC5AC,0x84CA,0x4972,{ 0x8C,0xE9,0xE5,0x8F,0x97,0xB3,0x7A,0x50 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISmartCardTriggerFactory>{ static constexpr GUID value{ 0x63BF54C3,0x89C1,0x4E00,{ 0xA9,0xD3,0x97,0xC6,0x29,0x26,0x9D,0xAD } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>{ static constexpr GUID value{ 0xEA3AD8C8,0x6BA4,0x4AB2,{ 0x8D,0x21,0xBC,0x6B,0x09,0xC7,0x75,0x64 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISocketActivityTrigger>{ static constexpr GUID value{ 0xA9BBF810,0x9DDE,0x4F8A,{ 0x83,0xE3,0xB0,0xE0,0xE7,0xA5,0x0D,0x70 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>{ static constexpr GUID value{ 0x1EB0FFD0,0x5A85,0x499E,{ 0xA8,0x88,0x82,0x46,0x07,0x12,0x4F,0x50 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger>{ static constexpr GUID value{ 0x1637E0A7,0x829C,0x45BC,{ 0x92,0x9B,0xA1,0xE7,0xEA,0x78,0xD8,0x9B } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>{ static constexpr GUID value{ 0x7F9F1B39,0x5F90,0x4E12,{ 0x91,0x4E,0xA7,0xD8,0xE0,0xBB,0xFB,0x18 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISystemCondition>{ static constexpr GUID value{ 0xC15FB476,0x89C5,0x420B,{ 0xAB,0xD3,0xFB,0x30,0x30,0x47,0x21,0x28 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISystemConditionFactory>{ static constexpr GUID value{ 0xD269D1F1,0x05A7,0x49AE,{ 0x87,0xD7,0x16,0xB2,0xB8,0xB9,0xA5,0x53 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISystemTrigger>{ static constexpr GUID value{ 0x1D80C776,0x3748,0x4463,{ 0x8D,0x7E,0x27,0x6D,0xC1,0x39,0xAC,0x1C } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ISystemTriggerFactory>{ static constexpr GUID value{ 0xE80423D4,0x8791,0x4579,{ 0x81,0x26,0x87,0xEC,0x8A,0xAA,0x40,0x7A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ITimeTrigger>{ static constexpr GUID value{ 0x656E5556,0x0B2A,0x4377,{ 0xBA,0x70,0x3B,0x45,0xA9,0x35,0x54,0x7F } }; };
-template <> struct guid<Windows::ApplicationModel::Background::ITimeTriggerFactory>{ static constexpr GUID value{ 0x38C682FE,0x9B54,0x45E6,{ 0xB2,0xF3,0x26,0x9B,0x87,0xA6,0xF7,0x34 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>{ static constexpr GUID value{ 0xB09DFC27,0x6480,0x4349,{ 0x81,0x25,0x97,0xB3,0xEF,0xAA,0x0A,0x3A } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>{ static constexpr GUID value{ 0x81C6FAAD,0x8797,0x4785,{ 0x81,0xB4,0xB0,0xCC,0xCB,0x73,0xD1,0xD9 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>{ static constexpr GUID value{ 0xCAD4436C,0x69AB,0x4E18,{ 0xA4,0x8A,0x5E,0xD2,0xAC,0x43,0x59,0x57 } }; };
-template <> struct guid<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>{ static constexpr GUID value{ 0xA6C4BAC0,0x51F8,0x4C57,{ 0xAC,0x3F,0x15,0x6D,0xD1,0x68,0x0C,0x4F } }; };
-template <> struct guid<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler>{ static constexpr GUID value{ 0x5B38E929,0xA086,0x46A7,{ 0xA6,0x78,0x43,0x91,0x35,0x82,0x2B,0xCF } }; };
-template <> struct guid<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler>{ static constexpr GUID value{ 0x46E0683C,0x8A88,0x4C99,{ 0x80,0x4C,0x76,0x89,0x7F,0x62,0x77,0xA6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IActivitySensorTrigger>{ static constexpr guid value{ 0xD0DD4342,0xE37B,0x4823,{ 0xA5,0xFE,0x6B,0x31,0xDF,0xEF,0xDE,0xB0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>{ static constexpr guid value{ 0xA72691C3,0x3837,0x44F7,{ 0x83,0x1B,0x01,0x32,0xCC,0x87,0x2B,0xC3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>{ static constexpr guid value{ 0xCA03FA3B,0xCCE6,0x4DE2,{ 0xB0,0x9B,0x96,0x28,0xBD,0x33,0xBB,0xBE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IAppBroadcastTrigger>{ static constexpr guid value{ 0x74D4F496,0x8D37,0x44EC,{ 0x94,0x81,0x2A,0x0B,0x98,0x54,0xEB,0x48 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>{ static constexpr guid value{ 0x280B9F44,0x22F4,0x4618,{ 0xA0,0x2E,0xE7,0xE4,0x11,0xEB,0x72,0x38 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo>{ static constexpr guid value{ 0xF219352D,0x9DE8,0x4420,{ 0x9C,0xE2,0x5E,0xFF,0x8F,0x17,0x37,0x6B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IApplicationTrigger>{ static constexpr guid value{ 0x0B468630,0x9574,0x492C,{ 0x9E,0x93,0x1A,0x3A,0xE6,0x33,0x5F,0xE9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IApplicationTriggerDetails>{ static constexpr guid value{ 0x97DC6AB2,0x2219,0x4A9E,{ 0x9C,0x5E,0x41,0xD0,0x47,0xF7,0x6E,0x82 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger>{ static constexpr guid value{ 0x64D4040C,0xC201,0x42AD,{ 0xAA,0x2A,0xE2,0x1B,0xA3,0x42,0x5B,0x6D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundCondition>{ static constexpr guid value{ 0xAE48A1EE,0x8951,0x400A,{ 0x83,0x02,0x9C,0x9C,0x9A,0x2A,0x3A,0x3B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>{ static constexpr guid value{ 0xE826EA58,0x66A9,0x4D41,{ 0x83,0xD4,0xB4,0xC1,0x8C,0x87,0xB8,0x46 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>{ static constexpr guid value{ 0x469B24EF,0x9BBB,0x4E18,{ 0x99,0x9A,0xFD,0x65,0x12,0x93,0x1B,0xE9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTask>{ static constexpr guid value{ 0x7D13D534,0xFD12,0x43CE,{ 0x8C,0x22,0xEA,0x1F,0xF1,0x3C,0x06,0xDF } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskBuilder>{ static constexpr guid value{ 0x0351550E,0x3E64,0x4572,{ 0xA9,0x3A,0x84,0x07,0x5A,0x37,0xC9,0x17 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>{ static constexpr guid value{ 0x6AE7CFB1,0x104F,0x406D,{ 0x8D,0xB6,0x84,0x4A,0x57,0x0F,0x42,0xBB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>{ static constexpr guid value{ 0x28C74F4A,0x8BA9,0x4C09,{ 0xA2,0x4F,0x19,0x68,0x3E,0x2C,0x92,0x4C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>{ static constexpr guid value{ 0x4755E522,0xCBA2,0x4E35,{ 0xBD,0x16,0xA6,0xDA,0x7F,0x1C,0x19,0xAA } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>{ static constexpr guid value{ 0x565D25CF,0xF209,0x48F4,{ 0x99,0x67,0x2B,0x18,0x4F,0x7B,0xFB,0xF0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskDeferral>{ static constexpr guid value{ 0x93CC156D,0xAF27,0x4DD3,{ 0x84,0x6E,0x24,0xEE,0x40,0xCA,0xDD,0x25 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskInstance>{ static constexpr guid value{ 0x865BDA7A,0x21D8,0x4573,{ 0x8F,0x32,0x92,0x8A,0x1B,0x06,0x41,0xF6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskInstance2>{ static constexpr guid value{ 0x4F7D0176,0x0C76,0x4FB4,{ 0x89,0x6D,0x5D,0xE1,0x86,0x41,0x22,0xF6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskInstance4>{ static constexpr guid value{ 0x7F29F23C,0xAA04,0x4B08,{ 0x97,0xB0,0x06,0xD8,0x74,0xCD,0xAB,0xF5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>{ static constexpr guid value{ 0xFB1468AC,0x8332,0x4D0A,{ 0x95,0x32,0x03,0xEA,0xE6,0x84,0xDA,0x31 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>{ static constexpr guid value{ 0x10654CC2,0xA26E,0x43BF,{ 0x8C,0x12,0x1F,0xB4,0x0D,0xBF,0xBF,0xA0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>{ static constexpr guid value{ 0x6138C703,0xBB86,0x4112,{ 0xAF,0xC3,0x7F,0x93,0x9B,0x16,0x6E,0x3B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>{ static constexpr guid value{ 0xFE338195,0x9423,0x4D8B,{ 0x83,0x0D,0xB1,0xDD,0x2C,0x7B,0xAD,0xD5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>{ static constexpr guid value{ 0x2AB1919A,0x871B,0x4167,{ 0x8A,0x76,0x05,0x5C,0xD6,0x7B,0x5B,0x23 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>{ static constexpr guid value{ 0x83D92B69,0x44CF,0x4631,{ 0x97,0x40,0x03,0xC7,0xD8,0x74,0x1B,0xC5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>{ static constexpr guid value{ 0x4C542F69,0xB000,0x42BA,{ 0xA0,0x93,0x6A,0x56,0x3C,0x65,0xE3,0xF8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>{ static constexpr guid value{ 0x174B671E,0xB20D,0x4FA9,{ 0xAD,0x9A,0xE9,0x3A,0xD6,0xC7,0x1E,0x01 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundTrigger>{ static constexpr guid value{ 0x84B3A058,0x6027,0x4B87,{ 0x97,0x90,0xBD,0xF3,0xF7,0x57,0xDB,0xD7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>{ static constexpr guid value{ 0xC740A662,0xC310,0x4B82,{ 0xB3,0xE3,0x3B,0xCF,0xB9,0xE4,0xC7,0x7D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>{ static constexpr guid value{ 0xAB3E2612,0x25D3,0x48AE,{ 0x87,0x24,0xD8,0x18,0x77,0xAE,0x61,0x29 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>{ static constexpr guid value{ 0x1AAB1819,0xBCE1,0x48EB,{ 0xA8,0x27,0x59,0xFB,0x7C,0xEE,0x52,0xA6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger>{ static constexpr guid value{ 0xE21CAEEB,0x32F2,0x4D31,{ 0xB5,0x53,0xB9,0xE0,0x1B,0xDE,0x37,0xE0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>{ static constexpr guid value{ 0x71838C13,0x1314,0x47B4,{ 0x95,0x97,0xDC,0x7E,0x24,0x8C,0x17,0xCC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IChatMessageNotificationTrigger>{ static constexpr guid value{ 0x513B43BF,0x1D40,0x5C5D,{ 0x78,0xF5,0xC9,0x23,0xFE,0xE3,0x73,0x9E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger>{ static constexpr guid value{ 0x3EA3760E,0xBAF5,0x4077,{ 0x88,0xE9,0x06,0x0C,0xF6,0xF0,0xC6,0xD5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ICommunicationBlockingAppSetAsActiveTrigger>{ static constexpr guid value{ 0xFB91F28A,0x16A5,0x486D,{ 0x97,0x4C,0x78,0x35,0xA8,0x47,0x7B,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IContactStoreNotificationTrigger>{ static constexpr guid value{ 0xC833419B,0x4705,0x4571,{ 0x9A,0x16,0x06,0xB9,0x97,0xBF,0x9C,0x96 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IContentPrefetchTrigger>{ static constexpr guid value{ 0x710627EE,0x04FA,0x440B,{ 0x80,0xC0,0x17,0x32,0x02,0x19,0x9E,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>{ static constexpr guid value{ 0xC2643EDA,0x8A03,0x409E,{ 0xB8,0xC4,0x88,0x81,0x4C,0x28,0xCC,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ICustomSystemEventTrigger>{ static constexpr guid value{ 0xF3596798,0xCF6B,0x4EF4,{ 0xA0,0xCA,0x29,0xCF,0x4A,0x27,0x8C,0x87 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>{ static constexpr guid value{ 0x6BCB16C5,0xF2DC,0x41B2,{ 0x9E,0xFD,0xB9,0x6B,0xDC,0xD1,0x3C,0xED } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>{ static constexpr guid value{ 0x90875E64,0x3CDD,0x4EFB,{ 0xAB,0x1C,0x5B,0x3B,0x6A,0x60,0xCE,0x34 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>{ static constexpr guid value{ 0xC3EA246A,0x4EFD,0x4498,{ 0xAA,0x60,0xA4,0xE4,0xE3,0xB1,0x7A,0xB9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>{ static constexpr guid value{ 0x81278AB5,0x41AB,0x16DA,{ 0x86,0xC2,0x7F,0x7B,0xF0,0x91,0x2F,0x5B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>{ static constexpr guid value{ 0x7955DE75,0x25BB,0x4153,{ 0xA1,0xA2,0x30,0x29,0xFC,0xAB,0xB6,0x52 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceServicingTrigger>{ static constexpr guid value{ 0x1AB217AD,0x6E34,0x49D3,{ 0x9E,0x6F,0x17,0xF1,0xB6,0xDF,0xA8,0x81 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceUseTrigger>{ static constexpr guid value{ 0x0DA68011,0x334F,0x4D57,{ 0xB6,0xEC,0x6D,0xCA,0x64,0xB4,0x12,0xE4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IDeviceWatcherTrigger>{ static constexpr guid value{ 0xA4617FDD,0x8573,0x4260,{ 0xBE,0xFC,0x5B,0xEC,0x89,0xCB,0x69,0x3D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger>{ static constexpr guid value{ 0x986D06DA,0x47EB,0x4268,{ 0xA4,0xF2,0xF3,0xF7,0x71,0x88,0x38,0x8A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>{ static constexpr guid value{ 0xE25F8FC8,0x0696,0x474F,{ 0xA7,0x32,0xF2,0x92,0xB0,0xCE,0xBC,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>{ static constexpr guid value{ 0x9322A2C4,0xAE0E,0x42F2,{ 0xB2,0x8C,0xF5,0x13,0x72,0xE6,0x92,0x45 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>{ static constexpr guid value{ 0x57BA1995,0xB143,0x4575,{ 0x9F,0x6B,0xFD,0x59,0xD9,0x3A,0xCE,0x1A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>{ static constexpr guid value{ 0x5998E91F,0x8A53,0x4E9F,{ 0xA3,0x2C,0x23,0xCD,0x33,0x66,0x4C,0xEE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattServiceProviderTrigger>{ static constexpr guid value{ 0xDDC6A3E9,0x1557,0x4BD8,{ 0x85,0x42,0x46,0x8A,0xA0,0xC6,0x96,0xF6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>{ static constexpr guid value{ 0x3C4691B1,0xB198,0x4E84,{ 0xBA,0xD4,0xCF,0x4A,0xD2,0x99,0xED,0x3A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>{ static constexpr guid value{ 0xB413A36A,0xE294,0x4591,{ 0xA5,0xA6,0x64,0x89,0x1A,0x82,0x81,0x53 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IGeovisitTrigger>{ static constexpr guid value{ 0x4818EDAA,0x04E1,0x4127,{ 0x9A,0x4C,0x19,0x35,0x1B,0x8A,0x80,0xA4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ILocationTrigger>{ static constexpr guid value{ 0x47666A1C,0x6877,0x481E,{ 0x80,0x26,0xFF,0x7E,0x14,0xA8,0x11,0xA0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ILocationTriggerFactory>{ static constexpr guid value{ 0x1106BB07,0xFF69,0x4E09,{ 0xAA,0x8B,0x13,0x84,0xEA,0x47,0x5E,0x98 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IMaintenanceTrigger>{ static constexpr guid value{ 0x68184C83,0xFC22,0x4CE5,{ 0x84,0x1A,0x72,0x39,0xA9,0x81,0x00,0x47 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>{ static constexpr guid value{ 0x4B3DDB2E,0x97DD,0x4629,{ 0x88,0xB0,0xB0,0x6C,0xF9,0x48,0x2A,0xE5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IMediaProcessingTrigger>{ static constexpr guid value{ 0x9A95BE65,0x8A52,0x4B30,{ 0x90,0x11,0xCF,0x38,0x04,0x0E,0xA8,0xB0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger>{ static constexpr guid value{ 0xE756C791,0x3001,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>{ static constexpr guid value{ 0x90089CC6,0x63CD,0x480C,{ 0x95,0xD1,0x6E,0x6A,0xEF,0x80,0x1E,0x4A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>{ static constexpr guid value{ 0x0A223E00,0x27D7,0x4353,{ 0xAD,0xB9,0x92,0x65,0xAA,0xEA,0x57,0x9D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IPhoneTrigger>{ static constexpr guid value{ 0x8DCFE99B,0xD4C5,0x49F1,{ 0xB7,0xD3,0x82,0xE8,0x7A,0x0E,0x9D,0xDE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IPhoneTriggerFactory>{ static constexpr guid value{ 0xA0D93CDA,0x5FC1,0x48FB,{ 0xA5,0x46,0x32,0x26,0x20,0x40,0x15,0x7B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>{ static constexpr guid value{ 0x6DD8ED1B,0x458E,0x4FC2,{ 0xBC,0x2E,0xD5,0x66,0x4F,0x77,0xED,0x19 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger>{ static constexpr guid value{ 0x986D0D6A,0xB2F6,0x467F,{ 0xA9,0x78,0xA4,0x40,0x91,0xC1,0x1A,0x66 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IRfcommConnectionTrigger>{ static constexpr guid value{ 0xE8C4CAE2,0x0B53,0x4464,{ 0x93,0x94,0xFD,0x87,0x56,0x54,0xDE,0x64 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger>{ static constexpr guid value{ 0xF237F327,0x5181,0x4F24,{ 0x96,0xA7,0x70,0x0A,0x4E,0x5F,0xAC,0x62 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISensorDataThresholdTrigger>{ static constexpr guid value{ 0x5BC0F372,0xD48B,0x4B7F,{ 0xAB,0xEC,0x15,0xF9,0xBA,0xCC,0x12,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>{ static constexpr guid value{ 0x921FE675,0x7DF0,0x4DA3,{ 0x97,0xB3,0xE5,0x44,0xEE,0x85,0x7F,0xE6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISmartCardTrigger>{ static constexpr guid value{ 0xF53BC5AC,0x84CA,0x4972,{ 0x8C,0xE9,0xE5,0x8F,0x97,0xB3,0x7A,0x50 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISmartCardTriggerFactory>{ static constexpr guid value{ 0x63BF54C3,0x89C1,0x4E00,{ 0xA9,0xD3,0x97,0xC6,0x29,0x26,0x9D,0xAD } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>{ static constexpr guid value{ 0xEA3AD8C8,0x6BA4,0x4AB2,{ 0x8D,0x21,0xBC,0x6B,0x09,0xC7,0x75,0x64 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISocketActivityTrigger>{ static constexpr guid value{ 0xA9BBF810,0x9DDE,0x4F8A,{ 0x83,0xE3,0xB0,0xE0,0xE7,0xA5,0x0D,0x70 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>{ static constexpr guid value{ 0x1EB0FFD0,0x5A85,0x499E,{ 0xA8,0x88,0x82,0x46,0x07,0x12,0x4F,0x50 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger>{ static constexpr guid value{ 0x1637E0A7,0x829C,0x45BC,{ 0x92,0x9B,0xA1,0xE7,0xEA,0x78,0xD8,0x9B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>{ static constexpr guid value{ 0x7F9F1B39,0x5F90,0x4E12,{ 0x91,0x4E,0xA7,0xD8,0xE0,0xBB,0xFB,0x18 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISystemCondition>{ static constexpr guid value{ 0xC15FB476,0x89C5,0x420B,{ 0xAB,0xD3,0xFB,0x30,0x30,0x47,0x21,0x28 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISystemConditionFactory>{ static constexpr guid value{ 0xD269D1F1,0x05A7,0x49AE,{ 0x87,0xD7,0x16,0xB2,0xB8,0xB9,0xA5,0x53 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISystemTrigger>{ static constexpr guid value{ 0x1D80C776,0x3748,0x4463,{ 0x8D,0x7E,0x27,0x6D,0xC1,0x39,0xAC,0x1C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ISystemTriggerFactory>{ static constexpr guid value{ 0xE80423D4,0x8791,0x4579,{ 0x81,0x26,0x87,0xEC,0x8A,0xAA,0x40,0x7A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ITimeTrigger>{ static constexpr guid value{ 0x656E5556,0x0B2A,0x4377,{ 0xBA,0x70,0x3B,0x45,0xA9,0x35,0x54,0x7F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::ITimeTriggerFactory>{ static constexpr guid value{ 0x38C682FE,0x9B54,0x45E6,{ 0xB2,0xF3,0x26,0x9B,0x87,0xA6,0xF7,0x34 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>{ static constexpr guid value{ 0xB09DFC27,0x6480,0x4349,{ 0x81,0x25,0x97,0xB3,0xEF,0xAA,0x0A,0x3A } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>{ static constexpr guid value{ 0x81C6FAAD,0x8797,0x4785,{ 0x81,0xB4,0xB0,0xCC,0xCB,0x73,0xD1,0xD9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>{ static constexpr guid value{ 0xCAD4436C,0x69AB,0x4E18,{ 0xA4,0x8A,0x5E,0xD2,0xAC,0x43,0x59,0x57 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>{ static constexpr guid value{ 0xA6C4BAC0,0x51F8,0x4C57,{ 0xAC,0x3F,0x15,0x6D,0xD1,0x68,0x0C,0x4F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler>{ static constexpr guid value{ 0x5B38E929,0xA086,0x46A7,{ 0xA6,0x78,0x43,0x91,0x35,0x82,0x2B,0xCF } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler>{ static constexpr guid value{ 0x46E0683C,0x8A88,0x4C99,{ 0x80,0x4C,0x76,0x89,0x7F,0x62,0x77,0xA6 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Background::ActivitySensorTrigger>{ using type = Windows::ApplicationModel::Background::IActivitySensorTrigger; };
 template <> struct default_interface<Windows::ApplicationModel::Background::AppBroadcastTrigger>{ using type = Windows::ApplicationModel::Background::IAppBroadcastTrigger; };
 template <> struct default_interface<Windows::ApplicationModel::Background::AppBroadcastTriggerProviderInfo>{ using type = Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo; };
@@ -910,6 +910,553 @@ template <> struct default_interface<Windows::ApplicationModel::Background::Time
 template <> struct default_interface<Windows::ApplicationModel::Background::ToastNotificationActionTrigger>{ using type = Windows::ApplicationModel::Background::IBackgroundTrigger; };
 template <> struct default_interface<Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger>{ using type = Windows::ApplicationModel::Background::IBackgroundTrigger; };
 template <> struct default_interface<Windows::ApplicationModel::Background::UserNotificationChangedTrigger>{ using type = Windows::ApplicationModel::Background::IBackgroundTrigger; };
+
+template <> struct abi<Windows::ApplicationModel::Background::IActivitySensorTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SubscribedActivities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportInterval(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedActivities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinimumReportInterval(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t reportIntervalInMilliseconds, void** activityTrigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessStatus(Windows::ApplicationModel::Background::AlarmAccessStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_ProviderInfo(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAppBroadcastTrigger(void* providerKey, void** broadcastTrigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_DisplayNameResource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayNameResource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LogoResource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogoResource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VideoKeyFrameInterval(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoKeyFrameInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxVideoBitrate(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxVideoBitrate(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxVideoWidth(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxVideoWidth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxVideoHeight(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxVideoHeight(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IApplicationTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAsyncWithArguments(void* arguments, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IApplicationTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Arguments(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundCondition>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessForApplicationAsync(void* applicationId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAccess() noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAccessForApplication(void* applicationId) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessStatus(Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAccessStatusForApplication(void* applicationId, Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAccessKindAsync(Windows::ApplicationModel::Background::BackgroundAccessRequestKind requestedAccess, void* reason, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTask>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Run(void* taskInstance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_TaskEntryPoint(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TaskEntryPoint(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetTrigger(void* trigger) noexcept = 0;
+    virtual int32_t WINRT_CALL AddCondition(void* condition) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Register(void** task) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_CancelOnConditionLoss(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CancelOnConditionLoss(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_IsNetworkRequested(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsNetworkRequested(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TaskGroup(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CheckResult() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Task(void** task) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Progress(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Progress(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TriggerDetails(void** triggerDetails) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Canceled(void* cancelHandler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Canceled(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SuspendedCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** deferral) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter, uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Progress(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Progress(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Progress(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL Unregister(bool cancelTask) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Trigger(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TaskGroup(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_BackgroundActivated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_BackgroundActivated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllTasks(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* id, void** group) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithName(void* id, void* name, void** group) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllTasks(void** tasks) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllTaskGroups(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTaskGroup(void* groupId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentBackgroundWorkCost(Windows::ApplicationModel::Background::BackgroundWorkCostValue* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Advertisement(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignalStrengthFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SignalStrengthFilter(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdvertisementFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AdvertisementFilter(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UpdateTarget(Windows::Storage::Provider::CachedFileTarget* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UpdateRequest(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanRequestUserInput(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IChatMessageNotificationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ICommunicationBlockingAppSetAsActiveTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IContactStoreNotificationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IContentPrefetchTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WaitInterval(Windows::Foundation::TimeSpan* waitInterval) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Foundation::TimeSpan waitInterval, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ICustomSystemEventTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TriggerId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Recurrence(Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* triggerId, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence recurrence, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanMaintainConnection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaintainConnection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaintainConnection(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** deviceChangeTrigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TriggerQualifier(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* triggerQualifier, bool oneShot, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceServicingTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAsyncSimple(void* deviceId, Windows::Foundation::TimeSpan expectedDuration, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAsyncWithArguments(void* deviceId, Windows::Foundation::TimeSpan expectedDuration, void* arguments, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceUseTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAsyncSimple(void* deviceId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAsyncWithArguments(void* deviceId, void* arguments, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IDeviceWatcherTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Characteristic(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* characteristic, void** gattCharacteristicNotificationTrigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithEventTriggeringMode(void* characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TriggerId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Service(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AdvertisingParameters(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdvertisingParameters(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Trigger(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAsync(void* triggerId, winrt::guid serviceUuid, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IGeovisitTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ILocationTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Background::LocationTriggerType* triggerType) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ILocationTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType, void** locationTrigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IMaintenanceTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FreshnessTime(uint32_t* freshnessTime) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IMediaProcessingTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAsyncWithArguments(void* arguments, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* networkAccountId, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IPhoneTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OneShot(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Calls::Background::PhoneTriggerType* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IPhoneTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::ApplicationModel::Calls::Background::PhoneTriggerType type, bool oneShot, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* applicationId, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IRfcommConnectionTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InboundConnection(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutboundConnection(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowMultipleConnections(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowMultipleConnections(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteHostName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteHostName(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISensorDataThresholdTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* threshold, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISmartCardTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TriggerType(Windows::Devices::SmartCards::SmartCardTriggerType* triggerType) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISmartCardTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Devices::SmartCards::SmartCardTriggerType triggerType, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* filterRules, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISocketActivityTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsWakeFromLowPowerSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* tracker, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* storageLibrary, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromLibraries(void* storageLibraries, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISystemCondition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ConditionType(Windows::ApplicationModel::Background::SystemConditionType* conditionType) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISystemConditionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::SystemConditionType conditionType, void** condition) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISystemTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Background::SystemTriggerType* triggerType) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ISystemTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ITimeTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FreshnessTime(uint32_t* freshnessTime) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::ITimeTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* applicationId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* applicationId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::UI::Notifications::NotificationKinds notificationKinds, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IActivitySensorTrigger
@@ -1062,7 +1609,7 @@ template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTas
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IBackgroundTaskCompletedEventArgs
 {
-    GUID InstanceId() const;
+    winrt::guid InstanceId() const;
     void CheckResult() const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IBackgroundTaskCompletedEventArgs<D>; };
@@ -1077,15 +1624,15 @@ template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTas
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance
 {
-    GUID InstanceId() const;
+    winrt::guid InstanceId() const;
     Windows::ApplicationModel::Background::BackgroundTaskRegistration Task() const;
     uint32_t Progress() const;
     void Progress(uint32_t value) const;
     Windows::Foundation::IInspectable TriggerDetails() const;
-    event_token Canceled(Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const;
-    using Canceled_revoker = event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskInstance>;
+    winrt::event_token Canceled(Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const;
+    using Canceled_revoker = impl::event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskInstance, &impl::abi_t<Windows::ApplicationModel::Background::IBackgroundTaskInstance>::remove_Canceled>;
     Canceled_revoker Canceled(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const;
-    void Canceled(event_token const& cookie) const;
+    void Canceled(winrt::event_token const& cookie) const noexcept;
     uint32_t SuspendedCount() const;
     Windows::ApplicationModel::Background::BackgroundTaskDeferral GetDeferral() const;
 };
@@ -1108,7 +1655,7 @@ template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTas
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IBackgroundTaskProgressEventArgs
 {
-    GUID InstanceId() const;
+    winrt::guid InstanceId() const;
     uint32_t Progress() const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IBackgroundTaskProgressEventArgs<D>; };
@@ -1116,16 +1663,16 @@ template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTas
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration
 {
-    GUID TaskId() const;
+    winrt::guid TaskId() const;
     hstring Name() const;
-    event_token Progress(Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const;
-    using Progress_revoker = event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>;
+    winrt::event_token Progress(Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const;
+    using Progress_revoker = impl::event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration, &impl::abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>::remove_Progress>;
     Progress_revoker Progress(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const;
-    void Progress(event_token const& cookie) const;
-    event_token Completed(Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const;
-    using Completed_revoker = event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>;
+    void Progress(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token Completed(Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const;
+    using Completed_revoker = impl::event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration, &impl::abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const;
-    void Completed(event_token const& cookie) const;
+    void Completed(winrt::event_token const& cookie) const noexcept;
     void Unregister(bool cancelTask) const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>; };
@@ -1149,11 +1696,11 @@ struct consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGr
 {
     hstring Id() const;
     hstring Name() const;
-    event_token BackgroundActivated(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const;
-    using BackgroundActivated_revoker = event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>;
+    winrt::event_token BackgroundActivated(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const;
+    using BackgroundActivated_revoker = impl::event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup, &impl::abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>::remove_BackgroundActivated>;
     BackgroundActivated_revoker BackgroundActivated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const;
-    void BackgroundActivated(event_token const& token) const;
-    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> AllTasks() const;
+    void BackgroundActivated(winrt::event_token const& token) const noexcept;
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::BackgroundTaskRegistration> AllTasks() const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>; };
 
@@ -1168,7 +1715,7 @@ template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTas
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationStatics
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks() const;
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks() const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationStatics<D>; };
 
@@ -1302,15 +1849,15 @@ template <> struct consume<Windows::ApplicationModel::Background::IDeviceConnect
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTrigger
 {
-    [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] hstring TriggerQualifier() const;
-    [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] bool OneShot() const;
+    hstring TriggerQualifier() const;
+    bool OneShot() const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTrigger<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTriggerFactory
 {
-    [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(param::hstring const& triggerQualifier, bool oneShot) const;
+    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(param::hstring const& triggerQualifier, bool oneShot) const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IDeviceManufacturerNotificationTriggerFactory<D>; };
 
@@ -1391,7 +1938,7 @@ template <> struct consume<Windows::ApplicationModel::Background::IGattServicePr
 template <typename D>
 struct consume_Windows_ApplicationModel_Background_IGattServiceProviderTriggerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(param::hstring const& triggerId, GUID const& serviceUuid) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(param::hstring const& triggerId, winrt::guid const& serviceUuid) const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IGattServiceProviderTriggerStatics<D>; };
 
@@ -1634,552 +2181,5 @@ struct consume_Windows_ApplicationModel_Background_IUserNotificationChangedTrigg
     Windows::ApplicationModel::Background::UserNotificationChangedTrigger Create(Windows::UI::Notifications::NotificationKinds const& notificationKinds) const;
 };
 template <> struct consume<Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory> { template <typename D> using type = consume_Windows_ApplicationModel_Background_IUserNotificationChangedTriggerFactory<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Background::IActivitySensorTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SubscribedActivities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportInterval(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedActivities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinimumReportInterval(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t reportIntervalInMilliseconds, void** activityTrigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAccessAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessStatus(Windows::ApplicationModel::Background::AlarmAccessStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_ProviderInfo(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAppBroadcastTrigger(HSTRING providerKey, void** broadcastTrigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_DisplayNameResource(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayNameResource(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LogoResource(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogoResource(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VideoKeyFrameInterval(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoKeyFrameInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxVideoBitrate(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxVideoBitrate(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxVideoWidth(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxVideoWidth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxVideoHeight(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxVideoHeight(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IApplicationTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAsyncWithArguments(void* arguments, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IApplicationTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Arguments(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundCondition>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAccessAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessForApplicationAsync(HSTRING applicationId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAccess() noexcept = 0;
-    virtual HRESULT __stdcall RemoveAccessForApplication(HSTRING applicationId) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessStatus(Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept = 0;
-    virtual HRESULT __stdcall GetAccessStatusForApplication(HSTRING applicationId, Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAccessKindAsync(Windows::ApplicationModel::Background::BackgroundAccessRequestKind requestedAccess, HSTRING reason, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTask>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Run(void* taskInstance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_TaskEntryPoint(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TaskEntryPoint(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetTrigger(void* trigger) noexcept = 0;
-    virtual HRESULT __stdcall AddCondition(void* condition) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall Register(void** task) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_CancelOnConditionLoss(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CancelOnConditionLoss(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_IsNetworkRequested(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsNetworkRequested(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TaskGroup(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InstanceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall CheckResult() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InstanceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Task(void** task) noexcept = 0;
-    virtual HRESULT __stdcall get_Progress(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Progress(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_TriggerDetails(void** triggerDetails) noexcept = 0;
-    virtual HRESULT __stdcall add_Canceled(void* cancelHandler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Canceled(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall get_SuspendedCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** deferral) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter, uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskInstance4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InstanceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Progress(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Progress(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Progress(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall Unregister(bool cancelTask) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Trigger(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TaskGroup(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall add_BackgroundActivated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_BackgroundActivated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_AllTasks(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING id, void** group) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithName(HSTRING id, HSTRING name, void** group) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllTasks(void** tasks) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllTaskGroups(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetTaskGroup(HSTRING groupId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentBackgroundWorkCost(Windows::ApplicationModel::Background::BackgroundWorkCostValue* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Advertisement(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignalStrengthFilter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SignalStrengthFilter(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdvertisementFilter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AdvertisementFilter(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UpdateTarget(Windows::Storage::Provider::CachedFileTarget* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UpdateRequest(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanRequestUserInput(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IChatMessageNotificationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ICommunicationBlockingAppSetAsActiveTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IContactStoreNotificationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IContentPrefetchTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WaitInterval(Windows::Foundation::TimeSpan* waitInterval) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Foundation::TimeSpan waitInterval, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ICustomSystemEventTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TriggerId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Recurrence(Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING triggerId, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence recurrence, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanMaintainConnection(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaintainConnection(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaintainConnection(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** deviceChangeTrigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TriggerQualifier(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OneShot(bool* oneShot) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING triggerQualifier, bool oneShot, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceServicingTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAsyncSimple(HSTRING deviceId, Windows::Foundation::TimeSpan expectedDuration, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAsyncWithArguments(HSTRING deviceId, Windows::Foundation::TimeSpan expectedDuration, HSTRING arguments, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceUseTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAsyncSimple(HSTRING deviceId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IDeviceWatcherTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Characteristic(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* characteristic, void** gattCharacteristicNotificationTrigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithEventTriggeringMode(void* characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TriggerId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Service(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AdvertisingParameters(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdvertisingParameters(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Trigger(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAsync(HSTRING triggerId, GUID serviceUuid, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IGeovisitTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ILocationTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Background::LocationTriggerType* triggerType) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ILocationTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType, void** locationTrigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IMaintenanceTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FreshnessTime(uint32_t* freshnessTime) noexcept = 0;
-    virtual HRESULT __stdcall get_OneShot(bool* oneShot) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IMediaProcessingTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestAsyncWithArguments(void* arguments, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING networkAccountId, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IPhoneTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OneShot(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Calls::Background::PhoneTriggerType* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IPhoneTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::ApplicationModel::Calls::Background::PhoneTriggerType type, bool oneShot, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IRfcommConnectionTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InboundConnection(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutboundConnection(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowMultipleConnections(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowMultipleConnections(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteHostName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteHostName(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISensorDataThresholdTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* threshold, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISmartCardTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TriggerType(Windows::Devices::SmartCards::SmartCardTriggerType* triggerType) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISmartCardTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Devices::SmartCards::SmartCardTriggerType triggerType, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* filterRules, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISocketActivityTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsWakeFromLowPowerSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* tracker, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* storageLibrary, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromLibraries(void* storageLibraries, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISystemCondition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ConditionType(Windows::ApplicationModel::Background::SystemConditionType* conditionType) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISystemConditionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::ApplicationModel::Background::SystemConditionType conditionType, void** condition) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISystemTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OneShot(bool* oneShot) noexcept = 0;
-    virtual HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Background::SystemTriggerType* triggerType) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ISystemTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ITimeTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FreshnessTime(uint32_t* freshnessTime) noexcept = 0;
-    virtual HRESULT __stdcall get_OneShot(bool* oneShot) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::ITimeTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::UI::Notifications::NotificationKinds notificationKinds, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
-};};
 
 }

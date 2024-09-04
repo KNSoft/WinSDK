@@ -4376,6 +4376,40 @@ STDAPI MFGetContentProtectionSystemCLSID(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+
+// MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY
+// Data type: UINT64
+// Represents the Capability field of the KSCAMERA_EXTENDEDPROP_HEADER corresponding to the
+// KSPROPERTY_CAMERACONTROL_EXTENDED_FACEAUTH_MODE extended property control.  If this control
+// is not supported, this attribute will not be present on the stream.  
+// The capability advertised will only contain the bitwise OR of the available
+// supported modes defined by the Face Auth DDI in ksmedia.h:
+// 
+//      KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED
+//      KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION
+//      KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION
+DEFINE_GUID(MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY,
+0xCB6FD12A, 0x2248, 0x4E41, 0xAD, 0x46, 0xE7, 0x8B, 0xB9, 0x0A, 0xB9, 0xFC);
+
+// MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY
+// Data type: UINT64
+// Represents the Capability field of the KSCAMERA_EXTENDEDPROP_HEADER corresponding to the
+// KSPROPERTY_CAMERACONTROL_EXTENDED_SECURE_MODE extended property control.  If this control
+// is not supported, this attribute will not be present on the stream.  
+// The capability advertised will only contain the bitwise OR of the available
+// supported modes defined by the Secure DDI in ksmedia.h:
+// 
+//      KSCAMERA_EXTENDEDPROP_SECURE_MODE_DISABLED
+//      KSCAMERA_EXTENDEDPROP_SECURE_MODE_ENABLED
+DEFINE_GUID(MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY,
+0x940FD626, 0xEA6E, 0x4684, 0x98, 0x40, 0x36, 0xBD, 0x6E, 0xC9, 0xFB, 0xEF);
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+
 #if defined(__cplusplus)
 }
 #endif

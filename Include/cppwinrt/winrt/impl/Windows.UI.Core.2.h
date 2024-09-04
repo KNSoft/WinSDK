@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,6 +18,8 @@ struct DispatchedHandler : Windows::Foundation::IUnknown
     template <typename L> DispatchedHandler(L lambda);
     template <typename F> DispatchedHandler(F* function);
     template <typename O, typename M> DispatchedHandler(O* object, M method);
+    template <typename O, typename M> DispatchedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DispatchedHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -27,6 +29,8 @@ struct IdleDispatchedHandler : Windows::Foundation::IUnknown
     template <typename L> IdleDispatchedHandler(L lambda);
     template <typename F> IdleDispatchedHandler(F* function);
     template <typename O, typename M> IdleDispatchedHandler(O* object, M method);
+    template <typename O, typename M> IdleDispatchedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> IdleDispatchedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Core::IdleDispatchedHandlerArgs const& e) const;
 };
 

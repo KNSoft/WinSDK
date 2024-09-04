@@ -88,9 +88,13 @@ namespace Windows
 
         typedef enum AddResourcePackageOptions AddResourcePackageOptions;
 
+        typedef enum LimitedAccessFeatureStatus LimitedAccessFeatureStatus;
+
         typedef enum PackageContentGroupState PackageContentGroupState;
 
         typedef enum PackageSignatureKind PackageSignatureKind;
+
+        typedef enum PackageUpdateAvailability PackageUpdateAvailability;
 
         typedef enum StartupTaskState StartupTaskState;
 
@@ -101,6 +105,8 @@ namespace Windows
         interface IAppDisplayInfo;
 
         interface IAppInfo;
+
+        interface IAppInstallerInfo;
 
         interface IAppInstance;
 
@@ -116,6 +122,10 @@ namespace Windows
 
         interface ILeavingBackgroundEventArgs;
 
+        interface ILimitedAccessFeatureRequestResult;
+
+        interface ILimitedAccessFeaturesStatics;
+
         interface IPackage;
 
         interface IPackage2;
@@ -125,6 +135,8 @@ namespace Windows
         interface IPackage4;
 
         interface IPackage5;
+
+        interface IPackage6;
 
         interface IPackageCatalog;
 
@@ -168,6 +180,8 @@ namespace Windows
 
         interface IPackageUninstallingEventArgs;
 
+        interface IPackageUpdateAvailabilityResult;
+
         interface IPackageUpdatingEventArgs;
 
         interface IPackageWithMetadata;
@@ -186,6 +200,8 @@ namespace Windows
 
         runtimeclass AppInfo;
 
+        runtimeclass AppInstallerInfo;
+
         runtimeclass AppInstance;
 
         runtimeclass DesignMode;
@@ -195,6 +211,10 @@ namespace Windows
         runtimeclass FullTrustProcessLauncher;
 
         runtimeclass LeavingBackgroundEventArgs;
+
+        runtimeclass LimitedAccessFeatureRequestResult;
+
+        runtimeclass LimitedAccessFeatures;
 
         runtimeclass Package;
 
@@ -223,6 +243,8 @@ namespace Windows
         runtimeclass PackageStatusChangedEventArgs;
 
         runtimeclass PackageUninstallingEventArgs;
+
+        runtimeclass PackageUpdateAvailabilityResult;
 
         runtimeclass PackageUpdatingEventArgs;
 
@@ -295,6 +317,8 @@ namespace Windows
 
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageContentGroup*>;
 
+            interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageUpdateAvailabilityResult*>;
+
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.StartupTask*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.StartupTaskState>;
@@ -344,6 +368,15 @@ namespace Windows
             ApplyUpdateIfAvailable = 0x2
         };
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        enum LimitedAccessFeatureStatus
+        {
+            Unavailable           = 0,
+            Available             = 1,
+            AvailableWithoutToken = 2,
+            Unknown               = 3
+        };
+
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         enum PackageContentGroupState
         {
@@ -361,6 +394,16 @@ namespace Windows
             Enterprise = 2,
             Store      = 3,
             System     = 4
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        enum PackageUpdateAvailability
+        {
+            Unknown   = 0,
+            NoUpdates = 1,
+            Available = 2,
+            Required  = 3,
+            Error     = 4
         };
 
         [contract(Windows.ApplicationModel.StartupTaskContract, 1.0)]
@@ -409,6 +452,14 @@ namespace Windows
             [propget] HRESULT AppUserModelId([out] [retval] HSTRING* value);
             [propget] HRESULT DisplayInfo([out] [retval] Windows.ApplicationModel.AppDisplayInfo** value);
             [propget] HRESULT PackageFamilyName([out] [retval] HSTRING* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.ApplicationModel.AppInstallerInfo)]
+        [uuid(29AB2AC0-D4F6-42A3-ADCD-D6583C659508)]
+        interface IAppInstallerInfo : IInspectable
+        {
+            [propget] HRESULT Uri([out] [retval] Windows.Foundation.Uri** value);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -474,6 +525,24 @@ namespace Windows
             HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.ApplicationModel.LimitedAccessFeatureRequestResult)]
+        [uuid(D45156A6-1E24-5DDD-ABB4-6188ABA4D5BF)]
+        interface ILimitedAccessFeatureRequestResult : IInspectable
+        {
+            [propget] HRESULT FeatureId([out] [retval] HSTRING* value);
+            [propget] HRESULT Status([out] [retval] Windows.ApplicationModel.LimitedAccessFeatureStatus* value);
+            [propget] HRESULT EstimatedRemovalDate([out] [retval] Windows.Foundation.IReference<Windows.Foundation.DateTime>** value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.ApplicationModel.LimitedAccessFeatures)]
+        [uuid(8BE612D4-302B-5FBF-A632-1A99E43E8925)]
+        interface ILimitedAccessFeaturesStatics : IInspectable
+        {
+            HRESULT TryUnlockFeature([in] HSTRING featureId, [in] HSTRING token, [in] HSTRING attestation, [out] [retval] Windows.ApplicationModel.LimitedAccessFeatureRequestResult** result);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [exclusiveto(Windows.ApplicationModel.Package)]
         [uuid(163C792F-BD75-413C-BF23-B1FE7B95D825)]
@@ -529,6 +598,15 @@ namespace Windows
             [overload("StageContentGroupsAsync")] HRESULT StageContentGroupsAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* names, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.ApplicationModel.PackageContentGroup*>*>** operation);
             [overload("StageContentGroupsAsync")] HRESULT StageContentGroupsWithPriorityAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* names, [in] boolean moveToHeadOfQueue, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.ApplicationModel.PackageContentGroup*>*>** operation);
             HRESULT SetInUseAsync([in] boolean inUse, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.ApplicationModel.Package)]
+        [uuid(8B1AD942-12D7-4754-AE4E-638CBC0E3A2E)]
+        interface IPackage6 : IInspectable
+        {
+            HRESULT GetAppInstallerInfo([out] [retval] Windows.ApplicationModel.AppInstallerInfo** value);
+            HRESULT CheckUpdateAvailabilityAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageUpdateAvailabilityResult*>** operation);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -757,6 +835,15 @@ namespace Windows
             [propget] HRESULT ErrorCode([out] [retval] HRESULT* value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [exclusiveto(Windows.ApplicationModel.PackageUpdateAvailabilityResult)]
+        [uuid(114E5009-199A-48A1-A079-313C45634A71)]
+        interface IPackageUpdateAvailabilityResult : IInspectable
+        {
+            [propget] HRESULT Availability([out] [retval] Windows.ApplicationModel.PackageUpdateAvailability* value);
+            [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
         [exclusiveto(Windows.ApplicationModel.PackageUpdatingEventArgs)]
         [uuid(CD7B4228-FD74-443E-B114-23E677B0E86F)]
@@ -838,6 +925,14 @@ namespace Windows
             [default] interface Windows.ApplicationModel.IAppInfo;
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppInstallerInfo
+        {
+            [default] interface Windows.ApplicationModel.IAppInstallerInfo;
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 6.0)]
         [marshaling_behavior(agile)]
         [static(Windows.ApplicationModel.IAppInstanceStatics, Windows.Foundation.UniversalApiContract, 6.0)]
@@ -878,6 +973,21 @@ namespace Windows
             [default] interface Windows.ApplicationModel.ILeavingBackgroundEventArgs;
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        runtimeclass LimitedAccessFeatureRequestResult
+        {
+            [default] interface Windows.ApplicationModel.ILimitedAccessFeatureRequestResult;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        [static(Windows.ApplicationModel.ILimitedAccessFeaturesStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+        [threading(both)]
+        runtimeclass LimitedAccessFeatures
+        {
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [marshaling_behavior(agile)]
         [static(Windows.ApplicationModel.IPackageStatics, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -890,6 +1000,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.IPackageWithMetadata;
             [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.ApplicationModel.IPackage4;
             [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.IPackage5;
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.IPackage6;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -993,6 +1104,14 @@ namespace Windows
         runtimeclass PackageUninstallingEventArgs
         {
             [default] interface Windows.ApplicationModel.IPackageUninstallingEventArgs;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass PackageUpdateAvailabilityResult
+        {
+            [default] interface Windows.ApplicationModel.IPackageUpdateAvailabilityResult;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]

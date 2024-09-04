@@ -907,6 +907,20 @@ typedef interface ICreatingProcess ICreatingProcess;
 #endif 	/* __ICreatingProcess_FWD_DEFINED__ */
 
 
+#ifndef __ILaunchUIContext_FWD_DEFINED__
+#define __ILaunchUIContext_FWD_DEFINED__
+typedef interface ILaunchUIContext ILaunchUIContext;
+
+#endif 	/* __ILaunchUIContext_FWD_DEFINED__ */
+
+
+#ifndef __ILaunchUIContextProvider_FWD_DEFINED__
+#define __ILaunchUIContextProvider_FWD_DEFINED__
+typedef interface ILaunchUIContextProvider ILaunchUIContextProvider;
+
+#endif 	/* __ILaunchUIContextProvider_FWD_DEFINED__ */
+
+
 #ifndef __INewMenuClient_FWD_DEFINED__
 #define __INewMenuClient_FWD_DEFINED__
 typedef interface INewMenuClient INewMenuClient;
@@ -1122,6 +1136,13 @@ typedef interface IDefaultFolderMenuInitialize IDefaultFolderMenuInitialize;
 typedef interface IApplicationActivationManager IApplicationActivationManager;
 
 #endif 	/* __IApplicationActivationManager_FWD_DEFINED__ */
+
+
+#ifndef __IVirtualDesktopManager_FWD_DEFINED__
+#define __IVirtualDesktopManager_FWD_DEFINED__
+typedef interface IVirtualDesktopManager IVirtualDesktopManager;
+
+#endif 	/* __IVirtualDesktopManager_FWD_DEFINED__ */
 
 
 #ifndef __DesktopWallpaper_FWD_DEFINED__
@@ -1789,6 +1810,13 @@ typedef interface IHandlerInfo IHandlerInfo;
 #endif 	/* __IHandlerInfo_FWD_DEFINED__ */
 
 
+#ifndef __IHandlerInfo2_FWD_DEFINED__
+#define __IHandlerInfo2_FWD_DEFINED__
+typedef interface IHandlerInfo2 IHandlerInfo2;
+
+#endif 	/* __IHandlerInfo2_FWD_DEFINED__ */
+
+
 #ifndef __IHandlerActivationHost_FWD_DEFINED__
 #define __IHandlerActivationHost_FWD_DEFINED__
 typedef interface IHandlerActivationHost IHandlerActivationHost;
@@ -1846,8 +1874,6 @@ extern "C"{
 #define SHSTDAPI_(type)   EXTERN_C DECLSPEC_IMPORT type STDAPICALLTYPE
 #endif
 #endif // SHSTDAPI
-
-//===========================================================================
 //
 // IContextMenu interface
 //
@@ -1953,7 +1979,6 @@ extern "C"{
 //   pszName -- Specifies the string buffer.
 //   cchMax -- Specifies the size of the string buffer.
 //
-//===========================================================================
 
 // QueryContextMenu uFlags
 #define CMF_NORMAL              0x00000000
@@ -3771,7 +3796,8 @@ enum SYNC_TRANSFER_STATUS
         STS_USER_REQUESTED_REFRESH	= 0x40,
         STS_HASWARNING	= 0x80,
         STS_EXCLUDED	= 0x100,
-        STS_INCOMPLETE	= 0x200
+        STS_INCOMPLETE	= 0x200,
+        STS_PLACEHOLDER_IFEMPTY	= 0x400
     } 	SYNC_TRANSFER_STATUS;
 
 DEFINE_ENUM_FLAG_OPERATORS(SYNC_TRANSFER_STATUS)
@@ -22400,6 +22426,187 @@ EXTERN_C const IID IID_ICreatingProcess;
 
 #define SID_ExecuteCreatingProcess __uuidof(ICreatingProcess)
 #endif  // NTDDI_VISTA
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0124_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0124_v0_0_s_ifspec;
+
+#ifndef __ILaunchUIContext_INTERFACE_DEFINED__
+#define __ILaunchUIContext_INTERFACE_DEFINED__
+
+/* interface ILaunchUIContext */
+/* [object][uuid] */ 
+
+
+EXTERN_C const IID IID_ILaunchUIContext;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("1791e8f6-21c7-4340-882a-a6a93e3fd73b")
+    ILaunchUIContext : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE SetAssociatedWindow( 
+            /* [in] */ __RPC__in HWND value) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SetTabGroupingPreference( 
+            /* [in] */ DWORD value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILaunchUIContextVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILaunchUIContext * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILaunchUIContext * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILaunchUIContext * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetAssociatedWindow )( 
+            __RPC__in ILaunchUIContext * This,
+            /* [in] */ __RPC__in HWND value);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetTabGroupingPreference )( 
+            __RPC__in ILaunchUIContext * This,
+            /* [in] */ DWORD value);
+        
+        END_INTERFACE
+    } ILaunchUIContextVtbl;
+
+    interface ILaunchUIContext
+    {
+        CONST_VTBL struct ILaunchUIContextVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILaunchUIContext_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILaunchUIContext_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILaunchUIContext_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILaunchUIContext_SetAssociatedWindow(This,value)	\
+    ( (This)->lpVtbl -> SetAssociatedWindow(This,value) ) 
+
+#define ILaunchUIContext_SetTabGroupingPreference(This,value)	\
+    ( (This)->lpVtbl -> SetTabGroupingPreference(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILaunchUIContext_INTERFACE_DEFINED__ */
+
+
+#ifndef __ILaunchUIContextProvider_INTERFACE_DEFINED__
+#define __ILaunchUIContextProvider_INTERFACE_DEFINED__
+
+/* interface ILaunchUIContextProvider */
+/* [object][uuid] */ 
+
+
+EXTERN_C const IID IID_ILaunchUIContextProvider;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("0d12c4c8-a3d9-4e24-94c1-0e20c5a956c4")
+    ILaunchUIContextProvider : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE UpdateContext( 
+            /* [in] */ __RPC__in_opt ILaunchUIContext *context) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ILaunchUIContextProviderVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ILaunchUIContextProvider * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ILaunchUIContextProvider * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ILaunchUIContextProvider * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *UpdateContext )( 
+            __RPC__in ILaunchUIContextProvider * This,
+            /* [in] */ __RPC__in_opt ILaunchUIContext *context);
+        
+        END_INTERFACE
+    } ILaunchUIContextProviderVtbl;
+
+    interface ILaunchUIContextProvider
+    {
+        CONST_VTBL struct ILaunchUIContextProviderVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ILaunchUIContextProvider_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ILaunchUIContextProvider_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ILaunchUIContextProvider_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ILaunchUIContextProvider_UpdateContext(This,context)	\
+    ( (This)->lpVtbl -> UpdateContext(This,context) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ILaunchUIContextProvider_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_shobjidl_core_0000_0126 */
+/* [local] */ 
+
+#define SID_LaunchUIContextProvider __uuidof(ILaunchUIContextProvider)
+#endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 /* [v1_enum] */ 
 enum _NMCII_FLAGS
     {
@@ -22418,8 +22625,8 @@ enum _NMCSAEI_FLAGS
 typedef int NMCSAEI_FLAGS;
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0124_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0124_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0126_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0126_v0_0_s_ifspec;
 
 #ifndef __INewMenuClient_INTERFACE_DEFINED__
 #define __INewMenuClient_INTERFACE_DEFINED__
@@ -22513,15 +22720,15 @@ EXTERN_C const IID IID_INewMenuClient;
 #endif 	/* __INewMenuClient_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0125 */
+/* interface __MIDL_itf_shobjidl_core_0000_0127 */
 /* [local] */ 
 
 #define SID_SNewMenuClient   IID_INewMenuClient
 #if (_WIN32_IE >= _WIN32_IE_IE70)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0125_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0125_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0127_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0127_v0_0_s_ifspec;
 
 #ifndef __IInitializeWithBindCtx_INTERFACE_DEFINED__
 #define __IInitializeWithBindCtx_INTERFACE_DEFINED__
@@ -22695,14 +22902,14 @@ EXTERN_C const IID IID_IShellItemFilter;
 #endif 	/* __IShellItemFilter_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0127 */
+/* interface __MIDL_itf_shobjidl_core_0000_0129 */
 /* [local] */ 
 
 #endif  // (_WIN32_IE >= _WIN32_IE_IE70)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0127_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0127_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0129_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0129_v0_0_s_ifspec;
 
 #ifndef __INameSpaceTreeControl_INTERFACE_DEFINED__
 #define __INameSpaceTreeControl_INTERFACE_DEFINED__
@@ -23070,15 +23277,15 @@ EXTERN_C const IID IID_INameSpaceTreeControl;
 #endif 	/* __INameSpaceTreeControl_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0128 */
+/* interface __MIDL_itf_shobjidl_core_0000_0130 */
 /* [local] */ 
 
 #define SID_SNavigationPane IID_INameSpaceTreeControl   // nearest service that you can proffer to
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0128_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0128_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0130_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0130_v0_0_s_ifspec;
 
 #ifndef __INameSpaceTreeControlFolderCapabilities_INTERFACE_DEFINED__
 #define __INameSpaceTreeControlFolderCapabilities_INTERFACE_DEFINED__
@@ -23175,7 +23382,7 @@ EXTERN_C const IID IID_INameSpaceTreeControlFolderCapabilities;
 #endif 	/* __INameSpaceTreeControlFolderCapabilities_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0129 */
+/* interface __MIDL_itf_shobjidl_core_0000_0131 */
 /* [local] */ 
 
 #endif  // NTDDI_VISTA
@@ -23185,8 +23392,8 @@ EXTERN_C const IID IID_INameSpaceTreeControlFolderCapabilities;
 #define E_PREVIEWHANDLER_CORRUPT  _HRESULT_TYPEDEF_(0x86420004L)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0129_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0129_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0131_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0131_v0_0_s_ifspec;
 
 #ifndef __IPreviewHandler_INTERFACE_DEFINED__
 #define __IPreviewHandler_INTERFACE_DEFINED__
@@ -23420,7 +23627,7 @@ EXTERN_C const IID IID_IPreviewHandlerFrame;
 #endif 	/* __IPreviewHandlerFrame_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0131 */
+/* interface __MIDL_itf_shobjidl_core_0000_0133 */
 /* [local] */ 
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
@@ -23437,8 +23644,8 @@ typedef EXPLORERPANE *REFEXPLORERPANE;
 #endif // __cplusplus
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0131_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0131_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0133_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0133_v0_0_s_ifspec;
 
 #ifndef __IExplorerPaneVisibility_INTERFACE_DEFINED__
 #define __IExplorerPaneVisibility_INTERFACE_DEFINED__
@@ -23538,14 +23745,14 @@ EXTERN_C const IID IID_IExplorerPaneVisibility;
 #endif 	/* __IExplorerPaneVisibility_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0132 */
+/* interface __MIDL_itf_shobjidl_core_0000_0134 */
 /* [local] */ 
 
 #define SID_ExplorerPaneVisibility IID_IExplorerPaneVisibility
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0132_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0132_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0134_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0134_v0_0_s_ifspec;
 
 #ifndef __IContextMenuCB_INTERFACE_DEFINED__
 #define __IContextMenuCB_INTERFACE_DEFINED__
@@ -23649,14 +23856,14 @@ EXTERN_C const IID IID_IContextMenuCB;
 #endif 	/* __IContextMenuCB_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0133 */
+/* interface __MIDL_itf_shobjidl_core_0000_0135 */
 /* [local] */ 
 
 #endif  // NTDDI_VISTA
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0133_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0133_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0135_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0135_v0_0_s_ifspec;
 
 #ifndef __IDefaultExtractIconInit_INTERFACE_DEFINED__
 #define __IDefaultExtractIconInit_INTERFACE_DEFINED__
@@ -23816,15 +24023,15 @@ EXTERN_C const IID IID_IDefaultExtractIconInit;
 #endif 	/* __IDefaultExtractIconInit_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0134 */
+/* interface __MIDL_itf_shobjidl_core_0000_0136 */
 /* [local] */ 
 
 STDAPI SHCreateDefaultExtractIcon(_In_ REFIID riid, _Outptr_ void **ppv);
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0134_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0134_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0136_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0136_v0_0_s_ifspec;
 
 #ifndef __IExplorerCommand_INTERFACE_DEFINED__
 #define __IExplorerCommand_INTERFACE_DEFINED__
@@ -24413,7 +24620,7 @@ EXTERN_C const IID IID_IExplorerCommandProvider;
 #endif 	/* __IExplorerCommandProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0139 */
+/* interface __MIDL_itf_shobjidl_core_0000_0141 */
 /* [local] */ 
 
 typedef HANDLE HTHEME;
@@ -24429,8 +24636,8 @@ enum CPVIEW
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0139_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0139_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0141_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0141_v0_0_s_ifspec;
 
 #ifndef __IOpenControlPanel_INTERFACE_DEFINED__
 #define __IOpenControlPanel_INTERFACE_DEFINED__
@@ -24540,15 +24747,15 @@ EXTERN_C const IID IID_IOpenControlPanel;
 #endif 	/* __IOpenControlPanel_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0140 */
+/* interface __MIDL_itf_shobjidl_core_0000_0142 */
 /* [local] */ 
 
 #define STR_FILE_SYS_BIND_DATA      L"File System Bind Data"
 #define STR_FILE_SYS_BIND_DATA_WIN7_FORMAT  L"Win7FileSystemIdList"
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0140_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0140_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0142_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0142_v0_0_s_ifspec;
 
 #ifndef __IFileSystemBindData_INTERFACE_DEFINED__
 #define __IFileSystemBindData_INTERFACE_DEFINED__
@@ -24765,14 +24972,14 @@ EXTERN_C const IID IID_IFileSystemBindData2;
 #endif 	/* __IFileSystemBindData2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0142 */
+/* interface __MIDL_itf_shobjidl_core_0000_0144 */
 /* [local] */ 
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0142_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0142_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0144_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0144_v0_0_s_ifspec;
 
 #ifndef __ICustomDestinationList_INTERFACE_DEFINED__
 #define __ICustomDestinationList_INTERFACE_DEFINED__
@@ -25416,7 +25623,7 @@ EXTERN_C const IID IID_IUpdateIDList;
 #endif 	/* __IUpdateIDList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0148 */
+/* interface __MIDL_itf_shobjidl_core_0000_0150 */
 /* [local] */ 
 
 SHSTDAPI SetCurrentProcessExplicitAppUserModelID(_In_ PCWSTR AppID);
@@ -25425,8 +25632,8 @@ SHSTDAPI GetCurrentProcessExplicitAppUserModelID(_Outptr_ PWSTR *AppID);
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0148_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0148_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0150_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0150_v0_0_s_ifspec;
 
 #ifndef __IDesktopWallpaper_INTERFACE_DEFINED__
 #define __IDesktopWallpaper_INTERFACE_DEFINED__
@@ -25706,7 +25913,7 @@ EXTERN_C const IID IID_IDesktopWallpaper;
 #endif 	/* __IDesktopWallpaper_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0149 */
+/* interface __MIDL_itf_shobjidl_core_0000_0151 */
 /* [local] */ 
 
 #endif // NTDDI_WIN8
@@ -25714,8 +25921,8 @@ EXTERN_C const IID IID_IDesktopWallpaper;
 #define HOMEGROUP_SECURITY_GROUP L"HomeUsers"
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0149_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0149_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0151_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0151_v0_0_s_ifspec;
 
 #ifndef __IHomeGroup_INTERFACE_DEFINED__
 #define __IHomeGroup_INTERFACE_DEFINED__
@@ -26297,7 +26504,7 @@ EXTERN_C const IID IID_IShellLibrary;
 #endif 	/* __IShellLibrary_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0153 */
+/* interface __MIDL_itf_shobjidl_core_0000_0155 */
 /* [local] */ 
 
 typedef /* [v1_enum] */ 
@@ -26318,8 +26525,8 @@ enum DEFAULT_FOLDER_MENU_RESTRICTIONS
 DEFINE_ENUM_FLAG_OPERATORS(DEFAULT_FOLDER_MENU_RESTRICTIONS)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0153_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0153_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0155_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0155_v0_0_s_ifspec;
 
 #ifndef __IDefaultFolderMenuInitialize_INTERFACE_DEFINED__
 #define __IDefaultFolderMenuInitialize_INTERFACE_DEFINED__
@@ -26459,7 +26666,7 @@ EXTERN_C const IID IID_IDefaultFolderMenuInitialize;
 #endif 	/* __IDefaultFolderMenuInitialize_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0154 */
+/* interface __MIDL_itf_shobjidl_core_0000_0156 */
 /* [local] */ 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
@@ -26476,8 +26683,8 @@ enum ACTIVATEOPTIONS
 DEFINE_ENUM_FLAG_OPERATORS(ACTIVATEOPTIONS)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0154_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0154_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0156_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0156_v0_0_s_ifspec;
 
 #ifndef __IApplicationActivationManager_INTERFACE_DEFINED__
 #define __IApplicationActivationManager_INTERFACE_DEFINED__
@@ -26595,14 +26802,130 @@ EXTERN_C const IID IID_IApplicationActivationManager;
 #endif 	/* __IApplicationActivationManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0155 */
+/* interface __MIDL_itf_shobjidl_core_0000_0157 */
 /* [local] */ 
 
 #endif // NTDDI_WIN8
+#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0155_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0155_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0157_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0157_v0_0_s_ifspec;
+
+#ifndef __IVirtualDesktopManager_INTERFACE_DEFINED__
+#define __IVirtualDesktopManager_INTERFACE_DEFINED__
+
+/* interface IVirtualDesktopManager */
+/* [object][uuid] */ 
+
+
+EXTERN_C const IID IID_IVirtualDesktopManager;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("a5cd92ff-29be-454c-8d04-d82879fb3f1b")
+    IVirtualDesktopManager : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE IsWindowOnCurrentVirtualDesktop( 
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [out] */ __RPC__out BOOL *onCurrentDesktop) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetWindowDesktopId( 
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [out] */ __RPC__out GUID *desktopId) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE MoveWindowToDesktop( 
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [in] */ __RPC__in REFGUID desktopId) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IVirtualDesktopManagerVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IVirtualDesktopManager * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IVirtualDesktopManager * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IVirtualDesktopManager * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *IsWindowOnCurrentVirtualDesktop )( 
+            __RPC__in IVirtualDesktopManager * This,
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [out] */ __RPC__out BOOL *onCurrentDesktop);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetWindowDesktopId )( 
+            __RPC__in IVirtualDesktopManager * This,
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [out] */ __RPC__out GUID *desktopId);
+        
+        HRESULT ( STDMETHODCALLTYPE *MoveWindowToDesktop )( 
+            __RPC__in IVirtualDesktopManager * This,
+            /* [in] */ __RPC__in HWND topLevelWindow,
+            /* [in] */ __RPC__in REFGUID desktopId);
+        
+        END_INTERFACE
+    } IVirtualDesktopManagerVtbl;
+
+    interface IVirtualDesktopManager
+    {
+        CONST_VTBL struct IVirtualDesktopManagerVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IVirtualDesktopManager_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IVirtualDesktopManager_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IVirtualDesktopManager_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IVirtualDesktopManager_IsWindowOnCurrentVirtualDesktop(This,topLevelWindow,onCurrentDesktop)	\
+    ( (This)->lpVtbl -> IsWindowOnCurrentVirtualDesktop(This,topLevelWindow,onCurrentDesktop) ) 
+
+#define IVirtualDesktopManager_GetWindowDesktopId(This,topLevelWindow,desktopId)	\
+    ( (This)->lpVtbl -> GetWindowDesktopId(This,topLevelWindow,desktopId) ) 
+
+#define IVirtualDesktopManager_MoveWindowToDesktop(This,topLevelWindow,desktopId)	\
+    ( (This)->lpVtbl -> MoveWindowToDesktop(This,topLevelWindow,desktopId) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IVirtualDesktopManager_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_shobjidl_core_0000_0158 */
+/* [local] */ 
+
+#endif // NTDDI_WINTHRESHOLD
+
+
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0158_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0158_v0_0_s_ifspec;
 
 
 #ifndef __ShellCoreObjects_LIBRARY_DEFINED__
@@ -26951,7 +27274,7 @@ ApplicationDesignModeSettings;
 #endif
 #endif /* __ShellCoreObjects_LIBRARY_DEFINED__ */
 
-/* interface __MIDL_itf_shobjidl_core_0000_0156 */
+/* interface __MIDL_itf_shobjidl_core_0000_0159 */
 /* [local] */ 
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
@@ -27094,8 +27417,8 @@ __inline HRESULT SHSaveLibraryInFolderPath(_In_ IShellLibrary *plib, _In_ PCWSTR
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0156_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0156_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0159_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0159_v0_0_s_ifspec;
 
 #ifndef __IAssocHandlerInvoker_INTERFACE_DEFINED__
 #define __IAssocHandlerInvoker_INTERFACE_DEFINED__
@@ -27431,7 +27754,7 @@ EXTERN_C const IID IID_IEnumAssocHandlers;
 #endif 	/* __IEnumAssocHandlers_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0159 */
+/* interface __MIDL_itf_shobjidl_core_0000_0162 */
 /* [local] */ 
 
 typedef 
@@ -27450,8 +27773,8 @@ SHSTDAPI SHAssocEnumHandlersForProtocolByApplication(_In_ PCWSTR protocol, _In_ 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0159_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0159_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0162_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0162_v0_0_s_ifspec;
 
 #ifndef __IDataObjectProvider_INTERFACE_DEFINED__
 #define __IDataObjectProvider_INTERFACE_DEFINED__
@@ -27639,15 +27962,15 @@ EXTERN_C const IID IID_IDataTransferManagerInterop;
 #endif 	/* __IDataTransferManagerInterop_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0161 */
+/* interface __MIDL_itf_shobjidl_core_0000_0164 */
 /* [local] */ 
 
 #endif // NTDDI_WIN8
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0161_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0161_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0164_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0164_v0_0_s_ifspec;
 
 #ifndef __IFrameworkInputPaneHandler_INTERFACE_DEFINED__
 #define __IFrameworkInputPaneHandler_INTERFACE_DEFINED__
@@ -27859,7 +28182,7 @@ EXTERN_C const IID IID_IFrameworkInputPane;
 #endif 	/* __IFrameworkInputPane_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0163 */
+/* interface __MIDL_itf_shobjidl_core_0000_0166 */
 /* [local] */ 
 
 
@@ -27895,8 +28218,8 @@ enum MONITOR_APP_VISIBILITY
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0163_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0163_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0166_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0166_v0_0_s_ifspec;
 
 #ifndef __IAppVisibilityEvents_INTERFACE_DEFINED__
 #define __IAppVisibilityEvents_INTERFACE_DEFINED__
@@ -28106,7 +28429,7 @@ EXTERN_C const IID IID_IAppVisibility;
 #endif 	/* __IAppVisibility_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0165 */
+/* interface __MIDL_itf_shobjidl_core_0000_0168 */
 /* [local] */ 
 
 #ifdef MIDL_PASS
@@ -28125,8 +28448,8 @@ enum PACKAGE_EXECUTION_STATE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0165_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0165_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0168_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0168_v0_0_s_ifspec;
 
 #ifndef __IPackageExecutionStateChangeNotification_INTERFACE_DEFINED__
 #define __IPackageExecutionStateChangeNotification_INTERFACE_DEFINED__
@@ -28835,7 +29158,7 @@ EXTERN_C const IID IID_ISuspensionDependencyManager;
 #endif 	/* __ISuspensionDependencyManager_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0169 */
+/* interface __MIDL_itf_shobjidl_core_0000_0172 */
 /* [local] */ 
 
 typedef /* [v1_enum] */ 
@@ -28847,8 +29170,8 @@ enum AHE_TYPE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0169_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0169_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0172_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0172_v0_0_s_ifspec;
 
 #ifndef __IExecuteCommandApplicationHostEnvironment_INTERFACE_DEFINED__
 #define __IExecuteCommandApplicationHostEnvironment_INTERFACE_DEFINED__
@@ -28930,7 +29253,7 @@ EXTERN_C const IID IID_IExecuteCommandApplicationHostEnvironment;
 #endif 	/* __IExecuteCommandApplicationHostEnvironment_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0170 */
+/* interface __MIDL_itf_shobjidl_core_0000_0173 */
 /* [local] */ 
 
 typedef /* [v1_enum] */ 
@@ -28943,8 +29266,8 @@ enum EC_HOST_UI_MODE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0170_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0170_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0173_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0173_v0_0_s_ifspec;
 
 #ifndef __IExecuteCommandHost_INTERFACE_DEFINED__
 #define __IExecuteCommandHost_INTERFACE_DEFINED__
@@ -29026,7 +29349,7 @@ EXTERN_C const IID IID_IExecuteCommandHost;
 #endif 	/* __IExecuteCommandHost_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0171 */
+/* interface __MIDL_itf_shobjidl_core_0000_0174 */
 /* [local] */ 
 
 #define SID_ExecuteCommandHost IID_IExecuteCommandHost
@@ -29049,8 +29372,8 @@ enum EDGE_GESTURE_KIND
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0171_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0171_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0174_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0174_v0_0_s_ifspec;
 
 #ifndef __IApplicationDesignModeSettings_INTERFACE_DEFINED__
 #define __IApplicationDesignModeSettings_INTERFACE_DEFINED__
@@ -29188,7 +29511,7 @@ EXTERN_C const IID IID_IApplicationDesignModeSettings;
 #endif 	/* __IApplicationDesignModeSettings_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0172 */
+/* interface __MIDL_itf_shobjidl_core_0000_0175 */
 /* [local] */ 
 
 typedef /* [v1_enum] */ 
@@ -29225,8 +29548,8 @@ enum APPLICATION_VIEW_MIN_WIDTH
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0172_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0172_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0175_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0175_v0_0_s_ifspec;
 
 #ifndef __IApplicationDesignModeSettings2_INTERFACE_DEFINED__
 #define __IApplicationDesignModeSettings2_INTERFACE_DEFINED__
@@ -29418,7 +29741,7 @@ EXTERN_C const IID IID_IApplicationDesignModeSettings2;
 #endif 	/* __IApplicationDesignModeSettings2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0173 */
+/* interface __MIDL_itf_shobjidl_core_0000_0176 */
 /* [local] */ 
 
 DEFINE_GUID(SID_URLExecutionContext, 0xFB5F8EBC, 0xBBB6, 0x4D10, 0xA4, 0x61, 0x77, 0x72, 0x91, 0xA0, 0x90, 0x30);
@@ -29426,8 +29749,8 @@ DEFINE_GUID(SID_URLExecutionContext, 0xFB5F8EBC, 0xBBB6, 0x4D10, 0xA4, 0x61, 0x7
 #define STR_REFERRER_IDENTIFIER    L"Referrer Identifier"
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0173_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0173_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0176_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0176_v0_0_s_ifspec;
 
 #ifndef __ILaunchTargetMonitor_INTERFACE_DEFINED__
 #define __ILaunchTargetMonitor_INTERFACE_DEFINED__
@@ -29509,7 +29832,7 @@ EXTERN_C const IID IID_ILaunchTargetMonitor;
 #endif 	/* __ILaunchTargetMonitor_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0174 */
+/* interface __MIDL_itf_shobjidl_core_0000_0177 */
 /* [local] */ 
 
 #define SID_LaunchTargetMonitor __uuidof((struct __declspec(uuid("8D547FA1-CC45-40C8-B7C1-D48C183F13F3")) LaunchTargetMonitor*)0)
@@ -29527,8 +29850,8 @@ enum APPLICATION_VIEW_SIZE_PREFERENCE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0174_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0174_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0177_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0177_v0_0_s_ifspec;
 
 #ifndef __ILaunchSourceViewSizePreference_INTERFACE_DEFINED__
 #define __ILaunchSourceViewSizePreference_INTERFACE_DEFINED__
@@ -29620,14 +29943,14 @@ EXTERN_C const IID IID_ILaunchSourceViewSizePreference;
 #endif 	/* __ILaunchSourceViewSizePreference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0175 */
+/* interface __MIDL_itf_shobjidl_core_0000_0178 */
 /* [local] */ 
 
 DEFINE_GUID(SID_LaunchSourceViewSizePreference, 0x80605492, 0x67d9, 0x414f, 0xaf, 0x89, 0xa1, 0xcd, 0xf1, 0x24, 0x2b, 0xc1);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0175_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0175_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0178_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0178_v0_0_s_ifspec;
 
 #ifndef __ILaunchTargetViewSizePreference_INTERFACE_DEFINED__
 #define __ILaunchTargetViewSizePreference_INTERFACE_DEFINED__
@@ -29709,14 +30032,14 @@ EXTERN_C const IID IID_ILaunchTargetViewSizePreference;
 #endif 	/* __ILaunchTargetViewSizePreference_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0176 */
+/* interface __MIDL_itf_shobjidl_core_0000_0179 */
 /* [local] */ 
 
 DEFINE_GUID(SID_LaunchTargetViewSizePreference, 0x26db2472, 0xb7b7, 0x406b, 0x97, 0x2, 0x73, 0xa, 0x4e, 0x20, 0xd3, 0xbf);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0176_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0176_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0179_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0179_v0_0_s_ifspec;
 
 #ifndef __ILaunchSourceAppUserModelId_INTERFACE_DEFINED__
 #define __ILaunchSourceAppUserModelId_INTERFACE_DEFINED__
@@ -29798,15 +30121,15 @@ EXTERN_C const IID IID_ILaunchSourceAppUserModelId;
 #endif 	/* __ILaunchSourceAppUserModelId_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0177 */
+/* interface __MIDL_itf_shobjidl_core_0000_0180 */
 /* [local] */ 
 
 DEFINE_GUID(SID_LaunchSourceAppUserModelId, 0x2ce78010, 0x74db, 0x48bc, 0x9c, 0x6a, 0x10, 0xf3, 0x72, 0x49, 0x57, 0x23);
 #endif // NTDDI_WINBLUE
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0177_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0177_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0180_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0180_v0_0_s_ifspec;
 
 #ifndef __IInitializeWithWindow_INTERFACE_DEFINED__
 #define __IInitializeWithWindow_INTERFACE_DEFINED__
@@ -29988,14 +30311,116 @@ EXTERN_C const IID IID_IHandlerInfo;
 #endif 	/* __IHandlerInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0179 */
+/* interface __MIDL_itf_shobjidl_core_0000_0182 */
 /* [local] */ 
 
 #define SID_HandlerInfo IID_IHandlerInfo
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0179_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0179_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0182_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0182_v0_0_s_ifspec;
+
+#ifndef __IHandlerInfo2_INTERFACE_DEFINED__
+#define __IHandlerInfo2_INTERFACE_DEFINED__
+
+/* interface IHandlerInfo2 */
+/* [unique][object][uuid] */ 
+
+
+EXTERN_C const IID IID_IHandlerInfo2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("31cca04c-04d3-4ea9-90de-97b15e87a532")
+    IHandlerInfo2 : public IHandlerInfo
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetApplicationId( 
+            /* [out] */ __RPC__deref_out_opt LPWSTR *value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IHandlerInfo2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IHandlerInfo2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IHandlerInfo2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IHandlerInfo2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetApplicationDisplayName )( 
+            __RPC__in IHandlerInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetApplicationPublisher )( 
+            __RPC__in IHandlerInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetApplicationIconReference )( 
+            __RPC__in IHandlerInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *value);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetApplicationId )( 
+            __RPC__in IHandlerInfo2 * This,
+            /* [out] */ __RPC__deref_out_opt LPWSTR *value);
+        
+        END_INTERFACE
+    } IHandlerInfo2Vtbl;
+
+    interface IHandlerInfo2
+    {
+        CONST_VTBL struct IHandlerInfo2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IHandlerInfo2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IHandlerInfo2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IHandlerInfo2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IHandlerInfo2_GetApplicationDisplayName(This,value)	\
+    ( (This)->lpVtbl -> GetApplicationDisplayName(This,value) ) 
+
+#define IHandlerInfo2_GetApplicationPublisher(This,value)	\
+    ( (This)->lpVtbl -> GetApplicationPublisher(This,value) ) 
+
+#define IHandlerInfo2_GetApplicationIconReference(This,value)	\
+    ( (This)->lpVtbl -> GetApplicationIconReference(This,value) ) 
+
+
+#define IHandlerInfo2_GetApplicationId(This,value)	\
+    ( (This)->lpVtbl -> GetApplicationId(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IHandlerInfo2_INTERFACE_DEFINED__ */
+
 
 #ifndef __IHandlerActivationHost_INTERFACE_DEFINED__
 #define __IHandlerActivationHost_INTERFACE_DEFINED__
@@ -30095,15 +30520,15 @@ EXTERN_C const IID IID_IHandlerActivationHost;
 #endif 	/* __IHandlerActivationHost_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0180 */
+/* interface __MIDL_itf_shobjidl_core_0000_0184 */
 /* [local] */ 
 
 #define SID_SHandlerActivationHost IID_IHandlerActivationHost
 #if (NTDDI_VERSION >= NTDDI_WIN10)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0180_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0180_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0184_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0184_v0_0_s_ifspec;
 
 #ifndef __IAppActivationUIInfo_INTERFACE_DEFINED__
 #define __IAppActivationUIInfo_INTERFACE_DEFINED__
@@ -30225,7 +30650,7 @@ EXTERN_C const IID IID_IAppActivationUIInfo;
 #endif 	/* __IAppActivationUIInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0181 */
+/* interface __MIDL_itf_shobjidl_core_0000_0185 */
 /* [local] */ 
 
 #define SID_AppActivationUIInfo IID_IAppActivationUIInfo
@@ -30245,8 +30670,8 @@ enum FLYOUT_PLACEMENT
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0181_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0181_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0185_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0185_v0_0_s_ifspec;
 
 #ifndef __IContactManagerInterop_INTERFACE_DEFINED__
 #define __IContactManagerInterop_INTERFACE_DEFINED__
@@ -30334,15 +30759,15 @@ EXTERN_C const IID IID_IContactManagerInterop;
 #endif 	/* __IContactManagerInterop_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0182 */
+/* interface __MIDL_itf_shobjidl_core_0000_0186 */
 /* [local] */ 
 
 #endif // NTDDI_WINBLUE
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0182_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0182_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0186_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0186_v0_0_s_ifspec;
 
 #ifndef __IShellIconOverlayIdentifier_INTERFACE_DEFINED__
 #define __IShellIconOverlayIdentifier_INTERFACE_DEFINED__
@@ -30452,7 +30877,7 @@ EXTERN_C const IID IID_IShellIconOverlayIdentifier;
 #endif 	/* __IShellIconOverlayIdentifier_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_shobjidl_core_0000_0183 */
+/* interface __MIDL_itf_shobjidl_core_0000_0187 */
 /* [local] */ 
 
 #define ISIOI_ICONFILE   0x00000001
@@ -30460,8 +30885,8 @@ EXTERN_C const IID IID_IShellIconOverlayIdentifier;
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0183_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0183_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0187_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_shobjidl_core_0000_0187_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

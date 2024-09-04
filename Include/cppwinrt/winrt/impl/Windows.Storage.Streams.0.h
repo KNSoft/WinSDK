@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -169,24 +169,24 @@ template <> struct name<Windows::Storage::Streams::ByteOrder>{ static constexpr 
 template <> struct name<Windows::Storage::Streams::FileOpenDisposition>{ static constexpr auto & value{ L"Windows.Storage.Streams.FileOpenDisposition" }; };
 template <> struct name<Windows::Storage::Streams::InputStreamOptions>{ static constexpr auto & value{ L"Windows.Storage.Streams.InputStreamOptions" }; };
 template <> struct name<Windows::Storage::Streams::UnicodeEncoding>{ static constexpr auto & value{ L"Windows.Storage.Streams.UnicodeEncoding" }; };
-template <> struct guid<Windows::Storage::Streams::IBuffer>{ static constexpr GUID value{ 0x905A0FE0,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
-template <> struct guid<Windows::Storage::Streams::IBufferFactory>{ static constexpr GUID value{ 0x71AF914D,0xC10F,0x484B,{ 0xBC,0x50,0x14,0xBC,0x62,0x3B,0x3A,0x27 } }; };
-template <> struct guid<Windows::Storage::Streams::IBufferStatics>{ static constexpr GUID value{ 0xE901E65B,0xD716,0x475A,{ 0xA9,0x0A,0xAF,0x72,0x29,0xB1,0xE7,0x41 } }; };
-template <> struct guid<Windows::Storage::Streams::IContentTypeProvider>{ static constexpr GUID value{ 0x97D098A5,0x3B99,0x4DE9,{ 0x88,0xA5,0xE1,0x1D,0x2F,0x50,0xC7,0x95 } }; };
-template <> struct guid<Windows::Storage::Streams::IDataReader>{ static constexpr GUID value{ 0xE2B50029,0xB4C1,0x4314,{ 0xA4,0xB8,0xFB,0x81,0x3A,0x2F,0x27,0x5E } }; };
-template <> struct guid<Windows::Storage::Streams::IDataReaderFactory>{ static constexpr GUID value{ 0xD7527847,0x57DA,0x4E15,{ 0x91,0x4C,0x06,0x80,0x66,0x99,0xA0,0x98 } }; };
-template <> struct guid<Windows::Storage::Streams::IDataReaderStatics>{ static constexpr GUID value{ 0x11FCBFC8,0xF93A,0x471B,{ 0xB1,0x21,0xF3,0x79,0xE3,0x49,0x31,0x3C } }; };
-template <> struct guid<Windows::Storage::Streams::IDataWriter>{ static constexpr GUID value{ 0x64B89265,0xD341,0x4922,{ 0xB3,0x8A,0xDD,0x4A,0xF8,0x80,0x8C,0x4E } }; };
-template <> struct guid<Windows::Storage::Streams::IDataWriterFactory>{ static constexpr GUID value{ 0x338C67C2,0x8B84,0x4C2B,{ 0x9C,0x50,0x7B,0x87,0x67,0x84,0x7A,0x1F } }; };
-template <> struct guid<Windows::Storage::Streams::IFileRandomAccessStreamStatics>{ static constexpr GUID value{ 0x73550107,0x3B57,0x4B5D,{ 0x83,0x45,0x55,0x4D,0x2F,0xC6,0x21,0xF0 } }; };
-template <> struct guid<Windows::Storage::Streams::IInputStream>{ static constexpr GUID value{ 0x905A0FE2,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
-template <> struct guid<Windows::Storage::Streams::IInputStreamReference>{ static constexpr GUID value{ 0x43929D18,0x5EC9,0x4B5A,{ 0x91,0x9C,0x42,0x05,0xB0,0xC8,0x04,0xB6 } }; };
-template <> struct guid<Windows::Storage::Streams::IOutputStream>{ static constexpr GUID value{ 0x905A0FE6,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
-template <> struct guid<Windows::Storage::Streams::IRandomAccessStream>{ static constexpr GUID value{ 0x905A0FE1,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
-template <> struct guid<Windows::Storage::Streams::IRandomAccessStreamReference>{ static constexpr GUID value{ 0x33EE3134,0x1DD6,0x4E3A,{ 0x80,0x67,0xD1,0xC1,0x62,0xE8,0x64,0x2B } }; };
-template <> struct guid<Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>{ static constexpr GUID value{ 0x857309DC,0x3FBF,0x4E7D,{ 0x98,0x6F,0xEF,0x3B,0x1A,0x07,0xA9,0x64 } }; };
-template <> struct guid<Windows::Storage::Streams::IRandomAccessStreamStatics>{ static constexpr GUID value{ 0x524CEDCF,0x6E29,0x4CE5,{ 0x95,0x73,0x6B,0x75,0x3D,0xB6,0x6C,0x3A } }; };
-template <> struct guid<Windows::Storage::Streams::IRandomAccessStreamWithContentType>{ static constexpr GUID value{ 0xCC254827,0x4B3D,0x438F,{ 0x92,0x32,0x10,0xC7,0x6B,0xC7,0xE0,0x38 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IBuffer>{ static constexpr guid value{ 0x905A0FE0,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IBufferFactory>{ static constexpr guid value{ 0x71AF914D,0xC10F,0x484B,{ 0xBC,0x50,0x14,0xBC,0x62,0x3B,0x3A,0x27 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IBufferStatics>{ static constexpr guid value{ 0xE901E65B,0xD716,0x475A,{ 0xA9,0x0A,0xAF,0x72,0x29,0xB1,0xE7,0x41 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IContentTypeProvider>{ static constexpr guid value{ 0x97D098A5,0x3B99,0x4DE9,{ 0x88,0xA5,0xE1,0x1D,0x2F,0x50,0xC7,0x95 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IDataReader>{ static constexpr guid value{ 0xE2B50029,0xB4C1,0x4314,{ 0xA4,0xB8,0xFB,0x81,0x3A,0x2F,0x27,0x5E } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IDataReaderFactory>{ static constexpr guid value{ 0xD7527847,0x57DA,0x4E15,{ 0x91,0x4C,0x06,0x80,0x66,0x99,0xA0,0x98 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IDataReaderStatics>{ static constexpr guid value{ 0x11FCBFC8,0xF93A,0x471B,{ 0xB1,0x21,0xF3,0x79,0xE3,0x49,0x31,0x3C } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IDataWriter>{ static constexpr guid value{ 0x64B89265,0xD341,0x4922,{ 0xB3,0x8A,0xDD,0x4A,0xF8,0x80,0x8C,0x4E } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IDataWriterFactory>{ static constexpr guid value{ 0x338C67C2,0x8B84,0x4C2B,{ 0x9C,0x50,0x7B,0x87,0x67,0x84,0x7A,0x1F } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IFileRandomAccessStreamStatics>{ static constexpr guid value{ 0x73550107,0x3B57,0x4B5D,{ 0x83,0x45,0x55,0x4D,0x2F,0xC6,0x21,0xF0 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IInputStream>{ static constexpr guid value{ 0x905A0FE2,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IInputStreamReference>{ static constexpr guid value{ 0x43929D18,0x5EC9,0x4B5A,{ 0x91,0x9C,0x42,0x05,0xB0,0xC8,0x04,0xB6 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IOutputStream>{ static constexpr guid value{ 0x905A0FE6,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IRandomAccessStream>{ static constexpr guid value{ 0x905A0FE1,0xBC53,0x11DF,{ 0x8C,0x49,0x00,0x1E,0x4F,0xC6,0x86,0xDA } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IRandomAccessStreamReference>{ static constexpr guid value{ 0x33EE3134,0x1DD6,0x4E3A,{ 0x80,0x67,0xD1,0xC1,0x62,0xE8,0x64,0x2B } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>{ static constexpr guid value{ 0x857309DC,0x3FBF,0x4E7D,{ 0x98,0x6F,0xEF,0x3B,0x1A,0x07,0xA9,0x64 } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IRandomAccessStreamStatics>{ static constexpr guid value{ 0x524CEDCF,0x6E29,0x4CE5,{ 0x95,0x73,0x6B,0x75,0x3D,0xB6,0x6C,0x3A } }; };
+template <> struct guid_storage<Windows::Storage::Streams::IRandomAccessStreamWithContentType>{ static constexpr guid value{ 0xCC254827,0x4B3D,0x438F,{ 0x92,0x32,0x10,0xC7,0x6B,0xC7,0xE0,0x38 } }; };
 template <> struct default_interface<Windows::Storage::Streams::Buffer>{ using type = Windows::Storage::Streams::IBuffer; };
 template <> struct default_interface<Windows::Storage::Streams::DataReader>{ using type = Windows::Storage::Streams::IDataReader; };
 template <> struct default_interface<Windows::Storage::Streams::DataReaderLoadOperation>{ using type = Windows::Foundation::IAsyncOperation<uint32_t>; };
@@ -201,12 +201,182 @@ template <> struct default_interface<Windows::Storage::Streams::OutputStreamOver
 template <> struct default_interface<Windows::Storage::Streams::RandomAccessStreamOverStream>{ using type = Windows::Storage::Streams::IRandomAccessStream; };
 template <> struct default_interface<Windows::Storage::Streams::RandomAccessStreamReference>{ using type = Windows::Storage::Streams::IRandomAccessStreamReference; };
 
+template <> struct abi<Windows::Storage::Streams::IBuffer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Capacity(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Length(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IBufferFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint32_t capacity, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IBufferStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCopyFromMemoryBuffer(void* input, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateMemoryBufferOverIBuffer(void* input, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IContentTypeProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContentType(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IDataReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnconsumedBufferLength(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadByte(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBytes(uint32_t __valueSize, uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBuffer(uint32_t length, void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadBoolean(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadGuid(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadInt16(int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadInt32(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadInt64(int64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadUInt16(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadUInt32(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadUInt64(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadSingle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadDouble(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadString(uint32_t codeUnitCount, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadDateTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadTimeSpan(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadAsync(uint32_t count, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DetachBuffer(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL DetachStream(void** stream) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IDataReaderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDataReader(void* inputStream, void** dataReader) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IDataReaderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromBuffer(void* buffer, void** dataReader) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IDataWriter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnstoredBufferLength(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteByte(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBytes(uint32_t __valueSize, uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBuffer(void* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBufferRange(void* buffer, uint32_t start, uint32_t count) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteBoolean(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteGuid(winrt::guid value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteInt16(int16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteInt32(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteInt64(int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteUInt16(uint16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteUInt32(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteUInt64(uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteSingle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteDouble(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteDateTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteTimeSpan(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteString(void* value, uint32_t* codeUnitCount) noexcept = 0;
+    virtual int32_t WINRT_CALL MeasureString(void* value, uint32_t* codeUnitCount) noexcept = 0;
+    virtual int32_t WINRT_CALL StoreAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FlushAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DetachBuffer(void** buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL DetachStream(void** outputStream) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IDataWriterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDataWriter(void* outputStream, void** dataWriter) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IFileRandomAccessStreamStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OpenAsync(void* filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenWithOptionsAsync(void* filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteAsync(void* filePath, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteWithOptionsAsync(void* filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenForUserAsync(void* user, void* filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenForUserWithOptionsAsync(void* user, void* filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteForUserAsync(void* user, void* filePath, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenTransactedWriteForUserWithOptionsAsync(void* user, void* filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IInputStream>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadAsync(void* buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IInputStreamReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OpenSequentialReadAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IOutputStream>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL WriteAsync(void* buffer, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL FlushAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IRandomAccessStream>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Size(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetInputStreamAt(uint64_t position, void** stream) noexcept = 0;
+    virtual int32_t WINRT_CALL GetOutputStreamAt(uint64_t position, void** stream) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Position(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Seek(uint64_t position) noexcept = 0;
+    virtual int32_t WINRT_CALL CloneStream(void** stream) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanRead(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanWrite(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OpenReadAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromFile(void* file, void** streamReference) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromUri(void* uri, void** streamReference) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromStream(void* stream, void** streamReference) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CopyAsync(void* source, void* destination, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopySizeAsync(void* source, void* destination, uint64_t bytesToCopy, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyAndCloseAsync(void* source, void* destination, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamWithContentType>{ struct type : IInspectable
+{
+};};
+
 template <typename D>
 struct consume_Windows_Storage_Streams_IBuffer
 {
     uint32_t Capacity() const;
     uint32_t Length() const;
     void Length(uint32_t value) const;
+
+    auto data() const
+    {
+        uint8_t* data{};
+        static_cast<D const&>(*this).template as<IBufferByteAccess>()->Buffer(&data);
+        return data;
+    }
 };
 template <> struct consume<Windows::Storage::Streams::IBuffer> { template <typename D> using type = consume_Windows_Storage_Streams_IBuffer<D>; };
 
@@ -246,7 +416,7 @@ struct consume_Windows_Storage_Streams_IDataReader
     void ReadBytes(array_view<uint8_t> value) const;
     Windows::Storage::Streams::IBuffer ReadBuffer(uint32_t length) const;
     bool ReadBoolean() const;
-    GUID ReadGuid() const;
+    winrt::guid ReadGuid() const;
     int16_t ReadInt16() const;
     int32_t ReadInt32() const;
     int64_t ReadInt64() const;
@@ -291,7 +461,7 @@ struct consume_Windows_Storage_Streams_IDataWriter
     void WriteBuffer(Windows::Storage::Streams::IBuffer const& buffer) const;
     void WriteBuffer(Windows::Storage::Streams::IBuffer const& buffer, uint32_t start, uint32_t count) const;
     void WriteBoolean(bool value) const;
-    void WriteGuid(GUID const& value) const;
+    void WriteGuid(winrt::guid const& value) const;
     void WriteInt16(int16_t value) const;
     void WriteInt32(int32_t value) const;
     void WriteInt64(int64_t value) const;
@@ -399,168 +569,5 @@ struct consume_Windows_Storage_Streams_IRandomAccessStreamWithContentType
 {
 };
 template <> struct consume<Windows::Storage::Streams::IRandomAccessStreamWithContentType> { template <typename D> using type = consume_Windows_Storage_Streams_IRandomAccessStreamWithContentType<D>; };
-
-template <> struct abi<Windows::Storage::Streams::IBuffer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Capacity(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Length(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IBufferFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint32_t capacity, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IBufferStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCopyFromMemoryBuffer(void* input, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateMemoryBufferOverIBuffer(void* input, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IContentTypeProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContentType(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IDataReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnconsumedBufferLength(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept = 0;
-    virtual HRESULT __stdcall get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept = 0;
-    virtual HRESULT __stdcall get_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) noexcept = 0;
-    virtual HRESULT __stdcall ReadByte(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadBytes(uint32_t __valueSize, uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadBuffer(uint32_t length, void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall ReadBoolean(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadGuid(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadInt16(int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadInt32(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadInt64(int64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadUInt16(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadUInt32(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadUInt64(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadSingle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadDouble(double* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadString(uint32_t codeUnitCount, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadDateTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall ReadTimeSpan(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall LoadAsync(uint32_t count, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DetachBuffer(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall DetachStream(void** stream) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IDataReaderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDataReader(void* inputStream, void** dataReader) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IDataReaderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromBuffer(void* buffer, void** dataReader) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IDataWriter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnstoredBufferLength(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) noexcept = 0;
-    virtual HRESULT __stdcall get_ByteOrder(Windows::Storage::Streams::ByteOrder* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ByteOrder(Windows::Storage::Streams::ByteOrder value) noexcept = 0;
-    virtual HRESULT __stdcall WriteByte(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteBytes(uint32_t __valueSize, uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall WriteBuffer(void* buffer) noexcept = 0;
-    virtual HRESULT __stdcall WriteBufferRange(void* buffer, uint32_t start, uint32_t count) noexcept = 0;
-    virtual HRESULT __stdcall WriteBoolean(bool value) noexcept = 0;
-    virtual HRESULT __stdcall WriteGuid(GUID value) noexcept = 0;
-    virtual HRESULT __stdcall WriteInt16(int16_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteInt32(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteInt64(int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteUInt16(uint16_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteUInt32(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteUInt64(uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall WriteSingle(float value) noexcept = 0;
-    virtual HRESULT __stdcall WriteDouble(double value) noexcept = 0;
-    virtual HRESULT __stdcall WriteDateTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall WriteTimeSpan(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall WriteString(HSTRING value, uint32_t* codeUnitCount) noexcept = 0;
-    virtual HRESULT __stdcall MeasureString(HSTRING value, uint32_t* codeUnitCount) noexcept = 0;
-    virtual HRESULT __stdcall StoreAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FlushAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DetachBuffer(void** buffer) noexcept = 0;
-    virtual HRESULT __stdcall DetachStream(void** outputStream) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IDataWriterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDataWriter(void* outputStream, void** dataWriter) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IFileRandomAccessStreamStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OpenAsync(HSTRING filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenWithOptionsAsync(HSTRING filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteAsync(HSTRING filePath, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteWithOptionsAsync(HSTRING filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenForUserAsync(void* user, HSTRING filePath, Windows::Storage::FileAccessMode accessMode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenForUserWithOptionsAsync(void* user, HSTRING filePath, Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions sharingOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteForUserAsync(void* user, HSTRING filePath, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall OpenTransactedWriteForUserWithOptionsAsync(void* user, HSTRING filePath, Windows::Storage::StorageOpenOptions openOptions, Windows::Storage::Streams::FileOpenDisposition openDisposition, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IInputStream>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadAsync(void* buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IInputStreamReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OpenSequentialReadAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IOutputStream>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall WriteAsync(void* buffer, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall FlushAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IRandomAccessStream>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Size(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall GetInputStreamAt(uint64_t position, void** stream) noexcept = 0;
-    virtual HRESULT __stdcall GetOutputStreamAt(uint64_t position, void** stream) noexcept = 0;
-    virtual HRESULT __stdcall get_Position(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall Seek(uint64_t position) noexcept = 0;
-    virtual HRESULT __stdcall CloneStream(void** stream) noexcept = 0;
-    virtual HRESULT __stdcall get_CanRead(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanWrite(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OpenReadAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromFile(void* file, void** streamReference) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromUri(void* uri, void** streamReference) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromStream(void* stream, void** streamReference) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CopyAsync(void* source, void* destination, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopySizeAsync(void* source, void* destination, uint64_t bytesToCopy, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CopyAndCloseAsync(void* source, void* destination, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Streams::IRandomAccessStreamWithContentType>{ struct type : IInspectable
-{
-};};
 
 }

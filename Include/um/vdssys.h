@@ -981,6 +981,43 @@ DWORD __stdcall RawSCSIVirtualDisk(
     PRAW_SCSI_VIRTUAL_DISK_RESPONSE Response);
 
 typedef 
+enum _FORK_VIRTUAL_DISK_VERSION
+    {
+        FORK_VIRTUAL_DISK_VERSION_UNSPECIFIED	= 0,
+        FORK_VIRTUAL_DISK_VERSION_1	= 1
+    } 	FORK_VIRTUAL_DISK_VERSION;
+
+typedef struct _FORK_VIRTUAL_DISK_PARAMETERS
+    {
+    FORK_VIRTUAL_DISK_VERSION Version;
+    union 
+        {
+        struct 
+            {
+            PCWSTR ForkedVirtualDiskPath;
+            } 	Version1;
+        } 	;
+    } 	FORK_VIRTUAL_DISK_PARAMETERS;
+
+typedef struct _FORK_VIRTUAL_DISK_PARAMETERS *PFORK_VIRTUAL_DISK_PARAMETERS;
+
+typedef 
+enum _FORK_VIRTUAL_DISK_FLAG
+    {
+        FORK_VIRTUAL_DISK_FLAG_NONE	= 0,
+        FORK_VIRTUAL_DISK_FLAG_EXISTING_FILE	= 0x1
+    } 	FORK_VIRTUAL_DISK_FLAG;
+
+DWORD __stdcall ForkVirtualDisk( 
+    HANDLE VirtualDiskHandle,
+    FORK_VIRTUAL_DISK_FLAG Flags,
+    const FORK_VIRTUAL_DISK_PARAMETERS *Parameters,
+    LPOVERLAPPED Overlapped);
+
+DWORD __stdcall CompleteForkVirtualDisk( 
+    HANDLE VirtualDiskHandle);
+
+typedef 
 enum _SURFACE_VIRTUAL_DISK_FLAG
     {
         SURFACE_VIRTUAL_DISK_FLAG_NONE	= 0,

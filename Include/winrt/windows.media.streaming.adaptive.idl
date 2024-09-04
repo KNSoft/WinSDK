@@ -255,7 +255,9 @@ namespace Windows
                     InitializationSegment = 1,
                     MediaSegment          = 2,
                     Key                   = 3,
-                    InitializationVector  = 4
+                    InitializationVector  = 4,
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    MediaSegmentIndex     = 5
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

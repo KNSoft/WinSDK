@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -178,19 +178,19 @@ template <> struct name<Windows::Networking::XboxLive::XboxLiveNetworkAccessKind
 template <> struct name<Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus>{ static constexpr auto & value{ L"Windows.Networking.XboxLive.XboxLiveQualityOfServiceMeasurementStatus" }; };
 template <> struct name<Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric>{ static constexpr auto & value{ L"Windows.Networking.XboxLive.XboxLiveQualityOfServiceMetric" }; };
 template <> struct name<Windows::Networking::XboxLive::XboxLiveSocketKind>{ static constexpr auto & value{ L"Windows.Networking.XboxLive.XboxLiveSocketKind" }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>{ static constexpr GUID value{ 0xF5BBD279,0x3C86,0x4B57,{ 0xA3,0x1A,0xB9,0x46,0x24,0x08,0xFD,0x01 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveDeviceAddressStatics>{ static constexpr GUID value{ 0x5954A819,0x4A79,0x4931,{ 0x82,0x7C,0x7F,0x50,0x3E,0x96,0x32,0x63 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPair>{ static constexpr GUID value{ 0x1E9A839B,0x813E,0x44E0,{ 0xB8,0x7F,0xC8,0x7A,0x09,0x34,0x75,0xE4 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPairCreationResult>{ static constexpr GUID value{ 0xD9A8BB95,0x2AAB,0x4D1E,{ 0x97,0x94,0x33,0xEC,0xC0,0xDC,0xF0,0xFE } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPairStateChangedEventArgs>{ static constexpr GUID value{ 0x592E3B55,0xDE08,0x44E7,{ 0xAC,0x3B,0xB9,0xB9,0xA1,0x69,0x58,0x3A } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPairStatics>{ static constexpr GUID value{ 0x64316B30,0x217A,0x4243,{ 0x8E,0xE1,0x67,0x29,0x28,0x1D,0x27,0xDB } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>{ static constexpr GUID value{ 0x6B286ECF,0x3457,0x40CE,{ 0xB9,0xA1,0xC0,0xCF,0xE0,0x21,0x3E,0xA7 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplateStatics>{ static constexpr GUID value{ 0x1E13137B,0x737B,0x4A23,{ 0xBC,0x64,0x08,0x70,0xF7,0x56,0x55,0xBA } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveInboundEndpointPairCreatedEventArgs>{ static constexpr GUID value{ 0xDC183B62,0x22BA,0x48D2,{ 0x80,0xDE,0xC2,0x39,0x68,0xBD,0x19,0x8B } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurement>{ static constexpr GUID value{ 0x4D682BCE,0xA5D6,0x47E6,{ 0xA2,0x36,0xCF,0xDE,0x5F,0xBD,0xF2,0xED } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurementStatics>{ static constexpr GUID value{ 0x6E352DCA,0x23CF,0x440A,{ 0xB0,0x77,0x5E,0x30,0x85,0x7A,0x82,0x34 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMetricResult>{ static constexpr GUID value{ 0xAEEC53D1,0x3561,0x4782,{ 0xB0,0xCF,0xD3,0xAE,0x29,0xD9,0xFA,0x87 } }; };
-template <> struct guid<Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult>{ static constexpr GUID value{ 0x5A6302AE,0x6F38,0x41C0,{ 0x9F,0xCC,0xEA,0x6C,0xB9,0x78,0xCA,0xFC } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>{ static constexpr guid value{ 0xF5BBD279,0x3C86,0x4B57,{ 0xA3,0x1A,0xB9,0x46,0x24,0x08,0xFD,0x01 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveDeviceAddressStatics>{ static constexpr guid value{ 0x5954A819,0x4A79,0x4931,{ 0x82,0x7C,0x7F,0x50,0x3E,0x96,0x32,0x63 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPair>{ static constexpr guid value{ 0x1E9A839B,0x813E,0x44E0,{ 0xB8,0x7F,0xC8,0x7A,0x09,0x34,0x75,0xE4 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPairCreationResult>{ static constexpr guid value{ 0xD9A8BB95,0x2AAB,0x4D1E,{ 0x97,0x94,0x33,0xEC,0xC0,0xDC,0xF0,0xFE } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPairStateChangedEventArgs>{ static constexpr guid value{ 0x592E3B55,0xDE08,0x44E7,{ 0xAC,0x3B,0xB9,0xB9,0xA1,0x69,0x58,0x3A } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPairStatics>{ static constexpr guid value{ 0x64316B30,0x217A,0x4243,{ 0x8E,0xE1,0x67,0x29,0x28,0x1D,0x27,0xDB } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>{ static constexpr guid value{ 0x6B286ECF,0x3457,0x40CE,{ 0xB9,0xA1,0xC0,0xCF,0xE0,0x21,0x3E,0xA7 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplateStatics>{ static constexpr guid value{ 0x1E13137B,0x737B,0x4A23,{ 0xBC,0x64,0x08,0x70,0xF7,0x56,0x55,0xBA } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveInboundEndpointPairCreatedEventArgs>{ static constexpr guid value{ 0xDC183B62,0x22BA,0x48D2,{ 0x80,0xDE,0xC2,0x39,0x68,0xBD,0x19,0x8B } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurement>{ static constexpr guid value{ 0x4D682BCE,0xA5D6,0x47E6,{ 0xA2,0x36,0xCF,0xDE,0x5F,0xBD,0xF2,0xED } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurementStatics>{ static constexpr guid value{ 0x6E352DCA,0x23CF,0x440A,{ 0xB0,0x77,0x5E,0x30,0x85,0x7A,0x82,0x34 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMetricResult>{ static constexpr guid value{ 0xAEEC53D1,0x3561,0x4782,{ 0xB0,0xCF,0xD3,0xAE,0x29,0xD9,0xFA,0x87 } }; };
+template <> struct guid_storage<Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult>{ static constexpr guid value{ 0x5A6302AE,0x6F38,0x41C0,{ 0x9F,0xCC,0xEA,0x6C,0xB9,0x78,0xCA,0xFC } }; };
 template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveDeviceAddress>{ using type = Windows::Networking::XboxLive::IXboxLiveDeviceAddress; };
 template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveEndpointPair>{ using type = Windows::Networking::XboxLive::IXboxLiveEndpointPair; };
 template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveEndpointPairCreationResult>{ using type = Windows::Networking::XboxLive::IXboxLiveEndpointPairCreationResult; };
@@ -201,13 +201,149 @@ template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveQual
 template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetricResult>{ using type = Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMetricResult; };
 template <> struct default_interface<Windows::Networking::XboxLive::XboxLiveQualityOfServicePrivatePayloadResult>{ using type = Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult; };
 
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_SnapshotChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SnapshotChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSnapshotAsBase64(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSnapshotAsBuffer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSnapshotAsBytes(uint32_t __bufferSize, uint8_t* buffer, uint32_t* bytesWritten) noexcept = 0;
+    virtual int32_t WINRT_CALL Compare(void* otherDeviceAddress, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsValid(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsLocal(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkAccessKind(Windows::Networking::XboxLive::XboxLiveNetworkAccessKind* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveDeviceAddressStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromSnapshotBase64(void* base64, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromSnapshotBuffer(void* buffer, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromSnapshotBytes(uint32_t __bufferSize, uint8_t* buffer, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLocal(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSnapshotBytesSize(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPair>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRemoteSocketAddressBytes(uint32_t __socketAddressSize, uint8_t* socketAddress) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLocalSocketAddressBytes(uint32_t __socketAddressSize, uint8_t* socketAddress) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Template(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteDeviceAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteHostName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemotePort(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalHostName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalPort(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairCreationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::XboxLive::XboxLiveEndpointPairCreationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsExistingPathEvaluation(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointPair(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OldState(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewState(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindEndpointPairBySocketAddressBytes(uint32_t __localSocketAddressSize, uint8_t* localSocketAddress, uint32_t __remoteSocketAddressSize, uint8_t* remoteSocketAddress, void** endpointPair) noexcept = 0;
+    virtual int32_t WINRT_CALL FindEndpointPairByHostNamesAndPorts(void* localHostName, void* localPort, void* remoteHostName, void* remotePort, void** endpointPair) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_InboundEndpointPairCreated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_InboundEndpointPairCreated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEndpointPairDefaultAsync(void* deviceAddress, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEndpointPairWithBehaviorsAsync(void* deviceAddress, Windows::Networking::XboxLive::XboxLiveEndpointPairCreationBehaviors behaviors, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEndpointPairForPortsDefaultAsync(void* deviceAddress, void* initiatorPort, void* acceptorPort, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEndpointPairForPortsWithBehaviorsAsync(void* deviceAddress, void* initiatorPort, void* acceptorPort, Windows::Networking::XboxLive::XboxLiveEndpointPairCreationBehaviors behaviors, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SocketKind(Windows::Networking::XboxLive::XboxLiveSocketKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitiatorBoundPortRangeLower(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitiatorBoundPortRangeUpper(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcceptorBoundPortRangeLower(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcceptorBoundPortRangeUpper(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndpointPairs(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplateStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTemplateByName(void* name, void** namedTemplate) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Templates(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveInboundEndpointPairCreatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndpointPair(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL MeasureAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMetricResultsForDevice(void* deviceAddress, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMetricResultsForMetric(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric metric, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMetricResult(void* deviceAddress, Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric metric, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPrivatePayloadResult(void* deviceAddress, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Metrics(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceAddresses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShouldRequestPrivatePayloads(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ShouldRequestPrivatePayloads(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimeoutInMilliseconds(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TimeoutInMilliseconds(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfProbesToAttempt(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumberOfProbesToAttempt(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfResultsPending(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MetricResults(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrivatePayloadResults(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurementStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL PublishPrivatePayloadBytes(uint32_t __payloadSize, uint8_t* payload) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearPrivatePayload() noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSimultaneousProbeConnections(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxSimultaneousProbeConnections(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSystemOutboundBandwidthConstrained(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsSystemOutboundBandwidthConstrained(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSystemInboundBandwidthConstrained(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsSystemInboundBandwidthConstrained(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublishedPrivatePayload(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PublishedPrivatePayload(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPrivatePayloadSize(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMetricResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Metric(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(uint64_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Networking_XboxLive_IXboxLiveDeviceAddress
 {
-    event_token SnapshotChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveDeviceAddress, Windows::Foundation::IInspectable> const& handler) const;
-    using SnapshotChanged_revoker = event_revoker<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>;
+    winrt::event_token SnapshotChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveDeviceAddress, Windows::Foundation::IInspectable> const& handler) const;
+    using SnapshotChanged_revoker = impl::event_revoker<Windows::Networking::XboxLive::IXboxLiveDeviceAddress, &impl::abi_t<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>::remove_SnapshotChanged>;
     SnapshotChanged_revoker SnapshotChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveDeviceAddress, Windows::Foundation::IInspectable> const& handler) const;
-    void SnapshotChanged(event_token const& token) const;
+    void SnapshotChanged(winrt::event_token const& token) const noexcept;
     hstring GetSnapshotAsBase64() const;
     Windows::Storage::Streams::IBuffer GetSnapshotAsBuffer() const;
     void GetSnapshotAsBytes(array_view<uint8_t> buffer, uint32_t& bytesWritten) const;
@@ -232,10 +368,10 @@ template <> struct consume<Windows::Networking::XboxLive::IXboxLiveDeviceAddress
 template <typename D>
 struct consume_Windows_Networking_XboxLive_IXboxLiveEndpointPair
 {
-    event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPair, Windows::Networking::XboxLive::XboxLiveEndpointPairStateChangedEventArgs> const& handler) const;
-    using StateChanged_revoker = event_revoker<Windows::Networking::XboxLive::IXboxLiveEndpointPair>;
+    winrt::event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPair, Windows::Networking::XboxLive::XboxLiveEndpointPairStateChangedEventArgs> const& handler) const;
+    using StateChanged_revoker = impl::event_revoker<Windows::Networking::XboxLive::IXboxLiveEndpointPair, &impl::abi_t<Windows::Networking::XboxLive::IXboxLiveEndpointPair>::remove_StateChanged>;
     StateChanged_revoker StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPair, Windows::Networking::XboxLive::XboxLiveEndpointPairStateChangedEventArgs> const& handler) const;
-    void StateChanged(event_token const& token) const;
+    void StateChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
     void GetRemoteSocketAddressBytes(array_view<uint8_t> socketAddress) const;
     void GetLocalSocketAddressBytes(array_view<uint8_t> socketAddress) const;
@@ -278,10 +414,10 @@ template <> struct consume<Windows::Networking::XboxLive::IXboxLiveEndpointPairS
 template <typename D>
 struct consume_Windows_Networking_XboxLive_IXboxLiveEndpointPairTemplate
 {
-    event_token InboundEndpointPairCreated(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPairTemplate, Windows::Networking::XboxLive::XboxLiveInboundEndpointPairCreatedEventArgs> const& handler) const;
-    using InboundEndpointPairCreated_revoker = event_revoker<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>;
+    winrt::event_token InboundEndpointPairCreated(Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPairTemplate, Windows::Networking::XboxLive::XboxLiveInboundEndpointPairCreatedEventArgs> const& handler) const;
+    using InboundEndpointPairCreated_revoker = impl::event_revoker<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate, &impl::abi_t<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>::remove_InboundEndpointPairCreated>;
     InboundEndpointPairCreated_revoker InboundEndpointPairCreated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::XboxLive::XboxLiveEndpointPairTemplate, Windows::Networking::XboxLive::XboxLiveInboundEndpointPairCreatedEventArgs> const& handler) const;
-    void InboundEndpointPairCreated(event_token const& token) const;
+    void InboundEndpointPairCreated(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::Networking::XboxLive::XboxLiveEndpointPairCreationResult> CreateEndpointPairAsync(Windows::Networking::XboxLive::XboxLiveDeviceAddress const& deviceAddress) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::XboxLive::XboxLiveEndpointPairCreationResult> CreateEndpointPairAsync(Windows::Networking::XboxLive::XboxLiveDeviceAddress const& deviceAddress, Windows::Networking::XboxLive::XboxLiveEndpointPairCreationBehaviors const& behaviors) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::XboxLive::XboxLiveEndpointPairCreationResult> CreateEndpointPairForPortsAsync(Windows::Networking::XboxLive::XboxLiveDeviceAddress const& deviceAddress, param::hstring const& initiatorPort, param::hstring const& acceptorPort) const;
@@ -368,141 +504,5 @@ struct consume_Windows_Networking_XboxLive_IXboxLiveQualityOfServicePrivatePaylo
     Windows::Storage::Streams::IBuffer Value() const;
 };
 template <> struct consume<Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult> { template <typename D> using type = consume_Windows_Networking_XboxLive_IXboxLiveQualityOfServicePrivatePayloadResult<D>; };
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveDeviceAddress>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_SnapshotChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SnapshotChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetSnapshotAsBase64(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetSnapshotAsBuffer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetSnapshotAsBytes(uint32_t __bufferSize, uint8_t* buffer, uint32_t* bytesWritten) noexcept = 0;
-    virtual HRESULT __stdcall Compare(void* otherDeviceAddress, int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall get_IsValid(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsLocal(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkAccessKind(Windows::Networking::XboxLive::XboxLiveNetworkAccessKind* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveDeviceAddressStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromSnapshotBase64(HSTRING base64, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromSnapshotBuffer(void* buffer, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromSnapshotBytes(uint32_t __bufferSize, uint8_t* buffer, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetLocal(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSnapshotBytesSize(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPair>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StateChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** action) noexcept = 0;
-    virtual HRESULT __stdcall GetRemoteSocketAddressBytes(uint32_t __socketAddressSize, uint8_t* socketAddress) noexcept = 0;
-    virtual HRESULT __stdcall GetLocalSocketAddressBytes(uint32_t __socketAddressSize, uint8_t* socketAddress) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Template(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteDeviceAddress(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteHostName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemotePort(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalHostName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalPort(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairCreationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceAddress(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Networking::XboxLive::XboxLiveEndpointPairCreationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsExistingPathEvaluation(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointPair(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OldState(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewState(Windows::Networking::XboxLive::XboxLiveEndpointPairState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindEndpointPairBySocketAddressBytes(uint32_t __localSocketAddressSize, uint8_t* localSocketAddress, uint32_t __remoteSocketAddressSize, uint8_t* remoteSocketAddress, void** endpointPair) noexcept = 0;
-    virtual HRESULT __stdcall FindEndpointPairByHostNamesAndPorts(void* localHostName, HSTRING localPort, void* remoteHostName, HSTRING remotePort, void** endpointPair) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_InboundEndpointPairCreated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_InboundEndpointPairCreated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall CreateEndpointPairDefaultAsync(void* deviceAddress, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateEndpointPairWithBehaviorsAsync(void* deviceAddress, Windows::Networking::XboxLive::XboxLiveEndpointPairCreationBehaviors behaviors, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateEndpointPairForPortsDefaultAsync(void* deviceAddress, HSTRING initiatorPort, HSTRING acceptorPort, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateEndpointPairForPortsWithBehaviorsAsync(void* deviceAddress, HSTRING initiatorPort, HSTRING acceptorPort, Windows::Networking::XboxLive::XboxLiveEndpointPairCreationBehaviors behaviors, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SocketKind(Windows::Networking::XboxLive::XboxLiveSocketKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitiatorBoundPortRangeLower(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitiatorBoundPortRangeUpper(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcceptorBoundPortRangeLower(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcceptorBoundPortRangeUpper(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndpointPairs(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveEndpointPairTemplateStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTemplateByName(HSTRING name, void** namedTemplate) noexcept = 0;
-    virtual HRESULT __stdcall get_Templates(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveInboundEndpointPairCreatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndpointPair(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall MeasureAsync(void** action) noexcept = 0;
-    virtual HRESULT __stdcall GetMetricResultsForDevice(void* deviceAddress, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetMetricResultsForMetric(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric metric, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetMetricResult(void* deviceAddress, Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric metric, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetPrivatePayloadResult(void* deviceAddress, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Metrics(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceAddresses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShouldRequestPrivatePayloads(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ShouldRequestPrivatePayloads(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimeoutInMilliseconds(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TimeoutInMilliseconds(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfProbesToAttempt(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumberOfProbesToAttempt(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfResultsPending(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MetricResults(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrivatePayloadResults(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMeasurementStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall PublishPrivatePayloadBytes(uint32_t __payloadSize, uint8_t* payload) noexcept = 0;
-    virtual HRESULT __stdcall ClearPrivatePayload() noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSimultaneousProbeConnections(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxSimultaneousProbeConnections(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSystemOutboundBandwidthConstrained(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsSystemOutboundBandwidthConstrained(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSystemInboundBandwidthConstrained(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsSystemInboundBandwidthConstrained(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublishedPrivatePayload(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PublishedPrivatePayload(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPrivatePayloadSize(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServiceMetricResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceAddress(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Metric(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMetric* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(uint64_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::XboxLive::IXboxLiveQualityOfServicePrivatePayloadResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceAddress(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
 
 }

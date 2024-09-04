@@ -34,6 +34,8 @@ namespace Windows
 {
     namespace Foundation
     {
+        typedef struct Point Point;
+
         typedef struct Rect Rect;
 
         typedef struct Size Size;
@@ -69,6 +71,8 @@ namespace Windows
                 runtimeclass Control;
 
                 interface IInsertionPanel;
+
+                runtimeclass IconElement;
 
                 typedef enum LightDismissOverlayMode LightDismissOverlayMode;
 
@@ -196,6 +200,8 @@ namespace Windows
 
                     typedef enum FlyoutPlacementMode FlyoutPlacementMode;
 
+                    typedef enum FlyoutShowMode FlyoutShowMode;
+
                     typedef enum GeneratorDirection GeneratorDirection;
 
                     typedef enum GroupHeaderPlacement GroupHeaderPlacement;
@@ -264,6 +270,12 @@ namespace Windows
 
                     interface IComboBoxTemplateSettings2;
 
+                    interface ICommandBarFlyoutCommandBar;
+
+                    interface ICommandBarFlyoutCommandBarFactory;
+
+                    interface ICommandBarFlyoutCommandBarTemplateSettings;
+
                     interface ICommandBarTemplateSettings;
 
                     interface ICommandBarTemplateSettings2;
@@ -290,6 +302,8 @@ namespace Windows
 
                     interface IFlyoutBase4;
 
+                    interface IFlyoutBase5;
+
                     interface IFlyoutBaseClosingEventArgs;
 
                     interface IFlyoutBaseFactory;
@@ -303,6 +317,12 @@ namespace Windows
                     interface IFlyoutBaseStatics2;
 
                     interface IFlyoutBaseStatics3;
+
+                    interface IFlyoutBaseStatics5;
+
+                    interface IFlyoutShowOptions;
+
+                    interface IFlyoutShowOptionsFactory;
 
                     interface IGeneratorPositionHelper;
 
@@ -359,6 +379,12 @@ namespace Windows
                     interface IMenuFlyoutItemTemplateSettings;
 
                     interface IMenuFlyoutPresenterTemplateSettings;
+
+                    interface INavigationViewItemPresenter;
+
+                    interface INavigationViewItemPresenterFactory;
+
+                    interface INavigationViewItemPresenterStatics;
 
                     interface IOrientedVirtualizingPanel;
 
@@ -470,6 +496,10 @@ namespace Windows
 
                     runtimeclass ComboBoxTemplateSettings;
 
+                    runtimeclass CommandBarFlyoutCommandBar;
+
+                    runtimeclass CommandBarFlyoutCommandBarTemplateSettings;
+
                     runtimeclass CommandBarTemplateSettings;
 
                     runtimeclass DragCompletedEventArgs;
@@ -481,6 +511,8 @@ namespace Windows
                     runtimeclass FlyoutBase;
 
                     runtimeclass FlyoutBaseClosingEventArgs;
+
+                    runtimeclass FlyoutShowOptions;
 
                     runtimeclass GeneratorPositionHelper;
 
@@ -509,6 +541,8 @@ namespace Windows
                     runtimeclass MenuFlyoutItemTemplateSettings;
 
                     runtimeclass MenuFlyoutPresenterTemplateSettings;
+
+                    runtimeclass NavigationViewItemPresenter;
 
                     runtimeclass OrientedVirtualizingPanel;
 
@@ -625,11 +659,38 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     enum FlyoutPlacementMode
                     {
-                        Top    = 0,
-                        Bottom = 1,
-                        Left   = 2,
-                        Right  = 3,
-                        Full   = 4
+                        Top                    = 0,
+                        Bottom                 = 1,
+                        Left                   = 2,
+                        Right                  = 3,
+                        Full                   = 4,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        TopEdgeAlignedLeft     = 5,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        TopEdgeAlignedRight    = 6,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        BottomEdgeAlignedLeft  = 7,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        BottomEdgeAlignedRight = 8,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        LeftEdgeAlignedTop     = 9,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        LeftEdgeAlignedBottom  = 10,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        RightEdgeAlignedTop    = 11,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        RightEdgeAlignedBottom = 12,
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                        Auto                   = 13
+                    };
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    enum FlyoutShowMode
+                    {
+                        Auto                                  = 0,
+                        Standard                              = 1,
+                        Transient                             = 2,
+                        TransientWithDismissOnPointerMoveAway = 3
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -790,7 +851,7 @@ namespace Windows
                         [propput] HRESULT Command([in] Windows.UI.Xaml.Input.ICommand* value);
                         [propget] HRESULT CommandParameter([out] [retval] IInspectable** value);
                         [propput] HRESULT CommandParameter([in] IInspectable* value);
-                        [eventadd] HRESULT Click([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Click([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Click([in] EventRegistrationToken token);
                     }
 
@@ -799,7 +860,7 @@ namespace Windows
                     [uuid(389B7C71-5220-42B2-9992-2690C1A6702F)]
                     interface IButtonBaseFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ButtonBase** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ButtonBase** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -874,7 +935,7 @@ namespace Windows
                         HRESULT MouseWheelRight();
                         HRESULT SetHorizontalOffset([in] DOUBLE offset);
                         HRESULT SetVerticalOffset([in] DOUBLE offset);
-                        HRESULT MakeVisible([in] Windows.UI.Xaml.UIElement* visual, [in] Windows.Foundation.Rect rectangle, [out] [retval] Windows.Foundation.Rect* returnValue);
+                        HRESULT MakeVisible([in] Windows.UI.Xaml.UIElement* visual, [in] Windows.Foundation.Rect rectangle, [out] [retval] Windows.Foundation.Rect* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -882,7 +943,7 @@ namespace Windows
                     [uuid(C1109404-9AE1-440E-A0DD-BBB6E2293CBE)]
                     interface ICarouselPanelFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.CarouselPanel** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.CarouselPanel** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -890,7 +951,7 @@ namespace Windows
                     [uuid(94394D83-E0DF-4C5F-BBCD-8155F4020440)]
                     interface IColorPickerSlider : IInspectable
                     {
-                        [propget] HRESULT ColorChannel([out] [retval] Windows.UI.Xaml.Controls.ColorPickerHsvChannel* result);
+                        [propget] HRESULT ColorChannel([out] [retval] Windows.UI.Xaml.Controls.ColorPickerHsvChannel* value);
                         [propput] HRESULT ColorChannel([in] Windows.UI.Xaml.Controls.ColorPickerHsvChannel value);
                     }
 
@@ -899,7 +960,7 @@ namespace Windows
                     [uuid(06D879A2-8C07-4B1E-A940-9FBCE8F49639)]
                     interface IColorPickerSliderFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -915,27 +976,27 @@ namespace Windows
                     [uuid(CE46F271-F509-4F98-8288-E4942FB385DF)]
                     interface IColorSpectrum : IInspectable
                     {
-                        [propget] HRESULT Color([out] [retval] Windows.UI.Color* result);
+                        [propget] HRESULT Color([out] [retval] Windows.UI.Color* value);
                         [propput] HRESULT Color([in] Windows.UI.Color value);
-                        [propget] HRESULT HsvColor([out] [retval] Windows.Foundation.Numerics.Vector4* result);
+                        [propget] HRESULT HsvColor([out] [retval] Windows.Foundation.Numerics.Vector4* value);
                         [propput] HRESULT HsvColor([in] Windows.Foundation.Numerics.Vector4 value);
-                        [propget] HRESULT MinHue([out] [retval] INT32* result);
+                        [propget] HRESULT MinHue([out] [retval] INT32* value);
                         [propput] HRESULT MinHue([in] INT32 value);
-                        [propget] HRESULT MaxHue([out] [retval] INT32* result);
+                        [propget] HRESULT MaxHue([out] [retval] INT32* value);
                         [propput] HRESULT MaxHue([in] INT32 value);
-                        [propget] HRESULT MinSaturation([out] [retval] INT32* result);
+                        [propget] HRESULT MinSaturation([out] [retval] INT32* value);
                         [propput] HRESULT MinSaturation([in] INT32 value);
-                        [propget] HRESULT MaxSaturation([out] [retval] INT32* result);
+                        [propget] HRESULT MaxSaturation([out] [retval] INT32* value);
                         [propput] HRESULT MaxSaturation([in] INT32 value);
-                        [propget] HRESULT MinValue([out] [retval] INT32* result);
+                        [propget] HRESULT MinValue([out] [retval] INT32* value);
                         [propput] HRESULT MinValue([in] INT32 value);
-                        [propget] HRESULT MaxValue([out] [retval] INT32* result);
+                        [propget] HRESULT MaxValue([out] [retval] INT32* value);
                         [propput] HRESULT MaxValue([in] INT32 value);
-                        [propget] HRESULT Shape([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumShape* result);
+                        [propget] HRESULT Shape([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumShape* value);
                         [propput] HRESULT Shape([in] Windows.UI.Xaml.Controls.ColorSpectrumShape value);
-                        [propget] HRESULT Components([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumComponents* result);
+                        [propget] HRESULT Components([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumComponents* value);
                         [propput] HRESULT Components([in] Windows.UI.Xaml.Controls.ColorSpectrumComponents value);
-                        [eventadd] HRESULT ColorChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Primitives.ColorSpectrum*, Windows.UI.Xaml.Controls.ColorChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT ColorChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Primitives.ColorSpectrum*, Windows.UI.Xaml.Controls.ColorChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT ColorChanged([in] EventRegistrationToken token);
                     }
 
@@ -944,7 +1005,7 @@ namespace Windows
                     [uuid(90C7E61E-904D-42AB-B44F-E68DBF0CDEE9)]
                     interface IColorSpectrumFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorSpectrum** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorSpectrum** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -981,6 +1042,49 @@ namespace Windows
                     interface IComboBoxTemplateSettings2 : IInspectable
                     {
                         [propget] HRESULT DropDownContentMinWidth([out] [retval] DOUBLE* value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar)]
+                    [uuid(14146E7C-38C4-55C4-B706-CE18F6061E7E)]
+                    interface ICommandBarFlyoutCommandBar : IInspectable
+                    {
+                        [propget] HRESULT FlyoutTemplateSettings([out] [retval] Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar)]
+                    [uuid(F8236F9F-5559-5697-8E6F-20D70CA17DD0)]
+                    interface ICommandBarFlyoutCommandBarFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings)]
+                    [uuid(47642C44-26FF-5D14-9CFC-77DC64F3A447)]
+                    interface ICommandBarFlyoutCommandBarTemplateSettings : IInspectable
+                    {
+                        [propget] HRESULT OpenAnimationStartPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT OpenAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT CloseAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT CurrentWidth([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandedWidth([out] [retval] DOUBLE* value);
+                        [propget] HRESULT WidthExpansionDelta([out] [retval] DOUBLE* value);
+                        [propget] HRESULT WidthExpansionAnimationStartPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT WidthExpansionAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT WidthExpansionMoreButtonAnimationStartPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT WidthExpansionMoreButtonAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandUpOverflowVerticalPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandDownOverflowVerticalPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandUpAnimationStartPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandUpAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandUpAnimationHoldPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandDownAnimationStartPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandDownAnimationEndPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ExpandDownAnimationHoldPosition([out] [retval] DOUBLE* value);
+                        [propget] HRESULT ContentClipRect([out] [retval] Windows.Foundation.Rect* value);
+                        [propget] HRESULT OverflowContentClipRect([out] [retval] Windows.Foundation.Rect* value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1028,7 +1132,7 @@ namespace Windows
                     [uuid(36A7D99D-148C-495F-A0FC-AFC871D62F33)]
                     interface IDragCompletedEventArgsFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled([in] DOUBLE horizontalChange, [in] DOUBLE verticalChange, [in] boolean canceled, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs** instance);
+                        HRESULT CreateInstanceWithHorizontalChangeVerticalChangeAndCanceled([in] DOUBLE horizontalChange, [in] DOUBLE verticalChange, [in] boolean canceled, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1045,7 +1149,7 @@ namespace Windows
                     [uuid(46E7A1EF-AE15-44A6-8A04-95B0BF9AB876)]
                     interface IDragDeltaEventArgsFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithHorizontalChangeAndVerticalChange([in] DOUBLE horizontalChange, [in] DOUBLE verticalChange, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs** instance);
+                        HRESULT CreateInstanceWithHorizontalChangeAndVerticalChange([in] DOUBLE horizontalChange, [in] DOUBLE verticalChange, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1062,7 +1166,7 @@ namespace Windows
                     [uuid(5EEFE579-C706-4781-A308-C9E7F4C6A1D7)]
                     interface IDragStartedEventArgsFactory : IInspectable
                     {
-                        HRESULT CreateInstanceWithHorizontalOffsetAndVerticalOffset([in] DOUBLE horizontalOffset, [in] DOUBLE verticalOffset, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs** instance);
+                        HRESULT CreateInstanceWithHorizontalOffsetAndVerticalOffset([in] DOUBLE horizontalOffset, [in] DOUBLE verticalOffset, [in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1072,11 +1176,11 @@ namespace Windows
                     {
                         [propget] HRESULT Placement([out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode* value);
                         [propput] HRESULT Placement([in] Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode value);
-                        [eventadd] HRESULT Opened([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Opened([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Opened([in] EventRegistrationToken token);
-                        [eventadd] HRESULT Closed([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Closed([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Closed([in] EventRegistrationToken token);
-                        [eventadd] HRESULT Opening([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Opening([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Opening([in] EventRegistrationToken token);
                         HRESULT ShowAt([in] Windows.UI.Xaml.FrameworkElement* placementTarget);
                         HRESULT Hide();
@@ -1096,7 +1200,7 @@ namespace Windows
                         [propput] HRESULT AllowFocusWhenDisabled([in] boolean value);
                         [propget] HRESULT ElementSoundMode([out] [retval] Windows.UI.Xaml.ElementSoundMode* value);
                         [propput] HRESULT ElementSoundMode([in] Windows.UI.Xaml.ElementSoundMode value);
-                        [eventadd] HRESULT Closing([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Primitives.FlyoutBase*, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Closing([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Primitives.FlyoutBase*, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Closing([in] EventRegistrationToken token);
                     }
 
@@ -1117,6 +1221,20 @@ namespace Windows
                         HRESULT TryInvokeKeyboardAccelerator([in] Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs* args);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBase)]
+                    [uuid(AD3EC0C7-12BB-5A73-B78E-105192CA73D6)]
+                    interface IFlyoutBase5 : IInspectable
+                    {
+                        [propget] HRESULT ShowMode([out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode* value);
+                        [propput] HRESULT ShowMode([in] Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode value);
+                        [propget] HRESULT InputDevicePrefersPrimaryCommands([out] [retval] boolean* value);
+                        [propget] HRESULT AreOpenCloseAnimationsEnabled([out] [retval] boolean* value);
+                        [propput] HRESULT AreOpenCloseAnimationsEnabled([in] boolean value);
+                        [propget] HRESULT IsOpen([out] [retval] boolean* value);
+                        HRESULT ShowAt([in] Windows.UI.Xaml.DependencyObject* placementTarget, [in] Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions* showOptions);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs)]
                     [uuid(D075852D-B09A-4FD1-B005-DB2BA01206FB)]
@@ -1131,7 +1249,7 @@ namespace Windows
                     [uuid(1C3363D7-FCA7-407E-920E-70E15E9F0BF1)]
                     interface IFlyoutBaseFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutBase** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutBase** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1139,7 +1257,7 @@ namespace Windows
                     [uuid(101DEC86-6F4D-45A4-9D0E-3ECE6F16977E)]
                     interface IFlyoutBaseOverrides : IInspectable
                     {
-                        HRESULT CreatePresenter([out] [retval] Windows.UI.Xaml.Controls.Control** returnValue);
+                        HRESULT CreatePresenter([out] [retval] Windows.UI.Xaml.Controls.Control** result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1157,7 +1275,7 @@ namespace Windows
                     {
                         [propget] HRESULT PlacementProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT AttachedFlyoutProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                        HRESULT GetAttachedFlyout([in] Windows.UI.Xaml.FrameworkElement* element, [out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutBase** value);
+                        HRESULT GetAttachedFlyout([in] Windows.UI.Xaml.FrameworkElement* element, [out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutBase** result);
                         HRESULT SetAttachedFlyout([in] Windows.UI.Xaml.FrameworkElement* element, [in] Windows.UI.Xaml.Controls.Primitives.FlyoutBase* value);
                         HRESULT ShowAttachedFlyout([in] Windows.UI.Xaml.FrameworkElement* flyoutOwner);
                     }
@@ -1181,6 +1299,41 @@ namespace Windows
                         [propget] HRESULT OverlayInputPassThroughElementProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBase)]
+                    [uuid(69EDB25C-992A-542B-BCFF-2F7F855523BD)]
+                    interface IFlyoutBaseStatics5 : IInspectable
+                    {
+                        [propget] HRESULT TargetProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT ShowModeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT InputDevicePrefersPrimaryCommandsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT AreOpenCloseAnimationsEnabledProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT IsOpenProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions)]
+                    [uuid(57D693AD-0C74-54DD-B110-1EE43FABADD9)]
+                    interface IFlyoutShowOptions : IInspectable
+                    {
+                        [propget] HRESULT Position([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Point>** value);
+                        [propput] HRESULT Position([in] Windows.Foundation.IReference<Windows.Foundation.Point>* value);
+                        [propget] HRESULT ExclusionRect([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Rect>** value);
+                        [propput] HRESULT ExclusionRect([in] Windows.Foundation.IReference<Windows.Foundation.Rect>* value);
+                        [propget] HRESULT ShowMode([out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode* value);
+                        [propput] HRESULT ShowMode([in] Windows.UI.Xaml.Controls.Primitives.FlyoutShowMode value);
+                        [propget] HRESULT Placement([out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode* value);
+                        [propput] HRESULT Placement([in] Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions)]
+                    [uuid(CE596F61-2EB4-5B4E-AF69-F9AF42320EEE)]
+                    interface IFlyoutShowOptionsFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.FlyoutShowOptions** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.GeneratorPositionHelper)]
                     [uuid(CD40318D-7745-40D9-AB9D-ABBDA4A7FFEA)]
@@ -1193,7 +1346,7 @@ namespace Windows
                     [uuid(AD4095CD-60EC-4588-8D60-39D29097A4DF)]
                     interface IGeneratorPositionHelperStatics : IInspectable
                     {
-                        HRESULT FromIndexAndOffset([in] INT32 index, [in] INT32 offset, [out] [retval] Windows.UI.Xaml.Controls.Primitives.GeneratorPosition* returnValue);
+                        HRESULT FromIndexAndOffset([in] INT32 index, [in] INT32 offset, [out] [retval] Windows.UI.Xaml.Controls.Primitives.GeneratorPosition* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1252,7 +1405,7 @@ namespace Windows
                     [uuid(53C12178-63BB-4A65-A3F1-AB114CFC6FFE)]
                     interface IGridViewItemPresenterFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1356,8 +1509,8 @@ namespace Windows
                     [uuid(CF06CF99-58E9-4682-8326-50CAAB65ED7C)]
                     interface ILayoutInformationStatics : IInspectable
                     {
-                        HRESULT GetLayoutExceptionElement([in] IInspectable* dispatcher, [out] [retval] Windows.UI.Xaml.UIElement** element);
-                        HRESULT GetLayoutSlot([in] Windows.UI.Xaml.FrameworkElement* element, [out] [retval] Windows.Foundation.Rect* slot);
+                        HRESULT GetLayoutExceptionElement([in] IInspectable* dispatcher, [out] [retval] Windows.UI.Xaml.UIElement** result);
+                        HRESULT GetLayoutSlot([in] Windows.UI.Xaml.FrameworkElement* element, [out] [retval] Windows.Foundation.Rect* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1365,7 +1518,7 @@ namespace Windows
                     [uuid(760315B5-6D4E-4939-AC61-639863CEA36B)]
                     interface ILayoutInformationStatics2 : IInspectable
                     {
-                        HRESULT GetAvailableSize([in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.Foundation.Size* availableSize);
+                        HRESULT GetAvailableSize([in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.Foundation.Size* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1458,7 +1611,7 @@ namespace Windows
                     [uuid(E0777CFD-F7E4-4A67-9AC0-A994FCACD020)]
                     interface IListViewItemPresenterFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1541,7 +1694,7 @@ namespace Windows
                         [propput] HRESULT ItemHeight([in] INT32 value);
                         [propget] HRESULT ItemTemplate([out] [retval] Windows.UI.Xaml.DataTemplate** value);
                         [propput] HRESULT ItemTemplate([in] Windows.UI.Xaml.DataTemplate* value);
-                        [eventadd] HRESULT SelectionChanged([in] Windows.UI.Xaml.Controls.SelectionChangedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT SelectionChanged([in] Windows.UI.Xaml.Controls.SelectionChangedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT SelectionChanged([in] EventRegistrationToken token);
                     }
 
@@ -1589,6 +1742,31 @@ namespace Windows
                         [propget] HRESULT FlyoutContentMinWidth([out] [retval] DOUBLE* value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter)]
+                    [uuid(9956D3FC-4693-59CB-B6BF-37249058BE96)]
+                    interface INavigationViewItemPresenter : IInspectable
+                    {
+                        [propget] HRESULT Icon([out] [retval] Windows.UI.Xaml.Controls.IconElement** value);
+                        [propput] HRESULT Icon([in] Windows.UI.Xaml.Controls.IconElement* value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter)]
+                    [uuid(BB062C50-4A36-52E7-9459-E89D02F3FC42)]
+                    interface INavigationViewItemPresenterFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter)]
+                    [uuid(52814604-CFC1-5AD5-A3AA-FA355BE6BD76)]
+                    interface INavigationViewItemPresenterStatics : IInspectable
+                    {
+                        [propget] HRESULT IconProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel)]
                     [uuid(F077B577-39BD-46EE-BDD7-0826BEED71B8)]
@@ -1620,7 +1798,7 @@ namespace Windows
                         HRESULT MouseWheelRight();
                         HRESULT SetHorizontalOffset([in] DOUBLE offset);
                         HRESULT SetVerticalOffset([in] DOUBLE offset);
-                        HRESULT MakeVisible([in] Windows.UI.Xaml.UIElement* visual, [in] Windows.Foundation.Rect rectangle, [out] [retval] Windows.Foundation.Rect* returnValue);
+                        HRESULT MakeVisible([in] Windows.UI.Xaml.UIElement* visual, [in] Windows.Foundation.Rect rectangle, [out] [retval] Windows.Foundation.Rect* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1642,7 +1820,7 @@ namespace Windows
                     [uuid(7EC27A53-9502-4BEB-B342-00566C8F16B0)]
                     interface IPickerFlyoutBaseFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1651,7 +1829,7 @@ namespace Windows
                     interface IPickerFlyoutBaseOverrides : IInspectable
                     {
                         HRESULT OnConfirmed();
-                        HRESULT ShouldShowConfirmationButtons([out] [retval] boolean* returnValue);
+                        HRESULT ShouldShowConfirmationButtons([out] [retval] boolean* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1660,7 +1838,7 @@ namespace Windows
                     interface IPickerFlyoutBaseStatics : IInspectable
                     {
                         [propget] HRESULT TitleProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                        HRESULT GetTitle([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* value);
+                        HRESULT GetTitle([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] HSTRING* result);
                         HRESULT SetTitle([in] Windows.UI.Xaml.DependencyObject* element, [in] HSTRING value);
                     }
 
@@ -1676,7 +1854,7 @@ namespace Windows
                     [uuid(14308B37-185B-4117-BC77-DDA2EB261B99)]
                     interface IPivotHeaderItemFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1710,9 +1888,9 @@ namespace Windows
                         [propput] HRESULT ChildTransitions([in] Windows.UI.Xaml.Media.Animation.TransitionCollection* value);
                         [propget] HRESULT IsLightDismissEnabled([out] [retval] boolean* value);
                         [propput] HRESULT IsLightDismissEnabled([in] boolean value);
-                        [eventadd] HRESULT Opened([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Opened([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Opened([in] EventRegistrationToken token);
-                        [eventadd] HRESULT Closed([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Closed([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Closed([in] EventRegistrationToken token);
                     }
 
@@ -1785,7 +1963,7 @@ namespace Windows
                         [propput] HRESULT LargeChange([in] DOUBLE value);
                         [propget] HRESULT Value([out] [retval] DOUBLE* value);
                         [propput] HRESULT Value([in] DOUBLE value);
-                        [eventadd] HRESULT ValueChanged([in] Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT ValueChanged([in] Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT ValueChanged([in] EventRegistrationToken token);
                     }
 
@@ -1794,7 +1972,7 @@ namespace Windows
                     [uuid(389B7C71-5220-42B2-9992-2690C1A67030)]
                     interface IRangeBaseFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.RangeBase** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.RangeBase** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1859,7 +2037,7 @@ namespace Windows
                         [propput] HRESULT ViewportSize([in] DOUBLE value);
                         [propget] HRESULT IndicatorMode([out] [retval] Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode* value);
                         [propput] HRESULT IndicatorMode([in] Windows.UI.Xaml.Controls.Primitives.ScrollingIndicatorMode value);
-                        [eventadd] HRESULT Scroll([in] Windows.UI.Xaml.Controls.Primitives.ScrollEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Scroll([in] Windows.UI.Xaml.Controls.Primitives.ScrollEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Scroll([in] EventRegistrationToken token);
                     }
 
@@ -1888,11 +2066,11 @@ namespace Windows
                     {
                         [propget] HRESULT AreHorizontalSnapPointsRegular([out] [retval] boolean* value);
                         [propget] HRESULT AreVerticalSnapPointsRegular([out] [retval] boolean* value);
-                        [eventadd] HRESULT HorizontalSnapPointsChanged([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT HorizontalSnapPointsChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT HorizontalSnapPointsChanged([in] EventRegistrationToken token);
-                        [eventadd] HRESULT VerticalSnapPointsChanged([in] Windows.Foundation.EventHandler<IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT VerticalSnapPointsChanged([in] Windows.Foundation.EventHandler<IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT VerticalSnapPointsChanged([in] EventRegistrationToken token);
-                        HRESULT GetIrregularSnapPoints([in] Windows.UI.Xaml.Controls.Orientation orientation, [in] Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, [out] [retval] Windows.Foundation.Collections.IVectorView<FLOAT>** returnValue);
+                        HRESULT GetIrregularSnapPoints([in] Windows.UI.Xaml.Controls.Orientation orientation, [in] Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, [out] [retval] Windows.Foundation.Collections.IVectorView<FLOAT>** result);
                         HRESULT GetRegularSnapPoints([in] Windows.UI.Xaml.Controls.Orientation orientation, [in] Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment, [out] FLOAT* offset, [out] [retval] FLOAT* returnValue);
                     }
 
@@ -1911,7 +2089,7 @@ namespace Windows
                         [propput] HRESULT SelectedValuePath([in] HSTRING value);
                         [propget] HRESULT IsSynchronizedWithCurrentItem([out] [retval] Windows.Foundation.IReference<boolean>** value);
                         [propput] HRESULT IsSynchronizedWithCurrentItem([in] Windows.Foundation.IReference<boolean>* value);
-                        [eventadd] HRESULT SelectionChanged([in] Windows.UI.Xaml.Controls.SelectionChangedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT SelectionChanged([in] Windows.UI.Xaml.Controls.SelectionChangedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT SelectionChanged([in] EventRegistrationToken token);
                     }
 
@@ -1936,7 +2114,7 @@ namespace Windows
                     [uuid(B9363945-C86A-4B1E-9440-1879378D5313)]
                     interface ISelectorItemFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.SelectorItem** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.SelectorItem** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1957,7 +2135,7 @@ namespace Windows
                         [propget] HRESULT SelectedValueProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT SelectedValuePathProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT IsSynchronizedWithCurrentItemProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                        HRESULT GetIsSelectionActive([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* returnValue);
+                        HRESULT GetIsSelectionActive([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1992,11 +2170,11 @@ namespace Windows
                     interface IThumb : IInspectable
                     {
                         [propget] HRESULT IsDragging([out] [retval] boolean* value);
-                        [eventadd] HRESULT DragStarted([in] Windows.UI.Xaml.Controls.Primitives.DragStartedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT DragStarted([in] Windows.UI.Xaml.Controls.Primitives.DragStartedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT DragStarted([in] EventRegistrationToken token);
-                        [eventadd] HRESULT DragDelta([in] Windows.UI.Xaml.Controls.Primitives.DragDeltaEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT DragDelta([in] Windows.UI.Xaml.Controls.Primitives.DragDeltaEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT DragDelta([in] EventRegistrationToken token);
-                        [eventadd] HRESULT DragCompleted([in] Windows.UI.Xaml.Controls.Primitives.DragCompletedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT DragCompleted([in] Windows.UI.Xaml.Controls.Primitives.DragCompletedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT DragCompleted([in] EventRegistrationToken token);
                         HRESULT CancelDrag();
                     }
@@ -2035,11 +2213,11 @@ namespace Windows
                         [propput] HRESULT IsChecked([in] Windows.Foundation.IReference<boolean>* value);
                         [propget] HRESULT IsThreeState([out] [retval] boolean* value);
                         [propput] HRESULT IsThreeState([in] boolean value);
-                        [eventadd] HRESULT Checked([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Checked([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Checked([in] EventRegistrationToken token);
-                        [eventadd] HRESULT Unchecked([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Unchecked([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Unchecked([in] EventRegistrationToken token);
-                        [eventadd] HRESULT Indeterminate([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                        [eventadd] HRESULT Indeterminate([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                         [eventremove] HRESULT Indeterminate([in] EventRegistrationToken token);
                     }
 
@@ -2048,7 +2226,7 @@ namespace Windows
                     [uuid(D56AA2FC-FC7F-449C-9855-7A1055D668A8)]
                     interface IToggleButtonFactory : IInspectable
                     {
-                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ToggleButton** instance);
+                        HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ToggleButton** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2182,6 +2360,23 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.UI.Xaml.Controls.Primitives.IComboBoxTemplateSettings2;
                     }
 
+                    [composable(Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarFactory, public, Windows.Foundation.UniversalApiContract, 7.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass CommandBarFlyoutCommandBar : Windows.UI.Xaml.Controls.CommandBar
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBar;
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass CommandBarFlyoutCommandBarTemplateSettings : Windows.UI.Xaml.DependencyObject
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.ICommandBarFlyoutCommandBarTemplateSettings;
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [threading(both)]
@@ -2225,23 +2420,33 @@ namespace Windows
                     [static(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics, Windows.Foundation.UniversalApiContract, 1.0)]
                     [static(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
                     [static(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics3, Windows.Foundation.UniversalApiContract, 4.0)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics5, Windows.Foundation.UniversalApiContract, 7.0)]
                     [threading(both)]
                     runtimeclass FlyoutBase : Windows.UI.Xaml.DependencyObject
                     {
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase;
-                        [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides;
                         [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3;
                         [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase4;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase5;
+                        [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides;
                         [contract(Windows.Foundation.UniversalApiContract, 5.0)] [overridable] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides4;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [marshaling_behavior(agile)]
-                    [threading(both)]
                     runtimeclass FlyoutBaseClosingEventArgs
                     {
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseClosingEventArgs;
+                    }
+
+                    [composable(Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptionsFactory, public, Windows.Foundation.UniversalApiContract, 7.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass FlyoutShowOptions
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutShowOptions;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2273,7 +2478,6 @@ namespace Windows
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
-                    [threading(both)]
                     runtimeclass ItemsChangedEventArgs
                     {
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IItemsChangedEventArgs;
@@ -2375,7 +2579,17 @@ namespace Windows
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IMenuFlyoutPresenterTemplateSettings;
                     }
 
-                    [composable(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanelFactory, protected, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [composable(Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterFactory, public, Windows.Foundation.UniversalApiContract, 7.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenterStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+                    [threading(both)]
+                    runtimeclass NavigationViewItemPresenter : Windows.UI.Xaml.Controls.ContentControl
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.INavigationViewItemPresenter;
+                    }
+
+                    [composable(Windows.UI.Xaml.Controls.Primitives.IOrientedVirtualizingPanelFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [threading(both)]
@@ -2501,7 +2715,7 @@ namespace Windows
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs;
                     }
 
-                    [composable(Windows.UI.Xaml.Controls.Primitives.ISelectorFactory, protected, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [composable(Windows.UI.Xaml.Controls.Primitives.ISelectorFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [static(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics, Windows.Foundation.UniversalApiContract, 1.0)]

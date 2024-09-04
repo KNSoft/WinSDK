@@ -65,18 +65,7 @@ inline  ostream& operator<<(char);
         ostream& operator<<(unsigned char);
 inline  ostream& operator<<(signed char);
         ostream& operator<<(short);
-#if defined(_STREAM_WCHAR_T_HAZARD)
-private:
-#if defined(_NATIVE_WCHAR_T_DEFINED)
         ostream& operator<<(unsigned short);
-        ostream& operator<<(wchar_t);
-#else
-        ostream& operator<<(unsigned short);
-#endif
-public:
-#else
-        ostream& operator<<(unsigned short);
-#endif
         ostream& operator<<(int);
         ostream& operator<<(unsigned int);
         ostream& operator<<(long);

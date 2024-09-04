@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -32,6 +32,20 @@ struct WINRT_EBO IBackEaseStatics :
     impl::consume_t<IBackEaseStatics>
 {
     IBackEaseStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBasicConnectedAnimationConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBasicConnectedAnimationConfiguration>
+{
+    IBasicConnectedAnimationConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBasicConnectedAnimationConfigurationFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBasicConnectedAnimationConfigurationFactory>
+{
+    IBasicConnectedAnimationConfigurationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IBeginStoryboard :
@@ -146,6 +160,27 @@ struct WINRT_EBO IConnectedAnimation2 :
     IConnectedAnimation2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IConnectedAnimation3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IConnectedAnimation3>
+{
+    IConnectedAnimation3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IConnectedAnimationConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IConnectedAnimationConfiguration>
+{
+    IConnectedAnimationConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IConnectedAnimationConfigurationFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IConnectedAnimationConfigurationFactory>
+{
+    IConnectedAnimationConfigurationFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IConnectedAnimationService :
     Windows::Foundation::IInspectable,
     impl::consume_t<IConnectedAnimationService>
@@ -193,6 +228,20 @@ struct WINRT_EBO ICubicEase :
     impl::consume_t<ICubicEase>
 {
     ICubicEase(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDirectConnectedAnimationConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDirectConnectedAnimationConfiguration>
+{
+    IDirectConnectedAnimationConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDirectConnectedAnimationConfigurationFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDirectConnectedAnimationConfigurationFactory>
+{
+    IDirectConnectedAnimationConfigurationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IDiscreteColorKeyFrame :
@@ -508,6 +557,20 @@ struct WINRT_EBO IFadeOutThemeAnimationStatics :
     impl::consume_t<IFadeOutThemeAnimationStatics>
 {
     IFadeOutThemeAnimationStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IGravityConnectedAnimationConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IGravityConnectedAnimationConfiguration>
+{
+    IGravityConnectedAnimationConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IGravityConnectedAnimationConfigurationFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IGravityConnectedAnimationConfigurationFactory>
+{
+    IGravityConnectedAnimationConfigurationFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IKeySpline :
@@ -858,6 +921,20 @@ struct WINRT_EBO ISlideNavigationTransitionInfo :
     impl::consume_t<ISlideNavigationTransitionInfo>
 {
     ISlideNavigationTransitionInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISlideNavigationTransitionInfo2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISlideNavigationTransitionInfo2>
+{
+    ISlideNavigationTransitionInfo2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISlideNavigationTransitionInfoStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISlideNavigationTransitionInfoStatics2>
+{
+    ISlideNavigationTransitionInfoStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ISplineColorKeyFrame :

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -271,11 +271,25 @@ struct WINRT_EBO ICreateAudioDeviceInputNodeResult :
     ICreateAudioDeviceInputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICreateAudioDeviceInputNodeResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateAudioDeviceInputNodeResult2>
+{
+    ICreateAudioDeviceInputNodeResult2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICreateAudioDeviceOutputNodeResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICreateAudioDeviceOutputNodeResult>
 {
     ICreateAudioDeviceOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICreateAudioDeviceOutputNodeResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateAudioDeviceOutputNodeResult2>
+{
+    ICreateAudioDeviceOutputNodeResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICreateAudioFileInputNodeResult :
@@ -285,11 +299,25 @@ struct WINRT_EBO ICreateAudioFileInputNodeResult :
     ICreateAudioFileInputNodeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICreateAudioFileInputNodeResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateAudioFileInputNodeResult2>
+{
+    ICreateAudioFileInputNodeResult2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICreateAudioFileOutputNodeResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICreateAudioFileOutputNodeResult>
 {
     ICreateAudioFileOutputNodeResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICreateAudioFileOutputNodeResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateAudioFileOutputNodeResult2>
+{
+    ICreateAudioFileOutputNodeResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICreateAudioGraphResult :
@@ -299,11 +327,25 @@ struct WINRT_EBO ICreateAudioGraphResult :
     ICreateAudioGraphResult(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICreateAudioGraphResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateAudioGraphResult2>
+{
+    ICreateAudioGraphResult2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICreateMediaSourceAudioInputNodeResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICreateMediaSourceAudioInputNodeResult>
 {
     ICreateMediaSourceAudioInputNodeResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICreateMediaSourceAudioInputNodeResult2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICreateMediaSourceAudioInputNodeResult2>
+{
+    ICreateMediaSourceAudioInputNodeResult2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IEchoEffectDefinition :
@@ -386,6 +428,48 @@ struct WINRT_EBO IReverbEffectDefinitionFactory :
     impl::consume_t<IReverbEffectDefinitionFactory>
 {
     IReverbEffectDefinitionFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISetDefaultSpatialAudioFormatResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISetDefaultSpatialAudioFormatResult>
+{
+    ISetDefaultSpatialAudioFormatResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAudioDeviceConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAudioDeviceConfiguration>
+{
+    ISpatialAudioDeviceConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAudioDeviceConfigurationStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAudioDeviceConfigurationStatics>
+{
+    ISpatialAudioDeviceConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAudioFormatConfiguration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAudioFormatConfiguration>
+{
+    ISpatialAudioFormatConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAudioFormatConfigurationStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAudioFormatConfigurationStatics>
+{
+    ISpatialAudioFormatConfigurationStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAudioFormatSubtypeStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAudioFormatSubtypeStatics>
+{
+    ISpatialAudioFormatSubtypeStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

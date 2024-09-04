@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -41,6 +41,34 @@ struct WINRT_EBO IDesignerAppView :
     IDesignerAppView(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IDesktopWindowXamlSource :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDesktopWindowXamlSource>
+{
+    IDesktopWindowXamlSource(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDesktopWindowXamlSourceFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDesktopWindowXamlSourceFactory>
+{
+    IDesktopWindowXamlSourceFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDesktopWindowXamlSourceGotFocusEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDesktopWindowXamlSourceGotFocusEventArgs>
+{
+    IDesktopWindowXamlSourceGotFocusEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDesktopWindowXamlSourceTakeFocusRequestedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDesktopWindowXamlSourceTakeFocusRequestedEventArgs>
+{
+    IDesktopWindowXamlSourceTakeFocusRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IElementCompositionPreview :
     Windows::Foundation::IInspectable,
     impl::consume_t<IElementCompositionPreview>
@@ -60,6 +88,48 @@ struct WINRT_EBO IElementCompositionPreviewStatics2 :
     impl::consume_t<IElementCompositionPreviewStatics2>
 {
     IElementCompositionPreviewStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWindowsXamlManager :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWindowsXamlManager>
+{
+    IWindowsXamlManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWindowsXamlManagerStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWindowsXamlManagerStatics>
+{
+    IWindowsXamlManagerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlSourceFocusNavigationRequest :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlSourceFocusNavigationRequest>
+{
+    IXamlSourceFocusNavigationRequest(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlSourceFocusNavigationRequestFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlSourceFocusNavigationRequestFactory>
+{
+    IXamlSourceFocusNavigationRequestFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlSourceFocusNavigationResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlSourceFocusNavigationResult>
+{
+    IXamlSourceFocusNavigationResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlSourceFocusNavigationResultFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlSourceFocusNavigationResultFactory>
+{
+    IXamlSourceFocusNavigationResultFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IXamlUIPresenter :

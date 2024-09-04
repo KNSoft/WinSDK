@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -42,6 +42,26 @@ struct WINRT_EBO DesignerAppView :
     DesignerAppView(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO DesktopWindowXamlSource :
+    Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource,
+    impl::require<DesktopWindowXamlSource, Windows::Foundation::IClosable>
+{
+    DesktopWindowXamlSource(std::nullptr_t) noexcept {}
+    DesktopWindowXamlSource();
+};
+
+struct WINRT_EBO DesktopWindowXamlSourceGotFocusEventArgs :
+    Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceGotFocusEventArgs
+{
+    DesktopWindowXamlSourceGotFocusEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO DesktopWindowXamlSourceTakeFocusRequestedEventArgs :
+    Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+{
+    DesktopWindowXamlSourceTakeFocusRequestedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ElementCompositionPreview :
     Windows::UI::Xaml::Hosting::IElementCompositionPreview
 {
@@ -54,6 +74,30 @@ struct WINRT_EBO ElementCompositionPreview :
     static void SetImplicitHideAnimation(Windows::UI::Xaml::UIElement const& element, Windows::UI::Composition::ICompositionAnimationBase const& animation);
     static void SetIsTranslationEnabled(Windows::UI::Xaml::UIElement const& element, bool value);
     static Windows::UI::Composition::CompositionPropertySet GetPointerPositionPropertySet(Windows::UI::Xaml::UIElement const& targetElement);
+};
+
+struct WINRT_EBO WindowsXamlManager :
+    Windows::UI::Xaml::Hosting::IWindowsXamlManager,
+    impl::require<WindowsXamlManager, Windows::Foundation::IClosable>
+{
+    WindowsXamlManager(std::nullptr_t) noexcept {}
+    static Windows::UI::Xaml::Hosting::WindowsXamlManager InitializeForCurrentThread();
+};
+
+struct WINRT_EBO XamlSourceFocusNavigationRequest :
+    Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest
+{
+    XamlSourceFocusNavigationRequest(std::nullptr_t) noexcept {}
+    XamlSourceFocusNavigationRequest(Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason const& reason);
+    XamlSourceFocusNavigationRequest(Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason const& reason, Windows::Foundation::Rect const& hintRect);
+    XamlSourceFocusNavigationRequest(Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason const& reason, Windows::Foundation::Rect const& hintRect, winrt::guid const& correlationId);
+};
+
+struct WINRT_EBO XamlSourceFocusNavigationResult :
+    Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationResult
+{
+    XamlSourceFocusNavigationResult(std::nullptr_t) noexcept {}
+    XamlSourceFocusNavigationResult(bool focusMoved);
 };
 
 struct WINRT_EBO XamlUIPresenter :

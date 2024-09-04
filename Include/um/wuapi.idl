@@ -226,6 +226,12 @@ cpp_quote("")
 cpp_quote("// {3442d4fe-224d-4cee-98cf-30e0c4d229e6}")
 cpp_quote("DEFINE_GUID(IID_IUpdateInstaller2,0x3442d4fe,0x224d,0x4cee,0x98,0xcf,0x30,0xe0,0xc4,0xd2,0x29,0xe6);")
 cpp_quote("")
+cpp_quote("// {16d11c35-099a-48d0-8338-5fae64047f8e}")
+cpp_quote("DEFINE_GUID(IID_IUpdateInstaller3,0x16d11c35,0x099a,0x48d0,0x83,0x38,0x5f,0xae,0x64,0x04,0x7f,0x8e);")
+cpp_quote("")
+cpp_quote("// {EF8208EA-2304-492D-9109-23813B0958E1}")
+cpp_quote("DEFINE_GUID(IID_IUpdateInstaller4, 0xef8208ea, 0x2304, 0x492d, 0x91, 0x9, 0x23, 0x81, 0x3b, 0x9, 0x58, 0xe1);")
+cpp_quote("")
 cpp_quote("// {816858A4-260D-4260-933A-2585F1ABC76B}")
 cpp_quote("DEFINE_GUID(IID_IUpdateSession,0x816858a4,0x260d,0x4260,0x93,0x3a,0x25,0x85,0xf1,0xab,0xc7,0x6b);")
 cpp_quote("")
@@ -424,24 +430,6 @@ typedef [public] enum tagOperationResultCode
 } OperationResultCode;
 
 [
-    helpstring(
-        "Defines possible status code of update history entry - "
-        "install/uninstall/download success/failure/cancel."),
-    v1_enum
-]
-typedef [public] enum tagUpdateHistoryStatusCode
-{   /* In the order of significance */
-    [helpstring("Install Success")]         uhsInstallSuccess           = 0,
-    [helpstring("Install Failure")]         uhsInstallFailure           = 1,
-    [helpstring("Install Cancellation")]    uhsInstallCancellation      = 2,
-    [helpstring("Uninstall Success")]       uhsUninstallSuccess         = 3,
-    [helpstring("Uninstall Failure")]       uhsUninstallFailure         = 4,
-    [helpstring("Uninstall Cancellation")]  uhsUninstallCancellation    = 6,
-    [helpstring("Download Failure")]        uhsDownloadFailure          = 7,
-    [helpstring("Download Cancellation")]   uhsDownloadCancellation     = 8,
-} UpdateHistoryStatusCode;
-
-[
     helpstring("Defines possible types of an update."),
     v1_enum
 ]
@@ -483,6 +471,7 @@ typedef [public] enum tagUpdateExceptionContext
     [helpstring("General")]             uecGeneral          = 1,
     [helpstring("WindowsDriver")]       uecWindowsDriver    = 2,
     [helpstring("WindowsInstaller")]    uecWindowsInstaller = 3,
+    [helpstring("SearchIncomplete")]    uecSearchIncomplete = 4,
 } UpdateExceptionContext;
 
 [
@@ -522,7 +511,7 @@ typedef [public] enum tagUpdateServiceRegistrationState
 } UpdateServiceRegistrationState;
 
 [
-    helpstring("Defines possible search scopes for a search call. The scope may indicate user updates" 
+    helpstring("Defines possible search scopes for a search call. The scope may indicate user updates"
     "for the calling user updates for all users, machine updates or a combination of these."),
     v1_enum
 ]
@@ -784,7 +773,7 @@ interface IWebProxy : IDispatch
             "authentication.")
     ]
     HRESULT PromptForCredentialsFromHwnd(
-                [in, unique] HWND parentWindow, 
+                [in, unique] HWND parentWindow,
                 [in] BSTR title);
 
 //properties:
@@ -858,8 +847,8 @@ interface IWindowsUpdateAgentInfo : IDispatch
         helpstring(
            "Get Windows Update Agent Info.")
     ]
-    HRESULT GetInfo( 
-               [in] VARIANT varInfoIdentifier,  
+    HRESULT GetInfo(
+               [in] VARIANT varInfoIdentifier,
                [out, retval] VARIANT* retval);
 }
 
@@ -2267,7 +2256,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Specifies the hardware ID or compatible ID that the "
             "WindowsDriverUpdate must match to be installable.")
-    ]            
+    ]
     HRESULT DriverHardwareID(
                 [out, retval] BSTR* retval);
 
@@ -2277,7 +2266,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Specifies the language-invariant name of the manufacturer "
             "of the WindowsDriverUpdate.")
-    ]            
+    ]
     HRESULT DriverManufacturer(
                 [out, retval] BSTR* retval);
 
@@ -2287,7 +2276,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Specifies the language-invariant model name of the device for "
             "which the WindowsDriverUpdate is intended.")
-    ]            
+    ]
     HRESULT DriverModel(
                 [out, retval] BSTR* retval);
 
@@ -2297,7 +2286,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Specifies the language-invariant name of the provider of the "
             "WindowsDriverUpdate.")
-    ]            
+    ]
     HRESULT DriverProvider(
                 [out, retval] BSTR* retval);
 
@@ -2306,7 +2295,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         propget,
         helpstring(
             "Specifies the driver version date of the WindowsDriverUpdate.")
-    ]            
+    ]
     HRESULT DriverVerDate(
                 [out, retval] DATE* retval);
 
@@ -2316,7 +2305,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Returns the problem number of the matching device for the "
             "WindowsDriverUpdate.")
-    ]            
+    ]
     HRESULT DeviceProblemNumber(
                 [out, retval] LONG* retval);
 
@@ -2326,7 +2315,7 @@ interface IWindowsDriverUpdateEntry : IDispatch
         helpstring(
             "Returns the status of the matching device for the "
             "WindowsDriverUpdate.")
-    ]            
+    ]
     HRESULT DeviceStatus(
                 [out, retval] LONG* retval);
 }
@@ -2360,7 +2349,7 @@ interface IWindowsDriverUpdateEntryCollection : IDispatch
         helpstring(
             "Gets an IEnumVARIANT interface on an object that can be used to "
             "enumerate the collection.")
-    ]    
+    ]
     HRESULT _NewEnum(
                 [out, retval] IUnknown** retval);
 
@@ -2368,9 +2357,9 @@ interface IWindowsDriverUpdateEntryCollection : IDispatch
         id(0x60020001),
         propget,
         helpstring("Gets the number of elements contained in the collection.")
-    ]     
+    ]
     HRESULT Count(
-                [out, retval] LONG* retval);    
+                [out, retval] LONG* retval);
 }
 
 
@@ -2404,7 +2393,7 @@ interface IWindowsDriverUpdate4 : IWindowsDriverUpdate3
     ]
     HRESULT PerUser(
                 [out, retval] VARIANT_BOOL* retval);
-                
+
 
 }
 
@@ -2800,7 +2789,7 @@ interface IUpdateHistoryEntry : IDispatch
             "Gets an Operation enumeration value specifying the "
             "the operation on the update.")
     ]
-    HRESULT Operation( 
+    HRESULT Operation(
                 [out, retval] UpdateOperation* retval );
 
     [
@@ -2810,7 +2799,7 @@ interface IUpdateHistoryEntry : IDispatch
             "Gets an OperationResultCode enumeration value specifying the "
             "result of the operation on the update.")
     ]
-    HRESULT ResultCode( 
+    HRESULT ResultCode(
                 [out, retval] OperationResultCode* retval );
 
     [
@@ -2819,7 +2808,7 @@ interface IUpdateHistoryEntry : IDispatch
         helpstring(
             "Gets the HRESULT value returned from the operation on the update.")
     ]
-    HRESULT HResult( 
+    HRESULT HResult(
                 [out, retval] LONG* retval );
 
     [
@@ -2891,7 +2880,7 @@ interface IUpdateHistoryEntry : IDispatch
     ]
     HRESULT ServiceID(
                 [out, retval] BSTR* retval );
-    
+
     [
         id(0x6002000c),
         propget,
@@ -3147,7 +3136,7 @@ interface IUpdateSearcher : IDispatch
     ]
     HRESULT ServiceID(
                 [out, retval] BSTR* retval);
-    
+
     [
         id(0x6002000f),
         propput,
@@ -3179,7 +3168,7 @@ interface IUpdateSearcher2 : IUpdateSearcher
     ]
     HRESULT IgnoreDownloadPriority(
                 [out, retval] VARIANT_BOOL* retval);
-    
+
     [
         id(0x60030001),
         propput,
@@ -3214,7 +3203,7 @@ interface IUpdateSearcher3 : IUpdateSearcher2
     ]
     HRESULT SearchScope(
                 [out, retval] SearchScope* retval);
-    
+
     [
         id(0x60040001),
         propput,
@@ -4209,6 +4198,58 @@ interface IUpdateInstaller2 : IUpdateInstaller
 
 // This interface is registered by the WindowsUpdateClient-Aux manifest.
 [
+    helpstring("IUpdateInstaller3 Interface"),
+    object,
+    oleautomation,
+    dual,
+    nonextensible,
+    uuid(16d11c35-099a-48d0-8338-5fae64047f8e),
+    pointer_default(unique),
+    hidden  // already exposed by a class
+]
+interface IUpdateInstaller3 : IUpdateInstaller2
+{
+// properties
+    [
+        id(0x60040001),
+        propget,
+        helpstring("Returns whether the update installer will attempt to close applications"
+                   " blocking immediate installation of updates")
+    ]
+    HRESULT AttemptCloseAppsIfNecessary( [out, retval] VARIANT_BOOL* retval );
+
+    [
+        id(0x60040001),
+        propput,
+        helpstring("Specifies whether the update installer will attempt to close applications"
+                   " blocking immediate installation of updates")
+    ]
+    HRESULT AttemptCloseAppsIfNecessary( [in] VARIANT_BOOL value );
+}
+
+// This interface is registered by the WindowsUpdateClient-Aux manifest.
+[
+    helpstring("IUpdateInstaller4 Interface"),
+    object,
+    oleautomation,
+    dual,
+    nonextensible,
+    uuid(EF8208EA-2304-492D-9109-23813B0958E1),
+    pointer_default(unique),
+    hidden  // already exposed by a class
+]
+interface IUpdateInstaller4 : IUpdateInstaller3
+{
+    [
+        id(0x60040002),
+        helpstring("Commit or finalize previously staged or installed updates.")
+    ]
+    // dwFlags reserved for future use.
+    HRESULT Commit([in] DWORD dwFlags);
+}
+
+// This interface is registered by the WindowsUpdateClient-Aux manifest.
+[
     helpstring("IUpdateSession Interface"),
     object,
     oleautomation,
@@ -4783,12 +4824,12 @@ library WUApiLib
     // Interface declarations
     interface IUpdateLockdown;
     interface IInvalidProductLicenseException;
-    interface IAutomaticUpdatesSettings2;    
-    interface IAutomaticUpdatesSettings3;    
+    interface IAutomaticUpdatesSettings2;
+    interface IAutomaticUpdatesSettings3;
     interface IUpdate2;
     interface IUpdate3;
-    interface IWindowsDriverUpdateEntry;        
-    interface IWindowsDriverUpdateEntryCollection;    
+    interface IWindowsDriverUpdateEntry;
+    interface IWindowsDriverUpdateEntryCollection;
     interface IUpdate4;
     interface IUpdate5;
     interface IWindowsDriverUpdate;
@@ -4891,6 +4932,7 @@ library WUApiLib
     ]
     coclass UpdateInstaller
     {
+        interface IUpdateInstaller4;
         [default]   interface IUpdateInstaller2;
     };
 

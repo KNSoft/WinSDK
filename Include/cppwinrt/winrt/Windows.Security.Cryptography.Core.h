@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Security.Cryptography.Certificates.2.h"
@@ -1238,2734 +1238,2384 @@ template <typename D> Windows::Security::Cryptography::Core::SymmetricKeyAlgorit
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_RsaPkcs1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaPkcs1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaPkcs1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaPkcs1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaOaepSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaOaepSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaOaepSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaOaepSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaOaepSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaOaepSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaOaepSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaOaepSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaOaepSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaOaepSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaOaepSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaOaepSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaOaepSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaOaepSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaOaepSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaOaepSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EcdsaP256Sha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaP256Sha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaP256Sha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaP256Sha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EcdsaP384Sha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaP384Sha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaP384Sha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaP384Sha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EcdsaP521Sha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaP521Sha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaP521Sha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaP521Sha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DsaSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DsaSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DsaSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DsaSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DsaSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DsaSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DsaSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DsaSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPkcs1Sha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPkcs1Sha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPkcs1Sha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPkcs1Sha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPkcs1Sha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPkcs1Sha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPkcs1Sha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPkcs1Sha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPkcs1Sha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPkcs1Sha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPkcs1Sha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPkcs1Sha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPkcs1Sha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPkcs1Sha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPkcs1Sha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPkcs1Sha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPssSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPssSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPssSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPssSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPssSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPssSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPssSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPssSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPssSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPssSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPssSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPssSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RsaSignPssSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RsaSignPssSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RsaSignPssSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RsaSignPssSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2> : produce_base<D, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>
 {
-    HRESULT __stdcall get_EcdsaSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EcdsaSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EcdsaSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EcdsaSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EcdsaSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EcdsaSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider> : produce_base<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider>
 {
-    HRESULT __stdcall get_AlgorithmName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlgorithmName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlgorithmName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlgorithmName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateKeyPair(uint32_t keySize, void** key) noexcept final
+    int32_t WINRT_CALL CreateKeyPair(uint32_t keySize, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateKeyPair, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), uint32_t);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateKeyPair(keySize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ImportDefaultPrivateKeyBlob(void* keyBlob, void** key) noexcept final
+    int32_t WINRT_CALL ImportDefaultPrivateKeyBlob(void* keyBlob, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportKeyPair, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().ImportKeyPair(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyBlob)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ImportKeyPairWithBlobType(void* keyBlob, Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType, void** key) noexcept final
+    int32_t WINRT_CALL ImportKeyPairWithBlobType(void* keyBlob, Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportKeyPair, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&, Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().ImportKeyPair(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyBlob), *reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType const*>(&BlobType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ImportDefaultPublicKeyBlob(void* keyBlob, void** key) noexcept final
+    int32_t WINRT_CALL ImportDefaultPublicKeyBlob(void* keyBlob, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportPublicKey, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().ImportPublicKey(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyBlob)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ImportPublicKeyWithBlobType(void* keyBlob, Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType, void** key) noexcept final
+    int32_t WINRT_CALL ImportPublicKeyWithBlobType(void* keyBlob, Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportPublicKey, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&, Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().ImportPublicKey(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyBlob), *reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const*>(&BlobType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider2> : produce_base<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider2>
 {
-    HRESULT __stdcall CreateKeyPairWithCurveName(HSTRING curveName, void** key) noexcept final
+    int32_t WINRT_CALL CreateKeyPairWithCurveName(void* curveName, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateKeyPairWithCurveName, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), hstring const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateKeyPairWithCurveName(*reinterpret_cast<hstring const*>(&curveName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateKeyPairWithCurveParameters(uint32_t __parametersSize, uint8_t* parameters, void** key) noexcept final
+    int32_t WINRT_CALL CreateKeyPairWithCurveParameters(uint32_t __parametersSize, uint8_t* parameters, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateKeyPairWithCurveParameters, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), array_view<uint8_t const>);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateKeyPairWithCurveParameters(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(parameters), reinterpret_cast<uint8_t const *>(parameters) + __parametersSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics>
 {
-    HRESULT __stdcall OpenAlgorithm(HSTRING algorithm, void** provider) noexcept final
+    int32_t WINRT_CALL OpenAlgorithm(void* algorithm, void** provider) noexcept final
     {
         try
         {
             *provider = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider), hstring const&);
             *provider = detach_from<Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider>(this->shim().OpenAlgorithm(*reinterpret_cast<hstring const*>(&algorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineStatics> : produce_base<D, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>
 {
-    HRESULT __stdcall Encrypt(void* key, void* data, void* iv, void** value) noexcept final
+    int32_t WINRT_CALL Encrypt(void* key, void* data, void* iv, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Encrypt, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Encrypt(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&iv)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Decrypt(void* key, void* data, void* iv, void** value) noexcept final
+    int32_t WINRT_CALL Decrypt(void* key, void* data, void* iv, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Decrypt, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Decrypt(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&iv)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EncryptAndAuthenticate(void* key, void* data, void* nonce, void* authenticatedData, void** value) noexcept final
+    int32_t WINRT_CALL EncryptAndAuthenticate(void* key, void* data, void* nonce, void* authenticatedData, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncryptAndAuthenticate, WINRT_WRAP(Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData>(this->shim().EncryptAndAuthenticate(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&nonce), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&authenticatedData)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DecryptAndAuthenticate(void* key, void* data, void* nonce, void* authenticationTag, void* authenticatedData, void** value) noexcept final
+    int32_t WINRT_CALL DecryptAndAuthenticate(void* key, void* data, void* nonce, void* authenticationTag, void* authenticatedData, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecryptAndAuthenticate, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DecryptAndAuthenticate(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&nonce), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&authenticationTag), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&authenticatedData)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Sign(void* key, void* data, void** value) noexcept final
+    int32_t WINRT_CALL Sign(void* key, void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sign, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Sign(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall VerifySignature(void* key, void* data, void* signature, bool* isAuthenticated) noexcept final
+    int32_t WINRT_CALL VerifySignature(void* key, void* data, void* signature, bool* isAuthenticated) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerifySignature, WINRT_WRAP(bool), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *isAuthenticated = detach_from<bool>(this->shim().VerifySignature(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&signature)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeriveKeyMaterial(void* key, void* parameters, uint32_t desiredKeySize, void** keyMaterial) noexcept final
+    int32_t WINRT_CALL DeriveKeyMaterial(void* key, void* parameters, uint32_t desiredKeySize, void** keyMaterial) noexcept final
     {
         try
         {
             *keyMaterial = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeriveKeyMaterial, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Security::Cryptography::Core::KeyDerivationParameters const&, uint32_t);
             *keyMaterial = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DeriveKeyMaterial(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Security::Cryptography::Core::KeyDerivationParameters const*>(&parameters), desiredKeySize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2> : produce_base<D, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>
 {
-    HRESULT __stdcall SignHashedData(void* key, void* data, void** value) noexcept final
+    int32_t WINRT_CALL SignHashedData(void* key, void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignHashedData, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().SignHashedData(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall VerifySignatureWithHashInput(void* key, void* data, void* signature, bool* isAuthenticated) noexcept final
+    int32_t WINRT_CALL VerifySignatureWithHashInput(void* key, void* data, void* signature, bool* isAuthenticated) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerifySignatureWithHashInput, WINRT_WRAP(bool), Windows::Security::Cryptography::Core::CryptographicKey const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *isAuthenticated = detach_from<bool>(this->shim().VerifySignatureWithHashInput(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&signature)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DecryptAsync(void* key, void* data, void* iv, void** value) noexcept final
+    int32_t WINRT_CALL DecryptAsync(void* key, void* data, void* iv, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecryptAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>), Windows::Security::Cryptography::Core::CryptographicKey const, Windows::Storage::Streams::IBuffer const, Windows::Storage::Streams::IBuffer const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>>(this->shim().DecryptAsync(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&iv)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SignAsync(void* key, void* data, void** value) noexcept final
+    int32_t WINRT_CALL SignAsync(void* key, void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>), Windows::Security::Cryptography::Core::CryptographicKey const, Windows::Storage::Streams::IBuffer const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>>(this->shim().SignAsync(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SignHashedDataAsync(void* key, void* data, void** value) noexcept final
+    int32_t WINRT_CALL SignHashedDataAsync(void* key, void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignHashedDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>), Windows::Security::Cryptography::Core::CryptographicKey const, Windows::Storage::Streams::IBuffer const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer>>(this->shim().SignHashedDataAsync(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicKey const*>(&key), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ICryptographicKey> : produce_base<D, Windows::Security::Cryptography::Core::ICryptographicKey>
 {
-    HRESULT __stdcall get_KeySize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_KeySize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeySize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().KeySize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ExportDefaultPrivateKeyBlobType(void** value) noexcept final
+    int32_t WINRT_CALL ExportDefaultPrivateKeyBlobType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Export, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Export());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ExportPrivateKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType, void** value) noexcept final
+    int32_t WINRT_CALL ExportPrivateKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Export, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Export(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType const*>(&BlobType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ExportDefaultPublicKeyBlobType(void** value) noexcept final
+    int32_t WINRT_CALL ExportDefaultPublicKeyBlobType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExportPublicKey, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ExportPublicKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ExportPublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType, void** value) noexcept final
+    int32_t WINRT_CALL ExportPublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType BlobType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExportPublicKey, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ExportPublicKey(*reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType const*>(&BlobType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>
 {
-    HRESULT __stdcall get_BrainpoolP160r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP160r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP160r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP160r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP160t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP160t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP160t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP160t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP192r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP192r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP192r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP192r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP192t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP192t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP192t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP192t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP224r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP224r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP224r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP224r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP224t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP224t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP224t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP224t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP256r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP256r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP256r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP256r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP256t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP256t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP256t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP256t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP320r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP320r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP320r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP320r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP320t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP320t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP320t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP320t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP384r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP384r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP384r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP384r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP384t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP384t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP384t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP384t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP512r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP512r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP512r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP512r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BrainpoolP512t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BrainpoolP512t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BrainpoolP512t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BrainpoolP512t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Curve25519(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Curve25519(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Curve25519, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Curve25519());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ec192wapi(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Ec192wapi(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ec192wapi, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Ec192wapi());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NistP192(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NistP192(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NistP192, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NistP192());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NistP224(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NistP224(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NistP224, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NistP224());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NistP256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NistP256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NistP256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NistP256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NistP384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NistP384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NistP384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NistP384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NistP521(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NistP521(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NistP521, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NistP521());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumsP256t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumsP256t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumsP256t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumsP256t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumsP384t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumsP384t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumsP384t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumsP384t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumsP512t1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumsP512t1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumsP512t1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumsP512t1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP160k1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP160k1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP160k1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP160k1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP160r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP160r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP160r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP160r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP160r2(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP160r2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP160r2, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP160r2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP192k1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP192k1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP192k1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP192k1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP192r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP192r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP192r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP192r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP224k1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP224k1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP224k1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP224k1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP224r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP224r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP224r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP224r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP256k1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP256k1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP256k1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP256k1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP256r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP256r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP256r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP256r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP384r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP384r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP384r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP384r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecP521r1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecP521r1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecP521r1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecP521r1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wtls7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wtls7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wtls7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wtls7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wtls9(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wtls9(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wtls9, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wtls9());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wtls12(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wtls12(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wtls12, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wtls12());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P192v1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P192v1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P192v1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P192v1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P192v2(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P192v2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P192v2, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P192v2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P192v3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P192v3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P192v3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P192v3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P239v1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P239v1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P239v1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P239v1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P239v2(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P239v2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P239v2, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P239v2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P239v3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P239v3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P239v3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P239v3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_X962P256v1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_X962P256v1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X962P256v1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().X962P256v1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllEccCurveNames(void** value) noexcept final
+    int32_t WINRT_CALL get_AllEccCurveNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllEccCurveNames, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().AllEccCurveNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IEncryptedAndAuthenticatedData> : produce_base<D, Windows::Security::Cryptography::Core::IEncryptedAndAuthenticatedData>
 {
-    HRESULT __stdcall get_EncryptedData(void** value) noexcept final
+    int32_t WINRT_CALL get_EncryptedData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncryptedData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().EncryptedData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationTag(void** value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationTag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationTag, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().AuthenticationTag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_Md5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Md5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Md5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Md5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider> : produce_base<D, Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
 {
-    HRESULT __stdcall get_AlgorithmName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlgorithmName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlgorithmName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlgorithmName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HashLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_HashLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HashLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().HashLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HashData(void* data, void** value) noexcept final
+    int32_t WINRT_CALL HashData(void* data, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HashData, WINRT_WRAP(Windows::Storage::Streams::IBuffer), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().HashData(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateHash(void** Value) noexcept final
+    int32_t WINRT_CALL CreateHash(void** Value) noexcept final
     {
         try
         {
             *Value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHash, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicHash));
             *Value = detach_from<Windows::Security::Cryptography::Core::CryptographicHash>(this->shim().CreateHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics>
 {
-    HRESULT __stdcall OpenAlgorithm(HSTRING algorithm, void** provider) noexcept final
+    int32_t WINRT_CALL OpenAlgorithm(void* algorithm, void** provider) noexcept final
     {
         try
         {
             *provider = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::HashAlgorithmProvider), hstring const&);
             *provider = detach_from<Windows::Security::Cryptography::Core::HashAlgorithmProvider>(this->shim().OpenAlgorithm(*reinterpret_cast<hstring const*>(&algorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IHashComputation> : produce_base<D, Windows::Security::Cryptography::Core::IHashComputation>
 {
-    HRESULT __stdcall Append(void* data) noexcept final
+    int32_t WINRT_CALL Append(void* data) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Append, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().Append(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetValueAndReset(void** value) noexcept final
+    int32_t WINRT_CALL GetValueAndReset(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetValueAndReset, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().GetValueAndReset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_Pbkdf2Md5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pbkdf2Md5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pbkdf2Md5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pbkdf2Md5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pbkdf2Sha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pbkdf2Sha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pbkdf2Sha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pbkdf2Sha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pbkdf2Sha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pbkdf2Sha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pbkdf2Sha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pbkdf2Sha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pbkdf2Sha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pbkdf2Sha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pbkdf2Sha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pbkdf2Sha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pbkdf2Sha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pbkdf2Sha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pbkdf2Sha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pbkdf2Sha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp800108CtrHmacMd5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp800108CtrHmacMd5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp800108CtrHmacMd5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp800108CtrHmacMd5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp800108CtrHmacSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp800108CtrHmacSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp800108CtrHmacSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp800108CtrHmacSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp800108CtrHmacSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp800108CtrHmacSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp800108CtrHmacSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp800108CtrHmacSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp800108CtrHmacSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp800108CtrHmacSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp800108CtrHmacSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp800108CtrHmacSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp800108CtrHmacSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp800108CtrHmacSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp800108CtrHmacSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp800108CtrHmacSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp80056aConcatMd5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp80056aConcatMd5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp80056aConcatMd5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp80056aConcatMd5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp80056aConcatSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp80056aConcatSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp80056aConcatSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp80056aConcatSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp80056aConcatSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp80056aConcatSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp80056aConcatSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp80056aConcatSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp80056aConcatSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp80056aConcatSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp80056aConcatSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp80056aConcatSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sp80056aConcatSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sp80056aConcatSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sp80056aConcatSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sp80056aConcatSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>
 {
-    HRESULT __stdcall get_CapiKdfMd5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CapiKdfMd5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapiKdfMd5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CapiKdfMd5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CapiKdfSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CapiKdfSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapiKdfSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CapiKdfSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CapiKdfSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CapiKdfSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapiKdfSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CapiKdfSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CapiKdfSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CapiKdfSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapiKdfSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CapiKdfSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CapiKdfSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CapiKdfSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapiKdfSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CapiKdfSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider>
 {
-    HRESULT __stdcall get_AlgorithmName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlgorithmName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlgorithmName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlgorithmName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateKey(void* keyMaterial, void** key) noexcept final
+    int32_t WINRT_CALL CreateKey(void* keyMaterial, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateKey, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateKey(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyMaterial)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics>
 {
-    HRESULT __stdcall OpenAlgorithm(HSTRING algorithm, void** provider) noexcept final
+    int32_t WINRT_CALL OpenAlgorithm(void* algorithm, void** provider) noexcept final
     {
         try
         {
             *provider = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider), hstring const&);
             *provider = detach_from<Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider>(this->shim().OpenAlgorithm(*reinterpret_cast<hstring const*>(&algorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameters> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationParameters>
 {
-    HRESULT __stdcall get_KdfGenericBinary(void** value) noexcept final
+    int32_t WINRT_CALL get_KdfGenericBinary(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KdfGenericBinary, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().KdfGenericBinary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KdfGenericBinary(void* value) noexcept final
+    int32_t WINRT_CALL put_KdfGenericBinary(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KdfGenericBinary, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().KdfGenericBinary(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IterationCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_IterationCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IterationCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().IterationCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParameters2> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationParameters2>
 {
-    HRESULT __stdcall get_Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capi1KdfTargetAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm));
             *value = detach_from<Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm>(this->shim().Capi1KdfTargetAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm value) noexcept final
+    int32_t WINRT_CALL put_Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capi1KdfTargetAlgorithm, WINRT_WRAP(void), Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm const&);
             this->shim().Capi1KdfTargetAlgorithm(*reinterpret_cast<Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>
 {
-    HRESULT __stdcall BuildForPbkdf2(void* pbkdf2Salt, uint32_t iterationCount, void** value) noexcept final
+    int32_t WINRT_CALL BuildForPbkdf2(void* pbkdf2Salt, uint32_t iterationCount, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildForPbkdf2, WINRT_WRAP(Windows::Security::Cryptography::Core::KeyDerivationParameters), Windows::Storage::Streams::IBuffer const&, uint32_t);
             *value = detach_from<Windows::Security::Cryptography::Core::KeyDerivationParameters>(this->shim().BuildForPbkdf2(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&pbkdf2Salt), iterationCount));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BuildForSP800108(void* label, void* context, void** value) noexcept final
+    int32_t WINRT_CALL BuildForSP800108(void* label, void* context, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildForSP800108, WINRT_WRAP(Windows::Security::Cryptography::Core::KeyDerivationParameters), Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Security::Cryptography::Core::KeyDerivationParameters>(this->shim().BuildForSP800108(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&label), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&context)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BuildForSP80056a(void* algorithmId, void* partyUInfo, void* partyVInfo, void* suppPubInfo, void* suppPrivInfo, void** value) noexcept final
+    int32_t WINRT_CALL BuildForSP80056a(void* algorithmId, void* partyUInfo, void* partyVInfo, void* suppPubInfo, void* suppPrivInfo, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildForSP80056a, WINRT_WRAP(Windows::Security::Cryptography::Core::KeyDerivationParameters), Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Security::Cryptography::Core::KeyDerivationParameters>(this->shim().BuildForSP80056a(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&algorithmId), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&partyUInfo), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&partyVInfo), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&suppPubInfo), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&suppPrivInfo)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2> : produce_base<D, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2>
 {
-    HRESULT __stdcall BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm, void** value) noexcept final
+    int32_t WINRT_CALL BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BuildForCapi1Kdf, WINRT_WRAP(Windows::Security::Cryptography::Core::KeyDerivationParameters), Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm const&);
             *value = detach_from<Windows::Security::Cryptography::Core::KeyDerivationParameters>(this->shim().BuildForCapi1Kdf(*reinterpret_cast<Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm const*>(&capi1KdfTargetAlgorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_HmacMd5(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HmacMd5(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HmacMd5, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HmacMd5());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HmacSha1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HmacSha1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HmacSha1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HmacSha1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HmacSha256(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HmacSha256(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HmacSha256, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HmacSha256());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HmacSha384(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HmacSha384(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HmacSha384, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HmacSha384());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HmacSha512(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HmacSha512(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HmacSha512, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HmacSha512());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesCmac(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesCmac(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesCmac, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesCmac());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider> : produce_base<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider>
 {
-    HRESULT __stdcall get_AlgorithmName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlgorithmName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlgorithmName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlgorithmName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MacLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MacLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MacLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MacLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateKey(void* keyMaterial, void** macKey) noexcept final
+    int32_t WINRT_CALL CreateKey(void* keyMaterial, void** macKey) noexcept final
     {
         try
         {
             *macKey = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateKey, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&);
             *macKey = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateKey(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyMaterial)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider2> : produce_base<D, Windows::Security::Cryptography::Core::IMacAlgorithmProvider2>
 {
-    HRESULT __stdcall CreateHash(void* keyMaterial, void** value) noexcept final
+    int32_t WINRT_CALL CreateHash(void* keyMaterial, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHash, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicHash), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<Windows::Security::Cryptography::Core::CryptographicHash>(this->shim().CreateHash(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyMaterial)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics>
 {
-    HRESULT __stdcall OpenAlgorithm(HSTRING algorithm, void** provider) noexcept final
+    int32_t WINRT_CALL OpenAlgorithm(void* algorithm, void** provider) noexcept final
     {
         try
         {
             *provider = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::MacAlgorithmProvider), hstring const&);
             *provider = detach_from<Windows::Security::Cryptography::Core::MacAlgorithmProvider>(this->shim().OpenAlgorithm(*reinterpret_cast<hstring const*>(&algorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>
 {
-    HRESULT __stdcall OpenKeyPairFromCertificateAsync(void* certificate, HSTRING hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding, void** operation) noexcept final
+    int32_t WINRT_CALL OpenKeyPairFromCertificateAsync(void* certificate, void* hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenKeyPairFromCertificateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey>), Windows::Security::Cryptography::Certificates::Certificate const, hstring const, Windows::Security::Cryptography::Core::CryptographicPadding const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey>>(this->shim().OpenKeyPairFromCertificateAsync(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&certificate), *reinterpret_cast<hstring const*>(&hashAlgorithmName), *reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPadding const*>(&padding)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenPublicKeyFromCertificate(void* certificate, HSTRING hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding, void** key) noexcept final
+    int32_t WINRT_CALL OpenPublicKeyFromCertificate(void* certificate, void* hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenPublicKeyFromCertificate, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Security::Cryptography::Certificates::Certificate const&, hstring const&, Windows::Security::Cryptography::Core::CryptographicPadding const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().OpenPublicKeyFromCertificate(*reinterpret_cast<Windows::Security::Cryptography::Certificates::Certificate const*>(&certificate), *reinterpret_cast<hstring const*>(&hashAlgorithmName), *reinterpret_cast<Windows::Security::Cryptography::Core::CryptographicPadding const*>(&padding)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics> : produce_base<D, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>
 {
-    HRESULT __stdcall get_DesCbc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DesCbc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesCbc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DesCbc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesEcb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DesEcb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesEcb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DesEcb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TripleDesCbc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TripleDesCbc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TripleDesCbc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TripleDesCbc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TripleDesEcb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TripleDesEcb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TripleDesEcb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TripleDesEcb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rc2Cbc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rc2Cbc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rc2Cbc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rc2Cbc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rc2Ecb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rc2Ecb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rc2Ecb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rc2Ecb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesCbc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesCbc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesCbc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesCbc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesEcb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesEcb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesEcb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesEcb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesGcm(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesGcm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesGcm, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesGcm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesCcm(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesCcm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesCcm, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesCcm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesCbcPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesCbcPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesCbcPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesCbcPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AesEcbPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AesEcbPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AesEcbPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AesEcbPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesCbcPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DesCbcPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesCbcPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DesCbcPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesEcbPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DesEcbPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesEcbPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DesEcbPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TripleDesCbcPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TripleDesCbcPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TripleDesCbcPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TripleDesCbcPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TripleDesEcbPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TripleDesEcbPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TripleDesEcbPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TripleDesEcbPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rc2CbcPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rc2CbcPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rc2CbcPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rc2CbcPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rc2EcbPkcs7(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rc2EcbPkcs7(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rc2EcbPkcs7, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rc2EcbPkcs7());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rc4(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rc4(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rc4, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rc4());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider> : produce_base<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider>
 {
-    HRESULT __stdcall get_AlgorithmName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlgorithmName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlgorithmName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlgorithmName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BlockLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_BlockLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BlockLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().BlockLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSymmetricKey(void* keyMaterial, void** key) noexcept final
+    int32_t WINRT_CALL CreateSymmetricKey(void* keyMaterial, void** key) noexcept final
     {
         try
         {
             *key = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSymmetricKey, WINRT_WRAP(Windows::Security::Cryptography::Core::CryptographicKey), Windows::Storage::Streams::IBuffer const&);
             *key = detach_from<Windows::Security::Cryptography::Core::CryptographicKey>(this->shim().CreateSymmetricKey(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&keyMaterial)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics> : produce_base<D, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics>
 {
-    HRESULT __stdcall OpenAlgorithm(HSTRING algorithm, void** provider) noexcept final
+    int32_t WINRT_CALL OpenAlgorithm(void* algorithm, void** provider) noexcept final
     {
         try
         {
             *provider = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenAlgorithm, WINRT_WRAP(Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider), hstring const&);
             *provider = detach_from<Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider>(this->shim().OpenAlgorithm(*reinterpret_cast<hstring const*>(&algorithm)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3975,702 +3625,702 @@ WINRT_EXPORT namespace winrt::Windows::Security::Cryptography::Core {
 
 inline hstring AsymmetricAlgorithmNames::RsaPkcs1()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaPkcs1();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaPkcs1(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha1()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaOaepSha1();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaOaepSha1(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaOaepSha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaOaepSha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha384()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaOaepSha384();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaOaepSha384(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaOaepSha512()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaOaepSha512();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaOaepSha512(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP256Sha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().EcdsaP256Sha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.EcdsaP256Sha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP384Sha384()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().EcdsaP384Sha384();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.EcdsaP384Sha384(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaP521Sha512()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().EcdsaP521Sha512();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.EcdsaP521Sha512(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::DsaSha1()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().DsaSha1();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DsaSha1(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::DsaSha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().DsaSha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DsaSha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha1()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha1();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPkcs1Sha1(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPkcs1Sha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha384()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha384();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPkcs1Sha384(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPkcs1Sha512()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPkcs1Sha512();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPkcs1Sha512(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha1()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha1();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPssSha1(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPssSha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha384()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha384();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPssSha384(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::RsaSignPssSha512()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>().RsaSignPssSha512();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.RsaSignPssSha512(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha256()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>().EcdsaSha256();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>([&](auto&& f) { return f.EcdsaSha256(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha384()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>().EcdsaSha384();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>([&](auto&& f) { return f.EcdsaSha384(); });
 }
 
 inline hstring AsymmetricAlgorithmNames::EcdsaSha512()
 {
-    return get_activation_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>().EcdsaSha512();
+    return impl::call_factory<AsymmetricAlgorithmNames, Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>([&](auto&& f) { return f.EcdsaSha512(); });
 }
 
 inline Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider AsymmetricKeyAlgorithmProvider::OpenAlgorithm(param::hstring const& algorithm)
 {
-    return get_activation_factory<AsymmetricKeyAlgorithmProvider, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return impl::call_factory<AsymmetricKeyAlgorithmProvider, Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics>([&](auto&& f) { return f.OpenAlgorithm(algorithm); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Encrypt(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& iv)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().Encrypt(key, data, iv);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.Encrypt(key, data, iv); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Decrypt(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& iv)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().Decrypt(key, data, iv);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.Decrypt(key, data, iv); });
 }
 
 inline Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData CryptographicEngine::EncryptAndAuthenticate(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& nonce, Windows::Storage::Streams::IBuffer const& authenticatedData)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().EncryptAndAuthenticate(key, data, nonce, authenticatedData);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.EncryptAndAuthenticate(key, data, nonce, authenticatedData); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::DecryptAndAuthenticate(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& nonce, Windows::Storage::Streams::IBuffer const& authenticationTag, Windows::Storage::Streams::IBuffer const& authenticatedData)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::Sign(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().Sign(key, data);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.Sign(key, data); });
 }
 
 inline bool CryptographicEngine::VerifySignature(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& signature)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().VerifySignature(key, data, signature);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.VerifySignature(key, data, signature); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::DeriveKeyMaterial(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Security::Cryptography::Core::KeyDerivationParameters const& parameters, uint32_t desiredKeySize)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>().DeriveKeyMaterial(key, parameters, desiredKeySize);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics>([&](auto&& f) { return f.DeriveKeyMaterial(key, parameters, desiredKeySize); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicEngine::SignHashedData(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>().SignHashedData(key, data);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>([&](auto&& f) { return f.SignHashedData(key, data); });
 }
 
 inline bool CryptographicEngine::VerifySignatureWithHashInput(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& signature)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>().VerifySignatureWithHashInput(key, data, signature);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>([&](auto&& f) { return f.VerifySignatureWithHashInput(key, data, signature); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::DecryptAsync(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data, Windows::Storage::Streams::IBuffer const& iv)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>().DecryptAsync(key, data, iv);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>([&](auto&& f) { return f.DecryptAsync(key, data, iv); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::SignAsync(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>().SignAsync(key, data);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>([&](auto&& f) { return f.SignAsync(key, data); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CryptographicEngine::SignHashedDataAsync(Windows::Security::Cryptography::Core::CryptographicKey const& key, Windows::Storage::Streams::IBuffer const& data)
 {
-    return get_activation_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>().SignHashedDataAsync(key, data);
+    return impl::call_factory<CryptographicEngine, Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>([&](auto&& f) { return f.SignHashedDataAsync(key, data); });
 }
 
 inline hstring EccCurveNames::BrainpoolP160r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP160r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP160r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP160t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP160t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP160t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP192r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP192r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP192r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP192t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP192t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP192t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP224r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP224r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP224r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP224t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP224t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP224t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP256r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP256r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP256r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP256t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP256t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP256t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP320r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP320r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP320r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP320t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP320t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP320t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP384r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP384r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP384r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP384t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP384t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP384t1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP512r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP512r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP512r1(); });
 }
 
 inline hstring EccCurveNames::BrainpoolP512t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().BrainpoolP512t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.BrainpoolP512t1(); });
 }
 
 inline hstring EccCurveNames::Curve25519()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().Curve25519();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.Curve25519(); });
 }
 
 inline hstring EccCurveNames::Ec192wapi()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().Ec192wapi();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.Ec192wapi(); });
 }
 
 inline hstring EccCurveNames::NistP192()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NistP192();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NistP192(); });
 }
 
 inline hstring EccCurveNames::NistP224()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NistP224();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NistP224(); });
 }
 
 inline hstring EccCurveNames::NistP256()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NistP256();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NistP256(); });
 }
 
 inline hstring EccCurveNames::NistP384()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NistP384();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NistP384(); });
 }
 
 inline hstring EccCurveNames::NistP521()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NistP521();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NistP521(); });
 }
 
 inline hstring EccCurveNames::NumsP256t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NumsP256t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NumsP256t1(); });
 }
 
 inline hstring EccCurveNames::NumsP384t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NumsP384t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NumsP384t1(); });
 }
 
 inline hstring EccCurveNames::NumsP512t1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().NumsP512t1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.NumsP512t1(); });
 }
 
 inline hstring EccCurveNames::SecP160k1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP160k1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP160k1(); });
 }
 
 inline hstring EccCurveNames::SecP160r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP160r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP160r1(); });
 }
 
 inline hstring EccCurveNames::SecP160r2()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP160r2();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP160r2(); });
 }
 
 inline hstring EccCurveNames::SecP192k1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP192k1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP192k1(); });
 }
 
 inline hstring EccCurveNames::SecP192r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP192r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP192r1(); });
 }
 
 inline hstring EccCurveNames::SecP224k1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP224k1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP224k1(); });
 }
 
 inline hstring EccCurveNames::SecP224r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP224r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP224r1(); });
 }
 
 inline hstring EccCurveNames::SecP256k1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP256k1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP256k1(); });
 }
 
 inline hstring EccCurveNames::SecP256r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP256r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP256r1(); });
 }
 
 inline hstring EccCurveNames::SecP384r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP384r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP384r1(); });
 }
 
 inline hstring EccCurveNames::SecP521r1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().SecP521r1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.SecP521r1(); });
 }
 
 inline hstring EccCurveNames::Wtls7()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().Wtls7();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.Wtls7(); });
 }
 
 inline hstring EccCurveNames::Wtls9()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().Wtls9();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.Wtls9(); });
 }
 
 inline hstring EccCurveNames::Wtls12()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().Wtls12();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.Wtls12(); });
 }
 
 inline hstring EccCurveNames::X962P192v1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P192v1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P192v1(); });
 }
 
 inline hstring EccCurveNames::X962P192v2()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P192v2();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P192v2(); });
 }
 
 inline hstring EccCurveNames::X962P192v3()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P192v3();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P192v3(); });
 }
 
 inline hstring EccCurveNames::X962P239v1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P239v1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P239v1(); });
 }
 
 inline hstring EccCurveNames::X962P239v2()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P239v2();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P239v2(); });
 }
 
 inline hstring EccCurveNames::X962P239v3()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P239v3();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P239v3(); });
 }
 
 inline hstring EccCurveNames::X962P256v1()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().X962P256v1();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.X962P256v1(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> EccCurveNames::AllEccCurveNames()
 {
-    return get_activation_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>().AllEccCurveNames();
+    return impl::call_factory<EccCurveNames, Windows::Security::Cryptography::Core::IEccCurveNamesStatics>([&](auto&& f) { return f.AllEccCurveNames(); });
 }
 
 inline hstring HashAlgorithmNames::Md5()
 {
-    return get_activation_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>().Md5();
+    return impl::call_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>([&](auto&& f) { return f.Md5(); });
 }
 
 inline hstring HashAlgorithmNames::Sha1()
 {
-    return get_activation_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>().Sha1();
+    return impl::call_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>([&](auto&& f) { return f.Sha1(); });
 }
 
 inline hstring HashAlgorithmNames::Sha256()
 {
-    return get_activation_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>().Sha256();
+    return impl::call_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>([&](auto&& f) { return f.Sha256(); });
 }
 
 inline hstring HashAlgorithmNames::Sha384()
 {
-    return get_activation_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>().Sha384();
+    return impl::call_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>([&](auto&& f) { return f.Sha384(); });
 }
 
 inline hstring HashAlgorithmNames::Sha512()
 {
-    return get_activation_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>().Sha512();
+    return impl::call_factory<HashAlgorithmNames, Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>([&](auto&& f) { return f.Sha512(); });
 }
 
 inline Windows::Security::Cryptography::Core::HashAlgorithmProvider HashAlgorithmProvider::OpenAlgorithm(param::hstring const& algorithm)
 {
-    return get_activation_factory<HashAlgorithmProvider, Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return impl::call_factory<HashAlgorithmProvider, Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics>([&](auto&& f) { return f.OpenAlgorithm(algorithm); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Md5()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Md5();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Pbkdf2Md5(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha1()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha1();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Pbkdf2Sha1(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha256()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha256();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Pbkdf2Sha256(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha384()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha384();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Pbkdf2Sha384(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Pbkdf2Sha512()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Pbkdf2Sha512();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Pbkdf2Sha512(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacMd5()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacMd5();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp800108CtrHmacMd5(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha1()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha1();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp800108CtrHmacSha1(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha256()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha256();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp800108CtrHmacSha256(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha384()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha384();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp800108CtrHmacSha384(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp800108CtrHmacSha512()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp800108CtrHmacSha512();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp800108CtrHmacSha512(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatMd5()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatMd5();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp80056aConcatMd5(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha1()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha1();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp80056aConcatSha1(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha256()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha256();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp80056aConcatSha256(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha384()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha384();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp80056aConcatSha384(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::Sp80056aConcatSha512()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>().Sp80056aConcatSha512();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>([&](auto&& f) { return f.Sp80056aConcatSha512(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfMd5()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>().CapiKdfMd5();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>([&](auto&& f) { return f.CapiKdfMd5(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha1()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha1();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>([&](auto&& f) { return f.CapiKdfSha1(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha256()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha256();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>([&](auto&& f) { return f.CapiKdfSha256(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha384()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha384();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>([&](auto&& f) { return f.CapiKdfSha384(); });
 }
 
 inline hstring KeyDerivationAlgorithmNames::CapiKdfSha512()
 {
-    return get_activation_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>().CapiKdfSha512();
+    return impl::call_factory<KeyDerivationAlgorithmNames, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>([&](auto&& f) { return f.CapiKdfSha512(); });
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider KeyDerivationAlgorithmProvider::OpenAlgorithm(param::hstring const& algorithm)
 {
-    return get_activation_factory<KeyDerivationAlgorithmProvider, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return impl::call_factory<KeyDerivationAlgorithmProvider, Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics>([&](auto&& f) { return f.OpenAlgorithm(algorithm); });
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForPbkdf2(Windows::Storage::Streams::IBuffer const& pbkdf2Salt, uint32_t iterationCount)
 {
-    return get_activation_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>().BuildForPbkdf2(pbkdf2Salt, iterationCount);
+    return impl::call_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>([&](auto&& f) { return f.BuildForPbkdf2(pbkdf2Salt, iterationCount); });
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForSP800108(Windows::Storage::Streams::IBuffer const& label, Windows::Storage::Streams::IBuffer const& context)
 {
-    return get_activation_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>().BuildForSP800108(label, context);
+    return impl::call_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>([&](auto&& f) { return f.BuildForSP800108(label, context); });
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForSP80056a(Windows::Storage::Streams::IBuffer const& algorithmId, Windows::Storage::Streams::IBuffer const& partyUInfo, Windows::Storage::Streams::IBuffer const& partyVInfo, Windows::Storage::Streams::IBuffer const& suppPubInfo, Windows::Storage::Streams::IBuffer const& suppPrivInfo)
 {
-    return get_activation_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>().BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo);
+    return impl::call_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>([&](auto&& f) { return f.BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo); });
 }
 
 inline Windows::Security::Cryptography::Core::KeyDerivationParameters KeyDerivationParameters::BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm const& capi1KdfTargetAlgorithm)
 {
-    return get_activation_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2>().BuildForCapi1Kdf(capi1KdfTargetAlgorithm);
+    return impl::call_factory<KeyDerivationParameters, Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2>([&](auto&& f) { return f.BuildForCapi1Kdf(capi1KdfTargetAlgorithm); });
 }
 
 inline hstring MacAlgorithmNames::HmacMd5()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().HmacMd5();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.HmacMd5(); });
 }
 
 inline hstring MacAlgorithmNames::HmacSha1()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().HmacSha1();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.HmacSha1(); });
 }
 
 inline hstring MacAlgorithmNames::HmacSha256()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().HmacSha256();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.HmacSha256(); });
 }
 
 inline hstring MacAlgorithmNames::HmacSha384()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().HmacSha384();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.HmacSha384(); });
 }
 
 inline hstring MacAlgorithmNames::HmacSha512()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().HmacSha512();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.HmacSha512(); });
 }
 
 inline hstring MacAlgorithmNames::AesCmac()
 {
-    return get_activation_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>().AesCmac();
+    return impl::call_factory<MacAlgorithmNames, Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>([&](auto&& f) { return f.AesCmac(); });
 }
 
 inline Windows::Security::Cryptography::Core::MacAlgorithmProvider MacAlgorithmProvider::OpenAlgorithm(param::hstring const& algorithm)
 {
-    return get_activation_factory<MacAlgorithmProvider, Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return impl::call_factory<MacAlgorithmProvider, Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics>([&](auto&& f) { return f.OpenAlgorithm(algorithm); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> PersistedKeyProvider::OpenKeyPairFromCertificateAsync(Windows::Security::Cryptography::Certificates::Certificate const& certificate, param::hstring const& hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding const& padding)
 {
-    return get_activation_factory<PersistedKeyProvider, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>().OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding);
+    return impl::call_factory<PersistedKeyProvider, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>([&](auto&& f) { return f.OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding); });
 }
 
 inline Windows::Security::Cryptography::Core::CryptographicKey PersistedKeyProvider::OpenPublicKeyFromCertificate(Windows::Security::Cryptography::Certificates::Certificate const& certificate, param::hstring const& hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding const& padding)
 {
-    return get_activation_factory<PersistedKeyProvider, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>().OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding);
+    return impl::call_factory<PersistedKeyProvider, Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>([&](auto&& f) { return f.OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding); });
 }
 
 inline hstring SymmetricAlgorithmNames::DesCbc()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().DesCbc();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DesCbc(); });
 }
 
 inline hstring SymmetricAlgorithmNames::DesEcb()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().DesEcb();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DesEcb(); });
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesCbc()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().TripleDesCbc();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.TripleDesCbc(); });
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesEcb()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().TripleDesEcb();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.TripleDesEcb(); });
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2Cbc()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().Rc2Cbc();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.Rc2Cbc(); });
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2Ecb()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().Rc2Ecb();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.Rc2Ecb(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesCbc()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesCbc();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesCbc(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesEcb()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesEcb();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesEcb(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesGcm()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesGcm();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesGcm(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesCcm()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesCcm();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesCcm(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesCbcPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesCbcPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesCbcPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::AesEcbPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().AesEcbPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.AesEcbPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::DesCbcPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().DesCbcPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DesCbcPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::DesEcbPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().DesEcbPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.DesEcbPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesCbcPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().TripleDesCbcPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.TripleDesCbcPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::TripleDesEcbPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().TripleDesEcbPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.TripleDesEcbPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2CbcPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().Rc2CbcPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.Rc2CbcPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::Rc2EcbPkcs7()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().Rc2EcbPkcs7();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.Rc2EcbPkcs7(); });
 }
 
 inline hstring SymmetricAlgorithmNames::Rc4()
 {
-    return get_activation_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>().Rc4();
+    return impl::call_factory<SymmetricAlgorithmNames, Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>([&](auto&& f) { return f.Rc4(); });
 }
 
 inline Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider SymmetricKeyAlgorithmProvider::OpenAlgorithm(param::hstring const& algorithm)
 {
-    return get_activation_factory<SymmetricKeyAlgorithmProvider, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics>().OpenAlgorithm(algorithm);
+    return impl::call_factory<SymmetricKeyAlgorithmProvider, Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics>([&](auto&& f) { return f.OpenAlgorithm(algorithm); });
 }
 
 }
@@ -4726,5 +4376,3 @@ template<> struct hash<winrt::Windows::Security::Cryptography::Core::SymmetricAl
 template<> struct hash<winrt::Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider> : winrt::impl::hash_base<winrt::Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider> {};
 
 }
-
-WINRT_WARNING_POP

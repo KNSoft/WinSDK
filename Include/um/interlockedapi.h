@@ -19,13 +19,6 @@
 #include <apisetcconv.h>
 #include <minwindef.h>
 
-/* APISET_NAME: api-ms-win-core-interlocked-l1 */
-/* APISET_TAG: public */
-
-
-
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -68,7 +61,6 @@ InterlockedPushEntrySList(
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
-
 #define InterlockedPushListSList InterlockedPushListSListEx
 
 WINBASEAPI
@@ -81,8 +73,6 @@ InterlockedPushListSListEx(
     _In_ ULONG Count
     );
 
-
- // !defined(_CONTRACT_GEN) || (_APISET_INTERLOCKED_VER > 0x0100)
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 

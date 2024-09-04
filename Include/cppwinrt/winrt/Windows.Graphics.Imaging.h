@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -31,9 +31,9 @@ template <typename D> Windows::Graphics::Imaging::BitmapPlaneDescription consume
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapCodecInformation<D>::CodecId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapCodecInformation<D>::CodecId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapCodecInformation)->get_CodecId(put_abi(value)));
     return value;
 }
@@ -94,51 +94,51 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
     return asyncInfo;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::BmpDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::BmpDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_BmpDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::JpegDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::JpegDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_JpegDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::PngDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::PngDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_PngDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::TiffDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::TiffDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_TiffDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::GifDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::GifDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_GifDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::JpegXRDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::JpegXRDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_JpegXRDecoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::IcoDecoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::IcoDecoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->get_IcoDecoderId(put_abi(value)));
     return value;
 }
@@ -157,11 +157,25 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::CreateAsync(GUID const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> consume_Windows_Graphics_Imaging_IBitmapDecoderStatics<D>::CreateAsync(winrt::guid const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> asyncInfo{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics)->CreateWithIdAsync(get_abi(decoderId), get_abi(stream), put_abi(asyncInfo)));
     return asyncInfo;
+}
+
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics2<D>::HeifDecoderId() const
+{
+    winrt::guid value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics2)->get_HeifDecoderId(put_abi(value)));
+    return value;
+}
+
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapDecoderStatics2<D>::WebpDecoderId() const
+{
+    winrt::guid value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapDecoderStatics2)->get_WebpDecoderId(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapCodecInformation consume_Windows_Graphics_Imaging_IBitmapEncoder<D>::EncoderInformation() const
@@ -254,44 +268,44 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Graphics
     return asyncInfo;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::BmpEncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::BmpEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_BmpEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::JpegEncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::JpegEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_JpegEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::PngEncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::PngEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_PngEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::TiffEncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::TiffEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_TiffEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::GifEncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::GifEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_GifEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::JpegXREncoderId() const
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::JpegXREncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->get_JpegXREncoderId(put_abi(value)));
     return value;
 }
@@ -303,14 +317,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gra
     return encoderInformationEnumerator;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->CreateAsync(get_abi(encoderId), get_abi(stream), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> consume_Windows_Graphics_Imaging_IBitmapEncoderStatics<D>::CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->CreateWithEncodingOptionsAsync(get_abi(encoderId), get_abi(stream), get_abi(encodingOptions), put_abi(asyncInfo)));
@@ -329,6 +343,13 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics)->CreateForInPlacePropertyEncodingAsync(get_abi(bitmapDecoder), put_abi(asyncInfo)));
     return asyncInfo;
+}
+
+template <typename D> winrt::guid consume_Windows_Graphics_Imaging_IBitmapEncoderStatics2<D>::HeifEncoderId() const
+{
+    winrt::guid value{};
+    check_hresult(WINRT_SHIM(Windows::Graphics::Imaging::IBitmapEncoderStatics2)->get_HeifEncoderId(put_abi(value)));
+    return value;
 }
 
 template <typename D> void consume_Windows_Graphics_Imaging_IBitmapEncoderWithSoftwareBitmap<D>::SetSoftwareBitmap(Windows::Graphics::Imaging::SoftwareBitmap const& bitmap) const
@@ -709,1560 +730,1398 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapBuffer> : produce_base<D, Windows::Graphics::Imaging::IBitmapBuffer>
 {
-    HRESULT __stdcall GetPlaneCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL GetPlaneCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPlaneCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().GetPlaneCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPlaneDescription(int32_t index, struct struct_Windows_Graphics_Imaging_BitmapPlaneDescription* value) noexcept final
+    int32_t WINRT_CALL GetPlaneDescription(int32_t index, struct struct_Windows_Graphics_Imaging_BitmapPlaneDescription* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPlaneDescription, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPlaneDescription), int32_t);
             *value = detach_from<Windows::Graphics::Imaging::BitmapPlaneDescription>(this->shim().GetPlaneDescription(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapCodecInformation> : produce_base<D, Windows::Graphics::Imaging::IBitmapCodecInformation>
 {
-    HRESULT __stdcall get_CodecId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_CodecId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().CodecId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CodecId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().CodecId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileExtensions(void** value) noexcept final
+    int32_t WINRT_CALL get_FileExtensions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileExtensions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().FileExtensions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FriendlyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FriendlyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FriendlyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FriendlyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MimeTypes(void** value) noexcept final
+    int32_t WINRT_CALL get_MimeTypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MimeTypes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().MimeTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapDecoder> : produce_base<D, Windows::Graphics::Imaging::IBitmapDecoder>
 {
-    HRESULT __stdcall get_BitmapContainerProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_BitmapContainerProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapContainerProperties, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPropertiesView));
             *value = detach_from<Windows::Graphics::Imaging::BitmapPropertiesView>(this->shim().BitmapContainerProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DecoderInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DecoderInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecoderInformation, WINRT_WRAP(Windows::Graphics::Imaging::BitmapCodecInformation));
             *value = detach_from<Windows::Graphics::Imaging::BitmapCodecInformation>(this->shim().DecoderInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrameCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_FrameCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().FrameCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPreviewAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetPreviewAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPreviewAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>>(this->shim().GetPreviewAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFrameAsync(uint32_t frameIndex, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetFrameAsync(uint32_t frameIndex, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFrameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapFrame>), uint32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapFrame>>(this->shim().GetFrameAsync(frameIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics> : produce_base<D, Windows::Graphics::Imaging::IBitmapDecoderStatics>
 {
-    HRESULT __stdcall get_BmpDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BmpDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BmpDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BmpDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BmpDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JpegDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_JpegDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().JpegDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(JpegDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().JpegDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PngDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_PngDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().PngDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PngDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().PngDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TiffDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TiffDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TiffDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TiffDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TiffDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GifDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GifDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GifDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GifDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GifDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JpegXRDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_JpegXRDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().JpegXRDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(JpegXRDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().JpegXRDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IcoDecoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_IcoDecoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().IcoDecoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IcoDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().IcoDecoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDecoderInformationEnumerator(void** decoderInformationEnumerator) noexcept final
+    int32_t WINRT_CALL GetDecoderInformationEnumerator(void** decoderInformationEnumerator) noexcept final
     {
         try
         {
             *decoderInformationEnumerator = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDecoderInformationEnumerator, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation>));
             *decoderInformationEnumerator = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation>>(this->shim().GetDecoderInformationEnumerator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAsync(void* stream, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateAsync(void* stream, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder>), Windows::Storage::Streams::IRandomAccessStream const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder>>(this->shim().CreateAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithIdAsync(GUID decoderId, void* stream, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateWithIdAsync(winrt::guid decoderId, void* stream, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder>>(this->shim().CreateAsync(*reinterpret_cast<GUID const*>(&decoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder>), winrt::guid const, Windows::Storage::Streams::IRandomAccessStream const);
+            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder>>(this->shim().CreateAsync(*reinterpret_cast<winrt::guid const*>(&decoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Imaging::IBitmapDecoderStatics2> : produce_base<D, Windows::Graphics::Imaging::IBitmapDecoderStatics2>
+{
+    int32_t WINRT_CALL get_HeifDecoderId(winrt::guid* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeifDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HeifDecoderId());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_WebpDecoderId(winrt::guid* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebpDecoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().WebpDecoderId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapEncoder> : produce_base<D, Windows::Graphics::Imaging::IBitmapEncoder>
 {
-    HRESULT __stdcall get_EncoderInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_EncoderInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncoderInformation, WINRT_WRAP(Windows::Graphics::Imaging::BitmapCodecInformation));
             *value = detach_from<Windows::Graphics::Imaging::BitmapCodecInformation>(this->shim().EncoderInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_BitmapProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapProperties, WINRT_WRAP(Windows::Graphics::Imaging::BitmapProperties));
             *value = detach_from<Windows::Graphics::Imaging::BitmapProperties>(this->shim().BitmapProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapContainerProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_BitmapContainerProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapContainerProperties, WINRT_WRAP(Windows::Graphics::Imaging::BitmapProperties));
             *value = detach_from<Windows::Graphics::Imaging::BitmapProperties>(this->shim().BitmapContainerProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsThumbnailGenerated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsThumbnailGenerated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsThumbnailGenerated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsThumbnailGenerated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsThumbnailGenerated(bool value) noexcept final
+    int32_t WINRT_CALL put_IsThumbnailGenerated(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsThumbnailGenerated, WINRT_WRAP(void), bool);
             this->shim().IsThumbnailGenerated(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GeneratedThumbnailWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_GeneratedThumbnailWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeneratedThumbnailWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().GeneratedThumbnailWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GeneratedThumbnailWidth(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_GeneratedThumbnailWidth(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeneratedThumbnailWidth, WINRT_WRAP(void), uint32_t);
             this->shim().GeneratedThumbnailWidth(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GeneratedThumbnailHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_GeneratedThumbnailHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeneratedThumbnailHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().GeneratedThumbnailHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GeneratedThumbnailHeight(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_GeneratedThumbnailHeight(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeneratedThumbnailHeight, WINRT_WRAP(void), uint32_t);
             this->shim().GeneratedThumbnailHeight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapTransform(void** value) noexcept final
+    int32_t WINRT_CALL get_BitmapTransform(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapTransform, WINRT_WRAP(Windows::Graphics::Imaging::BitmapTransform));
             *value = detach_from<Windows::Graphics::Imaging::BitmapTransform>(this->shim().BitmapTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, uint32_t __pixelsSize, uint8_t* pixels) noexcept final
+    int32_t WINRT_CALL SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, uint32_t __pixelsSize, uint8_t* pixels) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPixelData, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapPixelFormat const&, Windows::Graphics::Imaging::BitmapAlphaMode const&, uint32_t, uint32_t, double, double, array_view<uint8_t const>);
             this->shim().SetPixelData(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alphaMode), width, height, dpiX, dpiY, array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(pixels), reinterpret_cast<uint8_t const *>(pixels) + __pixelsSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GoToNextFrameAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GoToNextFrameAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GoToNextFrameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().GoToNextFrameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GoToNextFrameWithEncodingOptionsAsync(void* encodingOptions, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GoToNextFrameWithEncodingOptionsAsync(void* encodingOptions, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GoToNextFrameAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().GoToNextFrameAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const*>(&encodingOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FlushAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL FlushAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlushAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().FlushAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics> : produce_base<D, Windows::Graphics::Imaging::IBitmapEncoderStatics>
 {
-    HRESULT __stdcall get_BmpEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BmpEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BmpEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BmpEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BmpEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JpegEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_JpegEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().JpegEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(JpegEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().JpegEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PngEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_PngEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().PngEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PngEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().PngEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TiffEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TiffEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TiffEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TiffEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TiffEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GifEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_GifEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().GifEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GifEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().GifEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JpegXREncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_JpegXREncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().JpegXREncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(JpegXREncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().JpegXREncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEncoderInformationEnumerator(void** encoderInformationEnumerator) noexcept final
+    int32_t WINRT_CALL GetEncoderInformationEnumerator(void** encoderInformationEnumerator) noexcept final
     {
         try
         {
             *encoderInformationEnumerator = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEncoderInformationEnumerator, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation>));
             *encoderInformationEnumerator = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation>>(this->shim().GetEncoderInformationEnumerator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAsync(GUID encoderId, void* stream, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateAsync(winrt::guid encoderId, void* stream, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateAsync(*reinterpret_cast<GUID const*>(&encoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>), winrt::guid const, Windows::Storage::Streams::IRandomAccessStream const);
+            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateAsync(*reinterpret_cast<winrt::guid const*>(&encoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithEncodingOptionsAsync(GUID encoderId, void* stream, void* encodingOptions, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateWithEncodingOptionsAsync(winrt::guid encoderId, void* stream, void* encodingOptions, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
-            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateAsync(*reinterpret_cast<GUID const*>(&encoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const*>(&encodingOptions)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>), winrt::guid const, Windows::Storage::Streams::IRandomAccessStream const, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const);
+            *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateAsync(*reinterpret_cast<winrt::guid const*>(&encoderId), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const*>(&encodingOptions)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateForTranscodingAsync(void* stream, void* bitmapDecoder, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateForTranscodingAsync(void* stream, void* bitmapDecoder, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForTranscodingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>), Windows::Storage::Streams::IRandomAccessStream const, Windows::Graphics::Imaging::BitmapDecoder const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateForTranscodingAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream), *reinterpret_cast<Windows::Graphics::Imaging::BitmapDecoder const*>(&bitmapDecoder)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateForInPlacePropertyEncodingAsync(void* bitmapDecoder, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL CreateForInPlacePropertyEncodingAsync(void* bitmapDecoder, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForInPlacePropertyEncodingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>), Windows::Graphics::Imaging::BitmapDecoder const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder>>(this->shim().CreateForInPlacePropertyEncodingAsync(*reinterpret_cast<Windows::Graphics::Imaging::BitmapDecoder const*>(&bitmapDecoder)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderStatics2> : produce_base<D, Windows::Graphics::Imaging::IBitmapEncoderStatics2>
+{
+    int32_t WINRT_CALL get_HeifEncoderId(winrt::guid* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeifEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().HeifEncoderId());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap> : produce_base<D, Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap>
 {
-    HRESULT __stdcall SetSoftwareBitmap(void* bitmap) noexcept final
+    int32_t WINRT_CALL SetSoftwareBitmap(void* bitmap) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetSoftwareBitmap, WINRT_WRAP(void), Windows::Graphics::Imaging::SoftwareBitmap const&);
             this->shim().SetSoftwareBitmap(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&bitmap));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapFrame> : produce_base<D, Windows::Graphics::Imaging::IBitmapFrame>
 {
-    HRESULT __stdcall GetThumbnailAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetThumbnailAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream>>(this->shim().GetThumbnailAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_BitmapProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapProperties, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPropertiesView));
             *value = detach_from<Windows::Graphics::Imaging::BitmapPropertiesView>(this->shim().BitmapProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapPixelFormat, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPixelFormat));
             *value = detach_from<Windows::Graphics::Imaging::BitmapPixelFormat>(this->shim().BitmapPixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapAlphaMode(Windows::Graphics::Imaging::BitmapAlphaMode* value) noexcept final
+    int32_t WINRT_CALL get_BitmapAlphaMode(Windows::Graphics::Imaging::BitmapAlphaMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapAlphaMode, WINRT_WRAP(Windows::Graphics::Imaging::BitmapAlphaMode));
             *value = detach_from<Windows::Graphics::Imaging::BitmapAlphaMode>(this->shim().BitmapAlphaMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DpiX(double* value) noexcept final
+    int32_t WINRT_CALL get_DpiX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DpiX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DpiY(double* value) noexcept final
+    int32_t WINRT_CALL get_DpiY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DpiY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PixelWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PixelWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PixelHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PixelHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OrientedPixelWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_OrientedPixelWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OrientedPixelWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().OrientedPixelWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OrientedPixelHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_OrientedPixelHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OrientedPixelHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().OrientedPixelHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPixelDataAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetPixelDataAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPixelDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider>>(this->shim().GetPixelDataAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPixelDataTransformedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void* transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetPixelDataTransformedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void* transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPixelDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider>), Windows::Graphics::Imaging::BitmapPixelFormat const, Windows::Graphics::Imaging::BitmapAlphaMode const, Windows::Graphics::Imaging::BitmapTransform const, Windows::Graphics::Imaging::ExifOrientationMode const, Windows::Graphics::Imaging::ColorManagementMode const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider>>(this->shim().GetPixelDataAsync(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alphaMode), *reinterpret_cast<Windows::Graphics::Imaging::BitmapTransform const*>(&transform), *reinterpret_cast<Windows::Graphics::Imaging::ExifOrientationMode const*>(&exifOrientationMode), *reinterpret_cast<Windows::Graphics::Imaging::ColorManagementMode const*>(&colorManagementMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : produce_base<D, Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap>
 {
-    HRESULT __stdcall GetSoftwareBitmapAsync(void** value) noexcept final
+    int32_t WINRT_CALL GetSoftwareBitmapAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSoftwareBitmapAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>>(this->shim().GetSoftwareBitmapAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSoftwareBitmapConvertedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void** value) noexcept final
+    int32_t WINRT_CALL GetSoftwareBitmapConvertedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSoftwareBitmapAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>), Windows::Graphics::Imaging::BitmapPixelFormat const, Windows::Graphics::Imaging::BitmapAlphaMode const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>>(this->shim().GetSoftwareBitmapAsync(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alphaMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSoftwareBitmapTransformedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void* transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, void** value) noexcept final
+    int32_t WINRT_CALL GetSoftwareBitmapTransformedAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, void* transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSoftwareBitmapAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>), Windows::Graphics::Imaging::BitmapPixelFormat const, Windows::Graphics::Imaging::BitmapAlphaMode const, Windows::Graphics::Imaging::BitmapTransform const, Windows::Graphics::Imaging::ExifOrientationMode const, Windows::Graphics::Imaging::ColorManagementMode const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>>(this->shim().GetSoftwareBitmapAsync(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&pixelFormat), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alphaMode), *reinterpret_cast<Windows::Graphics::Imaging::BitmapTransform const*>(&transform), *reinterpret_cast<Windows::Graphics::Imaging::ExifOrientationMode const*>(&exifOrientationMode), *reinterpret_cast<Windows::Graphics::Imaging::ColorManagementMode const*>(&colorManagementMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapProperties> : produce_base<D, Windows::Graphics::Imaging::IBitmapProperties>
 {
-    HRESULT __stdcall SetPropertiesAsync(void* propertiesToSet, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetPropertiesAsync(void* propertiesToSet, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPropertiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetPropertiesAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const*>(&propertiesToSet)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapPropertiesView> : produce_base<D, Windows::Graphics::Imaging::IBitmapPropertiesView>
 {
-    HRESULT __stdcall GetPropertiesAsync(void* propertiesToRetrieve, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetPropertiesAsync(void* propertiesToRetrieve, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPropertiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet>), Windows::Foundation::Collections::IIterable<hstring> const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet>>(this->shim().GetPropertiesAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&propertiesToRetrieve)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapTransform> : produce_base<D, Windows::Graphics::Imaging::IBitmapTransform>
 {
-    HRESULT __stdcall get_ScaledWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ScaledWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ScaledWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaledWidth(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_ScaledWidth(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledWidth, WINRT_WRAP(void), uint32_t);
             this->shim().ScaledWidth(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaledHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ScaledHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ScaledHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaledHeight(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_ScaledHeight(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaledHeight, WINRT_WRAP(void), uint32_t);
             this->shim().ScaledHeight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InterpolationMode(Windows::Graphics::Imaging::BitmapInterpolationMode* value) noexcept final
+    int32_t WINRT_CALL get_InterpolationMode(Windows::Graphics::Imaging::BitmapInterpolationMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationMode, WINRT_WRAP(Windows::Graphics::Imaging::BitmapInterpolationMode));
             *value = detach_from<Windows::Graphics::Imaging::BitmapInterpolationMode>(this->shim().InterpolationMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InterpolationMode(Windows::Graphics::Imaging::BitmapInterpolationMode value) noexcept final
+    int32_t WINRT_CALL put_InterpolationMode(Windows::Graphics::Imaging::BitmapInterpolationMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InterpolationMode, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapInterpolationMode const&);
             this->shim().InterpolationMode(*reinterpret_cast<Windows::Graphics::Imaging::BitmapInterpolationMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Flip(Windows::Graphics::Imaging::BitmapFlip* value) noexcept final
+    int32_t WINRT_CALL get_Flip(Windows::Graphics::Imaging::BitmapFlip* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flip, WINRT_WRAP(Windows::Graphics::Imaging::BitmapFlip));
             *value = detach_from<Windows::Graphics::Imaging::BitmapFlip>(this->shim().Flip());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Flip(Windows::Graphics::Imaging::BitmapFlip value) noexcept final
+    int32_t WINRT_CALL put_Flip(Windows::Graphics::Imaging::BitmapFlip value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flip, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapFlip const&);
             this->shim().Flip(*reinterpret_cast<Windows::Graphics::Imaging::BitmapFlip const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rotation(Windows::Graphics::Imaging::BitmapRotation* value) noexcept final
+    int32_t WINRT_CALL get_Rotation(Windows::Graphics::Imaging::BitmapRotation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(Windows::Graphics::Imaging::BitmapRotation));
             *value = detach_from<Windows::Graphics::Imaging::BitmapRotation>(this->shim().Rotation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rotation(Windows::Graphics::Imaging::BitmapRotation value) noexcept final
+    int32_t WINRT_CALL put_Rotation(Windows::Graphics::Imaging::BitmapRotation value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapRotation const&);
             this->shim().Rotation(*reinterpret_cast<Windows::Graphics::Imaging::BitmapRotation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bounds(struct struct_Windows_Graphics_Imaging_BitmapBounds* value) noexcept final
+    int32_t WINRT_CALL get_Bounds(struct struct_Windows_Graphics_Imaging_BitmapBounds* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(Windows::Graphics::Imaging::BitmapBounds));
             *value = detach_from<Windows::Graphics::Imaging::BitmapBounds>(this->shim().Bounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Bounds(struct struct_Windows_Graphics_Imaging_BitmapBounds value) noexcept final
+    int32_t WINRT_CALL put_Bounds(struct struct_Windows_Graphics_Imaging_BitmapBounds value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(void), Windows::Graphics::Imaging::BitmapBounds const&);
             this->shim().Bounds(*reinterpret_cast<Windows::Graphics::Imaging::BitmapBounds const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValue> : produce_base<D, Windows::Graphics::Imaging::IBitmapTypedValue>
 {
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(Windows::Foundation::PropertyType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Foundation::PropertyType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Foundation::PropertyType));
             *value = detach_from<Windows::Foundation::PropertyType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory> : produce_base<D, Windows::Graphics::Imaging::IBitmapTypedValueFactory>
 {
-    HRESULT __stdcall Create(void* value, Windows::Foundation::PropertyType type, void** bitmapTypedValue) noexcept final
+    int32_t WINRT_CALL Create(void* value, Windows::Foundation::PropertyType type, void** bitmapTypedValue) noexcept final
     {
         try
         {
             *bitmapTypedValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Graphics::Imaging::BitmapTypedValue), Windows::Foundation::IInspectable const&, Windows::Foundation::PropertyType const&);
             *bitmapTypedValue = detach_from<Windows::Graphics::Imaging::BitmapTypedValue>(this->shim().Create(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value), *reinterpret_cast<Windows::Foundation::PropertyType const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::IPixelDataProvider> : produce_base<D, Windows::Graphics::Imaging::IPixelDataProvider>
 {
-    HRESULT __stdcall DetachPixelData(uint32_t* __pixelDataSize, uint8_t** pixelData) noexcept final
+    int32_t WINRT_CALL DetachPixelData(uint32_t* __pixelDataSize, uint8_t** pixelData) noexcept final
     {
         try
         {
             *__pixelDataSize = 0;
             *pixelData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DetachPixelData, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__pixelDataSize, *pixelData) = detach_abi(this->shim().DetachPixelData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmap> : produce_base<D, Windows::Graphics::Imaging::ISoftwareBitmap>
 {
-    HRESULT __stdcall get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapPixelFormat, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPixelFormat));
             *value = detach_from<Windows::Graphics::Imaging::BitmapPixelFormat>(this->shim().BitmapPixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapAlphaMode(Windows::Graphics::Imaging::BitmapAlphaMode* value) noexcept final
+    int32_t WINRT_CALL get_BitmapAlphaMode(Windows::Graphics::Imaging::BitmapAlphaMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapAlphaMode, WINRT_WRAP(Windows::Graphics::Imaging::BitmapAlphaMode));
             *value = detach_from<Windows::Graphics::Imaging::BitmapAlphaMode>(this->shim().BitmapAlphaMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelWidth(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PixelWidth(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelWidth, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PixelWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelHeight(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PixelHeight(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelHeight, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PixelHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsReadOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsReadOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsReadOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsReadOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DpiX(double value) noexcept final
+    int32_t WINRT_CALL put_DpiX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiX, WINRT_WRAP(void), double);
             this->shim().DpiX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DpiX(double* value) noexcept final
+    int32_t WINRT_CALL get_DpiX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DpiX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DpiY(double value) noexcept final
+    int32_t WINRT_CALL put_DpiY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiY, WINRT_WRAP(void), double);
             this->shim().DpiY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DpiY(double* value) noexcept final
+    int32_t WINRT_CALL get_DpiY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DpiY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DpiY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LockBuffer(Windows::Graphics::Imaging::BitmapBufferAccessMode mode, void** value) noexcept final
+    int32_t WINRT_CALL LockBuffer(Windows::Graphics::Imaging::BitmapBufferAccessMode mode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockBuffer, WINRT_WRAP(Windows::Graphics::Imaging::BitmapBuffer), Windows::Graphics::Imaging::BitmapBufferAccessMode const&);
             *value = detach_from<Windows::Graphics::Imaging::BitmapBuffer>(this->shim().LockBuffer(*reinterpret_cast<Windows::Graphics::Imaging::BitmapBufferAccessMode const*>(&mode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyTo(void* bitmap) noexcept final
+    int32_t WINRT_CALL CopyTo(void* bitmap) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyTo, WINRT_WRAP(void), Windows::Graphics::Imaging::SoftwareBitmap const&);
             this->shim().CopyTo(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&bitmap));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyFromBuffer(void* buffer) noexcept final
+    int32_t WINRT_CALL CopyFromBuffer(void* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyFromBuffer, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().CopyFromBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyToBuffer(void* buffer) noexcept final
+    int32_t WINRT_CALL CopyToBuffer(void* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyToBuffer, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().CopyToBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetReadOnlyView(void** value) noexcept final
+    int32_t WINRT_CALL GetReadOnlyView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetReadOnlyView, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap));
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().GetReadOnlyView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory> : produce_base<D, Windows::Graphics::Imaging::ISoftwareBitmapFactory>
 {
-    HRESULT __stdcall Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
+    int32_t WINRT_CALL Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().Create(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithAlpha, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t, Windows::Graphics::Imaging::BitmapAlphaMode const&);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().CreateWithAlpha(*reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height, *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alpha)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_base<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics>
 {
-    HRESULT __stdcall Copy(void* source, void** value) noexcept final
+    int32_t WINRT_CALL Copy(void* source, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Graphics::Imaging::SoftwareBitmap const&);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().Copy(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&source)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Convert(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, void** value) noexcept final
+    int32_t WINRT_CALL Convert(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Convert, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Graphics::Imaging::SoftwareBitmap const&, Windows::Graphics::Imaging::BitmapPixelFormat const&);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().Convert(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&source), *reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertWithAlpha(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
+    int32_t WINRT_CALL ConvertWithAlpha(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Convert, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Graphics::Imaging::SoftwareBitmap const&, Windows::Graphics::Imaging::BitmapPixelFormat const&, Windows::Graphics::Imaging::BitmapAlphaMode const&);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().Convert(*reinterpret_cast<Windows::Graphics::Imaging::SoftwareBitmap const*>(&source), *reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alpha)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCopyFromBuffer(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
+    int32_t WINRT_CALL CreateCopyFromBuffer(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCopyFromBuffer, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Storage::Streams::IBuffer const&, Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().CreateCopyFromBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&source), *reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCopyWithAlphaFromBuffer(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
+    int32_t WINRT_CALL CreateCopyWithAlphaFromBuffer(void* source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCopyFromBuffer, WINRT_WRAP(Windows::Graphics::Imaging::SoftwareBitmap), Windows::Storage::Streams::IBuffer const&, Windows::Graphics::Imaging::BitmapPixelFormat const&, int32_t, int32_t, Windows::Graphics::Imaging::BitmapAlphaMode const&);
             *value = detach_from<Windows::Graphics::Imaging::SoftwareBitmap>(this->shim().CreateCopyFromBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&source), *reinterpret_cast<Windows::Graphics::Imaging::BitmapPixelFormat const*>(&format), width, height, *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alpha)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCopyFromSurfaceAsync(void* surface, void** value) noexcept final
+    int32_t WINRT_CALL CreateCopyFromSurfaceAsync(void* surface, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCopyFromSurfaceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>>(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCopyWithAlphaFromSurfaceAsync(void* surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
+    int32_t WINRT_CALL CreateCopyWithAlphaFromSurfaceAsync(void* surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCopyFromSurfaceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const, Windows::Graphics::Imaging::BitmapAlphaMode const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap>>(this->shim().CreateCopyFromSurfaceAsync(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&surface), *reinterpret_cast<Windows::Graphics::Imaging::BitmapAlphaMode const*>(&alpha)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2270,164 +2129,179 @@ struct produce<D, Windows::Graphics::Imaging::ISoftwareBitmapStatics> : produce_
 
 WINRT_EXPORT namespace winrt::Windows::Graphics::Imaging {
 
-inline GUID BitmapDecoder::BmpDecoderId()
+inline winrt::guid BitmapDecoder::BmpDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().BmpDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.BmpDecoderId(); });
 }
 
-inline GUID BitmapDecoder::JpegDecoderId()
+inline winrt::guid BitmapDecoder::JpegDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().JpegDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.JpegDecoderId(); });
 }
 
-inline GUID BitmapDecoder::PngDecoderId()
+inline winrt::guid BitmapDecoder::PngDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().PngDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.PngDecoderId(); });
 }
 
-inline GUID BitmapDecoder::TiffDecoderId()
+inline winrt::guid BitmapDecoder::TiffDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().TiffDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.TiffDecoderId(); });
 }
 
-inline GUID BitmapDecoder::GifDecoderId()
+inline winrt::guid BitmapDecoder::GifDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().GifDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.GifDecoderId(); });
 }
 
-inline GUID BitmapDecoder::JpegXRDecoderId()
+inline winrt::guid BitmapDecoder::JpegXRDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().JpegXRDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.JpegXRDecoderId(); });
 }
 
-inline GUID BitmapDecoder::IcoDecoderId()
+inline winrt::guid BitmapDecoder::IcoDecoderId()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().IcoDecoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.IcoDecoderId(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> BitmapDecoder::GetDecoderInformationEnumerator()
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().GetDecoderInformationEnumerator();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.GetDecoderInformationEnumerator(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> BitmapDecoder::CreateAsync(Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().CreateAsync(stream);
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.CreateAsync(stream); });
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> BitmapDecoder::CreateAsync(GUID const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream)
+inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> BitmapDecoder::CreateAsync(winrt::guid const& decoderId, Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>().CreateAsync(decoderId, stream);
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics>([&](auto&& f) { return f.CreateAsync(decoderId, stream); });
 }
 
-inline GUID BitmapEncoder::BmpEncoderId()
+inline winrt::guid BitmapDecoder::HeifDecoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().BmpEncoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics2>([&](auto&& f) { return f.HeifDecoderId(); });
 }
 
-inline GUID BitmapEncoder::JpegEncoderId()
+inline winrt::guid BitmapDecoder::WebpDecoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().JpegEncoderId();
+    return impl::call_factory<BitmapDecoder, Windows::Graphics::Imaging::IBitmapDecoderStatics2>([&](auto&& f) { return f.WebpDecoderId(); });
 }
 
-inline GUID BitmapEncoder::PngEncoderId()
+inline winrt::guid BitmapEncoder::BmpEncoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().PngEncoderId();
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.BmpEncoderId(); });
 }
 
-inline GUID BitmapEncoder::TiffEncoderId()
+inline winrt::guid BitmapEncoder::JpegEncoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().TiffEncoderId();
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.JpegEncoderId(); });
 }
 
-inline GUID BitmapEncoder::GifEncoderId()
+inline winrt::guid BitmapEncoder::PngEncoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().GifEncoderId();
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.PngEncoderId(); });
 }
 
-inline GUID BitmapEncoder::JpegXREncoderId()
+inline winrt::guid BitmapEncoder::TiffEncoderId()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().JpegXREncoderId();
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.TiffEncoderId(); });
+}
+
+inline winrt::guid BitmapEncoder::GifEncoderId()
+{
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.GifEncoderId(); });
+}
+
+inline winrt::guid BitmapEncoder::JpegXREncoderId()
+{
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.JpegXREncoderId(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> BitmapEncoder::GetEncoderInformationEnumerator()
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().GetEncoderInformationEnumerator();
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.GetEncoderInformationEnumerator(); });
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream)
+inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().CreateAsync(encoderId, stream);
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.CreateAsync(encoderId, stream); });
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions)
+inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(winrt::guid const& encoderId, Windows::Storage::Streams::IRandomAccessStream const& stream, param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> const& encodingOptions)
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().CreateAsync(encoderId, stream, encodingOptions);
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.CreateAsync(encoderId, stream, encodingOptions); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateForTranscodingAsync(Windows::Storage::Streams::IRandomAccessStream const& stream, Windows::Graphics::Imaging::BitmapDecoder const& bitmapDecoder)
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().CreateForTranscodingAsync(stream, bitmapDecoder);
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.CreateForTranscodingAsync(stream, bitmapDecoder); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateForInPlacePropertyEncodingAsync(Windows::Graphics::Imaging::BitmapDecoder const& bitmapDecoder)
 {
-    return get_activation_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>().CreateForInPlacePropertyEncodingAsync(bitmapDecoder);
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics>([&](auto&& f) { return f.CreateForInPlacePropertyEncodingAsync(bitmapDecoder); });
+}
+
+inline winrt::guid BitmapEncoder::HeifEncoderId()
+{
+    return impl::call_factory<BitmapEncoder, Windows::Graphics::Imaging::IBitmapEncoderStatics2>([&](auto&& f) { return f.HeifEncoderId(); });
 }
 
 inline BitmapPropertySet::BitmapPropertySet() :
-    BitmapPropertySet(get_activation_factory<BitmapPropertySet>().ActivateInstance<BitmapPropertySet>())
+    BitmapPropertySet(impl::call_factory<BitmapPropertySet>([](auto&& f) { return f.template ActivateInstance<BitmapPropertySet>(); }))
 {}
 
 inline BitmapTransform::BitmapTransform() :
-    BitmapTransform(get_activation_factory<BitmapTransform>().ActivateInstance<BitmapTransform>())
+    BitmapTransform(impl::call_factory<BitmapTransform>([](auto&& f) { return f.template ActivateInstance<BitmapTransform>(); }))
 {}
 
 inline BitmapTypedValue::BitmapTypedValue(Windows::Foundation::IInspectable const& value, Windows::Foundation::PropertyType const& type) :
-    BitmapTypedValue(get_activation_factory<BitmapTypedValue, Windows::Graphics::Imaging::IBitmapTypedValueFactory>().Create(value, type))
+    BitmapTypedValue(impl::call_factory<BitmapTypedValue, Windows::Graphics::Imaging::IBitmapTypedValueFactory>([&](auto&& f) { return f.Create(value, type); }))
 {}
 
 inline SoftwareBitmap::SoftwareBitmap(Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height) :
-    SoftwareBitmap(get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapFactory>().Create(format, width, height))
+    SoftwareBitmap(impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapFactory>([&](auto&& f) { return f.Create(format, width, height); }))
 {}
 
 inline SoftwareBitmap::SoftwareBitmap(Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode const& alpha) :
-    SoftwareBitmap(get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapFactory>().CreateWithAlpha(format, width, height, alpha))
+    SoftwareBitmap(impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapFactory>([&](auto&& f) { return f.CreateWithAlpha(format, width, height, alpha); }))
 {}
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Copy(Windows::Graphics::Imaging::SoftwareBitmap const& source)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().Copy(source);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.Copy(source); });
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Convert(Windows::Graphics::Imaging::SoftwareBitmap const& source, Windows::Graphics::Imaging::BitmapPixelFormat const& format)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().Convert(source, format);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.Convert(source, format); });
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::Convert(Windows::Graphics::Imaging::SoftwareBitmap const& source, Windows::Graphics::Imaging::BitmapPixelFormat const& format, Windows::Graphics::Imaging::BitmapAlphaMode const& alpha)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().Convert(source, format, alpha);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.Convert(source, format, alpha); });
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::CreateCopyFromBuffer(Windows::Storage::Streams::IBuffer const& source, Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.CreateCopyFromBuffer(source, format, width, height); });
 }
 
 inline Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap::CreateCopyFromBuffer(Windows::Storage::Streams::IBuffer const& source, Windows::Graphics::Imaging::BitmapPixelFormat const& format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode const& alpha)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().CreateCopyFromBuffer(source, format, width, height, alpha);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.CreateCopyFromBuffer(source, format, width, height, alpha); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> SoftwareBitmap::CreateCopyFromSurfaceAsync(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const& surface)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.CreateCopyFromSurfaceAsync(surface); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> SoftwareBitmap::CreateCopyFromSurfaceAsync(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const& surface, Windows::Graphics::Imaging::BitmapAlphaMode const& alpha)
 {
-    return get_activation_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>().CreateCopyFromSurfaceAsync(surface, alpha);
+    return impl::call_factory<SoftwareBitmap, Windows::Graphics::Imaging::ISoftwareBitmapStatics>([&](auto&& f) { return f.CreateCopyFromSurfaceAsync(surface, alpha); });
 }
 
 }
@@ -2438,8 +2312,10 @@ template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapBuffer> : winrt
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapCodecInformation> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapCodecInformation> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapDecoder> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapDecoder> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics> {};
+template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics2> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics2> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapEncoder> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapEncoder> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics> {};
+template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics2> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics2> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapFrame> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapFrame> {};
 template<> struct hash<winrt::Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap> {};
@@ -2467,5 +2343,3 @@ template<> struct hash<winrt::Windows::Graphics::Imaging::PixelDataProvider> : w
 template<> struct hash<winrt::Windows::Graphics::Imaging::SoftwareBitmap> : winrt::impl::hash_base<winrt::Windows::Graphics::Imaging::SoftwareBitmap> {};
 
 }
-
-WINRT_WARNING_POP

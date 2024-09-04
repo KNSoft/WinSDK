@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.markup.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -388,6 +400,22 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    interface IXamlBindScopeDiagnostics;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Markup */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics ABI::Windows::UI::Xaml::Markup::IXamlBindScopeDiagnostics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper_FWD_DEFINED__
 namespace ABI {
@@ -531,6 +559,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType ABI::Windows::UI::Xaml::Markup::IXamlType
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    interface IXamlType2;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Markup */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 ABI::Windows::UI::Xaml::Markup::IXamlType2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -889,6 +933,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -1079,7 +1125,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE GetBindingConnector(
                             /* [in] */INT32 connectionId,
                             /* [in] */__RPC__in_opt IInspectable * target,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IComponentConnector * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IComponentConnector * * result
                             ) = 0;
                         
                     };
@@ -1206,9 +1252,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IMarkupExtension * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IMarkupExtension * * value
                             ) = 0;
                         
                     };
@@ -1251,7 +1297,7 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE ProvideValue(
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -1337,7 +1383,7 @@ namespace ABI {
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * inputStreams,
                             /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * outputStreams,
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Markup::IXamlMetadataProvider * xamlMetadataProvider,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation * result
                             ) = 0;
                         
                     };
@@ -1352,6 +1398,47 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlBindScopeDiagnostics[] = L"Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    /* [object, uuid("F264A29D-BDED-43AA-A5B0-26AC21A81EB8"), contract] */
+                    MIDL_INTERFACE("F264A29D-BDED-43AA-A5B0-26AC21A81EB8")
+                    IXamlBindScopeDiagnostics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE Disable(
+                            /* [in] */INT32 lineNumber,
+                            /* [in] */INT32 columnNumber
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlBindScopeDiagnostics=_uuidof(IXamlBindScopeDiagnostics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Markup */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1424,7 +1511,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetDataTemplateComponent(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IDataTemplateComponent * * value
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IDataTemplateComponent * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetDataTemplateComponent(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -1439,7 +1526,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE ConvertValue(
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName type,
                             /* [in] */__RPC__in_opt IInspectable * value,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetPropertyFromString(
                             /* [in] */__RPC__in_opt IInspectable * dependencyObject,
@@ -1666,7 +1753,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetValue(
                             /* [in] */__RPC__in_opt IInspectable * instance,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetValue(
                             /* [in] */__RPC__in_opt IInspectable * instance,
@@ -1711,15 +1798,15 @@ namespace ABI {
                     public:
                         /* [overload, default_overload] */virtual HRESULT STDMETHODCALLTYPE GetXamlType(
                             /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName type,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * xamlType
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetXamlTypeByFullName(
                             /* [in] */__RPC__in HSTRING fullName,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * xamlType
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetXmlnsDefinitions(
-                            /* [out] */__RPC__out UINT32 * __definitionsSize,
-                            /* [size_is(, *(__definitionsSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__definitionsSize)) ABI::Windows::UI::Xaml::Markup::XmlnsDefinition * * definitions
+                            /* [out] */__RPC__out UINT32 * __resultSize,
+                            /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Markup::XmlnsDefinition * * result
                             ) = 0;
                         
                     };
@@ -1803,11 +1890,11 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE Load(
                             /* [in] */__RPC__in HSTRING xaml,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE LoadWithInitialTemplateValidation(
                             /* [in] */__RPC__in HSTRING xaml,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -1883,15 +1970,15 @@ namespace ABI {
                             /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE ActivateInstance(
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * instance
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE CreateFromString(
                             /* [in] */__RPC__in HSTRING value,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * instance
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetMember(
                             /* [in] */__RPC__in HSTRING name,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlMember * * xamlMember
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlMember * * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE AddToVector(
                             /* [in] */__RPC__in_opt IInspectable * instance,
@@ -1916,6 +2003,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Markup.IXamlType2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Xaml.Markup.IXamlType
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlType2[] = L"Windows.UI.Xaml.Markup.IXamlType2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Markup {
+                    /* [object, uuid("9F0C6E3B-433B-56AD-8F69-78A4DD3E64F9"), contract] */
+                    MIDL_INTERFACE("9F0C6E3B-433B-56AD-8F69-78A4DD3E64F9")
+                    IXamlType2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BoxedType(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Markup::IXamlType * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlType2=_uuidof(IXamlType2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Markup */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2104,6 +2235,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics _
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelper;
@@ -2157,6 +2294,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics __x_ABI
 typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -2680,6 +2823,8 @@ typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CXmlnsDefinition __x_ABI_CWind
 
 
 
+
+
 /*
  *
  * Struct Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation
@@ -2860,7 +3005,7 @@ HRESULT ( STDMETHODCALLTYPE *GetBindingConnector )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector2 * This,
         /* [in] */INT32 connectionId,
         /* [in] */__RPC__in_opt IInspectable * target,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector * * result
         );
     END_INTERFACE
     
@@ -2890,8 +3035,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector2
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector2_GetBindingConnector(This,connectionId,target,returnValue) \
-    ( (This)->lpVtbl->GetBindingConnector(This,connectionId,target,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIComponentConnector2_GetBindingConnector(This,connectionId,target,result) \
+    ( (This)->lpVtbl->GetBindingConnector(This,connectionId,target,result) )
 
 
 #endif /* COBJMACROS */
@@ -3138,9 +3283,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtension * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtension * * value
         );
     END_INTERFACE
     
@@ -3170,8 +3315,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -3233,7 +3378,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *ProvideValue )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -3263,8 +3408,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionOverrides
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionOverrides_ProvideValue(This,returnValue) \
-    ( (This)->lpVtbl->ProvideValue(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIMarkupExtensionOverrides_ProvideValue(This,result) \
+    ( (This)->lpVtbl->ProvideValue(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -3415,7 +3560,7 @@ HRESULT ( STDMETHODCALLTYPE *Write )(
         /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * inputStreams,
         /* [in] */__RPC__in_opt __FIVector_1_Windows__CStorage__CStreams__CIRandomAccessStream * outputStreams,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider * xamlMetadataProvider,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMarkup_CXamlBinaryWriterErrorInformation * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CMarkup_CXamlBinaryWriterErrorInformation * result
         );
     END_INTERFACE
     
@@ -3445,8 +3590,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_Write(This,inputStreams,outputStreams,xamlMetadataProvider,returnValue) \
-    ( (This)->lpVtbl->Write(This,inputStreams,outputStreams,xamlMetadataProvider,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_Write(This,inputStreams,outputStreams,xamlMetadataProvider,result) \
+    ( (This)->lpVtbl->Write(This,inputStreams,outputStreams,xamlMetadataProvider,result) )
 
 
 #endif /* COBJMACROS */
@@ -3455,6 +3600,97 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBinaryWriterStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlBindScopeDiagnostics[] = L"Windows.UI.Xaml.Markup.IXamlBindScopeDiagnostics";
+/* [object, uuid("F264A29D-BDED-43AA-A5B0-26AC21A81EB8"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnosticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Disable )(
+        __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics * This,
+        /* [in] */INT32 lineNumber,
+        /* [in] */INT32 columnNumber
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnosticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnosticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_Disable(This,lineNumber,columnNumber) \
+    ( (This)->lpVtbl->Disable(This,lineNumber,columnNumber) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindScopeDiagnostics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3599,7 +3835,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetDataTemplateComponent )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIDataTemplateComponent * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIDataTemplateComponent * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetDataTemplateComponent )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics * This,
@@ -3618,7 +3854,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName type,
         /* [in] */__RPC__in_opt IInspectable * value,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetPropertyFromString )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics * This,
@@ -3753,8 +3989,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_get_DataTemplateComponentProperty(This,value) \
     ( (This)->lpVtbl->get_DataTemplateComponentProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_GetDataTemplateComponent(This,element,value) \
-    ( (This)->lpVtbl->GetDataTemplateComponent(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_GetDataTemplateComponent(This,element,result) \
+    ( (This)->lpVtbl->GetDataTemplateComponent(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_SetDataTemplateComponent(This,element,value) \
     ( (This)->lpVtbl->SetDataTemplateComponent(This,element,value) )
@@ -3765,8 +4001,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_ResumeRendering(This,target) \
     ( (This)->lpVtbl->ResumeRendering(This,target) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_ConvertValue(This,type,value,returnValue) \
-    ( (This)->lpVtbl->ConvertValue(This,type,value,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_ConvertValue(This,type,value,result) \
+    ( (This)->lpVtbl->ConvertValue(This,type,value,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlBindingHelperStatics_SetPropertyFromString(This,dependencyObject,propertyToSet,value) \
     ( (This)->lpVtbl->SetPropertyFromString(This,dependencyObject,propertyToSet,value) )
@@ -4080,7 +4316,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetValue )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember * This,
         /* [in] */__RPC__in_opt IInspectable * instance,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetValue )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember * This,
@@ -4133,8 +4369,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_get_Type(This,value) \
     ( (This)->lpVtbl->get_Type(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_GetValue(This,instance,value) \
-    ( (This)->lpVtbl->GetValue(This,instance,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_GetValue(This,instance,result) \
+    ( (This)->lpVtbl->GetValue(This,instance,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember_SetValue(This,instance,value) \
     ( (This)->lpVtbl->SetValue(This,instance,value) )
@@ -4197,17 +4433,17 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 /* [overload, default_overload] */HRESULT ( STDMETHODCALLTYPE *GetXamlType )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * * xamlType
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetXamlTypeByFullName )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider * This,
         /* [in] */__RPC__in HSTRING fullName,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * * xamlType
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetXmlnsDefinitions )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider * This,
-        /* [out] */__RPC__out UINT32 * __definitionsSize,
-        /* [size_is(, *(__definitionsSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__definitionsSize)) __x_ABI_CWindows_CUI_CXaml_CMarkup_CXmlnsDefinition * * definitions
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CMarkup_CXmlnsDefinition * * result
         );
     END_INTERFACE
     
@@ -4237,14 +4473,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXamlType(This,type,xamlType) \
-    ( (This)->lpVtbl->GetXamlType(This,type,xamlType) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXamlType(This,type,result) \
+    ( (This)->lpVtbl->GetXamlType(This,type,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXamlTypeByFullName(This,fullName,xamlType) \
-    ( (This)->lpVtbl->GetXamlTypeByFullName(This,fullName,xamlType) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXamlTypeByFullName(This,fullName,result) \
+    ( (This)->lpVtbl->GetXamlTypeByFullName(This,fullName,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXmlnsDefinitions(This,__definitionsSize,definitions) \
-    ( (This)->lpVtbl->GetXmlnsDefinitions(This,__definitionsSize,definitions) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMetadataProvider_GetXmlnsDefinitions(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetXmlnsDefinitions(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -4393,12 +4629,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Load )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics * This,
         /* [in] */__RPC__in HSTRING xaml,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *LoadWithInitialTemplateValidation )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics * This,
         /* [in] */__RPC__in HSTRING xaml,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -4428,11 +4664,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_Load(This,xaml,returnValue) \
-    ( (This)->lpVtbl->Load(This,xaml,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_Load(This,xaml,result) \
+    ( (This)->lpVtbl->Load(This,xaml,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_LoadWithInitialTemplateValidation(This,xaml,returnValue) \
-    ( (This)->lpVtbl->LoadWithInitialTemplateValidation(This,xaml,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlReaderStatics_LoadWithInitialTemplateValidation(This,xaml,result) \
+    ( (This)->lpVtbl->LoadWithInitialTemplateValidation(This,xaml,result) )
 
 
 #endif /* COBJMACROS */
@@ -4539,17 +4775,17 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *ActivateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * instance
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateFromString )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * This,
         /* [in] */__RPC__in HSTRING value,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * instance
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetMember )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * This,
         /* [in] */__RPC__in HSTRING name,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember * * xamlMember
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlMember * * result
         );
     HRESULT ( STDMETHODCALLTYPE *AddToVector )(
         __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * This,
@@ -4629,14 +4865,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_get_UnderlyingType(This,value) \
     ( (This)->lpVtbl->get_UnderlyingType(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_ActivateInstance(This,instance) \
-    ( (This)->lpVtbl->ActivateInstance(This,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_ActivateInstance(This,result) \
+    ( (This)->lpVtbl->ActivateInstance(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_CreateFromString(This,value,instance) \
-    ( (This)->lpVtbl->CreateFromString(This,value,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_CreateFromString(This,value,result) \
+    ( (This)->lpVtbl->CreateFromString(This,value,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_GetMember(This,name,xamlMember) \
-    ( (This)->lpVtbl->GetMember(This,name,xamlMember) )
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_GetMember(This,name,result) \
+    ( (This)->lpVtbl->GetMember(This,name,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_AddToVector(This,instance,value) \
     ( (This)->lpVtbl->AddToVector(This,instance,value) )
@@ -4654,6 +4890,100 @@ interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Markup.IXamlType2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Xaml.Markup.IXamlType
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Markup_IXamlType2[] = L"Windows.UI.Xaml.Markup.IXamlType2";
+/* [object, uuid("9F0C6E3B-433B-56AD-8F69-78A4DD3E64F9"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BoxedType )(
+        __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_get_BoxedType(This,value) \
+    ( (This)->lpVtbl->get_BoxedType(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CMarkup_CIXamlType2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

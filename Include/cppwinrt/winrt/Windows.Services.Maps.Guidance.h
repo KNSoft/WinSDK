@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Geolocation.2.h"
@@ -230,123 +230,123 @@ template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavig
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->put_AudioNotifications(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_GuidanceUpdated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_GuidanceUpdated, GuidanceUpdated(handler));
+    return impl::make_event_revoker<D, GuidanceUpdated_revoker>(this, GuidanceUpdated(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::GuidanceUpdated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_GuidanceUpdated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_GuidanceUpdated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_DestinationReached(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_DestinationReached, DestinationReached(handler));
+    return impl::make_event_revoker<D, DestinationReached_revoker>(this, DestinationReached(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::DestinationReached(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_DestinationReached(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_DestinationReached(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_Rerouting(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_Rerouting, Rerouting(handler));
+    return impl::make_event_revoker<D, Rerouting_revoker>(this, Rerouting(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouting(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_Rerouting(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_Rerouting(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_Rerouted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_Rerouted, Rerouted(handler));
+    return impl::make_event_revoker<D, Rerouted_revoker>(this, Rerouted(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::Rerouted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_Rerouted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_Rerouted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_RerouteFailed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_RerouteFailed, RerouteFailed(handler));
+    return impl::make_event_revoker<D, RerouteFailed_revoker>(this, RerouteFailed(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::RerouteFailed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_RerouteFailed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_RerouteFailed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_UserLocationLost(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_UserLocationLost, UserLocationLost(handler));
+    return impl::make_event_revoker<D, UserLocationLost_revoker>(this, UserLocationLost(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationLost(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_UserLocationLost(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_UserLocationLost(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->add_UserLocationRestored(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator>::remove_UserLocationRestored, UserLocationRestored(handler));
+    return impl::make_event_revoker<D, UserLocationRestored_revoker>(this, UserLocationRestored(handler));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::UserLocationRestored(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_UserLocationRestored(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->remove_UserLocationRestored(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator<D>::SetGuidanceVoice(int32_t voiceId, param::hstring const& voiceFolder) const
@@ -364,21 +364,21 @@ template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavig
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator)->UpdateUserLocationWithPositionOverride(get_abi(userLocation), get_abi(positionOverride)));
 }
 
-template <typename D> event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator2)->add_AudioNotificationRequested(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Services::Maps::Guidance::IGuidanceNavigator2> consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested_revoker consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Services::Maps::Guidance::IGuidanceNavigator2>(this, &abi_t<Windows::Services::Maps::Guidance::IGuidanceNavigator2>::remove_AudioNotificationRequested, AudioNotificationRequested(value));
+    return impl::make_event_revoker<D, AudioNotificationRequested_revoker>(this, AudioNotificationRequested(value));
 }
 
-template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(event_token const& token) const
+template <typename D> void consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::AudioNotificationRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator2)->remove_AudioNotificationRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::Maps::Guidance::IGuidanceNavigator2)->remove_AudioNotificationRequested(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Services_Maps_Guidance_IGuidanceNavigator2<D>::IsGuidanceAudioMuted() const
@@ -731,1543 +731,1305 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Ser
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceAudioNotificationRequestedEventArgs> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceAudioNotificationRequestedEventArgs>
 {
-    HRESULT __stdcall get_AudioNotification(Windows::Services::Maps::Guidance::GuidanceAudioNotificationKind* value) noexcept final
+    int32_t WINRT_CALL get_AudioNotification(Windows::Services::Maps::Guidance::GuidanceAudioNotificationKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioNotification, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceAudioNotificationKind));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceAudioNotificationKind>(this->shim().AudioNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioFilePaths(void** value) noexcept final
+    int32_t WINRT_CALL get_AudioFilePaths(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioFilePaths, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().AudioFilePaths());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AudioText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AudioText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceLaneInfo> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceLaneInfo>
 {
-    HRESULT __stdcall get_LaneMarkers(Windows::Services::Maps::Guidance::GuidanceLaneMarkers* value) noexcept final
+    int32_t WINRT_CALL get_LaneMarkers(Windows::Services::Maps::Guidance::GuidanceLaneMarkers* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaneMarkers, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceLaneMarkers));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceLaneMarkers>(this->shim().LaneMarkers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOnRoute(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOnRoute(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOnRoute, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOnRoute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceManeuver> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceManeuver>
 {
-    HRESULT __stdcall get_StartLocation(void** value) noexcept final
+    int32_t WINRT_CALL get_StartLocation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartLocation, WINRT_WRAP(Windows::Devices::Geolocation::Geopoint));
             *value = detach_from<Windows::Devices::Geolocation::Geopoint>(this->shim().StartLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DistanceFromRouteStart(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DistanceFromRouteStart(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DistanceFromRouteStart, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DistanceFromRouteStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DistanceFromPreviousManeuver(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DistanceFromPreviousManeuver(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DistanceFromPreviousManeuver, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DistanceFromPreviousManeuver());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DepartureRoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DepartureRoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DepartureRoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DepartureRoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextRoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NextRoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextRoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NextRoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DepartureShortRoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DepartureShortRoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DepartureShortRoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DepartureShortRoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextShortRoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NextShortRoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextShortRoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NextShortRoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Services::Maps::Guidance::GuidanceManeuverKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Services::Maps::Guidance::GuidanceManeuverKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceManeuverKind));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceManeuverKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartAngle(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_StartAngle(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAngle, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().StartAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndAngle(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_EndAngle(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndAngle, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().EndAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoadSignpost(void** value) noexcept final
+    int32_t WINRT_CALL get_RoadSignpost(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoadSignpost, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceRoadSignpost));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceRoadSignpost>(this->shim().RoadSignpost());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstructionText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_InstructionText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstructionText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().InstructionText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceMapMatchedCoordinate> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceMapMatchedCoordinate>
 {
-    HRESULT __stdcall get_Location(void** value) noexcept final
+    int32_t WINRT_CALL get_Location(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(Windows::Devices::Geolocation::Geopoint));
             *value = detach_from<Windows::Devices::Geolocation::Geopoint>(this->shim().Location());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentHeading(double* value) noexcept final
+    int32_t WINRT_CALL get_CurrentHeading(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentHeading, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CurrentHeading());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentSpeed(double* value) noexcept final
+    int32_t WINRT_CALL get_CurrentSpeed(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentSpeed, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CurrentSpeed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOnStreet(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOnStreet(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOnStreet, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOnStreet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Road(void** value) noexcept final
+    int32_t WINRT_CALL get_Road(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Road, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceRoadSegment));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceRoadSegment>(this->shim().Road());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceNavigator> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceNavigator>
 {
-    HRESULT __stdcall StartNavigating(void* route) noexcept final
+    int32_t WINRT_CALL StartNavigating(void* route) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartNavigating, WINRT_WRAP(void), Windows::Services::Maps::Guidance::GuidanceRoute const&);
             this->shim().StartNavigating(*reinterpret_cast<Windows::Services::Maps::Guidance::GuidanceRoute const*>(&route));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartSimulating(void* route, int32_t speedInMetersPerSecond) noexcept final
+    int32_t WINRT_CALL StartSimulating(void* route, int32_t speedInMetersPerSecond) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartSimulating, WINRT_WRAP(void), Windows::Services::Maps::Guidance::GuidanceRoute const&, int32_t);
             this->shim().StartSimulating(*reinterpret_cast<Windows::Services::Maps::Guidance::GuidanceRoute const*>(&route), speedInMetersPerSecond);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartTracking() noexcept final
+    int32_t WINRT_CALL StartTracking() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTracking, WINRT_WRAP(void));
             this->shim().StartTracking();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RepeatLastAudioNotification() noexcept final
+    int32_t WINRT_CALL RepeatLastAudioNotification() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RepeatLastAudioNotification, WINRT_WRAP(void));
             this->shim().RepeatLastAudioNotification();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioMeasurementSystem(Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem* value) noexcept final
+    int32_t WINRT_CALL get_AudioMeasurementSystem(Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioMeasurementSystem, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem>(this->shim().AudioMeasurementSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AudioMeasurementSystem(Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem value) noexcept final
+    int32_t WINRT_CALL put_AudioMeasurementSystem(Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioMeasurementSystem, WINRT_WRAP(void), Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem const&);
             this->shim().AudioMeasurementSystem(*reinterpret_cast<Windows::Services::Maps::Guidance::GuidanceAudioMeasurementSystem const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AudioNotifications(Windows::Services::Maps::Guidance::GuidanceAudioNotifications* value) noexcept final
+    int32_t WINRT_CALL get_AudioNotifications(Windows::Services::Maps::Guidance::GuidanceAudioNotifications* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioNotifications, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceAudioNotifications));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceAudioNotifications>(this->shim().AudioNotifications());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AudioNotifications(Windows::Services::Maps::Guidance::GuidanceAudioNotifications value) noexcept final
+    int32_t WINRT_CALL put_AudioNotifications(Windows::Services::Maps::Guidance::GuidanceAudioNotifications value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioNotifications, WINRT_WRAP(void), Windows::Services::Maps::Guidance::GuidanceAudioNotifications const&);
             this->shim().AudioNotifications(*reinterpret_cast<Windows::Services::Maps::Guidance::GuidanceAudioNotifications const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_GuidanceUpdated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_GuidanceUpdated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().GuidanceUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GuidanceUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().GuidanceUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_GuidanceUpdated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GuidanceUpdated(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GuidanceUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GuidanceUpdated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_DestinationReached(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().GuidanceUpdated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DestinationReached, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().DestinationReached(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DestinationReached(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_DestinationReached(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DestinationReached, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DestinationReached(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Rerouting(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().DestinationReached(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Rerouting, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Rerouting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DestinationReached(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Rerouting(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Rerouting, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Rerouting(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Rerouted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DestinationReached(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Rerouted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Rerouted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Rerouting(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Rerouted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Rerouted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Rerouted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RerouteFailed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Rerouting(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RerouteFailed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RerouteFailed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Rerouting(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RerouteFailed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RerouteFailed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RerouteFailed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_UserLocationLost(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Rerouting(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(UserLocationLost, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().UserLocationLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Rerouted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_UserLocationLost(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(UserLocationLost, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().UserLocationLost(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_UserLocationRestored(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Rerouted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceReroutedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(UserLocationRestored, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().UserLocationRestored(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Rerouted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_UserLocationRestored(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(UserLocationRestored, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().UserLocationRestored(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL SetGuidanceVoice(int32_t voiceId, void* voiceFolder) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Rerouted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_RerouteFailed(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RerouteFailed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_RerouteFailed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RerouteFailed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_UserLocationLost(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().UserLocationLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_UserLocationLost(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().UserLocationLost(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_UserLocationRestored(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().UserLocationRestored(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_UserLocationRestored(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().UserLocationRestored(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall SetGuidanceVoice(int32_t voiceId, HSTRING voiceFolder) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetGuidanceVoice, WINRT_WRAP(void), int32_t, hstring const&);
             this->shim().SetGuidanceVoice(voiceId, *reinterpret_cast<hstring const*>(&voiceFolder));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateUserLocation(void* userLocation) noexcept final
+    int32_t WINRT_CALL UpdateUserLocation(void* userLocation) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateUserLocation, WINRT_WRAP(void), Windows::Devices::Geolocation::Geocoordinate const&);
             this->shim().UpdateUserLocation(*reinterpret_cast<Windows::Devices::Geolocation::Geocoordinate const*>(&userLocation));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateUserLocationWithPositionOverride(void* userLocation, struct struct_Windows_Devices_Geolocation_BasicGeoposition positionOverride) noexcept final
+    int32_t WINRT_CALL UpdateUserLocationWithPositionOverride(void* userLocation, struct struct_Windows_Devices_Geolocation_BasicGeoposition positionOverride) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateUserLocation, WINRT_WRAP(void), Windows::Devices::Geolocation::Geocoordinate const&, Windows::Devices::Geolocation::BasicGeoposition const&);
             this->shim().UpdateUserLocation(*reinterpret_cast<Windows::Devices::Geolocation::Geocoordinate const*>(&userLocation), *reinterpret_cast<Windows::Devices::Geolocation::BasicGeoposition const*>(&positionOverride));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceNavigator2> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceNavigator2>
 {
-    HRESULT __stdcall add_AudioNotificationRequested(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AudioNotificationRequested(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AudioNotificationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AudioNotificationRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AudioNotificationRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::Maps::Guidance::GuidanceNavigator, Windows::Services::Maps::Guidance::GuidanceAudioNotificationRequestedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AudioNotificationRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AudioNotificationRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AudioNotificationRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AudioNotificationRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AudioNotificationRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_IsGuidanceAudioMuted(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGuidanceAudioMuted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGuidanceAudioMuted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGuidanceAudioMuted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsGuidanceAudioMuted(bool value) noexcept final
+    int32_t WINRT_CALL put_IsGuidanceAudioMuted(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGuidanceAudioMuted, WINRT_WRAP(void), bool);
             this->shim().IsGuidanceAudioMuted(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics>
 {
-    HRESULT __stdcall GetCurrent(void** result) noexcept final
+    int32_t WINRT_CALL GetCurrent(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrent, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceNavigator));
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceNavigator>(this->shim().GetCurrent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics2> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics2>
 {
-    HRESULT __stdcall get_UseAppProvidedVoice(bool* value) noexcept final
+    int32_t WINRT_CALL get_UseAppProvidedVoice(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UseAppProvidedVoice, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().UseAppProvidedVoice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceReroutedEventArgs> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceReroutedEventArgs>
 {
-    HRESULT __stdcall get_Route(void** result) noexcept final
+    int32_t WINRT_CALL get_Route(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Route, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceRoute));
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceRoute>(this->shim().Route());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceRoadSegment> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceRoadSegment>
 {
-    HRESULT __stdcall get_RoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShortRoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ShortRoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShortRoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ShortRoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpeedLimit(double* value) noexcept final
+    int32_t WINRT_CALL get_SpeedLimit(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpeedLimit, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SpeedLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TravelTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TravelTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TravelTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TravelTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(void** value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(Windows::Devices::Geolocation::Geopath));
             *value = detach_from<Windows::Devices::Geolocation::Geopath>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsHighway(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsHighway(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHighway, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsHighway());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTunnel(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTunnel(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTunnel, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTunnel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTollRoad(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTollRoad(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTollRoad, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTollRoad());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceRoadSegment2> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceRoadSegment2>
 {
-    HRESULT __stdcall get_IsScenic(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsScenic(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsScenic, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsScenic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceRoadSignpost> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceRoadSignpost>
 {
-    HRESULT __stdcall get_ExitNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ExitNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ExitNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Exit(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Exit(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Exit, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Exit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().ForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExitDirections(void** value) noexcept final
+    int32_t WINRT_CALL get_ExitDirections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExitDirections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().ExitDirections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceRoute> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceRoute>
 {
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Distance(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Distance(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Distance, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Distance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Maneuvers(void** value) noexcept final
+    int32_t WINRT_CALL get_Maneuvers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Maneuvers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceManeuver>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceManeuver>>(this->shim().Maneuvers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BoundingBox(void** value) noexcept final
+    int32_t WINRT_CALL get_BoundingBox(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingBox, WINRT_WRAP(Windows::Devices::Geolocation::GeoboundingBox));
             *value = detach_from<Windows::Devices::Geolocation::GeoboundingBox>(this->shim().BoundingBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(void** value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(Windows::Devices::Geolocation::Geopath));
             *value = detach_from<Windows::Devices::Geolocation::Geopath>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoadSegments(void** value) noexcept final
+    int32_t WINRT_CALL get_RoadSegments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoadSegments, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceRoadSegment>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceRoadSegment>>(this->shim().RoadSegments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertToMapRoute(void** result) noexcept final
+    int32_t WINRT_CALL ConvertToMapRoute(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertToMapRoute, WINRT_WRAP(Windows::Services::Maps::MapRoute));
             *result = detach_from<Windows::Services::Maps::MapRoute>(this->shim().ConvertToMapRoute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceRouteStatics> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceRouteStatics>
 {
-    HRESULT __stdcall CanCreateFromMapRoute(void* mapRoute, bool* result) noexcept final
+    int32_t WINRT_CALL CanCreateFromMapRoute(void* mapRoute, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanCreateFromMapRoute, WINRT_WRAP(bool), Windows::Services::Maps::MapRoute const&);
             *result = detach_from<bool>(this->shim().CanCreateFromMapRoute(*reinterpret_cast<Windows::Services::Maps::MapRoute const*>(&mapRoute)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateFromMapRoute(void* mapRoute, void** result) noexcept final
+    int32_t WINRT_CALL TryCreateFromMapRoute(void* mapRoute, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateFromMapRoute, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceRoute), Windows::Services::Maps::MapRoute const&);
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceRoute>(this->shim().TryCreateFromMapRoute(*reinterpret_cast<Windows::Services::Maps::MapRoute const*>(&mapRoute)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollector> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollector>
 {
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearLocalData() noexcept final
+    int32_t WINRT_CALL ClearLocalData() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearLocalData, WINRT_WRAP(void));
             this->shim().ClearLocalData();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpeedTrigger(double* value) noexcept final
+    int32_t WINRT_CALL get_SpeedTrigger(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpeedTrigger, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SpeedTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpeedTrigger(double value) noexcept final
+    int32_t WINRT_CALL put_SpeedTrigger(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpeedTrigger, WINRT_WRAP(void), double);
             this->shim().SpeedTrigger(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UploadFrequency(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_UploadFrequency(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UploadFrequency, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().UploadFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UploadFrequency(int32_t value) noexcept final
+    int32_t WINRT_CALL put_UploadFrequency(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UploadFrequency, WINRT_WRAP(void), int32_t);
             this->shim().UploadFrequency(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollectorStatics> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollectorStatics>
 {
-    HRESULT __stdcall GetCurrent(void** result) noexcept final
+    int32_t WINRT_CALL GetCurrent(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrent, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceTelemetryCollector));
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceTelemetryCollector>(this->shim().GetCurrent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::Maps::Guidance::IGuidanceUpdatedEventArgs> : produce_base<D, Windows::Services::Maps::Guidance::IGuidanceUpdatedEventArgs>
 {
-    HRESULT __stdcall get_Mode(Windows::Services::Maps::Guidance::GuidanceMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Services::Maps::Guidance::GuidanceMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceMode));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextManeuver(void** value) noexcept final
+    int32_t WINRT_CALL get_NextManeuver(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextManeuver, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceManeuver));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceManeuver>(this->shim().NextManeuver());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextManeuverDistance(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NextManeuverDistance(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextManeuverDistance, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NextManeuverDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AfterNextManeuver(void** value) noexcept final
+    int32_t WINRT_CALL get_AfterNextManeuver(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AfterNextManeuver, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceManeuver));
             *value = detach_from<Windows::Services::Maps::Guidance::GuidanceManeuver>(this->shim().AfterNextManeuver());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AfterNextManeuverDistance(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_AfterNextManeuverDistance(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AfterNextManeuverDistance, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().AfterNextManeuverDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DistanceToDestination(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DistanceToDestination(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DistanceToDestination, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DistanceToDestination());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ElapsedDistance(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ElapsedDistance(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ElapsedDistance, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ElapsedDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ElapsedTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_ElapsedTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ElapsedTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().ElapsedTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeToDestination(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TimeToDestination(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeToDestination, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TimeToDestination());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoadName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RoadName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoadName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RoadName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Route(void** result) noexcept final
+    int32_t WINRT_CALL get_Route(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Route, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceRoute));
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceRoute>(this->shim().Route());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentLocation(void** result) noexcept final
+    int32_t WINRT_CALL get_CurrentLocation(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentLocation, WINRT_WRAP(Windows::Services::Maps::Guidance::GuidanceMapMatchedCoordinate));
             *result = detach_from<Windows::Services::Maps::Guidance::GuidanceMapMatchedCoordinate>(this->shim().CurrentLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNewManeuver(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNewManeuver(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNewManeuver, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNewManeuver());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LaneInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_LaneInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaneInfo, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceLaneInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::Guidance::GuidanceLaneInfo>>(this->shim().LaneInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2277,27 +2039,27 @@ WINRT_EXPORT namespace winrt::Windows::Services::Maps::Guidance {
 
 inline Windows::Services::Maps::Guidance::GuidanceNavigator GuidanceNavigator::GetCurrent()
 {
-    return get_activation_factory<GuidanceNavigator, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics>().GetCurrent();
+    return impl::call_factory<GuidanceNavigator, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics>([&](auto&& f) { return f.GetCurrent(); });
 }
 
 inline bool GuidanceNavigator::UseAppProvidedVoice()
 {
-    return get_activation_factory<GuidanceNavigator, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics2>().UseAppProvidedVoice();
+    return impl::call_factory<GuidanceNavigator, Windows::Services::Maps::Guidance::IGuidanceNavigatorStatics2>([&](auto&& f) { return f.UseAppProvidedVoice(); });
 }
 
 inline bool GuidanceRoute::CanCreateFromMapRoute(Windows::Services::Maps::MapRoute const& mapRoute)
 {
-    return get_activation_factory<GuidanceRoute, Windows::Services::Maps::Guidance::IGuidanceRouteStatics>().CanCreateFromMapRoute(mapRoute);
+    return impl::call_factory<GuidanceRoute, Windows::Services::Maps::Guidance::IGuidanceRouteStatics>([&](auto&& f) { return f.CanCreateFromMapRoute(mapRoute); });
 }
 
 inline Windows::Services::Maps::Guidance::GuidanceRoute GuidanceRoute::TryCreateFromMapRoute(Windows::Services::Maps::MapRoute const& mapRoute)
 {
-    return get_activation_factory<GuidanceRoute, Windows::Services::Maps::Guidance::IGuidanceRouteStatics>().TryCreateFromMapRoute(mapRoute);
+    return impl::call_factory<GuidanceRoute, Windows::Services::Maps::Guidance::IGuidanceRouteStatics>([&](auto&& f) { return f.TryCreateFromMapRoute(mapRoute); });
 }
 
 inline Windows::Services::Maps::Guidance::GuidanceTelemetryCollector GuidanceTelemetryCollector::GetCurrent()
 {
-    return get_activation_factory<GuidanceTelemetryCollector, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollectorStatics>().GetCurrent();
+    return impl::call_factory<GuidanceTelemetryCollector, Windows::Services::Maps::Guidance::IGuidanceTelemetryCollectorStatics>([&](auto&& f) { return f.GetCurrent(); });
 }
 
 }
@@ -2334,5 +2096,3 @@ template<> struct hash<winrt::Windows::Services::Maps::Guidance::GuidanceTelemet
 template<> struct hash<winrt::Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> : winrt::impl::hash_base<winrt::Windows::Services::Maps::Guidance::GuidanceUpdatedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

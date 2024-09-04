@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Graphics.Printing.2.h"
@@ -554,38 +554,38 @@ template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomTex
     return textOption;
 }
 
-template <typename D> event_token consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->add_OptionChanged(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged_revoker consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>(this, &abi_t<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>::remove_OptionChanged, OptionChanged(eventHandler));
+    return impl::make_event_revoker<D, OptionChanged_revoker>(this, OptionChanged(eventHandler));
 }
 
-template <typename D> void consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::OptionChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->remove_OptionChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->remove_OptionChanged(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->add_BeginValidation(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const& eventHandler) const
+template <typename D> typename consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation_revoker consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>(this, &abi_t<Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>::remove_BeginValidation, BeginValidation(eventHandler));
+    return impl::make_event_revoker<D, BeginValidation_revoker>(this, BeginValidation(eventHandler));
 }
 
-template <typename D> void consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails<D>::BeginValidation(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->remove_BeginValidation(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails)->remove_BeginValidation(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Graphics::Printing::OptionDetails::PrintCustomToggleOptionDetails consume_Windows_Graphics_Printing_OptionDetails_IPrintTaskOptionDetails2<D>::CreateToggleOption(param::hstring const& optionId, param::hstring const& displayName) const
@@ -612,1491 +612,1293 @@ template <typename D> uint32_t consume_Windows_Graphics_Printing_OptionDetails_I
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintBindingOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintBindingOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintBorderingOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintBorderingOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCollationOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCollationOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintColorModeOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintColorModeOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCopiesOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCopiesOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemDetails>
 {
-    HRESULT __stdcall get_ItemId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ItemId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ItemId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ItemDisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ItemDisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemDisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().ItemDisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ItemDisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ItemDisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemDisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ItemDisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails>
 {
-    HRESULT __stdcall AddItem(HSTRING itemId, HSTRING displayName) noexcept final
+    int32_t WINRT_CALL AddItem(void* itemId, void* displayName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddItem, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().AddItem(*reinterpret_cast<hstring const*>(&itemId), *reinterpret_cast<hstring const*>(&displayName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails2> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails2>
 {
-    HRESULT __stdcall AddItem(HSTRING itemId, HSTRING displayName, HSTRING description, void* icon) noexcept final
+    int32_t WINRT_CALL AddItem(void* itemId, void* displayName, void* description, void* icon) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddItem, WINRT_WRAP(void), hstring const&, hstring const&, hstring const&, Windows::Storage::Streams::IRandomAccessStreamWithContentType const&);
             this->shim().AddItem(*reinterpret_cast<hstring const*>(&itemId), *reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamWithContentType const*>(&icon));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails3> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomItemListOptionDetails3>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomOptionDetails>
 {
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOptionDetails>
 {
-    HRESULT __stdcall put_MaxCharacters(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxCharacters(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCharacters, WINRT_WRAP(void), uint32_t);
             this->shim().MaxCharacters(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxCharacters(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxCharacters(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCharacters, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxCharacters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOptionDetails2> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomTextOptionDetails2>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomToggleOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintCustomToggleOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintDuplexOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintDuplexOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintHolePunchOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintHolePunchOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintItemListOptionDetails>
 {
-    HRESULT __stdcall get_Items(void** value) noexcept final
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Foundation::IInspectable>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintMediaSizeOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintMediaSizeOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintMediaTypeOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintMediaTypeOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintNumberOptionDetails>
 {
-    HRESULT __stdcall get_MinValue(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinValue(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinValue, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MinValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxValue(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxValue(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxValue, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>
 {
-    HRESULT __stdcall get_OptionId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OptionId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OptionId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OptionId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OptionType(Windows::Graphics::Printing::OptionDetails::PrintOptionType* value) noexcept final
+    int32_t WINRT_CALL get_OptionType(Windows::Graphics::Printing::OptionDetails::PrintOptionType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OptionType, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintOptionType));
             *value = detach_from<Windows::Graphics::Printing::OptionDetails::PrintOptionType>(this->shim().OptionType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ErrorText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ErrorText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorText, WINRT_WRAP(void), hstring const&);
             this->shim().ErrorText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ErrorText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ErrorText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ErrorText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates value) noexcept final
+    int32_t WINRT_CALL put_State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(void), Windows::Graphics::Printing::OptionDetails::PrintOptionStates const&);
             this->shim().State(*reinterpret_cast<Windows::Graphics::Printing::OptionDetails::PrintOptionStates const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintOptionStates));
             *value = detach_from<Windows::Graphics::Printing::OptionDetails::PrintOptionStates>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetValue(void* value, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetValue(void* value, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetValue, WINRT_WRAP(bool), Windows::Foundation::IInspectable const&);
             *succeeded = detach_from<bool>(this->shim().TrySetValue(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintOrientationOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintOrientationOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintPageRangeOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintPageRangeOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintQualityOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintQualityOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintStapleOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintStapleOptionDetails>
 {
-    HRESULT __stdcall put_WarningText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_WarningText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(void), hstring const&);
             this->shim().WarningText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WarningText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WarningText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WarningText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WarningText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionChangedEventArgs> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionChangedEventArgs>
 {
-    HRESULT __stdcall get_OptionId(void** value) noexcept final
+    int32_t WINRT_CALL get_OptionId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OptionId, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().OptionId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails>
 {
-    HRESULT __stdcall get_Options(void** value) noexcept final
+    int32_t WINRT_CALL get_Options(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Options, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails>>(this->shim().Options());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateItemListOption(HSTRING optionId, HSTRING displayName, void** itemListOption) noexcept final
+    int32_t WINRT_CALL CreateItemListOption(void* optionId, void* displayName, void** itemListOption) noexcept final
     {
         try
         {
             *itemListOption = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateItemListOption, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails), hstring const&, hstring const&);
             *itemListOption = detach_from<Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails>(this->shim().CreateItemListOption(*reinterpret_cast<hstring const*>(&optionId), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateTextOption(HSTRING optionId, HSTRING displayName, void** textOption) noexcept final
+    int32_t WINRT_CALL CreateTextOption(void* optionId, void* displayName, void** textOption) noexcept final
     {
         try
         {
             *textOption = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateTextOption, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails), hstring const&, hstring const&);
             *textOption = detach_from<Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails>(this->shim().CreateTextOption(*reinterpret_cast<hstring const*>(&optionId), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_OptionChanged(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_OptionChanged(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().OptionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(OptionChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().OptionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_OptionChanged(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_OptionChanged(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(OptionChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().OptionChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_BeginValidation(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OptionChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BeginValidation, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().BeginValidation(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_BeginValidation(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL remove_BeginValidation(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().BeginValidation(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Foundation::IInspectable> const*>(&eventHandler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_BeginValidation(event_token eventCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().BeginValidation(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(BeginValidation, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().BeginValidation(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails2> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetails2>
 {
-    HRESULT __stdcall CreateToggleOption(HSTRING optionId, HSTRING displayName, void** toggleOption) noexcept final
+    int32_t WINRT_CALL CreateToggleOption(void* optionId, void* displayName, void** toggleOption) noexcept final
     {
         try
         {
             *toggleOption = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateToggleOption, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintCustomToggleOptionDetails), hstring const&, hstring const&);
             *toggleOption = detach_from<Windows::Graphics::Printing::OptionDetails::PrintCustomToggleOptionDetails>(this->shim().CreateToggleOption(*reinterpret_cast<hstring const*>(&optionId), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic>
 {
-    HRESULT __stdcall GetFromPrintTaskOptions(void* printTaskOptions, void** printTaskOptionDetails) noexcept final
+    int32_t WINRT_CALL GetFromPrintTaskOptions(void* printTaskOptions, void** printTaskOptionDetails) noexcept final
     {
         try
         {
             *printTaskOptionDetails = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFromPrintTaskOptions, WINRT_WRAP(Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails), Windows::Graphics::Printing::PrintTaskOptions const&);
             *printTaskOptionDetails = detach_from<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails>(this->shim().GetFromPrintTaskOptions(*reinterpret_cast<Windows::Graphics::Printing::PrintTaskOptions const*>(&printTaskOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDetails> : produce_base<D, Windows::Graphics::Printing::OptionDetails::IPrintTextOptionDetails>
 {
-    HRESULT __stdcall get_MaxCharacters(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxCharacters(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCharacters, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxCharacters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2106,7 +1908,7 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Printing::OptionDetails {
 
 inline Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails PrintTaskOptionDetails::GetFromPrintTaskOptions(Windows::Graphics::Printing::PrintTaskOptions const& printTaskOptions)
 {
-    return get_activation_factory<PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic>().GetFromPrintTaskOptions(printTaskOptions);
+    return impl::call_factory<PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::IPrintTaskOptionDetailsStatic>([&](auto&& f) { return f.GetFromPrintTaskOptions(printTaskOptions); });
 }
 
 }
@@ -2163,5 +1965,3 @@ template<> struct hash<winrt::Windows::Graphics::Printing::OptionDetails::PrintT
 template<> struct hash<winrt::Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails> : winrt::impl::hash_base<winrt::Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails> {};
 
 }
-
-WINRT_WARNING_POP

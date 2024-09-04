@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -124,20 +124,99 @@ template <> struct name<Windows::Devices::Gpio::GpioPinValue>{ static constexpr 
 template <> struct name<Windows::Devices::Gpio::GpioSharingMode>{ static constexpr auto & value{ L"Windows.Devices.Gpio.GpioSharingMode" }; };
 template <> struct name<Windows::Devices::Gpio::GpioChangeCount>{ static constexpr auto & value{ L"Windows.Devices.Gpio.GpioChangeCount" }; };
 template <> struct name<Windows::Devices::Gpio::GpioChangeRecord>{ static constexpr auto & value{ L"Windows.Devices.Gpio.GpioChangeRecord" }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioChangeCounter>{ static constexpr GUID value{ 0xCB5EC0DE,0x6801,0x43FF,{ 0x80,0x3D,0x45,0x76,0x62,0x8A,0x8B,0x26 } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioChangeCounterFactory>{ static constexpr GUID value{ 0x147D94B6,0x0A9E,0x410C,{ 0xB4,0xFA,0xF8,0x9F,0x40,0x52,0x08,0x4D } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioChangeReader>{ static constexpr GUID value{ 0x0ABC885F,0xE031,0x48E8,{ 0x85,0x90,0x70,0xDE,0x78,0x36,0x3C,0x6D } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioChangeReaderFactory>{ static constexpr GUID value{ 0xA9598EF3,0x390E,0x441A,{ 0x9D,0x1C,0xE8,0xDE,0x0B,0x2D,0xF0,0xDF } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioController>{ static constexpr GUID value{ 0x284012E3,0x7461,0x469C,{ 0xA8,0xBC,0x61,0xD6,0x9D,0x08,0xA5,0x3C } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioControllerStatics>{ static constexpr GUID value{ 0x2ED6F42E,0x7AF7,0x4116,{ 0x95,0x33,0xC4,0x3D,0x99,0xA1,0xFB,0x64 } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioControllerStatics2>{ static constexpr GUID value{ 0x912B7D20,0x6CA4,0x4106,{ 0xA3,0x73,0xFF,0xFD,0x34,0x6B,0x0E,0x5B } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioPin>{ static constexpr GUID value{ 0x11D9B087,0xAFAE,0x4790,{ 0x9E,0xE9,0xE0,0xEA,0xC9,0x42,0xD2,0x01 } }; };
-template <> struct guid<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>{ static constexpr GUID value{ 0x3137AAE1,0x703D,0x4059,{ 0xBD,0x24,0xB5,0xB2,0x5D,0xFF,0xB8,0x4E } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioChangeCounter>{ static constexpr guid value{ 0xCB5EC0DE,0x6801,0x43FF,{ 0x80,0x3D,0x45,0x76,0x62,0x8A,0x8B,0x26 } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioChangeCounterFactory>{ static constexpr guid value{ 0x147D94B6,0x0A9E,0x410C,{ 0xB4,0xFA,0xF8,0x9F,0x40,0x52,0x08,0x4D } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioChangeReader>{ static constexpr guid value{ 0x0ABC885F,0xE031,0x48E8,{ 0x85,0x90,0x70,0xDE,0x78,0x36,0x3C,0x6D } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioChangeReaderFactory>{ static constexpr guid value{ 0xA9598EF3,0x390E,0x441A,{ 0x9D,0x1C,0xE8,0xDE,0x0B,0x2D,0xF0,0xDF } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioController>{ static constexpr guid value{ 0x284012E3,0x7461,0x469C,{ 0xA8,0xBC,0x61,0xD6,0x9D,0x08,0xA5,0x3C } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioControllerStatics>{ static constexpr guid value{ 0x2ED6F42E,0x7AF7,0x4116,{ 0x95,0x33,0xC4,0x3D,0x99,0xA1,0xFB,0x64 } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioControllerStatics2>{ static constexpr guid value{ 0x912B7D20,0x6CA4,0x4106,{ 0xA3,0x73,0xFF,0xFD,0x34,0x6B,0x0E,0x5B } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioPin>{ static constexpr guid value{ 0x11D9B087,0xAFAE,0x4790,{ 0x9E,0xE9,0xE0,0xEA,0xC9,0x42,0xD2,0x01 } }; };
+template <> struct guid_storage<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>{ static constexpr guid value{ 0x3137AAE1,0x703D,0x4059,{ 0xBD,0x24,0xB5,0xB2,0x5D,0xFF,0xB8,0x4E } }; };
 template <> struct default_interface<Windows::Devices::Gpio::GpioChangeCounter>{ using type = Windows::Devices::Gpio::IGpioChangeCounter; };
 template <> struct default_interface<Windows::Devices::Gpio::GpioChangeReader>{ using type = Windows::Devices::Gpio::IGpioChangeReader; };
 template <> struct default_interface<Windows::Devices::Gpio::GpioController>{ using type = Windows::Devices::Gpio::IGpioController; };
 template <> struct default_interface<Windows::Devices::Gpio::GpioPin>{ using type = Windows::Devices::Gpio::IGpioPin; };
 template <> struct default_interface<Windows::Devices::Gpio::GpioPinValueChangedEventArgs>{ using type = Windows::Devices::Gpio::IGpioPinValueChangedEventArgs; };
+
+template <> struct abi<Windows::Devices::Gpio::IGpioChangeCounter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsStarted(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL Read(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Reset(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioChangeCounterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* pin, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioChangeReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Capacity(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Length(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEmpty(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOverflowed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsStarted(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL GetNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept = 0;
+    virtual int32_t WINRT_CALL PeekNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAllItems(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL WaitForItemsAsync(int32_t count, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioChangeReaderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* pin, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithCapacity(void* pin, int32_t minCapacity, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PinCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenPin(int32_t pinNumber, void** pin) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenPinWithSharingMode(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin) noexcept = 0;
+    virtual int32_t WINRT_CALL TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin, Windows::Devices::Gpio::GpioOpenStatus* openStatus, bool* succeeded) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioControllerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioControllerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioPin>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ValueChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ValueChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DebounceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DebounceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PinNumber(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharingMode(Windows::Devices::Gpio::GpioSharingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode, bool* supported) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL Write(Windows::Devices::Gpio::GpioPinValue value) noexcept = 0;
+    virtual int32_t WINRT_CALL Read(Windows::Devices::Gpio::GpioPinValue* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Edge(Windows::Devices::Gpio::GpioPinEdge* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Gpio_IGpioChangeCounter
@@ -215,10 +294,10 @@ template <> struct consume<Windows::Devices::Gpio::IGpioControllerStatics2> { te
 template <typename D>
 struct consume_Windows_Devices_Gpio_IGpioPin
 {
-    event_token ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const;
-    using ValueChanged_revoker = event_revoker<Windows::Devices::Gpio::IGpioPin>;
+    winrt::event_token ValueChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const;
+    using ValueChanged_revoker = impl::event_revoker<Windows::Devices::Gpio::IGpioPin, &impl::abi_t<Windows::Devices::Gpio::IGpioPin>::remove_ValueChanged>;
     ValueChanged_revoker ValueChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> const& handler) const;
-    void ValueChanged(event_token const& token) const;
+    void ValueChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::TimeSpan DebounceTimeout() const;
     void DebounceTimeout(Windows::Foundation::TimeSpan const& value) const;
     int32_t PinNumber() const;
@@ -253,84 +332,5 @@ struct struct_Windows_Devices_Gpio_GpioChangeRecord
 };
 template <> struct abi<Windows::Devices::Gpio::GpioChangeRecord>{ using type = struct_Windows_Devices_Gpio_GpioChangeRecord; };
 
-
-template <> struct abi<Windows::Devices::Gpio::IGpioChangeCounter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept = 0;
-    virtual HRESULT __stdcall get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsStarted(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall Read(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept = 0;
-    virtual HRESULT __stdcall Reset(struct struct_Windows_Devices_Gpio_GpioChangeCount* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioChangeCounterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* pin, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioChangeReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Capacity(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Length(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEmpty(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOverflowed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Polarity(Windows::Devices::Gpio::GpioChangePolarity value) noexcept = 0;
-    virtual HRESULT __stdcall get_Polarity(Windows::Devices::Gpio::GpioChangePolarity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsStarted(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall GetNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept = 0;
-    virtual HRESULT __stdcall PeekNextItem(struct struct_Windows_Devices_Gpio_GpioChangeRecord* value) noexcept = 0;
-    virtual HRESULT __stdcall GetAllItems(void** value) noexcept = 0;
-    virtual HRESULT __stdcall WaitForItemsAsync(int32_t count, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioChangeReaderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* pin, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithCapacity(void* pin, int32_t minCapacity, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PinCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall OpenPin(int32_t pinNumber, void** pin) noexcept = 0;
-    virtual HRESULT __stdcall OpenPinWithSharingMode(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin) noexcept = 0;
-    virtual HRESULT __stdcall TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, void** pin, Windows::Devices::Gpio::GpioOpenStatus* openStatus, bool* succeeded) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioControllerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioControllerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioPin>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ValueChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ValueChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_DebounceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DebounceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_PinNumber(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SharingMode(Windows::Devices::Gpio::GpioSharingMode* value) noexcept = 0;
-    virtual HRESULT __stdcall IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode, bool* supported) noexcept = 0;
-    virtual HRESULT __stdcall GetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode* value) noexcept = 0;
-    virtual HRESULT __stdcall SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) noexcept = 0;
-    virtual HRESULT __stdcall Write(Windows::Devices::Gpio::GpioPinValue value) noexcept = 0;
-    virtual HRESULT __stdcall Read(Windows::Devices::Gpio::GpioPinValue* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Edge(Windows::Devices::Gpio::GpioPinEdge* value) noexcept = 0;
-};};
 
 }

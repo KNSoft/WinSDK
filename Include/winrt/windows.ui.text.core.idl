@@ -91,6 +91,8 @@ namespace Windows
 
                 interface ICoreTextLayoutRequest;
 
+                interface ICoreTextLayoutRequest2;
+
                 interface ICoreTextLayoutRequestedEventArgs;
 
                 interface ICoreTextSelectionRequest;
@@ -433,6 +435,14 @@ namespace Windows
                     HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.UI.Text.Core.CoreTextLayoutRequest)]
+                [uuid(676DE624-CD3D-4BCD-BF01-7F7110954511)]
+                interface ICoreTextLayoutRequest2 : IInspectable
+                {
+                    [propget] HRESULT LayoutBoundsVisualPixels([out] [retval] Windows.UI.Text.Core.CoreTextLayoutBounds** value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)]
                 [uuid(B1DC6AE0-9A7B-4E9E-A566-4A6B5F8AD676)]
@@ -582,6 +592,7 @@ namespace Windows
                 runtimeclass CoreTextLayoutRequest
                 {
                     [default] interface Windows.UI.Text.Core.ICoreTextLayoutRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.Text.Core.ICoreTextLayoutRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

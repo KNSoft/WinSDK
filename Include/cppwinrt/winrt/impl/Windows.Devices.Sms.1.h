@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,7 +17,7 @@ struct WINRT_EBO ISmsAppMessage :
     ISmsAppMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")]] ISmsBinaryMessage :
+struct WINRT_EBO ISmsBinaryMessage :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsBinaryMessage>,
     impl::require<ISmsBinaryMessage, Windows::Devices::Sms::ISmsMessage>
@@ -33,7 +33,7 @@ struct WINRT_EBO ISmsBroadcastMessage :
     ISmsBroadcastMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")]] ISmsDevice :
+struct WINRT_EBO ISmsDevice :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsDevice>
 {
@@ -54,21 +54,21 @@ struct WINRT_EBO ISmsDevice2Statics :
     ISmsDevice2Statics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]] ISmsDeviceMessageStore :
+struct WINRT_EBO ISmsDeviceMessageStore :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsDeviceMessageStore>
 {
     ISmsDeviceMessageStore(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")]] ISmsDeviceStatics :
+struct WINRT_EBO ISmsDeviceStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsDeviceStatics>
 {
     ISmsDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")]] ISmsDeviceStatics2 :
+struct WINRT_EBO ISmsDeviceStatics2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsDeviceStatics2>
 {
@@ -117,7 +117,7 @@ struct WINRT_EBO ISmsMessageBase :
     ISmsMessageBase(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")]] ISmsMessageReceivedEventArgs :
+struct WINRT_EBO ISmsMessageReceivedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsMessageReceivedEventArgs>
 {
@@ -145,14 +145,14 @@ struct WINRT_EBO ISmsMessageRegistrationStatics :
     ISmsMessageRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")]] ISmsReceivedEventDetails :
+struct WINRT_EBO ISmsReceivedEventDetails :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsReceivedEventDetails>
 {
     ISmsReceivedEventDetails(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")]] ISmsReceivedEventDetails2 :
+struct WINRT_EBO ISmsReceivedEventDetails2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsReceivedEventDetails2>
 {
@@ -174,7 +174,7 @@ struct WINRT_EBO ISmsStatusMessage :
     ISmsStatusMessage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]] ISmsTextMessage :
+struct WINRT_EBO ISmsTextMessage :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsTextMessage>,
     impl::require<ISmsTextMessage, Windows::Devices::Sms::ISmsMessage>
@@ -190,7 +190,7 @@ struct WINRT_EBO ISmsTextMessage2 :
     ISmsTextMessage2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")]] ISmsTextMessageStatics :
+struct WINRT_EBO ISmsTextMessageStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmsTextMessageStatics>
 {

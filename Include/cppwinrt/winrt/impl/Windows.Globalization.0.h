@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -43,6 +43,7 @@ struct ICalendarIdentifiersStatics3;
 struct IClockIdentifiersStatics;
 struct ICurrencyIdentifiersStatics;
 struct ICurrencyIdentifiersStatics2;
+struct ICurrencyIdentifiersStatics3;
 struct IGeographicRegion;
 struct IGeographicRegionFactory;
 struct IGeographicRegionStatics;
@@ -83,6 +84,7 @@ template <> struct category<Windows::Globalization::ICalendarIdentifiersStatics3
 template <> struct category<Windows::Globalization::IClockIdentifiersStatics>{ using type = interface_category; };
 template <> struct category<Windows::Globalization::ICurrencyIdentifiersStatics>{ using type = interface_category; };
 template <> struct category<Windows::Globalization::ICurrencyIdentifiersStatics2>{ using type = interface_category; };
+template <> struct category<Windows::Globalization::ICurrencyIdentifiersStatics3>{ using type = interface_category; };
 template <> struct category<Windows::Globalization::IGeographicRegion>{ using type = interface_category; };
 template <> struct category<Windows::Globalization::IGeographicRegionFactory>{ using type = interface_category; };
 template <> struct category<Windows::Globalization::IGeographicRegionStatics>{ using type = interface_category; };
@@ -120,6 +122,7 @@ template <> struct name<Windows::Globalization::ICalendarIdentifiersStatics3>{ s
 template <> struct name<Windows::Globalization::IClockIdentifiersStatics>{ static constexpr auto & value{ L"Windows.Globalization.IClockIdentifiersStatics" }; };
 template <> struct name<Windows::Globalization::ICurrencyIdentifiersStatics>{ static constexpr auto & value{ L"Windows.Globalization.ICurrencyIdentifiersStatics" }; };
 template <> struct name<Windows::Globalization::ICurrencyIdentifiersStatics2>{ static constexpr auto & value{ L"Windows.Globalization.ICurrencyIdentifiersStatics2" }; };
+template <> struct name<Windows::Globalization::ICurrencyIdentifiersStatics3>{ static constexpr auto & value{ L"Windows.Globalization.ICurrencyIdentifiersStatics3" }; };
 template <> struct name<Windows::Globalization::IGeographicRegion>{ static constexpr auto & value{ L"Windows.Globalization.IGeographicRegion" }; };
 template <> struct name<Windows::Globalization::IGeographicRegionFactory>{ static constexpr auto & value{ L"Windows.Globalization.IGeographicRegionFactory" }; };
 template <> struct name<Windows::Globalization::IGeographicRegionStatics>{ static constexpr auto & value{ L"Windows.Globalization.IGeographicRegionStatics" }; };
@@ -146,35 +149,501 @@ template <> struct name<Windows::Globalization::Language>{ static constexpr auto
 template <> struct name<Windows::Globalization::NumeralSystemIdentifiers>{ static constexpr auto & value{ L"Windows.Globalization.NumeralSystemIdentifiers" }; };
 template <> struct name<Windows::Globalization::DayOfWeek>{ static constexpr auto & value{ L"Windows.Globalization.DayOfWeek" }; };
 template <> struct name<Windows::Globalization::LanguageLayoutDirection>{ static constexpr auto & value{ L"Windows.Globalization.LanguageLayoutDirection" }; };
-template <> struct guid<Windows::Globalization::IApplicationLanguagesStatics>{ static constexpr GUID value{ 0x75B40847,0x0A4C,0x4A92,{ 0x95,0x65,0xFD,0x63,0xC9,0x5F,0x7A,0xED } }; };
-template <> struct guid<Windows::Globalization::IApplicationLanguagesStatics2>{ static constexpr GUID value{ 0x1DF0DE4F,0x072B,0x4D7B,{ 0x8F,0x06,0xCB,0x2D,0xB4,0x0F,0x2B,0xB5 } }; };
-template <> struct guid<Windows::Globalization::ICalendar>{ static constexpr GUID value{ 0xCA30221D,0x86D9,0x40FB,{ 0xA2,0x6B,0xD4,0x4E,0xB7,0xCF,0x08,0xEA } }; };
-template <> struct guid<Windows::Globalization::ICalendarFactory>{ static constexpr GUID value{ 0x83F58412,0xE56B,0x4C75,{ 0xA6,0x6E,0x0F,0x63,0xD5,0x77,0x58,0xA6 } }; };
-template <> struct guid<Windows::Globalization::ICalendarFactory2>{ static constexpr GUID value{ 0xB44B378C,0xCA7E,0x4590,{ 0x9E,0x72,0xEA,0x2B,0xEC,0x1A,0x51,0x15 } }; };
-template <> struct guid<Windows::Globalization::ICalendarIdentifiersStatics>{ static constexpr GUID value{ 0x80653F68,0x2CB2,0x4C1F,{ 0xB5,0x90,0xF0,0xF5,0x2B,0xF4,0xFD,0x1A } }; };
-template <> struct guid<Windows::Globalization::ICalendarIdentifiersStatics2>{ static constexpr GUID value{ 0x7DF4D488,0x5FD0,0x42A7,{ 0x95,0xB5,0x7D,0x98,0xD8,0x23,0x07,0x5F } }; };
-template <> struct guid<Windows::Globalization::ICalendarIdentifiersStatics3>{ static constexpr GUID value{ 0x2C225423,0x1FAD,0x40C0,{ 0x93,0x34,0xA8,0xEB,0x90,0xDB,0x04,0xF5 } }; };
-template <> struct guid<Windows::Globalization::IClockIdentifiersStatics>{ static constexpr GUID value{ 0x523805BB,0x12EC,0x4F83,{ 0xBC,0x31,0xB1,0xB4,0x37,0x6B,0x08,0x08 } }; };
-template <> struct guid<Windows::Globalization::ICurrencyIdentifiersStatics>{ static constexpr GUID value{ 0x9F1D091B,0xD586,0x4913,{ 0x9B,0x6A,0xA9,0xBD,0x2D,0xC1,0x28,0x74 } }; };
-template <> struct guid<Windows::Globalization::ICurrencyIdentifiersStatics2>{ static constexpr GUID value{ 0x1814797F,0xC3B2,0x4C33,{ 0x95,0x91,0x98,0x00,0x11,0x95,0x0D,0x37 } }; };
-template <> struct guid<Windows::Globalization::IGeographicRegion>{ static constexpr GUID value{ 0x01E9A621,0x4A64,0x4ED9,{ 0x95,0x4F,0x9E,0xDE,0xB0,0x7B,0xD9,0x03 } }; };
-template <> struct guid<Windows::Globalization::IGeographicRegionFactory>{ static constexpr GUID value{ 0x53425270,0x77B4,0x426B,{ 0x85,0x9F,0x81,0xE1,0x9D,0x51,0x25,0x46 } }; };
-template <> struct guid<Windows::Globalization::IGeographicRegionStatics>{ static constexpr GUID value{ 0x29E28974,0x7AD9,0x4EF4,{ 0x87,0x99,0xB3,0xB4,0x4F,0xAD,0xEC,0x08 } }; };
-template <> struct guid<Windows::Globalization::IJapanesePhoneme>{ static constexpr GUID value{ 0x2F6A9300,0xE85B,0x43E6,{ 0x89,0x7D,0x5D,0x82,0xF8,0x62,0xDF,0x21 } }; };
-template <> struct guid<Windows::Globalization::IJapanesePhoneticAnalyzerStatics>{ static constexpr GUID value{ 0x88AB9E90,0x93DE,0x41B2,{ 0xB4,0xD5,0x8E,0xDB,0x22,0x7F,0xD1,0xC2 } }; };
-template <> struct guid<Windows::Globalization::ILanguage>{ static constexpr GUID value{ 0xEA79A752,0xF7C2,0x4265,{ 0xB1,0xBD,0xC4,0xDE,0xC4,0xE4,0xF0,0x80 } }; };
-template <> struct guid<Windows::Globalization::ILanguage2>{ static constexpr GUID value{ 0x6A47E5B5,0xD94D,0x4886,{ 0xA4,0x04,0xA5,0xA5,0xB9,0xD5,0xB4,0x94 } }; };
-template <> struct guid<Windows::Globalization::ILanguageExtensionSubtags>{ static constexpr GUID value{ 0x7D7DAF45,0x368D,0x4364,{ 0x85,0x2B,0xDE,0xC9,0x27,0x03,0x7B,0x85 } }; };
-template <> struct guid<Windows::Globalization::ILanguageFactory>{ static constexpr GUID value{ 0x9B0252AC,0x0C27,0x44F8,{ 0xB7,0x92,0x97,0x93,0xFB,0x66,0xC6,0x3E } }; };
-template <> struct guid<Windows::Globalization::ILanguageStatics>{ static constexpr GUID value{ 0xB23CD557,0x0865,0x46D4,{ 0x89,0xB8,0xD5,0x9B,0xE8,0x99,0x0F,0x0D } }; };
-template <> struct guid<Windows::Globalization::ILanguageStatics2>{ static constexpr GUID value{ 0x30199F6E,0x914B,0x4B2A,{ 0x9D,0x6E,0xE3,0xB0,0xE2,0x7D,0xBE,0x4F } }; };
-template <> struct guid<Windows::Globalization::INumeralSystemIdentifiersStatics>{ static constexpr GUID value{ 0xA5C662C3,0x68C9,0x4D3D,{ 0xB7,0x65,0x97,0x20,0x29,0xE2,0x1D,0xEC } }; };
-template <> struct guid<Windows::Globalization::INumeralSystemIdentifiersStatics2>{ static constexpr GUID value{ 0x7F003228,0x9DDB,0x4A34,{ 0x91,0x04,0x02,0x60,0xC0,0x91,0xA7,0xC7 } }; };
-template <> struct guid<Windows::Globalization::ITimeZoneOnCalendar>{ static constexpr GUID value{ 0xBB3C25E5,0x46CF,0x4317,{ 0xA3,0xF5,0x02,0x62,0x1A,0xD5,0x44,0x78 } }; };
+template <> struct guid_storage<Windows::Globalization::IApplicationLanguagesStatics>{ static constexpr guid value{ 0x75B40847,0x0A4C,0x4A92,{ 0x95,0x65,0xFD,0x63,0xC9,0x5F,0x7A,0xED } }; };
+template <> struct guid_storage<Windows::Globalization::IApplicationLanguagesStatics2>{ static constexpr guid value{ 0x1DF0DE4F,0x072B,0x4D7B,{ 0x8F,0x06,0xCB,0x2D,0xB4,0x0F,0x2B,0xB5 } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendar>{ static constexpr guid value{ 0xCA30221D,0x86D9,0x40FB,{ 0xA2,0x6B,0xD4,0x4E,0xB7,0xCF,0x08,0xEA } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendarFactory>{ static constexpr guid value{ 0x83F58412,0xE56B,0x4C75,{ 0xA6,0x6E,0x0F,0x63,0xD5,0x77,0x58,0xA6 } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendarFactory2>{ static constexpr guid value{ 0xB44B378C,0xCA7E,0x4590,{ 0x9E,0x72,0xEA,0x2B,0xEC,0x1A,0x51,0x15 } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendarIdentifiersStatics>{ static constexpr guid value{ 0x80653F68,0x2CB2,0x4C1F,{ 0xB5,0x90,0xF0,0xF5,0x2B,0xF4,0xFD,0x1A } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendarIdentifiersStatics2>{ static constexpr guid value{ 0x7DF4D488,0x5FD0,0x42A7,{ 0x95,0xB5,0x7D,0x98,0xD8,0x23,0x07,0x5F } }; };
+template <> struct guid_storage<Windows::Globalization::ICalendarIdentifiersStatics3>{ static constexpr guid value{ 0x2C225423,0x1FAD,0x40C0,{ 0x93,0x34,0xA8,0xEB,0x90,0xDB,0x04,0xF5 } }; };
+template <> struct guid_storage<Windows::Globalization::IClockIdentifiersStatics>{ static constexpr guid value{ 0x523805BB,0x12EC,0x4F83,{ 0xBC,0x31,0xB1,0xB4,0x37,0x6B,0x08,0x08 } }; };
+template <> struct guid_storage<Windows::Globalization::ICurrencyIdentifiersStatics>{ static constexpr guid value{ 0x9F1D091B,0xD586,0x4913,{ 0x9B,0x6A,0xA9,0xBD,0x2D,0xC1,0x28,0x74 } }; };
+template <> struct guid_storage<Windows::Globalization::ICurrencyIdentifiersStatics2>{ static constexpr guid value{ 0x1814797F,0xC3B2,0x4C33,{ 0x95,0x91,0x98,0x00,0x11,0x95,0x0D,0x37 } }; };
+template <> struct guid_storage<Windows::Globalization::ICurrencyIdentifiersStatics3>{ static constexpr guid value{ 0x4FB23BFA,0xED25,0x4F4D,{ 0x85,0x7F,0x23,0x7F,0x17,0x48,0xC2,0x1C } }; };
+template <> struct guid_storage<Windows::Globalization::IGeographicRegion>{ static constexpr guid value{ 0x01E9A621,0x4A64,0x4ED9,{ 0x95,0x4F,0x9E,0xDE,0xB0,0x7B,0xD9,0x03 } }; };
+template <> struct guid_storage<Windows::Globalization::IGeographicRegionFactory>{ static constexpr guid value{ 0x53425270,0x77B4,0x426B,{ 0x85,0x9F,0x81,0xE1,0x9D,0x51,0x25,0x46 } }; };
+template <> struct guid_storage<Windows::Globalization::IGeographicRegionStatics>{ static constexpr guid value{ 0x29E28974,0x7AD9,0x4EF4,{ 0x87,0x99,0xB3,0xB4,0x4F,0xAD,0xEC,0x08 } }; };
+template <> struct guid_storage<Windows::Globalization::IJapanesePhoneme>{ static constexpr guid value{ 0x2F6A9300,0xE85B,0x43E6,{ 0x89,0x7D,0x5D,0x82,0xF8,0x62,0xDF,0x21 } }; };
+template <> struct guid_storage<Windows::Globalization::IJapanesePhoneticAnalyzerStatics>{ static constexpr guid value{ 0x88AB9E90,0x93DE,0x41B2,{ 0xB4,0xD5,0x8E,0xDB,0x22,0x7F,0xD1,0xC2 } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguage>{ static constexpr guid value{ 0xEA79A752,0xF7C2,0x4265,{ 0xB1,0xBD,0xC4,0xDE,0xC4,0xE4,0xF0,0x80 } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguage2>{ static constexpr guid value{ 0x6A47E5B5,0xD94D,0x4886,{ 0xA4,0x04,0xA5,0xA5,0xB9,0xD5,0xB4,0x94 } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguageExtensionSubtags>{ static constexpr guid value{ 0x7D7DAF45,0x368D,0x4364,{ 0x85,0x2B,0xDE,0xC9,0x27,0x03,0x7B,0x85 } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguageFactory>{ static constexpr guid value{ 0x9B0252AC,0x0C27,0x44F8,{ 0xB7,0x92,0x97,0x93,0xFB,0x66,0xC6,0x3E } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguageStatics>{ static constexpr guid value{ 0xB23CD557,0x0865,0x46D4,{ 0x89,0xB8,0xD5,0x9B,0xE8,0x99,0x0F,0x0D } }; };
+template <> struct guid_storage<Windows::Globalization::ILanguageStatics2>{ static constexpr guid value{ 0x30199F6E,0x914B,0x4B2A,{ 0x9D,0x6E,0xE3,0xB0,0xE2,0x7D,0xBE,0x4F } }; };
+template <> struct guid_storage<Windows::Globalization::INumeralSystemIdentifiersStatics>{ static constexpr guid value{ 0xA5C662C3,0x68C9,0x4D3D,{ 0xB7,0x65,0x97,0x20,0x29,0xE2,0x1D,0xEC } }; };
+template <> struct guid_storage<Windows::Globalization::INumeralSystemIdentifiersStatics2>{ static constexpr guid value{ 0x7F003228,0x9DDB,0x4A34,{ 0x91,0x04,0x02,0x60,0xC0,0x91,0xA7,0xC7 } }; };
+template <> struct guid_storage<Windows::Globalization::ITimeZoneOnCalendar>{ static constexpr guid value{ 0xBB3C25E5,0x46CF,0x4317,{ 0xA3,0xF5,0x02,0x62,0x1A,0xD5,0x44,0x78 } }; };
 template <> struct default_interface<Windows::Globalization::Calendar>{ using type = Windows::Globalization::ICalendar; };
 template <> struct default_interface<Windows::Globalization::GeographicRegion>{ using type = Windows::Globalization::IGeographicRegion; };
 template <> struct default_interface<Windows::Globalization::JapanesePhoneme>{ using type = Windows::Globalization::IJapanesePhoneme; };
 template <> struct default_interface<Windows::Globalization::Language>{ using type = Windows::Globalization::ILanguage; };
+
+template <> struct abi<Windows::Globalization::IApplicationLanguagesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PrimaryLanguageOverride(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PrimaryLanguageOverride(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Languages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManifestLanguages(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IApplicationLanguagesStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetLanguagesForUser(void* user, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendar>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Clone(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetToMin() noexcept = 0;
+    virtual int32_t WINRT_CALL SetToMax() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Languages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCalendarSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeCalendarSystem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetClock(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeClock(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDateTime(Windows::Foundation::DateTime* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDateTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetToNow() noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstEra(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastEra(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfEras(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Era(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Era(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddEras(int32_t eras) noexcept = 0;
+    virtual int32_t WINRT_CALL EraAsFullString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL EraAsString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstYearInThisEra(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastYearInThisEra(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfYearsInThisEra(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Year(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Year(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddYears(int32_t years) noexcept = 0;
+    virtual int32_t WINRT_CALL YearAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL YearAsTruncatedString(int32_t remainingDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL YearAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstMonthInThisYear(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastMonthInThisYear(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfMonthsInThisYear(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Month(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Month(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddMonths(int32_t months) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsFullString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsFullSoloString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsSoloString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsNumericString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MonthAsPaddedNumericString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL AddWeeks(int32_t weeks) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstDayInThisMonth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastDayInThisMonth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfDaysInThisMonth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Day(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Day(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDays(int32_t days) noexcept = 0;
+    virtual int32_t WINRT_CALL DayAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DayAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DayOfWeek(Windows::Globalization::DayOfWeek* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DayOfWeekAsFullString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DayOfWeekAsString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DayOfWeekAsFullSoloString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DayOfWeekAsSoloString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstPeriodInThisDay(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastPeriodInThisDay(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfPeriodsInThisDay(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Period(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Period(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPeriods(int32_t periods) noexcept = 0;
+    virtual int32_t WINRT_CALL PeriodAsFullString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PeriodAsString(int32_t idealLength, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstHourInThisPeriod(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastHourInThisPeriod(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfHoursInThisPeriod(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hour(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Hour(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddHours(int32_t hours) noexcept = 0;
+    virtual int32_t WINRT_CALL HourAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL HourAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Minute(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Minute(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddMinutes(int32_t minutes) noexcept = 0;
+    virtual int32_t WINRT_CALL MinuteAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL MinuteAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Second(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Second(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSeconds(int32_t seconds) noexcept = 0;
+    virtual int32_t WINRT_CALL SecondAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SecondAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Nanosecond(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Nanosecond(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddNanoseconds(int32_t nanoseconds) noexcept = 0;
+    virtual int32_t WINRT_CALL NanosecondAsString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL NanosecondAsPaddedString(int32_t minDigits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL Compare(void* other, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CompareDateTime(Windows::Foundation::DateTime other, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CopyTo(void* other) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstMinuteInThisHour(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastMinuteInThisHour(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfMinutesInThisHour(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstSecondInThisMinute(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastSecondInThisMinute(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfSecondsInThisMinute(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDaylightSavingTime(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendarFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCalendarDefaultCalendarAndClock(void* languages, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCalendar(void* languages, void* calendar, void* clock, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendarFactory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCalendarWithTimeZone(void* languages, void* calendar, void* clock, void* timeZoneId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Gregorian(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hebrew(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hijri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Japanese(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Julian(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Korean(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Taiwan(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thai(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UmAlQura(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Persian(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChineseLunar(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_JapaneseLunar(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KoreanLunar(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TaiwanLunar(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VietnameseLunar(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IClockIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TwelveHour(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TwentyFourHour(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICurrencyIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AED(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AFN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ALL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AMD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ANG(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AOA(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ARS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AUD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AWG(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AZN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BAM(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BBD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BDT(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BGN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BHD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BIF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BMD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BND(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BOB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BRL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BSD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BTN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BWP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BYR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BZD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CAD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CDF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CHF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CLP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CNY(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_COP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CRC(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CUP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CVE(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CZK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DJF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DKK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DOP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DZD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EGP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ERN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ETB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EUR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FJD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FKP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GBP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GEL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GHS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GIP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GMD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GNF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GTQ(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GYD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HKD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HNL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HRK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HTG(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HUF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IDR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ILS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_INR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IQD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IRR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ISK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_JMD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_JOD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_JPY(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KES(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KGS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KHR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KMF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KPW(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KRW(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KWD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KYD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KZT(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LAK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LBP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LKR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LRD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LSL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LTL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LVL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LYD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MAD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MDL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MGA(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MKD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MMK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MNT(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MOP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MRO(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MUR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MVR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MWK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MXN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MYR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MZN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NAD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NGN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NIO(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NOK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NPR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NZD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OMR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PAB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PEN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PGK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PHP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PKR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PLN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PYG(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_QAR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RON(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RSD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RUB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RWF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SAR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SBD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SCR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SDG(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SEK(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SGD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SHP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SLL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SOS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SRD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_STD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SYP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SZL(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_THB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TJS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TMT(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TND(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TOP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TRY(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TTD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TWD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TZS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UAH(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UGX(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_USD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UYU(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UZS(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VEF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VND(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VUV(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WST(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XAF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XCD(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XOF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XPF(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XXX(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_YER(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZAR(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZMW(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZWL(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICurrencyIdentifiersStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BYN(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ICurrencyIdentifiersStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MRU(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SSP(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_STN(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VES(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IGeographicRegion>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Code(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CodeTwoLetter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CodeThreeLetter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CodeThreeDigit(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NativeName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrenciesInUse(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IGeographicRegionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateGeographicRegion(void* geographicRegionCode, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IGeographicRegionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsSupported(void* geographicRegionCode, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IJapanesePhoneme>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_YomiText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPhraseStart(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::IJapanesePhoneticAnalyzerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetWords(void* input, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWordsWithMonoRubyOption(void* input, bool monoRuby, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LanguageTag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NativeName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Script(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguage2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LayoutDirection(Windows::Globalization::LanguageLayoutDirection* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguageExtensionSubtags>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetExtensionSubtags(void* singleton, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateLanguage(void* languageTag, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguageStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsWellFormed(void* languageTag, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentInputMethodLanguageTag(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ILanguageStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TrySetInputMethodLanguageTag(void* languageTag, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::INumeralSystemIdentifiersStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Arab(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ArabExt(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bali(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Beng(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Cham(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Deva(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FullWide(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gujr(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Guru(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HaniDec(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Java(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kali(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Khmr(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Knda(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Lana(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LanaTham(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Laoo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Latn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Lepc(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Limb(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mlym(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mong(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mtei(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mymr(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MymrShan(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Nkoo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Olck(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orya(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Saur(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Sund(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Talu(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TamlDec(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Telu(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thai(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tibt(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Vaii(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::INumeralSystemIdentifiersStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Brah(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Osma(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathBold(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathDbl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathSans(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathSanb(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathMono(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZmthBold(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZmthDbl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZmthSans(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZmthSanb(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZmthMono(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::ITimeZoneOnCalendar>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTimeZone(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeTimeZone(void* timeZoneId) noexcept = 0;
+    virtual int32_t WINRT_CALL TimeZoneAsFullString(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TimeZoneAsString(int32_t idealLength, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Globalization_IApplicationLanguagesStatics
@@ -524,6 +993,16 @@ struct consume_Windows_Globalization_ICurrencyIdentifiersStatics2
 template <> struct consume<Windows::Globalization::ICurrencyIdentifiersStatics2> { template <typename D> using type = consume_Windows_Globalization_ICurrencyIdentifiersStatics2<D>; };
 
 template <typename D>
+struct consume_Windows_Globalization_ICurrencyIdentifiersStatics3
+{
+    hstring MRU() const;
+    hstring SSP() const;
+    hstring STN() const;
+    hstring VES() const;
+};
+template <> struct consume<Windows::Globalization::ICurrencyIdentifiersStatics3> { template <typename D> using type = consume_Windows_Globalization_ICurrencyIdentifiersStatics3<D>; };
+
+template <typename D>
 struct consume_Windows_Globalization_IGeographicRegion
 {
     hstring Code() const;
@@ -682,462 +1161,5 @@ struct consume_Windows_Globalization_ITimeZoneOnCalendar
     hstring TimeZoneAsString(int32_t idealLength) const;
 };
 template <> struct consume<Windows::Globalization::ITimeZoneOnCalendar> { template <typename D> using type = consume_Windows_Globalization_ITimeZoneOnCalendar<D>; };
-
-template <> struct abi<Windows::Globalization::IApplicationLanguagesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PrimaryLanguageOverride(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PrimaryLanguageOverride(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Languages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManifestLanguages(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IApplicationLanguagesStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetLanguagesForUser(void* user, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendar>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Clone(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetToMin() noexcept = 0;
-    virtual HRESULT __stdcall SetToMax() noexcept = 0;
-    virtual HRESULT __stdcall get_Languages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall GetCalendarSystem(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ChangeCalendarSystem(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall GetClock(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ChangeClock(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall GetDateTime(Windows::Foundation::DateTime* result) noexcept = 0;
-    virtual HRESULT __stdcall SetDateTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall SetToNow() noexcept = 0;
-    virtual HRESULT __stdcall get_FirstEra(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastEra(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfEras(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Era(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Era(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddEras(int32_t eras) noexcept = 0;
-    virtual HRESULT __stdcall EraAsFullString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall EraAsString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstYearInThisEra(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastYearInThisEra(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfYearsInThisEra(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Year(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Year(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddYears(int32_t years) noexcept = 0;
-    virtual HRESULT __stdcall YearAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall YearAsTruncatedString(int32_t remainingDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall YearAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstMonthInThisYear(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastMonthInThisYear(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfMonthsInThisYear(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Month(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Month(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddMonths(int32_t months) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsFullString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsFullSoloString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsSoloString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsNumericString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MonthAsPaddedNumericString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall AddWeeks(int32_t weeks) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstDayInThisMonth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastDayInThisMonth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfDaysInThisMonth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Day(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Day(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddDays(int32_t days) noexcept = 0;
-    virtual HRESULT __stdcall DayAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall DayAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_DayOfWeek(Windows::Globalization::DayOfWeek* value) noexcept = 0;
-    virtual HRESULT __stdcall DayOfWeekAsFullString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall DayOfWeekAsString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall DayOfWeekAsFullSoloString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall DayOfWeekAsSoloString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstPeriodInThisDay(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastPeriodInThisDay(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfPeriodsInThisDay(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Period(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Period(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddPeriods(int32_t periods) noexcept = 0;
-    virtual HRESULT __stdcall PeriodAsFullString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall PeriodAsString(int32_t idealLength, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstHourInThisPeriod(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastHourInThisPeriod(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfHoursInThisPeriod(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hour(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Hour(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddHours(int32_t hours) noexcept = 0;
-    virtual HRESULT __stdcall HourAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall HourAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_Minute(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Minute(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddMinutes(int32_t minutes) noexcept = 0;
-    virtual HRESULT __stdcall MinuteAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall MinuteAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_Second(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Second(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddSeconds(int32_t seconds) noexcept = 0;
-    virtual HRESULT __stdcall SecondAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall SecondAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall get_Nanosecond(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Nanosecond(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddNanoseconds(int32_t nanoseconds) noexcept = 0;
-    virtual HRESULT __stdcall NanosecondAsString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall NanosecondAsPaddedString(int32_t minDigits, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall Compare(void* other, int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall CompareDateTime(Windows::Foundation::DateTime other, int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall CopyTo(void* other) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstMinuteInThisHour(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastMinuteInThisHour(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfMinutesInThisHour(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstSecondInThisMinute(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastSecondInThisMinute(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfSecondsInThisMinute(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDaylightSavingTime(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendarFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCalendarDefaultCalendarAndClock(void* languages, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateCalendar(void* languages, HSTRING calendar, HSTRING clock, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendarFactory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCalendarWithTimeZone(void* languages, HSTRING calendar, HSTRING clock, HSTRING timeZoneId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Gregorian(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hebrew(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hijri(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Japanese(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Julian(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Korean(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Taiwan(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thai(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UmAlQura(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Persian(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICalendarIdentifiersStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChineseLunar(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_JapaneseLunar(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KoreanLunar(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TaiwanLunar(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VietnameseLunar(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IClockIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TwelveHour(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TwentyFourHour(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICurrencyIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AED(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AFN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ALL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AMD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ANG(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AOA(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ARS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AUD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AWG(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AZN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BAM(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BBD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BDT(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BGN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BHD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BIF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BMD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BND(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BOB(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BRL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BSD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BTN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BWP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BYR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BZD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CAD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CDF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CHF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CLP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CNY(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_COP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CRC(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CUP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CVE(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CZK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DJF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DKK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DOP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DZD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EGP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ERN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ETB(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EUR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FJD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FKP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GBP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GEL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GHS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GIP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GMD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GNF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GTQ(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GYD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HKD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HNL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HRK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HTG(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HUF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IDR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ILS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_INR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IQD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IRR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ISK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_JMD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_JOD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_JPY(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KES(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KGS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KHR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KMF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KPW(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KRW(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KWD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KYD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KZT(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LAK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LBP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LKR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LRD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LSL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LTL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LVL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LYD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MAD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MDL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MGA(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MKD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MMK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MNT(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MOP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MRO(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MUR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MVR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MWK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MXN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MYR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MZN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NAD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NGN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NIO(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NOK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NPR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NZD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OMR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PAB(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PEN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PGK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PHP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PKR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PLN(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PYG(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_QAR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RON(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RSD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RUB(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RWF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SAR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SBD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SCR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SDG(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SEK(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SGD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SHP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SLL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SOS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SRD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_STD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SYP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SZL(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_THB(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TJS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TMT(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TND(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TOP(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TRY(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TTD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TWD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TZS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UAH(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UGX(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_USD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UYU(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UZS(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VEF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VND(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VUV(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WST(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XAF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XCD(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XOF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XPF(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XXX(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_YER(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZAR(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZMW(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZWL(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ICurrencyIdentifiersStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BYN(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IGeographicRegion>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Code(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CodeTwoLetter(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CodeThreeLetter(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CodeThreeDigit(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NativeName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrenciesInUse(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IGeographicRegionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateGeographicRegion(HSTRING geographicRegionCode, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IGeographicRegionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsSupported(HSTRING geographicRegionCode, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IJapanesePhoneme>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_YomiText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPhraseStart(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::IJapanesePhoneticAnalyzerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetWords(HSTRING input, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LanguageTag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NativeName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Script(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguage2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LayoutDirection(Windows::Globalization::LanguageLayoutDirection* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguageExtensionSubtags>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetExtensionSubtags(HSTRING singleton, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateLanguage(HSTRING languageTag, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguageStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsWellFormed(HSTRING languageTag, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentInputMethodLanguageTag(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ILanguageStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TrySetInputMethodLanguageTag(HSTRING languageTag, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::INumeralSystemIdentifiersStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Arab(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ArabExt(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bali(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Beng(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Cham(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Deva(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FullWide(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gujr(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Guru(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HaniDec(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Java(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kali(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Khmr(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Knda(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Lana(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LanaTham(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Laoo(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Latn(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Lepc(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Limb(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mlym(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mong(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mtei(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mymr(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MymrShan(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Nkoo(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Olck(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orya(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Saur(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Sund(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Talu(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TamlDec(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Telu(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thai(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tibt(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Vaii(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::INumeralSystemIdentifiersStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Brah(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Osma(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathBold(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathDbl(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathSans(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathSanb(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathMono(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZmthBold(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZmthDbl(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZmthSans(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZmthSanb(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZmthMono(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::ITimeZoneOnCalendar>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTimeZone(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ChangeTimeZone(HSTRING timeZoneId) noexcept = 0;
-    virtual HRESULT __stdcall TimeZoneAsFullString(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall TimeZoneAsString(int32_t idealLength, HSTRING* result) noexcept = 0;
-};};
 
 }

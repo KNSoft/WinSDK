@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -8,6 +8,7 @@
 #include "winrt/impl/Windows.Graphics.DirectX.1.h"
 #include "winrt/impl/Windows.Graphics.DirectX.Direct3D11.1.h"
 #include "winrt/impl/Windows.System.1.h"
+#include "winrt/impl/Windows.UI.Composition.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
 #include "winrt/impl/Windows.Graphics.Capture.1.h"
 
@@ -34,12 +35,14 @@ struct WINRT_EBO Direct3D11CaptureFramePool :
 {
     Direct3D11CaptureFramePool(std::nullptr_t) noexcept {}
     static Windows::Graphics::Capture::Direct3D11CaptureFramePool Create(Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const& device, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat, int32_t numberOfBuffers, Windows::Graphics::SizeInt32 const& size);
+    static Windows::Graphics::Capture::Direct3D11CaptureFramePool CreateFreeThreaded(Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const& device, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat, int32_t numberOfBuffers, Windows::Graphics::SizeInt32 const& size);
 };
 
 struct WINRT_EBO GraphicsCaptureItem :
     Windows::Graphics::Capture::IGraphicsCaptureItem
 {
     GraphicsCaptureItem(std::nullptr_t) noexcept {}
+    static Windows::Graphics::Capture::GraphicsCaptureItem CreateFromVisual(Windows::UI::Composition::Visual const& visual);
 };
 
 struct WINRT_EBO GraphicsCapturePicker :

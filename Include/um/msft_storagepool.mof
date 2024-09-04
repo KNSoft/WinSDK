@@ -1046,6 +1046,9 @@ class MSFT_StoragePool : MSFT_StorageObject {
         UInt16 ProvisioningType,
 
         [In]
+        UInt64 AllocationUnitSize,
+
+        [In]
         UInt16 MediaType,
 
         [In]
@@ -1059,6 +1062,9 @@ class MSFT_StoragePool : MSFT_StorageObject {
 
         [In]
         String ResiliencySettingName,
+
+        [In]
+        UInt16 Usage,
 
         [In]
         UInt64 Interleave,

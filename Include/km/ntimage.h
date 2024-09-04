@@ -12,6 +12,8 @@ Abstract:
 
 --*/
 
+//@[contract("ntoskrnl-ntimage"), comment("MVI_tracked - https://osgwiki.com/wiki/Microsoft_Virus_Initiative")];
+
 #ifndef _NTIMAGE_
 #define _NTIMAGE_
 
@@ -247,7 +249,7 @@ typedef struct _IMAGE_FILE_HEADER {
 #define IMAGE_FILE_MACHINE_CHPE_X86          0x3A64
 
 // begin_winnt
- 
+
 //
 // Directory format.
 //
@@ -1101,6 +1103,17 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 #define IMAGE_REL_AMD64_SREL32          0x000E  // 32 bit signed span-dependent value emitted into object
 #define IMAGE_REL_AMD64_PAIR            0x000F
 #define IMAGE_REL_AMD64_SSPAN32         0x0010  // 32 bit signed span-dependent value applied at link time
+#define IMAGE_REL_AMD64_EHANDLER        0x0011
+#define IMAGE_REL_AMD64_IMPORT_BR       0x0012  // Indirect branch to an import
+#define IMAGE_REL_AMD64_IMPORT_CALL     0x0013  // Indirect call to an import
+#define IMAGE_REL_AMD64_CFG_BR          0x0014  // Indirect branch to a CFG check
+#define IMAGE_REL_AMD64_CFG_BR_REX      0x0015  // Indirect branch to a CFG check, with REX.W prefix
+#define IMAGE_REL_AMD64_CFG_CALL        0x0016  // Indirect call to a CFG check
+#define IMAGE_REL_AMD64_INDIR_BR        0x0017  // Indirect branch to a target in RAX (no CFG)
+#define IMAGE_REL_AMD64_INDIR_BR_REX    0x0018  // Indirect branch to a target in RAX, with REX.W prefix (no CFG)
+#define IMAGE_REL_AMD64_INDIR_CALL      0x0019  // Indirect call to a target in RAX (no CFG)
+#define IMAGE_REL_AMD64_INDIR_BR_SWITCHTABLE_FIRST  0x0020 // Indirect branch for a switch table using Reg 0 (RAX)
+#define IMAGE_REL_AMD64_INDIR_BR_SWITCHTABLE_LAST   0x002F // Indirect branch for a switch table using Reg 15 (R15)
 
 //
 // IA64 relocation types.
@@ -1299,6 +1312,7 @@ typedef IMAGE_LINENUMBER UNALIGNED *PIMAGE_LINENUMBER;
 // Based relocation format.
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_BASE_RELOCATION {
     ULONG   VirtualAddress;
     ULONG   SizeOfBlock;
@@ -1368,6 +1382,7 @@ typedef struct _IMAGE_ARCHIVE_MEMBER_HEADER {
 // Export Format
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_EXPORT_DIRECTORY {
     ULONG   Characteristics;
     ULONG   TimeDateStamp;
@@ -1386,6 +1401,7 @@ typedef struct _IMAGE_EXPORT_DIRECTORY {
 // Import Format
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_IMPORT_BY_NAME {
     USHORT  Hint;
     CHAR   Name[1];
@@ -1488,6 +1504,7 @@ typedef IMAGE_TLS_DIRECTORY32           IMAGE_TLS_DIRECTORY;
 typedef PIMAGE_TLS_DIRECTORY32          PIMAGE_TLS_DIRECTORY;
 #endif
 
+////@[comment("MVI_tracked")]
 typedef struct _IMAGE_IMPORT_DESCRIPTOR {
     union {
         ULONG   Characteristics;            // 0 for terminating null import descriptor
@@ -1588,6 +1605,7 @@ typedef struct _IMAGE_RESOURCE_DIRECTORY {
 // field points to a resource data entry.
 //
 
+////@[comment("MVI_tracked")]
 typedef struct _IMAGE_RESOURCE_DIRECTORY_ENTRY {
     union {
         struct {
@@ -1636,6 +1654,7 @@ typedef struct _IMAGE_RESOURCE_DIR_STRING_U {
 // applications the code page would be the unicode code page.
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_RESOURCE_DATA_ENTRY {
     ULONG   OffsetToData;
     ULONG   Size;
@@ -1724,6 +1743,9 @@ typedef PIMAGE_DYNAMIC_RELOCATION32_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
 
 #define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_PROLOGUE   0x00000001
 #define IMAGE_DYNAMIC_RELOCATION_GUARD_RF_EPILOGUE   0x00000002
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_IMPORT_CONTROL_TRANSFER  0x00000003
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_INDIR_CONTROL_TRANSFER   0x00000004
+#define IMAGE_DYNAMIC_RELOCATION_GUARD_SWITCHTABLE_BRANCH       0x00000005
 
 #include "pshpack1.h"
 
@@ -1742,6 +1764,28 @@ typedef struct _IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER {
     // UCHAR   BranchDescriptorBitMap[...];
 } IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
 typedef IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER UNALIGNED * PIMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER;
+
+typedef struct _IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION {
+    ULONG       PageRelativeOffset : 12;
+    ULONG       IndirectCall       : 1;
+    ULONG       IATIndex           : 19;
+} IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION;
+typedef IMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION UNALIGNED * PIMAGE_IMPORT_CONTROL_TRANSFER_DYNAMIC_RELOCATION;
+
+typedef struct _IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION {
+    USHORT      PageRelativeOffset : 12;
+    USHORT      IndirectCall       : 1;
+    USHORT      RexWPrefix         : 1;
+    USHORT      CfgCheck           : 1;
+    USHORT      Reserved           : 1;
+} IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION;
+typedef IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION UNALIGNED * PIMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION;
+
+typedef struct _IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION {
+    USHORT      PageRelativeOffset : 12;
+    USHORT      RegisterNumber     : 4;
+} IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION;
+typedef IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION UNALIGNED * PIMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION;
 
 #include "poppack.h"                    // Back to 4 byte packing
 
@@ -1791,6 +1835,7 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     ULONG   HotPatchTableOffset;
     ULONG   Reserved3;
     ULONG   EnclaveConfigurationPointer;    // VA
+    ULONG   VolatileMetadataPointer;        // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -1835,9 +1880,10 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     ULONG      HotPatchTableOffset;
     ULONG      Reserved3;
     ULONGLONG  EnclaveConfigurationPointer;     // VA
+    ULONGLONG  VolatileMetadataPointer;         // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
-// end_ntoshvp 
+// end_ntoshvp
 // end_winnt
 
 typedef struct _IMAGE_CHPE_METADATA_X86 {
@@ -1886,7 +1932,8 @@ typedef struct _IMAGE_HOT_PATCH_INFO {
     ULONG SequenceNumber;
     ULONG BaseImageList;
     ULONG BaseImageCount;
-    ULONG BufferOffset; // V2 and later
+    ULONG BufferOffset;             // Version 2 and later
+    ULONG ExtraPatchSize;           // Version 3 and later
 } IMAGE_HOT_PATCH_INFO, *PIMAGE_HOT_PATCH_INFO;
 
 typedef struct _IMAGE_HOT_PATCH_BASE {
@@ -1897,7 +1944,7 @@ typedef struct _IMAGE_HOT_PATCH_BASE {
     ULONG CodeIntegrityInfo;
     ULONG CodeIntegritySize;
     ULONG PatchTable;
-    ULONG BufferOffset; // V2 and later
+    ULONG BufferOffset;             // Version 2 and later
 } IMAGE_HOT_PATCH_BASE, *PIMAGE_HOT_PATCH_BASE;
 
 typedef struct _IMAGE_HOT_PATCH_HASHES {
@@ -1906,6 +1953,7 @@ typedef struct _IMAGE_HOT_PATCH_HASHES {
 } IMAGE_HOT_PATCH_HASHES, *PIMAGE_HOT_PATCH_HASHES;
 
 #define IMAGE_HOT_PATCH_BASE_OBLIGATORY     0x00000001
+#define IMAGE_HOT_PATCH_BASE_CAN_ROLL_BACK  0x00000002
 
 #define IMAGE_HOT_PATCH_CHUNK_INVERSE       0x80000000
 #define IMAGE_HOT_PATCH_CHUNK_OBLIGATORY    0x40000000
@@ -1937,6 +1985,8 @@ typedef struct _IMAGE_HOT_PATCH_HASHES {
 #define IMAGE_GUARD_RF_INSTRUMENTED                    0x00020000 // Module contains return flow instrumentation and metadata
 #define IMAGE_GUARD_RF_ENABLE                          0x00040000 // Module requests that the OS enable return flow protection
 #define IMAGE_GUARD_RF_STRICT                          0x00080000 // Module requests that the OS enable return flow protection in strict mode
+#define IMAGE_GUARD_RETPOLINE_PRESENT                  0x00100000 // Module was built with retpoline support
+
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK        0xF0000000 // Stride of Guard CF function table encoded in these bits (additional count of bytes per element)
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_SHIFT       28         // Shift to right-justify Guard CF function table stride
 

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -135,14 +135,14 @@ struct WINRT_EBO SpeechRecognizerUIOptions :
     SpeechRecognizerUIOptions(std::nullptr_t) noexcept {}
 };
 
-struct [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] VoiceCommandManager
+struct VoiceCommandManager
 {
     VoiceCommandManager() = delete;
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] static Windows::Foundation::IAsyncAction InstallCommandSetsFromStorageFileAsync(Windows::Storage::StorageFile const& file);
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] static Windows::Foundation::Collections::IMapView<hstring, Windows::Media::SpeechRecognition::VoiceCommandSet> InstalledCommandSets();
+    static Windows::Foundation::IAsyncAction InstallCommandSetsFromStorageFileAsync(Windows::Storage::StorageFile const& file);
+    static Windows::Foundation::Collections::IMapView<hstring, Windows::Media::SpeechRecognition::VoiceCommandSet> InstalledCommandSets();
 };
 
-struct WINRT_EBO [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]] VoiceCommandSet :
+struct WINRT_EBO VoiceCommandSet :
     Windows::Media::SpeechRecognition::IVoiceCommandSet
 {
     VoiceCommandSet(std::nullptr_t) noexcept {}

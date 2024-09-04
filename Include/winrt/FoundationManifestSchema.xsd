@@ -10,6 +10,7 @@
            xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
            xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
            xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+           xmlns:uap7="http://schemas.microsoft.com/appx/manifest/uap/windows10/7"
            xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities"
            xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
            xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest"
@@ -28,6 +29,7 @@
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"/>
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/7"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/iot/windows10/2"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"/>
   
@@ -118,6 +120,10 @@
       <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:SurrogateServer | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:SurrogateServer"/>
       <xs:field xpath="@AppId"/>
     </xs:unique>
+    <xs:unique name="Extension_AppUriHandlerName">
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/uap3:Extension/uap3:AppUriHandler"/>
+      <xs:field xpath="@uap7:Name"/>
+    </xs:unique>
   </xs:element>
 
   <xs:element name="ComExtensions" abstract="true"/>
@@ -176,6 +182,7 @@
       <xs:element ref="MainPackageDependencyChoice" minOccurs="0" maxOccurs="1"/>
       <xs:element ref="MainPackageDependencyChoice2" minOccurs="0" maxOccurs="1000"/>
       <xs:element ref="uap5:DriverDependency" minOccurs="0" maxOccurs="1000"/>
+      <xs:element ref="uap7:OSPackageDependency" minOccurs="0" maxOccurs="1000"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -307,6 +314,7 @@
             <xs:element ref="VisualElementsChoice"/>
             <xs:element ref="uap:ApplicationContentUriRules" minOccurs="0"/>
             <xs:element name="Extensions" type="CT_ApplicationExtensions" minOccurs="0"/>
+            <xs:element ref="uap7:Properties" minOccurs="0"/>
           </xs:all>
           <xs:attribute name="Id" type="t:ST_ApplicationId" use="required"/>
           <xs:attribute name="Executable" type="t:ST_ExecutableAnyCase" use="optional"/>

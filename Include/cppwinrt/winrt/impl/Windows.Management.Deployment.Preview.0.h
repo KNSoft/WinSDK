@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,9 +24,20 @@ template <> struct name<Windows::Management::Deployment::Preview::IClassicAppMan
 template <> struct name<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo>{ static constexpr auto & value{ L"Windows.Management.Deployment.Preview.IInstalledClassicAppInfo" }; };
 template <> struct name<Windows::Management::Deployment::Preview::ClassicAppManager>{ static constexpr auto & value{ L"Windows.Management.Deployment.Preview.ClassicAppManager" }; };
 template <> struct name<Windows::Management::Deployment::Preview::InstalledClassicAppInfo>{ static constexpr auto & value{ L"Windows.Management.Deployment.Preview.InstalledClassicAppInfo" }; };
-template <> struct guid<Windows::Management::Deployment::Preview::IClassicAppManagerStatics>{ static constexpr GUID value{ 0xE2FAD668,0x882C,0x4F33,{ 0xB0,0x35,0x0D,0xF7,0xB9,0x0D,0x67,0xE6 } }; };
-template <> struct guid<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo>{ static constexpr GUID value{ 0x0A7D3DA3,0x65D0,0x4086,{ 0x80,0xD6,0x06,0x10,0xD7,0x60,0x20,0x7D } }; };
+template <> struct guid_storage<Windows::Management::Deployment::Preview::IClassicAppManagerStatics>{ static constexpr guid value{ 0xE2FAD668,0x882C,0x4F33,{ 0xB0,0x35,0x0D,0xF7,0xB9,0x0D,0x67,0xE6 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo>{ static constexpr guid value{ 0x0A7D3DA3,0x65D0,0x4086,{ 0x80,0xD6,0x06,0x10,0xD7,0x60,0x20,0x7D } }; };
 template <> struct default_interface<Windows::Management::Deployment::Preview::InstalledClassicAppInfo>{ using type = Windows::Management::Deployment::Preview::IInstalledClassicAppInfo; };
+
+template <> struct abi<Windows::Management::Deployment::Preview::IClassicAppManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindInstalledApp(void* appUninstallKey, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayVersion(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Management_Deployment_Preview_IClassicAppManagerStatics
@@ -42,16 +53,5 @@ struct consume_Windows_Management_Deployment_Preview_IInstalledClassicAppInfo
     hstring DisplayVersion() const;
 };
 template <> struct consume<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo> { template <typename D> using type = consume_Windows_Management_Deployment_Preview_IInstalledClassicAppInfo<D>; };
-
-template <> struct abi<Windows::Management::Deployment::Preview::IClassicAppManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindInstalledApp(HSTRING appUninstallKey, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::Preview::IInstalledClassicAppInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayVersion(HSTRING* value) noexcept = 0;
-};};
 
 }

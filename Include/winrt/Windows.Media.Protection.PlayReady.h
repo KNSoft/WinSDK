@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.protection.playready.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1107,6 +1119,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4 ABI::Windows::Media::Protection::PlayReady::IPlayReadyStatics4
 
 #endif // ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Protection {
+                namespace PlayReady {
+                    interface IPlayReadyStatics5;
+                } /* Windows */
+            } /* Media */
+        } /* Protection */
+    } /* PlayReady */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 ABI::Windows::Media::Protection::PlayReady::IPlayReadyStatics5
+
+#endif // ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -2488,6 +2516,7 @@ namespace ABI {
             } /* Media */
         } /* Protection */
     } /* PlayReady */} /* ABI */
+
 
 
 
@@ -6419,6 +6448,60 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 
 /*
  *
+ * Interface Windows.Media.Protection.PlayReady.IPlayReadyStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Protection.PlayReady.PlayReadyStatics
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics4
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics3
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics2
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyStatics5[] = L"Windows.Media.Protection.PlayReady.IPlayReadyStatics5";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace Protection {
+                namespace PlayReady {
+                    /* [object, uuid("230A7075-DFA0-4F8E-A779-CEFEA9C6824B"), exclusiveto, contract] */
+                    MIDL_INTERFACE("230A7075-DFA0-4F8E-A779-CEFEA9C6824B")
+                    IPlayReadyStatics5 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HardwareDRMDisabledAtTime(
+                            /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HardwareDRMDisabledUntilTime(
+                            /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE ResetHardwareDRMDisabled(void) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IPlayReadyStatics5=_uuidof(IPlayReadyStatics5);
+                    
+                } /* Windows */
+            } /* Media */
+        } /* Protection */
+    } /* PlayReady */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Media.Protection.PlayReady.NDClient
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7092,6 +7175,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -7428,6 +7512,12 @@ typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStat
 typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4 __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4;
 
 #endif // ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5;
+
+#endif // ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -9953,6 +10043,7 @@ typedef enum __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CPlayReadyHardwareDR
 
 
 typedef enum __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CPlayReadyITADataFormat __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CPlayReadyITADataFormat;
+
 
 
 
@@ -16912,6 +17003,119 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayRead
 
 /*
  *
+ * Interface Windows.Media.Protection.PlayReady.IPlayReadyStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.Protection.PlayReady.PlayReadyStatics
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics4
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics3
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics2
+ *     Windows.Media.Protection.PlayReady.IPlayReadyStatics
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_Protection_PlayReady_IPlayReadyStatics5[] = L"Windows.Media.Protection.PlayReady.IPlayReadyStatics5";
+/* [object, uuid("230A7075-DFA0-4F8E-A779-CEFEA9C6824B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HardwareDRMDisabledAtTime )(
+        __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HardwareDRMDisabledUntilTime )(
+        __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIReference_1_Windows__CFoundation__CDateTime * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *ResetHardwareDRMDisabled )(
+        __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5 * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_get_HardwareDRMDisabledAtTime(This,value) \
+    ( (This)->lpVtbl->get_HardwareDRMDisabledAtTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_get_HardwareDRMDisabledUntilTime(This,value) \
+    ( (This)->lpVtbl->get_HardwareDRMDisabledUntilTime(This,value) )
+
+#define __x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_ResetHardwareDRMDisabled(This) \
+    ( (This)->lpVtbl->ResetHardwareDRMDisabled(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CProtection_CPlayReady_CIPlayReadyStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Media.Protection.PlayReady.NDClient
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -17585,6 +17789,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.Protection.PlayReady.IPlayReadyStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract

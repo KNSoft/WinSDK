@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -8,6 +8,7 @@
 #include "winrt/impl/Windows.Graphics.DirectX.0.h"
 #include "winrt/impl/Windows.Graphics.DirectX.Direct3D11.0.h"
 #include "winrt/impl/Windows.System.0.h"
+#include "winrt/impl/Windows.UI.Composition.0.h"
 #include "winrt/impl/Windows.Foundation.0.h"
 #include "winrt/impl/Windows.Graphics.Capture.0.h"
 
@@ -34,11 +35,25 @@ struct WINRT_EBO IDirect3D11CaptureFramePoolStatics :
     IDirect3D11CaptureFramePoolStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IDirect3D11CaptureFramePoolStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDirect3D11CaptureFramePoolStatics2>
+{
+    IDirect3D11CaptureFramePoolStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IGraphicsCaptureItem :
     Windows::Foundation::IInspectable,
     impl::consume_t<IGraphicsCaptureItem>
 {
     IGraphicsCaptureItem(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IGraphicsCaptureItemStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IGraphicsCaptureItemStatics>
+{
+    IGraphicsCaptureItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IGraphicsCapturePicker :

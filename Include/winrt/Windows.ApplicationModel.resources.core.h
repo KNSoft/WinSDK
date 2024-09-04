@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.resources.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1981,22 +1993,14 @@ namespace ABI {
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Candidates(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CResources__CCore__CResourceCandidate * * value
                             ) = 0;
-                        
-                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        DEPRECATED("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")
-                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE Resolve(
+                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE Resolve(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceCandidate * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE ResolveForContext(
                             /* [in] */__RPC__in_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceContext * resourceContext,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceCandidate * * result
                             ) = 0;
-                        
-                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        DEPRECATED("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
-                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE ResolveAll(
+                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE ResolveAll(
                             /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CResources__CCore__CResourceCandidate * * result
                             ) = 0;
                         /* [overload] */virtual HRESULT STDMETHODCALLTYPE ResolveAllForContext(
@@ -2202,20 +2206,12 @@ namespace ABI {
         namespace ApplicationModel {
             namespace Resources {
                 namespace Core {
-                    /* [object, uuid("98BE9D6C-6338-4B31-99DF-B2B442F17149"), exclusiveto, deprecated, contract] */
+                    /* [object, uuid("98BE9D6C-6338-4B31-99DF-B2B442F17149"), exclusiveto, contract] */
                     MIDL_INTERFACE("98BE9D6C-6338-4B31-99DF-B2B442F17149")
-                    
-                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                    DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
-                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                     IResourceContextStatics : public IInspectable
                     {
                     public:
-                        
-                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
-                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE CreateMatchingContext(
+                        virtual HRESULT STDMETHODCALLTYPE CreateMatchingContext(
                             /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CResources__CCore__CResourceQualifier * result,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceContext * * value
                             ) = 0;
@@ -2364,11 +2360,7 @@ namespace ABI {
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AllResourceMaps(
                             /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CResources__CCore__CResourceMap * * maps
                             ) = 0;
-                        
-                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        DEPRECATED("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")
-                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_DefaultContext(
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DefaultContext(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceContext * * value
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE LoadPriFiles(
@@ -2522,11 +2514,7 @@ namespace ABI {
                         /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * uri
                             ) = 0;
-                        
-                        #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        DEPRECATED("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
-                        #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-                        /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE GetValue(
+                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetValue(
                             /* [in] */__RPC__in HSTRING resource,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Resources::Core::IResourceCandidate * * value
                             ) = 0;
@@ -6113,11 +6101,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource * This,
         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CResources__CCore__CResourceCandidate * * value
         );
-    
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *Resolve )(
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *Resolve )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceCandidate * * result
         );
@@ -6126,11 +6110,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContext * resourceContext,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceCandidate * * result
         );
-    
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *ResolveAll )(
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *ResolveAll )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource * This,
         /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CApplicationModel__CResources__CCore__CResourceCandidate * * result
         );
@@ -6173,20 +6153,12 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource_get_Candidates(This,value) \
     ( (This)->lpVtbl->get_Candidates(This,value) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource_Resolve(This,result) \
     ( (This)->lpVtbl->Resolve(This,result) )
 
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource_ResolveForContext(This,resourceContext,result) \
     ( (This)->lpVtbl->ResolveForContext(This,resourceContext,result) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CINamedResource_ResolveAll(This,result) \
     ( (This)->lpVtbl->ResolveAll(This,result) )
 
@@ -6580,12 +6552,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CResources_CCore_CIRes
 #if !defined(____x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Resources_Core_IResourceContextStatics[] = L"Windows.ApplicationModel.Resources.Core.IResourceContextStatics";
-/* [object, uuid("98BE9D6C-6338-4B31-99DF-B2B442F17149"), exclusiveto, deprecated, contract] */
-typedef struct 
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-__x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStaticsVtbl
+/* [object, uuid("98BE9D6C-6338-4B31-99DF-B2B442F17149"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -6618,11 +6586,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *CreateMatchingContext )(
+HRESULT ( STDMETHODCALLTYPE *CreateMatchingContext )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics * This,
         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CApplicationModel__CResources__CCore__CResourceQualifier * result,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContext * * value
@@ -6655,10 +6619,6 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextS
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContextStatics_CreateMatchingContext(This,result,value) \
     ( (This)->lpVtbl->CreateMatchingContext(This,result,value) )
 
@@ -6944,11 +6904,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceManager * This,
         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CResources__CCore__CResourceMap * * maps
         );
-    
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_DefaultContext )(
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DefaultContext )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceManager * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceContext * * value
         );
@@ -6994,10 +6950,6 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceManager
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceManager_get_AllResourceMaps(This,maps) \
     ( (This)->lpVtbl->get_AllResourceMaps(This,maps) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceManager_get_DefaultContext(This,value) \
     ( (This)->lpVtbl->get_DefaultContext(This,value) )
 
@@ -7279,11 +7231,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceMap * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * * uri
         );
-    
-    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    DEPRECATED("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
-    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *GetValue )(
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetValue )(
         __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceMap * This,
         /* [in] */__RPC__in HSTRING resource,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceCandidate * * value
@@ -7330,10 +7278,6 @@ interface __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceMap
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceMap_get_Uri(This,uri) \
     ( (This)->lpVtbl->get_Uri(This,uri) )
 
-
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-DEPRECATED("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #define __x_ABI_CWindows_CApplicationModel_CResources_CCore_CIResourceMap_GetValue(This,resource,value) \
     ( (This)->lpVtbl->GetValue(This,resource,value) )
 

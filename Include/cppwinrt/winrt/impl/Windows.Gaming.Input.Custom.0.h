@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -124,22 +124,100 @@ template <> struct name<Windows::Gaming::Input::Custom::XusbDeviceSubtype>{ stat
 template <> struct name<Windows::Gaming::Input::Custom::XusbDeviceType>{ static constexpr auto & value{ L"Windows.Gaming.Input.Custom.XusbDeviceType" }; };
 template <> struct name<Windows::Gaming::Input::Custom::GameControllerVersionInfo>{ static constexpr auto & value{ L"Windows.Gaming.Input.Custom.GameControllerVersionInfo" }; };
 template <> struct name<Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress>{ static constexpr auto & value{ L"Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress" }; };
-template <> struct guid<Windows::Gaming::Input::Custom::ICustomGameControllerFactory>{ static constexpr GUID value{ 0x69A0AE5E,0x758E,0x4CBE,{ 0xAC,0xE6,0x62,0x15,0x5F,0xE9,0x12,0x6F } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>{ static constexpr GUID value{ 0x36CB66E3,0xD0A1,0x4986,{ 0xA2,0x4C,0x40,0xB1,0x37,0xDE,0xBA,0x9E } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>{ static constexpr GUID value{ 0xEACE5644,0x19DF,0x4115,{ 0xB3,0x2A,0x27,0x93,0xE2,0xAE,0xA3,0xBB } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGameControllerInputSink>{ static constexpr GUID value{ 0x1FF6F922,0xC640,0x4C78,{ 0xA8,0x20,0x9A,0x71,0x5C,0x55,0x8B,0xCB } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGameControllerProvider>{ static constexpr GUID value{ 0xE6D73982,0x2996,0x4559,{ 0xB1,0x6C,0x3E,0x57,0xD4,0x6E,0x58,0xD6 } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult>{ static constexpr GUID value{ 0x6B794D32,0x8553,0x4292,{ 0x8E,0x03,0xE1,0x66,0x51,0xA2,0xF8,0xBC } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGipGameControllerInputSink>{ static constexpr GUID value{ 0xA2108ABF,0x09F1,0x43BC,{ 0xA1,0x40,0x80,0xF8,0x99,0xEC,0x36,0xFB } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IGipGameControllerProvider>{ static constexpr GUID value{ 0xDBCF1E19,0x1AF5,0x45A8,{ 0xBF,0x02,0xA0,0xEE,0x50,0xC8,0x23,0xFC } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IHidGameControllerInputSink>{ static constexpr GUID value{ 0xF754C322,0x182D,0x40E4,{ 0xA1,0x26,0xFC,0xEE,0x4F,0xFA,0x1E,0x31 } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IHidGameControllerProvider>{ static constexpr GUID value{ 0x95CE3AF4,0xABF0,0x4B68,{ 0xA0,0x81,0x3B,0x7D,0xE7,0x3F,0xF0,0xE7 } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>{ static constexpr GUID value{ 0xB2AC1D95,0x6ECB,0x42B3,{ 0x8A,0xAB,0x02,0x54,0x01,0xCA,0x47,0x12 } }; };
-template <> struct guid<Windows::Gaming::Input::Custom::IXusbGameControllerProvider>{ static constexpr GUID value{ 0x6E2971EB,0x0EFB,0x48B4,{ 0x80,0x8B,0x83,0x76,0x43,0xB2,0xF2,0x16 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::ICustomGameControllerFactory>{ static constexpr guid value{ 0x69A0AE5E,0x758E,0x4CBE,{ 0xAC,0xE6,0x62,0x15,0x5F,0xE9,0x12,0x6F } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>{ static constexpr guid value{ 0x36CB66E3,0xD0A1,0x4986,{ 0xA2,0x4C,0x40,0xB1,0x37,0xDE,0xBA,0x9E } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>{ static constexpr guid value{ 0xEACE5644,0x19DF,0x4115,{ 0xB3,0x2A,0x27,0x93,0xE2,0xAE,0xA3,0xBB } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGameControllerInputSink>{ static constexpr guid value{ 0x1FF6F922,0xC640,0x4C78,{ 0xA8,0x20,0x9A,0x71,0x5C,0x55,0x8B,0xCB } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGameControllerProvider>{ static constexpr guid value{ 0xE6D73982,0x2996,0x4559,{ 0xB1,0x6C,0x3E,0x57,0xD4,0x6E,0x58,0xD6 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult>{ static constexpr guid value{ 0x6B794D32,0x8553,0x4292,{ 0x8E,0x03,0xE1,0x66,0x51,0xA2,0xF8,0xBC } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGipGameControllerInputSink>{ static constexpr guid value{ 0xA2108ABF,0x09F1,0x43BC,{ 0xA1,0x40,0x80,0xF8,0x99,0xEC,0x36,0xFB } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IGipGameControllerProvider>{ static constexpr guid value{ 0xDBCF1E19,0x1AF5,0x45A8,{ 0xBF,0x02,0xA0,0xEE,0x50,0xC8,0x23,0xFC } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IHidGameControllerInputSink>{ static constexpr guid value{ 0xF754C322,0x182D,0x40E4,{ 0xA1,0x26,0xFC,0xEE,0x4F,0xFA,0x1E,0x31 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IHidGameControllerProvider>{ static constexpr guid value{ 0x95CE3AF4,0xABF0,0x4B68,{ 0xA0,0x81,0x3B,0x7D,0xE7,0x3F,0xF0,0xE7 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>{ static constexpr guid value{ 0xB2AC1D95,0x6ECB,0x42B3,{ 0x8A,0xAB,0x02,0x54,0x01,0xCA,0x47,0x12 } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Custom::IXusbGameControllerProvider>{ static constexpr guid value{ 0x6E2971EB,0x0EFB,0x48B4,{ 0x80,0x8B,0x83,0x76,0x43,0xB2,0xF2,0x16 } }; };
 template <> struct default_interface<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult>{ using type = Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult; };
 template <> struct default_interface<Windows::Gaming::Input::Custom::GipGameControllerProvider>{ using type = Windows::Gaming::Input::Custom::IGipGameControllerProvider; };
 template <> struct default_interface<Windows::Gaming::Input::Custom::HidGameControllerProvider>{ using type = Windows::Gaming::Input::Custom::IHidGameControllerProvider; };
 template <> struct default_interface<Windows::Gaming::Input::Custom::XusbGameControllerProvider>{ using type = Windows::Gaming::Input::Custom::IXusbGameControllerProvider; };
+
+template <> struct abi<Windows::Gaming::Input::Custom::ICustomGameControllerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateGameController(void* provider, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL OnGameControllerAdded(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL OnGameControllerRemoved(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RegisterCustomFactoryForGipInterface(void* factory, winrt::guid interfaceId) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterCustomFactoryForHardwareId(void* factory, uint16_t hardwareVendorId, uint16_t hardwareProductId) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterCustomFactoryForXusbType(void* factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetFactoryControllerFromGameController(void* factory, void* gameController, void** factoryController) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerInputSink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnInputResumed(uint64_t timestamp) noexcept = 0;
+    virtual int32_t WINRT_CALL OnInputSuspended(uint64_t timestamp) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FirmwareVersionInfo(struct struct_Windows_Gaming_Input_Custom_GameControllerVersionInfo* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HardwareProductId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HardwareVendorId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HardwareVersionInfo(struct struct_Windows_Gaming_Input_Custom_GameControllerVersionInfo* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsConnected(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtendedErrorCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FinalComponentId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Gaming::Input::Custom::GipFirmwareUpdateStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGipGameControllerInputSink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnKeyReceived(uint64_t timestamp, uint8_t keyCode, bool isPressed) noexcept = 0;
+    virtual int32_t WINRT_CALL OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, uint32_t __messageBufferSize, uint8_t* messageBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IGipGameControllerProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint32_t __messageBufferSize, uint8_t* messageBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint32_t __requestMessageBufferSize, uint8_t* requestMessageBuffer, uint32_t __responseMessageBufferSize, uint8_t* responseMessageBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateFirmwareAsync(void* firmwareImage, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IHidGameControllerInputSink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnInputReportReceived(uint64_t timestamp, uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IHidGameControllerProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UsageId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UsagePage(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL SendFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL SendOutputReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnInputReceived(uint64_t timestamp, uint8_t reportId, uint32_t __inputBufferSize, uint8_t* inputBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Gaming::Input::Custom::IXusbGameControllerProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Gaming_Input_Custom_ICustomGameControllerFactory
@@ -153,7 +231,7 @@ template <> struct consume<Windows::Gaming::Input::Custom::ICustomGameController
 template <typename D>
 struct consume_Windows_Gaming_Input_Custom_IGameControllerFactoryManagerStatics
 {
-    void RegisterCustomFactoryForGipInterface(Windows::Gaming::Input::Custom::ICustomGameControllerFactory const& factory, GUID const& interfaceId) const;
+    void RegisterCustomFactoryForGipInterface(Windows::Gaming::Input::Custom::ICustomGameControllerFactory const& factory, winrt::guid const& interfaceId) const;
     void RegisterCustomFactoryForHardwareId(Windows::Gaming::Input::Custom::ICustomGameControllerFactory const& factory, uint16_t hardwareVendorId, uint16_t hardwareProductId) const;
     void RegisterCustomFactoryForXusbType(Windows::Gaming::Input::Custom::ICustomGameControllerFactory const& factory, Windows::Gaming::Input::Custom::XusbDeviceType const& xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype const& xusbSubtype) const;
 };
@@ -260,83 +338,5 @@ struct struct_Windows_Gaming_Input_Custom_GipFirmwareUpdateProgress
 };
 template <> struct abi<Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress>{ using type = struct_Windows_Gaming_Input_Custom_GipFirmwareUpdateProgress; };
 
-
-template <> struct abi<Windows::Gaming::Input::Custom::ICustomGameControllerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateGameController(void* provider, void** value) noexcept = 0;
-    virtual HRESULT __stdcall OnGameControllerAdded(void* value) noexcept = 0;
-    virtual HRESULT __stdcall OnGameControllerRemoved(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RegisterCustomFactoryForGipInterface(void* factory, GUID interfaceId) noexcept = 0;
-    virtual HRESULT __stdcall RegisterCustomFactoryForHardwareId(void* factory, uint16_t hardwareVendorId, uint16_t hardwareProductId) noexcept = 0;
-    virtual HRESULT __stdcall RegisterCustomFactoryForXusbType(void* factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetFactoryControllerFromGameController(void* factory, void* gameController, void** factoryController) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerInputSink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnInputResumed(uint64_t timestamp) noexcept = 0;
-    virtual HRESULT __stdcall OnInputSuspended(uint64_t timestamp) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGameControllerProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FirmwareVersionInfo(struct struct_Windows_Gaming_Input_Custom_GameControllerVersionInfo* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HardwareProductId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HardwareVendorId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HardwareVersionInfo(struct struct_Windows_Gaming_Input_Custom_GameControllerVersionInfo* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsConnected(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExtendedErrorCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FinalComponentId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Gaming::Input::Custom::GipFirmwareUpdateStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGipGameControllerInputSink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnKeyReceived(uint64_t timestamp, uint8_t keyCode, bool isPressed) noexcept = 0;
-    virtual HRESULT __stdcall OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, uint32_t __messageBufferSize, uint8_t* messageBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IGipGameControllerProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint32_t __messageBufferSize, uint8_t* messageBuffer) noexcept = 0;
-    virtual HRESULT __stdcall SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint32_t __requestMessageBufferSize, uint8_t* requestMessageBuffer, uint32_t __responseMessageBufferSize, uint8_t* responseMessageBuffer) noexcept = 0;
-    virtual HRESULT __stdcall UpdateFirmwareAsync(void* firmwareImage, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IHidGameControllerInputSink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnInputReportReceived(uint64_t timestamp, uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IHidGameControllerProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UsageId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UsagePage(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
-    virtual HRESULT __stdcall SendFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
-    virtual HRESULT __stdcall SendOutputReport(uint8_t reportId, uint32_t __reportBufferSize, uint8_t* reportBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnInputReceived(uint64_t timestamp, uint8_t reportId, uint32_t __inputBufferSize, uint8_t* inputBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Gaming::Input::Custom::IXusbGameControllerProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed) noexcept = 0;
-};};
 
 }

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Management.Deployment.2.h"
@@ -66,38 +66,38 @@ template <typename D> void consume_Windows_ApplicationModel_Store_Preview_Instal
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->Restart());
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->add_Completed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem> consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed_revoker consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>(this, &abi_t<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>::remove_Completed, Completed(handler));
+    return impl::make_event_revoker<D, Completed_revoker>(this, Completed(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::Completed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->remove_Completed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->remove_Completed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->add_StatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem> consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged_revoker consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>(this, &abi_t<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>::remove_StatusChanged, StatusChanged(handler));
+    return impl::make_event_revoker<D, StatusChanged_revoker>(this, StatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem<D>::StatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->remove_StatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem)->remove_StatusChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem2<D>::Cancel(param::hstring const& correlationVector) const
@@ -141,6 +141,66 @@ template <typename D> void consume_Windows_ApplicationModel_Store_Preview_Instal
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4)->put_LaunchAfterInstall(value));
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToDesktopAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->get_PinToDesktopAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToDesktopAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->put_PinToDesktopAfterInstall(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToStartAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->get_PinToStartAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToStartAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->put_PinToStartAfterInstall(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToTaskbarAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->get_PinToTaskbarAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::PinToTaskbarAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->put_PinToTaskbarAfterInstall(value));
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::CompletedInstallToastNotificationMode() const
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->get_CompletedInstallToastNotificationMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->put_CompletedInstallToastNotificationMode(get_abi(value)));
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::InstallInProgressToastNotificationMode() const
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->get_InstallInProgressToastNotificationMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallItem5<D>::InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5)->put_InstallInProgressToastNotificationMode(get_abi(value)));
+}
+
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::AppInstallItems() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> value{ nullptr };
@@ -163,38 +223,38 @@ template <typename D> void consume_Windows_ApplicationModel_Store_Preview_Instal
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->Restart(get_abi(productId)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->add_ItemCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted_revoker consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>(this, &abi_t<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>::remove_ItemCompleted, ItemCompleted(handler));
+    return impl::make_event_revoker<D, ItemCompleted_revoker>(this, ItemCompleted(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->remove_ItemCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->remove_ItemCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->add_ItemStatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged_revoker consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>(this, &abi_t<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>::remove_ItemStatusChanged, ItemStatusChanged(handler));
+    return impl::make_event_revoker<D, ItemStatusChanged_revoker>(this, ItemStatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::ItemStatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->remove_ItemStatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager)->remove_ItemStatusChanged(get_abi(token)));
 }
 
 template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager<D>::AutoUpdateSetting() const
@@ -458,6 +518,13 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
     return operation;
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManager7<D>::CanInstallForAllUsers() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7)->get_CanInstallForAllUsers(&value));
+    return value;
+}
+
 template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallManagerItemEventArgs<D>::Item() const
 {
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem value{ nullptr };
@@ -537,6 +604,114 @@ template <typename D> void consume_Windows_ApplicationModel_Store_Preview_Instal
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions)->put_LaunchAfterInstall(value));
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToDesktopAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_PinToDesktopAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToDesktopAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_PinToDesktopAfterInstall(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToStartAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_PinToStartAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToStartAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_PinToStartAfterInstall(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToTaskbarAfterInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_PinToTaskbarAfterInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::PinToTaskbarAfterInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_PinToTaskbarAfterInstall(value));
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::CompletedInstallToastNotificationMode() const
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_CompletedInstallToastNotificationMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_CompletedInstallToastNotificationMode(get_abi(value)));
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::InstallInProgressToastNotificationMode() const
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_InstallInProgressToastNotificationMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_InstallInProgressToastNotificationMode(get_abi(value)));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::InstallForAllUsers() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_InstallForAllUsers(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::InstallForAllUsers(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_InstallForAllUsers(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::StageButDoNotInstall() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_StageButDoNotInstall(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::StageButDoNotInstall(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_StageButDoNotInstall(value));
+}
+
+template <typename D> hstring consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::CampaignId() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_CampaignId(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::CampaignId(param::hstring const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_CampaignId(get_abi(value)));
+}
+
+template <typename D> hstring consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::ExtendedCampaignId() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->get_ExtendedCampaignId(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallOptions2<D>::ExtendedCampaignId(param::hstring const& value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2)->put_ExtendedCampaignId(get_abi(value)));
+}
+
 template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallStatus<D>::InstallState() const
 {
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState value{};
@@ -565,9 +740,9 @@ template <typename D> double consume_Windows_ApplicationModel_Store_Preview_Inst
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallStatus<D>::ErrorCode() const
+template <typename D> winrt::hresult consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppInstallStatus<D>::ErrorCode() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus)->get_ErrorCode(put_abi(value)));
     return value;
 }
@@ -617,6 +792,18 @@ template <typename D> void consume_Windows_ApplicationModel_Store_Preview_Instal
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions)->put_AllowForcedAppRestart(value));
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppUpdateOptions2<D>::AutomaticallyDownloadAndInstallUpdateIfFound() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2)->get_AutomaticallyDownloadAndInstallUpdateIfFound(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_InstallControl_IAppUpdateOptions2<D>::AutomaticallyDownloadAndInstallUpdateIfFound(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2)->put_AutomaticallyDownloadAndInstallUpdateIfFound(value));
+}
+
 template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus consume_Windows_ApplicationModel_Store_Preview_InstallControl_IGetEntitlementResult<D>::Status() const
 {
     Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus value{};
@@ -627,1398 +814,1588 @@ template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl:
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>
 {
-    HRESULT __stdcall get_ProductId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstallType(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType* value) noexcept final
+    int32_t WINRT_CALL get_InstallType(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallType, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType>(this->shim().InstallType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsUserInitiated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsUserInitiated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsUserInitiated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsUserInitiated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentStatus(void** result) noexcept final
+    int32_t WINRT_CALL GetCurrentStatus(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentStatus, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus));
             *result = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus>(this->shim().GetCurrentStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Cancel() noexcept final
+    int32_t WINRT_CALL Cancel() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cancel, WINRT_WRAP(void));
             this->shim().Cancel();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Restart() noexcept final
+    int32_t WINRT_CALL Restart() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restart, WINRT_WRAP(void));
             this->shim().Restart();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Completed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Completed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Completed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_StatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_StatusChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2>
 {
-    HRESULT __stdcall CancelWithTelemetry(HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL CancelWithTelemetry(void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cancel, WINRT_WRAP(void), hstring const&);
             this->shim().Cancel(*reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PauseWithTelemetry(HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL PauseWithTelemetry(void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void), hstring const&);
             this->shim().Pause(*reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RestartWithTelemetry(HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL RestartWithTelemetry(void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restart, WINRT_WRAP(void), hstring const&);
             this->shim().Restart(*reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3>
 {
-    HRESULT __stdcall get_Children(void** value) noexcept final
+    int32_t WINRT_CALL get_Children(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().Children());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ItemOperationsMightAffectOtherItems(bool* value) noexcept final
+    int32_t WINRT_CALL get_ItemOperationsMightAffectOtherItems(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemOperationsMightAffectOtherItems, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ItemOperationsMightAffectOtherItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4>
 {
-    HRESULT __stdcall get_LaunchAfterInstall(bool* value) noexcept final
+    int32_t WINRT_CALL get_LaunchAfterInstall(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchAfterInstall, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LaunchAfterInstall());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LaunchAfterInstall(bool value) noexcept final
+    int32_t WINRT_CALL put_LaunchAfterInstall(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchAfterInstall, WINRT_WRAP(void), bool);
             this->shim().LaunchAfterInstall(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5>
+{
+    int32_t WINRT_CALL get_PinToDesktopAfterInstall(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktopAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToDesktopAfterInstall());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToDesktopAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktopAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToDesktopAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_PinToStartAfterInstall(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToStartAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToStartAfterInstall());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToStartAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToStartAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToStartAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_PinToTaskbarAfterInstall(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToTaskbarAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToTaskbarAfterInstall());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToTaskbarAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToTaskbarAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToTaskbarAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletedInstallToastNotificationMode, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode>(this->shim().CompletedInstallToastNotificationMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletedInstallToastNotificationMode, WINRT_WRAP(void), Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const&);
+            this->shim().CompletedInstallToastNotificationMode(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallInProgressToastNotificationMode, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode>(this->shim().InstallInProgressToastNotificationMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallInProgressToastNotificationMode, WINRT_WRAP(void), Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const&);
+            this->shim().InstallInProgressToastNotificationMode(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>
 {
-    HRESULT __stdcall get_AppInstallItems(void** value) noexcept final
+    int32_t WINRT_CALL get_AppInstallItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppInstallItems, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().AppInstallItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Cancel(HSTRING productId) noexcept final
+    int32_t WINRT_CALL Cancel(void* productId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cancel, WINRT_WRAP(void), hstring const&);
             this->shim().Cancel(*reinterpret_cast<hstring const*>(&productId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause(HSTRING productId) noexcept final
+    int32_t WINRT_CALL Pause(void* productId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void), hstring const&);
             this->shim().Pause(*reinterpret_cast<hstring const*>(&productId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Restart(HSTRING productId) noexcept final
+    int32_t WINRT_CALL Restart(void* productId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restart, WINRT_WRAP(void), hstring const&);
             this->shim().Restart(*reinterpret_cast<hstring const*>(&productId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ItemCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ItemCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ItemCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ItemCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ItemCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ItemCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ItemCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ItemCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ItemCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ItemStatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ItemCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ItemStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ItemStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ItemStatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ItemStatusChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ItemStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ItemStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_AutoUpdateSetting(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ItemStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ItemStatusChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ItemStatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_AutoUpdateSetting(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoUpdateSetting, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting>(this->shim().AutoUpdateSetting());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoUpdateSetting(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting value) noexcept final
+    int32_t WINRT_CALL put_AutoUpdateSetting(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoUpdateSetting, WINRT_WRAP(void), Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting const&);
             this->shim().AutoUpdateSetting(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AcquisitionIdentity(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AcquisitionIdentity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcquisitionIdentity, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AcquisitionIdentity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AcquisitionIdentity(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AcquisitionIdentity(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcquisitionIdentity, WINRT_WRAP(void), hstring const&);
             this->shim().AcquisitionIdentity(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsApplicableAsync(HSTRING productId, HSTRING skuId, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsApplicableAsync(void* productId, void* skuId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsApplicableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsApplicableAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAppInstallAsync(HSTRING productId, HSTRING skuId, bool repair, bool forceUseOfNonRemovableStorage, void** operation) noexcept final
+    int32_t WINRT_CALL StartAppInstallAsync(void* productId, void* skuId, bool repair, bool forceUseOfNonRemovableStorage, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAppInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const, bool, bool);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().StartAppInstallAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), repair, forceUseOfNonRemovableStorage));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateAppByPackageFamilyNameAsync(HSTRING packageFamilyName, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateAppByPackageFamilyNameAsync(void* packageFamilyName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateAppByPackageFamilyNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForUpdatesAsync(HSTRING productId, HSTRING skuId, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForUpdatesAsync(void* productId, void* skuId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().SearchForUpdatesAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForAllUpdatesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SearchForAllUpdatesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForAllUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().SearchForAllUpdatesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsStoreBlockedByPolicyAsync(HSTRING storeClientName, HSTRING storeClientPublisher, void** operation) noexcept final
+    int32_t WINRT_CALL IsStoreBlockedByPolicyAsync(void* storeClientName, void* storeClientPublisher, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStoreBlockedByPolicyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsStoreBlockedByPolicyAsync(*reinterpret_cast<hstring const*>(&storeClientName), *reinterpret_cast<hstring const*>(&storeClientPublisher)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsAppAllowedToInstallAsync(HSTRING productId, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsAppAllowedToInstallAsync(void* productId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsAppAllowedToInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<hstring const*>(&productId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2>
 {
-    HRESULT __stdcall StartAppInstallWithTelemetryAsync(HSTRING productId, HSTRING skuId, bool repair, bool forceUseOfNonRemovableStorage, HSTRING catalogId, HSTRING bundleId, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL StartAppInstallWithTelemetryAsync(void* productId, void* skuId, bool repair, bool forceUseOfNonRemovableStorage, void* catalogId, void* bundleId, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAppInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const, bool, bool, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().StartAppInstallAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&bundleId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateAppByPackageFamilyNameWithTelemetryAsync(HSTRING packageFamilyName, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateAppByPackageFamilyNameWithTelemetryAsync(void* packageFamilyName, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateAppByPackageFamilyNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().UpdateAppByPackageFamilyNameAsync(*reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForUpdatesWithTelemetryAsync(HSTRING productId, HSTRING skuId, HSTRING catalogId, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForUpdatesWithTelemetryAsync(void* productId, void* skuId, void* catalogId, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().SearchForUpdatesAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForAllUpdatesWithTelemetryAsync(HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForAllUpdatesWithTelemetryAsync(void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForAllUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().SearchForAllUpdatesAsync(*reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsAppAllowedToInstallWithTelemetryAsync(HSTRING productId, HSTRING skuId, HSTRING catalogId, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsAppAllowedToInstallWithTelemetryAsync(void* productId, void* skuId, void* catalogId, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsAppAllowedToInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsAppAllowedToInstallAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CancelWithTelemetry(HSTRING productId, HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL CancelWithTelemetry(void* productId, void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cancel, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().Cancel(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PauseWithTelemetry(HSTRING productId, HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL PauseWithTelemetry(void* productId, void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().Pause(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RestartWithTelemetry(HSTRING productId, HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL RestartWithTelemetry(void* productId, void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Restart, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().Restart(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3>
 {
-    HRESULT __stdcall StartProductInstallAsync(HSTRING productId, HSTRING catalogId, HSTRING flightId, HSTRING clientId, bool repair, bool forceUseOfNonRemovableStorage, HSTRING correlationVector, void* targetVolume, void** operation) noexcept final
+    int32_t WINRT_CALL StartProductInstallAsync(void* productId, void* catalogId, void* flightId, void* clientId, bool repair, bool forceUseOfNonRemovableStorage, void* correlationVector, void* targetVolume, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProductInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), hstring const, hstring const, hstring const, hstring const, bool, bool, hstring const, Windows::Management::Deployment::PackageVolume const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().StartProductInstallAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&flightId), *reinterpret_cast<hstring const*>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartProductInstallForUserAsync(void* user, HSTRING productId, HSTRING catalogId, HSTRING flightId, HSTRING clientId, bool repair, bool forceUseOfNonRemovableStorage, HSTRING correlationVector, void* targetVolume, void** operation) noexcept final
+    int32_t WINRT_CALL StartProductInstallForUserAsync(void* user, void* productId, void* catalogId, void* flightId, void* clientId, bool repair, bool forceUseOfNonRemovableStorage, void* correlationVector, void* targetVolume, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProductInstallForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), Windows::System::User const, hstring const, hstring const, hstring const, hstring const, bool, bool, hstring const, Windows::Management::Deployment::PackageVolume const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().StartProductInstallForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&flightId), *reinterpret_cast<hstring const*>(&clientId), repair, forceUseOfNonRemovableStorage, *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&targetVolume)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateAppByPackageFamilyNameForUserAsync(void* user, HSTRING packageFamilyName, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateAppByPackageFamilyNameForUserAsync(void* user, void* packageFamilyName, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateAppByPackageFamilyNameForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), Windows::System::User const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().UpdateAppByPackageFamilyNameForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForUpdatesForUserAsync(void* user, HSTRING productId, HSTRING skuId, HSTRING catalogId, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForUpdatesForUserAsync(void* user, void* productId, void* skuId, void* catalogId, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForUpdatesForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), Windows::System::User const, hstring const, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().SearchForUpdatesForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForAllUpdatesForUserAsync(void* user, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForAllUpdatesForUserAsync(void* user, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForAllUpdatesForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), Windows::System::User const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().SearchForAllUpdatesForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsAppAllowedToInstallForUserAsync(void* user, HSTRING productId, HSTRING skuId, HSTRING catalogId, HSTRING correlationVector, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsAppAllowedToInstallForUserAsync(void* user, void* productId, void* skuId, void* catalogId, void* correlationVector, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsAppAllowedToInstallForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::System::User const, hstring const, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsAppAllowedToInstallForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&catalogId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsApplicableForUserAsync(void* user, HSTRING productId, HSTRING skuId, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsApplicableForUserAsync(void* user, void* productId, void* skuId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsApplicableForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::System::User const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsApplicableForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveToFrontOfDownloadQueue(HSTRING productId, HSTRING correlationVector) noexcept final
+    int32_t WINRT_CALL MoveToFrontOfDownloadQueue(void* productId, void* correlationVector) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MoveToFrontOfDownloadQueue, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().MoveToFrontOfDownloadQueue(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&correlationVector));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4>
 {
-    HRESULT __stdcall GetFreeUserEntitlementAsync(HSTRING storeId, HSTRING campaignId, HSTRING correlationVector, void** ppAsyncOperation) noexcept final
+    int32_t WINRT_CALL GetFreeUserEntitlementAsync(void* storeId, void* campaignId, void* correlationVector, void** ppAsyncOperation) noexcept final
     {
         try
         {
             *ppAsyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFreeUserEntitlementAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>), hstring const, hstring const, hstring const);
             *ppAsyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>>(this->shim().GetFreeUserEntitlementAsync(*reinterpret_cast<hstring const*>(&storeId), *reinterpret_cast<hstring const*>(&campaignId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFreeUserEntitlementForUserAsync(void* user, HSTRING storeId, HSTRING campaignId, HSTRING correlationVector, void** ppAsyncOperation) noexcept final
+    int32_t WINRT_CALL GetFreeUserEntitlementForUserAsync(void* user, void* storeId, void* campaignId, void* correlationVector, void** ppAsyncOperation) noexcept final
     {
         try
         {
             *ppAsyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFreeUserEntitlementForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>), Windows::System::User const, hstring const, hstring const, hstring const);
             *ppAsyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>>(this->shim().GetFreeUserEntitlementForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&storeId), *reinterpret_cast<hstring const*>(&campaignId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFreeDeviceEntitlementAsync(HSTRING storeId, HSTRING campaignId, HSTRING correlationVector, void** ppAsyncOperation) noexcept final
+    int32_t WINRT_CALL GetFreeDeviceEntitlementAsync(void* storeId, void* campaignId, void* correlationVector, void** ppAsyncOperation) noexcept final
     {
         try
         {
             *ppAsyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFreeDeviceEntitlementAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>), hstring const, hstring const, hstring const);
             *ppAsyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>>(this->shim().GetFreeDeviceEntitlementAsync(*reinterpret_cast<hstring const*>(&storeId), *reinterpret_cast<hstring const*>(&campaignId), *reinterpret_cast<hstring const*>(&correlationVector)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5>
 {
-    HRESULT __stdcall get_AppInstallItemsWithGroupSupport(void** value) noexcept final
+    int32_t WINRT_CALL get_AppInstallItemsWithGroupSupport(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppInstallItemsWithGroupSupport, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().AppInstallItemsWithGroupSupport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6>
 {
-    HRESULT __stdcall SearchForAllUpdatesWithUpdateOptionsAsync(HSTRING correlationVector, HSTRING clientId, void* updateOptions, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForAllUpdatesWithUpdateOptionsAsync(void* correlationVector, void* clientId, void* updateOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForAllUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().SearchForAllUpdatesAsync(*reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const*>(&updateOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForAllUpdatesWithUpdateOptionsForUserAsync(void* user, HSTRING correlationVector, HSTRING clientId, void* updateOptions, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForAllUpdatesWithUpdateOptionsForUserAsync(void* user, void* correlationVector, void* clientId, void* updateOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForAllUpdatesForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), Windows::System::User const, hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().SearchForAllUpdatesForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const*>(&updateOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForUpdatesWithUpdateOptionsAsync(HSTRING productId, HSTRING skuId, HSTRING correlationVector, HSTRING clientId, void* updateOptions, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForUpdatesWithUpdateOptionsAsync(void* productId, void* skuId, void* correlationVector, void* clientId, void* updateOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForUpdatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), hstring const, hstring const, hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().SearchForUpdatesAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const*>(&updateOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SearchForUpdatesWithUpdateOptionsForUserAsync(void* user, HSTRING productId, HSTRING skuId, HSTRING correlationVector, HSTRING clientId, void* updateOptions, void** operation) noexcept final
+    int32_t WINRT_CALL SearchForUpdatesWithUpdateOptionsForUserAsync(void* user, void* productId, void* skuId, void* correlationVector, void* clientId, void* updateOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchForUpdatesForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>), Windows::System::User const, hstring const, hstring const, hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>(this->shim().SearchForUpdatesForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppUpdateOptions const*>(&updateOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartProductInstallWithOptionsAsync(HSTRING productId, HSTRING flightId, HSTRING clientId, HSTRING correlationVector, void* installOptions, void** operation) noexcept final
+    int32_t WINRT_CALL StartProductInstallWithOptionsAsync(void* productId, void* flightId, void* clientId, void* correlationVector, void* installOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProductInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), hstring const, hstring const, hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().StartProductInstallAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&flightId), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallOptions const*>(&installOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartProductInstallWithOptionsForUserAsync(void* user, HSTRING productId, HSTRING flightId, HSTRING clientId, HSTRING correlationVector, void* installOptions, void** operation) noexcept final
+    int32_t WINRT_CALL StartProductInstallWithOptionsForUserAsync(void* user, void* productId, void* flightId, void* clientId, void* correlationVector, void* installOptions, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartProductInstallForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>), Windows::System::User const, hstring const, hstring const, hstring const, hstring const, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>>>(this->shim().StartProductInstallForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&flightId), *reinterpret_cast<hstring const*>(&clientId), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallOptions const*>(&installOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsPackageIdentityAllowedToInstallAsync(HSTRING correlationVector, HSTRING packageIdentityName, HSTRING publisherCertificateName, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsPackageIdentityAllowedToInstallAsync(void* correlationVector, void* packageIdentityName, void* publisherCertificateName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsPackageIdentityAllowedToInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsPackageIdentityAllowedToInstallAsync(*reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&packageIdentityName), *reinterpret_cast<hstring const*>(&publisherCertificateName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsPackageIdentityAllowedToInstallForUserAsync(void* user, HSTRING correlationVector, HSTRING packageIdentityName, HSTRING publisherCertificateName, void** operation) noexcept final
+    int32_t WINRT_CALL GetIsPackageIdentityAllowedToInstallForUserAsync(void* user, void* correlationVector, void* packageIdentityName, void* publisherCertificateName, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsPackageIdentityAllowedToInstallForUserAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::System::User const, hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsPackageIdentityAllowedToInstallForUserAsync(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&correlationVector), *reinterpret_cast<hstring const*>(&packageIdentityName), *reinterpret_cast<hstring const*>(&publisherCertificateName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7>
+{
+    int32_t WINRT_CALL get_CanInstallForAllUsers(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanInstallForAllUsers, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().CanInstallForAllUsers());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs>
 {
-    HRESULT __stdcall get_Item(void** value) noexcept final
+    int32_t WINRT_CALL get_Item(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Item, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>(this->shim().Item());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions>
 {
-    HRESULT __stdcall get_CatalogId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CatalogId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CatalogId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CatalogId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CatalogId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CatalogId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CatalogId, WINRT_WRAP(void), hstring const&);
             this->shim().CatalogId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForceUseOfNonRemovableStorage(bool* value) noexcept final
+    int32_t WINRT_CALL get_ForceUseOfNonRemovableStorage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForceUseOfNonRemovableStorage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ForceUseOfNonRemovableStorage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForceUseOfNonRemovableStorage(bool value) noexcept final
+    int32_t WINRT_CALL put_ForceUseOfNonRemovableStorage(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForceUseOfNonRemovableStorage, WINRT_WRAP(void), bool);
             this->shim().ForceUseOfNonRemovableStorage(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowForcedAppRestart(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowForcedAppRestart(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowForcedAppRestart, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowForcedAppRestart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowForcedAppRestart(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowForcedAppRestart(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowForcedAppRestart, WINRT_WRAP(void), bool);
             this->shim().AllowForcedAppRestart(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Repair(bool* value) noexcept final
+    int32_t WINRT_CALL get_Repair(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Repair, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Repair());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Repair(bool value) noexcept final
+    int32_t WINRT_CALL put_Repair(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Repair, WINRT_WRAP(void), bool);
             this->shim().Repair(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetVolume(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetVolume(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetVolume, WINRT_WRAP(Windows::Management::Deployment::PackageVolume));
             *value = detach_from<Windows::Management::Deployment::PackageVolume>(this->shim().TargetVolume());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetVolume(void* value) noexcept final
+    int32_t WINRT_CALL put_TargetVolume(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetVolume, WINRT_WRAP(void), Windows::Management::Deployment::PackageVolume const&);
             this->shim().TargetVolume(*reinterpret_cast<Windows::Management::Deployment::PackageVolume const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LaunchAfterInstall(bool* value) noexcept final
+    int32_t WINRT_CALL get_LaunchAfterInstall(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchAfterInstall, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LaunchAfterInstall());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LaunchAfterInstall(bool value) noexcept final
+    int32_t WINRT_CALL put_LaunchAfterInstall(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchAfterInstall, WINRT_WRAP(void), bool);
             this->shim().LaunchAfterInstall(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2>
+{
+    int32_t WINRT_CALL get_PinToDesktopAfterInstall(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktopAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToDesktopAfterInstall());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToDesktopAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktopAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToDesktopAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_PinToStartAfterInstall(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToStartAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToStartAfterInstall());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToStartAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToStartAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToStartAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_PinToTaskbarAfterInstall(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToTaskbarAfterInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().PinToTaskbarAfterInstall());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_PinToTaskbarAfterInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToTaskbarAfterInstall, WINRT_WRAP(void), bool);
+            this->shim().PinToTaskbarAfterInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletedInstallToastNotificationMode, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode>(this->shim().CompletedInstallToastNotificationMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_CompletedInstallToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletedInstallToastNotificationMode, WINRT_WRAP(void), Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const&);
+            this->shim().CompletedInstallToastNotificationMode(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallInProgressToastNotificationMode, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode>(this->shim().InstallInProgressToastNotificationMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_InstallInProgressToastNotificationMode(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallInProgressToastNotificationMode, WINRT_WRAP(void), Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const&);
+            this->shim().InstallInProgressToastNotificationMode(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallationToastNotificationMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_InstallForAllUsers(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallForAllUsers, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().InstallForAllUsers());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_InstallForAllUsers(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallForAllUsers, WINRT_WRAP(void), bool);
+            this->shim().InstallForAllUsers(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_StageButDoNotInstall(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StageButDoNotInstall, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().StageButDoNotInstall());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_StageButDoNotInstall(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StageButDoNotInstall, WINRT_WRAP(void), bool);
+            this->shim().StageButDoNotInstall(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_CampaignId(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CampaignId, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().CampaignId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_CampaignId(void* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CampaignId, WINRT_WRAP(void), hstring const&);
+            this->shim().CampaignId(*reinterpret_cast<hstring const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_ExtendedCampaignId(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendedCampaignId, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().ExtendedCampaignId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_ExtendedCampaignId(void* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendedCampaignId, WINRT_WRAP(void), hstring const&);
+            this->shim().ExtendedCampaignId(*reinterpret_cast<hstring const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus>
 {
-    HRESULT __stdcall get_InstallState(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState* value) noexcept final
+    int32_t WINRT_CALL get_InstallState(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstallState, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState>(this->shim().InstallState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DownloadSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_DownloadSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().DownloadSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BytesDownloaded(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_BytesDownloaded(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BytesDownloaded, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().BytesDownloaded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PercentComplete(double* value) noexcept final
+    int32_t WINRT_CALL get_PercentComplete(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PercentComplete, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().PercentComplete());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ErrorCode(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ErrorCode(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ErrorCode());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ErrorCode, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ErrorCode());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadyForLaunch(bool* value) noexcept final
+    int32_t WINRT_CALL get_ReadyForLaunch(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadyForLaunch, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ReadyForLaunch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus3> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus3>
 {
-    HRESULT __stdcall get_IsStaged(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStaged(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStaged, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStaged());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions>
 {
-    HRESULT __stdcall get_CatalogId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CatalogId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CatalogId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CatalogId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CatalogId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CatalogId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CatalogId, WINRT_WRAP(void), hstring const&);
             this->shim().CatalogId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowForcedAppRestart(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowForcedAppRestart(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowForcedAppRestart, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowForcedAppRestart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowForcedAppRestart(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowForcedAppRestart(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowForcedAppRestart, WINRT_WRAP(void), bool);
             this->shim().AllowForcedAppRestart(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2>
+{
+    int32_t WINRT_CALL get_AutomaticallyDownloadAndInstallUpdateIfFound(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutomaticallyDownloadAndInstallUpdateIfFound, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().AutomaticallyDownloadAndInstallUpdateIfFound());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_AutomaticallyDownloadAndInstallUpdateIfFound(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutomaticallyDownloadAndInstallUpdateIfFound, WINRT_WRAP(void), bool);
+            this->shim().AutomaticallyDownloadAndInstallUpdateIfFound(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2027,15 +2404,15 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IGe
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Store::Preview::InstallControl {
 
 inline AppInstallManager::AppInstallManager() :
-    AppInstallManager(get_activation_factory<AppInstallManager>().ActivateInstance<AppInstallManager>())
+    AppInstallManager(impl::call_factory<AppInstallManager>([](auto&& f) { return f.template ActivateInstance<AppInstallManager>(); }))
 {}
 
 inline AppInstallOptions::AppInstallOptions() :
-    AppInstallOptions(get_activation_factory<AppInstallOptions>().ActivateInstance<AppInstallOptions>())
+    AppInstallOptions(impl::call_factory<AppInstallOptions>([](auto&& f) { return f.template ActivateInstance<AppInstallOptions>(); }))
 {}
 
 inline AppUpdateOptions::AppUpdateOptions() :
-    AppUpdateOptions(get_activation_factory<AppUpdateOptions>().ActivateInstance<AppUpdateOptions>())
+    AppUpdateOptions(impl::call_factory<AppUpdateOptions>([](auto&& f) { return f.template ActivateInstance<AppUpdateOptions>(); }))
 {}
 
 }
@@ -2046,18 +2423,22 @@ template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::Install
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem4> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem5> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager6> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager7> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallOptions2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppUpdateOptions2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager> {};
@@ -2068,5 +2449,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::Install
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> {};
 
 }
-
-WINRT_WARNING_POP

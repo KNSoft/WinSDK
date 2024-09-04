@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,7 +33,7 @@ struct WINRT_EBO DeviceAccessInformation :
 {
     DeviceAccessInformation(std::nullptr_t) noexcept {}
     static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(param::hstring const& deviceId);
-    static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID const& deviceClassId);
+    static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(winrt::guid const& deviceClassId);
     static Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass const& deviceClass);
 };
 
@@ -90,6 +90,7 @@ struct WINRT_EBO DeviceInformationPairing :
     using impl::consume_t<DeviceInformationPairing, Windows::Devices::Enumeration::IDeviceInformationPairing2>::PairAsync;
     using Windows::Devices::Enumeration::IDeviceInformationPairing::PairAsync;
     static bool TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported);
+    static bool TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel);
 };
 
 struct WINRT_EBO DeviceInformationUpdate :

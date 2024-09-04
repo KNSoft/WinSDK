@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -15,6 +15,7 @@ WINRT_WARNING_PUSH
 #include "winrt/impl/Windows.Storage.Streams.2.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
 #include "winrt/impl/Windows.AI.MachineLearning.Preview.2.h"
+#include "winrt/Windows.AI.MachineLearning.h"
 
 namespace winrt::impl {
 
@@ -318,701 +319,611 @@ template <typename D> Windows::Foundation::Collections::IIterable<int64_t> consu
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::IImageVariableDescriptorPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::IImageVariableDescriptorPreview>
 {
-    HRESULT __stdcall get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
+    int32_t WINRT_CALL get_BitmapPixelFormat(Windows::Graphics::Imaging::BitmapPixelFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitmapPixelFormat, WINRT_WRAP(Windows::Graphics::Imaging::BitmapPixelFormat));
             *value = detach_from<Windows::Graphics::Imaging::BitmapPixelFormat>(this->shim().BitmapPixelFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Width(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Width(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Width());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Height(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Height(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Height());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::IInferencingOptionsPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::IInferencingOptionsPreview>
 {
-    HRESULT __stdcall get_PreferredDeviceKind(Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview* value) noexcept final
+    int32_t WINRT_CALL get_PreferredDeviceKind(Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredDeviceKind, WINRT_WRAP(Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview>(this->shim().PreferredDeviceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PreferredDeviceKind(Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview value) noexcept final
+    int32_t WINRT_CALL put_PreferredDeviceKind(Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredDeviceKind, WINRT_WRAP(void), Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview const&);
             this->shim().PreferredDeviceKind(*reinterpret_cast<Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTracingEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTracingEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTracingEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTracingEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsTracingEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsTracingEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTracingEnabled, WINRT_WRAP(void), bool);
             this->shim().IsTracingEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxBatchSize(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxBatchSize(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBatchSize, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MaxBatchSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxBatchSize(int32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxBatchSize(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBatchSize, WINRT_WRAP(void), int32_t);
             this->shim().MaxBatchSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinimizeMemoryAllocation(bool* value) noexcept final
+    int32_t WINRT_CALL get_MinimizeMemoryAllocation(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinimizeMemoryAllocation, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MinimizeMemoryAllocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinimizeMemoryAllocation(bool value) noexcept final
+    int32_t WINRT_CALL put_MinimizeMemoryAllocation(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinimizeMemoryAllocation, WINRT_WRAP(void), bool);
             this->shim().MinimizeMemoryAllocation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReclaimMemoryAfterEvaluation(bool* value) noexcept final
+    int32_t WINRT_CALL get_ReclaimMemoryAfterEvaluation(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReclaimMemoryAfterEvaluation, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ReclaimMemoryAfterEvaluation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReclaimMemoryAfterEvaluation(bool value) noexcept final
+    int32_t WINRT_CALL put_ReclaimMemoryAfterEvaluation(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReclaimMemoryAfterEvaluation, WINRT_WRAP(void), bool);
             this->shim().ReclaimMemoryAfterEvaluation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreview>
 {
-    HRESULT __stdcall Bind(HSTRING name, void* value) noexcept final
+    int32_t WINRT_CALL Bind(void* name, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bind, WINRT_WRAP(void), hstring const&, Windows::Foundation::IInspectable const&);
             this->shim().Bind(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BindWithProperties(HSTRING name, void* value, void* metadata) noexcept final
+    int32_t WINRT_CALL BindWithProperties(void* name, void* value, void* metadata) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bind, WINRT_WRAP(void), hstring const&, Windows::Foundation::IInspectable const&, Windows::Foundation::Collections::IPropertySet const&);
             this->shim().Bind(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&value), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&metadata));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreviewFactory> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreviewFactory>
 {
-    HRESULT __stdcall CreateFromModel(void* model, void** value) noexcept final
+    int32_t WINRT_CALL CreateFromModel(void* model, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromModel, WINRT_WRAP(Windows::AI::MachineLearning::Preview::LearningModelBindingPreview), Windows::AI::MachineLearning::Preview::LearningModelPreview const&);
             *value = detach_from<Windows::AI::MachineLearning::Preview::LearningModelBindingPreview>(this->shim().CreateFromModel(*reinterpret_cast<Windows::AI::MachineLearning::Preview::LearningModelPreview const*>(&model)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelDescriptionPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelDescriptionPreview>
 {
-    HRESULT __stdcall get_Author(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Author(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Author, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Author());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Domain(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Domain(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Domain, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Domain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Version(int64_t* value) noexcept final
+    int32_t WINRT_CALL get_Version(int64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(int64_t));
             *value = detach_from<int64_t>(this->shim().Version());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Metadata(void** value) noexcept final
+    int32_t WINRT_CALL get_Metadata(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Metadata, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, hstring>>(this->shim().Metadata());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InputFeatures(void** value) noexcept final
+    int32_t WINRT_CALL get_InputFeatures(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputFeatures, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>));
             *value = detach_from<Windows::Foundation::Collections::IIterable<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>>(this->shim().InputFeatures());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputFeatures(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputFeatures(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputFeatures, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>));
             *value = detach_from<Windows::Foundation::Collections::IIterable<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>>(this->shim().OutputFeatures());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelEvaluationResultPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelEvaluationResultPreview>
 {
-    HRESULT __stdcall get_CorrelationId(HSTRING* correlationId) noexcept final
+    int32_t WINRT_CALL get_CorrelationId(void** correlationId) noexcept final
     {
         try
         {
             *correlationId = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CorrelationId, WINRT_WRAP(hstring));
             *correlationId = detach_from<hstring>(this->shim().CorrelationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Outputs(void** value) noexcept final
+    int32_t WINRT_CALL get_Outputs(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Outputs, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Outputs());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelPreview>
 {
-    HRESULT __stdcall EvaluateAsync(void* binding, HSTRING correlationId, void** evalOperation) noexcept final
+    int32_t WINRT_CALL EvaluateAsync(void* binding, void* correlationId, void** evalOperation) noexcept final
     {
         try
         {
             *evalOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EvaluateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelEvaluationResultPreview>), Windows::AI::MachineLearning::Preview::LearningModelBindingPreview const, hstring const);
             *evalOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelEvaluationResultPreview>>(this->shim().EvaluateAsync(*reinterpret_cast<Windows::AI::MachineLearning::Preview::LearningModelBindingPreview const*>(&binding), *reinterpret_cast<hstring const*>(&correlationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EvaluateFeaturesAsync(void* features, HSTRING correlationId, void** evalOperation) noexcept final
+    int32_t WINRT_CALL EvaluateFeaturesAsync(void* features, void* correlationId, void** evalOperation) noexcept final
     {
         try
         {
             *evalOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EvaluateFeaturesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelEvaluationResultPreview>), Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> const, hstring const);
             *evalOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelEvaluationResultPreview>>(this->shim().EvaluateFeaturesAsync(*reinterpret_cast<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable> const*>(&features), *reinterpret_cast<hstring const*>(&correlationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(void** returnValue) noexcept final
+    int32_t WINRT_CALL get_Description(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(Windows::AI::MachineLearning::Preview::LearningModelDescriptionPreview));
             *returnValue = detach_from<Windows::AI::MachineLearning::Preview::LearningModelDescriptionPreview>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InferencingOptions(void** value) noexcept final
+    int32_t WINRT_CALL get_InferencingOptions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InferencingOptions, WINRT_WRAP(Windows::AI::MachineLearning::Preview::InferencingOptionsPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::InferencingOptionsPreview>(this->shim().InferencingOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InferencingOptions(void* value) noexcept final
+    int32_t WINRT_CALL put_InferencingOptions(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InferencingOptions, WINRT_WRAP(void), Windows::AI::MachineLearning::Preview::InferencingOptionsPreview const&);
             this->shim().InferencingOptions(*reinterpret_cast<Windows::AI::MachineLearning::Preview::InferencingOptionsPreview const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics>
 {
-    HRESULT __stdcall LoadModelFromStorageFileAsync(void* modelFile, void** modelCreationOperation) noexcept final
+    int32_t WINRT_CALL LoadModelFromStorageFileAsync(void* modelFile, void** modelCreationOperation) noexcept final
     {
         try
         {
             *modelCreationOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadModelFromStorageFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview>), Windows::Storage::IStorageFile const);
             *modelCreationOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview>>(this->shim().LoadModelFromStorageFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&modelFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadModelFromStreamAsync(void* modelStream, void** modelCreationOperation) noexcept final
+    int32_t WINRT_CALL LoadModelFromStreamAsync(void* modelStream, void** modelCreationOperation) noexcept final
     {
         try
         {
             *modelCreationOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadModelFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview>), Windows::Storage::Streams::IRandomAccessStreamReference const);
             *modelCreationOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview>>(this->shim().LoadModelFromStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&modelStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelFeatureKind(Windows::AI::MachineLearning::Preview::LearningModelFeatureKindPreview* value) noexcept final
+    int32_t WINRT_CALL get_ModelFeatureKind(Windows::AI::MachineLearning::Preview::LearningModelFeatureKindPreview* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelFeatureKind, WINRT_WRAP(Windows::AI::MachineLearning::Preview::LearningModelFeatureKindPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::LearningModelFeatureKindPreview>(this->shim().ModelFeatureKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsRequired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRequired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRequired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRequired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::IMapVariableDescriptorPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::IMapVariableDescriptorPreview>
 {
-    HRESULT __stdcall get_KeyKind(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview* value) noexcept final
+    int32_t WINRT_CALL get_KeyKind(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyKind, WINRT_WRAP(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::FeatureElementKindPreview>(this->shim().KeyKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ValidStringKeys(void** value) noexcept final
+    int32_t WINRT_CALL get_ValidStringKeys(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValidStringKeys, WINRT_WRAP(Windows::Foundation::Collections::IIterable<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IIterable<hstring>>(this->shim().ValidStringKeys());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ValidIntegerKeys(void** value) noexcept final
+    int32_t WINRT_CALL get_ValidIntegerKeys(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValidIntegerKeys, WINRT_WRAP(Windows::Foundation::Collections::IIterable<int64_t>));
             *value = detach_from<Windows::Foundation::Collections::IIterable<int64_t>>(this->shim().ValidIntegerKeys());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Fields(void** value) noexcept final
+    int32_t WINRT_CALL get_Fields(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>(this->shim().Fields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ISequenceVariableDescriptorPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ISequenceVariableDescriptorPreview>
 {
-    HRESULT __stdcall get_ElementType(void** value) noexcept final
+    int32_t WINRT_CALL get_ElementType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ElementType, WINRT_WRAP(Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview>(this->shim().ElementType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::AI::MachineLearning::Preview::ITensorVariableDescriptorPreview> : produce_base<D, Windows::AI::MachineLearning::Preview::ITensorVariableDescriptorPreview>
 {
-    HRESULT __stdcall get_DataType(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview* value) noexcept final
+    int32_t WINRT_CALL get_DataType(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataType, WINRT_WRAP(Windows::AI::MachineLearning::Preview::FeatureElementKindPreview));
             *value = detach_from<Windows::AI::MachineLearning::Preview::FeatureElementKindPreview>(this->shim().DataType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Shape(void** value) noexcept final
+    int32_t WINRT_CALL get_Shape(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Shape, WINRT_WRAP(Windows::Foundation::Collections::IIterable<int64_t>));
             *value = detach_from<Windows::Foundation::Collections::IIterable<int64_t>>(this->shim().Shape());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1021,17 +932,17 @@ struct produce<D, Windows::AI::MachineLearning::Preview::ITensorVariableDescript
 WINRT_EXPORT namespace winrt::Windows::AI::MachineLearning::Preview {
 
 inline LearningModelBindingPreview::LearningModelBindingPreview(Windows::AI::MachineLearning::Preview::LearningModelPreview const& model) :
-    LearningModelBindingPreview(get_activation_factory<LearningModelBindingPreview, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreviewFactory>().CreateFromModel(model))
+    LearningModelBindingPreview(impl::call_factory<LearningModelBindingPreview, Windows::AI::MachineLearning::Preview::ILearningModelBindingPreviewFactory>([&](auto&& f) { return f.CreateFromModel(model); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview> LearningModelPreview::LoadModelFromStorageFileAsync(Windows::Storage::IStorageFile const& modelFile)
 {
-    return get_activation_factory<LearningModelPreview, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics>().LoadModelFromStorageFileAsync(modelFile);
+    return impl::call_factory<LearningModelPreview, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics>([&](auto&& f) { return f.LoadModelFromStorageFileAsync(modelFile); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::AI::MachineLearning::Preview::LearningModelPreview> LearningModelPreview::LoadModelFromStreamAsync(Windows::Storage::Streams::IRandomAccessStreamReference const& modelStream)
 {
-    return get_activation_factory<LearningModelPreview, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics>().LoadModelFromStreamAsync(modelStream);
+    return impl::call_factory<LearningModelPreview, Windows::AI::MachineLearning::Preview::ILearningModelPreviewStatics>([&](auto&& f) { return f.LoadModelFromStreamAsync(modelStream); });
 }
 
 }
@@ -1062,5 +973,3 @@ template<> struct hash<winrt::Windows::AI::MachineLearning::Preview::SequenceVar
 template<> struct hash<winrt::Windows::AI::MachineLearning::Preview::TensorVariableDescriptorPreview> : winrt::impl::hash_base<winrt::Windows::AI::MachineLearning::Preview::TensorVariableDescriptorPreview> {};
 
 }
-
-WINRT_WARNING_POP

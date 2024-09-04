@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,11 +33,29 @@ template <> struct name<Windows::UI::Core::Preview::ISystemNavigationManagerPrev
 template <> struct name<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics>{ static constexpr auto & value{ L"Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics" }; };
 template <> struct name<Windows::UI::Core::Preview::SystemNavigationCloseRequestedPreviewEventArgs>{ static constexpr auto & value{ L"Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs" }; };
 template <> struct name<Windows::UI::Core::Preview::SystemNavigationManagerPreview>{ static constexpr auto & value{ L"Windows.UI.Core.Preview.SystemNavigationManagerPreview" }; };
-template <> struct guid<Windows::UI::Core::Preview::ISystemNavigationCloseRequestedPreviewEventArgs>{ static constexpr GUID value{ 0x83D00DE1,0xCBE5,0x4F31,{ 0x84,0x14,0x36,0x1D,0xA0,0x46,0x51,0x8F } }; };
-template <> struct guid<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>{ static constexpr GUID value{ 0xEC5F0488,0x6425,0x4777,{ 0xA5,0x36,0xCB,0x56,0x34,0x42,0x7F,0x0D } }; };
-template <> struct guid<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics>{ static constexpr GUID value{ 0x0E971360,0xDF74,0x4BCE,{ 0x84,0xCB,0xBD,0x11,0x81,0xAC,0x0A,0x71 } }; };
+template <> struct guid_storage<Windows::UI::Core::Preview::ISystemNavigationCloseRequestedPreviewEventArgs>{ static constexpr guid value{ 0x83D00DE1,0xCBE5,0x4F31,{ 0x84,0x14,0x36,0x1D,0xA0,0x46,0x51,0x8F } }; };
+template <> struct guid_storage<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>{ static constexpr guid value{ 0xEC5F0488,0x6425,0x4777,{ 0xA5,0x36,0xCB,0x56,0x34,0x42,0x7F,0x0D } }; };
+template <> struct guid_storage<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics>{ static constexpr guid value{ 0x0E971360,0xDF74,0x4BCE,{ 0x84,0xCB,0xBD,0x11,0x81,0xAC,0x0A,0x71 } }; };
 template <> struct default_interface<Windows::UI::Core::Preview::SystemNavigationCloseRequestedPreviewEventArgs>{ using type = Windows::UI::Core::Preview::ISystemNavigationCloseRequestedPreviewEventArgs; };
 template <> struct default_interface<Windows::UI::Core::Preview::SystemNavigationManagerPreview>{ using type = Windows::UI::Core::Preview::ISystemNavigationManagerPreview; };
+
+template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationCloseRequestedPreviewEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_CloseRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CloseRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** loader) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Core_Preview_ISystemNavigationCloseRequestedPreviewEventArgs
@@ -51,10 +69,10 @@ template <> struct consume<Windows::UI::Core::Preview::ISystemNavigationCloseReq
 template <typename D>
 struct consume_Windows_UI_Core_Preview_ISystemNavigationManagerPreview
 {
-    event_token CloseRequested(Windows::Foundation::EventHandler<Windows::UI::Core::Preview::SystemNavigationCloseRequestedPreviewEventArgs> const& handler) const;
-    using CloseRequested_revoker = event_revoker<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>;
+    winrt::event_token CloseRequested(Windows::Foundation::EventHandler<Windows::UI::Core::Preview::SystemNavigationCloseRequestedPreviewEventArgs> const& handler) const;
+    using CloseRequested_revoker = impl::event_revoker<Windows::UI::Core::Preview::ISystemNavigationManagerPreview, &impl::abi_t<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>::remove_CloseRequested>;
     CloseRequested_revoker CloseRequested(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Core::Preview::SystemNavigationCloseRequestedPreviewEventArgs> const& handler) const;
-    void CloseRequested(event_token const& token) const;
+    void CloseRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Core::Preview::ISystemNavigationManagerPreview> { template <typename D> using type = consume_Windows_UI_Core_Preview_ISystemNavigationManagerPreview<D>; };
 
@@ -64,23 +82,5 @@ struct consume_Windows_UI_Core_Preview_ISystemNavigationManagerPreviewStatics
     Windows::UI::Core::Preview::SystemNavigationManagerPreview GetForCurrentView() const;
 };
 template <> struct consume<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics> { template <typename D> using type = consume_Windows_UI_Core_Preview_ISystemNavigationManagerPreviewStatics<D>; };
-
-template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationCloseRequestedPreviewEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationManagerPreview>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_CloseRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CloseRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::Preview::ISystemNavigationManagerPreviewStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** loader) noexcept = 0;
-};};
 
 }

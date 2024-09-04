@@ -34,7 +34,7 @@ extern "C" {
 #define MAXIMUM_LEADBYTES   12
 
 typedef struct _CPTABLEINFO {
-    USHORT CodePage;                    // code page number
+    USHORT CodePage;                    // code page number (For UTF-8 the rest of the structure is unused)
     USHORT MaximumCharacterSize;        // max length (bytes) of a char
     USHORT DefaultChar;                 // default character (MB)
     USHORT UniDefaultChar;              // default character (Unicode)

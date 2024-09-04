@@ -138,6 +138,8 @@ namespace Windows
 
             interface IHolographicCamera4;
 
+            interface IHolographicCamera5;
+
             interface IHolographicCameraPose;
 
             interface IHolographicCameraPose2;
@@ -171,6 +173,8 @@ namespace Windows
             interface IHolographicQuadLayerFactory;
 
             interface IHolographicQuadLayerUpdateParameters;
+
+            interface IHolographicQuadLayerUpdateParameters2;
 
             interface IHolographicSpace;
 
@@ -363,6 +367,16 @@ namespace Windows
                 [propget] HRESULT CanOverrideViewport([out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicCamera)]
+            [uuid(229706F2-628D-4EF5-9C08-A63FDD7787C6)]
+            interface IHolographicCamera5 : IInspectable
+            {
+                [propget] HRESULT IsHardwareContentProtectionSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsHardwareContentProtectionEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsHardwareContentProtectionEnabled([in] boolean value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.Graphics.Holographic.HolographicCameraPose)]
             [uuid(0D7D7E30-12DE-45BD-912B-C7F6561599D1)]
@@ -550,6 +564,15 @@ namespace Windows
                 HRESULT UpdateLocationWithDisplayRelativeMode([in] Windows.Foundation.Numerics.Vector3 position, [in] Windows.Foundation.Numerics.Quaternion orientation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters)]
+            [uuid(4F33D32D-82C1-46C1-8980-3CB70D98182B)]
+            interface IHolographicQuadLayerUpdateParameters2 : IInspectable
+            {
+                [propget] HRESULT CanAcquireWithHardwareProtection([out] [retval] boolean* value);
+                HRESULT AcquireBufferToUpdateContentWithHardwareProtection([out] [retval] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.Graphics.Holographic.HolographicSpace)]
             [uuid(4380DBA6-5E78-434F-807C-3433D1EFE8B7)]
@@ -630,6 +653,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Graphics.Holographic.IHolographicCamera2;
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Graphics.Holographic.IHolographicCamera3;
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.Graphics.Holographic.IHolographicCamera4;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Graphics.Holographic.IHolographicCamera5;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -717,6 +741,7 @@ namespace Windows
             runtimeclass HolographicQuadLayerUpdateParameters
             {
                 [default] interface Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]

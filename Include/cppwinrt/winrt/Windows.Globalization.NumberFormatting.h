@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Globalization.NumberFormatting.2.h"
@@ -398,924 +398,806 @@ template <typename D> void consume_Windows_Globalization_NumberFormatting_ISigni
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter> : produce_base<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter>
 {
-    HRESULT __stdcall get_Currency(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Currency(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Currency, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Currency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Currency(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Currency(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Currency, WINRT_WRAP(void), hstring const&);
             this->shim().Currency(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2> : produce_base<D, Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
 {
-    HRESULT __stdcall get_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Globalization::NumberFormatting::CurrencyFormatterMode));
             *value = detach_from<Windows::Globalization::NumberFormatting::CurrencyFormatterMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Globalization::NumberFormatting::CurrencyFormatterMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Globalization::NumberFormatting::CurrencyFormatterMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) noexcept final
+    int32_t WINRT_CALL ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplyRoundingForCurrency, WINRT_WRAP(void), Windows::Globalization::NumberFormatting::RoundingAlgorithm const&);
             this->shim().ApplyRoundingForCurrency(*reinterpret_cast<Windows::Globalization::NumberFormatting::RoundingAlgorithm const*>(&roundingAlgorithm));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>
 {
-    HRESULT __stdcall CreateCurrencyFormatterCode(HSTRING currencyCode, void** result) noexcept final
+    int32_t WINRT_CALL CreateCurrencyFormatterCode(void* currencyCode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCurrencyFormatterCode, WINRT_WRAP(Windows::Globalization::NumberFormatting::CurrencyFormatter), hstring const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::CurrencyFormatter>(this->shim().CreateCurrencyFormatterCode(*reinterpret_cast<hstring const*>(&currencyCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCurrencyFormatterCodeContext(HSTRING currencyCode, void* languages, HSTRING geographicRegion, void** result) noexcept final
+    int32_t WINRT_CALL CreateCurrencyFormatterCodeContext(void* currencyCode, void* languages, void* geographicRegion, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCurrencyFormatterCodeContext, WINRT_WRAP(Windows::Globalization::NumberFormatting::CurrencyFormatter), hstring const&, Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::CurrencyFormatter>(this->shim().CreateCurrencyFormatterCodeContext(*reinterpret_cast<hstring const*>(&currencyCode), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>
 {
-    HRESULT __stdcall CreateDecimalFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept final
+    int32_t WINRT_CALL CreateDecimalFormatter(void* languages, void* geographicRegion, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDecimalFormatter, WINRT_WRAP(Windows::Globalization::NumberFormatting::DecimalFormatter), Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::DecimalFormatter>(this->shim().CreateDecimalFormatter(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IIncrementNumberRounder> : produce_base<D, Windows::Globalization::NumberFormatting::IIncrementNumberRounder>
 {
-    HRESULT __stdcall get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundingAlgorithm, WINRT_WRAP(Windows::Globalization::NumberFormatting::RoundingAlgorithm));
             *value = detach_from<Windows::Globalization::NumberFormatting::RoundingAlgorithm>(this->shim().RoundingAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept final
+    int32_t WINRT_CALL put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundingAlgorithm, WINRT_WRAP(void), Windows::Globalization::NumberFormatting::RoundingAlgorithm const&);
             this->shim().RoundingAlgorithm(*reinterpret_cast<Windows::Globalization::NumberFormatting::RoundingAlgorithm const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Increment(double* value) noexcept final
+    int32_t WINRT_CALL get_Increment(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Increment, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Increment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Increment(double value) noexcept final
+    int32_t WINRT_CALL put_Increment(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Increment, WINRT_WRAP(void), double);
             this->shim().Increment(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatter>
 {
-    HRESULT __stdcall FormatInt(int64_t value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatInt(int64_t value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(hstring), int64_t);
             *result = detach_from<hstring>(this->shim().Format(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FormatUInt(uint64_t value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatUInt(uint64_t value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(hstring), uint64_t);
             *result = detach_from<hstring>(this->shim().Format(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FormatDouble(double value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatDouble(double value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(hstring), double);
             *result = detach_from<hstring>(this->shim().Format(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatter2> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatter2>
 {
-    HRESULT __stdcall FormatInt(int64_t value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatInt(int64_t value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormatInt, WINRT_WRAP(hstring), int64_t);
             *result = detach_from<hstring>(this->shim().FormatInt(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FormatUInt(uint64_t value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatUInt(uint64_t value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormatUInt, WINRT_WRAP(hstring), uint64_t);
             *result = detach_from<hstring>(this->shim().FormatUInt(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FormatDouble(double value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL FormatDouble(double value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormatDouble, WINRT_WRAP(hstring), double);
             *result = detach_from<hstring>(this->shim().FormatDouble(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberFormatterOptions> : produce_base<D, Windows::Globalization::NumberFormatting::INumberFormatterOptions>
 {
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IntegerDigits(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_IntegerDigits(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IntegerDigits, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().IntegerDigits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IntegerDigits(int32_t value) noexcept final
+    int32_t WINRT_CALL put_IntegerDigits(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IntegerDigits, WINRT_WRAP(void), int32_t);
             this->shim().IntegerDigits(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FractionDigits(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FractionDigits(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FractionDigits, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FractionDigits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FractionDigits(int32_t value) noexcept final
+    int32_t WINRT_CALL put_FractionDigits(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FractionDigits, WINRT_WRAP(void), int32_t);
             this->shim().FractionDigits(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGrouped(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGrouped(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGrouped, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGrouped());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsGrouped(bool value) noexcept final
+    int32_t WINRT_CALL put_IsGrouped(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGrouped, WINRT_WRAP(void), bool);
             this->shim().IsGrouped(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDecimalPointAlwaysDisplayed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDecimalPointAlwaysDisplayed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDecimalPointAlwaysDisplayed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDecimalPointAlwaysDisplayed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsDecimalPointAlwaysDisplayed(bool value) noexcept final
+    int32_t WINRT_CALL put_IsDecimalPointAlwaysDisplayed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDecimalPointAlwaysDisplayed, WINRT_WRAP(void), bool);
             this->shim().IsDecimalPointAlwaysDisplayed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumeralSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(void), hstring const&);
             this->shim().NumeralSystem(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedGeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedGeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedGeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedGeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberParser> : produce_base<D, Windows::Globalization::NumberFormatting::INumberParser>
 {
-    HRESULT __stdcall ParseInt(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL ParseInt(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParseInt, WINRT_WRAP(Windows::Foundation::IReference<int64_t>), hstring const&);
             *result = detach_from<Windows::Foundation::IReference<int64_t>>(this->shim().ParseInt(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ParseUInt(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL ParseUInt(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParseUInt, WINRT_WRAP(Windows::Foundation::IReference<uint64_t>), hstring const&);
             *result = detach_from<Windows::Foundation::IReference<uint64_t>>(this->shim().ParseUInt(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ParseDouble(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL ParseDouble(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParseDouble, WINRT_WRAP(Windows::Foundation::IReference<double>), hstring const&);
             *result = detach_from<Windows::Foundation::IReference<double>>(this->shim().ParseDouble(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberRounder> : produce_base<D, Windows::Globalization::NumberFormatting::INumberRounder>
 {
-    HRESULT __stdcall RoundInt32(int32_t value, int32_t* result) noexcept final
+    int32_t WINRT_CALL RoundInt32(int32_t value, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundInt32, WINRT_WRAP(int32_t), int32_t);
             *result = detach_from<int32_t>(this->shim().RoundInt32(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RoundUInt32(uint32_t value, uint32_t* result) noexcept final
+    int32_t WINRT_CALL RoundUInt32(uint32_t value, uint32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundUInt32, WINRT_WRAP(uint32_t), uint32_t);
             *result = detach_from<uint32_t>(this->shim().RoundUInt32(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RoundInt64(int64_t value, int64_t* result) noexcept final
+    int32_t WINRT_CALL RoundInt64(int64_t value, int64_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundInt64, WINRT_WRAP(int64_t), int64_t);
             *result = detach_from<int64_t>(this->shim().RoundInt64(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RoundUInt64(uint64_t value, uint64_t* result) noexcept final
+    int32_t WINRT_CALL RoundUInt64(uint64_t value, uint64_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundUInt64, WINRT_WRAP(uint64_t), uint64_t);
             *result = detach_from<uint64_t>(this->shim().RoundUInt64(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RoundSingle(float value, float* result) noexcept final
+    int32_t WINRT_CALL RoundSingle(float value, float* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundSingle, WINRT_WRAP(float), float);
             *result = detach_from<float>(this->shim().RoundSingle(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RoundDouble(double value, double* result) noexcept final
+    int32_t WINRT_CALL RoundDouble(double value, double* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundDouble, WINRT_WRAP(double), double);
             *result = detach_from<double>(this->shim().RoundDouble(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumberRounderOption> : produce_base<D, Windows::Globalization::NumberFormatting::INumberRounderOption>
 {
-    HRESULT __stdcall get_NumberRounder(void** value) noexcept final
+    int32_t WINRT_CALL get_NumberRounder(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberRounder, WINRT_WRAP(Windows::Globalization::NumberFormatting::INumberRounder));
             *value = detach_from<Windows::Globalization::NumberFormatting::INumberRounder>(this->shim().NumberRounder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NumberRounder(void* value) noexcept final
+    int32_t WINRT_CALL put_NumberRounder(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberRounder, WINRT_WRAP(void), Windows::Globalization::NumberFormatting::INumberRounder const&);
             this->shim().NumberRounder(*reinterpret_cast<Windows::Globalization::NumberFormatting::INumberRounder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslator> : produce_base<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslator>
 {
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumeralSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(void), hstring const&);
             this->shim().NumeralSystem(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TranslateNumerals(HSTRING value, HSTRING* result) noexcept final
+    int32_t WINRT_CALL TranslateNumerals(void* value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateNumerals, WINRT_WRAP(hstring), hstring const&);
             *result = detach_from<hstring>(this->shim().TranslateNumerals(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory> : produce_base<D, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>
 {
-    HRESULT __stdcall Create(void* languages, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* languages, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Globalization::NumberFormatting::NumeralSystemTranslator), Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::NumeralSystemTranslator>(this->shim().Create(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IPercentFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IPercentFormatterFactory>
 {
-    HRESULT __stdcall CreatePercentFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept final
+    int32_t WINRT_CALL CreatePercentFormatter(void* languages, void* geographicRegion, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePercentFormatter, WINRT_WRAP(Windows::Globalization::NumberFormatting::PercentFormatter), Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::PercentFormatter>(this->shim().CreatePercentFormatter(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory> : produce_base<D, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>
 {
-    HRESULT __stdcall CreatePermilleFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept final
+    int32_t WINRT_CALL CreatePermilleFormatter(void* languages, void* geographicRegion, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePermilleFormatter, WINRT_WRAP(Windows::Globalization::NumberFormatting::PermilleFormatter), Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&);
             *result = detach_from<Windows::Globalization::NumberFormatting::PermilleFormatter>(this->shim().CreatePermilleFormatter(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&geographicRegion)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ISignedZeroOption> : produce_base<D, Windows::Globalization::NumberFormatting::ISignedZeroOption>
 {
-    HRESULT __stdcall get_IsZeroSigned(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsZeroSigned(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsZeroSigned, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsZeroSigned());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsZeroSigned(bool value) noexcept final
+    int32_t WINRT_CALL put_IsZeroSigned(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsZeroSigned, WINRT_WRAP(void), bool);
             this->shim().IsZeroSigned(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder> : produce_base<D, Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>
 {
-    HRESULT __stdcall get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundingAlgorithm, WINRT_WRAP(Windows::Globalization::NumberFormatting::RoundingAlgorithm));
             *value = detach_from<Windows::Globalization::NumberFormatting::RoundingAlgorithm>(this->shim().RoundingAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept final
+    int32_t WINRT_CALL put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoundingAlgorithm, WINRT_WRAP(void), Windows::Globalization::NumberFormatting::RoundingAlgorithm const&);
             this->shim().RoundingAlgorithm(*reinterpret_cast<Windows::Globalization::NumberFormatting::RoundingAlgorithm const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SignificantDigits(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SignificantDigits(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignificantDigits, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SignificantDigits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SignificantDigits(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_SignificantDigits(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignificantDigits, WINRT_WRAP(void), uint32_t);
             this->shim().SignificantDigits(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOption> : produce_base<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOption>
 {
-    HRESULT __stdcall get_SignificantDigits(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SignificantDigits(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignificantDigits, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SignificantDigits());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SignificantDigits(int32_t value) noexcept final
+    int32_t WINRT_CALL put_SignificantDigits(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignificantDigits, WINRT_WRAP(void), int32_t);
             this->shim().SignificantDigits(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1324,51 +1206,51 @@ struct produce<D, Windows::Globalization::NumberFormatting::ISignificantDigitsOp
 WINRT_EXPORT namespace winrt::Windows::Globalization::NumberFormatting {
 
 inline CurrencyFormatter::CurrencyFormatter(param::hstring const& currencyCode) :
-    CurrencyFormatter(get_activation_factory<CurrencyFormatter, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>().CreateCurrencyFormatterCode(currencyCode))
+    CurrencyFormatter(impl::call_factory<CurrencyFormatter, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>([&](auto&& f) { return f.CreateCurrencyFormatterCode(currencyCode); }))
 {}
 
 inline CurrencyFormatter::CurrencyFormatter(param::hstring const& currencyCode, param::iterable<hstring> const& languages, param::hstring const& geographicRegion) :
-    CurrencyFormatter(get_activation_factory<CurrencyFormatter, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>().CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion))
+    CurrencyFormatter(impl::call_factory<CurrencyFormatter, Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>([&](auto&& f) { return f.CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion); }))
 {}
 
 inline DecimalFormatter::DecimalFormatter() :
-    DecimalFormatter(get_activation_factory<DecimalFormatter>().ActivateInstance<DecimalFormatter>())
+    DecimalFormatter(impl::call_factory<DecimalFormatter>([](auto&& f) { return f.template ActivateInstance<DecimalFormatter>(); }))
 {}
 
 inline DecimalFormatter::DecimalFormatter(param::iterable<hstring> const& languages, param::hstring const& geographicRegion) :
-    DecimalFormatter(get_activation_factory<DecimalFormatter, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>().CreateDecimalFormatter(languages, geographicRegion))
+    DecimalFormatter(impl::call_factory<DecimalFormatter, Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>([&](auto&& f) { return f.CreateDecimalFormatter(languages, geographicRegion); }))
 {}
 
 inline IncrementNumberRounder::IncrementNumberRounder() :
-    IncrementNumberRounder(get_activation_factory<IncrementNumberRounder>().ActivateInstance<IncrementNumberRounder>())
+    IncrementNumberRounder(impl::call_factory<IncrementNumberRounder>([](auto&& f) { return f.template ActivateInstance<IncrementNumberRounder>(); }))
 {}
 
 inline NumeralSystemTranslator::NumeralSystemTranslator() :
-    NumeralSystemTranslator(get_activation_factory<NumeralSystemTranslator>().ActivateInstance<NumeralSystemTranslator>())
+    NumeralSystemTranslator(impl::call_factory<NumeralSystemTranslator>([](auto&& f) { return f.template ActivateInstance<NumeralSystemTranslator>(); }))
 {}
 
 inline NumeralSystemTranslator::NumeralSystemTranslator(param::iterable<hstring> const& languages) :
-    NumeralSystemTranslator(get_activation_factory<NumeralSystemTranslator, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>().Create(languages))
+    NumeralSystemTranslator(impl::call_factory<NumeralSystemTranslator, Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>([&](auto&& f) { return f.Create(languages); }))
 {}
 
 inline PercentFormatter::PercentFormatter() :
-    PercentFormatter(get_activation_factory<PercentFormatter>().ActivateInstance<PercentFormatter>())
+    PercentFormatter(impl::call_factory<PercentFormatter>([](auto&& f) { return f.template ActivateInstance<PercentFormatter>(); }))
 {}
 
 inline PercentFormatter::PercentFormatter(param::iterable<hstring> const& languages, param::hstring const& geographicRegion) :
-    PercentFormatter(get_activation_factory<PercentFormatter, Windows::Globalization::NumberFormatting::IPercentFormatterFactory>().CreatePercentFormatter(languages, geographicRegion))
+    PercentFormatter(impl::call_factory<PercentFormatter, Windows::Globalization::NumberFormatting::IPercentFormatterFactory>([&](auto&& f) { return f.CreatePercentFormatter(languages, geographicRegion); }))
 {}
 
 inline PermilleFormatter::PermilleFormatter() :
-    PermilleFormatter(get_activation_factory<PermilleFormatter>().ActivateInstance<PermilleFormatter>())
+    PermilleFormatter(impl::call_factory<PermilleFormatter>([](auto&& f) { return f.template ActivateInstance<PermilleFormatter>(); }))
 {}
 
 inline PermilleFormatter::PermilleFormatter(param::iterable<hstring> const& languages, param::hstring const& geographicRegion) :
-    PermilleFormatter(get_activation_factory<PermilleFormatter, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>().CreatePermilleFormatter(languages, geographicRegion))
+    PermilleFormatter(impl::call_factory<PermilleFormatter, Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>([&](auto&& f) { return f.CreatePermilleFormatter(languages, geographicRegion); }))
 {}
 
 inline SignificantDigitsNumberRounder::SignificantDigitsNumberRounder() :
-    SignificantDigitsNumberRounder(get_activation_factory<SignificantDigitsNumberRounder>().ActivateInstance<SignificantDigitsNumberRounder>())
+    SignificantDigitsNumberRounder(impl::call_factory<SignificantDigitsNumberRounder>([](auto&& f) { return f.template ActivateInstance<SignificantDigitsNumberRounder>(); }))
 {}
 
 }
@@ -1402,5 +1284,3 @@ template<> struct hash<winrt::Windows::Globalization::NumberFormatting::Permille
 template<> struct hash<winrt::Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder> : winrt::impl::hash_base<winrt::Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder> {};
 
 }
-
-WINRT_WARNING_POP

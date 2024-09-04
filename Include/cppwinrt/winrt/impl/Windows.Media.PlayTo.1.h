@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -25,42 +25,42 @@ struct WINRT_EBO IMuteChangeRequestedEventArgs :
     IMuteChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] IPlayToConnection :
+struct WINRT_EBO IPlayToConnection :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToConnection>
 {
     IPlayToConnection(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] IPlayToConnectionErrorEventArgs :
+struct WINRT_EBO IPlayToConnectionErrorEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToConnectionErrorEventArgs>
 {
     IPlayToConnectionErrorEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionStateChangedEventArgs :
+struct WINRT_EBO IPlayToConnectionStateChangedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToConnectionStateChangedEventArgs>
 {
     IPlayToConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionTransferredEventArgs :
+struct WINRT_EBO IPlayToConnectionTransferredEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToConnectionTransferredEventArgs>
 {
     IPlayToConnectionTransferredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManager :
+struct WINRT_EBO IPlayToManager :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToManager>
 {
     IPlayToManager(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManagerStatics :
+struct WINRT_EBO IPlayToManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToManagerStatics>
 {
@@ -74,42 +74,42 @@ struct WINRT_EBO IPlayToReceiver :
     IPlayToReceiver(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSource :
+struct WINRT_EBO IPlayToSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSource>
 {
     IPlayToSource(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceDeferral :
+struct WINRT_EBO IPlayToSourceDeferral :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSourceDeferral>
 {
     IPlayToSourceDeferral(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequest :
+struct WINRT_EBO IPlayToSourceRequest :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSourceRequest>
 {
     IPlayToSourceRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequestedEventArgs :
+struct WINRT_EBO IPlayToSourceRequestedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSourceRequestedEventArgs>
 {
     IPlayToSourceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceSelectedEventArgs :
+struct WINRT_EBO IPlayToSourceSelectedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSourceSelectedEventArgs>
 {
     IPlayToSourceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSourceWithPreferredSourceUri :
+struct WINRT_EBO IPlayToSourceWithPreferredSourceUri :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPlayToSourceWithPreferredSourceUri>
 {

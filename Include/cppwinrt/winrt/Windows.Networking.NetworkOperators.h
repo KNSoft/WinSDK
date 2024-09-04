@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Data.Xml.Dom.2.h"
@@ -90,21 +90,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESim)->add_ProfileChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESim> consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged_revoker consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESim>(this, &abi_t<Windows::Networking::NetworkOperators::IESim>::remove_ProfileChanged, ProfileChanged(handler));
+    return impl::make_event_revoker<D, ProfileChanged_revoker>(this, ProfileChanged(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESim<D>::ProfileChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESim)->remove_ProfileChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESim)->remove_ProfileChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ESim consume_Windows_Networking_NetworkOperators_IESimAddedEventArgs<D>::ESim() const
@@ -142,21 +142,21 @@ template <typename D> Windows::Networking::NetworkOperators::ESimWatcher consume
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimManagerStatics)->add_ServiceInfoChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics> consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged_revoker consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimManagerStatics>(this, &abi_t<Windows::Networking::NetworkOperators::IESimManagerStatics>::remove_ServiceInfoChanged, ServiceInfoChanged(handler));
+    return impl::make_event_revoker<D, ServiceInfoChanged_revoker>(this, ServiceInfoChanged(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>::ServiceInfoChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimManagerStatics)->remove_ServiceInfoChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimManagerStatics)->remove_ServiceInfoChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::ESimOperationStatus consume_Windows_Networking_NetworkOperators_IESimOperationResult<D>::Status() const
@@ -327,21 +327,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimProfileMetadata)->add_StateChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimProfileMetadata> consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged_revoker consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimProfileMetadata>(this, &abi_t<Windows::Networking::NetworkOperators::IESimProfileMetadata>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>::StateChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimProfileMetadata)->remove_StateChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimProfileMetadata)->remove_StateChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_Networking_NetworkOperators_IESimProfilePolicy<D>::CanDelete() const
@@ -410,89 +410,89 @@ template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatc
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->Stop());
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->add_Added(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimWatcher> consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added_revoker consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Added, Added(handler));
+    return impl::make_event_revoker<D, Added_revoker>(this, Added(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Added(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Added(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Added(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->add_EnumerationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimWatcher> consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted_revoker consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_EnumerationCompleted, EnumerationCompleted(handler));
+    return impl::make_event_revoker<D, EnumerationCompleted_revoker>(this, EnumerationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::EnumerationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_EnumerationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_EnumerationCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->add_Removed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimWatcher> consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed_revoker consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Removed, Removed(handler));
+    return impl::make_event_revoker<D, Removed_revoker>(this, Removed(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Removed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Removed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Removed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->add_Stopped(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimWatcher> consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped_revoker consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Stopped, Stopped(handler));
+    return impl::make_event_revoker<D, Stopped_revoker>(this, Stopped(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Stopped(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Stopped(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Stopped(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->add_Updated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IESimWatcher> consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated_revoker consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IESimWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Updated, Updated(handler));
+    return impl::make_event_revoker<D, Updated_revoker>(this, Updated(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IESimWatcher<D>::Updated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Updated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IESimWatcher)->remove_Updated(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows_Networking_NetworkOperators_IFdnAccessManagerStatics<D>::RequestUnlockAsync(param::hstring const& contactListId) const
@@ -718,9 +718,9 @@ template <typename D> hstring consume_Windows_Networking_NetworkOperators_IMobil
     return value;
 }
 
-template <typename D> GUID consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccount<D>::ServiceProviderGuid() const
+template <typename D> winrt::guid consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccount<D>::ServiceProviderGuid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccount)->get_ServiceProviderGuid(put_abi(value)));
     return value;
 }
@@ -802,89 +802,89 @@ template <typename D> bool consume_Windows_Networking_NetworkOperators_IMobileBr
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->add_AccountAdded(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountAdded, AccountAdded(handler));
+    return impl::make_event_revoker<D, AccountAdded_revoker>(this, AccountAdded(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(event_token const& cookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountAdded(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountAdded(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountAdded(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->add_AccountUpdated(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountUpdated, AccountUpdated(handler));
+    return impl::make_event_revoker<D, AccountUpdated_revoker>(this, AccountUpdated(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(event_token const& cookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountUpdated(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountUpdated(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountUpdated(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->add_AccountRemoved(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountRemoved, AccountRemoved(handler));
+    return impl::make_event_revoker<D, AccountRemoved_revoker>(this, AccountRemoved(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(event_token const& cookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::AccountRemoved(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountRemoved(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_AccountRemoved(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->add_EnumerationCompleted(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_EnumerationCompleted, EnumerationCompleted(handler));
+    return impl::make_event_revoker<D, EnumerationCompleted_revoker>(this, EnumerationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(event_token const& cookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::EnumerationCompleted(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_EnumerationCompleted(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_EnumerationCompleted(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->add_Stopped(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_Stopped, Stopped(handler));
+    return impl::make_event_revoker<D, Stopped_revoker>(this, Stopped(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(event_token const& cookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Stopped(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_Stopped(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher)->remove_Stopped(get_abi(cookie)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher<D>::Status() const
@@ -1408,9 +1408,9 @@ template <typename D> hstring consume_Windows_Networking_NetworkOperators_IMobil
     return value;
 }
 
-template <typename D> GUID consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceService<D>::DeviceServiceId() const
+template <typename D> winrt::guid consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceService<D>::DeviceServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService)->get_DeviceServiceId(put_abi(value)));
     return value;
 }
@@ -1488,26 +1488,26 @@ template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBr
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession)->CloseSession());
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession)->add_DataReceived(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>::remove_DataReceived, DataReceived(eventHandler));
+    return impl::make_event_revoker<D, DataReceived_revoker>(this, DataReceived(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>::DataReceived(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession)->remove_DataReceived(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession)->remove_DataReceived(get_abi(eventCookie)));
 }
 
-template <typename D> GUID consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceInformation<D>::DeviceServiceId() const
+template <typename D> winrt::guid consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceInformation<D>::DeviceServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation)->get_DeviceServiceId(put_abi(value)));
     return value;
 }
@@ -1533,9 +1533,9 @@ template <typename D> hstring consume_Windows_Networking_NetworkOperators_IMobil
     return value;
 }
 
-template <typename D> GUID consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceTriggerDetails<D>::DeviceServiceId() const
+template <typename D> winrt::guid consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceTriggerDetails<D>::DeviceServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails)->get_DeviceServiceId(put_abi(value)));
     return value;
 }
@@ -1582,7 +1582,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Net
     return value;
 }
 
-template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceService consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem<D>::GetDeviceService(GUID const& deviceServiceId) const
+template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandDeviceService consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem<D>::GetDeviceService(winrt::guid const& deviceServiceId) const
 {
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceService value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandModem)->GetDeviceService(get_abi(deviceServiceId), put_abi(value)));
@@ -1645,21 +1645,21 @@ template <typename D> bool consume_Windows_Networking_NetworkOperators_IMobileBr
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandModem3)->add_IsInEmergencyCallModeChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandModem3> consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem3>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>::remove_IsInEmergencyCallModeChanged, IsInEmergencyCallModeChanged(handler));
+    return impl::make_event_revoker<D, IsInEmergencyCallModeChanged_revoker>(this, IsInEmergencyCallModeChanged(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>::IsInEmergencyCallModeChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandModem3)->remove_IsInEmergencyCallModeChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandModem3)->remove_IsInEmergencyCallModeChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Networking::NetworkOperators::MobileBroadbandUicc consume_Windows_Networking_NetworkOperators_IMobileBroadbandModemConfiguration<D>::Uicc() const
@@ -2076,21 +2076,21 @@ template <typename D> Windows::Foundation::TimeSpan consume_Windows_Networking_N
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandSarManager)->add_TransmissionStateChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager> consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged_revoker consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>(this, &abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>::remove_TransmissionStateChanged, TransmissionStateChanged(handler));
+    return impl::make_event_revoker<D, TransmissionStateChanged_revoker>(this, TransmissionStateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(event_token const& token) const
+template <typename D> void consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::TransmissionStateChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandSarManager)->remove_TransmissionStateChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::NetworkOperators::IMobileBroadbandSarManager)->remove_TransmissionStateChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager<D>::EnableBackoffAsync() const
@@ -2609,5806 +2609,5002 @@ template <typename D> Windows::Networking::NetworkOperators::UssdSession consume
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESim> : produce_base<D, Windows::Networking::NetworkOperators::IESim>
 {
-    HRESULT __stdcall get_AvailableMemoryInBytes(void** value) noexcept final
+    int32_t WINRT_CALL get_AvailableMemoryInBytes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AvailableMemoryInBytes, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().AvailableMemoryInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Eid(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Eid(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Eid, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Eid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirmwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FirmwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirmwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FirmwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MobileBroadbandModemDeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MobileBroadbandModemDeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MobileBroadbandModemDeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MobileBroadbandModemDeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Policy(void** value) noexcept final
+    int32_t WINRT_CALL get_Policy(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Policy, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimPolicy));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimPolicy>(this->shim().Policy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimState));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetProfiles(void** value) noexcept final
+    int32_t WINRT_CALL GetProfiles(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetProfiles, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::ESimProfile>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::ESimProfile>>(this->shim().GetProfiles());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteProfileAsync(HSTRING profileId, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteProfileAsync(void* profileId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteProfileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().DeleteProfileAsync(*reinterpret_cast<hstring const*>(&profileId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DownloadProfileMetadataAsync(HSTRING activationCode, void** operation) noexcept final
+    int32_t WINRT_CALL DownloadProfileMetadataAsync(void* activationCode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadProfileMetadataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult>>(this->shim().DownloadProfileMetadataAsync(*reinterpret_cast<hstring const*>(&activationCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResetAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ResetAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().ResetAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ProfileChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ProfileChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ProfileChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProfileChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ProfileChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ProfileChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ProfileChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ProfileChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ProfileChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ProfileChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimAddedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IESimAddedEventArgs>
 {
-    HRESULT __stdcall get_ESim(void** value) noexcept final
+    int32_t WINRT_CALL get_ESim(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ESim, WINRT_WRAP(Windows::Networking::NetworkOperators::ESim));
             *value = detach_from<Windows::Networking::NetworkOperators::ESim>(this->shim().ESim());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult> : produce_base<D, Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult>
 {
-    HRESULT __stdcall get_Result(void** value) noexcept final
+    int32_t WINRT_CALL get_Result(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Result, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimOperationResult));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimOperationResult>(this->shim().Result());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProfileMetadata(void** value) noexcept final
+    int32_t WINRT_CALL get_ProfileMetadata(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileMetadata, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfileMetadata));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfileMetadata>(this->shim().ProfileMetadata());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimManagerStatics> : produce_base<D, Windows::Networking::NetworkOperators::IESimManagerStatics>
 {
-    HRESULT __stdcall get_ServiceInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_ServiceInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceInfo, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimServiceInfo));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimServiceInfo>(this->shim().ServiceInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateESimWatcher(void** value) noexcept final
+    int32_t WINRT_CALL TryCreateESimWatcher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateESimWatcher, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimWatcher));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimWatcher>(this->shim().TryCreateESimWatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ServiceInfoChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ServiceInfoChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ServiceInfoChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServiceInfoChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ServiceInfoChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ServiceInfoChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ServiceInfoChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ServiceInfoChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ServiceInfoChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ServiceInfoChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimOperationResult> : produce_base<D, Windows::Networking::NetworkOperators::IESimOperationResult>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::ESimOperationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::ESimOperationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimOperationStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimOperationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimPolicy> : produce_base<D, Windows::Networking::NetworkOperators::IESimPolicy>
 {
-    HRESULT __stdcall get_ShouldEnableManagingUi(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShouldEnableManagingUi(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShouldEnableManagingUi, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShouldEnableManagingUi());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimProfile> : produce_base<D, Windows::Networking::NetworkOperators::IESimProfile>
 {
-    HRESULT __stdcall get_Class(Windows::Networking::NetworkOperators::ESimProfileClass* value) noexcept final
+    int32_t WINRT_CALL get_Class(Windows::Networking::NetworkOperators::ESimProfileClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Class, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfileClass));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfileClass>(this->shim().Class());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nickname(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Nickname(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nickname, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Nickname());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Policy(void** value) noexcept final
+    int32_t WINRT_CALL get_Policy(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Policy, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfilePolicy));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfilePolicy>(this->shim().Policy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderIcon(void** value) noexcept final
+    int32_t WINRT_CALL get_ProviderIcon(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderIcon, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().ProviderIcon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimProfileState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimProfileState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfileState));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfileState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisableAsync(void** operation) noexcept final
+    int32_t WINRT_CALL DisableAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().DisableAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableAsync(void** operation) noexcept final
+    int32_t WINRT_CALL EnableAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().EnableAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetNicknameAsync(HSTRING newNickname, void** operation) noexcept final
+    int32_t WINRT_CALL SetNicknameAsync(void* newNickname, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetNicknameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().SetNicknameAsync(*reinterpret_cast<hstring const*>(&newNickname)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimProfileMetadata> : produce_base<D, Windows::Networking::NetworkOperators::IESimProfileMetadata>
 {
-    HRESULT __stdcall get_IsConfirmationCodeRequired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsConfirmationCodeRequired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsConfirmationCodeRequired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsConfirmationCodeRequired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Policy(void** value) noexcept final
+    int32_t WINRT_CALL get_Policy(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Policy, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfilePolicy));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfilePolicy>(this->shim().Policy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderIcon(void** value) noexcept final
+    int32_t WINRT_CALL get_ProviderIcon(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderIcon, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().ProviderIcon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimProfileMetadataState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimProfileMetadataState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimProfileMetadataState));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimProfileMetadataState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DenyInstallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL DenyInstallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DenyInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().DenyInstallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConfirmInstallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ConfirmInstallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfirmInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress>>(this->shim().ConfirmInstallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConfirmInstallWithConfirmationCodeAsync(HSTRING confirmationCode, void** operation) noexcept final
+    int32_t WINRT_CALL ConfirmInstallWithConfirmationCodeAsync(void* confirmationCode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfirmInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress>>(this->shim().ConfirmInstallAsync(*reinterpret_cast<hstring const*>(&confirmationCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PostponeInstallAsync(void** operation) noexcept final
+    int32_t WINRT_CALL PostponeInstallAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostponeInstallAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult>>(this->shim().PostponeInstallAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StateChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimProfilePolicy> : produce_base<D, Windows::Networking::NetworkOperators::IESimProfilePolicy>
 {
-    HRESULT __stdcall get_CanDelete(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanDelete(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanDelete, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanDelete());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanDisable(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanDisable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanDisable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanDisable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsManagedByEnterprise(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsManagedByEnterprise(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsManagedByEnterprise, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsManagedByEnterprise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimRemovedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IESimRemovedEventArgs>
 {
-    HRESULT __stdcall get_ESim(void** value) noexcept final
+    int32_t WINRT_CALL get_ESim(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ESim, WINRT_WRAP(Windows::Networking::NetworkOperators::ESim));
             *value = detach_from<Windows::Networking::NetworkOperators::ESim>(this->shim().ESim());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimServiceInfo> : produce_base<D, Windows::Networking::NetworkOperators::IESimServiceInfo>
 {
-    HRESULT __stdcall get_AuthenticationPreference(Windows::Networking::NetworkOperators::ESimAuthenticationPreference* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationPreference(Windows::Networking::NetworkOperators::ESimAuthenticationPreference* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationPreference, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimAuthenticationPreference));
             *value = detach_from<Windows::Networking::NetworkOperators::ESimAuthenticationPreference>(this->shim().AuthenticationPreference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsESimUiEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsESimUiEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsESimUiEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsESimUiEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimUpdatedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IESimUpdatedEventArgs>
 {
-    HRESULT __stdcall get_ESim(void** value) noexcept final
+    int32_t WINRT_CALL get_ESim(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ESim, WINRT_WRAP(Windows::Networking::NetworkOperators::ESim));
             *value = detach_from<Windows::Networking::NetworkOperators::ESim>(this->shim().ESim());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IESimWatcher> : produce_base<D, Windows::Networking::NetworkOperators::IESimWatcher>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::ESimWatcherStatus* status) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::ESimWatcherStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::ESimWatcherStatus));
             *status = detach_from<Windows::Networking::NetworkOperators::ESimWatcherStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Added(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Added(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Added(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().EnumerationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Removed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().EnumerationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Stopped(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Removed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Removed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Stopped(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Stopped(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Updated(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Updated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Updated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IFdnAccessManagerStatics> : produce_base<D, Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>
 {
-    HRESULT __stdcall RequestUnlockAsync(HSTRING contactListId, void** returnValue) noexcept final
+    int32_t WINRT_CALL RequestUnlockAsync(void* contactListId, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUnlockAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
             *returnValue = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestUnlockAsync(*reinterpret_cast<hstring const*>(&contactListId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>
 {
-    HRESULT __stdcall get_WirelessNetworkId(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL get_WirelessNetworkId(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WirelessNetworkId, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__valueSize, *value) = detach_abi(this->shim().WirelessNetworkId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkAdapter(void** value) noexcept final
+    int32_t WINRT_CALL get_NetworkAdapter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAdapter, WINRT_WRAP(Windows::Networking::Connectivity::NetworkAdapter));
             *value = detach_from<Windows::Networking::Connectivity::NetworkAdapter>(this->shim().NetworkAdapter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedirectMessageUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_RedirectMessageUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedirectMessageUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().RedirectMessageUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RedirectMessageXml(void** value) noexcept final
+    int32_t WINRT_CALL get_RedirectMessageXml(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedirectMessageXml, WINRT_WRAP(Windows::Data::Xml::Dom::XmlDocument));
             *value = detach_from<Windows::Data::Xml::Dom::XmlDocument>(this->shim().RedirectMessageXml());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().AuthenticationUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IssueCredentials(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure) noexcept final
+    int32_t WINRT_CALL IssueCredentials(void* userName, void* password, void* extraParameters, bool markAsManualConnectOnFailure) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IssueCredentials, WINRT_WRAP(void), hstring const&, hstring const&, hstring const&, bool);
             this->shim().IssueCredentials(*reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<hstring const*>(&password), *reinterpret_cast<hstring const*>(&extraParameters), markAsManualConnectOnFailure);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AbortAuthentication(bool markAsManual) noexcept final
+    int32_t WINRT_CALL AbortAuthentication(bool markAsManual) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbortAuthentication, WINRT_WRAP(void), bool);
             this->shim().AbortAuthentication(markAsManual);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SkipAuthentication() noexcept final
+    int32_t WINRT_CALL SkipAuthentication() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkipAuthentication, WINRT_WRAP(void));
             this->shim().SkipAuthentication();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TriggerAttentionRequired(HSTRING packageRelativeApplicationId, HSTRING applicationParameters) noexcept final
+    int32_t WINRT_CALL TriggerAttentionRequired(void* packageRelativeApplicationId, void* applicationParameters) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerAttentionRequired, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().TriggerAttentionRequired(*reinterpret_cast<hstring const*>(&packageRelativeApplicationId), *reinterpret_cast<hstring const*>(&applicationParameters));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>
 {
-    HRESULT __stdcall IssueCredentialsAsync(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL IssueCredentialsAsync(void* userName, void* password, void* extraParameters, bool markAsManualConnectOnFailure, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IssueCredentialsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>), hstring const, hstring const, hstring const, bool);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>>(this->shim().IssueCredentialsAsync(*reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<hstring const*>(&password), *reinterpret_cast<hstring const*>(&extraParameters), markAsManualConnectOnFailure));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>
 {
-    HRESULT __stdcall TryGetAuthenticationContext(HSTRING evenToken, void** context, bool* isValid) noexcept final
+    int32_t WINRT_CALL TryGetAuthenticationContext(void* evenToken, void** context, bool* isValid) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetAuthenticationContext, WINRT_WRAP(bool), hstring const&, Windows::Networking::NetworkOperators::HotspotAuthenticationContext&);
             *isValid = detach_from<bool>(this->shim().TryGetAuthenticationContext(*reinterpret_cast<hstring const*>(&evenToken), *reinterpret_cast<Windows::Networking::NetworkOperators::HotspotAuthenticationContext*>(context)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>
 {
-    HRESULT __stdcall get_EventToken(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EventToken(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EventToken, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EventToken());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult> : produce_base<D, Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>
 {
-    HRESULT __stdcall get_HasNetworkErrorOccurred(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasNetworkErrorOccurred(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasNetworkErrorOccurred, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasNetworkErrorOccurred());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResponseCode(Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode* value) noexcept final
+    int32_t WINRT_CALL get_ResponseCode(Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseCode, WINRT_WRAP(Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode));
             *value = detach_from<Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode>(this->shim().ResponseCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogoffUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_LogoffUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoffUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LogoffUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationReplyXml(void** value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationReplyXml(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationReplyXml, WINRT_WRAP(Windows::Data::Xml::Dom::XmlDocument));
             *value = detach_from<Windows::Data::Xml::Dom::XmlDocument>(this->shim().AuthenticationReplyXml());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(void** value) noexcept final
+    int32_t WINRT_CALL get_EFSpn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFSpn, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFSpn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid1(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid1, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid2(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid2, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(void** value) noexcept final
+    int32_t WINRT_CALL get_EFSpn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFSpn, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFSpn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid1(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid1, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid2(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid2, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFOns(void** value) noexcept final
+    int32_t WINRT_CALL get_EFOns(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFOns, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFOns());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EFSpn(void** value) noexcept final
+    int32_t WINRT_CALL get_EFSpn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFSpn, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFSpn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid1(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid1, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid2(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid2, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics> : produce_base<D, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>
 {
-    HRESULT __stdcall get_EFSpn(void** value) noexcept final
+    int32_t WINRT_CALL get_EFSpn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFSpn, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFSpn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EFOpl(void** value) noexcept final
+    int32_t WINRT_CALL get_EFOpl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFOpl, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFOpl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EFPnn(void** value) noexcept final
+    int32_t WINRT_CALL get_EFPnn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EFPnn, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().EFPnn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid1(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid1, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gid2(void** value) noexcept final
+    int32_t WINRT_CALL get_Gid2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gid2, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().Gid2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount>
 {
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceProviderGuid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ServiceProviderGuid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ServiceProviderGuid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServiceProviderGuid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ServiceProviderGuid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceProviderName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceProviderName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceProviderName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceProviderName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentNetwork(void** network) noexcept final
+    int32_t WINRT_CALL get_CurrentNetwork(void** network) noexcept final
     {
         try
         {
             *network = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentNetwork, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandNetwork));
             *network = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandNetwork>(this->shim().CurrentNetwork());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentDeviceInformation(void** deviceInformation) noexcept final
+    int32_t WINRT_CALL get_CurrentDeviceInformation(void** deviceInformation) noexcept final
     {
         try
         {
             *deviceInformation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentDeviceInformation, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation));
             *deviceInformation = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation>(this->shim().CurrentDeviceInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>
 {
-    HRESULT __stdcall GetConnectionProfiles(void** value) noexcept final
+    int32_t WINRT_CALL GetConnectionProfiles(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConnectionProfiles, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>>(this->shim().GetConnectionProfiles());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>
 {
-    HRESULT __stdcall get_AccountExperienceUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_AccountExperienceUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountExperienceUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().AccountExperienceUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
 {
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>
 {
-    HRESULT __stdcall get_AvailableNetworkAccountIds(void** ppAccountIds) noexcept final
+    int32_t WINRT_CALL get_AvailableNetworkAccountIds(void** ppAccountIds) noexcept final
     {
         try
         {
             *ppAccountIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AvailableNetworkAccountIds, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *ppAccountIds = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().AvailableNetworkAccountIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ppAccount) noexcept final
+    int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ppAccount) noexcept final
     {
         try
         {
             *ppAccount = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNetworkAccountId, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandAccount), hstring const&);
             *ppAccount = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandAccount>(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>
 {
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasDeviceInformationChanged(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasDeviceInformationChanged(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasDeviceInformationChanged, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasDeviceInformationChanged());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasNetworkChanged(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasNetworkChanged(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasNetworkChanged, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasNetworkChanged());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>
 {
-    HRESULT __stdcall add_AccountAdded(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_AccountAdded(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AccountAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccountAdded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AccountAdded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AccountAdded(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_AccountAdded(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AccountAdded(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AccountAdded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AccountAdded(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_AccountUpdated(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_AccountUpdated(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AccountUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccountUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AccountUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AccountUpdated(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_AccountUpdated(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AccountUpdated(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AccountUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AccountUpdated(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_AccountRemoved(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_AccountRemoved(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AccountRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccountRemoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AccountRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AccountRemoved(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_AccountRemoved(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AccountRemoved(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AccountRemoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AccountRemoved(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_EnumerationCompleted(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().EnumerationCompleted(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().EnumerationCompleted(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_Stopped(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Stopped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Stopped(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Stopped(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Stopped(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Stopped(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus* status) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus));
             *status = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar>
 {
-    HRESULT __stdcall get_AntennaIndex(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_AntennaIndex(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AntennaIndex, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().AntennaIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SarBackoffIndex(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SarBackoffIndex(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SarBackoffIndex, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SarBackoffIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>
 {
-    HRESULT __stdcall CreateWithIndex(int32_t antennaIndex, int32_t sarBackoffIndex, void** antennaSar) noexcept final
+    int32_t WINRT_CALL CreateWithIndex(int32_t antennaIndex, int32_t sarBackoffIndex, void** antennaSar) noexcept final
     {
         try
         {
             *antennaSar = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithIndex, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar), int32_t, int32_t);
             *antennaSar = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar>(this->shim().CreateWithIndex(antennaIndex, sarBackoffIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma>
 {
-    HRESULT __stdcall get_BaseStationId(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().BaseStationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BaseStationPNCode(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationPNCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationPNCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().BaseStationPNCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BaseStationLatitude(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationLatitude(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationLatitude, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().BaseStationLatitude());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BaseStationLongitude(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationLongitude(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationLongitude, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().BaseStationLongitude());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BaseStationLastBroadcastGpsTime(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationLastBroadcastGpsTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationLastBroadcastGpsTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().BaseStationLastBroadcastGpsTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkId(void** value) noexcept final
+    int32_t WINRT_CALL get_NetworkId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().NetworkId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PilotSignalStrengthInDB(void** value) noexcept final
+    int32_t WINRT_CALL get_PilotSignalStrengthInDB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PilotSignalStrengthInDB, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().PilotSignalStrengthInDB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemId(void** value) noexcept final
+    int32_t WINRT_CALL get_SystemId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().SystemId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm>
 {
-    HRESULT __stdcall get_BaseStationId(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseStationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseStationId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().BaseStationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellId(void** value) noexcept final
+    int32_t WINRT_CALL get_CellId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CellId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelNumber(void** value) noexcept final
+    int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelNumber, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().ChannelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocationAreaCode(void** value) noexcept final
+    int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocationAreaCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().LocationAreaCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReceivedSignalStrengthInDBm(void** value) noexcept final
+    int32_t WINRT_CALL get_ReceivedSignalStrengthInDBm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceivedSignalStrengthInDBm, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ReceivedSignalStrengthInDBm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept final
+    int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimingAdvanceInBitPeriods, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().TimingAdvanceInBitPeriods());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellLte> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellLte>
 {
-    HRESULT __stdcall get_CellId(void** value) noexcept final
+    int32_t WINRT_CALL get_CellId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CellId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelNumber(void** value) noexcept final
+    int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelNumber, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().ChannelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhysicalCellId(void** value) noexcept final
+    int32_t WINRT_CALL get_PhysicalCellId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhysicalCellId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().PhysicalCellId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReferenceSignalReceivedPowerInDBm(void** value) noexcept final
+    int32_t WINRT_CALL get_ReferenceSignalReceivedPowerInDBm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReferenceSignalReceivedPowerInDBm, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ReferenceSignalReceivedPowerInDBm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReferenceSignalReceivedQualityInDBm(void** value) noexcept final
+    int32_t WINRT_CALL get_ReferenceSignalReceivedQualityInDBm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReferenceSignalReceivedQualityInDBm, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ReferenceSignalReceivedQualityInDBm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept final
+    int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimingAdvanceInBitPeriods, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().TimingAdvanceInBitPeriods());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrackingAreaCode(void** value) noexcept final
+    int32_t WINRT_CALL get_TrackingAreaCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrackingAreaCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().TrackingAreaCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma>
 {
-    HRESULT __stdcall get_CellId(void** value) noexcept final
+    int32_t WINRT_CALL get_CellId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CellId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellParameterId(void** value) noexcept final
+    int32_t WINRT_CALL get_CellParameterId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellParameterId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CellParameterId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelNumber(void** value) noexcept final
+    int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelNumber, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().ChannelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocationAreaCode(void** value) noexcept final
+    int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocationAreaCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().LocationAreaCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PathLossInDB(void** value) noexcept final
+    int32_t WINRT_CALL get_PathLossInDB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PathLossInDB, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().PathLossInDB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReceivedSignalCodePowerInDBm(void** value) noexcept final
+    int32_t WINRT_CALL get_ReceivedSignalCodePowerInDBm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceivedSignalCodePowerInDBm, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ReceivedSignalCodePowerInDBm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept final
+    int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimingAdvanceInBitPeriods, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().TimingAdvanceInBitPeriods());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts>
 {
-    HRESULT __stdcall get_CellId(void** value) noexcept final
+    int32_t WINRT_CALL get_CellId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellId, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().CellId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelNumber(void** value) noexcept final
+    int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelNumber, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().ChannelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocationAreaCode(void** value) noexcept final
+    int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocationAreaCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().LocationAreaCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PathLossInDB(void** value) noexcept final
+    int32_t WINRT_CALL get_PathLossInDB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PathLossInDB, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().PathLossInDB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrimaryScramblingCode(void** value) noexcept final
+    int32_t WINRT_CALL get_PrimaryScramblingCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryScramblingCode, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().PrimaryScramblingCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReceivedSignalCodePowerInDBm(void** value) noexcept final
+    int32_t WINRT_CALL get_ReceivedSignalCodePowerInDBm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceivedSignalCodePowerInDBm, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().ReceivedSignalCodePowerInDBm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SignalToNoiseRatioInDB(void** value) noexcept final
+    int32_t WINRT_CALL get_SignalToNoiseRatioInDB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignalToNoiseRatioInDB, WINRT_WRAP(Windows::Foundation::IReference<double>));
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().SignalToNoiseRatioInDB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo>
 {
-    HRESULT __stdcall get_NeighboringCellsCdma(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringCellsCdma(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringCellsCdma, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellCdma>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellCdma>>(this->shim().NeighboringCellsCdma());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NeighboringCellsGsm(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringCellsGsm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringCellsGsm, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellGsm>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellGsm>>(this->shim().NeighboringCellsGsm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NeighboringCellsLte(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringCellsLte(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringCellsLte, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellLte>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellLte>>(this->shim().NeighboringCellsLte());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NeighboringCellsTdscdma(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringCellsTdscdma(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringCellsTdscdma, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellTdscdma>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellTdscdma>>(this->shim().NeighboringCellsTdscdma());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NeighboringCellsUmts(void** value) noexcept final
+    int32_t WINRT_CALL get_NeighboringCellsUmts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NeighboringCellsUmts, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellUmts>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellUmts>>(this->shim().NeighboringCellsUmts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServingCellsCdma(void** value) noexcept final
+    int32_t WINRT_CALL get_ServingCellsCdma(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServingCellsCdma, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellCdma>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellCdma>>(this->shim().ServingCellsCdma());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServingCellsGsm(void** value) noexcept final
+    int32_t WINRT_CALL get_ServingCellsGsm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServingCellsGsm, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellGsm>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellGsm>>(this->shim().ServingCellsGsm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServingCellsLte(void** value) noexcept final
+    int32_t WINRT_CALL get_ServingCellsLte(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServingCellsLte, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellLte>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellLte>>(this->shim().ServingCellsLte());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServingCellsTdscdma(void** value) noexcept final
+    int32_t WINRT_CALL get_ServingCellsTdscdma(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServingCellsTdscdma, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellTdscdma>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellTdscdma>>(this->shim().ServingCellsTdscdma());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServingCellsUmts(void** value) noexcept final
+    int32_t WINRT_CALL get_ServingCellsUmts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServingCellsUmts, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellUmts>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandCellUmts>>(this->shim().ServingCellsUmts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>
 {
-    HRESULT __stdcall get_NetworkDeviceStatus(Windows::Networking::NetworkOperators::NetworkDeviceStatus* value) noexcept final
+    int32_t WINRT_CALL get_NetworkDeviceStatus(Windows::Networking::NetworkOperators::NetworkDeviceStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkDeviceStatus, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkDeviceStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::NetworkDeviceStatus>(this->shim().NetworkDeviceStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Manufacturer(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Manufacturer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manufacturer, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Manufacturer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Model(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Model(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Model, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Model());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirmwareInformation(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FirmwareInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirmwareInformation, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FirmwareInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
+    int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CellularClass, WINRT_WRAP(Windows::Devices::Sms::CellularClass));
             *value = detach_from<Windows::Devices::Sms::CellularClass>(this->shim().CellularClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DataClasses(Windows::Networking::NetworkOperators::DataClasses* value) noexcept final
+    int32_t WINRT_CALL get_DataClasses(Windows::Networking::NetworkOperators::DataClasses* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataClasses, WINRT_WRAP(Windows::Networking::NetworkOperators::DataClasses));
             *value = detach_from<Windows::Networking::NetworkOperators::DataClasses>(this->shim().DataClasses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomDataClass(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomDataClass(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomDataClass, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomDataClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MobileEquipmentId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MobileEquipmentId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MobileEquipmentId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MobileEquipmentId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TelephoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_TelephoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TelephoneNumbers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().TelephoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubscriberId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SubscriberId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubscriberId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SubscriberId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimIccId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimIccId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimIccId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimIccId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceType(Windows::Networking::NetworkOperators::MobileBroadbandDeviceType* pDeviceType) noexcept final
+    int32_t WINRT_CALL get_DeviceType(Windows::Networking::NetworkOperators::MobileBroadbandDeviceType* pDeviceType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceType, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceType));
             *pDeviceType = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceType>(this->shim().DeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentRadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* pCurrentState) noexcept final
+    int32_t WINRT_CALL get_CurrentRadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* pCurrentState) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentRadioState, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandRadioState));
             *pCurrentState = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandRadioState>(this->shim().CurrentRadioState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>
 {
-    HRESULT __stdcall get_PinManager(void** value) noexcept final
+    int32_t WINRT_CALL get_PinManager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinManager, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinManager));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinManager>(this->shim().PinManager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Revision(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Revision(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Revision, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Revision());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SerialNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SerialNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SerialNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SerialNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>
 {
-    HRESULT __stdcall get_SimSpn(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimSpn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimSpn, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimSpn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimPnn(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimPnn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimPnn, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimPnn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimGid1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimGid1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimGid1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimGid1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>
 {
-    HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DeviceServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DeviceServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedCommands(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedCommands(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedCommands, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().SupportedCommands());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenDataSession(void** value) noexcept final
+    int32_t WINRT_CALL OpenDataSession(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenDataSession, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession>(this->shim().OpenDataSession());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenCommandSession(void** value) noexcept final
+    int32_t WINRT_CALL OpenCommandSession(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenCommandSession, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession>(this->shim().OpenCommandSession());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>
 {
-    HRESULT __stdcall get_StatusCode(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_StatusCode(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatusCode, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().StatusCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResponseData(void** value) noexcept final
+    int32_t WINRT_CALL get_ResponseData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ResponseData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>
 {
-    HRESULT __stdcall SendQueryCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SendQueryCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendQueryCommandAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>), uint32_t, Windows::Storage::Streams::IBuffer const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>>(this->shim().SendQueryCommandAsync(commandId, *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendSetCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SendSetCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendSetCommandAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>), uint32_t, Windows::Storage::Streams::IBuffer const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>>(this->shim().SendSetCommandAsync(commandId, *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CloseSession() noexcept final
+    int32_t WINRT_CALL CloseSession() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CloseSession, WINRT_WRAP(void));
             this->shim().CloseSession();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>
 {
-    HRESULT __stdcall get_ReceivedData(void** value) noexcept final
+    int32_t WINRT_CALL get_ReceivedData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceivedData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ReceivedData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>
 {
-    HRESULT __stdcall WriteDataAsync(void* value, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL WriteDataAsync(void* value, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::Streams::IBuffer const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().WriteDataAsync(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CloseSession() noexcept final
+    int32_t WINRT_CALL CloseSession() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CloseSession, WINRT_WRAP(void));
             this->shim().CloseSession();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_DataReceived(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_DataReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().DataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DataReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().DataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DataReceived(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_DataReceived(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DataReceived(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DataReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DataReceived(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>
 {
-    HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DeviceServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DeviceServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDataReadSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDataReadSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDataReadSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDataReadSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDataWriteSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDataWriteSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDataWriteSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDataWriteSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DeviceServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DeviceServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DeviceServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReceivedData(void** value) noexcept final
+    int32_t WINRT_CALL get_ReceivedData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReceivedData, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ReceivedData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem>
 {
-    HRESULT __stdcall get_CurrentAccount(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentAccount(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentAccount, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandAccount));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandAccount>(this->shim().CurrentAccount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceInformation, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation>(this->shim().DeviceInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxDeviceServiceCommandSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxDeviceServiceCommandSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxDeviceServiceCommandSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxDeviceServiceCommandSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxDeviceServiceDataSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxDeviceServiceDataSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxDeviceServiceDataSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxDeviceServiceDataSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceServices(void** value) noexcept final
+    int32_t WINRT_CALL get_DeviceServices(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceServices, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>>(this->shim().DeviceServices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceService(GUID deviceServiceId, void** value) noexcept final
+    int32_t WINRT_CALL GetDeviceService(winrt::guid deviceServiceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceService>(this->shim().GetDeviceService(*reinterpret_cast<GUID const*>(&deviceServiceId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeviceService, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandDeviceService), winrt::guid const&);
+            *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandDeviceService>(this->shim().GetDeviceService(*reinterpret_cast<winrt::guid const*>(&deviceServiceId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsResetSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsResetSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsResetSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsResetSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResetAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ResetAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ResetAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentConfigurationAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetCurrentConfigurationAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentConfigurationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>>(this->shim().GetCurrentConfigurationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentNetwork(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentNetwork(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentNetwork, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandNetwork));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandNetwork>(this->shim().CurrentNetwork());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem2>
 {
-    HRESULT __stdcall GetIsPassthroughEnabledAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetIsPassthroughEnabledAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsPassthroughEnabledAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsPassthroughEnabledAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetIsPassthroughEnabledAsync(bool value, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SetIsPassthroughEnabledAsync(bool value, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetIsPassthroughEnabledAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemStatus>), bool);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemStatus>>(this->shim().SetIsPassthroughEnabledAsync(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModem3>
 {
-    HRESULT __stdcall TryGetPcoAsync(void** operation) noexcept final
+    int32_t WINRT_CALL TryGetPcoAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPcoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPco>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPco>>(this->shim().TryGetPcoAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInEmergencyCallMode(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInEmergencyCallMode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInEmergencyCallMode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInEmergencyCallMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_IsInEmergencyCallModeChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_IsInEmergencyCallModeChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().IsInEmergencyCallModeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsInEmergencyCallModeChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().IsInEmergencyCallModeChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_IsInEmergencyCallModeChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_IsInEmergencyCallModeChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().IsInEmergencyCallModeChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(IsInEmergencyCallModeChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().IsInEmergencyCallModeChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>
 {
-    HRESULT __stdcall get_Uicc(void** value) noexcept final
+    int32_t WINRT_CALL get_Uicc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uicc, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandUicc));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandUicc>(this->shim().Uicc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HomeProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HomeProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HomeProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HomeProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HomeProviderName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HomeProviderName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HomeProviderName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HomeProviderName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2>
 {
-    HRESULT __stdcall get_SarManager(void** value) noexcept final
+    int32_t WINRT_CALL get_SarManager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SarManager, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandSarManager));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandSarManager>(this->shim().SarManager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation>
 {
-    HRESULT __stdcall AddAllowedHost(void* host) noexcept final
+    int32_t WINRT_CALL AddAllowedHost(void* host) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAllowedHost, WINRT_WRAP(void), Windows::Networking::HostName const&);
             this->shim().AddAllowedHost(*reinterpret_cast<Windows::Networking::HostName const*>(&host));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddAllowedHostRange(void* first, void* last) noexcept final
+    int32_t WINRT_CALL AddAllowedHostRange(void* first, void* last) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAllowedHostRange, WINRT_WRAP(void), Windows::Networking::HostName const&, Windows::Networking::HostName const&);
             this->shim().AddAllowedHostRange(*reinterpret_cast<Windows::Networking::HostName const*>(&first), *reinterpret_cast<Windows::Networking::HostName const*>(&last));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ApplyConfigurationAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ApplyConfigurationAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplyConfigurationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ApplyConfigurationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearConfigurationAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ClearConfigurationAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearConfigurationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ClearConfigurationAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>
 {
-    HRESULT __stdcall Create(HSTRING modemDeviceId, HSTRING ruleGroupId, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* modemDeviceId, void* ruleGroupId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandModemIsolation), hstring const&, hstring const&);
             *result = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandModemIsolation>(this->shim().Create(*reinterpret_cast<hstring const*>(&modemDeviceId), *reinterpret_cast<hstring const*>(&ruleGroupId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromId(HSTRING deviceId, void** value) noexcept final
+    int32_t WINRT_CALL FromId(void* deviceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromId, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandModem), hstring const&);
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandModem>(this->shim().FromId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandModem));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandModem>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>
 {
-    HRESULT __stdcall get_NetworkAdapter(void** value) noexcept final
+    int32_t WINRT_CALL get_NetworkAdapter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAdapter, WINRT_WRAP(Windows::Networking::Connectivity::NetworkAdapter));
             *value = detach_from<Windows::Networking::Connectivity::NetworkAdapter>(this->shim().NetworkAdapter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkRegistrationState(Windows::Networking::NetworkOperators::NetworkRegistrationState* registrationState) noexcept final
+    int32_t WINRT_CALL get_NetworkRegistrationState(Windows::Networking::NetworkOperators::NetworkRegistrationState* registrationState) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkRegistrationState, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkRegistrationState));
             *registrationState = detach_from<Windows::Networking::NetworkOperators::NetworkRegistrationState>(this->shim().NetworkRegistrationState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegistrationNetworkError(uint32_t* networkError) noexcept final
+    int32_t WINRT_CALL get_RegistrationNetworkError(uint32_t* networkError) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegistrationNetworkError, WINRT_WRAP(uint32_t));
             *networkError = detach_from<uint32_t>(this->shim().RegistrationNetworkError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PacketAttachNetworkError(uint32_t* networkError) noexcept final
+    int32_t WINRT_CALL get_PacketAttachNetworkError(uint32_t* networkError) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PacketAttachNetworkError, WINRT_WRAP(uint32_t));
             *networkError = detach_from<uint32_t>(this->shim().PacketAttachNetworkError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivationNetworkError(uint32_t* networkError) noexcept final
+    int32_t WINRT_CALL get_ActivationNetworkError(uint32_t* networkError) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivationNetworkError, WINRT_WRAP(uint32_t));
             *networkError = detach_from<uint32_t>(this->shim().ActivationNetworkError());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AccessPointName(HSTRING* apn) noexcept final
+    int32_t WINRT_CALL get_AccessPointName(void** apn) noexcept final
     {
         try
         {
             *apn = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccessPointName, WINRT_WRAP(hstring));
             *apn = detach_from<hstring>(this->shim().AccessPointName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegisteredDataClass(Windows::Networking::NetworkOperators::DataClasses* value) noexcept final
+    int32_t WINRT_CALL get_RegisteredDataClass(Windows::Networking::NetworkOperators::DataClasses* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisteredDataClass, WINRT_WRAP(Windows::Networking::NetworkOperators::DataClasses));
             *value = detach_from<Windows::Networking::NetworkOperators::DataClasses>(this->shim().RegisteredDataClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegisteredProviderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RegisteredProviderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisteredProviderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RegisteredProviderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegisteredProviderName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RegisteredProviderName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisteredProviderName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RegisteredProviderName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowConnectionUI() noexcept final
+    int32_t WINRT_CALL ShowConnectionUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowConnectionUI, WINRT_WRAP(void));
             this->shim().ShowConnectionUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>
 {
-    HRESULT __stdcall GetVoiceCallSupportAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetVoiceCallSupportAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVoiceCallSupportAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetVoiceCallSupportAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RegistrationUiccApps(void** value) noexcept final
+    int32_t WINRT_CALL get_RegistrationUiccApps(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegistrationUiccApps, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>>(this->shim().RegistrationUiccApps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3>
 {
-    HRESULT __stdcall GetCellsInfoAsync(void** asyncOperation) noexcept final
+    int32_t WINRT_CALL GetCellsInfoAsync(void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCellsInfoAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandCellsInfo>));
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandCellsInfo>>(this->shim().GetCellsInfoAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Network(void** value) noexcept final
+    int32_t WINRT_CALL get_Network(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Network, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandNetwork));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandNetwork>(this->shim().Network());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_NetworkRegistrationStateChanges(void** value) noexcept final
+    int32_t WINRT_CALL get_NetworkRegistrationStateChanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkRegistrationStateChanges, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>>(this->shim().NetworkRegistrationStateChanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPco> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPco>
 {
-    HRESULT __stdcall get_Data(void** result) noexcept final
+    int32_t WINRT_CALL get_Data(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *result = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsComplete(bool* result) noexcept final
+    int32_t WINRT_CALL get_IsComplete(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsComplete, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsComplete());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceId(HSTRING* result) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails>
 {
-    HRESULT __stdcall get_UpdatedData(void** result) noexcept final
+    int32_t WINRT_CALL get_UpdatedData(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdatedData, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPco));
             *result = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPco>(this->shim().UpdatedData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPin>
 {
-    HRESULT __stdcall get_Type(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinType));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept final
+    int32_t WINRT_CALL get_LockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockState, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinLockState>(this->shim().LockState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Format(Windows::Networking::NetworkOperators::MobileBroadbandPinFormat* value) noexcept final
+    int32_t WINRT_CALL get_Format(Windows::Networking::NetworkOperators::MobileBroadbandPinFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinFormat));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinFormat>(this->shim().Format());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MinLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttemptsRemaining(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_AttemptsRemaining(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttemptsRemaining, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().AttemptsRemaining());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnableAsync(HSTRING currentPin, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL EnableAsync(void* currentPin, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>>(this->shim().EnableAsync(*reinterpret_cast<hstring const*>(&currentPin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisableAsync(HSTRING currentPin, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL DisableAsync(void* currentPin, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>>(this->shim().DisableAsync(*reinterpret_cast<hstring const*>(&currentPin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnterAsync(HSTRING currentPin, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL EnterAsync(void* currentPin, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>>(this->shim().EnterAsync(*reinterpret_cast<hstring const*>(&currentPin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeAsync(HSTRING currentPin, HSTRING newPin, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ChangeAsync(void* currentPin, void* newPin, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>), hstring const, hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>>(this->shim().ChangeAsync(*reinterpret_cast<hstring const*>(&currentPin), *reinterpret_cast<hstring const*>(&newPin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnblockAsync(HSTRING pinUnblockKey, HSTRING newPin, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL UnblockAsync(void* pinUnblockKey, void* newPin, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnblockAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>), hstring const, hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>>(this->shim().UnblockAsync(*reinterpret_cast<hstring const*>(&pinUnblockKey), *reinterpret_cast<hstring const*>(&newPin)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PinType(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept final
+    int32_t WINRT_CALL get_PinType(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinType, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinType));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinType>(this->shim().PinType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PinLockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept final
+    int32_t WINRT_CALL get_PinLockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinLockState, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPinLockState>(this->shim().PinLockState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_PinLockStateChanges(void** value) noexcept final
+    int32_t WINRT_CALL get_PinLockStateChanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinLockStateChanges, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>>(this->shim().PinLockStateChanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinManager> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>
 {
-    HRESULT __stdcall get_SupportedPins(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedPins(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedPins, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinType>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinType>>(this->shim().SupportedPins());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, void** value) noexcept final
+    int32_t WINRT_CALL GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPin, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandPin), Windows::Networking::NetworkOperators::MobileBroadbandPinType const&);
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandPin>(this->shim().GetPin(*reinterpret_cast<Windows::Networking::NetworkOperators::MobileBroadbandPinType const*>(&pinType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>
 {
-    HRESULT __stdcall get_IsSuccessful(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSuccessful(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSuccessful, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSuccessful());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttemptsRemaining(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_AttemptsRemaining(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttemptsRemaining, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().AttemptsRemaining());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* value) noexcept final
+    int32_t WINRT_CALL get_RadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadioState, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandRadioState));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandRadioState>(this->shim().RadioState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>
 {
-    HRESULT __stdcall get_RadioStateChanges(void** value) noexcept final
+    int32_t WINRT_CALL get_RadioStateChanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadioStateChanges, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>>(this->shim().RadioStateChanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandSarManager> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>
 {
-    HRESULT __stdcall get_IsBackoffEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBackoffEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBackoffEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBackoffEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsWiFiHardwareIntegrated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsWiFiHardwareIntegrated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWiFiHardwareIntegrated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsWiFiHardwareIntegrated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSarControlledByHardware(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSarControlledByHardware(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSarControlledByHardware, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSarControlledByHardware());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Antennas(void** value) noexcept final
+    int32_t WINRT_CALL get_Antennas(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Antennas, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar>>(this->shim().Antennas());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HysteresisTimerPeriod(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_HysteresisTimerPeriod(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HysteresisTimerPeriod, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().HysteresisTimerPeriod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_TransmissionStateChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_TransmissionStateChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().TransmissionStateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TransmissionStateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().TransmissionStateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_TransmissionStateChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_TransmissionStateChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().TransmissionStateChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(TransmissionStateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().TransmissionStateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall EnableBackoffAsync(void** operation) noexcept final
+    int32_t WINRT_CALL EnableBackoffAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnableBackoffAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().EnableBackoffAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisableBackoffAsync(void** operation) noexcept final
+    int32_t WINRT_CALL DisableBackoffAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableBackoffAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DisableBackoffAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetConfigurationAsync(void* antennas, void** operation) noexcept final
+    int32_t WINRT_CALL SetConfigurationAsync(void* antennas, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetConfigurationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar> const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetConfigurationAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar> const*>(&antennas)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RevertSarToHardwareControlAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RevertSarToHardwareControlAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RevertSarToHardwareControlAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RevertSarToHardwareControlAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetTransmissionStateChangedHysteresisAsync(Windows::Foundation::TimeSpan timerPeriod, void** operation) noexcept final
+    int32_t WINRT_CALL SetTransmissionStateChangedHysteresisAsync(Windows::Foundation::TimeSpan timerPeriod, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetTransmissionStateChangedHysteresisAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::TimeSpan const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetTransmissionStateChangedHysteresisAsync(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&timerPeriod)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsTransmittingAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetIsTransmittingAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetIsTransmittingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().GetIsTransmittingAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartTransmissionStateMonitoring() noexcept final
+    int32_t WINRT_CALL StartTransmissionStateMonitoring() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTransmissionStateMonitoring, WINRT_WRAP(void));
             this->shim().StartTransmissionStateMonitoring();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopTransmissionStateMonitoring() noexcept final
+    int32_t WINRT_CALL StopTransmissionStateMonitoring() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopTransmissionStateMonitoring, WINRT_WRAP(void));
             this->shim().StopTransmissionStateMonitoring();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs>
 {
-    HRESULT __stdcall get_IsTransmitting(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTransmitting(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTransmitting, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTransmitting());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUicc>
 {
-    HRESULT __stdcall get_SimIccId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SimIccId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimIccId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SimIccId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUiccAppsAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetUiccAppsAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUiccAppsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>>(this->shim().GetUiccAppsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>
 {
-    HRESULT __stdcall get_Id(void** value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Networking::NetworkOperators::UiccAppKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Networking::NetworkOperators::UiccAppKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Networking::NetworkOperators::UiccAppKind));
             *value = detach_from<Windows::Networking::NetworkOperators::UiccAppKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRecordDetailsAsync(void* uiccFilePath, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL GetRecordDetailsAsync(void* uiccFilePath, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRecordDetailsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>), Windows::Foundation::Collections::IIterable<uint32_t> const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>>(this->shim().GetRecordDetailsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<uint32_t> const*>(&uiccFilePath)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadRecordAsync(void* uiccFilePath, int32_t recordIndex, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ReadRecordAsync(void* uiccFilePath, int32_t recordIndex, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadRecordAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>), Windows::Foundation::Collections::IIterable<uint32_t> const, int32_t);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>>(this->shim().ReadRecordAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<uint32_t> const*>(&uiccFilePath), recordIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Networking::NetworkOperators::UiccAppRecordKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Networking::NetworkOperators::UiccAppRecordKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Networking::NetworkOperators::UiccAppRecordKind));
             *value = detach_from<Windows::Networking::NetworkOperators::UiccAppRecordKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RecordCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_RecordCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecordCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().RecordCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RecordSize(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_RecordSize(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecordSize, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().RecordSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReadAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept final
+    int32_t WINRT_CALL get_ReadAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAccessCondition, WINRT_WRAP(Windows::Networking::NetworkOperators::UiccAccessCondition));
             *value = detach_from<Windows::Networking::NetworkOperators::UiccAccessCondition>(this->shim().ReadAccessCondition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WriteAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept final
+    int32_t WINRT_CALL get_WriteAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteAccessCondition, WINRT_WRAP(Windows::Networking::NetworkOperators::UiccAccessCondition));
             *value = detach_from<Windows::Networking::NetworkOperators::UiccAccessCondition>(this->shim().WriteAccessCondition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UiccApps(void** value) noexcept final
+    int32_t WINRT_CALL get_UiccApps(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UiccApps, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>>(this->shim().UiccApps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails>
 {
-    HRESULT __stdcall get_NotificationKind(Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind* value) noexcept final
+    int32_t WINRT_CALL get_NotificationKind(Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NotificationKind, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind));
             *value = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind>(this->shim().NotificationKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails>
 {
-    HRESULT __stdcall get_NotificationType(Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType* value) noexcept final
+    int32_t WINRT_CALL get_NotificationType(Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NotificationType, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType));
             *value = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType>(this->shim().NotificationType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EncodingType(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_EncodingType(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncodingType, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().EncodingType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RuleId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RuleId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RuleId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RuleId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SmsMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_SmsMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmsMessage, WINRT_WRAP(Windows::Devices::Sms::ISmsMessage));
             *value = detach_from<Windows::Devices::Sms::ISmsMessage>(this->shim().SmsMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>
 {
-    HRESULT __stdcall get_Ssid(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Ssid(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ssid, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Ssid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Ssid(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Ssid(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ssid, WINRT_WRAP(void), hstring const&);
             this->shim().Ssid(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Passphrase(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Passphrase(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Passphrase, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Passphrase());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Passphrase(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Passphrase(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Passphrase, WINRT_WRAP(void), hstring const&);
             this->shim().Passphrase(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>
 {
-    HRESULT __stdcall get_MacAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MacAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MacAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MacAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HostNames(void** value) noexcept final
+    int32_t WINRT_CALL get_HostNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HostNames, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName>>(this->shim().HostNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>
 {
-    HRESULT __stdcall GetTetheringClients(void** value) noexcept final
+    int32_t WINRT_CALL GetTetheringClients(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTetheringClients, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>>(this->shim().GetTetheringClients());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck>
 {
-    HRESULT __stdcall AuthorizeTethering(bool allow, HSTRING entitlementFailureReason) noexcept final
+    int32_t WINRT_CALL AuthorizeTethering(bool allow, void* entitlementFailureReason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthorizeTethering, WINRT_WRAP(void), bool, hstring const&);
             this->shim().AuthorizeTethering(allow, *reinterpret_cast<hstring const*>(&entitlementFailureReason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>
 {
-    HRESULT __stdcall get_MaxClientCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxClientCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxClientCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxClientCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ClientCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ClientCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TetheringOperationalState(Windows::Networking::NetworkOperators::TetheringOperationalState* value) noexcept final
+    int32_t WINRT_CALL get_TetheringOperationalState(Windows::Networking::NetworkOperators::TetheringOperationalState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TetheringOperationalState, WINRT_WRAP(Windows::Networking::NetworkOperators::TetheringOperationalState));
             *value = detach_from<Windows::Networking::NetworkOperators::TetheringOperationalState>(this->shim().TetheringOperationalState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentAccessPointConfiguration(void** configuration) noexcept final
+    int32_t WINRT_CALL GetCurrentAccessPointConfiguration(void** configuration) noexcept final
     {
         try
         {
             *configuration = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentAccessPointConfiguration, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration));
             *configuration = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration>(this->shim().GetCurrentAccessPointConfiguration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConfigureAccessPointAsync(void* configuration, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ConfigureAccessPointAsync(void* configuration, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfigureAccessPointAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ConfigureAccessPointAsync(*reinterpret_cast<Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration const*>(&configuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartTetheringAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL StartTetheringAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTetheringAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>>(this->shim().StartTetheringAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StopTetheringAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL StopTetheringAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StopTetheringAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>>(this->shim().StopTetheringAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>
 {
-    HRESULT __stdcall GetTetheringCapability(HSTRING networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability* value) noexcept final
+    int32_t WINRT_CALL GetTetheringCapability(void* networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTetheringCapability, WINRT_WRAP(Windows::Networking::NetworkOperators::TetheringCapability), hstring const&);
             *value = detach_from<Windows::Networking::NetworkOperators::TetheringCapability>(this->shim().GetTetheringCapability(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ppManager) noexcept final
+    int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ppManager) noexcept final
     {
         try
         {
             *ppManager = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNetworkAccountId, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager), hstring const&);
             *ppManager = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager>(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>
 {
-    HRESULT __stdcall GetTetheringCapabilityFromConnectionProfile(void* profile, Windows::Networking::NetworkOperators::TetheringCapability* result) noexcept final
+    int32_t WINRT_CALL GetTetheringCapabilityFromConnectionProfile(void* profile, Windows::Networking::NetworkOperators::TetheringCapability* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTetheringCapabilityFromConnectionProfile, WINRT_WRAP(Windows::Networking::NetworkOperators::TetheringCapability), Windows::Networking::Connectivity::ConnectionProfile const&);
             *result = detach_from<Windows::Networking::NetworkOperators::TetheringCapability>(this->shim().GetTetheringCapabilityFromConnectionProfile(*reinterpret_cast<Windows::Networking::Connectivity::ConnectionProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromConnectionProfile(void* profile, void** ppManager) noexcept final
+    int32_t WINRT_CALL CreateFromConnectionProfile(void* profile, void** ppManager) noexcept final
     {
         try
         {
             *ppManager = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromConnectionProfile, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager), Windows::Networking::Connectivity::ConnectionProfile const&);
             *ppManager = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager>(this->shim().CreateFromConnectionProfile(*reinterpret_cast<Windows::Networking::Connectivity::ConnectionProfile const*>(&profile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>
 {
-    HRESULT __stdcall CreateFromConnectionProfileWithTargetAdapter(void* profile, void* adapter, void** ppManager) noexcept final
+    int32_t WINRT_CALL CreateFromConnectionProfileWithTargetAdapter(void* profile, void* adapter, void** ppManager) noexcept final
     {
         try
         {
             *ppManager = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromConnectionProfile, WINRT_WRAP(Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager), Windows::Networking::Connectivity::ConnectionProfile const&, Windows::Networking::Connectivity::NetworkAdapter const&);
             *ppManager = detach_from<Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager>(this->shim().CreateFromConnectionProfile(*reinterpret_cast<Windows::Networking::Connectivity::ConnectionProfile const*>(&profile), *reinterpret_cast<Windows::Networking::Connectivity::NetworkAdapter const*>(&adapter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult> : produce_base<D, Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>
 {
-    HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::TetheringOperationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::TetheringOperationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Networking::NetworkOperators::TetheringOperationStatus));
             *value = detach_from<Windows::Networking::NetworkOperators::TetheringOperationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdditionalErrorMessage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AdditionalErrorMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdditionalErrorMessage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AdditionalErrorMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults> : produce_base<D, Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>
 {
-    HRESULT __stdcall get_AllElementsProvisioned(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllElementsProvisioned(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllElementsProvisioned, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllElementsProvisioned());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProvisionResultsXml(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProvisionResultsXml(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProvisionResultsXml, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProvisionResultsXml());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisionedProfile> : produce_base<D, Windows::Networking::NetworkOperators::IProvisionedProfile>
 {
-    HRESULT __stdcall UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) noexcept final
+    int32_t WINRT_CALL UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateCost, WINRT_WRAP(void), Windows::Networking::Connectivity::NetworkCostType const&);
             this->shim().UpdateCost(*reinterpret_cast<Windows::Networking::Connectivity::NetworkCostType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateUsage(struct struct_Windows_Networking_NetworkOperators_ProfileUsage value) noexcept final
+    int32_t WINRT_CALL UpdateUsage(struct struct_Windows_Networking_NetworkOperators_ProfileUsage value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateUsage, WINRT_WRAP(void), Windows::Networking::NetworkOperators::ProfileUsage const&);
             this->shim().UpdateUsage(*reinterpret_cast<Windows::Networking::NetworkOperators::ProfileUsage const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgent> : produce_base<D, Windows::Networking::NetworkOperators::IProvisioningAgent>
 {
-    HRESULT __stdcall ProvisionFromXmlDocumentAsync(HSTRING provisioningXmlDocument, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL ProvisionFromXmlDocumentAsync(void* provisioningXmlDocument, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProvisionFromXmlDocumentAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>), hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>>(this->shim().ProvisionFromXmlDocumentAsync(*reinterpret_cast<hstring const*>(&provisioningXmlDocument)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, HSTRING profileName, void** provisionedProfile) noexcept final
+    int32_t WINRT_CALL GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, void* profileName, void** provisionedProfile) noexcept final
     {
         try
         {
             *provisionedProfile = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetProvisionedProfile, WINRT_WRAP(Windows::Networking::NetworkOperators::ProvisionedProfile), Windows::Networking::NetworkOperators::ProfileMediaType const&, hstring const&);
             *provisionedProfile = detach_from<Windows::Networking::NetworkOperators::ProvisionedProfile>(this->shim().GetProvisionedProfile(*reinterpret_cast<Windows::Networking::NetworkOperators::ProfileMediaType const*>(&mediaType), *reinterpret_cast<hstring const*>(&profileName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods> : produce_base<D, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>
 {
-    HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** provisioningAgent) noexcept final
+    int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** provisioningAgent) noexcept final
     {
         try
         {
             *provisioningAgent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNetworkAccountId, WINRT_WRAP(Windows::Networking::NetworkOperators::ProvisioningAgent), hstring const&);
             *provisioningAgent = detach_from<Windows::Networking::NetworkOperators::ProvisioningAgent>(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails> : produce_base<D, Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails>
 {
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AllowTethering() noexcept final
+    int32_t WINRT_CALL AllowTethering() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowTethering, WINRT_WRAP(void));
             this->shim().AllowTethering();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DenyTethering(HSTRING entitlementFailureReason) noexcept final
+    int32_t WINRT_CALL DenyTethering(void* entitlementFailureReason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DenyTethering, WINRT_WRAP(void), hstring const&);
             this->shim().DenyTethering(*reinterpret_cast<hstring const*>(&entitlementFailureReason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdMessage> : produce_base<D, Windows::Networking::NetworkOperators::IUssdMessage>
 {
-    HRESULT __stdcall get_DataCodingScheme(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_DataCodingScheme(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataCodingScheme, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().DataCodingScheme());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DataCodingScheme(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_DataCodingScheme(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataCodingScheme, WINRT_WRAP(void), uint8_t);
             this->shim().DataCodingScheme(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPayload(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetPayload(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPayload, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__valueSize, *value) = detach_abi(this->shim().GetPayload());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPayload(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL SetPayload(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPayload, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().SetPayload(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PayloadAsText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PayloadAsText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayloadAsText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PayloadAsText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PayloadAsText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PayloadAsText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PayloadAsText, WINRT_WRAP(void), hstring const&);
             this->shim().PayloadAsText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdMessageFactory> : produce_base<D, Windows::Networking::NetworkOperators::IUssdMessageFactory>
 {
-    HRESULT __stdcall CreateMessage(HSTRING messageText, void** ussdMessage) noexcept final
+    int32_t WINRT_CALL CreateMessage(void* messageText, void** ussdMessage) noexcept final
     {
         try
         {
             *ussdMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMessage, WINRT_WRAP(Windows::Networking::NetworkOperators::UssdMessage), hstring const&);
             *ussdMessage = detach_from<Windows::Networking::NetworkOperators::UssdMessage>(this->shim().CreateMessage(*reinterpret_cast<hstring const*>(&messageText)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdReply> : produce_base<D, Windows::Networking::NetworkOperators::IUssdReply>
 {
-    HRESULT __stdcall get_ResultCode(Windows::Networking::NetworkOperators::UssdResultCode* value) noexcept final
+    int32_t WINRT_CALL get_ResultCode(Windows::Networking::NetworkOperators::UssdResultCode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResultCode, WINRT_WRAP(Windows::Networking::NetworkOperators::UssdResultCode));
             *value = detach_from<Windows::Networking::NetworkOperators::UssdResultCode>(this->shim().ResultCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(void** value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(Windows::Networking::NetworkOperators::UssdMessage));
             *value = detach_from<Windows::Networking::NetworkOperators::UssdMessage>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdSession> : produce_base<D, Windows::Networking::NetworkOperators::IUssdSession>
 {
-    HRESULT __stdcall SendMessageAndGetReplyAsync(void* message, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL SendMessageAndGetReplyAsync(void* message, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAndGetReplyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply>), Windows::Networking::NetworkOperators::UssdMessage const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply>>(this->shim().SendMessageAndGetReplyAsync(*reinterpret_cast<Windows::Networking::NetworkOperators::UssdMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close() noexcept final
+    int32_t WINRT_CALL Close() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void));
             this->shim().Close();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IUssdSessionStatics> : produce_base<D, Windows::Networking::NetworkOperators::IUssdSessionStatics>
 {
-    HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ussdSession) noexcept final
+    int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ussdSession) noexcept final
     {
         try
         {
             *ussdSession = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNetworkAccountId, WINRT_WRAP(Windows::Networking::NetworkOperators::UssdSession), hstring const&);
             *ussdSession = detach_from<Windows::Networking::NetworkOperators::UssdSession>(this->shim().CreateFromNetworkAccountId(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromNetworkInterfaceId(HSTRING networkInterfaceId, void** ussdSession) noexcept final
+    int32_t WINRT_CALL CreateFromNetworkInterfaceId(void* networkInterfaceId, void** ussdSession) noexcept final
     {
         try
         {
             *ussdSession = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromNetworkInterfaceId, WINRT_WRAP(Windows::Networking::NetworkOperators::UssdSession), hstring const&);
             *ussdSession = detach_from<Windows::Networking::NetworkOperators::UssdSession>(this->shim().CreateFromNetworkInterfaceId(*reinterpret_cast<hstring const*>(&networkInterfaceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -8418,202 +7614,202 @@ WINRT_EXPORT namespace winrt::Windows::Networking::NetworkOperators {
 
 inline Windows::Networking::NetworkOperators::ESimServiceInfo ESimManager::ServiceInfo()
 {
-    return get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>().ServiceInfo();
+    return impl::call_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>([&](auto&& f) { return f.ServiceInfo(); });
 }
 
 inline Windows::Networking::NetworkOperators::ESimWatcher ESimManager::TryCreateESimWatcher()
 {
-    return get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>().TryCreateESimWatcher();
+    return impl::call_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>([&](auto&& f) { return f.TryCreateESimWatcher(); });
 }
 
-inline event_token ESimManager::ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token ESimManager::ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>().ServiceInfoChanged(handler);
+    return impl::call_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>([&](auto&& f) { return f.ServiceInfoChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics> ESimManager::ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline ESimManager::ServiceInfoChanged_revoker ESimManager::ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>();
-    return { factory, &impl::abi_t<Windows::Networking::NetworkOperators::IESimManagerStatics>::remove_ServiceInfoChanged, factory.ServiceInfoChanged(handler) };
+    auto f = get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>();
+    return { f, f.ServiceInfoChanged(handler) };
 }
 
-inline void ESimManager::ServiceInfoChanged(event_token const& token)
+inline void ESimManager::ServiceInfoChanged(winrt::event_token const& token)
 {
-    get_activation_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>().ServiceInfoChanged(token);
+    impl::call_factory<ESimManager, Windows::Networking::NetworkOperators::IESimManagerStatics>([&](auto&& f) { return f.ServiceInfoChanged(token); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> FdnAccessManager::RequestUnlockAsync(param::hstring const& contactListId)
 {
-    return get_activation_factory<FdnAccessManager, Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>().RequestUnlockAsync(contactListId);
+    return impl::call_factory<FdnAccessManager, Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>([&](auto&& f) { return f.RequestUnlockAsync(contactListId); });
 }
 
 inline bool HotspotAuthenticationContext::TryGetAuthenticationContext(param::hstring const& evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext& context)
 {
-    return get_activation_factory<HotspotAuthenticationContext, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>().TryGetAuthenticationContext(evenToken, context);
+    return impl::call_factory<HotspotAuthenticationContext, Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>([&](auto&& f) { return f.TryGetAuthenticationContext(evenToken, context); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::EFSpn()
 {
-    return get_activation_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>().EFSpn();
+    return impl::call_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>([&](auto&& f) { return f.EFSpn(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::Gid1()
 {
-    return get_activation_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>().Gid1();
+    return impl::call_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>([&](auto&& f) { return f.Gid1(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownCSimFilePaths::Gid2()
 {
-    return get_activation_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>().Gid2();
+    return impl::call_factory<KnownCSimFilePaths, Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>([&](auto&& f) { return f.Gid2(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::EFSpn()
 {
-    return get_activation_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>().EFSpn();
+    return impl::call_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>([&](auto&& f) { return f.EFSpn(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::Gid1()
 {
-    return get_activation_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>().Gid1();
+    return impl::call_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>([&](auto&& f) { return f.Gid1(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownRuimFilePaths::Gid2()
 {
-    return get_activation_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>().Gid2();
+    return impl::call_factory<KnownRuimFilePaths, Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>([&](auto&& f) { return f.Gid2(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::EFOns()
 {
-    return get_activation_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>().EFOns();
+    return impl::call_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>([&](auto&& f) { return f.EFOns(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::EFSpn()
 {
-    return get_activation_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>().EFSpn();
+    return impl::call_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>([&](auto&& f) { return f.EFSpn(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::Gid1()
 {
-    return get_activation_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>().Gid1();
+    return impl::call_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>([&](auto&& f) { return f.Gid1(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownSimFilePaths::Gid2()
 {
-    return get_activation_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>().Gid2();
+    return impl::call_factory<KnownSimFilePaths, Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>([&](auto&& f) { return f.Gid2(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFSpn()
 {
-    return get_activation_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>().EFSpn();
+    return impl::call_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>([&](auto&& f) { return f.EFSpn(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFOpl()
 {
-    return get_activation_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>().EFOpl();
+    return impl::call_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>([&](auto&& f) { return f.EFOpl(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::EFPnn()
 {
-    return get_activation_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>().EFPnn();
+    return impl::call_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>([&](auto&& f) { return f.EFPnn(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::Gid1()
 {
-    return get_activation_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>().Gid1();
+    return impl::call_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>([&](auto&& f) { return f.Gid1(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<uint32_t> KnownUSimFilePaths::Gid2()
 {
-    return get_activation_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>().Gid2();
+    return impl::call_factory<KnownUSimFilePaths, Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>([&](auto&& f) { return f.Gid2(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> MobileBroadbandAccount::AvailableNetworkAccountIds()
 {
-    return get_activation_factory<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>().AvailableNetworkAccountIds();
+    return impl::call_factory<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>([&](auto&& f) { return f.AvailableNetworkAccountIds(); });
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandAccount MobileBroadbandAccount::CreateFromNetworkAccountId(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return impl::call_factory<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>([&](auto&& f) { return f.CreateFromNetworkAccountId(networkAccountId); });
 }
 
 inline MobileBroadbandAccountWatcher::MobileBroadbandAccountWatcher() :
-    MobileBroadbandAccountWatcher(get_activation_factory<MobileBroadbandAccountWatcher>().ActivateInstance<MobileBroadbandAccountWatcher>())
+    MobileBroadbandAccountWatcher(impl::call_factory<MobileBroadbandAccountWatcher>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandAccountWatcher>(); }))
 {}
 
 inline MobileBroadbandAntennaSar::MobileBroadbandAntennaSar(int32_t antennaIndex, int32_t sarBackoffIndex) :
-    MobileBroadbandAntennaSar(get_activation_factory<MobileBroadbandAntennaSar, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>().CreateWithIndex(antennaIndex, sarBackoffIndex))
+    MobileBroadbandAntennaSar(impl::call_factory<MobileBroadbandAntennaSar, Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>([&](auto&& f) { return f.CreateWithIndex(antennaIndex, sarBackoffIndex); }))
 {}
 
 inline hstring MobileBroadbandModem::GetDeviceSelector()
 {
-    return get_activation_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>().GetDeviceSelector();
+    return impl::call_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::FromId(param::hstring const& deviceId)
 {
-    return get_activation_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>().FromId(deviceId);
+    return impl::call_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>([&](auto&& f) { return f.FromId(deviceId); });
 }
 
 inline Windows::Networking::NetworkOperators::MobileBroadbandModem MobileBroadbandModem::GetDefault()
 {
-    return get_activation_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>().GetDefault();
+    return impl::call_factory<MobileBroadbandModem, Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline MobileBroadbandModemIsolation::MobileBroadbandModemIsolation(param::hstring const& modemDeviceId, param::hstring const& ruleGroupId) :
-    MobileBroadbandModemIsolation(get_activation_factory<MobileBroadbandModemIsolation, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>().Create(modemDeviceId, ruleGroupId))
+    MobileBroadbandModemIsolation(impl::call_factory<MobileBroadbandModemIsolation, Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>([&](auto&& f) { return f.Create(modemDeviceId, ruleGroupId); }))
 {}
 
 inline NetworkOperatorTetheringAccessPointConfiguration::NetworkOperatorTetheringAccessPointConfiguration() :
-    NetworkOperatorTetheringAccessPointConfiguration(get_activation_factory<NetworkOperatorTetheringAccessPointConfiguration>().ActivateInstance<NetworkOperatorTetheringAccessPointConfiguration>())
+    NetworkOperatorTetheringAccessPointConfiguration(impl::call_factory<NetworkOperatorTetheringAccessPointConfiguration>([](auto&& f) { return f.template ActivateInstance<NetworkOperatorTetheringAccessPointConfiguration>(); }))
 {}
 
 inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapability(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>().GetTetheringCapability(networkAccountId);
+    return impl::call_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>([&](auto&& f) { return f.GetTetheringCapability(networkAccountId); });
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromNetworkAccountId(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return impl::call_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>([&](auto&& f) { return f.CreateFromNetworkAccountId(networkAccountId); });
 }
 
 inline Windows::Networking::NetworkOperators::TetheringCapability NetworkOperatorTetheringManager::GetTetheringCapabilityFromConnectionProfile(Windows::Networking::Connectivity::ConnectionProfile const& profile)
 {
-    return get_activation_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>().GetTetheringCapabilityFromConnectionProfile(profile);
+    return impl::call_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>([&](auto&& f) { return f.GetTetheringCapabilityFromConnectionProfile(profile); });
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromConnectionProfile(Windows::Networking::Connectivity::ConnectionProfile const& profile)
 {
-    return get_activation_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>().CreateFromConnectionProfile(profile);
+    return impl::call_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>([&](auto&& f) { return f.CreateFromConnectionProfile(profile); });
 }
 
 inline Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager NetworkOperatorTetheringManager::CreateFromConnectionProfile(Windows::Networking::Connectivity::ConnectionProfile const& profile, Windows::Networking::Connectivity::NetworkAdapter const& adapter)
 {
-    return get_activation_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>().CreateFromConnectionProfile(profile, adapter);
+    return impl::call_factory<NetworkOperatorTetheringManager, Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>([&](auto&& f) { return f.CreateFromConnectionProfile(profile, adapter); });
 }
 
 inline ProvisioningAgent::ProvisioningAgent() :
-    ProvisioningAgent(get_activation_factory<ProvisioningAgent>().ActivateInstance<ProvisioningAgent>())
+    ProvisioningAgent(impl::call_factory<ProvisioningAgent>([](auto&& f) { return f.template ActivateInstance<ProvisioningAgent>(); }))
 {}
 
 inline Windows::Networking::NetworkOperators::ProvisioningAgent ProvisioningAgent::CreateFromNetworkAccountId(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<ProvisioningAgent, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>().CreateFromNetworkAccountId(networkAccountId);
+    return impl::call_factory<ProvisioningAgent, Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>([&](auto&& f) { return f.CreateFromNetworkAccountId(networkAccountId); });
 }
 
 inline UssdMessage::UssdMessage(param::hstring const& messageText) :
-    UssdMessage(get_activation_factory<UssdMessage, Windows::Networking::NetworkOperators::IUssdMessageFactory>().CreateMessage(messageText))
+    UssdMessage(impl::call_factory<UssdMessage, Windows::Networking::NetworkOperators::IUssdMessageFactory>([&](auto&& f) { return f.CreateMessage(messageText); }))
 {}
 
 inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkAccountId(param::hstring const& networkAccountId)
 {
-    return get_activation_factory<UssdSession, Windows::Networking::NetworkOperators::IUssdSessionStatics>().CreateFromNetworkAccountId(networkAccountId);
+    return impl::call_factory<UssdSession, Windows::Networking::NetworkOperators::IUssdSessionStatics>([&](auto&& f) { return f.CreateFromNetworkAccountId(networkAccountId); });
 }
 
 inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFromNetworkInterfaceId(param::hstring const& networkInterfaceId)
 {
-    return get_activation_factory<UssdSession, Windows::Networking::NetworkOperators::IUssdSessionStatics>().CreateFromNetworkInterfaceId(networkInterfaceId);
+    return impl::call_factory<UssdSession, Windows::Networking::NetworkOperators::IUssdSessionStatics>([&](auto&& f) { return f.CreateFromNetworkInterfaceId(networkInterfaceId); });
 }
 
 }
@@ -8795,5 +7991,3 @@ template<> struct hash<winrt::Windows::Networking::NetworkOperators::UssdReply> 
 template<> struct hash<winrt::Windows::Networking::NetworkOperators::UssdSession> : winrt::impl::hash_base<winrt::Windows::Networking::NetworkOperators::UssdSession> {};
 
 }
-
-WINRT_WARNING_POP

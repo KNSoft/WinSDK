@@ -188,6 +188,7 @@
 #define REGSTR_VAL_LINKED                          TEXT("Linked")
 #define REGSTR_VAL_PHYSICALDEVICEOBJECT            TEXT("PhysicalDeviceObject")
 #define REGSTR_VAL_REMOVAL_POLICY                  TEXT("RemovalPolicy")
+#define REGSTR_KEY_FILTERS                         TEXT("Filters")
 
 //
 // Values under REGSTR_PATH_NT_CURRENTVERSION

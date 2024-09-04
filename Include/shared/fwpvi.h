@@ -102,7 +102,14 @@
 #define FWPM_NET_EVENT_CAPABILITY_DROP FWPM_NET_EVENT_CAPABILITY_DROP0
 #define FWPM_NET_EVENT_CAPABILITY_ALLOW FWPM_NET_EVENT_CAPABILITY_ALLOW0
 #endif
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) //NTDDI_WIN10_RS5
+#define FWPM_NET_EVENT_LPM_PACKET_ARRIVAL FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) //NTDDI_WIN10_RS5 
+#define FWPM_NET_EVENT FWPM_NET_EVENT5
+#elif (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
 #define FWPM_NET_EVENT FWPM_NET_EVENT4
 #elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define FWPM_NET_EVENT FWPM_NET_EVENT3
@@ -575,7 +582,9 @@
 #define IkeextSaDbGetSecurityInfo IkeextSaDbGetSecurityInfo0
 #define IkeextSaDbSetSecurityInfo IkeextSaDbSetSecurityInfo0
 #define FwpmNetEventCreateEnumHandle FwpmNetEventCreateEnumHandle0
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) //NTDDI_WIN10_RS5
+#define FwpmNetEventEnum FwpmNetEventEnum5
+#elif (NTDDI_VERSION >= NTDDI_WIN10_RS4) 
 #define FwpmNetEventEnum FwpmNetEventEnum4
 #elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define FwpmNetEventEnum FwpmNetEventEnum3
@@ -590,7 +599,10 @@
 #define FwpmNetEventsGetSecurityInfo FwpmNetEventsGetSecurityInfo0
 #define FwpmNetEventsSetSecurityInfo FwpmNetEventsSetSecurityInfo0
 
-#if (NTDDI_VERSION >= NTDDI_NTDDI_WIN10_RS4) 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) //NTDDI_WIN10_RS5 
+#define FWPM_NET_EVENT_CALLBACK FWPM_NET_EVENT_CALLBACK4
+#define FwpmNetEventSubscribe FwpmNetEventSubscribe4
+#elif (NTDDI_VERSION >= NTDDI_NTDDI_WIN10_RS4) 
 #define FWPM_NET_EVENT_CALLBACK FWPM_NET_EVENT_CALLBACK3
 #define FwpmNetEventSubscribe FwpmNetEventSubscribe3
 #elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)

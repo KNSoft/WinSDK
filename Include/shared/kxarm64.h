@@ -136,6 +136,9 @@ $Name   PROC
         ;
         ; Declare that all following code/data is to be put in the .text segment
         ;
+        ; N.B. The ALIGN attribute here specifies an exponent of base 2; not a
+        ;      direct byte count. Thus ALIGN=4 specifies a 16 byte alignment.
+        ;
 
         MACRO
         TEXTAREA

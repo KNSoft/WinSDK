@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -15,6 +15,8 @@ struct SignalHandler : Windows::Foundation::IUnknown
     template <typename L> SignalHandler(L lambda);
     template <typename F> SignalHandler(F* function);
     template <typename O, typename M> SignalHandler(O* object, M method);
+    template <typename O, typename M> SignalHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SignalHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::System::Threading::Core::SignalNotifier const& signalNotifier, bool timedOut) const;
 };
 

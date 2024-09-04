@@ -13,21 +13,21 @@ Abstract:
 Notes:
 
     Do not include this header directly. This is to be used together with NetAdapterCx.
-    
-    NetAdapterCx is preview only, any files related to it may be substantially modified 
+
+    NetAdapterCx is preview only, any files related to it may be substantially modified
     or removed in future releases of Windows.
 
  --*/
 
 #pragma once
 
-#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2))
-#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1 && NET_ADAPTER_CX_1_3 != 1)
 #        error NetPacket.h can be used only with NetAdapterCx
 #    endif
 #else
 #    error Include NetAdapterCx.h
-#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2)
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
 
 // This structure holds opaque elements in a ring buffer.
 typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER
@@ -36,7 +36,7 @@ typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER
     UINT16 OSReserved1;
 
     // Number of bytes from one element to the next.
-    // Use  ((BYTE*)p + ElementStride)  to obtain the address of the next element. 
+    // Use  ((BYTE*)p + ElementStride)  to obtain the address of the next element.
     UINT16 ElementStride;
 
     // Number of elements in the ring buffer.  Is always a power of 2, greater than 1.
@@ -64,7 +64,7 @@ typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER
     // Storage for element 0 in the ring buffer.
     // Use NetRingBufferGetElementAtIndex to access elements.
     DECLSPEC_ALIGN(64)
-    _Field_size_(NumberOfElements * ElementStride) 
+    _Field_size_(NumberOfElements * ElementStride)
     BYTE Buffer[ANYSIZE_ARRAY];
 
 } NET_RING_BUFFER, *PNET_RING_BUFFER;

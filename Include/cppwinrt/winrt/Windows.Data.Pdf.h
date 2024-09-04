@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -217,14 +217,14 @@ template <typename D> void consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::Is
     check_hresult(WINRT_SHIM(Windows::Data::Pdf::IPdfPageRenderOptions)->put_IsIgnoringHighContrast(value));
 }
 
-template <typename D> GUID consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::BitmapEncoderId() const
+template <typename D> winrt::guid consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::BitmapEncoderId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Data::Pdf::IPdfPageRenderOptions)->get_BitmapEncoderId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::BitmapEncoderId(GUID const& value) const
+template <typename D> void consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::BitmapEncoderId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Data::Pdf::IPdfPageRenderOptions)->put_BitmapEncoderId(get_abi(value)));
 }
@@ -232,477 +232,413 @@ template <typename D> void consume_Windows_Data_Pdf_IPdfPageRenderOptions<D>::Bi
 template <typename D>
 struct produce<D, Windows::Data::Pdf::IPdfDocument> : produce_base<D, Windows::Data::Pdf::IPdfDocument>
 {
-    HRESULT __stdcall GetPage(uint32_t pageIndex, void** pdfPage) noexcept final
+    int32_t WINRT_CALL GetPage(uint32_t pageIndex, void** pdfPage) noexcept final
     {
         try
         {
             *pdfPage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPage, WINRT_WRAP(Windows::Data::Pdf::PdfPage), uint32_t);
             *pdfPage = detach_from<Windows::Data::Pdf::PdfPage>(this->shim().GetPage(pageIndex));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PageCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PageCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PageCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PageCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPasswordProtected(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPasswordProtected(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPasswordProtected, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPasswordProtected());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Pdf::IPdfDocumentStatics> : produce_base<D, Windows::Data::Pdf::IPdfDocumentStatics>
 {
-    HRESULT __stdcall LoadFromFileAsync(void* file, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL LoadFromFileAsync(void* file, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>), Windows::Storage::IStorageFile const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>>(this->shim().LoadFromFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromFileWithPasswordAsync(void* file, HSTRING password, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL LoadFromFileWithPasswordAsync(void* file, void* password, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>), Windows::Storage::IStorageFile const, hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>>(this->shim().LoadFromFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file), *reinterpret_cast<hstring const*>(&password)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromStreamAsync(void* inputStream, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL LoadFromStreamAsync(void* inputStream, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>), Windows::Storage::Streams::IRandomAccessStream const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>>(this->shim().LoadFromStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&inputStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromStreamWithPasswordAsync(void* inputStream, HSTRING password, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL LoadFromStreamWithPasswordAsync(void* inputStream, void* password, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>), Windows::Storage::Streams::IRandomAccessStream const, hstring const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument>>(this->shim().LoadFromStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&inputStream), *reinterpret_cast<hstring const*>(&password)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Pdf::IPdfPage> : produce_base<D, Windows::Data::Pdf::IPdfPage>
 {
-    HRESULT __stdcall RenderToStreamAsync(void* outputStream, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL RenderToStreamAsync(void* outputStream, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderToStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::Streams::IRandomAccessStream const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RenderToStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&outputStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RenderWithOptionsToStreamAsync(void* outputStream, void* options, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL RenderWithOptionsToStreamAsync(void* outputStream, void* options, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderToStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::Streams::IRandomAccessStream const, Windows::Data::Pdf::PdfPageRenderOptions const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RenderToStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&outputStream), *reinterpret_cast<Windows::Data::Pdf::PdfPageRenderOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PreparePageAsync(void** asyncInfo) noexcept final
+    int32_t WINRT_CALL PreparePageAsync(void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreparePageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncInfo = detach_from<Windows::Foundation::IAsyncAction>(this->shim().PreparePageAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Index(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Index(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Index, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Index());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Dimensions(void** value) noexcept final
+    int32_t WINRT_CALL get_Dimensions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Dimensions, WINRT_WRAP(Windows::Data::Pdf::PdfPageDimensions));
             *value = detach_from<Windows::Data::Pdf::PdfPageDimensions>(this->shim().Dimensions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rotation(Windows::Data::Pdf::PdfPageRotation* value) noexcept final
+    int32_t WINRT_CALL get_Rotation(Windows::Data::Pdf::PdfPageRotation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(Windows::Data::Pdf::PdfPageRotation));
             *value = detach_from<Windows::Data::Pdf::PdfPageRotation>(this->shim().Rotation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PreferredZoom(float* value) noexcept final
+    int32_t WINRT_CALL get_PreferredZoom(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreferredZoom, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().PreferredZoom());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Pdf::IPdfPageDimensions> : produce_base<D, Windows::Data::Pdf::IPdfPageDimensions>
 {
-    HRESULT __stdcall get_MediaBox(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_MediaBox(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaBox, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().MediaBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CropBox(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_CropBox(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CropBox, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().CropBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BleedBox(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_BleedBox(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BleedBox, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().BleedBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TrimBox(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_TrimBox(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrimBox, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().TrimBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ArtBox(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_ArtBox(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArtBox, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().ArtBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Pdf::IPdfPageRenderOptions> : produce_base<D, Windows::Data::Pdf::IPdfPageRenderOptions>
 {
-    HRESULT __stdcall get_SourceRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_SourceRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().SourceRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SourceRect(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_SourceRect(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceRect, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().SourceRect(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DestinationWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_DestinationWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().DestinationWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DestinationWidth(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_DestinationWidth(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationWidth, WINRT_WRAP(void), uint32_t);
             this->shim().DestinationWidth(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DestinationHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_DestinationHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().DestinationHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DestinationHeight(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_DestinationHeight(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationHeight, WINRT_WRAP(void), uint32_t);
             this->shim().DestinationHeight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsIgnoringHighContrast(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsIgnoringHighContrast(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIgnoringHighContrast, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsIgnoringHighContrast());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsIgnoringHighContrast(bool value) noexcept final
+    int32_t WINRT_CALL put_IsIgnoringHighContrast(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIgnoringHighContrast, WINRT_WRAP(void), bool);
             this->shim().IsIgnoringHighContrast(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitmapEncoderId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_BitmapEncoderId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().BitmapEncoderId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BitmapEncoderId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().BitmapEncoderId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BitmapEncoderId(GUID value) noexcept final
+    int32_t WINRT_CALL put_BitmapEncoderId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().BitmapEncoderId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BitmapEncoderId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().BitmapEncoderId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -712,26 +648,26 @@ WINRT_EXPORT namespace winrt::Windows::Data::Pdf {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromFileAsync(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>().LoadFromFileAsync(file);
+    return impl::call_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>([&](auto&& f) { return f.LoadFromFileAsync(file); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromFileAsync(Windows::Storage::IStorageFile const& file, param::hstring const& password)
 {
-    return get_activation_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>().LoadFromFileAsync(file, password);
+    return impl::call_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>([&](auto&& f) { return f.LoadFromFileAsync(file, password); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromStreamAsync(Windows::Storage::Streams::IRandomAccessStream const& inputStream)
 {
-    return get_activation_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>().LoadFromStreamAsync(inputStream);
+    return impl::call_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>([&](auto&& f) { return f.LoadFromStreamAsync(inputStream); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> PdfDocument::LoadFromStreamAsync(Windows::Storage::Streams::IRandomAccessStream const& inputStream, param::hstring const& password)
 {
-    return get_activation_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>().LoadFromStreamAsync(inputStream, password);
+    return impl::call_factory<PdfDocument, Windows::Data::Pdf::IPdfDocumentStatics>([&](auto&& f) { return f.LoadFromStreamAsync(inputStream, password); });
 }
 
 inline PdfPageRenderOptions::PdfPageRenderOptions() :
-    PdfPageRenderOptions(get_activation_factory<PdfPageRenderOptions>().ActivateInstance<PdfPageRenderOptions>())
+    PdfPageRenderOptions(impl::call_factory<PdfPageRenderOptions>([](auto&& f) { return f.template ActivateInstance<PdfPageRenderOptions>(); }))
 {}
 
 }
@@ -749,5 +685,3 @@ template<> struct hash<winrt::Windows::Data::Pdf::PdfPageDimensions> : winrt::im
 template<> struct hash<winrt::Windows::Data::Pdf::PdfPageRenderOptions> : winrt::impl::hash_base<winrt::Windows::Data::Pdf::PdfPageRenderOptions> {};
 
 }
-
-WINRT_WARNING_POP

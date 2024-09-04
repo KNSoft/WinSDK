@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -136,25 +136,25 @@ template <> struct name<Windows::Media::Devices::Core::FrameIsoSpeedCapabilities
 template <> struct name<Windows::Media::Devices::Core::FrameIsoSpeedControl>{ static constexpr auto & value{ L"Windows.Media.Devices.Core.FrameIsoSpeedControl" }; };
 template <> struct name<Windows::Media::Devices::Core::VariablePhotoSequenceController>{ static constexpr auto & value{ L"Windows.Media.Devices.Core.VariablePhotoSequenceController" }; };
 template <> struct name<Windows::Media::Devices::Core::FrameFlashMode>{ static constexpr auto & value{ L"Windows.Media.Devices.Core.FrameFlashMode" }; };
-template <> struct guid<Windows::Media::Devices::Core::ICameraIntrinsics>{ static constexpr GUID value{ 0x0AA6ED32,0x6589,0x49DA,{ 0xAF,0xDE,0x59,0x42,0x70,0xCA,0x0A,0xAC } }; };
-template <> struct guid<Windows::Media::Devices::Core::ICameraIntrinsics2>{ static constexpr GUID value{ 0x0CDAA447,0x0798,0x4B4D,{ 0x83,0x9F,0xC5,0xEC,0x41,0x4D,0xB2,0x7A } }; };
-template <> struct guid<Windows::Media::Devices::Core::ICameraIntrinsicsFactory>{ static constexpr GUID value{ 0xC0DDC486,0x2132,0x4A34,{ 0xA6,0x59,0x9B,0xFE,0x2A,0x05,0x57,0x12 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>{ static constexpr GUID value{ 0xF95D89FB,0x8AF0,0x4CB0,{ 0x92,0x6D,0x69,0x68,0x66,0xE5,0x04,0x6A } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameControlCapabilities>{ static constexpr GUID value{ 0xA8FFAE60,0x4E9E,0x4377,{ 0xA7,0x89,0xE2,0x4C,0x4A,0xE7,0xE5,0x44 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameControlCapabilities2>{ static constexpr GUID value{ 0xCE9B0464,0x4730,0x440F,{ 0xBD,0x3E,0xEF,0xE8,0xA8,0xF2,0x30,0xA8 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameController>{ static constexpr GUID value{ 0xC16459D9,0xBAEF,0x4052,{ 0x91,0x77,0x48,0xAF,0xF2,0xAF,0x75,0x22 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameController2>{ static constexpr GUID value{ 0x00D3BC75,0xD87C,0x485B,{ 0x8A,0x09,0x5C,0x35,0x85,0x68,0xB4,0x27 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameExposureCapabilities>{ static constexpr GUID value{ 0xBDBE9CE3,0x3985,0x4E72,{ 0x97,0xC2,0x05,0x90,0xD6,0x13,0x07,0xA1 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities>{ static constexpr GUID value{ 0xB988A823,0x8065,0x41EE,{ 0xB0,0x4F,0x72,0x22,0x65,0x95,0x45,0x00 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameExposureCompensationControl>{ static constexpr GUID value{ 0xE95896C9,0xF7F9,0x48CA,{ 0x85,0x91,0xA2,0x65,0x31,0xCB,0x15,0x78 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameExposureControl>{ static constexpr GUID value{ 0xB1605A61,0xFFAF,0x4752,{ 0xB6,0x21,0xF5,0xB6,0xF1,0x17,0xF4,0x32 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameFlashCapabilities>{ static constexpr GUID value{ 0xBB9341A2,0x5EBE,0x4F62,{ 0x82,0x23,0x0E,0x2B,0x05,0xBF,0xBB,0xD0 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameFlashControl>{ static constexpr GUID value{ 0x75D5F6C7,0xBD45,0x4FAB,{ 0x93,0x75,0x45,0xAC,0x04,0xB3,0x32,0xC2 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameFocusCapabilities>{ static constexpr GUID value{ 0x7B25CD58,0x01C0,0x4065,{ 0x9C,0x40,0xC1,0xA7,0x21,0x42,0x5C,0x1A } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameFocusControl>{ static constexpr GUID value{ 0x272DF1D0,0xD912,0x4214,{ 0xA6,0x7B,0xE3,0x8A,0x8D,0x48,0xD8,0xC6 } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities>{ static constexpr GUID value{ 0x16BDFF61,0x6DF6,0x4AC9,{ 0xB9,0x2A,0x9F,0x6E,0xCD,0x1A,0xD2,0xFA } }; };
-template <> struct guid<Windows::Media::Devices::Core::IFrameIsoSpeedControl>{ static constexpr GUID value{ 0x1A03EFED,0x786A,0x4C75,{ 0xA5,0x57,0x7A,0xB9,0xA8,0x5F,0x58,0x8C } }; };
-template <> struct guid<Windows::Media::Devices::Core::IVariablePhotoSequenceController>{ static constexpr GUID value{ 0x7FBFF880,0xED8C,0x43FD,{ 0xA7,0xC3,0xB3,0x58,0x09,0xE4,0x22,0x9A } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::ICameraIntrinsics>{ static constexpr guid value{ 0x0AA6ED32,0x6589,0x49DA,{ 0xAF,0xDE,0x59,0x42,0x70,0xCA,0x0A,0xAC } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::ICameraIntrinsics2>{ static constexpr guid value{ 0x0CDAA447,0x0798,0x4B4D,{ 0x83,0x9F,0xC5,0xEC,0x41,0x4D,0xB2,0x7A } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::ICameraIntrinsicsFactory>{ static constexpr guid value{ 0xC0DDC486,0x2132,0x4A34,{ 0xA6,0x59,0x9B,0xFE,0x2A,0x05,0x57,0x12 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>{ static constexpr guid value{ 0xF95D89FB,0x8AF0,0x4CB0,{ 0x92,0x6D,0x69,0x68,0x66,0xE5,0x04,0x6A } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameControlCapabilities>{ static constexpr guid value{ 0xA8FFAE60,0x4E9E,0x4377,{ 0xA7,0x89,0xE2,0x4C,0x4A,0xE7,0xE5,0x44 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameControlCapabilities2>{ static constexpr guid value{ 0xCE9B0464,0x4730,0x440F,{ 0xBD,0x3E,0xEF,0xE8,0xA8,0xF2,0x30,0xA8 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameController>{ static constexpr guid value{ 0xC16459D9,0xBAEF,0x4052,{ 0x91,0x77,0x48,0xAF,0xF2,0xAF,0x75,0x22 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameController2>{ static constexpr guid value{ 0x00D3BC75,0xD87C,0x485B,{ 0x8A,0x09,0x5C,0x35,0x85,0x68,0xB4,0x27 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameExposureCapabilities>{ static constexpr guid value{ 0xBDBE9CE3,0x3985,0x4E72,{ 0x97,0xC2,0x05,0x90,0xD6,0x13,0x07,0xA1 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities>{ static constexpr guid value{ 0xB988A823,0x8065,0x41EE,{ 0xB0,0x4F,0x72,0x22,0x65,0x95,0x45,0x00 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameExposureCompensationControl>{ static constexpr guid value{ 0xE95896C9,0xF7F9,0x48CA,{ 0x85,0x91,0xA2,0x65,0x31,0xCB,0x15,0x78 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameExposureControl>{ static constexpr guid value{ 0xB1605A61,0xFFAF,0x4752,{ 0xB6,0x21,0xF5,0xB6,0xF1,0x17,0xF4,0x32 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameFlashCapabilities>{ static constexpr guid value{ 0xBB9341A2,0x5EBE,0x4F62,{ 0x82,0x23,0x0E,0x2B,0x05,0xBF,0xBB,0xD0 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameFlashControl>{ static constexpr guid value{ 0x75D5F6C7,0xBD45,0x4FAB,{ 0x93,0x75,0x45,0xAC,0x04,0xB3,0x32,0xC2 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameFocusCapabilities>{ static constexpr guid value{ 0x7B25CD58,0x01C0,0x4065,{ 0x9C,0x40,0xC1,0xA7,0x21,0x42,0x5C,0x1A } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameFocusControl>{ static constexpr guid value{ 0x272DF1D0,0xD912,0x4214,{ 0xA6,0x7B,0xE3,0x8A,0x8D,0x48,0xD8,0xC6 } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities>{ static constexpr guid value{ 0x16BDFF61,0x6DF6,0x4AC9,{ 0xB9,0x2A,0x9F,0x6E,0xCD,0x1A,0xD2,0xFA } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IFrameIsoSpeedControl>{ static constexpr guid value{ 0x1A03EFED,0x786A,0x4C75,{ 0xA5,0x57,0x7A,0xB9,0xA8,0x5F,0x58,0x8C } }; };
+template <> struct guid_storage<Windows::Media::Devices::Core::IVariablePhotoSequenceController>{ static constexpr guid value{ 0x7FBFF880,0xED8C,0x43FD,{ 0xA7,0xC3,0xB3,0x58,0x09,0xE4,0x22,0x9A } }; };
 template <> struct default_interface<Windows::Media::Devices::Core::CameraIntrinsics>{ using type = Windows::Media::Devices::Core::ICameraIntrinsics; };
 template <> struct default_interface<Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper>{ using type = Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper; };
 template <> struct default_interface<Windows::Media::Devices::Core::FrameControlCapabilities>{ using type = Windows::Media::Devices::Core::IFrameControlCapabilities; };
@@ -170,6 +170,162 @@ template <> struct default_interface<Windows::Media::Devices::Core::FrameFocusCo
 template <> struct default_interface<Windows::Media::Devices::Core::FrameIsoSpeedCapabilities>{ using type = Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities; };
 template <> struct default_interface<Windows::Media::Devices::Core::FrameIsoSpeedControl>{ using type = Windows::Media::Devices::Core::IFrameIsoSpeedControl; };
 template <> struct default_interface<Windows::Media::Devices::Core::VariablePhotoSequenceController>{ using type = Windows::Media::Devices::Core::IVariablePhotoSequenceController; };
+
+template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FocalLength(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrincipalPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RadialDistortion(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TangentialDistortion(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImageWidth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImageHeight(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ProjectOntoFrame(Windows::Foundation::Numerics::float3 coordinate, Windows::Foundation::Point* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnprojectAtUnitDepth(Windows::Foundation::Point pixelCoordinate, Windows::Foundation::Numerics::float2* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ProjectManyOntoFrame(uint32_t __coordinatesSize, Windows::Foundation::Numerics::float3* coordinates, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
+    virtual int32_t WINRT_CALL UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, Windows::Foundation::Point* pixelCoordinates, uint32_t __resultsSize, Windows::Foundation::Numerics::float2* results) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UndistortedProjectionTransform(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept = 0;
+    virtual int32_t WINRT_CALL DistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
+    virtual int32_t WINRT_CALL UndistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UndistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsicsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Foundation::Numerics::float2 focalLength, Windows::Foundation::Numerics::float2 principalPoint, Windows::Foundation::Numerics::float3 radialDistortion, Windows::Foundation::Numerics::float2 tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL UnprojectPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, Windows::Foundation::Numerics::float3* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnprojectPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, uint32_t __resultsSize, Windows::Foundation::Numerics::float3* results) noexcept = 0;
+    virtual int32_t WINRT_CALL MapPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, void* targetCameraIntrinsics, Windows::Foundation::Point* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MapPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, void* targetCameraIntrinsics, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameControlCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Exposure(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExposureCompensation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsoSpeed(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Focus(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhotoConfirmationSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameControlCapabilities2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Flash(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExposureControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExposureCompensationControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsoSpeedControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusControl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhotoConfirmationEnabled(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PhotoConfirmationEnabled(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameController2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FlashControl(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Min(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Max(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Step(Windows::Foundation::TimeSpan* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Min(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Max(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Step(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCompensationControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameExposureControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Auto(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Auto(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameFlashCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RedEyeReductionSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PowerSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameFlashControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mode(Windows::Media::Devices::Core::FrameFlashMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mode(Windows::Media::Devices::Core::FrameFlashMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Auto(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Auto(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RedEyeReduction(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RedEyeReduction(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PowerPercent(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PowerPercent(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameFocusCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Min(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Max(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Step(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameFocusControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Min(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Max(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Step(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IFrameIsoSpeedControl>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Auto(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Auto(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Devices::Core::IVariablePhotoSequenceController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Supported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxPhotosPerSecond(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhotosPerSecondLimit(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PhotosPerSecondLimit(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentFrameRate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrameCapabilities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredFrameControllers(void** items) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_Devices_Core_ICameraIntrinsics
@@ -364,161 +520,5 @@ struct consume_Windows_Media_Devices_Core_IVariablePhotoSequenceController
     Windows::Foundation::Collections::IVector<Windows::Media::Devices::Core::FrameController> DesiredFrameControllers() const;
 };
 template <> struct consume<Windows::Media::Devices::Core::IVariablePhotoSequenceController> { template <typename D> using type = consume_Windows_Media_Devices_Core_IVariablePhotoSequenceController<D>; };
-
-template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FocalLength(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrincipalPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RadialDistortion(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TangentialDistortion(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImageWidth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImageHeight(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall ProjectOntoFrame(Windows::Foundation::Numerics::float3 coordinate, Windows::Foundation::Point* result) noexcept = 0;
-    virtual HRESULT __stdcall UnprojectAtUnitDepth(Windows::Foundation::Point pixelCoordinate, Windows::Foundation::Numerics::float2* result) noexcept = 0;
-    virtual HRESULT __stdcall ProjectManyOntoFrame(uint32_t __coordinatesSize, Windows::Foundation::Numerics::float3* coordinates, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
-    virtual HRESULT __stdcall UnprojectPixelsAtUnitDepth(uint32_t __pixelCoordinatesSize, Windows::Foundation::Point* pixelCoordinates, uint32_t __resultsSize, Windows::Foundation::Numerics::float2* results) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UndistortedProjectionTransform(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
-    virtual HRESULT __stdcall DistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept = 0;
-    virtual HRESULT __stdcall DistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
-    virtual HRESULT __stdcall UndistortPoint(Windows::Foundation::Point input, Windows::Foundation::Point* result) noexcept = 0;
-    virtual HRESULT __stdcall UndistortPoints(uint32_t __inputsSize, Windows::Foundation::Point* inputs, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::ICameraIntrinsicsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Foundation::Numerics::float2 focalLength, Windows::Foundation::Numerics::float2 principalPoint, Windows::Foundation::Numerics::float3 radialDistortion, Windows::Foundation::Numerics::float2 tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall UnprojectPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, Windows::Foundation::Numerics::float3* result) noexcept = 0;
-    virtual HRESULT __stdcall UnprojectPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, uint32_t __resultsSize, Windows::Foundation::Numerics::float3* results) noexcept = 0;
-    virtual HRESULT __stdcall MapPoint(Windows::Foundation::Point sourcePoint, void* targetCoordinateSystem, void* targetCameraIntrinsics, Windows::Foundation::Point* result) noexcept = 0;
-    virtual HRESULT __stdcall MapPoints(uint32_t __sourcePointsSize, Windows::Foundation::Point* sourcePoints, void* targetCoordinateSystem, void* targetCameraIntrinsics, uint32_t __resultsSize, Windows::Foundation::Point* results) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameControlCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Exposure(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExposureCompensation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsoSpeed(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Focus(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhotoConfirmationSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameControlCapabilities2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Flash(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExposureControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExposureCompensationControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsoSpeedControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusControl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhotoConfirmationEnabled(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_PhotoConfirmationEnabled(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameController2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FlashControl(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Min(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Max(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Step(Windows::Foundation::TimeSpan* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Min(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Max(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Step(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameExposureCompensationControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameExposureControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Auto(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Auto(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameFlashCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RedEyeReductionSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PowerSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameFlashControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mode(Windows::Media::Devices::Core::FrameFlashMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mode(Windows::Media::Devices::Core::FrameFlashMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_Auto(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Auto(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_RedEyeReduction(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RedEyeReduction(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_PowerPercent(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PowerPercent(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameFocusCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Min(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Max(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Step(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameFocusControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Min(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Max(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Step(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IFrameIsoSpeedControl>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Auto(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Auto(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Devices::Core::IVariablePhotoSequenceController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Supported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxPhotosPerSecond(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhotosPerSecondLimit(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PhotosPerSecondLimit(float value) noexcept = 0;
-    virtual HRESULT __stdcall GetHighestConcurrentFrameRate(void* captureProperties, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentFrameRate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrameCapabilities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredFrameControllers(void** items) noexcept = 0;
-};};
 
 }

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -20,11 +20,84 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::IsRoamable() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->get_IsRoamable(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::IsRoamable(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->put_IsRoamable(value));
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::IsAllowedInHistory() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->get_IsAllowedInHistory(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::IsAllowedInHistory(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->put_IsAllowedInHistory(value));
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<hstring> consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::RoamingFormats() const
+{
+    Windows::Foundation::Collections::IVector<hstring> value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->get_RoamingFormats(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<hstring> consume_Windows_ApplicationModel_DataTransfer_IClipboardContentOptions<D>::HistoryFormats() const
+{
+    Windows::Foundation::Collections::IVector<hstring> value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardContentOptions)->get_HistoryFormats(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring consume_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItem<D>::Id() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::DateTime consume_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItem<D>::Timestamp() const
+{
+    Windows::Foundation::DateTime value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem)->get_Timestamp(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView consume_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItem<D>::Content() const
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem)->get_Content(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus consume_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItemsResult<D>::Status() const
+{
+    Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult)->get_Status(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem> consume_Windows_ApplicationModel_DataTransfer_IClipboardHistoryItemsResult<D>::Items() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem> value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult)->get_Items(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::GetContent() const
 {
-    Windows::ApplicationModel::DataTransfer::DataPackageView content{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->GetContent(put_abi(content)));
-    return content;
+    Windows::ApplicationModel::DataTransfer::DataPackageView result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->GetContent(put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::SetContent(Windows::ApplicationModel::DataTransfer::DataPackage const& content) const
@@ -42,21 +115,121 @@ template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipbo
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->Clear());
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->add_ContentChanged(get_abi(changeHandler), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->add_ContentChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics> consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged_revoker consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged, ContentChanged(changeHandler));
+    return impl::make_event_revoker<D, ContentChanged_revoker>(this, ContentChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics<D>::ContentChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->remove_ContentChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics)->remove_ContentChanged(get_abi(token)));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::GetHistoryItemsAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->GetHistoryItemsAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::ClearHistory() const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->ClearHistory(&result));
+    return result;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::DeleteItemFromHistory(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item) const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->DeleteItemFromHistory(get_abi(item), &result));
+    return result;
+}
+
+template <typename D> Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::SetHistoryItemAsContent(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item) const
+{
+    Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->SetHistoryItemAsContent(get_abi(item), put_abi(result)));
+    return result;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::IsHistoryEnabled() const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->IsHistoryEnabled(&result));
+    return result;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::IsRoamingEnabled() const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->IsRoamingEnabled(&result));
+    return result;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::SetContentWithOptions(Windows::ApplicationModel::DataTransfer::DataPackage const& content, Windows::ApplicationModel::DataTransfer::ClipboardContentOptions const& options) const
+{
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->SetContentWithOptions(get_abi(content), get_abi(options), &result));
+    return result;
+}
+
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryChanged(Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->add_HistoryChanged(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryChanged_revoker consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler) const
+{
+    return impl::make_event_revoker<D, HistoryChanged_revoker>(this, HistoryChanged(handler));
+}
+
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryChanged(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->remove_HistoryChanged(get_abi(token)));
+}
+
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::RoamingEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->add_RoamingEnabledChanged(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::RoamingEnabledChanged_revoker consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::RoamingEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, RoamingEnabledChanged_revoker>(this, RoamingEnabledChanged(handler));
+}
+
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::RoamingEnabledChanged(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->remove_RoamingEnabledChanged(get_abi(token)));
+}
+
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->add_HistoryEnabledChanged(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryEnabledChanged_revoker consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, HistoryEnabledChanged_revoker>(this, HistoryEnabledChanged(handler));
+}
+
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IClipboardStatics2<D>::HistoryEnabledChanged(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IClipboardStatics2)->remove_HistoryEnabledChanged(get_abi(token)));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::GetView() const
@@ -85,38 +258,38 @@ template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPa
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->put_RequestedOperation(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const& handler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->add_OperationCompleted(get_abi(handler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataPackage> consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted_revoker consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataPackage>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataPackage>::remove_OperationCompleted, OperationCompleted(handler));
+    return impl::make_event_revoker<D, OperationCompleted_revoker>(this, OperationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(event_token const& eventCookie) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::OperationCompleted(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->remove_OperationCompleted(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->remove_OperationCompleted(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->add_Destroyed(get_abi(handler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataPackage> consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed_revoker consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataPackage>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataPackage>::remove_Destroyed, Destroyed(handler));
+    return impl::make_event_revoker<D, Destroyed_revoker>(this, Destroyed(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(event_token const& eventCookie) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::Destroyed(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->remove_Destroyed(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage)->remove_Destroyed(get_abi(eventCookie)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage<D>::SetData(param::hstring const& formatId, Windows::Foundation::IInspectable const& value) const
@@ -181,21 +354,21 @@ template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPa
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage2)->SetWebLink(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage3)->add_ShareCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataPackage3> consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted_revoker consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataPackage3>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataPackage3>::remove_ShareCompleted, ShareCompleted(handler));
+    return impl::make_event_revoker<D, ShareCompleted_revoker>(this, ShareCompleted(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataPackage3<D>::ShareCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage3)->remove_ShareCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackage3)->remove_ShareCompleted(get_abi(token)));
 }
 
 template <typename D> hstring consume_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySet<D>::Title() const
@@ -440,6 +613,13 @@ template <typename D> hstring consume_Windows_ApplicationModel_DataTransfer_IDat
     return value;
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_DataTransfer_IDataPackagePropertySetView5<D>::IsFromRoamingClipboard() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5)->get_IsFromRoamingClipboard(&value));
+    return value;
+}
+
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView consume_Windows_ApplicationModel_DataTransfer_IDataPackageView<D>::Properties() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView value{ nullptr };
@@ -650,55 +830,55 @@ template <typename D> Windows::ApplicationModel::DataTransfer::DataRequest consu
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->add_DataRequested(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataTransferManager> consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested_revoker consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataTransferManager>::remove_DataRequested, DataRequested(eventHandler));
+    return impl::make_event_revoker<D, DataRequested_revoker>(this, DataRequested(eventHandler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(event_token const& eventCookie) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::DataRequested(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->remove_DataRequested(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->remove_DataRequested(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->add_TargetApplicationChosen(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataTransferManager> consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen_revoker consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataTransferManager>::remove_TargetApplicationChosen, TargetApplicationChosen(eventHandler));
+    return impl::make_event_revoker<D, TargetApplicationChosen_revoker>(this, TargetApplicationChosen(eventHandler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(event_token const& eventCookie) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager<D>::TargetApplicationChosen(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->remove_TargetApplicationChosen(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager)->remove_TargetApplicationChosen(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager2)->add_ShareProvidersRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::DataTransfer::IDataTransferManager2> consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested_revoker consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager2>(this, &abi_t<Windows::ApplicationModel::DataTransfer::IDataTransferManager2>::remove_ShareProvidersRequested, ShareProvidersRequested(handler));
+    return impl::make_event_revoker<D, ShareProvidersRequested_revoker>(this, ShareProvidersRequested(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManager2<D>::ShareProvidersRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager2)->remove_ShareProvidersRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::DataTransfer::IDataTransferManager2)->remove_ShareProvidersRequested(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_DataTransfer_IDataTransferManagerStatics<D>::ShowShareUI() const
@@ -974,12 +1154,12 @@ template <> struct delegate<Windows::ApplicationModel::DataTransfer::DataProvide
     {
         type(H&& handler) : implements_delegate<Windows::ApplicationModel::DataTransfer::DataProviderHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* request) noexcept final
+        int32_t WINRT_CALL Invoke(void* request) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataProviderRequest const*>(&request));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -996,12 +1176,12 @@ template <> struct delegate<Windows::ApplicationModel::DataTransfer::ShareProvid
     {
         type(H&& handler) : implements_delegate<Windows::ApplicationModel::DataTransfer::ShareProviderHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* operation) noexcept final
+        int32_t WINRT_CALL Invoke(void* operation) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::ShareProviderOperation const*>(&operation));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1012,2259 +1192,2261 @@ template <> struct delegate<Windows::ApplicationModel::DataTransfer::ShareProvid
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardContentOptions> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardContentOptions>
+{
+    int32_t WINRT_CALL get_IsRoamable(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRoamable, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsRoamable());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_IsRoamable(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRoamable, WINRT_WRAP(void), bool);
+            this->shim().IsRoamable(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_IsAllowedInHistory(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAllowedInHistory, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsAllowedInHistory());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_IsAllowedInHistory(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAllowedInHistory, WINRT_WRAP(void), bool);
+            this->shim().IsAllowedInHistory(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_RoamingFormats(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoamingFormats, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
+            *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().RoamingFormats());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_HistoryFormats(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HistoryFormats, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
+            *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().HistoryFormats());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs>
+{};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem>
+{
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().Id());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
+            *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageView));
+            *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().Content());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult>
+{
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus));
+            *value = detach_from<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus>(this->shim().Status());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem>));
+            *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem>>(this->shim().Items());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics>
 {
-    HRESULT __stdcall GetContent(void** content) noexcept final
+    int32_t WINRT_CALL GetContent(void** result) noexcept final
     {
         try
         {
-            *content = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *content = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().GetContent());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetContent, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageView));
+            *result = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().GetContent());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetContent(void* content) noexcept final
+    int32_t WINRT_CALL SetContent(void* content) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetContent, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::DataPackage const&);
             this->shim().SetContent(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataPackage const*>(&content));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Flush() noexcept final
+    int32_t WINRT_CALL Flush() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flush, WINRT_WRAP(void));
             this->shim().Flush();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ContentChanged(void* changeHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ContentChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ContentChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&changeHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ContentChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ContentChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ContentChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ContentChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ContentChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ContentChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>
+{
+    int32_t WINRT_CALL GetHistoryItemsAsync(void** operation) noexcept final
+    {
+        try
+        {
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetHistoryItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult>));
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult>>(this->shim().GetHistoryItemsAsync());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL ClearHistory(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ContentChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ClearHistory, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().ClearHistory());
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL DeleteItemFromHistory(void* item, bool* result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteItemFromHistory, WINRT_WRAP(bool), Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const&);
+            *result = detach_from<bool>(this->shim().DeleteItemFromHistory(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const*>(&item)));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL SetHistoryItemAsContent(void* item, Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus* result) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetHistoryItemAsContent, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus), Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const&);
+            *result = detach_from<Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus>(this->shim().SetHistoryItemAsContent(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const*>(&item)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL IsHistoryEnabled(bool* result) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHistoryEnabled, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().IsHistoryEnabled());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL IsRoamingEnabled(bool* result) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRoamingEnabled, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().IsRoamingEnabled());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL SetContentWithOptions(void* content, void* options, bool* result) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetContentWithOptions, WINRT_WRAP(bool), Windows::ApplicationModel::DataTransfer::DataPackage const&, Windows::ApplicationModel::DataTransfer::ClipboardContentOptions const&);
+            *result = detach_from<bool>(this->shim().SetContentWithOptions(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataPackage const*>(&content), *reinterpret_cast<Windows::ApplicationModel::DataTransfer::ClipboardContentOptions const*>(&options)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL add_HistoryChanged(void* handler, winrt::event_token* token) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HistoryChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().HistoryChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_HistoryChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HistoryChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HistoryChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_RoamingEnabledChanged(void* handler, winrt::event_token* token) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoamingEnabledChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RoamingEnabledChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_RoamingEnabledChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RoamingEnabledChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RoamingEnabledChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_HistoryEnabledChanged(void* handler, winrt::event_token* token) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HistoryEnabledChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().HistoryEnabledChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_HistoryEnabledChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HistoryEnabledChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HistoryEnabledChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackage>
 {
-    HRESULT __stdcall GetView(void** value) noexcept final
+    int32_t WINRT_CALL GetView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetView, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageView));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().GetView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackagePropertySet));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackagePropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
+    int32_t WINRT_CALL get_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedOperation, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageOperation));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageOperation>(this->shim().RequestedOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept final
+    int32_t WINRT_CALL put_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedOperation, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::DataPackageOperation const&);
             this->shim().RequestedOperation(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataPackageOperation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_OperationCompleted(void* handler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_OperationCompleted(void* handler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().OperationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(OperationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().OperationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_OperationCompleted(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_OperationCompleted(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(OperationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().OperationCompleted(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Destroyed(void* handler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OperationCompleted(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Destroyed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().Destroyed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Destroyed(void* handler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL remove_Destroyed(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Destroyed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Destroyed(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL SetData(void* formatId, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().Destroyed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Destroyed(event_token eventCookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Destroyed(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall SetData(HSTRING formatId, void* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetData, WINRT_WRAP(void), hstring const&, Windows::Foundation::IInspectable const&);
             this->shim().SetData(*reinterpret_cast<hstring const*>(&formatId), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDataProvider(HSTRING formatId, void* delayRenderer) noexcept final
+    int32_t WINRT_CALL SetDataProvider(void* formatId, void* delayRenderer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDataProvider, WINRT_WRAP(void), hstring const&, Windows::ApplicationModel::DataTransfer::DataProviderHandler const&);
             this->shim().SetDataProvider(*reinterpret_cast<hstring const*>(&formatId), *reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataProviderHandler const*>(&delayRenderer));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetText(HSTRING value) noexcept final
+    int32_t WINRT_CALL SetText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetText, WINRT_WRAP(void), hstring const&);
             this->shim().SetText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetUri(void* value) noexcept final
+    int32_t WINRT_CALL SetUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SetUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetHtmlFormat(HSTRING value) noexcept final
+    int32_t WINRT_CALL SetHtmlFormat(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetHtmlFormat, WINRT_WRAP(void), hstring const&);
             this->shim().SetHtmlFormat(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResourceMap(void** value) noexcept final
+    int32_t WINRT_CALL get_ResourceMap(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResourceMap, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().ResourceMap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRtf(HSTRING value) noexcept final
+    int32_t WINRT_CALL SetRtf(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRtf, WINRT_WRAP(void), hstring const&);
             this->shim().SetRtf(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBitmap(void* value) noexcept final
+    int32_t WINRT_CALL SetBitmap(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBitmap, WINRT_WRAP(void), Windows::Storage::Streams::RandomAccessStreamReference const&);
             this->shim().SetBitmap(*reinterpret_cast<Windows::Storage::Streams::RandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetStorageItemsReadOnly(void* value) noexcept final
+    int32_t WINRT_CALL SetStorageItemsReadOnly(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStorageItems, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const&);
             this->shim().SetStorageItems(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetStorageItems(void* value, bool readOnly) noexcept final
+    int32_t WINRT_CALL SetStorageItems(void* value, bool readOnly) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStorageItems, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const&, bool);
             this->shim().SetStorageItems(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> const*>(&value), readOnly);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackage2>
 {
-    HRESULT __stdcall SetApplicationLink(void* value) noexcept final
+    int32_t WINRT_CALL SetApplicationLink(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetApplicationLink, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SetApplicationLink(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetWebLink(void* value) noexcept final
+    int32_t WINRT_CALL SetWebLink(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetWebLink, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SetWebLink(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackage3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackage3>
 {
-    HRESULT __stdcall add_ShareCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ShareCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ShareCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ShareCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ShareCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ShareCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ShareCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ShareCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ShareCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ShareCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Thumbnail(void* value) noexcept final
+    int32_t WINRT_CALL put_Thumbnail(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().Thumbnail(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileTypes(void** value) noexcept final
+    int32_t WINRT_CALL get_FileTypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileTypes, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().FileTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ApplicationName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ApplicationName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ApplicationName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ApplicationName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationName, WINRT_WRAP(void), hstring const&);
             this->shim().ApplicationName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationListingUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ApplicationListingUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationListingUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ApplicationListingUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ApplicationListingUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ApplicationListingUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationListingUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ApplicationListingUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet2>
 {
-    HRESULT __stdcall get_ContentSourceWebLink(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceWebLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceWebLink, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ContentSourceWebLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentSourceWebLink(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentSourceWebLink(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceWebLink, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ContentSourceWebLink(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentSourceApplicationLink(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceApplicationLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceApplicationLink, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ContentSourceApplicationLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentSourceApplicationLink(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentSourceApplicationLink(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceApplicationLink, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ContentSourceApplicationLink(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PackageFamilyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PackageFamilyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(void), hstring const&);
             this->shim().PackageFamilyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square30x30Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square30x30Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square30x30Logo, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Square30x30Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Square30x30Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square30x30Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square30x30Logo, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().Square30x30Logo(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogoBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LogoBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoBackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LogoBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LogoBackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_LogoBackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoBackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().LogoBackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet3>
 {
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EnterpriseId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EnterpriseId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(void), hstring const&);
             this->shim().EnterpriseId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet4> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet4>
 {
-    HRESULT __stdcall get_ContentSourceUserActivityJson(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceUserActivityJson(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceUserActivityJson, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentSourceUserActivityJson());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentSourceUserActivityJson(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContentSourceUserActivityJson(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceUserActivityJson, WINRT_WRAP(void), hstring const&);
             this->shim().ContentSourceUserActivityJson(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileTypes(void** value) noexcept final
+    int32_t WINRT_CALL get_FileTypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileTypes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().FileTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ApplicationName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ApplicationName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationListingUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ApplicationListingUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationListingUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ApplicationListingUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2>
 {
-    HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentSourceWebLink(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceWebLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceWebLink, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ContentSourceWebLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentSourceApplicationLink(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceApplicationLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceApplicationLink, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ContentSourceApplicationLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square30x30Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square30x30Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square30x30Logo, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Square30x30Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogoBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LogoBackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoBackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LogoBackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3>
 {
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4>
 {
-    HRESULT __stdcall get_ContentSourceUserActivityJson(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentSourceUserActivityJson(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentSourceUserActivityJson, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentSourceUserActivityJson());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5>
+{
+    int32_t WINRT_CALL get_IsFromRoamingClipboard(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFromRoamingClipboard, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsFromRoamingClipboard());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackageView>
 {
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
+    int32_t WINRT_CALL get_RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedOperation, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageOperation));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageOperation>(this->shim().RequestedOperation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept final
+    int32_t WINRT_CALL ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportOperationCompleted, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::DataPackageOperation const&);
             this->shim().ReportOperationCompleted(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataPackageOperation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AvailableFormats(void** formatIds) noexcept final
+    int32_t WINRT_CALL get_AvailableFormats(void** formatIds) noexcept final
     {
         try
         {
             *formatIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AvailableFormats, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *formatIds = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().AvailableFormats());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Contains(HSTRING formatId, bool* value) noexcept final
+    int32_t WINRT_CALL Contains(void* formatId, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contains, WINRT_WRAP(bool), hstring const&);
             *value = detach_from<bool>(this->shim().Contains(*reinterpret_cast<hstring const*>(&formatId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDataAsync(HSTRING formatId, void** operation) noexcept final
+    int32_t WINRT_CALL GetDataAsync(void* formatId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable>>(this->shim().GetDataAsync(*reinterpret_cast<hstring const*>(&formatId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTextAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetTextAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTextAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetTextAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCustomTextAsync(HSTRING formatId, void** operation) noexcept final
+    int32_t WINRT_CALL GetCustomTextAsync(void* formatId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTextAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetTextAsync(*reinterpret_cast<hstring const*>(&formatId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetUriAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetUriAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetUriAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>>(this->shim().GetUriAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetHtmlFormatAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetHtmlFormatAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetHtmlFormatAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetHtmlFormatAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetResourceMapAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetResourceMapAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetResourceMapAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>>>(this->shim().GetResourceMapAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRtfAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetRtfAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRtfAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetRtfAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBitmapAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetBitmapAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBitmapAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().GetBitmapAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStorageItemsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetStorageItemsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStorageItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>>>(this->shim().GetStorageItemsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackageView2>
 {
-    HRESULT __stdcall GetApplicationLinkAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetApplicationLinkAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetApplicationLinkAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>>(this->shim().GetApplicationLinkAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWebLinkAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetWebLinkAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWebLinkAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>>(this->shim().GetWebLinkAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackageView3>
 {
-    HRESULT __stdcall RequestAccessAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessWithEnterpriseIdAsync(void* enterpriseId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult>>(this->shim().RequestAccessAsync(*reinterpret_cast<hstring const*>(&enterpriseId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnlockAndAssumeEnterpriseIdentity(Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult* result) noexcept final
+    int32_t WINRT_CALL UnlockAndAssumeEnterpriseIdentity(Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnlockAndAssumeEnterpriseIdentity, WINRT_WRAP(Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult));
             *result = detach_from<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult>(this->shim().UnlockAndAssumeEnterpriseIdentity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataPackageView4> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataPackageView4>
 {
-    HRESULT __stdcall SetAcceptedFormatId(HSTRING formatId) noexcept final
+    int32_t WINRT_CALL SetAcceptedFormatId(void* formatId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAcceptedFormatId, WINRT_WRAP(void), hstring const&);
             this->shim().SetAcceptedFormatId(*reinterpret_cast<hstring const*>(&formatId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderDeferral> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataProviderDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
 {
-    HRESULT __stdcall get_FormatId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FormatId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormatId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FormatId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Deadline, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Deadline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataProviderDeferral));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataProviderDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetData(void* value) noexcept final
+    int32_t WINRT_CALL SetData(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetData, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().SetData(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequest> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataRequest>
 {
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackage));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackage>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Data(void* value) noexcept final
+    int32_t WINRT_CALL put_Data(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::DataPackage const&);
             this->shim().Data(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::DataPackage const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Deadline, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Deadline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FailWithDisplayText(HSTRING value) noexcept final
+    int32_t WINRT_CALL FailWithDisplayText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailWithDisplayText, WINRT_WRAP(void), hstring const&);
             this->shim().FailWithDisplayText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataRequestDeferral));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataRequestDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequestDeferral> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataRequestDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataRequest));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager>
 {
-    HRESULT __stdcall add_DataRequested(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_DataRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().DataRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DataRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().DataRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_DataRequested(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_DataRequested(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().DataRequested(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(DataRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().DataRequested(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 
-    HRESULT __stdcall add_TargetApplicationChosen(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_TargetApplicationChosen(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().TargetApplicationChosen(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TargetApplicationChosen, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().TargetApplicationChosen(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_TargetApplicationChosen(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_TargetApplicationChosen(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().TargetApplicationChosen(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(TargetApplicationChosen, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().TargetApplicationChosen(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataTransferManager2>
 {
-    HRESULT __stdcall add_ShareProvidersRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ShareProvidersRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ShareProvidersRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ShareProvidersRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ShareProvidersRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ShareProvidersRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ShareProvidersRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ShareProvidersRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ShareProvidersRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ShareProvidersRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>
 {
-    HRESULT __stdcall ShowShareUI() noexcept final
+    int32_t WINRT_CALL ShowShareUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowShareUI, WINRT_WRAP(void));
             this->shim().ShowShareUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForCurrentView(void** value) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataTransferManager));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataTransferManager>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2>
 {
-    HRESULT __stdcall IsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics3>
 {
-    HRESULT __stdcall ShowShareUIWithOptions(void* options) noexcept final
+    int32_t WINRT_CALL ShowShareUIWithOptions(void* options) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowShareUI, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::ShareUIOptions const&);
             this->shim().ShowShareUI(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::ShareUIOptions const*>(&options));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics> : produce_base<D, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>
 {
-    HRESULT __stdcall GetStaticFragment(HSTRING htmlFormat, HSTRING* htmlFragment) noexcept final
+    int32_t WINRT_CALL GetStaticFragment(void* htmlFormat, void** htmlFragment) noexcept final
     {
         try
         {
             *htmlFragment = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStaticFragment, WINRT_WRAP(hstring), hstring const&);
             *htmlFragment = detach_from<hstring>(this->shim().GetStaticFragment(*reinterpret_cast<hstring const*>(&htmlFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateHtmlFormat(HSTRING htmlFragment, HSTRING* htmlFormat) noexcept final
+    int32_t WINRT_CALL CreateHtmlFormat(void* htmlFragment, void** htmlFormat) noexcept final
     {
         try
         {
             *htmlFormat = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHtmlFormat, WINRT_WRAP(hstring), hstring const&);
             *htmlFormat = detach_from<hstring>(this->shim().CreateHtmlFormat(*reinterpret_cast<hstring const*>(&htmlFragment)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs>
 {
-    HRESULT __stdcall get_Operation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
+    int32_t WINRT_CALL get_Operation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Operation, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageOperation));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageOperation>(this->shim().Operation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs2>
 {
-    HRESULT __stdcall get_AcceptedFormatId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AcceptedFormatId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptedFormatId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AcceptedFormatId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs>
 {
-    HRESULT __stdcall get_ShareTarget(void** value) noexcept final
+    int32_t WINRT_CALL get_ShareTarget(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShareTarget, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareTargetInfo));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::ShareTargetInfo>(this->shim().ShareTarget());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareProvider> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareProvider>
 {
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayIcon(void** value) noexcept final
+    int32_t WINRT_CALL get_DisplayIcon(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayIcon, WINRT_WRAP(Windows::Storage::Streams::RandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::RandomAccessStreamReference>(this->shim().DisplayIcon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tag(void** value) noexcept final
+    int32_t WINRT_CALL get_Tag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tag, WINRT_WRAP(Windows::Foundation::IInspectable));
             *value = detach_from<Windows::Foundation::IInspectable>(this->shim().Tag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Tag(void* value) noexcept final
+    int32_t WINRT_CALL put_Tag(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tag, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().Tag(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareProviderFactory> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareProviderFactory>
 {
-    HRESULT __stdcall Create(HSTRING title, void* displayIcon, struct struct_Windows_UI_Color backgroundColor, void* handler, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* title, void* displayIcon, struct struct_Windows_UI_Color backgroundColor, void* handler, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareProvider), hstring const&, Windows::Storage::Streams::RandomAccessStreamReference const&, Windows::UI::Color const&, Windows::ApplicationModel::DataTransfer::ShareProviderHandler const&);
             *result = detach_from<Windows::ApplicationModel::DataTransfer::ShareProvider>(this->shim().Create(*reinterpret_cast<hstring const*>(&title), *reinterpret_cast<Windows::Storage::Streams::RandomAccessStreamReference const*>(&displayIcon), *reinterpret_cast<Windows::UI::Color const*>(&backgroundColor), *reinterpret_cast<Windows::ApplicationModel::DataTransfer::ShareProviderHandler const*>(&handler)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareProviderOperation> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareProviderOperation>
 {
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageView));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Provider(void** value) noexcept final
+    int32_t WINRT_CALL get_Provider(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Provider, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareProvider));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::ShareProvider>(this->shim().Provider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCompleted() noexcept final
+    int32_t WINRT_CALL ReportCompleted() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCompleted, WINRT_WRAP(void));
             this->shim().ReportCompleted();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs>
 {
-    HRESULT __stdcall get_Providers(void** value) noexcept final
+    int32_t WINRT_CALL get_Providers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Providers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::DataTransfer::ShareProvider>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::DataTransfer::ShareProvider>>(this->shim().Providers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::DataPackageView));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::DataPackageView>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareTargetInfo> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareTargetInfo>
 {
-    HRESULT __stdcall get_AppUserModelId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppUserModelId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppUserModelId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppUserModelId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShareProvider(void** value) noexcept final
+    int32_t WINRT_CALL get_ShareProvider(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShareProvider, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareProvider));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::ShareProvider>(this->shim().ShareProvider());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IShareUIOptions> : produce_base<D, Windows::ApplicationModel::DataTransfer::IShareUIOptions>
 {
-    HRESULT __stdcall get_Theme(Windows::ApplicationModel::DataTransfer::ShareUITheme* value) noexcept final
+    int32_t WINRT_CALL get_Theme(Windows::ApplicationModel::DataTransfer::ShareUITheme* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Theme, WINRT_WRAP(Windows::ApplicationModel::DataTransfer::ShareUITheme));
             *value = detach_from<Windows::ApplicationModel::DataTransfer::ShareUITheme>(this->shim().Theme());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Theme(Windows::ApplicationModel::DataTransfer::ShareUITheme value) noexcept final
+    int32_t WINRT_CALL put_Theme(Windows::ApplicationModel::DataTransfer::ShareUITheme value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Theme, WINRT_WRAP(void), Windows::ApplicationModel::DataTransfer::ShareUITheme const&);
             this->shim().Theme(*reinterpret_cast<Windows::ApplicationModel::DataTransfer::ShareUITheme const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectionRect(void** value) noexcept final
+    int32_t WINRT_CALL get_SelectionRect(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectionRect, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Rect>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Rect>>(this->shim().SelectionRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectionRect(void* value) noexcept final
+    int32_t WINRT_CALL put_SelectionRect(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectionRect, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::Rect> const&);
             this->shim().SelectionRect(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::Rect> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics> : produce_base<D, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>
 {
-    HRESULT __stdcall AddFile(void* file, HSTRING* outToken) noexcept final
+    int32_t WINRT_CALL AddFile(void* file, void** outToken) noexcept final
     {
         try
         {
             *outToken = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddFile, WINRT_WRAP(hstring), Windows::Storage::IStorageFile const&);
             *outToken = detach_from<hstring>(this->shim().AddFile(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RedeemTokenForFileAsync(HSTRING token, void** operation) noexcept final
+    int32_t WINRT_CALL RedeemTokenForFileAsync(void* token, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RedeemTokenForFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().RedeemTokenForFileAsync(*reinterpret_cast<hstring const*>(&token)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveFile(HSTRING token) noexcept final
+    int32_t WINRT_CALL RemoveFile(void* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveFile, WINRT_WRAP(void), hstring const&);
             this->shim().RemoveFile(*reinterpret_cast<hstring const*>(&token));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics> : produce_base<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>
 {
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Html(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Html(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Html, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Html());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rtf(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rtf(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rtf, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rtf());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bitmap(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Bitmap(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bitmap, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Bitmap());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StorageItems(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StorageItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageItems, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StorageItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2> : produce_base<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>
 {
-    HRESULT __stdcall get_WebLink(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WebLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WebLink, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WebLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ApplicationLink(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ApplicationLink(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationLink, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ApplicationLink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3> : produce_base<D, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3>
 {
-    HRESULT __stdcall get_UserActivityJsonArray(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserActivityJsonArray(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserActivityJsonArray, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserActivityJsonArray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs> : produce_base<D, Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs>
 {
-    HRESULT __stdcall get_ApplicationName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ApplicationName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplicationName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ApplicationName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3274,140 +3456,227 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::DataTransfer {
 
 inline Windows::ApplicationModel::DataTransfer::DataPackageView Clipboard::GetContent()
 {
-    return get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().GetContent();
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.GetContent(); });
 }
 
 inline void Clipboard::SetContent(Windows::ApplicationModel::DataTransfer::DataPackage const& content)
 {
-    get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().SetContent(content);
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.SetContent(content); });
 }
 
 inline void Clipboard::Flush()
 {
-    get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().Flush();
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.Flush(); });
 }
 
 inline void Clipboard::Clear()
 {
-    get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().Clear();
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.Clear(); });
 }
 
-inline event_token Clipboard::ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
+inline winrt::event_token Clipboard::ContentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().ContentChanged(changeHandler);
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.ContentChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::ApplicationModel::DataTransfer::IClipboardStatics> Clipboard::ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
+inline Clipboard::ContentChanged_revoker Clipboard::ContentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>();
-    return { factory, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged, factory.ContentChanged(changeHandler) };
+    auto f = get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>();
+    return { f, f.ContentChanged(handler) };
 }
 
-inline void Clipboard::ContentChanged(event_token const& token)
+inline void Clipboard::ContentChanged(winrt::event_token const& token)
 {
-    get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>().ContentChanged(token);
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics>([&](auto&& f) { return f.ContentChanged(token); });
 }
+
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> Clipboard::GetHistoryItemsAsync()
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.GetHistoryItemsAsync(); });
+}
+
+inline bool Clipboard::ClearHistory()
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.ClearHistory(); });
+}
+
+inline bool Clipboard::DeleteItemFromHistory(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.DeleteItemFromHistory(item); });
+}
+
+inline Windows::ApplicationModel::DataTransfer::SetHistoryItemAsContentStatus Clipboard::SetHistoryItemAsContent(Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem const& item)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.SetHistoryItemAsContent(item); });
+}
+
+inline bool Clipboard::IsHistoryEnabled()
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.IsHistoryEnabled(); });
+}
+
+inline bool Clipboard::IsRoamingEnabled()
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.IsRoamingEnabled(); });
+}
+
+inline bool Clipboard::SetContentWithOptions(Windows::ApplicationModel::DataTransfer::DataPackage const& content, Windows::ApplicationModel::DataTransfer::ClipboardContentOptions const& options)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.SetContentWithOptions(content, options); });
+}
+
+inline winrt::event_token Clipboard::HistoryChanged(Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.HistoryChanged(handler); });
+}
+
+inline Clipboard::HistoryChanged_revoker Clipboard::HistoryChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> const& handler)
+{
+    auto f = get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>();
+    return { f, f.HistoryChanged(handler) };
+}
+
+inline void Clipboard::HistoryChanged(winrt::event_token const& token)
+{
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.HistoryChanged(token); });
+}
+
+inline winrt::event_token Clipboard::RoamingEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.RoamingEnabledChanged(handler); });
+}
+
+inline Clipboard::RoamingEnabledChanged_revoker Clipboard::RoamingEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    auto f = get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>();
+    return { f, f.RoamingEnabledChanged(handler) };
+}
+
+inline void Clipboard::RoamingEnabledChanged(winrt::event_token const& token)
+{
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.RoamingEnabledChanged(token); });
+}
+
+inline winrt::event_token Clipboard::HistoryEnabledChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    return impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.HistoryEnabledChanged(handler); });
+}
+
+inline Clipboard::HistoryEnabledChanged_revoker Clipboard::HistoryEnabledChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    auto f = get_activation_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>();
+    return { f, f.HistoryEnabledChanged(handler) };
+}
+
+inline void Clipboard::HistoryEnabledChanged(winrt::event_token const& token)
+{
+    impl::call_factory<Clipboard, Windows::ApplicationModel::DataTransfer::IClipboardStatics2>([&](auto&& f) { return f.HistoryEnabledChanged(token); });
+}
+
+inline ClipboardContentOptions::ClipboardContentOptions() :
+    ClipboardContentOptions(impl::call_factory<ClipboardContentOptions>([](auto&& f) { return f.template ActivateInstance<ClipboardContentOptions>(); }))
+{}
 
 inline DataPackage::DataPackage() :
-    DataPackage(get_activation_factory<DataPackage>().ActivateInstance<DataPackage>())
+    DataPackage(impl::call_factory<DataPackage>([](auto&& f) { return f.template ActivateInstance<DataPackage>(); }))
 {}
 
 inline void DataTransferManager::ShowShareUI()
 {
-    get_activation_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>().ShowShareUI();
+    impl::call_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>([&](auto&& f) { return f.ShowShareUI(); });
 }
 
 inline Windows::ApplicationModel::DataTransfer::DataTransferManager DataTransferManager::GetForCurrentView()
 {
-    return get_activation_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>().GetForCurrentView();
+    return impl::call_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline bool DataTransferManager::IsSupported()
 {
-    return get_activation_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2>().IsSupported();
+    return impl::call_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2>([&](auto&& f) { return f.IsSupported(); });
 }
 
 inline void DataTransferManager::ShowShareUI(Windows::ApplicationModel::DataTransfer::ShareUIOptions const& options)
 {
-    get_activation_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics3>().ShowShareUI(options);
+    impl::call_factory<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics3>([&](auto&& f) { return f.ShowShareUI(options); });
 }
 
 inline hstring HtmlFormatHelper::GetStaticFragment(param::hstring const& htmlFormat)
 {
-    return get_activation_factory<HtmlFormatHelper, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>().GetStaticFragment(htmlFormat);
+    return impl::call_factory<HtmlFormatHelper, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>([&](auto&& f) { return f.GetStaticFragment(htmlFormat); });
 }
 
 inline hstring HtmlFormatHelper::CreateHtmlFormat(param::hstring const& htmlFragment)
 {
-    return get_activation_factory<HtmlFormatHelper, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>().CreateHtmlFormat(htmlFragment);
+    return impl::call_factory<HtmlFormatHelper, Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>([&](auto&& f) { return f.CreateHtmlFormat(htmlFragment); });
 }
 
 inline ShareProvider::ShareProvider(param::hstring const& title, Windows::Storage::Streams::RandomAccessStreamReference const& displayIcon, Windows::UI::Color const& backgroundColor, Windows::ApplicationModel::DataTransfer::ShareProviderHandler const& handler) :
-    ShareProvider(get_activation_factory<ShareProvider, Windows::ApplicationModel::DataTransfer::IShareProviderFactory>().Create(title, displayIcon, backgroundColor, handler))
+    ShareProvider(impl::call_factory<ShareProvider, Windows::ApplicationModel::DataTransfer::IShareProviderFactory>([&](auto&& f) { return f.Create(title, displayIcon, backgroundColor, handler); }))
 {}
 
 inline ShareUIOptions::ShareUIOptions() :
-    ShareUIOptions(get_activation_factory<ShareUIOptions>().ActivateInstance<ShareUIOptions>())
+    ShareUIOptions(impl::call_factory<ShareUIOptions>([](auto&& f) { return f.template ActivateInstance<ShareUIOptions>(); }))
 {}
 
 inline hstring SharedStorageAccessManager::AddFile(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>().AddFile(file);
+    return impl::call_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>([&](auto&& f) { return f.AddFile(file); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SharedStorageAccessManager::RedeemTokenForFileAsync(param::hstring const& token)
 {
-    return get_activation_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>().RedeemTokenForFileAsync(token);
+    return impl::call_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>([&](auto&& f) { return f.RedeemTokenForFileAsync(token); });
 }
 
 inline void SharedStorageAccessManager::RemoveFile(param::hstring const& token)
 {
-    get_activation_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>().RemoveFile(token);
+    impl::call_factory<SharedStorageAccessManager, Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>([&](auto&& f) { return f.RemoveFile(token); });
 }
 
 inline hstring StandardDataFormats::Text()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().Text();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.Text(); });
 }
 
 inline hstring StandardDataFormats::Uri()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().Uri();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.Uri(); });
 }
 
 inline hstring StandardDataFormats::Html()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().Html();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.Html(); });
 }
 
 inline hstring StandardDataFormats::Rtf()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().Rtf();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.Rtf(); });
 }
 
 inline hstring StandardDataFormats::Bitmap()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().Bitmap();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.Bitmap(); });
 }
 
 inline hstring StandardDataFormats::StorageItems()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>().StorageItems();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>([&](auto&& f) { return f.StorageItems(); });
 }
 
 inline hstring StandardDataFormats::WebLink()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>().WebLink();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>([&](auto&& f) { return f.WebLink(); });
 }
 
 inline hstring StandardDataFormats::ApplicationLink()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>().ApplicationLink();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>([&](auto&& f) { return f.ApplicationLink(); });
 }
 
 inline hstring StandardDataFormats::UserActivityJsonArray()
 {
-    return get_activation_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3>().UserActivityJsonArray();
+    return impl::call_factory<StandardDataFormats, Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3>([&](auto&& f) { return f.UserActivityJsonArray(); });
 }
 
 template <typename L> DataProviderHandler::DataProviderHandler(L handler) :
@@ -3415,11 +3684,19 @@ template <typename L> DataProviderHandler::DataProviderHandler(L handler) :
 {}
 
 template <typename F> DataProviderHandler::DataProviderHandler(F* handler) :
-    DataProviderHandler([=](auto&&... args) { handler(args...); })
+    DataProviderHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> DataProviderHandler::DataProviderHandler(O* object, M method) :
-    DataProviderHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    DataProviderHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> DataProviderHandler::DataProviderHandler(com_ptr<O>&& object, M method) :
+    DataProviderHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> DataProviderHandler::DataProviderHandler(weak_ref<O>&& object, M method) :
+    DataProviderHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void DataProviderHandler::operator()(Windows::ApplicationModel::DataTransfer::DataProviderRequest const& request) const
@@ -3432,11 +3709,19 @@ template <typename L> ShareProviderHandler::ShareProviderHandler(L handler) :
 {}
 
 template <typename F> ShareProviderHandler::ShareProviderHandler(F* handler) :
-    ShareProviderHandler([=](auto&&... args) { handler(args...); })
+    ShareProviderHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> ShareProviderHandler::ShareProviderHandler(O* object, M method) :
-    ShareProviderHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    ShareProviderHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> ShareProviderHandler::ShareProviderHandler(com_ptr<O>&& object, M method) :
+    ShareProviderHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> ShareProviderHandler::ShareProviderHandler(weak_ref<O>&& object, M method) :
+    ShareProviderHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void ShareProviderHandler::operator()(Windows::ApplicationModel::DataTransfer::ShareProviderOperation const& operation) const
@@ -3448,7 +3733,12 @@ inline void ShareProviderHandler::operator()(Windows::ApplicationModel::DataTran
 
 WINRT_EXPORT namespace std {
 
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardContentOptions> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardContentOptions> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryChangedEventArgs> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItem> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardHistoryItemsResult> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage3> {};
@@ -3460,6 +3750,7 @@ template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPack
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView4> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView5> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView3> {};
@@ -3490,6 +3781,10 @@ template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IStandard
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::Clipboard> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::Clipboard> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::ClipboardContentOptions> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::ClipboardContentOptions> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem> {};
+template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackage> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::DataPackage> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet> {};
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView> {};
@@ -3513,5 +3808,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::StandardD
 template<> struct hash<winrt::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

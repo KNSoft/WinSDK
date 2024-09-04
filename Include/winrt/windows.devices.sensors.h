@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.devices.sensors.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -957,6 +969,62 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2 ABI::Windows::Devices::Sensors::IGyrometerStatics2
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IHingeAngleReading;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading ABI::Windows::Devices::Sensors::IHingeAngleReading
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IHingeAngleSensor;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor ABI::Windows::Devices::Sensors::IHingeAngleSensor
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IHingeAngleSensorReadingChangedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs ABI::Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IHingeAngleSensorStatics;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics ABI::Windows::Devices::Sensors::IHingeAngleSensorStatics
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIInclinometer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIInclinometer_FWD_DEFINED__
@@ -1839,6 +1907,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics ABI::Windows::Devices::Sensors::ISimpleOrientationSensorStatics
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface ISimpleOrientationSensorStatics2;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 ABI::Windows::Devices::Sensors::ISimpleOrientationSensorStatics2
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -2962,6 +3044,152 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
+                class HingeAngleReading;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("e0b8b19e-9472-5ffd-9bde-eee64def7c4f"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::HingeAngleReading*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleReading*, ABI::Windows::Devices::Sensors::IHingeAngleReading*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Sensors.HingeAngleReading>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::HingeAngleReading*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::IHingeAngleReading*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::IHingeAngleReading*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("70c4c5a0-bcca-5227-96f0-17fa53539be8"))
+IAsyncOperation<ABI::Windows::Devices::Sensors::HingeAngleReading*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleReading*, ABI::Windows::Devices::Sensors::IHingeAngleReading*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Sensors.HingeAngleReading>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Devices::Sensors::HingeAngleReading*> __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t;
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::IHingeAngleReading*>
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::IHingeAngleReading*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                class HingeAngleSensor;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("ac3218c1-3ab8-5c26-936c-00be405ac68b"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::HingeAngleSensor*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleSensor*, ABI::Windows::Devices::Sensors::IHingeAngleSensor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Sensors.HingeAngleSensor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::HingeAngleSensor*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::IHingeAngleSensor*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::IHingeAngleSensor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4f998177-4080-56d8-a96f-9d5b55944e55"))
+IAsyncOperation<ABI::Windows::Devices::Sensors::HingeAngleSensor*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleSensor*, ABI::Windows::Devices::Sensors::IHingeAngleSensor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Sensors.HingeAngleSensor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Devices::Sensors::HingeAngleSensor*> __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t;
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::IHingeAngleSensor*>
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::IHingeAngleSensor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
                 class Inclinometer;
             } /* Windows */
         } /* Devices */
@@ -3319,6 +3547,79 @@ typedef IAsyncOperation<ABI::Windows::Devices::Sensors::Pedometer*> __FIAsyncOpe
 //#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CPedometer_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::IPedometer*>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CPedometer_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                class SimpleOrientationSensor;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("69be8a44-2ccb-5375-a8f8-f894efba33eb"))
+IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*, ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Devices.Sensors.SimpleOrientationSensor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*> __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE
+#define DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("6b77c9f9-dcf7-5647-adc7-f70cf9927044"))
+IAsyncOperation<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*, ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Devices.Sensors.SimpleOrientationSensor>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Devices::Sensors::SimpleOrientationSensor*> __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t;
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>
+//#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sensors::ISimpleOrientationSensor*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_USE */
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -3773,6 +4074,50 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
+                class HingeAngleSensorReadingChangedEventArgs;
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("68de2bf4-243c-5aee-9dd9-d2e5e3165866"))
+ITypedEventHandler<ABI::Windows::Devices::Sensors::HingeAngleSensor*,ABI::Windows::Devices::Sensors::HingeAngleSensorReadingChangedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleSensor*, ABI::Windows::Devices::Sensors::IHingeAngleSensor*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Devices::Sensors::HingeAngleSensorReadingChangedEventArgs*, ABI::Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.Devices.Sensors.HingeAngleSensor, Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::HingeAngleSensor*,ABI::Windows::Devices::Sensors::HingeAngleSensorReadingChangedEventArgs*> __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Sensors::IHingeAngleSensor*,ABI::Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Sensors::IHingeAngleSensor*,ABI::Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
                 class InclinometerReadingChangedEventArgs;
             } /* Windows */
         } /* Devices */
@@ -4040,15 +4385,6 @@ typedef ITypedEventHandler<ABI::Windows::Devices::Sensors::ProximitySensor*,ABI:
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                class SimpleOrientationSensor;
-            } /* Windows */
-        } /* Devices */
-    } /* Sensors */} /* ABI */
 
 
 namespace ABI {
@@ -4572,6 +4908,11 @@ namespace ABI {
 
 
 
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Devices {
@@ -4643,6 +4984,9 @@ namespace ABI {
             } /* Windows */
         } /* Devices */
     } /* Sensors */} /* ABI */
+
+
+
 
 
 
@@ -7326,6 +7670,207 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleReading
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleReading
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleReading[] = L"Windows.Devices.Sensors.IHingeAngleReading";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                /* [object, uuid("A3CD45B9-1BF1-4F65-A704-E2DA04F182C0"), exclusiveto, contract] */
+                MIDL_INTERFACE("A3CD45B9-1BF1-4F65-A704-E2DA04F182C0")
+                IHingeAngleReading : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Timestamp(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::DateTime * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AngleInDegrees(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Properties(
+                        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHingeAngleReading=_uuidof(IHingeAngleReading);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensor[] = L"Windows.Devices.Sensors.IHingeAngleSensor";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                /* [object, uuid("E9D3BE02-BFDF-437F-8C29-88C77393D309"), exclusiveto, contract] */
+                MIDL_INTERFACE("E9D3BE02-BFDF-437F-8C29-88C77393D309")
+                IHingeAngleSensor : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetCurrentReadingAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinReportThresholdInDegrees(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReportThresholdInDegrees(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReportThresholdInDegrees(
+                        /* [in] */DOUBLE value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ReadingChanged(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ReadingChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHingeAngleSensor=_uuidof(IHingeAngleSensor);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensorReadingChangedEventArgs[] = L"Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                /* [object, uuid("24D9558B-FAD0-42B8-A854-78923049A1BA"), exclusiveto, contract] */
+                MIDL_INTERFACE("24D9558B-FAD0-42B8-A854-78923049A1BA")
+                IHingeAngleSensorReadingChangedEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reading(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Sensors::IHingeAngleReading * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHingeAngleSensorReadingChangedEventArgs=_uuidof(IHingeAngleSensorReadingChangedEventArgs);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensorStatics[] = L"Windows.Devices.Sensors.IHingeAngleSensorStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                /* [object, uuid("B7B63910-FBB1-4123-89CE-4EA34EB0DFCA"), exclusiveto, contract] */
+                MIDL_INTERFACE("B7B63910-FBB1-4123-89CE-4EA34EB0DFCA")
+                IHingeAngleSensorStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDefaultAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetRelatedToAdjacentPanelsAsync(
+                        /* [in] */__RPC__in HSTRING firstPanelId,
+                        /* [in] */__RPC__in HSTRING secondPanelId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
+                        /* [in] */__RPC__in HSTRING deviceId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IHingeAngleSensorStatics=_uuidof(IHingeAngleSensorStatics);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -10209,6 +10754,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSen
 
 /*
  *
+ * Interface Windows.Devices.Sensors.ISimpleOrientationSensorStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.SimpleOrientationSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_ISimpleOrientationSensorStatics2[] = L"Windows.Devices.Sensors.ISimpleOrientationSensorStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                /* [object, uuid("848F9C7F-B138-4E11-8910-A2A2A3B56D83"), exclusiveto, contract] */
+                MIDL_INTERFACE("848F9C7F-B138-4E11-8910-A2A2A3B56D83")
+                ISimpleOrientationSensorStatics2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetDeviceSelector(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE FromIdAsync(
+                        /* [in] */__RPC__in HSTRING deviceId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISimpleOrientationSensorStatics2=_uuidof(ISimpleOrientationSensorStatics2);
+                
+            } /* Windows */
+        } /* Devices */
+    } /* Sensors */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.Sensors.Accelerometer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10746,6 +11336,81 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_GyrometerReadingChangedEventArgs[] = L"Windows.Devices.Sensors.GyrometerReadingChangedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleReading
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleReading ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleReading_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleReading_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleReading[] = L"Windows.Devices.Sensors.HingeAngleReading";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleSensor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.IHingeAngleSensorStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleSensor ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensor_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleSensor[] = L"Windows.Devices.Sensors.HingeAngleSensor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs[] = L"Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -11378,6 +12043,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -11726,6 +12392,30 @@ typedef interface __x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics __x_ABI_
 typedef interface __x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2 __x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2;
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIInclinometer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIInclinometer_FWD_DEFINED__
@@ -12104,6 +12794,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorOr
 typedef interface __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics;
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -14606,6 +15302,236 @@ interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CGyrometer
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading;
+
+typedef struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleReading **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl;
+
+interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReadingVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor;
+
+typedef struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CHingeAngleSensor **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl;
+
+interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CInclinometer_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CInclinometer_INTERFACE_DEFINED__
@@ -15177,6 +16103,121 @@ interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CPedometer
 
 
 #endif // ____FIAsyncOperation_1_Windows__CDevices__CSensors__CPedometer_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor;
+
+typedef struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CDevices__CSensors__CSimpleOrientationSensor **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensor * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl;
+
+interface __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -15780,6 +16821,59 @@ interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Window
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 
@@ -16668,6 +17762,14 @@ typedef enum __x_ABI_CWindows_CDevices_CSensors_CSensorType __x_ABI_CWindows_CDe
 
 
 typedef enum __x_ABI_CWindows_CDevices_CSensors_CSimpleOrientation __x_ABI_CWindows_CDevices_CSensors_CSimpleOrientation;
+
+
+
+
+
+
+
+
 
 
 
@@ -22217,6 +23319,459 @@ interface __x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIGyrometerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleReading
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleReading
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleReading[] = L"Windows.Devices.Sensors.IHingeAngleReading";
+/* [object, uuid("A3CD45B9-1BF1-4F65-A704-E2DA04F182C0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReadingVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Timestamp )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CDateTime * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AngleInDegrees )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Properties )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReadingVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReadingVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_get_Timestamp(This,value) \
+    ( (This)->lpVtbl->get_Timestamp(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_get_AngleInDegrees(This,value) \
+    ( (This)->lpVtbl->get_AngleInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_get_Properties(This,value) \
+    ( (This)->lpVtbl->get_Properties(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensor[] = L"Windows.Devices.Sensors.IHingeAngleSensor";
+/* [object, uuid("E9D3BE02-BFDF-437F-8C29-88C77393D309"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetCurrentReadingAsync )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DeviceId )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinReportThresholdInDegrees )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ReportThresholdInDegrees )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ReportThresholdInDegrees )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [in] */DOUBLE value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ReadingChanged )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ReadingChanged )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_GetCurrentReadingAsync(This,value) \
+    ( (This)->lpVtbl->GetCurrentReadingAsync(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_get_DeviceId(This,value) \
+    ( (This)->lpVtbl->get_DeviceId(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_get_MinReportThresholdInDegrees(This,value) \
+    ( (This)->lpVtbl->get_MinReportThresholdInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_get_ReportThresholdInDegrees(This,value) \
+    ( (This)->lpVtbl->get_ReportThresholdInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_put_ReportThresholdInDegrees(This,value) \
+    ( (This)->lpVtbl->put_ReportThresholdInDegrees(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_add_ReadingChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ReadingChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_remove_ReadingChanged(This,token) \
+    ( (This)->lpVtbl->remove_ReadingChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensor_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensorReadingChangedEventArgs[] = L"Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs";
+/* [object, uuid("24D9558B-FAD0-42B8-A854-78923049A1BA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Reading )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleReading * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_get_Reading(This,value) \
+    ( (This)->lpVtbl->get_Reading(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorReadingChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Devices.Sensors.IHingeAngleSensorStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HingeAngleSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHingeAngleSensorStatics[] = L"Windows.Devices.Sensors.IHingeAngleSensorStatics";
+/* [object, uuid("B7B63910-FBB1-4123-89CE-4EA34EB0DFCA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDefaultAsync )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetRelatedToAdjacentPanelsAsync )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+        /* [in] */__RPC__in HSTRING firstPanelId,
+        /* [in] */__RPC__in HSTRING secondPanelId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *FromIdAsync )(
+        __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics * This,
+        /* [in] */__RPC__in HSTRING deviceId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStaticsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetDeviceSelector(This,result) \
+    ( (This)->lpVtbl->GetDeviceSelector(This,result) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetDefaultAsync(This,result) \
+    ( (This)->lpVtbl->GetDefaultAsync(This,result) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_GetRelatedToAdjacentPanelsAsync(This,firstPanelId,secondPanelId,result) \
+    ( (This)->lpVtbl->GetRelatedToAdjacentPanelsAsync(This,firstPanelId,secondPanelId,result) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_FromIdAsync(This,deviceId,result) \
+    ( (This)->lpVtbl->FromIdAsync(This,deviceId,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHingeAngleSensorStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -28736,6 +30291,107 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSen
 
 /*
  *
+ * Interface Windows.Devices.Sensors.ISimpleOrientationSensorStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.SimpleOrientationSensor
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_ISimpleOrientationSensorStatics2[] = L"Windows.Devices.Sensors.ISimpleOrientationSensorStatics2";
+/* [object, uuid("848F9C7F-B138-4E11-8910-A2A2A3B56D83"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDeviceSelector )(
+        __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *FromIdAsync )(
+        __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2 * This,
+        /* [in] */__RPC__in HSTRING deviceId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_GetDeviceSelector(This,value) \
+    ( (This)->lpVtbl->GetDeviceSelector(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_FromIdAsync(This,deviceId,result) \
+    ( (This)->lpVtbl->FromIdAsync(This,deviceId,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CISimpleOrientationSensorStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Devices.Sensors.Accelerometer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -29273,6 +30929,81 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_GyrometerReadingChangedEventArgs[] = L"Windows.Devices.Sensors.GyrometerReadingChangedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleReading
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleReading ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleReading_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleReading_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleReading[] = L"Windows.Devices.Sensors.HingeAngleReading";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleSensor
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.IHingeAngleSensorStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleSensor ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensor_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensor_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleSensor[] = L"Windows.Devices.Sensors.HingeAngleSensor";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IHingeAngleSensorReadingChangedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_HingeAngleSensorReadingChangedEventArgs[] = L"Windows.Devices.Sensors.HingeAngleSensorReadingChangedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -29905,6 +31636,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:

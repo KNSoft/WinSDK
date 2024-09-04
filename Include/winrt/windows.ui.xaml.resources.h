@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.resources.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -278,9 +286,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoader * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Resources::ICustomXamlResourceLoader * * value
                             ) = 0;
                         
                     };
@@ -327,7 +335,7 @@ namespace ABI {
                             /* [in] */__RPC__in HSTRING objectType,
                             /* [in] */__RPC__in HSTRING propertyName,
                             /* [in] */__RPC__in HSTRING propertyType,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -597,9 +605,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoader * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoader * * value
         );
     END_INTERFACE
     
@@ -629,8 +637,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderFactor
 #define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -696,7 +704,7 @@ HRESULT ( STDMETHODCALLTYPE *GetResource )(
         /* [in] */__RPC__in HSTRING objectType,
         /* [in] */__RPC__in HSTRING propertyName,
         /* [in] */__RPC__in HSTRING propertyType,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -726,8 +734,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderOverri
 #define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderOverrides_GetResource(This,resourceId,objectType,propertyName,propertyType,returnValue) \
-    ( (This)->lpVtbl->GetResource(This,resourceId,objectType,propertyName,propertyType,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CResources_CICustomXamlResourceLoaderOverrides_GetResource(This,resourceId,objectType,propertyName,propertyType,result) \
+    ( (This)->lpVtbl->GetResource(This,resourceId,objectType,propertyName,propertyType,result) )
 
 
 #endif /* COBJMACROS */

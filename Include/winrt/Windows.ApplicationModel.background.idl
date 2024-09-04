@@ -1725,7 +1725,7 @@ namespace Windows
             [uuid(B09DFC27-6480-4349-8125-97B3EFAA0A3A)]
             interface IToastNotificationActionTriggerFactory : IInspectable
             {
-                HRESULT Create([in] HSTRING applicationId, [out] [retval] Windows.ApplicationModel.Background.ToastNotificationActionTrigger** trigger);
+                HRESULT Create([in] HSTRING applicationId, [out] [retval] Windows.ApplicationModel.Background.ToastNotificationActionTrigger** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1733,7 +1733,7 @@ namespace Windows
             [uuid(81C6FAAD-8797-4785-81B4-B0CCCB73D1D9)]
             interface IToastNotificationHistoryChangedTriggerFactory : IInspectable
             {
-                HRESULT Create([in] HSTRING applicationId, [out] [retval] Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger** trigger);
+                HRESULT Create([in] HSTRING applicationId, [out] [retval] Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1741,7 +1741,7 @@ namespace Windows
             [uuid(CAD4436C-69AB-4E18-A48A-5ED2AC435957)]
             interface IUserNotificationChangedTriggerFactory : IInspectable
             {
-                HRESULT Create([in] Windows.UI.Notifications.NotificationKinds notificationKinds, [out] [retval] Windows.ApplicationModel.Background.UserNotificationChangedTrigger** trigger);
+                HRESULT Create([in] Windows.UI.Notifications.NotificationKinds notificationKinds, [out] [retval] Windows.ApplicationModel.Background.UserNotificationChangedTrigger** value);
             }
 
             [activatable(Windows.ApplicationModel.Background.IActivitySensorTriggerFactory, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2336,6 +2336,7 @@ namespace Windows
             [activatable(Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ToastNotificationActionTrigger
             {
@@ -2345,6 +2346,7 @@ namespace Windows
             [activatable(Windows.ApplicationModel.Background.IToastNotificationHistoryChangedTriggerFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass ToastNotificationHistoryChangedTrigger
             {
@@ -2353,6 +2355,7 @@ namespace Windows
 
             [activatable(Windows.ApplicationModel.Background.IUserNotificationChangedTriggerFactory, Windows.Foundation.UniversalApiContract, 3.0)]
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
+            [marshaling_behavior(agile)]
             [threading(mta)]
             runtimeclass UserNotificationChangedTrigger
             {

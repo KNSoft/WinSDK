@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -9,6 +9,7 @@
 #include "winrt/impl/Windows.UI.Core.0.h"
 #include "winrt/impl/Windows.UI.Input.0.h"
 #include "winrt/impl/Windows.UI.Xaml.0.h"
+#include "winrt/impl/Windows.UI.Xaml.Controls.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Input.0.h"
 
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Input {
@@ -55,6 +56,13 @@ struct WINRT_EBO IAccessKeyManagerStatics2 :
     IAccessKeyManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICanExecuteRequestedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICanExecuteRequestedEventArgs>
+{
+    ICanExecuteRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICharacterReceivedRoutedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICharacterReceivedRoutedEventArgs>
@@ -83,6 +91,13 @@ struct WINRT_EBO IDoubleTappedRoutedEventArgs :
     IDoubleTappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IExecuteRequestedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IExecuteRequestedEventArgs>
+{
+    IExecuteRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IFindNextElementOptions :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFindNextElementOptions>
@@ -95,6 +110,20 @@ struct WINRT_EBO IFocusManager :
     impl::consume_t<IFocusManager>
 {
     IFocusManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFocusManagerGotFocusEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFocusManagerGotFocusEventArgs>
+{
+    IFocusManagerGotFocusEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFocusManagerLostFocusEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFocusManagerLostFocusEventArgs>
+{
+    IFocusManagerLostFocusEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IFocusManagerStatics :
@@ -132,6 +161,13 @@ struct WINRT_EBO IFocusManagerStatics5 :
     IFocusManagerStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IFocusManagerStatics6 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFocusManagerStatics6>
+{
+    IFocusManagerStatics6(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IFocusMovementResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFocusMovementResult>
@@ -151,6 +187,13 @@ struct WINRT_EBO IGettingFocusEventArgs2 :
     impl::consume_t<IGettingFocusEventArgs2>
 {
     IGettingFocusEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IGettingFocusEventArgs3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IGettingFocusEventArgs3>
+{
+    IGettingFocusEventArgs3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IHoldingRoutedEventArgs :
@@ -272,6 +315,13 @@ struct WINRT_EBO ILosingFocusEventArgs2 :
     ILosingFocusEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ILosingFocusEventArgs3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ILosingFocusEventArgs3>
+{
+    ILosingFocusEventArgs3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IManipulationCompletedRoutedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IManipulationCompletedRoutedEventArgs>
@@ -370,11 +420,53 @@ struct WINRT_EBO IRightTappedRoutedEventArgs :
     IRightTappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IStandardUICommand :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStandardUICommand>
+{
+    IStandardUICommand(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStandardUICommandFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStandardUICommandFactory>
+{
+    IStandardUICommandFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStandardUICommandStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStandardUICommandStatics>
+{
+    IStandardUICommandStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ITappedRoutedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<ITappedRoutedEventArgs>
 {
     ITappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlUICommand :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlUICommand>
+{
+    IXamlUICommand(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlUICommandFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlUICommandFactory>
+{
+    IXamlUICommandFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IXamlUICommandStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IXamlUICommandStatics>
+{
+    IXamlUICommandStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

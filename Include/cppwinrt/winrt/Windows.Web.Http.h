@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -604,1380 +604,1204 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Sec
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpBufferContentFactory> : produce_base<D, Windows::Web::Http::IHttpBufferContentFactory>
 {
-    HRESULT __stdcall CreateFromBuffer(void* content, void** bufferContent) noexcept final
+    int32_t WINRT_CALL CreateFromBuffer(void* content, void** bufferContent) noexcept final
     {
         try
         {
             *bufferContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromBuffer, WINRT_WRAP(Windows::Web::Http::HttpBufferContent), Windows::Storage::Streams::IBuffer const&);
             *bufferContent = detach_from<Windows::Web::Http::HttpBufferContent>(this->shim().CreateFromBuffer(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromBufferWithOffset(void* content, uint32_t offset, uint32_t count, void** bufferContent) noexcept final
+    int32_t WINRT_CALL CreateFromBufferWithOffset(void* content, uint32_t offset, uint32_t count, void** bufferContent) noexcept final
     {
         try
         {
             *bufferContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromBufferWithOffset, WINRT_WRAP(Windows::Web::Http::HttpBufferContent), Windows::Storage::Streams::IBuffer const&, uint32_t, uint32_t);
             *bufferContent = detach_from<Windows::Web::Http::HttpBufferContent>(this->shim().CreateFromBufferWithOffset(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&content), offset, count));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpClient> : produce_base<D, Windows::Web::Http::IHttpClient>
 {
-    HRESULT __stdcall DeleteAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().DeleteAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL GetAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().GetAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWithOptionAsync(void* uri, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept final
+    int32_t WINRT_CALL GetWithOptionAsync(void* uri, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const, Windows::Web::Http::HttpCompletionOption const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().GetAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Web::Http::HttpCompletionOption const*>(&completionOption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBufferAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL GetBufferAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBufferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, Windows::Web::Http::HttpProgress>>(this->shim().GetBufferAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetInputStreamAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL GetInputStreamAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInputStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Http::HttpProgress>>(this->shim().GetInputStreamAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStringAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL GetStringAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStringAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<hstring, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<hstring, Windows::Web::Http::HttpProgress>>(this->shim().GetStringAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PostAsync(void* uri, void* content, void** operation) noexcept final
+    int32_t WINRT_CALL PostAsync(void* uri, void* content, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const, Windows::Web::Http::IHttpContent const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().PostAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PutAsync(void* uri, void* content, void** operation) noexcept final
+    int32_t WINRT_CALL PutAsync(void* uri, void* content, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PutAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Foundation::Uri const, Windows::Web::Http::IHttpContent const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().PutAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendRequestAsync(void* request, void** operation) noexcept final
+    int32_t WINRT_CALL SendRequestAsync(void* request, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Web::Http::HttpRequestMessage const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().SendRequestAsync(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendRequestWithOptionAsync(void* request, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept final
+    int32_t WINRT_CALL SendRequestWithOptionAsync(void* request, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>), Windows::Web::Http::HttpRequestMessage const, Windows::Web::Http::HttpCompletionOption const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress>>(this->shim().SendRequestAsync(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&request), *reinterpret_cast<Windows::Web::Http::HttpCompletionOption const*>(&completionOption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultRequestHeaders(void** value) noexcept final
+    int32_t WINRT_CALL get_DefaultRequestHeaders(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultRequestHeaders, WINRT_WRAP(Windows::Web::Http::Headers::HttpRequestHeaderCollection));
             *value = detach_from<Windows::Web::Http::Headers::HttpRequestHeaderCollection>(this->shim().DefaultRequestHeaders());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpClientFactory> : produce_base<D, Windows::Web::Http::IHttpClientFactory>
 {
-    HRESULT __stdcall Create(void* filter, void** client) noexcept final
+    int32_t WINRT_CALL Create(void* filter, void** client) noexcept final
     {
         try
         {
             *client = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpClient), Windows::Web::Http::Filters::IHttpFilter const&);
             *client = detach_from<Windows::Web::Http::HttpClient>(this->shim().Create(*reinterpret_cast<Windows::Web::Http::Filters::IHttpFilter const*>(&filter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpContent> : produce_base<D, Windows::Web::Http::IHttpContent>
 {
-    HRESULT __stdcall get_Headers(void** value) noexcept final
+    int32_t WINRT_CALL get_Headers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Headers, WINRT_WRAP(Windows::Web::Http::Headers::HttpContentHeaderCollection));
             *value = detach_from<Windows::Web::Http::Headers::HttpContentHeaderCollection>(this->shim().Headers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BufferAllAsync(void** operation) noexcept final
+    int32_t WINRT_CALL BufferAllAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BufferAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>>(this->shim().BufferAllAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadAsBufferAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ReadAsBufferAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAsBufferAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint64_t>>(this->shim().ReadAsBufferAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadAsInputStreamAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ReadAsInputStreamAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAsInputStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, uint64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, uint64_t>>(this->shim().ReadAsInputStreamAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadAsStringAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ReadAsStringAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadAsStringAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<hstring, uint64_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<hstring, uint64_t>>(this->shim().ReadAsStringAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryComputeLength(uint64_t* length, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryComputeLength(uint64_t* length, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryComputeLength, WINRT_WRAP(bool), uint64_t&);
             *succeeded = detach_from<bool>(this->shim().TryComputeLength(*length));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall WriteToStreamAsync(void* outputStream, void** operation) noexcept final
+    int32_t WINRT_CALL WriteToStreamAsync(void* outputStream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WriteToStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>), Windows::Storage::Streams::IOutputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t>>(this->shim().WriteToStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&outputStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpCookie> : produce_base<D, Windows::Web::Http::IHttpCookie>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Domain(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Domain(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Domain, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Domain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Expires(void** value) noexcept final
+    int32_t WINRT_CALL get_Expires(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Expires, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().Expires());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Expires(void* value) noexcept final
+    int32_t WINRT_CALL put_Expires(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Expires, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().Expires(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HttpOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_HttpOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HttpOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HttpOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HttpOnly(bool value) noexcept final
+    int32_t WINRT_CALL put_HttpOnly(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HttpOnly, WINRT_WRAP(void), bool);
             this->shim().HttpOnly(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Secure(bool* value) noexcept final
+    int32_t WINRT_CALL get_Secure(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Secure, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Secure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Secure(bool value) noexcept final
+    int32_t WINRT_CALL put_Secure(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Secure, WINRT_WRAP(void), bool);
             this->shim().Secure(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), hstring const&);
             this->shim().Value(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpCookieFactory> : produce_base<D, Windows::Web::Http::IHttpCookieFactory>
 {
-    HRESULT __stdcall Create(HSTRING name, HSTRING domain, HSTRING path, void** cookie) noexcept final
+    int32_t WINRT_CALL Create(void* name, void* domain, void* path, void** cookie) noexcept final
     {
         try
         {
             *cookie = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpCookie), hstring const&, hstring const&, hstring const&);
             *cookie = detach_from<Windows::Web::Http::HttpCookie>(this->shim().Create(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&domain), *reinterpret_cast<hstring const*>(&path)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpCookieManager> : produce_base<D, Windows::Web::Http::IHttpCookieManager>
 {
-    HRESULT __stdcall SetCookie(void* cookie, bool* replaced) noexcept final
+    int32_t WINRT_CALL SetCookie(void* cookie, bool* replaced) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetCookie, WINRT_WRAP(bool), Windows::Web::Http::HttpCookie const&);
             *replaced = detach_from<bool>(this->shim().SetCookie(*reinterpret_cast<Windows::Web::Http::HttpCookie const*>(&cookie)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetCookieWithThirdParty(void* cookie, bool thirdParty, bool* replaced) noexcept final
+    int32_t WINRT_CALL SetCookieWithThirdParty(void* cookie, bool thirdParty, bool* replaced) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetCookie, WINRT_WRAP(bool), Windows::Web::Http::HttpCookie const&, bool);
             *replaced = detach_from<bool>(this->shim().SetCookie(*reinterpret_cast<Windows::Web::Http::HttpCookie const*>(&cookie), thirdParty));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteCookie(void* cookie) noexcept final
+    int32_t WINRT_CALL DeleteCookie(void* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteCookie, WINRT_WRAP(void), Windows::Web::Http::HttpCookie const&);
             this->shim().DeleteCookie(*reinterpret_cast<Windows::Web::Http::HttpCookie const*>(&cookie));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCookies(void* uri, void** value) noexcept final
+    int32_t WINRT_CALL GetCookies(void* uri, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCookies, WINRT_WRAP(Windows::Web::Http::HttpCookieCollection), Windows::Foundation::Uri const&);
             *value = detach_from<Windows::Web::Http::HttpCookieCollection>(this->shim().GetCookies(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpFormUrlEncodedContentFactory> : produce_base<D, Windows::Web::Http::IHttpFormUrlEncodedContentFactory>
 {
-    HRESULT __stdcall Create(void* content, void** formUrlEncodedContent) noexcept final
+    int32_t WINRT_CALL Create(void* content, void** formUrlEncodedContent) noexcept final
     {
         try
         {
             *formUrlEncodedContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpFormUrlEncodedContent), Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> const&);
             *formUrlEncodedContent = detach_from<Windows::Web::Http::HttpFormUrlEncodedContent>(this->shim().Create(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMethod> : produce_base<D, Windows::Web::Http::IHttpMethod>
 {
-    HRESULT __stdcall get_Method(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Method(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Method());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMethodFactory> : produce_base<D, Windows::Web::Http::IHttpMethodFactory>
 {
-    HRESULT __stdcall Create(HSTRING method, void** httpMethod) noexcept final
+    int32_t WINRT_CALL Create(void* method, void** httpMethod) noexcept final
     {
         try
         {
             *httpMethod = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpMethod), hstring const&);
             *httpMethod = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Create(*reinterpret_cast<hstring const*>(&method)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMethodStatics> : produce_base<D, Windows::Web::Http::IHttpMethodStatics>
 {
-    HRESULT __stdcall get_Delete(void** value) noexcept final
+    int32_t WINRT_CALL get_Delete(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delete, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Delete());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Get(void** value) noexcept final
+    int32_t WINRT_CALL get_Get(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Get, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Get());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Head(void** value) noexcept final
+    int32_t WINRT_CALL get_Head(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Head, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Head());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Options(void** value) noexcept final
+    int32_t WINRT_CALL get_Options(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Options, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Options());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Patch(void** value) noexcept final
+    int32_t WINRT_CALL get_Patch(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Patch, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Patch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Post(void** value) noexcept final
+    int32_t WINRT_CALL get_Post(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Post, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Post());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Put(void** value) noexcept final
+    int32_t WINRT_CALL get_Put(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Put, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Put());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMultipartContent> : produce_base<D, Windows::Web::Http::IHttpMultipartContent>
 {
-    HRESULT __stdcall Add(void* content) noexcept final
+    int32_t WINRT_CALL Add(void* content) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&);
             this->shim().Add(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMultipartContentFactory> : produce_base<D, Windows::Web::Http::IHttpMultipartContentFactory>
 {
-    HRESULT __stdcall CreateWithSubtype(HSTRING subtype, void** multipartContent) noexcept final
+    int32_t WINRT_CALL CreateWithSubtype(void* subtype, void** multipartContent) noexcept final
     {
         try
         {
             *multipartContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithSubtype, WINRT_WRAP(Windows::Web::Http::HttpMultipartContent), hstring const&);
             *multipartContent = detach_from<Windows::Web::Http::HttpMultipartContent>(this->shim().CreateWithSubtype(*reinterpret_cast<hstring const*>(&subtype)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithSubtypeAndBoundary(HSTRING subtype, HSTRING boundary, void** multipartContent) noexcept final
+    int32_t WINRT_CALL CreateWithSubtypeAndBoundary(void* subtype, void* boundary, void** multipartContent) noexcept final
     {
         try
         {
             *multipartContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithSubtypeAndBoundary, WINRT_WRAP(Windows::Web::Http::HttpMultipartContent), hstring const&, hstring const&);
             *multipartContent = detach_from<Windows::Web::Http::HttpMultipartContent>(this->shim().CreateWithSubtypeAndBoundary(*reinterpret_cast<hstring const*>(&subtype), *reinterpret_cast<hstring const*>(&boundary)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContent> : produce_base<D, Windows::Web::Http::IHttpMultipartFormDataContent>
 {
-    HRESULT __stdcall Add(void* content) noexcept final
+    int32_t WINRT_CALL Add(void* content) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&);
             this->shim().Add(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddWithName(void* content, HSTRING name) noexcept final
+    int32_t WINRT_CALL AddWithName(void* content, void* name) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&, hstring const&);
             this->shim().Add(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content), *reinterpret_cast<hstring const*>(&name));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddWithNameAndFileName(void* content, HSTRING name, HSTRING fileName) noexcept final
+    int32_t WINRT_CALL AddWithNameAndFileName(void* content, void* name, void* fileName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&, hstring const&, hstring const&);
             this->shim().Add(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&content), *reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&fileName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpMultipartFormDataContentFactory> : produce_base<D, Windows::Web::Http::IHttpMultipartFormDataContentFactory>
 {
-    HRESULT __stdcall CreateWithBoundary(HSTRING boundary, void** multipartFormDataContent) noexcept final
+    int32_t WINRT_CALL CreateWithBoundary(void* boundary, void** multipartFormDataContent) noexcept final
     {
         try
         {
             *multipartFormDataContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithBoundary, WINRT_WRAP(Windows::Web::Http::HttpMultipartFormDataContent), hstring const&);
             *multipartFormDataContent = detach_from<Windows::Web::Http::HttpMultipartFormDataContent>(this->shim().CreateWithBoundary(*reinterpret_cast<hstring const*>(&boundary)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpRequestMessage> : produce_base<D, Windows::Web::Http::IHttpRequestMessage>
 {
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::Web::Http::IHttpContent));
             *value = detach_from<Windows::Web::Http::IHttpContent>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Content(void* value) noexcept final
+    int32_t WINRT_CALL put_Content(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&);
             this->shim().Content(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Headers(void** value) noexcept final
+    int32_t WINRT_CALL get_Headers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Headers, WINRT_WRAP(Windows::Web::Http::Headers::HttpRequestHeaderCollection));
             *value = detach_from<Windows::Web::Http::Headers::HttpRequestHeaderCollection>(this->shim().Headers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Method(void** value) noexcept final
+    int32_t WINRT_CALL get_Method(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(Windows::Web::Http::HttpMethod));
             *value = detach_from<Windows::Web::Http::HttpMethod>(this->shim().Method());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Method(void* value) noexcept final
+    int32_t WINRT_CALL put_Method(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(void), Windows::Web::Http::HttpMethod const&);
             this->shim().Method(*reinterpret_cast<Windows::Web::Http::HttpMethod const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestUri(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().RequestUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequestUri(void* value) noexcept final
+    int32_t WINRT_CALL put_RequestUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().RequestUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransportInformation(void** value) noexcept final
+    int32_t WINRT_CALL get_TransportInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransportInformation, WINRT_WRAP(Windows::Web::Http::HttpTransportInformation));
             *value = detach_from<Windows::Web::Http::HttpTransportInformation>(this->shim().TransportInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpRequestMessageFactory> : produce_base<D, Windows::Web::Http::IHttpRequestMessageFactory>
 {
-    HRESULT __stdcall Create(void* method, void* uri, void** httpRequestMessage) noexcept final
+    int32_t WINRT_CALL Create(void* method, void* uri, void** httpRequestMessage) noexcept final
     {
         try
         {
             *httpRequestMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpRequestMessage), Windows::Web::Http::HttpMethod const&, Windows::Foundation::Uri const&);
             *httpRequestMessage = detach_from<Windows::Web::Http::HttpRequestMessage>(this->shim().Create(*reinterpret_cast<Windows::Web::Http::HttpMethod const*>(&method), *reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpResponseMessage> : produce_base<D, Windows::Web::Http::IHttpResponseMessage>
 {
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::Web::Http::IHttpContent));
             *value = detach_from<Windows::Web::Http::IHttpContent>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Content(void* value) noexcept final
+    int32_t WINRT_CALL put_Content(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(void), Windows::Web::Http::IHttpContent const&);
             this->shim().Content(*reinterpret_cast<Windows::Web::Http::IHttpContent const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Headers(void** value) noexcept final
+    int32_t WINRT_CALL get_Headers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Headers, WINRT_WRAP(Windows::Web::Http::Headers::HttpResponseHeaderCollection));
             *value = detach_from<Windows::Web::Http::Headers::HttpResponseHeaderCollection>(this->shim().Headers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSuccessStatusCode(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSuccessStatusCode(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSuccessStatusCode, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSuccessStatusCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReasonPhrase(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ReasonPhrase(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReasonPhrase, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ReasonPhrase());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ReasonPhrase(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ReasonPhrase(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReasonPhrase, WINRT_WRAP(void), hstring const&);
             this->shim().ReasonPhrase(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestMessage(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestMessage, WINRT_WRAP(Windows::Web::Http::HttpRequestMessage));
             *value = detach_from<Windows::Web::Http::HttpRequestMessage>(this->shim().RequestMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequestMessage(void* value) noexcept final
+    int32_t WINRT_CALL put_RequestMessage(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestMessage, WINRT_WRAP(void), Windows::Web::Http::HttpRequestMessage const&);
             this->shim().RequestMessage(*reinterpret_cast<Windows::Web::Http::HttpRequestMessage const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(Windows::Web::Http::HttpResponseMessageSource* value) noexcept final
+    int32_t WINRT_CALL get_Source(Windows::Web::Http::HttpResponseMessageSource* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::Web::Http::HttpResponseMessageSource));
             *value = detach_from<Windows::Web::Http::HttpResponseMessageSource>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Source(Windows::Web::Http::HttpResponseMessageSource value) noexcept final
+    int32_t WINRT_CALL put_Source(Windows::Web::Http::HttpResponseMessageSource value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), Windows::Web::Http::HttpResponseMessageSource const&);
             this->shim().Source(*reinterpret_cast<Windows::Web::Http::HttpResponseMessageSource const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept final
+    int32_t WINRT_CALL get_StatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatusCode, WINRT_WRAP(Windows::Web::Http::HttpStatusCode));
             *value = detach_from<Windows::Web::Http::HttpStatusCode>(this->shim().StatusCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StatusCode(Windows::Web::Http::HttpStatusCode value) noexcept final
+    int32_t WINRT_CALL put_StatusCode(Windows::Web::Http::HttpStatusCode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatusCode, WINRT_WRAP(void), Windows::Web::Http::HttpStatusCode const&);
             this->shim().StatusCode(*reinterpret_cast<Windows::Web::Http::HttpStatusCode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Version(Windows::Web::Http::HttpVersion* value) noexcept final
+    int32_t WINRT_CALL get_Version(Windows::Web::Http::HttpVersion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(Windows::Web::Http::HttpVersion));
             *value = detach_from<Windows::Web::Http::HttpVersion>(this->shim().Version());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Version(Windows::Web::Http::HttpVersion value) noexcept final
+    int32_t WINRT_CALL put_Version(Windows::Web::Http::HttpVersion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(void), Windows::Web::Http::HttpVersion const&);
             this->shim().Version(*reinterpret_cast<Windows::Web::Http::HttpVersion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EnsureSuccessStatusCode(void** httpResponseMessage) noexcept final
+    int32_t WINRT_CALL EnsureSuccessStatusCode(void** httpResponseMessage) noexcept final
     {
         try
         {
             *httpResponseMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnsureSuccessStatusCode, WINRT_WRAP(Windows::Web::Http::HttpResponseMessage));
             *httpResponseMessage = detach_from<Windows::Web::Http::HttpResponseMessage>(this->shim().EnsureSuccessStatusCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpResponseMessageFactory> : produce_base<D, Windows::Web::Http::IHttpResponseMessageFactory>
 {
-    HRESULT __stdcall Create(Windows::Web::Http::HttpStatusCode statusCode, void** httpResponseMessage) noexcept final
+    int32_t WINRT_CALL Create(Windows::Web::Http::HttpStatusCode statusCode, void** httpResponseMessage) noexcept final
     {
         try
         {
             *httpResponseMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Web::Http::HttpResponseMessage), Windows::Web::Http::HttpStatusCode const&);
             *httpResponseMessage = detach_from<Windows::Web::Http::HttpResponseMessage>(this->shim().Create(*reinterpret_cast<Windows::Web::Http::HttpStatusCode const*>(&statusCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpStreamContentFactory> : produce_base<D, Windows::Web::Http::IHttpStreamContentFactory>
 {
-    HRESULT __stdcall CreateFromInputStream(void* content, void** streamContent) noexcept final
+    int32_t WINRT_CALL CreateFromInputStream(void* content, void** streamContent) noexcept final
     {
         try
         {
             *streamContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromInputStream, WINRT_WRAP(Windows::Web::Http::HttpStreamContent), Windows::Storage::Streams::IInputStream const&);
             *streamContent = detach_from<Windows::Web::Http::HttpStreamContent>(this->shim().CreateFromInputStream(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpStringContentFactory> : produce_base<D, Windows::Web::Http::IHttpStringContentFactory>
 {
-    HRESULT __stdcall CreateFromString(HSTRING content, void** stringContent) noexcept final
+    int32_t WINRT_CALL CreateFromString(void* content, void** stringContent) noexcept final
     {
         try
         {
             *stringContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromString, WINRT_WRAP(Windows::Web::Http::HttpStringContent), hstring const&);
             *stringContent = detach_from<Windows::Web::Http::HttpStringContent>(this->shim().CreateFromString(*reinterpret_cast<hstring const*>(&content)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromStringWithEncoding(HSTRING content, Windows::Storage::Streams::UnicodeEncoding encoding, void** stringContent) noexcept final
+    int32_t WINRT_CALL CreateFromStringWithEncoding(void* content, Windows::Storage::Streams::UnicodeEncoding encoding, void** stringContent) noexcept final
     {
         try
         {
             *stringContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromStringWithEncoding, WINRT_WRAP(Windows::Web::Http::HttpStringContent), hstring const&, Windows::Storage::Streams::UnicodeEncoding const&);
             *stringContent = detach_from<Windows::Web::Http::HttpStringContent>(this->shim().CreateFromStringWithEncoding(*reinterpret_cast<hstring const*>(&content), *reinterpret_cast<Windows::Storage::Streams::UnicodeEncoding const*>(&encoding)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromStringWithEncodingAndMediaType(HSTRING content, Windows::Storage::Streams::UnicodeEncoding encoding, HSTRING mediaType, void** stringContent) noexcept final
+    int32_t WINRT_CALL CreateFromStringWithEncodingAndMediaType(void* content, Windows::Storage::Streams::UnicodeEncoding encoding, void* mediaType, void** stringContent) noexcept final
     {
         try
         {
             *stringContent = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromStringWithEncodingAndMediaType, WINRT_WRAP(Windows::Web::Http::HttpStringContent), hstring const&, Windows::Storage::Streams::UnicodeEncoding const&, hstring const&);
             *stringContent = detach_from<Windows::Web::Http::HttpStringContent>(this->shim().CreateFromStringWithEncodingAndMediaType(*reinterpret_cast<hstring const*>(&content), *reinterpret_cast<Windows::Storage::Streams::UnicodeEncoding const*>(&encoding), *reinterpret_cast<hstring const*>(&mediaType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<D, Windows::Web::Http::IHttpTransportInformation>
 {
-    HRESULT __stdcall get_ServerCertificate(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificate, WINRT_WRAP(Windows::Security::Cryptography::Certificates::Certificate));
             *value = detach_from<Windows::Security::Cryptography::Certificates::Certificate>(this->shim().ServerCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrorSeverity, WINRT_WRAP(Windows::Networking::Sockets::SocketSslErrorSeverity));
             *value = detach_from<Windows::Networking::Sockets::SocketSslErrorSeverity>(this->shim().ServerCertificateErrorSeverity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCertificateErrors, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::ChainValidationResult>>(this->shim().ServerCertificateErrors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerIntermediateCertificates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().ServerIntermediateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1986,118 +1810,118 @@ struct produce<D, Windows::Web::Http::IHttpTransportInformation> : produce_base<
 WINRT_EXPORT namespace winrt::Windows::Web::Http {
 
 inline HttpBufferContent::HttpBufferContent(Windows::Storage::Streams::IBuffer const& content) :
-    HttpBufferContent(get_activation_factory<HttpBufferContent, Windows::Web::Http::IHttpBufferContentFactory>().CreateFromBuffer(content))
+    HttpBufferContent(impl::call_factory<HttpBufferContent, Windows::Web::Http::IHttpBufferContentFactory>([&](auto&& f) { return f.CreateFromBuffer(content); }))
 {}
 
 inline HttpBufferContent::HttpBufferContent(Windows::Storage::Streams::IBuffer const& content, uint32_t offset, uint32_t count) :
-    HttpBufferContent(get_activation_factory<HttpBufferContent, Windows::Web::Http::IHttpBufferContentFactory>().CreateFromBufferWithOffset(content, offset, count))
+    HttpBufferContent(impl::call_factory<HttpBufferContent, Windows::Web::Http::IHttpBufferContentFactory>([&](auto&& f) { return f.CreateFromBufferWithOffset(content, offset, count); }))
 {}
 
 inline HttpClient::HttpClient() :
-    HttpClient(get_activation_factory<HttpClient>().ActivateInstance<HttpClient>())
+    HttpClient(impl::call_factory<HttpClient>([](auto&& f) { return f.template ActivateInstance<HttpClient>(); }))
 {}
 
 inline HttpClient::HttpClient(Windows::Web::Http::Filters::IHttpFilter const& filter) :
-    HttpClient(get_activation_factory<HttpClient, Windows::Web::Http::IHttpClientFactory>().Create(filter))
+    HttpClient(impl::call_factory<HttpClient, Windows::Web::Http::IHttpClientFactory>([&](auto&& f) { return f.Create(filter); }))
 {}
 
 inline HttpCookie::HttpCookie(param::hstring const& name, param::hstring const& domain, param::hstring const& path) :
-    HttpCookie(get_activation_factory<HttpCookie, Windows::Web::Http::IHttpCookieFactory>().Create(name, domain, path))
+    HttpCookie(impl::call_factory<HttpCookie, Windows::Web::Http::IHttpCookieFactory>([&](auto&& f) { return f.Create(name, domain, path); }))
 {}
 
 inline HttpFormUrlEncodedContent::HttpFormUrlEncodedContent(param::iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> const& content) :
-    HttpFormUrlEncodedContent(get_activation_factory<HttpFormUrlEncodedContent, Windows::Web::Http::IHttpFormUrlEncodedContentFactory>().Create(content))
+    HttpFormUrlEncodedContent(impl::call_factory<HttpFormUrlEncodedContent, Windows::Web::Http::IHttpFormUrlEncodedContentFactory>([&](auto&& f) { return f.Create(content); }))
 {}
 
 inline HttpMethod::HttpMethod(param::hstring const& method) :
-    HttpMethod(get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodFactory>().Create(method))
+    HttpMethod(impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodFactory>([&](auto&& f) { return f.Create(method); }))
 {}
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Delete()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Delete();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Delete(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Get()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Get();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Get(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Head()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Head();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Head(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Options()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Options();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Options(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Patch()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Patch();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Patch(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Post()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Post();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Post(); });
 }
 
 inline Windows::Web::Http::HttpMethod HttpMethod::Put()
 {
-    return get_activation_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>().Put();
+    return impl::call_factory<HttpMethod, Windows::Web::Http::IHttpMethodStatics>([&](auto&& f) { return f.Put(); });
 }
 
 inline HttpMultipartContent::HttpMultipartContent() :
-    HttpMultipartContent(get_activation_factory<HttpMultipartContent>().ActivateInstance<HttpMultipartContent>())
+    HttpMultipartContent(impl::call_factory<HttpMultipartContent>([](auto&& f) { return f.template ActivateInstance<HttpMultipartContent>(); }))
 {}
 
 inline HttpMultipartContent::HttpMultipartContent(param::hstring const& subtype) :
-    HttpMultipartContent(get_activation_factory<HttpMultipartContent, Windows::Web::Http::IHttpMultipartContentFactory>().CreateWithSubtype(subtype))
+    HttpMultipartContent(impl::call_factory<HttpMultipartContent, Windows::Web::Http::IHttpMultipartContentFactory>([&](auto&& f) { return f.CreateWithSubtype(subtype); }))
 {}
 
 inline HttpMultipartContent::HttpMultipartContent(param::hstring const& subtype, param::hstring const& boundary) :
-    HttpMultipartContent(get_activation_factory<HttpMultipartContent, Windows::Web::Http::IHttpMultipartContentFactory>().CreateWithSubtypeAndBoundary(subtype, boundary))
+    HttpMultipartContent(impl::call_factory<HttpMultipartContent, Windows::Web::Http::IHttpMultipartContentFactory>([&](auto&& f) { return f.CreateWithSubtypeAndBoundary(subtype, boundary); }))
 {}
 
 inline HttpMultipartFormDataContent::HttpMultipartFormDataContent() :
-    HttpMultipartFormDataContent(get_activation_factory<HttpMultipartFormDataContent>().ActivateInstance<HttpMultipartFormDataContent>())
+    HttpMultipartFormDataContent(impl::call_factory<HttpMultipartFormDataContent>([](auto&& f) { return f.template ActivateInstance<HttpMultipartFormDataContent>(); }))
 {}
 
 inline HttpMultipartFormDataContent::HttpMultipartFormDataContent(param::hstring const& boundary) :
-    HttpMultipartFormDataContent(get_activation_factory<HttpMultipartFormDataContent, Windows::Web::Http::IHttpMultipartFormDataContentFactory>().CreateWithBoundary(boundary))
+    HttpMultipartFormDataContent(impl::call_factory<HttpMultipartFormDataContent, Windows::Web::Http::IHttpMultipartFormDataContentFactory>([&](auto&& f) { return f.CreateWithBoundary(boundary); }))
 {}
 
 inline HttpRequestMessage::HttpRequestMessage() :
-    HttpRequestMessage(get_activation_factory<HttpRequestMessage>().ActivateInstance<HttpRequestMessage>())
+    HttpRequestMessage(impl::call_factory<HttpRequestMessage>([](auto&& f) { return f.template ActivateInstance<HttpRequestMessage>(); }))
 {}
 
 inline HttpRequestMessage::HttpRequestMessage(Windows::Web::Http::HttpMethod const& method, Windows::Foundation::Uri const& uri) :
-    HttpRequestMessage(get_activation_factory<HttpRequestMessage, Windows::Web::Http::IHttpRequestMessageFactory>().Create(method, uri))
+    HttpRequestMessage(impl::call_factory<HttpRequestMessage, Windows::Web::Http::IHttpRequestMessageFactory>([&](auto&& f) { return f.Create(method, uri); }))
 {}
 
 inline HttpResponseMessage::HttpResponseMessage() :
-    HttpResponseMessage(get_activation_factory<HttpResponseMessage>().ActivateInstance<HttpResponseMessage>())
+    HttpResponseMessage(impl::call_factory<HttpResponseMessage>([](auto&& f) { return f.template ActivateInstance<HttpResponseMessage>(); }))
 {}
 
 inline HttpResponseMessage::HttpResponseMessage(Windows::Web::Http::HttpStatusCode const& statusCode) :
-    HttpResponseMessage(get_activation_factory<HttpResponseMessage, Windows::Web::Http::IHttpResponseMessageFactory>().Create(statusCode))
+    HttpResponseMessage(impl::call_factory<HttpResponseMessage, Windows::Web::Http::IHttpResponseMessageFactory>([&](auto&& f) { return f.Create(statusCode); }))
 {}
 
 inline HttpStreamContent::HttpStreamContent(Windows::Storage::Streams::IInputStream const& content) :
-    HttpStreamContent(get_activation_factory<HttpStreamContent, Windows::Web::Http::IHttpStreamContentFactory>().CreateFromInputStream(content))
+    HttpStreamContent(impl::call_factory<HttpStreamContent, Windows::Web::Http::IHttpStreamContentFactory>([&](auto&& f) { return f.CreateFromInputStream(content); }))
 {}
 
 inline HttpStringContent::HttpStringContent(param::hstring const& content) :
-    HttpStringContent(get_activation_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>().CreateFromString(content))
+    HttpStringContent(impl::call_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>([&](auto&& f) { return f.CreateFromString(content); }))
 {}
 
 inline HttpStringContent::HttpStringContent(param::hstring const& content, Windows::Storage::Streams::UnicodeEncoding const& encoding) :
-    HttpStringContent(get_activation_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>().CreateFromStringWithEncoding(content, encoding))
+    HttpStringContent(impl::call_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>([&](auto&& f) { return f.CreateFromStringWithEncoding(content, encoding); }))
 {}
 
 inline HttpStringContent::HttpStringContent(param::hstring const& content, Windows::Storage::Streams::UnicodeEncoding const& encoding, param::hstring const& mediaType) :
-    HttpStringContent(get_activation_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>().CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType))
+    HttpStringContent(impl::call_factory<HttpStringContent, Windows::Web::Http::IHttpStringContentFactory>([&](auto&& f) { return f.CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType); }))
 {}
 
 }
@@ -2142,5 +1966,3 @@ template<> struct hash<winrt::Windows::Web::Http::HttpStringContent> : winrt::im
 template<> struct hash<winrt::Windows::Web::Http::HttpTransportInformation> : winrt::impl::hash_base<winrt::Windows::Web::Http::HttpTransportInformation> {};
 
 }
-
-WINRT_WARNING_POP

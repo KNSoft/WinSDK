@@ -1781,6 +1781,7 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_NODE_TYPE_ROOT_COMPLEX 2
 #define IORT_NODE_TYPE_SMMUV1V2 3
 #define IORT_NODE_TYPE_SMMUV3 4
+#define IORT_NODE_TYPE_PMCG 5
 
 #define IORT_SMMUV2_NODE_REVISION 0
 #define IORT_TYPE_GENERIC_SMMUV1 0
@@ -2178,7 +2179,8 @@ typedef union _IVRS_IVINFO {
 
     struct {
         UINT32 EFRSup:1;
-        UINT32 ReservedZ0:4;
+        UINT32 DmaGuardOptIn:1;
+        UINT32 ReservedZ0:3;
         UINT32 GVASize:3;
         UINT32 PASize:7;        // Physical address size
         UINT32 VASize:7;        // Virtual address size
@@ -2203,7 +2205,8 @@ typedef enum _IVRS_BLOCK_TYPE {
     IommuDefinitionBlockType11Ivhd = 0x11,
     IommuDefinitionBlockTypeIvmdAll = 0x20,
     IommuDefinitionBlockTypeIvmdSpecified = 0x21,
-    IommuDefinitionBlockTypeIvmdRange = 0x22
+    IommuDefinitionBlockTypeIvmdRange = 0x22,
+    IommuDefinitionBlockType40Ivhd = 0x40,
 
 } IVRS_BLOCK_TYPE;
 
@@ -2281,7 +2284,8 @@ typedef enum _IVHD_ENTRY_TYPE {
     IvhdEntryTypeAliasStartRange = 67,
     IvhdEntryTypeExtendedSelect = 70,
     IvhdEntryTypeExtendedStartRange = 71,
-    IvhdEntryTypeSpecialDevice = 72
+    IvhdEntryTypeSpecialDevice = 72,
+    IvhdEntryTypeAcpiDevice = 0xF0
 
 } IVRS_TABLE_TYPE;
 
@@ -2343,6 +2347,38 @@ typedef struct _IVHD_DEVICE_ENTRY {
     } ExtendedDataSetting;
 
 } IVHD_DEVICE_ENTRY, *PIVHD_DEVICE_ENTRY;
+
+typedef struct _IVHD_ACPI_DEVICE_ENTRY {
+
+    UINT8 Type;
+    UINT16 DeviceId;
+
+    union {
+
+        UINT8 AsUINT8;
+
+        struct {
+            UINT8 INITPass:1;       // Device can assert INIT interrupt
+            UINT8 ExtIntPass:1;     // Device can assert ExtInt
+            UINT8 NMIPass:1;        // Device can assert NMI
+            UINT8 ReservedZ0:1;
+            UINT8 SysMgt:2;         // Device can assert SMI
+            UINT8 LINT0Pass:1;      // Device can assert LINT0 interrupts
+            UINT8 LINT1Pass:1;      // Device can assert LINT1 interrupts
+        } DUMMYSTRUCTNAME;
+
+    } DataSetting;
+
+    UINT64 HardwareId;
+    UINT64 CompatibleId;
+    UINT8 UniqueIdFormat;
+    UINT8 UniqueIdLength;
+
+    //
+    // variable lengthed unique ID follows here.
+    //
+
+} IVHD_ACPI_DEVICE_ENTRY, *PIVHD_ACPI_DEVICE_ENTRY;
 
 typedef struct _IVMD_BLOCK {
 
@@ -3173,6 +3209,22 @@ DEFINE_GUID(ACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER_GUID,
     0x1face9db, 0x2530, 0x4248, 0x8e, 0xe3, 0x51, 0x05, 0x3a, 0xef, 0x47, 0xc2);
 
 //
+// ACPI PLD Container Descriptor Buffer
+// (stored in _PLD custom data buffer, fixed size of 128-bits) 
+//
+
+typedef struct _ACPI_PLD_CONTAINER_BUFFER { 
+    GUID ContainerId;
+} ACPI_PLD_CONTAINER_BUFFER, *PACPI_PLD_CONTAINER_BUFFER; 
+
+//
+// {c02fa109-6a82-4188-9f66-b190ba62db49} 
+//
+
+DEFINE_GUID(ACPI_PLD_CONTAINER_BUFFER_GUID,
+     0xc02fa109, 0x6a82, 0x4188, 0x9f, 0x66, 0xb1, 0x90, 0xba, 0x62, 0xdb, 0x49);
+
+//
 // NFIT ACPI table (ACPI 6.0 section 5.2.25)
 //
 
@@ -3600,6 +3652,296 @@ typedef struct _LPIT {
     DESCRIPTION_HEADER Header;
     LPI_STATE_DESCRIPTOR LpiStates[ANYSIZE_ARRAY];
 } LPIT, *PLPIT;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
+//
+// PPTT (Processor Properties Topology Table) definition
+//
+
+#define PPTT_SIGNATURE 0x54545050 // "PPTT"
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
+#pragma warning(disable: 4214) // nonstandard extension used : bit field types other than int
+
+typedef union _PROC_TOPOLOGY_NODE_FLAGS {
+    struct {
+        ULONG PhysicalPackage:1;
+        ULONG ACPIProcessorIdValid:1;
+        ULONG Reserved:30;
+    };
+
+    ULONG AsULONG;
+} PROC_TOPOLOGY_NODE_FLAGS, *PPROC_TOPOLOGY_NODE_FLAGS;
+
+typedef union _PROC_TOPOLOGY_CACHE_FLAGS {
+    struct {
+        ULONG SizeValid:1;
+        ULONG SetsValid:1;
+        ULONG AssociativityValid:1;
+        ULONG AllocationTypeValid:1;
+        ULONG CacheTypeValid:1;
+        ULONG WritePolicyValid:1;
+        ULONG LineSizeValid:1;
+        ULONG Reserved:25;
+    };
+
+    ULONG AsULONG;
+} PROC_TOPOLOGY_CACHE_FLAGS, *PPROC_TOPOLOGY_CACHE_FLAGS;
+
+#define PROC_TOPOLOGY_NODE_CACHE_TYPE_DATA(CacheType) \
+    (CacheType == 0)
+
+#define PROC_TOPOLOGY_NODE_CACHE_TYPE_INSTRUCTION(CacheType) \
+    (CacheType == 1)
+
+#define PROC_TOPOLOGY_NODE_CACHE_TYPE_UNIFIED(CacheType) \
+    ((CacheType == 2) || (CacheType == 3))
+
+typedef union _PROC_TOPOLOGY_CACHE_ATTRIBUTES {
+    struct {
+        UCHAR ReadAllocate:1;
+        UCHAR WriteAllocate:1;
+        UCHAR CacheType:2;
+        UCHAR WritePolicy:1;
+        UCHAR Reserved:3;
+    };
+
+    UCHAR AsUCHAR;
+} PROC_TOPOLOGY_CACHE_ATTRIBUTES, *PPROC_TOPOLOGY_CACHE_ATTRIBUTES;
+
+typedef struct _PROC_TOPOLOGY_NODE PROC_TOPOLOGY_NODE,
+    *PPROC_TOPOLOGY_NODE;
+
+#define PROC_TOPOLOGY_NODE_HEIRARCHY 0
+#define PROC_TOPOLOGY_NODE_CACHE 1
+#define PROC_TOPOLOGY_NODE_ID 2
+
+struct _PROC_TOPOLOGY_NODE {
+    struct {
+        UCHAR Type;
+        UCHAR Length;
+        UCHAR Reserved[2];
+    };
+    
+    union {
+        struct {
+            PROC_TOPOLOGY_NODE_FLAGS Flags;
+            ULONG Parent;
+            ULONG ACPIProcessorId;
+            ULONG NumberPrivateResources;
+            ULONG PrivateResources[ANYSIZE_ARRAY];
+        } HeirarchyNode;
+
+        struct {
+            PROC_TOPOLOGY_CACHE_FLAGS Flags;
+            ULONG NextLevelCacheOffset;
+            ULONG Size;
+            ULONG Sets;
+            UCHAR Associativity;
+            PROC_TOPOLOGY_CACHE_ATTRIBUTES Attributes;
+            USHORT LineSize;
+        } CacheNode;
+
+        struct {
+            ULONG Vendor;
+            ULONG64 Level1;
+            ULONG64 Level2;
+            USHORT Major;
+            USHORT Minor;
+            USHORT Spin;
+        } IdNode;
+    };
+};
+
+typedef struct _PPTT {
+    DESCRIPTION_HEADER Header;
+    PROC_TOPOLOGY_NODE HeirarchyNodes[ANYSIZE_ARRAY];
+} PPTT, *PPPTT;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
+//
+// PDTT structure.
+//
+
+#define PDTT_SIGNATURE 0x54544450 // "PDTT"
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4214)
+
+typedef struct _PDTT_PCC_SUBCHANNEL_INDENTIFIER {
+    UCHAR SubChannelId;
+    UCHAR Runtime:1;
+    UCHAR WaitCompletion:1;
+    UCHAR Reserved:6;
+} PDTT_PCC_SUBCHANNEL_INDENTIFIER, *PPDTT_PCC_SUBCHANNEL_INDENTIFIER;
+
+typedef struct _ACPI_PDTT {
+    DESCRIPTION_HEADER Header;
+    UCHAR TriggerCount;
+    UCHAR Reserved[3];
+    ULONG TriggerOffset;
+    // PDTT pcc sub channel indetifiers
+} ACPI_PDTT, *PACPI_PDTT;
+
+#if _MSC_VER >= 1200
+#pragma warning(pop)
+#endif
+
+//
+// Heterogeneous Memory Attribute Table (HMAT) definition. The following
+// abbreviations are used for the various table entry types:
+//
+//     MSAR - Memory Subsystem Address Range
+//
+//     SLLBI - System Locality Latency and Bandwidth Information
+//
+//     MSCI - Memory Side Cache Information
+//
+// The identifiers use these abbreviations or they would have become prohibitively long.
+//
+
+#if _MSC_VER >= 1200
+#pragma warning(push)
+#endif
+
+#pragma warning(disable: 4214) // nonstandard extension used : bit field types other than int
+#pragma warning(disable: 4201) // nonstandard extension used : nameless struct/union
+
+#define HMAT_SIGNATURE  0x54414D48 // "HMAT"
+
+#define HMAT_ENTRY_TYPE_MSAR    0
+#define HMAT_ENTRY_TYPE_SLLBI   1
+#define HMAT_ENTRY_TYPE_MSCI    2
+
+#define HMAT_SLLBI_DATA_TYPE_ACCESS_LATENCY     0
+#define HMAT_SLLBI_DATA_TYPE_READ_LATENCY       1
+#define HMAT_SLLBI_DATA_TYPE_WRITE_LATENCY      2
+#define HMAT_SLLBI_DATA_TYPE_ACCESS_BANDWIDTH   3
+#define HMAT_SLLBI_DATA_TYPE_READ_BANDWIDTH     4
+#define HMAT_SLLBI_DATA_TYPE_WRITE_BANDWIDTH    5
+
+#define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_NONE                   0
+#define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_ONE                    1
+#define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_TWO                    2
+#define HMAT_MSCI_CACHEATTRIBUTES_LEVELS_THREE                  3
+
+#define HMAT_MSCI_CACHEATTRIBUTES_ASSOCIATIVITY_NONE            0
+#define HMAT_MSCI_CACHEATTRIBUTES_ASSOCIATIVITY_DIRECT_MAPPED   1
+#define HMAT_MSCI_CACHEATTRIBUTES_ASSOCIATIVITY_COMPLEX         2
+
+#define HMAT_MSCI_CACHEATTRIBUTES_WRITE_POLICY_NONE             0
+#define HMAT_MSCI_CACHEATTRIBUTES_WRITE_POLICY_WRITE_BACK       1
+#define HMAT_MSCI_CACHEATTRIBUTES_WRITE_POLICY_WRITE_THROUGH    2
+
+typedef struct _HMAT_ENTRY {
+    USHORT Type;
+    USHORT Reserved;
+    ULONG Length;
+
+    union {
+
+        //
+        // Memory Subsystem Address Range structure
+        //
+
+        struct {
+            union {
+                struct {
+                    USHORT ProcessorProximityDomainValid : 1;
+                    USHORT MemoryProximityDomainValid : 1;
+                    USHORT ReservationHint : 1;
+                    USHORT Reserved : 13;
+                } DUMMYSTRUCTNAME;
+
+                USHORT AsUSHort;
+            } Flags;
+
+            USHORT Reserved1;
+            ULONG ProcessorProximityDomain;
+            ULONG MemoryProximityDomain;
+            ULONG Reserved2;
+            PHYSICAL_ADDRESS SystemPhysicalAddressRangeBase;
+            ULONGLONG SystemPhysicalAddressRangeLength;
+        } Msar;
+
+        //
+        // System Locality Latency and Bandwidth Information structure
+        //
+
+        struct {
+            union {
+                struct {
+                    UCHAR Memory : 1;
+                    UCHAR LastLevelMemory : 1;
+                    UCHAR FirstLevelMemorySideCache : 1;
+                    UCHAR SecondLevelMemorySideCache : 1;
+                    UCHAR ThirdLevelMemorySideCache : 1;
+                    UCHAR Reserved : 3;
+                } DUMMYSTRUCTNAME;
+
+                UCHAR AsUChar;
+            } Flags;
+
+            UCHAR DataType;
+            USHORT Reserved1;
+            ULONG NumberOfInitiatorProximityDomains;
+            ULONG NumberOfTargetProximityDomains;
+            ULONG Reserved2;
+            ULONGLONG EntryBaseUnit;
+            // ULONG InitiatorProximityDomainList[NumberOfInitiatorProximityDomains]
+            // ULONG TargetProximityDomainList[NumberOfTargetProximityDomains]
+            // USHORT Entry[NumberOfInitiatorProximityDomains][NumberOfTargetProximityDomains]
+        } Sllbi;
+
+        //
+        // Memory Side Cache Information structure
+        //
+
+        struct {
+            ULONG MemoryProximityDomain;
+            ULONG Reserved1;
+            ULONGLONG MemorySideCacheSize;
+
+            union {
+                struct {
+                    ULONG TotalCacheLevels : 4;
+                    ULONG CacheLevel : 4;
+                    ULONG CacheAssociativity : 4;
+                    ULONG WritePolicy : 4;
+                    ULONG CacheLineSize : 16;
+                } DUMMYSTRUCTNAME;
+
+                ULONG AsULong;
+            } CacheAttributes;
+
+            USHORT Reserved2;
+            USHORT NumberOfSmBiosHandles;
+            // USHORT SmBiosHandles[NumberOfSmBiosHandles];
+        } Msci;
+    } DUMMYUNIONNAME;
+} HMAT_ENTRY, *PHMAT_ENTRY;
+
+#define HMAT_ENTRY_HEADER_LENGTH RTL_SIZEOF_THROUGH_FIELD(HMAT_ENTRY, Length);
+#define HMAT_ENTRY_LENGTH(_Type) RTL_SIZEOF_THROUGH_FIELD(HMAT_ENTRY, _Type);
+
+typedef struct _HMAT_TABLE {
+    DESCRIPTION_HEADER Header;
+    ULONG Reserved;
+    // HMAT_ENTRY Entries[];
+} HMAT_TABLE, *PHMAT_TABLE;
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

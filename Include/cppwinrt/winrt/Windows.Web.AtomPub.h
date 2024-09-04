@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Data.Xml.Dom.2.h"
@@ -153,304 +153,266 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Web
 template <typename D>
 struct produce<D, Windows::Web::AtomPub::IAtomPubClient> : produce_base<D, Windows::Web::AtomPub::IAtomPubClient>
 {
-    HRESULT __stdcall RetrieveServiceDocumentAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL RetrieveServiceDocumentAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrieveServiceDocumentAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress>>(this->shim().RetrieveServiceDocumentAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrieveMediaResourceAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL RetrieveMediaResourceAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrieveMediaResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress>>(this->shim().RetrieveMediaResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrieveResourceAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL RetrieveResourceAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrieveResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress>>(this->shim().RetrieveResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateResourceAsync(void* uri, HSTRING description, void* item, void** operation) noexcept final
+    int32_t WINRT_CALL CreateResourceAsync(void* uri, void* description, void* item, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>), Windows::Foundation::Uri const, hstring const, Windows::Web::Syndication::SyndicationItem const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>>(this->shim().CreateResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<Windows::Web::Syndication::SyndicationItem const*>(&item)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMediaResourceAsync(void* uri, HSTRING mediaType, HSTRING description, void* mediaStream, void** operation) noexcept final
+    int32_t WINRT_CALL CreateMediaResourceAsync(void* uri, void* mediaType, void* description, void* mediaStream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMediaResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>), Windows::Foundation::Uri const, hstring const, hstring const, Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress>>(this->shim().CreateMediaResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<hstring const*>(&mediaType), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&mediaStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateMediaResourceAsync(void* uri, HSTRING mediaType, void* mediaStream, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateMediaResourceAsync(void* uri, void* mediaType, void* mediaStream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateMediaResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>), Windows::Foundation::Uri const, hstring const, Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>>(this->shim().UpdateMediaResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<hstring const*>(&mediaType), *reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&mediaStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateResourceAsync(void* uri, void* item, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateResourceAsync(void* uri, void* item, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>), Windows::Foundation::Uri const, Windows::Web::Syndication::SyndicationItem const);
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>>(this->shim().UpdateResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Web::Syndication::SyndicationItem const*>(&item)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateResourceItemAsync(void* item, void** operation) noexcept final
+    int32_t WINRT_CALL UpdateResourceItemAsync(void* item, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateResourceItemAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>), Windows::Web::Syndication::SyndicationItem const);
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>>(this->shim().UpdateResourceItemAsync(*reinterpret_cast<Windows::Web::Syndication::SyndicationItem const*>(&item)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteResourceAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteResourceAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteResourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>>(this->shim().DeleteResourceAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteResourceItemAsync(void* item, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteResourceItemAsync(void* item, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteResourceItemAsync, WINRT_WRAP(Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>), Windows::Web::Syndication::SyndicationItem const);
             *operation = detach_from<Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress>>(this->shim().DeleteResourceItemAsync(*reinterpret_cast<Windows::Web::Syndication::SyndicationItem const*>(&item)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CancelAsyncOperations() noexcept final
+    int32_t WINRT_CALL CancelAsyncOperations() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelAsyncOperations, WINRT_WRAP(void));
             this->shim().CancelAsyncOperations();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::AtomPub::IAtomPubClientFactory> : produce_base<D, Windows::Web::AtomPub::IAtomPubClientFactory>
 {
-    HRESULT __stdcall CreateAtomPubClientWithCredentials(void* serverCredential, void** atomPubClient) noexcept final
+    int32_t WINRT_CALL CreateAtomPubClientWithCredentials(void* serverCredential, void** atomPubClient) noexcept final
     {
         try
         {
             *atomPubClient = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAtomPubClientWithCredentials, WINRT_WRAP(Windows::Web::AtomPub::AtomPubClient), Windows::Security::Credentials::PasswordCredential const&);
             *atomPubClient = detach_from<Windows::Web::AtomPub::AtomPubClient>(this->shim().CreateAtomPubClientWithCredentials(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&serverCredential)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::AtomPub::IResourceCollection> : produce_base<D, Windows::Web::AtomPub::IResourceCollection>
 {
-    HRESULT __stdcall get_Title(void** value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Categories(void** value) noexcept final
+    int32_t WINRT_CALL get_Categories(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Categories, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory>>(this->shim().Categories());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Accepts(void** value) noexcept final
+    int32_t WINRT_CALL get_Accepts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Accepts, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Accepts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::AtomPub::IServiceDocument> : produce_base<D, Windows::Web::AtomPub::IServiceDocument>
 {
-    HRESULT __stdcall get_Workspaces(void** value) noexcept final
+    int32_t WINRT_CALL get_Workspaces(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Workspaces, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace>>(this->shim().Workspaces());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::Web::AtomPub::IWorkspace>
 {
-    HRESULT __stdcall get_Title(void** value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Collections(void** value) noexcept final
+    int32_t WINRT_CALL get_Collections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Collections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection>>(this->shim().Collections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -459,11 +421,11 @@ struct produce<D, Windows::Web::AtomPub::IWorkspace> : produce_base<D, Windows::
 WINRT_EXPORT namespace winrt::Windows::Web::AtomPub {
 
 inline AtomPubClient::AtomPubClient() :
-    AtomPubClient(get_activation_factory<AtomPubClient>().ActivateInstance<AtomPubClient>())
+    AtomPubClient(impl::call_factory<AtomPubClient>([](auto&& f) { return f.template ActivateInstance<AtomPubClient>(); }))
 {}
 
 inline AtomPubClient::AtomPubClient(Windows::Security::Credentials::PasswordCredential const& serverCredential) :
-    AtomPubClient(get_activation_factory<AtomPubClient, Windows::Web::AtomPub::IAtomPubClientFactory>().CreateAtomPubClientWithCredentials(serverCredential))
+    AtomPubClient(impl::call_factory<AtomPubClient, Windows::Web::AtomPub::IAtomPubClientFactory>([&](auto&& f) { return f.CreateAtomPubClientWithCredentials(serverCredential); }))
 {}
 
 }
@@ -481,5 +443,3 @@ template<> struct hash<winrt::Windows::Web::AtomPub::ServiceDocument> : winrt::i
 template<> struct hash<winrt::Windows::Web::AtomPub::Workspace> : winrt::impl::hash_base<winrt::Windows::Web::AtomPub::Workspace> {};
 
 }
-
-WINRT_WARNING_POP

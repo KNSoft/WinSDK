@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -112,24 +112,24 @@ template <> struct name<Windows::Globalization::NumberFormatting::PermilleFormat
 template <> struct name<Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder>{ static constexpr auto & value{ L"Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder" }; };
 template <> struct name<Windows::Globalization::NumberFormatting::CurrencyFormatterMode>{ static constexpr auto & value{ L"Windows.Globalization.NumberFormatting.CurrencyFormatterMode" }; };
 template <> struct name<Windows::Globalization::NumberFormatting::RoundingAlgorithm>{ static constexpr auto & value{ L"Windows.Globalization.NumberFormatting.RoundingAlgorithm" }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ICurrencyFormatter>{ static constexpr GUID value{ 0x11730CA5,0x4B00,0x41B2,{ 0xB3,0x32,0x73,0xB1,0x2A,0x49,0x7D,0x54 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ICurrencyFormatter2>{ static constexpr GUID value{ 0x072C2F1D,0xE7BA,0x4197,{ 0x92,0x0E,0x24,0x7C,0x92,0xF7,0xDE,0xA6 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>{ static constexpr GUID value{ 0x86C7537E,0xB938,0x4AA2,{ 0x84,0xB0,0x2C,0x33,0xDC,0x5B,0x14,0x50 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>{ static constexpr GUID value{ 0x0D018C9A,0xE393,0x46B8,{ 0xB8,0x30,0x7A,0x69,0xC8,0xF8,0x9F,0xBB } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::IIncrementNumberRounder>{ static constexpr GUID value{ 0x70A64FF8,0x66AB,0x4155,{ 0x9D,0xA1,0x73,0x9E,0x46,0x76,0x45,0x43 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberFormatter>{ static constexpr GUID value{ 0xA5007C49,0x7676,0x4DB7,{ 0x86,0x31,0x1B,0x6F,0xF2,0x65,0xCA,0xA9 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberFormatter2>{ static constexpr GUID value{ 0xD4A8C1F0,0x80D0,0x4B0D,{ 0xA8,0x9E,0x88,0x2C,0x1E,0x8F,0x83,0x10 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberFormatterOptions>{ static constexpr GUID value{ 0x80332D21,0xAEE1,0x4A39,{ 0xBA,0xA2,0x07,0xED,0x8C,0x96,0xDA,0xF6 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberParser>{ static constexpr GUID value{ 0xE6659412,0x4A13,0x4A53,{ 0x83,0xA1,0x39,0x2F,0xBE,0x4C,0xFF,0x9F } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberRounder>{ static constexpr GUID value{ 0x5473C375,0x38ED,0x4631,{ 0xB8,0x0C,0xEF,0x34,0xFC,0x48,0xB7,0xF5 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumberRounderOption>{ static constexpr GUID value{ 0x3B088433,0x646F,0x4EFE,{ 0x8D,0x48,0x66,0xEB,0x2E,0x49,0xE7,0x36 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumeralSystemTranslator>{ static constexpr GUID value{ 0x28F5BC2C,0x8C23,0x4234,{ 0xAD,0x2E,0xFA,0x5A,0x3A,0x42,0x6E,0x9B } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>{ static constexpr GUID value{ 0x9630C8DA,0x36EF,0x4D88,{ 0xA8,0x5C,0x6F,0x0D,0x98,0xD6,0x20,0xA6 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::IPercentFormatterFactory>{ static constexpr GUID value{ 0xB7828AEF,0xFED4,0x4018,{ 0xA6,0xE2,0xE0,0x99,0x61,0xE0,0x37,0x65 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>{ static constexpr GUID value{ 0x2B37B4AC,0xE638,0x4ED5,{ 0xA9,0x98,0x62,0xF6,0xB0,0x6A,0x49,0xAE } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ISignedZeroOption>{ static constexpr GUID value{ 0xFD1CDD31,0x0A3C,0x49C4,{ 0xA6,0x42,0x96,0xA1,0x56,0x4F,0x4F,0x30 } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>{ static constexpr GUID value{ 0xF5941BCA,0x6646,0x4913,{ 0x8C,0x76,0x1B,0x19,0x1F,0xF9,0x4D,0xFD } }; };
-template <> struct guid<Windows::Globalization::NumberFormatting::ISignificantDigitsOption>{ static constexpr GUID value{ 0x1D4DFCDD,0x2D43,0x4EE8,{ 0xBB,0xF1,0xC1,0xB2,0x6A,0x71,0x1A,0x58 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ICurrencyFormatter>{ static constexpr guid value{ 0x11730CA5,0x4B00,0x41B2,{ 0xB3,0x32,0x73,0xB1,0x2A,0x49,0x7D,0x54 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ICurrencyFormatter2>{ static constexpr guid value{ 0x072C2F1D,0xE7BA,0x4197,{ 0x92,0x0E,0x24,0x7C,0x92,0xF7,0xDE,0xA6 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>{ static constexpr guid value{ 0x86C7537E,0xB938,0x4AA2,{ 0x84,0xB0,0x2C,0x33,0xDC,0x5B,0x14,0x50 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>{ static constexpr guid value{ 0x0D018C9A,0xE393,0x46B8,{ 0xB8,0x30,0x7A,0x69,0xC8,0xF8,0x9F,0xBB } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::IIncrementNumberRounder>{ static constexpr guid value{ 0x70A64FF8,0x66AB,0x4155,{ 0x9D,0xA1,0x73,0x9E,0x46,0x76,0x45,0x43 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberFormatter>{ static constexpr guid value{ 0xA5007C49,0x7676,0x4DB7,{ 0x86,0x31,0x1B,0x6F,0xF2,0x65,0xCA,0xA9 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberFormatter2>{ static constexpr guid value{ 0xD4A8C1F0,0x80D0,0x4B0D,{ 0xA8,0x9E,0x88,0x2C,0x1E,0x8F,0x83,0x10 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberFormatterOptions>{ static constexpr guid value{ 0x80332D21,0xAEE1,0x4A39,{ 0xBA,0xA2,0x07,0xED,0x8C,0x96,0xDA,0xF6 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberParser>{ static constexpr guid value{ 0xE6659412,0x4A13,0x4A53,{ 0x83,0xA1,0x39,0x2F,0xBE,0x4C,0xFF,0x9F } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberRounder>{ static constexpr guid value{ 0x5473C375,0x38ED,0x4631,{ 0xB8,0x0C,0xEF,0x34,0xFC,0x48,0xB7,0xF5 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumberRounderOption>{ static constexpr guid value{ 0x3B088433,0x646F,0x4EFE,{ 0x8D,0x48,0x66,0xEB,0x2E,0x49,0xE7,0x36 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumeralSystemTranslator>{ static constexpr guid value{ 0x28F5BC2C,0x8C23,0x4234,{ 0xAD,0x2E,0xFA,0x5A,0x3A,0x42,0x6E,0x9B } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>{ static constexpr guid value{ 0x9630C8DA,0x36EF,0x4D88,{ 0xA8,0x5C,0x6F,0x0D,0x98,0xD6,0x20,0xA6 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::IPercentFormatterFactory>{ static constexpr guid value{ 0xB7828AEF,0xFED4,0x4018,{ 0xA6,0xE2,0xE0,0x99,0x61,0xE0,0x37,0x65 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>{ static constexpr guid value{ 0x2B37B4AC,0xE638,0x4ED5,{ 0xA9,0x98,0x62,0xF6,0xB0,0x6A,0x49,0xAE } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ISignedZeroOption>{ static constexpr guid value{ 0xFD1CDD31,0x0A3C,0x49C4,{ 0xA6,0x42,0x96,0xA1,0x56,0x4F,0x4F,0x30 } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>{ static constexpr guid value{ 0xF5941BCA,0x6646,0x4913,{ 0x8C,0x76,0x1B,0x19,0x1F,0xF9,0x4D,0xFD } }; };
+template <> struct guid_storage<Windows::Globalization::NumberFormatting::ISignificantDigitsOption>{ static constexpr guid value{ 0x1D4DFCDD,0x2D43,0x4EE8,{ 0xBB,0xF1,0xC1,0xB2,0x6A,0x71,0x1A,0x58 } }; };
 template <> struct default_interface<Windows::Globalization::NumberFormatting::CurrencyFormatter>{ using type = Windows::Globalization::NumberFormatting::ICurrencyFormatter; };
 template <> struct default_interface<Windows::Globalization::NumberFormatting::DecimalFormatter>{ using type = Windows::Globalization::NumberFormatting::INumberFormatter; };
 template <> struct default_interface<Windows::Globalization::NumberFormatting::IncrementNumberRounder>{ using type = Windows::Globalization::NumberFormatting::INumberRounder; };
@@ -138,11 +138,142 @@ template <> struct default_interface<Windows::Globalization::NumberFormatting::P
 template <> struct default_interface<Windows::Globalization::NumberFormatting::PermilleFormatter>{ using type = Windows::Globalization::NumberFormatting::INumberFormatter; };
 template <> struct default_interface<Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder>{ using type = Windows::Globalization::NumberFormatting::INumberRounder; };
 
+template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Currency(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Currency(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCurrencyFormatterCode(void* currencyCode, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCurrencyFormatterCodeContext(void* currencyCode, void* languages, void* geographicRegion, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDecimalFormatter(void* languages, void* geographicRegion, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::IIncrementNumberRounder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Increment(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Increment(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FormatInt(int64_t value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatUInt(uint64_t value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatDouble(double value, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FormatInt(int64_t value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatUInt(uint64_t value, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatDouble(double value, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatterOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Languages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GeographicRegion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IntegerDigits(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IntegerDigits(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FractionDigits(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FractionDigits(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGrouped(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsGrouped(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDecimalPointAlwaysDisplayed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsDecimalPointAlwaysDisplayed(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedGeographicRegion(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberParser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ParseInt(void* text, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ParseUInt(void* text, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ParseDouble(void* text, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberRounder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RoundInt32(int32_t value, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RoundUInt32(uint32_t value, uint32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RoundInt64(int64_t value, int64_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RoundUInt64(uint64_t value, uint64_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RoundSingle(float value, float* result) noexcept = 0;
+    virtual int32_t WINRT_CALL RoundDouble(double value, double* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumberRounderOption>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NumberRounder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumberRounder(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumeralSystemTranslator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Languages(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL TranslateNumerals(void* value, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* languages, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::IPercentFormatterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreatePercentFormatter(void* languages, void* geographicRegion, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreatePermilleFormatter(void* languages, void* geographicRegion, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::ISignedZeroOption>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsZeroSigned(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsZeroSigned(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignificantDigits(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SignificantDigits(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::NumberFormatting::ISignificantDigitsOption>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SignificantDigits(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SignificantDigits(int32_t value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Globalization_NumberFormatting_ICurrencyFormatter
 {
     hstring Currency() const;
-    [[deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")]] void Currency(param::hstring const& value) const;
+    void Currency(param::hstring const& value) const;
 };
 template <> struct consume<Windows::Globalization::NumberFormatting::ICurrencyFormatter> { template <typename D> using type = consume_Windows_Globalization_NumberFormatting_ICurrencyFormatter<D>; };
 
@@ -304,136 +435,5 @@ struct consume_Windows_Globalization_NumberFormatting_ISignificantDigitsOption
     void SignificantDigits(int32_t value) const;
 };
 template <> struct consume<Windows::Globalization::NumberFormatting::ISignificantDigitsOption> { template <typename D> using type = consume_Windows_Globalization_NumberFormatting_ISignificantDigitsOption<D>; };
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Currency(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Currency(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) noexcept = 0;
-    virtual HRESULT __stdcall ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCurrencyFormatterCode(HSTRING currencyCode, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateCurrencyFormatterCodeContext(HSTRING currencyCode, void* languages, HSTRING geographicRegion, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDecimalFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::IIncrementNumberRounder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept = 0;
-    virtual HRESULT __stdcall get_Increment(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Increment(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FormatInt(int64_t value, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatUInt(uint64_t value, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatDouble(double value, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FormatInt(int64_t value, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatUInt(uint64_t value, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatDouble(double value, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberFormatterOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Languages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_GeographicRegion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IntegerDigits(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IntegerDigits(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_FractionDigits(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FractionDigits(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGrouped(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsGrouped(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDecimalPointAlwaysDisplayed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsDecimalPointAlwaysDisplayed(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedGeographicRegion(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberParser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ParseInt(HSTRING text, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ParseUInt(HSTRING text, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ParseDouble(HSTRING text, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberRounder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RoundInt32(int32_t value, int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall RoundUInt32(uint32_t value, uint32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall RoundInt64(int64_t value, int64_t* result) noexcept = 0;
-    virtual HRESULT __stdcall RoundUInt64(uint64_t value, uint64_t* result) noexcept = 0;
-    virtual HRESULT __stdcall RoundSingle(float value, float* result) noexcept = 0;
-    virtual HRESULT __stdcall RoundDouble(double value, double* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumberRounderOption>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NumberRounder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumberRounder(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumeralSystemTranslator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Languages(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall TranslateNumerals(HSTRING value, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* languages, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::IPercentFormatterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreatePercentFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreatePermilleFormatter(void* languages, HSTRING geographicRegion, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ISignedZeroOption>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsZeroSigned(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsZeroSigned(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignificantDigits(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SignificantDigits(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::NumberFormatting::ISignificantDigitsOption>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SignificantDigits(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SignificantDigits(int32_t value) noexcept = 0;
-};};
 
 }

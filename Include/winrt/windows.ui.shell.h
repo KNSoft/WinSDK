@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.shell.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,16 +232,24 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
 #define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION)
+#define WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
 #define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
@@ -253,6 +269,7 @@
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
 #include "Windows.ApplicationModel.Core.h"
+#include "Windows.UI.StartScreen.h"
 // Importing Collections header
 #include <windows.foundation.collections.h>
 
@@ -286,6 +303,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CShell_CIAdaptiveCardBuilderStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                interface ISecurityAppManager;
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager ABI::Windows::UI::Shell::ISecurityAppManager
+
+#endif // ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
 namespace ABI {
@@ -299,6 +330,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CShell_CITaskbarManager ABI::Windows::UI::Shell::ITaskbarManager
 
 #endif // ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                interface ITaskbarManager2;
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 ABI::Windows::UI::Shell::ITaskbarManager2
+
+#endif // ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CShell_CITaskbarManagerStatics_FWD_DEFINED__
@@ -405,11 +450,104 @@ namespace ABI {
 
 
 
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Uri;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IUriRuntimeClass;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                class SecondaryTile;
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace StartScreen {
+                interface ISecondaryTile;
+            } /* Windows */
+        } /* UI */
+    } /* StartScreen */} /* ABI */
+#define __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile ABI::Windows::UI::StartScreen::ISecondaryTile
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
 
 
 
 
 
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                
+                typedef enum SecurityAppKind : int SecurityAppKind;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                
+                typedef enum SecurityAppState : int SecurityAppState;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                
+                typedef enum SecurityAppSubstatus : int SecurityAppSubstatus;
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                class SecurityAppManager;
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
 
 
 namespace ABI {
@@ -424,6 +562,89 @@ namespace ABI {
 
 
 
+
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppKind
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                /* [v1_enum, contract] */
+                enum SecurityAppKind : int
+                {
+                    SecurityAppKind_WebProtection = 0,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppState
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                /* [v1_enum, contract] */
+                enum SecurityAppState : int
+                {
+                    SecurityAppState_Disabled = 0,
+                    SecurityAppState_Enabled = 1,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppSubstatus
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                /* [v1_enum, contract] */
+                enum SecurityAppSubstatus : int
+                {
+                    SecurityAppSubstatus_Undetermined = 0,
+                    SecurityAppSubstatus_NoActionNeeded = 1,
+                    SecurityAppSubstatus_ActionRecommended = 2,
+                    SecurityAppSubstatus_ActionNeeded = 3,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -505,6 +726,62 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CIAdaptiveCardBuilderStatics;
 
 /*
  *
+ * Interface Windows.UI.Shell.ISecurityAppManager
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Shell.SecurityAppManager
+ *
+ *
+ */
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Shell_ISecurityAppManager[] = L"Windows.UI.Shell.ISecurityAppManager";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                /* [object, uuid("96AC500C-AED4-561D-BDE8-953520343A2D"), exclusiveto, contract] */
+                MIDL_INTERFACE("96AC500C-AED4-561D-BDE8-953520343A2D")
+                ISecurityAppManager : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE Register(
+                        /* [in] */ABI::Windows::UI::Shell::SecurityAppKind kind,
+                        /* [in] */__RPC__in HSTRING displayName,
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * detailsUri,
+                        /* [in] */boolean registerPerUser,
+                        /* [retval, out] */__RPC__out GUID * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Unregister(
+                        /* [in] */ABI::Windows::UI::Shell::SecurityAppKind kind,
+                        /* [in] */GUID guidRegistration
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE UpdateState(
+                        /* [in] */ABI::Windows::UI::Shell::SecurityAppKind kind,
+                        /* [in] */GUID guidRegistration,
+                        /* [in] */ABI::Windows::UI::Shell::SecurityAppState state,
+                        /* [in] */ABI::Windows::UI::Shell::SecurityAppSubstatus substatus,
+                        /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * detailsUri
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISecurityAppManager=_uuidof(ISecurityAppManager);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CISecurityAppManager;
+#endif /* !defined(____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.UI.Shell.ITaskbarManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -559,6 +836,60 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CITaskbarManager;
 #endif /* !defined(____x_ABI_CWindows_CUI_CShell_CITaskbarManager_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+/*
+ *
+ * Interface Windows.UI.Shell.ITaskbarManager2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Shell.TaskbarManager
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Shell.ITaskbarManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Shell_ITaskbarManager2[] = L"Windows.UI.Shell.ITaskbarManager2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Shell {
+                /* [object, uuid("79F0A06E-7B02-4911-918C-DEE0BBD20BA4"), exclusiveto, contract] */
+                MIDL_INTERFACE("79F0A06E-7B02-4911-918C-DEE0BBD20BA4")
+                ITaskbarManager2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE IsSecondaryTilePinnedAsync(
+                        /* [in] */__RPC__in HSTRING tileId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestPinSecondaryTileAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::StartScreen::ISecondaryTile * secondaryTile,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TryUnpinSecondaryTileAsync(
+                        /* [in] */__RPC__in HSTRING tileId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ITaskbarManager2=_uuidof(ITaskbarManager2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Shell */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CITaskbarManager2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -627,6 +958,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Shell.SecurityAppManager
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.UI.Shell.SecurityAppManagerContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Shell.ISecurityAppManager ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Shell_SecurityAppManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Shell_SecurityAppManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Shell_SecurityAppManager[] = L"Windows.UI.Shell.SecurityAppManager";
+#endif
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.UI.Shell.TaskbarManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -637,6 +995,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Shell.ITaskbarManager ** Default Interface **
+ *    Windows.UI.Shell.ITaskbarManager2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -668,11 +1027,23 @@ typedef interface __x_ABI_CWindows_CUI_CShell_CIAdaptiveCardBuilderStatics __x_A
 
 #endif // ____x_ABI_CWindows_CUI_CShell_CIAdaptiveCardBuilderStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CShell_CISecurityAppManager __x_ABI_CWindows_CUI_CShell_CISecurityAppManager;
+
+#endif // ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CShell_CITaskbarManager __x_ABI_CWindows_CUI_CShell_CITaskbarManager;
 
 #endif // ____x_ABI_CWindows_CUI_CShell_CITaskbarManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 __x_ABI_CWindows_CUI_CShell_CITaskbarManager2;
+
+#endif // ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CShell_CITaskbarManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CShell_CITaskbarManagerStatics_FWD_DEFINED__
@@ -804,6 +1175,34 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry __x_AB
 
 
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+
+
+
+
+#ifndef ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile;
+
+#endif // ____x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile_FWD_DEFINED__
+
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CUI_CShell_CSecurityAppKind __x_ABI_CWindows_CUI_CShell_CSecurityAppKind;
+
+
+typedef enum __x_ABI_CWindows_CUI_CShell_CSecurityAppState __x_ABI_CWindows_CUI_CShell_CSecurityAppState;
+
+
+typedef enum __x_ABI_CWindows_CUI_CShell_CSecurityAppSubstatus __x_ABI_CWindows_CUI_CShell_CSecurityAppSubstatus;
 
 
 
@@ -814,6 +1213,67 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CCore_CIAppListEntry __x_AB
 
 
 
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppKind
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CShell_CSecurityAppKind
+{
+    SecurityAppKind_WebProtection = 0,
+};
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppState
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CShell_CSecurityAppState
+{
+    SecurityAppState_Disabled = 0,
+    SecurityAppState_Enabled = 1,
+};
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Shell.SecurityAppSubstatus
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CShell_CSecurityAppSubstatus
+{
+    SecurityAppSubstatus_Undetermined = 0,
+    SecurityAppSubstatus_NoActionNeeded = 1,
+    SecurityAppSubstatus_ActionRecommended = 2,
+    SecurityAppSubstatus_ActionNeeded = 3,
+};
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
 
 
 /*
@@ -999,6 +1459,122 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CIAdaptiveCardBuilderStatics;
 
 /*
  *
+ * Interface Windows.UI.Shell.ISecurityAppManager
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Shell.SecurityAppManager
+ *
+ *
+ */
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Shell_ISecurityAppManager[] = L"Windows.UI.Shell.ISecurityAppManager";
+/* [object, uuid("96AC500C-AED4-561D-BDE8-953520343A2D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CShell_CISecurityAppManagerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Register )(
+        __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+        /* [in] */__x_ABI_CWindows_CUI_CShell_CSecurityAppKind kind,
+        /* [in] */__RPC__in HSTRING displayName,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * detailsUri,
+        /* [in] */boolean registerPerUser,
+        /* [retval, out] */__RPC__out GUID * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *Unregister )(
+        __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+        /* [in] */__x_ABI_CWindows_CUI_CShell_CSecurityAppKind kind,
+        /* [in] */GUID guidRegistration
+        );
+    HRESULT ( STDMETHODCALLTYPE *UpdateState )(
+        __x_ABI_CWindows_CUI_CShell_CISecurityAppManager * This,
+        /* [in] */__x_ABI_CWindows_CUI_CShell_CSecurityAppKind kind,
+        /* [in] */GUID guidRegistration,
+        /* [in] */__x_ABI_CWindows_CUI_CShell_CSecurityAppState state,
+        /* [in] */__x_ABI_CWindows_CUI_CShell_CSecurityAppSubstatus substatus,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * detailsUri
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CShell_CISecurityAppManagerVtbl;
+
+interface __x_ABI_CWindows_CUI_CShell_CISecurityAppManager
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CShell_CISecurityAppManagerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_Register(This,kind,displayName,detailsUri,registerPerUser,result) \
+    ( (This)->lpVtbl->Register(This,kind,displayName,detailsUri,registerPerUser,result) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_Unregister(This,kind,guidRegistration) \
+    ( (This)->lpVtbl->Unregister(This,kind,guidRegistration) )
+
+#define __x_ABI_CWindows_CUI_CShell_CISecurityAppManager_UpdateState(This,kind,guidRegistration,state,substatus,detailsUri) \
+    ( (This)->lpVtbl->UpdateState(This,kind,guidRegistration,state,substatus,detailsUri) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CISecurityAppManager;
+#endif /* !defined(____x_ABI_CWindows_CUI_CShell_CISecurityAppManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Interface Windows.UI.Shell.ITaskbarManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -1129,6 +1705,120 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CITaskbarManager;
 
 /*
  *
+ * Interface Windows.UI.Shell.ITaskbarManager2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Shell.TaskbarManager
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.Shell.ITaskbarManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Shell_ITaskbarManager2[] = L"Windows.UI.Shell.ITaskbarManager2";
+/* [object, uuid("79F0A06E-7B02-4911-918C-DEE0BBD20BA4"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CShell_CITaskbarManager2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *IsSecondaryTilePinnedAsync )(
+        __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+        /* [in] */__RPC__in HSTRING tileId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestPinSecondaryTileAsync )(
+        __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CStartScreen_CISecondaryTile * secondaryTile,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryUnpinSecondaryTileAsync )(
+        __x_ABI_CWindows_CUI_CShell_CITaskbarManager2 * This,
+        /* [in] */__RPC__in HSTRING tileId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CShell_CITaskbarManager2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CShell_CITaskbarManager2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CShell_CITaskbarManager2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_IsSecondaryTilePinnedAsync(This,tileId,operation) \
+    ( (This)->lpVtbl->IsSecondaryTilePinnedAsync(This,tileId,operation) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_RequestPinSecondaryTileAsync(This,secondaryTile,operation) \
+    ( (This)->lpVtbl->RequestPinSecondaryTileAsync(This,secondaryTile,operation) )
+
+#define __x_ABI_CWindows_CUI_CShell_CITaskbarManager2_TryUnpinSecondaryTileAsync(This,tileId,operation) \
+    ( (This)->lpVtbl->TryUnpinSecondaryTileAsync(This,tileId,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CShell_CITaskbarManager2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CShell_CITaskbarManager2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Shell.ITaskbarManagerStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -1245,6 +1935,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Shell.SecurityAppManager
+ *
+ * Introduced to Windows.UI.Shell.SecurityAppManagerContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.UI.Shell.SecurityAppManagerContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Shell.ISecurityAppManager ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Shell_SecurityAppManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Shell_SecurityAppManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Shell_SecurityAppManager[] = L"Windows.UI.Shell.SecurityAppManager";
+#endif
+#endif // WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
  * Class Windows.UI.Shell.TaskbarManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -1255,6 +1972,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Shell.ITaskbarManager ** Default Interface **
+ *    Windows.UI.Shell.ITaskbarManager2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

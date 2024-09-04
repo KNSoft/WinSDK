@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -59,7 +59,8 @@ struct WINRT_EBO WebViewControlNavigationStartingEventArgs :
 };
 
 struct WINRT_EBO WebViewControlNewWindowRequestedEventArgs :
-    Windows::Web::UI::IWebViewControlNewWindowRequestedEventArgs
+    Windows::Web::UI::IWebViewControlNewWindowRequestedEventArgs,
+    impl::require<WebViewControlNewWindowRequestedEventArgs, Windows::Web::UI::IWebViewControlNewWindowRequestedEventArgs2>
 {
     WebViewControlNewWindowRequestedEventArgs(std::nullptr_t) noexcept {}
 };

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,6 +17,8 @@ struct ComponentLoadFailedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ComponentLoadFailedEventHandler(L lambda);
     template <typename F> ComponentLoadFailedEventHandler(F* function);
     template <typename O, typename M> ComponentLoadFailedEventHandler(O* object, M method);
+    template <typename O, typename M> ComponentLoadFailedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ComponentLoadFailedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Protection::MediaProtectionManager const& sender, Windows::Media::Protection::ComponentLoadFailedEventArgs const& e) const;
 };
 
@@ -26,6 +28,8 @@ struct RebootNeededEventHandler : Windows::Foundation::IUnknown
     template <typename L> RebootNeededEventHandler(L lambda);
     template <typename F> RebootNeededEventHandler(F* function);
     template <typename O, typename M> RebootNeededEventHandler(O* object, M method);
+    template <typename O, typename M> RebootNeededEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RebootNeededEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Protection::MediaProtectionManager const& sender) const;
 };
 
@@ -35,6 +39,8 @@ struct ServiceRequestedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ServiceRequestedEventHandler(L lambda);
     template <typename F> ServiceRequestedEventHandler(F* function);
     template <typename O, typename M> ServiceRequestedEventHandler(O* object, M method);
+    template <typename O, typename M> ServiceRequestedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ServiceRequestedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Protection::MediaProtectionManager const& sender, Windows::Media::Protection::ServiceRequestedEventArgs const& e) const;
 };
 

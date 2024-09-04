@@ -555,12 +555,6 @@ CoDecodeProxy(
 
 DECLARE_HANDLE(CO_MTA_USAGE_COOKIE);
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
-
-#pragma region Desktop or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 _Check_return_ WINOLEAPI
 CoIncrementMTAUsage(
     _Out_ CO_MTA_USAGE_COOKIE* pCookie
@@ -572,11 +566,33 @@ CoDecrementMTAUsage(
     );
 
 
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Desktop or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
 WINOLEAPI
 CoAllowUnmarshalerCLSID(
     _In_ REFCLSID clsid
     );
 
+
+// Predefine _EXE_INITIALIZE_MTA to have the runtime initialize an MTA for your process
+// prior to initializing globals (i.e. dynamic initializers)
+// _EXE_INITIALIZE_MTA et al. are too long for rc
+#if !defined RC_INVOKED
+    #if defined _M_IX86
+        #define _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX "_"
+    #elif defined _M_X64 || defined _M_ARM || defined _M_ARM64
+        #define _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX ""
+    #endif
+
+    #if defined _EXE_INITIALIZE_MTA && !defined _M_CEE
+        #pragma comment(lib, "exe_initialize_mta")
+        #pragma comment(linker, "/include:" _CRT_INTERNAL_COMBASE_SYMBOL_PREFIX "__PLEASE_LINK_WITH_exe_initialize_mta.lib")
+    #endif
+#endif
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
@@ -1002,6 +1018,8 @@ CoSwitchCallContext(
 #define COM_RIGHTS_EXECUTE_REMOTE 4
 #define COM_RIGHTS_ACTIVATE_LOCAL 8
 #define COM_RIGHTS_ACTIVATE_REMOTE 16
+#define COM_RIGHTS_RESERVED1 32
+#define COM_RIGHTS_RESERVED2 64
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion

@@ -1484,7 +1484,8 @@ _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
     {
         float det = determinant(matrix);
 
-        if (fabs(det) < FLT_EPSILON)
+        // NaN safe
+        if (!(fabs(det) >= FLT_EPSILON))
         {
             const float nan = _WINDOWS_NUMERICS_NAN_;
             *result = float3x2(nan, nan, nan, nan, nan, nan);
@@ -2319,7 +2320,8 @@ _WINDOWS_NUMERICS_BEGIN_NAMESPACE_
 
         float det = a * a11 + b * a12 + c * a13 + d * a14;
 
-        if (fabs(det) < FLT_EPSILON)
+        // NaN safe
+        if (!(fabs(det) >= FLT_EPSILON))
         {
             const float nan = _WINDOWS_NUMERICS_NAN_;
 

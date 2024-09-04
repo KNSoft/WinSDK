@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,6 +24,27 @@ struct WINRT_EBO ISpatialAnchor2 :
     impl::consume_t<ISpatialAnchor2>
 {
     ISpatialAnchor2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAnchorExportSufficiency :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAnchorExportSufficiency>
+{
+    ISpatialAnchorExportSufficiency(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAnchorExporter :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAnchorExporter>
+{
+    ISpatialAnchorExporter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialAnchorExporterStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialAnchorExporterStatics>
+{
+    ISpatialAnchorExporterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ISpatialAnchorManagerStatics :
@@ -54,7 +75,7 @@ struct WINRT_EBO ISpatialAnchorStore :
     ISpatialAnchorStore(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] ISpatialAnchorTransferManagerStatics :
+struct WINRT_EBO ISpatialAnchorTransferManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISpatialAnchorTransferManagerStatics>
 {
@@ -143,6 +164,13 @@ struct WINRT_EBO ISpatialLocation :
     impl::consume_t<ISpatialLocation>
 {
     ISpatialLocation(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISpatialLocation2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISpatialLocation2>
+{
+    ISpatialLocation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ISpatialLocator :

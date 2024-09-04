@@ -71,6 +71,7 @@ const DWORD TS_SS_TRANSITORY            = 0x004;   // if set, the document is ex
 const DWORD TS_SS_NOHIDDENTEXT          = 0x008;   // if set, the document will never contain hidden text (for perf)
 const DWORD TS_SS_TKBAUTOCORRECTENABLE  = 0x010;   // document owner sets this flag in order to receive auto-correction from the Windows touch keyboard
 const DWORD TS_SS_TKBPREDICTIONENABLE   = 0x020;   // document owner sets this flag in order to receive prediction from the Windows touch keyboard
+const DWORD TS_SS_UWPCONTROL            = 0x040;   // document is provided on behalf of a UWP control
 
 const DWORD TS_SD_MASKALL = (TS_SD_READONLY | TS_SD_LOADING);
 

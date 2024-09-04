@@ -822,6 +822,7 @@ typedef LSA_CALLBACK_FUNCTION * PLSA_CALLBACK_FUNCTION;
                                                                 // that the logon was cached interactive(no network) and the absence of this flag
                                                                 // denotes network logon was attempted.
 #define PRIMARY_CRED_INTERACTIVE_NGC_LOGON          0x00080000
+#define PRIMARY_CRED_INTERACTIVE_FIDO_LOGON         0x00100000
 
 #define PRIMARY_CRED_LOGON_PACKAGE_SHIFT 24
 #define PRIMARY_CRED_PACKAGE_MASK 0xff000000

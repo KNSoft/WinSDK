@@ -254,6 +254,7 @@ typedef DESKTOPENUMPROCA    DESKTOPENUMPROC;
 #define CREATEPROCESS_MANIFEST_RESOURCE_ID  1
 #define ISOLATIONAWARE_MANIFEST_RESOURCE_ID 2
 #define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID 3
+#define ISOLATIONPOLICY_MANIFEST_RESOURCE_ID 4
 #define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID 1   /* inclusive */
 #define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID 16  /* inclusive */
 #else  /* RC_INVOKED */
@@ -261,6 +262,7 @@ typedef DESKTOPENUMPROCA    DESKTOPENUMPROC;
 #define CREATEPROCESS_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1)
 #define ISOLATIONAWARE_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(2)
 #define ISOLATIONAWARE_NOSTATICIMPORT_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(3)
+#define ISOLATIONPOLICY_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(4)
 #define MINIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE( 1 /*inclusive*/)
 #define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 /*inclusive*/)
 #endif /* RC_INVOKED */
@@ -3480,6 +3482,8 @@ PeekMessageW(
 #define PM_NOREMOVE         0x0000
 #define PM_REMOVE           0x0001
 #define PM_NOYIELD          0x0002
+
+
 #if(WINVER >= 0x0500)
 #define PM_QS_INPUT         (QS_INPUT << 16)
 #define PM_QS_POSTMESSAGE   ((QS_POSTMESSAGE | QS_HOTKEY | QS_TIMER) << 16)
@@ -6292,6 +6296,12 @@ typedef struct tagPOINTER_PEN_INFO {
 #define TOUCH_FEEDBACK_INDIRECT 0x2
 #define TOUCH_FEEDBACK_NONE 0x3
 
+typedef enum {
+    POINTER_FEEDBACK_DEFAULT = 1,   // The injected pointer input feedback may get suppressed by the end-user settings in the Pen and Touch control panel.
+    POINTER_FEEDBACK_INDIRECT = 2,  // The injected pointer input feedback overrides the end-user settings in the Pen and Touch control panel.
+    POINTER_FEEDBACK_NONE = 3,      // No touch visualizations.
+} POINTER_FEEDBACK_MODE;
+
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
@@ -6481,6 +6491,31 @@ WINAPI
 UnregisterPointerInputTargetEx(
     _In_ HWND hwnd,
     _In_ POINTER_INPUT_TYPE pointerType);
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+DECLARE_HANDLE(HSYNTHETICPOINTERDEVICE);
+WINUSERAPI
+HSYNTHETICPOINTERDEVICE
+WINAPI
+CreateSyntheticPointerDevice(
+    _In_ POINTER_INPUT_TYPE pointerType,
+    _In_ ULONG maxCount,
+    _In_ POINTER_FEEDBACK_MODE mode);
+
+WINUSERAPI
+BOOL
+WINAPI
+InjectSyntheticPointerInput(
+    _In_ HSYNTHETICPOINTERDEVICE device,
+    _In_reads_(count) CONST POINTER_TYPE_INFO* pointerInfo,
+    _In_ UINT32 count);
+
+WINUSERAPI
+VOID
+WINAPI
+DestroySyntheticPointerDevice(
+    _In_ HSYNTHETICPOINTERDEVICE device);
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS5
 
 
 WINUSERAPI
@@ -8606,6 +8641,7 @@ EnableScrollBar(
 
 
 #endif  /* !NOSCROLL */
+
 
 WINUSERAPI
 BOOL

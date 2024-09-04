@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -50,11 +50,29 @@ template <> struct name<Windows::UI::Composition::Diagnostics::ICompositionDebug
 template <> struct name<Windows::UI::Composition::Diagnostics::CompositionDebugHeatMaps>{ static constexpr auto & value{ L"Windows.UI.Composition.Diagnostics.CompositionDebugHeatMaps" }; };
 template <> struct name<Windows::UI::Composition::Diagnostics::CompositionDebugSettings>{ static constexpr auto & value{ L"Windows.UI.Composition.Diagnostics.CompositionDebugSettings" }; };
 template <> struct name<Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds>{ static constexpr auto & value{ L"Windows.UI.Composition.Diagnostics.CompositionDebugOverdrawContentKinds" }; };
-template <> struct guid<Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps>{ static constexpr GUID value{ 0xE49C90AC,0x2FF3,0x5805,{ 0x71,0x8C,0xB7,0x25,0xEE,0x07,0x65,0x0F } }; };
-template <> struct guid<Windows::UI::Composition::Diagnostics::ICompositionDebugSettings>{ static constexpr GUID value{ 0x2831987E,0x1D82,0x4D38,{ 0xB7,0xB7,0xEF,0xD1,0x1C,0x7B,0xC3,0xD1 } }; };
-template <> struct guid<Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>{ static constexpr GUID value{ 0x64EC1F1E,0x6AF8,0x4AF8,{ 0xB8,0x14,0xC8,0x70,0xFD,0x5A,0x95,0x05 } }; };
+template <> struct guid_storage<Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps>{ static constexpr guid value{ 0xE49C90AC,0x2FF3,0x5805,{ 0x71,0x8C,0xB7,0x25,0xEE,0x07,0x65,0x0F } }; };
+template <> struct guid_storage<Windows::UI::Composition::Diagnostics::ICompositionDebugSettings>{ static constexpr guid value{ 0x2831987E,0x1D82,0x4D38,{ 0xB7,0xB7,0xEF,0xD1,0x1C,0x7B,0xC3,0xD1 } }; };
+template <> struct guid_storage<Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>{ static constexpr guid value{ 0x64EC1F1E,0x6AF8,0x4AF8,{ 0xB8,0x14,0xC8,0x70,0xFD,0x5A,0x95,0x05 } }; };
 template <> struct default_interface<Windows::UI::Composition::Diagnostics::CompositionDebugHeatMaps>{ using type = Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps; };
 template <> struct default_interface<Windows::UI::Composition::Diagnostics::CompositionDebugSettings>{ using type = Windows::UI::Composition::Diagnostics::ICompositionDebugSettings; };
+
+template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Hide(void* subtree) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowMemoryUsage(void* subtree) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowOverdraw(void* subtree, Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds contentKinds) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowRedraw(void* subtree) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HeatMaps(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetSettings(void* compositor, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Composition_Diagnostics_ICompositionDebugHeatMaps
@@ -79,23 +97,5 @@ struct consume_Windows_UI_Composition_Diagnostics_ICompositionDebugSettingsStati
     Windows::UI::Composition::Diagnostics::CompositionDebugSettings TryGetSettings(Windows::UI::Composition::Compositor const& compositor) const;
 };
 template <> struct consume<Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics> { template <typename D> using type = consume_Windows_UI_Composition_Diagnostics_ICompositionDebugSettingsStatics<D>; };
-
-template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Hide(void* subtree) noexcept = 0;
-    virtual HRESULT __stdcall ShowMemoryUsage(void* subtree) noexcept = 0;
-    virtual HRESULT __stdcall ShowOverdraw(void* subtree, Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds contentKinds) noexcept = 0;
-    virtual HRESULT __stdcall ShowRedraw(void* subtree) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HeatMaps(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetSettings(void* compositor, void** result) noexcept = 0;
-};};
 
 }

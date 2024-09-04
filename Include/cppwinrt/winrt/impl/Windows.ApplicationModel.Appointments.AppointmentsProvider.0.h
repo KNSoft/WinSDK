@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -45,14 +45,60 @@ template <> struct name<Windows::ApplicationModel::Appointments::AppointmentsPro
 template <> struct name<Windows::ApplicationModel::Appointments::AppointmentsProvider::AppointmentsProviderLaunchActionVerbs>{ static constexpr auto & value{ L"Windows.ApplicationModel.Appointments.AppointmentsProvider.AppointmentsProviderLaunchActionVerbs" }; };
 template <> struct name<Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation>{ static constexpr auto & value{ L"Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation" }; };
 template <> struct name<Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation>{ static constexpr auto & value{ L"Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation" }; };
-template <> struct guid<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>{ static constexpr GUID value{ 0xEC4A9AF3,0x620D,0x4C69,{ 0xAD,0xD7,0x97,0x94,0xE9,0x18,0x08,0x1F } }; };
-template <> struct guid<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>{ static constexpr GUID value{ 0x36DBBA28,0x9E2E,0x49C6,{ 0x8E,0xF7,0x3A,0xB7,0xA5,0xDC,0xC8,0xB8 } }; };
-template <> struct guid<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>{ static constexpr GUID value{ 0xEF9049A4,0xAF21,0x473C,{ 0x88,0xDC,0x76,0xCD,0x89,0xF6,0x0C,0xA5 } }; };
-template <> struct guid<Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>{ static constexpr GUID value{ 0x08B66ABA,0xFE33,0x46CD,{ 0xA5,0x0C,0xA8,0xFF,0xB3,0x26,0x05,0x37 } }; };
-template <> struct guid<Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>{ static constexpr GUID value{ 0xF4903D9B,0x9E61,0x4DE2,{ 0xA7,0x32,0x26,0x87,0xC0,0x7D,0x1D,0xE8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>{ static constexpr guid value{ 0xEC4A9AF3,0x620D,0x4C69,{ 0xAD,0xD7,0x97,0x94,0xE9,0x18,0x08,0x1F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>{ static constexpr guid value{ 0x36DBBA28,0x9E2E,0x49C6,{ 0x8E,0xF7,0x3A,0xB7,0xA5,0xDC,0xC8,0xB8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>{ static constexpr guid value{ 0xEF9049A4,0xAF21,0x473C,{ 0x88,0xDC,0x76,0xCD,0x89,0xF6,0x0C,0xA5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>{ static constexpr guid value{ 0x08B66ABA,0xFE33,0x46CD,{ 0xA5,0x0C,0xA8,0xFF,0xB3,0x26,0x05,0x37 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>{ static constexpr guid value{ 0xF4903D9B,0x9E61,0x4DE2,{ 0xA7,0x32,0x26,0x87,0xC0,0x7D,0x1D,0xE8 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation>{ using type = Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation; };
 template <> struct default_interface<Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation>{ using type = Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation; };
 template <> struct default_interface<Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation>{ using type = Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation; };
+
+template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppointmentInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompleted(void* itemId) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCanceled() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportError(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DismissUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AddAppointment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReplaceAppointment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoveAppointment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShowTimeFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ShowAppointmentDetails(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppointmentId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstanceStartDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompleted() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCanceled() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportError(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DismissUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppointmentId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppointmentInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstanceStartDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourcePackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCompleted(void* itemId) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportCanceled() noexcept = 0;
+    virtual int32_t WINRT_CALL ReportError(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DismissUI() noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAddAppointmentOperation
@@ -109,51 +155,5 @@ struct consume_Windows_ApplicationModel_Appointments_AppointmentsProvider_IRepla
     void DismissUI() const;
 };
 template <> struct consume<Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation> { template <typename D> using type = consume_Windows_ApplicationModel_Appointments_AppointmentsProvider_IReplaceAppointmentOperation<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppointmentInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompleted(HSTRING itemId) noexcept = 0;
-    virtual HRESULT __stdcall ReportCanceled() noexcept = 0;
-    virtual HRESULT __stdcall ReportError(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall DismissUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AddAppointment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReplaceAppointment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoveAppointment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShowTimeFrame(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ShowAppointmentDetails(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppointmentId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstanceStartDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompleted() noexcept = 0;
-    virtual HRESULT __stdcall ReportCanceled() noexcept = 0;
-    virtual HRESULT __stdcall ReportError(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall DismissUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppointmentId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppointmentInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstanceStartDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourcePackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ReportCompleted(HSTRING itemId) noexcept = 0;
-    virtual HRESULT __stdcall ReportCanceled() noexcept = 0;
-    virtual HRESULT __stdcall ReportError(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall DismissUI() noexcept = 0;
-};};
 
 }

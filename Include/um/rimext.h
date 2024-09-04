@@ -53,11 +53,11 @@ typedef struct _RIM_USAGE_ANDPAGE
     USHORT UsagePage;
 } RIM_USAGE_AND_PAGE, *PRIM_USAGE_AND_PAGE;
 
-#define RIM_DEVICE_CREATED         1
-#define RIM_DEVICE_OPENED          2
-#define RIM_DEVICE_CLOSED          3
-#define RIM_DEVICE_DESTROYED       4
-#define RIM_DEVICE_RESET           5
+#define RIM_DEVICE_CREATED          1
+#define RIM_DEVICE_OPENED           2
+#define RIM_DEVICE_CLOSED           3
+#define RIM_DEVICE_DESTROYED        4
+#define RIM_DEVICE_RESET            5
 
 typedef BOOL (CALLBACK* RIMDEVCHANGECALLBACKPROC)(
     HANDLE hRim,
@@ -296,7 +296,6 @@ typedef struct _RIM_PNP_INSTANCE_PATH
 typedef struct RIM_DEVICE_PROPERTIES
 {
     DWORD dwDevicePropType;
-    BOOL  bMobileKeyboard; // for dwDeviceType == RIM_DEVICE_PROP_KEYBOARD
     union
     {
         RIM_KEYBOARD_ATTRIBUTES keyboard;

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -68,6 +68,7 @@ struct WINRT_EBO ImageEncodingProperties :
     static Windows::Media::MediaProperties::ImageEncodingProperties CreateJpegXR();
     static Windows::Media::MediaProperties::ImageEncodingProperties CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat const& format);
     static Windows::Media::MediaProperties::ImageEncodingProperties CreateBmp();
+    static Windows::Media::MediaProperties::ImageEncodingProperties CreateHeif();
 };
 
 struct WINRT_EBO MediaEncodingProfile :
@@ -140,10 +141,11 @@ struct MediaEncodingSubtypes
     static hstring Alac();
     static hstring Flac();
     static hstring P010();
+    static hstring Heif();
 };
 
 struct WINRT_EBO MediaPropertySet :
-    Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>
+    Windows::Foundation::Collections::IMap<winrt::guid, Windows::Foundation::IInspectable>
 {
     MediaPropertySet(std::nullptr_t) noexcept {}
     MediaPropertySet();

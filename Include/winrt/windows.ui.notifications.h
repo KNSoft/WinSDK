@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.notifications.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -582,6 +594,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory ABI::Windows::UI::Notifications::IScheduledToastNotificationFactory
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IScheduledToastNotificationShowingEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs ABI::Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_FWD_DEFINED__
@@ -1086,6 +1112,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 ABI::Windows::UI::Notifications::IToastNotifier2
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                interface IToastNotifier3;
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 ABI::Windows::UI::Notifications::IToastNotifier3
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_FWD_DEFINED__
@@ -2521,6 +2561,50 @@ typedef ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification*,A
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                class ScheduledToastNotificationShowingEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b1bb0cab-f8b9-5909-a872-ef29e05a8c7a"))
+ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotifier*,ABI::Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ToastNotifier*, ABI::Windows::UI::Notifications::IToastNotifier*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs*, ABI::Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Notifications.ToastNotifier, Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotifier*,ABI::Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs*> __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::IToastNotifier*,ABI::Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::IToastNotifier*,ABI::Windows::UI::Notifications::IScheduledToastNotificationShowingEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #ifndef DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
 #define DEF___FIKeyValuePair_2_HSTRING_HSTRING_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -3155,6 +3239,26 @@ namespace ABI {
         } /* Windows */
     } /* Foundation */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            class Deferral;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IDeferral;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIDeferral ABI::Windows::Foundation::IDeferral
+
+#endif // ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 namespace ABI {
@@ -3424,6 +3528,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3487,6 +3593,7 @@ namespace ABI {
             } /* Windows */
         } /* UI */
     } /* Notifications */} /* ABI */
+
 
 
 
@@ -4684,10 +4791,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificatio
  * Interface is a part of the implementation of type Windows.UI.Notifications.AdaptiveNotificationText
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Notifications.IAdaptiveNotificationContent
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__)
@@ -4801,7 +4904,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateBadgeNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeNotification * * value
                         ) = 0;
                     
                 };
@@ -4894,19 +4997,19 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateBadgeUpdaterForApplication(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateBadgeUpdaterForApplicationWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CreateBadgeUpdaterForSecondaryTile(
                         /* [in] */__RPC__in HSTRING tileId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IBadgeUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetTemplateContent(
                         /* [in] */ABI::Windows::UI::Notifications::BadgeTemplateType type,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * content
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * result
                         ) = 0;
                     
                 };
@@ -5388,11 +5491,11 @@ namespace ABI {
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateNotificationDataWithValuesAndSequenceNumber(
                         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * initialValues,
                         /* [in] */UINT32 sequenceNumber,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData * * result
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData * * value
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateNotificationDataWithValues(
                         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * initialValues,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData * * result
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::INotificationData * * value
                         ) = 0;
                     
                 };
@@ -5439,7 +5542,7 @@ namespace ABI {
                         /* [in] */__RPC__in HSTRING value
                         ) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Bindings(
-                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CNotifications__CNotificationBinding * * result
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CNotifications__CNotificationBinding * * value
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetBinding(
                         /* [in] */__RPC__in HSTRING templateName,
@@ -5548,7 +5651,7 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE CreateScheduledTileNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [in] */ABI::Windows::Foundation::DateTime deliveryTime,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledTileNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledTileNotification * * value
                         ) = 0;
                     
                 };
@@ -5797,14 +5900,14 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE CreateScheduledToastNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [in] */ABI::Windows::Foundation::DateTime deliveryTime,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * * value
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CreateScheduledToastNotificationRecurring(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
                         /* [in] */ABI::Windows::Foundation::DateTime deliveryTime,
                         /* [in] */ABI::Windows::Foundation::TimeSpan snoozeInterval,
                         /* [in] */UINT32 maximumSnoozeCount,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * * value
                         ) = 0;
                     
                 };
@@ -5818,6 +5921,56 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IScheduledToastNotificationShowingEventArgs[] = L"Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                /* [object, uuid("6173F6B4-412A-5E2C-A6ED-A0209AEF9A09"), exclusiveto, contract] */
+                MIDL_INTERFACE("6173F6B4-412A-5E2C-A6ED-A0209AEF9A09")
+                IScheduledToastNotificationShowingEventArgs : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Cancel(
+                        /* [in] */boolean value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ScheduledToastNotification(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDeferral(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IScheduledToastNotificationShowingEventArgs=_uuidof(IScheduledToastNotificationShowingEventArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5934,7 +6087,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutNotification * * value
                         ) = 0;
                     
                 };
@@ -5975,19 +6128,19 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForApplication(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForApplicationWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CreateTileFlyoutUpdaterForSecondaryTile(
                         /* [in] */__RPC__in HSTRING tileId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileFlyoutUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetTemplateContent(
                         /* [in] */ABI::Windows::UI::Notifications::TileFlyoutTemplateType type,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * content
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * result
                         ) = 0;
                     
                 };
@@ -6137,7 +6290,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateTileNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileNotification * * value
                         ) = 0;
                     
                 };
@@ -6178,15 +6331,15 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplication(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplicationWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForSecondaryTile(
                         /* [in] */__RPC__in HSTRING tileId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
@@ -6230,19 +6383,19 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplication(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForApplicationWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE CreateTileUpdaterForSecondaryTile(
                         /* [in] */__RPC__in HSTRING tileId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * updater
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::ITileUpdater * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetTemplateContent(
                         /* [in] */ABI::Windows::UI::Notifications::TileTemplateType type,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * content
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * result
                         ) = 0;
                     
                 };
@@ -6341,7 +6494,7 @@ namespace ABI {
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::IScheduledTileNotification * scheduledTile
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetScheduledTileNotifications(
-                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification * * scheduledTiles
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE StartPeriodicUpdate(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * tileContent,
@@ -6552,7 +6705,7 @@ namespace ABI {
                         /* [in] */__RPC__in HSTRING displayName,
                         /* [in] */__RPC__in HSTRING launchArgs,
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * iconUri,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection * * result
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastCollection * * value
                         ) = 0;
                     
                 };
@@ -6747,17 +6900,17 @@ namespace ABI {
                         ) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Dismissed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs * handler,
-                        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
                         ) = 0;
                     /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Dismissed(
-                        /* [in] */EventRegistrationToken cookie
+                        /* [in] */EventRegistrationToken token
                         ) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Activated(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable * handler,
-                        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
                         ) = 0;
                     /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Activated(
-                        /* [in] */EventRegistrationToken cookie
+                        /* [in] */EventRegistrationToken token
                         ) = 0;
                     /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Failed(
                         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs * handler,
@@ -6961,10 +7114,10 @@ namespace ABI {
                 {
                 public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Argument(
-                        /* [retval, out] */__RPC__deref_out_opt HSTRING * argument
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_UserInput(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * inputs
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::Collections::IPropertySet * * value
                         ) = 0;
                     
                 };
@@ -7006,7 +7159,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateToastNotification(
                         /* [in] */__RPC__in_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * content,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotification * * notification
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotification * * value
                         ) = 0;
                     
                 };
@@ -7108,11 +7261,11 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetHistory(
-                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * toasts
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetHistoryWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * toasts
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * result
                         ) = 0;
                     
                 };
@@ -7194,7 +7347,7 @@ namespace ABI {
                 {
                 public:
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CollectionId(
-                        /* [retval, out] */__RPC__deref_out_opt HSTRING * collectionId
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                         ) = 0;
                     
                 };
@@ -7339,15 +7492,15 @@ namespace ABI {
                 {
                 public:
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateToastNotifier(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * notifier
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * result
                         ) = 0;
                     /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateToastNotifierWithId(
                         /* [in] */__RPC__in HSTRING applicationId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * notifier
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotifier * * result
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetTemplateContent(
                         /* [in] */ABI::Windows::UI::Notifications::ToastTemplateType type,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * content
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Data::Xml::Dom::IXmlDocument * * result
                         ) = 0;
                     
                 };
@@ -7474,7 +7627,7 @@ namespace ABI {
                 {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationManagerForUser * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Notifications::IToastNotificationManagerForUser * * result
                         ) = 0;
                     
                 };
@@ -7530,7 +7683,7 @@ namespace ABI {
                         /* [in] */__RPC__in_opt ABI::Windows::UI::Notifications::IScheduledToastNotification * scheduledToast
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE GetScheduledToastNotifications(
-                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification * * scheduledToasts
+                        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification * * result
                         ) = 0;
                     
                 };
@@ -7593,6 +7746,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Notifications.IToastNotifier3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ToastNotifier
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotifier3[] = L"Windows.UI.Notifications.IToastNotifier3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Notifications {
+                /* [object, uuid("AE75A04A-3B0C-51AD-B7E8-B08AB6052549"), exclusiveto, contract] */
+                MIDL_INTERFACE("AE75A04A-3B0C-51AD-B7E8-B08AB6052549")
+                IToastNotifier3 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ScheduledToastNotificationShowing(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ScheduledToastNotificationShowing(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IToastNotifier3=_uuidof(IToastNotifier3);
+                
+            } /* Windows */
+        } /* UI */
+    } /* Notifications */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7703,6 +7901,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIUserNotificationCha
  *    Windows.UI.Notifications.IAdaptiveNotificationText ** Default Interface **
  *    Windows.UI.Notifications.IAdaptiveNotificationContent
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -7728,6 +7930,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -7751,6 +7955,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_BadgeUpdateManager_DEFINED
@@ -7769,8 +7975,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IBadgeUpdateManagerForUser ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7794,6 +7998,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IBadgeUpdater ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -7814,6 +8020,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_KnownAdaptiveNotificationHints_DEFINED
@@ -7833,6 +8043,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_KnownAdaptiveNotificationTextStyles_DEFINED
@@ -7851,6 +8065,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownNotificationBindingsStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -7874,6 +8092,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotification ** Default Interface **
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -7893,6 +8115,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotificationBinding ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -7942,6 +8166,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotificationVisual ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -7966,6 +8192,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IScheduledTileNotification ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -7995,6 +8223,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -8003,6 +8233,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ScheduledToastNotification[] = L"Windows.UI.Notifications.ScheduledToastNotification";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs[] = L"Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -8040,6 +8292,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -8061,6 +8315,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Static Methods exist on the Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8108,6 +8364,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -8131,6 +8389,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_TileUpdateManager_DEFINED
@@ -8149,8 +8409,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.ITileUpdateManagerForUser ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -8174,6 +8432,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.ITileUpdater ** Default Interface **
  *    Windows.UI.Notifications.ITileUpdater2
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8222,6 +8482,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
@@ -8241,6 +8503,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastCollectionManager ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -8262,6 +8526,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastDismissedEventArgs ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -8281,6 +8547,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastFailedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8309,6 +8577,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IToastNotification4
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8350,10 +8620,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Notifications.IToastNotificationHistory ** Default Interface **
  *    Windows.UI.Notifications.IToastNotificationHistory2
- *
- * Class Threading Model:  Multi Threaded Apartment
+ *    Windows.UI.Notifications.IToastNotificationHistory ** Default Interface **
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -8405,6 +8673,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastNotificationManager_DEFINED
@@ -8424,8 +8694,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastNotificationManagerForUser ** Default Interface **
  *    Windows.UI.Notifications.IToastNotificationManagerForUser2
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -8449,6 +8717,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastNotifier ** Default Interface **
  *    Windows.UI.Notifications.IToastNotifier2
+ *    Windows.UI.Notifications.IToastNotifier3
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -8470,6 +8741,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IUserNotification ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -8489,6 +8762,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IUserNotificationChangedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -8641,6 +8916,12 @@ typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificati
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIShownTileNotification_FWD_DEFINED__
@@ -8857,6 +9138,12 @@ typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier __x_ABI_CW
 typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2 __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2;
 
 #endif // ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3;
+
+#endif // ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CNotifications_CIUserNotification_FWD_DEFINED__
@@ -11991,6 +12278,59 @@ interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificati
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
 #if !defined(____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__)
 #define ____FIKeyValuePair_2_HSTRING_HSTRING_INTERFACE_DEFINED__
 
@@ -13262,6 +13602,13 @@ typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet __x_AB
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
+#ifndef ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIDeferral __x_ABI_CWindows_CFoundation_CIDeferral;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
@@ -13331,6 +13678,9 @@ typedef enum __x_ABI_CWindows_CUI_CNotifications_CToastTemplateType __x_ABI_CWin
 
 
 typedef enum __x_ABI_CWindows_CUI_CNotifications_CUserNotificationChangedKind __x_ABI_CWindows_CUI_CNotifications_CUserNotificationChangedKind;
+
+
+
 
 
 
@@ -14452,10 +14802,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificatio
  * Interface is a part of the implementation of type Windows.UI.Notifications.AdaptiveNotificationText
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.UI.Notifications.IAdaptiveNotificationContent
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____x_ABI_CWindows_CUI_CNotifications_CIAdaptiveNotificationText_INTERFACE_DEFINED__)
@@ -14719,7 +15065,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateBadgeNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotification * * value
         );
     END_INTERFACE
     
@@ -14749,8 +15095,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_CreateBadgeNotification(This,content,notification) \
-    ( (This)->lpVtbl->CreateBadgeNotification(This,content,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeNotificationFactory_CreateBadgeNotification(This,content,value) \
+    ( (This)->lpVtbl->CreateBadgeNotification(This,content,value) )
 
 
 #endif /* COBJMACROS */
@@ -14928,22 +15274,22 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateBadgeUpdaterForApplication )(
         __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateBadgeUpdaterForApplicationWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateBadgeUpdaterForSecondaryTile )(
         __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING tileId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetTemplateContent )(
         __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CBadgeTemplateType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * content
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * result
         );
     END_INTERFACE
     
@@ -14973,17 +15319,17 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics
 #define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForApplication(This,updater) \
-    ( (This)->lpVtbl->CreateBadgeUpdaterForApplication(This,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForApplication(This,result) \
+    ( (This)->lpVtbl->CreateBadgeUpdaterForApplication(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForApplicationWithId(This,applicationId,updater) \
-    ( (This)->lpVtbl->CreateBadgeUpdaterForApplicationWithId(This,applicationId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForApplicationWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->CreateBadgeUpdaterForApplicationWithId(This,applicationId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForSecondaryTile(This,tileId,updater) \
-    ( (This)->lpVtbl->CreateBadgeUpdaterForSecondaryTile(This,tileId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_CreateBadgeUpdaterForSecondaryTile(This,tileId,result) \
+    ( (This)->lpVtbl->CreateBadgeUpdaterForSecondaryTile(This,tileId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_GetTemplateContent(This,type,content) \
-    ( (This)->lpVtbl->GetTemplateContent(This,type,content) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIBadgeUpdateManagerStatics_GetTemplateContent(This,type,result) \
+    ( (This)->lpVtbl->GetTemplateContent(This,type,result) )
 
 
 #endif /* COBJMACROS */
@@ -16052,12 +16398,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * initialValues,
         /* [in] */UINT32 sequenceNumber,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData * * value
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateNotificationDataWithValues )(
         __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory * This,
         /* [in] */__RPC__in_opt __FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING * initialValues,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CINotificationData * * value
         );
     END_INTERFACE
     
@@ -16087,11 +16433,11 @@ interface __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,result) \
-    ( (This)->lpVtbl->CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,value) \
+    ( (This)->lpVtbl->CreateNotificationDataWithValuesAndSequenceNumber(This,initialValues,sequenceNumber,value) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValues(This,initialValues,result) \
-    ( (This)->lpVtbl->CreateNotificationDataWithValues(This,initialValues,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationDataFactory_CreateNotificationDataWithValues(This,initialValues,value) \
+    ( (This)->lpVtbl->CreateNotificationDataWithValues(This,initialValues,value) )
 
 
 #endif /* COBJMACROS */
@@ -16161,7 +16507,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Bindings )(
         __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CNotifications__CNotificationBinding * * result
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CNotifications__CNotificationBinding * * value
         );
     HRESULT ( STDMETHODCALLTYPE *GetBinding )(
         __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual * This,
@@ -16202,8 +16548,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual
 #define __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_put_Language(This,value) \
     ( (This)->lpVtbl->put_Language(This,value) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_get_Bindings(This,result) \
-    ( (This)->lpVtbl->get_Bindings(This,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_get_Bindings(This,value) \
+    ( (This)->lpVtbl->get_Bindings(This,value) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CINotificationVisual_GetBinding(This,templateName,result) \
     ( (This)->lpVtbl->GetBinding(This,templateName,result) )
@@ -16412,7 +16758,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateScheduledTileNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
         /* [in] */__x_ABI_CWindows_CFoundation_CDateTime deliveryTime,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotification * * value
         );
     END_INTERFACE
     
@@ -16442,8 +16788,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_CreateScheduledTileNotification(This,content,deliveryTime,notification) \
-    ( (This)->lpVtbl->CreateScheduledTileNotification(This,content,deliveryTime,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledTileNotificationFactory_CreateScheduledTileNotification(This,content,deliveryTime,value) \
+    ( (This)->lpVtbl->CreateScheduledTileNotification(This,content,deliveryTime,value) )
 
 
 #endif /* COBJMACROS */
@@ -16977,7 +17323,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateScheduledToastNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
         /* [in] */__x_ABI_CWindows_CFoundation_CDateTime deliveryTime,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateScheduledToastNotificationRecurring )(
         __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory * This,
@@ -16985,7 +17331,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateScheduledToastNotification )(
         /* [in] */__x_ABI_CWindows_CFoundation_CDateTime deliveryTime,
         /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan snoozeInterval,
         /* [in] */UINT32 maximumSnoozeCount,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification * * value
         );
     END_INTERFACE
     
@@ -17015,11 +17361,11 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactor
 #define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_CreateScheduledToastNotification(This,content,deliveryTime,notification) \
-    ( (This)->lpVtbl->CreateScheduledToastNotification(This,content,deliveryTime,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_CreateScheduledToastNotification(This,content,deliveryTime,value) \
+    ( (This)->lpVtbl->CreateScheduledToastNotification(This,content,deliveryTime,value) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_CreateScheduledToastNotificationRecurring(This,content,deliveryTime,snoozeInterval,maximumSnoozeCount,notification) \
-    ( (This)->lpVtbl->CreateScheduledToastNotificationRecurring(This,content,deliveryTime,snoozeInterval,maximumSnoozeCount,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_CreateScheduledToastNotificationRecurring(This,content,deliveryTime,snoozeInterval,maximumSnoozeCount,value) \
+    ( (This)->lpVtbl->CreateScheduledToastNotificationRecurring(This,content,deliveryTime,snoozeInterval,maximumSnoozeCount,value) )
 
 
 #endif /* COBJMACROS */
@@ -17028,6 +17374,120 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactor
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IScheduledToastNotificationShowingEventArgs[] = L"Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs";
+/* [object, uuid("6173F6B4-412A-5E2C-A6ED-A0209AEF9A09"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Cancel )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Cancel )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ScheduledToastNotification )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotification * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
+        __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_get_Cancel(This,value) \
+    ( (This)->lpVtbl->get_Cancel(This,value) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_put_Cancel(This,value) \
+    ( (This)->lpVtbl->put_Cancel(This,value) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_get_ScheduledToastNotification(This,value) \
+    ( (This)->lpVtbl->get_ScheduledToastNotification(This,value) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_GetDeferral(This,result) \
+    ( (This)->lpVtbl->GetDeferral(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIScheduledToastNotificationShowingEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -17282,7 +17742,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotification * * value
         );
     END_INTERFACE
     
@@ -17312,8 +17772,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_CreateTileFlyoutNotification(This,content,notification) \
-    ( (This)->lpVtbl->CreateTileFlyoutNotification(This,content,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutNotificationFactory_CreateTileFlyoutNotification(This,content,value) \
+    ( (This)->lpVtbl->CreateTileFlyoutNotification(This,content,value) )
 
 
 #endif /* COBJMACROS */
@@ -17375,22 +17835,22 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForApplication )(
         __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForApplicationWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateTileFlyoutUpdaterForSecondaryTile )(
         __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING tileId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetTemplateContent )(
         __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CTileFlyoutTemplateType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * content
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * result
         );
     END_INTERFACE
     
@@ -17420,17 +17880,17 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics
 #define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplication(This,updater) \
-    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForApplication(This,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplication(This,result) \
+    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForApplication(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,updater) \
-    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForApplicationWithId(This,applicationId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,updater) \
-    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,result) \
+    ( (This)->lpVtbl->CreateTileFlyoutUpdaterForSecondaryTile(This,tileId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetTemplateContent(This,type,content) \
-    ( (This)->lpVtbl->GetTemplateContent(This,type,content) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileFlyoutUpdateManagerStatics_GetTemplateContent(This,type,result) \
+    ( (This)->lpVtbl->GetTemplateContent(This,type,result) )
 
 
 #endif /* COBJMACROS */
@@ -17743,7 +18203,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateTileNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileNotification * * value
         );
     END_INTERFACE
     
@@ -17773,8 +18233,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_CreateTileNotification(This,content,notification) \
-    ( (This)->lpVtbl->CreateTileNotification(This,content,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileNotificationFactory_CreateTileNotification(This,content,value) \
+    ( (This)->lpVtbl->CreateTileNotification(This,content,value) )
 
 
 #endif /* COBJMACROS */
@@ -17836,17 +18296,17 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForApplication )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForApplicationWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForSecondaryTile )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser * This,
         /* [in] */__RPC__in HSTRING tileId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser * This,
@@ -17880,14 +18340,14 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser
 #define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForApplication(This,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForApplication(This,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForApplication(This,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForApplication(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForApplicationWithId(This,applicationId,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForApplicationWithId(This,applicationId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForApplicationWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForApplicationWithId(This,applicationId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForSecondaryTile(This,tileId,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForSecondaryTile(This,tileId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_CreateTileUpdaterForSecondaryTile(This,tileId,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForSecondaryTile(This,tileId,result) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerForUser_get_User(This,value) \
     ( (This)->lpVtbl->get_User(This,value) )
@@ -17952,22 +18412,22 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForApplication )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForApplicationWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateTileUpdaterForSecondaryTile )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics * This,
         /* [in] */__RPC__in HSTRING tileId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * updater
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetTemplateContent )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CTileTemplateType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * content
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * result
         );
     END_INTERFACE
     
@@ -17997,17 +18457,17 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics
 #define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForApplication(This,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForApplication(This,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForApplication(This,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForApplication(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForApplicationWithId(This,applicationId,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForApplicationWithId(This,applicationId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForApplicationWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForApplicationWithId(This,applicationId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForSecondaryTile(This,tileId,updater) \
-    ( (This)->lpVtbl->CreateTileUpdaterForSecondaryTile(This,tileId,updater) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_CreateTileUpdaterForSecondaryTile(This,tileId,result) \
+    ( (This)->lpVtbl->CreateTileUpdaterForSecondaryTile(This,tileId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_GetTemplateContent(This,type,content) \
-    ( (This)->lpVtbl->GetTemplateContent(This,type,content) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdateManagerStatics_GetTemplateContent(This,type,result) \
+    ( (This)->lpVtbl->GetTemplateContent(This,type,result) )
 
 
 #endif /* COBJMACROS */
@@ -18186,7 +18646,7 @@ HRESULT ( STDMETHODCALLTYPE *Update )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetScheduledTileNotifications )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification * * scheduledTiles
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledTileNotification * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *StartPeriodicUpdate )(
         __x_ABI_CWindows_CUI_CNotifications_CITileUpdater * This,
@@ -18259,8 +18719,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CITileUpdater
 #define __x_ABI_CWindows_CUI_CNotifications_CITileUpdater_RemoveFromSchedule(This,scheduledTile) \
     ( (This)->lpVtbl->RemoveFromSchedule(This,scheduledTile) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdater_GetScheduledTileNotifications(This,scheduledTiles) \
-    ( (This)->lpVtbl->GetScheduledTileNotifications(This,scheduledTiles) )
+#define __x_ABI_CWindows_CUI_CNotifications_CITileUpdater_GetScheduledTileNotifications(This,result) \
+    ( (This)->lpVtbl->GetScheduledTileNotifications(This,result) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CITileUpdater_StartPeriodicUpdate(This,tileContent,requestedInterval) \
     ( (This)->lpVtbl->StartPeriodicUpdate(This,tileContent,requestedInterval) )
@@ -18676,7 +19136,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         /* [in] */__RPC__in HSTRING displayName,
         /* [in] */__RPC__in HSTRING launchArgs,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * iconUri,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastCollection * * value
         );
     END_INTERFACE
     
@@ -18706,8 +19166,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_CreateInstance(This,collectionId,displayName,launchArgs,iconUri,result) \
-    ( (This)->lpVtbl->CreateInstance(This,collectionId,displayName,launchArgs,iconUri,result) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastCollectionFactory_CreateInstance(This,collectionId,displayName,launchArgs,iconUri,value) \
+    ( (This)->lpVtbl->CreateInstance(This,collectionId,displayName,launchArgs,iconUri,value) )
 
 
 #endif /* COBJMACROS */
@@ -19106,20 +19566,20 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Dismissed )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * This,
         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs * handler,
-        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Dismissed )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * This,
-        /* [in] */EventRegistrationToken cookie
+        /* [in] */EventRegistrationToken token
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Activated )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * This,
         /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable * handler,
-        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Activated )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * This,
-        /* [in] */EventRegistrationToken cookie
+        /* [in] */EventRegistrationToken token
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Failed )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * This,
@@ -19167,17 +19627,17 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotification
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_get_ExpirationTime(This,value) \
     ( (This)->lpVtbl->get_ExpirationTime(This,value) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_add_Dismissed(This,handler,cookie) \
-    ( (This)->lpVtbl->add_Dismissed(This,handler,cookie) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_add_Dismissed(This,handler,token) \
+    ( (This)->lpVtbl->add_Dismissed(This,handler,token) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_remove_Dismissed(This,cookie) \
-    ( (This)->lpVtbl->remove_Dismissed(This,cookie) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_remove_Dismissed(This,token) \
+    ( (This)->lpVtbl->remove_Dismissed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_add_Activated(This,handler,cookie) \
-    ( (This)->lpVtbl->add_Activated(This,handler,cookie) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_add_Activated(This,handler,token) \
+    ( (This)->lpVtbl->add_Activated(This,handler,token) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_remove_Activated(This,cookie) \
-    ( (This)->lpVtbl->remove_Activated(This,cookie) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_remove_Activated(This,token) \
+    ( (This)->lpVtbl->remove_Activated(This,token) )
 
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotification_add_Failed(This,handler,token) \
     ( (This)->lpVtbl->add_Failed(This,handler,token) )
@@ -19601,11 +20061,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Argument )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * argument
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
     /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_UserInput )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet * * inputs
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet * * value
         );
     END_INTERFACE
     
@@ -19635,11 +20095,11 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDe
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_get_Argument(This,argument) \
-    ( (This)->lpVtbl->get_Argument(This,argument) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_get_Argument(This,value) \
+    ( (This)->lpVtbl->get_Argument(This,value) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_get_UserInput(This,inputs) \
-    ( (This)->lpVtbl->get_UserInput(This,inputs) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationActionTriggerDetail_get_UserInput(This,value) \
+    ( (This)->lpVtbl->get_UserInput(This,value) )
 
 
 #endif /* COBJMACROS */
@@ -19702,7 +20162,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateToastNotification )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * content,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * * notification
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotification * * value
         );
     END_INTERFACE
     
@@ -19732,8 +20192,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_CreateToastNotification(This,content,notification) \
-    ( (This)->lpVtbl->CreateToastNotification(This,content,notification) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationFactory_CreateToastNotification(This,content,value) \
+    ( (This)->lpVtbl->CreateToastNotification(This,content,value) )
 
 
 #endif /* COBJMACROS */
@@ -19933,12 +20393,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetHistory )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * toasts
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetHistoryWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2 * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * toasts
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CToastNotification * * result
         );
     END_INTERFACE
     
@@ -19968,11 +20428,11 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_GetHistory(This,toasts) \
-    ( (This)->lpVtbl->GetHistory(This,toasts) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_GetHistory(This,result) \
+    ( (This)->lpVtbl->GetHistory(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_GetHistoryWithId(This,applicationId,toasts) \
-    ( (This)->lpVtbl->GetHistoryWithId(This,applicationId,toasts) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistory2_GetHistoryWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->GetHistoryWithId(This,applicationId,result) )
 
 
 #endif /* COBJMACROS */
@@ -20127,7 +20587,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CollectionId )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * collectionId
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
     END_INTERFACE
     
@@ -20157,8 +20617,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedT
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_get_CollectionId(This,collectionId) \
-    ( (This)->lpVtbl->get_CollectionId(This,collectionId) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationHistoryChangedTriggerDetail2_get_CollectionId(This,value) \
+    ( (This)->lpVtbl->get_CollectionId(This,value) )
 
 
 #endif /* COBJMACROS */
@@ -20452,17 +20912,17 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateToastNotifier )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * * notifier
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateToastNotifierWithId )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics * This,
         /* [in] */__RPC__in HSTRING applicationId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * * notifier
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetTemplateContent )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CNotifications_CToastTemplateType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * content
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CData_CXml_CDom_CIXmlDocument * * result
         );
     END_INTERFACE
     
@@ -20492,14 +20952,14 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_CreateToastNotifier(This,notifier) \
-    ( (This)->lpVtbl->CreateToastNotifier(This,notifier) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_CreateToastNotifier(This,result) \
+    ( (This)->lpVtbl->CreateToastNotifier(This,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_CreateToastNotifierWithId(This,applicationId,notifier) \
-    ( (This)->lpVtbl->CreateToastNotifierWithId(This,applicationId,notifier) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_CreateToastNotifierWithId(This,applicationId,result) \
+    ( (This)->lpVtbl->CreateToastNotifierWithId(This,applicationId,result) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_GetTemplateContent(This,type,content) \
-    ( (This)->lpVtbl->GetTemplateContent(This,type,content) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics_GetTemplateContent(This,type,result) \
+    ( (This)->lpVtbl->GetTemplateContent(This,type,result) )
 
 
 #endif /* COBJMACROS */
@@ -20755,7 +21215,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetDefault )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5 * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerForUser * * result
         );
     END_INTERFACE
     
@@ -20785,8 +21245,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetDefault(This,value) \
-    ( (This)->lpVtbl->GetDefault(This,value) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotificationManagerStatics5_GetDefault(This,result) \
+    ( (This)->lpVtbl->GetDefault(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -20868,7 +21328,7 @@ HRESULT ( STDMETHODCALLTYPE *Show )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetScheduledToastNotifications )(
         __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification * * scheduledToasts
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification * * result
         );
     END_INTERFACE
     
@@ -20913,8 +21373,8 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier
 #define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_RemoveFromSchedule(This,scheduledToast) \
     ( (This)->lpVtbl->RemoveFromSchedule(This,scheduledToast) )
 
-#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_GetScheduledToastNotifications(This,scheduledToasts) \
-    ( (This)->lpVtbl->GetScheduledToastNotifications(This,scheduledToasts) )
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier_GetScheduledToastNotifications(This,result) \
+    ( (This)->lpVtbl->GetScheduledToastNotifications(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -21028,6 +21488,107 @@ interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.UI.Notifications.IToastNotifier3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Notifications.ToastNotifier
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Notifications_IToastNotifier3[] = L"Windows.UI.Notifications.IToastNotifier3";
+/* [object, uuid("AE75A04A-3B0C-51AD-B7E8-B08AB6052549"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ScheduledToastNotificationShowing )(
+        __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ScheduledToastNotificationShowing )(
+        __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_add_ScheduledToastNotificationShowing(This,handler,token) \
+    ( (This)->lpVtbl->add_ScheduledToastNotificationShowing(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_remove_ScheduledToastNotificationShowing(This,token) \
+    ( (This)->lpVtbl->remove_ScheduledToastNotificationShowing(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CNotifications_CIToastNotifier3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -21258,6 +21819,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CNotifications_CIUserNotificationCha
  *    Windows.UI.Notifications.IAdaptiveNotificationText ** Default Interface **
  *    Windows.UI.Notifications.IAdaptiveNotificationContent
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -21283,6 +21848,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21306,6 +21873,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_BadgeUpdateManager_DEFINED
@@ -21324,8 +21893,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IBadgeUpdateManagerForUser ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -21349,6 +21916,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IBadgeUpdater ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21369,6 +21938,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_KnownAdaptiveNotificationHints_DEFINED
@@ -21388,6 +21961,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_KnownAdaptiveNotificationTextStyles_DEFINED
@@ -21406,6 +21983,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.UI.Notifications.IKnownNotificationBindingsStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -21429,6 +22010,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotification ** Default Interface **
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -21448,6 +22033,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotificationBinding ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
@@ -21497,6 +22084,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.INotificationVisual ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -21521,6 +22110,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IScheduledTileNotification ** Default Interface **
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -21550,6 +22141,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21558,6 +22151,28 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ScheduledToastNotification[] = L"Windows.UI.Notifications.ScheduledToastNotification";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Notifications.IScheduledToastNotificationShowingEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Notifications_ScheduledToastNotificationShowingEventArgs[] = L"Windows.UI.Notifications.ScheduledToastNotificationShowingEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -21595,6 +22210,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21616,6 +22233,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Static Methods exist on the Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -21663,6 +22282,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21686,6 +22307,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_TileUpdateManager_DEFINED
@@ -21704,8 +22327,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.ITileUpdateManagerForUser ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -21729,6 +22350,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.ITileUpdater ** Default Interface **
  *    Windows.UI.Notifications.ITileUpdater2
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -21777,6 +22400,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
@@ -21796,6 +22421,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastCollectionManager ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
@@ -21817,6 +22444,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastDismissedEventArgs ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -21836,6 +22465,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastFailedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -21864,6 +22495,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Notifications.IToastNotification4
  *
  * Class Threading Model:  Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -21905,10 +22538,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Notifications.IToastNotificationHistory ** Default Interface **
  *    Windows.UI.Notifications.IToastNotificationHistory2
- *
- * Class Threading Model:  Multi Threaded Apartment
+ *    Windows.UI.Notifications.IToastNotificationHistory ** Default Interface **
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -21960,6 +22591,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Threading Model:  Multi Threaded Apartment
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_UI_Notifications_ToastNotificationManager_DEFINED
@@ -21979,8 +22612,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastNotificationManagerForUser ** Default Interface **
  *    Windows.UI.Notifications.IToastNotificationManagerForUser2
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -22004,6 +22635,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IToastNotifier ** Default Interface **
  *    Windows.UI.Notifications.IToastNotifier2
+ *    Windows.UI.Notifications.IToastNotifier3
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -22025,6 +22659,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IUserNotification ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
@@ -22044,6 +22680,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Notifications.IUserNotificationChangedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000

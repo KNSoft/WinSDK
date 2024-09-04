@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.System.Diagnostics.Telemetry.2.h"
@@ -62,112 +62,98 @@ template <typename D> void consume_Windows_System_Diagnostics_Telemetry_IPlatfor
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics> : produce_base<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>
 {
-    HRESULT __stdcall Register(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL Register(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Register, WINRT_WRAP(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult), hstring const&);
             *result = detach_from<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult>(this->shim().Register(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RegisterWithSettings(HSTRING id, void* settings, void** result) noexcept final
+    int32_t WINRT_CALL RegisterWithSettings(void* id, void* settings, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Register, WINRT_WRAP(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult), hstring const&, Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings const&);
             *result = detach_from<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult>(this->shim().Register(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings const*>(&settings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult> : produce_base<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult>
 {
-    HRESULT __stdcall get_Status(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus));
             *value = detach_from<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings> : produce_base<D, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings>
 {
-    HRESULT __stdcall get_StorageSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_StorageSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().StorageSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StorageSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_StorageSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageSize, WINRT_WRAP(void), uint32_t);
             this->shim().StorageSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UploadQuotaSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UploadQuotaSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UploadQuotaSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UploadQuotaSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UploadQuotaSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_UploadQuotaSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UploadQuotaSize, WINRT_WRAP(void), uint32_t);
             this->shim().UploadQuotaSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -177,16 +163,16 @@ WINRT_EXPORT namespace winrt::Windows::System::Diagnostics::Telemetry {
 
 inline Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult PlatformTelemetryClient::Register(param::hstring const& id)
 {
-    return get_activation_factory<PlatformTelemetryClient, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>().Register(id);
+    return impl::call_factory<PlatformTelemetryClient, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>([&](auto&& f) { return f.Register(id); });
 }
 
 inline Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult PlatformTelemetryClient::Register(param::hstring const& id, Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings const& settings)
 {
-    return get_activation_factory<PlatformTelemetryClient, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>().Register(id, settings);
+    return impl::call_factory<PlatformTelemetryClient, Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>([&](auto&& f) { return f.Register(id, settings); });
 }
 
 inline PlatformTelemetryRegistrationSettings::PlatformTelemetryRegistrationSettings() :
-    PlatformTelemetryRegistrationSettings(get_activation_factory<PlatformTelemetryRegistrationSettings>().ActivateInstance<PlatformTelemetryRegistrationSettings>())
+    PlatformTelemetryRegistrationSettings(impl::call_factory<PlatformTelemetryRegistrationSettings>([](auto&& f) { return f.template ActivateInstance<PlatformTelemetryRegistrationSettings>(); }))
 {}
 
 }
@@ -201,5 +187,3 @@ template<> struct hash<winrt::Windows::System::Diagnostics::Telemetry::PlatformT
 template<> struct hash<winrt::Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings> : winrt::impl::hash_base<winrt::Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings> {};
 
 }
-
-WINRT_WARNING_POP

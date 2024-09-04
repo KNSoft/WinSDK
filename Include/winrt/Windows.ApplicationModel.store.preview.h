@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.store.preview.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -262,6 +274,38 @@
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    interface IDeliveryOptimizationSettings;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings ABI::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    interface IDeliveryOptimizationSettingsStatics;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics ABI::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_FWD_DEFINED__
 namespace ABI {
@@ -325,6 +369,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 ABI::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    interface IStoreConfigurationStatics5;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 ABI::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
@@ -1278,6 +1338,32 @@ namespace ABI {
             namespace Store {
                 namespace Preview {
                     
+                    typedef enum DeliveryOptimizationDownloadMode : int DeliveryOptimizationDownloadMode;
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    
+                    typedef enum DeliveryOptimizationDownloadModeSource : int DeliveryOptimizationDownloadModeSource;
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    
                     typedef enum StoreLogOptions : unsigned int StoreLogOptions;
                     
                 } /* Windows */
@@ -1322,6 +1408,21 @@ namespace ABI {
 
 
 
+
+
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    class DeliveryOptimizationSettings;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -1347,6 +1448,68 @@ namespace ABI {
 
 
 
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.Preview.DeliveryOptimizationDownloadMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    /* [v1_enum, contract] */
+                    enum DeliveryOptimizationDownloadMode : int
+                    {
+                        DeliveryOptimizationDownloadMode_Simple = 0,
+                        DeliveryOptimizationDownloadMode_HttpOnly = 1,
+                        DeliveryOptimizationDownloadMode_Lan = 2,
+                        DeliveryOptimizationDownloadMode_Group = 3,
+                        DeliveryOptimizationDownloadMode_Internet = 4,
+                        DeliveryOptimizationDownloadMode_Bypass = 5,
+                    };
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.Preview.DeliveryOptimizationDownloadModeSource
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    /* [v1_enum, contract] */
+                    enum DeliveryOptimizationDownloadModeSource : int
+                    {
+                        DeliveryOptimizationDownloadModeSource_Default = 0,
+                        DeliveryOptimizationDownloadModeSource_Policy = 1,
+                    };
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1515,6 +1678,95 @@ namespace ABI {
         } /* Store */
     } /* Preview */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettings[] = L"Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    /* [object, uuid("1810FDA0-E853-565E-B874-7A8A7B9A0E0F"), exclusiveto, contract] */
+                    MIDL_INTERFACE("1810FDA0-E853-565E-B874-7A8A7B9A0E0F")
+                    IDeliveryOptimizationSettings : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DownloadMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DownloadModeSource(
+                            /* [retval, out] */__RPC__out ABI::Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDeliveryOptimizationSettings=_uuidof(IDeliveryOptimizationSettings);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettingsStatics[] = L"Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    /* [object, uuid("5C817CAF-AED5-5999-B4C9-8C60898BC4F3"), exclusiveto, contract] */
+                    MIDL_INTERFACE("5C817CAF-AED5-5999-B4C9-8C60898BC4F3")
+                    IDeliveryOptimizationSettingsStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE GetCurrentSettings(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDeliveryOptimizationSettingsStatics=_uuidof(IDeliveryOptimizationSettingsStatics);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1762,6 +2014,62 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.StoreConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5[] = L"Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace Preview {
+                    /* [object, uuid("F7613191-8FA9-49DB-822B-0160E7E4E5C5"), exclusiveto, contract] */
+                    MIDL_INTERFACE("F7613191-8FA9-49DB-822B-0160E7E4E5C5")
+                    IStoreConfigurationStatics5 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE IsPinToDesktopSupported(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE IsPinToTaskbarSupported(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE IsPinToStartSupported(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE PinToDesktop(
+                            /* [in] */__RPC__in HSTRING appPackageFamilyName
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE PinToDesktopForUser(
+                            /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                            /* [in] */__RPC__in HSTRING appPackageFamilyName
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IStoreConfigurationStatics5=_uuidof(IStoreConfigurationStatics5);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* Preview */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2082,12 +2390,40 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebA
 
 /*
  *
+ * Class Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings[] = L"Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Store.Preview.StoreConfiguration
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics4 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -2245,6 +2581,18 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #else // !defined(__cplusplus)
 /* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics;
@@ -2268,6 +2616,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConf
 typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreHardwareManufacturerInfo_FWD_DEFINED__
@@ -3814,6 +4168,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElement __x_ABI_CWindows_CUI_CX
 
 
 
+typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadMode __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadMode;
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadModeSource __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadModeSource;
+
+
 typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreLogOptions __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreLogOptions;
 
 
@@ -3847,6 +4207,52 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreSystemFeat
 
 
 
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.Preview.DeliveryOptimizationDownloadMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadMode
+{
+    DeliveryOptimizationDownloadMode_Simple = 0,
+    DeliveryOptimizationDownloadMode_HttpOnly = 1,
+    DeliveryOptimizationDownloadMode_Lan = 2,
+    DeliveryOptimizationDownloadMode_Group = 3,
+    DeliveryOptimizationDownloadMode_Internet = 4,
+    DeliveryOptimizationDownloadMode_Bypass = 5,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.Preview.DeliveryOptimizationDownloadModeSource
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadModeSource
+{
+    DeliveryOptimizationDownloadModeSource_Default = 0,
+    DeliveryOptimizationDownloadModeSource_Policy = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3983,6 +4389,199 @@ enum __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CStoreSystemFeature
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettings[] = L"Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings";
+/* [object, uuid("1810FDA0-E853-565E-B874-7A8A7B9A0E0F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DownloadMode )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadMode * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DownloadModeSource )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CDeliveryOptimizationDownloadModeSource * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_get_DownloadMode(This,value) \
+    ( (This)->lpVtbl->get_DownloadMode(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_get_DownloadModeSource(This,value) \
+    ( (This)->lpVtbl->get_DownloadModeSource(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettingsStatics[] = L"Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics";
+/* [object, uuid("5C817CAF-AED5-5999-B4C9-8C60898BC4F3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetCurrentSettings )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettings * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_GetCurrentSettings(This,result) \
+    ( (This)->lpVtbl->GetCurrentSettings(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIDeliveryOptimizationSettingsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4506,6 +5105,128 @@ interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfiguratio
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.Preview.StoreConfiguration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5[] = L"Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5";
+/* [object, uuid("F7613191-8FA9-49DB-822B-0160E7E4E5C5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *IsPinToDesktopSupported )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsPinToTaskbarSupported )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsPinToStartSupported )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *PinToDesktop )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+        /* [in] */__RPC__in HSTRING appPackageFamilyName
+        );
+    HRESULT ( STDMETHODCALLTYPE *PinToDesktopForUser )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING appPackageFamilyName
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_IsPinToDesktopSupported(This,value) \
+    ( (This)->lpVtbl->IsPinToDesktopSupported(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_IsPinToTaskbarSupported(This,value) \
+    ( (This)->lpVtbl->IsPinToTaskbarSupported(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_IsPinToStartSupported(This,value) \
+    ( (This)->lpVtbl->IsPinToStartSupported(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_PinToDesktop(This,appPackageFamilyName) \
+    ( (This)->lpVtbl->PinToDesktop(This,appPackageFamilyName) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_PinToDesktopForUser(This,user,appPackageFamilyName) \
+    ( (This)->lpVtbl->PinToDesktopForUser(This,user,appPackageFamilyName) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIStoreConfigurationStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5194,12 +5915,40 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CPreview_CIWebA
 
 /*
  *
+ * Class Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettingsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.Preview.IDeliveryOptimizationSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_Preview_DeliveryOptimizationSettings[] = L"Windows.ApplicationModel.Store.Preview.DeliveryOptimizationSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.ApplicationModel.Store.Preview.StoreConfiguration
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics4 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract

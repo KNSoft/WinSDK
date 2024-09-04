@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -119,16 +119,54 @@ template <> struct name<Windows::UI::Core::AnimationMetrics::TranslationAnimatio
 template <> struct name<Windows::UI::Core::AnimationMetrics::AnimationEffect>{ static constexpr auto & value{ L"Windows.UI.Core.AnimationMetrics.AnimationEffect" }; };
 template <> struct name<Windows::UI::Core::AnimationMetrics::AnimationEffectTarget>{ static constexpr auto & value{ L"Windows.UI.Core.AnimationMetrics.AnimationEffectTarget" }; };
 template <> struct name<Windows::UI::Core::AnimationMetrics::PropertyAnimationType>{ static constexpr auto & value{ L"Windows.UI.Core.AnimationMetrics.PropertyAnimationType" }; };
-template <> struct guid<Windows::UI::Core::AnimationMetrics::IAnimationDescription>{ static constexpr GUID value{ 0x7D11A549,0xBE3D,0x41DE,{ 0xB0,0x81,0x05,0xC1,0x49,0x96,0x2F,0x9B } }; };
-template <> struct guid<Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>{ static constexpr GUID value{ 0xC6E27ABE,0xC1FB,0x48B5,{ 0x92,0x71,0xEC,0xC7,0x0A,0xC8,0x6E,0xF0 } }; };
-template <> struct guid<Windows::UI::Core::AnimationMetrics::IOpacityAnimation>{ static constexpr GUID value{ 0x803AABE5,0xEE7E,0x455F,{ 0x84,0xE9,0x25,0x06,0xAF,0xB8,0xD2,0xB4 } }; };
-template <> struct guid<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>{ static constexpr GUID value{ 0x3A01B4DA,0x4D8C,0x411E,{ 0xB6,0x15,0x1A,0xDE,0x68,0x3A,0x99,0x03 } }; };
-template <> struct guid<Windows::UI::Core::AnimationMetrics::IScaleAnimation>{ static constexpr GUID value{ 0x023552C7,0x71AB,0x428C,{ 0x9C,0x9F,0xD3,0x17,0x80,0x96,0x49,0x95 } }; };
+template <> struct guid_storage<Windows::UI::Core::AnimationMetrics::IAnimationDescription>{ static constexpr guid value{ 0x7D11A549,0xBE3D,0x41DE,{ 0xB0,0x81,0x05,0xC1,0x49,0x96,0x2F,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>{ static constexpr guid value{ 0xC6E27ABE,0xC1FB,0x48B5,{ 0x92,0x71,0xEC,0xC7,0x0A,0xC8,0x6E,0xF0 } }; };
+template <> struct guid_storage<Windows::UI::Core::AnimationMetrics::IOpacityAnimation>{ static constexpr guid value{ 0x803AABE5,0xEE7E,0x455F,{ 0x84,0xE9,0x25,0x06,0xAF,0xB8,0xD2,0xB4 } }; };
+template <> struct guid_storage<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>{ static constexpr guid value{ 0x3A01B4DA,0x4D8C,0x411E,{ 0xB6,0x15,0x1A,0xDE,0x68,0x3A,0x99,0x03 } }; };
+template <> struct guid_storage<Windows::UI::Core::AnimationMetrics::IScaleAnimation>{ static constexpr guid value{ 0x023552C7,0x71AB,0x428C,{ 0x9C,0x9F,0xD3,0x17,0x80,0x96,0x49,0x95 } }; };
 template <> struct default_interface<Windows::UI::Core::AnimationMetrics::AnimationDescription>{ using type = Windows::UI::Core::AnimationMetrics::IAnimationDescription; };
 template <> struct default_interface<Windows::UI::Core::AnimationMetrics::OpacityAnimation>{ using type = Windows::UI::Core::AnimationMetrics::IOpacityAnimation; };
 template <> struct default_interface<Windows::UI::Core::AnimationMetrics::PropertyAnimation>{ using type = Windows::UI::Core::AnimationMetrics::IPropertyAnimation; };
 template <> struct default_interface<Windows::UI::Core::AnimationMetrics::ScaleAnimation>{ using type = Windows::UI::Core::AnimationMetrics::IScaleAnimation; };
 template <> struct default_interface<Windows::UI::Core::AnimationMetrics::TranslationAnimation>{ using type = Windows::UI::Core::AnimationMetrics::IPropertyAnimation; };
+
+template <> struct abi<Windows::UI::Core::AnimationMetrics::IAnimationDescription>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Animations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StaggerDelay(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StaggerDelayFactor(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DelayLimit(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ZOrder(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(Windows::UI::Core::AnimationMetrics::AnimationEffect effect, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget target, void** animation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::AnimationMetrics::IOpacityAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InitialOpacity(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FinalOpacity(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::UI::Core::AnimationMetrics::PropertyAnimationType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Control1(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Control2(Windows::Foundation::Point* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Core::AnimationMetrics::IScaleAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InitialScaleX(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialScaleY(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FinalScaleX(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FinalScaleY(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NormalizedOrigin(Windows::Foundation::Point* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Core_AnimationMetrics_IAnimationDescription
@@ -177,43 +215,5 @@ struct consume_Windows_UI_Core_AnimationMetrics_IScaleAnimation
     Windows::Foundation::Point NormalizedOrigin() const;
 };
 template <> struct consume<Windows::UI::Core::AnimationMetrics::IScaleAnimation> { template <typename D> using type = consume_Windows_UI_Core_AnimationMetrics_IScaleAnimation<D>; };
-
-template <> struct abi<Windows::UI::Core::AnimationMetrics::IAnimationDescription>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Animations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StaggerDelay(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StaggerDelayFactor(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DelayLimit(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ZOrder(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(Windows::UI::Core::AnimationMetrics::AnimationEffect effect, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget target, void** animation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::AnimationMetrics::IOpacityAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InitialOpacity(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FinalOpacity(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::UI::Core::AnimationMetrics::PropertyAnimationType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Control1(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Control2(Windows::Foundation::Point* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Core::AnimationMetrics::IScaleAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InitialScaleX(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialScaleY(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FinalScaleX(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FinalScaleY(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NormalizedOrigin(Windows::Foundation::Point* value) noexcept = 0;
-};};
 
 }

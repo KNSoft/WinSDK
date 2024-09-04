@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -303,702 +303,610 @@ template <typename D> void consume_Windows_Storage_Pickers_IFolderPicker2<D>::Pi
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileOpenPicker> : produce_base<D, Windows::Storage::Pickers::IFileOpenPicker>
 {
-    HRESULT __stdcall get_ViewMode(Windows::Storage::Pickers::PickerViewMode* value) noexcept final
+    int32_t WINRT_CALL get_ViewMode(Windows::Storage::Pickers::PickerViewMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewMode, WINRT_WRAP(Windows::Storage::Pickers::PickerViewMode));
             *value = detach_from<Windows::Storage::Pickers::PickerViewMode>(this->shim().ViewMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewMode(Windows::Storage::Pickers::PickerViewMode value) noexcept final
+    int32_t WINRT_CALL put_ViewMode(Windows::Storage::Pickers::PickerViewMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewMode, WINRT_WRAP(void), Windows::Storage::Pickers::PickerViewMode const&);
             this->shim().ViewMode(*reinterpret_cast<Windows::Storage::Pickers::PickerViewMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SettingsIdentifier(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SettingsIdentifier(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SettingsIdentifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SettingsIdentifier(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SettingsIdentifier(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(void), hstring const&);
             this->shim().SettingsIdentifier(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
+    int32_t WINRT_CALL get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(Windows::Storage::Pickers::PickerLocationId));
             *value = detach_from<Windows::Storage::Pickers::PickerLocationId>(this->shim().SuggestedStartLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
+    int32_t WINRT_CALL put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(void), Windows::Storage::Pickers::PickerLocationId const&);
             this->shim().SuggestedStartLocation(*reinterpret_cast<Windows::Storage::Pickers::PickerLocationId const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CommitButtonText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CommitButtonText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CommitButtonText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CommitButtonText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CommitButtonText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(void), hstring const&);
             this->shim().CommitButtonText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileTypeFilter(void** value) noexcept final
+    int32_t WINRT_CALL get_FileTypeFilter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileTypeFilter, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().FileTypeFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleFileAsync(void** pickSingleFileOperation) noexcept final
+    int32_t WINRT_CALL PickSingleFileAsync(void** pickSingleFileOperation) noexcept final
     {
         try
         {
             *pickSingleFileOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>));
             *pickSingleFileOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().PickSingleFileAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickMultipleFilesAsync(void** pickMultipleFilesOperation) noexcept final
+    int32_t WINRT_CALL PickMultipleFilesAsync(void** pickMultipleFilesOperation) noexcept final
     {
         try
         {
             *pickMultipleFilesOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickMultipleFilesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>>));
             *pickMultipleFilesOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>>>(this->shim().PickMultipleFilesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileOpenPicker2> : produce_base<D, Windows::Storage::Pickers::IFileOpenPicker2>
 {
-    HRESULT __stdcall get_ContinuationData(void** value) noexcept final
+    int32_t WINRT_CALL get_ContinuationData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinuationData, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().ContinuationData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleFileAndContinue() noexcept final
+    int32_t WINRT_CALL PickSingleFileAndContinue() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleFileAndContinue, WINRT_WRAP(void));
             this->shim().PickSingleFileAndContinue();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickMultipleFilesAndContinue() noexcept final
+    int32_t WINRT_CALL PickMultipleFilesAndContinue() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickMultipleFilesAndContinue, WINRT_WRAP(void));
             this->shim().PickMultipleFilesAndContinue();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileOpenPickerStatics> : produce_base<D, Windows::Storage::Pickers::IFileOpenPickerStatics>
 {
-    HRESULT __stdcall ResumePickSingleFileAsync(void** pickSingleFileOperation) noexcept final
+    int32_t WINRT_CALL ResumePickSingleFileAsync(void** pickSingleFileOperation) noexcept final
     {
         try
         {
             *pickSingleFileOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResumePickSingleFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>));
             *pickSingleFileOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().ResumePickSingleFileAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileOpenPickerWithOperationId> : produce_base<D, Windows::Storage::Pickers::IFileOpenPickerWithOperationId>
 {
-    HRESULT __stdcall PickSingleFileAsync(HSTRING pickerOperationId, void** pickSingleFileOperation) noexcept final
+    int32_t WINRT_CALL PickSingleFileAsync(void* pickerOperationId, void** pickSingleFileOperation) noexcept final
     {
         try
         {
             *pickSingleFileOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), hstring const);
             *pickSingleFileOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().PickSingleFileAsync(*reinterpret_cast<hstring const*>(&pickerOperationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileSavePicker> : produce_base<D, Windows::Storage::Pickers::IFileSavePicker>
 {
-    HRESULT __stdcall get_SettingsIdentifier(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SettingsIdentifier(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SettingsIdentifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SettingsIdentifier(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SettingsIdentifier(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(void), hstring const&);
             this->shim().SettingsIdentifier(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
+    int32_t WINRT_CALL get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(Windows::Storage::Pickers::PickerLocationId));
             *value = detach_from<Windows::Storage::Pickers::PickerLocationId>(this->shim().SuggestedStartLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
+    int32_t WINRT_CALL put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(void), Windows::Storage::Pickers::PickerLocationId const&);
             this->shim().SuggestedStartLocation(*reinterpret_cast<Windows::Storage::Pickers::PickerLocationId const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CommitButtonText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CommitButtonText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CommitButtonText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CommitButtonText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CommitButtonText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(void), hstring const&);
             this->shim().CommitButtonText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileTypeChoices(void** value) noexcept final
+    int32_t WINRT_CALL get_FileTypeChoices(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileTypeChoices, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>>(this->shim().FileTypeChoices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultFileExtension(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DefaultFileExtension(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultFileExtension, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DefaultFileExtension());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DefaultFileExtension(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DefaultFileExtension(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultFileExtension, WINRT_WRAP(void), hstring const&);
             this->shim().DefaultFileExtension(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuggestedSaveFile(void** value) noexcept final
+    int32_t WINRT_CALL get_SuggestedSaveFile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedSaveFile, WINRT_WRAP(Windows::Storage::StorageFile));
             *value = detach_from<Windows::Storage::StorageFile>(this->shim().SuggestedSaveFile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuggestedSaveFile(void* value) noexcept final
+    int32_t WINRT_CALL put_SuggestedSaveFile(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedSaveFile, WINRT_WRAP(void), Windows::Storage::StorageFile const&);
             this->shim().SuggestedSaveFile(*reinterpret_cast<Windows::Storage::StorageFile const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuggestedFileName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SuggestedFileName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedFileName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SuggestedFileName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuggestedFileName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SuggestedFileName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedFileName, WINRT_WRAP(void), hstring const&);
             this->shim().SuggestedFileName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSaveFileAsync(void** pickSaveFileOperation) noexcept final
+    int32_t WINRT_CALL PickSaveFileAsync(void** pickSaveFileOperation) noexcept final
     {
         try
         {
             *pickSaveFileOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSaveFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>));
             *pickSaveFileOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().PickSaveFileAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileSavePicker2> : produce_base<D, Windows::Storage::Pickers::IFileSavePicker2>
 {
-    HRESULT __stdcall get_ContinuationData(void** value) noexcept final
+    int32_t WINRT_CALL get_ContinuationData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinuationData, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().ContinuationData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSaveFileAndContinue() noexcept final
+    int32_t WINRT_CALL PickSaveFileAndContinue() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSaveFileAndContinue, WINRT_WRAP(void));
             this->shim().PickSaveFileAndContinue();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFileSavePicker3> : produce_base<D, Windows::Storage::Pickers::IFileSavePicker3>
 {
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EnterpriseId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EnterpriseId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(void), hstring const&);
             this->shim().EnterpriseId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFolderPicker> : produce_base<D, Windows::Storage::Pickers::IFolderPicker>
 {
-    HRESULT __stdcall get_ViewMode(Windows::Storage::Pickers::PickerViewMode* value) noexcept final
+    int32_t WINRT_CALL get_ViewMode(Windows::Storage::Pickers::PickerViewMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewMode, WINRT_WRAP(Windows::Storage::Pickers::PickerViewMode));
             *value = detach_from<Windows::Storage::Pickers::PickerViewMode>(this->shim().ViewMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewMode(Windows::Storage::Pickers::PickerViewMode value) noexcept final
+    int32_t WINRT_CALL put_ViewMode(Windows::Storage::Pickers::PickerViewMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewMode, WINRT_WRAP(void), Windows::Storage::Pickers::PickerViewMode const&);
             this->shim().ViewMode(*reinterpret_cast<Windows::Storage::Pickers::PickerViewMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SettingsIdentifier(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SettingsIdentifier(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SettingsIdentifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SettingsIdentifier(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SettingsIdentifier(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SettingsIdentifier, WINRT_WRAP(void), hstring const&);
             this->shim().SettingsIdentifier(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
+    int32_t WINRT_CALL get_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(Windows::Storage::Pickers::PickerLocationId));
             *value = detach_from<Windows::Storage::Pickers::PickerLocationId>(this->shim().SuggestedStartLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
+    int32_t WINRT_CALL put_SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuggestedStartLocation, WINRT_WRAP(void), Windows::Storage::Pickers::PickerLocationId const&);
             this->shim().SuggestedStartLocation(*reinterpret_cast<Windows::Storage::Pickers::PickerLocationId const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CommitButtonText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CommitButtonText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CommitButtonText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CommitButtonText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CommitButtonText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(void), hstring const&);
             this->shim().CommitButtonText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FileTypeFilter(void** value) noexcept final
+    int32_t WINRT_CALL get_FileTypeFilter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileTypeFilter, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().FileTypeFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleFolderAsync(void** pickSingleFolderOperation) noexcept final
+    int32_t WINRT_CALL PickSingleFolderAsync(void** pickSingleFolderOperation) noexcept final
     {
         try
         {
             *pickSingleFolderOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>));
             *pickSingleFolderOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>>(this->shim().PickSingleFolderAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::Pickers::IFolderPicker2> : produce_base<D, Windows::Storage::Pickers::IFolderPicker2>
 {
-    HRESULT __stdcall get_ContinuationData(void** value) noexcept final
+    int32_t WINRT_CALL get_ContinuationData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinuationData, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().ContinuationData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickFolderAndContinue() noexcept final
+    int32_t WINRT_CALL PickFolderAndContinue() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickFolderAndContinue, WINRT_WRAP(void));
             this->shim().PickFolderAndContinue();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1007,20 +915,20 @@ struct produce<D, Windows::Storage::Pickers::IFolderPicker2> : produce_base<D, W
 WINRT_EXPORT namespace winrt::Windows::Storage::Pickers {
 
 inline FileOpenPicker::FileOpenPicker() :
-    FileOpenPicker(get_activation_factory<FileOpenPicker>().ActivateInstance<FileOpenPicker>())
+    FileOpenPicker(impl::call_factory<FileOpenPicker>([](auto&& f) { return f.template ActivateInstance<FileOpenPicker>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> FileOpenPicker::ResumePickSingleFileAsync()
 {
-    return get_activation_factory<FileOpenPicker, Windows::Storage::Pickers::IFileOpenPickerStatics>().ResumePickSingleFileAsync();
+    return impl::call_factory<FileOpenPicker, Windows::Storage::Pickers::IFileOpenPickerStatics>([&](auto&& f) { return f.ResumePickSingleFileAsync(); });
 }
 
 inline FileSavePicker::FileSavePicker() :
-    FileSavePicker(get_activation_factory<FileSavePicker>().ActivateInstance<FileSavePicker>())
+    FileSavePicker(impl::call_factory<FileSavePicker>([](auto&& f) { return f.template ActivateInstance<FileSavePicker>(); }))
 {}
 
 inline FolderPicker::FolderPicker() :
-    FolderPicker(get_activation_factory<FolderPicker>().ActivateInstance<FolderPicker>())
+    FolderPicker(impl::call_factory<FolderPicker>([](auto&& f) { return f.template ActivateInstance<FolderPicker>(); }))
 {}
 
 }
@@ -1044,5 +952,3 @@ template<> struct hash<winrt::Windows::Storage::Pickers::FileSavePicker> : winrt
 template<> struct hash<winrt::Windows::Storage::Pickers::FolderPicker> : winrt::impl::hash_base<winrt::Windows::Storage::Pickers::FolderPicker> {};
 
 }
-
-WINRT_WARNING_POP

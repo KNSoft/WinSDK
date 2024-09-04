@@ -1,6 +1,6 @@
 /* Header file automatically generated from winrtbase.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -33,6 +33,18 @@
 
 
 #pragma once
+
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#if defined(MIDL_NS_PREFIX)
+#define CHECK_NS_PREFIX_STATE "always"
+#else
+#define CHECK_NS_PREFIX_STATE "never"
+#endif // MIDL_NS_PREFIX
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
 
 #pragma push_macro("ABI_CONCAT")
 #pragma push_macro("ABI_PARAMETER")

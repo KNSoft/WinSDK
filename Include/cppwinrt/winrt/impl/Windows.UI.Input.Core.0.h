@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -48,10 +48,26 @@ template <> struct name<Windows::UI::Input::Core::IRadialControllerIndependentIn
 template <> struct name<Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>{ static constexpr auto & value{ L"Windows.UI.Input.Core.IRadialControllerIndependentInputSource2" }; };
 template <> struct name<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>{ static constexpr auto & value{ L"Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics" }; };
 template <> struct name<Windows::UI::Input::Core::RadialControllerIndependentInputSource>{ static constexpr auto & value{ L"Windows.UI.Input.Core.RadialControllerIndependentInputSource" }; };
-template <> struct guid<Windows::UI::Input::Core::IRadialControllerIndependentInputSource>{ static constexpr GUID value{ 0x3D577EF6,0x4CEE,0x11E6,{ 0xB5,0x35,0x00,0x1B,0xDC,0x06,0xAB,0x3B } }; };
-template <> struct guid<Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>{ static constexpr GUID value{ 0x7073AAD8,0x35F3,0x4EEB,{ 0x87,0x51,0xBE,0x4D,0x0A,0x66,0xFA,0xF4 } }; };
-template <> struct guid<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>{ static constexpr GUID value{ 0x3D577EF5,0x4CEE,0x11E6,{ 0xB5,0x35,0x00,0x1B,0xDC,0x06,0xAB,0x3B } }; };
+template <> struct guid_storage<Windows::UI::Input::Core::IRadialControllerIndependentInputSource>{ static constexpr guid value{ 0x3D577EF6,0x4CEE,0x11E6,{ 0xB5,0x35,0x00,0x1B,0xDC,0x06,0xAB,0x3B } }; };
+template <> struct guid_storage<Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>{ static constexpr guid value{ 0x7073AAD8,0x35F3,0x4EEB,{ 0x87,0x51,0xBE,0x4D,0x0A,0x66,0xFA,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>{ static constexpr guid value{ 0x3D577EF5,0x4CEE,0x11E6,{ 0xB5,0x35,0x00,0x1B,0xDC,0x06,0xAB,0x3B } }; };
 template <> struct default_interface<Windows::UI::Input::Core::RadialControllerIndependentInputSource>{ using type = Windows::UI::Input::Core::IRadialControllerIndependentInputSource; };
+
+template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Controller(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Dispatcher(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DispatcherQueue(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateForView(void* view, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Input_Core_IRadialControllerIndependentInputSource
@@ -74,21 +90,5 @@ struct consume_Windows_UI_Input_Core_IRadialControllerIndependentInputSourceStat
     Windows::UI::Input::Core::RadialControllerIndependentInputSource CreateForView(Windows::ApplicationModel::Core::CoreApplicationView const& view) const;
 };
 template <> struct consume<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics> { template <typename D> using type = consume_Windows_UI_Input_Core_IRadialControllerIndependentInputSourceStatics<D>; };
-
-template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Controller(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Dispatcher(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSource2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DispatcherQueue(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Core::IRadialControllerIndependentInputSourceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateForView(void* view, void** result) noexcept = 0;
-};};
 
 }

@@ -35,6 +35,13 @@ DEFINE_GUID (GUID_HDAUDIO_BUS_INTERFACE_V2,
 0xb52af5fb, 0x424b, 0x4bb9, 0xa1, 0x60, 0x5b, 0x38, 0xbe, 0x94, 0xe5, 0x68);
 
 //
+// The HDAUDIO_BUS_INTERFACE_V3 interface GUID
+//
+// {DC25DA12-BCD1-4C7F-84E1-02ADB6DCD6BF}
+DEFINE_GUID (GUID_HDAUDIO_BUS_INTERFACE_V3,
+0xdc25da12, 0xbcd1, 0x4c7f, 0x84, 0xe1, 0x02, 0xad, 0xb6, 0xdc, 0xdc, 0xbf);
+
+//
 // The HDAudio bus class GUID
 //
 // {BBD1A745-ADD6-4575-9C2E-9B428D1C3266}
@@ -353,6 +360,60 @@ typedef struct _HDAUDIO_BUS_INTERFACE_V2
     PREGISTER_NOTIFICATION_EVENT    RegisterNotificationEvent;
     PUNREGISTER_NOTIFICATION_EVENT  UnregisterNotificationEvent;
 } HDAUDIO_BUS_INTERFACE_V2, *PHDAUDIO_BUS_INTERFACE_V2;
+
+//
+// Additional interface functions for DMA notification driver callback support
+//
+typedef VOID (*PHDAUDIO_DMA_NOTIFICATION_CALLBACK)(PVOID, LARGE_INTEGER);
+
+typedef _Must_inspect_result_ NTSTATUS (*PREGISTER_NOTIFICATION_CALLBACK) (_In_ PVOID _context,
+                                                                           _In_ HANDLE Handle,
+                                                                           _In_ PDEVICE_OBJECT Fdo,
+                                                                           _In_ PHDAUDIO_DMA_NOTIFICATION_CALLBACK NotificationCallback,
+                                                                           _In_ PVOID CallbackContext);
+
+typedef _Must_inspect_result_ NTSTATUS (*PUNREGISTER_NOTIFICATION_CALLBACK) (_In_ PVOID _context,
+                                                                             _In_ HANDLE Handle,
+                                                                             _In_ PHDAUDIO_DMA_NOTIFICATION_CALLBACK NotificationCallback,
+                                                                             _In_ PVOID CallbackContext);
+
+typedef struct _HDAUDIO_BUS_INTERFACE_V3
+{
+    //
+    // First we define the standard INTERFACE structure ...
+    //
+    USHORT                    Size;
+    USHORT                    Version;
+    PVOID                     Context;
+    PINTERFACE_REFERENCE      InterfaceReference;
+    PINTERFACE_DEREFERENCE    InterfaceDereference;
+
+    //
+    // Then we expand the structure with the HDAUDIO_BUS_INTERFACE_PING_PONG stuff.
+    // Many functions are identical (and derived) from the HDAUDIO_BUS_INTERFACE
+    // interface.
+
+    PTRANSFER_CODEC_VERBS           TransferCodecVerbs;
+    PALLOCATE_CAPTURE_DMA_ENGINE    AllocateCaptureDmaEngine;
+    PALLOCATE_RENDER_DMA_ENGINE     AllocateRenderDmaEngine;
+    PCHANGE_BANDWIDTH_ALLOCATION    ChangeBandwidthAllocation;
+    PALLOCATE_DMA_BUFFER            AllocateDmaBuffer;
+    PFREE_DMA_BUFFER                FreeDmaBuffer;
+    PFREE_DMA_ENGINE                FreeDmaEngine;
+    PSET_DMA_ENGINE_STATE           SetDmaEngineState;
+    PGET_WALL_CLOCK_REGISTER        GetWallClockRegister;
+    PGET_LINK_POSITION_REGISTER     GetLinkPositionRegister;
+    PREGISTER_EVENT_CALLBACK        RegisterEventCallback;
+    PUNREGISTER_EVENT_CALLBACK      UnregisterEventCallback;
+    PGET_DEVICE_INFORMATION         GetDeviceInformation;
+    PGET_RESOURCE_INFORMATION       GetResourceInformation;
+    PALLOCATE_DMA_BUFFER_WITH_NOTIFICATION AllocateDmaBufferWithNotification;
+    PFREE_DMA_BUFFER_WITH_NOTIFICATION FreeDmaBufferWithNotification;
+    PREGISTER_NOTIFICATION_EVENT    RegisterNotificationEvent;
+    PUNREGISTER_NOTIFICATION_EVENT  UnregisterNotificationEvent;
+    PREGISTER_NOTIFICATION_CALLBACK RegisterNotificationCallback;
+    PUNREGISTER_NOTIFICATION_CALLBACK UnregisterNotificationCallback;
+} HDAUDIO_BUS_INTERFACE_V3, *PHDAUDIO_BUS_INTERFACE_V3;
 
 #pragma warning(default:4201)
 #pragma warning(default:4214)

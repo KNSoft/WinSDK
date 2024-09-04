@@ -4,7 +4,7 @@ Copyright (c) 1999 - 2008  Microsoft Corporation
 
 Module Name:
 
-    VirtDisk.w - Virtual Disk user mode interface
+    VirtDisk.h - Virtual Disk user mode interface
 
 Abstract:
 
@@ -1468,6 +1468,66 @@ RawSCSIVirtualDisk(
 
 
 #endif // NTDDI_VERSION >= NTDDI_WINTHRESHOLD
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+//
+// ForkVirtualDisk
+//
+
+// Version definitions
+typedef enum _FORK_VIRTUAL_DISK_VERSION
+{
+    FORK_VIRTUAL_DISK_VERSION_UNSPECIFIED = 0,
+    FORK_VIRTUAL_DISK_VERSION_1           = 1,
+
+} FORK_VIRTUAL_DISK_VERSION;
+
+// Versioned parameter structure for ForkVirtualDisk
+typedef struct _FORK_VIRTUAL_DISK_PARAMETERS
+{
+    FORK_VIRTUAL_DISK_VERSION Version;
+
+    union
+    {
+        struct
+        {
+            PCWSTR ForkedVirtualDiskPath;
+
+        } Version1;
+    };
+
+} FORK_VIRTUAL_DISK_PARAMETERS, *PFORK_VIRTUAL_DISK_PARAMETERS;
+
+// Flags for ForkVirtualDisk
+typedef enum _FORK_VIRTUAL_DISK_FLAG
+{
+    FORK_VIRTUAL_DISK_FLAG_NONE          = 0x00000000,
+    FORK_VIRTUAL_DISK_FLAG_EXISTING_FILE = 0x00000001,
+
+} FORK_VIRTUAL_DISK_FLAG;
+
+#ifdef DEFINE_ENUM_FLAG_OPERATORS
+DEFINE_ENUM_FLAG_OPERATORS(FORK_VIRTUAL_DISK_FLAG);
+#endif
+
+DWORD
+WINAPI
+ForkVirtualDisk(
+    _In_ HANDLE VirtualDiskHandle,
+    _In_ FORK_VIRTUAL_DISK_FLAG Flags,
+    _In_ const FORK_VIRTUAL_DISK_PARAMETERS* Parameters,
+    _Inout_ LPOVERLAPPED Overlapped
+    );
+
+DWORD
+WINAPI
+CompleteForkVirtualDisk(
+    _In_ HANDLE VirtualDiskHandle
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS5
+
 #endif // VIRTDISK_DEFINE_FLAGS
 
 //
@@ -1550,5 +1610,4 @@ DEFINE_ENUM_FLAG_OPERATORS(UNSURFACE_VIRTUAL_DISK_FLAG);
 #endif // VIRT_DISK_API_DEF
 
 // VirtDisk.h EOF
-
 

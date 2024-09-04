@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -42,6 +42,13 @@ struct WINRT_EBO IHolographicCamera4 :
     impl::consume_t<IHolographicCamera4>
 {
     IHolographicCamera4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IHolographicCamera5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IHolographicCamera5>
+{
+    IHolographicCamera5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IHolographicCameraPose :
@@ -165,6 +172,13 @@ struct WINRT_EBO IHolographicQuadLayerUpdateParameters :
     impl::consume_t<IHolographicQuadLayerUpdateParameters>
 {
     IHolographicQuadLayerUpdateParameters(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IHolographicQuadLayerUpdateParameters2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IHolographicQuadLayerUpdateParameters2>
+{
+    IHolographicQuadLayerUpdateParameters2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IHolographicSpace :

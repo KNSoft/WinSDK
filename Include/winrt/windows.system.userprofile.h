@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.userprofile.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,15 +232,19 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION)
-#define WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION 0x10000
+#define WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_USERPROFILE_USERPROFILELOCKSCREENCONTRACT_VERSION)
@@ -310,6 +322,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2 ABI::Windows::System::UserProfile::IAdvertisingManagerStatics2
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IAssignedAccessSettings;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings ABI::Windows::System::UserProfile::IAssignedAccessSettings
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                interface IAssignedAccessSettingsStatics;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics ABI::Windows::System::UserProfile::IAssignedAccessSettingsStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
@@ -1213,11 +1253,23 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace System {
             namespace UserProfile {
                 class AdvertisingManagerForUser;
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                class AssignedAccessSettings;
             } /* Windows */
         } /* System */
     } /* UserProfile */} /* ABI */
@@ -1290,8 +1342,12 @@ namespace ABI {
     namespace Windows {
         namespace System {
             namespace UserProfile {
-                /* [v1_enum, contract] */
-                enum AccountPictureKind : int
+                /* [v1_enum, deprecated, contract] */
+                enum 
+                #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                AccountPictureKind : int
                 {
                     AccountPictureKind_SmallImage = 0,
                     AccountPictureKind_LargeImage = 1,
@@ -1318,8 +1374,12 @@ namespace ABI {
     namespace Windows {
         namespace System {
             namespace UserProfile {
-                /* [v1_enum, contract] */
-                enum SetAccountPictureResult : int
+                /* [v1_enum, deprecated, contract] */
+                enum 
+                #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                SetAccountPictureResult : int
                 {
                     SetAccountPictureResult_Success = 0,
                     SetAccountPictureResult_ChangeDisabled = 1,
@@ -1488,6 +1548,98 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IAssignedAccessSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.AssignedAccessSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IAssignedAccessSettings[] = L"Windows.System.UserProfile.IAssignedAccessSettings";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                /* [object, uuid("1BC57F1C-E971-5757-B8E0-512F8B8C46D2"), exclusiveto, contract] */
+                MIDL_INTERFACE("1BC57F1C-E971-5757-B8E0-512F8B8C46D2")
+                IAssignedAccessSettings : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSingleAppKioskMode(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAssignedAccessSettings=_uuidof(IAssignedAccessSettings);
+                
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IAssignedAccessSettingsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.AssignedAccessSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IAssignedAccessSettingsStatics[] = L"Windows.System.UserProfile.IAssignedAccessSettingsStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace UserProfile {
+                /* [object, uuid("34A81D0D-8A29-5EF3-A7BE-618E6AC3BD01"), exclusiveto, contract] */
+                MIDL_INTERFACE("34A81D0D-8A29-5EF3-A7BE-618E6AC3BD01")
+                IAssignedAccessSettingsStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetDefault(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IAssignedAccessSettings * * result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetForUser(
+                        /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::UserProfile::IAssignedAccessSettings * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAssignedAccessSettingsStatics=_uuidof(IAssignedAccessSettingsStatics);
+                
+            } /* Windows */
+        } /* System */
+    } /* UserProfile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1982,64 +2134,128 @@ namespace ABI {
     namespace Windows {
         namespace System {
             namespace UserProfile {
-                /* [object, uuid("77F3A910-48FA-489C-934E-2AE85BA8F772"), exclusiveto, contract] */
+                /* [object, uuid("77F3A910-48FA-489C-934E-2AE85BA8F772"), exclusiveto, deprecated, contract] */
                 MIDL_INTERFACE("77F3A910-48FA-489C-934E-2AE85BA8F772")
+                
+                #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
                 IUserInformationStatics : public IInspectable
                 {
                 public:
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccountPictureChangeEnabled(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_AccountPictureChangeEnabled(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NameAccessAllowed(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_NameAccessAllowed(
                         /* [retval, out] */__RPC__out boolean * value
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetAccountPicture(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetAccountPicture(
                         /* [in] */ABI::Windows::System::UserProfile::AccountPictureKind kind,
                         /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Storage::IStorageFile * * storageFile
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE SetAccountPictureAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE SetAccountPictureAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * image,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE SetAccountPicturesAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE SetAccountPicturesAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * smallImage,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * largeImage,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * video,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE SetAccountPictureFromStreamAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE SetAccountPictureFromStreamAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * image,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE SetAccountPicturesFromStreamsAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE SetAccountPicturesFromStreamsAsync(
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * smallImage,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * largeImage,
                         /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * video,
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
                         ) = 0;
-                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccountPictureChanged(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [eventadd, deprecated] */virtual HRESULT STDMETHODCALLTYPE add_AccountPictureChanged(
                         /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * changeHandler,
                         /* [retval, out] */__RPC__out EventRegistrationToken * token
                         ) = 0;
-                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_AccountPictureChanged(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [eventremove, deprecated] */virtual HRESULT STDMETHODCALLTYPE remove_AccountPictureChanged(
                         /* [in] */EventRegistrationToken token
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetDisplayNameAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetDisplayNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetFirstNameAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetFirstNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetLastNameAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetLastNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetPrincipalNameAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetPrincipalNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetSessionInitiationProtocolUriAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetSessionInitiationProtocolUriAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CFoundation__CUri * * operation
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE GetDomainNameAsync(
+                    
+                    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+                    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetDomainNameAsync(
                         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
                         ) = 0;
                     
@@ -2194,6 +2410,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.UserProfile.AssignedAccessSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.UserProfile.IAssignedAccessSettingsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.UserProfile.IAssignedAccessSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_UserProfile_AssignedAccessSettings_DEFINED
+#define RUNTIMECLASS_Windows_System_UserProfile_AssignedAccessSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_AssignedAccessSettings[] = L"Windows.System.UserProfile.AssignedAccessSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.UserProfile.DiagnosticsSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -2329,6 +2572,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_UserProfile_UserInformation_DEFINED
 #define RUNTIMECLASS_Windows_System_UserProfile_UserInformation_DEFINED
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_UserInformation[] = L"Windows.System.UserProfile.UserInformation";
 #endif
 #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000
@@ -2382,6 +2629,18 @@ typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStat
 typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2 __x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2;
 
 #endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings;
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIDiagnosticsSettings_FWD_DEFINED__
@@ -3722,6 +3981,9 @@ typedef enum __x_ABI_CWindows_CSystem_CUserProfile_CSetImageFeedResult __x_ABI_C
 
 
 
+
+
+
 /*
  *
  * Struct Windows.System.UserProfile.AccountPictureKind
@@ -3732,8 +3994,12 @@ typedef enum __x_ABI_CWindows_CSystem_CUserProfile_CSetImageFeedResult __x_ABI_C
  */
 
 #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CSystem_CUserProfile_CAccountPictureKind
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CSystem_CUserProfile_CAccountPictureKind
 {
     AccountPictureKind_SmallImage = 0,
     AccountPictureKind_LargeImage = 1,
@@ -3752,8 +4018,12 @@ enum __x_ABI_CWindows_CSystem_CUserProfile_CAccountPictureKind
  */
 
 #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CSystem_CUserProfile_CSetAccountPictureResult
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CSystem_CUserProfile_CSetAccountPictureResult
 {
     SetAccountPictureResult_Success = 0,
     SetAccountPictureResult_ChangeDisabled = 1,
@@ -4070,6 +4340,214 @@ interface __x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAdvertisingManagerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IAssignedAccessSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.AssignedAccessSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IAssignedAccessSettings[] = L"Windows.System.UserProfile.IAssignedAccessSettings";
+/* [object, uuid("1BC57F1C-E971-5757-B8E0-512F8B8C46D2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsSingleAppKioskMode )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_get_IsEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_get_IsSingleAppKioskMode(This,value) \
+    ( (This)->lpVtbl->get_IsSingleAppKioskMode(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_get_User(This,value) \
+    ( (This)->lpVtbl->get_User(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.UserProfile.IAssignedAccessSettingsStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.UserProfile.AssignedAccessSettings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IAssignedAccessSettingsStatics[] = L"Windows.System.UserProfile.IAssignedAccessSettingsStatics";
+/* [object, uuid("34A81D0D-8A29-5EF3-A7BE-618E6AC3BD01"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDefault )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetForUser )(
+        __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettings * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_GetDefault(This,result) \
+    ( (This)->lpVtbl->GetDefault(This,result) )
+
+#define __x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_GetForUser(This,user,result) \
+    ( (This)->lpVtbl->GetForUser(This,user,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIAssignedAccessSettingsStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5148,8 +5626,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CUserProfile_CILockScreenStatics
 #if !defined(____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_UserProfile_IUserInformationStatics[] = L"Windows.System.UserProfile.IUserInformationStatics";
-/* [object, uuid("77F3A910-48FA-489C-934E-2AE85BA8F772"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStaticsVtbl
+/* [object, uuid("77F3A910-48FA-489C-934E-2AE85BA8F772"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -5182,73 +5664,133 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AccountPictureChangeEnabled )(
+
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_AccountPictureChangeEnabled )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__out boolean * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NameAccessAllowed )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_NameAccessAllowed )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__out boolean * value
         );
-    HRESULT ( STDMETHODCALLTYPE *GetAccountPicture )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetAccountPicture )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__x_ABI_CWindows_CSystem_CUserProfile_CAccountPictureKind kind,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CStorage_CIStorageFile * * storageFile
         );
-    HRESULT ( STDMETHODCALLTYPE *SetAccountPictureAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *SetAccountPictureAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * image,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *SetAccountPicturesAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *SetAccountPicturesAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * smallImage,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * largeImage,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * video,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *SetAccountPictureFromStreamAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *SetAccountPictureFromStreamAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * image,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *SetAccountPicturesFromStreamsAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *SetAccountPicturesFromStreamsAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * smallImage,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * largeImage,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * video,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CSystem__CUserProfile__CSetAccountPictureResult * * operation
         );
-    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_AccountPictureChanged )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [eventadd, deprecated] */HRESULT ( STDMETHODCALLTYPE *add_AccountPictureChanged )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * changeHandler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
-    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_AccountPictureChanged )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [eventremove, deprecated] */HRESULT ( STDMETHODCALLTYPE *remove_AccountPictureChanged )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [in] */EventRegistrationToken token
         );
-    HRESULT ( STDMETHODCALLTYPE *GetDisplayNameAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetDisplayNameAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *GetFirstNameAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetFirstNameAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *GetLastNameAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetLastNameAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *GetPrincipalNameAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetPrincipalNameAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *GetSessionInitiationProtocolUriAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetSessionInitiationProtocolUriAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CFoundation__CUri * * operation
         );
-    HRESULT ( STDMETHODCALLTYPE *GetDomainNameAsync )(
+    
+    #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+    #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetDomainNameAsync )(
         __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics * This,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_HSTRING * * operation
         );
@@ -5280,48 +5822,108 @@ interface __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_get_AccountPictureChangeEnabled(This,value) \
     ( (This)->lpVtbl->get_AccountPictureChangeEnabled(This,value) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_get_NameAccessAllowed(This,value) \
     ( (This)->lpVtbl->get_NameAccessAllowed(This,value) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetAccountPicture(This,kind,storageFile) \
     ( (This)->lpVtbl->GetAccountPicture(This,kind,storageFile) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_SetAccountPictureAsync(This,image,operation) \
     ( (This)->lpVtbl->SetAccountPictureAsync(This,image,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_SetAccountPicturesAsync(This,smallImage,largeImage,video,operation) \
     ( (This)->lpVtbl->SetAccountPicturesAsync(This,smallImage,largeImage,video,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_SetAccountPictureFromStreamAsync(This,image,operation) \
     ( (This)->lpVtbl->SetAccountPictureFromStreamAsync(This,image,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_SetAccountPicturesFromStreamsAsync(This,smallImage,largeImage,video,operation) \
     ( (This)->lpVtbl->SetAccountPicturesFromStreamsAsync(This,smallImage,largeImage,video,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_add_AccountPictureChanged(This,changeHandler,token) \
     ( (This)->lpVtbl->add_AccountPictureChanged(This,changeHandler,token) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_remove_AccountPictureChanged(This,token) \
     ( (This)->lpVtbl->remove_AccountPictureChanged(This,token) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetDisplayNameAsync(This,operation) \
     ( (This)->lpVtbl->GetDisplayNameAsync(This,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetFirstNameAsync(This,operation) \
     ( (This)->lpVtbl->GetFirstNameAsync(This,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetLastNameAsync(This,operation) \
     ( (This)->lpVtbl->GetLastNameAsync(This,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetPrincipalNameAsync(This,operation) \
     ( (This)->lpVtbl->GetPrincipalNameAsync(This,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetSessionInitiationProtocolUriAsync(This,operation) \
     ( (This)->lpVtbl->GetSessionInitiationProtocolUriAsync(This,operation) )
 
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CSystem_CUserProfile_CIUserInformationStatics_GetDomainNameAsync(This,operation) \
     ( (This)->lpVtbl->GetDomainNameAsync(This,operation) )
 
@@ -5584,6 +6186,33 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.UserProfile.AssignedAccessSettings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.UserProfile.IAssignedAccessSettingsStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.UserProfile.IAssignedAccessSettings ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_UserProfile_AssignedAccessSettings_DEFINED
+#define RUNTIMECLASS_Windows_System_UserProfile_AssignedAccessSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_AssignedAccessSettings[] = L"Windows.System.UserProfile.AssignedAccessSettings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.UserProfile.DiagnosticsSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -5719,6 +6348,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000
 #ifndef RUNTIMECLASS_Windows_System_UserProfile_UserInformation_DEFINED
 #define RUNTIMECLASS_Windows_System_UserProfile_UserInformation_DEFINED
+
+#if WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
+DEPRECATED("Use User instead of UserInformation. For more info, see MSDN.")
+#endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_UserProfile_UserInformation[] = L"Windows.System.UserProfile.UserInformation";
 #endif
 #endif // WINDOWS_SYSTEM_USERPROFILE_USERPROFILECONTRACT_VERSION >= 0x10000

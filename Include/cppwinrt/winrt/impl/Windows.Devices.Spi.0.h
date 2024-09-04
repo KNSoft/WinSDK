@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -69,17 +69,73 @@ template <> struct name<Windows::Devices::Spi::SpiController>{ static constexpr 
 template <> struct name<Windows::Devices::Spi::SpiDevice>{ static constexpr auto & value{ L"Windows.Devices.Spi.SpiDevice" }; };
 template <> struct name<Windows::Devices::Spi::SpiMode>{ static constexpr auto & value{ L"Windows.Devices.Spi.SpiMode" }; };
 template <> struct name<Windows::Devices::Spi::SpiSharingMode>{ static constexpr auto & value{ L"Windows.Devices.Spi.SpiSharingMode" }; };
-template <> struct guid<Windows::Devices::Spi::ISpiBusInfo>{ static constexpr GUID value{ 0x9929444A,0x54F2,0x48C6,{ 0xB9,0x52,0x9C,0x32,0xFC,0x02,0xC6,0x69 } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiConnectionSettings>{ static constexpr GUID value{ 0x5283A37F,0xF935,0x4B9F,{ 0xA7,0xA7,0x3A,0x78,0x90,0xAF,0xA5,0xCE } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiConnectionSettingsFactory>{ static constexpr GUID value{ 0xFF99081E,0x10C4,0x44B7,{ 0x9F,0xEA,0xA7,0x48,0xB5,0xA4,0x6F,0x31 } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiController>{ static constexpr GUID value{ 0xA8D3C829,0x9895,0x4159,{ 0xA9,0x34,0x87,0x41,0xF1,0xEE,0x6D,0x27 } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiControllerStatics>{ static constexpr GUID value{ 0x0D5229E2,0x138B,0x4E48,{ 0xB9,0x64,0x4F,0x2F,0x79,0xB9,0xC5,0xA2 } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiDevice>{ static constexpr GUID value{ 0x05D5356D,0x11B6,0x4D39,{ 0x84,0xD5,0x95,0xDF,0xB4,0xC9,0xF2,0xCE } }; };
-template <> struct guid<Windows::Devices::Spi::ISpiDeviceStatics>{ static constexpr GUID value{ 0xA278E559,0x5720,0x4D3F,{ 0xBD,0x93,0x56,0xF5,0xFF,0x5A,0x58,0x79 } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiBusInfo>{ static constexpr guid value{ 0x9929444A,0x54F2,0x48C6,{ 0xB9,0x52,0x9C,0x32,0xFC,0x02,0xC6,0x69 } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiConnectionSettings>{ static constexpr guid value{ 0x5283A37F,0xF935,0x4B9F,{ 0xA7,0xA7,0x3A,0x78,0x90,0xAF,0xA5,0xCE } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiConnectionSettingsFactory>{ static constexpr guid value{ 0xFF99081E,0x10C4,0x44B7,{ 0x9F,0xEA,0xA7,0x48,0xB5,0xA4,0x6F,0x31 } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiController>{ static constexpr guid value{ 0xA8D3C829,0x9895,0x4159,{ 0xA9,0x34,0x87,0x41,0xF1,0xEE,0x6D,0x27 } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiControllerStatics>{ static constexpr guid value{ 0x0D5229E2,0x138B,0x4E48,{ 0xB9,0x64,0x4F,0x2F,0x79,0xB9,0xC5,0xA2 } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiDevice>{ static constexpr guid value{ 0x05D5356D,0x11B6,0x4D39,{ 0x84,0xD5,0x95,0xDF,0xB4,0xC9,0xF2,0xCE } }; };
+template <> struct guid_storage<Windows::Devices::Spi::ISpiDeviceStatics>{ static constexpr guid value{ 0xA278E559,0x5720,0x4D3F,{ 0xBD,0x93,0x56,0xF5,0xFF,0x5A,0x58,0x79 } }; };
 template <> struct default_interface<Windows::Devices::Spi::SpiBusInfo>{ using type = Windows::Devices::Spi::ISpiBusInfo; };
 template <> struct default_interface<Windows::Devices::Spi::SpiConnectionSettings>{ using type = Windows::Devices::Spi::ISpiConnectionSettings; };
 template <> struct default_interface<Windows::Devices::Spi::SpiController>{ using type = Windows::Devices::Spi::ISpiController; };
 template <> struct default_interface<Windows::Devices::Spi::SpiDevice>{ using type = Windows::Devices::Spi::ISpiDevice; };
+
+template <> struct abi<Windows::Devices::Spi::ISpiBusInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChipSelectLineCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinClockFrequency(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxClockFrequency(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedDataBitLengths(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiConnectionSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ChipSelectLine(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChipSelectLine(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mode(Windows::Devices::Spi::SpiMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mode(Windows::Devices::Spi::SpiMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataBitLength(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataBitLength(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClockFrequency(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ClockFrequency(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharingMode(Windows::Devices::Spi::SpiSharingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SharingMode(Windows::Devices::Spi::SpiSharingMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiConnectionSettingsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(int32_t chipSelectLine, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDevice(void* settings, void** device) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiControllerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Write(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL Read(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL TransferSequential(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
+    virtual int32_t WINRT_CALL TransferFullDuplex(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Spi::ISpiDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelectorFromFriendlyName(void* friendlyName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBusInfo(void* busId, void** busInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* busId, void* settings, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Spi_ISpiBusInfo
@@ -150,61 +206,5 @@ struct consume_Windows_Devices_Spi_ISpiDeviceStatics
     Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> FromIdAsync(param::hstring const& busId, Windows::Devices::Spi::SpiConnectionSettings const& settings) const;
 };
 template <> struct consume<Windows::Devices::Spi::ISpiDeviceStatics> { template <typename D> using type = consume_Windows_Devices_Spi_ISpiDeviceStatics<D>; };
-
-template <> struct abi<Windows::Devices::Spi::ISpiBusInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChipSelectLineCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinClockFrequency(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxClockFrequency(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedDataBitLengths(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiConnectionSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ChipSelectLine(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ChipSelectLine(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mode(Windows::Devices::Spi::SpiMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mode(Windows::Devices::Spi::SpiMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataBitLength(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataBitLength(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClockFrequency(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ClockFrequency(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_SharingMode(Windows::Devices::Spi::SpiSharingMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SharingMode(Windows::Devices::Spi::SpiSharingMode value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiConnectionSettingsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(int32_t chipSelectLine, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDevice(void* settings, void** device) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiControllerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefaultAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Write(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
-    virtual HRESULT __stdcall Read(uint32_t __bufferSize, uint8_t* buffer) noexcept = 0;
-    virtual HRESULT __stdcall TransferSequential(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
-    virtual HRESULT __stdcall TransferFullDuplex(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Spi::ISpiDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetBusInfo(HSTRING busId, void** busInfo) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING busId, void* settings, void** operation) noexcept = 0;
-};};
 
 }

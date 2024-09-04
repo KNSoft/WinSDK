@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -222,478 +222,414 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cr
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerOptions> : produce_base<D, Windows::Security::Credentials::UI::ICredentialPickerOptions>
 {
-    HRESULT __stdcall put_Caption(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Caption(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Caption, WINRT_WRAP(void), hstring const&);
             this->shim().Caption(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Caption(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Caption(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Caption, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Caption());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Message(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Message(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(void), hstring const&);
             this->shim().Message(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ErrorCode(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_ErrorCode(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorCode, WINRT_WRAP(void), uint32_t);
             this->shim().ErrorCode(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ErrorCode(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ErrorCode(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorCode, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ErrorCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_TargetName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetName, WINRT_WRAP(void), hstring const&);
             this->shim().TargetName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TargetName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TargetName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) noexcept final
+    int32_t WINRT_CALL put_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationProtocol, WINRT_WRAP(void), Windows::Security::Credentials::UI::AuthenticationProtocol const&);
             this->shim().AuthenticationProtocol(*reinterpret_cast<Windows::Security::Credentials::UI::AuthenticationProtocol const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationProtocol, WINRT_WRAP(Windows::Security::Credentials::UI::AuthenticationProtocol));
             *value = detach_from<Windows::Security::Credentials::UI::AuthenticationProtocol>(this->shim().AuthenticationProtocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CustomAuthenticationProtocol(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CustomAuthenticationProtocol(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomAuthenticationProtocol, WINRT_WRAP(void), hstring const&);
             this->shim().CustomAuthenticationProtocol(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomAuthenticationProtocol(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomAuthenticationProtocol(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomAuthenticationProtocol, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomAuthenticationProtocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PreviousCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_PreviousCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreviousCredential, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&);
             this->shim().PreviousCredential(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PreviousCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_PreviousCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreviousCredential, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().PreviousCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysDisplayDialog(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysDisplayDialog(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysDisplayDialog, WINRT_WRAP(void), bool);
             this->shim().AlwaysDisplayDialog(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysDisplayDialog(bool* value) noexcept final
+    int32_t WINRT_CALL get_AlwaysDisplayDialog(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysDisplayDialog, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AlwaysDisplayDialog());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CallerSavesCredential(bool value) noexcept final
+    int32_t WINRT_CALL put_CallerSavesCredential(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerSavesCredential, WINRT_WRAP(void), bool);
             this->shim().CallerSavesCredential(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CallerSavesCredential(bool* value) noexcept final
+    int32_t WINRT_CALL get_CallerSavesCredential(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CallerSavesCredential, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CallerSavesCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) noexcept final
+    int32_t WINRT_CALL put_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialSaveOption, WINRT_WRAP(void), Windows::Security::Credentials::UI::CredentialSaveOption const&);
             this->shim().CredentialSaveOption(*reinterpret_cast<Windows::Security::Credentials::UI::CredentialSaveOption const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept final
+    int32_t WINRT_CALL get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialSaveOption, WINRT_WRAP(Windows::Security::Credentials::UI::CredentialSaveOption));
             *value = detach_from<Windows::Security::Credentials::UI::CredentialSaveOption>(this->shim().CredentialSaveOption());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerResults> : produce_base<D, Windows::Security::Credentials::UI::ICredentialPickerResults>
 {
-    HRESULT __stdcall get_ErrorCode(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ErrorCode(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ErrorCode, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ErrorCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept final
+    int32_t WINRT_CALL get_CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialSaveOption, WINRT_WRAP(Windows::Security::Credentials::UI::CredentialSaveOption));
             *value = detach_from<Windows::Security::Credentials::UI::CredentialSaveOption>(this->shim().CredentialSaveOption());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialSaved(bool* value) noexcept final
+    int32_t WINRT_CALL get_CredentialSaved(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialSaved, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CredentialSaved());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Credential(void** value) noexcept final
+    int32_t WINRT_CALL get_Credential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Credential, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Credential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialDomainName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CredentialDomainName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialDomainName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CredentialDomainName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialUserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CredentialUserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialUserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CredentialUserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CredentialPassword(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CredentialPassword(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CredentialPassword, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CredentialPassword());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::ICredentialPickerStatics> : produce_base<D, Windows::Security::Credentials::UI::ICredentialPickerStatics>
 {
-    HRESULT __stdcall PickWithOptionsAsync(void* options, void** operation) noexcept final
+    int32_t WINRT_CALL PickWithOptionsAsync(void* options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>), Windows::Security::Credentials::UI::CredentialPickerOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>>(this->shim().PickAsync(*reinterpret_cast<Windows::Security::Credentials::UI::CredentialPickerOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickWithMessageAsync(HSTRING targetName, HSTRING message, void** operation) noexcept final
+    int32_t WINRT_CALL PickWithMessageAsync(void* targetName, void* message, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>), hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>>(this->shim().PickAsync(*reinterpret_cast<hstring const*>(&targetName), *reinterpret_cast<hstring const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption, void** operation) noexcept final
+    int32_t WINRT_CALL PickWithCaptionAsync(void* targetName, void* message, void* caption, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>), hstring const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults>>(this->shim().PickAsync(*reinterpret_cast<hstring const*>(&targetName), *reinterpret_cast<hstring const*>(&message), *reinterpret_cast<hstring const*>(&caption)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatics> : produce_base<D, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>
 {
-    HRESULT __stdcall CheckAvailabilityAsync(void** result) noexcept final
+    int32_t WINRT_CALL CheckAvailabilityAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckAvailabilityAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerifierAvailability>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerifierAvailability>>(this->shim().CheckAvailabilityAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestVerificationAsync(HSTRING message, void** result) noexcept final
+    int32_t WINRT_CALL RequestVerificationAsync(void* message, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestVerificationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerificationResult>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerificationResult>>(this->shim().RequestVerificationAsync(*reinterpret_cast<hstring const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -703,31 +639,31 @@ WINRT_EXPORT namespace winrt::Windows::Security::Credentials::UI {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(Windows::Security::Credentials::UI::CredentialPickerOptions const& options)
 {
-    return get_activation_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>().PickAsync(options);
+    return impl::call_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>([&](auto&& f) { return f.PickAsync(options); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(param::hstring const& targetName, param::hstring const& message)
 {
-    return get_activation_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>().PickAsync(targetName, message);
+    return impl::call_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>([&](auto&& f) { return f.PickAsync(targetName, message); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> CredentialPicker::PickAsync(param::hstring const& targetName, param::hstring const& message, param::hstring const& caption)
 {
-    return get_activation_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>().PickAsync(targetName, message, caption);
+    return impl::call_factory<CredentialPicker, Windows::Security::Credentials::UI::ICredentialPickerStatics>([&](auto&& f) { return f.PickAsync(targetName, message, caption); });
 }
 
 inline CredentialPickerOptions::CredentialPickerOptions() :
-    CredentialPickerOptions(get_activation_factory<CredentialPickerOptions>().ActivateInstance<CredentialPickerOptions>())
+    CredentialPickerOptions(impl::call_factory<CredentialPickerOptions>([](auto&& f) { return f.template ActivateInstance<CredentialPickerOptions>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerifierAvailability> UserConsentVerifier::CheckAvailabilityAsync()
 {
-    return get_activation_factory<UserConsentVerifier, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>().CheckAvailabilityAsync();
+    return impl::call_factory<UserConsentVerifier, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>([&](auto&& f) { return f.CheckAvailabilityAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::UserConsentVerificationResult> UserConsentVerifier::RequestVerificationAsync(param::hstring const& message)
 {
-    return get_activation_factory<UserConsentVerifier, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>().RequestVerificationAsync(message);
+    return impl::call_factory<UserConsentVerifier, Windows::Security::Credentials::UI::IUserConsentVerifierStatics>([&](auto&& f) { return f.RequestVerificationAsync(message); });
 }
 
 }
@@ -744,5 +680,3 @@ template<> struct hash<winrt::Windows::Security::Credentials::UI::CredentialPick
 template<> struct hash<winrt::Windows::Security::Credentials::UI::UserConsentVerifier> : winrt::impl::hash_base<winrt::Windows::Security::Credentials::UI::UserConsentVerifier> {};
 
 }
-
-WINRT_WARNING_POP

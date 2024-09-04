@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -29,19 +29,17 @@ struct produce<D, Windows::Management::Core::IApplicationDataManager> : produce_
 template <typename D>
 struct produce<D, Windows::Management::Core::IApplicationDataManagerStatics> : produce_base<D, Windows::Management::Core::IApplicationDataManagerStatics>
 {
-    HRESULT __stdcall CreateForPackageFamily(HSTRING packageFamilyName, void** applicationData) noexcept final
+    int32_t WINRT_CALL CreateForPackageFamily(void* packageFamilyName, void** applicationData) noexcept final
     {
         try
         {
             *applicationData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForPackageFamily, WINRT_WRAP(Windows::Storage::ApplicationData), hstring const&);
             *applicationData = detach_from<Windows::Storage::ApplicationData>(this->shim().CreateForPackageFamily(*reinterpret_cast<hstring const*>(&packageFamilyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -51,7 +49,7 @@ WINRT_EXPORT namespace winrt::Windows::Management::Core {
 
 inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackageFamily(param::hstring const& packageFamilyName)
 {
-    return get_activation_factory<ApplicationDataManager, Windows::Management::Core::IApplicationDataManagerStatics>().CreateForPackageFamily(packageFamilyName);
+    return impl::call_factory<ApplicationDataManager, Windows::Management::Core::IApplicationDataManagerStatics>([&](auto&& f) { return f.CreateForPackageFamily(packageFamilyName); });
 }
 
 }
@@ -63,5 +61,3 @@ template<> struct hash<winrt::Windows::Management::Core::IApplicationDataManager
 template<> struct hash<winrt::Windows::Management::Core::ApplicationDataManager> : winrt::impl::hash_base<winrt::Windows::Management::Core::ApplicationDataManager> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -25,21 +25,21 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> event_token consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Effects::IAudioCaptureEffectsManager)->add_AudioCaptureEffectsChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Effects::IAudioCaptureEffectsManager> consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged_revoker consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Effects::IAudioCaptureEffectsManager>(this, &abi_t<Windows::Media::Effects::IAudioCaptureEffectsManager>::remove_AudioCaptureEffectsChanged, AudioCaptureEffectsChanged(handler));
+    return impl::make_event_revoker<D, AudioCaptureEffectsChanged_revoker>(this, AudioCaptureEffectsChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(event_token const& token) const
+template <typename D> void consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Effects::IAudioCaptureEffectsManager)->remove_AudioCaptureEffectsChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Effects::IAudioCaptureEffectsManager)->remove_AudioCaptureEffectsChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>::GetAudioCaptureEffects() const
@@ -112,21 +112,21 @@ template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager consum
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Effects::IAudioRenderEffectsManager)->add_AudioRenderEffectsChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Effects::IAudioRenderEffectsManager> consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged_revoker consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Effects::IAudioRenderEffectsManager>(this, &abi_t<Windows::Media::Effects::IAudioRenderEffectsManager>::remove_AudioRenderEffectsChanged, AudioRenderEffectsChanged(handler));
+    return impl::make_event_revoker<D, AudioRenderEffectsChanged_revoker>(this, AudioRenderEffectsChanged(handler));
 }
 
-template <typename D> void consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(event_token const& token) const
+template <typename D> void consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Effects::IAudioRenderEffectsManager)->remove_AudioRenderEffectsChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Effects::IAudioRenderEffectsManager)->remove_AudioRenderEffectsChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>::GetAudioRenderEffects() const
@@ -518,1175 +518,1015 @@ template <typename D> void consume_Windows_Media_Effects_IVideoTransformSpherica
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioCaptureEffectsManager> : produce_base<D, Windows::Media::Effects::IAudioCaptureEffectsManager>
 {
-    HRESULT __stdcall add_AudioCaptureEffectsChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AudioCaptureEffectsChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AudioCaptureEffectsChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AudioCaptureEffectsChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AudioCaptureEffectsChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AudioCaptureEffectsChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AudioCaptureEffectsChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetAudioCaptureEffects(void** effects) noexcept final
+    int32_t WINRT_CALL GetAudioCaptureEffects(void** effects) noexcept final
     {
         try
         {
             *effects = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioCaptureEffects, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect>));
             *effects = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect>>(this->shim().GetAudioCaptureEffects());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioEffect> : produce_base<D, Windows::Media::Effects::IAudioEffect>
 {
-    HRESULT __stdcall get_AudioEffectType(Windows::Media::Effects::AudioEffectType* value) noexcept final
+    int32_t WINRT_CALL get_AudioEffectType(Windows::Media::Effects::AudioEffectType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AudioEffectType, WINRT_WRAP(Windows::Media::Effects::AudioEffectType));
             *value = detach_from<Windows::Media::Effects::AudioEffectType>(this->shim().AudioEffectType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioEffectDefinition> : produce_base<D, Windows::Media::Effects::IAudioEffectDefinition>
 {
-    HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivatableClassId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActivatableClassId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioEffectDefinitionFactory> : produce_base<D, Windows::Media::Effects::IAudioEffectDefinitionFactory>
 {
-    HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Effects::AudioEffectDefinition), hstring const&);
             *value = detach_from<Windows::Media::Effects::AudioEffectDefinition>(this->shim().Create(*reinterpret_cast<hstring const*>(&activatableClassId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithProperties, WINRT_WRAP(Windows::Media::Effects::AudioEffectDefinition), hstring const&, Windows::Foundation::Collections::IPropertySet const&);
             *value = detach_from<Windows::Media::Effects::AudioEffectDefinition>(this->shim().CreateWithProperties(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&props)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioEffectsManagerStatics> : produce_base<D, Windows::Media::Effects::IAudioEffectsManagerStatics>
 {
-    HRESULT __stdcall CreateAudioRenderEffectsManager(HSTRING deviceId, Windows::Media::Render::AudioRenderCategory category, void** value) noexcept final
+    int32_t WINRT_CALL CreateAudioRenderEffectsManager(void* deviceId, Windows::Media::Render::AudioRenderCategory category, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAudioRenderEffectsManager, WINRT_WRAP(Windows::Media::Effects::AudioRenderEffectsManager), hstring const&, Windows::Media::Render::AudioRenderCategory const&);
             *value = detach_from<Windows::Media::Effects::AudioRenderEffectsManager>(this->shim().CreateAudioRenderEffectsManager(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Media::Render::AudioRenderCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept final
+    int32_t WINRT_CALL CreateAudioRenderEffectsManagerWithMode(void* deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAudioRenderEffectsManager, WINRT_WRAP(Windows::Media::Effects::AudioRenderEffectsManager), hstring const&, Windows::Media::Render::AudioRenderCategory const&, Windows::Media::AudioProcessing const&);
             *value = detach_from<Windows::Media::Effects::AudioRenderEffectsManager>(this->shim().CreateAudioRenderEffectsManager(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Media::Render::AudioRenderCategory const*>(&category), *reinterpret_cast<Windows::Media::AudioProcessing const*>(&mode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows::Media::Capture::MediaCategory category, void** value) noexcept final
+    int32_t WINRT_CALL CreateAudioCaptureEffectsManager(void* deviceId, Windows::Media::Capture::MediaCategory category, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAudioCaptureEffectsManager, WINRT_WRAP(Windows::Media::Effects::AudioCaptureEffectsManager), hstring const&, Windows::Media::Capture::MediaCategory const&);
             *value = detach_from<Windows::Media::Effects::AudioCaptureEffectsManager>(this->shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Media::Capture::MediaCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept final
+    int32_t WINRT_CALL CreateAudioCaptureEffectsManagerWithMode(void* deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAudioCaptureEffectsManager, WINRT_WRAP(Windows::Media::Effects::AudioCaptureEffectsManager), hstring const&, Windows::Media::Capture::MediaCategory const&, Windows::Media::AudioProcessing const&);
             *value = detach_from<Windows::Media::Effects::AudioCaptureEffectsManager>(this->shim().CreateAudioCaptureEffectsManager(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Media::Capture::MediaCategory const*>(&category), *reinterpret_cast<Windows::Media::AudioProcessing const*>(&mode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager> : produce_base<D, Windows::Media::Effects::IAudioRenderEffectsManager>
 {
-    HRESULT __stdcall add_AudioRenderEffectsChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AudioRenderEffectsChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AudioRenderEffectsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AudioRenderEffectsChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AudioRenderEffectsChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AudioRenderEffectsChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AudioRenderEffectsChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AudioRenderEffectsChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AudioRenderEffectsChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AudioRenderEffectsChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetAudioRenderEffects(void** effects) noexcept final
+    int32_t WINRT_CALL GetAudioRenderEffects(void** effects) noexcept final
     {
         try
         {
             *effects = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioRenderEffects, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect>));
             *effects = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect>>(this->shim().GetAudioRenderEffects());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IAudioRenderEffectsManager2> : produce_base<D, Windows::Media::Effects::IAudioRenderEffectsManager2>
 {
-    HRESULT __stdcall get_EffectsProviderThumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_EffectsProviderThumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EffectsProviderThumbnail, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamWithContentType));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamWithContentType>(this->shim().EffectsProviderThumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EffectsProviderSettingsLabel(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EffectsProviderSettingsLabel(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EffectsProviderSettingsLabel, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EffectsProviderSettingsLabel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowSettingsUI() noexcept final
+    int32_t WINRT_CALL ShowSettingsUI() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowSettingsUI, WINRT_WRAP(void));
             this->shim().ShowSettingsUI();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IBasicAudioEffect> : produce_base<D, Windows::Media::Effects::IBasicAudioEffect>
 {
-    HRESULT __stdcall get_UseInputFrameForOutput(bool* value) noexcept final
+    int32_t WINRT_CALL get_UseInputFrameForOutput(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UseInputFrameForOutput, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().UseInputFrameForOutput());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedEncodingProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedEncodingProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedEncodingProperties, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties>>(this->shim().SupportedEncodingProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetEncodingProperties(void* encodingProperties) noexcept final
+    int32_t WINRT_CALL SetEncodingProperties(void* encodingProperties) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetEncodingProperties, WINRT_WRAP(void), Windows::Media::MediaProperties::AudioEncodingProperties const&);
             this->shim().SetEncodingProperties(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingProperties const*>(&encodingProperties));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessFrame(void* context) noexcept final
+    int32_t WINRT_CALL ProcessFrame(void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessFrame, WINRT_WRAP(void), Windows::Media::Effects::ProcessAudioFrameContext const&);
             this->shim().ProcessFrame(*reinterpret_cast<Windows::Media::Effects::ProcessAudioFrameContext const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
+    int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), Windows::Media::Effects::MediaEffectClosedReason const&);
             this->shim().Close(*reinterpret_cast<Windows::Media::Effects::MediaEffectClosedReason const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DiscardQueuedFrames() noexcept final
+    int32_t WINRT_CALL DiscardQueuedFrames() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiscardQueuedFrames, WINRT_WRAP(void));
             this->shim().DiscardQueuedFrames();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IBasicVideoEffect> : produce_base<D, Windows::Media::Effects::IBasicVideoEffect>
 {
-    HRESULT __stdcall get_IsReadOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsReadOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsReadOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsReadOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedMemoryTypes(Windows::Media::Effects::MediaMemoryTypes* value) noexcept final
+    int32_t WINRT_CALL get_SupportedMemoryTypes(Windows::Media::Effects::MediaMemoryTypes* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedMemoryTypes, WINRT_WRAP(Windows::Media::Effects::MediaMemoryTypes));
             *value = detach_from<Windows::Media::Effects::MediaMemoryTypes>(this->shim().SupportedMemoryTypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeIndependent(bool* value) noexcept final
+    int32_t WINRT_CALL get_TimeIndependent(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeIndependent, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().TimeIndependent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedEncodingProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedEncodingProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedEncodingProperties, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::VideoEncodingProperties>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::VideoEncodingProperties>>(this->shim().SupportedEncodingProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetEncodingProperties(void* encodingProperties, void* device) noexcept final
+    int32_t WINRT_CALL SetEncodingProperties(void* encodingProperties, void* device) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetEncodingProperties, WINRT_WRAP(void), Windows::Media::MediaProperties::VideoEncodingProperties const&, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const&);
             this->shim().SetEncodingProperties(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingProperties const*>(&encodingProperties), *reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const*>(&device));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessFrame(void* context) noexcept final
+    int32_t WINRT_CALL ProcessFrame(void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessFrame, WINRT_WRAP(void), Windows::Media::Effects::ProcessVideoFrameContext const&);
             this->shim().ProcessFrame(*reinterpret_cast<Windows::Media::Effects::ProcessVideoFrameContext const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
+    int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), Windows::Media::Effects::MediaEffectClosedReason const&);
             this->shim().Close(*reinterpret_cast<Windows::Media::Effects::MediaEffectClosedReason const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DiscardQueuedFrames() noexcept final
+    int32_t WINRT_CALL DiscardQueuedFrames() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiscardQueuedFrames, WINRT_WRAP(void));
             this->shim().DiscardQueuedFrames();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::ICompositeVideoFrameContext> : produce_base<D, Windows::Media::Effects::ICompositeVideoFrameContext>
 {
-    HRESULT __stdcall get_SurfacesToOverlay(void** value) noexcept final
+    int32_t WINRT_CALL get_SurfacesToOverlay(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SurfacesToOverlay, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>>(this->shim().SurfacesToOverlay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_BackgroundFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundFrame, WINRT_WRAP(Windows::Media::VideoFrame));
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().BackgroundFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputFrame, WINRT_WRAP(Windows::Media::VideoFrame));
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().OutputFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetOverlayForSurface(void* surfaceToOverlay, void** value) noexcept final
+    int32_t WINRT_CALL GetOverlayForSurface(void* surfaceToOverlay, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOverlayForSurface, WINRT_WRAP(Windows::Media::Editing::MediaOverlay), Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const&);
             *value = detach_from<Windows::Media::Editing::MediaOverlay>(this->shim().GetOverlayForSurface(*reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface const*>(&surfaceToOverlay)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IProcessAudioFrameContext> : produce_base<D, Windows::Media::Effects::IProcessAudioFrameContext>
 {
-    HRESULT __stdcall get_InputFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_InputFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputFrame, WINRT_WRAP(Windows::Media::AudioFrame));
             *value = detach_from<Windows::Media::AudioFrame>(this->shim().InputFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputFrame, WINRT_WRAP(Windows::Media::AudioFrame));
             *value = detach_from<Windows::Media::AudioFrame>(this->shim().OutputFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IProcessVideoFrameContext> : produce_base<D, Windows::Media::Effects::IProcessVideoFrameContext>
 {
-    HRESULT __stdcall get_InputFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_InputFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputFrame, WINRT_WRAP(Windows::Media::VideoFrame));
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().InputFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputFrame(void** value) noexcept final
+    int32_t WINRT_CALL get_OutputFrame(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputFrame, WINRT_WRAP(Windows::Media::VideoFrame));
             *value = detach_from<Windows::Media::VideoFrame>(this->shim().OutputFrame());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoCompositor> : produce_base<D, Windows::Media::Effects::IVideoCompositor>
 {
-    HRESULT __stdcall get_TimeIndependent(bool* value) noexcept final
+    int32_t WINRT_CALL get_TimeIndependent(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeIndependent, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().TimeIndependent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetEncodingProperties(void* backgroundProperties, void* device) noexcept final
+    int32_t WINRT_CALL SetEncodingProperties(void* backgroundProperties, void* device) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetEncodingProperties, WINRT_WRAP(void), Windows::Media::MediaProperties::VideoEncodingProperties const&, Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const&);
             this->shim().SetEncodingProperties(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingProperties const*>(&backgroundProperties), *reinterpret_cast<Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice const*>(&device));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CompositeFrame(void* context) noexcept final
+    int32_t WINRT_CALL CompositeFrame(void* context) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositeFrame, WINRT_WRAP(void), Windows::Media::Effects::CompositeVideoFrameContext const&);
             this->shim().CompositeFrame(*reinterpret_cast<Windows::Media::Effects::CompositeVideoFrameContext const*>(&context));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
+    int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void), Windows::Media::Effects::MediaEffectClosedReason const&);
             this->shim().Close(*reinterpret_cast<Windows::Media::Effects::MediaEffectClosedReason const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DiscardQueuedFrames() noexcept final
+    int32_t WINRT_CALL DiscardQueuedFrames() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DiscardQueuedFrames, WINRT_WRAP(void));
             this->shim().DiscardQueuedFrames();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoCompositorDefinition> : produce_base<D, Windows::Media::Effects::IVideoCompositorDefinition>
 {
-    HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivatableClassId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActivatableClassId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoCompositorDefinitionFactory> : produce_base<D, Windows::Media::Effects::IVideoCompositorDefinitionFactory>
 {
-    HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Effects::VideoCompositorDefinition), hstring const&);
             *value = detach_from<Windows::Media::Effects::VideoCompositorDefinition>(this->shim().Create(*reinterpret_cast<hstring const*>(&activatableClassId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithProperties, WINRT_WRAP(Windows::Media::Effects::VideoCompositorDefinition), hstring const&, Windows::Foundation::Collections::IPropertySet const&);
             *value = detach_from<Windows::Media::Effects::VideoCompositorDefinition>(this->shim().CreateWithProperties(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&props)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoEffectDefinition> : produce_base<D, Windows::Media::Effects::IVideoEffectDefinition>
 {
-    HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivatableClassId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActivatableClassId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoEffectDefinitionFactory> : produce_base<D, Windows::Media::Effects::IVideoEffectDefinitionFactory>
 {
-    HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Media::Effects::VideoEffectDefinition), hstring const&);
             *value = detach_from<Windows::Media::Effects::VideoEffectDefinition>(this->shim().Create(*reinterpret_cast<hstring const*>(&activatableClassId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithProperties, WINRT_WRAP(Windows::Media::Effects::VideoEffectDefinition), hstring const&, Windows::Foundation::Collections::IPropertySet const&);
             *value = detach_from<Windows::Media::Effects::VideoEffectDefinition>(this->shim().CreateWithProperties(*reinterpret_cast<hstring const*>(&activatableClassId), *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&props)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition> : produce_base<D, Windows::Media::Effects::IVideoTransformEffectDefinition>
 {
-    HRESULT __stdcall get_PaddingColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PaddingColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaddingColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PaddingColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PaddingColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_PaddingColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaddingColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().PaddingColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutputSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_OutputSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().OutputSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutputSize(Windows::Foundation::Size value) noexcept final
+    int32_t WINRT_CALL put_OutputSize(Windows::Foundation::Size value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutputSize, WINRT_WRAP(void), Windows::Foundation::Size const&);
             this->shim().OutputSize(*reinterpret_cast<Windows::Foundation::Size const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CropRectangle(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_CropRectangle(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CropRectangle, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().CropRectangle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CropRectangle(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_CropRectangle(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CropRectangle, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().CropRectangle(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rotation(Windows::Media::MediaProperties::MediaRotation* value) noexcept final
+    int32_t WINRT_CALL get_Rotation(Windows::Media::MediaProperties::MediaRotation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(Windows::Media::MediaProperties::MediaRotation));
             *value = detach_from<Windows::Media::MediaProperties::MediaRotation>(this->shim().Rotation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rotation(Windows::Media::MediaProperties::MediaRotation value) noexcept final
+    int32_t WINRT_CALL put_Rotation(Windows::Media::MediaProperties::MediaRotation value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(void), Windows::Media::MediaProperties::MediaRotation const&);
             this->shim().Rotation(*reinterpret_cast<Windows::Media::MediaProperties::MediaRotation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions* value) noexcept final
+    int32_t WINRT_CALL get_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mirror, WINRT_WRAP(Windows::Media::MediaProperties::MediaMirroringOptions));
             *value = detach_from<Windows::Media::MediaProperties::MediaMirroringOptions>(this->shim().Mirror());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions value) noexcept final
+    int32_t WINRT_CALL put_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mirror, WINRT_WRAP(void), Windows::Media::MediaProperties::MediaMirroringOptions const&);
             this->shim().Mirror(*reinterpret_cast<Windows::Media::MediaProperties::MediaMirroringOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept final
+    int32_t WINRT_CALL put_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessingAlgorithm, WINRT_WRAP(void), Windows::Media::Transcoding::MediaVideoProcessingAlgorithm const&);
             this->shim().ProcessingAlgorithm(*reinterpret_cast<Windows::Media::Transcoding::MediaVideoProcessingAlgorithm const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessingAlgorithm, WINRT_WRAP(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm));
             *value = detach_from<Windows::Media::Transcoding::MediaVideoProcessingAlgorithm>(this->shim().ProcessingAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoTransformEffectDefinition2> : produce_base<D, Windows::Media::Effects::IVideoTransformEffectDefinition2>
 {
-    HRESULT __stdcall get_SphericalProjection(void** value) noexcept final
+    int32_t WINRT_CALL get_SphericalProjection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SphericalProjection, WINRT_WRAP(Windows::Media::Effects::VideoTransformSphericalProjection));
             *value = detach_from<Windows::Media::Effects::VideoTransformSphericalProjection>(this->shim().SphericalProjection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Effects::IVideoTransformSphericalProjection> : produce_base<D, Windows::Media::Effects::IVideoTransformSphericalProjection>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept final
+    int32_t WINRT_CALL get_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameFormat, WINRT_WRAP(Windows::Media::MediaProperties::SphericalVideoFrameFormat));
             *value = detach_from<Windows::Media::MediaProperties::SphericalVideoFrameFormat>(this->shim().FrameFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) noexcept final
+    int32_t WINRT_CALL put_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameFormat, WINRT_WRAP(void), Windows::Media::MediaProperties::SphericalVideoFrameFormat const&);
             this->shim().FrameFormat(*reinterpret_cast<Windows::Media::MediaProperties::SphericalVideoFrameFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode* value) noexcept final
+    int32_t WINRT_CALL get_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMode, WINRT_WRAP(Windows::Media::Playback::SphericalVideoProjectionMode));
             *value = detach_from<Windows::Media::Playback::SphericalVideoProjectionMode>(this->shim().ProjectionMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) noexcept final
+    int32_t WINRT_CALL put_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMode, WINRT_WRAP(void), Windows::Media::Playback::SphericalVideoProjectionMode const&);
             this->shim().ProjectionMode(*reinterpret_cast<Windows::Media::Playback::SphericalVideoProjectionMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HorizontalFieldOfViewInDegrees(double* value) noexcept final
+    int32_t WINRT_CALL get_HorizontalFieldOfViewInDegrees(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalFieldOfViewInDegrees, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().HorizontalFieldOfViewInDegrees());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HorizontalFieldOfViewInDegrees(double value) noexcept final
+    int32_t WINRT_CALL put_HorizontalFieldOfViewInDegrees(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalFieldOfViewInDegrees, WINRT_WRAP(void), double);
             this->shim().HorizontalFieldOfViewInDegrees(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ViewOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_ViewOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewOrientation, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().ViewOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ViewOrientation(Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL put_ViewOrientation(Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ViewOrientation, WINRT_WRAP(void), Windows::Foundation::Numerics::quaternion const&);
             this->shim().ViewOrientation(*reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1695,51 +1535,51 @@ struct produce<D, Windows::Media::Effects::IVideoTransformSphericalProjection> :
 WINRT_EXPORT namespace winrt::Windows::Media::Effects {
 
 inline AudioEffectDefinition::AudioEffectDefinition(param::hstring const& activatableClassId) :
-    AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, Windows::Media::Effects::IAudioEffectDefinitionFactory>().Create(activatableClassId))
+    AudioEffectDefinition(impl::call_factory<AudioEffectDefinition, Windows::Media::Effects::IAudioEffectDefinitionFactory>([&](auto&& f) { return f.Create(activatableClassId); }))
 {}
 
 inline AudioEffectDefinition::AudioEffectDefinition(param::hstring const& activatableClassId, Windows::Foundation::Collections::IPropertySet const& props) :
-    AudioEffectDefinition(get_activation_factory<AudioEffectDefinition, Windows::Media::Effects::IAudioEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    AudioEffectDefinition(impl::call_factory<AudioEffectDefinition, Windows::Media::Effects::IAudioEffectDefinitionFactory>([&](auto&& f) { return f.CreateWithProperties(activatableClassId, props); }))
 {}
 
 inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(param::hstring const& deviceId, Windows::Media::Render::AudioRenderCategory const& category)
 {
-    return get_activation_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category);
+    return impl::call_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>([&](auto&& f) { return f.CreateAudioRenderEffectsManager(deviceId, category); });
 }
 
 inline Windows::Media::Effects::AudioRenderEffectsManager AudioEffectsManager::CreateAudioRenderEffectsManager(param::hstring const& deviceId, Windows::Media::Render::AudioRenderCategory const& category, Windows::Media::AudioProcessing const& mode)
 {
-    return get_activation_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>().CreateAudioRenderEffectsManager(deviceId, category, mode);
+    return impl::call_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>([&](auto&& f) { return f.CreateAudioRenderEffectsManager(deviceId, category, mode); });
 }
 
 inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(param::hstring const& deviceId, Windows::Media::Capture::MediaCategory const& category)
 {
-    return get_activation_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category);
+    return impl::call_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>([&](auto&& f) { return f.CreateAudioCaptureEffectsManager(deviceId, category); });
 }
 
 inline Windows::Media::Effects::AudioCaptureEffectsManager AudioEffectsManager::CreateAudioCaptureEffectsManager(param::hstring const& deviceId, Windows::Media::Capture::MediaCategory const& category, Windows::Media::AudioProcessing const& mode)
 {
-    return get_activation_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>().CreateAudioCaptureEffectsManager(deviceId, category, mode);
+    return impl::call_factory<AudioEffectsManager, Windows::Media::Effects::IAudioEffectsManagerStatics>([&](auto&& f) { return f.CreateAudioCaptureEffectsManager(deviceId, category, mode); });
 }
 
 inline VideoCompositorDefinition::VideoCompositorDefinition(param::hstring const& activatableClassId) :
-    VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, Windows::Media::Effects::IVideoCompositorDefinitionFactory>().Create(activatableClassId))
+    VideoCompositorDefinition(impl::call_factory<VideoCompositorDefinition, Windows::Media::Effects::IVideoCompositorDefinitionFactory>([&](auto&& f) { return f.Create(activatableClassId); }))
 {}
 
 inline VideoCompositorDefinition::VideoCompositorDefinition(param::hstring const& activatableClassId, Windows::Foundation::Collections::IPropertySet const& props) :
-    VideoCompositorDefinition(get_activation_factory<VideoCompositorDefinition, Windows::Media::Effects::IVideoCompositorDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    VideoCompositorDefinition(impl::call_factory<VideoCompositorDefinition, Windows::Media::Effects::IVideoCompositorDefinitionFactory>([&](auto&& f) { return f.CreateWithProperties(activatableClassId, props); }))
 {}
 
 inline VideoEffectDefinition::VideoEffectDefinition(param::hstring const& activatableClassId) :
-    VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, Windows::Media::Effects::IVideoEffectDefinitionFactory>().Create(activatableClassId))
+    VideoEffectDefinition(impl::call_factory<VideoEffectDefinition, Windows::Media::Effects::IVideoEffectDefinitionFactory>([&](auto&& f) { return f.Create(activatableClassId); }))
 {}
 
 inline VideoEffectDefinition::VideoEffectDefinition(param::hstring const& activatableClassId, Windows::Foundation::Collections::IPropertySet const& props) :
-    VideoEffectDefinition(get_activation_factory<VideoEffectDefinition, Windows::Media::Effects::IVideoEffectDefinitionFactory>().CreateWithProperties(activatableClassId, props))
+    VideoEffectDefinition(impl::call_factory<VideoEffectDefinition, Windows::Media::Effects::IVideoEffectDefinitionFactory>([&](auto&& f) { return f.CreateWithProperties(activatableClassId, props); }))
 {}
 
 inline VideoTransformEffectDefinition::VideoTransformEffectDefinition() :
-    VideoTransformEffectDefinition(get_activation_factory<VideoTransformEffectDefinition>().ActivateInstance<VideoTransformEffectDefinition>())
+    VideoTransformEffectDefinition(impl::call_factory<VideoTransformEffectDefinition>([](auto&& f) { return f.template ActivateInstance<VideoTransformEffectDefinition>(); }))
 {}
 
 }
@@ -1780,5 +1620,3 @@ template<> struct hash<winrt::Windows::Media::Effects::VideoTransformEffectDefin
 template<> struct hash<winrt::Windows::Media::Effects::VideoTransformSphericalProjection> : winrt::impl::hash_base<winrt::Windows::Media::Effects::VideoTransformSphericalProjection> {};
 
 }
-
-WINRT_WARNING_POP

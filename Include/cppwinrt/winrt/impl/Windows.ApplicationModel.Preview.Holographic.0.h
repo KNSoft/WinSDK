@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,7 +24,13 @@ template <> struct category<Windows::ApplicationModel::Preview::Holographic::IHo
 template <> struct category<Windows::ApplicationModel::Preview::Holographic::HolographicApplicationPreview>{ using type = class_category; };
 template <> struct name<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>{ static constexpr auto & value{ L"Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics" }; };
 template <> struct name<Windows::ApplicationModel::Preview::Holographic::HolographicApplicationPreview>{ static constexpr auto & value{ L"Windows.ApplicationModel.Preview.Holographic.HolographicApplicationPreview" }; };
-template <> struct guid<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>{ static constexpr GUID value{ 0xFE038691,0x2A3A,0x45A9,{ 0xA2,0x08,0x7B,0xED,0x69,0x19,0x19,0xF3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>{ static constexpr guid value{ 0xFE038691,0x2A3A,0x45A9,{ 0xA2,0x08,0x7B,0xED,0x69,0x19,0x19,0xF3 } }; };
+
+template <> struct abi<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsCurrentViewPresentedOnHolographicDisplay(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsHolographicActivation(void* activatedEventArgs, bool* result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Preview_Holographic_IHolographicApplicationPreviewStatics
@@ -33,11 +39,5 @@ struct consume_Windows_ApplicationModel_Preview_Holographic_IHolographicApplicat
     bool IsHolographicActivation(Windows::ApplicationModel::Activation::IActivatedEventArgs const& activatedEventArgs) const;
 };
 template <> struct consume<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Preview_Holographic_IHolographicApplicationPreviewStatics<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Preview::Holographic::IHolographicApplicationPreviewStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsCurrentViewPresentedOnHolographicDisplay(bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsHolographicActivation(void* activatedEventArgs, bool* result) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -43,20 +43,6 @@ struct WINRT_EBO IGameChatOverlayStatics :
     impl::consume_t<IGameChatOverlayStatics>
 {
     IGameChatOverlayStatics(std::nullptr_t = nullptr) noexcept {}
-};
-
-struct WINRT_EBO IGameMonitor :
-    Windows::Foundation::IInspectable,
-    impl::consume_t<IGameMonitor>
-{
-    IGameMonitor(std::nullptr_t = nullptr) noexcept {}
-};
-
-struct WINRT_EBO IGameMonitorStatics :
-    Windows::Foundation::IInspectable,
-    impl::consume_t<IGameMonitorStatics>
-{
-    IGameMonitorStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IGameUIProviderActivatedEventArgs :

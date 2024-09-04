@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.Input.Inking.2.h"
@@ -228,513 +228,449 @@ template <typename D> Windows::UI::Input::Inking::Analysis::InkAnalyzer consume_
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkBullet>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkDrawing>
 {
-    HRESULT __stdcall get_DrawingKind(Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind* value) noexcept final
+    int32_t WINRT_CALL get_DrawingKind(Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DrawingKind, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind));
             *value = detach_from<Windows::UI::Input::Inking::Analysis::InkAnalysisDrawingKind>(this->shim().DrawingKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Center(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Center(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Center, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Center());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Points(void** value) noexcept final
+    int32_t WINRT_CALL get_Points(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Point>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Point>>(this->shim().Points());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisInkWord>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextAlternates(void** value) noexcept final
+    int32_t WINRT_CALL get_TextAlternates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextAlternates, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().TextAlternates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisLine> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisLine>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IndentLevel(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_IndentLevel(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndentLevel, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().IndentLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisListItem>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisNode> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind));
             *value = detach_from<Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BoundingRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_BoundingRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().BoundingRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotatedBoundingRect(void** value) noexcept final
+    int32_t WINRT_CALL get_RotatedBoundingRect(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotatedBoundingRect, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Point>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Point>>(this->shim().RotatedBoundingRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Children(void** value) noexcept final
+    int32_t WINRT_CALL get_Children(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>>(this->shim().Children());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Parent(void** value) noexcept final
+    int32_t WINRT_CALL get_Parent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parent, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::IInkAnalysisNode));
             *value = detach_from<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>(this->shim().Parent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStrokeIds(void** strokeIds) noexcept final
+    int32_t WINRT_CALL GetStrokeIds(void** strokeIds) noexcept final
     {
         try
         {
             *strokeIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStrokeIds, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<uint32_t>));
             *strokeIds = detach_from<Windows::Foundation::Collections::IVectorView<uint32_t>>(this->shim().GetStrokeIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisParagraph>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisResult> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisResult>
 {
-    HRESULT __stdcall get_Status(Windows::UI::Input::Inking::Analysis::InkAnalysisStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::UI::Input::Inking::Analysis::InkAnalysisStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::InkAnalysisStatus));
             *value = detach_from<Windows::UI::Input::Inking::Analysis::InkAnalysisStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisRoot>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindNodes(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind nodeKind, void** result) noexcept final
+    int32_t WINRT_CALL FindNodes(Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind nodeKind, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindNodes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>), Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::Analysis::IInkAnalysisNode>>(this->shim().FindNodes(*reinterpret_cast<Windows::UI::Input::Inking::Analysis::InkAnalysisNodeKind const*>(&nodeKind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalysisWritingRegion>
 {
-    HRESULT __stdcall get_RecognizedText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RecognizedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecognizedText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RecognizedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalyzer> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalyzer>
 {
-    HRESULT __stdcall get_AnalysisRoot(void** value) noexcept final
+    int32_t WINRT_CALL get_AnalysisRoot(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnalysisRoot, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::InkAnalysisRoot));
             *value = detach_from<Windows::UI::Input::Inking::Analysis::InkAnalysisRoot>(this->shim().AnalysisRoot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAnalyzing(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAnalyzing(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAnalyzing, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAnalyzing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddDataForStroke(void* stroke) noexcept final
+    int32_t WINRT_CALL AddDataForStroke(void* stroke) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddDataForStroke, WINRT_WRAP(void), Windows::UI::Input::Inking::InkStroke const&);
             this->shim().AddDataForStroke(*reinterpret_cast<Windows::UI::Input::Inking::InkStroke const*>(&stroke));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddDataForStrokes(void* strokes) noexcept final
+    int32_t WINRT_CALL AddDataForStrokes(void* strokes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddDataForStrokes, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> const&);
             this->shim().AddDataForStrokes(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> const*>(&strokes));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearDataForAllStrokes() noexcept final
+    int32_t WINRT_CALL ClearDataForAllStrokes() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearDataForAllStrokes, WINRT_WRAP(void));
             this->shim().ClearDataForAllStrokes();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveDataForStroke(uint32_t strokeId) noexcept final
+    int32_t WINRT_CALL RemoveDataForStroke(uint32_t strokeId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveDataForStroke, WINRT_WRAP(void), uint32_t);
             this->shim().RemoveDataForStroke(strokeId);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveDataForStrokes(void* strokeIds) noexcept final
+    int32_t WINRT_CALL RemoveDataForStrokes(void* strokeIds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveDataForStrokes, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<uint32_t> const&);
             this->shim().RemoveDataForStrokes(*reinterpret_cast<Windows::Foundation::Collections::IIterable<uint32_t> const*>(&strokeIds));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReplaceDataForStroke(void* stroke) noexcept final
+    int32_t WINRT_CALL ReplaceDataForStroke(void* stroke) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReplaceDataForStroke, WINRT_WRAP(void), Windows::UI::Input::Inking::InkStroke const&);
             this->shim().ReplaceDataForStroke(*reinterpret_cast<Windows::UI::Input::Inking::InkStroke const*>(&stroke));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetStrokeDataKind(uint32_t strokeId, Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind strokeKind) noexcept final
+    int32_t WINRT_CALL SetStrokeDataKind(uint32_t strokeId, Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind strokeKind) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStrokeDataKind, WINRT_WRAP(void), uint32_t, Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind const&);
             this->shim().SetStrokeDataKind(strokeId, *reinterpret_cast<Windows::UI::Input::Inking::Analysis::InkAnalysisStrokeKind const*>(&strokeKind));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AnalyzeAsync(void** result) noexcept final
+    int32_t WINRT_CALL AnalyzeAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnalyzeAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::UI::Input::Inking::Analysis::InkAnalysisResult>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::UI::Input::Inking::Analysis::InkAnalysisResult>>(this->shim().AnalyzeAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory> : produce_base<D, Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory>
 {
-    HRESULT __stdcall CreateAnalyzer(void** result) noexcept final
+    int32_t WINRT_CALL CreateAnalyzer(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAnalyzer, WINRT_WRAP(Windows::UI::Input::Inking::Analysis::InkAnalyzer));
             *result = detach_from<Windows::UI::Input::Inking::Analysis::InkAnalyzer>(this->shim().CreateAnalyzer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -743,7 +679,7 @@ struct produce<D, Windows::UI::Input::Inking::Analysis::IInkAnalyzerFactory> : p
 WINRT_EXPORT namespace winrt::Windows::UI::Input::Inking::Analysis {
 
 inline InkAnalyzer::InkAnalyzer() :
-    InkAnalyzer(get_activation_factory<InkAnalyzer>().ActivateInstance<InkAnalyzer>())
+    InkAnalyzer(impl::call_factory<InkAnalyzer>([](auto&& f) { return f.template ActivateInstance<InkAnalyzer>(); }))
 {}
 
 }
@@ -775,5 +711,3 @@ template<> struct hash<winrt::Windows::UI::Input::Inking::Analysis::InkAnalysisW
 template<> struct hash<winrt::Windows::UI::Input::Inking::Analysis::InkAnalyzer> : winrt::impl::hash_base<winrt::Windows::UI::Input::Inking::Analysis::InkAnalyzer> {};
 
 }
-
-WINRT_WARNING_POP

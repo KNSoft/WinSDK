@@ -44,6 +44,7 @@ Revision History:
 // NT11 upgrade versions
 #define RS3_UPGRADE_VERSION  1
 #define RS4_UPGRADE_VERSION  2
+#define RS5_UPGRADE_VERSION  3
 
 #define CLUSREG_NAME_MIXED_MODE                    L"MixedMode"
 
@@ -406,7 +407,9 @@ typedef enum
 {
     CLUSTER_CLOUD_TYPE_NONE     = 0,
     CLUSTER_CLOUD_TYPE_AZURE    = 1,
-    CLUSTER_CLOUD_TYPE_MIXED    = 2,
+
+
+    CLUSTER_CLOUD_TYPE_MIXED    = 128,
 
     CLUSTER_CLOUD_TYPE_UNKNOWN  = -1
 } CLUSTER_CLOUD_TYPE, *PCLUSTER_CLOUD_TYPE;
@@ -1487,6 +1490,15 @@ ClusterAddGroupToGroupSet(
     _In_ HGROUP hGroup
     );
 
+DWORD
+WINAPI
+ClusterAddGroupToGroupSetWithDomains(
+    _In_ HGROUPSET hGroupSet,
+    _In_ HGROUP hGroup,
+    _In_ DWORD faultDomain,
+    _In_ DWORD updateDomain
+    );
+
 typedef DWORD
 (WINAPI * PCLUSAPI_CLUSTER_ADD_GROUP_TO_GROUP_GROUPSET)(
     _In_ HGROUPSET hGroupSet,
@@ -2276,6 +2288,7 @@ typedef HGROUP
 // flags for PauseClusterNodeEx
 #define CLUSAPI_NODE_PAUSE_REMAIN_ON_PAUSED_NODE_ON_MOVE_ERROR  0x00000001
 #define CLUSAPI_NODE_AVOID_PLACEMENT                            0x00000002
+#define CLUSAPI_NODE_PAUSE_RETRY_DRAIN_ON_FAILURE               0x00000004
 
 
 DWORD
@@ -3520,6 +3533,9 @@ typedef enum CLUSTER_CONTROL_OBJECT {
     ((CLCTL_CLUSTER_BASE + Function) << CLUSCTL_FUNCTION_SHIFT) | \
     ((Modify) << CLCTL_MODIFY_SHIFT) )
 
+//External codes:
+//A control code that applications can use to initiate an operation on a cluster object. External control codes are passed as the dwControlCode parameter to control code functions.
+
 #ifndef _CLUSTER_API_TYPES_
 typedef enum CLCTL_CODES {
     //
@@ -3740,6 +3756,12 @@ typedef enum CLCTL_CODES {
     CLCTL_SCALEOUT_GET_CLUSTERS                     = CLCTL_EXTERNAL_CODE( 2919, CLUS_ACCESS_READ, CLUS_MODIFY ),
 
 
+    CLCTL_RELOAD_AUTOLOGGER_CONFIG                  = CLCTL_EXTERNAL_CODE( 2932, CLUS_ACCESS_WRITE, CLUS_NO_MODIFY ),
+
+//Internal codes:
+//A control code used by the Cluster service to notify a resource DLL of changes to the cluster environment. Applications cannot use internal control codes; they must use external control codes.
+
+
     //
     // Internal control codes
     //
@@ -3781,7 +3803,6 @@ typedef enum CLCTL_CODES {
 #if (CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD)
     CLCTL_VALIDATE_CHANGE_GROUP             = CLCTL_INTERNAL_CODE( 2121, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
 #endif
-
 
 
 } CLCTL_CODES;
@@ -4748,6 +4769,9 @@ typedef enum CLUSCTL_CLUSTER_CODES {
         CLUSCTL_CLUSTER_CODE( CLCTL_SET_CLUSTER_S2D_CACHE_METADATA_RESERVE_BYTES ),
 #endif
 
+
+    CLUSCTL_CLUSTER_RELOAD_AUTOLOGGER_CONFIG  =
+        CLUSCTL_CLUSTER_CODE( CLCTL_RELOAD_AUTOLOGGER_CONFIG  ),
 
 } CLUSCTL_CLUSTER_CODES;
 
@@ -6659,6 +6683,12 @@ DetermineClusterCloudTypeFromCluster(
     _In_ HCLUSTER               hCluster,
     _Out_ PCLUSTER_CLOUD_TYPE   pCloudType
 );
+
+DWORD 
+WINAPI 
+GetNodeCloudTypeDW(
+    _In_ PCWSTR  ppszNodeName, 
+    __out DWORD* NodeCloudType);
 
 typedef DWORD (WINAPI *PCLUSAPI_REMOVE_CLUSTER_NAME_ACCOUNT)(
     _In_ HCLUSTER    hCluster

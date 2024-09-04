@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -268,565 +268,493 @@ template <typename D> Windows::Data::Json::JsonValue consume_Windows_Data_Json_I
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonArray> : produce_base<D, Windows::Data::Json::IJsonArray>
 {
-    HRESULT __stdcall GetObjectAt(uint32_t index, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetObjectAt(uint32_t index, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetObjectAt, WINRT_WRAP(Windows::Data::Json::JsonObject), uint32_t);
             *returnValue = detach_from<Windows::Data::Json::JsonObject>(this->shim().GetObjectAt(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetArrayAt(uint32_t index, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetArrayAt(uint32_t index, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetArrayAt, WINRT_WRAP(Windows::Data::Json::JsonArray), uint32_t);
             *returnValue = detach_from<Windows::Data::Json::JsonArray>(this->shim().GetArrayAt(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStringAt(uint32_t index, HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL GetStringAt(uint32_t index, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStringAt, WINRT_WRAP(hstring), uint32_t);
             *returnValue = detach_from<hstring>(this->shim().GetStringAt(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumberAt(uint32_t index, double* returnValue) noexcept final
+    int32_t WINRT_CALL GetNumberAt(uint32_t index, double* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumberAt, WINRT_WRAP(double), uint32_t);
             *returnValue = detach_from<double>(this->shim().GetNumberAt(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBooleanAt(uint32_t index, bool* returnValue) noexcept final
+    int32_t WINRT_CALL GetBooleanAt(uint32_t index, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBooleanAt, WINRT_WRAP(bool), uint32_t);
             *returnValue = detach_from<bool>(this->shim().GetBooleanAt(index));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonArrayStatics> : produce_base<D, Windows::Data::Json::IJsonArrayStatics>
 {
-    HRESULT __stdcall Parse(HSTRING input, void** jsonArray) noexcept final
+    int32_t WINRT_CALL Parse(void* input, void** jsonArray) noexcept final
     {
         try
         {
             *jsonArray = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Data::Json::JsonArray), hstring const&);
             *jsonArray = detach_from<Windows::Data::Json::JsonArray>(this->shim().Parse(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryParse(HSTRING input, void** result, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryParse(void* input, void** result, bool* succeeded) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), hstring const&, Windows::Data::Json::JsonArray&);
             *succeeded = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<hstring const*>(&input), *reinterpret_cast<Windows::Data::Json::JsonArray*>(result)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonErrorStatics2> : produce_base<D, Windows::Data::Json::IJsonErrorStatics2>
 {
-    HRESULT __stdcall GetJsonStatus(int32_t hresult, Windows::Data::Json::JsonErrorStatus* status) noexcept final
+    int32_t WINRT_CALL GetJsonStatus(int32_t hresult, Windows::Data::Json::JsonErrorStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetJsonStatus, WINRT_WRAP(Windows::Data::Json::JsonErrorStatus), int32_t);
             *status = detach_from<Windows::Data::Json::JsonErrorStatus>(this->shim().GetJsonStatus(hresult));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObject> : produce_base<D, Windows::Data::Json::IJsonObject>
 {
-    HRESULT __stdcall GetNamedValue(HSTRING name, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedValue(void* name, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedValue, WINRT_WRAP(Windows::Data::Json::JsonValue), hstring const&);
             *returnValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().GetNamedValue(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetNamedValue(HSTRING name, void* value) noexcept final
+    int32_t WINRT_CALL SetNamedValue(void* name, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetNamedValue, WINRT_WRAP(void), hstring const&, Windows::Data::Json::IJsonValue const&);
             this->shim().SetNamedValue(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Data::Json::IJsonValue const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedObject(HSTRING name, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedObject(void* name, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedObject, WINRT_WRAP(Windows::Data::Json::JsonObject), hstring const&);
             *returnValue = detach_from<Windows::Data::Json::JsonObject>(this->shim().GetNamedObject(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedArray(HSTRING name, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedArray(void* name, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedArray, WINRT_WRAP(Windows::Data::Json::JsonArray), hstring const&);
             *returnValue = detach_from<Windows::Data::Json::JsonArray>(this->shim().GetNamedArray(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedString(HSTRING name, HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedString(void* name, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedString, WINRT_WRAP(hstring), hstring const&);
             *returnValue = detach_from<hstring>(this->shim().GetNamedString(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedNumber(HSTRING name, double* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedNumber(void* name, double* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedNumber, WINRT_WRAP(double), hstring const&);
             *returnValue = detach_from<double>(this->shim().GetNamedNumber(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedBoolean(HSTRING name, bool* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedBoolean(void* name, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedBoolean, WINRT_WRAP(bool), hstring const&);
             *returnValue = detach_from<bool>(this->shim().GetNamedBoolean(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObjectStatics> : produce_base<D, Windows::Data::Json::IJsonObjectStatics>
 {
-    HRESULT __stdcall Parse(HSTRING input, void** jsonObject) noexcept final
+    int32_t WINRT_CALL Parse(void* input, void** jsonObject) noexcept final
     {
         try
         {
             *jsonObject = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Data::Json::JsonObject), hstring const&);
             *jsonObject = detach_from<Windows::Data::Json::JsonObject>(this->shim().Parse(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryParse(HSTRING input, void** result, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryParse(void* input, void** result, bool* succeeded) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), hstring const&, Windows::Data::Json::JsonObject&);
             *succeeded = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<hstring const*>(&input), *reinterpret_cast<Windows::Data::Json::JsonObject*>(result)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonObjectWithDefaultValues> : produce_base<D, Windows::Data::Json::IJsonObjectWithDefaultValues>
 {
-    HRESULT __stdcall GetNamedValueOrDefault(HSTRING name, void* defaultValue, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedValueOrDefault(void* name, void* defaultValue, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedValue, WINRT_WRAP(Windows::Data::Json::JsonValue), hstring const&, Windows::Data::Json::JsonValue const&);
             *returnValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().GetNamedValue(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Data::Json::JsonValue const*>(&defaultValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedObjectOrDefault(HSTRING name, void* defaultValue, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedObjectOrDefault(void* name, void* defaultValue, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedObject, WINRT_WRAP(Windows::Data::Json::JsonObject), hstring const&, Windows::Data::Json::JsonObject const&);
             *returnValue = detach_from<Windows::Data::Json::JsonObject>(this->shim().GetNamedObject(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Data::Json::JsonObject const*>(&defaultValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue, HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedStringOrDefault(void* name, void* defaultValue, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedString, WINRT_WRAP(hstring), hstring const&, hstring const&);
             *returnValue = detach_from<hstring>(this->shim().GetNamedString(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&defaultValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedArrayOrDefault(HSTRING name, void* defaultValue, void** returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedArrayOrDefault(void* name, void* defaultValue, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedArray, WINRT_WRAP(Windows::Data::Json::JsonArray), hstring const&, Windows::Data::Json::JsonArray const&);
             *returnValue = detach_from<Windows::Data::Json::JsonArray>(this->shim().GetNamedArray(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<Windows::Data::Json::JsonArray const*>(&defaultValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedNumberOrDefault(HSTRING name, double defaultValue, double* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedNumberOrDefault(void* name, double defaultValue, double* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedNumber, WINRT_WRAP(double), hstring const&, double);
             *returnValue = detach_from<double>(this->shim().GetNamedNumber(*reinterpret_cast<hstring const*>(&name), defaultValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNamedBooleanOrDefault(HSTRING name, bool defaultValue, bool* returnValue) noexcept final
+    int32_t WINRT_CALL GetNamedBooleanOrDefault(void* name, bool defaultValue, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNamedBoolean, WINRT_WRAP(bool), hstring const&, bool);
             *returnValue = detach_from<bool>(this->shim().GetNamedBoolean(*reinterpret_cast<hstring const*>(&name), defaultValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonValue> : produce_base<D, Windows::Data::Json::IJsonValue>
 {
-    HRESULT __stdcall get_ValueType(Windows::Data::Json::JsonValueType* value) noexcept final
+    int32_t WINRT_CALL get_ValueType(Windows::Data::Json::JsonValueType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValueType, WINRT_WRAP(Windows::Data::Json::JsonValueType));
             *value = detach_from<Windows::Data::Json::JsonValueType>(this->shim().ValueType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stringify(HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL Stringify(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stringify, WINRT_WRAP(hstring));
             *returnValue = detach_from<hstring>(this->shim().Stringify());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetString(HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL GetString(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetString, WINRT_WRAP(hstring));
             *returnValue = detach_from<hstring>(this->shim().GetString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetNumber(double* returnValue) noexcept final
+    int32_t WINRT_CALL GetNumber(double* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetNumber, WINRT_WRAP(double));
             *returnValue = detach_from<double>(this->shim().GetNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBoolean(bool* returnValue) noexcept final
+    int32_t WINRT_CALL GetBoolean(bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBoolean, WINRT_WRAP(bool));
             *returnValue = detach_from<bool>(this->shim().GetBoolean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetArray(void** returnValue) noexcept final
+    int32_t WINRT_CALL GetArray(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetArray, WINRT_WRAP(Windows::Data::Json::JsonArray));
             *returnValue = detach_from<Windows::Data::Json::JsonArray>(this->shim().GetArray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetObject(void** returnValue) noexcept final
+    int32_t WINRT_CALL GetObject(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetObject, WINRT_WRAP(Windows::Data::Json::JsonObject));
             *returnValue = detach_from<Windows::Data::Json::JsonObject>(this->shim().GetObject());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonValueStatics> : produce_base<D, Windows::Data::Json::IJsonValueStatics>
 {
-    HRESULT __stdcall Parse(HSTRING input, void** jsonValue) noexcept final
+    int32_t WINRT_CALL Parse(void* input, void** jsonValue) noexcept final
     {
         try
         {
             *jsonValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Parse, WINRT_WRAP(Windows::Data::Json::JsonValue), hstring const&);
             *jsonValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().Parse(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryParse(HSTRING input, void** result, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TryParse(void* input, void** result, bool* succeeded) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParse, WINRT_WRAP(bool), hstring const&, Windows::Data::Json::JsonValue&);
             *succeeded = detach_from<bool>(this->shim().TryParse(*reinterpret_cast<hstring const*>(&input), *reinterpret_cast<Windows::Data::Json::JsonValue*>(result)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBooleanValue(bool input, void** jsonValue) noexcept final
+    int32_t WINRT_CALL CreateBooleanValue(bool input, void** jsonValue) noexcept final
     {
         try
         {
             *jsonValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBooleanValue, WINRT_WRAP(Windows::Data::Json::JsonValue), bool);
             *jsonValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().CreateBooleanValue(input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateNumberValue(double input, void** jsonValue) noexcept final
+    int32_t WINRT_CALL CreateNumberValue(double input, void** jsonValue) noexcept final
     {
         try
         {
             *jsonValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateNumberValue, WINRT_WRAP(Windows::Data::Json::JsonValue), double);
             *jsonValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().CreateNumberValue(input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStringValue(HSTRING input, void** jsonValue) noexcept final
+    int32_t WINRT_CALL CreateStringValue(void* input, void** jsonValue) noexcept final
     {
         try
         {
             *jsonValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStringValue, WINRT_WRAP(Windows::Data::Json::JsonValue), hstring const&);
             *jsonValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().CreateStringValue(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Json::IJsonValueStatics2> : produce_base<D, Windows::Data::Json::IJsonValueStatics2>
 {
-    HRESULT __stdcall CreateNullValue(void** jsonValue) noexcept final
+    int32_t WINRT_CALL CreateNullValue(void** jsonValue) noexcept final
     {
         try
         {
             *jsonValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateNullValue, WINRT_WRAP(Windows::Data::Json::JsonValue));
             *jsonValue = detach_from<Windows::Data::Json::JsonValue>(this->shim().CreateNullValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -835,66 +763,66 @@ struct produce<D, Windows::Data::Json::IJsonValueStatics2> : produce_base<D, Win
 WINRT_EXPORT namespace winrt::Windows::Data::Json {
 
 inline JsonArray::JsonArray() :
-    JsonArray(get_activation_factory<JsonArray>().ActivateInstance<JsonArray>())
+    JsonArray(impl::call_factory<JsonArray>([](auto&& f) { return f.template ActivateInstance<JsonArray>(); }))
 {}
 
 inline Windows::Data::Json::JsonArray JsonArray::Parse(param::hstring const& input)
 {
-    return get_activation_factory<JsonArray, Windows::Data::Json::IJsonArrayStatics>().Parse(input);
+    return impl::call_factory<JsonArray, Windows::Data::Json::IJsonArrayStatics>([&](auto&& f) { return f.Parse(input); });
 }
 
 inline bool JsonArray::TryParse(param::hstring const& input, Windows::Data::Json::JsonArray& result)
 {
-    return get_activation_factory<JsonArray, Windows::Data::Json::IJsonArrayStatics>().TryParse(input, result);
+    return impl::call_factory<JsonArray, Windows::Data::Json::IJsonArrayStatics>([&](auto&& f) { return f.TryParse(input, result); });
 }
 
 inline Windows::Data::Json::JsonErrorStatus JsonError::GetJsonStatus(int32_t hresult)
 {
-    return get_activation_factory<JsonError, Windows::Data::Json::IJsonErrorStatics2>().GetJsonStatus(hresult);
+    return impl::call_factory<JsonError, Windows::Data::Json::IJsonErrorStatics2>([&](auto&& f) { return f.GetJsonStatus(hresult); });
 }
 
 inline JsonObject::JsonObject() :
-    JsonObject(get_activation_factory<JsonObject>().ActivateInstance<JsonObject>())
+    JsonObject(impl::call_factory<JsonObject>([](auto&& f) { return f.template ActivateInstance<JsonObject>(); }))
 {}
 
 inline Windows::Data::Json::JsonObject JsonObject::Parse(param::hstring const& input)
 {
-    return get_activation_factory<JsonObject, Windows::Data::Json::IJsonObjectStatics>().Parse(input);
+    return impl::call_factory<JsonObject, Windows::Data::Json::IJsonObjectStatics>([&](auto&& f) { return f.Parse(input); });
 }
 
 inline bool JsonObject::TryParse(param::hstring const& input, Windows::Data::Json::JsonObject& result)
 {
-    return get_activation_factory<JsonObject, Windows::Data::Json::IJsonObjectStatics>().TryParse(input, result);
+    return impl::call_factory<JsonObject, Windows::Data::Json::IJsonObjectStatics>([&](auto&& f) { return f.TryParse(input, result); });
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::Parse(param::hstring const& input)
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>().Parse(input);
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>([&](auto&& f) { return f.Parse(input); });
 }
 
 inline bool JsonValue::TryParse(param::hstring const& input, Windows::Data::Json::JsonValue& result)
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>().TryParse(input, result);
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>([&](auto&& f) { return f.TryParse(input, result); });
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateBooleanValue(bool input)
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>().CreateBooleanValue(input);
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>([&](auto&& f) { return f.CreateBooleanValue(input); });
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateNumberValue(double input)
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>().CreateNumberValue(input);
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>([&](auto&& f) { return f.CreateNumberValue(input); });
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateStringValue(param::hstring const& input)
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>().CreateStringValue(input);
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics>([&](auto&& f) { return f.CreateStringValue(input); });
 }
 
 inline Windows::Data::Json::JsonValue JsonValue::CreateNullValue()
 {
-    return get_activation_factory<JsonValue, Windows::Data::Json::IJsonValueStatics2>().CreateNullValue();
+    return impl::call_factory<JsonValue, Windows::Data::Json::IJsonValueStatics2>([&](auto&& f) { return f.CreateNullValue(); });
 }
 
 }
@@ -916,5 +844,3 @@ template<> struct hash<winrt::Windows::Data::Json::JsonObject> : winrt::impl::ha
 template<> struct hash<winrt::Windows::Data::Json::JsonValue> : winrt::impl::hash_base<winrt::Windows::Data::Json::JsonValue> {};
 
 }
-
-WINRT_WARNING_POP

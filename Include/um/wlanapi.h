@@ -838,23 +838,35 @@ typedef struct _WLAN_CONNECTION_NOTIFICATION_DATA {
     DOT11_SSID dot11Ssid;
     DOT11_BSS_TYPE dot11BssType;
     BOOL bSecurityEnabled;
-   WLAN_REASON_CODE wlanReasonCode;
+    WLAN_REASON_CODE wlanReasonCode;
     DWORD dwFlags;
     WCHAR strProfileXml[1];
 } WLAN_CONNECTION_NOTIFICATION_DATA, *PWLAN_CONNECTION_NOTIFICATION_DATA;
 
+// data structure for device service notifications.
+typedef struct _WLAN_DEVICE_SERVICE_NOTIFICATION_DATA {
+    GUID DeviceService;
+    DWORD dwOpCode;
+    DWORD dwDataSize;
+#ifdef __midl
+    [unique, size_is(dwDataSize)] BYTE DataBlob[*];
+#else
+    BYTE DataBlob[1];
+#endif
+} WLAN_DEVICE_SERVICE_NOTIFICATION_DATA, *PWLAN_DEVICE_SERVICE_NOTIFICATION_DATA;
 
 // the types of notification
 // compatible with L2_NOTIFICATION_SOURCE
-#define WLAN_NOTIFICATION_SOURCE_NONE         L2_NOTIFICATION_SOURCE_NONE
-#define WLAN_NOTIFICATION_SOURCE_ALL          L2_NOTIFICATION_SOURCE_ALL
+#define WLAN_NOTIFICATION_SOURCE_NONE           L2_NOTIFICATION_SOURCE_NONE
+#define WLAN_NOTIFICATION_SOURCE_ALL            L2_NOTIFICATION_SOURCE_ALL
 
-#define WLAN_NOTIFICATION_SOURCE_ACM          L2_NOTIFICATION_SOURCE_WLAN_ACM
-#define WLAN_NOTIFICATION_SOURCE_MSM          L2_NOTIFICATION_SOURCE_WLAN_MSM
-#define WLAN_NOTIFICATION_SOURCE_SECURITY     L2_NOTIFICATION_SOURCE_WLAN_SECURITY
-#define WLAN_NOTIFICATION_SOURCE_IHV          L2_NOTIFICATION_SOURCE_WLAN_IHV
-#define WLAN_NOTIFICATION_SOURCE_HNWK         L2_NOTIFICATION_SOURCE_WLAN_HNWK
-#define WLAN_NOTIFICATION_SOURCE_ONEX         L2_NOTIFICATION_SOURCE_ONEX
+#define WLAN_NOTIFICATION_SOURCE_ACM            L2_NOTIFICATION_SOURCE_WLAN_ACM
+#define WLAN_NOTIFICATION_SOURCE_MSM            L2_NOTIFICATION_SOURCE_WLAN_MSM
+#define WLAN_NOTIFICATION_SOURCE_SECURITY       L2_NOTIFICATION_SOURCE_WLAN_SECURITY
+#define WLAN_NOTIFICATION_SOURCE_IHV            L2_NOTIFICATION_SOURCE_WLAN_IHV
+#define WLAN_NOTIFICATION_SOURCE_HNWK           L2_NOTIFICATION_SOURCE_WLAN_HNWK
+#define WLAN_NOTIFICATION_SOURCE_ONEX           L2_NOTIFICATION_SOURCE_ONEX
+#define WLAN_NOTIFICATION_SOURCE_DEVICE_SERVICE L2_NOTIFICATION_SOURCE_WLAN_DEVICE_SERVICE
 
 #ifdef __midl
 // use the 4-byte enum
@@ -1472,6 +1484,13 @@ WlanGetSupportedDeviceServices(
     _In_ CONST GUID *pInterfaceGuid,
     _Outptr_ PWLAN_DEVICE_SERVICE_GUID_LIST *ppDevSvcGuidList
 );
+
+DWORD WINAPI
+WlanRegisterDeviceServiceNotification(
+    _In_ HANDLE hClientHandle,
+    _In_opt_ CONST PWLAN_DEVICE_SERVICE_GUID_LIST pDevSvcGuidList
+);
+
 
 #if !defined(__midl)
 
@@ -2344,6 +2363,31 @@ DEFINE_DEVPROPKEY(
     DEVPKEY_WiFiDirect_TransientAssociation,
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x1B
+    );
+
+//
+// Property: DEVPKEY_WiFiDirect_LinkQuality
+// Description: The signal quality value ranging from 0 through 100. A value of 100 specifies the highest link quality.
+// Type: DEVPROP_TYPE_UINT32
+// Availability: Always
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_WiFiDirect_LinkQuality,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x1C
+    );
+
+//
+// Property: DEVPKEY_InfraCast_PinSupported
+// Description: A value indicating if the remote Miracast over Infrastructure Sink supports PIN entry
+// Type: DEVPROP_TYPE_BOOLEAN
+// Availability: If remote device is a Miracast sink and supports Infrastructure and PIN entry, then this is set to DEVPROP_TRUE,
+//               otherwise set to DEVPROP_FALSE, or empty.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_InfraCast_PinSupported,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x1D
     );
 
 //

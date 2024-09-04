@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Appointments.2.h"
@@ -964,21 +964,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
     return result;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const
 {
-    event_token pToken{};
+    winrt::event_token pToken{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailbox)->add_MailboxChanged(get_abi(pHandler), put_abi(pToken)));
     return pToken;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Email::IEmailMailbox> consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const
+template <typename D> typename consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged_revoker consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const& pHandler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Email::IEmailMailbox>(this, &abi_t<Windows::ApplicationModel::Email::IEmailMailbox>::remove_MailboxChanged, MailboxChanged(pHandler));
+    return impl::make_event_revoker<D, MailboxChanged_revoker>(this, MailboxChanged(pHandler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::MailboxChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailbox)->remove_MailboxChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailbox)->remove_MailboxChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_ApplicationModel_Email_IEmailMailbox<D>::SendMessageAsync(Windows::ApplicationModel::Email::EmailMessage const& message, bool smartSend) const
@@ -1542,21 +1542,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
     return result;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailboxSyncManager)->add_SyncStatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Email::IEmailMailboxSyncManager> consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged_revoker consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager>(this, &abi_t<Windows::ApplicationModel::Email::IEmailMailboxSyncManager>::remove_SyncStatusChanged, SyncStatusChanged(handler));
+    return impl::make_event_revoker<D, SyncStatusChanged_revoker>(this, SyncStatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager<D>::SyncStatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailboxSyncManager)->remove_SyncStatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Email::IEmailMailboxSyncManager)->remove_SyncStatusChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_Email_IEmailMailboxSyncManager2<D>::Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus const& value) const
@@ -2418,5609 +2418,4855 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment> : produce_base<D, Windows::ApplicationModel::Email::IEmailAttachment>
 {
-    HRESULT __stdcall get_FileName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FileName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FileName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FileName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_FileName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FileName, WINRT_WRAP(void), hstring const&);
             this->shim().FileName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Data(void** value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Data(void* value) noexcept final
+    int32_t WINRT_CALL put_Data(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().Data(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailAttachment2> : produce_base<D, Windows::ApplicationModel::Email::IEmailAttachment2>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContentId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentId, WINRT_WRAP(void), hstring const&);
             this->shim().ContentId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentLocation(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentLocation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentLocation, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentLocation(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContentLocation(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentLocation, WINRT_WRAP(void), hstring const&);
             this->shim().ContentLocation(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState* value) noexcept final
+    int32_t WINRT_CALL get_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadState, WINRT_WRAP(Windows::ApplicationModel::Email::EmailAttachmentDownloadState));
             *value = detach_from<Windows::ApplicationModel::Email::EmailAttachmentDownloadState>(this->shim().DownloadState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState value) noexcept final
+    int32_t WINRT_CALL put_DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadState, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailAttachmentDownloadState const&);
             this->shim().DownloadState(*reinterpret_cast<Windows::ApplicationModel::Email::EmailAttachmentDownloadState const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EstimatedDownloadSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_EstimatedDownloadSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDownloadSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().EstimatedDownloadSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EstimatedDownloadSizeInBytes(uint64_t value) noexcept final
+    int32_t WINRT_CALL put_EstimatedDownloadSizeInBytes(uint64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDownloadSizeInBytes, WINRT_WRAP(void), uint64_t);
             this->shim().EstimatedDownloadSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFromBaseMessage(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFromBaseMessage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFromBaseMessage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFromBaseMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsInline(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsInline(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInline, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsInline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsInline(bool value) noexcept final
+    int32_t WINRT_CALL put_IsInline(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsInline, WINRT_WRAP(void), bool);
             this->shim().IsInline(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MimeType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MimeType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MimeType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MimeType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MimeType(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_MimeType(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MimeType, WINRT_WRAP(void), hstring const&);
             this->shim().MimeType(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory> : produce_base<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory>
 {
-    HRESULT __stdcall Create(HSTRING fileName, void* data, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* fileName, void* data, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Email::EmailAttachment), hstring const&, Windows::Storage::Streams::IRandomAccessStreamReference const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailAttachment>(this->shim().Create(*reinterpret_cast<hstring const*>(&fileName), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&data)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory2> : produce_base<D, Windows::ApplicationModel::Email::IEmailAttachmentFactory2>
 {
-    HRESULT __stdcall Create(HSTRING fileName, void* data, HSTRING mimeType, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* fileName, void* data, void* mimeType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Email::EmailAttachment), hstring const&, Windows::Storage::Streams::IRandomAccessStreamReference const&, hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailAttachment>(this->shim().Create(*reinterpret_cast<hstring const*>(&fileName), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&data), *reinterpret_cast<hstring const*>(&mimeType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailConversation> : produce_base<D, Windows::ApplicationModel::Email::IEmailConversation>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MailboxId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailboxId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MailboxId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept final
+    int32_t WINRT_CALL get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlagState, WINRT_WRAP(Windows::ApplicationModel::Email::EmailFlagState));
             *value = detach_from<Windows::ApplicationModel::Email::EmailFlagState>(this->shim().FlagState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasAttachment(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasAttachment(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasAttachment, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasAttachment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept final
+    int32_t WINRT_CALL get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Importance, WINRT_WRAP(Windows::ApplicationModel::Email::EmailImportance));
             *value = detach_from<Windows::ApplicationModel::Email::EmailImportance>(this->shim().Importance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastEmailResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept final
+    int32_t WINRT_CALL get_LastEmailResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastEmailResponseKind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageResponseKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMessageResponseKind>(this->shim().LastEmailResponseKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MessageCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MessageCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MostRecentMessageId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MostRecentMessageId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MostRecentMessageId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MostRecentMessageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MostRecentMessageTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_MostRecentMessageTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MostRecentMessageTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().MostRecentMessageTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Preview(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Preview(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preview, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Preview());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LatestSender(void** value) noexcept final
+    int32_t WINRT_CALL get_LatestSender(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LatestSender, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipient));
             *value = detach_from<Windows::ApplicationModel::Email::EmailRecipient>(this->shim().LatestSender());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subject(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Subject(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subject, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Subject());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnreadMessageCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UnreadMessageCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnreadMessageCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UnreadMessageCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindMessagesAsync(void** result) noexcept final
+    int32_t WINRT_CALL FindMessagesAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindMessagesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>>>(this->shim().FindMessagesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindMessagesWithCountAsync(uint32_t count, void** result) noexcept final
+    int32_t WINRT_CALL FindMessagesWithCountAsync(uint32_t count, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindMessagesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>>), uint32_t);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>>>(this->shim().FindMessagesAsync(count));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailConversationBatch> : produce_base<D, Windows::ApplicationModel::Email::IEmailConversationBatch>
 {
-    HRESULT __stdcall get_Conversations(void** value) noexcept final
+    int32_t WINRT_CALL get_Conversations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Conversations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailConversation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailConversation>>(this->shim().Conversations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Email::EmailBatchStatus));
             *value = detach_from<Windows::ApplicationModel::Email::EmailBatchStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailConversationReader> : produce_base<D, Windows::ApplicationModel::Email::IEmailConversationReader>
 {
-    HRESULT __stdcall ReadBatchAsync(void** result) noexcept final
+    int32_t WINRT_CALL ReadBatchAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBatchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversationBatch>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversationBatch>>(this->shim().ReadBatchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailFolder> : produce_base<D, Windows::ApplicationModel::Email::IEmailFolder>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MailboxId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailboxId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MailboxId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParentFolderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ParentFolderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParentFolderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ParentFolderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSyncEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSyncEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSyncEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSyncEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsSyncEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsSyncEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSyncEnabled, WINRT_WRAP(void), bool);
             this->shim().IsSyncEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastSuccessfulSyncTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailSpecialFolderKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailSpecialFolderKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailSpecialFolderKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailSpecialFolderKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFolderAsync(HSTRING name, void** result) noexcept final
+    int32_t WINRT_CALL CreateFolderAsync(void* name, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>>(this->shim().CreateFolderAsync(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAsync(void** result) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindChildFoldersAsync(void** result) noexcept final
+    int32_t WINRT_CALL FindChildFoldersAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindChildFoldersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailFolder>>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailFolder>>>(this->shim().FindChildFoldersAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReader(void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>>(this->shim().GetMessageAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReader(void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageCountsAsync(void** result) noexcept final
+    int32_t WINRT_CALL GetMessageCountsAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageCountsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailItemCounts>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailItemCounts>>(this->shim().GetMessageCountsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryMoveAsync(void* newParentFolder, void** result) noexcept final
+    int32_t WINRT_CALL TryMoveAsync(void* newParentFolder, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryMoveAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailFolder const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryMoveAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailFolder const*>(&newParentFolder)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryMoveWithNewNameAsync(void* newParentFolder, HSTRING newFolderName, void** result) noexcept final
+    int32_t WINRT_CALL TryMoveWithNewNameAsync(void* newParentFolder, void* newFolderName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryMoveAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailFolder const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryMoveAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailFolder const*>(&newParentFolder), *reinterpret_cast<hstring const*>(&newFolderName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySaveAsync(void** result) noexcept final
+    int32_t WINRT_CALL TrySaveAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveMessageAsync(void* message, void** result) noexcept final
+    int32_t WINRT_CALL SaveMessageAsync(void* message, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveMessageAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfo> : produce_base<D, Windows::ApplicationModel::Email::IEmailIrmInfo>
 {
-    HRESULT __stdcall get_CanEdit(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanEdit(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanEdit, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanEdit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanEdit(bool value) noexcept final
+    int32_t WINRT_CALL put_CanEdit(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanEdit, WINRT_WRAP(void), bool);
             this->shim().CanEdit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanExtractData(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanExtractData(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanExtractData, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanExtractData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanExtractData(bool value) noexcept final
+    int32_t WINRT_CALL put_CanExtractData(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanExtractData, WINRT_WRAP(void), bool);
             this->shim().CanExtractData(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanForward(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanForward(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanForward, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanForward());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanForward(bool value) noexcept final
+    int32_t WINRT_CALL put_CanForward(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanForward, WINRT_WRAP(void), bool);
             this->shim().CanForward(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanModifyRecipientsOnResponse(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanModifyRecipientsOnResponse(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanModifyRecipientsOnResponse, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanModifyRecipientsOnResponse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanModifyRecipientsOnResponse(bool value) noexcept final
+    int32_t WINRT_CALL put_CanModifyRecipientsOnResponse(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanModifyRecipientsOnResponse, WINRT_WRAP(void), bool);
             this->shim().CanModifyRecipientsOnResponse(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanPrintData(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanPrintData(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanPrintData, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanPrintData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanPrintData(bool value) noexcept final
+    int32_t WINRT_CALL put_CanPrintData(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanPrintData, WINRT_WRAP(void), bool);
             this->shim().CanPrintData(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanRemoveIrmOnResponse(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanRemoveIrmOnResponse(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRemoveIrmOnResponse, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanRemoveIrmOnResponse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanRemoveIrmOnResponse(bool value) noexcept final
+    int32_t WINRT_CALL put_CanRemoveIrmOnResponse(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRemoveIrmOnResponse, WINRT_WRAP(void), bool);
             this->shim().CanRemoveIrmOnResponse(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanReply(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanReply(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanReply, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanReply());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanReply(bool value) noexcept final
+    int32_t WINRT_CALL put_CanReply(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanReply, WINRT_WRAP(void), bool);
             this->shim().CanReply(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanReplyAll(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanReplyAll(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanReplyAll, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanReplyAll());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanReplyAll(bool value) noexcept final
+    int32_t WINRT_CALL put_CanReplyAll(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanReplyAll, WINRT_WRAP(void), bool);
             this->shim().CanReplyAll(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpirationDate, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().ExpirationDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ExpirationDate(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_ExpirationDate(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpirationDate, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().ExpirationDate(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsIrmOriginator(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsIrmOriginator(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIrmOriginator, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsIrmOriginator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsIrmOriginator(bool value) noexcept final
+    int32_t WINRT_CALL put_IsIrmOriginator(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIrmOriginator, WINRT_WRAP(void), bool);
             this->shim().IsIrmOriginator(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsProgramaticAccessAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsProgramaticAccessAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsProgramaticAccessAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsProgramaticAccessAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsProgramaticAccessAllowed(bool value) noexcept final
+    int32_t WINRT_CALL put_IsProgramaticAccessAllowed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsProgramaticAccessAllowed, WINRT_WRAP(void), bool);
             this->shim().IsProgramaticAccessAllowed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Template(void** value) noexcept final
+    int32_t WINRT_CALL get_Template(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Template, WINRT_WRAP(Windows::ApplicationModel::Email::EmailIrmTemplate));
             *value = detach_from<Windows::ApplicationModel::Email::EmailIrmTemplate>(this->shim().Template());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Template(void* value) noexcept final
+    int32_t WINRT_CALL put_Template(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Template, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailIrmTemplate const&);
             this->shim().Template(*reinterpret_cast<Windows::ApplicationModel::Email::EmailIrmTemplate const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailIrmInfoFactory> : produce_base<D, Windows::ApplicationModel::Email::IEmailIrmInfoFactory>
 {
-    HRESULT __stdcall Create(Windows::Foundation::DateTime expiration, void* irmTemplate, void** result) noexcept final
+    int32_t WINRT_CALL Create(Windows::Foundation::DateTime expiration, void* irmTemplate, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Email::EmailIrmInfo), Windows::Foundation::DateTime const&, Windows::ApplicationModel::Email::EmailIrmTemplate const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailIrmInfo>(this->shim().Create(*reinterpret_cast<Windows::Foundation::DateTime const*>(&expiration), *reinterpret_cast<Windows::ApplicationModel::Email::EmailIrmTemplate const*>(&irmTemplate)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplate> : produce_base<D, Windows::ApplicationModel::Email::IEmailIrmTemplate>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Id(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), hstring const&);
             this->shim().Id(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailIrmTemplateFactory> : produce_base<D, Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>
 {
-    HRESULT __stdcall Create(HSTRING id, HSTRING name, HSTRING description, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* id, void* name, void* description, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Email::EmailIrmTemplate), hstring const&, hstring const&, hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailIrmTemplate>(this->shim().Create(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&description)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailItemCounts> : produce_base<D, Windows::ApplicationModel::Email::IEmailItemCounts>
 {
-    HRESULT __stdcall get_Flagged(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Flagged(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flagged, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Flagged());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Important(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Important(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Important, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Important());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Total(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Total(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Total, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Total());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Unread(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Unread(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Unread, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Unread());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailbox>
 {
-    HRESULT __stdcall get_Capabilities(void** value) noexcept final
+    int32_t WINRT_CALL get_Capabilities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Capabilities, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxCapabilities));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxCapabilities>(this->shim().Capabilities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChangeTracker(void** value) noexcept final
+    int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxChangeTracker));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxChangeTracker>(this->shim().ChangeTracker());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOwnedByCurrentApp(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOwnedByCurrentApp(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOwnedByCurrentApp, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOwnedByCurrentApp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDataEncryptedUnderLock(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDataEncryptedUnderLock(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDataEncryptedUnderLock, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDataEncryptedUnderLock());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MailAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MailAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MailAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_MailAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailAddress, WINRT_WRAP(void), hstring const&);
             this->shim().MailAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailAddressAliases(void** value) noexcept final
+    int32_t WINRT_CALL get_MailAddressAliases(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailAddressAliases, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().MailAddressAliases());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess* value) noexcept final
+    int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppReadAccess, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess>(this->shim().OtherAppReadAccess());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess value) noexcept final
+    int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppReadAccess, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess const&);
             this->shim().OtherAppReadAccess(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess* value) noexcept final
+    int32_t WINRT_CALL get_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppWriteAccess, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess>(this->shim().OtherAppWriteAccess());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess value) noexcept final
+    int32_t WINRT_CALL put_OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppWriteAccess, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess const&);
             this->shim().OtherAppWriteAccess(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Policies(void** value) noexcept final
+    int32_t WINRT_CALL get_Policies(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Policies, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxPolicies));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxPolicies>(this->shim().Policies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceDisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SourceDisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceDisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SourceDisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SyncManager(void** value) noexcept final
+    int32_t WINRT_CALL get_SyncManager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncManager, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxSyncManager));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxSyncManager>(this->shim().SyncManager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDataAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDataAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReader(void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReader(void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAsync(void** result) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetConversationAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation>>(this->shim().GetConversationAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFolderAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetFolderAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>>(this->shim().GetFolderAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>>(this->shim().GetMessageAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSpecialFolderAsync(Windows::ApplicationModel::Email::EmailSpecialFolderKind folderType, void** result) noexcept final
+    int32_t WINRT_CALL GetSpecialFolderAsync(Windows::ApplicationModel::Email::EmailSpecialFolderKind folderType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSpecialFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>), Windows::ApplicationModel::Email::EmailSpecialFolderKind const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>>(this->shim().GetSpecialFolderAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailSpecialFolderKind const*>(&folderType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** result) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MarkMessageAsSeenAsync(HSTRING messageId, void** result) noexcept final
+    int32_t WINRT_CALL MarkMessageAsSeenAsync(void* messageId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MarkMessageAsSeenAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().MarkMessageAsSeenAsync(*reinterpret_cast<hstring const*>(&messageId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MarkFolderAsSeenAsync(HSTRING folderId, void** result) noexcept final
+    int32_t WINRT_CALL MarkFolderAsSeenAsync(void* folderId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MarkFolderAsSeenAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().MarkFolderAsSeenAsync(*reinterpret_cast<hstring const*>(&folderId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MarkMessageReadAsync(HSTRING messageId, bool isRead, void** result) noexcept final
+    int32_t WINRT_CALL MarkMessageReadAsync(void* messageId, bool isRead, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MarkMessageReadAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, bool);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().MarkMessageReadAsync(*reinterpret_cast<hstring const*>(&messageId), isRead));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeMessageFlagStateAsync(HSTRING messageId, Windows::ApplicationModel::Email::EmailFlagState flagState, void** result) noexcept final
+    int32_t WINRT_CALL ChangeMessageFlagStateAsync(void* messageId, Windows::ApplicationModel::Email::EmailFlagState flagState, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeMessageFlagStateAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, Windows::ApplicationModel::Email::EmailFlagState const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ChangeMessageFlagStateAsync(*reinterpret_cast<hstring const*>(&messageId), *reinterpret_cast<Windows::ApplicationModel::Email::EmailFlagState const*>(&flagState)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryMoveMessageAsync(HSTRING messageId, HSTRING newParentFolderId, void** result) noexcept final
+    int32_t WINRT_CALL TryMoveMessageAsync(void* messageId, void* newParentFolderId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryMoveMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryMoveMessageAsync(*reinterpret_cast<hstring const*>(&messageId), *reinterpret_cast<hstring const*>(&newParentFolderId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryMoveFolderAsync(HSTRING folderId, HSTRING newParentFolderId, void** result) noexcept final
+    int32_t WINRT_CALL TryMoveFolderAsync(void* folderId, void* newParentFolderId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryMoveFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryMoveFolderAsync(*reinterpret_cast<hstring const*>(&folderId), *reinterpret_cast<hstring const*>(&newParentFolderId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryMoveFolderWithNewNameAsync(HSTRING folderId, HSTRING newParentFolderId, HSTRING newFolderName, void** result) noexcept final
+    int32_t WINRT_CALL TryMoveFolderWithNewNameAsync(void* folderId, void* newParentFolderId, void* newFolderName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryMoveFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const, hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryMoveFolderAsync(*reinterpret_cast<hstring const*>(&folderId), *reinterpret_cast<hstring const*>(&newParentFolderId), *reinterpret_cast<hstring const*>(&newFolderName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteMessageAsync(HSTRING messageId, void** result) noexcept final
+    int32_t WINRT_CALL DeleteMessageAsync(void* messageId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteMessageAsync(*reinterpret_cast<hstring const*>(&messageId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MarkFolderSyncEnabledAsync(HSTRING folderId, bool isSyncEnabled, void** result) noexcept final
+    int32_t WINRT_CALL MarkFolderSyncEnabledAsync(void* folderId, bool isSyncEnabled, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MarkFolderSyncEnabledAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, bool);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().MarkFolderSyncEnabledAsync(*reinterpret_cast<hstring const*>(&folderId), isSyncEnabled));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendMessageAsync(void* message, void** result) noexcept final
+    int32_t WINRT_CALL SendMessageAsync(void* message, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SendMessageAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveDraftAsync(void* message, void** result) noexcept final
+    int32_t WINRT_CALL SaveDraftAsync(void* message, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveDraftAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveDraftAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DownloadMessageAsync(HSTRING messageId, void** result) noexcept final
+    int32_t WINRT_CALL DownloadMessageAsync(void* messageId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DownloadMessageAsync(*reinterpret_cast<hstring const*>(&messageId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DownloadAttachmentAsync(HSTRING attachmentId, void** result) noexcept final
+    int32_t WINRT_CALL DownloadAttachmentAsync(void* attachmentId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadAttachmentAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DownloadAttachmentAsync(*reinterpret_cast<hstring const*>(&attachmentId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateResponseMessageAsync(HSTRING messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, HSTRING subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, HSTRING responseHeader, void** result) noexcept final
+    int32_t WINRT_CALL CreateResponseMessageAsync(void* messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, void* subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, void* responseHeader, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateResponseMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>), hstring const, Windows::ApplicationModel::Email::EmailMessageResponseKind const, hstring const, Windows::ApplicationModel::Email::EmailMessageBodyKind const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>>(this->shim().CreateResponseMessageAsync(*reinterpret_cast<hstring const*>(&messageId), *reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageResponseKind const*>(&responseType), *reinterpret_cast<hstring const*>(&subject), *reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageBodyKind const*>(&responseHeaderType), *reinterpret_cast<hstring const*>(&responseHeader)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryUpdateMeetingResponseAsync(void* meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, HSTRING subject, HSTRING comment, bool sendUpdate, void** result) noexcept final
+    int32_t WINRT_CALL TryUpdateMeetingResponseAsync(void* meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, void* subject, void* comment, bool sendUpdate, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryUpdateMeetingResponseAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailMessage const, Windows::ApplicationModel::Email::EmailMeetingResponseType const, hstring const, hstring const, bool);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryUpdateMeetingResponseAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&meeting), *reinterpret_cast<Windows::ApplicationModel::Email::EmailMeetingResponseType const*>(&response), *reinterpret_cast<hstring const*>(&subject), *reinterpret_cast<hstring const*>(&comment), sendUpdate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryForwardMeetingAsync(void* meeting, void* recipients, HSTRING subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, HSTRING forwardHeader, HSTRING comment, void** result) noexcept final
+    int32_t WINRT_CALL TryForwardMeetingAsync(void* meeting, void* recipients, void* subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, void* forwardHeader, void* comment, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryForwardMeetingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailMessage const, Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> const, hstring const, Windows::ApplicationModel::Email::EmailMessageBodyKind const, hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryForwardMeetingAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&meeting), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> const*>(&recipients), *reinterpret_cast<hstring const*>(&subject), *reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageBodyKind const*>(&forwardHeaderType), *reinterpret_cast<hstring const*>(&forwardHeader), *reinterpret_cast<hstring const*>(&comment)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryProposeNewTimeForMeetingAsync(void* meeting, Windows::Foundation::DateTime newStartTime, Windows::Foundation::TimeSpan newDuration, HSTRING subject, HSTRING comment, void** result) noexcept final
+    int32_t WINRT_CALL TryProposeNewTimeForMeetingAsync(void* meeting, Windows::Foundation::DateTime newStartTime, Windows::Foundation::TimeSpan newDuration, void* subject, void* comment, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryProposeNewTimeForMeetingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailMessage const, Windows::Foundation::DateTime const, Windows::Foundation::TimeSpan const, hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryProposeNewTimeForMeetingAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&meeting), *reinterpret_cast<Windows::Foundation::DateTime const*>(&newStartTime), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&newDuration), *reinterpret_cast<hstring const*>(&subject), *reinterpret_cast<hstring const*>(&comment)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MailboxChanged(void* pHandler, event_token* pToken) noexcept final
+    int32_t WINRT_CALL add_MailboxChanged(void* pHandler, winrt::event_token* pToken) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *pToken = detach_from<event_token>(this->shim().MailboxChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const*>(&pHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MailboxChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const&);
+            *pToken = detach_from<winrt::event_token>(this->shim().MailboxChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> const*>(&pHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MailboxChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MailboxChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MailboxChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MailboxChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MailboxChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall SmartSendMessageAsync(void* message, bool smartSend, void** result) noexcept final
+    int32_t WINRT_CALL SmartSendMessageAsync(void* message, bool smartSend, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const, bool);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SendMessageAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message), smartSend));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetAutoReplySettingsAsync(void* autoReplySettings, void** result) noexcept final
+    int32_t WINRT_CALL TrySetAutoReplySettingsAsync(void* autoReplySettings, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetAutoReplySettingsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySetAutoReplySettingsAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings const*>(&autoReplySettings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind requestedFormat, void** autoReplySettings) noexcept final
+    int32_t WINRT_CALL TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind requestedFormat, void** autoReplySettings) noexcept final
     {
         try
         {
             *autoReplySettings = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetAutoReplySettingsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings>), Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind const);
             *autoReplySettings = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings>>(this->shim().TryGetAutoReplySettingsAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind const*>(&requestedFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailbox2>
 {
-    HRESULT __stdcall get_LinkedMailboxId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LinkedMailboxId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinkedMailboxId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LinkedMailboxId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NetworkId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox3> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailbox3>
 {
-    HRESULT __stdcall ResolveRecipientsAsync(void* recipients, void** result) noexcept final
+    int32_t WINRT_CALL ResolveRecipientsAsync(void* recipients, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolveRecipientsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>>), Windows::Foundation::Collections::IIterable<hstring> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>>>(this->shim().ResolveRecipientsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&recipients)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ValidateCertificatesAsync(void* certificates, void** result) noexcept final
+    int32_t WINRT_CALL ValidateCertificatesAsync(void* certificates, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValidateCertificatesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailCertificateValidationStatus>>), Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailCertificateValidationStatus>>>(this->shim().ValidateCertificatesAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const*>(&certificates)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryEmptyFolderAsync(HSTRING folderId, void** result) noexcept final
+    int32_t WINRT_CALL TryEmptyFolderAsync(void* folderId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryEmptyFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus>>(this->shim().TryEmptyFolderAsync(*reinterpret_cast<hstring const*>(&folderId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateFolderAsync(HSTRING parentFolderId, HSTRING name, void** result) noexcept final
+    int32_t WINRT_CALL TryCreateFolderAsync(void* parentFolderId, void* name, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult>), hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult>>(this->shim().TryCreateFolderAsync(*reinterpret_cast<hstring const*>(&parentFolderId), *reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryDeleteFolderAsync(HSTRING folderId, void** result) noexcept final
+    int32_t WINRT_CALL TryDeleteFolderAsync(void* folderId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryDeleteFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus>>(this->shim().TryDeleteFolderAsync(*reinterpret_cast<hstring const*>(&folderId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox4> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailbox4>
 {
-    HRESULT __stdcall RegisterSyncManagerAsync(void** result) noexcept final
+    int32_t WINRT_CALL RegisterSyncManagerAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterSyncManagerAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RegisterSyncManagerAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailbox5> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailbox5>
 {
-    HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept final
+    int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxChangeTracker), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailMailboxChangeTracker>(this->shim().GetChangeTracker(*reinterpret_cast<hstring const*>(&identity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAction> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxAction>
 {
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailMailboxActionKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailMailboxActionKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxActionKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxActionKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChangeNumber(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_ChangeNumber(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeNumber, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ChangeNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReply>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Response(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Response(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Response, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Response());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Response(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Response(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Response, WINRT_WRAP(void), hstring const&);
             this->shim().Response(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(void), bool);
             this->shim().IsEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind* value) noexcept final
+    int32_t WINRT_CALL get_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseKind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind>(this->shim().ResponseKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) noexcept final
+    int32_t WINRT_CALL put_ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseKind, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind const&);
             this->shim().ResponseKind(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartTime(void** value) noexcept final
+    int32_t WINRT_CALL get_StartTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().StartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartTime(void* value) noexcept final
+    int32_t WINRT_CALL put_StartTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().StartTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndTime(void** value) noexcept final
+    int32_t WINRT_CALL get_EndTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().EndTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndTime(void* value) noexcept final
+    int32_t WINRT_CALL put_EndTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().EndTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InternalReply(void** value) noexcept final
+    int32_t WINRT_CALL get_InternalReply(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InternalReply, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxAutoReply));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxAutoReply>(this->shim().InternalReply());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KnownExternalReply(void** value) noexcept final
+    int32_t WINRT_CALL get_KnownExternalReply(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KnownExternalReply, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxAutoReply));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxAutoReply>(this->shim().KnownExternalReply());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UnknownExternalReply(void** value) noexcept final
+    int32_t WINRT_CALL get_UnknownExternalReply(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnknownExternalReply, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxAutoReply));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxAutoReply>(this->shim().UnknownExternalReply());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities>
 {
-    HRESULT __stdcall get_CanForwardMeetings(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanForwardMeetings(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanForwardMeetings, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanForwardMeetings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanGetAndSetExternalAutoReplies(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanGetAndSetExternalAutoReplies(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanGetAndSetExternalAutoReplies, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanGetAndSetExternalAutoReplies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanGetAndSetInternalAutoReplies(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanGetAndSetInternalAutoReplies(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanGetAndSetInternalAutoReplies, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanGetAndSetInternalAutoReplies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanUpdateMeetingResponses(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanUpdateMeetingResponses(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanUpdateMeetingResponses, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanUpdateMeetingResponses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanServerSearchFolders(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanServerSearchFolders(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanServerSearchFolders, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanServerSearchFolders());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanServerSearchMailbox(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanServerSearchMailbox(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanServerSearchMailbox, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanServerSearchMailbox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanProposeNewTimeForMeetings(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanProposeNewTimeForMeetings(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanProposeNewTimeForMeetings, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanProposeNewTimeForMeetings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanSmartSend(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanSmartSend(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanSmartSend, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanSmartSend());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>
 {
-    HRESULT __stdcall get_CanResolveRecipients(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanResolveRecipients(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanResolveRecipients, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanResolveRecipients());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanValidateCertificates(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanValidateCertificates(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanValidateCertificates, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanValidateCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanEmptyFolder(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanEmptyFolder(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanEmptyFolder, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanEmptyFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanCreateFolder(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanCreateFolder(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanCreateFolder, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanCreateFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanDeleteFolder(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanDeleteFolder(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanDeleteFolder, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanDeleteFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanMoveFolder(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanMoveFolder(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanMoveFolder, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanMoveFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>
 {
-    HRESULT __stdcall put_CanForwardMeetings(bool value) noexcept final
+    int32_t WINRT_CALL put_CanForwardMeetings(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanForwardMeetings, WINRT_WRAP(void), bool);
             this->shim().CanForwardMeetings(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanGetAndSetExternalAutoReplies(bool value) noexcept final
+    int32_t WINRT_CALL put_CanGetAndSetExternalAutoReplies(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanGetAndSetExternalAutoReplies, WINRT_WRAP(void), bool);
             this->shim().CanGetAndSetExternalAutoReplies(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanGetAndSetInternalAutoReplies(bool value) noexcept final
+    int32_t WINRT_CALL put_CanGetAndSetInternalAutoReplies(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanGetAndSetInternalAutoReplies, WINRT_WRAP(void), bool);
             this->shim().CanGetAndSetInternalAutoReplies(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanUpdateMeetingResponses(bool value) noexcept final
+    int32_t WINRT_CALL put_CanUpdateMeetingResponses(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanUpdateMeetingResponses, WINRT_WRAP(void), bool);
             this->shim().CanUpdateMeetingResponses(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanServerSearchFolders(bool value) noexcept final
+    int32_t WINRT_CALL put_CanServerSearchFolders(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanServerSearchFolders, WINRT_WRAP(void), bool);
             this->shim().CanServerSearchFolders(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanServerSearchMailbox(bool value) noexcept final
+    int32_t WINRT_CALL put_CanServerSearchMailbox(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanServerSearchMailbox, WINRT_WRAP(void), bool);
             this->shim().CanServerSearchMailbox(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanProposeNewTimeForMeetings(bool value) noexcept final
+    int32_t WINRT_CALL put_CanProposeNewTimeForMeetings(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanProposeNewTimeForMeetings, WINRT_WRAP(void), bool);
             this->shim().CanProposeNewTimeForMeetings(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanSmartSend(bool value) noexcept final
+    int32_t WINRT_CALL put_CanSmartSend(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanSmartSend, WINRT_WRAP(void), bool);
             this->shim().CanSmartSend(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanResolveRecipients(bool value) noexcept final
+    int32_t WINRT_CALL put_CanResolveRecipients(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanResolveRecipients, WINRT_WRAP(void), bool);
             this->shim().CanResolveRecipients(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanValidateCertificates(bool value) noexcept final
+    int32_t WINRT_CALL put_CanValidateCertificates(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanValidateCertificates, WINRT_WRAP(void), bool);
             this->shim().CanValidateCertificates(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanEmptyFolder(bool value) noexcept final
+    int32_t WINRT_CALL put_CanEmptyFolder(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanEmptyFolder, WINRT_WRAP(void), bool);
             this->shim().CanEmptyFolder(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanCreateFolder(bool value) noexcept final
+    int32_t WINRT_CALL put_CanCreateFolder(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanCreateFolder, WINRT_WRAP(void), bool);
             this->shim().CanCreateFolder(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanDeleteFolder(bool value) noexcept final
+    int32_t WINRT_CALL put_CanDeleteFolder(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanDeleteFolder, WINRT_WRAP(void), bool);
             this->shim().CanDeleteFolder(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanMoveFolder(bool value) noexcept final
+    int32_t WINRT_CALL put_CanMoveFolder(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanMoveFolder, WINRT_WRAP(void), bool);
             this->shim().CanMoveFolder(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChange> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxChange>
 {
-    HRESULT __stdcall get_ChangeType(Windows::ApplicationModel::Email::EmailMailboxChangeType* value) noexcept final
+    int32_t WINRT_CALL get_ChangeType(Windows::ApplicationModel::Email::EmailMailboxChangeType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeType, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxChangeType));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxChangeType>(this->shim().ChangeType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailboxActions(void** value) noexcept final
+    int32_t WINRT_CALL get_MailboxActions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailboxActions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailMailboxAction>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailMailboxAction>>(this->shim().MailboxActions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(void** value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessage));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMessage>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Folder(void** value) noexcept final
+    int32_t WINRT_CALL get_Folder(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Folder, WINRT_WRAP(Windows::ApplicationModel::Email::EmailFolder));
             *value = detach_from<Windows::ApplicationModel::Email::EmailFolder>(this->shim().Folder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeReader> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxChangeReader>
 {
-    HRESULT __stdcall AcceptChanges() noexcept final
+    int32_t WINRT_CALL AcceptChanges() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptChanges, WINRT_WRAP(void));
             this->shim().AcceptChanges();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AcceptChangesThrough(void* lastChangeToAcknowledge) noexcept final
+    int32_t WINRT_CALL AcceptChangesThrough(void* lastChangeToAcknowledge) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptChangesThrough, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxChange const&);
             this->shim().AcceptChangesThrough(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxChange const*>(&lastChangeToAcknowledge));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadBatchAsync(void** value) noexcept final
+    int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBatchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailboxChange>>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailboxChange>>>(this->shim().ReadBatchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>
 {
-    HRESULT __stdcall get_IsTracking(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTracking(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTracking, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTracking());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Enable() noexcept final
+    int32_t WINRT_CALL Enable() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enable, WINRT_WRAP(void));
             this->shim().Enable();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChangeReader(void** value) noexcept final
+    int32_t WINRT_CALL GetChangeReader(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChangeReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxChangeReader));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxChangeReader>(this->shim().GetChangeReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Reset() noexcept final
+    int32_t WINRT_CALL Reset() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reset, WINRT_WRAP(void));
             this->shim().Reset();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxChangedDeferral));
             *result = detach_from<Windows::ApplicationModel::Email::EmailMailboxChangedDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Folder(void** value) noexcept final
+    int32_t WINRT_CALL get_Folder(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Folder, WINRT_WRAP(Windows::ApplicationModel::Email::EmailFolder));
             *value = detach_from<Windows::ApplicationModel::Email::EmailFolder>(this->shim().Folder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies>
 {
-    HRESULT __stdcall get_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation* value) noexcept final
+    int32_t WINRT_CALL get_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowedSmimeEncryptionAlgorithmNegotiation, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation>(this->shim().AllowedSmimeEncryptionAlgorithmNegotiation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowSmimeSoftCertificates(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowSmimeSoftCertificates(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowSmimeSoftCertificates, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowSmimeSoftCertificates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequiredSmimeEncryptionAlgorithm(void** value) noexcept final
+    int32_t WINRT_CALL get_RequiredSmimeEncryptionAlgorithm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequiredSmimeEncryptionAlgorithm, WINRT_WRAP(Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm>));
             *value = detach_from<Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm>>(this->shim().RequiredSmimeEncryptionAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequiredSmimeSigningAlgorithm(void** value) noexcept final
+    int32_t WINRT_CALL get_RequiredSmimeSigningAlgorithm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequiredSmimeSigningAlgorithm, WINRT_WRAP(Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm>));
             *value = detach_from<Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm>>(this->shim().RequiredSmimeSigningAlgorithm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies2>
 {
-    HRESULT __stdcall get_MustEncryptSmimeMessages(bool* value) noexcept final
+    int32_t WINRT_CALL get_MustEncryptSmimeMessages(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MustEncryptSmimeMessages, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MustEncryptSmimeMessages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MustSignSmimeMessages(bool* value) noexcept final
+    int32_t WINRT_CALL get_MustSignSmimeMessages(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MustSignSmimeMessages, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MustSignSmimeMessages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxPolicies3>
 {
-    HRESULT __stdcall put_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) noexcept final
+    int32_t WINRT_CALL put_AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowedSmimeEncryptionAlgorithmNegotiation, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation const&);
             this->shim().AllowedSmimeEncryptionAlgorithmNegotiation(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowSmimeSoftCertificates(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowSmimeSoftCertificates(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowSmimeSoftCertificates, WINRT_WRAP(void), bool);
             this->shim().AllowSmimeSoftCertificates(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequiredSmimeEncryptionAlgorithm(void* value) noexcept final
+    int32_t WINRT_CALL put_RequiredSmimeEncryptionAlgorithm(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequiredSmimeEncryptionAlgorithm, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> const&);
             this->shim().RequiredSmimeEncryptionAlgorithm(*reinterpret_cast<Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequiredSmimeSigningAlgorithm(void* value) noexcept final
+    int32_t WINRT_CALL put_RequiredSmimeSigningAlgorithm(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequiredSmimeSigningAlgorithm, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> const&);
             this->shim().RequiredSmimeSigningAlgorithm(*reinterpret_cast<Windows::Foundation::IReference<Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MustEncryptSmimeMessages(bool value) noexcept final
+    int32_t WINRT_CALL put_MustEncryptSmimeMessages(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MustEncryptSmimeMessages, WINRT_WRAP(void), bool);
             this->shim().MustEncryptSmimeMessages(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MustSignSmimeMessages(bool value) noexcept final
+    int32_t WINRT_CALL put_MustSignSmimeMessages(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MustSignSmimeMessages, WINRT_WRAP(void), bool);
             this->shim().MustSignSmimeMessages(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMailboxSyncStatus));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMailboxSyncStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastSuccessfulSyncTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastAttemptedSyncTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastAttemptedSyncTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SyncAsync(void** result) noexcept final
+    int32_t WINRT_CALL SyncAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().SyncAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SyncStatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SyncStatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SyncStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SyncStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SyncStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SyncStatusChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SyncStatusChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SyncStatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SyncStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SyncStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>
 {
-    HRESULT __stdcall put_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) noexcept final
+    int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMailboxSyncStatus const&);
             this->shim().Status(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMailboxSyncStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastAttemptedSyncTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastAttemptedSyncTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailManagerForUser> : produce_base<D, Windows::ApplicationModel::Email::IEmailManagerForUser>
 {
-    HRESULT __stdcall ShowComposeNewEmailAsync(void* message, void** result) noexcept final
+    int32_t WINRT_CALL ShowComposeNewEmailAsync(void* message, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowComposeNewEmailAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowComposeNewEmailAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept final
+    int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore>), Windows::ApplicationModel::Email::EmailStoreAccessType const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore>>(this->shim().RequestStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics> : produce_base<D, Windows::ApplicationModel::Email::IEmailManagerStatics>
 {
-    HRESULT __stdcall ShowComposeNewEmailAsync(void* message, void** asyncAction) noexcept final
+    int32_t WINRT_CALL ShowComposeNewEmailAsync(void* message, void** asyncAction) noexcept final
     {
         try
         {
             *asyncAction = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowComposeNewEmailAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Email::EmailMessage const);
             *asyncAction = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ShowComposeNewEmailAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessage const*>(&message)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics2> : produce_base<D, Windows::ApplicationModel::Email::IEmailManagerStatics2>
 {
-    HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept final
+    int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore>), Windows::ApplicationModel::Email::EmailStoreAccessType const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore>>(this->shim().RequestStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Email::EmailStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailManagerStatics3> : produce_base<D, Windows::ApplicationModel::Email::IEmailManagerStatics3>
 {
-    HRESULT __stdcall GetForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::ApplicationModel::Email::EmailManagerForUser), Windows::System::User const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailManagerForUser>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo> : produce_base<D, Windows::ApplicationModel::Email::IEmailMeetingInfo>
 {
-    HRESULT __stdcall get_AllowNewTimeProposal(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowNewTimeProposal(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowNewTimeProposal, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowNewTimeProposal());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowNewTimeProposal(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowNewTimeProposal(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowNewTimeProposal, WINRT_WRAP(void), bool);
             this->shim().AllowNewTimeProposal(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppointmentRoamingId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AppointmentRoamingId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentRoamingId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AppointmentRoamingId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppointmentRoamingId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AppointmentRoamingId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentRoamingId, WINRT_WRAP(void), hstring const&);
             this->shim().AppointmentRoamingId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppointmentOriginalStartTime(void** value) noexcept final
+    int32_t WINRT_CALL get_AppointmentOriginalStartTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentOriginalStartTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().AppointmentOriginalStartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppointmentOriginalStartTime(void* value) noexcept final
+    int32_t WINRT_CALL put_AppointmentOriginalStartTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppointmentOriginalStartTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().AppointmentOriginalStartTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Duration(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Duration(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAllDay(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAllDay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAllDay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAllDay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsAllDay(bool value) noexcept final
+    int32_t WINRT_CALL put_IsAllDay(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAllDay, WINRT_WRAP(void), bool);
             this->shim().IsAllDay(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsResponseRequested(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsResponseRequested(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsResponseRequested, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsResponseRequested());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsResponseRequested(bool value) noexcept final
+    int32_t WINRT_CALL put_IsResponseRequested(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsResponseRequested, WINRT_WRAP(void), bool);
             this->shim().IsResponseRequested(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Location(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Location(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Location());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Location(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Location(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(void), hstring const&);
             this->shim().Location(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProposedStartTime(void** proposedStartTime) noexcept final
+    int32_t WINRT_CALL get_ProposedStartTime(void** proposedStartTime) noexcept final
     {
         try
         {
             *proposedStartTime = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProposedStartTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *proposedStartTime = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().ProposedStartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProposedStartTime(void* proposedStartTime) noexcept final
+    int32_t WINRT_CALL put_ProposedStartTime(void* proposedStartTime) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProposedStartTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().ProposedStartTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&proposedStartTime));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProposedDuration(void** duration) noexcept final
+    int32_t WINRT_CALL get_ProposedDuration(void** duration) noexcept final
     {
         try
         {
             *duration = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProposedDuration, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::TimeSpan>));
             *duration = detach_from<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>>(this->shim().ProposedDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProposedDuration(void* duration) noexcept final
+    int32_t WINRT_CALL put_ProposedDuration(void* duration) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProposedDuration, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const&);
             this->shim().ProposedDuration(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::TimeSpan> const*>(&duration));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RecurrenceStartTime(void** value) noexcept final
+    int32_t WINRT_CALL get_RecurrenceStartTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecurrenceStartTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().RecurrenceStartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RecurrenceStartTime(void* value) noexcept final
+    int32_t WINRT_CALL put_RecurrenceStartTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecurrenceStartTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().RecurrenceStartTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Recurrence(void** value) noexcept final
+    int32_t WINRT_CALL get_Recurrence(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Recurrence, WINRT_WRAP(Windows::ApplicationModel::Appointments::AppointmentRecurrence));
             *value = detach_from<Windows::ApplicationModel::Appointments::AppointmentRecurrence>(this->shim().Recurrence());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Recurrence(void* value) noexcept final
+    int32_t WINRT_CALL put_Recurrence(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Recurrence, WINRT_WRAP(void), Windows::ApplicationModel::Appointments::AppointmentRecurrence const&);
             this->shim().Recurrence(*reinterpret_cast<Windows::ApplicationModel::Appointments::AppointmentRecurrence const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteChangeNumber(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_RemoteChangeNumber(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteChangeNumber, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().RemoteChangeNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteChangeNumber(uint64_t value) noexcept final
+    int32_t WINRT_CALL put_RemoteChangeNumber(uint64_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteChangeNumber, WINRT_WRAP(void), uint64_t);
             this->shim().RemoteChangeNumber(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_StartTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().StartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_StartTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().StartTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMeetingInfo2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMeetingInfo2>
 {
-    HRESULT __stdcall get_IsReportedOutOfDateByServer(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsReportedOutOfDateByServer(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsReportedOutOfDateByServer, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsReportedOutOfDateByServer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessage> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessage>
 {
-    HRESULT __stdcall get_Subject(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Subject(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subject, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Subject());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subject(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Subject(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subject, WINRT_WRAP(void), hstring const&);
             this->shim().Subject(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Body(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Body(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Body());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Body(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Body(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Body, WINRT_WRAP(void), hstring const&);
             this->shim().Body(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_To(void** value) noexcept final
+    int32_t WINRT_CALL get_To(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(To, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>>(this->shim().To());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CC(void** value) noexcept final
+    int32_t WINRT_CALL get_CC(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CC, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>>(this->shim().CC());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bcc(void** value) noexcept final
+    int32_t WINRT_CALL get_Bcc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bcc, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>>(this->shim().Bcc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Attachments(void** value) noexcept final
+    int32_t WINRT_CALL get_Attachments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Attachments, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailAttachment>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailAttachment>>(this->shim().Attachments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessage2> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessage2>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailboxId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MailboxId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailboxId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MailboxId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConversationId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ConversationId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConversationId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ConversationId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FolderId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FolderId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FolderId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FolderId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowInternetImages(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowInternetImages(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowInternetImages, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowInternetImages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowInternetImages(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowInternetImages(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowInternetImages, WINRT_WRAP(void), bool);
             this->shim().AllowInternetImages(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChangeNumber(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_ChangeNumber(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeNumber, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ChangeNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState* value) noexcept final
+    int32_t WINRT_CALL get_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadState, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageDownloadState));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMessageDownloadState>(this->shim().DownloadState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState value) noexcept final
+    int32_t WINRT_CALL put_DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadState, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMessageDownloadState const&);
             this->shim().DownloadState(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageDownloadState const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EstimatedDownloadSizeInBytes(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_EstimatedDownloadSizeInBytes(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDownloadSizeInBytes, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().EstimatedDownloadSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EstimatedDownloadSizeInBytes(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_EstimatedDownloadSizeInBytes(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EstimatedDownloadSizeInBytes, WINRT_WRAP(void), uint32_t);
             this->shim().EstimatedDownloadSizeInBytes(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept final
+    int32_t WINRT_CALL get_FlagState(Windows::ApplicationModel::Email::EmailFlagState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlagState, WINRT_WRAP(Windows::ApplicationModel::Email::EmailFlagState));
             *value = detach_from<Windows::ApplicationModel::Email::EmailFlagState>(this->shim().FlagState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FlagState(Windows::ApplicationModel::Email::EmailFlagState value) noexcept final
+    int32_t WINRT_CALL put_FlagState(Windows::ApplicationModel::Email::EmailFlagState value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FlagState, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailFlagState const&);
             this->shim().FlagState(*reinterpret_cast<Windows::ApplicationModel::Email::EmailFlagState const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasPartialBodies(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasPartialBodies(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasPartialBodies, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasPartialBodies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept final
+    int32_t WINRT_CALL get_Importance(Windows::ApplicationModel::Email::EmailImportance* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Importance, WINRT_WRAP(Windows::ApplicationModel::Email::EmailImportance));
             *value = detach_from<Windows::ApplicationModel::Email::EmailImportance>(this->shim().Importance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Importance(Windows::ApplicationModel::Email::EmailImportance value) noexcept final
+    int32_t WINRT_CALL put_Importance(Windows::ApplicationModel::Email::EmailImportance value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Importance, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailImportance const&);
             this->shim().Importance(*reinterpret_cast<Windows::ApplicationModel::Email::EmailImportance const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InResponseToMessageId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_InResponseToMessageId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InResponseToMessageId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().InResponseToMessageId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IrmInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_IrmInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IrmInfo, WINRT_WRAP(Windows::ApplicationModel::Email::EmailIrmInfo));
             *value = detach_from<Windows::ApplicationModel::Email::EmailIrmInfo>(this->shim().IrmInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IrmInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_IrmInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IrmInfo, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailIrmInfo const&);
             this->shim().IrmInfo(*reinterpret_cast<Windows::ApplicationModel::Email::EmailIrmInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDraftMessage(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDraftMessage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDraftMessage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDraftMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsRead(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRead(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRead, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRead());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsRead(bool value) noexcept final
+    int32_t WINRT_CALL put_IsRead(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRead, WINRT_WRAP(void), bool);
             this->shim().IsRead(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSeen(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSeen(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSeen, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSeen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsSeen(bool value) noexcept final
+    int32_t WINRT_CALL put_IsSeen(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSeen, WINRT_WRAP(void), bool);
             this->shim().IsSeen(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsServerSearchMessage(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsServerSearchMessage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsServerSearchMessage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsServerSearchMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSmartSendable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSmartSendable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSmartSendable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSmartSendable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageClass(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MessageClass(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageClass, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MessageClass());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MessageClass(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_MessageClass(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageClass, WINRT_WRAP(void), hstring const&);
             this->shim().MessageClass(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalizedSubject(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NormalizedSubject(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalizedSubject, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NormalizedSubject());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OriginalCodePage(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_OriginalCodePage(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalCodePage, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().OriginalCodePage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OriginalCodePage(int32_t value) noexcept final
+    int32_t WINRT_CALL put_OriginalCodePage(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalCodePage, WINRT_WRAP(void), int32_t);
             this->shim().OriginalCodePage(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Preview(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Preview(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preview, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Preview());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Preview(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Preview(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Preview, WINRT_WRAP(void), hstring const&);
             this->shim().Preview(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept final
+    int32_t WINRT_CALL get_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastResponseKind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageResponseKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMessageResponseKind>(this->shim().LastResponseKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind value) noexcept final
+    int32_t WINRT_CALL put_LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastResponseKind, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMessageResponseKind const&);
             this->shim().LastResponseKind(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageResponseKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sender(void** value) noexcept final
+    int32_t WINRT_CALL get_Sender(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sender, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipient));
             *value = detach_from<Windows::ApplicationModel::Email::EmailRecipient>(this->shim().Sender());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Sender(void* value) noexcept final
+    int32_t WINRT_CALL put_Sender(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sender, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailRecipient const&);
             this->shim().Sender(*reinterpret_cast<Windows::ApplicationModel::Email::EmailRecipient const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SentTime(void** value) noexcept final
+    int32_t WINRT_CALL get_SentTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SentTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().SentTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SentTime(void* value) noexcept final
+    int32_t WINRT_CALL put_SentTime(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SentTime, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Foundation::DateTime> const&);
             this->shim().SentTime(*reinterpret_cast<Windows::Foundation::IReference<Windows::Foundation::DateTime> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MeetingInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_MeetingInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MeetingInfo, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMeetingInfo));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMeetingInfo>(this->shim().MeetingInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MeetingInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_MeetingInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MeetingInfo, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMeetingInfo const&);
             this->shim().MeetingInfo(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMeetingInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void** result) noexcept final
+    int32_t WINRT_CALL GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBodyStream, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference), Windows::ApplicationModel::Email::EmailMessageBodyKind const&);
             *result = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().GetBodyStream(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageBodyKind const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void* stream) noexcept final
+    int32_t WINRT_CALL SetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, void* stream) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetBodyStream, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMessageBodyKind const&, Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().SetBodyStream(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageBodyKind const*>(&type), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&stream));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessage3>
 {
-    HRESULT __stdcall get_SmimeData(void** value) noexcept final
+    int32_t WINRT_CALL get_SmimeData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmimeData, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().SmimeData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SmimeData(void* value) noexcept final
+    int32_t WINRT_CALL put_SmimeData(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmimeData, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().SmimeData(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind* value) noexcept final
+    int32_t WINRT_CALL get_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmimeKind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageSmimeKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailMessageSmimeKind>(this->shim().SmimeKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) noexcept final
+    int32_t WINRT_CALL put_SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmimeKind, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailMessageSmimeKind const&);
             this->shim().SmimeKind(*reinterpret_cast<Windows::ApplicationModel::Email::EmailMessageSmimeKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessage4> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessage4>
 {
-    HRESULT __stdcall get_ReplyTo(void** value) noexcept final
+    int32_t WINRT_CALL get_ReplyTo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReplyTo, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>>(this->shim().ReplyTo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SentRepresenting(void** value) noexcept final
+    int32_t WINRT_CALL get_SentRepresenting(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SentRepresenting, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipient));
             *value = detach_from<Windows::ApplicationModel::Email::EmailRecipient>(this->shim().SentRepresenting());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SentRepresenting(void* value) noexcept final
+    int32_t WINRT_CALL put_SentRepresenting(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SentRepresenting, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailRecipient const&);
             this->shim().SentRepresenting(*reinterpret_cast<Windows::ApplicationModel::Email::EmailRecipient const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessageBatch> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessageBatch>
 {
-    HRESULT __stdcall get_Messages(void** value) noexcept final
+    int32_t WINRT_CALL get_Messages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Messages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>>(this->shim().Messages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailBatchStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Email::EmailBatchStatus));
             *value = detach_from<Windows::ApplicationModel::Email::EmailBatchStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessageReader> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessageReader>
 {
-    HRESULT __stdcall ReadBatchAsync(void** result) noexcept final
+    int32_t WINRT_CALL ReadBatchAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBatchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessageBatch>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessageBatch>>(this->shim().ReadBatchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptions> : produce_base<D, Windows::ApplicationModel::Email::IEmailQueryOptions>
 {
-    HRESULT __stdcall get_TextSearch(void** value) noexcept final
+    int32_t WINRT_CALL get_TextSearch(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextSearch, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQueryTextSearch));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQueryTextSearch>(this->shim().TextSearch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection* value) noexcept final
+    int32_t WINRT_CALL get_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SortDirection, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQuerySortDirection));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQuerySortDirection>(this->shim().SortDirection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) noexcept final
+    int32_t WINRT_CALL put_SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SortDirection, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailQuerySortDirection const&);
             this->shim().SortDirection(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQuerySortDirection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty* value) noexcept final
+    int32_t WINRT_CALL get_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SortProperty, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQuerySortProperty));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQuerySortProperty>(this->shim().SortProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty value) noexcept final
+    int32_t WINRT_CALL put_SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SortProperty, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailQuerySortProperty const&);
             this->shim().SortProperty(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQuerySortProperty const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Email::EmailQueryKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Email::EmailQueryKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQueryKind));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQueryKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kind(Windows::ApplicationModel::Email::EmailQueryKind value) noexcept final
+    int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Email::EmailQueryKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailQueryKind const&);
             this->shim().Kind(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FolderIds(void** value) noexcept final
+    int32_t WINRT_CALL get_FolderIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FolderIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().FolderIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory> : produce_base<D, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>
 {
-    HRESULT __stdcall CreateWithText(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithText(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithText, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQueryOptions), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailQueryOptions>(this->shim().CreateWithText(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithTextAndFields(HSTRING text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithTextAndFields(void* text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithTextAndFields, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQueryOptions), hstring const&, Windows::ApplicationModel::Email::EmailQuerySearchFields const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailQueryOptions>(this->shim().CreateWithTextAndFields(*reinterpret_cast<hstring const*>(&text), *reinterpret_cast<Windows::ApplicationModel::Email::EmailQuerySearchFields const*>(&fields)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch> : produce_base<D, Windows::ApplicationModel::Email::IEmailQueryTextSearch>
 {
-    HRESULT __stdcall get_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields* value) noexcept final
+    int32_t WINRT_CALL get_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQuerySearchFields));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQuerySearchFields>(this->shim().Fields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) noexcept final
+    int32_t WINRT_CALL put_Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailQuerySearchFields const&);
             this->shim().Fields(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQuerySearchFields const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope* value) noexcept final
+    int32_t WINRT_CALL get_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchScope, WINRT_WRAP(Windows::ApplicationModel::Email::EmailQuerySearchScope));
             *value = detach_from<Windows::ApplicationModel::Email::EmailQuerySearchScope>(this->shim().SearchScope());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope value) noexcept final
+    int32_t WINRT_CALL put_SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchScope, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailQuerySearchScope const&);
             this->shim().SearchScope(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQuerySearchScope const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailRecipient> : produce_base<D, Windows::ApplicationModel::Email::IEmailRecipient>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Address(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Address(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Address());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Address(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Address(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(void), hstring const&);
             this->shim().Address(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientFactory> : produce_base<D, Windows::ApplicationModel::Email::IEmailRecipientFactory>
 {
-    HRESULT __stdcall Create(HSTRING address, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* address, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipient), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailRecipient>(this->shim().Create(*reinterpret_cast<hstring const*>(&address)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithName(HSTRING address, HSTRING name, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithName(void* address, void* name, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithName, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipient), hstring const&, hstring const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailRecipient>(this->shim().CreateWithName(*reinterpret_cast<hstring const*>(&address), *reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionResult> : produce_base<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus));
             *value = detach_from<Windows::ApplicationModel::Email::EmailRecipientResolutionStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PublicKeys(void** value) noexcept final
+    int32_t WINRT_CALL get_PublicKeys(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PublicKeys, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>>(this->shim().PublicKeys());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2> : produce_base<D, Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>
 {
-    HRESULT __stdcall put_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) noexcept final
+    int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(void), Windows::ApplicationModel::Email::EmailRecipientResolutionStatus const&);
             this->shim().Status(*reinterpret_cast<Windows::ApplicationModel::Email::EmailRecipientResolutionStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPublicKeys(void* value) noexcept final
+    int32_t WINRT_CALL SetPublicKeys(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPublicKeys, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const&);
             this->shim().SetPublicKeys(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailStore> : produce_base<D, Windows::ApplicationModel::Email::IEmailStore>
 {
-    HRESULT __stdcall FindMailboxesAsync(void** result) noexcept final
+    int32_t WINRT_CALL FindMailboxesAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindMailboxesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>>>(this->shim().FindMailboxesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReader(void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetConversationReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailConversationReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailConversationReader>(this->shim().GetConversationReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReader(void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReader(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader));
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageReaderWithOptions(void* options, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageReaderWithOptions(void* options, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageReader, WINRT_WRAP(Windows::ApplicationModel::Email::EmailMessageReader), Windows::ApplicationModel::Email::EmailQueryOptions const&);
             *result = detach_from<Windows::ApplicationModel::Email::EmailMessageReader>(this->shim().GetMessageReader(*reinterpret_cast<Windows::ApplicationModel::Email::EmailQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMailboxAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetMailboxAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMailboxAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>>(this->shim().GetMailboxAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetConversationAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetConversationAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetConversationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation>>(this->shim().GetConversationAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFolderAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetFolderAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder>>(this->shim().GetFolderAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMessageAsync(HSTRING id, void** result) noexcept final
+    int32_t WINRT_CALL GetMessageAsync(void* id, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage>>(this->shim().GetMessageAsync(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMailboxAsync(HSTRING accountName, HSTRING accountAddress, void** result) noexcept final
+    int32_t WINRT_CALL CreateMailboxAsync(void* accountName, void* accountAddress, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMailboxAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>), hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>>(this->shim().CreateMailboxAsync(*reinterpret_cast<hstring const*>(&accountName), *reinterpret_cast<hstring const*>(&accountAddress)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMailboxInAccountAsync(HSTRING accountName, HSTRING accountAddress, HSTRING userDataAccountId, void** result) noexcept final
+    int32_t WINRT_CALL CreateMailboxInAccountAsync(void* accountName, void* accountAddress, void* userDataAccountId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMailboxAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>), hstring const, hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox>>(this->shim().CreateMailboxAsync(*reinterpret_cast<hstring const*>(&accountName), *reinterpret_cast<hstring const*>(&accountAddress), *reinterpret_cast<hstring const*>(&userDataAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -8033,86 +7279,86 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailStoreNotificationTrigg
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Email {
 
 inline EmailAttachment::EmailAttachment() :
-    EmailAttachment(get_activation_factory<EmailAttachment>().ActivateInstance<EmailAttachment>())
+    EmailAttachment(impl::call_factory<EmailAttachment>([](auto&& f) { return f.template ActivateInstance<EmailAttachment>(); }))
 {}
 
 inline EmailAttachment::EmailAttachment(param::hstring const& fileName, Windows::Storage::Streams::IRandomAccessStreamReference const& data) :
-    EmailAttachment(get_activation_factory<EmailAttachment, Windows::ApplicationModel::Email::IEmailAttachmentFactory>().Create(fileName, data))
+    EmailAttachment(impl::call_factory<EmailAttachment, Windows::ApplicationModel::Email::IEmailAttachmentFactory>([&](auto&& f) { return f.Create(fileName, data); }))
 {}
 
 inline EmailAttachment::EmailAttachment(param::hstring const& fileName, Windows::Storage::Streams::IRandomAccessStreamReference const& data, param::hstring const& mimeType) :
-    EmailAttachment(get_activation_factory<EmailAttachment, Windows::ApplicationModel::Email::IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
+    EmailAttachment(impl::call_factory<EmailAttachment, Windows::ApplicationModel::Email::IEmailAttachmentFactory2>([&](auto&& f) { return f.Create(fileName, data, mimeType); }))
 {}
 
 inline EmailIrmInfo::EmailIrmInfo() :
-    EmailIrmInfo(get_activation_factory<EmailIrmInfo>().ActivateInstance<EmailIrmInfo>())
+    EmailIrmInfo(impl::call_factory<EmailIrmInfo>([](auto&& f) { return f.template ActivateInstance<EmailIrmInfo>(); }))
 {}
 
 inline EmailIrmInfo::EmailIrmInfo(Windows::Foundation::DateTime const& expiration, Windows::ApplicationModel::Email::EmailIrmTemplate const& irmTemplate) :
-    EmailIrmInfo(get_activation_factory<EmailIrmInfo, Windows::ApplicationModel::Email::IEmailIrmInfoFactory>().Create(expiration, irmTemplate))
+    EmailIrmInfo(impl::call_factory<EmailIrmInfo, Windows::ApplicationModel::Email::IEmailIrmInfoFactory>([&](auto&& f) { return f.Create(expiration, irmTemplate); }))
 {}
 
 inline EmailIrmTemplate::EmailIrmTemplate() :
-    EmailIrmTemplate(get_activation_factory<EmailIrmTemplate>().ActivateInstance<EmailIrmTemplate>())
+    EmailIrmTemplate(impl::call_factory<EmailIrmTemplate>([](auto&& f) { return f.template ActivateInstance<EmailIrmTemplate>(); }))
 {}
 
 inline EmailIrmTemplate::EmailIrmTemplate(param::hstring const& id, param::hstring const& name, param::hstring const& description) :
-    EmailIrmTemplate(get_activation_factory<EmailIrmTemplate, Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>().Create(id, name, description))
+    EmailIrmTemplate(impl::call_factory<EmailIrmTemplate, Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>([&](auto&& f) { return f.Create(id, name, description); }))
 {}
 
 inline EmailMailboxAutoReplySettings::EmailMailboxAutoReplySettings() :
-    EmailMailboxAutoReplySettings(get_activation_factory<EmailMailboxAutoReplySettings>().ActivateInstance<EmailMailboxAutoReplySettings>())
+    EmailMailboxAutoReplySettings(impl::call_factory<EmailMailboxAutoReplySettings>([](auto&& f) { return f.template ActivateInstance<EmailMailboxAutoReplySettings>(); }))
 {}
 
 inline Windows::Foundation::IAsyncAction EmailManager::ShowComposeNewEmailAsync(Windows::ApplicationModel::Email::EmailMessage const& message)
 {
-    return get_activation_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics>().ShowComposeNewEmailAsync(message);
+    return impl::call_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics>([&](auto&& f) { return f.ShowComposeNewEmailAsync(message); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> EmailManager::RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType const& accessType)
 {
-    return get_activation_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics2>().RequestStoreAsync(accessType);
+    return impl::call_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics2>([&](auto&& f) { return f.RequestStoreAsync(accessType); });
 }
 
 inline Windows::ApplicationModel::Email::EmailManagerForUser EmailManager::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics3>().GetForUser(user);
+    return impl::call_factory<EmailManager, Windows::ApplicationModel::Email::IEmailManagerStatics3>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline EmailMeetingInfo::EmailMeetingInfo() :
-    EmailMeetingInfo(get_activation_factory<EmailMeetingInfo>().ActivateInstance<EmailMeetingInfo>())
+    EmailMeetingInfo(impl::call_factory<EmailMeetingInfo>([](auto&& f) { return f.template ActivateInstance<EmailMeetingInfo>(); }))
 {}
 
 inline EmailMessage::EmailMessage() :
-    EmailMessage(get_activation_factory<EmailMessage>().ActivateInstance<EmailMessage>())
+    EmailMessage(impl::call_factory<EmailMessage>([](auto&& f) { return f.template ActivateInstance<EmailMessage>(); }))
 {}
 
 inline EmailQueryOptions::EmailQueryOptions() :
-    EmailQueryOptions(get_activation_factory<EmailQueryOptions>().ActivateInstance<EmailQueryOptions>())
+    EmailQueryOptions(impl::call_factory<EmailQueryOptions>([](auto&& f) { return f.template ActivateInstance<EmailQueryOptions>(); }))
 {}
 
 inline EmailQueryOptions::EmailQueryOptions(param::hstring const& text) :
-    EmailQueryOptions(get_activation_factory<EmailQueryOptions, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>().CreateWithText(text))
+    EmailQueryOptions(impl::call_factory<EmailQueryOptions, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>([&](auto&& f) { return f.CreateWithText(text); }))
 {}
 
 inline EmailQueryOptions::EmailQueryOptions(param::hstring const& text, Windows::ApplicationModel::Email::EmailQuerySearchFields const& fields) :
-    EmailQueryOptions(get_activation_factory<EmailQueryOptions, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
+    EmailQueryOptions(impl::call_factory<EmailQueryOptions, Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>([&](auto&& f) { return f.CreateWithTextAndFields(text, fields); }))
 {}
 
 inline EmailRecipient::EmailRecipient() :
-    EmailRecipient(get_activation_factory<EmailRecipient>().ActivateInstance<EmailRecipient>())
+    EmailRecipient(impl::call_factory<EmailRecipient>([](auto&& f) { return f.template ActivateInstance<EmailRecipient>(); }))
 {}
 
 inline EmailRecipient::EmailRecipient(param::hstring const& address) :
-    EmailRecipient(get_activation_factory<EmailRecipient, Windows::ApplicationModel::Email::IEmailRecipientFactory>().Create(address))
+    EmailRecipient(impl::call_factory<EmailRecipient, Windows::ApplicationModel::Email::IEmailRecipientFactory>([&](auto&& f) { return f.Create(address); }))
 {}
 
 inline EmailRecipient::EmailRecipient(param::hstring const& address, param::hstring const& name) :
-    EmailRecipient(get_activation_factory<EmailRecipient, Windows::ApplicationModel::Email::IEmailRecipientFactory>().CreateWithName(address, name))
+    EmailRecipient(impl::call_factory<EmailRecipient, Windows::ApplicationModel::Email::IEmailRecipientFactory>([&](auto&& f) { return f.CreateWithName(address, name); }))
 {}
 
 inline EmailRecipientResolutionResult::EmailRecipientResolutionResult() :
-    EmailRecipientResolutionResult(get_activation_factory<EmailRecipientResolutionResult>().ActivateInstance<EmailRecipientResolutionResult>())
+    EmailRecipientResolutionResult(impl::call_factory<EmailRecipientResolutionResult>([](auto&& f) { return f.template ActivateInstance<EmailRecipientResolutionResult>(); }))
 {}
 
 }
@@ -8210,5 +7456,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Email::EmailStore> : wi
 template<> struct hash<winrt::Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -284,34 +284,34 @@ template <> struct name<Windows::Media::Capture::Frames::MediaFrameSourceGetProp
 template <> struct name<Windows::Media::Capture::Frames::MediaFrameSourceKind>{ static constexpr auto & value{ L"Windows.Media.Capture.Frames.MediaFrameSourceKind" }; };
 template <> struct name<Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus>{ static constexpr auto & value{ L"Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus" }; };
 template <> struct name<Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus>{ static constexpr auto & value{ L"Windows.Media.Capture.Frames.MultiSourceMediaFrameReaderStartStatus" }; };
-template <> struct guid<Windows::Media::Capture::Frames::IAudioMediaFrame>{ static constexpr GUID value{ 0xA3A9FEFF,0x8021,0x441B,{ 0x9A,0x46,0xE7,0xF0,0x13,0x7B,0x79,0x81 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IBufferMediaFrame>{ static constexpr GUID value{ 0xB5B153C7,0x9B84,0x4062,{ 0xB7,0x9C,0xA3,0x65,0xB2,0x59,0x68,0x54 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IDepthMediaFrame>{ static constexpr GUID value{ 0x47135E4F,0x8549,0x45C0,{ 0x92,0x5B,0x80,0xD3,0x5E,0xFD,0xB1,0x0A } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IDepthMediaFrame2>{ static constexpr GUID value{ 0x6CCA473D,0xC4A4,0x4176,{ 0xB0,0xCD,0x33,0xEA,0xE3,0xB3,0x5A,0xA3 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IDepthMediaFrameFormat>{ static constexpr GUID value{ 0xC312CF40,0xD729,0x453E,{ 0x87,0x80,0x2E,0x04,0xF1,0x40,0xD2,0x8E } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IInfraredMediaFrame>{ static constexpr GUID value{ 0x3FD13503,0x004B,0x4F0E,{ 0x91,0xAC,0x46,0x52,0x99,0xB4,0x16,0x58 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs>{ static constexpr GUID value{ 0x0B430ADD,0xA490,0x4435,{ 0xAD,0xA1,0x9A,0xFF,0xD5,0x52,0x39,0xF7 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameFormat>{ static constexpr GUID value{ 0x71902B4E,0xB279,0x4A97,{ 0xA9,0xDB,0xBD,0x5A,0x2F,0xB7,0x8F,0x39 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameFormat2>{ static constexpr GUID value{ 0x63856340,0x5E87,0x4C10,{ 0x86,0xD1,0x6D,0xF0,0x97,0xA6,0xC6,0xA8 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameReader>{ static constexpr GUID value{ 0xE4C94395,0x2028,0x48ED,{ 0x90,0xB0,0xD1,0xC1,0xB1,0x62,0xE2,0x4C } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameReader2>{ static constexpr GUID value{ 0x871127B3,0x8531,0x4050,{ 0x87,0xCC,0xA1,0x37,0x33,0xCF,0x3E,0x9B } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameReference>{ static constexpr GUID value{ 0xF6B88641,0xF0DC,0x4044,{ 0x8D,0xC9,0x96,0x1C,0xED,0xD0,0x5B,0xAD } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameReference2>{ static constexpr GUID value{ 0xDDBC3ECC,0xD5B2,0x49EF,{ 0x83,0x6A,0x94,0x7D,0x98,0x9B,0x80,0xC1 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSource>{ static constexpr GUID value{ 0xD6782953,0x90DB,0x46A8,{ 0x8A,0xDD,0x2A,0xA8,0x84,0xA8,0xD2,0x53 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceController>{ static constexpr GUID value{ 0x6D076635,0x316D,0x4B8F,{ 0xB7,0xB6,0xEE,0xB0,0x4A,0x8C,0x65,0x25 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceController2>{ static constexpr GUID value{ 0xEFC49FD4,0xFCF2,0x4A03,{ 0xB4,0xE4,0xAC,0x96,0x28,0x73,0x9B,0xEE } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceController3>{ static constexpr GUID value{ 0x1F0CF815,0x2464,0x4651,{ 0xB1,0xE8,0x4A,0x82,0xDB,0xDB,0x54,0xDE } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>{ static constexpr GUID value{ 0x088616C2,0x3A64,0x4BD5,{ 0xBD,0x2B,0xE7,0xC8,0x98,0xD2,0xF3,0x7A } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceGroup>{ static constexpr GUID value{ 0x7F605B87,0x4832,0x4B5F,{ 0xAE,0x3D,0x41,0x2F,0xAA,0xB3,0x7D,0x34 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics>{ static constexpr GUID value{ 0x1C48BFC5,0x436F,0x4508,{ 0x94,0xCF,0xD5,0xD8,0xB7,0x32,0x64,0x45 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceInfo>{ static constexpr GUID value{ 0x87BDC9CD,0x4601,0x408F,{ 0x91,0xCF,0x03,0x83,0x18,0xCD,0x0A,0xF3 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMediaFrameSourceInfo2>{ static constexpr GUID value{ 0x195A7855,0x6457,0x42C6,{ 0xA7,0x69,0x19,0xB6,0x5B,0xD3,0x2E,0x6E } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs>{ static constexpr GUID value{ 0x63115E01,0xCF51,0x48FD,{ 0xAA,0xB0,0x6D,0x69,0x3E,0xB4,0x81,0x27 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>{ static constexpr GUID value{ 0x8D144402,0xF763,0x488D,{ 0x98,0xF2,0xB4,0x37,0xBC,0xF0,0x75,0xE7 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader2>{ static constexpr GUID value{ 0xEF5C8ABD,0xFC5C,0x4C6B,{ 0x9D,0x81,0x3C,0xB9,0xCC,0x63,0x7C,0x26 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference>{ static constexpr GUID value{ 0x21964B1A,0x7FE2,0x44D6,{ 0x92,0xE5,0x29,0x8E,0x6D,0x28,0x10,0xE9 } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IVideoMediaFrame>{ static constexpr GUID value{ 0x00DD4CCB,0x32BD,0x4FE1,{ 0xA0,0x13,0x7C,0xC1,0x3C,0xF5,0xDB,0xCF } }; };
-template <> struct guid<Windows::Media::Capture::Frames::IVideoMediaFrameFormat>{ static constexpr GUID value{ 0x46027FC0,0xD71B,0x45C7,{ 0x8F,0x14,0x6D,0x9A,0x0A,0xE6,0x04,0xE4 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IAudioMediaFrame>{ static constexpr guid value{ 0xA3A9FEFF,0x8021,0x441B,{ 0x9A,0x46,0xE7,0xF0,0x13,0x7B,0x79,0x81 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IBufferMediaFrame>{ static constexpr guid value{ 0xB5B153C7,0x9B84,0x4062,{ 0xB7,0x9C,0xA3,0x65,0xB2,0x59,0x68,0x54 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IDepthMediaFrame>{ static constexpr guid value{ 0x47135E4F,0x8549,0x45C0,{ 0x92,0x5B,0x80,0xD3,0x5E,0xFD,0xB1,0x0A } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IDepthMediaFrame2>{ static constexpr guid value{ 0x6CCA473D,0xC4A4,0x4176,{ 0xB0,0xCD,0x33,0xEA,0xE3,0xB3,0x5A,0xA3 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IDepthMediaFrameFormat>{ static constexpr guid value{ 0xC312CF40,0xD729,0x453E,{ 0x87,0x80,0x2E,0x04,0xF1,0x40,0xD2,0x8E } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IInfraredMediaFrame>{ static constexpr guid value{ 0x3FD13503,0x004B,0x4F0E,{ 0x91,0xAC,0x46,0x52,0x99,0xB4,0x16,0x58 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs>{ static constexpr guid value{ 0x0B430ADD,0xA490,0x4435,{ 0xAD,0xA1,0x9A,0xFF,0xD5,0x52,0x39,0xF7 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameFormat>{ static constexpr guid value{ 0x71902B4E,0xB279,0x4A97,{ 0xA9,0xDB,0xBD,0x5A,0x2F,0xB7,0x8F,0x39 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameFormat2>{ static constexpr guid value{ 0x63856340,0x5E87,0x4C10,{ 0x86,0xD1,0x6D,0xF0,0x97,0xA6,0xC6,0xA8 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameReader>{ static constexpr guid value{ 0xE4C94395,0x2028,0x48ED,{ 0x90,0xB0,0xD1,0xC1,0xB1,0x62,0xE2,0x4C } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameReader2>{ static constexpr guid value{ 0x871127B3,0x8531,0x4050,{ 0x87,0xCC,0xA1,0x37,0x33,0xCF,0x3E,0x9B } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameReference>{ static constexpr guid value{ 0xF6B88641,0xF0DC,0x4044,{ 0x8D,0xC9,0x96,0x1C,0xED,0xD0,0x5B,0xAD } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameReference2>{ static constexpr guid value{ 0xDDBC3ECC,0xD5B2,0x49EF,{ 0x83,0x6A,0x94,0x7D,0x98,0x9B,0x80,0xC1 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSource>{ static constexpr guid value{ 0xD6782953,0x90DB,0x46A8,{ 0x8A,0xDD,0x2A,0xA8,0x84,0xA8,0xD2,0x53 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceController>{ static constexpr guid value{ 0x6D076635,0x316D,0x4B8F,{ 0xB7,0xB6,0xEE,0xB0,0x4A,0x8C,0x65,0x25 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceController2>{ static constexpr guid value{ 0xEFC49FD4,0xFCF2,0x4A03,{ 0xB4,0xE4,0xAC,0x96,0x28,0x73,0x9B,0xEE } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceController3>{ static constexpr guid value{ 0x1F0CF815,0x2464,0x4651,{ 0xB1,0xE8,0x4A,0x82,0xDB,0xDB,0x54,0xDE } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>{ static constexpr guid value{ 0x088616C2,0x3A64,0x4BD5,{ 0xBD,0x2B,0xE7,0xC8,0x98,0xD2,0xF3,0x7A } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceGroup>{ static constexpr guid value{ 0x7F605B87,0x4832,0x4B5F,{ 0xAE,0x3D,0x41,0x2F,0xAA,0xB3,0x7D,0x34 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics>{ static constexpr guid value{ 0x1C48BFC5,0x436F,0x4508,{ 0x94,0xCF,0xD5,0xD8,0xB7,0x32,0x64,0x45 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceInfo>{ static constexpr guid value{ 0x87BDC9CD,0x4601,0x408F,{ 0x91,0xCF,0x03,0x83,0x18,0xCD,0x0A,0xF3 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMediaFrameSourceInfo2>{ static constexpr guid value{ 0x195A7855,0x6457,0x42C6,{ 0xA7,0x69,0x19,0xB6,0x5B,0xD3,0x2E,0x6E } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs>{ static constexpr guid value{ 0x63115E01,0xCF51,0x48FD,{ 0xAA,0xB0,0x6D,0x69,0x3E,0xB4,0x81,0x27 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>{ static constexpr guid value{ 0x8D144402,0xF763,0x488D,{ 0x98,0xF2,0xB4,0x37,0xBC,0xF0,0x75,0xE7 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader2>{ static constexpr guid value{ 0xEF5C8ABD,0xFC5C,0x4C6B,{ 0x9D,0x81,0x3C,0xB9,0xCC,0x63,0x7C,0x26 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference>{ static constexpr guid value{ 0x21964B1A,0x7FE2,0x44D6,{ 0x92,0xE5,0x29,0x8E,0x6D,0x28,0x10,0xE9 } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IVideoMediaFrame>{ static constexpr guid value{ 0x00DD4CCB,0x32BD,0x4FE1,{ 0xA0,0x13,0x7C,0xC1,0x3C,0xF5,0xDB,0xCF } }; };
+template <> struct guid_storage<Windows::Media::Capture::Frames::IVideoMediaFrameFormat>{ static constexpr guid value{ 0x46027FC0,0xD71B,0x45C7,{ 0x8F,0x14,0x6D,0x9A,0x0A,0xE6,0x04,0xE4 } }; };
 template <> struct default_interface<Windows::Media::Capture::Frames::AudioMediaFrame>{ using type = Windows::Media::Capture::Frames::IAudioMediaFrame; };
 template <> struct default_interface<Windows::Media::Capture::Frames::BufferMediaFrame>{ using type = Windows::Media::Capture::Frames::IBufferMediaFrame; };
 template <> struct default_interface<Windows::Media::Capture::Frames::DepthMediaFrame>{ using type = Windows::Media::Capture::Frames::IDepthMediaFrame; };
@@ -331,6 +331,207 @@ template <> struct default_interface<Windows::Media::Capture::Frames::MultiSourc
 template <> struct default_interface<Windows::Media::Capture::Frames::MultiSourceMediaFrameReference>{ using type = Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference; };
 template <> struct default_interface<Windows::Media::Capture::Frames::VideoMediaFrame>{ using type = Windows::Media::Capture::Frames::IVideoMediaFrame; };
 template <> struct default_interface<Windows::Media::Capture::Frames::VideoMediaFrameFormat>{ using type = Windows::Media::Capture::Frames::IVideoMediaFrameFormat; };
+
+template <> struct abi<Windows::Media::Capture::Frames::IAudioMediaFrame>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameReference(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AudioEncodingProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAudioFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IBufferMediaFrame>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameReference(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Buffer(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrame>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameReference(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DepthFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateCoordinateMapper(void* cameraIntrinsics, void* coordinateSystem, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrame2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxReliableDepth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinReliableDepth(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrameFormat>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_VideoFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DepthScaleInMeters(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IInfraredMediaFrame>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameReference(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsIlluminated(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameFormat>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MajorType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subtype(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrameRate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoFormat(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameFormat2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AudioEncodingProperties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_FrameArrived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_FrameArrived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL TryAcquireLatestFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAsync(void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReader2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourceKind(Windows::Media::Capture::Frames::MediaFrameSourceKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Format(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemRelativeTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BufferMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReference2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AudioMediaFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Info(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Controller(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedFormats(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetFormatAsync(void* format, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_FormatChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_FormatChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetCameraIntrinsics(void* format, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPropertyAsync(void* propertyId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyAsync(void* propertyId, void* propertyValue, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoDeviceController(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, void* maxPropertyValueSize, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, uint32_t __propertyValueSize, uint8_t* propertyValue, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AudioDeviceController(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceInfos(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAllAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* id, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaStreamType(Windows::Media::Capture::MediaStreamType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceKind(Windows::Media::Capture::Frames::MediaFrameSourceKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceGroup(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceInfo2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ProfileId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoProfileMediaDescription(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_FrameArrived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_FrameArrived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL TryAcquireLatestFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAsync(void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL put_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetFrameReferenceBySourceId(void* sourceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IVideoMediaFrame>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameReference(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SoftwareBitmap(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Direct3DSurface(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CameraIntrinsics(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InfraredMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DepthMediaFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVideoFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Capture::Frames::IVideoMediaFrameFormat>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MediaFrameFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DepthFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(uint32_t* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_Capture_Frames_IAudioMediaFrame
@@ -396,7 +597,7 @@ struct consume_Windows_Media_Capture_Frames_IMediaFrameFormat
     hstring MajorType() const;
     hstring Subtype() const;
     Windows::Media::MediaProperties::MediaRatio FrameRate() const;
-    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Foundation::IInspectable> Properties() const;
     Windows::Media::Capture::Frames::VideoMediaFrameFormat VideoFormat() const;
 };
 template <> struct consume<Windows::Media::Capture::Frames::IMediaFrameFormat> { template <typename D> using type = consume_Windows_Media_Capture_Frames_IMediaFrameFormat<D>; };
@@ -411,10 +612,10 @@ template <> struct consume<Windows::Media::Capture::Frames::IMediaFrameFormat2> 
 template <typename D>
 struct consume_Windows_Media_Capture_Frames_IMediaFrameReader
 {
-    event_token FrameArrived(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> const& handler) const;
-    using FrameArrived_revoker = event_revoker<Windows::Media::Capture::Frames::IMediaFrameReader>;
+    winrt::event_token FrameArrived(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> const& handler) const;
+    using FrameArrived_revoker = impl::event_revoker<Windows::Media::Capture::Frames::IMediaFrameReader, &impl::abi_t<Windows::Media::Capture::Frames::IMediaFrameReader>::remove_FrameArrived>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> const& handler) const;
-    void FrameArrived(event_token const& token) const;
+    void FrameArrived(winrt::event_token const& token) const noexcept;
     Windows::Media::Capture::Frames::MediaFrameReference TryAcquireLatestFrame() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> StartAsync() const;
     Windows::Foundation::IAsyncAction StopAsync() const;
@@ -436,7 +637,7 @@ struct consume_Windows_Media_Capture_Frames_IMediaFrameReference
     Windows::Media::Capture::Frames::MediaFrameFormat Format() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SystemRelativeTime() const;
     Windows::Foundation::TimeSpan Duration() const;
-    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Foundation::IInspectable> Properties() const;
     Windows::Media::Capture::Frames::BufferMediaFrame BufferMediaFrame() const;
     Windows::Media::Capture::Frames::VideoMediaFrame VideoMediaFrame() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
@@ -458,10 +659,10 @@ struct consume_Windows_Media_Capture_Frames_IMediaFrameSource
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameFormat> SupportedFormats() const;
     Windows::Media::Capture::Frames::MediaFrameFormat CurrentFormat() const;
     Windows::Foundation::IAsyncAction SetFormatAsync(Windows::Media::Capture::Frames::MediaFrameFormat const& format) const;
-    event_token FormatChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> const& handler) const;
-    using FormatChanged_revoker = event_revoker<Windows::Media::Capture::Frames::IMediaFrameSource>;
+    winrt::event_token FormatChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> const& handler) const;
+    using FormatChanged_revoker = impl::event_revoker<Windows::Media::Capture::Frames::IMediaFrameSource, &impl::abi_t<Windows::Media::Capture::Frames::IMediaFrameSource>::remove_FormatChanged>;
     FormatChanged_revoker FormatChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::Foundation::IInspectable> const& handler) const;
-    void FormatChanged(event_token const& token) const;
+    void FormatChanged(winrt::event_token const& token) const noexcept;
     Windows::Media::Devices::Core::CameraIntrinsics TryGetCameraIntrinsics(Windows::Media::Capture::Frames::MediaFrameFormat const& format) const;
 };
 template <> struct consume<Windows::Media::Capture::Frames::IMediaFrameSource> { template <typename D> using type = consume_Windows_Media_Capture_Frames_IMediaFrameSource<D>; };
@@ -524,7 +725,7 @@ struct consume_Windows_Media_Capture_Frames_IMediaFrameSourceInfo
     Windows::Media::Capture::Frames::MediaFrameSourceKind SourceKind() const;
     Windows::Media::Capture::Frames::MediaFrameSourceGroup SourceGroup() const;
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
-    Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> Properties() const;
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::Foundation::IInspectable> Properties() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
 };
 template <> struct consume<Windows::Media::Capture::Frames::IMediaFrameSourceInfo> { template <typename D> using type = consume_Windows_Media_Capture_Frames_IMediaFrameSourceInfo<D>; };
@@ -546,10 +747,10 @@ template <> struct consume<Windows::Media::Capture::Frames::IMultiSourceMediaFra
 template <typename D>
 struct consume_Windows_Media_Capture_Frames_IMultiSourceMediaFrameReader
 {
-    event_token FrameArrived(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> const& handler) const;
-    using FrameArrived_revoker = event_revoker<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>;
+    winrt::event_token FrameArrived(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> const& handler) const;
+    using FrameArrived_revoker = impl::event_revoker<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader, &impl::abi_t<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>::remove_FrameArrived>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> const& handler) const;
-    void FrameArrived(event_token const& token) const;
+    void FrameArrived(winrt::event_token const& token) const noexcept;
     Windows::Media::Capture::Frames::MultiSourceMediaFrameReference TryAcquireLatestFrame() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> StartAsync() const;
     Windows::Foundation::IAsyncAction StopAsync() const;
@@ -594,206 +795,5 @@ struct consume_Windows_Media_Capture_Frames_IVideoMediaFrameFormat
     uint32_t Height() const;
 };
 template <> struct consume<Windows::Media::Capture::Frames::IVideoMediaFrameFormat> { template <typename D> using type = consume_Windows_Media_Capture_Frames_IVideoMediaFrameFormat<D>; };
-
-template <> struct abi<Windows::Media::Capture::Frames::IAudioMediaFrame>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameReference(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AudioEncodingProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAudioFrame(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IBufferMediaFrame>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameReference(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Buffer(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrame>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameReference(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DepthFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateCoordinateMapper(void* cameraIntrinsics, void* coordinateSystem, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrame2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxReliableDepth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinReliableDepth(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IDepthMediaFrameFormat>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_VideoFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DepthScaleInMeters(double* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IInfraredMediaFrame>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameReference(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsIlluminated(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameFormat>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MajorType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subtype(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrameRate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoFormat(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameFormat2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AudioEncodingProperties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_FrameArrived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_FrameArrived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall TryAcquireLatestFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall StopAsync(void** action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReader2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourceKind(Windows::Media::Capture::Frames::MediaFrameSourceKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Format(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemRelativeTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BufferMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoordinateSystem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameReference2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AudioMediaFrame(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Info(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Controller(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedFormats(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetFormatAsync(void* format, void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_FormatChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_FormatChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall TryGetCameraIntrinsics(void* format, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPropertyAsync(HSTRING propertyId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyAsync(HSTRING propertyId, void* propertyValue, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoDeviceController(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, void* maxPropertyValueSize, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t* extendedPropertyId, uint32_t __propertyValueSize, uint8_t* propertyValue, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceController3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AudioDeviceController(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceInfos(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAllAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING id, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaStreamType(Windows::Media::Capture::MediaStreamType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceKind(Windows::Media::Capture::Frames::MediaFrameSourceKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceGroup(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoordinateSystem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMediaFrameSourceInfo2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ProfileId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoProfileMediaDescription(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_FrameArrived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_FrameArrived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall TryAcquireLatestFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall StopAsync(void** action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall put_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcquisitionMode(Windows::Media::Capture::Frames::MediaFrameReaderAcquisitionMode* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetFrameReferenceBySourceId(HSTRING sourceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IVideoMediaFrame>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameReference(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SoftwareBitmap(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Direct3DSurface(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CameraIntrinsics(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_InfraredMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DepthMediaFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetVideoFrame(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Capture::Frames::IVideoMediaFrameFormat>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MediaFrameFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DepthFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(uint32_t* value) noexcept = 0;
-};};
 
 }

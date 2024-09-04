@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Management.2.h"
@@ -99,9 +99,9 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Man
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_Management_IMdmSession<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_Management_IMdmSession<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::Management::IMdmSession)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -175,374 +175,324 @@ template <typename D> Windows::Management::MdmSession consume_Windows_Management
 template <typename D>
 struct produce<D, Windows::Management::IMdmAlert> : produce_base<D, Windows::Management::IMdmAlert>
 {
-    HRESULT __stdcall get_Data(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Data(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Data());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Data(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Data(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Data, WINRT_WRAP(void), hstring const&);
             this->shim().Data(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Format(Windows::Management::MdmAlertDataType* value) noexcept final
+    int32_t WINRT_CALL get_Format(Windows::Management::MdmAlertDataType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(Windows::Management::MdmAlertDataType));
             *value = detach_from<Windows::Management::MdmAlertDataType>(this->shim().Format());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Format(Windows::Management::MdmAlertDataType value) noexcept final
+    int32_t WINRT_CALL put_Format(Windows::Management::MdmAlertDataType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Format, WINRT_WRAP(void), Windows::Management::MdmAlertDataType const&);
             this->shim().Format(*reinterpret_cast<Windows::Management::MdmAlertDataType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mark(Windows::Management::MdmAlertMark* value) noexcept final
+    int32_t WINRT_CALL get_Mark(Windows::Management::MdmAlertMark* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mark, WINRT_WRAP(Windows::Management::MdmAlertMark));
             *value = detach_from<Windows::Management::MdmAlertMark>(this->shim().Mark());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mark(Windows::Management::MdmAlertMark value) noexcept final
+    int32_t WINRT_CALL put_Mark(Windows::Management::MdmAlertMark value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mark, WINRT_WRAP(void), Windows::Management::MdmAlertMark const&);
             this->shim().Mark(*reinterpret_cast<Windows::Management::MdmAlertMark const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Source(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Source(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), hstring const&);
             this->shim().Source(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Status(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Target(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Target(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Target, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Target());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Target(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Target(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Target, WINRT_WRAP(void), hstring const&);
             this->shim().Target(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Type(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Type(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), hstring const&);
             this->shim().Type(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::IMdmSession> : produce_base<D, Windows::Management::IMdmSession>
 {
-    HRESULT __stdcall get_Alerts(void** value) noexcept final
+    int32_t WINRT_CALL get_Alerts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Alerts, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Management::MdmAlert>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Management::MdmAlert>>(this->shim().Alerts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(Windows::Management::MdmSessionState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::Management::MdmSessionState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Management::MdmSessionState));
             *value = detach_from<Windows::Management::MdmSessionState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AttachAsync(void** action) noexcept final
+    int32_t WINRT_CALL AttachAsync(void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttachAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().AttachAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Delete() noexcept final
+    int32_t WINRT_CALL Delete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delete, WINRT_WRAP(void));
             this->shim().Delete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAsync(void** action) noexcept final
+    int32_t WINRT_CALL StartAsync(void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().StartAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartWithAlertsAsync(void* alerts, void** action) noexcept final
+    int32_t WINRT_CALL StartWithAlertsAsync(void* alerts, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Foundation::Collections::IIterable<Windows::Management::MdmAlert> const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().StartAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Management::MdmAlert> const*>(&alerts)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::IMdmSessionManagerStatics> : produce_base<D, Windows::Management::IMdmSessionManagerStatics>
 {
-    HRESULT __stdcall get_SessionIds(void** value) noexcept final
+    int32_t WINRT_CALL get_SessionIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SessionIds, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().SessionIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateSession(void** result) noexcept final
+    int32_t WINRT_CALL TryCreateSession(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateSession, WINRT_WRAP(Windows::Management::MdmSession));
             *result = detach_from<Windows::Management::MdmSession>(this->shim().TryCreateSession());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteSessionById(HSTRING sessionId) noexcept final
+    int32_t WINRT_CALL DeleteSessionById(void* sessionId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteSessionById, WINRT_WRAP(void), hstring const&);
             this->shim().DeleteSessionById(*reinterpret_cast<hstring const*>(&sessionId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSessionById(HSTRING sessionId, void** result) noexcept final
+    int32_t WINRT_CALL GetSessionById(void* sessionId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSessionById, WINRT_WRAP(Windows::Management::MdmSession), hstring const&);
             *result = detach_from<Windows::Management::MdmSession>(this->shim().GetSessionById(*reinterpret_cast<hstring const*>(&sessionId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -551,27 +501,27 @@ struct produce<D, Windows::Management::IMdmSessionManagerStatics> : produce_base
 WINRT_EXPORT namespace winrt::Windows::Management {
 
 inline MdmAlert::MdmAlert() :
-    MdmAlert(get_activation_factory<MdmAlert>().ActivateInstance<MdmAlert>())
+    MdmAlert(impl::call_factory<MdmAlert>([](auto&& f) { return f.template ActivateInstance<MdmAlert>(); }))
 {}
 
 inline Windows::Foundation::Collections::IVectorView<hstring> MdmSessionManager::SessionIds()
 {
-    return get_activation_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>().SessionIds();
+    return impl::call_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>([&](auto&& f) { return f.SessionIds(); });
 }
 
 inline Windows::Management::MdmSession MdmSessionManager::TryCreateSession()
 {
-    return get_activation_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>().TryCreateSession();
+    return impl::call_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>([&](auto&& f) { return f.TryCreateSession(); });
 }
 
 inline void MdmSessionManager::DeleteSessionById(param::hstring const& sessionId)
 {
-    get_activation_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>().DeleteSessionById(sessionId);
+    impl::call_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>([&](auto&& f) { return f.DeleteSessionById(sessionId); });
 }
 
 inline Windows::Management::MdmSession MdmSessionManager::GetSessionById(param::hstring const& sessionId)
 {
-    return get_activation_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>().GetSessionById(sessionId);
+    return impl::call_factory<MdmSessionManager, Windows::Management::IMdmSessionManagerStatics>([&](auto&& f) { return f.GetSessionById(sessionId); });
 }
 
 }
@@ -586,5 +536,3 @@ template<> struct hash<winrt::Windows::Management::MdmSession> : winrt::impl::ha
 template<> struct hash<winrt::Windows::Management::MdmSessionManager> : winrt::impl::hash_base<winrt::Windows::Management::MdmSessionManager> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -46,6 +46,41 @@ template <typename D> Windows::System::UserProfile::AdvertisingManagerForUser co
     Windows::System::UserProfile::AdvertisingManagerForUser value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAdvertisingManagerStatics2)->GetForUser(get_abi(user), put_abi(value)));
     return value;
+}
+
+template <typename D> bool consume_Windows_System_UserProfile_IAssignedAccessSettings<D>::IsEnabled() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAssignedAccessSettings)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_System_UserProfile_IAssignedAccessSettings<D>::IsSingleAppKioskMode() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAssignedAccessSettings)->get_IsSingleAppKioskMode(&value));
+    return value;
+}
+
+template <typename D> Windows::System::User consume_Windows_System_UserProfile_IAssignedAccessSettings<D>::User() const
+{
+    Windows::System::User value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAssignedAccessSettings)->get_User(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::System::UserProfile::AssignedAccessSettings consume_Windows_System_UserProfile_IAssignedAccessSettingsStatics<D>::GetDefault() const
+{
+    Windows::System::UserProfile::AssignedAccessSettings result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAssignedAccessSettingsStatics)->GetDefault(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::System::UserProfile::AssignedAccessSettings consume_Windows_System_UserProfile_IAssignedAccessSettingsStatics<D>::GetForUser(Windows::System::User const& user) const
+{
+    Windows::System::UserProfile::AssignedAccessSettings result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IAssignedAccessSettingsStatics)->GetForUser(get_abi(user), put_abi(result)));
+    return result;
 }
 
 template <typename D> bool consume_Windows_System_UserProfile_IDiagnosticsSettings<D>::CanUseDiagnosticsToTailorExperiences() const
@@ -286,21 +321,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::User
     return operation;
 }
 
-template <typename D> event_token consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
+template <typename D> winrt::event_token consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::System::UserProfile::IUserInformationStatics)->add_AccountPictureChanged(get_abi(changeHandler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::System::UserProfile::IUserInformationStatics> consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
+template <typename D> typename consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged_revoker consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler) const
 {
-    return impl::make_event_revoker<D, Windows::System::UserProfile::IUserInformationStatics>(this, &abi_t<Windows::System::UserProfile::IUserInformationStatics>::remove_AccountPictureChanged, AccountPictureChanged(changeHandler));
+    return impl::make_event_revoker<D, AccountPictureChanged_revoker>(this, AccountPictureChanged(changeHandler));
 }
 
-template <typename D> void consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(event_token const& token) const
+template <typename D> void consume_Windows_System_UserProfile_IUserInformationStatics<D>::AccountPictureChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::System::UserProfile::IUserInformationStatics)->remove_AccountPictureChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::UserProfile::IUserInformationStatics)->remove_AccountPictureChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> consume_Windows_System_UserProfile_IUserInformationStatics<D>::GetDisplayNameAsync() const
@@ -376,139 +411,194 @@ template <typename D> bool consume_Windows_System_UserProfile_IUserProfilePerson
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IAdvertisingManagerForUser> : produce_base<D, Windows::System::UserProfile::IAdvertisingManagerForUser>
 {
-    HRESULT __stdcall get_AdvertisingId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AdvertisingId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisingId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AdvertisingId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics> : produce_base<D, Windows::System::UserProfile::IAdvertisingManagerStatics>
 {
-    HRESULT __stdcall get_AdvertisingId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AdvertisingId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisingId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AdvertisingId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics2> : produce_base<D, Windows::System::UserProfile::IAdvertisingManagerStatics2>
 {
-    HRESULT __stdcall GetForUser(void* user, void** value) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::System::UserProfile::AdvertisingManagerForUser), Windows::System::User const&);
             *value = detach_from<Windows::System::UserProfile::AdvertisingManagerForUser>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::UserProfile::IAssignedAccessSettings> : produce_base<D, Windows::System::UserProfile::IAssignedAccessSettings>
+{
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsEnabled());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_IsSingleAppKioskMode(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSingleAppKioskMode, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsSingleAppKioskMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_User(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
+            *value = detach_from<Windows::System::User>(this->shim().User());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::UserProfile::IAssignedAccessSettingsStatics> : produce_base<D, Windows::System::UserProfile::IAssignedAccessSettingsStatics>
+{
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::System::UserProfile::AssignedAccessSettings));
+            *result = detach_from<Windows::System::UserProfile::AssignedAccessSettings>(this->shim().GetDefault());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::System::UserProfile::AssignedAccessSettings), Windows::System::User const&);
+            *result = detach_from<Windows::System::UserProfile::AssignedAccessSettings>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IDiagnosticsSettings> : produce_base<D, Windows::System::UserProfile::IDiagnosticsSettings>
 {
-    HRESULT __stdcall get_CanUseDiagnosticsToTailorExperiences(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanUseDiagnosticsToTailorExperiences(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanUseDiagnosticsToTailorExperiences, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanUseDiagnosticsToTailorExperiences());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IDiagnosticsSettingsStatics> : produce_base<D, Windows::System::UserProfile::IDiagnosticsSettingsStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::System::UserProfile::DiagnosticsSettings));
             *value = detach_from<Windows::System::UserProfile::DiagnosticsSettings>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForUser(void* user, void** value) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::System::UserProfile::DiagnosticsSettings), Windows::System::User const&);
             *value = detach_from<Windows::System::UserProfile::DiagnosticsSettings>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -519,660 +609,572 @@ struct produce<D, Windows::System::UserProfile::IFirstSignInSettings> : produce_
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IFirstSignInSettingsStatics> : produce_base<D, Windows::System::UserProfile::IFirstSignInSettingsStatics>
 {
-    HRESULT __stdcall GetDefault(void** result) noexcept final
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::System::UserProfile::FirstSignInSettings));
             *result = detach_from<Windows::System::UserProfile::FirstSignInSettings>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesForUser> : produce_base<D, Windows::System::UserProfile::IGlobalizationPreferencesForUser>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Calendars(void** value) noexcept final
+    int32_t WINRT_CALL get_Calendars(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Calendars, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Calendars());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clocks(void** value) noexcept final
+    int32_t WINRT_CALL get_Clocks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clocks, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Clocks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Currencies(void** value) noexcept final
+    int32_t WINRT_CALL get_Currencies(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Currencies, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Currencies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HomeGeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HomeGeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HomeGeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HomeGeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WeekStartsOn(Windows::Globalization::DayOfWeek* value) noexcept final
+    int32_t WINRT_CALL get_WeekStartsOn(Windows::Globalization::DayOfWeek* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WeekStartsOn, WINRT_WRAP(Windows::Globalization::DayOfWeek));
             *value = detach_from<Windows::Globalization::DayOfWeek>(this->shim().WeekStartsOn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics> : produce_base<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics>
 {
-    HRESULT __stdcall get_Calendars(void** value) noexcept final
+    int32_t WINRT_CALL get_Calendars(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Calendars, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Calendars());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Clocks(void** value) noexcept final
+    int32_t WINRT_CALL get_Clocks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clocks, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Clocks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Currencies(void** value) noexcept final
+    int32_t WINRT_CALL get_Currencies(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Currencies, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Currencies());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HomeGeographicRegion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HomeGeographicRegion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HomeGeographicRegion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HomeGeographicRegion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WeekStartsOn(Windows::Globalization::DayOfWeek* value) noexcept final
+    int32_t WINRT_CALL get_WeekStartsOn(Windows::Globalization::DayOfWeek* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WeekStartsOn, WINRT_WRAP(Windows::Globalization::DayOfWeek));
             *value = detach_from<Windows::Globalization::DayOfWeek>(this->shim().WeekStartsOn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics2> : produce_base<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics2>
 {
-    HRESULT __stdcall TrySetHomeGeographicRegion(HSTRING region, bool* result) noexcept final
+    int32_t WINRT_CALL TrySetHomeGeographicRegion(void* region, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetHomeGeographicRegion, WINRT_WRAP(bool), hstring const&);
             *result = detach_from<bool>(this->shim().TrySetHomeGeographicRegion(*reinterpret_cast<hstring const*>(&region)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetLanguages(void* languageTags, bool* result) noexcept final
+    int32_t WINRT_CALL TrySetLanguages(void* languageTags, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetLanguages, WINRT_WRAP(bool), Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<bool>(this->shim().TrySetLanguages(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languageTags)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics3> : produce_base<D, Windows::System::UserProfile::IGlobalizationPreferencesStatics3>
 {
-    HRESULT __stdcall GetForUser(void* user, void** value) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::System::UserProfile::GlobalizationPreferencesForUser), Windows::System::User const&);
             *value = detach_from<Windows::System::UserProfile::GlobalizationPreferencesForUser>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::ILockScreenImageFeedStatics> : produce_base<D, Windows::System::UserProfile::ILockScreenImageFeedStatics>
 {
-    HRESULT __stdcall RequestSetImageFeedAsync(void* syndicationFeedUri, void** value) noexcept final
+    int32_t WINRT_CALL RequestSetImageFeedAsync(void* syndicationFeedUri, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestSetImageFeedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetImageFeedResult>), Windows::Foundation::Uri const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetImageFeedResult>>(this->shim().RequestSetImageFeedAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&syndicationFeedUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryRemoveImageFeed(bool* result) noexcept final
+    int32_t WINRT_CALL TryRemoveImageFeed(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryRemoveImageFeed, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().TryRemoveImageFeed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::ILockScreenStatics> : produce_base<D, Windows::System::UserProfile::ILockScreenStatics>
 {
-    HRESULT __stdcall get_OriginalImageFile(void** value) noexcept final
+    int32_t WINRT_CALL get_OriginalImageFile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OriginalImageFile, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().OriginalImageFile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetImageStream(void** value) noexcept final
+    int32_t WINRT_CALL GetImageStream(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetImageStream, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStream));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStream>(this->shim().GetImageStream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetImageFileAsync(void* value, void** Operation) noexcept final
+    int32_t WINRT_CALL SetImageFileAsync(void* value, void** Operation) noexcept final
     {
         try
         {
             *Operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetImageFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::IStorageFile const);
             *Operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetImageFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetImageStreamAsync(void* value, void** Operation) noexcept final
+    int32_t WINRT_CALL SetImageStreamAsync(void* value, void** Operation) noexcept final
     {
         try
         {
             *Operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetImageStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Storage::Streams::IRandomAccessStream const);
             *Operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetImageStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IUserInformationStatics> : produce_base<D, Windows::System::UserProfile::IUserInformationStatics>
 {
-    HRESULT __stdcall get_AccountPictureChangeEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_AccountPictureChangeEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountPictureChangeEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AccountPictureChangeEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NameAccessAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL get_NameAccessAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NameAccessAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().NameAccessAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAccountPicture(Windows::System::UserProfile::AccountPictureKind kind, void** storageFile) noexcept final
+    int32_t WINRT_CALL GetAccountPicture(Windows::System::UserProfile::AccountPictureKind kind, void** storageFile) noexcept final
     {
         try
         {
             *storageFile = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAccountPicture, WINRT_WRAP(Windows::Storage::IStorageFile), Windows::System::UserProfile::AccountPictureKind const&);
             *storageFile = detach_from<Windows::Storage::IStorageFile>(this->shim().GetAccountPicture(*reinterpret_cast<Windows::System::UserProfile::AccountPictureKind const*>(&kind)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAccountPictureAsync(void* image, void** operation) noexcept final
+    int32_t WINRT_CALL SetAccountPictureAsync(void* image, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAccountPictureAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>>(this->shim().SetAccountPictureAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&image)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAccountPicturesAsync(void* smallImage, void* largeImage, void* video, void** operation) noexcept final
+    int32_t WINRT_CALL SetAccountPicturesAsync(void* smallImage, void* largeImage, void* video, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAccountPicturesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>), Windows::Storage::IStorageFile const, Windows::Storage::IStorageFile const, Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>>(this->shim().SetAccountPicturesAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&smallImage), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&largeImage), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&video)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAccountPictureFromStreamAsync(void* image, void** operation) noexcept final
+    int32_t WINRT_CALL SetAccountPictureFromStreamAsync(void* image, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAccountPictureFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>), Windows::Storage::Streams::IRandomAccessStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>>(this->shim().SetAccountPictureFromStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&image)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetAccountPicturesFromStreamsAsync(void* smallImage, void* largeImage, void* video, void** operation) noexcept final
+    int32_t WINRT_CALL SetAccountPicturesFromStreamsAsync(void* smallImage, void* largeImage, void* video, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAccountPicturesFromStreamsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>), Windows::Storage::Streams::IRandomAccessStream const, Windows::Storage::Streams::IRandomAccessStream const, Windows::Storage::Streams::IRandomAccessStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult>>(this->shim().SetAccountPicturesFromStreamsAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&smallImage), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&largeImage), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&video)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AccountPictureChanged(void* changeHandler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_AccountPictureChanged(void* changeHandler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AccountPictureChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&changeHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccountPictureChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AccountPictureChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&changeHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AccountPictureChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_AccountPictureChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AccountPictureChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AccountPictureChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AccountPictureChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall GetDisplayNameAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDisplayNameAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDisplayNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetDisplayNameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFirstNameAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetFirstNameAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFirstNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetFirstNameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetLastNameAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetLastNameAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetLastNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetLastNameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPrincipalNameAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetPrincipalNameAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPrincipalNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetPrincipalNameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSessionInitiationProtocolUriAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetSessionInitiationProtocolUriAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSessionInitiationProtocolUriAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri>>(this->shim().GetSessionInitiationProtocolUriAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDomainNameAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDomainNameAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDomainNameAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().GetDomainNameAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSettings> : produce_base<D, Windows::System::UserProfile::IUserProfilePersonalizationSettings>
 {
-    HRESULT __stdcall TrySetLockScreenImageAsync(void* imageFile, void** operation) noexcept final
+    int32_t WINRT_CALL TrySetLockScreenImageAsync(void* imageFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetLockScreenImageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySetLockScreenImageAsync(*reinterpret_cast<Windows::Storage::StorageFile const*>(&imageFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetWallpaperImageAsync(void* imageFile, void** operation) noexcept final
+    int32_t WINRT_CALL TrySetWallpaperImageAsync(void* imageFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetWallpaperImageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySetWallpaperImageAsync(*reinterpret_cast<Windows::Storage::StorageFile const*>(&imageFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics> : produce_base<D, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>
 {
-    HRESULT __stdcall get_Current(void** value) noexcept final
+    int32_t WINRT_CALL get_Current(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Current, WINRT_WRAP(Windows::System::UserProfile::UserProfilePersonalizationSettings));
             *value = detach_from<Windows::System::UserProfile::UserProfilePersonalizationSettings>(this->shim().Current());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1182,193 +1184,203 @@ WINRT_EXPORT namespace winrt::Windows::System::UserProfile {
 
 inline hstring AdvertisingManager::AdvertisingId()
 {
-    return get_activation_factory<AdvertisingManager, Windows::System::UserProfile::IAdvertisingManagerStatics>().AdvertisingId();
+    return impl::call_factory<AdvertisingManager, Windows::System::UserProfile::IAdvertisingManagerStatics>([&](auto&& f) { return f.AdvertisingId(); });
 }
 
 inline Windows::System::UserProfile::AdvertisingManagerForUser AdvertisingManager::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<AdvertisingManager, Windows::System::UserProfile::IAdvertisingManagerStatics2>().GetForUser(user);
+    return impl::call_factory<AdvertisingManager, Windows::System::UserProfile::IAdvertisingManagerStatics2>([&](auto&& f) { return f.GetForUser(user); });
+}
+
+inline Windows::System::UserProfile::AssignedAccessSettings AssignedAccessSettings::GetDefault()
+{
+    return impl::call_factory<AssignedAccessSettings, Windows::System::UserProfile::IAssignedAccessSettingsStatics>([&](auto&& f) { return f.GetDefault(); });
+}
+
+inline Windows::System::UserProfile::AssignedAccessSettings AssignedAccessSettings::GetForUser(Windows::System::User const& user)
+{
+    return impl::call_factory<AssignedAccessSettings, Windows::System::UserProfile::IAssignedAccessSettingsStatics>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline Windows::System::UserProfile::DiagnosticsSettings DiagnosticsSettings::GetDefault()
 {
-    return get_activation_factory<DiagnosticsSettings, Windows::System::UserProfile::IDiagnosticsSettingsStatics>().GetDefault();
+    return impl::call_factory<DiagnosticsSettings, Windows::System::UserProfile::IDiagnosticsSettingsStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::System::UserProfile::DiagnosticsSettings DiagnosticsSettings::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<DiagnosticsSettings, Windows::System::UserProfile::IDiagnosticsSettingsStatics>().GetForUser(user);
+    return impl::call_factory<DiagnosticsSettings, Windows::System::UserProfile::IDiagnosticsSettingsStatics>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline Windows::System::UserProfile::FirstSignInSettings FirstSignInSettings::GetDefault()
 {
-    return get_activation_factory<FirstSignInSettings, Windows::System::UserProfile::IFirstSignInSettingsStatics>().GetDefault();
+    return impl::call_factory<FirstSignInSettings, Windows::System::UserProfile::IFirstSignInSettingsStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Calendars()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().Calendars();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.Calendars(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Clocks()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().Clocks();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.Clocks(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Currencies()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().Currencies();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.Currencies(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> GlobalizationPreferences::Languages()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().Languages();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.Languages(); });
 }
 
 inline hstring GlobalizationPreferences::HomeGeographicRegion()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().HomeGeographicRegion();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.HomeGeographicRegion(); });
 }
 
 inline Windows::Globalization::DayOfWeek GlobalizationPreferences::WeekStartsOn()
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>().WeekStartsOn();
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics>([&](auto&& f) { return f.WeekStartsOn(); });
 }
 
 inline bool GlobalizationPreferences::TrySetHomeGeographicRegion(param::hstring const& region)
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics2>().TrySetHomeGeographicRegion(region);
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics2>([&](auto&& f) { return f.TrySetHomeGeographicRegion(region); });
 }
 
 inline bool GlobalizationPreferences::TrySetLanguages(param::iterable<hstring> const& languageTags)
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics2>().TrySetLanguages(languageTags);
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics2>([&](auto&& f) { return f.TrySetLanguages(languageTags); });
 }
 
 inline Windows::System::UserProfile::GlobalizationPreferencesForUser GlobalizationPreferences::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics3>().GetForUser(user);
+    return impl::call_factory<GlobalizationPreferences, Windows::System::UserProfile::IGlobalizationPreferencesStatics3>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetImageFeedResult> LockScreen::RequestSetImageFeedAsync(Windows::Foundation::Uri const& syndicationFeedUri)
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenImageFeedStatics>().RequestSetImageFeedAsync(syndicationFeedUri);
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenImageFeedStatics>([&](auto&& f) { return f.RequestSetImageFeedAsync(syndicationFeedUri); });
 }
 
 inline bool LockScreen::TryRemoveImageFeed()
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenImageFeedStatics>().TryRemoveImageFeed();
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenImageFeedStatics>([&](auto&& f) { return f.TryRemoveImageFeed(); });
 }
 
 inline Windows::Foundation::Uri LockScreen::OriginalImageFile()
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>().OriginalImageFile();
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>([&](auto&& f) { return f.OriginalImageFile(); });
 }
 
 inline Windows::Storage::Streams::IRandomAccessStream LockScreen::GetImageStream()
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>().GetImageStream();
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>([&](auto&& f) { return f.GetImageStream(); });
 }
 
 inline Windows::Foundation::IAsyncAction LockScreen::SetImageFileAsync(Windows::Storage::IStorageFile const& value)
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>().SetImageFileAsync(value);
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>([&](auto&& f) { return f.SetImageFileAsync(value); });
 }
 
 inline Windows::Foundation::IAsyncAction LockScreen::SetImageStreamAsync(Windows::Storage::Streams::IRandomAccessStream const& value)
 {
-    return get_activation_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>().SetImageStreamAsync(value);
+    return impl::call_factory<LockScreen, Windows::System::UserProfile::ILockScreenStatics>([&](auto&& f) { return f.SetImageStreamAsync(value); });
 }
 
 inline bool UserInformation::AccountPictureChangeEnabled()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().AccountPictureChangeEnabled();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.AccountPictureChangeEnabled(); });
 }
 
 inline bool UserInformation::NameAccessAllowed()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().NameAccessAllowed();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.NameAccessAllowed(); });
 }
 
 inline Windows::Storage::IStorageFile UserInformation::GetAccountPicture(Windows::System::UserProfile::AccountPictureKind const& kind)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetAccountPicture(kind);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetAccountPicture(kind); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult> UserInformation::SetAccountPictureAsync(Windows::Storage::IStorageFile const& image)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().SetAccountPictureAsync(image);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.SetAccountPictureAsync(image); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult> UserInformation::SetAccountPicturesAsync(Windows::Storage::IStorageFile const& smallImage, Windows::Storage::IStorageFile const& largeImage, Windows::Storage::IStorageFile const& video)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().SetAccountPicturesAsync(smallImage, largeImage, video);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.SetAccountPicturesAsync(smallImage, largeImage, video); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult> UserInformation::SetAccountPictureFromStreamAsync(Windows::Storage::Streams::IRandomAccessStream const& image)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().SetAccountPictureFromStreamAsync(image);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.SetAccountPictureFromStreamAsync(image); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::System::UserProfile::SetAccountPictureResult> UserInformation::SetAccountPicturesFromStreamsAsync(Windows::Storage::Streams::IRandomAccessStream const& smallImage, Windows::Storage::Streams::IRandomAccessStream const& largeImage, Windows::Storage::Streams::IRandomAccessStream const& video)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().SetAccountPicturesFromStreamsAsync(smallImage, largeImage, video);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.SetAccountPicturesFromStreamsAsync(smallImage, largeImage, video); });
 }
 
-inline event_token UserInformation::AccountPictureChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
+inline winrt::event_token UserInformation::AccountPictureChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().AccountPictureChanged(changeHandler);
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.AccountPictureChanged(changeHandler); });
 }
 
-inline factory_event_revoker<Windows::System::UserProfile::IUserInformationStatics> UserInformation::AccountPictureChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
+inline UserInformation::AccountPictureChanged_revoker UserInformation::AccountPictureChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& changeHandler)
 {
-    auto factory = get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>();
-    return { factory, &impl::abi_t<Windows::System::UserProfile::IUserInformationStatics>::remove_AccountPictureChanged, factory.AccountPictureChanged(changeHandler) };
+    auto f = get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>();
+    return { f, f.AccountPictureChanged(changeHandler) };
 }
 
-inline void UserInformation::AccountPictureChanged(event_token const& token)
+inline void UserInformation::AccountPictureChanged(winrt::event_token const& token)
 {
-    get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().AccountPictureChanged(token);
+    impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.AccountPictureChanged(token); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserInformation::GetDisplayNameAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetDisplayNameAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetDisplayNameAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserInformation::GetFirstNameAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetFirstNameAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetFirstNameAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserInformation::GetLastNameAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetLastNameAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetLastNameAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserInformation::GetPrincipalNameAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetPrincipalNameAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetPrincipalNameAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> UserInformation::GetSessionInitiationProtocolUriAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetSessionInitiationProtocolUriAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetSessionInitiationProtocolUriAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserInformation::GetDomainNameAsync()
 {
-    return get_activation_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>().GetDomainNameAsync();
+    return impl::call_factory<UserInformation, Windows::System::UserProfile::IUserInformationStatics>([&](auto&& f) { return f.GetDomainNameAsync(); });
 }
 
 inline Windows::System::UserProfile::UserProfilePersonalizationSettings UserProfilePersonalizationSettings::Current()
 {
-    return get_activation_factory<UserProfilePersonalizationSettings, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>().Current();
+    return impl::call_factory<UserProfilePersonalizationSettings, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>([&](auto&& f) { return f.Current(); });
 }
 
 inline bool UserProfilePersonalizationSettings::IsSupported()
 {
-    return get_activation_factory<UserProfilePersonalizationSettings, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>().IsSupported();
+    return impl::call_factory<UserProfilePersonalizationSettings, Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 }
@@ -1378,6 +1390,8 @@ WINRT_EXPORT namespace std {
 template<> struct hash<winrt::Windows::System::UserProfile::IAdvertisingManagerForUser> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IAdvertisingManagerForUser> {};
 template<> struct hash<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics> {};
 template<> struct hash<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics2> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics2> {};
+template<> struct hash<winrt::Windows::System::UserProfile::IAssignedAccessSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IAssignedAccessSettings> {};
+template<> struct hash<winrt::Windows::System::UserProfile::IAssignedAccessSettingsStatics> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IAssignedAccessSettingsStatics> {};
 template<> struct hash<winrt::Windows::System::UserProfile::IDiagnosticsSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IDiagnosticsSettings> {};
 template<> struct hash<winrt::Windows::System::UserProfile::IDiagnosticsSettingsStatics> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IDiagnosticsSettingsStatics> {};
 template<> struct hash<winrt::Windows::System::UserProfile::IFirstSignInSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IFirstSignInSettings> {};
@@ -1393,6 +1407,7 @@ template<> struct hash<winrt::Windows::System::UserProfile::IUserProfilePersonal
 template<> struct hash<winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics> {};
 template<> struct hash<winrt::Windows::System::UserProfile::AdvertisingManager> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::AdvertisingManager> {};
 template<> struct hash<winrt::Windows::System::UserProfile::AdvertisingManagerForUser> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::AdvertisingManagerForUser> {};
+template<> struct hash<winrt::Windows::System::UserProfile::AssignedAccessSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::AssignedAccessSettings> {};
 template<> struct hash<winrt::Windows::System::UserProfile::DiagnosticsSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::DiagnosticsSettings> {};
 template<> struct hash<winrt::Windows::System::UserProfile::FirstSignInSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::FirstSignInSettings> {};
 template<> struct hash<winrt::Windows::System::UserProfile::GlobalizationPreferences> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::GlobalizationPreferences> {};
@@ -1402,5 +1417,3 @@ template<> struct hash<winrt::Windows::System::UserProfile::UserInformation> : w
 template<> struct hash<winrt::Windows::System::UserProfile::UserProfilePersonalizationSettings> : winrt::impl::hash_base<winrt::Windows::System::UserProfile::UserProfilePersonalizationSettings> {};
 
 }
-
-WINRT_WARNING_POP

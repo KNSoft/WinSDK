@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -72,21 +72,78 @@ template <> struct name<Windows::Devices::Input::TouchCapabilities>{ static cons
 template <> struct name<Windows::Devices::Input::PointerDeviceType>{ static constexpr auto & value{ L"Windows.Devices.Input.PointerDeviceType" }; };
 template <> struct name<Windows::Devices::Input::MouseDelta>{ static constexpr auto & value{ L"Windows.Devices.Input.MouseDelta" }; };
 template <> struct name<Windows::Devices::Input::PointerDeviceUsage>{ static constexpr auto & value{ L"Windows.Devices.Input.PointerDeviceUsage" }; };
-template <> struct guid<Windows::Devices::Input::IKeyboardCapabilities>{ static constexpr GUID value{ 0x3A3F9B56,0x6798,0x4BBC,{ 0x83,0x3E,0x0F,0x34,0xB1,0x7C,0x65,0xFF } }; };
-template <> struct guid<Windows::Devices::Input::IMouseCapabilities>{ static constexpr GUID value{ 0xBCA5E023,0x7DD9,0x4B6B,{ 0x9A,0x92,0x55,0xD4,0x3C,0xB3,0x8F,0x73 } }; };
-template <> struct guid<Windows::Devices::Input::IMouseDevice>{ static constexpr GUID value{ 0x88EDF458,0xF2C8,0x49F4,{ 0xBE,0x1F,0xC2,0x56,0xB3,0x88,0xBC,0x11 } }; };
-template <> struct guid<Windows::Devices::Input::IMouseDeviceStatics>{ static constexpr GUID value{ 0x484A9045,0x6D70,0x49DB,{ 0x8E,0x68,0x46,0xFF,0xBD,0x17,0xD3,0x8D } }; };
-template <> struct guid<Windows::Devices::Input::IMouseEventArgs>{ static constexpr GUID value{ 0xF625AA5D,0x2354,0x4CC7,{ 0x92,0x30,0x96,0x94,0x1C,0x96,0x9F,0xDE } }; };
-template <> struct guid<Windows::Devices::Input::IPointerDevice>{ static constexpr GUID value{ 0x93C9BAFC,0xEBCB,0x467E,{ 0x82,0xC6,0x27,0x6F,0xEA,0xE3,0x6B,0x5A } }; };
-template <> struct guid<Windows::Devices::Input::IPointerDevice2>{ static constexpr GUID value{ 0xF8A6D2A0,0xC484,0x489F,{ 0xAE,0x3E,0x30,0xD2,0xEE,0x1F,0xFD,0x3E } }; };
-template <> struct guid<Windows::Devices::Input::IPointerDeviceStatics>{ static constexpr GUID value{ 0xD8B89AA1,0xD1C6,0x416E,{ 0xBD,0x8D,0x57,0x90,0x91,0x4D,0xC5,0x63 } }; };
-template <> struct guid<Windows::Devices::Input::ITouchCapabilities>{ static constexpr GUID value{ 0x20DD55F9,0x13F1,0x46C8,{ 0x92,0x85,0x2C,0x05,0xFA,0x3E,0xDA,0x6F } }; };
+template <> struct guid_storage<Windows::Devices::Input::IKeyboardCapabilities>{ static constexpr guid value{ 0x3A3F9B56,0x6798,0x4BBC,{ 0x83,0x3E,0x0F,0x34,0xB1,0x7C,0x65,0xFF } }; };
+template <> struct guid_storage<Windows::Devices::Input::IMouseCapabilities>{ static constexpr guid value{ 0xBCA5E023,0x7DD9,0x4B6B,{ 0x9A,0x92,0x55,0xD4,0x3C,0xB3,0x8F,0x73 } }; };
+template <> struct guid_storage<Windows::Devices::Input::IMouseDevice>{ static constexpr guid value{ 0x88EDF458,0xF2C8,0x49F4,{ 0xBE,0x1F,0xC2,0x56,0xB3,0x88,0xBC,0x11 } }; };
+template <> struct guid_storage<Windows::Devices::Input::IMouseDeviceStatics>{ static constexpr guid value{ 0x484A9045,0x6D70,0x49DB,{ 0x8E,0x68,0x46,0xFF,0xBD,0x17,0xD3,0x8D } }; };
+template <> struct guid_storage<Windows::Devices::Input::IMouseEventArgs>{ static constexpr guid value{ 0xF625AA5D,0x2354,0x4CC7,{ 0x92,0x30,0x96,0x94,0x1C,0x96,0x9F,0xDE } }; };
+template <> struct guid_storage<Windows::Devices::Input::IPointerDevice>{ static constexpr guid value{ 0x93C9BAFC,0xEBCB,0x467E,{ 0x82,0xC6,0x27,0x6F,0xEA,0xE3,0x6B,0x5A } }; };
+template <> struct guid_storage<Windows::Devices::Input::IPointerDevice2>{ static constexpr guid value{ 0xF8A6D2A0,0xC484,0x489F,{ 0xAE,0x3E,0x30,0xD2,0xEE,0x1F,0xFD,0x3E } }; };
+template <> struct guid_storage<Windows::Devices::Input::IPointerDeviceStatics>{ static constexpr guid value{ 0xD8B89AA1,0xD1C6,0x416E,{ 0xBD,0x8D,0x57,0x90,0x91,0x4D,0xC5,0x63 } }; };
+template <> struct guid_storage<Windows::Devices::Input::ITouchCapabilities>{ static constexpr guid value{ 0x20DD55F9,0x13F1,0x46C8,{ 0x92,0x85,0x2C,0x05,0xFA,0x3E,0xDA,0x6F } }; };
 template <> struct default_interface<Windows::Devices::Input::KeyboardCapabilities>{ using type = Windows::Devices::Input::IKeyboardCapabilities; };
 template <> struct default_interface<Windows::Devices::Input::MouseCapabilities>{ using type = Windows::Devices::Input::IMouseCapabilities; };
 template <> struct default_interface<Windows::Devices::Input::MouseDevice>{ using type = Windows::Devices::Input::IMouseDevice; };
 template <> struct default_interface<Windows::Devices::Input::MouseEventArgs>{ using type = Windows::Devices::Input::IMouseEventArgs; };
 template <> struct default_interface<Windows::Devices::Input::PointerDevice>{ using type = Windows::Devices::Input::IPointerDevice; };
 template <> struct default_interface<Windows::Devices::Input::TouchCapabilities>{ using type = Windows::Devices::Input::ITouchCapabilities; };
+
+template <> struct abi<Windows::Devices::Input::IKeyboardCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_KeyboardPresent(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IMouseCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MousePresent(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalWheelPresent(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalWheelPresent(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SwapButtons(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumberOfButtons(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IMouseDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_MouseMoved(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MouseMoved(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IMouseDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** mouseDevice) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IMouseEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MouseDelta(struct struct_Windows_Devices_Input_MouseDelta* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IPointerDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsIntegrated(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxContacts(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhysicalDeviceRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScreenRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedUsages(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IPointerDevice2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPointersWithZDistance(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::IPointerDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPointerDevice(uint32_t pointerId, void** pointerDevice) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPointerDevices(void** pointerDevices) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Input::ITouchCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TouchPresent(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Contacts(uint32_t* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Input_IKeyboardCapabilities
@@ -109,10 +166,10 @@ template <> struct consume<Windows::Devices::Input::IMouseCapabilities> { templa
 template <typename D>
 struct consume_Windows_Devices_Input_IMouseDevice
 {
-    event_token MouseMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const;
-    using MouseMoved_revoker = event_revoker<Windows::Devices::Input::IMouseDevice>;
+    winrt::event_token MouseMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const;
+    using MouseMoved_revoker = impl::event_revoker<Windows::Devices::Input::IMouseDevice, &impl::abi_t<Windows::Devices::Input::IMouseDevice>::remove_MouseMoved>;
     MouseMoved_revoker MouseMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const;
-    void MouseMoved(event_token const& cookie) const;
+    void MouseMoved(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::Devices::Input::IMouseDevice> { template <typename D> using type = consume_Windows_Devices_Input_IMouseDevice<D>; };
 
@@ -186,62 +243,5 @@ struct struct_Windows_Devices_Input_PointerDeviceUsage
 };
 template <> struct abi<Windows::Devices::Input::PointerDeviceUsage>{ using type = struct_Windows_Devices_Input_PointerDeviceUsage; };
 
-
-template <> struct abi<Windows::Devices::Input::IKeyboardCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_KeyboardPresent(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IMouseCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MousePresent(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalWheelPresent(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalWheelPresent(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SwapButtons(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumberOfButtons(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IMouseDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_MouseMoved(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_MouseMoved(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IMouseDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** mouseDevice) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IMouseEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MouseDelta(struct struct_Windows_Devices_Input_MouseDelta* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IPointerDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsIntegrated(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxContacts(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhysicalDeviceRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScreenRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedUsages(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IPointerDevice2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPointersWithZDistance(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::IPointerDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPointerDevice(uint32_t pointerId, void** pointerDevice) noexcept = 0;
-    virtual HRESULT __stdcall GetPointerDevices(void** pointerDevices) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Input::ITouchCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TouchPresent(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Contacts(uint32_t* value) noexcept = 0;
-};};
 
 }

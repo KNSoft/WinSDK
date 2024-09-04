@@ -25,6 +25,11 @@
 #undef new
 #endif  /* _MSC_VER */
 
+// VSTS 14847240: Locally suppress individual -Wv:17 compiler warnings.
+// For more information, visit https://osgwiki.com/wiki/Windows_C%2B%2B_Toolset_Status.
+#pragma warning(push)
+#pragma warning(disable:4595) // non-member operator new or delete functions may not be declared inline
+
 /* Define NULL here since we depend on it and for back-compat
 */
 #ifndef NULL
@@ -1241,6 +1246,8 @@ _Ret_notnull_ _Post_writable_byte_size_(_Size) inline void* __CRTDECL operator n
 #endif  /* _MFC_OVERRIDES_NEW */
 
 #endif  /* __cplusplus */
+
+#pragma warning(pop) // Wv:17 Warnings
 
 #ifdef  _MSC_VER
 #pragma pop_macro("new")

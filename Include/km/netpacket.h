@@ -13,21 +13,21 @@ Abstract:
 Notes:
 
     Do not include this header directly. This is to be used together with NetAdapterCx.
-    
-    NetAdapterCx is preview only, any files related to it may be substantially modified 
+
+    NetAdapterCx is preview only, any files related to it may be substantially modified
     or removed in future releases of Windows.
 
  --*/
 
 #pragma once
 
-#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2))
-#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1 && NET_ADAPTER_CX_1_2 != 1 && NET_ADAPTER_CX_1_3 != 1)
 #        error NetPacket.h can be used only with NetAdapterCx
 #    endif
 #else
 #    error Include NetAdapterCx.h
-#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2)
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1) || defined(NET_ADAPTER_CX_1_2) || defined(NET_ADAPTER_CX_1_3))
 
 #pragma warning(push)
 #pragma warning(default : 4820) // Warn if the compiler inserted padding
@@ -50,7 +50,7 @@ typedef LARGE_INTEGER PHYSICAL_ADDRESS;
 #include <pshpack4.h>
 typedef struct DECLSPEC_ALIGN(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES) _NET_PACKET_FRAGMENT
 {
-    ULONG_PTR LastFragmentOfFrame   : 1;
+    ULONG_PTR OsReserved_Bounced    : 1;
 #ifdef _WIN64
     ULONG_PTR Reserved              : 63;
 #else
@@ -80,7 +80,7 @@ typedef struct DECLSPEC_ALIGN(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES) _NET_PACKET_F
     UINT64 Capacity                : 26;
     UINT64 Offset                  : 10;
 
-    UINT64 Completed               : 1;
+    UINT64 NetPacketFragmentReserved1 : 1;
     UINT64 Scratch                 : 1;
 
 } NET_PACKET_FRAGMENT, *PNET_PACKET_FRAGMENT;
@@ -176,23 +176,20 @@ C_ASSERT(sizeof(NET_PACKET_CHECKSUM) == 1);
 
 typedef struct DECLSPEC_ALIGN(NET_PACKET_ALIGNMENT_BYTES) _NET_PACKET
 {
-    UINT32 FragmentOffset : 31;
-    UINT32 FragmentValid : 1;
+    UINT32 FragmentOffset;
+    UINT16 FragmentCount;
 
     NET_PACKET_LAYOUT Layout;
-    UINT8 Reserved4;
 
-    UINT16 IgnoreThisPacket         :  1;
-    UINT16 AdvancedOffloadRequested :  1;
-    UINT16 Reserved1                : 14;
+    UINT8 IgnoreThisPacket : 1;
+    UINT8 AdvancedOffloadRequested : 1;
+    UINT8 Completed : 1;
+    UINT8 NetPacketReserved0 : 5;
 
-    UINT32 Hash;
+    UINT32 NetPacketReserved1;
 } NET_PACKET, *PNET_PACKET;
 
 C_ASSERT(sizeof(NET_PACKET) == 16);
-
-#define NET_PACKET_GET_FRAGMENT_VALID(packet) \
-    ((packet)->FragmentValid)
 
 typedef struct _NET_PACKET_8021Q_HEADER
 {

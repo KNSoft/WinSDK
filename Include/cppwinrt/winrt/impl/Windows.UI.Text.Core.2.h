@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -74,7 +74,8 @@ struct WINRT_EBO CoreTextLayoutBounds :
 };
 
 struct WINRT_EBO CoreTextLayoutRequest :
-    Windows::UI::Text::Core::ICoreTextLayoutRequest
+    Windows::UI::Text::Core::ICoreTextLayoutRequest,
+    impl::require<CoreTextLayoutRequest, Windows::UI::Text::Core::ICoreTextLayoutRequest2>
 {
     CoreTextLayoutRequest(std::nullptr_t) noexcept {}
 };

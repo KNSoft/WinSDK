@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -20,6 +20,13 @@ struct WINRT_EBO ICoreInputView2 :
     impl::consume_t<ICoreInputView2>
 {
     ICoreInputView2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICoreInputView3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICoreInputView3>
+{
+    ICoreInputView3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICoreInputViewOcclusion :

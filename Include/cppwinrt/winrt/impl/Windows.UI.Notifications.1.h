@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -22,8 +22,7 @@ struct WINRT_EBO IAdaptiveNotificationContent :
 
 struct WINRT_EBO IAdaptiveNotificationText :
     Windows::Foundation::IInspectable,
-    impl::consume_t<IAdaptiveNotificationText>,
-    impl::require<IAdaptiveNotificationText, Windows::UI::Notifications::IAdaptiveNotificationContent>
+    impl::consume_t<IAdaptiveNotificationText>
 {
     IAdaptiveNotificationText(std::nullptr_t = nullptr) noexcept {}
 };
@@ -173,6 +172,13 @@ struct WINRT_EBO IScheduledToastNotificationFactory :
     impl::consume_t<IScheduledToastNotificationFactory>
 {
     IScheduledToastNotificationFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IScheduledToastNotificationShowingEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IScheduledToastNotificationShowingEventArgs>
+{
+    IScheduledToastNotificationShowingEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IShownTileNotification :
@@ -425,6 +431,13 @@ struct WINRT_EBO IToastNotifier2 :
     impl::consume_t<IToastNotifier2>
 {
     IToastNotifier2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IToastNotifier3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IToastNotifier3>
+{
+    IToastNotifier3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IUserNotification :

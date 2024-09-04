@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -57,6 +57,13 @@ struct WINRT_EBO IWebViewControlSite :
     impl::consume_t<IWebViewControlSite>
 {
     IWebViewControlSite(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWebViewControlSite2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWebViewControlSite2>
+{
+    IWebViewControlSite2(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

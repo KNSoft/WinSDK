@@ -1286,9 +1286,9 @@ WINOLEAUTAPI CreateStdDispatch(IUnknown * punkOuter, void * pvThis,
 /* Low-level helper for IDispatch::Invoke() provides machine independence
  * for customized Invoke().
  */
-WINOLEAUTAPI DispCallFunc(void * pvInstance, ULONG_PTR oVft, CALLCONV cc,
-            VARTYPE vtReturn, UINT  cActuals, VARTYPE * prgvt,
-            VARIANTARG ** prgpvarg, VARIANT * pvargResult);
+WINOLEAUTAPI DispCallFunc(_In_opt_ void * pvInstance, ULONG_PTR oVft, CALLCONV cc,
+            VARTYPE vtReturn, UINT  cActuals, _In_reads_(cActuals) VARTYPE * prgvt,
+            _In_reads_(cActuals) VARIANTARG ** prgpvarg, _Out_ VARIANT * pvargResult);
 
 
 /*---------------------------------------------------------------------*/

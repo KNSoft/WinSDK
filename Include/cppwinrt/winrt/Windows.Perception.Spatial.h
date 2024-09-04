@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.Collections.2.h"
@@ -32,21 +32,21 @@ template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem cons
     return value;
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchor)->add_RawCoordinateSystemAdjusted(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialAnchor> consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted_revoker consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialAnchor>(this, &abi_t<Windows::Perception::Spatial::ISpatialAnchor>::remove_RawCoordinateSystemAdjusted, RawCoordinateSystemAdjusted(handler));
+    return impl::make_event_revoker<D, RawCoordinateSystemAdjusted_revoker>(this, RawCoordinateSystemAdjusted(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(event_token const& cookie) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialAnchor<D>::RawCoordinateSystemAdjusted(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchor)->remove_RawCoordinateSystemAdjusted(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchor)->remove_RawCoordinateSystemAdjusted(get_abi(cookie)));
 }
 
 template <typename D> bool consume_Windows_Perception_Spatial_ISpatialAnchor2<D>::RemovedByUser() const
@@ -54,6 +54,55 @@ template <typename D> bool consume_Windows_Perception_Spatial_ISpatialAnchor2<D>
     bool value{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchor2)->get_RemovedByUser(&value));
     return value;
+}
+
+template <typename D> bool consume_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency<D>::IsMinimallySufficient() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExportSufficiency)->get_IsMinimallySufficient(&value));
+    return value;
+}
+
+template <typename D> double consume_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency<D>::SufficiencyLevel() const
+{
+    double value{};
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExportSufficiency)->get_SufficiencyLevel(&value));
+    return value;
+}
+
+template <typename D> double consume_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency<D>::RecommendedSufficiencyLevel() const
+{
+    double value{};
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExportSufficiency)->get_RecommendedSufficiencyLevel(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorExportSufficiency> consume_Windows_Perception_Spatial_ISpatialAnchorExporter<D>::GetAnchorExportSufficiencyAsync(Windows::Perception::Spatial::SpatialAnchor const& anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose const& purpose) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorExportSufficiency> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExporter)->GetAnchorExportSufficiencyAsync(get_abi(anchor), get_abi(purpose), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows_Perception_Spatial_ISpatialAnchorExporter<D>::TryExportAnchorAsync(Windows::Perception::Spatial::SpatialAnchor const& anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose const& purpose, Windows::Storage::Streams::IOutputStream const& stream) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExporter)->TryExportAnchorAsync(get_abi(anchor), get_abi(purpose), get_abi(stream), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialAnchorExporter consume_Windows_Perception_Spatial_ISpatialAnchorExporterStatics<D>::GetDefault() const
+{
+    Windows::Perception::Spatial::SpatialAnchorExporter value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExporterStatics)->GetDefault(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> consume_Windows_Perception_Spatial_ISpatialAnchorExporterStatics<D>::RequestAccessAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialAnchorExporterStatics)->RequestAccessAsync(put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> consume_Windows_Perception_Spatial_ISpatialAnchorManagerStatics<D>::RequestStoreAsync() const
@@ -269,72 +318,72 @@ template <typename D> Windows::Perception::Spatial::SpatialEntityWatcherStatus c
     return value;
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->add_Added(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher> consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added_revoker consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialEntityWatcher>(this, &abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Added, Added(handler));
+    return impl::make_event_revoker<D, Added_revoker>(this, Added(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(event_token const& token) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Added(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Added(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Added(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->add_Updated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher> consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated_revoker consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialEntityWatcher>(this, &abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Updated, Updated(handler));
+    return impl::make_event_revoker<D, Updated_revoker>(this, Updated(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(event_token const& token) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Updated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Updated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Updated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->add_Removed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher> consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed_revoker consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialEntityWatcher>(this, &abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_Removed, Removed(handler));
+    return impl::make_event_revoker<D, Removed_revoker>(this, Removed(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(event_token const& token) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Removed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Removed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_Removed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->add_EnumerationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialEntityWatcher> consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted_revoker consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialEntityWatcher>(this, &abi_t<Windows::Perception::Spatial::ISpatialEntityWatcher>::remove_EnumerationCompleted, EnumerationCompleted(handler));
+    return impl::make_event_revoker<D, EnumerationCompleted_revoker>(this, EnumerationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::EnumerationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_EnumerationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialEntityWatcher)->remove_EnumerationCompleted(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Perception_Spatial_ISpatialEntityWatcher<D>::Start() const
@@ -389,6 +438,20 @@ template <typename D> Windows::Foundation::Numerics::quaternion consume_Windows_
     return value;
 }
 
+template <typename D> Windows::Foundation::Numerics::float3 consume_Windows_Perception_Spatial_ISpatialLocation2<D>::AbsoluteAngularVelocityAxisAngle() const
+{
+    Windows::Foundation::Numerics::float3 value{};
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocation2)->get_AbsoluteAngularVelocityAxisAngle(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 consume_Windows_Perception_Spatial_ISpatialLocation2<D>::AbsoluteAngularAccelerationAxisAngle() const
+{
+    Windows::Foundation::Numerics::float3 value{};
+    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocation2)->get_AbsoluteAngularAccelerationAxisAngle(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Perception::Spatial::SpatialLocatability consume_Windows_Perception_Spatial_ISpatialLocator<D>::Locatability() const
 {
     Windows::Perception::Spatial::SpatialLocatability value{};
@@ -396,38 +459,38 @@ template <typename D> Windows::Perception::Spatial::SpatialLocatability consume_
     return value;
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->add_LocatabilityChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialLocator> consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged_revoker consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialLocator>(this, &abi_t<Windows::Perception::Spatial::ISpatialLocator>::remove_LocatabilityChanged, LocatabilityChanged(handler));
+    return impl::make_event_revoker<D, LocatabilityChanged_revoker>(this, LocatabilityChanged(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialLocator<D>::LocatabilityChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->remove_LocatabilityChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->remove_LocatabilityChanged(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->add_PositionalTrackingDeactivating(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialLocator> consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating_revoker consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialLocator>(this, &abi_t<Windows::Perception::Spatial::ISpatialLocator>::remove_PositionalTrackingDeactivating, PositionalTrackingDeactivating(handler));
+    return impl::make_event_revoker<D, PositionalTrackingDeactivating_revoker>(this, PositionalTrackingDeactivating(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(event_token const& cookie) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialLocator<D>::PositionalTrackingDeactivating(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->remove_PositionalTrackingDeactivating(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialLocator)->remove_PositionalTrackingDeactivating(get_abi(cookie)));
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialLocation consume_Windows_Perception_Spatial_ISpatialLocator<D>::TryLocateAtTimestamp(Windows::Perception::PerceptionTimestamp const& timestamp, Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem) const
@@ -597,21 +660,21 @@ template <typename D> Windows::Perception::Spatial::SpatialStageFrameOfReference
     return value;
 }
 
-template <typename D> event_token consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics)->add_CurrentChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged_revoker consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>(this, &abi_t<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>::remove_CurrentChanged, CurrentChanged(handler));
+    return impl::make_event_revoker<D, CurrentChanged_revoker>(this, CurrentChanged(handler));
 }
 
-template <typename D> void consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics)->remove_CurrentChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics)->remove_CurrentChanged(get_abi(cookie)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> consume_Windows_Perception_Spatial_ISpatialStageFrameOfReferenceStatics<D>::RequestNewStageAsync() const
@@ -631,276 +694,338 @@ template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem cons
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchor> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchor>
 {
-    HRESULT __stdcall get_CoordinateSystem(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSystem, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem));
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().CoordinateSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RawCoordinateSystem(void** value) noexcept final
+    int32_t WINRT_CALL get_RawCoordinateSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawCoordinateSystem, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem));
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().RawCoordinateSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RawCoordinateSystemAdjusted(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_RawCoordinateSystemAdjusted(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().RawCoordinateSystemAdjusted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RawCoordinateSystemAdjusted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().RawCoordinateSystemAdjusted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RawCoordinateSystemAdjusted(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_RawCoordinateSystemAdjusted(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RawCoordinateSystemAdjusted(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RawCoordinateSystemAdjusted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RawCoordinateSystemAdjusted(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchor2> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchor2>
 {
-    HRESULT __stdcall get_RemovedByUser(bool* value) noexcept final
+    int32_t WINRT_CALL get_RemovedByUser(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovedByUser, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RemovedByUser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialAnchorExportSufficiency> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorExportSufficiency>
+{
+    int32_t WINRT_CALL get_IsMinimallySufficient(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMinimallySufficient, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsMinimallySufficient());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_SufficiencyLevel(double* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SufficiencyLevel, WINRT_WRAP(double));
+            *value = detach_from<double>(this->shim().SufficiencyLevel());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_RecommendedSufficiencyLevel(double* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecommendedSufficiencyLevel, WINRT_WRAP(double));
+            *value = detach_from<double>(this->shim().RecommendedSufficiencyLevel());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialAnchorExporter> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorExporter>
+{
+    int32_t WINRT_CALL GetAnchorExportSufficiencyAsync(void* anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose, void** operation) noexcept final
+    {
+        try
+        {
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAnchorExportSufficiencyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorExportSufficiency>), Windows::Perception::Spatial::SpatialAnchor const, Windows::Perception::Spatial::SpatialAnchorExportPurpose const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorExportSufficiency>>(this->shim().GetAnchorExportSufficiencyAsync(*reinterpret_cast<Windows::Perception::Spatial::SpatialAnchor const*>(&anchor), *reinterpret_cast<Windows::Perception::Spatial::SpatialAnchorExportPurpose const*>(&purpose)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL TryExportAnchorAsync(void* anchor, Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose, void* stream, void** operation) noexcept final
+    {
+        try
+        {
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryExportAnchorAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Perception::Spatial::SpatialAnchor const, Windows::Perception::Spatial::SpatialAnchorExportPurpose const, Windows::Storage::Streams::IOutputStream const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryExportAnchorAsync(*reinterpret_cast<Windows::Perception::Spatial::SpatialAnchor const*>(&anchor), *reinterpret_cast<Windows::Perception::Spatial::SpatialAnchorExportPurpose const*>(&purpose), *reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&stream)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialAnchorExporterStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorExporterStatics>
+{
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Perception::Spatial::SpatialAnchorExporter));
+            *value = detach_from<Windows::Perception::Spatial::SpatialAnchorExporter>(this->shim().GetDefault());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>));
+            *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>>(this->shim().RequestAccessAsync());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchorManagerStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorManagerStatics>
 {
-    HRESULT __stdcall RequestStoreAsync(void** value) noexcept final
+    int32_t WINRT_CALL RequestStoreAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore>>(this->shim().RequestStoreAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>
 {
-    HRESULT __stdcall get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(Windows::Foundation::Numerics::float4x4* value) noexcept final
+    int32_t WINRT_CALL get_OldRawCoordinateSystemToNewRawCoordinateSystemTransform(Windows::Foundation::Numerics::float4x4* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OldRawCoordinateSystemToNewRawCoordinateSystemTransform, WINRT_WRAP(Windows::Foundation::Numerics::float4x4));
             *value = detach_from<Windows::Foundation::Numerics::float4x4>(this->shim().OldRawCoordinateSystemToNewRawCoordinateSystemTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorStatics>
 {
-    HRESULT __stdcall TryCreateRelativeTo(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryCreateRelativeTo(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateRelativeTo, WINRT_WRAP(Windows::Perception::Spatial::SpatialAnchor), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialAnchor>(this->shim().TryCreateRelativeTo(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateWithPositionRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, void** value) noexcept final
+    int32_t WINRT_CALL TryCreateWithPositionRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateRelativeTo, WINRT_WRAP(Windows::Perception::Spatial::SpatialAnchor), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialAnchor>(this->shim().TryCreateRelativeTo(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryCreateWithPositionAndOrientationRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation, void** value) noexcept final
+    int32_t WINRT_CALL TryCreateWithPositionAndOrientationRelativeTo(void* coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::quaternion orientation, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateRelativeTo, WINRT_WRAP(Windows::Perception::Spatial::SpatialAnchor), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialAnchor>(this->shim().TryCreateRelativeTo(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&position), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&orientation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchorStore> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorStore>
 {
-    HRESULT __stdcall GetAllSavedAnchors(void** value) noexcept final
+    int32_t WINRT_CALL GetAllSavedAnchors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAllSavedAnchors, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>>(this->shim().GetAllSavedAnchors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySave(HSTRING id, void* anchor, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySave(void* id, void* anchor, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySave, WINRT_WRAP(bool), hstring const&, Windows::Perception::Spatial::SpatialAnchor const&);
             *succeeded = detach_from<bool>(this->shim().TrySave(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<Windows::Perception::Spatial::SpatialAnchor const*>(&anchor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(HSTRING id) noexcept final
+    int32_t WINRT_CALL Remove(void* id) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), hstring const&);
             this->shim().Remove(*reinterpret_cast<hstring const*>(&id));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>
 {
-    HRESULT __stdcall TryImportAnchorsAsync(void* stream, void** operation) noexcept final
+    int32_t WINRT_CALL TryImportAnchorsAsync(void* stream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryImportAnchorsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>>), Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>>>(this->shim().TryImportAnchorsAsync(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&stream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryExportAnchorsAsync(void* anchors, void* stream, void** operation) noexcept final
+    int32_t WINRT_CALL TryExportAnchorsAsync(void* anchors, void* stream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryExportAnchorsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const, Windows::Storage::Streams::IOutputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryExportAnchorsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const*>(&anchors), *reinterpret_cast<Windows::Storage::Streams::IOutputStream const*>(&stream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAccessAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -911,1074 +1036,936 @@ struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolume> : produc
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>
 {
-    HRESULT __stdcall FromBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingBox box, void** value) noexcept final
+    int32_t WINRT_CALL FromBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingBox box, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromBox, WINRT_WRAP(Windows::Perception::Spatial::SpatialBoundingVolume), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Perception::Spatial::SpatialBoundingBox const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialBoundingVolume>(this->shim().FromBox(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Perception::Spatial::SpatialBoundingBox const*>(&box)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromOrientedBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingOrientedBox box, void** value) noexcept final
+    int32_t WINRT_CALL FromOrientedBox(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingOrientedBox box, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromOrientedBox, WINRT_WRAP(Windows::Perception::Spatial::SpatialBoundingVolume), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Perception::Spatial::SpatialBoundingOrientedBox const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialBoundingVolume>(this->shim().FromOrientedBox(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Perception::Spatial::SpatialBoundingOrientedBox const*>(&box)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromSphere(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingSphere sphere, void** value) noexcept final
+    int32_t WINRT_CALL FromSphere(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingSphere sphere, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromSphere, WINRT_WRAP(Windows::Perception::Spatial::SpatialBoundingVolume), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Perception::Spatial::SpatialBoundingSphere const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialBoundingVolume>(this->shim().FromSphere(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Perception::Spatial::SpatialBoundingSphere const*>(&sphere)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromFrustum(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingFrustum frustum, void** value) noexcept final
+    int32_t WINRT_CALL FromFrustum(void* coordinateSystem, struct struct_Windows_Perception_Spatial_SpatialBoundingFrustum frustum, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromFrustum, WINRT_WRAP(Windows::Perception::Spatial::SpatialBoundingVolume), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Perception::Spatial::SpatialBoundingFrustum const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialBoundingVolume>(this->shim().FromFrustum(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Perception::Spatial::SpatialBoundingFrustum const*>(&frustum)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialCoordinateSystem> : produce_base<D, Windows::Perception::Spatial::ISpatialCoordinateSystem>
 {
-    HRESULT __stdcall TryGetTransformTo(void* target, void** value) noexcept final
+    int32_t WINRT_CALL TryGetTransformTo(void* target, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetTransformTo, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4>>(this->shim().TryGetTransformTo(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&target)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntity> : produce_base<D, Windows::Perception::Spatial::ISpatialEntity>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Anchor(void** value) noexcept final
+    int32_t WINRT_CALL get_Anchor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Anchor, WINRT_WRAP(Windows::Perception::Spatial::SpatialAnchor));
             *value = detach_from<Windows::Perception::Spatial::SpatialAnchor>(this->shim().Anchor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityAddedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>
 {
-    HRESULT __stdcall get_Entity(void** value) noexcept final
+    int32_t WINRT_CALL get_Entity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Entity, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntity));
             *value = detach_from<Windows::Perception::Spatial::SpatialEntity>(this->shim().Entity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityFactory> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityFactory>
 {
-    HRESULT __stdcall CreateWithSpatialAnchor(void* spatialAnchor, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithSpatialAnchor(void* spatialAnchor, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithSpatialAnchor, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntity), Windows::Perception::Spatial::SpatialAnchor const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialEntity>(this->shim().CreateWithSpatialAnchor(*reinterpret_cast<Windows::Perception::Spatial::SpatialAnchor const*>(&spatialAnchor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithSpatialAnchorAndProperties(void* spatialAnchor, void* propertySet, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithSpatialAnchorAndProperties(void* spatialAnchor, void* propertySet, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithSpatialAnchorAndProperties, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntity), Windows::Perception::Spatial::SpatialAnchor const&, Windows::Foundation::Collections::ValueSet const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialEntity>(this->shim().CreateWithSpatialAnchorAndProperties(*reinterpret_cast<Windows::Perception::Spatial::SpatialAnchor const*>(&spatialAnchor), *reinterpret_cast<Windows::Foundation::Collections::ValueSet const*>(&propertySet)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>
 {
-    HRESULT __stdcall get_Entity(void** value) noexcept final
+    int32_t WINRT_CALL get_Entity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Entity, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntity));
             *value = detach_from<Windows::Perception::Spatial::SpatialEntity>(this->shim().Entity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityStore> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityStore>
 {
-    HRESULT __stdcall SaveAsync(void* entity, void** action) noexcept final
+    int32_t WINRT_CALL SaveAsync(void* entity, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Perception::Spatial::SpatialEntity const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync(*reinterpret_cast<Windows::Perception::Spatial::SpatialEntity const*>(&entity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAsync(void* entity, void** action) noexcept final
+    int32_t WINRT_CALL RemoveAsync(void* entity, void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Perception::Spatial::SpatialEntity const);
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RemoveAsync(*reinterpret_cast<Windows::Perception::Spatial::SpatialEntity const*>(&entity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateEntityWatcher(void** value) noexcept final
+    int32_t WINRT_CALL CreateEntityWatcher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateEntityWatcher, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntityWatcher));
             *value = detach_from<Windows::Perception::Spatial::SpatialEntityWatcher>(this->shim().CreateEntityWatcher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityStoreStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityStoreStatics>
 {
-    HRESULT __stdcall get_IsSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetForRemoteSystemSession(void* session, void** value) noexcept final
+    int32_t WINRT_CALL TryGetForRemoteSystemSession(void* session, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGet, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntityStore), Windows::System::RemoteSystems::RemoteSystemSession const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialEntityStore>(this->shim().TryGet(*reinterpret_cast<Windows::System::RemoteSystems::RemoteSystemSession const*>(&session)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>
 {
-    HRESULT __stdcall get_Entity(void** value) noexcept final
+    int32_t WINRT_CALL get_Entity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Entity, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntity));
             *value = detach_from<Windows::Perception::Spatial::SpatialEntity>(this->shim().Entity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialEntityWatcher> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityWatcher>
 {
-    HRESULT __stdcall get_Status(Windows::Perception::Spatial::SpatialEntityWatcherStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Perception::Spatial::SpatialEntityWatcherStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Perception::Spatial::SpatialEntityWatcherStatus));
             *value = detach_from<Windows::Perception::Spatial::SpatialEntityWatcherStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Added(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Added(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Added, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Added(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Added(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Updated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Updated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Updated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Updated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Removed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Removed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Updated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(EnumerationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().EnumerationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Removed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Removed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Removed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().EnumerationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().EnumerationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall Start() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialLocation> : produce_base<D, Windows::Perception::Spatial::ISpatialLocation>
 {
-    HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AbsoluteLinearVelocity(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteLinearVelocity(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteLinearVelocity, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().AbsoluteLinearVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AbsoluteLinearAcceleration(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteLinearAcceleration(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteLinearAcceleration, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().AbsoluteLinearAcceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AbsoluteAngularVelocity(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteAngularVelocity(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteAngularVelocity, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().AbsoluteAngularVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AbsoluteAngularAcceleration(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_AbsoluteAngularAcceleration(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteAngularAcceleration, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().AbsoluteAngularAcceleration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialLocation2> : produce_base<D, Windows::Perception::Spatial::ISpatialLocation2>
+{
+    int32_t WINRT_CALL get_AbsoluteAngularVelocityAxisAngle(Windows::Foundation::Numerics::float3* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteAngularVelocityAxisAngle, WINRT_WRAP(Windows::Foundation::Numerics::float3));
+            *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().AbsoluteAngularVelocityAxisAngle());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_AbsoluteAngularAccelerationAxisAngle(Windows::Foundation::Numerics::float3* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AbsoluteAngularAccelerationAxisAngle, WINRT_WRAP(Windows::Foundation::Numerics::float3));
+            *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().AbsoluteAngularAccelerationAxisAngle());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialLocator> : produce_base<D, Windows::Perception::Spatial::ISpatialLocator>
 {
-    HRESULT __stdcall get_Locatability(Windows::Perception::Spatial::SpatialLocatability* value) noexcept final
+    int32_t WINRT_CALL get_Locatability(Windows::Perception::Spatial::SpatialLocatability* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locatability, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocatability));
             *value = detach_from<Windows::Perception::Spatial::SpatialLocatability>(this->shim().Locatability());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_LocatabilityChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_LocatabilityChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().LocatabilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LocatabilityChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().LocatabilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_LocatabilityChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_LocatabilityChanged(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LocatabilityChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LocatabilityChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_PositionalTrackingDeactivating(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().LocatabilityChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PositionalTrackingDeactivating, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().PositionalTrackingDeactivating(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PositionalTrackingDeactivating(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_PositionalTrackingDeactivating(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().PositionalTrackingDeactivating(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PositionalTrackingDeactivating, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PositionalTrackingDeactivating(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall remove_PositionalTrackingDeactivating(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PositionalTrackingDeactivating(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall TryLocateAtTimestamp(void* timestamp, void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryLocateAtTimestamp(void* timestamp, void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryLocateAtTimestamp, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocation), Windows::Perception::PerceptionTimestamp const&, Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialLocation>(this->shim().TryLocateAtTimestamp(*reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timestamp), *reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeading(void** value) noexcept final
+    int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeading(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAttachedFrameOfReferenceAtCurrentHeading, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference));
             *value = detach_from<Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept final
+    int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAttachedFrameOfReferenceAtCurrentHeading, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference), Windows::Foundation::Numerics::float3 const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept final
+    int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAttachedFrameOfReferenceAtCurrentHeading, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&relativeOrientation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept final
+    int32_t WINRT_CALL CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAttachedFrameOfReferenceAtCurrentHeading, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&, double);
             *value = detach_from<Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>(this->shim().CreateAttachedFrameOfReferenceAtCurrentHeading(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&relativeOrientation), relativeHeadingInRadians));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocation(void** value) noexcept final
+    int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStationaryFrameOfReferenceAtCurrentLocation, WINRT_WRAP(Windows::Perception::Spatial::SpatialStationaryFrameOfReference));
             *value = detach_from<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept final
+    int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows::Foundation::Numerics::float3 relativePosition, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStationaryFrameOfReferenceAtCurrentLocation, WINRT_WRAP(Windows::Perception::Spatial::SpatialStationaryFrameOfReference), Windows::Foundation::Numerics::float3 const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept final
+    int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStationaryFrameOfReferenceAtCurrentLocation, WINRT_WRAP(Windows::Perception::Spatial::SpatialStationaryFrameOfReference), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&relativeOrientation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept final
+    int32_t WINRT_CALL CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows::Foundation::Numerics::float3 relativePosition, Windows::Foundation::Numerics::quaternion relativeOrientation, double relativeHeadingInRadians, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateStationaryFrameOfReferenceAtCurrentLocation, WINRT_WRAP(Windows::Perception::Spatial::SpatialStationaryFrameOfReference), Windows::Foundation::Numerics::float3 const&, Windows::Foundation::Numerics::quaternion const&, double);
             *value = detach_from<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>(this->shim().CreateStationaryFrameOfReferenceAtCurrentLocation(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&relativePosition), *reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&relativeOrientation), relativeHeadingInRadians));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference> : produce_base<D, Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>
 {
-    HRESULT __stdcall get_RelativePosition(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_RelativePosition(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativePosition, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().RelativePosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativePosition(Windows::Foundation::Numerics::float3 value) noexcept final
+    int32_t WINRT_CALL put_RelativePosition(Windows::Foundation::Numerics::float3 value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativePosition, WINRT_WRAP(void), Windows::Foundation::Numerics::float3 const&);
             this->shim().RelativePosition(*reinterpret_cast<Windows::Foundation::Numerics::float3 const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_RelativeOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeOrientation, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().RelativeOrientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativeOrientation(Windows::Foundation::Numerics::quaternion value) noexcept final
+    int32_t WINRT_CALL put_RelativeOrientation(Windows::Foundation::Numerics::quaternion value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeOrientation, WINRT_WRAP(void), Windows::Foundation::Numerics::quaternion const&);
             this->shim().RelativeOrientation(*reinterpret_cast<Windows::Foundation::Numerics::quaternion const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AdjustHeading(double headingOffsetInRadians) noexcept final
+    int32_t WINRT_CALL AdjustHeading(double headingOffsetInRadians) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdjustHeading, WINRT_WRAP(void), double);
             this->shim().AdjustHeading(headingOffsetInRadians);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStationaryCoordinateSystemAtTimestamp(void* timestamp, void** value) noexcept final
+    int32_t WINRT_CALL GetStationaryCoordinateSystemAtTimestamp(void* timestamp, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStationaryCoordinateSystemAtTimestamp, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem), Windows::Perception::PerceptionTimestamp const&);
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().GetStationaryCoordinateSystemAtTimestamp(*reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timestamp)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetRelativeHeadingAtTimestamp(void* timestamp, void** value) noexcept final
+    int32_t WINRT_CALL TryGetRelativeHeadingAtTimestamp(void* timestamp, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetRelativeHeadingAtTimestamp, WINRT_WRAP(Windows::Foundation::IReference<double>), Windows::Perception::PerceptionTimestamp const&);
             *value = detach_from<Windows::Foundation::IReference<double>>(this->shim().TryGetRelativeHeadingAtTimestamp(*reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timestamp)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>
 {
-    HRESULT __stdcall get_Canceled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Canceled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Canceled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Canceled(bool value) noexcept final
+    int32_t WINRT_CALL put_Canceled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(void), bool);
             this->shim().Canceled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialLocatorStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialLocatorStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Perception::Spatial::SpatialLocator));
             *value = detach_from<Windows::Perception::Spatial::SpatialLocator>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialStageFrameOfReference> : produce_base<D, Windows::Perception::Spatial::ISpatialStageFrameOfReference>
 {
-    HRESULT __stdcall get_CoordinateSystem(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSystem, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem));
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().CoordinateSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MovementRange(Windows::Perception::Spatial::SpatialMovementRange* value) noexcept final
+    int32_t WINRT_CALL get_MovementRange(Windows::Perception::Spatial::SpatialMovementRange* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MovementRange, WINRT_WRAP(Windows::Perception::Spatial::SpatialMovementRange));
             *value = detach_from<Windows::Perception::Spatial::SpatialMovementRange>(this->shim().MovementRange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LookDirectionRange(Windows::Perception::Spatial::SpatialLookDirectionRange* value) noexcept final
+    int32_t WINRT_CALL get_LookDirectionRange(Windows::Perception::Spatial::SpatialLookDirectionRange* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LookDirectionRange, WINRT_WRAP(Windows::Perception::Spatial::SpatialLookDirectionRange));
             *value = detach_from<Windows::Perception::Spatial::SpatialLookDirectionRange>(this->shim().LookDirectionRange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCoordinateSystemAtCurrentLocation(void* locator, void** result) noexcept final
+    int32_t WINRT_CALL GetCoordinateSystemAtCurrentLocation(void* locator, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCoordinateSystemAtCurrentLocation, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem), Windows::Perception::Spatial::SpatialLocator const&);
             *result = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().GetCoordinateSystemAtCurrentLocation(*reinterpret_cast<Windows::Perception::Spatial::SpatialLocator const*>(&locator)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetMovementBounds(void* coordinateSystem, uint32_t* __valueSize, Windows::Foundation::Numerics::float3** value) noexcept final
+    int32_t WINRT_CALL TryGetMovementBounds(void* coordinateSystem, uint32_t* __valueSize, Windows::Foundation::Numerics::float3** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetMovementBounds, WINRT_WRAP(com_array<Windows::Foundation::Numerics::float3>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             std::tie(*__valueSize, *value) = detach_abi(this->shim().TryGetMovementBounds(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>
 {
-    HRESULT __stdcall get_Current(void** value) noexcept final
+    int32_t WINRT_CALL get_Current(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Current, WINRT_WRAP(Windows::Perception::Spatial::SpatialStageFrameOfReference));
             *value = detach_from<Windows::Perception::Spatial::SpatialStageFrameOfReference>(this->shim().Current());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CurrentChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_CurrentChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().CurrentChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CurrentChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().CurrentChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CurrentChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_CurrentChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().CurrentChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CurrentChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CurrentChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 
-    HRESULT __stdcall RequestNewStageAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestNewStageAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestNewStageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference>>(this->shim().RequestNewStageAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialStationaryFrameOfReference> : produce_base<D, Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>
 {
-    HRESULT __stdcall get_CoordinateSystem(void** value) noexcept final
+    int32_t WINRT_CALL get_CoordinateSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CoordinateSystem, WINRT_WRAP(Windows::Perception::Spatial::SpatialCoordinateSystem));
             *value = detach_from<Windows::Perception::Spatial::SpatialCoordinateSystem>(this->shim().CoordinateSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1988,106 +1975,116 @@ WINRT_EXPORT namespace winrt::Windows::Perception::Spatial {
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem)
 {
-    return get_activation_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem);
+    return impl::call_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>([&](auto&& f) { return f.TryCreateRelativeTo(coordinateSystem); });
 }
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Foundation::Numerics::float3 const& position)
 {
-    return get_activation_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position);
+    return impl::call_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>([&](auto&& f) { return f.TryCreateRelativeTo(coordinateSystem, position); });
 }
 
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Foundation::Numerics::float3 const& position, Windows::Foundation::Numerics::quaternion const& orientation)
 {
-    return get_activation_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem, position, orientation);
+    return impl::call_factory<SpatialAnchor, Windows::Perception::Spatial::ISpatialAnchorStatics>([&](auto&& f) { return f.TryCreateRelativeTo(coordinateSystem, position, orientation); });
+}
+
+inline Windows::Perception::Spatial::SpatialAnchorExporter SpatialAnchorExporter::GetDefault()
+{
+    return impl::call_factory<SpatialAnchorExporter, Windows::Perception::Spatial::ISpatialAnchorExporterStatics>([&](auto&& f) { return f.GetDefault(); });
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialAnchorExporter::RequestAccessAsync()
+{
+    return impl::call_factory<SpatialAnchorExporter, Windows::Perception::Spatial::ISpatialAnchorExporterStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> SpatialAnchorManager::RequestStoreAsync()
 {
-    return get_activation_factory<SpatialAnchorManager, Windows::Perception::Spatial::ISpatialAnchorManagerStatics>().RequestStoreAsync();
+    return impl::call_factory<SpatialAnchorManager, Windows::Perception::Spatial::ISpatialAnchorManagerStatics>([&](auto&& f) { return f.RequestStoreAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> SpatialAnchorTransferManager::TryImportAnchorsAsync(Windows::Storage::Streams::IInputStream const& stream)
 {
-    return get_activation_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>().TryImportAnchorsAsync(stream);
+    return impl::call_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>([&](auto&& f) { return f.TryImportAnchorsAsync(stream); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> SpatialAnchorTransferManager::TryExportAnchorsAsync(param::async_iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> const& anchors, Windows::Storage::Streams::IOutputStream const& stream)
 {
-    return get_activation_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>().TryExportAnchorsAsync(anchors, stream);
+    return impl::call_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>([&](auto&& f) { return f.TryExportAnchorsAsync(anchors, stream); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialAnchorTransferManager::RequestAccessAsync()
 {
-    return get_activation_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>().RequestAccessAsync();
+    return impl::call_factory<SpatialAnchorTransferManager, Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromBox(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Perception::Spatial::SpatialBoundingBox const& box)
 {
-    return get_activation_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>().FromBox(coordinateSystem, box);
+    return impl::call_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>([&](auto&& f) { return f.FromBox(coordinateSystem, box); });
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromOrientedBox(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Perception::Spatial::SpatialBoundingOrientedBox const& box)
 {
-    return get_activation_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>().FromOrientedBox(coordinateSystem, box);
+    return impl::call_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>([&](auto&& f) { return f.FromOrientedBox(coordinateSystem, box); });
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromSphere(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Perception::Spatial::SpatialBoundingSphere const& sphere)
 {
-    return get_activation_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>().FromSphere(coordinateSystem, sphere);
+    return impl::call_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>([&](auto&& f) { return f.FromSphere(coordinateSystem, sphere); });
 }
 
 inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume::FromFrustum(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Perception::Spatial::SpatialBoundingFrustum const& frustum)
 {
-    return get_activation_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>().FromFrustum(coordinateSystem, frustum);
+    return impl::call_factory<SpatialBoundingVolume, Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>([&](auto&& f) { return f.FromFrustum(coordinateSystem, frustum); });
 }
 
 inline SpatialEntity::SpatialEntity(Windows::Perception::Spatial::SpatialAnchor const& spatialAnchor) :
-    SpatialEntity(get_activation_factory<SpatialEntity, Windows::Perception::Spatial::ISpatialEntityFactory>().CreateWithSpatialAnchor(spatialAnchor))
+    SpatialEntity(impl::call_factory<SpatialEntity, Windows::Perception::Spatial::ISpatialEntityFactory>([&](auto&& f) { return f.CreateWithSpatialAnchor(spatialAnchor); }))
 {}
 
 inline SpatialEntity::SpatialEntity(Windows::Perception::Spatial::SpatialAnchor const& spatialAnchor, Windows::Foundation::Collections::ValueSet const& propertySet) :
-    SpatialEntity(get_activation_factory<SpatialEntity, Windows::Perception::Spatial::ISpatialEntityFactory>().CreateWithSpatialAnchorAndProperties(spatialAnchor, propertySet))
+    SpatialEntity(impl::call_factory<SpatialEntity, Windows::Perception::Spatial::ISpatialEntityFactory>([&](auto&& f) { return f.CreateWithSpatialAnchorAndProperties(spatialAnchor, propertySet); }))
 {}
 
 inline bool SpatialEntityStore::IsSupported()
 {
-    return get_activation_factory<SpatialEntityStore, Windows::Perception::Spatial::ISpatialEntityStoreStatics>().IsSupported();
+    return impl::call_factory<SpatialEntityStore, Windows::Perception::Spatial::ISpatialEntityStoreStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 inline Windows::Perception::Spatial::SpatialEntityStore SpatialEntityStore::TryGet(Windows::System::RemoteSystems::RemoteSystemSession const& session)
 {
-    return get_activation_factory<SpatialEntityStore, Windows::Perception::Spatial::ISpatialEntityStoreStatics>().TryGet(session);
+    return impl::call_factory<SpatialEntityStore, Windows::Perception::Spatial::ISpatialEntityStoreStatics>([&](auto&& f) { return f.TryGet(session); });
 }
 
 inline Windows::Perception::Spatial::SpatialLocator SpatialLocator::GetDefault()
 {
-    return get_activation_factory<SpatialLocator, Windows::Perception::Spatial::ISpatialLocatorStatics>().GetDefault();
+    return impl::call_factory<SpatialLocator, Windows::Perception::Spatial::ISpatialLocatorStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::Perception::Spatial::SpatialStageFrameOfReference SpatialStageFrameOfReference::Current()
 {
-    return get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>().Current();
+    return impl::call_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>([&](auto&& f) { return f.Current(); });
 }
 
-inline event_token SpatialStageFrameOfReference::CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token SpatialStageFrameOfReference::CurrentChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>().CurrentChanged(handler);
+    return impl::call_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>([&](auto&& f) { return f.CurrentChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> SpatialStageFrameOfReference::CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline SpatialStageFrameOfReference::CurrentChanged_revoker SpatialStageFrameOfReference::CurrentChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>();
-    return { factory, &impl::abi_t<Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>::remove_CurrentChanged, factory.CurrentChanged(handler) };
+    auto f = get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>();
+    return { f, f.CurrentChanged(handler) };
 }
 
-inline void SpatialStageFrameOfReference::CurrentChanged(event_token const& cookie)
+inline void SpatialStageFrameOfReference::CurrentChanged(winrt::event_token const& cookie)
 {
-    get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>().CurrentChanged(cookie);
+    impl::call_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>([&](auto&& f) { return f.CurrentChanged(cookie); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> SpatialStageFrameOfReference::RequestNewStageAsync()
 {
-    return get_activation_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>().RequestNewStageAsync();
+    return impl::call_factory<SpatialStageFrameOfReference, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>([&](auto&& f) { return f.RequestNewStageAsync(); });
 }
 
 }
@@ -2096,6 +2093,9 @@ WINRT_EXPORT namespace std {
 
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchor> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchor> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchor2> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchor2> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorExporter> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorExporter> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorExporterStatics> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorExporterStatics> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorManagerStatics> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorManagerStatics> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialAnchorStatics> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialAnchorStatics> {};
@@ -2113,6 +2113,7 @@ template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialEntityStoreS
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialEntityWatcher> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialEntityWatcher> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialLocation> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialLocation> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialLocation2> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialLocation2> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialLocator> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialLocator> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs> {};
@@ -2121,6 +2122,8 @@ template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialStageFrameOf
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::ISpatialStationaryFrameOfReference> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::ISpatialStationaryFrameOfReference> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchor> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchor> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchorExportSufficiency> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchorExportSufficiency> {};
+template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchorExporter> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchorExporter> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchorManager> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchorManager> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> {};
 template<> struct hash<winrt::Windows::Perception::Spatial::SpatialAnchorStore> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialAnchorStore> {};
@@ -2141,5 +2144,3 @@ template<> struct hash<winrt::Windows::Perception::Spatial::SpatialStageFrameOfR
 template<> struct hash<winrt::Windows::Perception::Spatial::SpatialStationaryFrameOfReference> : winrt::impl::hash_base<winrt::Windows::Perception::Spatial::SpatialStationaryFrameOfReference> {};
 
 }
-
-WINRT_WARNING_POP

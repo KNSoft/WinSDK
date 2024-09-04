@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -30,7 +30,7 @@ struct PhoneCallOriginManager
     PhoneCallOriginManager() = delete;
     static bool IsCurrentAppActiveCallOriginApp();
     static void ShowPhoneCallOriginSettingsUI();
-    static void SetCallOrigin(GUID const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin);
+    static void SetCallOrigin(winrt::guid const& requestId, Windows::ApplicationModel::Calls::Provider::PhoneCallOrigin const& callOrigin);
     static Windows::Foundation::IAsyncOperation<bool> RequestSetAsActiveCallOriginAppAsync();
 };
 

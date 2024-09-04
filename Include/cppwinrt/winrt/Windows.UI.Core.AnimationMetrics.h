@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.Core.AnimationMetrics.2.h"
@@ -143,277 +143,241 @@ template <typename D> Windows::Foundation::Point consume_Windows_UI_Core_Animati
 template <typename D>
 struct produce<D, Windows::UI::Core::AnimationMetrics::IAnimationDescription> : produce_base<D, Windows::UI::Core::AnimationMetrics::IAnimationDescription>
 {
-    HRESULT __stdcall get_Animations(void** value) noexcept final
+    int32_t WINRT_CALL get_Animations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Animations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Core::AnimationMetrics::IPropertyAnimation>>(this->shim().Animations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaggerDelay(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_StaggerDelay(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaggerDelay, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().StaggerDelay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StaggerDelayFactor(float* value) noexcept final
+    int32_t WINRT_CALL get_StaggerDelayFactor(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StaggerDelayFactor, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().StaggerDelayFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DelayLimit(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_DelayLimit(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DelayLimit, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().DelayLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZOrder(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ZOrder(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZOrder, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ZOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory> : produce_base<D, Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>
 {
-    HRESULT __stdcall CreateInstance(Windows::UI::Core::AnimationMetrics::AnimationEffect effect, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget target, void** animation) noexcept final
+    int32_t WINRT_CALL CreateInstance(Windows::UI::Core::AnimationMetrics::AnimationEffect effect, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget target, void** animation) noexcept final
     {
         try
         {
             *animation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Core::AnimationMetrics::AnimationDescription), Windows::UI::Core::AnimationMetrics::AnimationEffect const&, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget const&);
             *animation = detach_from<Windows::UI::Core::AnimationMetrics::AnimationDescription>(this->shim().CreateInstance(*reinterpret_cast<Windows::UI::Core::AnimationMetrics::AnimationEffect const*>(&effect), *reinterpret_cast<Windows::UI::Core::AnimationMetrics::AnimationEffectTarget const*>(&target)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Core::AnimationMetrics::IOpacityAnimation> : produce_base<D, Windows::UI::Core::AnimationMetrics::IOpacityAnimation>
 {
-    HRESULT __stdcall get_InitialOpacity(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialOpacity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialOpacity, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().InitialOpacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FinalOpacity(float* value) noexcept final
+    int32_t WINRT_CALL get_FinalOpacity(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalOpacity, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().FinalOpacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Core::AnimationMetrics::IPropertyAnimation> : produce_base<D, Windows::UI::Core::AnimationMetrics::IPropertyAnimation>
 {
-    HRESULT __stdcall get_Type(Windows::UI::Core::AnimationMetrics::PropertyAnimationType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::UI::Core::AnimationMetrics::PropertyAnimationType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::UI::Core::AnimationMetrics::PropertyAnimationType));
             *value = detach_from<Windows::UI::Core::AnimationMetrics::PropertyAnimationType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Delay(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Delay, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Delay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Control1(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Control1(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control1, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Control1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Control2(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Control2(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Control2, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Control2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Core::AnimationMetrics::IScaleAnimation> : produce_base<D, Windows::UI::Core::AnimationMetrics::IScaleAnimation>
 {
-    HRESULT __stdcall get_InitialScaleX(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialScaleX(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialScaleX, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().InitialScaleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialScaleY(void** value) noexcept final
+    int32_t WINRT_CALL get_InitialScaleY(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialScaleY, WINRT_WRAP(Windows::Foundation::IReference<float>));
             *value = detach_from<Windows::Foundation::IReference<float>>(this->shim().InitialScaleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FinalScaleX(float* value) noexcept final
+    int32_t WINRT_CALL get_FinalScaleX(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalScaleX, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().FinalScaleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FinalScaleY(float* value) noexcept final
+    int32_t WINRT_CALL get_FinalScaleY(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FinalScaleY, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().FinalScaleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalizedOrigin(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_NormalizedOrigin(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalizedOrigin, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().NormalizedOrigin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -422,7 +386,7 @@ struct produce<D, Windows::UI::Core::AnimationMetrics::IScaleAnimation> : produc
 WINRT_EXPORT namespace winrt::Windows::UI::Core::AnimationMetrics {
 
 inline AnimationDescription::AnimationDescription(Windows::UI::Core::AnimationMetrics::AnimationEffect const& effect, Windows::UI::Core::AnimationMetrics::AnimationEffectTarget const& target) :
-    AnimationDescription(get_activation_factory<AnimationDescription, Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>().CreateInstance(effect, target))
+    AnimationDescription(impl::call_factory<AnimationDescription, Windows::UI::Core::AnimationMetrics::IAnimationDescriptionFactory>([&](auto&& f) { return f.CreateInstance(effect, target); }))
 {}
 
 }
@@ -441,5 +405,3 @@ template<> struct hash<winrt::Windows::UI::Core::AnimationMetrics::ScaleAnimatio
 template<> struct hash<winrt::Windows::UI::Core::AnimationMetrics::TranslationAnimation> : winrt::impl::hash_base<winrt::Windows::UI::Core::AnimationMetrics::TranslationAnimation> {};
 
 }
-
-WINRT_WARNING_POP

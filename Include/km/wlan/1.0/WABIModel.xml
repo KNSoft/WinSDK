@@ -572,6 +572,12 @@
       <containerRef id="WDI_TLV_PM_PROTOCOL_RSN_OFFLOAD_KEYS" name="DOT11RSNREKeyOffload" type="DOT11RSNREKeyOffloadContainer" />
     </message>
 
+     <message commandId ="WDI_INDICATION_DEVICE_SERVICE_EVENT" type="WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS" description="Parameters for WDI_INDICATION_DEVICE_SERVICE_EVENT" direction="FromIhv" >
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_GUID" name="DeviceServiceGUID" type="GuidContainer" />
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE" name="Opcode" type="UINT32Container" />
+      <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
+    </message>
+
     <message commandId="WDI_TEST_TASK" type="WDI_TASK_TEST_PARAMETERS" description="this is just a test" direction="Both">
       <!--Same Id, Optional Current, Optional Old, Multi Old, Multi Current" -->
       <containerRef id="WDI_TLV_TEST1" name="Newsocoomomc" type="Test" optional="true" multiContainer="true" versionAdded="WDI_VERSION_LATEST"/>

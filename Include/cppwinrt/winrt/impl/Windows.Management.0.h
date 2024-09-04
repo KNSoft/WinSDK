@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -64,11 +64,48 @@ template <> struct name<Windows::Management::MdmSessionManager>{ static constexp
 template <> struct name<Windows::Management::MdmAlertDataType>{ static constexpr auto & value{ L"Windows.Management.MdmAlertDataType" }; };
 template <> struct name<Windows::Management::MdmAlertMark>{ static constexpr auto & value{ L"Windows.Management.MdmAlertMark" }; };
 template <> struct name<Windows::Management::MdmSessionState>{ static constexpr auto & value{ L"Windows.Management.MdmSessionState" }; };
-template <> struct guid<Windows::Management::IMdmAlert>{ static constexpr GUID value{ 0xB0FBC327,0x28C1,0x4B52,{ 0xA5,0x48,0xC5,0x80,0x7C,0xAF,0x70,0xB6 } }; };
-template <> struct guid<Windows::Management::IMdmSession>{ static constexpr GUID value{ 0xFE89314C,0x8F64,0x4797,{ 0xA9,0xD7,0x9D,0x88,0xF8,0x6A,0xE1,0x66 } }; };
-template <> struct guid<Windows::Management::IMdmSessionManagerStatics>{ static constexpr GUID value{ 0xCF4AD959,0xF745,0x4B79,{ 0x9B,0x5C,0xDE,0x0B,0xF8,0xEF,0xE4,0x4B } }; };
+template <> struct guid_storage<Windows::Management::IMdmAlert>{ static constexpr guid value{ 0xB0FBC327,0x28C1,0x4B52,{ 0xA5,0x48,0xC5,0x80,0x7C,0xAF,0x70,0xB6 } }; };
+template <> struct guid_storage<Windows::Management::IMdmSession>{ static constexpr guid value{ 0xFE89314C,0x8F64,0x4797,{ 0xA9,0xD7,0x9D,0x88,0xF8,0x6A,0xE1,0x66 } }; };
+template <> struct guid_storage<Windows::Management::IMdmSessionManagerStatics>{ static constexpr guid value{ 0xCF4AD959,0xF745,0x4B79,{ 0x9B,0x5C,0xDE,0x0B,0xF8,0xEF,0xE4,0x4B } }; };
 template <> struct default_interface<Windows::Management::MdmAlert>{ using type = Windows::Management::IMdmAlert; };
 template <> struct default_interface<Windows::Management::MdmSession>{ using type = Windows::Management::IMdmSession; };
+
+template <> struct abi<Windows::Management::IMdmAlert>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Format(Windows::Management::MdmAlertDataType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Format(Windows::Management::MdmAlertDataType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mark(Windows::Management::MdmAlertMark* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mark(Windows::Management::MdmAlertMark value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Target(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Target(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Type(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::IMdmSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Alerts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Management::MdmSessionState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AttachAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL Delete() noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL StartWithAlertsAsync(void* alerts, void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::IMdmSessionManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SessionIds(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateSession(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteSessionById(void* sessionId) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSessionById(void* sessionId, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Management_IMdmAlert
@@ -93,7 +130,7 @@ template <typename D>
 struct consume_Windows_Management_IMdmSession
 {
     Windows::Foundation::Collections::IVectorView<Windows::Management::MdmAlert> Alerts() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     hstring Id() const;
     Windows::Management::MdmSessionState State() const;
     Windows::Foundation::IAsyncAction AttachAsync() const;
@@ -112,42 +149,5 @@ struct consume_Windows_Management_IMdmSessionManagerStatics
     Windows::Management::MdmSession GetSessionById(param::hstring const& sessionId) const;
 };
 template <> struct consume<Windows::Management::IMdmSessionManagerStatics> { template <typename D> using type = consume_Windows_Management_IMdmSessionManagerStatics<D>; };
-
-template <> struct abi<Windows::Management::IMdmAlert>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Data(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Format(Windows::Management::MdmAlertDataType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Format(Windows::Management::MdmAlertDataType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mark(Windows::Management::MdmAlertMark* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mark(Windows::Management::MdmAlertMark value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Target(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Target(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Type(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::IMdmSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Alerts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Management::MdmSessionState* value) noexcept = 0;
-    virtual HRESULT __stdcall AttachAsync(void** action) noexcept = 0;
-    virtual HRESULT __stdcall Delete() noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** action) noexcept = 0;
-    virtual HRESULT __stdcall StartWithAlertsAsync(void* alerts, void** action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::IMdmSessionManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SessionIds(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateSession(void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteSessionById(HSTRING sessionId) noexcept = 0;
-    virtual HRESULT __stdcall GetSessionById(HSTRING sessionId, void** result) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -12,6 +12,7 @@
 #include "winrt/impl/Windows.ApplicationModel.Contacts.0.h"
 #include "winrt/impl/Windows.ApplicationModel.Contacts.Provider.0.h"
 #include "winrt/impl/Windows.ApplicationModel.Core.0.h"
+#include "winrt/impl/Windows.ApplicationModel.DataTransfer.0.h"
 #include "winrt/impl/Windows.ApplicationModel.DataTransfer.ShareTarget.0.h"
 #include "winrt/impl/Windows.ApplicationModel.Search.0.h"
 #include "winrt/impl/Windows.ApplicationModel.UserDataAccounts.Provider.0.h"
@@ -27,7 +28,12 @@
 #include "winrt/impl/Windows.Storage.Pickers.Provider.0.h"
 #include "winrt/impl/Windows.Storage.Provider.0.h"
 #include "winrt/impl/Windows.Storage.Search.0.h"
+#include "winrt/impl/Windows.Storage.Streams.0.h"
 #include "winrt/impl/Windows.System.0.h"
+#include "winrt/impl/Windows.UI.0.h"
+#include "winrt/impl/Windows.Web.0.h"
+#include "winrt/impl/Windows.Web.Http.0.h"
+#include "winrt/impl/Windows.Web.UI.0.h"
 #include "winrt/impl/Windows.Graphics.Printing.0.h"
 #include "winrt/impl/Windows.UI.WebUI.0.h"
 
@@ -62,6 +68,13 @@ struct WINRT_EBO IHtmlPrintDocumentSource :
     IHtmlPrintDocumentSource(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO INewWebUIViewCreatedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<INewWebUIViewCreatedEventArgs>
+{
+    INewWebUIViewCreatedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IWebUIActivationStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IWebUIActivationStatics>
@@ -81,6 +94,13 @@ struct WINRT_EBO IWebUIActivationStatics3 :
     impl::consume_t<IWebUIActivationStatics3>
 {
     IWebUIActivationStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWebUIActivationStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWebUIActivationStatics4>
+{
+    IWebUIActivationStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IWebUIBackgroundTaskInstance :
@@ -116,6 +136,20 @@ struct WINRT_EBO IWebUINavigatedOperation :
     impl::consume_t<IWebUINavigatedOperation>
 {
     IWebUINavigatedOperation(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWebUIView :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWebUIView>
+{
+    IWebUIView(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IWebUIViewStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IWebUIViewStatics>
+{
+    IWebUIViewStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

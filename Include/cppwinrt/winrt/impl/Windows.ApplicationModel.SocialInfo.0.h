@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -25,26 +25,26 @@ struct IInputStream;
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::SocialInfo {
 
-enum class [[deprecated("SocialFeedItemStyle is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedItemStyle : int32_t
+enum class SocialFeedItemStyle : int32_t
 {
     Default = 0,
     Photo = 1,
 };
 
-enum class [[deprecated("SocialFeedKind is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedKind : int32_t
+enum class SocialFeedKind : int32_t
 {
     HomeFeed = 0,
     ContactFeed = 1,
     Dashboard = 2,
 };
 
-enum class [[deprecated("SocialFeedUpdateMode is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedUpdateMode : int32_t
+enum class SocialFeedUpdateMode : int32_t
 {
     Append = 0,
     Replace = 1,
 };
 
-enum class [[deprecated("SocialItemBadgeStyle is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialItemBadgeStyle : int32_t
+enum class SocialItemBadgeStyle : int32_t
 {
     Hidden = 0,
     Visible = 1,
@@ -100,12 +100,12 @@ template <> struct name<Windows::ApplicationModel::SocialInfo::SocialFeedItemSty
 template <> struct name<Windows::ApplicationModel::SocialInfo::SocialFeedKind>{ static constexpr auto & value{ L"Windows.ApplicationModel.SocialInfo.SocialFeedKind" }; };
 template <> struct name<Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode>{ static constexpr auto & value{ L"Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode" }; };
 template <> struct name<Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle>{ static constexpr auto & value{ L"Windows.ApplicationModel.SocialInfo.SocialItemBadgeStyle" }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>{ static constexpr GUID value{ 0x0B6A985A,0xD59D,0x40BE,{ 0x98,0x0C,0x48,0x8A,0x2A,0xB3,0x0A,0x83 } }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialFeedContent>{ static constexpr GUID value{ 0xA234E429,0x3E39,0x494D,{ 0xA3,0x7C,0xF4,0x62,0xA2,0x49,0x45,0x14 } }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialFeedItem>{ static constexpr GUID value{ 0x4F1392AB,0x1F72,0x4D33,{ 0xB6,0x95,0xDE,0x3E,0x1D,0xB6,0x03,0x17 } }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>{ static constexpr GUID value{ 0x7BFB9E40,0xA6AA,0x45A7,{ 0x9F,0xF6,0x54,0xC4,0x21,0x05,0xDD,0x1F } }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>{ static constexpr GUID value{ 0x5CBF831A,0x3F08,0x497F,{ 0x91,0x7F,0x57,0xE0,0x9D,0x84,0xB1,0x41 } }; };
-template <> struct guid<Windows::ApplicationModel::SocialInfo::ISocialUserInfo>{ static constexpr GUID value{ 0x9E5E1BD1,0x90D0,0x4E1D,{ 0x95,0x54,0x84,0x4D,0x46,0x60,0x7F,0x61 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>{ static constexpr guid value{ 0x0B6A985A,0xD59D,0x40BE,{ 0x98,0x0C,0x48,0x8A,0x2A,0xB3,0x0A,0x83 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialFeedContent>{ static constexpr guid value{ 0xA234E429,0x3E39,0x494D,{ 0xA3,0x7C,0xF4,0x62,0xA2,0x49,0x45,0x14 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialFeedItem>{ static constexpr guid value{ 0x4F1392AB,0x1F72,0x4D33,{ 0xB6,0x95,0xDE,0x3E,0x1D,0xB6,0x03,0x17 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>{ static constexpr guid value{ 0x7BFB9E40,0xA6AA,0x45A7,{ 0x9F,0xF6,0x54,0xC4,0x21,0x05,0xDD,0x1F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>{ static constexpr guid value{ 0x5CBF831A,0x3F08,0x497F,{ 0x91,0x7F,0x57,0xE0,0x9D,0x84,0xB1,0x41 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::SocialInfo::ISocialUserInfo>{ static constexpr guid value{ 0x9E5E1BD1,0x90D0,0x4E1D,{ 0x95,0x54,0x84,0x4D,0x46,0x60,0x7F,0x61 } }; };
 template <> struct default_interface<Windows::ApplicationModel::SocialInfo::SocialFeedChildItem>{ using type = Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem; };
 template <> struct default_interface<Windows::ApplicationModel::SocialInfo::SocialFeedContent>{ using type = Windows::ApplicationModel::SocialInfo::ISocialFeedContent; };
 template <> struct default_interface<Windows::ApplicationModel::SocialInfo::SocialFeedItem>{ using type = Windows::ApplicationModel::SocialInfo::ISocialFeedItem; };
@@ -113,184 +113,184 @@ template <> struct default_interface<Windows::ApplicationModel::SocialInfo::Soci
 template <> struct default_interface<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>{ using type = Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail; };
 template <> struct default_interface<Windows::ApplicationModel::SocialInfo::SocialUserInfo>{ using type = Windows::ApplicationModel::SocialInfo::ISocialUserInfo; };
 
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Author(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrimaryContent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SecondaryContent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnails(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharedItem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SharedItem(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Message(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Author(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrimaryContent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SecondaryContent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnails(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SharedItem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SharedItem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BadgeCountValue(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BadgeCountValue(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChildItem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChildItem(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OriginalSource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OriginalSource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Thumbnail(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImageUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ImageUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetImageAsync(void* image, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialUserInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UserName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetUri(void* value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialFeedChildItem
 {
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::DateTime Timestamp() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Timestamp(Windows::Foundation::DateTime const& value) const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> Thumbnails() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem SharedItem() const;
-    [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void SharedItem(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
+    Windows::Foundation::DateTime Timestamp() const;
+    void Timestamp(Windows::Foundation::DateTime const& value) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> Thumbnails() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem SharedItem() const;
+    void SharedItem(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialFeedChildItem<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialFeedContent
 {
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring Title() const;
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Title(param::hstring const& value) const;
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring Message() const;
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Message(param::hstring const& value) const;
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
+    hstring Title() const;
+    void Title(param::hstring const& value) const;
+    hstring Message() const;
+    void Message(param::hstring const& value) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialFeedContent> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialFeedContent<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialFeedItem
 {
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::DateTime Timestamp() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Timestamp(Windows::Foundation::DateTime const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> Thumbnails() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem SharedItem() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void SharedItem(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle BadgeStyle() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] int32_t BadgeCountValue() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void BadgeCountValue(int32_t value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring RemoteId() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void RemoteId(param::hstring const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedChildItem ChildItem() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ChildItem(Windows::ApplicationModel::SocialInfo::SocialFeedChildItem const& value) const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle Style() const;
-    [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
+    Windows::Foundation::DateTime Timestamp() const;
+    void Timestamp(Windows::Foundation::DateTime const& value) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> Thumbnails() const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem SharedItem() const;
+    void SharedItem(Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle BadgeStyle() const;
+    void BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle const& value) const;
+    int32_t BadgeCountValue() const;
+    void BadgeCountValue(int32_t value) const;
+    hstring RemoteId() const;
+    void RemoteId(param::hstring const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedChildItem ChildItem() const;
+    void ChildItem(Windows::ApplicationModel::SocialInfo::SocialFeedChildItem const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle Style() const;
+    void Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialFeedItem> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialFeedItem<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialFeedSharedItem
 {
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri OriginalSource() const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OriginalSource(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::DateTime Timestamp() const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Timestamp(Windows::Foundation::DateTime const& value) const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Thumbnail(Windows::ApplicationModel::SocialInfo::SocialItemThumbnail const& value) const;
-    [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialItemThumbnail Thumbnail() const;
+    Windows::Foundation::Uri OriginalSource() const;
+    void OriginalSource(Windows::Foundation::Uri const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
+    Windows::Foundation::DateTime Timestamp() const;
+    void Timestamp(Windows::Foundation::DateTime const& value) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
+    void Thumbnail(Windows::ApplicationModel::SocialInfo::SocialItemThumbnail const& value) const;
+    Windows::ApplicationModel::SocialInfo::SocialItemThumbnail Thumbnail() const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialFeedSharedItem<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialItemThumbnail
 {
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri ImageUri() const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ImageUri(Windows::Foundation::Uri const& value) const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Graphics::Imaging::BitmapSize BitmapSize() const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] void BitmapSize(Windows::Graphics::Imaging::BitmapSize const& value) const;
-    [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction SetImageAsync(Windows::Storage::Streams::IInputStream const& image) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
+    Windows::Foundation::Uri ImageUri() const;
+    void ImageUri(Windows::Foundation::Uri const& value) const;
+    Windows::Graphics::Imaging::BitmapSize BitmapSize() const;
+    void BitmapSize(Windows::Graphics::Imaging::BitmapSize const& value) const;
+    Windows::Foundation::IAsyncAction SetImageAsync(Windows::Storage::Streams::IInputStream const& image) const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialItemThumbnail<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_SocialInfo_ISocialUserInfo
 {
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring DisplayName() const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] void DisplayName(param::hstring const& value) const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring UserName() const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] void UserName(param::hstring const& value) const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring RemoteId() const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] void RemoteId(param::hstring const& value) const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
-    [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(Windows::Foundation::Uri const& value) const;
+    hstring DisplayName() const;
+    void DisplayName(param::hstring const& value) const;
+    hstring UserName() const;
+    void UserName(param::hstring const& value) const;
+    hstring RemoteId() const;
+    void RemoteId(param::hstring const& value) const;
+    Windows::Foundation::Uri TargetUri() const;
+    void TargetUri(Windows::Foundation::Uri const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::SocialInfo::ISocialUserInfo> { template <typename D> using type = consume_Windows_ApplicationModel_SocialInfo_ISocialUserInfo<D>; };
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Author(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrimaryContent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SecondaryContent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnails(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SharedItem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SharedItem(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Message(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Author(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrimaryContent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SecondaryContent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnails(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SharedItem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SharedItem(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_BadgeCountValue(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BadgeCountValue(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChildItem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ChildItem(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OriginalSource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_OriginalSource(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Timestamp(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Thumbnail(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImageUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ImageUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BitmapSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
-    virtual HRESULT __stdcall SetImageAsync(void* image, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::SocialInfo::ISocialUserInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UserName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetUri(void* value) noexcept = 0;
-};};
 
 }

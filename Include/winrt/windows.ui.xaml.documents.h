@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.documents.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -3307,9 +3319,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IBlock * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IBlock * * value
                             ) = 0;
                         
                     };
@@ -3614,21 +3626,21 @@ namespace ABI {
                             /* [in] */INT32 value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Invoked(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Invoked(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GotFocus(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GotFocus(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LostFocus(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LostFocus(
@@ -3752,11 +3764,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvid
  * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProviderCollection
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
- *     Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__)
@@ -3813,9 +3820,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IContentLinkProvider * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IContentLinkProvider * * value
                             ) = 0;
                         
                     };
@@ -4196,7 +4203,7 @@ namespace ABI {
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Click(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Click(
@@ -4386,14 +4393,14 @@ namespace ABI {
                             /* [in] */ABI::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GotFocus(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GotFocus(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LostFocus(
-                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LostFocus(
@@ -4401,7 +4408,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE Focus(
                             /* [in] */ABI::Windows::UI::Xaml::FocusState value,
-                            /* [retval, out] */__RPC__out boolean * returnValue
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         
                     };
@@ -4818,9 +4825,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IInline * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::IInline * * value
                             ) = 0;
                         
                     };
@@ -5262,9 +5269,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ISpan * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ISpan * * value
                             ) = 0;
                         
                     };
@@ -5371,7 +5378,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE FindName(
                             /* [in] */__RPC__in HSTRING name,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -5554,21 +5561,21 @@ namespace ABI {
                             /* [in] */DOUBLE value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccessKeyDisplayRequested(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_AccessKeyDisplayRequested(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccessKeyDisplayDismissed(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_AccessKeyDisplayDismissed(
                             /* [in] */EventRegistrationToken token
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccessKeyInvoked(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_AccessKeyInvoked(
@@ -6045,9 +6052,9 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                            /* [in] */__RPC__in_opt IInspectable * outer,
-                            /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ITextHighlighter * * instance
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ITextHighlighter * * value
                             ) = 0;
                         
                     };
@@ -6149,12 +6156,12 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCharacterRect(
                             /* [in] */ABI::Windows::UI::Xaml::Documents::LogicalDirection direction,
-                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetPositionAtOffset(
                             /* [in] */INT32 offset,
                             /* [in] */ABI::Windows::UI::Xaml::Documents::LogicalDirection direction,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ITextPointer * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Documents::ITextPointer * * result
                             ) = 0;
                         
                     };
@@ -6241,7 +6248,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetAnnotationAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetAnnotationAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6252,7 +6259,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetEastAsianExpertForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetEastAsianExpertForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6263,7 +6270,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetEastAsianLanguage(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontEastAsianLanguage * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontEastAsianLanguage * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetEastAsianLanguage(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6274,7 +6281,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetEastAsianWidths(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontEastAsianWidths * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontEastAsianWidths * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetEastAsianWidths(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6285,7 +6292,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStandardLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStandardLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6296,7 +6303,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetContextualLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetContextualLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6307,7 +6314,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetDiscretionaryLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetDiscretionaryLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6318,7 +6325,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetHistoricalLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetHistoricalLigatures(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6329,7 +6336,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStandardSwashes(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStandardSwashes(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6340,7 +6347,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetContextualSwashes(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetContextualSwashes(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6351,7 +6358,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetContextualAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetContextualAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6362,7 +6369,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out INT32 * value
+                            /* [retval, out] */__RPC__out INT32 * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticAlternates(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6373,7 +6380,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet1(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet1(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6384,7 +6391,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet2(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet2(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6395,7 +6402,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet3(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet3(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6406,7 +6413,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet4(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet4(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6417,7 +6424,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet5(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet5(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6428,7 +6435,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet6(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet6(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6439,7 +6446,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet7(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet7(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6450,7 +6457,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet8(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet8(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6461,7 +6468,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet9(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet9(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6472,7 +6479,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet10(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet10(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6483,7 +6490,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet11(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet11(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6494,7 +6501,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet12(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet12(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6505,7 +6512,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet13(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet13(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6516,7 +6523,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet14(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet14(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6527,7 +6534,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet15(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet15(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6538,7 +6545,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet16(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet16(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6549,7 +6556,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet17(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet17(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6560,7 +6567,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet18(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet18(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6571,7 +6578,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet19(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet19(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6582,7 +6589,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetStylisticSet20(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetStylisticSet20(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6593,7 +6600,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCapitals(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontCapitals * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontCapitals * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetCapitals(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6604,7 +6611,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCapitalSpacing(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetCapitalSpacing(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6615,7 +6622,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetKerning(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetKerning(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6626,7 +6633,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetCaseSensitiveForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetCaseSensitiveForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6637,7 +6644,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetHistoricalForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetHistoricalForms(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6648,7 +6655,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetFraction(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontFraction * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontFraction * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetFraction(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6659,7 +6666,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetNumeralStyle(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontNumeralStyle * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontNumeralStyle * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetNumeralStyle(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6670,7 +6677,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetNumeralAlignment(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontNumeralAlignment * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontNumeralAlignment * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetNumeralAlignment(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6681,7 +6688,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetSlashedZero(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetSlashedZero(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6692,7 +6699,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetMathematicalGreek(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out boolean * value
+                            /* [retval, out] */__RPC__out boolean * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetMathematicalGreek(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6703,7 +6710,7 @@ namespace ABI {
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE GetVariants(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontVariants * value
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::FontVariants * result
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE SetVariants(
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -6803,8 +6810,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.Block ** Default Interface **
  *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.Block
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -6911,8 +6916,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7107,8 +7110,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.Inline ** Default Interface **
  *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.Inline
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -7329,10 +7330,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.ITextElement ** Default Interface **
- *    Windows.UI.Xaml.Documents.ITextElementOverrides
  *    Windows.UI.Xaml.Documents.ITextElement2
  *    Windows.UI.Xaml.Documents.ITextElement3
  *    Windows.UI.Xaml.Documents.ITextElement4
+ *    Windows.UI.Xaml.Documents.ITextElementOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7408,8 +7409,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.ITextPointer ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -10872,9 +10871,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlockFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlock * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlock * * value
         );
     END_INTERFACE
     
@@ -10904,8 +10903,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlockFactory
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlockFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlockFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIBlockFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -11462,7 +11461,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Invoked )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CContentLink_Windows__CUI__CXaml__CDocuments__CContentLinkInvokedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Invoked )(
@@ -11471,7 +11470,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GotFocus )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GotFocus )(
@@ -11480,7 +11479,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LostFocus )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LostFocus )(
@@ -11607,20 +11606,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_put_TabIndex(This,value) \
     ( (This)->lpVtbl->put_TabIndex(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_Invoked(This,value,token) \
-    ( (This)->lpVtbl->add_Invoked(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_Invoked(This,handler,token) \
+    ( (This)->lpVtbl->add_Invoked(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_Invoked(This,token) \
     ( (This)->lpVtbl->remove_Invoked(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_GotFocus(This,value,token) \
-    ( (This)->lpVtbl->add_GotFocus(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_GotFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_GotFocus(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_GotFocus(This,token) \
     ( (This)->lpVtbl->remove_GotFocus(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_LostFocus(This,value,token) \
-    ( (This)->lpVtbl->add_LostFocus(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_add_LostFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_LostFocus(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLink_remove_LostFocus(This,token) \
     ( (This)->lpVtbl->remove_LostFocus(This,token) )
@@ -11840,11 +11839,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvid
  * Interface is a part of the implementation of type Windows.UI.Xaml.Documents.ContentLinkProviderCollection
  *
  *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.ContentLinkProvider
- *     Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.ContentLinkProvider
- *
- *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 #if !defined(____x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderCollection_INTERFACE_DEFINED__)
@@ -11972,9 +11966,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProvider * * value
         );
     END_INTERFACE
     
@@ -12004,8 +11998,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIContentLinkProviderFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -12813,7 +12807,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Click )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CHyperlink_Windows__CUI__CXaml__CDocuments__CHyperlinkClickEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Click )(
@@ -12854,8 +12848,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink_put_NavigateUri(This,value) \
     ( (This)->lpVtbl->put_NavigateUri(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink_add_Click(This,value,token) \
-    ( (This)->lpVtbl->add_Click(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink_add_Click(This,handler,token) \
+    ( (This)->lpVtbl->add_Click(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink_remove_Click(This,token) \
     ( (This)->lpVtbl->remove_Click(This,token) )
@@ -13212,7 +13206,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GotFocus )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4 * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GotFocus )(
@@ -13221,7 +13215,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LostFocus )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4 * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LostFocus )(
@@ -13231,7 +13225,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *Focus )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CFocusState value,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -13288,20 +13282,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_put_XYFocusRightNavigationStrategy(This,value) \
     ( (This)->lpVtbl->put_XYFocusRightNavigationStrategy(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_add_GotFocus(This,value,token) \
-    ( (This)->lpVtbl->add_GotFocus(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_add_GotFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_GotFocus(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_remove_GotFocus(This,token) \
     ( (This)->lpVtbl->remove_GotFocus(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_add_LostFocus(This,value,token) \
-    ( (This)->lpVtbl->add_LostFocus(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_add_LostFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_LostFocus(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_remove_LostFocus(This,token) \
     ( (This)->lpVtbl->remove_LostFocus(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_Focus(This,value,returnValue) \
-    ( (This)->lpVtbl->Focus(This,value,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIHyperlink4_Focus(This,value,result) \
+    ( (This)->lpVtbl->Focus(This,value,result) )
 
 
 #endif /* COBJMACROS */
@@ -14177,9 +14171,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInlineFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInline * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInline * * value
         );
     END_INTERFACE
     
@@ -14209,8 +14203,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInlineFactory
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInlineFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInlineFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CIInlineFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -15137,9 +15131,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpanFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpan * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpan * * value
         );
     END_INTERFACE
     
@@ -15169,8 +15163,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpanFactory
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpanFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpanFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CISpanFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -15317,7 +15311,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *FindName )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement * This,
         /* [in] */__RPC__in HSTRING name,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -15410,8 +15404,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement_get_ElementEnd(This,value) \
     ( (This)->lpVtbl->get_ElementEnd(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement_FindName(This,name,returnValue) \
-    ( (This)->lpVtbl->FindName(This,name,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement_FindName(This,name,result) \
+    ( (This)->lpVtbl->FindName(This,name,result) )
 
 
 #endif /* COBJMACROS */
@@ -15749,7 +15743,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_AccessKeyDisplayRequested )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_AccessKeyDisplayRequested )(
@@ -15758,7 +15752,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_AccessKeyDisplayDismissed )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyDisplayDismissedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_AccessKeyDisplayDismissed )(
@@ -15767,7 +15761,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_AccessKeyInvoked )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CDocuments__CTextElement_Windows__CUI__CXaml__CInput__CAccessKeyInvokedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_AccessKeyInvoked )(
@@ -15838,20 +15832,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_put_KeyTipVerticalOffset(This,value) \
     ( (This)->lpVtbl->put_KeyTipVerticalOffset(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyDisplayRequested(This,value,token) \
-    ( (This)->lpVtbl->add_AccessKeyDisplayRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyDisplayRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_AccessKeyDisplayRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_remove_AccessKeyDisplayRequested(This,token) \
     ( (This)->lpVtbl->remove_AccessKeyDisplayRequested(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyDisplayDismissed(This,value,token) \
-    ( (This)->lpVtbl->add_AccessKeyDisplayDismissed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyDisplayDismissed(This,handler,token) \
+    ( (This)->lpVtbl->add_AccessKeyDisplayDismissed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_remove_AccessKeyDisplayDismissed(This,token) \
     ( (This)->lpVtbl->remove_AccessKeyDisplayDismissed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyInvoked(This,value,token) \
-    ( (This)->lpVtbl->add_AccessKeyInvoked(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_add_AccessKeyInvoked(This,handler,token) \
+    ( (This)->lpVtbl->add_AccessKeyInvoked(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextElement4_remove_AccessKeyInvoked(This,token) \
     ( (This)->lpVtbl->remove_AccessKeyInvoked(This,token) )
@@ -16857,9 +16851,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighterFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighter * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighter * * value
         );
     END_INTERFACE
     
@@ -16889,8 +16883,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighterFactory
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighterFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighterFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextHighlighterFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -17069,13 +17063,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCharacterRect )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CDocuments_CLogicalDirection direction,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetPositionAtOffset )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer * This,
         /* [in] */INT32 offset,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CDocuments_CLogicalDirection direction,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer * * result
         );
     END_INTERFACE
     
@@ -17117,11 +17111,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer_get_Offset(This,value) \
     ( (This)->lpVtbl->get_Offset(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer_GetCharacterRect(This,direction,returnValue) \
-    ( (This)->lpVtbl->GetCharacterRect(This,direction,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer_GetCharacterRect(This,direction,result) \
+    ( (This)->lpVtbl->GetCharacterRect(This,direction,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer_GetPositionAtOffset(This,offset,direction,returnValue) \
-    ( (This)->lpVtbl->GetPositionAtOffset(This,offset,direction,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITextPointer_GetPositionAtOffset(This,offset,direction,result) \
+    ( (This)->lpVtbl->GetPositionAtOffset(This,offset,direction,result) )
 
 
 #endif /* COBJMACROS */
@@ -17274,7 +17268,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetAnnotationAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetAnnotationAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17288,7 +17282,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetEastAsianExpertForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetEastAsianExpertForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17302,7 +17296,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetEastAsianLanguage )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontEastAsianLanguage * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontEastAsianLanguage * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetEastAsianLanguage )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17316,7 +17310,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetEastAsianWidths )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontEastAsianWidths * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontEastAsianWidths * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetEastAsianWidths )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17330,7 +17324,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStandardLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStandardLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17344,7 +17338,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetContextualLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetContextualLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17358,7 +17352,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetDiscretionaryLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetDiscretionaryLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17372,7 +17366,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetHistoricalLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetHistoricalLigatures )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17386,7 +17380,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStandardSwashes )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStandardSwashes )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17400,7 +17394,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetContextualSwashes )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetContextualSwashes )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17414,7 +17408,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetContextualAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetContextualAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17428,7 +17422,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out INT32 * value
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticAlternates )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17442,7 +17436,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet1 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet1 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17456,7 +17450,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet2 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet2 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17470,7 +17464,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet3 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet3 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17484,7 +17478,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet4 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet4 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17498,7 +17492,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet5 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet5 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17512,7 +17506,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet6 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet6 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17526,7 +17520,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet7 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet7 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17540,7 +17534,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet8 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet8 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17554,7 +17548,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet9 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet9 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17568,7 +17562,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet10 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet10 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17582,7 +17576,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet11 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet11 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17596,7 +17590,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet12 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet12 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17610,7 +17604,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet13 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet13 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17624,7 +17618,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet14 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet14 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17638,7 +17632,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet15 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet15 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17652,7 +17646,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet16 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet16 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17666,7 +17660,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet17 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet17 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17680,7 +17674,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet18 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet18 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17694,7 +17688,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet19 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet19 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17708,7 +17702,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetStylisticSet20 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetStylisticSet20 )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17722,7 +17716,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCapitals )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontCapitals * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontCapitals * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetCapitals )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17736,7 +17730,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCapitalSpacing )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetCapitalSpacing )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17750,7 +17744,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetKerning )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetKerning )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17764,7 +17758,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetCaseSensitiveForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetCaseSensitiveForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17778,7 +17772,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetHistoricalForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetHistoricalForms )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17792,7 +17786,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetFraction )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontFraction * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontFraction * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetFraction )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17806,7 +17800,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetNumeralStyle )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontNumeralStyle * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontNumeralStyle * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetNumeralStyle )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17820,7 +17814,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetNumeralAlignment )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontNumeralAlignment * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontNumeralAlignment * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetNumeralAlignment )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17834,7 +17828,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetSlashedZero )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetSlashedZero )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17848,7 +17842,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetMathematicalGreek )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out boolean * value
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetMathematicalGreek )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17862,7 +17856,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetVariants )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontVariants * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CFontVariants * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetVariants )(
         __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics * This,
@@ -17900,8 +17894,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_AnnotationAlternatesProperty(This,value) \
     ( (This)->lpVtbl->get_AnnotationAlternatesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetAnnotationAlternates(This,element,value) \
-    ( (This)->lpVtbl->GetAnnotationAlternates(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetAnnotationAlternates(This,element,result) \
+    ( (This)->lpVtbl->GetAnnotationAlternates(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetAnnotationAlternates(This,element,value) \
     ( (This)->lpVtbl->SetAnnotationAlternates(This,element,value) )
@@ -17909,8 +17903,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_EastAsianExpertFormsProperty(This,value) \
     ( (This)->lpVtbl->get_EastAsianExpertFormsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianExpertForms(This,element,value) \
-    ( (This)->lpVtbl->GetEastAsianExpertForms(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianExpertForms(This,element,result) \
+    ( (This)->lpVtbl->GetEastAsianExpertForms(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetEastAsianExpertForms(This,element,value) \
     ( (This)->lpVtbl->SetEastAsianExpertForms(This,element,value) )
@@ -17918,8 +17912,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_EastAsianLanguageProperty(This,value) \
     ( (This)->lpVtbl->get_EastAsianLanguageProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianLanguage(This,element,value) \
-    ( (This)->lpVtbl->GetEastAsianLanguage(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianLanguage(This,element,result) \
+    ( (This)->lpVtbl->GetEastAsianLanguage(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetEastAsianLanguage(This,element,value) \
     ( (This)->lpVtbl->SetEastAsianLanguage(This,element,value) )
@@ -17927,8 +17921,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_EastAsianWidthsProperty(This,value) \
     ( (This)->lpVtbl->get_EastAsianWidthsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianWidths(This,element,value) \
-    ( (This)->lpVtbl->GetEastAsianWidths(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetEastAsianWidths(This,element,result) \
+    ( (This)->lpVtbl->GetEastAsianWidths(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetEastAsianWidths(This,element,value) \
     ( (This)->lpVtbl->SetEastAsianWidths(This,element,value) )
@@ -17936,8 +17930,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StandardLigaturesProperty(This,value) \
     ( (This)->lpVtbl->get_StandardLigaturesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStandardLigatures(This,element,value) \
-    ( (This)->lpVtbl->GetStandardLigatures(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStandardLigatures(This,element,result) \
+    ( (This)->lpVtbl->GetStandardLigatures(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStandardLigatures(This,element,value) \
     ( (This)->lpVtbl->SetStandardLigatures(This,element,value) )
@@ -17945,8 +17939,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_ContextualLigaturesProperty(This,value) \
     ( (This)->lpVtbl->get_ContextualLigaturesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualLigatures(This,element,value) \
-    ( (This)->lpVtbl->GetContextualLigatures(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualLigatures(This,element,result) \
+    ( (This)->lpVtbl->GetContextualLigatures(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetContextualLigatures(This,element,value) \
     ( (This)->lpVtbl->SetContextualLigatures(This,element,value) )
@@ -17954,8 +17948,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_DiscretionaryLigaturesProperty(This,value) \
     ( (This)->lpVtbl->get_DiscretionaryLigaturesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetDiscretionaryLigatures(This,element,value) \
-    ( (This)->lpVtbl->GetDiscretionaryLigatures(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetDiscretionaryLigatures(This,element,result) \
+    ( (This)->lpVtbl->GetDiscretionaryLigatures(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetDiscretionaryLigatures(This,element,value) \
     ( (This)->lpVtbl->SetDiscretionaryLigatures(This,element,value) )
@@ -17963,8 +17957,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_HistoricalLigaturesProperty(This,value) \
     ( (This)->lpVtbl->get_HistoricalLigaturesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetHistoricalLigatures(This,element,value) \
-    ( (This)->lpVtbl->GetHistoricalLigatures(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetHistoricalLigatures(This,element,result) \
+    ( (This)->lpVtbl->GetHistoricalLigatures(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetHistoricalLigatures(This,element,value) \
     ( (This)->lpVtbl->SetHistoricalLigatures(This,element,value) )
@@ -17972,8 +17966,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StandardSwashesProperty(This,value) \
     ( (This)->lpVtbl->get_StandardSwashesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStandardSwashes(This,element,value) \
-    ( (This)->lpVtbl->GetStandardSwashes(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStandardSwashes(This,element,result) \
+    ( (This)->lpVtbl->GetStandardSwashes(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStandardSwashes(This,element,value) \
     ( (This)->lpVtbl->SetStandardSwashes(This,element,value) )
@@ -17981,8 +17975,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_ContextualSwashesProperty(This,value) \
     ( (This)->lpVtbl->get_ContextualSwashesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualSwashes(This,element,value) \
-    ( (This)->lpVtbl->GetContextualSwashes(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualSwashes(This,element,result) \
+    ( (This)->lpVtbl->GetContextualSwashes(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetContextualSwashes(This,element,value) \
     ( (This)->lpVtbl->SetContextualSwashes(This,element,value) )
@@ -17990,8 +17984,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_ContextualAlternatesProperty(This,value) \
     ( (This)->lpVtbl->get_ContextualAlternatesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualAlternates(This,element,value) \
-    ( (This)->lpVtbl->GetContextualAlternates(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetContextualAlternates(This,element,result) \
+    ( (This)->lpVtbl->GetContextualAlternates(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetContextualAlternates(This,element,value) \
     ( (This)->lpVtbl->SetContextualAlternates(This,element,value) )
@@ -17999,8 +17993,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticAlternatesProperty(This,value) \
     ( (This)->lpVtbl->get_StylisticAlternatesProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticAlternates(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticAlternates(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticAlternates(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticAlternates(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticAlternates(This,element,value) \
     ( (This)->lpVtbl->SetStylisticAlternates(This,element,value) )
@@ -18008,8 +18002,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet1Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet1Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet1(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet1(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet1(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet1(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet1(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet1(This,element,value) )
@@ -18017,8 +18011,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet2Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet2Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet2(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet2(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet2(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet2(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet2(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet2(This,element,value) )
@@ -18026,8 +18020,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet3Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet3Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet3(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet3(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet3(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet3(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet3(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet3(This,element,value) )
@@ -18035,8 +18029,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet4Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet4Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet4(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet4(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet4(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet4(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet4(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet4(This,element,value) )
@@ -18044,8 +18038,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet5Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet5Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet5(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet5(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet5(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet5(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet5(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet5(This,element,value) )
@@ -18053,8 +18047,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet6Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet6Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet6(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet6(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet6(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet6(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet6(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet6(This,element,value) )
@@ -18062,8 +18056,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet7Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet7Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet7(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet7(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet7(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet7(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet7(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet7(This,element,value) )
@@ -18071,8 +18065,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet8Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet8Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet8(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet8(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet8(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet8(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet8(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet8(This,element,value) )
@@ -18080,8 +18074,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet9Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet9Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet9(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet9(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet9(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet9(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet9(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet9(This,element,value) )
@@ -18089,8 +18083,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet10Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet10Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet10(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet10(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet10(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet10(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet10(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet10(This,element,value) )
@@ -18098,8 +18092,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet11Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet11Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet11(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet11(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet11(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet11(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet11(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet11(This,element,value) )
@@ -18107,8 +18101,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet12Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet12Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet12(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet12(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet12(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet12(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet12(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet12(This,element,value) )
@@ -18116,8 +18110,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet13Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet13Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet13(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet13(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet13(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet13(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet13(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet13(This,element,value) )
@@ -18125,8 +18119,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet14Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet14Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet14(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet14(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet14(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet14(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet14(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet14(This,element,value) )
@@ -18134,8 +18128,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet15Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet15Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet15(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet15(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet15(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet15(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet15(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet15(This,element,value) )
@@ -18143,8 +18137,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet16Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet16Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet16(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet16(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet16(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet16(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet16(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet16(This,element,value) )
@@ -18152,8 +18146,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet17Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet17Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet17(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet17(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet17(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet17(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet17(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet17(This,element,value) )
@@ -18161,8 +18155,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet18Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet18Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet18(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet18(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet18(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet18(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet18(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet18(This,element,value) )
@@ -18170,8 +18164,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet19Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet19Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet19(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet19(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet19(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet19(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet19(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet19(This,element,value) )
@@ -18179,8 +18173,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_StylisticSet20Property(This,value) \
     ( (This)->lpVtbl->get_StylisticSet20Property(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet20(This,element,value) \
-    ( (This)->lpVtbl->GetStylisticSet20(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetStylisticSet20(This,element,result) \
+    ( (This)->lpVtbl->GetStylisticSet20(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetStylisticSet20(This,element,value) \
     ( (This)->lpVtbl->SetStylisticSet20(This,element,value) )
@@ -18188,8 +18182,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_CapitalsProperty(This,value) \
     ( (This)->lpVtbl->get_CapitalsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCapitals(This,element,value) \
-    ( (This)->lpVtbl->GetCapitals(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCapitals(This,element,result) \
+    ( (This)->lpVtbl->GetCapitals(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetCapitals(This,element,value) \
     ( (This)->lpVtbl->SetCapitals(This,element,value) )
@@ -18197,8 +18191,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_CapitalSpacingProperty(This,value) \
     ( (This)->lpVtbl->get_CapitalSpacingProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCapitalSpacing(This,element,value) \
-    ( (This)->lpVtbl->GetCapitalSpacing(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCapitalSpacing(This,element,result) \
+    ( (This)->lpVtbl->GetCapitalSpacing(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetCapitalSpacing(This,element,value) \
     ( (This)->lpVtbl->SetCapitalSpacing(This,element,value) )
@@ -18206,8 +18200,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_KerningProperty(This,value) \
     ( (This)->lpVtbl->get_KerningProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetKerning(This,element,value) \
-    ( (This)->lpVtbl->GetKerning(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetKerning(This,element,result) \
+    ( (This)->lpVtbl->GetKerning(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetKerning(This,element,value) \
     ( (This)->lpVtbl->SetKerning(This,element,value) )
@@ -18215,8 +18209,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_CaseSensitiveFormsProperty(This,value) \
     ( (This)->lpVtbl->get_CaseSensitiveFormsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCaseSensitiveForms(This,element,value) \
-    ( (This)->lpVtbl->GetCaseSensitiveForms(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetCaseSensitiveForms(This,element,result) \
+    ( (This)->lpVtbl->GetCaseSensitiveForms(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetCaseSensitiveForms(This,element,value) \
     ( (This)->lpVtbl->SetCaseSensitiveForms(This,element,value) )
@@ -18224,8 +18218,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_HistoricalFormsProperty(This,value) \
     ( (This)->lpVtbl->get_HistoricalFormsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetHistoricalForms(This,element,value) \
-    ( (This)->lpVtbl->GetHistoricalForms(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetHistoricalForms(This,element,result) \
+    ( (This)->lpVtbl->GetHistoricalForms(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetHistoricalForms(This,element,value) \
     ( (This)->lpVtbl->SetHistoricalForms(This,element,value) )
@@ -18233,8 +18227,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_FractionProperty(This,value) \
     ( (This)->lpVtbl->get_FractionProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetFraction(This,element,value) \
-    ( (This)->lpVtbl->GetFraction(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetFraction(This,element,result) \
+    ( (This)->lpVtbl->GetFraction(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetFraction(This,element,value) \
     ( (This)->lpVtbl->SetFraction(This,element,value) )
@@ -18242,8 +18236,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_NumeralStyleProperty(This,value) \
     ( (This)->lpVtbl->get_NumeralStyleProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetNumeralStyle(This,element,value) \
-    ( (This)->lpVtbl->GetNumeralStyle(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetNumeralStyle(This,element,result) \
+    ( (This)->lpVtbl->GetNumeralStyle(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetNumeralStyle(This,element,value) \
     ( (This)->lpVtbl->SetNumeralStyle(This,element,value) )
@@ -18251,8 +18245,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_NumeralAlignmentProperty(This,value) \
     ( (This)->lpVtbl->get_NumeralAlignmentProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetNumeralAlignment(This,element,value) \
-    ( (This)->lpVtbl->GetNumeralAlignment(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetNumeralAlignment(This,element,result) \
+    ( (This)->lpVtbl->GetNumeralAlignment(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetNumeralAlignment(This,element,value) \
     ( (This)->lpVtbl->SetNumeralAlignment(This,element,value) )
@@ -18260,8 +18254,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_SlashedZeroProperty(This,value) \
     ( (This)->lpVtbl->get_SlashedZeroProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetSlashedZero(This,element,value) \
-    ( (This)->lpVtbl->GetSlashedZero(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetSlashedZero(This,element,result) \
+    ( (This)->lpVtbl->GetSlashedZero(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetSlashedZero(This,element,value) \
     ( (This)->lpVtbl->SetSlashedZero(This,element,value) )
@@ -18269,8 +18263,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_MathematicalGreekProperty(This,value) \
     ( (This)->lpVtbl->get_MathematicalGreekProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetMathematicalGreek(This,element,value) \
-    ( (This)->lpVtbl->GetMathematicalGreek(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetMathematicalGreek(This,element,result) \
+    ( (This)->lpVtbl->GetMathematicalGreek(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetMathematicalGreek(This,element,value) \
     ( (This)->lpVtbl->SetMathematicalGreek(This,element,value) )
@@ -18278,8 +18272,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_get_VariantsProperty(This,value) \
     ( (This)->lpVtbl->get_VariantsProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetVariants(This,element,value) \
-    ( (This)->lpVtbl->GetVariants(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_GetVariants(This,element,result) \
+    ( (This)->lpVtbl->GetVariants(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CDocuments_CITypographyStatics_SetVariants(This,element,value) \
     ( (This)->lpVtbl->SetVariants(This,element,value) )
@@ -18419,8 +18413,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.Block ** Default Interface **
  *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.Block
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -18526,8 +18518,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -18722,8 +18712,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Foundation.Collections.IVector_1_Windows.UI.Xaml.Documents.Inline ** Default Interface **
  *    Windows.Foundation.Collections.IIterable_1_Windows.UI.Xaml.Documents.Inline
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -18944,10 +18932,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.ITextElement ** Default Interface **
- *    Windows.UI.Xaml.Documents.ITextElementOverrides
  *    Windows.UI.Xaml.Documents.ITextElement2
  *    Windows.UI.Xaml.Documents.ITextElement3
  *    Windows.UI.Xaml.Documents.ITextElement4
+ *    Windows.UI.Xaml.Documents.ITextElementOverrides
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19023,8 +19011,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Documents.ITextPointer ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

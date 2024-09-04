@@ -4173,6 +4173,23 @@ typedef struct _D3DDDICB_SUBMITPRESENTBLTTOHWQUEUE
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
+typedef struct _D3DDDICB_SUBMITPRESENTTOHWQUEUE
+{
+    _Field_size_(BroadcastHwQueueCount)
+    D3DKMT_HANDLE*              BroadcastSrcAllocations;                        // in: allocations which content will be presented
+    _Field_size_opt_(BroadcastHwQueueCount)
+    D3DKMT_HANDLE*              BroadcastDstAllocations;                        // in: if non-zero, it's the destination allocations of the present
+    HANDLE*                     hHwQueues;                                      // in: hardware queues being submitted to.
+    UINT                        BroadcastHwQueueCount;                          // in: the number of broadcast hardware queues
+    UINT                        PrivateDriverDataSize;                          // in: private driver data size in bytes
+    _Field_size_bytes_(PrivateDriverDataSize)
+    PVOID                       pPrivateDriverData;                             // in: private driver data to pass to DdiPresent
+} D3DDDICB_SUBMITPRESENTTOHWQUEUE;
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_ALLOCATECB)(
         _In_ HANDLE hDevice, _Inout_ D3DDDICB_ALLOCATE*);
 typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_DEALLOCATECB)(
@@ -4355,6 +4372,13 @@ typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITPRESENTBLTTOH
 
 #endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
 
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
+typedef _Check_return_ HRESULT (APIENTRY CALLBACK *PFND3DDDI_SUBMITPRESENTTOHWQUEUECB)(
+        _In_ HANDLE hDevice, _Inout_ D3DDDICB_SUBMITPRESENTTOHWQUEUE*);
+
+#endif // (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+
 typedef struct _D3DDDI_DEVICECALLBACKS
 {
     PFND3DDDI_ALLOCATECB                            pfnAllocateCb;
@@ -4435,6 +4459,9 @@ typedef struct _D3DDDI_DEVICECALLBACKS
 #endif // D3D_UMD_INTERFACE_VERSION
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_4_2)
     PFND3DDDI_SUBMITPRESENTBLTTOHWQUEUECB           pfnSubmitPresentBltToHwQueueCb;
+#endif // D3D_UMD_INTERFACE_VERSION
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_5_2)
+    PFND3DDDI_SUBMITPRESENTTOHWQUEUECB              pfnSubmitPresentToHwQueueCb;
 #endif // D3D_UMD_INTERFACE_VERSION
 } D3DDDI_DEVICECALLBACKS;
 

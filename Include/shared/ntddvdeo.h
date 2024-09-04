@@ -488,6 +488,7 @@ typedef enum _VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE {
     VideoRepaintDesktop = 12,
     VideoUpdateCursor = 13,
     VideoDisableMultiPlaneOverlay = 14,
+    VideoDesktopDuplicationChange = 15,
 } VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE;
 
 #define DXGK_WIN32K_PARAM_FLAG_UPDATEREGISTRY 1         // Saves the mode switch information into the registry.
@@ -515,6 +516,7 @@ typedef struct _VIDEO_WIN32K_CALLBACKS_PARAMS {
     BOOLEAN     LockUserSession;
     BOOLEAN     IsPostDevice;
     BOOLEAN     SurpriseRemoval;
+    BOOLEAN     WaitForQueueReady;
 } VIDEO_WIN32K_CALLBACKS_PARAMS, *PVIDEO_WIN32K_CALLBACKS_PARAMS;
 
 typedef

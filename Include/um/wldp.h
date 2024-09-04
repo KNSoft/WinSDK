@@ -30,6 +30,8 @@ Abstract:
 #define WLDP_ISDYNAMICCODEPOLICYENABLED_FN  "WldpIsDynamicCodePolicyEnabled"
 #define WLDP_QUERYDANAMICCODETRUST_FN       "WldpQueryDynamicCodeTrust"
 #define WLDP_QUERYWINDOWSLOCKDOWNMODE_FN    "WldpQueryWindowsLockdownMode"
+#define WLDP_SETWINDOWSLOCKDOWNRESTRICTION_FN "WldpSetWindowsLockdownRestriction"
+#define WLDP_QUERYWINDOWSLOCKDOWNRESTRICTION_FN "WldpQueryWindowsLockdownRestriction"
 
 //
 //  Policy state bits.
@@ -160,6 +162,13 @@ typedef enum WLDP_WINDOWS_LOCKDOWN_MODE
     WLDP_WINDOWS_LOCKDOWN_MODE_MAX,
 } WLDP_WINDOWS_LOCKDOWN_MODE, *PWLDP_WINDOWS_LOCKDOWN_MODE;
 
+typedef enum WLDP_WINDOWS_LOCKDOWN_RESTRICTION
+{
+    WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NONE = 0,
+    WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NOUNLOCK,
+    WLDP_WINDOWS_LOCKDOWN_RESTRICTION_NOUNLOCK_PERMANENT,
+    WLDP_WINDOWS_LOCKDOWN_RESTRICTION_MAX,
+} WLDP_WINDOWS_LOCKDOWN_RESTRICTION, *PWLDP_WINDOWS_LOCKDOWN_RESTRICTION;
 
 //
 //  WLDP_HOST_INFORMATION Version.
@@ -280,7 +289,52 @@ WldpQueryWindowsLockdownMode(
 typedef HRESULT(WINAPI *PWLDP_QUERYWINDOWSLOCKDOWNMODE_API)(
     _Out_ PWLDP_WINDOWS_LOCKDOWN_MODE lockdownMode);
 
+//
+// This routine queries CI lock down restriction. 
+//
+
+HRESULT
+WINAPI
+WldpQueryWindowsLockdownRestriction(
+    _Out_ PWLDP_WINDOWS_LOCKDOWN_RESTRICTION LockdownRestriction
+);
+
+typedef HRESULT(WINAPI *PWLDP_QUERYWINDOWSLOCKDOWNRESTRICTION_API)(
+    _Out_ PWLDP_WINDOWS_LOCKDOWN_RESTRICTION LockdownRestriction);
+
+//
+// This routine sets CI lock down restriction.
+//
+
+HRESULT
+WINAPI
+WldpSetWindowsLockdownRestriction(
+    _In_ WLDP_WINDOWS_LOCKDOWN_RESTRICTION LockdownRestriction
+    );
+
+typedef HRESULT(WINAPI *PWLDP_SETWINDOWSLOCKDOWNRESTRICTION_API)(
+    _In_ WLDP_WINDOWS_LOCKDOWN_RESTRICTION LockdownRestriction);
+
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS4 */
+
+#if NTDDI_VERSION >= NTDDI_WIN10_RS5
+
+//
+// This routine queries if a particular PackageFamilyName would pass the currently installed CIPolicy
+//
+HRESULT
+WINAPI
+WldpIsAppApprovedByPolicy(
+    _In_ PCWSTR PackageFamilyName,
+    _In_ ULONGLONG PackageVersion
+);
+
+typedef HRESULT(WINAPI *PWLDP_WLDPISAPPAPPROVEDBYPOLICY_API)(
+    _In_ PCWSTR PackageFamilyName,
+    _In_ ULONGLONG PackageVersion
+    );
+
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS5 */
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

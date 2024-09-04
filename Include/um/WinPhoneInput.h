@@ -6,6 +6,10 @@
 
 
 #pragma once
+#ifndef _WINPHONEINPUT_H_
+#define _WINPHONEINPUT_H_
+
+#include <InputEventFlags.h>
 
 //
 // Define a device interface unique GUID for touch 
@@ -14,38 +18,6 @@
 //
 
 DEFINE_GUID( GUID_WP_DEVINTERFACE_TCH, 0x2c05ce1a, 0x75e8, 0x4ea7, 0xa7, 0xa, 0xe3, 0x23, 0xb0, 0x72, 0x25, 0x8c);
-
-//
-// InputEventFlags are intended to be generic Input Flags to indicate actions for
-// Touch, Mouse or Keyboard events.
-//
-
-enum InputEventFlag
-{
-    InputEventFlag_None             = 0x0000,
-    
-    InputEventFlag_Down             = 0x0001,
-    InputEventFlag_Move             = 0x0002,
-    InputEventFlag_Hold             = 0x0002,
-    InputEventFlag_Up               = 0x0004,
-
-    InputEventFlag_Required         = 0x0008,
-    InputEventFlag_InRange          = 0x0008,
-
-    InputEventFlag_DownAndUp        = (InputEventFlag_Down|InputEventFlag_Up),  // 0x0005
-
-    InputEventFlag_PrimaryButton    = 0x0100,
-    InputEventFlag_SecondaryButton  = 0x0200,
-
-    InputEventFlag_ScreenReaderEnabled = 0x0400,
-
-    InputEventFlag_Empty            = 0x1000,
-    InputEventFlag_Invalid          = 0x2000,
-    
-    InputEventFlag_TestInjection    = 0x4000,
-    InputEventFlag_TestSync         = 0x8000
-};
-
 
 //
 // The maximum number of the supported capacitive buttons.
@@ -59,20 +31,28 @@ enum InputEventFlag
 // InputSessionFlags are intended to be generic Input Session Flags to indicate
 // actions for a full Touch Session.
 //
+// Session state ordering during normal operation:
+// - Contact touch: (Begin) --> zero or more (None) --> (End)
+// - Hover touch: (Hover|Begin) --> zero or more (Hover) --> (Hover|End)
+// Hover touch sessions do not overlap with contact touch sessions.  Input reader
+// will synthesize begin/end events to ensure the separation.
+//
 
 enum InputSessionFlag
 {
-    InputSessionFlag_None           = 0x0000,
+    InputSessionFlag_None               = 0x0000,
     
-    InputSessionFlag_Begin          = 0x0001,
-    InputSessionFlag_End            = 0x0004,
+    InputSessionFlag_Begin              = 0x0001,
+    InputSessionFlag_End                = 0x0004,
+
+    InputSessionFlag_Hover              = 0x0100,
+
+    InputSessionFlag_EdgeGesture        = 0x0200,
+    InputSessionFlag_CapacitiveButton   = 0x0400,
+
+    InputSessionFlag_Mouse              = 0x0800,
     
-    InputSessionFlag_Reserved       = 0x0200,
-
-    InputSessionFlag_Mouse          = 0x0800,
-    InputSessionFlag_Touchpad       = 0x1000,
-
-    InputSessionFlag_Cancel         = 0x8000
+    InputSessionFlag_Cancel             = 0x8000
 };
 
 
@@ -108,7 +88,9 @@ enum ModifierKeyStateFlag
     ModifierKeyStateFlag_LockShift      = 0x1000,
     ModifierKeyStateFlag_LockNum        = 0x2000,
     ModifierKeyStateFlag_LockFunction   = 0x4000,
-    ModifierKeyStateFlag_LockMask       = 0xF000
+    ModifierKeyStateFlag_LockMask       = 0xF000,
+
+    ModifierKeyStateFlag_RefreshModifier  = 0x10000     // Only SIP send this flag to refresh the latest Modifier status on SIP
 };
 
 
@@ -139,6 +121,20 @@ struct MouseInfo
 // TouchContact represents information about a Single Touch Contact that should only
 // exists as part of a Touch Session update (See TouchInfo).
 //
+// Any changes here require a corresponding change in:
+// * XNA's C# declaration
+//   (Windows Phone Runtimes depot)\XNA\Runtime\Framework\Touch\NativeMethods.cs
+// * XDE's C# declaration
+//   (Windows Phone Tools depot)\XDE\Products\Common\IXdeInputPipe.cs
+// * CoreUI message marshalling Cn declaration
+//   (Windows Phone UxPlat depot)\CoreUI\Dev\CoreUIComponents\RemoteInterfaces\Input\IRemoteInputInjection.cs
+// * Limited version of WinPhoneInput.h sent out to OEMs while hover is still confidential.
+//   (Windows Phone UxPlat depot)\Splash\Dev\Inc\Limited\WinPhoneInput.h
+// * MinUser Cn declaration
+//   (Windows MinCore depot)\CoreUI\Dev\MinUser\Input\InputInterop.cs
+// * Manipulation converged tests declaration
+//   (Windows ShellTest depot)\Personality\Touch\Manipulation\ConvergedTests\DataCollector\Inc\Phone.h
+//
 
 #ifdef __cplusplus 
 struct TouchContact
@@ -149,14 +145,14 @@ struct TouchContact
     SHORT   yScreen;        // Screen Space Y-Position
     SHORT   xWindow;        // Client Space X-Position
     SHORT   yWindow;        // Client Space Y-Position
-    SHORT   reserved0;      // Reserved
-    SHORT   reserved1;      // Reserved
-    SHORT   reserved2;      // Reserved
-    SHORT   reserved3;      // Reserved
-    SHORT   reserved4;      // Reserved
-    SHORT   reserved5;      // Reserved
-    ULONG64 reserved6;      // Reserved
-    FLOAT   reserved7[6];   // Reserved
+    SHORT   xArea;          // Screen space X-dimension (width) of contact area
+    SHORT   yArea;          // Screen space Y-dimension (height) of contact area
+    SHORT   zDistance;      // Unitless Z-distance
+    SHORT   reserved;       // Reserved
+    SHORT   xTilt;          // Angle in degrees along X-axis. 0=straight up, Positive angle = tilt right.
+    SHORT   yTilt;          // Angle in degrees along Y-axis. 0=straight up, Positive angle = tilt up.
+    ULONG64 inputSink;      // For CoreInput, window handle for inputSink.
+    FLOAT   inputTransform[6];// For CoreInput, 2D affine transform for inputSink
 };
 #else // __cplusplus 
 typedef struct _TouchContact
@@ -167,14 +163,14 @@ typedef struct _TouchContact
     INT16   ScreenY;        // Screen Space Y-Position
     INT16   WindowX;        // Client Space X-Position
     INT16   WindowY;        // Client Space Y-Position
-    INT16   Reserved0;      // Reserved
-    INT16   Reserved1;      // Reserved
-    INT16   Reserved2;      // Reserved
-    INT16   Reserved3;      // Reserved
-    INT16   Reserved4;      // Reserved
-    INT16   Reserved5;      // Reserved
-    ULONG64 Reserved6;      // Reserved
-    float   Reserved7[6];   // Reserved
+    INT16   AreaX;          // Screen space X-dimension (width) of contact area
+    INT16   AreaY;          // Screen space Y-dimension (height) of contact area
+    INT16   DistanceZ;      // Unitless Z-distance
+    INT16   Reserved;       // Reserved
+    INT16   TiltX;          // Angle in degrees along X-axis. 0=straight up, Positive angle = tilt right.
+    INT16   TiltY;          // Angle in degrees along Y-axis. 0=straight up, Positive angle = tilt up.
+    ULONG64 InputSink;      // For CoreInput, window handle for inputSink.
+    float   InputTransform[6];// For CoreInput, 2D affine transform for inputSink
 } TouchContact;
 #endif // __cplusplus 
 
@@ -183,38 +179,52 @@ typedef struct _TouchContact
 // TouchInfo represents information about an in-the-moment view of Touch Events within
 // a Touch Session.
 //
+// Any changes here require a corresponding change in:
+// * XNA's C# declaration
+//   (Windows Phone Runtimes depot)\XNA\Runtime\Framework\Touch\NativeMethods.cs
+// * XDE's C# declaration
+//   (Windows Phone Tools depot)\XDE\Product\Common\IXdeInputPipe.cs
+// * CoreUI message marshalling Cn declaration
+//   (Windows Phone UxPlat depot)\CoreUI\Dev\CoreUIComponents\RemoteInterfaces\Input\IRemoteInputInjection.cs
+// * Limited version of WinPhoneInput.h sent out to OEMs while hover is still confidential.
+//   (Windows Phone UxPlat depot)\Splash\Dev\Inc\Limited\WinPhoneInput.h
+// * MinUser Cn declaration
+//   (Windows MinCore depot)\CoreUI\Dev\MinUser\Input\InputInterop.cs
+// * Manipulation converged tests declaration
+//   (Windows ShellTest depot)\Personality\Touch\Manipulation\ConvergedTests\DataCollector\Inc\Phone.h
+//
 
 #ifdef __cplusplus
 static const DWORD c_cTouchContactsMaximum = 10;
 
 struct TouchInfo
 {
-    WORD            cbSize;         // Size, in bytes, of this structure (includes n contacts)
-    WORD            wFlags;         // See InputSessionFlag_* flags
-    DWORD           dwTimeStamp;    // Driver timestamp
-    ULONG64         hSource;        // HANDLE to the Source of the Touch data
-    DWORD           dwSessionID;    // Touch session ID
-    BYTE            reserved0;      // Reserved
-    BYTE            reserved1;      // Reserved
-    BYTE            reserved2;      // Reserved
-    BYTE            cContacts;      // Count of touch contact data points
-    TouchContact    rgContacts[1];  // Collection of contacts
+    WORD            cbSize;             // Size, in bytes, of this structure (includes n contacts)
+    WORD            wFlags;             // See InputSessionFlag_* flags
+    DWORD           dwTimeStamp;        // Driver timestamp
+    ULONG64         hSource;            // HANDLE to the Source of the Touch data
+    DWORD           dwSessionID;        // Touch session ID
+    BYTE            reserved;           // Reserved for byte alignment
+    BYTE            cInRangeContacts;   // The count of contacts that are marked InRange
+    BYTE            cInContactContacts; // The count of contacts that are marked Down or Move
+    BYTE            cContacts;          // Count of all TouchContact data points
+    TouchContact    rgContacts[1];      // Collection of contacts
 };
 #else // __cplusplus 
 #define c_cTouchContactsMaximum  10
 
 typedef struct _TouchInfo
 {
-    UINT16          Size;           // Size, in bytes, of this structure (includes n contacts)
-    UINT16          Flags;          // See InputSessionFlag_* flags
-    UINT32          TimeStamp;      // Driver timestamp
-    ULONG64         Source;         // HANDLE to the Source of the Touch data
-    UINT32          SessionID;      // Gesture session ID
-    UINT8           Reserved0;      // Reserved
-    UINT8           Reserved1;      // Reserved
-    UINT8           Reserved2;      // Reserved
-    UINT8           ContactCount;   // Count of touch contact data points
-    TouchContact    ContactArray[c_cTouchContactsMaximum];// Collection of contacts
+    UINT16          Size;                                   // Size, in bytes, of this structure (includes n contacts)
+    UINT16          Flags;                                  // See InputSessionFlag_* flags
+    UINT32          TimeStamp;                              // Driver timestamp
+    ULONG64         Source;                                 // HANDLE to the Source of the Touch data
+    UINT32          SessionID;                              // Gesture session ID
+    UINT8           Reserved;                               // Reserved for byte alignment 
+    UINT8           InRangeContactCount;                    // The count of contacts that are marked InRange
+    UINT8           InContactContactCount;                  // The count of contacts that are marked Down or Move
+    UINT8           ContactCount;                           // Count of TouchContact data points
+    TouchContact    ContactArray[c_cTouchContactsMaximum];  // Collection of contacts
 } TouchInfo;
 #endif // __cplusplus 
 
@@ -266,6 +276,13 @@ struct TouchInfoBuffer
 
 static const DWORD c_cKeyEventCharacterMaximum = 16;
 
+//
+// Maximum allowed number of characters (including terminate null character) for
+// key namae text
+//
+
+static const DWORD c_cKeyNameTextMaximum = 32;
+
 
 //
 // ButtonEventInfo represents information about a button event (could be
@@ -301,7 +318,21 @@ enum InputDeviceType
 
 
 //
+// TOUCH_DEVICE_CAPABILITIES
+//
+
+#define TOUCHCAP_EMPTY                  0x00000000
+#define TOUCHCAP_HOVER                  0x00000001
+#define TOUCHCAP_GEOMETRY               0x00000002
+#define TOUCHCAP_ANGLE                  0x00000004
+
+
+//
 // Touch device usage info
+// This struct must keep the same as the struct Input::PointerDeviceProperty that is defined
+// in \mincore\CoreUI\Dev\MinUser\Input\InputInterop.cs on windows side, so that the device
+// usage information can be propagated correctly between MinUser GetPointerDeviceProperties,
+// MinUserHost, and TchHID.
 //
 
 typedef struct _USAGE_INFO
@@ -317,6 +348,14 @@ typedef struct _USAGE_INFO
 } USAGE_INFO, *PUSAGE_INFO;
 
 
+typedef struct _TOUCH_MAX_INPUTS
+{
+    UCHAR MaxContactCount;    
+    UCHAR MaxHoverCount;
+} TOUCH_MAX_INPUTS, *PTOUCH_MAX_INPUTS;
+
+
+
 //
 // Device IO codes for retrieving the supported device usages from TchHID. There is no 
 // FILE_DEVICE_* defined for touch, and FILE_DEVICE_UNKNOWN is used based on a recommendation
@@ -325,6 +364,18 @@ typedef struct _USAGE_INFO
 
 #define IOCTL_TCHHID_GET_DEVICE_USAGE_COUNT CTL_CODE(FILE_DEVICE_UNKNOWN, 0x8001, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_TCHHID_GET_DEVICE_USAGES CTL_CODE(FILE_DEVICE_UNKNOWN, 0x8002, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_TCHHID_GET_DEVICE_MAX_INPUTS CTL_CODE(FILE_DEVICE_UNKNOWN, 0x8003, METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+
+//
+// Device usages that are defined in Hid.h (available in windows source tree),
+// but not in HidUsage.h (variable in phone source tree).
+//
+
+#define HID_USAGE_DIGITIZER_XTILT              0x3d
+#define HID_USAGE_DIGITIZER_YTILT              0x3e
+#define HID_USAGE_DIGITIZER_WIDTH              0x48
+#define HID_USAGE_DIGITIZER_HEIGHT             0x49
 
 
 //
@@ -344,6 +395,36 @@ typedef struct _USAGE_INFO
 //
 
 #define CAPACITIVE_BUTTON_HEIGHT 100
+
+
+//
+// These constants define the default maximum distance from the display surface edge in physical 
+// pixels of the first event of a gesture for the gesture to be recognized as a system edge gesture.  
+// Gestures that begin farther away than this distance are never recognized as edge gestures.  
+// Additionally, edge gestures are only recognized when they begin over a visual that has registered 
+// to receive edge gestures.
+//
+// Values for the constants assume a 480x800 display size.  At runtime the values are scaled up or
+// down based on the actual screen size.
+//
+// The default value may be overwritten by an oem in the registry based on specific hardware 
+// characteristcs.  More sensitive hardware could use a lower value, which reduces the latency
+// added into any gesture that is a candidate for edge gestures and reduces the likelihood
+// of a false positive in the case that user did not intend an edge gesture.  The registry keys 
+// examined for overrides are dword values at
+//
+// HKEY_LOCAL_MACHINE\System\Touch\EdgeGestureThresholds
+//      Top
+//      Bottom
+//      Left
+//      Right
+//
+// Note: these are used in \src\tools\Product\DH\Test\libs\HealthUtils\Native\HealthUtil.cpp
+// and \src\uxplat\Splash\Dev\Render\Engine\Components\Desktop\Mobile\EdgeGestureRedirector.cpp
+//
+
+#define DEFAULT_VERTICAL_EDGE_GESTURE_THRESHOLD 40
+#define DEFAULT_HORIZONTAL_EDGE_GESTURE_THRESHOLD 40
 
 
 //------------------------------------------------------------------------------
@@ -385,3 +466,4 @@ CalculateTouchInfoSize(
     return (c_cbTouchInfoMinimum + (sizeof(TouchContact) * (cContacts - 1)));
 }
 
+#endif

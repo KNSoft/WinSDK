@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -49,10 +49,28 @@ template <> struct name<Windows::ApplicationModel::ExtendedExecution::ExtendedEx
 template <> struct name<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason>{ static constexpr auto & value{ L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason" }; };
 template <> struct name<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionResult>{ static constexpr auto & value{ L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult" }; };
 template <> struct name<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason>{ static constexpr auto & value{ L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedReason" }; };
-template <> struct guid<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs>{ static constexpr GUID value{ 0xBFBC9F16,0x63B5,0x4C0B,{ 0xAA,0xD6,0x82,0x8A,0xF5,0x37,0x3E,0xC3 } }; };
-template <> struct guid<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>{ static constexpr GUID value{ 0xAF908A2D,0x118B,0x48F1,{ 0x93,0x08,0x0C,0x4F,0xC4,0x1E,0x20,0x0F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs>{ static constexpr guid value{ 0xBFBC9F16,0x63B5,0x4C0B,{ 0xAA,0xD6,0x82,0x8A,0xF5,0x37,0x3E,0xC3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>{ static constexpr guid value{ 0xAF908A2D,0x118B,0x48F1,{ 0x93,0x08,0x0C,0x4F,0xC4,0x1E,0x20,0x0F } }; };
 template <> struct default_interface<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>{ using type = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs; };
 template <> struct default_interface<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession>{ using type = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession; };
+
+template <> struct abi<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PercentProgress(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PercentProgress(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Revoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Revoked(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestExtensionAsync(void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_ExtendedExecution_IExtendedExecutionRevokedEventArgs
@@ -70,30 +88,12 @@ struct consume_Windows_ApplicationModel_ExtendedExecution_IExtendedExecutionSess
     void Description(param::hstring const& value) const;
     uint32_t PercentProgress() const;
     void PercentProgress(uint32_t value) const;
-    event_token Revoked(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> const& handler) const;
-    using Revoked_revoker = event_revoker<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>;
+    winrt::event_token Revoked(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> const& handler) const;
+    using Revoked_revoker = impl::event_revoker<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession, &impl::abi_t<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>::remove_Revoked>;
     Revoked_revoker Revoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> const& handler) const;
-    void Revoked(event_token const& token) const;
+    void Revoked(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionResult> RequestExtensionAsync() const;
 };
 template <> struct consume<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession> { template <typename D> using type = consume_Windows_ApplicationModel_ExtendedExecution_IExtendedExecutionSession<D>; };
-
-template <> struct abi<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PercentProgress(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PercentProgress(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall add_Revoked(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Revoked(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall RequestExtensionAsync(void** operation) noexcept = 0;
-};};
 
 }

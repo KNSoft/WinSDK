@@ -1268,6 +1268,7 @@ I_RpcBindingSetPrivateOption (
 
 #define RPC_C_OPT_PRIVATE_SUPPRESS_WAKE     1
 #define RPC_C_OPT_PRIVATE_DO_NOT_DISTURB    2
+#define RPC_C_OPT_PRIVATE_BREAK_ON_SUSPEND  3
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 

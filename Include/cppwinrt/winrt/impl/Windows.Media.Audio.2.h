@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -182,37 +182,43 @@ struct WINRT_EBO AudioSubmixNode :
 };
 
 struct WINRT_EBO CreateAudioDeviceInputNodeResult :
-    Windows::Media::Audio::ICreateAudioDeviceInputNodeResult
+    Windows::Media::Audio::ICreateAudioDeviceInputNodeResult,
+    impl::require<CreateAudioDeviceInputNodeResult, Windows::Media::Audio::ICreateAudioDeviceInputNodeResult2>
 {
     CreateAudioDeviceInputNodeResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CreateAudioDeviceOutputNodeResult :
-    Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult
+    Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult,
+    impl::require<CreateAudioDeviceOutputNodeResult, Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult2>
 {
     CreateAudioDeviceOutputNodeResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CreateAudioFileInputNodeResult :
-    Windows::Media::Audio::ICreateAudioFileInputNodeResult
+    Windows::Media::Audio::ICreateAudioFileInputNodeResult,
+    impl::require<CreateAudioFileInputNodeResult, Windows::Media::Audio::ICreateAudioFileInputNodeResult2>
 {
     CreateAudioFileInputNodeResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CreateAudioFileOutputNodeResult :
-    Windows::Media::Audio::ICreateAudioFileOutputNodeResult
+    Windows::Media::Audio::ICreateAudioFileOutputNodeResult,
+    impl::require<CreateAudioFileOutputNodeResult, Windows::Media::Audio::ICreateAudioFileOutputNodeResult2>
 {
     CreateAudioFileOutputNodeResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CreateAudioGraphResult :
-    Windows::Media::Audio::ICreateAudioGraphResult
+    Windows::Media::Audio::ICreateAudioGraphResult,
+    impl::require<CreateAudioGraphResult, Windows::Media::Audio::ICreateAudioGraphResult2>
 {
     CreateAudioGraphResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO CreateMediaSourceAudioInputNodeResult :
-    Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult
+    Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult,
+    impl::require<CreateMediaSourceAudioInputNodeResult, Windows::Media::Audio::ICreateMediaSourceAudioInputNodeResult2>
 {
     CreateMediaSourceAudioInputNodeResult(std::nullptr_t) noexcept {}
 };
@@ -261,6 +267,37 @@ struct WINRT_EBO ReverbEffectDefinition :
 {
     ReverbEffectDefinition(std::nullptr_t) noexcept {}
     ReverbEffectDefinition(Windows::Media::Audio::AudioGraph const& audioGraph);
+};
+
+struct WINRT_EBO SetDefaultSpatialAudioFormatResult :
+    Windows::Media::Audio::ISetDefaultSpatialAudioFormatResult
+{
+    SetDefaultSpatialAudioFormatResult(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SpatialAudioDeviceConfiguration :
+    Windows::Media::Audio::ISpatialAudioDeviceConfiguration
+{
+    SpatialAudioDeviceConfiguration(std::nullptr_t) noexcept {}
+    static Windows::Media::Audio::SpatialAudioDeviceConfiguration GetForDeviceId(param::hstring const& deviceId);
+};
+
+struct WINRT_EBO SpatialAudioFormatConfiguration :
+    Windows::Media::Audio::ISpatialAudioFormatConfiguration
+{
+    SpatialAudioFormatConfiguration(std::nullptr_t) noexcept {}
+    static Windows::Media::Audio::SpatialAudioFormatConfiguration GetDefault();
+};
+
+struct SpatialAudioFormatSubtype
+{
+    SpatialAudioFormatSubtype() = delete;
+    static hstring WindowsSonic();
+    static hstring DolbyAtmosForHeadphones();
+    static hstring DolbyAtmosForHomeTheater();
+    static hstring DolbyAtmosForSpeakers();
+    static hstring DTSHeadphoneX();
+    static hstring DTSXUltra();
 };
 
 }

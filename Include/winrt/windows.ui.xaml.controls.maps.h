@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.controls.maps.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -232,11 +240,15 @@
 #endif // defined(WINDOWS_SERVICES_MAPS_LOCALSEARCHCONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -2001,6 +2013,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapTileBitmapRequestedEventArgs2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 ABI::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_FWD_DEFINED__
 namespace ABI {
@@ -2055,6 +2085,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapTileSource2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_FWD_DEFINED__
 namespace ABI {
@@ -2090,6 +2138,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapTileSourceStatics2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_FWD_DEFINED__
@@ -2144,6 +2210,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs ABI::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        interface IMapTileUriRequestedEventArgs2;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 ABI::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs2
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_FWD_DEFINED__
@@ -5318,6 +5402,15 @@ namespace ABI {
         } /* Windows */
     } /* Foundation */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            
+            typedef struct TimeSpan TimeSpan;
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
 
 namespace ABI {
     namespace Windows {
@@ -5623,6 +5716,21 @@ namespace ABI {
                 namespace Controls {
                     namespace Maps {
                         
+                        typedef enum MapTileAnimationState : int MapTileAnimationState;
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        
                         typedef enum MapTileLayer : int MapTileLayer;
                         
                     } /* Windows */
@@ -5675,6 +5783,10 @@ namespace ABI {
             } /* Xaml */
         } /* Controls */
     } /* Maps */} /* ABI */
+
+
+
+
 
 
 
@@ -6402,6 +6514,38 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.UI.Xaml.Controls.Maps.MapTileAnimationState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [v1_enum, contract] */
+                        enum MapTileAnimationState : int
+                        {
+                            MapTileAnimationState_Stopped = 0,
+                            MapTileAnimationState_Paused = 1,
+                            MapTileAnimationState_Playing = 2,
+                        };
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.Controls.Maps.MapTileLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6554,7 +6698,7 @@ namespace ABI {
                         {
                         public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_BitmapRequested(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_BitmapRequested(
@@ -6603,9 +6747,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource * * value
                                 ) = 0;
                             
                         };
@@ -6665,7 +6809,7 @@ namespace ABI {
                                 /* [in] */boolean value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UriRequested(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_UriRequested(
@@ -6714,15 +6858,15 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriFormatString(
                                 /* [in] */__RPC__in HSTRING uriFormatString,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource * * value
                                 ) = 0;
                             
                         };
@@ -6773,7 +6917,7 @@ namespace ABI {
                                 /* [in] */__RPC__in HSTRING value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_UriRequested(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_UriRequested(
@@ -6822,15 +6966,15 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriFormatString(
                                 /* [in] */__RPC__in HSTRING uriFormatString,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource * * value
                                 ) = 0;
                             
                         };
@@ -7125,7 +7269,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceFromCamera(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * camera,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard * * value
                                 ) = 0;
                             
                         };
@@ -7294,18 +7438,18 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithLocation(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithLocationAndHeading(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE headingInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithLocationHeadingAndPitch(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
@@ -7313,7 +7457,7 @@ namespace ABI {
                                 /* [in] */DOUBLE pitchInDegrees,
                                 /* [in] */DOUBLE rollInDegrees,
                                 /* [in] */DOUBLE fieldOfViewInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
                             
                         };
@@ -7505,63 +7649,63 @@ namespace ABI {
                                 /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapTileSource * * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CenterChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CenterChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_HeadingChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_HeadingChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_LoadingStatusChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_LoadingStatusChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapDoubleTapped(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapDoubleTapped(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapHolding(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapHolding(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapTapped(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapTapped(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PitchChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_PitchChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TransformOriginChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_TransformOriginChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ZoomLevelChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ZoomLevelChanged(
@@ -7569,7 +7713,7 @@ namespace ABI {
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindMapElementsAtOffset(
                                 /* [in] */ABI::Windows::Foundation::Point offset,
-                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetLocationFromOffset(
                                 /* [in] */ABI::Windows::Foundation::Point offset,
@@ -7587,23 +7731,23 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
                                 /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CXaml__CThickness * margin,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetViewWithCenterAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * center,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetViewWithCenterAndZoomAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * center,
                                 /* [in] */__RPC__in_opt __FIReference_1_double * zoomLevel,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetViewWithCenterZoomHeadingAndPitchAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * center,
                                 /* [in] */__RPC__in_opt __FIReference_1_double * zoomLevel,
                                 /* [in] */__RPC__in_opt __FIReference_1_double * heading,
                                 /* [in] */__RPC__in_opt __FIReference_1_double * desiredPitch,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * center,
@@ -7611,7 +7755,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt __FIReference_1_double * heading,
                                 /* [in] */__RPC__in_opt __FIReference_1_double * desiredPitch,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapAnimationKind animation,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             
                         };
@@ -7716,49 +7860,49 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCustomExperience * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementClick(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementClick(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementPointerEntered(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementPointerEntered(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementPointerExited(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementPointerExited(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ActualCameraChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ActualCameraChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ActualCameraChanging(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ActualCameraChanging(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TargetCameraChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_TargetCameraChanged(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_CustomExperienceChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_CustomExperienceChanged(
@@ -7778,38 +7922,38 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE StopContinuousZoom(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryRotateAsync(
                                 /* [in] */DOUBLE degrees,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryRotateToAsync(
                                 /* [in] */DOUBLE angleInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryTiltAsync(
                                 /* [in] */DOUBLE degrees,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryTiltToAsync(
                                 /* [in] */DOUBLE angleInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryZoomInAsync(
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryZoomOutAsync(
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryZoomToAsync(
                                 /* [in] */DOUBLE zoomLevel,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetSceneAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * scene,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE TrySetSceneWithAnimationAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * scene,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapAnimationKind animationKind,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             
                         };
@@ -7854,7 +7998,7 @@ namespace ABI {
                         {
                         public:
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapRightTapped(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapRightTapped(
@@ -7916,7 +8060,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetVisibleRegion(
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapVisibleRegionKind region,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopath * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopath * * result
                                 ) = 0;
                             
                         };
@@ -7979,7 +8123,7 @@ namespace ABI {
                                 /* [in] */ABI::Windows::UI::Xaml::Thickness value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapContextRequested(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapContextRequested(
@@ -7988,7 +8132,7 @@ namespace ABI {
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindMapElementsAtOffsetWithRadius(
                                 /* [in] */ABI::Windows::Foundation::Point offset,
                                 /* [in] */DOUBLE radius,
-                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetLocationFromOffsetWithReferenceSystem(
                                 /* [in] */ABI::Windows::Foundation::Point offset,
@@ -8003,11 +8147,11 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE TryPanAsync(
                                 /* [in] */DOUBLE horizontalPixels,
                                 /* [in] */DOUBLE verticalPixels,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryPanToAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
                                 ) = 0;
                             
                         };
@@ -8629,7 +8773,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLocation(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * value
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Geolocation::IGeopoint * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetLocation(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -8640,7 +8784,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetNormalizedAnchorPoint(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * value
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetNormalizedAnchorPoint(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IDependencyObject * element,
@@ -9235,9 +9379,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCustomExperience * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCustomExperience * * value
                                 ) = 0;
                             
                         };
@@ -9678,9 +9822,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapElement * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapElement * * value
                                 ) = 0;
                             
                         };
@@ -10022,28 +10166,28 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt __FIVector_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementClick(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementClick(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementPointerEntered(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementPointerEntered(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapElementPointerExited(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapElementPointerExited(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_MapContextRequested(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_MapContextRequested(
@@ -10767,9 +10911,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapLayer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapLayer * * value
                                 ) = 0;
                             
                         };
@@ -10907,9 +11051,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapModel3D * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapModel3D * * value
                                 ) = 0;
                             
                         };
@@ -10955,12 +11099,12 @@ namespace ABI {
                         public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFrom3MFAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * source,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFrom3MFWithShadingOptionAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * source,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapModel3DShadingOption shadingOption,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * operation
                                 ) = 0;
                             
                         };
@@ -11393,9 +11537,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithMapRoute(
                                 /* [in] */__RPC__in_opt ABI::Windows::Services::Maps::IMapRoute * route,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapRouteView * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapRouteView * * value
                                 ) = 0;
                             
                         };
@@ -11443,7 +11587,7 @@ namespace ABI {
                                 /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * * value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TargetCameraChanged(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_TargetCameraChanged(
@@ -11493,49 +11637,49 @@ namespace ABI {
                         public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromBoundingBox(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromBoundingBoxWithHeadingAndPitch(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateFromCamera(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera * camera,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocation(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocationWithHeadingAndPitch(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocationAndRadius(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE radiusInMeters,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocationAndRadiusWithHeadingAndPitch(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE radiusInMeters,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocations(
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint * locations,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE CreateFromLocationsWithHeadingAndPitch(
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint * locations,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapScene * * result
                                 ) = 0;
                             
                         };
@@ -11907,30 +12051,30 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE Aerial(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE AerialWithOverlay(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RoadLight(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RoadDark(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RoadHighContrastLight(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RoadHighContrastDark(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Combine(
                                 /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * styleSheets,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ParseFromJson(
                                 /* [in] */__RPC__in HSTRING styleAsJson,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE TryParseFromJson(
                                 /* [in] */__RPC__in HSTRING styleAsJson,
@@ -12076,7 +12220,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetDeferral(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral * * result
                                 ) = 0;
                             
                         };
@@ -12193,6 +12337,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitma
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileBitmapRequestedEventArgs2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("0261D114-246A-5296-BC85-590F53AA39C8"), exclusiveto, contract] */
+                        MIDL_INTERFACE("0261D114-246A-5296-BC85-590F53AA39C8")
+                        IMapTileBitmapRequestedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameIndex(
+                                /* [retval, out] */__RPC__out INT32 * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapTileBitmapRequestedEventArgs2=_uuidof(IMapTileBitmapRequestedEventArgs2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12260,9 +12449,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * * value
                                 ) = 0;
                             
                         };
@@ -12390,6 +12579,72 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSource2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileSource2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileSource2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("8E65EBBD-4095-5C15-99F1-1260B4E8B0A9"), exclusiveto, contract] */
+                        MIDL_INTERFACE("8E65EBBD-4095-5C15-99F1-1260B4E8B0A9")
+                        IMapTileSource2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnimationState(
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Controls::Maps::MapTileAnimationState * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoPlay(
+                                /* [retval, out] */__RPC__out boolean * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_AutoPlay(
+                                /* [in] */boolean value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameCount(
+                                /* [retval, out] */__RPC__out INT32 * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_FrameCount(
+                                /* [in] */INT32 value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameDuration(
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::TimeSpan * value
+                                ) = 0;
+                            /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_FrameDuration(
+                                /* [in] */ABI::Windows::Foundation::TimeSpan value
+                                ) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE Pause(void) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE Play(void) = 0;
+                            virtual HRESULT STDMETHODCALLTYPE Stop(void) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapTileSource2=_uuidof(IMapTileSource2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12415,39 +12670,39 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDataSource(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * dataSource,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDataSourceAndZoomRange(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * dataSource,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange zoomLevelRange,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDataSourceZoomRangeAndBounds(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * dataSource,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange zoomLevelRange,
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource * dataSource,
                                 /* [in] */ABI::Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange zoomLevelRange,
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeoboundingBox * bounds,
                                 /* [in] */INT32 tileSizeInPixels,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileSource * * value
                                 ) = 0;
                             
                         };
@@ -12542,6 +12797,60 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileSourceStatics2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("75CDD47E-669C-50FD-AD85-5EA5174CF59B"), exclusiveto, contract] */
+                        MIDL_INTERFACE("75CDD47E-669C-50FD-AD85-5EA5174CF59B")
+                        IMapTileSourceStatics2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AnimationStateProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AutoPlayProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameCountProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameDurationProperty(
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapTileSourceStatics2=_uuidof(IMapTileSourceStatics2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12573,7 +12882,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetDeferral(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral * * result
                                 ) = 0;
                             
                         };
@@ -12690,6 +12999,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRe
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileUriRequestedEventArgs2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    namespace Maps {
+                        /* [object, uuid("2302185D-33B5-5A55-92F5-74A86A22EFA6"), exclusiveto, contract] */
+                        MIDL_INTERFACE("2302185D-33B5-5A55-92F5-74A86A22EFA6")
+                        IMapTileUriRequestedEventArgs2 : public IInspectable
+                        {
+                        public:
+                            /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_FrameIndex(
+                                /* [retval, out] */__RPC__out INT32 * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMapTileUriRequestedEventArgs2=_uuidof(IMapTileUriRequestedEventArgs2);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Controls */
+    } /* Maps */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IStreetsideExperience
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12794,14 +13148,14 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithPanorama(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama * panorama,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama * panorama,
                                 /* [in] */DOUBLE headingInDegrees,
                                 /* [in] */DOUBLE pitchInDegrees,
                                 /* [in] */DOUBLE fieldOfViewInDegrees,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience * * value
                                 ) = 0;
                             
                         };
@@ -12892,12 +13246,12 @@ namespace ABI {
                         public:
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindNearbyWithLocationAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE FindNearbyWithLocationAndRadiusAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Devices::Geolocation::IGeopoint * location,
                                 /* [in] */DOUBLE radiusInMeters,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * operation
                                 ) = 0;
                             
                         };
@@ -14197,6 +14551,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14244,10 +14599,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileSource ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileSource2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14329,6 +14686,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -14980,6 +15338,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequ
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource;
@@ -14998,6 +15362,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource __x
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory;
@@ -15009,6 +15379,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFact
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_FWD_DEFINED__
@@ -15027,6 +15403,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience_FWD_DEFINED__
@@ -20764,6 +21146,9 @@ typedef struct __x_ABI_CWindows_CFoundation_CNumerics_CVector3 __x_ABI_CWindows_
 typedef struct __x_ABI_CWindows_CFoundation_CPoint __x_ABI_CWindows_CFoundation_CPoint;
 
 
+typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundation_CTimeSpan;
+
+
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
@@ -20856,6 +21241,9 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapProjection __x_ABI_C
 typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileAnimationState __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileAnimationState;
+
+
 typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileLayer __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileLayer;
 
 
@@ -20866,6 +21254,10 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapWatermarkMode __x_AB
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange;
+
+
+
+
 
 
 
@@ -21278,6 +21670,26 @@ enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapStyle
 
 /*
  *
+ * Struct Windows.UI.Xaml.Controls.Maps.MapTileAnimationState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileAnimationState
+{
+    MapTileAnimationState_Stopped = 0,
+    MapTileAnimationState_Paused = 1,
+    MapTileAnimationState_Playing = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Struct Windows.UI.Xaml.Controls.Maps.MapTileLayer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -21406,7 +21818,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_BitmapRequested )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CCustomMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileBitmapRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_BitmapRequested )(
@@ -21441,8 +21853,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_add_BitmapRequested(This,value,token) \
-    ( (This)->lpVtbl->add_BitmapRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_add_BitmapRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_BitmapRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource_remove_BitmapRequested(This,token) \
     ( (This)->lpVtbl->remove_BitmapRequested(This,token) )
@@ -21507,9 +21919,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSource * * value
         );
     END_INTERFACE
     
@@ -21539,8 +21951,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFa
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CICustomMapTileDataSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -21622,7 +22034,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_UriRequested )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CHttpMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_UriRequested )(
@@ -21672,8 +22084,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_put_AllowCaching(This,value) \
     ( (This)->lpVtbl->put_AllowCaching(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_add_UriRequested(This,value,token) \
-    ( (This)->lpVtbl->add_UriRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_add_UriRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_UriRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource_remove_UriRequested(This,token) \
     ( (This)->lpVtbl->remove_UriRequested(This,token) )
@@ -21738,16 +22150,16 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithUriFormatString )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory * This,
         /* [in] */__RPC__in HSTRING uriFormatString,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSource * * value
         );
     END_INTERFACE
     
@@ -21777,11 +22189,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFact
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_CreateInstanceWithUriFormatString(This,uriFormatString,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithUriFormatString(This,uriFormatString,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIHttpMapTileDataSourceFactory_CreateInstanceWithUriFormatString(This,uriFormatString,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithUriFormatString(This,uriFormatString,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -21851,7 +22263,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_UriRequested )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CLocalMapTileDataSource_Windows__CUI__CXaml__CControls__CMaps__CMapTileUriRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_UriRequested )(
@@ -21892,8 +22304,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_put_UriFormatString(This,value) \
     ( (This)->lpVtbl->put_UriFormatString(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_add_UriRequested(This,value,token) \
-    ( (This)->lpVtbl->add_UriRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_add_UriRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_UriRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource_remove_UriRequested(This,token) \
     ( (This)->lpVtbl->remove_UriRequested(This,token) )
@@ -21958,16 +22370,16 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithUriFormatString )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory * This,
         /* [in] */__RPC__in HSTRING uriFormatString,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSource * * value
         );
     END_INTERFACE
     
@@ -21997,11 +22409,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFac
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_CreateInstanceWithUriFormatString(This,uriFormatString,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithUriFormatString(This,uriFormatString,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CILocalMapTileDataSourceFactory_CreateInstanceWithUriFormatString(This,uriFormatString,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithUriFormatString(This,uriFormatString,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -22585,7 +22997,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceFromCamera )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * camera,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboard * * value
         );
     END_INTERFACE
     
@@ -22615,8 +23027,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_CreateInstanceFromCamera(This,camera,instance) \
-    ( (This)->lpVtbl->CreateInstanceFromCamera(This,camera,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapBillboardFactory_CreateInstanceFromCamera(This,camera,value) \
+    ( (This)->lpVtbl->CreateInstanceFromCamera(This,camera,value) )
 
 
 #endif /* COBJMACROS */
@@ -22942,20 +23354,20 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithLocation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithLocationAndHeading )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
         /* [in] */DOUBLE headingInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithLocationHeadingAndPitch )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithLocationHeadingPitchRollAndFieldOfView )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory * This,
@@ -22964,7 +23376,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithLocation )(
         /* [in] */DOUBLE pitchInDegrees,
         /* [in] */DOUBLE rollInDegrees,
         /* [in] */DOUBLE fieldOfViewInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * * value
         );
     END_INTERFACE
     
@@ -22994,17 +23406,17 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocation(This,location,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithLocation(This,location,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocation(This,location,value) \
+    ( (This)->lpVtbl->CreateInstanceWithLocation(This,location,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationAndHeading(This,location,headingInDegrees,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithLocationAndHeading(This,location,headingInDegrees,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationAndHeading(This,location,headingInDegrees,value) \
+    ( (This)->lpVtbl->CreateInstanceWithLocationAndHeading(This,location,headingInDegrees,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithLocationHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,value) \
+    ( (This)->lpVtbl->CreateInstanceWithLocationHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(This,location,headingInDegrees,pitchInDegrees,rollInDegrees,fieldOfViewInDegrees,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(This,location,headingInDegrees,pitchInDegrees,rollInDegrees,fieldOfViewInDegrees,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCameraFactory_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(This,location,headingInDegrees,pitchInDegrees,rollInDegrees,fieldOfViewInDegrees,value) \
+    ( (This)->lpVtbl->CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(This,location,headingInDegrees,pitchInDegrees,rollInDegrees,fieldOfViewInDegrees,value) )
 
 
 #endif /* COBJMACROS */
@@ -23301,7 +23713,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CenterChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CenterChanged )(
@@ -23310,7 +23722,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_HeadingChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_HeadingChanged )(
@@ -23319,7 +23731,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_LoadingStatusChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_LoadingStatusChanged )(
@@ -23328,7 +23740,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapDoubleTapped )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapDoubleTapped )(
@@ -23337,7 +23749,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapHolding )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapHolding )(
@@ -23346,7 +23758,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapTapped )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapInputEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapTapped )(
@@ -23355,7 +23767,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_PitchChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_PitchChanged )(
@@ -23364,7 +23776,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_TransformOriginChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_TransformOriginChanged )(
@@ -23373,7 +23785,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ZoomLevelChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_IInspectable * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ZoomLevelChanged )(
@@ -23383,7 +23795,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindMapElementsAtOffset )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint offset,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetLocationFromOffset )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
@@ -23405,18 +23817,18 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox * bounds,
         /* [in] */__RPC__in_opt __FIReference_1_Windows__CUI__CXaml__CThickness * margin,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapAnimationKind animation,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetViewWithCenterAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * center,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetViewWithCenterAndZoomAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * center,
         /* [in] */__RPC__in_opt __FIReference_1_double * zoomLevel,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetViewWithCenterZoomHeadingAndPitchAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
@@ -23424,7 +23836,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */__RPC__in_opt __FIReference_1_double * zoomLevel,
         /* [in] */__RPC__in_opt __FIReference_1_double * heading,
         /* [in] */__RPC__in_opt __FIReference_1_double * desiredPitch,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl * This,
@@ -23433,7 +23845,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */__RPC__in_opt __FIReference_1_double * heading,
         /* [in] */__RPC__in_opt __FIReference_1_double * desiredPitch,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapAnimationKind animation,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     END_INTERFACE
     
@@ -23559,62 +23971,62 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_get_TileSources(This,value) \
     ( (This)->lpVtbl->get_TileSources(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_CenterChanged(This,value,token) \
-    ( (This)->lpVtbl->add_CenterChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_CenterChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_CenterChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_CenterChanged(This,token) \
     ( (This)->lpVtbl->remove_CenterChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_HeadingChanged(This,value,token) \
-    ( (This)->lpVtbl->add_HeadingChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_HeadingChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_HeadingChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_HeadingChanged(This,token) \
     ( (This)->lpVtbl->remove_HeadingChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_LoadingStatusChanged(This,value,token) \
-    ( (This)->lpVtbl->add_LoadingStatusChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_LoadingStatusChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_LoadingStatusChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_LoadingStatusChanged(This,token) \
     ( (This)->lpVtbl->remove_LoadingStatusChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapDoubleTapped(This,value,token) \
-    ( (This)->lpVtbl->add_MapDoubleTapped(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapDoubleTapped(This,handler,token) \
+    ( (This)->lpVtbl->add_MapDoubleTapped(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_MapDoubleTapped(This,token) \
     ( (This)->lpVtbl->remove_MapDoubleTapped(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapHolding(This,value,token) \
-    ( (This)->lpVtbl->add_MapHolding(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapHolding(This,handler,token) \
+    ( (This)->lpVtbl->add_MapHolding(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_MapHolding(This,token) \
     ( (This)->lpVtbl->remove_MapHolding(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapTapped(This,value,token) \
-    ( (This)->lpVtbl->add_MapTapped(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_MapTapped(This,handler,token) \
+    ( (This)->lpVtbl->add_MapTapped(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_MapTapped(This,token) \
     ( (This)->lpVtbl->remove_MapTapped(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_PitchChanged(This,value,token) \
-    ( (This)->lpVtbl->add_PitchChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_PitchChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_PitchChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_PitchChanged(This,token) \
     ( (This)->lpVtbl->remove_PitchChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_TransformOriginChanged(This,value,token) \
-    ( (This)->lpVtbl->add_TransformOriginChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_TransformOriginChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_TransformOriginChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_TransformOriginChanged(This,token) \
     ( (This)->lpVtbl->remove_TransformOriginChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_ZoomLevelChanged(This,value,token) \
-    ( (This)->lpVtbl->add_ZoomLevelChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_add_ZoomLevelChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ZoomLevelChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_remove_ZoomLevelChanged(This,token) \
     ( (This)->lpVtbl->remove_ZoomLevelChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_FindMapElementsAtOffset(This,offset,returnValue) \
-    ( (This)->lpVtbl->FindMapElementsAtOffset(This,offset,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_FindMapElementsAtOffset(This,offset,result) \
+    ( (This)->lpVtbl->FindMapElementsAtOffset(This,offset,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_GetLocationFromOffset(This,offset,location) \
     ( (This)->lpVtbl->GetLocationFromOffset(This,offset,location) )
@@ -23625,20 +24037,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_IsLocationInView(This,location,isInView) \
     ( (This)->lpVtbl->IsLocationInView(This,location,isInView) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewBoundsAsync(This,bounds,margin,animation,returnValue) \
-    ( (This)->lpVtbl->TrySetViewBoundsAsync(This,bounds,margin,animation,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewBoundsAsync(This,bounds,margin,animation,operation) \
+    ( (This)->lpVtbl->TrySetViewBoundsAsync(This,bounds,margin,animation,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterAsync(This,center,returnValue) \
-    ( (This)->lpVtbl->TrySetViewWithCenterAsync(This,center,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterAsync(This,center,operation) \
+    ( (This)->lpVtbl->TrySetViewWithCenterAsync(This,center,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterAndZoomAsync(This,center,zoomLevel,returnValue) \
-    ( (This)->lpVtbl->TrySetViewWithCenterAndZoomAsync(This,center,zoomLevel,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterAndZoomAsync(This,center,zoomLevel,operation) \
+    ( (This)->lpVtbl->TrySetViewWithCenterAndZoomAsync(This,center,zoomLevel,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterZoomHeadingAndPitchAsync(This,center,zoomLevel,heading,desiredPitch,returnValue) \
-    ( (This)->lpVtbl->TrySetViewWithCenterZoomHeadingAndPitchAsync(This,center,zoomLevel,heading,desiredPitch,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterZoomHeadingAndPitchAsync(This,center,zoomLevel,heading,desiredPitch,operation) \
+    ( (This)->lpVtbl->TrySetViewWithCenterZoomHeadingAndPitchAsync(This,center,zoomLevel,heading,desiredPitch,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(This,center,zoomLevel,heading,desiredPitch,animation,returnValue) \
-    ( (This)->lpVtbl->TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(This,center,zoomLevel,heading,desiredPitch,animation,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(This,center,zoomLevel,heading,desiredPitch,animation,operation) \
+    ( (This)->lpVtbl->TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(This,center,zoomLevel,heading,desiredPitch,animation,operation) )
 
 
 #endif /* COBJMACROS */
@@ -23780,7 +24192,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementClick )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementClickEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementClick )(
@@ -23789,7 +24201,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementPointerEntered )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerEnteredEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementPointerEntered )(
@@ -23798,7 +24210,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementPointerExited )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapElementPointerExitedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementPointerExited )(
@@ -23807,7 +24219,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ActualCameraChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ActualCameraChanged )(
@@ -23816,7 +24228,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ActualCameraChanging )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapActualCameraChangingEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ActualCameraChanging )(
@@ -23825,7 +24237,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_TargetCameraChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_TargetCameraChanged )(
@@ -23834,7 +24246,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_CustomExperienceChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapCustomExperienceChangedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_CustomExperienceChanged )(
@@ -23865,46 +24277,46 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *TryRotateAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */DOUBLE degrees,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryRotateToAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */DOUBLE angleInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryTiltAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */DOUBLE degrees,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryTiltToAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */DOUBLE angleInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryZoomInAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryZoomOutAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryZoomToAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */DOUBLE zoomLevel,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetSceneAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * scene,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *TrySetSceneWithAnimationAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * scene,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapAnimationKind animationKind,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     END_INTERFACE
     
@@ -23994,44 +24406,44 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_put_CustomExperience(This,value) \
     ( (This)->lpVtbl->put_CustomExperience(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementClick(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementClick(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementClick(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementClick(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_MapElementClick(This,token) \
     ( (This)->lpVtbl->remove_MapElementClick(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementPointerEntered(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementPointerEntered(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementPointerEntered(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementPointerEntered(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_MapElementPointerEntered(This,token) \
     ( (This)->lpVtbl->remove_MapElementPointerEntered(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementPointerExited(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementPointerExited(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_MapElementPointerExited(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementPointerExited(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_MapElementPointerExited(This,token) \
     ( (This)->lpVtbl->remove_MapElementPointerExited(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_ActualCameraChanged(This,value,token) \
-    ( (This)->lpVtbl->add_ActualCameraChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_ActualCameraChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_ActualCameraChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_ActualCameraChanged(This,token) \
     ( (This)->lpVtbl->remove_ActualCameraChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_ActualCameraChanging(This,value,token) \
-    ( (This)->lpVtbl->add_ActualCameraChanging(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_ActualCameraChanging(This,handler,token) \
+    ( (This)->lpVtbl->add_ActualCameraChanging(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_ActualCameraChanging(This,token) \
     ( (This)->lpVtbl->remove_ActualCameraChanging(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_TargetCameraChanged(This,value,token) \
-    ( (This)->lpVtbl->add_TargetCameraChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_TargetCameraChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_TargetCameraChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_TargetCameraChanged(This,token) \
     ( (This)->lpVtbl->remove_TargetCameraChanged(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_CustomExperienceChanged(This,value,token) \
-    ( (This)->lpVtbl->add_CustomExperienceChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_add_CustomExperienceChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_CustomExperienceChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_remove_CustomExperienceChanged(This,token) \
     ( (This)->lpVtbl->remove_CustomExperienceChanged(This,token) )
@@ -24054,32 +24466,32 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_StopContinuousZoom(This) \
     ( (This)->lpVtbl->StopContinuousZoom(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryRotateAsync(This,degrees,returnValue) \
-    ( (This)->lpVtbl->TryRotateAsync(This,degrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryRotateAsync(This,degrees,operation) \
+    ( (This)->lpVtbl->TryRotateAsync(This,degrees,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryRotateToAsync(This,angleInDegrees,returnValue) \
-    ( (This)->lpVtbl->TryRotateToAsync(This,angleInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryRotateToAsync(This,angleInDegrees,operation) \
+    ( (This)->lpVtbl->TryRotateToAsync(This,angleInDegrees,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryTiltAsync(This,degrees,returnValue) \
-    ( (This)->lpVtbl->TryTiltAsync(This,degrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryTiltAsync(This,degrees,operation) \
+    ( (This)->lpVtbl->TryTiltAsync(This,degrees,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryTiltToAsync(This,angleInDegrees,returnValue) \
-    ( (This)->lpVtbl->TryTiltToAsync(This,angleInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryTiltToAsync(This,angleInDegrees,operation) \
+    ( (This)->lpVtbl->TryTiltToAsync(This,angleInDegrees,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomInAsync(This,returnValue) \
-    ( (This)->lpVtbl->TryZoomInAsync(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomInAsync(This,operation) \
+    ( (This)->lpVtbl->TryZoomInAsync(This,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomOutAsync(This,returnValue) \
-    ( (This)->lpVtbl->TryZoomOutAsync(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomOutAsync(This,operation) \
+    ( (This)->lpVtbl->TryZoomOutAsync(This,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomToAsync(This,zoomLevel,returnValue) \
-    ( (This)->lpVtbl->TryZoomToAsync(This,zoomLevel,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TryZoomToAsync(This,zoomLevel,operation) \
+    ( (This)->lpVtbl->TryZoomToAsync(This,zoomLevel,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TrySetSceneAsync(This,scene,returnValue) \
-    ( (This)->lpVtbl->TrySetSceneAsync(This,scene,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TrySetSceneAsync(This,scene,operation) \
+    ( (This)->lpVtbl->TrySetSceneAsync(This,scene,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TrySetSceneWithAnimationAsync(This,scene,animationKind,returnValue) \
-    ( (This)->lpVtbl->TrySetSceneWithAnimationAsync(This,scene,animationKind,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl2_TrySetSceneWithAnimationAsync(This,scene,animationKind,operation) \
+    ( (This)->lpVtbl->TrySetSceneWithAnimationAsync(This,scene,animationKind,operation) )
 
 
 #endif /* COBJMACROS */
@@ -24141,7 +24553,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapRightTapped )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapRightTappedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapRightTapped )(
@@ -24176,8 +24588,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_add_MapRightTapped(This,value,token) \
-    ( (This)->lpVtbl->add_MapRightTapped(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_add_MapRightTapped(This,handler,token) \
+    ( (This)->lpVtbl->add_MapRightTapped(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl3_remove_MapRightTapped(This,token) \
     ( (This)->lpVtbl->remove_MapRightTapped(This,token) )
@@ -24259,7 +24671,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetVisibleRegion )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapVisibleRegionKind region,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopath * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopath * * result
         );
     END_INTERFACE
     
@@ -24301,8 +24713,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_put_TransitFeaturesEnabled(This,value) \
     ( (This)->lpVtbl->put_TransitFeaturesEnabled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_GetVisibleRegion(This,region,returnValue) \
-    ( (This)->lpVtbl->GetVisibleRegion(This,region,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl4_GetVisibleRegion(This,region,result) \
+    ( (This)->lpVtbl->GetVisibleRegion(This,region,result) )
 
 
 #endif /* COBJMACROS */
@@ -24388,7 +24800,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapContextRequested )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapControl_Windows__CUI__CXaml__CControls__CMaps__CMapContextRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapContextRequested )(
@@ -24399,7 +24811,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint offset,
         /* [in] */DOUBLE radius,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CControls__CMaps__CMapElement * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetLocationFromOffsetWithReferenceSystem )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
@@ -24419,12 +24831,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
         /* [in] */DOUBLE horizontalPixels,
         /* [in] */DOUBLE verticalPixels,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *TryPanToAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
         );
     END_INTERFACE
     
@@ -24472,14 +24884,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_put_ViewPadding(This,value) \
     ( (This)->lpVtbl->put_ViewPadding(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_add_MapContextRequested(This,value,token) \
-    ( (This)->lpVtbl->add_MapContextRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_add_MapContextRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_MapContextRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_remove_MapContextRequested(This,token) \
     ( (This)->lpVtbl->remove_MapContextRequested(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FindMapElementsAtOffsetWithRadius(This,offset,radius,returnValue) \
-    ( (This)->lpVtbl->FindMapElementsAtOffsetWithRadius(This,offset,radius,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_FindMapElementsAtOffsetWithRadius(This,offset,radius,result) \
+    ( (This)->lpVtbl->FindMapElementsAtOffsetWithRadius(This,offset,radius,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_GetLocationFromOffsetWithReferenceSystem(This,offset,desiredReferenceSystem,location) \
     ( (This)->lpVtbl->GetLocationFromOffsetWithReferenceSystem(This,offset,desiredReferenceSystem,location) )
@@ -24490,11 +24902,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_StopContinuousPan(This) \
     ( (This)->lpVtbl->StopContinuousPan(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanAsync(This,horizontalPixels,verticalPixels,returnValue) \
-    ( (This)->lpVtbl->TryPanAsync(This,horizontalPixels,verticalPixels,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanAsync(This,horizontalPixels,verticalPixels,operation) \
+    ( (This)->lpVtbl->TryPanAsync(This,horizontalPixels,verticalPixels,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanToAsync(This,location,returnValue) \
-    ( (This)->lpVtbl->TryPanToAsync(This,location,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControl5_TryPanToAsync(This,location,operation) \
+    ( (This)->lpVtbl->TryPanToAsync(This,location,operation) )
 
 
 #endif /* COBJMACROS */
@@ -25704,7 +26116,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetLocation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetLocation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics * This,
@@ -25718,7 +26130,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetNormalizedAnchorPoint )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyObject * element,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * value
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetNormalizedAnchorPoint )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics * This,
@@ -25810,8 +26222,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_get_LocationProperty(This,value) \
     ( (This)->lpVtbl->get_LocationProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_GetLocation(This,element,value) \
-    ( (This)->lpVtbl->GetLocation(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_GetLocation(This,element,result) \
+    ( (This)->lpVtbl->GetLocation(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_SetLocation(This,element,value) \
     ( (This)->lpVtbl->SetLocation(This,element,value) )
@@ -25819,8 +26231,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_get_NormalizedAnchorPointProperty(This,value) \
     ( (This)->lpVtbl->get_NormalizedAnchorPointProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_GetNormalizedAnchorPoint(This,element,value) \
-    ( (This)->lpVtbl->GetNormalizedAnchorPoint(This,element,value) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_GetNormalizedAnchorPoint(This,element,result) \
+    ( (This)->lpVtbl->GetNormalizedAnchorPoint(This,element,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapControlStatics_SetNormalizedAnchorPoint(This,element,value) \
     ( (This)->lpVtbl->SetNormalizedAnchorPoint(This,element,value) )
@@ -27027,9 +27439,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperience * * value
         );
     END_INTERFACE
     
@@ -27059,8 +27471,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactor
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCustomExperienceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27962,9 +28374,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElement * * value
         );
     END_INTERFACE
     
@@ -27994,8 +28406,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28672,7 +29084,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementClick )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerClickEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementClick )(
@@ -28681,7 +29093,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementPointerEntered )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerEnteredEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementPointerEntered )(
@@ -28690,7 +29102,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapElementPointerExited )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerPointerExitedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapElementPointerExited )(
@@ -28699,7 +29111,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_MapContextRequested )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayer_Windows__CUI__CXaml__CControls__CMaps__CMapElementsLayerContextRequestedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_MapContextRequested )(
@@ -28740,26 +29152,26 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_put_MapElements(This,value) \
     ( (This)->lpVtbl->put_MapElements(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementClick(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementClick(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementClick(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementClick(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_remove_MapElementClick(This,token) \
     ( (This)->lpVtbl->remove_MapElementClick(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementPointerEntered(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementPointerEntered(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementPointerEntered(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementPointerEntered(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_remove_MapElementPointerEntered(This,token) \
     ( (This)->lpVtbl->remove_MapElementPointerEntered(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementPointerExited(This,value,token) \
-    ( (This)->lpVtbl->add_MapElementPointerExited(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapElementPointerExited(This,handler,token) \
+    ( (This)->lpVtbl->add_MapElementPointerExited(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_remove_MapElementPointerExited(This,token) \
     ( (This)->lpVtbl->remove_MapElementPointerExited(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapContextRequested(This,value,token) \
-    ( (This)->lpVtbl->add_MapContextRequested(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_add_MapContextRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_MapContextRequested(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapElementsLayer_remove_MapContextRequested(This,token) \
     ( (This)->lpVtbl->remove_MapContextRequested(This,token) )
@@ -30243,9 +30655,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayerFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayer * * value
         );
     END_INTERFACE
     
@@ -30275,8 +30687,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayerFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayerFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapLayerFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30531,9 +30943,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3D * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3D * * value
         );
     END_INTERFACE
     
@@ -30563,8 +30975,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30627,13 +31039,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFrom3MFAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * source,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFrom3MFWithShadingOptionAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * source,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapModel3DShadingOption shadingOption,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CMapModel3D * * operation
         );
     END_INTERFACE
     
@@ -30663,11 +31075,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics_CreateFrom3MFAsync(This,source,returnValue) \
-    ( (This)->lpVtbl->CreateFrom3MFAsync(This,source,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics_CreateFrom3MFAsync(This,source,operation) \
+    ( (This)->lpVtbl->CreateFrom3MFAsync(This,source,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics_CreateFrom3MFWithShadingOptionAsync(This,source,shadingOption,returnValue) \
-    ( (This)->lpVtbl->CreateFrom3MFWithShadingOptionAsync(This,source,shadingOption,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapModel3DStatics_CreateFrom3MFWithShadingOptionAsync(This,source,shadingOption,operation) \
+    ( (This)->lpVtbl->CreateFrom3MFWithShadingOptionAsync(This,source,shadingOption,operation) )
 
 
 #endif /* COBJMACROS */
@@ -31549,9 +31961,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithMapRoute )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CServices_CMaps_CIMapRoute * route,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteView * * value
         );
     END_INTERFACE
     
@@ -31581,8 +31993,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_CreateInstanceWithMapRoute(This,route,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithMapRoute(This,route,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapRouteViewFactory_CreateInstanceWithMapRoute(This,route,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithMapRoute(This,route,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31648,7 +32060,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_TargetCameraChanged )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CControls__CMaps__CMapScene_Windows__CUI__CXaml__CControls__CMaps__CMapTargetCameraChangedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_TargetCameraChanged )(
@@ -31686,8 +32098,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_get_TargetCamera(This,value) \
     ( (This)->lpVtbl->get_TargetCamera(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_add_TargetCameraChanged(This,value,token) \
-    ( (This)->lpVtbl->add_TargetCameraChanged(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_add_TargetCameraChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_TargetCameraChanged(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene_remove_TargetCameraChanged(This,token) \
     ( (This)->lpVtbl->remove_TargetCameraChanged(This,token) )
@@ -31753,37 +32165,37 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromBoundingBox )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox * bounds,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromBoundingBoxWithHeadingAndPitch )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox * bounds,
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreateFromCamera )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapCamera * camera,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocation )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocationWithHeadingAndPitch )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocationAndRadius )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
         /* [in] */DOUBLE radiusInMeters,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocationAndRadiusWithHeadingAndPitch )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
@@ -31791,19 +32203,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         /* [in] */DOUBLE radiusInMeters,
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocations )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint * locations,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *CreateFromLocationsWithHeadingAndPitch )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics * This,
         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CDevices__CGeolocation__CGeopoint * locations,
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapScene * * result
         );
     END_INTERFACE
     
@@ -31833,32 +32245,32 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromBoundingBox(This,bounds,returnValue) \
-    ( (This)->lpVtbl->CreateFromBoundingBox(This,bounds,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromBoundingBox(This,bounds,result) \
+    ( (This)->lpVtbl->CreateFromBoundingBox(This,bounds,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromBoundingBoxWithHeadingAndPitch(This,bounds,headingInDegrees,pitchInDegrees,returnValue) \
-    ( (This)->lpVtbl->CreateFromBoundingBoxWithHeadingAndPitch(This,bounds,headingInDegrees,pitchInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromBoundingBoxWithHeadingAndPitch(This,bounds,headingInDegrees,pitchInDegrees,result) \
+    ( (This)->lpVtbl->CreateFromBoundingBoxWithHeadingAndPitch(This,bounds,headingInDegrees,pitchInDegrees,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromCamera(This,camera,returnValue) \
-    ( (This)->lpVtbl->CreateFromCamera(This,camera,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromCamera(This,camera,result) \
+    ( (This)->lpVtbl->CreateFromCamera(This,camera,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocation(This,location,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocation(This,location,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocation(This,location,result) \
+    ( (This)->lpVtbl->CreateFromLocation(This,location,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationWithHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocationWithHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationWithHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,result) \
+    ( (This)->lpVtbl->CreateFromLocationWithHeadingAndPitch(This,location,headingInDegrees,pitchInDegrees,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationAndRadius(This,location,radiusInMeters,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocationAndRadius(This,location,radiusInMeters,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationAndRadius(This,location,radiusInMeters,result) \
+    ( (This)->lpVtbl->CreateFromLocationAndRadius(This,location,radiusInMeters,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationAndRadiusWithHeadingAndPitch(This,location,radiusInMeters,headingInDegrees,pitchInDegrees,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocationAndRadiusWithHeadingAndPitch(This,location,radiusInMeters,headingInDegrees,pitchInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationAndRadiusWithHeadingAndPitch(This,location,radiusInMeters,headingInDegrees,pitchInDegrees,result) \
+    ( (This)->lpVtbl->CreateFromLocationAndRadiusWithHeadingAndPitch(This,location,radiusInMeters,headingInDegrees,pitchInDegrees,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocations(This,locations,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocations(This,locations,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocations(This,locations,result) \
+    ( (This)->lpVtbl->CreateFromLocations(This,locations,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationsWithHeadingAndPitch(This,locations,headingInDegrees,pitchInDegrees,returnValue) \
-    ( (This)->lpVtbl->CreateFromLocationsWithHeadingAndPitch(This,locations,headingInDegrees,pitchInDegrees,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapSceneStatics_CreateFromLocationsWithHeadingAndPitch(This,locations,headingInDegrees,pitchInDegrees,result) \
+    ( (This)->lpVtbl->CreateFromLocationsWithHeadingAndPitch(This,locations,headingInDegrees,pitchInDegrees,result) )
 
 
 #endif /* COBJMACROS */
@@ -32647,37 +33059,37 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *Aerial )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *AerialWithOverlay )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RoadLight )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RoadDark )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RoadHighContrastLight )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RoadHighContrastDark )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *Combine )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
         /* [in] */__RPC__in_opt __FIIterable_1_Windows__CUI__CXaml__CControls__CMaps__CMapStyleSheet * styleSheets,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *ParseFromJson )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
         /* [in] */__RPC__in HSTRING styleAsJson,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheet * * result
         );
     HRESULT ( STDMETHODCALLTYPE *TryParseFromJson )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics * This,
@@ -32713,29 +33125,29 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Aerial(This,returnValue) \
-    ( (This)->lpVtbl->Aerial(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Aerial(This,result) \
+    ( (This)->lpVtbl->Aerial(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_AerialWithOverlay(This,returnValue) \
-    ( (This)->lpVtbl->AerialWithOverlay(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_AerialWithOverlay(This,result) \
+    ( (This)->lpVtbl->AerialWithOverlay(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadLight(This,returnValue) \
-    ( (This)->lpVtbl->RoadLight(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadLight(This,result) \
+    ( (This)->lpVtbl->RoadLight(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadDark(This,returnValue) \
-    ( (This)->lpVtbl->RoadDark(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadDark(This,result) \
+    ( (This)->lpVtbl->RoadDark(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastLight(This,returnValue) \
-    ( (This)->lpVtbl->RoadHighContrastLight(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastLight(This,result) \
+    ( (This)->lpVtbl->RoadHighContrastLight(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastDark(This,returnValue) \
-    ( (This)->lpVtbl->RoadHighContrastDark(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_RoadHighContrastDark(This,result) \
+    ( (This)->lpVtbl->RoadHighContrastDark(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Combine(This,styleSheets,returnValue) \
-    ( (This)->lpVtbl->Combine(This,styleSheets,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_Combine(This,styleSheets,result) \
+    ( (This)->lpVtbl->Combine(This,styleSheets,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_ParseFromJson(This,styleAsJson,returnValue) \
-    ( (This)->lpVtbl->ParseFromJson(This,styleAsJson,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_ParseFromJson(This,styleAsJson,result) \
+    ( (This)->lpVtbl->ParseFromJson(This,styleAsJson,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapStyleSheetStatics_TryParseFromJson(This,styleAsJson,styleSheet,returnValue) \
     ( (This)->lpVtbl->TryParseFromJson(This,styleAsJson,styleSheet,returnValue) )
@@ -32994,7 +33406,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestDeferral * * result
         );
     END_INTERFACE
     
@@ -33030,8 +33442,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_put_PixelData(This,value) \
     ( (This)->lpVtbl->put_PixelData(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_GetDeferral(This,returnValue) \
-    ( (This)->lpVtbl->GetDeferral(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequest_GetDeferral(This,result) \
+    ( (This)->lpVtbl->GetDeferral(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -33250,6 +33662,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitma
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileBitmapRequestedEventArgs2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2";
+/* [object, uuid("0261D114-246A-5296-BC85-590F53AA39C8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameIndex )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2 * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_get_FrameIndex(This,value) \
+    ( (This)->lpVtbl->get_FrameIndex(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileBitmapRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -33385,9 +33890,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource * * value
         );
     END_INTERFACE
     
@@ -33417,8 +33922,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33671,6 +34176,159 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSource2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileSource2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileSource2";
+/* [object, uuid("8E65EBBD-4095-5C15-99F1-1260B4E8B0A9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AnimationState )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapTileAnimationState * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AutoPlay )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_AutoPlay )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameCount )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_FrameCount )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [in] */INT32 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameDuration )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CTimeSpan * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_FrameDuration )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This,
+        /* [in] */__x_ABI_CWindows_CFoundation_CTimeSpan value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Pause )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *Play )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This
+        );
+    HRESULT ( STDMETHODCALLTYPE *Stop )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2 * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_get_AnimationState(This,value) \
+    ( (This)->lpVtbl->get_AnimationState(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_get_AutoPlay(This,value) \
+    ( (This)->lpVtbl->get_AutoPlay(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_put_AutoPlay(This,value) \
+    ( (This)->lpVtbl->put_AutoPlay(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_get_FrameCount(This,value) \
+    ( (This)->lpVtbl->get_FrameCount(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_put_FrameCount(This,value) \
+    ( (This)->lpVtbl->put_FrameCount(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_get_FrameDuration(This,value) \
+    ( (This)->lpVtbl->get_FrameDuration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_put_FrameDuration(This,value) \
+    ( (This)->lpVtbl->put_FrameDuration(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_Pause(This) \
+    ( (This)->lpVtbl->Pause(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_Play(This) \
+    ( (This)->lpVtbl->Play(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_Stop(This) \
+    ( (This)->lpVtbl->Stop(This) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -33720,33 +34378,33 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDataSource )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource * dataSource,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDataSourceAndZoomRange )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource * dataSource,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange zoomLevelRange,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDataSourceZoomRangeAndBounds )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileDataSource * dataSource,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange zoomLevelRange,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox * bounds,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory * This,
@@ -33754,9 +34412,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CMapZoomLevelRange zoomLevelRange,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeoboundingBox * bounds,
         /* [in] */INT32 tileSizeInPixels,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSource * * value
         );
     END_INTERFACE
     
@@ -33786,20 +34444,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSource(This,dataSource,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDataSource(This,dataSource,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSource(This,dataSource,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDataSource(This,dataSource,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceAndZoomRange(This,dataSource,zoomLevelRange,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDataSourceAndZoomRange(This,dataSource,zoomLevelRange,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceAndZoomRange(This,dataSource,zoomLevelRange,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDataSourceAndZoomRange(This,dataSource,zoomLevelRange,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceZoomRangeAndBounds(This,dataSource,zoomLevelRange,bounds,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDataSourceZoomRangeAndBounds(This,dataSource,zoomLevelRange,bounds,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceZoomRangeAndBounds(This,dataSource,zoomLevelRange,bounds,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDataSourceZoomRangeAndBounds(This,dataSource,zoomLevelRange,bounds,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(This,dataSource,zoomLevelRange,bounds,tileSizeInPixels,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(This,dataSource,zoomLevelRange,bounds,tileSizeInPixels,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceFactory_CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(This,dataSource,zoomLevelRange,bounds,tileSizeInPixels,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize(This,dataSource,zoomLevelRange,bounds,tileSizeInPixels,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33975,6 +34633,120 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourc
 
 /*
  *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileSource
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileSourceStatics2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2";
+/* [object, uuid("75CDD47E-669C-50FD-AD85-5EA5174CF59B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AnimationStateProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AutoPlayProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameCountProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameDurationProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_get_AnimationStateProperty(This,value) \
+    ( (This)->lpVtbl->get_AnimationStateProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_get_AutoPlayProperty(This,value) \
+    ( (This)->lpVtbl->get_AutoPlayProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_get_FrameCountProperty(This,value) \
+    ( (This)->lpVtbl->get_FrameCountProperty(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_get_FrameDurationProperty(This,value) \
+    ( (This)->lpVtbl->get_FrameDurationProperty(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileSourceStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -34032,7 +34804,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestDeferral * * result
         );
     END_INTERFACE
     
@@ -34068,8 +34840,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_put_Uri(This,value) \
     ( (This)->lpVtbl->put_Uri(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_GetDeferral(This,returnValue) \
-    ( (This)->lpVtbl->GetDeferral(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequest_GetDeferral(This,result) \
+    ( (This)->lpVtbl->GetDeferral(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -34284,6 +35056,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventA
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Controls_Maps_IMapTileUriRequestedEventArgs2[] = L"Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2";
+/* [object, uuid("2302185D-33B5-5A55-92F5-74A86A22EFA6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_FrameIndex )(
+        __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2 * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_get_FrameIndex(This,value) \
+    ( (This)->lpVtbl->get_FrameIndex(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIMapTileUriRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -34508,7 +35373,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithPanorama )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanorama * panorama,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithPanoramaHeadingPitchAndFieldOfView )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory * This,
@@ -34516,7 +35381,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithPanorama )(
         /* [in] */DOUBLE headingInDegrees,
         /* [in] */DOUBLE pitchInDegrees,
         /* [in] */DOUBLE fieldOfViewInDegrees,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperience * * value
         );
     END_INTERFACE
     
@@ -34546,11 +35411,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFacto
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_CreateInstanceWithPanorama(This,panorama,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithPanorama(This,panorama,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_CreateInstanceWithPanorama(This,panorama,value) \
+    ( (This)->lpVtbl->CreateInstanceWithPanorama(This,panorama,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(This,panorama,headingInDegrees,pitchInDegrees,fieldOfViewInDegrees,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(This,panorama,headingInDegrees,pitchInDegrees,fieldOfViewInDegrees,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsideExperienceFactory_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(This,panorama,headingInDegrees,pitchInDegrees,fieldOfViewInDegrees,value) \
+    ( (This)->lpVtbl->CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(This,panorama,headingInDegrees,pitchInDegrees,fieldOfViewInDegrees,value) )
 
 
 #endif /* COBJMACROS */
@@ -34706,13 +35571,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindNearbyWithLocationAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *FindNearbyWithLocationAndRadiusAsync )(
         __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CGeolocation_CIGeopoint * location,
         /* [in] */DOUBLE radiusInMeters,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CControls__CMaps__CStreetsidePanorama * * operation
         );
     END_INTERFACE
     
@@ -34742,11 +35607,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics
 #define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_FindNearbyWithLocationAsync(This,location,returnValue) \
-    ( (This)->lpVtbl->FindNearbyWithLocationAsync(This,location,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_FindNearbyWithLocationAsync(This,location,operation) \
+    ( (This)->lpVtbl->FindNearbyWithLocationAsync(This,location,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_FindNearbyWithLocationAndRadiusAsync(This,location,radiusInMeters,returnValue) \
-    ( (This)->lpVtbl->FindNearbyWithLocationAndRadiusAsync(This,location,radiusInMeters,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CMaps_CIStreetsidePanoramaStatics_FindNearbyWithLocationAndRadiusAsync(This,location,radiusInMeters,operation) \
+    ( (This)->lpVtbl->FindNearbyWithLocationAndRadiusAsync(This,location,radiusInMeters,operation) )
 
 
 #endif /* COBJMACROS */
@@ -36039,6 +36904,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -36086,10 +36952,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileSource ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileSource2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -36171,6 +37039,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.System.Power.Diagnostics.2.h"
@@ -55,92 +55,80 @@ template <typename D> void consume_Windows_System_Power_Diagnostics_IForegroundE
 template <typename D>
 struct produce<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics> : produce_base<D, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>
 {
-    HRESULT __stdcall get_DeviceSpecificConversionFactor(double* value) noexcept final
+    int32_t WINRT_CALL get_DeviceSpecificConversionFactor(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceSpecificConversionFactor, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DeviceSpecificConversionFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ComputeTotalEnergyUsage(uint64_t* value) noexcept final
+    int32_t WINRT_CALL ComputeTotalEnergyUsage(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ComputeTotalEnergyUsage, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ComputeTotalEnergyUsage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResetTotalEnergyUsage() noexcept final
+    int32_t WINRT_CALL ResetTotalEnergyUsage() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetTotalEnergyUsage, WINRT_WRAP(void));
             this->shim().ResetTotalEnergyUsage();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics> : produce_base<D, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>
 {
-    HRESULT __stdcall get_DeviceSpecificConversionFactor(double* value) noexcept final
+    int32_t WINRT_CALL get_DeviceSpecificConversionFactor(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceSpecificConversionFactor, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().DeviceSpecificConversionFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ComputeTotalEnergyUsage(uint64_t* value) noexcept final
+    int32_t WINRT_CALL ComputeTotalEnergyUsage(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ComputeTotalEnergyUsage, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ComputeTotalEnergyUsage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ResetTotalEnergyUsage() noexcept final
+    int32_t WINRT_CALL ResetTotalEnergyUsage() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetTotalEnergyUsage, WINRT_WRAP(void));
             this->shim().ResetTotalEnergyUsage();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -150,32 +138,32 @@ WINRT_EXPORT namespace winrt::Windows::System::Power::Diagnostics {
 
 inline double BackgroundEnergyDiagnostics::DeviceSpecificConversionFactor()
 {
-    return get_activation_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
+    return impl::call_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.DeviceSpecificConversionFactor(); });
 }
 
 inline uint64_t BackgroundEnergyDiagnostics::ComputeTotalEnergyUsage()
 {
-    return get_activation_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
+    return impl::call_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.ComputeTotalEnergyUsage(); });
 }
 
 inline void BackgroundEnergyDiagnostics::ResetTotalEnergyUsage()
 {
-    get_activation_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
+    impl::call_factory<BackgroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.ResetTotalEnergyUsage(); });
 }
 
 inline double ForegroundEnergyDiagnostics::DeviceSpecificConversionFactor()
 {
-    return get_activation_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>().DeviceSpecificConversionFactor();
+    return impl::call_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.DeviceSpecificConversionFactor(); });
 }
 
 inline uint64_t ForegroundEnergyDiagnostics::ComputeTotalEnergyUsage()
 {
-    return get_activation_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>().ComputeTotalEnergyUsage();
+    return impl::call_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.ComputeTotalEnergyUsage(); });
 }
 
 inline void ForegroundEnergyDiagnostics::ResetTotalEnergyUsage()
 {
-    get_activation_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>().ResetTotalEnergyUsage();
+    impl::call_factory<ForegroundEnergyDiagnostics, Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>([&](auto&& f) { return f.ResetTotalEnergyUsage(); });
 }
 
 }
@@ -188,5 +176,3 @@ template<> struct hash<winrt::Windows::System::Power::Diagnostics::BackgroundEne
 template<> struct hash<winrt::Windows::System::Power::Diagnostics::ForegroundEnergyDiagnostics> : winrt::impl::hash_base<winrt::Windows::System::Power::Diagnostics::ForegroundEnergyDiagnostics> {};
 
 }
-
-WINRT_WARNING_POP

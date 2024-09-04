@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -22,7 +22,7 @@
 
 WINRT_EXPORT namespace winrt::Windows::Media::Playback {
 
-struct WINRT_EBO [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] IBackgroundMediaPlayerStatics :
+struct WINRT_EBO IBackgroundMediaPlayerStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IBackgroundMediaPlayerStatics>
 {
@@ -100,7 +100,7 @@ struct WINRT_EBO IMediaBreakStartedEventArgs :
     IMediaBreakStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]] IMediaEnginePlaybackSource :
+struct WINRT_EBO IMediaEnginePlaybackSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IMediaEnginePlaybackSource>
 {

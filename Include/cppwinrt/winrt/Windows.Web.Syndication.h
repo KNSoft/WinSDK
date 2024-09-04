@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Data.Xml.Dom.2.h"
@@ -906,2159 +906,1875 @@ template <typename D> Windows::Web::Syndication::SyndicationText consume_Windows
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationAttribute> : produce_base<D, Windows::Web::Syndication::ISyndicationAttribute>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Namespace(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Namespace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Namespace, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Namespace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Namespace(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Namespace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Namespace, WINRT_WRAP(void), hstring const&);
             this->shim().Namespace(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Value(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Value(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(void), hstring const&);
             this->shim().Value(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationAttributeFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationAttributeFactory>
 {
-    HRESULT __stdcall CreateSyndicationAttribute(HSTRING attributeName, HSTRING attributeNamespace, HSTRING attributeValue, void** syndicationAttribute) noexcept final
+    int32_t WINRT_CALL CreateSyndicationAttribute(void* attributeName, void* attributeNamespace, void* attributeValue, void** syndicationAttribute) noexcept final
     {
         try
         {
             *syndicationAttribute = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationAttribute, WINRT_WRAP(Windows::Web::Syndication::SyndicationAttribute), hstring const&, hstring const&, hstring const&);
             *syndicationAttribute = detach_from<Windows::Web::Syndication::SyndicationAttribute>(this->shim().CreateSyndicationAttribute(*reinterpret_cast<hstring const*>(&attributeName), *reinterpret_cast<hstring const*>(&attributeNamespace), *reinterpret_cast<hstring const*>(&attributeValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationCategory> : produce_base<D, Windows::Web::Syndication::ISyndicationCategory>
 {
-    HRESULT __stdcall get_Label(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Label(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Label, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Label());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Label(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Label(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Label, WINRT_WRAP(void), hstring const&);
             this->shim().Label(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scheme(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Scheme(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scheme, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Scheme());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scheme(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Scheme(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scheme, WINRT_WRAP(void), hstring const&);
             this->shim().Scheme(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Term(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Term(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Term, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Term());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Term(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Term(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Term, WINRT_WRAP(void), hstring const&);
             this->shim().Term(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationCategoryFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationCategoryFactory>
 {
-    HRESULT __stdcall CreateSyndicationCategory(HSTRING term, void** category) noexcept final
+    int32_t WINRT_CALL CreateSyndicationCategory(void* term, void** category) noexcept final
     {
         try
         {
             *category = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationCategory, WINRT_WRAP(Windows::Web::Syndication::SyndicationCategory), hstring const&);
             *category = detach_from<Windows::Web::Syndication::SyndicationCategory>(this->shim().CreateSyndicationCategory(*reinterpret_cast<hstring const*>(&term)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSyndicationCategoryEx(HSTRING term, HSTRING scheme, HSTRING label, void** category) noexcept final
+    int32_t WINRT_CALL CreateSyndicationCategoryEx(void* term, void* scheme, void* label, void** category) noexcept final
     {
         try
         {
             *category = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationCategoryEx, WINRT_WRAP(Windows::Web::Syndication::SyndicationCategory), hstring const&, hstring const&, hstring const&);
             *category = detach_from<Windows::Web::Syndication::SyndicationCategory>(this->shim().CreateSyndicationCategoryEx(*reinterpret_cast<hstring const*>(&term), *reinterpret_cast<hstring const*>(&scheme), *reinterpret_cast<hstring const*>(&label)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationClient> : produce_base<D, Windows::Web::Syndication::ISyndicationClient>
 {
-    HRESULT __stdcall get_ServerCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ServerCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServerCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_ServerCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ServerCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProxyCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_ProxyCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ProxyCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProxyCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_ProxyCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ProxyCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxResponseBufferSize(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxResponseBufferSize(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxResponseBufferSize, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxResponseBufferSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxResponseBufferSize(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxResponseBufferSize(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxResponseBufferSize, WINRT_WRAP(void), uint32_t);
             this->shim().MaxResponseBufferSize(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timeout(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Timeout(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timeout, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Timeout());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Timeout(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Timeout(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timeout, WINRT_WRAP(void), uint32_t);
             this->shim().Timeout(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BypassCacheOnRetrieve(bool* value) noexcept final
+    int32_t WINRT_CALL get_BypassCacheOnRetrieve(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BypassCacheOnRetrieve, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().BypassCacheOnRetrieve());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BypassCacheOnRetrieve(bool value) noexcept final
+    int32_t WINRT_CALL put_BypassCacheOnRetrieve(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BypassCacheOnRetrieve, WINRT_WRAP(void), bool);
             this->shim().BypassCacheOnRetrieve(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRequestHeader(HSTRING name, HSTRING value) noexcept final
+    int32_t WINRT_CALL SetRequestHeader(void* name, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRequestHeader, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().SetRequestHeader(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RetrieveFeedAsync(void* uri, void** operation) noexcept final
+    int32_t WINRT_CALL RetrieveFeedAsync(void* uri, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetrieveFeedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress>), Windows::Foundation::Uri const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress>>(this->shim().RetrieveFeedAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationClientFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationClientFactory>
 {
-    HRESULT __stdcall CreateSyndicationClient(void* serverCredential, void** syndicationClient) noexcept final
+    int32_t WINRT_CALL CreateSyndicationClient(void* serverCredential, void** syndicationClient) noexcept final
     {
         try
         {
             *syndicationClient = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationClient, WINRT_WRAP(Windows::Web::Syndication::SyndicationClient), Windows::Security::Credentials::PasswordCredential const&);
             *syndicationClient = detach_from<Windows::Web::Syndication::SyndicationClient>(this->shim().CreateSyndicationClient(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&serverCredential)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationContent> : produce_base<D, Windows::Web::Syndication::ISyndicationContent>
 {
-    HRESULT __stdcall get_SourceUri(void** value) noexcept final
+    int32_t WINRT_CALL get_SourceUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().SourceUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SourceUri(void* value) noexcept final
+    int32_t WINRT_CALL put_SourceUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SourceUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationContentFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationContentFactory>
 {
-    HRESULT __stdcall CreateSyndicationContent(HSTRING text, Windows::Web::Syndication::SyndicationTextType type, void** content) noexcept final
+    int32_t WINRT_CALL CreateSyndicationContent(void* text, Windows::Web::Syndication::SyndicationTextType type, void** content) noexcept final
     {
         try
         {
             *content = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationContent, WINRT_WRAP(Windows::Web::Syndication::SyndicationContent), hstring const&, Windows::Web::Syndication::SyndicationTextType const&);
             *content = detach_from<Windows::Web::Syndication::SyndicationContent>(this->shim().CreateSyndicationContent(*reinterpret_cast<hstring const*>(&text), *reinterpret_cast<Windows::Web::Syndication::SyndicationTextType const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSyndicationContentWithSourceUri(void* sourceUri, void** content) noexcept final
+    int32_t WINRT_CALL CreateSyndicationContentWithSourceUri(void* sourceUri, void** content) noexcept final
     {
         try
         {
             *content = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationContentWithSourceUri, WINRT_WRAP(Windows::Web::Syndication::SyndicationContent), Windows::Foundation::Uri const&);
             *content = detach_from<Windows::Web::Syndication::SyndicationContent>(this->shim().CreateSyndicationContentWithSourceUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&sourceUri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationErrorStatics> : produce_base<D, Windows::Web::Syndication::ISyndicationErrorStatics>
 {
-    HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::Syndication::SyndicationErrorStatus* status) noexcept final
+    int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::Syndication::SyndicationErrorStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStatus, WINRT_WRAP(Windows::Web::Syndication::SyndicationErrorStatus), int32_t);
             *status = detach_from<Windows::Web::Syndication::SyndicationErrorStatus>(this->shim().GetStatus(hresult));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationFeed> : produce_base<D, Windows::Web::Syndication::ISyndicationFeed>
 {
-    HRESULT __stdcall get_Authors(void** value) noexcept final
+    int32_t WINRT_CALL get_Authors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Authors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>>(this->shim().Authors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Categories(void** value) noexcept final
+    int32_t WINRT_CALL get_Categories(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Categories, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory>>(this->shim().Categories());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contributors(void** value) noexcept final
+    int32_t WINRT_CALL get_Contributors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contributors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>>(this->shim().Contributors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Generator(void** value) noexcept final
+    int32_t WINRT_CALL get_Generator(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Generator, WINRT_WRAP(Windows::Web::Syndication::SyndicationGenerator));
             *value = detach_from<Windows::Web::Syndication::SyndicationGenerator>(this->shim().Generator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Generator(void* value) noexcept final
+    int32_t WINRT_CALL put_Generator(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Generator, WINRT_WRAP(void), Windows::Web::Syndication::SyndicationGenerator const&);
             this->shim().Generator(*reinterpret_cast<Windows::Web::Syndication::SyndicationGenerator const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IconUri(void** value) noexcept final
+    int32_t WINRT_CALL get_IconUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IconUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().IconUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IconUri(void* value) noexcept final
+    int32_t WINRT_CALL put_IconUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IconUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().IconUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Id(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), hstring const&);
             this->shim().Id(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Items(void** value) noexcept final
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationItem>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationItem>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastUpdatedTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastUpdatedTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastUpdatedTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastUpdatedTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Links(void** value) noexcept final
+    int32_t WINRT_CALL get_Links(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Links, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink>>(this->shim().Links());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ImageUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ImageUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ImageUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ImageUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rights(void** value) noexcept final
+    int32_t WINRT_CALL get_Rights(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rights, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Rights());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rights(void* value) noexcept final
+    int32_t WINRT_CALL put_Rights(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rights, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Rights(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subtitle(void** value) noexcept final
+    int32_t WINRT_CALL get_Subtitle(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Subtitle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subtitle(void* value) noexcept final
+    int32_t WINRT_CALL put_Subtitle(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtitle, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Subtitle(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(void** value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(void* value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Title(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstUri(void** value) noexcept final
+    int32_t WINRT_CALL get_FirstUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().FirstUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastUri(void** value) noexcept final
+    int32_t WINRT_CALL get_LastUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LastUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NextUri(void** value) noexcept final
+    int32_t WINRT_CALL get_NextUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().NextUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PreviousUri(void** value) noexcept final
+    int32_t WINRT_CALL get_PreviousUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PreviousUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().PreviousUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceFormat(Windows::Web::Syndication::SyndicationFormat* value) noexcept final
+    int32_t WINRT_CALL get_SourceFormat(Windows::Web::Syndication::SyndicationFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceFormat, WINRT_WRAP(Windows::Web::Syndication::SyndicationFormat));
             *value = detach_from<Windows::Web::Syndication::SyndicationFormat>(this->shim().SourceFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Load(HSTRING feed) noexcept final
+    int32_t WINRT_CALL Load(void* feed) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Load, WINRT_WRAP(void), hstring const&);
             this->shim().Load(*reinterpret_cast<hstring const*>(&feed));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromXml(void* feedDocument) noexcept final
+    int32_t WINRT_CALL LoadFromXml(void* feedDocument) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromXml, WINRT_WRAP(void), Windows::Data::Xml::Dom::XmlDocument const&);
             this->shim().LoadFromXml(*reinterpret_cast<Windows::Data::Xml::Dom::XmlDocument const*>(&feedDocument));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationFeedFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationFeedFactory>
 {
-    HRESULT __stdcall CreateSyndicationFeed(HSTRING title, HSTRING subtitle, void* uri, void** feed) noexcept final
+    int32_t WINRT_CALL CreateSyndicationFeed(void* title, void* subtitle, void* uri, void** feed) noexcept final
     {
         try
         {
             *feed = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationFeed, WINRT_WRAP(Windows::Web::Syndication::SyndicationFeed), hstring const&, hstring const&, Windows::Foundation::Uri const&);
             *feed = detach_from<Windows::Web::Syndication::SyndicationFeed>(this->shim().CreateSyndicationFeed(*reinterpret_cast<hstring const*>(&title), *reinterpret_cast<hstring const*>(&subtitle), *reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationGenerator> : produce_base<D, Windows::Web::Syndication::ISyndicationGenerator>
 {
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Version(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Version(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Version());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Version(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Version(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(void), hstring const&);
             this->shim().Version(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationGeneratorFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationGeneratorFactory>
 {
-    HRESULT __stdcall CreateSyndicationGenerator(HSTRING text, void** generator) noexcept final
+    int32_t WINRT_CALL CreateSyndicationGenerator(void* text, void** generator) noexcept final
     {
         try
         {
             *generator = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationGenerator, WINRT_WRAP(Windows::Web::Syndication::SyndicationGenerator), hstring const&);
             *generator = detach_from<Windows::Web::Syndication::SyndicationGenerator>(this->shim().CreateSyndicationGenerator(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationItem> : produce_base<D, Windows::Web::Syndication::ISyndicationItem>
 {
-    HRESULT __stdcall get_Authors(void** value) noexcept final
+    int32_t WINRT_CALL get_Authors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Authors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>>(this->shim().Authors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Categories(void** value) noexcept final
+    int32_t WINRT_CALL get_Categories(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Categories, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory>>(this->shim().Categories());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contributors(void** value) noexcept final
+    int32_t WINRT_CALL get_Contributors(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contributors, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson>>(this->shim().Contributors());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::Web::Syndication::SyndicationContent));
             *value = detach_from<Windows::Web::Syndication::SyndicationContent>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Content(void* value) noexcept final
+    int32_t WINRT_CALL put_Content(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(void), Windows::Web::Syndication::SyndicationContent const&);
             this->shim().Content(*reinterpret_cast<Windows::Web::Syndication::SyndicationContent const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Id(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), hstring const&);
             this->shim().Id(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastUpdatedTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastUpdatedTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastUpdatedTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastUpdatedTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Links(void** value) noexcept final
+    int32_t WINRT_CALL get_Links(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Links, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationLink>>(this->shim().Links());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PublishedDate(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_PublishedDate(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PublishedDate, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().PublishedDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PublishedDate(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_PublishedDate(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PublishedDate, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().PublishedDate(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rights(void** value) noexcept final
+    int32_t WINRT_CALL get_Rights(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rights, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Rights());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rights(void* value) noexcept final
+    int32_t WINRT_CALL put_Rights(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rights, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Rights(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(void** value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::Web::Syndication::SyndicationFeed));
             *value = detach_from<Windows::Web::Syndication::SyndicationFeed>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Source(void* value) noexcept final
+    int32_t WINRT_CALL put_Source(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(void), Windows::Web::Syndication::SyndicationFeed const&);
             this->shim().Source(*reinterpret_cast<Windows::Web::Syndication::SyndicationFeed const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Summary(void** value) noexcept final
+    int32_t WINRT_CALL get_Summary(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Summary, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Summary());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Summary(void* value) noexcept final
+    int32_t WINRT_CALL put_Summary(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Summary, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Summary(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(void** value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(Windows::Web::Syndication::ISyndicationText));
             *value = detach_from<Windows::Web::Syndication::ISyndicationText>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(void* value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), Windows::Web::Syndication::ISyndicationText const&);
             this->shim().Title(*reinterpret_cast<Windows::Web::Syndication::ISyndicationText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CommentsUri(void** value) noexcept final
+    int32_t WINRT_CALL get_CommentsUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommentsUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().CommentsUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CommentsUri(void* value) noexcept final
+    int32_t WINRT_CALL put_CommentsUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommentsUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().CommentsUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EditUri(void** value) noexcept final
+    int32_t WINRT_CALL get_EditUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EditUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().EditUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EditMediaUri(void** value) noexcept final
+    int32_t WINRT_CALL get_EditMediaUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EditMediaUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().EditMediaUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ETag(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ETag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ETag, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ETag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ItemUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ItemUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ItemUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Load(HSTRING item) noexcept final
+    int32_t WINRT_CALL Load(void* item) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Load, WINRT_WRAP(void), hstring const&);
             this->shim().Load(*reinterpret_cast<hstring const*>(&item));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromXml(void* itemDocument) noexcept final
+    int32_t WINRT_CALL LoadFromXml(void* itemDocument) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromXml, WINRT_WRAP(void), Windows::Data::Xml::Dom::XmlDocument const&);
             this->shim().LoadFromXml(*reinterpret_cast<Windows::Data::Xml::Dom::XmlDocument const*>(&itemDocument));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationItemFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationItemFactory>
 {
-    HRESULT __stdcall CreateSyndicationItem(HSTRING title, void* content, void* uri, void** item) noexcept final
+    int32_t WINRT_CALL CreateSyndicationItem(void* title, void* content, void* uri, void** item) noexcept final
     {
         try
         {
             *item = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationItem, WINRT_WRAP(Windows::Web::Syndication::SyndicationItem), hstring const&, Windows::Web::Syndication::SyndicationContent const&, Windows::Foundation::Uri const&);
             *item = detach_from<Windows::Web::Syndication::SyndicationItem>(this->shim().CreateSyndicationItem(*reinterpret_cast<hstring const*>(&title), *reinterpret_cast<Windows::Web::Syndication::SyndicationContent const*>(&content), *reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationLink> : produce_base<D, Windows::Web::Syndication::ISyndicationLink>
 {
-    HRESULT __stdcall get_Length(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Length(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Length());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Length(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Length(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(void), uint32_t);
             this->shim().Length(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediaType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MediaType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MediaType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MediaType(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_MediaType(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaType, WINRT_WRAP(void), hstring const&);
             this->shim().MediaType(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Relationship(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Relationship(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Relationship, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Relationship());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Relationship(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Relationship(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Relationship, WINRT_WRAP(void), hstring const&);
             this->shim().Relationship(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResourceLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResourceLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResourceLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResourceLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ResourceLanguage(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ResourceLanguage(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResourceLanguage, WINRT_WRAP(void), hstring const&);
             this->shim().ResourceLanguage(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationLinkFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationLinkFactory>
 {
-    HRESULT __stdcall CreateSyndicationLink(void* uri, void** link) noexcept final
+    int32_t WINRT_CALL CreateSyndicationLink(void* uri, void** link) noexcept final
     {
         try
         {
             *link = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationLink, WINRT_WRAP(Windows::Web::Syndication::SyndicationLink), Windows::Foundation::Uri const&);
             *link = detach_from<Windows::Web::Syndication::SyndicationLink>(this->shim().CreateSyndicationLink(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSyndicationLinkEx(void* uri, HSTRING relationship, HSTRING title, HSTRING mediaType, uint32_t length, void** link) noexcept final
+    int32_t WINRT_CALL CreateSyndicationLinkEx(void* uri, void* relationship, void* title, void* mediaType, uint32_t length, void** link) noexcept final
     {
         try
         {
             *link = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationLinkEx, WINRT_WRAP(Windows::Web::Syndication::SyndicationLink), Windows::Foundation::Uri const&, hstring const&, hstring const&, hstring const&, uint32_t);
             *link = detach_from<Windows::Web::Syndication::SyndicationLink>(this->shim().CreateSyndicationLinkEx(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<hstring const*>(&relationship), *reinterpret_cast<hstring const*>(&title), *reinterpret_cast<hstring const*>(&mediaType), length));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationNode> : produce_base<D, Windows::Web::Syndication::ISyndicationNode>
 {
-    HRESULT __stdcall get_NodeName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NodeName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NodeName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NodeName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NodeName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeName, WINRT_WRAP(void), hstring const&);
             this->shim().NodeName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NodeNamespace(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NodeNamespace(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeNamespace, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NodeNamespace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NodeNamespace(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NodeNamespace(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeNamespace, WINRT_WRAP(void), hstring const&);
             this->shim().NodeNamespace(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NodeValue(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NodeValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeValue, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NodeValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NodeValue(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NodeValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NodeValue, WINRT_WRAP(void), hstring const&);
             this->shim().NodeValue(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Language(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Language(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Language());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Language(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Language(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(void), hstring const&);
             this->shim().Language(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BaseUri(void** value) noexcept final
+    int32_t WINRT_CALL get_BaseUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().BaseUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BaseUri(void* value) noexcept final
+    int32_t WINRT_CALL put_BaseUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BaseUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().BaseUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AttributeExtensions(void** value) noexcept final
+    int32_t WINRT_CALL get_AttributeExtensions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributeExtensions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationAttribute>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationAttribute>>(this->shim().AttributeExtensions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ElementExtensions(void** value) noexcept final
+    int32_t WINRT_CALL get_ElementExtensions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ElementExtensions, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::Syndication::ISyndicationNode>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::Syndication::ISyndicationNode>>(this->shim().ElementExtensions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetXmlDocument(Windows::Web::Syndication::SyndicationFormat format, void** xmlDocument) noexcept final
+    int32_t WINRT_CALL GetXmlDocument(Windows::Web::Syndication::SyndicationFormat format, void** xmlDocument) noexcept final
     {
         try
         {
             *xmlDocument = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetXmlDocument, WINRT_WRAP(Windows::Data::Xml::Dom::XmlDocument), Windows::Web::Syndication::SyndicationFormat const&);
             *xmlDocument = detach_from<Windows::Data::Xml::Dom::XmlDocument>(this->shim().GetXmlDocument(*reinterpret_cast<Windows::Web::Syndication::SyndicationFormat const*>(&format)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationNodeFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationNodeFactory>
 {
-    HRESULT __stdcall CreateSyndicationNode(HSTRING nodeName, HSTRING nodeNamespace, HSTRING nodeValue, void** node) noexcept final
+    int32_t WINRT_CALL CreateSyndicationNode(void* nodeName, void* nodeNamespace, void* nodeValue, void** node) noexcept final
     {
         try
         {
             *node = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationNode, WINRT_WRAP(Windows::Web::Syndication::SyndicationNode), hstring const&, hstring const&, hstring const&);
             *node = detach_from<Windows::Web::Syndication::SyndicationNode>(this->shim().CreateSyndicationNode(*reinterpret_cast<hstring const*>(&nodeName), *reinterpret_cast<hstring const*>(&nodeNamespace), *reinterpret_cast<hstring const*>(&nodeValue)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationPerson> : produce_base<D, Windows::Web::Syndication::ISyndicationPerson>
 {
-    HRESULT __stdcall get_Email(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Email(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Email, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Email());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Email(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Email(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Email, WINRT_WRAP(void), hstring const&);
             this->shim().Email(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationPersonFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationPersonFactory>
 {
-    HRESULT __stdcall CreateSyndicationPerson(HSTRING name, void** person) noexcept final
+    int32_t WINRT_CALL CreateSyndicationPerson(void* name, void** person) noexcept final
     {
         try
         {
             *person = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationPerson, WINRT_WRAP(Windows::Web::Syndication::SyndicationPerson), hstring const&);
             *person = detach_from<Windows::Web::Syndication::SyndicationPerson>(this->shim().CreateSyndicationPerson(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSyndicationPersonEx(HSTRING name, HSTRING email, void* uri, void** person) noexcept final
+    int32_t WINRT_CALL CreateSyndicationPersonEx(void* name, void* email, void* uri, void** person) noexcept final
     {
         try
         {
             *person = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationPersonEx, WINRT_WRAP(Windows::Web::Syndication::SyndicationPerson), hstring const&, hstring const&, Windows::Foundation::Uri const&);
             *person = detach_from<Windows::Web::Syndication::SyndicationPerson>(this->shim().CreateSyndicationPersonEx(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&email), *reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationText> : produce_base<D, Windows::Web::Syndication::ISyndicationText>
 {
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Type(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Type(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), hstring const&);
             this->shim().Type(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Xml(void** value) noexcept final
+    int32_t WINRT_CALL get_Xml(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Xml, WINRT_WRAP(Windows::Data::Xml::Dom::XmlDocument));
             *value = detach_from<Windows::Data::Xml::Dom::XmlDocument>(this->shim().Xml());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Xml(void* value) noexcept final
+    int32_t WINRT_CALL put_Xml(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Xml, WINRT_WRAP(void), Windows::Data::Xml::Dom::XmlDocument const&);
             this->shim().Xml(*reinterpret_cast<Windows::Data::Xml::Dom::XmlDocument const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::Syndication::ISyndicationTextFactory> : produce_base<D, Windows::Web::Syndication::ISyndicationTextFactory>
 {
-    HRESULT __stdcall CreateSyndicationText(HSTRING text, void** syndicationText) noexcept final
+    int32_t WINRT_CALL CreateSyndicationText(void* text, void** syndicationText) noexcept final
     {
         try
         {
             *syndicationText = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationText, WINRT_WRAP(Windows::Web::Syndication::SyndicationText), hstring const&);
             *syndicationText = detach_from<Windows::Web::Syndication::SyndicationText>(this->shim().CreateSyndicationText(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSyndicationTextEx(HSTRING text, Windows::Web::Syndication::SyndicationTextType type, void** syndicationText) noexcept final
+    int32_t WINRT_CALL CreateSyndicationTextEx(void* text, Windows::Web::Syndication::SyndicationTextType type, void** syndicationText) noexcept final
     {
         try
         {
             *syndicationText = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSyndicationTextEx, WINRT_WRAP(Windows::Web::Syndication::SyndicationText), hstring const&, Windows::Web::Syndication::SyndicationTextType const&);
             *syndicationText = detach_from<Windows::Web::Syndication::SyndicationText>(this->shim().CreateSyndicationTextEx(*reinterpret_cast<hstring const*>(&text), *reinterpret_cast<Windows::Web::Syndication::SyndicationTextType const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3067,116 +2783,116 @@ struct produce<D, Windows::Web::Syndication::ISyndicationTextFactory> : produce_
 WINRT_EXPORT namespace winrt::Windows::Web::Syndication {
 
 inline SyndicationAttribute::SyndicationAttribute() :
-    SyndicationAttribute(get_activation_factory<SyndicationAttribute>().ActivateInstance<SyndicationAttribute>())
+    SyndicationAttribute(impl::call_factory<SyndicationAttribute>([](auto&& f) { return f.template ActivateInstance<SyndicationAttribute>(); }))
 {}
 
 inline SyndicationAttribute::SyndicationAttribute(param::hstring const& attributeName, param::hstring const& attributeNamespace, param::hstring const& attributeValue) :
-    SyndicationAttribute(get_activation_factory<SyndicationAttribute, Windows::Web::Syndication::ISyndicationAttributeFactory>().CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue))
+    SyndicationAttribute(impl::call_factory<SyndicationAttribute, Windows::Web::Syndication::ISyndicationAttributeFactory>([&](auto&& f) { return f.CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue); }))
 {}
 
 inline SyndicationCategory::SyndicationCategory() :
-    SyndicationCategory(get_activation_factory<SyndicationCategory>().ActivateInstance<SyndicationCategory>())
+    SyndicationCategory(impl::call_factory<SyndicationCategory>([](auto&& f) { return f.template ActivateInstance<SyndicationCategory>(); }))
 {}
 
 inline SyndicationCategory::SyndicationCategory(param::hstring const& term) :
-    SyndicationCategory(get_activation_factory<SyndicationCategory, Windows::Web::Syndication::ISyndicationCategoryFactory>().CreateSyndicationCategory(term))
+    SyndicationCategory(impl::call_factory<SyndicationCategory, Windows::Web::Syndication::ISyndicationCategoryFactory>([&](auto&& f) { return f.CreateSyndicationCategory(term); }))
 {}
 
 inline SyndicationCategory::SyndicationCategory(param::hstring const& term, param::hstring const& scheme, param::hstring const& label) :
-    SyndicationCategory(get_activation_factory<SyndicationCategory, Windows::Web::Syndication::ISyndicationCategoryFactory>().CreateSyndicationCategoryEx(term, scheme, label))
+    SyndicationCategory(impl::call_factory<SyndicationCategory, Windows::Web::Syndication::ISyndicationCategoryFactory>([&](auto&& f) { return f.CreateSyndicationCategoryEx(term, scheme, label); }))
 {}
 
 inline SyndicationClient::SyndicationClient() :
-    SyndicationClient(get_activation_factory<SyndicationClient>().ActivateInstance<SyndicationClient>())
+    SyndicationClient(impl::call_factory<SyndicationClient>([](auto&& f) { return f.template ActivateInstance<SyndicationClient>(); }))
 {}
 
 inline SyndicationClient::SyndicationClient(Windows::Security::Credentials::PasswordCredential const& serverCredential) :
-    SyndicationClient(get_activation_factory<SyndicationClient, Windows::Web::Syndication::ISyndicationClientFactory>().CreateSyndicationClient(serverCredential))
+    SyndicationClient(impl::call_factory<SyndicationClient, Windows::Web::Syndication::ISyndicationClientFactory>([&](auto&& f) { return f.CreateSyndicationClient(serverCredential); }))
 {}
 
 inline SyndicationContent::SyndicationContent() :
-    SyndicationContent(get_activation_factory<SyndicationContent>().ActivateInstance<SyndicationContent>())
+    SyndicationContent(impl::call_factory<SyndicationContent>([](auto&& f) { return f.template ActivateInstance<SyndicationContent>(); }))
 {}
 
 inline SyndicationContent::SyndicationContent(param::hstring const& text, Windows::Web::Syndication::SyndicationTextType const& type) :
-    SyndicationContent(get_activation_factory<SyndicationContent, Windows::Web::Syndication::ISyndicationContentFactory>().CreateSyndicationContent(text, type))
+    SyndicationContent(impl::call_factory<SyndicationContent, Windows::Web::Syndication::ISyndicationContentFactory>([&](auto&& f) { return f.CreateSyndicationContent(text, type); }))
 {}
 
 inline SyndicationContent::SyndicationContent(Windows::Foundation::Uri const& sourceUri) :
-    SyndicationContent(get_activation_factory<SyndicationContent, Windows::Web::Syndication::ISyndicationContentFactory>().CreateSyndicationContentWithSourceUri(sourceUri))
+    SyndicationContent(impl::call_factory<SyndicationContent, Windows::Web::Syndication::ISyndicationContentFactory>([&](auto&& f) { return f.CreateSyndicationContentWithSourceUri(sourceUri); }))
 {}
 
 inline Windows::Web::Syndication::SyndicationErrorStatus SyndicationError::GetStatus(int32_t hresult)
 {
-    return get_activation_factory<SyndicationError, Windows::Web::Syndication::ISyndicationErrorStatics>().GetStatus(hresult);
+    return impl::call_factory<SyndicationError, Windows::Web::Syndication::ISyndicationErrorStatics>([&](auto&& f) { return f.GetStatus(hresult); });
 }
 
 inline SyndicationFeed::SyndicationFeed() :
-    SyndicationFeed(get_activation_factory<SyndicationFeed>().ActivateInstance<SyndicationFeed>())
+    SyndicationFeed(impl::call_factory<SyndicationFeed>([](auto&& f) { return f.template ActivateInstance<SyndicationFeed>(); }))
 {}
 
 inline SyndicationFeed::SyndicationFeed(param::hstring const& title, param::hstring const& subtitle, Windows::Foundation::Uri const& uri) :
-    SyndicationFeed(get_activation_factory<SyndicationFeed, Windows::Web::Syndication::ISyndicationFeedFactory>().CreateSyndicationFeed(title, subtitle, uri))
+    SyndicationFeed(impl::call_factory<SyndicationFeed, Windows::Web::Syndication::ISyndicationFeedFactory>([&](auto&& f) { return f.CreateSyndicationFeed(title, subtitle, uri); }))
 {}
 
 inline SyndicationGenerator::SyndicationGenerator() :
-    SyndicationGenerator(get_activation_factory<SyndicationGenerator>().ActivateInstance<SyndicationGenerator>())
+    SyndicationGenerator(impl::call_factory<SyndicationGenerator>([](auto&& f) { return f.template ActivateInstance<SyndicationGenerator>(); }))
 {}
 
 inline SyndicationGenerator::SyndicationGenerator(param::hstring const& text) :
-    SyndicationGenerator(get_activation_factory<SyndicationGenerator, Windows::Web::Syndication::ISyndicationGeneratorFactory>().CreateSyndicationGenerator(text))
+    SyndicationGenerator(impl::call_factory<SyndicationGenerator, Windows::Web::Syndication::ISyndicationGeneratorFactory>([&](auto&& f) { return f.CreateSyndicationGenerator(text); }))
 {}
 
 inline SyndicationItem::SyndicationItem() :
-    SyndicationItem(get_activation_factory<SyndicationItem>().ActivateInstance<SyndicationItem>())
+    SyndicationItem(impl::call_factory<SyndicationItem>([](auto&& f) { return f.template ActivateInstance<SyndicationItem>(); }))
 {}
 
 inline SyndicationItem::SyndicationItem(param::hstring const& title, Windows::Web::Syndication::SyndicationContent const& content, Windows::Foundation::Uri const& uri) :
-    SyndicationItem(get_activation_factory<SyndicationItem, Windows::Web::Syndication::ISyndicationItemFactory>().CreateSyndicationItem(title, content, uri))
+    SyndicationItem(impl::call_factory<SyndicationItem, Windows::Web::Syndication::ISyndicationItemFactory>([&](auto&& f) { return f.CreateSyndicationItem(title, content, uri); }))
 {}
 
 inline SyndicationLink::SyndicationLink() :
-    SyndicationLink(get_activation_factory<SyndicationLink>().ActivateInstance<SyndicationLink>())
+    SyndicationLink(impl::call_factory<SyndicationLink>([](auto&& f) { return f.template ActivateInstance<SyndicationLink>(); }))
 {}
 
 inline SyndicationLink::SyndicationLink(Windows::Foundation::Uri const& uri) :
-    SyndicationLink(get_activation_factory<SyndicationLink, Windows::Web::Syndication::ISyndicationLinkFactory>().CreateSyndicationLink(uri))
+    SyndicationLink(impl::call_factory<SyndicationLink, Windows::Web::Syndication::ISyndicationLinkFactory>([&](auto&& f) { return f.CreateSyndicationLink(uri); }))
 {}
 
 inline SyndicationLink::SyndicationLink(Windows::Foundation::Uri const& uri, param::hstring const& relationship, param::hstring const& title, param::hstring const& mediaType, uint32_t length) :
-    SyndicationLink(get_activation_factory<SyndicationLink, Windows::Web::Syndication::ISyndicationLinkFactory>().CreateSyndicationLinkEx(uri, relationship, title, mediaType, length))
+    SyndicationLink(impl::call_factory<SyndicationLink, Windows::Web::Syndication::ISyndicationLinkFactory>([&](auto&& f) { return f.CreateSyndicationLinkEx(uri, relationship, title, mediaType, length); }))
 {}
 
 inline SyndicationNode::SyndicationNode() :
-    SyndicationNode(get_activation_factory<SyndicationNode>().ActivateInstance<SyndicationNode>())
+    SyndicationNode(impl::call_factory<SyndicationNode>([](auto&& f) { return f.template ActivateInstance<SyndicationNode>(); }))
 {}
 
 inline SyndicationNode::SyndicationNode(param::hstring const& nodeName, param::hstring const& nodeNamespace, param::hstring const& nodeValue) :
-    SyndicationNode(get_activation_factory<SyndicationNode, Windows::Web::Syndication::ISyndicationNodeFactory>().CreateSyndicationNode(nodeName, nodeNamespace, nodeValue))
+    SyndicationNode(impl::call_factory<SyndicationNode, Windows::Web::Syndication::ISyndicationNodeFactory>([&](auto&& f) { return f.CreateSyndicationNode(nodeName, nodeNamespace, nodeValue); }))
 {}
 
 inline SyndicationPerson::SyndicationPerson() :
-    SyndicationPerson(get_activation_factory<SyndicationPerson>().ActivateInstance<SyndicationPerson>())
+    SyndicationPerson(impl::call_factory<SyndicationPerson>([](auto&& f) { return f.template ActivateInstance<SyndicationPerson>(); }))
 {}
 
 inline SyndicationPerson::SyndicationPerson(param::hstring const& name) :
-    SyndicationPerson(get_activation_factory<SyndicationPerson, Windows::Web::Syndication::ISyndicationPersonFactory>().CreateSyndicationPerson(name))
+    SyndicationPerson(impl::call_factory<SyndicationPerson, Windows::Web::Syndication::ISyndicationPersonFactory>([&](auto&& f) { return f.CreateSyndicationPerson(name); }))
 {}
 
 inline SyndicationPerson::SyndicationPerson(param::hstring const& name, param::hstring const& email, Windows::Foundation::Uri const& uri) :
-    SyndicationPerson(get_activation_factory<SyndicationPerson, Windows::Web::Syndication::ISyndicationPersonFactory>().CreateSyndicationPersonEx(name, email, uri))
+    SyndicationPerson(impl::call_factory<SyndicationPerson, Windows::Web::Syndication::ISyndicationPersonFactory>([&](auto&& f) { return f.CreateSyndicationPersonEx(name, email, uri); }))
 {}
 
 inline SyndicationText::SyndicationText() :
-    SyndicationText(get_activation_factory<SyndicationText>().ActivateInstance<SyndicationText>())
+    SyndicationText(impl::call_factory<SyndicationText>([](auto&& f) { return f.template ActivateInstance<SyndicationText>(); }))
 {}
 
 inline SyndicationText::SyndicationText(param::hstring const& text) :
-    SyndicationText(get_activation_factory<SyndicationText, Windows::Web::Syndication::ISyndicationTextFactory>().CreateSyndicationText(text))
+    SyndicationText(impl::call_factory<SyndicationText, Windows::Web::Syndication::ISyndicationTextFactory>([&](auto&& f) { return f.CreateSyndicationText(text); }))
 {}
 
 inline SyndicationText::SyndicationText(param::hstring const& text, Windows::Web::Syndication::SyndicationTextType const& type) :
-    SyndicationText(get_activation_factory<SyndicationText, Windows::Web::Syndication::ISyndicationTextFactory>().CreateSyndicationTextEx(text, type))
+    SyndicationText(impl::call_factory<SyndicationText, Windows::Web::Syndication::ISyndicationTextFactory>([&](auto&& f) { return f.CreateSyndicationTextEx(text, type); }))
 {}
 
 }
@@ -3220,5 +2936,3 @@ template<> struct hash<winrt::Windows::Web::Syndication::SyndicationPerson> : wi
 template<> struct hash<winrt::Windows::Web::Syndication::SyndicationText> : winrt::impl::hash_base<winrt::Windows::Web::Syndication::SyndicationText> {};
 
 }
-
-WINRT_WARNING_POP

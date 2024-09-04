@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.UserActivities.2.h"
@@ -32,34 +32,30 @@ template <typename D> Windows::Foundation::IAsyncAction consume_Windows_Applicat
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics> : produce_base<D, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics>
 {
-    HRESULT __stdcall CreateUserActivitySessionInBackground(void* activity, void** result) noexcept final
+    int32_t WINRT_CALL CreateUserActivitySessionInBackground(void* activity, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUserActivitySessionInBackground, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivitySession), Windows::ApplicationModel::UserActivities::UserActivity const&);
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivitySession>(this->shim().CreateUserActivitySessionInBackground(*reinterpret_cast<Windows::ApplicationModel::UserActivities::UserActivity const*>(&activity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteUserActivitySessionsInTimeRangeAsync(void* channel, Windows::Foundation::DateTime startTime, Windows::Foundation::DateTime endTime, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteUserActivitySessionsInTimeRangeAsync(void* channel, Windows::Foundation::DateTime startTime, Windows::Foundation::DateTime endTime, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteUserActivitySessionsInTimeRangeAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::UserActivities::UserActivityChannel const, Windows::Foundation::DateTime const, Windows::Foundation::DateTime const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteUserActivitySessionsInTimeRangeAsync(*reinterpret_cast<Windows::ApplicationModel::UserActivities::UserActivityChannel const*>(&channel), *reinterpret_cast<Windows::Foundation::DateTime const*>(&startTime), *reinterpret_cast<Windows::Foundation::DateTime const*>(&endTime)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -69,12 +65,12 @@ WINRT_EXPORT namespace winrt::Windows::ApplicationModel::UserActivities::Core {
 
 inline Windows::ApplicationModel::UserActivities::UserActivitySession CoreUserActivityManager::CreateUserActivitySessionInBackground(Windows::ApplicationModel::UserActivities::UserActivity const& activity)
 {
-    return get_activation_factory<CoreUserActivityManager, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics>().CreateUserActivitySessionInBackground(activity);
+    return impl::call_factory<CoreUserActivityManager, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics>([&](auto&& f) { return f.CreateUserActivitySessionInBackground(activity); });
 }
 
 inline Windows::Foundation::IAsyncAction CoreUserActivityManager::DeleteUserActivitySessionsInTimeRangeAsync(Windows::ApplicationModel::UserActivities::UserActivityChannel const& channel, Windows::Foundation::DateTime const& startTime, Windows::Foundation::DateTime const& endTime)
 {
-    return get_activation_factory<CoreUserActivityManager, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics>().DeleteUserActivitySessionsInTimeRangeAsync(channel, startTime, endTime);
+    return impl::call_factory<CoreUserActivityManager, Windows::ApplicationModel::UserActivities::Core::ICoreUserActivityManagerStatics>([&](auto&& f) { return f.DeleteUserActivitySessionsInTimeRangeAsync(channel, startTime, endTime); });
 }
 
 }
@@ -85,5 +81,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::Core::I
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::Core::CoreUserActivityManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::Core::CoreUserActivityManager> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Core.2.h"
@@ -381,21 +381,21 @@ template <typename D> bool consume_Windows_UI_StartScreen_ISecondaryTile2<D>::Ro
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::StartScreen::ISecondaryTile2)->add_VisualElementsRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::StartScreen::ISecondaryTile2> consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested_revoker consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::StartScreen::ISecondaryTile2>(this, &abi_t<Windows::UI::StartScreen::ISecondaryTile2>::remove_VisualElementsRequested, VisualElementsRequested(handler));
+    return impl::make_event_revoker<D, VisualElementsRequested_revoker>(this, VisualElementsRequested(handler));
 }
 
-template <typename D> void consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(event_token const& token) const
+template <typename D> void consume_Windows_UI_StartScreen_ISecondaryTile2<D>::VisualElementsRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::StartScreen::ISecondaryTile2)->remove_VisualElementsRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::StartScreen::ISecondaryTile2)->remove_VisualElementsRequested(get_abi(token)));
 }
 
 template <typename D> Windows::UI::StartScreen::SecondaryTile consume_Windows_UI_StartScreen_ISecondaryTileFactory<D>::CreateTile(param::hstring const& tileId, param::hstring const& shortName, param::hstring const& displayName, param::hstring const& arguments, Windows::UI::StartScreen::TileOptions const& tileOptions, Windows::Foundation::Uri const& logoReference) const
@@ -633,6 +633,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows_UI_StartScreen_IStartScreenManager2<D>::ContainsSecondaryTileAsync(param::hstring const& tileId) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::StartScreen::IStartScreenManager2)->ContainsSecondaryTileAsync(get_abi(tileId), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows_UI_StartScreen_IStartScreenManager2<D>::TryRemoveSecondaryTileAsync(param::hstring const& tileId) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::StartScreen::IStartScreenManager2)->TryRemoveSecondaryTileAsync(get_abi(tileId), put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::UI::StartScreen::StartScreenManager consume_Windows_UI_StartScreen_IStartScreenManagerStatics<D>::GetDefault() const
 {
     Windows::UI::StartScreen::StartScreenManager value{ nullptr };
@@ -726,1675 +740,1481 @@ template <typename D> Windows::UI::StartScreen::VisualElementsRequest consume_Wi
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IJumpList> : produce_base<D, Windows::UI::StartScreen::IJumpList>
 {
-    HRESULT __stdcall get_Items(void** value) noexcept final
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind* value) noexcept final
+    int32_t WINRT_CALL get_SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemGroupKind, WINRT_WRAP(Windows::UI::StartScreen::JumpListSystemGroupKind));
             *value = detach_from<Windows::UI::StartScreen::JumpListSystemGroupKind>(this->shim().SystemGroupKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind value) noexcept final
+    int32_t WINRT_CALL put_SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemGroupKind, WINRT_WRAP(void), Windows::UI::StartScreen::JumpListSystemGroupKind const&);
             this->shim().SystemGroupKind(*reinterpret_cast<Windows::UI::StartScreen::JumpListSystemGroupKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** result) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IJumpListItem> : produce_base<D, Windows::UI::StartScreen::IJumpListItem>
 {
-    HRESULT __stdcall get_Kind(Windows::UI::StartScreen::JumpListItemKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::UI::StartScreen::JumpListItemKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::UI::StartScreen::JumpListItemKind));
             *value = detach_from<Windows::UI::StartScreen::JumpListItemKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Arguments(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemovedByUser(bool* value) noexcept final
+    int32_t WINRT_CALL get_RemovedByUser(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovedByUser, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RemovedByUser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GroupName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GroupName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GroupName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GroupName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GroupName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_GroupName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GroupName, WINRT_WRAP(void), hstring const&);
             this->shim().GroupName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IJumpListItemStatics> : produce_base<D, Windows::UI::StartScreen::IJumpListItemStatics>
 {
-    HRESULT __stdcall CreateWithArguments(HSTRING arguments, HSTRING displayName, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithArguments(void* arguments, void* displayName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithArguments, WINRT_WRAP(Windows::UI::StartScreen::JumpListItem), hstring const&, hstring const&);
             *result = detach_from<Windows::UI::StartScreen::JumpListItem>(this->shim().CreateWithArguments(*reinterpret_cast<hstring const*>(&arguments), *reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSeparator(void** result) noexcept final
+    int32_t WINRT_CALL CreateSeparator(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSeparator, WINRT_WRAP(Windows::UI::StartScreen::JumpListItem));
             *result = detach_from<Windows::UI::StartScreen::JumpListItem>(this->shim().CreateSeparator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IJumpListStatics> : produce_base<D, Windows::UI::StartScreen::IJumpListStatics>
 {
-    HRESULT __stdcall LoadCurrentAsync(void** result) noexcept final
+    int32_t WINRT_CALL LoadCurrentAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadCurrentAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList>>(this->shim().LoadCurrentAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTile> : produce_base<D, Windows::UI::StartScreen::ISecondaryTile>
 {
-    HRESULT __stdcall put_TileId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_TileId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileId, WINRT_WRAP(void), hstring const&);
             this->shim().TileId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TileId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TileId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TileId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Arguments(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Arguments(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(void), hstring const&);
             this->shim().Arguments(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Arguments(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShortName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ShortName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShortName, WINRT_WRAP(void), hstring const&);
             this->shim().ShortName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShortName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ShortName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShortName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ShortName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SmallLogo(void* value) noexcept final
+    int32_t WINRT_CALL put_SmallLogo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmallLogo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().SmallLogo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SmallLogo(void** value) noexcept final
+    int32_t WINRT_CALL get_SmallLogo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmallLogo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().SmallLogo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WideLogo(void* value) noexcept final
+    int32_t WINRT_CALL put_WideLogo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WideLogo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().WideLogo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WideLogo(void** value) noexcept final
+    int32_t WINRT_CALL get_WideLogo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WideLogo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().WideLogo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LockScreenBadgeLogo(void* value) noexcept final
+    int32_t WINRT_CALL put_LockScreenBadgeLogo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockScreenBadgeLogo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().LockScreenBadgeLogo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LockScreenBadgeLogo(void** value) noexcept final
+    int32_t WINRT_CALL get_LockScreenBadgeLogo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockScreenBadgeLogo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LockScreenBadgeLogo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LockScreenDisplayBadgeAndTileText(bool value) noexcept final
+    int32_t WINRT_CALL put_LockScreenDisplayBadgeAndTileText(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockScreenDisplayBadgeAndTileText, WINRT_WRAP(void), bool);
             this->shim().LockScreenDisplayBadgeAndTileText(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LockScreenDisplayBadgeAndTileText(bool* value) noexcept final
+    int32_t WINRT_CALL get_LockScreenDisplayBadgeAndTileText(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LockScreenDisplayBadgeAndTileText, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().LockScreenDisplayBadgeAndTileText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TileOptions(Windows::UI::StartScreen::TileOptions value) noexcept final
+    int32_t WINRT_CALL put_TileOptions(Windows::UI::StartScreen::TileOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileOptions, WINRT_WRAP(void), Windows::UI::StartScreen::TileOptions const&);
             this->shim().TileOptions(*reinterpret_cast<Windows::UI::StartScreen::TileOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TileOptions(Windows::UI::StartScreen::TileOptions* value) noexcept final
+    int32_t WINRT_CALL get_TileOptions(Windows::UI::StartScreen::TileOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TileOptions, WINRT_WRAP(Windows::UI::StartScreen::TileOptions));
             *value = detach_from<Windows::UI::StartScreen::TileOptions>(this->shim().TileOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForegroundText(Windows::UI::StartScreen::ForegroundText value) noexcept final
+    int32_t WINRT_CALL put_ForegroundText(Windows::UI::StartScreen::ForegroundText value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundText, WINRT_WRAP(void), Windows::UI::StartScreen::ForegroundText const&);
             this->shim().ForegroundText(*reinterpret_cast<Windows::UI::StartScreen::ForegroundText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundText(Windows::UI::StartScreen::ForegroundText* value) noexcept final
+    int32_t WINRT_CALL get_ForegroundText(Windows::UI::StartScreen::ForegroundText* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundText, WINRT_WRAP(Windows::UI::StartScreen::ForegroundText));
             *value = detach_from<Windows::UI::StartScreen::ForegroundText>(this->shim().ForegroundText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCreateAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestCreateAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestCreateAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCreateAsyncWithPoint(Windows::Foundation::Point invocationPoint, void** operation) noexcept final
+    int32_t WINRT_CALL RequestCreateAsyncWithPoint(Windows::Foundation::Point invocationPoint, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Point const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestCreateAsync(*reinterpret_cast<Windows::Foundation::Point const*>(&invocationPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCreateAsyncWithRect(Windows::Foundation::Rect selection, void** operation) noexcept final
+    int32_t WINRT_CALL RequestCreateAsyncWithRect(Windows::Foundation::Rect selection, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCreateForSelectionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Rect const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestCreateAsyncWithRectAndPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** operation) noexcept final
+    int32_t WINRT_CALL RequestCreateAsyncWithRectAndPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestCreateForSelectionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Rect const, Windows::UI::Popups::Placement const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestCreateForSelectionAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestDeleteAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestDeleteAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestDeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestDeleteAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestDeleteAsyncWithPoint(Windows::Foundation::Point invocationPoint, void** operation) noexcept final
+    int32_t WINRT_CALL RequestDeleteAsyncWithPoint(Windows::Foundation::Point invocationPoint, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestDeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Point const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestDeleteAsync(*reinterpret_cast<Windows::Foundation::Point const*>(&invocationPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestDeleteAsyncWithRect(Windows::Foundation::Rect selection, void** operation) noexcept final
+    int32_t WINRT_CALL RequestDeleteAsyncWithRect(Windows::Foundation::Rect selection, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestDeleteForSelectionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Rect const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestDeleteAsyncWithRectAndPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** operation) noexcept final
+    int32_t WINRT_CALL RequestDeleteAsyncWithRectAndPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestDeleteForSelectionAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Rect const, Windows::UI::Popups::Placement const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestDeleteForSelectionAsync(*reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UpdateAsync(void** operation) noexcept final
+    int32_t WINRT_CALL UpdateAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().UpdateAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTile2> : produce_base<D, Windows::UI::StartScreen::ISecondaryTile2>
 {
-    HRESULT __stdcall put_PhoneticName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PhoneticName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhoneticName, WINRT_WRAP(void), hstring const&);
             this->shim().PhoneticName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhoneticName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PhoneticName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhoneticName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PhoneticName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VisualElements(void** value) noexcept final
+    int32_t WINRT_CALL get_VisualElements(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VisualElements, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTileVisualElements));
             *value = detach_from<Windows::UI::StartScreen::SecondaryTileVisualElements>(this->shim().VisualElements());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RoamingEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_RoamingEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoamingEnabled, WINRT_WRAP(void), bool);
             this->shim().RoamingEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoamingEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_RoamingEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoamingEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RoamingEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_VisualElementsRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_VisualElementsRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().VisualElementsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(VisualElementsRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().VisualElementsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::StartScreen::SecondaryTile, Windows::UI::StartScreen::VisualElementsRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_VisualElementsRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_VisualElementsRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().VisualElementsRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(VisualElementsRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().VisualElementsRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileFactory>
 {
-    HRESULT __stdcall CreateTile(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows::UI::StartScreen::TileOptions tileOptions, void* logoReference, void** value) noexcept final
+    int32_t WINRT_CALL CreateTile(void* tileId, void* shortName, void* displayName, void* arguments, Windows::UI::StartScreen::TileOptions tileOptions, void* logoReference, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateTile, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTile), hstring const&, hstring const&, hstring const&, hstring const&, Windows::UI::StartScreen::TileOptions const&, Windows::Foundation::Uri const&);
             *value = detach_from<Windows::UI::StartScreen::SecondaryTile>(this->shim().CreateTile(*reinterpret_cast<hstring const*>(&tileId), *reinterpret_cast<hstring const*>(&shortName), *reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<hstring const*>(&arguments), *reinterpret_cast<Windows::UI::StartScreen::TileOptions const*>(&tileOptions), *reinterpret_cast<Windows::Foundation::Uri const*>(&logoReference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWideTile(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows::UI::StartScreen::TileOptions tileOptions, void* logoReference, void* wideLogoReference, void** value) noexcept final
+    int32_t WINRT_CALL CreateWideTile(void* tileId, void* shortName, void* displayName, void* arguments, Windows::UI::StartScreen::TileOptions tileOptions, void* logoReference, void* wideLogoReference, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWideTile, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTile), hstring const&, hstring const&, hstring const&, hstring const&, Windows::UI::StartScreen::TileOptions const&, Windows::Foundation::Uri const&, Windows::Foundation::Uri const&);
             *value = detach_from<Windows::UI::StartScreen::SecondaryTile>(this->shim().CreateWideTile(*reinterpret_cast<hstring const*>(&tileId), *reinterpret_cast<hstring const*>(&shortName), *reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<hstring const*>(&arguments), *reinterpret_cast<Windows::UI::StartScreen::TileOptions const*>(&tileOptions), *reinterpret_cast<Windows::Foundation::Uri const*>(&logoReference), *reinterpret_cast<Windows::Foundation::Uri const*>(&wideLogoReference)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithId(HSTRING tileId, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithId(void* tileId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithId, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTile), hstring const&);
             *value = detach_from<Windows::UI::StartScreen::SecondaryTile>(this->shim().CreateWithId(*reinterpret_cast<hstring const*>(&tileId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileFactory2> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileFactory2>
 {
-    HRESULT __stdcall CreateMinimalTile(HSTRING tileId, HSTRING displayName, HSTRING arguments, void* square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize, void** value) noexcept final
+    int32_t WINRT_CALL CreateMinimalTile(void* tileId, void* displayName, void* arguments, void* square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMinimalTile, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTile), hstring const&, hstring const&, hstring const&, Windows::Foundation::Uri const&, Windows::UI::StartScreen::TileSize const&);
             *value = detach_from<Windows::UI::StartScreen::SecondaryTile>(this->shim().CreateMinimalTile(*reinterpret_cast<hstring const*>(&tileId), *reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<hstring const*>(&arguments), *reinterpret_cast<Windows::Foundation::Uri const*>(&square150x150Logo), *reinterpret_cast<Windows::UI::StartScreen::TileSize const*>(&desiredSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileStatics> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileStatics>
 {
-    HRESULT __stdcall Exists(HSTRING tileId, bool* exists) noexcept final
+    int32_t WINRT_CALL Exists(void* tileId, bool* exists) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Exists, WINRT_WRAP(bool), hstring const&);
             *exists = detach_from<bool>(this->shim().Exists(*reinterpret_cast<hstring const*>(&tileId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FindAllAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>>(this->shim().FindAllAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllForApplicationAsync(HSTRING applicationId, void** operation) noexcept final
+    int32_t WINRT_CALL FindAllForApplicationAsync(void* applicationId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>>(this->shim().FindAllAsync(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllForPackageAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FindAllForPackageAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllForPackageAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>>>(this->shim().FindAllForPackageAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileVisualElements>
 {
-    HRESULT __stdcall put_Square30x30Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square30x30Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square30x30Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square30x30Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square30x30Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square30x30Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square30x30Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square30x30Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Square70x70Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square70x70Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square70x70Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square70x70Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square70x70Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square70x70Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square70x70Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square70x70Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Square150x150Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square150x150Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square150x150Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square150x150Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square150x150Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square150x150Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square150x150Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square150x150Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Wide310x150Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Wide310x150Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wide310x150Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Wide310x150Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wide310x150Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Wide310x150Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wide310x150Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Wide310x150Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Square310x310Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square310x310Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square310x310Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square310x310Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square310x310Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square310x310Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square310x310Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square310x310Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForegroundText(Windows::UI::StartScreen::ForegroundText value) noexcept final
+    int32_t WINRT_CALL put_ForegroundText(Windows::UI::StartScreen::ForegroundText value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundText, WINRT_WRAP(void), Windows::UI::StartScreen::ForegroundText const&);
             this->shim().ForegroundText(*reinterpret_cast<Windows::UI::StartScreen::ForegroundText const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundText(Windows::UI::StartScreen::ForegroundText* value) noexcept final
+    int32_t WINRT_CALL get_ForegroundText(Windows::UI::StartScreen::ForegroundText* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundText, WINRT_WRAP(Windows::UI::StartScreen::ForegroundText));
             *value = detach_from<Windows::UI::StartScreen::ForegroundText>(this->shim().ForegroundText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShowNameOnSquare150x150Logo(bool value) noexcept final
+    int32_t WINRT_CALL put_ShowNameOnSquare150x150Logo(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnSquare150x150Logo, WINRT_WRAP(void), bool);
             this->shim().ShowNameOnSquare150x150Logo(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowNameOnSquare150x150Logo(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShowNameOnSquare150x150Logo(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnSquare150x150Logo, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShowNameOnSquare150x150Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShowNameOnWide310x150Logo(bool value) noexcept final
+    int32_t WINRT_CALL put_ShowNameOnWide310x150Logo(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnWide310x150Logo, WINRT_WRAP(void), bool);
             this->shim().ShowNameOnWide310x150Logo(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowNameOnWide310x150Logo(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShowNameOnWide310x150Logo(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnWide310x150Logo, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShowNameOnWide310x150Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShowNameOnSquare310x310Logo(bool value) noexcept final
+    int32_t WINRT_CALL put_ShowNameOnSquare310x310Logo(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnSquare310x310Logo, WINRT_WRAP(void), bool);
             this->shim().ShowNameOnSquare310x310Logo(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowNameOnSquare310x310Logo(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShowNameOnSquare310x310Logo(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowNameOnSquare310x310Logo, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShowNameOnSquare310x310Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileVisualElements2>
 {
-    HRESULT __stdcall put_Square71x71Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square71x71Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square71x71Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square71x71Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square71x71Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square71x71Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square71x71Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square71x71Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3>
 {
-    HRESULT __stdcall put_Square44x44Logo(void* value) noexcept final
+    int32_t WINRT_CALL put_Square44x44Logo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square44x44Logo, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Square44x44Logo(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Square44x44Logo(void** value) noexcept final
+    int32_t WINRT_CALL get_Square44x44Logo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Square44x44Logo, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Square44x44Logo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements4> : produce_base<D, Windows::UI::StartScreen::ISecondaryTileVisualElements4>
 {
-    HRESULT __stdcall get_MixedRealityModel(void** value) noexcept final
+    int32_t WINRT_CALL get_MixedRealityModel(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MixedRealityModel, WINRT_WRAP(Windows::UI::StartScreen::TileMixedRealityModel));
             *value = detach_from<Windows::UI::StartScreen::TileMixedRealityModel>(this->shim().MixedRealityModel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IStartScreenManager> : produce_base<D, Windows::UI::StartScreen::IStartScreenManager>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SupportsAppListEntry(void* appListEntry, bool* result) noexcept final
+    int32_t WINRT_CALL SupportsAppListEntry(void* appListEntry, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportsAppListEntry, WINRT_WRAP(bool), Windows::ApplicationModel::Core::AppListEntry const&);
             *result = detach_from<bool>(this->shim().SupportsAppListEntry(*reinterpret_cast<Windows::ApplicationModel::Core::AppListEntry const*>(&appListEntry)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ContainsAppListEntryAsync(void* appListEntry, void** operation) noexcept final
+    int32_t WINRT_CALL ContainsAppListEntryAsync(void* appListEntry, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContainsAppListEntryAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Core::AppListEntry const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().ContainsAppListEntryAsync(*reinterpret_cast<Windows::ApplicationModel::Core::AppListEntry const*>(&appListEntry)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAddAppListEntryAsync(void* appListEntry, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAddAppListEntryAsync(void* appListEntry, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAddAppListEntryAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Core::AppListEntry const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestAddAppListEntryAsync(*reinterpret_cast<Windows::ApplicationModel::Core::AppListEntry const*>(&appListEntry)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::StartScreen::IStartScreenManager2> : produce_base<D, Windows::UI::StartScreen::IStartScreenManager2>
+{
+    int32_t WINRT_CALL ContainsSecondaryTileAsync(void* tileId, void** operation) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContainsSecondaryTileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().ContainsSecondaryTileAsync(*reinterpret_cast<hstring const*>(&tileId)));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL TryRemoveSecondaryTileAsync(void* tileId, void** operation) noexcept final
+    {
+        try
+        {
+            *operation = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryRemoveSecondaryTileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryRemoveSecondaryTileAsync(*reinterpret_cast<hstring const*>(&tileId)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IStartScreenManagerStatics> : produce_base<D, Windows::UI::StartScreen::IStartScreenManagerStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::UI::StartScreen::StartScreenManager));
             *value = detach_from<Windows::UI::StartScreen::StartScreenManager>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::UI::StartScreen::StartScreenManager), Windows::System::User const&);
             *result = detach_from<Windows::UI::StartScreen::StartScreenManager>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ITileMixedRealityModel> : produce_base<D, Windows::UI::StartScreen::ITileMixedRealityModel>
 {
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BoundingBox(void* value) noexcept final
+    int32_t WINRT_CALL put_BoundingBox(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingBox, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingBox> const&);
             this->shim().BoundingBox(*reinterpret_cast<Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingBox> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BoundingBox(void** value) noexcept final
+    int32_t WINRT_CALL get_BoundingBox(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BoundingBox, WINRT_WRAP(Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingBox>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingBox>>(this->shim().BoundingBox());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::ITileMixedRealityModel2> : produce_base<D, Windows::UI::StartScreen::ITileMixedRealityModel2>
 {
-    HRESULT __stdcall put_ActivationBehavior(Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior value) noexcept final
+    int32_t WINRT_CALL put_ActivationBehavior(Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivationBehavior, WINRT_WRAP(void), Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior const&);
             this->shim().ActivationBehavior(*reinterpret_cast<Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivationBehavior(Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior* value) noexcept final
+    int32_t WINRT_CALL get_ActivationBehavior(Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivationBehavior, WINRT_WRAP(Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior));
             *value = detach_from<Windows::UI::StartScreen::TileMixedRealityModelActivationBehavior>(this->shim().ActivationBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_base<D, Windows::UI::StartScreen::IVisualElementsRequest>
 {
-    HRESULT __stdcall get_VisualElements(void** value) noexcept final
+    int32_t WINRT_CALL get_VisualElements(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VisualElements, WINRT_WRAP(Windows::UI::StartScreen::SecondaryTileVisualElements));
             *value = detach_from<Windows::UI::StartScreen::SecondaryTileVisualElements>(this->shim().VisualElements());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlternateVisualElements(void** value) noexcept final
+    int32_t WINRT_CALL get_AlternateVisualElements(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateVisualElements, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements>>(this->shim().AlternateVisualElements());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Deadline, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Deadline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::UI::StartScreen::VisualElementsRequestDeferral));
             *deferral = detach_from<Windows::UI::StartScreen::VisualElementsRequestDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestDeferral> : produce_base<D, Windows::UI::StartScreen::IVisualElementsRequestDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::StartScreen::IVisualElementsRequestedEventArgs> : produce_base<D, Windows::UI::StartScreen::IVisualElementsRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::UI::StartScreen::VisualElementsRequest));
             *value = detach_from<Windows::UI::StartScreen::VisualElementsRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2404,72 +2224,72 @@ WINRT_EXPORT namespace winrt::Windows::UI::StartScreen {
 
 inline Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> JumpList::LoadCurrentAsync()
 {
-    return get_activation_factory<JumpList, Windows::UI::StartScreen::IJumpListStatics>().LoadCurrentAsync();
+    return impl::call_factory<JumpList, Windows::UI::StartScreen::IJumpListStatics>([&](auto&& f) { return f.LoadCurrentAsync(); });
 }
 
 inline bool JumpList::IsSupported()
 {
-    return get_activation_factory<JumpList, Windows::UI::StartScreen::IJumpListStatics>().IsSupported();
+    return impl::call_factory<JumpList, Windows::UI::StartScreen::IJumpListStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateWithArguments(param::hstring const& arguments, param::hstring const& displayName)
 {
-    return get_activation_factory<JumpListItem, Windows::UI::StartScreen::IJumpListItemStatics>().CreateWithArguments(arguments, displayName);
+    return impl::call_factory<JumpListItem, Windows::UI::StartScreen::IJumpListItemStatics>([&](auto&& f) { return f.CreateWithArguments(arguments, displayName); });
 }
 
 inline Windows::UI::StartScreen::JumpListItem JumpListItem::CreateSeparator()
 {
-    return get_activation_factory<JumpListItem, Windows::UI::StartScreen::IJumpListItemStatics>().CreateSeparator();
+    return impl::call_factory<JumpListItem, Windows::UI::StartScreen::IJumpListItemStatics>([&](auto&& f) { return f.CreateSeparator(); });
 }
 
 inline SecondaryTile::SecondaryTile() :
-    SecondaryTile(get_activation_factory<SecondaryTile>().ActivateInstance<SecondaryTile>())
+    SecondaryTile(impl::call_factory<SecondaryTile>([](auto&& f) { return f.template ActivateInstance<SecondaryTile>(); }))
 {}
 
 inline SecondaryTile::SecondaryTile(param::hstring const& tileId, param::hstring const& shortName, param::hstring const& displayName, param::hstring const& arguments, Windows::UI::StartScreen::TileOptions const& tileOptions, Windows::Foundation::Uri const& logoReference) :
-    SecondaryTile(get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>().CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference))
+    SecondaryTile(impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>([&](auto&& f) { return f.CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference); }))
 {}
 
 inline SecondaryTile::SecondaryTile(param::hstring const& tileId, param::hstring const& shortName, param::hstring const& displayName, param::hstring const& arguments, Windows::UI::StartScreen::TileOptions const& tileOptions, Windows::Foundation::Uri const& logoReference, Windows::Foundation::Uri const& wideLogoReference) :
-    SecondaryTile(get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>().CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference))
+    SecondaryTile(impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>([&](auto&& f) { return f.CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference); }))
 {}
 
 inline SecondaryTile::SecondaryTile(param::hstring const& tileId) :
-    SecondaryTile(get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>().CreateWithId(tileId))
+    SecondaryTile(impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory>([&](auto&& f) { return f.CreateWithId(tileId); }))
 {}
 
 inline SecondaryTile::SecondaryTile(param::hstring const& tileId, param::hstring const& displayName, param::hstring const& arguments, Windows::Foundation::Uri const& square150x150Logo, Windows::UI::StartScreen::TileSize const& desiredSize) :
-    SecondaryTile(get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory2>().CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize))
+    SecondaryTile(impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileFactory2>([&](auto&& f) { return f.CreateMinimalTile(tileId, displayName, arguments, square150x150Logo, desiredSize); }))
 {}
 
 inline bool SecondaryTile::Exists(param::hstring const& tileId)
 {
-    return get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>().Exists(tileId);
+    return impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>([&](auto&& f) { return f.Exists(tileId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync()
 {
-    return get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>().FindAllAsync();
+    return impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>([&](auto&& f) { return f.FindAllAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllAsync(param::hstring const& applicationId)
 {
-    return get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>().FindAllAsync(applicationId);
+    return impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>([&](auto&& f) { return f.FindAllAsync(applicationId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllForPackageAsync()
 {
-    return get_activation_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>().FindAllForPackageAsync();
+    return impl::call_factory<SecondaryTile, Windows::UI::StartScreen::ISecondaryTileStatics>([&](auto&& f) { return f.FindAllForPackageAsync(); });
 }
 
 inline Windows::UI::StartScreen::StartScreenManager StartScreenManager::GetDefault()
 {
-    return get_activation_factory<StartScreenManager, Windows::UI::StartScreen::IStartScreenManagerStatics>().GetDefault();
+    return impl::call_factory<StartScreenManager, Windows::UI::StartScreen::IStartScreenManagerStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::UI::StartScreen::StartScreenManager StartScreenManager::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StartScreenManager, Windows::UI::StartScreen::IStartScreenManagerStatics>().GetForUser(user);
+    return impl::call_factory<StartScreenManager, Windows::UI::StartScreen::IStartScreenManagerStatics>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 }
@@ -2490,6 +2310,7 @@ template<> struct hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElem
 template<> struct hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements3> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements3> {};
 template<> struct hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements4> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements4> {};
 template<> struct hash<winrt::Windows::UI::StartScreen::IStartScreenManager> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::IStartScreenManager> {};
+template<> struct hash<winrt::Windows::UI::StartScreen::IStartScreenManager2> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::IStartScreenManager2> {};
 template<> struct hash<winrt::Windows::UI::StartScreen::IStartScreenManagerStatics> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::IStartScreenManagerStatics> {};
 template<> struct hash<winrt::Windows::UI::StartScreen::ITileMixedRealityModel> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::ITileMixedRealityModel> {};
 template<> struct hash<winrt::Windows::UI::StartScreen::ITileMixedRealityModel2> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::ITileMixedRealityModel2> {};
@@ -2507,5 +2328,3 @@ template<> struct hash<winrt::Windows::UI::StartScreen::VisualElementsRequestDef
 template<> struct hash<winrt::Windows::UI::StartScreen::VisualElementsRequestedEventArgs> : winrt::impl::hash_base<winrt::Windows::UI::StartScreen::VisualElementsRequestedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

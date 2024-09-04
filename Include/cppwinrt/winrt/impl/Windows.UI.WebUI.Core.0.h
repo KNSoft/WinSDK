@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -99,21 +99,21 @@ template <> struct name<Windows::UI::WebUI::Core::WebUICommandBarClosedDisplayMo
 template <> struct name<Windows::UI::WebUI::Core::MenuClosedEventHandler>{ static constexpr auto & value{ L"Windows.UI.WebUI.Core.MenuClosedEventHandler" }; };
 template <> struct name<Windows::UI::WebUI::Core::MenuOpenedEventHandler>{ static constexpr auto & value{ L"Windows.UI.WebUI.Core.MenuOpenedEventHandler" }; };
 template <> struct name<Windows::UI::WebUI::Core::SizeChangedEventHandler>{ static constexpr auto & value{ L"Windows.UI.WebUI.Core.SizeChangedEventHandler" }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBar>{ static constexpr GUID value{ 0xA4FC0016,0xDBE5,0x41AD,{ 0x8D,0x7B,0x14,0x69,0x8B,0xD6,0x91,0x1D } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIcon>{ static constexpr GUID value{ 0x858F4F45,0x08D8,0x4A46,{ 0x81,0xEC,0x00,0x01,0x5B,0x0B,0x1C,0x6C } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIconFactory>{ static constexpr GUID value{ 0xF3F7D78A,0x7673,0x444A,{ 0xBE,0x62,0xAC,0x12,0xD3,0x1C,0x22,0x31 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>{ static constexpr GUID value{ 0x86E7824A,0xE3D5,0x4EB6,{ 0xB2,0xFF,0x8F,0x01,0x8A,0x17,0x21,0x05 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarElement>{ static constexpr GUID value{ 0xC9069EC2,0x284A,0x4633,{ 0x8A,0xAD,0x63,0x7A,0x27,0xE2,0x82,0xC3 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarIcon>{ static constexpr GUID value{ 0xD587655D,0x2014,0x42BE,{ 0x96,0x9A,0x7D,0x14,0xCA,0x6C,0x8A,0x49 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>{ static constexpr GUID value{ 0x8F1BC93A,0x3A7C,0x4842,{ 0xA0,0xCF,0xAF,0xF6,0xEA,0x30,0x85,0x86 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarItemInvokedEventArgs>{ static constexpr GUID value{ 0x304EDBDD,0xE741,0x41EF,{ 0xBD,0xC4,0xA4,0x5C,0xEA,0x2A,0x4F,0x70 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarSizeChangedEventArgs>{ static constexpr GUID value{ 0xFBF1E2F6,0x3029,0x4719,{ 0x83,0x78,0x92,0xF8,0x2B,0x87,0xAF,0x1E } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarStatics>{ static constexpr GUID value{ 0x1449CDB9,0xA506,0x45BE,{ 0x8F,0x42,0xB2,0x83,0x7E,0x2F,0xE0,0xC9 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIcon>{ static constexpr GUID value{ 0xD4935477,0xFD26,0x46ED,{ 0x86,0x58,0x1A,0x3F,0x44,0x00,0xE7,0xB3 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIconFactory>{ static constexpr GUID value{ 0x51BE1A1F,0x3730,0x429E,{ 0xB6,0x22,0x14,0xE2,0xB7,0xBF,0x6A,0x07 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::MenuClosedEventHandler>{ static constexpr GUID value{ 0x435387C8,0x4DD0,0x4C52,{ 0x94,0x89,0xD3,0x90,0xCE,0x77,0x21,0xD2 } }; };
-template <> struct guid<Windows::UI::WebUI::Core::MenuOpenedEventHandler>{ static constexpr GUID value{ 0x18DC0AD3,0x678F,0x4C19,{ 0x89,0x63,0xCC,0x1C,0x49,0xA5,0xEF,0x9E } }; };
-template <> struct guid<Windows::UI::WebUI::Core::SizeChangedEventHandler>{ static constexpr GUID value{ 0xD49CFE3C,0xDD2E,0x4C28,{ 0xB6,0x27,0x30,0x3A,0x7F,0x91,0x1A,0xF5 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBar>{ static constexpr guid value{ 0xA4FC0016,0xDBE5,0x41AD,{ 0x8D,0x7B,0x14,0x69,0x8B,0xD6,0x91,0x1D } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIcon>{ static constexpr guid value{ 0x858F4F45,0x08D8,0x4A46,{ 0x81,0xEC,0x00,0x01,0x5B,0x0B,0x1C,0x6C } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIconFactory>{ static constexpr guid value{ 0xF3F7D78A,0x7673,0x444A,{ 0xBE,0x62,0xAC,0x12,0xD3,0x1C,0x22,0x31 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>{ static constexpr guid value{ 0x86E7824A,0xE3D5,0x4EB6,{ 0xB2,0xFF,0x8F,0x01,0x8A,0x17,0x21,0x05 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarElement>{ static constexpr guid value{ 0xC9069EC2,0x284A,0x4633,{ 0x8A,0xAD,0x63,0x7A,0x27,0xE2,0x82,0xC3 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarIcon>{ static constexpr guid value{ 0xD587655D,0x2014,0x42BE,{ 0x96,0x9A,0x7D,0x14,0xCA,0x6C,0x8A,0x49 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>{ static constexpr guid value{ 0x8F1BC93A,0x3A7C,0x4842,{ 0xA0,0xCF,0xAF,0xF6,0xEA,0x30,0x85,0x86 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarItemInvokedEventArgs>{ static constexpr guid value{ 0x304EDBDD,0xE741,0x41EF,{ 0xBD,0xC4,0xA4,0x5C,0xEA,0x2A,0x4F,0x70 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarSizeChangedEventArgs>{ static constexpr guid value{ 0xFBF1E2F6,0x3029,0x4719,{ 0x83,0x78,0x92,0xF8,0x2B,0x87,0xAF,0x1E } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarStatics>{ static constexpr guid value{ 0x1449CDB9,0xA506,0x45BE,{ 0x8F,0x42,0xB2,0x83,0x7E,0x2F,0xE0,0xC9 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIcon>{ static constexpr guid value{ 0xD4935477,0xFD26,0x46ED,{ 0x86,0x58,0x1A,0x3F,0x44,0x00,0xE7,0xB3 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIconFactory>{ static constexpr guid value{ 0x51BE1A1F,0x3730,0x429E,{ 0xB6,0x22,0x14,0xE2,0xB7,0xBF,0x6A,0x07 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::MenuClosedEventHandler>{ static constexpr guid value{ 0x435387C8,0x4DD0,0x4C52,{ 0x94,0x89,0xD3,0x90,0xCE,0x77,0x21,0xD2 } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::MenuOpenedEventHandler>{ static constexpr guid value{ 0x18DC0AD3,0x678F,0x4C19,{ 0x89,0x63,0xCC,0x1C,0x49,0xA5,0xEF,0x9E } }; };
+template <> struct guid_storage<Windows::UI::WebUI::Core::SizeChangedEventHandler>{ static constexpr guid value{ 0xD49CFE3C,0xDD2E,0x4C28,{ 0xB6,0x27,0x30,0x3A,0x7F,0x91,0x1A,0xF5 } }; };
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBar>{ using type = Windows::UI::WebUI::Core::IWebUICommandBar; };
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarBitmapIcon>{ using type = Windows::UI::WebUI::Core::IWebUICommandBarBitmapIcon; };
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarConfirmationButton>{ using type = Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton; };
@@ -121,6 +121,115 @@ template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarIc
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs>{ using type = Windows::UI::WebUI::Core::IWebUICommandBarItemInvokedEventArgs; };
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarSizeChangedEventArgs>{ using type = Windows::UI::WebUI::Core::IWebUICommandBarSizeChangedEventArgs; };
 template <> struct default_interface<Windows::UI::WebUI::Core::WebUICommandBarSymbolIcon>{ using type = Windows::UI::WebUI::Core::IWebUICommandBarSymbolIcon; };
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBar>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Visible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Visible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opacity(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClosedDisplayMode(Windows::UI::WebUI::Core::WebUICommandBarClosedDisplayMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ClosedDisplayMode(Windows::UI::WebUI::Core::WebUICommandBarClosedDisplayMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOpen(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsOpen(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrimaryCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SecondaryCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_MenuOpened(void* handler, winrt::event_token* value) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MenuOpened(winrt::event_token value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_MenuClosed(void* handler, winrt::event_token* value) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MenuClosed(winrt::event_token value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SizeChanged(void* handler, winrt::event_token* value) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SizeChanged(winrt::event_token value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIcon>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIconFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* uri, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ItemInvoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ItemInvoked(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarElement>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarIcon>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Enabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Enabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Label(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Label(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsToggleButton(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsToggleButton(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsChecked(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsChecked(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Icon(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Icon(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ItemInvoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ItemInvoked(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarItemInvokedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsPrimaryCommand(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSizeChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** commandBar) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIcon>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Symbol(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Symbol(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIconFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* symbol, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::MenuClosedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::MenuOpenedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::WebUI::Core::SizeChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* eventArgs) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_WebUI_Core_IWebUICommandBar
@@ -140,18 +249,18 @@ struct consume_Windows_UI_WebUI_Core_IWebUICommandBar
     Windows::Foundation::Size Size() const;
     Windows::Foundation::Collections::IObservableVector<Windows::UI::WebUI::Core::IWebUICommandBarElement> PrimaryCommands() const;
     Windows::Foundation::Collections::IObservableVector<Windows::UI::WebUI::Core::IWebUICommandBarElement> SecondaryCommands() const;
-    event_token MenuOpened(Windows::UI::WebUI::Core::MenuOpenedEventHandler const& handler) const;
-    using MenuOpened_revoker = event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar>;
+    winrt::event_token MenuOpened(Windows::UI::WebUI::Core::MenuOpenedEventHandler const& handler) const;
+    using MenuOpened_revoker = impl::event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar, &impl::abi_t<Windows::UI::WebUI::Core::IWebUICommandBar>::remove_MenuOpened>;
     MenuOpened_revoker MenuOpened(auto_revoke_t, Windows::UI::WebUI::Core::MenuOpenedEventHandler const& handler) const;
-    void MenuOpened(event_token const& value) const;
-    event_token MenuClosed(Windows::UI::WebUI::Core::MenuClosedEventHandler const& handler) const;
-    using MenuClosed_revoker = event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar>;
+    void MenuOpened(winrt::event_token const& value) const noexcept;
+    winrt::event_token MenuClosed(Windows::UI::WebUI::Core::MenuClosedEventHandler const& handler) const;
+    using MenuClosed_revoker = impl::event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar, &impl::abi_t<Windows::UI::WebUI::Core::IWebUICommandBar>::remove_MenuClosed>;
     MenuClosed_revoker MenuClosed(auto_revoke_t, Windows::UI::WebUI::Core::MenuClosedEventHandler const& handler) const;
-    void MenuClosed(event_token const& value) const;
-    event_token SizeChanged(Windows::UI::WebUI::Core::SizeChangedEventHandler const& handler) const;
-    using SizeChanged_revoker = event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar>;
+    void MenuClosed(winrt::event_token const& value) const noexcept;
+    winrt::event_token SizeChanged(Windows::UI::WebUI::Core::SizeChangedEventHandler const& handler) const;
+    using SizeChanged_revoker = impl::event_revoker<Windows::UI::WebUI::Core::IWebUICommandBar, &impl::abi_t<Windows::UI::WebUI::Core::IWebUICommandBar>::remove_SizeChanged>;
     SizeChanged_revoker SizeChanged(auto_revoke_t, Windows::UI::WebUI::Core::SizeChangedEventHandler const& handler) const;
-    void SizeChanged(event_token const& value) const;
+    void SizeChanged(winrt::event_token const& value) const noexcept;
 };
 template <> struct consume<Windows::UI::WebUI::Core::IWebUICommandBar> { template <typename D> using type = consume_Windows_UI_WebUI_Core_IWebUICommandBar<D>; };
 
@@ -175,10 +284,10 @@ struct consume_Windows_UI_WebUI_Core_IWebUICommandBarConfirmationButton
 {
     hstring Text() const;
     void Text(param::hstring const& value) const;
-    event_token ItemInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarConfirmationButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
-    using ItemInvoked_revoker = event_revoker<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>;
+    winrt::event_token ItemInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarConfirmationButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
+    using ItemInvoked_revoker = impl::event_revoker<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton, &impl::abi_t<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>::remove_ItemInvoked>;
     ItemInvoked_revoker ItemInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarConfirmationButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
-    void ItemInvoked(event_token const& token) const;
+    void ItemInvoked(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton> { template <typename D> using type = consume_Windows_UI_WebUI_Core_IWebUICommandBarConfirmationButton<D>; };
 
@@ -207,10 +316,10 @@ struct consume_Windows_UI_WebUI_Core_IWebUICommandBarIconButton
     void IsChecked(bool value) const;
     Windows::UI::WebUI::Core::IWebUICommandBarIcon Icon() const;
     void Icon(Windows::UI::WebUI::Core::IWebUICommandBarIcon const& value) const;
-    event_token ItemInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarIconButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
-    using ItemInvoked_revoker = event_revoker<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>;
+    winrt::event_token ItemInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarIconButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
+    using ItemInvoked_revoker = impl::event_revoker<Windows::UI::WebUI::Core::IWebUICommandBarIconButton, &impl::abi_t<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>::remove_ItemInvoked>;
     ItemInvoked_revoker ItemInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::WebUI::Core::WebUICommandBarIconButton, Windows::UI::WebUI::Core::WebUICommandBarItemInvokedEventArgs> const& handler) const;
-    void ItemInvoked(event_token const& token) const;
+    void ItemInvoked(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::WebUI::Core::IWebUICommandBarIconButton> { template <typename D> using type = consume_Windows_UI_WebUI_Core_IWebUICommandBarIconButton<D>; };
 
@@ -249,114 +358,5 @@ struct consume_Windows_UI_WebUI_Core_IWebUICommandBarSymbolIconFactory
     Windows::UI::WebUI::Core::WebUICommandBarSymbolIcon Create(param::hstring const& symbol) const;
 };
 template <> struct consume<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIconFactory> { template <typename D> using type = consume_Windows_UI_WebUI_Core_IWebUICommandBarSymbolIconFactory<D>; };
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBar>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Visible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Visible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opacity(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClosedDisplayMode(Windows::UI::WebUI::Core::WebUICommandBarClosedDisplayMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ClosedDisplayMode(Windows::UI::WebUI::Core::WebUICommandBarClosedDisplayMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOpen(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsOpen(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrimaryCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SecondaryCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_MenuOpened(void* handler, event_token* value) noexcept = 0;
-    virtual HRESULT __stdcall remove_MenuOpened(event_token value) noexcept = 0;
-    virtual HRESULT __stdcall add_MenuClosed(void* handler, event_token* value) noexcept = 0;
-    virtual HRESULT __stdcall remove_MenuClosed(event_token value) noexcept = 0;
-    virtual HRESULT __stdcall add_SizeChanged(void* handler, event_token* value) noexcept = 0;
-    virtual HRESULT __stdcall remove_SizeChanged(event_token value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIcon>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarBitmapIconFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* uri, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarConfirmationButton>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall add_ItemInvoked(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ItemInvoked(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarElement>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarIcon>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarIconButton>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Enabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Enabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Label(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Label(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsToggleButton(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsToggleButton(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsChecked(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsChecked(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Icon(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Icon(void* value) noexcept = 0;
-    virtual HRESULT __stdcall add_ItemInvoked(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ItemInvoked(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarItemInvokedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsPrimaryCommand(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSizeChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** commandBar) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIcon>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Symbol(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Symbol(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::IWebUICommandBarSymbolIconFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING symbol, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::MenuClosedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::MenuOpenedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::WebUI::Core::SizeChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* eventArgs) noexcept = 0;
-};};
 
 }

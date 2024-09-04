@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -60,102 +60,90 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Str
 template <typename D>
 struct produce<D, Windows::Devices::Printers::IPrint3DDevice> : produce_base<D, Windows::Devices::Printers::IPrint3DDevice>
 {
-    HRESULT __stdcall get_PrintSchema(void** value) noexcept final
+    int32_t WINRT_CALL get_PrintSchema(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrintSchema, WINRT_WRAP(Windows::Devices::Printers::PrintSchema));
             *value = detach_from<Windows::Devices::Printers::PrintSchema>(this->shim().PrintSchema());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::IPrint3DDeviceStatics> : produce_base<D, Windows::Devices::Printers::IPrint3DDeviceStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelector(HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::IPrintSchema> : produce_base<D, Windows::Devices::Printers::IPrintSchema>
 {
-    HRESULT __stdcall GetDefaultPrintTicketAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDefaultPrintTicketAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultPrintTicketAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().GetDefaultPrintTicketAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCapabilitiesAsync(void* constrainTicket, void** operation) noexcept final
+    int32_t WINRT_CALL GetCapabilitiesAsync(void* constrainTicket, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCapabilitiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>), Windows::Storage::Streams::IRandomAccessStreamWithContentType const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().GetCapabilitiesAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamWithContentType const*>(&constrainTicket)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MergeAndValidateWithDefaultPrintTicketAsync(void* deltaTicket, void** operation) noexcept final
+    int32_t WINRT_CALL MergeAndValidateWithDefaultPrintTicketAsync(void* deltaTicket, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MergeAndValidateWithDefaultPrintTicketAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>), Windows::Storage::Streams::IRandomAccessStreamWithContentType const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().MergeAndValidateWithDefaultPrintTicketAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamWithContentType const*>(&deltaTicket)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -165,12 +153,12 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> Print3DDevice::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<Print3DDevice, Windows::Devices::Printers::IPrint3DDeviceStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<Print3DDevice, Windows::Devices::Printers::IPrint3DDeviceStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline hstring Print3DDevice::GetDeviceSelector()
 {
-    return get_activation_factory<Print3DDevice, Windows::Devices::Printers::IPrint3DDeviceStatics>().GetDeviceSelector();
+    return impl::call_factory<Print3DDevice, Windows::Devices::Printers::IPrint3DDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 }
@@ -184,5 +172,3 @@ template<> struct hash<winrt::Windows::Devices::Printers::Print3DDevice> : winrt
 template<> struct hash<winrt::Windows::Devices::Printers::PrintSchema> : winrt::impl::hash_base<winrt::Windows::Devices::Printers::PrintSchema> {};
 
 }
-
-WINRT_WARNING_POP

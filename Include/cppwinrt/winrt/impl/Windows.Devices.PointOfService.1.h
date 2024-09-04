@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -38,6 +38,13 @@ struct WINRT_EBO IBarcodeScannerCapabilities1 :
     impl::consume_t<IBarcodeScannerCapabilities1>
 {
     IBarcodeScannerCapabilities1(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBarcodeScannerCapabilities2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBarcodeScannerCapabilities2>
+{
+    IBarcodeScannerCapabilities2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IBarcodeScannerDataReceivedEventArgs :
@@ -211,12 +218,40 @@ struct WINRT_EBO IClaimedBarcodeScanner3 :
     IClaimedBarcodeScanner3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IClaimedBarcodeScanner4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedBarcodeScanner4>
+{
+    IClaimedBarcodeScanner4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedBarcodeScannerClosedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedBarcodeScannerClosedEventArgs>
+{
+    IClaimedBarcodeScannerClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IClaimedCashDrawer :
     Windows::Foundation::IInspectable,
     impl::consume_t<IClaimedCashDrawer>,
     impl::require<IClaimedCashDrawer, Windows::Foundation::IClosable>
 {
     IClaimedCashDrawer(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedCashDrawer2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedCashDrawer2>
+{
+    IClaimedCashDrawer2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedCashDrawerClosedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedCashDrawerClosedEventArgs>
+{
+    IClaimedCashDrawerClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IClaimedJournalPrinter :
@@ -243,6 +278,20 @@ struct WINRT_EBO IClaimedLineDisplay2 :
     IClaimedLineDisplay2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IClaimedLineDisplay3 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedLineDisplay3>
+{
+    IClaimedLineDisplay3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedLineDisplayClosedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedLineDisplayClosedEventArgs>
+{
+    IClaimedLineDisplayClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IClaimedLineDisplayStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IClaimedLineDisplayStatics>
@@ -258,12 +307,40 @@ struct WINRT_EBO IClaimedMagneticStripeReader :
     IClaimedMagneticStripeReader(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IClaimedMagneticStripeReader2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedMagneticStripeReader2>
+{
+    IClaimedMagneticStripeReader2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedMagneticStripeReaderClosedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedMagneticStripeReaderClosedEventArgs>
+{
+    IClaimedMagneticStripeReaderClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IClaimedPosPrinter :
     Windows::Foundation::IInspectable,
     impl::consume_t<IClaimedPosPrinter>,
     impl::require<IClaimedPosPrinter, Windows::Foundation::IClosable>
 {
     IClaimedPosPrinter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedPosPrinter2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedPosPrinter2>
+{
+    IClaimedPosPrinter2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IClaimedPosPrinterClosedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IClaimedPosPrinterClosedEventArgs>
+{
+    IClaimedPosPrinterClosedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IClaimedReceiptPrinter :

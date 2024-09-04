@@ -83,7 +83,8 @@ WDF_EXTERN_C_START
 
 #define IDDCX_VERSION_RS3 0x1200
 #define IDDCX_VERSION_RS4 0x1300
-#define IDDCX_VERSION_LATEST IDDCX_VERSION_RS4
+#define IDDCX_VERSION_RS5 0x1380
+#define IDDCX_VERSION_LATEST IDDCX_VERSION_RS5
 
 
 // Timeout detection and recovery
@@ -183,6 +184,10 @@ enum IDDCX_TRANSMISSION_TYPE : UINT
     /// </summary>
     IDDCX_TRANSMISSION_TYPE_WIRELESS_OTHER = 0x8,
     /// <summary>
+    /// Video data is being transmitted over TCP/UDP/IP network not described above
+    /// </summary>
+    IDDCX_TRANSMISSION_TYPE_NETWORK_OTHER = 0x9,
+    /// <summary>
     /// Video data is being transmitted over a link type that is not covered by the above defines
     /// </summary>
     IDDCX_TRANSMISSION_TYPE_OTHER = 0xFFFFFFFF,
@@ -213,6 +218,12 @@ enum IDDCX_ADAPTER_FLAGS : UINT
     /// If driver sets this to FALSE the OS will convert all move regions in to dirty rects
     /// </summary>
     IDDCX_ADAPTER_FLAGS_CAN_USE_MOVE_REGIONS = 2,
+    /// <summary>
+    /// Indicates if the driver is a remote session driver supporting remote session monitors rather than console
+    /// session monitors.  A remote session driver cannot support console session monitors and console session driver
+    /// cannot support remote session monitors.
+    /// </summary>
+    IDDCX_ADAPTER_FLAGS_REMOTE_SESSION_DRIVER = 4,
 };
 
 /// <summary>

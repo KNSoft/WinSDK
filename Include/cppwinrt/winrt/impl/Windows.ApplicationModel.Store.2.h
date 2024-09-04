@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,6 +16,8 @@ struct LicenseChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> LicenseChangedEventHandler(L lambda);
     template <typename F> LicenseChangedEventHandler(F* function);
     template <typename O, typename M> LicenseChangedEventHandler(O* object, M method);
+    template <typename O, typename M> LicenseChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> LicenseChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -32,9 +34,9 @@ struct CurrentApp
     CurrentApp() = delete;
     static Windows::ApplicationModel::Store::LicenseInformation LicenseInformation();
     static Windows::Foundation::Uri LinkUri();
-    static GUID AppId();
+    static winrt::guid AppId();
     static Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt);
-    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(param::hstring const& productId, bool includeReceipt);
+    static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(param::hstring const& productId, bool includeReceipt);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(param::hstring const& productId);
@@ -44,7 +46,7 @@ struct CurrentApp
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(param::async_iterable<hstring> const& keywords);
     static void ReportProductFulfillment(param::hstring const& productId);
     static Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync();
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(param::hstring const& productId, GUID const& transactionId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(param::hstring const& productId, winrt::guid const& transactionId);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(param::hstring const& productId);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(param::hstring const& productId, param::hstring const& offerId, Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties const& displayProperties);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync();
@@ -55,9 +57,9 @@ struct CurrentAppSimulator
     CurrentAppSimulator() = delete;
     static Windows::ApplicationModel::Store::LicenseInformation LicenseInformation();
     static Windows::Foundation::Uri LinkUri();
-    static GUID AppId();
+    static winrt::guid AppId();
     static Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt);
-    [[deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")]] static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(param::hstring const& productId, bool includeReceipt);
+    static Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(param::hstring const& productId, bool includeReceipt);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(param::hstring const& productId);
@@ -65,7 +67,7 @@ struct CurrentAppSimulator
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(param::async_iterable<hstring> const& productIds);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(param::async_iterable<hstring> const& keywords);
     static Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync();
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(param::hstring const& productId, GUID const& transactionId);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(param::hstring const& productId, winrt::guid const& transactionId);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(param::hstring const& productId);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(param::hstring const& productId, param::hstring const& offerId, Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties const& displayProperties);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync();

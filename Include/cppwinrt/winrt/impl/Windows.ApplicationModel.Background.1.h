@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -367,7 +367,7 @@ struct WINRT_EBO IDeviceConnectionChangeTriggerStatics :
     IDeviceConnectionChangeTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] IDeviceManufacturerNotificationTrigger :
+struct WINRT_EBO IDeviceManufacturerNotificationTrigger :
     Windows::Foundation::IInspectable,
     impl::consume_t<IDeviceManufacturerNotificationTrigger>,
     impl::require<IDeviceManufacturerNotificationTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
@@ -375,7 +375,7 @@ struct WINRT_EBO [[deprecated("DeviceManufacturerNotificationTrigger is deprecat
     IDeviceManufacturerNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]] IDeviceManufacturerNotificationTriggerFactory :
+struct WINRT_EBO IDeviceManufacturerNotificationTriggerFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IDeviceManufacturerNotificationTriggerFactory>
 {

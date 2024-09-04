@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.DataTransfer.2.h"
@@ -110,21 +110,21 @@ template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlProcess
     check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlProcess)->Terminate());
 }
 
-template <typename D> event_token consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlProcess)->add_ProcessExited(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Web::UI::Interop::IWebViewControlProcess> consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited_revoker consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Web::UI::Interop::IWebViewControlProcess>(this, &abi_t<Windows::Web::UI::Interop::IWebViewControlProcess>::remove_ProcessExited, ProcessExited(handler));
+    return impl::make_event_revoker<D, ProcessExited_revoker>(this, ProcessExited(handler));
 }
 
-template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(event_token const& token) const
+template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlProcess<D>::ProcessExited(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlProcess)->remove_ProcessExited(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlProcess)->remove_ProcessExited(get_abi(token)));
 }
 
 template <typename D> Windows::Web::UI::Interop::WebViewControlProcess consume_Windows_Web_UI_Interop_IWebViewControlProcessFactory<D>::CreateWithOptions(Windows::Web::UI::Interop::WebViewControlProcessOptions const& processOptions) const
@@ -211,529 +211,529 @@ template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite<D>
     check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->MoveFocus(get_abi(reason)));
 }
 
-template <typename D> event_token consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->add_MoveFocusRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Web::UI::Interop::IWebViewControlSite> consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested_revoker consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Web::UI::Interop::IWebViewControlSite>(this, &abi_t<Windows::Web::UI::Interop::IWebViewControlSite>::remove_MoveFocusRequested, MoveFocusRequested(handler));
+    return impl::make_event_revoker<D, MoveFocusRequested_revoker>(this, MoveFocusRequested(handler));
 }
 
-template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(event_token const& token) const
+template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::MoveFocusRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->remove_MoveFocusRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->remove_MoveFocusRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->add_AcceleratorKeyPressed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Web::UI::Interop::IWebViewControlSite> consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed_revoker consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Web::UI::Interop::IWebViewControlSite>(this, &abi_t<Windows::Web::UI::Interop::IWebViewControlSite>::remove_AcceleratorKeyPressed, AcceleratorKeyPressed(handler));
+    return impl::make_event_revoker<D, AcceleratorKeyPressed_revoker>(this, AcceleratorKeyPressed(handler));
 }
 
-template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(event_token const& token) const
+template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite<D>::AcceleratorKeyPressed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->remove_AcceleratorKeyPressed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite)->remove_AcceleratorKeyPressed(get_abi(token)));
+}
+
+template <typename D> winrt::event_token consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::GotFocus(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite2)->add_GotFocus(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::GotFocus_revoker consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::GotFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, GotFocus_revoker>(this, GotFocus(handler));
+}
+
+template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::GotFocus(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite2)->remove_GotFocus(get_abi(token)));
+}
+
+template <typename D> winrt::event_token consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::LostFocus(Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite2)->add_LostFocus(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::LostFocus_revoker consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::LostFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, LostFocus_revoker>(this, LostFocus(handler));
+}
+
+template <typename D> void consume_Windows_Web_UI_Interop_IWebViewControlSite2<D>::LostFocus(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Web::UI::Interop::IWebViewControlSite2)->remove_LostFocus(get_abi(token)));
 }
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlAcceleratorKeyPressedEventArgs> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlAcceleratorKeyPressedEventArgs>
 {
-    HRESULT __stdcall get_EventType(Windows::UI::Core::CoreAcceleratorKeyEventType* value) noexcept final
+    int32_t WINRT_CALL get_EventType(Windows::UI::Core::CoreAcceleratorKeyEventType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EventType, WINRT_WRAP(Windows::UI::Core::CoreAcceleratorKeyEventType));
             *value = detach_from<Windows::UI::Core::CoreAcceleratorKeyEventType>(this->shim().EventType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VirtualKey(Windows::System::VirtualKey* value) noexcept final
+    int32_t WINRT_CALL get_VirtualKey(Windows::System::VirtualKey* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VirtualKey, WINRT_WRAP(Windows::System::VirtualKey));
             *value = detach_from<Windows::System::VirtualKey>(this->shim().VirtualKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeyStatus(struct struct_Windows_UI_Core_CorePhysicalKeyStatus* value) noexcept final
+    int32_t WINRT_CALL get_KeyStatus(struct struct_Windows_UI_Core_CorePhysicalKeyStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyStatus, WINRT_WRAP(Windows::UI::Core::CorePhysicalKeyStatus));
             *value = detach_from<Windows::UI::Core::CorePhysicalKeyStatus>(this->shim().KeyStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoutingStage(Windows::Web::UI::Interop::WebViewControlAcceleratorKeyRoutingStage* value) noexcept final
+    int32_t WINRT_CALL get_RoutingStage(Windows::Web::UI::Interop::WebViewControlAcceleratorKeyRoutingStage* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoutingStage, WINRT_WRAP(Windows::Web::UI::Interop::WebViewControlAcceleratorKeyRoutingStage));
             *value = detach_from<Windows::Web::UI::Interop::WebViewControlAcceleratorKeyRoutingStage>(this->shim().RoutingStage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Handled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Handled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Handled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Handled(bool value) noexcept final
+    int32_t WINRT_CALL put_Handled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void), bool);
             this->shim().Handled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlMoveFocusRequestedEventArgs> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlMoveFocusRequestedEventArgs>
 {
-    HRESULT __stdcall get_Reason(Windows::Web::UI::Interop::WebViewControlMoveFocusReason* value) noexcept final
+    int32_t WINRT_CALL get_Reason(Windows::Web::UI::Interop::WebViewControlMoveFocusReason* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reason, WINRT_WRAP(Windows::Web::UI::Interop::WebViewControlMoveFocusReason));
             *value = detach_from<Windows::Web::UI::Interop::WebViewControlMoveFocusReason>(this->shim().Reason());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlProcess> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlProcess>
 {
-    HRESULT __stdcall get_ProcessId(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ProcessId(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessId, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ProcessId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPrivateNetworkClientServerCapabilityEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPrivateNetworkClientServerCapabilityEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrivateNetworkClientServerCapabilityEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPrivateNetworkClientServerCapabilityEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWebViewControlAsync(int64_t hostWindowHandle, Windows::Foundation::Rect bounds, void** operation) noexcept final
+    int32_t WINRT_CALL CreateWebViewControlAsync(int64_t hostWindowHandle, Windows::Foundation::Rect bounds, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWebViewControlAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Web::UI::Interop::WebViewControl>), int64_t, Windows::Foundation::Rect const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Web::UI::Interop::WebViewControl>>(this->shim().CreateWebViewControlAsync(hostWindowHandle, *reinterpret_cast<Windows::Foundation::Rect const*>(&bounds)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWebViewControls(void** result) noexcept final
+    int32_t WINRT_CALL GetWebViewControls(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWebViewControls, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Web::UI::Interop::WebViewControl>));
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Web::UI::Interop::WebViewControl>>(this->shim().GetWebViewControls());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Terminate() noexcept final
+    int32_t WINRT_CALL Terminate() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Terminate, WINRT_WRAP(void));
             this->shim().Terminate();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ProcessExited(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ProcessExited(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ProcessExited(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProcessExited, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ProcessExited(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControlProcess, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ProcessExited(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ProcessExited(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ProcessExited(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ProcessExited, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ProcessExited(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlProcessFactory> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlProcessFactory>
 {
-    HRESULT __stdcall CreateWithOptions(void* processOptions, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithOptions(void* processOptions, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithOptions, WINRT_WRAP(Windows::Web::UI::Interop::WebViewControlProcess), Windows::Web::UI::Interop::WebViewControlProcessOptions const&);
             *result = detach_from<Windows::Web::UI::Interop::WebViewControlProcess>(this->shim().CreateWithOptions(*reinterpret_cast<Windows::Web::UI::Interop::WebViewControlProcessOptions const*>(&processOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlProcessOptions> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlProcessOptions>
 {
-    HRESULT __stdcall put_EnterpriseId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EnterpriseId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(void), hstring const&);
             this->shim().EnterpriseId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EnterpriseId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EnterpriseId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EnterpriseId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EnterpriseId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PrivateNetworkClientServerCapability(Windows::Web::UI::Interop::WebViewControlProcessCapabilityState value) noexcept final
+    int32_t WINRT_CALL put_PrivateNetworkClientServerCapability(Windows::Web::UI::Interop::WebViewControlProcessCapabilityState value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrivateNetworkClientServerCapability, WINRT_WRAP(void), Windows::Web::UI::Interop::WebViewControlProcessCapabilityState const&);
             this->shim().PrivateNetworkClientServerCapability(*reinterpret_cast<Windows::Web::UI::Interop::WebViewControlProcessCapabilityState const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PrivateNetworkClientServerCapability(Windows::Web::UI::Interop::WebViewControlProcessCapabilityState* value) noexcept final
+    int32_t WINRT_CALL get_PrivateNetworkClientServerCapability(Windows::Web::UI::Interop::WebViewControlProcessCapabilityState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrivateNetworkClientServerCapability, WINRT_WRAP(Windows::Web::UI::Interop::WebViewControlProcessCapabilityState));
             *value = detach_from<Windows::Web::UI::Interop::WebViewControlProcessCapabilityState>(this->shim().PrivateNetworkClientServerCapability());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Web::UI::Interop::IWebViewControlSite> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlSite>
 {
-    HRESULT __stdcall get_Process(void** value) noexcept final
+    int32_t WINRT_CALL get_Process(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Process, WINRT_WRAP(Windows::Web::UI::Interop::WebViewControlProcess));
             *value = detach_from<Windows::Web::UI::Interop::WebViewControlProcess>(this->shim().Process());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Scale(double value) noexcept final
+    int32_t WINRT_CALL put_Scale(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(void), double);
             this->shim().Scale(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Scale(double* value) noexcept final
+    int32_t WINRT_CALL get_Scale(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Scale, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Scale());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Bounds(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_Bounds(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Bounds(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bounds(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Bounds(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Bounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsVisible(bool value) noexcept final
+    int32_t WINRT_CALL put_IsVisible(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsVisible, WINRT_WRAP(void), bool);
             this->shim().IsVisible(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsVisible(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsVisible(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsVisible, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsVisible());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close() noexcept final
+    int32_t WINRT_CALL Close() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void));
             this->shim().Close();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveFocus(Windows::Web::UI::Interop::WebViewControlMoveFocusReason reason) noexcept final
+    int32_t WINRT_CALL MoveFocus(Windows::Web::UI::Interop::WebViewControlMoveFocusReason reason) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MoveFocus, WINRT_WRAP(void), Windows::Web::UI::Interop::WebViewControlMoveFocusReason const&);
             this->shim().MoveFocus(*reinterpret_cast<Windows::Web::UI::Interop::WebViewControlMoveFocusReason const*>(&reason));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_MoveFocusRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_MoveFocusRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().MoveFocusRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveFocusRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().MoveFocusRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MoveFocusRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_MoveFocusRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MoveFocusRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MoveFocusRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_AcceleratorKeyPressed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().MoveFocusRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AcceleratorKeyPressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().AcceleratorKeyPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AcceleratorKeyPressed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_AcceleratorKeyPressed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AcceleratorKeyPressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AcceleratorKeyPressed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Web::UI::Interop::IWebViewControlSite2> : produce_base<D, Windows::Web::UI::Interop::IWebViewControlSite2>
+{
+    int32_t WINRT_CALL add_GotFocus(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().AcceleratorKeyPressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GotFocus, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().GotFocus(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AcceleratorKeyPressed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_GotFocus(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(GotFocus, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().GotFocus(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_LostFocus(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().AcceleratorKeyPressed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LostFocus, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().LostFocus(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Web::UI::Interop::WebViewControl, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_LostFocus(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LostFocus, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LostFocus(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
@@ -742,15 +742,15 @@ struct produce<D, Windows::Web::UI::Interop::IWebViewControlSite> : produce_base
 WINRT_EXPORT namespace winrt::Windows::Web::UI::Interop {
 
 inline WebViewControlProcess::WebViewControlProcess() :
-    WebViewControlProcess(get_activation_factory<WebViewControlProcess>().ActivateInstance<WebViewControlProcess>())
+    WebViewControlProcess(impl::call_factory<WebViewControlProcess>([](auto&& f) { return f.template ActivateInstance<WebViewControlProcess>(); }))
 {}
 
 inline WebViewControlProcess::WebViewControlProcess(Windows::Web::UI::Interop::WebViewControlProcessOptions const& processOptions) :
-    WebViewControlProcess(get_activation_factory<WebViewControlProcess, Windows::Web::UI::Interop::IWebViewControlProcessFactory>().CreateWithOptions(processOptions))
+    WebViewControlProcess(impl::call_factory<WebViewControlProcess, Windows::Web::UI::Interop::IWebViewControlProcessFactory>([&](auto&& f) { return f.CreateWithOptions(processOptions); }))
 {}
 
 inline WebViewControlProcessOptions::WebViewControlProcessOptions() :
-    WebViewControlProcessOptions(get_activation_factory<WebViewControlProcessOptions>().ActivateInstance<WebViewControlProcessOptions>())
+    WebViewControlProcessOptions(impl::call_factory<WebViewControlProcessOptions>([](auto&& f) { return f.template ActivateInstance<WebViewControlProcessOptions>(); }))
 {}
 
 }
@@ -763,6 +763,7 @@ template<> struct hash<winrt::Windows::Web::UI::Interop::IWebViewControlProcess>
 template<> struct hash<winrt::Windows::Web::UI::Interop::IWebViewControlProcessFactory> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::IWebViewControlProcessFactory> {};
 template<> struct hash<winrt::Windows::Web::UI::Interop::IWebViewControlProcessOptions> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::IWebViewControlProcessOptions> {};
 template<> struct hash<winrt::Windows::Web::UI::Interop::IWebViewControlSite> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::IWebViewControlSite> {};
+template<> struct hash<winrt::Windows::Web::UI::Interop::IWebViewControlSite2> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::IWebViewControlSite2> {};
 template<> struct hash<winrt::Windows::Web::UI::Interop::WebViewControl> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::WebViewControl> {};
 template<> struct hash<winrt::Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::WebViewControlAcceleratorKeyPressedEventArgs> {};
 template<> struct hash<winrt::Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::WebViewControlMoveFocusRequestedEventArgs> {};
@@ -770,5 +771,3 @@ template<> struct hash<winrt::Windows::Web::UI::Interop::WebViewControlProcess> 
 template<> struct hash<winrt::Windows::Web::UI::Interop::WebViewControlProcessOptions> : winrt::impl::hash_base<winrt::Windows::Web::UI::Interop::WebViewControlProcessOptions> {};
 
 }
-
-WINRT_WARNING_POP

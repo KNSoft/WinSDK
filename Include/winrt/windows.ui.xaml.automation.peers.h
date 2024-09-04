@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.automation.peers.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -550,6 +562,24 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IAutomationPeer9;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer9
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 namespace ABI {
@@ -747,6 +777,24 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides8
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IAutomationPeerOverrides9;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides9
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
@@ -2385,6 +2433,78 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeerFactory
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IMenuBarAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarAutomationPeer
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IMenuBarAutomationPeerFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarAutomationPeerFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IMenuBarItemAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarItemAutomationPeer
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        interface IMenuBarItemAutomationPeerFactory;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarItemAutomationPeerFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer_FWD_DEFINED__
@@ -5350,6 +5470,62 @@ namespace ABI {
         namespace UI {
             namespace Xaml {
                 namespace Controls {
+                    class MenuBar;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface IMenuBar;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar ABI::Windows::UI::Xaml::Controls::IMenuBar
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    class MenuBarItem;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
+                    interface IMenuBarItem;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Controls */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem ABI::Windows::UI::Xaml::Controls::IMenuBarItem
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Controls {
                     class MenuFlyoutItem;
                 } /* Windows */
             } /* UI */
@@ -6832,6 +7008,12 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -7527,6 +7709,34 @@ namespace ABI {
                 namespace Automation {
                     namespace Peers {
                         class MediaTransportControlsAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        class MenuBarAutomationPeer;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        class MenuBarItemAutomationPeer;
                     } /* Windows */
                 } /* UI */
             } /* Xaml */
@@ -8718,9 +8928,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBar * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -8808,9 +9018,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBarButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -8898,9 +9108,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAppBarToggleButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -8988,7 +9198,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IAutoSuggestBox * owner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -9040,7 +9250,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetPattern(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RaiseAutomationEvent(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationEvents eventId
@@ -9051,73 +9261,73 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt IInspectable * newValue
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAcceleratorKey(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAccessKey(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAutomationControlType(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationControlType * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationControlType * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAutomationId(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetBoundingRectangle(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetChildren(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetClassName(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetClickablePoint(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetHelpText(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetItemStatus(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetItemType(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLabeledBy(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLocalizedControlType(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetName(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetOrientation(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationOrientation * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationOrientation * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE HasKeyboardFocus(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsContentElement(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsControlElement(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsEnabled(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsKeyboardFocusable(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsOffscreen(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsPassword(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsRequiredForForm(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetFocus(void) = 0;
                             
@@ -9125,7 +9335,7 @@ namespace ABI {
                             DEPRECATED("Consider using Navigate with AutomationNavigationDirection::Parent, which is an improved version of GetParent. For more info, see MSDN.")
                             #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                             /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetParent(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE InvalidatePeer(void) = 0;
                             
@@ -9134,10 +9344,10 @@ namespace ABI {
                             #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
                             /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetPeerFromPoint(
                                 /* [in] */ABI::Windows::Foundation::Point point,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLiveSetting(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * result
                                 ) = 0;
                             
                         };
@@ -9225,21 +9435,21 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE Navigate(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetElementFromPoint(
                                 /* [in] */ABI::Windows::Foundation::Point pointInWindowCoordinates,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFocusedElement(
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ShowContextMenu(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetControlledPeers(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAnnotations(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetParent(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * peer
@@ -9249,13 +9459,13 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt __FIVectorView_1_HSTRING * changedData
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetPositionInSet(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetSizeOfSet(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLevel(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RaiseStructureChangedEvent(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationStructureChangeType structureChangeType,
@@ -9304,10 +9514,10 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetLandmarkType(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLocalizedLandmarkType(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             
                         };
@@ -9352,13 +9562,13 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE IsPeripheral(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsDataValidForForm(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFullDescription(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             
                         };
@@ -9403,7 +9613,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetCulture(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             
                         };
@@ -9496,7 +9706,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetHeadingLevel(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * result
                                 ) = 0;
                             
                         };
@@ -9512,6 +9722,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer9
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeer9[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeer9";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("DF2E0265-1D74-57FA-8094-F81C2F626B8C"), exclusiveto, contract] */
+                        MIDL_INTERFACE("DF2E0265-1D74-57FA-8094-F81C2F626B8C")
+                        IAutomationPeer9 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE IsDialog(
+                                /* [retval, out] */__RPC__out boolean * result
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAutomationPeer9=_uuidof(IAutomationPeer9);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -9596,12 +9851,12 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateWithPeerParameter(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::AnnotationType type,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * peer,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation * * value
                                 ) = 0;
                             
                         };
@@ -9694,9 +9949,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -9742,84 +9997,84 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetPatternCore(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAcceleratorKeyCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAccessKeyCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAutomationControlTypeCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationControlType * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationControlType * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAutomationIdCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetBoundingRectangleCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetChildrenCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetClassNameCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetClickablePointCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::Foundation::Point * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetHelpTextCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetItemStatusCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetItemTypeCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLabeledByCore(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLocalizedControlTypeCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetNameCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetOrientationCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationOrientation * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationOrientation * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE HasKeyboardFocusCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsContentElementCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsControlElementCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsEnabledCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsKeyboardFocusableCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsOffscreenCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsPasswordCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsRequiredForFormCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetFocusCore(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetPeerFromPointCore(
                                 /* [in] */ABI::Windows::Foundation::Point point,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLiveSettingCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting * result
                                 ) = 0;
                             
                         };
@@ -9865,7 +10120,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE ShowContextMenuCore(void) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetControlledPeersCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             
                         };
@@ -9911,26 +10166,26 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE NavigateCore(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetElementFromPointCore(
                                 /* [in] */ABI::Windows::Foundation::Point pointInWindowCoordinates,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFocusedElementCore(
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAnnotationsCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetPositionInSetCore(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetSizeOfSetCore(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLevelCore(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             
                         };
@@ -9975,10 +10230,10 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetLandmarkTypeCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetLocalizedLandmarkTypeCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             
                         };
@@ -10023,22 +10278,22 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE IsPeripheralCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE IsDataValidForFormCore(
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFullDescriptionCore(
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetDescribedByCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFlowsToCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetFlowsFromCore(
-                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
                                 ) = 0;
                             
                         };
@@ -10083,7 +10338,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetCultureCore(
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             
                         };
@@ -10128,7 +10383,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetHeadingLevelCore(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::AutomationHeadingLevel * result
                                 ) = 0;
                             
                         };
@@ -10144,6 +10399,51 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeerOverrides9[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("F3709E8B-091A-5DB5-B896-FF78F01990C9"), exclusiveto, contract] */
+                        MIDL_INTERFACE("F3709E8B-091A-5DB5-B896-FF78F01990C9")
+                        IAutomationPeerOverrides9 : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE IsDialogCore(
+                                /* [retval, out] */__RPC__out boolean * result
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IAutomationPeerOverrides9=_uuidof(IAutomationPeerOverrides9);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -10174,11 +10474,11 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE PeerFromProvider(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * provider,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ProviderFromPeer(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * peer,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * result
                                 ) = 0;
                             
                         };
@@ -10224,7 +10524,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE ListenerExists(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationEvents eventId,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             
                         };
@@ -10269,7 +10569,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GenerateRawElementProviderRuntimeId(
-                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::RawElementProviderRuntimeId * returnValue
+                                /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::Peers::RawElementProviderRuntimeId * result
                                 ) = 0;
                             
                         };
@@ -10357,9 +10657,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10447,9 +10747,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IButtonBase * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10537,9 +10837,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICalendarDatePicker * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICalendarDatePickerAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICalendarDatePickerAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10627,9 +10927,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICaptureElement * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10717,9 +11017,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ICheckBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10807,9 +11107,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorPickerSlider * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IColorPickerSliderAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IColorPickerSliderAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10897,9 +11197,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IColorSpectrum * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IColorSpectrumAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IColorSpectrumAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -10987,9 +11287,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IComboBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11077,9 +11377,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IComboBoxItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11168,9 +11468,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11258,9 +11558,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IDatePicker * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11390,9 +11690,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlipView * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11480,9 +11780,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlipViewItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11571,9 +11871,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11661,9 +11961,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IFlyoutPresenter * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11754,9 +12054,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IFrameworkElement * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11802,11 +12102,11 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE FromElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreatePeerForElement(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer * * result
                                 ) = 0;
                             
                         };
@@ -11894,9 +12194,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridView * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -11984,9 +12284,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridViewHeaderItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12074,9 +12374,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGridViewItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12165,9 +12465,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12255,9 +12555,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IGroupItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12345,9 +12645,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHub * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12435,9 +12735,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHubSection * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12525,9 +12825,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IHyperlinkButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12615,9 +12915,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IImage * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12754,9 +13054,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12844,7 +13144,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateItemAutomationPeer(
                                 /* [in] */__RPC__in_opt IInspectable * item,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * result
                                 ) = 0;
                             
                         };
@@ -12890,9 +13190,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IItemsControl * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -12938,7 +13238,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE OnCreateItemAutomationPeer(
                                 /* [in] */__RPC__in_opt IInspectable * item,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer * * result
                                 ) = 0;
                             
                         };
@@ -13026,9 +13326,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13116,9 +13416,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListBoxItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13207,9 +13507,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13339,9 +13639,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListView * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13429,9 +13729,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBase * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13519,9 +13819,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewBaseHeaderItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13609,9 +13909,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewHeaderItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13699,9 +13999,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IListViewItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -13790,9 +14090,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14048,9 +14348,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaElement * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14138,9 +14438,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaPlayerElement * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14228,9 +14528,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMediaTransportControls * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14246,6 +14546,186 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("4B6ADCF1-F274-5592-85A8-7B099E99B320"), exclusiveto, contract] */
+                        MIDL_INTERFACE("4B6ADCF1-F274-5592-85A8-7B099E99B320")
+                        IMenuBarAutomationPeer : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMenuBarAutomationPeer=_uuidof(IMenuBarAutomationPeer);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("2A094871-4A9B-5A0B-9FDA-7BC3AE957C53"), exclusiveto, contract] */
+                        MIDL_INTERFACE("2A094871-4A9B-5A0B-9FDA-7BC3AE957C53")
+                        IMenuBarAutomationPeerFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuBar * owner,
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarAutomationPeer * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMenuBarAutomationPeerFactory=_uuidof(IMenuBarAutomationPeerFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("0FCE49B4-CFF5-5C4B-98EE-E75FDDDF799A"), exclusiveto, contract] */
+                        MIDL_INTERFACE("0FCE49B4-CFF5-5C4B-98EE-E75FDDDF799A")
+                        IMenuBarItemAutomationPeer : public IInspectable
+                        {
+                        public:
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMenuBarItemAutomationPeer=_uuidof(IMenuBarItemAutomationPeer);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarItemAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeerFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Automation {
+                    namespace Peers {
+                        /* [object, uuid("C9C77746-130F-5B19-83A6-61DB584613AA"), exclusiveto, contract] */
+                        MIDL_INTERFACE("C9C77746-130F-5B19-83A6-61DB584613AA")
+                        IMenuBarItemAutomationPeerFactory : public IInspectable
+                        {
+                        public:
+                            virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuBarItem * owner,
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuBarItemAutomationPeer * * value
+                                ) = 0;
+                            
+                        };
+
+                        extern MIDL_CONST_ID IID & IID_IMenuBarItemAutomationPeerFactory=_uuidof(IMenuBarItemAutomationPeerFactory);
+                        
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Automation */
+    } /* Peers */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -14318,9 +14798,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14408,9 +14888,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14498,9 +14978,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::INavigationViewItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::INavigationViewItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::INavigationViewItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14588,9 +15068,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPasswordBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14678,9 +15158,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPersonPicture * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPersonPictureAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPersonPictureAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14810,7 +15290,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPivot * owner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14898,7 +15378,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IPivotItem * owner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -14987,7 +15467,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer * parent,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeer * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15075,9 +15555,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IProgressBar * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15165,9 +15645,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IProgressRing * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15255,9 +15735,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRadioButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15345,9 +15825,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRangeBase * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15435,9 +15915,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRatingControl * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRatingControlAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRatingControlAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15525,9 +16005,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IRepeatButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15615,9 +16095,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichEditBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15705,9 +16185,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichTextBlock * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15795,9 +16275,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IRichTextBlockOverflow * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15885,9 +16365,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IScrollBar * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -15975,9 +16455,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IScrollViewer * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16065,9 +16545,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISearchBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16155,9 +16635,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::ISelector * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16246,9 +16726,9 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithParentAndItem(
                                 /* [in] */__RPC__in_opt IInspectable * item,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer * parent,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16336,9 +16816,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISemanticZoom * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16426,9 +16906,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISettingsFlyout * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16516,9 +16996,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ISlider * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16606,9 +17086,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITextBlock * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16696,9 +17176,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITextBox * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16786,9 +17266,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IThumb * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -16876,9 +17356,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITimePicker * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17008,9 +17488,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::Primitives::IToggleButton * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17098,9 +17578,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17188,9 +17668,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::IToggleSwitch * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17278,9 +17758,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITreeViewItem * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewItemAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewItemAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17368,9 +17848,9 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithOwner(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Controls::ITreeViewList * owner,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewListAutomationPeer * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Peers::ITreeViewListAutomationPeer * * value
                                 ) = 0;
                             
                         };
@@ -17424,6 +17904,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -17504,21 +17985,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer2
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer3
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer4
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer5
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer6
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer7
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer9
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -17745,8 +18228,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Provider.IValueProvider
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Provider.IWindowProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -18261,9 +18744,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2
+ *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -18531,10 +19014,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.ILoopingSelectorAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
- *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
- *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *    Windows.UI.Xaml.Automation.Provider.ISelectionProvider
+ *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -18702,6 +19185,56 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -18857,8 +19390,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *    Windows.UI.Xaml.Automation.Provider.ISelectionProvider
+ *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19549,8 +20082,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19692,6 +20225,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation;
@@ -19757,6 +20296,12 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_FWD_DEFINED__
@@ -20303,6 +20848,30 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransport
 typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer_FWD_DEFINED__
@@ -22198,6 +22767,20 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaTransportControls 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIMediaTransportControls_FWD_DEFINED__
 
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar_FWD_DEFINED__
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem_FWD_DEFINED__
+
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutItem_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutItem_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutItem __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutItem;
@@ -22518,6 +23101,14 @@ typedef enum __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CPatternInterface __x
 
 
 typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId;
+
+
+
+
+
+
+
+
 
 
 
@@ -23387,9 +23978,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIAppBar * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -23419,8 +24010,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeerFa
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -23569,9 +24160,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIAppBarButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -23601,8 +24192,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -23751,9 +24342,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIAppBarToggleButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -23783,8 +24374,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAppBarToggleButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -23933,7 +24524,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIAutoSuggestBox * owner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeer * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -23963,8 +24554,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomati
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutoSuggestBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,value) )
 
 
 #endif /* COBJMACROS */
@@ -24035,7 +24626,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *GetPattern )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CPatternInterface patternInterface,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RaiseAutomationEvent )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
@@ -24049,95 +24640,95 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetAcceleratorKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAccessKey )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAutomationControlType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationControlType * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationControlType * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAutomationId )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetBoundingRectangle )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetChildren )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetClassName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetClickablePoint )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetHelpText )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetItemStatus )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetItemType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLabeledBy )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedControlType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetOrientation )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationOrientation * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationOrientation * result
         );
     HRESULT ( STDMETHODCALLTYPE *HasKeyboardFocus )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsContentElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsControlElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEnabled )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsKeyboardFocusable )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsOffscreen )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsPassword )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsRequiredForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetFocus )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This
@@ -24148,7 +24739,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
     /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetParent )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *InvalidatePeer )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This
@@ -24160,11 +24751,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetPeerFromPoint )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint point,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLiveSetting )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * result
         );
     END_INTERFACE
     
@@ -24200,8 +24791,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_put_EventsSource(This,value) \
     ( (This)->lpVtbl->put_EventsSource(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetPattern(This,patternInterface,returnValue) \
-    ( (This)->lpVtbl->GetPattern(This,patternInterface,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetPattern(This,patternInterface,result) \
+    ( (This)->lpVtbl->GetPattern(This,patternInterface,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_RaiseAutomationEvent(This,eventId) \
     ( (This)->lpVtbl->RaiseAutomationEvent(This,eventId) )
@@ -24209,74 +24800,74 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_RaisePropertyChangedEvent(This,automationProperty,oldValue,newValue) \
     ( (This)->lpVtbl->RaisePropertyChangedEvent(This,automationProperty,oldValue,newValue) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAcceleratorKey(This,returnValue) \
-    ( (This)->lpVtbl->GetAcceleratorKey(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAcceleratorKey(This,result) \
+    ( (This)->lpVtbl->GetAcceleratorKey(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAccessKey(This,returnValue) \
-    ( (This)->lpVtbl->GetAccessKey(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAccessKey(This,result) \
+    ( (This)->lpVtbl->GetAccessKey(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAutomationControlType(This,returnValue) \
-    ( (This)->lpVtbl->GetAutomationControlType(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAutomationControlType(This,result) \
+    ( (This)->lpVtbl->GetAutomationControlType(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAutomationId(This,returnValue) \
-    ( (This)->lpVtbl->GetAutomationId(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetAutomationId(This,result) \
+    ( (This)->lpVtbl->GetAutomationId(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetBoundingRectangle(This,returnValue) \
-    ( (This)->lpVtbl->GetBoundingRectangle(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetBoundingRectangle(This,result) \
+    ( (This)->lpVtbl->GetBoundingRectangle(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetChildren(This,returnValue) \
-    ( (This)->lpVtbl->GetChildren(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetChildren(This,result) \
+    ( (This)->lpVtbl->GetChildren(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetClassName(This,returnValue) \
-    ( (This)->lpVtbl->GetClassName(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetClassName(This,result) \
+    ( (This)->lpVtbl->GetClassName(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetClickablePoint(This,returnValue) \
-    ( (This)->lpVtbl->GetClickablePoint(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetClickablePoint(This,result) \
+    ( (This)->lpVtbl->GetClickablePoint(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetHelpText(This,returnValue) \
-    ( (This)->lpVtbl->GetHelpText(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetHelpText(This,result) \
+    ( (This)->lpVtbl->GetHelpText(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetItemStatus(This,returnValue) \
-    ( (This)->lpVtbl->GetItemStatus(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetItemStatus(This,result) \
+    ( (This)->lpVtbl->GetItemStatus(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetItemType(This,returnValue) \
-    ( (This)->lpVtbl->GetItemType(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetItemType(This,result) \
+    ( (This)->lpVtbl->GetItemType(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLabeledBy(This,returnValue) \
-    ( (This)->lpVtbl->GetLabeledBy(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLabeledBy(This,result) \
+    ( (This)->lpVtbl->GetLabeledBy(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLocalizedControlType(This,returnValue) \
-    ( (This)->lpVtbl->GetLocalizedControlType(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLocalizedControlType(This,result) \
+    ( (This)->lpVtbl->GetLocalizedControlType(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetName(This,returnValue) \
-    ( (This)->lpVtbl->GetName(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetName(This,result) \
+    ( (This)->lpVtbl->GetName(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetOrientation(This,returnValue) \
-    ( (This)->lpVtbl->GetOrientation(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetOrientation(This,result) \
+    ( (This)->lpVtbl->GetOrientation(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_HasKeyboardFocus(This,returnValue) \
-    ( (This)->lpVtbl->HasKeyboardFocus(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_HasKeyboardFocus(This,result) \
+    ( (This)->lpVtbl->HasKeyboardFocus(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsContentElement(This,returnValue) \
-    ( (This)->lpVtbl->IsContentElement(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsContentElement(This,result) \
+    ( (This)->lpVtbl->IsContentElement(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsControlElement(This,returnValue) \
-    ( (This)->lpVtbl->IsControlElement(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsControlElement(This,result) \
+    ( (This)->lpVtbl->IsControlElement(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsEnabled(This,returnValue) \
-    ( (This)->lpVtbl->IsEnabled(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsEnabled(This,result) \
+    ( (This)->lpVtbl->IsEnabled(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsKeyboardFocusable(This,returnValue) \
-    ( (This)->lpVtbl->IsKeyboardFocusable(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsKeyboardFocusable(This,result) \
+    ( (This)->lpVtbl->IsKeyboardFocusable(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsOffscreen(This,returnValue) \
-    ( (This)->lpVtbl->IsOffscreen(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsOffscreen(This,result) \
+    ( (This)->lpVtbl->IsOffscreen(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsPassword(This,returnValue) \
-    ( (This)->lpVtbl->IsPassword(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsPassword(This,result) \
+    ( (This)->lpVtbl->IsPassword(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsRequiredForForm(This,returnValue) \
-    ( (This)->lpVtbl->IsRequiredForForm(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_IsRequiredForForm(This,result) \
+    ( (This)->lpVtbl->IsRequiredForForm(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_SetFocus(This) \
     ( (This)->lpVtbl->SetFocus(This) )
@@ -24285,8 +24876,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 DEPRECATED("Consider using Navigate with AutomationNavigationDirection::Parent, which is an improved version of GetParent. For more info, see MSDN.")
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetParent(This,returnValue) \
-    ( (This)->lpVtbl->GetParent(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetParent(This,result) \
+    ( (This)->lpVtbl->GetParent(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_InvalidatePeer(This) \
     ( (This)->lpVtbl->InvalidatePeer(This) )
@@ -24295,11 +24886,11 @@ DEPRECATED("Consider using Navigate with AutomationNavigationDirection::Parent, 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 DEPRECATED("Consider using GetElementFromPoint, which is an improved version of GetPeerFromPoint. For more info, see MSDN.")
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetPeerFromPoint(This,point,returnValue) \
-    ( (This)->lpVtbl->GetPeerFromPoint(This,point,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetPeerFromPoint(This,point,result) \
+    ( (This)->lpVtbl->GetPeerFromPoint(This,point,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLiveSetting(This,returnValue) \
-    ( (This)->lpVtbl->GetLiveSetting(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer_GetLiveSetting(This,result) \
+    ( (This)->lpVtbl->GetLiveSetting(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -24448,27 +25039,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Navigate )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationNavigationDirection direction,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetElementFromPoint )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint pointInWindowCoordinates,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFocusedElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *ShowContextMenu )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This
         );
     HRESULT ( STDMETHODCALLTYPE *GetControlledPeers )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAnnotations )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetParent )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
@@ -24481,15 +25072,15 @@ HRESULT ( STDMETHODCALLTYPE *Navigate )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetPositionInSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetSizeOfSet )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *RaiseStructureChangedEvent )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3 * This,
@@ -24524,23 +25115,23 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_Navigate(This,direction,returnValue) \
-    ( (This)->lpVtbl->Navigate(This,direction,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_Navigate(This,direction,result) \
+    ( (This)->lpVtbl->Navigate(This,direction,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetElementFromPoint(This,pointInWindowCoordinates,returnValue) \
-    ( (This)->lpVtbl->GetElementFromPoint(This,pointInWindowCoordinates,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetElementFromPoint(This,pointInWindowCoordinates,result) \
+    ( (This)->lpVtbl->GetElementFromPoint(This,pointInWindowCoordinates,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetFocusedElement(This,returnValue) \
-    ( (This)->lpVtbl->GetFocusedElement(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetFocusedElement(This,result) \
+    ( (This)->lpVtbl->GetFocusedElement(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_ShowContextMenu(This) \
     ( (This)->lpVtbl->ShowContextMenu(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetControlledPeers(This,returnValue) \
-    ( (This)->lpVtbl->GetControlledPeers(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetControlledPeers(This,result) \
+    ( (This)->lpVtbl->GetControlledPeers(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetAnnotations(This,returnValue) \
-    ( (This)->lpVtbl->GetAnnotations(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetAnnotations(This,result) \
+    ( (This)->lpVtbl->GetAnnotations(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_SetParent(This,peer) \
     ( (This)->lpVtbl->SetParent(This,peer) )
@@ -24548,14 +25139,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_RaiseTextEditTextChangedEvent(This,automationTextEditChangeType,changedData) \
     ( (This)->lpVtbl->RaiseTextEditTextChangedEvent(This,automationTextEditChangeType,changedData) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetPositionInSet(This,returnValue) \
-    ( (This)->lpVtbl->GetPositionInSet(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetPositionInSet(This,result) \
+    ( (This)->lpVtbl->GetPositionInSet(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetSizeOfSet(This,returnValue) \
-    ( (This)->lpVtbl->GetSizeOfSet(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetSizeOfSet(This,result) \
+    ( (This)->lpVtbl->GetSizeOfSet(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetLevel(This,returnValue) \
-    ( (This)->lpVtbl->GetLevel(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_GetLevel(This,result) \
+    ( (This)->lpVtbl->GetLevel(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer3_RaiseStructureChangedEvent(This,structureChangeType,child) \
     ( (This)->lpVtbl->RaiseStructureChangedEvent(This,structureChangeType,child) )
@@ -24620,11 +25211,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4 * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedLandmarkType )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     END_INTERFACE
     
@@ -24654,11 +25245,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4_GetLandmarkType(This,returnValue) \
-    ( (This)->lpVtbl->GetLandmarkType(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4_GetLandmarkType(This,result) \
+    ( (This)->lpVtbl->GetLandmarkType(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4_GetLocalizedLandmarkType(This,returnValue) \
-    ( (This)->lpVtbl->GetLocalizedLandmarkType(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer4_GetLocalizedLandmarkType(This,result) \
+    ( (This)->lpVtbl->GetLocalizedLandmarkType(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -24720,15 +25311,15 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *IsPeripheral )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsDataValidForForm )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFullDescription )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     END_INTERFACE
     
@@ -24758,14 +25349,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_IsPeripheral(This,returnValue) \
-    ( (This)->lpVtbl->IsPeripheral(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_IsPeripheral(This,result) \
+    ( (This)->lpVtbl->IsPeripheral(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_IsDataValidForForm(This,returnValue) \
-    ( (This)->lpVtbl->IsDataValidForForm(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_IsDataValidForForm(This,result) \
+    ( (This)->lpVtbl->IsDataValidForForm(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_GetFullDescription(This,returnValue) \
-    ( (This)->lpVtbl->GetFullDescription(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer5_GetFullDescription(This,result) \
+    ( (This)->lpVtbl->GetFullDescription(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -24827,7 +25418,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetCulture )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer6 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     END_INTERFACE
     
@@ -24857,8 +25448,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer6
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer6_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer6_GetCulture(This,returnValue) \
-    ( (This)->lpVtbl->GetCulture(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer6_GetCulture(This,result) \
+    ( (This)->lpVtbl->GetCulture(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -25016,7 +25607,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetHeadingLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8 * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * result
         );
     END_INTERFACE
     
@@ -25046,8 +25637,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetHeadingLevel(This,returnValue) \
-    ( (This)->lpVtbl->GetHeadingLevel(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_GetHeadingLevel(This,result) \
+    ( (This)->lpVtbl->GetHeadingLevel(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -25056,6 +25647,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer8_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer9
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeer9[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeer9";
+/* [object, uuid("DF2E0265-1D74-57FA-8094-F81C2F626B8C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *IsDialog )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_IsDialog(This,result) \
+    ( (This)->lpVtbl->IsDialog(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer9_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -25224,13 +25908,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType type,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateWithPeerParameter )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType type,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * peer,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotation * * value
         );
     END_INTERFACE
     
@@ -25260,11 +25944,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotati
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory_CreateInstance(This,type,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,type,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory_CreateInstance(This,type,value) \
+    ( (This)->lpVtbl->CreateInstance(This,type,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory_CreateWithPeerParameter(This,type,peer,instance) \
-    ( (This)->lpVtbl->CreateWithPeerParameter(This,type,peer,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerAnnotationFactory_CreateWithPeerParameter(This,type,peer,value) \
+    ( (This)->lpVtbl->CreateWithPeerParameter(This,type,peer,value) )
 
 
 #endif /* COBJMACROS */
@@ -25426,9 +26110,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -25458,8 +26142,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerFactory
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -25522,99 +26206,99 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetPatternCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CPatternInterface patternInterface,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAcceleratorKeyCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAccessKeyCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAutomationControlTypeCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationControlType * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationControlType * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAutomationIdCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetBoundingRectangleCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetChildrenCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetClassNameCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetClickablePointCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CPoint * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetHelpTextCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetItemStatusCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetItemTypeCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLabeledByCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedControlTypeCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetNameCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetOrientationCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationOrientation * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationOrientation * result
         );
     HRESULT ( STDMETHODCALLTYPE *HasKeyboardFocusCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsContentElementCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsControlElementCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsEnabledCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsKeyboardFocusableCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsOffscreenCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsPasswordCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsRequiredForFormCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetFocusCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This
@@ -25622,11 +26306,11 @@ HRESULT ( STDMETHODCALLTYPE *GetPatternCore )(
     HRESULT ( STDMETHODCALLTYPE *GetPeerFromPointCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint point,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLiveSettingCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLiveSetting * result
         );
     END_INTERFACE
     
@@ -25656,86 +26340,86 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetPatternCore(This,patternInterface,returnValue) \
-    ( (This)->lpVtbl->GetPatternCore(This,patternInterface,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetPatternCore(This,patternInterface,result) \
+    ( (This)->lpVtbl->GetPatternCore(This,patternInterface,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAcceleratorKeyCore(This,returnValue) \
-    ( (This)->lpVtbl->GetAcceleratorKeyCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAcceleratorKeyCore(This,result) \
+    ( (This)->lpVtbl->GetAcceleratorKeyCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAccessKeyCore(This,returnValue) \
-    ( (This)->lpVtbl->GetAccessKeyCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAccessKeyCore(This,result) \
+    ( (This)->lpVtbl->GetAccessKeyCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAutomationControlTypeCore(This,returnValue) \
-    ( (This)->lpVtbl->GetAutomationControlTypeCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAutomationControlTypeCore(This,result) \
+    ( (This)->lpVtbl->GetAutomationControlTypeCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAutomationIdCore(This,returnValue) \
-    ( (This)->lpVtbl->GetAutomationIdCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetAutomationIdCore(This,result) \
+    ( (This)->lpVtbl->GetAutomationIdCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetBoundingRectangleCore(This,returnValue) \
-    ( (This)->lpVtbl->GetBoundingRectangleCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetBoundingRectangleCore(This,result) \
+    ( (This)->lpVtbl->GetBoundingRectangleCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetChildrenCore(This,returnValue) \
-    ( (This)->lpVtbl->GetChildrenCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetChildrenCore(This,result) \
+    ( (This)->lpVtbl->GetChildrenCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetClassNameCore(This,returnValue) \
-    ( (This)->lpVtbl->GetClassNameCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetClassNameCore(This,result) \
+    ( (This)->lpVtbl->GetClassNameCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetClickablePointCore(This,returnValue) \
-    ( (This)->lpVtbl->GetClickablePointCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetClickablePointCore(This,result) \
+    ( (This)->lpVtbl->GetClickablePointCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetHelpTextCore(This,returnValue) \
-    ( (This)->lpVtbl->GetHelpTextCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetHelpTextCore(This,result) \
+    ( (This)->lpVtbl->GetHelpTextCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetItemStatusCore(This,returnValue) \
-    ( (This)->lpVtbl->GetItemStatusCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetItemStatusCore(This,result) \
+    ( (This)->lpVtbl->GetItemStatusCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetItemTypeCore(This,returnValue) \
-    ( (This)->lpVtbl->GetItemTypeCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetItemTypeCore(This,result) \
+    ( (This)->lpVtbl->GetItemTypeCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLabeledByCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLabeledByCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLabeledByCore(This,result) \
+    ( (This)->lpVtbl->GetLabeledByCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLocalizedControlTypeCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLocalizedControlTypeCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLocalizedControlTypeCore(This,result) \
+    ( (This)->lpVtbl->GetLocalizedControlTypeCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetNameCore(This,returnValue) \
-    ( (This)->lpVtbl->GetNameCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetNameCore(This,result) \
+    ( (This)->lpVtbl->GetNameCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetOrientationCore(This,returnValue) \
-    ( (This)->lpVtbl->GetOrientationCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetOrientationCore(This,result) \
+    ( (This)->lpVtbl->GetOrientationCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_HasKeyboardFocusCore(This,returnValue) \
-    ( (This)->lpVtbl->HasKeyboardFocusCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_HasKeyboardFocusCore(This,result) \
+    ( (This)->lpVtbl->HasKeyboardFocusCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsContentElementCore(This,returnValue) \
-    ( (This)->lpVtbl->IsContentElementCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsContentElementCore(This,result) \
+    ( (This)->lpVtbl->IsContentElementCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsControlElementCore(This,returnValue) \
-    ( (This)->lpVtbl->IsControlElementCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsControlElementCore(This,result) \
+    ( (This)->lpVtbl->IsControlElementCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsEnabledCore(This,returnValue) \
-    ( (This)->lpVtbl->IsEnabledCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsEnabledCore(This,result) \
+    ( (This)->lpVtbl->IsEnabledCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsKeyboardFocusableCore(This,returnValue) \
-    ( (This)->lpVtbl->IsKeyboardFocusableCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsKeyboardFocusableCore(This,result) \
+    ( (This)->lpVtbl->IsKeyboardFocusableCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsOffscreenCore(This,returnValue) \
-    ( (This)->lpVtbl->IsOffscreenCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsOffscreenCore(This,result) \
+    ( (This)->lpVtbl->IsOffscreenCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsPasswordCore(This,returnValue) \
-    ( (This)->lpVtbl->IsPasswordCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsPasswordCore(This,result) \
+    ( (This)->lpVtbl->IsPasswordCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsRequiredForFormCore(This,returnValue) \
-    ( (This)->lpVtbl->IsRequiredForFormCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_IsRequiredForFormCore(This,result) \
+    ( (This)->lpVtbl->IsRequiredForFormCore(This,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_SetFocusCore(This) \
     ( (This)->lpVtbl->SetFocusCore(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetPeerFromPointCore(This,point,returnValue) \
-    ( (This)->lpVtbl->GetPeerFromPointCore(This,point,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetPeerFromPointCore(This,point,result) \
+    ( (This)->lpVtbl->GetPeerFromPointCore(This,point,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLiveSettingCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLiveSettingCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides_GetLiveSettingCore(This,result) \
+    ( (This)->lpVtbl->GetLiveSettingCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -25800,7 +26484,7 @@ HRESULT ( STDMETHODCALLTYPE *ShowContextMenuCore )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetControlledPeersCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides2 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     END_INTERFACE
     
@@ -25833,8 +26517,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides2_ShowContextMenuCore(This) \
     ( (This)->lpVtbl->ShowContextMenuCore(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides2_GetControlledPeersCore(This,returnValue) \
-    ( (This)->lpVtbl->GetControlledPeersCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides2_GetControlledPeersCore(This,result) \
+    ( (This)->lpVtbl->GetControlledPeersCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -25897,32 +26581,32 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *NavigateCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationNavigationDirection direction,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetElementFromPointCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint pointInWindowCoordinates,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFocusedElementCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAnnotationsCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeerAnnotation * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetPositionInSetCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetSizeOfSetCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLevelCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     END_INTERFACE
     
@@ -25952,26 +26636,26 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_NavigateCore(This,direction,returnValue) \
-    ( (This)->lpVtbl->NavigateCore(This,direction,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_NavigateCore(This,direction,result) \
+    ( (This)->lpVtbl->NavigateCore(This,direction,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetElementFromPointCore(This,pointInWindowCoordinates,returnValue) \
-    ( (This)->lpVtbl->GetElementFromPointCore(This,pointInWindowCoordinates,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetElementFromPointCore(This,pointInWindowCoordinates,result) \
+    ( (This)->lpVtbl->GetElementFromPointCore(This,pointInWindowCoordinates,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetFocusedElementCore(This,returnValue) \
-    ( (This)->lpVtbl->GetFocusedElementCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetFocusedElementCore(This,result) \
+    ( (This)->lpVtbl->GetFocusedElementCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetAnnotationsCore(This,returnValue) \
-    ( (This)->lpVtbl->GetAnnotationsCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetAnnotationsCore(This,result) \
+    ( (This)->lpVtbl->GetAnnotationsCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetPositionInSetCore(This,returnValue) \
-    ( (This)->lpVtbl->GetPositionInSetCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetPositionInSetCore(This,result) \
+    ( (This)->lpVtbl->GetPositionInSetCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetSizeOfSetCore(This,returnValue) \
-    ( (This)->lpVtbl->GetSizeOfSetCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetSizeOfSetCore(This,result) \
+    ( (This)->lpVtbl->GetSizeOfSetCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetLevelCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLevelCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides3_GetLevelCore(This,result) \
+    ( (This)->lpVtbl->GetLevelCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26033,11 +26717,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetLandmarkTypeCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4 * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationLandmarkType * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetLocalizedLandmarkTypeCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     END_INTERFACE
     
@@ -26067,11 +26751,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4_GetLandmarkTypeCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLandmarkTypeCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4_GetLandmarkTypeCore(This,result) \
+    ( (This)->lpVtbl->GetLandmarkTypeCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4_GetLocalizedLandmarkTypeCore(This,returnValue) \
-    ( (This)->lpVtbl->GetLocalizedLandmarkTypeCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides4_GetLocalizedLandmarkTypeCore(This,result) \
+    ( (This)->lpVtbl->GetLocalizedLandmarkTypeCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26133,27 +26817,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *IsPeripheralCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *IsDataValidForFormCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFullDescriptionCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetDescribedByCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFlowsToCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetFlowsFromCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5 * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CUI__CXaml__CAutomation__CPeers__CAutomationPeer * * result
         );
     END_INTERFACE
     
@@ -26183,23 +26867,23 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_IsPeripheralCore(This,returnValue) \
-    ( (This)->lpVtbl->IsPeripheralCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_IsPeripheralCore(This,result) \
+    ( (This)->lpVtbl->IsPeripheralCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_IsDataValidForFormCore(This,returnValue) \
-    ( (This)->lpVtbl->IsDataValidForFormCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_IsDataValidForFormCore(This,result) \
+    ( (This)->lpVtbl->IsDataValidForFormCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFullDescriptionCore(This,returnValue) \
-    ( (This)->lpVtbl->GetFullDescriptionCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFullDescriptionCore(This,result) \
+    ( (This)->lpVtbl->GetFullDescriptionCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetDescribedByCore(This,returnValue) \
-    ( (This)->lpVtbl->GetDescribedByCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetDescribedByCore(This,result) \
+    ( (This)->lpVtbl->GetDescribedByCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFlowsToCore(This,returnValue) \
-    ( (This)->lpVtbl->GetFlowsToCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFlowsToCore(This,result) \
+    ( (This)->lpVtbl->GetFlowsToCore(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFlowsFromCore(This,returnValue) \
-    ( (This)->lpVtbl->GetFlowsFromCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides5_GetFlowsFromCore(This,result) \
+    ( (This)->lpVtbl->GetFlowsFromCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26261,7 +26945,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetCultureCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6 * This,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     END_INTERFACE
     
@@ -26291,8 +26975,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_GetCultureCore(This,returnValue) \
-    ( (This)->lpVtbl->GetCultureCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides6_GetCultureCore(This,result) \
+    ( (This)->lpVtbl->GetCultureCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26354,7 +27038,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetHeadingLevelCore )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8 * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationHeadingLevel * result
         );
     END_INTERFACE
     
@@ -26384,8 +27068,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetHeadingLevelCore(This,returnValue) \
-    ( (This)->lpVtbl->GetHeadingLevelCore(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_GetHeadingLevelCore(This,result) \
+    ( (This)->lpVtbl->GetHeadingLevelCore(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26394,6 +27078,99 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverride
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides8_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.AutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IAutomationPeerOverrides9[] = L"Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9";
+/* [object, uuid("F3709E8B-091A-5DB5-B896-FF78F01990C9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *IsDialogCore )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9Vtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_IsDialogCore(This,result) \
+    ( (This)->lpVtbl->IsDialogCore(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerOverrides9_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -26448,12 +27225,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *PeerFromProvider )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * provider,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *ProviderFromPeer )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * peer,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * result
         );
     END_INTERFACE
     
@@ -26483,11 +27260,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtecte
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_PeerFromProvider(This,provider,returnValue) \
-    ( (This)->lpVtbl->PeerFromProvider(This,provider,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_PeerFromProvider(This,provider,result) \
+    ( (This)->lpVtbl->PeerFromProvider(This,provider,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_ProviderFromPeer(This,peer,returnValue) \
-    ( (This)->lpVtbl->ProviderFromPeer(This,peer,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerProtected_ProviderFromPeer(This,peer,result) \
+    ( (This)->lpVtbl->ProviderFromPeer(This,peer,result) )
 
 
 #endif /* COBJMACROS */
@@ -26550,7 +27327,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *ListenerExists )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationEvents eventId,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -26580,8 +27357,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics_ListenerExists(This,eventId,returnValue) \
-    ( (This)->lpVtbl->ListenerExists(This,eventId,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics_ListenerExists(This,eventId,result) \
+    ( (This)->lpVtbl->ListenerExists(This,eventId,result) )
 
 
 #endif /* COBJMACROS */
@@ -26643,7 +27420,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GenerateRawElementProviderRuntimeId )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics3 * This,
-        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId * returnValue
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CRawElementProviderRuntimeId * result
         );
     END_INTERFACE
     
@@ -26673,8 +27450,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics3
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics3_GenerateRawElementProviderRuntimeId(This,returnValue) \
-    ( (This)->lpVtbl->GenerateRawElementProviderRuntimeId(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeerStatics3_GenerateRawElementProviderRuntimeId(This,result) \
+    ( (This)->lpVtbl->GenerateRawElementProviderRuntimeId(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -26823,9 +27600,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -26855,8 +27632,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeerFa
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27005,9 +27782,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIButtonBase * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27037,8 +27814,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPe
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIButtonBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27187,9 +27964,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CICalendarDatePicker * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27219,8 +27996,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICalendarDatePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27369,9 +28146,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CICaptureElement * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27401,8 +28178,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomati
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICaptureElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27551,9 +28328,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CICheckBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27583,8 +28360,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CICheckBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27733,9 +28510,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorPickerSlider * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27765,8 +28542,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutom
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorPickerSliderAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -27915,9 +28692,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIColorSpectrum * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -27947,8 +28724,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomatio
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIColorSpectrumAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28097,9 +28874,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIComboBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -28129,8 +28906,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28279,9 +29056,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIComboBoxItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -28311,8 +29088,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28462,9 +29239,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -28494,8 +29271,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIComboBoxItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28644,9 +29421,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIDatePicker * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -28676,8 +29453,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPe
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIDatePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -28912,9 +29689,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIFlipView * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -28944,8 +29721,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29094,9 +29871,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIFlipViewItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -29126,8 +29903,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29277,9 +30054,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -29309,8 +30086,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlipViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29459,9 +30236,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIFlyoutPresenter * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -29491,8 +30268,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomat
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFlyoutPresenterAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29648,9 +30425,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIFrameworkElement * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -29680,8 +30457,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -29744,12 +30521,12 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *FromElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     HRESULT ( STDMETHODCALLTYPE *CreatePeerForElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIAutomationPeer * * result
         );
     END_INTERFACE
     
@@ -29779,11 +30556,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics_FromElement(This,element,returnValue) \
-    ( (This)->lpVtbl->FromElement(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics_FromElement(This,element,result) \
+    ( (This)->lpVtbl->FromElement(This,element,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics_CreatePeerForElement(This,element,returnValue) \
-    ( (This)->lpVtbl->CreatePeerForElement(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIFrameworkElementAutomationPeerStatics_CreatePeerForElement(This,element,result) \
+    ( (This)->lpVtbl->CreatePeerForElement(This,element,result) )
 
 
 #endif /* COBJMACROS */
@@ -29932,9 +30709,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIGridView * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -29964,8 +30741,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30114,9 +30891,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIGridViewHeaderItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -30146,8 +30923,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30296,9 +31073,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIGridViewItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -30328,8 +31105,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30479,9 +31256,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -30511,8 +31288,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGridViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30661,9 +31438,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIGroupItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -30693,8 +31470,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIGroupItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -30843,9 +31620,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIHub * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -30875,8 +31652,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeerFacto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31025,9 +31802,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIHubSection * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -31057,8 +31834,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPe
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHubSectionAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31207,9 +31984,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIHyperlinkButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -31239,8 +32016,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomat
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIHyperlinkButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31389,9 +32166,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIImage * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -31421,8 +32198,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeerFac
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIImageAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31672,9 +32449,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -31704,8 +32481,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeerFact
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -31854,7 +32631,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateItemAutomationPeer )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer2 * This,
         /* [in] */__RPC__in_opt IInspectable * item,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * result
         );
     END_INTERFACE
     
@@ -31884,8 +32661,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer2_CreateItemAutomationPeer(This,item,returnValue) \
-    ( (This)->lpVtbl->CreateItemAutomationPeer(This,item,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer2_CreateItemAutomationPeer(This,item,result) \
+    ( (This)->lpVtbl->CreateItemAutomationPeer(This,item,result) )
 
 
 #endif /* COBJMACROS */
@@ -31948,9 +32725,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIItemsControl * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -31980,8 +32757,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -32044,7 +32821,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *OnCreateItemAutomationPeer )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerOverrides2 * This,
         /* [in] */__RPC__in_opt IInspectable * item,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemAutomationPeer * * result
         );
     END_INTERFACE
     
@@ -32074,8 +32851,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerOverrides2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerOverrides2_OnCreateItemAutomationPeer(This,item,returnValue) \
-    ( (This)->lpVtbl->OnCreateItemAutomationPeer(This,item,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIItemsControlAutomationPeerOverrides2_OnCreateItemAutomationPeer(This,item,result) \
+    ( (This)->lpVtbl->OnCreateItemAutomationPeer(This,item,result) )
 
 
 #endif /* COBJMACROS */
@@ -32224,9 +33001,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -32256,8 +33033,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeerF
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -32406,9 +33183,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListBoxItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -32438,8 +33215,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationP
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -32589,9 +33366,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -32621,8 +33398,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomat
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListBoxItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -32857,9 +33634,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListView * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -32889,8 +33666,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33039,9 +33816,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListViewBase * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -33071,8 +33848,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33221,9 +33998,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListViewBaseHeaderItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -33253,8 +34030,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItem
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33403,9 +34180,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListViewHeaderItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -33435,8 +34212,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewHeaderItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33585,9 +34362,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIListViewItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -33617,8 +34394,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -33768,9 +34545,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewBaseAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -33800,8 +34577,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutoma
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIListViewItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -34294,9 +35071,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaElement * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -34326,8 +35103,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -34476,9 +35253,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaPlayerElement * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -34508,8 +35285,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaPlayerElementAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -34658,9 +35435,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMediaTransportControls * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -34690,8 +35467,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControls
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -34700,6 +35477,370 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControls
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMediaTransportControlsAutomationPeerFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer";
+/* [object, uuid("4B6ADCF1-F274-5592-85A8-7B099E99B320"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeerFactory";
+/* [object, uuid("2A094871-4A9B-5A0B-9FDA-7BC3AE957C53"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBar * owner,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeer * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_CreateInstance(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,owner,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer";
+/* [object, uuid("0FCE49B4-CFF5-5C4B-98EE-E75FDDDF799A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeerFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Automation_Peers_IMenuBarItemAutomationPeerFactory[] = L"Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeerFactory";
+/* [object, uuid("C9C77746-130F-5B19-83A6-61DB584613AA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuBarItem * owner,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeer * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_CreateInstance(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,owner,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuBarItemAutomationPeerFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -34840,9 +35981,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -34872,8 +36013,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomati
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35022,9 +36163,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIMenuFlyoutPresenter * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -35054,8 +36195,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAut
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIMenuFlyoutPresenterAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35204,9 +36345,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CINavigationViewItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -35236,8 +36377,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAuto
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CINavigationViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35386,9 +36527,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIPasswordBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -35418,8 +36559,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationP
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPasswordBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35568,9 +36709,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIPersonPicture * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -35600,8 +36741,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomatio
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPersonPictureAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -35836,7 +36977,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIPivot * owner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeer * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -35866,8 +37007,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeerFac
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeerFactory_CreateInstanceWithOwner(This,owner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeerFactory_CreateInstanceWithOwner(This,owner,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,value) )
 
 
 #endif /* COBJMACROS */
@@ -36016,7 +37157,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIPivotItem * owner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeer * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36046,8 +37187,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,value) )
 
 
 #endif /* COBJMACROS */
@@ -36197,7 +37338,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotAutomationPeer * parent,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeer * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36227,8 +37368,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomatio
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIPivotItemDataAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,value) )
 
 
 #endif /* COBJMACROS */
@@ -36377,9 +37518,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIProgressBar * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36409,8 +37550,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationP
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -36559,9 +37700,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIProgressRing * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36591,8 +37732,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIProgressRingAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -36741,9 +37882,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRadioButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36773,8 +37914,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationP
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRadioButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -36923,9 +38064,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRangeBase * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -36955,8 +38096,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRangeBaseAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -37105,9 +38246,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRatingControl * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -37137,8 +38278,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomatio
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRatingControlAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -37287,9 +38428,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIRepeatButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -37319,8 +38460,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRepeatButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -37469,9 +38610,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRichEditBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -37501,8 +38642,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationP
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichEditBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -37651,9 +38792,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRichTextBlock * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -37683,8 +38824,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomatio
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -37833,9 +38974,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIRichTextBlockOverflow * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -37865,8 +39006,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowA
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIRichTextBlockOverflowAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38015,9 +39156,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIScrollBar * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38047,8 +39188,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollBarAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38197,9 +39338,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIScrollViewer * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38229,8 +39370,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIScrollViewerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38379,9 +39520,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISearchBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38411,8 +39552,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISearchBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38561,9 +39702,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CISelector * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38593,8 +39734,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeer
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38744,9 +39885,9 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithParentAndItem )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt IInspectable * item,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorAutomationPeer * parent,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38776,8 +39917,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISelectorItemAutomationPeerFactory_CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithParentAndItem(This,item,parent,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -38926,9 +40067,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISemanticZoom * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -38958,8 +40099,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISemanticZoomAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -39108,9 +40249,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISettingsFlyout * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -39140,8 +40281,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomati
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISettingsFlyoutAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -39290,9 +40431,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CISlider * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -39322,8 +40463,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeerFa
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CISliderAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -39472,9 +40613,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITextBlock * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -39504,8 +40645,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPee
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBlockAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -39654,9 +40795,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITextBox * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -39686,8 +40827,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeerF
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITextBoxAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -39836,9 +40977,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIThumb * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -39868,8 +41009,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeerFac
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIThumbAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -40018,9 +41159,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITimePicker * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -40050,8 +41191,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPe
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITimePickerAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -40286,9 +41427,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CPrimitives_CIToggleButton * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -40318,8 +41459,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleButtonAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -40468,9 +41609,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIToggleMenuFlyoutItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -40500,8 +41641,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAu
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleMenuFlyoutItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -40650,9 +41791,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CIToggleSwitch * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -40682,8 +41823,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CIToggleSwitchAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -40832,9 +41973,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewItem * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -40864,8 +42005,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewItemAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -41014,9 +42155,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithOwner )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CControls_CITreeViewList * owner,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeer * * value
         );
     END_INTERFACE
     
@@ -41046,8 +42187,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomation
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_CreateInstanceWithOwner(This,owner,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CITreeViewListAutomationPeerFactory_CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithOwner(This,owner,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -41094,6 +42235,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAppBarButtonAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -41174,21 +42316,23 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer2
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer3
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer4
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer5
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer6
- *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer7
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeer9
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
  *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides8
+ *    Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides9
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -41415,8 +42559,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Provider.IValueProvider
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Provider.IWindowProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -41931,9 +43075,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2
  *    Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2
+ *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -42201,10 +43345,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.ILoopingSelectorAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
- *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
- *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *    Windows.UI.Xaml.Automation.Provider.ISelectionProvider
+ *    Windows.UI.Xaml.Automation.Provider.IItemContainerProvider
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -42372,6 +43516,56 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.IMenuBarAutomationPeer ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_MenuBarAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.MenuBarAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Automation.Peers.IMenuBarItemAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
+ *    Windows.UI.Xaml.Automation.Provider.IInvokeProvider
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Automation_Peers_MenuBarItemAutomationPeer[] = L"Windows.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -42527,8 +43721,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeer ** Default Interface **
- *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *    Windows.UI.Xaml.Automation.Provider.ISelectionProvider
+ *    Windows.UI.Xaml.Automation.Provider.IScrollProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -43219,8 +44413,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * Class implements the following interfaces:
- *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *    Windows.UI.Xaml.Automation.Peers.ITreeViewItemAutomationPeer ** Default Interface **
+ *    Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

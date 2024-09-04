@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -22,18 +22,16 @@ template <typename D> void consume_Windows_Perception_Automation_Core_ICorePerce
 template <typename D>
 struct produce<D, Windows::Perception::Automation::Core::ICorePerceptionAutomationStatics> : produce_base<D, Windows::Perception::Automation::Core::ICorePerceptionAutomationStatics>
 {
-    HRESULT __stdcall SetActivationFactoryProvider(void* provider) noexcept final
+    int32_t WINRT_CALL SetActivationFactoryProvider(void* provider) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetActivationFactoryProvider, WINRT_WRAP(void), Windows::Foundation::IGetActivationFactory const&);
             this->shim().SetActivationFactoryProvider(*reinterpret_cast<Windows::Foundation::IGetActivationFactory const*>(&provider));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -43,7 +41,7 @@ WINRT_EXPORT namespace winrt::Windows::Perception::Automation::Core {
 
 inline void CorePerceptionAutomation::SetActivationFactoryProvider(Windows::Foundation::IGetActivationFactory const& provider)
 {
-    get_activation_factory<CorePerceptionAutomation, Windows::Perception::Automation::Core::ICorePerceptionAutomationStatics>().SetActivationFactoryProvider(provider);
+    impl::call_factory<CorePerceptionAutomation, Windows::Perception::Automation::Core::ICorePerceptionAutomationStatics>([&](auto&& f) { return f.SetActivationFactoryProvider(provider); });
 }
 
 }
@@ -54,5 +52,3 @@ template<> struct hash<winrt::Windows::Perception::Automation::Core::ICorePercep
 template<> struct hash<winrt::Windows::Perception::Automation::Core::CorePerceptionAutomation> : winrt::impl::hash_base<winrt::Windows::Perception::Automation::Core::CorePerceptionAutomation> {};
 
 }
-
-WINRT_WARNING_POP

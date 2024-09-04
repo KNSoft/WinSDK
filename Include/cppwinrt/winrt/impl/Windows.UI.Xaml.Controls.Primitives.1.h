@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.UI.Xaml.Interop.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Media.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Media.Animation.0.h"
+#include "winrt/impl/Windows.UI.Composition.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Data.0.h"
 #include "winrt/impl/Windows.UI.Xaml.Controls.Primitives.0.h"
 
@@ -142,6 +143,27 @@ struct WINRT_EBO IComboBoxTemplateSettings2 :
     IComboBoxTemplateSettings2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICommandBarFlyoutCommandBar :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICommandBarFlyoutCommandBar>
+{
+    ICommandBarFlyoutCommandBar(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICommandBarFlyoutCommandBarFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICommandBarFlyoutCommandBarFactory>
+{
+    ICommandBarFlyoutCommandBarFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICommandBarFlyoutCommandBarTemplateSettings :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICommandBarFlyoutCommandBarTemplateSettings>
+{
+    ICommandBarFlyoutCommandBarTemplateSettings(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICommandBarTemplateSettings :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICommandBarTemplateSettings>
@@ -233,6 +255,13 @@ struct WINRT_EBO IFlyoutBase4 :
     IFlyoutBase4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IFlyoutBase5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFlyoutBase5>
+{
+    IFlyoutBase5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IFlyoutBaseClosingEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFlyoutBaseClosingEventArgs>
@@ -280,6 +309,27 @@ struct WINRT_EBO IFlyoutBaseStatics3 :
     impl::consume_t<IFlyoutBaseStatics3>
 {
     IFlyoutBaseStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFlyoutBaseStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFlyoutBaseStatics5>
+{
+    IFlyoutBaseStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFlyoutShowOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFlyoutShowOptions>
+{
+    IFlyoutShowOptions(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFlyoutShowOptionsFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFlyoutShowOptionsFactory>
+{
+    IFlyoutShowOptionsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IGeneratorPositionHelper :
@@ -476,6 +526,27 @@ struct WINRT_EBO IMenuFlyoutPresenterTemplateSettings :
     impl::consume_t<IMenuFlyoutPresenterTemplateSettings>
 {
     IMenuFlyoutPresenterTemplateSettings(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO INavigationViewItemPresenter :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<INavigationViewItemPresenter>
+{
+    INavigationViewItemPresenter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO INavigationViewItemPresenterFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<INavigationViewItemPresenterFactory>
+{
+    INavigationViewItemPresenterFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO INavigationViewItemPresenterStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<INavigationViewItemPresenterStatics>
+{
+    INavigationViewItemPresenterStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IOrientedVirtualizingPanel :

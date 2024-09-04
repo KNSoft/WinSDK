@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -39,11 +39,30 @@ template <> struct name<Windows::System::Diagnostics::Telemetry::PlatformTelemet
 template <> struct name<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult>{ static constexpr auto & value{ L"Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult" }; };
 template <> struct name<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings>{ static constexpr auto & value{ L"Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings" }; };
 template <> struct name<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus>{ static constexpr auto & value{ L"Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus" }; };
-template <> struct guid<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>{ static constexpr GUID value{ 0x9BF3F25D,0xD5C3,0x4EEA,{ 0x8D,0xBE,0x9C,0x8D,0xBB,0x0D,0x9D,0x8F } }; };
-template <> struct guid<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult>{ static constexpr GUID value{ 0x4D8518AB,0x2292,0x49BD,{ 0xA1,0x5A,0x3D,0x71,0xD2,0x14,0x51,0x12 } }; };
-template <> struct guid<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings>{ static constexpr GUID value{ 0x819A8582,0xCA19,0x415E,{ 0xBB,0x79,0x9C,0x22,0x4B,0xFA,0x3A,0x73 } }; };
+template <> struct guid_storage<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>{ static constexpr guid value{ 0x9BF3F25D,0xD5C3,0x4EEA,{ 0x8D,0xBE,0x9C,0x8D,0xBB,0x0D,0x9D,0x8F } }; };
+template <> struct guid_storage<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult>{ static constexpr guid value{ 0x4D8518AB,0x2292,0x49BD,{ 0xA1,0x5A,0x3D,0x71,0xD2,0x14,0x51,0x12 } }; };
+template <> struct guid_storage<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings>{ static constexpr guid value{ 0x819A8582,0xCA19,0x415E,{ 0xBB,0x79,0x9C,0x22,0x4B,0xFA,0x3A,0x73 } }; };
 template <> struct default_interface<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationResult>{ using type = Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult; };
 template <> struct default_interface<Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationSettings>{ using type = Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings; };
+
+template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Register(void* id, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterWithSettings(void* id, void* settings, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StorageSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StorageSize(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UploadQuotaSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UploadQuotaSize(uint32_t value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_System_Diagnostics_Telemetry_IPlatformTelemetryClientStatics
@@ -69,24 +88,5 @@ struct consume_Windows_System_Diagnostics_Telemetry_IPlatformTelemetryRegistrati
     void UploadQuotaSize(uint32_t value) const;
 };
 template <> struct consume<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings> { template <typename D> using type = consume_Windows_System_Diagnostics_Telemetry_IPlatformTelemetryRegistrationSettings<D>; };
-
-template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryClientStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Register(HSTRING id, void** result) noexcept = 0;
-    virtual HRESULT __stdcall RegisterWithSettings(HSTRING id, void* settings, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::System::Diagnostics::Telemetry::PlatformTelemetryRegistrationStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::System::Diagnostics::Telemetry::IPlatformTelemetryRegistrationSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StorageSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StorageSize(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_UploadQuotaSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UploadQuotaSize(uint32_t value) noexcept = 0;
-};};
 
 }

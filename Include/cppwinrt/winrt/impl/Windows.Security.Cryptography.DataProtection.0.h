@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -29,9 +29,22 @@ template <> struct category<Windows::Security::Cryptography::DataProtection::Dat
 template <> struct name<Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>{ static constexpr auto & value{ L"Windows.Security.Cryptography.DataProtection.IDataProtectionProvider" }; };
 template <> struct name<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>{ static constexpr auto & value{ L"Windows.Security.Cryptography.DataProtection.IDataProtectionProviderFactory" }; };
 template <> struct name<Windows::Security::Cryptography::DataProtection::DataProtectionProvider>{ static constexpr auto & value{ L"Windows.Security.Cryptography.DataProtection.DataProtectionProvider" }; };
-template <> struct guid<Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>{ static constexpr GUID value{ 0x09639948,0xED22,0x4270,{ 0xBD,0x1C,0x6D,0x72,0xC0,0x0F,0x87,0x87 } }; };
-template <> struct guid<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>{ static constexpr GUID value{ 0xADF33DAC,0x4932,0x4CDF,{ 0xAC,0x41,0x72,0x14,0x33,0x35,0x14,0xCA } }; };
+template <> struct guid_storage<Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>{ static constexpr guid value{ 0x09639948,0xED22,0x4270,{ 0xBD,0x1C,0x6D,0x72,0xC0,0x0F,0x87,0x87 } }; };
+template <> struct guid_storage<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>{ static constexpr guid value{ 0xADF33DAC,0x4932,0x4CDF,{ 0xAC,0x41,0x72,0x14,0x33,0x35,0x14,0xCA } }; };
 template <> struct default_interface<Windows::Security::Cryptography::DataProtection::DataProtectionProvider>{ using type = Windows::Security::Cryptography::DataProtection::IDataProtectionProvider; };
+
+template <> struct abi<Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProtectAsync(void* data, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL UnprotectAsync(void* data, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ProtectStreamAsync(void* src, void* dest, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL UnprotectStreamAsync(void* src, void* dest, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateOverloadExplicit(void* protectionDescriptor, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Cryptography_DataProtection_IDataProtectionProvider
@@ -49,18 +62,5 @@ struct consume_Windows_Security_Cryptography_DataProtection_IDataProtectionProvi
     Windows::Security::Cryptography::DataProtection::DataProtectionProvider CreateOverloadExplicit(param::hstring const& protectionDescriptor) const;
 };
 template <> struct consume<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory> { template <typename D> using type = consume_Windows_Security_Cryptography_DataProtection_IDataProtectionProviderFactory<D>; };
-
-template <> struct abi<Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProtectAsync(void* data, void** value) noexcept = 0;
-    virtual HRESULT __stdcall UnprotectAsync(void* data, void** value) noexcept = 0;
-    virtual HRESULT __stdcall ProtectStreamAsync(void* src, void* dest, void** value) noexcept = 0;
-    virtual HRESULT __stdcall UnprotectStreamAsync(void* src, void* dest, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateOverloadExplicit(HSTRING protectionDescriptor, void** value) noexcept = 0;
-};};
 
 }

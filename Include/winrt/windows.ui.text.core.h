@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.text.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -387,6 +399,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest ABI::Windows::UI::Text::Core::ICoreTextLayoutRequest
 
 #endif // ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                namespace Core {
+                    interface ICoreTextLayoutRequest2;
+                } /* Windows */
+            } /* UI */
+        } /* Text */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 ABI::Windows::UI::Text::Core::ICoreTextLayoutRequest2
+
+#endif // ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequestedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequestedEventArgs_FWD_DEFINED__
@@ -1388,6 +1416,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -2242,6 +2271,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest;
 
 /*
  *
+ * Interface Windows.UI.Text.Core.ICoreTextLayoutRequest2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.Core.CoreTextLayoutRequest
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_Core_ICoreTextLayoutRequest2[] = L"Windows.UI.Text.Core.ICoreTextLayoutRequest2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Text {
+                namespace Core {
+                    /* [object, uuid("676DE624-CD3D-4BCD-BF01-7F7110954511"), exclusiveto, contract] */
+                    MIDL_INTERFACE("676DE624-CD3D-4BCD-BF01-7F7110954511")
+                    ICoreTextLayoutRequest2 : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LayoutBoundsVisualPixels(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Text::Core::ICoreTextLayoutBounds * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ICoreTextLayoutRequest2=_uuidof(ICoreTextLayoutRequest2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Text */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -2876,6 +2948,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Text.Core.ICoreTextLayoutRequest ** Default Interface **
+ *    Windows.UI.Text.Core.ICoreTextLayoutRequest2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -3141,6 +3214,12 @@ typedef interface __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutBounds __x_AB
 typedef interface __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest;
 
 #endif // ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2;
+
+#endif // ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequestedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequestedEventArgs_FWD_DEFINED__
@@ -4173,6 +4252,7 @@ typedef enum __x_ABI_CWindows_CUI_CText_CCore_CCoreTextTextUpdatingResult __x_AB
 
 
 typedef struct __x_ABI_CWindows_CUI_CText_CCore_CCoreTextRange __x_ABI_CWindows_CUI_CText_CCore_CCoreTextRange;
+
 
 
 
@@ -5540,6 +5620,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest;
 
 /*
  *
+ * Interface Windows.UI.Text.Core.ICoreTextLayoutRequest2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Text.Core.CoreTextLayoutRequest
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Text_Core_ICoreTextLayoutRequest2[] = L"Windows.UI.Text.Core.ICoreTextLayoutRequest2";
+/* [object, uuid("676DE624-CD3D-4BCD-BF01-7F7110954511"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LayoutBoundsVisualPixels )(
+        __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutBounds * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2Vtbl;
+
+interface __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_get_LayoutBoundsVisualPixels(This,value) \
+    ( (This)->lpVtbl->get_LayoutBoundsVisualPixels(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CText_CCore_CICoreTextLayoutRequest2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6758,6 +6931,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Text.Core.ICoreTextLayoutRequest ** Default Interface **
+ *    Windows.UI.Text.Core.ICoreTextLayoutRequest2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

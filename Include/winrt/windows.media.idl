@@ -284,6 +284,10 @@ namespace Windows
 
             interface Windows.Foundation.IAsyncOperation<Windows.Media.VideoFrame*>;
 
+            interface Windows.Foundation.IReference<Windows.Media.MediaPlaybackAutoRepeatMode>;
+
+            interface Windows.Foundation.IReference<Windows.Media.MediaPlaybackType>;
+
             interface Windows.Foundation.TypedEventHandler<Windows.Media.MediaTimelineController*, IInspectable*>;
 
             interface Windows.Foundation.TypedEventHandler<Windows.Media.MediaTimelineController*, Windows.Media.MediaTimelineControllerFailedEventArgs*>;

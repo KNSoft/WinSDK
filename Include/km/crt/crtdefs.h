@@ -2077,13 +2077,43 @@ typedef struct threadlocaleinfostruct {
 
 #if !defined(__midl) && !defined(MIDL_PASS) 
 
-//
-// Define Control Flow Guard instrumentation and support functions.
-//
+/*
+   Define Control Flow Guard instrumentation and support functions.
+*/
+
+/* 
+   _GUARD_CHECK_ICALL: performs an explicit CFG check on a function pointer.
+                       if the check fails, the caller is forced to fastfail.
+
+   ARM64 needs a special thunk due to a custom calling convention, to transfer
+   the fptr argument from the ABI-standard x0 to _guard_check_icall-specific
+   input register.
+
+   On AMD64, _guard_check_icall happens to take the fptr argument in rcx, which
+   is congruent with the AMD64 standard ABI, and thus no thunk is needed.
+
+ */
+#ifdef _CONTROL_FLOW_GUARD
+#if _CONTROL_FLOW_GUARD
 
 #if defined(_ARM64_)
-#define _guard_check_icall __guard_check_icall_thunk
+void __fastcall
+__guard_check_icall_thunk (
+    _In_ uintptr_t Target
+    );
+
+#define _GUARD_CHECK_ICALL(FPTR) __guard_check_icall_thunk((uintptr_t)(FPTR))
+#else
+#define _GUARD_CHECK_ICALL(FPTR) _guard_check_icall((uintptr_t)(FPTR))
 #endif
+
+#else // _CONTROL_FLOW_GUARD
+#define _GUARD_CHECK_ICALL(FPTR) (FPTR)
+#endif // _CONTROL_FLOW_GUARD
+#else // defined(_CONTROL_FLOW_GUARD)
+#define _GUARD_CHECK_ICALL(FPTR) (FPTR)
+#endif // defined(_CONTROL_FLOW_GUARD)
+
 
 void
 #if !defined(_M_CEE)

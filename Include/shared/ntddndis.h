@@ -25,8 +25,9 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
-        681         Windows 10  RS4 release
-        680         Windows 10  RS3 Release
+        682         Windows 10, RS5 release
+        681         Windows 10, version 1803
+        680         Windows 10, version 1709
         670         Windows 10, version 1703
         660         Windows 10, version 1607 / Windows Server 2016
         651         Windows 10, version 1511
@@ -83,12 +84,25 @@ extern "C" {
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
 //
+// Something to identify new (RS5 and up) applications.
+// User-mode only. For drivers, NDIS_SUPPORT_NDIS682 is already
+// defined in ndismain.w.
+//
+#if !defined(NDIS_SUPPORT_NDIS682)
+#if  (defined (UM_NDIS682))
+#define NDIS_SUPPORT_NDIS682      1
+#else
+#define NDIS_SUPPORT_NDIS682      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS682)
+
+//
 // Something to identify new (RS4 and up) applications.
 // User-mode only. For drivers, NDIS_SUPPORT_NDIS681 is already
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS681)
-#if  (defined (UM_NDIS681))
+#if  (defined (UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS681      1
 #else
 #define NDIS_SUPPORT_NDIS681      0
@@ -101,7 +115,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS680)
-#if  (defined (UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS680      1
 #else
 #define NDIS_SUPPORT_NDIS680      0
@@ -114,7 +128,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS670)
-#if  (defined (UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS670      1
 #else
 #define NDIS_SUPPORT_NDIS670      0
@@ -127,7 +141,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS660)
-#if  (defined (UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS660      1
 #else
 #define NDIS_SUPPORT_NDIS660      0
@@ -140,7 +154,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS651)
-#if  (defined (UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS651      1
 #else
 #define NDIS_SUPPORT_NDIS651      0
@@ -153,7 +167,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS650)
-#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS650      1
 #else
 #define NDIS_SUPPORT_NDIS650      0
@@ -166,7 +180,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS640)
-#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS640      1
 #else
 #define NDIS_SUPPORT_NDIS640      0
@@ -179,7 +193,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS630)
-#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS630      1
 #else
 #define NDIS_SUPPORT_NDIS630      0
@@ -192,7 +206,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS620)
-#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS620      1
 #else
 #define NDIS_SUPPORT_NDIS620      0
@@ -205,7 +219,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS61)
-#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS61      1
 #else
 #define NDIS_SUPPORT_NDIS61      0
@@ -214,7 +228,7 @@ extern "C" {
 
 
 #if !defined(NDIS_SUPPORT_NDIS6)
-#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681))
+#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680) || defined(UM_NDIS681) || defined(UM_NDIS682))
 #define NDIS_SUPPORT_NDIS6       1
 #else
 #define NDIS_SUPPORT_NDIS6       0
@@ -251,8 +265,8 @@ extern "C" {
 #define IOCTL_NDIS_RESERVED2            _NDIS_CONTROL_CODE(0xA, METHOD_BUFFERED)
 #define IOCTL_NDIS_RESERVED3            _NDIS_CONTROL_CODE(0xB, METHOD_BUFFERED)
 #define IOCTL_NDIS_RESERVED4            _NDIS_CONTROL_CODE(0xC, METHOD_BUFFERED)
-#define IOCTL_NDIS_RESERVED5    CTL_CODE(FILE_DEVICE_PHYSICAL_NETCARD, 0xD, METHOD_BUFFERED, FILE_ANY_ACCESS)
-#define IOCTL_NDIS_RESERVED6    CTL_CODE(FILE_DEVICE_PHYSICAL_NETCARD, 0xE, METHOD_BUFFERED, FILE_WRITE_ACCESS)
+#define IOCTL_NDIS_RESERVED5            CTL_CODE(FILE_DEVICE_PHYSICAL_NETCARD, 0xD, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_NDIS_RESERVED6            CTL_CODE(FILE_DEVICE_PHYSICAL_NETCARD, 0xE, METHOD_BUFFERED, FILE_WRITE_ACCESS)
 #define IOCTL_NDIS_RESERVED7            _NDIS_CONTROL_CODE(0xF, METHOD_OUT_DIRECT)
 #define IOCTL_NDIS_RESERVED8            _NDIS_CONTROL_CODE(0x10, METHOD_BUFFERED)
 #define IOCTL_NDIS_RESERVED9            _NDIS_CONTROL_CODE(0x11, METHOD_BUFFERED)
@@ -418,6 +432,9 @@ typedef struct _NDIS_VAR_DATA_DESC
 #define NDIS_OBJECT_TYPE_MINIPORT_DEVICE_POWER_NOTIFICATION             0xC6
 #endif // (NDIS_SUPPORT_NDIS670)
 
+
+#define NDIS_OBJECT_TYPE_RSS_PARAMETERS_V2                              0xC8    // used by miniport and protocol in NDIS_RECEIVE_SCALE_PARAMETERS_V2
+#define NDIS_OBJECT_TYPE_RSS_SET_INDIRECTION_ENTRIES                    0xC9    // used by miniport and protocol in NDIS_RSS_SET_INDIRECTION_ENTRIES
 
 typedef struct _NDIS_OBJECT_HEADER
 {
@@ -2046,6 +2063,12 @@ NDIS_802_11_RADIO_STATUS, *PNDIS_802_11_RADIO_STATUS;
 
 // RSSv2 direct OID: move an array of indirection table entries
 #define OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES     0x000102C0    // method only
+
+#if (NDIS_SUPPORT_NDIS682)
+
+#define OID_GEN_RECEIVE_SCALE_INITIALIZE              0x000102C1    // set only
+
+#endif // NDIS_SUPPORT_NDIS682
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3) || (NDIS_SUPPORT_NDIS680)
 
@@ -5785,7 +5808,7 @@ typedef struct _NDIS_RECEIVE_SCALE_PARAMETERS
 typedef struct _NDIS_RECEIVE_SCALE_PARAMETERS_V2
 {
     //
-    // Header.Type = NDIS_OBJECT_TYPE_DEFAULT;
+    // Header.Type = NDIS_OBJECT_TYPE_RSS_PARAMETERS_V2;
     // Header.Revision = NDIS_RECEIVE_SCALE_PARAMETERS_V2_REVISION_1;
     // Header.Size = sizeof(NDIS_RECEIVE_SCALE_PARAMETERS_V2);
     //
@@ -5865,7 +5888,7 @@ typedef struct _NDIS_RSS_SET_INDIRECTION_ENTRY
 typedef struct _NDIS_RSS_SET_INDIRECTION_ENTRIES
 {
     //
-    // Header.Type = NDIS_OBJECT_TYPE_DEFAULT;
+    // Header.Type = NDIS_OBJECT_TYPE_RSS_SET_INDIRECTION_ENTRIES;
     // Header.Revision = NDIS_RSS_SET_INDIRECTION_ENTRIES_REVISION_1;
     // Header.Size = sizeof(NDIS_RSS_SET_INDIRECTION_ENTRIES);
     //
@@ -5892,7 +5915,6 @@ typedef struct _NDIS_RSS_SET_INDIRECTION_ENTRIES
                                  NumberOfRssEntries)
 
 #endif // NDIS_SUPPORT_NDIS680
-
 
 //
 // Used in OID_GEN_RECEIVE_HASH
@@ -6282,7 +6304,18 @@ typedef struct _NDK_WMI_ADAPTER_INFO {
     ULONG MaxCallerData;
     ULONG MaxCalleeData;
     ULONG AdapterFlags;
+#if (NDIS_SUPPORT_NDIS650)
+    NDK_RDMA_TECHNOLOGY RdmaTechnology;
+#endif
 } NDK_WMI_ADAPTER_INFO, *PNDK_WMI_ADAPTER_INFO;
+
+#if (NDIS_SUPPORT_NDIS650)
+#define NDIS_SIZEOF_NDK_WMI_ADAPTER_INFO_REVISION_1    \
+        FIELD_OFFSET(NDK_WMI_ADAPTER_INFO, RdmaTechnology)
+
+#define NDIS_SIZEOF_NDK_WMI_ADAPTER_INFO_REVISION_2    \
+        sizeof(NDK_WMI_ADAPTER_INFO)
+#endif
 
 // Output structure for GUID_NDIS_NDK_CAPABILITIES
 typedef struct _NDIS_WMI_NDK_CAPABILITIES {
@@ -6297,6 +6330,16 @@ typedef struct _NDIS_WMI_NDK_CAPABILITIES {
     ULONG64 MissingCounterMask;
     NDK_WMI_ADAPTER_INFO NdkInfo;
 } NDIS_WMI_NDK_CAPABILITIES, * PNDIS_WMI_NDK_CAPABILITIES;
+
+#if (NDIS_SUPPORT_NDIS650)
+#define NDIS_SIZEOF_NDK_WMI_CAPABILITIES_REVISION_1    \
+        (FIELD_OFFSET(NDIS_WMI_NDK_CAPABILITIES, NdkInfo) + \
+         NDIS_SIZEOF_NDK_WMI_ADAPTER_INFO_REVISION_1)
+
+#define NDIS_SIZEOF_NDK_WMI_CAPABILITIES_REVISION_2    \
+        (FIELD_OFFSET(NDIS_WMI_NDK_CAPABILITIES, NdkInfo) + \
+         NDIS_SIZEOF_NDK_WMI_ADAPTER_INFO_REVISION_2)
+#endif
 
 // Query ND capabilities of an NDK adapter
 DEFINE_GUID(GUID_NDIS_NDK_CAPABILITIES, 0x7969ba4d, 0xdd80, 0x4bc7, 0xb3, 0xe6, 0x68, 0x04, 0x39, 0x97, 0xe5, 0x19);
@@ -8627,6 +8670,7 @@ typedef enum _NDIS_GFP_TABLE_TYPE
 #define NDIS_GFP_HEADER_PRESENT_IP_IN_GRE_ENCAP         0x00000100
 #define NDIS_GFP_HEADER_PRESENT_NVGRE_ENCAP             0x00000200
 #define NDIS_GFP_HEADER_PRESENT_VXLAN_ENCAP             0x00000400
+#define NDIS_GFP_HEADER_PRESENT_ESP                     0x00000800
 
 //
 // flags used to specify fields in the Ethernet, IP, Transport and encapsulation headers
@@ -10716,6 +10760,71 @@ typedef struct _NDIS_QOS_OFFLOAD_CAPABILITIES
 #define NDIS_QOS_OFFLOAD_CAPS_GFT_SQ        0x00000002
 
 #endif // (NDIS_SUPPORT_NDIS650)
+
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS5) || NDIS_SUPPORT_NDIS682)
+
+
+#define NDIS_TIMESTAMP_CAPABILITIES_REVISION_1 1
+
+typedef struct _NDIS_TIMESTAMP_CAPABILITY_FLAGS
+{
+    BOOLEAN PtpV2OverUdpIPv4EventMsgReceiveHw;
+    BOOLEAN PtpV2OverUdpIPv4AllMsgReceiveHw;
+    BOOLEAN PtpV2OverUdpIPv4EventMsgTransmitHw;
+    BOOLEAN PtpV2OverUdpIPv4AllMsgTransmitHw;
+    BOOLEAN PtpV2OverUdpIPv6EventMsgReceiveHw;
+    BOOLEAN PtpV2OverUdpIPv6AllMsgReceiveHw;
+    BOOLEAN PtpV2OverUdpIPv6EventMsgTransmitHw;
+    BOOLEAN PtpV2OverUdpIPv6AllMsgTransmitHw;
+    BOOLEAN AllReceiveHw;
+    BOOLEAN AllTransmitHw;
+    BOOLEAN TaggedTransmitHw;
+    BOOLEAN AllReceiveSw;
+    BOOLEAN AllTransmitSw;
+    BOOLEAN TaggedTransmitSw;
+} NDIS_TIMESTAMP_CAPABILITY_FLAGS, *PNDIS_TIMESTAMP_CAPABILITY_FLAGS;
+
+typedef struct _NDIS_TIMESTAMP_CAPABILITIES
+{
+    NDIS_OBJECT_HEADER Header;
+
+    ULONG64 HardwareClockFrequencyHz;
+    BOOLEAN CrossTimestamp;
+    ULONG64 Reserved1;
+    ULONG64 Reserved2;
+    NDIS_TIMESTAMP_CAPABILITY_FLAGS TimestampFlags; 
+
+} NDIS_TIMESTAMP_CAPABILITIES, *PNDIS_TIMESTAMP_CAPABILITIES;
+
+
+#define NDIS_SIZEOF_TIMESTAMP_CAPABILITIES_REVISION_1     \
+    RTL_SIZEOF_THROUGH_FIELD(NDIS_TIMESTAMP_CAPABILITIES, TimestampFlags)
+
+
+#define OID_TIMESTAMP_CAPABILITY 0x00A00001
+#define OID_TIMESTAMP_CURRENT_CONFIG 0x00A00002
+
+#define NDIS_HARDWARE_CROSSTIMESTAMP_REVISION_1 1
+
+typedef struct _NDIS_HARDWARE_CROSSTIMESTAMP
+{
+    NDIS_OBJECT_HEADER Header;
+
+    ULONG Flags;
+    ULONG64 SystemTimestamp1;
+    ULONG64 HardwareClockTimestamp;
+    ULONG64 SystemTimestamp2;
+
+} NDIS_HARDWARE_CROSSTIMESTAMP, *PNDIS_HARDWARE_CROSSTIMESTAMP;
+
+#define NDIS_SIZEOF_HARDWARE_CROSSTIMESTAMP_REVISION_1     \
+    RTL_SIZEOF_THROUGH_FIELD(NDIS_HARDWARE_CROSSTIMESTAMP, SystemTimestamp2)
+
+#define OID_TIMESTAMP_GET_CROSSTIMESTAMP 0x00A00003
+
+
+#endif //((NTDDI_VERSION >= NTDDI_WIN10_RS5) || NDIS_SUPPORT_NDIS682)
+
 
 #ifdef __cplusplus
 }

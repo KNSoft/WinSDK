@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -29,11 +29,18 @@ struct SmbiosInformation
     static hstring SerialNumber();
 };
 
+struct WINRT_EBO SystemSupportDeviceInfo :
+    Windows::System::Profile::SystemManufacturers::ISystemSupportDeviceInfo
+{
+    SystemSupportDeviceInfo(std::nullptr_t) noexcept {}
+};
+
 struct SystemSupportInfo
 {
     SystemSupportInfo() = delete;
     static hstring LocalSystemEdition();
     static Windows::System::Profile::SystemManufacturers::OemSupportInfo OemSupportInfo();
+    static Windows::System::Profile::SystemManufacturers::SystemSupportDeviceInfo LocalDeviceInfo();
 };
 
 }

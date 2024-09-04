@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Pwm.Provider.2.h"
@@ -144,293 +144,255 @@ template <typename D> bool consume_Windows_Devices_Pwm_IPwmPin<D>::IsStarted() c
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windows::Devices::Pwm::IPwmController>
 {
-    HRESULT __stdcall get_PinCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_PinCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().PinCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActualFrequency(double* value) noexcept final
+    int32_t WINRT_CALL get_ActualFrequency(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActualFrequency, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ActualFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDesiredFrequency(double desiredFrequency, double* result) noexcept final
+    int32_t WINRT_CALL SetDesiredFrequency(double desiredFrequency, double* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDesiredFrequency, WINRT_WRAP(double), double);
             *result = detach_from<double>(this->shim().SetDesiredFrequency(desiredFrequency));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinFrequency(double* value) noexcept final
+    int32_t WINRT_CALL get_MinFrequency(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinFrequency, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().MinFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxFrequency(double* value) noexcept final
+    int32_t WINRT_CALL get_MaxFrequency(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxFrequency, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().MaxFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OpenPin(int32_t pinNumber, void** pin) noexcept final
+    int32_t WINRT_CALL OpenPin(int32_t pinNumber, void** pin) noexcept final
     {
         try
         {
             *pin = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpenPin, WINRT_WRAP(Windows::Devices::Pwm::PwmPin), int32_t);
             *pin = detach_from<Windows::Devices::Pwm::PwmPin>(this->shim().OpenPin(pinNumber));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics>
 {
-    HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept final
+    int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetControllersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>>), Windows::Devices::Pwm::Provider::IPwmProvider const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>>>(this->shim().GetControllersAsync(*reinterpret_cast<Windows::Devices::Pwm::Provider::IPwmProvider const*>(&provider)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics2>
 {
-    HRESULT __stdcall GetDefaultAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>>(this->shim().GetDefaultAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics3> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics3>
 {
-    HRESULT __stdcall GetDeviceSelector(HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorFromFriendlyName(void* friendlyName, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), hstring const&);
             *result = detach_from<hstring>(this->shim().GetDeviceSelector(*reinterpret_cast<hstring const*>(&friendlyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Pwm::IPwmPin> : produce_base<D, Windows::Devices::Pwm::IPwmPin>
 {
-    HRESULT __stdcall get_Controller(void** value) noexcept final
+    int32_t WINRT_CALL get_Controller(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Controller, WINRT_WRAP(Windows::Devices::Pwm::PwmController));
             *value = detach_from<Windows::Devices::Pwm::PwmController>(this->shim().Controller());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetActiveDutyCyclePercentage(double* result) noexcept final
+    int32_t WINRT_CALL GetActiveDutyCyclePercentage(double* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetActiveDutyCyclePercentage, WINRT_WRAP(double));
             *result = detach_from<double>(this->shim().GetActiveDutyCyclePercentage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetActiveDutyCyclePercentage(double dutyCyclePercentage) noexcept final
+    int32_t WINRT_CALL SetActiveDutyCyclePercentage(double dutyCyclePercentage) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetActiveDutyCyclePercentage, WINRT_WRAP(void), double);
             this->shim().SetActiveDutyCyclePercentage(dutyCyclePercentage);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Polarity(Windows::Devices::Pwm::PwmPulsePolarity* value) noexcept final
+    int32_t WINRT_CALL get_Polarity(Windows::Devices::Pwm::PwmPulsePolarity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(Windows::Devices::Pwm::PwmPulsePolarity));
             *value = detach_from<Windows::Devices::Pwm::PwmPulsePolarity>(this->shim().Polarity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Polarity(Windows::Devices::Pwm::PwmPulsePolarity value) noexcept final
+    int32_t WINRT_CALL put_Polarity(Windows::Devices::Pwm::PwmPulsePolarity value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Polarity, WINRT_WRAP(void), Windows::Devices::Pwm::PwmPulsePolarity const&);
             this->shim().Polarity(*reinterpret_cast<Windows::Devices::Pwm::PwmPulsePolarity const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Start() noexcept final
+    int32_t WINRT_CALL Start() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Start, WINRT_WRAP(void));
             this->shim().Start();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Stop() noexcept final
+    int32_t WINRT_CALL Stop() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stop, WINRT_WRAP(void));
             this->shim().Stop();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsStarted(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsStarted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStarted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStarted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -440,27 +402,27 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Pwm {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> PwmController::GetControllersAsync(Windows::Devices::Pwm::Provider::IPwmProvider const& provider)
 {
-    return get_activation_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics>().GetControllersAsync(provider);
+    return impl::call_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics>([&](auto&& f) { return f.GetControllersAsync(provider); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> PwmController::GetDefaultAsync()
 {
-    return get_activation_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics2>().GetDefaultAsync();
+    return impl::call_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics2>([&](auto&& f) { return f.GetDefaultAsync(); });
 }
 
 inline hstring PwmController::GetDeviceSelector()
 {
-    return get_activation_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>().GetDeviceSelector();
+    return impl::call_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline hstring PwmController::GetDeviceSelector(param::hstring const& friendlyName)
 {
-    return get_activation_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>().GetDeviceSelector(friendlyName);
+    return impl::call_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>([&](auto&& f) { return f.GetDeviceSelector(friendlyName); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> PwmController::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>().FromIdAsync(deviceId);
+    return impl::call_factory<PwmController, Windows::Devices::Pwm::IPwmControllerStatics3>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 }
@@ -476,5 +438,3 @@ template<> struct hash<winrt::Windows::Devices::Pwm::PwmController> : winrt::imp
 template<> struct hash<winrt::Windows::Devices::Pwm::PwmPin> : winrt::impl::hash_base<winrt::Windows::Devices::Pwm::PwmPin> {};
 
 }
-
-WINRT_WARNING_POP

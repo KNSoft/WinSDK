@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -229,29 +229,29 @@ template <> struct name<Windows::Foundation::Diagnostics::ErrorOptions>{ static 
 template <> struct name<Windows::Foundation::Diagnostics::LoggingFieldFormat>{ static constexpr auto & value{ L"Windows.Foundation.Diagnostics.LoggingFieldFormat" }; };
 template <> struct name<Windows::Foundation::Diagnostics::LoggingLevel>{ static constexpr auto & value{ L"Windows.Foundation.Diagnostics.LoggingLevel" }; };
 template <> struct name<Windows::Foundation::Diagnostics::LoggingOpcode>{ static constexpr auto & value{ L"Windows.Foundation.Diagnostics.LoggingOpcode" }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>{ static constexpr GUID value{ 0x50850B26,0x267E,0x451B,{ 0xA8,0x90,0xAB,0x6A,0x37,0x02,0x45,0xEE } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IErrorDetails>{ static constexpr GUID value{ 0x378CBB01,0x2CC9,0x428F,{ 0x8C,0x55,0x2C,0x99,0x0D,0x46,0x3E,0x8F } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IErrorDetailsStatics>{ static constexpr GUID value{ 0xB7703750,0x0B1D,0x46C8,{ 0xAA,0x0E,0x4B,0x81,0x78,0xE4,0xFC,0xE9 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IErrorReportingSettings>{ static constexpr GUID value{ 0x16369792,0xB03E,0x4BA1,{ 0x8B,0xB8,0xD2,0x8F,0x4A,0xB4,0xD2,0xC0 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IFileLoggingSession>{ static constexpr GUID value{ 0x24C74216,0xFED2,0x404C,{ 0x89,0x5F,0x1F,0x96,0x99,0xCB,0x02,0xF7 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>{ static constexpr GUID value{ 0xEEA08DCE,0x8447,0x4DAA,{ 0x91,0x33,0x12,0xEB,0x46,0xF6,0x97,0xD4 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>{ static constexpr GUID value{ 0x269E976F,0x0D38,0x4C1A,{ 0xB5,0x3F,0xB3,0x95,0xD8,0x81,0xDF,0x84 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingActivity>{ static constexpr GUID value{ 0xBC032941,0xB766,0x4CB5,{ 0x98,0x48,0x97,0xAC,0x6B,0xA6,0xD6,0x0C } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingActivity2>{ static constexpr GUID value{ 0x26C29808,0x6322,0x456A,{ 0xAF,0x82,0x80,0xC8,0x64,0x2F,0x17,0x8B } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingActivityFactory>{ static constexpr GUID value{ 0x6B33B483,0xE10A,0x4C58,{ 0x97,0xD5,0x10,0xFB,0x45,0x10,0x74,0xFB } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannel>{ static constexpr GUID value{ 0xE9A50343,0x11D7,0x4F01,{ 0xB5,0xCA,0xCF,0x49,0x52,0x78,0xC0,0xA8 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannel2>{ static constexpr GUID value{ 0x9F4C3CF3,0x0BAC,0x45A5,{ 0x9E,0x33,0xBA,0xF3,0xF3,0xA2,0x46,0xA5 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannelFactory>{ static constexpr GUID value{ 0x4EDC5B9C,0xAF80,0x4A9B,{ 0xB0,0xDC,0x39,0x8F,0x9A,0xE5,0x20,0x7B } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannelFactory2>{ static constexpr GUID value{ 0x4C6EF5DD,0x3B27,0x4DC9,{ 0x99,0xF0,0x29,0x9C,0x6E,0x46,0x03,0xA1 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannelOptions>{ static constexpr GUID value{ 0xC3E847FF,0x0EBB,0x4A53,{ 0x8C,0x54,0xDE,0xC2,0x49,0x26,0xCB,0x2C } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>{ static constexpr GUID value{ 0xA93151DA,0x7FAF,0x4191,{ 0x87,0x55,0x5E,0x86,0xDC,0x65,0xD8,0x96 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingFields>{ static constexpr GUID value{ 0xD7F6B7AF,0x762D,0x4579,{ 0x83,0xBD,0x52,0xC2,0x3B,0xC3,0x33,0xBC } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingOptions>{ static constexpr GUID value{ 0x90BC7850,0x0192,0x4F5D,{ 0xAC,0x26,0x00,0x6A,0xDA,0xCA,0x12,0xD8 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingOptionsFactory>{ static constexpr GUID value{ 0xD713C6CB,0x98AB,0x464B,{ 0x9F,0x22,0xA3,0x26,0x84,0x78,0x36,0x8A } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingSession>{ static constexpr GUID value{ 0x6221F306,0x9380,0x4AD7,{ 0xBA,0xF5,0x41,0xEA,0x93,0x10,0xD7,0x68 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingSessionFactory>{ static constexpr GUID value{ 0x4E937EE5,0x58FD,0x45E0,{ 0x8C,0x2F,0xA1,0x32,0xEF,0xF9,0x5C,0x1E } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ILoggingTarget>{ static constexpr GUID value{ 0x65F16C35,0xE388,0x4E26,{ 0xB1,0x7A,0xF5,0x1C,0xD3,0xA8,0x39,0x16 } }; };
-template <> struct guid<Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs>{ static constexpr GUID value{ 0x410B7711,0xFF3B,0x477F,{ 0x9C,0x9A,0xD2,0xEF,0xDA,0x30,0x2D,0xC3 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>{ static constexpr guid value{ 0x50850B26,0x267E,0x451B,{ 0xA8,0x90,0xAB,0x6A,0x37,0x02,0x45,0xEE } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IErrorDetails>{ static constexpr guid value{ 0x378CBB01,0x2CC9,0x428F,{ 0x8C,0x55,0x2C,0x99,0x0D,0x46,0x3E,0x8F } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IErrorDetailsStatics>{ static constexpr guid value{ 0xB7703750,0x0B1D,0x46C8,{ 0xAA,0x0E,0x4B,0x81,0x78,0xE4,0xFC,0xE9 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IErrorReportingSettings>{ static constexpr guid value{ 0x16369792,0xB03E,0x4BA1,{ 0x8B,0xB8,0xD2,0x8F,0x4A,0xB4,0xD2,0xC0 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IFileLoggingSession>{ static constexpr guid value{ 0x24C74216,0xFED2,0x404C,{ 0x89,0x5F,0x1F,0x96,0x99,0xCB,0x02,0xF7 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>{ static constexpr guid value{ 0xEEA08DCE,0x8447,0x4DAA,{ 0x91,0x33,0x12,0xEB,0x46,0xF6,0x97,0xD4 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>{ static constexpr guid value{ 0x269E976F,0x0D38,0x4C1A,{ 0xB5,0x3F,0xB3,0x95,0xD8,0x81,0xDF,0x84 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingActivity>{ static constexpr guid value{ 0xBC032941,0xB766,0x4CB5,{ 0x98,0x48,0x97,0xAC,0x6B,0xA6,0xD6,0x0C } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingActivity2>{ static constexpr guid value{ 0x26C29808,0x6322,0x456A,{ 0xAF,0x82,0x80,0xC8,0x64,0x2F,0x17,0x8B } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingActivityFactory>{ static constexpr guid value{ 0x6B33B483,0xE10A,0x4C58,{ 0x97,0xD5,0x10,0xFB,0x45,0x10,0x74,0xFB } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannel>{ static constexpr guid value{ 0xE9A50343,0x11D7,0x4F01,{ 0xB5,0xCA,0xCF,0x49,0x52,0x78,0xC0,0xA8 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannel2>{ static constexpr guid value{ 0x9F4C3CF3,0x0BAC,0x45A5,{ 0x9E,0x33,0xBA,0xF3,0xF3,0xA2,0x46,0xA5 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannelFactory>{ static constexpr guid value{ 0x4EDC5B9C,0xAF80,0x4A9B,{ 0xB0,0xDC,0x39,0x8F,0x9A,0xE5,0x20,0x7B } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannelFactory2>{ static constexpr guid value{ 0x4C6EF5DD,0x3B27,0x4DC9,{ 0x99,0xF0,0x29,0x9C,0x6E,0x46,0x03,0xA1 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannelOptions>{ static constexpr guid value{ 0xC3E847FF,0x0EBB,0x4A53,{ 0x8C,0x54,0xDE,0xC2,0x49,0x26,0xCB,0x2C } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>{ static constexpr guid value{ 0xA93151DA,0x7FAF,0x4191,{ 0x87,0x55,0x5E,0x86,0xDC,0x65,0xD8,0x96 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingFields>{ static constexpr guid value{ 0xD7F6B7AF,0x762D,0x4579,{ 0x83,0xBD,0x52,0xC2,0x3B,0xC3,0x33,0xBC } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingOptions>{ static constexpr guid value{ 0x90BC7850,0x0192,0x4F5D,{ 0xAC,0x26,0x00,0x6A,0xDA,0xCA,0x12,0xD8 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingOptionsFactory>{ static constexpr guid value{ 0xD713C6CB,0x98AB,0x464B,{ 0x9F,0x22,0xA3,0x26,0x84,0x78,0x36,0x8A } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingSession>{ static constexpr guid value{ 0x6221F306,0x9380,0x4AD7,{ 0xBA,0xF5,0x41,0xEA,0x93,0x10,0xD7,0x68 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingSessionFactory>{ static constexpr guid value{ 0x4E937EE5,0x58FD,0x45E0,{ 0x8C,0x2F,0xA1,0x32,0xEF,0xF9,0x5C,0x1E } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ILoggingTarget>{ static constexpr guid value{ 0x65F16C35,0xE388,0x4E26,{ 0xB1,0x7A,0xF5,0x1C,0xD3,0xA8,0x39,0x16 } }; };
+template <> struct guid_storage<Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs>{ static constexpr guid value{ 0x410B7711,0xFF3B,0x477F,{ 0x9C,0x9A,0xD2,0xEF,0xDA,0x30,0x2D,0xC3 } }; };
 template <> struct default_interface<Windows::Foundation::Diagnostics::ErrorDetails>{ using type = Windows::Foundation::Diagnostics::IErrorDetails; };
 template <> struct default_interface<Windows::Foundation::Diagnostics::FileLoggingSession>{ using type = Windows::Foundation::Diagnostics::IFileLoggingSession; };
 template <> struct default_interface<Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>{ using type = Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs; };
@@ -264,18 +264,303 @@ template <> struct default_interface<Windows::Foundation::Diagnostics::LoggingSe
 template <> struct default_interface<Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings>{ using type = Windows::Foundation::Diagnostics::IErrorReportingSettings; };
 template <> struct default_interface<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>{ using type = Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs; };
 
+template <> struct abi<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, winrt::guid platformId, uint64_t operationId, void* operationName, uint64_t relatedContext) noexcept = 0;
+    virtual int32_t WINRT_CALL TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, winrt::guid platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status) noexcept = 0;
+    virtual int32_t WINRT_CALL TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, winrt::guid platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation relation) noexcept = 0;
+    virtual int32_t WINRT_CALL TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, winrt::guid platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) noexcept = 0;
+    virtual int32_t WINRT_CALL TraceSynchronousWorkCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) noexcept = 0;
+    virtual int32_t WINRT_CALL add_TracingStatusChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_TracingStatusChanged(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::IErrorDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LongDescription(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HelpUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::IErrorDetailsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromHResultAsync(int32_t errorCode, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::IErrorReportingSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetErrorOptions(Windows::Foundation::Diagnostics::ErrorOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetErrorOptions(Windows::Foundation::Diagnostics::ErrorOptions* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::IFileLoggingSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddLoggingChannel(void* loggingChannel) noexcept = 0;
+    virtual int32_t WINRT_CALL AddLoggingChannelWithLevel(void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveLoggingChannel(void* loggingChannel) noexcept = 0;
+    virtual int32_t WINRT_CALL CloseAndSaveToFileAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LogFileGenerated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LogFileGenerated(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_File(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(winrt::guid* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivity2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StopActivity(void* stopEventName) noexcept = 0;
+    virtual int32_t WINRT_CALL StopActivityWithFields(void* stopEventName, void* fields) noexcept = 0;
+    virtual int32_t WINRT_CALL StopActivityWithFieldsAndOptions(void* stopEventName, void* fields, void* options) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivityFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateLoggingActivity(void* activityName, void* loggingChannel, void** loggingActivity) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLoggingActivityWithLevel(void* activityName, void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level, void** loggingActivity) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Enabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Level(Windows::Foundation::Diagnostics::LoggingLevel* value) noexcept = 0;
+    virtual int32_t WINRT_CALL LogMessage(void* eventString) noexcept = 0;
+    virtual int32_t WINRT_CALL LogMessageWithLevel(void* eventString, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
+    virtual int32_t WINRT_CALL LogValuePair(void* value1, int32_t value2) noexcept = 0;
+    virtual int32_t WINRT_CALL LogValuePairWithLevel(void* value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LoggingEnabled(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LoggingEnabled(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannel2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(winrt::guid* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelFactory2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithOptions(void* name, void* options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithOptionsAndId(void* name, void* options, winrt::guid id, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Group(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Group(winrt::guid value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(winrt::guid group, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingFields>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL BeginStruct(void* name) noexcept = 0;
+    virtual int32_t WINRT_CALL BeginStructWithTags(void* name, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL EndStruct() noexcept = 0;
+    virtual int32_t WINRT_CALL AddEmpty(void* name) noexcept = 0;
+    virtual int32_t WINRT_CALL AddEmptyWithFormat(void* name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddEmptyWithFormatAndTags(void* name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8(void* name, uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8WithFormat(void* name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8WithFormatAndTags(void* name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8Array(void* name, uint32_t __valueSize, uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8ArrayWithFormat(void* name, uint32_t __valueSize, uint8_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt8ArrayWithFormatAndTags(void* name, uint32_t __valueSize, uint8_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16(void* name, int16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16WithFormat(void* name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16WithFormatAndTags(void* name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16Array(void* name, uint32_t __valueSize, int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16ArrayWithFormat(void* name, uint32_t __valueSize, int16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt16ArrayWithFormatAndTags(void* name, uint32_t __valueSize, int16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16(void* name, uint16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16WithFormat(void* name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16WithFormatAndTags(void* name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16Array(void* name, uint32_t __valueSize, uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16ArrayWithFormat(void* name, uint32_t __valueSize, uint16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt16ArrayWithFormatAndTags(void* name, uint32_t __valueSize, uint16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32(void* name, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32WithFormat(void* name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32WithFormatAndTags(void* name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32Array(void* name, uint32_t __valueSize, int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32ArrayWithFormat(void* name, uint32_t __valueSize, int32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt32ArrayWithFormatAndTags(void* name, uint32_t __valueSize, int32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32(void* name, uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32WithFormat(void* name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32WithFormatAndTags(void* name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32Array(void* name, uint32_t __valueSize, uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32ArrayWithFormat(void* name, uint32_t __valueSize, uint32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt32ArrayWithFormatAndTags(void* name, uint32_t __valueSize, uint32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64(void* name, int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64WithFormat(void* name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64WithFormatAndTags(void* name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64Array(void* name, uint32_t __valueSize, int64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64ArrayWithFormat(void* name, uint32_t __valueSize, int64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddInt64ArrayWithFormatAndTags(void* name, uint32_t __valueSize, int64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64(void* name, uint64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64WithFormat(void* name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64WithFormatAndTags(void* name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64Array(void* name, uint32_t __valueSize, uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64ArrayWithFormat(void* name, uint32_t __valueSize, uint64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddUInt64ArrayWithFormatAndTags(void* name, uint32_t __valueSize, uint64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingle(void* name, float value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingleWithFormat(void* name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingleWithFormatAndTags(void* name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingleArray(void* name, uint32_t __valueSize, float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingleArrayWithFormat(void* name, uint32_t __valueSize, float* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSingleArrayWithFormatAndTags(void* name, uint32_t __valueSize, float* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDouble(void* name, double value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDoubleWithFormat(void* name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDoubleWithFormatAndTags(void* name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDoubleArray(void* name, uint32_t __valueSize, double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDoubleArrayWithFormat(void* name, uint32_t __valueSize, double* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDoubleArrayWithFormatAndTags(void* name, uint32_t __valueSize, double* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16(void* name, char16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16WithFormat(void* name, char16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16WithFormatAndTags(void* name, char16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16Array(void* name, uint32_t __valueSize, char16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16ArrayWithFormat(void* name, uint32_t __valueSize, char16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddChar16ArrayWithFormatAndTags(void* name, uint32_t __valueSize, char16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBoolean(void* name, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBooleanWithFormat(void* name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBooleanWithFormatAndTags(void* name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBooleanArray(void* name, uint32_t __valueSize, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBooleanArrayWithFormat(void* name, uint32_t __valueSize, bool* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddBooleanArrayWithFormatAndTags(void* name, uint32_t __valueSize, bool* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddString(void* name, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStringWithFormat(void* name, void* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStringWithFormatAndTags(void* name, void* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStringArray(void* name, uint32_t __valueSize, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStringArrayWithFormat(void* name, uint32_t __valueSize, void** value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddStringArrayWithFormatAndTags(void* name, uint32_t __valueSize, void** value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuid(void* name, winrt::guid value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuidWithFormat(void* name, winrt::guid value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuidWithFormatAndTags(void* name, winrt::guid value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuidArray(void* name, uint32_t __valueSize, winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuidArrayWithFormat(void* name, uint32_t __valueSize, winrt::guid* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddGuidArrayWithFormatAndTags(void* name, uint32_t __valueSize, winrt::guid* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTime(void* name, Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTimeWithFormat(void* name, Windows::Foundation::DateTime value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTimeWithFormatAndTags(void* name, Windows::Foundation::DateTime value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTimeArray(void* name, uint32_t __valueSize, Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTimeArrayWithFormat(void* name, uint32_t __valueSize, Windows::Foundation::DateTime* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDateTimeArrayWithFormatAndTags(void* name, uint32_t __valueSize, Windows::Foundation::DateTime* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpan(void* name, Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpanWithFormat(void* name, Windows::Foundation::TimeSpan value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpanWithFormatAndTags(void* name, Windows::Foundation::TimeSpan value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpanArray(void* name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpanArrayWithFormat(void* name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTimeSpanArrayWithFormatAndTags(void* name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPoint(void* name, Windows::Foundation::Point value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPointWithFormat(void* name, Windows::Foundation::Point value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPointWithFormatAndTags(void* name, Windows::Foundation::Point value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPointArray(void* name, uint32_t __valueSize, Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPointArrayWithFormat(void* name, uint32_t __valueSize, Windows::Foundation::Point* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPointArrayWithFormatAndTags(void* name, uint32_t __valueSize, Windows::Foundation::Point* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSize(void* name, Windows::Foundation::Size value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSizeWithFormat(void* name, Windows::Foundation::Size value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSizeWithFormatAndTags(void* name, Windows::Foundation::Size value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSizeArray(void* name, uint32_t __valueSize, Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSizeArrayWithFormat(void* name, uint32_t __valueSize, Windows::Foundation::Size* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddSizeArrayWithFormatAndTags(void* name, uint32_t __valueSize, Windows::Foundation::Size* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRect(void* name, Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRectWithFormat(void* name, Windows::Foundation::Rect value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRectWithFormatAndTags(void* name, Windows::Foundation::Rect value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRectArray(void* name, uint32_t __valueSize, Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRectArrayWithFormat(void* name, uint32_t __valueSize, Windows::Foundation::Rect* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
+    virtual int32_t WINRT_CALL AddRectArrayWithFormatAndTags(void* name, uint32_t __valueSize, Windows::Foundation::Rect* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Keywords(int64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Keywords(int64_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tags(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Tags(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Task(int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Task(int16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opcode(Windows::Foundation::Diagnostics::LoggingOpcode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opcode(Windows::Foundation::Diagnostics::LoggingOpcode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ActivityId(winrt::guid value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelatedActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelatedActivityId(winrt::guid value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingOptionsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithKeywords(int64_t keywords, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveToFileAsync(void* folder, void* fileName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AddLoggingChannel(void* loggingChannel) noexcept = 0;
+    virtual int32_t WINRT_CALL AddLoggingChannelWithLevel(void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveLoggingChannel(void* loggingChannel) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingSessionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ILoggingTarget>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsEnabled(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEnabledWithLevel(Windows::Foundation::Diagnostics::LoggingLevel level, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEnabledWithLevelAndKeywords(Windows::Foundation::Diagnostics::LoggingLevel level, int64_t keywords, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL LogEvent(void* eventName) noexcept = 0;
+    virtual int32_t WINRT_CALL LogEventWithFields(void* eventName, void* fields) noexcept = 0;
+    virtual int32_t WINRT_CALL LogEventWithFieldsAndLevel(void* eventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
+    virtual int32_t WINRT_CALL LogEventWithFieldsAndOptions(void* eventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void* options) noexcept = 0;
+    virtual int32_t WINRT_CALL StartActivity(void* startEventName, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL StartActivityWithFields(void* startEventName, void* fields, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL StartActivityWithFieldsAndLevel(void* startEventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL StartActivityWithFieldsAndOptions(void* startEventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void* options, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Enabled(bool* enabled) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TraceLevel(Windows::Foundation::Diagnostics::CausalityTraceLevel* value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Foundation_Diagnostics_IAsyncCausalityTracerStatics
 {
-    void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, GUID const& platformId, uint64_t operationId, param::hstring const& operationName, uint64_t relatedContext) const;
-    void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, GUID const& platformId, uint64_t operationId, Windows::Foundation::AsyncStatus const& status) const;
-    void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, GUID const& platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation const& relation) const;
-    void TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, GUID const& platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork const& work) const;
+    void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, winrt::guid const& platformId, uint64_t operationId, param::hstring const& operationName, uint64_t relatedContext) const;
+    void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, winrt::guid const& platformId, uint64_t operationId, Windows::Foundation::AsyncStatus const& status) const;
+    void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, winrt::guid const& platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation const& relation) const;
+    void TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, winrt::guid const& platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork const& work) const;
     void TraceSynchronousWorkCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel const& traceLevel, Windows::Foundation::Diagnostics::CausalitySource const& source, Windows::Foundation::Diagnostics::CausalitySynchronousWork const& work) const;
-    event_token TracingStatusChanged(Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> const& handler) const;
-    using TracingStatusChanged_revoker = event_revoker<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>;
+    winrt::event_token TracingStatusChanged(Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> const& handler) const;
+    using TracingStatusChanged_revoker = impl::event_revoker<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics, &impl::abi_t<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>::remove_TracingStatusChanged>;
     TracingStatusChanged_revoker TracingStatusChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs> const& handler) const;
-    void TracingStatusChanged(event_token const& cookie) const;
+    void TracingStatusChanged(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_IAsyncCausalityTracerStatics<D>; };
 
@@ -311,10 +596,10 @@ struct consume_Windows_Foundation_Diagnostics_IFileLoggingSession
     void AddLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const& loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel const& maxLevel) const;
     void RemoveLoggingChannel(Windows::Foundation::Diagnostics::ILoggingChannel const& loggingChannel) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CloseAndSaveToFileAsync() const;
-    event_token LogFileGenerated(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> const& handler) const;
-    using LogFileGenerated_revoker = event_revoker<Windows::Foundation::Diagnostics::IFileLoggingSession>;
+    winrt::event_token LogFileGenerated(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> const& handler) const;
+    using LogFileGenerated_revoker = impl::event_revoker<Windows::Foundation::Diagnostics::IFileLoggingSession, &impl::abi_t<Windows::Foundation::Diagnostics::IFileLoggingSession>::remove_LogFileGenerated>;
     LogFileGenerated_revoker LogFileGenerated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::IFileLoggingSession, Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs> const& handler) const;
-    void LogFileGenerated(event_token const& token) const;
+    void LogFileGenerated(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::IFileLoggingSession> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_IFileLoggingSession<D>; };
 
@@ -336,7 +621,7 @@ template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingActivity
 {
     hstring Name() const;
-    GUID Id() const;
+    winrt::guid Id() const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingActivity> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingActivity<D>; };
 
@@ -368,24 +653,24 @@ struct consume_Windows_Foundation_Diagnostics_ILoggingChannel
     void LogMessage(param::hstring const& eventString, Windows::Foundation::Diagnostics::LoggingLevel const& level) const;
     void LogValuePair(param::hstring const& value1, int32_t value2) const;
     void LogValuePair(param::hstring const& value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel const& level) const;
-    event_token LoggingEnabled(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> const& handler) const;
-    using LoggingEnabled_revoker = event_revoker<Windows::Foundation::Diagnostics::ILoggingChannel>;
+    winrt::event_token LoggingEnabled(Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> const& handler) const;
+    using LoggingEnabled_revoker = impl::event_revoker<Windows::Foundation::Diagnostics::ILoggingChannel, &impl::abi_t<Windows::Foundation::Diagnostics::ILoggingChannel>::remove_LoggingEnabled>;
     LoggingEnabled_revoker LoggingEnabled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::Diagnostics::ILoggingChannel, Windows::Foundation::IInspectable> const& handler) const;
-    void LoggingEnabled(event_token const& token) const;
+    void LoggingEnabled(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannel> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannel<D>; };
 
 template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingChannel2
 {
-    GUID Id() const;
+    winrt::guid Id() const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannel2> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannel2<D>; };
 
 template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingChannelFactory
 {
-    [[deprecated("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")]] Windows::Foundation::Diagnostics::LoggingChannel Create(param::hstring const& name) const;
+    Windows::Foundation::Diagnostics::LoggingChannel Create(param::hstring const& name) const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannelFactory> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannelFactory<D>; };
 
@@ -393,22 +678,22 @@ template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingChannelFactory2
 {
     Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(param::hstring const& name, Windows::Foundation::Diagnostics::LoggingChannelOptions const& options) const;
-    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(param::hstring const& name, Windows::Foundation::Diagnostics::LoggingChannelOptions const& options, GUID const& id) const;
+    Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(param::hstring const& name, Windows::Foundation::Diagnostics::LoggingChannelOptions const& options, winrt::guid const& id) const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannelFactory2> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannelFactory2<D>; };
 
 template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingChannelOptions
 {
-    GUID Group() const;
-    void Group(GUID const& value) const;
+    winrt::guid Group() const;
+    void Group(winrt::guid const& value) const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannelOptions> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannelOptions<D>; };
 
 template <typename D>
 struct consume_Windows_Foundation_Diagnostics_ILoggingChannelOptionsFactory
 {
-    Windows::Foundation::Diagnostics::LoggingChannelOptions Create(GUID const& group) const;
+    Windows::Foundation::Diagnostics::LoggingChannelOptions Create(winrt::guid const& group) const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingChannelOptionsFactory<D>; };
 
@@ -494,12 +779,12 @@ struct consume_Windows_Foundation_Diagnostics_ILoggingFields
     void AddStringArray(param::hstring const& name, array_view<hstring const> value) const;
     void AddStringArray(param::hstring const& name, array_view<hstring const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
     void AddStringArray(param::hstring const& name, array_view<hstring const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
-    void AddGuid(param::hstring const& name, GUID const& value) const;
-    void AddGuid(param::hstring const& name, GUID const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
-    void AddGuid(param::hstring const& name, GUID const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
-    void AddGuidArray(param::hstring const& name, array_view<GUID const> value) const;
-    void AddGuidArray(param::hstring const& name, array_view<GUID const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
-    void AddGuidArray(param::hstring const& name, array_view<GUID const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
+    void AddGuid(param::hstring const& name, winrt::guid const& value) const;
+    void AddGuid(param::hstring const& name, winrt::guid const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
+    void AddGuid(param::hstring const& name, winrt::guid const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
+    void AddGuidArray(param::hstring const& name, array_view<winrt::guid const> value) const;
+    void AddGuidArray(param::hstring const& name, array_view<winrt::guid const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
+    void AddGuidArray(param::hstring const& name, array_view<winrt::guid const> value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
     void AddDateTime(param::hstring const& name, Windows::Foundation::DateTime const& value) const;
     void AddDateTime(param::hstring const& name, Windows::Foundation::DateTime const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format) const;
     void AddDateTime(param::hstring const& name, Windows::Foundation::DateTime const& value, Windows::Foundation::Diagnostics::LoggingFieldFormat const& format, int32_t tags) const;
@@ -544,10 +829,10 @@ struct consume_Windows_Foundation_Diagnostics_ILoggingOptions
     void Task(int16_t value) const;
     Windows::Foundation::Diagnostics::LoggingOpcode Opcode() const;
     void Opcode(Windows::Foundation::Diagnostics::LoggingOpcode const& value) const;
-    GUID ActivityId() const;
-    void ActivityId(GUID const& value) const;
-    GUID RelatedActivityId() const;
-    void RelatedActivityId(GUID const& value) const;
+    winrt::guid ActivityId() const;
+    void ActivityId(winrt::guid const& value) const;
+    winrt::guid RelatedActivityId() const;
+    void RelatedActivityId(winrt::guid const& value) const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ILoggingOptions> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ILoggingOptions<D>; };
 
@@ -600,290 +885,5 @@ struct consume_Windows_Foundation_Diagnostics_ITracingStatusChangedEventArgs
     Windows::Foundation::Diagnostics::CausalityTraceLevel TraceLevel() const;
 };
 template <> struct consume<Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs> { template <typename D> using type = consume_Windows_Foundation_Diagnostics_ITracingStatusChangedEventArgs<D>; };
-
-template <> struct abi<Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, HSTRING operationName, uint64_t relatedContext) noexcept = 0;
-    virtual HRESULT __stdcall TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status) noexcept = 0;
-    virtual HRESULT __stdcall TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation relation) noexcept = 0;
-    virtual HRESULT __stdcall TraceSynchronousWorkStart(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) noexcept = 0;
-    virtual HRESULT __stdcall TraceSynchronousWorkCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, Windows::Foundation::Diagnostics::CausalitySynchronousWork work) noexcept = 0;
-    virtual HRESULT __stdcall add_TracingStatusChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_TracingStatusChanged(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::IErrorDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LongDescription(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HelpUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::IErrorDetailsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromHResultAsync(int32_t errorCode, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::IErrorReportingSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetErrorOptions(Windows::Foundation::Diagnostics::ErrorOptions value) noexcept = 0;
-    virtual HRESULT __stdcall GetErrorOptions(Windows::Foundation::Diagnostics::ErrorOptions* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::IFileLoggingSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall AddLoggingChannel(void* loggingChannel) noexcept = 0;
-    virtual HRESULT __stdcall AddLoggingChannelWithLevel(void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept = 0;
-    virtual HRESULT __stdcall RemoveLoggingChannel(void* loggingChannel) noexcept = 0;
-    virtual HRESULT __stdcall CloseAndSaveToFileAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_LogFileGenerated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LogFileGenerated(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_File(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(GUID* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivity2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(void** value) noexcept = 0;
-    virtual HRESULT __stdcall StopActivity(HSTRING stopEventName) noexcept = 0;
-    virtual HRESULT __stdcall StopActivityWithFields(HSTRING stopEventName, void* fields) noexcept = 0;
-    virtual HRESULT __stdcall StopActivityWithFieldsAndOptions(HSTRING stopEventName, void* fields, void* options) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingActivityFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateLoggingActivity(HSTRING activityName, void* loggingChannel, void** loggingActivity) noexcept = 0;
-    virtual HRESULT __stdcall CreateLoggingActivityWithLevel(HSTRING activityName, void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level, void** loggingActivity) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Enabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Level(Windows::Foundation::Diagnostics::LoggingLevel* value) noexcept = 0;
-    virtual HRESULT __stdcall LogMessage(HSTRING eventString) noexcept = 0;
-    virtual HRESULT __stdcall LogMessageWithLevel(HSTRING eventString, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
-    virtual HRESULT __stdcall LogValuePair(HSTRING value1, int32_t value2) noexcept = 0;
-    virtual HRESULT __stdcall LogValuePairWithLevel(HSTRING value1, int32_t value2, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
-    virtual HRESULT __stdcall add_LoggingEnabled(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LoggingEnabled(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannel2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(GUID* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelFactory2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithOptions(HSTRING name, void* options, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithOptionsAndId(HSTRING name, void* options, GUID id, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Group(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Group(GUID value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(GUID group, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingFields>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall BeginStruct(HSTRING name) noexcept = 0;
-    virtual HRESULT __stdcall BeginStructWithTags(HSTRING name, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall EndStruct() noexcept = 0;
-    virtual HRESULT __stdcall AddEmpty(HSTRING name) noexcept = 0;
-    virtual HRESULT __stdcall AddEmptyWithFormat(HSTRING name, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddEmptyWithFormatAndTags(HSTRING name, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8(HSTRING name, uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8WithFormat(HSTRING name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8WithFormatAndTags(HSTRING name, uint8_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8Array(HSTRING name, uint32_t __valueSize, uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8ArrayWithFormat(HSTRING name, uint32_t __valueSize, uint8_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt8ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, uint8_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16(HSTRING name, int16_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16WithFormat(HSTRING name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16WithFormatAndTags(HSTRING name, int16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16Array(HSTRING name, uint32_t __valueSize, int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16ArrayWithFormat(HSTRING name, uint32_t __valueSize, int16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt16ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, int16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16(HSTRING name, uint16_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16WithFormat(HSTRING name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16WithFormatAndTags(HSTRING name, uint16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16Array(HSTRING name, uint32_t __valueSize, uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16ArrayWithFormat(HSTRING name, uint32_t __valueSize, uint16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt16ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, uint16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32(HSTRING name, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32WithFormat(HSTRING name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32WithFormatAndTags(HSTRING name, int32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32Array(HSTRING name, uint32_t __valueSize, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32ArrayWithFormat(HSTRING name, uint32_t __valueSize, int32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt32ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, int32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32(HSTRING name, uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32WithFormat(HSTRING name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32WithFormatAndTags(HSTRING name, uint32_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32Array(HSTRING name, uint32_t __valueSize, uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32ArrayWithFormat(HSTRING name, uint32_t __valueSize, uint32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt32ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, uint32_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64(HSTRING name, int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64WithFormat(HSTRING name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64WithFormatAndTags(HSTRING name, int64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64Array(HSTRING name, uint32_t __valueSize, int64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64ArrayWithFormat(HSTRING name, uint32_t __valueSize, int64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddInt64ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, int64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64(HSTRING name, uint64_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64WithFormat(HSTRING name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64WithFormatAndTags(HSTRING name, uint64_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64Array(HSTRING name, uint32_t __valueSize, uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64ArrayWithFormat(HSTRING name, uint32_t __valueSize, uint64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddUInt64ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, uint64_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddSingle(HSTRING name, float value) noexcept = 0;
-    virtual HRESULT __stdcall AddSingleWithFormat(HSTRING name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddSingleWithFormatAndTags(HSTRING name, float value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddSingleArray(HSTRING name, uint32_t __valueSize, float* value) noexcept = 0;
-    virtual HRESULT __stdcall AddSingleArrayWithFormat(HSTRING name, uint32_t __valueSize, float* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddSingleArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, float* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddDouble(HSTRING name, double value) noexcept = 0;
-    virtual HRESULT __stdcall AddDoubleWithFormat(HSTRING name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddDoubleWithFormatAndTags(HSTRING name, double value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddDoubleArray(HSTRING name, uint32_t __valueSize, double* value) noexcept = 0;
-    virtual HRESULT __stdcall AddDoubleArrayWithFormat(HSTRING name, uint32_t __valueSize, double* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddDoubleArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, double* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16(HSTRING name, char16_t value) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16WithFormat(HSTRING name, char16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16WithFormatAndTags(HSTRING name, char16_t value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16Array(HSTRING name, uint32_t __valueSize, char16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16ArrayWithFormat(HSTRING name, uint32_t __valueSize, char16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddChar16ArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, char16_t* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddBoolean(HSTRING name, bool value) noexcept = 0;
-    virtual HRESULT __stdcall AddBooleanWithFormat(HSTRING name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddBooleanWithFormatAndTags(HSTRING name, bool value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddBooleanArray(HSTRING name, uint32_t __valueSize, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall AddBooleanArrayWithFormat(HSTRING name, uint32_t __valueSize, bool* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddBooleanArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, bool* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddString(HSTRING name, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall AddStringWithFormat(HSTRING name, HSTRING value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddStringWithFormatAndTags(HSTRING name, HSTRING value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddStringArray(HSTRING name, uint32_t __valueSize, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall AddStringArrayWithFormat(HSTRING name, uint32_t __valueSize, HSTRING* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddStringArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, HSTRING* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddGuid(HSTRING name, GUID value) noexcept = 0;
-    virtual HRESULT __stdcall AddGuidWithFormat(HSTRING name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddGuidWithFormatAndTags(HSTRING name, GUID value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddGuidArray(HSTRING name, uint32_t __valueSize, GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall AddGuidArrayWithFormat(HSTRING name, uint32_t __valueSize, GUID* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddGuidArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, GUID* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTime(HSTRING name, Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTimeWithFormat(HSTRING name, Windows::Foundation::DateTime value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTimeWithFormatAndTags(HSTRING name, Windows::Foundation::DateTime value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTimeArray(HSTRING name, uint32_t __valueSize, Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTimeArrayWithFormat(HSTRING name, uint32_t __valueSize, Windows::Foundation::DateTime* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddDateTimeArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, Windows::Foundation::DateTime* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpan(HSTRING name, Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpanWithFormat(HSTRING name, Windows::Foundation::TimeSpan value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpanWithFormatAndTags(HSTRING name, Windows::Foundation::TimeSpan value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpanArray(HSTRING name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpanArrayWithFormat(HSTRING name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddTimeSpanArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, Windows::Foundation::TimeSpan* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddPoint(HSTRING name, Windows::Foundation::Point value) noexcept = 0;
-    virtual HRESULT __stdcall AddPointWithFormat(HSTRING name, Windows::Foundation::Point value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddPointWithFormatAndTags(HSTRING name, Windows::Foundation::Point value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddPointArray(HSTRING name, uint32_t __valueSize, Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall AddPointArrayWithFormat(HSTRING name, uint32_t __valueSize, Windows::Foundation::Point* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddPointArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, Windows::Foundation::Point* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddSize(HSTRING name, Windows::Foundation::Size value) noexcept = 0;
-    virtual HRESULT __stdcall AddSizeWithFormat(HSTRING name, Windows::Foundation::Size value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddSizeWithFormatAndTags(HSTRING name, Windows::Foundation::Size value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddSizeArray(HSTRING name, uint32_t __valueSize, Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall AddSizeArrayWithFormat(HSTRING name, uint32_t __valueSize, Windows::Foundation::Size* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddSizeArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, Windows::Foundation::Size* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddRect(HSTRING name, Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall AddRectWithFormat(HSTRING name, Windows::Foundation::Rect value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddRectWithFormatAndTags(HSTRING name, Windows::Foundation::Rect value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-    virtual HRESULT __stdcall AddRectArray(HSTRING name, uint32_t __valueSize, Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall AddRectArrayWithFormat(HSTRING name, uint32_t __valueSize, Windows::Foundation::Rect* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format) noexcept = 0;
-    virtual HRESULT __stdcall AddRectArrayWithFormatAndTags(HSTRING name, uint32_t __valueSize, Windows::Foundation::Rect* value, Windows::Foundation::Diagnostics::LoggingFieldFormat format, int32_t tags) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Keywords(int64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Keywords(int64_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tags(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Tags(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Task(int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Task(int16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opcode(Windows::Foundation::Diagnostics::LoggingOpcode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opcode(Windows::Foundation::Diagnostics::LoggingOpcode value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ActivityId(GUID value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelatedActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelatedActivityId(GUID value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingOptionsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithKeywords(int64_t keywords, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SaveToFileAsync(void* folder, HSTRING fileName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AddLoggingChannel(void* loggingChannel) noexcept = 0;
-    virtual HRESULT __stdcall AddLoggingChannelWithLevel(void* loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) noexcept = 0;
-    virtual HRESULT __stdcall RemoveLoggingChannel(void* loggingChannel) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingSessionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ILoggingTarget>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsEnabled(bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsEnabledWithLevel(Windows::Foundation::Diagnostics::LoggingLevel level, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsEnabledWithLevelAndKeywords(Windows::Foundation::Diagnostics::LoggingLevel level, int64_t keywords, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall LogEvent(HSTRING eventName) noexcept = 0;
-    virtual HRESULT __stdcall LogEventWithFields(HSTRING eventName, void* fields) noexcept = 0;
-    virtual HRESULT __stdcall LogEventWithFieldsAndLevel(HSTRING eventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level) noexcept = 0;
-    virtual HRESULT __stdcall LogEventWithFieldsAndOptions(HSTRING eventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void* options) noexcept = 0;
-    virtual HRESULT __stdcall StartActivity(HSTRING startEventName, void** result) noexcept = 0;
-    virtual HRESULT __stdcall StartActivityWithFields(HSTRING startEventName, void* fields, void** result) noexcept = 0;
-    virtual HRESULT __stdcall StartActivityWithFieldsAndLevel(HSTRING startEventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void** result) noexcept = 0;
-    virtual HRESULT __stdcall StartActivityWithFieldsAndOptions(HSTRING startEventName, void* fields, Windows::Foundation::Diagnostics::LoggingLevel level, void* options, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Enabled(bool* enabled) noexcept = 0;
-    virtual HRESULT __stdcall get_TraceLevel(Windows::Foundation::Diagnostics::CausalityTraceLevel* value) noexcept = 0;
-};};
 
 }

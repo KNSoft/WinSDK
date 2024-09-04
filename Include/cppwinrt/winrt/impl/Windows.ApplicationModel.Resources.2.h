@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -23,8 +23,8 @@ struct WINRT_EBO ResourceLoader :
 {
     ResourceLoader(std::nullptr_t) noexcept {}
     ResourceLoader();
-    [[deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")]] ResourceLoader(param::hstring const& name);
-    [[deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")]] static hstring GetStringForReference(Windows::Foundation::Uri const& uri);
+    ResourceLoader(param::hstring const& name);
+    static hstring GetStringForReference(Windows::Foundation::Uri const& uri);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView();
     static Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(param::hstring const& name);
     static Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse();

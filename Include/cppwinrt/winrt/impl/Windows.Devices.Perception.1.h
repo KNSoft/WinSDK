@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -13,63 +13,63 @@
 
 WINRT_EXPORT namespace winrt::Windows::Devices::Perception {
 
-struct WINRT_EBO [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownCameraIntrinsicsPropertiesStatics :
+struct WINRT_EBO IKnownCameraIntrinsicsPropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownCameraIntrinsicsPropertiesStatics>
 {
     IKnownCameraIntrinsicsPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionColorFrameSourcePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionColorFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionColorFrameSourcePropertiesStatics>
 {
     IKnownPerceptionColorFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] IKnownPerceptionDepthFrameSourcePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionDepthFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionDepthFrameSourcePropertiesStatics>
 {
     IKnownPerceptionDepthFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] IKnownPerceptionFrameSourcePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionFrameSourcePropertiesStatics>
 {
     IKnownPerceptionFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionFrameSourcePropertiesStatics2 :
+struct WINRT_EBO IKnownPerceptionFrameSourcePropertiesStatics2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionFrameSourcePropertiesStatics2>
 {
     IKnownPerceptionFrameSourcePropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionInfraredFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionInfraredFrameSourcePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionInfraredFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionInfraredFrameSourcePropertiesStatics>
 {
     IKnownPerceptionInfraredFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionVideoFrameSourcePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionVideoFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionVideoFrameSourcePropertiesStatics>
 {
     IKnownPerceptionVideoFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionVideoProfilePropertiesStatics :
+struct WINRT_EBO IKnownPerceptionVideoProfilePropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IKnownPerceptionVideoProfilePropertiesStatics>
 {
     IKnownPerceptionVideoProfilePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")]] IPerceptionColorFrame :
+struct WINRT_EBO IPerceptionColorFrame :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrame>,
     impl::require<IPerceptionColorFrame, Windows::Foundation::IClosable>
@@ -77,14 +77,14 @@ struct WINRT_EBO [[deprecated("PerceptionColorFrame may be unavailable after Win
     IPerceptionColorFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionColorFrameArrivedEventArgs :
+struct WINRT_EBO IPerceptionColorFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameArrivedEventArgs>
 {
     IPerceptionColorFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionColorFrameReader :
+struct WINRT_EBO IPerceptionColorFrameReader :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameReader>,
     impl::require<IPerceptionColorFrameReader, Windows::Foundation::IClosable>
@@ -92,49 +92,49 @@ struct WINRT_EBO [[deprecated("PerceptionColorFrameReader may be unavailable aft
     IPerceptionColorFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSource :
+struct WINRT_EBO IPerceptionColorFrameSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSource>
 {
     IPerceptionColorFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSource2 :
+struct WINRT_EBO IPerceptionColorFrameSource2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSource2>
 {
     IPerceptionColorFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionColorFrameSourceAddedEventArgs :
+struct WINRT_EBO IPerceptionColorFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSourceAddedEventArgs>
 {
     IPerceptionColorFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionColorFrameSourceRemovedEventArgs :
+struct WINRT_EBO IPerceptionColorFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSourceRemovedEventArgs>
 {
     IPerceptionColorFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSourceStatics :
+struct WINRT_EBO IPerceptionColorFrameSourceStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSourceStatics>
 {
     IPerceptionColorFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionColorFrameSourceWatcher :
+struct WINRT_EBO IPerceptionColorFrameSourceWatcher :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionColorFrameSourceWatcher>
 {
     IPerceptionColorFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionControlSession :
+struct WINRT_EBO IPerceptionControlSession :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionControlSession>,
     impl::require<IPerceptionControlSession, Windows::Foundation::IClosable>
@@ -142,21 +142,21 @@ struct WINRT_EBO [[deprecated("PerceptionControlSession may be unavailable after
     IPerceptionControlSession(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] IPerceptionDepthCorrelatedCameraIntrinsics :
+struct WINRT_EBO IPerceptionDepthCorrelatedCameraIntrinsics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthCorrelatedCameraIntrinsics>
 {
     IPerceptionDepthCorrelatedCameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] IPerceptionDepthCorrelatedCoordinateMapper :
+struct WINRT_EBO IPerceptionDepthCorrelatedCoordinateMapper :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthCorrelatedCoordinateMapper>
 {
     IPerceptionDepthCorrelatedCoordinateMapper(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] IPerceptionDepthFrame :
+struct WINRT_EBO IPerceptionDepthFrame :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrame>,
     impl::require<IPerceptionDepthFrame, Windows::Foundation::IClosable>
@@ -164,14 +164,14 @@ struct WINRT_EBO [[deprecated("PerceptionDepthFrame may be unavailable after Win
     IPerceptionDepthFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionDepthFrameArrivedEventArgs :
+struct WINRT_EBO IPerceptionDepthFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameArrivedEventArgs>
 {
     IPerceptionDepthFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionDepthFrameReader :
+struct WINRT_EBO IPerceptionDepthFrameReader :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameReader>,
     impl::require<IPerceptionDepthFrameReader, Windows::Foundation::IClosable>
@@ -179,63 +179,63 @@ struct WINRT_EBO [[deprecated("PerceptionDepthFrameReader may be unavailable aft
     IPerceptionDepthFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSource :
+struct WINRT_EBO IPerceptionDepthFrameSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSource>
 {
     IPerceptionDepthFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSource2 :
+struct WINRT_EBO IPerceptionDepthFrameSource2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSource2>
 {
     IPerceptionDepthFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionDepthFrameSourceAddedEventArgs :
+struct WINRT_EBO IPerceptionDepthFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSourceAddedEventArgs>
 {
     IPerceptionDepthFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionDepthFrameSourceRemovedEventArgs :
+struct WINRT_EBO IPerceptionDepthFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSourceRemovedEventArgs>
 {
     IPerceptionDepthFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSourceStatics :
+struct WINRT_EBO IPerceptionDepthFrameSourceStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSourceStatics>
 {
     IPerceptionDepthFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionDepthFrameSourceWatcher :
+struct WINRT_EBO IPerceptionDepthFrameSourceWatcher :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionDepthFrameSourceWatcher>
 {
     IPerceptionDepthFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionFrameSourcePropertiesChangedEventArgs :
+struct WINRT_EBO IPerceptionFrameSourcePropertiesChangedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameSourcePropertiesChangedEventArgs>
 {
     IPerceptionFrameSourcePropertiesChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionFrameSourcePropertyChangeResult :
+struct WINRT_EBO IPerceptionFrameSourcePropertyChangeResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionFrameSourcePropertyChangeResult>
 {
     IPerceptionFrameSourcePropertyChangeResult(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")]] IPerceptionInfraredFrame :
+struct WINRT_EBO IPerceptionInfraredFrame :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrame>,
     impl::require<IPerceptionInfraredFrame, Windows::Foundation::IClosable>
@@ -243,14 +243,14 @@ struct WINRT_EBO [[deprecated("PerceptionInfraredFrame may be unavailable after 
     IPerceptionInfraredFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionInfraredFrameArrivedEventArgs :
+struct WINRT_EBO IPerceptionInfraredFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameArrivedEventArgs>
 {
     IPerceptionInfraredFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionInfraredFrameReader :
+struct WINRT_EBO IPerceptionInfraredFrameReader :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameReader>,
     impl::require<IPerceptionInfraredFrameReader, Windows::Foundation::IClosable>
@@ -258,49 +258,49 @@ struct WINRT_EBO [[deprecated("PerceptionInfraredFrameReader may be unavailable 
     IPerceptionInfraredFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSource :
+struct WINRT_EBO IPerceptionInfraredFrameSource :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSource>
 {
     IPerceptionInfraredFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSource2 :
+struct WINRT_EBO IPerceptionInfraredFrameSource2 :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSource2>
 {
     IPerceptionInfraredFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionInfraredFrameSourceAddedEventArgs :
+struct WINRT_EBO IPerceptionInfraredFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSourceAddedEventArgs>
 {
     IPerceptionInfraredFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionInfraredFrameSourceRemovedEventArgs :
+struct WINRT_EBO IPerceptionInfraredFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSourceRemovedEventArgs>
 {
     IPerceptionInfraredFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSourceStatics :
+struct WINRT_EBO IPerceptionInfraredFrameSourceStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSourceStatics>
 {
     IPerceptionInfraredFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionInfraredFrameSourceWatcher :
+struct WINRT_EBO IPerceptionInfraredFrameSourceWatcher :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionInfraredFrameSourceWatcher>
 {
     IPerceptionInfraredFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] IPerceptionVideoProfile :
+struct WINRT_EBO IPerceptionVideoProfile :
     Windows::Foundation::IInspectable,
     impl::consume_t<IPerceptionVideoProfile>
 {

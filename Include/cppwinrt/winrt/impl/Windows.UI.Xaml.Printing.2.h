@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,6 +16,8 @@ struct AddPagesEventHandler : Windows::Foundation::IUnknown
     template <typename L> AddPagesEventHandler(L lambda);
     template <typename F> AddPagesEventHandler(F* function);
     template <typename O, typename M> AddPagesEventHandler(O* object, M method);
+    template <typename O, typename M> AddPagesEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> AddPagesEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Printing::AddPagesEventArgs const& e) const;
 };
 
@@ -25,6 +27,8 @@ struct GetPreviewPageEventHandler : Windows::Foundation::IUnknown
     template <typename L> GetPreviewPageEventHandler(L lambda);
     template <typename F> GetPreviewPageEventHandler(F* function);
     template <typename O, typename M> GetPreviewPageEventHandler(O* object, M method);
+    template <typename O, typename M> GetPreviewPageEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> GetPreviewPageEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Printing::GetPreviewPageEventArgs const& e) const;
 };
 
@@ -34,6 +38,8 @@ struct PaginateEventHandler : Windows::Foundation::IUnknown
     template <typename L> PaginateEventHandler(L lambda);
     template <typename F> PaginateEventHandler(F* function);
     template <typename O, typename M> PaginateEventHandler(O* object, M method);
+    template <typename O, typename M> PaginateEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> PaginateEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Printing::PaginateEventArgs const& e) const;
 };
 

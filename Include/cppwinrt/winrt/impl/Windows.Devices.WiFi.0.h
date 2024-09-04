@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -65,6 +65,7 @@ enum class WiFiPhyKind : int32_t
     HT = 7,
     Vht = 8,
     Dmg = 9,
+    HE = 10,
 };
 
 enum class WiFiReconnectionKind : int32_t
@@ -147,18 +148,77 @@ template <> struct name<Windows::Devices::WiFi::WiFiPhyKind>{ static constexpr a
 template <> struct name<Windows::Devices::WiFi::WiFiReconnectionKind>{ static constexpr auto & value{ L"Windows.Devices.WiFi.WiFiReconnectionKind" }; };
 template <> struct name<Windows::Devices::WiFi::WiFiWpsConfigurationStatus>{ static constexpr auto & value{ L"Windows.Devices.WiFi.WiFiWpsConfigurationStatus" }; };
 template <> struct name<Windows::Devices::WiFi::WiFiWpsKind>{ static constexpr auto & value{ L"Windows.Devices.WiFi.WiFiWpsKind" }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiAdapter>{ static constexpr GUID value{ 0xA6C4E423,0x3D75,0x43A4,{ 0xB9,0xDE,0x11,0xE2,0x6B,0x72,0xD9,0xB0 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiAdapter2>{ static constexpr GUID value{ 0x5BC4501D,0x81E4,0x453D,{ 0x94,0x30,0x1F,0xCA,0xFB,0xAD,0xD6,0xB6 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiAdapterStatics>{ static constexpr GUID value{ 0xDA25FDDD,0xD24C,0x43E3,{ 0xAA,0xBD,0xC4,0x65,0x9F,0x73,0x0F,0x99 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiAvailableNetwork>{ static constexpr GUID value{ 0x26E96246,0x183E,0x4704,{ 0x98,0x26,0x71,0xB4,0xA2,0xF0,0xF6,0x68 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiConnectionResult>{ static constexpr GUID value{ 0x143BDFD9,0xC37D,0x40BE,{ 0xA5,0xC8,0x85,0x7B,0xCE,0x85,0xA9,0x31 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiNetworkReport>{ static constexpr GUID value{ 0x9524DED2,0x5911,0x445E,{ 0x81,0x94,0xBE,0x4F,0x1A,0x70,0x48,0x95 } }; };
-template <> struct guid<Windows::Devices::WiFi::IWiFiWpsConfigurationResult>{ static constexpr GUID value{ 0x67B49871,0x17EE,0x42D1,{ 0xB1,0x4F,0x5A,0x11,0xF1,0x22,0x6F,0xB5 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiAdapter>{ static constexpr guid value{ 0xA6C4E423,0x3D75,0x43A4,{ 0xB9,0xDE,0x11,0xE2,0x6B,0x72,0xD9,0xB0 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiAdapter2>{ static constexpr guid value{ 0x5BC4501D,0x81E4,0x453D,{ 0x94,0x30,0x1F,0xCA,0xFB,0xAD,0xD6,0xB6 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiAdapterStatics>{ static constexpr guid value{ 0xDA25FDDD,0xD24C,0x43E3,{ 0xAA,0xBD,0xC4,0x65,0x9F,0x73,0x0F,0x99 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiAvailableNetwork>{ static constexpr guid value{ 0x26E96246,0x183E,0x4704,{ 0x98,0x26,0x71,0xB4,0xA2,0xF0,0xF6,0x68 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiConnectionResult>{ static constexpr guid value{ 0x143BDFD9,0xC37D,0x40BE,{ 0xA5,0xC8,0x85,0x7B,0xCE,0x85,0xA9,0x31 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiNetworkReport>{ static constexpr guid value{ 0x9524DED2,0x5911,0x445E,{ 0x81,0x94,0xBE,0x4F,0x1A,0x70,0x48,0x95 } }; };
+template <> struct guid_storage<Windows::Devices::WiFi::IWiFiWpsConfigurationResult>{ static constexpr guid value{ 0x67B49871,0x17EE,0x42D1,{ 0xB1,0x4F,0x5A,0x11,0xF1,0x22,0x6F,0xB5 } }; };
 template <> struct default_interface<Windows::Devices::WiFi::WiFiAdapter>{ using type = Windows::Devices::WiFi::IWiFiAdapter; };
 template <> struct default_interface<Windows::Devices::WiFi::WiFiAvailableNetwork>{ using type = Windows::Devices::WiFi::IWiFiAvailableNetwork; };
 template <> struct default_interface<Windows::Devices::WiFi::WiFiConnectionResult>{ using type = Windows::Devices::WiFi::IWiFiConnectionResult; };
 template <> struct default_interface<Windows::Devices::WiFi::WiFiNetworkReport>{ using type = Windows::Devices::WiFi::IWiFiNetworkReport; };
 template <> struct default_interface<Windows::Devices::WiFi::WiFiWpsConfigurationResult>{ using type = Windows::Devices::WiFi::IWiFiWpsConfigurationResult; };
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiAdapter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAdapter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ScanAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkReport(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AvailableNetworksChanged(void* args, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AvailableNetworksChanged(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectWithPasswordCredentialAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectWithPasswordCredentialAndSsidAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, void* ssid, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Disconnect() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiAdapter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetWpsConfigurationAsync(void* availableNetwork, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ConnectWithPasswordCredentialAndSsidAndConnectionMethodAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, void* ssid, Windows::Devices::WiFi::WiFiConnectionMethod connectionMethod, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiAdapterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAllAdaptersAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** deviceSelector) noexcept = 0;
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiAvailableNetwork>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uptime(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Ssid(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bssid(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelCenterFrequencyInKilohertz(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkRssiInDecibelMilliwatts(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignalBars(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkKind(Windows::Devices::WiFi::WiFiNetworkKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhyKind(Windows::Devices::WiFi::WiFiPhyKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SecuritySettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BeaconInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsWiFiDirect(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiConnectionResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ConnectionStatus(Windows::Devices::WiFi::WiFiConnectionStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiNetworkReport>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AvailableNetworks(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::WiFi::IWiFiWpsConfigurationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::WiFi::WiFiWpsConfigurationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedWpsKinds(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_WiFi_IWiFiAdapter
@@ -166,10 +226,10 @@ struct consume_Windows_Devices_WiFi_IWiFiAdapter
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
     Windows::Foundation::IAsyncAction ScanAsync() const;
     Windows::Devices::WiFi::WiFiNetworkReport NetworkReport() const;
-    event_token AvailableNetworksChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> const& args) const;
-    using AvailableNetworksChanged_revoker = event_revoker<Windows::Devices::WiFi::IWiFiAdapter>;
+    winrt::event_token AvailableNetworksChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> const& args) const;
+    using AvailableNetworksChanged_revoker = impl::event_revoker<Windows::Devices::WiFi::IWiFiAdapter, &impl::abi_t<Windows::Devices::WiFi::IWiFiAdapter>::remove_AvailableNetworksChanged>;
     AvailableNetworksChanged_revoker AvailableNetworksChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::Foundation::IInspectable> const& args) const;
-    void AvailableNetworksChanged(event_token const& eventCookie) const;
+    void AvailableNetworksChanged(winrt::event_token const& eventCookie) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(Windows::Devices::WiFi::WiFiAvailableNetwork const& availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind const& reconnectionKind) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(Windows::Devices::WiFi::WiFiAvailableNetwork const& availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind const& reconnectionKind, Windows::Security::Credentials::PasswordCredential const& passwordCredential) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(Windows::Devices::WiFi::WiFiAvailableNetwork const& availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind const& reconnectionKind, Windows::Security::Credentials::PasswordCredential const& passwordCredential, param::hstring const& ssid) const;
@@ -234,64 +294,5 @@ struct consume_Windows_Devices_WiFi_IWiFiWpsConfigurationResult
     Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiWpsKind> SupportedWpsKinds() const;
 };
 template <> struct consume<Windows::Devices::WiFi::IWiFiWpsConfigurationResult> { template <typename D> using type = consume_Windows_Devices_WiFi_IWiFiWpsConfigurationResult<D>; };
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiAdapter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAdapter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ScanAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkReport(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_AvailableNetworksChanged(void* args, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AvailableNetworksChanged(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall ConnectAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void** value) noexcept = 0;
-    virtual HRESULT __stdcall ConnectWithPasswordCredentialAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, void** value) noexcept = 0;
-    virtual HRESULT __stdcall ConnectWithPasswordCredentialAndSsidAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, HSTRING ssid, void** value) noexcept = 0;
-    virtual HRESULT __stdcall Disconnect() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiAdapter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetWpsConfigurationAsync(void* availableNetwork, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ConnectWithPasswordCredentialAndSsidAndConnectionMethodAsync(void* availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, void* passwordCredential, HSTRING ssid, Windows::Devices::WiFi::WiFiConnectionMethod connectionMethod, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiAdapterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAllAdaptersAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* deviceSelector) noexcept = 0;
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall RequestAccessAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiAvailableNetwork>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uptime(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Ssid(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bssid(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelCenterFrequencyInKilohertz(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkRssiInDecibelMilliwatts(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignalBars(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkKind(Windows::Devices::WiFi::WiFiNetworkKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhyKind(Windows::Devices::WiFi::WiFiPhyKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SecuritySettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BeaconInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsWiFiDirect(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiConnectionResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ConnectionStatus(Windows::Devices::WiFi::WiFiConnectionStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiNetworkReport>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AvailableNetworks(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::WiFi::IWiFiWpsConfigurationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::WiFi::WiFiWpsConfigurationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedWpsKinds(void** value) noexcept = 0;
-};};
 
 }

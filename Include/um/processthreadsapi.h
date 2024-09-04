@@ -128,12 +128,6 @@ GetCurrentProcessId(
     );
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 DECLSPEC_NORETURN
 VOID
@@ -142,12 +136,6 @@ ExitProcess(
     _In_ UINT uExitCode
     );
 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -963,6 +951,15 @@ GetThreadIOPendingFlag(
     );
 
 
+#endif // (_WIN32_WINNT >= _WIN32_WINNT_WINXP)
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WINXP)
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -974,8 +971,7 @@ GetSystemTimes(
 
 
 #endif // (_WIN32_WINNT >= _WIN32_WINNT_WINXP)
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Application Family or OneCore Family
@@ -1111,6 +1107,7 @@ typedef enum _PROCESS_INFORMATION_CLASS {
     ProcessReservedValue1,           // Used to be for ProcessActivityThrottlePolicyInfo
     ProcessTelemetryCoverageInfo,
     ProcessProtectionLevelInfo,
+    ProcessLeapSecondInfo,
     ProcessInformationClassMax
 } PROCESS_INFORMATION_CLASS;
 
@@ -1158,6 +1155,15 @@ typedef struct _PROCESS_POWER_THROTTLING_STATE {
 typedef struct PROCESS_PROTECTION_LEVEL_INFORMATION {
     DWORD ProtectionLevel;
 } PROCESS_PROTECTION_LEVEL_INFORMATION;
+
+#define PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND   0x1
+
+#define PROCESS_LEAP_SECOND_INFO_VALID_FLAGS                (PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND)
+
+typedef struct _PROCESS_LEAP_SECOND_INFO {
+    ULONG Flags;
+    ULONG Reserved;
+} PROCESS_LEAP_SECOND_INFO, *PPROCESS_LEAP_SECOND_INFO;
 
 #if (_WIN32_WINNT >= 0x0602)
 

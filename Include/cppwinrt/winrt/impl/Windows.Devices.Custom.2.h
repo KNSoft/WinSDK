@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,7 +21,7 @@ struct WINRT_EBO CustomDevice :
     Windows::Devices::Custom::ICustomDevice
 {
     CustomDevice(std::nullptr_t) noexcept {}
-    static hstring GetDeviceSelector(GUID const& classGuid);
+    static hstring GetDeviceSelector(winrt::guid const& classGuid);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Custom::CustomDevice> FromIdAsync(param::hstring const& deviceId, Windows::Devices::Custom::DeviceAccessMode const& desiredAccess, Windows::Devices::Custom::DeviceSharingMode const& sharingMode);
 };
 

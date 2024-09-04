@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Management.Workplace.2.h"
@@ -59,96 +59,84 @@ template <typename D> bool consume_Windows_Management_Workplace_IWorkplaceSettin
 template <typename D>
 struct produce<D, Windows::Management::Workplace::IMdmAllowPolicyStatics> : produce_base<D, Windows::Management::Workplace::IMdmAllowPolicyStatics>
 {
-    HRESULT __stdcall IsBrowserAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL IsBrowserAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBrowserAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBrowserAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsCameraAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL IsCameraAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCameraAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCameraAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsMicrosoftAccountAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL IsMicrosoftAccountAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMicrosoftAccountAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMicrosoftAccountAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsStoreAllowed(bool* value) noexcept final
+    int32_t WINRT_CALL IsStoreAllowed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStoreAllowed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsStoreAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Workplace::IMdmPolicyStatics2> : produce_base<D, Windows::Management::Workplace::IMdmPolicyStatics2>
 {
-    HRESULT __stdcall GetMessagingSyncPolicy(Windows::Management::Workplace::MessagingSyncPolicy* value) noexcept final
+    int32_t WINRT_CALL GetMessagingSyncPolicy(Windows::Management::Workplace::MessagingSyncPolicy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessagingSyncPolicy, WINRT_WRAP(Windows::Management::Workplace::MessagingSyncPolicy));
             *value = detach_from<Windows::Management::Workplace::MessagingSyncPolicy>(this->shim().GetMessagingSyncPolicy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Management::Workplace::IWorkplaceSettingsStatics> : produce_base<D, Windows::Management::Workplace::IWorkplaceSettingsStatics>
 {
-    HRESULT __stdcall get_IsMicrosoftAccountOptional(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMicrosoftAccountOptional(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMicrosoftAccountOptional, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMicrosoftAccountOptional());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -158,32 +146,32 @@ WINRT_EXPORT namespace winrt::Windows::Management::Workplace {
 
 inline bool MdmPolicy::IsBrowserAllowed()
 {
-    return get_activation_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>().IsBrowserAllowed();
+    return impl::call_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>([&](auto&& f) { return f.IsBrowserAllowed(); });
 }
 
 inline bool MdmPolicy::IsCameraAllowed()
 {
-    return get_activation_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>().IsCameraAllowed();
+    return impl::call_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>([&](auto&& f) { return f.IsCameraAllowed(); });
 }
 
 inline bool MdmPolicy::IsMicrosoftAccountAllowed()
 {
-    return get_activation_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>().IsMicrosoftAccountAllowed();
+    return impl::call_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>([&](auto&& f) { return f.IsMicrosoftAccountAllowed(); });
 }
 
 inline bool MdmPolicy::IsStoreAllowed()
 {
-    return get_activation_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>().IsStoreAllowed();
+    return impl::call_factory<MdmPolicy, Windows::Management::Workplace::IMdmAllowPolicyStatics>([&](auto&& f) { return f.IsStoreAllowed(); });
 }
 
 inline Windows::Management::Workplace::MessagingSyncPolicy MdmPolicy::GetMessagingSyncPolicy()
 {
-    return get_activation_factory<MdmPolicy, Windows::Management::Workplace::IMdmPolicyStatics2>().GetMessagingSyncPolicy();
+    return impl::call_factory<MdmPolicy, Windows::Management::Workplace::IMdmPolicyStatics2>([&](auto&& f) { return f.GetMessagingSyncPolicy(); });
 }
 
 inline bool WorkplaceSettings::IsMicrosoftAccountOptional()
 {
-    return get_activation_factory<WorkplaceSettings, Windows::Management::Workplace::IWorkplaceSettingsStatics>().IsMicrosoftAccountOptional();
+    return impl::call_factory<WorkplaceSettings, Windows::Management::Workplace::IWorkplaceSettingsStatics>([&](auto&& f) { return f.IsMicrosoftAccountOptional(); });
 }
 
 }
@@ -197,5 +185,3 @@ template<> struct hash<winrt::Windows::Management::Workplace::MdmPolicy> : winrt
 template<> struct hash<winrt::Windows::Management::Workplace::WorkplaceSettings> : winrt::impl::hash_base<winrt::Windows::Management::Workplace::WorkplaceSettings> {};
 
 }
-
-WINRT_WARNING_POP

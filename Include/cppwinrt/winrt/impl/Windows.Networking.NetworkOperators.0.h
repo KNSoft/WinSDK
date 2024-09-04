@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -88,6 +88,17 @@ enum class ESimOperationStatus : int32_t
     CardRemoved = 10,
     CardBusy = 11,
     Other = 12,
+    CardGeneralFailure = 13,
+    ConfirmationCodeMissing = 14,
+    InvalidMatchingId = 15,
+    NoEligibleProfileForThisDevice = 16,
+    OperationAborted = 17,
+    EidMismatch = 18,
+    ProfileNotAvailableForNewBinding = 19,
+    ProfileNotReleasedByOperator = 20,
+    OperationProhibitedByProfileClass = 21,
+    ProfileNotPresent = 22,
+    NoCorrespondingRequest = 23,
 };
 
 enum class ESimProfileClass : int32_t
@@ -927,104 +938,104 @@ template <> struct name<Windows::Networking::NetworkOperators::UiccAppRecordKind
 template <> struct name<Windows::Networking::NetworkOperators::UssdResultCode>{ static constexpr auto & value{ L"Windows.Networking.NetworkOperators.UssdResultCode" }; };
 template <> struct name<Windows::Networking::NetworkOperators::ESimProfileInstallProgress>{ static constexpr auto & value{ L"Windows.Networking.NetworkOperators.ESimProfileInstallProgress" }; };
 template <> struct name<Windows::Networking::NetworkOperators::ProfileUsage>{ static constexpr auto & value{ L"Windows.Networking.NetworkOperators.ProfileUsage" }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESim>{ static constexpr GUID value{ 0x6F6E6E26,0xF123,0x437D,{ 0x8C,0xED,0xDC,0x1D,0x2B,0xC0,0xC3,0xA9 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimAddedEventArgs>{ static constexpr GUID value{ 0x38BD0A58,0x4D5A,0x4D08,{ 0x8D,0xA7,0xE7,0x3E,0xFF,0x36,0x9D,0xDD } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult>{ static constexpr GUID value{ 0xC4234D9E,0x5AD6,0x426D,{ 0x8D,0x00,0x44,0x34,0xF4,0x49,0xAF,0xEC } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimManagerStatics>{ static constexpr GUID value{ 0x0BFA2C0C,0xDF88,0x4631,{ 0xBF,0x04,0xC1,0x2E,0x28,0x1B,0x39,0x62 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimOperationResult>{ static constexpr GUID value{ 0xA67B63B1,0x309B,0x4E77,{ 0x9E,0x7E,0xCD,0x93,0xF1,0xDD,0xC7,0xB9 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimPolicy>{ static constexpr GUID value{ 0x41E1B99D,0xCF7E,0x4315,{ 0x88,0x2B,0x6F,0x1E,0x74,0xB0,0xD3,0x8F } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimProfile>{ static constexpr GUID value{ 0xEE1E7880,0x06A9,0x4027,{ 0xB4,0xF8,0xDD,0xB2,0x3D,0x78,0x10,0xE0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimProfileMetadata>{ static constexpr GUID value{ 0xED25831F,0x90DB,0x498D,{ 0xA7,0xB4,0xEB,0xCE,0x80,0x7D,0x3C,0x23 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimProfilePolicy>{ static constexpr GUID value{ 0xE6DD0F1D,0x9C5C,0x46C5,{ 0xA2,0x89,0xA9,0x48,0x99,0x9B,0xF0,0x62 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimRemovedEventArgs>{ static constexpr GUID value{ 0xDEC5277B,0x2FD9,0x4ED9,{ 0x83,0x76,0xD9,0xB5,0xE4,0x12,0x78,0xA3 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimServiceInfo>{ static constexpr GUID value{ 0xF16AABCF,0x7F59,0x4A51,{ 0x84,0x94,0xBD,0x89,0xD5,0xFF,0x50,0xEE } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimUpdatedEventArgs>{ static constexpr GUID value{ 0x4C125CEC,0x508D,0x4B88,{ 0x83,0xCB,0x68,0xBE,0xF8,0x16,0x8D,0x12 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IESimWatcher>{ static constexpr GUID value{ 0xC1F84CEB,0xA28D,0x4FBF,{ 0x97,0x71,0x6E,0x31,0xB8,0x1C,0xCF,0x22 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>{ static constexpr GUID value{ 0xF2AA4395,0xF1E6,0x4319,{ 0xAA,0x3E,0x47,0x7C,0xA6,0x4B,0x2B,0xDF } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>{ static constexpr GUID value{ 0xE756C791,0x1003,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>{ static constexpr GUID value{ 0xE756C791,0x1004,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>{ static constexpr GUID value{ 0xE756C791,0x1002,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>{ static constexpr GUID value{ 0xE756C791,0x1001,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>{ static constexpr GUID value{ 0xE756C791,0x1005,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>{ static constexpr GUID value{ 0xB458AEED,0x49F1,0x4C22,{ 0xB0,0x73,0x96,0xD5,0x11,0xBF,0x9C,0x35 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>{ static constexpr GUID value{ 0x3883C8B9,0xFF24,0x4571,{ 0xA8,0x67,0x09,0xF9,0x60,0x42,0x6E,0x14 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>{ static constexpr GUID value{ 0x80CD1A63,0x37A5,0x43D3,{ 0x80,0xA3,0xCC,0xD2,0x3E,0x8F,0xEC,0xEE } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>{ static constexpr GUID value{ 0x7C34E581,0x1F1B,0x43F4,{ 0x95,0x30,0x8B,0x09,0x2D,0x32,0xD7,0x1F } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccount>{ static constexpr GUID value{ 0x36C24CCD,0xCEE2,0x43E0,{ 0xA6,0x03,0xEE,0x86,0xA3,0x6D,0x65,0x70 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>{ static constexpr GUID value{ 0x38F52F1C,0x1136,0x4257,{ 0x95,0x9F,0xB6,0x58,0xA3,0x52,0xB6,0xD4 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>{ static constexpr GUID value{ 0x092A1E21,0x9379,0x4B9B,{ 0xAD,0x31,0xD5,0xFE,0xE2,0xF7,0x48,0xC6 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>{ static constexpr GUID value{ 0x3853C880,0x77DE,0x4C04,{ 0xBE,0xAD,0xA1,0x23,0xB0,0x8C,0x9F,0x59 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>{ static constexpr GUID value{ 0xAA7F4D24,0xAFC1,0x4FC8,{ 0xAE,0x9A,0xA9,0x17,0x53,0x10,0xFA,0xAD } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>{ static constexpr GUID value{ 0x7BC31D88,0xA6BD,0x49E1,{ 0x80,0xAB,0x6B,0x91,0x35,0x4A,0x57,0xD4 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>{ static constexpr GUID value{ 0x6BF3335E,0x23B5,0x449F,{ 0x92,0x8D,0x5E,0x0D,0x3E,0x04,0x47,0x1D } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar>{ static constexpr GUID value{ 0xB9AF4B7E,0xCBF9,0x4109,{ 0x90,0xBE,0x5C,0x06,0xBF,0xD5,0x13,0xB6 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>{ static constexpr GUID value{ 0xA91E1716,0xC04D,0x4A21,{ 0x86,0x98,0x14,0x59,0xDC,0x67,0x2C,0x6E } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma>{ static constexpr GUID value{ 0x0601B3B4,0x411A,0x4F2E,{ 0x82,0x87,0x76,0xF5,0x65,0x0C,0x60,0xCD } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm>{ static constexpr GUID value{ 0xCC917F06,0x7EE0,0x47B8,{ 0x9E,0x1F,0xC3,0xB4,0x8D,0xF9,0xDF,0x5B } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellLte>{ static constexpr GUID value{ 0x9197C87B,0x2B78,0x456D,{ 0x8B,0x53,0xAA,0xA2,0x5D,0x0A,0xF7,0x41 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma>{ static constexpr GUID value{ 0x0EDA1655,0xDB0E,0x4182,{ 0x8C,0xDA,0xCC,0x41,0x9A,0x7B,0xDE,0x08 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts>{ static constexpr GUID value{ 0x77B4B5AE,0x49C8,0x4F15,{ 0xB2,0x85,0x4C,0x26,0xA7,0xF6,0x72,0x15 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo>{ static constexpr GUID value{ 0x89A9562A,0xE472,0x4DA5,{ 0x92,0x9C,0xDE,0x61,0x71,0x1D,0xD2,0x61 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>{ static constexpr GUID value{ 0xE6D08168,0xE381,0x4C6E,{ 0x9B,0xE8,0xFE,0x15,0x69,0x69,0xA4,0x46 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>{ static constexpr GUID value{ 0x2E467AF1,0xF932,0x4737,{ 0xA7,0x22,0x03,0xBA,0x72,0x37,0x0C,0xB8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>{ static constexpr GUID value{ 0xE08BB4BD,0x5D30,0x4B5A,{ 0x92,0xCC,0xD5,0x4D,0xF8,0x81,0xD4,0x9E } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>{ static constexpr GUID value{ 0x22BE1A52,0xBD80,0x40AC,{ 0x8E,0x1F,0x2E,0x07,0x83,0x6A,0x3D,0xBD } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>{ static constexpr GUID value{ 0xB0F46ABB,0x94D6,0x44B9,{ 0xA5,0x38,0xF0,0x81,0x0B,0x64,0x53,0x89 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>{ static constexpr GUID value{ 0xFC098A45,0x913B,0x4914,{ 0xB6,0xC3,0xAE,0x63,0x04,0x59,0x3E,0x75 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>{ static constexpr GUID value{ 0xB6AA13DE,0x1380,0x40E3,{ 0x86,0x18,0x73,0xCB,0xCA,0x48,0x13,0x8C } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>{ static constexpr GUID value{ 0xDAD62333,0x8BCF,0x4289,{ 0x8A,0x37,0x04,0x5C,0x21,0x69,0x48,0x6A } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>{ static constexpr GUID value{ 0x53D69B5B,0xC4ED,0x45F0,{ 0x80,0x3A,0xD9,0x41,0x7A,0x6D,0x98,0x46 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>{ static constexpr GUID value{ 0x4A055B70,0xB9AE,0x4458,{ 0x92,0x41,0xA6,0xA5,0xFB,0xF1,0x8A,0x0C } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModem>{ static constexpr GUID value{ 0xD0356912,0xE9F9,0x4F67,{ 0xA0,0x3D,0x43,0x18,0x9A,0x31,0x6B,0xF1 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModem2>{ static constexpr GUID value{ 0x12862B28,0xB9EB,0x4EE2,{ 0xBB,0xE3,0x71,0x1F,0x53,0xEE,0xA3,0x73 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>{ static constexpr GUID value{ 0xE9FEC6EA,0x2F34,0x4582,{ 0x91,0x02,0xC3,0x14,0xD2,0xA8,0x7E,0xEC } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>{ static constexpr GUID value{ 0xFCE035A3,0xD6CD,0x4320,{ 0xB9,0x82,0xBE,0x9D,0x3E,0xC7,0x89,0x0F } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2>{ static constexpr GUID value{ 0x320FF5C5,0xE460,0x42AE,{ 0xAA,0x51,0x69,0x62,0x1E,0x7A,0x44,0x77 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation>{ static constexpr GUID value{ 0xB5618FEC,0xE661,0x4330,{ 0x9B,0xB4,0x34,0x80,0x21,0x2E,0xC3,0x54 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>{ static constexpr GUID value{ 0x21D7EC58,0xC2B1,0x4C2F,{ 0xA0,0x30,0x72,0x82,0x0A,0x24,0xEC,0xD9 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>{ static constexpr GUID value{ 0xF99ED637,0xD6F1,0x4A78,{ 0x8C,0xBC,0x64,0x21,0xA6,0x50,0x63,0xC8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>{ static constexpr GUID value{ 0xCB63928C,0x0309,0x4CB6,{ 0xA8,0xC1,0x6A,0x5A,0x3C,0x8E,0x1F,0xF6 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>{ static constexpr GUID value{ 0x5A55DB22,0x62F7,0x4BDD,{ 0xBA,0x1D,0x47,0x74,0x41,0x96,0x0B,0xA0 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3>{ static constexpr GUID value{ 0x33670A8A,0xC7EF,0x444C,{ 0xAB,0x6C,0xDF,0x7E,0xF7,0xA3,0x90,0xFE } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>{ static constexpr GUID value{ 0xBEAF94E1,0x960F,0x49B4,{ 0xA0,0x8D,0x7D,0x85,0xE9,0x68,0xC7,0xEC } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>{ static constexpr GUID value{ 0x89135CFF,0x28B8,0x46AA,{ 0xB1,0x37,0x1C,0x4B,0x0F,0x21,0xED,0xFE } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPco>{ static constexpr GUID value{ 0xD4E4FCBE,0xE3A3,0x43C5,{ 0xA8,0x7B,0x6C,0x86,0xD2,0x29,0xD7,0xFA } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails>{ static constexpr GUID value{ 0x263F5114,0x64E0,0x4493,{ 0x90,0x9B,0x2D,0x14,0xA0,0x19,0x62,0xB1 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPin>{ static constexpr GUID value{ 0xE661D709,0xE779,0x45BF,{ 0x82,0x81,0x75,0x32,0x3D,0xF9,0xE3,0x21 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>{ static constexpr GUID value{ 0xBE16673E,0x1F04,0x4F95,{ 0x8B,0x90,0xE7,0xF5,0x59,0xDD,0xE7,0xE5 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>{ static constexpr GUID value{ 0xD338C091,0x3E91,0x4D38,{ 0x90,0x36,0xAE,0xE8,0x3A,0x6E,0x79,0xAD } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>{ static constexpr GUID value{ 0x83567EDD,0x6E1F,0x4B9B,{ 0xA4,0x13,0x2B,0x1F,0x50,0xCC,0x36,0xDF } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>{ static constexpr GUID value{ 0x11DDDC32,0x31E7,0x49F5,{ 0xB6,0x63,0x12,0x3D,0x3B,0xEF,0x03,0x62 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>{ static constexpr GUID value{ 0xB054A561,0x9833,0x4AED,{ 0x97,0x17,0x43,0x48,0xB2,0x1A,0x24,0xB3 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>{ static constexpr GUID value{ 0x71301ACE,0x093C,0x42C6,{ 0xB0,0xDB,0xAD,0x1F,0x75,0xA6,0x54,0x45 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>{ static constexpr GUID value{ 0xE5B26833,0x967E,0x40C9,{ 0xA4,0x85,0x19,0xC0,0xDD,0x20,0x9E,0x22 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs>{ static constexpr GUID value{ 0x612E3875,0x040A,0x4F99,{ 0xA4,0xF9,0x61,0xD7,0xC3,0x2D,0xA1,0x29 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandUicc>{ static constexpr GUID value{ 0xE634F691,0x525A,0x4CE2,{ 0x8F,0xCE,0xAA,0x41,0x62,0x57,0x91,0x54 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>{ static constexpr GUID value{ 0x4D170556,0x98A1,0x43DD,{ 0xB2,0xEC,0x50,0xC9,0x0C,0xF2,0x48,0xDF } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>{ static constexpr GUID value{ 0x64C95285,0x358E,0x47C5,{ 0x82,0x49,0x69,0x5F,0x38,0x3B,0x2B,0xDB } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>{ static constexpr GUID value{ 0xD919682F,0xBE14,0x4934,{ 0x98,0x1D,0x2F,0x57,0xB9,0xED,0x83,0xE6 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>{ static constexpr GUID value{ 0x744930EB,0x8157,0x4A41,{ 0x84,0x94,0x6B,0xF5,0x4C,0x9B,0x1D,0x2B } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails>{ static constexpr GUID value{ 0x50E3126D,0xA465,0x4EEB,{ 0x93,0x17,0x28,0xA1,0x67,0x63,0x0C,0xEA } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails>{ static constexpr GUID value{ 0xBC68A9D1,0x82E1,0x4488,{ 0x9F,0x2C,0x12,0x76,0xC2,0x46,0x8F,0xAC } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>{ static constexpr GUID value{ 0x0BCC0284,0x412E,0x403D,{ 0xAC,0xC6,0xB7,0x57,0xE3,0x47,0x74,0xA4 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>{ static constexpr GUID value{ 0x709D254C,0x595F,0x4847,{ 0xBB,0x30,0x64,0x69,0x35,0x54,0x29,0x18 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>{ static constexpr GUID value{ 0x91B14016,0x8DCA,0x4225,{ 0xBB,0xED,0xEE,0xF8,0xB8,0xD7,0x18,0xD7 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck>{ static constexpr GUID value{ 0x0108916D,0x9E9A,0x4AF6,{ 0x8D,0xA3,0x60,0x49,0x3B,0x19,0xC2,0x04 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>{ static constexpr GUID value{ 0xD45A8DA0,0x0E86,0x4D98,{ 0x8B,0xA4,0xDD,0x70,0xD4,0xB7,0x64,0xD3 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>{ static constexpr GUID value{ 0x3EBCBACC,0xF8C3,0x405C,{ 0x99,0x64,0x70,0xA1,0xEE,0xAB,0xE1,0x94 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>{ static constexpr GUID value{ 0x5B235412,0x35F0,0x49E7,{ 0x9B,0x08,0x16,0xD2,0x78,0xFB,0xAA,0x42 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>{ static constexpr GUID value{ 0x8FDAADB6,0x4AF9,0x4F21,{ 0x9B,0x58,0xD5,0x3E,0x9F,0x24,0x23,0x1E } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>{ static constexpr GUID value{ 0xEBD203A1,0x01BA,0x476D,{ 0xB4,0xB3,0xBF,0x3D,0x12,0xC8,0xF8,0x0C } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>{ static constexpr GUID value{ 0x217700E0,0x8203,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IProvisionedProfile>{ static constexpr GUID value{ 0x217700E0,0x8202,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IProvisioningAgent>{ static constexpr GUID value{ 0x217700E0,0x8201,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>{ static constexpr GUID value{ 0x217700E0,0x8101,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails>{ static constexpr GUID value{ 0x03C65E9D,0x5926,0x41F3,{ 0xA9,0x4E,0xB5,0x09,0x26,0xFC,0x42,0x1B } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IUssdMessage>{ static constexpr GUID value{ 0x2F9ACF82,0x2004,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IUssdMessageFactory>{ static constexpr GUID value{ 0x2F9ACF82,0x1003,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IUssdReply>{ static constexpr GUID value{ 0x2F9ACF82,0x2005,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IUssdSession>{ static constexpr GUID value{ 0x2F9ACF82,0x2002,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
-template <> struct guid<Windows::Networking::NetworkOperators::IUssdSessionStatics>{ static constexpr GUID value{ 0x2F9ACF82,0x1001,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESim>{ static constexpr guid value{ 0x6F6E6E26,0xF123,0x437D,{ 0x8C,0xED,0xDC,0x1D,0x2B,0xC0,0xC3,0xA9 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimAddedEventArgs>{ static constexpr guid value{ 0x38BD0A58,0x4D5A,0x4D08,{ 0x8D,0xA7,0xE7,0x3E,0xFF,0x36,0x9D,0xDD } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult>{ static constexpr guid value{ 0xC4234D9E,0x5AD6,0x426D,{ 0x8D,0x00,0x44,0x34,0xF4,0x49,0xAF,0xEC } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimManagerStatics>{ static constexpr guid value{ 0x0BFA2C0C,0xDF88,0x4631,{ 0xBF,0x04,0xC1,0x2E,0x28,0x1B,0x39,0x62 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimOperationResult>{ static constexpr guid value{ 0xA67B63B1,0x309B,0x4E77,{ 0x9E,0x7E,0xCD,0x93,0xF1,0xDD,0xC7,0xB9 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimPolicy>{ static constexpr guid value{ 0x41E1B99D,0xCF7E,0x4315,{ 0x88,0x2B,0x6F,0x1E,0x74,0xB0,0xD3,0x8F } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimProfile>{ static constexpr guid value{ 0xEE1E7880,0x06A9,0x4027,{ 0xB4,0xF8,0xDD,0xB2,0x3D,0x78,0x10,0xE0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimProfileMetadata>{ static constexpr guid value{ 0xED25831F,0x90DB,0x498D,{ 0xA7,0xB4,0xEB,0xCE,0x80,0x7D,0x3C,0x23 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimProfilePolicy>{ static constexpr guid value{ 0xE6DD0F1D,0x9C5C,0x46C5,{ 0xA2,0x89,0xA9,0x48,0x99,0x9B,0xF0,0x62 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimRemovedEventArgs>{ static constexpr guid value{ 0xDEC5277B,0x2FD9,0x4ED9,{ 0x83,0x76,0xD9,0xB5,0xE4,0x12,0x78,0xA3 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimServiceInfo>{ static constexpr guid value{ 0xF16AABCF,0x7F59,0x4A51,{ 0x84,0x94,0xBD,0x89,0xD5,0xFF,0x50,0xEE } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimUpdatedEventArgs>{ static constexpr guid value{ 0x4C125CEC,0x508D,0x4B88,{ 0x83,0xCB,0x68,0xBE,0xF8,0x16,0x8D,0x12 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IESimWatcher>{ static constexpr guid value{ 0xC1F84CEB,0xA28D,0x4FBF,{ 0x97,0x71,0x6E,0x31,0xB8,0x1C,0xCF,0x22 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>{ static constexpr guid value{ 0xF2AA4395,0xF1E6,0x4319,{ 0xAA,0x3E,0x47,0x7C,0xA6,0x4B,0x2B,0xDF } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>{ static constexpr guid value{ 0xE756C791,0x1003,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>{ static constexpr guid value{ 0xE756C791,0x1004,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>{ static constexpr guid value{ 0xE756C791,0x1002,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>{ static constexpr guid value{ 0xE756C791,0x1001,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>{ static constexpr guid value{ 0xE756C791,0x1005,0x4DE5,{ 0x83,0xC7,0xDE,0x61,0xD8,0x88,0x31,0xD0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>{ static constexpr guid value{ 0xB458AEED,0x49F1,0x4C22,{ 0xB0,0x73,0x96,0xD5,0x11,0xBF,0x9C,0x35 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>{ static constexpr guid value{ 0x3883C8B9,0xFF24,0x4571,{ 0xA8,0x67,0x09,0xF9,0x60,0x42,0x6E,0x14 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>{ static constexpr guid value{ 0x80CD1A63,0x37A5,0x43D3,{ 0x80,0xA3,0xCC,0xD2,0x3E,0x8F,0xEC,0xEE } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>{ static constexpr guid value{ 0x7C34E581,0x1F1B,0x43F4,{ 0x95,0x30,0x8B,0x09,0x2D,0x32,0xD7,0x1F } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccount>{ static constexpr guid value{ 0x36C24CCD,0xCEE2,0x43E0,{ 0xA6,0x03,0xEE,0x86,0xA3,0x6D,0x65,0x70 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>{ static constexpr guid value{ 0x38F52F1C,0x1136,0x4257,{ 0x95,0x9F,0xB6,0x58,0xA3,0x52,0xB6,0xD4 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>{ static constexpr guid value{ 0x092A1E21,0x9379,0x4B9B,{ 0xAD,0x31,0xD5,0xFE,0xE2,0xF7,0x48,0xC6 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>{ static constexpr guid value{ 0x3853C880,0x77DE,0x4C04,{ 0xBE,0xAD,0xA1,0x23,0xB0,0x8C,0x9F,0x59 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>{ static constexpr guid value{ 0xAA7F4D24,0xAFC1,0x4FC8,{ 0xAE,0x9A,0xA9,0x17,0x53,0x10,0xFA,0xAD } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>{ static constexpr guid value{ 0x7BC31D88,0xA6BD,0x49E1,{ 0x80,0xAB,0x6B,0x91,0x35,0x4A,0x57,0xD4 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>{ static constexpr guid value{ 0x6BF3335E,0x23B5,0x449F,{ 0x92,0x8D,0x5E,0x0D,0x3E,0x04,0x47,0x1D } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar>{ static constexpr guid value{ 0xB9AF4B7E,0xCBF9,0x4109,{ 0x90,0xBE,0x5C,0x06,0xBF,0xD5,0x13,0xB6 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>{ static constexpr guid value{ 0xA91E1716,0xC04D,0x4A21,{ 0x86,0x98,0x14,0x59,0xDC,0x67,0x2C,0x6E } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma>{ static constexpr guid value{ 0x0601B3B4,0x411A,0x4F2E,{ 0x82,0x87,0x76,0xF5,0x65,0x0C,0x60,0xCD } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm>{ static constexpr guid value{ 0xCC917F06,0x7EE0,0x47B8,{ 0x9E,0x1F,0xC3,0xB4,0x8D,0xF9,0xDF,0x5B } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellLte>{ static constexpr guid value{ 0x9197C87B,0x2B78,0x456D,{ 0x8B,0x53,0xAA,0xA2,0x5D,0x0A,0xF7,0x41 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma>{ static constexpr guid value{ 0x0EDA1655,0xDB0E,0x4182,{ 0x8C,0xDA,0xCC,0x41,0x9A,0x7B,0xDE,0x08 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts>{ static constexpr guid value{ 0x77B4B5AE,0x49C8,0x4F15,{ 0xB2,0x85,0x4C,0x26,0xA7,0xF6,0x72,0x15 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo>{ static constexpr guid value{ 0x89A9562A,0xE472,0x4DA5,{ 0x92,0x9C,0xDE,0x61,0x71,0x1D,0xD2,0x61 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>{ static constexpr guid value{ 0xE6D08168,0xE381,0x4C6E,{ 0x9B,0xE8,0xFE,0x15,0x69,0x69,0xA4,0x46 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>{ static constexpr guid value{ 0x2E467AF1,0xF932,0x4737,{ 0xA7,0x22,0x03,0xBA,0x72,0x37,0x0C,0xB8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>{ static constexpr guid value{ 0xE08BB4BD,0x5D30,0x4B5A,{ 0x92,0xCC,0xD5,0x4D,0xF8,0x81,0xD4,0x9E } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>{ static constexpr guid value{ 0x22BE1A52,0xBD80,0x40AC,{ 0x8E,0x1F,0x2E,0x07,0x83,0x6A,0x3D,0xBD } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>{ static constexpr guid value{ 0xB0F46ABB,0x94D6,0x44B9,{ 0xA5,0x38,0xF0,0x81,0x0B,0x64,0x53,0x89 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>{ static constexpr guid value{ 0xFC098A45,0x913B,0x4914,{ 0xB6,0xC3,0xAE,0x63,0x04,0x59,0x3E,0x75 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>{ static constexpr guid value{ 0xB6AA13DE,0x1380,0x40E3,{ 0x86,0x18,0x73,0xCB,0xCA,0x48,0x13,0x8C } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>{ static constexpr guid value{ 0xDAD62333,0x8BCF,0x4289,{ 0x8A,0x37,0x04,0x5C,0x21,0x69,0x48,0x6A } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>{ static constexpr guid value{ 0x53D69B5B,0xC4ED,0x45F0,{ 0x80,0x3A,0xD9,0x41,0x7A,0x6D,0x98,0x46 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>{ static constexpr guid value{ 0x4A055B70,0xB9AE,0x4458,{ 0x92,0x41,0xA6,0xA5,0xFB,0xF1,0x8A,0x0C } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModem>{ static constexpr guid value{ 0xD0356912,0xE9F9,0x4F67,{ 0xA0,0x3D,0x43,0x18,0x9A,0x31,0x6B,0xF1 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModem2>{ static constexpr guid value{ 0x12862B28,0xB9EB,0x4EE2,{ 0xBB,0xE3,0x71,0x1F,0x53,0xEE,0xA3,0x73 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>{ static constexpr guid value{ 0xE9FEC6EA,0x2F34,0x4582,{ 0x91,0x02,0xC3,0x14,0xD2,0xA8,0x7E,0xEC } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>{ static constexpr guid value{ 0xFCE035A3,0xD6CD,0x4320,{ 0xB9,0x82,0xBE,0x9D,0x3E,0xC7,0x89,0x0F } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2>{ static constexpr guid value{ 0x320FF5C5,0xE460,0x42AE,{ 0xAA,0x51,0x69,0x62,0x1E,0x7A,0x44,0x77 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation>{ static constexpr guid value{ 0xB5618FEC,0xE661,0x4330,{ 0x9B,0xB4,0x34,0x80,0x21,0x2E,0xC3,0x54 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>{ static constexpr guid value{ 0x21D7EC58,0xC2B1,0x4C2F,{ 0xA0,0x30,0x72,0x82,0x0A,0x24,0xEC,0xD9 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>{ static constexpr guid value{ 0xF99ED637,0xD6F1,0x4A78,{ 0x8C,0xBC,0x64,0x21,0xA6,0x50,0x63,0xC8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>{ static constexpr guid value{ 0xCB63928C,0x0309,0x4CB6,{ 0xA8,0xC1,0x6A,0x5A,0x3C,0x8E,0x1F,0xF6 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>{ static constexpr guid value{ 0x5A55DB22,0x62F7,0x4BDD,{ 0xBA,0x1D,0x47,0x74,0x41,0x96,0x0B,0xA0 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3>{ static constexpr guid value{ 0x33670A8A,0xC7EF,0x444C,{ 0xAB,0x6C,0xDF,0x7E,0xF7,0xA3,0x90,0xFE } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>{ static constexpr guid value{ 0xBEAF94E1,0x960F,0x49B4,{ 0xA0,0x8D,0x7D,0x85,0xE9,0x68,0xC7,0xEC } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>{ static constexpr guid value{ 0x89135CFF,0x28B8,0x46AA,{ 0xB1,0x37,0x1C,0x4B,0x0F,0x21,0xED,0xFE } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPco>{ static constexpr guid value{ 0xD4E4FCBE,0xE3A3,0x43C5,{ 0xA8,0x7B,0x6C,0x86,0xD2,0x29,0xD7,0xFA } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails>{ static constexpr guid value{ 0x263F5114,0x64E0,0x4493,{ 0x90,0x9B,0x2D,0x14,0xA0,0x19,0x62,0xB1 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPin>{ static constexpr guid value{ 0xE661D709,0xE779,0x45BF,{ 0x82,0x81,0x75,0x32,0x3D,0xF9,0xE3,0x21 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>{ static constexpr guid value{ 0xBE16673E,0x1F04,0x4F95,{ 0x8B,0x90,0xE7,0xF5,0x59,0xDD,0xE7,0xE5 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>{ static constexpr guid value{ 0xD338C091,0x3E91,0x4D38,{ 0x90,0x36,0xAE,0xE8,0x3A,0x6E,0x79,0xAD } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>{ static constexpr guid value{ 0x83567EDD,0x6E1F,0x4B9B,{ 0xA4,0x13,0x2B,0x1F,0x50,0xCC,0x36,0xDF } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>{ static constexpr guid value{ 0x11DDDC32,0x31E7,0x49F5,{ 0xB6,0x63,0x12,0x3D,0x3B,0xEF,0x03,0x62 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>{ static constexpr guid value{ 0xB054A561,0x9833,0x4AED,{ 0x97,0x17,0x43,0x48,0xB2,0x1A,0x24,0xB3 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>{ static constexpr guid value{ 0x71301ACE,0x093C,0x42C6,{ 0xB0,0xDB,0xAD,0x1F,0x75,0xA6,0x54,0x45 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>{ static constexpr guid value{ 0xE5B26833,0x967E,0x40C9,{ 0xA4,0x85,0x19,0xC0,0xDD,0x20,0x9E,0x22 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs>{ static constexpr guid value{ 0x612E3875,0x040A,0x4F99,{ 0xA4,0xF9,0x61,0xD7,0xC3,0x2D,0xA1,0x29 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandUicc>{ static constexpr guid value{ 0xE634F691,0x525A,0x4CE2,{ 0x8F,0xCE,0xAA,0x41,0x62,0x57,0x91,0x54 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>{ static constexpr guid value{ 0x4D170556,0x98A1,0x43DD,{ 0xB2,0xEC,0x50,0xC9,0x0C,0xF2,0x48,0xDF } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>{ static constexpr guid value{ 0x64C95285,0x358E,0x47C5,{ 0x82,0x49,0x69,0x5F,0x38,0x3B,0x2B,0xDB } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>{ static constexpr guid value{ 0xD919682F,0xBE14,0x4934,{ 0x98,0x1D,0x2F,0x57,0xB9,0xED,0x83,0xE6 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>{ static constexpr guid value{ 0x744930EB,0x8157,0x4A41,{ 0x84,0x94,0x6B,0xF5,0x4C,0x9B,0x1D,0x2B } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails>{ static constexpr guid value{ 0x50E3126D,0xA465,0x4EEB,{ 0x93,0x17,0x28,0xA1,0x67,0x63,0x0C,0xEA } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails>{ static constexpr guid value{ 0xBC68A9D1,0x82E1,0x4488,{ 0x9F,0x2C,0x12,0x76,0xC2,0x46,0x8F,0xAC } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>{ static constexpr guid value{ 0x0BCC0284,0x412E,0x403D,{ 0xAC,0xC6,0xB7,0x57,0xE3,0x47,0x74,0xA4 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>{ static constexpr guid value{ 0x709D254C,0x595F,0x4847,{ 0xBB,0x30,0x64,0x69,0x35,0x54,0x29,0x18 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>{ static constexpr guid value{ 0x91B14016,0x8DCA,0x4225,{ 0xBB,0xED,0xEE,0xF8,0xB8,0xD7,0x18,0xD7 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck>{ static constexpr guid value{ 0x0108916D,0x9E9A,0x4AF6,{ 0x8D,0xA3,0x60,0x49,0x3B,0x19,0xC2,0x04 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>{ static constexpr guid value{ 0xD45A8DA0,0x0E86,0x4D98,{ 0x8B,0xA4,0xDD,0x70,0xD4,0xB7,0x64,0xD3 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>{ static constexpr guid value{ 0x3EBCBACC,0xF8C3,0x405C,{ 0x99,0x64,0x70,0xA1,0xEE,0xAB,0xE1,0x94 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>{ static constexpr guid value{ 0x5B235412,0x35F0,0x49E7,{ 0x9B,0x08,0x16,0xD2,0x78,0xFB,0xAA,0x42 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>{ static constexpr guid value{ 0x8FDAADB6,0x4AF9,0x4F21,{ 0x9B,0x58,0xD5,0x3E,0x9F,0x24,0x23,0x1E } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>{ static constexpr guid value{ 0xEBD203A1,0x01BA,0x476D,{ 0xB4,0xB3,0xBF,0x3D,0x12,0xC8,0xF8,0x0C } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>{ static constexpr guid value{ 0x217700E0,0x8203,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IProvisionedProfile>{ static constexpr guid value{ 0x217700E0,0x8202,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IProvisioningAgent>{ static constexpr guid value{ 0x217700E0,0x8201,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>{ static constexpr guid value{ 0x217700E0,0x8101,0x11DF,{ 0xAD,0xB9,0xF4,0xCE,0x46,0x2D,0x91,0x37 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails>{ static constexpr guid value{ 0x03C65E9D,0x5926,0x41F3,{ 0xA9,0x4E,0xB5,0x09,0x26,0xFC,0x42,0x1B } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IUssdMessage>{ static constexpr guid value{ 0x2F9ACF82,0x2004,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IUssdMessageFactory>{ static constexpr guid value{ 0x2F9ACF82,0x1003,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IUssdReply>{ static constexpr guid value{ 0x2F9ACF82,0x2005,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IUssdSession>{ static constexpr guid value{ 0x2F9ACF82,0x2002,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
+template <> struct guid_storage<Windows::Networking::NetworkOperators::IUssdSessionStatics>{ static constexpr guid value{ 0x2F9ACF82,0x1001,0x4D5D,{ 0xBF,0x81,0x2A,0xBA,0x1B,0x4B,0xE4,0xA8 } }; };
 template <> struct default_interface<Windows::Networking::NetworkOperators::ESim>{ using type = Windows::Networking::NetworkOperators::IESim; };
 template <> struct default_interface<Windows::Networking::NetworkOperators::ESimAddedEventArgs>{ using type = Windows::Networking::NetworkOperators::IESimAddedEventArgs; };
 template <> struct default_interface<Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult>{ using type = Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult; };
@@ -1095,6 +1106,768 @@ template <> struct default_interface<Windows::Networking::NetworkOperators::Ussd
 template <> struct default_interface<Windows::Networking::NetworkOperators::UssdReply>{ using type = Windows::Networking::NetworkOperators::IUssdReply; };
 template <> struct default_interface<Windows::Networking::NetworkOperators::UssdSession>{ using type = Windows::Networking::NetworkOperators::IUssdSession; };
 
+template <> struct abi<Windows::Networking::NetworkOperators::IESim>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AvailableMemoryInBytes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Eid(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirmwareVersion(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MobileBroadbandModemDeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Policy(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetProfiles(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteProfileAsync(void* profileId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DownloadProfileMetadataAsync(void* activationCode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ResetAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ProfileChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ProfileChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimAddedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ESim(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Result(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProfileMetadata(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServiceInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateESimWatcher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ServiceInfoChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ServiceInfoChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimOperationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::ESimOperationStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimPolicy>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ShouldEnableManagingUi(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimProfile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Class(Windows::Networking::NetworkOperators::ESimProfileClass* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Nickname(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Policy(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderIcon(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimProfileState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DisableAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL EnableAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetNicknameAsync(void* newNickname, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimProfileMetadata>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsConfirmationCodeRequired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Policy(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderIcon(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Networking::NetworkOperators::ESimProfileMetadataState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL DenyInstallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ConfirmInstallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ConfirmInstallWithConfirmationCodeAsync(void* confirmationCode, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PostponeInstallAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StateChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimProfilePolicy>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanDelete(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanDisable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsManagedByEnterprise(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimRemovedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ESim(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimServiceInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AuthenticationPreference(Windows::Networking::NetworkOperators::ESimAuthenticationPreference* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsESimUiEnabled(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimUpdatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ESim(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IESimWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::ESimWatcherStatus* status) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestUnlockAsync(void* contactListId, void** returnValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WirelessNetworkId(uint32_t* __valueSize, uint8_t** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkAdapter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RedirectMessageUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RedirectMessageXml(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL IssueCredentials(void* userName, void* password, void* extraParameters, bool markAsManualConnectOnFailure) noexcept = 0;
+    virtual int32_t WINRT_CALL AbortAuthentication(bool markAsManual) noexcept = 0;
+    virtual int32_t WINRT_CALL SkipAuthentication() noexcept = 0;
+    virtual int32_t WINRT_CALL TriggerAttentionRequired(void* packageRelativeApplicationId, void* applicationParameters) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IssueCredentialsAsync(void* userName, void* password, void* extraParameters, bool markAsManualConnectOnFailure, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetAuthenticationContext(void* evenToken, void** context, bool* isValid) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EventToken(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HasNetworkErrorOccurred(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseCode(Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogoffUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationReplyXml(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EFSpn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid1(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid2(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EFSpn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid1(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid2(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EFOns(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EFSpn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid1(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid2(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EFSpn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EFOpl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EFPnn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid1(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gid2(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceProviderGuid(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceProviderName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentNetwork(void** network) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentDeviceInformation(void** deviceInformation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetConnectionProfiles(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccountExperienceUrl(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AvailableNetworkAccountIds(void** ppAccountIds) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ppAccount) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasDeviceInformationChanged(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasNetworkChanged(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_AccountAdded(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccountAdded(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccountUpdated(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccountUpdated(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccountRemoved(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccountRemoved(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Stopped(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus* status) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AntennaIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SarBackoffIndex(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithIndex(int32_t antennaIndex, int32_t sarBackoffIndex, void** antennaSar) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaseStationId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseStationPNCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseStationLatitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseStationLongitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseStationLastBroadcastGpsTime(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PilotSignalStrengthInDB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BaseStationId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CellId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReceivedSignalStrengthInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellLte>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CellId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhysicalCellId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReferenceSignalReceivedPowerInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReferenceSignalReceivedQualityInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrackingAreaCode(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CellId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CellParameterId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PathLossInDB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReceivedSignalCodePowerInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CellId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChannelNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationAreaCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PathLossInDB(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PrimaryScramblingCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReceivedSignalCodePowerInDBm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignalToNoiseRatioInDB(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NeighboringCellsCdma(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NeighboringCellsGsm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NeighboringCellsLte(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NeighboringCellsTdscdma(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NeighboringCellsUmts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServingCellsCdma(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServingCellsGsm(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServingCellsLte(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServingCellsTdscdma(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServingCellsUmts(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkDeviceStatus(Windows::Networking::NetworkOperators::NetworkDeviceStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Manufacturer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Model(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirmwareInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataClasses(Windows::Networking::NetworkOperators::DataClasses* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomDataClass(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MobileEquipmentId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TelephoneNumbers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubscriberId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SimIccId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceType(Windows::Networking::NetworkOperators::MobileBroadbandDeviceType* pDeviceType) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentRadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* pCurrentState) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PinManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Revision(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SerialNumber(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SimSpn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SimPnn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SimGid1(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedCommands(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenDataSession(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenCommandSession(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StatusCode(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendQueryCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL SendSetCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL CloseSession() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ReceivedData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL WriteDataAsync(void* value, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL CloseSession() noexcept = 0;
+    virtual int32_t WINRT_CALL add_DataReceived(void* eventHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DataReceived(winrt::event_token eventCookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataReadSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDataWriteSupported(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceServiceId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReceivedData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentAccount(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxDeviceServiceCommandSizeInBytes(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxDeviceServiceDataSizeInBytes(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceServices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceService(winrt::guid deviceServiceId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsResetSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ResetAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentConfigurationAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentNetwork(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetIsPassthroughEnabledAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIsPassthroughEnabledAsync(bool value, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetPcoAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsInEmergencyCallMode(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_IsInEmergencyCallModeChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_IsInEmergencyCallModeChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uicc(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HomeProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HomeProviderName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SarManager(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddAllowedHost(void* host) noexcept = 0;
+    virtual int32_t WINRT_CALL AddAllowedHostRange(void* first, void* last) noexcept = 0;
+    virtual int32_t WINRT_CALL ApplyConfigurationAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearConfigurationAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* modemDeviceId, void* ruleGroupId, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromId(void* deviceId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefault(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAdapter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkRegistrationState(Windows::Networking::NetworkOperators::NetworkRegistrationState* registrationState) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegistrationNetworkError(uint32_t* networkError) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PacketAttachNetworkError(uint32_t* networkError) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivationNetworkError(uint32_t* networkError) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessPointName(void** apn) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegisteredDataClass(Windows::Networking::NetworkOperators::DataClasses* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegisteredProviderId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegisteredProviderName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowConnectionUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetVoiceCallSupportAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegistrationUiccApps(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCellsInfoAsync(void** asyncOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Network(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkRegistrationStateChanges(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPco>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsComplete(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UpdatedData(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPin>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Type(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Format(Windows::Networking::NetworkOperators::MobileBroadbandPinFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Enabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxLength(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinLength(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AttemptsRemaining(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL EnableAsync(void* currentPin, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL DisableAsync(void* currentPin, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL EnterAsync(void* currentPin, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeAsync(void* currentPin, void* newPin, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL UnblockAsync(void* pinUnblockKey, void* newPin, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PinType(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PinLockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PinLockStateChanges(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SupportedPins(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSuccessful(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AttemptsRemaining(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RadioStateChanges(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsBackoffEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsWiFiHardwareIntegrated(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSarControlledByHardware(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Antennas(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HysteresisTimerPeriod(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_TransmissionStateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_TransmissionStateChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL EnableBackoffAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DisableBackoffAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetConfigurationAsync(void* antennas, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RevertSarToHardwareControlAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetTransmissionStateChangedHysteresisAsync(Windows::Foundation::TimeSpan timerPeriod, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsTransmittingAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL StartTransmissionStateMonitoring() noexcept = 0;
+    virtual int32_t WINRT_CALL StopTransmissionStateMonitoring() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTransmitting(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUicc>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SimIccId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetUiccAppsAsync(void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::Networking::NetworkOperators::UiccAppKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRecordDetailsAsync(void* uiccFilePath, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadRecordAsync(void* uiccFilePath, int32_t recordIndex, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::Networking::NetworkOperators::UiccAppRecordKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecordCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecordSize(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReadAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WriteAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UiccApps(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NotificationKind(Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NotificationType(Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EncodingType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RuleId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SmsMessage(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Ssid(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Ssid(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Passphrase(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Passphrase(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MacAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HostNames(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTetheringClients(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AuthorizeTethering(bool allow, void* entitlementFailureReason) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxClientCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClientCount(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TetheringOperationalState(Windows::Networking::NetworkOperators::TetheringOperationalState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentAccessPointConfiguration(void** configuration) noexcept = 0;
+    virtual int32_t WINRT_CALL ConfigureAccessPointAsync(void* configuration, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL StartTetheringAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL StopTetheringAsync(void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTetheringCapability(void* networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ppManager) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTetheringCapabilityFromConnectionProfile(void* profile, Windows::Networking::NetworkOperators::TetheringCapability* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromConnectionProfile(void* profile, void** ppManager) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromConnectionProfileWithTargetAdapter(void* profile, void* adapter, void** ppManager) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Networking::NetworkOperators::TetheringOperationStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdditionalErrorMessage(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllElementsProvisioned(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProvisionResultsXml(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IProvisionedProfile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateUsage(struct struct_Windows_Networking_NetworkOperators_ProfileUsage value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IProvisioningAgent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProvisionFromXmlDocumentAsync(void* provisioningXmlDocument, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, void* profileName, void** provisionedProfile) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** provisioningAgent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL AllowTethering() noexcept = 0;
+    virtual int32_t WINRT_CALL DenyTethering(void* entitlementFailureReason) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IUssdMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataCodingScheme(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataCodingScheme(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPayload(uint32_t* __valueSize, uint8_t** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPayload(uint32_t __valueSize, uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PayloadAsText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PayloadAsText(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IUssdMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMessage(void* messageText, void** ussdMessage) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IUssdReply>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ResultCode(Windows::Networking::NetworkOperators::UssdResultCode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IUssdSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendMessageAndGetReplyAsync(void* message, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL Close() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Networking::NetworkOperators::IUssdSessionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromNetworkAccountId(void* networkAccountId, void** ussdSession) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromNetworkInterfaceId(void* networkInterfaceId, void** ussdSession) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IESim
 {
@@ -1108,10 +1881,10 @@ struct consume_Windows_Networking_NetworkOperators_IESim
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult> DeleteProfileAsync(param::hstring const& profileId) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimDownloadProfileMetadataResult> DownloadProfileMetadataAsync(param::hstring const& activationCode) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult> ResetAsync() const;
-    event_token ProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const;
-    using ProfileChanged_revoker = event_revoker<Windows::Networking::NetworkOperators::IESim>;
+    winrt::event_token ProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const;
+    using ProfileChanged_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESim, &impl::abi_t<Windows::Networking::NetworkOperators::IESim>::remove_ProfileChanged>;
     ProfileChanged_revoker ProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESim, Windows::Foundation::IInspectable> const& handler) const;
-    void ProfileChanged(event_token const& token) const;
+    void ProfileChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IESim> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IESim<D>; };
 
@@ -1135,10 +1908,10 @@ struct consume_Windows_Networking_NetworkOperators_IESimManagerStatics
 {
     Windows::Networking::NetworkOperators::ESimServiceInfo ServiceInfo() const;
     Windows::Networking::NetworkOperators::ESimWatcher TryCreateESimWatcher() const;
-    event_token ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    using ServiceInfoChanged_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics>;
+    winrt::event_token ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using ServiceInfoChanged_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics, &impl::abi_t<Windows::Networking::NetworkOperators::IESimManagerStatics>::remove_ServiceInfoChanged>;
     ServiceInfoChanged_revoker ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
-    void ServiceInfoChanged(event_token const& token) const;
+    void ServiceInfoChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IESimManagerStatics> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IESimManagerStatics<D>; };
 
@@ -1187,10 +1960,10 @@ struct consume_Windows_Networking_NetworkOperators_IESimProfileMetadata
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress> ConfirmInstallAsync() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::NetworkOperators::ESimOperationResult, Windows::Networking::NetworkOperators::ESimProfileInstallProgress> ConfirmInstallAsync(param::hstring const& confirmationCode) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ESimOperationResult> PostponeInstallAsync() const;
-    event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const;
-    using StateChanged_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimProfileMetadata>;
+    winrt::event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const;
+    using StateChanged_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimProfileMetadata, &impl::abi_t<Windows::Networking::NetworkOperators::IESimProfileMetadata>::remove_StateChanged>;
     StateChanged_revoker StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimProfileMetadata, Windows::Foundation::IInspectable> const& handler) const;
-    void StateChanged(event_token const& token) const;
+    void StateChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IESimProfileMetadata> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IESimProfileMetadata<D>; };
 
@@ -1231,26 +2004,26 @@ struct consume_Windows_Networking_NetworkOperators_IESimWatcher
     Windows::Networking::NetworkOperators::ESimWatcherStatus Status() const;
     void Start() const;
     void Stop() const;
-    event_token Added(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const;
-    using Added_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimWatcher>;
+    winrt::event_token Added(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const;
+    using Added_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Added>;
     Added_revoker Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimAddedEventArgs> const& handler) const;
-    void Added(event_token const& token) const;
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimWatcher>;
+    void Added(winrt::event_token const& token) const noexcept;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void EnumerationCompleted(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimWatcher>;
+    void EnumerationCompleted(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimRemovedEventArgs> const& handler) const;
-    void Removed(event_token const& token) const;
-    event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using Stopped_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimWatcher>;
+    void Removed(winrt::event_token const& token) const noexcept;
+    winrt::event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using Stopped_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Stopped>;
     Stopped_revoker Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void Stopped(event_token const& token) const;
-    event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const;
-    using Updated_revoker = event_revoker<Windows::Networking::NetworkOperators::IESimWatcher>;
+    void Stopped(winrt::event_token const& token) const noexcept;
+    winrt::event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const;
+    using Updated_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IESimWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IESimWatcher>::remove_Updated>;
     Updated_revoker Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::ESimWatcher, Windows::Networking::NetworkOperators::ESimUpdatedEventArgs> const& handler) const;
-    void Updated(event_token const& token) const;
+    void Updated(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IESimWatcher> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IESimWatcher<D>; };
 
@@ -1350,7 +2123,7 @@ template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccount
 {
     hstring NetworkAccountId() const;
-    GUID ServiceProviderGuid() const;
+    winrt::guid ServiceProviderGuid() const;
     hstring ServiceProviderName() const;
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork CurrentNetwork() const;
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation CurrentDeviceInformation() const;
@@ -1398,26 +2171,26 @@ template <> struct consume<Windows::Networking::NetworkOperators::IMobileBroadba
 template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandAccountWatcher
 {
-    event_token AccountAdded(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
-    using AccountAdded_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>;
+    winrt::event_token AccountAdded(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
+    using AccountAdded_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountAdded>;
     AccountAdded_revoker AccountAdded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
-    void AccountAdded(event_token const& cookie) const;
-    event_token AccountUpdated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const;
-    using AccountUpdated_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>;
+    void AccountAdded(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token AccountUpdated(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const;
+    using AccountUpdated_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountUpdated>;
     AccountUpdated_revoker AccountUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs> const& handler) const;
-    void AccountUpdated(event_token const& cookie) const;
-    event_token AccountRemoved(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
-    using AccountRemoved_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>;
+    void AccountUpdated(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token AccountRemoved(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
+    using AccountRemoved_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_AccountRemoved>;
     AccountRemoved_revoker AccountRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> const& handler) const;
-    void AccountRemoved(event_token const& cookie) const;
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>;
+    void AccountRemoved(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void EnumerationCompleted(event_token const& cookie) const;
-    event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using Stopped_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>;
+    void EnumerationCompleted(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using Stopped_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>::remove_Stopped>;
     Stopped_revoker Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void Stopped(event_token const& cookie) const;
+    void Stopped(winrt::event_token const& cookie) const noexcept;
     Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus Status() const;
     void Start() const;
     void Stop() const;
@@ -1565,7 +2338,7 @@ template <> struct consume<Windows::Networking::NetworkOperators::IMobileBroadba
 template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceService
 {
-    GUID DeviceServiceId() const;
+    winrt::guid DeviceServiceId() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> SupportedCommands() const;
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession OpenDataSession() const;
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession OpenCommandSession() const;
@@ -1601,17 +2374,17 @@ struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceService
 {
     Windows::Foundation::IAsyncAction WriteDataAsync(Windows::Storage::Streams::IBuffer const& value) const;
     void CloseSession() const;
-    event_token DataReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const;
-    using DataReceived_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>;
+    winrt::event_token DataReceived(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const;
+    using DataReceived_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>::remove_DataReceived>;
     DataReceived_revoker DataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> const& eventHandler) const;
-    void DataReceived(event_token const& eventCookie) const;
+    void DataReceived(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceDataSession<D>; };
 
 template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceInformation
 {
-    GUID DeviceServiceId() const;
+    winrt::guid DeviceServiceId() const;
     bool IsDataReadSupported() const;
     bool IsDataWriteSupported() const;
 };
@@ -1621,7 +2394,7 @@ template <typename D>
 struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceTriggerDetails
 {
     hstring DeviceId() const;
-    GUID DeviceServiceId() const;
+    winrt::guid DeviceServiceId() const;
     Windows::Storage::Streams::IBuffer ReceivedData() const;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IMobileBroadbandDeviceServiceTriggerDetails<D>; };
@@ -1634,7 +2407,7 @@ struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem
     uint32_t MaxDeviceServiceCommandSizeInBytes() const;
     uint32_t MaxDeviceServiceDataSizeInBytes() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation> DeviceServices() const;
-    Windows::Networking::NetworkOperators::MobileBroadbandDeviceService GetDeviceService(GUID const& deviceServiceId) const;
+    Windows::Networking::NetworkOperators::MobileBroadbandDeviceService GetDeviceService(winrt::guid const& deviceServiceId) const;
     bool IsResetSupported() const;
     Windows::Foundation::IAsyncAction ResetAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration> GetCurrentConfigurationAsync() const;
@@ -1655,10 +2428,10 @@ struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandPco> TryGetPcoAsync() const;
     bool IsInEmergencyCallMode() const;
-    event_token IsInEmergencyCallModeChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const;
-    using IsInEmergencyCallModeChanged_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>;
+    winrt::event_token IsInEmergencyCallModeChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const;
+    using IsInEmergencyCallModeChanged_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandModem3, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>::remove_IsInEmergencyCallModeChanged>;
     IsInEmergencyCallModeChanged_revoker IsInEmergencyCallModeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandModem, Windows::Foundation::IInspectable> const& handler) const;
-    void IsInEmergencyCallModeChanged(event_token const& token) const;
+    void IsInEmergencyCallModeChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Networking::NetworkOperators::IMobileBroadbandModem3> { template <typename D> using type = consume_Windows_Networking_NetworkOperators_IMobileBroadbandModem3<D>; };
 
@@ -1839,10 +2612,10 @@ struct consume_Windows_Networking_NetworkOperators_IMobileBroadbandSarManager
     bool IsSarControlledByHardware() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar> Antennas() const;
     Windows::Foundation::TimeSpan HysteresisTimerPeriod() const;
-    event_token TransmissionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const;
-    using TransmissionStateChanged_revoker = event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>;
+    winrt::event_token TransmissionStateChanged(Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const;
+    using TransmissionStateChanged_revoker = impl::event_revoker<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager, &impl::abi_t<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>::remove_TransmissionStateChanged>;
     TransmissionStateChanged_revoker TransmissionStateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandSarManager, Windows::Networking::NetworkOperators::MobileBroadbandTransmissionStateChangedEventArgs> const& handler) const;
-    void TransmissionStateChanged(event_token const& token) const;
+    void TransmissionStateChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncAction EnableBackoffAsync() const;
     Windows::Foundation::IAsyncAction DisableBackoffAsync() const;
     Windows::Foundation::IAsyncAction SetConfigurationAsync(param::async_iterable<Windows::Networking::NetworkOperators::MobileBroadbandAntennaSar> const& antennas) const;
@@ -2100,767 +2873,5 @@ struct struct_Windows_Networking_NetworkOperators_ProfileUsage
 };
 template <> struct abi<Windows::Networking::NetworkOperators::ProfileUsage>{ using type = struct_Windows_Networking_NetworkOperators_ProfileUsage; };
 
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESim>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AvailableMemoryInBytes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Eid(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirmwareVersion(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MobileBroadbandModemDeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Policy(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimState* value) noexcept = 0;
-    virtual HRESULT __stdcall GetProfiles(void** value) noexcept = 0;
-    virtual HRESULT __stdcall DeleteProfileAsync(HSTRING profileId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DownloadProfileMetadataAsync(HSTRING activationCode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ResetAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_ProfileChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ProfileChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimAddedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ESim(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimDownloadProfileMetadataResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Result(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProfileMetadata(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServiceInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateESimWatcher(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_ServiceInfoChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ServiceInfoChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimOperationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::ESimOperationStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimPolicy>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ShouldEnableManagingUi(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimProfile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Class(Windows::Networking::NetworkOperators::ESimProfileClass* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Nickname(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Policy(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderIcon(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimProfileState* value) noexcept = 0;
-    virtual HRESULT __stdcall DisableAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall EnableAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetNicknameAsync(HSTRING newNickname, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimProfileMetadata>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsConfirmationCodeRequired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Policy(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderIcon(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Networking::NetworkOperators::ESimProfileMetadataState* value) noexcept = 0;
-    virtual HRESULT __stdcall DenyInstallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ConfirmInstallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ConfirmInstallWithConfirmationCodeAsync(HSTRING confirmationCode, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PostponeInstallAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_StateChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StateChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimProfilePolicy>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanDelete(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanDisable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsManagedByEnterprise(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimRemovedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ESim(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimServiceInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AuthenticationPreference(Windows::Networking::NetworkOperators::ESimAuthenticationPreference* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsESimUiEnabled(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimUpdatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ESim(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IESimWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::ESimWatcherStatus* status) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Added(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Stopped(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Updated(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IFdnAccessManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestUnlockAsync(HSTRING contactListId, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WirelessNetworkId(uint32_t* __valueSize, uint8_t** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkAdapter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RedirectMessageUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RedirectMessageXml(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall IssueCredentials(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure) noexcept = 0;
-    virtual HRESULT __stdcall AbortAuthentication(bool markAsManual) noexcept = 0;
-    virtual HRESULT __stdcall SkipAuthentication() noexcept = 0;
-    virtual HRESULT __stdcall TriggerAttentionRequired(HSTRING packageRelativeApplicationId, HSTRING applicationParameters) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IssueCredentialsAsync(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetAuthenticationContext(HSTRING evenToken, void** context, bool* isValid) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EventToken(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HasNetworkErrorOccurred(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseCode(Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogoffUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationReplyXml(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EFSpn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid1(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid2(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EFSpn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid1(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid2(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EFOns(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_EFSpn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid1(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid2(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EFSpn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_EFOpl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_EFPnn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid1(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gid2(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceProviderGuid(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceProviderName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentNetwork(void** network) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentDeviceInformation(void** deviceInformation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetConnectionProfiles(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AccountExperienceUrl(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AvailableNetworkAccountIds(void** ppAccountIds) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ppAccount) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasDeviceInformationChanged(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasNetworkChanged(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_AccountAdded(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccountAdded(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_AccountUpdated(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccountUpdated(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_AccountRemoved(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccountRemoved(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_Stopped(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_Stopped(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcherStatus* status) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSar>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AntennaIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SarBackoffIndex(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandAntennaSarFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithIndex(int32_t antennaIndex, int32_t sarBackoffIndex, void** antennaSar) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellCdma>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaseStationId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseStationPNCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseStationLatitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseStationLongitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseStationLastBroadcastGpsTime(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PilotSignalStrengthInDB(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemId(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellGsm>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BaseStationId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CellId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelNumber(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationAreaCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReceivedSignalStrengthInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellLte>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CellId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelNumber(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhysicalCellId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReferenceSignalReceivedPowerInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReferenceSignalReceivedQualityInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrackingAreaCode(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellTdscdma>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CellId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CellParameterId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelNumber(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationAreaCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PathLossInDB(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReceivedSignalCodePowerInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimingAdvanceInBitPeriods(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellUmts>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CellId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChannelNumber(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationAreaCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PathLossInDB(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PrimaryScramblingCode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReceivedSignalCodePowerInDBm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignalToNoiseRatioInDB(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandCellsInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NeighboringCellsCdma(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NeighboringCellsGsm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NeighboringCellsLte(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NeighboringCellsTdscdma(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NeighboringCellsUmts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServingCellsCdma(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServingCellsGsm(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServingCellsLte(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServingCellsTdscdma(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServingCellsUmts(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkDeviceStatus(Windows::Networking::NetworkOperators::NetworkDeviceStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Manufacturer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Model(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirmwareInformation(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CellularClass(Windows::Devices::Sms::CellularClass* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataClasses(Windows::Networking::NetworkOperators::DataClasses* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomDataClass(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MobileEquipmentId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TelephoneNumbers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubscriberId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SimIccId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceType(Windows::Networking::NetworkOperators::MobileBroadbandDeviceType* pDeviceType) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentRadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* pCurrentState) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PinManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Revision(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SerialNumber(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SimSpn(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SimPnn(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SimGid1(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedCommands(void** value) noexcept = 0;
-    virtual HRESULT __stdcall OpenDataSession(void** value) noexcept = 0;
-    virtual HRESULT __stdcall OpenCommandSession(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StatusCode(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseData(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendQueryCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall SendSetCommandAsync(uint32_t commandId, void* data, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall CloseSession() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ReceivedData(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall WriteDataAsync(void* value, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall CloseSession() noexcept = 0;
-    virtual HRESULT __stdcall add_DataReceived(void* eventHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_DataReceived(event_token eventCookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataReadSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDataWriteSupported(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceServiceId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReceivedData(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentAccount(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxDeviceServiceCommandSizeInBytes(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxDeviceServiceDataSizeInBytes(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceServices(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceService(GUID deviceServiceId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsResetSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall ResetAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentConfigurationAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentNetwork(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetIsPassthroughEnabledAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall SetIsPassthroughEnabledAsync(bool value, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModem3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetPcoAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_IsInEmergencyCallMode(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_IsInEmergencyCallModeChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_IsInEmergencyCallModeChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uicc(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HomeProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HomeProviderName(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SarManager(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddAllowedHost(void* host) noexcept = 0;
-    virtual HRESULT __stdcall AddAllowedHostRange(void* first, void* last) noexcept = 0;
-    virtual HRESULT __stdcall ApplyConfigurationAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ClearConfigurationAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemIsolationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING modemDeviceId, HSTRING ruleGroupId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall FromId(HSTRING deviceId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAdapter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkRegistrationState(Windows::Networking::NetworkOperators::NetworkRegistrationState* registrationState) noexcept = 0;
-    virtual HRESULT __stdcall get_RegistrationNetworkError(uint32_t* networkError) noexcept = 0;
-    virtual HRESULT __stdcall get_PacketAttachNetworkError(uint32_t* networkError) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivationNetworkError(uint32_t* networkError) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessPointName(HSTRING* apn) noexcept = 0;
-    virtual HRESULT __stdcall get_RegisteredDataClass(Windows::Networking::NetworkOperators::DataClasses* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegisteredProviderId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegisteredProviderName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ShowConnectionUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetVoiceCallSupportAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall get_RegistrationUiccApps(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetwork3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCellsInfoAsync(void** asyncOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Network(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkRegistrationStateChanges(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPco>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Data(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_IsComplete(bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPcoDataChangeTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UpdatedData(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPin>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Format(Windows::Networking::NetworkOperators::MobileBroadbandPinFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Enabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxLength(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinLength(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AttemptsRemaining(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall EnableAsync(HSTRING currentPin, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall DisableAsync(HSTRING currentPin, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall EnterAsync(HSTRING currentPin, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall ChangeAsync(HSTRING currentPin, HSTRING newPin, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall UnblockAsync(HSTRING pinUnblockKey, HSTRING newPin, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PinType(Windows::Networking::NetworkOperators::MobileBroadbandPinType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PinLockState(Windows::Networking::NetworkOperators::MobileBroadbandPinLockState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PinLockStateChanges(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SupportedPins(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSuccessful(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AttemptsRemaining(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RadioState(Windows::Networking::NetworkOperators::MobileBroadbandRadioState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RadioStateChanges(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandSarManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsBackoffEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsWiFiHardwareIntegrated(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSarControlledByHardware(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Antennas(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HysteresisTimerPeriod(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall add_TransmissionStateChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_TransmissionStateChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall EnableBackoffAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DisableBackoffAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetConfigurationAsync(void* antennas, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RevertSarToHardwareControlAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetTransmissionStateChangedHysteresisAsync(Windows::Foundation::TimeSpan timerPeriod, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetIsTransmittingAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall StartTransmissionStateMonitoring() noexcept = 0;
-    virtual HRESULT __stdcall StopTransmissionStateMonitoring() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandTransmissionStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTransmitting(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUicc>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SimIccId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetUiccAppsAsync(void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::Networking::NetworkOperators::UiccAppKind* value) noexcept = 0;
-    virtual HRESULT __stdcall GetRecordDetailsAsync(void* uiccFilePath, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall ReadRecordAsync(void* uiccFilePath, int32_t recordIndex, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::Networking::NetworkOperators::UiccAppRecordKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RecordCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RecordSize(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReadAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WriteAccessCondition(Windows::Networking::NetworkOperators::UiccAccessCondition* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UiccApps(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorDataUsageTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NotificationKind(Windows::Networking::NetworkOperators::NetworkOperatorDataUsageNotificationKind* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorNotificationEventDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NotificationType(Windows::Networking::NetworkOperators::NetworkOperatorEventMessageType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EncodingType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RuleId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SmsMessage(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Ssid(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Ssid(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Passphrase(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Passphrase(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MacAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HostNames(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTetheringClients(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringEntitlementCheck>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AuthorizeTethering(bool allow, HSTRING entitlementFailureReason) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxClientCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClientCount(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TetheringOperationalState(Windows::Networking::NetworkOperators::TetheringOperationalState* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentAccessPointConfiguration(void** configuration) noexcept = 0;
-    virtual HRESULT __stdcall ConfigureAccessPointAsync(void* configuration, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall StartTetheringAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall StopTetheringAsync(void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTetheringCapability(HSTRING networkAccountId, Windows::Networking::NetworkOperators::TetheringCapability* value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ppManager) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTetheringCapabilityFromConnectionProfile(void* profile, Windows::Networking::NetworkOperators::TetheringCapability* result) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromConnectionProfile(void* profile, void** ppManager) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromConnectionProfileWithTargetAdapter(void* profile, void* adapter, void** ppManager) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Networking::NetworkOperators::TetheringOperationStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdditionalErrorMessage(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllElementsProvisioned(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProvisionResultsXml(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IProvisionedProfile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) noexcept = 0;
-    virtual HRESULT __stdcall UpdateUsage(struct struct_Windows_Networking_NetworkOperators_ProfileUsage value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IProvisioningAgent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProvisionFromXmlDocumentAsync(HSTRING provisioningXmlDocument, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, HSTRING profileName, void** provisionedProfile) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** provisioningAgent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::ITetheringEntitlementCheckTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall AllowTethering() noexcept = 0;
-    virtual HRESULT __stdcall DenyTethering(HSTRING entitlementFailureReason) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IUssdMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataCodingScheme(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataCodingScheme(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall GetPayload(uint32_t* __valueSize, uint8_t** value) noexcept = 0;
-    virtual HRESULT __stdcall SetPayload(uint32_t __valueSize, uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PayloadAsText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PayloadAsText(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IUssdMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMessage(HSTRING messageText, void** ussdMessage) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IUssdReply>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ResultCode(Windows::Networking::NetworkOperators::UssdResultCode* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IUssdSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendMessageAndGetReplyAsync(void* message, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall Close() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Networking::NetworkOperators::IUssdSessionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromNetworkAccountId(HSTRING networkAccountId, void** ussdSession) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromNetworkInterfaceId(HSTRING networkInterfaceId, void** ussdSession) noexcept = 0;
-};};
 
 }

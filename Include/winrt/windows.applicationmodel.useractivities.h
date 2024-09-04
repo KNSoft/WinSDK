@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.useractivities.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,16 +232,24 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
 #define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
 #endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION)
+#define WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
 #define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
@@ -287,6 +303,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity2 ABI::Windows::ApplicationModel::UserActivities::IUserActivity2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace UserActivities {
+                interface IUserActivity3;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* UserActivities */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 ABI::Windows::ApplicationModel::UserActivities::IUserActivity3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution_FWD_DEFINED__
@@ -1203,6 +1233,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
@@ -1427,6 +1458,50 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
 
 /*
  *
+ * Interface Windows.ApplicationModel.UserActivities.IUserActivity3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivity
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_UserActivities_IUserActivity3[] = L"Windows.ApplicationModel.UserActivities.IUserActivity3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace UserActivities {
+                /* [object, uuid("E7697744-E1A2-5147-8E06-55F1EEEF271C"), exclusiveto, contract] */
+                MIDL_INTERFACE("E7697744-E1A2-5147-8E06-55F1EEEF271C")
+                IUserActivity3 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsRoamable(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsRoamable(
+                        /* [in] */boolean value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IUserActivity3=_uuidof(IUserActivity3);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* UserActivities */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.UserActivities.IUserActivityAttribution
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -1507,7 +1582,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithUri(
                         /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * iconUri,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivityAttribution * * result
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivityAttribution * * value
                         ) = 0;
                     
                 };
@@ -1644,7 +1719,7 @@ namespace ABI {
                 {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE GetDefault(
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivityChannel * * value
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivityChannel * * result
                         ) = 0;
                     
                 };
@@ -1668,10 +1743,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  *
  *
  * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivityChannel
- *
- *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.ApplicationModel.UserActivities.IUserActivityChannelStatics
  *
  *
  */
@@ -1813,7 +1884,7 @@ namespace ABI {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE CreateWithActivityId(
                         /* [in] */__RPC__in HSTRING activityId,
-                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivity * * result
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::ApplicationModel::UserActivities::IUserActivity * * value
                         ) = 0;
                     
                 };
@@ -2008,10 +2079,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  *
  *
  * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivitySession
- *
- *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.IClosable
  *
  *
  */
@@ -2270,6 +2337,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivity ** Default Interface **
  *    Windows.ApplicationModel.UserActivities.IUserActivity2
+ *    Windows.ApplicationModel.UserActivities.IUserActivity3
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -2325,6 +2395,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivityChannel ** Default Interface **
  *    Windows.ApplicationModel.UserActivities.IUserActivityChannel2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -2467,8 +2539,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivitySessionHistoryItem ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -2519,6 +2589,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActiv
 typedef interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity2 __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution_FWD_DEFINED__
@@ -3905,6 +3981,7 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CUserActivities_CUserActivitySta
 
 
 
+
 /*
  *
  * Struct Windows.ApplicationModel.UserActivities.UserActivityState
@@ -4210,6 +4287,106 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
 
 /*
  *
+ * Interface Windows.ApplicationModel.UserActivities.IUserActivity3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivity
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_UserActivities_IUserActivity3[] = L"Windows.ApplicationModel.UserActivities.IUserActivity3";
+/* [object, uuid("E7697744-E1A2-5147-8E06-55F1EEEF271C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsRoamable )(
+        __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsRoamable )(
+        __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3 * This,
+        /* [in] */boolean value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_get_IsRoamable(This,value) \
+    ( (This)->lpVtbl->get_IsRoamable(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_put_IsRoamable(This,value) \
+    ( (This)->lpVtbl->put_IsRoamable(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.UserActivities.IUserActivityAttribution
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 5.0
@@ -4388,7 +4565,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateWithUri )(
         __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttributionFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * iconUri,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttribution * * value
         );
     END_INTERFACE
     
@@ -4418,8 +4595,8 @@ interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttri
 #define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttributionFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttributionFactory_CreateWithUri(This,iconUri,result) \
-    ( (This)->lpVtbl->CreateWithUri(This,iconUri,result) )
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityAttributionFactory_CreateWithUri(This,iconUri,value) \
+    ( (This)->lpVtbl->CreateWithUri(This,iconUri,value) )
 
 
 #endif /* COBJMACROS */
@@ -4693,7 +4870,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetDefault )(
         __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannelStatics * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannel * * value
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannel * * result
         );
     END_INTERFACE
     
@@ -4723,8 +4900,8 @@ interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChann
 #define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannelStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannelStatics_GetDefault(This,value) \
-    ( (This)->lpVtbl->GetDefault(This,value) )
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityChannelStatics_GetDefault(This,result) \
+    ( (This)->lpVtbl->GetDefault(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -4743,10 +4920,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  *
  *
  * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivityChannel
- *
- *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.ApplicationModel.UserActivities.IUserActivityChannelStatics
  *
  *
  */
@@ -5075,7 +5248,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateWithActivityId )(
         __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityFactory * This,
         /* [in] */__RPC__in HSTRING activityId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity * * result
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivity * * value
         );
     END_INTERFACE
     
@@ -5105,8 +5278,8 @@ interface __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityFacto
 #define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityFactory_CreateWithActivityId(This,activityId,result) \
-    ( (This)->lpVtbl->CreateWithActivityId(This,activityId,result) )
+#define __x_ABI_CWindows_CApplicationModel_CUserActivities_CIUserActivityFactory_CreateWithActivityId(This,activityId,value) \
+    ( (This)->lpVtbl->CreateWithActivityId(This,activityId,value) )
 
 
 #endif /* COBJMACROS */
@@ -5512,10 +5685,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  *
  *
  * Interface is a part of the implementation of type Windows.ApplicationModel.UserActivities.UserActivitySession
- *
- *
- * Any object which implements this interface must also implement the following interfaces:
- *     Windows.Foundation.IClosable
  *
  *
  */
@@ -6090,6 +6259,9 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CUserActivities_CIUser
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivity ** Default Interface **
  *    Windows.ApplicationModel.UserActivities.IUserActivity2
+ *    Windows.ApplicationModel.UserActivities.IUserActivity3
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -6145,6 +6317,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivityChannel ** Default Interface **
  *    Windows.ApplicationModel.UserActivities.IUserActivityChannel2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -6286,8 +6460,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.UserActivities.IUserActivitySessionHistoryItem ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

@@ -408,12 +408,13 @@ typedef enum _WDI_PHY_TYPE
     WDI_PHY_TYPE_FHSS = 1,
     WDI_PHY_TYPE_DSSS = 2,
     WDI_PHY_TYPE_IRBASEBAND = 3,
-    WDI_PHY_TYPE_OFDM = 4,
-    WDI_PHY_TYPE_HRDSSS = 5,
-    WDI_PHY_TYPE_ERP = 6,
-    WDI_PHY_TYPE_HT = 7,
-    WDI_PHY_TYPE_VHT = 8,
-    WDI_PHY_TYPE_DMG = 9,
+    WDI_PHY_TYPE_OFDM = 4,                  // 11a
+    WDI_PHY_TYPE_HRDSSS = 5,                // 11b
+    WDI_PHY_TYPE_ERP = 6,                   // 11g
+    WDI_PHY_TYPE_HT = 7,                    // 11n
+    WDI_PHY_TYPE_VHT = 8,                   // 11ac
+    WDI_PHY_TYPE_DMG = 9,                   // 11ad
+    WDI_PHY_TYPE_HE = 10,                   // 11ax
     WDI_PHY_TYPE_IHV_START = 0x80000000,
     WDI_PHY_TYPE_IHV_END = 0xffffffff,
 } WDI_PHY_TYPE;

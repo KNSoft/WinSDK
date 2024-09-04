@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.media.mediaproperties.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -442,6 +454,20 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IImageEncodingPropertiesStatics3;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 ABI::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_FWD_DEFINED__
 namespace ABI {
@@ -595,6 +621,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                interface IMediaEncodingSubtypesStatics5;
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
@@ -1888,6 +1928,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Media {
@@ -2849,6 +2891,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ImageEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics3[] = L"Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("48F4814D-A2FF-48DC-8EA0-E90680663656"), exclusiveto, contract] */
+                MIDL_INTERFACE("48F4814D-A2FF-48DC-8EA0-E90680663656")
+                IImageEncodingPropertiesStatics3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE CreateHeif(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Media::MediaProperties::IImageEncodingProperties * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IImageEncodingPropertiesStatics3=_uuidof(IImageEncodingPropertiesStatics3);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaEncodingProfile
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -3501,6 +3584,47 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingS
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingSubtypes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics5[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5";
+namespace ABI {
+    namespace Windows {
+        namespace Media {
+            namespace MediaProperties {
+                /* [object, uuid("5AD4A007-FFCE-4760-9828-5D0C99637E6A"), exclusiveto, contract] */
+                MIDL_INTERFACE("5AD4A007-FFCE-4760-9828-5D0C99637E6A")
+                IMediaEncodingSubtypesStatics5 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Heif(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IMediaEncodingSubtypesStatics5=_uuidof(IMediaEncodingSubtypesStatics5);
+                
+            } /* Windows */
+        } /* Media */
+    } /* MediaProperties */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaRatio
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4081,6 +4205,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
@@ -4145,6 +4270,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
@@ -4384,6 +4510,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProper
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingProfile;
@@ -4449,6 +4581,12 @@ typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtyp
 typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4;
 
 #endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5;
+
+#endif // ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
 #define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaRatio_FWD_DEFINED__
@@ -7209,6 +7347,8 @@ typedef enum __x_ABI_CWindows_CMedia_CMediaProperties_CVideoEncodingQuality __x_
 
 
 
+
+
 /*
  *
  * Struct Windows.Media.MediaProperties.AudioEncodingQuality
@@ -8825,6 +8965,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingP
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.ImageEncodingProperties
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics3[] = L"Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3";
+/* [object, uuid("48F4814D-A2FF-48DC-8EA0-E90680663656"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateHeif )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingProperties * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_CreateHeif(This,result) \
+    ( (This)->lpVtbl->CreateHeif(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIImageEncodingPropertiesStatics3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaEncodingProfile
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -10305,6 +10538,99 @@ EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingS
 
 /*
  *
+ * Interface Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Media.MediaProperties.MediaEncodingSubtypes
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics5[] = L"Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5";
+/* [object, uuid("5AD4A007-FFCE-4760-9828-5D0C99637E6A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Heif )(
+        __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5 * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5Vtbl;
+
+interface __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_get_Heif(This,value) \
+    ( (This)->lpVtbl->get_Heif(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5;
+#endif /* !defined(____x_ABI_CWindows_CMedia_CMediaProperties_CIMediaEncodingSubtypesStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Media.MediaProperties.IMediaRatio
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -11489,6 +11815,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics3 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IImageEncodingPropertiesStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
@@ -11553,6 +11880,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics4 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics3 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract

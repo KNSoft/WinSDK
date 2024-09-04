@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -15,6 +15,8 @@ struct DeferralCompletedHandler : Windows::Foundation::IUnknown
     template <typename L> DeferralCompletedHandler(L lambda);
     template <typename F> DeferralCompletedHandler(F* function);
     template <typename O, typename M> DeferralCompletedHandler(O* object, M method);
+    template <typename O, typename M> DeferralCompletedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DeferralCompletedHandler(weak_ref<O>&& object, M method);
     void operator()() const;
 };
 
@@ -31,6 +33,14 @@ struct WINRT_EBO Deferral :
 {
     Deferral(std::nullptr_t) noexcept {}
     Deferral(Windows::Foundation::DeferralCompletedHandler const& handler);
+};
+
+struct GuidHelper
+{
+    GuidHelper() = delete;
+    static winrt::guid CreateNewGuid();
+    static winrt::guid Empty();
+    static bool Equals(winrt::guid const& target, winrt::guid const& value);
 };
 
 struct WINRT_EBO MemoryBuffer :
@@ -57,7 +67,7 @@ struct PropertyValue
     static Windows::Foundation::IInspectable CreateBoolean(bool value);
     static Windows::Foundation::IInspectable CreateString(param::hstring const& value);
     static Windows::Foundation::IInspectable CreateInspectable(Windows::Foundation::IInspectable const& value);
-    static Windows::Foundation::IInspectable CreateGuid(GUID const& value);
+    static Windows::Foundation::IInspectable CreateGuid(winrt::guid const& value);
     static Windows::Foundation::IInspectable CreateDateTime(Windows::Foundation::DateTime const& value);
     static Windows::Foundation::IInspectable CreateTimeSpan(Windows::Foundation::TimeSpan const& value);
     static Windows::Foundation::IInspectable CreatePoint(Windows::Foundation::Point const& value);
@@ -76,7 +86,7 @@ struct PropertyValue
     static Windows::Foundation::IInspectable CreateBooleanArray(array_view<bool const> value);
     static Windows::Foundation::IInspectable CreateStringArray(array_view<hstring const> value);
     static Windows::Foundation::IInspectable CreateInspectableArray(array_view<Windows::Foundation::IInspectable const> value);
-    static Windows::Foundation::IInspectable CreateGuidArray(array_view<GUID const> value);
+    static Windows::Foundation::IInspectable CreateGuidArray(array_view<winrt::guid const> value);
     static Windows::Foundation::IInspectable CreateDateTimeArray(array_view<Windows::Foundation::DateTime const> value);
     static Windows::Foundation::IInspectable CreateTimeSpanArray(array_view<Windows::Foundation::TimeSpan const> value);
     static Windows::Foundation::IInspectable CreatePointArray(array_view<Windows::Foundation::Point const> value);

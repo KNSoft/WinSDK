@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -161,15 +161,15 @@ template <> struct name<Windows::Storage::FileProperties::ThumbnailMode>{ static
 template <> struct name<Windows::Storage::FileProperties::ThumbnailOptions>{ static constexpr auto & value{ L"Windows.Storage.FileProperties.ThumbnailOptions" }; };
 template <> struct name<Windows::Storage::FileProperties::ThumbnailType>{ static constexpr auto & value{ L"Windows.Storage.FileProperties.ThumbnailType" }; };
 template <> struct name<Windows::Storage::FileProperties::VideoOrientation>{ static constexpr auto & value{ L"Windows.Storage.FileProperties.VideoOrientation" }; };
-template <> struct guid<Windows::Storage::FileProperties::IBasicProperties>{ static constexpr GUID value{ 0xD05D55DB,0x785E,0x4A66,{ 0xBE,0x02,0x9B,0xEE,0xC5,0x8A,0xEA,0x81 } }; };
-template <> struct guid<Windows::Storage::FileProperties::IDocumentProperties>{ static constexpr GUID value{ 0x7EAB19BC,0x1821,0x4923,{ 0xB4,0xA9,0x0A,0xEA,0x40,0x4D,0x00,0x70 } }; };
-template <> struct guid<Windows::Storage::FileProperties::IGeotagHelperStatics>{ static constexpr GUID value{ 0x41493244,0x2524,0x4655,{ 0x86,0xA6,0xED,0x16,0xF5,0xFC,0x71,0x6B } }; };
-template <> struct guid<Windows::Storage::FileProperties::IImageProperties>{ static constexpr GUID value{ 0x523C9424,0xFCFF,0x4275,{ 0xAF,0xEE,0xEC,0xDB,0x9A,0xB4,0x79,0x73 } }; };
-template <> struct guid<Windows::Storage::FileProperties::IMusicProperties>{ static constexpr GUID value{ 0xBC8AAB62,0x66EC,0x419A,{ 0xBC,0x5D,0xCA,0x65,0xA4,0xCB,0x46,0xDA } }; };
-template <> struct guid<Windows::Storage::FileProperties::IStorageItemContentProperties>{ static constexpr GUID value{ 0x05294BAD,0xBC38,0x48BF,{ 0x85,0xD7,0x77,0x0E,0x0E,0x2A,0xE0,0xBA } }; };
-template <> struct guid<Windows::Storage::FileProperties::IStorageItemExtraProperties>{ static constexpr GUID value{ 0xC54361B2,0x54CD,0x432B,{ 0xBD,0xBC,0x4B,0x19,0xC4,0xB4,0x70,0xD7 } }; };
-template <> struct guid<Windows::Storage::FileProperties::IThumbnailProperties>{ static constexpr GUID value{ 0x693DD42F,0xDBE7,0x49B5,{ 0xB3,0xB3,0x28,0x93,0xAC,0x5D,0x34,0x23 } }; };
-template <> struct guid<Windows::Storage::FileProperties::IVideoProperties>{ static constexpr GUID value{ 0x719AE507,0x68DE,0x4DB8,{ 0x97,0xDE,0x49,0x99,0x8C,0x05,0x9F,0x2F } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IBasicProperties>{ static constexpr guid value{ 0xD05D55DB,0x785E,0x4A66,{ 0xBE,0x02,0x9B,0xEE,0xC5,0x8A,0xEA,0x81 } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IDocumentProperties>{ static constexpr guid value{ 0x7EAB19BC,0x1821,0x4923,{ 0xB4,0xA9,0x0A,0xEA,0x40,0x4D,0x00,0x70 } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IGeotagHelperStatics>{ static constexpr guid value{ 0x41493244,0x2524,0x4655,{ 0x86,0xA6,0xED,0x16,0xF5,0xFC,0x71,0x6B } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IImageProperties>{ static constexpr guid value{ 0x523C9424,0xFCFF,0x4275,{ 0xAF,0xEE,0xEC,0xDB,0x9A,0xB4,0x79,0x73 } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IMusicProperties>{ static constexpr guid value{ 0xBC8AAB62,0x66EC,0x419A,{ 0xBC,0x5D,0xCA,0x65,0xA4,0xCB,0x46,0xDA } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IStorageItemContentProperties>{ static constexpr guid value{ 0x05294BAD,0xBC38,0x48BF,{ 0x85,0xD7,0x77,0x0E,0x0E,0x2A,0xE0,0xBA } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IStorageItemExtraProperties>{ static constexpr guid value{ 0xC54361B2,0x54CD,0x432B,{ 0xBD,0xBC,0x4B,0x19,0xC4,0xB4,0x70,0xD7 } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IThumbnailProperties>{ static constexpr guid value{ 0x693DD42F,0xDBE7,0x49B5,{ 0xB3,0xB3,0x28,0x93,0xAC,0x5D,0x34,0x23 } }; };
+template <> struct guid_storage<Windows::Storage::FileProperties::IVideoProperties>{ static constexpr guid value{ 0x719AE507,0x68DE,0x4DB8,{ 0x97,0xDE,0x49,0x99,0x8C,0x05,0x9F,0x2F } }; };
 template <> struct default_interface<Windows::Storage::FileProperties::BasicProperties>{ using type = Windows::Storage::FileProperties::IBasicProperties; };
 template <> struct default_interface<Windows::Storage::FileProperties::DocumentProperties>{ using type = Windows::Storage::FileProperties::IDocumentProperties; };
 template <> struct default_interface<Windows::Storage::FileProperties::ImageProperties>{ using type = Windows::Storage::FileProperties::IImageProperties; };
@@ -177,6 +177,128 @@ template <> struct default_interface<Windows::Storage::FileProperties::MusicProp
 template <> struct default_interface<Windows::Storage::FileProperties::StorageItemContentProperties>{ using type = Windows::Storage::FileProperties::IStorageItemContentProperties; };
 template <> struct default_interface<Windows::Storage::FileProperties::StorageItemThumbnail>{ using type = Windows::Storage::Streams::IRandomAccessStreamWithContentType; };
 template <> struct default_interface<Windows::Storage::FileProperties::VideoProperties>{ using type = Windows::Storage::FileProperties::IVideoProperties; };
+
+template <> struct abi<Windows::Storage::FileProperties::IBasicProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Size(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateModified(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemDate(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IDocumentProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Author(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keywords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Comment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Comment(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IGeotagHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetGeotagAsync(void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetGeotagFromGeolocatorAsync(void* file, void* geolocator, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetGeotagAsync(void* file, void* geopoint, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IImageProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Rating(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rating(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keywords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateTaken(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DateTaken(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Latitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Longitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CameraManufacturer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CameraManufacturer(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CameraModel(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CameraModel(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Storage::FileProperties::PhotoOrientation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PeopleNames(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IMusicProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Album(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Album(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Artist(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Artist(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Genre(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrackNumber(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrackNumber(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rating(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rating(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bitrate(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlbumArtist(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlbumArtist(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Composers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Conductors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subtitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subtitle(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Producers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Publisher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Publisher(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Writers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Year(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Year(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IStorageItemContentProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetMusicPropertiesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVideoPropertiesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetImagePropertiesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDocumentPropertiesAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IStorageItemExtraProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RetrievePropertiesAsync(void* propertiesToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SavePropertiesAsync(void* propertiesToSave, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SavePropertiesAsyncOverloadDefault(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IThumbnailProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OriginalWidth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginalHeight(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReturnedSmallerCachedSize(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::Storage::FileProperties::ThumbnailType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::FileProperties::IVideoProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Rating(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rating(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keywords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Latitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Longitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subtitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subtitle(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Producers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Publisher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Publisher(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Writers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Year(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Year(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bitrate(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Directors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Storage::FileProperties::VideoOrientation* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_FileProperties_IBasicProperties
@@ -317,127 +439,5 @@ struct consume_Windows_Storage_FileProperties_IVideoProperties
     Windows::Storage::FileProperties::VideoOrientation Orientation() const;
 };
 template <> struct consume<Windows::Storage::FileProperties::IVideoProperties> { template <typename D> using type = consume_Windows_Storage_FileProperties_IVideoProperties<D>; };
-
-template <> struct abi<Windows::Storage::FileProperties::IBasicProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Size(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateModified(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemDate(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IDocumentProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Author(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keywords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Comment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Comment(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IGeotagHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetGeotagAsync(void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetGeotagFromGeolocatorAsync(void* file, void* geolocator, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SetGeotagAsync(void* file, void* geopoint, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IImageProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Rating(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rating(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keywords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateTaken(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DateTaken(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Latitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Longitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CameraManufacturer(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CameraManufacturer(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CameraModel(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CameraModel(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Storage::FileProperties::PhotoOrientation* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PeopleNames(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IMusicProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Album(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Album(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Artist(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Artist(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Genre(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrackNumber(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrackNumber(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rating(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rating(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bitrate(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlbumArtist(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlbumArtist(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Composers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Conductors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subtitle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subtitle(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Producers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Publisher(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Publisher(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Writers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Year(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Year(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IStorageItemContentProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetMusicPropertiesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetVideoPropertiesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetImagePropertiesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDocumentPropertiesAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IStorageItemExtraProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RetrievePropertiesAsync(void* propertiesToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SavePropertiesAsync(void* propertiesToSave, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SavePropertiesAsyncOverloadDefault(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IThumbnailProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OriginalWidth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginalHeight(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReturnedSmallerCachedSize(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::Storage::FileProperties::ThumbnailType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::FileProperties::IVideoProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Rating(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rating(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keywords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Latitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Longitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subtitle(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subtitle(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Producers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Publisher(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Publisher(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Writers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Year(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Year(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bitrate(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Directors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Storage::FileProperties::VideoOrientation* value) noexcept = 0;
-};};
 
 }

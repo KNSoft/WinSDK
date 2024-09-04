@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -196,35 +196,35 @@ template <> struct name<Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions>{
 template <> struct name<Windows::UI::Xaml::Media::Imaging::DecodePixelType>{ static constexpr auto & value{ L"Windows.UI.Xaml.Media.Imaging.DecodePixelType" }; };
 template <> struct name<Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus>{ static constexpr auto & value{ L"Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus" }; };
 template <> struct name<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler" }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImage>{ static constexpr GUID value{ 0x31AF3271,0xE3B4,0x442D,{ 0xA3,0x41,0x4C,0x02,0x26,0xB2,0x72,0x5B } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImage2>{ static constexpr GUID value{ 0x1069C1B6,0x8C9B,0x4762,{ 0xBE,0x3D,0x75,0x9F,0x56,0x98,0xF2,0xB3 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImage3>{ static constexpr GUID value{ 0xF1DE6F26,0x3C73,0x453F,{ 0xA7,0xBA,0x9B,0x85,0xC1,0x8B,0x37,0x33 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory>{ static constexpr GUID value{ 0xC9132978,0x4810,0x4E5E,{ 0x80,0x87,0x03,0x67,0x1E,0xE6,0x0D,0x85 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics>{ static constexpr GUID value{ 0x9E282143,0x70E8,0x437C,{ 0x9F,0xA4,0x2C,0xBF,0x29,0x5C,0xFF,0x84 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2>{ static constexpr GUID value{ 0xC5F5576A,0x75AF,0x41A4,{ 0xB8,0x93,0x8F,0xE9,0x1F,0xEE,0x28,0x82 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3>{ static constexpr GUID value{ 0x2B44E30D,0xF6D5,0x4411,{ 0xA8,0xCD,0xBF,0x76,0x03,0xC4,0xFA,0xA0 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapSource>{ static constexpr GUID value{ 0x23D86411,0x202F,0x41B2,{ 0x8C,0x5B,0xA8,0xA3,0xB3,0x33,0x80,0x0B } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory>{ static constexpr GUID value{ 0xE240420E,0xD4A7,0x49A4,{ 0xA0,0xB4,0xA5,0x9F,0xDD,0x77,0xE5,0x08 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics>{ static constexpr GUID value{ 0x9A9C9981,0x827B,0x4E51,{ 0x89,0x1B,0x8A,0x15,0xB5,0x11,0x84,0x2D } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs>{ static constexpr GUID value{ 0x7311E0D4,0xFE94,0x4E70,{ 0x9B,0x90,0xCD,0xD4,0x7A,0xC2,0x3A,0xFB } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap>{ static constexpr GUID value{ 0x500DEE81,0x893C,0x4C0A,{ 0x8F,0xEC,0x46,0x78,0xAC,0x71,0x75,0x89 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics>{ static constexpr GUID value{ 0xF0A1EFEE,0xC131,0x4D40,{ 0x9C,0x47,0xF7,0xD7,0xCF,0x2B,0x07,0x7F } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource>{ static constexpr GUID value{ 0xD2DD9ED0,0xD3C5,0x4056,{ 0x91,0xB5,0xB7,0xC1,0xD1,0xE8,0x13,0x0E } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>{ static constexpr GUID value{ 0x62F7D416,0xC714,0x4C4C,{ 0x82,0x73,0xF8,0x39,0xBC,0x58,0x13,0x5C } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>{ static constexpr GUID value{ 0x3AB2212A,0xEF65,0x4A5F,{ 0xBF,0xAC,0x73,0x99,0x3E,0x8C,0x12,0xC9 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>{ static constexpr GUID value{ 0x03E1CEC3,0x0CA8,0x4A4E,{ 0x8D,0x7C,0xC8,0x08,0xA0,0x83,0x85,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>{ static constexpr GUID value{ 0xC794E9E7,0xCF23,0x4D72,{ 0xBF,0x1A,0xDF,0xAA,0x16,0xD8,0xEA,0x52 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>{ static constexpr GUID value{ 0x68BB3170,0x3CCC,0x4035,{ 0xAC,0x01,0x98,0x34,0x54,0x3D,0x74,0x4E } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>{ static constexpr GUID value{ 0x85EF4C16,0x748E,0x4008,{ 0x95,0xC7,0x6A,0x23,0xDD,0x73,0x16,0xDB } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>{ static constexpr GUID value{ 0x9C6638CE,0xBED1,0x4AAB,{ 0xAC,0xBB,0xD3,0xE2,0x18,0x5D,0x31,0x5A } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>{ static constexpr GUID value{ 0x4A711FEA,0xBFAC,0x11E0,{ 0xA0,0x6A,0x9D,0xE4,0x47,0x24,0x01,0x9B } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory>{ static constexpr GUID value{ 0x3AB2212A,0xBFAC,0x11E0,{ 0x8A,0x92,0x69,0xE4,0x47,0x24,0x01,0x9B } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IWriteableBitmap>{ static constexpr GUID value{ 0xBF0B7E6F,0xDF7C,0x4A85,{ 0x84,0x13,0xA1,0x21,0x62,0x85,0x83,0x5C } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory>{ static constexpr GUID value{ 0x5563EBB1,0x3EF2,0x42C5,{ 0x9C,0x6D,0x1C,0xF5,0xDC,0xC0,0x41,0xFF } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>{ static constexpr GUID value{ 0x5D5FE9AA,0x533E,0x44B8,{ 0xA9,0x75,0xFC,0x5F,0x1E,0x3B,0xFF,0x52 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory>{ static constexpr GUID value{ 0xA3D1BB63,0x38F8,0x4DA3,{ 0x9F,0xCA,0xFD,0x81,0x28,0xA2,0xCB,0xF9 } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>{ static constexpr GUID value{ 0x9C2A6997,0xA908,0x4711,{ 0xB4,0xB2,0xA9,0x60,0xDB,0x3D,0x8E,0x5A } }; };
-template <> struct guid<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler>{ static constexpr GUID value{ 0x1ABAEE23,0x74EE,0x4CC7,{ 0x99,0xBA,0xB1,0x71,0xE3,0xCD,0xA6,0x1E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImage>{ static constexpr guid value{ 0x31AF3271,0xE3B4,0x442D,{ 0xA3,0x41,0x4C,0x02,0x26,0xB2,0x72,0x5B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImage2>{ static constexpr guid value{ 0x1069C1B6,0x8C9B,0x4762,{ 0xBE,0x3D,0x75,0x9F,0x56,0x98,0xF2,0xB3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImage3>{ static constexpr guid value{ 0xF1DE6F26,0x3C73,0x453F,{ 0xA7,0xBA,0x9B,0x85,0xC1,0x8B,0x37,0x33 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory>{ static constexpr guid value{ 0xC9132978,0x4810,0x4E5E,{ 0x80,0x87,0x03,0x67,0x1E,0xE6,0x0D,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics>{ static constexpr guid value{ 0x9E282143,0x70E8,0x437C,{ 0x9F,0xA4,0x2C,0xBF,0x29,0x5C,0xFF,0x84 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2>{ static constexpr guid value{ 0xC5F5576A,0x75AF,0x41A4,{ 0xB8,0x93,0x8F,0xE9,0x1F,0xEE,0x28,0x82 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3>{ static constexpr guid value{ 0x2B44E30D,0xF6D5,0x4411,{ 0xA8,0xCD,0xBF,0x76,0x03,0xC4,0xFA,0xA0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapSource>{ static constexpr guid value{ 0x23D86411,0x202F,0x41B2,{ 0x8C,0x5B,0xA8,0xA3,0xB3,0x33,0x80,0x0B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory>{ static constexpr guid value{ 0xE240420E,0xD4A7,0x49A4,{ 0xA0,0xB4,0xA5,0x9F,0xDD,0x77,0xE5,0x08 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics>{ static constexpr guid value{ 0x9A9C9981,0x827B,0x4E51,{ 0x89,0x1B,0x8A,0x15,0xB5,0x11,0x84,0x2D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs>{ static constexpr guid value{ 0x7311E0D4,0xFE94,0x4E70,{ 0x9B,0x90,0xCD,0xD4,0x7A,0xC2,0x3A,0xFB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap>{ static constexpr guid value{ 0x500DEE81,0x893C,0x4C0A,{ 0x8F,0xEC,0x46,0x78,0xAC,0x71,0x75,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics>{ static constexpr guid value{ 0xF0A1EFEE,0xC131,0x4D40,{ 0x9C,0x47,0xF7,0xD7,0xCF,0x2B,0x07,0x7F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource>{ static constexpr guid value{ 0xD2DD9ED0,0xD3C5,0x4056,{ 0x91,0xB5,0xB7,0xC1,0xD1,0xE8,0x13,0x0E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>{ static constexpr guid value{ 0x62F7D416,0xC714,0x4C4C,{ 0x82,0x73,0xF8,0x39,0xBC,0x58,0x13,0x5C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>{ static constexpr guid value{ 0x3AB2212A,0xEF65,0x4A5F,{ 0xBF,0xAC,0x73,0x99,0x3E,0x8C,0x12,0xC9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>{ static constexpr guid value{ 0x03E1CEC3,0x0CA8,0x4A4E,{ 0x8D,0x7C,0xC8,0x08,0xA0,0x83,0x85,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>{ static constexpr guid value{ 0xC794E9E7,0xCF23,0x4D72,{ 0xBF,0x1A,0xDF,0xAA,0x16,0xD8,0xEA,0x52 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>{ static constexpr guid value{ 0x68BB3170,0x3CCC,0x4035,{ 0xAC,0x01,0x98,0x34,0x54,0x3D,0x74,0x4E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>{ static constexpr guid value{ 0x85EF4C16,0x748E,0x4008,{ 0x95,0xC7,0x6A,0x23,0xDD,0x73,0x16,0xDB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>{ static constexpr guid value{ 0x9C6638CE,0xBED1,0x4AAB,{ 0xAC,0xBB,0xD3,0xE2,0x18,0x5D,0x31,0x5A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>{ static constexpr guid value{ 0x4A711FEA,0xBFAC,0x11E0,{ 0xA0,0x6A,0x9D,0xE4,0x47,0x24,0x01,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory>{ static constexpr guid value{ 0x3AB2212A,0xBFAC,0x11E0,{ 0x8A,0x92,0x69,0xE4,0x47,0x24,0x01,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IWriteableBitmap>{ static constexpr guid value{ 0xBF0B7E6F,0xDF7C,0x4A85,{ 0x84,0x13,0xA1,0x21,0x62,0x85,0x83,0x5C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory>{ static constexpr guid value{ 0x5563EBB1,0x3EF2,0x42C5,{ 0x9C,0x6D,0x1C,0xF5,0xDC,0xC0,0x41,0xFF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>{ static constexpr guid value{ 0x5D5FE9AA,0x533E,0x44B8,{ 0xA9,0x75,0xFC,0x5F,0x1E,0x3B,0xFF,0x52 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory>{ static constexpr guid value{ 0xA3D1BB63,0x38F8,0x4DA3,{ 0x9F,0xCA,0xFD,0x81,0x28,0xA2,0xCB,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>{ static constexpr guid value{ 0x9C2A6997,0xA908,0x4711,{ 0xB4,0xB2,0xA9,0x60,0xDB,0x3D,0x8E,0x5A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler>{ static constexpr guid value{ 0x1ABAEE23,0x74EE,0x4CC7,{ 0x99,0xBA,0xB1,0x71,0xE3,0xCD,0xA6,0x1E } }; };
 template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::BitmapImage>{ using type = Windows::UI::Xaml::Media::Imaging::IBitmapImage; };
 template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::BitmapSource>{ using type = Windows::UI::Xaml::Media::Imaging::IBitmapSource; };
 template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs>{ using type = Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs; };
@@ -238,6 +238,197 @@ template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::VirtualS
 template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::WriteableBitmap>{ using type = Windows::UI::Xaml::Media::Imaging::IWriteableBitmap; };
 template <> struct default_interface<Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask>{ using type = Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask; };
 
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UriSource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UriSource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DecodePixelWidth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DecodePixelWidth(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DecodePixelHeight(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DecodePixelHeight(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DownloadProgress(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DownloadProgress(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ImageOpened(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ImageOpened(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ImageFailed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ImageFailed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAnimatedBitmap(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPlaying(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoPlay(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoPlay(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL Play() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithUriSource(void* uriSource, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CreateOptionsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UriSourceProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DecodePixelWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DecodePixelHeightProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DecodePixelTypeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAnimatedBitmapProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsPlayingProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoPlayProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PixelWidth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PixelHeight(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSource(void* streamSource) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSourceAsync(void* streamSource, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PixelWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PixelHeightProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Progress(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Progress(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PixelWidth(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PixelHeight(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderAsync(void* element, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RenderToSizeAsync(void* element, int32_t scaledWidth, int32_t scaledHeight, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPixelsAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PixelWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PixelHeightProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetBitmapAsync(void* softwareBitmap, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UriSource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UriSource(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RasterizePixelWidth(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RasterizePixelWidth(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RasterizePixelHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RasterizePixelHeight(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Opened(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Opened(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OpenFailed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OpenFailed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSourceAsync(void* streamSource, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstanceWithUriSource(void* uriSource, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UriSourceProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RasterizePixelWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RasterizePixelHeightProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IWriteableBitmap>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PixelBuffer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Invalidate() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnRun(void* taskInstance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_UI_Xaml_Media_Imaging_IBitmapImage
 {
@@ -249,18 +440,18 @@ struct consume_Windows_UI_Xaml_Media_Imaging_IBitmapImage
     void DecodePixelWidth(int32_t value) const;
     int32_t DecodePixelHeight() const;
     void DecodePixelHeight(int32_t value) const;
-    event_token DownloadProgress(Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler const& value) const;
-    using DownloadProgress_revoker = event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage>;
-    DownloadProgress_revoker DownloadProgress(auto_revoke_t, Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler const& value) const;
-    void DownloadProgress(event_token const& token) const;
-    event_token ImageOpened(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using ImageOpened_revoker = event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage>;
-    ImageOpened_revoker ImageOpened(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void ImageOpened(event_token const& token) const;
-    event_token ImageFailed(Windows::UI::Xaml::ExceptionRoutedEventHandler const& value) const;
-    using ImageFailed_revoker = event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage>;
-    ImageFailed_revoker ImageFailed(auto_revoke_t, Windows::UI::Xaml::ExceptionRoutedEventHandler const& value) const;
-    void ImageFailed(event_token const& token) const;
+    winrt::event_token DownloadProgress(Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler const& handler) const;
+    using DownloadProgress_revoker = impl::event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage, &impl::abi_t<Windows::UI::Xaml::Media::Imaging::IBitmapImage>::remove_DownloadProgress>;
+    DownloadProgress_revoker DownloadProgress(auto_revoke_t, Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler const& handler) const;
+    void DownloadProgress(winrt::event_token const& token) const noexcept;
+    winrt::event_token ImageOpened(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using ImageOpened_revoker = impl::event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage, &impl::abi_t<Windows::UI::Xaml::Media::Imaging::IBitmapImage>::remove_ImageOpened>;
+    ImageOpened_revoker ImageOpened(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void ImageOpened(winrt::event_token const& token) const noexcept;
+    winrt::event_token ImageFailed(Windows::UI::Xaml::ExceptionRoutedEventHandler const& handler) const;
+    using ImageFailed_revoker = impl::event_revoker<Windows::UI::Xaml::Media::Imaging::IBitmapImage, &impl::abi_t<Windows::UI::Xaml::Media::Imaging::IBitmapImage>::remove_ImageFailed>;
+    ImageFailed_revoker ImageFailed(auto_revoke_t, Windows::UI::Xaml::ExceptionRoutedEventHandler const& handler) const;
+    void ImageFailed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::IBitmapImage> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_IBitmapImage<D>; };
 
@@ -330,7 +521,7 @@ template <> struct consume<Windows::UI::Xaml::Media::Imaging::IBitmapSource> { t
 template <typename D>
 struct consume_Windows_UI_Xaml_Media_Imaging_IBitmapSourceFactory
 {
-    Windows::UI::Xaml::Media::Imaging::BitmapSource CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Media::Imaging::BitmapSource CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_IBitmapSourceFactory<D>; };
 
@@ -385,8 +576,8 @@ template <> struct consume<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourc
 template <typename D>
 struct consume_Windows_UI_Xaml_Media_Imaging_ISurfaceImageSourceFactory
 {
-    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
-    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_ISurfaceImageSourceFactory<D>; };
 
@@ -399,14 +590,14 @@ struct consume_Windows_UI_Xaml_Media_Imaging_ISvgImageSource
     void RasterizePixelWidth(double value) const;
     double RasterizePixelHeight() const;
     void RasterizePixelHeight(double value) const;
-    event_token Opened(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> const& value) const;
-    using Opened_revoker = event_revoker<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>;
-    Opened_revoker Opened(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> const& value) const;
-    void Opened(event_token const& token) const;
-    event_token OpenFailed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> const& value) const;
-    using OpenFailed_revoker = event_revoker<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>;
-    OpenFailed_revoker OpenFailed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> const& value) const;
-    void OpenFailed(event_token const& token) const;
+    winrt::event_token Opened(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> const& handler) const;
+    using Opened_revoker = impl::event_revoker<Windows::UI::Xaml::Media::Imaging::ISvgImageSource, &impl::abi_t<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>::remove_Opened>;
+    Opened_revoker Opened(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> const& handler) const;
+    void Opened(winrt::event_token const& token) const noexcept;
+    winrt::event_token OpenFailed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> const& handler) const;
+    using OpenFailed_revoker = impl::event_revoker<Windows::UI::Xaml::Media::Imaging::ISvgImageSource, &impl::abi_t<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>::remove_OpenFailed>;
+    OpenFailed_revoker OpenFailed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> const& handler) const;
+    void OpenFailed(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> SetSourceAsync(Windows::Storage::Streams::IRandomAccessStream const& streamSource) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::ISvgImageSource> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_ISvgImageSource<D>; };
@@ -414,8 +605,8 @@ template <> struct consume<Windows::UI::Xaml::Media::Imaging::ISvgImageSource> {
 template <typename D>
 struct consume_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceFactory
 {
-    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
-    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstanceWithUriSource(Windows::Foundation::Uri const& uriSource, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstanceWithUriSource(Windows::Foundation::Uri const& uriSource, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_ISvgImageSourceFactory<D>; };
 
@@ -479,7 +670,7 @@ template <> struct consume<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBack
 template <typename D>
 struct consume_Windows_UI_Xaml_Media_Imaging_IXamlRenderingBackgroundTaskFactory
 {
-    Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_IXamlRenderingBackgroundTaskFactory<D>; };
 
@@ -489,196 +680,5 @@ struct consume_Windows_UI_Xaml_Media_Imaging_IXamlRenderingBackgroundTaskOverrid
     void OnRun(Windows::ApplicationModel::Background::IBackgroundTaskInstance const& taskInstance) const;
 };
 template <> struct consume<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides> { template <typename D> using type = consume_Windows_UI_Xaml_Media_Imaging_IXamlRenderingBackgroundTaskOverrides<D>; };
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_UriSource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_UriSource(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DecodePixelWidth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DecodePixelWidth(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DecodePixelHeight(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DecodePixelHeight(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall add_DownloadProgress(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DownloadProgress(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ImageOpened(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ImageOpened(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ImageFailed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ImageFailed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImage3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAnimatedBitmap(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPlaying(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoPlay(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoPlay(bool value) noexcept = 0;
-    virtual HRESULT __stdcall Play() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithUriSource(void* uriSource, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CreateOptionsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UriSourceProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DecodePixelWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DecodePixelHeightProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DecodePixelTypeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAnimatedBitmapProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsPlayingProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoPlayProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PixelWidth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PixelHeight(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetSource(void* streamSource) noexcept = 0;
-    virtual HRESULT __stdcall SetSourceAsync(void* streamSource, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PixelWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PixelHeightProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Progress(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Progress(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PixelWidth(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PixelHeight(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall RenderAsync(void* element, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall RenderToSizeAsync(void* element, int32_t scaledWidth, int32_t scaledHeight, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetPixelsAsync(void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PixelWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PixelHeightProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetBitmapAsync(void* softwareBitmap, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void* outer, void** inner, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UriSource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_UriSource(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RasterizePixelWidth(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RasterizePixelWidth(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_RasterizePixelHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RasterizePixelHeight(double value) noexcept = 0;
-    virtual HRESULT __stdcall add_Opened(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Opened(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_OpenFailed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_OpenFailed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall SetSourceAsync(void* streamSource, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstanceWithUriSource(void* uriSource, void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UriSourceProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RasterizePixelWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RasterizePixelHeightProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IWriteableBitmap>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PixelBuffer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Invalidate() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnRun(void* taskInstance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
 
 }

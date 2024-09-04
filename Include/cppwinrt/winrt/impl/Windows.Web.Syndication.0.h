@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -174,29 +174,29 @@ template <> struct name<Windows::Web::Syndication::SyndicationFormat>{ static co
 template <> struct name<Windows::Web::Syndication::SyndicationTextType>{ static constexpr auto & value{ L"Windows.Web.Syndication.SyndicationTextType" }; };
 template <> struct name<Windows::Web::Syndication::RetrievalProgress>{ static constexpr auto & value{ L"Windows.Web.Syndication.RetrievalProgress" }; };
 template <> struct name<Windows::Web::Syndication::TransferProgress>{ static constexpr auto & value{ L"Windows.Web.Syndication.TransferProgress" }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationAttribute>{ static constexpr GUID value{ 0x71E8F969,0x526E,0x4001,{ 0x9A,0x91,0xE8,0x4F,0x83,0x16,0x1A,0xB1 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationAttributeFactory>{ static constexpr GUID value{ 0x624F1599,0xED3E,0x420F,{ 0xBE,0x86,0x64,0x04,0x14,0x88,0x6E,0x4B } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationCategory>{ static constexpr GUID value{ 0x8715626F,0x0CBA,0x4A7F,{ 0x89,0xFF,0xEC,0xB5,0x28,0x14,0x23,0xB6 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationCategoryFactory>{ static constexpr GUID value{ 0xAB42802F,0x49E0,0x4525,{ 0x8A,0xB2,0xAB,0x45,0xC0,0x25,0x28,0xFF } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationClient>{ static constexpr GUID value{ 0x9E18A9B7,0x7249,0x4B45,{ 0xB2,0x29,0x7D,0xF8,0x95,0xA5,0xA1,0xF5 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationClientFactory>{ static constexpr GUID value{ 0x2EC4B32C,0xA79B,0x4114,{ 0xB2,0x9A,0x05,0xDF,0xFB,0xAF,0xB9,0xA4 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationContent>{ static constexpr GUID value{ 0x4641FEFE,0x0E55,0x40D0,{ 0xB8,0xD0,0x6A,0x2C,0xCB,0xA9,0xFC,0x7C } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationContentFactory>{ static constexpr GUID value{ 0x3D2FBB93,0x9520,0x4173,{ 0x93,0x88,0x7E,0x2D,0xF3,0x24,0xA8,0xA0 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationErrorStatics>{ static constexpr GUID value{ 0x1FBB2361,0x45C7,0x4833,{ 0x8A,0xA0,0xBE,0x5F,0x3B,0x58,0xA7,0xF4 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationFeed>{ static constexpr GUID value{ 0x7FFE3CD2,0x5B66,0x4D62,{ 0x84,0x03,0x1B,0xC1,0x0D,0x91,0x0D,0x6B } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationFeedFactory>{ static constexpr GUID value{ 0x23472232,0x8BE9,0x48B7,{ 0x89,0x34,0x62,0x05,0x13,0x1D,0x93,0x57 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationGenerator>{ static constexpr GUID value{ 0x9768B379,0xFB2B,0x4F6D,{ 0xB4,0x1C,0x08,0x8A,0x58,0x68,0x82,0x5C } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationGeneratorFactory>{ static constexpr GUID value{ 0xA34083E3,0x1E26,0x4DBC,{ 0xBA,0x9D,0x1A,0xB8,0x4B,0xEF,0xF9,0x7B } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationItem>{ static constexpr GUID value{ 0x548DB883,0xC384,0x45C1,{ 0x8A,0xE8,0xA3,0x78,0xC4,0xEC,0x48,0x6C } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationItemFactory>{ static constexpr GUID value{ 0x251D434F,0x7DB8,0x487A,{ 0x85,0xE4,0x10,0xD1,0x91,0xE6,0x6E,0xBB } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationLink>{ static constexpr GUID value{ 0x27553ABD,0xA10E,0x41B5,{ 0x86,0xBD,0x97,0x59,0x08,0x6E,0xB0,0xC5 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationLinkFactory>{ static constexpr GUID value{ 0x5ED863D4,0x5535,0x48AC,{ 0x98,0xD4,0xC1,0x90,0x99,0x50,0x80,0xB3 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationNode>{ static constexpr GUID value{ 0x753CEF78,0x51F8,0x45C0,{ 0xA9,0xF5,0xF1,0x71,0x9D,0xEC,0x3F,0xB2 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationNodeFactory>{ static constexpr GUID value{ 0x12902188,0x4ACB,0x49A8,{ 0xB7,0x77,0xA5,0xEB,0x92,0xE1,0x8A,0x79 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationPerson>{ static constexpr GUID value{ 0xFA1EE5DA,0xA7C6,0x4517,{ 0xA0,0x96,0x01,0x43,0xFA,0xF2,0x93,0x27 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationPersonFactory>{ static constexpr GUID value{ 0xDCF4886D,0x229D,0x4B58,{ 0xA4,0x9B,0xF3,0xD2,0xF0,0xF5,0xC9,0x9F } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationText>{ static constexpr GUID value{ 0xB9CC5E80,0x313A,0x4091,{ 0xA2,0xA6,0x24,0x3E,0x0E,0xE9,0x23,0xF9 } }; };
-template <> struct guid<Windows::Web::Syndication::ISyndicationTextFactory>{ static constexpr GUID value{ 0xEE7342F7,0x11C6,0x4B25,{ 0xAB,0x62,0xE5,0x96,0xBD,0x16,0x29,0x46 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationAttribute>{ static constexpr guid value{ 0x71E8F969,0x526E,0x4001,{ 0x9A,0x91,0xE8,0x4F,0x83,0x16,0x1A,0xB1 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationAttributeFactory>{ static constexpr guid value{ 0x624F1599,0xED3E,0x420F,{ 0xBE,0x86,0x64,0x04,0x14,0x88,0x6E,0x4B } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationCategory>{ static constexpr guid value{ 0x8715626F,0x0CBA,0x4A7F,{ 0x89,0xFF,0xEC,0xB5,0x28,0x14,0x23,0xB6 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationCategoryFactory>{ static constexpr guid value{ 0xAB42802F,0x49E0,0x4525,{ 0x8A,0xB2,0xAB,0x45,0xC0,0x25,0x28,0xFF } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationClient>{ static constexpr guid value{ 0x9E18A9B7,0x7249,0x4B45,{ 0xB2,0x29,0x7D,0xF8,0x95,0xA5,0xA1,0xF5 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationClientFactory>{ static constexpr guid value{ 0x2EC4B32C,0xA79B,0x4114,{ 0xB2,0x9A,0x05,0xDF,0xFB,0xAF,0xB9,0xA4 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationContent>{ static constexpr guid value{ 0x4641FEFE,0x0E55,0x40D0,{ 0xB8,0xD0,0x6A,0x2C,0xCB,0xA9,0xFC,0x7C } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationContentFactory>{ static constexpr guid value{ 0x3D2FBB93,0x9520,0x4173,{ 0x93,0x88,0x7E,0x2D,0xF3,0x24,0xA8,0xA0 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationErrorStatics>{ static constexpr guid value{ 0x1FBB2361,0x45C7,0x4833,{ 0x8A,0xA0,0xBE,0x5F,0x3B,0x58,0xA7,0xF4 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationFeed>{ static constexpr guid value{ 0x7FFE3CD2,0x5B66,0x4D62,{ 0x84,0x03,0x1B,0xC1,0x0D,0x91,0x0D,0x6B } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationFeedFactory>{ static constexpr guid value{ 0x23472232,0x8BE9,0x48B7,{ 0x89,0x34,0x62,0x05,0x13,0x1D,0x93,0x57 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationGenerator>{ static constexpr guid value{ 0x9768B379,0xFB2B,0x4F6D,{ 0xB4,0x1C,0x08,0x8A,0x58,0x68,0x82,0x5C } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationGeneratorFactory>{ static constexpr guid value{ 0xA34083E3,0x1E26,0x4DBC,{ 0xBA,0x9D,0x1A,0xB8,0x4B,0xEF,0xF9,0x7B } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationItem>{ static constexpr guid value{ 0x548DB883,0xC384,0x45C1,{ 0x8A,0xE8,0xA3,0x78,0xC4,0xEC,0x48,0x6C } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationItemFactory>{ static constexpr guid value{ 0x251D434F,0x7DB8,0x487A,{ 0x85,0xE4,0x10,0xD1,0x91,0xE6,0x6E,0xBB } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationLink>{ static constexpr guid value{ 0x27553ABD,0xA10E,0x41B5,{ 0x86,0xBD,0x97,0x59,0x08,0x6E,0xB0,0xC5 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationLinkFactory>{ static constexpr guid value{ 0x5ED863D4,0x5535,0x48AC,{ 0x98,0xD4,0xC1,0x90,0x99,0x50,0x80,0xB3 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationNode>{ static constexpr guid value{ 0x753CEF78,0x51F8,0x45C0,{ 0xA9,0xF5,0xF1,0x71,0x9D,0xEC,0x3F,0xB2 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationNodeFactory>{ static constexpr guid value{ 0x12902188,0x4ACB,0x49A8,{ 0xB7,0x77,0xA5,0xEB,0x92,0xE1,0x8A,0x79 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationPerson>{ static constexpr guid value{ 0xFA1EE5DA,0xA7C6,0x4517,{ 0xA0,0x96,0x01,0x43,0xFA,0xF2,0x93,0x27 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationPersonFactory>{ static constexpr guid value{ 0xDCF4886D,0x229D,0x4B58,{ 0xA4,0x9B,0xF3,0xD2,0xF0,0xF5,0xC9,0x9F } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationText>{ static constexpr guid value{ 0xB9CC5E80,0x313A,0x4091,{ 0xA2,0xA6,0x24,0x3E,0x0E,0xE9,0x23,0xF9 } }; };
+template <> struct guid_storage<Windows::Web::Syndication::ISyndicationTextFactory>{ static constexpr guid value{ 0xEE7342F7,0x11C6,0x4B25,{ 0xAB,0x62,0xE5,0x96,0xBD,0x16,0x29,0x46 } }; };
 template <> struct default_interface<Windows::Web::Syndication::SyndicationAttribute>{ using type = Windows::Web::Syndication::ISyndicationAttribute; };
 template <> struct default_interface<Windows::Web::Syndication::SyndicationCategory>{ using type = Windows::Web::Syndication::ISyndicationCategory; };
 template <> struct default_interface<Windows::Web::Syndication::SyndicationClient>{ using type = Windows::Web::Syndication::ISyndicationClient; };
@@ -208,6 +208,240 @@ template <> struct default_interface<Windows::Web::Syndication::SyndicationLink>
 template <> struct default_interface<Windows::Web::Syndication::SyndicationNode>{ using type = Windows::Web::Syndication::ISyndicationNode; };
 template <> struct default_interface<Windows::Web::Syndication::SyndicationPerson>{ using type = Windows::Web::Syndication::ISyndicationPerson; };
 template <> struct default_interface<Windows::Web::Syndication::SyndicationText>{ using type = Windows::Web::Syndication::ISyndicationText; };
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationAttribute>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Namespace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Namespace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationAttributeFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationAttribute(void* attributeName, void* attributeNamespace, void* attributeValue, void** syndicationAttribute) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationCategory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Label(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Label(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scheme(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scheme(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Term(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Term(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationCategoryFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationCategory(void* term, void** category) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSyndicationCategoryEx(void* term, void* scheme, void* label, void** category) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationClient>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ServerCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProxyCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProxyCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxResponseBufferSize(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxResponseBufferSize(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timeout(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Timeout(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BypassCacheOnRetrieve(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BypassCacheOnRetrieve(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetRequestHeader(void* name, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrieveFeedAsync(void* uri, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationClientFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationClient(void* serverCredential, void** syndicationClient) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourceUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SourceUri(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationContent(void* text, Windows::Web::Syndication::SyndicationTextType type, void** content) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSyndicationContentWithSourceUri(void* sourceUri, void** content) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationErrorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::Syndication::SyndicationErrorStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationFeed>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Authors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Categories(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Contributors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Generator(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Generator(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IconUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IconUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Items(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Links(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImageUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ImageUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rights(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rights(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subtitle(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subtitle(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NextUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviousUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceFormat(Windows::Web::Syndication::SyndicationFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Load(void* feed) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromXml(void* feedDocument) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationFeedFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationFeed(void* title, void* subtitle, void* uri, void** feed) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationGenerator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Version(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Version(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationGeneratorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationGenerator(void* text, void** generator) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Authors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Categories(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Contributors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Content(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Links(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublishedDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PublishedDate(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rights(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rights(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Summary(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Summary(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CommentsUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CommentsUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EditUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EditMediaUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ETag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ItemUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Load(void* item) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromXml(void* itemDocument) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationItemFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationItem(void* title, void* content, void* uri, void** item) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationLink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Length(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MediaType(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Relationship(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Relationship(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResourceLanguage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ResourceLanguage(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationLinkFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationLink(void* uri, void** link) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSyndicationLinkEx(void* uri, void* relationship, void* title, void* mediaType, uint32_t length, void** link) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationNode>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NodeName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NodeName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NodeNamespace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NodeNamespace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NodeValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NodeValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AttributeExtensions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementExtensions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetXmlDocument(Windows::Web::Syndication::SyndicationFormat format, void** xmlDocument) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationNodeFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationNode(void* nodeName, void* nodeNamespace, void* nodeValue, void** node) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationPerson>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Email(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Email(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationPersonFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationPerson(void* name, void** person) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSyndicationPersonEx(void* name, void* email, void* uri, void** person) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationText>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Type(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Xml(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Xml(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Syndication::ISyndicationTextFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateSyndicationText(void* text, void** syndicationText) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSyndicationTextEx(void* text, Windows::Web::Syndication::SyndicationTextType type, void** syndicationText) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Web_Syndication_ISyndicationAttribute
@@ -506,239 +740,5 @@ struct struct_Windows_Web_Syndication_TransferProgress
 };
 template <> struct abi<Windows::Web::Syndication::TransferProgress>{ using type = struct_Windows_Web_Syndication_TransferProgress; };
 
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationAttribute>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Namespace(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Namespace(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationAttributeFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationAttribute(HSTRING attributeName, HSTRING attributeNamespace, HSTRING attributeValue, void** syndicationAttribute) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationCategory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Label(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Label(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scheme(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scheme(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Term(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Term(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationCategoryFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationCategory(HSTRING term, void** category) noexcept = 0;
-    virtual HRESULT __stdcall CreateSyndicationCategoryEx(HSTRING term, HSTRING scheme, HSTRING label, void** category) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationClient>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ServerCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProxyCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProxyCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxResponseBufferSize(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxResponseBufferSize(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timeout(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Timeout(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_BypassCacheOnRetrieve(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BypassCacheOnRetrieve(bool value) noexcept = 0;
-    virtual HRESULT __stdcall SetRequestHeader(HSTRING name, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall RetrieveFeedAsync(void* uri, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationClientFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationClient(void* serverCredential, void** syndicationClient) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourceUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SourceUri(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationContent(HSTRING text, Windows::Web::Syndication::SyndicationTextType type, void** content) noexcept = 0;
-    virtual HRESULT __stdcall CreateSyndicationContentWithSourceUri(void* sourceUri, void** content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationErrorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::Syndication::SyndicationErrorStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationFeed>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Authors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Categories(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Contributors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Generator(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Generator(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IconUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_IconUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Items(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Links(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImageUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ImageUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rights(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rights(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subtitle(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subtitle(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NextUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviousUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceFormat(Windows::Web::Syndication::SyndicationFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall Load(HSTRING feed) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromXml(void* feedDocument) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationFeedFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationFeed(HSTRING title, HSTRING subtitle, void* uri, void** feed) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationGenerator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Version(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Version(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationGeneratorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationGenerator(HSTRING text, void** generator) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Authors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Categories(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Contributors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Content(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastUpdatedTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastUpdatedTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Links(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublishedDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PublishedDate(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rights(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rights(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Summary(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Summary(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CommentsUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CommentsUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EditUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_EditMediaUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ETag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ItemUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Load(HSTRING item) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromXml(void* itemDocument) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationItemFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationItem(HSTRING title, void* content, void* uri, void** item) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationLink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Length(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MediaType(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Relationship(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Relationship(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResourceLanguage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ResourceLanguage(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationLinkFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationLink(void* uri, void** link) noexcept = 0;
-    virtual HRESULT __stdcall CreateSyndicationLinkEx(void* uri, HSTRING relationship, HSTRING title, HSTRING mediaType, uint32_t length, void** link) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationNode>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NodeName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NodeName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_NodeNamespace(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NodeNamespace(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_NodeValue(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NodeValue(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_BaseUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AttributeExtensions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementExtensions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetXmlDocument(Windows::Web::Syndication::SyndicationFormat format, void** xmlDocument) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationNodeFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationNode(HSTRING nodeName, HSTRING nodeNamespace, HSTRING nodeValue, void** node) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationPerson>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Email(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Email(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationPersonFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationPerson(HSTRING name, void** person) noexcept = 0;
-    virtual HRESULT __stdcall CreateSyndicationPersonEx(HSTRING name, HSTRING email, void* uri, void** person) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationText>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Type(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Xml(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Xml(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Syndication::ISyndicationTextFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateSyndicationText(HSTRING text, void** syndicationText) noexcept = 0;
-    virtual HRESULT __stdcall CreateSyndicationTextEx(HSTRING text, Windows::Web::Syndication::SyndicationTextType type, void** syndicationText) noexcept = 0;
-};};
 
 }

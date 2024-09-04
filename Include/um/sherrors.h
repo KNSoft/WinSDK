@@ -149,6 +149,8 @@
 #define E_ACTIVATIONDENIED_SHELLRESTART _HRESULT_TYPEDEF_(0x80270132L)
 // Placeholder for an unexpected error that we cannot definitively map into one of the above buckets. Not expected to fire in practice.
 #define E_ACTIVATIONDENIED_UNEXPECTED   _HRESULT_TYPEDEF_(0x80270133L)
+// The shell was not ready when the activation started, so the activation was aborted immediately.
+#define E_ACTIVATIONDENIED_SHELLNOTREADY _HRESULT_TYPEDEF_(0x80270134L)
 
 // Library error/failure code
 #define LIBRARY_E_NO_SAVE_LOCATION          _HRESULT_TYPEDEF_(0x80270200L)

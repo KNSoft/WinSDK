@@ -33,6 +33,11 @@ DEFINE_GUIDSTRUCT("72CF721C-525A-11D1-9AA1-00A0C9223196", KoCreateObject);
 #define CLSCTX_KERNEL_SERVER    0x00000200
 #endif
 
+// VSTS 14847240: Locally suppress individual -Wv:17 compiler warnings.
+// For more information, visit https://osgwiki.com/wiki/Windows_C%2B%2B_Toolset_Status.
+#pragma warning(push)
+#pragma warning(disable:4595) // non-member operator new or delete functions may not be declared inline
+
 typedef
 NTSTATUS
 (*KoCreateObjectHandler)(
@@ -244,6 +249,9 @@ KoDeviceInitialize(
 //
 // To mitigate this issue, add "#define _NEW_DELETE_OPERATORS_" before "#include <kcom.h>"
 // and implement non-inline operator new and operator delete locally.
+//
+// A pragma suppression for C4595 has been added to the top of this file.
+// If this warning is fixed, remove that suppression.
 
 #pragma message(__FILE__ " WARNING: operator new and operator delete will be removed soon")
 
@@ -317,5 +325,7 @@ __inline BOOL operator!=(const GUID& guidOne, const GUID& guidOther)
 #endif // _GUID_OPERATORS_
 
 #endif // __cplusplus
+
+#pragma warning(pop) // Wv:17 Warnings
 
 #endif // !_KCOM_

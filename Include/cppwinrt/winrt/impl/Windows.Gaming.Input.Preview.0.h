@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,7 +24,13 @@ template <> struct category<Windows::Gaming::Input::Preview::IGameControllerProv
 template <> struct category<Windows::Gaming::Input::Preview::GameControllerProviderInfo>{ using type = class_category; };
 template <> struct name<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics>{ static constexpr auto & value{ L"Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics" }; };
 template <> struct name<Windows::Gaming::Input::Preview::GameControllerProviderInfo>{ static constexpr auto & value{ L"Windows.Gaming.Input.Preview.GameControllerProviderInfo" }; };
-template <> struct guid<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics>{ static constexpr GUID value{ 0x0BE1E6C5,0xD9BD,0x44EE,{ 0x83,0x62,0x48,0x8B,0x2E,0x46,0x4B,0xFB } }; };
+template <> struct guid_storage<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics>{ static constexpr guid value{ 0x0BE1E6C5,0xD9BD,0x44EE,{ 0x83,0x62,0x48,0x8B,0x2E,0x46,0x4B,0xFB } }; };
+
+template <> struct abi<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetParentProviderId(void* provider, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetProviderId(void* provider, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Gaming_Input_Preview_IGameControllerProviderInfoStatics
@@ -33,11 +39,5 @@ struct consume_Windows_Gaming_Input_Preview_IGameControllerProviderInfoStatics
     hstring GetProviderId(Windows::Gaming::Input::Custom::IGameControllerProvider const& provider) const;
 };
 template <> struct consume<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics> { template <typename D> using type = consume_Windows_Gaming_Input_Preview_IGameControllerProviderInfoStatics<D>; };
-
-template <> struct abi<Windows::Gaming::Input::Preview::IGameControllerProviderInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetParentProviderId(void* provider, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetProviderId(void* provider, HSTRING* value) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -36,9 +36,27 @@ template <> struct name<Windows::Management::Workplace::IWorkplaceSettingsStatic
 template <> struct name<Windows::Management::Workplace::MdmPolicy>{ static constexpr auto & value{ L"Windows.Management.Workplace.MdmPolicy" }; };
 template <> struct name<Windows::Management::Workplace::WorkplaceSettings>{ static constexpr auto & value{ L"Windows.Management.Workplace.WorkplaceSettings" }; };
 template <> struct name<Windows::Management::Workplace::MessagingSyncPolicy>{ static constexpr auto & value{ L"Windows.Management.Workplace.MessagingSyncPolicy" }; };
-template <> struct guid<Windows::Management::Workplace::IMdmAllowPolicyStatics>{ static constexpr GUID value{ 0xC39709E7,0x741C,0x41F2,{ 0xA4,0xB6,0x31,0x4C,0x31,0x50,0x25,0x86 } }; };
-template <> struct guid<Windows::Management::Workplace::IMdmPolicyStatics2>{ static constexpr GUID value{ 0xC99C7526,0x03D4,0x49F9,{ 0xA9,0x93,0x43,0xEF,0xCC,0xD2,0x65,0xC4 } }; };
-template <> struct guid<Windows::Management::Workplace::IWorkplaceSettingsStatics>{ static constexpr GUID value{ 0xE4676FFD,0x2D92,0x4C08,{ 0xBA,0xD4,0xF6,0x59,0x0B,0x54,0xA6,0xD3 } }; };
+template <> struct guid_storage<Windows::Management::Workplace::IMdmAllowPolicyStatics>{ static constexpr guid value{ 0xC39709E7,0x741C,0x41F2,{ 0xA4,0xB6,0x31,0x4C,0x31,0x50,0x25,0x86 } }; };
+template <> struct guid_storage<Windows::Management::Workplace::IMdmPolicyStatics2>{ static constexpr guid value{ 0xC99C7526,0x03D4,0x49F9,{ 0xA9,0x93,0x43,0xEF,0xCC,0xD2,0x65,0xC4 } }; };
+template <> struct guid_storage<Windows::Management::Workplace::IWorkplaceSettingsStatics>{ static constexpr guid value{ 0xE4676FFD,0x2D92,0x4C08,{ 0xBA,0xD4,0xF6,0x59,0x0B,0x54,0xA6,0xD3 } }; };
+
+template <> struct abi<Windows::Management::Workplace::IMdmAllowPolicyStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsBrowserAllowed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsCameraAllowed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsMicrosoftAccountAllowed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsStoreAllowed(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Workplace::IMdmPolicyStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetMessagingSyncPolicy(Windows::Management::Workplace::MessagingSyncPolicy* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Workplace::IWorkplaceSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsMicrosoftAccountOptional(bool* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Management_Workplace_IMdmAllowPolicyStatics
@@ -63,23 +81,5 @@ struct consume_Windows_Management_Workplace_IWorkplaceSettingsStatics
     bool IsMicrosoftAccountOptional() const;
 };
 template <> struct consume<Windows::Management::Workplace::IWorkplaceSettingsStatics> { template <typename D> using type = consume_Windows_Management_Workplace_IWorkplaceSettingsStatics<D>; };
-
-template <> struct abi<Windows::Management::Workplace::IMdmAllowPolicyStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsBrowserAllowed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsCameraAllowed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsMicrosoftAccountAllowed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsStoreAllowed(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Workplace::IMdmPolicyStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetMessagingSyncPolicy(Windows::Management::Workplace::MessagingSyncPolicy* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Workplace::IWorkplaceSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsMicrosoftAccountOptional(bool* value) noexcept = 0;
-};};
 
 }

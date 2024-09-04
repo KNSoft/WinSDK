@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -68,17 +68,86 @@ template <> struct name<Windows::UI::Xaml::Interop::TypeKind>{ static constexpr 
 template <> struct name<Windows::UI::Xaml::Interop::TypeName>{ static constexpr auto & value{ L"Windows.UI.Xaml.Interop.TypeName" }; };
 template <> struct name<Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Interop.BindableVectorChangedEventHandler" }; };
 template <> struct name<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Interop.NotifyCollectionChangedEventHandler" }; };
-template <> struct guid<Windows::UI::Xaml::Interop::IBindableIterable>{ static constexpr GUID value{ 0x036D2C08,0xDF29,0x41AF,{ 0x8A,0xA2,0xD7,0x74,0xBE,0x62,0xBA,0x6F } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::IBindableIterator>{ static constexpr GUID value{ 0x6A1D6C07,0x076D,0x49F2,{ 0x83,0x14,0xF5,0x2C,0x9C,0x9A,0x83,0x31 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::IBindableObservableVector>{ static constexpr GUID value{ 0xFE1EB536,0x7E7F,0x4F90,{ 0xAC,0x9A,0x47,0x49,0x84,0xAA,0xE5,0x12 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::IBindableVector>{ static constexpr GUID value{ 0x393DE7DE,0x6FD0,0x4C0D,{ 0xBB,0x71,0x47,0x24,0x4A,0x11,0x3E,0x93 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::IBindableVectorView>{ static constexpr GUID value{ 0x346DD6E7,0x976E,0x4BC3,{ 0x81,0x5D,0xEC,0xE2,0x43,0xBC,0x0F,0x33 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::INotifyCollectionChanged>{ static constexpr GUID value{ 0x28B167D5,0x1A31,0x465B,{ 0x9B,0x25,0xD5,0xC3,0xAE,0x68,0x6C,0x40 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>{ static constexpr GUID value{ 0x4CF68D33,0xE3F2,0x4964,{ 0xB8,0x5E,0x94,0x5B,0x4F,0x7E,0x2F,0x21 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>{ static constexpr GUID value{ 0xB30C3E3A,0xDF8D,0x44A5,{ 0x9A,0x38,0x7A,0xC0,0xD0,0x8C,0xE6,0x3D } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler>{ static constexpr GUID value{ 0x624CD4E1,0xD007,0x43B1,{ 0x9C,0x03,0xAF,0x4D,0x3E,0x62,0x58,0xC4 } }; };
-template <> struct guid<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler>{ static constexpr GUID value{ 0xCA10B37C,0xF382,0x4591,{ 0x85,0x57,0x5E,0x24,0x96,0x52,0x79,0xB0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::IBindableIterable>{ static constexpr guid value{ 0x036D2C08,0xDF29,0x41AF,{ 0x8A,0xA2,0xD7,0x74,0xBE,0x62,0xBA,0x6F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::IBindableIterator>{ static constexpr guid value{ 0x6A1D6C07,0x076D,0x49F2,{ 0x83,0x14,0xF5,0x2C,0x9C,0x9A,0x83,0x31 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::IBindableObservableVector>{ static constexpr guid value{ 0xFE1EB536,0x7E7F,0x4F90,{ 0xAC,0x9A,0x47,0x49,0x84,0xAA,0xE5,0x12 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::IBindableVector>{ static constexpr guid value{ 0x393DE7DE,0x6FD0,0x4C0D,{ 0xBB,0x71,0x47,0x24,0x4A,0x11,0x3E,0x93 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::IBindableVectorView>{ static constexpr guid value{ 0x346DD6E7,0x976E,0x4BC3,{ 0x81,0x5D,0xEC,0xE2,0x43,0xBC,0x0F,0x33 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::INotifyCollectionChanged>{ static constexpr guid value{ 0x28B167D5,0x1A31,0x465B,{ 0x9B,0x25,0xD5,0xC3,0xAE,0x68,0x6C,0x40 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>{ static constexpr guid value{ 0x4CF68D33,0xE3F2,0x4964,{ 0xB8,0x5E,0x94,0x5B,0x4F,0x7E,0x2F,0x21 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>{ static constexpr guid value{ 0xB30C3E3A,0xDF8D,0x44A5,{ 0x9A,0x38,0x7A,0xC0,0xD0,0x8C,0xE6,0x3D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler>{ static constexpr guid value{ 0x624CD4E1,0xD007,0x43B1,{ 0x9C,0x03,0xAF,0x4D,0x3E,0x62,0x58,0xC4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler>{ static constexpr guid value{ 0xCA10B37C,0xF382,0x4591,{ 0x85,0x57,0x5E,0x24,0x96,0x52,0x79,0xB0 } }; };
 template <> struct default_interface<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs>{ using type = Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs; };
+
+template <> struct abi<Windows::UI::Xaml::Interop::IBindableIterable>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL First(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::IBindableIterator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasCurrent(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveNext(bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::IBindableObservableVector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_VectorChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_VectorChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::IBindableVector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAt(uint32_t index, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetView(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IndexOf(void* value, uint32_t* index, bool* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAt(uint32_t index, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertAt(uint32_t index, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAt(uint32_t index) noexcept = 0;
+    virtual int32_t WINRT_CALL Append(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAtEnd() noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::IBindableVectorView>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAt(uint32_t index, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IndexOf(void* value, uint32_t* index, bool* returnValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChanged>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_CollectionChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CollectionChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Action(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewItems(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OldItems(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewStartingIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OldStartingIndex(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, void* newItems, void* oldItems, int32_t newIndex, int32_t oldIndex, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* vector, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Interop_IBindableIterable
@@ -114,10 +183,10 @@ template <> struct consume<Windows::UI::Xaml::Interop::IBindableIterator> { temp
 template <typename D>
 struct consume_Windows_UI_Xaml_Interop_IBindableObservableVector
 {
-    event_token VectorChanged(Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler const& value) const;
-    using VectorChanged_revoker = event_revoker<Windows::UI::Xaml::Interop::IBindableObservableVector>;
-    VectorChanged_revoker VectorChanged(auto_revoke_t, Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler const& value) const;
-    void VectorChanged(event_token const& token) const;
+    winrt::event_token VectorChanged(Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler const& handler) const;
+    using VectorChanged_revoker = impl::event_revoker<Windows::UI::Xaml::Interop::IBindableObservableVector, &impl::abi_t<Windows::UI::Xaml::Interop::IBindableObservableVector>::remove_VectorChanged>;
+    VectorChanged_revoker VectorChanged(auto_revoke_t, Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler const& handler) const;
+    void VectorChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::Interop::IBindableObservableVector> { template <typename D> using type = consume_Windows_UI_Xaml_Interop_IBindableObservableVector<D>; };
 
@@ -149,10 +218,10 @@ template <> struct consume<Windows::UI::Xaml::Interop::IBindableVectorView> { te
 template <typename D>
 struct consume_Windows_UI_Xaml_Interop_INotifyCollectionChanged
 {
-    event_token CollectionChanged(Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler const& value) const;
-    using CollectionChanged_revoker = event_revoker<Windows::UI::Xaml::Interop::INotifyCollectionChanged>;
-    CollectionChanged_revoker CollectionChanged(auto_revoke_t, Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler const& value) const;
-    void CollectionChanged(event_token const& token) const;
+    winrt::event_token CollectionChanged(Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler const& handler) const;
+    using CollectionChanged_revoker = impl::event_revoker<Windows::UI::Xaml::Interop::INotifyCollectionChanged, &impl::abi_t<Windows::UI::Xaml::Interop::INotifyCollectionChanged>::remove_CollectionChanged>;
+    CollectionChanged_revoker CollectionChanged(auto_revoke_t, Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler const& handler) const;
+    void CollectionChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::Interop::INotifyCollectionChanged> { template <typename D> using type = consume_Windows_UI_Xaml_Interop_INotifyCollectionChanged<D>; };
 
@@ -170,85 +239,16 @@ template <> struct consume<Windows::UI::Xaml::Interop::INotifyCollectionChangedE
 template <typename D>
 struct consume_Windows_UI_Xaml_Interop_INotifyCollectionChangedEventArgsFactory
 {
-    Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction const& action, Windows::UI::Xaml::Interop::IBindableVector const& newItems, Windows::UI::Xaml::Interop::IBindableVector const& oldItems, int32_t newIndex, int32_t oldIndex, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction const& action, Windows::UI::Xaml::Interop::IBindableVector const& newItems, Windows::UI::Xaml::Interop::IBindableVector const& oldItems, int32_t newIndex, int32_t oldIndex, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Interop_INotifyCollectionChangedEventArgsFactory<D>; };
 
 struct struct_Windows_UI_Xaml_Interop_TypeName
 {
-    HSTRING Name;
+    void* Name;
     Windows::UI::Xaml::Interop::TypeKind Kind;
 };
 template <> struct abi<Windows::UI::Xaml::Interop::TypeName>{ using type = struct_Windows_UI_Xaml_Interop_TypeName; };
 
-
-template <> struct abi<Windows::UI::Xaml::Interop::IBindableIterable>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall First(void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::IBindableIterator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasCurrent(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall MoveNext(bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::IBindableObservableVector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_VectorChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_VectorChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::IBindableVector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAt(uint32_t index, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetView(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall IndexOf(void* value, uint32_t* index, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall SetAt(uint32_t index, void* value) noexcept = 0;
-    virtual HRESULT __stdcall InsertAt(uint32_t index, void* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAt(uint32_t index) noexcept = 0;
-    virtual HRESULT __stdcall Append(void* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAtEnd() noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::IBindableVectorView>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAt(uint32_t index, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall IndexOf(void* value, uint32_t* index, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChanged>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_CollectionChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CollectionChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Action(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewItems(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OldItems(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewStartingIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OldStartingIndex(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, void* newItems, void* oldItems, int32_t newIndex, int32_t oldIndex, void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* vector, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
 
 }

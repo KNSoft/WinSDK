@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -222,18 +222,18 @@ template <> struct name<Windows::ApplicationModel::UserDataTasks::UserDataTaskRe
 template <> struct name<Windows::ApplicationModel::UserDataTasks::UserDataTaskSensitivity>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity" }; };
 template <> struct name<Windows::ApplicationModel::UserDataTasks::UserDataTaskStoreAccessType>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.UserDataTaskStoreAccessType" }; };
 template <> struct name<Windows::ApplicationModel::UserDataTasks::UserDataTaskWeekOfMonth>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth" }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTask>{ static constexpr GUID value{ 0x7C6585D1,0xE0D4,0x4F99,{ 0xAE,0xE2,0xBC,0x2D,0x5D,0xDA,0xDF,0x4C } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskBatch>{ static constexpr GUID value{ 0x382DA5FE,0x20B5,0x431C,{ 0x8F,0x42,0xA5,0xD2,0x92,0xEC,0x93,0x0C } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskList>{ static constexpr GUID value{ 0x49412E39,0x7C1D,0x4DF1,{ 0xBE,0xD3,0x31,0x4B,0x7C,0xBF,0x5E,0x4E } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListLimitedWriteOperations>{ static constexpr GUID value{ 0x7AA267F2,0x6078,0x4183,{ 0x91,0x9E,0x4F,0x29,0xF1,0x9C,0xFA,0xE9 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>{ static constexpr GUID value{ 0x8E591A95,0x1DCF,0x469F,{ 0x93,0xEC,0xBA,0x48,0xBB,0x55,0x3C,0x6B } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManager>{ static constexpr GUID value{ 0x8451C914,0xE60B,0x48A9,{ 0x92,0x11,0x7F,0xB8,0xA5,0x6C,0xB8,0x4C } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManagerStatics>{ static constexpr GUID value{ 0xB35539F8,0xC502,0x47FC,{ 0xA8,0x1E,0x10,0x08,0x83,0x71,0x9D,0x55 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskQueryOptions>{ static constexpr GUID value{ 0x959F27ED,0x909A,0x4D30,{ 0x8C,0x1B,0x33,0x1D,0x8F,0xE6,0x67,0xE2 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskReader>{ static constexpr GUID value{ 0x03E688B1,0x4CCF,0x4500,{ 0x88,0x3B,0xE7,0x62,0x90,0xCF,0xED,0x63 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRecurrenceProperties>{ static constexpr GUID value{ 0x73DF80B0,0x27C6,0x40CE,{ 0xB1,0x49,0x9C,0xD4,0x14,0x85,0xA6,0x9E } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRegenerationProperties>{ static constexpr GUID value{ 0x92AB0007,0x090E,0x4704,{ 0xBB,0x5C,0x84,0xFC,0x0B,0x0D,0x9C,0x31 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore>{ static constexpr GUID value{ 0xF06A9CB0,0xF1DB,0x45BA,{ 0x8A,0x62,0x08,0x60,0x04,0xC0,0x21,0x3D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTask>{ static constexpr guid value{ 0x7C6585D1,0xE0D4,0x4F99,{ 0xAE,0xE2,0xBC,0x2D,0x5D,0xDA,0xDF,0x4C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskBatch>{ static constexpr guid value{ 0x382DA5FE,0x20B5,0x431C,{ 0x8F,0x42,0xA5,0xD2,0x92,0xEC,0x93,0x0C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskList>{ static constexpr guid value{ 0x49412E39,0x7C1D,0x4DF1,{ 0xBE,0xD3,0x31,0x4B,0x7C,0xBF,0x5E,0x4E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListLimitedWriteOperations>{ static constexpr guid value{ 0x7AA267F2,0x6078,0x4183,{ 0x91,0x9E,0x4F,0x29,0xF1,0x9C,0xFA,0xE9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>{ static constexpr guid value{ 0x8E591A95,0x1DCF,0x469F,{ 0x93,0xEC,0xBA,0x48,0xBB,0x55,0x3C,0x6B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManager>{ static constexpr guid value{ 0x8451C914,0xE60B,0x48A9,{ 0x92,0x11,0x7F,0xB8,0xA5,0x6C,0xB8,0x4C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManagerStatics>{ static constexpr guid value{ 0xB35539F8,0xC502,0x47FC,{ 0xA8,0x1E,0x10,0x08,0x83,0x71,0x9D,0x55 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskQueryOptions>{ static constexpr guid value{ 0x959F27ED,0x909A,0x4D30,{ 0x8C,0x1B,0x33,0x1D,0x8F,0xE6,0x67,0xE2 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskReader>{ static constexpr guid value{ 0x03E688B1,0x4CCF,0x4500,{ 0x88,0x3B,0xE7,0x62,0x90,0xCF,0xED,0x63 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRecurrenceProperties>{ static constexpr guid value{ 0x73DF80B0,0x27C6,0x40CE,{ 0xB1,0x49,0x9C,0xD4,0x14,0x85,0xA6,0x9E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRegenerationProperties>{ static constexpr guid value{ 0x92AB0007,0x090E,0x4704,{ 0xBB,0x5C,0x84,0xFC,0x0B,0x0D,0x9C,0x31 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore>{ static constexpr guid value{ 0xF06A9CB0,0xF1DB,0x45BA,{ 0x8A,0x62,0x08,0x60,0x04,0xC0,0x21,0x3D } }; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTask>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTask; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTaskBatch>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTaskBatch; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTaskList; };
@@ -245,6 +245,151 @@ template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::U
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTaskRecurrenceProperties>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTaskRecurrenceProperties; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTaskRegenerationProperties>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTaskRegenerationProperties; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataTasks::UserDataTaskStore>{ using type = Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore; };
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTask>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RemoteId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RemoteId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompletedDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompletedDate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Details(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Details(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DetailsKind(Windows::ApplicationModel::UserDataTasks::UserDataTaskDetailsKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DetailsKind(Windows::ApplicationModel::UserDataTasks::UserDataTaskDetailsKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DueDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DueDate(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Priority(Windows::ApplicationModel::UserDataTasks::UserDataTaskPriority* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Priority(Windows::ApplicationModel::UserDataTasks::UserDataTaskPriority value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RecurrenceProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RecurrenceProperties(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegenerationProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RegenerationProperties(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Reminder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Reminder(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Sensitivity(Windows::ApplicationModel::UserDataTasks::UserDataTaskSensitivity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Sensitivity(Windows::ApplicationModel::UserDataTasks::UserDataTaskSensitivity value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subject(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subject(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartDate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StartDate(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Tasks(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceDisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppReadAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppReadAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OtherAppWriteAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppWriteAccess* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OtherAppWriteAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppWriteAccess value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LimitedWriteOperations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SyncManager(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterSyncManagerAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTaskReader(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTaskReaderWithOptions(void* options, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTaskAsync(void* userDataTask, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveTaskAsync(void* userDataTask, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteTaskAsync(void* userDataTaskId, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void** asyncAction) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** asyncAction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListLimitedWriteOperations>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCompleteTaskAsync(void* userDataTaskId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryCreateOrUpdateTaskAsync(void* userDataTask, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryDeleteTaskAsync(void* userDataTaskId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySkipOccurrenceAsync(void* userDataTaskId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Status(Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus value) noexcept = 0;
+    virtual int32_t WINRT_CALL SyncAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SyncStatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SyncStatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::UserDataTasks::UserDataTaskStoreAccessType accessType, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskQueryOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SortProperty(Windows::ApplicationModel::UserDataTasks::UserDataTaskQuerySortProperty* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SortProperty(Windows::ApplicationModel::UserDataTasks::UserDataTaskQuerySortProperty value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskQueryKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskQueryKind value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskReader>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadBatchAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRecurrenceProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRecurrenceUnit* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRecurrenceUnit value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Occurrences(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Occurrences(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Until(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Until(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Interval(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Interval(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DaysOfWeek(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DaysOfWeek(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WeekOfMonth(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WeekOfMonth(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Month(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Month(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Day(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Day(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRegenerationProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRegenerationUnit* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRegenerationUnit value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Occurrences(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Occurrences(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Until(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Until(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Interval(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Interval(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateListAsync(void* name, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateListInAccountAsync(void* name, void* userDataAccountId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindListsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetListAsync(void* taskListId, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_UserDataTasks_IUserDataTask
@@ -331,10 +476,10 @@ struct consume_Windows_ApplicationModel_UserDataTasks_IUserDataTaskListSyncManag
     Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus Status() const;
     void Status(Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus const& value) const;
     Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
-    event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    using SyncStatusChanged_revoker = event_revoker<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>;
+    winrt::event_token SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
+    using SyncStatusChanged_revoker = impl::event_revoker<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager, &impl::abi_t<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>::remove_SyncStatusChanged>;
     SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncManager, Windows::Foundation::IInspectable> const& handler) const;
-    void SyncStatusChanged(event_token const& token) const;
+    void SyncStatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataTasks_IUserDataTaskListSyncManager<D>; };
 
@@ -416,150 +561,5 @@ struct consume_Windows_ApplicationModel_UserDataTasks_IUserDataTaskStore
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataTasks::UserDataTaskList> GetListAsync(param::hstring const& taskListId) const;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataTasks_IUserDataTaskStore<D>; };
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTask>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RemoteId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompletedDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompletedDate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Details(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Details(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DetailsKind(Windows::ApplicationModel::UserDataTasks::UserDataTaskDetailsKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DetailsKind(Windows::ApplicationModel::UserDataTasks::UserDataTaskDetailsKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_DueDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DueDate(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Priority(Windows::ApplicationModel::UserDataTasks::UserDataTaskPriority* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Priority(Windows::ApplicationModel::UserDataTasks::UserDataTaskPriority value) noexcept = 0;
-    virtual HRESULT __stdcall get_RecurrenceProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RecurrenceProperties(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegenerationProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RegenerationProperties(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Reminder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Reminder(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Sensitivity(Windows::ApplicationModel::UserDataTasks::UserDataTaskSensitivity* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Sensitivity(Windows::ApplicationModel::UserDataTasks::UserDataTaskSensitivity value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subject(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subject(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartDate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StartDate(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Tasks(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceDisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppReadAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppReadAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_OtherAppWriteAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppWriteAccess* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OtherAppWriteAccess(Windows::ApplicationModel::UserDataTasks::UserDataTaskListOtherAppWriteAccess value) noexcept = 0;
-    virtual HRESULT __stdcall get_LimitedWriteOperations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SyncManager(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RegisterSyncManagerAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetTaskReader(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetTaskReaderWithOptions(void* options, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetTaskAsync(HSTRING userDataTask, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SaveTaskAsync(void* userDataTask, void** action) noexcept = 0;
-    virtual HRESULT __stdcall DeleteTaskAsync(HSTRING userDataTaskId, void** action) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void** asyncAction) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void** asyncAction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListLimitedWriteOperations>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCompleteTaskAsync(HSTRING userDataTaskId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryCreateOrUpdateTaskAsync(void* userDataTask, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryDeleteTaskAsync(HSTRING userDataTaskId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TrySkipOccurrenceAsync(HSTRING userDataTaskId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskListSyncManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Status(Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncStatus value) noexcept = 0;
-    virtual HRESULT __stdcall SyncAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_SyncStatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SyncStatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::UserDataTasks::UserDataTaskStoreAccessType accessType, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetForUser(void* user, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskQueryOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SortProperty(Windows::ApplicationModel::UserDataTasks::UserDataTaskQuerySortProperty* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SortProperty(Windows::ApplicationModel::UserDataTasks::UserDataTaskQuerySortProperty value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskQueryKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kind(Windows::ApplicationModel::UserDataTasks::UserDataTaskQueryKind value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskReader>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadBatchAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRecurrenceProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRecurrenceUnit* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRecurrenceUnit value) noexcept = 0;
-    virtual HRESULT __stdcall get_Occurrences(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Occurrences(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Until(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Until(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Interval(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Interval(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DaysOfWeek(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DaysOfWeek(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WeekOfMonth(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_WeekOfMonth(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Month(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Month(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Day(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Day(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskRegenerationProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRegenerationUnit* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Unit(Windows::ApplicationModel::UserDataTasks::UserDataTaskRegenerationUnit value) noexcept = 0;
-    virtual HRESULT __stdcall get_Occurrences(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Occurrences(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Until(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Until(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Interval(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Interval(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataTasks::IUserDataTaskStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateListAsync(HSTRING name, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall FindListsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetListAsync(HSTRING taskListId, void** operation) noexcept = 0;
-};};
 
 }

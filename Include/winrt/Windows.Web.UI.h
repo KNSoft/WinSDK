@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.web.ui.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -275,6 +287,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl ABI::Windows::Web::UI::IWebViewControl
 
 #endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                interface IWebViewControl2;
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 ABI::Windows::Web::UI::IWebViewControl2
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs_FWD_DEFINED__
@@ -373,6 +399,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs ABI::Windows::Web::UI::IWebViewControlNewWindowRequestedEventArgs
 
 #endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                interface IWebViewControlNewWindowRequestedEventArgs2;
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 ABI::Windows::Web::UI::IWebViewControlNewWindowRequestedEventArgs2
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlPermissionRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlPermissionRequest_FWD_DEFINED__
@@ -1519,6 +1559,8 @@ namespace ABI {
 
 
 
+
+
 namespace ABI {
     namespace Windows {
         namespace Web {
@@ -1604,6 +1646,11 @@ namespace ABI {
                     WebViewControlPermissionType_PointerLock = 3,
                     WebViewControlPermissionType_WebNotifications = 4,
                     WebViewControlPermissionType_Screen = 5,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
+                    WebViewControlPermissionType_ImmersiveView = 6,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
                 };
                 
             } /* Windows */
@@ -1832,6 +1879,44 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControl;
 #endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Web.UI.IWebViewControl2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Web_UI_IWebViewControl2[] = L"Windows.Web.UI.IWebViewControl2";
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                /* [object, uuid("4D3C06F9-C8DF-41CC-8BD5-2A947B204503"), contract] */
+                MIDL_INTERFACE("4D3C06F9-C8DF-41CC-8BD5-2A947B204503")
+                IWebViewControl2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE AddInitializeScript(
+                        /* [in] */__RPC__in HSTRING script
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebViewControl2=_uuidof(IWebViewControl2);
+                
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControl2;
+#endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2154,6 +2239,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Web.UI.WebViewControlNewWindowRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Web_UI_IWebViewControlNewWindowRequestedEventArgs2[] = L"Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2";
+namespace ABI {
+    namespace Windows {
+        namespace Web {
+            namespace UI {
+                /* [object, uuid("B53C5CA6-2AAE-4BFC-92B9-C30E92B48098"), exclusiveto, contract] */
+                MIDL_INTERFACE("B53C5CA6-2AAE-4BFC-92B9-C30E92B48098")
+                IWebViewControlNewWindowRequestedEventArgs2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NewWindow(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Web::UI::IWebViewControl * * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_NewWindow(
+                        /* [in] */__RPC__in_opt ABI::Windows::Web::UI::IWebViewControl * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDeferral(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IDeferral * * deferral
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebViewControlNewWindowRequestedEventArgs2=_uuidof(IWebViewControlNewWindowRequestedEventArgs2);
+                
+            } /* Windows */
+        } /* Web */
+    } /* UI */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2635,6 +2767,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs ** Default Interface **
+ *    Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -2812,6 +2945,12 @@ typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl __x_ABI_CWindows_CW
 
 #endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2;
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs __x_ABI_CWindows_CWeb_CUI_CIWebViewControlContentLoadingEventArgs;
@@ -2853,6 +2992,12 @@ typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNavigationStartingEv
 typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs;
 
 #endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2;
+
+#endif // ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlPermissionRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlPermissionRequest_FWD_DEFINED__
@@ -4311,6 +4456,8 @@ typedef enum __x_ABI_CWindows_CWeb_CUI_CWebViewControlPermissionType __x_ABI_CWi
 
 
 
+
+
 /*
  *
  * Struct Windows.Web.UI.WebViewControlPermissionState
@@ -4351,6 +4498,11 @@ enum __x_ABI_CWindows_CWeb_CUI_CWebViewControlPermissionType
     WebViewControlPermissionType_PointerLock = 3,
     WebViewControlPermissionType_WebNotifications = 4,
     WebViewControlPermissionType_Screen = 5,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    WebViewControlPermissionType_ImmersiveView = 6,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
 
@@ -4855,6 +5007,96 @@ interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl
 EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControl;
 #endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Web.UI.IWebViewControl2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Web_UI_IWebViewControl2[] = L"Windows.Web.UI.IWebViewControl2";
+/* [object, uuid("4D3C06F9-C8DF-41CC-8BD5-2A947B204503"), contract] */
+typedef struct __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *AddInitializeScript )(
+        __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2 * This,
+        /* [in] */__RPC__in HSTRING script
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2Vtbl;
+
+interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_AddInitializeScript(This,script) \
+    ( (This)->lpVtbl->AddInitializeScript(This,script) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControl2;
+#endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControl2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -5595,6 +5837,113 @@ interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs
 EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Web.UI.WebViewControlNewWindowRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Web_UI_IWebViewControlNewWindowRequestedEventArgs2[] = L"Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2";
+/* [object, uuid("B53C5CA6-2AAE-4BFC-92B9-C30E92B48098"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NewWindow )(
+        __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CWeb_CUI_CIWebViewControl * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_NewWindow )(
+        __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CWeb_CUI_CIWebViewControl * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
+        __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIDeferral * * deferral
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2Vtbl;
+
+interface __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_get_NewWindow(This,value) \
+    ( (This)->lpVtbl->get_NewWindow(This,value) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_put_NewWindow(This,value) \
+    ( (This)->lpVtbl->put_NewWindow(This,value) )
+
+#define __x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_GetDeferral(This,deferral) \
+    ( (This)->lpVtbl->GetDeferral(This,deferral) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CWeb_CUI_CIWebViewControlNewWindowRequestedEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -6519,6 +6868,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs ** Default Interface **
+ *    Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -40,6 +40,7 @@ enum class UserActivityState : int32_t
 
 struct IUserActivity;
 struct IUserActivity2;
+struct IUserActivity3;
 struct IUserActivityAttribution;
 struct IUserActivityAttributionFactory;
 struct IUserActivityChannel;
@@ -75,6 +76,7 @@ namespace winrt::impl {
 
 template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivity>{ using type = interface_category; };
 template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivity2>{ using type = interface_category; };
+template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivity3>{ using type = interface_category; };
 template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ using type = interface_category; };
 template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ using type = interface_category; };
 template <> struct category<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ using type = interface_category; };
@@ -106,6 +108,7 @@ template <> struct category<Windows::ApplicationModel::UserActivities::UserActiv
 template <> struct category<Windows::ApplicationModel::UserActivities::UserActivityState>{ using type = enum_category; };
 template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivity>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivity" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivity2>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivity2" }; };
+template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivity3>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivity3" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivityAttribution" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivityAttributionFactory" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.IUserActivityChannel" }; };
@@ -135,26 +138,27 @@ template <> struct name<Windows::ApplicationModel::UserActivities::UserActivityS
 template <> struct name<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.UserActivitySessionHistoryItem" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::UserActivityVisualElements>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.UserActivityVisualElements" }; };
 template <> struct name<Windows::ApplicationModel::UserActivities::UserActivityState>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserActivities.UserActivityState" }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivity>{ static constexpr GUID value{ 0xFC103E9E,0x2CAB,0x4D36,{ 0xAE,0xA2,0xB4,0xBB,0x55,0x6C,0xEF,0x0F } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivity2>{ static constexpr GUID value{ 0x9DC40C62,0x08C4,0x47AC,{ 0xAA,0x9C,0x2B,0xB2,0x22,0x1C,0x55,0xFD } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ static constexpr GUID value{ 0x34A5C8B5,0x86DD,0x4AEC,{ 0xA4,0x91,0x6A,0x4F,0xAE,0xA5,0xD2,0x2E } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ static constexpr GUID value{ 0xE62BD252,0xC566,0x4F42,{ 0x99,0x74,0x91,0x6C,0x4D,0x76,0x37,0x7E } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ static constexpr GUID value{ 0xBAC0F8B8,0xA0E4,0x483B,{ 0xB9,0x48,0x9C,0xBA,0xBD,0x06,0x07,0x0C } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityChannel2>{ static constexpr GUID value{ 0x1698E35B,0xEB7E,0x4EA0,{ 0xBF,0x17,0xA4,0x59,0xE8,0xBE,0x70,0x6C } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>{ static constexpr GUID value{ 0xC8C005AB,0x198D,0x4D80,{ 0xAB,0xB2,0xC9,0x77,0x5E,0xC4,0xA7,0x29 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>{ static constexpr GUID value{ 0x8E87DE30,0xAA4F,0x4624,{ 0x9A,0xD0,0xD4,0x0F,0x3B,0xA0,0x31,0x7C } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>{ static constexpr GUID value{ 0xB399E5AD,0x137F,0x409D,{ 0x82,0x2D,0xE1,0xAF,0x27,0xCE,0x08,0xDC } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>{ static constexpr GUID value{ 0x9988C34B,0x0386,0x4BC9,{ 0x96,0x8A,0x82,0x00,0xB0,0x04,0x14,0x4F } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityFactory>{ static constexpr GUID value{ 0x7C385758,0x361D,0x4A67,{ 0x8A,0x3B,0x34,0xCA,0x29,0x78,0xF9,0xA3 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityRequest>{ static constexpr GUID value{ 0xA0EF6355,0xCF35,0x4FF0,{ 0x88,0x33,0x50,0xCB,0x4B,0x72,0xE0,0x6D } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>{ static constexpr GUID value{ 0x0C30BE4E,0x903D,0x48D6,{ 0x82,0xD4,0x40,0x43,0xED,0x57,0x79,0x1B } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>{ static constexpr GUID value{ 0xC0392DF1,0x224A,0x432C,{ 0x81,0xE5,0x0C,0x76,0xB4,0xC4,0xCE,0xFA } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs>{ static constexpr GUID value{ 0xA4CC7A4C,0x8229,0x4CFD,{ 0xA3,0xBC,0xC6,0x1D,0x31,0x85,0x75,0xA4 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivitySession>{ static constexpr GUID value{ 0xAE434D78,0x24FA,0x44A3,{ 0xAD,0x48,0x6E,0xDA,0x61,0xAA,0x19,0x24 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem>{ static constexpr GUID value{ 0xE8D59BD3,0x3E5D,0x49FD,{ 0x98,0xD7,0x6D,0xA9,0x75,0x21,0xE2,0x55 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityStatics>{ static constexpr GUID value{ 0x8C8FD333,0x0E09,0x47F6,{ 0x9A,0xC7,0x95,0xCF,0x5C,0x39,0x36,0x7B } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements>{ static constexpr GUID value{ 0x94757513,0x262F,0x49EF,{ 0xBB,0xBF,0x9B,0x75,0xD2,0xE8,0x52,0x50 } }; };
-template <> struct guid<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2>{ static constexpr GUID value{ 0xCAAE7FC7,0x3EEF,0x4359,{ 0x82,0x5C,0x9D,0x51,0xB9,0x22,0x0D,0xE3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivity>{ static constexpr guid value{ 0xFC103E9E,0x2CAB,0x4D36,{ 0xAE,0xA2,0xB4,0xBB,0x55,0x6C,0xEF,0x0F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivity2>{ static constexpr guid value{ 0x9DC40C62,0x08C4,0x47AC,{ 0xAA,0x9C,0x2B,0xB2,0x22,0x1C,0x55,0xFD } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivity3>{ static constexpr guid value{ 0xE7697744,0xE1A2,0x5147,{ 0x8E,0x06,0x55,0xF1,0xEE,0xEF,0x27,0x1C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ static constexpr guid value{ 0x34A5C8B5,0x86DD,0x4AEC,{ 0xA4,0x91,0x6A,0x4F,0xAE,0xA5,0xD2,0x2E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ static constexpr guid value{ 0xE62BD252,0xC566,0x4F42,{ 0x99,0x74,0x91,0x6C,0x4D,0x76,0x37,0x7E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ static constexpr guid value{ 0xBAC0F8B8,0xA0E4,0x483B,{ 0xB9,0x48,0x9C,0xBA,0xBD,0x06,0x07,0x0C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityChannel2>{ static constexpr guid value{ 0x1698E35B,0xEB7E,0x4EA0,{ 0xBF,0x17,0xA4,0x59,0xE8,0xBE,0x70,0x6C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>{ static constexpr guid value{ 0xC8C005AB,0x198D,0x4D80,{ 0xAB,0xB2,0xC9,0x77,0x5E,0xC4,0xA7,0x29 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>{ static constexpr guid value{ 0x8E87DE30,0xAA4F,0x4624,{ 0x9A,0xD0,0xD4,0x0F,0x3B,0xA0,0x31,0x7C } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>{ static constexpr guid value{ 0xB399E5AD,0x137F,0x409D,{ 0x82,0x2D,0xE1,0xAF,0x27,0xCE,0x08,0xDC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>{ static constexpr guid value{ 0x9988C34B,0x0386,0x4BC9,{ 0x96,0x8A,0x82,0x00,0xB0,0x04,0x14,0x4F } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityFactory>{ static constexpr guid value{ 0x7C385758,0x361D,0x4A67,{ 0x8A,0x3B,0x34,0xCA,0x29,0x78,0xF9,0xA3 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityRequest>{ static constexpr guid value{ 0xA0EF6355,0xCF35,0x4FF0,{ 0x88,0x33,0x50,0xCB,0x4B,0x72,0xE0,0x6D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>{ static constexpr guid value{ 0x0C30BE4E,0x903D,0x48D6,{ 0x82,0xD4,0x40,0x43,0xED,0x57,0x79,0x1B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>{ static constexpr guid value{ 0xC0392DF1,0x224A,0x432C,{ 0x81,0xE5,0x0C,0x76,0xB4,0xC4,0xCE,0xFA } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs>{ static constexpr guid value{ 0xA4CC7A4C,0x8229,0x4CFD,{ 0xA3,0xBC,0xC6,0x1D,0x31,0x85,0x75,0xA4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivitySession>{ static constexpr guid value{ 0xAE434D78,0x24FA,0x44A3,{ 0xAD,0x48,0x6E,0xDA,0x61,0xAA,0x19,0x24 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem>{ static constexpr guid value{ 0xE8D59BD3,0x3E5D,0x49FD,{ 0x98,0xD7,0x6D,0xA9,0x75,0x21,0xE2,0x55 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityStatics>{ static constexpr guid value{ 0x8C8FD333,0x0E09,0x47F6,{ 0x9A,0xC7,0x95,0xCF,0x5C,0x39,0x36,0x7B } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements>{ static constexpr guid value{ 0x94757513,0x262F,0x49EF,{ 0xBB,0xBF,0x9B,0x75,0xD2,0xE8,0x52,0x50 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2>{ static constexpr guid value{ 0xCAAE7FC7,0x3EEF,0x4359,{ 0x82,0x5C,0x9D,0x51,0xB9,0x22,0x0D,0xE3 } }; };
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivity>{ using type = Windows::ApplicationModel::UserActivities::IUserActivity; };
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivityAttribution>{ using type = Windows::ApplicationModel::UserActivities::IUserActivityAttribution; };
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivityChannel>{ using type = Windows::ApplicationModel::UserActivities::IUserActivityChannel; };
@@ -165,6 +169,151 @@ template <> struct default_interface<Windows::ApplicationModel::UserActivities::
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivitySession>{ using type = Windows::ApplicationModel::UserActivities::IUserActivitySession; };
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>{ using type = Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem; };
 template <> struct default_interface<Windows::ApplicationModel::UserActivities::UserActivityVisualElements>{ using type = Windows::ApplicationModel::UserActivities::IUserActivityVisualElements; };
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_State(Windows::ApplicationModel::UserActivities::UserActivityState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivityId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VisualElements(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentType(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FallbackUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FallbackUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivationUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ActivationUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentInfo(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSession(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivity2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ToJson(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivity3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsRoamable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsRoamable(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IconUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IconUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlternateText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlternateText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AddImageQuery(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AddImageQuery(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithUri(void* iconUri, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetOrCreateUserActivityAsync(void* activityId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteActivityAsync(void* activityId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAllActivitiesAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannel2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetRecentUserActivitiesAsync(int32_t maxUniqueActivities, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSessionHistoryItemsForUserActivityAsync(void* activityId, Windows::Foundation::DateTime startTime, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DisableAutoSessionCreation() noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetForWebAccount(void* account, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ToJson(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromJson(void* value, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithActivityId(void* activityId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetUserActivity(void* activity) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_UserActivityRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_UserActivityRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivitySession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivityId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UserActivity(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndTime(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryParseFromJson(void* json, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryParseFromJsonArray(void* json, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL ToJsonArray(void* activities, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Description(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attribution(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Attribution(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Content(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AttributionDisplayText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AttributionDisplayText(void* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_UserActivities_IUserActivity
@@ -193,6 +342,14 @@ struct consume_Windows_ApplicationModel_UserActivities_IUserActivity2
     hstring ToJson() const;
 };
 template <> struct consume<Windows::ApplicationModel::UserActivities::IUserActivity2> { template <typename D> using type = consume_Windows_ApplicationModel_UserActivities_IUserActivity2<D>; };
+
+template <typename D>
+struct consume_Windows_ApplicationModel_UserActivities_IUserActivity3
+{
+    bool IsRoamable() const;
+    void IsRoamable(bool value) const;
+};
+template <> struct consume<Windows::ApplicationModel::UserActivities::IUserActivity3> { template <typename D> using type = consume_Windows_ApplicationModel_UserActivities_IUserActivity3<D>; };
 
 template <typename D>
 struct consume_Windows_ApplicationModel_UserActivities_IUserActivityAttribution
@@ -276,10 +433,10 @@ template <> struct consume<Windows::ApplicationModel::UserActivities::IUserActiv
 template <typename D>
 struct consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager
 {
-    event_token UserActivityRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const;
-    using UserActivityRequested_revoker = event_revoker<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>;
+    winrt::event_token UserActivityRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const;
+    using UserActivityRequested_revoker = impl::event_revoker<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager, &impl::abi_t<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>::remove_UserActivityRequested>;
     UserActivityRequested_revoker UserActivityRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const;
-    void UserActivityRequested(event_token const& token) const;
+    void UserActivityRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager> { template <typename D> using type = consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>; };
 
@@ -346,144 +503,5 @@ struct consume_Windows_ApplicationModel_UserActivities_IUserActivityVisualElemen
     void AttributionDisplayText(param::hstring const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2> { template <typename D> using type = consume_Windows_ApplicationModel_UserActivities_IUserActivityVisualElements2<D>; };
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_State(Windows::ApplicationModel::UserActivities::UserActivityState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivityId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VisualElements(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentType(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_FallbackUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FallbackUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivationUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ActivationUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentInfo(void* value) noexcept = 0;
-    virtual HRESULT __stdcall SaveAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateSession(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivity2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ToJson(HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityAttribution>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IconUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_IconUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlternateText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlternateText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AddImageQuery(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AddImageQuery(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithUri(void* iconUri, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannel>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetOrCreateUserActivityAsync(HSTRING activityId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteActivityAsync(HSTRING activityId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAllActivitiesAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannel2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetRecentUserActivitiesAsync(int32_t maxUniqueActivities, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetSessionHistoryItemsForUserActivityAsync(HSTRING activityId, Windows::Foundation::DateTime startTime, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DisableAutoSessionCreation() noexcept = 0;
-    virtual HRESULT __stdcall TryGetForWebAccount(void* account, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ToJson(HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromJson(HSTRING value, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithActivityId(HSTRING activityId, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetUserActivity(void* activity) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_UserActivityRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_UserActivityRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivitySession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivityId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UserActivity(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndTime(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryParseFromJson(HSTRING json, void** result) noexcept = 0;
-    virtual HRESULT __stdcall TryParseFromJsonArray(HSTRING json, void** result) noexcept = 0;
-    virtual HRESULT __stdcall ToJsonArray(void* activities, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Description(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Attribution(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Attribution(void* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Content(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AttributionDisplayText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AttributionDisplayText(HSTRING value) noexcept = 0;
-};};
 
 }

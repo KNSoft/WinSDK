@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.media.imaging.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1647,21 +1659,21 @@ namespace ABI {
                                 /* [in] */INT32 value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DownloadProgress(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_DownloadProgress(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ImageOpened(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ImageOpened(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_ImageFailed(
-                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IExceptionRoutedEventHandler  * value,
+                                /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IExceptionRoutedEventHandler  * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_ImageFailed(
@@ -1815,7 +1827,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriSource(
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uriSource,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapImage * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapImage * * value
                                 ) = 0;
                             
                         };
@@ -2020,7 +2032,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetSourceAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * streamSource,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                                 ) = 0;
                             
                         };
@@ -2065,9 +2077,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IBitmapSource * * value
                                 ) = 0;
                             
                         };
@@ -2215,16 +2227,16 @@ namespace ABI {
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE RenderAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                                 ) = 0;
                             /* [overload] */virtual HRESULT STDMETHODCALLTYPE RenderToSizeAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * element,
                                 /* [in] */INT32 scaledWidth,
                                 /* [in] */INT32 scaledHeight,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetPixelsAsync(
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer * * operation
                                 ) = 0;
                             
                         };
@@ -2318,7 +2330,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE SetBitmapAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Graphics::Imaging::ISoftwareBitmap * softwareBitmap,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                                 ) = 0;
                             
                         };
@@ -2407,17 +2419,17 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensionsAndOpacity(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
                                 /* [in] */boolean isOpaque,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource * * value
                                 ) = 0;
                             
                         };
@@ -2480,14 +2492,14 @@ namespace ABI {
                                 /* [in] */DOUBLE value
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_Opened(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_Opened(
                                 /* [in] */EventRegistrationToken token
                                 ) = 0;
                             /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_OpenFailed(
-                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * value,
+                                /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * handler,
                                 /* [retval, out] */__RPC__out EventRegistrationToken * token
                                 ) = 0;
                             /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_OpenFailed(
@@ -2495,7 +2507,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetSourceAsync(
                                 /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStream * streamSource,
-                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * * operation
                                 ) = 0;
                             
                         };
@@ -2540,15 +2552,15 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithUriSource(
                                 /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * uriSource,
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource * * value
                                 ) = 0;
                             
                         };
@@ -2775,13 +2787,13 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensionsAndOpacity(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
                                 /* [in] */boolean isOpaque,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource * * value
                                 ) = 0;
                             
                         };
@@ -2874,7 +2886,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithDimensions(
                                 /* [in] */INT32 pixelWidth,
                                 /* [in] */INT32 pixelHeight,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IWriteableBitmap * * instance
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IWriteableBitmap * * value
                                 ) = 0;
                             
                         };
@@ -2961,9 +2973,9 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE CreateInstance(
-                                /* [in] */__RPC__in_opt IInspectable * outer,
-                                /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask * * instance
+                                /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                                /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask * * value
                                 ) = 0;
                             
                         };
@@ -3098,8 +3110,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -3231,8 +3241,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -3254,8 +3262,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.ISvgImageSourceOpenedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -4222,7 +4228,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_DownloadProgress )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIDownloadProgressEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_DownloadProgress )(
@@ -4231,7 +4237,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ImageOpened )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ImageOpened )(
@@ -4240,7 +4246,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_ImageFailed )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage * This,
-        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIExceptionRoutedEventHandler  * value,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIExceptionRoutedEventHandler  * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_ImageFailed )(
@@ -4299,20 +4305,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_put_DecodePixelHeight(This,value) \
     ( (This)->lpVtbl->put_DecodePixelHeight(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_DownloadProgress(This,value,token) \
-    ( (This)->lpVtbl->add_DownloadProgress(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_DownloadProgress(This,handler,token) \
+    ( (This)->lpVtbl->add_DownloadProgress(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_remove_DownloadProgress(This,token) \
     ( (This)->lpVtbl->remove_DownloadProgress(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_ImageOpened(This,value,token) \
-    ( (This)->lpVtbl->add_ImageOpened(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_ImageOpened(This,handler,token) \
+    ( (This)->lpVtbl->add_ImageOpened(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_remove_ImageOpened(This,token) \
     ( (This)->lpVtbl->remove_ImageOpened(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_ImageFailed(This,value,token) \
-    ( (This)->lpVtbl->add_ImageFailed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_add_ImageFailed(This,handler,token) \
+    ( (This)->lpVtbl->add_ImageFailed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage_remove_ImageFailed(This,token) \
     ( (This)->lpVtbl->remove_ImageFailed(This,token) )
@@ -4604,7 +4610,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithUriSource )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uriSource,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImage * * value
         );
     END_INTERFACE
     
@@ -4634,8 +4640,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_CreateInstanceWithUriSource(This,uriSource,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithUriSource(This,uriSource,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapImageFactory_CreateInstanceWithUriSource(This,uriSource,value) \
+    ( (This)->lpVtbl->CreateInstanceWithUriSource(This,uriSource,value) )
 
 
 #endif /* COBJMACROS */
@@ -5024,7 +5030,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *SetSourceAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * streamSource,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     END_INTERFACE
     
@@ -5063,8 +5069,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_SetSource(This,streamSource) \
     ( (This)->lpVtbl->SetSource(This,streamSource) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_SetSourceAsync(This,streamSource,returnValue) \
-    ( (This)->lpVtbl->SetSourceAsync(This,streamSource,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource_SetSourceAsync(This,streamSource,operation) \
+    ( (This)->lpVtbl->SetSourceAsync(This,streamSource,operation) )
 
 
 #endif /* COBJMACROS */
@@ -5126,9 +5132,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSource * * value
         );
     END_INTERFACE
     
@@ -5158,8 +5164,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIBitmapSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -5430,18 +5436,18 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *RenderAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     /* [overload] */HRESULT ( STDMETHODCALLTYPE *RenderToSizeAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * element,
         /* [in] */INT32 scaledWidth,
         /* [in] */INT32 scaledHeight,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *GetPixelsAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap * This,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer * * operation
         );
     END_INTERFACE
     
@@ -5477,14 +5483,14 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_get_PixelHeight(This,value) \
     ( (This)->lpVtbl->get_PixelHeight(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_RenderAsync(This,element,returnValue) \
-    ( (This)->lpVtbl->RenderAsync(This,element,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_RenderAsync(This,element,operation) \
+    ( (This)->lpVtbl->RenderAsync(This,element,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_RenderToSizeAsync(This,element,scaledWidth,scaledHeight,returnValue) \
-    ( (This)->lpVtbl->RenderToSizeAsync(This,element,scaledWidth,scaledHeight,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_RenderToSizeAsync(This,element,scaledWidth,scaledHeight,operation) \
+    ( (This)->lpVtbl->RenderToSizeAsync(This,element,scaledWidth,scaledHeight,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_GetPixelsAsync(This,returnValue) \
-    ( (This)->lpVtbl->GetPixelsAsync(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIRenderTargetBitmap_GetPixelsAsync(This,operation) \
+    ( (This)->lpVtbl->GetPixelsAsync(This,operation) )
 
 
 #endif /* COBJMACROS */
@@ -5647,7 +5653,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *SetBitmapAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CGraphics_CImaging_CISoftwareBitmap * softwareBitmap,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     END_INTERFACE
     
@@ -5677,8 +5683,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_SetBitmapAsync(This,softwareBitmap,returnValue) \
-    ( (This)->lpVtbl->SetBitmapAsync(This,softwareBitmap,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISoftwareBitmapSource_SetBitmapAsync(This,softwareBitmap,operation) \
+    ( (This)->lpVtbl->SetBitmapAsync(This,softwareBitmap,operation) )
 
 
 #endif /* COBJMACROS */
@@ -5828,18 +5834,18 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDimensions )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory * This,
         /* [in] */INT32 pixelWidth,
         /* [in] */INT32 pixelHeight,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDimensionsAndOpacity )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory * This,
         /* [in] */INT32 pixelWidth,
         /* [in] */INT32 pixelHeight,
         /* [in] */boolean isOpaque,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSource * * value
         );
     END_INTERFACE
     
@@ -5869,11 +5875,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISurfaceImageSourceFactory_CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -5959,7 +5965,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_Opened )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceOpenedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_Opened )(
@@ -5968,7 +5974,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_OpenFailed )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSource_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceFailedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_OpenFailed )(
@@ -5978,7 +5984,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *SetSourceAsync )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStream * streamSource,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CMedia__CImaging__CSvgImageSourceLoadStatus * * operation
         );
     END_INTERFACE
     
@@ -6026,20 +6032,20 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_put_RasterizePixelHeight(This,value) \
     ( (This)->lpVtbl->put_RasterizePixelHeight(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_Opened(This,value,token) \
-    ( (This)->lpVtbl->add_Opened(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_Opened(This,handler,token) \
+    ( (This)->lpVtbl->add_Opened(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_remove_Opened(This,token) \
     ( (This)->lpVtbl->remove_Opened(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_OpenFailed(This,value,token) \
-    ( (This)->lpVtbl->add_OpenFailed(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_add_OpenFailed(This,handler,token) \
+    ( (This)->lpVtbl->add_OpenFailed(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_remove_OpenFailed(This,token) \
     ( (This)->lpVtbl->remove_OpenFailed(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_SetSourceAsync(This,streamSource,returnValue) \
-    ( (This)->lpVtbl->SetSourceAsync(This,streamSource,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource_SetSourceAsync(This,streamSource,operation) \
+    ( (This)->lpVtbl->SetSourceAsync(This,streamSource,operation) )
 
 
 #endif /* COBJMACROS */
@@ -6101,16 +6107,16 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithUriSource )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * uriSource,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSource * * value
         );
     END_INTERFACE
     
@@ -6140,11 +6146,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstanceWithUriSource(This,uriSource,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithUriSource(This,uriSource,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CISvgImageSourceFactory_CreateInstanceWithUriSource(This,uriSource,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstanceWithUriSource(This,uriSource,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -6580,14 +6586,14 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDimensions )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory * This,
         /* [in] */INT32 pixelWidth,
         /* [in] */INT32 pixelHeight,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource * * value
         );
     HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDimensionsAndOpacity )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory * This,
         /* [in] */INT32 pixelWidth,
         /* [in] */INT32 pixelHeight,
         /* [in] */boolean isOpaque,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource * * value
         );
     END_INTERFACE
     
@@ -6617,11 +6623,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSource
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIVirtualSurfaceImageSourceFactory_CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDimensionsAndOpacity(This,pixelWidth,pixelHeight,isOpaque,value) )
 
 
 #endif /* COBJMACROS */
@@ -6784,7 +6790,7 @@ HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithDimensions )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory * This,
         /* [in] */INT32 pixelWidth,
         /* [in] */INT32 pixelHeight,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmap * * value
         );
     END_INTERFACE
     
@@ -6814,8 +6820,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,instance) \
-    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIWriteableBitmapFactory_CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,value) \
+    ( (This)->lpVtbl->CreateInstanceWithDimensions(This,pixelWidth,pixelHeight,value) )
 
 
 #endif /* COBJMACROS */
@@ -6963,9 +6969,9 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
         __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory * This,
-        /* [in] */__RPC__in_opt IInspectable * outer,
-        /* [out] */__RPC__deref_out_opt IInspectable * * inner,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask * * instance
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTask * * value
         );
     END_INTERFACE
     
@@ -6995,8 +7001,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTa
 #define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_CreateInstance(This,outer,inner,instance) \
-    ( (This)->lpVtbl->CreateInstance(This,outer,inner,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CImaging_CIXamlRenderingBackgroundTaskFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
 
 
 #endif /* COBJMACROS */
@@ -7172,8 +7178,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7305,8 +7309,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -7328,8 +7330,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Media.Imaging.ISvgImageSourceOpenedEventArgs ** Default Interface **
- *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

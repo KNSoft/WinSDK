@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -70,6 +70,15 @@ struct WINRT_EBO BackEase :
     BackEase(std::nullptr_t) noexcept {}
     BackEase();
     static Windows::UI::Xaml::DependencyProperty AmplitudeProperty();
+};
+
+struct WINRT_EBO BasicConnectedAnimationConfiguration :
+    Windows::UI::Xaml::Media::Animation::IBasicConnectedAnimationConfiguration,
+    impl::base<BasicConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::ConnectedAnimationConfiguration>,
+    impl::require<BasicConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration>
+{
+    BasicConnectedAnimationConfiguration(std::nullptr_t) noexcept {}
+    BasicConnectedAnimationConfiguration();
 };
 
 struct WINRT_EBO BeginStoryboard :
@@ -158,11 +167,17 @@ struct WINRT_EBO CommonNavigationTransitionInfo :
 
 struct WINRT_EBO ConnectedAnimation :
     Windows::UI::Xaml::Media::Animation::IConnectedAnimation,
-    impl::require<ConnectedAnimation, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>
+    impl::require<ConnectedAnimation, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2, Windows::UI::Xaml::Media::Animation::IConnectedAnimation3>
 {
     ConnectedAnimation(std::nullptr_t) noexcept {}
     using impl::consume_t<ConnectedAnimation, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>::TryStart;
     using Windows::UI::Xaml::Media::Animation::IConnectedAnimation::TryStart;
+};
+
+struct WINRT_EBO ConnectedAnimationConfiguration :
+    Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration
+{
+    ConnectedAnimationConfiguration(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ConnectedAnimationService :
@@ -209,6 +224,15 @@ struct WINRT_EBO CubicEase :
 {
     CubicEase(std::nullptr_t) noexcept {}
     CubicEase();
+};
+
+struct WINRT_EBO DirectConnectedAnimationConfiguration :
+    Windows::UI::Xaml::Media::Animation::IDirectConnectedAnimationConfiguration,
+    impl::base<DirectConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::ConnectedAnimationConfiguration>,
+    impl::require<DirectConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration>
+{
+    DirectConnectedAnimationConfiguration(std::nullptr_t) noexcept {}
+    DirectConnectedAnimationConfiguration();
 };
 
 struct WINRT_EBO DiscreteColorKeyFrame :
@@ -467,6 +491,15 @@ struct WINRT_EBO FadeOutThemeAnimation :
     FadeOutThemeAnimation(std::nullptr_t) noexcept {}
     FadeOutThemeAnimation();
     static Windows::UI::Xaml::DependencyProperty TargetNameProperty();
+};
+
+struct WINRT_EBO GravityConnectedAnimationConfiguration :
+    Windows::UI::Xaml::Media::Animation::IGravityConnectedAnimationConfiguration,
+    impl::base<GravityConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::ConnectedAnimationConfiguration>,
+    impl::require<GravityConnectedAnimationConfiguration, Windows::UI::Xaml::Media::Animation::IConnectedAnimationConfiguration>
+{
+    GravityConnectedAnimationConfiguration(std::nullptr_t) noexcept {}
+    GravityConnectedAnimationConfiguration();
 };
 
 struct WINRT_EBO KeySpline :
@@ -753,10 +786,11 @@ struct WINRT_EBO SineEase :
 struct WINRT_EBO SlideNavigationTransitionInfo :
     Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo,
     impl::base<SlideNavigationTransitionInfo, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo, Windows::UI::Xaml::DependencyObject>,
-    impl::require<SlideNavigationTransitionInfo, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
+    impl::require<SlideNavigationTransitionInfo, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo, Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides, Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo2>
 {
     SlideNavigationTransitionInfo(std::nullptr_t) noexcept {}
     SlideNavigationTransitionInfo();
+    static Windows::UI::Xaml::DependencyProperty EffectProperty();
 };
 
 struct WINRT_EBO SplineColorKeyFrame :

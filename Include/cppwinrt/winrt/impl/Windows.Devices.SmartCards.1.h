@@ -1,9 +1,10 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.Foundation.Collections.0.h"
 #include "winrt/impl/Windows.Security.Cryptography.Core.0.h"
 #include "winrt/impl/Windows.Storage.Streams.0.h"
 #include "winrt/impl/Windows.Foundation.0.h"
@@ -25,6 +26,13 @@ struct WINRT_EBO ICardRemovedEventArgs :
     ICardRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IKnownSmartCardAppletIds :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IKnownSmartCardAppletIds>
+{
+    IKnownSmartCardAppletIds(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ISmartCard :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmartCard>
@@ -39,6 +47,13 @@ struct WINRT_EBO ISmartCardAppletIdGroup :
     ISmartCardAppletIdGroup(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ISmartCardAppletIdGroup2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISmartCardAppletIdGroup2>
+{
+    ISmartCardAppletIdGroup2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ISmartCardAppletIdGroupFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISmartCardAppletIdGroupFactory>
@@ -51,6 +66,13 @@ struct WINRT_EBO ISmartCardAppletIdGroupRegistration :
     impl::consume_t<ISmartCardAppletIdGroupRegistration>
 {
     ISmartCardAppletIdGroupRegistration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ISmartCardAppletIdGroupRegistration2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISmartCardAppletIdGroupRegistration2>
+{
+    ISmartCardAppletIdGroupRegistration2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ISmartCardAppletIdGroupStatics :

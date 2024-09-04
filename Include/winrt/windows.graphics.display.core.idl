@@ -43,6 +43,8 @@ namespace Windows
 
                 interface IHdmiDisplayMode;
 
+                interface IHdmiDisplayMode2;
+
                 runtimeclass HdmiDisplayInformation;
 
                 runtimeclass HdmiDisplayMode;
@@ -96,9 +98,11 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 enum HdmiDisplayHdrOption
                 {
-                    None     = 0,
-                    EotfSdr  = 1,
-                    Eotf2084 = 2
+                    None                  = 0,
+                    EotfSdr               = 1,
+                    Eotf2084              = 2,
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    DolbyVisionLowLatency = 3
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -168,6 +172,14 @@ namespace Windows
                     [propget] HRESULT Is2086MetadataSupported([out] [retval] boolean* value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Graphics.Display.Core.HdmiDisplayMode)]
+                [uuid(07CD4E9F-4B3C-42B8-84E7-895368718AF2)]
+                interface IHdmiDisplayMode2 : IInspectable
+                {
+                    [propget] HRESULT IsDolbyVisionLowLatencySupported([out] [retval] boolean* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [marshaling_behavior(agile)]
                 [static(Windows.Graphics.Display.Core.IHdmiDisplayInformationStatics, Windows.Foundation.UniversalApiContract, 4.0)]
@@ -183,6 +195,7 @@ namespace Windows
                 runtimeclass HdmiDisplayMode
                 {
                     [default] interface Windows.Graphics.Display.Core.IHdmiDisplayMode;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Graphics.Display.Core.IHdmiDisplayMode2;
                 }
             }
         }

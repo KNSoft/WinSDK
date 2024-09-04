@@ -9,6 +9,11 @@
 
 #include "punknown.h"
 
+// VSTS 14847240: Locally suppress individual -Wv:17 compiler warnings.
+// For more information, visit https://osgwiki.com/wiki/Windows_C%2B%2B_Toolset_Status.
+#pragma warning(push)
+#pragma warning(disable:4595) // non-member operator new or delete functions may not be declared inline
+
 
 
 
@@ -305,4 +310,7 @@ inline void __cdecl operator delete[]
 
 
 #endif  // NTDDI
+
+#pragma warning(pop) // Wv:17 Warnings
+
 #endif

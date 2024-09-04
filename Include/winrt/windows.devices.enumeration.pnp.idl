@@ -111,7 +111,9 @@ namespace Windows
                     DeviceInterfaceClass         = 4,
                     AssociationEndpoint          = 5,
                     AssociationEndpointContainer = 6,
-                    AssociationEndpointService   = 7
+                    AssociationEndpointService   = 7,
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    DevicePanel                  = 8
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

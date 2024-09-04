@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -177,22 +177,22 @@ template <> struct name<Windows::Security::Credentials::KeyCredentialCreationOpt
 template <> struct name<Windows::Security::Credentials::KeyCredentialStatus>{ static constexpr auto & value{ L"Windows.Security.Credentials.KeyCredentialStatus" }; };
 template <> struct name<Windows::Security::Credentials::WebAccountPictureSize>{ static constexpr auto & value{ L"Windows.Security.Credentials.WebAccountPictureSize" }; };
 template <> struct name<Windows::Security::Credentials::WebAccountState>{ static constexpr auto & value{ L"Windows.Security.Credentials.WebAccountState" }; };
-template <> struct guid<Windows::Security::Credentials::ICredentialFactory>{ static constexpr GUID value{ 0x54EF13A1,0xBF26,0x47B5,{ 0x97,0xDD,0xDE,0x77,0x9B,0x7C,0xAD,0x58 } }; };
-template <> struct guid<Windows::Security::Credentials::IKeyCredential>{ static constexpr GUID value{ 0x9585EF8D,0x457B,0x4847,{ 0xB1,0x1A,0xFA,0x96,0x0B,0xBD,0xB1,0x38 } }; };
-template <> struct guid<Windows::Security::Credentials::IKeyCredentialAttestationResult>{ static constexpr GUID value{ 0x78AAB3A1,0xA3C1,0x4103,{ 0xB6,0xCC,0x47,0x2C,0x44,0x17,0x1C,0xBB } }; };
-template <> struct guid<Windows::Security::Credentials::IKeyCredentialManagerStatics>{ static constexpr GUID value{ 0x6AAC468B,0x0EF1,0x4CE0,{ 0x82,0x90,0x41,0x06,0xDA,0x6A,0x63,0xB5 } }; };
-template <> struct guid<Windows::Security::Credentials::IKeyCredentialOperationResult>{ static constexpr GUID value{ 0xF53786C1,0x5261,0x4CDD,{ 0x97,0x6D,0xCC,0x90,0x9A,0xC7,0x16,0x20 } }; };
-template <> struct guid<Windows::Security::Credentials::IKeyCredentialRetrievalResult>{ static constexpr GUID value{ 0x58CD7703,0x8D87,0x4249,{ 0x9B,0x58,0xF6,0x59,0x8C,0xC9,0x64,0x4E } }; };
-template <> struct guid<Windows::Security::Credentials::IPasswordCredential>{ static constexpr GUID value{ 0x6AB18989,0xC720,0x41A7,{ 0xA6,0xC1,0xFE,0xAD,0xB3,0x63,0x29,0xA0 } }; };
-template <> struct guid<Windows::Security::Credentials::IPasswordVault>{ static constexpr GUID value{ 0x61FD2C0B,0xC8D4,0x48C1,{ 0xA5,0x4F,0xBC,0x5A,0x64,0x20,0x5A,0xF2 } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccount>{ static constexpr GUID value{ 0x69473EB2,0x8031,0x49BE,{ 0x80,0xBB,0x96,0xCB,0x46,0xD9,0x9A,0xBA } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccount2>{ static constexpr GUID value{ 0x7B56D6F8,0x990B,0x4EB5,{ 0x94,0xA7,0x56,0x21,0xF3,0xA8,0xB8,0x24 } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountFactory>{ static constexpr GUID value{ 0xAC9AFB39,0x1DE9,0x4E92,{ 0xB7,0x8F,0x05,0x81,0xA8,0x7F,0x6E,0x5C } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountProvider>{ static constexpr GUID value{ 0x29DCC8C3,0x7AB9,0x4A7C,{ 0xA3,0x36,0xB9,0x42,0xF9,0xDB,0xF7,0xC7 } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountProvider2>{ static constexpr GUID value{ 0x4A01EB05,0x4E42,0x41D4,{ 0xB5,0x18,0xE0,0x08,0xA5,0x16,0x36,0x14 } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountProvider3>{ static constexpr GUID value{ 0xDA1C518B,0x970D,0x4D49,{ 0x82,0x5C,0xF2,0x70,0x6F,0x8C,0xA7,0xFE } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountProvider4>{ static constexpr GUID value{ 0x718FD8DB,0xE796,0x4210,{ 0xB7,0x4E,0x84,0xD2,0x98,0x94,0xB0,0x80 } }; };
-template <> struct guid<Windows::Security::Credentials::IWebAccountProviderFactory>{ static constexpr GUID value{ 0x1D767DF1,0xE1E1,0x4B9A,{ 0xA7,0x74,0x5C,0x7C,0x7E,0x3B,0xF3,0x71 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::ICredentialFactory>{ static constexpr guid value{ 0x54EF13A1,0xBF26,0x47B5,{ 0x97,0xDD,0xDE,0x77,0x9B,0x7C,0xAD,0x58 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IKeyCredential>{ static constexpr guid value{ 0x9585EF8D,0x457B,0x4847,{ 0xB1,0x1A,0xFA,0x96,0x0B,0xBD,0xB1,0x38 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IKeyCredentialAttestationResult>{ static constexpr guid value{ 0x78AAB3A1,0xA3C1,0x4103,{ 0xB6,0xCC,0x47,0x2C,0x44,0x17,0x1C,0xBB } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IKeyCredentialManagerStatics>{ static constexpr guid value{ 0x6AAC468B,0x0EF1,0x4CE0,{ 0x82,0x90,0x41,0x06,0xDA,0x6A,0x63,0xB5 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IKeyCredentialOperationResult>{ static constexpr guid value{ 0xF53786C1,0x5261,0x4CDD,{ 0x97,0x6D,0xCC,0x90,0x9A,0xC7,0x16,0x20 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IKeyCredentialRetrievalResult>{ static constexpr guid value{ 0x58CD7703,0x8D87,0x4249,{ 0x9B,0x58,0xF6,0x59,0x8C,0xC9,0x64,0x4E } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IPasswordCredential>{ static constexpr guid value{ 0x6AB18989,0xC720,0x41A7,{ 0xA6,0xC1,0xFE,0xAD,0xB3,0x63,0x29,0xA0 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IPasswordVault>{ static constexpr guid value{ 0x61FD2C0B,0xC8D4,0x48C1,{ 0xA5,0x4F,0xBC,0x5A,0x64,0x20,0x5A,0xF2 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccount>{ static constexpr guid value{ 0x69473EB2,0x8031,0x49BE,{ 0x80,0xBB,0x96,0xCB,0x46,0xD9,0x9A,0xBA } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccount2>{ static constexpr guid value{ 0x7B56D6F8,0x990B,0x4EB5,{ 0x94,0xA7,0x56,0x21,0xF3,0xA8,0xB8,0x24 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountFactory>{ static constexpr guid value{ 0xAC9AFB39,0x1DE9,0x4E92,{ 0xB7,0x8F,0x05,0x81,0xA8,0x7F,0x6E,0x5C } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountProvider>{ static constexpr guid value{ 0x29DCC8C3,0x7AB9,0x4A7C,{ 0xA3,0x36,0xB9,0x42,0xF9,0xDB,0xF7,0xC7 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountProvider2>{ static constexpr guid value{ 0x4A01EB05,0x4E42,0x41D4,{ 0xB5,0x18,0xE0,0x08,0xA5,0x16,0x36,0x14 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountProvider3>{ static constexpr guid value{ 0xDA1C518B,0x970D,0x4D49,{ 0x82,0x5C,0xF2,0x70,0x6F,0x8C,0xA7,0xFE } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountProvider4>{ static constexpr guid value{ 0x718FD8DB,0xE796,0x4210,{ 0xB7,0x4E,0x84,0xD2,0x98,0x94,0xB0,0x80 } }; };
+template <> struct guid_storage<Windows::Security::Credentials::IWebAccountProviderFactory>{ static constexpr guid value{ 0x1D767DF1,0xE1E1,0x4B9A,{ 0xA7,0x74,0x5C,0x7C,0x7E,0x3B,0xF3,0x71 } }; };
 template <> struct default_interface<Windows::Security::Credentials::KeyCredential>{ using type = Windows::Security::Credentials::IKeyCredential; };
 template <> struct default_interface<Windows::Security::Credentials::KeyCredentialAttestationResult>{ using type = Windows::Security::Credentials::IKeyCredentialAttestationResult; };
 template <> struct default_interface<Windows::Security::Credentials::KeyCredentialOperationResult>{ using type = Windows::Security::Credentials::IKeyCredentialOperationResult; };
@@ -202,6 +202,119 @@ template <> struct default_interface<Windows::Security::Credentials::PasswordCre
 template <> struct default_interface<Windows::Security::Credentials::PasswordVault>{ using type = Windows::Security::Credentials::IPasswordVault; };
 template <> struct default_interface<Windows::Security::Credentials::WebAccount>{ using type = Windows::Security::Credentials::IWebAccount; };
 template <> struct default_interface<Windows::Security::Credentials::WebAccountProvider>{ using type = Windows::Security::Credentials::IWebAccountProvider; };
+
+template <> struct abi<Windows::Security::Credentials::ICredentialFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreatePasswordCredential(void* resource, void* userName, void* password, void** credential) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IKeyCredential>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrievePublicKeyWithDefaultBlobType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrievePublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestSignAsync(void* data, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAttestationAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IKeyCredentialAttestationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CertificateChainBuffer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AttestationBuffer(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialAttestationStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IKeyCredentialManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL IsSupportedAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RenewAttestationAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCreateAsync(void* name, Windows::Security::Credentials::KeyCredentialCreationOption option, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenAsync(void* name, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void* name, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IKeyCredentialOperationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Result(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IKeyCredentialRetrievalResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Credential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IPasswordCredential>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Resource(void** resource) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Resource(void* resource) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserName(void** userName) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UserName(void* userName) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Password(void** password) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Password(void* password) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrievePassword() noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** props) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IPasswordVault>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Add(void* credential) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* credential) noexcept = 0;
+    virtual int32_t WINRT_CALL Retrieve(void* resource, void* userName, void** credential) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllByResource(void* resource, void** credentials) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllByUserName(void* userName, void** credentials) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrieveAll(void** credentials) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccount>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_WebAccountProvider(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Security::Credentials::WebAccountState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccount2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL SignOutAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL SignOutWithClientIdAsync(void* clientId, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWebAccount(void* webAccountProvider, void* userName, Windows::Security::Credentials::WebAccountState state, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IconUri(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountProvider2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayPurpose(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Authority(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountProvider3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** user) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountProvider4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSystemProvider(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Credentials::IWebAccountProviderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWebAccountProvider(void* id, void* displayName, void* iconUri, void** instance) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Credentials_ICredentialFactory
@@ -315,7 +428,7 @@ struct consume_Windows_Security_Credentials_IWebAccountProvider
 {
     hstring Id() const;
     hstring DisplayName() const;
-    [[deprecated("IconUri may be altered or unavailable for releases after Windows 8.2. Instead, use Icon.")]] Windows::Foundation::Uri IconUri() const;
+    Windows::Foundation::Uri IconUri() const;
 };
 template <> struct consume<Windows::Security::Credentials::IWebAccountProvider> { template <typename D> using type = consume_Windows_Security_Credentials_IWebAccountProvider<D>; };
 
@@ -347,118 +460,5 @@ struct consume_Windows_Security_Credentials_IWebAccountProviderFactory
     Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(param::hstring const& id, param::hstring const& displayName, Windows::Foundation::Uri const& iconUri) const;
 };
 template <> struct consume<Windows::Security::Credentials::IWebAccountProviderFactory> { template <typename D> using type = consume_Windows_Security_Credentials_IWebAccountProviderFactory<D>; };
-
-template <> struct abi<Windows::Security::Credentials::ICredentialFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreatePasswordCredential(HSTRING resource, HSTRING userName, HSTRING password, void** credential) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IKeyCredential>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall RetrievePublicKeyWithDefaultBlobType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RetrievePublicKeyWithBlobType(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType, void** value) noexcept = 0;
-    virtual HRESULT __stdcall RequestSignAsync(void* data, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAttestationAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IKeyCredentialAttestationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CertificateChainBuffer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AttestationBuffer(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialAttestationStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IKeyCredentialManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall IsSupportedAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RenewAttestationAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestCreateAsync(HSTRING name, Windows::Security::Credentials::KeyCredentialCreationOption option, void** value) noexcept = 0;
-    virtual HRESULT __stdcall OpenAsync(HSTRING name, void** value) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(HSTRING name, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IKeyCredentialOperationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Result(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IKeyCredentialRetrievalResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Credential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Security::Credentials::KeyCredentialStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IPasswordCredential>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Resource(HSTRING* resource) noexcept = 0;
-    virtual HRESULT __stdcall put_Resource(HSTRING resource) noexcept = 0;
-    virtual HRESULT __stdcall get_UserName(HSTRING* userName) noexcept = 0;
-    virtual HRESULT __stdcall put_UserName(HSTRING userName) noexcept = 0;
-    virtual HRESULT __stdcall get_Password(HSTRING* password) noexcept = 0;
-    virtual HRESULT __stdcall put_Password(HSTRING password) noexcept = 0;
-    virtual HRESULT __stdcall RetrievePassword() noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** props) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IPasswordVault>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Add(void* credential) noexcept = 0;
-    virtual HRESULT __stdcall Remove(void* credential) noexcept = 0;
-    virtual HRESULT __stdcall Retrieve(HSTRING resource, HSTRING userName, void** credential) noexcept = 0;
-    virtual HRESULT __stdcall FindAllByResource(HSTRING resource, void** credentials) noexcept = 0;
-    virtual HRESULT __stdcall FindAllByUserName(HSTRING userName, void** credentials) noexcept = 0;
-    virtual HRESULT __stdcall RetrieveAll(void** credentials) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccount>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_WebAccountProvider(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Security::Credentials::WebAccountState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccount2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall SignOutAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall SignOutWithClientIdAsync(HSTRING clientId, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWebAccount(void* webAccountProvider, HSTRING userName, Windows::Security::Credentials::WebAccountState state, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IconUri(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountProvider2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayPurpose(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Authority(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountProvider3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** user) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountProvider4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSystemProvider(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Credentials::IWebAccountProviderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWebAccountProvider(HSTRING id, HSTRING displayName, void* iconUri, void** instance) noexcept = 0;
-};};
 
 }

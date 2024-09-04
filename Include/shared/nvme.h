@@ -12,12 +12,17 @@ Abstract:
 
 Revision:
 
-    Feb. 2015 - Align to NVMe spec version 1.2. NOTE: command "Firmware Activate" has been renamed to "Firmware Commit" in spec v1.2
+    Aug. 2018 - Align to NVMe spec version 1.3.
 
 --*/
 
 #ifndef NVME_INCLUDED
 #define NVME_INCLUDED
+
+#include <winapifamily.h>
+
+#pragma region Desktop Family or Storage Package
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_STORAGE)
 
 #if _MSC_VER >= 1200
 #pragma once
@@ -408,6 +413,7 @@ typedef enum {
 
     NVME_ASYNC_NOTICE_NAMESPACE_ATTRIBUTE_CHANGED       = 0,
     NVME_ASYNC_NOTICE_FIRMWARE_ACTIVATION_STARTING      = 1,
+    NVME_ASYNC_NOTICE_TELEMETRY_LOG_CHANGED             = 2,
 
 } NVME_ASYNC_EVENT_NOTICE_CODES;
 
@@ -417,6 +423,7 @@ typedef enum {
 typedef enum {
 
     NVME_ASYNC_IO_CMD_SET_RESERVATION_LOG_PAGE_AVAILABLE    = 0,
+    NVME_ASYNC_IO_CMD_SANITIZE_OPERATION_COMPLETED          = 1,
 
 } NVME_ASYNC_EVENT_IO_COMMAND_SET_STATUS_CODES;
 
@@ -734,7 +741,8 @@ typedef struct {
     struct {
         ULONG   Reserved0                   : 8;
         ULONG   NamespaceAttributeChanged   : 1;
-        ULONG   Reserved1                   : 23;
+        ULONG   FirmwareActivation          : 1;
+        ULONG   Reserved1                   : 22;
     } OAES;                     // byte 92:95.   M - Optional Asynchronous Events Supported (OAES)
 
     UCHAR   Reserved0[144];     // byte 96:239.
@@ -766,7 +774,9 @@ typedef struct {
     struct {
         UCHAR   SmartPagePerNamespace   : 1;
         UCHAR   CommandEffectsLog       : 1;
-        UCHAR   Reserved                : 6;
+        UCHAR   LogPageExtendedData     : 1;
+        UCHAR   TelemetrySupport        : 1;
+        UCHAR   Reserved                : 4;
     } LPA;                      // byte 261.    M - Log Page Attributes (LPA)
 
     UCHAR   ELPE;               // byte 262.    M - Error Log Page Entries (ELPE)
@@ -939,6 +949,12 @@ typedef struct {
 
 } NVME_IDENTIFY_CONTROLLER_DATA, *PNVME_IDENTIFY_CONTROLLER_DATA;
 
+typedef struct {
+
+    USHORT  NumberOfIdentifiers;
+    USHORT  ControllerID[2047];
+
+} NVME_CONTROLLER_LIST, *PNVME_CONTROLLER_LIST;
 
 typedef union {
 
@@ -964,7 +980,8 @@ typedef struct {
         UCHAR   ThinProvisioning            : 1;
         UCHAR   NameSpaceAtomicWriteUnit    : 1;
         UCHAR   DeallocatedOrUnwrittenError : 1;
-        UCHAR   Reserved                    : 5;
+        UCHAR   SkipReuseUI                 : 1;
+        UCHAR   Reserved                    : 4;
     } NSFEAT;                           // byte 24      M - Namespace Features (NSFEAT)
 
     UCHAR   NLBAF;                      // byte 25      M - Number of LBA Formats (NLBAF)
@@ -1073,17 +1090,19 @@ typedef enum {
 
 typedef struct {
     UCHAR       Type;                   // Type (Type): Specifies the Type of the LBA range.
-    union {
+    struct {
         UCHAR   MayOverwritten : 1;
         UCHAR   Hidden         : 1;
         UCHAR   Reserved       : 6;
     } Attributes;                       // Attributes: Specifies attributes of the LBA range. Each bit defines an attribute.
+
     UCHAR       Reserved0[14];
     ULONGLONG   SLBA;                   // Starting LBA (SLBA): This field specifies the 64-bit address of the first logical block that is part of this LBA range.
     ULONGLONG   NLB;                    // Number of Logical Blocks (NLB): This field specifies the number of logical blocks that are part of this LBA range. This is a 0s based value.
     UCHAR       GUID[16];               // Unique Identifier (GUID): This field is a global unique identifier that uniquely specifies the type of this LBA range. Well known Types may be defined and are published on the NVM Express website.
     UCHAR       Reserved1[16];
 } NVME_LBA_RANGET_TYPE_ENTRY, *PNVME_LBA_RANGET_TYPE_ENTRY;
+
 
 //
 // Parameters for NVME_ADMIN_COMMAND_CREATE_IO_CQ
@@ -1201,6 +1220,29 @@ typedef union {
 typedef union {
 
     struct {
+        ULONG   IV          : 16;       // Interrupt Vector (IV)
+        ULONG   CD          : 1;        // Coalescing Disabled (CD)
+        ULONG   Reserved0   : 15;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_FEATURE_INTERRUPT_VECTOR_CONFIG, *PNVME_CDW11_FEATURE_INTERRUPT_VECTOR_CONFIG;
+
+typedef union {
+
+    struct {
+        ULONG   DN          : 1;        // Disable Normal (DN)
+        ULONG   Reserved0   : 31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_FEATURE_WRITE_ATOMICITY_NORMAL, *PNVME_CDW11_FEATURE_WRITE_ATOMICITY_NORMAL;
+
+typedef union {
+
+    struct {
         ULONG   NUM         : 6;        // Number of LBA Ranges (NUM)
         ULONG   Reserved0   : 26;
     } DUMMYSTRUCTNAME;
@@ -1250,8 +1292,11 @@ typedef union {
 typedef union {
 
     struct {
-        ULONG   CriticalWarnings    : 8;        // SMART / Health Critical Warnings
-        ULONG   Reserved0           : 24;
+        ULONG   CriticalWarnings    : 8;  // SMART / Health Critical Warnings
+        ULONG   NsAttributeNotices  : 1;  // Namespace Attributes Notices
+        ULONG   FwActivationNotices : 1;  // Firmware Activation Notices
+        ULONG   TelemetryLogNotices : 1;  // Telemetry Log Notices
+        ULONG   Reserved0           : 21;
     } DUMMYSTRUCTNAME;
 
     ULONG   AsUlong;
@@ -1411,6 +1456,7 @@ typedef struct {
 typedef union {
     NVME_CDW11_FEATURE_NUMBER_OF_QUEUES     NumberOfQueues;
     NVME_CDW11_FEATURE_INTERRUPT_COALESCING InterruptCoalescing;
+    NVME_CDW11_FEATURE_INTERRUPT_VECTOR_CONFIG InterruptVectorConfig;
     NVME_CDW11_FEATURE_LBA_RANGE_TYPE       LbaRangeType;
     NVME_CDW11_FEATURE_ARBITRATION          Arbitration;
     NVME_CDW11_FEATURE_VOLATILE_WRITE_CACHE VolatileWriteCache;
@@ -1419,6 +1465,7 @@ typedef union {
     NVME_CDW11_FEATURE_AUTO_POWER_STATE_TRANSITION  AutoPowerStateTransition;
     NVME_CDW11_FEATURE_TEMPERATURE_THRESHOLD TemperatureThreshold;
     NVME_CDW11_FEATURE_HOST_MEMORY_BUFFER   HostMemoryBuffer;
+    NVME_CDW11_FEATURE_WRITE_ATOMICITY_NORMAL WriteAtomicityNormal;
 
     ULONG   AsUlong;
 } NVME_CDW11_FEATURES, *PNVME_CDW11_FEATURES;
@@ -1448,6 +1495,11 @@ typedef union {
 } NVME_CDW15_FEATURES, *PNVME_CDW15_FEATURES;
 
 //
+// NVMe Maximum log size
+//
+#define NVME_MAX_LOG_SIZE               0x1000
+
+//
 // Parameters for NVME_ADMIN_COMMAND_GET_LOG_PAGE Command
 //
 typedef enum {
@@ -1466,6 +1518,9 @@ typedef enum {
 
 } NVME_LOG_PAGES;
 
+//
+// Get LOG PAGE format which confines to  < 1.3 NVMe Specification
+// 
 typedef union {
 
     struct {
@@ -1478,6 +1533,47 @@ typedef union {
     ULONG   AsUlong;
 
 } NVME_CDW10_GET_LOG_PAGE, *PNVME_CDW10_GET_LOG_PAGE;
+
+//
+// Get LOG PAGE format which confines to  >= 1.3 NVMe Specification
+// 
+typedef union {
+
+    struct {
+        ULONG   LID         : 8;        // Log Page Identifier (LID)
+        ULONG   LSP         : 4;        // Log Specific Field (LSP)
+        ULONG   Reserved0   : 3;
+        ULONG   RAE         : 1;        // Reset Asynchronous Event (RAE)
+        ULONG   NUMDL       : 16;       // Number of Lower Dwords (NUMDL)
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW10_GET_LOG_PAGE_V13, *PNVME_CDW10_GET_LOG_PAGE_V13;
+
+typedef union {
+
+    struct {
+        ULONG   NUMDU       : 16;       // Number of Upper Dwords (NUMDU)
+        ULONG   Reserved1   : 16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW11_GET_LOG_PAGE, *PNVME_CDW11_GET_LOG_PAGE;
+
+typedef struct {
+
+    ULONG   LPOL;                       // Log Page Offset Lower (LPOL)
+
+} NVME_CDW12_GET_LOG_PAGE, *PNVME_CDW12_GET_LOG_PAGE;
+
+typedef struct {
+
+    ULONG   LPOU;                       // Log Page Offset Upper (LPOU)
+
+
+} NVME_CDW13_GET_LOG_PAGE, *PNVME_CDW13_GET_LOG_PAGE;
 
 //
 // Information of log: NVME_LOG_PAGE_ERROR_INFO. Size: 64 bytes
@@ -1559,6 +1655,29 @@ typedef struct {
 } NVME_HEALTH_INFO_LOG, *PNVME_HEALTH_INFO_LOG;
 
 //
+// "Telemetry Host-Initiated Log" structure definition.
+//
+
+#define NVME_TELEMETRY_HOST_INITIATED_LOG_IDENTIFIER    0x7
+
+#define NVME_TELEMETRY_DATA_BLOCK_SIZE                  0x200 // All NVMe Telemetry Data Blocks are 512 bytes in size.
+
+typedef struct _NVME_TELEMETRY_HOST_INITIATED_LOG {
+
+    UCHAR   LogIdentifier;                      // Byte 0
+    UCHAR   Reserved0[4];                       // Bytes 1-4
+    UCHAR   OrganizationID[3];                  // Bytes 5-7 - IEEE OUI Identifier
+    USHORT  Area1LastBlock;                     // Bytes 8-9
+    USHORT  Area2LastBlock;                     // Bytes 10-11
+    USHORT  Area3LastBlock;                     // Bytes 12-13
+    UCHAR   Reserved1[368];                     // Bytes 14-381
+    UCHAR   ControllerInitiatedDataAvailable;   // Byte 382
+    UCHAR   ControllerInitiatedDataGenerationNumber; // Byte 383
+    UCHAR   ReasonIdentifier[128];              // Bytes 384-511
+
+} NVME_TELEMETRY_HOST_INITIATED_LOG, *PNVME_TELEMETRY_HOST_INITIATED_LOG;
+
+//
 // Information of log: NVME_LOG_PAGE_FIRMWARE_SLOT_INFO. Size: 512 bytes
 //
 typedef struct {
@@ -1577,6 +1696,16 @@ typedef struct {
     UCHAR       Reserved1[448];
 
 } NVME_FIRMWARE_SLOT_INFO_LOG, *PNVME_FIRMWARE_SLOT_INFO_LOG;
+
+//
+// Information of log: NVME_LOG_PAGE_CHANGED_NAMESPACE_LIST. Size: 4096 bytes
+//
+typedef struct {
+
+    ULONG   NSID[1024];                        // List of Namespace ID upto 1024 entries
+
+} NVME_CHANGED_NAMESPACE_LIST_LOG, *PNVME_CHANGED_NAMESPACE_LIST_LOG;
+
 
 //
 // Information of log: NVME_LOG_PAGE_COMMAND_EFFECTS. Size: 4096 bytes
@@ -1618,6 +1747,7 @@ typedef struct {
 
 } NVME_COMMAND_EFFECTS_LOG, *PNVME_COMMAND_EFFECTS_LOG;
 
+#pragma pack(push, 1)
 typedef struct {
 
     struct {
@@ -1671,6 +1801,7 @@ typedef struct {
      NVME_DEVICE_SELF_TEST_RESULT_DATA       ResultData[20];    // Last 20 Self-Test Result Data, latest to oldest available in sorted order
 
 } NVME_DEVICE_SELF_TEST_LOG, *PNVME_DEVICE_SELF_TEST_LOG;
+#pragma pack(pop)
 
 //
 // Information of log: NVME_LOG_PAGE_RESERVATION_NOTIFICATION. Size: 64 bytes
@@ -2244,12 +2375,16 @@ typedef struct {
         // Admin Command: Get Log Page
         //
         struct {
-            NVME_CDW10_GET_LOG_PAGE CDW10;
-            ULONG   CDW11;
-            ULONG   CDW12;
-            ULONG   CDW13;
-            ULONG   CDW14;
-            ULONG   CDW15;
+            union {
+                NVME_CDW10_GET_LOG_PAGE     CDW10;
+                NVME_CDW10_GET_LOG_PAGE_V13 CDW10_V13;
+            };
+
+            NVME_CDW11_GET_LOG_PAGE CDW11;
+            NVME_CDW12_GET_LOG_PAGE CDW12;
+            NVME_CDW13_GET_LOG_PAGE CDW13;
+            ULONG                   CDW14;
+            ULONG                   CDW15;
         } GETLOGPAGE;
 
         //
@@ -2411,4 +2546,8 @@ typedef struct {
 #pragma warning(default:4200)
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_STORAGE) */
+#pragma endregion
+
 #endif //NVME_INCLUDED
+

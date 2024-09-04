@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -53,83 +53,73 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Playl
 template <typename D>
 struct produce<D, Windows::Media::Playlists::IPlaylist> : produce_base<D, Windows::Media::Playlists::IPlaylist>
 {
-    HRESULT __stdcall get_Files(void** value) noexcept final
+    int32_t WINRT_CALL get_Files(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Files, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Storage::StorageFile>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Storage::StorageFile>>(this->shim().Files());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsAsync(void* saveLocation, HSTRING desiredName, Windows::Storage::NameCollisionOption option, void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsAsync(void* saveLocation, void* desiredName, Windows::Storage::NameCollisionOption option, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), Windows::Storage::IStorageFolder const, hstring const, Windows::Storage::NameCollisionOption const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().SaveAsAsync(*reinterpret_cast<Windows::Storage::IStorageFolder const*>(&saveLocation), *reinterpret_cast<hstring const*>(&desiredName), *reinterpret_cast<Windows::Storage::NameCollisionOption const*>(&option)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsWithFormatAsync(void* saveLocation, HSTRING desiredName, Windows::Storage::NameCollisionOption option, Windows::Media::Playlists::PlaylistFormat playlistFormat, void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsWithFormatAsync(void* saveLocation, void* desiredName, Windows::Storage::NameCollisionOption option, Windows::Media::Playlists::PlaylistFormat playlistFormat, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), Windows::Storage::IStorageFolder const, hstring const, Windows::Storage::NameCollisionOption const, Windows::Media::Playlists::PlaylistFormat const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().SaveAsAsync(*reinterpret_cast<Windows::Storage::IStorageFolder const*>(&saveLocation), *reinterpret_cast<hstring const*>(&desiredName), *reinterpret_cast<Windows::Storage::NameCollisionOption const*>(&option), *reinterpret_cast<Windows::Media::Playlists::PlaylistFormat const*>(&playlistFormat)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Playlists::IPlaylistStatics> : produce_base<D, Windows::Media::Playlists::IPlaylistStatics>
 {
-    HRESULT __stdcall LoadAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL LoadAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Playlists::Playlist>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Playlists::Playlist>>(this->shim().LoadAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -138,12 +128,12 @@ struct produce<D, Windows::Media::Playlists::IPlaylistStatics> : produce_base<D,
 WINRT_EXPORT namespace winrt::Windows::Media::Playlists {
 
 inline Playlist::Playlist() :
-    Playlist(get_activation_factory<Playlist>().ActivateInstance<Playlist>())
+    Playlist(impl::call_factory<Playlist>([](auto&& f) { return f.template ActivateInstance<Playlist>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Playlists::Playlist> Playlist::LoadAsync(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<Playlist, Windows::Media::Playlists::IPlaylistStatics>().LoadAsync(file);
+    return impl::call_factory<Playlist, Windows::Media::Playlists::IPlaylistStatics>([&](auto&& f) { return f.LoadAsync(file); });
 }
 
 }
@@ -155,5 +145,3 @@ template<> struct hash<winrt::Windows::Media::Playlists::IPlaylistStatics> : win
 template<> struct hash<winrt::Windows::Media::Playlists::Playlist> : winrt::impl::hash_base<winrt::Windows::Media::Playlists::Playlist> {};
 
 }
-
-WINRT_WARNING_POP

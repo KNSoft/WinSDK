@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -298,21 +298,21 @@ template <typename D> uint64_t consume_Windows_Media_Import_IPhotoImportFindItem
     return value;
 }
 
-template <typename D> event_token consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->add_SelectionChanged(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Import::IPhotoImportFindItemsResult> consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged_revoker consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Import::IPhotoImportFindItemsResult>(this, &abi_t<Windows::Media::Import::IPhotoImportFindItemsResult>::remove_SelectionChanged, SelectionChanged(value));
+    return impl::make_event_revoker<D, SelectionChanged_revoker>(this, SelectionChanged(value));
 }
 
-template <typename D> void consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(event_token const& token) const
+template <typename D> void consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::SelectionChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->remove_SelectionChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->remove_SelectionChanged(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress> consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ImportItemsAsync() const
@@ -322,21 +322,21 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return operation;
 }
 
-template <typename D> event_token consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const& value) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->add_ItemImported(get_abi(value), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Import::IPhotoImportFindItemsResult> consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const& value) const
+template <typename D> typename consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported_revoker consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Import::IPhotoImportFindItemsResult>(this, &abi_t<Windows::Media::Import::IPhotoImportFindItemsResult>::remove_ItemImported, ItemImported(value));
+    return impl::make_event_revoker<D, ItemImported_revoker>(this, ItemImported(value));
 }
 
-template <typename D> void consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(event_token const& token) const
+template <typename D> void consume_Windows_Media_Import_IPhotoImportFindItemsResult<D>::ItemImported(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->remove_ItemImported(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Import::IPhotoImportFindItemsResult)->remove_ItemImported(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_Media_Import_IPhotoImportFindItemsResult2<D>::AddItemsInDateRangeToSelection(Windows::Foundation::DateTime const& rangeStart, Windows::Foundation::TimeSpan const& rangeLength) const
@@ -531,6 +531,13 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> con
     return value;
 }
 
+template <typename D> hstring consume_Windows_Media_Import_IPhotoImportItem2<D>::Path() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportItem2)->get_Path(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Media::Import::PhotoImportItem consume_Windows_Media_Import_IPhotoImportItemImportedEventArgs<D>::ImportedItem() const
 {
     Windows::Media::Import::PhotoImportItem value{ nullptr };
@@ -608,9 +615,9 @@ template <typename D> Windows::Media::Import::PhotoImportSource consume_Windows_
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Import_IPhotoImportSession<D>::SessionId() const
+template <typename D> winrt::guid consume_Windows_Media_Import_IPhotoImportSession<D>::SessionId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Import::IPhotoImportSession)->get_SessionId(put_abi(value)));
     return value;
 }
@@ -940,1990 +947,1731 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Med
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSourceResult> : produce_base<D, Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSourceResult>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Media::Import::PhotoImportSession));
             *value = detach_from<Windows::Media::Import::PhotoImportSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasSucceeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasSucceeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasSucceeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasSucceeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeletedItems(void** value) noexcept final
+    int32_t WINRT_CALL get_DeletedItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeletedItems, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>>(this->shim().DeletedItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PhotosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().PhotosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().VideosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().VideosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SidecarsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SidecarsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SiblingsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SiblingsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TotalCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().TotalSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult> : produce_base<D, Windows::Media::Import::IPhotoImportFindItemsResult>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Media::Import::PhotoImportSession));
             *value = detach_from<Windows::Media::Import::PhotoImportSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasSucceeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasSucceeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasSucceeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasSucceeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FoundItems(void** value) noexcept final
+    int32_t WINRT_CALL get_FoundItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FoundItems, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>>(this->shim().FoundItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PhotosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().PhotosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().VideosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().VideosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SidecarsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SidecarsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SiblingsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SiblingsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TotalCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().TotalSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectAll() noexcept final
+    int32_t WINRT_CALL SelectAll() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectAll, WINRT_WRAP(void));
             this->shim().SelectAll();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectNone() noexcept final
+    int32_t WINRT_CALL SelectNone() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectNone, WINRT_WRAP(void));
             this->shim().SelectNone();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectNewAsync(void** action) noexcept final
+    int32_t WINRT_CALL SelectNewAsync(void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectNewAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SelectNewAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetImportMode(Windows::Media::Import::PhotoImportImportMode value) noexcept final
+    int32_t WINRT_CALL SetImportMode(Windows::Media::Import::PhotoImportImportMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetImportMode, WINRT_WRAP(void), Windows::Media::Import::PhotoImportImportMode const&);
             this->shim().SetImportMode(*reinterpret_cast<Windows::Media::Import::PhotoImportImportMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImportMode(Windows::Media::Import::PhotoImportImportMode* value) noexcept final
+    int32_t WINRT_CALL get_ImportMode(Windows::Media::Import::PhotoImportImportMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportMode, WINRT_WRAP(Windows::Media::Import::PhotoImportImportMode));
             *value = detach_from<Windows::Media::Import::PhotoImportImportMode>(this->shim().ImportMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedPhotosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedPhotosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedPhotosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedPhotosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedPhotosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedPhotosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedPhotosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SelectedPhotosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedVideosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedVideosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedVideosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedVideosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedVideosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedVideosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedVideosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SelectedVideosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedSidecarsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedSidecarsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedSidecarsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedSidecarsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedSidecarsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedSidecarsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedSidecarsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SelectedSidecarsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedSiblingsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedSiblingsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedSiblingsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedSiblingsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedSiblingsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedSiblingsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedSiblingsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SelectedSiblingsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedTotalCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedTotalCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedTotalCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SelectedTotalCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectedTotalSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SelectedTotalSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectedTotalSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SelectedTotalSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SelectionChanged(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SelectionChanged(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SelectionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SelectionChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SelectionChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportSelectionChangedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SelectionChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SelectionChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SelectionChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SelectionChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SelectionChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall ImportItemsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ImportItemsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>>(this->shim().ImportItemsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ItemImported(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ItemImported(void* value, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ItemImported(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ItemImported, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ItemImported(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Import::PhotoImportFindItemsResult, Windows::Media::Import::PhotoImportItemImportedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ItemImported(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ItemImported(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ItemImported(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ItemImported, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ItemImported(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportFindItemsResult2> : produce_base<D, Windows::Media::Import::IPhotoImportFindItemsResult2>
 {
-    HRESULT __stdcall AddItemsInDateRangeToSelection(Windows::Foundation::DateTime rangeStart, Windows::Foundation::TimeSpan rangeLength) noexcept final
+    int32_t WINRT_CALL AddItemsInDateRangeToSelection(Windows::Foundation::DateTime rangeStart, Windows::Foundation::TimeSpan rangeLength) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddItemsInDateRangeToSelection, WINRT_WRAP(void), Windows::Foundation::DateTime const&, Windows::Foundation::TimeSpan const&);
             this->shim().AddItemsInDateRangeToSelection(*reinterpret_cast<Windows::Foundation::DateTime const*>(&rangeStart), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&rangeLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportImportItemsResult> : produce_base<D, Windows::Media::Import::IPhotoImportImportItemsResult>
 {
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Media::Import::PhotoImportSession));
             *value = detach_from<Windows::Media::Import::PhotoImportSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasSucceeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasSucceeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasSucceeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasSucceeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImportedItems(void** value) noexcept final
+    int32_t WINRT_CALL get_ImportedItems(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportedItems, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem>>(this->shim().ImportedItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PhotosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhotosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_PhotosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhotosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().PhotosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().VideosCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideosSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_VideosSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideosSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().VideosSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SidecarsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SidecarsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SidecarsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SidecarsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SidecarsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SiblingsCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SiblingsSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SiblingsSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SiblingsSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SiblingsSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TotalCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TotalSizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_TotalSizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TotalSizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().TotalSizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteImportedItemsFromSourceAsync(void** result) noexcept final
+    int32_t WINRT_CALL DeleteImportedItemsFromSourceAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteImportedItemsFromSourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double>));
             *result = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double>>(this->shim().DeleteImportedItemsFromSourceAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportItem> : produce_base<D, Windows::Media::Import::IPhotoImportItem>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ItemKey(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_ItemKey(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ItemKey, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().ItemKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentType(Windows::Media::Import::PhotoImportContentType* value) noexcept final
+    int32_t WINRT_CALL get_ContentType(Windows::Media::Import::PhotoImportContentType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentType, WINRT_WRAP(Windows::Media::Import::PhotoImportContentType));
             *value = detach_from<Windows::Media::Import::PhotoImportContentType>(this->shim().ContentType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Date(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Date(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Date, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Date());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sibling(void** value) noexcept final
+    int32_t WINRT_CALL get_Sibling(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sibling, WINRT_WRAP(Windows::Media::Import::PhotoImportSidecar));
             *value = detach_from<Windows::Media::Import::PhotoImportSidecar>(this->shim().Sibling());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sidecars(void** value) noexcept final
+    int32_t WINRT_CALL get_Sidecars(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sidecars, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar>>(this->shim().Sidecars());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoSegments(void** value) noexcept final
+    int32_t WINRT_CALL get_VideoSegments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoSegments, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportVideoSegment>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportVideoSegment>>(this->shim().VideoSegments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSelected(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSelected(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSelected, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSelected());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsSelected(bool value) noexcept final
+    int32_t WINRT_CALL put_IsSelected(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSelected, WINRT_WRAP(void), bool);
             this->shim().IsSelected(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImportedFileNames(void** value) noexcept final
+    int32_t WINRT_CALL get_ImportedFileNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportedFileNames, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().ImportedFileNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeletedFileNames(void** value) noexcept final
+    int32_t WINRT_CALL get_DeletedFileNames(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeletedFileNames, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().DeletedFileNames());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Import::IPhotoImportItem2> : produce_base<D, Windows::Media::Import::IPhotoImportItem2>
+{
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().Path());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportItemImportedEventArgs> : produce_base<D, Windows::Media::Import::IPhotoImportItemImportedEventArgs>
 {
-    HRESULT __stdcall get_ImportedItem(void** value) noexcept final
+    int32_t WINRT_CALL get_ImportedItem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportedItem, WINRT_WRAP(Windows::Media::Import::PhotoImportItem));
             *value = detach_from<Windows::Media::Import::PhotoImportItem>(this->shim().ImportedItem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportManagerStatics> : produce_base<D, Windows::Media::Import::IPhotoImportManagerStatics>
 {
-    HRESULT __stdcall IsSupportedAsync(void** operation) noexcept final
+    int32_t WINRT_CALL IsSupportedAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupportedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsSupportedAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllSourcesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL FindAllSourcesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAllSourcesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>>>(this->shim().FindAllSourcesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPendingOperations(void** result) noexcept final
+    int32_t WINRT_CALL GetPendingOperations(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPendingOperations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation>));
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation>>(this->shim().GetPendingOperations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportOperation> : produce_base<D, Windows::Media::Import::IPhotoImportOperation>
 {
-    HRESULT __stdcall get_Stage(Windows::Media::Import::PhotoImportStage* value) noexcept final
+    int32_t WINRT_CALL get_Stage(Windows::Media::Import::PhotoImportStage* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stage, WINRT_WRAP(Windows::Media::Import::PhotoImportStage));
             *value = detach_from<Windows::Media::Import::PhotoImportStage>(this->shim().Stage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Session(void** value) noexcept final
+    int32_t WINRT_CALL get_Session(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Session, WINRT_WRAP(Windows::Media::Import::PhotoImportSession));
             *value = detach_from<Windows::Media::Import::PhotoImportSession>(this->shim().Session());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContinueFindingItemsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL get_ContinueFindingItemsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinueFindingItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t>>(this->shim().ContinueFindingItemsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContinueImportingItemsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL get_ContinueImportingItemsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinueImportingItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportImportItemsResult, Windows::Media::Import::PhotoImportProgress>>(this->shim().ContinueImportingItemsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContinueDeletingImportedItemsFromSourceAsync(void** operation) noexcept final
+    int32_t WINRT_CALL get_ContinueDeletingImportedItemsFromSourceAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContinueDeletingImportedItemsFromSourceAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult, double>>(this->shim().ContinueDeletingImportedItemsFromSourceAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSelectionChangedEventArgs> : produce_base<D, Windows::Media::Import::IPhotoImportSelectionChangedEventArgs>
 {
-    HRESULT __stdcall get_IsSelectionEmpty(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSelectionEmpty(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSelectionEmpty, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSelectionEmpty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSession> : produce_base<D, Windows::Media::Import::IPhotoImportSession>
 {
-    HRESULT __stdcall get_Source(void** value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::Media::Import::PhotoImportSource));
             *value = detach_from<Windows::Media::Import::PhotoImportSource>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SessionId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SessionId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SessionId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SessionId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SessionId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DestinationFolder(void* value) noexcept final
+    int32_t WINRT_CALL put_DestinationFolder(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationFolder, WINRT_WRAP(void), Windows::Storage::IStorageFolder const&);
             this->shim().DestinationFolder(*reinterpret_cast<Windows::Storage::IStorageFolder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DestinationFolder(void** value) noexcept final
+    int32_t WINRT_CALL get_DestinationFolder(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationFolder, WINRT_WRAP(Windows::Storage::IStorageFolder));
             *value = detach_from<Windows::Storage::IStorageFolder>(this->shim().DestinationFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AppendSessionDateToDestinationFolder(bool value) noexcept final
+    int32_t WINRT_CALL put_AppendSessionDateToDestinationFolder(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendSessionDateToDestinationFolder, WINRT_WRAP(void), bool);
             this->shim().AppendSessionDateToDestinationFolder(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppendSessionDateToDestinationFolder(bool* value) noexcept final
+    int32_t WINRT_CALL get_AppendSessionDateToDestinationFolder(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendSessionDateToDestinationFolder, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AppendSessionDateToDestinationFolder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode value) noexcept final
+    int32_t WINRT_CALL put_SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubfolderCreationMode, WINRT_WRAP(void), Windows::Media::Import::PhotoImportSubfolderCreationMode const&);
             this->shim().SubfolderCreationMode(*reinterpret_cast<Windows::Media::Import::PhotoImportSubfolderCreationMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode* value) noexcept final
+    int32_t WINRT_CALL get_SubfolderCreationMode(Windows::Media::Import::PhotoImportSubfolderCreationMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubfolderCreationMode, WINRT_WRAP(Windows::Media::Import::PhotoImportSubfolderCreationMode));
             *value = detach_from<Windows::Media::Import::PhotoImportSubfolderCreationMode>(this->shim().SubfolderCreationMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DestinationFileNamePrefix(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DestinationFileNamePrefix(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationFileNamePrefix, WINRT_WRAP(void), hstring const&);
             this->shim().DestinationFileNamePrefix(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DestinationFileNamePrefix(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DestinationFileNamePrefix(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DestinationFileNamePrefix, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DestinationFileNamePrefix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindItemsAsync(Windows::Media::Import::PhotoImportContentTypeFilter contentTypeFilter, Windows::Media::Import::PhotoImportItemSelectionMode itemSelectionMode, void** operation) noexcept final
+    int32_t WINRT_CALL FindItemsAsync(Windows::Media::Import::PhotoImportContentTypeFilter contentTypeFilter, Windows::Media::Import::PhotoImportItemSelectionMode itemSelectionMode, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindItemsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t>), Windows::Media::Import::PhotoImportContentTypeFilter const, Windows::Media::Import::PhotoImportItemSelectionMode const);
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t>>(this->shim().FindItemsAsync(*reinterpret_cast<Windows::Media::Import::PhotoImportContentTypeFilter const*>(&contentTypeFilter), *reinterpret_cast<Windows::Media::Import::PhotoImportItemSelectionMode const*>(&itemSelectionMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSession2> : produce_base<D, Windows::Media::Import::IPhotoImportSession2>
 {
-    HRESULT __stdcall put_SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat value) noexcept final
+    int32_t WINRT_CALL put_SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubfolderDateFormat, WINRT_WRAP(void), Windows::Media::Import::PhotoImportSubfolderDateFormat const&);
             this->shim().SubfolderDateFormat(*reinterpret_cast<Windows::Media::Import::PhotoImportSubfolderDateFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat* value) noexcept final
+    int32_t WINRT_CALL get_SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubfolderDateFormat, WINRT_WRAP(Windows::Media::Import::PhotoImportSubfolderDateFormat));
             *value = detach_from<Windows::Media::Import::PhotoImportSubfolderDateFormat>(this->shim().SubfolderDateFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RememberDeselectedItems(bool value) noexcept final
+    int32_t WINRT_CALL put_RememberDeselectedItems(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RememberDeselectedItems, WINRT_WRAP(void), bool);
             this->shim().RememberDeselectedItems(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RememberDeselectedItems(bool* value) noexcept final
+    int32_t WINRT_CALL get_RememberDeselectedItems(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RememberDeselectedItems, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RememberDeselectedItems());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSidecar> : produce_base<D, Windows::Media::Import::IPhotoImportSidecar>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Date(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Date(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Date, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Date());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSource> : produce_base<D, Windows::Media::Import::IPhotoImportSource>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Manufacturer(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Manufacturer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manufacturer, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Manufacturer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Model(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Model(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Model, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Model());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SerialNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SerialNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SerialNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SerialNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionProtocol(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionProtocol(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionProtocol, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ConnectionProtocol());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionTransport(Windows::Media::Import::PhotoImportConnectionTransport* value) noexcept final
+    int32_t WINRT_CALL get_ConnectionTransport(Windows::Media::Import::PhotoImportConnectionTransport* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionTransport, WINRT_WRAP(Windows::Media::Import::PhotoImportConnectionTransport));
             *value = detach_from<Windows::Media::Import::PhotoImportConnectionTransport>(this->shim().ConnectionTransport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(Windows::Media::Import::PhotoImportSourceType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::Media::Import::PhotoImportSourceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::Media::Import::PhotoImportSourceType));
             *value = detach_from<Windows::Media::Import::PhotoImportSourceType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowerSource(Windows::Media::Import::PhotoImportPowerSource* value) noexcept final
+    int32_t WINRT_CALL get_PowerSource(Windows::Media::Import::PhotoImportPowerSource* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowerSource, WINRT_WRAP(Windows::Media::Import::PhotoImportPowerSource));
             *value = detach_from<Windows::Media::Import::PhotoImportPowerSource>(this->shim().PowerSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BatteryLevelPercent(void** value) noexcept final
+    int32_t WINRT_CALL get_BatteryLevelPercent(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BatteryLevelPercent, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().BatteryLevelPercent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DateTime(void** value) noexcept final
+    int32_t WINRT_CALL get_DateTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DateTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().DateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StorageMedia(void** value) noexcept final
+    int32_t WINRT_CALL get_StorageMedia(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageMedia, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportStorageMedium>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportStorageMedium>>(this->shim().StorageMedia());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsLocked(void** value) noexcept final
+    int32_t WINRT_CALL get_IsLocked(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLocked, WINRT_WRAP(Windows::Foundation::IReference<bool>));
             *value = detach_from<Windows::Foundation::IReference<bool>>(this->shim().IsLocked());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMassStorage(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMassStorage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMassStorage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMassStorage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateImportSession(void** result) noexcept final
+    int32_t WINRT_CALL CreateImportSession(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateImportSession, WINRT_WRAP(Windows::Media::Import::PhotoImportSession));
             *result = detach_from<Windows::Media::Import::PhotoImportSession>(this->shim().CreateImportSession());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportSourceStatics> : produce_base<D, Windows::Media::Import::IPhotoImportSourceStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING sourceId, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* sourceId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&sourceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromFolderAsync(void* sourceRootFolder, void** operation) noexcept final
+    int32_t WINRT_CALL FromFolderAsync(void* sourceRootFolder, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource>), Windows::Storage::IStorageFolder const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource>>(this->shim().FromFolderAsync(*reinterpret_cast<Windows::Storage::IStorageFolder const*>(&sourceRootFolder)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportStorageMedium> : produce_base<D, Windows::Media::Import::IPhotoImportStorageMedium>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SerialNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SerialNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SerialNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SerialNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StorageMediumType(Windows::Media::Import::PhotoImportStorageMediumType* value) noexcept final
+    int32_t WINRT_CALL get_StorageMediumType(Windows::Media::Import::PhotoImportStorageMediumType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageMediumType, WINRT_WRAP(Windows::Media::Import::PhotoImportStorageMediumType));
             *value = detach_from<Windows::Media::Import::PhotoImportStorageMediumType>(this->shim().StorageMediumType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedAccessMode(Windows::Media::Import::PhotoImportAccessMode* value) noexcept final
+    int32_t WINRT_CALL get_SupportedAccessMode(Windows::Media::Import::PhotoImportAccessMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedAccessMode, WINRT_WRAP(Windows::Media::Import::PhotoImportAccessMode));
             *value = detach_from<Windows::Media::Import::PhotoImportAccessMode>(this->shim().SupportedAccessMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CapacityInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_CapacityInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CapacityInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().CapacityInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AvailableSpaceInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_AvailableSpaceInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AvailableSpaceInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().AvailableSpaceInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Refresh() noexcept final
+    int32_t WINRT_CALL Refresh() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Refresh, WINRT_WRAP(void));
             this->shim().Refresh();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Import::IPhotoImportVideoSegment> : produce_base<D, Windows::Media::Import::IPhotoImportVideoSegment>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SizeInBytes(uint64_t* value) noexcept final
+    int32_t WINRT_CALL get_SizeInBytes(uint64_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SizeInBytes, WINRT_WRAP(uint64_t));
             *value = detach_from<uint64_t>(this->shim().SizeInBytes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Date(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Date(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Date, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Date());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sibling(void** value) noexcept final
+    int32_t WINRT_CALL get_Sibling(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sibling, WINRT_WRAP(Windows::Media::Import::PhotoImportSidecar));
             *value = detach_from<Windows::Media::Import::PhotoImportSidecar>(this->shim().Sibling());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sidecars(void** value) noexcept final
+    int32_t WINRT_CALL get_Sidecars(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sidecars, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSidecar>>(this->shim().Sidecars());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2933,27 +2681,27 @@ WINRT_EXPORT namespace winrt::Windows::Media::Import {
 
 inline Windows::Foundation::IAsyncOperation<bool> PhotoImportManager::IsSupportedAsync()
 {
-    return get_activation_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>().IsSupportedAsync();
+    return impl::call_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>([&](auto&& f) { return f.IsSupportedAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>> PhotoImportManager::FindAllSourcesAsync()
 {
-    return get_activation_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>().FindAllSourcesAsync();
+    return impl::call_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>([&](auto&& f) { return f.FindAllSourcesAsync(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation> PhotoImportManager::GetPendingOperations()
 {
-    return get_activation_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>().GetPendingOperations();
+    return impl::call_factory<PhotoImportManager, Windows::Media::Import::IPhotoImportManagerStatics>([&](auto&& f) { return f.GetPendingOperations(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromIdAsync(param::hstring const& sourceId)
 {
-    return get_activation_factory<PhotoImportSource, Windows::Media::Import::IPhotoImportSourceStatics>().FromIdAsync(sourceId);
+    return impl::call_factory<PhotoImportSource, Windows::Media::Import::IPhotoImportSourceStatics>([&](auto&& f) { return f.FromIdAsync(sourceId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> PhotoImportSource::FromFolderAsync(Windows::Storage::IStorageFolder const& sourceRootFolder)
 {
-    return get_activation_factory<PhotoImportSource, Windows::Media::Import::IPhotoImportSourceStatics>().FromFolderAsync(sourceRootFolder);
+    return impl::call_factory<PhotoImportSource, Windows::Media::Import::IPhotoImportSourceStatics>([&](auto&& f) { return f.FromFolderAsync(sourceRootFolder); });
 }
 
 }
@@ -2965,6 +2713,7 @@ template<> struct hash<winrt::Windows::Media::Import::IPhotoImportFindItemsResul
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportFindItemsResult2> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportFindItemsResult2> {};
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportImportItemsResult> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportImportItemsResult> {};
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportItem> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportItem> {};
+template<> struct hash<winrt::Windows::Media::Import::IPhotoImportItem2> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportItem2> {};
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportItemImportedEventArgs> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportItemImportedEventArgs> {};
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportManagerStatics> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportManagerStatics> {};
 template<> struct hash<winrt::Windows::Media::Import::IPhotoImportOperation> : winrt::impl::hash_base<winrt::Windows::Media::Import::IPhotoImportOperation> {};
@@ -2991,5 +2740,3 @@ template<> struct hash<winrt::Windows::Media::Import::PhotoImportStorageMedium> 
 template<> struct hash<winrt::Windows::Media::Import::PhotoImportVideoSegment> : winrt::impl::hash_base<winrt::Windows::Media::Import::PhotoImportVideoSegment> {};
 
 }
-
-WINRT_WARNING_POP

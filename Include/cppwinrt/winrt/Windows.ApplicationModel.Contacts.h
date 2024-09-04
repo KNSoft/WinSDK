@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Data.Text.2.h"
@@ -1227,21 +1227,21 @@ template <typename D> hstring consume_Windows_ApplicationModel_Contacts_IContact
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
 {
-    event_token returnValue{};
+    winrt::event_token returnValue{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactList)->add_ContactChanged(get_abi(value), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Contacts::IContactList> consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
+template <typename D> typename consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged_revoker consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Contacts::IContactList>(this, &abi_t<Windows::ApplicationModel::Contacts::IContactList>::remove_ContactChanged, ContactChanged(value));
+    return impl::make_event_revoker<D, ContactChanged_revoker>(this, ContactChanged(value));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(event_token const& value) const
+template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactList<D>::ContactChanged(winrt::event_token const& value) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactList)->remove_ContactChanged(get_abi(value)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactList)->remove_ContactChanged(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction consume_Windows_ApplicationModel_Contacts_IContactList<D>::SaveAsync() const
@@ -1718,21 +1718,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> consume_Windows
     return result;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactListSyncManager)->add_SyncStatusChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Contacts::IContactListSyncManager> consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged_revoker consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Contacts::IContactListSyncManager>(this, &abi_t<Windows::ApplicationModel::Contacts::IContactListSyncManager>::remove_SyncStatusChanged, SyncStatusChanged(handler));
+    return impl::make_event_revoker<D, SyncStatusChanged_revoker>(this, SyncStatusChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactListSyncManager<D>::SyncStatusChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactListSyncManager)->remove_SyncStatusChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactListSyncManager)->remove_SyncStatusChanged(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactListSyncManager2<D>::Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus const& value) const
@@ -2160,38 +2160,38 @@ template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactPan
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->put_HeaderColor(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->add_LaunchFullAppRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Contacts::IContactPanel> consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested_revoker consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Contacts::IContactPanel>(this, &abi_t<Windows::ApplicationModel::Contacts::IContactPanel>::remove_LaunchFullAppRequested, LaunchFullAppRequested(handler));
+    return impl::make_event_revoker<D, LaunchFullAppRequested_revoker>(this, LaunchFullAppRequested(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::LaunchFullAppRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->remove_LaunchFullAppRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->remove_LaunchFullAppRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->add_Closing(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Contacts::IContactPanel> consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing_revoker consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Contacts::IContactPanel>(this, &abi_t<Windows::ApplicationModel::Contacts::IContactPanel>::remove_Closing, Closing(handler));
+    return impl::make_event_revoker<D, Closing_revoker>(this, Closing(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactPanel<D>::Closing(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->remove_Closing(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactPanel)->remove_Closing(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Deferral consume_Windows_ApplicationModel_Contacts_IContactPanelClosingEventArgs<D>::GetDeferral() const
@@ -2521,21 +2521,21 @@ template <typename D> Windows::ApplicationModel::Contacts::ContactChangeTracker 
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
 {
-    event_token returnValue{};
+    winrt::event_token returnValue{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactStore2)->add_ContactChanged(get_abi(value), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Contacts::IContactStore2> consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
+template <typename D> typename consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged_revoker consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const& value) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Contacts::IContactStore2>(this, &abi_t<Windows::ApplicationModel::Contacts::IContactStore2>::remove_ContactChanged, ContactChanged(value));
+    return impl::make_event_revoker<D, ContactChanged_revoker>(this, ContactChanged(value));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(event_token const& value) const
+template <typename D> void consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::ContactChanged(winrt::event_token const& value) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactStore2)->remove_ContactChanged(get_abi(value)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Contacts::IContactStore2)->remove_ContactChanged(get_abi(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::AggregateContactManager consume_Windows_ApplicationModel_Contacts_IContactStore2<D>::AggregateContactManager() const
@@ -2776,2103 +2776,1829 @@ template <typename D> bool consume_Windows_ApplicationModel_Contacts_IPinnedCont
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager> : produce_base<D, Windows::ApplicationModel::Contacts::IAggregateContactManager>
 {
-    HRESULT __stdcall FindRawContactsAsync(void* contact, void** value) noexcept final
+    int32_t WINRT_CALL FindRawContactsAsync(void* contact, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindRawContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>), Windows::ApplicationModel::Contacts::Contact const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>>(this->shim().FindRawContactsAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryLinkContactsAsync(void* primaryContact, void* secondaryContact, void** contact) noexcept final
+    int32_t WINRT_CALL TryLinkContactsAsync(void* primaryContact, void* secondaryContact, void** contact) noexcept final
     {
         try
         {
             *contact = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryLinkContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), Windows::ApplicationModel::Contacts::Contact const, Windows::ApplicationModel::Contacts::Contact const);
             *contact = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().TryLinkContactsAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&primaryContact), *reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&secondaryContact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UnlinkRawContactAsync(void* contact, void** value) noexcept final
+    int32_t WINRT_CALL UnlinkRawContactAsync(void* contact, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnlinkRawContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Contacts::Contact const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().UnlinkRawContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetPreferredSourceForPictureAsync(void* aggregateContact, void* rawContact, void** value) noexcept final
+    int32_t WINRT_CALL TrySetPreferredSourceForPictureAsync(void* aggregateContact, void* rawContact, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetPreferredSourceForPictureAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Contacts::Contact const, Windows::ApplicationModel::Contacts::Contact const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySetPreferredSourceForPictureAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&aggregateContact), *reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&rawContact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IAggregateContactManager2> : produce_base<D, Windows::ApplicationModel::Contacts::IAggregateContactManager2>
 {
-    HRESULT __stdcall SetRemoteIdentificationInformationAsync(HSTRING contactListId, HSTRING remoteSourceId, HSTRING accountId, void** result) noexcept final
+    int32_t WINRT_CALL SetRemoteIdentificationInformationAsync(void* contactListId, void* remoteSourceId, void* accountId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRemoteIdentificationInformationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const, hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SetRemoteIdentificationInformationAsync(*reinterpret_cast<hstring const*>(&contactListId), *reinterpret_cast<hstring const*>(&remoteSourceId), *reinterpret_cast<hstring const*>(&accountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContact> : produce_base<D, Windows::ApplicationModel::Contacts::IContact>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thumbnail(void** value) noexcept final
+    int32_t WINRT_CALL get_Thumbnail(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().Thumbnail());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Thumbnail(void* value) noexcept final
+    int32_t WINRT_CALL put_Thumbnail(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thumbnail, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().Thumbnail(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Fields(void** value) noexcept final
+    int32_t WINRT_CALL get_Fields(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField>>(this->shim().Fields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContact2> : produce_base<D, Windows::ApplicationModel::Contacts::IContact2>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Id(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), hstring const&);
             this->shim().Id(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Notes(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Notes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Notes, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Notes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Notes(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Notes(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Notes, WINRT_WRAP(void), hstring const&);
             this->shim().Notes(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Phones(void** value) noexcept final
+    int32_t WINRT_CALL get_Phones(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Phones, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone>>(this->shim().Phones());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Emails(void** value) noexcept final
+    int32_t WINRT_CALL get_Emails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Emails, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail>>(this->shim().Emails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Addresses(void** value) noexcept final
+    int32_t WINRT_CALL get_Addresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Addresses, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress>>(this->shim().Addresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectedServiceAccounts(void** value) noexcept final
+    int32_t WINRT_CALL get_ConnectedServiceAccounts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectedServiceAccounts, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount>>(this->shim().ConnectedServiceAccounts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImportantDates(void** value) noexcept final
+    int32_t WINRT_CALL get_ImportantDates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImportantDates, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactDate>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactDate>>(this->shim().ImportantDates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DataSuppliers(void** value) noexcept final
+    int32_t WINRT_CALL get_DataSuppliers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataSuppliers, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().DataSuppliers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JobInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_JobInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JobInfo, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactJobInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactJobInfo>>(this->shim().JobInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SignificantOthers(void** value) noexcept final
+    int32_t WINRT_CALL get_SignificantOthers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignificantOthers, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactSignificantOther>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactSignificantOther>>(this->shim().SignificantOthers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Websites(void** value) noexcept final
+    int32_t WINRT_CALL get_Websites(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Websites, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactWebsite>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactWebsite>>(this->shim().Websites());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_ProviderProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderProperties, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().ProviderProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContact3> : produce_base<D, Windows::ApplicationModel::Contacts::IContact3>
 {
-    HRESULT __stdcall get_ContactListId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContactListId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactListId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContactListId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayPictureUserUpdateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().DisplayPictureUserUpdateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_DisplayPictureUserUpdateTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayPictureUserUpdateTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().DisplayPictureUserUpdateTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMe(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMe(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMe, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMe());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AggregateId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AggregateId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AggregateId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AggregateId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RingToneToken(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RingToneToken(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RingToneToken, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RingToneToken());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RingToneToken(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RingToneToken(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RingToneToken, WINRT_WRAP(void), hstring const&);
             this->shim().RingToneToken(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDisplayPictureManuallySet(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDisplayPictureManuallySet(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDisplayPictureManuallySet, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDisplayPictureManuallySet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LargeDisplayPicture(void** value) noexcept final
+    int32_t WINRT_CALL get_LargeDisplayPicture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LargeDisplayPicture, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().LargeDisplayPicture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SmallDisplayPicture(void** value) noexcept final
+    int32_t WINRT_CALL get_SmallDisplayPicture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmallDisplayPicture, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().SmallDisplayPicture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceDisplayPicture(void** value) noexcept final
+    int32_t WINRT_CALL get_SourceDisplayPicture(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceDisplayPicture, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *value = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().SourceDisplayPicture());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SourceDisplayPicture(void* value) noexcept final
+    int32_t WINRT_CALL put_SourceDisplayPicture(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceDisplayPicture, WINRT_WRAP(void), Windows::Storage::Streams::IRandomAccessStreamReference const&);
             this->shim().SourceDisplayPicture(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextToneToken(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TextToneToken(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextToneToken, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TextToneToken());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TextToneToken(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_TextToneToken(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextToneToken, WINRT_WRAP(void), hstring const&);
             this->shim().TextToneToken(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAggregate(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAggregate(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAggregate, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAggregate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FullName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FullName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FullName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FullName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayNameOverride(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayNameOverride(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayNameOverride, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayNameOverride());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayNameOverride(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayNameOverride(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayNameOverride, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayNameOverride(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nickname(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Nickname(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nickname, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Nickname());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Nickname(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Nickname(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nickname, WINRT_WRAP(void), hstring const&);
             this->shim().Nickname(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SortName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SortName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SortName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SortName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAddress> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAddress>
 {
-    HRESULT __stdcall get_StreetAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StreetAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreetAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StreetAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StreetAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_StreetAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreetAddress, WINRT_WRAP(void), hstring const&);
             this->shim().StreetAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Locality(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Locality(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locality, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Locality());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Locality(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Locality(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locality, WINRT_WRAP(void), hstring const&);
             this->shim().Locality(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Region(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Region(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Region, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Region());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Region(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Region(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Region, WINRT_WRAP(void), hstring const&);
             this->shim().Region(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Country(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Country(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Country, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Country());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Country(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Country(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Country, WINRT_WRAP(void), hstring const&);
             this->shim().Country(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PostalCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PostalCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostalCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PostalCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PostalCode(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PostalCode(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostalCode, WINRT_WRAP(void), hstring const&);
             this->shim().PostalCode(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactAddressKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactAddressKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) noexcept final
+    int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactAddressKind const&);
             this->shim().Kind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAddressKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAnnotation>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AnnotationListId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AnnotationListId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnnotationListId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AnnotationListId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContactId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContactId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContactId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContactId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContactId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactId, WINRT_WRAP(void), hstring const&);
             this->shim().ContactId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RemoteId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RemoteId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RemoteId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteId, WINRT_WRAP(void), hstring const&);
             this->shim().RemoteId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept final
+    int32_t WINRT_CALL get_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedOperations, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactAnnotationOperations));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactAnnotationOperations>(this->shim().SupportedOperations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept final
+    int32_t WINRT_CALL put_SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedOperations, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactAnnotationOperations const&);
             this->shim().SupportedOperations(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotationOperations const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDisabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDisabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDisabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDisabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_ProviderProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderProperties, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().ProviderProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotation2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAnnotation2>
 {
-    HRESULT __stdcall get_ContactListId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContactListId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactListId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContactListId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContactListId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContactListId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactListId, WINRT_WRAP(void), hstring const&);
             this->shim().ContactListId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationList> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAnnotationList>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderPackageFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProviderPackageFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderPackageFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProviderPackageFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDataAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDataAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAsync(void** value) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySaveAnnotationAsync(void* annotation, void** ppResult) noexcept final
+    int32_t WINRT_CALL TrySaveAnnotationAsync(void* annotation, void** ppResult) noexcept final
     {
         try
         {
             *ppResult = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySaveAnnotationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Contacts::ContactAnnotation const);
             *ppResult = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TrySaveAnnotationAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotation const*>(&annotation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAnnotationAsync(HSTRING annotationId, void** annotation) noexcept final
+    int32_t WINRT_CALL GetAnnotationAsync(void* annotationId, void** annotation) noexcept final
     {
         try
         {
             *annotation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAnnotationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation>), hstring const);
             *annotation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation>>(this->shim().GetAnnotationAsync(*reinterpret_cast<hstring const*>(&annotationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAnnotationsByRemoteIdAsync(HSTRING remoteId, void** annotations) noexcept final
+    int32_t WINRT_CALL FindAnnotationsByRemoteIdAsync(void* remoteId, void** annotations) noexcept final
     {
         try
         {
             *annotations = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAnnotationsByRemoteIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>), hstring const);
             *annotations = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>>(this->shim().FindAnnotationsByRemoteIdAsync(*reinterpret_cast<hstring const*>(&remoteId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAnnotationsAsync(void** annotations) noexcept final
+    int32_t WINRT_CALL FindAnnotationsAsync(void** annotations) noexcept final
     {
         try
         {
             *annotations = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAnnotationsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>));
             *annotations = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>>(this->shim().FindAnnotationsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAnnotationAsync(void* annotation, void** value) noexcept final
+    int32_t WINRT_CALL DeleteAnnotationAsync(void* annotation, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAnnotationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Contacts::ContactAnnotation const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAnnotationAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotation const*>(&annotation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore>
 {
-    HRESULT __stdcall FindContactIdsByEmailAsync(HSTRING emailAddress, void** contactIds) noexcept final
+    int32_t WINRT_CALL FindContactIdsByEmailAsync(void* emailAddress, void** contactIds) noexcept final
     {
         try
         {
             *contactIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindContactIdsByEmailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const);
             *contactIds = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().FindContactIdsByEmailAsync(*reinterpret_cast<hstring const*>(&emailAddress)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindContactIdsByPhoneNumberAsync(HSTRING phoneNumber, void** contactIds) noexcept final
+    int32_t WINRT_CALL FindContactIdsByPhoneNumberAsync(void* phoneNumber, void** contactIds) noexcept final
     {
         try
         {
             *contactIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindContactIdsByPhoneNumberAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), hstring const);
             *contactIds = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().FindContactIdsByPhoneNumberAsync(*reinterpret_cast<hstring const*>(&phoneNumber)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAnnotationsForContactAsync(void* contact, void** annotations) noexcept final
+    int32_t WINRT_CALL FindAnnotationsForContactAsync(void* contact, void** annotations) noexcept final
     {
         try
         {
             *annotations = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAnnotationsForContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>), Windows::ApplicationModel::Contacts::Contact const);
             *annotations = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>>(this->shim().FindAnnotationsForContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisableAnnotationAsync(void* annotation, void** value) noexcept final
+    int32_t WINRT_CALL DisableAnnotationAsync(void* annotation, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableAnnotationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Contacts::ContactAnnotation const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DisableAnnotationAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotation const*>(&annotation)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAnnotationListAsync(void** value) noexcept final
+    int32_t WINRT_CALL CreateAnnotationListAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAnnotationListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>>(this->shim().CreateAnnotationListAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAnnotationListInAccountAsync(HSTRING userDataAccountId, void** value) noexcept final
+    int32_t WINRT_CALL CreateAnnotationListInAccountAsync(void* userDataAccountId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAnnotationListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>>(this->shim().CreateAnnotationListAsync(*reinterpret_cast<hstring const*>(&userDataAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAnnotationListAsync(HSTRING annotationListId, void** value) noexcept final
+    int32_t WINRT_CALL GetAnnotationListAsync(void* annotationListId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAnnotationListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList>>(this->shim().GetAnnotationListAsync(*reinterpret_cast<hstring const*>(&annotationListId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAnnotationListsAsync(void** lists) noexcept final
+    int32_t WINRT_CALL FindAnnotationListsAsync(void** lists) noexcept final
     {
         try
         {
             *lists = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAnnotationListsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>>));
             *lists = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>>>(this->shim().FindAnnotationListsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactAnnotationStore2>
 {
-    HRESULT __stdcall FindAnnotationsForContactListAsync(HSTRING contactListId, void** annotations) noexcept final
+    int32_t WINRT_CALL FindAnnotationsForContactListAsync(void* contactListId, void** annotations) noexcept final
     {
         try
         {
             *annotations = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindAnnotationsForContactListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>), hstring const);
             *annotations = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>>>(this->shim().FindAnnotationsForContactListAsync(*reinterpret_cast<hstring const*>(&contactListId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactBatch> : produce_base<D, Windows::ApplicationModel::Contacts::IContactBatch>
 {
-    HRESULT __stdcall get_Contacts(void** value) noexcept final
+    int32_t WINRT_CALL get_Contacts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contacts, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>(this->shim().Contacts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Contacts::ContactBatchStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Contacts::ContactBatchStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactBatchStatus));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactBatchStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader> : produce_base<D, Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>
 {
-    HRESULT __stdcall SetData(void* contact) noexcept final
+    int32_t WINRT_CALL SetData(void* contact) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetData, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&);
             this->shim().SetData(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions> : produce_base<D, Windows::ApplicationModel::Contacts::IContactCardOptions>
 {
-    HRESULT __stdcall get_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind* value) noexcept final
+    int32_t WINRT_CALL get_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderKind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactCardHeaderKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactCardHeaderKind>(this->shim().HeaderKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) noexcept final
+    int32_t WINRT_CALL put_HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderKind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactCardHeaderKind const&);
             this->shim().HeaderKind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactCardHeaderKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind* value) noexcept final
+    int32_t WINRT_CALL get_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialTabKind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactCardTabKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactCardTabKind>(this->shim().InitialTabKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind value) noexcept final
+    int32_t WINRT_CALL put_InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitialTabKind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactCardTabKind const&);
             this->shim().InitialTabKind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactCardTabKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactCardOptions2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactCardOptions2>
 {
-    HRESULT __stdcall get_ServerSearchContactListIds(void** value) noexcept final
+    int32_t WINRT_CALL get_ServerSearchContactListIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerSearchContactListIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().ServerSearchContactListIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChange> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChange>
 {
-    HRESULT __stdcall get_ChangeType(Windows::ApplicationModel::Contacts::ContactChangeType* value) noexcept final
+    int32_t WINRT_CALL get_ChangeType(Windows::ApplicationModel::Contacts::ContactChangeType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeType, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeType));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactChangeType>(this->shim().ChangeType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contact(void** value) noexcept final
+    int32_t WINRT_CALL get_Contact(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::ApplicationModel::Contacts::Contact));
             *value = detach_from<Windows::ApplicationModel::Contacts::Contact>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeReader> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChangeReader>
 {
-    HRESULT __stdcall AcceptChanges() noexcept final
+    int32_t WINRT_CALL AcceptChanges() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptChanges, WINRT_WRAP(void));
             this->shim().AcceptChanges();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AcceptChangesThrough(void* lastChangeToAccept) noexcept final
+    int32_t WINRT_CALL AcceptChangesThrough(void* lastChangeToAccept) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AcceptChangesThrough, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactChange const&);
             this->shim().AcceptChangesThrough(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactChange const*>(&lastChangeToAccept));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReadBatchAsync(void** value) noexcept final
+    int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBatchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>>>(this->shim().ReadBatchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeTracker> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChangeTracker>
 {
-    HRESULT __stdcall Enable() noexcept final
+    int32_t WINRT_CALL Enable() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enable, WINRT_WRAP(void));
             this->shim().Enable();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChangeReader(void** value) noexcept final
+    int32_t WINRT_CALL GetChangeReader(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChangeReader, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeReader));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactChangeReader>(this->shim().GetChangeReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Reset() noexcept final
+    int32_t WINRT_CALL Reset() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Reset, WINRT_WRAP(void));
             this->shim().Reset();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChangeTracker2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChangeTracker2>
 {
-    HRESULT __stdcall get_IsTracking(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTracking(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTracking, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTracking());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChangedDeferral> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChangedDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactChangedEventArgs> : produce_base<D, Windows::ApplicationModel::Contacts::IContactChangedEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangedDeferral));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactChangedDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount> : produce_base<D, Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Id(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), hstring const&);
             this->shim().Id(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ServiceName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ServiceName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServiceName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ServiceName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceName, WINRT_WRAP(void), hstring const&);
             this->shim().ServiceName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactDate> : produce_base<D, Windows::ApplicationModel::Contacts::IContactDate>
 {
-    HRESULT __stdcall get_Day(void** value) noexcept final
+    int32_t WINRT_CALL get_Day(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Day, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().Day());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Day(void* value) noexcept final
+    int32_t WINRT_CALL put_Day(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Day, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().Day(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Month(void** value) noexcept final
+    int32_t WINRT_CALL get_Month(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Month, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().Month());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Month(void* value) noexcept final
+    int32_t WINRT_CALL put_Month(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Month, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().Month(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Year(void** value) noexcept final
+    int32_t WINRT_CALL get_Year(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Year, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().Year());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Year(void* value) noexcept final
+    int32_t WINRT_CALL put_Year(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Year, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().Year(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactDateKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactDateKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactDateKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactDateKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) noexcept final
+    int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactDateKind const&);
             this->shim().Kind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactDateKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactEmail> : produce_base<D, Windows::ApplicationModel::Contacts::IContactEmail>
 {
-    HRESULT __stdcall get_Address(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Address(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Address());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Address(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Address(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Address, WINRT_WRAP(void), hstring const&);
             this->shim().Address(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactEmailKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactEmailKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) noexcept final
+    int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactEmailKind const&);
             this->shim().Kind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactEmailKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactField> : produce_base<D, Windows::ApplicationModel::Contacts::IContactField>
 {
-    HRESULT __stdcall get_Type(Windows::ApplicationModel::Contacts::ContactFieldType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::ApplicationModel::Contacts::ContactFieldType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactFieldType));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactFieldType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Category(Windows::ApplicationModel::Contacts::ContactFieldCategory* value) noexcept final
+    int32_t WINRT_CALL get_Category(Windows::ApplicationModel::Contacts::ContactFieldCategory* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Category, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactFieldCategory));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactFieldCategory>(this->shim().Category());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactFieldFactory> : produce_base<D, Windows::ApplicationModel::Contacts::IContactFieldFactory>
 {
-    HRESULT __stdcall CreateField_Default(HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, void** field) noexcept final
+    int32_t WINRT_CALL CreateField_Default(void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateField, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldType const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactField>(this->shim().CreateField(*reinterpret_cast<hstring const*>(&value), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldType const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateField_Category(HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
+    int32_t WINRT_CALL CreateField_Category(void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateField, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldType const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactField>(this->shim().CreateField(*reinterpret_cast<hstring const*>(&value), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldType const*>(&type), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateField_Custom(HSTRING name, HSTRING value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
+    int32_t WINRT_CALL CreateField_Custom(void* name, void* value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateField, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactField), hstring const&, hstring const&, Windows::ApplicationModel::Contacts::ContactFieldType const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactField>(this->shim().CreateField(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&value), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldType const*>(&type), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4883,3992 +4609,3446 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactGroup> : produce_
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactInformation> : produce_base<D, Windows::ApplicationModel::Contacts::IContactInformation>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetThumbnailAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetThumbnailAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThumbnailAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().GetThumbnailAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Emails(void** value) noexcept final
+    int32_t WINRT_CALL get_Emails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Emails, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>>(this->shim().Emails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_PhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhoneNumbers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>>(this->shim().PhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Locations(void** value) noexcept final
+    int32_t WINRT_CALL get_Locations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locations, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField>>(this->shim().Locations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstantMessages(void** value) noexcept final
+    int32_t WINRT_CALL get_InstantMessages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstantMessages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField>>(this->shim().InstantMessages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomFields(void** value) noexcept final
+    int32_t WINRT_CALL get_CustomFields(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomFields, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>>(this->shim().CustomFields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall QueryCustomFields(HSTRING customName, void** value) noexcept final
+    int32_t WINRT_CALL QueryCustomFields(void* customName, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryCustomFields, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>), hstring const&);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField>>(this->shim().QueryCustomFields(*reinterpret_cast<hstring const*>(&customName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageField> : produce_base<D, Windows::ApplicationModel::Contacts::IContactInstantMessageField>
 {
-    HRESULT __stdcall get_UserName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Service(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Service(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Service, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Service());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LaunchUri(void** value) noexcept final
+    int32_t WINRT_CALL get_LaunchUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LaunchUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LaunchUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory> : produce_base<D, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>
 {
-    HRESULT __stdcall CreateInstantMessage_Default(HSTRING userName, void** field) noexcept final
+    int32_t WINRT_CALL CreateInstantMessage_Default(void* userName, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstantMessage, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactInstantMessageField), hstring const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactInstantMessageField>(this->shim().CreateInstantMessage(*reinterpret_cast<hstring const*>(&userName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInstantMessage_Category(HSTRING userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
+    int32_t WINRT_CALL CreateInstantMessage_Category(void* userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstantMessage, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactInstantMessageField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactInstantMessageField>(this->shim().CreateInstantMessage(*reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInstantMessage_All(HSTRING userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, HSTRING service, HSTRING displayText, void* verb, void** field) noexcept final
+    int32_t WINRT_CALL CreateInstantMessage_All(void* userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void* service, void* displayText, void* verb, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstantMessage, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactInstantMessageField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&, hstring const&, hstring const&, Windows::Foundation::Uri const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactInstantMessageField>(this->shim().CreateInstantMessage(*reinterpret_cast<hstring const*>(&userName), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category), *reinterpret_cast<hstring const*>(&service), *reinterpret_cast<hstring const*>(&displayText), *reinterpret_cast<Windows::Foundation::Uri const*>(&verb)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactJobInfo> : produce_base<D, Windows::ApplicationModel::Contacts::IContactJobInfo>
 {
-    HRESULT __stdcall get_CompanyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CompanyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CompanyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompanyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CompanyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyName, WINRT_WRAP(void), hstring const&);
             this->shim().CompanyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CompanyYomiName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CompanyYomiName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyYomiName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CompanyYomiName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompanyYomiName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CompanyYomiName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyYomiName, WINRT_WRAP(void), hstring const&);
             this->shim().CompanyYomiName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Department(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Department(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Department, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Department());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Department(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Department(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Department, WINRT_WRAP(void), hstring const&);
             this->shim().Department(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Title(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Title(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(void), hstring const&);
             this->shim().Title(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Manager(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Manager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manager, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Manager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Manager(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Manager(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Manager, WINRT_WRAP(void), hstring const&);
             this->shim().Manager(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Office(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Office(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Office, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Office());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Office(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Office(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Office, WINRT_WRAP(void), hstring const&);
             this->shim().Office(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CompanyAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CompanyAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CompanyAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompanyAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CompanyAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompanyAddress, WINRT_WRAP(void), hstring const&);
             this->shim().CompanyAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics> : produce_base<D, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>
 {
-    HRESULT __stdcall get_Call(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Call(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Call, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Call());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Message(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Message(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Message, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Message());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Map(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Map(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Map, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Map());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Post(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Post(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Post, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Post());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoCall(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VideoCall(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoCall, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VideoCall());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactList> : produce_base<D, Windows::ApplicationModel::Contacts::IContactList>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceDisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SourceDisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceDisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SourceDisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsHidden(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsHidden(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHidden, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsHidden());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsHidden(bool value) noexcept final
+    int32_t WINRT_CALL put_IsHidden(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsHidden, WINRT_WRAP(void), bool);
             this->shim().IsHidden(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess* value) noexcept final
+    int32_t WINRT_CALL get_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppReadAccess, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess>(this->shim().OtherAppReadAccess());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value) noexcept final
+    int32_t WINRT_CALL put_OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppReadAccess, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess const&);
             this->shim().OtherAppReadAccess(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess* value) noexcept final
+    int32_t WINRT_CALL get_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppWriteAccess, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess>(this->shim().OtherAppWriteAccess());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value) noexcept final
+    int32_t WINRT_CALL put_OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OtherAppWriteAccess, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess const&);
             this->shim().OtherAppWriteAccess(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChangeTracker(void** value) noexcept final
+    int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeTracker));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactChangeTracker>(this->shim().ChangeTracker());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SyncManager(void** value) noexcept final
+    int32_t WINRT_CALL get_SyncManager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncManager, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListSyncManager));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListSyncManager>(this->shim().SyncManager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportsServerSearch(bool* value) noexcept final
+    int32_t WINRT_CALL get_SupportsServerSearch(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportsServerSearch, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SupportsServerSearch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UserDataAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UserDataAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserDataAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UserDataAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ContactChanged(void* value, event_token* returnValue) noexcept final
+    int32_t WINRT_CALL add_ContactChanged(void* value, winrt::event_token* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<event_token>(this->shim().ContactChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ContactChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const&);
+            *returnValue = detach_from<winrt::event_token>(this->shim().ContactChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ContactChanged(event_token value) noexcept final
+    int32_t WINRT_CALL remove_ContactChanged(winrt::event_token value) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ContactChanged(*reinterpret_cast<event_token const*>(&value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ContactChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ContactChanged(*reinterpret_cast<winrt::event_token const*>(&value));
+        return 0;
     }
 
-    HRESULT __stdcall SaveAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAsync(void** returnValue) noexcept final
+    int32_t WINRT_CALL DeleteAsync(void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *returnValue = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactFromRemoteIdAsync(HSTRING remoteId, void** contact) noexcept final
+    int32_t WINRT_CALL GetContactFromRemoteIdAsync(void* remoteId, void** contact) noexcept final
     {
         try
         {
             *contact = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactFromRemoteIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), hstring const);
             *contact = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().GetContactFromRemoteIdAsync(*reinterpret_cast<hstring const*>(&remoteId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMeContactAsync(void** meContact) noexcept final
+    int32_t WINRT_CALL GetMeContactAsync(void** meContact) noexcept final
     {
         try
         {
             *meContact = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMeContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>));
             *meContact = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().GetMeContactAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactReader(void** value) noexcept final
+    int32_t WINRT_CALL GetContactReader(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactReader, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactReader));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactReader>(this->shim().GetContactReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactReaderWithOptions(void* options, void** value) noexcept final
+    int32_t WINRT_CALL GetContactReaderWithOptions(void* options, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactReader, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactReader), Windows::ApplicationModel::Contacts::ContactQueryOptions const&);
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactReader>(this->shim().GetContactReader(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveContactAsync(void* contact, void** value) noexcept final
+    int32_t WINRT_CALL SaveContactAsync(void* contact, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Contacts::Contact const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteContactAsync(void* contact, void** value) noexcept final
+    int32_t WINRT_CALL DeleteContactAsync(void* contact, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::ApplicationModel::Contacts::Contact const);
             *value = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactAsync(HSTRING contactId, void** contacts) noexcept final
+    int32_t WINRT_CALL GetContactAsync(void* contactId, void** contacts) noexcept final
     {
         try
         {
             *contacts = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), hstring const);
             *contacts = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().GetContactAsync(*reinterpret_cast<hstring const*>(&contactId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactList2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactList2>
 {
-    HRESULT __stdcall RegisterSyncManagerAsync(void** result) noexcept final
+    int32_t WINRT_CALL RegisterSyncManagerAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RegisterSyncManagerAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().RegisterSyncManagerAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SupportsServerSearch(bool value) noexcept final
+    int32_t WINRT_CALL put_SupportsServerSearch(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportsServerSearch, WINRT_WRAP(void), bool);
             this->shim().SupportsServerSearch(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SyncConstraints(void** value) noexcept final
+    int32_t WINRT_CALL get_SyncConstraints(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncConstraints, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListSyncConstraints));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListSyncConstraints>(this->shim().SyncConstraints());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactList3> : produce_base<D, Windows::ApplicationModel::Contacts::IContactList3>
 {
-    HRESULT __stdcall get_LimitedWriteOperations(void** value) noexcept final
+    int32_t WINRT_CALL get_LimitedWriteOperations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LimitedWriteOperations, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListLimitedWriteOperations));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListLimitedWriteOperations>(this->shim().LimitedWriteOperations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept final
+    int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeTracker), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactChangeTracker>(this->shim().GetChangeTracker(*reinterpret_cast<hstring const*>(&identity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations> : produce_base<D, Windows::ApplicationModel::Contacts::IContactListLimitedWriteOperations>
 {
-    HRESULT __stdcall TryCreateOrUpdateContactAsync(void* contact, void** operation) noexcept final
+    int32_t WINRT_CALL TryCreateOrUpdateContactAsync(void* contact, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateOrUpdateContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Contacts::Contact const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryCreateOrUpdateContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryDeleteContactAsync(HSTRING contactId, void** operation) noexcept final
+    int32_t WINRT_CALL TryDeleteContactAsync(void* contactId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryDeleteContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().TryDeleteContactAsync(*reinterpret_cast<hstring const*>(&contactId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncConstraints> : produce_base<D, Windows::ApplicationModel::Contacts::IContactListSyncConstraints>
 {
-    HRESULT __stdcall get_CanSyncDescriptions(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanSyncDescriptions(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanSyncDescriptions, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanSyncDescriptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CanSyncDescriptions(bool value) noexcept final
+    int32_t WINRT_CALL put_CanSyncDescriptions(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanSyncDescriptions, WINRT_WRAP(void), bool);
             this->shim().CanSyncDescriptions(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxHomePhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxHomePhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomePhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxHomePhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxHomePhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxHomePhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomePhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxHomePhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxMobilePhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxMobilePhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxMobilePhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxMobilePhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxMobilePhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxMobilePhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxMobilePhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxMobilePhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxWorkPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxWorkPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxWorkPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxWorkPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxWorkPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxWorkPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOtherPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxOtherPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxOtherPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxOtherPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxOtherPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxOtherPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPagerPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxPagerPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPagerPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxPagerPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxPagerPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxPagerPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPagerPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxPagerPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxBusinessFaxPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxBusinessFaxPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBusinessFaxPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxBusinessFaxPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxBusinessFaxPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxBusinessFaxPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBusinessFaxPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxBusinessFaxPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxHomeFaxPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxHomeFaxPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomeFaxPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxHomeFaxPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxHomeFaxPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxHomeFaxPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomeFaxPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxHomeFaxPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxCompanyPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxCompanyPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCompanyPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxCompanyPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxCompanyPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxCompanyPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxCompanyPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxCompanyPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxAssistantPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxAssistantPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAssistantPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxAssistantPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxAssistantPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxAssistantPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAssistantPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxAssistantPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxRadioPhoneNumbers(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxRadioPhoneNumbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxRadioPhoneNumbers, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxRadioPhoneNumbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxRadioPhoneNumbers(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxRadioPhoneNumbers(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxRadioPhoneNumbers, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxRadioPhoneNumbers(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPersonalEmailAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxPersonalEmailAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPersonalEmailAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxPersonalEmailAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxPersonalEmailAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxPersonalEmailAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPersonalEmailAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxPersonalEmailAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxWorkEmailAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxWorkEmailAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkEmailAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxWorkEmailAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxWorkEmailAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxWorkEmailAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkEmailAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxWorkEmailAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOtherEmailAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxOtherEmailAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherEmailAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxOtherEmailAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxOtherEmailAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxOtherEmailAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherEmailAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxOtherEmailAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxHomeAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxHomeAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomeAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxHomeAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxHomeAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxHomeAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxHomeAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxHomeAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxWorkAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxWorkAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxWorkAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxWorkAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxWorkAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWorkAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxWorkAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOtherAddresses(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxOtherAddresses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherAddresses, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxOtherAddresses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxOtherAddresses(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxOtherAddresses(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherAddresses, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxOtherAddresses(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxBirthdayDates(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxBirthdayDates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBirthdayDates, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxBirthdayDates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxBirthdayDates(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxBirthdayDates(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxBirthdayDates, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxBirthdayDates(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxAnniversaryDates(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxAnniversaryDates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAnniversaryDates, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxAnniversaryDates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxAnniversaryDates(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxAnniversaryDates(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxAnniversaryDates, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxAnniversaryDates(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOtherDates(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxOtherDates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherDates, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxOtherDates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxOtherDates(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxOtherDates(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherDates, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxOtherDates(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOtherRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxOtherRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxOtherRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxOtherRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxOtherRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOtherRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxOtherRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxSpouseRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxSpouseRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSpouseRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxSpouseRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxSpouseRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxSpouseRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSpouseRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxSpouseRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPartnerRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxPartnerRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPartnerRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxPartnerRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxPartnerRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxPartnerRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPartnerRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxPartnerRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxSiblingRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxSiblingRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSiblingRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxSiblingRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxSiblingRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxSiblingRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSiblingRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxSiblingRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxParentRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxParentRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxParentRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxParentRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxParentRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxParentRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxParentRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxParentRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxChildRelationships(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxChildRelationships(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxChildRelationships, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxChildRelationships());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxChildRelationships(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxChildRelationships(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxChildRelationships, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxChildRelationships(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxJobInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxJobInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxJobInfo, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxJobInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxJobInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxJobInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxJobInfo, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxJobInfo(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxWebsites(void** value) noexcept final
+    int32_t WINRT_CALL get_MaxWebsites(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWebsites, WINRT_WRAP(Windows::Foundation::IReference<int32_t>));
             *value = detach_from<Windows::Foundation::IReference<int32_t>>(this->shim().MaxWebsites());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxWebsites(void* value) noexcept final
+    int32_t WINRT_CALL put_MaxWebsites(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxWebsites, WINRT_WRAP(void), Windows::Foundation::IReference<int32_t> const&);
             this->shim().MaxWebsites(*reinterpret_cast<Windows::Foundation::IReference<int32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager> : produce_base<D, Windows::ApplicationModel::Contacts::IContactListSyncManager>
 {
-    HRESULT __stdcall get_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactListSyncStatus));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactListSyncStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastSuccessfulSyncTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastSuccessfulSyncTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_LastAttemptedSyncTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastAttemptedSyncTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().LastAttemptedSyncTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SyncAsync(void** result) noexcept final
+    int32_t WINRT_CALL SyncAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().SyncAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SyncStatusChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SyncStatusChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SyncStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SyncStatusChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SyncStatusChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SyncStatusChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SyncStatusChanged(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SyncStatusChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SyncStatusChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SyncStatusChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactListSyncManager2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactListSyncManager2>
 {
-    HRESULT __stdcall put_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) noexcept final
+    int32_t WINRT_CALL put_Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactListSyncStatus const&);
             this->shim().Status(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactListSyncStatus const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastSuccessfulSyncTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulSyncTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastSuccessfulSyncTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL put_LastAttemptedSyncTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastAttemptedSyncTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().LastAttemptedSyncTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationField> : produce_base<D, Windows::ApplicationModel::Contacts::IContactLocationField>
 {
-    HRESULT __stdcall get_UnstructuredAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UnstructuredAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UnstructuredAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UnstructuredAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Street(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Street(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Street, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Street());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_City(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_City(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(City, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().City());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Region(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Region(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Region, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Region());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Country(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Country(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Country, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Country());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PostalCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PostalCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PostalCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PostalCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory> : produce_base<D, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>
 {
-    HRESULT __stdcall CreateLocation_Default(HSTRING unstructuredAddress, void** field) noexcept final
+    int32_t WINRT_CALL CreateLocation_Default(void* unstructuredAddress, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLocation, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactLocationField), hstring const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactLocationField>(this->shim().CreateLocation(*reinterpret_cast<hstring const*>(&unstructuredAddress)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLocation_Category(HSTRING unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
+    int32_t WINRT_CALL CreateLocation_Category(void* unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLocation, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactLocationField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactLocationField>(this->shim().CreateLocation(*reinterpret_cast<hstring const*>(&unstructuredAddress), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateLocation_All(HSTRING unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode, void** field) noexcept final
+    int32_t WINRT_CALL CreateLocation_All(void* unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, void* street, void* city, void* region, void* country, void* postalCode, void** field) noexcept final
     {
         try
         {
             *field = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLocation, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactLocationField), hstring const&, Windows::ApplicationModel::Contacts::ContactFieldCategory const&, hstring const&, hstring const&, hstring const&, hstring const&, hstring const&);
             *field = detach_from<Windows::ApplicationModel::Contacts::ContactLocationField>(this->shim().CreateLocation(*reinterpret_cast<hstring const*>(&unstructuredAddress), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldCategory const*>(&category), *reinterpret_cast<hstring const*>(&street), *reinterpret_cast<hstring const*>(&city), *reinterpret_cast<hstring const*>(&region), *reinterpret_cast<hstring const*>(&country), *reinterpret_cast<hstring const*>(&postalCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerForUser>
 {
-    HRESULT __stdcall ConvertContactToVCardAsync(void* contact, void** result) noexcept final
+    int32_t WINRT_CALL ConvertContactToVCardAsync(void* contact, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertContactToVCardAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>), Windows::ApplicationModel::Contacts::Contact const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** result) noexcept final
+    int32_t WINRT_CALL ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertContactToVCardAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>), Windows::ApplicationModel::Contacts::Contact const, uint32_t);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), maxBytes));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertVCardToContactAsync(void* vCard, void** result) noexcept final
+    int32_t WINRT_CALL ConvertVCardToContactAsync(void* vCard, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertVCardToContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), Windows::Storage::Streams::IRandomAccessStreamReference const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().ConvertVCardToContactAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&vCard)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** result) noexcept final
+    int32_t WINRT_CALL RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>), Windows::ApplicationModel::Contacts::ContactStoreAccessType const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>>(this->shim().RequestStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** result) noexcept final
+    int32_t WINRT_CALL RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAnnotationStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore>), Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore>>(this->shim().RequestAnnotationStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
+    int32_t WINRT_CALL get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemDisplayNameOrder, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactNameOrder));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactNameOrder>(this->shim().SystemDisplayNameOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
+    int32_t WINRT_CALL put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemDisplayNameOrder, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactNameOrder const&);
             this->shim().SystemDisplayNameOrder(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactNameOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
+    int32_t WINRT_CALL get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemSortOrder, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactNameOrder));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactNameOrder>(this->shim().SystemSortOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
+    int32_t WINRT_CALL put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemSortOrder, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactNameOrder const&);
             this->shim().SystemSortOrder(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactNameOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerForUser2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerForUser2>
 {
-    HRESULT __stdcall ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept final
+    int32_t WINRT_CALL ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowFullContactCard, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&, Windows::ApplicationModel::Contacts::FullContactCardOptions const&);
             this->shim().ShowFullContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::ApplicationModel::Contacts::FullContactCardOptions const*>(&fullContactCardOptions));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerStatics>
 {
-    HRESULT __stdcall ShowContactCard(void* contact, Windows::Foundation::Rect selection) noexcept final
+    int32_t WINRT_CALL ShowContactCard(void* contact, Windows::Foundation::Rect selection) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowContactCard, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&, Windows::Foundation::Rect const&);
             this->shim().ShowContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::Foundation::Rect const*>(&selection));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowContactCardWithPlacement(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept final
+    int32_t WINRT_CALL ShowContactCardWithPlacement(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowContactCard, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&, Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&);
             this->shim().ShowContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowDelayLoadedContactCard(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** dataLoader) noexcept final
+    int32_t WINRT_CALL ShowDelayLoadedContactCard(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void** dataLoader) noexcept final
     {
         try
         {
             *dataLoader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowDelayLoadedContactCard, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader), Windows::ApplicationModel::Contacts::Contact const&, Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&);
             *dataLoader = detach_from<Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader>(this->shim().ShowDelayLoadedContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerStatics2>
 {
-    HRESULT __stdcall RequestStoreAsync(void** store) noexcept final
+    int32_t WINRT_CALL RequestStoreAsync(void** store) noexcept final
     {
         try
         {
             *store = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>));
             *store = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>>(this->shim().RequestStoreAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerStatics3>
 {
-    HRESULT __stdcall ConvertContactToVCardAsync(void* contact, void** vCard) noexcept final
+    int32_t WINRT_CALL ConvertContactToVCardAsync(void* contact, void** vCard) noexcept final
     {
         try
         {
             *vCard = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertContactToVCardAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>), Windows::ApplicationModel::Contacts::Contact const);
             *vCard = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** vCard) noexcept final
+    int32_t WINRT_CALL ConvertContactToVCardAsyncWithMaxBytes(void* contact, uint32_t maxBytes, void** vCard) noexcept final
     {
         try
         {
             *vCard = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertContactToVCardAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>), Windows::ApplicationModel::Contacts::Contact const, uint32_t);
             *vCard = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference>>(this->shim().ConvertContactToVCardAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), maxBytes));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertVCardToContactAsync(void* vCard, void** contact) noexcept final
+    int32_t WINRT_CALL ConvertVCardToContactAsync(void* vCard, void** contact) noexcept final
     {
         try
         {
             *contact = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertVCardToContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), Windows::Storage::Streams::IRandomAccessStreamReference const);
             *contact = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().ConvertVCardToContactAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&vCard)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestStoreAsyncWithAccessType(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** store) noexcept final
+    int32_t WINRT_CALL RequestStoreAsyncWithAccessType(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType, void** store) noexcept final
     {
         try
         {
             *store = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>), Windows::ApplicationModel::Contacts::ContactStoreAccessType const);
             *store = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore>>(this->shim().RequestStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** store) noexcept final
+    int32_t WINRT_CALL RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType, void** store) noexcept final
     {
         try
         {
             *store = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAnnotationStoreAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore>), Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType const);
             *store = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore>>(this->shim().RequestAnnotationStoreAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType const*>(&accessType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsShowContactCardSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsShowContactCardSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsShowContactCardSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsShowContactCardSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions) noexcept final
+    int32_t WINRT_CALL ShowContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowContactCard, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&, Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&, Windows::ApplicationModel::Contacts::ContactCardOptions const&);
             this->shim().ShowContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactCardOptions const*>(&contactCardOptions));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsShowDelayLoadedContactCardSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsShowDelayLoadedContactCardSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsShowDelayLoadedContactCardSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsShowDelayLoadedContactCardSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowDelayLoadedContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions, void** dataLoader) noexcept final
+    int32_t WINRT_CALL ShowDelayLoadedContactCardWithOptions(void* contact, Windows::Foundation::Rect selection, Windows::UI::Popups::Placement preferredPlacement, void* contactCardOptions, void** dataLoader) noexcept final
     {
         try
         {
             *dataLoader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowDelayLoadedContactCard, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader), Windows::ApplicationModel::Contacts::Contact const&, Windows::Foundation::Rect const&, Windows::UI::Popups::Placement const&, Windows::ApplicationModel::Contacts::ContactCardOptions const&);
             *dataLoader = detach_from<Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader>(this->shim().ShowDelayLoadedContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::Foundation::Rect const*>(&selection), *reinterpret_cast<Windows::UI::Popups::Placement const*>(&preferredPlacement), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactCardOptions const*>(&contactCardOptions)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept final
+    int32_t WINRT_CALL ShowFullContactCard(void* contact, void* fullContactCardOptions) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowFullContactCard, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&, Windows::ApplicationModel::Contacts::FullContactCardOptions const&);
             this->shim().ShowFullContactCard(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::ApplicationModel::Contacts::FullContactCardOptions const*>(&fullContactCardOptions));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
+    int32_t WINRT_CALL get_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemDisplayNameOrder, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactNameOrder));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactNameOrder>(this->shim().SystemDisplayNameOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
+    int32_t WINRT_CALL put_SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemDisplayNameOrder, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactNameOrder const&);
             this->shim().SystemDisplayNameOrder(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactNameOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
+    int32_t WINRT_CALL get_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemSortOrder, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactNameOrder));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactNameOrder>(this->shim().SystemSortOrder());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
+    int32_t WINRT_CALL put_SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemSortOrder, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactNameOrder const&);
             this->shim().SystemSortOrder(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactNameOrder const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics4> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerStatics4>
 {
-    HRESULT __stdcall GetForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactManagerForUser), Windows::System::User const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactManagerForUser>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactManagerStatics5> : produce_base<D, Windows::ApplicationModel::Contacts::IContactManagerStatics5>
 {
-    HRESULT __stdcall IsShowFullContactCardSupportedAsync(void** result) noexcept final
+    int32_t WINRT_CALL IsShowFullContactCardSupportedAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsShowFullContactCardSupportedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsShowFullContactCardSupportedAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeMiddleNameInSystemDisplayAndSort(bool* value) noexcept final
+    int32_t WINRT_CALL get_IncludeMiddleNameInSystemDisplayAndSort(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeMiddleNameInSystemDisplayAndSort, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IncludeMiddleNameInSystemDisplayAndSort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncludeMiddleNameInSystemDisplayAndSort(bool value) noexcept final
+    int32_t WINRT_CALL put_IncludeMiddleNameInSystemDisplayAndSort(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeMiddleNameInSystemDisplayAndSort, WINRT_WRAP(void), bool);
             this->shim().IncludeMiddleNameInSystemDisplayAndSort(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactMatchReason> : produce_base<D, Windows::ApplicationModel::Contacts::IContactMatchReason>
 {
-    HRESULT __stdcall get_Field(Windows::ApplicationModel::Contacts::ContactMatchReasonKind* value) noexcept final
+    int32_t WINRT_CALL get_Field(Windows::ApplicationModel::Contacts::ContactMatchReasonKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Field, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactMatchReasonKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactMatchReasonKind>(this->shim().Field());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Segments(void** value) noexcept final
+    int32_t WINRT_CALL get_Segments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Segments, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>>(this->shim().Segments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactName> : produce_base<D, Windows::ApplicationModel::Contacts::IContactName>
 {
-    HRESULT __stdcall get_FirstName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FirstName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FirstName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FirstName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_FirstName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstName, WINRT_WRAP(void), hstring const&);
             this->shim().FirstName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LastName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LastName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LastName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_LastName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastName, WINRT_WRAP(void), hstring const&);
             this->shim().LastName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MiddleName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MiddleName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MiddleName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MiddleName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MiddleName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_MiddleName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MiddleName, WINRT_WRAP(void), hstring const&);
             this->shim().MiddleName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YomiGivenName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_YomiGivenName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiGivenName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().YomiGivenName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_YomiGivenName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_YomiGivenName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiGivenName, WINRT_WRAP(void), hstring const&);
             this->shim().YomiGivenName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YomiFamilyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_YomiFamilyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiFamilyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().YomiFamilyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_YomiFamilyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_YomiFamilyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiFamilyName, WINRT_WRAP(void), hstring const&);
             this->shim().YomiFamilyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HonorificNameSuffix(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HonorificNameSuffix(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HonorificNameSuffix, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HonorificNameSuffix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HonorificNameSuffix(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_HonorificNameSuffix(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HonorificNameSuffix, WINRT_WRAP(void), hstring const&);
             this->shim().HonorificNameSuffix(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HonorificNamePrefix(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HonorificNamePrefix(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HonorificNamePrefix, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HonorificNamePrefix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HonorificNamePrefix(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_HonorificNamePrefix(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HonorificNamePrefix, WINRT_WRAP(void), hstring const&);
             this->shim().HonorificNamePrefix(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YomiDisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_YomiDisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiDisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().YomiDisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPanel> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPanel>
 {
-    HRESULT __stdcall ClosePanel() noexcept final
+    int32_t WINRT_CALL ClosePanel() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClosePanel, WINRT_WRAP(void));
             this->shim().ClosePanel();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeaderColor(void** value) noexcept final
+    int32_t WINRT_CALL get_HeaderColor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderColor, WINRT_WRAP(Windows::Foundation::IReference<Windows::UI::Color>));
             *value = detach_from<Windows::Foundation::IReference<Windows::UI::Color>>(this->shim().HeaderColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_HeaderColor(void* value) noexcept final
+    int32_t WINRT_CALL put_HeaderColor(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderColor, WINRT_WRAP(void), Windows::Foundation::IReference<Windows::UI::Color> const&);
             this->shim().HeaderColor(*reinterpret_cast<Windows::Foundation::IReference<Windows::UI::Color> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_LaunchFullAppRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_LaunchFullAppRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().LaunchFullAppRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LaunchFullAppRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().LaunchFullAppRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_LaunchFullAppRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_LaunchFullAppRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LaunchFullAppRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LaunchFullAppRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Closing(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().LaunchFullAppRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Closing, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Closing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Closing(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_Closing(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Closing(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Closing(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Closing(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Closing, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Closing(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *deferral = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>
 {
-    HRESULT __stdcall get_Handled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Handled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Handled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Handled(bool value) noexcept final
+    int32_t WINRT_CALL put_Handled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handled, WINRT_WRAP(void), bool);
             this->shim().Handled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPhone> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPhone>
 {
-    HRESULT __stdcall get_Number(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Number(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Number, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Number());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Number(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Number(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Number, WINRT_WRAP(void), hstring const&);
             this->shim().Number(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactPhoneKind));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactPhoneKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) noexcept final
+    int32_t WINRT_CALL put_Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactPhoneKind const&);
             this->shim().Kind(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactPhoneKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPicker>
 {
-    HRESULT __stdcall get_CommitButtonText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CommitButtonText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CommitButtonText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CommitButtonText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_CommitButtonText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CommitButtonText, WINRT_WRAP(void), hstring const&);
             this->shim().CommitButtonText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode* value) noexcept final
+    int32_t WINRT_CALL get_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectionMode, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactSelectionMode));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactSelectionMode>(this->shim().SelectionMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) noexcept final
+    int32_t WINRT_CALL put_SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectionMode, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactSelectionMode const&);
             this->shim().SelectionMode(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactSelectionMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredFields(void** value) noexcept final
+    int32_t WINRT_CALL get_DesiredFields(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredFields, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().DesiredFields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickSingleContactAsync(void** result) noexcept final
+    int32_t WINRT_CALL PickSingleContactAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickSingleContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactInformation>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactInformation>>(this->shim().PickSingleContactAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickMultipleContactsAsync(void** result) noexcept final
+    int32_t WINRT_CALL PickMultipleContactsAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickMultipleContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>>>(this->shim().PickMultipleContactsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPicker2>
 {
-    HRESULT __stdcall get_DesiredFieldsWithContactFieldType(void** value) noexcept final
+    int32_t WINRT_CALL get_DesiredFieldsWithContactFieldType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredFieldsWithContactFieldType, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactFieldType>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactFieldType>>(this->shim().DesiredFieldsWithContactFieldType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickContactAsync(void** result) noexcept final
+    int32_t WINRT_CALL PickContactAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().PickContactAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PickContactsAsync(void** result) noexcept final
+    int32_t WINRT_CALL PickContactsAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PickContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>>>(this->shim().PickContactsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPicker3> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPicker3>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactPickerStatics> : produce_base<D, Windows::ApplicationModel::Contacts::IContactPickerStatics>
 {
-    HRESULT __stdcall CreateForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL CreateForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateForUser, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactPicker), Windows::System::User const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactPicker>(this->shim().CreateForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupportedAsync(void** result) noexcept final
+    int32_t WINRT_CALL IsSupportedAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupportedAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().IsSupportedAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptions> : produce_base<D, Windows::ApplicationModel::Contacts::IContactQueryOptions>
 {
-    HRESULT __stdcall get_TextSearch(void** value) noexcept final
+    int32_t WINRT_CALL get_TextSearch(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextSearch, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQueryTextSearch));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactQueryTextSearch>(this->shim().TextSearch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContactListIds(void** value) noexcept final
+    int32_t WINRT_CALL get_ContactListIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactListIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().ContactListIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncludeContactsFromHiddenLists(bool* value) noexcept final
+    int32_t WINRT_CALL get_IncludeContactsFromHiddenLists(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeContactsFromHiddenLists, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IncludeContactsFromHiddenLists());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncludeContactsFromHiddenLists(bool value) noexcept final
+    int32_t WINRT_CALL put_IncludeContactsFromHiddenLists(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncludeContactsFromHiddenLists, WINRT_WRAP(void), bool);
             this->shim().IncludeContactsFromHiddenLists(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields* value) noexcept final
+    int32_t WINRT_CALL get_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredFields, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactQueryDesiredFields>(this->shim().DesiredFields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) noexcept final
+    int32_t WINRT_CALL put_DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredFields, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactQueryDesiredFields const&);
             this->shim().DesiredFields(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQueryDesiredFields const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept final
+    int32_t WINRT_CALL get_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredOperations, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactAnnotationOperations));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactAnnotationOperations>(this->shim().DesiredOperations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept final
+    int32_t WINRT_CALL put_DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredOperations, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactAnnotationOperations const&);
             this->shim().DesiredOperations(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactAnnotationOperations const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AnnotationListIds(void** value) noexcept final
+    int32_t WINRT_CALL get_AnnotationListIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AnnotationListIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().AnnotationListIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory> : produce_base<D, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>
 {
-    HRESULT __stdcall CreateWithText(HSTRING text, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithText(void* text, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithText, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQueryOptions), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactQueryOptions>(this->shim().CreateWithText(*reinterpret_cast<hstring const*>(&text)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithTextAndFields(HSTRING text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithTextAndFields(void* text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithTextAndFields, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQueryOptions), hstring const&, Windows::ApplicationModel::Contacts::ContactQuerySearchFields const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactQueryOptions>(this->shim().CreateWithTextAndFields(*reinterpret_cast<hstring const*>(&text), *reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQuerySearchFields const*>(&fields)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch> : produce_base<D, Windows::ApplicationModel::Contacts::IContactQueryTextSearch>
 {
-    HRESULT __stdcall get_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields* value) noexcept final
+    int32_t WINRT_CALL get_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQuerySearchFields));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactQuerySearchFields>(this->shim().Fields());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) noexcept final
+    int32_t WINRT_CALL put_Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fields, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactQuerySearchFields const&);
             this->shim().Fields(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQuerySearchFields const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope* value) noexcept final
+    int32_t WINRT_CALL get_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchScope, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactQuerySearchScope));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactQuerySearchScope>(this->shim().SearchScope());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) noexcept final
+    int32_t WINRT_CALL put_SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchScope, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactQuerySearchScope const&);
             this->shim().SearchScope(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQuerySearchScope const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactReader> : produce_base<D, Windows::ApplicationModel::Contacts::IContactReader>
 {
-    HRESULT __stdcall ReadBatchAsync(void** value) noexcept final
+    int32_t WINRT_CALL ReadBatchAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReadBatchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch>>(this->shim().ReadBatchAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMatchingPropertiesWithMatchReason(void* contact, void** ppRetVal) noexcept final
+    int32_t WINRT_CALL GetMatchingPropertiesWithMatchReason(void* contact, void** ppRetVal) noexcept final
     {
         try
         {
             *ppRetVal = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMatchingPropertiesWithMatchReason, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason>), Windows::ApplicationModel::Contacts::Contact const&);
             *ppRetVal = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason>>(this->shim().GetMatchingPropertiesWithMatchReason(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther> : produce_base<D, Windows::ApplicationModel::Contacts::IContactSignificantOther>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactSignificantOther2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactSignificantOther2>
 {
-    HRESULT __stdcall get_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship* value) noexcept final
+    int32_t WINRT_CALL get_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Relationship, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactRelationship));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactRelationship>(this->shim().Relationship());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) noexcept final
+    int32_t WINRT_CALL put_Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Relationship, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::ContactRelationship const&);
             this->shim().Relationship(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactRelationship const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactStore> : produce_base<D, Windows::ApplicationModel::Contacts::IContactStore>
 {
-    HRESULT __stdcall FindContactsAsync(void** contacts) noexcept final
+    int32_t WINRT_CALL FindContactsAsync(void** contacts) noexcept final
     {
         try
         {
             *contacts = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>));
             *contacts = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>>(this->shim().FindContactsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindContactsWithSearchTextAsync(HSTRING searchText, void** contacts) noexcept final
+    int32_t WINRT_CALL FindContactsWithSearchTextAsync(void* searchText, void** contacts) noexcept final
     {
         try
         {
             *contacts = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>), hstring const);
             *contacts = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>>>(this->shim().FindContactsAsync(*reinterpret_cast<hstring const*>(&searchText)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactAsync(HSTRING contactId, void** contacts) noexcept final
+    int32_t WINRT_CALL GetContactAsync(void* contactId, void** contacts) noexcept final
     {
         try
         {
             *contacts = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>), hstring const);
             *contacts = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().GetContactAsync(*reinterpret_cast<hstring const*>(&contactId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactStore2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactStore2>
 {
-    HRESULT __stdcall get_ChangeTracker(void** value) noexcept final
+    int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeTracker));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactChangeTracker>(this->shim().ChangeTracker());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ContactChanged(void* value, event_token* returnValue) noexcept final
+    int32_t WINRT_CALL add_ContactChanged(void* value, winrt::event_token* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<event_token>(this->shim().ContactChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ContactChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const&);
+            *returnValue = detach_from<winrt::event_token>(this->shim().ContactChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> const*>(&value)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ContactChanged(event_token value) noexcept final
+    int32_t WINRT_CALL remove_ContactChanged(winrt::event_token value) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ContactChanged(*reinterpret_cast<event_token const*>(&value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ContactChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ContactChanged(*reinterpret_cast<winrt::event_token const*>(&value));
+        return 0;
     }
 
-    HRESULT __stdcall get_AggregateContactManager(void** value) noexcept final
+    int32_t WINRT_CALL get_AggregateContactManager(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AggregateContactManager, WINRT_WRAP(Windows::ApplicationModel::Contacts::AggregateContactManager));
             *value = detach_from<Windows::ApplicationModel::Contacts::AggregateContactManager>(this->shim().AggregateContactManager());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindContactListsAsync(void** value) noexcept final
+    int32_t WINRT_CALL FindContactListsAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FindContactListsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>>>(this->shim().FindContactListsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactListAsync(HSTRING contactListId, void** value) noexcept final
+    int32_t WINRT_CALL GetContactListAsync(void* contactListId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>>(this->shim().GetContactListAsync(*reinterpret_cast<hstring const*>(&contactListId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContactListAsync(HSTRING displayName, void** value) noexcept final
+    int32_t WINRT_CALL CreateContactListAsync(void* displayName, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContactListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>>(this->shim().CreateContactListAsync(*reinterpret_cast<hstring const*>(&displayName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetMeContactAsync(void** meContact) noexcept final
+    int32_t WINRT_CALL GetMeContactAsync(void** meContact) noexcept final
     {
         try
         {
             *meContact = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMeContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>));
             *meContact = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact>>(this->shim().GetMeContactAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactReader(void** value) noexcept final
+    int32_t WINRT_CALL GetContactReader(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactReader, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactReader));
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactReader>(this->shim().GetContactReader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContactReaderWithOptions(void* options, void** value) noexcept final
+    int32_t WINRT_CALL GetContactReaderWithOptions(void* options, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContactReader, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactReader), Windows::ApplicationModel::Contacts::ContactQueryOptions const&);
             *value = detach_from<Windows::ApplicationModel::Contacts::ContactReader>(this->shim().GetContactReader(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactQueryOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, void** value) noexcept final
+    int32_t WINRT_CALL CreateContactListInAccountAsync(void* displayName, void* userDataAccountId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateContactListAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>), hstring const, hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList>>(this->shim().CreateContactListAsync(*reinterpret_cast<hstring const*>(&displayName), *reinterpret_cast<hstring const*>(&userDataAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactStore3> : produce_base<D, Windows::ApplicationModel::Contacts::IContactStore3>
 {
-    HRESULT __stdcall GetChangeTracker(HSTRING identity, void** result) noexcept final
+    int32_t WINRT_CALL GetChangeTracker(void* identity, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetChangeTracker, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactChangeTracker), hstring const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::ContactChangeTracker>(this->shim().GetChangeTracker(*reinterpret_cast<hstring const*>(&identity)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -8879,408 +8059,356 @@ struct produce<D, Windows::ApplicationModel::Contacts::IContactStoreNotification
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite> : produce_base<D, Windows::ApplicationModel::Contacts::IContactWebsite>
 {
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IContactWebsite2> : produce_base<D, Windows::ApplicationModel::Contacts::IContactWebsite2>
 {
-    HRESULT __stdcall get_RawValue(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RawValue(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawValue, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RawValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RawValue(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_RawValue(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RawValue, WINRT_WRAP(void), hstring const&);
             this->shim().RawValue(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IFullContactCardOptions> : produce_base<D, Windows::ApplicationModel::Contacts::IFullContactCardOptions>
 {
-    HRESULT __stdcall get_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept final
+    int32_t WINRT_CALL get_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredRemainingView, WINRT_WRAP(Windows::UI::ViewManagement::ViewSizePreference));
             *value = detach_from<Windows::UI::ViewManagement::ViewSizePreference>(this->shim().DesiredRemainingView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) noexcept final
+    int32_t WINRT_CALL put_DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DesiredRemainingView, WINRT_WRAP(void), Windows::UI::ViewManagement::ViewSizePreference const&);
             this->shim().DesiredRemainingView(*reinterpret_cast<Windows::UI::ViewManagement::ViewSizePreference const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics> : produce_base<D, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>
 {
-    HRESULT __stdcall get_Email(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Email(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Email, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Email());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhoneNumber(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PhoneNumber(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhoneNumber, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PhoneNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Location(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Location(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Location, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Location());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InstantMessage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_InstantMessage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InstantMessage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().InstantMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertNameToType(HSTRING name, Windows::ApplicationModel::Contacts::ContactFieldType* type) noexcept final
+    int32_t WINRT_CALL ConvertNameToType(void* name, Windows::ApplicationModel::Contacts::ContactFieldType* type) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertNameToType, WINRT_WRAP(Windows::ApplicationModel::Contacts::ContactFieldType), hstring const&);
             *type = detach_from<Windows::ApplicationModel::Contacts::ContactFieldType>(this->shim().ConvertNameToType(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type, HSTRING* name) noexcept final
+    int32_t WINRT_CALL ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type, void** name) noexcept final
     {
         try
         {
             *name = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertTypeToName, WINRT_WRAP(hstring), Windows::ApplicationModel::Contacts::ContactFieldType const&);
             *name = detach_from<hstring>(this->shim().ConvertTypeToName(*reinterpret_cast<Windows::ApplicationModel::Contacts::ContactFieldType const*>(&type)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult> : produce_base<D, Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>
 {
-    HRESULT __stdcall get_ContactIds(void** value) noexcept final
+    int32_t WINRT_CALL get_ContactIds(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactIds, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().ContactIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IPinnedContactManager> : produce_base<D, Windows::ApplicationModel::Contacts::IPinnedContactManager>
 {
-    HRESULT __stdcall get_User(void** user) noexcept final
+    int32_t WINRT_CALL get_User(void** user) noexcept final
     {
         try
         {
             *user = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *user = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsPinSurfaceSupported(Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept final
+    int32_t WINRT_CALL IsPinSurfaceSupported(Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPinSurfaceSupported, WINRT_WRAP(bool), Windows::ApplicationModel::Contacts::PinnedContactSurface const&);
             *result = detach_from<bool>(this->shim().IsPinSurfaceSupported(*reinterpret_cast<Windows::ApplicationModel::Contacts::PinnedContactSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsContactPinned(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept final
+    int32_t WINRT_CALL IsContactPinned(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsContactPinned, WINRT_WRAP(bool), Windows::ApplicationModel::Contacts::Contact const&, Windows::ApplicationModel::Contacts::PinnedContactSurface const&);
             *result = detach_from<bool>(this->shim().IsContactPinned(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::ApplicationModel::Contacts::PinnedContactSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestPinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
+    int32_t WINRT_CALL RequestPinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestPinContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Contacts::Contact const, Windows::ApplicationModel::Contacts::PinnedContactSurface const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestPinContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::ApplicationModel::Contacts::PinnedContactSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestPinContactsAsync(void* contacts, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
+    int32_t WINRT_CALL RequestPinContactsAsync(void* contacts, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestPinContactsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Contacts::Contact> const, Windows::ApplicationModel::Contacts::PinnedContactSurface const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestPinContactsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Contacts::Contact> const*>(&contacts), *reinterpret_cast<Windows::ApplicationModel::Contacts::PinnedContactSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestUnpinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
+    int32_t WINRT_CALL RequestUnpinContactAsync(void* contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUnpinContactAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Contacts::Contact const, Windows::ApplicationModel::Contacts::PinnedContactSurface const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestUnpinContactAsync(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact), *reinterpret_cast<Windows::ApplicationModel::Contacts::PinnedContactSurface const*>(&surface)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SignalContactActivity(void* contact) noexcept final
+    int32_t WINRT_CALL SignalContactActivity(void* contact) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignalContactActivity, WINRT_WRAP(void), Windows::ApplicationModel::Contacts::Contact const&);
             this->shim().SignalContactActivity(*reinterpret_cast<Windows::ApplicationModel::Contacts::Contact const*>(&contact));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPinnedContactIdsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetPinnedContactIdsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPinnedContactIdsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult>>(this->shim().GetPinnedContactIdsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics> : produce_base<D, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>
 {
-    HRESULT __stdcall GetDefault(void** result) noexcept final
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::ApplicationModel::Contacts::PinnedContactManager));
             *result = detach_from<Windows::ApplicationModel::Contacts::PinnedContactManager>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL GetForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForUser, WINRT_WRAP(Windows::ApplicationModel::Contacts::PinnedContactManager), Windows::System::User const&);
             *result = detach_from<Windows::ApplicationModel::Contacts::PinnedContactManager>(this->shim().GetForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsSupported(bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().IsSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -9289,297 +8417,297 @@ struct produce<D, Windows::ApplicationModel::Contacts::IPinnedContactManagerStat
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Contacts {
 
 inline Contact::Contact() :
-    Contact(get_activation_factory<Contact>().ActivateInstance<Contact>())
+    Contact(impl::call_factory<Contact>([](auto&& f) { return f.template ActivateInstance<Contact>(); }))
 {}
 
 inline ContactAddress::ContactAddress() :
-    ContactAddress(get_activation_factory<ContactAddress>().ActivateInstance<ContactAddress>())
+    ContactAddress(impl::call_factory<ContactAddress>([](auto&& f) { return f.template ActivateInstance<ContactAddress>(); }))
 {}
 
 inline ContactAnnotation::ContactAnnotation() :
-    ContactAnnotation(get_activation_factory<ContactAnnotation>().ActivateInstance<ContactAnnotation>())
+    ContactAnnotation(impl::call_factory<ContactAnnotation>([](auto&& f) { return f.template ActivateInstance<ContactAnnotation>(); }))
 {}
 
 inline ContactCardOptions::ContactCardOptions() :
-    ContactCardOptions(get_activation_factory<ContactCardOptions>().ActivateInstance<ContactCardOptions>())
+    ContactCardOptions(impl::call_factory<ContactCardOptions>([](auto&& f) { return f.template ActivateInstance<ContactCardOptions>(); }))
 {}
 
 inline ContactConnectedServiceAccount::ContactConnectedServiceAccount() :
-    ContactConnectedServiceAccount(get_activation_factory<ContactConnectedServiceAccount>().ActivateInstance<ContactConnectedServiceAccount>())
+    ContactConnectedServiceAccount(impl::call_factory<ContactConnectedServiceAccount>([](auto&& f) { return f.template ActivateInstance<ContactConnectedServiceAccount>(); }))
 {}
 
 inline ContactDate::ContactDate() :
-    ContactDate(get_activation_factory<ContactDate>().ActivateInstance<ContactDate>())
+    ContactDate(impl::call_factory<ContactDate>([](auto&& f) { return f.template ActivateInstance<ContactDate>(); }))
 {}
 
 inline ContactEmail::ContactEmail() :
-    ContactEmail(get_activation_factory<ContactEmail>().ActivateInstance<ContactEmail>())
+    ContactEmail(impl::call_factory<ContactEmail>([](auto&& f) { return f.template ActivateInstance<ContactEmail>(); }))
 {}
 
 inline ContactField::ContactField(param::hstring const& value, Windows::ApplicationModel::Contacts::ContactFieldType const& type) :
-    ContactField(get_activation_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>().CreateField(value, type))
+    ContactField(impl::call_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>([&](auto&& f) { return f.CreateField(value, type); }))
 {}
 
 inline ContactField::ContactField(param::hstring const& value, Windows::ApplicationModel::Contacts::ContactFieldType const& type, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category) :
-    ContactField(get_activation_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>().CreateField(value, type, category))
+    ContactField(impl::call_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>([&](auto&& f) { return f.CreateField(value, type, category); }))
 {}
 
 inline ContactField::ContactField(param::hstring const& name, param::hstring const& value, Windows::ApplicationModel::Contacts::ContactFieldType const& type, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category) :
-    ContactField(get_activation_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>().CreateField(name, value, type, category))
+    ContactField(impl::call_factory<ContactField, Windows::ApplicationModel::Contacts::IContactFieldFactory>([&](auto&& f) { return f.CreateField(name, value, type, category); }))
 {}
 
 inline ContactFieldFactory::ContactFieldFactory() :
-    ContactFieldFactory(get_activation_factory<ContactFieldFactory>().ActivateInstance<ContactFieldFactory>())
+    ContactFieldFactory(impl::call_factory<ContactFieldFactory>([](auto&& f) { return f.template ActivateInstance<ContactFieldFactory>(); }))
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(param::hstring const& userName) :
-    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>().CreateInstantMessage(userName))
+    ContactInstantMessageField(impl::call_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>([&](auto&& f) { return f.CreateInstantMessage(userName); }))
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(param::hstring const& userName, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category) :
-    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category))
+    ContactInstantMessageField(impl::call_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>([&](auto&& f) { return f.CreateInstantMessage(userName, category); }))
 {}
 
 inline ContactInstantMessageField::ContactInstantMessageField(param::hstring const& userName, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category, param::hstring const& service, param::hstring const& displayText, Windows::Foundation::Uri const& verb) :
-    ContactInstantMessageField(get_activation_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>().CreateInstantMessage(userName, category, service, displayText, verb))
+    ContactInstantMessageField(impl::call_factory<ContactInstantMessageField, Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>([&](auto&& f) { return f.CreateInstantMessage(userName, category, service, displayText, verb); }))
 {}
 
 inline ContactJobInfo::ContactJobInfo() :
-    ContactJobInfo(get_activation_factory<ContactJobInfo>().ActivateInstance<ContactJobInfo>())
+    ContactJobInfo(impl::call_factory<ContactJobInfo>([](auto&& f) { return f.template ActivateInstance<ContactJobInfo>(); }))
 {}
 
 inline hstring ContactLaunchActionVerbs::Call()
 {
-    return get_activation_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>().Call();
+    return impl::call_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>([&](auto&& f) { return f.Call(); });
 }
 
 inline hstring ContactLaunchActionVerbs::Message()
 {
-    return get_activation_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>().Message();
+    return impl::call_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>([&](auto&& f) { return f.Message(); });
 }
 
 inline hstring ContactLaunchActionVerbs::Map()
 {
-    return get_activation_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>().Map();
+    return impl::call_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>([&](auto&& f) { return f.Map(); });
 }
 
 inline hstring ContactLaunchActionVerbs::Post()
 {
-    return get_activation_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>().Post();
+    return impl::call_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>([&](auto&& f) { return f.Post(); });
 }
 
 inline hstring ContactLaunchActionVerbs::VideoCall()
 {
-    return get_activation_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>().VideoCall();
+    return impl::call_factory<ContactLaunchActionVerbs, Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>([&](auto&& f) { return f.VideoCall(); });
 }
 
 inline ContactLocationField::ContactLocationField(param::hstring const& unstructuredAddress) :
-    ContactLocationField(get_activation_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>().CreateLocation(unstructuredAddress))
+    ContactLocationField(impl::call_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>([&](auto&& f) { return f.CreateLocation(unstructuredAddress); }))
 {}
 
 inline ContactLocationField::ContactLocationField(param::hstring const& unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category) :
-    ContactLocationField(get_activation_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category))
+    ContactLocationField(impl::call_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>([&](auto&& f) { return f.CreateLocation(unstructuredAddress, category); }))
 {}
 
 inline ContactLocationField::ContactLocationField(param::hstring const& unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory const& category, param::hstring const& street, param::hstring const& city, param::hstring const& region, param::hstring const& country, param::hstring const& postalCode) :
-    ContactLocationField(get_activation_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>().CreateLocation(unstructuredAddress, category, street, city, region, country, postalCode))
+    ContactLocationField(impl::call_factory<ContactLocationField, Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>([&](auto&& f) { return f.CreateLocation(unstructuredAddress, category, street, city, region, country, postalCode); }))
 {}
 
 inline void ContactManager::ShowContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::Foundation::Rect const& selection)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>().ShowContactCard(contact, selection);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>([&](auto&& f) { return f.ShowContactCard(contact, selection); });
 }
 
 inline void ContactManager::ShowContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& preferredPlacement)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>().ShowContactCard(contact, selection, preferredPlacement);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>([&](auto&& f) { return f.ShowContactCard(contact, selection, preferredPlacement); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader ContactManager::ShowDelayLoadedContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& preferredPlacement)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics>([&](auto&& f) { return f.ShowDelayLoadedContactCard(contact, selection, preferredPlacement); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> ContactManager::RequestStoreAsync()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics2>().RequestStoreAsync();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics2>([&](auto&& f) { return f.RequestStoreAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ContactManager::ConvertContactToVCardAsync(Windows::ApplicationModel::Contacts::Contact const& contact)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ConvertContactToVCardAsync(contact);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ConvertContactToVCardAsync(contact); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ContactManager::ConvertContactToVCardAsync(Windows::ApplicationModel::Contacts::Contact const& contact, uint32_t maxBytes)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ConvertContactToVCardAsync(contact, maxBytes);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ConvertContactToVCardAsync(contact, maxBytes); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ContactManager::ConvertVCardToContactAsync(Windows::Storage::Streams::IRandomAccessStreamReference const& vCard)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ConvertVCardToContactAsync(vCard);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ConvertVCardToContactAsync(vCard); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> ContactManager::RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType const& accessType)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().RequestStoreAsync(accessType);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.RequestStoreAsync(accessType); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> ContactManager::RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType const& accessType)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().RequestAnnotationStoreAsync(accessType);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.RequestAnnotationStoreAsync(accessType); });
 }
 
 inline bool ContactManager::IsShowContactCardSupported()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().IsShowContactCardSupported();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.IsShowContactCardSupported(); });
 }
 
 inline void ContactManager::ShowContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& preferredPlacement, Windows::ApplicationModel::Contacts::ContactCardOptions const& contactCardOptions)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ShowContactCard(contact, selection, preferredPlacement, contactCardOptions);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ShowContactCard(contact, selection, preferredPlacement, contactCardOptions); });
 }
 
 inline bool ContactManager::IsShowDelayLoadedContactCardSupported()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().IsShowDelayLoadedContactCardSupported();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.IsShowDelayLoadedContactCardSupported(); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader ContactManager::ShowDelayLoadedContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& preferredPlacement, Windows::ApplicationModel::Contacts::ContactCardOptions const& contactCardOptions)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ShowDelayLoadedContactCard(contact, selection, preferredPlacement, contactCardOptions);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ShowDelayLoadedContactCard(contact, selection, preferredPlacement, contactCardOptions); });
 }
 
 inline void ContactManager::ShowFullContactCard(Windows::ApplicationModel::Contacts::Contact const& contact, Windows::ApplicationModel::Contacts::FullContactCardOptions const& fullContactCardOptions)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().ShowFullContactCard(contact, fullContactCardOptions);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.ShowFullContactCard(contact, fullContactCardOptions); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactNameOrder ContactManager::SystemDisplayNameOrder()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().SystemDisplayNameOrder();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.SystemDisplayNameOrder(); });
 }
 
 inline void ContactManager::SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder const& value)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().SystemDisplayNameOrder(value);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.SystemDisplayNameOrder(value); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactNameOrder ContactManager::SystemSortOrder()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().SystemSortOrder();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.SystemSortOrder(); });
 }
 
 inline void ContactManager::SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder const& value)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>().SystemSortOrder(value);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics3>([&](auto&& f) { return f.SystemSortOrder(value); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactManagerForUser ContactManager::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics4>().GetForUser(user);
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics4>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ContactManager::IsShowFullContactCardSupportedAsync()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>().IsShowFullContactCardSupportedAsync();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>([&](auto&& f) { return f.IsShowFullContactCardSupportedAsync(); });
 }
 
 inline bool ContactManager::IncludeMiddleNameInSystemDisplayAndSort()
 {
-    return get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>().IncludeMiddleNameInSystemDisplayAndSort();
+    return impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>([&](auto&& f) { return f.IncludeMiddleNameInSystemDisplayAndSort(); });
 }
 
 inline void ContactManager::IncludeMiddleNameInSystemDisplayAndSort(bool value)
 {
-    get_activation_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>().IncludeMiddleNameInSystemDisplayAndSort(value);
+    impl::call_factory<ContactManager, Windows::ApplicationModel::Contacts::IContactManagerStatics5>([&](auto&& f) { return f.IncludeMiddleNameInSystemDisplayAndSort(value); });
 }
 
 inline ContactPhone::ContactPhone() :
-    ContactPhone(get_activation_factory<ContactPhone>().ActivateInstance<ContactPhone>())
+    ContactPhone(impl::call_factory<ContactPhone>([](auto&& f) { return f.template ActivateInstance<ContactPhone>(); }))
 {}
 
 inline ContactPicker::ContactPicker() :
-    ContactPicker(get_activation_factory<ContactPicker>().ActivateInstance<ContactPicker>())
+    ContactPicker(impl::call_factory<ContactPicker>([](auto&& f) { return f.template ActivateInstance<ContactPicker>(); }))
 {}
 
 inline Windows::ApplicationModel::Contacts::ContactPicker ContactPicker::CreateForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<ContactPicker, Windows::ApplicationModel::Contacts::IContactPickerStatics>().CreateForUser(user);
+    return impl::call_factory<ContactPicker, Windows::ApplicationModel::Contacts::IContactPickerStatics>([&](auto&& f) { return f.CreateForUser(user); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> ContactPicker::IsSupportedAsync()
 {
-    return get_activation_factory<ContactPicker, Windows::ApplicationModel::Contacts::IContactPickerStatics>().IsSupportedAsync();
+    return impl::call_factory<ContactPicker, Windows::ApplicationModel::Contacts::IContactPickerStatics>([&](auto&& f) { return f.IsSupportedAsync(); });
 }
 
 inline ContactQueryOptions::ContactQueryOptions() :
-    ContactQueryOptions(get_activation_factory<ContactQueryOptions>().ActivateInstance<ContactQueryOptions>())
+    ContactQueryOptions(impl::call_factory<ContactQueryOptions>([](auto&& f) { return f.template ActivateInstance<ContactQueryOptions>(); }))
 {}
 
 inline ContactQueryOptions::ContactQueryOptions(param::hstring const& text) :
-    ContactQueryOptions(get_activation_factory<ContactQueryOptions, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>().CreateWithText(text))
+    ContactQueryOptions(impl::call_factory<ContactQueryOptions, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>([&](auto&& f) { return f.CreateWithText(text); }))
 {}
 
 inline ContactQueryOptions::ContactQueryOptions(param::hstring const& text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields const& fields) :
-    ContactQueryOptions(get_activation_factory<ContactQueryOptions, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>().CreateWithTextAndFields(text, fields))
+    ContactQueryOptions(impl::call_factory<ContactQueryOptions, Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>([&](auto&& f) { return f.CreateWithTextAndFields(text, fields); }))
 {}
 
 inline ContactSignificantOther::ContactSignificantOther() :
-    ContactSignificantOther(get_activation_factory<ContactSignificantOther>().ActivateInstance<ContactSignificantOther>())
+    ContactSignificantOther(impl::call_factory<ContactSignificantOther>([](auto&& f) { return f.template ActivateInstance<ContactSignificantOther>(); }))
 {}
 
 inline ContactWebsite::ContactWebsite() :
-    ContactWebsite(get_activation_factory<ContactWebsite>().ActivateInstance<ContactWebsite>())
+    ContactWebsite(impl::call_factory<ContactWebsite>([](auto&& f) { return f.template ActivateInstance<ContactWebsite>(); }))
 {}
 
 inline FullContactCardOptions::FullContactCardOptions() :
-    FullContactCardOptions(get_activation_factory<FullContactCardOptions>().ActivateInstance<FullContactCardOptions>())
+    FullContactCardOptions(impl::call_factory<FullContactCardOptions>([](auto&& f) { return f.template ActivateInstance<FullContactCardOptions>(); }))
 {}
 
 inline hstring KnownContactField::Email()
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().Email();
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.Email(); });
 }
 
 inline hstring KnownContactField::PhoneNumber()
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().PhoneNumber();
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.PhoneNumber(); });
 }
 
 inline hstring KnownContactField::Location()
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().Location();
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.Location(); });
 }
 
 inline hstring KnownContactField::InstantMessage()
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().InstantMessage();
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.InstantMessage(); });
 }
 
 inline Windows::ApplicationModel::Contacts::ContactFieldType KnownContactField::ConvertNameToType(param::hstring const& name)
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().ConvertNameToType(name);
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.ConvertNameToType(name); });
 }
 
 inline hstring KnownContactField::ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType const& type)
 {
-    return get_activation_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>().ConvertTypeToName(type);
+    return impl::call_factory<KnownContactField, Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>([&](auto&& f) { return f.ConvertTypeToName(type); });
 }
 
 inline Windows::ApplicationModel::Contacts::PinnedContactManager PinnedContactManager::GetDefault()
 {
-    return get_activation_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>().GetDefault();
+    return impl::call_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline Windows::ApplicationModel::Contacts::PinnedContactManager PinnedContactManager::GetForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>().GetForUser(user);
+    return impl::call_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>([&](auto&& f) { return f.GetForUser(user); });
 }
 
 inline bool PinnedContactManager::IsSupported()
 {
-    return get_activation_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>().IsSupported();
+    return impl::call_factory<PinnedContactManager, Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>([&](auto&& f) { return f.IsSupported(); });
 }
 
 }
@@ -9711,5 +8839,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Contacts::PinnedContact
 template<> struct hash<winrt::Windows::ApplicationModel::Contacts::PinnedContactManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Contacts::PinnedContactManager> {};
 
 }
-
-WINRT_WARNING_POP

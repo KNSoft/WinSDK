@@ -217,6 +217,7 @@ namespace Windows
                         StoppingAuthentication     = 6,
                         ReadyForLock               = 7,
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+                        [deprecated("CheckingDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)]
                         CheckingDevicePresence     = 8
                     };
 
@@ -238,6 +239,7 @@ namespace Windows
                         SecureStorage                   = 0x1,
                         StoreKeys                       = 0x2,
                         ConfirmUserIntentToAuthenticate = 0x4,
+                        [deprecated("SupportSecureUserPresenceCheck is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)]
                         SupportSecureUserPresenceCheck  = 0x8,
                         TransmittedDataIsEncrypted      = 0x10,
                         HMacSha256                      = 0x20,
@@ -253,6 +255,7 @@ namespace Windows
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+                    [deprecated("SecondaryAuthenticationFactorDevicePresence is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)]
                     enum SecondaryAuthenticationFactorDevicePresence
                     {
                         Absent  = 0,
@@ -260,6 +263,7 @@ namespace Windows
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+                    [deprecated("SecondaryAuthenticationFactorDevicePresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)]
                     enum SecondaryAuthenticationFactorDevicePresenceMonitoringMode
                     {
                         Unsupported   = 0,
@@ -268,6 +272,7 @@ namespace Windows
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+                    [deprecated("SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)]
                     enum SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus
                     {
                         Unsupported      = 0,
@@ -350,10 +355,10 @@ namespace Windows
                     [uuid(90499A19-7EF2-4523-951C-A417A24ACF93)]
                     interface ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : IInspectable
                     {
-                        [overload("RegisterDevicePresenceMonitoringAsync")] HRESULT RegisterDevicePresenceMonitoringAsync([in] HSTRING deviceId, [in] HSTRING deviceInstancePath, [in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>** operation);
-                        [overload("RegisterDevicePresenceMonitoringAsync")] HRESULT RegisterDevicePresenceMonitoringWithNewDeviceAsync([in] HSTRING deviceId, [in] HSTRING deviceInstancePath, [in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, [in] HSTRING deviceFriendlyName, [in] HSTRING deviceModelNumber, [in] Windows.Storage.Streams.IBuffer* deviceConfigurationData, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>** operation);
-                        HRESULT UnregisterDevicePresenceMonitoringAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncAction** result);
-                        HRESULT IsDevicePresenceMonitoringSupported([out] [retval] boolean* value);
+                        [deprecated("RegisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] [overload("RegisterDevicePresenceMonitoringAsync")] HRESULT RegisterDevicePresenceMonitoringAsync([in] HSTRING deviceId, [in] HSTRING deviceInstancePath, [in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>** operation);
+                        [deprecated("RegisterDevicePresenceMonitoringWithNewDeviceAsync is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] [overload("RegisterDevicePresenceMonitoringAsync")] HRESULT RegisterDevicePresenceMonitoringWithNewDeviceAsync([in] HSTRING deviceId, [in] HSTRING deviceInstancePath, [in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, [in] HSTRING deviceFriendlyName, [in] HSTRING deviceModelNumber, [in] Windows.Storage.Streams.IBuffer* deviceConfigurationData, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>** operation);
+                        [deprecated("UnregisterDevicePresenceMonitoringAsync is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] HRESULT UnregisterDevicePresenceMonitoringAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncAction** result);
+                        [deprecated("IsDevicePresenceMonitoringSupported is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] HRESULT IsDevicePresenceMonitoringSupported([out] [retval] boolean* value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -374,9 +379,9 @@ namespace Windows
                         requires
                             Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorInfo
                     {
-                        [propget] HRESULT PresenceMonitoringMode([out] [retval] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode* value);
-                        HRESULT UpdateDevicePresenceAsync([in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState, [out] [retval] Windows.Foundation.IAsyncAction** result);
-                        [propget] HRESULT IsAuthenticationSupported([out] [retval] boolean* value);
+                        [deprecated("PresenceMonitoringMode is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] [propget] HRESULT PresenceMonitoringMode([out] [retval] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode* value);
+                        [deprecated("UpdateDevicePresenceAsync is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] HRESULT UpdateDevicePresenceAsync([in] Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresence presenceState, [out] [retval] Windows.Foundation.IAsyncAction** result);
+                        [deprecated("IsAuthenticationSupported is deprecated and might not work on all platforms. For more info, see MSDN.", deprecate, Windows.Foundation.UniversalApiContract, 7.0)] [propget] HRESULT IsAuthenticationSupported([out] [retval] boolean* value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]

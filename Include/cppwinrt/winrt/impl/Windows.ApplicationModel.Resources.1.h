@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -23,14 +23,14 @@ struct WINRT_EBO IResourceLoader2 :
     IResourceLoader2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")]] IResourceLoaderFactory :
+struct WINRT_EBO IResourceLoaderFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IResourceLoaderFactory>
 {
     IResourceLoaderFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")]] IResourceLoaderStatics :
+struct WINRT_EBO IResourceLoaderStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IResourceLoaderStatics>
 {

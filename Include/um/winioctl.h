@@ -1,4 +1,4 @@
-/*++ BUILD Version: 0031    // Increment this if a change has global effects
+/*++ BUILD Version: 0032    // Increment this if a change has global effects
 
 Copyright (c) Microsoft Corporation. All rights reserved.
 
@@ -68,6 +68,29 @@ DEFINE_GUID(GUID_DEVINTERFACE_HIDDEN_VOLUME,          0x7f108a28L, 0x9833, 0x4b3
 //
 
 DEFINE_GUID(GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB,    0x27447c21L, 0xbcc3, 0x4d07, 0xa0, 0x5b, 0xa3, 0x39, 0x5b, 0xb4, 0xee, 0xe7);
+
+
+//
+// This interface represents a physical persistent memory device, such as an NVDIMM.
+// {4283609D-4DC2-43BE-BBB4-4F15DFCE2C61}
+//
+DEFINE_GUID(GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE, 0x4283609d, 0x4dc2, 0x43be, 0xbb, 0xb4, 0x4f, 0x15, 0xdf, 0xce, 0x2c, 0x61);
+
+//
+// When a physical device driver detects a change in the health status of a physical device,
+// it triggers a PNP custom event (through TARGET_DEVICE_CUSTOM_NOTIFICATION) to alert any
+// registered components. The custom event's GUID is GUID_SCM_PD_HEALTH_NOTIFICATION
+// and its payload is SCM_PD_HEALTH_NOTIFICATION_DATA
+// {9DA2D386-72F5-4EE3-8155-ECA0678E3B06}
+//
+DEFINE_GUID(GUID_SCM_PD_HEALTH_NOTIFICATION, 0x9da2d386, 0x72f5, 0x4ee3, 0x81, 0x55, 0xec, 0xa0, 0x67, 0x8e, 0x3b, 0x6);
+
+//
+// The passthrough protocol GUID for INVDIMM devices. The application and the driver use this value
+// for the "ProtocolGuid" field of the SCM_PD_PASSTHROUGH_INPUT and SCM_PD_PASSTHROUGH_OUTPUT structures.
+// {4309AC30-0D11-11E4-9191-0800200C9A66}
+//
+DEFINE_GUID(GUID_SCM_PD_PASSTHROUGH_INVDIMM, 0x4309AC30, 0x0D11, 0x11E4, 0x91, 0x91, 0x08, 0x00, 0x20, 0x0C, 0x9A, 0x66);
 
 // {86E0D1E0-8089-11D0-9CE4-08003E301F73}
 DEFINE_GUID(GUID_DEVINTERFACE_COMPORT,                0X86E0D1E0L, 0X8089, 0X11D0, 0X9C, 0XE4, 0X08, 0X00, 0X3E, 0X30, 0X1F, 0X73);
@@ -237,6 +260,7 @@ DEFINE_DEVPROPKEY(DEVPKEY_Storage_Gpt_Name,           0x4d1ebee8, 0x803, 0x4774,
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 #define FILE_DEVICE_SDFXHCI             0x0000005c
+#define FILE_DEVICE_UCMUCSI             0x0000005d
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -2101,9 +2125,23 @@ typedef enum _STORAGE_PROTOCOL_TYPE {
 
 typedef enum _STORAGE_PROTOCOL_NVME_DATA_TYPE {
     NVMeDataTypeUnknown = 0,
+
     NVMeDataTypeIdentify,       // Retrieved by command - IDENTIFY CONTROLLER or IDENTIFY NAMESPACE
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Defined in NVME_IDENTIFY_CNS_CODES
+                                //      ProtocolDataRequestSubValue - For NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE, 
+                                //                                    specifies namespace Id
+
     NVMeDataTypeLogPage,        // Retrieved by command - GET LOG PAGE
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Log page id
+                                //      ProtocolDataRequestSubValue - Lower 32-bit offset value
+                                //      ProtocolDataRequestSubValue2 - Upper 32-bit offset value
+
     NVMeDataTypeFeature,        // Retrieved by command - GET FEATURES
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Defined in NVME_FEATURES
+                                //      ProtocolDataRequestSubValue - Defined in NVME_CDW11_FEATURES
 } STORAGE_PROTOCOL_NVME_DATA_TYPE, *PSTORAGE_PROTOCOL_NVME_DATA_TYPE;
 
 typedef enum _STORAGE_PROTOCOL_ATA_DATA_TYPE {
@@ -2126,17 +2164,18 @@ typedef enum _STORAGE_PROTOCOL_UFS_DATA_TYPE {
 typedef struct _STORAGE_PROTOCOL_SPECIFIC_DATA {
 
     STORAGE_PROTOCOL_TYPE ProtocolType;
-    DWORD   DataType;                   // The value will be protocol specific, as defined in STORAGE_PROTOCOL_NVME_DATA_TYPE or STORAGE_PROTOCOL_ATA_DATA_TYPE.
+    DWORD   DataType;                     // The value will be protocol specific, as defined in STORAGE_PROTOCOL_NVME_DATA_TYPE or STORAGE_PROTOCOL_ATA_DATA_TYPE.
 
     DWORD   ProtocolDataRequestValue;
-    DWORD   ProtocolDataRequestSubValue;
+    DWORD   ProtocolDataRequestSubValue;  // Data sub request value
 
-    DWORD   ProtocolDataOffset;         // The offset of data buffer is from beginning of this data structure.
+    DWORD   ProtocolDataOffset;           // The offset of data buffer is from beginning of this data structure.
     DWORD   ProtocolDataLength;
 
-    DWORD   FixedProtocolReturnData;    // This is returned data, especially from NVMe feature data that doesn't need separate device data transfer.
-    DWORD   Reserved[3];
+    DWORD   FixedProtocolReturnData;
+    DWORD   ProtocolDataRequestSubValue2; // Additional data sub request value
 
+    DWORD   Reserved[2];
 } STORAGE_PROTOCOL_SPECIFIC_DATA, *PSTORAGE_PROTOCOL_SPECIFIC_DATA;
 
 //
@@ -2254,140 +2293,6 @@ typedef struct _STORAGE_TEMPERATURE_THRESHOLD {
 // Out parameters for StorageAdapterPhysicalTopologyProperty (or StorageDevicePhysicalTopologyProperty) & PropertyStandardQuery
 // uses data structure STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
 //
-
-//
-// NVME header data structure
-//
-typedef struct _NVME_RESERVED_QUEUE_HEADER {
-
-    DWORD               Version;                // Version of header; by default 0. Added for version compatibility
-    DWORD               Size;                   // Size of the information including header
-
-} NVME_RESERVED_QUEUE_HEADER, *PNVME_RESERVED_QUEUE_HEADER;
-
-//
-// Details of Create request for reserved Submission queue, provided by FPGA driver 
-//
-typedef struct _NVME_RESERVED_SQ_CREATE_REQUEST {
-
-    DWORD64                 PhysicalAddress;    // SQ base physical Address
-    WORD                    QueuePriority;      // SQ priority
-    WORD                    QueueDepth;         // SQ depth
-    BOOLEAN                 PhysicalContiguous; // Physically Contiguous, 
-                                                // if set PRP1 points to contiguous buffer
-                                                // if not set, PRP1 is PRP list pointer
-
-} NVME_RESERVED_SQ_CREATE_REQUEST, *PNVME_RESERVED_SQ_CREATE_REQUEST;
-
-//
-// Details of Create request for reserved Completion queue, provided by FPGA driver 
-//
-typedef struct _NVME_RESERVED_CQ_CREATE_REQUEST {
-
-        DWORD64             PhysicalAddress;    // CQ base physical Address
-        DWORD               InterruptVector;    // CQ Interrupt Vector, corresponds to MSI-X or MSI vector
-        WORD                QueueDepth;         // CQ depth
-        BOOLEAN             InterruptEnabled;   // Interrupt Enabled for the queue
-        BOOLEAN             PhysicalContiguous; // Physically Contiguous, 
-                                                // if set PRP1 points to contiguous buffer
-                                                // if not set, PRP1 is PRP list pointer
-
-} NVME_RESERVED_CQ_CREATE_REQUEST, *PNVME_RESERVED_CQ_CREATE_REQUEST;
-
-//
-// Request to create one completion queue and one or more submission queues
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_CREATE_REQUEST {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-
-    NVME_RESERVED_CQ_CREATE_REQUEST     CompletionQueue;                    // Completion queue information
-
-    WORD                                SubmissionQueueCount;               // Number of submission queues requested
-    NVME_RESERVED_SQ_CREATE_REQUEST     SubmissionQueue[ANYSIZE_ARRAY];     // Submission queue(s) information
-
-
-} NVME_RESERVED_QUEUES_CREATE_REQUEST, *PNVME_RESERVED_QUEUES_CREATE_REQUEST;
-
-//
-// Details of reserved Submission queue, provided as create response and queue query
-//
-typedef struct _NVME_RESERVED_SQ_INFO {
-
-    DWORD64                 PhysicalAddress;                                // SQ base physical address
-    DWORD64                 DoorbellRegisterAddress;                        // SQ tail doorbell register address
-    WORD                    QueueID;                                        // SQ ID
-    WORD                    QueueDepth;                                     // SQ depth
-    BOOLEAN                 PhysicalContiguous;                             // Physically Contiguous
-    WORD                    CompletionQueueID;                              // Completion queue identifier
-    BYTE                    QueuePriority;                                  // SQ priority
-
-} NVME_RESERVED_SQ_INFO, *PNVME_RESERVED_SQ_INFO;
-
-//
-// Details of reserved Completion queue, provided as create response and queue query
-//
-typedef struct _NVME_RESERVED_CQ_INFO {
-
-    DWORD64                 PhysicalAddress;                                // CQ base physical Address
-    DWORD64                 DoorbellRegisterAddress;                        // CQ head doorbell register
-    WORD                    QueueID;                                        // CQ ID
-    WORD                    QueueDepth;                                     // CQ depth
-    BOOLEAN                 InterruptEnabled;                               // Interrupt Enabled
-    BOOLEAN                 PhysicalContiguous;                             // Physically Contiguous
-    DWORD                   InterruptVector;                                // Interrupt Vector, corresponds to MSI-X or MSI vector
-
-} NVME_RESERVED_CQ_INFO, *PNVME_RESERVED_CQ_INFO;
-
-//
-// Response to create request of one completion queue and one or more submission queues
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_CREATE_RESPONSE {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-    NVME_RESERVED_CQ_INFO               CompletionQueue;                // Completion queue information
-
-    WORD                                SubmissionQueueCount;           // Number of submission queues created
-    NVME_RESERVED_SQ_INFO               SubmissionQueue[ANYSIZE_ARRAY]; // Submission queue(s) information
-
-} NVME_RESERVED_QUEUES_CREATE_RESPONSE, *PNVME_RESERVED_QUEUES_CREATE_RESPONSE;
-
-//
-// Request to delete queue pair (completion queue and corresponding submission queue)
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_DELETE_REQUEST {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-
-    WORD                                QueueID;                        // Completion queue ID 
-                                                                        // (this would map to corresponding submission queues)
-
-} NVME_RESERVED_QUEUES_DELETE_REQUEST, *PNVME_RESERVED_QUEUES_DELETE_REQUEST;
-
-//
-// Out parameters for IOCTL_MINIPORT_SIGNATURE_QUERY_QUEUE_INFO through IOCTL_STORAGE_QUERY_PROPERTY
-// Reserved Queue properties returned on queue information query
-//
-typedef struct _NVME_RESERVED_QUEUES_PROPERTIES {
-
-    NVME_RESERVED_QUEUE_HEADER      Header;
-
-    WORD                            QueuePairCount;                     // Number of reserved queue pair in the controller
-
-    struct {
-        NVME_RESERVED_CQ_INFO       CompletionQueue;                    // Completion queue information
-
-        WORD                        SubmissionQueueCount;               // Number of submission queues created
-        NVME_RESERVED_SQ_INFO       SubmissionQueue[ANYSIZE_ARRAY];     // Submission queue(s) information
-
-    } QueueMapping[ANYSIZE_ARRAY];
-
-} NVME_RESERVED_QUEUES_PROPERTIES, *PNVME_RESERVED_QUEUES_PROPERTIES;
-
-
 
 //
 // Multiple roles are allowed for a single device.
@@ -2987,34 +2892,34 @@ typedef DWORD DEVICE_DATA_MANAGEMENT_SET_ACTION, DEVICE_DSM_ACTION;
 #define DeviceDsmActionFlag_NonDestructive      (0x80000000)
 #define IsDsmActionNonDestructive(_Action)      ((BOOLEAN)((_Action & DeviceDsmActionFlag_NonDestructive) != 0))
 
-#define DeviceDsmAction_None                    (0x00000000)
-#define DeviceDsmAction_Trim                    (0x00000001)
-#define DeviceDsmAction_Notification            (0x00000002 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OffloadRead             (0x00000003 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OffloadWrite            (0x00000004)
-#define DeviceDsmAction_Allocation              (0x00000005 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Repair                  (0x00000006 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Scrub                   (0x00000007 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtQuery                (0x00000008 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtClear                (0x00000009 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtDisable              (0x0000000A | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_TieringQuery            (0x0000000B | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Map                     (0x0000000C | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_RegenerateParity        (0x0000000D | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_NvCache_Change_Priority (0x0000000E | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_NvCache_Evict           (0x0000000F | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_TopologyIdQuery         (0x00000010 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_GetPhysicalAddresses    (0x00000011 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ScopeRegen              (0x00000012 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ReportZones             (0x00000013 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OpenZone                (0x00000014 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_FinishZone              (0x00000015 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_CloseZone               (0x00000016 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ResetWritePointer       (0x00000017)
-#define DeviceDsmAction_GetRangeErrorInfo       (0x00000018 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_WriteZeroes             (0x00000019)
-#define DeviceDsmAction_LostQuery               (0x0000001A | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_GetFreeSpace            (0x0000001B | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_None                    (0x00000000u)
+#define DeviceDsmAction_Trim                    (0x00000001u)
+#define DeviceDsmAction_Notification            (0x00000002u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OffloadRead             (0x00000003u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OffloadWrite            (0x00000004u)
+#define DeviceDsmAction_Allocation              (0x00000005u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Repair                  (0x00000006u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Scrub                   (0x00000007u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtQuery                (0x00000008u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtClear                (0x00000009u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtDisable              (0x0000000Au | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_TieringQuery            (0x0000000Bu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Map                     (0x0000000Cu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_RegenerateParity        (0x0000000Du | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_NvCache_Change_Priority (0x0000000Eu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_NvCache_Evict           (0x0000000Fu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_TopologyIdQuery         (0x00000010u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_GetPhysicalAddresses    (0x00000011u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ScopeRegen              (0x00000012u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ReportZones             (0x00000013u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OpenZone                (0x00000014u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_FinishZone              (0x00000015u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_CloseZone               (0x00000016u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ResetWritePointer       (0x00000017u)
+#define DeviceDsmAction_GetRangeErrorInfo       (0x00000018u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_WriteZeroes             (0x00000019u)
+#define DeviceDsmAction_LostQuery               (0x0000001Au | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_GetFreeSpace            (0x0000001Bu | DeviceDsmActionFlag_NonDestructive)
 
 //
 // DEVICE_DSM_INPUT.Flags
@@ -4582,7 +4487,7 @@ Cleanup:
 FORCEINLINE
 BOOLEAN
 DeviceDsmAddDataSetRange (
-    _Out_writes_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
+    _Inout_updates_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
     _In_ DWORD InputLength,
     _In_ LONGLONG Offset,
     _In_ DWORDLONG Length
@@ -4646,7 +4551,7 @@ BOOLEAN
 DeviceDsmValidateInput (
     _In_ PDEVICE_DSM_DEFINITION Definition,
     _In_reads_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
-    _In_ DWORD InputLength
+    _In_ _Pre_satisfies_(InputLength >= sizeof(DEVICE_DSM_INPUT)) DWORD InputLength
     )
 {
     DWORD   Max   = 0;
@@ -4820,7 +4725,7 @@ BOOLEAN
 DeviceDsmValidateOutput (
     _In_ PDEVICE_DSM_DEFINITION Definition,
     _In_reads_bytes_(OutputLength) PDEVICE_DSM_OUTPUT Output,
-    _In_ DWORD OutputLength
+    _In_ _Pre_satisfies_(OutputLength >= sizeof(DEVICE_DSM_OUTPUT)) DWORD OutputLength
     )
 {
     DWORD   Max   = 0;
@@ -6426,6 +6331,1177 @@ typedef struct _STORAGE_ATTRIBUTE_MGMT {
 
 
 #endif // _NTDDSTOR_H_
+
+#ifndef _NTDDSCM_H_
+#define _NTDDSCM_H_
+
+#pragma warning(push)
+#pragma warning(disable:4201) // nameless struct/union
+#pragma warning(disable:4214) // bit field types other than int
+
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+//
+// Functions 0 to 0x2FF are reserved for the bus device.
+// Functions 0x300 to 0x5FF are reserved for the logical persistent memory device.
+// Functions 0x600 to 0x7FF are reserved for the physical persistent memory device.
+// Functions 0x800 and above are reserved for non-Microsoft users.
+//
+
+#define IOCTL_SCMBUS_BASE FILE_DEVICE_PERSISTENT_MEMORY
+
+#define IOCTL_SCMBUS_DEVICE_FUNCTION_BASE           0x0
+#define IOCTL_SCM_LOGICAL_DEVICE_FUNCTION_BASE      0x300
+#define IOCTL_SCM_PHYSICAL_DEVICE_FUNCTION_BASE     0x600
+
+#define SCMBUS_FUNCTION(x)              (IOCTL_SCMBUS_DEVICE_FUNCTION_BASE + x)
+#define SCM_LOGICAL_DEVICE_FUNCTION(x)  (IOCTL_SCM_LOGICAL_DEVICE_FUNCTION_BASE + x)
+#define SCM_PHYSICAL_DEVICE_FUNCTION(x) (IOCTL_SCM_PHYSICAL_DEVICE_FUNCTION_BASE + x)
+
+//
+// Persistent memory (SCM) bus device IOCTLs.
+//
+//
+#define IOCTL_SCM_BUS_GET_LOGICAL_DEVICES           CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x00), METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_SCM_BUS_GET_PHYSICAL_DEVICES          CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x01), METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_SCM_BUS_GET_REGIONS                   CTL_CODE(IOCTL_SCMBUS_BASE, SCMBUS_FUNCTION(0x02), METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+//
+// Logical persistent memory device IOCTLs.
+//
+#define IOCTL_SCM_LD_GET_INTERLEAVE_SET             CTL_CODE(IOCTL_SCMBUS_BASE, SCM_LOGICAL_DEVICE_FUNCTION(0x00), METHOD_BUFFERED, FILE_ANY_ACCESS)
+
+//
+// IOCTLs exposed by physical persistent memory device objects.
+//
+
+#define IOCTL_SCM_PD_QUERY_PROPERTY                 CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x00), METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_SCM_PD_FIRMWARE_DOWNLOAD              CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x01), METHOD_BUFFERED, FILE_WRITE_ACCESS)
+#define IOCTL_SCM_PD_FIRMWARE_ACTIVATE              CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x02), METHOD_BUFFERED, FILE_WRITE_ACCESS)
+#define IOCTL_SCM_PD_PASSTHROUGH                    CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x03), METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_SCM_PD_UPDATE_MANAGEMENT_STATUS       CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x04), METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define IOCTL_SCM_PD_REINITIALIZE_MEDIA             CTL_CODE(IOCTL_SCMBUS_BASE, SCM_PHYSICAL_DEVICE_FUNCTION(0x05), METHOD_BUFFERED, FILE_WRITE_ACCESS)
+
+
+//
+// The payload for a physical device health notification.
+//
+typedef struct _SCM_PD_HEALTH_NOTIFICATION_DATA {
+
+    //
+    // The GUID of the device reporting the health change.
+    // This is the same GUID returned by IOCTL_SCM_PD_QUERY_PROPERTY with
+    // ScmPhysicalDeviceProperty_DeviceInfo.
+    //
+    GUID  DeviceGuid;
+
+} SCM_PD_HEALTH_NOTIFICATION_DATA, *PSCM_PD_HEALTH_NOTIFICATION_DATA;
+
+
+//
+// IOCTL_SCM_BUS_GET_LOGICAL_DEVICES
+//
+// Send this IOCTL to the ScmBus adapter to get a list of all the logical persistent memory
+// devices on the system.
+//
+// Input Buffer:
+//      None
+//
+// Output Buffer:
+//      SCM_LOGICAL_DEVICES
+//
+
+#define SCM_MAX_SYMLINK_LEN_IN_CHARS 256
+
+typedef struct _SCM_LOGICAL_DEVICE_INSTANCE {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure.
+    //
+    DWORD Size;
+
+    //
+    // The logical device GUID.
+    //
+    GUID DeviceGuid;
+
+    //
+    // Symbolic link that can be used to get a handle to the device.
+    //
+    WCHAR SymbolicLink[SCM_MAX_SYMLINK_LEN_IN_CHARS];
+
+} SCM_LOGICAL_DEVICE_INSTANCE, *PSCM_LOGICAL_DEVICE_INSTANCE;
+
+typedef struct _SCM_LOGICAL_DEVICES {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure, including all the elements in the
+    // Devices array.
+    //
+    DWORD Size;
+
+    //
+    // The number of valid elements in the Devices array.
+    //
+    DWORD DeviceCount;
+
+    //
+    // Array of logical device instances.
+    //
+    SCM_LOGICAL_DEVICE_INSTANCE Devices[ANYSIZE_ARRAY];
+
+} SCM_LOGICAL_DEVICES, *PSCM_LOGICAL_DEVICES;
+
+//
+// IOCTL_SCM_BUS_GET_PHYSICAL_DEVICES
+//
+// Send this IOCTL to the ScmBus adapter to get a list of all the physical persistent memory
+// devices on the system.
+//
+// Input Buffer:
+//      None
+//
+// Output Buffer:
+//      SCM_PHYSICAL_DEVICES
+//
+typedef struct _SCM_PHYSICAL_DEVICE_INSTANCE {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure.
+    //
+    DWORD Size;
+
+    //
+    // The NFIT handle of the physical device.
+    //
+    DWORD NfitHandle;
+
+    //
+    // Symbolic link that can be used to get a handle on the device.
+    //
+    WCHAR SymbolicLink[SCM_MAX_SYMLINK_LEN_IN_CHARS];
+
+} SCM_PHYSICAL_DEVICE_INSTANCE, *PSCM_PHYSICAL_DEVICE_INSTANCE;
+
+typedef struct _SCM_PHYSICAL_DEVICES {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure, including all the elements in the
+    // Devices array.
+    //
+    DWORD Size;
+
+    //
+    // The number of valid elements in the Devices array.
+    //
+    DWORD DeviceCount;
+
+    //
+    // Array of physical device instances.
+    //
+    SCM_PHYSICAL_DEVICE_INSTANCE Devices[ANYSIZE_ARRAY];
+
+} SCM_PHYSICAL_DEVICES, *PSCM_PHYSICAL_DEVICES;
+
+//
+// IOCTL_SCM_BUS_GET_REGIONS
+//
+// Send to a logical persistent memory device stack to get a list of all regions that make up
+// the logical device.
+//
+// Send to a physical persistent memory device stack to get a list of all the regions that
+// reside on that physical device.
+//
+// Input Buffer:
+//      None
+//
+// Output Buffer:
+//      SCM_REGIONS
+//
+
+typedef enum _SCM_REGION_FLAG {
+    ScmRegionFlagNone = 0x0,
+
+    //
+    // Indicates this region is described by a label.
+    //
+    ScmRegionFlagLabel = 0x1
+
+} SCM_REGION_FLAG, *PSCM_REGION_FLAG;
+
+#define SCM_REGION_SPA_UNKNOWN MAXDWORD64
+
+typedef struct _SCM_REGION {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure.
+    //
+    DWORD Size;
+
+    //
+    // Bitmask of SCM_REGION_FLAG values.
+    //
+    DWORD Flags;
+
+    //
+    // The NFIT handle of the physical device for this region.
+    //
+    DWORD NfitHandle;
+
+    //
+    // The GUID of the logical device for this region, if any.
+    //
+    GUID LogicalDeviceGuid;
+
+    //
+    // The address range type (e.g. byte-addressable persistent memory).
+    //
+    GUID AddressRangeType;
+
+    //
+    // Regions that are associated with each other (e.g. part of an interleave
+    // set) will share an associated ID.
+    //
+    DWORD AssociatedId;
+
+    //
+    // The total size of the region, in bytes.
+    //
+    DWORD64 Length;
+
+    //
+    // The starting device physical address of the region
+    // within the physical device.
+    //
+    DWORD64 StartingDPA;
+
+    //
+    // The base system physical address.
+    //
+    DWORD64 BaseSPA;
+
+    //
+    // The region's offset from the base system physical address.
+    // This field may be SCM_REGION_SPA_UNKNOWN if there is not enough
+    // context to calculate the SPA offset for this particular region.
+    //
+    DWORD64 SPAOffset;
+
+    //
+    // The value of the Region Offset field from the associated Region Mapping
+    // Structure.
+    //
+    DWORD64 RegionOffset;
+
+} SCM_REGION, *PSCM_REGION;
+
+typedef struct _SCM_REGIONS {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the data structure, including all the elements in the
+    // Regions array.
+    //
+    DWORD Size;
+
+    //
+    // The number of valid elements in the Regions array.
+    //
+    DWORD RegionCount;
+
+    //
+    // Array of regions for the logical or physical device.
+    //
+    SCM_REGION Regions[ANYSIZE_ARRAY];
+
+} SCM_REGIONS, *PSCM_REGIONS;
+
+
+
+//
+// Definitions for interfaces related to logical persistent memory devices (LDs).
+//
+
+//
+// IOCTL_SCM_LD_GET_INTERLEAVE_SET
+//
+// This IOCTL retrieves the interleave set of a logical persistent memory disk. The interleave set
+// is comprised of one or more physical persistent memory devices.
+//
+// Input Buffer:
+//      None.
+//
+// Output Buffer:
+//      SCM_LD_INTERLEAVE_SET_INFO
+//
+
+typedef struct _SCM_INTERLEAVED_PD_INFO {
+
+    //
+    // An identifier for the physical device that comes from the NFIT table and
+    // is unique on the local system.
+    //
+    DWORD DeviceHandle;
+
+    //
+    // A GUID that uniquely identifies the physical device on the system.
+    //
+    GUID DeviceGuid;
+
+} SCM_INTERLEAVED_PD_INFO, *PSCM_INTERLEAVED_PD_INFO;
+
+typedef struct _SCM_LD_INTERLEAVE_SET_INFO {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // Total size of the structure, in bytes, including the InterleaveSet array.
+    // If the output buffer is too small to contain the requested information,
+    // the Size field indicates the length of the output buffer the caller should provide
+    // in order to retrieve all the data.
+    //
+    DWORD Size;
+
+    //
+    // The number of elements in the InterleaveSet array.
+    //
+    DWORD InterleaveSetSize;
+    
+    //
+    // Information about the physical devices that make up this interleave
+    // set.
+    //
+    SCM_INTERLEAVED_PD_INFO InterleaveSet[ANYSIZE_ARRAY];
+
+} SCM_LD_INTERLEAVE_SET_INFO, *PSCM_LD_INTERLEAVE_SET_INFO;
+
+
+//
+// Definitions for interfaces related to physical persistent memory devices (PDs).
+//
+
+//
+// IOCTL_SCM_PD_QUERY_PROPERTY
+//
+// Input Buffer:
+//      An SCM_PD_PROPERTY_QUERY structure that describes the type of query
+//      being done, the property being queried, and any additional parameters
+//      the query requires.
+//
+//  Output Buffer:
+//      Contains a buffer to place the results of the query into. Since all
+//      property descriptors can be cast into an SCM_PD_DESCRIPTOR_HEADER,
+//      the IOCTL can be called once with a small buffer then again using
+//      a buffer as large as the header reports is necessary.
+//
+
+
+//
+// Types of queries
+//
+
+typedef enum _SCM_PD_QUERY_TYPE {
+    ScmPhysicalDeviceQuery_Descriptor = 0, // Retrieves the descriptor
+    ScmPhysicalDeviceQuery_IsSupported, // Used to test whether the descriptor is supported
+    
+    ScmPhysicalDeviceQuery_Max
+} SCM_PD_QUERY_TYPE, *PSCM_PD_QUERY_TYPE;
+
+typedef enum _SCM_PD_PROPERTY_ID {
+    
+    //
+    // General information about the device.
+    //
+    ScmPhysicalDeviceProperty_DeviceInfo = 0,
+    
+    //
+    // Information about the device's health.
+    //
+    ScmPhysicalDeviceProperty_ManagementStatus,
+    
+    //
+    // Firmware-related information.
+    //
+    ScmPhysicalDeviceProperty_FirmwareInfo,
+    
+    //
+    // Returns a string that identifies where the device is located
+    // on the local system.
+    //
+    ScmPhysicalDeviceProperty_LocationString,
+    
+    //
+    // Returns a series of device-specific information, which give more detail
+    // on the device's status.
+    //
+    ScmPhysicalDeviceProperty_DeviceSpecificInfo,
+    
+    //
+    // Returns a identifying handle of the physical device, which comes from
+    // the NFIT table.
+    //
+    ScmPhysicalDeviceProperty_DeviceHandle,
+
+    ScmPhysicalDeviceProperty_Max
+} SCM_PD_PROPERTY_ID, *PSCM_PD_PROPERTY_ID;
+
+
+//
+// Query structure - additional parameters for specific queries can follow
+// the header
+//
+
+typedef struct _SCM_PD_PROPERTY_QUERY {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The size of this structure, including any additional
+    // parameters.
+    //
+    DWORD Size;
+
+    //
+    // ID of the property being retrieved.
+    //
+    SCM_PD_PROPERTY_ID PropertyId;
+
+    //
+    // The type of query being performed.
+    //
+    SCM_PD_QUERY_TYPE QueryType;
+
+    //
+    // Space for additional parameters if necessary.
+    //
+    BYTE  AdditionalParameters[ANYSIZE_ARRAY];
+
+} SCM_PD_PROPERTY_QUERY, *PSCM_PD_PROPERTY_QUERY;
+
+//
+// Standard property descriptor header. All property pages should use this
+// as their first element or should contain these two elements
+//
+
+typedef struct _SCM_PD_DESCRIPTOR_HEADER {
+
+    //
+    // The sizeof() of the entire descriptor (not just the header).
+    //
+    DWORD Version;
+    
+    //
+    // The size of the entire descriptor (not just the header).
+    //
+    DWORD Size;
+} SCM_PD_DESCRIPTOR_HEADER, *PSCM_PD_DESCRIPTOR_HEADER;
+
+//
+// Output buffer for ScmPhysicalDeviceProperty_DeviceHandle & ScmPhysicalDeviceQuery_Descriptor
+//
+
+//
+// The ScmPhysicalDeviceProperty_DeviceHandle property gets identifying information about
+// a physical device.
+//
+typedef struct _SCM_PD_DEVICE_HANDLE {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the structure.
+    //
+    DWORD Size;
+
+    //
+    // A GUID that uniquely identifies the physical device, based on hardware information.
+    //
+    GUID DeviceGuid;
+
+    //
+    // A handle, exposed in the NFIT table, that uniquely identifies the physical device on a local
+    // system.
+    //
+    DWORD DeviceHandle;
+
+} SCM_PD_DEVICE_HANDLE, *PSCM_PD_DEVICE_HANDLE;
+
+//
+// Output buffer for ScmPhysicalDeviceProperty_DeviceInfo & ScmPhysicalDeviceQuery_Descriptor
+//
+
+#define MAX_INTERFACE_CODES 8
+#define SCM_PD_FIRMWARE_REVISION_LENGTH_BYTES 32
+
+#define SCM_PD_MEMORY_SIZE_UNKNOWN MAXDWORD64
+
+typedef struct _SCM_PD_DEVICE_INFO {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The total size of the structure, including the serial number at the end.
+    // If the output buffer is too small to contain the requested information,
+    // the Size field indicates the length of the output buffer the caller should provide
+    // in order to retrieve all the data.
+    //
+    DWORD Size;
+    
+    //
+    // A GUID that uniquely identifies the physical device, based on hardware information.
+    //
+    GUID DeviceGuid;
+    
+    //
+    // The number of times this device went through an unsafe shutdown (i.e. a shutdown
+    // that might have led to data loss).
+    //
+    DWORD UnsafeShutdownCount;
+
+        
+    //
+    // The combined size of all the persistent memory regions of the physical device.
+    //
+    DWORD64 PersistentMemorySizeInBytes;
+
+    //
+    // The total size of the volatile memory this device contains, if any.
+    // May be SCM_PD_MEMORY_SIZE_UNKNOWN if it is not reported by the platform.
+    //
+    DWORD64 VolatileMemorySizeInBytes;
+
+    //
+    // The total capacity of this memory device, including persistent and any
+    // volatile memory.
+    // May be SCM_PD_MEMORY_SIZE_UNKNOWN if it is not reported by the platform.
+    //
+    DWORD64 TotalMemorySizeInBytes;
+    
+    //
+    // The number of the slot in which the physical device is installed on the system.
+    //
+    DWORD SlotNumber;
+    
+    //
+    // A handle, exposed in the NFIT table, that uniquely identifies the physical device on a local
+    // system.
+    //
+    DWORD DeviceHandle;
+
+    //
+    // The unique ID for this physical device as indicated in the SMBIOS.
+    //
+    WORD   PhysicalId;
+
+    //
+    // An physical device can have regions that implement different format interface
+    // codes. This is a list of all format interface codes on this physical device.
+    //
+    BYTE   NumberOfFormatInterfaceCodes;
+    WORD   FormatInterfaceCodes[MAX_INTERFACE_CODES];
+
+    //
+    // Vendor and product IDs.
+    //
+    DWORD VendorId;
+    DWORD ProductId;
+    DWORD SubsystemDeviceId;
+    DWORD SubsystemVendorId;
+    BYTE  ManufacturingLocation;
+    BYTE  ManufacturingWeek; // *Not* in BCD format.
+    BYTE  ManufacturingYear; // *Not* in BCD format.
+    DWORD SerialNumber4Byte; // 4-byte serial number as defined in the JEDEC SPD spec and reported in the NFIT.
+
+    //
+    // The physical device's serial number, as a string.
+    //
+    DWORD SerialNumberLengthInChars;
+    _Field_size_(SerialNumberLengthInChars) CHAR SerialNumber[ANYSIZE_ARRAY];
+} SCM_PD_DEVICE_INFO, *PSCM_PD_DEVICE_INFO;
+
+//
+// Output buffer for ScmPhysicalDeviceProperty_DeviceSpecificInfo & ScmPhysicalDeviceQuery_Descriptor
+//
+
+//
+// A device specific property is a key-value pair where the key is a string
+// and the value is a number.
+//
+#define SCM_PD_PROPERTY_NAME_LENGTH_IN_CHARS 128
+
+typedef struct _SCM_PD_DEVICE_SPECIFIC_PROPERTY {
+    // NULL-terminated string.
+    WCHAR Name[SCM_PD_PROPERTY_NAME_LENGTH_IN_CHARS];
+    LONGLONG Value;
+} SCM_PD_DEVICE_SPECIFIC_PROPERTY, *PSCM_PD_DEVICE_SPECIFIC_PROPERTY;
+
+//
+// The physical device driver fills in this structure with arbitrary numeric information.
+//
+typedef struct _SCM_PD_DEVICE_SPECIFIC_INFO {
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the structure, including the DeviceSpecificProperties array.
+    // If the output buffer is too small to contain the requested information,
+    // the Size field indicates the length of the output buffer the caller should provide
+    // in order to retrieve all the data.
+    //
+    DWORD Size;
+
+    //
+    // The number of elements in the DeviceSpecificProperties array.
+    //
+    DWORD NumberOfProperties;
+    
+    //
+    // A series of device-specific properties filled in by the driver.
+    //
+    SCM_PD_DEVICE_SPECIFIC_PROPERTY DeviceSpecificProperties[ANYSIZE_ARRAY];
+} SCM_PD_DEVICE_SPECIFIC_INFO, *PSCM_PD_DEVICE_SPECIFIC_INFO;
+
+typedef struct _SCM_PD_FIRMWARE_SLOT_INFO {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD   Version;
+    
+    //
+    // Size of the data contained in this structure.
+    //
+    DWORD   Size;
+
+    BYTE    SlotNumber;
+    BYTE    ReadOnly : 1;
+    BYTE    Reserved0 : 7;
+    BYTE    Reserved1[6];
+
+    BYTE    Revision[SCM_PD_FIRMWARE_REVISION_LENGTH_BYTES];
+
+} SCM_PD_FIRMWARE_SLOT_INFO, *PSCM_PD_FIRMWARE_SLOT_INFO;
+
+
+//
+// Output buffer for ScmPhysicalDeviceQuery_Descriptor & ScmPhysicalDeviceProperty_FirmwareInfo
+//
+typedef struct _SCM_PD_FIRMWARE_INFO {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // Size of the data contained in this structure, including the Slots
+    // array. If the output buffer is too small to contain the requested information,
+    // the Size field indicates the length of the output buffer the caller should provide
+    // in order to retrieve all the data.
+    //
+    DWORD Size;
+
+
+    //
+    // The firmware slot that is currently active.
+    // 
+    BYTE  ActiveSlot;
+
+    //
+    // The slot that will become active once the device is reset. A value of 0xFF means
+    // there is no slot waiting to be activated.
+    //
+    BYTE  NextActiveSlot;
+
+    BYTE  SlotCount;
+    
+    _Field_size_(SlotCount) SCM_PD_FIRMWARE_SLOT_INFO Slots[ANYSIZE_ARRAY];
+
+} SCM_PD_FIRMWARE_INFO, *PSCM_PD_FIRMWARE_INFO;
+
+
+//
+// Constants for ScmPhysicalDeviceProperty_ManagementStatus, which can be queried via
+// ScmPhysicalDeviceQuery_Descriptor.
+//
+
+//
+// Health states.
+//
+typedef enum _SCM_PD_HEALTH_STATUS {
+    ScmPhysicalDeviceHealth_Unknown = 0,
+    ScmPhysicalDeviceHealth_Unhealthy,
+    ScmPhysicalDeviceHealth_Warning,
+    ScmPhysicalDeviceHealth_Healthy,
+
+    ScmPhysicalDeviceHealth_Max
+} SCM_PD_HEALTH_STATUS, *PSCM_PD_HEALTH_STATUS;
+
+//
+// Operational states.
+//
+typedef enum _SCM_PD_OPERATIONAL_STATUS {
+    ScmPhysicalDeviceOpStatus_Unknown = 0,
+    ScmPhysicalDeviceOpStatus_Ok,
+    ScmPhysicalDeviceOpStatus_PredictingFailure,
+    ScmPhysicalDeviceOpStatus_InService,
+    ScmPhysicalDeviceOpStatus_HardwareError,
+    ScmPhysicalDeviceOpStatus_NotUsable,
+    ScmPhysicalDeviceOpStatus_TransientError,
+    ScmPhysicalDeviceOpStatus_Missing,
+
+    ScmPhysicalDeviceOpStatus_Max
+} SCM_PD_OPERATIONAL_STATUS, *PSCM_PD_OPERATIONAL_STATUS;
+
+//
+// Operational reasons.
+//
+typedef enum _SCM_PD_OPERATIONAL_STATUS_REASON {
+    ScmPhysicalDeviceOpReason_Unknown = 0,
+    ScmPhysicalDeviceOpReason_Media,
+    ScmPhysicalDeviceOpReason_ThresholdExceeded,
+    ScmPhysicalDeviceOpReason_LostData,
+    ScmPhysicalDeviceOpReason_EnergySource,
+    ScmPhysicalDeviceOpReason_Configuration,
+    ScmPhysicalDeviceOpReason_DeviceController,
+    ScmPhysicalDeviceOpReason_MediaController,
+    ScmPhysicalDeviceOpReason_Component,
+    ScmPhysicalDeviceOpReason_BackgroundOperation,
+    ScmPhysicalDeviceOpReason_InvalidFirmware,
+    ScmPhysicalDeviceOpReason_HealthCheck,
+    ScmPhysicalDeviceOpReason_LostDataPersistence,
+    ScmPhysicalDeviceOpReason_DisabledByPlatform,
+    ScmPhysicalDeviceOpReason_PermanentError,
+    ScmPhysicalDeviceOpReason_LostWritePersistence,
+    ScmPhysicalDeviceOpReason_FatalError,
+    ScmPhysicalDeviceOpReason_DataPersistenceLossImminent,
+    ScmPhysicalDeviceOpReason_WritePersistenceLossImminent,
+    ScmPhysicalDeviceOpReason_MediaRemainingSpareBlock,
+    ScmPhysicalDeviceOpReason_PerformanceDegradation,
+    ScmPhysicalDeviceOpReason_ExcessiveTemperature,
+    
+    ScmPhysicalDeviceOpReason_Max
+} SCM_PD_OPERATIONAL_STATUS_REASON, *PSCM_PD_OPERATIONAL_STATUS_REASON;
+
+//
+// Output buffer for ScmPhysicalDeviceProperty_ManagementStatus & ScmPhysicalDeviceQuery_Descriptor
+//
+
+#define SCM_PD_MAX_OPERATIONAL_STATUS    16
+
+typedef struct _SCM_PD_MANAGEMENT_STATUS {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the structure, including operational status reasons
+    // that didn't fit in the caller's array. If the output buffer is too small to
+    // contain the requested information, the Size field indicates the length of the
+    // output buffer the caller should provide in order to retrieve all the data.
+    //
+    DWORD Size;
+
+    //
+    // Health status.
+    //
+    SCM_PD_HEALTH_STATUS Health;
+
+    //
+    // The number of operational statuses returned.
+    //
+    DWORD NumberOfOperationalStatus;
+
+    //
+    // The number of additional reasons returned.
+    //
+    DWORD NumberOfAdditionalReasons;
+
+    //
+    // Operational statuses. The primary operational status is the first element
+    // in the array. There are NumberOfOperationalStatus valid elements in the array.
+    //
+    SCM_PD_OPERATIONAL_STATUS OperationalStatus[SCM_PD_MAX_OPERATIONAL_STATUS];
+
+    //
+    // Additional reasons. There are NumberOfAdditionalReasons valid elements in the array.
+    //
+    _Field_size_(NumberOfAdditionalReasons) SCM_PD_OPERATIONAL_STATUS_REASON AdditionalReasons[ANYSIZE_ARRAY];
+
+} SCM_PD_MANAGEMENT_STATUS, *PSCM_PD_MANAGEMENT_STATUS;
+
+//
+// Output buffer for ScmPhysicalDeviceQuery_Descriptor & ScmPhysicalDeviceProperty_LocationString
+//
+typedef struct _SCM_PD_LOCATION_STRING {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // The total size of the structure, including the buffer for the Unicode
+    // string. If the output buffer is too small to contain the requested information,
+    // the Size field indicates the length of the output buffer the caller should provide
+    // in order to retrieve all the data.
+    //
+    DWORD Size;
+
+    //
+    // The Unicode string that represents the physical location of this physical device.
+    //
+    WCHAR Location[ANYSIZE_ARRAY];
+
+} SCM_PD_LOCATION_STRING, *PSCM_PD_LOCATION_STRING;
+
+//
+// Firmware update IOCTLs.
+//
+
+//
+// Signals that the firmware image regions contained in the SCM_PD_FIRMWARE_DOWNLOAD
+// structure are the last ones of the image. The physical device driver finishes the firmware update
+// operation when this flag is set.
+//
+#define SCM_PD_FIRMWARE_LAST_DOWNLOAD 0x1
+
+//
+// Input buffer for IOCTL_SCM_PD_FIRMWARE_DOWNLOAD.
+//
+typedef struct _SCM_PD_FIRMWARE_DOWNLOAD {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The structure size, including the image.
+    //
+    DWORD Size;
+    
+    //
+    // Additional information about the region being download, such as whether it
+    // is the last region in the image.
+    //
+    DWORD Flags;
+    
+    //
+    // The firmware slot being upgraded.
+    //
+    BYTE  Slot;
+    
+    BYTE  Reserved[3];
+
+    //
+    // The offset of this region of the firmware image.
+    //
+    DWORD64 Offset;
+
+    //
+    // The size of the FirmwareImage array.
+    //
+    DWORD FirmwareImageSizeInBytes;
+
+    //
+    // The firmware region being downloaded to the device.
+    //
+    BYTE  FirmwareImage[ANYSIZE_ARRAY];
+
+} SCM_PD_FIRMWARE_DOWNLOAD, *PSCM_PD_FIRMWARE_DOWNLOAD;
+
+//
+// Input buffer for IOCTL_SCM_PD_FIRMWARE_ACTIVATE.
+//
+typedef struct _SCM_PD_FIRMWARE_ACTIVATE {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+
+    //
+    // Total size of the structure
+    //
+    DWORD Size;
+
+    //
+    // Reserved. Callers should set to 0.
+    //
+    DWORD Flags;
+    
+    //
+    // The slot that contains the firmware image being activated.
+    //
+    BYTE  Slot;
+
+} SCM_PD_FIRMWARE_ACTIVATE, *PSCM_PD_FIRMWARE_ACTIVATE;
+
+//
+// IOCTL_SCM_PD_PASSTHROUGH
+//
+// This IOCTL sends a vendor-specific command to a physical device and returns its
+// output.
+//
+// Input buffer:
+//      SCM_PD_PASSTHROUGH_INPUT
+//      The input structure contains another, physical device-type specific structure.
+//
+// Output buffer:
+//      SCM_PD_PASSTHROUGH_OUTPUT
+//      The output structure contains another, physical device-type specific structure.
+//
+
+typedef struct _SCM_PD_PASSTHROUGH_INPUT {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The size of the structure, including the Data field, in bytes.
+    //
+    DWORD Size;
+
+    //
+    // This GUID defines which command protocol is being used. The driver will
+    // check this field to make sure the application is sending commands for
+    // device types that the driver understands.
+    //
+    GUID ProtocolGuid;
+
+    //
+    // The size, in bytes, of the data field.
+    //
+    DWORD DataSize;
+
+    //
+    // The physical device-type specific structure which contains the passthrough command.
+    //
+    BYTE  Data[ANYSIZE_ARRAY];
+} SCM_PD_PASSTHROUGH_INPUT, *PSCM_PD_PASSTHROUGH_INPUT;
+
+typedef struct _SCM_PD_PASSTHROUGH_OUTPUT {
+    
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The size of the structure, including the Data field, in bytes.
+    // The caller is responsible for knowing how large the output buffer
+    // will be. The common approach of sending the IOCTL twice - once to learn
+    // the total required size, and again to retrieve the data - isn't recommended
+    // here because of the performance impact of executing a passthrough command.
+    //
+    DWORD Size;
+
+    //
+    // This GUID defines which command protocol is being used. The application should
+    // check this field to make sure the driver is using a protocol that it understands.
+    //
+    GUID ProtocolGuid;
+
+    //
+    // The size, in bytes, of the data field.
+    //
+    DWORD DataSize;
+
+    //
+    // The physical device-type specific structure which contains the output of the passthrough command.
+    //
+    BYTE  Data[ANYSIZE_ARRAY];
+} SCM_PD_PASSTHROUGH_OUTPUT, *PSCM_PD_PASSTHROUGH_OUTPUT;
+
+//
+// Passthrough structures and definitions for INVDIMM devices.
+//
+
+//
+// This structure defines the input of an INVDIMM command. The application sending a passthrough
+// command uses this structure as the "Data" field of the SCM_PD_PASSTHROUGH_INPUT structure.
+//
+typedef struct _SCM_PD_PASSTHROUGH_INVDIMM_INPUT {
+
+    //
+    // The command's opcode.
+    //
+    DWORD Opcode;
+
+    //
+    // The length, in bytes, of the OpcodeParameters field.
+    // This can be zero, but the size of this structure must always be equal to
+    // or greater than sizeof(SCM_PD_PASSTHROUGH_INVDIMM_INPUT).
+    //
+    DWORD OpcodeParametersLength;
+
+    //
+    // The opcode input payload, if any.
+    //
+    BYTE  OpcodeParameters[ANYSIZE_ARRAY];
+} SCM_PD_PASSTHROUGH_INVDIMM_INPUT, *PSCM_PD_PASSTHROUGH_INVDIMM_INPUT;
+
+//
+// This structure defines the output of an INVDIMM command. The driver will respond to
+// a passthrough request by bundling this structure in the "Data" field of the
+// SCM_PD_PASSTHROUGH_OUTPUT structure.
+//
+typedef struct _SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT {
+
+    //
+    // The general status of the command (see the INVDIMM _DSM specification for details).
+    //
+    WORD   GeneralStatus;
+
+    //
+    // The extended status of the command (see the INVDIMM _DSM specification for details).
+    //
+    WORD   ExtendedStatus;
+
+    //
+    // The length, in bytes, of the OutputData field. Even when this is zero, the total
+    // size of this structure will be equal to or greater than sizeof(SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT).
+    //
+    DWORD OutputDataLength;
+
+    //
+    // The data returned by the device in response to the command.
+    //
+    BYTE  OutputData[ANYSIZE_ARRAY];
+} SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT, *PSCM_PD_PASSTHROUGH_INVDIMM_OUTPUT;
+
+//
+// IOCTL_SCM_PD_REINITIALIZE_MEDIA
+//
+// This IOCTL reinitializes the media of a physical persistent memory device, which erases
+// all the data on it.
+//
+// Input buffer:
+//      SCM_PD_REINITIALIZE_MEDIA_INPUT
+//
+// Output buffer:
+//      SCM_PD_REINITIALIZE_MEDIA_OUTPUT
+//
+typedef struct _SCM_PD_REINITIALIZE_MEDIA_INPUT {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The size of the structure, in bytes.
+    //
+    DWORD Size;
+    
+    //
+    // If Overwrite is set to 1, the physical persistent memory device will
+    // overwrite the entire media, which might take several minutes.
+    // If it is set to 0, the physical persistent device may do a crypto-erase or some
+    // other quicker form of clearing the data on the media.
+    //
+    struct {
+        DWORD Overwrite : 1;
+    } Options;
+} SCM_PD_REINITIALIZE_MEDIA_INPUT, *PSCM_PD_REINITIALIZE_MEDIA_INPUT;
+
+typedef enum _SCM_PD_MEDIA_REINITIALIZATION_STATUS {
+
+    //
+    // The media reinitialization was successful and the device is ready for use.
+    //
+    ScmPhysicalDeviceReinit_Success = 0,
+    
+    //
+    // The media reinitialization was successful, but the device requires a reboot before being used.
+    //
+    ScmPhysicalDeviceReinit_RebootNeeded,
+    
+    //
+    // The media reinitialization was successful, but the device requires a cold boot before being used.
+    //
+    ScmPhysicalDeviceReinit_ColdBootNeeded,
+
+    ScmPhysicalDeviceReinit_Max
+} SCM_PD_MEDIA_REINITIALIZATION_STATUS, *PSCM_PD_MEDIA_REINITIALIZATION_STATUS;
+
+typedef struct _SCM_PD_REINITIALIZE_MEDIA_OUTPUT {
+
+    //
+    // Sizeof() of this structure serves as the version.
+    //
+    DWORD Version;
+    
+    //
+    // The size of the structure, in bytes.
+    //
+    DWORD Size;
+    
+    //
+    // The detailed status of the reinitialization operation, in case it
+    // was successful. If it failed, the IOCTL itself will fail and callers
+    // should not look at the returned status code instead of this field.
+    //
+    SCM_PD_MEDIA_REINITIALIZATION_STATUS Status;
+} SCM_PD_REINITIALIZE_MEDIA_OUTPUT, *PSCM_PD_REINITIALIZE_MEDIA_OUTPUT;
+
+
+#pragma warning(pop)
+
+
+#endif // NTDDI_WIN10_RS5
+
+#endif // _NTDDSCM_H_
+
 
 #ifndef _NTDDDISK_H_
 #define _NTDDDISK_H_
@@ -8871,6 +9947,9 @@ typedef enum _CHANGER_DEVICE_PROBLEM_TYPE {
 #define FSCTL_REMOVE_OVERLAY                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 205, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_UPDATE_OVERLAY                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 206, METHOD_BUFFERED, FILE_WRITE_DATA)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN7) */
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#define FSCTL_SHUFFLE_FILE                      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 208, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS) // SHUFFLE_FILE_DATA
+#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN8 */
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE)
 #define FSCTL_DUPLICATE_EXTENTS_TO_FILE         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 209, METHOD_BUFFERED, FILE_WRITE_DATA )
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
@@ -8969,6 +10048,14 @@ typedef enum _CHANGER_DEVICE_PROBLEM_TYPE {
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 #define FSCTL_SET_REPARSE_POINT_EX              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 259, METHOD_BUFFERED, FILE_SPECIAL_ACCESS) // REPARSE_DATA_BUFFER_EX
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#define FSCTL_REARRANGE_FILE                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 264, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS) // REARRANGE_FILE_DATA
+#define FSCTL_VIRTUAL_STORAGE_PASSTHROUGH       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 265, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define FSCTL_GET_RETRIEVAL_POINTER_COUNT       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 266, METHOD_NEITHER,  FILE_ANY_ACCESS) // STARTING_VCN_INPUT_BUFFER, RETRIEVAL_POINTER_COUNT
+#if defined(_WIN64)
+#define FSCTL_ENABLE_PER_IO_FLAGS               CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 267, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif /* _WIN64 */
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
 //
 // AVIO IOCTLS.
 //
@@ -9179,6 +10266,24 @@ typedef struct RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER {
 
 } RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER, *PRETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER;
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+//
+//==================== FSCTL_GET_RETRIEVAL_POINTER_COUNT ======================
+//
+// Structure for FSCTL_GET_RETRIEVAL_POINTER_COUNT
+//
+
+//
+// Input structure is STARTING_VCN_INPUT_BUFFER
+//
+
+typedef struct RETRIEVAL_POINTER_COUNT {
+
+    DWORD ExtentCount;
+
+} RETRIEVAL_POINTER_COUNT, *PRETRIEVAL_POINTER_COUNT;
+#endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5 */
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_NT4)
 //
@@ -12554,6 +13659,23 @@ typedef struct _CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT {
 #endif /* _WIN32_WINNT >= _WIN32_WINNT_WIN7 */
 
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+//
+// Storage Reserve common definitions
+//
+
+typedef enum _STORAGE_RESERVE_ID {
+
+    StorageReserveIdNone = 0,
+    StorageReserveIdHard,
+    StorageReserveIdSoft,
+
+    StorageReserveIdMax
+
+} STORAGE_RESERVE_ID, *PSTORAGE_RESERVE_ID;
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
 
 //
@@ -12567,7 +13689,7 @@ typedef struct _CSV_IS_OWNED_BY_CSVFS {
 //
 //======================== FSCTL_FILE_LEVEL_TRIM ===========================
 //
-//  Structure defintions for supporint file level trim
+//  Structure definitions for supporting file level trim
 //
 
 typedef struct _FILE_LEVEL_TRIM_RANGE {
@@ -12715,10 +13837,16 @@ typedef struct _FILE_LEVEL_TRIM_OUTPUT {
 #define QUERY_FILE_LAYOUT_INCLUDE_FILES_WITH_DSC_ATTRIBUTE              (0x00001000)
 
 typedef enum _QUERY_FILE_LAYOUT_FILTER_TYPE {
+
     QUERY_FILE_LAYOUT_FILTER_TYPE_NONE = 0,
     QUERY_FILE_LAYOUT_FILTER_TYPE_CLUSTERS = 1,
     QUERY_FILE_LAYOUT_FILTER_TYPE_FILEID = 2,
-    QUERY_FILE_LAYOUT_NUM_FILTER_TYPES = 3,
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+    QUERY_FILE_LAYOUT_FILTER_TYPE_STORAGE_RESERVE_ID = 3,
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+
+    QUERY_FILE_LAYOUT_NUM_FILTER_TYPES
+
 } QUERY_FILE_LAYOUT_FILTER_TYPE;
 
 typedef struct _CLUSTER_RANGE {
@@ -12755,11 +13883,19 @@ typedef struct _FILE_REFERENCE_RANGE {
 typedef struct _QUERY_FILE_LAYOUT_INPUT {
 
     //
-    // Number of filter range pairs in the following array.
+    // Number of filter entries in the following array.
     // The input buffer must be large enough to contain this
     // number or the operation will fail.
     //
-    DWORD               NumberOfPairs;
+    // This was originally named NumberOfPairs when there
+    // was only one type of filter.  The union is simply to
+    // maintain code compatibility.
+    //
+
+    union {
+        DWORD           FilterEntryCount;
+        DWORD           NumberOfPairs;
+    } DUMMYUNIONNAME;
 
     //
     // Flags for the operation.
@@ -12780,18 +13916,18 @@ typedef struct _QUERY_FILE_LAYOUT_INPUT {
 
     //
     //  A pointer to the filter-type-specific information.  This is
-    //  the caller's actual set of cluster ranges or filter ranges.
+    //  the caller's actual set of cluster ranges, etc.
     //
 
     union {
 
         //
-        //  The following  is used when the caller wishes to filter
+        //  The following is used when the caller wishes to filter
         //  on a set of cluster ranges.
         //
 
         _When_((FilterType == QUERY_FILE_LAYOUT_FILTER_TYPE_CLUSTERS),
-               _Field_size_(NumberOfPairs))
+               _Field_size_(FilterEntryCount))
         CLUSTER_RANGE ClusterRanges[1];
 
         //
@@ -12800,10 +13936,22 @@ typedef struct _QUERY_FILE_LAYOUT_INPUT {
         //
 
         _When_((FilterType == QUERY_FILE_LAYOUT_FILTER_TYPE_FILEID),
-               _Field_size_(NumberOfPairs))
+               _Field_size_(FilterEntryCount))
         FILE_REFERENCE_RANGE FileReferenceRanges[1];
 
+        //
+        //  The following is used when the caller wishes to filter
+        //  on a set of storage reserve IDs.
+        //
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+        _When_((FilterType == QUERY_FILE_LAYOUT_FILTER_TYPE_STORAGE_RESERVE_ID),
+                _Field_size_(FilterEntryCount))
+        STORAGE_RESERVE_ID StorageReserveIds[1];
+#endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5) */
+
     } Filter;
+
 } QUERY_FILE_LAYOUT_INPUT, *PQUERY_FILE_LAYOUT_INPUT;
 
 //
@@ -12892,10 +14040,28 @@ typedef struct _FILE_LAYOUT_ENTRY {
     //
     DWORD         ExtraInfoOffset;
 
+#if (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5)
     //
     // For alignment/future use.
     //
     DWORD         Reserved;
+#else
+    //
+    // Number of bytes accessible in additional per-file
+    // information, contained in a FILE_LAYOUT_INFO_ENTRY
+    // structure, or zero if this information was
+    // not returned.
+    //
+    // Since pre-RS5 this was a reserved field that was
+    // always set to zero by the file system, if
+    // ExtraInfoOffset is non-zero but ExtraInfoLength
+    // is zero then callers can assume the extra info
+    // includes all fields up to Usn.  If ExtraInfoLength
+    // is non-zero then it should be used by callers to
+    // determine which fields are safe to access.
+    //
+    DWORD         ExtraInfoLength;
+#endif /* (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5) */
 
     //
     // The structure may be extended here to support
@@ -12977,6 +14143,13 @@ typedef struct _FILE_LAYOUT_INFO_ENTRY {
     // Update sequence number for this file.
     //
     USN                         Usn;
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+    //
+    // Storage Reserve ID assigned to the file (0 for none).
+    //
+    STORAGE_RESERVE_ID  StorageReserveId;
+#endif /* (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS5) */
 
 } FILE_LAYOUT_INFO_ENTRY, *PFILE_LAYOUT_INFO_ENTRY;
 
@@ -13200,7 +14373,7 @@ typedef struct _FSCTL_OFFLOAD_WRITE_OUTPUT {
 //
 //======================== FSCTL_SET_PURGE_FAILURE_MODE ===========================
 //
-//  Structure defintions for supporting purge failure mode
+//  Structure definitions for supporting purge failure mode
 //
 
 typedef struct _SET_PURGE_FAILURE_MODE_INPUT {
@@ -14005,14 +15178,29 @@ typedef struct _VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT {
 
 } VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT, *PVIRTUAL_STORAGE_SET_BEHAVIOR_INPUT;
 
-// TO BE DELETED: add for testing purpose only.
+//
+// EFS DPL key availability data structure for FSCTL_ENCRYPTION_KEY_CONTROL
+//
 
 typedef struct _ENCRYPTION_KEY_CTRL_INPUT {
 
-    BOOLEAN IsProtect;
-} ENCRYPTION_KEY_CTRL_INPUT, *PENCRYPTION_KEY_CTRL_INPUT;
+    DWORD HeaderSize;           // Structure header size, usable for structure versioning.
 
-// end testing purpose only
+    DWORD StructureSize;        // Full structure size.
+
+    WORD   KeyOffset;           // Byte offset of the key blob relative to the start of this structure.
+                                // Could be 0 if key blob is not passed.
+
+    WORD   KeySize;             // Size of the key blob.
+                                // Could be 0 if key blob is not passed.
+
+    DWORD DplLock;              // DPL lock/unlock indicator: 1 means lock, 0 means unlock.
+
+    DWORDLONG DplUserId;        // DPL user runtime ID for who this control is issued.
+
+    DWORDLONG DplCredentialId;  // DPL credential runtime ID which is being impacted.
+
+} ENCRYPTION_KEY_CTRL_INPUT, *PENCRYPTION_KEY_CTRL_INPUT;
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3) */
 
@@ -14169,8 +15357,9 @@ typedef struct _CONTAINER_ROOT_INFO_OUTPUT {
 #define CONTAINER_ROOT_INFO_FLAG_BIND_ROOT                      (0x00000020)
 #define CONTAINER_ROOT_INFO_FLAG_BIND_TARGET_ROOT               (0x00000040)
 #define CONTAINER_ROOT_INFO_FLAG_BIND_EXCEPTION_ROOT            (0x00000080)
+#define CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME           (0x00000100)
 
-#define CONTAINER_ROOT_INFO_VALID_FLAGS                         (0x000000ff)
+#define CONTAINER_ROOT_INFO_VALID_FLAGS                         (0x000001ff)
 
 #endif
 
@@ -14182,14 +15371,14 @@ typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT {
     DWORD Flags;
 } VIRTUALIZATION_INSTANCE_INFO_INPUT, *PVIRTUALIZATION_INSTANCE_INFO_INPUT;
 
-#define GV_CURRENT_VERSION          2
+#define PROJFS_PROTOCOL_VERSION     3
 
 typedef struct _VIRTUALIZATION_INSTANCE_INFO_INPUT_EX {
     WORD   HeaderSize;               // sizeof(VIRTUALIZATION_INSTANCE_INFO_INPUT_EX)
     DWORD Flags;
     DWORD NotificationInfoSize;      // Total Size of the NotificationInfo Buffer.
     WORD   NotificationInfoOffset;   // Offset from beginning of this struct to the NotificationInfo Buffer.
-    WORD   ProviderMajorVersion;     // This should be set to GV_CURRENT_VERSION.
+    WORD   ProviderMajorVersion;     // This should be set to PROJFS_PROTOCOL_VERSION.
 } VIRTUALIZATION_INSTANCE_INFO_INPUT_EX, *PVIRTUALIZATION_INSTANCE_INFO_INPUT_EX;
 
 typedef struct _VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
@@ -14221,7 +15410,7 @@ typedef struct _GET_FILTER_FILE_IDENTIFIER_OUTPUT {
 
 
 //
-//=============== END FileSystem FSCTL Structure Defintions ==================
+//=============== END FileSystem FSCTL Structure Definitions ==================
 //
 
 //

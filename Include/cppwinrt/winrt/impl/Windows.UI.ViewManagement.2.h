@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -38,10 +38,10 @@ struct WINRT_EBO ApplicationView :
     impl::require<ApplicationView, Windows::UI::ViewManagement::IApplicationView2, Windows::UI::ViewManagement::IApplicationView3, Windows::UI::ViewManagement::IApplicationView4>
 {
     ApplicationView(std::nullptr_t) noexcept {}
-    [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] static bool TryUnsnapToFullscreen();
+    static bool TryUnsnapToFullscreen();
     static int32_t GetApplicationViewIdForWindow(Windows::UI::Core::ICoreWindow const& window);
-    [[deprecated("Value may be altered or unavailable for releases after Windows 8.1. Instead, query for window layout sizes directly.")]] static Windows::UI::ViewManagement::ApplicationViewState Value();
-    [[deprecated("TryUnsnap may be altered or unavailable for releases after Windows 8.1. Apps can be continuously resized, but cannot be snapped, starting in Windows 8.1.")]] static bool TryUnsnap();
+    static Windows::UI::ViewManagement::ApplicationViewState Value();
+    static bool TryUnsnap();
     static Windows::UI::ViewManagement::ApplicationView GetForCurrentView();
     static bool TerminateAppOnFinalViewClose();
     static void TerminateAppOnFinalViewClose(bool value);
@@ -117,10 +117,10 @@ struct ProjectionManager
     static Windows::Foundation::IAsyncAction SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId);
     static Windows::Foundation::IAsyncAction StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId);
     static bool ProjectionDisplayAvailable();
-    static event_token ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using ProjectionDisplayAvailableChanged_revoker = factory_event_revoker<Windows::UI::ViewManagement::IProjectionManagerStatics>;
+    static winrt::event_token ProjectionDisplayAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using ProjectionDisplayAvailableChanged_revoker = impl::factory_event_revoker<Windows::UI::ViewManagement::IProjectionManagerStatics, &impl::abi_t<Windows::UI::ViewManagement::IProjectionManagerStatics>::remove_ProjectionDisplayAvailableChanged>;
     static ProjectionDisplayAvailableChanged_revoker ProjectionDisplayAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void ProjectionDisplayAvailableChanged(event_token const& token);
+    static void ProjectionDisplayAvailableChanged(winrt::event_token const& token);
     static Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Devices::Enumeration::DeviceInformation const& displayDeviceInfo);
     static Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect const& selection);
     static Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& prefferedPlacement);

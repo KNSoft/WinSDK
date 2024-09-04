@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -36,9 +36,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::Backg
 
 template <typename D> Windows::UI::Color consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::TintColor() const
 {
-    Windows::UI::Color result{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrush)->get_TintColor(put_abi(result)));
-    return result;
+    Windows::UI::Color value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrush)->get_TintColor(put_abi(value)));
+    return value;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::TintColor(Windows::UI::Color const& value) const
@@ -72,9 +72,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::TintT
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::AlwaysUseFallback() const
 {
-    bool result{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrush)->get_AlwaysUseFallback(&result));
-    return result;
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrush)->get_AlwaysUseFallback(&value));
+    return value;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::AlwaysUseFallback(bool value) const
@@ -82,11 +82,11 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IAcrylicBrush<D>::Alway
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrush)->put_AlwaysUseFallback(value));
 }
 
-template <typename D> Windows::UI::Xaml::Media::AcrylicBrush consume_Windows_UI_Xaml_Media_IAcrylicBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::AcrylicBrush consume_Windows_UI_Xaml_Media_IAcrylicBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::AcrylicBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::AcrylicBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IAcrylicBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_IAcrylicBrushStatics<D>::BackgroundSourceProperty() const
@@ -312,11 +312,16 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IBrush<D>::RelativeTran
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IBrush)->put_RelativeTransform(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::Brush consume_Windows_UI_Xaml_Media_IBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::Brush consume_Windows_UI_Xaml_Media_IBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::Brush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::Brush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_UI_Xaml_Media_IBrushOverrides2<D>::PopulatePropertyInfoOverride(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo) const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IBrushOverrides2)->PopulatePropertyInfoOverride(get_abi(propertyName), get_abi(animationPropertyInfo)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_IBrushStatics<D>::OpacityProperty() const
@@ -340,11 +345,11 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::CacheMode consume_Windows_UI_Xaml_Media_ICacheModeFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::CacheMode consume_Windows_UI_Xaml_Media_ICacheModeFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::CacheMode instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICacheModeFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::CacheMode value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICacheModeFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> double consume_Windows_UI_Xaml_Media_ICompositeTransform<D>::CenterX() const
@@ -518,55 +523,55 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->add_Rendering(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->add_Rendering(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics> consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering_revoker consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::ICompositionTargetStatics>(this, &abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_Rendering, Rendering(value));
+    return impl::make_event_revoker<D, Rendering_revoker>(this, Rendering(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::Rendering(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->remove_Rendering(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->remove_Rendering(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->add_SurfaceContentsLost(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->add_SurfaceContentsLost(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics> consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost_revoker consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::ICompositionTargetStatics>(this, &abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_SurfaceContentsLost, SurfaceContentsLost(value));
+    return impl::make_event_revoker<D, SurfaceContentsLost_revoker>(this, SurfaceContentsLost(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics<D>::SurfaceContentsLost(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->remove_SurfaceContentsLost(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics)->remove_SurfaceContentsLost(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics3)->add_Rendered(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics3)->add_Rendered(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics3> consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered_revoker consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::ICompositionTargetStatics3>(this, &abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics3>::remove_Rendered, Rendered(value));
+    return impl::make_event_revoker<D, Rendered_revoker>(this, Rendered(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_ICompositionTargetStatics3<D>::Rendered(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics3)->remove_Rendered(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::ICompositionTargetStatics3)->remove_Rendered(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Point consume_Windows_UI_Xaml_Media_IEllipseGeometry<D>::Center() const
@@ -633,11 +638,11 @@ template <typename D> hstring consume_Windows_UI_Xaml_Media_IFontFamily<D>::Sour
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::FontFamily consume_Windows_UI_Xaml_Media_IFontFamilyFactory<D>::CreateInstanceWithName(param::hstring const& familyName, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::FontFamily consume_Windows_UI_Xaml_Media_IFontFamilyFactory<D>::CreateInstanceWithName(param::hstring const& familyName, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::FontFamily instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IFontFamilyFactory)->CreateInstanceWithName(get_abi(familyName), get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::FontFamily value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IFontFamilyFactory)->CreateInstanceWithName(get_abi(familyName), get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::FontFamily consume_Windows_UI_Xaml_Media_IFontFamilyStatics2<D>::XamlAutoFontFamily() const
@@ -656,9 +661,9 @@ template <typename D> Windows::UI::Xaml::Media::GeneralTransform consume_Windows
 
 template <typename D> Windows::Foundation::Point consume_Windows_UI_Xaml_Media_IGeneralTransform<D>::TransformPoint(Windows::Foundation::Point const& point) const
 {
-    Windows::Foundation::Point returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransform)->TransformPoint(get_abi(point), put_abi(returnValue)));
-    return returnValue;
+    Windows::Foundation::Point result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransform)->TransformPoint(get_abi(point), put_abi(result)));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_IGeneralTransform<D>::TryTransform(Windows::Foundation::Point const& inPoint, Windows::Foundation::Point& outPoint) const
@@ -670,16 +675,16 @@ template <typename D> bool consume_Windows_UI_Xaml_Media_IGeneralTransform<D>::T
 
 template <typename D> Windows::Foundation::Rect consume_Windows_UI_Xaml_Media_IGeneralTransform<D>::TransformBounds(Windows::Foundation::Rect const& rect) const
 {
-    Windows::Foundation::Rect returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransform)->TransformBounds(get_abi(rect), put_abi(returnValue)));
-    return returnValue;
+    Windows::Foundation::Rect result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransform)->TransformBounds(get_abi(rect), put_abi(result)));
+    return result;
 }
 
-template <typename D> Windows::UI::Xaml::Media::GeneralTransform consume_Windows_UI_Xaml_Media_IGeneralTransformFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::GeneralTransform consume_Windows_UI_Xaml_Media_IGeneralTransformFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::GeneralTransform instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransformFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::GeneralTransform value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransformFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform consume_Windows_UI_Xaml_Media_IGeneralTransformOverrides<D>::InverseCore() const
@@ -698,9 +703,9 @@ template <typename D> bool consume_Windows_UI_Xaml_Media_IGeneralTransformOverri
 
 template <typename D> Windows::Foundation::Rect consume_Windows_UI_Xaml_Media_IGeneralTransformOverrides<D>::TransformBoundsCore(Windows::Foundation::Rect const& rect) const
 {
-    Windows::Foundation::Rect returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransformOverrides)->TransformBoundsCore(get_abi(rect), put_abi(returnValue)));
-    return returnValue;
+    Windows::Foundation::Rect result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGeneralTransformOverrides)->TransformBoundsCore(get_abi(rect), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Transform consume_Windows_UI_Xaml_Media_IGeometry<D>::Transform() const
@@ -829,11 +834,11 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IGradientBrush<D>::Grad
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGradientBrush)->put_GradientStops(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::GradientBrush consume_Windows_UI_Xaml_Media_IGradientBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::GradientBrush consume_Windows_UI_Xaml_Media_IGradientBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::GradientBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGradientBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::GradientBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IGradientBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_IGradientBrushStatics<D>::SpreadMethodProperty() const
@@ -914,38 +919,38 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageSo
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->put_ImageSource(get_abi(value)));
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(Windows::UI::Xaml::ExceptionRoutedEventHandler const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(Windows::UI::Xaml::ExceptionRoutedEventHandler const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->add_ImageFailed(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->add_ImageFailed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::IImageBrush> consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(auto_revoke_t, Windows::UI::Xaml::ExceptionRoutedEventHandler const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed_revoker consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(auto_revoke_t, Windows::UI::Xaml::ExceptionRoutedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::IImageBrush>(this, &abi_t<Windows::UI::Xaml::Media::IImageBrush>::remove_ImageFailed, ImageFailed(value));
+    return impl::make_event_revoker<D, ImageFailed_revoker>(this, ImageFailed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageFailed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->remove_ImageFailed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->remove_ImageFailed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(Windows::UI::Xaml::RoutedEventHandler const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(Windows::UI::Xaml::RoutedEventHandler const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->add_ImageOpened(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->add_ImageOpened(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::IImageBrush> consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened_revoker consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::IImageBrush>(this, &abi_t<Windows::UI::Xaml::Media::IImageBrush>::remove_ImageOpened, ImageOpened(value));
+    return impl::make_event_revoker<D, ImageOpened_revoker>(this, ImageOpened(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_IImageBrush<D>::ImageOpened(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->remove_ImageOpened(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::IImageBrush)->remove_ImageOpened(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_IImageBrushStatics<D>::ImageSourceProperty() const
@@ -1038,9 +1043,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_ILinearGradientBrush<D>
 
 template <typename D> Windows::UI::Xaml::Media::LinearGradientBrush consume_Windows_UI_Xaml_Media_ILinearGradientBrushFactory<D>::CreateInstanceWithGradientStopCollectionAndAngle(Windows::UI::Xaml::Media::GradientStopCollection const& gradientStopCollection, double angle) const
 {
-    Windows::UI::Xaml::Media::LinearGradientBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILinearGradientBrushFactory)->CreateInstanceWithGradientStopCollectionAndAngle(get_abi(gradientStopCollection), angle, put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::LinearGradientBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILinearGradientBrushFactory)->CreateInstanceWithGradientStopCollectionAndAngle(get_abi(gradientStopCollection), angle, put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_ILinearGradientBrushStatics<D>::StartPointProperty() const
@@ -1085,49 +1090,49 @@ template <typename D> Windows::Foundation::Size consume_Windows_UI_Xaml_Media_IL
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const& value) const
+template <typename D> winrt::event_token consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const& handler) const
 {
-    event_token token{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurface)->add_LoadCompleted(get_abi(value), put_abi(token)));
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurface)->add_LoadCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Xaml::Media::ILoadedImageSurface> consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const& value) const
+template <typename D> typename consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted_revoker consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Xaml::Media::ILoadedImageSurface>(this, &abi_t<Windows::UI::Xaml::Media::ILoadedImageSurface>::remove_LoadCompleted, LoadCompleted(value));
+    return impl::make_event_revoker<D, LoadCompleted_revoker>(this, LoadCompleted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Xaml_Media_ILoadedImageSurface<D>::LoadCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurface)->remove_LoadCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurface)->remove_LoadCompleted(get_abi(token)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface consume_Windows_UI_Xaml_Media_ILoadedImageSurfaceStatics<D>::StartLoadFromUri(Windows::Foundation::Uri const& uri, Windows::Foundation::Size const& desiredMaxSize) const
 {
-    Windows::UI::Xaml::Media::LoadedImageSurface returnValue{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromUriWithSize(get_abi(uri), get_abi(desiredMaxSize), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::LoadedImageSurface result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromUriWithSize(get_abi(uri), get_abi(desiredMaxSize), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface consume_Windows_UI_Xaml_Media_ILoadedImageSurfaceStatics<D>::StartLoadFromUri(Windows::Foundation::Uri const& uri) const
 {
-    Windows::UI::Xaml::Media::LoadedImageSurface returnValue{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromUri(get_abi(uri), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::LoadedImageSurface result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromUri(get_abi(uri), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface consume_Windows_UI_Xaml_Media_ILoadedImageSurfaceStatics<D>::StartLoadFromStream(Windows::Storage::Streams::IRandomAccessStream const& stream, Windows::Foundation::Size const& desiredMaxSize) const
 {
-    Windows::UI::Xaml::Media::LoadedImageSurface returnValue{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromStreamWithSize(get_abi(stream), get_abi(desiredMaxSize), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::LoadedImageSurface result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromStreamWithSize(get_abi(stream), get_abi(desiredMaxSize), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface consume_Windows_UI_Xaml_Media_ILoadedImageSurfaceStatics<D>::StartLoadFromStream(Windows::Storage::Streams::IRandomAccessStream const& stream) const
 {
-    Windows::UI::Xaml::Media::LoadedImageSurface returnValue{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromStream(get_abi(stream), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::LoadedImageSurface result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics)->StartLoadFromStream(get_abi(stream), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D consume_Windows_UI_Xaml_Media_IMatrix3DProjection<D>::ProjectionMatrix() const
@@ -1158,23 +1163,23 @@ template <typename D> Windows::UI::Xaml::Media::Matrix consume_Windows_UI_Xaml_M
 
 template <typename D> Windows::UI::Xaml::Media::Matrix consume_Windows_UI_Xaml_Media_IMatrixHelperStatics<D>::FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY) const
 {
-    Windows::UI::Xaml::Media::Matrix returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->FromElements(m11, m12, m21, m22, offsetX, offsetY, put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::Matrix result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->FromElements(m11, m12, m21, m22, offsetX, offsetY, put_abi(result)));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_IMatrixHelperStatics<D>::GetIsIdentity(Windows::UI::Xaml::Media::Matrix const& target) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->GetIsIdentity(get_abi(target), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->GetIsIdentity(get_abi(target), &result));
+    return result;
 }
 
 template <typename D> Windows::Foundation::Point consume_Windows_UI_Xaml_Media_IMatrixHelperStatics<D>::Transform(Windows::UI::Xaml::Media::Matrix const& target, Windows::Foundation::Point const& point) const
 {
-    Windows::Foundation::Point returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->Transform(get_abi(target), get_abi(point), put_abi(returnValue)));
-    return returnValue;
+    Windows::Foundation::Point result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMatrixHelperStatics)->Transform(get_abi(target), get_abi(point), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Matrix consume_Windows_UI_Xaml_Media_IMatrixTransform<D>::Matrix() const
@@ -1203,9 +1208,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IMediaTransportControls
 
 template <typename D> Windows::Foundation::Deferral consume_Windows_UI_Xaml_Media_IMediaTransportControlsThumbnailRequestedEventArgs<D>::GetDeferral() const
 {
-    Windows::Foundation::Deferral returnValue{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs)->GetDeferral(put_abi(returnValue)));
-    return returnValue;
+    Windows::Foundation::Deferral result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs)->GetDeferral(put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Media::Playback::FailedMediaStreamKind consume_Windows_UI_Xaml_Media_IPartialMediaFailureDetectedEventArgs<D>::StreamKind() const
@@ -1215,9 +1220,9 @@ template <typename D> Windows::Media::Playback::FailedMediaStreamKind consume_Wi
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_UI_Xaml_Media_IPartialMediaFailureDetectedEventArgs2<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_UI_Xaml_Media_IPartialMediaFailureDetectedEventArgs2<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs2)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -1635,11 +1640,11 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Projection consume_Windows_UI_Xaml_Media_IProjectionFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::Projection consume_Windows_UI_Xaml_Media_IProjectionFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::Projection instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IProjectionFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::Projection value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IProjectionFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::Point consume_Windows_UI_Xaml_Media_IQuadraticBezierSegment<D>::Point1() const
@@ -1713,25 +1718,25 @@ template <typename D> Windows::Foundation::TimeSpan consume_Windows_UI_Xaml_Medi
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::RevealBackgroundBrush consume_Windows_UI_Xaml_Media_IRevealBackgroundBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::RevealBackgroundBrush consume_Windows_UI_Xaml_Media_IRevealBackgroundBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::RevealBackgroundBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::RevealBackgroundBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::RevealBorderBrush consume_Windows_UI_Xaml_Media_IRevealBorderBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::RevealBorderBrush consume_Windows_UI_Xaml_Media_IRevealBorderBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::RevealBorderBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBorderBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::RevealBorderBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBorderBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Color consume_Windows_UI_Xaml_Media_IRevealBrush<D>::Color() const
 {
-    Windows::UI::Color result{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrush)->get_Color(put_abi(result)));
-    return result;
+    Windows::UI::Color value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrush)->get_Color(put_abi(value)));
+    return value;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IRevealBrush<D>::Color(Windows::UI::Color const& value) const
@@ -1753,9 +1758,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IRevealBrush<D>::Target
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_IRevealBrush<D>::AlwaysUseFallback() const
 {
-    bool result{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrush)->get_AlwaysUseFallback(&result));
-    return result;
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrush)->get_AlwaysUseFallback(&value));
+    return value;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IRevealBrush<D>::AlwaysUseFallback(bool value) const
@@ -1763,11 +1768,11 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IRevealBrush<D>::Always
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrush)->put_AlwaysUseFallback(value));
 }
 
-template <typename D> Windows::UI::Xaml::Media::RevealBrush consume_Windows_UI_Xaml_Media_IRevealBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::RevealBrush consume_Windows_UI_Xaml_Media_IRevealBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::RevealBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::RevealBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IRevealBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_IRevealBrushStatics<D>::ColorProperty() const
@@ -2033,9 +2038,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_ISolidColorBrush<D>::Co
 
 template <typename D> Windows::UI::Xaml::Media::SolidColorBrush consume_Windows_UI_Xaml_Media_ISolidColorBrushFactory<D>::CreateInstanceWithColor(Windows::UI::Color const& color) const
 {
-    Windows::UI::Xaml::Media::SolidColorBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ISolidColorBrushFactory)->CreateInstanceWithColor(get_abi(color), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::SolidColorBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ISolidColorBrushFactory)->CreateInstanceWithColor(get_abi(color), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_ISolidColorBrushStatics<D>::ColorProperty() const
@@ -2081,11 +2086,11 @@ template <typename D> void consume_Windows_UI_Xaml_Media_ITileBrush<D>::Stretch(
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ITileBrush)->put_Stretch(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::TileBrush consume_Windows_UI_Xaml_Media_ITileBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::TileBrush consume_Windows_UI_Xaml_Media_ITileBrushFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::TileBrush instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ITileBrushFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::TileBrush value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::ITileBrushFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_Xaml_Media_ITileBrushStatics<D>::AlignmentXProperty() const
@@ -2244,51 +2249,51 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(Windows::Foundation::Point const& intersectingPoint, Windows::UI::Xaml::UIElement const& subtree) const
 {
-    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindElementsInHostCoordinatesPoint(get_abi(intersectingPoint), get_abi(subtree), put_abi(elements)));
-    return elements;
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindElementsInHostCoordinatesPoint(get_abi(intersectingPoint), get_abi(subtree), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(Windows::Foundation::Rect const& intersectingRect, Windows::UI::Xaml::UIElement const& subtree) const
 {
-    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindElementsInHostCoordinatesRect(get_abi(intersectingRect), get_abi(subtree), put_abi(elements)));
-    return elements;
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindElementsInHostCoordinatesRect(get_abi(intersectingRect), get_abi(subtree), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(Windows::Foundation::Point const& intersectingPoint, Windows::UI::Xaml::UIElement const& subtree, bool includeAllElements) const
 {
-    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindAllElementsInHostCoordinatesPoint(get_abi(intersectingPoint), get_abi(subtree), includeAllElements, put_abi(elements)));
-    return elements;
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindAllElementsInHostCoordinatesPoint(get_abi(intersectingPoint), get_abi(subtree), includeAllElements, put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::FindElementsInHostCoordinates(Windows::Foundation::Rect const& intersectingRect, Windows::UI::Xaml::UIElement const& subtree, bool includeAllElements) const
 {
-    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> elements{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindAllElementsInHostCoordinatesRect(get_abi(intersectingRect), get_abi(subtree), includeAllElements, put_abi(elements)));
-    return elements;
+    Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->FindAllElementsInHostCoordinatesRect(get_abi(intersectingRect), get_abi(subtree), includeAllElements, put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::GetChild(Windows::UI::Xaml::DependencyObject const& reference, int32_t childIndex) const
 {
-    Windows::UI::Xaml::DependencyObject child{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetChild(get_abi(reference), childIndex, put_abi(child)));
-    return child;
+    Windows::UI::Xaml::DependencyObject result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetChild(get_abi(reference), childIndex, put_abi(result)));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::GetChildrenCount(Windows::UI::Xaml::DependencyObject const& reference) const
 {
-    int32_t count{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetChildrenCount(get_abi(reference), &count));
-    return count;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetChildrenCount(get_abi(reference), &result));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::GetParent(Windows::UI::Xaml::DependencyObject const& reference) const
 {
-    Windows::UI::Xaml::DependencyObject parent{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetParent(get_abi(reference), put_abi(parent)));
-    return parent;
+    Windows::UI::Xaml::DependencyObject result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics)->GetParent(get_abi(reference), put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics<D>::DisconnectChildrenRecursive(Windows::UI::Xaml::UIElement const& element) const
@@ -2298,9 +2303,9 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatic
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> consume_Windows_UI_Xaml_Media_IVisualTreeHelperStatics2<D>::GetOpenPopups(Windows::UI::Xaml::Window const& window) const
 {
-    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> popups{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics2)->GetOpenPopups(get_abi(window), put_abi(popups)));
-    return popups;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IVisualTreeHelperStatics2)->GetOpenPopups(get_abi(window), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Color consume_Windows_UI_Xaml_Media_IXamlCompositionBrushBase<D>::FallbackColor() const
@@ -2315,11 +2320,11 @@ template <typename D> void consume_Windows_UI_Xaml_Media_IXamlCompositionBrushBa
     check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlCompositionBrushBase)->put_FallbackColor(get_abi(value)));
 }
 
-template <typename D> Windows::UI::Xaml::Media::XamlCompositionBrushBase consume_Windows_UI_Xaml_Media_IXamlCompositionBrushBaseFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::XamlCompositionBrushBase consume_Windows_UI_Xaml_Media_IXamlCompositionBrushBaseFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::XamlCompositionBrushBase instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::XamlCompositionBrushBase value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IXamlCompositionBrushBaseOverrides<D>::OnConnected() const
@@ -2351,18 +2356,18 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::XamlLight consume_Windows_UI_Xaml_Media_IXamlLightFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::XamlLight consume_Windows_UI_Xaml_Media_IXamlLightFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::XamlLight instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlLightFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::XamlLight value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlLightFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D> hstring consume_Windows_UI_Xaml_Media_IXamlLightOverrides<D>::GetId() const
 {
-    hstring returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlLightOverrides)->GetId(put_abi(returnValue)));
-    return returnValue;
+    hstring result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::IXamlLightOverrides)->GetId(put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Xaml_Media_IXamlLightOverrides<D>::OnConnected(Windows::UI::Xaml::UIElement const& newElement) const
@@ -2414,12 +2419,12 @@ template <> struct delegate<Windows::UI::Xaml::Media::RateChangedRoutedEventHand
     {
         type(H&& handler) : implements_delegate<Windows::UI::Xaml::Media::RateChangedRoutedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&sender), *reinterpret_cast<Windows::UI::Xaml::Media::RateChangedRoutedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -2436,12 +2441,12 @@ template <> struct delegate<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventH
     {
         type(H&& handler) : implements_delegate<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* e) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&sender), *reinterpret_cast<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs const*>(&e));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -2454,605 +2459,525 @@ template <> struct delegate<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventH
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IAcrylicBrush> : produce_base<D, Windows::UI::Xaml::Media::IAcrylicBrush>
 {
-    HRESULT __stdcall get_BackgroundSource(Windows::UI::Xaml::Media::AcrylicBackgroundSource* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundSource(Windows::UI::Xaml::Media::AcrylicBackgroundSource* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundSource, WINRT_WRAP(Windows::UI::Xaml::Media::AcrylicBackgroundSource));
             *value = detach_from<Windows::UI::Xaml::Media::AcrylicBackgroundSource>(this->shim().BackgroundSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundSource(Windows::UI::Xaml::Media::AcrylicBackgroundSource value) noexcept final
+    int32_t WINRT_CALL put_BackgroundSource(Windows::UI::Xaml::Media::AcrylicBackgroundSource value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundSource, WINRT_WRAP(void), Windows::UI::Xaml::Media::AcrylicBackgroundSource const&);
             this->shim().BackgroundSource(*reinterpret_cast<Windows::UI::Xaml::Media::AcrylicBackgroundSource const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintColor(struct struct_Windows_UI_Color* result) noexcept final
+    int32_t WINRT_CALL get_TintColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<Windows::UI::Color>(this->shim().TintColor());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TintColor, WINRT_WRAP(Windows::UI::Color));
+            *value = detach_from<Windows::UI::Color>(this->shim().TintColor());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TintColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_TintColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().TintColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintOpacity(double* value) noexcept final
+    int32_t WINRT_CALL get_TintOpacity(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintOpacity, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TintOpacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TintOpacity(double value) noexcept final
+    int32_t WINRT_CALL put_TintOpacity(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintOpacity, WINRT_WRAP(void), double);
             this->shim().TintOpacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintTransitionDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_TintTransitionDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintTransitionDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().TintTransitionDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TintTransitionDuration(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_TintTransitionDuration(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintTransitionDuration, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().TintTransitionDuration(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysUseFallback(bool* result) noexcept final
+    int32_t WINRT_CALL get_AlwaysUseFallback(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<bool>(this->shim().AlwaysUseFallback());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallback, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().AlwaysUseFallback());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysUseFallback(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysUseFallback(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallback, WINRT_WRAP(void), bool);
             this->shim().AlwaysUseFallback(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IAcrylicBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IAcrylicBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::AcrylicBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::AcrylicBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::AcrylicBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IAcrylicBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::IAcrylicBrushStatics>
 {
-    HRESULT __stdcall get_BackgroundSourceProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_BackgroundSourceProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundSourceProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().BackgroundSourceProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintColorProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TintColorProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintColorProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TintColorProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintOpacityProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TintOpacityProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintOpacityProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TintOpacityProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TintTransitionDurationProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TintTransitionDurationProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TintTransitionDurationProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TintTransitionDurationProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysUseFallbackProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AlwaysUseFallbackProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallbackProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AlwaysUseFallbackProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IArcSegment> : produce_base<D, Windows::UI::Xaml::Media::IArcSegment>
 {
-    HRESULT __stdcall get_Point(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(Windows::Foundation::Size value) noexcept final
+    int32_t WINRT_CALL put_Size(Windows::Foundation::Size value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), Windows::Foundation::Size const&);
             this->shim().Size(*reinterpret_cast<Windows::Foundation::Size const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngle(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationAngle(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationAngle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationAngle(double value) noexcept final
+    int32_t WINRT_CALL put_RotationAngle(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngle, WINRT_WRAP(void), double);
             this->shim().RotationAngle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsLargeArc(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsLargeArc(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLargeArc, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsLargeArc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsLargeArc(bool value) noexcept final
+    int32_t WINRT_CALL put_IsLargeArc(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLargeArc, WINRT_WRAP(void), bool);
             this->shim().IsLargeArc(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SweepDirection(Windows::UI::Xaml::Media::SweepDirection* value) noexcept final
+    int32_t WINRT_CALL get_SweepDirection(Windows::UI::Xaml::Media::SweepDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SweepDirection, WINRT_WRAP(Windows::UI::Xaml::Media::SweepDirection));
             *value = detach_from<Windows::UI::Xaml::Media::SweepDirection>(this->shim().SweepDirection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SweepDirection(Windows::UI::Xaml::Media::SweepDirection value) noexcept final
+    int32_t WINRT_CALL put_SweepDirection(Windows::UI::Xaml::Media::SweepDirection value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SweepDirection, WINRT_WRAP(void), Windows::UI::Xaml::Media::SweepDirection const&);
             this->shim().SweepDirection(*reinterpret_cast<Windows::UI::Xaml::Media::SweepDirection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IArcSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IArcSegmentStatics>
 {
-    HRESULT __stdcall get_PointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_PointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().PointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SizeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SizeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SizeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SizeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationAngleProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationAngleProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationAngleProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationAngleProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsLargeArcProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_IsLargeArcProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsLargeArcProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().IsLargeArcProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SweepDirectionProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SweepDirectionProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SweepDirectionProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SweepDirectionProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBezierSegment> : produce_base<D, Windows::UI::Xaml::Media::IBezierSegment>
 {
-    HRESULT __stdcall get_Point1(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point1(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point1(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point1(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point1(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point2(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point2(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point2(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point2(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point2(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point3(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point3(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point3, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point3(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point3(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point3, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point3(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBezierSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IBezierSegmentStatics>
 {
-    HRESULT __stdcall get_Point1Property(void** value) noexcept final
+    int32_t WINRT_CALL get_Point1Property(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1Property, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().Point1Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point2Property(void** value) noexcept final
+    int32_t WINRT_CALL get_Point2Property(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2Property, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().Point2Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point3Property(void** value) noexcept final
+    int32_t WINRT_CALL get_Point3Property(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point3Property, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().Point3Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3063,161 +2988,157 @@ struct produce<D, Windows::UI::Xaml::Media::IBitmapCache> : produce_base<D, Wind
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBrush> : produce_base<D, Windows::UI::Xaml::Media::IBrush>
 {
-    HRESULT __stdcall get_Opacity(double* value) noexcept final
+    int32_t WINRT_CALL get_Opacity(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Opacity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Opacity(double value) noexcept final
+    int32_t WINRT_CALL put_Opacity(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Opacity, WINRT_WRAP(void), double);
             this->shim().Opacity(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Transform(void** value) noexcept final
+    int32_t WINRT_CALL get_Transform(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Transform, WINRT_WRAP(Windows::UI::Xaml::Media::Transform));
             *value = detach_from<Windows::UI::Xaml::Media::Transform>(this->shim().Transform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Transform(void* value) noexcept final
+    int32_t WINRT_CALL put_Transform(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Transform, WINRT_WRAP(void), Windows::UI::Xaml::Media::Transform const&);
             this->shim().Transform(*reinterpret_cast<Windows::UI::Xaml::Media::Transform const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeTransform(void** value) noexcept final
+    int32_t WINRT_CALL get_RelativeTransform(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeTransform, WINRT_WRAP(Windows::UI::Xaml::Media::Transform));
             *value = detach_from<Windows::UI::Xaml::Media::Transform>(this->shim().RelativeTransform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RelativeTransform(void* value) noexcept final
+    int32_t WINRT_CALL put_RelativeTransform(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeTransform, WINRT_WRAP(void), Windows::UI::Xaml::Media::Transform const&);
             this->shim().RelativeTransform(*reinterpret_cast<Windows::UI::Xaml::Media::Transform const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::Brush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::Brush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::Brush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IBrushOverrides2> : produce_base<D, Windows::UI::Xaml::Media::IBrushOverrides2>
+{
+    int32_t WINRT_CALL PopulatePropertyInfoOverride(void* propertyName, void* animationPropertyInfo) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PopulatePropertyInfoOverride, WINRT_WRAP(void), hstring const&, Windows::UI::Composition::AnimationPropertyInfo const&);
+            this->shim().PopulatePropertyInfoOverride(*reinterpret_cast<hstring const*>(&propertyName), *reinterpret_cast<Windows::UI::Composition::AnimationPropertyInfo const*>(&animationPropertyInfo));
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::IBrushStatics>
 {
-    HRESULT __stdcall get_OpacityProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_OpacityProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OpacityProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().OpacityProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TransformProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TransformProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RelativeTransformProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RelativeTransformProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RelativeTransformProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RelativeTransformProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3228,417 +3149,361 @@ struct produce<D, Windows::UI::Xaml::Media::ICacheMode> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICacheModeFactory> : produce_base<D, Windows::UI::Xaml::Media::ICacheModeFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::CacheMode>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::CacheMode), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::CacheMode>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICompositeTransform> : produce_base<D, Windows::UI::Xaml::Media::ICompositeTransform>
 {
-    HRESULT __stdcall get_CenterX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(void), double);
             this->shim().CenterX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(void), double);
             this->shim().CenterY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleX(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleX(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(void), double);
             this->shim().ScaleX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleY(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleY(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(void), double);
             this->shim().ScaleY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkewX(double* value) noexcept final
+    int32_t WINRT_CALL get_SkewX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SkewX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SkewX(double value) noexcept final
+    int32_t WINRT_CALL put_SkewX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewX, WINRT_WRAP(void), double);
             this->shim().SkewX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkewY(double* value) noexcept final
+    int32_t WINRT_CALL get_SkewY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SkewY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SkewY(double value) noexcept final
+    int32_t WINRT_CALL put_SkewY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewY, WINRT_WRAP(void), double);
             this->shim().SkewY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rotation(double* value) noexcept final
+    int32_t WINRT_CALL get_Rotation(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Rotation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rotation(double value) noexcept final
+    int32_t WINRT_CALL put_Rotation(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(void), double);
             this->shim().Rotation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateX(double* value) noexcept final
+    int32_t WINRT_CALL get_TranslateX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TranslateX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TranslateX(double value) noexcept final
+    int32_t WINRT_CALL put_TranslateX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateX, WINRT_WRAP(void), double);
             this->shim().TranslateX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateY(double* value) noexcept final
+    int32_t WINRT_CALL get_TranslateY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TranslateY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TranslateY(double value) noexcept final
+    int32_t WINRT_CALL put_TranslateY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateY, WINRT_WRAP(void), double);
             this->shim().TranslateY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICompositeTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::ICompositeTransformStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkewXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SkewXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SkewXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkewYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SkewYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkewYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SkewYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TranslateXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TranslateXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TranslateYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TranslateYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3649,466 +3514,396 @@ struct produce<D, Windows::UI::Xaml::Media::ICompositionTarget> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICompositionTargetStatics> : produce_base<D, Windows::UI::Xaml::Media::ICompositionTargetStatics>
 {
-    HRESULT __stdcall add_Rendering(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Rendering(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Rendering(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Rendering, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Rendering(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Rendering(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Rendering(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Rendering(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Rendering, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Rendering(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_SurfaceContentsLost(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SurfaceContentsLost(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SurfaceContentsLost(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SurfaceContentsLost, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SurfaceContentsLost(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SurfaceContentsLost(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SurfaceContentsLost(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SurfaceContentsLost(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SurfaceContentsLost, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SurfaceContentsLost(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ICompositionTargetStatics3> : produce_base<D, Windows::UI::Xaml::Media::ICompositionTargetStatics3>
 {
-    HRESULT __stdcall add_Rendered(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Rendered(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Rendered(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Rendered, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Rendered(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Rendered(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Rendered(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Rendered(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Rendered, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Rendered(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IEllipseGeometry> : produce_base<D, Windows::UI::Xaml::Media::IEllipseGeometry>
 {
-    HRESULT __stdcall get_Center(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Center(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Center, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Center());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Center(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Center(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Center, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Center(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadiusX(double* value) noexcept final
+    int32_t WINRT_CALL get_RadiusX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RadiusX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RadiusX(double value) noexcept final
+    int32_t WINRT_CALL put_RadiusX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusX, WINRT_WRAP(void), double);
             this->shim().RadiusX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadiusY(double* value) noexcept final
+    int32_t WINRT_CALL get_RadiusY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RadiusY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RadiusY(double value) noexcept final
+    int32_t WINRT_CALL put_RadiusY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusY, WINRT_WRAP(void), double);
             this->shim().RadiusY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IEllipseGeometryStatics> : produce_base<D, Windows::UI::Xaml::Media::IEllipseGeometryStatics>
 {
-    HRESULT __stdcall get_CenterProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadiusXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RadiusXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RadiusXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RadiusYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RadiusYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RadiusYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RadiusYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IFontFamily> : produce_base<D, Windows::UI::Xaml::Media::IFontFamily>
 {
-    HRESULT __stdcall get_Source(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IFontFamilyFactory> : produce_base<D, Windows::UI::Xaml::Media::IFontFamilyFactory>
 {
-    HRESULT __stdcall CreateInstanceWithName(HSTRING familyName, void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceWithName(void* familyName, void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::FontFamily>(this->shim().CreateInstanceWithName(*reinterpret_cast<hstring const*>(&familyName), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstanceWithName, WINRT_WRAP(Windows::UI::Xaml::Media::FontFamily), hstring const&, Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::FontFamily>(this->shim().CreateInstanceWithName(*reinterpret_cast<hstring const*>(&familyName), *reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IFontFamilyStatics2> : produce_base<D, Windows::UI::Xaml::Media::IFontFamilyStatics2>
 {
-    HRESULT __stdcall get_XamlAutoFontFamily(void** value) noexcept final
+    int32_t WINRT_CALL get_XamlAutoFontFamily(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XamlAutoFontFamily, WINRT_WRAP(Windows::UI::Xaml::Media::FontFamily));
             *value = detach_from<Windows::UI::Xaml::Media::FontFamily>(this->shim().XamlAutoFontFamily());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeneralTransform> : produce_base<D, Windows::UI::Xaml::Media::IGeneralTransform>
 {
-    HRESULT __stdcall get_Inverse(void** value) noexcept final
+    int32_t WINRT_CALL get_Inverse(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Inverse, WINRT_WRAP(Windows::UI::Xaml::Media::GeneralTransform));
             *value = detach_from<Windows::UI::Xaml::Media::GeneralTransform>(this->shim().Inverse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransformPoint(Windows::Foundation::Point point, Windows::Foundation::Point* returnValue) noexcept final
+    int32_t WINRT_CALL TransformPoint(Windows::Foundation::Point point, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::Foundation::Point>(this->shim().TransformPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&point)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TransformPoint, WINRT_WRAP(Windows::Foundation::Point), Windows::Foundation::Point const&);
+            *result = detach_from<Windows::Foundation::Point>(this->shim().TransformPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&point)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryTransform(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
+    int32_t WINRT_CALL TryTransform(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryTransform, WINRT_WRAP(bool), Windows::Foundation::Point const&, Windows::Foundation::Point&);
             *returnValue = detach_from<bool>(this->shim().TryTransform(*reinterpret_cast<Windows::Foundation::Point const*>(&inPoint), *reinterpret_cast<Windows::Foundation::Point*>(outPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransformBounds(Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept final
+    int32_t WINRT_CALL TransformBounds(Windows::Foundation::Rect rect, Windows::Foundation::Rect* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::Foundation::Rect>(this->shim().TransformBounds(*reinterpret_cast<Windows::Foundation::Rect const*>(&rect)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TransformBounds, WINRT_WRAP(Windows::Foundation::Rect), Windows::Foundation::Rect const&);
+            *result = detach_from<Windows::Foundation::Rect>(this->shim().TransformBounds(*reinterpret_cast<Windows::Foundation::Rect const*>(&rect)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeneralTransformFactory> : produce_base<D, Windows::UI::Xaml::Media::IGeneralTransformFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::GeneralTransform>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::GeneralTransform), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::GeneralTransform>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeneralTransformOverrides> : produce_base<D, Windows::UI::Xaml::Media::IGeneralTransformOverrides>
 {
-    HRESULT __stdcall get_InverseCore(void** value) noexcept final
+    int32_t WINRT_CALL get_InverseCore(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InverseCore, WINRT_WRAP(Windows::UI::Xaml::Media::GeneralTransform));
             *value = detach_from<Windows::UI::Xaml::Media::GeneralTransform>(this->shim().InverseCore());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
+    int32_t WINRT_CALL TryTransformCore(Windows::Foundation::Point inPoint, Windows::Foundation::Point* outPoint, bool* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryTransformCore, WINRT_WRAP(bool), Windows::Foundation::Point const&, Windows::Foundation::Point&);
             *returnValue = detach_from<bool>(this->shim().TryTransformCore(*reinterpret_cast<Windows::Foundation::Point const*>(&inPoint), *reinterpret_cast<Windows::Foundation::Point*>(outPoint)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept final
+    int32_t WINRT_CALL TransformBoundsCore(Windows::Foundation::Rect rect, Windows::Foundation::Rect* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::Foundation::Rect>(this->shim().TransformBoundsCore(*reinterpret_cast<Windows::Foundation::Rect const*>(&rect)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TransformBoundsCore, WINRT_WRAP(Windows::Foundation::Rect), Windows::Foundation::Rect const&);
+            *result = detach_from<Windows::Foundation::Rect>(this->shim().TransformBoundsCore(*reinterpret_cast<Windows::Foundation::Rect const*>(&rect)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeometry> : produce_base<D, Windows::UI::Xaml::Media::IGeometry>
 {
-    HRESULT __stdcall get_Transform(void** value) noexcept final
+    int32_t WINRT_CALL get_Transform(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Transform, WINRT_WRAP(Windows::UI::Xaml::Media::Transform));
             *value = detach_from<Windows::UI::Xaml::Media::Transform>(this->shim().Transform());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Transform(void* value) noexcept final
+    int32_t WINRT_CALL put_Transform(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Transform, WINRT_WRAP(void), Windows::UI::Xaml::Media::Transform const&);
             this->shim().Transform(*reinterpret_cast<Windows::UI::Xaml::Media::Transform const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bounds(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Bounds(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bounds, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Bounds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4119,548 +3914,470 @@ struct produce<D, Windows::UI::Xaml::Media::IGeometryFactory> : produce_base<D, 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeometryGroup> : produce_base<D, Windows::UI::Xaml::Media::IGeometryGroup>
 {
-    HRESULT __stdcall get_FillRule(Windows::UI::Xaml::Media::FillRule* value) noexcept final
+    int32_t WINRT_CALL get_FillRule(Windows::UI::Xaml::Media::FillRule* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRule, WINRT_WRAP(Windows::UI::Xaml::Media::FillRule));
             *value = detach_from<Windows::UI::Xaml::Media::FillRule>(this->shim().FillRule());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FillRule(Windows::UI::Xaml::Media::FillRule value) noexcept final
+    int32_t WINRT_CALL put_FillRule(Windows::UI::Xaml::Media::FillRule value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRule, WINRT_WRAP(void), Windows::UI::Xaml::Media::FillRule const&);
             this->shim().FillRule(*reinterpret_cast<Windows::UI::Xaml::Media::FillRule const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Children(void** value) noexcept final
+    int32_t WINRT_CALL get_Children(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(Windows::UI::Xaml::Media::GeometryCollection));
             *value = detach_from<Windows::UI::Xaml::Media::GeometryCollection>(this->shim().Children());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Children(void* value) noexcept final
+    int32_t WINRT_CALL put_Children(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(void), Windows::UI::Xaml::Media::GeometryCollection const&);
             this->shim().Children(*reinterpret_cast<Windows::UI::Xaml::Media::GeometryCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeometryGroupStatics> : produce_base<D, Windows::UI::Xaml::Media::IGeometryGroupStatics>
 {
-    HRESULT __stdcall get_FillRuleProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_FillRuleProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRuleProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().FillRuleProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChildrenProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ChildrenProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChildrenProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ChildrenProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGeometryStatics> : produce_base<D, Windows::UI::Xaml::Media::IGeometryStatics>
 {
-    HRESULT __stdcall get_Empty(void** value) noexcept final
+    int32_t WINRT_CALL get_Empty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Empty, WINRT_WRAP(Windows::UI::Xaml::Media::Geometry));
             *value = detach_from<Windows::UI::Xaml::Media::Geometry>(this->shim().Empty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StandardFlatteningTolerance(double* value) noexcept final
+    int32_t WINRT_CALL get_StandardFlatteningTolerance(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StandardFlatteningTolerance, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().StandardFlatteningTolerance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransformProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TransformProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TransformProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientBrush> : produce_base<D, Windows::UI::Xaml::Media::IGradientBrush>
 {
-    HRESULT __stdcall get_SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod* value) noexcept final
+    int32_t WINRT_CALL get_SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpreadMethod, WINRT_WRAP(Windows::UI::Xaml::Media::GradientSpreadMethod));
             *value = detach_from<Windows::UI::Xaml::Media::GradientSpreadMethod>(this->shim().SpreadMethod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod value) noexcept final
+    int32_t WINRT_CALL put_SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpreadMethod, WINRT_WRAP(void), Windows::UI::Xaml::Media::GradientSpreadMethod const&);
             this->shim().SpreadMethod(*reinterpret_cast<Windows::UI::Xaml::Media::GradientSpreadMethod const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MappingMode(Windows::UI::Xaml::Media::BrushMappingMode* value) noexcept final
+    int32_t WINRT_CALL get_MappingMode(Windows::UI::Xaml::Media::BrushMappingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MappingMode, WINRT_WRAP(Windows::UI::Xaml::Media::BrushMappingMode));
             *value = detach_from<Windows::UI::Xaml::Media::BrushMappingMode>(this->shim().MappingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MappingMode(Windows::UI::Xaml::Media::BrushMappingMode value) noexcept final
+    int32_t WINRT_CALL put_MappingMode(Windows::UI::Xaml::Media::BrushMappingMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MappingMode, WINRT_WRAP(void), Windows::UI::Xaml::Media::BrushMappingMode const&);
             this->shim().MappingMode(*reinterpret_cast<Windows::UI::Xaml::Media::BrushMappingMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ColorInterpolationMode(Windows::UI::Xaml::Media::ColorInterpolationMode* value) noexcept final
+    int32_t WINRT_CALL get_ColorInterpolationMode(Windows::UI::Xaml::Media::ColorInterpolationMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorInterpolationMode, WINRT_WRAP(Windows::UI::Xaml::Media::ColorInterpolationMode));
             *value = detach_from<Windows::UI::Xaml::Media::ColorInterpolationMode>(this->shim().ColorInterpolationMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ColorInterpolationMode(Windows::UI::Xaml::Media::ColorInterpolationMode value) noexcept final
+    int32_t WINRT_CALL put_ColorInterpolationMode(Windows::UI::Xaml::Media::ColorInterpolationMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorInterpolationMode, WINRT_WRAP(void), Windows::UI::Xaml::Media::ColorInterpolationMode const&);
             this->shim().ColorInterpolationMode(*reinterpret_cast<Windows::UI::Xaml::Media::ColorInterpolationMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GradientStops(void** value) noexcept final
+    int32_t WINRT_CALL get_GradientStops(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GradientStops, WINRT_WRAP(Windows::UI::Xaml::Media::GradientStopCollection));
             *value = detach_from<Windows::UI::Xaml::Media::GradientStopCollection>(this->shim().GradientStops());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GradientStops(void* value) noexcept final
+    int32_t WINRT_CALL put_GradientStops(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GradientStops, WINRT_WRAP(void), Windows::UI::Xaml::Media::GradientStopCollection const&);
             this->shim().GradientStops(*reinterpret_cast<Windows::UI::Xaml::Media::GradientStopCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IGradientBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::GradientBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::GradientBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::GradientBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::IGradientBrushStatics>
 {
-    HRESULT __stdcall get_SpreadMethodProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SpreadMethodProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpreadMethodProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SpreadMethodProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MappingModeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_MappingModeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MappingModeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().MappingModeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ColorInterpolationModeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorInterpolationModeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorInterpolationModeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ColorInterpolationModeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GradientStopsProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_GradientStopsProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GradientStopsProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().GradientStopsProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientStop> : produce_base<D, Windows::UI::Xaml::Media::IGradientStop>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Offset(double* value) noexcept final
+    int32_t WINRT_CALL get_Offset(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Offset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Offset(double value) noexcept final
+    int32_t WINRT_CALL put_Offset(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Offset, WINRT_WRAP(void), double);
             this->shim().Offset(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IGradientStopStatics> : produce_base<D, Windows::UI::Xaml::Media::IGradientStopStatics>
 {
-    HRESULT __stdcall get_ColorProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ColorProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OffsetProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_OffsetProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().OffsetProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IImageBrush> : produce_base<D, Windows::UI::Xaml::Media::IImageBrush>
 {
-    HRESULT __stdcall get_ImageSource(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageSource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageSource, WINRT_WRAP(Windows::UI::Xaml::Media::ImageSource));
             *value = detach_from<Windows::UI::Xaml::Media::ImageSource>(this->shim().ImageSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ImageSource(void* value) noexcept final
+    int32_t WINRT_CALL put_ImageSource(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageSource, WINRT_WRAP(void), Windows::UI::Xaml::Media::ImageSource const&);
             this->shim().ImageSource(*reinterpret_cast<Windows::UI::Xaml::Media::ImageSource const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ImageFailed(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ImageFailed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ImageFailed(*reinterpret_cast<Windows::UI::Xaml::ExceptionRoutedEventHandler const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ImageFailed, WINRT_WRAP(winrt::event_token), Windows::UI::Xaml::ExceptionRoutedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().ImageFailed(*reinterpret_cast<Windows::UI::Xaml::ExceptionRoutedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ImageFailed(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ImageFailed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ImageFailed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ImageFailed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ImageOpened(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ImageFailed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ImageOpened, WINRT_WRAP(winrt::event_token), Windows::UI::Xaml::RoutedEventHandler const&);
+            *token = detach_from<winrt::event_token>(this->shim().ImageOpened(*reinterpret_cast<Windows::UI::Xaml::RoutedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ImageOpened(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ImageOpened(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ImageOpened(*reinterpret_cast<Windows::UI::Xaml::RoutedEventHandler const*>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ImageOpened(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ImageOpened(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ImageOpened, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ImageOpened(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IImageBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::IImageBrushStatics>
 {
-    HRESULT __stdcall get_ImageSourceProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageSourceProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageSourceProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ImageSourceProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4675,465 +4392,403 @@ struct produce<D, Windows::UI::Xaml::Media::IImageSourceFactory> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILineGeometry> : produce_base<D, Windows::UI::Xaml::Media::ILineGeometry>
 {
-    HRESULT __stdcall get_StartPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_StartPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().StartPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartPoint(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_StartPoint(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().StartPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_EndPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().EndPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndPoint(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_EndPoint(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().EndPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILineGeometryStatics> : produce_base<D, Windows::UI::Xaml::Media::ILineGeometryStatics>
 {
-    HRESULT __stdcall get_StartPointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_StartPointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().StartPointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndPointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_EndPointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().EndPointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILineSegment> : produce_base<D, Windows::UI::Xaml::Media::ILineSegment>
 {
-    HRESULT __stdcall get_Point(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILineSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::ILineSegmentStatics>
 {
-    HRESULT __stdcall get_PointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_PointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().PointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILinearGradientBrush> : produce_base<D, Windows::UI::Xaml::Media::ILinearGradientBrush>
 {
-    HRESULT __stdcall get_StartPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_StartPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().StartPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartPoint(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_StartPoint(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().StartPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_EndPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().EndPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndPoint(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_EndPoint(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPoint, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().EndPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILinearGradientBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::ILinearGradientBrushFactory>
 {
-    HRESULT __stdcall CreateInstanceWithGradientStopCollectionAndAngle(void* gradientStopCollection, double angle, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceWithGradientStopCollectionAndAngle(void* gradientStopCollection, double angle, void** value) noexcept final
     {
         try
         {
-            *instance = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::UI::Xaml::Media::LinearGradientBrush>(this->shim().CreateInstanceWithGradientStopCollectionAndAngle(*reinterpret_cast<Windows::UI::Xaml::Media::GradientStopCollection const*>(&gradientStopCollection), angle));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceWithGradientStopCollectionAndAngle, WINRT_WRAP(Windows::UI::Xaml::Media::LinearGradientBrush), Windows::UI::Xaml::Media::GradientStopCollection const&, double);
+            *value = detach_from<Windows::UI::Xaml::Media::LinearGradientBrush>(this->shim().CreateInstanceWithGradientStopCollectionAndAngle(*reinterpret_cast<Windows::UI::Xaml::Media::GradientStopCollection const*>(&gradientStopCollection), angle));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILinearGradientBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::ILinearGradientBrushStatics>
 {
-    HRESULT __stdcall get_StartPointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_StartPointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().StartPointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndPointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_EndPointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().EndPointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs>
 {
-    HRESULT __stdcall get_Status(Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus));
             *value = detach_from<Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSurface> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSurface>
 {
-    HRESULT __stdcall get_DecodedPhysicalSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_DecodedPhysicalSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecodedPhysicalSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().DecodedPhysicalSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DecodedSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_DecodedSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecodedSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().DecodedSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NaturalSize(Windows::Foundation::Size* value) noexcept final
+    int32_t WINRT_CALL get_NaturalSize(Windows::Foundation::Size* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NaturalSize, WINRT_WRAP(Windows::Foundation::Size));
             *value = detach_from<Windows::Foundation::Size>(this->shim().NaturalSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_LoadCompleted(void* value, event_token* token) noexcept final
+    int32_t WINRT_CALL add_LoadCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().LoadCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const*>(&value)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LoadCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().LoadCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_LoadCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_LoadCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().LoadCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LoadCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LoadCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>
 {
-    HRESULT __stdcall StartLoadFromUriWithSize(void* uri, Windows::Foundation::Size desiredMaxSize, void** returnValue) noexcept final
+    int32_t WINRT_CALL StartLoadFromUriWithSize(void* uri, Windows::Foundation::Size desiredMaxSize, void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Foundation::Size const*>(&desiredMaxSize)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StartLoadFromUri, WINRT_WRAP(Windows::UI::Xaml::Media::LoadedImageSurface), Windows::Foundation::Uri const&, Windows::Foundation::Size const&);
+            *result = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Foundation::Size const*>(&desiredMaxSize)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartLoadFromUri(void* uri, void** returnValue) noexcept final
+    int32_t WINRT_CALL StartLoadFromUri(void* uri, void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StartLoadFromUri, WINRT_WRAP(Windows::UI::Xaml::Media::LoadedImageSurface), Windows::Foundation::Uri const&);
+            *result = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartLoadFromStreamWithSize(void* stream, Windows::Foundation::Size desiredMaxSize, void** returnValue) noexcept final
+    int32_t WINRT_CALL StartLoadFromStreamWithSize(void* stream, Windows::Foundation::Size desiredMaxSize, void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromStream(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream), *reinterpret_cast<Windows::Foundation::Size const*>(&desiredMaxSize)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StartLoadFromStream, WINRT_WRAP(Windows::UI::Xaml::Media::LoadedImageSurface), Windows::Storage::Streams::IRandomAccessStream const&, Windows::Foundation::Size const&);
+            *result = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromStream(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream), *reinterpret_cast<Windows::Foundation::Size const*>(&desiredMaxSize)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartLoadFromStream(void* stream, void** returnValue) noexcept final
+    int32_t WINRT_CALL StartLoadFromStream(void* stream, void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromStream(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StartLoadFromStream, WINRT_WRAP(Windows::UI::Xaml::Media::LoadedImageSurface), Windows::Storage::Streams::IRandomAccessStream const&);
+            *result = detach_from<Windows::UI::Xaml::Media::LoadedImageSurface>(this->shim().StartLoadFromStream(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMatrix3DProjection> : produce_base<D, Windows::UI::Xaml::Media::IMatrix3DProjection>
 {
-    HRESULT __stdcall get_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
+    int32_t WINRT_CALL get_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMatrix, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D));
             *value = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().ProjectionMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D value) noexcept final
+    int32_t WINRT_CALL put_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMatrix, WINRT_WRAP(void), Windows::UI::Xaml::Media::Media3D::Matrix3D const&);
             this->shim().ProjectionMatrix(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMatrix3DProjectionStatics> : produce_base<D, Windows::UI::Xaml::Media::IMatrix3DProjectionStatics>
 {
-    HRESULT __stdcall get_ProjectionMatrixProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ProjectionMatrixProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMatrixProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ProjectionMatrixProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5144,456 +4799,398 @@ struct produce<D, Windows::UI::Xaml::Media::IMatrixHelper> : produce_base<D, Win
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMatrixHelperStatics> : produce_base<D, Windows::UI::Xaml::Media::IMatrixHelperStatics>
 {
-    HRESULT __stdcall get_Identity(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
+    int32_t WINRT_CALL get_Identity(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Identity, WINRT_WRAP(Windows::UI::Xaml::Media::Matrix));
             *value = detach_from<Windows::UI::Xaml::Media::Matrix>(this->shim().Identity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY, struct struct_Windows_UI_Xaml_Media_Matrix* returnValue) noexcept final
+    int32_t WINRT_CALL FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY, struct struct_Windows_UI_Xaml_Media_Matrix* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::Matrix>(this->shim().FromElements(m11, m12, m21, m22, offsetX, offsetY));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FromElements, WINRT_WRAP(Windows::UI::Xaml::Media::Matrix), double, double, double, double, double, double);
+            *result = detach_from<Windows::UI::Xaml::Media::Matrix>(this->shim().FromElements(m11, m12, m21, m22, offsetX, offsetY));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsIdentity(struct struct_Windows_UI_Xaml_Media_Matrix target, bool* value) noexcept final
+    int32_t WINRT_CALL GetIsIdentity(struct struct_Windows_UI_Xaml_Media_Matrix target, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().GetIsIdentity(*reinterpret_cast<Windows::UI::Xaml::Media::Matrix const*>(&target)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIsIdentity, WINRT_WRAP(bool), Windows::UI::Xaml::Media::Matrix const&);
+            *result = detach_from<bool>(this->shim().GetIsIdentity(*reinterpret_cast<Windows::UI::Xaml::Media::Matrix const*>(&target)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Transform(struct struct_Windows_UI_Xaml_Media_Matrix target, Windows::Foundation::Point point, Windows::Foundation::Point* returnValue) noexcept final
+    int32_t WINRT_CALL Transform(struct struct_Windows_UI_Xaml_Media_Matrix target, Windows::Foundation::Point point, Windows::Foundation::Point* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::Foundation::Point>(this->shim().Transform(*reinterpret_cast<Windows::UI::Xaml::Media::Matrix const*>(&target), *reinterpret_cast<Windows::Foundation::Point const*>(&point)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Transform, WINRT_WRAP(Windows::Foundation::Point), Windows::UI::Xaml::Media::Matrix const&, Windows::Foundation::Point const&);
+            *result = detach_from<Windows::Foundation::Point>(this->shim().Transform(*reinterpret_cast<Windows::UI::Xaml::Media::Matrix const*>(&target), *reinterpret_cast<Windows::Foundation::Point const*>(&point)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMatrixTransform> : produce_base<D, Windows::UI::Xaml::Media::IMatrixTransform>
 {
-    HRESULT __stdcall get_Matrix(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
+    int32_t WINRT_CALL get_Matrix(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Matrix, WINRT_WRAP(Windows::UI::Xaml::Media::Matrix));
             *value = detach_from<Windows::UI::Xaml::Media::Matrix>(this->shim().Matrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Matrix(struct struct_Windows_UI_Xaml_Media_Matrix value) noexcept final
+    int32_t WINRT_CALL put_Matrix(struct struct_Windows_UI_Xaml_Media_Matrix value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Matrix, WINRT_WRAP(void), Windows::UI::Xaml::Media::Matrix const&);
             this->shim().Matrix(*reinterpret_cast<Windows::UI::Xaml::Media::Matrix const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMatrixTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::IMatrixTransformStatics>
 {
-    HRESULT __stdcall get_MatrixProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_MatrixProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MatrixProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().MatrixProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs>
 {
-    HRESULT __stdcall SetThumbnailImage(void* source) noexcept final
+    int32_t WINRT_CALL SetThumbnailImage(void* source) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetThumbnailImage, WINRT_WRAP(void), Windows::Storage::Streams::IInputStream const&);
             this->shim().SetThumbnailImage(*reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&source));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** returnValue) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
+            *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs>
 {
-    HRESULT __stdcall get_StreamKind(Windows::Media::Playback::FailedMediaStreamKind* value) noexcept final
+    int32_t WINRT_CALL get_StreamKind(Windows::Media::Playback::FailedMediaStreamKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StreamKind, WINRT_WRAP(Windows::Media::Playback::FailedMediaStreamKind));
             *value = detach_from<Windows::Media::Playback::FailedMediaStreamKind>(this->shim().StreamKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs2> : produce_base<D, Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs2>
 {
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPathFigure> : produce_base<D, Windows::UI::Xaml::Media::IPathFigure>
 {
-    HRESULT __stdcall get_Segments(void** value) noexcept final
+    int32_t WINRT_CALL get_Segments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Segments, WINRT_WRAP(Windows::UI::Xaml::Media::PathSegmentCollection));
             *value = detach_from<Windows::UI::Xaml::Media::PathSegmentCollection>(this->shim().Segments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Segments(void* value) noexcept final
+    int32_t WINRT_CALL put_Segments(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Segments, WINRT_WRAP(void), Windows::UI::Xaml::Media::PathSegmentCollection const&);
             this->shim().Segments(*reinterpret_cast<Windows::UI::Xaml::Media::PathSegmentCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartPoint(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_StartPoint(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().StartPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartPoint(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_StartPoint(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPoint, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().StartPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsClosed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsClosed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsClosed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsClosed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsClosed(bool value) noexcept final
+    int32_t WINRT_CALL put_IsClosed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsClosed, WINRT_WRAP(void), bool);
             this->shim().IsClosed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFilled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFilled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFilled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFilled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsFilled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsFilled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFilled, WINRT_WRAP(void), bool);
             this->shim().IsFilled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPathFigureStatics> : produce_base<D, Windows::UI::Xaml::Media::IPathFigureStatics>
 {
-    HRESULT __stdcall get_SegmentsProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_SegmentsProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SegmentsProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().SegmentsProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartPointProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_StartPointProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPointProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().StartPointProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsClosedProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_IsClosedProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsClosedProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().IsClosedProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFilledProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_IsFilledProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFilledProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().IsFilledProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPathGeometry> : produce_base<D, Windows::UI::Xaml::Media::IPathGeometry>
 {
-    HRESULT __stdcall get_FillRule(Windows::UI::Xaml::Media::FillRule* value) noexcept final
+    int32_t WINRT_CALL get_FillRule(Windows::UI::Xaml::Media::FillRule* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRule, WINRT_WRAP(Windows::UI::Xaml::Media::FillRule));
             *value = detach_from<Windows::UI::Xaml::Media::FillRule>(this->shim().FillRule());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FillRule(Windows::UI::Xaml::Media::FillRule value) noexcept final
+    int32_t WINRT_CALL put_FillRule(Windows::UI::Xaml::Media::FillRule value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRule, WINRT_WRAP(void), Windows::UI::Xaml::Media::FillRule const&);
             this->shim().FillRule(*reinterpret_cast<Windows::UI::Xaml::Media::FillRule const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Figures(void** value) noexcept final
+    int32_t WINRT_CALL get_Figures(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Figures, WINRT_WRAP(Windows::UI::Xaml::Media::PathFigureCollection));
             *value = detach_from<Windows::UI::Xaml::Media::PathFigureCollection>(this->shim().Figures());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Figures(void* value) noexcept final
+    int32_t WINRT_CALL put_Figures(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Figures, WINRT_WRAP(void), Windows::UI::Xaml::Media::PathFigureCollection const&);
             this->shim().Figures(*reinterpret_cast<Windows::UI::Xaml::Media::PathFigureCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPathGeometryStatics> : produce_base<D, Windows::UI::Xaml::Media::IPathGeometryStatics>
 {
-    HRESULT __stdcall get_FillRuleProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_FillRuleProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FillRuleProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().FillRuleProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FiguresProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_FiguresProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FiguresProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().FiguresProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -5608,709 +5205,615 @@ struct produce<D, Windows::UI::Xaml::Media::IPathSegmentFactory> : produce_base<
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPlaneProjection> : produce_base<D, Windows::UI::Xaml::Media::IPlaneProjection>
 {
-    HRESULT __stdcall get_LocalOffsetX(double* value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LocalOffsetX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LocalOffsetX(double value) noexcept final
+    int32_t WINRT_CALL put_LocalOffsetX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetX, WINRT_WRAP(void), double);
             this->shim().LocalOffsetX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalOffsetY(double* value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LocalOffsetY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LocalOffsetY(double value) noexcept final
+    int32_t WINRT_CALL put_LocalOffsetY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetY, WINRT_WRAP(void), double);
             this->shim().LocalOffsetY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalOffsetZ(double* value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LocalOffsetZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LocalOffsetZ(double value) noexcept final
+    int32_t WINRT_CALL put_LocalOffsetZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetZ, WINRT_WRAP(void), double);
             this->shim().LocalOffsetZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationX(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationX(double value) noexcept final
+    int32_t WINRT_CALL put_RotationX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationX, WINRT_WRAP(void), double);
             this->shim().RotationX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationY(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationY(double value) noexcept final
+    int32_t WINRT_CALL put_RotationY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationY, WINRT_WRAP(void), double);
             this->shim().RotationY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationZ(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationZ(double value) noexcept final
+    int32_t WINRT_CALL put_RotationZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZ, WINRT_WRAP(void), double);
             this->shim().RotationZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterOfRotationX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterOfRotationX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterOfRotationX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationX, WINRT_WRAP(void), double);
             this->shim().CenterOfRotationX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterOfRotationY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterOfRotationY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterOfRotationY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationY, WINRT_WRAP(void), double);
             this->shim().CenterOfRotationY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationZ(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterOfRotationZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterOfRotationZ(double value) noexcept final
+    int32_t WINRT_CALL put_CenterOfRotationZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationZ, WINRT_WRAP(void), double);
             this->shim().CenterOfRotationZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetX(double* value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().GlobalOffsetX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GlobalOffsetX(double value) noexcept final
+    int32_t WINRT_CALL put_GlobalOffsetX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetX, WINRT_WRAP(void), double);
             this->shim().GlobalOffsetX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetY(double* value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().GlobalOffsetY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GlobalOffsetY(double value) noexcept final
+    int32_t WINRT_CALL put_GlobalOffsetY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetY, WINRT_WRAP(void), double);
             this->shim().GlobalOffsetY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetZ(double* value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().GlobalOffsetZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_GlobalOffsetZ(double value) noexcept final
+    int32_t WINRT_CALL put_GlobalOffsetZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetZ, WINRT_WRAP(void), double);
             this->shim().GlobalOffsetZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
+    int32_t WINRT_CALL get_ProjectionMatrix(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMatrix, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D));
             *value = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().ProjectionMatrix());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPlaneProjectionStatics> : produce_base<D, Windows::UI::Xaml::Media::IPlaneProjectionStatics>
 {
-    HRESULT __stdcall get_LocalOffsetXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().LocalOffsetXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalOffsetYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().LocalOffsetYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalOffsetZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalOffsetZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalOffsetZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().LocalOffsetZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterOfRotationXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterOfRotationYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterOfRotationZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterOfRotationZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterOfRotationZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterOfRotationZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().GlobalOffsetXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().GlobalOffsetYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GlobalOffsetZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_GlobalOffsetZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GlobalOffsetZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().GlobalOffsetZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProjectionMatrixProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ProjectionMatrixProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProjectionMatrixProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ProjectionMatrixProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyBezierSegment> : produce_base<D, Windows::UI::Xaml::Media::IPolyBezierSegment>
 {
-    HRESULT __stdcall get_Points(void** value) noexcept final
+    int32_t WINRT_CALL get_Points(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(Windows::UI::Xaml::Media::PointCollection));
             *value = detach_from<Windows::UI::Xaml::Media::PointCollection>(this->shim().Points());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Points(void* value) noexcept final
+    int32_t WINRT_CALL put_Points(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(void), Windows::UI::Xaml::Media::PointCollection const&);
             this->shim().Points(*reinterpret_cast<Windows::UI::Xaml::Media::PointCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyBezierSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IPolyBezierSegmentStatics>
 {
-    HRESULT __stdcall get_PointsProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_PointsProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointsProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().PointsProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyLineSegment> : produce_base<D, Windows::UI::Xaml::Media::IPolyLineSegment>
 {
-    HRESULT __stdcall get_Points(void** value) noexcept final
+    int32_t WINRT_CALL get_Points(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(Windows::UI::Xaml::Media::PointCollection));
             *value = detach_from<Windows::UI::Xaml::Media::PointCollection>(this->shim().Points());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Points(void* value) noexcept final
+    int32_t WINRT_CALL put_Points(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(void), Windows::UI::Xaml::Media::PointCollection const&);
             this->shim().Points(*reinterpret_cast<Windows::UI::Xaml::Media::PointCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyLineSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IPolyLineSegmentStatics>
 {
-    HRESULT __stdcall get_PointsProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_PointsProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointsProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().PointsProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment> : produce_base<D, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment>
 {
-    HRESULT __stdcall get_Points(void** value) noexcept final
+    int32_t WINRT_CALL get_Points(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(Windows::UI::Xaml::Media::PointCollection));
             *value = detach_from<Windows::UI::Xaml::Media::PointCollection>(this->shim().Points());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Points(void* value) noexcept final
+    int32_t WINRT_CALL put_Points(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Points, WINRT_WRAP(void), Windows::UI::Xaml::Media::PointCollection const&);
             this->shim().Points(*reinterpret_cast<Windows::UI::Xaml::Media::PointCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics>
 {
-    HRESULT __stdcall get_PointsProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_PointsProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointsProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().PointsProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6321,116 +5824,102 @@ struct produce<D, Windows::UI::Xaml::Media::IProjection> : produce_base<D, Windo
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IProjectionFactory> : produce_base<D, Windows::UI::Xaml::Media::IProjectionFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::Projection>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::Projection), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::Projection>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IQuadraticBezierSegment> : produce_base<D, Windows::UI::Xaml::Media::IQuadraticBezierSegment>
 {
-    HRESULT __stdcall get_Point1(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point1(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point1(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point1(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point1(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point2(Windows::Foundation::Point* value) noexcept final
+    int32_t WINRT_CALL get_Point2(Windows::Foundation::Point* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2, WINRT_WRAP(Windows::Foundation::Point));
             *value = detach_from<Windows::Foundation::Point>(this->shim().Point2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Point2(Windows::Foundation::Point value) noexcept final
+    int32_t WINRT_CALL put_Point2(Windows::Foundation::Point value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2, WINRT_WRAP(void), Windows::Foundation::Point const&);
             this->shim().Point2(*reinterpret_cast<Windows::Foundation::Point const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics> : produce_base<D, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>
 {
-    HRESULT __stdcall get_Point1Property(void** value) noexcept final
+    int32_t WINRT_CALL get_Point1Property(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point1Property, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().Point1Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Point2Property(void** value) noexcept final
+    int32_t WINRT_CALL get_Point2Property(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Point2Property, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().Point2Property());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6441,87 +5930,77 @@ struct produce<D, Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs> : produ
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRectangleGeometry> : produce_base<D, Windows::UI::Xaml::Media::IRectangleGeometry>
 {
-    HRESULT __stdcall get_Rect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_Rect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().Rect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rect(Windows::Foundation::Rect value) noexcept final
+    int32_t WINRT_CALL put_Rect(Windows::Foundation::Rect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rect, WINRT_WRAP(void), Windows::Foundation::Rect const&);
             this->shim().Rect(*reinterpret_cast<Windows::Foundation::Rect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRectangleGeometryStatics> : produce_base<D, Windows::UI::Xaml::Media::IRectangleGeometryStatics>
 {
-    HRESULT __stdcall get_RectProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RectProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RectProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RectProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRenderedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::IRenderedEventArgs>
 {
-    HRESULT __stdcall get_FrameDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_FrameDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().FrameDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRenderingEventArgs> : produce_base<D, Windows::UI::Xaml::Media::IRenderingEventArgs>
 {
-    HRESULT __stdcall get_RenderingTime(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_RenderingTime(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RenderingTime, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().RenderingTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6532,22 +6011,20 @@ struct produce<D, Windows::UI::Xaml::Media::IRevealBackgroundBrush> : produce_ba
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::RevealBackgroundBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::RevealBackgroundBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::RevealBackgroundBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -6558,1122 +6035,978 @@ struct produce<D, Windows::UI::Xaml::Media::IRevealBorderBrush> : produce_base<D
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRevealBorderBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IRevealBorderBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::RevealBorderBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::RevealBorderBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::RevealBorderBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRevealBrush> : produce_base<D, Windows::UI::Xaml::Media::IRevealBrush>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* result) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
+            *value = detach_from<Windows::UI::Color>(this->shim().Color());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetTheme(Windows::UI::Xaml::ApplicationTheme* value) noexcept final
+    int32_t WINRT_CALL get_TargetTheme(Windows::UI::Xaml::ApplicationTheme* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetTheme, WINRT_WRAP(Windows::UI::Xaml::ApplicationTheme));
             *value = detach_from<Windows::UI::Xaml::ApplicationTheme>(this->shim().TargetTheme());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TargetTheme(Windows::UI::Xaml::ApplicationTheme value) noexcept final
+    int32_t WINRT_CALL put_TargetTheme(Windows::UI::Xaml::ApplicationTheme value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetTheme, WINRT_WRAP(void), Windows::UI::Xaml::ApplicationTheme const&);
             this->shim().TargetTheme(*reinterpret_cast<Windows::UI::Xaml::ApplicationTheme const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysUseFallback(bool* result) noexcept final
+    int32_t WINRT_CALL get_AlwaysUseFallback(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<bool>(this->shim().AlwaysUseFallback());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallback, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().AlwaysUseFallback());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysUseFallback(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysUseFallback(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallback, WINRT_WRAP(void), bool);
             this->shim().AlwaysUseFallback(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRevealBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::IRevealBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::RevealBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::RevealBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::RevealBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRevealBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::IRevealBrushStatics>
 {
-    HRESULT __stdcall get_ColorProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ColorProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TargetThemeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TargetThemeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TargetThemeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TargetThemeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysUseFallbackProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AlwaysUseFallbackProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysUseFallbackProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AlwaysUseFallbackProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StateProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_StateProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StateProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().StateProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetState(void* element, Windows::UI::Xaml::Media::RevealBrushState value) noexcept final
+    int32_t WINRT_CALL SetState(void* element, Windows::UI::Xaml::Media::RevealBrushState value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetState, WINRT_WRAP(void), Windows::UI::Xaml::UIElement const&, Windows::UI::Xaml::Media::RevealBrushState const&);
             this->shim().SetState(*reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&element), *reinterpret_cast<Windows::UI::Xaml::Media::RevealBrushState const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetState(void* element, Windows::UI::Xaml::Media::RevealBrushState* result) noexcept final
+    int32_t WINRT_CALL GetState(void* element, Windows::UI::Xaml::Media::RevealBrushState* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetState, WINRT_WRAP(Windows::UI::Xaml::Media::RevealBrushState), Windows::UI::Xaml::UIElement const&);
             *result = detach_from<Windows::UI::Xaml::Media::RevealBrushState>(this->shim().GetState(*reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&element)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRotateTransform> : produce_base<D, Windows::UI::Xaml::Media::IRotateTransform>
 {
-    HRESULT __stdcall get_CenterX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(void), double);
             this->shim().CenterX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(void), double);
             this->shim().CenterY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Angle(double* value) noexcept final
+    int32_t WINRT_CALL get_Angle(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Angle, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Angle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Angle(double value) noexcept final
+    int32_t WINRT_CALL put_Angle(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Angle, WINRT_WRAP(void), double);
             this->shim().Angle(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IRotateTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::IRotateTransformStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngleProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AngleProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AngleProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IScaleTransform> : produce_base<D, Windows::UI::Xaml::Media::IScaleTransform>
 {
-    HRESULT __stdcall get_CenterX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(void), double);
             this->shim().CenterX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(void), double);
             this->shim().CenterY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleX(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleX(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(void), double);
             this->shim().ScaleX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleY(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleY(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(void), double);
             this->shim().ScaleY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IScaleTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::IScaleTransformStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ISkewTransform> : produce_base<D, Windows::UI::Xaml::Media::ISkewTransform>
 {
-    HRESULT __stdcall get_CenterX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(void), double);
             this->shim().CenterX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(void), double);
             this->shim().CenterY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngleX(double* value) noexcept final
+    int32_t WINRT_CALL get_AngleX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().AngleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AngleX(double value) noexcept final
+    int32_t WINRT_CALL put_AngleX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleX, WINRT_WRAP(void), double);
             this->shim().AngleX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngleY(double* value) noexcept final
+    int32_t WINRT_CALL get_AngleY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().AngleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AngleY(double value) noexcept final
+    int32_t WINRT_CALL put_AngleY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleY, WINRT_WRAP(void), double);
             this->shim().AngleY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ISkewTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::ISkewTransformStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngleXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AngleXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AngleXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngleYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AngleYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngleYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AngleYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ISolidColorBrush> : produce_base<D, Windows::UI::Xaml::Media::ISolidColorBrush>
 {
-    HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Color());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Color, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().Color(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ISolidColorBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::ISolidColorBrushFactory>
 {
-    HRESULT __stdcall CreateInstanceWithColor(struct struct_Windows_UI_Color color, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceWithColor(struct struct_Windows_UI_Color color, void** value) noexcept final
     {
         try
         {
-            *instance = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::UI::Xaml::Media::SolidColorBrush>(this->shim().CreateInstanceWithColor(*reinterpret_cast<Windows::UI::Color const*>(&color)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceWithColor, WINRT_WRAP(Windows::UI::Xaml::Media::SolidColorBrush), Windows::UI::Color const&);
+            *value = detach_from<Windows::UI::Xaml::Media::SolidColorBrush>(this->shim().CreateInstanceWithColor(*reinterpret_cast<Windows::UI::Color const*>(&color)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ISolidColorBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::ISolidColorBrushStatics>
 {
-    HRESULT __stdcall get_ColorProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ColorProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ColorProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ColorProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITileBrush> : produce_base<D, Windows::UI::Xaml::Media::ITileBrush>
 {
-    HRESULT __stdcall get_AlignmentX(Windows::UI::Xaml::Media::AlignmentX* value) noexcept final
+    int32_t WINRT_CALL get_AlignmentX(Windows::UI::Xaml::Media::AlignmentX* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentX, WINRT_WRAP(Windows::UI::Xaml::Media::AlignmentX));
             *value = detach_from<Windows::UI::Xaml::Media::AlignmentX>(this->shim().AlignmentX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlignmentX(Windows::UI::Xaml::Media::AlignmentX value) noexcept final
+    int32_t WINRT_CALL put_AlignmentX(Windows::UI::Xaml::Media::AlignmentX value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentX, WINRT_WRAP(void), Windows::UI::Xaml::Media::AlignmentX const&);
             this->shim().AlignmentX(*reinterpret_cast<Windows::UI::Xaml::Media::AlignmentX const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlignmentY(Windows::UI::Xaml::Media::AlignmentY* value) noexcept final
+    int32_t WINRT_CALL get_AlignmentY(Windows::UI::Xaml::Media::AlignmentY* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentY, WINRT_WRAP(Windows::UI::Xaml::Media::AlignmentY));
             *value = detach_from<Windows::UI::Xaml::Media::AlignmentY>(this->shim().AlignmentY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlignmentY(Windows::UI::Xaml::Media::AlignmentY value) noexcept final
+    int32_t WINRT_CALL put_AlignmentY(Windows::UI::Xaml::Media::AlignmentY value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentY, WINRT_WRAP(void), Windows::UI::Xaml::Media::AlignmentY const&);
             this->shim().AlignmentY(*reinterpret_cast<Windows::UI::Xaml::Media::AlignmentY const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Stretch(Windows::UI::Xaml::Media::Stretch* value) noexcept final
+    int32_t WINRT_CALL get_Stretch(Windows::UI::Xaml::Media::Stretch* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(Windows::UI::Xaml::Media::Stretch));
             *value = detach_from<Windows::UI::Xaml::Media::Stretch>(this->shim().Stretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Stretch(Windows::UI::Xaml::Media::Stretch value) noexcept final
+    int32_t WINRT_CALL put_Stretch(Windows::UI::Xaml::Media::Stretch value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stretch, WINRT_WRAP(void), Windows::UI::Xaml::Media::Stretch const&);
             this->shim().Stretch(*reinterpret_cast<Windows::UI::Xaml::Media::Stretch const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITileBrushFactory> : produce_base<D, Windows::UI::Xaml::Media::ITileBrushFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::TileBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::TileBrush), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::TileBrush>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITileBrushStatics> : produce_base<D, Windows::UI::Xaml::Media::ITileBrushStatics>
 {
-    HRESULT __stdcall get_AlignmentXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AlignmentXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AlignmentXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlignmentYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_AlignmentYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().AlignmentYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StretchProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_StretchProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StretchProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().StretchProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITimelineMarker> : produce_base<D, Windows::UI::Xaml::Media::ITimelineMarker>
 {
-    HRESULT __stdcall get_Time(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Time(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Time, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Time());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Time(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_Time(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Time, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Time(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Type(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Type(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Type(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(void), hstring const&);
             this->shim().Type(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs>
 {
-    HRESULT __stdcall get_Marker(void** value) noexcept final
+    int32_t WINRT_CALL get_Marker(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Marker, WINRT_WRAP(Windows::UI::Xaml::Media::TimelineMarker));
             *value = detach_from<Windows::UI::Xaml::Media::TimelineMarker>(this->shim().Marker());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Marker(void* value) noexcept final
+    int32_t WINRT_CALL put_Marker(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Marker, WINRT_WRAP(void), Windows::UI::Xaml::Media::TimelineMarker const&);
             this->shim().Marker(*reinterpret_cast<Windows::UI::Xaml::Media::TimelineMarker const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITimelineMarkerStatics> : produce_base<D, Windows::UI::Xaml::Media::ITimelineMarkerStatics>
 {
-    HRESULT __stdcall get_TimeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TimeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TimeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TypeProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TypeProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TypeProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TypeProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TextProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TextProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7688,160 +7021,140 @@ struct produce<D, Windows::UI::Xaml::Media::ITransformFactory> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITransformGroup> : produce_base<D, Windows::UI::Xaml::Media::ITransformGroup>
 {
-    HRESULT __stdcall get_Children(void** value) noexcept final
+    int32_t WINRT_CALL get_Children(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(Windows::UI::Xaml::Media::TransformCollection));
             *value = detach_from<Windows::UI::Xaml::Media::TransformCollection>(this->shim().Children());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Children(void* value) noexcept final
+    int32_t WINRT_CALL put_Children(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Children, WINRT_WRAP(void), Windows::UI::Xaml::Media::TransformCollection const&);
             this->shim().Children(*reinterpret_cast<Windows::UI::Xaml::Media::TransformCollection const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
+    int32_t WINRT_CALL get_Value(struct struct_Windows_UI_Xaml_Media_Matrix* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::UI::Xaml::Media::Matrix));
             *value = detach_from<Windows::UI::Xaml::Media::Matrix>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITransformGroupStatics> : produce_base<D, Windows::UI::Xaml::Media::ITransformGroupStatics>
 {
-    HRESULT __stdcall get_ChildrenProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ChildrenProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChildrenProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ChildrenProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITranslateTransform> : produce_base<D, Windows::UI::Xaml::Media::ITranslateTransform>
 {
-    HRESULT __stdcall get_X(double* value) noexcept final
+    int32_t WINRT_CALL get_X(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().X());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_X(double value) noexcept final
+    int32_t WINRT_CALL put_X(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(X, WINRT_WRAP(void), double);
             this->shim().X(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Y(double* value) noexcept final
+    int32_t WINRT_CALL get_Y(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Y, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Y());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Y(double value) noexcept final
+    int32_t WINRT_CALL put_Y(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Y, WINRT_WRAP(void), double);
             this->shim().Y(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::ITranslateTransformStatics> : produce_base<D, Windows::UI::Xaml::Media::ITranslateTransformStatics>
 {
-    HRESULT __stdcall get_XProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_XProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().XProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_YProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().YProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7852,279 +7165,245 @@ struct produce<D, Windows::UI::Xaml::Media::IVisualTreeHelper> : produce_base<D,
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IVisualTreeHelperStatics> : produce_base<D, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>
 {
-    HRESULT __stdcall FindElementsInHostCoordinatesPoint(Windows::Foundation::Point intersectingPoint, void* subtree, void** elements) noexcept final
+    int32_t WINRT_CALL FindElementsInHostCoordinatesPoint(Windows::Foundation::Point intersectingPoint, void* subtree, void** result) noexcept final
     {
         try
         {
-            *elements = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *elements = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Point const*>(&intersectingPoint), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FindElementsInHostCoordinates, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>), Windows::Foundation::Point const&, Windows::UI::Xaml::UIElement const&);
+            *result = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Point const*>(&intersectingPoint), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindElementsInHostCoordinatesRect(Windows::Foundation::Rect intersectingRect, void* subtree, void** elements) noexcept final
+    int32_t WINRT_CALL FindElementsInHostCoordinatesRect(Windows::Foundation::Rect intersectingRect, void* subtree, void** result) noexcept final
     {
         try
         {
-            *elements = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *elements = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Rect const*>(&intersectingRect), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FindElementsInHostCoordinates, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>), Windows::Foundation::Rect const&, Windows::UI::Xaml::UIElement const&);
+            *result = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Rect const*>(&intersectingRect), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllElementsInHostCoordinatesPoint(Windows::Foundation::Point intersectingPoint, void* subtree, bool includeAllElements, void** elements) noexcept final
+    int32_t WINRT_CALL FindAllElementsInHostCoordinatesPoint(Windows::Foundation::Point intersectingPoint, void* subtree, bool includeAllElements, void** result) noexcept final
     {
         try
         {
-            *elements = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *elements = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Point const*>(&intersectingPoint), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree), includeAllElements));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FindElementsInHostCoordinates, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>), Windows::Foundation::Point const&, Windows::UI::Xaml::UIElement const&, bool);
+            *result = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Point const*>(&intersectingPoint), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree), includeAllElements));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindAllElementsInHostCoordinatesRect(Windows::Foundation::Rect intersectingRect, void* subtree, bool includeAllElements, void** elements) noexcept final
+    int32_t WINRT_CALL FindAllElementsInHostCoordinatesRect(Windows::Foundation::Rect intersectingRect, void* subtree, bool includeAllElements, void** result) noexcept final
     {
         try
         {
-            *elements = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *elements = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Rect const*>(&intersectingRect), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree), includeAllElements));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FindElementsInHostCoordinates, WINRT_WRAP(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>), Windows::Foundation::Rect const&, Windows::UI::Xaml::UIElement const&, bool);
+            *result = detach_from<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>>(this->shim().FindElementsInHostCoordinates(*reinterpret_cast<Windows::Foundation::Rect const*>(&intersectingRect), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&subtree), includeAllElements));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChild(void* reference, int32_t childIndex, void** child) noexcept final
+    int32_t WINRT_CALL GetChild(void* reference, int32_t childIndex, void** result) noexcept final
     {
         try
         {
-            *child = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *child = detach_from<Windows::UI::Xaml::DependencyObject>(this->shim().GetChild(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference), childIndex));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetChild, WINRT_WRAP(Windows::UI::Xaml::DependencyObject), Windows::UI::Xaml::DependencyObject const&, int32_t);
+            *result = detach_from<Windows::UI::Xaml::DependencyObject>(this->shim().GetChild(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference), childIndex));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetChildrenCount(void* reference, int32_t* count) noexcept final
+    int32_t WINRT_CALL GetChildrenCount(void* reference, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *count = detach_from<int32_t>(this->shim().GetChildrenCount(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetChildrenCount, WINRT_WRAP(int32_t), Windows::UI::Xaml::DependencyObject const&);
+            *result = detach_from<int32_t>(this->shim().GetChildrenCount(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetParent(void* reference, void** parent) noexcept final
+    int32_t WINRT_CALL GetParent(void* reference, void** result) noexcept final
     {
         try
         {
-            *parent = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *parent = detach_from<Windows::UI::Xaml::DependencyObject>(this->shim().GetParent(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetParent, WINRT_WRAP(Windows::UI::Xaml::DependencyObject), Windows::UI::Xaml::DependencyObject const&);
+            *result = detach_from<Windows::UI::Xaml::DependencyObject>(this->shim().GetParent(*reinterpret_cast<Windows::UI::Xaml::DependencyObject const*>(&reference)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DisconnectChildrenRecursive(void* element) noexcept final
+    int32_t WINRT_CALL DisconnectChildrenRecursive(void* element) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisconnectChildrenRecursive, WINRT_WRAP(void), Windows::UI::Xaml::UIElement const&);
             this->shim().DisconnectChildrenRecursive(*reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&element));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IVisualTreeHelperStatics2> : produce_base<D, Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>
 {
-    HRESULT __stdcall GetOpenPopups(void* window, void** popups) noexcept final
+    int32_t WINRT_CALL GetOpenPopups(void* window, void** result) noexcept final
     {
         try
         {
-            *popups = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *popups = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup>>(this->shim().GetOpenPopups(*reinterpret_cast<Windows::UI::Xaml::Window const*>(&window)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetOpenPopups, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup>), Windows::UI::Xaml::Window const&);
+            *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup>>(this->shim().GetOpenPopups(*reinterpret_cast<Windows::UI::Xaml::Window const*>(&window)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase>
 {
-    HRESULT __stdcall get_FallbackColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_FallbackColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FallbackColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().FallbackColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FallbackColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_FallbackColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FallbackColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().FallbackColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::XamlCompositionBrushBase>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::XamlCompositionBrushBase), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::XamlCompositionBrushBase>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides>
 {
-    HRESULT __stdcall OnConnected() noexcept final
+    int32_t WINRT_CALL OnConnected() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnConnected, WINRT_WRAP(void));
             this->shim().OnConnected();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnDisconnected() noexcept final
+    int32_t WINRT_CALL OnDisconnected() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnDisconnected, WINRT_WRAP(void));
             this->shim().OnDisconnected();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
 {
-    HRESULT __stdcall get_CompositionBrush(void** value) noexcept final
+    int32_t WINRT_CALL get_CompositionBrush(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositionBrush, WINRT_WRAP(Windows::UI::Composition::CompositionBrush));
             *value = detach_from<Windows::UI::Composition::CompositionBrush>(this->shim().CompositionBrush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompositionBrush(void* value) noexcept final
+    int32_t WINRT_CALL put_CompositionBrush(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositionBrush, WINRT_WRAP(void), Windows::UI::Composition::CompositionBrush const&);
             this->shim().CompositionBrush(*reinterpret_cast<Windows::UI::Composition::CompositionBrush const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>
 {
-    HRESULT __stdcall get_FallbackColorProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_FallbackColorProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FallbackColorProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().FallbackColorProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -8135,165 +7414,159 @@ struct produce<D, Windows::UI::Xaml::Media::IXamlLight> : produce_base<D, Window
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlLightFactory> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::XamlLight>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::XamlLight), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::XamlLight>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlLightOverrides> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightOverrides>
 {
-    HRESULT __stdcall GetId(HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL GetId(void** result) noexcept final
     {
         try
         {
-            *returnValue = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<hstring>(this->shim().GetId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetId, WINRT_WRAP(hstring));
+            *result = detach_from<hstring>(this->shim().GetId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnConnected(void* newElement) noexcept final
+    int32_t WINRT_CALL OnConnected(void* newElement) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnConnected, WINRT_WRAP(void), Windows::UI::Xaml::UIElement const&);
             this->shim().OnConnected(*reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&newElement));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnDisconnected(void* oldElement) noexcept final
+    int32_t WINRT_CALL OnDisconnected(void* oldElement) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnDisconnected, WINRT_WRAP(void), Windows::UI::Xaml::UIElement const&);
             this->shim().OnDisconnected(*reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&oldElement));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlLightProtected> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightProtected>
 {
-    HRESULT __stdcall get_CompositionLight(void** value) noexcept final
+    int32_t WINRT_CALL get_CompositionLight(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositionLight, WINRT_WRAP(Windows::UI::Composition::CompositionLight));
             *value = detach_from<Windows::UI::Composition::CompositionLight>(this->shim().CompositionLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CompositionLight(void* value) noexcept final
+    int32_t WINRT_CALL put_CompositionLight(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompositionLight, WINRT_WRAP(void), Windows::UI::Composition::CompositionLight const&);
             this->shim().CompositionLight(*reinterpret_cast<Windows::UI::Composition::CompositionLight const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::IXamlLightStatics> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightStatics>
 {
-    HRESULT __stdcall AddTargetElement(HSTRING lightId, void* element) noexcept final
+    int32_t WINRT_CALL AddTargetElement(void* lightId, void* element) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddTargetElement, WINRT_WRAP(void), hstring const&, Windows::UI::Xaml::UIElement const&);
             this->shim().AddTargetElement(*reinterpret_cast<hstring const*>(&lightId), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&element));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveTargetElement(HSTRING lightId, void* element) noexcept final
+    int32_t WINRT_CALL RemoveTargetElement(void* lightId, void* element) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveTargetElement, WINRT_WRAP(void), hstring const&, Windows::UI::Xaml::UIElement const&);
             this->shim().RemoveTargetElement(*reinterpret_cast<hstring const*>(&lightId), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&element));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddTargetBrush(HSTRING lightId, void* brush) noexcept final
+    int32_t WINRT_CALL AddTargetBrush(void* lightId, void* brush) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddTargetBrush, WINRT_WRAP(void), hstring const&, Windows::UI::Xaml::Media::Brush const&);
             this->shim().AddTargetBrush(*reinterpret_cast<hstring const*>(&lightId), *reinterpret_cast<Windows::UI::Xaml::Media::Brush const*>(&brush));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveTargetBrush(HSTRING lightId, void* brush) noexcept final
+    int32_t WINRT_CALL RemoveTargetBrush(void* lightId, void* brush) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveTargetBrush, WINRT_WRAP(void), hstring const&, Windows::UI::Xaml::Media::Brush const&);
             this->shim().RemoveTargetBrush(*reinterpret_cast<hstring const*>(&lightId), *reinterpret_cast<Windows::UI::Xaml::Media::Brush const*>(&brush));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
+template <typename T, typename D>
+struct WINRT_EBO produce_dispatch_to_overridable<T, D, Windows::UI::Xaml::Media::IBrushOverrides2>
+    : produce_dispatch_to_overridable_base<T, D, Windows::UI::Xaml::Media::IBrushOverrides2>
+{
+    void PopulatePropertyInfoOverride(hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo)
+    {
+        Windows::UI::Xaml::Media::IBrushOverrides2 overridable = this->shim_overridable();
+        if (overridable)
+        {
+            return overridable.PopulatePropertyInfoOverride(propertyName, animationPropertyInfo);
+        }
+        return this->shim().PopulatePropertyInfoOverride(propertyName, animationPropertyInfo);
+    }
+};
 template <typename T, typename D>
 struct WINRT_EBO produce_dispatch_to_overridable<T, D, Windows::UI::Xaml::Media::IGeneralTransformOverrides>
     : produce_dispatch_to_overridable_base<T, D, Windows::UI::Xaml::Media::IGeneralTransformOverrides>
@@ -8387,858 +7660,858 @@ WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Media {
 
 inline AcrylicBrush::AcrylicBrush()
 {
-    Windows::Foundation::IInspectable outer, inner;
-    *this = get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushFactory>().CreateInstance(outer, inner);
+    Windows::Foundation::IInspectable baseInterface, innerInterface;
+    *this = impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushFactory>([&](auto&& f) { return f.CreateInstance(baseInterface, innerInterface); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty AcrylicBrush::BackgroundSourceProperty()
 {
-    return get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>().BackgroundSourceProperty();
+    return impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>([&](auto&& f) { return f.BackgroundSourceProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty AcrylicBrush::TintColorProperty()
 {
-    return get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>().TintColorProperty();
+    return impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>([&](auto&& f) { return f.TintColorProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty AcrylicBrush::TintOpacityProperty()
 {
-    return get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>().TintOpacityProperty();
+    return impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>([&](auto&& f) { return f.TintOpacityProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty AcrylicBrush::TintTransitionDurationProperty()
 {
-    return get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>().TintTransitionDurationProperty();
+    return impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>([&](auto&& f) { return f.TintTransitionDurationProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty AcrylicBrush::AlwaysUseFallbackProperty()
 {
-    return get_activation_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>().AlwaysUseFallbackProperty();
+    return impl::call_factory<AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushStatics>([&](auto&& f) { return f.AlwaysUseFallbackProperty(); });
 }
 
 inline ArcSegment::ArcSegment() :
-    ArcSegment(get_activation_factory<ArcSegment>().ActivateInstance<ArcSegment>())
+    ArcSegment(impl::call_factory<ArcSegment>([](auto&& f) { return f.template ActivateInstance<ArcSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::PointProperty()
 {
-    return get_activation_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>().PointProperty();
+    return impl::call_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>([&](auto&& f) { return f.PointProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::SizeProperty()
 {
-    return get_activation_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>().SizeProperty();
+    return impl::call_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>([&](auto&& f) { return f.SizeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::RotationAngleProperty()
 {
-    return get_activation_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>().RotationAngleProperty();
+    return impl::call_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>([&](auto&& f) { return f.RotationAngleProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::IsLargeArcProperty()
 {
-    return get_activation_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>().IsLargeArcProperty();
+    return impl::call_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>([&](auto&& f) { return f.IsLargeArcProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ArcSegment::SweepDirectionProperty()
 {
-    return get_activation_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>().SweepDirectionProperty();
+    return impl::call_factory<ArcSegment, Windows::UI::Xaml::Media::IArcSegmentStatics>([&](auto&& f) { return f.SweepDirectionProperty(); });
 }
 
 inline BezierSegment::BezierSegment() :
-    BezierSegment(get_activation_factory<BezierSegment>().ActivateInstance<BezierSegment>())
+    BezierSegment(impl::call_factory<BezierSegment>([](auto&& f) { return f.template ActivateInstance<BezierSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point1Property()
 {
-    return get_activation_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>().Point1Property();
+    return impl::call_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>([&](auto&& f) { return f.Point1Property(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point2Property()
 {
-    return get_activation_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>().Point2Property();
+    return impl::call_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>([&](auto&& f) { return f.Point2Property(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty BezierSegment::Point3Property()
 {
-    return get_activation_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>().Point3Property();
+    return impl::call_factory<BezierSegment, Windows::UI::Xaml::Media::IBezierSegmentStatics>([&](auto&& f) { return f.Point3Property(); });
 }
 
 inline BitmapCache::BitmapCache() :
-    BitmapCache(get_activation_factory<BitmapCache>().ActivateInstance<BitmapCache>())
+    BitmapCache(impl::call_factory<BitmapCache>([](auto&& f) { return f.template ActivateInstance<BitmapCache>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Brush::OpacityProperty()
 {
-    return get_activation_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>().OpacityProperty();
+    return impl::call_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>([&](auto&& f) { return f.OpacityProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty Brush::TransformProperty()
 {
-    return get_activation_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>().TransformProperty();
+    return impl::call_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>([&](auto&& f) { return f.TransformProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty Brush::RelativeTransformProperty()
 {
-    return get_activation_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>().RelativeTransformProperty();
+    return impl::call_factory<Brush, Windows::UI::Xaml::Media::IBrushStatics>([&](auto&& f) { return f.RelativeTransformProperty(); });
 }
 
 inline BrushCollection::BrushCollection() :
-    BrushCollection(get_activation_factory<BrushCollection>().ActivateInstance<BrushCollection>())
+    BrushCollection(impl::call_factory<BrushCollection>([](auto&& f) { return f.template ActivateInstance<BrushCollection>(); }))
 {}
 
 inline CompositeTransform::CompositeTransform() :
-    CompositeTransform(get_activation_factory<CompositeTransform>().ActivateInstance<CompositeTransform>())
+    CompositeTransform(impl::call_factory<CompositeTransform>([](auto&& f) { return f.template ActivateInstance<CompositeTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::CenterXProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().CenterXProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.CenterXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::CenterYProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().CenterYProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.CenterYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::ScaleXProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().ScaleXProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.ScaleXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::ScaleYProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().ScaleYProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.ScaleYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::SkewXProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().SkewXProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.SkewXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::SkewYProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().SkewYProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.SkewYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::RotationProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().RotationProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.RotationProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::TranslateXProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().TranslateXProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.TranslateXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform::TranslateYProperty()
 {
-    return get_activation_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>().TranslateYProperty();
+    return impl::call_factory<CompositeTransform, Windows::UI::Xaml::Media::ICompositeTransformStatics>([&](auto&& f) { return f.TranslateYProperty(); });
 }
 
-inline event_token CompositionTarget::Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value)
+inline winrt::event_token CompositionTarget::Rendering(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>().Rendering(value);
+    return impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>([&](auto&& f) { return f.Rendering(handler); });
 }
 
-inline factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics> CompositionTarget::Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value)
+inline CompositionTarget::Rendering_revoker CompositionTarget::Rendering(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>();
-    return { factory, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_Rendering, factory.Rendering(value) };
+    auto f = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>();
+    return { f, f.Rendering(handler) };
 }
 
-inline void CompositionTarget::Rendering(event_token const& token)
+inline void CompositionTarget::Rendering(winrt::event_token const& token)
 {
-    get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>().Rendering(token);
+    impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>([&](auto&& f) { return f.Rendering(token); });
 }
 
-inline event_token CompositionTarget::SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value)
+inline winrt::event_token CompositionTarget::SurfaceContentsLost(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>().SurfaceContentsLost(value);
+    return impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>([&](auto&& f) { return f.SurfaceContentsLost(handler); });
 }
 
-inline factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics> CompositionTarget::SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value)
+inline CompositionTarget::SurfaceContentsLost_revoker CompositionTarget::SurfaceContentsLost(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>();
-    return { factory, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics>::remove_SurfaceContentsLost, factory.SurfaceContentsLost(value) };
+    auto f = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>();
+    return { f, f.SurfaceContentsLost(handler) };
 }
 
-inline void CompositionTarget::SurfaceContentsLost(event_token const& token)
+inline void CompositionTarget::SurfaceContentsLost(winrt::event_token const& token)
 {
-    get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>().SurfaceContentsLost(token);
+    impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics>([&](auto&& f) { return f.SurfaceContentsLost(token); });
 }
 
-inline event_token CompositionTarget::Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value)
+inline winrt::event_token CompositionTarget::Rendered(Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler)
 {
-    return get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>().Rendered(value);
+    return impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>([&](auto&& f) { return f.Rendered(handler); });
 }
 
-inline factory_event_revoker<Windows::UI::Xaml::Media::ICompositionTargetStatics3> CompositionTarget::Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& value)
+inline CompositionTarget::Rendered_revoker CompositionTarget::Rendered(auto_revoke_t, Windows::Foundation::EventHandler<Windows::UI::Xaml::Media::RenderedEventArgs> const& handler)
 {
-    auto factory = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>();
-    return { factory, &impl::abi_t<Windows::UI::Xaml::Media::ICompositionTargetStatics3>::remove_Rendered, factory.Rendered(value) };
+    auto f = get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>();
+    return { f, f.Rendered(handler) };
 }
 
-inline void CompositionTarget::Rendered(event_token const& token)
+inline void CompositionTarget::Rendered(winrt::event_token const& token)
 {
-    get_activation_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>().Rendered(token);
+    impl::call_factory<CompositionTarget, Windows::UI::Xaml::Media::ICompositionTargetStatics3>([&](auto&& f) { return f.Rendered(token); });
 }
 
 inline DoubleCollection::DoubleCollection() :
-    DoubleCollection(get_activation_factory<DoubleCollection>().ActivateInstance<DoubleCollection>())
+    DoubleCollection(impl::call_factory<DoubleCollection>([](auto&& f) { return f.template ActivateInstance<DoubleCollection>(); }))
 {}
 
 inline EllipseGeometry::EllipseGeometry() :
-    EllipseGeometry(get_activation_factory<EllipseGeometry>().ActivateInstance<EllipseGeometry>())
+    EllipseGeometry(impl::call_factory<EllipseGeometry>([](auto&& f) { return f.template ActivateInstance<EllipseGeometry>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::CenterProperty()
 {
-    return get_activation_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>().CenterProperty();
+    return impl::call_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>([&](auto&& f) { return f.CenterProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusXProperty()
 {
-    return get_activation_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>().RadiusXProperty();
+    return impl::call_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>([&](auto&& f) { return f.RadiusXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty EllipseGeometry::RadiusYProperty()
 {
-    return get_activation_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>().RadiusYProperty();
+    return impl::call_factory<EllipseGeometry, Windows::UI::Xaml::Media::IEllipseGeometryStatics>([&](auto&& f) { return f.RadiusYProperty(); });
 }
 
 inline FontFamily::FontFamily(param::hstring const& familyName)
 {
-    Windows::Foundation::IInspectable outer, inner;
-    *this = get_activation_factory<FontFamily, Windows::UI::Xaml::Media::IFontFamilyFactory>().CreateInstanceWithName(familyName, outer, inner);
+    Windows::Foundation::IInspectable baseInterface, innerInterface;
+    *this = impl::call_factory<FontFamily, Windows::UI::Xaml::Media::IFontFamilyFactory>([&](auto&& f) { return f.CreateInstanceWithName(familyName, baseInterface, innerInterface); });
 }
 
 inline Windows::UI::Xaml::Media::FontFamily FontFamily::XamlAutoFontFamily()
 {
-    return get_activation_factory<FontFamily, Windows::UI::Xaml::Media::IFontFamilyStatics2>().XamlAutoFontFamily();
+    return impl::call_factory<FontFamily, Windows::UI::Xaml::Media::IFontFamilyStatics2>([&](auto&& f) { return f.XamlAutoFontFamily(); });
 }
 
 inline Windows::UI::Xaml::Media::Geometry Geometry::Empty()
 {
-    return get_activation_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>().Empty();
+    return impl::call_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>([&](auto&& f) { return f.Empty(); });
 }
 
 inline double Geometry::StandardFlatteningTolerance()
 {
-    return get_activation_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>().StandardFlatteningTolerance();
+    return impl::call_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>([&](auto&& f) { return f.StandardFlatteningTolerance(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty Geometry::TransformProperty()
 {
-    return get_activation_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>().TransformProperty();
+    return impl::call_factory<Geometry, Windows::UI::Xaml::Media::IGeometryStatics>([&](auto&& f) { return f.TransformProperty(); });
 }
 
 inline GeometryCollection::GeometryCollection() :
-    GeometryCollection(get_activation_factory<GeometryCollection>().ActivateInstance<GeometryCollection>())
+    GeometryCollection(impl::call_factory<GeometryCollection>([](auto&& f) { return f.template ActivateInstance<GeometryCollection>(); }))
 {}
 
 inline GeometryGroup::GeometryGroup() :
-    GeometryGroup(get_activation_factory<GeometryGroup>().ActivateInstance<GeometryGroup>())
+    GeometryGroup(impl::call_factory<GeometryGroup>([](auto&& f) { return f.template ActivateInstance<GeometryGroup>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty GeometryGroup::FillRuleProperty()
 {
-    return get_activation_factory<GeometryGroup, Windows::UI::Xaml::Media::IGeometryGroupStatics>().FillRuleProperty();
+    return impl::call_factory<GeometryGroup, Windows::UI::Xaml::Media::IGeometryGroupStatics>([&](auto&& f) { return f.FillRuleProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GeometryGroup::ChildrenProperty()
 {
-    return get_activation_factory<GeometryGroup, Windows::UI::Xaml::Media::IGeometryGroupStatics>().ChildrenProperty();
+    return impl::call_factory<GeometryGroup, Windows::UI::Xaml::Media::IGeometryGroupStatics>([&](auto&& f) { return f.ChildrenProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::SpreadMethodProperty()
 {
-    return get_activation_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>().SpreadMethodProperty();
+    return impl::call_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>([&](auto&& f) { return f.SpreadMethodProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::MappingModeProperty()
 {
-    return get_activation_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>().MappingModeProperty();
+    return impl::call_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>([&](auto&& f) { return f.MappingModeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::ColorInterpolationModeProperty()
 {
-    return get_activation_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>().ColorInterpolationModeProperty();
+    return impl::call_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>([&](auto&& f) { return f.ColorInterpolationModeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientBrush::GradientStopsProperty()
 {
-    return get_activation_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>().GradientStopsProperty();
+    return impl::call_factory<GradientBrush, Windows::UI::Xaml::Media::IGradientBrushStatics>([&](auto&& f) { return f.GradientStopsProperty(); });
 }
 
 inline GradientStop::GradientStop() :
-    GradientStop(get_activation_factory<GradientStop>().ActivateInstance<GradientStop>())
+    GradientStop(impl::call_factory<GradientStop>([](auto&& f) { return f.template ActivateInstance<GradientStop>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty GradientStop::ColorProperty()
 {
-    return get_activation_factory<GradientStop, Windows::UI::Xaml::Media::IGradientStopStatics>().ColorProperty();
+    return impl::call_factory<GradientStop, Windows::UI::Xaml::Media::IGradientStopStatics>([&](auto&& f) { return f.ColorProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty GradientStop::OffsetProperty()
 {
-    return get_activation_factory<GradientStop, Windows::UI::Xaml::Media::IGradientStopStatics>().OffsetProperty();
+    return impl::call_factory<GradientStop, Windows::UI::Xaml::Media::IGradientStopStatics>([&](auto&& f) { return f.OffsetProperty(); });
 }
 
 inline GradientStopCollection::GradientStopCollection() :
-    GradientStopCollection(get_activation_factory<GradientStopCollection>().ActivateInstance<GradientStopCollection>())
+    GradientStopCollection(impl::call_factory<GradientStopCollection>([](auto&& f) { return f.template ActivateInstance<GradientStopCollection>(); }))
 {}
 
 inline ImageBrush::ImageBrush() :
-    ImageBrush(get_activation_factory<ImageBrush>().ActivateInstance<ImageBrush>())
+    ImageBrush(impl::call_factory<ImageBrush>([](auto&& f) { return f.template ActivateInstance<ImageBrush>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ImageBrush::ImageSourceProperty()
 {
-    return get_activation_factory<ImageBrush, Windows::UI::Xaml::Media::IImageBrushStatics>().ImageSourceProperty();
+    return impl::call_factory<ImageBrush, Windows::UI::Xaml::Media::IImageBrushStatics>([&](auto&& f) { return f.ImageSourceProperty(); });
 }
 
 inline LineGeometry::LineGeometry() :
-    LineGeometry(get_activation_factory<LineGeometry>().ActivateInstance<LineGeometry>())
+    LineGeometry(impl::call_factory<LineGeometry>([](auto&& f) { return f.template ActivateInstance<LineGeometry>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LineGeometry::StartPointProperty()
 {
-    return get_activation_factory<LineGeometry, Windows::UI::Xaml::Media::ILineGeometryStatics>().StartPointProperty();
+    return impl::call_factory<LineGeometry, Windows::UI::Xaml::Media::ILineGeometryStatics>([&](auto&& f) { return f.StartPointProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty LineGeometry::EndPointProperty()
 {
-    return get_activation_factory<LineGeometry, Windows::UI::Xaml::Media::ILineGeometryStatics>().EndPointProperty();
+    return impl::call_factory<LineGeometry, Windows::UI::Xaml::Media::ILineGeometryStatics>([&](auto&& f) { return f.EndPointProperty(); });
 }
 
 inline LineSegment::LineSegment() :
-    LineSegment(get_activation_factory<LineSegment>().ActivateInstance<LineSegment>())
+    LineSegment(impl::call_factory<LineSegment>([](auto&& f) { return f.template ActivateInstance<LineSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LineSegment::PointProperty()
 {
-    return get_activation_factory<LineSegment, Windows::UI::Xaml::Media::ILineSegmentStatics>().PointProperty();
+    return impl::call_factory<LineSegment, Windows::UI::Xaml::Media::ILineSegmentStatics>([&](auto&& f) { return f.PointProperty(); });
 }
 
 inline LinearGradientBrush::LinearGradientBrush() :
-    LinearGradientBrush(get_activation_factory<LinearGradientBrush>().ActivateInstance<LinearGradientBrush>())
+    LinearGradientBrush(impl::call_factory<LinearGradientBrush>([](auto&& f) { return f.template ActivateInstance<LinearGradientBrush>(); }))
 {}
 
 inline LinearGradientBrush::LinearGradientBrush(Windows::UI::Xaml::Media::GradientStopCollection const& gradientStopCollection, double angle) :
-    LinearGradientBrush(get_activation_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushFactory>().CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle))
+    LinearGradientBrush(impl::call_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushFactory>([&](auto&& f) { return f.CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::StartPointProperty()
 {
-    return get_activation_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushStatics>().StartPointProperty();
+    return impl::call_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushStatics>([&](auto&& f) { return f.StartPointProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::EndPointProperty()
 {
-    return get_activation_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushStatics>().EndPointProperty();
+    return impl::call_factory<LinearGradientBrush, Windows::UI::Xaml::Media::ILinearGradientBrushStatics>([&](auto&& f) { return f.EndPointProperty(); });
 }
 
 inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromUri(Windows::Foundation::Uri const& uri, Windows::Foundation::Size const& desiredMaxSize)
 {
-    return get_activation_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>().StartLoadFromUri(uri, desiredMaxSize);
+    return impl::call_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>([&](auto&& f) { return f.StartLoadFromUri(uri, desiredMaxSize); });
 }
 
 inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromUri(Windows::Foundation::Uri const& uri)
 {
-    return get_activation_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>().StartLoadFromUri(uri);
+    return impl::call_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>([&](auto&& f) { return f.StartLoadFromUri(uri); });
 }
 
 inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromStream(Windows::Storage::Streams::IRandomAccessStream const& stream, Windows::Foundation::Size const& desiredMaxSize)
 {
-    return get_activation_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>().StartLoadFromStream(stream, desiredMaxSize);
+    return impl::call_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>([&](auto&& f) { return f.StartLoadFromStream(stream, desiredMaxSize); });
 }
 
 inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromStream(Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>().StartLoadFromStream(stream);
+    return impl::call_factory<LoadedImageSurface, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>([&](auto&& f) { return f.StartLoadFromStream(stream); });
 }
 
 inline Matrix3DProjection::Matrix3DProjection() :
-    Matrix3DProjection(get_activation_factory<Matrix3DProjection>().ActivateInstance<Matrix3DProjection>())
+    Matrix3DProjection(impl::call_factory<Matrix3DProjection>([](auto&& f) { return f.template ActivateInstance<Matrix3DProjection>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty Matrix3DProjection::ProjectionMatrixProperty()
 {
-    return get_activation_factory<Matrix3DProjection, Windows::UI::Xaml::Media::IMatrix3DProjectionStatics>().ProjectionMatrixProperty();
+    return impl::call_factory<Matrix3DProjection, Windows::UI::Xaml::Media::IMatrix3DProjectionStatics>([&](auto&& f) { return f.ProjectionMatrixProperty(); });
 }
 
 inline Windows::UI::Xaml::Media::Matrix MatrixHelper::Identity()
 {
-    return get_activation_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>().Identity();
+    return impl::call_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>([&](auto&& f) { return f.Identity(); });
 }
 
 inline Windows::UI::Xaml::Media::Matrix MatrixHelper::FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY)
 {
-    return get_activation_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>().FromElements(m11, m12, m21, m22, offsetX, offsetY);
+    return impl::call_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>([&](auto&& f) { return f.FromElements(m11, m12, m21, m22, offsetX, offsetY); });
 }
 
 inline bool MatrixHelper::GetIsIdentity(Windows::UI::Xaml::Media::Matrix const& target)
 {
-    return get_activation_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>().GetIsIdentity(target);
+    return impl::call_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>([&](auto&& f) { return f.GetIsIdentity(target); });
 }
 
 inline Windows::Foundation::Point MatrixHelper::Transform(Windows::UI::Xaml::Media::Matrix const& target, Windows::Foundation::Point const& point)
 {
-    return get_activation_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>().Transform(target, point);
+    return impl::call_factory<MatrixHelper, Windows::UI::Xaml::Media::IMatrixHelperStatics>([&](auto&& f) { return f.Transform(target, point); });
 }
 
 inline MatrixTransform::MatrixTransform() :
-    MatrixTransform(get_activation_factory<MatrixTransform>().ActivateInstance<MatrixTransform>())
+    MatrixTransform(impl::call_factory<MatrixTransform>([](auto&& f) { return f.template ActivateInstance<MatrixTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty MatrixTransform::MatrixProperty()
 {
-    return get_activation_factory<MatrixTransform, Windows::UI::Xaml::Media::IMatrixTransformStatics>().MatrixProperty();
+    return impl::call_factory<MatrixTransform, Windows::UI::Xaml::Media::IMatrixTransformStatics>([&](auto&& f) { return f.MatrixProperty(); });
 }
 
 inline PartialMediaFailureDetectedEventArgs::PartialMediaFailureDetectedEventArgs() :
-    PartialMediaFailureDetectedEventArgs(get_activation_factory<PartialMediaFailureDetectedEventArgs>().ActivateInstance<PartialMediaFailureDetectedEventArgs>())
+    PartialMediaFailureDetectedEventArgs(impl::call_factory<PartialMediaFailureDetectedEventArgs>([](auto&& f) { return f.template ActivateInstance<PartialMediaFailureDetectedEventArgs>(); }))
 {}
 
 inline PathFigure::PathFigure() :
-    PathFigure(get_activation_factory<PathFigure>().ActivateInstance<PathFigure>())
+    PathFigure(impl::call_factory<PathFigure>([](auto&& f) { return f.template ActivateInstance<PathFigure>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::SegmentsProperty()
 {
-    return get_activation_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>().SegmentsProperty();
+    return impl::call_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>([&](auto&& f) { return f.SegmentsProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::StartPointProperty()
 {
-    return get_activation_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>().StartPointProperty();
+    return impl::call_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>([&](auto&& f) { return f.StartPointProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::IsClosedProperty()
 {
-    return get_activation_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>().IsClosedProperty();
+    return impl::call_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>([&](auto&& f) { return f.IsClosedProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathFigure::IsFilledProperty()
 {
-    return get_activation_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>().IsFilledProperty();
+    return impl::call_factory<PathFigure, Windows::UI::Xaml::Media::IPathFigureStatics>([&](auto&& f) { return f.IsFilledProperty(); });
 }
 
 inline PathFigureCollection::PathFigureCollection() :
-    PathFigureCollection(get_activation_factory<PathFigureCollection>().ActivateInstance<PathFigureCollection>())
+    PathFigureCollection(impl::call_factory<PathFigureCollection>([](auto&& f) { return f.template ActivateInstance<PathFigureCollection>(); }))
 {}
 
 inline PathGeometry::PathGeometry() :
-    PathGeometry(get_activation_factory<PathGeometry>().ActivateInstance<PathGeometry>())
+    PathGeometry(impl::call_factory<PathGeometry>([](auto&& f) { return f.template ActivateInstance<PathGeometry>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PathGeometry::FillRuleProperty()
 {
-    return get_activation_factory<PathGeometry, Windows::UI::Xaml::Media::IPathGeometryStatics>().FillRuleProperty();
+    return impl::call_factory<PathGeometry, Windows::UI::Xaml::Media::IPathGeometryStatics>([&](auto&& f) { return f.FillRuleProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PathGeometry::FiguresProperty()
 {
-    return get_activation_factory<PathGeometry, Windows::UI::Xaml::Media::IPathGeometryStatics>().FiguresProperty();
+    return impl::call_factory<PathGeometry, Windows::UI::Xaml::Media::IPathGeometryStatics>([&](auto&& f) { return f.FiguresProperty(); });
 }
 
 inline PathSegmentCollection::PathSegmentCollection() :
-    PathSegmentCollection(get_activation_factory<PathSegmentCollection>().ActivateInstance<PathSegmentCollection>())
+    PathSegmentCollection(impl::call_factory<PathSegmentCollection>([](auto&& f) { return f.template ActivateInstance<PathSegmentCollection>(); }))
 {}
 
 inline PlaneProjection::PlaneProjection() :
-    PlaneProjection(get_activation_factory<PlaneProjection>().ActivateInstance<PlaneProjection>())
+    PlaneProjection(impl::call_factory<PlaneProjection>([](auto&& f) { return f.template ActivateInstance<PlaneProjection>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetXProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().LocalOffsetXProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.LocalOffsetXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetYProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().LocalOffsetYProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.LocalOffsetYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::LocalOffsetZProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().LocalOffsetZProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.LocalOffsetZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationXProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().RotationXProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.RotationXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationYProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().RotationYProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.RotationYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::RotationZProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().RotationZProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.RotationZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationXProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().CenterOfRotationXProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.CenterOfRotationXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationYProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().CenterOfRotationYProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.CenterOfRotationYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::CenterOfRotationZProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().CenterOfRotationZProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.CenterOfRotationZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetXProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().GlobalOffsetXProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.GlobalOffsetXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetYProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().GlobalOffsetYProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.GlobalOffsetYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::GlobalOffsetZProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().GlobalOffsetZProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.GlobalOffsetZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PlaneProjection::ProjectionMatrixProperty()
 {
-    return get_activation_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>().ProjectionMatrixProperty();
+    return impl::call_factory<PlaneProjection, Windows::UI::Xaml::Media::IPlaneProjectionStatics>([&](auto&& f) { return f.ProjectionMatrixProperty(); });
 }
 
 inline PointCollection::PointCollection() :
-    PointCollection(get_activation_factory<PointCollection>().ActivateInstance<PointCollection>())
+    PointCollection(impl::call_factory<PointCollection>([](auto&& f) { return f.template ActivateInstance<PointCollection>(); }))
 {}
 
 inline PolyBezierSegment::PolyBezierSegment() :
-    PolyBezierSegment(get_activation_factory<PolyBezierSegment>().ActivateInstance<PolyBezierSegment>())
+    PolyBezierSegment(impl::call_factory<PolyBezierSegment>([](auto&& f) { return f.template ActivateInstance<PolyBezierSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyBezierSegment::PointsProperty()
 {
-    return get_activation_factory<PolyBezierSegment, Windows::UI::Xaml::Media::IPolyBezierSegmentStatics>().PointsProperty();
+    return impl::call_factory<PolyBezierSegment, Windows::UI::Xaml::Media::IPolyBezierSegmentStatics>([&](auto&& f) { return f.PointsProperty(); });
 }
 
 inline PolyLineSegment::PolyLineSegment() :
-    PolyLineSegment(get_activation_factory<PolyLineSegment>().ActivateInstance<PolyLineSegment>())
+    PolyLineSegment(impl::call_factory<PolyLineSegment>([](auto&& f) { return f.template ActivateInstance<PolyLineSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyLineSegment::PointsProperty()
 {
-    return get_activation_factory<PolyLineSegment, Windows::UI::Xaml::Media::IPolyLineSegmentStatics>().PointsProperty();
+    return impl::call_factory<PolyLineSegment, Windows::UI::Xaml::Media::IPolyLineSegmentStatics>([&](auto&& f) { return f.PointsProperty(); });
 }
 
 inline PolyQuadraticBezierSegment::PolyQuadraticBezierSegment() :
-    PolyQuadraticBezierSegment(get_activation_factory<PolyQuadraticBezierSegment>().ActivateInstance<PolyQuadraticBezierSegment>())
+    PolyQuadraticBezierSegment(impl::call_factory<PolyQuadraticBezierSegment>([](auto&& f) { return f.template ActivateInstance<PolyQuadraticBezierSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PolyQuadraticBezierSegment::PointsProperty()
 {
-    return get_activation_factory<PolyQuadraticBezierSegment, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics>().PointsProperty();
+    return impl::call_factory<PolyQuadraticBezierSegment, Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics>([&](auto&& f) { return f.PointsProperty(); });
 }
 
 inline QuadraticBezierSegment::QuadraticBezierSegment() :
-    QuadraticBezierSegment(get_activation_factory<QuadraticBezierSegment>().ActivateInstance<QuadraticBezierSegment>())
+    QuadraticBezierSegment(impl::call_factory<QuadraticBezierSegment>([](auto&& f) { return f.template ActivateInstance<QuadraticBezierSegment>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty QuadraticBezierSegment::Point1Property()
 {
-    return get_activation_factory<QuadraticBezierSegment, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>().Point1Property();
+    return impl::call_factory<QuadraticBezierSegment, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>([&](auto&& f) { return f.Point1Property(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty QuadraticBezierSegment::Point2Property()
 {
-    return get_activation_factory<QuadraticBezierSegment, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>().Point2Property();
+    return impl::call_factory<QuadraticBezierSegment, Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>([&](auto&& f) { return f.Point2Property(); });
 }
 
 inline RateChangedRoutedEventArgs::RateChangedRoutedEventArgs() :
-    RateChangedRoutedEventArgs(get_activation_factory<RateChangedRoutedEventArgs>().ActivateInstance<RateChangedRoutedEventArgs>())
+    RateChangedRoutedEventArgs(impl::call_factory<RateChangedRoutedEventArgs>([](auto&& f) { return f.template ActivateInstance<RateChangedRoutedEventArgs>(); }))
 {}
 
 inline RectangleGeometry::RectangleGeometry() :
-    RectangleGeometry(get_activation_factory<RectangleGeometry>().ActivateInstance<RectangleGeometry>())
+    RectangleGeometry(impl::call_factory<RectangleGeometry>([](auto&& f) { return f.template ActivateInstance<RectangleGeometry>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RectangleGeometry::RectProperty()
 {
-    return get_activation_factory<RectangleGeometry, Windows::UI::Xaml::Media::IRectangleGeometryStatics>().RectProperty();
+    return impl::call_factory<RectangleGeometry, Windows::UI::Xaml::Media::IRectangleGeometryStatics>([&](auto&& f) { return f.RectProperty(); });
 }
 
 inline RevealBackgroundBrush::RevealBackgroundBrush()
 {
-    Windows::Foundation::IInspectable outer, inner;
-    *this = get_activation_factory<RevealBackgroundBrush, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory>().CreateInstance(outer, inner);
+    Windows::Foundation::IInspectable baseInterface, innerInterface;
+    *this = impl::call_factory<RevealBackgroundBrush, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory>([&](auto&& f) { return f.CreateInstance(baseInterface, innerInterface); });
 }
 
 inline RevealBorderBrush::RevealBorderBrush()
 {
-    Windows::Foundation::IInspectable outer, inner;
-    *this = get_activation_factory<RevealBorderBrush, Windows::UI::Xaml::Media::IRevealBorderBrushFactory>().CreateInstance(outer, inner);
+    Windows::Foundation::IInspectable baseInterface, innerInterface;
+    *this = impl::call_factory<RevealBorderBrush, Windows::UI::Xaml::Media::IRevealBorderBrushFactory>([&](auto&& f) { return f.CreateInstance(baseInterface, innerInterface); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RevealBrush::ColorProperty()
 {
-    return get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().ColorProperty();
+    return impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.ColorProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RevealBrush::TargetThemeProperty()
 {
-    return get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().TargetThemeProperty();
+    return impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.TargetThemeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RevealBrush::AlwaysUseFallbackProperty()
 {
-    return get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().AlwaysUseFallbackProperty();
+    return impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.AlwaysUseFallbackProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RevealBrush::StateProperty()
 {
-    return get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().StateProperty();
+    return impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.StateProperty(); });
 }
 
 inline void RevealBrush::SetState(Windows::UI::Xaml::UIElement const& element, Windows::UI::Xaml::Media::RevealBrushState const& value)
 {
-    get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().SetState(element, value);
+    impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.SetState(element, value); });
 }
 
 inline Windows::UI::Xaml::Media::RevealBrushState RevealBrush::GetState(Windows::UI::Xaml::UIElement const& element)
 {
-    return get_activation_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>().GetState(element);
+    return impl::call_factory<RevealBrush, Windows::UI::Xaml::Media::IRevealBrushStatics>([&](auto&& f) { return f.GetState(element); });
 }
 
 inline RotateTransform::RotateTransform() :
-    RotateTransform(get_activation_factory<RotateTransform>().ActivateInstance<RotateTransform>())
+    RotateTransform(impl::call_factory<RotateTransform>([](auto&& f) { return f.template ActivateInstance<RotateTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::CenterXProperty()
 {
-    return get_activation_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>().CenterXProperty();
+    return impl::call_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>([&](auto&& f) { return f.CenterXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::CenterYProperty()
 {
-    return get_activation_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>().CenterYProperty();
+    return impl::call_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>([&](auto&& f) { return f.CenterYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty RotateTransform::AngleProperty()
 {
-    return get_activation_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>().AngleProperty();
+    return impl::call_factory<RotateTransform, Windows::UI::Xaml::Media::IRotateTransformStatics>([&](auto&& f) { return f.AngleProperty(); });
 }
 
 inline ScaleTransform::ScaleTransform() :
-    ScaleTransform(get_activation_factory<ScaleTransform>().ActivateInstance<ScaleTransform>())
+    ScaleTransform(impl::call_factory<ScaleTransform>([](auto&& f) { return f.template ActivateInstance<ScaleTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::CenterXProperty()
 {
-    return get_activation_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>().CenterXProperty();
+    return impl::call_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>([&](auto&& f) { return f.CenterXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::CenterYProperty()
 {
-    return get_activation_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>().CenterYProperty();
+    return impl::call_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>([&](auto&& f) { return f.CenterYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::ScaleXProperty()
 {
-    return get_activation_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>().ScaleXProperty();
+    return impl::call_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>([&](auto&& f) { return f.ScaleXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty ScaleTransform::ScaleYProperty()
 {
-    return get_activation_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>().ScaleYProperty();
+    return impl::call_factory<ScaleTransform, Windows::UI::Xaml::Media::IScaleTransformStatics>([&](auto&& f) { return f.ScaleYProperty(); });
 }
 
 inline SkewTransform::SkewTransform() :
-    SkewTransform(get_activation_factory<SkewTransform>().ActivateInstance<SkewTransform>())
+    SkewTransform(impl::call_factory<SkewTransform>([](auto&& f) { return f.template ActivateInstance<SkewTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::CenterXProperty()
 {
-    return get_activation_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>().CenterXProperty();
+    return impl::call_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>([&](auto&& f) { return f.CenterXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::CenterYProperty()
 {
-    return get_activation_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>().CenterYProperty();
+    return impl::call_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>([&](auto&& f) { return f.CenterYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::AngleXProperty()
 {
-    return get_activation_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>().AngleXProperty();
+    return impl::call_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>([&](auto&& f) { return f.AngleXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty SkewTransform::AngleYProperty()
 {
-    return get_activation_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>().AngleYProperty();
+    return impl::call_factory<SkewTransform, Windows::UI::Xaml::Media::ISkewTransformStatics>([&](auto&& f) { return f.AngleYProperty(); });
 }
 
 inline SolidColorBrush::SolidColorBrush() :
-    SolidColorBrush(get_activation_factory<SolidColorBrush>().ActivateInstance<SolidColorBrush>())
+    SolidColorBrush(impl::call_factory<SolidColorBrush>([](auto&& f) { return f.template ActivateInstance<SolidColorBrush>(); }))
 {}
 
 inline SolidColorBrush::SolidColorBrush(Windows::UI::Color const& color) :
-    SolidColorBrush(get_activation_factory<SolidColorBrush, Windows::UI::Xaml::Media::ISolidColorBrushFactory>().CreateInstanceWithColor(color))
+    SolidColorBrush(impl::call_factory<SolidColorBrush, Windows::UI::Xaml::Media::ISolidColorBrushFactory>([&](auto&& f) { return f.CreateInstanceWithColor(color); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty SolidColorBrush::ColorProperty()
 {
-    return get_activation_factory<SolidColorBrush, Windows::UI::Xaml::Media::ISolidColorBrushStatics>().ColorProperty();
+    return impl::call_factory<SolidColorBrush, Windows::UI::Xaml::Media::ISolidColorBrushStatics>([&](auto&& f) { return f.ColorProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::AlignmentXProperty()
 {
-    return get_activation_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>().AlignmentXProperty();
+    return impl::call_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>([&](auto&& f) { return f.AlignmentXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::AlignmentYProperty()
 {
-    return get_activation_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>().AlignmentYProperty();
+    return impl::call_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>([&](auto&& f) { return f.AlignmentYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TileBrush::StretchProperty()
 {
-    return get_activation_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>().StretchProperty();
+    return impl::call_factory<TileBrush, Windows::UI::Xaml::Media::ITileBrushStatics>([&](auto&& f) { return f.StretchProperty(); });
 }
 
 inline TimelineMarker::TimelineMarker() :
-    TimelineMarker(get_activation_factory<TimelineMarker>().ActivateInstance<TimelineMarker>())
+    TimelineMarker(impl::call_factory<TimelineMarker>([](auto&& f) { return f.template ActivateInstance<TimelineMarker>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TimeProperty()
 {
-    return get_activation_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>().TimeProperty();
+    return impl::call_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>([&](auto&& f) { return f.TimeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TypeProperty()
 {
-    return get_activation_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>().TypeProperty();
+    return impl::call_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>([&](auto&& f) { return f.TypeProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TimelineMarker::TextProperty()
 {
-    return get_activation_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>().TextProperty();
+    return impl::call_factory<TimelineMarker, Windows::UI::Xaml::Media::ITimelineMarkerStatics>([&](auto&& f) { return f.TextProperty(); });
 }
 
 inline TimelineMarkerCollection::TimelineMarkerCollection() :
-    TimelineMarkerCollection(get_activation_factory<TimelineMarkerCollection>().ActivateInstance<TimelineMarkerCollection>())
+    TimelineMarkerCollection(impl::call_factory<TimelineMarkerCollection>([](auto&& f) { return f.template ActivateInstance<TimelineMarkerCollection>(); }))
 {}
 
 inline TimelineMarkerRoutedEventArgs::TimelineMarkerRoutedEventArgs() :
-    TimelineMarkerRoutedEventArgs(get_activation_factory<TimelineMarkerRoutedEventArgs>().ActivateInstance<TimelineMarkerRoutedEventArgs>())
+    TimelineMarkerRoutedEventArgs(impl::call_factory<TimelineMarkerRoutedEventArgs>([](auto&& f) { return f.template ActivateInstance<TimelineMarkerRoutedEventArgs>(); }))
 {}
 
 inline TransformCollection::TransformCollection() :
-    TransformCollection(get_activation_factory<TransformCollection>().ActivateInstance<TransformCollection>())
+    TransformCollection(impl::call_factory<TransformCollection>([](auto&& f) { return f.template ActivateInstance<TransformCollection>(); }))
 {}
 
 inline TransformGroup::TransformGroup() :
-    TransformGroup(get_activation_factory<TransformGroup>().ActivateInstance<TransformGroup>())
+    TransformGroup(impl::call_factory<TransformGroup>([](auto&& f) { return f.template ActivateInstance<TransformGroup>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TransformGroup::ChildrenProperty()
 {
-    return get_activation_factory<TransformGroup, Windows::UI::Xaml::Media::ITransformGroupStatics>().ChildrenProperty();
+    return impl::call_factory<TransformGroup, Windows::UI::Xaml::Media::ITransformGroupStatics>([&](auto&& f) { return f.ChildrenProperty(); });
 }
 
 inline TranslateTransform::TranslateTransform() :
-    TranslateTransform(get_activation_factory<TranslateTransform>().ActivateInstance<TranslateTransform>())
+    TranslateTransform(impl::call_factory<TranslateTransform>([](auto&& f) { return f.template ActivateInstance<TranslateTransform>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty TranslateTransform::XProperty()
 {
-    return get_activation_factory<TranslateTransform, Windows::UI::Xaml::Media::ITranslateTransformStatics>().XProperty();
+    return impl::call_factory<TranslateTransform, Windows::UI::Xaml::Media::ITranslateTransformStatics>([&](auto&& f) { return f.XProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty TranslateTransform::YProperty()
 {
-    return get_activation_factory<TranslateTransform, Windows::UI::Xaml::Media::ITranslateTransformStatics>().YProperty();
+    return impl::call_factory<TranslateTransform, Windows::UI::Xaml::Media::ITranslateTransformStatics>([&](auto&& f) { return f.YProperty(); });
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(Windows::Foundation::Point const& intersectingPoint, Windows::UI::Xaml::UIElement const& subtree)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.FindElementsInHostCoordinates(intersectingPoint, subtree); });
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(Windows::Foundation::Rect const& intersectingRect, Windows::UI::Xaml::UIElement const& subtree)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.FindElementsInHostCoordinates(intersectingRect, subtree); });
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(Windows::Foundation::Point const& intersectingPoint, Windows::UI::Xaml::UIElement const& subtree, bool includeAllElements)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingPoint, subtree, includeAllElements);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.FindElementsInHostCoordinates(intersectingPoint, subtree, includeAllElements); });
 }
 
 inline Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> VisualTreeHelper::FindElementsInHostCoordinates(Windows::Foundation::Rect const& intersectingRect, Windows::UI::Xaml::UIElement const& subtree, bool includeAllElements)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().FindElementsInHostCoordinates(intersectingRect, subtree, includeAllElements);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.FindElementsInHostCoordinates(intersectingRect, subtree, includeAllElements); });
 }
 
 inline Windows::UI::Xaml::DependencyObject VisualTreeHelper::GetChild(Windows::UI::Xaml::DependencyObject const& reference, int32_t childIndex)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().GetChild(reference, childIndex);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.GetChild(reference, childIndex); });
 }
 
 inline int32_t VisualTreeHelper::GetChildrenCount(Windows::UI::Xaml::DependencyObject const& reference)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().GetChildrenCount(reference);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.GetChildrenCount(reference); });
 }
 
 inline Windows::UI::Xaml::DependencyObject VisualTreeHelper::GetParent(Windows::UI::Xaml::DependencyObject const& reference)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().GetParent(reference);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.GetParent(reference); });
 }
 
 inline void VisualTreeHelper::DisconnectChildrenRecursive(Windows::UI::Xaml::UIElement const& element)
 {
-    get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>().DisconnectChildrenRecursive(element);
+    impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics>([&](auto&& f) { return f.DisconnectChildrenRecursive(element); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> VisualTreeHelper::GetOpenPopups(Windows::UI::Xaml::Window const& window)
 {
-    return get_activation_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>().GetOpenPopups(window);
+    return impl::call_factory<VisualTreeHelper, Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>([&](auto&& f) { return f.GetOpenPopups(window); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty XamlCompositionBrushBase::FallbackColorProperty()
 {
-    return get_activation_factory<XamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>().FallbackColorProperty();
+    return impl::call_factory<XamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>([&](auto&& f) { return f.FallbackColorProperty(); });
 }
 
 inline XamlLight::XamlLight()
 {
-    Windows::Foundation::IInspectable outer, inner;
-    *this = get_activation_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightFactory>().CreateInstance(outer, inner);
+    Windows::Foundation::IInspectable baseInterface, innerInterface;
+    *this = impl::call_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightFactory>([&](auto&& f) { return f.CreateInstance(baseInterface, innerInterface); });
 }
 
 inline void XamlLight::AddTargetElement(param::hstring const& lightId, Windows::UI::Xaml::UIElement const& element)
 {
-    get_activation_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>().AddTargetElement(lightId, element);
+    impl::call_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>([&](auto&& f) { return f.AddTargetElement(lightId, element); });
 }
 
 inline void XamlLight::RemoveTargetElement(param::hstring const& lightId, Windows::UI::Xaml::UIElement const& element)
 {
-    get_activation_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>().RemoveTargetElement(lightId, element);
+    impl::call_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>([&](auto&& f) { return f.RemoveTargetElement(lightId, element); });
 }
 
 inline void XamlLight::AddTargetBrush(param::hstring const& lightId, Windows::UI::Xaml::Media::Brush const& brush)
 {
-    get_activation_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>().AddTargetBrush(lightId, brush);
+    impl::call_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>([&](auto&& f) { return f.AddTargetBrush(lightId, brush); });
 }
 
 inline void XamlLight::RemoveTargetBrush(param::hstring const& lightId, Windows::UI::Xaml::Media::Brush const& brush)
 {
-    get_activation_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>().RemoveTargetBrush(lightId, brush);
+    impl::call_factory<XamlLight, Windows::UI::Xaml::Media::IXamlLightStatics>([&](auto&& f) { return f.RemoveTargetBrush(lightId, brush); });
 }
 
 template <typename L> RateChangedRoutedEventHandler::RateChangedRoutedEventHandler(L handler) :
@@ -9246,11 +8519,19 @@ template <typename L> RateChangedRoutedEventHandler::RateChangedRoutedEventHandl
 {}
 
 template <typename F> RateChangedRoutedEventHandler::RateChangedRoutedEventHandler(F* handler) :
-    RateChangedRoutedEventHandler([=](auto&&... args) { handler(args...); })
+    RateChangedRoutedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> RateChangedRoutedEventHandler::RateChangedRoutedEventHandler(O* object, M method) :
-    RateChangedRoutedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    RateChangedRoutedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> RateChangedRoutedEventHandler::RateChangedRoutedEventHandler(com_ptr<O>&& object, M method) :
+    RateChangedRoutedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> RateChangedRoutedEventHandler::RateChangedRoutedEventHandler(weak_ref<O>&& object, M method) :
+    RateChangedRoutedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void RateChangedRoutedEventHandler::operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Media::RateChangedRoutedEventArgs const& e) const
@@ -9263,16 +8544,29 @@ template <typename L> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEven
 {}
 
 template <typename F> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEventHandler(F* handler) :
-    TimelineMarkerRoutedEventHandler([=](auto&&... args) { handler(args...); })
+    TimelineMarkerRoutedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEventHandler(O* object, M method) :
-    TimelineMarkerRoutedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    TimelineMarkerRoutedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEventHandler(com_ptr<O>&& object, M method) :
+    TimelineMarkerRoutedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> TimelineMarkerRoutedEventHandler::TimelineMarkerRoutedEventHandler(weak_ref<O>&& object, M method) :
+    TimelineMarkerRoutedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void TimelineMarkerRoutedEventHandler::operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs const& e) const
 {
     check_hresult((*(impl::abi_t<TimelineMarkerRoutedEventHandler>**)this)->Invoke(get_abi(sender), get_abi(e)));
+}
+
+template <typename D> void IBrushOverrides2T<D>::PopulatePropertyInfoOverride(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo) const
+{
+    return shim().template try_as<IBrushOverrides2>().PopulatePropertyInfoOverride(propertyName, animationPropertyInfo);
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform IGeneralTransformOverridesT<D>::InverseCore() const
@@ -9317,58 +8611,63 @@ template <typename D> void IXamlLightOverridesT<D>::OnDisconnected(Windows::UI::
 
 template <typename D, typename... Interfaces>
 struct AcrylicBrushT :
-    implements<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IAcrylicBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
-    Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IAcrylicBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::AcrylicBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
 {
     using composable = AcrylicBrush;
 
 protected:
     AcrylicBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::AcrylicBrush, Windows::UI::Xaml::Media::IAcrylicBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct BrushT :
-    implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>,
+    impl::base<D, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>
 {
     using composable = Brush;
 
 protected:
     BrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::Media::IBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::Media::IBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct CacheModeT :
     implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::ICacheMode, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Media::ICacheMode, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>,
+    impl::base<D, Windows::UI::Xaml::Media::CacheMode, Windows::UI::Xaml::DependencyObject>
 {
     using composable = CacheMode;
 
 protected:
     CacheModeT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::CacheMode, Windows::UI::Xaml::Media::ICacheModeFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::CacheMode, Windows::UI::Xaml::Media::ICacheModeFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct FontFamilyT :
     implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IFontFamily>
+    impl::require<D, Windows::UI::Xaml::Media::IFontFamily>,
+    impl::base<D, Windows::UI::Xaml::Media::FontFamily>
 {
     using composable = FontFamily;
 
 protected:
     FontFamilyT(param::hstring const& familyName)
     {
-        get_activation_factory<Windows::UI::Xaml::Media::FontFamily, Windows::UI::Xaml::Media::IFontFamilyFactory>().CreateInstanceWithName(familyName, *this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::FontFamily, Windows::UI::Xaml::Media::IFontFamilyFactory>([&](auto&& f) { f.CreateInstanceWithName(familyName, *this, this->m_inner); });
     }
 };
 
@@ -9376,6 +8675,7 @@ template <typename D, typename... Interfaces>
 struct GeneralTransformT :
     implements<D, Windows::UI::Xaml::Media::IGeneralTransformOverrides, composing, Interfaces...>,
     impl::require<D, Windows::UI::Xaml::Media::IGeneralTransform, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>,
+    impl::base<D, Windows::UI::Xaml::Media::GeneralTransform, Windows::UI::Xaml::DependencyObject>,
     Windows::UI::Xaml::Media::IGeneralTransformOverridesT<D>
 {
     using composable = GeneralTransform;
@@ -9383,109 +8683,118 @@ struct GeneralTransformT :
 protected:
     GeneralTransformT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::GeneralTransform, Windows::UI::Xaml::Media::IGeneralTransformFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::GeneralTransform, Windows::UI::Xaml::Media::IGeneralTransformFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct GradientBrushT :
-    implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IGradientBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IGradientBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>,
+    impl::base<D, Windows::UI::Xaml::Media::GradientBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>
 {
     using composable = GradientBrush;
 
 protected:
     GradientBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::GradientBrush, Windows::UI::Xaml::Media::IGradientBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::GradientBrush, Windows::UI::Xaml::Media::IGradientBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct ProjectionT :
     implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IProjection, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Media::IProjection, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>,
+    impl::base<D, Windows::UI::Xaml::Media::Projection, Windows::UI::Xaml::DependencyObject>
 {
     using composable = Projection;
 
 protected:
     ProjectionT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::Projection, Windows::UI::Xaml::Media::IProjectionFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::Projection, Windows::UI::Xaml::Media::IProjectionFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct RevealBackgroundBrushT :
-    implements<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IRevealBackgroundBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
-    Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IRevealBackgroundBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::RevealBackgroundBrush, Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
 {
     using composable = RevealBackgroundBrush;
 
 protected:
     RevealBackgroundBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::RevealBackgroundBrush, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::RevealBackgroundBrush, Windows::UI::Xaml::Media::IRevealBackgroundBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct RevealBorderBrushT :
-    implements<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IRevealBorderBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
-    Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IRevealBorderBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::RevealBorderBrush, Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
 {
     using composable = RevealBorderBrush;
 
 protected:
     RevealBorderBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::RevealBorderBrush, Windows::UI::Xaml::Media::IRevealBorderBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::RevealBorderBrush, Windows::UI::Xaml::Media::IRevealBorderBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct RevealBrushT :
-    implements<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
-    Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IRevealBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
 {
     using composable = RevealBrush;
 
 protected:
     RevealBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::IRevealBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::RevealBrush, Windows::UI::Xaml::Media::IRevealBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct TileBrushT :
-    implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::ITileBrush, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::ITileBrush, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush>,
+    impl::base<D, Windows::UI::Xaml::Media::TileBrush, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>
 {
     using composable = TileBrush;
 
 protected:
     TileBrushT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::TileBrush, Windows::UI::Xaml::Media::ITileBrushFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::TileBrush, Windows::UI::Xaml::Media::ITileBrushFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
 template <typename D, typename... Interfaces>
 struct XamlCompositionBrushBaseT :
-    implements<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
-    Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
+    implements<D, Windows::UI::Xaml::Media::IBrushOverrides2, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides, composing, Interfaces...>,
+    impl::require<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::Brush, Windows::UI::Xaml::DependencyObject>,
+    Windows::UI::Xaml::Media::IBrushOverrides2T<D>, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>
 {
     using composable = XamlCompositionBrushBase;
 
 protected:
     XamlCompositionBrushBaseT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::XamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
@@ -9493,6 +8802,7 @@ template <typename D, typename... Interfaces>
 struct XamlLightT :
     implements<D, Windows::UI::Xaml::Media::IXamlLightOverrides, composing, Interfaces...>,
     impl::require<D, Windows::UI::Xaml::Media::IXamlLight, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IXamlLightProtected>,
+    impl::base<D, Windows::UI::Xaml::Media::XamlLight, Windows::UI::Xaml::DependencyObject>,
     Windows::UI::Xaml::Media::IXamlLightOverridesT<D>
 {
     using composable = XamlLight;
@@ -9500,7 +8810,7 @@ struct XamlLightT :
 protected:
     XamlLightT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::XamlLight, Windows::UI::Xaml::Media::IXamlLightFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::XamlLight, Windows::UI::Xaml::Media::IXamlLightFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
@@ -9518,6 +8828,7 @@ template<> struct hash<winrt::Windows::UI::Xaml::Media::IBezierSegmentStatics> :
 template<> struct hash<winrt::Windows::UI::Xaml::Media::IBitmapCache> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::IBitmapCache> {};
 template<> struct hash<winrt::Windows::UI::Xaml::Media::IBrush> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::IBrush> {};
 template<> struct hash<winrt::Windows::UI::Xaml::Media::IBrushFactory> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::IBrushFactory> {};
+template<> struct hash<winrt::Windows::UI::Xaml::Media::IBrushOverrides2> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::IBrushOverrides2> {};
 template<> struct hash<winrt::Windows::UI::Xaml::Media::IBrushStatics> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::IBrushStatics> {};
 template<> struct hash<winrt::Windows::UI::Xaml::Media::ICacheMode> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::ICacheMode> {};
 template<> struct hash<winrt::Windows::UI::Xaml::Media::ICacheModeFactory> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::ICacheModeFactory> {};
@@ -9698,5 +9009,3 @@ template<> struct hash<winrt::Windows::UI::Xaml::Media::XamlCompositionBrushBase
 template<> struct hash<winrt::Windows::UI::Xaml::Media::XamlLight> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::XamlLight> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,53 +21,53 @@ namespace winrt::impl {
 
 WINRT_EXPORT namespace winrt::Windows::Media::Protection::PlayReady {
 
-struct WINRT_EBO [[deprecated("NDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDClient :
+struct WINRT_EBO NDClient :
     Windows::Media::Protection::PlayReady::INDClient
 {
     NDClient(std::nullptr_t) noexcept {}
-    [[deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDClient(Windows::Media::Protection::PlayReady::INDDownloadEngine const& downloadEngine, Windows::Media::Protection::PlayReady::INDStreamParser const& streamParser, Windows::Media::Protection::PlayReady::INDMessenger const& pMessenger);
+    NDClient(Windows::Media::Protection::PlayReady::INDDownloadEngine const& downloadEngine, Windows::Media::Protection::PlayReady::INDStreamParser const& streamParser, Windows::Media::Protection::PlayReady::INDMessenger const& pMessenger);
 };
 
-struct WINRT_EBO [[deprecated("NDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCustomData :
+struct WINRT_EBO NDCustomData :
     Windows::Media::Protection::PlayReady::INDCustomData
 {
     NDCustomData(std::nullptr_t) noexcept {}
-    [[deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCustomData(array_view<uint8_t const> customDataTypeIDBytes, array_view<uint8_t const> customDataBytes);
+    NDCustomData(array_view<uint8_t const> customDataTypeIDBytes, array_view<uint8_t const> customDataBytes);
 };
 
-struct WINRT_EBO [[deprecated("NDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDDownloadEngineNotifier :
+struct WINRT_EBO NDDownloadEngineNotifier :
     Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier
 {
     NDDownloadEngineNotifier(std::nullptr_t) noexcept {}
     NDDownloadEngineNotifier();
 };
 
-struct WINRT_EBO [[deprecated("NDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDLicenseFetchDescriptor :
+struct WINRT_EBO NDLicenseFetchDescriptor :
     Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor
 {
     NDLicenseFetchDescriptor(std::nullptr_t) noexcept {}
-    [[deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDLicenseFetchDescriptor(Windows::Media::Protection::PlayReady::NDContentIDType const& contentIDType, array_view<uint8_t const> contentIDBytes, Windows::Media::Protection::PlayReady::INDCustomData const& licenseFetchChallengeCustomData);
+    NDLicenseFetchDescriptor(Windows::Media::Protection::PlayReady::NDContentIDType const& contentIDType, array_view<uint8_t const> contentIDBytes, Windows::Media::Protection::PlayReady::INDCustomData const& licenseFetchChallengeCustomData);
 };
 
-struct WINRT_EBO [[deprecated("NDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDStorageFileHelper :
+struct WINRT_EBO NDStorageFileHelper :
     Windows::Media::Protection::PlayReady::INDStorageFileHelper
 {
     NDStorageFileHelper(std::nullptr_t) noexcept {}
     NDStorageFileHelper();
 };
 
-struct WINRT_EBO [[deprecated("NDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDStreamParserNotifier :
+struct WINRT_EBO NDStreamParserNotifier :
     Windows::Media::Protection::PlayReady::INDStreamParserNotifier
 {
     NDStreamParserNotifier(std::nullptr_t) noexcept {}
     NDStreamParserNotifier();
 };
 
-struct WINRT_EBO [[deprecated("NDTCPMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDTCPMessenger :
+struct WINRT_EBO NDTCPMessenger :
     Windows::Media::Protection::PlayReady::INDMessenger
 {
     NDTCPMessenger(std::nullptr_t) noexcept {}
-    [[deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDTCPMessenger(param::hstring const& remoteHostName, uint32_t remoteHostPort);
+    NDTCPMessenger(param::hstring const& remoteHostName, uint32_t remoteHostPort);
 };
 
 struct WINRT_EBO PlayReadyContentHeader :
@@ -75,10 +75,10 @@ struct WINRT_EBO PlayReadyContentHeader :
     impl::require<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2>
 {
     PlayReadyContentHeader(std::nullptr_t) noexcept {}
-    PlayReadyContentHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId);
-    PlayReadyContentHeader(GUID const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId);
+    PlayReadyContentHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId);
+    PlayReadyContentHeader(winrt::guid const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId);
     PlayReadyContentHeader(array_view<uint8_t const> headerBytes);
-    PlayReadyContentHeader(uint32_t dwFlags, array_view<GUID const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId);
+    PlayReadyContentHeader(uint32_t dwFlags, array_view<winrt::guid const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId);
 };
 
 struct PlayReadyContentResolver
@@ -97,7 +97,7 @@ struct WINRT_EBO PlayReadyDomainIterable :
     Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyDomain>
 {
     PlayReadyDomainIterable(std::nullptr_t) noexcept {}
-    PlayReadyDomainIterable(GUID const& domainAccountId);
+    PlayReadyDomainIterable(winrt::guid const& domainAccountId);
 };
 
 struct WINRT_EBO PlayReadyDomainIterator :
@@ -209,7 +209,7 @@ struct WINRT_EBO PlayReadySecureStopServiceRequest :
 {
     PlayReadySecureStopServiceRequest(std::nullptr_t) noexcept {}
     PlayReadySecureStopServiceRequest(array_view<uint8_t const> publisherCertBytes);
-    PlayReadySecureStopServiceRequest(GUID const& sessionID, array_view<uint8_t const> publisherCertBytes);
+    PlayReadySecureStopServiceRequest(winrt::guid const& sessionID, array_view<uint8_t const> publisherCertBytes);
 };
 
 struct WINRT_EBO PlayReadySoapMessage :
@@ -221,19 +221,22 @@ struct WINRT_EBO PlayReadySoapMessage :
 struct PlayReadyStatics
 {
     PlayReadyStatics() = delete;
-    static GUID DomainJoinServiceRequestType();
-    static GUID DomainLeaveServiceRequestType();
-    static GUID IndividualizationServiceRequestType();
-    static GUID LicenseAcquirerServiceRequestType();
-    static GUID MeteringReportServiceRequestType();
-    static GUID RevocationServiceRequestType();
-    static GUID MediaProtectionSystemId();
+    static winrt::guid DomainJoinServiceRequestType();
+    static winrt::guid DomainLeaveServiceRequestType();
+    static winrt::guid IndividualizationServiceRequestType();
+    static winrt::guid LicenseAcquirerServiceRequestType();
+    static winrt::guid MeteringReportServiceRequestType();
+    static winrt::guid RevocationServiceRequestType();
+    static winrt::guid MediaProtectionSystemId();
     static uint32_t PlayReadySecurityVersion();
     static uint32_t PlayReadyCertificateSecurityLevel();
-    static GUID SecureStopServiceRequestType();
+    static winrt::guid SecureStopServiceRequestType();
     static bool CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures const& hwdrmFeature);
     static hstring InputTrustAuthorityToCreate();
-    static GUID ProtectionSystemId();
+    static winrt::guid ProtectionSystemId();
+    static Windows::Foundation::IReference<Windows::Foundation::DateTime> HardwareDRMDisabledAtTime();
+    static Windows::Foundation::IReference<Windows::Foundation::DateTime> HardwareDRMDisabledUntilTime();
+    static void ResetHardwareDRMDisabled();
 };
 
 }

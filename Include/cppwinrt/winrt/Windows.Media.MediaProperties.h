@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Media.Core.2.h"
@@ -279,6 +279,13 @@ template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties c
     Windows::Media::MediaProperties::ImageEncodingProperties value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2)->CreateBmp(put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::ImageEncodingProperties consume_Windows_Media_MediaProperties_IImageEncodingPropertiesStatics3<D>::CreateHeif() const
+{
+    Windows::Media::MediaProperties::ImageEncodingProperties result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3)->CreateHeif(put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_Media_MediaProperties_IMediaEncodingProfile<D>::Audio(Windows::Media::MediaProperties::AudioEncodingProperties const& value) const
@@ -792,6 +799,13 @@ template <typename D> hstring consume_Windows_Media_MediaProperties_IMediaEncodi
     return value;
 }
 
+template <typename D> hstring consume_Windows_Media_MediaProperties_IMediaEncodingSubtypesStatics5<D>::Heif() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5)->get_Heif(put_abi(value)));
+    return value;
+}
+
 template <typename D> void consume_Windows_Media_MediaProperties_IMediaRatio<D>::Numerator(uint32_t value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::MediaProperties::IMediaRatio)->put_Numerator(value));
@@ -992,300 +1006,262 @@ template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties c
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingProperties>
 {
-    HRESULT __stdcall put_Bitrate(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Bitrate(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bitrate, WINRT_WRAP(void), uint32_t);
             this->shim().Bitrate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bitrate(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Bitrate(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bitrate, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Bitrate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ChannelCount(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_ChannelCount(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelCount, WINRT_WRAP(void), uint32_t);
             this->shim().ChannelCount(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChannelCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ChannelCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChannelCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ChannelCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SampleRate(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_SampleRate(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SampleRate, WINRT_WRAP(void), uint32_t);
             this->shim().SampleRate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SampleRate(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SampleRate(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SampleRate, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SampleRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BitsPerSample(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_BitsPerSample(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitsPerSample, WINRT_WRAP(void), uint32_t);
             this->shim().BitsPerSample(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BitsPerSample(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_BitsPerSample(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BitsPerSample, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().BitsPerSample());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties2> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingProperties2>
 {
-    HRESULT __stdcall get_IsSpatial(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSpatial(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSpatial, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSpatial());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties3> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingProperties3>
 {
-    HRESULT __stdcall Copy(void** result) noexcept final
+    int32_t WINRT_CALL Copy(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties));
             *result = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().Copy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
 {
-    HRESULT __stdcall CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
+    int32_t WINRT_CALL CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAac, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateAac(sampleRate, channelCount, bitrate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
+    int32_t WINRT_CALL CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAacAdts, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateAacAdts(sampleRate, channelCount, bitrate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
+    int32_t WINRT_CALL CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMp3, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateMp3(sampleRate, channelCount, bitrate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
+    int32_t WINRT_CALL CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePcm, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreatePcm(sampleRate, channelCount, bitsPerSample));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
+    int32_t WINRT_CALL CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWma, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateWma(sampleRate, channelCount, bitrate));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>
 {
-    HRESULT __stdcall CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
+    int32_t WINRT_CALL CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAlac, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateAlac(sampleRate, channelCount, bitsPerSample));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
+    int32_t WINRT_CALL CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFlac, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties), uint32_t, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().CreateFlac(sampleRate, channelCount, bitsPerSample));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData>
 {
-    HRESULT __stdcall SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFormatUserData, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().SetFormatUserData(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFormatUserData, WINRT_WRAP(void), com_array<uint8_t>&);
             this->shim().GetFormatUserData(detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1296,1973 +1272,1753 @@ struct produce<D, Windows::Media::MediaProperties::IContainerEncodingProperties>
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IContainerEncodingProperties2> : produce_base<D, Windows::Media::MediaProperties::IContainerEncodingProperties2>
 {
-    HRESULT __stdcall Copy(void** result) noexcept final
+    int32_t WINRT_CALL Copy(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Media::MediaProperties::ContainerEncodingProperties));
             *result = detach_from<Windows::Media::MediaProperties::ContainerEncodingProperties>(this->shim().Copy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics> : produce_base<D, Windows::Media::MediaProperties::IH264ProfileIdsStatics>
 {
-    HRESULT __stdcall get_ConstrainedBaseline(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ConstrainedBaseline(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConstrainedBaseline, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ConstrainedBaseline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Baseline(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Baseline(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Baseline, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Baseline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Extended(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Extended(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Extended, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Extended());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Main(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Main(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Main, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Main());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_High(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_High(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(High, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().High());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_High10(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_High10(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(High10, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().High10());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_High422(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_High422(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(High422, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().High422());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_High444(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_High444(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(High444, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().High444());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StereoHigh(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_StereoHigh(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StereoHigh, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().StereoHigh());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MultiviewHigh(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MultiviewHigh(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MultiviewHigh, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MultiviewHigh());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::IImageEncodingProperties>
 {
-    HRESULT __stdcall put_Width(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Width(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(void), uint32_t);
             this->shim().Width(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Width(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Width(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Width());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Height(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Height(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(void), uint32_t);
             this->shim().Height(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Height(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Height(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Height());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IImageEncodingProperties2> : produce_base<D, Windows::Media::MediaProperties::IImageEncodingProperties2>
 {
-    HRESULT __stdcall Copy(void** result) noexcept final
+    int32_t WINRT_CALL Copy(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
             *result = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().Copy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics> : produce_base<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>
 {
-    HRESULT __stdcall CreateJpeg(void** value) noexcept final
+    int32_t WINRT_CALL CreateJpeg(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateJpeg, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreateJpeg());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreatePng(void** value) noexcept final
+    int32_t WINRT_CALL CreatePng(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreatePng, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreatePng());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateJpegXR(void** value) noexcept final
+    int32_t WINRT_CALL CreateJpegXR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateJpegXR, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreateJpegXR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2> : produce_base<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>
 {
-    HRESULT __stdcall CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat format, void** value) noexcept final
+    int32_t WINRT_CALL CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat format, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUncompressed, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties), Windows::Media::MediaProperties::MediaPixelFormat const&);
             *value = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreateUncompressed(*reinterpret_cast<Windows::Media::MediaProperties::MediaPixelFormat const*>(&format)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateBmp(void** value) noexcept final
+    int32_t WINRT_CALL CreateBmp(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateBmp, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreateBmp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3> : produce_base<D, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3>
+{
+    int32_t WINRT_CALL CreateHeif(void** result) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHeif, WINRT_WRAP(Windows::Media::MediaProperties::ImageEncodingProperties));
+            *result = detach_from<Windows::Media::MediaProperties::ImageEncodingProperties>(this->shim().CreateHeif());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfile>
 {
-    HRESULT __stdcall put_Audio(void* value) noexcept final
+    int32_t WINRT_CALL put_Audio(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Audio, WINRT_WRAP(void), Windows::Media::MediaProperties::AudioEncodingProperties const&);
             this->shim().Audio(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingProperties const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Audio(void** value) noexcept final
+    int32_t WINRT_CALL get_Audio(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Audio, WINRT_WRAP(Windows::Media::MediaProperties::AudioEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::AudioEncodingProperties>(this->shim().Audio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Video(void* value) noexcept final
+    int32_t WINRT_CALL put_Video(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Video, WINRT_WRAP(void), Windows::Media::MediaProperties::VideoEncodingProperties const&);
             this->shim().Video(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingProperties const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Video(void** value) noexcept final
+    int32_t WINRT_CALL get_Video(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Video, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().Video());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Container(void* value) noexcept final
+    int32_t WINRT_CALL put_Container(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Container, WINRT_WRAP(void), Windows::Media::MediaProperties::ContainerEncodingProperties const&);
             this->shim().Container(*reinterpret_cast<Windows::Media::MediaProperties::ContainerEncodingProperties const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Container(void** value) noexcept final
+    int32_t WINRT_CALL get_Container(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Container, WINRT_WRAP(Windows::Media::MediaProperties::ContainerEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::ContainerEncodingProperties>(this->shim().Container());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile2> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfile2>
 {
-    HRESULT __stdcall SetAudioTracks(void* value) noexcept final
+    int32_t WINRT_CALL SetAudioTracks(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetAudioTracks, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Media::Core::AudioStreamDescriptor> const&);
             this->shim().SetAudioTracks(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Media::Core::AudioStreamDescriptor> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAudioTracks(void** value) noexcept final
+    int32_t WINRT_CALL GetAudioTracks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAudioTracks, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor>>(this->shim().GetAudioTracks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetVideoTracks(void* value) noexcept final
+    int32_t WINRT_CALL SetVideoTracks(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetVideoTracks, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Media::Core::VideoStreamDescriptor> const&);
             this->shim().SetVideoTracks(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Media::Core::VideoStreamDescriptor> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetVideoTracks(void** value) noexcept final
+    int32_t WINRT_CALL GetVideoTracks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetVideoTracks, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor>>(this->shim().GetVideoTracks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfile3> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfile3>
 {
-    HRESULT __stdcall SetTimedMetadataTracks(void* value) noexcept final
+    int32_t WINRT_CALL SetTimedMetadataTracks(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetTimedMetadataTracks, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::Media::Core::TimedMetadataStreamDescriptor> const&);
             this->shim().SetTimedMetadataTracks(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Media::Core::TimedMetadataStreamDescriptor> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTimedMetadataTracks(void** result) noexcept final
+    int32_t WINRT_CALL GetTimedMetadataTracks(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTimedMetadataTracks, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedMetadataStreamDescriptor>));
             *result = detach_from<Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedMetadataStreamDescriptor>>(this->shim().GetTimedMetadataTracks());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
 {
-    HRESULT __stdcall CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateM4a, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateM4a(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMp3, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateMp3(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWma, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateWma(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMp4(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateMp4(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMp4, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::VideoEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateMp4(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWmv(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateWmv(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWmv, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::VideoEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateWmv(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromFileAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL CreateFromFileAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile>), Windows::Storage::IStorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile>>(this->shim().CreateFromFileAsync(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromStreamAsync(void* stream, void** operation) noexcept final
+    int32_t WINRT_CALL CreateFromStreamAsync(void* stream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile>), Windows::Storage::Streams::IRandomAccessStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile>>(this->shim().CreateFromStreamAsync(*reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&stream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>
 {
-    HRESULT __stdcall CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWav, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateWav(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAvi, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::VideoEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateAvi(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>
 {
-    HRESULT __stdcall CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAlac, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateAlac(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFlac, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::AudioEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateFlac(*reinterpret_cast<Windows::Media::MediaProperties::AudioEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
+    int32_t WINRT_CALL CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHevc, WINRT_WRAP(Windows::Media::MediaProperties::MediaEncodingProfile), Windows::Media::MediaProperties::VideoEncodingQuality const&);
             *value = detach_from<Windows::Media::MediaProperties::MediaEncodingProfile>(this->shim().CreateHevc(*reinterpret_cast<Windows::Media::MediaProperties::VideoEncodingQuality const*>(&quality)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Media::MediaProperties::MediaPropertySet));
             *value = detach_from<Windows::Media::MediaProperties::MediaPropertySet>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Type(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subtype(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Subtype(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtype, WINRT_WRAP(void), hstring const&);
             this->shim().Subtype(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subtype(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Subtype(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subtype, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Subtype());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>
 {
-    HRESULT __stdcall get_Aac(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Aac(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Aac, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Aac());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AacAdts(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AacAdts(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AacAdts, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AacAdts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ac3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Ac3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ac3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Ac3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AmrNb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AmrNb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AmrNb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AmrNb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AmrWb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AmrWb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AmrWb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AmrWb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Argb32(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Argb32(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Argb32, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Argb32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Asf(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Asf(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Asf, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Asf());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Avi(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Avi(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Avi, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Avi());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bgra8(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Bgra8(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bgra8, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Bgra8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bmp(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Bmp(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bmp, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Bmp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Eac3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Eac3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Eac3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Eac3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Float(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Float(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Float, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Float());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gif(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Gif(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gif, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Gif());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_H263(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_H263(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(H263, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().H263());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_H264(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_H264(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(H264, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().H264());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_H264Es(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_H264Es(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(H264Es, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().H264Es());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hevc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Hevc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hevc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Hevc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HevcEs(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HevcEs(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HevcEs, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HevcEs());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Iyuv(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Iyuv(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Iyuv, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Iyuv());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Jpeg(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Jpeg(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Jpeg, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Jpeg());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JpegXr(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_JpegXr(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JpegXr, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().JpegXr());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mjpg(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mjpg(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mjpg, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mjpg());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mpeg(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mpeg(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mpeg, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mpeg());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mpeg1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mpeg1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mpeg1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mpeg1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mpeg2(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mpeg2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mpeg2, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mpeg2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mp3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mp3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mp3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mp3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mpeg4(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mpeg4(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mpeg4, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mpeg4());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nv12(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Nv12(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nv12, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Nv12());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pcm(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Pcm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pcm, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Pcm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Png(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Png(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Png, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Png());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rgb24(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rgb24(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rgb24, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rgb24());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rgb32(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Rgb32(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rgb32, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Rgb32());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tiff(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Tiff(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tiff, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Tiff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wave(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wave(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wave, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wave());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wma8(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wma8(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wma8, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wma8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wma9(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wma9(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wma9, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wma9());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wmv3(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wmv3(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wmv3, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wmv3());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wvc1(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Wvc1(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wvc1, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Wvc1());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Yuy2(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Yuy2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Yuy2, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Yuy2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Yv12(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Yv12(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Yv12, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Yv12());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>
 {
-    HRESULT __stdcall get_Vp9(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Vp9(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Vp9, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Vp9());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_L8(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_L8(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(L8, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().L8());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_L16(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_L16(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(L16, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().L16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_D16(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_D16(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(D16, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().D16());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>
 {
-    HRESULT __stdcall get_Alac(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Alac(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Alac, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Alac());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Flac(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Flac(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Flac, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Flac());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4>
 {
-    HRESULT __stdcall get_P010(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_P010(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(P010, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().P010());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5>
+{
+    int32_t WINRT_CALL get_Heif(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Heif, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().Heif());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D, Windows::Media::MediaProperties::IMediaRatio>
 {
-    HRESULT __stdcall put_Numerator(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Numerator(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Numerator, WINRT_WRAP(void), uint32_t);
             this->shim().Numerator(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Numerator(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Numerator(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Numerator, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Numerator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Denominator(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Denominator(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Denominator, WINRT_WRAP(void), uint32_t);
             this->shim().Denominator(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Denominator(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Denominator(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Denominator, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Denominator());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : produce_base<D, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>
 {
-    HRESULT __stdcall get_Simple(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Simple(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Simple, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Simple());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Main(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Main(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Main, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Main());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SignalNoiseRatioScalable(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SignalNoiseRatioScalable(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignalNoiseRatioScalable, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SignalNoiseRatioScalable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpatiallyScalable(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SpatiallyScalable(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpatiallyScalable, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SpatiallyScalable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_High(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_High(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(High, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().High());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::ITimedMetadataEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::ITimedMetadataEncodingProperties>
 {
-    HRESULT __stdcall SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFormatUserData, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().SetFormatUserData(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFormatUserData, WINRT_WRAP(void), com_array<uint8_t>&);
             this->shim().GetFormatUserData(detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Copy(void** result) noexcept final
+    int32_t WINRT_CALL Copy(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Media::MediaProperties::TimedMetadataEncodingProperties));
             *result = detach_from<Windows::Media::MediaProperties::TimedMetadataEncodingProperties>(this->shim().Copy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties>
 {
-    HRESULT __stdcall put_Bitrate(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Bitrate(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bitrate, WINRT_WRAP(void), uint32_t);
             this->shim().Bitrate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bitrate(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Bitrate(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bitrate, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Bitrate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Width(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Width(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(void), uint32_t);
             this->shim().Width(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Width(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Width(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Width());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Height(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Height(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(void), uint32_t);
             this->shim().Height(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Height(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Height(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Height());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrameRate(void** value) noexcept final
+    int32_t WINRT_CALL get_FrameRate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrameRate, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio));
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().FrameRate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PixelAspectRatio(void** value) noexcept final
+    int32_t WINRT_CALL get_PixelAspectRatio(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PixelAspectRatio, WINRT_WRAP(Windows::Media::MediaProperties::MediaRatio));
             *value = detach_from<Windows::Media::MediaProperties::MediaRatio>(this->shim().PixelAspectRatio());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties2> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties2>
 {
-    HRESULT __stdcall SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
+    int32_t WINRT_CALL SetFormatUserData(uint32_t __valueSize, uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFormatUserData, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().SetFormatUserData(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL GetFormatUserData(uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFormatUserData, WINRT_WRAP(void), com_array<uint8_t>&);
             this->shim().GetFormatUserData(detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProfileId(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ProfileId(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileId, WINRT_WRAP(void), int32_t);
             this->shim().ProfileId(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProfileId(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ProfileId(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProfileId, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ProfileId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties3> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties3>
 {
-    HRESULT __stdcall get_StereoscopicVideoPackingMode(Windows::Media::MediaProperties::StereoscopicVideoPackingMode* value) noexcept final
+    int32_t WINRT_CALL get_StereoscopicVideoPackingMode(Windows::Media::MediaProperties::StereoscopicVideoPackingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StereoscopicVideoPackingMode, WINRT_WRAP(Windows::Media::MediaProperties::StereoscopicVideoPackingMode));
             *value = detach_from<Windows::Media::MediaProperties::StereoscopicVideoPackingMode>(this->shim().StereoscopicVideoPackingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties4> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties4>
 {
-    HRESULT __stdcall get_SphericalVideoFrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept final
+    int32_t WINRT_CALL get_SphericalVideoFrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SphericalVideoFrameFormat, WINRT_WRAP(Windows::Media::MediaProperties::SphericalVideoFrameFormat));
             *value = detach_from<Windows::Media::MediaProperties::SphericalVideoFrameFormat>(this->shim().SphericalVideoFrameFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties5> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties5>
 {
-    HRESULT __stdcall Copy(void** result) noexcept final
+    int32_t WINRT_CALL Copy(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *result = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().Copy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
 {
-    HRESULT __stdcall CreateH264(void** value) noexcept final
+    int32_t WINRT_CALL CreateH264(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateH264, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().CreateH264());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateMpeg2(void** value) noexcept final
+    int32_t WINRT_CALL CreateMpeg2(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateMpeg2, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().CreateMpeg2());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUncompressed(HSTRING subtype, uint32_t width, uint32_t height, void** value) noexcept final
+    int32_t WINRT_CALL CreateUncompressed(void* subtype, uint32_t width, uint32_t height, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUncompressed, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties), hstring const&, uint32_t, uint32_t);
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().CreateUncompressed(*reinterpret_cast<hstring const*>(&subtype), width, height));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>
 {
-    HRESULT __stdcall CreateHevc(void** value) noexcept final
+    int32_t WINRT_CALL CreateHevc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateHevc, WINRT_WRAP(Windows::Media::MediaProperties::VideoEncodingProperties));
             *value = detach_from<Windows::Media::MediaProperties::VideoEncodingProperties>(this->shim().CreateHevc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3271,481 +3027,491 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStati
 WINRT_EXPORT namespace winrt::Windows::Media::MediaProperties {
 
 inline AudioEncodingProperties::AudioEncodingProperties() :
-    AudioEncodingProperties(get_activation_factory<AudioEncodingProperties>().ActivateInstance<AudioEncodingProperties>())
+    AudioEncodingProperties(impl::call_factory<AudioEncodingProperties>([](auto&& f) { return f.template ActivateInstance<AudioEncodingProperties>(); }))
 {}
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>().CreateAac(sampleRate, channelCount, bitrate);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>([&](auto&& f) { return f.CreateAac(sampleRate, channelCount, bitrate); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>().CreateAacAdts(sampleRate, channelCount, bitrate);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>([&](auto&& f) { return f.CreateAacAdts(sampleRate, channelCount, bitrate); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>().CreateMp3(sampleRate, channelCount, bitrate);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>([&](auto&& f) { return f.CreateMp3(sampleRate, channelCount, bitrate); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>().CreatePcm(sampleRate, channelCount, bitsPerSample);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>([&](auto&& f) { return f.CreatePcm(sampleRate, channelCount, bitsPerSample); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>().CreateWma(sampleRate, channelCount, bitrate);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>([&](auto&& f) { return f.CreateWma(sampleRate, channelCount, bitrate); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>().CreateAlac(sampleRate, channelCount, bitsPerSample);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>([&](auto&& f) { return f.CreateAlac(sampleRate, channelCount, bitsPerSample); });
 }
 
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
 {
-    return get_activation_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>().CreateFlac(sampleRate, channelCount, bitsPerSample);
+    return impl::call_factory<AudioEncodingProperties, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>([&](auto&& f) { return f.CreateFlac(sampleRate, channelCount, bitsPerSample); });
 }
 
 inline ContainerEncodingProperties::ContainerEncodingProperties() :
-    ContainerEncodingProperties(get_activation_factory<ContainerEncodingProperties>().ActivateInstance<ContainerEncodingProperties>())
+    ContainerEncodingProperties(impl::call_factory<ContainerEncodingProperties>([](auto&& f) { return f.template ActivateInstance<ContainerEncodingProperties>(); }))
 {}
 
 inline int32_t H264ProfileIds::ConstrainedBaseline()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().ConstrainedBaseline();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.ConstrainedBaseline(); });
 }
 
 inline int32_t H264ProfileIds::Baseline()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().Baseline();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.Baseline(); });
 }
 
 inline int32_t H264ProfileIds::Extended()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().Extended();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.Extended(); });
 }
 
 inline int32_t H264ProfileIds::Main()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().Main();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.Main(); });
 }
 
 inline int32_t H264ProfileIds::High()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().High();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.High(); });
 }
 
 inline int32_t H264ProfileIds::High10()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().High10();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.High10(); });
 }
 
 inline int32_t H264ProfileIds::High422()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().High422();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.High422(); });
 }
 
 inline int32_t H264ProfileIds::High444()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().High444();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.High444(); });
 }
 
 inline int32_t H264ProfileIds::StereoHigh()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().StereoHigh();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.StereoHigh(); });
 }
 
 inline int32_t H264ProfileIds::MultiviewHigh()
 {
-    return get_activation_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>().MultiviewHigh();
+    return impl::call_factory<H264ProfileIds, Windows::Media::MediaProperties::IH264ProfileIdsStatics>([&](auto&& f) { return f.MultiviewHigh(); });
 }
 
 inline ImageEncodingProperties::ImageEncodingProperties() :
-    ImageEncodingProperties(get_activation_factory<ImageEncodingProperties>().ActivateInstance<ImageEncodingProperties>())
+    ImageEncodingProperties(impl::call_factory<ImageEncodingProperties>([](auto&& f) { return f.template ActivateInstance<ImageEncodingProperties>(); }))
 {}
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateJpeg()
 {
-    return get_activation_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>().CreateJpeg();
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>([&](auto&& f) { return f.CreateJpeg(); });
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreatePng()
 {
-    return get_activation_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>().CreatePng();
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>([&](auto&& f) { return f.CreatePng(); });
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateJpegXR()
 {
-    return get_activation_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>().CreateJpegXR();
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>([&](auto&& f) { return f.CreateJpegXR(); });
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat const& format)
 {
-    return get_activation_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>().CreateUncompressed(format);
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>([&](auto&& f) { return f.CreateUncompressed(format); });
 }
 
 inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateBmp()
 {
-    return get_activation_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>().CreateBmp();
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>([&](auto&& f) { return f.CreateBmp(); });
+}
+
+inline Windows::Media::MediaProperties::ImageEncodingProperties ImageEncodingProperties::CreateHeif()
+{
+    return impl::call_factory<ImageEncodingProperties, Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3>([&](auto&& f) { return f.CreateHeif(); });
 }
 
 inline MediaEncodingProfile::MediaEncodingProfile() :
-    MediaEncodingProfile(get_activation_factory<MediaEncodingProfile>().ActivateInstance<MediaEncodingProfile>())
+    MediaEncodingProfile(impl::call_factory<MediaEncodingProfile>([](auto&& f) { return f.template ActivateInstance<MediaEncodingProfile>(); }))
 {}
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateM4a(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateM4a(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateMp3(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateMp3(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateWma(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateWma(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateMp4(Windows::Media::MediaProperties::VideoEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateMp4(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateMp4(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWmv(Windows::Media::MediaProperties::VideoEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateWmv(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateWmv(quality); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> MediaEncodingProfile::CreateFromFileAsync(Windows::Storage::IStorageFile const& file)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateFromFileAsync(file);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateFromFileAsync(file); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Media::MediaProperties::MediaEncodingProfile> MediaEncodingProfile::CreateFromStreamAsync(Windows::Storage::Streams::IRandomAccessStream const& stream)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>().CreateFromStreamAsync(stream);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics>([&](auto&& f) { return f.CreateFromStreamAsync(stream); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>().CreateWav(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>([&](auto&& f) { return f.CreateWav(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>().CreateAvi(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>([&](auto&& f) { return f.CreateAvi(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>().CreateAlac(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>([&](auto&& f) { return f.CreateAlac(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>().CreateFlac(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>([&](auto&& f) { return f.CreateFlac(quality); });
 }
 
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality const& quality)
 {
-    return get_activation_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>().CreateHevc(quality);
+    return impl::call_factory<MediaEncodingProfile, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>([&](auto&& f) { return f.CreateHevc(quality); });
 }
 
 inline hstring MediaEncodingSubtypes::Aac()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Aac();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Aac(); });
 }
 
 inline hstring MediaEncodingSubtypes::AacAdts()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().AacAdts();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.AacAdts(); });
 }
 
 inline hstring MediaEncodingSubtypes::Ac3()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Ac3();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Ac3(); });
 }
 
 inline hstring MediaEncodingSubtypes::AmrNb()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().AmrNb();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.AmrNb(); });
 }
 
 inline hstring MediaEncodingSubtypes::AmrWb()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().AmrWb();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.AmrWb(); });
 }
 
 inline hstring MediaEncodingSubtypes::Argb32()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Argb32();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Argb32(); });
 }
 
 inline hstring MediaEncodingSubtypes::Asf()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Asf();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Asf(); });
 }
 
 inline hstring MediaEncodingSubtypes::Avi()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Avi();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Avi(); });
 }
 
 inline hstring MediaEncodingSubtypes::Bgra8()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Bgra8();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Bgra8(); });
 }
 
 inline hstring MediaEncodingSubtypes::Bmp()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Bmp();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Bmp(); });
 }
 
 inline hstring MediaEncodingSubtypes::Eac3()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Eac3();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Eac3(); });
 }
 
 inline hstring MediaEncodingSubtypes::Float()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Float();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Float(); });
 }
 
 inline hstring MediaEncodingSubtypes::Gif()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Gif();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Gif(); });
 }
 
 inline hstring MediaEncodingSubtypes::H263()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().H263();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.H263(); });
 }
 
 inline hstring MediaEncodingSubtypes::H264()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().H264();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.H264(); });
 }
 
 inline hstring MediaEncodingSubtypes::H264Es()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().H264Es();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.H264Es(); });
 }
 
 inline hstring MediaEncodingSubtypes::Hevc()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Hevc();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Hevc(); });
 }
 
 inline hstring MediaEncodingSubtypes::HevcEs()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().HevcEs();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.HevcEs(); });
 }
 
 inline hstring MediaEncodingSubtypes::Iyuv()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Iyuv();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Iyuv(); });
 }
 
 inline hstring MediaEncodingSubtypes::Jpeg()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Jpeg();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Jpeg(); });
 }
 
 inline hstring MediaEncodingSubtypes::JpegXr()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().JpegXr();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.JpegXr(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mjpg()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mjpg();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mjpg(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mpeg();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mpeg(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg1()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mpeg1();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mpeg1(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg2()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mpeg2();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mpeg2(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mp3()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mp3();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mp3(); });
 }
 
 inline hstring MediaEncodingSubtypes::Mpeg4()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Mpeg4();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Mpeg4(); });
 }
 
 inline hstring MediaEncodingSubtypes::Nv12()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Nv12();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Nv12(); });
 }
 
 inline hstring MediaEncodingSubtypes::Pcm()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Pcm();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Pcm(); });
 }
 
 inline hstring MediaEncodingSubtypes::Png()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Png();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Png(); });
 }
 
 inline hstring MediaEncodingSubtypes::Rgb24()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Rgb24();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Rgb24(); });
 }
 
 inline hstring MediaEncodingSubtypes::Rgb32()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Rgb32();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Rgb32(); });
 }
 
 inline hstring MediaEncodingSubtypes::Tiff()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Tiff();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Tiff(); });
 }
 
 inline hstring MediaEncodingSubtypes::Wave()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Wave();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Wave(); });
 }
 
 inline hstring MediaEncodingSubtypes::Wma8()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Wma8();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Wma8(); });
 }
 
 inline hstring MediaEncodingSubtypes::Wma9()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Wma9();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Wma9(); });
 }
 
 inline hstring MediaEncodingSubtypes::Wmv3()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Wmv3();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Wmv3(); });
 }
 
 inline hstring MediaEncodingSubtypes::Wvc1()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Wvc1();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Wvc1(); });
 }
 
 inline hstring MediaEncodingSubtypes::Yuy2()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Yuy2();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Yuy2(); });
 }
 
 inline hstring MediaEncodingSubtypes::Yv12()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>().Yv12();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>([&](auto&& f) { return f.Yv12(); });
 }
 
 inline hstring MediaEncodingSubtypes::Vp9()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>().Vp9();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>([&](auto&& f) { return f.Vp9(); });
 }
 
 inline hstring MediaEncodingSubtypes::L8()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>().L8();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>([&](auto&& f) { return f.L8(); });
 }
 
 inline hstring MediaEncodingSubtypes::L16()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>().L16();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>([&](auto&& f) { return f.L16(); });
 }
 
 inline hstring MediaEncodingSubtypes::D16()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>().D16();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>([&](auto&& f) { return f.D16(); });
 }
 
 inline hstring MediaEncodingSubtypes::Alac()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>().Alac();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>([&](auto&& f) { return f.Alac(); });
 }
 
 inline hstring MediaEncodingSubtypes::Flac()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>().Flac();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>([&](auto&& f) { return f.Flac(); });
 }
 
 inline hstring MediaEncodingSubtypes::P010()
 {
-    return get_activation_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4>().P010();
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4>([&](auto&& f) { return f.P010(); });
+}
+
+inline hstring MediaEncodingSubtypes::Heif()
+{
+    return impl::call_factory<MediaEncodingSubtypes, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5>([&](auto&& f) { return f.Heif(); });
 }
 
 inline MediaPropertySet::MediaPropertySet() :
-    MediaPropertySet(get_activation_factory<MediaPropertySet>().ActivateInstance<MediaPropertySet>())
+    MediaPropertySet(impl::call_factory<MediaPropertySet>([](auto&& f) { return f.template ActivateInstance<MediaPropertySet>(); }))
 {}
 
 inline int32_t Mpeg2ProfileIds::Simple()
 {
-    return get_activation_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>().Simple();
+    return impl::call_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>([&](auto&& f) { return f.Simple(); });
 }
 
 inline int32_t Mpeg2ProfileIds::Main()
 {
-    return get_activation_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>().Main();
+    return impl::call_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>([&](auto&& f) { return f.Main(); });
 }
 
 inline int32_t Mpeg2ProfileIds::SignalNoiseRatioScalable()
 {
-    return get_activation_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>().SignalNoiseRatioScalable();
+    return impl::call_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>([&](auto&& f) { return f.SignalNoiseRatioScalable(); });
 }
 
 inline int32_t Mpeg2ProfileIds::SpatiallyScalable()
 {
-    return get_activation_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>().SpatiallyScalable();
+    return impl::call_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>([&](auto&& f) { return f.SpatiallyScalable(); });
 }
 
 inline int32_t Mpeg2ProfileIds::High()
 {
-    return get_activation_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>().High();
+    return impl::call_factory<Mpeg2ProfileIds, Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>([&](auto&& f) { return f.High(); });
 }
 
 inline TimedMetadataEncodingProperties::TimedMetadataEncodingProperties() :
-    TimedMetadataEncodingProperties(get_activation_factory<TimedMetadataEncodingProperties>().ActivateInstance<TimedMetadataEncodingProperties>())
+    TimedMetadataEncodingProperties(impl::call_factory<TimedMetadataEncodingProperties>([](auto&& f) { return f.template ActivateInstance<TimedMetadataEncodingProperties>(); }))
 {}
 
 inline VideoEncodingProperties::VideoEncodingProperties() :
-    VideoEncodingProperties(get_activation_factory<VideoEncodingProperties>().ActivateInstance<VideoEncodingProperties>())
+    VideoEncodingProperties(impl::call_factory<VideoEncodingProperties>([](auto&& f) { return f.template ActivateInstance<VideoEncodingProperties>(); }))
 {}
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateH264()
 {
-    return get_activation_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>().CreateH264();
+    return impl::call_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>([&](auto&& f) { return f.CreateH264(); });
 }
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateMpeg2()
 {
-    return get_activation_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>().CreateMpeg2();
+    return impl::call_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>([&](auto&& f) { return f.CreateMpeg2(); });
 }
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateUncompressed(param::hstring const& subtype, uint32_t width, uint32_t height)
 {
-    return get_activation_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>().CreateUncompressed(subtype, width, height);
+    return impl::call_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>([&](auto&& f) { return f.CreateUncompressed(subtype, width, height); });
 }
 
 inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateHevc()
 {
-    return get_activation_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>().CreateHevc();
+    return impl::call_factory<VideoEncodingProperties, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>([&](auto&& f) { return f.CreateHevc(); });
 }
 
 }
@@ -3765,6 +3531,7 @@ template<> struct hash<winrt::Windows::Media::MediaProperties::IImageEncodingPro
 template<> struct hash<winrt::Windows::Media::MediaProperties::IImageEncodingProperties2> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IImageEncodingProperties2> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2> {};
+template<> struct hash<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics3> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile2> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile2> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile3> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile3> {};
@@ -3776,6 +3543,7 @@ template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSub
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics4> {};
+template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics5> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMediaRatio> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMediaRatio> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics> {};
 template<> struct hash<winrt::Windows::Media::MediaProperties::ITimedMetadataEncodingProperties> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::ITimedMetadataEncodingProperties> {};
@@ -3799,5 +3567,3 @@ template<> struct hash<winrt::Windows::Media::MediaProperties::TimedMetadataEnco
 template<> struct hash<winrt::Windows::Media::MediaProperties::VideoEncodingProperties> : winrt::impl::hash_base<winrt::Windows::Media::MediaProperties::VideoEncodingProperties> {};
 
 }
-
-WINRT_WARNING_POP

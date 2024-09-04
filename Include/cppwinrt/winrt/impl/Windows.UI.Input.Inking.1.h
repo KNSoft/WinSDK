@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -310,6 +310,20 @@ struct WINRT_EBO IInkUnprocessedInput :
     impl::consume_t<IInkUnprocessedInput>
 {
     IInkUnprocessedInput(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IPenAndInkSettings :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IPenAndInkSettings>
+{
+    IPenAndInkSettings(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IPenAndInkSettingsStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IPenAndInkSettingsStatics>
+{
+    IPenAndInkSettingsStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

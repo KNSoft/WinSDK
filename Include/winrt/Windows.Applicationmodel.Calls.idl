@@ -172,6 +172,8 @@ namespace Windows
 
             interface IVoipCallCoordinator3;
 
+            interface IVoipCallCoordinator4;
+
             interface IVoipCallCoordinatorStatics;
 
             interface IVoipPhoneCall;
@@ -298,7 +300,7 @@ namespace Windows
         namespace Calls
         {
 
-            [contractversion(3.0)]
+            [contractversion(4.0)]
             apicontract CallsVoipContract
             {
             }
@@ -871,6 +873,16 @@ namespace Windows
                 [overload("RequestNewIncomingCall")] HRESULT RequestNewIncomingCallWithContactRemoteId([in] HSTRING context, [in] HSTRING contactName, [in] HSTRING contactNumber, [in] Windows.Foundation.Uri* contactImage, [in] HSTRING serviceName, [in] Windows.Foundation.Uri* brandingImage, [in] HSTRING callDetails, [in] Windows.Foundation.Uri* ringtone, [in] Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, [in] Windows.Foundation.TimeSpan ringTimeout, [in] HSTRING contactRemoteId, [out] [retval] Windows.ApplicationModel.Calls.VoipPhoneCall** call);
             }
 
+            [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 4.0)]
+            [exclusiveto(Windows.ApplicationModel.Calls.VoipCallCoordinator)]
+            [uuid(83737239-9311-468F-BB49-47E0DFB5D93E)]
+            interface IVoipCallCoordinator4 : IInspectable
+                requires
+                    Windows.ApplicationModel.Calls.IVoipCallCoordinator
+            {
+                [overload("ReserveCallResourcesAsync")] HRESULT ReserveOneProcessCallResourcesAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus>** operation);
+            }
+
             [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Calls.VoipCallCoordinator)]
             [uuid(7F5D1F2B-E04A-4D10-B31A-A55C922CC2FB)]
@@ -1143,6 +1155,7 @@ namespace Windows
                 [default] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator;
                 [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 2.0)] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator2;
                 [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 3.0)] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator3;
+                [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 4.0)] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator4;
             }
 
             [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 1.0)]

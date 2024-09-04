@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -73,19 +73,76 @@ template <> struct name<Windows::UI::Xaml::Printing::PreviewPageCountType>{ stat
 template <> struct name<Windows::UI::Xaml::Printing::AddPagesEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Printing.AddPagesEventHandler" }; };
 template <> struct name<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Printing.GetPreviewPageEventHandler" }; };
 template <> struct name<Windows::UI::Xaml::Printing::PaginateEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.Printing.PaginateEventHandler" }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IAddPagesEventArgs>{ static constexpr GUID value{ 0xE2E52BE5,0x056C,0x4420,{ 0x97,0x95,0xCB,0x35,0x26,0xCE,0x0C,0x20 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs>{ static constexpr GUID value{ 0xA43D703D,0xDEA9,0x4DF6,{ 0xA7,0xED,0x35,0x04,0x9C,0xD4,0x85,0xC7 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IPaginateEventArgs>{ static constexpr GUID value{ 0xED945FD6,0x79AB,0x42B7,{ 0x93,0x0A,0x3D,0x6E,0x09,0x01,0x1D,0x21 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IPrintDocument>{ static constexpr GUID value{ 0xE44327C3,0xA999,0x485B,{ 0xB1,0xD8,0x72,0xDC,0x51,0x78,0x21,0xE6 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IPrintDocumentFactory>{ static constexpr GUID value{ 0xFB87B18F,0x2606,0x4A2F,{ 0x99,0xD4,0xA7,0xCD,0xBC,0x35,0xD7,0xC7 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::IPrintDocumentStatics>{ static constexpr GUID value{ 0xFD970A3C,0xB152,0x49E0,{ 0xA6,0xBD,0x6A,0xA6,0x47,0x7E,0x43,0xC7 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::AddPagesEventHandler>{ static constexpr GUID value{ 0xD4B57970,0x57A0,0x4209,{ 0x84,0x7C,0xC0,0x93,0xB5,0x4B,0xC7,0x29 } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler>{ static constexpr GUID value{ 0xCCB3E9ED,0x9C11,0x4E50,{ 0xAB,0x49,0xE9,0x80,0x86,0xBB,0xFD,0xEF } }; };
-template <> struct guid<Windows::UI::Xaml::Printing::PaginateEventHandler>{ static constexpr GUID value{ 0x0CC05B61,0x811B,0x4A32,{ 0x99,0x65,0x13,0xEB,0x78,0xDB,0xB0,0x1B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IAddPagesEventArgs>{ static constexpr guid value{ 0xE2E52BE5,0x056C,0x4420,{ 0x97,0x95,0xCB,0x35,0x26,0xCE,0x0C,0x20 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs>{ static constexpr guid value{ 0xA43D703D,0xDEA9,0x4DF6,{ 0xA7,0xED,0x35,0x04,0x9C,0xD4,0x85,0xC7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IPaginateEventArgs>{ static constexpr guid value{ 0xED945FD6,0x79AB,0x42B7,{ 0x93,0x0A,0x3D,0x6E,0x09,0x01,0x1D,0x21 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IPrintDocument>{ static constexpr guid value{ 0xE44327C3,0xA999,0x485B,{ 0xB1,0xD8,0x72,0xDC,0x51,0x78,0x21,0xE6 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IPrintDocumentFactory>{ static constexpr guid value{ 0xFB87B18F,0x2606,0x4A2F,{ 0x99,0xD4,0xA7,0xCD,0xBC,0x35,0xD7,0xC7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::IPrintDocumentStatics>{ static constexpr guid value{ 0xFD970A3C,0xB152,0x49E0,{ 0xA6,0xBD,0x6A,0xA6,0x47,0x7E,0x43,0xC7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::AddPagesEventHandler>{ static constexpr guid value{ 0xD4B57970,0x57A0,0x4209,{ 0x84,0x7C,0xC0,0x93,0xB5,0x4B,0xC7,0x29 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler>{ static constexpr guid value{ 0xCCB3E9ED,0x9C11,0x4E50,{ 0xAB,0x49,0xE9,0x80,0x86,0xBB,0xFD,0xEF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Printing::PaginateEventHandler>{ static constexpr guid value{ 0x0CC05B61,0x811B,0x4A32,{ 0x99,0x65,0x13,0xEB,0x78,0xDB,0xB0,0x1B } }; };
 template <> struct default_interface<Windows::UI::Xaml::Printing::AddPagesEventArgs>{ using type = Windows::UI::Xaml::Printing::IAddPagesEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::Printing::GetPreviewPageEventArgs>{ using type = Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::Printing::PaginateEventArgs>{ using type = Windows::UI::Xaml::Printing::IPaginateEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::Printing::PrintDocument>{ using type = Windows::UI::Xaml::Printing::IPrintDocument; };
+
+template <> struct abi<Windows::UI::Xaml::Printing::IAddPagesEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PrintTaskOptions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PageNumber(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::IPaginateEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PrintTaskOptions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentPreviewPageNumber(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocument>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DocumentSource(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Paginate(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Paginate(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GetPreviewPage(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GetPreviewPage(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AddPages(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AddPages(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPage(void* pageVisual) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPagesComplete() noexcept = 0;
+    virtual int32_t WINRT_CALL SetPreviewPageCount(int32_t count, Windows::UI::Xaml::Printing::PreviewPageCountType type) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPreviewPage(int32_t pageNumber, void* pageVisual) noexcept = 0;
+    virtual int32_t WINRT_CALL InvalidatePreview() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocumentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocumentStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DocumentSourceProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::AddPagesEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Printing::PaginateEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Xaml_Printing_IAddPagesEventArgs
@@ -113,18 +170,18 @@ template <typename D>
 struct consume_Windows_UI_Xaml_Printing_IPrintDocument
 {
     Windows::Graphics::Printing::IPrintDocumentSource DocumentSource() const;
-    event_token Paginate(Windows::UI::Xaml::Printing::PaginateEventHandler const& value) const;
-    using Paginate_revoker = event_revoker<Windows::UI::Xaml::Printing::IPrintDocument>;
-    Paginate_revoker Paginate(auto_revoke_t, Windows::UI::Xaml::Printing::PaginateEventHandler const& value) const;
-    void Paginate(event_token const& token) const;
-    event_token GetPreviewPage(Windows::UI::Xaml::Printing::GetPreviewPageEventHandler const& value) const;
-    using GetPreviewPage_revoker = event_revoker<Windows::UI::Xaml::Printing::IPrintDocument>;
-    GetPreviewPage_revoker GetPreviewPage(auto_revoke_t, Windows::UI::Xaml::Printing::GetPreviewPageEventHandler const& value) const;
-    void GetPreviewPage(event_token const& token) const;
-    event_token AddPages(Windows::UI::Xaml::Printing::AddPagesEventHandler const& value) const;
-    using AddPages_revoker = event_revoker<Windows::UI::Xaml::Printing::IPrintDocument>;
-    AddPages_revoker AddPages(auto_revoke_t, Windows::UI::Xaml::Printing::AddPagesEventHandler const& value) const;
-    void AddPages(event_token const& token) const;
+    winrt::event_token Paginate(Windows::UI::Xaml::Printing::PaginateEventHandler const& handler) const;
+    using Paginate_revoker = impl::event_revoker<Windows::UI::Xaml::Printing::IPrintDocument, &impl::abi_t<Windows::UI::Xaml::Printing::IPrintDocument>::remove_Paginate>;
+    Paginate_revoker Paginate(auto_revoke_t, Windows::UI::Xaml::Printing::PaginateEventHandler const& handler) const;
+    void Paginate(winrt::event_token const& token) const noexcept;
+    winrt::event_token GetPreviewPage(Windows::UI::Xaml::Printing::GetPreviewPageEventHandler const& handler) const;
+    using GetPreviewPage_revoker = impl::event_revoker<Windows::UI::Xaml::Printing::IPrintDocument, &impl::abi_t<Windows::UI::Xaml::Printing::IPrintDocument>::remove_GetPreviewPage>;
+    GetPreviewPage_revoker GetPreviewPage(auto_revoke_t, Windows::UI::Xaml::Printing::GetPreviewPageEventHandler const& handler) const;
+    void GetPreviewPage(winrt::event_token const& token) const noexcept;
+    winrt::event_token AddPages(Windows::UI::Xaml::Printing::AddPagesEventHandler const& handler) const;
+    using AddPages_revoker = impl::event_revoker<Windows::UI::Xaml::Printing::IPrintDocument, &impl::abi_t<Windows::UI::Xaml::Printing::IPrintDocument>::remove_AddPages>;
+    AddPages_revoker AddPages(auto_revoke_t, Windows::UI::Xaml::Printing::AddPagesEventHandler const& handler) const;
+    void AddPages(winrt::event_token const& token) const noexcept;
     void AddPage(Windows::UI::Xaml::UIElement const& pageVisual) const;
     void AddPagesComplete() const;
     void SetPreviewPageCount(int32_t count, Windows::UI::Xaml::Printing::PreviewPageCountType const& type) const;
@@ -136,7 +193,7 @@ template <> struct consume<Windows::UI::Xaml::Printing::IPrintDocument> { templa
 template <typename D>
 struct consume_Windows_UI_Xaml_Printing_IPrintDocumentFactory
 {
-    Windows::UI::Xaml::Printing::PrintDocument CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Printing::PrintDocument CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Printing::IPrintDocumentFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Printing_IPrintDocumentFactory<D>; };
 
@@ -146,62 +203,5 @@ struct consume_Windows_UI_Xaml_Printing_IPrintDocumentStatics
     Windows::UI::Xaml::DependencyProperty DocumentSourceProperty() const;
 };
 template <> struct consume<Windows::UI::Xaml::Printing::IPrintDocumentStatics> { template <typename D> using type = consume_Windows_UI_Xaml_Printing_IPrintDocumentStatics<D>; };
-
-template <> struct abi<Windows::UI::Xaml::Printing::IAddPagesEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PrintTaskOptions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PageNumber(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::IPaginateEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PrintTaskOptions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentPreviewPageNumber(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocument>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DocumentSource(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Paginate(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Paginate(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_GetPreviewPage(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GetPreviewPage(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AddPages(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AddPages(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall AddPage(void* pageVisual) noexcept = 0;
-    virtual HRESULT __stdcall AddPagesComplete() noexcept = 0;
-    virtual HRESULT __stdcall SetPreviewPageCount(int32_t count, Windows::UI::Xaml::Printing::PreviewPageCountType type) noexcept = 0;
-    virtual HRESULT __stdcall SetPreviewPage(int32_t pageNumber, void* pageVisual) noexcept = 0;
-    virtual HRESULT __stdcall InvalidatePreview() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocumentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::IPrintDocumentStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DocumentSourceProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::AddPagesEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::GetPreviewPageEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Printing::PaginateEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
 
 }

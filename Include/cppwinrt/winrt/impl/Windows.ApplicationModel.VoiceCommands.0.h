@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -130,18 +130,18 @@ template <> struct name<Windows::ApplicationModel::VoiceCommands::VoiceCommandSe
 template <> struct name<Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage>{ static constexpr auto & value{ L"Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage" }; };
 template <> struct name<Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason>{ static constexpr auto & value{ L"Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletionReason" }; };
 template <> struct name<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType>{ static constexpr auto & value{ L"Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType" }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommand>{ static constexpr GUID value{ 0x936F5273,0xEC82,0x42A6,{ 0xA5,0x5C,0xD2,0xD7,0x9E,0xC6,0xF9,0x20 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs>{ static constexpr GUID value{ 0xC85E675D,0xFE42,0x432C,{ 0x99,0x07,0x09,0xDF,0x9F,0xCF,0x64,0xE8 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult>{ static constexpr GUID value{ 0xA022593E,0x8221,0x4526,{ 0xB0,0x83,0x84,0x09,0x72,0x26,0x22,0x47 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile>{ static constexpr GUID value{ 0x3EEFE9F0,0xB8C7,0x4C76,{ 0xA0,0xDE,0x16,0x07,0x89,0x5E,0xE3,0x27 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition>{ static constexpr GUID value{ 0x7972AAD0,0x0974,0x4979,{ 0x98,0x4B,0xCB,0x89,0x59,0xCD,0x61,0xAE } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics>{ static constexpr GUID value{ 0x8FE7A69E,0x067E,0x4F16,{ 0xA1,0x8C,0x5B,0x17,0xE9,0x49,0x99,0x40 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult>{ static constexpr GUID value{ 0xECC68CFE,0xC9AC,0x45DF,{ 0xA8,0xEA,0xFE,0xEA,0x08,0xEF,0x9C,0x5E } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse>{ static constexpr GUID value{ 0x0284B30E,0x8A3B,0x4CC4,{ 0xA6,0xA1,0xCA,0xD5,0xBE,0x27,0x16,0xB5 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics>{ static constexpr GUID value{ 0x2932F813,0x0D3B,0x49F2,{ 0x96,0xDD,0x62,0x50,0x19,0xBD,0x3B,0x5D } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>{ static constexpr GUID value{ 0xD894BB9F,0x21DA,0x44A4,{ 0x98,0xA2,0xFB,0x13,0x19,0x20,0xA9,0xCC } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics>{ static constexpr GUID value{ 0x370EBFFB,0x2D34,0x42DF,{ 0x87,0x70,0x07,0x4D,0x0F,0x33,0x46,0x97 } }; };
-template <> struct guid<Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage>{ static constexpr GUID value{ 0x674EB3C0,0x44F6,0x4F07,{ 0xB9,0x79,0x4C,0x72,0x3F,0xC0,0x85,0x97 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommand>{ static constexpr guid value{ 0x936F5273,0xEC82,0x42A6,{ 0xA5,0x5C,0xD2,0xD7,0x9E,0xC6,0xF9,0x20 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs>{ static constexpr guid value{ 0xC85E675D,0xFE42,0x432C,{ 0x99,0x07,0x09,0xDF,0x9F,0xCF,0x64,0xE8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult>{ static constexpr guid value{ 0xA022593E,0x8221,0x4526,{ 0xB0,0x83,0x84,0x09,0x72,0x26,0x22,0x47 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile>{ static constexpr guid value{ 0x3EEFE9F0,0xB8C7,0x4C76,{ 0xA0,0xDE,0x16,0x07,0x89,0x5E,0xE3,0x27 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition>{ static constexpr guid value{ 0x7972AAD0,0x0974,0x4979,{ 0x98,0x4B,0xCB,0x89,0x59,0xCD,0x61,0xAE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics>{ static constexpr guid value{ 0x8FE7A69E,0x067E,0x4F16,{ 0xA1,0x8C,0x5B,0x17,0xE9,0x49,0x99,0x40 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult>{ static constexpr guid value{ 0xECC68CFE,0xC9AC,0x45DF,{ 0xA8,0xEA,0xFE,0xEA,0x08,0xEF,0x9C,0x5E } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse>{ static constexpr guid value{ 0x0284B30E,0x8A3B,0x4CC4,{ 0xA6,0xA1,0xCA,0xD5,0xBE,0x27,0x16,0xB5 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics>{ static constexpr guid value{ 0x2932F813,0x0D3B,0x49F2,{ 0x96,0xDD,0x62,0x50,0x19,0xBD,0x3B,0x5D } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>{ static constexpr guid value{ 0xD894BB9F,0x21DA,0x44A4,{ 0x98,0xA2,0xFB,0x13,0x19,0x20,0xA9,0xCC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics>{ static constexpr guid value{ 0x370EBFFB,0x2D34,0x42DF,{ 0x87,0x70,0x07,0x4D,0x0F,0x33,0x46,0x97 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage>{ static constexpr guid value{ 0x674EB3C0,0x44F6,0x4F07,{ 0xB9,0x79,0x4C,0x72,0x3F,0xC0,0x85,0x97 } }; };
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommand>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommand; };
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs; };
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult; };
@@ -151,6 +151,108 @@ template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::V
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse; };
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection; };
 template <> struct default_interface<Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage>{ using type = Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage; };
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommand>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CommandName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpeechRecognitionResult(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Reason(Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Confirmed(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextLine1(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextLine1(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextLine2(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextLine2(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextLine3(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextLine3(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Image(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Image(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppContext(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppContext(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppLaunchArgument(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppLaunchArgument(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPhraseListAsync(void* phraseListName, void* phraseList, void** updateAction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InstallCommandDefinitionsFromStorageFileAsync(void* file, void** installAction) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstalledCommandDefinitions(void** voiceCommandDefinitions) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SelectedItem(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Message(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RepeatMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RepeatMessage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppLaunchArgument(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppLaunchArgument(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VoiceCommandContentTiles(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxSupportedVoiceCommandContentTiles(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResponse(void* userMessage, void** response) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResponseWithTiles(void* message, void* contentTiles, void** response) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResponseForPrompt(void* message, void* repeatMessage, void** response) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateResponseForPromptWithTiles(void* message, void* repeatMessage, void* contentTiles, void** response) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetVoiceCommandAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestConfirmationAsync(void* response, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestDisambiguationAsync(void* response, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportProgressAsync(void* response, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportSuccessAsync(void* response, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportFailureAsync(void* response, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAppLaunchAsync(void* response, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** language) noexcept = 0;
+    virtual int32_t WINRT_CALL add_VoiceCommandCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_VoiceCommandCompleted(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromAppServiceTriggerDetails(void* triggerDetails, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DisplayMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayMessage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpokenMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SpokenMessage(void* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_VoiceCommands_IVoiceCommand
@@ -256,10 +358,10 @@ struct consume_Windows_ApplicationModel_VoiceCommands_IVoiceCommandServiceConnec
     Windows::Foundation::IAsyncAction ReportFailureAsync(Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse const& response) const;
     Windows::Foundation::IAsyncAction RequestAppLaunchAsync(Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse const& response) const;
     Windows::Globalization::Language Language() const;
-    event_token VoiceCommandCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> const& handler) const;
-    using VoiceCommandCompleted_revoker = event_revoker<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>;
+    winrt::event_token VoiceCommandCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> const& handler) const;
+    using VoiceCommandCompleted_revoker = impl::event_revoker<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection, &impl::abi_t<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>::remove_VoiceCommandCompleted>;
     VoiceCommandCompleted_revoker VoiceCommandCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> const& handler) const;
-    void VoiceCommandCompleted(event_token const& token) const;
+    void VoiceCommandCompleted(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection> { template <typename D> using type = consume_Windows_ApplicationModel_VoiceCommands_IVoiceCommandServiceConnection<D>; };
 
@@ -279,107 +381,5 @@ struct consume_Windows_ApplicationModel_VoiceCommands_IVoiceCommandUserMessage
     void SpokenMessage(param::hstring const& value) const;
 };
 template <> struct consume<Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage> { template <typename D> using type = consume_Windows_ApplicationModel_VoiceCommands_IVoiceCommandUserMessage<D>; };
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommand>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CommandName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpeechRecognitionResult(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Reason(Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Confirmed(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextLine1(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextLine1(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextLine2(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextLine2(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextLine3(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextLine3(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Image(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Image(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppContext(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppContext(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppLaunchArgument(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppLaunchArgument(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetPhraseListAsync(HSTRING phraseListName, void* phraseList, void** updateAction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InstallCommandDefinitionsFromStorageFileAsync(void* file, void** installAction) noexcept = 0;
-    virtual HRESULT __stdcall get_InstalledCommandDefinitions(void** voiceCommandDefinitions) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SelectedItem(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Message(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RepeatMessage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RepeatMessage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppLaunchArgument(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppLaunchArgument(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_VoiceCommandContentTiles(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxSupportedVoiceCommandContentTiles(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall CreateResponse(void* userMessage, void** response) noexcept = 0;
-    virtual HRESULT __stdcall CreateResponseWithTiles(void* message, void* contentTiles, void** response) noexcept = 0;
-    virtual HRESULT __stdcall CreateResponseForPrompt(void* message, void* repeatMessage, void** response) noexcept = 0;
-    virtual HRESULT __stdcall CreateResponseForPromptWithTiles(void* message, void* repeatMessage, void* contentTiles, void** response) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetVoiceCommandAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestConfirmationAsync(void* response, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestDisambiguationAsync(void* response, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReportProgressAsync(void* response, void** action) noexcept = 0;
-    virtual HRESULT __stdcall ReportSuccessAsync(void* response, void** action) noexcept = 0;
-    virtual HRESULT __stdcall ReportFailureAsync(void* response, void** action) noexcept = 0;
-    virtual HRESULT __stdcall RequestAppLaunchAsync(void* response, void** action) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(void** language) noexcept = 0;
-    virtual HRESULT __stdcall add_VoiceCommandCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_VoiceCommandCompleted(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromAppServiceTriggerDetails(void* triggerDetails, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DisplayMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayMessage(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpokenMessage(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SpokenMessage(HSTRING value) noexcept = 0;
-};};
 
 }

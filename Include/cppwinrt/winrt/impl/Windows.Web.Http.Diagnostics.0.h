@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -89,13 +89,13 @@ template <> struct name<Windows::Web::Http::Diagnostics::HttpDiagnosticProviderR
 template <> struct name<Windows::Web::Http::Diagnostics::HttpDiagnosticProviderResponseReceivedEventArgs>{ static constexpr auto & value{ L"Windows.Web.Http.Diagnostics.HttpDiagnosticProviderResponseReceivedEventArgs" }; };
 template <> struct name<Windows::Web::Http::Diagnostics::HttpDiagnosticSourceLocation>{ static constexpr auto & value{ L"Windows.Web.Http.Diagnostics.HttpDiagnosticSourceLocation" }; };
 template <> struct name<Windows::Web::Http::Diagnostics::HttpDiagnosticRequestInitiator>{ static constexpr auto & value{ L"Windows.Web.Http.Diagnostics.HttpDiagnosticRequestInitiator" }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>{ static constexpr GUID value{ 0xBD811501,0xA056,0x4D39,{ 0xB1,0x74,0x83,0x3B,0x7B,0x03,0xB0,0x2C } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseCompletedEventArgs>{ static constexpr GUID value{ 0x735F98EE,0x94F6,0x4532,{ 0xB2,0x6E,0x61,0xE1,0xB1,0xE4,0xEF,0xD4 } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseTimestamps>{ static constexpr GUID value{ 0xE0AFDE10,0x55CF,0x4C01,{ 0x91,0xD4,0xA2,0x05,0x57,0xD8,0x49,0xF0 } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestSentEventArgs>{ static constexpr GUID value{ 0x3F5196D0,0x4C1F,0x4EBE,{ 0xA5,0x7A,0x06,0x93,0x07,0x71,0xC5,0x0D } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs>{ static constexpr GUID value{ 0xA0A2566C,0xAB5F,0x4D66,{ 0xBB,0x2D,0x08,0x4C,0xF4,0x16,0x35,0xD0 } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderStatics>{ static constexpr GUID value{ 0x5B824EC1,0x6A6C,0x47CC,{ 0xAF,0xEC,0x1E,0x86,0xBC,0x26,0x05,0x3B } }; };
-template <> struct guid<Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation>{ static constexpr GUID value{ 0x54A9D260,0x8860,0x423F,{ 0xB6,0xFA,0xD7,0x77,0x16,0xF6,0x47,0xA7 } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>{ static constexpr guid value{ 0xBD811501,0xA056,0x4D39,{ 0xB1,0x74,0x83,0x3B,0x7B,0x03,0xB0,0x2C } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseCompletedEventArgs>{ static constexpr guid value{ 0x735F98EE,0x94F6,0x4532,{ 0xB2,0x6E,0x61,0xE1,0xB1,0xE4,0xEF,0xD4 } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseTimestamps>{ static constexpr guid value{ 0xE0AFDE10,0x55CF,0x4C01,{ 0x91,0xD4,0xA2,0x05,0x57,0xD8,0x49,0xF0 } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestSentEventArgs>{ static constexpr guid value{ 0x3F5196D0,0x4C1F,0x4EBE,{ 0xA5,0x7A,0x06,0x93,0x07,0x71,0xC5,0x0D } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs>{ static constexpr guid value{ 0xA0A2566C,0xAB5F,0x4D66,{ 0xBB,0x2D,0x08,0x4C,0xF4,0x16,0x35,0xD0 } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderStatics>{ static constexpr guid value{ 0x5B824EC1,0x6A6C,0x47CC,{ 0xAF,0xEC,0x1E,0x86,0xBC,0x26,0x05,0x3B } }; };
+template <> struct guid_storage<Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation>{ static constexpr guid value{ 0x54A9D260,0x8860,0x423F,{ 0xB6,0xFA,0xD7,0x77,0x16,0xF6,0x47,0xA7 } }; };
 template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider>{ using type = Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider; };
 template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseCompletedEventArgs>{ using type = Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseCompletedEventArgs; };
 template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseTimestamps>{ using type = Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseTimestamps; };
@@ -103,30 +103,96 @@ template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagno
 template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagnosticProviderResponseReceivedEventArgs>{ using type = Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs; };
 template <> struct default_interface<Windows::Web::Http::Diagnostics::HttpDiagnosticSourceLocation>{ using type = Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation; };
 
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_RequestSent(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RequestSent(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ResponseReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ResponseReceived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RequestResponseCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RequestResponseCompleted(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamps(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestedUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProcessId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ThreadId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Initiator(Windows::Web::Http::Diagnostics::HttpDiagnosticRequestInitiator* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceLocations(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseTimestamps>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CacheCheckedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionInitiatedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NameResolvedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SslNegotiatedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConnectionCompletedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestSentTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestCompletedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseReceivedTimestamp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResponseCompletedTimestamp(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestSentEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProcessId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ThreadId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Initiator(Windows::Web::Http::Diagnostics::HttpDiagnosticRequestInitiator* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SourceLocations(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromProcessDiagnosticInfo(void* processDiagnosticInfo, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourceUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineNumber(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColumnNumber(uint64_t* value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProvider
 {
     void Start() const;
     void Stop() const;
-    event_token RequestSent(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestSentEventArgs> const& handler) const;
-    using RequestSent_revoker = event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>;
+    winrt::event_token RequestSent(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestSentEventArgs> const& handler) const;
+    using RequestSent_revoker = impl::event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider, &impl::abi_t<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>::remove_RequestSent>;
     RequestSent_revoker RequestSent(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestSentEventArgs> const& handler) const;
-    void RequestSent(event_token const& token) const;
-    event_token ResponseReceived(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderResponseReceivedEventArgs> const& handler) const;
-    using ResponseReceived_revoker = event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>;
+    void RequestSent(winrt::event_token const& token) const noexcept;
+    winrt::event_token ResponseReceived(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderResponseReceivedEventArgs> const& handler) const;
+    using ResponseReceived_revoker = impl::event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider, &impl::abi_t<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>::remove_ResponseReceived>;
     ResponseReceived_revoker ResponseReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderResponseReceivedEventArgs> const& handler) const;
-    void ResponseReceived(event_token const& token) const;
-    event_token RequestResponseCompleted(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseCompletedEventArgs> const& handler) const;
-    using RequestResponseCompleted_revoker = event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>;
+    void ResponseReceived(winrt::event_token const& token) const noexcept;
+    winrt::event_token RequestResponseCompleted(Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseCompletedEventArgs> const& handler) const;
+    using RequestResponseCompleted_revoker = impl::event_revoker<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider, &impl::abi_t<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>::remove_RequestResponseCompleted>;
     RequestResponseCompleted_revoker RequestResponseCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Web::Http::Diagnostics::HttpDiagnosticProvider, Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseCompletedEventArgs> const& handler) const;
-    void RequestResponseCompleted(event_token const& token) const;
+    void RequestResponseCompleted(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider> { template <typename D> using type = consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProvider<D>; };
 
 template <typename D>
 struct consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProviderRequestResponseCompletedEventArgs
 {
-    GUID ActivityId() const;
+    winrt::guid ActivityId() const;
     Windows::Web::Http::Diagnostics::HttpDiagnosticProviderRequestResponseTimestamps Timestamps() const;
     Windows::Foundation::Uri RequestedUri() const;
     uint32_t ProcessId() const;
@@ -155,7 +221,7 @@ template <typename D>
 struct consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProviderRequestSentEventArgs
 {
     Windows::Foundation::DateTime Timestamp() const;
-    GUID ActivityId() const;
+    winrt::guid ActivityId() const;
     Windows::Web::Http::HttpRequestMessage Message() const;
     uint32_t ProcessId() const;
     uint32_t ThreadId() const;
@@ -168,7 +234,7 @@ template <typename D>
 struct consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProviderResponseReceivedEventArgs
 {
     Windows::Foundation::DateTime Timestamp() const;
-    GUID ActivityId() const;
+    winrt::guid ActivityId() const;
     Windows::Web::Http::HttpResponseMessage Message() const;
 };
 template <> struct consume<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs> { template <typename D> using type = consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticProviderResponseReceivedEventArgs<D>; };
@@ -188,71 +254,5 @@ struct consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticSourceLocation
     uint64_t ColumnNumber() const;
 };
 template <> struct consume<Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation> { template <typename D> using type = consume_Windows_Web_Http_Diagnostics_IHttpDiagnosticSourceLocation<D>; };
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProvider>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_RequestSent(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RequestSent(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ResponseReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ResponseReceived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_RequestResponseCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RequestResponseCompleted(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamps(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestedUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProcessId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ThreadId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Initiator(Windows::Web::Http::Diagnostics::HttpDiagnosticRequestInitiator* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceLocations(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestResponseTimestamps>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CacheCheckedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionInitiatedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NameResolvedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SslNegotiatedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConnectionCompletedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestSentTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestCompletedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseReceivedTimestamp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResponseCompletedTimestamp(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderRequestSentEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProcessId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ThreadId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Initiator(Windows::Web::Http::Diagnostics::HttpDiagnosticRequestInitiator* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SourceLocations(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderResponseReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticProviderStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromProcessDiagnosticInfo(void* processDiagnosticInfo, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::Diagnostics::IHttpDiagnosticSourceLocation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourceUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineNumber(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColumnNumber(uint64_t* value) noexcept = 0;
-};};
 
 }

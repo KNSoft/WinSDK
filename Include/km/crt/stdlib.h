@@ -507,7 +507,6 @@ _Check_return_opt_ _CRTIMP errno_t __cdecl _dupenv_s(_Outptr_result_buffer_maybe
 _Check_return_opt_ _CRTIMP_ALT errno_t __ALTDECL _itoa_s(_In_ int _Value, _Out_writes_z_(_Size) char * _DstBuf, _In_ size_t _Size, _In_ int _Radix);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _itoa_s, _In_ int, _Value, char, _Dest, _In_ int, _Radix)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_1_1(char *, __RETURN_POLICY_DST, _CRTIMP, _itoa, _In_ int, _Value, _Pre_notnull_ _Post_z_, char, _Dest, _In_ int, _Radix)
 #pragma prefast(pop)
@@ -534,7 +533,6 @@ extern "C++"
 _Check_return_opt_ _CRTIMP_ALT errno_t __ALTDECL _ltoa_s(_In_ long _Val, _Out_writes_z_(_Size) char * _DstBuf, _In_ size_t _Size, _In_ int _Radix);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _ltoa_s, _In_ long, _Value, char, _Dest, _In_ int, _Radix)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_1_1(char *, __RETURN_POLICY_DST, _CRTIMP, _ltoa, _In_ long, _Value, _Pre_notnull_ _Post_z_, char, _Dest, _In_ int, _Radix)
 #pragma prefast(pop)
@@ -575,7 +573,6 @@ _CRTIMP int __cdecl system(_In_opt_z_ const char * _Command);
 _Check_return_opt_ _CRTIMP_ALT errno_t __ALTDECL _ultoa_s(_In_ unsigned long _Val, _Out_writes_z_(_Size) char * _DstBuf, _In_ size_t _Size, _In_ int _Radix);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _ultoa_s, _In_ unsigned long, _Value, char, _Dest, _In_ int, _Radix)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_1_1(char *, __RETURN_POLICY_DST, _CRTIMP, _ultoa, _In_ unsigned long, _Value, _Pre_notnull_ _Post_z_, char, _Dest, _In_ int, _Radix)
 #pragma prefast(pop)
@@ -698,7 +695,6 @@ __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _itow_s, _In_ int, _Value, wchar_
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _ltow_s, _In_ long, _Value, wchar_t, _Dest, _In_ int, _Radix)
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_1_1(errno_t, _ultow_s, _In_ unsigned long, _Value, wchar_t, _Dest, _In_ int, _Radix)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_1_1(wchar_t *, __RETURN_POLICY_DST, _CRTIMP, _itow, _In_ int, _Value, _Pre_notnull_ _Post_z_, wchar_t, _Dest, _In_ int, _Radix)
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_1_1(wchar_t *, __RETURN_POLICY_DST, _CRTIMP, _ltow, _In_ long, _Value, _Pre_notnull_ _Post_z_, wchar_t, _Dest, _In_ int, _Radix)
@@ -793,7 +789,6 @@ _Check_return_wat_ _CRTIMP_ALT errno_t   __ALTDECL _makepath_s(_Out_writes_z_(_S
         _In_opt_z_ const char * _Ext);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_4(errno_t, _makepath_s, char, _Path, _In_opt_z_ const char *, _Drive, _In_opt_z_ const char *, _Dir, _In_opt_z_ const char *, _Filename, _In_opt_z_ const char *, _Ext)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGE, "Banned API")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_4(void, __RETURN_POLICY_VOID, _CRTIMP, _makepath, _Pre_notnull_ _Post_z_, char, _Path, _In_opt_z_ const char *, _Drive, _In_opt_z_ const char *, _Dir, _In_opt_z_ const char *, _Filename, _In_opt_z_ const char *, _Ext)
@@ -844,10 +839,7 @@ _Check_return_wat_ _CRTIMP errno_t __cdecl _putenv_s(_In_z_ const char * _Name, 
 
 _CRTIMP errno_t __cdecl _searchenv_s(_In_z_ const char * _Filename, _In_z_ const char * _EnvVar, _Out_writes_z_(_SizeInBytes) char * _ResultPath, _In_ size_t _SizeInBytes);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_2_0(errno_t, _searchenv_s, _In_z_ const char *, _Filename, _In_z_ const char *, _EnvVar, char, _ResultPath)
-#pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Max path typically expected, but not required")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_2_0(void, __RETURN_POLICY_VOID, _CRTIMP, _searchenv, _In_z_ const char *, _Filename, _In_z_ const char *, _EnvVar, _Pre_notnull_ _Post_z_, char, _ResultPath)
-#pragma prefast(pop)
 
 _CRT_INSECURE_DEPRECATE(_splitpath_s) _CRTIMP void   __cdecl _splitpath(_In_z_ const char * _FullPath, _Pre_maybenull_ _Post_z_ char * _Drive, _Pre_maybenull_ _Post_z_ char * _Dir, _Pre_maybenull_ _Post_z_ char * _Filename, _Pre_maybenull_ _Post_z_ char * _Ext);
 _Check_return_wat_ _CRTIMP_ALT errno_t  __ALTDECL _splitpath_s(_In_z_ const char * _FullPath, 
@@ -878,7 +870,6 @@ _Check_return_wat_ _CRTIMP_ALT errno_t __ALTDECL _wmakepath_s(_Out_writes_z_(_SI
         _In_opt_z_ const wchar_t * _Ext);        
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_4(errno_t, _wmakepath_s, wchar_t, _ResultPath, _In_opt_z_ const wchar_t *, _Drive, _In_opt_z_ const wchar_t *, _Dir, _In_opt_z_ const wchar_t *, _Filename, _In_opt_z_ const wchar_t *, _Ext)
 #pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGE, "Banned API")
 #pragma prefast (disable: __WARNING_BANNED_API_USAGEL2, "Banned API")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_4(void, __RETURN_POLICY_VOID, _CRTIMP, _wmakepath, _Pre_notnull_ _Post_z_, wchar_t, _ResultPath, _In_opt_z_ const wchar_t *, _Drive, _In_opt_z_ const wchar_t *, _Dir, _In_opt_z_ const wchar_t *, _Filename, _In_opt_z_ const wchar_t *, _Ext)
@@ -891,10 +882,7 @@ _Check_return_ _CRTIMP int    __cdecl _wputenv(_In_z_ const wchar_t * _EnvString
 _Check_return_wat_ _CRTIMP errno_t __cdecl _wputenv_s(_In_z_ const wchar_t * _Name, _In_z_ const wchar_t * _Value);
 _CRTIMP errno_t __cdecl _wsearchenv_s(_In_z_ const wchar_t * _Filename, _In_z_ const wchar_t * _EnvVar, _Out_writes_z_(_SizeInWords) wchar_t * _ResultPath, _In_ size_t _SizeInWords);
 __DEFINE_CPP_OVERLOAD_SECURE_FUNC_2_0(errno_t, _wsearchenv_s, _In_z_ const wchar_t *, _Filename, _In_z_ const wchar_t *, _EnvVar, wchar_t, _ResultPath)
-#pragma prefast(push)
-#pragma prefast (disable: __WARNING_UNANNOTATED_BUFFER, "Inexpressible")
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_2_0(void, __RETURN_POLICY_VOID, _CRTIMP, _wsearchenv, _In_z_ const wchar_t *, _Filename, _In_z_ const wchar_t *, _EnvVar, _Pre_notnull_ _Post_z_, wchar_t, _ResultPath)
-#pragma prefast(pop)
 _CRT_INSECURE_DEPRECATE(_wsplitpath_s) _CRTIMP void   __cdecl _wsplitpath(_In_z_ const wchar_t * _FullPath, _Pre_maybenull_ _Post_z_ wchar_t * _Drive, _Pre_maybenull_ _Post_z_ wchar_t * _Dir, _Pre_maybenull_ _Post_z_ wchar_t * _Filename, _Pre_maybenull_ _Post_z_ wchar_t * _Ext);
 _CRTIMP_ALT errno_t __ALTDECL _wsplitpath_s(_In_z_ const wchar_t * _FullPath, 
 		_Out_writes_opt_z_(_DriveSize) wchar_t * _Drive, _In_ size_t _DriveSize, 

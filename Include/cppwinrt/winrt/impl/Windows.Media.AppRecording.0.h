@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -66,19 +66,75 @@ template <> struct name<Windows::Media::AppRecording::AppRecordingSavedScreensho
 template <> struct name<Windows::Media::AppRecording::AppRecordingStatus>{ static constexpr auto & value{ L"Windows.Media.AppRecording.AppRecordingStatus" }; };
 template <> struct name<Windows::Media::AppRecording::AppRecordingStatusDetails>{ static constexpr auto & value{ L"Windows.Media.AppRecording.AppRecordingStatusDetails" }; };
 template <> struct name<Windows::Media::AppRecording::AppRecordingSaveScreenshotOption>{ static constexpr auto & value{ L"Windows.Media.AppRecording.AppRecordingSaveScreenshotOption" }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingManager>{ static constexpr GUID value{ 0xE7E26076,0xA044,0x48E2,{ 0xA5,0x12,0x30,0x94,0xD5,0x74,0xC7,0xCC } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingManagerStatics>{ static constexpr GUID value{ 0x50E709F7,0x38CE,0x4BD3,{ 0x9D,0xB2,0xE7,0x2B,0xBE,0x9D,0xE1,0x1D } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingResult>{ static constexpr GUID value{ 0x3A900864,0xC66D,0x46F9,{ 0xB2,0xD9,0x5B,0xC2,0xDA,0xD0,0x70,0xD7 } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult>{ static constexpr GUID value{ 0x9C5B8D0A,0x0ABB,0x4457,{ 0xAA,0xEE,0x24,0xF9,0xC1,0x2E,0xC7,0x78 } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo>{ static constexpr GUID value{ 0x9B642D0A,0x189A,0x4D00,{ 0xBF,0x25,0xE1,0xBB,0x12,0x49,0xD5,0x94 } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingStatus>{ static constexpr GUID value{ 0x1D0CC82C,0xBC18,0x4B8A,{ 0xA6,0xEF,0x12,0x7E,0xFA,0xB3,0xB5,0xD9 } }; };
-template <> struct guid<Windows::Media::AppRecording::IAppRecordingStatusDetails>{ static constexpr GUID value{ 0xB538A9B0,0x14ED,0x4412,{ 0xAC,0x45,0x6D,0x67,0x2C,0x9C,0x99,0x49 } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingManager>{ static constexpr guid value{ 0xE7E26076,0xA044,0x48E2,{ 0xA5,0x12,0x30,0x94,0xD5,0x74,0xC7,0xCC } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingManagerStatics>{ static constexpr guid value{ 0x50E709F7,0x38CE,0x4BD3,{ 0x9D,0xB2,0xE7,0x2B,0xBE,0x9D,0xE1,0x1D } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingResult>{ static constexpr guid value{ 0x3A900864,0xC66D,0x46F9,{ 0xB2,0xD9,0x5B,0xC2,0xDA,0xD0,0x70,0xD7 } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult>{ static constexpr guid value{ 0x9C5B8D0A,0x0ABB,0x4457,{ 0xAA,0xEE,0x24,0xF9,0xC1,0x2E,0xC7,0x78 } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo>{ static constexpr guid value{ 0x9B642D0A,0x189A,0x4D00,{ 0xBF,0x25,0xE1,0xBB,0x12,0x49,0xD5,0x94 } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingStatus>{ static constexpr guid value{ 0x1D0CC82C,0xBC18,0x4B8A,{ 0xA6,0xEF,0x12,0x7E,0xFA,0xB3,0xB5,0xD9 } }; };
+template <> struct guid_storage<Windows::Media::AppRecording::IAppRecordingStatusDetails>{ static constexpr guid value{ 0xB538A9B0,0x14ED,0x4412,{ 0xAC,0x45,0x6D,0x67,0x2C,0x9C,0x99,0x49 } }; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingManager>{ using type = Windows::Media::AppRecording::IAppRecordingManager; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingResult>{ using type = Windows::Media::AppRecording::IAppRecordingResult; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingSaveScreenshotResult>{ using type = Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingSavedScreenshotInfo>{ using type = Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingStatus>{ using type = Windows::Media::AppRecording::IAppRecordingStatus; };
 template <> struct default_interface<Windows::Media::AppRecording::AppRecordingStatusDetails>{ using type = Windows::Media::AppRecording::IAppRecordingStatusDetails; };
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetStatus(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL StartRecordingToFileAsync(void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RecordTimeSpanToFileAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void* file, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedScreenshotMediaEncodingSubtypes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveScreenshotToFilesAsync(void* folder, void* filenamePrefix, Windows::Media::AppRecording::AppRecordingSaveScreenshotOption option, void* requestedFormats, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Succeeded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsFileTruncated(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Succeeded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SavedScreenshotInfos(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_File(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MediaEncodingSubtype(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingStatus>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanRecord(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanRecordTimeSpan(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HistoricalBufferDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Details(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::AppRecording::IAppRecordingStatusDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsAnyAppBroadcasting(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCaptureResourceUnavailable(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGameStreamInProgress(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTimeSpanRecordingDisabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGpuConstrained(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAppInactive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsBlockedForApp(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisabledByUser(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDisabledBySystem(bool* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_AppRecording_IAppRecordingManager
@@ -102,7 +158,7 @@ template <typename D>
 struct consume_Windows_Media_AppRecording_IAppRecordingResult
 {
     bool Succeeded() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     Windows::Foundation::TimeSpan Duration() const;
     bool IsFileTruncated() const;
 };
@@ -112,7 +168,7 @@ template <typename D>
 struct consume_Windows_Media_AppRecording_IAppRecordingSaveScreenshotResult
 {
     bool Succeeded() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::AppRecording::AppRecordingSavedScreenshotInfo> SavedScreenshotInfos() const;
 };
 template <> struct consume<Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult> { template <typename D> using type = consume_Windows_Media_AppRecording_IAppRecordingSaveScreenshotResult<D>; };
@@ -149,61 +205,5 @@ struct consume_Windows_Media_AppRecording_IAppRecordingStatusDetails
     bool IsDisabledBySystem() const;
 };
 template <> struct consume<Windows::Media::AppRecording::IAppRecordingStatusDetails> { template <typename D> using type = consume_Windows_Media_AppRecording_IAppRecordingStatusDetails<D>; };
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetStatus(void** result) noexcept = 0;
-    virtual HRESULT __stdcall StartRecordingToFileAsync(void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RecordTimeSpanToFileAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void* file, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedScreenshotMediaEncodingSubtypes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SaveScreenshotToFilesAsync(void* folder, HSTRING filenamePrefix, Windows::Media::AppRecording::AppRecordingSaveScreenshotOption option, void* requestedFormats, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Succeeded(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsFileTruncated(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Succeeded(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SavedScreenshotInfos(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_File(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MediaEncodingSubtype(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingStatus>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanRecord(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanRecordTimeSpan(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HistoricalBufferDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Details(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::AppRecording::IAppRecordingStatusDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsAnyAppBroadcasting(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCaptureResourceUnavailable(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGameStreamInProgress(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTimeSpanRecordingDisabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGpuConstrained(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAppInactive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsBlockedForApp(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDisabledByUser(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDisabledBySystem(bool* value) noexcept = 0;
-};};
 
 }

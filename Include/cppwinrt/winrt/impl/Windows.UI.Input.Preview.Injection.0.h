@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -199,22 +199,131 @@ template <> struct name<Windows::UI::Input::Preview::Injection::InjectedInputVis
 template <> struct name<Windows::UI::Input::Preview::Injection::InjectedInputPoint>{ static constexpr auto & value{ L"Windows.UI.Input.Preview.Injection.InjectedInputPoint" }; };
 template <> struct name<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo>{ static constexpr auto & value{ L"Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo" }; };
 template <> struct name<Windows::UI::Input::Preview::Injection::InjectedInputRectangle>{ static constexpr auto & value{ L"Windows.UI.Input.Preview.Injection.InjectedInputRectangle" }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo>{ static constexpr GUID value{ 0x20AE9A3F,0xDF11,0x4572,{ 0xA9,0xAB,0xD7,0x5B,0x8A,0x5E,0x48,0xAD } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>{ static constexpr GUID value{ 0x59596876,0x6C39,0x4EC4,{ 0x8B,0x2A,0x29,0xEF,0x7D,0xE1,0x8A,0xCA } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>{ static constexpr GUID value{ 0x4B46D140,0x2B6A,0x5FFA,{ 0x7E,0xAE,0xBD,0x07,0x7B,0x05,0x2A,0xCD } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>{ static constexpr GUID value{ 0x96F56E6B,0xE47A,0x5CF4,{ 0x41,0x8D,0x8A,0x5F,0xB9,0x67,0x0C,0x7D } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>{ static constexpr GUID value{ 0x6B40AD03,0xCA1E,0x5527,{ 0x7E,0x02,0x28,0x28,0x54,0x0B,0xB1,0xD4 } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>{ static constexpr GUID value{ 0x224FD1DF,0x43E8,0x5EF5,{ 0x51,0x0A,0x69,0xCA,0x8C,0x9B,0x4C,0x28 } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInputInjector>{ static constexpr GUID value{ 0x8EC26F84,0x0B02,0x4BD2,{ 0xAD,0x7A,0x3D,0x46,0x58,0xBE,0x3E,0x18 } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInputInjector2>{ static constexpr GUID value{ 0x8E7A905D,0x1453,0x43A7,{ 0x9B,0xCB,0x06,0xD6,0xD7,0xB3,0x05,0xF7 } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInputInjectorStatics>{ static constexpr GUID value{ 0xDEAE6943,0x7402,0x4141,{ 0xA5,0xC6,0x0C,0x01,0xAA,0x57,0xB1,0x6A } }; };
-template <> struct guid<Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>{ static constexpr GUID value{ 0xA4DB38FB,0xDD8C,0x414F,{ 0x95,0xEA,0xF8,0x7E,0xF4,0xC0,0xAE,0x6C } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo>{ static constexpr guid value{ 0x20AE9A3F,0xDF11,0x4572,{ 0xA9,0xAB,0xD7,0x5B,0x8A,0x5E,0x48,0xAD } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>{ static constexpr guid value{ 0x59596876,0x6C39,0x4EC4,{ 0x8B,0x2A,0x29,0xEF,0x7D,0xE1,0x8A,0xCA } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>{ static constexpr guid value{ 0x4B46D140,0x2B6A,0x5FFA,{ 0x7E,0xAE,0xBD,0x07,0x7B,0x05,0x2A,0xCD } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>{ static constexpr guid value{ 0x96F56E6B,0xE47A,0x5CF4,{ 0x41,0x8D,0x8A,0x5F,0xB9,0x67,0x0C,0x7D } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>{ static constexpr guid value{ 0x6B40AD03,0xCA1E,0x5527,{ 0x7E,0x02,0x28,0x28,0x54,0x0B,0xB1,0xD4 } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>{ static constexpr guid value{ 0x224FD1DF,0x43E8,0x5EF5,{ 0x51,0x0A,0x69,0xCA,0x8C,0x9B,0x4C,0x28 } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInputInjector>{ static constexpr guid value{ 0x8EC26F84,0x0B02,0x4BD2,{ 0xAD,0x7A,0x3D,0x46,0x58,0xBE,0x3E,0x18 } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInputInjector2>{ static constexpr guid value{ 0x8E7A905D,0x1453,0x43A7,{ 0x9B,0xCB,0x06,0xD6,0xD7,0xB3,0x05,0xF7 } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInputInjectorStatics>{ static constexpr guid value{ 0xDEAE6943,0x7402,0x4141,{ 0xA5,0xC6,0x0C,0x01,0xAA,0x57,0xB1,0x6A } }; };
+template <> struct guid_storage<Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>{ static constexpr guid value{ 0xA4DB38FB,0xDD8C,0x414F,{ 0x95,0xEA,0xF8,0x7E,0xF4,0xC0,0xAE,0x6C } }; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InjectedInputGamepadInfo>{ using type = Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo>{ using type = Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo>{ using type = Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InjectedInputPenInfo>{ using type = Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo>{ using type = Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo; };
 template <> struct default_interface<Windows::UI::Input::Preview::Injection::InputInjector>{ using type = Windows::UI::Input::Preview::Injection::IInputInjector; };
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Buttons(Windows::Gaming::Input::GamepadButtons* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Buttons(Windows::Gaming::Input::GamepadButtons value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftThumbstickX(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftThumbstickX(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftThumbstickY(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftThumbstickY(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftTrigger(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftTrigger(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightThumbstickX(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightThumbstickX(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightThumbstickY(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightThumbstickY(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightTrigger(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightTrigger(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceFromGamepadReading(struct struct_Windows_Gaming_Input_GamepadReading reading, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScanCode(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScanCode(uint16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VirtualKey(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VirtualKey(uint16_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MouseData(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MouseData(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeltaY(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DeltaY(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeltaX(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DeltaX(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimeOffsetInMilliseconds(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TimeOffsetInMilliseconds(uint32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Pressure(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rotation(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rotation(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TiltX(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TiltX(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TiltY(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TiltY(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Orientation(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Pressure(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InjectKeyboardInput(void* input) noexcept = 0;
+    virtual int32_t WINRT_CALL InjectMouseInput(void* input) noexcept = 0;
+    virtual int32_t WINRT_CALL InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept = 0;
+    virtual int32_t WINRT_CALL InjectTouchInput(void* input) noexcept = 0;
+    virtual int32_t WINRT_CALL UninitializeTouchInjection() noexcept = 0;
+    virtual int32_t WINRT_CALL InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept = 0;
+    virtual int32_t WINRT_CALL InjectPenInput(void* input) noexcept = 0;
+    virtual int32_t WINRT_CALL UninitializePenInjection() noexcept = 0;
+    virtual int32_t WINRT_CALL InjectShortcut(Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjector2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InitializeGamepadInjection() noexcept = 0;
+    virtual int32_t WINRT_CALL InjectGamepadInput(void* input) noexcept = 0;
+    virtual int32_t WINRT_CALL UninitializeGamepadInjection() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjectorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreate(void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreateForAppBroadcastOnly(void** instance) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Input_Preview_Injection_IInjectedInputGamepadInfo
@@ -373,114 +482,5 @@ struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle
 };
 template <> struct abi<Windows::UI::Input::Preview::Injection::InjectedInputRectangle>{ using type = struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle; };
 
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Buttons(Windows::Gaming::Input::GamepadButtons* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Buttons(Windows::Gaming::Input::GamepadButtons value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftThumbstickX(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftThumbstickX(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftThumbstickY(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftThumbstickY(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftTrigger(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftTrigger(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightThumbstickX(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightThumbstickX(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightThumbstickY(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightThumbstickY(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightTrigger(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightTrigger(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceFromGamepadReading(struct struct_Windows_Gaming_Input_GamepadReading reading, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScanCode(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ScanCode(uint16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_VirtualKey(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VirtualKey(uint16_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_MouseData(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MouseData(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeltaY(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DeltaY(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeltaX(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DeltaX(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimeOffsetInMilliseconds(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TimeOffsetInMilliseconds(uint32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept = 0;
-    virtual HRESULT __stdcall get_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons value) noexcept = 0;
-    virtual HRESULT __stdcall get_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Pressure(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rotation(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rotation(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_TiltX(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TiltX(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_TiltY(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TiltY(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Orientation(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Pressure(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InjectKeyboardInput(void* input) noexcept = 0;
-    virtual HRESULT __stdcall InjectMouseInput(void* input) noexcept = 0;
-    virtual HRESULT __stdcall InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept = 0;
-    virtual HRESULT __stdcall InjectTouchInput(void* input) noexcept = 0;
-    virtual HRESULT __stdcall UninitializeTouchInjection() noexcept = 0;
-    virtual HRESULT __stdcall InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept = 0;
-    virtual HRESULT __stdcall InjectPenInput(void* input) noexcept = 0;
-    virtual HRESULT __stdcall UninitializePenInjection() noexcept = 0;
-    virtual HRESULT __stdcall InjectShortcut(Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjector2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InitializeGamepadInjection() noexcept = 0;
-    virtual HRESULT __stdcall InjectGamepadInput(void* input) noexcept = 0;
-    virtual HRESULT __stdcall UninitializeGamepadInjection() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjectorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCreate(void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCreateForAppBroadcastOnly(void** instance) noexcept = 0;
-};};
 
 }

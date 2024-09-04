@@ -11,6 +11,8 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Devices.PointOfService.idl";
+import "Windows.Graphics.Imaging.idl";
+import "Windows.Storage.Streams.idl";
 
 // Forward Declare
 namespace Windows
@@ -42,6 +44,28 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace Graphics
+    {
+        namespace Imaging
+        {
+            typedef enum BitmapPixelFormat BitmapPixelFormat;
+
+            typedef struct BitmapSize BitmapSize;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Storage
+    {
+        namespace Streams
+        {
+            interface IBuffer;
+        }
+    }
+}
+namespace Windows
+{
     namespace Devices
     {
         namespace PointOfService
@@ -52,39 +76,63 @@ namespace Windows
 
                 interface IBarcodeScannerDisableScannerRequest;
 
+                interface IBarcodeScannerDisableScannerRequest2;
+
                 interface IBarcodeScannerDisableScannerRequestEventArgs;
 
                 interface IBarcodeScannerEnableScannerRequest;
 
+                interface IBarcodeScannerEnableScannerRequest2;
+
                 interface IBarcodeScannerEnableScannerRequestEventArgs;
 
+                interface IBarcodeScannerFrameReader;
+
+                interface IBarcodeScannerFrameReaderFrameArrivedEventArgs;
+
                 interface IBarcodeScannerGetSymbologyAttributesRequest;
+
+                interface IBarcodeScannerGetSymbologyAttributesRequest2;
 
                 interface IBarcodeScannerGetSymbologyAttributesRequestEventArgs;
 
                 interface IBarcodeScannerHideVideoPreviewRequest;
 
+                interface IBarcodeScannerHideVideoPreviewRequest2;
+
                 interface IBarcodeScannerHideVideoPreviewRequestEventArgs;
 
                 interface IBarcodeScannerProviderConnection;
+
+                interface IBarcodeScannerProviderConnection2;
 
                 interface IBarcodeScannerProviderTriggerDetails;
 
                 interface IBarcodeScannerSetActiveSymbologiesRequest;
 
+                interface IBarcodeScannerSetActiveSymbologiesRequest2;
+
                 interface IBarcodeScannerSetActiveSymbologiesRequestEventArgs;
 
                 interface IBarcodeScannerSetSymbologyAttributesRequest;
+
+                interface IBarcodeScannerSetSymbologyAttributesRequest2;
 
                 interface IBarcodeScannerSetSymbologyAttributesRequestEventArgs;
 
                 interface IBarcodeScannerStartSoftwareTriggerRequest;
 
+                interface IBarcodeScannerStartSoftwareTriggerRequest2;
+
                 interface IBarcodeScannerStartSoftwareTriggerRequestEventArgs;
 
                 interface IBarcodeScannerStopSoftwareTriggerRequest;
 
+                interface IBarcodeScannerStopSoftwareTriggerRequest2;
+
                 interface IBarcodeScannerStopSoftwareTriggerRequestEventArgs;
+
+                interface IBarcodeScannerVideoFrame;
 
                 interface IBarcodeSymbologyAttributesBuilder;
 
@@ -95,6 +143,10 @@ namespace Windows
                 runtimeclass BarcodeScannerEnableScannerRequest;
 
                 runtimeclass BarcodeScannerEnableScannerRequestEventArgs;
+
+                runtimeclass BarcodeScannerFrameReader;
+
+                runtimeclass BarcodeScannerFrameReaderFrameArrivedEventArgs;
 
                 runtimeclass BarcodeScannerGetSymbologyAttributesRequest;
 
@@ -124,6 +176,8 @@ namespace Windows
 
                 runtimeclass BarcodeScannerStopSoftwareTriggerRequestEventArgs;
 
+                runtimeclass BarcodeScannerVideoFrame;
+
                 runtimeclass BarcodeSymbologyAttributesBuilder;
             }
         }
@@ -141,6 +195,12 @@ namespace Windows
             {
                 declare
                 {
+                    interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*>;
+
+                    interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerVideoFrame*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*, Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReaderFrameArrivedEventArgs*>;
+
                     interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.Provider.BarcodeScannerProviderConnection*, Windows.Devices.PointOfService.Provider.BarcodeScannerDisableScannerRequestEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.Provider.BarcodeScannerProviderConnection*, Windows.Devices.PointOfService.Provider.BarcodeScannerEnableScannerRequestEventArgs*>;
@@ -187,6 +247,15 @@ namespace Windows
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerDisableScannerRequest)]
+                [uuid(CCDFE625-65C3-4CCC-B457-F39C7A9EA60D)]
+                interface IBarcodeScannerDisableScannerRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerDisableScannerRequestEventArgs)]
                 [uuid(7006E142-E802-46F5-B604-352A15CE9232)]
@@ -205,12 +274,44 @@ namespace Windows
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerEnableScannerRequest)]
+                [uuid(71A4F2A8-9905-41AC-9121-B645916A84A1)]
+                interface IBarcodeScannerEnableScannerRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerEnableScannerRequestEventArgs)]
                 [uuid(956C9419-7B4E-4451-8C41-8E10CFBC5B41)]
                 interface IBarcodeScannerEnableScannerRequestEventArgs : IInspectable
                 {
                     [propget] HRESULT Request([out] [retval] Windows.Devices.PointOfService.Provider.BarcodeScannerEnableScannerRequest** value);
+                    HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader)]
+                [uuid(DBC72B07-64C3-482B-93C8-65FB33C22208)]
+                interface IBarcodeScannerFrameReader : IInspectable
+                    requires
+                        Windows.Foundation.IClosable
+                {
+                    HRESULT StartAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                    HRESULT StopAsync([out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    HRESULT TryAcquireLatestFrameAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerVideoFrame*>** operation);
+                    [propget] HRESULT Connection([out] [retval] Windows.Devices.PointOfService.Provider.BarcodeScannerProviderConnection** value);
+                    [eventadd] HRESULT FrameArrived([in] Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*, Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReaderFrameArrivedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT FrameArrived([in] EventRegistrationToken token);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReaderFrameArrivedEventArgs)]
+                [uuid(B0BBD604-54FD-436D-8629-712E787223DD)]
+                interface IBarcodeScannerFrameReaderFrameArrivedEventArgs : IInspectable
+                {
                     HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
                 }
 
@@ -222,6 +323,15 @@ namespace Windows
                     [propget] HRESULT Symbology([out] [retval] UINT32* value);
                     HRESULT ReportCompletedAsync([in] Windows.Devices.PointOfService.BarcodeSymbologyAttributes* attributes, [out] [retval] Windows.Foundation.IAsyncAction** result);
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerGetSymbologyAttributesRequest)]
+                [uuid(6A6A2B13-75A8-49FB-B852-BFB93D760AF7)]
+                interface IBarcodeScannerGetSymbologyAttributesRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -240,6 +350,15 @@ namespace Windows
                 {
                     HRESULT ReportCompletedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerHideVideoPreviewRequest)]
+                [uuid(7E28435D-9814-431D-A2F2-D6248C5AD4B5)]
+                interface IBarcodeScannerHideVideoPreviewRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -290,6 +409,18 @@ namespace Windows
                     [eventremove] HRESULT HideVideoPreviewRequested([in] EventRegistrationToken token);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerProviderConnection)]
+                [uuid(BE9B53CD-1134-418C-A06B-04423A73F3D7)]
+                interface IBarcodeScannerProviderConnection2 : IInspectable
+                    requires
+                        Windows.Foundation.IClosable
+                {
+                    [overload("CreateFrameReaderAsync")] HRESULT CreateFrameReaderAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*>** operation);
+                    [overload("CreateFrameReaderAsync")] HRESULT CreateFrameReaderWithFormatAsync([in] Windows.Graphics.Imaging.BitmapPixelFormat preferredFormat, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*>** operation);
+                    [overload("CreateFrameReaderAsync")] HRESULT CreateFrameReaderWithFormatAndSizeAsync([in] Windows.Graphics.Imaging.BitmapPixelFormat preferredFormat, [in] Windows.Graphics.Imaging.BitmapSize preferredSize, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.Provider.BarcodeScannerFrameReader*>** operation);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerProviderTriggerDetails)]
                 [uuid(50856D82-24E3-48CE-99C7-70AAC1CBC9F7)]
@@ -306,6 +437,15 @@ namespace Windows
                     [propget] HRESULT Symbologies([out] [retval] Windows.Foundation.Collections.IVectorView<UINT32>** value);
                     HRESULT ReportCompletedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerSetActiveSymbologiesRequest)]
+                [uuid(F5FF6EDF-FA9A-4749-B11B-E8FCCB75BC6B)]
+                interface IBarcodeScannerSetActiveSymbologiesRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -328,6 +468,15 @@ namespace Windows
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerSetSymbologyAttributesRequest)]
+                [uuid(DFFBBFC1-DBA8-4B77-BE1E-B56CD72F65B3)]
+                interface IBarcodeScannerSetSymbologyAttributesRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerSetSymbologyAttributesRequestEventArgs)]
                 [uuid(B2B89809-9824-47D4-85BD-D0077BAA7BD2)]
@@ -344,6 +493,15 @@ namespace Windows
                 {
                     HRESULT ReportCompletedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerStartSoftwareTriggerRequest)]
+                [uuid(EB72A25C-6658-4765-A68E-327482653DEB)]
+                interface IBarcodeScannerStartSoftwareTriggerRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -364,6 +522,15 @@ namespace Windows
                     HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerStopSoftwareTriggerRequest)]
+                [uuid(CB57C5DD-FE50-49F8-A0B4-BDC230814DA2)]
+                interface IBarcodeScannerStopSoftwareTriggerRequest2 : IInspectable
+                {
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAsync([in] INT32 reason, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                    [overload("ReportFailedAsync")] HRESULT ReportFailedWithFailedReasonAndDescriptionAsync([in] INT32 reason, [in] HSTRING failedReasonDescription, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerStopSoftwareTriggerRequestEventArgs)]
                 [uuid(EAC34450-4EB7-481A-9273-147A273B99B8)]
@@ -371,6 +538,19 @@ namespace Windows
                 {
                     [propget] HRESULT Request([out] [retval] Windows.Devices.PointOfService.Provider.BarcodeScannerStopSoftwareTriggerRequest** value);
                     HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Devices.PointOfService.Provider.BarcodeScannerVideoFrame)]
+                [uuid(7E585248-9DF7-4121-A175-801D8000112E)]
+                interface IBarcodeScannerVideoFrame : IInspectable
+                    requires
+                        Windows.Foundation.IClosable
+                {
+                    [propget] HRESULT Format([out] [retval] Windows.Graphics.Imaging.BitmapPixelFormat* value);
+                    [propget] HRESULT Width([out] [retval] UINT32* value);
+                    [propget] HRESULT Height([out] [retval] UINT32* value);
+                    [propget] HRESULT PixelData([out] [retval] Windows.Storage.Streams.IBuffer** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -393,6 +573,7 @@ namespace Windows
                 runtimeclass BarcodeScannerDisableScannerRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerDisableScannerRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerDisableScannerRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -409,6 +590,7 @@ namespace Windows
                 runtimeclass BarcodeScannerEnableScannerRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerEnableScannerRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerEnableScannerRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -419,12 +601,30 @@ namespace Windows
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerEnableScannerRequestEventArgs;
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass BarcodeScannerFrameReader
+                {
+                    [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerFrameReader;
+                    interface Windows.Foundation.IClosable;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass BarcodeScannerFrameReaderFrameArrivedEventArgs
+                {
+                    [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerFrameReaderFrameArrivedEventArgs;
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
                 [threading(both)]
                 runtimeclass BarcodeScannerGetSymbologyAttributesRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerGetSymbologyAttributesRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerGetSymbologyAttributesRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -441,6 +641,7 @@ namespace Windows
                 runtimeclass BarcodeScannerHideVideoPreviewRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerHideVideoPreviewRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerHideVideoPreviewRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -458,6 +659,7 @@ namespace Windows
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerProviderConnection;
                     interface Windows.Foundation.IClosable;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerProviderConnection2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -474,6 +676,7 @@ namespace Windows
                 runtimeclass BarcodeScannerSetActiveSymbologiesRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerSetActiveSymbologiesRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerSetActiveSymbologiesRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -490,6 +693,7 @@ namespace Windows
                 runtimeclass BarcodeScannerSetSymbologyAttributesRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerSetSymbologyAttributesRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerSetSymbologyAttributesRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -506,6 +710,7 @@ namespace Windows
                 runtimeclass BarcodeScannerStartSoftwareTriggerRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerStartSoftwareTriggerRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerStartSoftwareTriggerRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -522,6 +727,7 @@ namespace Windows
                 runtimeclass BarcodeScannerStopSoftwareTriggerRequest
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerStopSoftwareTriggerRequest;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerStopSoftwareTriggerRequest2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -530,6 +736,15 @@ namespace Windows
                 runtimeclass BarcodeScannerStopSoftwareTriggerRequestEventArgs
                 {
                     [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerStopSoftwareTriggerRequestEventArgs;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass BarcodeScannerVideoFrame
+                {
+                    [default] interface Windows.Devices.PointOfService.Provider.IBarcodeScannerVideoFrame;
+                    interface Windows.Foundation.IClosable;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 6.0)]

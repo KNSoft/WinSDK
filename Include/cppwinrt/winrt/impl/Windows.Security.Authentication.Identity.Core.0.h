@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -98,17 +98,68 @@ template <> struct name<Windows::Security::Authentication::Identity::Core::Micro
 template <> struct name<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse>{ static constexpr auto & value{ L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse" }; };
 template <> struct name<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus" }; };
 template <> struct name<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus" }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager>{ static constexpr GUID value{ 0x0FD340A5,0xF574,0x4320,{ 0xA0,0x8E,0x0A,0x19,0xA8,0x23,0x22,0xAA } }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticatorStatics>{ static constexpr GUID value{ 0xD964C2E6,0xF446,0x4C71,{ 0x8B,0x79,0x6E,0xA4,0x02,0x4A,0xA9,0xB8 } }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult>{ static constexpr GUID value{ 0x4E23A9A0,0xE9FA,0x497A,{ 0x95,0xDE,0x6D,0x57,0x47,0xBF,0x97,0x4C } }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo>{ static constexpr GUID value{ 0x82BA264B,0xD87C,0x4668,{ 0xA9,0x76,0x40,0xCF,0xAE,0x54,0x7D,0x08 } }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo>{ static constexpr GUID value{ 0x5F7EABB4,0xA278,0x4635,{ 0xB7,0x65,0xB4,0x94,0xEB,0x26,0x0A,0xF4 } }; };
-template <> struct guid<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>{ static constexpr GUID value{ 0xAA7EC5FB,0xDA3F,0x4088,{ 0xA2,0x0D,0x56,0x18,0xAF,0xAD,0xB2,0xE5 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager>{ static constexpr guid value{ 0x0FD340A5,0xF574,0x4320,{ 0xA0,0x8E,0x0A,0x19,0xA8,0x23,0x22,0xAA } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticatorStatics>{ static constexpr guid value{ 0xD964C2E6,0xF446,0x4C71,{ 0x8B,0x79,0x6E,0xA4,0x02,0x4A,0xA9,0xB8 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult>{ static constexpr guid value{ 0x4E23A9A0,0xE9FA,0x497A,{ 0x95,0xDE,0x6D,0x57,0x47,0xBF,0x97,0x4C } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo>{ static constexpr guid value{ 0x82BA264B,0xD87C,0x4668,{ 0xA9,0x76,0x40,0xCF,0xAE,0x54,0x7D,0x08 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo>{ static constexpr guid value{ 0x5F7EABB4,0xA278,0x4635,{ 0xB7,0x65,0xB4,0x94,0xEB,0x26,0x0A,0xF4 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>{ static constexpr guid value{ 0xAA7EC5FB,0xDA3F,0x4088,{ 0xA2,0x0D,0x56,0x18,0xAF,0xAD,0xB2,0xE5 } }; };
 template <> struct default_interface<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager>{ using type = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager; };
 template <> struct default_interface<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult>{ using type = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult; };
 template <> struct default_interface<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo>{ using type = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo; };
 template <> struct default_interface<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo>{ using type = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo; };
 template <> struct default_interface<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>{ using type = Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo; };
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetOneTimePassCodeAsync(void* userAccountId, uint32_t codeLength, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AddDeviceAsync(void* userAccountId, void* authenticationToken, void* wnsChannelId, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveDeviceAsync(void* userAccountId, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateWnsChannelAsync(void* userAccountId, void* channelUri, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSessionsAsync(void* userAccountIdList, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSessionsAndUnregisteredAccountsAsync(void* userAccountIdList, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ApproveSessionUsingAuthSessionInfoAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, void* authenticationSessionInfo, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, void* userAccountId, void* sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL DenySessionUsingAuthSessionInfoAsync(void* authenticationSessionInfo, void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL DenySessionAsync(void* userAccountId, void* sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, void** asyncOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticatorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Sessions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Code(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimeInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimeToLive(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UserAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SessionId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplaySessionId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ApprovalStatus(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationType(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationTime(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Sessions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UnregisteredAccounts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Security_Authentication_Identity_Core_IMicrosoftAccountMultiFactorAuthenticationManager
@@ -172,56 +223,5 @@ struct consume_Windows_Security_Authentication_Identity_Core_IMicrosoftAccountMu
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;
 };
 template <> struct consume<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> { template <typename D> using type = consume_Windows_Security_Authentication_Identity_Core_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo<D>; };
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticationManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetOneTimePassCodeAsync(HSTRING userAccountId, uint32_t codeLength, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall AddDeviceAsync(HSTRING userAccountId, HSTRING authenticationToken, HSTRING wnsChannelId, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall RemoveDeviceAsync(HSTRING userAccountId, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateWnsChannelAsync(HSTRING userAccountId, HSTRING channelUri, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall GetSessionsAsync(void* userAccountIdList, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall GetSessionsAndUnregisteredAccountsAsync(void* userAccountIdList, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall ApproveSessionUsingAuthSessionInfoAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, void* authenticationSessionInfo, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, HSTRING userAccountId, HSTRING sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall DenySessionUsingAuthSessionInfoAsync(void* authenticationSessionInfo, void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall DenySessionAsync(HSTRING userAccountId, HSTRING sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, void** asyncOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorAuthenticatorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorGetSessionsResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Sessions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorOneTimeCodedInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Code(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimeInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimeToLive(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorSessionInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UserAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SessionId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplaySessionId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ApprovalStatus(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationType(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationTime(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::Identity::Core::IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Sessions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UnregisteredAccounts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceResponse(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse* value) noexcept = 0;
-};};
 
 }

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -77,10 +77,10 @@ struct ESimManager
     ESimManager() = delete;
     static Windows::Networking::NetworkOperators::ESimServiceInfo ServiceInfo();
     static Windows::Networking::NetworkOperators::ESimWatcher TryCreateESimWatcher();
-    static event_token ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using ServiceInfoChanged_revoker = factory_event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics>;
+    static winrt::event_token ServiceInfoChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using ServiceInfoChanged_revoker = impl::factory_event_revoker<Windows::Networking::NetworkOperators::IESimManagerStatics, &impl::abi_t<Windows::Networking::NetworkOperators::IESimManagerStatics>::remove_ServiceInfoChanged>;
     static ServiceInfoChanged_revoker ServiceInfoChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void ServiceInfoChanged(event_token const& token);
+    static void ServiceInfoChanged(winrt::event_token const& token);
 };
 
 struct WINRT_EBO ESimOperationResult :

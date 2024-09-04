@@ -1,21 +1,21 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Security.ExchangeActiveSyncProvisioning.2.h"
 
 namespace winrt::impl {
 
-template <typename D> GUID consume_Windows_Security_ExchangeActiveSyncProvisioning_IEasClientDeviceInformation<D>::Id() const
+template <typename D> winrt::guid consume_Windows_Security_ExchangeActiveSyncProvisioning_IEasClientDeviceInformation<D>::Id() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation)->get_Id(put_abi(value)));
     return value;
 }
@@ -252,533 +252,461 @@ template <typename D> Windows::Security::ExchangeActiveSyncProvisioning::EasEncr
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation>
 {
-    HRESULT __stdcall get_Id(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Id(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Id());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Id());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OperatingSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OperatingSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OperatingSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OperatingSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FriendlyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FriendlyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FriendlyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FriendlyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemManufacturer(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SystemManufacturer(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemManufacturer, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SystemManufacturer());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemProductName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SystemProductName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemProductName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SystemProductName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemSku(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SystemSku(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemSku, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SystemSku());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2>
 {
-    HRESULT __stdcall get_SystemHardwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SystemHardwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemHardwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SystemHardwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SystemFirmwareVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SystemFirmwareVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SystemFirmwareVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SystemFirmwareVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientSecurityPolicy> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasClientSecurityPolicy>
 {
-    HRESULT __stdcall get_RequireEncryption(bool* value) noexcept final
+    int32_t WINRT_CALL get_RequireEncryption(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireEncryption, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().RequireEncryption());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RequireEncryption(bool value) noexcept final
+    int32_t WINRT_CALL put_RequireEncryption(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireEncryption, WINRT_WRAP(void), bool);
             this->shim().RequireEncryption(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinPasswordLength(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_MinPasswordLength(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordLength, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().MinPasswordLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinPasswordLength(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_MinPasswordLength(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordLength, WINRT_WRAP(void), uint8_t);
             this->shim().MinPasswordLength(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisallowConvenienceLogon(bool* value) noexcept final
+    int32_t WINRT_CALL get_DisallowConvenienceLogon(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisallowConvenienceLogon, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().DisallowConvenienceLogon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisallowConvenienceLogon(bool value) noexcept final
+    int32_t WINRT_CALL put_DisallowConvenienceLogon(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisallowConvenienceLogon, WINRT_WRAP(void), bool);
             this->shim().DisallowConvenienceLogon(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinPasswordComplexCharacters(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_MinPasswordComplexCharacters(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordComplexCharacters, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().MinPasswordComplexCharacters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MinPasswordComplexCharacters(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_MinPasswordComplexCharacters(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordComplexCharacters, WINRT_WRAP(void), uint8_t);
             this->shim().MinPasswordComplexCharacters(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PasswordExpiration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_PasswordExpiration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordExpiration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().PasswordExpiration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PasswordExpiration(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_PasswordExpiration(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordExpiration, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().PasswordExpiration(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PasswordHistory(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PasswordHistory(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordHistory, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PasswordHistory());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PasswordHistory(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_PasswordHistory(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordHistory, WINRT_WRAP(void), uint32_t);
             this->shim().PasswordHistory(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPasswordFailedAttempts(uint8_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPasswordFailedAttempts(uint8_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPasswordFailedAttempts, WINRT_WRAP(uint8_t));
             *value = detach_from<uint8_t>(this->shim().MaxPasswordFailedAttempts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxPasswordFailedAttempts(uint8_t value) noexcept final
+    int32_t WINRT_CALL put_MaxPasswordFailedAttempts(uint8_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPasswordFailedAttempts, WINRT_WRAP(void), uint8_t);
             this->shim().MaxPasswordFailedAttempts(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxInactivityTimeLock(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MaxInactivityTimeLock(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxInactivityTimeLock, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MaxInactivityTimeLock());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxInactivityTimeLock(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_MaxInactivityTimeLock(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxInactivityTimeLock, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().MaxInactivityTimeLock(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CheckCompliance(void** result) noexcept final
+    int32_t WINRT_CALL CheckCompliance(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckCompliance, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults));
             *result = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults>(this->shim().CheckCompliance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ApplyAsync(void** operation) noexcept final
+    int32_t WINRT_CALL ApplyAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ApplyAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults>>(this->shim().ApplyAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasComplianceResults> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasComplianceResults>
 {
-    HRESULT __stdcall get_Compliant(bool* value) noexcept final
+    int32_t WINRT_CALL get_Compliant(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compliant, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Compliant());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequireEncryptionResult(Windows::Security::ExchangeActiveSyncProvisioning::EasRequireEncryptionResult* value) noexcept final
+    int32_t WINRT_CALL get_RequireEncryptionResult(Windows::Security::ExchangeActiveSyncProvisioning::EasRequireEncryptionResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequireEncryptionResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasRequireEncryptionResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasRequireEncryptionResult>(this->shim().RequireEncryptionResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinPasswordLengthResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordLengthResult* value) noexcept final
+    int32_t WINRT_CALL get_MinPasswordLengthResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordLengthResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordLengthResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordLengthResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordLengthResult>(this->shim().MinPasswordLengthResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisallowConvenienceLogonResult(Windows::Security::ExchangeActiveSyncProvisioning::EasDisallowConvenienceLogonResult* value) noexcept final
+    int32_t WINRT_CALL get_DisallowConvenienceLogonResult(Windows::Security::ExchangeActiveSyncProvisioning::EasDisallowConvenienceLogonResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisallowConvenienceLogonResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasDisallowConvenienceLogonResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasDisallowConvenienceLogonResult>(this->shim().DisallowConvenienceLogonResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinPasswordComplexCharactersResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordComplexCharactersResult* value) noexcept final
+    int32_t WINRT_CALL get_MinPasswordComplexCharactersResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordComplexCharactersResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinPasswordComplexCharactersResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordComplexCharactersResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasMinPasswordComplexCharactersResult>(this->shim().MinPasswordComplexCharactersResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PasswordExpirationResult(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordExpirationResult* value) noexcept final
+    int32_t WINRT_CALL get_PasswordExpirationResult(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordExpirationResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordExpirationResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordExpirationResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordExpirationResult>(this->shim().PasswordExpirationResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PasswordHistoryResult(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordHistoryResult* value) noexcept final
+    int32_t WINRT_CALL get_PasswordHistoryResult(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordHistoryResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PasswordHistoryResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordHistoryResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasPasswordHistoryResult>(this->shim().PasswordHistoryResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxPasswordFailedAttemptsResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxPasswordFailedAttemptsResult* value) noexcept final
+    int32_t WINRT_CALL get_MaxPasswordFailedAttemptsResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxPasswordFailedAttemptsResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPasswordFailedAttemptsResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxPasswordFailedAttemptsResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasMaxPasswordFailedAttemptsResult>(this->shim().MaxPasswordFailedAttemptsResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxInactivityTimeLockResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxInactivityTimeLockResult* value) noexcept final
+    int32_t WINRT_CALL get_MaxInactivityTimeLockResult(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxInactivityTimeLockResult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxInactivityTimeLockResult, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasMaxInactivityTimeLockResult));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasMaxInactivityTimeLockResult>(this->shim().MaxInactivityTimeLockResult());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasComplianceResults2> : produce_base<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasComplianceResults2>
 {
-    HRESULT __stdcall get_EncryptionProviderType(Windows::Security::ExchangeActiveSyncProvisioning::EasEncryptionProviderType* value) noexcept final
+    int32_t WINRT_CALL get_EncryptionProviderType(Windows::Security::ExchangeActiveSyncProvisioning::EasEncryptionProviderType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncryptionProviderType, WINRT_WRAP(Windows::Security::ExchangeActiveSyncProvisioning::EasEncryptionProviderType));
             *value = detach_from<Windows::Security::ExchangeActiveSyncProvisioning::EasEncryptionProviderType>(this->shim().EncryptionProviderType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -787,11 +715,11 @@ struct produce<D, Windows::Security::ExchangeActiveSyncProvisioning::IEasComplia
 WINRT_EXPORT namespace winrt::Windows::Security::ExchangeActiveSyncProvisioning {
 
 inline EasClientDeviceInformation::EasClientDeviceInformation() :
-    EasClientDeviceInformation(get_activation_factory<EasClientDeviceInformation>().ActivateInstance<EasClientDeviceInformation>())
+    EasClientDeviceInformation(impl::call_factory<EasClientDeviceInformation>([](auto&& f) { return f.template ActivateInstance<EasClientDeviceInformation>(); }))
 {}
 
 inline EasClientSecurityPolicy::EasClientSecurityPolicy() :
-    EasClientSecurityPolicy(get_activation_factory<EasClientSecurityPolicy>().ActivateInstance<EasClientSecurityPolicy>())
+    EasClientSecurityPolicy(impl::call_factory<EasClientSecurityPolicy>([](auto&& f) { return f.template ActivateInstance<EasClientSecurityPolicy>(); }))
 {}
 
 }
@@ -808,5 +736,3 @@ template<> struct hash<winrt::Windows::Security::ExchangeActiveSyncProvisioning:
 template<> struct hash<winrt::Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults> : winrt::impl::hash_base<winrt::Windows::Security::ExchangeActiveSyncProvisioning::EasComplianceResults> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,6 +17,8 @@ struct NetworkStatusChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NetworkStatusChangedEventHandler(L lambda);
     template <typename F> NetworkStatusChangedEventHandler(F* function);
     template <typename O, typename M> NetworkStatusChangedEventHandler(O* object, M method);
+    template <typename O, typename M> NetworkStatusChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NetworkStatusChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender) const;
 };
 
@@ -67,7 +69,7 @@ struct WINRT_EBO ConnectionCost :
 
 struct WINRT_EBO ConnectionProfile :
     Windows::Networking::Connectivity::IConnectionProfile,
-    impl::require<ConnectionProfile, Windows::Networking::Connectivity::IConnectionProfile2, Windows::Networking::Connectivity::IConnectionProfile3, Windows::Networking::Connectivity::IConnectionProfile4>
+    impl::require<ConnectionProfile, Windows::Networking::Connectivity::IConnectionProfile2, Windows::Networking::Connectivity::IConnectionProfile3, Windows::Networking::Connectivity::IConnectionProfile4, Windows::Networking::Connectivity::IConnectionProfile5>
 {
     ConnectionProfile(std::nullptr_t) noexcept {}
 };
@@ -112,7 +114,7 @@ struct WINRT_EBO DataPlanUsage :
     DataPlanUsage(std::nullptr_t) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("DataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use NetworkUsage.")]] DataUsage :
+struct WINRT_EBO DataUsage :
     Windows::Networking::Connectivity::IDataUsage
 {
     DataUsage(std::nullptr_t) noexcept {}
@@ -151,10 +153,10 @@ struct NetworkInformation
     static Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> GetHostNames();
     static Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> GetProxyConfigurationAsync(Windows::Foundation::Uri const& uri);
     static Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetSortedEndpointPairs(param::iterable<Windows::Networking::EndpointPair> const& destinationList, Windows::Networking::HostNameSortOptions const& sortOptions);
-    static event_token NetworkStatusChanged(Windows::Networking::Connectivity::NetworkStatusChangedEventHandler const& networkStatusHandler);
-    using NetworkStatusChanged_revoker = factory_event_revoker<Windows::Networking::Connectivity::INetworkInformationStatics>;
+    static winrt::event_token NetworkStatusChanged(Windows::Networking::Connectivity::NetworkStatusChangedEventHandler const& networkStatusHandler);
+    using NetworkStatusChanged_revoker = impl::factory_event_revoker<Windows::Networking::Connectivity::INetworkInformationStatics, &impl::abi_t<Windows::Networking::Connectivity::INetworkInformationStatics>::remove_NetworkStatusChanged>;
     static NetworkStatusChanged_revoker NetworkStatusChanged(auto_revoke_t, Windows::Networking::Connectivity::NetworkStatusChangedEventHandler const& networkStatusHandler);
-    static void NetworkStatusChanged(event_token const& eventCookie);
+    static void NetworkStatusChanged(winrt::event_token const& eventCookie);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> FindConnectionProfilesAsync(Windows::Networking::Connectivity::ConnectionProfileFilter const& pProfileFilter);
 };
 

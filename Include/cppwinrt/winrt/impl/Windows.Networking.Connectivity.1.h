@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -74,6 +74,13 @@ struct WINRT_EBO IConnectionProfile4 :
     IConnectionProfile4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IConnectionProfile5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IConnectionProfile5>
+{
+    IConnectionProfile5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IConnectionProfileFilter :
     Windows::Foundation::IInspectable,
     impl::consume_t<IConnectionProfileFilter>
@@ -131,7 +138,7 @@ struct WINRT_EBO IDataPlanUsage :
     IDataPlanUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] IDataUsage :
+struct WINRT_EBO IDataUsage :
     Windows::Foundation::IInspectable,
     impl::consume_t<IDataUsage>
 {

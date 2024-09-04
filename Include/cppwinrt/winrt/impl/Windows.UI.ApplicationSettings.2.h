@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,6 +17,8 @@ struct CredentialCommandCredentialDeletedHandler : Windows::Foundation::IUnknown
     template <typename L> CredentialCommandCredentialDeletedHandler(L lambda);
     template <typename F> CredentialCommandCredentialDeletedHandler(F* function);
     template <typename O, typename M> CredentialCommandCredentialDeletedHandler(O* object, M method);
+    template <typename O, typename M> CredentialCommandCredentialDeletedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> CredentialCommandCredentialDeletedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::ApplicationSettings::CredentialCommand const& command) const;
 };
 
@@ -26,6 +28,8 @@ struct WebAccountCommandInvokedHandler : Windows::Foundation::IUnknown
     template <typename L> WebAccountCommandInvokedHandler(L lambda);
     template <typename F> WebAccountCommandInvokedHandler(F* function);
     template <typename O, typename M> WebAccountCommandInvokedHandler(O* object, M method);
+    template <typename O, typename M> WebAccountCommandInvokedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WebAccountCommandInvokedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::ApplicationSettings::WebAccountCommand const& command, Windows::UI::ApplicationSettings::WebAccountInvokedArgs const& args) const;
 };
 
@@ -35,6 +39,8 @@ struct WebAccountProviderCommandInvokedHandler : Windows::Foundation::IUnknown
     template <typename L> WebAccountProviderCommandInvokedHandler(L lambda);
     template <typename F> WebAccountProviderCommandInvokedHandler(F* function);
     template <typename O, typename M> WebAccountProviderCommandInvokedHandler(O* object, M method);
+    template <typename O, typename M> WebAccountProviderCommandInvokedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WebAccountProviderCommandInvokedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::ApplicationSettings::WebAccountProviderCommand const& command) const;
 };
 
@@ -87,22 +93,22 @@ struct WINRT_EBO SettingsCommand :
     static Windows::UI::ApplicationSettings::SettingsCommand AccountsCommand();
 };
 
-struct WINRT_EBO [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] SettingsPane :
+struct WINRT_EBO SettingsPane :
     Windows::UI::ApplicationSettings::ISettingsPane
 {
     SettingsPane(std::nullptr_t) noexcept {}
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::UI::ApplicationSettings::SettingsPane GetForCurrentView();
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] static void Show();
-    [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::UI::ApplicationSettings::SettingsEdgeLocation Edge();
+    static Windows::UI::ApplicationSettings::SettingsPane GetForCurrentView();
+    static void Show();
+    static Windows::UI::ApplicationSettings::SettingsEdgeLocation Edge();
 };
 
-struct WINRT_EBO [[deprecated("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")]] SettingsPaneCommandsRequest :
+struct WINRT_EBO SettingsPaneCommandsRequest :
     Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest
 {
     SettingsPaneCommandsRequest(std::nullptr_t) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] SettingsPaneCommandsRequestedEventArgs :
+struct WINRT_EBO SettingsPaneCommandsRequestedEventArgs :
     Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs
 {
     SettingsPaneCommandsRequestedEventArgs(std::nullptr_t) noexcept {}

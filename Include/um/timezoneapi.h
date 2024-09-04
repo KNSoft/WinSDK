@@ -213,6 +213,32 @@ TzSpecificLocalTimeToSystemTimeEx(
 
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN8) */
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+WINBASEAPI
+_Success_(return != FALSE)
+BOOL
+WINAPI
+LocalFileTimeToLocalSystemTime(
+    _In_opt_ CONST TIME_ZONE_INFORMATION* timeZoneInformation,
+    _In_ CONST FILETIME* localFileTime,
+    _Out_ SYSTEMTIME* localSystemTime
+    );
+
+
+WINBASEAPI
+_Success_(return != FALSE)
+BOOL
+WINAPI
+LocalSystemTimeToLocalFileTime(
+    _In_opt_ CONST TIME_ZONE_INFORMATION* timeZoneInformation,
+    _In_ CONST SYSTEMTIME* localSystemTime,
+    _Out_ FILETIME* localFileTime
+    );
+
+
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS5) */
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 

@@ -1971,9 +1971,23 @@ typedef enum _STORAGE_PROTOCOL_TYPE {
 
 typedef enum _STORAGE_PROTOCOL_NVME_DATA_TYPE {
     NVMeDataTypeUnknown = 0,
+
     NVMeDataTypeIdentify,       // Retrieved by command - IDENTIFY CONTROLLER or IDENTIFY NAMESPACE
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Defined in NVME_IDENTIFY_CNS_CODES
+                                //      ProtocolDataRequestSubValue - For NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE, 
+                                //                                    specifies namespace Id
+
     NVMeDataTypeLogPage,        // Retrieved by command - GET LOG PAGE
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Log page id
+                                //      ProtocolDataRequestSubValue - Lower 32-bit offset value
+                                //      ProtocolDataRequestSubValue2 - Upper 32-bit offset value
+
     NVMeDataTypeFeature,        // Retrieved by command - GET FEATURES
+                                // Corresponding values in STORAGE_PROTOCOL_SPECIFIC_DATA,
+                                //      ProtocolDataRequestValue - Defined in NVME_FEATURES
+                                //      ProtocolDataRequestSubValue - Defined in NVME_CDW11_FEATURES
 } STORAGE_PROTOCOL_NVME_DATA_TYPE, *PSTORAGE_PROTOCOL_NVME_DATA_TYPE;
 
 typedef enum _STORAGE_PROTOCOL_ATA_DATA_TYPE {
@@ -1996,17 +2010,18 @@ typedef enum _STORAGE_PROTOCOL_UFS_DATA_TYPE {
 typedef struct _STORAGE_PROTOCOL_SPECIFIC_DATA {
 
     STORAGE_PROTOCOL_TYPE ProtocolType;
-    ULONG   DataType;                   // The value will be protocol specific, as defined in STORAGE_PROTOCOL_NVME_DATA_TYPE or STORAGE_PROTOCOL_ATA_DATA_TYPE.
+    ULONG   DataType;                     // The value will be protocol specific, as defined in STORAGE_PROTOCOL_NVME_DATA_TYPE or STORAGE_PROTOCOL_ATA_DATA_TYPE.
 
     ULONG   ProtocolDataRequestValue;
-    ULONG   ProtocolDataRequestSubValue;
+    ULONG   ProtocolDataRequestSubValue;  // Data sub request value
 
-    ULONG   ProtocolDataOffset;         // The offset of data buffer is from beginning of this data structure.
+    ULONG   ProtocolDataOffset;           // The offset of data buffer is from beginning of this data structure.
     ULONG   ProtocolDataLength;
 
-    ULONG   FixedProtocolReturnData;    // This is returned data, especially from NVMe feature data that doesn't need separate device data transfer.
-    ULONG   Reserved[3];
+    ULONG   FixedProtocolReturnData;
+    ULONG   ProtocolDataRequestSubValue2; // Additional data sub request value
 
+    ULONG   Reserved[2];
 } STORAGE_PROTOCOL_SPECIFIC_DATA, *PSTORAGE_PROTOCOL_SPECIFIC_DATA;
 
 //
@@ -2124,140 +2139,6 @@ typedef struct _STORAGE_TEMPERATURE_THRESHOLD {
 // Out parameters for StorageAdapterPhysicalTopologyProperty (or StorageDevicePhysicalTopologyProperty) & PropertyStandardQuery
 // uses data structure STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
 //
-
-//
-// NVME header data structure
-//
-typedef struct _NVME_RESERVED_QUEUE_HEADER {
-
-    ULONG               Version;                // Version of header; by default 0. Added for version compatibility
-    ULONG               Size;                   // Size of the information including header
-
-} NVME_RESERVED_QUEUE_HEADER, *PNVME_RESERVED_QUEUE_HEADER;
-
-//
-// Details of Create request for reserved Submission queue, provided by FPGA driver 
-//
-typedef struct _NVME_RESERVED_SQ_CREATE_REQUEST {
-
-    ULONG64                 PhysicalAddress;    // SQ base physical Address
-    USHORT                  QueuePriority;      // SQ priority
-    USHORT                  QueueDepth;         // SQ depth
-    BOOLEAN                 PhysicalContiguous; // Physically Contiguous, 
-                                                // if set PRP1 points to contiguous buffer
-                                                // if not set, PRP1 is PRP list pointer
-
-} NVME_RESERVED_SQ_CREATE_REQUEST, *PNVME_RESERVED_SQ_CREATE_REQUEST;
-
-//
-// Details of Create request for reserved Completion queue, provided by FPGA driver 
-//
-typedef struct _NVME_RESERVED_CQ_CREATE_REQUEST {
-
-        ULONG64             PhysicalAddress;    // CQ base physical Address
-        ULONG               InterruptVector;    // CQ Interrupt Vector, corresponds to MSI-X or MSI vector
-        USHORT              QueueDepth;         // CQ depth
-        BOOLEAN             InterruptEnabled;   // Interrupt Enabled for the queue
-        BOOLEAN             PhysicalContiguous; // Physically Contiguous, 
-                                                // if set PRP1 points to contiguous buffer
-                                                // if not set, PRP1 is PRP list pointer
-
-} NVME_RESERVED_CQ_CREATE_REQUEST, *PNVME_RESERVED_CQ_CREATE_REQUEST;
-
-//
-// Request to create one completion queue and one or more submission queues
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_CREATE_REQUEST {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-
-    NVME_RESERVED_CQ_CREATE_REQUEST     CompletionQueue;                    // Completion queue information
-
-    USHORT                              SubmissionQueueCount;               // Number of submission queues requested
-    NVME_RESERVED_SQ_CREATE_REQUEST     SubmissionQueue[ANYSIZE_ARRAY];     // Submission queue(s) information
-
-
-} NVME_RESERVED_QUEUES_CREATE_REQUEST, *PNVME_RESERVED_QUEUES_CREATE_REQUEST;
-
-//
-// Details of reserved Submission queue, provided as create response and queue query
-//
-typedef struct _NVME_RESERVED_SQ_INFO {
-
-    ULONG64                 PhysicalAddress;                                // SQ base physical address
-    ULONG64                 DoorbellRegisterAddress;                        // SQ tail doorbell register address
-    USHORT                  QueueID;                                        // SQ ID
-    USHORT                  QueueDepth;                                     // SQ depth
-    BOOLEAN                 PhysicalContiguous;                             // Physically Contiguous
-    USHORT                  CompletionQueueID;                              // Completion queue identifier
-    UCHAR                   QueuePriority;                                  // SQ priority
-
-} NVME_RESERVED_SQ_INFO, *PNVME_RESERVED_SQ_INFO;
-
-//
-// Details of reserved Completion queue, provided as create response and queue query
-//
-typedef struct _NVME_RESERVED_CQ_INFO {
-
-    ULONG64                 PhysicalAddress;                                // CQ base physical Address
-    ULONG64                 DoorbellRegisterAddress;                        // CQ head doorbell register
-    USHORT                  QueueID;                                        // CQ ID
-    USHORT                  QueueDepth;                                     // CQ depth
-    BOOLEAN                 InterruptEnabled;                               // Interrupt Enabled
-    BOOLEAN                 PhysicalContiguous;                             // Physically Contiguous
-    ULONG                   InterruptVector;                                // Interrupt Vector, corresponds to MSI-X or MSI vector
-
-} NVME_RESERVED_CQ_INFO, *PNVME_RESERVED_CQ_INFO;
-
-//
-// Response to create request of one completion queue and one or more submission queues
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_CREATE_RESPONSE {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-    NVME_RESERVED_CQ_INFO               CompletionQueue;                // Completion queue information
-
-    USHORT                              SubmissionQueueCount;           // Number of submission queues created
-    NVME_RESERVED_SQ_INFO               SubmissionQueue[ANYSIZE_ARRAY]; // Submission queue(s) information
-
-} NVME_RESERVED_QUEUES_CREATE_RESPONSE, *PNVME_RESERVED_QUEUES_CREATE_RESPONSE;
-
-//
-// Request to delete queue pair (completion queue and corresponding submission queue)
-// for FPGA use
-//
-typedef struct _NVME_RESERVED_QUEUES_DELETE_REQUEST {
-
-    NVME_RESERVED_QUEUE_HEADER          Header;
-
-    USHORT                              QueueID;                        // Completion queue ID 
-                                                                        // (this would map to corresponding submission queues)
-
-} NVME_RESERVED_QUEUES_DELETE_REQUEST, *PNVME_RESERVED_QUEUES_DELETE_REQUEST;
-
-//
-// Out parameters for IOCTL_MINIPORT_SIGNATURE_QUERY_QUEUE_INFO through IOCTL_STORAGE_QUERY_PROPERTY
-// Reserved Queue properties returned on queue information query
-//
-typedef struct _NVME_RESERVED_QUEUES_PROPERTIES {
-
-    NVME_RESERVED_QUEUE_HEADER      Header;
-
-    USHORT                          QueuePairCount;                     // Number of reserved queue pair in the controller
-
-    struct {
-        NVME_RESERVED_CQ_INFO       CompletionQueue;                    // Completion queue information
-
-        USHORT                      SubmissionQueueCount;               // Number of submission queues created
-        NVME_RESERVED_SQ_INFO       SubmissionQueue[ANYSIZE_ARRAY];     // Submission queue(s) information
-
-    } QueueMapping[ANYSIZE_ARRAY];
-
-} NVME_RESERVED_QUEUES_PROPERTIES, *PNVME_RESERVED_QUEUES_PROPERTIES;
-
-
 
 //
 // Multiple roles are allowed for a single device.
@@ -2857,34 +2738,34 @@ typedef ULONG DEVICE_DATA_MANAGEMENT_SET_ACTION, DEVICE_DSM_ACTION;
 #define DeviceDsmActionFlag_NonDestructive      (0x80000000)
 #define IsDsmActionNonDestructive(_Action)      ((BOOLEAN)((_Action & DeviceDsmActionFlag_NonDestructive) != 0))
 
-#define DeviceDsmAction_None                    (0x00000000)
-#define DeviceDsmAction_Trim                    (0x00000001)
-#define DeviceDsmAction_Notification            (0x00000002 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OffloadRead             (0x00000003 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OffloadWrite            (0x00000004)
-#define DeviceDsmAction_Allocation              (0x00000005 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Repair                  (0x00000006 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Scrub                   (0x00000007 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtQuery                (0x00000008 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtClear                (0x00000009 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_DrtDisable              (0x0000000A | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_TieringQuery            (0x0000000B | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_Map                     (0x0000000C | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_RegenerateParity        (0x0000000D | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_NvCache_Change_Priority (0x0000000E | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_NvCache_Evict           (0x0000000F | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_TopologyIdQuery         (0x00000010 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_GetPhysicalAddresses    (0x00000011 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ScopeRegen              (0x00000012 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ReportZones             (0x00000013 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_OpenZone                (0x00000014 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_FinishZone              (0x00000015 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_CloseZone               (0x00000016 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_ResetWritePointer       (0x00000017)
-#define DeviceDsmAction_GetRangeErrorInfo       (0x00000018 | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_WriteZeroes             (0x00000019)
-#define DeviceDsmAction_LostQuery               (0x0000001A | DeviceDsmActionFlag_NonDestructive)
-#define DeviceDsmAction_GetFreeSpace            (0x0000001B | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_None                    (0x00000000u)
+#define DeviceDsmAction_Trim                    (0x00000001u)
+#define DeviceDsmAction_Notification            (0x00000002u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OffloadRead             (0x00000003u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OffloadWrite            (0x00000004u)
+#define DeviceDsmAction_Allocation              (0x00000005u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Repair                  (0x00000006u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Scrub                   (0x00000007u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtQuery                (0x00000008u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtClear                (0x00000009u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_DrtDisable              (0x0000000Au | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_TieringQuery            (0x0000000Bu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_Map                     (0x0000000Cu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_RegenerateParity        (0x0000000Du | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_NvCache_Change_Priority (0x0000000Eu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_NvCache_Evict           (0x0000000Fu | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_TopologyIdQuery         (0x00000010u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_GetPhysicalAddresses    (0x00000011u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ScopeRegen              (0x00000012u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ReportZones             (0x00000013u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_OpenZone                (0x00000014u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_FinishZone              (0x00000015u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_CloseZone               (0x00000016u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_ResetWritePointer       (0x00000017u)
+#define DeviceDsmAction_GetRangeErrorInfo       (0x00000018u | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_WriteZeroes             (0x00000019u)
+#define DeviceDsmAction_LostQuery               (0x0000001Au | DeviceDsmActionFlag_NonDestructive)
+#define DeviceDsmAction_GetFreeSpace            (0x0000001Bu | DeviceDsmActionFlag_NonDestructive)
 
 //
 // DEVICE_DSM_INPUT.Flags
@@ -4452,7 +4333,7 @@ Cleanup:
 FORCEINLINE
 BOOLEAN
 DeviceDsmAddDataSetRange (
-    _Out_writes_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
+    _Inout_updates_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
     _In_ ULONG InputLength,
     _In_ LONGLONG Offset,
     _In_ ULONGLONG Length
@@ -4516,7 +4397,7 @@ BOOLEAN
 DeviceDsmValidateInput (
     _In_ PDEVICE_DSM_DEFINITION Definition,
     _In_reads_bytes_(InputLength) PDEVICE_DSM_INPUT Input,
-    _In_ ULONG InputLength
+    _In_ _Pre_satisfies_(InputLength >= sizeof(DEVICE_DSM_INPUT)) ULONG InputLength
     )
 {
     ULONG   Max   = 0;
@@ -4690,7 +4571,7 @@ BOOLEAN
 DeviceDsmValidateOutput (
     _In_ PDEVICE_DSM_DEFINITION Definition,
     _In_reads_bytes_(OutputLength) PDEVICE_DSM_OUTPUT Output,
-    _In_ ULONG OutputLength
+    _In_ _Pre_satisfies_(OutputLength >= sizeof(DEVICE_DSM_OUTPUT)) ULONG OutputLength
     )
 {
     ULONG   Max   = 0;

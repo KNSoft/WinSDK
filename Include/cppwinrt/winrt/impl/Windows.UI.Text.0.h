@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -411,6 +411,7 @@ struct ITextCharacterFormat;
 struct ITextConstantsStatics;
 struct ITextDocument;
 struct ITextDocument2;
+struct ITextDocument3;
 struct ITextParagraphFormat;
 struct ITextRange;
 struct ITextSelection;
@@ -439,6 +440,7 @@ template <> struct category<Windows::UI::Text::ITextCharacterFormat>{ using type
 template <> struct category<Windows::UI::Text::ITextConstantsStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Text::ITextDocument>{ using type = interface_category; };
 template <> struct category<Windows::UI::Text::ITextDocument2>{ using type = interface_category; };
+template <> struct category<Windows::UI::Text::ITextDocument3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Text::ITextParagraphFormat>{ using type = interface_category; };
 template <> struct category<Windows::UI::Text::ITextRange>{ using type = interface_category; };
 template <> struct category<Windows::UI::Text::ITextSelection>{ using type = interface_category; };
@@ -483,6 +485,7 @@ template <> struct name<Windows::UI::Text::ITextCharacterFormat>{ static constex
 template <> struct name<Windows::UI::Text::ITextConstantsStatics>{ static constexpr auto & value{ L"Windows.UI.Text.ITextConstantsStatics" }; };
 template <> struct name<Windows::UI::Text::ITextDocument>{ static constexpr auto & value{ L"Windows.UI.Text.ITextDocument" }; };
 template <> struct name<Windows::UI::Text::ITextDocument2>{ static constexpr auto & value{ L"Windows.UI.Text.ITextDocument2" }; };
+template <> struct name<Windows::UI::Text::ITextDocument3>{ static constexpr auto & value{ L"Windows.UI.Text.ITextDocument3" }; };
 template <> struct name<Windows::UI::Text::ITextParagraphFormat>{ static constexpr auto & value{ L"Windows.UI.Text.ITextParagraphFormat" }; };
 template <> struct name<Windows::UI::Text::ITextRange>{ static constexpr auto & value{ L"Windows.UI.Text.ITextRange" }; };
 template <> struct name<Windows::UI::Text::ITextSelection>{ static constexpr auto & value{ L"Windows.UI.Text.ITextSelection" }; };
@@ -519,21 +522,293 @@ template <> struct name<Windows::UI::Text::TextSetOptions>{ static constexpr aut
 template <> struct name<Windows::UI::Text::UnderlineType>{ static constexpr auto & value{ L"Windows.UI.Text.UnderlineType" }; };
 template <> struct name<Windows::UI::Text::VerticalCharacterAlignment>{ static constexpr auto & value{ L"Windows.UI.Text.VerticalCharacterAlignment" }; };
 template <> struct name<Windows::UI::Text::FontWeight>{ static constexpr auto & value{ L"Windows.UI.Text.FontWeight" }; };
-template <> struct guid<Windows::UI::Text::IContentLinkInfo>{ static constexpr GUID value{ 0x1ED52525,0x1C5F,0x48CB,{ 0xB3,0x35,0x78,0xB5,0x0A,0x2E,0xE6,0x42 } }; };
-template <> struct guid<Windows::UI::Text::IFontWeights>{ static constexpr GUID value{ 0x7880A444,0x01AB,0x4997,{ 0x85,0x17,0xDF,0x82,0x2A,0x0C,0x45,0xF1 } }; };
-template <> struct guid<Windows::UI::Text::IFontWeightsStatics>{ static constexpr GUID value{ 0xB3B579D5,0x1BA9,0x48EB,{ 0x9D,0xAD,0xC0,0x95,0xE8,0xC2,0x3B,0xA3 } }; };
-template <> struct guid<Windows::UI::Text::IRichEditTextRange>{ static constexpr GUID value{ 0x374E3515,0xBA8A,0x4A6E,{ 0x8C,0x59,0x0D,0xDE,0x3D,0x0C,0xF5,0xCD } }; };
-template <> struct guid<Windows::UI::Text::ITextCharacterFormat>{ static constexpr GUID value{ 0x5ADEF3DB,0x05FB,0x442D,{ 0x80,0x65,0x64,0x2A,0xFE,0xA0,0x2C,0xED } }; };
-template <> struct guid<Windows::UI::Text::ITextConstantsStatics>{ static constexpr GUID value{ 0x779E7C33,0x189D,0x4BFA,{ 0x97,0xC8,0x10,0xDB,0x13,0x5D,0x97,0x6E } }; };
-template <> struct guid<Windows::UI::Text::ITextDocument>{ static constexpr GUID value{ 0xBEEE4DDB,0x90B2,0x408C,{ 0xA2,0xF6,0x0A,0x0A,0xC3,0x1E,0x33,0xE4 } }; };
-template <> struct guid<Windows::UI::Text::ITextDocument2>{ static constexpr GUID value{ 0xF2311112,0x8C89,0x49C9,{ 0x91,0x18,0xF0,0x57,0xCB,0xB8,0x14,0xEE } }; };
-template <> struct guid<Windows::UI::Text::ITextParagraphFormat>{ static constexpr GUID value{ 0x2CF8CFA6,0x4676,0x498A,{ 0x93,0xF5,0xBB,0xDB,0xFC,0x0B,0xD8,0x83 } }; };
-template <> struct guid<Windows::UI::Text::ITextRange>{ static constexpr GUID value{ 0x5B9E4E57,0xC072,0x42A0,{ 0x89,0x45,0xAF,0x50,0x3E,0xE5,0x47,0x68 } }; };
-template <> struct guid<Windows::UI::Text::ITextSelection>{ static constexpr GUID value{ 0xA6D36724,0xF28F,0x430A,{ 0xB2,0xCF,0xC3,0x43,0x67,0x1E,0xC0,0xE9 } }; };
+template <> struct guid_storage<Windows::UI::Text::IContentLinkInfo>{ static constexpr guid value{ 0x1ED52525,0x1C5F,0x48CB,{ 0xB3,0x35,0x78,0xB5,0x0A,0x2E,0xE6,0x42 } }; };
+template <> struct guid_storage<Windows::UI::Text::IFontWeights>{ static constexpr guid value{ 0x7880A444,0x01AB,0x4997,{ 0x85,0x17,0xDF,0x82,0x2A,0x0C,0x45,0xF1 } }; };
+template <> struct guid_storage<Windows::UI::Text::IFontWeightsStatics>{ static constexpr guid value{ 0xB3B579D5,0x1BA9,0x48EB,{ 0x9D,0xAD,0xC0,0x95,0xE8,0xC2,0x3B,0xA3 } }; };
+template <> struct guid_storage<Windows::UI::Text::IRichEditTextRange>{ static constexpr guid value{ 0x374E3515,0xBA8A,0x4A6E,{ 0x8C,0x59,0x0D,0xDE,0x3D,0x0C,0xF5,0xCD } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextCharacterFormat>{ static constexpr guid value{ 0x5ADEF3DB,0x05FB,0x442D,{ 0x80,0x65,0x64,0x2A,0xFE,0xA0,0x2C,0xED } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextConstantsStatics>{ static constexpr guid value{ 0x779E7C33,0x189D,0x4BFA,{ 0x97,0xC8,0x10,0xDB,0x13,0x5D,0x97,0x6E } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextDocument>{ static constexpr guid value{ 0xBEEE4DDB,0x90B2,0x408C,{ 0xA2,0xF6,0x0A,0x0A,0xC3,0x1E,0x33,0xE4 } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextDocument2>{ static constexpr guid value{ 0xF2311112,0x8C89,0x49C9,{ 0x91,0x18,0xF0,0x57,0xCB,0xB8,0x14,0xEE } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextDocument3>{ static constexpr guid value{ 0x75AB03A1,0xA6F8,0x441D,{ 0xAA,0x18,0x0A,0x85,0x1D,0x6E,0x5E,0x3C } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextParagraphFormat>{ static constexpr guid value{ 0x2CF8CFA6,0x4676,0x498A,{ 0x93,0xF5,0xBB,0xDB,0xFC,0x0B,0xD8,0x83 } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextRange>{ static constexpr guid value{ 0x5B9E4E57,0xC072,0x42A0,{ 0x89,0x45,0xAF,0x50,0x3E,0xE5,0x47,0x68 } }; };
+template <> struct guid_storage<Windows::UI::Text::ITextSelection>{ static constexpr guid value{ 0xA6D36724,0xF28F,0x430A,{ 0xB2,0xCF,0xC3,0x43,0x67,0x1E,0xC0,0xE9 } }; };
 template <> struct default_interface<Windows::UI::Text::ContentLinkInfo>{ using type = Windows::UI::Text::IContentLinkInfo; };
 template <> struct default_interface<Windows::UI::Text::FontWeights>{ using type = Windows::UI::Text::IFontWeights; };
 template <> struct default_interface<Windows::UI::Text::RichEditTextDocument>{ using type = Windows::UI::Text::ITextDocument; };
 template <> struct default_interface<Windows::UI::Text::RichEditTextRange>{ using type = Windows::UI::Text::ITextRange; };
+
+template <> struct abi<Windows::UI::Text::IContentLinkInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DisplayText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DisplayText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SecondaryText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SecondaryText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Uri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LinkContentKind(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LinkContentKind(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::IFontWeights>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Text::IFontWeightsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Black(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtraBlack(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtraBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtraLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Light(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Medium(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Normal(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SemiBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SemiLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thin(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::IRichEditTextRange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContentLinkInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContentLinkInfo(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextCharacterFormat>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllCaps(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllCaps(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bold(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Bold(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontStretch(Windows::UI::Text::FontStretch value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontStyle(Windows::UI::Text::FontStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Hidden(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Hidden(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Italic(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Italic(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Kerning(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Kerning(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LanguageTag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LanguageTag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LinkType(Windows::UI::Text::LinkType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Outline(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Outline(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Position(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Position(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProtectedText(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProtectedText(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SmallCaps(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SmallCaps(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Spacing(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Spacing(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Strikethrough(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Strikethrough(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Subscript(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Subscript(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Superscript(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Superscript(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextScript(Windows::UI::Text::TextScript* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextScript(Windows::UI::Text::TextScript value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Underline(Windows::UI::Text::UnderlineType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Underline(Windows::UI::Text::UnderlineType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Weight(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Weight(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetClone(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetClone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEqual(void* format, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextConstantsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AutoColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinUnitCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxUnitCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndefinedColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndefinedFloatValue(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndefinedInt32Value(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndefinedFontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndefinedFontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextDocument>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CaretType(Windows::UI::Text::CaretType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CaretType(Windows::UI::Text::CaretType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultTabStop(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DefaultTabStop(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Selection(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UndoLimit(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UndoLimit(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL CanCopy(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CanPaste(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CanRedo(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL CanUndo(bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ApplyDisplayUpdates(int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL BatchDisplayUpdates(int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL BeginUndoGroup() noexcept = 0;
+    virtual int32_t WINRT_CALL EndUndoGroup() noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultCharacterFormat(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultParagraphFormat(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRange(int32_t startPosition, int32_t endPosition, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRangeFromPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetText(Windows::UI::Text::TextGetOptions options, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Redo() noexcept = 0;
+    virtual int32_t WINRT_CALL SaveToStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDefaultCharacterFormat(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDefaultParagraphFormat(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetText(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Undo() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextDocument2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AlignmentIncludesTrailingWhitespace(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlignmentIncludesTrailingWhitespace(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IgnoreTrailingCharacterSpacing(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IgnoreTrailingCharacterSpacing(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextDocument3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ClearUndoRedoHistory() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextParagraphFormat>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Alignment(Windows::UI::Text::ParagraphAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Alignment(Windows::UI::Text::ParagraphAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstLineIndent(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeepTogether(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeepTogether(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeepWithNext(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeepWithNext(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftIndent(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineSpacing(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineSpacingRule(Windows::UI::Text::LineSpacingRule* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListAlignment(Windows::UI::Text::MarkerAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListAlignment(Windows::UI::Text::MarkerAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListLevelIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListLevelIndex(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListStart(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListStart(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListStyle(Windows::UI::Text::MarkerStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListStyle(Windows::UI::Text::MarkerStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListTab(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListTab(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListType(Windows::UI::Text::MarkerType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListType(Windows::UI::Text::MarkerType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NoLineNumber(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NoLineNumber(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PageBreakBefore(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PageBreakBefore(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightIndent(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightIndent(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightToLeft(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightToLeft(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Style(Windows::UI::Text::ParagraphStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Style(Windows::UI::Text::ParagraphStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpaceAfter(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SpaceAfter(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpaceBefore(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SpaceBefore(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WidowControl(Windows::UI::Text::FormatEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WidowControl(Windows::UI::Text::FormatEffect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AddTab(float position, Windows::UI::Text::TabAlignment align, Windows::UI::Text::TabLeader leader) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearAllTabs() noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteTab(float position) noexcept = 0;
+    virtual int32_t WINRT_CALL GetClone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTab(int32_t index, float* position, Windows::UI::Text::TabAlignment* align, Windows::UI::Text::TabLeader* leader) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEqual(void* format, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetClone(void* format) noexcept = 0;
+    virtual int32_t WINRT_CALL SetIndents(float start, float left, float right) noexcept = 0;
+    virtual int32_t WINRT_CALL SetLineSpacing(Windows::UI::Text::LineSpacingRule rule, float spacing) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextRange>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Character(char16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Character(char16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CharacterFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CharacterFormat(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FormattedText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FormattedText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndPosition(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EndPosition(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Gravity(Windows::UI::Text::RangeGravity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Gravity(Windows::UI::Text::RangeGravity value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Length(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Link(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Link(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ParagraphFormat(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ParagraphFormat(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartPosition(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StartPosition(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StoryLength(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL CanPaste(int32_t format, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ChangeCase(Windows::UI::Text::LetterCase value) noexcept = 0;
+    virtual int32_t WINRT_CALL Collapse(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL Copy() noexcept = 0;
+    virtual int32_t WINRT_CALL Cut() noexcept = 0;
+    virtual int32_t WINRT_CALL Delete(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL EndOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Expand(Windows::UI::Text::TextRangeUnit unit, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FindText(void* value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCharacterUtf32(uint32_t* value, int32_t offset) noexcept = 0;
+    virtual int32_t WINRT_CALL GetClone(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, Windows::Foundation::Point* point) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRect(Windows::UI::Text::PointOptions options, Windows::Foundation::Rect* rect, int32_t* hit) noexcept = 0;
+    virtual int32_t WINRT_CALL GetText(Windows::UI::Text::TextGetOptions options, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTextViaStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL InRange(void* range, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, void* alternateText, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL InStory(void* range, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsEqual(void* range, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Move(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveEnd(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveStart(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Paste(int32_t format) noexcept = 0;
+    virtual int32_t WINRT_CALL ScrollIntoView(Windows::UI::Text::PointOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL MatchSelection() noexcept = 0;
+    virtual int32_t WINRT_CALL SetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t index, bool extend) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, bool extend) noexcept = 0;
+    virtual int32_t WINRT_CALL SetRange(int32_t startPosition, int32_t endPosition) noexcept = 0;
+    virtual int32_t WINRT_CALL SetText(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetTextViaStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Text::ITextSelection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Options(Windows::UI::Text::SelectionOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Options(Windows::UI::Text::SelectionOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::UI::Text::SelectionType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL EndKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL HomeKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveDown(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveLeft(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveRight(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL MoveUp(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TypeText(void* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Text_IContentLinkInfo
@@ -696,6 +971,13 @@ struct consume_Windows_UI_Text_ITextDocument2
 template <> struct consume<Windows::UI::Text::ITextDocument2> { template <typename D> using type = consume_Windows_UI_Text_ITextDocument2<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Text_ITextDocument3
+{
+    void ClearUndoRedoHistory() const;
+};
+template <> struct consume<Windows::UI::Text::ITextDocument3> { template <typename D> using type = consume_Windows_UI_Text_ITextDocument3<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Text_ITextParagraphFormat
 {
     Windows::UI::Text::ParagraphAlignment Alignment() const;
@@ -829,271 +1111,5 @@ struct struct_Windows_UI_Text_FontWeight
 };
 template <> struct abi<Windows::UI::Text::FontWeight>{ using type = struct_Windows_UI_Text_FontWeight; };
 
-
-template <> struct abi<Windows::UI::Text::IContentLinkInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DisplayText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_SecondaryText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SecondaryText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Uri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LinkContentKind(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LinkContentKind(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::IFontWeights>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Text::IFontWeightsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Black(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtraBlack(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtraBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtraLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Light(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Medium(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Normal(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SemiBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SemiLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thin(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::IRichEditTextRange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContentLinkInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContentLinkInfo(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextCharacterFormat>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllCaps(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllCaps(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bold(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Bold(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontStretch(Windows::UI::Text::FontStretch value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontStyle(Windows::UI::Text::FontStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Hidden(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Hidden(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Italic(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Italic(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Kerning(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Kerning(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_LanguageTag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LanguageTag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_LinkType(Windows::UI::Text::LinkType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Outline(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Outline(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Position(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Position(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProtectedText(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProtectedText(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_SmallCaps(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SmallCaps(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Spacing(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Spacing(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Strikethrough(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Strikethrough(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Subscript(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Subscript(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Superscript(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Superscript(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextScript(Windows::UI::Text::TextScript* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextScript(Windows::UI::Text::TextScript value) noexcept = 0;
-    virtual HRESULT __stdcall get_Underline(Windows::UI::Text::UnderlineType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Underline(Windows::UI::Text::UnderlineType value) noexcept = 0;
-    virtual HRESULT __stdcall get_Weight(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Weight(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall SetClone(void* value) noexcept = 0;
-    virtual HRESULT __stdcall GetClone(void** value) noexcept = 0;
-    virtual HRESULT __stdcall IsEqual(void* format, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextConstantsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AutoColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinUnitCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxUnitCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndefinedColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndefinedFloatValue(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndefinedInt32Value(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndefinedFontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndefinedFontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextDocument>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CaretType(Windows::UI::Text::CaretType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CaretType(Windows::UI::Text::CaretType value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultTabStop(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DefaultTabStop(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Selection(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UndoLimit(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UndoLimit(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall CanCopy(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall CanPaste(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall CanRedo(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall CanUndo(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall ApplyDisplayUpdates(int32_t* count) noexcept = 0;
-    virtual HRESULT __stdcall BatchDisplayUpdates(int32_t* count) noexcept = 0;
-    virtual HRESULT __stdcall BeginUndoGroup() noexcept = 0;
-    virtual HRESULT __stdcall EndUndoGroup() noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultCharacterFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultParagraphFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetRange(int32_t startPosition, int32_t endPosition, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetRangeFromPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetText(Windows::UI::Text::TextGetOptions options, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
-    virtual HRESULT __stdcall Redo() noexcept = 0;
-    virtual HRESULT __stdcall SaveToStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept = 0;
-    virtual HRESULT __stdcall SetDefaultCharacterFormat(void* value) noexcept = 0;
-    virtual HRESULT __stdcall SetDefaultParagraphFormat(void* value) noexcept = 0;
-    virtual HRESULT __stdcall SetText(Windows::UI::Text::TextSetOptions options, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall Undo() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextDocument2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AlignmentIncludesTrailingWhitespace(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlignmentIncludesTrailingWhitespace(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IgnoreTrailingCharacterSpacing(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IgnoreTrailingCharacterSpacing(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextParagraphFormat>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Alignment(Windows::UI::Text::ParagraphAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Alignment(Windows::UI::Text::ParagraphAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstLineIndent(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeepTogether(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeepTogether(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeepWithNext(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeepWithNext(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftIndent(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineSpacing(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineSpacingRule(Windows::UI::Text::LineSpacingRule* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListAlignment(Windows::UI::Text::MarkerAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListAlignment(Windows::UI::Text::MarkerAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListLevelIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListLevelIndex(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListStart(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListStart(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListStyle(Windows::UI::Text::MarkerStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListStyle(Windows::UI::Text::MarkerStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListTab(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListTab(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_ListType(Windows::UI::Text::MarkerType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ListType(Windows::UI::Text::MarkerType value) noexcept = 0;
-    virtual HRESULT __stdcall get_NoLineNumber(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_NoLineNumber(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_PageBreakBefore(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PageBreakBefore(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightIndent(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightIndent(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightToLeft(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightToLeft(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Style(Windows::UI::Text::ParagraphStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Style(Windows::UI::Text::ParagraphStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpaceAfter(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SpaceAfter(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpaceBefore(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SpaceBefore(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_WidowControl(Windows::UI::Text::FormatEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WidowControl(Windows::UI::Text::FormatEffect value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall AddTab(float position, Windows::UI::Text::TabAlignment align, Windows::UI::Text::TabLeader leader) noexcept = 0;
-    virtual HRESULT __stdcall ClearAllTabs() noexcept = 0;
-    virtual HRESULT __stdcall DeleteTab(float position) noexcept = 0;
-    virtual HRESULT __stdcall GetClone(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetTab(int32_t index, float* position, Windows::UI::Text::TabAlignment* align, Windows::UI::Text::TabLeader* leader) noexcept = 0;
-    virtual HRESULT __stdcall IsEqual(void* format, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetClone(void* format) noexcept = 0;
-    virtual HRESULT __stdcall SetIndents(float start, float left, float right) noexcept = 0;
-    virtual HRESULT __stdcall SetLineSpacing(Windows::UI::Text::LineSpacingRule rule, float spacing) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextRange>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Character(char16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Character(char16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_CharacterFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CharacterFormat(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FormattedText(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FormattedText(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndPosition(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EndPosition(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Gravity(Windows::UI::Text::RangeGravity* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Gravity(Windows::UI::Text::RangeGravity value) noexcept = 0;
-    virtual HRESULT __stdcall get_Length(int32_t* length) noexcept = 0;
-    virtual HRESULT __stdcall get_Link(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Link(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ParagraphFormat(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ParagraphFormat(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartPosition(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StartPosition(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_StoryLength(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall CanPaste(int32_t format, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall ChangeCase(Windows::UI::Text::LetterCase value) noexcept = 0;
-    virtual HRESULT __stdcall Collapse(bool value) noexcept = 0;
-    virtual HRESULT __stdcall Copy() noexcept = 0;
-    virtual HRESULT __stdcall Cut() noexcept = 0;
-    virtual HRESULT __stdcall Delete(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall EndOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall Expand(Windows::UI::Text::TextRangeUnit unit, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall FindText(HSTRING value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t* length) noexcept = 0;
-    virtual HRESULT __stdcall GetCharacterUtf32(uint32_t* value, int32_t offset) noexcept = 0;
-    virtual HRESULT __stdcall GetClone(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t* index) noexcept = 0;
-    virtual HRESULT __stdcall GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, Windows::Foundation::Point* point) noexcept = 0;
-    virtual HRESULT __stdcall GetRect(Windows::UI::Text::PointOptions options, Windows::Foundation::Rect* rect, int32_t* hit) noexcept = 0;
-    virtual HRESULT __stdcall GetText(Windows::UI::Text::TextGetOptions options, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetTextViaStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept = 0;
-    virtual HRESULT __stdcall InRange(void* range, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, HSTRING alternateText, void* value) noexcept = 0;
-    virtual HRESULT __stdcall InStory(void* range, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsEqual(void* range, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Move(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveEnd(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveStart(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall Paste(int32_t format) noexcept = 0;
-    virtual HRESULT __stdcall ScrollIntoView(Windows::UI::Text::PointOptions value) noexcept = 0;
-    virtual HRESULT __stdcall MatchSelection() noexcept = 0;
-    virtual HRESULT __stdcall SetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t index, bool extend) noexcept = 0;
-    virtual HRESULT __stdcall SetPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, bool extend) noexcept = 0;
-    virtual HRESULT __stdcall SetRange(int32_t startPosition, int32_t endPosition) noexcept = 0;
-    virtual HRESULT __stdcall SetText(Windows::UI::Text::TextSetOptions options, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall SetTextViaStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept = 0;
-    virtual HRESULT __stdcall StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Text::ITextSelection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Options(Windows::UI::Text::SelectionOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Options(Windows::UI::Text::SelectionOptions value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::UI::Text::SelectionType* value) noexcept = 0;
-    virtual HRESULT __stdcall EndKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall HomeKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveDown(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveLeft(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveRight(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall MoveUp(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept = 0;
-    virtual HRESULT __stdcall TypeText(HSTRING value) noexcept = 0;
-};};
 
 }

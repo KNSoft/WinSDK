@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -13,147 +13,147 @@
 
 WINRT_EXPORT namespace winrt::Windows::Media::Protection::PlayReady {
 
-struct WINRT_EBO [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClient :
+struct WINRT_EBO INDClient :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDClient>
 {
     INDClient(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClientFactory :
+struct WINRT_EBO INDClientFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDClientFactory>
 {
     INDClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClosedCaptionDataReceivedEventArgs :
+struct WINRT_EBO INDClosedCaptionDataReceivedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDClosedCaptionDataReceivedEventArgs>
 {
     INDClosedCaptionDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDCustomData :
+struct WINRT_EBO INDCustomData :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDCustomData>
 {
     INDCustomData(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDCustomDataFactory :
+struct WINRT_EBO INDCustomDataFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDCustomDataFactory>
 {
     INDCustomDataFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDDownloadEngine :
+struct WINRT_EBO INDDownloadEngine :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDDownloadEngine>
 {
     INDDownloadEngine(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDDownloadEngineNotifier :
+struct WINRT_EBO INDDownloadEngineNotifier :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDDownloadEngineNotifier>
 {
     INDDownloadEngineNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchCompletedEventArgs :
+struct WINRT_EBO INDLicenseFetchCompletedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDLicenseFetchCompletedEventArgs>
 {
     INDLicenseFetchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchDescriptor :
+struct WINRT_EBO INDLicenseFetchDescriptor :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDLicenseFetchDescriptor>
 {
     INDLicenseFetchDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchDescriptorFactory :
+struct WINRT_EBO INDLicenseFetchDescriptorFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDLicenseFetchDescriptorFactory>
 {
     INDLicenseFetchDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchResult :
+struct WINRT_EBO INDLicenseFetchResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDLicenseFetchResult>
 {
     INDLicenseFetchResult(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDMessenger :
+struct WINRT_EBO INDMessenger :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDMessenger>
 {
     INDMessenger(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDProximityDetectionCompletedEventArgs :
+struct WINRT_EBO INDProximityDetectionCompletedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDProximityDetectionCompletedEventArgs>
 {
     INDProximityDetectionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDRegistrationCompletedEventArgs :
+struct WINRT_EBO INDRegistrationCompletedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDRegistrationCompletedEventArgs>
 {
     INDRegistrationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDSendResult :
+struct WINRT_EBO INDSendResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDSendResult>
 {
     INDSendResult(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStartResult :
+struct WINRT_EBO INDStartResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDStartResult>
 {
     INDStartResult(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStorageFileHelper :
+struct WINRT_EBO INDStorageFileHelper :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDStorageFileHelper>
 {
     INDStorageFileHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStreamParser :
+struct WINRT_EBO INDStreamParser :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDStreamParser>
 {
     INDStreamParser(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStreamParserNotifier :
+struct WINRT_EBO INDStreamParserNotifier :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDStreamParserNotifier>
 {
     INDStreamParserNotifier(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDTCPMessengerFactory :
+struct WINRT_EBO INDTCPMessengerFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDTCPMessengerFactory>
 {
     INDTCPMessengerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDTransmitterProperties :
+struct WINRT_EBO INDTransmitterProperties :
     Windows::Foundation::IInspectable,
     impl::consume_t<INDTransmitterProperties>
 {
@@ -398,6 +398,14 @@ struct WINRT_EBO IPlayReadyStatics4 :
     impl::require<IPlayReadyStatics4, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>
 {
     IPlayReadyStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IPlayReadyStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IPlayReadyStatics5>,
+    impl::require<IPlayReadyStatics5, Windows::Media::Protection::PlayReady::IPlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2, Windows::Media::Protection::PlayReady::IPlayReadyStatics3, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>
+{
+    IPlayReadyStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

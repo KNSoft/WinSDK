@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.profile.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,8 +232,12 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_PROFILE_PROFILEHARDWARETOKENCONTRACT_VERSION)
 #define WINDOWS_SYSTEM_PROFILE_PROFILEHARDWARETOKENCONTRACT_VERSION 0x10000
@@ -240,7 +252,7 @@
 #endif // defined(WINDOWS_SYSTEM_PROFILE_PROFILESHAREDMODECONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -452,6 +464,34 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics ABI::Windows::System::Profile::ISystemIdentificationStatics
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface ISystemSetupInfoStatics;
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics ABI::Windows::System::Profile::ISystemSetupInfoStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                interface IWindowsIntegrityPolicyStatics;
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics ABI::Windows::System::Profile::IWindowsIntegrityPolicyStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C++)
 
@@ -912,6 +952,19 @@ namespace ABI {
         } /* System */
     } /* Profile */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                
+                typedef enum SystemOutOfBoxExperienceState : int SystemOutOfBoxExperienceState;
+                
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+
+
+
 
 
 
@@ -961,6 +1014,8 @@ namespace ABI {
             } /* Windows */
         } /* System */
     } /* Profile */} /* ABI */
+
+
 
 
 
@@ -1030,6 +1085,34 @@ namespace ABI {
         } /* System */
     } /* Profile */} /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.System.Profile.SystemOutOfBoxExperienceState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                /* [v1_enum, contract] */
+                enum SystemOutOfBoxExperienceState : int
+                {
+                    SystemOutOfBoxExperienceState_NotStarted = 0,
+                    SystemOutOfBoxExperienceState_InProgress = 1,
+                    SystemOutOfBoxExperienceState_Completed = 2,
+                };
+                
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1665,6 +1748,111 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationS
 
 /*
  *
+ * Interface Windows.System.Profile.ISystemSetupInfoStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemSetupInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_ISystemSetupInfoStatics[] = L"Windows.System.Profile.ISystemSetupInfoStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                /* [object, uuid("2C9620A8-1D88-5E2D-A324-A543AF4247EE"), exclusiveto, contract] */
+                MIDL_INTERFACE("2C9620A8-1D88-5E2D-A324-A543AF4247EE")
+                ISystemSetupInfoStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutOfBoxExperienceState(
+                        /* [retval, out] */__RPC__out ABI::Windows::System::Profile::SystemOutOfBoxExperienceState * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_OutOfBoxExperienceStateChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_OutOfBoxExperienceStateChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISystemSetupInfoStatics=_uuidof(ISystemSetupInfoStatics);
+                
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.Profile.IWindowsIntegrityPolicyStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.WindowsIntegrityPolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IWindowsIntegrityPolicyStatics[] = L"Windows.System.Profile.IWindowsIntegrityPolicyStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            namespace Profile {
+                /* [object, uuid("7D1D81DB-8D63-4789-9EA5-DDCF65A94F3C"), exclusiveto, contract] */
+                MIDL_INTERFACE("7D1D81DB-8D63-4789-9EA5-DDCF65A94F3C")
+                IWindowsIntegrityPolicyStatics : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabled(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsEnabledForTrial(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CanDisable(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsDisableSupported(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_PolicyChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_PolicyChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWindowsIntegrityPolicyStatics=_uuidof(IWindowsIntegrityPolicyStatics);
+                
+            } /* Windows */
+        } /* System */
+    } /* Profile */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.Profile.AnalyticsInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -1913,6 +2101,52 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
+/*
+ *
+ * Class Windows.System.Profile.SystemSetupInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.ISystemSetupInfoStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_System_Profile_SystemSetupInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SystemSetupInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SystemSetupInfo[] = L"Windows.System.Profile.SystemSetupInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.Profile.WindowsIntegrityPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.IWindowsIntegrityPolicyStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_System_Profile_WindowsIntegrityPolicy_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_WindowsIntegrityPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_WindowsIntegrityPolicy[] = L"Windows.System.Profile.WindowsIntegrityPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 
 
 #else // !defined(__cplusplus)
@@ -1994,6 +2228,18 @@ typedef interface __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationInfo _
 typedef interface __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics __x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics;
 
 #endif // ____x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_FWD_DEFINED__
 
 // Parameterized interface forward declarations (C)
 
@@ -2934,6 +3180,13 @@ typedef enum __x_ABI_CWindows_CSystem_CProfile_CPlatformDataCollectionLevel __x_
 typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource;
 
 
+typedef enum __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState;
+
+
+
+
+
+
 
 
 
@@ -3008,6 +3261,26 @@ enum __x_ABI_CWindows_CSystem_CProfile_CSystemIdentificationSource
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Struct Windows.System.Profile.SystemOutOfBoxExperienceState
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState
+{
+    SystemOutOfBoxExperienceState_NotStarted = 0,
+    SystemOutOfBoxExperienceState_InProgress = 1,
+    SystemOutOfBoxExperienceState_Completed = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -4443,6 +4716,243 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemIdentificationS
 
 /*
  *
+ * Interface Windows.System.Profile.ISystemSetupInfoStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.SystemSetupInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_ISystemSetupInfoStatics[] = L"Windows.System.Profile.ISystemSetupInfoStatics";
+/* [object, uuid("2C9620A8-1D88-5E2D-A324-A543AF4247EE"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OutOfBoxExperienceState )(
+        __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CSystem_CProfile_CSystemOutOfBoxExperienceState * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_OutOfBoxExperienceStateChanged )(
+        __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_OutOfBoxExperienceStateChanged )(
+        __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_get_OutOfBoxExperienceState(This,value) \
+    ( (This)->lpVtbl->get_OutOfBoxExperienceState(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_add_OutOfBoxExperienceStateChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_OutOfBoxExperienceStateChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_remove_OutOfBoxExperienceStateChanged(This,token) \
+    ( (This)->lpVtbl->remove_OutOfBoxExperienceStateChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CISystemSetupInfoStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.Profile.IWindowsIntegrityPolicyStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Profile.WindowsIntegrityPolicy
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_Profile_IWindowsIntegrityPolicyStatics[] = L"Windows.System.Profile.IWindowsIntegrityPolicyStatics";
+/* [object, uuid("7D1D81DB-8D63-4789-9EA5-DDCF65A94F3C"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabled )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsEnabledForTrial )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CanDisable )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsDisableSupported )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_PolicyChanged )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_PolicyChanged )(
+        __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_get_IsEnabled(This,value) \
+    ( (This)->lpVtbl->get_IsEnabled(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_get_IsEnabledForTrial(This,value) \
+    ( (This)->lpVtbl->get_IsEnabledForTrial(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_get_CanDisable(This,value) \
+    ( (This)->lpVtbl->get_CanDisable(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_get_IsDisableSupported(This,value) \
+    ( (This)->lpVtbl->get_IsDisableSupported(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_add_PolicyChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_PolicyChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_remove_PolicyChanged(This,token) \
+    ( (This)->lpVtbl->remove_PolicyChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CProfile_CIWindowsIntegrityPolicyStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.Profile.AnalyticsInfo
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4689,6 +5199,52 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SystemIdentificationInfo[] = L"Windows.System.Profile.SystemIdentificationInfo";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.System.Profile.SystemSetupInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.ISystemSetupInfoStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_System_Profile_SystemSetupInfo_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_SystemSetupInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_SystemSetupInfo[] = L"Windows.System.Profile.SystemSetupInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.Profile.WindowsIntegrityPolicy
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.Profile.IWindowsIntegrityPolicyStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_System_Profile_WindowsIntegrityPolicy_DEFINED
+#define RUNTIMECLASS_Windows_System_Profile_WindowsIntegrityPolicy_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_Profile_WindowsIntegrityPolicy[] = L"Windows.System.Profile.WindowsIntegrityPolicy";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 

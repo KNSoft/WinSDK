@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Printers.Extensions.2.h"
@@ -40,38 +40,38 @@ template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrint3DW
     check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow)->put_IsPrintReady(value));
 }
 
-template <typename D> event_token consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow)->add_PrintRequested(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Printers::Extensions::IPrint3DWorkflow> consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested_revoker consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow>(this, &abi_t<Windows::Devices::Printers::Extensions::IPrint3DWorkflow>::remove_PrintRequested, PrintRequested(eventHandler));
+    return impl::make_event_revoker<D, PrintRequested_revoker>(this, PrintRequested(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow<D>::PrintRequested(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow)->remove_PrintRequested(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow)->remove_PrintRequested(get_abi(eventCookie)));
 }
 
-template <typename D> event_token consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow2)->add_PrinterChanged(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged_revoker consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2>(this, &abi_t<Windows::Devices::Printers::Extensions::IPrint3DWorkflow2>::remove_PrinterChanged, PrinterChanged(eventHandler));
+    return impl::make_event_revoker<D, PrinterChanged_revoker>(this, PrinterChanged(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflow2<D>::PrinterChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow2)->remove_PrinterChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrint3DWorkflow2)->remove_PrinterChanged(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Devices::Printers::Extensions::Print3DWorkflowStatus consume_Windows_Devices_Printers_Extensions_IPrint3DWorkflowPrintRequestedEventArgs<D>::Status() const
@@ -136,21 +136,21 @@ template <typename D> Windows::Foundation::IInspectable consume_Windows_Devices_
     return context;
 }
 
-template <typename D> event_token consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrintTaskConfiguration)->add_SaveRequested(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Printers::Extensions::IPrintTaskConfiguration> consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested_revoker consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Printers::Extensions::IPrintTaskConfiguration>(this, &abi_t<Windows::Devices::Printers::Extensions::IPrintTaskConfiguration>::remove_SaveRequested, SaveRequested(eventHandler));
+    return impl::make_event_revoker<D, SaveRequested_revoker>(this, SaveRequested(eventHandler));
 }
 
-template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrintTaskConfiguration<D>::SaveRequested(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrintTaskConfiguration)->remove_SaveRequested(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Printers::Extensions::IPrintTaskConfiguration)->remove_SaveRequested(get_abi(eventCookie)));
 }
 
 template <typename D> void consume_Windows_Devices_Printers_Extensions_IPrintTaskConfigurationSaveRequest<D>::Cancel() const
@@ -192,413 +192,349 @@ template <typename D> Windows::Devices::Printers::Extensions::PrintTaskConfigura
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow>
 {
-    HRESULT __stdcall get_DeviceID(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceID(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceID, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceID());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPrintModelPackage(void** printModelPackage) noexcept final
+    int32_t WINRT_CALL GetPrintModelPackage(void** printModelPackage) noexcept final
     {
         try
         {
             *printModelPackage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPrintModelPackage, WINRT_WRAP(Windows::Foundation::IInspectable));
             *printModelPackage = detach_from<Windows::Foundation::IInspectable>(this->shim().GetPrintModelPackage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPrintReady(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPrintReady(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrintReady, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPrintReady());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsPrintReady(bool value) noexcept final
+    int32_t WINRT_CALL put_IsPrintReady(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPrintReady, WINRT_WRAP(void), bool);
             this->shim().IsPrintReady(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_PrintRequested(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_PrintRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().PrintRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PrintRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().PrintRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PrintRequested(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_PrintRequested(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PrintRequested(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PrintRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PrintRequested(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflow2>
 {
-    HRESULT __stdcall add_PrinterChanged(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_PrinterChanged(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().PrinterChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(PrinterChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().PrinterChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_PrinterChanged(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_PrinterChanged(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().PrinterChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PrinterChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PrinterChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintRequestedEventArgs> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintRequestedEventArgs>
 {
-    HRESULT __stdcall get_Status(Windows::Devices::Printers::Extensions::Print3DWorkflowStatus* value) noexcept final
+    int32_t WINRT_CALL get_Status(Windows::Devices::Printers::Extensions::Print3DWorkflowStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Status, WINRT_WRAP(Windows::Devices::Printers::Extensions::Print3DWorkflowStatus));
             *value = detach_from<Windows::Devices::Printers::Extensions::Print3DWorkflowStatus>(this->shim().Status());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetExtendedStatus(Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) noexcept final
+    int32_t WINRT_CALL SetExtendedStatus(Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetExtendedStatus, WINRT_WRAP(void), Windows::Devices::Printers::Extensions::Print3DWorkflowDetail const&);
             this->shim().SetExtendedStatus(*reinterpret_cast<Windows::Devices::Printers::Extensions::Print3DWorkflowDetail const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetSource(void* source) noexcept final
+    int32_t WINRT_CALL SetSource(void* source) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetSource, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().SetSource(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&source));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetSourceChanged(bool value) noexcept final
+    int32_t WINRT_CALL SetSourceChanged(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetSourceChanged, WINRT_WRAP(void), bool);
             this->shim().SetSourceChanged(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs> : produce_base<D, Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs>
 {
-    HRESULT __stdcall get_NewDeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NewDeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NewDeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NewDeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintExtensionContextStatic> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintExtensionContextStatic>
 {
-    HRESULT __stdcall FromDeviceId(HSTRING deviceId, void** context) noexcept final
+    int32_t WINRT_CALL FromDeviceId(void* deviceId, void** context) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromDeviceId, WINRT_WRAP(Windows::Foundation::IInspectable), hstring const&);
             *context = detach_from<Windows::Foundation::IInspectable>(this->shim().FromDeviceId(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintNotificationEventDetails> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintNotificationEventDetails>
 {
-    HRESULT __stdcall get_PrinterName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PrinterName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrinterName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PrinterName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EventData(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EventData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EventData, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EventData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EventData(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EventData(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EventData, WINRT_WRAP(void), hstring const&);
             this->shim().EventData(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintTaskConfiguration> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintTaskConfiguration>
 {
-    HRESULT __stdcall get_PrinterExtensionContext(void** context) noexcept final
+    int32_t WINRT_CALL get_PrinterExtensionContext(void** context) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrinterExtensionContext, WINRT_WRAP(Windows::Foundation::IInspectable));
             *context = detach_from<Windows::Foundation::IInspectable>(this->shim().PrinterExtensionContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SaveRequested(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_SaveRequested(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().SaveRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SaveRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().SaveRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::PrintTaskConfiguration, Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SaveRequested(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_SaveRequested(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SaveRequested(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SaveRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SaveRequested(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequest> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequest>
 {
-    HRESULT __stdcall Cancel() noexcept final
+    int32_t WINRT_CALL Cancel() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cancel, WINRT_WRAP(void));
             this->shim().Cancel();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Save(void* printerExtensionContext) noexcept final
+    int32_t WINRT_CALL Save(void* printerExtensionContext) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Save, WINRT_WRAP(void), Windows::Foundation::IInspectable const&);
             this->shim().Save(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&printerExtensionContext));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedDeferral));
             *deferral = detach_from<Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Deadline(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Deadline(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Deadline, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Deadline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequestedDeferral> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequestedDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequestedEventArgs> : produce_base<D, Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** context) noexcept final
+    int32_t WINRT_CALL get_Request(void** context) noexcept final
     {
         try
         {
             *context = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequest));
             *context = detach_from<Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -608,7 +544,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers::Extensions {
 
 inline Windows::Foundation::IInspectable PrintExtensionContext::FromDeviceId(param::hstring const& deviceId)
 {
-    return get_activation_factory<PrintExtensionContext, Windows::Devices::Printers::Extensions::IPrintExtensionContextStatic>().FromDeviceId(deviceId);
+    return impl::call_factory<PrintExtensionContext, Windows::Devices::Printers::Extensions::IPrintExtensionContextStatic>([&](auto&& f) { return f.FromDeviceId(deviceId); });
 }
 
 }
@@ -636,5 +572,3 @@ template<> struct hash<winrt::Windows::Devices::Printers::Extensions::PrintTaskC
 template<> struct hash<winrt::Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> : winrt::impl::hash_base<winrt::Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

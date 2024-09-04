@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,6 +24,13 @@ struct WINRT_EBO IStoreAppLicense :
     impl::consume_t<IStoreAppLicense>
 {
     IStoreAppLicense(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStoreAppLicense2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStoreAppLicense2>
+{
+    IStoreAppLicense2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStoreAvailability :
@@ -73,6 +80,13 @@ struct WINRT_EBO IStoreContext3 :
     impl::consume_t<IStoreContext3>
 {
     IStoreContext3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStoreContext4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStoreContext4>
+{
+    IStoreContext4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStoreContextStatics :
@@ -202,6 +216,13 @@ struct WINRT_EBO IStoreQueueItem :
     IStoreQueueItem(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IStoreQueueItem2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStoreQueueItem2>
+{
+    IStoreQueueItem2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IStoreQueueItemCompletedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IStoreQueueItemCompletedEventArgs>
@@ -214,6 +235,13 @@ struct WINRT_EBO IStoreQueueItemStatus :
     impl::consume_t<IStoreQueueItemStatus>
 {
     IStoreQueueItemStatus(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IStoreRateAndReviewResult :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStoreRateAndReviewResult>
+{
+    IStoreRateAndReviewResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IStoreRequestHelperStatics :

@@ -112,6 +112,8 @@ namespace Windows
 
             interface IStorageProviderSyncRootInfo;
 
+            interface IStorageProviderSyncRootInfo2;
+
             interface IStorageProviderSyncRootManagerStatics;
 
             interface IStorageProviderUriSource;
@@ -187,7 +189,7 @@ namespace Windows
     {
         namespace Provider
         {
-            [contractversion(2.0)]
+            [contractversion(3.0)]
             apicontract CloudFilesContract
             {
             }
@@ -248,9 +250,11 @@ namespace Windows
             [flags]
             enum StorageProviderHydrationPolicyModifier
             {
-                None               = 0x0,
-                ValidationRequired = 0x1,
-                StreamingAllowed   = 0x2
+                None                   = 0x0,
+                ValidationRequired     = 0x1,
+                StreamingAllowed       = 0x2,
+                [contract(Windows.Storage.Provider.CloudFilesContract, 3.0)]
+                AutoDehydrationAllowed = 0x4
             };
 
             [contract(Windows.Storage.Provider.CloudFilesContract, 1.0)]
@@ -444,7 +448,7 @@ namespace Windows
             [uuid(8F6F9C3E-F632-4A9B-8D99-D2D7A11DF56A)]
             interface IStorageProviderItemPropertySource : IInspectable
             {
-                HRESULT GetItemProperties([in] HSTRING itemPath, [out] [retval] Windows.Foundation.Collections.IIterable<Windows.Storage.Provider.StorageProviderItemProperty*>** itemProperties);
+                HRESULT GetItemProperties([in] HSTRING itemPath, [out] [retval] Windows.Foundation.Collections.IIterable<Windows.Storage.Provider.StorageProviderItemProperty*>** result);
             }
 
             [contract(Windows.Storage.Provider.CloudFilesContract, 1.0)]
@@ -463,8 +467,8 @@ namespace Windows
                 [propput] HRESULT Id([in] HSTRING value);
                 [propget] HRESULT Context([out] [retval] Windows.Storage.Streams.IBuffer** value);
                 [propput] HRESULT Context([in] Windows.Storage.Streams.IBuffer* value);
-                [propget] HRESULT Path([out] [retval] Windows.Storage.IStorageFolder** folder);
-                [propput] HRESULT Path([in] Windows.Storage.IStorageFolder* folder);
+                [propget] HRESULT Path([out] [retval] Windows.Storage.IStorageFolder** value);
+                [propput] HRESULT Path([in] Windows.Storage.IStorageFolder* value);
                 [propget] HRESULT DisplayNameResource([out] [retval] HSTRING* value);
                 [propput] HRESULT DisplayNameResource([in] HSTRING value);
                 [propget] HRESULT IconResource([out] [retval] HSTRING* value);
@@ -492,6 +496,15 @@ namespace Windows
                 [propput] HRESULT RecycleBinUri([in] Windows.Foundation.Uri* value);
             }
 
+            [contract(Windows.Storage.Provider.CloudFilesContract, 3.0)]
+            [exclusiveto(Windows.Storage.Provider.StorageProviderSyncRootInfo)]
+            [uuid(CF51B023-7CF1-5166-BDBA-EFD95F529E31)]
+            interface IStorageProviderSyncRootInfo2 : IInspectable
+            {
+                [propget] HRESULT ProviderId([out] [retval] GUID* value);
+                [propput] HRESULT ProviderId([in] GUID value);
+            }
+
             [contract(Windows.Storage.Provider.CloudFilesContract, 1.0)]
             [exclusiveto(Windows.Storage.Provider.StorageProviderSyncRootManager)]
             [uuid(3E99FBBF-8FE3-4B40-ABC7-F6FC3D74C98E)]
@@ -499,9 +512,9 @@ namespace Windows
             {
                 HRESULT Register([in] Windows.Storage.Provider.StorageProviderSyncRootInfo* syncRootInformation);
                 HRESULT Unregister([in] HSTRING id);
-                HRESULT GetSyncRootInformationForFolder([in] Windows.Storage.IStorageFolder* folder, [out] [retval] Windows.Storage.Provider.StorageProviderSyncRootInfo** syncRootInformation);
-                HRESULT GetSyncRootInformationForId([in] HSTRING id, [out] [retval] Windows.Storage.Provider.StorageProviderSyncRootInfo** syncRootInformation);
-                HRESULT GetCurrentSyncRoots([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Storage.Provider.StorageProviderSyncRootInfo*>** value);
+                HRESULT GetSyncRootInformationForFolder([in] Windows.Storage.IStorageFolder* folder, [out] [retval] Windows.Storage.Provider.StorageProviderSyncRootInfo** result);
+                HRESULT GetSyncRootInformationForId([in] HSTRING id, [out] [retval] Windows.Storage.Provider.StorageProviderSyncRootInfo** result);
+                HRESULT GetCurrentSyncRoots([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Storage.Provider.StorageProviderSyncRootInfo*>** result);
             }
 
             [contract(Windows.Storage.Provider.CloudFilesContract, 2.0)]
@@ -596,6 +609,7 @@ namespace Windows
             runtimeclass StorageProviderSyncRootInfo
             {
                 [default] interface Windows.Storage.Provider.IStorageProviderSyncRootInfo;
+                [contract(Windows.Storage.Provider.CloudFilesContract, 3.0)] interface Windows.Storage.Provider.IStorageProviderSyncRootInfo2;
             }
 
             [contract(Windows.Storage.Provider.CloudFilesContract, 1.0)]

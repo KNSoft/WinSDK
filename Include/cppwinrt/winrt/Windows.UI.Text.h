@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -456,16 +456,16 @@ template <typename D> void consume_Windows_UI_Text_ITextCharacterFormat<D>::SetC
 
 template <typename D> Windows::UI::Text::ITextCharacterFormat consume_Windows_UI_Text_ITextCharacterFormat<D>::GetClone() const
 {
-    Windows::UI::Text::ITextCharacterFormat value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextCharacterFormat)->GetClone(put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextCharacterFormat result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextCharacterFormat)->GetClone(put_abi(result)));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Text_ITextCharacterFormat<D>::IsEqual(Windows::UI::Text::ITextCharacterFormat const& format) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextCharacterFormat)->IsEqual(get_abi(format), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextCharacterFormat)->IsEqual(get_abi(format), &result));
+    return result;
 }
 
 template <typename D> Windows::UI::Color consume_Windows_UI_Text_ITextConstantsStatics<D>::AutoColor() const
@@ -569,44 +569,44 @@ template <typename D> void consume_Windows_UI_Text_ITextDocument<D>::UndoLimit(u
 
 template <typename D> bool consume_Windows_UI_Text_ITextDocument<D>::CanCopy() const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanCopy(&value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanCopy(&result));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Text_ITextDocument<D>::CanPaste() const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanPaste(&value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanPaste(&result));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Text_ITextDocument<D>::CanRedo() const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanRedo(&value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanRedo(&result));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Text_ITextDocument<D>::CanUndo() const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanUndo(&value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->CanUndo(&result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextDocument<D>::ApplyDisplayUpdates() const
 {
-    int32_t count{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->ApplyDisplayUpdates(&count));
-    return count;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->ApplyDisplayUpdates(&result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextDocument<D>::BatchDisplayUpdates() const
 {
-    int32_t count{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->BatchDisplayUpdates(&count));
-    return count;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->BatchDisplayUpdates(&result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextDocument<D>::BeginUndoGroup() const
@@ -621,30 +621,30 @@ template <typename D> void consume_Windows_UI_Text_ITextDocument<D>::EndUndoGrou
 
 template <typename D> Windows::UI::Text::ITextCharacterFormat consume_Windows_UI_Text_ITextDocument<D>::GetDefaultCharacterFormat() const
 {
-    Windows::UI::Text::ITextCharacterFormat value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetDefaultCharacterFormat(put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextCharacterFormat result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetDefaultCharacterFormat(put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Text::ITextParagraphFormat consume_Windows_UI_Text_ITextDocument<D>::GetDefaultParagraphFormat() const
 {
-    Windows::UI::Text::ITextParagraphFormat value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetDefaultParagraphFormat(put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextParagraphFormat result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetDefaultParagraphFormat(put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Text::ITextRange consume_Windows_UI_Text_ITextDocument<D>::GetRange(int32_t startPosition, int32_t endPosition) const
 {
-    Windows::UI::Text::ITextRange value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetRange(startPosition, endPosition, put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextRange result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetRange(startPosition, endPosition, put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Text::ITextRange consume_Windows_UI_Text_ITextDocument<D>::GetRangeFromPoint(Windows::Foundation::Point const& point, Windows::UI::Text::PointOptions const& options) const
 {
-    Windows::UI::Text::ITextRange value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetRangeFromPoint(get_abi(point), get_abi(options), put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextRange result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument)->GetRangeFromPoint(get_abi(point), get_abi(options), put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextDocument<D>::GetText(Windows::UI::Text::TextGetOptions const& options, hstring& value) const
@@ -709,6 +709,11 @@ template <typename D> bool consume_Windows_UI_Text_ITextDocument2<D>::IgnoreTrai
 template <typename D> void consume_Windows_UI_Text_ITextDocument2<D>::IgnoreTrailingCharacterSpacing(bool value) const
 {
     check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument2)->put_IgnoreTrailingCharacterSpacing(value));
+}
+
+template <typename D> void consume_Windows_UI_Text_ITextDocument3<D>::ClearUndoRedoHistory() const
+{
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextDocument3)->ClearUndoRedoHistory());
 }
 
 template <typename D> Windows::UI::Text::ParagraphAlignment consume_Windows_UI_Text_ITextParagraphFormat<D>::Alignment() const
@@ -967,9 +972,9 @@ template <typename D> void consume_Windows_UI_Text_ITextParagraphFormat<D>::Dele
 
 template <typename D> Windows::UI::Text::ITextParagraphFormat consume_Windows_UI_Text_ITextParagraphFormat<D>::GetClone() const
 {
-    Windows::UI::Text::ITextParagraphFormat value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextParagraphFormat)->GetClone(put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextParagraphFormat result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextParagraphFormat)->GetClone(put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextParagraphFormat<D>::GetTab(int32_t index, float& position, Windows::UI::Text::TabAlignment& align, Windows::UI::Text::TabLeader& leader) const
@@ -979,9 +984,9 @@ template <typename D> void consume_Windows_UI_Text_ITextParagraphFormat<D>::GetT
 
 template <typename D> bool consume_Windows_UI_Text_ITextParagraphFormat<D>::IsEqual(Windows::UI::Text::ITextParagraphFormat const& format) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextParagraphFormat)->IsEqual(get_abi(format), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextParagraphFormat)->IsEqual(get_abi(format), &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextParagraphFormat<D>::SetClone(Windows::UI::Text::ITextParagraphFormat const& format) const
@@ -1061,9 +1066,9 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::Gravity(Window
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::Length() const
 {
-    int32_t length{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->get_Length(&length));
-    return length;
+    int32_t value{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->get_Length(&value));
+    return value;
 }
 
 template <typename D> hstring consume_Windows_UI_Text_ITextRange<D>::Link() const
@@ -1123,9 +1128,9 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::Text(param::hs
 
 template <typename D> bool consume_Windows_UI_Text_ITextRange<D>::CanPaste(int32_t format) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->CanPaste(format, &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->CanPaste(format, &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextRange<D>::ChangeCase(Windows::UI::Text::LetterCase const& value) const
@@ -1150,30 +1155,30 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::Cut() const
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::Delete(Windows::UI::Text::TextRangeUnit const& unit, int32_t count) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Delete(get_abi(unit), count, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Delete(get_abi(unit), count, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::EndOf(Windows::UI::Text::TextRangeUnit const& unit, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->EndOf(get_abi(unit), extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->EndOf(get_abi(unit), extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::Expand(Windows::UI::Text::TextRangeUnit const& unit) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Expand(get_abi(unit), &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Expand(get_abi(unit), &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::FindText(param::hstring const& value, int32_t scanLength, Windows::UI::Text::FindOptions const& options) const
 {
-    int32_t length{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->FindText(get_abi(value), scanLength, get_abi(options), &length));
-    return length;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->FindText(get_abi(value), scanLength, get_abi(options), &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextRange<D>::GetCharacterUtf32(uint32_t& value, int32_t offset) const
@@ -1183,16 +1188,16 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::GetCharacterUt
 
 template <typename D> Windows::UI::Text::ITextRange consume_Windows_UI_Text_ITextRange<D>::GetClone() const
 {
-    Windows::UI::Text::ITextRange value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->GetClone(put_abi(value)));
-    return value;
+    Windows::UI::Text::ITextRange result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->GetClone(put_abi(result)));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::GetIndex(Windows::UI::Text::TextRangeUnit const& unit) const
 {
-    int32_t index{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->GetIndex(get_abi(unit), &index));
-    return index;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->GetIndex(get_abi(unit), &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextRange<D>::GetPoint(Windows::UI::Text::HorizontalCharacterAlignment const& horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment const& verticalAlign, Windows::UI::Text::PointOptions const& options, Windows::Foundation::Point& point) const
@@ -1217,9 +1222,9 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::GetTextViaStre
 
 template <typename D> bool consume_Windows_UI_Text_ITextRange<D>::InRange(Windows::UI::Text::ITextRange const& range) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->InRange(get_abi(range), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->InRange(get_abi(range), &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextRange<D>::InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment const& verticalAlign, param::hstring const& alternateText, Windows::Storage::Streams::IRandomAccessStream const& value) const
@@ -1229,37 +1234,37 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::InsertImage(in
 
 template <typename D> bool consume_Windows_UI_Text_ITextRange<D>::InStory(Windows::UI::Text::ITextRange const& range) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->InStory(get_abi(range), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->InStory(get_abi(range), &result));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Text_ITextRange<D>::IsEqual(Windows::UI::Text::ITextRange const& range) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->IsEqual(get_abi(range), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->IsEqual(get_abi(range), &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::Move(Windows::UI::Text::TextRangeUnit const& unit, int32_t count) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Move(get_abi(unit), count, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->Move(get_abi(unit), count, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::MoveEnd(Windows::UI::Text::TextRangeUnit const& unit, int32_t count) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->MoveEnd(get_abi(unit), count, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->MoveEnd(get_abi(unit), count, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::MoveStart(Windows::UI::Text::TextRangeUnit const& unit, int32_t count) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->MoveStart(get_abi(unit), count, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->MoveStart(get_abi(unit), count, &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextRange<D>::Paste(int32_t format) const
@@ -1304,9 +1309,9 @@ template <typename D> void consume_Windows_UI_Text_ITextRange<D>::SetTextViaStre
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextRange<D>::StartOf(Windows::UI::Text::TextRangeUnit const& unit, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->StartOf(get_abi(unit), extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextRange)->StartOf(get_abi(unit), extend, &result));
+    return result;
 }
 
 template <typename D> Windows::UI::Text::SelectionOptions consume_Windows_UI_Text_ITextSelection<D>::Options() const
@@ -1330,44 +1335,44 @@ template <typename D> Windows::UI::Text::SelectionType consume_Windows_UI_Text_I
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::EndKey(Windows::UI::Text::TextRangeUnit const& unit, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->EndKey(get_abi(unit), extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->EndKey(get_abi(unit), extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::HomeKey(Windows::UI::Text::TextRangeUnit const& unit, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->HomeKey(get_abi(unit), extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->HomeKey(get_abi(unit), extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::MoveDown(Windows::UI::Text::TextRangeUnit const& unit, int32_t count, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveDown(get_abi(unit), count, extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveDown(get_abi(unit), count, extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::MoveLeft(Windows::UI::Text::TextRangeUnit const& unit, int32_t count, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveLeft(get_abi(unit), count, extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveLeft(get_abi(unit), count, extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::MoveRight(Windows::UI::Text::TextRangeUnit const& unit, int32_t count, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveRight(get_abi(unit), count, extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveRight(get_abi(unit), count, extend, &result));
+    return result;
 }
 
 template <typename D> int32_t consume_Windows_UI_Text_ITextSelection<D>::MoveUp(Windows::UI::Text::TextRangeUnit const& unit, int32_t count, bool extend) const
 {
-    int32_t delta{};
-    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveUp(get_abi(unit), count, extend, &delta));
-    return delta;
+    int32_t result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Text::ITextSelection)->MoveUp(get_abi(unit), count, extend, &result));
+    return result;
 }
 
 template <typename D> void consume_Windows_UI_Text_ITextSelection<D>::TypeText(param::hstring const& value) const
@@ -1378,148 +1383,128 @@ template <typename D> void consume_Windows_UI_Text_ITextSelection<D>::TypeText(p
 template <typename D>
 struct produce<D, Windows::UI::Text::IContentLinkInfo> : produce_base<D, Windows::UI::Text::IContentLinkInfo>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Id(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Id(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(void), uint32_t);
             this->shim().Id(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecondaryText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SecondaryText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondaryText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SecondaryText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SecondaryText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SecondaryText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondaryText, WINRT_WRAP(void), hstring const&);
             this->shim().SecondaryText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinkContentKind(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LinkContentKind(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinkContentKind, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LinkContentKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LinkContentKind(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_LinkContentKind(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinkContentKind, WINRT_WRAP(void), hstring const&);
             this->shim().LinkContentKind(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1530,3022 +1515,2614 @@ struct produce<D, Windows::UI::Text::IFontWeights> : produce_base<D, Windows::UI
 template <typename D>
 struct produce<D, Windows::UI::Text::IFontWeightsStatics> : produce_base<D, Windows::UI::Text::IFontWeightsStatics>
 {
-    HRESULT __stdcall get_Black(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Black(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Black, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Black());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Bold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bold, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Bold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtraBlack(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_ExtraBlack(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtraBlack, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().ExtraBlack());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtraBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_ExtraBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtraBold, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().ExtraBold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtraLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_ExtraLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtraLight, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().ExtraLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Light(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Light(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Light, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Light());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Medium(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Medium(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Medium, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Medium());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Normal(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Normal(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Normal, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Normal());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SemiBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_SemiBold(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SemiBold, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().SemiBold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SemiLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_SemiLight(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SemiLight, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().SemiLight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thin(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
+    int32_t WINRT_CALL get_Thin(struct struct_Windows_UI_Text_FontWeight* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thin, WINRT_WRAP(Windows::UI::Text::FontWeight));
             *value = detach_from<Windows::UI::Text::FontWeight>(this->shim().Thin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::IRichEditTextRange> : produce_base<D, Windows::UI::Text::IRichEditTextRange>
 {
-    HRESULT __stdcall get_ContentLinkInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentLinkInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentLinkInfo, WINRT_WRAP(Windows::UI::Text::ContentLinkInfo));
             *value = detach_from<Windows::UI::Text::ContentLinkInfo>(this->shim().ContentLinkInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentLinkInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentLinkInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentLinkInfo, WINRT_WRAP(void), Windows::UI::Text::ContentLinkInfo const&);
             this->shim().ContentLinkInfo(*reinterpret_cast<Windows::UI::Text::ContentLinkInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextCharacterFormat> : produce_base<D, Windows::UI::Text::ITextCharacterFormat>
 {
-    HRESULT __stdcall get_AllCaps(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_AllCaps(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllCaps, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().AllCaps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllCaps(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_AllCaps(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllCaps, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().AllCaps(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bold(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Bold(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bold, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Bold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Bold(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Bold(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bold, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Bold(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept final
+    int32_t WINRT_CALL get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStretch, WINRT_WRAP(Windows::UI::Text::FontStretch));
             *value = detach_from<Windows::UI::Text::FontStretch>(this->shim().FontStretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FontStretch(Windows::UI::Text::FontStretch value) noexcept final
+    int32_t WINRT_CALL put_FontStretch(Windows::UI::Text::FontStretch value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStretch, WINRT_WRAP(void), Windows::UI::Text::FontStretch const&);
             this->shim().FontStretch(*reinterpret_cast<Windows::UI::Text::FontStretch const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept final
+    int32_t WINRT_CALL get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStyle, WINRT_WRAP(Windows::UI::Text::FontStyle));
             *value = detach_from<Windows::UI::Text::FontStyle>(this->shim().FontStyle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FontStyle(Windows::UI::Text::FontStyle value) noexcept final
+    int32_t WINRT_CALL put_FontStyle(Windows::UI::Text::FontStyle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FontStyle, WINRT_WRAP(void), Windows::UI::Text::FontStyle const&);
             this->shim().FontStyle(*reinterpret_cast<Windows::UI::Text::FontStyle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().ForegroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForegroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().ForegroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hidden(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Hidden(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hidden, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Hidden());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Hidden(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Hidden(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hidden, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Hidden(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Italic(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Italic(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Italic, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Italic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Italic(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Italic(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Italic, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Italic(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kerning(float* value) noexcept final
+    int32_t WINRT_CALL get_Kerning(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kerning, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Kerning());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Kerning(float value) noexcept final
+    int32_t WINRT_CALL put_Kerning(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kerning, WINRT_WRAP(void), float);
             this->shim().Kerning(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LanguageTag(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LanguageTag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageTag, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LanguageTag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LanguageTag(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_LanguageTag(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageTag, WINRT_WRAP(void), hstring const&);
             this->shim().LanguageTag(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinkType(Windows::UI::Text::LinkType* value) noexcept final
+    int32_t WINRT_CALL get_LinkType(Windows::UI::Text::LinkType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinkType, WINRT_WRAP(Windows::UI::Text::LinkType));
             *value = detach_from<Windows::UI::Text::LinkType>(this->shim().LinkType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Outline(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Outline(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Outline, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Outline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Outline(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Outline(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Outline, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Outline(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Position(float* value) noexcept final
+    int32_t WINRT_CALL get_Position(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Position(float value) noexcept final
+    int32_t WINRT_CALL put_Position(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(void), float);
             this->shim().Position(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectedText(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_ProtectedText(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectedText, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().ProtectedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtectedText(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_ProtectedText(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectedText, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().ProtectedText(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Size(float* value) noexcept final
+    int32_t WINRT_CALL get_Size(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Size(float value) noexcept final
+    int32_t WINRT_CALL put_Size(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(void), float);
             this->shim().Size(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SmallCaps(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_SmallCaps(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmallCaps, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().SmallCaps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SmallCaps(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_SmallCaps(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SmallCaps, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().SmallCaps(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Spacing(float* value) noexcept final
+    int32_t WINRT_CALL get_Spacing(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Spacing, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().Spacing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Spacing(float value) noexcept final
+    int32_t WINRT_CALL put_Spacing(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Spacing, WINRT_WRAP(void), float);
             this->shim().Spacing(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Strikethrough(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Strikethrough(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Strikethrough, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Strikethrough());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Strikethrough(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Strikethrough(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Strikethrough, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Strikethrough(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Subscript(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Subscript(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subscript, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Subscript());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Subscript(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Subscript(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Subscript, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Subscript(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Superscript(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_Superscript(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Superscript, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().Superscript());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Superscript(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_Superscript(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Superscript, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().Superscript(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TextScript(Windows::UI::Text::TextScript* value) noexcept final
+    int32_t WINRT_CALL get_TextScript(Windows::UI::Text::TextScript* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextScript, WINRT_WRAP(Windows::UI::Text::TextScript));
             *value = detach_from<Windows::UI::Text::TextScript>(this->shim().TextScript());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TextScript(Windows::UI::Text::TextScript value) noexcept final
+    int32_t WINRT_CALL put_TextScript(Windows::UI::Text::TextScript value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TextScript, WINRT_WRAP(void), Windows::UI::Text::TextScript const&);
             this->shim().TextScript(*reinterpret_cast<Windows::UI::Text::TextScript const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Underline(Windows::UI::Text::UnderlineType* value) noexcept final
+    int32_t WINRT_CALL get_Underline(Windows::UI::Text::UnderlineType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Underline, WINRT_WRAP(Windows::UI::Text::UnderlineType));
             *value = detach_from<Windows::UI::Text::UnderlineType>(this->shim().Underline());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Underline(Windows::UI::Text::UnderlineType value) noexcept final
+    int32_t WINRT_CALL put_Underline(Windows::UI::Text::UnderlineType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Underline, WINRT_WRAP(void), Windows::UI::Text::UnderlineType const&);
             this->shim().Underline(*reinterpret_cast<Windows::UI::Text::UnderlineType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Weight(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Weight(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Weight, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Weight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Weight(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Weight(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Weight, WINRT_WRAP(void), int32_t);
             this->shim().Weight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetClone(void* value) noexcept final
+    int32_t WINRT_CALL SetClone(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetClone, WINRT_WRAP(void), Windows::UI::Text::ITextCharacterFormat const&);
             this->shim().SetClone(*reinterpret_cast<Windows::UI::Text::ITextCharacterFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetClone(void** value) noexcept final
+    int32_t WINRT_CALL GetClone(void** result) noexcept final
     {
         try
         {
-            *value = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextCharacterFormat>(this->shim().GetClone());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetClone, WINRT_WRAP(Windows::UI::Text::ITextCharacterFormat));
+            *result = detach_from<Windows::UI::Text::ITextCharacterFormat>(this->shim().GetClone());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsEqual(void* format, bool* value) noexcept final
+    int32_t WINRT_CALL IsEqual(void* format, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextCharacterFormat const*>(&format)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsEqual, WINRT_WRAP(bool), Windows::UI::Text::ITextCharacterFormat const&);
+            *result = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextCharacterFormat const*>(&format)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextConstantsStatics> : produce_base<D, Windows::UI::Text::ITextConstantsStatics>
 {
-    HRESULT __stdcall get_AutoColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_AutoColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().AutoColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinUnitCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinUnitCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinUnitCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MinUnitCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxUnitCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxUnitCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxUnitCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MaxUnitCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndefinedColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_UndefinedColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndefinedColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().UndefinedColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndefinedFloatValue(float* value) noexcept final
+    int32_t WINRT_CALL get_UndefinedFloatValue(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndefinedFloatValue, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().UndefinedFloatValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndefinedInt32Value(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_UndefinedInt32Value(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndefinedInt32Value, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().UndefinedInt32Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndefinedFontStretch(Windows::UI::Text::FontStretch* value) noexcept final
+    int32_t WINRT_CALL get_UndefinedFontStretch(Windows::UI::Text::FontStretch* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndefinedFontStretch, WINRT_WRAP(Windows::UI::Text::FontStretch));
             *value = detach_from<Windows::UI::Text::FontStretch>(this->shim().UndefinedFontStretch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndefinedFontStyle(Windows::UI::Text::FontStyle* value) noexcept final
+    int32_t WINRT_CALL get_UndefinedFontStyle(Windows::UI::Text::FontStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndefinedFontStyle, WINRT_WRAP(Windows::UI::Text::FontStyle));
             *value = detach_from<Windows::UI::Text::FontStyle>(this->shim().UndefinedFontStyle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::UI::Text::ITextDocument>
 {
-    HRESULT __stdcall get_CaretType(Windows::UI::Text::CaretType* value) noexcept final
+    int32_t WINRT_CALL get_CaretType(Windows::UI::Text::CaretType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaretType, WINRT_WRAP(Windows::UI::Text::CaretType));
             *value = detach_from<Windows::UI::Text::CaretType>(this->shim().CaretType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CaretType(Windows::UI::Text::CaretType value) noexcept final
+    int32_t WINRT_CALL put_CaretType(Windows::UI::Text::CaretType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaretType, WINRT_WRAP(void), Windows::UI::Text::CaretType const&);
             this->shim().CaretType(*reinterpret_cast<Windows::UI::Text::CaretType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DefaultTabStop(float* value) noexcept final
+    int32_t WINRT_CALL get_DefaultTabStop(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultTabStop, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().DefaultTabStop());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DefaultTabStop(float value) noexcept final
+    int32_t WINRT_CALL put_DefaultTabStop(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DefaultTabStop, WINRT_WRAP(void), float);
             this->shim().DefaultTabStop(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Selection(void** value) noexcept final
+    int32_t WINRT_CALL get_Selection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Selection, WINRT_WRAP(Windows::UI::Text::ITextSelection));
             *value = detach_from<Windows::UI::Text::ITextSelection>(this->shim().Selection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UndoLimit(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_UndoLimit(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndoLimit, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().UndoLimit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_UndoLimit(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_UndoLimit(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UndoLimit, WINRT_WRAP(void), uint32_t);
             this->shim().UndoLimit(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanCopy(bool* value) noexcept final
+    int32_t WINRT_CALL CanCopy(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().CanCopy());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanCopy, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().CanCopy());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanPaste(bool* value) noexcept final
+    int32_t WINRT_CALL CanPaste(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().CanPaste());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanPaste, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().CanPaste());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanRedo(bool* value) noexcept final
+    int32_t WINRT_CALL CanRedo(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().CanRedo());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanRedo, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().CanRedo());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanUndo(bool* value) noexcept final
+    int32_t WINRT_CALL CanUndo(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().CanUndo());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanUndo, WINRT_WRAP(bool));
+            *result = detach_from<bool>(this->shim().CanUndo());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ApplyDisplayUpdates(int32_t* count) noexcept final
+    int32_t WINRT_CALL ApplyDisplayUpdates(int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *count = detach_from<int32_t>(this->shim().ApplyDisplayUpdates());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ApplyDisplayUpdates, WINRT_WRAP(int32_t));
+            *result = detach_from<int32_t>(this->shim().ApplyDisplayUpdates());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BatchDisplayUpdates(int32_t* count) noexcept final
+    int32_t WINRT_CALL BatchDisplayUpdates(int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *count = detach_from<int32_t>(this->shim().BatchDisplayUpdates());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BatchDisplayUpdates, WINRT_WRAP(int32_t));
+            *result = detach_from<int32_t>(this->shim().BatchDisplayUpdates());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BeginUndoGroup() noexcept final
+    int32_t WINRT_CALL BeginUndoGroup() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BeginUndoGroup, WINRT_WRAP(void));
             this->shim().BeginUndoGroup();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EndUndoGroup() noexcept final
+    int32_t WINRT_CALL EndUndoGroup() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndUndoGroup, WINRT_WRAP(void));
             this->shim().EndUndoGroup();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDefaultCharacterFormat(void** value) noexcept final
+    int32_t WINRT_CALL GetDefaultCharacterFormat(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultCharacterFormat, WINRT_WRAP(Windows::UI::Text::ITextCharacterFormat));
+            *result = detach_from<Windows::UI::Text::ITextCharacterFormat>(this->shim().GetDefaultCharacterFormat());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetDefaultParagraphFormat(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultParagraphFormat, WINRT_WRAP(Windows::UI::Text::ITextParagraphFormat));
+            *result = detach_from<Windows::UI::Text::ITextParagraphFormat>(this->shim().GetDefaultParagraphFormat());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetRange(int32_t startPosition, int32_t endPosition, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRange, WINRT_WRAP(Windows::UI::Text::ITextRange), int32_t, int32_t);
+            *result = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetRange(startPosition, endPosition));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetRangeFromPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRangeFromPoint, WINRT_WRAP(Windows::UI::Text::ITextRange), Windows::Foundation::Point const&, Windows::UI::Text::PointOptions const&);
+            *result = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetRangeFromPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&point), *reinterpret_cast<Windows::UI::Text::PointOptions const*>(&options)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL GetText(Windows::UI::Text::TextGetOptions options, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextCharacterFormat>(this->shim().GetDefaultCharacterFormat());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall GetDefaultParagraphFormat(void** value) noexcept final
-    {
-        try
-        {
-            *value = nullptr;
-            typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextParagraphFormat>(this->shim().GetDefaultParagraphFormat());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall GetRange(int32_t startPosition, int32_t endPosition, void** value) noexcept final
-    {
-        try
-        {
-            *value = nullptr;
-            typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetRange(startPosition, endPosition));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall GetRangeFromPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, void** value) noexcept final
-    {
-        try
-        {
-            *value = nullptr;
-            typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetRangeFromPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&point), *reinterpret_cast<Windows::UI::Text::PointOptions const*>(&options)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall GetText(Windows::UI::Text::TextGetOptions options, HSTRING* value) noexcept final
-    {
-        try
-        {
-            *value = nullptr;
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetText, WINRT_WRAP(void), Windows::UI::Text::TextGetOptions const&, hstring&);
             this->shim().GetText(*reinterpret_cast<Windows::UI::Text::TextGetOptions const*>(&options), *reinterpret_cast<hstring*>(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadFromStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
+    int32_t WINRT_CALL LoadFromStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadFromStream, WINRT_WRAP(void), Windows::UI::Text::TextSetOptions const&, Windows::Storage::Streams::IRandomAccessStream const&);
             this->shim().LoadFromStream(*reinterpret_cast<Windows::UI::Text::TextSetOptions const*>(&options), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Redo() noexcept final
+    int32_t WINRT_CALL Redo() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Redo, WINRT_WRAP(void));
             this->shim().Redo();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveToStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept final
+    int32_t WINRT_CALL SaveToStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveToStream, WINRT_WRAP(void), Windows::UI::Text::TextGetOptions const&, Windows::Storage::Streams::IRandomAccessStream const&);
             this->shim().SaveToStream(*reinterpret_cast<Windows::UI::Text::TextGetOptions const*>(&options), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDefaultCharacterFormat(void* value) noexcept final
+    int32_t WINRT_CALL SetDefaultCharacterFormat(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDefaultCharacterFormat, WINRT_WRAP(void), Windows::UI::Text::ITextCharacterFormat const&);
             this->shim().SetDefaultCharacterFormat(*reinterpret_cast<Windows::UI::Text::ITextCharacterFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDefaultParagraphFormat(void* value) noexcept final
+    int32_t WINRT_CALL SetDefaultParagraphFormat(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDefaultParagraphFormat, WINRT_WRAP(void), Windows::UI::Text::ITextParagraphFormat const&);
             this->shim().SetDefaultParagraphFormat(*reinterpret_cast<Windows::UI::Text::ITextParagraphFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetText(Windows::UI::Text::TextSetOptions options, HSTRING value) noexcept final
+    int32_t WINRT_CALL SetText(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetText, WINRT_WRAP(void), Windows::UI::Text::TextSetOptions const&, hstring const&);
             this->shim().SetText(*reinterpret_cast<Windows::UI::Text::TextSetOptions const*>(&options), *reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Undo() noexcept final
+    int32_t WINRT_CALL Undo() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Undo, WINRT_WRAP(void));
             this->shim().Undo();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextDocument2> : produce_base<D, Windows::UI::Text::ITextDocument2>
 {
-    HRESULT __stdcall get_AlignmentIncludesTrailingWhitespace(bool* value) noexcept final
+    int32_t WINRT_CALL get_AlignmentIncludesTrailingWhitespace(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentIncludesTrailingWhitespace, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AlignmentIncludesTrailingWhitespace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlignmentIncludesTrailingWhitespace(bool value) noexcept final
+    int32_t WINRT_CALL put_AlignmentIncludesTrailingWhitespace(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlignmentIncludesTrailingWhitespace, WINRT_WRAP(void), bool);
             this->shim().AlignmentIncludesTrailingWhitespace(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IgnoreTrailingCharacterSpacing(bool* value) noexcept final
+    int32_t WINRT_CALL get_IgnoreTrailingCharacterSpacing(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IgnoreTrailingCharacterSpacing, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IgnoreTrailingCharacterSpacing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IgnoreTrailingCharacterSpacing(bool value) noexcept final
+    int32_t WINRT_CALL put_IgnoreTrailingCharacterSpacing(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IgnoreTrailingCharacterSpacing, WINRT_WRAP(void), bool);
             this->shim().IgnoreTrailingCharacterSpacing(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Text::ITextDocument3> : produce_base<D, Windows::UI::Text::ITextDocument3>
+{
+    int32_t WINRT_CALL ClearUndoRedoHistory() noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearUndoRedoHistory, WINRT_WRAP(void));
+            this->shim().ClearUndoRedoHistory();
+            return 0;
         }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Windows::UI::Text::ITextParagraphFormat>
 {
-    HRESULT __stdcall get_Alignment(Windows::UI::Text::ParagraphAlignment* value) noexcept final
+    int32_t WINRT_CALL get_Alignment(Windows::UI::Text::ParagraphAlignment* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Alignment, WINRT_WRAP(Windows::UI::Text::ParagraphAlignment));
             *value = detach_from<Windows::UI::Text::ParagraphAlignment>(this->shim().Alignment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Alignment(Windows::UI::Text::ParagraphAlignment value) noexcept final
+    int32_t WINRT_CALL put_Alignment(Windows::UI::Text::ParagraphAlignment value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Alignment, WINRT_WRAP(void), Windows::UI::Text::ParagraphAlignment const&);
             this->shim().Alignment(*reinterpret_cast<Windows::UI::Text::ParagraphAlignment const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstLineIndent(float* value) noexcept final
+    int32_t WINRT_CALL get_FirstLineIndent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstLineIndent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().FirstLineIndent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeepTogether(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_KeepTogether(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepTogether, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().KeepTogether());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KeepTogether(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_KeepTogether(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepTogether, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().KeepTogether(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeepWithNext(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_KeepWithNext(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepWithNext, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().KeepWithNext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KeepWithNext(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_KeepWithNext(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeepWithNext, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().KeepWithNext(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftIndent(float* value) noexcept final
+    int32_t WINRT_CALL get_LeftIndent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftIndent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LeftIndent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LineSpacing(float* value) noexcept final
+    int32_t WINRT_CALL get_LineSpacing(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LineSpacing, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().LineSpacing());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LineSpacingRule(Windows::UI::Text::LineSpacingRule* value) noexcept final
+    int32_t WINRT_CALL get_LineSpacingRule(Windows::UI::Text::LineSpacingRule* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LineSpacingRule, WINRT_WRAP(Windows::UI::Text::LineSpacingRule));
             *value = detach_from<Windows::UI::Text::LineSpacingRule>(this->shim().LineSpacingRule());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListAlignment(Windows::UI::Text::MarkerAlignment* value) noexcept final
+    int32_t WINRT_CALL get_ListAlignment(Windows::UI::Text::MarkerAlignment* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListAlignment, WINRT_WRAP(Windows::UI::Text::MarkerAlignment));
             *value = detach_from<Windows::UI::Text::MarkerAlignment>(this->shim().ListAlignment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListAlignment(Windows::UI::Text::MarkerAlignment value) noexcept final
+    int32_t WINRT_CALL put_ListAlignment(Windows::UI::Text::MarkerAlignment value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListAlignment, WINRT_WRAP(void), Windows::UI::Text::MarkerAlignment const&);
             this->shim().ListAlignment(*reinterpret_cast<Windows::UI::Text::MarkerAlignment const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListLevelIndex(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ListLevelIndex(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListLevelIndex, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ListLevelIndex());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListLevelIndex(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ListLevelIndex(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListLevelIndex, WINRT_WRAP(void), int32_t);
             this->shim().ListLevelIndex(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListStart(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ListStart(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListStart, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ListStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListStart(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ListStart(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListStart, WINRT_WRAP(void), int32_t);
             this->shim().ListStart(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListStyle(Windows::UI::Text::MarkerStyle* value) noexcept final
+    int32_t WINRT_CALL get_ListStyle(Windows::UI::Text::MarkerStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListStyle, WINRT_WRAP(Windows::UI::Text::MarkerStyle));
             *value = detach_from<Windows::UI::Text::MarkerStyle>(this->shim().ListStyle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListStyle(Windows::UI::Text::MarkerStyle value) noexcept final
+    int32_t WINRT_CALL put_ListStyle(Windows::UI::Text::MarkerStyle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListStyle, WINRT_WRAP(void), Windows::UI::Text::MarkerStyle const&);
             this->shim().ListStyle(*reinterpret_cast<Windows::UI::Text::MarkerStyle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListTab(float* value) noexcept final
+    int32_t WINRT_CALL get_ListTab(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListTab, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().ListTab());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListTab(float value) noexcept final
+    int32_t WINRT_CALL put_ListTab(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListTab, WINRT_WRAP(void), float);
             this->shim().ListTab(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ListType(Windows::UI::Text::MarkerType* value) noexcept final
+    int32_t WINRT_CALL get_ListType(Windows::UI::Text::MarkerType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListType, WINRT_WRAP(Windows::UI::Text::MarkerType));
             *value = detach_from<Windows::UI::Text::MarkerType>(this->shim().ListType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ListType(Windows::UI::Text::MarkerType value) noexcept final
+    int32_t WINRT_CALL put_ListType(Windows::UI::Text::MarkerType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ListType, WINRT_WRAP(void), Windows::UI::Text::MarkerType const&);
             this->shim().ListType(*reinterpret_cast<Windows::UI::Text::MarkerType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NoLineNumber(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_NoLineNumber(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoLineNumber, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().NoLineNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NoLineNumber(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_NoLineNumber(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NoLineNumber, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().NoLineNumber(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PageBreakBefore(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_PageBreakBefore(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PageBreakBefore, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().PageBreakBefore());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PageBreakBefore(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_PageBreakBefore(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PageBreakBefore, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().PageBreakBefore(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightIndent(float* value) noexcept final
+    int32_t WINRT_CALL get_RightIndent(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightIndent, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().RightIndent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightIndent(float value) noexcept final
+    int32_t WINRT_CALL put_RightIndent(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightIndent, WINRT_WRAP(void), float);
             this->shim().RightIndent(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightToLeft(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_RightToLeft(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightToLeft, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().RightToLeft());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightToLeft(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_RightToLeft(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightToLeft, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().RightToLeft(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Style(Windows::UI::Text::ParagraphStyle* value) noexcept final
+    int32_t WINRT_CALL get_Style(Windows::UI::Text::ParagraphStyle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Style, WINRT_WRAP(Windows::UI::Text::ParagraphStyle));
             *value = detach_from<Windows::UI::Text::ParagraphStyle>(this->shim().Style());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Style(Windows::UI::Text::ParagraphStyle value) noexcept final
+    int32_t WINRT_CALL put_Style(Windows::UI::Text::ParagraphStyle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Style, WINRT_WRAP(void), Windows::UI::Text::ParagraphStyle const&);
             this->shim().Style(*reinterpret_cast<Windows::UI::Text::ParagraphStyle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpaceAfter(float* value) noexcept final
+    int32_t WINRT_CALL get_SpaceAfter(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpaceAfter, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().SpaceAfter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpaceAfter(float value) noexcept final
+    int32_t WINRT_CALL put_SpaceAfter(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpaceAfter, WINRT_WRAP(void), float);
             this->shim().SpaceAfter(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpaceBefore(float* value) noexcept final
+    int32_t WINRT_CALL get_SpaceBefore(float* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpaceBefore, WINRT_WRAP(float));
             *value = detach_from<float>(this->shim().SpaceBefore());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SpaceBefore(float value) noexcept final
+    int32_t WINRT_CALL put_SpaceBefore(float value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpaceBefore, WINRT_WRAP(void), float);
             this->shim().SpaceBefore(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WidowControl(Windows::UI::Text::FormatEffect* value) noexcept final
+    int32_t WINRT_CALL get_WidowControl(Windows::UI::Text::FormatEffect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WidowControl, WINRT_WRAP(Windows::UI::Text::FormatEffect));
             *value = detach_from<Windows::UI::Text::FormatEffect>(this->shim().WidowControl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WidowControl(Windows::UI::Text::FormatEffect value) noexcept final
+    int32_t WINRT_CALL put_WidowControl(Windows::UI::Text::FormatEffect value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WidowControl, WINRT_WRAP(void), Windows::UI::Text::FormatEffect const&);
             this->shim().WidowControl(*reinterpret_cast<Windows::UI::Text::FormatEffect const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TabCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TabCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TabCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TabCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddTab(float position, Windows::UI::Text::TabAlignment align, Windows::UI::Text::TabLeader leader) noexcept final
+    int32_t WINRT_CALL AddTab(float position, Windows::UI::Text::TabAlignment align, Windows::UI::Text::TabLeader leader) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddTab, WINRT_WRAP(void), float, Windows::UI::Text::TabAlignment const&, Windows::UI::Text::TabLeader const&);
             this->shim().AddTab(position, *reinterpret_cast<Windows::UI::Text::TabAlignment const*>(&align), *reinterpret_cast<Windows::UI::Text::TabLeader const*>(&leader));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ClearAllTabs() noexcept final
+    int32_t WINRT_CALL ClearAllTabs() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClearAllTabs, WINRT_WRAP(void));
             this->shim().ClearAllTabs();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteTab(float position) noexcept final
+    int32_t WINRT_CALL DeleteTab(float position) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteTab, WINRT_WRAP(void), float);
             this->shim().DeleteTab(position);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetClone(void** value) noexcept final
+    int32_t WINRT_CALL GetClone(void** result) noexcept final
     {
         try
         {
-            *value = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextParagraphFormat>(this->shim().GetClone());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetClone, WINRT_WRAP(Windows::UI::Text::ITextParagraphFormat));
+            *result = detach_from<Windows::UI::Text::ITextParagraphFormat>(this->shim().GetClone());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTab(int32_t index, float* position, Windows::UI::Text::TabAlignment* align, Windows::UI::Text::TabLeader* leader) noexcept final
+    int32_t WINRT_CALL GetTab(int32_t index, float* position, Windows::UI::Text::TabAlignment* align, Windows::UI::Text::TabLeader* leader) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTab, WINRT_WRAP(void), int32_t, float&, Windows::UI::Text::TabAlignment&, Windows::UI::Text::TabLeader&);
             this->shim().GetTab(index, *position, *reinterpret_cast<Windows::UI::Text::TabAlignment*>(align), *reinterpret_cast<Windows::UI::Text::TabLeader*>(leader));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsEqual(void* format, bool* value) noexcept final
+    int32_t WINRT_CALL IsEqual(void* format, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextParagraphFormat const*>(&format)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsEqual, WINRT_WRAP(bool), Windows::UI::Text::ITextParagraphFormat const&);
+            *result = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextParagraphFormat const*>(&format)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetClone(void* format) noexcept final
+    int32_t WINRT_CALL SetClone(void* format) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetClone, WINRT_WRAP(void), Windows::UI::Text::ITextParagraphFormat const&);
             this->shim().SetClone(*reinterpret_cast<Windows::UI::Text::ITextParagraphFormat const*>(&format));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetIndents(float start, float left, float right) noexcept final
+    int32_t WINRT_CALL SetIndents(float start, float left, float right) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetIndents, WINRT_WRAP(void), float, float, float);
             this->shim().SetIndents(start, left, right);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetLineSpacing(Windows::UI::Text::LineSpacingRule rule, float spacing) noexcept final
+    int32_t WINRT_CALL SetLineSpacing(Windows::UI::Text::LineSpacingRule rule, float spacing) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetLineSpacing, WINRT_WRAP(void), Windows::UI::Text::LineSpacingRule const&, float);
             this->shim().SetLineSpacing(*reinterpret_cast<Windows::UI::Text::LineSpacingRule const*>(&rule), spacing);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextRange> : produce_base<D, Windows::UI::Text::ITextRange>
 {
-    HRESULT __stdcall get_Character(char16_t* value) noexcept final
+    int32_t WINRT_CALL get_Character(char16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Character, WINRT_WRAP(char16_t));
             *value = detach_from<char16_t>(this->shim().Character());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Character(char16_t value) noexcept final
+    int32_t WINRT_CALL put_Character(char16_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Character, WINRT_WRAP(void), char16_t);
             this->shim().Character(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CharacterFormat(void** value) noexcept final
+    int32_t WINRT_CALL get_CharacterFormat(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacterFormat, WINRT_WRAP(Windows::UI::Text::ITextCharacterFormat));
             *value = detach_from<Windows::UI::Text::ITextCharacterFormat>(this->shim().CharacterFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CharacterFormat(void* value) noexcept final
+    int32_t WINRT_CALL put_CharacterFormat(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CharacterFormat, WINRT_WRAP(void), Windows::UI::Text::ITextCharacterFormat const&);
             this->shim().CharacterFormat(*reinterpret_cast<Windows::UI::Text::ITextCharacterFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FormattedText(void** value) noexcept final
+    int32_t WINRT_CALL get_FormattedText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormattedText, WINRT_WRAP(Windows::UI::Text::ITextRange));
             *value = detach_from<Windows::UI::Text::ITextRange>(this->shim().FormattedText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FormattedText(void* value) noexcept final
+    int32_t WINRT_CALL put_FormattedText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormattedText, WINRT_WRAP(void), Windows::UI::Text::ITextRange const&);
             this->shim().FormattedText(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndPosition(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_EndPosition(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPosition, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().EndPosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EndPosition(int32_t value) noexcept final
+    int32_t WINRT_CALL put_EndPosition(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndPosition, WINRT_WRAP(void), int32_t);
             this->shim().EndPosition(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gravity(Windows::UI::Text::RangeGravity* value) noexcept final
+    int32_t WINRT_CALL get_Gravity(Windows::UI::Text::RangeGravity* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gravity, WINRT_WRAP(Windows::UI::Text::RangeGravity));
             *value = detach_from<Windows::UI::Text::RangeGravity>(this->shim().Gravity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Gravity(Windows::UI::Text::RangeGravity value) noexcept final
+    int32_t WINRT_CALL put_Gravity(Windows::UI::Text::RangeGravity value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gravity, WINRT_WRAP(void), Windows::UI::Text::RangeGravity const&);
             this->shim().Gravity(*reinterpret_cast<Windows::UI::Text::RangeGravity const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Length(int32_t* length) noexcept final
+    int32_t WINRT_CALL get_Length(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *length = detach_from<int32_t>(this->shim().Length());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Length, WINRT_WRAP(int32_t));
+            *value = detach_from<int32_t>(this->shim().Length());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Link(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Link(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Link, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Link());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Link(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Link(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Link, WINRT_WRAP(void), hstring const&);
             this->shim().Link(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ParagraphFormat(void** value) noexcept final
+    int32_t WINRT_CALL get_ParagraphFormat(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParagraphFormat, WINRT_WRAP(Windows::UI::Text::ITextParagraphFormat));
             *value = detach_from<Windows::UI::Text::ITextParagraphFormat>(this->shim().ParagraphFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ParagraphFormat(void* value) noexcept final
+    int32_t WINRT_CALL put_ParagraphFormat(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParagraphFormat, WINRT_WRAP(void), Windows::UI::Text::ITextParagraphFormat const&);
             this->shim().ParagraphFormat(*reinterpret_cast<Windows::UI::Text::ITextParagraphFormat const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartPosition(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_StartPosition(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPosition, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().StartPosition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_StartPosition(int32_t value) noexcept final
+    int32_t WINRT_CALL put_StartPosition(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartPosition, WINRT_WRAP(void), int32_t);
             this->shim().StartPosition(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StoryLength(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_StoryLength(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StoryLength, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().StoryLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Text(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Text(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Text());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Text(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Text(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Text, WINRT_WRAP(void), hstring const&);
             this->shim().Text(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CanPaste(int32_t format, bool* value) noexcept final
+    int32_t WINRT_CALL CanPaste(int32_t format, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().CanPaste(format));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CanPaste, WINRT_WRAP(bool), int32_t);
+            *result = detach_from<bool>(this->shim().CanPaste(format));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeCase(Windows::UI::Text::LetterCase value) noexcept final
+    int32_t WINRT_CALL ChangeCase(Windows::UI::Text::LetterCase value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeCase, WINRT_WRAP(void), Windows::UI::Text::LetterCase const&);
             this->shim().ChangeCase(*reinterpret_cast<Windows::UI::Text::LetterCase const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Collapse(bool value) noexcept final
+    int32_t WINRT_CALL Collapse(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Collapse, WINRT_WRAP(void), bool);
             this->shim().Collapse(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Copy() noexcept final
+    int32_t WINRT_CALL Copy() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Copy, WINRT_WRAP(void));
             this->shim().Copy();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Cut() noexcept final
+    int32_t WINRT_CALL Cut() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cut, WINRT_WRAP(void));
             this->shim().Cut();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Delete(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept final
+    int32_t WINRT_CALL Delete(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().Delete(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Delete, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t);
+            *result = detach_from<int32_t>(this->shim().Delete(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EndOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL EndOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().EndOf(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EndOf, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, bool);
+            *result = detach_from<int32_t>(this->shim().EndOf(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Expand(Windows::UI::Text::TextRangeUnit unit, int32_t* delta) noexcept final
+    int32_t WINRT_CALL Expand(Windows::UI::Text::TextRangeUnit unit, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().Expand(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Expand, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&);
+            *result = detach_from<int32_t>(this->shim().Expand(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FindText(HSTRING value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t* length) noexcept final
+    int32_t WINRT_CALL FindText(void* value, int32_t scanLength, Windows::UI::Text::FindOptions options, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *length = detach_from<int32_t>(this->shim().FindText(*reinterpret_cast<hstring const*>(&value), scanLength, *reinterpret_cast<Windows::UI::Text::FindOptions const*>(&options)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FindText, WINRT_WRAP(int32_t), hstring const&, int32_t, Windows::UI::Text::FindOptions const&);
+            *result = detach_from<int32_t>(this->shim().FindText(*reinterpret_cast<hstring const*>(&value), scanLength, *reinterpret_cast<Windows::UI::Text::FindOptions const*>(&options)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCharacterUtf32(uint32_t* value, int32_t offset) noexcept final
+    int32_t WINRT_CALL GetCharacterUtf32(uint32_t* value, int32_t offset) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCharacterUtf32, WINRT_WRAP(void), uint32_t&, int32_t);
             this->shim().GetCharacterUtf32(*value, offset);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetClone(void** value) noexcept final
+    int32_t WINRT_CALL GetClone(void** result) noexcept final
     {
         try
         {
-            *value = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetClone());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetClone, WINRT_WRAP(Windows::UI::Text::ITextRange));
+            *result = detach_from<Windows::UI::Text::ITextRange>(this->shim().GetClone());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t* index) noexcept final
+    int32_t WINRT_CALL GetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *index = detach_from<int32_t>(this->shim().GetIndex(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIndex, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&);
+            *result = detach_from<int32_t>(this->shim().GetIndex(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, Windows::Foundation::Point* point) noexcept final
+    int32_t WINRT_CALL GetPoint(Windows::UI::Text::HorizontalCharacterAlignment horizontalAlign, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, Windows::UI::Text::PointOptions options, Windows::Foundation::Point* point) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPoint, WINRT_WRAP(void), Windows::UI::Text::HorizontalCharacterAlignment const&, Windows::UI::Text::VerticalCharacterAlignment const&, Windows::UI::Text::PointOptions const&, Windows::Foundation::Point&);
             this->shim().GetPoint(*reinterpret_cast<Windows::UI::Text::HorizontalCharacterAlignment const*>(&horizontalAlign), *reinterpret_cast<Windows::UI::Text::VerticalCharacterAlignment const*>(&verticalAlign), *reinterpret_cast<Windows::UI::Text::PointOptions const*>(&options), *reinterpret_cast<Windows::Foundation::Point*>(point));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetRect(Windows::UI::Text::PointOptions options, Windows::Foundation::Rect* rect, int32_t* hit) noexcept final
+    int32_t WINRT_CALL GetRect(Windows::UI::Text::PointOptions options, Windows::Foundation::Rect* rect, int32_t* hit) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRect, WINRT_WRAP(void), Windows::UI::Text::PointOptions const&, Windows::Foundation::Rect&, int32_t&);
             this->shim().GetRect(*reinterpret_cast<Windows::UI::Text::PointOptions const*>(&options), *reinterpret_cast<Windows::Foundation::Rect*>(rect), *hit);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetText(Windows::UI::Text::TextGetOptions options, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetText(Windows::UI::Text::TextGetOptions options, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetText, WINRT_WRAP(void), Windows::UI::Text::TextGetOptions const&, hstring&);
             this->shim().GetText(*reinterpret_cast<Windows::UI::Text::TextGetOptions const*>(&options), *reinterpret_cast<hstring*>(value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTextViaStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept final
+    int32_t WINRT_CALL GetTextViaStream(Windows::UI::Text::TextGetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTextViaStream, WINRT_WRAP(void), Windows::UI::Text::TextGetOptions const&, Windows::Storage::Streams::IRandomAccessStream const&);
             this->shim().GetTextViaStream(*reinterpret_cast<Windows::UI::Text::TextGetOptions const*>(&options), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InRange(void* range, bool* value) noexcept final
+    int32_t WINRT_CALL InRange(void* range, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().InRange(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InRange, WINRT_WRAP(bool), Windows::UI::Text::ITextRange const&);
+            *result = detach_from<bool>(this->shim().InRange(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, HSTRING alternateText, void* value) noexcept final
+    int32_t WINRT_CALL InsertImage(int32_t width, int32_t height, int32_t ascent, Windows::UI::Text::VerticalCharacterAlignment verticalAlign, void* alternateText, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InsertImage, WINRT_WRAP(void), int32_t, int32_t, int32_t, Windows::UI::Text::VerticalCharacterAlignment const&, hstring const&, Windows::Storage::Streams::IRandomAccessStream const&);
             this->shim().InsertImage(width, height, ascent, *reinterpret_cast<Windows::UI::Text::VerticalCharacterAlignment const*>(&verticalAlign), *reinterpret_cast<hstring const*>(&alternateText), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InStory(void* range, bool* value) noexcept final
+    int32_t WINRT_CALL InStory(void* range, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().InStory(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InStory, WINRT_WRAP(bool), Windows::UI::Text::ITextRange const&);
+            *result = detach_from<bool>(this->shim().InStory(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsEqual(void* range, bool* value) noexcept final
+    int32_t WINRT_CALL IsEqual(void* range, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IsEqual, WINRT_WRAP(bool), Windows::UI::Text::ITextRange const&);
+            *result = detach_from<bool>(this->shim().IsEqual(*reinterpret_cast<Windows::UI::Text::ITextRange const*>(&range)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Move(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept final
+    int32_t WINRT_CALL Move(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().Move(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Move, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t);
+            *result = detach_from<int32_t>(this->shim().Move(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveEnd(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveEnd(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveEnd(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveEnd, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t);
+            *result = detach_from<int32_t>(this->shim().MoveEnd(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveStart(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveStart(Windows::UI::Text::TextRangeUnit unit, int32_t count, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveStart(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveStart, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t);
+            *result = detach_from<int32_t>(this->shim().MoveStart(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Paste(int32_t format) noexcept final
+    int32_t WINRT_CALL Paste(int32_t format) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Paste, WINRT_WRAP(void), int32_t);
             this->shim().Paste(format);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ScrollIntoView(Windows::UI::Text::PointOptions value) noexcept final
+    int32_t WINRT_CALL ScrollIntoView(Windows::UI::Text::PointOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScrollIntoView, WINRT_WRAP(void), Windows::UI::Text::PointOptions const&);
             this->shim().ScrollIntoView(*reinterpret_cast<Windows::UI::Text::PointOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MatchSelection() noexcept final
+    int32_t WINRT_CALL MatchSelection() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MatchSelection, WINRT_WRAP(void));
             this->shim().MatchSelection();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t index, bool extend) noexcept final
+    int32_t WINRT_CALL SetIndex(Windows::UI::Text::TextRangeUnit unit, int32_t index, bool extend) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetIndex, WINRT_WRAP(void), Windows::UI::Text::TextRangeUnit const&, int32_t, bool);
             this->shim().SetIndex(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), index, extend);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, bool extend) noexcept final
+    int32_t WINRT_CALL SetPoint(Windows::Foundation::Point point, Windows::UI::Text::PointOptions options, bool extend) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPoint, WINRT_WRAP(void), Windows::Foundation::Point const&, Windows::UI::Text::PointOptions const&, bool);
             this->shim().SetPoint(*reinterpret_cast<Windows::Foundation::Point const*>(&point), *reinterpret_cast<Windows::UI::Text::PointOptions const*>(&options), extend);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetRange(int32_t startPosition, int32_t endPosition) noexcept final
+    int32_t WINRT_CALL SetRange(int32_t startPosition, int32_t endPosition) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRange, WINRT_WRAP(void), int32_t, int32_t);
             this->shim().SetRange(startPosition, endPosition);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetText(Windows::UI::Text::TextSetOptions options, HSTRING value) noexcept final
+    int32_t WINRT_CALL SetText(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetText, WINRT_WRAP(void), Windows::UI::Text::TextSetOptions const&, hstring const&);
             this->shim().SetText(*reinterpret_cast<Windows::UI::Text::TextSetOptions const*>(&options), *reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetTextViaStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
+    int32_t WINRT_CALL SetTextViaStream(Windows::UI::Text::TextSetOptions options, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetTextViaStream, WINRT_WRAP(void), Windows::UI::Text::TextSetOptions const&, Windows::Storage::Streams::IRandomAccessStream const&);
             this->shim().SetTextViaStream(*reinterpret_cast<Windows::UI::Text::TextSetOptions const*>(&options), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStream const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL StartOf(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().StartOf(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StartOf, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, bool);
+            *result = detach_from<int32_t>(this->shim().StartOf(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::UI::Text::ITextSelection>
 {
-    HRESULT __stdcall get_Options(Windows::UI::Text::SelectionOptions* value) noexcept final
+    int32_t WINRT_CALL get_Options(Windows::UI::Text::SelectionOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Options, WINRT_WRAP(Windows::UI::Text::SelectionOptions));
             *value = detach_from<Windows::UI::Text::SelectionOptions>(this->shim().Options());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Options(Windows::UI::Text::SelectionOptions value) noexcept final
+    int32_t WINRT_CALL put_Options(Windows::UI::Text::SelectionOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Options, WINRT_WRAP(void), Windows::UI::Text::SelectionOptions const&);
             this->shim().Options(*reinterpret_cast<Windows::UI::Text::SelectionOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Type(Windows::UI::Text::SelectionType* value) noexcept final
+    int32_t WINRT_CALL get_Type(Windows::UI::Text::SelectionType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Type, WINRT_WRAP(Windows::UI::Text::SelectionType));
             *value = detach_from<Windows::UI::Text::SelectionType>(this->shim().Type());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EndKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL EndKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().EndKey(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(EndKey, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, bool);
+            *result = detach_from<int32_t>(this->shim().EndKey(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HomeKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL HomeKey(Windows::UI::Text::TextRangeUnit unit, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().HomeKey(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HomeKey, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, bool);
+            *result = detach_from<int32_t>(this->shim().HomeKey(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveDown(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveDown(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveDown(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveDown, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t, bool);
+            *result = detach_from<int32_t>(this->shim().MoveDown(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveLeft(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveLeft(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveLeft(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveLeft, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t, bool);
+            *result = detach_from<int32_t>(this->shim().MoveLeft(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveRight(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveRight(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveRight(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveRight, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t, bool);
+            *result = detach_from<int32_t>(this->shim().MoveRight(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MoveUp(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* delta) noexcept final
+    int32_t WINRT_CALL MoveUp(Windows::UI::Text::TextRangeUnit unit, int32_t count, bool extend, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *delta = detach_from<int32_t>(this->shim().MoveUp(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MoveUp, WINRT_WRAP(int32_t), Windows::UI::Text::TextRangeUnit const&, int32_t, bool);
+            *result = detach_from<int32_t>(this->shim().MoveUp(*reinterpret_cast<Windows::UI::Text::TextRangeUnit const*>(&unit), count, extend));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TypeText(HSTRING value) noexcept final
+    int32_t WINRT_CALL TypeText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TypeText, WINRT_WRAP(void), hstring const&);
             this->shim().TypeText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -4554,102 +4131,102 @@ struct produce<D, Windows::UI::Text::ITextSelection> : produce_base<D, Windows::
 WINRT_EXPORT namespace winrt::Windows::UI::Text {
 
 inline ContentLinkInfo::ContentLinkInfo() :
-    ContentLinkInfo(get_activation_factory<ContentLinkInfo>().ActivateInstance<ContentLinkInfo>())
+    ContentLinkInfo(impl::call_factory<ContentLinkInfo>([](auto&& f) { return f.template ActivateInstance<ContentLinkInfo>(); }))
 {}
 
 inline Windows::UI::Text::FontWeight FontWeights::Black()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Black();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Black(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Bold()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Bold();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Bold(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraBlack()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().ExtraBlack();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.ExtraBlack(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraBold()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().ExtraBold();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.ExtraBold(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::ExtraLight()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().ExtraLight();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.ExtraLight(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Light()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Light();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Light(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Medium()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Medium();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Medium(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Normal()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Normal();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Normal(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::SemiBold()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().SemiBold();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.SemiBold(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::SemiLight()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().SemiLight();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.SemiLight(); });
 }
 
 inline Windows::UI::Text::FontWeight FontWeights::Thin()
 {
-    return get_activation_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>().Thin();
+    return impl::call_factory<FontWeights, Windows::UI::Text::IFontWeightsStatics>([&](auto&& f) { return f.Thin(); });
 }
 
 inline Windows::UI::Color TextConstants::AutoColor()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().AutoColor();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.AutoColor(); });
 }
 
 inline int32_t TextConstants::MinUnitCount()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().MinUnitCount();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.MinUnitCount(); });
 }
 
 inline int32_t TextConstants::MaxUnitCount()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().MaxUnitCount();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.MaxUnitCount(); });
 }
 
 inline Windows::UI::Color TextConstants::UndefinedColor()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().UndefinedColor();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.UndefinedColor(); });
 }
 
 inline float TextConstants::UndefinedFloatValue()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().UndefinedFloatValue();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.UndefinedFloatValue(); });
 }
 
 inline int32_t TextConstants::UndefinedInt32Value()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().UndefinedInt32Value();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.UndefinedInt32Value(); });
 }
 
 inline Windows::UI::Text::FontStretch TextConstants::UndefinedFontStretch()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().UndefinedFontStretch();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.UndefinedFontStretch(); });
 }
 
 inline Windows::UI::Text::FontStyle TextConstants::UndefinedFontStyle()
 {
-    return get_activation_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>().UndefinedFontStyle();
+    return impl::call_factory<TextConstants, Windows::UI::Text::ITextConstantsStatics>([&](auto&& f) { return f.UndefinedFontStyle(); });
 }
 
 }
@@ -4664,6 +4241,7 @@ template<> struct hash<winrt::Windows::UI::Text::ITextCharacterFormat> : winrt::
 template<> struct hash<winrt::Windows::UI::Text::ITextConstantsStatics> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextConstantsStatics> {};
 template<> struct hash<winrt::Windows::UI::Text::ITextDocument> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextDocument> {};
 template<> struct hash<winrt::Windows::UI::Text::ITextDocument2> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextDocument2> {};
+template<> struct hash<winrt::Windows::UI::Text::ITextDocument3> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextDocument3> {};
 template<> struct hash<winrt::Windows::UI::Text::ITextParagraphFormat> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextParagraphFormat> {};
 template<> struct hash<winrt::Windows::UI::Text::ITextRange> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextRange> {};
 template<> struct hash<winrt::Windows::UI::Text::ITextSelection> : winrt::impl::hash_base<winrt::Windows::UI::Text::ITextSelection> {};
@@ -4674,5 +4252,3 @@ template<> struct hash<winrt::Windows::UI::Text::RichEditTextRange> : winrt::imp
 template<> struct hash<winrt::Windows::UI::Text::TextConstants> : winrt::impl::hash_base<winrt::Windows::UI::Text::TextConstants> {};
 
 }
-
-WINRT_WARNING_POP

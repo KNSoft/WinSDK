@@ -1,5 +1,3 @@
-// begin_1_0
-// begin_1_1
 /********************************************************************************
 *                                                                               *
 * enclaveapi.h -- ApiSet Contract for api-ms-win-core-enclave-l1-1-0            *
@@ -23,10 +21,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-// end_1_0
-// end_1_1
-// begin_1_0
 
 #pragma region Desktop Family or OneCore Or App Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
@@ -90,9 +84,6 @@ InitializeEnclave(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
 #pragma endregion
 
-// end_1_0
-// begin_1_1
-
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
@@ -154,14 +145,8 @@ DeleteEnclave(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-// end_1_1
-// begin_1_0
-// begin_1_1
-
 #ifdef __cplusplus
 }
 #endif
 
 #endif // _ENCLAVEAPI_H_
-// end_1_0
-// end_1_1

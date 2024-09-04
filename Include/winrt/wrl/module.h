@@ -264,22 +264,22 @@ inline HRESULT GetClassObject(_In_ ModuleBase *modulePtr, _In_opt_z_ const wchar
 }
 
 template<unsigned int flags>
-inline HRESULT GetActivationFactory(_In_ ModuleBase* modulePtr, _In_opt_z_ const wchar_t* serverName, _In_opt_ HSTRING pActivatibleClassId, _COM_Outptr_ IActivationFactory **ppFactory) throw()
+inline HRESULT GetActivationFactory(_In_ ModuleBase* modulePtr, _In_opt_z_ const wchar_t* serverName, _In_opt_ HSTRING activatibleClassId, _COM_Outptr_ IActivationFactory **ppFactory) throw()
 {
     *ppFactory = nullptr;
 
     BOOL hasEmbedNull;
-    if (::WindowsIsStringEmpty(pActivatibleClassId) || 
-        (FAILED(::WindowsStringHasEmbeddedNull(pActivatibleClassId, &hasEmbedNull)) || hasEmbedNull == TRUE))
+    if (::WindowsIsStringEmpty(activatibleClassId) || 
+        (FAILED(::WindowsStringHasEmbeddedNull(activatibleClassId, &hasEmbedNull)) || hasEmbedNull == TRUE))
     {
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
-        WCHAR const pszParamName[] = L"pActivatibleClassId";
+        WCHAR const pszParamName[] = L"activatibleClassId";
         ::RoOriginateErrorW(E_INVALIDARG, ARRAYSIZE(pszParamName) - 1, pszParamName);
 #endif // (NTDDI_VERSION >= NTDDI_WINBLUE)
         return E_INVALIDARG;
     }
 
-    const wchar_t* id = ::WindowsGetStringRawBuffer(pActivatibleClassId, nullptr);
+    const wchar_t* id = ::WindowsGetStringRawBuffer(activatibleClassId, nullptr);
 
     auto entry = modulePtr->GetMidEntryPointer() + 1;
     auto last = modulePtr->GetLastEntryPointer();
@@ -318,7 +318,7 @@ inline HRESULT GetActivationFactory(_In_ ModuleBase* modulePtr, _In_opt_z_ const
     }
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
-    ::RoOriginateError(CLASS_E_CLASSNOTAVAILABLE, nullptr);
+    ::RoOriginateError(CLASS_E_CLASSNOTAVAILABLE, activatibleClassId);
 #endif // (NTDDI_VERSION >= NTDDI_WINBLUE)
     return CLASS_E_CLASSNOTAVAILABLE;
 }
@@ -1210,6 +1210,29 @@ class SimpleSealedActivationFactory WrlSealed : public SimpleActivationFactory<B
 {
 };
 
+// Agile alternative to SimpleActivationFactory
+template<typename Base, FactoryCacheFlags cacheFlagValue = FactoryCacheDefault>
+class SimpleAgileActivationFactory : public AgileActivationFactory<Details::Nil, Details::Nil, Details::Nil, cacheFlagValue>
+{
+public:
+    STDMETHOD(ActivateInstance)(_Outptr_result_nullonfailure_ IInspectable **ppvObject)
+    {
+#ifdef __WRL_STRICT__
+        static_assert(__is_base_of(Details::RuntimeClassBase, Base), "SimpleAgileActivationFactory can only instantiate 'Base' that derive from RuntimeClass");
+        static_assert((Base::ClassFlags::value & ::Microsoft::WRL::WinRt) == ::Microsoft::WRL::WinRt,
+            "SimpleAgileActivationFactory can only instantiate 'Base' that is configured with WinRt or WinRtClassicComMix flags");
+#endif
+
+        return MakeAndInitialize<Base>(ppvObject);
+    }
+};
+
+// Agile alternative to SimpleSealedActivationFactory
+template<typename Base, FactoryCacheFlags cacheFlagValue = FactoryCacheDefault>
+class SimpleSealedAgileActivationFactory WrlSealed : public SimpleAgileActivationFactory<Base, cacheFlagValue>
+{
+};
+
 #pragma warning(pop) // C6387
 
 // It's required to #undef following macros because they are always defined in 'wrl/implements.h'
@@ -1279,6 +1302,9 @@ class SimpleSealedActivationFactory WrlSealed : public SimpleActivationFactory<B
 
 #define ActivatableClass(className) \
     ActivatableClassWithFactory(className, ::Microsoft::WRL::SimpleSealedActivationFactory<className>)
+
+#define AgileActivatableClass(className) \
+    ActivatableClassWithFactory(className, ::Microsoft::WRL::SimpleSealedAgileActivationFactory<className>)
 
 #define ActivatableStaticOnlyFactoryEx(factory, serverName) \
     InternalWrlCreateCreatorMapEx(factory, serverName, reinterpret_cast<const IID*>(&factory::InternalGetRuntimeClassNameStatic), &factory::InternalGetTrustLevelStatic, ::Microsoft::WRL::Details::CreateActivationFactory<factory>, "minATL$__r")
@@ -1451,9 +1477,9 @@ public:
         return Create();
     }
 
-	HRESULT GetActivationFactory(_In_opt_ HSTRING pActivatibleClassId, _COM_Outptr_ IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
+	HRESULT GetActivationFactory(_In_opt_ HSTRING activatibleClassId, _COM_Outptr_ IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
     {
-        return Details::GetActivationFactory<InProc>(this, serverName, pActivatibleClassId, ppIFactory);
+        return Details::GetActivationFactory<InProc>(this, serverName, activatibleClassId, ppIFactory);
     }
 
     HRESULT GetClassObject(REFCLSID clsid, REFIID riid, _Outptr_result_nullonfailure_ void **ppv, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
@@ -1540,9 +1566,9 @@ class Module<InProcDisableCaching, ModuleT> :
     public Module<InProc, ModuleT>
 {
 public:
-	HRESULT GetActivationFactory(_In_opt_ HSTRING pActivatibleClassId, _COM_Outptr_  IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
+	HRESULT GetActivationFactory(_In_opt_ HSTRING activatibleClassId, _COM_Outptr_  IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
     {
-        return Details::GetActivationFactory<InProcDisableCaching>(this, serverName, pActivatibleClassId, ppIFactory);
+        return Details::GetActivationFactory<InProcDisableCaching>(this, serverName, activatibleClassId, ppIFactory);
     }
 
     HRESULT GetClassObject(REFCLSID clsid, REFIID riid, _Outptr_result_nullonfailure_ void **ppv, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
@@ -1810,7 +1836,7 @@ public:
             ref = Super::DecrementObjectCount();
             if (ref == 0)
             {
-                releaseNotifier_->Invoke();
+                Super::releaseNotifier_->Invoke();
             }
         }
 
@@ -1963,10 +1989,10 @@ class Module<OutOfProcDisableCaching, ModuleT> :
     public Module<OutOfProc, ModuleT>
 {
 public:
-	HRESULT GetActivationFactory(_In_opt_ HSTRING pActivatibleClassId, _COM_Outptr_  IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
+	HRESULT GetActivationFactory(_In_opt_ HSTRING activatibleClassId, _COM_Outptr_  IActivationFactory **ppIFactory, _In_opt_z_ const wchar_t* serverName = nullptr) throw()
     {
         // Those methods are called in context of InProc always
-        return Details::GetActivationFactory<InProcDisableCaching>(this, serverName, pActivatibleClassId, ppIFactory);
+        return Details::GetActivationFactory<InProcDisableCaching>(this, serverName, activatibleClassId, ppIFactory);
     }
 
     HRESULT GetClassObject(REFCLSID clsid, REFIID riid, _Outptr_result_nullonfailure_ void **ppv, _In_opt_z_ const wchar_t* serverName = nullptr) throw()

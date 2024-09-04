@@ -307,6 +307,11 @@ struct sqlite3_api_routines {
   void (SQLITE_APICALL *result_pointer)(sqlite3_context*,void*,const char*,void(SQLITE_CALLBACK *)(void*));
   void *(SQLITE_APICALL *value_pointer)(sqlite3_value*,const char*);
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS4 */
+#if NTDDI_VERSION >= NTDDI_WIN10_RS5
+  int (SQLITE_APICALL *vtab_nochange)(sqlite3_context*);
+  int (SQLITE_APICALL *value_nochange)(sqlite3_value*);
+  const char *(SQLITE_APICALL *vtab_collation)(sqlite3_index_info*,int);
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS5 */
 };
 
 #if NTDDI_VERSION >= NTDDI_WIN10_RS2
@@ -584,6 +589,12 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 #define sqlite3_result_pointer         sqlite3_api->result_pointer
 #define sqlite3_value_pointer          sqlite3_api->value_pointer
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS4 */
+#if NTDDI_VERSION >= NTDDI_WIN10_RS5
+/* Version 3.22.0 and later */
+#define sqlite3_vtab_nochange          sqlite3_api->vtab_nochange
+#define sqlite3_value_nochange         sqlite3_api->value_nochange
+#define sqlite3_vtab_collation         sqlite3_api->vtab_collation
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS5 */
 #endif /* !defined(SQLITE_CORE) && !defined(SQLITE_OMIT_LOAD_EXTENSION) */
 
 #if !defined(SQLITE_CORE) && !defined(SQLITE_OMIT_LOAD_EXTENSION)

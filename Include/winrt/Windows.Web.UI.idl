@@ -92,6 +92,8 @@ namespace Windows
 
             interface IWebViewControl;
 
+            interface IWebViewControl2;
+
             interface IWebViewControlContentLoadingEventArgs;
 
             interface IWebViewControlDOMContentLoadedEventArgs;
@@ -105,6 +107,8 @@ namespace Windows
             interface IWebViewControlNavigationStartingEventArgs;
 
             interface IWebViewControlNewWindowRequestedEventArgs;
+
+            interface IWebViewControlNewWindowRequestedEventArgs2;
 
             interface IWebViewControlPermissionRequest;
 
@@ -218,7 +222,9 @@ namespace Windows
                 Media                   = 2,
                 PointerLock             = 3,
                 WebNotifications        = 4,
-                Screen                  = 5
+                Screen                  = 5,
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                ImmersiveView           = 6
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -282,6 +288,13 @@ namespace Windows
                 [eventremove] HRESULT ContainsFullScreenElementChanged([in] EventRegistrationToken token);
                 [eventadd] HRESULT WebResourceRequested([in] Windows.Foundation.TypedEventHandler<Windows.Web.UI.IWebViewControl*, Windows.Web.UI.WebViewControlWebResourceRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT WebResourceRequested([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [uuid(4D3C06F9-C8DF-41CC-8BD5-2A947B204503)]
+            interface IWebViewControl2 : IInspectable
+            {
+                HRESULT AddInitializeScript([in] HSTRING script);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -351,6 +364,16 @@ namespace Windows
                 [propget] HRESULT Referrer([out] [retval] Windows.Foundation.Uri** value);
                 [propget] HRESULT Handled([out] [retval] boolean* value);
                 [propput] HRESULT Handled([in] boolean value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Web.UI.WebViewControlNewWindowRequestedEventArgs)]
+            [uuid(B53C5CA6-2AAE-4BFC-92B9-C30E92B48098)]
+            interface IWebViewControlNewWindowRequestedEventArgs2 : IInspectable
+            {
+                [propget] HRESULT NewWindow([out] [retval] Windows.Web.UI.IWebViewControl** value);
+                [propput] HRESULT NewWindow([in] Windows.Web.UI.IWebViewControl* value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** deferral);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -475,6 +498,7 @@ namespace Windows
             runtimeclass WebViewControlNewWindowRequestedEventArgs
             {
                 [default] interface Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Web.UI.IWebViewControlNewWindowRequestedEventArgs2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]

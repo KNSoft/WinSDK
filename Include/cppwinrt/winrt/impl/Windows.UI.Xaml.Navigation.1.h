@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,20 @@
 #include "winrt/impl/Windows.UI.Xaml.Navigation.0.h"
 
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Navigation {
+
+struct WINRT_EBO IFrameNavigationOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFrameNavigationOptions>
+{
+    IFrameNavigationOptions(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFrameNavigationOptionsFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFrameNavigationOptionsFactory>
+{
+    IFrameNavigationOptionsFactory(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct WINRT_EBO INavigatingCancelEventArgs :
     Windows::Foundation::IInspectable,

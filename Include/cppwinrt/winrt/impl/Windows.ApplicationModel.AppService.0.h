@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -129,17 +129,17 @@ template <> struct name<Windows::ApplicationModel::AppService::AppServiceTrigger
 template <> struct name<Windows::ApplicationModel::AppService::AppServiceClosedStatus>{ static constexpr auto & value{ L"Windows.ApplicationModel.AppService.AppServiceClosedStatus" }; };
 template <> struct name<Windows::ApplicationModel::AppService::AppServiceConnectionStatus>{ static constexpr auto & value{ L"Windows.ApplicationModel.AppService.AppServiceConnectionStatus" }; };
 template <> struct name<Windows::ApplicationModel::AppService::AppServiceResponseStatus>{ static constexpr auto & value{ L"Windows.ApplicationModel.AppService.AppServiceResponseStatus" }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>{ static constexpr GUID value{ 0xEF0D2507,0xD132,0x4C85,{ 0x83,0x95,0x3C,0x31,0xD5,0xA1,0xE9,0x41 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>{ static constexpr GUID value{ 0xDE6016F6,0xCB03,0x4D35,{ 0xAC,0x8D,0xCC,0x63,0x03,0x23,0x97,0x31 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceConnection>{ static constexpr GUID value{ 0x9DD474A2,0x871F,0x4D52,{ 0x89,0xA9,0x9E,0x09,0x05,0x31,0xBD,0x27 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceConnection2>{ static constexpr GUID value{ 0x8BDFCD5F,0x2302,0x4FBD,{ 0x80,0x61,0x52,0x51,0x1C,0x2F,0x8B,0xF9 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceDeferral>{ static constexpr GUID value{ 0x7E1B5322,0xEAB0,0x4248,{ 0xAE,0x04,0xFD,0xF9,0x38,0x38,0xE4,0x72 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceRequest>{ static constexpr GUID value{ 0x20E58D9D,0x18DE,0x4B01,{ 0x80,0xBA,0x90,0xA7,0x62,0x04,0xE3,0xC8 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>{ static constexpr GUID value{ 0x6E122360,0xFF65,0x44AE,{ 0x9E,0x45,0x85,0x7F,0xE4,0x18,0x06,0x81 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceResponse>{ static constexpr GUID value{ 0x8D503CEC,0x9AA3,0x4E68,{ 0x95,0x59,0x9D,0xE6,0x3E,0x37,0x2C,0xE4 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>{ static constexpr GUID value{ 0x88A2DCAC,0xAD28,0x41B8,{ 0x80,0xBB,0xBD,0xF1,0xB2,0x16,0x9E,0x19 } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>{ static constexpr GUID value{ 0xE83D54B2,0x28CC,0x43F2,{ 0xB4,0x65,0xC0,0x48,0x2E,0x59,0xE2,0xDC } }; };
-template <> struct guid<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3>{ static constexpr GUID value{ 0xFBD71E21,0x7939,0x4E68,{ 0x9E,0x3C,0x77,0x80,0x14,0x7A,0xAB,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>{ static constexpr guid value{ 0xEF0D2507,0xD132,0x4C85,{ 0x83,0x95,0x3C,0x31,0xD5,0xA1,0xE9,0x41 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>{ static constexpr guid value{ 0xDE6016F6,0xCB03,0x4D35,{ 0xAC,0x8D,0xCC,0x63,0x03,0x23,0x97,0x31 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceConnection>{ static constexpr guid value{ 0x9DD474A2,0x871F,0x4D52,{ 0x89,0xA9,0x9E,0x09,0x05,0x31,0xBD,0x27 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceConnection2>{ static constexpr guid value{ 0x8BDFCD5F,0x2302,0x4FBD,{ 0x80,0x61,0x52,0x51,0x1C,0x2F,0x8B,0xF9 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceDeferral>{ static constexpr guid value{ 0x7E1B5322,0xEAB0,0x4248,{ 0xAE,0x04,0xFD,0xF9,0x38,0x38,0xE4,0x72 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceRequest>{ static constexpr guid value{ 0x20E58D9D,0x18DE,0x4B01,{ 0x80,0xBA,0x90,0xA7,0x62,0x04,0xE3,0xC8 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>{ static constexpr guid value{ 0x6E122360,0xFF65,0x44AE,{ 0x9E,0x45,0x85,0x7F,0xE4,0x18,0x06,0x81 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceResponse>{ static constexpr guid value{ 0x8D503CEC,0x9AA3,0x4E68,{ 0x95,0x59,0x9D,0xE6,0x3E,0x37,0x2C,0xE4 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>{ static constexpr guid value{ 0x88A2DCAC,0xAD28,0x41B8,{ 0x80,0xBB,0xBD,0xF1,0xB2,0x16,0x9E,0x19 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>{ static constexpr guid value{ 0xE83D54B2,0x28CC,0x43F2,{ 0xB4,0x65,0xC0,0x48,0x2E,0x59,0xE2,0xDC } }; };
+template <> struct guid_storage<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3>{ static constexpr guid value{ 0xFBD71E21,0x7939,0x4E68,{ 0x9E,0x3C,0x77,0x80,0x14,0x7A,0xAB,0xB6 } }; };
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceClosedEventArgs>{ using type = Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs; };
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceConnection>{ using type = Windows::ApplicationModel::AppService::IAppServiceConnection; };
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceDeferral>{ using type = Windows::ApplicationModel::AppService::IAppServiceDeferral; };
@@ -147,6 +147,77 @@ template <> struct default_interface<Windows::ApplicationModel::AppService::AppS
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs>{ using type = Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs; };
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceResponse>{ using type = Windows::ApplicationModel::AppService::IAppServiceResponse; };
 template <> struct default_interface<Windows::ApplicationModel::AppService::AppServiceTriggerDetails>{ using type = Windows::ApplicationModel::AppService::IAppServiceTriggerDetails; };
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindAppServiceProvidersAsync(void* appServiceName, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::AppService::AppServiceClosedStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceConnection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AppServiceName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AppServiceName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PackageFamilyName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL OpenAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendMessageAsync(void* message, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RequestReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RequestReceived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ServiceClosed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ServiceClosed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceConnection2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OpenRemoteAsync(void* remoteSystemConnectionRequest, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_User(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SendResponseAsync(void* message, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceResponse>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::ApplicationModel::AppService::AppServiceResponseStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CallerPackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AppServiceConnection(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsRemoteSystemConnection(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CheckCallerForCapabilityAsync(void* capabilityName, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_AppService_IAppServiceCatalogStatics
@@ -171,14 +242,14 @@ struct consume_Windows_ApplicationModel_AppService_IAppServiceConnection
     void PackageFamilyName(param::hstring const& value) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceConnectionStatus> OpenAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> SendMessageAsync(Windows::Foundation::Collections::ValueSet const& message) const;
-    event_token RequestReceived(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const;
-    using RequestReceived_revoker = event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection>;
+    winrt::event_token RequestReceived(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const;
+    using RequestReceived_revoker = impl::event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection, &impl::abi_t<Windows::ApplicationModel::AppService::IAppServiceConnection>::remove_RequestReceived>;
     RequestReceived_revoker RequestReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> const& handler) const;
-    void RequestReceived(event_token const& token) const;
-    event_token ServiceClosed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const;
-    using ServiceClosed_revoker = event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection>;
+    void RequestReceived(winrt::event_token const& token) const noexcept;
+    winrt::event_token ServiceClosed(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const;
+    using ServiceClosed_revoker = impl::event_revoker<Windows::ApplicationModel::AppService::IAppServiceConnection, &impl::abi_t<Windows::ApplicationModel::AppService::IAppServiceConnection>::remove_ServiceClosed>;
     ServiceClosed_revoker ServiceClosed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> const& handler) const;
-    void ServiceClosed(event_token const& token) const;
+    void ServiceClosed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::AppService::IAppServiceConnection> { template <typename D> using type = consume_Windows_ApplicationModel_AppService_IAppServiceConnection<D>; };
 
@@ -244,76 +315,5 @@ struct consume_Windows_ApplicationModel_AppService_IAppServiceTriggerDetails3
     Windows::Foundation::IAsyncOperation<bool> CheckCallerForCapabilityAsync(param::hstring const& capabilityName) const;
 };
 template <> struct consume<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3> { template <typename D> using type = consume_Windows_ApplicationModel_AppService_IAppServiceTriggerDetails3<D>; };
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindAppServiceProvidersAsync(HSTRING appServiceName, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::AppService::AppServiceClosedStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceConnection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AppServiceName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AppServiceName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PackageFamilyName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall OpenAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendMessageAsync(void* message, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall add_RequestReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RequestReceived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ServiceClosed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ServiceClosed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceConnection2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OpenRemoteAsync(void* remoteSystemConnectionRequest, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_User(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SendResponseAsync(void* message, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceResponse>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::ApplicationModel::AppService::AppServiceResponseStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CallerPackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AppServiceConnection(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsRemoteSystemConnection(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::AppService::IAppServiceTriggerDetails3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CheckCallerForCapabilityAsync(HSTRING capabilityName, void** operation) noexcept = 0;
-};};
 
 }

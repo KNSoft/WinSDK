@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.System.Display.2.h"
@@ -27,32 +27,28 @@ template <typename D> void consume_Windows_System_Display_IDisplayRequest<D>::Re
 template <typename D>
 struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, Windows::System::Display::IDisplayRequest>
 {
-    HRESULT __stdcall RequestActive() noexcept final
+    int32_t WINRT_CALL RequestActive() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestActive, WINRT_WRAP(void));
             this->shim().RequestActive();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestRelease() noexcept final
+    int32_t WINRT_CALL RequestRelease() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestRelease, WINRT_WRAP(void));
             this->shim().RequestRelease();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -61,7 +57,7 @@ struct produce<D, Windows::System::Display::IDisplayRequest> : produce_base<D, W
 WINRT_EXPORT namespace winrt::Windows::System::Display {
 
 inline DisplayRequest::DisplayRequest() :
-    DisplayRequest(get_activation_factory<DisplayRequest>().ActivateInstance<DisplayRequest>())
+    DisplayRequest(impl::call_factory<DisplayRequest>([](auto&& f) { return f.template ActivateInstance<DisplayRequest>(); }))
 {}
 
 }
@@ -72,5 +68,3 @@ template<> struct hash<winrt::Windows::System::Display::IDisplayRequest> : winrt
 template<> struct hash<winrt::Windows::System::Display::DisplayRequest> : winrt::impl::hash_base<winrt::Windows::System::Display::DisplayRequest> {};
 
 }
-
-WINRT_WARNING_POP

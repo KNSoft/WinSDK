@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -67,13 +67,13 @@ struct FileProtectionManager
     static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionInfo> UnprotectAsync(Windows::Storage::IStorageItem const& target, Windows::Security::EnterpriseData::FileUnprotectOptions const& options);
 };
 
-struct [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] FileRevocationManager
+struct FileRevocationManager
 {
     FileRevocationManager() = delete;
-    [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const& storageItem, param::hstring const& enterpriseIdentity);
-    [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] static Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const& sourceStorageItem, Windows::Storage::IStorageItem const& targetStorageItem);
-    [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] static void Revoke(param::hstring const& enterpriseIdentity);
-    [[deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]] static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionStatus> GetStatusAsync(Windows::Storage::IStorageItem const& storageItem);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionStatus> ProtectAsync(Windows::Storage::IStorageItem const& storageItem, param::hstring const& enterpriseIdentity);
+    static Windows::Foundation::IAsyncOperation<bool> CopyProtectionAsync(Windows::Storage::IStorageItem const& sourceStorageItem, Windows::Storage::IStorageItem const& targetStorageItem);
+    static void Revoke(param::hstring const& enterpriseIdentity);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::FileProtectionStatus> GetStatusAsync(Windows::Storage::IStorageItem const& storageItem);
 };
 
 struct WINRT_EBO FileUnprotectOptions :
@@ -139,18 +139,18 @@ struct WINRT_EBO ProtectionPolicyManager :
     static Windows::Foundation::IAsyncOperation<hstring> GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows::Networking::HostName const& endpointHost);
     static void RevokeContent(param::hstring const& identity);
     static Windows::Security::EnterpriseData::ProtectionPolicyManager GetForCurrentView();
-    static event_token ProtectedAccessSuspending(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs> const& handler);
-    using ProtectedAccessSuspending_revoker = factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>;
+    static winrt::event_token ProtectedAccessSuspending(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs> const& handler);
+    using ProtectedAccessSuspending_revoker = impl::factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics, &impl::abi_t<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>::remove_ProtectedAccessSuspending>;
     static ProtectedAccessSuspending_revoker ProtectedAccessSuspending(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs> const& handler);
-    static void ProtectedAccessSuspending(event_token const& token);
-    static event_token ProtectedAccessResumed(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessResumedEventArgs> const& handler);
-    using ProtectedAccessResumed_revoker = factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>;
+    static void ProtectedAccessSuspending(winrt::event_token const& token);
+    static winrt::event_token ProtectedAccessResumed(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessResumedEventArgs> const& handler);
+    using ProtectedAccessResumed_revoker = impl::factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics, &impl::abi_t<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>::remove_ProtectedAccessResumed>;
     static ProtectedAccessResumed_revoker ProtectedAccessResumed(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedAccessResumedEventArgs> const& handler);
-    static void ProtectedAccessResumed(event_token const& token);
-    static event_token ProtectedContentRevoked(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs> const& handler);
-    using ProtectedContentRevoked_revoker = factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>;
+    static void ProtectedAccessResumed(winrt::event_token const& token);
+    static winrt::event_token ProtectedContentRevoked(Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs> const& handler);
+    using ProtectedContentRevoked_revoker = impl::factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics, &impl::abi_t<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics>::remove_ProtectedContentRevoked>;
     static ProtectedContentRevoked_revoker ProtectedContentRevoked(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs> const& handler);
-    static void ProtectedContentRevoked(event_token const& token);
+    static void ProtectedContentRevoked(winrt::event_token const& token);
     static Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult CheckAccess(param::hstring const& sourceIdentity, param::hstring const& targetIdentity);
     static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(param::hstring const& sourceIdentity, param::hstring const& targetIdentity);
     static bool HasContentBeenRevokedSince(param::hstring const& identity, Windows::Foundation::DateTime const& since);
@@ -159,10 +159,10 @@ struct WINRT_EBO ProtectionPolicyManager :
     static Windows::Security::EnterpriseData::EnforcementLevel GetEnforcementLevel(param::hstring const& identity);
     static bool IsUserDecryptionAllowed(param::hstring const& identity);
     static bool IsProtectionUnderLockRequired(param::hstring const& identity);
-    static event_token PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using PolicyChanged_revoker = factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics2>;
+    static winrt::event_token PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using PolicyChanged_revoker = impl::factory_event_revoker<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics2, &impl::abi_t<Windows::Security::EnterpriseData::IProtectionPolicyManagerStatics2>::remove_PolicyChanged>;
     static PolicyChanged_revoker PolicyChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void PolicyChanged(event_token const& token);
+    static void PolicyChanged(winrt::event_token const& token);
     static bool IsProtectionEnabled();
     static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(param::hstring const& sourceIdentity, param::hstring const& targetIdentity, Windows::Security::EnterpriseData::ProtectionPolicyAuditInfo const& auditInfo);
     static Windows::Foundation::IAsyncOperation<Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(param::hstring const& sourceIdentity, param::hstring const& targetIdentity, Windows::Security::EnterpriseData::ProtectionPolicyAuditInfo const& auditInfo, param::hstring const& messageFromApp);

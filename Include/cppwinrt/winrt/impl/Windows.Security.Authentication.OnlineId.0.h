@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -93,15 +93,15 @@ template <> struct name<Windows::Security::Authentication::OnlineId::UserAuthent
 template <> struct name<Windows::Security::Authentication::OnlineId::UserIdentity>{ static constexpr auto & value{ L"Windows.Security.Authentication.OnlineId.UserIdentity" }; };
 template <> struct name<Windows::Security::Authentication::OnlineId::CredentialPromptType>{ static constexpr auto & value{ L"Windows.Security.Authentication.OnlineId.CredentialPromptType" }; };
 template <> struct name<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus>{ static constexpr auto & value{ L"Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus" }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator>{ static constexpr GUID value{ 0xA003F58A,0x29AB,0x4817,{ 0xB8,0x84,0xD7,0x51,0x6D,0xAD,0x18,0xB9 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket>{ static constexpr GUID value{ 0xC95C547F,0xD781,0x4A94,{ 0xAC,0xB8,0xC5,0x98,0x74,0x23,0x8C,0x26 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest>{ static constexpr GUID value{ 0x297445D3,0xFB63,0x4135,{ 0x89,0x09,0x4E,0x35,0x4C,0x06,0x14,0x66 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory>{ static constexpr GUID value{ 0xBEBB0A08,0x9E73,0x4077,{ 0x96,0x14,0x08,0x61,0x4C,0x0B,0xC2,0x45 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>{ static constexpr GUID value{ 0x5798BEFB,0x1DE4,0x4186,{ 0xA2,0xE6,0xB5,0x63,0xF8,0x6A,0xAF,0x44 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>{ static constexpr GUID value{ 0x85047792,0xF634,0x41E3,{ 0x96,0xA4,0x51,0x64,0xE9,0x02,0xC7,0x40 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>{ static constexpr GUID value{ 0x743CD20D,0xB6CA,0x434D,{ 0x81,0x24,0x53,0xEA,0x12,0x68,0x53,0x07 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>{ static constexpr GUID value{ 0xDB0A5FF8,0xB098,0x4ACD,{ 0x9D,0x13,0x9E,0x64,0x06,0x52,0xB5,0xB6 } }; };
-template <> struct guid<Windows::Security::Authentication::OnlineId::IUserIdentity>{ static constexpr GUID value{ 0x2146D9CD,0x0742,0x4BE3,{ 0x8A,0x1C,0x7C,0x7A,0xE6,0x79,0xAA,0x88 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator>{ static constexpr guid value{ 0xA003F58A,0x29AB,0x4817,{ 0xB8,0x84,0xD7,0x51,0x6D,0xAD,0x18,0xB9 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket>{ static constexpr guid value{ 0xC95C547F,0xD781,0x4A94,{ 0xAC,0xB8,0xC5,0x98,0x74,0x23,0x8C,0x26 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest>{ static constexpr guid value{ 0x297445D3,0xFB63,0x4135,{ 0x89,0x09,0x4E,0x35,0x4C,0x06,0x14,0x66 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory>{ static constexpr guid value{ 0xBEBB0A08,0x9E73,0x4077,{ 0x96,0x14,0x08,0x61,0x4C,0x0B,0xC2,0x45 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>{ static constexpr guid value{ 0x5798BEFB,0x1DE4,0x4186,{ 0xA2,0xE6,0xB5,0x63,0xF8,0x6A,0xAF,0x44 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>{ static constexpr guid value{ 0x85047792,0xF634,0x41E3,{ 0x96,0xA4,0x51,0x64,0xE9,0x02,0xC7,0x40 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>{ static constexpr guid value{ 0x743CD20D,0xB6CA,0x434D,{ 0x81,0x24,0x53,0xEA,0x12,0x68,0x53,0x07 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>{ static constexpr guid value{ 0xDB0A5FF8,0xB098,0x4ACD,{ 0x9D,0x13,0x9E,0x64,0x06,0x52,0xB5,0xB6 } }; };
+template <> struct guid_storage<Windows::Security::Authentication::OnlineId::IUserIdentity>{ static constexpr guid value{ 0x2146D9CD,0x0742,0x4BE3,{ 0x8A,0x1C,0x7C,0x7A,0xE6,0x79,0xAA,0x88 } }; };
 template <> struct default_interface<Windows::Security::Authentication::OnlineId::OnlineIdAuthenticator>{ using type = Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator; };
 template <> struct default_interface<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket>{ using type = Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket; };
 template <> struct default_interface<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest>{ using type = Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest; };
@@ -112,14 +112,83 @@ template <> struct default_interface<Windows::Security::Authentication::OnlineId
 template <> struct default_interface<Windows::Security::Authentication::OnlineId::UserAuthenticationOperation>{ using type = Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity>; };
 template <> struct default_interface<Windows::Security::Authentication::OnlineId::UserIdentity>{ using type = Windows::Security::Authentication::OnlineId::IUserIdentity; };
 
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AuthenticateUserAsync(void* request, void** authenticationOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL AuthenticateUserAsyncAdvanced(void* requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType, void** authenticationOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL SignOutUserAsync(void** signOutUserOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ApplicationId(winrt::guid value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ApplicationId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanSignOut(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticatedSafeCustomerId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Request(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ErrorCode(int32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Service(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Policy(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateOnlineIdServiceTicketRequest(void* service, void* policy, void** onlineIdServiceTicketRequest) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateOnlineIdServiceTicketRequestAdvanced(void* service, void** onlineIdServiceTicketRequest) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetTicketAsync(void* request, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ApplicationId(winrt::guid value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ApplicationId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_User(void** user) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Default(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Ticket(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Identity(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Security::Authentication::OnlineId::IUserIdentity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Tickets(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SafeCustomerId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignInName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsBetaAccount(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsConfirmedPC(bool* value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Security_Authentication_OnlineId_IOnlineIdAuthenticator
 {
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest const& request) const;
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(param::async_iterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> const& requests, Windows::Security::Authentication::OnlineId::CredentialPromptType const& credentialPromptType) const;
     Windows::Security::Authentication::OnlineId::SignOutUserOperation SignOutUserAsync() const;
-    void ApplicationId(GUID const& value) const;
-    GUID ApplicationId() const;
+    void ApplicationId(winrt::guid const& value) const;
+    winrt::guid ApplicationId() const;
     bool CanSignOut() const;
     hstring AuthenticatedSafeCustomerId() const;
 };
@@ -154,8 +223,8 @@ template <typename D>
 struct consume_Windows_Security_Authentication_OnlineId_IOnlineIdSystemAuthenticatorForUser
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> GetTicketAsync(Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest const& request) const;
-    void ApplicationId(GUID const& value) const;
-    GUID ApplicationId() const;
+    void ApplicationId(winrt::guid const& value) const;
+    winrt::guid ApplicationId() const;
     Windows::System::User User() const;
 };
 template <> struct consume<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser> { template <typename D> using type = consume_Windows_Security_Authentication_OnlineId_IOnlineIdSystemAuthenticatorForUser<D>; };
@@ -181,7 +250,7 @@ struct consume_Windows_Security_Authentication_OnlineId_IOnlineIdSystemTicketRes
 {
     Windows::Security::Authentication::OnlineId::OnlineIdSystemIdentity Identity() const;
     Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus Status() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult> { template <typename D> using type = consume_Windows_Security_Authentication_OnlineId_IOnlineIdSystemTicketResult<D>; };
 
@@ -198,74 +267,5 @@ struct consume_Windows_Security_Authentication_OnlineId_IUserIdentity
     bool IsConfirmedPC() const;
 };
 template <> struct consume<Windows::Security::Authentication::OnlineId::IUserIdentity> { template <typename D> using type = consume_Windows_Security_Authentication_OnlineId_IUserIdentity<D>; };
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AuthenticateUserAsync(void* request, void** authenticationOperation) noexcept = 0;
-    virtual HRESULT __stdcall AuthenticateUserAsyncAdvanced(void* requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType, void** authenticationOperation) noexcept = 0;
-    virtual HRESULT __stdcall SignOutUserAsync(void** signOutUserOperation) noexcept = 0;
-    virtual HRESULT __stdcall put_ApplicationId(GUID value) noexcept = 0;
-    virtual HRESULT __stdcall get_ApplicationId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanSignOut(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticatedSafeCustomerId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Request(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ErrorCode(int32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Service(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Policy(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateOnlineIdServiceTicketRequest(HSTRING service, HSTRING policy, void** onlineIdServiceTicketRequest) noexcept = 0;
-    virtual HRESULT __stdcall CreateOnlineIdServiceTicketRequestAdvanced(HSTRING service, void** onlineIdServiceTicketRequest) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetTicketAsync(void* request, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall put_ApplicationId(GUID value) noexcept = 0;
-    virtual HRESULT __stdcall get_ApplicationId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_User(void** user) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Default(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetForUser(void* user, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Ticket(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Identity(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Security::Authentication::OnlineId::IUserIdentity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Tickets(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SafeCustomerId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignInName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsBetaAccount(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsConfirmedPC(bool* value) noexcept = 0;
-};};
 
 }

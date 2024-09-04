@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Activation.2.h"
@@ -319,9 +319,9 @@ template <typename D> void consume_Windows_ApplicationModel_Background_IBackgrou
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskBuilder4)->put_TaskGroup(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_ApplicationModel_Background_IBackgroundTaskCompletedEventArgs<D>::InstanceId() const
+template <typename D> winrt::guid consume_Windows_ApplicationModel_Background_IBackgroundTaskCompletedEventArgs<D>::InstanceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs)->get_InstanceId(put_abi(value)));
     return value;
 }
@@ -336,9 +336,9 @@ template <typename D> void consume_Windows_ApplicationModel_Background_IBackgrou
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskDeferral)->Complete());
 }
 
-template <typename D> GUID consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::InstanceId() const
+template <typename D> winrt::guid consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::InstanceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskInstance)->get_InstanceId(put_abi(value)));
     return value;
 }
@@ -369,21 +369,21 @@ template <typename D> Windows::Foundation::IInspectable consume_Windows_Applicat
     return triggerDetails;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskInstance)->add_Canceled(get_abi(cancelHandler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskInstance> consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const
+template <typename D> typename consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled_revoker consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const& cancelHandler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance>(this, &abi_t<Windows::ApplicationModel::Background::IBackgroundTaskInstance>::remove_Canceled, Canceled(cancelHandler));
+    return impl::make_event_revoker<D, Canceled_revoker>(this, Canceled(cancelHandler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(event_token const& cookie) const
+template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::Canceled(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskInstance)->remove_Canceled(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskInstance)->remove_Canceled(get_abi(cookie)));
 }
 
 template <typename D> uint32_t consume_Windows_ApplicationModel_Background_IBackgroundTaskInstance<D>::SuspendedCount() const
@@ -414,9 +414,9 @@ template <typename D> Windows::System::User consume_Windows_ApplicationModel_Bac
     return value;
 }
 
-template <typename D> GUID consume_Windows_ApplicationModel_Background_IBackgroundTaskProgressEventArgs<D>::InstanceId() const
+template <typename D> winrt::guid consume_Windows_ApplicationModel_Background_IBackgroundTaskProgressEventArgs<D>::InstanceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs)->get_InstanceId(put_abi(value)));
     return value;
 }
@@ -428,9 +428,9 @@ template <typename D> uint32_t consume_Windows_ApplicationModel_Background_IBack
     return value;
 }
 
-template <typename D> GUID consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::TaskId() const
+template <typename D> winrt::guid consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::TaskId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->get_TaskId(put_abi(value)));
     return value;
 }
@@ -442,38 +442,38 @@ template <typename D> hstring consume_Windows_ApplicationModel_Background_IBackg
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->add_Progress(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress_revoker consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>(this, &abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>::remove_Progress, Progress(handler));
+    return impl::make_event_revoker<D, Progress_revoker>(this, Progress(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(event_token const& cookie) const
+template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Progress(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->remove_Progress(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->remove_Progress(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->add_Completed(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed_revoker consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(auto_revoke_t, Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>(this, &abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistration>::remove_Completed, Completed(handler));
+    return impl::make_event_revoker<D, Completed_revoker>(this, Completed(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(event_token const& cookie) const
+template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Completed(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->remove_Completed(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistration)->remove_Completed(get_abi(cookie)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistration<D>::Unregister(bool cancelTask) const
@@ -509,26 +509,26 @@ template <typename D> hstring consume_Windows_ApplicationModel_Background_IBackg
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup)->add_BackgroundActivated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated_revoker consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>(this, &abi_t<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>::remove_BackgroundActivated, BackgroundActivated(handler));
+    return impl::make_event_revoker<D, BackgroundActivated_revoker>(this, BackgroundActivated(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup)->remove_BackgroundActivated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup)->remove_BackgroundActivated(get_abi(token)));
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::AllTasks() const
+template <typename D> Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::BackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationGroup<D>::AllTasks() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> value{ nullptr };
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::BackgroundTaskRegistration> value{ nullptr };
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup)->get_AllTasks(put_abi(value)));
     return value;
 }
@@ -547,9 +547,9 @@ template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegis
     return group;
 }
 
-template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationStatics<D>::AllTasks() const
+template <typename D> Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> consume_Windows_ApplicationModel_Background_IBackgroundTaskRegistrationStatics<D>::AllTasks() const
 {
-    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> tasks{ nullptr };
+    Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> tasks{ nullptr };
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics)->get_AllTasks(put_abi(tasks)));
     return tasks;
 }
@@ -840,7 +840,7 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError consume_Window
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> consume_Windows_ApplicationModel_Background_IGattServiceProviderTriggerStatics<D>::CreateAsync(param::hstring const& triggerId, GUID const& serviceUuid) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> consume_Windows_ApplicationModel_Background_IGattServiceProviderTriggerStatics<D>::CreateAsync(param::hstring const& triggerId, winrt::guid const& serviceUuid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> operation{ nullptr };
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics)->CreateAsync(get_abi(triggerId), get_abi(serviceUuid), put_abi(operation)));
@@ -1114,23 +1114,23 @@ template <typename D> Windows::ApplicationModel::Background::TimeTrigger consume
 
 template <typename D> Windows::ApplicationModel::Background::ToastNotificationActionTrigger consume_Windows_ApplicationModel_Background_IToastNotificationActionTriggerFactory<D>::Create(param::hstring const& applicationId) const
 {
-    Windows::ApplicationModel::Background::ToastNotificationActionTrigger trigger{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory)->Create(get_abi(applicationId), put_abi(trigger)));
-    return trigger;
+    Windows::ApplicationModel::Background::ToastNotificationActionTrigger value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory)->Create(get_abi(applicationId), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger consume_Windows_ApplicationModel_Background_IToastNotificationHistoryChangedTriggerFactory<D>::Create(param::hstring const& applicationId) const
 {
-    Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger trigger{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory)->Create(get_abi(applicationId), put_abi(trigger)));
-    return trigger;
+    Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory)->Create(get_abi(applicationId), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::UserNotificationChangedTrigger consume_Windows_ApplicationModel_Background_IUserNotificationChangedTriggerFactory<D>::Create(Windows::UI::Notifications::NotificationKinds const& notificationKinds) const
 {
-    Windows::ApplicationModel::Background::UserNotificationChangedTrigger trigger{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory)->Create(get_abi(notificationKinds), put_abi(trigger)));
-    return trigger;
+    Windows::ApplicationModel::Background::UserNotificationChangedTrigger value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory)->Create(get_abi(notificationKinds), put_abi(value)));
+    return value;
 }
 
 template <> struct delegate<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler>
@@ -1140,12 +1140,12 @@ template <> struct delegate<Windows::ApplicationModel::Background::BackgroundTas
     {
         type(H&& handler) : implements_delegate<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason reason) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::ApplicationModel::Background::IBackgroundTaskInstance const*>(&sender), *reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCancellationReason const*>(&reason));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1162,12 +1162,12 @@ template <> struct delegate<Windows::ApplicationModel::Background::BackgroundTas
     {
         type(H&& handler) : implements_delegate<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskRegistration const*>(&sender), *reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs const*>(&args));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1184,12 +1184,12 @@ template <> struct delegate<Windows::ApplicationModel::Background::BackgroundTas
     {
         type(H&& handler) : implements_delegate<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler, H>(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
+        int32_t WINRT_CALL Invoke(void* sender, void* args) noexcept final
         {
             try
             {
                 (*this)(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskRegistration const*>(&sender), *reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs const*>(&args));
-                return S_OK;
+                return 0;
             }
             catch (...)
             {
@@ -1202,393 +1202,343 @@ template <> struct delegate<Windows::ApplicationModel::Background::BackgroundTas
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTrigger> : produce_base<D, Windows::ApplicationModel::Background::IActivitySensorTrigger>
 {
-    HRESULT __stdcall get_SubscribedActivities(void** value) noexcept final
+    int32_t WINRT_CALL get_SubscribedActivities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubscribedActivities, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Devices::Sensors::ActivityType>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Devices::Sensors::ActivityType>>(this->shim().SubscribedActivities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ReportInterval(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ReportInterval(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportInterval, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ReportInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedActivities(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedActivities(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedActivities, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivityType>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivityType>>(this->shim().SupportedActivities());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinimumReportInterval(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinimumReportInterval(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinimumReportInterval, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MinimumReportInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IActivitySensorTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>
 {
-    HRESULT __stdcall Create(uint32_t reportIntervalInMilliseconds, void** activityTrigger) noexcept final
+    int32_t WINRT_CALL Create(uint32_t reportIntervalInMilliseconds, void** activityTrigger) noexcept final
     {
         try
         {
             *activityTrigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::ActivitySensorTrigger), uint32_t);
             *activityTrigger = detach_from<Windows::ApplicationModel::Background::ActivitySensorTrigger>(this->shim().Create(reportIntervalInMilliseconds));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics> : produce_base<D, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>
 {
-    HRESULT __stdcall RequestAccessAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::AlarmAccessStatus>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::AlarmAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAccessStatus(Windows::ApplicationModel::Background::AlarmAccessStatus* status) noexcept final
+    int32_t WINRT_CALL GetAccessStatus(Windows::ApplicationModel::Background::AlarmAccessStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAccessStatus, WINRT_WRAP(Windows::ApplicationModel::Background::AlarmAccessStatus));
             *status = detach_from<Windows::ApplicationModel::Background::AlarmAccessStatus>(this->shim().GetAccessStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IAppBroadcastTrigger> : produce_base<D, Windows::ApplicationModel::Background::IAppBroadcastTrigger>
 {
-    HRESULT __stdcall put_ProviderInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_ProviderInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderInfo, WINRT_WRAP(void), Windows::ApplicationModel::Background::AppBroadcastTriggerProviderInfo const&);
             this->shim().ProviderInfo(*reinterpret_cast<Windows::ApplicationModel::Background::AppBroadcastTriggerProviderInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProviderInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_ProviderInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProviderInfo, WINRT_WRAP(Windows::ApplicationModel::Background::AppBroadcastTriggerProviderInfo));
             *value = detach_from<Windows::ApplicationModel::Background::AppBroadcastTriggerProviderInfo>(this->shim().ProviderInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>
 {
-    HRESULT __stdcall CreateAppBroadcastTrigger(HSTRING providerKey, void** broadcastTrigger) noexcept final
+    int32_t WINRT_CALL CreateAppBroadcastTrigger(void* providerKey, void** broadcastTrigger) noexcept final
     {
         try
         {
             *broadcastTrigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateAppBroadcastTrigger, WINRT_WRAP(Windows::ApplicationModel::Background::AppBroadcastTrigger), hstring const&);
             *broadcastTrigger = detach_from<Windows::ApplicationModel::Background::AppBroadcastTrigger>(this->shim().CreateAppBroadcastTrigger(*reinterpret_cast<hstring const*>(&providerKey)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo> : produce_base<D, Windows::ApplicationModel::Background::IAppBroadcastTriggerProviderInfo>
 {
-    HRESULT __stdcall put_DisplayNameResource(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayNameResource(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayNameResource, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayNameResource(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayNameResource(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayNameResource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayNameResource, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayNameResource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LogoResource(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_LogoResource(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoResource, WINRT_WRAP(void), hstring const&);
             this->shim().LogoResource(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LogoResource(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LogoResource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LogoResource, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LogoResource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VideoKeyFrameInterval(Windows::Foundation::TimeSpan value) noexcept final
+    int32_t WINRT_CALL put_VideoKeyFrameInterval(Windows::Foundation::TimeSpan value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoKeyFrameInterval, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().VideoKeyFrameInterval(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VideoKeyFrameInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_VideoKeyFrameInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VideoKeyFrameInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().VideoKeyFrameInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxVideoBitrate(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxVideoBitrate(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoBitrate, WINRT_WRAP(void), uint32_t);
             this->shim().MaxVideoBitrate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxVideoBitrate(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxVideoBitrate(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoBitrate, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxVideoBitrate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxVideoWidth(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxVideoWidth(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoWidth, WINRT_WRAP(void), uint32_t);
             this->shim().MaxVideoWidth(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxVideoWidth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxVideoWidth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoWidth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxVideoWidth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaxVideoHeight(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MaxVideoHeight(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoHeight, WINRT_WRAP(void), uint32_t);
             this->shim().MaxVideoHeight(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxVideoHeight(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxVideoHeight(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxVideoHeight, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxVideoHeight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IApplicationTrigger> : produce_base<D, Windows::ApplicationModel::Background::IApplicationTrigger>
 {
-    HRESULT __stdcall RequestAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::ApplicationTriggerResult>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::ApplicationTriggerResult>>(this->shim().RequestAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAsyncWithArguments(void* arguments, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncWithArguments(void* arguments, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::ApplicationTriggerResult>), Windows::Foundation::Collections::ValueSet const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::ApplicationTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<Windows::Foundation::Collections::ValueSet const*>(&arguments)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IApplicationTriggerDetails> : produce_base<D, Windows::ApplicationModel::Background::IApplicationTriggerDetails>
 {
-    HRESULT __stdcall get_Arguments(void** value) noexcept final
+    int32_t WINRT_CALL get_Arguments(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arguments, WINRT_WRAP(Windows::Foundation::Collections::ValueSet));
             *value = detach_from<Windows::Foundation::Collections::ValueSet>(this->shim().Arguments());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1603,886 +1553,758 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundCondition> :
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>
 {
-    HRESULT __stdcall RequestAccessAsync(void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAccessForApplicationAsync(HSTRING applicationId, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessForApplicationAsync(void* applicationId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus>>(this->shim().RequestAccessAsync(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAccess() noexcept final
+    int32_t WINRT_CALL RemoveAccess() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAccess, WINRT_WRAP(void));
             this->shim().RemoveAccess();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RemoveAccessForApplication(HSTRING applicationId) noexcept final
+    int32_t WINRT_CALL RemoveAccessForApplication(void* applicationId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoveAccess, WINRT_WRAP(void), hstring const&);
             this->shim().RemoveAccess(*reinterpret_cast<hstring const*>(&applicationId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAccessStatus(Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept final
+    int32_t WINRT_CALL GetAccessStatus(Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAccessStatus, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundAccessStatus));
             *status = detach_from<Windows::ApplicationModel::Background::BackgroundAccessStatus>(this->shim().GetAccessStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetAccessStatusForApplication(HSTRING applicationId, Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept final
+    int32_t WINRT_CALL GetAccessStatusForApplication(void* applicationId, Windows::ApplicationModel::Background::BackgroundAccessStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAccessStatus, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundAccessStatus), hstring const&);
             *status = detach_from<Windows::ApplicationModel::Background::BackgroundAccessStatus>(this->shim().GetAccessStatus(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>
 {
-    HRESULT __stdcall RequestAccessKindAsync(Windows::ApplicationModel::Background::BackgroundAccessRequestKind requestedAccess, HSTRING reason, void** operation) noexcept final
+    int32_t WINRT_CALL RequestAccessKindAsync(Windows::ApplicationModel::Background::BackgroundAccessRequestKind requestedAccess, void* reason, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessKindAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<bool>), Windows::ApplicationModel::Background::BackgroundAccessRequestKind const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<bool>>(this->shim().RequestAccessKindAsync(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundAccessRequestKind const*>(&requestedAccess), *reinterpret_cast<hstring const*>(&reason)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTask> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTask>
 {
-    HRESULT __stdcall Run(void* taskInstance) noexcept final
+    int32_t WINRT_CALL Run(void* taskInstance) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Run, WINRT_WRAP(void), Windows::ApplicationModel::Background::IBackgroundTaskInstance const&);
             this->shim().Run(*reinterpret_cast<Windows::ApplicationModel::Background::IBackgroundTaskInstance const*>(&taskInstance));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
 {
-    HRESULT __stdcall put_TaskEntryPoint(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_TaskEntryPoint(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskEntryPoint, WINRT_WRAP(void), hstring const&);
             this->shim().TaskEntryPoint(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TaskEntryPoint(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TaskEntryPoint(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskEntryPoint, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TaskEntryPoint());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetTrigger(void* trigger) noexcept final
+    int32_t WINRT_CALL SetTrigger(void* trigger) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetTrigger, WINRT_WRAP(void), Windows::ApplicationModel::Background::IBackgroundTrigger const&);
             this->shim().SetTrigger(*reinterpret_cast<Windows::ApplicationModel::Background::IBackgroundTrigger const*>(&trigger));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddCondition(void* condition) noexcept final
+    int32_t WINRT_CALL AddCondition(void* condition) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddCondition, WINRT_WRAP(void), Windows::ApplicationModel::Background::IBackgroundCondition const&);
             this->shim().AddCondition(*reinterpret_cast<Windows::ApplicationModel::Background::IBackgroundCondition const*>(&condition));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Name(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Name(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(void), hstring const&);
             this->shim().Name(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Register(void** task) noexcept final
+    int32_t WINRT_CALL Register(void** task) noexcept final
     {
         try
         {
             *task = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Register, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistration));
             *task = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(this->shim().Register());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>
 {
-    HRESULT __stdcall put_CancelOnConditionLoss(bool value) noexcept final
+    int32_t WINRT_CALL put_CancelOnConditionLoss(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelOnConditionLoss, WINRT_WRAP(void), bool);
             this->shim().CancelOnConditionLoss(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CancelOnConditionLoss(bool* value) noexcept final
+    int32_t WINRT_CALL get_CancelOnConditionLoss(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelOnConditionLoss, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CancelOnConditionLoss());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>
 {
-    HRESULT __stdcall put_IsNetworkRequested(bool value) noexcept final
+    int32_t WINRT_CALL put_IsNetworkRequested(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNetworkRequested, WINRT_WRAP(void), bool);
             this->shim().IsNetworkRequested(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNetworkRequested(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNetworkRequested(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNetworkRequested, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNetworkRequested());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder4> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>
 {
-    HRESULT __stdcall get_TaskGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TaskGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskGroup, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup));
             *value = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>(this->shim().TaskGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TaskGroup(void* value) noexcept final
+    int32_t WINRT_CALL put_TaskGroup(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskGroup, WINRT_WRAP(void), Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup const&);
             this->shim().TaskGroup(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>
 {
-    HRESULT __stdcall get_InstanceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().InstanceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InstanceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().InstanceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CheckResult() noexcept final
+    int32_t WINRT_CALL CheckResult() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckResult, WINRT_WRAP(void));
             this->shim().CheckResult();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskDeferral> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance>
 {
-    HRESULT __stdcall get_InstanceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().InstanceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InstanceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().InstanceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Task(void** task) noexcept final
+    int32_t WINRT_CALL get_Task(void** task) noexcept final
     {
         try
         {
             *task = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Task, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistration));
             *task = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistration>(this->shim().Task());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Progress(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Progress(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Progress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Progress(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_Progress(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(void), uint32_t);
             this->shim().Progress(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TriggerDetails(void** triggerDetails) noexcept final
+    int32_t WINRT_CALL get_TriggerDetails(void** triggerDetails) noexcept final
     {
         try
         {
             *triggerDetails = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerDetails, WINRT_WRAP(Windows::Foundation::IInspectable));
             *triggerDetails = detach_from<Windows::Foundation::IInspectable>(this->shim().TriggerDetails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Canceled(void* cancelHandler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_Canceled(void* cancelHandler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Canceled(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const*>(&cancelHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(winrt::event_token), Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Canceled(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler const*>(&cancelHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Canceled(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Canceled(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Canceled, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Canceled(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_SuspendedCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Canceled(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_SuspendedCount(uint32_t* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuspendedCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SuspendedCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskDeferral));
             *deferral = detach_from<Windows::ApplicationModel::Background::BackgroundTaskDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance2>
 {
-    HRESULT __stdcall GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter, uint32_t* value) noexcept final
+    int32_t WINRT_CALL GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter, uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetThrottleCount, WINRT_WRAP(uint32_t), Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter const&);
             *value = detach_from<uint32_t>(this->shim().GetThrottleCount(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter const*>(&counter)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance4> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskInstance4>
 {
-    HRESULT __stdcall get_User(void** value) noexcept final
+    int32_t WINRT_CALL get_User(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(User, WINRT_WRAP(Windows::System::User));
             *value = detach_from<Windows::System::User>(this->shim().User());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>
 {
-    HRESULT __stdcall get_InstanceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_InstanceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().InstanceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InstanceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().InstanceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Progress(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Progress(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Progress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>
 {
-    HRESULT __stdcall get_TaskId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_TaskId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().TaskId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(TaskId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().TaskId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Progress(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_Progress(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Progress(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(winrt::event_token), Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Progress(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Progress(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_Progress(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Progress(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().Progress(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(winrt::event_token), Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().Completed(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_Completed(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_Completed(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Completed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Completed(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL Unregister(bool cancelTask) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().Completed(*reinterpret_cast<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_Completed(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall Unregister(bool cancelTask) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Unregister, WINRT_WRAP(void), bool);
             this->shim().Unregister(cancelTask);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>
 {
-    HRESULT __stdcall get_Trigger(void** value) noexcept final
+    int32_t WINRT_CALL get_Trigger(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Trigger, WINRT_WRAP(Windows::ApplicationModel::Background::IBackgroundTrigger));
             *value = detach_from<Windows::ApplicationModel::Background::IBackgroundTrigger>(this->shim().Trigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
 {
-    HRESULT __stdcall get_TaskGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TaskGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaskGroup, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup));
             *value = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>(this->shim().TaskGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_BackgroundActivated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_BackgroundActivated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().BackgroundActivated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(BackgroundActivated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().BackgroundActivated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_BackgroundActivated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_BackgroundActivated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().BackgroundActivated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(BackgroundActivated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().BackgroundActivated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall get_AllTasks(void** value) noexcept final
+    int32_t WINRT_CALL get_AllTasks(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>>(this->shim().AllTasks());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AllTasks, WINRT_WRAP(Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::BackgroundTaskRegistration>));
+            *value = detach_from<Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::BackgroundTaskRegistration>>(this->shim().AllTasks());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>
 {
-    HRESULT __stdcall Create(HSTRING id, void** group) noexcept final
+    int32_t WINRT_CALL Create(void* id, void** group) noexcept final
     {
         try
         {
             *group = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup), hstring const&);
             *group = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>(this->shim().Create(*reinterpret_cast<hstring const*>(&id)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithName(HSTRING id, HSTRING name, void** group) noexcept final
+    int32_t WINRT_CALL CreateWithName(void* id, void* name, void** group) noexcept final
     {
         try
         {
             *group = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithName, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup), hstring const&, hstring const&);
             *group = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>(this->shim().CreateWithName(*reinterpret_cast<hstring const*>(&id), *reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>
 {
-    HRESULT __stdcall get_AllTasks(void** tasks) noexcept final
+    int32_t WINRT_CALL get_AllTasks(void** tasks) noexcept final
     {
         try
         {
             *tasks = nullptr;
             typename D::abi_guard guard(this->shim());
-            *tasks = detach_from<Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>>(this->shim().AllTasks());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AllTasks, WINRT_WRAP(Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>));
+            *tasks = detach_from<Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>>(this->shim().AllTasks());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>
 {
-    HRESULT __stdcall get_AllTaskGroups(void** value) noexcept final
+    int32_t WINRT_CALL get_AllTaskGroups(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllTaskGroups, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>>(this->shim().AllTaskGroups());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetTaskGroup(HSTRING groupId, void** value) noexcept final
+    int32_t WINRT_CALL GetTaskGroup(void* groupId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTaskGroup, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup), hstring const&);
             *value = detach_from<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>(this->shim().GetTaskGroup(*reinterpret_cast<hstring const*>(&groupId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2493,155 +2315,135 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTrigger> : p
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundWorkCostStatics> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>
 {
-    HRESULT __stdcall get_CurrentBackgroundWorkCost(Windows::ApplicationModel::Background::BackgroundWorkCostValue* value) noexcept final
+    int32_t WINRT_CALL get_CurrentBackgroundWorkCost(Windows::ApplicationModel::Background::BackgroundWorkCostValue* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentBackgroundWorkCost, WINRT_WRAP(Windows::ApplicationModel::Background::BackgroundWorkCostValue));
             *value = detach_from<Windows::ApplicationModel::Background::BackgroundWorkCostValue>(this->shim().CurrentBackgroundWorkCost());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger> : produce_base<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>
 {
-    HRESULT __stdcall get_Advertisement(void** value) noexcept final
+    int32_t WINRT_CALL get_Advertisement(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Advertisement, WINRT_WRAP(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement));
             *value = detach_from<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement>(this->shim().Advertisement());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger> : produce_base<D, Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>
 {
-    HRESULT __stdcall get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinSamplingInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MinSamplingInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxSamplingInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MaxSamplingInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinOutOfRangeTimeout, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MinOutOfRangeTimeout());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxOutOfRangeTimeout, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().MaxOutOfRangeTimeout());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SignalStrengthFilter(void** value) noexcept final
+    int32_t WINRT_CALL get_SignalStrengthFilter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignalStrengthFilter, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter>(this->shim().SignalStrengthFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SignalStrengthFilter(void* value) noexcept final
+    int32_t WINRT_CALL put_SignalStrengthFilter(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SignalStrengthFilter, WINRT_WRAP(void), Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter const&);
             this->shim().SignalStrengthFilter(*reinterpret_cast<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdvertisementFilter(void** value) noexcept final
+    int32_t WINRT_CALL get_AdvertisementFilter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisementFilter, WINRT_WRAP(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter));
             *value = detach_from<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter>(this->shim().AdvertisementFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AdvertisementFilter(void* value) noexcept final
+    int32_t WINRT_CALL put_AdvertisementFilter(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisementFilter, WINRT_WRAP(void), Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter const&);
             this->shim().AdvertisementFilter(*reinterpret_cast<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2652,47 +2454,41 @@ struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTrigg
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails> : produce_base<D, Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>
 {
-    HRESULT __stdcall get_UpdateTarget(Windows::Storage::Provider::CachedFileTarget* value) noexcept final
+    int32_t WINRT_CALL get_UpdateTarget(Windows::Storage::Provider::CachedFileTarget* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateTarget, WINRT_WRAP(Windows::Storage::Provider::CachedFileTarget));
             *value = detach_from<Windows::Storage::Provider::CachedFileTarget>(this->shim().UpdateTarget());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UpdateRequest(void** value) noexcept final
+    int32_t WINRT_CALL get_UpdateRequest(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateRequest, WINRT_WRAP(Windows::Storage::Provider::FileUpdateRequest));
             *value = detach_from<Windows::Storage::Provider::FileUpdateRequest>(this->shim().UpdateRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanRequestUserInput(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanRequestUserInput(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRequestUserInput, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanRequestUserInput());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2715,289 +2511,255 @@ struct produce<D, Windows::ApplicationModel::Background::IContactStoreNotificati
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger> : produce_base<D, Windows::ApplicationModel::Background::IContentPrefetchTrigger>
 {
-    HRESULT __stdcall get_WaitInterval(Windows::Foundation::TimeSpan* waitInterval) noexcept final
+    int32_t WINRT_CALL get_WaitInterval(Windows::Foundation::TimeSpan* waitInterval) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WaitInterval, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *waitInterval = detach_from<Windows::Foundation::TimeSpan>(this->shim().WaitInterval());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::Foundation::TimeSpan waitInterval, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(Windows::Foundation::TimeSpan waitInterval, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::ContentPrefetchTrigger), Windows::Foundation::TimeSpan const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::ContentPrefetchTrigger>(this->shim().Create(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&waitInterval)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ICustomSystemEventTrigger> : produce_base<D, Windows::ApplicationModel::Background::ICustomSystemEventTrigger>
 {
-    HRESULT __stdcall get_TriggerId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TriggerId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TriggerId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Recurrence(Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence* value) noexcept final
+    int32_t WINRT_CALL get_Recurrence(Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Recurrence, WINRT_WRAP(Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence));
             *value = detach_from<Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence>(this->shim().Recurrence());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING triggerId, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence recurrence, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* triggerId, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence recurrence, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::CustomSystemEventTrigger), hstring const&, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::CustomSystemEventTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&triggerId), *reinterpret_cast<Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence const*>(&recurrence)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger> : produce_base<D, Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanMaintainConnection(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanMaintainConnection(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanMaintainConnection, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanMaintainConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaintainConnection(bool* value) noexcept final
+    int32_t WINRT_CALL get_MaintainConnection(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaintainConnection, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().MaintainConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MaintainConnection(bool value) noexcept final
+    int32_t WINRT_CALL put_MaintainConnection(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaintainConnection, WINRT_WRAP(void), bool);
             this->shim().MaintainConnection(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics> : produce_base<D, Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>
 {
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** deviceChangeTrigger) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** deviceChangeTrigger) noexcept final
     {
         try
         {
             *deviceChangeTrigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger>), hstring const);
             *deviceChangeTrigger = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger> : produce_base<D, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>
 {
-    HRESULT __stdcall get_TriggerQualifier(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TriggerQualifier(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerQualifier, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TriggerQualifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OneShot(bool* oneShot) noexcept final
+    int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OneShot, WINRT_WRAP(bool));
             *oneShot = detach_from<bool>(this->shim().OneShot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING triggerQualifier, bool oneShot, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* triggerQualifier, bool oneShot, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger), hstring const&, bool);
             *trigger = detach_from<Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&triggerQualifier), oneShot));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger> : produce_base<D, Windows::ApplicationModel::Background::IDeviceServicingTrigger>
 {
-    HRESULT __stdcall RequestAsyncSimple(HSTRING deviceId, Windows::Foundation::TimeSpan expectedDuration, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncSimple(void* deviceId, Windows::Foundation::TimeSpan expectedDuration, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>), hstring const, Windows::Foundation::TimeSpan const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&expectedDuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAsyncWithArguments(HSTRING deviceId, Windows::Foundation::TimeSpan expectedDuration, HSTRING arguments, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncWithArguments(void* deviceId, Windows::Foundation::TimeSpan expectedDuration, void* arguments, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>), hstring const, Windows::Foundation::TimeSpan const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&expectedDuration), *reinterpret_cast<hstring const*>(&arguments)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IDeviceUseTrigger> : produce_base<D, Windows::ApplicationModel::Background::IDeviceUseTrigger>
 {
-    HRESULT __stdcall RequestAsyncSimple(HSTRING deviceId, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncSimple(void* deviceId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncWithArguments(void* deviceId, void* arguments, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>), hstring const, hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<hstring const*>(&deviceId), *reinterpret_cast<hstring const*>(&arguments)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3012,344 +2774,304 @@ struct produce<D, Windows::ApplicationModel::Background::IEmailStoreNotification
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>
 {
-    HRESULT __stdcall get_Characteristic(void** value) noexcept final
+    int32_t WINRT_CALL get_Characteristic(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Characteristic, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>(this->shim().Characteristic());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>
 {
-    HRESULT __stdcall get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode* value) noexcept final
+    int32_t WINRT_CALL get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EventTriggeringMode, WINRT_WRAP(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode));
             *value = detach_from<Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode>(this->shim().EventTriggeringMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>
 {
-    HRESULT __stdcall Create(void* characteristic, void** gattCharacteristicNotificationTrigger) noexcept final
+    int32_t WINRT_CALL Create(void* characteristic, void** gattCharacteristicNotificationTrigger) noexcept final
     {
         try
         {
             *gattCharacteristicNotificationTrigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger), Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const&);
             *gattCharacteristicNotificationTrigger = detach_from<Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger>(this->shim().Create(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const*>(&characteristic)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>
 {
-    HRESULT __stdcall CreateWithEventTriggeringMode(void* characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithEventTriggeringMode(void* characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger), Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const&, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode const&);
             *result = detach_from<Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger>(this->shim().Create(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const*>(&characteristic), *reinterpret_cast<Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode const*>(&eventTriggeringMode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTrigger> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTrigger>
 {
-    HRESULT __stdcall get_TriggerId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TriggerId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TriggerId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Service(void** value) noexcept final
+    int32_t WINRT_CALL get_Service(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Service, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService>(this->shim().Service());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AdvertisingParameters(void* value) noexcept final
+    int32_t WINRT_CALL put_AdvertisingParameters(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisingParameters, WINRT_WRAP(void), Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters const&);
             this->shim().AdvertisingParameters(*reinterpret_cast<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AdvertisingParameters(void** value) noexcept final
+    int32_t WINRT_CALL get_AdvertisingParameters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AdvertisingParameters, WINRT_WRAP(Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters));
             *value = detach_from<Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters>(this->shim().AdvertisingParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>
 {
-    HRESULT __stdcall get_Trigger(void** value) noexcept final
+    int32_t WINRT_CALL get_Trigger(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Trigger, WINRT_WRAP(Windows::ApplicationModel::Background::GattServiceProviderTrigger));
             *value = detach_from<Windows::ApplicationModel::Background::GattServiceProviderTrigger>(this->shim().Trigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
+    int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Error, WINRT_WRAP(Windows::Devices::Bluetooth::BluetoothError));
             *value = detach_from<Windows::Devices::Bluetooth::BluetoothError>(this->shim().Error());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>
 {
-    HRESULT __stdcall CreateAsync(HSTRING triggerId, GUID serviceUuid, void** operation) noexcept final
+    int32_t WINRT_CALL CreateAsync(void* triggerId, winrt::guid serviceUuid, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
-            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>>(this->shim().CreateAsync(*reinterpret_cast<hstring const*>(&triggerId), *reinterpret_cast<GUID const*>(&serviceUuid)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>), hstring const, winrt::guid const);
+            *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>>(this->shim().CreateAsync(*reinterpret_cast<hstring const*>(&triggerId), *reinterpret_cast<winrt::guid const*>(&serviceUuid)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGeovisitTrigger> : produce_base<D, Windows::ApplicationModel::Background::IGeovisitTrigger>
 {
-    HRESULT __stdcall get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept final
+    int32_t WINRT_CALL get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonitoringScope, WINRT_WRAP(Windows::Devices::Geolocation::VisitMonitoringScope));
             *value = detach_from<Windows::Devices::Geolocation::VisitMonitoringScope>(this->shim().MonitoringScope());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept final
+    int32_t WINRT_CALL put_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonitoringScope, WINRT_WRAP(void), Windows::Devices::Geolocation::VisitMonitoringScope const&);
             this->shim().MonitoringScope(*reinterpret_cast<Windows::Devices::Geolocation::VisitMonitoringScope const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ILocationTrigger> : produce_base<D, Windows::ApplicationModel::Background::ILocationTrigger>
 {
-    HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Background::LocationTriggerType* triggerType) noexcept final
+    int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Background::LocationTriggerType* triggerType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerType, WINRT_WRAP(Windows::ApplicationModel::Background::LocationTriggerType));
             *triggerType = detach_from<Windows::ApplicationModel::Background::LocationTriggerType>(this->shim().TriggerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ILocationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ILocationTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType, void** locationTrigger) noexcept final
+    int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType, void** locationTrigger) noexcept final
     {
         try
         {
             *locationTrigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::LocationTrigger), Windows::ApplicationModel::Background::LocationTriggerType const&);
             *locationTrigger = detach_from<Windows::ApplicationModel::Background::LocationTrigger>(this->shim().Create(*reinterpret_cast<Windows::ApplicationModel::Background::LocationTriggerType const*>(&triggerType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTrigger> : produce_base<D, Windows::ApplicationModel::Background::IMaintenanceTrigger>
 {
-    HRESULT __stdcall get_FreshnessTime(uint32_t* freshnessTime) noexcept final
+    int32_t WINRT_CALL get_FreshnessTime(uint32_t* freshnessTime) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FreshnessTime, WINRT_WRAP(uint32_t));
             *freshnessTime = detach_from<uint32_t>(this->shim().FreshnessTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OneShot(bool* oneShot) noexcept final
+    int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OneShot, WINRT_WRAP(bool));
             *oneShot = detach_from<bool>(this->shim().OneShot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IMaintenanceTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>
 {
-    HRESULT __stdcall Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::MaintenanceTrigger), uint32_t, bool);
             *trigger = detach_from<Windows::ApplicationModel::Background::MaintenanceTrigger>(this->shim().Create(freshnessTime, oneShot));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger> : produce_base<D, Windows::ApplicationModel::Background::IMediaProcessingTrigger>
 {
-    HRESULT __stdcall RequestAsync(void** result) noexcept final
+    int32_t WINRT_CALL RequestAsync(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::MediaProcessingTriggerResult>));
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::MediaProcessingTriggerResult>>(this->shim().RequestAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAsyncWithArguments(void* arguments, void** result) noexcept final
+    int32_t WINRT_CALL RequestAsyncWithArguments(void* arguments, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::MediaProcessingTriggerResult>), Windows::Foundation::Collections::ValueSet const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::MediaProcessingTriggerResult>>(this->shim().RequestAsync(*reinterpret_cast<Windows::Foundation::Collections::ValueSet const*>(&arguments)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3360,108 +3082,96 @@ struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorHotspot
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger> : produce_base<D, Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>
 {
-    HRESULT __stdcall get_NetworkAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NetworkAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NetworkAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NetworkAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING networkAccountId, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* networkAccountId, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger), hstring const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&networkAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IPhoneTrigger> : produce_base<D, Windows::ApplicationModel::Background::IPhoneTrigger>
 {
-    HRESULT __stdcall get_OneShot(bool* value) noexcept final
+    int32_t WINRT_CALL get_OneShot(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OneShot, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().OneShot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Calls::Background::PhoneTriggerType* result) noexcept final
+    int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Calls::Background::PhoneTriggerType* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerType, WINRT_WRAP(Windows::ApplicationModel::Calls::Background::PhoneTriggerType));
             *result = detach_from<Windows::ApplicationModel::Calls::Background::PhoneTriggerType>(this->shim().TriggerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IPhoneTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IPhoneTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::ApplicationModel::Calls::Background::PhoneTriggerType type, bool oneShot, void** result) noexcept final
+    int32_t WINRT_CALL Create(Windows::ApplicationModel::Calls::Background::PhoneTriggerType type, bool oneShot, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::PhoneTrigger), Windows::ApplicationModel::Calls::Background::PhoneTriggerType const&, bool);
             *result = detach_from<Windows::ApplicationModel::Background::PhoneTrigger>(this->shim().Create(*reinterpret_cast<Windows::ApplicationModel::Calls::Background::PhoneTriggerType const*>(&type), oneShot));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IPushNotificationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* applicationId, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::PushNotificationTrigger), hstring const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::PushNotificationTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3472,119 +3182,103 @@ struct produce<D, Windows::ApplicationModel::Background::IRcsEndUserMessageAvail
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigger> : produce_base<D, Windows::ApplicationModel::Background::IRfcommConnectionTrigger>
 {
-    HRESULT __stdcall get_InboundConnection(void** value) noexcept final
+    int32_t WINRT_CALL get_InboundConnection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InboundConnection, WINRT_WRAP(Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation));
             *value = detach_from<Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation>(this->shim().InboundConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutboundConnection(void** value) noexcept final
+    int32_t WINRT_CALL get_OutboundConnection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutboundConnection, WINRT_WRAP(Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation));
             *value = detach_from<Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation>(this->shim().OutboundConnection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowMultipleConnections(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowMultipleConnections(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowMultipleConnections, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowMultipleConnections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowMultipleConnections(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowMultipleConnections(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowMultipleConnections, WINRT_WRAP(void), bool);
             this->shim().AllowMultipleConnections(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(Windows::Networking::Sockets::SocketProtectionLevel));
             *value = detach_from<Windows::Networking::Sockets::SocketProtectionLevel>(this->shim().ProtectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept final
+    int32_t WINRT_CALL put_ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProtectionLevel, WINRT_WRAP(void), Windows::Networking::Sockets::SocketProtectionLevel const&);
             this->shim().ProtectionLevel(*reinterpret_cast<Windows::Networking::Sockets::SocketProtectionLevel const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RemoteHostName(void** value) noexcept final
+    int32_t WINRT_CALL get_RemoteHostName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteHostName, WINRT_WRAP(Windows::Networking::HostName));
             *value = detach_from<Windows::Networking::HostName>(this->shim().RemoteHostName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RemoteHostName(void* value) noexcept final
+    int32_t WINRT_CALL put_RemoteHostName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemoteHostName, WINRT_WRAP(void), Windows::Networking::HostName const&);
             this->shim().RemoteHostName(*reinterpret_cast<Windows::Networking::HostName const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3599,112 +3293,100 @@ struct produce<D, Windows::ApplicationModel::Background::ISensorDataThresholdTri
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>
 {
-    HRESULT __stdcall Create(void* threshold, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* threshold, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::SensorDataThresholdTrigger), Windows::Devices::Sensors::ISensorDataThreshold const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::SensorDataThresholdTrigger>(this->shim().Create(*reinterpret_cast<Windows::Devices::Sensors::ISensorDataThreshold const*>(&threshold)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISmartCardTrigger> : produce_base<D, Windows::ApplicationModel::Background::ISmartCardTrigger>
 {
-    HRESULT __stdcall get_TriggerType(Windows::Devices::SmartCards::SmartCardTriggerType* triggerType) noexcept final
+    int32_t WINRT_CALL get_TriggerType(Windows::Devices::SmartCards::SmartCardTriggerType* triggerType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerType, WINRT_WRAP(Windows::Devices::SmartCards::SmartCardTriggerType));
             *triggerType = detach_from<Windows::Devices::SmartCards::SmartCardTriggerType>(this->shim().TriggerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISmartCardTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ISmartCardTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::Devices::SmartCards::SmartCardTriggerType triggerType, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(Windows::Devices::SmartCards::SmartCardTriggerType triggerType, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::SmartCardTrigger), Windows::Devices::SmartCards::SmartCardTriggerType const&);
             *trigger = detach_from<Windows::ApplicationModel::Background::SmartCardTrigger>(this->shim().Create(*reinterpret_cast<Windows::Devices::SmartCards::SmartCardTriggerType const*>(&triggerType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>
 {
-    HRESULT __stdcall Create(void* filterRules, void** value) noexcept final
+    int32_t WINRT_CALL Create(void* filterRules, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::SmsMessageReceivedTrigger), Windows::Devices::Sms::SmsFilterRules const&);
             *value = detach_from<Windows::ApplicationModel::Background::SmsMessageReceivedTrigger>(this->shim().Create(*reinterpret_cast<Windows::Devices::Sms::SmsFilterRules const*>(&filterRules)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISocketActivityTrigger> : produce_base<D, Windows::ApplicationModel::Background::ISocketActivityTrigger>
 {
-    HRESULT __stdcall get_IsWakeFromLowPowerSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsWakeFromLowPowerSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWakeFromLowPowerSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsWakeFromLowPowerSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>
 {
-    HRESULT __stdcall Create(void* tracker, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* tracker, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::StorageLibraryChangeTrackerTrigger), Windows::Storage::StorageLibraryChangeTracker const&);
             *result = detach_from<Windows::ApplicationModel::Background::StorageLibraryChangeTrackerTrigger>(this->shim().Create(*reinterpret_cast<Windows::Storage::StorageLibraryChangeTracker const*>(&tracker)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3715,230 +3397,204 @@ struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentC
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics> : produce_base<D, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>
 {
-    HRESULT __stdcall Create(void* storageLibrary, void** result) noexcept final
+    int32_t WINRT_CALL Create(void* storageLibrary, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger), Windows::Storage::StorageLibrary const&);
             *result = detach_from<Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger>(this->shim().Create(*reinterpret_cast<Windows::Storage::StorageLibrary const*>(&storageLibrary)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromLibraries(void* storageLibraries, void** result) noexcept final
+    int32_t WINRT_CALL CreateFromLibraries(void* storageLibraries, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromLibraries, WINRT_WRAP(Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger), Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> const&);
             *result = detach_from<Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger>(this->shim().CreateFromLibraries(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> const*>(&storageLibraries)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISystemCondition> : produce_base<D, Windows::ApplicationModel::Background::ISystemCondition>
 {
-    HRESULT __stdcall get_ConditionType(Windows::ApplicationModel::Background::SystemConditionType* conditionType) noexcept final
+    int32_t WINRT_CALL get_ConditionType(Windows::ApplicationModel::Background::SystemConditionType* conditionType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConditionType, WINRT_WRAP(Windows::ApplicationModel::Background::SystemConditionType));
             *conditionType = detach_from<Windows::ApplicationModel::Background::SystemConditionType>(this->shim().ConditionType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISystemConditionFactory> : produce_base<D, Windows::ApplicationModel::Background::ISystemConditionFactory>
 {
-    HRESULT __stdcall Create(Windows::ApplicationModel::Background::SystemConditionType conditionType, void** condition) noexcept final
+    int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::SystemConditionType conditionType, void** condition) noexcept final
     {
         try
         {
             *condition = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::SystemCondition), Windows::ApplicationModel::Background::SystemConditionType const&);
             *condition = detach_from<Windows::ApplicationModel::Background::SystemCondition>(this->shim().Create(*reinterpret_cast<Windows::ApplicationModel::Background::SystemConditionType const*>(&conditionType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISystemTrigger> : produce_base<D, Windows::ApplicationModel::Background::ISystemTrigger>
 {
-    HRESULT __stdcall get_OneShot(bool* oneShot) noexcept final
+    int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OneShot, WINRT_WRAP(bool));
             *oneShot = detach_from<bool>(this->shim().OneShot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TriggerType(Windows::ApplicationModel::Background::SystemTriggerType* triggerType) noexcept final
+    int32_t WINRT_CALL get_TriggerType(Windows::ApplicationModel::Background::SystemTriggerType* triggerType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TriggerType, WINRT_WRAP(Windows::ApplicationModel::Background::SystemTriggerType));
             *triggerType = detach_from<Windows::ApplicationModel::Background::SystemTriggerType>(this->shim().TriggerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ISystemTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ISystemTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::SystemTrigger), Windows::ApplicationModel::Background::SystemTriggerType const&, bool);
             *trigger = detach_from<Windows::ApplicationModel::Background::SystemTrigger>(this->shim().Create(*reinterpret_cast<Windows::ApplicationModel::Background::SystemTriggerType const*>(&triggerType), oneShot));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ITimeTrigger> : produce_base<D, Windows::ApplicationModel::Background::ITimeTrigger>
 {
-    HRESULT __stdcall get_FreshnessTime(uint32_t* freshnessTime) noexcept final
+    int32_t WINRT_CALL get_FreshnessTime(uint32_t* freshnessTime) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FreshnessTime, WINRT_WRAP(uint32_t));
             *freshnessTime = detach_from<uint32_t>(this->shim().FreshnessTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OneShot(bool* oneShot) noexcept final
+    int32_t WINRT_CALL get_OneShot(bool* oneShot) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OneShot, WINRT_WRAP(bool));
             *oneShot = detach_from<bool>(this->shim().OneShot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::ITimeTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::ITimeTriggerFactory>
 {
-    HRESULT __stdcall Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(uint32_t freshnessTime, bool oneShot, void** trigger) noexcept final
     {
         try
         {
             *trigger = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::TimeTrigger), uint32_t, bool);
             *trigger = detach_from<Windows::ApplicationModel::Background::TimeTrigger>(this->shim().Create(freshnessTime, oneShot));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* applicationId, void** value) noexcept final
     {
         try
         {
-            *trigger = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *trigger = detach_from<Windows::ApplicationModel::Background::ToastNotificationActionTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::ToastNotificationActionTrigger), hstring const&);
+            *value = detach_from<Windows::ApplicationModel::Background::ToastNotificationActionTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&applicationId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>
 {
-    HRESULT __stdcall Create(HSTRING applicationId, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(void* applicationId, void** value) noexcept final
     {
         try
         {
-            *trigger = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *trigger = detach_from<Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&applicationId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger), hstring const&);
+            *value = detach_from<Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger>(this->shim().Create(*reinterpret_cast<hstring const*>(&applicationId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>
 {
-    HRESULT __stdcall Create(Windows::UI::Notifications::NotificationKinds notificationKinds, void** trigger) noexcept final
+    int32_t WINRT_CALL Create(Windows::UI::Notifications::NotificationKinds notificationKinds, void** value) noexcept final
     {
         try
         {
-            *trigger = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *trigger = detach_from<Windows::ApplicationModel::Background::UserNotificationChangedTrigger>(this->shim().Create(*reinterpret_cast<Windows::UI::Notifications::NotificationKinds const*>(&notificationKinds)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::ApplicationModel::Background::UserNotificationChangedTrigger), Windows::UI::Notifications::NotificationKinds const&);
+            *value = detach_from<Windows::ApplicationModel::Background::UserNotificationChangedTrigger>(this->shim().Create(*reinterpret_cast<Windows::UI::Notifications::NotificationKinds const*>(&notificationKinds)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3947,312 +3603,312 @@ struct produce<D, Windows::ApplicationModel::Background::IUserNotificationChange
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Background {
 
 inline ActivitySensorTrigger::ActivitySensorTrigger(uint32_t reportIntervalInMilliseconds) :
-    ActivitySensorTrigger(get_activation_factory<ActivitySensorTrigger, Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>().Create(reportIntervalInMilliseconds))
+    ActivitySensorTrigger(impl::call_factory<ActivitySensorTrigger, Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>([&](auto&& f) { return f.Create(reportIntervalInMilliseconds); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::AlarmAccessStatus> AlarmApplicationManager::RequestAccessAsync()
 {
-    return get_activation_factory<AlarmApplicationManager, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>().RequestAccessAsync();
+    return impl::call_factory<AlarmApplicationManager, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 inline Windows::ApplicationModel::Background::AlarmAccessStatus AlarmApplicationManager::GetAccessStatus()
 {
-    return get_activation_factory<AlarmApplicationManager, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>().GetAccessStatus();
+    return impl::call_factory<AlarmApplicationManager, Windows::ApplicationModel::Background::IAlarmApplicationManagerStatics>([&](auto&& f) { return f.GetAccessStatus(); });
 }
 
 inline AppBroadcastTrigger::AppBroadcastTrigger(param::hstring const& providerKey) :
-    AppBroadcastTrigger(get_activation_factory<AppBroadcastTrigger, Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>().CreateAppBroadcastTrigger(providerKey))
+    AppBroadcastTrigger(impl::call_factory<AppBroadcastTrigger, Windows::ApplicationModel::Background::IAppBroadcastTriggerFactory>([&](auto&& f) { return f.CreateAppBroadcastTrigger(providerKey); }))
 {}
 
 inline ApplicationTrigger::ApplicationTrigger() :
-    ApplicationTrigger(get_activation_factory<ApplicationTrigger>().ActivateInstance<ApplicationTrigger>())
+    ApplicationTrigger(impl::call_factory<ApplicationTrigger>([](auto&& f) { return f.template ActivateInstance<ApplicationTrigger>(); }))
 {}
 
 inline AppointmentStoreNotificationTrigger::AppointmentStoreNotificationTrigger() :
-    AppointmentStoreNotificationTrigger(get_activation_factory<AppointmentStoreNotificationTrigger>().ActivateInstance<AppointmentStoreNotificationTrigger>())
+    AppointmentStoreNotificationTrigger(impl::call_factory<AppointmentStoreNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<AppointmentStoreNotificationTrigger>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync()
 {
-    return get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().RequestAccessAsync();
+    return impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::BackgroundAccessStatus> BackgroundExecutionManager::RequestAccessAsync(param::hstring const& applicationId)
 {
-    return get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().RequestAccessAsync(applicationId);
+    return impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.RequestAccessAsync(applicationId); });
 }
 
 inline void BackgroundExecutionManager::RemoveAccess()
 {
-    get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().RemoveAccess();
+    impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.RemoveAccess(); });
 }
 
 inline void BackgroundExecutionManager::RemoveAccess(param::hstring const& applicationId)
 {
-    get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().RemoveAccess(applicationId);
+    impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.RemoveAccess(applicationId); });
 }
 
 inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus()
 {
-    return get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().GetAccessStatus();
+    return impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.GetAccessStatus(); });
 }
 
 inline Windows::ApplicationModel::Background::BackgroundAccessStatus BackgroundExecutionManager::GetAccessStatus(param::hstring const& applicationId)
 {
-    return get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>().GetAccessStatus(applicationId);
+    return impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>([&](auto&& f) { return f.GetAccessStatus(applicationId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<bool> BackgroundExecutionManager::RequestAccessKindAsync(Windows::ApplicationModel::Background::BackgroundAccessRequestKind const& requestedAccess, param::hstring const& reason)
 {
-    return get_activation_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>().RequestAccessKindAsync(requestedAccess, reason);
+    return impl::call_factory<BackgroundExecutionManager, Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics2>([&](auto&& f) { return f.RequestAccessKindAsync(requestedAccess, reason); });
 }
 
 inline BackgroundTaskBuilder::BackgroundTaskBuilder() :
-    BackgroundTaskBuilder(get_activation_factory<BackgroundTaskBuilder>().ActivateInstance<BackgroundTaskBuilder>())
+    BackgroundTaskBuilder(impl::call_factory<BackgroundTaskBuilder>([](auto&& f) { return f.template ActivateInstance<BackgroundTaskBuilder>(); }))
 {}
 
-inline Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> BackgroundTaskRegistration::AllTasks()
+inline Windows::Foundation::Collections::IMapView<winrt::guid, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> BackgroundTaskRegistration::AllTasks()
 {
-    return get_activation_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>().AllTasks();
+    return impl::call_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>([&](auto&& f) { return f.AllTasks(); });
 }
 
 inline Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> BackgroundTaskRegistration::AllTaskGroups()
 {
-    return get_activation_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>().AllTaskGroups();
+    return impl::call_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>([&](auto&& f) { return f.AllTaskGroups(); });
 }
 
 inline Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup BackgroundTaskRegistration::GetTaskGroup(param::hstring const& groupId)
 {
-    return get_activation_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>().GetTaskGroup(groupId);
+    return impl::call_factory<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>([&](auto&& f) { return f.GetTaskGroup(groupId); });
 }
 
 inline BackgroundTaskRegistrationGroup::BackgroundTaskRegistrationGroup(param::hstring const& id) :
-    BackgroundTaskRegistrationGroup(get_activation_factory<BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>().Create(id))
+    BackgroundTaskRegistrationGroup(impl::call_factory<BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>([&](auto&& f) { return f.Create(id); }))
 {}
 
 inline BackgroundTaskRegistrationGroup::BackgroundTaskRegistrationGroup(param::hstring const& id, param::hstring const& name) :
-    BackgroundTaskRegistrationGroup(get_activation_factory<BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>().CreateWithName(id, name))
+    BackgroundTaskRegistrationGroup(impl::call_factory<BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>([&](auto&& f) { return f.CreateWithName(id, name); }))
 {}
 
 inline Windows::ApplicationModel::Background::BackgroundWorkCostValue BackgroundWorkCost::CurrentBackgroundWorkCost()
 {
-    return get_activation_factory<BackgroundWorkCost, Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>().CurrentBackgroundWorkCost();
+    return impl::call_factory<BackgroundWorkCost, Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>([&](auto&& f) { return f.CurrentBackgroundWorkCost(); });
 }
 
 inline BluetoothLEAdvertisementPublisherTrigger::BluetoothLEAdvertisementPublisherTrigger() :
-    BluetoothLEAdvertisementPublisherTrigger(get_activation_factory<BluetoothLEAdvertisementPublisherTrigger>().ActivateInstance<BluetoothLEAdvertisementPublisherTrigger>())
+    BluetoothLEAdvertisementPublisherTrigger(impl::call_factory<BluetoothLEAdvertisementPublisherTrigger>([](auto&& f) { return f.template ActivateInstance<BluetoothLEAdvertisementPublisherTrigger>(); }))
 {}
 
 inline BluetoothLEAdvertisementWatcherTrigger::BluetoothLEAdvertisementWatcherTrigger() :
-    BluetoothLEAdvertisementWatcherTrigger(get_activation_factory<BluetoothLEAdvertisementWatcherTrigger>().ActivateInstance<BluetoothLEAdvertisementWatcherTrigger>())
+    BluetoothLEAdvertisementWatcherTrigger(impl::call_factory<BluetoothLEAdvertisementWatcherTrigger>([](auto&& f) { return f.template ActivateInstance<BluetoothLEAdvertisementWatcherTrigger>(); }))
 {}
 
 inline CachedFileUpdaterTrigger::CachedFileUpdaterTrigger() :
-    CachedFileUpdaterTrigger(get_activation_factory<CachedFileUpdaterTrigger>().ActivateInstance<CachedFileUpdaterTrigger>())
+    CachedFileUpdaterTrigger(impl::call_factory<CachedFileUpdaterTrigger>([](auto&& f) { return f.template ActivateInstance<CachedFileUpdaterTrigger>(); }))
 {}
 
 inline ChatMessageNotificationTrigger::ChatMessageNotificationTrigger() :
-    ChatMessageNotificationTrigger(get_activation_factory<ChatMessageNotificationTrigger>().ActivateInstance<ChatMessageNotificationTrigger>())
+    ChatMessageNotificationTrigger(impl::call_factory<ChatMessageNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<ChatMessageNotificationTrigger>(); }))
 {}
 
 inline ChatMessageReceivedNotificationTrigger::ChatMessageReceivedNotificationTrigger() :
-    ChatMessageReceivedNotificationTrigger(get_activation_factory<ChatMessageReceivedNotificationTrigger>().ActivateInstance<ChatMessageReceivedNotificationTrigger>())
+    ChatMessageReceivedNotificationTrigger(impl::call_factory<ChatMessageReceivedNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<ChatMessageReceivedNotificationTrigger>(); }))
 {}
 
 inline CommunicationBlockingAppSetAsActiveTrigger::CommunicationBlockingAppSetAsActiveTrigger() :
-    CommunicationBlockingAppSetAsActiveTrigger(get_activation_factory<CommunicationBlockingAppSetAsActiveTrigger>().ActivateInstance<CommunicationBlockingAppSetAsActiveTrigger>())
+    CommunicationBlockingAppSetAsActiveTrigger(impl::call_factory<CommunicationBlockingAppSetAsActiveTrigger>([](auto&& f) { return f.template ActivateInstance<CommunicationBlockingAppSetAsActiveTrigger>(); }))
 {}
 
 inline ContactStoreNotificationTrigger::ContactStoreNotificationTrigger() :
-    ContactStoreNotificationTrigger(get_activation_factory<ContactStoreNotificationTrigger>().ActivateInstance<ContactStoreNotificationTrigger>())
+    ContactStoreNotificationTrigger(impl::call_factory<ContactStoreNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<ContactStoreNotificationTrigger>(); }))
 {}
 
 inline ContentPrefetchTrigger::ContentPrefetchTrigger() :
-    ContentPrefetchTrigger(get_activation_factory<ContentPrefetchTrigger>().ActivateInstance<ContentPrefetchTrigger>())
+    ContentPrefetchTrigger(impl::call_factory<ContentPrefetchTrigger>([](auto&& f) { return f.template ActivateInstance<ContentPrefetchTrigger>(); }))
 {}
 
 inline ContentPrefetchTrigger::ContentPrefetchTrigger(Windows::Foundation::TimeSpan const& waitInterval) :
-    ContentPrefetchTrigger(get_activation_factory<ContentPrefetchTrigger, Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>().Create(waitInterval))
+    ContentPrefetchTrigger(impl::call_factory<ContentPrefetchTrigger, Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>([&](auto&& f) { return f.Create(waitInterval); }))
 {}
 
 inline CustomSystemEventTrigger::CustomSystemEventTrigger(param::hstring const& triggerId, Windows::ApplicationModel::Background::CustomSystemEventTriggerRecurrence const& recurrence) :
-    CustomSystemEventTrigger(get_activation_factory<CustomSystemEventTrigger, Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>().Create(triggerId, recurrence))
+    CustomSystemEventTrigger(impl::call_factory<CustomSystemEventTrigger, Windows::ApplicationModel::Background::ICustomSystemEventTriggerFactory>([&](auto&& f) { return f.Create(triggerId, recurrence); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> DeviceConnectionChangeTrigger::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<DeviceConnectionChangeTrigger, Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<DeviceConnectionChangeTrigger, Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline DeviceManufacturerNotificationTrigger::DeviceManufacturerNotificationTrigger(param::hstring const& triggerQualifier, bool oneShot) :
-    DeviceManufacturerNotificationTrigger(get_activation_factory<DeviceManufacturerNotificationTrigger, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>().Create(triggerQualifier, oneShot))
+    DeviceManufacturerNotificationTrigger(impl::call_factory<DeviceManufacturerNotificationTrigger, Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>([&](auto&& f) { return f.Create(triggerQualifier, oneShot); }))
 {}
 
 inline DeviceServicingTrigger::DeviceServicingTrigger() :
-    DeviceServicingTrigger(get_activation_factory<DeviceServicingTrigger>().ActivateInstance<DeviceServicingTrigger>())
+    DeviceServicingTrigger(impl::call_factory<DeviceServicingTrigger>([](auto&& f) { return f.template ActivateInstance<DeviceServicingTrigger>(); }))
 {}
 
 inline DeviceUseTrigger::DeviceUseTrigger() :
-    DeviceUseTrigger(get_activation_factory<DeviceUseTrigger>().ActivateInstance<DeviceUseTrigger>())
+    DeviceUseTrigger(impl::call_factory<DeviceUseTrigger>([](auto&& f) { return f.template ActivateInstance<DeviceUseTrigger>(); }))
 {}
 
 inline EmailStoreNotificationTrigger::EmailStoreNotificationTrigger() :
-    EmailStoreNotificationTrigger(get_activation_factory<EmailStoreNotificationTrigger>().ActivateInstance<EmailStoreNotificationTrigger>())
+    EmailStoreNotificationTrigger(impl::call_factory<EmailStoreNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<EmailStoreNotificationTrigger>(); }))
 {}
 
 inline GattCharacteristicNotificationTrigger::GattCharacteristicNotificationTrigger(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const& characteristic) :
-    GattCharacteristicNotificationTrigger(get_activation_factory<GattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>().Create(characteristic))
+    GattCharacteristicNotificationTrigger(impl::call_factory<GattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>([&](auto&& f) { return f.Create(characteristic); }))
 {}
 
 inline GattCharacteristicNotificationTrigger::GattCharacteristicNotificationTrigger(Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic const& characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode const& eventTriggeringMode) :
-    GattCharacteristicNotificationTrigger(get_activation_factory<GattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>().Create(characteristic, eventTriggeringMode))
+    GattCharacteristicNotificationTrigger(impl::call_factory<GattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>([&](auto&& f) { return f.Create(characteristic, eventTriggeringMode); }))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> GattServiceProviderTrigger::CreateAsync(param::hstring const& triggerId, GUID const& serviceUuid)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> GattServiceProviderTrigger::CreateAsync(param::hstring const& triggerId, winrt::guid const& serviceUuid)
 {
-    return get_activation_factory<GattServiceProviderTrigger, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>().CreateAsync(triggerId, serviceUuid);
+    return impl::call_factory<GattServiceProviderTrigger, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>([&](auto&& f) { return f.CreateAsync(triggerId, serviceUuid); });
 }
 
 inline GeovisitTrigger::GeovisitTrigger() :
-    GeovisitTrigger(get_activation_factory<GeovisitTrigger>().ActivateInstance<GeovisitTrigger>())
+    GeovisitTrigger(impl::call_factory<GeovisitTrigger>([](auto&& f) { return f.template ActivateInstance<GeovisitTrigger>(); }))
 {}
 
 inline LocationTrigger::LocationTrigger(Windows::ApplicationModel::Background::LocationTriggerType const& triggerType) :
-    LocationTrigger(get_activation_factory<LocationTrigger, Windows::ApplicationModel::Background::ILocationTriggerFactory>().Create(triggerType))
+    LocationTrigger(impl::call_factory<LocationTrigger, Windows::ApplicationModel::Background::ILocationTriggerFactory>([&](auto&& f) { return f.Create(triggerType); }))
 {}
 
 inline MaintenanceTrigger::MaintenanceTrigger(uint32_t freshnessTime, bool oneShot) :
-    MaintenanceTrigger(get_activation_factory<MaintenanceTrigger, Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>().Create(freshnessTime, oneShot))
+    MaintenanceTrigger(impl::call_factory<MaintenanceTrigger, Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>([&](auto&& f) { return f.Create(freshnessTime, oneShot); }))
 {}
 
 inline MediaProcessingTrigger::MediaProcessingTrigger() :
-    MediaProcessingTrigger(get_activation_factory<MediaProcessingTrigger>().ActivateInstance<MediaProcessingTrigger>())
+    MediaProcessingTrigger(impl::call_factory<MediaProcessingTrigger>([](auto&& f) { return f.template ActivateInstance<MediaProcessingTrigger>(); }))
 {}
 
 inline MobileBroadbandDeviceServiceNotificationTrigger::MobileBroadbandDeviceServiceNotificationTrigger() :
-    MobileBroadbandDeviceServiceNotificationTrigger(get_activation_factory<MobileBroadbandDeviceServiceNotificationTrigger>().ActivateInstance<MobileBroadbandDeviceServiceNotificationTrigger>())
+    MobileBroadbandDeviceServiceNotificationTrigger(impl::call_factory<MobileBroadbandDeviceServiceNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandDeviceServiceNotificationTrigger>(); }))
 {}
 
 inline MobileBroadbandPcoDataChangeTrigger::MobileBroadbandPcoDataChangeTrigger() :
-    MobileBroadbandPcoDataChangeTrigger(get_activation_factory<MobileBroadbandPcoDataChangeTrigger>().ActivateInstance<MobileBroadbandPcoDataChangeTrigger>())
+    MobileBroadbandPcoDataChangeTrigger(impl::call_factory<MobileBroadbandPcoDataChangeTrigger>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandPcoDataChangeTrigger>(); }))
 {}
 
 inline MobileBroadbandPinLockStateChangeTrigger::MobileBroadbandPinLockStateChangeTrigger() :
-    MobileBroadbandPinLockStateChangeTrigger(get_activation_factory<MobileBroadbandPinLockStateChangeTrigger>().ActivateInstance<MobileBroadbandPinLockStateChangeTrigger>())
+    MobileBroadbandPinLockStateChangeTrigger(impl::call_factory<MobileBroadbandPinLockStateChangeTrigger>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandPinLockStateChangeTrigger>(); }))
 {}
 
 inline MobileBroadbandRadioStateChangeTrigger::MobileBroadbandRadioStateChangeTrigger() :
-    MobileBroadbandRadioStateChangeTrigger(get_activation_factory<MobileBroadbandRadioStateChangeTrigger>().ActivateInstance<MobileBroadbandRadioStateChangeTrigger>())
+    MobileBroadbandRadioStateChangeTrigger(impl::call_factory<MobileBroadbandRadioStateChangeTrigger>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandRadioStateChangeTrigger>(); }))
 {}
 
 inline MobileBroadbandRegistrationStateChangeTrigger::MobileBroadbandRegistrationStateChangeTrigger() :
-    MobileBroadbandRegistrationStateChangeTrigger(get_activation_factory<MobileBroadbandRegistrationStateChangeTrigger>().ActivateInstance<MobileBroadbandRegistrationStateChangeTrigger>())
+    MobileBroadbandRegistrationStateChangeTrigger(impl::call_factory<MobileBroadbandRegistrationStateChangeTrigger>([](auto&& f) { return f.template ActivateInstance<MobileBroadbandRegistrationStateChangeTrigger>(); }))
 {}
 
 inline NetworkOperatorDataUsageTrigger::NetworkOperatorDataUsageTrigger() :
-    NetworkOperatorDataUsageTrigger(get_activation_factory<NetworkOperatorDataUsageTrigger>().ActivateInstance<NetworkOperatorDataUsageTrigger>())
+    NetworkOperatorDataUsageTrigger(impl::call_factory<NetworkOperatorDataUsageTrigger>([](auto&& f) { return f.template ActivateInstance<NetworkOperatorDataUsageTrigger>(); }))
 {}
 
 inline NetworkOperatorHotspotAuthenticationTrigger::NetworkOperatorHotspotAuthenticationTrigger() :
-    NetworkOperatorHotspotAuthenticationTrigger(get_activation_factory<NetworkOperatorHotspotAuthenticationTrigger>().ActivateInstance<NetworkOperatorHotspotAuthenticationTrigger>())
+    NetworkOperatorHotspotAuthenticationTrigger(impl::call_factory<NetworkOperatorHotspotAuthenticationTrigger>([](auto&& f) { return f.template ActivateInstance<NetworkOperatorHotspotAuthenticationTrigger>(); }))
 {}
 
 inline NetworkOperatorNotificationTrigger::NetworkOperatorNotificationTrigger(param::hstring const& networkAccountId) :
-    NetworkOperatorNotificationTrigger(get_activation_factory<NetworkOperatorNotificationTrigger, Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>().Create(networkAccountId))
+    NetworkOperatorNotificationTrigger(impl::call_factory<NetworkOperatorNotificationTrigger, Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>([&](auto&& f) { return f.Create(networkAccountId); }))
 {}
 
 inline PaymentAppCanMakePaymentTrigger::PaymentAppCanMakePaymentTrigger() :
-    PaymentAppCanMakePaymentTrigger(get_activation_factory<PaymentAppCanMakePaymentTrigger>().ActivateInstance<PaymentAppCanMakePaymentTrigger>())
+    PaymentAppCanMakePaymentTrigger(impl::call_factory<PaymentAppCanMakePaymentTrigger>([](auto&& f) { return f.template ActivateInstance<PaymentAppCanMakePaymentTrigger>(); }))
 {}
 
 inline PhoneTrigger::PhoneTrigger(Windows::ApplicationModel::Calls::Background::PhoneTriggerType const& type, bool oneShot) :
-    PhoneTrigger(get_activation_factory<PhoneTrigger, Windows::ApplicationModel::Background::IPhoneTriggerFactory>().Create(type, oneShot))
+    PhoneTrigger(impl::call_factory<PhoneTrigger, Windows::ApplicationModel::Background::IPhoneTriggerFactory>([&](auto&& f) { return f.Create(type, oneShot); }))
 {}
 
 inline PushNotificationTrigger::PushNotificationTrigger() :
-    PushNotificationTrigger(get_activation_factory<PushNotificationTrigger>().ActivateInstance<PushNotificationTrigger>())
+    PushNotificationTrigger(impl::call_factory<PushNotificationTrigger>([](auto&& f) { return f.template ActivateInstance<PushNotificationTrigger>(); }))
 {}
 
 inline PushNotificationTrigger::PushNotificationTrigger(param::hstring const& applicationId) :
-    PushNotificationTrigger(get_activation_factory<PushNotificationTrigger, Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>().Create(applicationId))
+    PushNotificationTrigger(impl::call_factory<PushNotificationTrigger, Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>([&](auto&& f) { return f.Create(applicationId); }))
 {}
 
 inline RcsEndUserMessageAvailableTrigger::RcsEndUserMessageAvailableTrigger() :
-    RcsEndUserMessageAvailableTrigger(get_activation_factory<RcsEndUserMessageAvailableTrigger>().ActivateInstance<RcsEndUserMessageAvailableTrigger>())
+    RcsEndUserMessageAvailableTrigger(impl::call_factory<RcsEndUserMessageAvailableTrigger>([](auto&& f) { return f.template ActivateInstance<RcsEndUserMessageAvailableTrigger>(); }))
 {}
 
 inline RfcommConnectionTrigger::RfcommConnectionTrigger() :
-    RfcommConnectionTrigger(get_activation_factory<RfcommConnectionTrigger>().ActivateInstance<RfcommConnectionTrigger>())
+    RfcommConnectionTrigger(impl::call_factory<RfcommConnectionTrigger>([](auto&& f) { return f.template ActivateInstance<RfcommConnectionTrigger>(); }))
 {}
 
 inline SecondaryAuthenticationFactorAuthenticationTrigger::SecondaryAuthenticationFactorAuthenticationTrigger() :
-    SecondaryAuthenticationFactorAuthenticationTrigger(get_activation_factory<SecondaryAuthenticationFactorAuthenticationTrigger>().ActivateInstance<SecondaryAuthenticationFactorAuthenticationTrigger>())
+    SecondaryAuthenticationFactorAuthenticationTrigger(impl::call_factory<SecondaryAuthenticationFactorAuthenticationTrigger>([](auto&& f) { return f.template ActivateInstance<SecondaryAuthenticationFactorAuthenticationTrigger>(); }))
 {}
 
 inline SensorDataThresholdTrigger::SensorDataThresholdTrigger(Windows::Devices::Sensors::ISensorDataThreshold const& threshold) :
-    SensorDataThresholdTrigger(get_activation_factory<SensorDataThresholdTrigger, Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>().Create(threshold))
+    SensorDataThresholdTrigger(impl::call_factory<SensorDataThresholdTrigger, Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>([&](auto&& f) { return f.Create(threshold); }))
 {}
 
 inline SmartCardTrigger::SmartCardTrigger(Windows::Devices::SmartCards::SmartCardTriggerType const& triggerType) :
-    SmartCardTrigger(get_activation_factory<SmartCardTrigger, Windows::ApplicationModel::Background::ISmartCardTriggerFactory>().Create(triggerType))
+    SmartCardTrigger(impl::call_factory<SmartCardTrigger, Windows::ApplicationModel::Background::ISmartCardTriggerFactory>([&](auto&& f) { return f.Create(triggerType); }))
 {}
 
 inline SmsMessageReceivedTrigger::SmsMessageReceivedTrigger(Windows::Devices::Sms::SmsFilterRules const& filterRules) :
-    SmsMessageReceivedTrigger(get_activation_factory<SmsMessageReceivedTrigger, Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>().Create(filterRules))
+    SmsMessageReceivedTrigger(impl::call_factory<SmsMessageReceivedTrigger, Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>([&](auto&& f) { return f.Create(filterRules); }))
 {}
 
 inline SocketActivityTrigger::SocketActivityTrigger() :
-    SocketActivityTrigger(get_activation_factory<SocketActivityTrigger>().ActivateInstance<SocketActivityTrigger>())
+    SocketActivityTrigger(impl::call_factory<SocketActivityTrigger>([](auto&& f) { return f.template ActivateInstance<SocketActivityTrigger>(); }))
 {}
 
 inline StorageLibraryChangeTrackerTrigger::StorageLibraryChangeTrackerTrigger(Windows::Storage::StorageLibraryChangeTracker const& tracker) :
-    StorageLibraryChangeTrackerTrigger(get_activation_factory<StorageLibraryChangeTrackerTrigger, Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>().Create(tracker))
+    StorageLibraryChangeTrackerTrigger(impl::call_factory<StorageLibraryChangeTrackerTrigger, Windows::ApplicationModel::Background::IStorageLibraryChangeTrackerTriggerFactory>([&](auto&& f) { return f.Create(tracker); }))
 {}
 
 inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::Create(Windows::Storage::StorageLibrary const& storageLibrary)
 {
-    return get_activation_factory<StorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>().Create(storageLibrary);
+    return impl::call_factory<StorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>([&](auto&& f) { return f.Create(storageLibrary); });
 }
 
 inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::CreateFromLibraries(param::iterable<Windows::Storage::StorageLibrary> const& storageLibraries)
 {
-    return get_activation_factory<StorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>().CreateFromLibraries(storageLibraries);
+    return impl::call_factory<StorageLibraryContentChangedTrigger, Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>([&](auto&& f) { return f.CreateFromLibraries(storageLibraries); });
 }
 
 inline SystemCondition::SystemCondition(Windows::ApplicationModel::Background::SystemConditionType const& conditionType) :
-    SystemCondition(get_activation_factory<SystemCondition, Windows::ApplicationModel::Background::ISystemConditionFactory>().Create(conditionType))
+    SystemCondition(impl::call_factory<SystemCondition, Windows::ApplicationModel::Background::ISystemConditionFactory>([&](auto&& f) { return f.Create(conditionType); }))
 {}
 
 inline SystemTrigger::SystemTrigger(Windows::ApplicationModel::Background::SystemTriggerType const& triggerType, bool oneShot) :
-    SystemTrigger(get_activation_factory<SystemTrigger, Windows::ApplicationModel::Background::ISystemTriggerFactory>().Create(triggerType, oneShot))
+    SystemTrigger(impl::call_factory<SystemTrigger, Windows::ApplicationModel::Background::ISystemTriggerFactory>([&](auto&& f) { return f.Create(triggerType, oneShot); }))
 {}
 
 inline TetheringEntitlementCheckTrigger::TetheringEntitlementCheckTrigger() :
-    TetheringEntitlementCheckTrigger(get_activation_factory<TetheringEntitlementCheckTrigger>().ActivateInstance<TetheringEntitlementCheckTrigger>())
+    TetheringEntitlementCheckTrigger(impl::call_factory<TetheringEntitlementCheckTrigger>([](auto&& f) { return f.template ActivateInstance<TetheringEntitlementCheckTrigger>(); }))
 {}
 
 inline TimeTrigger::TimeTrigger(uint32_t freshnessTime, bool oneShot) :
-    TimeTrigger(get_activation_factory<TimeTrigger, Windows::ApplicationModel::Background::ITimeTriggerFactory>().Create(freshnessTime, oneShot))
+    TimeTrigger(impl::call_factory<TimeTrigger, Windows::ApplicationModel::Background::ITimeTriggerFactory>([&](auto&& f) { return f.Create(freshnessTime, oneShot); }))
 {}
 
 inline ToastNotificationActionTrigger::ToastNotificationActionTrigger() :
-    ToastNotificationActionTrigger(get_activation_factory<ToastNotificationActionTrigger>().ActivateInstance<ToastNotificationActionTrigger>())
+    ToastNotificationActionTrigger(impl::call_factory<ToastNotificationActionTrigger>([](auto&& f) { return f.template ActivateInstance<ToastNotificationActionTrigger>(); }))
 {}
 
 inline ToastNotificationActionTrigger::ToastNotificationActionTrigger(param::hstring const& applicationId) :
-    ToastNotificationActionTrigger(get_activation_factory<ToastNotificationActionTrigger, Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>().Create(applicationId))
+    ToastNotificationActionTrigger(impl::call_factory<ToastNotificationActionTrigger, Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>([&](auto&& f) { return f.Create(applicationId); }))
 {}
 
 inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger() :
-    ToastNotificationHistoryChangedTrigger(get_activation_factory<ToastNotificationHistoryChangedTrigger>().ActivateInstance<ToastNotificationHistoryChangedTrigger>())
+    ToastNotificationHistoryChangedTrigger(impl::call_factory<ToastNotificationHistoryChangedTrigger>([](auto&& f) { return f.template ActivateInstance<ToastNotificationHistoryChangedTrigger>(); }))
 {}
 
 inline ToastNotificationHistoryChangedTrigger::ToastNotificationHistoryChangedTrigger(param::hstring const& applicationId) :
-    ToastNotificationHistoryChangedTrigger(get_activation_factory<ToastNotificationHistoryChangedTrigger, Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>().Create(applicationId))
+    ToastNotificationHistoryChangedTrigger(impl::call_factory<ToastNotificationHistoryChangedTrigger, Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>([&](auto&& f) { return f.Create(applicationId); }))
 {}
 
 inline UserNotificationChangedTrigger::UserNotificationChangedTrigger(Windows::UI::Notifications::NotificationKinds const& notificationKinds) :
-    UserNotificationChangedTrigger(get_activation_factory<UserNotificationChangedTrigger, Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>().Create(notificationKinds))
+    UserNotificationChangedTrigger(impl::call_factory<UserNotificationChangedTrigger, Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>([&](auto&& f) { return f.Create(notificationKinds); }))
 {}
 
 template <typename L> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceledEventHandler(L handler) :
@@ -4260,11 +3916,19 @@ template <typename L> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceled
 {}
 
 template <typename F> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceledEventHandler(F* handler) :
-    BackgroundTaskCanceledEventHandler([=](auto&&... args) { handler(args...); })
+    BackgroundTaskCanceledEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceledEventHandler(O* object, M method) :
-    BackgroundTaskCanceledEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    BackgroundTaskCanceledEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceledEventHandler(com_ptr<O>&& object, M method) :
+    BackgroundTaskCanceledEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskCanceledEventHandler::BackgroundTaskCanceledEventHandler(weak_ref<O>&& object, M method) :
+    BackgroundTaskCanceledEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void BackgroundTaskCanceledEventHandler::operator()(Windows::ApplicationModel::Background::IBackgroundTaskInstance const& sender, Windows::ApplicationModel::Background::BackgroundTaskCancellationReason const& reason) const
@@ -4277,11 +3941,19 @@ template <typename L> BackgroundTaskCompletedEventHandler::BackgroundTaskComplet
 {}
 
 template <typename F> BackgroundTaskCompletedEventHandler::BackgroundTaskCompletedEventHandler(F* handler) :
-    BackgroundTaskCompletedEventHandler([=](auto&&... args) { handler(args...); })
+    BackgroundTaskCompletedEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> BackgroundTaskCompletedEventHandler::BackgroundTaskCompletedEventHandler(O* object, M method) :
-    BackgroundTaskCompletedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    BackgroundTaskCompletedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskCompletedEventHandler::BackgroundTaskCompletedEventHandler(com_ptr<O>&& object, M method) :
+    BackgroundTaskCompletedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskCompletedEventHandler::BackgroundTaskCompletedEventHandler(weak_ref<O>&& object, M method) :
+    BackgroundTaskCompletedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void BackgroundTaskCompletedEventHandler::operator()(Windows::ApplicationModel::Background::BackgroundTaskRegistration const& sender, Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs const& args) const
@@ -4294,11 +3966,19 @@ template <typename L> BackgroundTaskProgressEventHandler::BackgroundTaskProgress
 {}
 
 template <typename F> BackgroundTaskProgressEventHandler::BackgroundTaskProgressEventHandler(F* handler) :
-    BackgroundTaskProgressEventHandler([=](auto&&... args) { handler(args...); })
+    BackgroundTaskProgressEventHandler([=](auto&&... args) { return handler(args...); })
 {}
 
 template <typename O, typename M> BackgroundTaskProgressEventHandler::BackgroundTaskProgressEventHandler(O* object, M method) :
-    BackgroundTaskProgressEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
+    BackgroundTaskProgressEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskProgressEventHandler::BackgroundTaskProgressEventHandler(com_ptr<O>&& object, M method) :
+    BackgroundTaskProgressEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+{}
+
+template <typename O, typename M> BackgroundTaskProgressEventHandler::BackgroundTaskProgressEventHandler(weak_ref<O>&& object, M method) :
+    BackgroundTaskProgressEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
 {}
 
 inline void BackgroundTaskProgressEventHandler::operator()(Windows::ApplicationModel::Background::BackgroundTaskRegistration const& sender, Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs const& args) const
@@ -4469,5 +4149,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Background::ToastNotifi
 template<> struct hash<winrt::Windows::ApplicationModel::Background::UserNotificationChangedTrigger> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Background::UserNotificationChangedTrigger> {};
 
 }
-
-WINRT_WARNING_POP

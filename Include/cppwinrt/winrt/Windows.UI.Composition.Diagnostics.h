@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.Composition.2.h"
@@ -52,98 +52,86 @@ template <typename D> Windows::UI::Composition::Diagnostics::CompositionDebugSet
 template <typename D>
 struct produce<D, Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps> : produce_base<D, Windows::UI::Composition::Diagnostics::ICompositionDebugHeatMaps>
 {
-    HRESULT __stdcall Hide(void* subtree) noexcept final
+    int32_t WINRT_CALL Hide(void* subtree) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hide, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().Hide(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&subtree));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowMemoryUsage(void* subtree) noexcept final
+    int32_t WINRT_CALL ShowMemoryUsage(void* subtree) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowMemoryUsage, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().ShowMemoryUsage(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&subtree));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowOverdraw(void* subtree, Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds contentKinds) noexcept final
+    int32_t WINRT_CALL ShowOverdraw(void* subtree, Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds contentKinds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowOverdraw, WINRT_WRAP(void), Windows::UI::Composition::Visual const&, Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds const&);
             this->shim().ShowOverdraw(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&subtree), *reinterpret_cast<Windows::UI::Composition::Diagnostics::CompositionDebugOverdrawContentKinds const*>(&contentKinds));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowRedraw(void* subtree) noexcept final
+    int32_t WINRT_CALL ShowRedraw(void* subtree) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowRedraw, WINRT_WRAP(void), Windows::UI::Composition::Visual const&);
             this->shim().ShowRedraw(*reinterpret_cast<Windows::UI::Composition::Visual const*>(&subtree));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::Diagnostics::ICompositionDebugSettings> : produce_base<D, Windows::UI::Composition::Diagnostics::ICompositionDebugSettings>
 {
-    HRESULT __stdcall get_HeatMaps(void** result) noexcept final
+    int32_t WINRT_CALL get_HeatMaps(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeatMaps, WINRT_WRAP(Windows::UI::Composition::Diagnostics::CompositionDebugHeatMaps));
             *result = detach_from<Windows::UI::Composition::Diagnostics::CompositionDebugHeatMaps>(this->shim().HeatMaps());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics> : produce_base<D, Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>
 {
-    HRESULT __stdcall TryGetSettings(void* compositor, void** result) noexcept final
+    int32_t WINRT_CALL TryGetSettings(void* compositor, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetSettings, WINRT_WRAP(Windows::UI::Composition::Diagnostics::CompositionDebugSettings), Windows::UI::Composition::Compositor const&);
             *result = detach_from<Windows::UI::Composition::Diagnostics::CompositionDebugSettings>(this->shim().TryGetSettings(*reinterpret_cast<Windows::UI::Composition::Compositor const*>(&compositor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -153,7 +141,7 @@ WINRT_EXPORT namespace winrt::Windows::UI::Composition::Diagnostics {
 
 inline Windows::UI::Composition::Diagnostics::CompositionDebugSettings CompositionDebugSettings::TryGetSettings(Windows::UI::Composition::Compositor const& compositor)
 {
-    return get_activation_factory<CompositionDebugSettings, Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>().TryGetSettings(compositor);
+    return impl::call_factory<CompositionDebugSettings, Windows::UI::Composition::Diagnostics::ICompositionDebugSettingsStatics>([&](auto&& f) { return f.TryGetSettings(compositor); });
 }
 
 }
@@ -167,5 +155,3 @@ template<> struct hash<winrt::Windows::UI::Composition::Diagnostics::Composition
 template<> struct hash<winrt::Windows::UI::Composition::Diagnostics::CompositionDebugSettings> : winrt::impl::hash_base<winrt::Windows::UI::Composition::Diagnostics::CompositionDebugSettings> {};
 
 }
-
-WINRT_WARNING_POP

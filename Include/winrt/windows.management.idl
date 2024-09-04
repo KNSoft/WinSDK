@@ -145,25 +145,22 @@ namespace Windows
 
         [activatable(Windows.Foundation.UniversalApiContract, 4.0)]
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
-        [marshaling_behavior(agile)]
-        [threading(both)]
+        [marshaling_behavior(standard)]
         runtimeclass MdmAlert
         {
             [default] interface Windows.Management.IMdmAlert;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
-        [marshaling_behavior(agile)]
-        [threading(both)]
+        [marshaling_behavior(standard)]
         runtimeclass MdmSession
         {
             [default] interface Windows.Management.IMdmSession;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
-        [marshaling_behavior(agile)]
+        [marshaling_behavior(standard)]
         [static(Windows.Management.IMdmSessionManagerStatics, Windows.Foundation.UniversalApiContract, 4.0)]
-        [threading(both)]
         runtimeclass MdmSessionManager
         {
         }

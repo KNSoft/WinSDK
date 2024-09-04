@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -24,19 +24,19 @@ template <> struct name<Windows::Foundation::Collections::IPropertySet>{ static 
 template <> struct name<Windows::Foundation::Collections::PropertySet>{ static constexpr auto & value{ L"Windows.Foundation.Collections.PropertySet" }; };
 template <> struct name<Windows::Foundation::Collections::StringMap>{ static constexpr auto & value{ L"Windows.Foundation.Collections.StringMap" }; };
 template <> struct name<Windows::Foundation::Collections::ValueSet>{ static constexpr auto & value{ L"Windows.Foundation.Collections.ValueSet" }; };
-template <> struct guid<Windows::Foundation::Collections::IPropertySet>{ static constexpr GUID value{ 0x8A43ED9F,0xF4E6,0x4421,{ 0xAC,0xF9,0x1D,0xAB,0x29,0x86,0x82,0x0C } }; };
+template <> struct guid_storage<Windows::Foundation::Collections::IPropertySet>{ static constexpr guid value{ 0x8A43ED9F,0xF4E6,0x4421,{ 0xAC,0xF9,0x1D,0xAB,0x29,0x86,0x82,0x0C } }; };
 template <> struct default_interface<Windows::Foundation::Collections::PropertySet>{ using type = Windows::Foundation::Collections::IPropertySet; };
 template <> struct default_interface<Windows::Foundation::Collections::StringMap>{ using type = Windows::Foundation::Collections::IMap<hstring, hstring>; };
 template <> struct default_interface<Windows::Foundation::Collections::ValueSet>{ using type = Windows::Foundation::Collections::IPropertySet; };
+
+template <> struct abi<Windows::Foundation::Collections::IPropertySet>{ struct type : IInspectable
+{
+};};
 
 template <typename D>
 struct consume_Windows_Foundation_Collections_IPropertySet
 {
 };
 template <> struct consume<Windows::Foundation::Collections::IPropertySet> { template <typename D> using type = consume_Windows_Foundation_Collections_IPropertySet<D>; };
-
-template <> struct abi<Windows::Foundation::Collections::IPropertySet>{ struct type : IInspectable
-{
-};};
 
 }

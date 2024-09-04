@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.viewmanagement.core.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -156,6 +164,22 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2 ABI::Windows::UI::ViewManagement::Core::ICoreInputView2
 
 #endif // ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                namespace Core {
+                    interface ICoreInputView3;
+                } /* Windows */
+            } /* UI */
+        } /* ViewManagement */
+    } /* Core */} /* ABI */
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 ABI::Windows::UI::ViewManagement::Core::ICoreInputView3
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputViewOcclusion_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputViewOcclusion_FWD_DEFINED__
@@ -487,6 +511,19 @@ namespace ABI {
             namespace ViewManagement {
                 namespace Core {
                     
+                    typedef enum CoreInputViewKind : int CoreInputViewKind;
+                    
+                } /* Windows */
+            } /* UI */
+        } /* ViewManagement */
+    } /* Core */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                namespace Core {
+                    
                     typedef enum CoreInputViewOcclusionKind : int CoreInputViewOcclusionKind;
                     
                 } /* Windows */
@@ -525,6 +562,38 @@ namespace ABI {
 
 
 
+
+
+
+/*
+ *
+ * Struct Windows.UI.ViewManagement.Core.CoreInputViewKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                namespace Core {
+                    /* [v1_enum, contract] */
+                    enum CoreInputViewKind : int
+                    {
+                        CoreInputViewKind_Default = 0,
+                        CoreInputViewKind_Keyboard = 1,
+                        CoreInputViewKind_Handwriting = 2,
+                        CoreInputViewKind_Emoji = 3,
+                    };
+                    
+                } /* Windows */
+            } /* UI */
+        } /* ViewManagement */
+    } /* Core */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -701,6 +770,56 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.Core.ICoreInputView3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.Core.CoreInputView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_Core_ICoreInputView3[] = L"Windows.UI.ViewManagement.Core.ICoreInputView3";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ViewManagement {
+                namespace Core {
+                    /* [object, uuid("BC941653-3AB9-4849-8F58-46E7F0353CFC"), exclusiveto, contract] */
+                    MIDL_INTERFACE("BC941653-3AB9-4849-8F58-46E7F0353CFC")
+                    ICoreInputView3 : public IInspectable
+                    {
+                    public:
+                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryShow(
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE TryShowWithKind(
+                            /* [in] */ABI::Windows::UI::ViewManagement::Core::CoreInputViewKind type,
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE TryHide(
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ICoreInputView3=_uuidof(ICoreInputView3);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* ViewManagement */
+    } /* Core */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -912,6 +1031,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputVie
  * Class implements the following interfaces:
  *    Windows.UI.ViewManagement.Core.ICoreInputView ** Default Interface **
  *    Windows.UI.ViewManagement.Core.ICoreInputView2
+ *    Windows.UI.ViewManagement.Core.ICoreInputView3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -1007,6 +1127,12 @@ typedef interface __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView __x
 typedef interface __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2 __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2;
 
 #endif // ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3;
+
+#endif // ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputViewOcclusion_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputViewOcclusion_FWD_DEFINED__
@@ -1473,6 +1599,9 @@ typedef struct __x_ABI_CWindows_CFoundation_CRect __x_ABI_CWindows_CFoundation_C
 
 
 
+typedef enum __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewKind __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewKind;
+
+
 typedef enum __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewOcclusionKind __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewOcclusionKind;
 
 
@@ -1496,6 +1625,28 @@ typedef enum __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewXYFocusTra
 
 
 
+
+
+
+/*
+ *
+ * Struct Windows.UI.ViewManagement.Core.CoreInputViewKind
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewKind
+{
+    CoreInputViewKind_Default = 0,
+    CoreInputViewKind_Keyboard = 1,
+    CoreInputViewKind_Handwriting = 2,
+    CoreInputViewKind_Emoji = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -1784,6 +1935,114 @@ interface __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2;
 #endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
+
+
+/*
+ *
+ * Interface Windows.UI.ViewManagement.Core.ICoreInputView3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ViewManagement.Core.CoreInputView
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ViewManagement_Core_ICoreInputView3[] = L"Windows.UI.ViewManagement.Core.ICoreInputView3";
+/* [object, uuid("BC941653-3AB9-4849-8F58-46E7F0353CFC"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *TryShow )(
+        __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *TryShowWithKind )(
+        __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+        /* [in] */__x_ABI_CWindows_CUI_CViewManagement_CCore_CCoreInputViewKind type,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryHide )(
+        __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3 * This,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3Vtbl;
+
+interface __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_TryShow(This,result) \
+    ( (This)->lpVtbl->TryShow(This,result) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_TryShowWithKind(This,type,result) \
+    ( (This)->lpVtbl->TryShowWithKind(This,type,result) )
+
+#define __x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_TryHide(This,result) \
+    ( (This)->lpVtbl->TryHide(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3;
+#endif /* !defined(____x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputView3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2227,6 +2486,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CViewManagement_CCore_CICoreInputVie
  * Class implements the following interfaces:
  *    Windows.UI.ViewManagement.Core.ICoreInputView ** Default Interface **
  *    Windows.UI.ViewManagement.Core.ICoreInputView2
+ *    Windows.UI.ViewManagement.Core.ICoreInputView3
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

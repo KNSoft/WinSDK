@@ -1333,7 +1333,8 @@ typedef union _MCG_STATUS {
         ULONG RestartIpValid:1;
         ULONG ErrorIpValid:1;
         ULONG MachineCheckInProgress:1;
-        ULONG Reserved1:29;
+        ULONG LocalMceValid:1;
+        ULONG Reserved1:28;
         ULONG Reserved2;
     } DUMMYSTRUCTNAME;
     ULONGLONG QuadPart;

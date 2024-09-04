@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -203,35 +203,35 @@ template <> struct name<Windows::Devices::Midi::MidiTimeCodeMessage>{ static con
 template <> struct name<Windows::Devices::Midi::MidiTimingClockMessage>{ static constexpr auto & value{ L"Windows.Devices.Midi.MidiTimingClockMessage" }; };
 template <> struct name<Windows::Devices::Midi::MidiTuneRequestMessage>{ static constexpr auto & value{ L"Windows.Devices.Midi.MidiTuneRequestMessage" }; };
 template <> struct name<Windows::Devices::Midi::MidiMessageType>{ static constexpr auto & value{ L"Windows.Devices.Midi.MidiMessageType" }; };
-template <> struct guid<Windows::Devices::Midi::IMidiChannelPressureMessage>{ static constexpr GUID value{ 0xBE1FA860,0x62B4,0x4D52,{ 0xA3,0x7E,0x92,0xE5,0x4D,0x35,0xB9,0x09 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiChannelPressureMessageFactory>{ static constexpr GUID value{ 0x6218ED2F,0x2284,0x412A,{ 0x94,0xCF,0x10,0xFB,0x04,0x84,0x2C,0x6C } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiControlChangeMessage>{ static constexpr GUID value{ 0xB7E15F83,0x780D,0x405F,{ 0xB7,0x81,0x3E,0x15,0x98,0xC9,0x7F,0x40 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiControlChangeMessageFactory>{ static constexpr GUID value{ 0x2AB14321,0x956C,0x46AD,{ 0x97,0x52,0xF8,0x7F,0x55,0x05,0x2F,0xE3 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiInPort>{ static constexpr GUID value{ 0xD5C1D9DB,0x971A,0x4EAF,{ 0xA2,0x3D,0xEA,0x19,0xFE,0x60,0x7F,0xF9 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiInPortStatics>{ static constexpr GUID value{ 0x44C439DC,0x67FF,0x4A6E,{ 0x8B,0xAC,0xFD,0xB6,0x61,0x0C,0xF2,0x96 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiMessage>{ static constexpr GUID value{ 0x79767945,0x1094,0x4283,{ 0x9B,0xE0,0x28,0x9F,0xC0,0xEE,0x83,0x34 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiMessageReceivedEventArgs>{ static constexpr GUID value{ 0x76566E56,0xF328,0x4B51,{ 0x90,0x7D,0xB3,0xA8,0xCE,0x96,0xBF,0x80 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiNoteOffMessage>{ static constexpr GUID value{ 0x16FD8AF4,0x198E,0x4D8F,{ 0xA6,0x54,0xD3,0x05,0xA2,0x93,0x54,0x8F } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiNoteOffMessageFactory>{ static constexpr GUID value{ 0xA6B240E0,0xA749,0x425F,{ 0x8A,0xF4,0xA4,0xD9,0x79,0xCC,0x15,0xB5 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiNoteOnMessage>{ static constexpr GUID value{ 0xE0224AF5,0x6181,0x46DD,{ 0xAF,0xA2,0x41,0x00,0x04,0xC0,0x57,0xAA } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiNoteOnMessageFactory>{ static constexpr GUID value{ 0x9B4280A0,0x59C1,0x420E,{ 0xB5,0x17,0x15,0xA1,0x0A,0xA9,0x60,0x6B } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiOutPort>{ static constexpr GUID value{ 0x931D6D9F,0x57A2,0x4A3A,{ 0xAD,0xB8,0x46,0x40,0x88,0x6F,0x66,0x93 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiOutPortStatics>{ static constexpr GUID value{ 0x065CC3E9,0x0F88,0x448B,{ 0x9B,0x64,0xA9,0x58,0x26,0xC6,0x5B,0x8F } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiPitchBendChangeMessage>{ static constexpr GUID value{ 0x29DF4CB1,0x2E9F,0x4FAF,{ 0x8C,0x2B,0x9C,0xB8,0x2A,0x90,0x79,0xCA } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory>{ static constexpr GUID value{ 0xF5EEDF55,0xCFC8,0x4926,{ 0xB3,0x0E,0xA3,0x62,0x23,0x93,0x30,0x6C } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage>{ static constexpr GUID value{ 0x1F7337FE,0xACE8,0x48A0,{ 0x86,0x8E,0x7C,0xDB,0xF2,0x0F,0x04,0xD6 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory>{ static constexpr GUID value{ 0xE98F483E,0xC4B3,0x4DD2,{ 0x91,0x7C,0xE3,0x49,0x81,0x5A,0x1B,0x3B } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiProgramChangeMessage>{ static constexpr GUID value{ 0x9CBB3C78,0x7A3E,0x4327,{ 0xAA,0x98,0x20,0xB8,0xE4,0x48,0x5A,0xF8 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiProgramChangeMessageFactory>{ static constexpr GUID value{ 0xD6B04387,0x524B,0x4104,{ 0x9C,0x99,0x65,0x72,0xBF,0xD2,0xE2,0x61 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSongPositionPointerMessage>{ static constexpr GUID value{ 0x4CA50C56,0xEC5E,0x4AE4,{ 0xA1,0x15,0x88,0xDC,0x57,0xCC,0x2B,0x79 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory>{ static constexpr GUID value{ 0x9C00E996,0xF10B,0x4FEA,{ 0xB3,0x95,0xF5,0xD6,0xCF,0x80,0xF6,0x4E } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSongSelectMessage>{ static constexpr GUID value{ 0x49F0F27F,0x6D83,0x4741,{ 0xA5,0xBF,0x46,0x29,0xF6,0xBE,0x97,0x4F } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSongSelectMessageFactory>{ static constexpr GUID value{ 0x848878E4,0x8748,0x4129,{ 0xA6,0x6C,0xA0,0x54,0x93,0xF7,0x5D,0xAA } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSynthesizer>{ static constexpr GUID value{ 0xF0DA155E,0xDB90,0x405F,{ 0xB8,0xAE,0x21,0xD2,0xE1,0x7F,0x2E,0x45 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSynthesizerStatics>{ static constexpr GUID value{ 0x4224EAA8,0x6629,0x4D6B,{ 0xAA,0x8F,0xD4,0x52,0x1A,0x5A,0x31,0xCE } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory>{ static constexpr GUID value{ 0x083DE222,0x3B74,0x4320,{ 0x9B,0x42,0x0C,0xA8,0x54,0x5F,0x8A,0x24 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiTimeCodeMessage>{ static constexpr GUID value{ 0x0BF7087D,0xFA63,0x4A1C,{ 0x8D,0xEB,0xC0,0xE8,0x77,0x96,0xA6,0xD7 } }; };
-template <> struct guid<Windows::Devices::Midi::IMidiTimeCodeMessageFactory>{ static constexpr GUID value{ 0xEB3099C5,0x771C,0x40DE,{ 0xB9,0x61,0x17,0x5A,0x74,0x89,0xA8,0x5E } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiChannelPressureMessage>{ static constexpr guid value{ 0xBE1FA860,0x62B4,0x4D52,{ 0xA3,0x7E,0x92,0xE5,0x4D,0x35,0xB9,0x09 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiChannelPressureMessageFactory>{ static constexpr guid value{ 0x6218ED2F,0x2284,0x412A,{ 0x94,0xCF,0x10,0xFB,0x04,0x84,0x2C,0x6C } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiControlChangeMessage>{ static constexpr guid value{ 0xB7E15F83,0x780D,0x405F,{ 0xB7,0x81,0x3E,0x15,0x98,0xC9,0x7F,0x40 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiControlChangeMessageFactory>{ static constexpr guid value{ 0x2AB14321,0x956C,0x46AD,{ 0x97,0x52,0xF8,0x7F,0x55,0x05,0x2F,0xE3 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiInPort>{ static constexpr guid value{ 0xD5C1D9DB,0x971A,0x4EAF,{ 0xA2,0x3D,0xEA,0x19,0xFE,0x60,0x7F,0xF9 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiInPortStatics>{ static constexpr guid value{ 0x44C439DC,0x67FF,0x4A6E,{ 0x8B,0xAC,0xFD,0xB6,0x61,0x0C,0xF2,0x96 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiMessage>{ static constexpr guid value{ 0x79767945,0x1094,0x4283,{ 0x9B,0xE0,0x28,0x9F,0xC0,0xEE,0x83,0x34 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiMessageReceivedEventArgs>{ static constexpr guid value{ 0x76566E56,0xF328,0x4B51,{ 0x90,0x7D,0xB3,0xA8,0xCE,0x96,0xBF,0x80 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiNoteOffMessage>{ static constexpr guid value{ 0x16FD8AF4,0x198E,0x4D8F,{ 0xA6,0x54,0xD3,0x05,0xA2,0x93,0x54,0x8F } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiNoteOffMessageFactory>{ static constexpr guid value{ 0xA6B240E0,0xA749,0x425F,{ 0x8A,0xF4,0xA4,0xD9,0x79,0xCC,0x15,0xB5 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiNoteOnMessage>{ static constexpr guid value{ 0xE0224AF5,0x6181,0x46DD,{ 0xAF,0xA2,0x41,0x00,0x04,0xC0,0x57,0xAA } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiNoteOnMessageFactory>{ static constexpr guid value{ 0x9B4280A0,0x59C1,0x420E,{ 0xB5,0x17,0x15,0xA1,0x0A,0xA9,0x60,0x6B } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiOutPort>{ static constexpr guid value{ 0x931D6D9F,0x57A2,0x4A3A,{ 0xAD,0xB8,0x46,0x40,0x88,0x6F,0x66,0x93 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiOutPortStatics>{ static constexpr guid value{ 0x065CC3E9,0x0F88,0x448B,{ 0x9B,0x64,0xA9,0x58,0x26,0xC6,0x5B,0x8F } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiPitchBendChangeMessage>{ static constexpr guid value{ 0x29DF4CB1,0x2E9F,0x4FAF,{ 0x8C,0x2B,0x9C,0xB8,0x2A,0x90,0x79,0xCA } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory>{ static constexpr guid value{ 0xF5EEDF55,0xCFC8,0x4926,{ 0xB3,0x0E,0xA3,0x62,0x23,0x93,0x30,0x6C } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage>{ static constexpr guid value{ 0x1F7337FE,0xACE8,0x48A0,{ 0x86,0x8E,0x7C,0xDB,0xF2,0x0F,0x04,0xD6 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory>{ static constexpr guid value{ 0xE98F483E,0xC4B3,0x4DD2,{ 0x91,0x7C,0xE3,0x49,0x81,0x5A,0x1B,0x3B } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiProgramChangeMessage>{ static constexpr guid value{ 0x9CBB3C78,0x7A3E,0x4327,{ 0xAA,0x98,0x20,0xB8,0xE4,0x48,0x5A,0xF8 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiProgramChangeMessageFactory>{ static constexpr guid value{ 0xD6B04387,0x524B,0x4104,{ 0x9C,0x99,0x65,0x72,0xBF,0xD2,0xE2,0x61 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSongPositionPointerMessage>{ static constexpr guid value{ 0x4CA50C56,0xEC5E,0x4AE4,{ 0xA1,0x15,0x88,0xDC,0x57,0xCC,0x2B,0x79 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory>{ static constexpr guid value{ 0x9C00E996,0xF10B,0x4FEA,{ 0xB3,0x95,0xF5,0xD6,0xCF,0x80,0xF6,0x4E } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSongSelectMessage>{ static constexpr guid value{ 0x49F0F27F,0x6D83,0x4741,{ 0xA5,0xBF,0x46,0x29,0xF6,0xBE,0x97,0x4F } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSongSelectMessageFactory>{ static constexpr guid value{ 0x848878E4,0x8748,0x4129,{ 0xA6,0x6C,0xA0,0x54,0x93,0xF7,0x5D,0xAA } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSynthesizer>{ static constexpr guid value{ 0xF0DA155E,0xDB90,0x405F,{ 0xB8,0xAE,0x21,0xD2,0xE1,0x7F,0x2E,0x45 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSynthesizerStatics>{ static constexpr guid value{ 0x4224EAA8,0x6629,0x4D6B,{ 0xAA,0x8F,0xD4,0x52,0x1A,0x5A,0x31,0xCE } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory>{ static constexpr guid value{ 0x083DE222,0x3B74,0x4320,{ 0x9B,0x42,0x0C,0xA8,0x54,0x5F,0x8A,0x24 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiTimeCodeMessage>{ static constexpr guid value{ 0x0BF7087D,0xFA63,0x4A1C,{ 0x8D,0xEB,0xC0,0xE8,0x77,0x96,0xA6,0xD7 } }; };
+template <> struct guid_storage<Windows::Devices::Midi::IMidiTimeCodeMessageFactory>{ static constexpr guid value{ 0xEB3099C5,0x771C,0x40DE,{ 0xB9,0x61,0x17,0x5A,0x74,0x89,0xA8,0x5E } }; };
 template <> struct default_interface<Windows::Devices::Midi::MidiActiveSensingMessage>{ using type = Windows::Devices::Midi::IMidiMessage; };
 template <> struct default_interface<Windows::Devices::Midi::MidiChannelPressureMessage>{ using type = Windows::Devices::Midi::IMidiChannelPressureMessage; };
 template <> struct default_interface<Windows::Devices::Midi::MidiContinueMessage>{ using type = Windows::Devices::Midi::IMidiMessage; };
@@ -254,6 +254,175 @@ template <> struct default_interface<Windows::Devices::Midi::MidiSystemResetMess
 template <> struct default_interface<Windows::Devices::Midi::MidiTimeCodeMessage>{ using type = Windows::Devices::Midi::IMidiTimeCodeMessage; };
 template <> struct default_interface<Windows::Devices::Midi::MidiTimingClockMessage>{ using type = Windows::Devices::Midi::IMidiMessage; };
 template <> struct default_interface<Windows::Devices::Midi::MidiTuneRequestMessage>{ using type = Windows::Devices::Midi::IMidiMessage; };
+
+template <> struct abi<Windows::Devices::Midi::IMidiChannelPressureMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiChannelPressureMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiControlChangeMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Controller(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlValue(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiControlChangeMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiInPort>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_MessageReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_MessageReceived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiInPortStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RawData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::Devices::Midi::MidiMessageType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiMessageReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiNoteOffMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Note(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Velocity(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiNoteOffMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiNoteOnMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Note(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Velocity(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiNoteOnMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiOutPort>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendMessage(void* midiMessage) noexcept = 0;
+    virtual int32_t WINRT_CALL SendBuffer(void* midiData) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiOutPortStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiPitchBendChangeMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Bend(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Note(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pressure(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiProgramChangeMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Channel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Program(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiProgramChangeMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSongPositionPointerMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Beats(uint16_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiSongPositionPointerMessage(uint16_t beats, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSongSelectMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Song(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSongSelectMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiSongSelectMessage(uint8_t song, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSynthesizer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AudioDevice(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Volume(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Volume(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSynthesizerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromAudioDeviceAsync(void* audioDevice, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsSynthesizer(void* midiDevice, bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiSystemExclusiveMessage(void* rawData, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiTimeCodeMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FrameType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Values(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Midi::IMidiTimeCodeMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values, void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Midi_IMidiChannelPressureMessage
@@ -289,10 +458,10 @@ template <> struct consume<Windows::Devices::Midi::IMidiControlChangeMessageFact
 template <typename D>
 struct consume_Windows_Devices_Midi_IMidiInPort
 {
-    event_token MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> const& handler) const;
-    using MessageReceived_revoker = event_revoker<Windows::Devices::Midi::IMidiInPort>;
+    winrt::event_token MessageReceived(Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> const& handler) const;
+    using MessageReceived_revoker = impl::event_revoker<Windows::Devices::Midi::IMidiInPort, &impl::abi_t<Windows::Devices::Midi::IMidiInPort>::remove_MessageReceived>;
     MessageReceived_revoker MessageReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> const& handler) const;
-    void MessageReceived(event_token const& token) const;
+    void MessageReceived(winrt::event_token const& token) const noexcept;
     hstring DeviceId() const;
 };
 template <> struct consume<Windows::Devices::Midi::IMidiInPort> { template <typename D> using type = consume_Windows_Devices_Midi_IMidiInPort<D>; };
@@ -483,174 +652,5 @@ struct consume_Windows_Devices_Midi_IMidiTimeCodeMessageFactory
     Windows::Devices::Midi::MidiTimeCodeMessage CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values) const;
 };
 template <> struct consume<Windows::Devices::Midi::IMidiTimeCodeMessageFactory> { template <typename D> using type = consume_Windows_Devices_Midi_IMidiTimeCodeMessageFactory<D>; };
-
-template <> struct abi<Windows::Devices::Midi::IMidiChannelPressureMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiChannelPressureMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiControlChangeMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Controller(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlValue(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiControlChangeMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiInPort>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_MessageReceived(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_MessageReceived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiInPortStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RawData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::Devices::Midi::MidiMessageType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiMessageReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Message(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiNoteOffMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Note(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Velocity(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiNoteOffMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiNoteOnMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Note(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Velocity(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiNoteOnMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiOutPort>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendMessage(void* midiMessage) noexcept = 0;
-    virtual HRESULT __stdcall SendBuffer(void* midiData) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiOutPortStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiPitchBendChangeMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Bend(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Note(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pressure(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiProgramChangeMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Channel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Program(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiProgramChangeMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSongPositionPointerMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Beats(uint16_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiSongPositionPointerMessage(uint16_t beats, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSongSelectMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Song(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSongSelectMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiSongSelectMessage(uint8_t song, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSynthesizer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AudioDevice(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Volume(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Volume(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSynthesizerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromAudioDeviceAsync(void* audioDevice, void** value) noexcept = 0;
-    virtual HRESULT __stdcall IsSynthesizer(void* midiDevice, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiSystemExclusiveMessage(void* rawData, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiTimeCodeMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FrameType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Values(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Midi::IMidiTimeCodeMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values, void** value) noexcept = 0;
-};};
 
 }

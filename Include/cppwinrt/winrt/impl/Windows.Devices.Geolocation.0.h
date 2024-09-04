@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -237,37 +237,37 @@ template <> struct name<Windows::Devices::Geolocation::PositionStatus>{ static c
 template <> struct name<Windows::Devices::Geolocation::VisitMonitoringScope>{ static constexpr auto & value{ L"Windows.Devices.Geolocation.VisitMonitoringScope" }; };
 template <> struct name<Windows::Devices::Geolocation::VisitStateChange>{ static constexpr auto & value{ L"Windows.Devices.Geolocation.VisitStateChange" }; };
 template <> struct name<Windows::Devices::Geolocation::BasicGeoposition>{ static constexpr auto & value{ L"Windows.Devices.Geolocation.BasicGeoposition" }; };
-template <> struct guid<Windows::Devices::Geolocation::ICivicAddress>{ static constexpr GUID value{ 0xA8567A1A,0x64F4,0x4D48,{ 0xBC,0xEA,0xF6,0xB0,0x08,0xEC,0xA3,0x4C } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoboundingBox>{ static constexpr GUID value{ 0x0896C80B,0x274F,0x43DA,{ 0x9A,0x06,0xCB,0xFC,0xDA,0xEB,0x4E,0xC2 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoboundingBoxFactory>{ static constexpr GUID value{ 0x4DFBA589,0x0411,0x4ABC,{ 0xB3,0xB5,0x5B,0xBC,0xCB,0x57,0xD9,0x8C } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoboundingBoxStatics>{ static constexpr GUID value{ 0x67B80708,0xE61A,0x4CD0,{ 0x84,0x1B,0x93,0x23,0x37,0x92,0xB5,0xCA } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocircle>{ static constexpr GUID value{ 0x39E45843,0xA7F9,0x4E63,{ 0x92,0xA7,0xBA,0x0C,0x28,0xD1,0x24,0xB1 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocircleFactory>{ static constexpr GUID value{ 0xAFD6531F,0x72B1,0x4F7D,{ 0x87,0xCC,0x4E,0xD4,0xC9,0x84,0x9C,0x05 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocoordinate>{ static constexpr GUID value{ 0xEE21A3AA,0x976A,0x4C70,{ 0x80,0x3D,0x08,0x3E,0xA5,0x5B,0xCB,0xC4 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocoordinateSatelliteData>{ static constexpr GUID value{ 0xC32A74D9,0x2608,0x474C,{ 0x91,0x2C,0x06,0xDD,0x49,0x0F,0x4A,0xF7 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocoordinateWithPoint>{ static constexpr GUID value{ 0xFEEA0525,0xD22C,0x4D46,{ 0xB5,0x27,0x0B,0x96,0x06,0x6F,0xC7,0xDB } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocoordinateWithPositionData>{ static constexpr GUID value{ 0x95E634BE,0xDBD6,0x40AC,{ 0xB8,0xF2,0xA6,0x5C,0x03,0x40,0xD9,0xA6 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>{ static constexpr GUID value{ 0x8543FC02,0xC9F1,0x4610,{ 0xAF,0xE0,0x8B,0xC3,0xA6,0xA8,0x70,0x36 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeolocator>{ static constexpr GUID value{ 0xA9C3BF62,0x4524,0x4989,{ 0x8A,0xA9,0xDE,0x01,0x9D,0x2E,0x55,0x1F } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeolocator2>{ static constexpr GUID value{ 0xD1B42E6D,0x8891,0x43B4,{ 0xAD,0x36,0x27,0xC6,0xFE,0x9A,0x97,0xB1 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeolocatorStatics>{ static constexpr GUID value{ 0x9A8E7571,0x2DF5,0x4591,{ 0x9F,0x87,0xEB,0x5F,0xD8,0x94,0xE9,0xB7 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeolocatorStatics2>{ static constexpr GUID value{ 0x993011A2,0xFA1C,0x4631,{ 0xA7,0x1D,0x0D,0xBE,0xB1,0x25,0x0D,0x9C } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>{ static constexpr GUID value{ 0x96F5D3C1,0xB80F,0x460A,{ 0x99,0x4D,0xA9,0x6C,0x47,0xA5,0x1A,0xA4 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeopath>{ static constexpr GUID value{ 0xE53FD7B9,0x2DA4,0x4714,{ 0xA6,0x52,0xDE,0x85,0x93,0x28,0x98,0x98 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeopathFactory>{ static constexpr GUID value{ 0x27BEA9C8,0xC7E7,0x4359,{ 0x9B,0x9B,0xFC,0xA3,0xE0,0x5E,0xF5,0x93 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeopoint>{ static constexpr GUID value{ 0x6BFA00EB,0xE56E,0x49BB,{ 0x9C,0xAF,0xCB,0xAA,0x78,0xA8,0xBC,0xEF } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeopointFactory>{ static constexpr GUID value{ 0xDB6B8D33,0x76BD,0x4E30,{ 0x8A,0xF7,0xA8,0x44,0xDC,0x37,0xB7,0xA0 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoposition>{ static constexpr GUID value{ 0xC18D0454,0x7D41,0x4FF7,{ 0xA9,0x57,0x9D,0xFF,0xB4,0xEF,0x7F,0x5B } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoposition2>{ static constexpr GUID value{ 0x7F62F697,0x8671,0x4B0D,{ 0x86,0xF8,0x47,0x4A,0x84,0x96,0x18,0x7C } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeoshape>{ static constexpr GUID value{ 0xC99CA2AF,0xC729,0x43C1,{ 0x8F,0xAB,0xD6,0xDE,0xC9,0x14,0xDF,0x7E } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeovisit>{ static constexpr GUID value{ 0xB1877A76,0x9EF6,0x41AB,{ 0xA0,0xDD,0x79,0x3E,0xCE,0x76,0xE2,0xDE } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeovisitMonitor>{ static constexpr GUID value{ 0x80118AAF,0x5944,0x4591,{ 0x83,0xC1,0x39,0x66,0x47,0xF5,0x4F,0x2C } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeovisitMonitorStatics>{ static constexpr GUID value{ 0xBCF976A7,0xBBF2,0x4CDD,{ 0x95,0xCF,0x55,0x4C,0x82,0xED,0xFB,0x87 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeovisitStateChangedEventArgs>{ static constexpr GUID value{ 0xCEB4D1FF,0x8B53,0x4968,{ 0xBE,0xED,0x4C,0xEC,0xD0,0x29,0xCE,0x15 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IGeovisitTriggerDetails>{ static constexpr GUID value{ 0xEA770D9E,0xD1C9,0x454B,{ 0x99,0xB7,0xB2,0xF8,0xCD,0xD2,0x48,0x2F } }; };
-template <> struct guid<Windows::Devices::Geolocation::IPositionChangedEventArgs>{ static constexpr GUID value{ 0x37859CE5,0x9D1E,0x46C5,{ 0xBF,0x3B,0x6A,0xD8,0xCA,0xC1,0xA0,0x93 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IStatusChangedEventArgs>{ static constexpr GUID value{ 0x3453D2DA,0x8C93,0x4111,{ 0xA2,0x05,0x9A,0xEC,0xFC,0x9B,0xE5,0xC0 } }; };
-template <> struct guid<Windows::Devices::Geolocation::IVenueData>{ static constexpr GUID value{ 0x66F39187,0x60E3,0x4B2F,{ 0xB5,0x27,0x4F,0x53,0xF1,0xC3,0xC6,0x77 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::ICivicAddress>{ static constexpr guid value{ 0xA8567A1A,0x64F4,0x4D48,{ 0xBC,0xEA,0xF6,0xB0,0x08,0xEC,0xA3,0x4C } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoboundingBox>{ static constexpr guid value{ 0x0896C80B,0x274F,0x43DA,{ 0x9A,0x06,0xCB,0xFC,0xDA,0xEB,0x4E,0xC2 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoboundingBoxFactory>{ static constexpr guid value{ 0x4DFBA589,0x0411,0x4ABC,{ 0xB3,0xB5,0x5B,0xBC,0xCB,0x57,0xD9,0x8C } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoboundingBoxStatics>{ static constexpr guid value{ 0x67B80708,0xE61A,0x4CD0,{ 0x84,0x1B,0x93,0x23,0x37,0x92,0xB5,0xCA } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocircle>{ static constexpr guid value{ 0x39E45843,0xA7F9,0x4E63,{ 0x92,0xA7,0xBA,0x0C,0x28,0xD1,0x24,0xB1 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocircleFactory>{ static constexpr guid value{ 0xAFD6531F,0x72B1,0x4F7D,{ 0x87,0xCC,0x4E,0xD4,0xC9,0x84,0x9C,0x05 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocoordinate>{ static constexpr guid value{ 0xEE21A3AA,0x976A,0x4C70,{ 0x80,0x3D,0x08,0x3E,0xA5,0x5B,0xCB,0xC4 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocoordinateSatelliteData>{ static constexpr guid value{ 0xC32A74D9,0x2608,0x474C,{ 0x91,0x2C,0x06,0xDD,0x49,0x0F,0x4A,0xF7 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocoordinateWithPoint>{ static constexpr guid value{ 0xFEEA0525,0xD22C,0x4D46,{ 0xB5,0x27,0x0B,0x96,0x06,0x6F,0xC7,0xDB } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocoordinateWithPositionData>{ static constexpr guid value{ 0x95E634BE,0xDBD6,0x40AC,{ 0xB8,0xF2,0xA6,0x5C,0x03,0x40,0xD9,0xA6 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>{ static constexpr guid value{ 0x8543FC02,0xC9F1,0x4610,{ 0xAF,0xE0,0x8B,0xC3,0xA6,0xA8,0x70,0x36 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeolocator>{ static constexpr guid value{ 0xA9C3BF62,0x4524,0x4989,{ 0x8A,0xA9,0xDE,0x01,0x9D,0x2E,0x55,0x1F } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeolocator2>{ static constexpr guid value{ 0xD1B42E6D,0x8891,0x43B4,{ 0xAD,0x36,0x27,0xC6,0xFE,0x9A,0x97,0xB1 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeolocatorStatics>{ static constexpr guid value{ 0x9A8E7571,0x2DF5,0x4591,{ 0x9F,0x87,0xEB,0x5F,0xD8,0x94,0xE9,0xB7 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeolocatorStatics2>{ static constexpr guid value{ 0x993011A2,0xFA1C,0x4631,{ 0xA7,0x1D,0x0D,0xBE,0xB1,0x25,0x0D,0x9C } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>{ static constexpr guid value{ 0x96F5D3C1,0xB80F,0x460A,{ 0x99,0x4D,0xA9,0x6C,0x47,0xA5,0x1A,0xA4 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeopath>{ static constexpr guid value{ 0xE53FD7B9,0x2DA4,0x4714,{ 0xA6,0x52,0xDE,0x85,0x93,0x28,0x98,0x98 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeopathFactory>{ static constexpr guid value{ 0x27BEA9C8,0xC7E7,0x4359,{ 0x9B,0x9B,0xFC,0xA3,0xE0,0x5E,0xF5,0x93 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeopoint>{ static constexpr guid value{ 0x6BFA00EB,0xE56E,0x49BB,{ 0x9C,0xAF,0xCB,0xAA,0x78,0xA8,0xBC,0xEF } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeopointFactory>{ static constexpr guid value{ 0xDB6B8D33,0x76BD,0x4E30,{ 0x8A,0xF7,0xA8,0x44,0xDC,0x37,0xB7,0xA0 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoposition>{ static constexpr guid value{ 0xC18D0454,0x7D41,0x4FF7,{ 0xA9,0x57,0x9D,0xFF,0xB4,0xEF,0x7F,0x5B } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoposition2>{ static constexpr guid value{ 0x7F62F697,0x8671,0x4B0D,{ 0x86,0xF8,0x47,0x4A,0x84,0x96,0x18,0x7C } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeoshape>{ static constexpr guid value{ 0xC99CA2AF,0xC729,0x43C1,{ 0x8F,0xAB,0xD6,0xDE,0xC9,0x14,0xDF,0x7E } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeovisit>{ static constexpr guid value{ 0xB1877A76,0x9EF6,0x41AB,{ 0xA0,0xDD,0x79,0x3E,0xCE,0x76,0xE2,0xDE } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeovisitMonitor>{ static constexpr guid value{ 0x80118AAF,0x5944,0x4591,{ 0x83,0xC1,0x39,0x66,0x47,0xF5,0x4F,0x2C } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeovisitMonitorStatics>{ static constexpr guid value{ 0xBCF976A7,0xBBF2,0x4CDD,{ 0x95,0xCF,0x55,0x4C,0x82,0xED,0xFB,0x87 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeovisitStateChangedEventArgs>{ static constexpr guid value{ 0xCEB4D1FF,0x8B53,0x4968,{ 0xBE,0xED,0x4C,0xEC,0xD0,0x29,0xCE,0x15 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IGeovisitTriggerDetails>{ static constexpr guid value{ 0xEA770D9E,0xD1C9,0x454B,{ 0x99,0xB7,0xB2,0xF8,0xCD,0xD2,0x48,0x2F } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IPositionChangedEventArgs>{ static constexpr guid value{ 0x37859CE5,0x9D1E,0x46C5,{ 0xBF,0x3B,0x6A,0xD8,0xCA,0xC1,0xA0,0x93 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IStatusChangedEventArgs>{ static constexpr guid value{ 0x3453D2DA,0x8C93,0x4111,{ 0xA2,0x05,0x9A,0xEC,0xFC,0x9B,0xE5,0xC0 } }; };
+template <> struct guid_storage<Windows::Devices::Geolocation::IVenueData>{ static constexpr guid value{ 0x66F39187,0x60E3,0x4B2F,{ 0xB5,0x27,0x4F,0x53,0xF1,0xC3,0xC6,0x77 } }; };
 template <> struct default_interface<Windows::Devices::Geolocation::CivicAddress>{ using type = Windows::Devices::Geolocation::ICivicAddress; };
 template <> struct default_interface<Windows::Devices::Geolocation::GeoboundingBox>{ using type = Windows::Devices::Geolocation::IGeoboundingBox; };
 template <> struct default_interface<Windows::Devices::Geolocation::Geocircle>{ using type = Windows::Devices::Geolocation::IGeocircle; };
@@ -284,6 +284,217 @@ template <> struct default_interface<Windows::Devices::Geolocation::GeovisitTrig
 template <> struct default_interface<Windows::Devices::Geolocation::PositionChangedEventArgs>{ using type = Windows::Devices::Geolocation::IPositionChangedEventArgs; };
 template <> struct default_interface<Windows::Devices::Geolocation::StatusChangedEventArgs>{ using type = Windows::Devices::Geolocation::IStatusChangedEventArgs; };
 template <> struct default_interface<Windows::Devices::Geolocation::VenueData>{ using type = Windows::Devices::Geolocation::IVenueData; };
+
+template <> struct abi<Windows::Devices::Geolocation::ICivicAddress>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Country(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_City(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PostalCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NorthwestCorner(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SoutheastCorner(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Center(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinAltitude(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAltitude(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBoxFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReference(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceAndSpatialReference(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBoxStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCompute(void* positions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryComputeWithAltitudeReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryComputeWithAltitudeReferenceAndSpatialReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocircle>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Center(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Radius(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocircleFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceSystem(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceSystemAndSpatialReferenceId(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocoordinate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Latitude(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Longitude(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Altitude(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Accuracy(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltitudeAccuracy(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Heading(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Speed(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateSatelliteData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PositionDilutionOfPrecision(void** ppValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalDilutionOfPrecision(void** ppValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalDilutionOfPrecision(void** ppValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPoint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Point(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPositionData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PositionSource(Windows::Devices::Geolocation::PositionSource* pValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SatelliteData(void** ppValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PositionSourceTimestamp(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeolocator>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredAccuracy(Windows::Devices::Geolocation::PositionAccuracy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredAccuracy(Windows::Devices::Geolocation::PositionAccuracy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MovementThreshold(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MovementThreshold(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReportInterval(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ReportInterval(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocationStatus(Windows::Devices::Geolocation::PositionStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGeopositionAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGeopositionAsyncWithAgeAndTimeout(Windows::Foundation::TimeSpan maximumAge, Windows::Foundation::TimeSpan timeout, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PositionChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PositionChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeolocator2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AllowFallbackToConsentlessPositions() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeolocatorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAccessAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGeopositionHistoryAsync(Windows::Foundation::DateTime startTime, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGeopositionHistoryWithDurationAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeolocatorStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsDefaultGeopositionRecommended(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DefaultGeoposition(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultGeoposition(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredAccuracyInMeters(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DesiredAccuracyInMeters(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeopath>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Positions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeopathFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* positions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceAndSpatialReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeopoint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeopointFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceSystem(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithAltitudeReferenceSystemAndSpatialReferenceId(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoposition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Coordinate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CivicAddress(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoposition2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_VenueData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeoshape>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GeoshapeType(Windows::Devices::Geolocation::GeoshapeType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SpatialReferenceId(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltitudeReferenceSystem(Windows::Devices::Geolocation::AltitudeReferenceSystem* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeovisit>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StateChange(Windows::Devices::Geolocation::VisitStateChange* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeovisitMonitor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_VisitStateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_VisitStateChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeovisitMonitorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetLastReportAsync(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeovisitStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Visit(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IGeovisitTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ReadReports(void** values) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IPositionChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Position(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IStatusChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Geolocation::PositionStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Geolocation::IVenueData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Level(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Geolocation_ICivicAddress
@@ -345,9 +556,9 @@ template <> struct consume<Windows::Devices::Geolocation::IGeocircleFactory> { t
 template <typename D>
 struct consume_Windows_Devices_Geolocation_IGeocoordinate
 {
-    [[deprecated("Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude")]] double Latitude() const;
-    [[deprecated("Longitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Longitude")]] double Longitude() const;
-    [[deprecated("Altitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Altitude")]] Windows::Foundation::IReference<double> Altitude() const;
+    double Latitude() const;
+    double Longitude() const;
+    Windows::Foundation::IReference<double> Altitude() const;
     double Accuracy() const;
     Windows::Foundation::IReference<double> AltitudeAccuracy() const;
     Windows::Foundation::IReference<double> Heading() const;
@@ -399,14 +610,14 @@ struct consume_Windows_Devices_Geolocation_IGeolocator
     Windows::Devices::Geolocation::PositionStatus LocationStatus() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> GetGeopositionAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> GetGeopositionAsync(Windows::Foundation::TimeSpan const& maximumAge, Windows::Foundation::TimeSpan const& timeout) const;
-    event_token PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> const& handler) const;
-    using PositionChanged_revoker = event_revoker<Windows::Devices::Geolocation::IGeolocator>;
+    winrt::event_token PositionChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> const& handler) const;
+    using PositionChanged_revoker = impl::event_revoker<Windows::Devices::Geolocation::IGeolocator, &impl::abi_t<Windows::Devices::Geolocation::IGeolocator>::remove_PositionChanged>;
     PositionChanged_revoker PositionChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> const& handler) const;
-    void PositionChanged(event_token const& token) const;
-    event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> const& handler) const;
-    using StatusChanged_revoker = event_revoker<Windows::Devices::Geolocation::IGeolocator>;
+    void PositionChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> const& handler) const;
+    using StatusChanged_revoker = impl::event_revoker<Windows::Devices::Geolocation::IGeolocator, &impl::abi_t<Windows::Devices::Geolocation::IGeolocator>::remove_StatusChanged>;
     StatusChanged_revoker StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> const& handler) const;
-    void StatusChanged(event_token const& token) const;
+    void StatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Geolocation::IGeolocator> { template <typename D> using type = consume_Windows_Devices_Geolocation_IGeolocator<D>; };
 
@@ -514,10 +725,10 @@ struct consume_Windows_Devices_Geolocation_IGeovisitMonitor
     Windows::Devices::Geolocation::VisitMonitoringScope MonitoringScope() const;
     void Start(Windows::Devices::Geolocation::VisitMonitoringScope const& value) const;
     void Stop() const;
-    event_token VisitStateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::GeovisitMonitor, Windows::Devices::Geolocation::GeovisitStateChangedEventArgs> const& handler) const;
-    using VisitStateChanged_revoker = event_revoker<Windows::Devices::Geolocation::IGeovisitMonitor>;
+    winrt::event_token VisitStateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::GeovisitMonitor, Windows::Devices::Geolocation::GeovisitStateChangedEventArgs> const& handler) const;
+    using VisitStateChanged_revoker = impl::event_revoker<Windows::Devices::Geolocation::IGeovisitMonitor, &impl::abi_t<Windows::Devices::Geolocation::IGeovisitMonitor>::remove_VisitStateChanged>;
     VisitStateChanged_revoker VisitStateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::GeovisitMonitor, Windows::Devices::Geolocation::GeovisitStateChangedEventArgs> const& handler) const;
-    void VisitStateChanged(event_token const& token) const;
+    void VisitStateChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Geolocation::IGeovisitMonitor> { template <typename D> using type = consume_Windows_Devices_Geolocation_IGeovisitMonitor<D>; };
 
@@ -572,216 +783,5 @@ struct struct_Windows_Devices_Geolocation_BasicGeoposition
 };
 template <> struct abi<Windows::Devices::Geolocation::BasicGeoposition>{ using type = struct_Windows_Devices_Geolocation_BasicGeoposition; };
 
-
-template <> struct abi<Windows::Devices::Geolocation::ICivicAddress>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Country(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_City(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PostalCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NorthwestCorner(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SoutheastCorner(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Center(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinAltitude(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAltitude(double* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBoxFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReference(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceAndSpatialReference(struct struct_Windows_Devices_Geolocation_BasicGeoposition northwestCorner, struct struct_Windows_Devices_Geolocation_BasicGeoposition southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoboundingBoxStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCompute(void* positions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryComputeWithAltitudeReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryComputeWithAltitudeReferenceAndSpatialReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocircle>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Center(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Radius(double* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocircleFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceSystem(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceSystemAndSpatialReferenceId(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocoordinate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Latitude(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Longitude(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Altitude(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Accuracy(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AltitudeAccuracy(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Heading(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Speed(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateSatelliteData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PositionDilutionOfPrecision(void** ppValue) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalDilutionOfPrecision(void** ppValue) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalDilutionOfPrecision(void** ppValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPoint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Point(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPositionData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PositionSource(Windows::Devices::Geolocation::PositionSource* pValue) noexcept = 0;
-    virtual HRESULT __stdcall get_SatelliteData(void** ppValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PositionSourceTimestamp(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeolocator>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredAccuracy(Windows::Devices::Geolocation::PositionAccuracy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredAccuracy(Windows::Devices::Geolocation::PositionAccuracy value) noexcept = 0;
-    virtual HRESULT __stdcall get_MovementThreshold(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MovementThreshold(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReportInterval(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ReportInterval(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocationStatus(Windows::Devices::Geolocation::PositionStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall GetGeopositionAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetGeopositionAsyncWithAgeAndTimeout(Windows::Foundation::TimeSpan maximumAge, Windows::Foundation::TimeSpan timeout, void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_PositionChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PositionChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_StatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeolocator2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AllowFallbackToConsentlessPositions() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeolocatorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAccessAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetGeopositionHistoryAsync(Windows::Foundation::DateTime startTime, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetGeopositionHistoryWithDurationAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeolocatorStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsDefaultGeopositionRecommended(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DefaultGeoposition(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultGeoposition(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredAccuracyInMeters(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DesiredAccuracyInMeters(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeopath>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Positions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeopathFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* positions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceAndSpatialReference(void* positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeopoint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(struct struct_Windows_Devices_Geolocation_BasicGeoposition* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeopointFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceSystem(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithAltitudeReferenceSystemAndSpatialReferenceId(struct struct_Windows_Devices_Geolocation_BasicGeoposition position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoposition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Coordinate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CivicAddress(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoposition2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_VenueData(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeoshape>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GeoshapeType(Windows::Devices::Geolocation::GeoshapeType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SpatialReferenceId(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AltitudeReferenceSystem(Windows::Devices::Geolocation::AltitudeReferenceSystem* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeovisit>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StateChange(Windows::Devices::Geolocation::VisitStateChange* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeovisitMonitor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MonitoringScope(Windows::Devices::Geolocation::VisitMonitoringScope* value) noexcept = 0;
-    virtual HRESULT __stdcall Start(Windows::Devices::Geolocation::VisitMonitoringScope value) noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_VisitStateChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_VisitStateChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeovisitMonitorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetLastReportAsync(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeovisitStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Visit(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IGeovisitTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ReadReports(void** values) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IPositionChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Position(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IStatusChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Geolocation::PositionStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Geolocation::IVenueData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Level(HSTRING* value) noexcept = 0;
-};};
 
 }

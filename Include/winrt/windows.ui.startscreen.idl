@@ -124,6 +124,8 @@ namespace Windows
 
             interface IStartScreenManager;
 
+            interface IStartScreenManager2;
+
             interface IStartScreenManagerStatics;
 
             interface ITileMixedRealityModel;
@@ -461,6 +463,17 @@ namespace Windows
                 HRESULT RequestAddAppListEntryAsync([in] Windows.ApplicationModel.Core.AppListEntry* appListEntry, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.UI.StartScreen.StartScreenManager)]
+            [uuid(08A716B6-316B-4AD9-ACB8-FE9CF00BD608)]
+            interface IStartScreenManager2 : IInspectable
+                requires
+                    Windows.UI.StartScreen.IStartScreenManager
+            {
+                HRESULT ContainsSecondaryTileAsync([in] HSTRING tileId, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TryRemoveSecondaryTileAsync([in] HSTRING tileId, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.UI.StartScreen.StartScreenManager)]
             [uuid(7865EF0F-B585-464E-8993-34E8F8738D48)]
@@ -537,6 +550,7 @@ namespace Windows
             [activatable(Windows.UI.StartScreen.ISecondaryTileFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [activatable(Windows.UI.StartScreen.ISecondaryTileFactory2, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.StartScreen.ISecondaryTileStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             runtimeclass SecondaryTile
             {
@@ -545,7 +559,7 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-            [marshaling_behavior(standard)]
+            [marshaling_behavior(agile)]
             runtimeclass SecondaryTileVisualElements
             {
                 [default] interface Windows.UI.StartScreen.ISecondaryTileVisualElements;
@@ -555,14 +569,16 @@ namespace Windows
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
+            [marshaling_behavior(agile)]
             [static(Windows.UI.StartScreen.IStartScreenManagerStatics, Windows.Foundation.UniversalApiContract, 4.0)]
             runtimeclass StartScreenManager
             {
                 [default] interface Windows.UI.StartScreen.IStartScreenManager;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.UI.StartScreen.IStartScreenManager2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 5.0)]
-            [marshaling_behavior(standard)]
+            [marshaling_behavior(agile)]
             runtimeclass TileMixedRealityModel
             {
                 [default] interface Windows.UI.StartScreen.ITileMixedRealityModel;

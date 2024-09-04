@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -224,26 +224,26 @@ template <> struct name<Windows::Media::Effects::VideoTransformSphericalProjecti
 template <> struct name<Windows::Media::Effects::AudioEffectType>{ static constexpr auto & value{ L"Windows.Media.Effects.AudioEffectType" }; };
 template <> struct name<Windows::Media::Effects::MediaEffectClosedReason>{ static constexpr auto & value{ L"Windows.Media.Effects.MediaEffectClosedReason" }; };
 template <> struct name<Windows::Media::Effects::MediaMemoryTypes>{ static constexpr auto & value{ L"Windows.Media.Effects.MediaMemoryTypes" }; };
-template <> struct guid<Windows::Media::Effects::IAudioCaptureEffectsManager>{ static constexpr GUID value{ 0x8F85C271,0x038D,0x4393,{ 0x82,0x98,0x54,0x01,0x10,0x60,0x8E,0xEF } }; };
-template <> struct guid<Windows::Media::Effects::IAudioEffect>{ static constexpr GUID value{ 0x34AAFA51,0x9207,0x4055,{ 0xBE,0x93,0x6E,0x57,0x34,0xA8,0x6A,0xE4 } }; };
-template <> struct guid<Windows::Media::Effects::IAudioEffectDefinition>{ static constexpr GUID value{ 0xE4D7F974,0x7D80,0x4F73,{ 0x90,0x89,0xE3,0x1C,0x9D,0xB9,0xC2,0x94 } }; };
-template <> struct guid<Windows::Media::Effects::IAudioEffectDefinitionFactory>{ static constexpr GUID value{ 0x8E1DA646,0xE705,0x45ED,{ 0x8A,0x2B,0xFC,0x4E,0x4F,0x40,0x5A,0x97 } }; };
-template <> struct guid<Windows::Media::Effects::IAudioEffectsManagerStatics>{ static constexpr GUID value{ 0x66406C04,0x86FA,0x47CC,{ 0xA3,0x15,0xF4,0x89,0xD8,0xC3,0xFE,0x10 } }; };
-template <> struct guid<Windows::Media::Effects::IAudioRenderEffectsManager>{ static constexpr GUID value{ 0x4DC98966,0x8751,0x42B2,{ 0xBF,0xCB,0x39,0xCA,0x78,0x64,0xBD,0x47 } }; };
-template <> struct guid<Windows::Media::Effects::IAudioRenderEffectsManager2>{ static constexpr GUID value{ 0xA844CD09,0x5ECC,0x44B3,{ 0xBB,0x4E,0x1D,0xB0,0x72,0x87,0x13,0x9C } }; };
-template <> struct guid<Windows::Media::Effects::IBasicAudioEffect>{ static constexpr GUID value{ 0x8C062C53,0x6BC0,0x48B8,{ 0xA9,0x9A,0x4B,0x41,0x55,0x0F,0x13,0x59 } }; };
-template <> struct guid<Windows::Media::Effects::IBasicVideoEffect>{ static constexpr GUID value{ 0x8262C7EF,0xB360,0x40BE,{ 0x94,0x9B,0x2F,0xF4,0x2F,0xF3,0x56,0x93 } }; };
-template <> struct guid<Windows::Media::Effects::ICompositeVideoFrameContext>{ static constexpr GUID value{ 0x6C30024B,0xF514,0x4278,{ 0xA5,0xF7,0xB9,0x18,0x80,0x49,0xD1,0x10 } }; };
-template <> struct guid<Windows::Media::Effects::IProcessAudioFrameContext>{ static constexpr GUID value{ 0x4CD92946,0x1222,0x4A27,{ 0xA5,0x86,0xFB,0x3E,0x20,0x27,0x32,0x55 } }; };
-template <> struct guid<Windows::Media::Effects::IProcessVideoFrameContext>{ static constexpr GUID value{ 0x276F0E2B,0x6461,0x401E,{ 0xBA,0x78,0x0F,0xDA,0xD6,0x11,0x4E,0xEC } }; };
-template <> struct guid<Windows::Media::Effects::IVideoCompositor>{ static constexpr GUID value{ 0x8510B43E,0x420C,0x420F,{ 0x96,0xC7,0x7C,0x98,0xBB,0xA1,0xFC,0x55 } }; };
-template <> struct guid<Windows::Media::Effects::IVideoCompositorDefinition>{ static constexpr GUID value{ 0x7946B8D0,0x2010,0x4AE3,{ 0x9A,0xB2,0x2C,0xEF,0x42,0xED,0xD4,0xD2 } }; };
-template <> struct guid<Windows::Media::Effects::IVideoCompositorDefinitionFactory>{ static constexpr GUID value{ 0x4366FD10,0x68B8,0x4D52,{ 0x89,0xB6,0x02,0xA9,0x68,0xCC,0xA8,0x99 } }; };
-template <> struct guid<Windows::Media::Effects::IVideoEffectDefinition>{ static constexpr GUID value{ 0x39F38CF0,0x8D0F,0x4F3E,{ 0x84,0xFC,0x2D,0x46,0xA5,0x29,0x79,0x43 } }; };
-template <> struct guid<Windows::Media::Effects::IVideoEffectDefinitionFactory>{ static constexpr GUID value{ 0x81439B4E,0x6E33,0x428F,{ 0x9D,0x21,0xB5,0xAA,0xFE,0xF7,0x61,0x7C } }; };
-template <> struct guid<Windows::Media::Effects::IVideoTransformEffectDefinition>{ static constexpr GUID value{ 0x9664BB6A,0x1EA6,0x4AA6,{ 0x80,0x74,0xAB,0xE8,0x85,0x1E,0xCA,0xE2 } }; };
-template <> struct guid<Windows::Media::Effects::IVideoTransformEffectDefinition2>{ static constexpr GUID value{ 0xF0A8089F,0x66C8,0x4694,{ 0x9F,0xD9,0x11,0x36,0xAB,0xF7,0x44,0x4A } }; };
-template <> struct guid<Windows::Media::Effects::IVideoTransformSphericalProjection>{ static constexpr GUID value{ 0xCF4401F0,0x9BF2,0x4C39,{ 0x9F,0x41,0xE0,0x22,0x51,0x4A,0x84,0x68 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioCaptureEffectsManager>{ static constexpr guid value{ 0x8F85C271,0x038D,0x4393,{ 0x82,0x98,0x54,0x01,0x10,0x60,0x8E,0xEF } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioEffect>{ static constexpr guid value{ 0x34AAFA51,0x9207,0x4055,{ 0xBE,0x93,0x6E,0x57,0x34,0xA8,0x6A,0xE4 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioEffectDefinition>{ static constexpr guid value{ 0xE4D7F974,0x7D80,0x4F73,{ 0x90,0x89,0xE3,0x1C,0x9D,0xB9,0xC2,0x94 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioEffectDefinitionFactory>{ static constexpr guid value{ 0x8E1DA646,0xE705,0x45ED,{ 0x8A,0x2B,0xFC,0x4E,0x4F,0x40,0x5A,0x97 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioEffectsManagerStatics>{ static constexpr guid value{ 0x66406C04,0x86FA,0x47CC,{ 0xA3,0x15,0xF4,0x89,0xD8,0xC3,0xFE,0x10 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioRenderEffectsManager>{ static constexpr guid value{ 0x4DC98966,0x8751,0x42B2,{ 0xBF,0xCB,0x39,0xCA,0x78,0x64,0xBD,0x47 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IAudioRenderEffectsManager2>{ static constexpr guid value{ 0xA844CD09,0x5ECC,0x44B3,{ 0xBB,0x4E,0x1D,0xB0,0x72,0x87,0x13,0x9C } }; };
+template <> struct guid_storage<Windows::Media::Effects::IBasicAudioEffect>{ static constexpr guid value{ 0x8C062C53,0x6BC0,0x48B8,{ 0xA9,0x9A,0x4B,0x41,0x55,0x0F,0x13,0x59 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IBasicVideoEffect>{ static constexpr guid value{ 0x8262C7EF,0xB360,0x40BE,{ 0x94,0x9B,0x2F,0xF4,0x2F,0xF3,0x56,0x93 } }; };
+template <> struct guid_storage<Windows::Media::Effects::ICompositeVideoFrameContext>{ static constexpr guid value{ 0x6C30024B,0xF514,0x4278,{ 0xA5,0xF7,0xB9,0x18,0x80,0x49,0xD1,0x10 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IProcessAudioFrameContext>{ static constexpr guid value{ 0x4CD92946,0x1222,0x4A27,{ 0xA5,0x86,0xFB,0x3E,0x20,0x27,0x32,0x55 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IProcessVideoFrameContext>{ static constexpr guid value{ 0x276F0E2B,0x6461,0x401E,{ 0xBA,0x78,0x0F,0xDA,0xD6,0x11,0x4E,0xEC } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoCompositor>{ static constexpr guid value{ 0x8510B43E,0x420C,0x420F,{ 0x96,0xC7,0x7C,0x98,0xBB,0xA1,0xFC,0x55 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoCompositorDefinition>{ static constexpr guid value{ 0x7946B8D0,0x2010,0x4AE3,{ 0x9A,0xB2,0x2C,0xEF,0x42,0xED,0xD4,0xD2 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoCompositorDefinitionFactory>{ static constexpr guid value{ 0x4366FD10,0x68B8,0x4D52,{ 0x89,0xB6,0x02,0xA9,0x68,0xCC,0xA8,0x99 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoEffectDefinition>{ static constexpr guid value{ 0x39F38CF0,0x8D0F,0x4F3E,{ 0x84,0xFC,0x2D,0x46,0xA5,0x29,0x79,0x43 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoEffectDefinitionFactory>{ static constexpr guid value{ 0x81439B4E,0x6E33,0x428F,{ 0x9D,0x21,0xB5,0xAA,0xFE,0xF7,0x61,0x7C } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoTransformEffectDefinition>{ static constexpr guid value{ 0x9664BB6A,0x1EA6,0x4AA6,{ 0x80,0x74,0xAB,0xE8,0x85,0x1E,0xCA,0xE2 } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoTransformEffectDefinition2>{ static constexpr guid value{ 0xF0A8089F,0x66C8,0x4694,{ 0x9F,0xD9,0x11,0x36,0xAB,0xF7,0x44,0x4A } }; };
+template <> struct guid_storage<Windows::Media::Effects::IVideoTransformSphericalProjection>{ static constexpr guid value{ 0xCF4401F0,0x9BF2,0x4C39,{ 0x9F,0x41,0xE0,0x22,0x51,0x4A,0x84,0x68 } }; };
 template <> struct default_interface<Windows::Media::Effects::AudioCaptureEffectsManager>{ using type = Windows::Media::Effects::IAudioCaptureEffectsManager; };
 template <> struct default_interface<Windows::Media::Effects::AudioEffect>{ using type = Windows::Media::Effects::IAudioEffect; };
 template <> struct default_interface<Windows::Media::Effects::AudioEffectDefinition>{ using type = Windows::Media::Effects::IAudioEffectDefinition; };
@@ -256,13 +256,169 @@ template <> struct default_interface<Windows::Media::Effects::VideoEffectDefinit
 template <> struct default_interface<Windows::Media::Effects::VideoTransformEffectDefinition>{ using type = Windows::Media::Effects::IVideoEffectDefinition; };
 template <> struct default_interface<Windows::Media::Effects::VideoTransformSphericalProjection>{ using type = Windows::Media::Effects::IVideoTransformSphericalProjection; };
 
+template <> struct abi<Windows::Media::Effects::IAudioCaptureEffectsManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_AudioCaptureEffectsChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AudioCaptureEffectsChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAudioCaptureEffects(void** effects) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AudioEffectType(Windows::Media::Effects::AudioEffectType* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioEffectDefinition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioEffectDefinitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioEffectsManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAudioRenderEffectsManager(void* deviceId, Windows::Media::Render::AudioRenderCategory category, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAudioRenderEffectsManagerWithMode(void* deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAudioCaptureEffectsManager(void* deviceId, Windows::Media::Capture::MediaCategory category, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAudioCaptureEffectsManagerWithMode(void* deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioRenderEffectsManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_AudioRenderEffectsChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AudioRenderEffectsChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAudioRenderEffects(void** effects) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IAudioRenderEffectsManager2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EffectsProviderThumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EffectsProviderSettingsLabel(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowSettingsUI() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IBasicAudioEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UseInputFrameForOutput(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedEncodingProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEncodingProperties(void* encodingProperties) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessFrame(void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
+    virtual int32_t WINRT_CALL DiscardQueuedFrames() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IBasicVideoEffect>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsReadOnly(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedMemoryTypes(Windows::Media::Effects::MediaMemoryTypes* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TimeIndependent(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedEncodingProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEncodingProperties(void* encodingProperties, void* device) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessFrame(void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
+    virtual int32_t WINRT_CALL DiscardQueuedFrames() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::ICompositeVideoFrameContext>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SurfacesToOverlay(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetOverlayForSurface(void* surfaceToOverlay, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IProcessAudioFrameContext>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InputFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IProcessVideoFrameContext>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InputFrame(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputFrame(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoCompositor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TimeIndependent(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEncodingProperties(void* backgroundProperties, void* device) noexcept = 0;
+    virtual int32_t WINRT_CALL CompositeFrame(void* context) noexcept = 0;
+    virtual int32_t WINRT_CALL Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
+    virtual int32_t WINRT_CALL DiscardQueuedFrames() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoCompositorDefinition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoCompositorDefinitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoEffectDefinition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActivatableClassId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoEffectDefinitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* activatableClassId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithProperties(void* activatableClassId, void* props, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoTransformEffectDefinition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PaddingColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PaddingColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutputSize(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutputSize(Windows::Foundation::Size value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CropRectangle(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CropRectangle(Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rotation(Windows::Media::MediaProperties::MediaRotation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rotation(Windows::Media::MediaProperties::MediaRotation value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoTransformEffectDefinition2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SphericalProjection(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::Effects::IVideoTransformSphericalProjection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalFieldOfViewInDegrees(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalFieldOfViewInDegrees(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ViewOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ViewOrientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Media_Effects_IAudioCaptureEffectsManager
 {
-    event_token AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
-    using AudioCaptureEffectsChanged_revoker = event_revoker<Windows::Media::Effects::IAudioCaptureEffectsManager>;
+    winrt::event_token AudioCaptureEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
+    using AudioCaptureEffectsChanged_revoker = impl::event_revoker<Windows::Media::Effects::IAudioCaptureEffectsManager, &impl::abi_t<Windows::Media::Effects::IAudioCaptureEffectsManager>::remove_AudioCaptureEffectsChanged>;
     AudioCaptureEffectsChanged_revoker AudioCaptureEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
-    void AudioCaptureEffectsChanged(event_token const& token) const;
+    void AudioCaptureEffectsChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> GetAudioCaptureEffects() const;
 };
 template <> struct consume<Windows::Media::Effects::IAudioCaptureEffectsManager> { template <typename D> using type = consume_Windows_Media_Effects_IAudioCaptureEffectsManager<D>; };
@@ -303,10 +459,10 @@ template <> struct consume<Windows::Media::Effects::IAudioEffectsManagerStatics>
 template <typename D>
 struct consume_Windows_Media_Effects_IAudioRenderEffectsManager
 {
-    event_token AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
-    using AudioRenderEffectsChanged_revoker = event_revoker<Windows::Media::Effects::IAudioRenderEffectsManager>;
+    winrt::event_token AudioRenderEffectsChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
+    using AudioRenderEffectsChanged_revoker = impl::event_revoker<Windows::Media::Effects::IAudioRenderEffectsManager, &impl::abi_t<Windows::Media::Effects::IAudioRenderEffectsManager>::remove_AudioRenderEffectsChanged>;
     AudioRenderEffectsChanged_revoker AudioRenderEffectsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::Foundation::IInspectable> const& handler) const;
-    void AudioRenderEffectsChanged(event_token const& token) const;
+    void AudioRenderEffectsChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> GetAudioRenderEffects() const;
 };
 template <> struct consume<Windows::Media::Effects::IAudioRenderEffectsManager> { template <typename D> using type = consume_Windows_Media_Effects_IAudioRenderEffectsManager<D>; };
@@ -314,9 +470,9 @@ template <> struct consume<Windows::Media::Effects::IAudioRenderEffectsManager> 
 template <typename D>
 struct consume_Windows_Media_Effects_IAudioRenderEffectsManager2
 {
-    [[deprecated("Not supported starting in windows 10")]] Windows::Storage::Streams::IRandomAccessStreamWithContentType EffectsProviderThumbnail() const;
-    [[deprecated("Not supported starting in windows 10")]] hstring EffectsProviderSettingsLabel() const;
-    [[deprecated("Not supported starting in windows 10")]] void ShowSettingsUI() const;
+    Windows::Storage::Streams::IRandomAccessStreamWithContentType EffectsProviderThumbnail() const;
+    hstring EffectsProviderSettingsLabel() const;
+    void ShowSettingsUI() const;
 };
 template <> struct consume<Windows::Media::Effects::IAudioRenderEffectsManager2> { template <typename D> using type = consume_Windows_Media_Effects_IAudioRenderEffectsManager2<D>; };
 
@@ -455,161 +611,5 @@ struct consume_Windows_Media_Effects_IVideoTransformSphericalProjection
     void ViewOrientation(Windows::Foundation::Numerics::quaternion const& value) const;
 };
 template <> struct consume<Windows::Media::Effects::IVideoTransformSphericalProjection> { template <typename D> using type = consume_Windows_Media_Effects_IVideoTransformSphericalProjection<D>; };
-
-template <> struct abi<Windows::Media::Effects::IAudioCaptureEffectsManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_AudioCaptureEffectsChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AudioCaptureEffectsChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetAudioCaptureEffects(void** effects) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AudioEffectType(Windows::Media::Effects::AudioEffectType* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioEffectDefinition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioEffectDefinitionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioEffectsManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAudioRenderEffectsManager(HSTRING deviceId, Windows::Media::Render::AudioRenderCategory category, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows::Media::Capture::MediaCategory category, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioRenderEffectsManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_AudioRenderEffectsChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AudioRenderEffectsChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetAudioRenderEffects(void** effects) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IAudioRenderEffectsManager2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EffectsProviderThumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_EffectsProviderSettingsLabel(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall ShowSettingsUI() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IBasicAudioEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UseInputFrameForOutput(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedEncodingProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetEncodingProperties(void* encodingProperties) noexcept = 0;
-    virtual HRESULT __stdcall ProcessFrame(void* context) noexcept = 0;
-    virtual HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
-    virtual HRESULT __stdcall DiscardQueuedFrames() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IBasicVideoEffect>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsReadOnly(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedMemoryTypes(Windows::Media::Effects::MediaMemoryTypes* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TimeIndependent(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedEncodingProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetEncodingProperties(void* encodingProperties, void* device) noexcept = 0;
-    virtual HRESULT __stdcall ProcessFrame(void* context) noexcept = 0;
-    virtual HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
-    virtual HRESULT __stdcall DiscardQueuedFrames() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::ICompositeVideoFrameContext>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SurfacesToOverlay(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetOverlayForSurface(void* surfaceToOverlay, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IProcessAudioFrameContext>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InputFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputFrame(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IProcessVideoFrameContext>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InputFrame(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputFrame(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoCompositor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TimeIndependent(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetEncodingProperties(void* backgroundProperties, void* device) noexcept = 0;
-    virtual HRESULT __stdcall CompositeFrame(void* context) noexcept = 0;
-    virtual HRESULT __stdcall Close(Windows::Media::Effects::MediaEffectClosedReason reason) noexcept = 0;
-    virtual HRESULT __stdcall DiscardQueuedFrames() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoCompositorDefinition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoCompositorDefinitionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoEffectDefinition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActivatableClassId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoEffectDefinitionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING activatableClassId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithProperties(HSTRING activatableClassId, void* props, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoTransformEffectDefinition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PaddingColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PaddingColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutputSize(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutputSize(Windows::Foundation::Size value) noexcept = 0;
-    virtual HRESULT __stdcall get_CropRectangle(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CropRectangle(Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall get_Rotation(Windows::Media::MediaProperties::MediaRotation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Rotation(Windows::Media::MediaProperties::MediaRotation value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mirror(Windows::Media::MediaProperties::MediaMirroringOptions value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoTransformEffectDefinition2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SphericalProjection(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::Effects::IVideoTransformSphericalProjection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalFieldOfViewInDegrees(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalFieldOfViewInDegrees(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_ViewOrientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ViewOrientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-};};
 
 }

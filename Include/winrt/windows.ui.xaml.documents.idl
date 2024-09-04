@@ -477,7 +477,7 @@ namespace Windows
                 [uuid(07110532-4F59-4F3B-9CE5-25784C430507)]
                 interface IBlockFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.Block** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Documents.Block** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -547,11 +547,11 @@ namespace Windows
                     [propput] HRESULT IsTabStop([in] boolean value);
                     [propget] HRESULT TabIndex([out] [retval] INT32* value);
                     [propput] HRESULT TabIndex([in] INT32 value);
-                    [eventadd] HRESULT Invoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.ContentLink*, Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT Invoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.ContentLink*, Windows.UI.Xaml.Documents.ContentLinkInvokedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT Invoked([in] EventRegistrationToken token);
-                    [eventadd] HRESULT GotFocus([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT GotFocus([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT GotFocus([in] EventRegistrationToken token);
-                    [eventadd] HRESULT LostFocus([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT LostFocus([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT LostFocus([in] EventRegistrationToken token);
                     HRESULT Focus([in] Windows.UI.Xaml.FocusState value, [out] [retval] boolean* result);
                 }
@@ -577,9 +577,6 @@ namespace Windows
                 [exclusiveto(Windows.UI.Xaml.Documents.ContentLinkProviderCollection)]
                 [uuid(F5B84D0C-A9F4-4D1A-A13C-10DEF1843734)]
                 interface IContentLinkProviderCollection : IInspectable
-                    requires
-                        Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.ContentLinkProvider*>,
-                        Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.ContentLinkProvider*>
                 {
                 }
 
@@ -588,7 +585,7 @@ namespace Windows
                 [uuid(57D60D3B-EF1A-4E8E-839B-D36EF3A503E0)]
                 interface IContentLinkProviderFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.ContentLinkProvider** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Documents.ContentLinkProvider** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -677,7 +674,7 @@ namespace Windows
                 {
                     [propget] HRESULT NavigateUri([out] [retval] Windows.Foundation.Uri** value);
                     [propput] HRESULT NavigateUri([in] Windows.Foundation.Uri* value);
-                    [eventadd] HRESULT Click([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.Hyperlink*, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT Click([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.Hyperlink*, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT Click([in] EventRegistrationToken token);
                 }
 
@@ -721,11 +718,11 @@ namespace Windows
                     [propput] HRESULT XYFocusLeftNavigationStrategy([in] Windows.UI.Xaml.Input.XYFocusNavigationStrategy value);
                     [propget] HRESULT XYFocusRightNavigationStrategy([out] [retval] Windows.UI.Xaml.Input.XYFocusNavigationStrategy* value);
                     [propput] HRESULT XYFocusRightNavigationStrategy([in] Windows.UI.Xaml.Input.XYFocusNavigationStrategy value);
-                    [eventadd] HRESULT GotFocus([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT GotFocus([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT GotFocus([in] EventRegistrationToken token);
-                    [eventadd] HRESULT LostFocus([in] Windows.UI.Xaml.RoutedEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT LostFocus([in] Windows.UI.Xaml.RoutedEventHandler* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT LostFocus([in] EventRegistrationToken token);
-                    HRESULT Focus([in] Windows.UI.Xaml.FocusState value, [out] [retval] boolean* returnValue);
+                    HRESULT Focus([in] Windows.UI.Xaml.FocusState value, [out] [retval] boolean* result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -807,7 +804,7 @@ namespace Windows
                 [uuid(4058ACD1-2F90-4B8F-99DD-4218EF5F03DE)]
                 interface IInlineFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.Inline** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Documents.Inline** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -891,7 +888,7 @@ namespace Windows
                 [uuid(5B916F5C-CD2D-40C0-956A-386448322F79)]
                 interface ISpanFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.Span** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Documents.Span** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -920,7 +917,7 @@ namespace Windows
                     [propget] HRESULT ContentEnd([out] [retval] Windows.UI.Xaml.Documents.TextPointer** value);
                     [propget] HRESULT ElementStart([out] [retval] Windows.UI.Xaml.Documents.TextPointer** value);
                     [propget] HRESULT ElementEnd([out] [retval] Windows.UI.Xaml.Documents.TextPointer** value);
-                    HRESULT FindName([in] HSTRING name, [out] [retval] IInspectable** returnValue);
+                    HRESULT FindName([in] HSTRING name, [out] [retval] IInspectable** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -962,11 +959,11 @@ namespace Windows
                     [propput] HRESULT KeyTipHorizontalOffset([in] DOUBLE value);
                     [propget] HRESULT KeyTipVerticalOffset([out] [retval] DOUBLE* value);
                     [propput] HRESULT KeyTipVerticalOffset([in] DOUBLE value);
-                    [eventadd] HRESULT AccessKeyDisplayRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT AccessKeyDisplayRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT AccessKeyDisplayRequested([in] EventRegistrationToken token);
-                    [eventadd] HRESULT AccessKeyDisplayDismissed([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT AccessKeyDisplayDismissed([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT AccessKeyDisplayDismissed([in] EventRegistrationToken token);
-                    [eventadd] HRESULT AccessKeyInvoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventadd] HRESULT AccessKeyInvoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                     [eventremove] HRESULT AccessKeyInvoked([in] EventRegistrationToken token);
                 }
 
@@ -1062,7 +1059,7 @@ namespace Windows
                 [uuid(70125461-9A8F-4FA0-B235-8FFAA507BEF2)]
                 interface ITextHighlighterFactory : IInspectable
                 {
-                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.TextHighlighter** instance);
+                    HRESULT CreateInstance([in] IInspectable* baseInterface, [out] IInspectable** innerInterface, [out] [retval] Windows.UI.Xaml.Documents.TextHighlighter** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1083,8 +1080,8 @@ namespace Windows
                     [propget] HRESULT VisualParent([out] [retval] Windows.UI.Xaml.FrameworkElement** value);
                     [propget] HRESULT LogicalDirection([out] [retval] Windows.UI.Xaml.Documents.LogicalDirection* value);
                     [propget] HRESULT Offset([out] [retval] INT32* value);
-                    HRESULT GetCharacterRect([in] Windows.UI.Xaml.Documents.LogicalDirection direction, [out] [retval] Windows.Foundation.Rect* returnValue);
-                    HRESULT GetPositionAtOffset([in] INT32 offset, [in] Windows.UI.Xaml.Documents.LogicalDirection direction, [out] [retval] Windows.UI.Xaml.Documents.TextPointer** returnValue);
+                    HRESULT GetCharacterRect([in] Windows.UI.Xaml.Documents.LogicalDirection direction, [out] [retval] Windows.Foundation.Rect* result);
+                    HRESULT GetPositionAtOffset([in] INT32 offset, [in] Windows.UI.Xaml.Documents.LogicalDirection direction, [out] [retval] Windows.UI.Xaml.Documents.TextPointer** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1100,133 +1097,133 @@ namespace Windows
                 interface ITypographyStatics : IInspectable
                 {
                     [propget] HRESULT AnnotationAlternatesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetAnnotationAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetAnnotationAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetAnnotationAlternates([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT EastAsianExpertFormsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetEastAsianExpertForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetEastAsianExpertForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetEastAsianExpertForms([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT EastAsianLanguageProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetEastAsianLanguage([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontEastAsianLanguage* value);
+                    HRESULT GetEastAsianLanguage([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontEastAsianLanguage* result);
                     HRESULT SetEastAsianLanguage([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontEastAsianLanguage value);
                     [propget] HRESULT EastAsianWidthsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetEastAsianWidths([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontEastAsianWidths* value);
+                    HRESULT GetEastAsianWidths([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontEastAsianWidths* result);
                     HRESULT SetEastAsianWidths([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontEastAsianWidths value);
                     [propget] HRESULT StandardLigaturesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStandardLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStandardLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStandardLigatures([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT ContextualLigaturesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetContextualLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetContextualLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetContextualLigatures([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT DiscretionaryLigaturesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetDiscretionaryLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetDiscretionaryLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetDiscretionaryLigatures([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT HistoricalLigaturesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetHistoricalLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetHistoricalLigatures([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetHistoricalLigatures([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StandardSwashesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStandardSwashes([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetStandardSwashes([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetStandardSwashes([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT ContextualSwashesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetContextualSwashes([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetContextualSwashes([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetContextualSwashes([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT ContextualAlternatesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetContextualAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetContextualAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetContextualAlternates([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticAlternatesProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* value);
+                    HRESULT GetStylisticAlternates([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] INT32* result);
                     HRESULT SetStylisticAlternates([in] Windows.UI.Xaml.DependencyObject* element, [in] INT32 value);
                     [propget] HRESULT StylisticSet1Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet1([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet1([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet1([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet2Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet2([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet2([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet2([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet3Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet3([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet3([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet3([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet4Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet4([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet4([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet4([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet5Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet5([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet5([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet5([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet6Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet6([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet6([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet6([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet7Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet7([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet7([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet7([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet8Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet8([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet8([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet8([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet9Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet9([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet9([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet9([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet10Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet10([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet10([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet10([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet11Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet11([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet11([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet11([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet12Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet12([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet12([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet12([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet13Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet13([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet13([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet13([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet14Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet14([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet14([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet14([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet15Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet15([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet15([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet15([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet16Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet16([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet16([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet16([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet17Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet17([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet17([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet17([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet18Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet18([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet18([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet18([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet19Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet19([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet19([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet19([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT StylisticSet20Property([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetStylisticSet20([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetStylisticSet20([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetStylisticSet20([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT CapitalsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetCapitals([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontCapitals* value);
+                    HRESULT GetCapitals([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontCapitals* result);
                     HRESULT SetCapitals([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontCapitals value);
                     [propget] HRESULT CapitalSpacingProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetCapitalSpacing([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetCapitalSpacing([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetCapitalSpacing([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT KerningProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetKerning([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetKerning([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetKerning([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT CaseSensitiveFormsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetCaseSensitiveForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetCaseSensitiveForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetCaseSensitiveForms([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT HistoricalFormsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetHistoricalForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetHistoricalForms([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetHistoricalForms([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT FractionProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetFraction([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontFraction* value);
+                    HRESULT GetFraction([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontFraction* result);
                     HRESULT SetFraction([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontFraction value);
                     [propget] HRESULT NumeralStyleProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetNumeralStyle([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontNumeralStyle* value);
+                    HRESULT GetNumeralStyle([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontNumeralStyle* result);
                     HRESULT SetNumeralStyle([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontNumeralStyle value);
                     [propget] HRESULT NumeralAlignmentProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetNumeralAlignment([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontNumeralAlignment* value);
+                    HRESULT GetNumeralAlignment([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontNumeralAlignment* result);
                     HRESULT SetNumeralAlignment([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontNumeralAlignment value);
                     [propget] HRESULT SlashedZeroProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetSlashedZero([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetSlashedZero([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetSlashedZero([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT MathematicalGreekProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetMathematicalGreek([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* value);
+                    HRESULT GetMathematicalGreek([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] boolean* result);
                     HRESULT SetMathematicalGreek([in] Windows.UI.Xaml.DependencyObject* element, [in] boolean value);
                     [propget] HRESULT VariantsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
-                    HRESULT GetVariants([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontVariants* value);
+                    HRESULT GetVariants([in] Windows.UI.Xaml.DependencyObject* element, [out] [retval] Windows.UI.Xaml.FontVariants* result);
                     HRESULT SetVariants([in] Windows.UI.Xaml.DependencyObject* element, [in] Windows.UI.Xaml.FontVariants value);
                 }
 
@@ -1251,7 +1248,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass BlockCollection
                 {
                     [default] interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.Block*>;
@@ -1288,7 +1284,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass ContentLinkInvokedEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Documents.IContentLinkInvokedEventArgs;
@@ -1310,8 +1305,8 @@ namespace Windows
                 runtimeclass ContentLinkProviderCollection
                 {
                     [default] interface Windows.UI.Xaml.Documents.IContentLinkProviderCollection;
-                    interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.ContentLinkProvider*>;
-                    interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.ContentLinkProvider*>;
+                    [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.ContentLinkProvider*>;
+                    [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.ContentLinkProvider*>;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1363,7 +1358,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass InlineCollection
                 {
                     [default] interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.Inline*>;
@@ -1435,7 +1429,7 @@ namespace Windows
                     [default] interface Windows.UI.Xaml.Documents.ISpan;
                 }
 
-                [composable(Windows.UI.Xaml.Documents.ITextElementFactory, protected, Windows.Foundation.UniversalApiContract, 1.0)]
+                [composable(Windows.UI.Xaml.Documents.ITextElementFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
                 [static(Windows.UI.Xaml.Documents.ITextElementStatics, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1446,10 +1440,10 @@ namespace Windows
                 runtimeclass TextElement : Windows.UI.Xaml.DependencyObject
                 {
                     [default] interface Windows.UI.Xaml.Documents.ITextElement;
-                    [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.Documents.ITextElementOverrides;
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Documents.ITextElement2;
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Documents.ITextElement3;
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Documents.ITextElement4;
+                    [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.Documents.ITextElementOverrides;
                 }
 
                 [composable(Windows.UI.Xaml.Documents.ITextHighlighterFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
@@ -1473,7 +1467,6 @@ namespace Windows
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
-                [threading(both)]
                 runtimeclass TextPointer
                 {
                     [default] interface Windows.UI.Xaml.Documents.ITextPointer;

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -584,1340 +584,1154 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>
 {
-    HRESULT __stdcall get_AccountName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AccountName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AccountName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AccountName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AccountName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountName, WINRT_WRAP(void), hstring const&);
             this->shim().AccountName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceAccountTypeId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceAccountTypeId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceAccountTypeId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceAccountTypeId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DeviceAccountTypeId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DeviceAccountTypeId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceAccountTypeId, WINRT_WRAP(void), hstring const&);
             this->shim().DeviceAccountTypeId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType* value) noexcept final
+    int32_t WINRT_CALL get_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerType, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType>(this->shim().ServerType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value) noexcept final
+    int32_t WINRT_CALL put_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerType, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType const&);
             this->shim().ServerType(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EmailAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EmailAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EmailAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EmailAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EmailAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_EmailAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EmailAddress, WINRT_WRAP(void), hstring const&);
             this->shim().EmailAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Domain(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Domain(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Domain, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Domain());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Domain(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Domain(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Domain, WINRT_WRAP(void), hstring const&);
             this->shim().Domain(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EmailSyncEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_EmailSyncEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EmailSyncEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().EmailSyncEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_EmailSyncEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_EmailSyncEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EmailSyncEnabled, WINRT_WRAP(void), bool);
             this->shim().EmailSyncEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContactsSyncEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_ContactsSyncEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactsSyncEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ContactsSyncEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContactsSyncEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_ContactsSyncEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContactsSyncEnabled, WINRT_WRAP(void), bool);
             this->shim().ContactsSyncEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CalendarSyncEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_CalendarSyncEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalendarSyncEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CalendarSyncEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CalendarSyncEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_CalendarSyncEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalendarSyncEnabled, WINRT_WRAP(void), bool);
             this->shim().CalendarSyncEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncomingServerAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IncomingServerAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerAddress, WINRT_WRAP(void), hstring const&);
             this->shim().IncomingServerAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncomingServerPort(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerPort(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerPort, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().IncomingServerPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerPort(int32_t value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerPort(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerPort, WINRT_WRAP(void), int32_t);
             this->shim().IncomingServerPort(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncomingServerRequiresSsl(bool* value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerRequiresSsl(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerRequiresSsl, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IncomingServerRequiresSsl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerRequiresSsl(bool value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerRequiresSsl(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerRequiresSsl, WINRT_WRAP(void), bool);
             this->shim().IncomingServerRequiresSsl(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncomingServerUsername(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerUsername(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerUsername, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IncomingServerUsername());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerUsername(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerUsername(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerUsername, WINRT_WRAP(void), hstring const&);
             this->shim().IncomingServerUsername(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerAddress(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerAddress(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerAddress, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OutgoingServerAddress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerAddress(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerAddress(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerAddress, WINRT_WRAP(void), hstring const&);
             this->shim().OutgoingServerAddress(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerPort(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerPort(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerPort, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().OutgoingServerPort());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerPort(int32_t value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerPort(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerPort, WINRT_WRAP(void), int32_t);
             this->shim().OutgoingServerPort(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerRequiresSsl(bool* value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerRequiresSsl(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerRequiresSsl, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().OutgoingServerRequiresSsl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerRequiresSsl(bool value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerRequiresSsl(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerRequiresSsl, WINRT_WRAP(void), bool);
             this->shim().OutgoingServerRequiresSsl(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerUsername(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerUsername(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerUsername, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OutgoingServerUsername());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerUsername(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerUsername(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerUsername, WINRT_WRAP(void), hstring const&);
             this->shim().OutgoingServerUsername(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>
 {
-    HRESULT __stdcall get_IncomingServerCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().IncomingServerCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().IncomingServerCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerCredential(void** value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerCredential(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *value = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().OutgoingServerCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerCredential(void* value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerCredential(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().OutgoingServerCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OAuthRefreshToken(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OAuthRefreshToken(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OAuthRefreshToken, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OAuthRefreshToken());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OAuthRefreshToken(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_OAuthRefreshToken(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OAuthRefreshToken, WINRT_WRAP(void), hstring const&);
             this->shim().OAuthRefreshToken(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsExternallyManaged(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsExternallyManaged(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsExternallyManaged, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsExternallyManaged());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsExternallyManaged(bool value) noexcept final
+    int32_t WINRT_CALL put_IsExternallyManaged(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsExternallyManaged, WINRT_WRAP(void), bool);
             this->shim().IsExternallyManaged(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId* value) noexcept final
+    int32_t WINRT_CALL get_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountIconId, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId>(this->shim().AccountIconId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value) noexcept final
+    int32_t WINRT_CALL put_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AccountIconId, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId const&);
             this->shim().AccountIconId(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationType, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType>(this->shim().AuthenticationType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value) noexcept final
+    int32_t WINRT_CALL put_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationType, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType const&);
             this->shim().AuthenticationType(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSsoAuthenticationSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSsoAuthenticationSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSsoAuthenticationSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSsoAuthenticationSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SsoAccountId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SsoAccountId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SsoAccountId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SsoAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SsoAccountId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SsoAccountId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SsoAccountId, WINRT_WRAP(void), hstring const&);
             this->shim().SsoAccountId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlwaysDownloadFullMessage(bool* value) noexcept final
+    int32_t WINRT_CALL get_AlwaysDownloadFullMessage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysDownloadFullMessage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AlwaysDownloadFullMessage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlwaysDownloadFullMessage(bool value) noexcept final
+    int32_t WINRT_CALL put_AlwaysDownloadFullMessage(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlwaysDownloadFullMessage, WINRT_WRAP(void), bool);
             this->shim().AlwaysDownloadFullMessage(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DoesPolicyAllowMailSync(bool* value) noexcept final
+    int32_t WINRT_CALL get_DoesPolicyAllowMailSync(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DoesPolicyAllowMailSync, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().DoesPolicyAllowMailSync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
+    int32_t WINRT_CALL get_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncScheduleKind, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind>(this->shim().SyncScheduleKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
+    int32_t WINRT_CALL put_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SyncScheduleKind, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const&);
             this->shim().SyncScheduleKind(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter* value) noexcept final
+    int32_t WINRT_CALL get_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailAgeFilter, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter>(this->shim().MailAgeFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value) noexcept final
+    int32_t WINRT_CALL put_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MailAgeFilter, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter const&);
             this->shim().MailAgeFilter(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsClientAuthenticationCertificateRequired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsClientAuthenticationCertificateRequired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsClientAuthenticationCertificateRequired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsClientAuthenticationCertificateRequired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsClientAuthenticationCertificateRequired(bool value) noexcept final
+    int32_t WINRT_CALL put_IsClientAuthenticationCertificateRequired(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsClientAuthenticationCertificateRequired, WINRT_WRAP(void), bool);
             this->shim().IsClientAuthenticationCertificateRequired(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AutoSelectAuthenticationCertificate(bool* value) noexcept final
+    int32_t WINRT_CALL get_AutoSelectAuthenticationCertificate(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoSelectAuthenticationCertificate, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AutoSelectAuthenticationCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AutoSelectAuthenticationCertificate(bool value) noexcept final
+    int32_t WINRT_CALL put_AutoSelectAuthenticationCertificate(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AutoSelectAuthenticationCertificate, WINRT_WRAP(void), bool);
             this->shim().AutoSelectAuthenticationCertificate(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AuthenticationCertificateId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AuthenticationCertificateId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationCertificateId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AuthenticationCertificateId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AuthenticationCertificateId(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AuthenticationCertificateId(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AuthenticationCertificateId, WINRT_WRAP(void), hstring const&);
             this->shim().AuthenticationCertificateId(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
+    int32_t WINRT_CALL get_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavSyncScheduleKind, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind>(this->shim().CardDavSyncScheduleKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
+    int32_t WINRT_CALL put_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavSyncScheduleKind, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const&);
             this->shim().CardDavSyncScheduleKind(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
+    int32_t WINRT_CALL get_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavSyncScheduleKind, WINRT_WRAP(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind));
             *value = detach_from<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind>(this->shim().CalDavSyncScheduleKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
+    int32_t WINRT_CALL put_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavSyncScheduleKind, WINRT_WRAP(void), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const&);
             this->shim().CalDavSyncScheduleKind(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CardDavServerUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_CardDavServerUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavServerUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().CardDavServerUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CardDavServerUrl(void* value) noexcept final
+    int32_t WINRT_CALL put_CardDavServerUrl(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavServerUrl, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().CardDavServerUrl(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CardDavRequiresSsl(bool* value) noexcept final
+    int32_t WINRT_CALL get_CardDavRequiresSsl(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavRequiresSsl, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CardDavRequiresSsl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CardDavRequiresSsl(bool value) noexcept final
+    int32_t WINRT_CALL put_CardDavRequiresSsl(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CardDavRequiresSsl, WINRT_WRAP(void), bool);
             this->shim().CardDavRequiresSsl(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CalDavServerUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_CalDavServerUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavServerUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().CalDavServerUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CalDavServerUrl(void* value) noexcept final
+    int32_t WINRT_CALL put_CalDavServerUrl(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavServerUrl, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().CalDavServerUrl(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CalDavRequiresSsl(bool* value) noexcept final
+    int32_t WINRT_CALL get_CalDavRequiresSsl(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavRequiresSsl, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CalDavRequiresSsl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CalDavRequiresSsl(bool value) noexcept final
+    int32_t WINRT_CALL put_CalDavRequiresSsl(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CalDavRequiresSsl, WINRT_WRAP(void), bool);
             this->shim().CalDavRequiresSsl(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WasModifiedByUser(bool* value) noexcept final
+    int32_t WINRT_CALL get_WasModifiedByUser(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasModifiedByUser, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WasModifiedByUser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WasModifiedByUser(bool value) noexcept final
+    int32_t WINRT_CALL put_WasModifiedByUser(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasModifiedByUser, WINRT_WRAP(void), bool);
             this->shim().WasModifiedByUser(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WasIncomingServerCertificateHashConfirmed(bool* value) noexcept final
+    int32_t WINRT_CALL get_WasIncomingServerCertificateHashConfirmed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasIncomingServerCertificateHashConfirmed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WasIncomingServerCertificateHashConfirmed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WasIncomingServerCertificateHashConfirmed(bool value) noexcept final
+    int32_t WINRT_CALL put_WasIncomingServerCertificateHashConfirmed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasIncomingServerCertificateHashConfirmed, WINRT_WRAP(void), bool);
             this->shim().WasIncomingServerCertificateHashConfirmed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IncomingServerCertificateHash(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IncomingServerCertificateHash(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerCertificateHash, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IncomingServerCertificateHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IncomingServerCertificateHash(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_IncomingServerCertificateHash(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IncomingServerCertificateHash, WINRT_WRAP(void), hstring const&);
             this->shim().IncomingServerCertificateHash(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOutgoingServerAuthenticationRequired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOutgoingServerAuthenticationRequired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOutgoingServerAuthenticationRequired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOutgoingServerAuthenticationRequired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsOutgoingServerAuthenticationRequired(bool value) noexcept final
+    int32_t WINRT_CALL put_IsOutgoingServerAuthenticationRequired(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOutgoingServerAuthenticationRequired, WINRT_WRAP(void), bool);
             this->shim().IsOutgoingServerAuthenticationRequired(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOutgoingServerAuthenticationEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsOutgoingServerAuthenticationEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOutgoingServerAuthenticationEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsOutgoingServerAuthenticationEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsOutgoingServerAuthenticationEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_IsOutgoingServerAuthenticationEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOutgoingServerAuthenticationEnabled, WINRT_WRAP(void), bool);
             this->shim().IsOutgoingServerAuthenticationEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WasOutgoingServerCertificateHashConfirmed(bool* value) noexcept final
+    int32_t WINRT_CALL get_WasOutgoingServerCertificateHashConfirmed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasOutgoingServerCertificateHashConfirmed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WasOutgoingServerCertificateHashConfirmed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_WasOutgoingServerCertificateHashConfirmed(bool value) noexcept final
+    int32_t WINRT_CALL put_WasOutgoingServerCertificateHashConfirmed(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasOutgoingServerCertificateHashConfirmed, WINRT_WRAP(void), bool);
             this->shim().WasOutgoingServerCertificateHashConfirmed(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OutgoingServerCertificateHash(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OutgoingServerCertificateHash(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerCertificateHash, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OutgoingServerCertificateHash());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OutgoingServerCertificateHash(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_OutgoingServerCertificateHash(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutgoingServerCertificateHash, WINRT_WRAP(void), hstring const&);
             this->shim().OutgoingServerCertificateHash(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsSyncScheduleManagedBySystem(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSyncScheduleManagedBySystem(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSyncScheduleManagedBySystem, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSyncScheduleManagedBySystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsSyncScheduleManagedBySystem(bool value) noexcept final
+    int32_t WINRT_CALL put_IsSyncScheduleManagedBySystem(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSyncScheduleManagedBySystem, WINRT_WRAP(void), bool);
             this->shim().IsSyncScheduleManagedBySystem(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>
 {
-    HRESULT __stdcall AddAndShowDeviceAccountsAsync(void* accounts, void** result) noexcept final
+    int32_t WINRT_CALL AddAndShowDeviceAccountsAsync(void* accounts, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddAndShowDeviceAccountsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>), Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>>>(this->shim().AddAndShowDeviceAccountsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> const*>(&accounts)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>
 {
-    HRESULT __stdcall SuppressLocalAccountWithAccountAsync(HSTRING userDataAccountId, void** result) noexcept final
+    int32_t WINRT_CALL SuppressLocalAccountWithAccountAsync(void* userDataAccountId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuppressLocalAccountWithAccountAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SuppressLocalAccountWithAccountAsync(*reinterpret_cast<hstring const*>(&userDataAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDeviceAccountAsync(void* account, void** result) noexcept final
+    int32_t WINRT_CALL CreateDeviceAccountAsync(void* account, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDeviceAccountAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<hstring>), Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<hstring>>(this->shim().CreateDeviceAccountAsync(*reinterpret_cast<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration const*>(&account)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteDeviceAccountAsync(HSTRING accountId, void** result) noexcept final
+    int32_t WINRT_CALL DeleteDeviceAccountAsync(void* accountId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteDeviceAccountAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteDeviceAccountAsync(*reinterpret_cast<hstring const*>(&accountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceAccountConfigurationAsync(HSTRING accountId, void** result) noexcept final
+    int32_t WINRT_CALL GetDeviceAccountConfigurationAsync(void* accountId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceAccountConfigurationAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>), hstring const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>>(this->shim().GetDeviceAccountConfigurationAsync(*reinterpret_cast<hstring const*>(&accountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1926,32 +1740,32 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUs
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
 inline DeviceAccountConfiguration::DeviceAccountConfiguration() :
-    DeviceAccountConfiguration(get_activation_factory<DeviceAccountConfiguration>().ActivateInstance<DeviceAccountConfiguration>())
+    DeviceAccountConfiguration(impl::call_factory<DeviceAccountConfiguration>([](auto&& f) { return f.template ActivateInstance<DeviceAccountConfiguration>(); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> UserDataAccountSystemAccessManager::AddAndShowDeviceAccountsAsync(param::async_iterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> const& accounts)
 {
-    return get_activation_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>().AddAndShowDeviceAccountsAsync(accounts);
+    return impl::call_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>([&](auto&& f) { return f.AddAndShowDeviceAccountsAsync(accounts); });
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::SuppressLocalAccountWithAccountAsync(param::hstring const& userDataAccountId)
 {
-    return get_activation_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>().SuppressLocalAccountWithAccountAsync(userDataAccountId);
+    return impl::call_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>([&](auto&& f) { return f.SuppressLocalAccountWithAccountAsync(userDataAccountId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<hstring> UserDataAccountSystemAccessManager::CreateDeviceAccountAsync(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration const& account)
 {
-    return get_activation_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>().CreateDeviceAccountAsync(account);
+    return impl::call_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>([&](auto&& f) { return f.CreateDeviceAccountAsync(account); });
 }
 
 inline Windows::Foundation::IAsyncAction UserDataAccountSystemAccessManager::DeleteDeviceAccountAsync(param::hstring const& accountId)
 {
-    return get_activation_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>().DeleteDeviceAccountAsync(accountId);
+    return impl::call_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>([&](auto&& f) { return f.DeleteDeviceAccountAsync(accountId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> UserDataAccountSystemAccessManager::GetDeviceAccountConfigurationAsync(param::hstring const& accountId)
 {
-    return get_activation_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>().GetDeviceAccountConfigurationAsync(accountId);
+    return impl::call_factory<UserDataAccountSystemAccessManager, Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>([&](auto&& f) { return f.GetDeviceAccountConfigurationAsync(accountId); });
 }
 
 }
@@ -1966,5 +1780,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::UserDataAccounts::Syste
 template<> struct hash<winrt::Windows::ApplicationModel::UserDataAccounts::SystemAccess::UserDataAccountSystemAccessManager> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserDataAccounts::SystemAccess::UserDataAccountSystemAccessManager> {};
 
 }
-
-WINRT_WARNING_POP

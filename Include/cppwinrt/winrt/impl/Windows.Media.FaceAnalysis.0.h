@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -51,14 +51,54 @@ template <> struct name<Windows::Media::FaceAnalysis::IFaceTrackerStatics>{ stat
 template <> struct name<Windows::Media::FaceAnalysis::DetectedFace>{ static constexpr auto & value{ L"Windows.Media.FaceAnalysis.DetectedFace" }; };
 template <> struct name<Windows::Media::FaceAnalysis::FaceDetector>{ static constexpr auto & value{ L"Windows.Media.FaceAnalysis.FaceDetector" }; };
 template <> struct name<Windows::Media::FaceAnalysis::FaceTracker>{ static constexpr auto & value{ L"Windows.Media.FaceAnalysis.FaceTracker" }; };
-template <> struct guid<Windows::Media::FaceAnalysis::IDetectedFace>{ static constexpr GUID value{ 0x8200D454,0x66BC,0x34DF,{ 0x94,0x10,0xE8,0x94,0x00,0x19,0x54,0x14 } }; };
-template <> struct guid<Windows::Media::FaceAnalysis::IFaceDetector>{ static constexpr GUID value{ 0x16B672DC,0xFE6F,0x3117,{ 0x8D,0x95,0xC3,0xF0,0x4D,0x51,0x63,0x0C } }; };
-template <> struct guid<Windows::Media::FaceAnalysis::IFaceDetectorStatics>{ static constexpr GUID value{ 0xBC042D67,0x9047,0x33F6,{ 0x88,0x1B,0x67,0x46,0xC1,0xB2,0x18,0xB8 } }; };
-template <> struct guid<Windows::Media::FaceAnalysis::IFaceTracker>{ static constexpr GUID value{ 0x6BA67D8C,0xA841,0x4420,{ 0x93,0xE6,0x24,0x20,0xA1,0x88,0x4F,0xCF } }; };
-template <> struct guid<Windows::Media::FaceAnalysis::IFaceTrackerStatics>{ static constexpr GUID value{ 0xE9629198,0x1801,0x3FA5,{ 0x93,0x2E,0x31,0xD7,0x67,0xAF,0x6C,0x4D } }; };
+template <> struct guid_storage<Windows::Media::FaceAnalysis::IDetectedFace>{ static constexpr guid value{ 0x8200D454,0x66BC,0x34DF,{ 0x94,0x10,0xE8,0x94,0x00,0x19,0x54,0x14 } }; };
+template <> struct guid_storage<Windows::Media::FaceAnalysis::IFaceDetector>{ static constexpr guid value{ 0x16B672DC,0xFE6F,0x3117,{ 0x8D,0x95,0xC3,0xF0,0x4D,0x51,0x63,0x0C } }; };
+template <> struct guid_storage<Windows::Media::FaceAnalysis::IFaceDetectorStatics>{ static constexpr guid value{ 0xBC042D67,0x9047,0x33F6,{ 0x88,0x1B,0x67,0x46,0xC1,0xB2,0x18,0xB8 } }; };
+template <> struct guid_storage<Windows::Media::FaceAnalysis::IFaceTracker>{ static constexpr guid value{ 0x6BA67D8C,0xA841,0x4420,{ 0x93,0xE6,0x24,0x20,0xA1,0x88,0x4F,0xCF } }; };
+template <> struct guid_storage<Windows::Media::FaceAnalysis::IFaceTrackerStatics>{ static constexpr guid value{ 0xE9629198,0x1801,0x3FA5,{ 0x93,0x2E,0x31,0xD7,0x67,0xAF,0x6C,0x4D } }; };
 template <> struct default_interface<Windows::Media::FaceAnalysis::DetectedFace>{ using type = Windows::Media::FaceAnalysis::IDetectedFace; };
 template <> struct default_interface<Windows::Media::FaceAnalysis::FaceDetector>{ using type = Windows::Media::FaceAnalysis::IFaceDetector; };
 template <> struct default_interface<Windows::Media::FaceAnalysis::FaceTracker>{ using type = Windows::Media::FaceAnalysis::IFaceTracker; };
+
+template <> struct abi<Windows::Media::FaceAnalysis::IDetectedFace>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FaceBox(struct struct_Windows_Graphics_Imaging_BitmapBounds* returnValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::FaceAnalysis::IFaceDetector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DetectFacesAsync(void* image, void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL DetectFacesWithSearchAreaAsync(void* image, struct struct_Windows_Graphics_Imaging_BitmapBounds searchArea, void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::FaceAnalysis::IFaceDetectorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAsync(void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSupportedBitmapPixelFormats(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSupported(bool* returnValue) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::FaceAnalysis::IFaceTracker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProcessNextFrameAsync(void* videoFrame, void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::FaceAnalysis::IFaceTrackerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAsync(void** returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSupportedBitmapPixelFormats(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSupported(bool* returnValue) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_FaceAnalysis_IDetectedFace
@@ -109,45 +149,5 @@ struct consume_Windows_Media_FaceAnalysis_IFaceTrackerStatics
     bool IsSupported() const;
 };
 template <> struct consume<Windows::Media::FaceAnalysis::IFaceTrackerStatics> { template <typename D> using type = consume_Windows_Media_FaceAnalysis_IFaceTrackerStatics<D>; };
-
-template <> struct abi<Windows::Media::FaceAnalysis::IDetectedFace>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FaceBox(struct struct_Windows_Graphics_Imaging_BitmapBounds* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::FaceAnalysis::IFaceDetector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DetectFacesAsync(void* image, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall DetectFacesWithSearchAreaAsync(void* image, struct struct_Windows_Graphics_Imaging_BitmapBounds searchArea, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall get_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall put_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::FaceAnalysis::IFaceDetectorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAsync(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetSupportedBitmapPixelFormats(void** result) noexcept = 0;
-    virtual HRESULT __stdcall IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSupported(bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::FaceAnalysis::IFaceTracker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProcessNextFrameAsync(void* videoFrame, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall get_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall put_MinDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxDetectableFaceSize(struct struct_Windows_Graphics_Imaging_BitmapSize value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::FaceAnalysis::IFaceTrackerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAsync(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetSupportedBitmapPixelFormats(void** result) noexcept = 0;
-    virtual HRESULT __stdcall IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSupported(bool* returnValue) noexcept = 0;
-};};
 
 }

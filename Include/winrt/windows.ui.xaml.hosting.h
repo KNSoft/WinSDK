@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.hosting.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -244,7 +256,7 @@
 #endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION)
-#define WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION 0x20000
+#define WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION)
 
 #endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
@@ -329,6 +341,70 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IDesktopWindowXamlSource;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IDesktopWindowXamlSourceFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IDesktopWindowXamlSourceGotFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceGotFocusEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview_FWD_DEFINED__
 namespace ABI {
@@ -376,6 +452,102 @@ namespace ABI {
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 ABI::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IWindowsXamlManager;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager ABI::Windows::UI::Xaml::Hosting::IWindowsXamlManager
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IWindowsXamlManagerStatics;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics ABI::Windows::UI::Xaml::Hosting::IWindowsXamlManagerStatics
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IXamlSourceFocusNavigationRequest;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IXamlSourceFocusNavigationRequestFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequestFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IXamlSourceFocusNavigationResult;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationResult
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    interface IXamlSourceFocusNavigationResultFactory;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationResultFactory
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_FWD_DEFINED__
@@ -607,6 +779,109 @@ typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesignerAppManager*,
 
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class DesktopWindowXamlSource;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class DesktopWindowXamlSourceGotFocusEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a77f0e84-ced7-5681-b140-8c18a55ceb1d"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceGotFocusEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*, ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceGotFocusEventArgs*, ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceGotFocusEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Hosting.DesktopWindowXamlSource, Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceGotFocusEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceGotFocusEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceGotFocusEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_USE */
+
+
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class DesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_USE
+#define DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("9e79eafe-c7fe-54a5-96ff-7abe02e05418"))
+ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceTakeFocusRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*, ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceTakeFocusRequestedEventArgs*, ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceTakeFocusRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.Xaml.Hosting.DesktopWindowXamlSource, Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::DesktopWindowXamlSourceTakeFocusRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_t;
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceTakeFocusRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource*,ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSourceTakeFocusRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_USE */
+
+
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 
@@ -1017,6 +1292,32 @@ namespace ABI {
         } /* Xaml */
     } /* Hosting */} /* ABI */
 
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    
+                    typedef enum XamlSourceFocusNavigationReason : int XamlSourceFocusNavigationReason;
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1039,6 +1340,42 @@ namespace ABI {
             namespace Xaml {
                 namespace Hosting {
                     class ElementCompositionPreview;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class WindowsXamlManager;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class XamlSourceFocusNavigationRequest;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    class XamlSourceFocusNavigationResult;
                 } /* Windows */
             } /* UI */
         } /* Xaml */
@@ -1095,6 +1432,41 @@ namespace ABI {
         } /* Xaml */
     } /* Hosting */} /* ABI */
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationReason
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [v1_enum, contract] */
+                    enum XamlSourceFocusNavigationReason : int
+                    {
+                        XamlSourceFocusNavigationReason_Programmatic = 0,
+                        XamlSourceFocusNavigationReason_Restore = 1,
+                        XamlSourceFocusNavigationReason_First = 3,
+                        XamlSourceFocusNavigationReason_Last = 4,
+                        XamlSourceFocusNavigationReason_Left = 7,
+                        XamlSourceFocusNavigationReason_Up = 8,
+                        XamlSourceFocusNavigationReason_Right = 9,
+                        XamlSourceFocusNavigationReason_Down = 10,
+                    };
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -1169,7 +1541,7 @@ namespace ABI {
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
                         /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_DesignerAppExited(
-                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs * value,
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs * handler,
                             /* [retval, out] */__RPC__out EventRegistrationToken * token
                             ) = 0;
                         /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_DesignerAppExited(
@@ -1178,13 +1550,13 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE CreateNewViewAsync(
                             /* [in] */ABI::Windows::UI::Xaml::Hosting::DesignerAppViewState initialViewState,
                             /* [in] */ABI::Windows::Foundation::Size initialViewSize,
-                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CHosting__CDesignerAppView * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CHosting__CDesignerAppView * * operation
                             ) = 0;
                         virtual HRESULT STDMETHODCALLTYPE LoadObjectIntoAppAsync(
                             /* [in] */__RPC__in HSTRING dllName,
                             /* [in] */GUID classId,
                             /* [in] */__RPC__in HSTRING initializationData,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                             ) = 0;
                         
                     };
@@ -1228,7 +1600,7 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE Create(
                             /* [in] */__RPC__in HSTRING appUserModelId,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IDesignerAppManager * * instance
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IDesignerAppManager * * value
                             ) = 0;
                         
                     };
@@ -1285,7 +1657,7 @@ namespace ABI {
                         virtual HRESULT STDMETHODCALLTYPE UpdateViewAsync(
                             /* [in] */ABI::Windows::UI::Xaml::Hosting::DesignerAppViewState viewState,
                             /* [in] */ABI::Windows::Foundation::Size viewSize,
-                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
                             ) = 0;
                         
                     };
@@ -1300,6 +1672,204 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_INTERFACE_DEFINED__) */
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSource[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("D585BFE1-00FF-51BE-BA1D-A1329956EA0A"), exclusiveto, contract] */
+                    MIDL_INTERFACE("D585BFE1-00FF-51BE-BA1D-A1329956EA0A")
+                    IDesktopWindowXamlSource : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IUIElement * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Content(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IUIElement * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HasFocus(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TakeFocusRequested(
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_TakeFocusRequested(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_GotFocus(
+                            /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * handler,
+                            /* [retval, out] */__RPC__out EventRegistrationToken * token
+                            ) = 0;
+                        /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_GotFocus(
+                            /* [in] */EventRegistrationToken token
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE NavigateFocus(
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * request,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationResult * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDesktopWindowXamlSource=_uuidof(IDesktopWindowXamlSource);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceFactory[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("5CD61DC0-2561-56E1-8E75-6E44173805E3"), exclusiveto, contract] */
+                    MIDL_INTERFACE("5CD61DC0-2561-56E1-8E75-6E44173805E3")
+                    IDesktopWindowXamlSourceFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */__RPC__in_opt IInspectable * baseInterface,
+                            /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IDesktopWindowXamlSource * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDesktopWindowXamlSourceFactory=_uuidof(IDesktopWindowXamlSourceFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceGotFocusEventArgs[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("39BE4849-D9CC-5B70-8F05-1AD9A4AAA342"), exclusiveto, contract] */
+                    MIDL_INTERFACE("39BE4849-D9CC-5B70-8F05-1AD9A4AAA342")
+                    IDesktopWindowXamlSourceGotFocusEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDesktopWindowXamlSourceGotFocusEventArgs=_uuidof(IDesktopWindowXamlSourceGotFocusEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceTakeFocusRequestedEventArgs[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("FE61E4B9-A7AF-52B3-BDB9-C3305C0B8DF2"), exclusiveto, contract] */
+                    MIDL_INTERFACE("FE61E4B9-A7AF-52B3-BDB9-C3305C0B8DF2")
+                    IDesktopWindowXamlSourceTakeFocusRequestedEventArgs : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Request(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDesktopWindowXamlSourceTakeFocusRequestedEventArgs=_uuidof(IDesktopWindowXamlSourceTakeFocusRequestedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -1456,6 +2026,280 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionP
 
 /*
  *
+ * Interface Windows.UI.Xaml.Hosting.IWindowsXamlManager
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IWindowsXamlManager[] = L"Windows.UI.Xaml.Hosting.IWindowsXamlManager";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("56096C31-1AA0-5288-8818-6E74A2DCAFF5"), exclusiveto, contract] */
+                    MIDL_INTERFACE("56096C31-1AA0-5288-8818-6E74A2DCAFF5")
+                    IWindowsXamlManager : public IInspectable
+                    {
+                    public:
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IWindowsXamlManager=_uuidof(IWindowsXamlManager);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IWindowsXamlManagerStatics[] = L"Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("28258A12-7D82-505B-B210-712B04A58882"), exclusiveto, contract] */
+                    MIDL_INTERFACE("28258A12-7D82-505B-B210-712B04A58882")
+                    IWindowsXamlManagerStatics : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE InitializeForCurrentThread(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IWindowsXamlManager * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IWindowsXamlManagerStatics=_uuidof(IWindowsXamlManagerStatics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationRequest[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("FBB93BB5-1496-5A80-AC00-E757359755E6"), exclusiveto, contract] */
+                    MIDL_INTERFACE("FBB93BB5-1496-5A80-AC00-E757359755E6")
+                    IXamlSourceFocusNavigationRequest : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Reason(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HintRect(
+                            /* [retval, out] */__RPC__out ABI::Windows::Foundation::Rect * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                            /* [retval, out] */__RPC__out GUID * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlSourceFocusNavigationRequest=_uuidof(IXamlSourceFocusNavigationRequest);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationRequestFactory[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("E746AB8F-B4EF-5390-97E5-CC0A2779C574"), exclusiveto, contract] */
+                    MIDL_INTERFACE("E746AB8F-B4EF-5390-97E5-CC0A2779C574")
+                    IXamlSourceFocusNavigationRequestFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */ABI::Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason reason,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHintRect(
+                            /* [in] */ABI::Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason reason,
+                            /* [in] */ABI::Windows::Foundation::Rect hintRect,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstanceWithHintRectAndCorrelationId(
+                            /* [in] */ABI::Windows::UI::Xaml::Hosting::XamlSourceFocusNavigationReason reason,
+                            /* [in] */ABI::Windows::Foundation::Rect hintRect,
+                            /* [in] */GUID correlationId,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationRequest * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlSourceFocusNavigationRequestFactory=_uuidof(IXamlSourceFocusNavigationRequestFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationResult[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("88D55A5F-9603-5D8F-9CC7-D1C4070D9801"), exclusiveto, contract] */
+                    MIDL_INTERFACE("88D55A5F-9603-5D8F-9CC7-D1C4070D9801")
+                    IXamlSourceFocusNavigationResult : public IInspectable
+                    {
+                    public:
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WasFocusMoved(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlSourceFocusNavigationResult=_uuidof(IXamlSourceFocusNavigationResult);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationResultFactory[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Hosting {
+                    /* [object, uuid("43BBADBF-F9E1-5527-B8C5-09339FF2CA76"), exclusiveto, contract] */
+                    MIDL_INTERFACE("43BBADBF-F9E1-5527-B8C5-09339FF2CA76")
+                    IXamlSourceFocusNavigationResultFactory : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */boolean focusMoved,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Hosting::IXamlSourceFocusNavigationResult * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IXamlSourceFocusNavigationResultFactory=_uuidof(IXamlSourceFocusNavigationResultFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Hosting */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Hosting.IXamlUIPresenter
  *
  * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 1.0
@@ -1542,7 +2386,7 @@ namespace ABI {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE ResolveFileResource(
                             /* [in] */__RPC__in HSTRING path,
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         
                     };
@@ -1582,7 +2426,7 @@ namespace ABI {
                     {
                     public:
                         virtual HRESULT STDMETHODCALLTYPE GetGenericXamlFilePath(
-                            /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                             ) = 0;
                         
                     };
@@ -1625,7 +2469,7 @@ namespace ABI {
                             /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::IResourceDictionary * dictionary,
                             /* [in] */__RPC__in_opt IInspectable * dictionaryKey,
                             /* [in] */__RPC__in_opt IInspectable * suggestedValue,
-                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                             ) = 0;
                         
                     };
@@ -1759,8 +2603,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStat
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Hosting.IDesignerAppExitedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -1812,8 +2654,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Hosting.IDesignerAppView ** Default Interface **
  *    Windows.Foundation.IClosable
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -1824,6 +2664,75 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesignerAppView[] = L"Windows.UI.Xaml.Hosting.DesignerAppView";
 #endif
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSource";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -1852,6 +2761,88 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_ElementCompositionPreview[] = L"Windows.UI.Xaml.Hosting.ElementCompositionPreview";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IWindowsXamlManager ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_WindowsXamlManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_WindowsXamlManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_WindowsXamlManager[] = L"Windows.UI.Xaml.Hosting.WindowsXamlManager";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest[] = L"Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult[] = L"Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -1911,6 +2902,30 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView __x_ABI_
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreview;
@@ -1928,6 +2943,42 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPrevie
 typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2 __x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2;
 
 #endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionPreviewStatics2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenter_FWD_DEFINED__
@@ -2135,6 +3186,112 @@ interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppMan
 
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__
+
+typedef interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+
+typedef struct __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl;
+
+interface __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_Invoke(This,sender,e)	\
+    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 
@@ -2625,6 +3782,25 @@ typedef interface __x_ABI_CWindows_CUI_CXaml_CIUIElement __x_ABI_CWindows_CUI_CX
 typedef enum __x_ABI_CWindows_CUI_CXaml_CHosting_CDesignerAppViewState __x_ABI_CWindows_CUI_CXaml_CHosting_CDesignerAppViewState;
 
 
+typedef enum __x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason __x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2670,6 +3846,31 @@ enum __x_ABI_CWindows_CUI_CXaml_CHosting_CDesignerAppViewState
     DesignerAppViewState_Hidden = 1,
 };
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationReason
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason
+{
+    XamlSourceFocusNavigationReason_Programmatic = 0,
+    XamlSourceFocusNavigationReason_Restore = 1,
+    XamlSourceFocusNavigationReason_First = 3,
+    XamlSourceFocusNavigationReason_Last = 4,
+    XamlSourceFocusNavigationReason_Left = 7,
+    XamlSourceFocusNavigationReason_Up = 8,
+    XamlSourceFocusNavigationReason_Right = 9,
+    XamlSourceFocusNavigationReason_Down = 10,
+};
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -2820,7 +4021,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_DesignerAppExited )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager * This,
-        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs * value,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesignerAppManager_Windows__CUI__CXaml__CHosting__CDesignerAppExitedEventArgs * handler,
         /* [retval, out] */__RPC__out EventRegistrationToken * token
         );
     /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_DesignerAppExited )(
@@ -2831,14 +4032,14 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CHosting_CDesignerAppViewState initialViewState,
         /* [in] */__x_ABI_CWindows_CFoundation_CSize initialViewSize,
-        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CHosting__CDesignerAppView * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CUI__CXaml__CHosting__CDesignerAppView * * operation
         );
     HRESULT ( STDMETHODCALLTYPE *LoadObjectIntoAppAsync )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager * This,
         /* [in] */__RPC__in HSTRING dllName,
         /* [in] */GUID classId,
         /* [in] */__RPC__in HSTRING initializationData,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     END_INTERFACE
     
@@ -2871,17 +4072,17 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_get_AppUserModelId(This,value) \
     ( (This)->lpVtbl->get_AppUserModelId(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_add_DesignerAppExited(This,value,token) \
-    ( (This)->lpVtbl->add_DesignerAppExited(This,value,token) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_add_DesignerAppExited(This,handler,token) \
+    ( (This)->lpVtbl->add_DesignerAppExited(This,handler,token) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_remove_DesignerAppExited(This,token) \
     ( (This)->lpVtbl->remove_DesignerAppExited(This,token) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_CreateNewViewAsync(This,initialViewState,initialViewSize,returnValue) \
-    ( (This)->lpVtbl->CreateNewViewAsync(This,initialViewState,initialViewSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_CreateNewViewAsync(This,initialViewState,initialViewSize,operation) \
+    ( (This)->lpVtbl->CreateNewViewAsync(This,initialViewState,initialViewSize,operation) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_LoadObjectIntoAppAsync(This,dllName,classId,initializationData,returnValue) \
-    ( (This)->lpVtbl->LoadObjectIntoAppAsync(This,dllName,classId,initializationData,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager_LoadObjectIntoAppAsync(This,dllName,classId,initializationData,operation) \
+    ( (This)->lpVtbl->LoadObjectIntoAppAsync(This,dllName,classId,initializationData,operation) )
 
 
 #endif /* COBJMACROS */
@@ -2944,7 +4145,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *Create )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManagerFactory * This,
         /* [in] */__RPC__in HSTRING appUserModelId,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager * * instance
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManager * * value
         );
     END_INTERFACE
     
@@ -2974,8 +4175,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManagerFactory
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManagerFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManagerFactory_Create(This,appUserModelId,instance) \
-    ( (This)->lpVtbl->Create(This,appUserModelId,instance) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppManagerFactory_Create(This,appUserModelId,value) \
+    ( (This)->lpVtbl->Create(This,appUserModelId,value) )
 
 
 #endif /* COBJMACROS */
@@ -3055,7 +4256,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CHosting_CDesignerAppViewState viewState,
         /* [in] */__x_ABI_CWindows_CFoundation_CSize viewSize,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
         );
     END_INTERFACE
     
@@ -3097,8 +4298,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_get_ViewSize(This,value) \
     ( (This)->lpVtbl->get_ViewSize(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_UpdateViewAsync(This,viewState,viewSize,returnValue) \
-    ( (This)->lpVtbl->UpdateViewAsync(This,viewState,viewSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_UpdateViewAsync(This,viewState,viewSize,operation) \
+    ( (This)->lpVtbl->UpdateViewAsync(This,viewState,viewSize,operation) )
 
 
 #endif /* COBJMACROS */
@@ -3107,6 +4308,432 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView;
 #endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesignerAppView_INTERFACE_DEFINED__) */
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSource[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource";
+/* [object, uuid("D585BFE1-00FF-51BE-BA1D-A1329956EA0A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Content )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Content )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIUIElement * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HasFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_TakeFocusRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceTakeFocusRequestedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_TakeFocusRequested )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */EventRegistrationToken token
+        );
+    /* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSource_Windows__CUI__CXaml__CHosting__CDesktopWindowXamlSourceGotFocusEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_GotFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */EventRegistrationToken token
+        );
+    HRESULT ( STDMETHODCALLTYPE *NavigateFocus )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * request,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_get_Content(This,value) \
+    ( (This)->lpVtbl->get_Content(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_put_Content(This,value) \
+    ( (This)->lpVtbl->put_Content(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_get_HasFocus(This,value) \
+    ( (This)->lpVtbl->get_HasFocus(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_add_TakeFocusRequested(This,handler,token) \
+    ( (This)->lpVtbl->add_TakeFocusRequested(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_remove_TakeFocusRequested(This,token) \
+    ( (This)->lpVtbl->remove_TakeFocusRequested(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_add_GotFocus(This,handler,token) \
+    ( (This)->lpVtbl->add_GotFocus(This,handler,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_remove_GotFocus(This,token) \
+    ( (This)->lpVtbl->remove_GotFocus(This,token) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_NavigateFocus(This,request,result) \
+    ( (This)->lpVtbl->NavigateFocus(This,request,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceFactory[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceFactory";
+/* [object, uuid("5CD61DC0-2561-56E1-8E75-6E44173805E3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * baseInterface,
+        /* [out] */__RPC__deref_out_opt IInspectable * * innerInterface,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSource * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_CreateInstance(This,baseInterface,innerInterface,value) \
+    ( (This)->lpVtbl->CreateInstance(This,baseInterface,innerInterface,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceGotFocusEventArgs[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs";
+/* [object, uuid("39BE4849-D9CC-5B70-8F05-1AD9A4AAA342"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Request )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_get_Request(This,value) \
+    ( (This)->lpVtbl->get_Request(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceGotFocusEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IDesktopWindowXamlSourceTakeFocusRequestedEventArgs[] = L"Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs";
+/* [object, uuid("FE61E4B9-A7AF-52B3-BDB9-C3305C0B8DF2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Request )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_get_Request(This,value) \
+    ( (This)->lpVtbl->get_Request(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceTakeFocusRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -3433,6 +5060,592 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIElementCompositionP
 
 /*
  *
+ * Interface Windows.UI.Xaml.Hosting.IWindowsXamlManager
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IWindowsXamlManager[] = L"Windows.UI.Xaml.Hosting.IWindowsXamlManager";
+/* [object, uuid("56096C31-1AA0-5288-8818-6E74A2DCAFF5"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IWindowsXamlManagerStatics[] = L"Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics";
+/* [object, uuid("28258A12-7D82-505B-B210-712B04A58882"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *InitializeForCurrentThread )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManager * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_InitializeForCurrentThread(This,result) \
+    ( (This)->lpVtbl->InitializeForCurrentThread(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIWindowsXamlManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationRequest[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest";
+/* [object, uuid("FBB93BB5-1496-5A80-AC00-E757359755E6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Reason )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HintRect )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CRect * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_get_Reason(This,value) \
+    ( (This)->lpVtbl->get_Reason(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_get_HintRect(This,value) \
+    ( (This)->lpVtbl->get_HintRect(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_get_CorrelationId(This,value) \
+    ( (This)->lpVtbl->get_CorrelationId(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationRequestFactory[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory";
+/* [object, uuid("E746AB8F-B4EF-5390-97E5-CC0A2779C574"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason reason,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithHintRect )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason reason,
+        /* [in] */__x_ABI_CWindows_CFoundation_CRect hintRect,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateInstanceWithHintRectAndCorrelationId )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CHosting_CXamlSourceFocusNavigationReason reason,
+        /* [in] */__x_ABI_CWindows_CFoundation_CRect hintRect,
+        /* [in] */GUID correlationId,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequest * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_CreateInstance(This,reason,value) \
+    ( (This)->lpVtbl->CreateInstance(This,reason,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_CreateInstanceWithHintRect(This,reason,hintRect,value) \
+    ( (This)->lpVtbl->CreateInstanceWithHintRect(This,reason,hintRect,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_CreateInstanceWithHintRectAndCorrelationId(This,reason,hintRect,correlationId,value) \
+    ( (This)->lpVtbl->CreateInstanceWithHintRectAndCorrelationId(This,reason,hintRect,correlationId,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationRequestFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationResult[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult";
+/* [object, uuid("88D55A5F-9603-5D8F-9CC7-D1C4070D9801"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WasFocusMoved )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_get_WasFocusMoved(This,value) \
+    ( (This)->lpVtbl->get_WasFocusMoved(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Hosting_IXamlSourceFocusNavigationResultFactory[] = L"Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory";
+/* [object, uuid("43BBADBF-F9E1-5527-B8C5-09339FF2CA76"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory * This,
+        /* [in] */boolean focusMoved,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResult * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactoryVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_CreateInstance(This,focusMoved,value) \
+    ( (This)->lpVtbl->CreateInstance(This,focusMoved,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlSourceFocusNavigationResultFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
  * Interface Windows.UI.Xaml.Hosting.IXamlUIPresenter
  *
  * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 1.0
@@ -3628,7 +5841,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *ResolveFileResource )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost * This,
         /* [in] */__RPC__in HSTRING path,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     END_INTERFACE
     
@@ -3658,8 +5871,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_ResolveFileResource(This,path,returnValue) \
-    ( (This)->lpVtbl->ResolveFileResource(This,path,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost_ResolveFileResource(This,path,result) \
+    ( (This)->lpVtbl->ResolveFileResource(This,path,result) )
 
 
 #endif /* COBJMACROS */
@@ -3718,7 +5931,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetGenericXamlFilePath )(
         __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2 * This,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     END_INTERFACE
     
@@ -3748,8 +5961,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_GetGenericXamlFilePath(This,returnValue) \
-    ( (This)->lpVtbl->GetGenericXamlFilePath(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost2_GetGenericXamlFilePath(This,result) \
+    ( (This)->lpVtbl->GetGenericXamlFilePath(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -3811,7 +6024,7 @@ HRESULT ( STDMETHODCALLTYPE *ResolveDictionaryResource )(
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CIResourceDictionary * dictionary,
         /* [in] */__RPC__in_opt IInspectable * dictionaryKey,
         /* [in] */__RPC__in_opt IInspectable * suggestedValue,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -3841,8 +6054,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3
 #define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_ResolveDictionaryResource(This,dictionary,dictionaryKey,suggestedValue,returnValue) \
-    ( (This)->lpVtbl->ResolveDictionaryResource(This,dictionary,dictionaryKey,suggestedValue,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterHost3_ResolveDictionaryResource(This,dictionary,dictionaryKey,suggestedValue,result) \
+    ( (This)->lpVtbl->ResolveDictionaryResource(This,dictionary,dictionaryKey,suggestedValue,result) )
 
 
 #endif /* COBJMACROS */
@@ -4087,8 +6300,6 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CHosting_CIXamlUIPresenterStat
  * Class implements the following interfaces:
  *    Windows.UI.Xaml.Hosting.IDesignerAppExitedEventArgs ** Default Interface **
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -4140,8 +6351,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.UI.Xaml.Hosting.IDesignerAppView ** Default Interface **
  *    Windows.Foundation.IClosable
  *
- * Class Threading Model:  Both Single and Multi Threaded Apartment
- *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -4152,6 +6361,75 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesignerAppView[] = L"Windows.UI.Xaml.Hosting.DesignerAppView";
 #endif
 #endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSource
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSource ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSource[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSource";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceGotFocusEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceGotFocusEventArgs[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceGotFocusEventArgs";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IDesktopWindowXamlSourceTakeFocusRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_DesktopWindowXamlSourceTakeFocusRequestedEventArgs[] = L"Windows.UI.Xaml.Hosting.DesktopWindowXamlSourceTakeFocusRequestedEventArgs";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*
@@ -4180,6 +6458,88 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_ElementCompositionPreview[] = L"Windows.UI.Xaml.Hosting.ElementCompositionPreview";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.WindowsXamlManager
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Hosting.IWindowsXamlManagerStatics interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IWindowsXamlManager ** Default Interface **
+ *    Windows.Foundation.IClosable
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_WindowsXamlManager_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_WindowsXamlManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_WindowsXamlManager[] = L"Windows.UI.Xaml.Hosting.WindowsXamlManager";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequestFactory interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationRequest ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationRequest[] = L"Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationRequest";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult
+ *
+ * Introduced to Windows.UI.Xaml.Hosting.HostingContract in version 3.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResultFactory interface starting with version 3.0 of the Windows.UI.Xaml.Hosting.HostingContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Hosting.IXamlSourceFocusNavigationResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Hosting_XamlSourceFocusNavigationResult[] = L"Windows.UI.Xaml.Hosting.XamlSourceFocusNavigationResult";
+#endif
+#endif // WINDOWS_UI_XAML_HOSTING_HOSTINGCONTRACT_VERSION >= 0x30000
 
 
 /*

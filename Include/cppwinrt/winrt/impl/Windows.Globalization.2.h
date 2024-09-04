@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -226,6 +226,10 @@ struct CurrencyIdentifiers
     static hstring ZMW();
     static hstring ZWL();
     static hstring BYN();
+    static hstring MRU();
+    static hstring SSP();
+    static hstring STN();
+    static hstring VES();
 };
 
 struct WINRT_EBO GeographicRegion :

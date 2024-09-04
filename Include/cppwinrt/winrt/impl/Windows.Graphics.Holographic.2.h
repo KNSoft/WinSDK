@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -56,7 +56,7 @@ WINRT_EXPORT namespace winrt::Windows::Graphics::Holographic {
 
 struct WINRT_EBO HolographicCamera :
     Windows::Graphics::Holographic::IHolographicCamera,
-    impl::require<HolographicCamera, Windows::Graphics::Holographic::IHolographicCamera2, Windows::Graphics::Holographic::IHolographicCamera3, Windows::Graphics::Holographic::IHolographicCamera4>
+    impl::require<HolographicCamera, Windows::Graphics::Holographic::IHolographicCamera2, Windows::Graphics::Holographic::IHolographicCamera3, Windows::Graphics::Holographic::IHolographicCamera4, Windows::Graphics::Holographic::IHolographicCamera5>
 {
     HolographicCamera(std::nullptr_t) noexcept {}
 };
@@ -124,7 +124,8 @@ struct WINRT_EBO HolographicQuadLayer :
 };
 
 struct WINRT_EBO HolographicQuadLayerUpdateParameters :
-    Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters
+    Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters,
+    impl::require<HolographicQuadLayerUpdateParameters, Windows::Graphics::Holographic::IHolographicQuadLayerUpdateParameters2>
 {
     HolographicQuadLayerUpdateParameters(std::nullptr_t) noexcept {}
 };
@@ -137,10 +138,10 @@ struct WINRT_EBO HolographicSpace :
     static Windows::Graphics::Holographic::HolographicSpace CreateForCoreWindow(Windows::UI::Core::CoreWindow const& window);
     static bool IsSupported();
     static bool IsAvailable();
-    static event_token IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using IsAvailableChanged_revoker = factory_event_revoker<Windows::Graphics::Holographic::IHolographicSpaceStatics2>;
+    static winrt::event_token IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using IsAvailableChanged_revoker = impl::factory_event_revoker<Windows::Graphics::Holographic::IHolographicSpaceStatics2, &impl::abi_t<Windows::Graphics::Holographic::IHolographicSpaceStatics2>::remove_IsAvailableChanged>;
     static IsAvailableChanged_revoker IsAvailableChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void IsAvailableChanged(event_token const& token);
+    static void IsAvailableChanged(winrt::event_token const& token);
     static bool IsConfigured();
 };
 

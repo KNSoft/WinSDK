@@ -210,8 +210,8 @@ typedef struct _BTH_ENUMERATOR_INFO {
     // Local radio manufacturer, retreived via HCI Command
     //
     USHORT LocalMfg;
-    
-    
+
+
     //
     // Vendor ID type, retrieved from DI SDP record
     //
@@ -248,7 +248,7 @@ typedef PVOID SCO_SERVER_HANDLE;
 
 #ifndef BRBTYPE
 typedef enum _BRB_TYPE {
-    BRB_HCI_GET_LOCAL_BD_ADDR           = 0x0001,  
+    BRB_HCI_GET_LOCAL_BD_ADDR           = 0x0001,
     BRB_L2CA_REGISTER_SERVER            = 0x0100,
     BRB_L2CA_UNREGISTER_SERVER          = 0x0101,
     BRB_L2CA_OPEN_CHANNEL               = 0x0102,
@@ -288,10 +288,10 @@ typedef enum _BRB_TYPE {
 
 typedef enum _BRB_VERSION {
                             //
-    BLUETOOTH_V1 = 0,       // Brb was created by Version 1.x code 
+    BLUETOOTH_V1 = 0,       // Brb was created by Version 1.x code
                             // (i.e. ExAllocatePool)
                             //
-                            
+
                             //
     BLUETOOTH_V2            // Brb was created by Version 2.0 (or later)
                             // code by BthAllocateBrb.  This implies Brb is
@@ -319,7 +319,7 @@ typedef struct _BRB_HEADER {
     //
     // [PRIVATE] BRB Version
     // 0  ==> Bluetooth 1.x version
-    // >0 ==> Bluetooth 2.x version or later, filled in by 
+    // >0 ==> Bluetooth 2.x version or later, filled in by
     // BthCreateBrb
     //
     USHORT Version; // BRB_VERSION
@@ -427,7 +427,7 @@ typedef struct _L2CAP_RETRANSMISSION_AND_FLOW_CONTROL {
 
     //
     // Size of the transmission window for flow control, retranmission and
-    // enhanced retransmission mode. Only Enhanced Retransmission mode is 
+    // enhanced retransmission mode. Only Enhanced Retransmission mode is
     // supported and it has range 1 to 63.
     //
     UCHAR TxWindowSize;
@@ -617,7 +617,7 @@ typedef enum _CODING_FORMAT {
 
 //
 // SCO and eSCO Datapath values
-// 
+//
 #define SCO_DATAPATH_HCI 0x0
 #define SCO_DATAPATH_PCM 0x1
 
@@ -645,7 +645,7 @@ typedef enum _PCM_DATA_FORMAT {
 #define SCO_EV4                         (0x0010)
 #define SCO_EV5                         (0x0020)
 
-#define SCO_PKT_ALL                     (0x003F)    
+#define SCO_PKT_ALL                     (0x003F)
 
 //
 // EDR eSCO packet types are not defined.  They are implicitly included,
@@ -681,7 +681,7 @@ typedef enum _PCM_DATA_FORMAT {
 #define PKT_3EV5                (PKT_EDR_ESCO_NONE ^ SCO_NO3EV5)    // 0x1C0
 #define PKT_EDR_ESCO_ALL        (~PKT_EDR_ESCO_NONE)                // 0x000
 
-#define PKT_ESCO_ALL            (SCO_EV3 | SCO_EV4 | SCO_EV5)       // 0x038, including 2/3EV3/5 
+#define PKT_ESCO_ALL            (SCO_EV3 | SCO_EV4 | SCO_EV5)       // 0x038, including 2/3EV3/5
 
 
 
@@ -761,7 +761,7 @@ typedef struct _SCO_INDICATION_PARAMETERS {
 
 //
 // SCO callback prototype.
-// 
+//
 typedef
 void
 (*PFNSCO_INDICATION_CALLBACK)(
@@ -789,7 +789,7 @@ struct _BRB_SCO_REGISTER_SERVER {
     // Reserved for future use (set to 0).
     //
     ULONG           Reserved;
-    
+
     //
     // [IN] Combination of SCO_INDICATION_Xxx flags.
     //
@@ -809,7 +809,7 @@ struct _BRB_SCO_REGISTER_SERVER {
 
     //
     // [OUT] Set by BTHPORT upon a successful set of the server interface.  The
-    // client should send a BRB_SCO_REGISTER_SERVER when it 
+    // client should send a BRB_SCO_REGISTER_SERVER when it
     // no longer wants to receive remote connect indications (ie, when it
     // receives a PNP rmeove for instance).  The client should pass back
     // the ServerHandle as part of the BRB_SCO_REGISTER_SERVER
@@ -852,9 +852,9 @@ struct _BRB_SCO_OPEN_CHANNEL {
     // [IN] Receive bandwidth in (bytes/sec).
     ULONG ReceiveBandwidth;
 
-    // [IN] Max in air delay before discarding the packet (msec). 
+    // [IN] Max in air delay before discarding the packet (msec).
     USHORT MaxLatency;
-    
+
     // [IN] HV1 | HV2 | HV3 | EV3 | EV4 | EV5 (See SCO_HV1 etc.)
     USHORT PacketType;
 
@@ -881,15 +881,15 @@ struct _BRB_SCO_OPEN_CHANNEL {
 
     // [IN] Object to be passed to ObReferenceObject, ObDereferenceObject
     PVOID ReferenceObject;
-    
+
     //
     // [IN/OUT] handle used to ID the connection upon a successful connect.
-    // When sending a BRB_SCO_OPEN_CHANNEL or BRB_SCO_OPEN_UNMANAGED_CHANNEL, 
+    // When sending a BRB_SCO_OPEN_CHANNEL or BRB_SCO_OPEN_UNMANAGED_CHANNEL,
     // this will be filled in when the BRB completes.
-    // When sending an open channel response BRB_SCO_OPEN_CHANNEL_RESPONSE 
+    // When sending an open channel response BRB_SCO_OPEN_CHANNEL_RESPONSE
     // or BRB_SCO_OPEN_UNMANAGED_CHANNEL_RESPONSE, this must be filled in
     // by the server before sending down the BRB.  The value assigned
-    // should be SCO_INDICATION_PARAMETERS::ConnectionHandle which was passed 
+    // should be SCO_INDICATION_PARAMETERS::ConnectionHandle which was passed
     // in during ScoIndicationRemoteConnect.
     //
     SCO_CHANNEL_HANDLE ChannelHandle;
@@ -908,7 +908,7 @@ struct _BRB_SCO_OPEN_CHANNEL {
 struct _BRB_SCO_CLOSE_CHANNEL {
     // BRB header
     BRB_HEADER Hdr;
-    
+
     // [IN] Address of the remote device
     BTH_ADDR BtAddress;
 
@@ -922,7 +922,7 @@ struct _BRB_SCO_CLOSE_CHANNEL {
 struct _BRB_SCO_FLUSH_CHANNEL {
     // BRB header
     BRB_HEADER Hdr;
-    
+
     // [IN] Address of the remote device
     BTH_ADDR BtAddress;
 
@@ -944,12 +944,12 @@ struct _BRB_SCO_FLUSH_CHANNEL {
 //
 typedef struct _BASEBAND_CHANNEL_INFO {
     //
-    // Time between two consecutive eSCO instants measured in slots. Must be 
+    // Time between two consecutive eSCO instants measured in slots. Must be
     // 0 for SCO links.
     //
     UCHAR       Transmission_Interval;
 
-    // 
+    //
     // The size of the retransmission windows measured in slots.  Must be 0
     // for SCO links.
     //
@@ -984,7 +984,7 @@ typedef struct _BASEBAND_CHANNEL_INFO {
 struct _BRB_SCO_GET_CHANNEL_INFO {
     // BRB header
     BRB_HEADER Hdr;
-    
+
     // [IN] Bluetooth address of target device
     BTH_ADDR BtAddress;
 
@@ -1000,9 +1000,9 @@ struct _BRB_SCO_GET_CHANNEL_INFO {
     // [OUT] Receive bandwidth in (bytes/sec).
     ULONG ReceiveBandwidth;
 
-    // [OUT] Max in air delay before discarding the packet (msec). 
+    // [OUT] Max in air delay before discarding the packet (msec).
     USHORT MaxLatency;
-    
+
     // [OUT] HV1 | HV2 | HV3 | EV3 | EV4 | EV5 (See SCO_HV1 etc.)
     USHORT PacketType;
 
@@ -1023,7 +1023,7 @@ struct _BRB_SCO_GET_CHANNEL_INFO {
 
     // [OUT] HCI link type.
     SCO_LINK_TYPE LinkType;
-    
+
     // [OUT] Baseband channel info. This info is only available for links
     // established using the 1.2 Bluetooth Synchronous Commands (see InfoFlags
     // for more info).
@@ -1045,7 +1045,7 @@ struct _BRB_SCO_GET_CHANNEL_INFO {
 struct _BRB_SCO_TRANSFER {
     // BRB header
     BRB_HEADER Hdr;
-    
+
     // [IN] Address of the remote device
     BTH_ADDR BtAddress;
 
@@ -1080,7 +1080,7 @@ struct _BRB_SCO_TRANSFER {
 struct _BRB_SCO_GET_SYSTEM_INFO {
     // BRB header
     BRB_HEADER Hdr;
-    
+
     // [OUT] SCO features. (See SCO_FEATURE_Xxx defines).
     ULONG Features;
 
@@ -1091,7 +1091,7 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
     // [OUT] Minimum transfer in msec x request.
     //       Set to -1 if variable or unknown.
     ULONG TransferUnit;
-    
+
     // [OUT] Supported (e)SCO packet types. (See SCO_HV1 etc.).
     USHORT PacketTypes;
 
@@ -1121,7 +1121,7 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
 
 //
 // Return TRUE if the reserved values are not used, or FALSE otherwise
-// 
+//
 #define ALL_RESERVED_DATA_FORMAT_BITS_ARE_ZERO(format)      \
     ((format >) ? FALSE : TRUE)
 
@@ -1217,7 +1217,7 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
 
 //
 // Min, max, default value for FCS
-// 
+//
 #define L2CAP_NO_FCS                        (0x00)
 #define L2CAP_16_BIT_FCS                    (0x01)
 #define L2CAP_DEFAULT_FCS                   (L2CAP_16_BIT_FCS)
@@ -1784,7 +1784,7 @@ struct _BRB_L2CA_REGISTER_SERVER {
     // Common BRB header
     //
     BRB_HEADER  Hdr;
-    
+
     BTH_ADDR    BtAddress;
     USHORT      PSM;
     ULONG       IndicationFlags;
@@ -1805,7 +1805,7 @@ struct _BRB_L2CA_REGISTER_SERVER {
 
     //
     // [OUT] Set by BTHPORT upon a successful set of the server interface.  The
-    // client should send a BRB_L2CA_UNREGISTER_SERVER when it 
+    // client should send a BRB_L2CA_UNREGISTER_SERVER when it
     // no longer wants to receive remote connect indications (ie, when it
     // receives a PNP rmeove for instance).  The client should pass back
     // the ServerHandle as part of the BRB_L2CA_UNREGISTER_SERVER
@@ -1940,7 +1940,7 @@ struct _BRB_L2CA_OPEN_ENHANCED_CHANNEL {
             // Combination of CM_XXX flags
             //
             ULONG Flags;
-            
+
             L2CAP_RETRANSMISSION_AND_FLOW_CONTROL RetransmissionAndFlow;
         } ModeConfig;
 
@@ -2548,7 +2548,7 @@ _IRQL_requires_same_
 typedef
 VOID
 (*PFNBTH_INITIALIZE_BRB)(
-    _Inout_ PBRB pBrb, 
+    _Inout_ PBRB pBrb,
     _In_ BRB_TYPE brbType);
 
 //
@@ -2567,7 +2567,7 @@ _IRQL_requires_same_
 typedef
 VOID
 (*PFNBTH_REUSE_BRB)(
-    _Inout_ PBRB pBrb, 
+    _Inout_ PBRB pBrb,
     _In_ BRB_TYPE brbType);
 
 //
@@ -2601,8 +2601,8 @@ BOOLEAN
 // MinorFunction = IRP_MN_QUERY_INTERFACE;
 //
 // {94A59AA8-4383-4286-AA4F-34A160F40004}
-// DEFINE_GUID(GUID_BTHDDI_PROFILE_DRIVER_INTERFACE, 
-//             0x94a59aa8, 0x4383, 0x4286, 0xaa, 0x4f, 0x34, 0xa1, 0x60, 
+// DEFINE_GUID(GUID_BTHDDI_PROFILE_DRIVER_INTERFACE,
+//             0x94a59aa8, 0x4383, 0x4286, 0xaa, 0x4f, 0x34, 0xa1, 0x60,
 //             0xf4, 0x0, 0x4);
 //
 //
@@ -2621,7 +2621,7 @@ typedef struct _BTH_PROFILE_DRIVER_INTERFACE {
     //
     // Use this function to free Brb allocated with BthAllocateBrb
     //
-    OUT PFNBTH_FREE_BRB BthFreeBrb;    
+    OUT PFNBTH_FREE_BRB BthFreeBrb;
 
     //
     // Use this function to initialize stack allocated Brbs

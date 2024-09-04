@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -92,168 +92,146 @@ template <typename D> hstring consume_Windows_Security_Cryptography_ICryptograph
 template <typename D>
 struct produce<D, Windows::Security::Cryptography::ICryptographicBufferStatics> : produce_base<D, Windows::Security::Cryptography::ICryptographicBufferStatics>
 {
-    HRESULT __stdcall Compare(void* object1, void* object2, bool* isEqual) noexcept final
+    int32_t WINRT_CALL Compare(void* object1, void* object2, bool* isEqual) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compare, WINRT_WRAP(bool), Windows::Storage::Streams::IBuffer const&, Windows::Storage::Streams::IBuffer const&);
             *isEqual = detach_from<bool>(this->shim().Compare(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&object1), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&object2)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GenerateRandom(uint32_t length, void** buffer) noexcept final
+    int32_t WINRT_CALL GenerateRandom(uint32_t length, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GenerateRandom, WINRT_WRAP(Windows::Storage::Streams::IBuffer), uint32_t);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().GenerateRandom(length));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GenerateRandomNumber(uint32_t* value) noexcept final
+    int32_t WINRT_CALL GenerateRandomNumber(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GenerateRandomNumber, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().GenerateRandomNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateFromByteArray(uint32_t __valueSize, uint8_t* value, void** buffer) noexcept final
+    int32_t WINRT_CALL CreateFromByteArray(uint32_t __valueSize, uint8_t* value, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateFromByteArray, WINRT_WRAP(Windows::Storage::Streams::IBuffer), array_view<uint8_t const>);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().CreateFromByteArray(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(value), reinterpret_cast<uint8_t const *>(value) + __valueSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyToByteArray(void* buffer, uint32_t* __valueSize, uint8_t** value) noexcept final
+    int32_t WINRT_CALL CopyToByteArray(void* buffer, uint32_t* __valueSize, uint8_t** value) noexcept final
     {
         try
         {
             *__valueSize = 0;
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyToByteArray, WINRT_WRAP(void), Windows::Storage::Streams::IBuffer const&, com_array<uint8_t>&);
             this->shim().CopyToByteArray(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer), detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DecodeFromHexString(HSTRING value, void** buffer) noexcept final
+    int32_t WINRT_CALL DecodeFromHexString(void* value, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecodeFromHexString, WINRT_WRAP(Windows::Storage::Streams::IBuffer), hstring const&);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DecodeFromHexString(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EncodeToHexString(void* buffer, HSTRING* value) noexcept final
+    int32_t WINRT_CALL EncodeToHexString(void* buffer, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncodeToHexString, WINRT_WRAP(hstring), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<hstring>(this->shim().EncodeToHexString(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DecodeFromBase64String(HSTRING value, void** buffer) noexcept final
+    int32_t WINRT_CALL DecodeFromBase64String(void* value, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecodeFromBase64String, WINRT_WRAP(Windows::Storage::Streams::IBuffer), hstring const&);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().DecodeFromBase64String(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EncodeToBase64String(void* buffer, HSTRING* value) noexcept final
+    int32_t WINRT_CALL EncodeToBase64String(void* buffer, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncodeToBase64String, WINRT_WRAP(hstring), Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<hstring>(this->shim().EncodeToBase64String(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertStringToBinary(HSTRING value, Windows::Security::Cryptography::BinaryStringEncoding encoding, void** buffer) noexcept final
+    int32_t WINRT_CALL ConvertStringToBinary(void* value, Windows::Security::Cryptography::BinaryStringEncoding encoding, void** buffer) noexcept final
     {
         try
         {
             *buffer = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertStringToBinary, WINRT_WRAP(Windows::Storage::Streams::IBuffer), hstring const&, Windows::Security::Cryptography::BinaryStringEncoding const&);
             *buffer = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().ConvertStringToBinary(*reinterpret_cast<hstring const*>(&value), *reinterpret_cast<Windows::Security::Cryptography::BinaryStringEncoding const*>(&encoding)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, void* buffer, HSTRING* value) noexcept final
+    int32_t WINRT_CALL ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, void* buffer, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConvertBinaryToString, WINRT_WRAP(hstring), Windows::Security::Cryptography::BinaryStringEncoding const&, Windows::Storage::Streams::IBuffer const&);
             *value = detach_from<hstring>(this->shim().ConvertBinaryToString(*reinterpret_cast<Windows::Security::Cryptography::BinaryStringEncoding const*>(&encoding), *reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&buffer)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -263,57 +241,57 @@ WINRT_EXPORT namespace winrt::Windows::Security::Cryptography {
 
 inline bool CryptographicBuffer::Compare(Windows::Storage::Streams::IBuffer const& object1, Windows::Storage::Streams::IBuffer const& object2)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().Compare(object1, object2);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.Compare(object1, object2); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::GenerateRandom(uint32_t length)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().GenerateRandom(length);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.GenerateRandom(length); });
 }
 
 inline uint32_t CryptographicBuffer::GenerateRandomNumber()
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().GenerateRandomNumber();
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.GenerateRandomNumber(); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::CreateFromByteArray(array_view<uint8_t const> value)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().CreateFromByteArray(value);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.CreateFromByteArray(value); });
 }
 
 inline void CryptographicBuffer::CopyToByteArray(Windows::Storage::Streams::IBuffer const& buffer, com_array<uint8_t>& value)
 {
-    get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().CopyToByteArray(buffer, value);
+    impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.CopyToByteArray(buffer, value); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromHexString(param::hstring const& value)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().DecodeFromHexString(value);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.DecodeFromHexString(value); });
 }
 
 inline hstring CryptographicBuffer::EncodeToHexString(Windows::Storage::Streams::IBuffer const& buffer)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().EncodeToHexString(buffer);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.EncodeToHexString(buffer); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::DecodeFromBase64String(param::hstring const& value)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().DecodeFromBase64String(value);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.DecodeFromBase64String(value); });
 }
 
 inline hstring CryptographicBuffer::EncodeToBase64String(Windows::Storage::Streams::IBuffer const& buffer)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().EncodeToBase64String(buffer);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.EncodeToBase64String(buffer); });
 }
 
 inline Windows::Storage::Streams::IBuffer CryptographicBuffer::ConvertStringToBinary(param::hstring const& value, Windows::Security::Cryptography::BinaryStringEncoding const& encoding)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().ConvertStringToBinary(value, encoding);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.ConvertStringToBinary(value, encoding); });
 }
 
 inline hstring CryptographicBuffer::ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding const& encoding, Windows::Storage::Streams::IBuffer const& buffer)
 {
-    return get_activation_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>().ConvertBinaryToString(encoding, buffer);
+    return impl::call_factory<CryptographicBuffer, Windows::Security::Cryptography::ICryptographicBufferStatics>([&](auto&& f) { return f.ConvertBinaryToString(encoding, buffer); });
 }
 
 }
@@ -324,5 +302,3 @@ template<> struct hash<winrt::Windows::Security::Cryptography::ICryptographicBuf
 template<> struct hash<winrt::Windows::Security::Cryptography::CryptographicBuffer> : winrt::impl::hash_base<winrt::Windows::Security::Cryptography::CryptographicBuffer> {};
 
 }
-
-WINRT_WARNING_POP

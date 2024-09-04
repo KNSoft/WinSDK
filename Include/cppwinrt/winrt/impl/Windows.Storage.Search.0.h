@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -196,23 +196,23 @@ template <> struct name<Windows::Storage::Search::FolderDepth>{ static constexpr
 template <> struct name<Windows::Storage::Search::IndexedState>{ static constexpr auto & value{ L"Windows.Storage.Search.IndexedState" }; };
 template <> struct name<Windows::Storage::Search::IndexerOption>{ static constexpr auto & value{ L"Windows.Storage.Search.IndexerOption" }; };
 template <> struct name<Windows::Storage::Search::SortEntry>{ static constexpr auto & value{ L"Windows.Storage.Search.SortEntry" }; };
-template <> struct guid<Windows::Storage::Search::IContentIndexer>{ static constexpr GUID value{ 0xB1767F8D,0xF698,0x4982,{ 0xB0,0x5F,0x3A,0x6E,0x8C,0xAB,0x01,0xA2 } }; };
-template <> struct guid<Windows::Storage::Search::IContentIndexerQuery>{ static constexpr GUID value{ 0x70E3B0F8,0x4BFC,0x428A,{ 0x88,0x89,0xCC,0x51,0xDA,0x9A,0x7B,0x9D } }; };
-template <> struct guid<Windows::Storage::Search::IContentIndexerQueryOperations>{ static constexpr GUID value{ 0x28823E10,0x4786,0x42F1,{ 0x97,0x30,0x79,0x2B,0x35,0x66,0xB1,0x50 } }; };
-template <> struct guid<Windows::Storage::Search::IContentIndexerStatics>{ static constexpr GUID value{ 0x8C488375,0xB37E,0x4C60,{ 0x9B,0xA8,0xB7,0x60,0xFD,0xA3,0xE5,0x9D } }; };
-template <> struct guid<Windows::Storage::Search::IIndexableContent>{ static constexpr GUID value{ 0xCCF1A05F,0xD4B5,0x483A,{ 0xB0,0x6E,0xE0,0xDB,0x1E,0xC4,0x20,0xE4 } }; };
-template <> struct guid<Windows::Storage::Search::IQueryOptions>{ static constexpr GUID value{ 0x1E5E46EE,0x0F45,0x4838,{ 0xA8,0xE9,0xD0,0x47,0x9D,0x44,0x6C,0x30 } }; };
-template <> struct guid<Windows::Storage::Search::IQueryOptionsFactory>{ static constexpr GUID value{ 0x032E1F8C,0xA9C1,0x4E71,{ 0x80,0x11,0x0D,0xEE,0x9D,0x48,0x11,0xA3 } }; };
-template <> struct guid<Windows::Storage::Search::IQueryOptionsWithProviderFilter>{ static constexpr GUID value{ 0x5B9D1026,0x15C4,0x44DD,{ 0xB8,0x9A,0x47,0xA5,0x9B,0x7D,0x7C,0x4F } }; };
-template <> struct guid<Windows::Storage::Search::IStorageFileQueryResult>{ static constexpr GUID value{ 0x52FDA447,0x2BAA,0x412C,{ 0xB2,0x9F,0xD4,0xB1,0x77,0x8E,0xFA,0x1E } }; };
-template <> struct guid<Windows::Storage::Search::IStorageFileQueryResult2>{ static constexpr GUID value{ 0x4E5DB9DD,0x7141,0x46C4,{ 0x8B,0xE3,0xE9,0xDC,0x9E,0x27,0x27,0x5C } }; };
-template <> struct guid<Windows::Storage::Search::IStorageFolderQueryOperations>{ static constexpr GUID value{ 0xCB43CCC9,0x446B,0x4A4F,{ 0xBE,0x97,0x75,0x77,0x71,0xBE,0x52,0x03 } }; };
-template <> struct guid<Windows::Storage::Search::IStorageFolderQueryResult>{ static constexpr GUID value{ 0x6654C911,0x7D66,0x46FA,{ 0xAE,0xCF,0xE4,0xA4,0xBA,0xA9,0x3A,0xB8 } }; };
-template <> struct guid<Windows::Storage::Search::IStorageItemQueryResult>{ static constexpr GUID value{ 0xE8948079,0x9D58,0x47B8,{ 0xB2,0xB2,0x41,0xB0,0x7F,0x47,0x95,0xF9 } }; };
-template <> struct guid<Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails>{ static constexpr GUID value{ 0x1DC7A369,0xB7A3,0x4DF2,{ 0x9D,0x61,0xEB,0xA8,0x5A,0x03,0x43,0xD2 } }; };
-template <> struct guid<Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails>{ static constexpr GUID value{ 0x2A371977,0xABBF,0x4E1D,{ 0x8A,0xA5,0x63,0x85,0xD8,0x88,0x47,0x99 } }; };
-template <> struct guid<Windows::Storage::Search::IStorageQueryResultBase>{ static constexpr GUID value{ 0xC297D70D,0x7353,0x47AB,{ 0xBA,0x58,0x8C,0x61,0x42,0x5D,0xC5,0x4B } }; };
-template <> struct guid<Windows::Storage::Search::IValueAndLanguage>{ static constexpr GUID value{ 0xB9914881,0xA1EE,0x4BC4,{ 0x92,0xA5,0x46,0x69,0x68,0xE3,0x04,0x36 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IContentIndexer>{ static constexpr guid value{ 0xB1767F8D,0xF698,0x4982,{ 0xB0,0x5F,0x3A,0x6E,0x8C,0xAB,0x01,0xA2 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IContentIndexerQuery>{ static constexpr guid value{ 0x70E3B0F8,0x4BFC,0x428A,{ 0x88,0x89,0xCC,0x51,0xDA,0x9A,0x7B,0x9D } }; };
+template <> struct guid_storage<Windows::Storage::Search::IContentIndexerQueryOperations>{ static constexpr guid value{ 0x28823E10,0x4786,0x42F1,{ 0x97,0x30,0x79,0x2B,0x35,0x66,0xB1,0x50 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IContentIndexerStatics>{ static constexpr guid value{ 0x8C488375,0xB37E,0x4C60,{ 0x9B,0xA8,0xB7,0x60,0xFD,0xA3,0xE5,0x9D } }; };
+template <> struct guid_storage<Windows::Storage::Search::IIndexableContent>{ static constexpr guid value{ 0xCCF1A05F,0xD4B5,0x483A,{ 0xB0,0x6E,0xE0,0xDB,0x1E,0xC4,0x20,0xE4 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IQueryOptions>{ static constexpr guid value{ 0x1E5E46EE,0x0F45,0x4838,{ 0xA8,0xE9,0xD0,0x47,0x9D,0x44,0x6C,0x30 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IQueryOptionsFactory>{ static constexpr guid value{ 0x032E1F8C,0xA9C1,0x4E71,{ 0x80,0x11,0x0D,0xEE,0x9D,0x48,0x11,0xA3 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IQueryOptionsWithProviderFilter>{ static constexpr guid value{ 0x5B9D1026,0x15C4,0x44DD,{ 0xB8,0x9A,0x47,0xA5,0x9B,0x7D,0x7C,0x4F } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageFileQueryResult>{ static constexpr guid value{ 0x52FDA447,0x2BAA,0x412C,{ 0xB2,0x9F,0xD4,0xB1,0x77,0x8E,0xFA,0x1E } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageFileQueryResult2>{ static constexpr guid value{ 0x4E5DB9DD,0x7141,0x46C4,{ 0x8B,0xE3,0xE9,0xDC,0x9E,0x27,0x27,0x5C } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageFolderQueryOperations>{ static constexpr guid value{ 0xCB43CCC9,0x446B,0x4A4F,{ 0xBE,0x97,0x75,0x77,0x71,0xBE,0x52,0x03 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageFolderQueryResult>{ static constexpr guid value{ 0x6654C911,0x7D66,0x46FA,{ 0xAE,0xCF,0xE4,0xA4,0xBA,0xA9,0x3A,0xB8 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageItemQueryResult>{ static constexpr guid value{ 0xE8948079,0x9D58,0x47B8,{ 0xB2,0xB2,0x41,0xB0,0x7F,0x47,0x95,0xF9 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails>{ static constexpr guid value{ 0x1DC7A369,0xB7A3,0x4DF2,{ 0x9D,0x61,0xEB,0xA8,0x5A,0x03,0x43,0xD2 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails>{ static constexpr guid value{ 0x2A371977,0xABBF,0x4E1D,{ 0x8A,0xA5,0x63,0x85,0xD8,0x88,0x47,0x99 } }; };
+template <> struct guid_storage<Windows::Storage::Search::IStorageQueryResultBase>{ static constexpr guid value{ 0xC297D70D,0x7353,0x47AB,{ 0xBA,0x58,0x8C,0x61,0x42,0x5D,0xC5,0x4B } }; };
+template <> struct guid_storage<Windows::Storage::Search::IValueAndLanguage>{ static constexpr guid value{ 0xB9914881,0xA1EE,0x4BC4,{ 0x92,0xA5,0x46,0x69,0x68,0xE3,0x04,0x36 } }; };
 template <> struct default_interface<Windows::Storage::Search::ContentIndexer>{ using type = Windows::Storage::Search::IContentIndexer; };
 template <> struct default_interface<Windows::Storage::Search::ContentIndexerQuery>{ using type = Windows::Storage::Search::IContentIndexerQuery; };
 template <> struct default_interface<Windows::Storage::Search::IndexableContent>{ using type = Windows::Storage::Search::IIndexableContent; };
@@ -224,6 +224,161 @@ template <> struct default_interface<Windows::Storage::Search::StorageItemQueryR
 template <> struct default_interface<Windows::Storage::Search::StorageLibraryChangeTrackerTriggerDetails>{ using type = Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails; };
 template <> struct default_interface<Windows::Storage::Search::StorageLibraryContentChangedTriggerDetails>{ using type = Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails; };
 template <> struct default_interface<Windows::Storage::Search::ValueAndLanguage>{ using type = Windows::Storage::Search::IValueAndLanguage; };
+
+template <> struct abi<Windows::Storage::Search::IContentIndexer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddAsync(void* indexableContent, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateAsync(void* indexableContent, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void* contentId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteMultipleAsync(void* contentIds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAllAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RetrievePropertiesAsync(void* contentId, void* propertiesToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Revision(uint64_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IContentIndexerQuery>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetCountAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPropertiesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPropertiesRangeAsync(uint32_t startIndex, uint32_t maxItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRangeAsync(uint32_t startIndex, uint32_t maxItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_QueryFolder(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IContentIndexerQueryOperations>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateQueryWithSortOrderAndLanguage(void* searchFilter, void* propertiesToRetrieve, void* sortOrder, void* searchFilterLanguage, void** query) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateQueryWithSortOrder(void* searchFilter, void* propertiesToRetrieve, void* sortOrder, void** query) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateQuery(void* searchFilter, void* propertiesToRetrieve, void** query) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IContentIndexerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetIndexerWithName(void* indexName, void** index) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIndexer(void** index) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IIndexableContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Id(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Stream(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Stream(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StreamContentType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StreamContentType(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IQueryOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FileTypeFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FolderDepth(Windows::Storage::Search::FolderDepth* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FolderDepth(Windows::Storage::Search::FolderDepth value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ApplicationSearchFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ApplicationSearchFilter(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UserSearchFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UserSearchFilter(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IndexerOption(Windows::Storage::Search::IndexerOption* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IndexerOption(Windows::Storage::Search::IndexerOption value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SortOrder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GroupPropertyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DateStackOption(Windows::Storage::Search::DateStackOption* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveToString(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromString(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetThumbnailPrefetch(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, void* propertiesToRetrieve) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IQueryOptionsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, void* fileTypeFilter, void** queryOptions) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCommonFolderQuery(Windows::Storage::Search::CommonFolderQuery query, void** queryOptions) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IQueryOptionsWithProviderFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StorageProviderIdFilter(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageFileQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFilesAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageFileQueryResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetMatchingPropertiesWithRanges(void* file, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageFolderQueryOperations>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetIndexedStateAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileQueryOverloadDefault(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileQuery(Windows::Storage::Search::CommonFileQuery query, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFileQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderQueryOverloadDefault(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery query, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFolderQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateItemQuery(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateItemQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsync(Windows::Storage::Search::CommonFileQuery query, uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsyncOverloadDefaultStartAndCount(Windows::Storage::Search::CommonFileQuery query, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsync(Windows::Storage::Search::CommonFolderQuery query, uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsyncOverloadDefaultStartAndCount(Windows::Storage::Search::CommonFolderQuery query, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AreQueryOptionsSupported(void* queryOptions, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsCommonFolderQuerySupported(Windows::Storage::Search::CommonFolderQuery query, bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsCommonFileQuerySupported(Windows::Storage::Search::CommonFileQuery query, bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageFolderQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetFoldersAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageItemQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetItemsAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Folder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChangeTracker(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Folder(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateModifiedSinceQuery(Windows::Foundation::DateTime lastQueryTime, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IStorageQueryResultBase>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetItemCountAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Folder(void** container) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ContentsChanged(void* handler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ContentsChanged(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OptionsChanged(void* changedHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OptionsChanged(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL FindStartIndexAsync(void* value, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentQueryOptions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL ApplyNewQueryOptions(void* newQueryOptions) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Search::IValueAndLanguage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_Search_IContentIndexer
@@ -394,14 +549,14 @@ struct consume_Windows_Storage_Search_IStorageQueryResultBase
 {
     Windows::Foundation::IAsyncOperation<uint32_t> GetItemCountAsync() const;
     Windows::Storage::StorageFolder Folder() const;
-    event_token ContentsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& handler) const;
-    using ContentsChanged_revoker = event_revoker<Windows::Storage::Search::IStorageQueryResultBase>;
+    winrt::event_token ContentsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& handler) const;
+    using ContentsChanged_revoker = impl::event_revoker<Windows::Storage::Search::IStorageQueryResultBase, &impl::abi_t<Windows::Storage::Search::IStorageQueryResultBase>::remove_ContentsChanged>;
     ContentsChanged_revoker ContentsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& handler) const;
-    void ContentsChanged(event_token const& eventCookie) const;
-    event_token OptionsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& changedHandler) const;
-    using OptionsChanged_revoker = event_revoker<Windows::Storage::Search::IStorageQueryResultBase>;
+    void ContentsChanged(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token OptionsChanged(Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& changedHandler) const;
+    using OptionsChanged_revoker = impl::event_revoker<Windows::Storage::Search::IStorageQueryResultBase, &impl::abi_t<Windows::Storage::Search::IStorageQueryResultBase>::remove_OptionsChanged>;
     OptionsChanged_revoker OptionsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::Foundation::IInspectable> const& changedHandler) const;
-    void OptionsChanged(event_token const& eventCookie) const;
+    void OptionsChanged(winrt::event_token const& eventCookie) const noexcept;
     Windows::Foundation::IAsyncOperation<uint32_t> FindStartIndexAsync(Windows::Foundation::IInspectable const& value) const;
     Windows::Storage::Search::QueryOptions GetCurrentQueryOptions() const;
     void ApplyNewQueryOptions(Windows::Storage::Search::QueryOptions const& newQueryOptions) const;
@@ -420,165 +575,10 @@ template <> struct consume<Windows::Storage::Search::IValueAndLanguage> { templa
 
 struct struct_Windows_Storage_Search_SortEntry
 {
-    HSTRING PropertyName;
+    void* PropertyName;
     bool AscendingOrder;
 };
 template <> struct abi<Windows::Storage::Search::SortEntry>{ using type = struct_Windows_Storage_Search_SortEntry; };
 
-
-template <> struct abi<Windows::Storage::Search::IContentIndexer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddAsync(void* indexableContent, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UpdateAsync(void* indexableContent, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(HSTRING contentId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteMultipleAsync(void* contentIds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAllAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RetrievePropertiesAsync(HSTRING contentId, void* propertiesToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Revision(uint64_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IContentIndexerQuery>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetCountAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetPropertiesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetPropertiesRangeAsync(uint32_t startIndex, uint32_t maxItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetRangeAsync(uint32_t startIndex, uint32_t maxItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_QueryFolder(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IContentIndexerQueryOperations>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateQueryWithSortOrderAndLanguage(HSTRING searchFilter, void* propertiesToRetrieve, void* sortOrder, HSTRING searchFilterLanguage, void** query) noexcept = 0;
-    virtual HRESULT __stdcall CreateQueryWithSortOrder(HSTRING searchFilter, void* propertiesToRetrieve, void* sortOrder, void** query) noexcept = 0;
-    virtual HRESULT __stdcall CreateQuery(HSTRING searchFilter, void* propertiesToRetrieve, void** query) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IContentIndexerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetIndexerWithName(HSTRING indexName, void** index) noexcept = 0;
-    virtual HRESULT __stdcall GetIndexer(void** index) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IIndexableContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Id(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Stream(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Stream(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StreamContentType(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StreamContentType(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IQueryOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FileTypeFilter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FolderDepth(Windows::Storage::Search::FolderDepth* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FolderDepth(Windows::Storage::Search::FolderDepth value) noexcept = 0;
-    virtual HRESULT __stdcall get_ApplicationSearchFilter(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ApplicationSearchFilter(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_UserSearchFilter(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UserSearchFilter(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IndexerOption(Windows::Storage::Search::IndexerOption* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IndexerOption(Windows::Storage::Search::IndexerOption value) noexcept = 0;
-    virtual HRESULT __stdcall get_SortOrder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_GroupPropertyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DateStackOption(Windows::Storage::Search::DateStackOption* value) noexcept = 0;
-    virtual HRESULT __stdcall SaveToString(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromString(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall SetThumbnailPrefetch(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) noexcept = 0;
-    virtual HRESULT __stdcall SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, void* propertiesToRetrieve) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IQueryOptionsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, void* fileTypeFilter, void** queryOptions) noexcept = 0;
-    virtual HRESULT __stdcall CreateCommonFolderQuery(Windows::Storage::Search::CommonFolderQuery query, void** queryOptions) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IQueryOptionsWithProviderFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StorageProviderIdFilter(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageFileQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFilesAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageFileQueryResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetMatchingPropertiesWithRanges(void* file, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageFolderQueryOperations>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetIndexedStateAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileQueryOverloadDefault(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileQuery(Windows::Storage::Search::CommonFileQuery query, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFileQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderQueryOverloadDefault(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderQuery(Windows::Storage::Search::CommonFolderQuery query, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFolderQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateItemQuery(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateItemQueryWithOptions(void* queryOptions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsync(Windows::Storage::Search::CommonFileQuery query, uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsyncOverloadDefaultStartAndCount(Windows::Storage::Search::CommonFileQuery query, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsync(Windows::Storage::Search::CommonFolderQuery query, uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsyncOverloadDefaultStartAndCount(Windows::Storage::Search::CommonFolderQuery query, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AreQueryOptionsSupported(void* queryOptions, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsCommonFolderQuerySupported(Windows::Storage::Search::CommonFolderQuery query, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall IsCommonFileQuerySupported(Windows::Storage::Search::CommonFileQuery query, bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageFolderQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetFoldersAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageItemQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetItemsAsync(uint32_t startIndex, uint32_t maxNumberOfItems, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageLibraryChangeTrackerTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Folder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChangeTracker(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Folder(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateModifiedSinceQuery(Windows::Foundation::DateTime lastQueryTime, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IStorageQueryResultBase>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetItemCountAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_Folder(void** container) noexcept = 0;
-    virtual HRESULT __stdcall add_ContentsChanged(void* handler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ContentsChanged(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_OptionsChanged(void* changedHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_OptionsChanged(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall FindStartIndexAsync(void* value, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentQueryOptions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall ApplyNewQueryOptions(void* newQueryOptions) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Search::IValueAndLanguage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
 
 }

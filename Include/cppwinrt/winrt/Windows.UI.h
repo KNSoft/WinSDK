@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.2.h"
@@ -1021,37 +1021,33 @@ struct produce<D, Windows::UI::IColorHelper> : produce_base<D, Windows::UI::ICol
 template <typename D>
 struct produce<D, Windows::UI::IColorHelperStatics> : produce_base<D, Windows::UI::IColorHelperStatics>
 {
-    HRESULT __stdcall FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b, struct struct_Windows_UI_Color* returnValue) noexcept final
+    int32_t WINRT_CALL FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b, struct struct_Windows_UI_Color* returnValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromArgb, WINRT_WRAP(Windows::UI::Color), uint8_t, uint8_t, uint8_t, uint8_t);
             *returnValue = detach_from<Windows::UI::Color>(this->shim().FromArgb(a, r, g, b));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::IColorHelperStatics2> : produce_base<D, Windows::UI::IColorHelperStatics2>
 {
-    HRESULT __stdcall ToDisplayName(struct struct_Windows_UI_Color color, HSTRING* returnValue) noexcept final
+    int32_t WINRT_CALL ToDisplayName(struct struct_Windows_UI_Color color, void** returnValue) noexcept final
     {
         try
         {
             *returnValue = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToDisplayName, WINRT_WRAP(hstring), Windows::UI::Color const&);
             *returnValue = detach_from<hstring>(this->shim().ToDisplayName(*reinterpret_cast<Windows::UI::Color const*>(&color)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1062,1978 +1058,1696 @@ struct produce<D, Windows::UI::IColors> : produce_base<D, Windows::UI::IColors>
 template <typename D>
 struct produce<D, Windows::UI::IColorsStatics> : produce_base<D, Windows::UI::IColorsStatics>
 {
-    HRESULT __stdcall get_AliceBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_AliceBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AliceBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().AliceBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AntiqueWhite(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_AntiqueWhite(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AntiqueWhite, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().AntiqueWhite());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Aqua(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Aqua(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Aqua, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Aqua());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Aquamarine(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Aquamarine(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Aquamarine, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Aquamarine());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Azure(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Azure(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Azure, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Azure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Beige(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Beige(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Beige, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Beige());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bisque(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Bisque(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bisque, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Bisque());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Black(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Black(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Black, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Black());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BlanchedAlmond(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BlanchedAlmond(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BlanchedAlmond, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BlanchedAlmond());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Blue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Blue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Blue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Blue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BlueViolet(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BlueViolet(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BlueViolet, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BlueViolet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Brown(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Brown(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Brown, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Brown());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BurlyWood(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BurlyWood(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BurlyWood, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BurlyWood());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CadetBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_CadetBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CadetBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().CadetBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Chartreuse(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Chartreuse(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Chartreuse, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Chartreuse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Chocolate(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Chocolate(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Chocolate, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Chocolate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Coral(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Coral(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Coral, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Coral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CornflowerBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_CornflowerBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CornflowerBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().CornflowerBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cornsilk(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Cornsilk(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cornsilk, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Cornsilk());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Crimson(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Crimson(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Crimson, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Crimson());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cyan(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Cyan(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cyan, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Cyan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkCyan(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkCyan(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkCyan, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkCyan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkGoldenrod(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkGoldenrod(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkGoldenrod, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkGoldenrod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkKhaki(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkKhaki(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkKhaki, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkKhaki());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkMagenta(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkMagenta(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkMagenta, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkMagenta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkOliveGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkOliveGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkOliveGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkOliveGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkOrange(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkOrange(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkOrange, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkOrange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkOrchid(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkOrchid(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkOrchid, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkOrchid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkRed(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkRed(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkRed, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkRed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkSalmon(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkSalmon(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkSalmon, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkSalmon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkSeaGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkSeaGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkSlateBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkSlateBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkSlateBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkSlateBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkSlateGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkSlateGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkSlateGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkSlateGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkTurquoise(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkTurquoise(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkTurquoise, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkTurquoise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DarkViolet(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DarkViolet(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DarkViolet, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DarkViolet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeepPink(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DeepPink(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeepPink, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DeepPink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeepSkyBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DeepSkyBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeepSkyBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DeepSkyBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DimGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DimGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DimGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DimGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DodgerBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_DodgerBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DodgerBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().DodgerBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Firebrick(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Firebrick(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Firebrick, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Firebrick());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FloralWhite(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_FloralWhite(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FloralWhite, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().FloralWhite());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForestGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_ForestGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForestGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().ForestGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Fuchsia(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Fuchsia(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Fuchsia, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Fuchsia());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gainsboro(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Gainsboro(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gainsboro, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Gainsboro());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GhostWhite(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_GhostWhite(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GhostWhite, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().GhostWhite());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gold(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Gold(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gold, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Gold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Goldenrod(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Goldenrod(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Goldenrod, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Goldenrod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Gray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Gray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Green(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Green(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Green, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Green());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GreenYellow(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_GreenYellow(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GreenYellow, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().GreenYellow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Honeydew(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Honeydew(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Honeydew, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Honeydew());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HotPink(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_HotPink(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HotPink, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().HotPink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IndianRed(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_IndianRed(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndianRed, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().IndianRed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Indigo(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Indigo(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Indigo, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Indigo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Ivory(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Ivory(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Ivory, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Ivory());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Khaki(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Khaki(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Khaki, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Khaki());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Lavender(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Lavender(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Lavender, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Lavender());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LavenderBlush(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LavenderBlush(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LavenderBlush, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LavenderBlush());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LawnGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LawnGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LawnGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LawnGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LemonChiffon(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LemonChiffon(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LemonChiffon, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LemonChiffon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightCoral(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightCoral(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightCoral, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightCoral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightCyan(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightCyan(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightCyan, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightCyan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightGoldenrodYellow(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightGoldenrodYellow(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightGoldenrodYellow, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightGoldenrodYellow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightPink(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightPink(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightPink, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightPink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightSalmon(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightSalmon(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightSalmon, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightSalmon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightSeaGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightSeaGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightSkyBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightSkyBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightSkyBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightSkyBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightSlateGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightSlateGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightSlateGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightSlateGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightSteelBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightSteelBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightSteelBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightSteelBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LightYellow(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LightYellow(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LightYellow, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LightYellow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Lime(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Lime(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Lime, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Lime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LimeGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_LimeGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LimeGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().LimeGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Linen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Linen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Linen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Linen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Magenta(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Magenta(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Magenta, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Magenta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Maroon(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Maroon(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Maroon, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Maroon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumAquamarine(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumAquamarine(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumAquamarine, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumAquamarine());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumOrchid(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumOrchid(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumOrchid, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumOrchid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumPurple(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumPurple(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumPurple, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumPurple());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumSeaGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumSeaGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumSeaGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumSlateBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumSlateBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumSlateBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumSlateBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumSpringGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumSpringGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumSpringGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumSpringGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumTurquoise(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumTurquoise(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumTurquoise, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumTurquoise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediumVioletRed(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MediumVioletRed(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediumVioletRed, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MediumVioletRed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MidnightBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MidnightBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MidnightBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MidnightBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MintCream(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MintCream(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MintCream, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MintCream());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MistyRose(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_MistyRose(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MistyRose, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().MistyRose());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Moccasin(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Moccasin(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Moccasin, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Moccasin());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NavajoWhite(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_NavajoWhite(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NavajoWhite, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().NavajoWhite());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Navy(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Navy(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Navy, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Navy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OldLace(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_OldLace(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OldLace, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().OldLace());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Olive(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Olive(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Olive, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Olive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OliveDrab(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_OliveDrab(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OliveDrab, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().OliveDrab());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orange(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Orange(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orange, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Orange());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OrangeRed(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_OrangeRed(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OrangeRed, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().OrangeRed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orchid(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Orchid(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orchid, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Orchid());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PaleGoldenrod(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PaleGoldenrod(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaleGoldenrod, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PaleGoldenrod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PaleGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PaleGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaleGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PaleGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PaleTurquoise(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PaleTurquoise(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaleTurquoise, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PaleTurquoise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PaleVioletRed(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PaleVioletRed(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PaleVioletRed, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PaleVioletRed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PapayaWhip(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PapayaWhip(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PapayaWhip, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PapayaWhip());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PeachPuff(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PeachPuff(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeachPuff, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PeachPuff());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Peru(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Peru(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Peru, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Peru());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pink(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Pink(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pink, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Pink());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Plum(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Plum(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Plum, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Plum());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PowderBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_PowderBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PowderBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().PowderBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Purple(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Purple(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Purple, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Purple());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Red(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Red(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Red, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Red());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RosyBrown(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_RosyBrown(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RosyBrown, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().RosyBrown());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RoyalBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_RoyalBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RoyalBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().RoyalBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SaddleBrown(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SaddleBrown(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaddleBrown, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SaddleBrown());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Salmon(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Salmon(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Salmon, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Salmon());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SandyBrown(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SandyBrown(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SandyBrown, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SandyBrown());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SeaGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SeaGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SeaGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SeaGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SeaShell(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SeaShell(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SeaShell, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SeaShell());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sienna(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Sienna(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sienna, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Sienna());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Silver(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Silver(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Silver, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Silver());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkyBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SkyBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkyBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SkyBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SlateBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SlateBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SlateBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SlateBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SlateGray(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SlateGray(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SlateGray, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SlateGray());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Snow(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Snow(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Snow, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Snow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SpringGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SpringGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SpringGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SpringGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SteelBlue(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_SteelBlue(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SteelBlue, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().SteelBlue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tan(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Tan(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tan, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Tan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Teal(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Teal(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Teal, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Teal());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thistle(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Thistle(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thistle, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Thistle());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tomato(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Tomato(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tomato, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Tomato());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Transparent(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Transparent(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Transparent, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Transparent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Turquoise(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Turquoise(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Turquoise, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Turquoise());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Violet(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Violet(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Violet, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Violet());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Wheat(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Wheat(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Wheat, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Wheat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_White(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_White(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(White, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().White());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WhiteSmoke(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_WhiteSmoke(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WhiteSmoke, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().WhiteSmoke());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Yellow(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_Yellow(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Yellow, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().Yellow());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YellowGreen(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_YellowGreen(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YellowGreen, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().YellowGreen());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3043,717 +2757,717 @@ WINRT_EXPORT namespace winrt::Windows::UI {
 
 inline Windows::UI::Color ColorHelper::FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b)
 {
-    return get_activation_factory<ColorHelper, Windows::UI::IColorHelperStatics>().FromArgb(a, r, g, b);
+    return impl::call_factory<ColorHelper, Windows::UI::IColorHelperStatics>([&](auto&& f) { return f.FromArgb(a, r, g, b); });
 }
 
 inline hstring ColorHelper::ToDisplayName(Windows::UI::Color const& color)
 {
-    return get_activation_factory<ColorHelper, Windows::UI::IColorHelperStatics2>().ToDisplayName(color);
+    return impl::call_factory<ColorHelper, Windows::UI::IColorHelperStatics2>([&](auto&& f) { return f.ToDisplayName(color); });
 }
 
 inline Windows::UI::Color Colors::AliceBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().AliceBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.AliceBlue(); });
 }
 
 inline Windows::UI::Color Colors::AntiqueWhite()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().AntiqueWhite();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.AntiqueWhite(); });
 }
 
 inline Windows::UI::Color Colors::Aqua()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Aqua();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Aqua(); });
 }
 
 inline Windows::UI::Color Colors::Aquamarine()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Aquamarine();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Aquamarine(); });
 }
 
 inline Windows::UI::Color Colors::Azure()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Azure();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Azure(); });
 }
 
 inline Windows::UI::Color Colors::Beige()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Beige();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Beige(); });
 }
 
 inline Windows::UI::Color Colors::Bisque()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Bisque();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Bisque(); });
 }
 
 inline Windows::UI::Color Colors::Black()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Black();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Black(); });
 }
 
 inline Windows::UI::Color Colors::BlanchedAlmond()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().BlanchedAlmond();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.BlanchedAlmond(); });
 }
 
 inline Windows::UI::Color Colors::Blue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Blue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Blue(); });
 }
 
 inline Windows::UI::Color Colors::BlueViolet()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().BlueViolet();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.BlueViolet(); });
 }
 
 inline Windows::UI::Color Colors::Brown()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Brown();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Brown(); });
 }
 
 inline Windows::UI::Color Colors::BurlyWood()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().BurlyWood();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.BurlyWood(); });
 }
 
 inline Windows::UI::Color Colors::CadetBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().CadetBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.CadetBlue(); });
 }
 
 inline Windows::UI::Color Colors::Chartreuse()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Chartreuse();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Chartreuse(); });
 }
 
 inline Windows::UI::Color Colors::Chocolate()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Chocolate();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Chocolate(); });
 }
 
 inline Windows::UI::Color Colors::Coral()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Coral();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Coral(); });
 }
 
 inline Windows::UI::Color Colors::CornflowerBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().CornflowerBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.CornflowerBlue(); });
 }
 
 inline Windows::UI::Color Colors::Cornsilk()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Cornsilk();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Cornsilk(); });
 }
 
 inline Windows::UI::Color Colors::Crimson()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Crimson();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Crimson(); });
 }
 
 inline Windows::UI::Color Colors::Cyan()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Cyan();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Cyan(); });
 }
 
 inline Windows::UI::Color Colors::DarkBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkBlue(); });
 }
 
 inline Windows::UI::Color Colors::DarkCyan()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkCyan();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkCyan(); });
 }
 
 inline Windows::UI::Color Colors::DarkGoldenrod()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkGoldenrod();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkGoldenrod(); });
 }
 
 inline Windows::UI::Color Colors::DarkGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkGray(); });
 }
 
 inline Windows::UI::Color Colors::DarkGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkGreen(); });
 }
 
 inline Windows::UI::Color Colors::DarkKhaki()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkKhaki();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkKhaki(); });
 }
 
 inline Windows::UI::Color Colors::DarkMagenta()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkMagenta();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkMagenta(); });
 }
 
 inline Windows::UI::Color Colors::DarkOliveGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkOliveGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkOliveGreen(); });
 }
 
 inline Windows::UI::Color Colors::DarkOrange()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkOrange();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkOrange(); });
 }
 
 inline Windows::UI::Color Colors::DarkOrchid()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkOrchid();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkOrchid(); });
 }
 
 inline Windows::UI::Color Colors::DarkRed()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkRed();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkRed(); });
 }
 
 inline Windows::UI::Color Colors::DarkSalmon()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkSalmon();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkSalmon(); });
 }
 
 inline Windows::UI::Color Colors::DarkSeaGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkSeaGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkSeaGreen(); });
 }
 
 inline Windows::UI::Color Colors::DarkSlateBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkSlateBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkSlateBlue(); });
 }
 
 inline Windows::UI::Color Colors::DarkSlateGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkSlateGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkSlateGray(); });
 }
 
 inline Windows::UI::Color Colors::DarkTurquoise()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkTurquoise();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkTurquoise(); });
 }
 
 inline Windows::UI::Color Colors::DarkViolet()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DarkViolet();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DarkViolet(); });
 }
 
 inline Windows::UI::Color Colors::DeepPink()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DeepPink();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DeepPink(); });
 }
 
 inline Windows::UI::Color Colors::DeepSkyBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DeepSkyBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DeepSkyBlue(); });
 }
 
 inline Windows::UI::Color Colors::DimGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DimGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DimGray(); });
 }
 
 inline Windows::UI::Color Colors::DodgerBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().DodgerBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.DodgerBlue(); });
 }
 
 inline Windows::UI::Color Colors::Firebrick()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Firebrick();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Firebrick(); });
 }
 
 inline Windows::UI::Color Colors::FloralWhite()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().FloralWhite();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.FloralWhite(); });
 }
 
 inline Windows::UI::Color Colors::ForestGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().ForestGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.ForestGreen(); });
 }
 
 inline Windows::UI::Color Colors::Fuchsia()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Fuchsia();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Fuchsia(); });
 }
 
 inline Windows::UI::Color Colors::Gainsboro()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Gainsboro();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Gainsboro(); });
 }
 
 inline Windows::UI::Color Colors::GhostWhite()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().GhostWhite();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.GhostWhite(); });
 }
 
 inline Windows::UI::Color Colors::Gold()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Gold();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Gold(); });
 }
 
 inline Windows::UI::Color Colors::Goldenrod()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Goldenrod();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Goldenrod(); });
 }
 
 inline Windows::UI::Color Colors::Gray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Gray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Gray(); });
 }
 
 inline Windows::UI::Color Colors::Green()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Green();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Green(); });
 }
 
 inline Windows::UI::Color Colors::GreenYellow()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().GreenYellow();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.GreenYellow(); });
 }
 
 inline Windows::UI::Color Colors::Honeydew()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Honeydew();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Honeydew(); });
 }
 
 inline Windows::UI::Color Colors::HotPink()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().HotPink();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.HotPink(); });
 }
 
 inline Windows::UI::Color Colors::IndianRed()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().IndianRed();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.IndianRed(); });
 }
 
 inline Windows::UI::Color Colors::Indigo()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Indigo();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Indigo(); });
 }
 
 inline Windows::UI::Color Colors::Ivory()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Ivory();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Ivory(); });
 }
 
 inline Windows::UI::Color Colors::Khaki()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Khaki();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Khaki(); });
 }
 
 inline Windows::UI::Color Colors::Lavender()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Lavender();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Lavender(); });
 }
 
 inline Windows::UI::Color Colors::LavenderBlush()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LavenderBlush();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LavenderBlush(); });
 }
 
 inline Windows::UI::Color Colors::LawnGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LawnGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LawnGreen(); });
 }
 
 inline Windows::UI::Color Colors::LemonChiffon()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LemonChiffon();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LemonChiffon(); });
 }
 
 inline Windows::UI::Color Colors::LightBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightBlue(); });
 }
 
 inline Windows::UI::Color Colors::LightCoral()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightCoral();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightCoral(); });
 }
 
 inline Windows::UI::Color Colors::LightCyan()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightCyan();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightCyan(); });
 }
 
 inline Windows::UI::Color Colors::LightGoldenrodYellow()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightGoldenrodYellow();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightGoldenrodYellow(); });
 }
 
 inline Windows::UI::Color Colors::LightGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightGreen(); });
 }
 
 inline Windows::UI::Color Colors::LightGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightGray(); });
 }
 
 inline Windows::UI::Color Colors::LightPink()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightPink();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightPink(); });
 }
 
 inline Windows::UI::Color Colors::LightSalmon()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightSalmon();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightSalmon(); });
 }
 
 inline Windows::UI::Color Colors::LightSeaGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightSeaGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightSeaGreen(); });
 }
 
 inline Windows::UI::Color Colors::LightSkyBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightSkyBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightSkyBlue(); });
 }
 
 inline Windows::UI::Color Colors::LightSlateGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightSlateGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightSlateGray(); });
 }
 
 inline Windows::UI::Color Colors::LightSteelBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightSteelBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightSteelBlue(); });
 }
 
 inline Windows::UI::Color Colors::LightYellow()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LightYellow();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LightYellow(); });
 }
 
 inline Windows::UI::Color Colors::Lime()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Lime();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Lime(); });
 }
 
 inline Windows::UI::Color Colors::LimeGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().LimeGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.LimeGreen(); });
 }
 
 inline Windows::UI::Color Colors::Linen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Linen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Linen(); });
 }
 
 inline Windows::UI::Color Colors::Magenta()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Magenta();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Magenta(); });
 }
 
 inline Windows::UI::Color Colors::Maroon()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Maroon();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Maroon(); });
 }
 
 inline Windows::UI::Color Colors::MediumAquamarine()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumAquamarine();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumAquamarine(); });
 }
 
 inline Windows::UI::Color Colors::MediumBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumBlue(); });
 }
 
 inline Windows::UI::Color Colors::MediumOrchid()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumOrchid();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumOrchid(); });
 }
 
 inline Windows::UI::Color Colors::MediumPurple()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumPurple();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumPurple(); });
 }
 
 inline Windows::UI::Color Colors::MediumSeaGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumSeaGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumSeaGreen(); });
 }
 
 inline Windows::UI::Color Colors::MediumSlateBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumSlateBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumSlateBlue(); });
 }
 
 inline Windows::UI::Color Colors::MediumSpringGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumSpringGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumSpringGreen(); });
 }
 
 inline Windows::UI::Color Colors::MediumTurquoise()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumTurquoise();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumTurquoise(); });
 }
 
 inline Windows::UI::Color Colors::MediumVioletRed()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MediumVioletRed();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MediumVioletRed(); });
 }
 
 inline Windows::UI::Color Colors::MidnightBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MidnightBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MidnightBlue(); });
 }
 
 inline Windows::UI::Color Colors::MintCream()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MintCream();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MintCream(); });
 }
 
 inline Windows::UI::Color Colors::MistyRose()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().MistyRose();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.MistyRose(); });
 }
 
 inline Windows::UI::Color Colors::Moccasin()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Moccasin();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Moccasin(); });
 }
 
 inline Windows::UI::Color Colors::NavajoWhite()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().NavajoWhite();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.NavajoWhite(); });
 }
 
 inline Windows::UI::Color Colors::Navy()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Navy();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Navy(); });
 }
 
 inline Windows::UI::Color Colors::OldLace()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().OldLace();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.OldLace(); });
 }
 
 inline Windows::UI::Color Colors::Olive()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Olive();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Olive(); });
 }
 
 inline Windows::UI::Color Colors::OliveDrab()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().OliveDrab();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.OliveDrab(); });
 }
 
 inline Windows::UI::Color Colors::Orange()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Orange();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Orange(); });
 }
 
 inline Windows::UI::Color Colors::OrangeRed()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().OrangeRed();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.OrangeRed(); });
 }
 
 inline Windows::UI::Color Colors::Orchid()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Orchid();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Orchid(); });
 }
 
 inline Windows::UI::Color Colors::PaleGoldenrod()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PaleGoldenrod();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PaleGoldenrod(); });
 }
 
 inline Windows::UI::Color Colors::PaleGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PaleGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PaleGreen(); });
 }
 
 inline Windows::UI::Color Colors::PaleTurquoise()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PaleTurquoise();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PaleTurquoise(); });
 }
 
 inline Windows::UI::Color Colors::PaleVioletRed()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PaleVioletRed();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PaleVioletRed(); });
 }
 
 inline Windows::UI::Color Colors::PapayaWhip()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PapayaWhip();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PapayaWhip(); });
 }
 
 inline Windows::UI::Color Colors::PeachPuff()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PeachPuff();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PeachPuff(); });
 }
 
 inline Windows::UI::Color Colors::Peru()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Peru();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Peru(); });
 }
 
 inline Windows::UI::Color Colors::Pink()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Pink();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Pink(); });
 }
 
 inline Windows::UI::Color Colors::Plum()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Plum();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Plum(); });
 }
 
 inline Windows::UI::Color Colors::PowderBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().PowderBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.PowderBlue(); });
 }
 
 inline Windows::UI::Color Colors::Purple()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Purple();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Purple(); });
 }
 
 inline Windows::UI::Color Colors::Red()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Red();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Red(); });
 }
 
 inline Windows::UI::Color Colors::RosyBrown()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().RosyBrown();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.RosyBrown(); });
 }
 
 inline Windows::UI::Color Colors::RoyalBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().RoyalBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.RoyalBlue(); });
 }
 
 inline Windows::UI::Color Colors::SaddleBrown()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SaddleBrown();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SaddleBrown(); });
 }
 
 inline Windows::UI::Color Colors::Salmon()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Salmon();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Salmon(); });
 }
 
 inline Windows::UI::Color Colors::SandyBrown()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SandyBrown();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SandyBrown(); });
 }
 
 inline Windows::UI::Color Colors::SeaGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SeaGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SeaGreen(); });
 }
 
 inline Windows::UI::Color Colors::SeaShell()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SeaShell();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SeaShell(); });
 }
 
 inline Windows::UI::Color Colors::Sienna()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Sienna();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Sienna(); });
 }
 
 inline Windows::UI::Color Colors::Silver()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Silver();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Silver(); });
 }
 
 inline Windows::UI::Color Colors::SkyBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SkyBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SkyBlue(); });
 }
 
 inline Windows::UI::Color Colors::SlateBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SlateBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SlateBlue(); });
 }
 
 inline Windows::UI::Color Colors::SlateGray()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SlateGray();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SlateGray(); });
 }
 
 inline Windows::UI::Color Colors::Snow()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Snow();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Snow(); });
 }
 
 inline Windows::UI::Color Colors::SpringGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SpringGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SpringGreen(); });
 }
 
 inline Windows::UI::Color Colors::SteelBlue()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().SteelBlue();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.SteelBlue(); });
 }
 
 inline Windows::UI::Color Colors::Tan()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Tan();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Tan(); });
 }
 
 inline Windows::UI::Color Colors::Teal()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Teal();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Teal(); });
 }
 
 inline Windows::UI::Color Colors::Thistle()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Thistle();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Thistle(); });
 }
 
 inline Windows::UI::Color Colors::Tomato()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Tomato();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Tomato(); });
 }
 
 inline Windows::UI::Color Colors::Transparent()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Transparent();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Transparent(); });
 }
 
 inline Windows::UI::Color Colors::Turquoise()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Turquoise();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Turquoise(); });
 }
 
 inline Windows::UI::Color Colors::Violet()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Violet();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Violet(); });
 }
 
 inline Windows::UI::Color Colors::Wheat()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Wheat();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Wheat(); });
 }
 
 inline Windows::UI::Color Colors::White()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().White();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.White(); });
 }
 
 inline Windows::UI::Color Colors::WhiteSmoke()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().WhiteSmoke();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.WhiteSmoke(); });
 }
 
 inline Windows::UI::Color Colors::Yellow()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().Yellow();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.Yellow(); });
 }
 
 inline Windows::UI::Color Colors::YellowGreen()
 {
-    return get_activation_factory<Colors, Windows::UI::IColorsStatics>().YellowGreen();
+    return impl::call_factory<Colors, Windows::UI::IColorsStatics>([&](auto&& f) { return f.YellowGreen(); });
 }
 
 }
@@ -3769,5 +3483,3 @@ template<> struct hash<winrt::Windows::UI::ColorHelper> : winrt::impl::hash_base
 template<> struct hash<winrt::Windows::UI::Colors> : winrt::impl::hash_base<winrt::Windows::UI::Colors> {};
 
 }
-
-WINRT_WARNING_POP

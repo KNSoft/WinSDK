@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -47,7 +47,8 @@ struct WINRT_EBO StoreAcquireLicenseResult :
 };
 
 struct WINRT_EBO StoreAppLicense :
-    Windows::Services::Store::IStoreAppLicense
+    Windows::Services::Store::IStoreAppLicense,
+    impl::require<StoreAppLicense, Windows::Services::Store::IStoreAppLicense2>
 {
     StoreAppLicense(std::nullptr_t) noexcept {}
 };
@@ -78,7 +79,7 @@ struct WINRT_EBO StoreConsumableResult :
 
 struct WINRT_EBO StoreContext :
     Windows::Services::Store::IStoreContext,
-    impl::require<StoreContext, Windows::Services::Store::IStoreContext2, Windows::Services::Store::IStoreContext3>
+    impl::require<StoreContext, Windows::Services::Store::IStoreContext2, Windows::Services::Store::IStoreContext3, Windows::Services::Store::IStoreContext4>
 {
     StoreContext(std::nullptr_t) noexcept {}
     using impl::consume_t<StoreContext, Windows::Services::Store::IStoreContext3>::GetStoreProductsAsync;
@@ -179,7 +180,8 @@ struct WINRT_EBO StorePurchaseResult :
 };
 
 struct WINRT_EBO StoreQueueItem :
-    Windows::Services::Store::IStoreQueueItem
+    Windows::Services::Store::IStoreQueueItem,
+    impl::require<StoreQueueItem, Windows::Services::Store::IStoreQueueItem2>
 {
     StoreQueueItem(std::nullptr_t) noexcept {}
 };
@@ -194,6 +196,12 @@ struct WINRT_EBO StoreQueueItemStatus :
     Windows::Services::Store::IStoreQueueItemStatus
 {
     StoreQueueItemStatus(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO StoreRateAndReviewResult :
+    Windows::Services::Store::IStoreRateAndReviewResult
+{
+    StoreRateAndReviewResult(std::nullptr_t) noexcept {}
 };
 
 struct StoreRequestHelper

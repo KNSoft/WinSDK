@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.applicationmodel.chat.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -287,6 +299,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics ABI::Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStatics
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Chat {
+                interface IChatCapabilitiesManagerStatics2;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Chat */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 ABI::Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStatics2
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIChatConversation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatConversation_FWD_DEFINED__
@@ -903,6 +929,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics ABI::Windows::ApplicationModel::Chat::IRcsManagerStatics
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Chat {
+                interface IRcsManagerStatics2;
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Chat */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 ABI::Windows::ApplicationModel::Chat::IRcsManagerStatics2
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsServiceKindSupportedChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsServiceKindSupportedChangedEventArgs_FWD_DEFINED__
@@ -3657,6 +3697,36 @@ typedef IReference<struct ABI::Windows::Foundation::DateTime> __FIReference_1_Wi
 
 
 
+#ifndef DEF___FIEventHandler_1_IInspectable_USE
+#define DEF___FIEventHandler_1_IInspectable_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b"))
+IEventHandler<IInspectable*> : IEventHandler_impl<IInspectable*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.EventHandler`1<Object>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IEventHandler<IInspectable*> __FIEventHandler_1_IInspectable_t;
+#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIEventHandler_1_IInspectable ABI::Windows::Foundation::IEventHandler<IInspectable*>
+//#define __FIEventHandler_1_IInspectable_t ABI::Windows::Foundation::IEventHandler<IInspectable*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIEventHandler_1_IInspectable_USE */
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -3905,6 +3975,8 @@ namespace ABI {
             } /* Windows */
         } /* ApplicationModel */
     } /* Chat */} /* ABI */
+
+
 
 
 
@@ -4663,6 +4735,54 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Chat.ChatCapabilitiesManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Chat_IChatCapabilitiesManagerStatics2[] = L"Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Chat {
+                /* [object, uuid("E30D4274-D5C1-4AC9-9FFC-40E69184FEC8"), exclusiveto, contract] */
+                MIDL_INTERFACE("E30D4274-D5C1-4AC9-9FFC-40E69184FEC8")
+                IChatCapabilitiesManagerStatics2 : public IInspectable
+                {
+                public:
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCachedCapabilitiesForTransportAsync(
+                        /* [in] */__RPC__in HSTRING address,
+                        /* [in] */__RPC__in HSTRING transportId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * operation
+                        ) = 0;
+                    /* [overload] */virtual HRESULT STDMETHODCALLTYPE GetCapabilitiesFromNetworkForTransportAsync(
+                        /* [in] */__RPC__in HSTRING address,
+                        /* [in] */__RPC__in HSTRING transportId,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IChatCapabilitiesManagerStatics2=_uuidof(IChatCapabilitiesManagerStatics2);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Chat */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7048,6 +7168,51 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStat
 
 /*
  *
+ * Interface Windows.ApplicationModel.Chat.IRcsManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Chat.RcsManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Chat_IRcsManagerStatics2[] = L"Windows.ApplicationModel.Chat.IRcsManagerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Chat {
+                /* [object, uuid("CD49AD18-AD8A-42AA-8EEB-A798A8808959"), exclusiveto, contract] */
+                MIDL_INTERFACE("CD49AD18-AD8A-42AA-8EEB-A798A8808959")
+                IRcsManagerStatics2 : public IInspectable
+                {
+                public:
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_TransportListChanged(
+                        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * token
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_TransportListChanged(
+                        /* [in] */EventRegistrationToken token
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IRcsManagerStatics2=_uuidof(IRcsManagerStatics2);
+                
+            } /* Windows */
+        } /* ApplicationModel */
+    } /* Chat */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7290,6 +7455,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -8036,6 +8202,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Chat.IRcsManagerStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Chat.IRcsManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -8162,6 +8329,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilities __
 typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIChatConversation_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatConversation_FWD_DEFINED__
@@ -8426,6 +8599,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIRcsEndUserMessageMa
 typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsServiceKindSupportedChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsServiceKindSupportedChangedEventArgs_FWD_DEFINED__
@@ -14397,6 +14576,50 @@ interface __FIReference_1_Windows__CFoundation__CDateTime
 
 
 
+#if !defined(____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__)
+#define ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+typedef interface __FIEventHandler_1_IInspectable __FIEventHandler_1_IInspectable;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIEventHandler_1_IInspectable;
+
+typedef struct __FIEventHandler_1_IInspectableVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIEventHandler_1_IInspectable * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIEventHandler_1_IInspectable * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIEventHandler_1_IInspectable * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIEventHandler_1_IInspectable * This,/* [in] */ __RPC__in_opt IInspectable *sender,/* [in] */ __RPC__in_opt IInspectable * *e);
+    END_INTERFACE
+} __FIEventHandler_1_IInspectableVtbl;
+
+interface __FIEventHandler_1_IInspectable
+{
+    CONST_VTBL struct __FIEventHandler_1_IInspectableVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIEventHandler_1_IInspectable_QueryInterface(This,riid,ppvObject)	\
+        ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIEventHandler_1_IInspectable_AddRef(This)	\
+        ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIEventHandler_1_IInspectable_Release(This)	\
+        ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIEventHandler_1_IInspectable_Invoke(This,sender,e)	\
+        ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIEventHandler_1_IInspectable_INTERFACE_DEFINED__
+
+
+
 
 typedef struct __x_ABI_CWindows_CFoundation_CDateTime __x_ABI_CWindows_CFoundation_CDateTime;
 
@@ -14481,6 +14704,8 @@ typedef enum __x_ABI_CWindows_CApplicationModel_CChat_CChatTransportInterpretedE
 
 
 typedef enum __x_ABI_CWindows_CApplicationModel_CChat_CRcsServiceKind __x_ABI_CWindows_CApplicationModel_CChat_CRcsServiceKind;
+
+
 
 
 
@@ -15124,6 +15349,110 @@ interface __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStat
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Chat.ChatCapabilitiesManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Chat_IChatCapabilitiesManagerStatics2[] = L"Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2";
+/* [object, uuid("E30D4274-D5C1-4AC9-9FFC-40E69184FEC8"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *GetCachedCapabilitiesForTransportAsync )(
+        __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+        /* [in] */__RPC__in HSTRING address,
+        /* [in] */__RPC__in HSTRING transportId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *GetCapabilitiesFromNetworkForTransportAsync )(
+        __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2 * This,
+        /* [in] */__RPC__in HSTRING address,
+        /* [in] */__RPC__in HSTRING transportId,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CChat__CChatCapabilities * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_GetCachedCapabilitiesForTransportAsync(This,address,transportId,operation) \
+    ( (This)->lpVtbl->GetCachedCapabilitiesForTransportAsync(This,address,transportId,operation) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_GetCapabilitiesFromNetworkForTransportAsync(This,address,transportId,operation) \
+    ( (This)->lpVtbl->GetCapabilitiesFromNetworkForTransportAsync(This,address,transportId,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIChatCapabilitiesManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -20471,6 +20800,107 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStat
 
 /*
  *
+ * Interface Windows.ApplicationModel.Chat.IRcsManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Chat.RcsManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Chat_IRcsManagerStatics2[] = L"Windows.ApplicationModel.Chat.IRcsManagerStatics2";
+/* [object, uuid("CD49AD18-AD8A-42AA-8EEB-A798A8808959"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_TransportListChanged )(
+        __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+        /* [in] */__RPC__in_opt __FIEventHandler_1_IInspectable * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * token
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_TransportListChanged )(
+        __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2 * This,
+        /* [in] */EventRegistrationToken token
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_add_TransportListChanged(This,handler,token) \
+    ( (This)->lpVtbl->add_TransportListChanged(This,handler,token) )
+
+#define __x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_remove_TransportListChanged(This,token) \
+    ( (This)->lpVtbl->remove_TransportListChanged(This,token) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CChat_CIRcsManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -20981,6 +21411,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
@@ -21727,6 +22158,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Chat.IRcsManagerStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Chat.IRcsManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment

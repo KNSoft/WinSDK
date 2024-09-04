@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -245,55 +245,55 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ta
     return asyncOperation;
 }
 
-template <typename D> event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->add_ContentChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Services::TargetedContent::ITargetedContentSubscription> consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged_revoker consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::TargetedContent::ITargetedContentSubscription>(this, &abi_t<Windows::Services::TargetedContent::ITargetedContentSubscription>::remove_ContentChanged, ContentChanged(handler));
+    return impl::make_event_revoker<D, ContentChanged_revoker>(this, ContentChanged(handler));
 }
 
-template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::ContentChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_ContentChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_ContentChanged(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->add_AvailabilityChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Services::TargetedContent::ITargetedContentSubscription> consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged_revoker consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::TargetedContent::ITargetedContentSubscription>(this, &abi_t<Windows::Services::TargetedContent::ITargetedContentSubscription>::remove_AvailabilityChanged, AvailabilityChanged(handler));
+    return impl::make_event_revoker<D, AvailabilityChanged_revoker>(this, AvailabilityChanged(handler));
 }
 
-template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::AvailabilityChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_AvailabilityChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_AvailabilityChanged(get_abi(cookie)));
 }
 
-template <typename D> event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->add_StateChanged(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Services::TargetedContent::ITargetedContentSubscription> consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged_revoker consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Services::TargetedContent::ITargetedContentSubscription>(this, &abi_t<Windows::Services::TargetedContent::ITargetedContentSubscription>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(event_token const& cookie) const
+template <typename D> void consume_Windows_Services_TargetedContent_ITargetedContentSubscription<D>::StateChanged(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_StateChanged(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Services::TargetedContent::ITargetedContentSubscription)->remove_StateChanged(get_abi(cookie)));
 }
 
 template <typename D> hstring consume_Windows_Services_TargetedContent_ITargetedContentSubscriptionOptions<D>::SubscriptionId() const
@@ -463,996 +463,856 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Ser
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentAction> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentAction>
 {
-    HRESULT __stdcall InvokeAsync(void** asyncAction) noexcept final
+    int32_t WINRT_CALL InvokeAsync(void** asyncAction) noexcept final
     {
         try
         {
             *asyncAction = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InvokeAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *asyncAction = detach_from<Windows::Foundation::IAsyncAction>(this->shim().InvokeAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentAvailabilityChangedEventArgs> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentAvailabilityChangedEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentChangedEventArgs> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentChangedEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasPreviousContentExpired(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasPreviousContentExpired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasPreviousContentExpired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasPreviousContentExpired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentCollection> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentCollection>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportInteraction(Windows::Services::TargetedContent::TargetedContentInteraction interaction) noexcept final
+    int32_t WINRT_CALL ReportInteraction(Windows::Services::TargetedContent::TargetedContentInteraction interaction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportInteraction, WINRT_WRAP(void), Windows::Services::TargetedContent::TargetedContentInteraction const&);
             this->shim().ReportInteraction(*reinterpret_cast<Windows::Services::TargetedContent::TargetedContentInteraction const*>(&interaction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCustomInteraction(HSTRING customInteractionName) noexcept final
+    int32_t WINRT_CALL ReportCustomInteraction(void* customInteractionName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCustomInteraction, WINRT_WRAP(void), hstring const&);
             this->shim().ReportCustomInteraction(*reinterpret_cast<hstring const*>(&customInteractionName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Services::TargetedContent::TargetedContentValue>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Services::TargetedContent::TargetedContentValue>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Collections(void** value) noexcept final
+    int32_t WINRT_CALL get_Collections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Collections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentCollection>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentCollection>>(this->shim().Collections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Items(void** value) noexcept final
+    int32_t WINRT_CALL get_Items(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Items, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentItem>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentItem>>(this->shim().Items());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentContainer> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentContainer>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Availability(Windows::Services::TargetedContent::TargetedContentAvailability* value) noexcept final
+    int32_t WINRT_CALL get_Availability(Windows::Services::TargetedContent::TargetedContentAvailability* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Availability, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentAvailability));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentAvailability>(this->shim().Availability());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentCollection));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentCollection>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SelectSingleObject(HSTRING path, void** value) noexcept final
+    int32_t WINRT_CALL SelectSingleObject(void* path, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectSingleObject, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentObject), hstring const&);
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentObject>(this->shim().SelectSingleObject(*reinterpret_cast<hstring const*>(&path)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentContainerStatics> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentContainerStatics>
 {
-    HRESULT __stdcall GetAsync(HSTRING contentId, void** asyncOperation) noexcept final
+    int32_t WINRT_CALL GetAsync(void* contentId, void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentContainer>), hstring const);
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentContainer>>(this->shim().GetAsync(*reinterpret_cast<hstring const*>(&contentId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentImage> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentImage>
 {
-    HRESULT __stdcall get_Height(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Height(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Height, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Height());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Width(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Width(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Width, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Width());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentItem> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentItem>
 {
-    HRESULT __stdcall get_Path(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportInteraction(Windows::Services::TargetedContent::TargetedContentInteraction interaction) noexcept final
+    int32_t WINRT_CALL ReportInteraction(Windows::Services::TargetedContent::TargetedContentInteraction interaction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportInteraction, WINRT_WRAP(void), Windows::Services::TargetedContent::TargetedContentInteraction const&);
             this->shim().ReportInteraction(*reinterpret_cast<Windows::Services::TargetedContent::TargetedContentInteraction const*>(&interaction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReportCustomInteraction(HSTRING customInteractionName) noexcept final
+    int32_t WINRT_CALL ReportCustomInteraction(void* customInteractionName) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReportCustomInteraction, WINRT_WRAP(void), hstring const&);
             this->shim().ReportCustomInteraction(*reinterpret_cast<hstring const*>(&customInteractionName));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_State(void** value) noexcept final
+    int32_t WINRT_CALL get_State(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentItemState));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentItemState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Services::TargetedContent::TargetedContentValue>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Services::TargetedContent::TargetedContentValue>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Collections(void** value) noexcept final
+    int32_t WINRT_CALL get_Collections(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Collections, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentCollection>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentCollection>>(this->shim().Collections());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentItemState> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentItemState>
 {
-    HRESULT __stdcall get_ShouldDisplay(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShouldDisplay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShouldDisplay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShouldDisplay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AppInstallationState(Windows::Services::TargetedContent::TargetedContentAppInstallationState* value) noexcept final
+    int32_t WINRT_CALL get_AppInstallationState(Windows::Services::TargetedContent::TargetedContentAppInstallationState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppInstallationState, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentAppInstallationState));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentAppInstallationState>(this->shim().AppInstallationState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentObject> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentObject>
 {
-    HRESULT __stdcall get_ObjectKind(Windows::Services::TargetedContent::TargetedContentObjectKind* value) noexcept final
+    int32_t WINRT_CALL get_ObjectKind(Windows::Services::TargetedContent::TargetedContentObjectKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ObjectKind, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentObjectKind));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentObjectKind>(this->shim().ObjectKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Collection(void** value) noexcept final
+    int32_t WINRT_CALL get_Collection(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Collection, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentCollection));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentCollection>(this->shim().Collection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Item(void** value) noexcept final
+    int32_t WINRT_CALL get_Item(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Item, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentItem));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentItem>(this->shim().Item());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Value(void** value) noexcept final
+    int32_t WINRT_CALL get_Value(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Value, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentValue));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentValue>(this->shim().Value());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentStateChangedEventArgs> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentStateChangedEventArgs>
 {
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentSubscription> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentSubscription>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetContentContainerAsync(void** asyncOperation) noexcept final
+    int32_t WINRT_CALL GetContentContainerAsync(void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetContentContainerAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentContainer>));
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentContainer>>(this->shim().GetContentContainerAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ContentChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_ContentChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().ContentChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ContentChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().ContentChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ContentChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_ContentChanged(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ContentChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ContentChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_AvailabilityChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ContentChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AvailabilityChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().AvailabilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_AvailabilityChanged(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL remove_AvailabilityChanged(winrt::event_token cookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(AvailabilityChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().AvailabilityChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().AvailabilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentAvailabilityChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_AvailabilityChanged(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().AvailabilityChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Services::TargetedContent::TargetedContentSubscription, Windows::Services::TargetedContent::TargetedContentStateChangedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_StateChanged(event_token cookie) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentSubscriptionOptions> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentSubscriptionOptions>
 {
-    HRESULT __stdcall get_SubscriptionId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SubscriptionId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SubscriptionId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SubscriptionId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AllowPartialContentAvailability(bool* value) noexcept final
+    int32_t WINRT_CALL get_AllowPartialContentAvailability(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowPartialContentAvailability, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AllowPartialContentAvailability());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AllowPartialContentAvailability(bool value) noexcept final
+    int32_t WINRT_CALL put_AllowPartialContentAvailability(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AllowPartialContentAvailability, WINRT_WRAP(void), bool);
             this->shim().AllowPartialContentAvailability(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CloudQueryParameters(void** value) noexcept final
+    int32_t WINRT_CALL get_CloudQueryParameters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CloudQueryParameters, WINRT_WRAP(Windows::Foundation::Collections::IMap<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMap<hstring, hstring>>(this->shim().CloudQueryParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LocalFilters(void** value) noexcept final
+    int32_t WINRT_CALL get_LocalFilters(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LocalFilters, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().LocalFilters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Update() noexcept final
+    int32_t WINRT_CALL Update() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Update, WINRT_WRAP(void));
             this->shim().Update();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics>
 {
-    HRESULT __stdcall GetAsync(HSTRING subscriptionId, void** asyncOperation) noexcept final
+    int32_t WINRT_CALL GetAsync(void* subscriptionId, void** asyncOperation) noexcept final
     {
         try
         {
             *asyncOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentSubscription>), hstring const);
             *asyncOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentSubscription>>(this->shim().GetAsync(*reinterpret_cast<hstring const*>(&subscriptionId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetOptions(HSTRING subscriptionId, void** value) noexcept final
+    int32_t WINRT_CALL GetOptions(void* subscriptionId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOptions, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentSubscriptionOptions), hstring const&);
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentSubscriptionOptions>(this->shim().GetOptions(*reinterpret_cast<hstring const*>(&subscriptionId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Services::TargetedContent::ITargetedContentValue> : produce_base<D, Windows::Services::TargetedContent::ITargetedContentValue>
 {
-    HRESULT __stdcall get_ValueKind(Windows::Services::TargetedContent::TargetedContentValueKind* value) noexcept final
+    int32_t WINRT_CALL get_ValueKind(Windows::Services::TargetedContent::TargetedContentValueKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ValueKind, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentValueKind));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentValueKind>(this->shim().ValueKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Path(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Path(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Path, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Path());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_String(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_String(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(String, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().String());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Number(double* value) noexcept final
+    int32_t WINRT_CALL get_Number(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Number, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Number());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Boolean(bool* value) noexcept final
+    int32_t WINRT_CALL get_Boolean(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Boolean, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Boolean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_File(void** value) noexcept final
+    int32_t WINRT_CALL get_File(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(File, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentFile));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentFile>(this->shim().File());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageFile(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageFile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageFile, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentImage));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentImage>(this->shim().ImageFile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Action(void** value) noexcept final
+    int32_t WINRT_CALL get_Action(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Action, WINRT_WRAP(Windows::Services::TargetedContent::TargetedContentAction));
             *value = detach_from<Windows::Services::TargetedContent::TargetedContentAction>(this->shim().Action());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Strings(void** value) noexcept final
+    int32_t WINRT_CALL get_Strings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Strings, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Strings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uris(void** value) noexcept final
+    int32_t WINRT_CALL get_Uris(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uris, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri>>(this->shim().Uris());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Numbers(void** value) noexcept final
+    int32_t WINRT_CALL get_Numbers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Numbers, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<double>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<double>>(this->shim().Numbers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Booleans(void** value) noexcept final
+    int32_t WINRT_CALL get_Booleans(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Booleans, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<bool>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<bool>>(this->shim().Booleans());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Files(void** value) noexcept final
+    int32_t WINRT_CALL get_Files(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Files, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentFile>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentFile>>(this->shim().Files());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ImageFiles(void** value) noexcept final
+    int32_t WINRT_CALL get_ImageFiles(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ImageFiles, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentImage>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentImage>>(this->shim().ImageFiles());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Actions(void** value) noexcept final
+    int32_t WINRT_CALL get_Actions(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Actions, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentAction>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Services::TargetedContent::TargetedContentAction>>(this->shim().Actions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1462,17 +1322,17 @@ WINRT_EXPORT namespace winrt::Windows::Services::TargetedContent {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentContainer> TargetedContentContainer::GetAsync(param::hstring const& contentId)
 {
-    return get_activation_factory<TargetedContentContainer, Windows::Services::TargetedContent::ITargetedContentContainerStatics>().GetAsync(contentId);
+    return impl::call_factory<TargetedContentContainer, Windows::Services::TargetedContent::ITargetedContentContainerStatics>([&](auto&& f) { return f.GetAsync(contentId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::TargetedContent::TargetedContentSubscription> TargetedContentSubscription::GetAsync(param::hstring const& subscriptionId)
 {
-    return get_activation_factory<TargetedContentSubscription, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics>().GetAsync(subscriptionId);
+    return impl::call_factory<TargetedContentSubscription, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics>([&](auto&& f) { return f.GetAsync(subscriptionId); });
 }
 
 inline Windows::Services::TargetedContent::TargetedContentSubscriptionOptions TargetedContentSubscription::GetOptions(param::hstring const& subscriptionId)
 {
-    return get_activation_factory<TargetedContentSubscription, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics>().GetOptions(subscriptionId);
+    return impl::call_factory<TargetedContentSubscription, Windows::Services::TargetedContent::ITargetedContentSubscriptionStatics>([&](auto&& f) { return f.GetOptions(subscriptionId); });
 }
 
 }
@@ -1510,5 +1370,3 @@ template<> struct hash<winrt::Windows::Services::TargetedContent::TargetedConten
 template<> struct hash<winrt::Windows::Services::TargetedContent::TargetedContentValue> : winrt::impl::hash_base<winrt::Windows::Services::TargetedContent::TargetedContentValue> {};
 
 }
-
-WINRT_WARNING_POP

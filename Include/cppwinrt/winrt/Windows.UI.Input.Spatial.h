@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Haptics.2.h"
@@ -20,242 +20,242 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_RecognitionStarted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_RecognitionStarted, RecognitionStarted(handler));
+    return impl::make_event_revoker<D, RecognitionStarted_revoker>(this, RecognitionStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionStarted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_RecognitionStarted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_RecognitionStarted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_RecognitionEnded(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_RecognitionEnded, RecognitionEnded(handler));
+    return impl::make_event_revoker<D, RecognitionEnded_revoker>(this, RecognitionEnded(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::RecognitionEnded(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_RecognitionEnded(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_RecognitionEnded(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_Tapped(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_Tapped, Tapped(handler));
+    return impl::make_event_revoker<D, Tapped_revoker>(this, Tapped(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::Tapped(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_Tapped(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_Tapped(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_HoldStarted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_HoldStarted, HoldStarted(handler));
+    return impl::make_event_revoker<D, HoldStarted_revoker>(this, HoldStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldStarted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldStarted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldStarted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_HoldCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_HoldCompleted, HoldCompleted(handler));
+    return impl::make_event_revoker<D, HoldCompleted_revoker>(this, HoldCompleted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_HoldCanceled(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_HoldCanceled, HoldCanceled(handler));
+    return impl::make_event_revoker<D, HoldCanceled_revoker>(this, HoldCanceled(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::HoldCanceled(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldCanceled(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_HoldCanceled(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_ManipulationStarted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_ManipulationStarted, ManipulationStarted(handler));
+    return impl::make_event_revoker<D, ManipulationStarted_revoker>(this, ManipulationStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationStarted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationStarted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationStarted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_ManipulationUpdated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_ManipulationUpdated, ManipulationUpdated(handler));
+    return impl::make_event_revoker<D, ManipulationUpdated_revoker>(this, ManipulationUpdated(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationUpdated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationUpdated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationUpdated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_ManipulationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_ManipulationCompleted, ManipulationCompleted(handler));
+    return impl::make_event_revoker<D, ManipulationCompleted_revoker>(this, ManipulationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_ManipulationCanceled(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_ManipulationCanceled, ManipulationCanceled(handler));
+    return impl::make_event_revoker<D, ManipulationCanceled_revoker>(this, ManipulationCanceled(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::ManipulationCanceled(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationCanceled(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_ManipulationCanceled(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_NavigationStarted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_NavigationStarted, NavigationStarted(handler));
+    return impl::make_event_revoker<D, NavigationStarted_revoker>(this, NavigationStarted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationStarted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationStarted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationStarted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_NavigationUpdated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_NavigationUpdated, NavigationUpdated(handler));
+    return impl::make_event_revoker<D, NavigationUpdated_revoker>(this, NavigationUpdated(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationUpdated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationUpdated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationUpdated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_NavigationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_NavigationCompleted, NavigationCompleted(handler));
+    return impl::make_event_revoker<D, NavigationCompleted_revoker>(this, NavigationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->add_NavigationCanceled(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialGestureRecognizer> consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled_revoker consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialGestureRecognizer>::remove_NavigationCanceled, NavigationCanceled(handler));
+    return impl::make_event_revoker<D, NavigationCanceled_revoker>(this, NavigationCanceled(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::NavigationCanceled(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationCanceled(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialGestureRecognizer)->remove_NavigationCanceled(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialGestureRecognizer<D>::CaptureInteraction(Windows::UI::Input::Spatial::SpatialInteraction const& interaction) const
@@ -457,106 +457,106 @@ template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSource cons
     return value;
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_SourceDetected(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_SourceDetected, SourceDetected(handler));
+    return impl::make_event_revoker<D, SourceDetected_revoker>(this, SourceDetected(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceDetected(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceDetected(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceDetected(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_SourceLost(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_SourceLost, SourceLost(handler));
+    return impl::make_event_revoker<D, SourceLost_revoker>(this, SourceLost(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceLost(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceLost(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceLost(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_SourceUpdated(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_SourceUpdated, SourceUpdated(handler));
+    return impl::make_event_revoker<D, SourceUpdated_revoker>(this, SourceUpdated(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceUpdated(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceUpdated(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceUpdated(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_SourcePressed(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_SourcePressed, SourcePressed(handler));
+    return impl::make_event_revoker<D, SourcePressed_revoker>(this, SourcePressed(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourcePressed(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourcePressed(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourcePressed(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_SourceReleased(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_SourceReleased, SourceReleased(handler));
+    return impl::make_event_revoker<D, SourceReleased_revoker>(this, SourceReleased(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::SourceReleased(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceReleased(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_SourceReleased(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->add_InteractionDetected(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::UI::Input::Spatial::ISpatialInteractionManager> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected_revoker consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>(this, &abi_t<Windows::UI::Input::Spatial::ISpatialInteractionManager>::remove_InteractionDetected, InteractionDetected(handler));
+    return impl::make_event_revoker<D, InteractionDetected_revoker>(this, InteractionDetected(handler));
 }
 
-template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(event_token const& token) const
+template <typename D> void consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::InteractionDetected(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_InteractionDetected(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::UI::Input::Spatial::ISpatialInteractionManager)->remove_InteractionDetected(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> consume_Windows_UI_Input_Spatial_ISpatialInteractionManager<D>::GetDetectedSourcesAtTimestamp(Windows::Perception::PerceptionTimestamp const& timeStamp) const
@@ -1017,2080 +1017,1732 @@ template <typename D> uint32_t consume_Windows_UI_Input_Spatial_ISpatialTappedEv
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer> : produce_base<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizer>
 {
-    HRESULT __stdcall add_RecognitionStarted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RecognitionStarted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RecognitionStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RecognitionStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RecognitionStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RecognitionStarted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RecognitionStarted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RecognitionStarted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RecognitionStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RecognitionStarted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_RecognitionEnded(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RecognitionEnded(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RecognitionEnded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RecognitionEnded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RecognitionEnded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RecognitionEnded(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RecognitionEnded(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RecognitionEnded(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RecognitionEnded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RecognitionEnded(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_Tapped(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_Tapped(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().Tapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Tapped, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().Tapped(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_Tapped(event_token token) noexcept final
+    int32_t WINRT_CALL remove_Tapped(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Tapped(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(Tapped, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().Tapped(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_HoldStarted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_HoldStarted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().HoldStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HoldStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().HoldStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_HoldStarted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_HoldStarted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().HoldStarted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HoldStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HoldStarted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_HoldCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_HoldCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().HoldCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HoldCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().HoldCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_HoldCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_HoldCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().HoldCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HoldCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HoldCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_HoldCanceled(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_HoldCanceled(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().HoldCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(HoldCanceled, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().HoldCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_HoldCanceled(event_token token) noexcept final
+    int32_t WINRT_CALL remove_HoldCanceled(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().HoldCanceled(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(HoldCanceled, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().HoldCanceled(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ManipulationStarted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ManipulationStarted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ManipulationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ManipulationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ManipulationStarted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ManipulationStarted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationStarted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationStarted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ManipulationUpdated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ManipulationUpdated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ManipulationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ManipulationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ManipulationUpdated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ManipulationUpdated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationUpdated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationUpdated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ManipulationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ManipulationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ManipulationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ManipulationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ManipulationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ManipulationCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ManipulationCanceled(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_ManipulationCanceled(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ManipulationCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ManipulationCanceled, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ManipulationCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ManipulationCanceled(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ManipulationCanceled(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ManipulationCanceled(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ManipulationCanceled, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ManipulationCanceled(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_NavigationStarted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_NavigationStarted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().NavigationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NavigationStarted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().NavigationStarted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_NavigationStarted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_NavigationStarted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().NavigationStarted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(NavigationStarted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().NavigationStarted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_NavigationUpdated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_NavigationUpdated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().NavigationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NavigationUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().NavigationUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_NavigationUpdated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_NavigationUpdated(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().NavigationUpdated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(NavigationUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().NavigationUpdated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_NavigationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_NavigationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().NavigationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NavigationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().NavigationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_NavigationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_NavigationCompleted(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().NavigationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(NavigationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().NavigationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_NavigationCanceled(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_NavigationCanceled(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().NavigationCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(NavigationCanceled, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().NavigationCanceled(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_NavigationCanceled(event_token token) noexcept final
+    int32_t WINRT_CALL remove_NavigationCanceled(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().NavigationCanceled(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(NavigationCanceled, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().NavigationCanceled(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall CaptureInteraction(void* interaction) noexcept final
+    int32_t WINRT_CALL CaptureInteraction(void* interaction) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CaptureInteraction, WINRT_WRAP(void), Windows::UI::Input::Spatial::SpatialInteraction const&);
             this->shim().CaptureInteraction(*reinterpret_cast<Windows::UI::Input::Spatial::SpatialInteraction const*>(&interaction));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CancelPendingGestures() noexcept final
+    int32_t WINRT_CALL CancelPendingGestures() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CancelPendingGestures, WINRT_WRAP(void));
             this->shim().CancelPendingGestures();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetGestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings settings, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetGestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings settings, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetGestureSettings, WINRT_WRAP(bool), Windows::UI::Input::Spatial::SpatialGestureSettings const&);
             *succeeded = detach_from<bool>(this->shim().TrySetGestureSettings(*reinterpret_cast<Windows::UI::Input::Spatial::SpatialGestureSettings const*>(&settings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings* value) noexcept final
+    int32_t WINRT_CALL get_GestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GestureSettings, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialGestureSettings));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialGestureSettings>(this->shim().GestureSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory> : produce_base<D, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>
 {
-    HRESULT __stdcall Create(Windows::UI::Input::Spatial::SpatialGestureSettings settings, void** value) noexcept final
+    int32_t WINRT_CALL Create(Windows::UI::Input::Spatial::SpatialGestureSettings settings, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialGestureRecognizer), Windows::UI::Input::Spatial::SpatialGestureSettings const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialGestureRecognizer>(this->shim().Create(*reinterpret_cast<Windows::UI::Input::Spatial::SpatialGestureSettings const*>(&settings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteraction> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteraction>
 {
-    HRESULT __stdcall get_SourceState(void** value) noexcept final
+    int32_t WINRT_CALL get_SourceState(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceState, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceState));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceState>(this->shim().SourceState());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionController> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionController>
 {
-    HRESULT __stdcall get_HasTouchpad(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasTouchpad(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasTouchpad, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasTouchpad());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasThumbstick(bool* value) noexcept final
+    int32_t WINRT_CALL get_HasThumbstick(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasThumbstick, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasThumbstick());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SimpleHapticsController(void** value) noexcept final
+    int32_t WINRT_CALL get_SimpleHapticsController(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SimpleHapticsController, WINRT_WRAP(Windows::Devices::Haptics::SimpleHapticsController));
             *value = detach_from<Windows::Devices::Haptics::SimpleHapticsController>(this->shim().SimpleHapticsController());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VendorId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_VendorId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VendorId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().VendorId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProductId(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Version(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_Version(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Version, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().Version());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionController2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionController2>
 {
-    HRESULT __stdcall TryGetRenderableModelAsync(void** value) noexcept final
+    int32_t WINRT_CALL TryGetRenderableModelAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetRenderableModelAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType>>(this->shim().TryGetRenderableModelAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionController3> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionController3>
 {
-    HRESULT __stdcall TryGetBatteryReport(void** value) noexcept final
+    int32_t WINRT_CALL TryGetBatteryReport(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetBatteryReport, WINRT_WRAP(Windows::Devices::Power::BatteryReport));
             *value = detach_from<Windows::Devices::Power::BatteryReport>(this->shim().TryGetBatteryReport());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties>
 {
-    HRESULT __stdcall get_IsTouchpadTouched(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTouchpadTouched(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTouchpadTouched, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTouchpadTouched());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTouchpadPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTouchpadPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTouchpadPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTouchpadPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsThumbstickPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsThumbstickPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsThumbstickPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsThumbstickPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbstickX(double* value) noexcept final
+    int32_t WINRT_CALL get_ThumbstickX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbstickX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ThumbstickX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ThumbstickY(double* value) noexcept final
+    int32_t WINRT_CALL get_ThumbstickY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ThumbstickY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ThumbstickY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TouchpadX(double* value) noexcept final
+    int32_t WINRT_CALL get_TouchpadX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchpadX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TouchpadX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TouchpadY(double* value) noexcept final
+    int32_t WINRT_CALL get_TouchpadY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchpadY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TouchpadY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Interaction(void** value) noexcept final
+    int32_t WINRT_CALL get_Interaction(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Interaction, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteraction));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteraction>(this->shim().Interaction());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2>
 {
-    HRESULT __stdcall get_InteractionSource(void** value) noexcept final
+    int32_t WINRT_CALL get_InteractionSource(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSource, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSource));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSource>(this->shim().InteractionSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManager> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionManager>
 {
-    HRESULT __stdcall add_SourceDetected(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_SourceDetected(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SourceDetected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SourceDetected, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SourceDetected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SourceDetected(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SourceDetected(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SourceDetected, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SourceDetected(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SourceLost(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SourceDetected(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SourceLost, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SourceLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SourceLost(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_SourceLost(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SourceLost, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SourceLost(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SourceUpdated(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SourceLost(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SourceUpdated, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SourceUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SourceLost(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SourceUpdated(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SourceUpdated, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SourceUpdated(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SourcePressed(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SourceLost(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SourcePressed, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SourcePressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SourceUpdated(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_SourcePressed(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SourcePressed, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SourcePressed(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SourceReleased(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SourceUpdated(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SourceReleased, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SourceReleased(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SourceUpdated(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SourceReleased(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SourceReleased, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SourceReleased(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_InteractionDetected(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SourceUpdated(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(InteractionDetected, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().InteractionDetected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SourcePressed(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_InteractionDetected(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SourcePressed(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(InteractionDetected, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().InteractionDetected(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall remove_SourcePressed(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SourcePressed(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_SourceReleased(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SourceReleased(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_SourceReleased(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SourceReleased(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_InteractionDetected(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().InteractionDetected(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_InteractionDetected(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().InteractionDetected(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall GetDetectedSourcesAtTimestamp(void* timeStamp, void** value) noexcept final
+    int32_t WINRT_CALL GetDetectedSourcesAtTimestamp(void* timeStamp, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDetectedSourcesAtTimestamp, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState>), Windows::Perception::PerceptionTimestamp const&);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState>>(this->shim().GetDetectedSourcesAtTimestamp(*reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timeStamp)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** value) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionManager));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionManager>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSource>
 {
-    HRESULT __stdcall get_Id(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Id(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSource2>
 {
-    HRESULT __stdcall get_IsPointingSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPointingSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPointingSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPointingSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMenuSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMenuSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMenuSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMenuSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGraspSupported(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGraspSupported(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGraspSupported, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGraspSupported());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Controller(void** value) noexcept final
+    int32_t WINRT_CALL get_Controller(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Controller, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionController));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionController>(this->shim().Controller());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetStateAtTimestamp(void* timestamp, void** value) noexcept final
+    int32_t WINRT_CALL TryGetStateAtTimestamp(void* timestamp, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetStateAtTimestamp, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceState), Windows::Perception::PerceptionTimestamp const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceState>(this->shim().TryGetStateAtTimestamp(*reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timestamp)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource3> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSource3>
 {
-    HRESULT __stdcall get_Handedness(Windows::UI::Input::Spatial::SpatialInteractionSourceHandedness* value) noexcept final
+    int32_t WINRT_CALL get_Handedness(Windows::UI::Input::Spatial::SpatialInteractionSourceHandedness* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Handedness, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceHandedness));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceHandedness>(this->shim().Handedness());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs>
 {
-    HRESULT __stdcall get_State(void** value) noexcept final
+    int32_t WINRT_CALL get_State(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceState));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2>
 {
-    HRESULT __stdcall get_PressKind(Windows::UI::Input::Spatial::SpatialInteractionPressKind* value) noexcept final
+    int32_t WINRT_CALL get_PressKind(Windows::UI::Input::Spatial::SpatialInteractionPressKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PressKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionPressKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionPressKind>(this->shim().PressKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation>
 {
-    HRESULT __stdcall get_Position(void** value) noexcept final
+    int32_t WINRT_CALL get_Position(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Velocity(void** value) noexcept final
+    int32_t WINRT_CALL get_Velocity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Velocity, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().Velocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation2>
 {
-    HRESULT __stdcall get_Orientation(void** value) noexcept final
+    int32_t WINRT_CALL get_Orientation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion>>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation3> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation3>
 {
-    HRESULT __stdcall get_PositionAccuracy(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy* value) noexcept final
+    int32_t WINRT_CALL get_PositionAccuracy(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PositionAccuracy, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy>(this->shim().PositionAccuracy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AngularVelocity(void** value) noexcept final
+    int32_t WINRT_CALL get_AngularVelocity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AngularVelocity, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().AngularVelocity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourcePointerPose(void** value) noexcept final
+    int32_t WINRT_CALL get_SourcePointerPose(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourcePointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose>(this->shim().SourcePointerPose());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties>
 {
-    HRESULT __stdcall TryGetSourceLossMitigationDirection(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetSourceLossMitigationDirection(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetSourceLossMitigationDirection, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::Numerics::float3>>(this->shim().TryGetSourceLossMitigationDirection(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SourceLossRisk(double* value) noexcept final
+    int32_t WINRT_CALL get_SourceLossRisk(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceLossRisk, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SourceLossRisk());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetLocation(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetLocation(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetLocation, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceLocation), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceLocation>(this->shim().TryGetLocation(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState>
 {
-    HRESULT __stdcall get_Source(void** value) noexcept final
+    int32_t WINRT_CALL get_Source(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSource));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSource>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceProperties));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceProperties>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Timestamp(void** value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Perception::PerceptionTimestamp));
             *value = detach_from<Windows::Perception::PerceptionTimestamp>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState2>
 {
-    HRESULT __stdcall get_IsSelectPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsSelectPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSelectPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsSelectPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsMenuPressed(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsMenuPressed(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsMenuPressed, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsMenuPressed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGrasped(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGrasped(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGrasped, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGrasped());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SelectPressedValue(double* value) noexcept final
+    int32_t WINRT_CALL get_SelectPressedValue(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SelectPressedValue, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().SelectPressedValue());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ControllerProperties(void** value) noexcept final
+    int32_t WINRT_CALL get_ControllerProperties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ControllerProperties, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionControllerProperties));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionControllerProperties>(this->shim().ControllerProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCanceledEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialManipulationCanceledEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialManipulationCompletedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetCumulativeDelta(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetCumulativeDelta(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetCumulativeDelta, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialManipulationDelta), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialManipulationDelta>(this->shim().TryGetCumulativeDelta(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationDelta> : produce_base<D, Windows::UI::Input::Spatial::ISpatialManipulationDelta>
 {
-    HRESULT __stdcall get_Translation(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Translation(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Translation, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Translation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialManipulationStartedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetCumulativeDelta(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetCumulativeDelta(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetCumulativeDelta, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialManipulationDelta), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialManipulationDelta>(this->shim().TryGetCumulativeDelta(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalizedOffset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_NormalizedOffset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalizedOffset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().NormalizedOffset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNavigatingX(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNavigatingX(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNavigatingX, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNavigatingX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNavigatingY(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNavigatingY(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNavigatingY, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNavigatingY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsNavigatingZ(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsNavigatingZ(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsNavigatingZ, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsNavigatingZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NormalizedOffset(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_NormalizedOffset(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NormalizedOffset, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().NormalizedOffset());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose>
 {
-    HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_Position(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Position, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().Position());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ForwardDirection(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_ForwardDirection(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ForwardDirection, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().ForwardDirection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UpDirection(Windows::Foundation::Numerics::float3* value) noexcept final
+    int32_t WINRT_CALL get_UpDirection(Windows::Foundation::Numerics::float3* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpDirection, WINRT_WRAP(Windows::Foundation::Numerics::float3));
             *value = detach_from<Windows::Foundation::Numerics::float3>(this->shim().UpDirection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose2>
 {
-    HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(Windows::Foundation::Numerics::quaternion));
             *value = detach_from<Windows::Foundation::Numerics::quaternion>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PositionAccuracy(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy* value) noexcept final
+    int32_t WINRT_CALL get_PositionAccuracy(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PositionAccuracy, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourcePositionAccuracy>(this->shim().PositionAccuracy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerPose>
 {
-    HRESULT __stdcall get_Timestamp(void** value) noexcept final
+    int32_t WINRT_CALL get_Timestamp(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Timestamp, WINRT_WRAP(Windows::Perception::PerceptionTimestamp));
             *value = detach_from<Windows::Perception::PerceptionTimestamp>(this->shim().Timestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Head(void** value) noexcept final
+    int32_t WINRT_CALL get_Head(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Head, WINRT_WRAP(Windows::Perception::People::HeadPose));
             *value = detach_from<Windows::Perception::People::HeadPose>(this->shim().Head());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerPose2>
 {
-    HRESULT __stdcall TryGetInteractionSourcePose(void* source, void** value) noexcept final
+    int32_t WINRT_CALL TryGetInteractionSourcePose(void* source, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetInteractionSourcePose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose), Windows::UI::Input::Spatial::SpatialInteractionSource const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose>(this->shim().TryGetInteractionSourcePose(*reinterpret_cast<Windows::UI::Input::Spatial::SpatialInteractionSource const*>(&source)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics>
 {
-    HRESULT __stdcall TryGetAtTimestamp(void* coordinateSystem, void* timestamp, void** value) noexcept final
+    int32_t WINRT_CALL TryGetAtTimestamp(void* coordinateSystem, void* timestamp, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetAtTimestamp, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&, Windows::Perception::PerceptionTimestamp const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetAtTimestamp(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem), *reinterpret_cast<Windows::Perception::PerceptionTimestamp const*>(&timestamp)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsGesturePossible(Windows::UI::Input::Spatial::SpatialGestureSettings gesture, bool* value) noexcept final
+    int32_t WINRT_CALL IsGesturePossible(Windows::UI::Input::Spatial::SpatialGestureSettings gesture, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGesturePossible, WINRT_WRAP(bool), Windows::UI::Input::Spatial::SpatialGestureSettings const&);
             *value = detach_from<bool>(this->shim().IsGesturePossible(*reinterpret_cast<Windows::UI::Input::Spatial::SpatialGestureSettings const*>(&gesture)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs>
 {
-    HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
+    int32_t WINRT_CALL get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InteractionSourceKind, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialInteractionSourceKind));
             *value = detach_from<Windows::UI::Input::Spatial::SpatialInteractionSourceKind>(this->shim().InteractionSourceKind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
+    int32_t WINRT_CALL TryGetPointerPose(void* coordinateSystem, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetPointerPose, WINRT_WRAP(Windows::UI::Input::Spatial::SpatialPointerPose), Windows::Perception::Spatial::SpatialCoordinateSystem const&);
             *value = detach_from<Windows::UI::Input::Spatial::SpatialPointerPose>(this->shim().TryGetPointerPose(*reinterpret_cast<Windows::Perception::Spatial::SpatialCoordinateSystem const*>(&coordinateSystem)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TapCount(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TapCount(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TapCount, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TapCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3099,17 +2751,17 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
 WINRT_EXPORT namespace winrt::Windows::UI::Input::Spatial {
 
 inline SpatialGestureRecognizer::SpatialGestureRecognizer(Windows::UI::Input::Spatial::SpatialGestureSettings const& settings) :
-    SpatialGestureRecognizer(get_activation_factory<SpatialGestureRecognizer, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>().Create(settings))
+    SpatialGestureRecognizer(impl::call_factory<SpatialGestureRecognizer, Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>([&](auto&& f) { return f.Create(settings); }))
 {}
 
 inline Windows::UI::Input::Spatial::SpatialInteractionManager SpatialInteractionManager::GetForCurrentView()
 {
-    return get_activation_factory<SpatialInteractionManager, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics>().GetForCurrentView();
+    return impl::call_factory<SpatialInteractionManager, Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::UI::Input::Spatial::SpatialPointerPose SpatialPointerPose::TryGetAtTimestamp(Windows::Perception::Spatial::SpatialCoordinateSystem const& coordinateSystem, Windows::Perception::PerceptionTimestamp const& timestamp)
 {
-    return get_activation_factory<SpatialPointerPose, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics>().TryGetAtTimestamp(coordinateSystem, timestamp);
+    return impl::call_factory<SpatialPointerPose, Windows::UI::Input::Spatial::ISpatialPointerPoseStatics>([&](auto&& f) { return f.TryGetAtTimestamp(coordinateSystem, timestamp); });
 }
 
 }
@@ -3188,5 +2840,3 @@ template<> struct hash<winrt::Windows::UI::Input::Spatial::SpatialRecognitionSta
 template<> struct hash<winrt::Windows::UI::Input::Spatial::SpatialTappedEventArgs> : winrt::impl::hash_base<winrt::Windows::UI::Input::Spatial::SpatialTappedEventArgs> {};
 
 }
-
-WINRT_WARNING_POP

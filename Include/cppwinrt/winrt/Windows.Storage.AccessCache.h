@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -140,21 +140,21 @@ template <typename D> uint32_t consume_Windows_Storage_AccessCache_IStorageItemA
     return value;
 }
 
-template <typename D> event_token consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList)->add_ItemRemoved(get_abi(handler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList> consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved_revoker consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>(this, &abi_t<Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>::remove_ItemRemoved, ItemRemoved(handler));
+    return impl::make_event_revoker<D, ItemRemoved_revoker>(this, ItemRemoved(handler));
 }
 
-template <typename D> void consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList<D>::ItemRemoved(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList)->remove_ItemRemoved(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList)->remove_ItemRemoved(get_abi(eventCookie)));
 }
 
 template <typename D> hstring consume_Windows_Storage_AccessCache_IStorageItemMostRecentlyUsedList2<D>::Add(Windows::Storage::IStorageItem const& file, param::hstring const& metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility const& visibility) const
@@ -172,354 +172,304 @@ template <typename D> void consume_Windows_Storage_AccessCache_IStorageItemMostR
 template <typename D>
 struct produce<D, Windows::Storage::AccessCache::IItemRemovedEventArgs> : produce_base<D, Windows::Storage::AccessCache::IItemRemovedEventArgs>
 {
-    HRESULT __stdcall get_RemovedEntry(struct struct_Windows_Storage_AccessCache_AccessListEntry* value) noexcept final
+    int32_t WINRT_CALL get_RemovedEntry(struct struct_Windows_Storage_AccessCache_AccessListEntry* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RemovedEntry, WINRT_WRAP(Windows::Storage::AccessCache::AccessListEntry));
             *value = detach_from<Windows::Storage::AccessCache::AccessListEntry>(this->shim().RemovedEntry());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics> : produce_base<D, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>
 {
-    HRESULT __stdcall get_FutureAccessList(void** value) noexcept final
+    int32_t WINRT_CALL get_FutureAccessList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FutureAccessList, WINRT_WRAP(Windows::Storage::AccessCache::StorageItemAccessList));
             *value = detach_from<Windows::Storage::AccessCache::StorageItemAccessList>(this->shim().FutureAccessList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MostRecentlyUsedList(void** value) noexcept final
+    int32_t WINRT_CALL get_MostRecentlyUsedList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MostRecentlyUsedList, WINRT_WRAP(Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList));
             *value = detach_from<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList>(this->shim().MostRecentlyUsedList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::AccessCache::IStorageItemAccessList> : produce_base<D, Windows::Storage::AccessCache::IStorageItemAccessList>
 {
-    HRESULT __stdcall AddOverloadDefaultMetadata(void* file, HSTRING* token) noexcept final
+    int32_t WINRT_CALL AddOverloadDefaultMetadata(void* file, void** token) noexcept final
     {
         try
         {
             *token = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(hstring), Windows::Storage::IStorageItem const&);
             *token = detach_from<hstring>(this->shim().Add(*reinterpret_cast<Windows::Storage::IStorageItem const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Add(void* file, HSTRING metadata, HSTRING* token) noexcept final
+    int32_t WINRT_CALL Add(void* file, void* metadata, void** token) noexcept final
     {
         try
         {
             *token = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(hstring), Windows::Storage::IStorageItem const&, hstring const&);
             *token = detach_from<hstring>(this->shim().Add(*reinterpret_cast<Windows::Storage::IStorageItem const*>(&file), *reinterpret_cast<hstring const*>(&metadata)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddOrReplaceOverloadDefaultMetadata(HSTRING token, void* file) noexcept final
+    int32_t WINRT_CALL AddOrReplaceOverloadDefaultMetadata(void* token, void* file) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddOrReplace, WINRT_WRAP(void), hstring const&, Windows::Storage::IStorageItem const&);
             this->shim().AddOrReplace(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::IStorageItem const*>(&file));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddOrReplace(HSTRING token, void* file, HSTRING metadata) noexcept final
+    int32_t WINRT_CALL AddOrReplace(void* token, void* file, void* metadata) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddOrReplace, WINRT_WRAP(void), hstring const&, Windows::Storage::IStorageItem const&, hstring const&);
             this->shim().AddOrReplace(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::IStorageItem const*>(&file), *reinterpret_cast<hstring const*>(&metadata));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetItemAsync(HSTRING token, void** operation) noexcept final
+    int32_t WINRT_CALL GetItemAsync(void* token, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetItemAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem>>(this->shim().GetItemAsync(*reinterpret_cast<hstring const*>(&token)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFileAsync(HSTRING token, void** operation) noexcept final
+    int32_t WINRT_CALL GetFileAsync(void* token, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().GetFileAsync(*reinterpret_cast<hstring const*>(&token)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFolderAsync(HSTRING token, void** operation) noexcept final
+    int32_t WINRT_CALL GetFolderAsync(void* token, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>>(this->shim().GetFolderAsync(*reinterpret_cast<hstring const*>(&token)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetItemWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL GetItemWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetItemAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem>), hstring const, Windows::Storage::AccessCache::AccessCacheOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem>>(this->shim().GetItemAsync(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::AccessCache::AccessCacheOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFileWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL GetFileWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>), hstring const, Windows::Storage::AccessCache::AccessCacheOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile>>(this->shim().GetFileAsync(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::AccessCache::AccessCacheOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetFolderWithOptionsAsync(HSTRING token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL GetFolderWithOptionsAsync(void* token, Windows::Storage::AccessCache::AccessCacheOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFolderAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>), hstring const, Windows::Storage::AccessCache::AccessCacheOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder>>(this->shim().GetFolderAsync(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::AccessCache::AccessCacheOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Remove(HSTRING token) noexcept final
+    int32_t WINRT_CALL Remove(void* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Remove, WINRT_WRAP(void), hstring const&);
             this->shim().Remove(*reinterpret_cast<hstring const*>(&token));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ContainsItem(HSTRING token, bool* value) noexcept final
+    int32_t WINRT_CALL ContainsItem(void* token, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContainsItem, WINRT_WRAP(bool), hstring const&);
             *value = detach_from<bool>(this->shim().ContainsItem(*reinterpret_cast<hstring const*>(&token)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Clear() noexcept final
+    int32_t WINRT_CALL Clear() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clear, WINRT_WRAP(void));
             this->shim().Clear();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CheckAccess(void* file, bool* value) noexcept final
+    int32_t WINRT_CALL CheckAccess(void* file, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckAccess, WINRT_WRAP(bool), Windows::Storage::IStorageItem const&);
             *value = detach_from<bool>(this->shim().CheckAccess(*reinterpret_cast<Windows::Storage::IStorageItem const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Entries(void** entries) noexcept final
+    int32_t WINRT_CALL get_Entries(void** entries) noexcept final
     {
         try
         {
             *entries = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Entries, WINRT_WRAP(Windows::Storage::AccessCache::AccessListEntryView));
             *entries = detach_from<Windows::Storage::AccessCache::AccessListEntryView>(this->shim().Entries());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaximumItemsAllowed(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaximumItemsAllowed(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaximumItemsAllowed, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaximumItemsAllowed());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList> : produce_base<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>
 {
-    HRESULT __stdcall add_ItemRemoved(void* handler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_ItemRemoved(void* handler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().ItemRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ItemRemoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().ItemRemoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ItemRemoved(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_ItemRemoved(winrt::event_token eventCookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ItemRemoved(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ItemRemoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ItemRemoved(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2> : produce_base<D, Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>
 {
-    HRESULT __stdcall AddWithMetadataAndVisibility(void* file, HSTRING metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility, HSTRING* token) noexcept final
+    int32_t WINRT_CALL AddWithMetadataAndVisibility(void* file, void* metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility, void** token) noexcept final
     {
         try
         {
             *token = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Add, WINRT_WRAP(hstring), Windows::Storage::IStorageItem const&, hstring const&, Windows::Storage::AccessCache::RecentStorageItemVisibility const&);
             *token = detach_from<hstring>(this->shim().Add(*reinterpret_cast<Windows::Storage::IStorageItem const*>(&file), *reinterpret_cast<hstring const*>(&metadata), *reinterpret_cast<Windows::Storage::AccessCache::RecentStorageItemVisibility const*>(&visibility)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddOrReplaceWithMetadataAndVisibility(HSTRING token, void* file, HSTRING metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) noexcept final
+    int32_t WINRT_CALL AddOrReplaceWithMetadataAndVisibility(void* token, void* file, void* metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddOrReplace, WINRT_WRAP(void), hstring const&, Windows::Storage::IStorageItem const&, hstring const&, Windows::Storage::AccessCache::RecentStorageItemVisibility const&);
             this->shim().AddOrReplace(*reinterpret_cast<hstring const*>(&token), *reinterpret_cast<Windows::Storage::IStorageItem const*>(&file), *reinterpret_cast<hstring const*>(&metadata), *reinterpret_cast<Windows::Storage::AccessCache::RecentStorageItemVisibility const*>(&visibility));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -529,12 +479,12 @@ WINRT_EXPORT namespace winrt::Windows::Storage::AccessCache {
 
 inline Windows::Storage::AccessCache::StorageItemAccessList StorageApplicationPermissions::FutureAccessList()
 {
-    return get_activation_factory<StorageApplicationPermissions, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>().FutureAccessList();
+    return impl::call_factory<StorageApplicationPermissions, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>([&](auto&& f) { return f.FutureAccessList(); });
 }
 
 inline Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList StorageApplicationPermissions::MostRecentlyUsedList()
 {
-    return get_activation_factory<StorageApplicationPermissions, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>().MostRecentlyUsedList();
+    return impl::call_factory<StorageApplicationPermissions, Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>([&](auto&& f) { return f.MostRecentlyUsedList(); });
 }
 
 }
@@ -553,5 +503,3 @@ template<> struct hash<winrt::Windows::Storage::AccessCache::StorageItemAccessLi
 template<> struct hash<winrt::Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList> : winrt::impl::hash_base<winrt::Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList> {};
 
 }
-
-WINRT_WARNING_POP

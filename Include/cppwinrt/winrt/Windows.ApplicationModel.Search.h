@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -111,89 +111,89 @@ template <typename D> bool consume_Windows_ApplicationModel_Search_ISearchPane<D
     return value;
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->add_VisibilityChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Search::ISearchPane> consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged_revoker consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Search::ISearchPane>(this, &abi_t<Windows::ApplicationModel::Search::ISearchPane>::remove_VisibilityChanged, VisibilityChanged(handler));
+    return impl::make_event_revoker<D, VisibilityChanged_revoker>(this, VisibilityChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::VisibilityChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_VisibilityChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_VisibilityChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->add_QueryChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Search::ISearchPane> consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged_revoker consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Search::ISearchPane>(this, &abi_t<Windows::ApplicationModel::Search::ISearchPane>::remove_QueryChanged, QueryChanged(handler));
+    return impl::make_event_revoker<D, QueryChanged_revoker>(this, QueryChanged(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::QueryChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_QueryChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_QueryChanged(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->add_SuggestionsRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Search::ISearchPane> consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested_revoker consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Search::ISearchPane>(this, &abi_t<Windows::ApplicationModel::Search::ISearchPane>::remove_SuggestionsRequested, SuggestionsRequested(handler));
+    return impl::make_event_revoker<D, SuggestionsRequested_revoker>(this, SuggestionsRequested(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::SuggestionsRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_SuggestionsRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_SuggestionsRequested(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->add_QuerySubmitted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Search::ISearchPane> consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted_revoker consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Search::ISearchPane>(this, &abi_t<Windows::ApplicationModel::Search::ISearchPane>::remove_QuerySubmitted, QuerySubmitted(handler));
+    return impl::make_event_revoker<D, QuerySubmitted_revoker>(this, QuerySubmitted(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::QuerySubmitted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_QuerySubmitted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_QuerySubmitted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->add_ResultSuggestionChosen(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::Search::ISearchPane> consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen_revoker consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::Search::ISearchPane>(this, &abi_t<Windows::ApplicationModel::Search::ISearchPane>::remove_ResultSuggestionChosen, ResultSuggestionChosen(handler));
+    return impl::make_event_revoker<D, ResultSuggestionChosen_revoker>(this, ResultSuggestionChosen(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::ResultSuggestionChosen(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_ResultSuggestionChosen(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::Search::ISearchPane)->remove_ResultSuggestionChosen(get_abi(token)));
 }
 
 template <typename D> void consume_Windows_ApplicationModel_Search_ISearchPane<D>::SetLocalContentSuggestionSettings(Windows::ApplicationModel::Search::LocalContentSuggestionSettings const& settings) const
@@ -436,963 +436,819 @@ template <typename D> void consume_Windows_ApplicationModel_Search_ISearchSugges
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSettings> : produce_base<D, Windows::ApplicationModel::Search::ILocalContentSuggestionSettings>
 {
-    HRESULT __stdcall put_Enabled(bool value) noexcept final
+    int32_t WINRT_CALL put_Enabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(void), bool);
             this->shim().Enabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Enabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_Enabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Enabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Locations(void** value) noexcept final
+    int32_t WINRT_CALL get_Locations(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Locations, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder>>(this->shim().Locations());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AqsFilter(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AqsFilter(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AqsFilter, WINRT_WRAP(void), hstring const&);
             this->shim().AqsFilter(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AqsFilter(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AqsFilter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AqsFilter, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AqsFilter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PropertiesToMatch(void** value) noexcept final
+    int32_t WINRT_CALL get_PropertiesToMatch(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PropertiesToMatch, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().PropertiesToMatch());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPane> : produce_base<D, Windows::ApplicationModel::Search::ISearchPane>
 {
-    HRESULT __stdcall put_SearchHistoryEnabled(bool value) noexcept final
+    int32_t WINRT_CALL put_SearchHistoryEnabled(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchHistoryEnabled, WINRT_WRAP(void), bool);
             this->shim().SearchHistoryEnabled(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchHistoryEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_SearchHistoryEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchHistoryEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().SearchHistoryEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SearchHistoryContext(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_SearchHistoryContext(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchHistoryContext, WINRT_WRAP(void), hstring const&);
             this->shim().SearchHistoryContext(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchHistoryContext(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SearchHistoryContext(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchHistoryContext, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SearchHistoryContext());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PlaceholderText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PlaceholderText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaceholderText, WINRT_WRAP(void), hstring const&);
             this->shim().PlaceholderText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlaceholderText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PlaceholderText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlaceholderText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PlaceholderText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QueryText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QueryText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Language(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Language(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Language());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Visible(bool* value) noexcept final
+    int32_t WINRT_CALL get_Visible(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Visible, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Visible());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_VisibilityChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_VisibilityChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().VisibilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(VisibilityChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().VisibilityChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_VisibilityChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_VisibilityChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(VisibilityChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().VisibilityChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_QueryChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().VisibilityChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(QueryChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().QueryChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_QueryChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_QueryChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(QueryChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().QueryChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_SuggestionsRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().QueryChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SuggestionsRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().SuggestionsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_QueryChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_SuggestionsRequested(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(SuggestionsRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().SuggestionsRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_QuerySubmitted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().QueryChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(QuerySubmitted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().QuerySubmitted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_SuggestionsRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_QuerySubmitted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(QuerySubmitted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().QuerySubmitted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ResultSuggestionChosen(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().SuggestionsRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ResultSuggestionChosen, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ResultSuggestionChosen(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_SuggestionsRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ResultSuggestionChosen(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ResultSuggestionChosen, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ResultSuggestionChosen(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL SetLocalContentSuggestionSettings(void* settings) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().SuggestionsRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_QuerySubmitted(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().QuerySubmitted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_QuerySubmitted(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().QuerySubmitted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ResultSuggestionChosen(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ResultSuggestionChosen(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Search::SearchPane, Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ResultSuggestionChosen(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ResultSuggestionChosen(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall SetLocalContentSuggestionSettings(void* settings) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetLocalContentSuggestionSettings, WINRT_WRAP(void), Windows::ApplicationModel::Search::LocalContentSuggestionSettings const&);
             this->shim().SetLocalContentSuggestionSettings(*reinterpret_cast<Windows::ApplicationModel::Search::LocalContentSuggestionSettings const*>(&settings));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowOverloadDefault() noexcept final
+    int32_t WINRT_CALL ShowOverloadDefault() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void));
             this->shim().Show();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShowOverloadWithQuery(HSTRING query) noexcept final
+    int32_t WINRT_CALL ShowOverloadWithQuery(void* query) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Show, WINRT_WRAP(void), hstring const&);
             this->shim().Show(*reinterpret_cast<hstring const*>(&query));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ShowOnKeyboardInput(bool value) noexcept final
+    int32_t WINRT_CALL put_ShowOnKeyboardInput(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowOnKeyboardInput, WINRT_WRAP(void), bool);
             this->shim().ShowOnKeyboardInput(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ShowOnKeyboardInput(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShowOnKeyboardInput(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShowOnKeyboardInput, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShowOnKeyboardInput());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TrySetQueryText(HSTRING query, bool* succeeded) noexcept final
+    int32_t WINRT_CALL TrySetQueryText(void* query, bool* succeeded) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetQueryText, WINRT_WRAP(bool), hstring const&);
             *succeeded = detach_from<bool>(this->shim().TrySetQueryText(*reinterpret_cast<hstring const*>(&query)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQueryChangedEventArgs> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneQueryChangedEventArgs>
 {
-    HRESULT __stdcall get_QueryText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QueryText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QueryText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Language(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Language(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Language());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LinguisticDetails(void** value) noexcept final
+    int32_t WINRT_CALL get_LinguisticDetails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinguisticDetails, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails));
             *value = detach_from<Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails>(this->shim().LinguisticDetails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails>
 {
-    HRESULT __stdcall get_QueryTextAlternatives(void** value) noexcept final
+    int32_t WINRT_CALL get_QueryTextAlternatives(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextAlternatives, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().QueryTextAlternatives());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryTextCompositionStart(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_QueryTextCompositionStart(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextCompositionStart, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().QueryTextCompositionStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryTextCompositionLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_QueryTextCompositionLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextCompositionLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().QueryTextCompositionLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQuerySubmittedEventArgs> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneQuerySubmittedEventArgs>
 {
-    HRESULT __stdcall get_QueryText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QueryText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QueryText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Language(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Language(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Language, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Language());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails>
 {
-    HRESULT __stdcall get_LinguisticDetails(void** value) noexcept final
+    int32_t WINRT_CALL get_LinguisticDetails(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LinguisticDetails, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails));
             *value = detach_from<Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails>(this->shim().LinguisticDetails());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneResultSuggestionChosenEventArgs> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneResultSuggestionChosenEventArgs>
 {
-    HRESULT __stdcall get_Tag(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Tag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tag, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Tag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneStatics> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** searchPane) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** searchPane) noexcept final
     {
         try
         {
             *searchPane = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPane));
             *searchPane = detach_from<Windows::ApplicationModel::Search::SearchPane>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneStaticsWithHideThisApplication> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneStaticsWithHideThisApplication>
 {
-    HRESULT __stdcall HideThisApplication() noexcept final
+    int32_t WINRT_CALL HideThisApplication() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HideThisApplication, WINRT_WRAP(void));
             this->shim().HideThisApplication();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequest> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequest>
 {
-    HRESULT __stdcall get_IsCanceled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCanceled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCanceled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCanceled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchSuggestionCollection(void** collection) noexcept final
+    int32_t WINRT_CALL get_SearchSuggestionCollection(void** collection) noexcept final
     {
         try
         {
             *collection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchSuggestionCollection, WINRT_WRAP(Windows::ApplicationModel::Search::SearchSuggestionCollection));
             *collection = detach_from<Windows::ApplicationModel::Search::SearchSuggestionCollection>(this->shim().SearchSuggestionCollection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestDeferral));
             *deferral = detach_from<Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequestDeferral> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequestDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequestedEventArgs> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneSuggestionsRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::ApplicationModel::Search::SearchPaneSuggestionsRequest));
             *value = detach_from<Windows::ApplicationModel::Search::SearchPaneSuggestionsRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchPaneVisibilityChangedEventArgs> : produce_base<D, Windows::ApplicationModel::Search::ISearchPaneVisibilityChangedEventArgs>
 {
-    HRESULT __stdcall get_Visible(bool* value) noexcept final
+    int32_t WINRT_CALL get_Visible(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Visible, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Visible());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails> : produce_base<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails>
 {
-    HRESULT __stdcall get_QueryTextAlternatives(void** value) noexcept final
+    int32_t WINRT_CALL get_QueryTextAlternatives(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextAlternatives, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().QueryTextAlternatives());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryTextCompositionStart(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_QueryTextCompositionStart(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextCompositionStart, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().QueryTextCompositionStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QueryTextCompositionLength(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_QueryTextCompositionLength(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QueryTextCompositionLength, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().QueryTextCompositionLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory> : produce_base<D, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory>
 {
-    HRESULT __stdcall CreateInstance(void* queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength, void** value) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::ApplicationModel::Search::SearchQueryLinguisticDetails), Windows::Foundation::Collections::IIterable<hstring> const&, uint32_t, uint32_t);
             *value = detach_from<Windows::ApplicationModel::Search::SearchQueryLinguisticDetails>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection> : produce_base<D, Windows::ApplicationModel::Search::ISearchSuggestionCollection>
 {
-    HRESULT __stdcall get_Size(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Size(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Size, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Size());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AppendQuerySuggestion(HSTRING text) noexcept final
+    int32_t WINRT_CALL AppendQuerySuggestion(void* text) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendQuerySuggestion, WINRT_WRAP(void), hstring const&);
             this->shim().AppendQuerySuggestion(*reinterpret_cast<hstring const*>(&text));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AppendQuerySuggestions(void* suggestions) noexcept final
+    int32_t WINRT_CALL AppendQuerySuggestions(void* suggestions) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendQuerySuggestions, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<hstring> const&);
             this->shim().AppendQuerySuggestions(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&suggestions));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AppendResultSuggestion(HSTRING text, HSTRING detailText, HSTRING tag, void* image, HSTRING imageAlternateText) noexcept final
+    int32_t WINRT_CALL AppendResultSuggestion(void* text, void* detailText, void* tag, void* image, void* imageAlternateText) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendResultSuggestion, WINRT_WRAP(void), hstring const&, hstring const&, hstring const&, Windows::Storage::Streams::IRandomAccessStreamReference const&, hstring const&);
             this->shim().AppendResultSuggestion(*reinterpret_cast<hstring const*>(&text), *reinterpret_cast<hstring const*>(&detailText), *reinterpret_cast<hstring const*>(&tag), *reinterpret_cast<Windows::Storage::Streams::IRandomAccessStreamReference const*>(&image), *reinterpret_cast<hstring const*>(&imageAlternateText));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AppendSearchSeparator(HSTRING label) noexcept final
+    int32_t WINRT_CALL AppendSearchSeparator(void* label) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AppendSearchSeparator, WINRT_WRAP(void), hstring const&);
             this->shim().AppendSearchSeparator(*reinterpret_cast<hstring const*>(&label));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequest> : produce_base<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequest>
 {
-    HRESULT __stdcall get_IsCanceled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCanceled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCanceled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCanceled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SearchSuggestionCollection(void** collection) noexcept final
+    int32_t WINRT_CALL get_SearchSuggestionCollection(void** collection) noexcept final
     {
         try
         {
             *collection = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SearchSuggestionCollection, WINRT_WRAP(Windows::ApplicationModel::Search::SearchSuggestionCollection));
             *collection = detach_from<Windows::ApplicationModel::Search::SearchSuggestionCollection>(this->shim().SearchSuggestionCollection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** deferral) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** deferral) noexcept final
     {
         try
         {
             *deferral = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral));
             *deferral = detach_from<Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral> : produce_base<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral>
 {
-    HRESULT __stdcall Complete() noexcept final
+    int32_t WINRT_CALL Complete() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Complete, WINRT_WRAP(void));
             this->shim().Complete();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1401,21 +1257,21 @@ struct produce<D, Windows::ApplicationModel::Search::ISearchSuggestionsRequestDe
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Search {
 
 inline LocalContentSuggestionSettings::LocalContentSuggestionSettings() :
-    LocalContentSuggestionSettings(get_activation_factory<LocalContentSuggestionSettings>().ActivateInstance<LocalContentSuggestionSettings>())
+    LocalContentSuggestionSettings(impl::call_factory<LocalContentSuggestionSettings>([](auto&& f) { return f.template ActivateInstance<LocalContentSuggestionSettings>(); }))
 {}
 
 inline Windows::ApplicationModel::Search::SearchPane SearchPane::GetForCurrentView()
 {
-    return get_activation_factory<SearchPane, Windows::ApplicationModel::Search::ISearchPaneStatics>().GetForCurrentView();
+    return impl::call_factory<SearchPane, Windows::ApplicationModel::Search::ISearchPaneStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline void SearchPane::HideThisApplication()
 {
-    get_activation_factory<SearchPane, Windows::ApplicationModel::Search::ISearchPaneStaticsWithHideThisApplication>().HideThisApplication();
+    impl::call_factory<SearchPane, Windows::ApplicationModel::Search::ISearchPaneStaticsWithHideThisApplication>([&](auto&& f) { return f.HideThisApplication(); });
 }
 
 inline SearchQueryLinguisticDetails::SearchQueryLinguisticDetails(param::iterable<hstring> const& queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) :
-    SearchQueryLinguisticDetails(get_activation_factory<SearchQueryLinguisticDetails, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory>().CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength))
+    SearchQueryLinguisticDetails(impl::call_factory<SearchQueryLinguisticDetails, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory>([&](auto&& f) { return f.CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength); }))
 {}
 
 }
@@ -1456,5 +1312,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Search::SearchSuggestio
 template<> struct hash<winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral> {};
 
 }
-
-WINRT_WARNING_POP

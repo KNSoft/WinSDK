@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.Streams.2.h"
@@ -247,21 +247,21 @@ template <typename D> Windows::System::Profile::PlatformDataCollectionLevel cons
     return value;
 }
 
-template <typename D> event_token consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics)->add_CollectionLevelChanged(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics> consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged_revoker consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>(this, &abi_t<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>::remove_CollectionLevelChanged, CollectionLevelChanged(handler));
+    return impl::make_event_revoker<D, CollectionLevelChanged_revoker>(this, CollectionLevelChanged(handler));
 }
 
-template <typename D> void consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(event_token const& token) const
+template <typename D> void consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics)->remove_CollectionLevelChanged(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics)->remove_CollectionLevelChanged(get_abi(token)));
 }
 
 template <typename D> bool consume_Windows_System_Profile_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel const& level) const
@@ -327,706 +327,791 @@ template <typename D> Windows::System::Profile::SystemIdentificationInfo consume
     return result;
 }
 
+template <typename D> Windows::System::Profile::SystemOutOfBoxExperienceState consume_Windows_System_Profile_ISystemSetupInfoStatics<D>::OutOfBoxExperienceState() const
+{
+    Windows::System::Profile::SystemOutOfBoxExperienceState value{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::ISystemSetupInfoStatics)->get_OutOfBoxExperienceState(put_abi(value)));
+    return value;
+}
+
+template <typename D> winrt::event_token consume_Windows_System_Profile_ISystemSetupInfoStatics<D>::OutOfBoxExperienceStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::ISystemSetupInfoStatics)->add_OutOfBoxExperienceStateChanged(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_System_Profile_ISystemSetupInfoStatics<D>::OutOfBoxExperienceStateChanged_revoker consume_Windows_System_Profile_ISystemSetupInfoStatics<D>::OutOfBoxExperienceStateChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, OutOfBoxExperienceStateChanged_revoker>(this, OutOfBoxExperienceStateChanged(handler));
+}
+
+template <typename D> void consume_Windows_System_Profile_ISystemSetupInfoStatics<D>::OutOfBoxExperienceStateChanged(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::Profile::ISystemSetupInfoStatics)->remove_OutOfBoxExperienceStateChanged(get_abi(token)));
+}
+
+template <typename D> bool consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::IsEnabled() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::IsEnabledForTrial() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->get_IsEnabledForTrial(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::CanDisable() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->get_CanDisable(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::IsDisableSupported() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->get_IsDisableSupported(&value));
+    return value;
+}
+
+template <typename D> winrt::event_token consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    winrt::event_token token{};
+    check_hresult(WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->add_PolicyChanged(get_abi(handler), put_abi(token)));
+    return token;
+}
+
+template <typename D> typename consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::PolicyChanged_revoker consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::PolicyChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const
+{
+    return impl::make_event_revoker<D, PolicyChanged_revoker>(this, PolicyChanged(handler));
+}
+
+template <typename D> void consume_Windows_System_Profile_IWindowsIntegrityPolicyStatics<D>::PolicyChanged(winrt::event_token const& token) const noexcept
+{
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::System::Profile::IWindowsIntegrityPolicyStatics)->remove_PolicyChanged(get_abi(token)));
+}
+
 template <typename D>
 struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics> : produce_base<D, Windows::System::Profile::IAnalyticsInfoStatics>
 {
-    HRESULT __stdcall get_VersionInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_VersionInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VersionInfo, WINRT_WRAP(Windows::System::Profile::AnalyticsVersionInfo));
             *value = detach_from<Windows::System::Profile::AnalyticsVersionInfo>(this->shim().VersionInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceForm(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceForm(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceForm, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceForm());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IAnalyticsInfoStatics2> : produce_base<D, Windows::System::Profile::IAnalyticsInfoStatics2>
 {
-    HRESULT __stdcall GetSystemPropertiesAsync(void* attributeNames, void** operation) noexcept final
+    int32_t WINRT_CALL GetSystemPropertiesAsync(void* attributeNames, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSystemPropertiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, hstring>>), Windows::Foundation::Collections::IIterable<hstring> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, hstring>>>(this->shim().GetSystemPropertiesAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&attributeNames)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_base<D, Windows::System::Profile::IAnalyticsVersionInfo>
 {
-    HRESULT __stdcall get_DeviceFamily(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceFamily(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceFamily, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceFamily());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeviceFamilyVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceFamilyVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceFamilyVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceFamilyVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IEducationSettingsStatics> : produce_base<D, Windows::System::Profile::IEducationSettingsStatics>
 {
-    HRESULT __stdcall get_IsEducationEnvironment(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEducationEnvironment(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEducationEnvironment, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEducationEnvironment());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : produce_base<D, Windows::System::Profile::IHardwareIdentificationStatics>
 {
-    HRESULT __stdcall GetPackageSpecificToken(void* nonce, void** packageSpecificHardwareToken) noexcept final
+    int32_t WINRT_CALL GetPackageSpecificToken(void* nonce, void** packageSpecificHardwareToken) noexcept final
     {
         try
         {
             *packageSpecificHardwareToken = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPackageSpecificToken, WINRT_WRAP(Windows::System::Profile::HardwareToken), Windows::Storage::Streams::IBuffer const&);
             *packageSpecificHardwareToken = detach_from<Windows::System::Profile::HardwareToken>(this->shim().GetPackageSpecificToken(*reinterpret_cast<Windows::Storage::Streams::IBuffer const*>(&nonce)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IHardwareToken> : produce_base<D, Windows::System::Profile::IHardwareToken>
 {
-    HRESULT __stdcall get_Id(void** value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Signature(void** value) noexcept final
+    int32_t WINRT_CALL get_Signature(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Signature, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Signature());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Certificate(void** value) noexcept final
+    int32_t WINRT_CALL get_Certificate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Certificate, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Certificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IKnownRetailInfoPropertiesStatics> : produce_base<D, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>
 {
-    HRESULT __stdcall get_RetailAccessCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RetailAccessCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RetailAccessCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RetailAccessCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManufacturerName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ManufacturerName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManufacturerName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ManufacturerName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ModelName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ModelName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayModelName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayModelName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayModelName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayModelName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Price(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Price(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Price, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Price());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFeatured(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IsFeatured(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFeatured, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IsFeatured());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FormFactor(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FormFactor(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormFactor, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FormFactor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScreenSize(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ScreenSize(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScreenSize, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ScreenSize());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Weight(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Weight(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Weight, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Weight());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BatteryLifeDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BatteryLifeDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BatteryLifeDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BatteryLifeDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProcessorDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProcessorDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProcessorDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProcessorDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Memory(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Memory(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Memory, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Memory());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StorageDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StorageDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StorageDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StorageDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GraphicsDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GraphicsDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GraphicsDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GraphicsDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FrontCameraDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FrontCameraDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FrontCameraDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FrontCameraDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RearCameraDescription(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RearCameraDescription(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RearCameraDescription, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RearCameraDescription());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasNfc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HasNfc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasNfc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HasNfc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasSdSlot(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HasSdSlot(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasSdSlot, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HasSdSlot());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HasOpticalDrive(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HasOpticalDrive(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasOpticalDrive, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HasOpticalDrive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsOfficeInstalled(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IsOfficeInstalled(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsOfficeInstalled, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IsOfficeInstalled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WindowsEdition(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WindowsEdition(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WindowsEdition, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WindowsEdition());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics> : produce_base<D, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>
 {
-    HRESULT __stdcall get_CollectionLevel(Windows::System::Profile::PlatformDataCollectionLevel* value) noexcept final
+    int32_t WINRT_CALL get_CollectionLevel(Windows::System::Profile::PlatformDataCollectionLevel* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CollectionLevel, WINRT_WRAP(Windows::System::Profile::PlatformDataCollectionLevel));
             *value = detach_from<Windows::System::Profile::PlatformDataCollectionLevel>(this->shim().CollectionLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_CollectionLevelChanged(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_CollectionLevelChanged(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().CollectionLevelChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CollectionLevelChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().CollectionLevelChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_CollectionLevelChanged(event_token token) noexcept final
+    int32_t WINRT_CALL remove_CollectionLevelChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(CollectionLevelChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().CollectionLevelChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().CollectionLevelChanged(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level, bool* result) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanCollectDiagnostics, WINRT_WRAP(bool), Windows::System::Profile::PlatformDataCollectionLevel const&);
             *result = detach_from<bool>(this->shim().CanCollectDiagnostics(*reinterpret_cast<Windows::System::Profile::PlatformDataCollectionLevel const*>(&level)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::IRetailInfoStatics> : produce_base<D, Windows::System::Profile::IRetailInfoStatics>
 {
-    HRESULT __stdcall get_IsDemoModeEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDemoModeEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDemoModeEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDemoModeEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Properties(void** value) noexcept final
+    int32_t WINRT_CALL get_Properties(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Properties, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>>(this->shim().Properties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produce_base<D, Windows::System::Profile::ISharedModeSettingsStatics>
 {
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics2> : produce_base<D, Windows::System::Profile::ISharedModeSettingsStatics2>
 {
-    HRESULT __stdcall get_ShouldAvoidLocalStorage(bool* value) noexcept final
+    int32_t WINRT_CALL get_ShouldAvoidLocalStorage(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShouldAvoidLocalStorage, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ShouldAvoidLocalStorage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce_base<D, Windows::System::Profile::ISystemIdentificationInfo>
 {
-    HRESULT __stdcall get_Id(void** value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(Windows::Storage::Streams::IBuffer));
             *value = detach_from<Windows::Storage::Streams::IBuffer>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Source(Windows::System::Profile::SystemIdentificationSource* value) noexcept final
+    int32_t WINRT_CALL get_Source(Windows::System::Profile::SystemIdentificationSource* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Source, WINRT_WRAP(Windows::System::Profile::SystemIdentificationSource));
             *value = detach_from<Windows::System::Profile::SystemIdentificationSource>(this->shim().Source());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : produce_base<D, Windows::System::Profile::ISystemIdentificationStatics>
 {
-    HRESULT __stdcall GetSystemIdForPublisher(void** result) noexcept final
+    int32_t WINRT_CALL GetSystemIdForPublisher(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSystemIdForPublisher, WINRT_WRAP(Windows::System::Profile::SystemIdentificationInfo));
             *result = detach_from<Windows::System::Profile::SystemIdentificationInfo>(this->shim().GetSystemIdForPublisher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSystemIdForUser(void* user, void** result) noexcept final
+    int32_t WINRT_CALL GetSystemIdForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSystemIdForUser, WINRT_WRAP(Windows::System::Profile::SystemIdentificationInfo), Windows::System::User const&);
             *result = detach_from<Windows::System::Profile::SystemIdentificationInfo>(this->shim().GetSystemIdForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::Profile::ISystemSetupInfoStatics> : produce_base<D, Windows::System::Profile::ISystemSetupInfoStatics>
+{
+    int32_t WINRT_CALL get_OutOfBoxExperienceState(Windows::System::Profile::SystemOutOfBoxExperienceState* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutOfBoxExperienceState, WINRT_WRAP(Windows::System::Profile::SystemOutOfBoxExperienceState));
+            *value = detach_from<Windows::System::Profile::SystemOutOfBoxExperienceState>(this->shim().OutOfBoxExperienceState());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL add_OutOfBoxExperienceStateChanged(void* handler, winrt::event_token* token) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OutOfBoxExperienceStateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().OutOfBoxExperienceStateChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_OutOfBoxExperienceStateChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(OutOfBoxExperienceStateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().OutOfBoxExperienceStateChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::Profile::IWindowsIntegrityPolicyStatics> : produce_base<D, Windows::System::Profile::IWindowsIntegrityPolicyStatics>
+{
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsEnabled());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_IsEnabledForTrial(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabledForTrial, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsEnabledForTrial());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_CanDisable(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanDisable, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().CanDisable());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_IsDisableSupported(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDisableSupported, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsDisableSupported());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL add_PolicyChanged(void* handler, winrt::event_token* token) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PolicyChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().PolicyChanged(*reinterpret_cast<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL remove_PolicyChanged(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(PolicyChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().PolicyChanged(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
@@ -1036,193 +1121,250 @@ WINRT_EXPORT namespace winrt::Windows::System::Profile {
 
 inline Windows::System::Profile::AnalyticsVersionInfo AnalyticsInfo::VersionInfo()
 {
-    return get_activation_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics>().VersionInfo();
+    return impl::call_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics>([&](auto&& f) { return f.VersionInfo(); });
 }
 
 inline hstring AnalyticsInfo::DeviceForm()
 {
-    return get_activation_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics>().DeviceForm();
+    return impl::call_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics>([&](auto&& f) { return f.DeviceForm(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, hstring>> AnalyticsInfo::GetSystemPropertiesAsync(param::async_iterable<hstring> const& attributeNames)
 {
-    return get_activation_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics2>().GetSystemPropertiesAsync(attributeNames);
+    return impl::call_factory<AnalyticsInfo, Windows::System::Profile::IAnalyticsInfoStatics2>([&](auto&& f) { return f.GetSystemPropertiesAsync(attributeNames); });
 }
 
 inline bool EducationSettings::IsEducationEnvironment()
 {
-    return get_activation_factory<EducationSettings, Windows::System::Profile::IEducationSettingsStatics>().IsEducationEnvironment();
+    return impl::call_factory<EducationSettings, Windows::System::Profile::IEducationSettingsStatics>([&](auto&& f) { return f.IsEducationEnvironment(); });
 }
 
 inline Windows::System::Profile::HardwareToken HardwareIdentification::GetPackageSpecificToken(Windows::Storage::Streams::IBuffer const& nonce)
 {
-    return get_activation_factory<HardwareIdentification, Windows::System::Profile::IHardwareIdentificationStatics>().GetPackageSpecificToken(nonce);
+    return impl::call_factory<HardwareIdentification, Windows::System::Profile::IHardwareIdentificationStatics>([&](auto&& f) { return f.GetPackageSpecificToken(nonce); });
 }
 
 inline hstring KnownRetailInfoProperties::RetailAccessCode()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().RetailAccessCode();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.RetailAccessCode(); });
 }
 
 inline hstring KnownRetailInfoProperties::ManufacturerName()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().ManufacturerName();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.ManufacturerName(); });
 }
 
 inline hstring KnownRetailInfoProperties::ModelName()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().ModelName();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.ModelName(); });
 }
 
 inline hstring KnownRetailInfoProperties::DisplayModelName()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().DisplayModelName();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.DisplayModelName(); });
 }
 
 inline hstring KnownRetailInfoProperties::Price()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().Price();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.Price(); });
 }
 
 inline hstring KnownRetailInfoProperties::IsFeatured()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().IsFeatured();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.IsFeatured(); });
 }
 
 inline hstring KnownRetailInfoProperties::FormFactor()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().FormFactor();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.FormFactor(); });
 }
 
 inline hstring KnownRetailInfoProperties::ScreenSize()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().ScreenSize();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.ScreenSize(); });
 }
 
 inline hstring KnownRetailInfoProperties::Weight()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().Weight();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.Weight(); });
 }
 
 inline hstring KnownRetailInfoProperties::DisplayDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().DisplayDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.DisplayDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::BatteryLifeDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().BatteryLifeDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.BatteryLifeDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::ProcessorDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().ProcessorDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.ProcessorDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::Memory()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().Memory();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.Memory(); });
 }
 
 inline hstring KnownRetailInfoProperties::StorageDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().StorageDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.StorageDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::GraphicsDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().GraphicsDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.GraphicsDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::FrontCameraDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().FrontCameraDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.FrontCameraDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::RearCameraDescription()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().RearCameraDescription();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.RearCameraDescription(); });
 }
 
 inline hstring KnownRetailInfoProperties::HasNfc()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().HasNfc();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.HasNfc(); });
 }
 
 inline hstring KnownRetailInfoProperties::HasSdSlot()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().HasSdSlot();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.HasSdSlot(); });
 }
 
 inline hstring KnownRetailInfoProperties::HasOpticalDrive()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().HasOpticalDrive();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.HasOpticalDrive(); });
 }
 
 inline hstring KnownRetailInfoProperties::IsOfficeInstalled()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().IsOfficeInstalled();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.IsOfficeInstalled(); });
 }
 
 inline hstring KnownRetailInfoProperties::WindowsEdition()
 {
-    return get_activation_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>().WindowsEdition();
+    return impl::call_factory<KnownRetailInfoProperties, Windows::System::Profile::IKnownRetailInfoPropertiesStatics>([&](auto&& f) { return f.WindowsEdition(); });
 }
 
 inline Windows::System::Profile::PlatformDataCollectionLevel PlatformDiagnosticsAndUsageDataSettings::CollectionLevel()
 {
-    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevel();
+    return impl::call_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>([&](auto&& f) { return f.CollectionLevel(); });
 }
 
-inline event_token PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline winrt::event_token PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(handler);
+    return impl::call_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>([&](auto&& f) { return f.CollectionLevelChanged(handler); });
 }
 
-inline factory_event_revoker<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics> PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+inline PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged_revoker PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
 {
-    auto factory = get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>();
-    return { factory, &impl::abi_t<Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>::remove_CollectionLevelChanged, factory.CollectionLevelChanged(handler) };
+    auto f = get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>();
+    return { f, f.CollectionLevelChanged(handler) };
 }
 
-inline void PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(event_token const& token)
+inline void PlatformDiagnosticsAndUsageDataSettings::CollectionLevelChanged(winrt::event_token const& token)
 {
-    get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>().CollectionLevelChanged(token);
+    impl::call_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>([&](auto&& f) { return f.CollectionLevelChanged(token); });
 }
 
 inline bool PlatformDiagnosticsAndUsageDataSettings::CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel const& level)
 {
-    return get_activation_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>().CanCollectDiagnostics(level);
+    return impl::call_factory<PlatformDiagnosticsAndUsageDataSettings, Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>([&](auto&& f) { return f.CanCollectDiagnostics(level); });
 }
 
 inline bool RetailInfo::IsDemoModeEnabled()
 {
-    return get_activation_factory<RetailInfo, Windows::System::Profile::IRetailInfoStatics>().IsDemoModeEnabled();
+    return impl::call_factory<RetailInfo, Windows::System::Profile::IRetailInfoStatics>([&](auto&& f) { return f.IsDemoModeEnabled(); });
 }
 
 inline Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> RetailInfo::Properties()
 {
-    return get_activation_factory<RetailInfo, Windows::System::Profile::IRetailInfoStatics>().Properties();
+    return impl::call_factory<RetailInfo, Windows::System::Profile::IRetailInfoStatics>([&](auto&& f) { return f.Properties(); });
 }
 
 inline bool SharedModeSettings::IsEnabled()
 {
-    return get_activation_factory<SharedModeSettings, Windows::System::Profile::ISharedModeSettingsStatics>().IsEnabled();
+    return impl::call_factory<SharedModeSettings, Windows::System::Profile::ISharedModeSettingsStatics>([&](auto&& f) { return f.IsEnabled(); });
 }
 
 inline bool SharedModeSettings::ShouldAvoidLocalStorage()
 {
-    return get_activation_factory<SharedModeSettings, Windows::System::Profile::ISharedModeSettingsStatics2>().ShouldAvoidLocalStorage();
+    return impl::call_factory<SharedModeSettings, Windows::System::Profile::ISharedModeSettingsStatics2>([&](auto&& f) { return f.ShouldAvoidLocalStorage(); });
 }
 
 inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::GetSystemIdForPublisher()
 {
-    return get_activation_factory<SystemIdentification, Windows::System::Profile::ISystemIdentificationStatics>().GetSystemIdForPublisher();
+    return impl::call_factory<SystemIdentification, Windows::System::Profile::ISystemIdentificationStatics>([&](auto&& f) { return f.GetSystemIdForPublisher(); });
 }
 
 inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::GetSystemIdForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<SystemIdentification, Windows::System::Profile::ISystemIdentificationStatics>().GetSystemIdForUser(user);
+    return impl::call_factory<SystemIdentification, Windows::System::Profile::ISystemIdentificationStatics>([&](auto&& f) { return f.GetSystemIdForUser(user); });
+}
+
+inline Windows::System::Profile::SystemOutOfBoxExperienceState SystemSetupInfo::OutOfBoxExperienceState()
+{
+    return impl::call_factory<SystemSetupInfo, Windows::System::Profile::ISystemSetupInfoStatics>([&](auto&& f) { return f.OutOfBoxExperienceState(); });
+}
+
+inline winrt::event_token SystemSetupInfo::OutOfBoxExperienceStateChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    return impl::call_factory<SystemSetupInfo, Windows::System::Profile::ISystemSetupInfoStatics>([&](auto&& f) { return f.OutOfBoxExperienceStateChanged(handler); });
+}
+
+inline SystemSetupInfo::OutOfBoxExperienceStateChanged_revoker SystemSetupInfo::OutOfBoxExperienceStateChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    auto f = get_activation_factory<SystemSetupInfo, Windows::System::Profile::ISystemSetupInfoStatics>();
+    return { f, f.OutOfBoxExperienceStateChanged(handler) };
+}
+
+inline void SystemSetupInfo::OutOfBoxExperienceStateChanged(winrt::event_token const& token)
+{
+    impl::call_factory<SystemSetupInfo, Windows::System::Profile::ISystemSetupInfoStatics>([&](auto&& f) { return f.OutOfBoxExperienceStateChanged(token); });
+}
+
+inline bool WindowsIntegrityPolicy::IsEnabled()
+{
+    return impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.IsEnabled(); });
+}
+
+inline bool WindowsIntegrityPolicy::IsEnabledForTrial()
+{
+    return impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.IsEnabledForTrial(); });
+}
+
+inline bool WindowsIntegrityPolicy::CanDisable()
+{
+    return impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.CanDisable(); });
+}
+
+inline bool WindowsIntegrityPolicy::IsDisableSupported()
+{
+    return impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.IsDisableSupported(); });
+}
+
+inline winrt::event_token WindowsIntegrityPolicy::PolicyChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    return impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.PolicyChanged(handler); });
+}
+
+inline WindowsIntegrityPolicy::PolicyChanged_revoker WindowsIntegrityPolicy::PolicyChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler)
+{
+    auto f = get_activation_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>();
+    return { f, f.PolicyChanged(handler) };
+}
+
+inline void WindowsIntegrityPolicy::PolicyChanged(winrt::event_token const& token)
+{
+    impl::call_factory<WindowsIntegrityPolicy, Windows::System::Profile::IWindowsIntegrityPolicyStatics>([&](auto&& f) { return f.PolicyChanged(token); });
 }
 
 }
@@ -1242,6 +1384,8 @@ template<> struct hash<winrt::Windows::System::Profile::ISharedModeSettingsStati
 template<> struct hash<winrt::Windows::System::Profile::ISharedModeSettingsStatics2> : winrt::impl::hash_base<winrt::Windows::System::Profile::ISharedModeSettingsStatics2> {};
 template<> struct hash<winrt::Windows::System::Profile::ISystemIdentificationInfo> : winrt::impl::hash_base<winrt::Windows::System::Profile::ISystemIdentificationInfo> {};
 template<> struct hash<winrt::Windows::System::Profile::ISystemIdentificationStatics> : winrt::impl::hash_base<winrt::Windows::System::Profile::ISystemIdentificationStatics> {};
+template<> struct hash<winrt::Windows::System::Profile::ISystemSetupInfoStatics> : winrt::impl::hash_base<winrt::Windows::System::Profile::ISystemSetupInfoStatics> {};
+template<> struct hash<winrt::Windows::System::Profile::IWindowsIntegrityPolicyStatics> : winrt::impl::hash_base<winrt::Windows::System::Profile::IWindowsIntegrityPolicyStatics> {};
 template<> struct hash<winrt::Windows::System::Profile::AnalyticsInfo> : winrt::impl::hash_base<winrt::Windows::System::Profile::AnalyticsInfo> {};
 template<> struct hash<winrt::Windows::System::Profile::AnalyticsVersionInfo> : winrt::impl::hash_base<winrt::Windows::System::Profile::AnalyticsVersionInfo> {};
 template<> struct hash<winrt::Windows::System::Profile::EducationSettings> : winrt::impl::hash_base<winrt::Windows::System::Profile::EducationSettings> {};
@@ -1253,7 +1397,7 @@ template<> struct hash<winrt::Windows::System::Profile::RetailInfo> : winrt::imp
 template<> struct hash<winrt::Windows::System::Profile::SharedModeSettings> : winrt::impl::hash_base<winrt::Windows::System::Profile::SharedModeSettings> {};
 template<> struct hash<winrt::Windows::System::Profile::SystemIdentification> : winrt::impl::hash_base<winrt::Windows::System::Profile::SystemIdentification> {};
 template<> struct hash<winrt::Windows::System::Profile::SystemIdentificationInfo> : winrt::impl::hash_base<winrt::Windows::System::Profile::SystemIdentificationInfo> {};
+template<> struct hash<winrt::Windows::System::Profile::SystemSetupInfo> : winrt::impl::hash_base<winrt::Windows::System::Profile::SystemSetupInfo> {};
+template<> struct hash<winrt::Windows::System::Profile::WindowsIntegrityPolicy> : winrt::impl::hash_base<winrt::Windows::System::Profile::WindowsIntegrityPolicy> {};
 
 }
-
-WINRT_WARNING_POP

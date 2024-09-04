@@ -1808,6 +1808,26 @@ GetServiceRegistryStateKey(
 
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS4
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+typedef enum SERVICE_DIRECTORY_TYPE {
+    ServiceDirectoryPersistentState = 0,
+    ServiceDirectoryTypeMax = 1,
+} SERVICE_DIRECTORY_TYPE;
+
+_Must_inspect_result_
+DWORD
+WINAPI
+GetServiceDirectory(
+    _In_ SERVICE_STATUS_HANDLE hServiceStatus,
+    _In_ SERVICE_DIRECTORY_TYPE eDirectoryType,
+    _Out_writes_opt_(cchPathBufferLength) PWCHAR lpPathBuffer,
+    _In_ DWORD cchPathBufferLength,
+    _Out_ DWORD *lpcchRequiredBufferLength
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS5
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 

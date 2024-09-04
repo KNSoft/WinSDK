@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -51,12 +51,34 @@ template <> struct name<Windows::Storage::Compression::IDecompressorFactory>{ st
 template <> struct name<Windows::Storage::Compression::Compressor>{ static constexpr auto & value{ L"Windows.Storage.Compression.Compressor" }; };
 template <> struct name<Windows::Storage::Compression::Decompressor>{ static constexpr auto & value{ L"Windows.Storage.Compression.Decompressor" }; };
 template <> struct name<Windows::Storage::Compression::CompressAlgorithm>{ static constexpr auto & value{ L"Windows.Storage.Compression.CompressAlgorithm" }; };
-template <> struct guid<Windows::Storage::Compression::ICompressor>{ static constexpr GUID value{ 0x0AC3645A,0x57AC,0x4EE1,{ 0xB7,0x02,0x84,0xD3,0x9D,0x54,0x24,0xE0 } }; };
-template <> struct guid<Windows::Storage::Compression::ICompressorFactory>{ static constexpr GUID value{ 0x5F3D96A4,0x2CFB,0x442C,{ 0xA8,0xBA,0xD7,0xD1,0x1B,0x03,0x9D,0xA0 } }; };
-template <> struct guid<Windows::Storage::Compression::IDecompressor>{ static constexpr GUID value{ 0xB883FE46,0xD68A,0x4C8B,{ 0xAD,0xA0,0x4E,0xE8,0x13,0xFC,0x52,0x83 } }; };
-template <> struct guid<Windows::Storage::Compression::IDecompressorFactory>{ static constexpr GUID value{ 0x5337E252,0x1DA2,0x42E1,{ 0x88,0x34,0x03,0x79,0xD2,0x8D,0x74,0x2F } }; };
+template <> struct guid_storage<Windows::Storage::Compression::ICompressor>{ static constexpr guid value{ 0x0AC3645A,0x57AC,0x4EE1,{ 0xB7,0x02,0x84,0xD3,0x9D,0x54,0x24,0xE0 } }; };
+template <> struct guid_storage<Windows::Storage::Compression::ICompressorFactory>{ static constexpr guid value{ 0x5F3D96A4,0x2CFB,0x442C,{ 0xA8,0xBA,0xD7,0xD1,0x1B,0x03,0x9D,0xA0 } }; };
+template <> struct guid_storage<Windows::Storage::Compression::IDecompressor>{ static constexpr guid value{ 0xB883FE46,0xD68A,0x4C8B,{ 0xAD,0xA0,0x4E,0xE8,0x13,0xFC,0x52,0x83 } }; };
+template <> struct guid_storage<Windows::Storage::Compression::IDecompressorFactory>{ static constexpr guid value{ 0x5337E252,0x1DA2,0x42E1,{ 0x88,0x34,0x03,0x79,0xD2,0x8D,0x74,0x2F } }; };
 template <> struct default_interface<Windows::Storage::Compression::Compressor>{ using type = Windows::Storage::Compression::ICompressor; };
 template <> struct default_interface<Windows::Storage::Compression::Decompressor>{ using type = Windows::Storage::Compression::IDecompressor; };
+
+template <> struct abi<Windows::Storage::Compression::ICompressor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FinishAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DetachStream(void** stream) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Compression::ICompressorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateCompressor(void* underlyingStream, void** createdCompressor) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCompressorEx(void* underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize, void** createdCompressor) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Compression::IDecompressor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DetachStream(void** stream) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::Compression::IDecompressorFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDecompressor(void* underlyingStream, void** createdDecompressor) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_Compression_ICompressor
@@ -87,27 +109,5 @@ struct consume_Windows_Storage_Compression_IDecompressorFactory
     Windows::Storage::Compression::Decompressor CreateDecompressor(Windows::Storage::Streams::IInputStream const& underlyingStream) const;
 };
 template <> struct consume<Windows::Storage::Compression::IDecompressorFactory> { template <typename D> using type = consume_Windows_Storage_Compression_IDecompressorFactory<D>; };
-
-template <> struct abi<Windows::Storage::Compression::ICompressor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FinishAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DetachStream(void** stream) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Compression::ICompressorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateCompressor(void* underlyingStream, void** createdCompressor) noexcept = 0;
-    virtual HRESULT __stdcall CreateCompressorEx(void* underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize, void** createdCompressor) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Compression::IDecompressor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DetachStream(void** stream) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::Compression::IDecompressorFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDecompressor(void* underlyingStream, void** createdDecompressor) noexcept = 0;
-};};
 
 }

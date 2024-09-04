@@ -32,7 +32,9 @@
 
 #if defined(_CONTRACT_GEN)
 #include <nt.h>
-#include <minwindef.h>
+#include <ntrtl.h>
+#include <nturtl.h>
+#include <windows.h>
 #endif // defined(_CONTRACT_GEN)
 
 #ifdef __cplusplus
@@ -55,7 +57,7 @@ _Success_(return != FALSE)
 BOOL
 WINAPI
 OOBEComplete(
-    _Out_ PBOOL OOBEComplete
+    _Out_ PBOOL isOOBEComplete
     );
 
 

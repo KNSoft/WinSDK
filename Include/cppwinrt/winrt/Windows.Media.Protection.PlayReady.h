@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -19,89 +19,89 @@ WINRT_WARNING_PUSH
 
 namespace winrt::impl {
 
-template <typename D> event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->add_RegistrationCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::PlayReady::INDClient> consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted_revoker consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::PlayReady::INDClient>(this, &abi_t<Windows::Media::Protection::PlayReady::INDClient>::remove_RegistrationCompleted, RegistrationCompleted(handler));
+    return impl::make_event_revoker<D, RegistrationCompleted_revoker>(this, RegistrationCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::RegistrationCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_RegistrationCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_RegistrationCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->add_ProximityDetectionCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::PlayReady::INDClient> consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted_revoker consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::PlayReady::INDClient>(this, &abi_t<Windows::Media::Protection::PlayReady::INDClient>::remove_ProximityDetectionCompleted, ProximityDetectionCompleted(handler));
+    return impl::make_event_revoker<D, ProximityDetectionCompleted_revoker>(this, ProximityDetectionCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ProximityDetectionCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ProximityDetectionCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ProximityDetectionCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->add_LicenseFetchCompleted(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::PlayReady::INDClient> consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted_revoker consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::PlayReady::INDClient>(this, &abi_t<Windows::Media::Protection::PlayReady::INDClient>::remove_LicenseFetchCompleted, LicenseFetchCompleted(handler));
+    return impl::make_event_revoker<D, LicenseFetchCompleted_revoker>(this, LicenseFetchCompleted(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::LicenseFetchCompleted(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_LicenseFetchCompleted(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_LicenseFetchCompleted(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->add_ReRegistrationNeeded(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::PlayReady::INDClient> consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded_revoker consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::PlayReady::INDClient>(this, &abi_t<Windows::Media::Protection::PlayReady::INDClient>::remove_ReRegistrationNeeded, ReRegistrationNeeded(handler));
+    return impl::make_event_revoker<D, ReRegistrationNeeded_revoker>(this, ReRegistrationNeeded(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ReRegistrationNeeded(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ReRegistrationNeeded(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ReRegistrationNeeded(get_abi(token)));
 }
 
-template <typename D> event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->add_ClosedCaptionDataReceived(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::Media::Protection::PlayReady::INDClient> consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived_revoker consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Media::Protection::PlayReady::INDClient>(this, &abi_t<Windows::Media::Protection::PlayReady::INDClient>::remove_ClosedCaptionDataReceived, ClosedCaptionDataReceived(handler));
+    return impl::make_event_revoker<D, ClosedCaptionDataReceived_revoker>(this, ClosedCaptionDataReceived(handler));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(event_token const& token) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDClient<D>::ClosedCaptionDataReceived(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ClosedCaptionDataReceived(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Media::Protection::PlayReady::INDClient)->remove_ClosedCaptionDataReceived(get_abi(token)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDStartResult> consume_Windows_Media_Protection_PlayReady_INDClient<D>::StartAsync(Windows::Foundation::Uri const& contentUrl, uint32_t startAsyncOptions, Windows::Media::Protection::PlayReady::INDCustomData const& registrationCustomData, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const& licenseFetchDescriptor) const
@@ -435,7 +435,7 @@ template <typename D> void consume_Windows_Media_Protection_PlayReady_INDStreamP
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDStreamParserNotifier)->OnSampleParsed(streamID, get_abi(streamType), get_abi(streamSample), pts, get_abi(ccFormat), ccDataBytes.size(), get_abi(ccDataBytes)));
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_INDStreamParserNotifier<D>::OnBeginSetupDecryptor(Windows::Media::Core::IMediaStreamDescriptor const& descriptor, GUID const& keyID, array_view<uint8_t const> proBytes) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_INDStreamParserNotifier<D>::OnBeginSetupDecryptor(Windows::Media::Core::IMediaStreamDescriptor const& descriptor, winrt::guid const& keyID, array_view<uint8_t const> proBytes) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::INDStreamParserNotifier)->OnBeginSetupDecryptor(get_abi(descriptor), get_abi(keyID), proBytes.size(), get_abi(proBytes)));
 }
@@ -524,9 +524,9 @@ template <typename D> hstring consume_Windows_Media_Protection_PlayReady_INDTran
     return modelNumber;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader<D>::KeyId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader<D>::KeyId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader)->get_KeyId(put_abi(value)));
     return value;
 }
@@ -552,9 +552,9 @@ template <typename D> Windows::Foundation::Uri consume_Windows_Media_Protection_
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader<D>::DomainServiceId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader<D>::DomainServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader)->get_DomainServiceId(put_abi(value)));
     return value;
 }
@@ -594,9 +594,9 @@ template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHea
     return value;
 }
 
-template <typename D> com_array<GUID> consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader2<D>::KeyIds() const
+template <typename D> com_array<winrt::guid> consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeader2<D>::KeyIds() const
 {
-    com_array<GUID> contentKeyIds;
+    com_array<winrt::guid> contentKeyIds;
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2)->get_KeyIds(impl::put_size_abi(contentKeyIds), put_abi(contentKeyIds)));
     return contentKeyIds;
 }
@@ -608,14 +608,14 @@ template <typename D> com_array<hstring> consume_Windows_Media_Protection_PlayRe
     return contentKeyIdStrings;
 }
 
-template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory<D>::CreateInstanceFromWindowsMediaDrmHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) const
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory<D>::CreateInstanceFromWindowsMediaDrmHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) const
 {
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader instance{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory)->CreateInstanceFromWindowsMediaDrmHeader(headerBytes.size(), get_abi(headerBytes), get_abi(licenseAcquisitionUrl), get_abi(licenseAcquisitionUserInterfaceUrl), get_abi(customAttributes), get_abi(domainServiceId), put_abi(instance)));
     return instance;
 }
 
-template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory<D>::CreateInstanceFromComponents(GUID const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) const
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory<D>::CreateInstanceFromComponents(winrt::guid const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) const
 {
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader instance{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory)->CreateInstanceFromComponents(get_abi(contentKeyId), get_abi(contentKeyIdString), get_abi(contentEncryptionAlgorithm), get_abi(licenseAcquisitionUrl), get_abi(licenseAcquisitionUserInterfaceUrl), get_abi(customAttributes), get_abi(domainServiceId), put_abi(instance)));
@@ -629,7 +629,7 @@ template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHea
     return instance;
 }
 
-template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory2<D>::CreateInstanceFromComponents2(uint32_t dwFlags, array_view<GUID const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) const
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyContentHeader consume_Windows_Media_Protection_PlayReady_IPlayReadyContentHeaderFactory2<D>::CreateInstanceFromComponents2(uint32_t dwFlags, array_view<winrt::guid const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) const
 {
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader instance{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2)->CreateInstanceFromComponents2(dwFlags, contentKeyIds.size(), get_abi(contentKeyIds), contentKeyIdStrings.size(), get_abi(contentKeyIdStrings), get_abi(contentEncryptionAlgorithm), get_abi(licenseAcquisitionUrl), get_abi(licenseAcquisitionUserInterfaceUrl), get_abi(customAttributes), get_abi(domainServiceId), put_abi(instance)));
@@ -643,16 +643,16 @@ template <typename D> Windows::Media::Protection::PlayReady::IPlayReadyServiceRe
     return serviceRequest;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomain<D>::AccountId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomain<D>::AccountId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomain)->get_AccountId(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomain<D>::ServiceId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomain<D>::ServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomain)->get_ServiceId(put_abi(value)));
     return value;
 }
@@ -678,21 +678,21 @@ template <typename D> Windows::Foundation::Uri consume_Windows_Media_Protection_
     return value;
 }
 
-template <typename D> Windows::Media::Protection::PlayReady::PlayReadyDomainIterable consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainIterableFactory<D>::CreateInstance(GUID const& domainAccountId) const
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyDomainIterable consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainIterableFactory<D>::CreateInstance(winrt::guid const& domainAccountId) const
 {
     Windows::Media::Protection::PlayReady::PlayReadyDomainIterable domainIterable{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory)->CreateInstance(get_abi(domainAccountId), put_abi(domainIterable)));
     return domainIterable;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainAccountId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainAccountId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest)->get_DomainAccountId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainAccountId(GUID const& value) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainAccountId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest)->put_DomainAccountId(get_abi(value)));
 }
@@ -709,43 +709,43 @@ template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReady
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest)->put_DomainFriendlyName(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainServiceId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest)->get_DomainServiceId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainServiceId(GUID const& value) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainJoinServiceRequest<D>::DomainServiceId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest)->put_DomainServiceId(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainAccountId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainAccountId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest)->get_DomainAccountId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainAccountId(GUID const& value) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainAccountId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest)->put_DomainAccountId(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainServiceId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest)->get_DomainServiceId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainServiceId(GUID const& value) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyDomainLeaveServiceRequest<D>::DomainServiceId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest)->put_DomainServiceId(get_abi(value)));
 }
 
-template <typename D> com_array<uint8_t> consume_Windows_Media_Protection_PlayReady_IPlayReadyITADataGenerator<D>::GenerateData(GUID const& guidCPSystemId, uint32_t countOfStreams, Windows::Foundation::Collections::IPropertySet const& configuration, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat const& format) const
+template <typename D> com_array<uint8_t> consume_Windows_Media_Protection_PlayReady_IPlayReadyITADataGenerator<D>::GenerateData(winrt::guid const& guidCPSystemId, uint32_t countOfStreams, Windows::Foundation::Collections::IPropertySet const& configuration, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat const& format) const
 {
     com_array<uint8_t> dataBytes;
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator)->GenerateData(get_abi(guidCPSystemId), countOfStreams, get_abi(configuration), get_abi(format), impl::put_size_abi(dataBytes), put_abi(dataBytes)));
@@ -780,9 +780,9 @@ template <typename D> uint32_t consume_Windows_Media_Protection_PlayReady_IPlayR
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense<D>::DomainAccountID() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense<D>::DomainAccountID() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicense)->get_DomainAccountID(put_abi(value)));
     return value;
 }
@@ -794,16 +794,16 @@ template <typename D> uint32_t consume_Windows_Media_Protection_PlayReady_IPlayR
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense<D>::GetKIDAtChainDepth(uint32_t chainDepth) const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense<D>::GetKIDAtChainDepth(uint32_t chainDepth) const
 {
-    GUID kid{};
+    winrt::guid kid{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicense)->GetKIDAtChainDepth(chainDepth, put_abi(kid)));
     return kid;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense2<D>::SecureStopId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyLicense2<D>::SecureStopId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicense2)->get_SecureStopId(put_abi(value)));
     return value;
 }
@@ -841,21 +841,21 @@ template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReady
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest)->put_ContentHeader(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest<D>::DomainServiceId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest<D>::DomainServiceId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest)->get_DomainServiceId(put_abi(value)));
     return value;
 }
 
-template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest<D>::DomainServiceId(GUID const& value) const
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest<D>::DomainServiceId(winrt::guid const& value) const
 {
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest)->put_DomainServiceId(get_abi(value)));
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest2<D>::SessionId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyLicenseAcquisitionServiceRequest2<D>::SessionId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2)->get_SessionId(put_abi(value)));
     return value;
 }
@@ -926,9 +926,9 @@ template <typename D> Windows::Media::Protection::PlayReady::PlayReadySecureStop
     return instance;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadySecureStopServiceRequest<D>::SessionID() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadySecureStopServiceRequest<D>::SessionID() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest)->get_SessionID(put_abi(value)));
     return value;
 }
@@ -968,7 +968,7 @@ template <typename D> Windows::Media::Protection::PlayReady::PlayReadySecureStop
     return instance;
 }
 
-template <typename D> Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest consume_Windows_Media_Protection_PlayReady_IPlayReadySecureStopServiceRequestFactory<D>::CreateInstanceFromSessionID(GUID const& sessionID, array_view<uint8_t const> publisherCertBytes) const
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest consume_Windows_Media_Protection_PlayReady_IPlayReadySecureStopServiceRequestFactory<D>::CreateInstanceFromSessionID(winrt::guid const& sessionID, array_view<uint8_t const> publisherCertBytes) const
 {
     Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest instance{ nullptr };
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory)->CreateInstanceFromSessionID(get_abi(sessionID), publisherCertBytes.size(), get_abi(publisherCertBytes), put_abi(instance)));
@@ -1027,9 +1027,9 @@ template <typename D> Windows::Media::Protection::PlayReady::PlayReadySoapMessag
     return challengeMessage;
 }
 
-template <typename D> HRESULT consume_Windows_Media_Protection_PlayReady_IPlayReadyServiceRequest<D>::ProcessManualEnablingResponse(array_view<uint8_t const> responseBytes) const
+template <typename D> winrt::hresult consume_Windows_Media_Protection_PlayReady_IPlayReadyServiceRequest<D>::ProcessManualEnablingResponse(array_view<uint8_t const> responseBytes) const
 {
-    HRESULT result{};
+    winrt::hresult result{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest)->ProcessManualEnablingResponse(responseBytes.size(), get_abi(responseBytes), put_abi(result)));
     return result;
 }
@@ -1055,51 +1055,51 @@ template <typename D> Windows::Foundation::Uri consume_Windows_Media_Protection_
     return messageUri;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::DomainJoinServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::DomainJoinServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_DomainJoinServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::DomainLeaveServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::DomainLeaveServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_DomainLeaveServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::IndividualizationServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::IndividualizationServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_IndividualizationServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::LicenseAcquirerServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::LicenseAcquirerServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_LicenseAcquirerServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::MeteringReportServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::MeteringReportServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_MeteringReportServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::RevocationServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::RevocationServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_RevocationServiceRequestType(put_abi(value)));
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::MediaProtectionSystemId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics<D>::MediaProtectionSystemId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics)->get_MediaProtectionSystemId(put_abi(value)));
     return value;
 }
@@ -1118,9 +1118,9 @@ template <typename D> uint32_t consume_Windows_Media_Protection_PlayReady_IPlayR
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics3<D>::SecureStopServiceRequestType() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics3<D>::SecureStopServiceRequestType() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics3)->get_SecureStopServiceRequestType(put_abi(value)));
     return value;
 }
@@ -1139,1735 +1139,1514 @@ template <typename D> hstring consume_Windows_Media_Protection_PlayReady_IPlayRe
     return value;
 }
 
-template <typename D> GUID consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics4<D>::ProtectionSystemId() const
+template <typename D> winrt::guid consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics4<D>::ProtectionSystemId() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics4)->get_ProtectionSystemId(put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics5<D>::HardwareDRMDisabledAtTime() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics5)->get_HardwareDRMDisabledAtTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics5<D>::HardwareDRMDisabledUntilTime() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics5)->get_HardwareDRMDisabledUntilTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> void consume_Windows_Media_Protection_PlayReady_IPlayReadyStatics5<D>::ResetHardwareDRMDisabled() const
+{
+    check_hresult(WINRT_SHIM(Windows::Media::Protection::PlayReady::IPlayReadyStatics5)->ResetHardwareDRMDisabled());
 }
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDClient> : produce_base<D, Windows::Media::Protection::PlayReady::INDClient>
 {
-    HRESULT __stdcall add_RegistrationCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_RegistrationCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().RegistrationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RegistrationCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().RegistrationCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RegistrationCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_RegistrationCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RegistrationCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RegistrationCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ProximityDetectionCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RegistrationCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProximityDetectionCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ProximityDetectionCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_ProximityDetectionCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ProximityDetectionCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ProximityDetectionCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ProximityDetectionCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_LicenseFetchCompleted(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ProximityDetectionCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LicenseFetchCompleted, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().LicenseFetchCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_ProximityDetectionCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_LicenseFetchCompleted(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(LicenseFetchCompleted, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().LicenseFetchCompleted(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ReRegistrationNeeded(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().ProximityDetectionCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ReRegistrationNeeded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ReRegistrationNeeded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_LicenseFetchCompleted(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL remove_ReRegistrationNeeded(winrt::event_token token) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ReRegistrationNeeded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ReRegistrationNeeded(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
+    }
+
+    int32_t WINRT_CALL add_ClosedCaptionDataReceived(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().LicenseFetchCompleted(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ClosedCaptionDataReceived, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().ClosedCaptionDataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_LicenseFetchCompleted(event_token token) noexcept final
+    int32_t WINRT_CALL remove_ClosedCaptionDataReceived(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().LicenseFetchCompleted(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(ClosedCaptionDataReceived, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().ClosedCaptionDataReceived(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 
-    HRESULT __stdcall add_ReRegistrationNeeded(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ReRegistrationNeeded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ReRegistrationNeeded(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ReRegistrationNeeded(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall add_ClosedCaptionDataReceived(void* handler, event_token* token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().ClosedCaptionDataReceived(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> const*>(&handler)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_ClosedCaptionDataReceived(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ClosedCaptionDataReceived(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall StartAsync(void* contentUrl, uint32_t startAsyncOptions, void* registrationCustomData, void* licenseFetchDescriptor, void** result) noexcept final
+    int32_t WINRT_CALL StartAsync(void* contentUrl, uint32_t startAsyncOptions, void* registrationCustomData, void* licenseFetchDescriptor, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDStartResult>), Windows::Foundation::Uri const, uint32_t, Windows::Media::Protection::PlayReady::INDCustomData const, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDStartResult>>(this->shim().StartAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&contentUrl), startAsyncOptions, *reinterpret_cast<Windows::Media::Protection::PlayReady::INDCustomData const*>(&registrationCustomData), *reinterpret_cast<Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const*>(&licenseFetchDescriptor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LicenseFetchAsync(void* licenseFetchDescriptor, void** result) noexcept final
+    int32_t WINRT_CALL LicenseFetchAsync(void* licenseFetchDescriptor, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LicenseFetchAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDLicenseFetchResult>), Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDLicenseFetchResult>>(this->shim().LicenseFetchAsync(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const*>(&licenseFetchDescriptor)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ReRegistrationAsync(void* registrationCustomData, void** result) noexcept final
+    int32_t WINRT_CALL ReRegistrationAsync(void* registrationCustomData, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ReRegistrationAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Protection::PlayReady::INDCustomData const);
             *result = detach_from<Windows::Foundation::IAsyncAction>(this->shim().ReRegistrationAsync(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDCustomData const*>(&registrationCustomData)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close() noexcept final
+    int32_t WINRT_CALL Close() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void));
             this->shim().Close();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDClientFactory> : produce_base<D, Windows::Media::Protection::PlayReady::INDClientFactory>
 {
-    HRESULT __stdcall CreateInstance(void* downloadEngine, void* streamParser, void* pMessenger, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* downloadEngine, void* streamParser, void* pMessenger, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDClient), Windows::Media::Protection::PlayReady::INDDownloadEngine const&, Windows::Media::Protection::PlayReady::INDStreamParser const&, Windows::Media::Protection::PlayReady::INDMessenger const&);
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDClient>(this->shim().CreateInstance(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDDownloadEngine const*>(&downloadEngine), *reinterpret_cast<Windows::Media::Protection::PlayReady::INDStreamParser const*>(&streamParser), *reinterpret_cast<Windows::Media::Protection::PlayReady::INDMessenger const*>(&pMessenger)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> : produce_base<D, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs>
 {
-    HRESULT __stdcall get_ClosedCaptionDataFormat(Windows::Media::Protection::PlayReady::NDClosedCaptionFormat* ccForamt) noexcept final
+    int32_t WINRT_CALL get_ClosedCaptionDataFormat(Windows::Media::Protection::PlayReady::NDClosedCaptionFormat* ccForamt) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClosedCaptionDataFormat, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDClosedCaptionFormat));
             *ccForamt = detach_from<Windows::Media::Protection::PlayReady::NDClosedCaptionFormat>(this->shim().ClosedCaptionDataFormat());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PresentationTimestamp(int64_t* presentationTimestamp) noexcept final
+    int32_t WINRT_CALL get_PresentationTimestamp(int64_t* presentationTimestamp) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PresentationTimestamp, WINRT_WRAP(int64_t));
             *presentationTimestamp = detach_from<int64_t>(this->shim().PresentationTimestamp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClosedCaptionData(uint32_t* __ccDataBytesSize, uint8_t** ccDataBytes) noexcept final
+    int32_t WINRT_CALL get_ClosedCaptionData(uint32_t* __ccDataBytesSize, uint8_t** ccDataBytes) noexcept final
     {
         try
         {
             *__ccDataBytesSize = 0;
             *ccDataBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClosedCaptionData, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__ccDataBytesSize, *ccDataBytes) = detach_abi(this->shim().ClosedCaptionData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDCustomData> : produce_base<D, Windows::Media::Protection::PlayReady::INDCustomData>
 {
-    HRESULT __stdcall get_CustomDataTypeID(uint32_t* __customDataTypeIDBytesSize, uint8_t** customDataTypeIDBytes) noexcept final
+    int32_t WINRT_CALL get_CustomDataTypeID(uint32_t* __customDataTypeIDBytesSize, uint8_t** customDataTypeIDBytes) noexcept final
     {
         try
         {
             *__customDataTypeIDBytesSize = 0;
             *customDataTypeIDBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomDataTypeID, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__customDataTypeIDBytesSize, *customDataTypeIDBytes) = detach_abi(this->shim().CustomDataTypeID());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomData(uint32_t* __customDataBytesSize, uint8_t** customDataBytes) noexcept final
+    int32_t WINRT_CALL get_CustomData(uint32_t* __customDataBytesSize, uint8_t** customDataBytes) noexcept final
     {
         try
         {
             *__customDataBytesSize = 0;
             *customDataBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomData, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__customDataBytesSize, *customDataBytes) = detach_abi(this->shim().CustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDCustomDataFactory> : produce_base<D, Windows::Media::Protection::PlayReady::INDCustomDataFactory>
 {
-    HRESULT __stdcall CreateInstance(uint32_t __customDataTypeIDBytesSize, uint8_t* customDataTypeIDBytes, uint32_t __customDataBytesSize, uint8_t* customDataBytes, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(uint32_t __customDataTypeIDBytesSize, uint8_t* customDataTypeIDBytes, uint32_t __customDataBytesSize, uint8_t* customDataBytes, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDCustomData), array_view<uint8_t const>, array_view<uint8_t const>);
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDCustomData>(this->shim().CreateInstance(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(customDataTypeIDBytes), reinterpret_cast<uint8_t const *>(customDataTypeIDBytes) + __customDataTypeIDBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(customDataBytes), reinterpret_cast<uint8_t const *>(customDataBytes) + __customDataBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngine> : produce_base<D, Windows::Media::Protection::PlayReady::INDDownloadEngine>
 {
-    HRESULT __stdcall Open(void* uri, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes) noexcept final
+    int32_t WINRT_CALL Open(void* uri, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Open, WINRT_WRAP(void), Windows::Foundation::Uri const&, array_view<uint8_t const>);
             this->shim().Open(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(sessionIDBytes), reinterpret_cast<uint8_t const *>(sessionIDBytes) + __sessionIDBytesSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Close() noexcept final
+    int32_t WINRT_CALL Close() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Close, WINRT_WRAP(void));
             this->shim().Close();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Seek(Windows::Foundation::TimeSpan startPosition) noexcept final
+    int32_t WINRT_CALL Seek(Windows::Foundation::TimeSpan startPosition) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Seek, WINRT_WRAP(void), Windows::Foundation::TimeSpan const&);
             this->shim().Seek(*reinterpret_cast<Windows::Foundation::TimeSpan const*>(&startPosition));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanSeek(bool* canSeek) noexcept final
+    int32_t WINRT_CALL get_CanSeek(bool* canSeek) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanSeek, WINRT_WRAP(bool));
             *canSeek = detach_from<bool>(this->shim().CanSeek());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BufferFullMinThresholdInSamples(uint32_t* bufferFullMinThreshold) noexcept final
+    int32_t WINRT_CALL get_BufferFullMinThresholdInSamples(uint32_t* bufferFullMinThreshold) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BufferFullMinThresholdInSamples, WINRT_WRAP(uint32_t));
             *bufferFullMinThreshold = detach_from<uint32_t>(this->shim().BufferFullMinThresholdInSamples());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BufferFullMaxThresholdInSamples(uint32_t* bufferFullMaxThreshold) noexcept final
+    int32_t WINRT_CALL get_BufferFullMaxThresholdInSamples(uint32_t* bufferFullMaxThreshold) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BufferFullMaxThresholdInSamples, WINRT_WRAP(uint32_t));
             *bufferFullMaxThreshold = detach_from<uint32_t>(this->shim().BufferFullMaxThresholdInSamples());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Notifier(void** instance) noexcept final
+    int32_t WINRT_CALL get_Notifier(void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Notifier, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier));
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier>(this->shim().Notifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier> : produce_base<D, Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier>
 {
-    HRESULT __stdcall OnStreamOpened() noexcept final
+    int32_t WINRT_CALL OnStreamOpened() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnStreamOpened, WINRT_WRAP(void));
             this->shim().OnStreamOpened();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnPlayReadyObjectReceived(uint32_t __dataBytesSize, uint8_t* dataBytes) noexcept final
+    int32_t WINRT_CALL OnPlayReadyObjectReceived(uint32_t __dataBytesSize, uint8_t* dataBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnPlayReadyObjectReceived, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().OnPlayReadyObjectReceived(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(dataBytes), reinterpret_cast<uint8_t const *>(dataBytes) + __dataBytesSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnContentIDReceived(void* licenseFetchDescriptor) noexcept final
+    int32_t WINRT_CALL OnContentIDReceived(void* licenseFetchDescriptor) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnContentIDReceived, WINRT_WRAP(void), Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const&);
             this->shim().OnContentIDReceived(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const*>(&licenseFetchDescriptor));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnDataReceived(uint32_t __dataBytesSize, uint8_t* dataBytes, uint32_t bytesReceived) noexcept final
+    int32_t WINRT_CALL OnDataReceived(uint32_t __dataBytesSize, uint8_t* dataBytes, uint32_t bytesReceived) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnDataReceived, WINRT_WRAP(void), array_view<uint8_t const>, uint32_t);
             this->shim().OnDataReceived(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(dataBytes), reinterpret_cast<uint8_t const *>(dataBytes) + __dataBytesSize), bytesReceived);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnEndOfStream() noexcept final
+    int32_t WINRT_CALL OnEndOfStream() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnEndOfStream, WINRT_WRAP(void));
             this->shim().OnEndOfStream();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnNetworkError() noexcept final
+    int32_t WINRT_CALL OnNetworkError() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnNetworkError, WINRT_WRAP(void));
             this->shim().OnNetworkError();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> : produce_base<D, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs>
 {
-    HRESULT __stdcall get_ResponseCustomData(void** customData) noexcept final
+    int32_t WINRT_CALL get_ResponseCustomData(void** customData) noexcept final
     {
         try
         {
             *customData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseCustomData, WINRT_WRAP(Windows::Media::Protection::PlayReady::INDCustomData));
             *customData = detach_from<Windows::Media::Protection::PlayReady::INDCustomData>(this->shim().ResponseCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor> : produce_base<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor>
 {
-    HRESULT __stdcall get_ContentIDType(Windows::Media::Protection::PlayReady::NDContentIDType* contentIDType) noexcept final
+    int32_t WINRT_CALL get_ContentIDType(Windows::Media::Protection::PlayReady::NDContentIDType* contentIDType) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentIDType, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDContentIDType));
             *contentIDType = detach_from<Windows::Media::Protection::PlayReady::NDContentIDType>(this->shim().ContentIDType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentID(uint32_t* __contentIDBytesSize, uint8_t** contentIDBytes) noexcept final
+    int32_t WINRT_CALL get_ContentID(uint32_t* __contentIDBytesSize, uint8_t** contentIDBytes) noexcept final
     {
         try
         {
             *__contentIDBytesSize = 0;
             *contentIDBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentID, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__contentIDBytesSize, *contentIDBytes) = detach_abi(this->shim().ContentID());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LicenseFetchChallengeCustomData(void** licenseFetchChallengeCustomData) noexcept final
+    int32_t WINRT_CALL get_LicenseFetchChallengeCustomData(void** licenseFetchChallengeCustomData) noexcept final
     {
         try
         {
             *licenseFetchChallengeCustomData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LicenseFetchChallengeCustomData, WINRT_WRAP(Windows::Media::Protection::PlayReady::INDCustomData));
             *licenseFetchChallengeCustomData = detach_from<Windows::Media::Protection::PlayReady::INDCustomData>(this->shim().LicenseFetchChallengeCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LicenseFetchChallengeCustomData(void* licenseFetchChallengeCustomData) noexcept final
+    int32_t WINRT_CALL put_LicenseFetchChallengeCustomData(void* licenseFetchChallengeCustomData) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LicenseFetchChallengeCustomData, WINRT_WRAP(void), Windows::Media::Protection::PlayReady::INDCustomData const&);
             this->shim().LicenseFetchChallengeCustomData(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDCustomData const*>(&licenseFetchChallengeCustomData));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory> : produce_base<D, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory>
 {
-    HRESULT __stdcall CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, uint32_t __contentIDBytesSize, uint8_t* contentIDBytes, void* licenseFetchChallengeCustomData, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, uint32_t __contentIDBytesSize, uint8_t* contentIDBytes, void* licenseFetchChallengeCustomData, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor), Windows::Media::Protection::PlayReady::NDContentIDType const&, array_view<uint8_t const>, Windows::Media::Protection::PlayReady::INDCustomData const&);
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor>(this->shim().CreateInstance(*reinterpret_cast<Windows::Media::Protection::PlayReady::NDContentIDType const*>(&contentIDType), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(contentIDBytes), reinterpret_cast<uint8_t const *>(contentIDBytes) + __contentIDBytesSize), *reinterpret_cast<Windows::Media::Protection::PlayReady::INDCustomData const*>(&licenseFetchChallengeCustomData)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDLicenseFetchResult> : produce_base<D, Windows::Media::Protection::PlayReady::INDLicenseFetchResult>
 {
-    HRESULT __stdcall get_ResponseCustomData(void** customData) noexcept final
+    int32_t WINRT_CALL get_ResponseCustomData(void** customData) noexcept final
     {
         try
         {
             *customData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseCustomData, WINRT_WRAP(Windows::Media::Protection::PlayReady::INDCustomData));
             *customData = detach_from<Windows::Media::Protection::PlayReady::INDCustomData>(this->shim().ResponseCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDMessenger> : produce_base<D, Windows::Media::Protection::PlayReady::INDMessenger>
 {
-    HRESULT __stdcall SendRegistrationRequestAsync(uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
+    int32_t WINRT_CALL SendRegistrationRequestAsync(uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendRegistrationRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>), array_view<uint8_t const>, array_view<uint8_t const>);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>>(this->shim().SendRegistrationRequestAsync(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(sessionIDBytes), reinterpret_cast<uint8_t const *>(sessionIDBytes) + __sessionIDBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(challengeDataBytes), reinterpret_cast<uint8_t const *>(challengeDataBytes) + __challengeDataBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, uint32_t __transmitterChannelBytesSize, uint8_t* transmitterChannelBytes, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
+    int32_t WINRT_CALL SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, uint32_t __transmitterChannelBytesSize, uint8_t* transmitterChannelBytes, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendProximityDetectionStartAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>), Windows::Media::Protection::PlayReady::NDProximityDetectionType const, array_view<uint8_t const>, array_view<uint8_t const>, array_view<uint8_t const>);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>>(this->shim().SendProximityDetectionStartAsync(*reinterpret_cast<Windows::Media::Protection::PlayReady::NDProximityDetectionType const*>(&pdType), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(transmitterChannelBytes), reinterpret_cast<uint8_t const *>(transmitterChannelBytes) + __transmitterChannelBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(sessionIDBytes), reinterpret_cast<uint8_t const *>(sessionIDBytes) + __sessionIDBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(challengeDataBytes), reinterpret_cast<uint8_t const *>(challengeDataBytes) + __challengeDataBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, uint32_t __transmitterChannelBytesSize, uint8_t* transmitterChannelBytes, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __responseDataBytesSize, uint8_t* responseDataBytes, void** result) noexcept final
+    int32_t WINRT_CALL SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, uint32_t __transmitterChannelBytesSize, uint8_t* transmitterChannelBytes, uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __responseDataBytesSize, uint8_t* responseDataBytes, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendProximityDetectionResponseAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>), Windows::Media::Protection::PlayReady::NDProximityDetectionType const, array_view<uint8_t const>, array_view<uint8_t const>, array_view<uint8_t const>);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>>(this->shim().SendProximityDetectionResponseAsync(*reinterpret_cast<Windows::Media::Protection::PlayReady::NDProximityDetectionType const*>(&pdType), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(transmitterChannelBytes), reinterpret_cast<uint8_t const *>(transmitterChannelBytes) + __transmitterChannelBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(sessionIDBytes), reinterpret_cast<uint8_t const *>(sessionIDBytes) + __sessionIDBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(responseDataBytes), reinterpret_cast<uint8_t const *>(responseDataBytes) + __responseDataBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SendLicenseFetchRequestAsync(uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
+    int32_t WINRT_CALL SendLicenseFetchRequestAsync(uint32_t __sessionIDBytesSize, uint8_t* sessionIDBytes, uint32_t __challengeDataBytesSize, uint8_t* challengeDataBytes, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SendLicenseFetchRequestAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>), array_view<uint8_t const>, array_view<uint8_t const>);
             *result = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult>>(this->shim().SendLicenseFetchRequestAsync(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(sessionIDBytes), reinterpret_cast<uint8_t const *>(sessionIDBytes) + __sessionIDBytesSize), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(challengeDataBytes), reinterpret_cast<uint8_t const *>(challengeDataBytes) + __challengeDataBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> : produce_base<D, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs>
 {
-    HRESULT __stdcall get_ProximityDetectionRetryCount(uint32_t* retryCount) noexcept final
+    int32_t WINRT_CALL get_ProximityDetectionRetryCount(uint32_t* retryCount) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProximityDetectionRetryCount, WINRT_WRAP(uint32_t));
             *retryCount = detach_from<uint32_t>(this->shim().ProximityDetectionRetryCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> : produce_base<D, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs>
 {
-    HRESULT __stdcall get_ResponseCustomData(void** customData) noexcept final
+    int32_t WINRT_CALL get_ResponseCustomData(void** customData) noexcept final
     {
         try
         {
             *customData = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseCustomData, WINRT_WRAP(Windows::Media::Protection::PlayReady::INDCustomData));
             *customData = detach_from<Windows::Media::Protection::PlayReady::INDCustomData>(this->shim().ResponseCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransmitterProperties(void** transmitterProperties) noexcept final
+    int32_t WINRT_CALL get_TransmitterProperties(void** transmitterProperties) noexcept final
     {
         try
         {
             *transmitterProperties = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransmitterProperties, WINRT_WRAP(Windows::Media::Protection::PlayReady::INDTransmitterProperties));
             *transmitterProperties = detach_from<Windows::Media::Protection::PlayReady::INDTransmitterProperties>(this->shim().TransmitterProperties());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransmitterCertificateAccepted(bool* acceptpt) noexcept final
+    int32_t WINRT_CALL get_TransmitterCertificateAccepted(bool* acceptpt) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransmitterCertificateAccepted, WINRT_WRAP(bool));
             *acceptpt = detach_from<bool>(this->shim().TransmitterCertificateAccepted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransmitterCertificateAccepted(bool accept) noexcept final
+    int32_t WINRT_CALL put_TransmitterCertificateAccepted(bool accept) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransmitterCertificateAccepted, WINRT_WRAP(void), bool);
             this->shim().TransmitterCertificateAccepted(accept);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDSendResult> : produce_base<D, Windows::Media::Protection::PlayReady::INDSendResult>
 {
-    HRESULT __stdcall get_Response(uint32_t* __responseDataBytesSize, uint8_t** responseDataBytes) noexcept final
+    int32_t WINRT_CALL get_Response(uint32_t* __responseDataBytesSize, uint8_t** responseDataBytes) noexcept final
     {
         try
         {
             *__responseDataBytesSize = 0;
             *responseDataBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Response, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__responseDataBytesSize, *responseDataBytes) = detach_abi(this->shim().Response());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDStartResult> : produce_base<D, Windows::Media::Protection::PlayReady::INDStartResult>
 {
-    HRESULT __stdcall get_MediaStreamSource(void** mediaStreamSource) noexcept final
+    int32_t WINRT_CALL get_MediaStreamSource(void** mediaStreamSource) noexcept final
     {
         try
         {
             *mediaStreamSource = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaStreamSource, WINRT_WRAP(Windows::Media::Core::MediaStreamSource));
             *mediaStreamSource = detach_from<Windows::Media::Core::MediaStreamSource>(this->shim().MediaStreamSource());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDStorageFileHelper> : produce_base<D, Windows::Media::Protection::PlayReady::INDStorageFileHelper>
 {
-    HRESULT __stdcall GetFileURLs(void* file, void** fileURLs) noexcept final
+    int32_t WINRT_CALL GetFileURLs(void* file, void** fileURLs) noexcept final
     {
         try
         {
             *fileURLs = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetFileURLs, WINRT_WRAP(Windows::Foundation::Collections::IVector<hstring>), Windows::Storage::IStorageFile const&);
             *fileURLs = detach_from<Windows::Foundation::Collections::IVector<hstring>>(this->shim().GetFileURLs(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParser> : produce_base<D, Windows::Media::Protection::PlayReady::INDStreamParser>
 {
-    HRESULT __stdcall ParseData(uint32_t __dataBytesSize, uint8_t* dataBytes) noexcept final
+    int32_t WINRT_CALL ParseData(uint32_t __dataBytesSize, uint8_t* dataBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ParseData, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().ParseData(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(dataBytes), reinterpret_cast<uint8_t const *>(dataBytes) + __dataBytesSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStreamInformation(void* descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType* streamType, uint32_t* streamID) noexcept final
+    int32_t WINRT_CALL GetStreamInformation(void* descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType* streamType, uint32_t* streamID) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStreamInformation, WINRT_WRAP(uint32_t), Windows::Media::Core::IMediaStreamDescriptor const&, Windows::Media::Protection::PlayReady::NDMediaStreamType&);
             *streamID = detach_from<uint32_t>(this->shim().GetStreamInformation(*reinterpret_cast<Windows::Media::Core::IMediaStreamDescriptor const*>(&descriptor), *reinterpret_cast<Windows::Media::Protection::PlayReady::NDMediaStreamType*>(streamType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BeginOfStream() noexcept final
+    int32_t WINRT_CALL BeginOfStream() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BeginOfStream, WINRT_WRAP(void));
             this->shim().BeginOfStream();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EndOfStream() noexcept final
+    int32_t WINRT_CALL EndOfStream() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndOfStream, WINRT_WRAP(void));
             this->shim().EndOfStream();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Notifier(void** instance) noexcept final
+    int32_t WINRT_CALL get_Notifier(void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Notifier, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDStreamParserNotifier));
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDStreamParserNotifier>(this->shim().Notifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier> : produce_base<D, Windows::Media::Protection::PlayReady::INDStreamParserNotifier>
 {
-    HRESULT __stdcall OnContentIDReceived(void* licenseFetchDescriptor) noexcept final
+    int32_t WINRT_CALL OnContentIDReceived(void* licenseFetchDescriptor) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnContentIDReceived, WINRT_WRAP(void), Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const&);
             this->shim().OnContentIDReceived(*reinterpret_cast<Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor const*>(&licenseFetchDescriptor));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnMediaStreamDescriptorCreated(void* audioStreamDescriptors, void* videoStreamDescriptors) noexcept final
+    int32_t WINRT_CALL OnMediaStreamDescriptorCreated(void* audioStreamDescriptors, void* videoStreamDescriptors) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnMediaStreamDescriptorCreated, WINRT_WRAP(void), Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> const&, Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> const&);
             this->shim().OnMediaStreamDescriptorCreated(*reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> const*>(&audioStreamDescriptors), *reinterpret_cast<Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> const*>(&videoStreamDescriptors));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, void* streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, uint32_t __ccDataBytesSize, uint8_t* ccDataBytes) noexcept final
+    int32_t WINRT_CALL OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, void* streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, uint32_t __ccDataBytesSize, uint8_t* ccDataBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OnSampleParsed, WINRT_WRAP(void), uint32_t, Windows::Media::Protection::PlayReady::NDMediaStreamType const&, Windows::Media::Core::MediaStreamSample const&, int64_t, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat const&, array_view<uint8_t const>);
             this->shim().OnSampleParsed(streamID, *reinterpret_cast<Windows::Media::Protection::PlayReady::NDMediaStreamType const*>(&streamType), *reinterpret_cast<Windows::Media::Core::MediaStreamSample const*>(&streamSample), pts, *reinterpret_cast<Windows::Media::Protection::PlayReady::NDClosedCaptionFormat const*>(&ccFormat), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(ccDataBytes), reinterpret_cast<uint8_t const *>(ccDataBytes) + __ccDataBytesSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall OnBeginSetupDecryptor(void* descriptor, GUID keyID, uint32_t __proBytesSize, uint8_t* proBytes) noexcept final
+    int32_t WINRT_CALL OnBeginSetupDecryptor(void* descriptor, winrt::guid keyID, uint32_t __proBytesSize, uint8_t* proBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().OnBeginSetupDecryptor(*reinterpret_cast<Windows::Media::Core::IMediaStreamDescriptor const*>(&descriptor), *reinterpret_cast<GUID const*>(&keyID), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(proBytes), reinterpret_cast<uint8_t const *>(proBytes) + __proBytesSize));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(OnBeginSetupDecryptor, WINRT_WRAP(void), Windows::Media::Core::IMediaStreamDescriptor const&, winrt::guid const&, array_view<uint8_t const>);
+            this->shim().OnBeginSetupDecryptor(*reinterpret_cast<Windows::Media::Core::IMediaStreamDescriptor const*>(&descriptor), *reinterpret_cast<winrt::guid const*>(&keyID), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(proBytes), reinterpret_cast<uint8_t const *>(proBytes) + __proBytesSize));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDTCPMessengerFactory> : produce_base<D, Windows::Media::Protection::PlayReady::INDTCPMessengerFactory>
 {
-    HRESULT __stdcall CreateInstance(HSTRING remoteHostName, uint32_t remoteHostPort, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* remoteHostName, uint32_t remoteHostPort, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDTCPMessenger), hstring const&, uint32_t);
             *instance = detach_from<Windows::Media::Protection::PlayReady::NDTCPMessenger>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&remoteHostName), remoteHostPort));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::INDTransmitterProperties> : produce_base<D, Windows::Media::Protection::PlayReady::INDTransmitterProperties>
 {
-    HRESULT __stdcall get_CertificateType(Windows::Media::Protection::PlayReady::NDCertificateType* type) noexcept final
+    int32_t WINRT_CALL get_CertificateType(Windows::Media::Protection::PlayReady::NDCertificateType* type) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CertificateType, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDCertificateType));
             *type = detach_from<Windows::Media::Protection::PlayReady::NDCertificateType>(this->shim().CertificateType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlatformIdentifier(Windows::Media::Protection::PlayReady::NDCertificatePlatformID* identifier) noexcept final
+    int32_t WINRT_CALL get_PlatformIdentifier(Windows::Media::Protection::PlayReady::NDCertificatePlatformID* identifier) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlatformIdentifier, WINRT_WRAP(Windows::Media::Protection::PlayReady::NDCertificatePlatformID));
             *identifier = detach_from<Windows::Media::Protection::PlayReady::NDCertificatePlatformID>(this->shim().PlatformIdentifier());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedFeatures(uint32_t* __featureSetsSize, Windows::Media::Protection::PlayReady::NDCertificateFeature** featureSets) noexcept final
+    int32_t WINRT_CALL get_SupportedFeatures(uint32_t* __featureSetsSize, Windows::Media::Protection::PlayReady::NDCertificateFeature** featureSets) noexcept final
     {
         try
         {
             *__featureSetsSize = 0;
             *featureSets = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedFeatures, WINRT_WRAP(com_array<Windows::Media::Protection::PlayReady::NDCertificateFeature>));
             std::tie(*__featureSetsSize, *featureSets) = detach_abi(this->shim().SupportedFeatures());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecurityLevel(uint32_t* level) noexcept final
+    int32_t WINRT_CALL get_SecurityLevel(uint32_t* level) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecurityLevel, WINRT_WRAP(uint32_t));
             *level = detach_from<uint32_t>(this->shim().SecurityLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecurityVersion(uint32_t* securityVersion) noexcept final
+    int32_t WINRT_CALL get_SecurityVersion(uint32_t* securityVersion) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecurityVersion, WINRT_WRAP(uint32_t));
             *securityVersion = detach_from<uint32_t>(this->shim().SecurityVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExpirationDate(Windows::Foundation::DateTime* expirationDate) noexcept final
+    int32_t WINRT_CALL get_ExpirationDate(Windows::Foundation::DateTime* expirationDate) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpirationDate, WINRT_WRAP(Windows::Foundation::DateTime));
             *expirationDate = detach_from<Windows::Foundation::DateTime>(this->shim().ExpirationDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClientID(uint32_t* __clientIDBytesSize, uint8_t** clientIDBytes) noexcept final
+    int32_t WINRT_CALL get_ClientID(uint32_t* __clientIDBytesSize, uint8_t** clientIDBytes) noexcept final
     {
         try
         {
             *__clientIDBytesSize = 0;
             *clientIDBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClientID, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__clientIDBytesSize, *clientIDBytes) = detach_abi(this->shim().ClientID());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelDigest(uint32_t* __modelDigestBytesSize, uint8_t** modelDigestBytes) noexcept final
+    int32_t WINRT_CALL get_ModelDigest(uint32_t* __modelDigestBytesSize, uint8_t** modelDigestBytes) noexcept final
     {
         try
         {
             *__modelDigestBytesSize = 0;
             *modelDigestBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelDigest, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__modelDigestBytesSize, *modelDigestBytes) = detach_abi(this->shim().ModelDigest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelManufacturerName(HSTRING* modelManufacturerName) noexcept final
+    int32_t WINRT_CALL get_ModelManufacturerName(void** modelManufacturerName) noexcept final
     {
         try
         {
             *modelManufacturerName = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelManufacturerName, WINRT_WRAP(hstring));
             *modelManufacturerName = detach_from<hstring>(this->shim().ModelManufacturerName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelName(HSTRING* modelName) noexcept final
+    int32_t WINRT_CALL get_ModelName(void** modelName) noexcept final
     {
         try
         {
             *modelName = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelName, WINRT_WRAP(hstring));
             *modelName = detach_from<hstring>(this->shim().ModelName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelNumber(HSTRING* modelNumber) noexcept final
+    int32_t WINRT_CALL get_ModelNumber(void** modelNumber) noexcept final
     {
         try
         {
             *modelNumber = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelNumber, WINRT_WRAP(hstring));
             *modelNumber = detach_from<hstring>(this->shim().ModelNumber());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader>
 {
-    HRESULT __stdcall get_KeyId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_KeyId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().KeyId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(KeyId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().KeyId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeyIdString(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KeyIdString(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyIdString, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KeyIdString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LicenseAcquisitionUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_LicenseAcquisitionUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LicenseAcquisitionUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LicenseAcquisitionUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LicenseAcquisitionUserInterfaceUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_LicenseAcquisitionUserInterfaceUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LicenseAcquisitionUserInterfaceUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().LicenseAcquisitionUserInterfaceUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EncryptionType(Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm* value) noexcept final
+    int32_t WINRT_CALL get_EncryptionType(Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EncryptionType, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm));
             *value = detach_from<Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm>(this->shim().EncryptionType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomAttributes(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomAttributes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomAttributes, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomAttributes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DecryptorSetup(Windows::Media::Protection::PlayReady::PlayReadyDecryptorSetup* value) noexcept final
+    int32_t WINRT_CALL get_DecryptorSetup(Windows::Media::Protection::PlayReady::PlayReadyDecryptorSetup* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DecryptorSetup, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyDecryptorSetup));
             *value = detach_from<Windows::Media::Protection::PlayReady::PlayReadyDecryptorSetup>(this->shim().DecryptorSetup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSerializedHeader(uint32_t* __headerBytesSize, uint8_t** headerBytes) noexcept final
+    int32_t WINRT_CALL GetSerializedHeader(uint32_t* __headerBytesSize, uint8_t** headerBytes) noexcept final
     {
         try
         {
             *__headerBytesSize = 0;
             *headerBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSerializedHeader, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__headerBytesSize, *headerBytes) = detach_abi(this->shim().GetSerializedHeader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HeaderWithEmbeddedUpdates(void** value) noexcept final
+    int32_t WINRT_CALL get_HeaderWithEmbeddedUpdates(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HeaderWithEmbeddedUpdates, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader));
             *value = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().HeaderWithEmbeddedUpdates());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2>
 {
-    HRESULT __stdcall get_KeyIds(uint32_t* __contentKeyIdsSize, GUID** contentKeyIds) noexcept final
+    int32_t WINRT_CALL get_KeyIds(uint32_t* __contentKeyIdsSize, winrt::guid** contentKeyIds) noexcept final
     {
         try
         {
             *__contentKeyIdsSize = 0;
             *contentKeyIds = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyIds, WINRT_WRAP(com_array<winrt::guid>));
             std::tie(*__contentKeyIdsSize, *contentKeyIds) = detach_abi(this->shim().KeyIds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KeyIdStrings(uint32_t* __contentKeyIdStringsSize, HSTRING** contentKeyIdStrings) noexcept final
+    int32_t WINRT_CALL get_KeyIdStrings(uint32_t* __contentKeyIdStringsSize, void*** contentKeyIdStrings) noexcept final
     {
         try
         {
             *__contentKeyIdStringsSize = 0;
             *contentKeyIdStrings = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyIdStrings, WINRT_WRAP(com_array<hstring>));
             std::tie(*__contentKeyIdStringsSize, *contentKeyIdStrings) = detach_abi(this->shim().KeyIdStrings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>
 {
-    HRESULT __stdcall CreateInstanceFromWindowsMediaDrmHeader(uint32_t __headerBytesSize, uint8_t* headerBytes, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromWindowsMediaDrmHeader(uint32_t __headerBytesSize, uint8_t* headerBytes, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, void* customAttributes, winrt::guid domainServiceId, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromWindowsMediaDrmHeader(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(headerBytes), reinterpret_cast<uint8_t const *>(headerBytes) + __headerBytesSize), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<GUID const*>(&domainServiceId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceFromWindowsMediaDrmHeader, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader), array_view<uint8_t const>, Windows::Foundation::Uri const&, Windows::Foundation::Uri const&, hstring const&, winrt::guid const&);
+            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromWindowsMediaDrmHeader(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(headerBytes), reinterpret_cast<uint8_t const *>(headerBytes) + __headerBytesSize), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<winrt::guid const*>(&domainServiceId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInstanceFromComponents(GUID contentKeyId, HSTRING contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromComponents(winrt::guid contentKeyId, void* contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, void* customAttributes, winrt::guid domainServiceId, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromComponents(*reinterpret_cast<GUID const*>(&contentKeyId), *reinterpret_cast<hstring const*>(&contentKeyIdString), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const*>(&contentEncryptionAlgorithm), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<GUID const*>(&domainServiceId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceFromComponents, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader), winrt::guid const&, hstring const&, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const&, Windows::Foundation::Uri const&, Windows::Foundation::Uri const&, hstring const&, winrt::guid const&);
+            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromComponents(*reinterpret_cast<winrt::guid const*>(&contentKeyId), *reinterpret_cast<hstring const*>(&contentKeyIdString), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const*>(&contentEncryptionAlgorithm), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<winrt::guid const*>(&domainServiceId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInstanceFromPlayReadyHeader(uint32_t __headerBytesSize, uint8_t* headerBytes, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromPlayReadyHeader(uint32_t __headerBytesSize, uint8_t* headerBytes, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstanceFromPlayReadyHeader, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader), array_view<uint8_t const>);
             *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromPlayReadyHeader(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(headerBytes), reinterpret_cast<uint8_t const *>(headerBytes) + __headerBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2>
 {
-    HRESULT __stdcall CreateInstanceFromComponents2(uint32_t dwFlags, uint32_t __contentKeyIdsSize, GUID* contentKeyIds, uint32_t __contentKeyIdStringsSize, HSTRING* contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromComponents2(uint32_t dwFlags, uint32_t __contentKeyIdsSize, winrt::guid* contentKeyIds, uint32_t __contentKeyIdStringsSize, void** contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, void* licenseAcquisitionUrl, void* licenseAcquisitionUserInterfaceUrl, void* customAttributes, winrt::guid domainServiceId, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromComponents2(dwFlags, array_view<GUID const>(reinterpret_cast<GUID const *>(contentKeyIds), reinterpret_cast<GUID const *>(contentKeyIds) + __contentKeyIdsSize), array_view<hstring const>(reinterpret_cast<hstring const *>(contentKeyIdStrings), reinterpret_cast<hstring const *>(contentKeyIdStrings) + __contentKeyIdStringsSize), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const*>(&contentEncryptionAlgorithm), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<GUID const*>(&domainServiceId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceFromComponents2, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader), uint32_t, array_view<winrt::guid const>, array_view<hstring const>, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const&, Windows::Foundation::Uri const&, Windows::Foundation::Uri const&, hstring const&, winrt::guid const&);
+            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().CreateInstanceFromComponents2(dwFlags, array_view<winrt::guid const>(reinterpret_cast<winrt::guid const *>(contentKeyIds), reinterpret_cast<winrt::guid const *>(contentKeyIds) + __contentKeyIdsSize), array_view<hstring const>(reinterpret_cast<hstring const *>(contentKeyIdStrings), reinterpret_cast<hstring const *>(contentKeyIdStrings) + __contentKeyIdStringsSize), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const*>(&contentEncryptionAlgorithm), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUrl), *reinterpret_cast<Windows::Foundation::Uri const*>(&licenseAcquisitionUserInterfaceUrl), *reinterpret_cast<hstring const*>(&customAttributes), *reinterpret_cast<winrt::guid const*>(&domainServiceId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyContentResolver> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyContentResolver>
 {
-    HRESULT __stdcall ServiceRequest(void* contentHeader, void** serviceRequest) noexcept final
+    int32_t WINRT_CALL ServiceRequest(void* contentHeader, void** serviceRequest) noexcept final
     {
         try
         {
             *serviceRequest = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServiceRequest, WINRT_WRAP(Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&);
             *serviceRequest = detach_from<Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>(this->shim().ServiceRequest(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&contentHeader)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyDomain>
 {
-    HRESULT __stdcall get_AccountId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_AccountId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().AccountId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(AccountId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().AccountId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Revision(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Revision(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Revision, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Revision());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FriendlyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FriendlyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FriendlyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FriendlyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainJoinUrl(void** value) noexcept final
+    int32_t WINRT_CALL get_DomainJoinUrl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainJoinUrl, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().DomainJoinUrl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory>
 {
-    HRESULT __stdcall CreateInstance(GUID domainAccountId, void** domainIterable) noexcept final
+    int32_t WINRT_CALL CreateInstance(winrt::guid domainAccountId, void** domainIterable) noexcept final
     {
         try
         {
             *domainIterable = nullptr;
             typename D::abi_guard guard(this->shim());
-            *domainIterable = detach_from<Windows::Media::Protection::PlayReady::PlayReadyDomainIterable>(this->shim().CreateInstance(*reinterpret_cast<GUID const*>(&domainAccountId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyDomainIterable), winrt::guid const&);
+            *domainIterable = detach_from<Windows::Media::Protection::PlayReady::PlayReadyDomainIterable>(this->shim().CreateInstance(*reinterpret_cast<winrt::guid const*>(&domainAccountId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest>
 {
-    HRESULT __stdcall get_DomainAccountId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainAccountId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainAccountId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainAccountId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainAccountId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainAccountId(GUID value) noexcept final
+    int32_t WINRT_CALL put_DomainAccountId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DomainAccountId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainAccountId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().DomainAccountId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainFriendlyName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DomainFriendlyName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainFriendlyName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DomainFriendlyName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainFriendlyName(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DomainFriendlyName(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DomainFriendlyName, WINRT_WRAP(void), hstring const&);
             this->shim().DomainFriendlyName(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainServiceId(GUID value) noexcept final
+    int32_t WINRT_CALL put_DomainServiceId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DomainServiceId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().DomainServiceId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest>
 {
-    HRESULT __stdcall get_DomainAccountId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainAccountId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainAccountId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainAccountId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainAccountId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainAccountId(GUID value) noexcept final
+    int32_t WINRT_CALL put_DomainAccountId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DomainAccountId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainAccountId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().DomainAccountId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainServiceId(GUID value) noexcept final
+    int32_t WINRT_CALL put_DomainServiceId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DomainServiceId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().DomainServiceId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator>
 {
-    HRESULT __stdcall GenerateData(GUID guidCPSystemId, uint32_t countOfStreams, void* configuration, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat format, uint32_t* __dataBytesSize, uint8_t** dataBytes) noexcept final
+    int32_t WINRT_CALL GenerateData(winrt::guid guidCPSystemId, uint32_t countOfStreams, void* configuration, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat format, uint32_t* __dataBytesSize, uint8_t** dataBytes) noexcept final
     {
         try
         {
             *__dataBytesSize = 0;
             *dataBytes = nullptr;
             typename D::abi_guard guard(this->shim());
-            std::tie(*__dataBytesSize, *dataBytes) = detach_abi(this->shim().GenerateData(*reinterpret_cast<GUID const*>(&guidCPSystemId), countOfStreams, *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyITADataFormat const*>(&format)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GenerateData, WINRT_WRAP(com_array<uint8_t>), winrt::guid const&, uint32_t, Windows::Foundation::Collections::IPropertySet const&, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat const&);
+            std::tie(*__dataBytesSize, *dataBytes) = detach_abi(this->shim().GenerateData(*reinterpret_cast<winrt::guid const*>(&guidCPSystemId), countOfStreams, *reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration), *reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyITADataFormat const*>(&format)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2878,404 +2657,354 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyIndividualiza
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense>
 {
-    HRESULT __stdcall get_FullyEvaluated(bool* value) noexcept final
+    int32_t WINRT_CALL get_FullyEvaluated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FullyEvaluated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().FullyEvaluated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UsableForPlay(bool* value) noexcept final
+    int32_t WINRT_CALL get_UsableForPlay(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UsableForPlay, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().UsableForPlay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExpirationDate(void** value) noexcept final
+    int32_t WINRT_CALL get_ExpirationDate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpirationDate, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().ExpirationDate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExpireAfterFirstPlay(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ExpireAfterFirstPlay(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpireAfterFirstPlay, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ExpireAfterFirstPlay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainAccountID(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainAccountID(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainAccountID());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainAccountID, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainAccountID());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChainDepth(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_ChainDepth(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChainDepth, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().ChainDepth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetKIDAtChainDepth(uint32_t chainDepth, GUID* kid) noexcept final
+    int32_t WINRT_CALL GetKIDAtChainDepth(uint32_t chainDepth, winrt::guid* kid) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *kid = detach_from<GUID>(this->shim().GetKIDAtChainDepth(chainDepth));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetKIDAtChainDepth, WINRT_WRAP(winrt::guid), uint32_t);
+            *kid = detach_from<winrt::guid>(this->shim().GetKIDAtChainDepth(chainDepth));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense2>
 {
-    HRESULT __stdcall get_SecureStopId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SecureStopId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SecureStopId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SecureStopId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SecureStopId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SecurityLevel(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_SecurityLevel(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecurityLevel, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().SecurityLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_InMemoryOnly(bool* value) noexcept final
+    int32_t WINRT_CALL get_InMemoryOnly(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InMemoryOnly, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().InMemoryOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExpiresInRealTime(bool* value) noexcept final
+    int32_t WINRT_CALL get_ExpiresInRealTime(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExpiresInRealTime, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().ExpiresInRealTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>
 {
-    HRESULT __stdcall get_ContentHeader(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentHeader(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentHeader, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyContentHeader));
             *value = detach_from<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>(this->shim().ContentHeader());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentHeader(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentHeader(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentHeader, WINRT_WRAP(void), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&);
             this->shim().ContentHeader(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainServiceId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainServiceId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainServiceId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainServiceId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DomainServiceId(GUID value) noexcept final
+    int32_t WINRT_CALL put_DomainServiceId(winrt::guid value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().DomainServiceId(*reinterpret_cast<GUID const*>(&value));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainServiceId, WINRT_WRAP(void), winrt::guid const&);
+            this->shim().DomainServiceId(*reinterpret_cast<winrt::guid const*>(&value));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2>
 {
-    HRESULT __stdcall get_SessionId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SessionId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SessionId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SessionId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SessionId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3>
 {
-    HRESULT __stdcall CreateLicenseIterable(void* contentHeader, bool fullyEvaluated, void** result) noexcept final
+    int32_t WINRT_CALL CreateLicenseIterable(void* contentHeader, bool fullyEvaluated, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLicenseIterable, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&, bool);
             *result = detach_from<Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable>(this->shim().CreateLicenseIterable(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&contentHeader), fullyEvaluated));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>
 {
-    HRESULT __stdcall CreateInstance(void* contentHeader, bool fullyEvaluated, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* contentHeader, bool fullyEvaluated, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&, bool);
             *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable>(this->shim().CreateInstance(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&contentHeader), fullyEvaluated));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement>
 {
-    HRESULT __stdcall DeleteLicenses(void* contentHeader, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteLicenses(void* contentHeader, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteLicenses, WINRT_WRAP(Windows::Foundation::IAsyncAction), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteLicenses(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&contentHeader)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession>
 {
-    HRESULT __stdcall CreateLAServiceRequest(void** serviceRequest) noexcept final
+    int32_t WINRT_CALL CreateLAServiceRequest(void** serviceRequest) noexcept final
     {
         try
         {
             *serviceRequest = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLAServiceRequest, WINRT_WRAP(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest));
             *serviceRequest = detach_from<Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>(this->shim().CreateLAServiceRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ConfigureMediaProtectionManager(void* mpm) noexcept final
+    int32_t WINRT_CALL ConfigureMediaProtectionManager(void* mpm) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConfigureMediaProtectionManager, WINRT_WRAP(void), Windows::Media::Protection::MediaProtectionManager const&);
             this->shim().ConfigureMediaProtectionManager(*reinterpret_cast<Windows::Media::Protection::MediaProtectionManager const*>(&mpm));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2>
 {
-    HRESULT __stdcall CreateLicenseIterable(void* contentHeader, bool fullyEvaluated, void** licenseIterable) noexcept final
+    int32_t WINRT_CALL CreateLicenseIterable(void* contentHeader, bool fullyEvaluated, void** licenseIterable) noexcept final
     {
         try
         {
             *licenseIterable = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLicenseIterable, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable), Windows::Media::Protection::PlayReady::PlayReadyContentHeader const&, bool);
             *licenseIterable = detach_from<Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable>(this->shim().CreateLicenseIterable(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyContentHeader const*>(&contentHeader), fullyEvaluated));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory>
 {
-    HRESULT __stdcall CreateInstance(void* configuration, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* configuration, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadyLicenseSession), Windows::Foundation::Collections::IPropertySet const&);
             *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadyLicenseSession>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::Collections::IPropertySet const*>(&configuration)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyMeteringReportServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyMeteringReportServiceRequest>
 {
-    HRESULT __stdcall get_MeteringCertificate(uint32_t* __meteringCertBytesSize, uint8_t** meteringCertBytes) noexcept final
+    int32_t WINRT_CALL get_MeteringCertificate(uint32_t* __meteringCertBytesSize, uint8_t** meteringCertBytes) noexcept final
     {
         try
         {
             *__meteringCertBytesSize = 0;
             *meteringCertBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MeteringCertificate, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__meteringCertBytesSize, *meteringCertBytes) = detach_abi(this->shim().MeteringCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MeteringCertificate(uint32_t __meteringCertBytesSize, uint8_t* meteringCertBytes) noexcept final
+    int32_t WINRT_CALL put_MeteringCertificate(uint32_t __meteringCertBytesSize, uint8_t* meteringCertBytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MeteringCertificate, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().MeteringCertificate(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(meteringCertBytes), reinterpret_cast<uint8_t const *>(meteringCertBytes) + __meteringCertBytesSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3286,514 +3015,490 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyRevocationSer
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory>
 {
-    HRESULT __stdcall CreateInstance(uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable), array_view<uint8_t const>);
             *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable>(this->shim().CreateInstance(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(publisherCertBytes), reinterpret_cast<uint8_t const *>(publisherCertBytes) + __publisherCertBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest>
 {
-    HRESULT __stdcall get_SessionID(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SessionID(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SessionID());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SessionID, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SessionID());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_StartTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().StartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UpdateTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_UpdateTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UpdateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().UpdateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Stopped(bool* value) noexcept final
+    int32_t WINRT_CALL get_Stopped(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Stopped, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Stopped());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PublisherCertificate(uint32_t* __publisherCertBytesSize, uint8_t** publisherCertBytes) noexcept final
+    int32_t WINRT_CALL get_PublisherCertificate(uint32_t* __publisherCertBytesSize, uint8_t** publisherCertBytes) noexcept final
     {
         try
         {
             *__publisherCertBytesSize = 0;
             *publisherCertBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PublisherCertificate, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__publisherCertBytesSize, *publisherCertBytes) = detach_abi(this->shim().PublisherCertificate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>
 {
-    HRESULT __stdcall CreateInstance(uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest), array_view<uint8_t const>);
             *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest>(this->shim().CreateInstance(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(publisherCertBytes), reinterpret_cast<uint8_t const *>(publisherCertBytes) + __publisherCertBytesSize)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateInstanceFromSessionID(GUID sessionID, uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromSessionID(winrt::guid sessionID, uint32_t __publisherCertBytesSize, uint8_t* publisherCertBytes, void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
-            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest>(this->shim().CreateInstanceFromSessionID(*reinterpret_cast<GUID const*>(&sessionID), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(publisherCertBytes), reinterpret_cast<uint8_t const *>(publisherCertBytes) + __publisherCertBytesSize)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateInstanceFromSessionID, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest), winrt::guid const&, array_view<uint8_t const>);
+            *instance = detach_from<Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest>(this->shim().CreateInstanceFromSessionID(*reinterpret_cast<winrt::guid const*>(&sessionID), array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(publisherCertBytes), reinterpret_cast<uint8_t const *>(publisherCertBytes) + __publisherCertBytesSize)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
-    HRESULT __stdcall get_Uri(void** value) noexcept final
+    int32_t WINRT_CALL get_Uri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Uri(void* value) noexcept final
+    int32_t WINRT_CALL put_Uri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().Uri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResponseCustomData(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResponseCustomData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResponseCustomData, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResponseCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ChallengeCustomData(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ChallengeCustomData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChallengeCustomData, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ChallengeCustomData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ChallengeCustomData(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ChallengeCustomData(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChallengeCustomData, WINRT_WRAP(void), hstring const&);
             this->shim().ChallengeCustomData(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall BeginServiceRequest(void** action) noexcept final
+    int32_t WINRT_CALL BeginServiceRequest(void** action) noexcept final
     {
         try
         {
             *action = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BeginServiceRequest, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *action = detach_from<Windows::Foundation::IAsyncAction>(this->shim().BeginServiceRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall NextServiceRequest(void** serviceRequest) noexcept final
+    int32_t WINRT_CALL NextServiceRequest(void** serviceRequest) noexcept final
     {
         try
         {
             *serviceRequest = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NextServiceRequest, WINRT_WRAP(Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest));
             *serviceRequest = detach_from<Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>(this->shim().NextServiceRequest());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GenerateManualEnablingChallenge(void** challengeMessage) noexcept final
+    int32_t WINRT_CALL GenerateManualEnablingChallenge(void** challengeMessage) noexcept final
     {
         try
         {
             *challengeMessage = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GenerateManualEnablingChallenge, WINRT_WRAP(Windows::Media::Protection::PlayReady::PlayReadySoapMessage));
             *challengeMessage = detach_from<Windows::Media::Protection::PlayReady::PlayReadySoapMessage>(this->shim().GenerateManualEnablingChallenge());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ProcessManualEnablingResponse(uint32_t __responseBytesSize, uint8_t* responseBytes, HRESULT* result) noexcept final
+    int32_t WINRT_CALL ProcessManualEnablingResponse(uint32_t __responseBytesSize, uint8_t* responseBytes, winrt::hresult* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<HRESULT>(this->shim().ProcessManualEnablingResponse(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(responseBytes), reinterpret_cast<uint8_t const *>(responseBytes) + __responseBytesSize)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProcessManualEnablingResponse, WINRT_WRAP(winrt::hresult), array_view<uint8_t const>);
+            *result = detach_from<winrt::hresult>(this->shim().ProcessManualEnablingResponse(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(responseBytes), reinterpret_cast<uint8_t const *>(responseBytes) + __responseBytesSize)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadySoapMessage> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadySoapMessage>
 {
-    HRESULT __stdcall GetMessageBody(uint32_t* __messageBodyBytesSize, uint8_t** messageBodyBytes) noexcept final
+    int32_t WINRT_CALL GetMessageBody(uint32_t* __messageBodyBytesSize, uint8_t** messageBodyBytes) noexcept final
     {
         try
         {
             *__messageBodyBytesSize = 0;
             *messageBodyBytes = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetMessageBody, WINRT_WRAP(com_array<uint8_t>));
             std::tie(*__messageBodyBytesSize, *messageBodyBytes) = detach_abi(this->shim().GetMessageBody());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MessageHeaders(void** value) noexcept final
+    int32_t WINRT_CALL get_MessageHeaders(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MessageHeaders, WINRT_WRAP(Windows::Foundation::Collections::IPropertySet));
             *value = detach_from<Windows::Foundation::Collections::IPropertySet>(this->shim().MessageHeaders());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uri(void** messageUri) noexcept final
+    int32_t WINRT_CALL get_Uri(void** messageUri) noexcept final
     {
         try
         {
             *messageUri = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uri, WINRT_WRAP(Windows::Foundation::Uri));
             *messageUri = detach_from<Windows::Foundation::Uri>(this->shim().Uri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics>
 {
-    HRESULT __stdcall get_DomainJoinServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainJoinServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainJoinServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainJoinServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainJoinServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DomainLeaveServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_DomainLeaveServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().DomainLeaveServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(DomainLeaveServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().DomainLeaveServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IndividualizationServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_IndividualizationServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().IndividualizationServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(IndividualizationServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().IndividualizationServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LicenseAcquirerServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_LicenseAcquirerServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().LicenseAcquirerServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(LicenseAcquirerServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().LicenseAcquirerServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MeteringReportServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_MeteringReportServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().MeteringReportServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MeteringReportServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().MeteringReportServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RevocationServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_RevocationServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().RevocationServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RevocationServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().RevocationServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediaProtectionSystemId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_MediaProtectionSystemId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().MediaProtectionSystemId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MediaProtectionSystemId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().MediaProtectionSystemId());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PlayReadySecurityVersion(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PlayReadySecurityVersion(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlayReadySecurityVersion, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PlayReadySecurityVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics2>
 {
-    HRESULT __stdcall get_PlayReadyCertificateSecurityLevel(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_PlayReadyCertificateSecurityLevel(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PlayReadyCertificateSecurityLevel, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().PlayReadyCertificateSecurityLevel());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics3> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>
 {
-    HRESULT __stdcall get_SecureStopServiceRequestType(GUID* value) noexcept final
+    int32_t WINRT_CALL get_SecureStopServiceRequestType(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().SecureStopServiceRequestType());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(SecureStopServiceRequestType, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().SecureStopServiceRequestType());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures hwdrmFeature, bool* value) noexcept final
+    int32_t WINRT_CALL CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures hwdrmFeature, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CheckSupportedHardware, WINRT_WRAP(bool), Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures const&);
             *value = detach_from<bool>(this->shim().CheckSupportedHardware(*reinterpret_cast<Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures const*>(&hwdrmFeature)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics4> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>
 {
-    HRESULT __stdcall get_InputTrustAuthorityToCreate(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_InputTrustAuthorityToCreate(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InputTrustAuthorityToCreate, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().InputTrustAuthorityToCreate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProtectionSystemId(GUID* value) noexcept final
+    int32_t WINRT_CALL get_ProtectionSystemId(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().ProtectionSystemId());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ProtectionSystemId, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().ProtectionSystemId());
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics5> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics5>
+{
+    int32_t WINRT_CALL get_HardwareDRMDisabledAtTime(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareDRMDisabledAtTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
+            *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().HardwareDRMDisabledAtTime());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_HardwareDRMDisabledUntilTime(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareDRMDisabledUntilTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
+            *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().HardwareDRMDisabledUntilTime());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL ResetHardwareDRMDisabled() noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResetHardwareDRMDisabled, WINRT_WRAP(void));
+            this->shim().ResetHardwareDRMDisabled();
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -3802,178 +3507,193 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyStatics4> : p
 WINRT_EXPORT namespace winrt::Windows::Media::Protection::PlayReady {
 
 inline NDClient::NDClient(Windows::Media::Protection::PlayReady::INDDownloadEngine const& downloadEngine, Windows::Media::Protection::PlayReady::INDStreamParser const& streamParser, Windows::Media::Protection::PlayReady::INDMessenger const& pMessenger) :
-    NDClient(get_activation_factory<NDClient, Windows::Media::Protection::PlayReady::INDClientFactory>().CreateInstance(downloadEngine, streamParser, pMessenger))
+    NDClient(impl::call_factory<NDClient, Windows::Media::Protection::PlayReady::INDClientFactory>([&](auto&& f) { return f.CreateInstance(downloadEngine, streamParser, pMessenger); }))
 {}
 
 inline NDCustomData::NDCustomData(array_view<uint8_t const> customDataTypeIDBytes, array_view<uint8_t const> customDataBytes) :
-    NDCustomData(get_activation_factory<NDCustomData, Windows::Media::Protection::PlayReady::INDCustomDataFactory>().CreateInstance(customDataTypeIDBytes, customDataBytes))
+    NDCustomData(impl::call_factory<NDCustomData, Windows::Media::Protection::PlayReady::INDCustomDataFactory>([&](auto&& f) { return f.CreateInstance(customDataTypeIDBytes, customDataBytes); }))
 {}
 
 inline NDDownloadEngineNotifier::NDDownloadEngineNotifier() :
-    NDDownloadEngineNotifier(get_activation_factory<NDDownloadEngineNotifier>().ActivateInstance<NDDownloadEngineNotifier>())
+    NDDownloadEngineNotifier(impl::call_factory<NDDownloadEngineNotifier>([](auto&& f) { return f.template ActivateInstance<NDDownloadEngineNotifier>(); }))
 {}
 
 inline NDLicenseFetchDescriptor::NDLicenseFetchDescriptor(Windows::Media::Protection::PlayReady::NDContentIDType const& contentIDType, array_view<uint8_t const> contentIDBytes, Windows::Media::Protection::PlayReady::INDCustomData const& licenseFetchChallengeCustomData) :
-    NDLicenseFetchDescriptor(get_activation_factory<NDLicenseFetchDescriptor, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory>().CreateInstance(contentIDType, contentIDBytes, licenseFetchChallengeCustomData))
+    NDLicenseFetchDescriptor(impl::call_factory<NDLicenseFetchDescriptor, Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory>([&](auto&& f) { return f.CreateInstance(contentIDType, contentIDBytes, licenseFetchChallengeCustomData); }))
 {}
 
 inline NDStorageFileHelper::NDStorageFileHelper() :
-    NDStorageFileHelper(get_activation_factory<NDStorageFileHelper>().ActivateInstance<NDStorageFileHelper>())
+    NDStorageFileHelper(impl::call_factory<NDStorageFileHelper>([](auto&& f) { return f.template ActivateInstance<NDStorageFileHelper>(); }))
 {}
 
 inline NDStreamParserNotifier::NDStreamParserNotifier() :
-    NDStreamParserNotifier(get_activation_factory<NDStreamParserNotifier>().ActivateInstance<NDStreamParserNotifier>())
+    NDStreamParserNotifier(impl::call_factory<NDStreamParserNotifier>([](auto&& f) { return f.template ActivateInstance<NDStreamParserNotifier>(); }))
 {}
 
 inline NDTCPMessenger::NDTCPMessenger(param::hstring const& remoteHostName, uint32_t remoteHostPort) :
-    NDTCPMessenger(get_activation_factory<NDTCPMessenger, Windows::Media::Protection::PlayReady::INDTCPMessengerFactory>().CreateInstance(remoteHostName, remoteHostPort))
+    NDTCPMessenger(impl::call_factory<NDTCPMessenger, Windows::Media::Protection::PlayReady::INDTCPMessengerFactory>([&](auto&& f) { return f.CreateInstance(remoteHostName, remoteHostPort); }))
 {}
 
-inline PlayReadyContentHeader::PlayReadyContentHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>().CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+inline PlayReadyContentHeader::PlayReadyContentHeader(array_view<uint8_t const> headerBytes, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) :
+    PlayReadyContentHeader(impl::call_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>([&](auto&& f) { return f.CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId); }))
 {}
 
-inline PlayReadyContentHeader::PlayReadyContentHeader(GUID const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>().CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+inline PlayReadyContentHeader::PlayReadyContentHeader(winrt::guid const& contentKeyId, param::hstring const& contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) :
+    PlayReadyContentHeader(impl::call_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>([&](auto&& f) { return f.CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId); }))
 {}
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_view<uint8_t const> headerBytes) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>().CreateInstanceFromPlayReadyHeader(headerBytes))
+    PlayReadyContentHeader(impl::call_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>([&](auto&& f) { return f.CreateInstanceFromPlayReadyHeader(headerBytes); }))
 {}
 
-inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_view<GUID const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, GUID const& domainServiceId) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_view<winrt::guid const> contentKeyIds, array_view<hstring const> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm const& contentEncryptionAlgorithm, Windows::Foundation::Uri const& licenseAcquisitionUrl, Windows::Foundation::Uri const& licenseAcquisitionUserInterfaceUrl, param::hstring const& customAttributes, winrt::guid const& domainServiceId) :
+    PlayReadyContentHeader(impl::call_factory<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2>([&](auto&& f) { return f.CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId); }))
 {}
 
 inline Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest PlayReadyContentResolver::ServiceRequest(Windows::Media::Protection::PlayReady::PlayReadyContentHeader const& contentHeader)
 {
-    return get_activation_factory<PlayReadyContentResolver, Windows::Media::Protection::PlayReady::IPlayReadyContentResolver>().ServiceRequest(contentHeader);
+    return impl::call_factory<PlayReadyContentResolver, Windows::Media::Protection::PlayReady::IPlayReadyContentResolver>([&](auto&& f) { return f.ServiceRequest(contentHeader); });
 }
 
-inline PlayReadyDomainIterable::PlayReadyDomainIterable(GUID const& domainAccountId) :
-    PlayReadyDomainIterable(get_activation_factory<PlayReadyDomainIterable, Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory>().CreateInstance(domainAccountId))
+inline PlayReadyDomainIterable::PlayReadyDomainIterable(winrt::guid const& domainAccountId) :
+    PlayReadyDomainIterable(impl::call_factory<PlayReadyDomainIterable, Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory>([&](auto&& f) { return f.CreateInstance(domainAccountId); }))
 {}
 
 inline PlayReadyDomainJoinServiceRequest::PlayReadyDomainJoinServiceRequest() :
-    PlayReadyDomainJoinServiceRequest(get_activation_factory<PlayReadyDomainJoinServiceRequest>().ActivateInstance<PlayReadyDomainJoinServiceRequest>())
+    PlayReadyDomainJoinServiceRequest(impl::call_factory<PlayReadyDomainJoinServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyDomainJoinServiceRequest>(); }))
 {}
 
 inline PlayReadyDomainLeaveServiceRequest::PlayReadyDomainLeaveServiceRequest() :
-    PlayReadyDomainLeaveServiceRequest(get_activation_factory<PlayReadyDomainLeaveServiceRequest>().ActivateInstance<PlayReadyDomainLeaveServiceRequest>())
+    PlayReadyDomainLeaveServiceRequest(impl::call_factory<PlayReadyDomainLeaveServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyDomainLeaveServiceRequest>(); }))
 {}
 
 inline PlayReadyITADataGenerator::PlayReadyITADataGenerator() :
-    PlayReadyITADataGenerator(get_activation_factory<PlayReadyITADataGenerator>().ActivateInstance<PlayReadyITADataGenerator>())
+    PlayReadyITADataGenerator(impl::call_factory<PlayReadyITADataGenerator>([](auto&& f) { return f.template ActivateInstance<PlayReadyITADataGenerator>(); }))
 {}
 
 inline PlayReadyIndividualizationServiceRequest::PlayReadyIndividualizationServiceRequest() :
-    PlayReadyIndividualizationServiceRequest(get_activation_factory<PlayReadyIndividualizationServiceRequest>().ActivateInstance<PlayReadyIndividualizationServiceRequest>())
+    PlayReadyIndividualizationServiceRequest(impl::call_factory<PlayReadyIndividualizationServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyIndividualizationServiceRequest>(); }))
 {}
 
 inline PlayReadyLicenseAcquisitionServiceRequest::PlayReadyLicenseAcquisitionServiceRequest() :
-    PlayReadyLicenseAcquisitionServiceRequest(get_activation_factory<PlayReadyLicenseAcquisitionServiceRequest>().ActivateInstance<PlayReadyLicenseAcquisitionServiceRequest>())
+    PlayReadyLicenseAcquisitionServiceRequest(impl::call_factory<PlayReadyLicenseAcquisitionServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyLicenseAcquisitionServiceRequest>(); }))
 {}
 
 inline PlayReadyLicenseIterable::PlayReadyLicenseIterable() :
-    PlayReadyLicenseIterable(get_activation_factory<PlayReadyLicenseIterable>().ActivateInstance<PlayReadyLicenseIterable>())
+    PlayReadyLicenseIterable(impl::call_factory<PlayReadyLicenseIterable>([](auto&& f) { return f.template ActivateInstance<PlayReadyLicenseIterable>(); }))
 {}
 
 inline PlayReadyLicenseIterable::PlayReadyLicenseIterable(Windows::Media::Protection::PlayReady::PlayReadyContentHeader const& contentHeader, bool fullyEvaluated) :
-    PlayReadyLicenseIterable(get_activation_factory<PlayReadyLicenseIterable, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>().CreateInstance(contentHeader, fullyEvaluated))
+    PlayReadyLicenseIterable(impl::call_factory<PlayReadyLicenseIterable, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>([&](auto&& f) { return f.CreateInstance(contentHeader, fullyEvaluated); }))
 {}
 
 inline Windows::Foundation::IAsyncAction PlayReadyLicenseManagement::DeleteLicenses(Windows::Media::Protection::PlayReady::PlayReadyContentHeader const& contentHeader)
 {
-    return get_activation_factory<PlayReadyLicenseManagement, Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement>().DeleteLicenses(contentHeader);
+    return impl::call_factory<PlayReadyLicenseManagement, Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement>([&](auto&& f) { return f.DeleteLicenses(contentHeader); });
 }
 
 inline PlayReadyLicenseSession::PlayReadyLicenseSession(Windows::Foundation::Collections::IPropertySet const& configuration) :
-    PlayReadyLicenseSession(get_activation_factory<PlayReadyLicenseSession, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory>().CreateInstance(configuration))
+    PlayReadyLicenseSession(impl::call_factory<PlayReadyLicenseSession, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory>([&](auto&& f) { return f.CreateInstance(configuration); }))
 {}
 
 inline PlayReadyMeteringReportServiceRequest::PlayReadyMeteringReportServiceRequest() :
-    PlayReadyMeteringReportServiceRequest(get_activation_factory<PlayReadyMeteringReportServiceRequest>().ActivateInstance<PlayReadyMeteringReportServiceRequest>())
+    PlayReadyMeteringReportServiceRequest(impl::call_factory<PlayReadyMeteringReportServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyMeteringReportServiceRequest>(); }))
 {}
 
 inline PlayReadyRevocationServiceRequest::PlayReadyRevocationServiceRequest() :
-    PlayReadyRevocationServiceRequest(get_activation_factory<PlayReadyRevocationServiceRequest>().ActivateInstance<PlayReadyRevocationServiceRequest>())
+    PlayReadyRevocationServiceRequest(impl::call_factory<PlayReadyRevocationServiceRequest>([](auto&& f) { return f.template ActivateInstance<PlayReadyRevocationServiceRequest>(); }))
 {}
 
 inline PlayReadySecureStopIterable::PlayReadySecureStopIterable(array_view<uint8_t const> publisherCertBytes) :
-    PlayReadySecureStopIterable(get_activation_factory<PlayReadySecureStopIterable, Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory>().CreateInstance(publisherCertBytes))
+    PlayReadySecureStopIterable(impl::call_factory<PlayReadySecureStopIterable, Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory>([&](auto&& f) { return f.CreateInstance(publisherCertBytes); }))
 {}
 
 inline PlayReadySecureStopServiceRequest::PlayReadySecureStopServiceRequest(array_view<uint8_t const> publisherCertBytes) :
-    PlayReadySecureStopServiceRequest(get_activation_factory<PlayReadySecureStopServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>().CreateInstance(publisherCertBytes))
+    PlayReadySecureStopServiceRequest(impl::call_factory<PlayReadySecureStopServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>([&](auto&& f) { return f.CreateInstance(publisherCertBytes); }))
 {}
 
-inline PlayReadySecureStopServiceRequest::PlayReadySecureStopServiceRequest(GUID const& sessionID, array_view<uint8_t const> publisherCertBytes) :
-    PlayReadySecureStopServiceRequest(get_activation_factory<PlayReadySecureStopServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>().CreateInstanceFromSessionID(sessionID, publisherCertBytes))
+inline PlayReadySecureStopServiceRequest::PlayReadySecureStopServiceRequest(winrt::guid const& sessionID, array_view<uint8_t const> publisherCertBytes) :
+    PlayReadySecureStopServiceRequest(impl::call_factory<PlayReadySecureStopServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>([&](auto&& f) { return f.CreateInstanceFromSessionID(sessionID, publisherCertBytes); }))
 {}
 
-inline GUID PlayReadyStatics::DomainJoinServiceRequestType()
+inline winrt::guid PlayReadyStatics::DomainJoinServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().DomainJoinServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.DomainJoinServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::DomainLeaveServiceRequestType()
+inline winrt::guid PlayReadyStatics::DomainLeaveServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().DomainLeaveServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.DomainLeaveServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::IndividualizationServiceRequestType()
+inline winrt::guid PlayReadyStatics::IndividualizationServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().IndividualizationServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.IndividualizationServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::LicenseAcquirerServiceRequestType()
+inline winrt::guid PlayReadyStatics::LicenseAcquirerServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().LicenseAcquirerServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.LicenseAcquirerServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::MeteringReportServiceRequestType()
+inline winrt::guid PlayReadyStatics::MeteringReportServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().MeteringReportServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.MeteringReportServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::RevocationServiceRequestType()
+inline winrt::guid PlayReadyStatics::RevocationServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().RevocationServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.RevocationServiceRequestType(); });
 }
 
-inline GUID PlayReadyStatics::MediaProtectionSystemId()
+inline winrt::guid PlayReadyStatics::MediaProtectionSystemId()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().MediaProtectionSystemId();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.MediaProtectionSystemId(); });
 }
 
 inline uint32_t PlayReadyStatics::PlayReadySecurityVersion()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>().PlayReadySecurityVersion();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics>([&](auto&& f) { return f.PlayReadySecurityVersion(); });
 }
 
 inline uint32_t PlayReadyStatics::PlayReadyCertificateSecurityLevel()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2>().PlayReadyCertificateSecurityLevel();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics2>([&](auto&& f) { return f.PlayReadyCertificateSecurityLevel(); });
 }
 
-inline GUID PlayReadyStatics::SecureStopServiceRequestType()
+inline winrt::guid PlayReadyStatics::SecureStopServiceRequestType()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>().SecureStopServiceRequestType();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>([&](auto&& f) { return f.SecureStopServiceRequestType(); });
 }
 
 inline bool PlayReadyStatics::CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures const& hwdrmFeature)
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>().CheckSupportedHardware(hwdrmFeature);
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics3>([&](auto&& f) { return f.CheckSupportedHardware(hwdrmFeature); });
 }
 
 inline hstring PlayReadyStatics::InputTrustAuthorityToCreate()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>().InputTrustAuthorityToCreate();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>([&](auto&& f) { return f.InputTrustAuthorityToCreate(); });
 }
 
-inline GUID PlayReadyStatics::ProtectionSystemId()
+inline winrt::guid PlayReadyStatics::ProtectionSystemId()
 {
-    return get_activation_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>().ProtectionSystemId();
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics4>([&](auto&& f) { return f.ProtectionSystemId(); });
+}
+
+inline Windows::Foundation::IReference<Windows::Foundation::DateTime> PlayReadyStatics::HardwareDRMDisabledAtTime()
+{
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics5>([&](auto&& f) { return f.HardwareDRMDisabledAtTime(); });
+}
+
+inline Windows::Foundation::IReference<Windows::Foundation::DateTime> PlayReadyStatics::HardwareDRMDisabledUntilTime()
+{
+    return impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics5>([&](auto&& f) { return f.HardwareDRMDisabledUntilTime(); });
+}
+
+inline void PlayReadyStatics::ResetHardwareDRMDisabled()
+{
+    impl::call_factory<PlayReadyStatics, Windows::Media::Protection::PlayReady::IPlayReadyStatics5>([&](auto&& f) { return f.ResetHardwareDRMDisabled(); });
 }
 
 }
@@ -4033,6 +3753,7 @@ template<> struct hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyS
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics2> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics2> {};
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics3> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics3> {};
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics4> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics4> {};
+template<> struct hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics5> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics5> {};
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::NDClient> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::NDClient> {};
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::NDCustomData> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::NDCustomData> {};
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier> {};
@@ -4064,5 +3785,3 @@ template<> struct hash<winrt::Windows::Media::Protection::PlayReady::PlayReadySo
 template<> struct hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyStatics> : winrt::impl::hash_base<winrt::Windows::Media::Protection::PlayReady::PlayReadyStatics> {};
 
 }
-
-WINRT_WARNING_POP

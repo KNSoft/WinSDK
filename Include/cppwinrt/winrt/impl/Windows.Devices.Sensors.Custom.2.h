@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,7 +21,7 @@ struct WINRT_EBO CustomSensor :
     impl::require<CustomSensor, Windows::Devices::Sensors::Custom::ICustomSensor2>
 {
     CustomSensor(std::nullptr_t) noexcept {}
-    static hstring GetDeviceSelector(GUID const& interfaceId);
+    static hstring GetDeviceSelector(winrt::guid const& interfaceId);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> FromIdAsync(param::hstring const& sensorId);
 };
 

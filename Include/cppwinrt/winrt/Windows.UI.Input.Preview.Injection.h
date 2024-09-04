@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Gaming.Input.2.h"
@@ -422,1009 +422,871 @@ template <typename D> Windows::UI::Input::Preview::Injection::InputInjector cons
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfo>
 {
-    HRESULT __stdcall get_Buttons(Windows::Gaming::Input::GamepadButtons* value) noexcept final
+    int32_t WINRT_CALL get_Buttons(Windows::Gaming::Input::GamepadButtons* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Buttons, WINRT_WRAP(Windows::Gaming::Input::GamepadButtons));
             *value = detach_from<Windows::Gaming::Input::GamepadButtons>(this->shim().Buttons());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Buttons(Windows::Gaming::Input::GamepadButtons value) noexcept final
+    int32_t WINRT_CALL put_Buttons(Windows::Gaming::Input::GamepadButtons value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Buttons, WINRT_WRAP(void), Windows::Gaming::Input::GamepadButtons const&);
             this->shim().Buttons(*reinterpret_cast<Windows::Gaming::Input::GamepadButtons const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftThumbstickX(double* value) noexcept final
+    int32_t WINRT_CALL get_LeftThumbstickX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftThumbstickX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LeftThumbstickX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftThumbstickX(double value) noexcept final
+    int32_t WINRT_CALL put_LeftThumbstickX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftThumbstickX, WINRT_WRAP(void), double);
             this->shim().LeftThumbstickX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftThumbstickY(double* value) noexcept final
+    int32_t WINRT_CALL get_LeftThumbstickY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftThumbstickY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LeftThumbstickY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftThumbstickY(double value) noexcept final
+    int32_t WINRT_CALL put_LeftThumbstickY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftThumbstickY, WINRT_WRAP(void), double);
             this->shim().LeftThumbstickY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LeftTrigger(double* value) noexcept final
+    int32_t WINRT_CALL get_LeftTrigger(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftTrigger, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().LeftTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_LeftTrigger(double value) noexcept final
+    int32_t WINRT_CALL put_LeftTrigger(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LeftTrigger, WINRT_WRAP(void), double);
             this->shim().LeftTrigger(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightThumbstickX(double* value) noexcept final
+    int32_t WINRT_CALL get_RightThumbstickX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightThumbstickX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RightThumbstickX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightThumbstickX(double value) noexcept final
+    int32_t WINRT_CALL put_RightThumbstickX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightThumbstickX, WINRT_WRAP(void), double);
             this->shim().RightThumbstickX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightThumbstickY(double* value) noexcept final
+    int32_t WINRT_CALL get_RightThumbstickY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightThumbstickY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RightThumbstickY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightThumbstickY(double value) noexcept final
+    int32_t WINRT_CALL put_RightThumbstickY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightThumbstickY, WINRT_WRAP(void), double);
             this->shim().RightThumbstickY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RightTrigger(double* value) noexcept final
+    int32_t WINRT_CALL get_RightTrigger(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightTrigger, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RightTrigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RightTrigger(double value) noexcept final
+    int32_t WINRT_CALL put_RightTrigger(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RightTrigger, WINRT_WRAP(void), double);
             this->shim().RightTrigger(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>
 {
-    HRESULT __stdcall CreateInstanceFromGamepadReading(struct struct_Windows_Gaming_Input_GamepadReading reading, void** value) noexcept final
+    int32_t WINRT_CALL CreateInstanceFromGamepadReading(struct struct_Windows_Gaming_Input_GamepadReading reading, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputGamepadInfo), Windows::Gaming::Input::GamepadReading const&);
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputGamepadInfo>(this->shim().CreateInstance(*reinterpret_cast<Windows::Gaming::Input::GamepadReading const*>(&reading)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>
 {
-    HRESULT __stdcall get_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions* value) noexcept final
+    int32_t WINRT_CALL get_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyOptions, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions>(this->shim().KeyOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) noexcept final
+    int32_t WINRT_CALL put_KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyOptions, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions const&);
             this->shim().KeyOptions(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScanCode(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_ScanCode(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScanCode, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().ScanCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScanCode(uint16_t value) noexcept final
+    int32_t WINRT_CALL put_ScanCode(uint16_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScanCode, WINRT_WRAP(void), uint16_t);
             this->shim().ScanCode(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VirtualKey(uint16_t* value) noexcept final
+    int32_t WINRT_CALL get_VirtualKey(uint16_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VirtualKey, WINRT_WRAP(uint16_t));
             *value = detach_from<uint16_t>(this->shim().VirtualKey());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_VirtualKey(uint16_t value) noexcept final
+    int32_t WINRT_CALL put_VirtualKey(uint16_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VirtualKey, WINRT_WRAP(void), uint16_t);
             this->shim().VirtualKey(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>
 {
-    HRESULT __stdcall get_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions* value) noexcept final
+    int32_t WINRT_CALL get_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseOptions, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions>(this->shim().MouseOptions());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) noexcept final
+    int32_t WINRT_CALL put_MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseOptions, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions const&);
             this->shim().MouseOptions(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MouseData(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MouseData(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseData, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MouseData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_MouseData(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_MouseData(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseData, WINRT_WRAP(void), uint32_t);
             this->shim().MouseData(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeltaY(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DeltaY(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaY, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DeltaY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DeltaY(int32_t value) noexcept final
+    int32_t WINRT_CALL put_DeltaY(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaY, WINRT_WRAP(void), int32_t);
             this->shim().DeltaY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DeltaX(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DeltaX(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaX, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DeltaX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DeltaX(int32_t value) noexcept final
+    int32_t WINRT_CALL put_DeltaX(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeltaX, WINRT_WRAP(void), int32_t);
             this->shim().DeltaX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TimeOffsetInMilliseconds(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_TimeOffsetInMilliseconds(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeOffsetInMilliseconds, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().TimeOffsetInMilliseconds());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TimeOffsetInMilliseconds(uint32_t value) noexcept final
+    int32_t WINRT_CALL put_TimeOffsetInMilliseconds(uint32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeOffsetInMilliseconds, WINRT_WRAP(void), uint32_t);
             this->shim().TimeOffsetInMilliseconds(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
 {
-    HRESULT __stdcall get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept final
+    int32_t WINRT_CALL get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerInfo, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo>(this->shim().PointerInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept final
+    int32_t WINRT_CALL put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerInfo, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo const&);
             this->shim().PointerInfo(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons* value) noexcept final
+    int32_t WINRT_CALL get_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PenButtons, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputPenButtons>(this->shim().PenButtons());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons value) noexcept final
+    int32_t WINRT_CALL put_PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PenButtons, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputPenButtons const&);
             this->shim().PenButtons(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputPenButtons const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters* value) noexcept final
+    int32_t WINRT_CALL get_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PenParameters, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputPenParameters>(this->shim().PenParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters value) noexcept final
+    int32_t WINRT_CALL put_PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PenParameters, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputPenParameters const&);
             this->shim().PenParameters(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputPenParameters const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pressure(double* value) noexcept final
+    int32_t WINRT_CALL get_Pressure(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pressure, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Pressure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Pressure(double value) noexcept final
+    int32_t WINRT_CALL put_Pressure(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pressure, WINRT_WRAP(void), double);
             this->shim().Pressure(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Rotation(double* value) noexcept final
+    int32_t WINRT_CALL get_Rotation(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Rotation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Rotation(double value) noexcept final
+    int32_t WINRT_CALL put_Rotation(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Rotation, WINRT_WRAP(void), double);
             this->shim().Rotation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TiltX(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TiltX(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TiltX, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TiltX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TiltX(int32_t value) noexcept final
+    int32_t WINRT_CALL put_TiltX(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TiltX, WINRT_WRAP(void), int32_t);
             this->shim().TiltX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TiltY(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TiltY(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TiltY, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TiltY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TiltY(int32_t value) noexcept final
+    int32_t WINRT_CALL put_TiltY(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TiltY, WINRT_WRAP(void), int32_t);
             this->shim().TiltY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo> : produce_base<D, Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>
 {
-    HRESULT __stdcall get_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle* value) noexcept final
+    int32_t WINRT_CALL get_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputRectangle));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputRectangle>(this->shim().Contact());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle value) noexcept final
+    int32_t WINRT_CALL put_Contact(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputRectangle value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contact, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputRectangle const&);
             this->shim().Contact(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputRectangle const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orientation(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Orientation(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Orientation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Orientation(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Orientation(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orientation, WINRT_WRAP(void), int32_t);
             this->shim().Orientation(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept final
+    int32_t WINRT_CALL get_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerInfo, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo>(this->shim().PointerInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept final
+    int32_t WINRT_CALL put_PointerInfo(struct struct_Windows_UI_Input_Preview_Injection_InjectedInputPointerInfo value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerInfo, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo const&);
             this->shim().PointerInfo(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Pressure(double* value) noexcept final
+    int32_t WINRT_CALL get_Pressure(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pressure, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Pressure());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Pressure(double value) noexcept final
+    int32_t WINRT_CALL put_Pressure(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pressure, WINRT_WRAP(void), double);
             this->shim().Pressure(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters* value) noexcept final
+    int32_t WINRT_CALL get_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchParameters, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters));
             *value = detach_from<Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters>(this->shim().TouchParameters());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) noexcept final
+    int32_t WINRT_CALL put_TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchParameters, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters const&);
             this->shim().TouchParameters(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjector>
 {
-    HRESULT __stdcall InjectKeyboardInput(void* input) noexcept final
+    int32_t WINRT_CALL InjectKeyboardInput(void* input) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectKeyboardInput, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> const&);
             this->shim().InjectKeyboardInput(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> const*>(&input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InjectMouseInput(void* input) noexcept final
+    int32_t WINRT_CALL InjectMouseInput(void* input) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectMouseInput, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> const&);
             this->shim().InjectMouseInput(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> const*>(&input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept final
+    int32_t WINRT_CALL InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitializeTouchInjection, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode const&);
             this->shim().InitializeTouchInjection(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode const*>(&visualMode));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InjectTouchInput(void* input) noexcept final
+    int32_t WINRT_CALL InjectTouchInput(void* input) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectTouchInput, WINRT_WRAP(void), Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> const&);
             this->shim().InjectTouchInput(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> const*>(&input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UninitializeTouchInjection() noexcept final
+    int32_t WINRT_CALL UninitializeTouchInjection() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UninitializeTouchInjection, WINRT_WRAP(void));
             this->shim().UninitializeTouchInjection();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept final
+    int32_t WINRT_CALL InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitializePenInjection, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode const&);
             this->shim().InitializePenInjection(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode const*>(&visualMode));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InjectPenInput(void* input) noexcept final
+    int32_t WINRT_CALL InjectPenInput(void* input) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectPenInput, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputPenInfo const&);
             this->shim().InjectPenInput(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputPenInfo const*>(&input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UninitializePenInjection() noexcept final
+    int32_t WINRT_CALL UninitializePenInjection() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UninitializePenInjection, WINRT_WRAP(void));
             this->shim().UninitializePenInjection();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InjectShortcut(Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) noexcept final
+    int32_t WINRT_CALL InjectShortcut(Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectShortcut, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputShortcut const&);
             this->shim().InjectShortcut(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputShortcut const*>(&shortcut));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjector2> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjector2>
 {
-    HRESULT __stdcall InitializeGamepadInjection() noexcept final
+    int32_t WINRT_CALL InitializeGamepadInjection() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InitializeGamepadInjection, WINRT_WRAP(void));
             this->shim().InitializeGamepadInjection();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall InjectGamepadInput(void* input) noexcept final
+    int32_t WINRT_CALL InjectGamepadInput(void* input) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(InjectGamepadInput, WINRT_WRAP(void), Windows::UI::Input::Preview::Injection::InjectedInputGamepadInfo const&);
             this->shim().InjectGamepadInput(*reinterpret_cast<Windows::UI::Input::Preview::Injection::InjectedInputGamepadInfo const*>(&input));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall UninitializeGamepadInjection() noexcept final
+    int32_t WINRT_CALL UninitializeGamepadInjection() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UninitializeGamepadInjection, WINRT_WRAP(void));
             this->shim().UninitializeGamepadInjection();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>
 {
-    HRESULT __stdcall TryCreate(void** instance) noexcept final
+    int32_t WINRT_CALL TryCreate(void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreate, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InputInjector));
             *instance = detach_from<Windows::UI::Input::Preview::Injection::InputInjector>(this->shim().TryCreate());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics2> : produce_base<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>
 {
-    HRESULT __stdcall TryCreateForAppBroadcastOnly(void** instance) noexcept final
+    int32_t WINRT_CALL TryCreateForAppBroadcastOnly(void** instance) noexcept final
     {
         try
         {
             *instance = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryCreateForAppBroadcastOnly, WINRT_WRAP(Windows::UI::Input::Preview::Injection::InputInjector));
             *instance = detach_from<Windows::UI::Input::Preview::Injection::InputInjector>(this->shim().TryCreateForAppBroadcastOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1433,37 +1295,37 @@ struct produce<D, Windows::UI::Input::Preview::Injection::IInputInjectorStatics2
 WINRT_EXPORT namespace winrt::Windows::UI::Input::Preview::Injection {
 
 inline InjectedInputGamepadInfo::InjectedInputGamepadInfo() :
-    InjectedInputGamepadInfo(get_activation_factory<InjectedInputGamepadInfo>().ActivateInstance<InjectedInputGamepadInfo>())
+    InjectedInputGamepadInfo(impl::call_factory<InjectedInputGamepadInfo>([](auto&& f) { return f.template ActivateInstance<InjectedInputGamepadInfo>(); }))
 {}
 
 inline InjectedInputGamepadInfo::InjectedInputGamepadInfo(Windows::Gaming::Input::GamepadReading const& reading) :
-    InjectedInputGamepadInfo(get_activation_factory<InjectedInputGamepadInfo, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>().CreateInstance(reading))
+    InjectedInputGamepadInfo(impl::call_factory<InjectedInputGamepadInfo, Windows::UI::Input::Preview::Injection::IInjectedInputGamepadInfoFactory>([&](auto&& f) { return f.CreateInstance(reading); }))
 {}
 
 inline InjectedInputKeyboardInfo::InjectedInputKeyboardInfo() :
-    InjectedInputKeyboardInfo(get_activation_factory<InjectedInputKeyboardInfo>().ActivateInstance<InjectedInputKeyboardInfo>())
+    InjectedInputKeyboardInfo(impl::call_factory<InjectedInputKeyboardInfo>([](auto&& f) { return f.template ActivateInstance<InjectedInputKeyboardInfo>(); }))
 {}
 
 inline InjectedInputMouseInfo::InjectedInputMouseInfo() :
-    InjectedInputMouseInfo(get_activation_factory<InjectedInputMouseInfo>().ActivateInstance<InjectedInputMouseInfo>())
+    InjectedInputMouseInfo(impl::call_factory<InjectedInputMouseInfo>([](auto&& f) { return f.template ActivateInstance<InjectedInputMouseInfo>(); }))
 {}
 
 inline InjectedInputPenInfo::InjectedInputPenInfo() :
-    InjectedInputPenInfo(get_activation_factory<InjectedInputPenInfo>().ActivateInstance<InjectedInputPenInfo>())
+    InjectedInputPenInfo(impl::call_factory<InjectedInputPenInfo>([](auto&& f) { return f.template ActivateInstance<InjectedInputPenInfo>(); }))
 {}
 
 inline InjectedInputTouchInfo::InjectedInputTouchInfo() :
-    InjectedInputTouchInfo(get_activation_factory<InjectedInputTouchInfo>().ActivateInstance<InjectedInputTouchInfo>())
+    InjectedInputTouchInfo(impl::call_factory<InjectedInputTouchInfo>([](auto&& f) { return f.template ActivateInstance<InjectedInputTouchInfo>(); }))
 {}
 
 inline Windows::UI::Input::Preview::Injection::InputInjector InputInjector::TryCreate()
 {
-    return get_activation_factory<InputInjector, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>().TryCreate();
+    return impl::call_factory<InputInjector, Windows::UI::Input::Preview::Injection::IInputInjectorStatics>([&](auto&& f) { return f.TryCreate(); });
 }
 
 inline Windows::UI::Input::Preview::Injection::InputInjector InputInjector::TryCreateForAppBroadcastOnly()
 {
-    return get_activation_factory<InputInjector, Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>().TryCreateForAppBroadcastOnly();
+    return impl::call_factory<InputInjector, Windows::UI::Input::Preview::Injection::IInputInjectorStatics2>([&](auto&& f) { return f.TryCreateForAppBroadcastOnly(); });
 }
 
 }
@@ -1488,5 +1350,3 @@ template<> struct hash<winrt::Windows::UI::Input::Preview::Injection::InjectedIn
 template<> struct hash<winrt::Windows::UI::Input::Preview::Injection::InputInjector> : winrt::impl::hash_base<winrt::Windows::UI::Input::Preview::Injection::InputInjector> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -42,6 +42,27 @@ struct WINRT_EBO IAnimationControllerStatics :
     impl::consume_t<IAnimationControllerStatics>
 {
     IAnimationControllerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAnimationObject :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAnimationObject>
+{
+    IAnimationObject(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAnimationPropertyInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAnimationPropertyInfo>
+{
+    IAnimationPropertyInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBooleanKeyFrameAnimation :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBooleanKeyFrameAnimation>
+{
+    IBooleanKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IBounceScalarNaturalMotionAnimation :
@@ -91,6 +112,13 @@ struct WINRT_EBO ICompositionAnimation3 :
     impl::consume_t<ICompositionAnimation3>
 {
     ICompositionAnimation3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICompositionAnimation4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICompositionAnimation4>
+{
+    ICompositionAnimation4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICompositionAnimationBase :
@@ -285,6 +313,13 @@ struct WINRT_EBO ICompositionEllipseGeometry :
     ICompositionEllipseGeometry(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICompositionGeometricClip :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICompositionGeometricClip>
+{
+    ICompositionGeometricClip(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICompositionGeometry :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICompositionGeometry>
@@ -304,6 +339,13 @@ struct WINRT_EBO ICompositionGradientBrush :
     impl::consume_t<ICompositionGradientBrush>
 {
     ICompositionGradientBrush(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICompositionGradientBrush2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICompositionGradientBrush2>
+{
+    ICompositionGradientBrush2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICompositionGradientBrushFactory :
@@ -416,6 +458,13 @@ struct WINRT_EBO ICompositionObjectFactory :
     impl::consume_t<ICompositionObjectFactory>
 {
     ICompositionObjectFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ICompositionObjectStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICompositionObjectStatics>
+{
+    ICompositionObjectStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ICompositionPath :
@@ -600,6 +649,13 @@ struct WINRT_EBO ICompositor5 :
     ICompositor5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO ICompositor6 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ICompositor6>
+{
+    ICompositor6(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICompositorStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICompositorStatics>
@@ -774,6 +830,13 @@ struct WINRT_EBO IQuaternionKeyFrameAnimation :
     impl::consume_t<IQuaternionKeyFrameAnimation>
 {
     IQuaternionKeyFrameAnimation(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRedirectVisual :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRedirectVisual>
+{
+    IRedirectVisual(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IRenderingDeviceReplacedEventArgs :

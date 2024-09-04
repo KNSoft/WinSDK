@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -16,6 +16,8 @@ struct PaymentRequestChangedHandler : Windows::Foundation::IUnknown
     template <typename L> PaymentRequestChangedHandler(L lambda);
     template <typename F> PaymentRequestChangedHandler(F* function);
     template <typename O, typename M> PaymentRequestChangedHandler(O* object, M method);
+    template <typename O, typename M> PaymentRequestChangedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> PaymentRequestChangedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::ApplicationModel::Payments::PaymentRequest const& paymentRequest, Windows::ApplicationModel::Payments::PaymentRequestChangedArgs const& args) const;
 };
 

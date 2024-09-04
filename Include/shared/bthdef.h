@@ -1138,7 +1138,11 @@ typedef enum _AUTHENTICATION_REQUIREMENTS {
 #define SDP_ATTRIB_HID_SSR_HOST_MAX_LATENCY             (0x020F)
 #define SDP_ATTRIB_HID_SSR_HOST_MIN_TIMEOUT             (0x0210)
 
+#define SDP_ATTRIB_A2DP_SUPPORTED_FEATURES              (0x0311)
+
 #define SDP_ATTRIB_AVRCP_SUPPORTED_FEATURES             (0x0311)
+
+#define SDP_ATTRIB_HFP_SUPPORTED_FEATURES               (0x0311)
 
 //
 // Profile specific values

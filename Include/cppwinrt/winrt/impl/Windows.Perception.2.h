@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -17,7 +17,8 @@ namespace winrt::impl {
 WINRT_EXPORT namespace winrt::Windows::Perception {
 
 struct WINRT_EBO PerceptionTimestamp :
-    Windows::Perception::IPerceptionTimestamp
+    Windows::Perception::IPerceptionTimestamp,
+    impl::require<PerceptionTimestamp, Windows::Perception::IPerceptionTimestamp2>
 {
     PerceptionTimestamp(std::nullptr_t) noexcept {}
 };
@@ -26,6 +27,7 @@ struct PerceptionTimestampHelper
 {
     PerceptionTimestampHelper() = delete;
     static Windows::Perception::PerceptionTimestamp FromHistoricalTargetTime(Windows::Foundation::DateTime const& targetTime);
+    static Windows::Perception::PerceptionTimestamp FromSystemRelativeTargetTime(Windows::Foundation::TimeSpan const& targetTime);
 };
 
 }

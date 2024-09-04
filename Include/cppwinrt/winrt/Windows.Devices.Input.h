@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Input.2.h"
@@ -56,21 +56,21 @@ template <typename D> uint32_t consume_Windows_Devices_Input_IMouseCapabilities<
     return value;
 }
 
-template <typename D> event_token consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const
 {
-    event_token cookie{};
+    winrt::event_token cookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Input::IMouseDevice)->add_MouseMoved(get_abi(handler), put_abi(cookie)));
     return cookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Input::IMouseDevice> consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const
+template <typename D> typename consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved_revoker consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Input::IMouseDevice>(this, &abi_t<Windows::Devices::Input::IMouseDevice>::remove_MouseMoved, MouseMoved(handler));
+    return impl::make_event_revoker<D, MouseMoved_revoker>(this, MouseMoved(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(event_token const& cookie) const
+template <typename D> void consume_Windows_Devices_Input_IMouseDevice<D>::MouseMoved(winrt::event_token const& cookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Input::IMouseDevice)->remove_MouseMoved(get_abi(cookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Input::IMouseDevice)->remove_MouseMoved(get_abi(cookie)));
 }
 
 template <typename D> Windows::Devices::Input::MouseDevice consume_Windows_Devices_Input_IMouseDeviceStatics<D>::GetForCurrentView() const
@@ -167,334 +167,288 @@ template <typename D> uint32_t consume_Windows_Devices_Input_ITouchCapabilities<
 template <typename D>
 struct produce<D, Windows::Devices::Input::IKeyboardCapabilities> : produce_base<D, Windows::Devices::Input::IKeyboardCapabilities>
 {
-    HRESULT __stdcall get_KeyboardPresent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_KeyboardPresent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KeyboardPresent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().KeyboardPresent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseCapabilities> : produce_base<D, Windows::Devices::Input::IMouseCapabilities>
 {
-    HRESULT __stdcall get_MousePresent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MousePresent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MousePresent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MousePresent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VerticalWheelPresent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_VerticalWheelPresent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VerticalWheelPresent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().VerticalWheelPresent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HorizontalWheelPresent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_HorizontalWheelPresent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HorizontalWheelPresent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().HorizontalWheelPresent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SwapButtons(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_SwapButtons(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SwapButtons, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().SwapButtons());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfButtons(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfButtons(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfButtons, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().NumberOfButtons());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseDevice> : produce_base<D, Windows::Devices::Input::IMouseDevice>
 {
-    HRESULT __stdcall add_MouseMoved(void* handler, event_token* cookie) noexcept final
+    int32_t WINRT_CALL add_MouseMoved(void* handler, winrt::event_token* cookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *cookie = detach_from<event_token>(this->shim().MouseMoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(MouseMoved, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const&);
+            *cookie = detach_from<winrt::event_token>(this->shim().MouseMoved(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_MouseMoved(event_token cookie) noexcept final
+    int32_t WINRT_CALL remove_MouseMoved(winrt::event_token cookie) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MouseMoved(*reinterpret_cast<event_token const*>(&cookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(MouseMoved, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().MouseMoved(*reinterpret_cast<winrt::event_token const*>(&cookie));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseDeviceStatics> : produce_base<D, Windows::Devices::Input::IMouseDeviceStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** mouseDevice) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** mouseDevice) noexcept final
     {
         try
         {
             *mouseDevice = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::Devices::Input::MouseDevice));
             *mouseDevice = detach_from<Windows::Devices::Input::MouseDevice>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IMouseEventArgs> : produce_base<D, Windows::Devices::Input::IMouseEventArgs>
 {
-    HRESULT __stdcall get_MouseDelta(struct struct_Windows_Devices_Input_MouseDelta* value) noexcept final
+    int32_t WINRT_CALL get_MouseDelta(struct struct_Windows_Devices_Input_MouseDelta* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MouseDelta, WINRT_WRAP(Windows::Devices::Input::MouseDelta));
             *value = detach_from<Windows::Devices::Input::MouseDelta>(this->shim().MouseDelta());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IPointerDevice> : produce_base<D, Windows::Devices::Input::IPointerDevice>
 {
-    HRESULT __stdcall get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
+    int32_t WINRT_CALL get_PointerDeviceType(Windows::Devices::Input::PointerDeviceType* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PointerDeviceType, WINRT_WRAP(Windows::Devices::Input::PointerDeviceType));
             *value = detach_from<Windows::Devices::Input::PointerDeviceType>(this->shim().PointerDeviceType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsIntegrated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsIntegrated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsIntegrated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsIntegrated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxContacts(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxContacts(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxContacts, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxContacts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PhysicalDeviceRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_PhysicalDeviceRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PhysicalDeviceRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().PhysicalDeviceRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScreenRect(Windows::Foundation::Rect* value) noexcept final
+    int32_t WINRT_CALL get_ScreenRect(Windows::Foundation::Rect* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScreenRect, WINRT_WRAP(Windows::Foundation::Rect));
             *value = detach_from<Windows::Foundation::Rect>(this->shim().ScreenRect());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedUsages(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedUsages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedUsages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage>>(this->shim().SupportedUsages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IPointerDevice2> : produce_base<D, Windows::Devices::Input::IPointerDevice2>
 {
-    HRESULT __stdcall get_MaxPointersWithZDistance(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxPointersWithZDistance(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxPointersWithZDistance, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().MaxPointersWithZDistance());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::IPointerDeviceStatics> : produce_base<D, Windows::Devices::Input::IPointerDeviceStatics>
 {
-    HRESULT __stdcall GetPointerDevice(uint32_t pointerId, void** pointerDevice) noexcept final
+    int32_t WINRT_CALL GetPointerDevice(uint32_t pointerId, void** pointerDevice) noexcept final
     {
         try
         {
             *pointerDevice = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPointerDevice, WINRT_WRAP(Windows::Devices::Input::PointerDevice), uint32_t);
             *pointerDevice = detach_from<Windows::Devices::Input::PointerDevice>(this->shim().GetPointerDevice(pointerId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPointerDevices(void** pointerDevices) noexcept final
+    int32_t WINRT_CALL GetPointerDevices(void** pointerDevices) noexcept final
     {
         try
         {
             *pointerDevices = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPointerDevices, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice>));
             *pointerDevices = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice>>(this->shim().GetPointerDevices());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D, Windows::Devices::Input::ITouchCapabilities>
 {
-    HRESULT __stdcall get_TouchPresent(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_TouchPresent(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TouchPresent, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().TouchPresent());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Contacts(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_Contacts(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Contacts, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().Contacts());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -503,30 +457,30 @@ struct produce<D, Windows::Devices::Input::ITouchCapabilities> : produce_base<D,
 WINRT_EXPORT namespace winrt::Windows::Devices::Input {
 
 inline KeyboardCapabilities::KeyboardCapabilities() :
-    KeyboardCapabilities(get_activation_factory<KeyboardCapabilities>().ActivateInstance<KeyboardCapabilities>())
+    KeyboardCapabilities(impl::call_factory<KeyboardCapabilities>([](auto&& f) { return f.template ActivateInstance<KeyboardCapabilities>(); }))
 {}
 
 inline MouseCapabilities::MouseCapabilities() :
-    MouseCapabilities(get_activation_factory<MouseCapabilities>().ActivateInstance<MouseCapabilities>())
+    MouseCapabilities(impl::call_factory<MouseCapabilities>([](auto&& f) { return f.template ActivateInstance<MouseCapabilities>(); }))
 {}
 
 inline Windows::Devices::Input::MouseDevice MouseDevice::GetForCurrentView()
 {
-    return get_activation_factory<MouseDevice, Windows::Devices::Input::IMouseDeviceStatics>().GetForCurrentView();
+    return impl::call_factory<MouseDevice, Windows::Devices::Input::IMouseDeviceStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 inline Windows::Devices::Input::PointerDevice PointerDevice::GetPointerDevice(uint32_t pointerId)
 {
-    return get_activation_factory<PointerDevice, Windows::Devices::Input::IPointerDeviceStatics>().GetPointerDevice(pointerId);
+    return impl::call_factory<PointerDevice, Windows::Devices::Input::IPointerDeviceStatics>([&](auto&& f) { return f.GetPointerDevice(pointerId); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> PointerDevice::GetPointerDevices()
 {
-    return get_activation_factory<PointerDevice, Windows::Devices::Input::IPointerDeviceStatics>().GetPointerDevices();
+    return impl::call_factory<PointerDevice, Windows::Devices::Input::IPointerDeviceStatics>([&](auto&& f) { return f.GetPointerDevices(); });
 }
 
 inline TouchCapabilities::TouchCapabilities() :
-    TouchCapabilities(get_activation_factory<TouchCapabilities>().ActivateInstance<TouchCapabilities>())
+    TouchCapabilities(impl::call_factory<TouchCapabilities>([](auto&& f) { return f.template ActivateInstance<TouchCapabilities>(); }))
 {}
 
 }
@@ -550,5 +504,3 @@ template<> struct hash<winrt::Windows::Devices::Input::PointerDevice> : winrt::i
 template<> struct hash<winrt::Windows::Devices::Input::TouchCapabilities> : winrt::impl::hash_base<winrt::Windows::Devices::Input::TouchCapabilities> {};
 
 }
-
-WINRT_WARNING_POP

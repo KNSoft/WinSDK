@@ -458,10 +458,10 @@ BOOLAPI InternetWriteFileExW(
 #define INTERNET_OPTION_CANCEL_CACHE_WRITE           182
 #define INTERNET_OPTION_AUTH_SCHEME_SELECTED         183
 #define INTERNET_OPTION_NOCACHE_WRITE_IN_PRIVATE     184
-#define INTERNET_OPTION_REQUEST_TIMES                186
 #define INTERNET_OPTION_ACTIVITY_ID                  185
+#define INTERNET_OPTION_REQUEST_TIMES                186
 
-#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_OPTION_ACTIVITY_ID
+#define INTERNET_LAST_OPTION_INTERNAL           INTERNET_LAST_OPTION
 
 #define INTERNET_OPTION_OFFLINE_TIMEOUT INTERNET_OPTION_DISCONNECTED_TIMEOUT
 #define INTERNET_OPTION_LINE_STATE      INTERNET_OPTION_CONNECTED_STATE
@@ -747,14 +747,14 @@ typedef struct _COOKIE_DLG_INFO {
 
 
 
-#define INTERNET_COOKIE_PERSISTENT_HOST_ONLY     0x00010000
+#define INTERNET_COOKIE_PERSISTENT_HOST_ONLY       0x00010000
 // INTERNET_COOKIE_RESTRICTED_ZONE is the same as INTERNET_FLAG_RESTRICTED_ZONE
-#define INTERNET_COOKIE_RESTRICTED_ZONE          0x00020000
-#define INTERNET_COOKIE_EDGE_COOKIES             0x00040000
+#define INTERNET_COOKIE_RESTRICTED_ZONE            0x00020000
+#define INTERNET_COOKIE_EDGE_COOKIES               0x00040000
 
-#define INTERNET_COOKIE_ALL_COOKIES              0x20000000
-#define INTERNET_COOKIE_NO_CALLBACK              0x40000000
-#define INTERNET_COOKIE_ECTX_3RDPARTY            0x80000000
+#define INTERNET_COOKIE_ALL_COOKIES                0x20000000
+#define INTERNET_COOKIE_NO_CALLBACK                0x40000000
+#define INTERNET_COOKIE_ECTX_3RDPARTY              0x80000000
 
 #define COOKIE_ALLOWED_SET_FLAGS        ( INTERNET_COOKIE_THIRD_PARTY     | \
                                           INTERNET_COOKIE_PROMPT_REQUIRED | \
@@ -772,14 +772,17 @@ typedef struct _COOKIE_DLG_INFO {
                                           INTERNET_COOKIE_HTTPONLY          | \
                                           INTERNET_COOKIE_HOST_ONLY         | \
                                           INTERNET_COOKIE_HOST_ONLY_APPLIED | \
-                                          INTERNET_COOKIE_ECTX_3RDPARTY       \
+                                          INTERNET_COOKIE_ECTX_3RDPARTY     | \
+                                          INTERNET_COOKIE_SAME_SITE_STRICT  | \
+                                          INTERNET_COOKIE_SAME_SITE_LAX       \
                                         )
 
-#define COOKIE_ALLOWED_GET_FLAGS        ( INTERNET_COOKIE_NON_SCRIPT      | \
-                                          INTERNET_COOKIE_THIRD_PARTY     | \
-                                          INTERNET_FLAG_RESTRICTED_ZONE   | \
-                                          INTERNET_COOKIE_ALL_COOKIES     | \
-                                          INTERNET_COOKIE_EDGE_COOKIES      \
+#define COOKIE_ALLOWED_GET_FLAGS        ( INTERNET_COOKIE_NON_SCRIPT                 | \
+                                          INTERNET_COOKIE_THIRD_PARTY                | \
+                                          INTERNET_COOKIE_SAME_SITE_LEVEL_CROSS_SITE | \
+                                          INTERNET_FLAG_RESTRICTED_ZONE              | \
+                                          INTERNET_COOKIE_ALL_COOKIES                | \
+                                          INTERNET_COOKIE_EDGE_COOKIES                 \
                                         )
 //
 // DAV Detection
@@ -2247,6 +2250,13 @@ InternetConvertUrlFromWireToWideChar(
     _In_ BOOL fEncodePathExtra,
     _In_ DWORD dwCodePageExtra,
     _Outptr_result_z_ PWSTR *ppwszConvertedUrl
+);
+
+STDAPI_(DWORD)
+HttpPreConnect(
+    _In_ HANDLE hRequest,
+    _In_ PCWSTR pwszUrl,
+    _In_ DWORD cConnections
 );
 
 

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -33,11 +33,29 @@ template <> struct name<Windows::Devices::Printers::IPrint3DDeviceStatics>{ stat
 template <> struct name<Windows::Devices::Printers::IPrintSchema>{ static constexpr auto & value{ L"Windows.Devices.Printers.IPrintSchema" }; };
 template <> struct name<Windows::Devices::Printers::Print3DDevice>{ static constexpr auto & value{ L"Windows.Devices.Printers.Print3DDevice" }; };
 template <> struct name<Windows::Devices::Printers::PrintSchema>{ static constexpr auto & value{ L"Windows.Devices.Printers.PrintSchema" }; };
-template <> struct guid<Windows::Devices::Printers::IPrint3DDevice>{ static constexpr GUID value{ 0x041C3D19,0x9713,0x42A2,{ 0x98,0x13,0x7D,0xC3,0x33,0x74,0x28,0xD3 } }; };
-template <> struct guid<Windows::Devices::Printers::IPrint3DDeviceStatics>{ static constexpr GUID value{ 0xFDE3620A,0x67CD,0x41B7,{ 0xA3,0x44,0x51,0x50,0xA1,0xFD,0x75,0xB5 } }; };
-template <> struct guid<Windows::Devices::Printers::IPrintSchema>{ static constexpr GUID value{ 0xC2B98316,0x26B8,0x4BFB,{ 0x81,0x38,0x9F,0x96,0x2C,0x22,0xA3,0x5B } }; };
+template <> struct guid_storage<Windows::Devices::Printers::IPrint3DDevice>{ static constexpr guid value{ 0x041C3D19,0x9713,0x42A2,{ 0x98,0x13,0x7D,0xC3,0x33,0x74,0x28,0xD3 } }; };
+template <> struct guid_storage<Windows::Devices::Printers::IPrint3DDeviceStatics>{ static constexpr guid value{ 0xFDE3620A,0x67CD,0x41B7,{ 0xA3,0x44,0x51,0x50,0xA1,0xFD,0x75,0xB5 } }; };
+template <> struct guid_storage<Windows::Devices::Printers::IPrintSchema>{ static constexpr guid value{ 0xC2B98316,0x26B8,0x4BFB,{ 0x81,0x38,0x9F,0x96,0x2C,0x22,0xA3,0x5B } }; };
 template <> struct default_interface<Windows::Devices::Printers::Print3DDevice>{ using type = Windows::Devices::Printers::IPrint3DDevice; };
 template <> struct default_interface<Windows::Devices::Printers::PrintSchema>{ using type = Windows::Devices::Printers::IPrintSchema; };
+
+template <> struct abi<Windows::Devices::Printers::IPrint3DDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PrintSchema(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Printers::IPrint3DDeviceStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromIdAsync(void* deviceId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceSelector(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Printers::IPrintSchema>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefaultPrintTicketAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCapabilitiesAsync(void* constrainTicket, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL MergeAndValidateWithDefaultPrintTicketAsync(void* deltaTicket, void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Devices_Printers_IPrint3DDevice
@@ -62,23 +80,5 @@ struct consume_Windows_Devices_Printers_IPrintSchema
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> MergeAndValidateWithDefaultPrintTicketAsync(Windows::Storage::Streams::IRandomAccessStreamWithContentType const& deltaTicket) const;
 };
 template <> struct consume<Windows::Devices::Printers::IPrintSchema> { template <typename D> using type = consume_Windows_Devices_Printers_IPrintSchema<D>; };
-
-template <> struct abi<Windows::Devices::Printers::IPrint3DDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PrintSchema(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Printers::IPrint3DDeviceStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceSelector(HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Printers::IPrintSchema>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefaultPrintTicketAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetCapabilitiesAsync(void* constrainTicket, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall MergeAndValidateWithDefaultPrintTicketAsync(void* deltaTicket, void** operation) noexcept = 0;
-};};
 
 }

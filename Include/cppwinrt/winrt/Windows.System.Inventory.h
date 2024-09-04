@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -53,83 +53,73 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 template <typename D>
 struct produce<D, Windows::System::Inventory::IInstalledDesktopApp> : produce_base<D, Windows::System::Inventory::IInstalledDesktopApp>
 {
-    HRESULT __stdcall get_Id(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Id(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Id, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Id());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Publisher(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Publisher(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Publisher, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Publisher());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayVersion(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayVersion(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayVersion, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayVersion());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::System::Inventory::IInstalledDesktopAppStatics> : produce_base<D, Windows::System::Inventory::IInstalledDesktopAppStatics>
 {
-    HRESULT __stdcall GetInventoryAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetInventoryAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetInventoryAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::Inventory::InstalledDesktopApp>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::Inventory::InstalledDesktopApp>>>(this->shim().GetInventoryAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -139,7 +129,7 @@ WINRT_EXPORT namespace winrt::Windows::System::Inventory {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::Inventory::InstalledDesktopApp>> InstalledDesktopApp::GetInventoryAsync()
 {
-    return get_activation_factory<InstalledDesktopApp, Windows::System::Inventory::IInstalledDesktopAppStatics>().GetInventoryAsync();
+    return impl::call_factory<InstalledDesktopApp, Windows::System::Inventory::IInstalledDesktopAppStatics>([&](auto&& f) { return f.GetInventoryAsync(); });
 }
 
 }
@@ -151,5 +141,3 @@ template<> struct hash<winrt::Windows::System::Inventory::IInstalledDesktopAppSt
 template<> struct hash<winrt::Windows::System::Inventory::InstalledDesktopApp> : winrt::impl::hash_base<winrt::Windows::System::Inventory::InstalledDesktopApp> {};
 
 }
-
-WINRT_WARNING_POP

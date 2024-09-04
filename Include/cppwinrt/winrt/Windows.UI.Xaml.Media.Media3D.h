@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.UI.Xaml.2.h"
@@ -252,37 +252,37 @@ template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D consume_Window
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D consume_Windows_UI_Xaml_Media_Media3D_IMatrix3DHelperStatics<D>::Multiply(Windows::UI::Xaml::Media::Media3D::Matrix3D const& matrix1, Windows::UI::Xaml::Media::Media3D::Matrix3D const& matrix2) const
 {
-    Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->Multiply(get_abi(matrix1), get_abi(matrix2), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::Media3D::Matrix3D result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->Multiply(get_abi(matrix1), get_abi(matrix2), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D consume_Windows_UI_Xaml_Media_Media3D_IMatrix3DHelperStatics<D>::FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44) const
 {
-    Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::Media3D::Matrix3D result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put_abi(result)));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_Media3D_IMatrix3DHelperStatics<D>::GetHasInverse(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->GetHasInverse(get_abi(target), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->GetHasInverse(get_abi(target), &result));
+    return result;
 }
 
 template <typename D> bool consume_Windows_UI_Xaml_Media_Media3D_IMatrix3DHelperStatics<D>::GetIsIdentity(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target) const
 {
-    bool value{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->GetIsIdentity(get_abi(target), &value));
-    return value;
+    bool result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->GetIsIdentity(get_abi(target), &result));
+    return result;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D consume_Windows_UI_Xaml_Media_Media3D_IMatrix3DHelperStatics<D>::Invert(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target) const
 {
-    Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue{};
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->Invert(get_abi(target), put_abi(returnValue)));
-    return returnValue;
+    Windows::UI::Xaml::Media::Media3D::Matrix3D result{};
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics)->Invert(get_abi(target), put_abi(result)));
+    return result;
 }
 
 template <typename D> double consume_Windows_UI_Xaml_Media_Media3D_IPerspectiveTransform3D<D>::Depth() const
@@ -342,534 +342,462 @@ template <typename D> Windows::UI::Xaml::DependencyProperty consume_Windows_UI_X
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D consume_Windows_UI_Xaml_Media_Media3D_ITransform3DFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D consume_Windows_UI_Xaml_Media_Media3D_ITransform3DFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const
 {
-    Windows::UI::Xaml::Media::Media3D::Transform3D instance{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::ITransform3DFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
+    Windows::UI::Xaml::Media::Media3D::Transform3D value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::UI::Xaml::Media::Media3D::ITransform3DFactory)->CreateInstance(get_abi(baseInterface), put_abi(innerInterface), put_abi(value)));
+    return value;
 }
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D>
 {
-    HRESULT __stdcall get_CenterX(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterX(double value) noexcept final
+    int32_t WINRT_CALL put_CenterX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterX, WINRT_WRAP(void), double);
             this->shim().CenterX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterY(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterY(double value) noexcept final
+    int32_t WINRT_CALL put_CenterY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterY, WINRT_WRAP(void), double);
             this->shim().CenterY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterZ(double* value) noexcept final
+    int32_t WINRT_CALL get_CenterZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().CenterZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CenterZ(double value) noexcept final
+    int32_t WINRT_CALL put_CenterZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterZ, WINRT_WRAP(void), double);
             this->shim().CenterZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationX(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationX(double value) noexcept final
+    int32_t WINRT_CALL put_RotationX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationX, WINRT_WRAP(void), double);
             this->shim().RotationX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationY(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationY(double value) noexcept final
+    int32_t WINRT_CALL put_RotationY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationY, WINRT_WRAP(void), double);
             this->shim().RotationY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationZ(double* value) noexcept final
+    int32_t WINRT_CALL get_RotationZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().RotationZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_RotationZ(double value) noexcept final
+    int32_t WINRT_CALL put_RotationZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZ, WINRT_WRAP(void), double);
             this->shim().RotationZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleX(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleX(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleX, WINRT_WRAP(void), double);
             this->shim().ScaleX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleY(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleY(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleY, WINRT_WRAP(void), double);
             this->shim().ScaleY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleZ(double* value) noexcept final
+    int32_t WINRT_CALL get_ScaleZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().ScaleZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ScaleZ(double value) noexcept final
+    int32_t WINRT_CALL put_ScaleZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleZ, WINRT_WRAP(void), double);
             this->shim().ScaleZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateX(double* value) noexcept final
+    int32_t WINRT_CALL get_TranslateX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TranslateX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TranslateX(double value) noexcept final
+    int32_t WINRT_CALL put_TranslateX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateX, WINRT_WRAP(void), double);
             this->shim().TranslateX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateY(double* value) noexcept final
+    int32_t WINRT_CALL get_TranslateY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TranslateY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TranslateY(double value) noexcept final
+    int32_t WINRT_CALL put_TranslateY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateY, WINRT_WRAP(void), double);
             this->shim().TranslateY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateZ(double* value) noexcept final
+    int32_t WINRT_CALL get_TranslateZ(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateZ, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().TranslateZ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TranslateZ(double value) noexcept final
+    int32_t WINRT_CALL put_TranslateZ(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateZ, WINRT_WRAP(void), double);
             this->shim().TranslateZ(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>
 {
-    HRESULT __stdcall get_CenterXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CenterZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_CenterZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CenterZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().CenterZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RotationZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_RotationZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RotationZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().RotationZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ScaleZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_ScaleZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ScaleZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().ScaleZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TranslateXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TranslateXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TranslateYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TranslateYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TranslateZProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_TranslateZProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TranslateZProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().TranslateZProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -880,225 +808,195 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelper> : produce_
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>
 {
-    HRESULT __stdcall get_Identity(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
+    int32_t WINRT_CALL get_Identity(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Identity, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D));
             *value = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().Identity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Multiply(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D matrix1, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D matrix2, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* returnValue) noexcept final
+    int32_t WINRT_CALL Multiply(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D matrix1, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D matrix2, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().Multiply(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&matrix1), *reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&matrix2)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Multiply, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D), Windows::UI::Xaml::Media::Media3D::Matrix3D const&, Windows::UI::Xaml::Media::Media3D::Matrix3D const&);
+            *result = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().Multiply(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&matrix1), *reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&matrix2)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* returnValue) noexcept final
+    int32_t WINRT_CALL FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(FromElements, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D), double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double);
+            *result = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetHasInverse(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, bool* value) noexcept final
+    int32_t WINRT_CALL GetHasInverse(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().GetHasInverse(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetHasInverse, WINRT_WRAP(bool), Windows::UI::Xaml::Media::Media3D::Matrix3D const&);
+            *result = detach_from<bool>(this->shim().GetHasInverse(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetIsIdentity(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, bool* value) noexcept final
+    int32_t WINRT_CALL GetIsIdentity(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<bool>(this->shim().GetIsIdentity(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetIsIdentity, WINRT_WRAP(bool), Windows::UI::Xaml::Media::Media3D::Matrix3D const&);
+            *result = detach_from<bool>(this->shim().GetIsIdentity(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Invert(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* returnValue) noexcept final
+    int32_t WINRT_CALL Invert(struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D target, struct struct_Windows_UI_Xaml_Media_Media3D_Matrix3D* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().Invert(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Invert, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Matrix3D), Windows::UI::Xaml::Media::Media3D::Matrix3D const&);
+            *result = detach_from<Windows::UI::Xaml::Media::Media3D::Matrix3D>(this->shim().Invert(*reinterpret_cast<Windows::UI::Xaml::Media::Media3D::Matrix3D const*>(&target)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D> : produce_base<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D>
 {
-    HRESULT __stdcall get_Depth(double* value) noexcept final
+    int32_t WINRT_CALL get_Depth(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Depth, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().Depth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Depth(double value) noexcept final
+    int32_t WINRT_CALL put_Depth(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Depth, WINRT_WRAP(void), double);
             this->shim().Depth(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OffsetX(double* value) noexcept final
+    int32_t WINRT_CALL get_OffsetX(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetX, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().OffsetX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OffsetX(double value) noexcept final
+    int32_t WINRT_CALL put_OffsetX(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetX, WINRT_WRAP(void), double);
             this->shim().OffsetX(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OffsetY(double* value) noexcept final
+    int32_t WINRT_CALL get_OffsetY(double* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetY, WINRT_WRAP(double));
             *value = detach_from<double>(this->shim().OffsetY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_OffsetY(double value) noexcept final
+    int32_t WINRT_CALL put_OffsetY(double value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetY, WINRT_WRAP(void), double);
             this->shim().OffsetY(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics> : produce_base<D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>
 {
-    HRESULT __stdcall get_DepthProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_DepthProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DepthProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().DepthProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OffsetXProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_OffsetXProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetXProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().OffsetXProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OffsetYProperty(void** value) noexcept final
+    int32_t WINRT_CALL get_OffsetYProperty(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OffsetYProperty, WINRT_WRAP(Windows::UI::Xaml::DependencyProperty));
             *value = detach_from<Windows::UI::Xaml::DependencyProperty>(this->shim().OffsetYProperty());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1109,22 +1007,20 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3D> : produce_bas
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory> : produce_base<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>
 {
-    HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept final
     {
         try
         {
-            if (inner) *inner = nullptr;
-            *instance = nullptr;
+            if (innerInterface) *innerInterface = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            Windows::Foundation::IInspectable __local_inner;
-            *instance = detach_from<Windows::UI::Xaml::Media::Media3D::Transform3D>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
-            if (inner) *inner = detach_abi(__local_inner);
-            return S_OK;
+            Windows::Foundation::IInspectable __local_innerInterface;
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::UI::Xaml::Media::Media3D::Transform3D), Windows::Foundation::IInspectable const&, Windows::Foundation::IInspectable&);
+            *value = detach_from<Windows::UI::Xaml::Media::Media3D::Transform3D>(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&baseInterface), __local_innerInterface));
+            if (innerInterface) *innerInterface = detach_abi(__local_innerInterface);
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1133,129 +1029,130 @@ struct produce<D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory> : prod
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Media::Media3D {
 
 inline CompositeTransform3D::CompositeTransform3D() :
-    CompositeTransform3D(get_activation_factory<CompositeTransform3D>().ActivateInstance<CompositeTransform3D>())
+    CompositeTransform3D(impl::call_factory<CompositeTransform3D>([](auto&& f) { return f.template ActivateInstance<CompositeTransform3D>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterXProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().CenterXProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.CenterXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterYProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().CenterYProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.CenterYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::CenterZProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().CenterZProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.CenterZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationXProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().RotationXProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.RotationXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationYProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().RotationYProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.RotationYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::RotationZProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().RotationZProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.RotationZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleXProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().ScaleXProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.ScaleXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleYProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().ScaleYProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.ScaleYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::ScaleZProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().ScaleZProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.ScaleZProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateXProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().TranslateXProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.TranslateXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateYProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().TranslateYProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.TranslateYProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty CompositeTransform3D::TranslateZProperty()
 {
-    return get_activation_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>().TranslateZProperty();
+    return impl::call_factory<CompositeTransform3D, Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>([&](auto&& f) { return f.TranslateZProperty(); });
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Identity()
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().Identity();
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.Identity(); });
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Multiply(Windows::UI::Xaml::Media::Media3D::Matrix3D const& matrix1, Windows::UI::Xaml::Media::Media3D::Matrix3D const& matrix2)
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().Multiply(matrix1, matrix2);
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.Multiply(matrix1, matrix2); });
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44)
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44);
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44); });
 }
 
 inline bool Matrix3DHelper::GetHasInverse(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target)
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().GetHasInverse(target);
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.GetHasInverse(target); });
 }
 
 inline bool Matrix3DHelper::GetIsIdentity(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target)
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().GetIsIdentity(target);
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.GetIsIdentity(target); });
 }
 
 inline Windows::UI::Xaml::Media::Media3D::Matrix3D Matrix3DHelper::Invert(Windows::UI::Xaml::Media::Media3D::Matrix3D const& target)
 {
-    return get_activation_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>().Invert(target);
+    return impl::call_factory<Matrix3DHelper, Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>([&](auto&& f) { return f.Invert(target); });
 }
 
 inline PerspectiveTransform3D::PerspectiveTransform3D() :
-    PerspectiveTransform3D(get_activation_factory<PerspectiveTransform3D>().ActivateInstance<PerspectiveTransform3D>())
+    PerspectiveTransform3D(impl::call_factory<PerspectiveTransform3D>([](auto&& f) { return f.template ActivateInstance<PerspectiveTransform3D>(); }))
 {}
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::DepthProperty()
 {
-    return get_activation_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>().DepthProperty();
+    return impl::call_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>([&](auto&& f) { return f.DepthProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::OffsetXProperty()
 {
-    return get_activation_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>().OffsetXProperty();
+    return impl::call_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>([&](auto&& f) { return f.OffsetXProperty(); });
 }
 
 inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::OffsetYProperty()
 {
-    return get_activation_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>().OffsetYProperty();
+    return impl::call_factory<PerspectiveTransform3D, Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>([&](auto&& f) { return f.OffsetYProperty(); });
 }
 
 template <typename D, typename... Interfaces>
 struct Transform3DT :
     implements<D, Windows::Foundation::IInspectable, composing, Interfaces...>,
-    impl::require<D, Windows::UI::Xaml::Media::Media3D::ITransform3D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Media::Media3D::ITransform3D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>,
+    impl::base<D, Windows::UI::Xaml::Media::Media3D::Transform3D, Windows::UI::Xaml::DependencyObject>
 {
     using composable = Transform3D;
 
 protected:
     Transform3DT()
     {
-        get_activation_factory<Windows::UI::Xaml::Media::Media3D::Transform3D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>().CreateInstance(*this, this->m_inner);
+        impl::call_factory<Windows::UI::Xaml::Media::Media3D::Transform3D, Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>([&](auto&& f) { f.CreateInstance(*this, this->m_inner); });
     }
 };
 
@@ -1277,5 +1174,3 @@ template<> struct hash<winrt::Windows::UI::Xaml::Media::Media3D::PerspectiveTran
 template<> struct hash<winrt::Windows::UI::Xaml::Media::Media3D::Transform3D> : winrt::impl::hash_base<winrt::Windows::UI::Xaml::Media::Media3D::Transform3D> {};
 
 }
-
-WINRT_WARNING_POP

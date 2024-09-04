@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,6 +21,8 @@ struct ApplicationDataSetVersionHandler : Windows::Foundation::IUnknown
     template <typename L> ApplicationDataSetVersionHandler(L lambda);
     template <typename F> ApplicationDataSetVersionHandler(F* function);
     template <typename O, typename M> ApplicationDataSetVersionHandler(O* object, M method);
+    template <typename O, typename M> ApplicationDataSetVersionHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ApplicationDataSetVersionHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Storage::SetVersionRequest const& setVersionRequest) const;
 };
 
@@ -30,6 +32,8 @@ struct StreamedFileDataRequestedHandler : Windows::Foundation::IUnknown
     template <typename L> StreamedFileDataRequestedHandler(L lambda);
     template <typename F> StreamedFileDataRequestedHandler(F* function);
     template <typename O, typename M> StreamedFileDataRequestedHandler(O* object, M method);
+    template <typename O, typename M> StreamedFileDataRequestedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> StreamedFileDataRequestedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Storage::StreamedFileDataRequest const& stream) const;
 };
 

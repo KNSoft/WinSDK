@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.ApplicationModel.DataTransfer.DragDrop.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
 #include "winrt/impl/Windows.Graphics.Imaging.1.h"
+#include "winrt/impl/Windows.UI.1.h"
 #include "winrt/impl/Windows.UI.Composition.1.h"
 #include "winrt/impl/Windows.UI.Core.1.h"
 #include "winrt/impl/Windows.UI.Input.1.h"
@@ -35,6 +36,8 @@ struct ApplicationInitializationCallback : Windows::Foundation::IUnknown
     template <typename L> ApplicationInitializationCallback(L lambda);
     template <typename F> ApplicationInitializationCallback(F* function);
     template <typename O, typename M> ApplicationInitializationCallback(O* object, M method);
+    template <typename O, typename M> ApplicationInitializationCallback(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ApplicationInitializationCallback(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Xaml::ApplicationInitializationCallbackParams const& p) const;
 };
 
@@ -44,6 +47,8 @@ struct BindingFailedEventHandler : Windows::Foundation::IUnknown
     template <typename L> BindingFailedEventHandler(L lambda);
     template <typename F> BindingFailedEventHandler(F* function);
     template <typename O, typename M> BindingFailedEventHandler(O* object, M method);
+    template <typename O, typename M> BindingFailedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> BindingFailedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::BindingFailedEventArgs const& e) const;
 };
 
@@ -53,6 +58,8 @@ struct CreateDefaultValueCallback : Windows::Foundation::IUnknown
     template <typename L> CreateDefaultValueCallback(L lambda);
     template <typename F> CreateDefaultValueCallback(F* function);
     template <typename O, typename M> CreateDefaultValueCallback(O* object, M method);
+    template <typename O, typename M> CreateDefaultValueCallback(com_ptr<O>&& object, M method);
+    template <typename O, typename M> CreateDefaultValueCallback(weak_ref<O>&& object, M method);
     Windows::Foundation::IInspectable operator()() const;
 };
 
@@ -62,6 +69,8 @@ struct DependencyPropertyChangedCallback : Windows::Foundation::IUnknown
     template <typename L> DependencyPropertyChangedCallback(L lambda);
     template <typename F> DependencyPropertyChangedCallback(F* function);
     template <typename O, typename M> DependencyPropertyChangedCallback(O* object, M method);
+    template <typename O, typename M> DependencyPropertyChangedCallback(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DependencyPropertyChangedCallback(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Xaml::DependencyObject const& sender, Windows::UI::Xaml::DependencyProperty const& dp) const;
 };
 
@@ -71,6 +80,8 @@ struct DependencyPropertyChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> DependencyPropertyChangedEventHandler(L lambda);
     template <typename F> DependencyPropertyChangedEventHandler(F* function);
     template <typename O, typename M> DependencyPropertyChangedEventHandler(O* object, M method);
+    template <typename O, typename M> DependencyPropertyChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DependencyPropertyChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e) const;
 };
 
@@ -80,6 +91,8 @@ struct DragEventHandler : Windows::Foundation::IUnknown
     template <typename L> DragEventHandler(L lambda);
     template <typename F> DragEventHandler(F* function);
     template <typename O, typename M> DragEventHandler(O* object, M method);
+    template <typename O, typename M> DragEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DragEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::DragEventArgs const& e) const;
 };
 
@@ -89,6 +102,8 @@ struct EnteredBackgroundEventHandler : Windows::Foundation::IUnknown
     template <typename L> EnteredBackgroundEventHandler(L lambda);
     template <typename F> EnteredBackgroundEventHandler(F* function);
     template <typename O, typename M> EnteredBackgroundEventHandler(O* object, M method);
+    template <typename O, typename M> EnteredBackgroundEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> EnteredBackgroundEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::EnteredBackgroundEventArgs const& e) const;
 };
 
@@ -98,6 +113,8 @@ struct ExceptionRoutedEventHandler : Windows::Foundation::IUnknown
     template <typename L> ExceptionRoutedEventHandler(L lambda);
     template <typename F> ExceptionRoutedEventHandler(F* function);
     template <typename O, typename M> ExceptionRoutedEventHandler(O* object, M method);
+    template <typename O, typename M> ExceptionRoutedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> ExceptionRoutedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::ExceptionRoutedEventArgs const& e) const;
 };
 
@@ -107,6 +124,8 @@ struct LeavingBackgroundEventHandler : Windows::Foundation::IUnknown
     template <typename L> LeavingBackgroundEventHandler(L lambda);
     template <typename F> LeavingBackgroundEventHandler(F* function);
     template <typename O, typename M> LeavingBackgroundEventHandler(O* object, M method);
+    template <typename O, typename M> LeavingBackgroundEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> LeavingBackgroundEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::LeavingBackgroundEventArgs const& e) const;
 };
 
@@ -116,6 +135,8 @@ struct PropertyChangedCallback : Windows::Foundation::IUnknown
     template <typename L> PropertyChangedCallback(L lambda);
     template <typename F> PropertyChangedCallback(F* function);
     template <typename O, typename M> PropertyChangedCallback(O* object, M method);
+    template <typename O, typename M> PropertyChangedCallback(com_ptr<O>&& object, M method);
+    template <typename O, typename M> PropertyChangedCallback(weak_ref<O>&& object, M method);
     void operator()(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e) const;
 };
 
@@ -125,6 +146,8 @@ struct RoutedEventHandler : Windows::Foundation::IUnknown
     template <typename L> RoutedEventHandler(L lambda);
     template <typename F> RoutedEventHandler(F* function);
     template <typename O, typename M> RoutedEventHandler(O* object, M method);
+    template <typename O, typename M> RoutedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RoutedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e) const;
 };
 
@@ -134,6 +157,8 @@ struct SizeChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> SizeChangedEventHandler(L lambda);
     template <typename F> SizeChangedEventHandler(F* function);
     template <typename O, typename M> SizeChangedEventHandler(O* object, M method);
+    template <typename O, typename M> SizeChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SizeChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::SizeChangedEventArgs const& e) const;
 };
 
@@ -143,6 +168,8 @@ struct SuspendingEventHandler : Windows::Foundation::IUnknown
     template <typename L> SuspendingEventHandler(L lambda);
     template <typename F> SuspendingEventHandler(F* function);
     template <typename O, typename M> SuspendingEventHandler(O* object, M method);
+    template <typename O, typename M> SuspendingEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> SuspendingEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::ApplicationModel::SuspendingEventArgs const& e) const;
 };
 
@@ -152,6 +179,8 @@ struct UnhandledExceptionEventHandler : Windows::Foundation::IUnknown
     template <typename L> UnhandledExceptionEventHandler(L lambda);
     template <typename F> UnhandledExceptionEventHandler(F* function);
     template <typename O, typename M> UnhandledExceptionEventHandler(O* object, M method);
+    template <typename O, typename M> UnhandledExceptionEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> UnhandledExceptionEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::UnhandledExceptionEventArgs const& e) const;
 };
 
@@ -161,6 +190,8 @@ struct VisualStateChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> VisualStateChangedEventHandler(L lambda);
     template <typename F> VisualStateChangedEventHandler(F* function);
     template <typename O, typename M> VisualStateChangedEventHandler(O* object, M method);
+    template <typename O, typename M> VisualStateChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> VisualStateChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::VisualStateChangedEventArgs const& e) const;
 };
 
@@ -170,6 +201,8 @@ struct WindowActivatedEventHandler : Windows::Foundation::IUnknown
     template <typename L> WindowActivatedEventHandler(L lambda);
     template <typename F> WindowActivatedEventHandler(F* function);
     template <typename O, typename M> WindowActivatedEventHandler(O* object, M method);
+    template <typename O, typename M> WindowActivatedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WindowActivatedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Core::WindowActivatedEventArgs const& e) const;
 };
 
@@ -179,6 +212,8 @@ struct WindowClosedEventHandler : Windows::Foundation::IUnknown
     template <typename L> WindowClosedEventHandler(L lambda);
     template <typename F> WindowClosedEventHandler(F* function);
     template <typename O, typename M> WindowClosedEventHandler(O* object, M method);
+    template <typename O, typename M> WindowClosedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WindowClosedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Core::CoreWindowEventArgs const& e) const;
 };
 
@@ -188,6 +223,8 @@ struct WindowSizeChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> WindowSizeChangedEventHandler(L lambda);
     template <typename F> WindowSizeChangedEventHandler(F* function);
     template <typename O, typename M> WindowSizeChangedEventHandler(O* object, M method);
+    template <typename O, typename M> WindowSizeChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WindowSizeChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Core::WindowSizeChangedEventArgs const& e) const;
 };
 
@@ -197,6 +234,8 @@ struct WindowVisibilityChangedEventHandler : Windows::Foundation::IUnknown
     template <typename L> WindowVisibilityChangedEventHandler(L lambda);
     template <typename F> WindowVisibilityChangedEventHandler(F* function);
     template <typename O, typename M> WindowVisibilityChangedEventHandler(O* object, M method);
+    template <typename O, typename M> WindowVisibilityChangedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WindowVisibilityChangedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Core::VisibilityChangedEventArgs const& e) const;
 };
 
@@ -327,6 +366,22 @@ struct WINRT_EBO BringIntoViewRequestedEventArgs :
     BringIntoViewRequestedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO BrushTransition :
+    Windows::UI::Xaml::IBrushTransition
+{
+    BrushTransition(std::nullptr_t) noexcept {}
+    BrushTransition();
+};
+
+struct WINRT_EBO ColorPaletteResources :
+    Windows::UI::Xaml::IColorPaletteResources,
+    impl::base<ColorPaletteResources, Windows::UI::Xaml::ResourceDictionary, Windows::UI::Xaml::DependencyObject>,
+    impl::require<ColorPaletteResources, Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>>, Windows::Foundation::Collections::IMap<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IResourceDictionary>
+{
+    ColorPaletteResources(std::nullptr_t) noexcept {}
+    ColorPaletteResources();
+};
+
 struct WINRT_EBO CornerRadiusHelper :
     Windows::UI::Xaml::ICornerRadiusHelper
 {
@@ -344,7 +399,7 @@ struct WINRT_EBO DataContextChangedEventArgs :
 struct WINRT_EBO DataTemplate :
     Windows::UI::Xaml::IDataTemplate,
     impl::base<DataTemplate, Windows::UI::Xaml::FrameworkTemplate, Windows::UI::Xaml::DependencyObject>,
-    impl::require<DataTemplate, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkTemplate>
+    impl::require<DataTemplate, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IElementFactory, Windows::UI::Xaml::IFrameworkTemplate>
 {
     DataTemplate(std::nullptr_t) noexcept {}
     DataTemplate();
@@ -363,7 +418,7 @@ struct WINRT_EBO DataTemplateKey :
 
 struct WINRT_EBO DebugSettings :
     Windows::UI::Xaml::IDebugSettings,
-    impl::require<DebugSettings, Windows::UI::Xaml::IDebugSettings2, Windows::UI::Xaml::IDebugSettings3>
+    impl::require<DebugSettings, Windows::UI::Xaml::IDebugSettings2, Windows::UI::Xaml::IDebugSettings3, Windows::UI::Xaml::IDebugSettings4>
 {
     DebugSettings(std::nullptr_t) noexcept {}
 };
@@ -462,6 +517,26 @@ struct WINRT_EBO DurationHelper :
     static Windows::UI::Xaml::Duration Subtract(Windows::UI::Xaml::Duration const& target, Windows::UI::Xaml::Duration const& duration);
 };
 
+struct WINRT_EBO EffectiveViewportChangedEventArgs :
+    Windows::UI::Xaml::IEffectiveViewportChangedEventArgs
+{
+    EffectiveViewportChangedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ElementFactoryGetArgs :
+    Windows::UI::Xaml::IElementFactoryGetArgs
+{
+    ElementFactoryGetArgs(std::nullptr_t) noexcept {}
+    ElementFactoryGetArgs();
+};
+
+struct WINRT_EBO ElementFactoryRecycleArgs :
+    Windows::UI::Xaml::IElementFactoryRecycleArgs
+{
+    ElementFactoryRecycleArgs(std::nullptr_t) noexcept {}
+    ElementFactoryRecycleArgs();
+};
+
 struct WINRT_EBO ElementSoundPlayer :
     Windows::UI::Xaml::IElementSoundPlayer
 {
@@ -495,7 +570,7 @@ struct WINRT_EBO ExceptionRoutedEventArgs :
 struct WINRT_EBO FrameworkElement :
     Windows::UI::Xaml::IFrameworkElement,
     impl::base<FrameworkElement, Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DependencyObject>,
-    impl::require<FrameworkElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8>
+    impl::require<FrameworkElement, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElement7, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IFrameworkElementProtected7, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElement9, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8, Windows::UI::Xaml::IUIElementOverrides9>
 {
     FrameworkElement(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty TagProperty();
@@ -642,6 +717,13 @@ struct WINRT_EBO RoutedEventArgs :
     RoutedEventArgs();
 };
 
+struct WINRT_EBO ScalarTransition :
+    Windows::UI::Xaml::IScalarTransition
+{
+    ScalarTransition(std::nullptr_t) noexcept {}
+    ScalarTransition();
+};
+
 struct WINRT_EBO Setter :
     Windows::UI::Xaml::ISetter,
     impl::base<Setter, Windows::UI::Xaml::SetterBase, Windows::UI::Xaml::DependencyObject>,
@@ -661,7 +743,8 @@ struct WINRT_EBO SetterBase :
 };
 
 struct WINRT_EBO SetterBaseCollection :
-    Windows::UI::Xaml::ISetterBaseCollection
+    Windows::UI::Xaml::ISetterBaseCollection,
+    impl::require<SetterBaseCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::SetterBase>, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::SetterBase>>
 {
     SetterBaseCollection(std::nullptr_t) noexcept {}
     SetterBaseCollection();
@@ -761,7 +844,7 @@ struct WINRT_EBO TriggerCollection :
 struct WINRT_EBO UIElement :
     Windows::UI::Xaml::IUIElement,
     impl::base<UIElement, Windows::UI::Xaml::DependencyObject>,
-    impl::require<UIElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8>
+    impl::require<UIElement, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElement9, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8, Windows::UI::Xaml::IUIElementOverrides9>
 {
     UIElement(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::RoutedEvent KeyDownEvent();
@@ -836,12 +919,20 @@ struct WINRT_EBO UIElement :
     static Windows::UI::Xaml::DependencyProperty KeyboardAcceleratorPlacementTargetProperty();
     static Windows::UI::Xaml::DependencyProperty KeyboardAcceleratorPlacementModeProperty();
     static void RegisterAsScrollPort(Windows::UI::Xaml::UIElement const& element);
+    static Windows::UI::Xaml::DependencyProperty CanBeScrollAnchorProperty();
 };
 
 struct WINRT_EBO UnhandledExceptionEventArgs :
     Windows::UI::Xaml::IUnhandledExceptionEventArgs
 {
     UnhandledExceptionEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO Vector3Transition :
+    Windows::UI::Xaml::IVector3Transition
+{
+    Vector3Transition(std::nullptr_t) noexcept {}
+    Vector3Transition();
 };
 
 struct WINRT_EBO VisualState :
@@ -1009,6 +1100,19 @@ public:
 
     void OnKeyboardAcceleratorInvoked(Windows::UI::Xaml::Input::KeyboardAcceleratorInvokedEventArgs const& args) const;
     void OnBringIntoViewRequested(Windows::UI::Xaml::BringIntoViewRequestedEventArgs const& e) const;
+};
+
+template <typename D>
+class IUIElementOverrides9T
+{
+    D& shim() noexcept { return *static_cast<D*>(this); }
+    D const& shim() const noexcept { return *static_cast<const D*>(this); }
+
+public:
+
+    using IUIElementOverrides9 = winrt::Windows::UI::Xaml::IUIElementOverrides9;
+
+    void PopulatePropertyInfoOverride(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo) const;
 };
 
 template <typename D>

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -23,6 +23,13 @@ struct WINRT_EBO IChatCapabilitiesManagerStatics :
     impl::consume_t<IChatCapabilitiesManagerStatics>
 {
     IChatCapabilitiesManagerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IChatCapabilitiesManagerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IChatCapabilitiesManagerStatics2>
+{
+    IChatCapabilitiesManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IChatConversation :
@@ -359,6 +366,13 @@ struct WINRT_EBO IRcsManagerStatics :
     impl::consume_t<IRcsManagerStatics>
 {
     IRcsManagerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IRcsManagerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IRcsManagerStatics2>
+{
+    IRcsManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IRcsServiceKindSupportedChangedEventArgs :

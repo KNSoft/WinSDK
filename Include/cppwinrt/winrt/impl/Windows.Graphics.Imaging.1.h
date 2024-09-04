@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -40,6 +40,13 @@ struct WINRT_EBO IBitmapDecoderStatics :
     IBitmapDecoderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IBitmapDecoderStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBitmapDecoderStatics2>
+{
+    IBitmapDecoderStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IBitmapEncoder :
     Windows::Foundation::IInspectable,
     impl::consume_t<IBitmapEncoder>
@@ -52,6 +59,13 @@ struct WINRT_EBO IBitmapEncoderStatics :
     impl::consume_t<IBitmapEncoderStatics>
 {
     IBitmapEncoderStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBitmapEncoderStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBitmapEncoderStatics2>
+{
+    IBitmapEncoderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IBitmapEncoderWithSoftwareBitmap :

@@ -715,6 +715,20 @@ SetProcessValidCallTargets(
 
 
 WINBASEAPI
+BOOL
+WINAPI
+SetProcessValidCallTargetsForMappedView(
+    _In_ HANDLE Process,
+    _In_ PVOID VirtualAddress,
+    _In_ SIZE_T RegionSize,
+    _In_ ULONG NumberOfOffsets,
+    _Inout_updates_(NumberOfOffsets) PCFG_CALL_TARGET_INFO OffsetInformation,
+    _In_ HANDLE Section,
+    _In_ ULONG64 ExpectedFileOffset
+    );
+
+
+WINBASEAPI
 _Ret_maybenull_
 _Post_writable_byte_size_(Size)
 PVOID
@@ -1072,6 +1086,33 @@ MapViewOfFile3FromApp(
 #pragma endregion
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+WINBASEAPI
+_Ret_maybenull_
+HANDLE
+WINAPI
+CreateFileMapping2(
+    _In_ HANDLE File,
+    _In_opt_ SECURITY_ATTRIBUTES* SecurityAttributes,
+    _In_ ULONG DesiredAccess,
+    _In_ ULONG PageProtection,
+    _In_ ULONG AllocationAttributes,
+    _In_ ULONG64 MaximumSize,
+    _In_opt_ PCWSTR Name,
+    _Inout_updates_opt_(ParameterCount) MEM_EXTENDED_PARAMETER* ExtendedParameters,
+    _In_ ULONG ParameterCount
+    );
+
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

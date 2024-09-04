@@ -64,6 +64,8 @@ namespace Windows
 
             typedef enum CellularApnAuthenticationType CellularApnAuthenticationType;
 
+            typedef enum ConnectionProfileDeleteStatus ConnectionProfileDeleteStatus;
+
             typedef enum DataUsageGranularity DataUsageGranularity;
 
             typedef enum DomainConnectivityLevel DomainConnectivityLevel;
@@ -109,6 +111,8 @@ namespace Windows
             interface IConnectionProfile3;
 
             interface IConnectionProfile4;
+
+            interface IConnectionProfile5;
 
             interface IConnectionProfileFilter;
 
@@ -274,6 +278,8 @@ namespace Windows
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ConnectionProfile*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ConnectionProfileDeleteStatus>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ConnectionSession*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ProxyConfiguration*>;
@@ -301,6 +307,15 @@ namespace Windows
                 Pap      = 1,
                 Chap     = 2,
                 Mschapv2 = 3
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum ConnectionProfileDeleteStatus
+            {
+                Success        = 0,
+                DeniedByUser   = 1,
+                DeniedBySystem = 2,
+                UnknownError   = 3
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -554,6 +569,15 @@ namespace Windows
             interface IConnectionProfile4 : IInspectable
             {
                 HRESULT GetProviderNetworkUsageAsync([in] Windows.Foundation.DateTime startTime, [in] Windows.Foundation.DateTime endTime, [in] Windows.Networking.Connectivity.NetworkUsageStates states, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ProviderNetworkUsage*>*>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Networking.Connectivity.ConnectionProfile)]
+            [uuid(85361EC7-9C73-4BE0-8F14-578EEC71EE0E)]
+            interface IConnectionProfile5 : IInspectable
+            {
+                [propget] HRESULT CanDelete([out] [retval] boolean* value);
+                HRESULT TryDeleteAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ConnectionProfileDeleteStatus>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -868,6 +892,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Connectivity.IConnectionProfile2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Connectivity.IConnectionProfile3;
                 [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Connectivity.IConnectionProfile4;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Networking.Connectivity.IConnectionProfile5;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]

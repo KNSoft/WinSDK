@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Data.Xml.Dom.2.h"
@@ -38,57 +38,51 @@ template <typename D> Windows::Data::Xml::Xsl::XsltProcessor consume_Windows_Dat
 template <typename D>
 struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor> : produce_base<D, Windows::Data::Xml::Xsl::IXsltProcessor>
 {
-    HRESULT __stdcall TransformToString(void* inputNode, HSTRING* output) noexcept final
+    int32_t WINRT_CALL TransformToString(void* inputNode, void** output) noexcept final
     {
         try
         {
             *output = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformToString, WINRT_WRAP(hstring), Windows::Data::Xml::Dom::IXmlNode const&);
             *output = detach_from<hstring>(this->shim().TransformToString(*reinterpret_cast<Windows::Data::Xml::Dom::IXmlNode const*>(&inputNode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessor2> : produce_base<D, Windows::Data::Xml::Xsl::IXsltProcessor2>
 {
-    HRESULT __stdcall TransformToDocument(void* inputNode, void** output) noexcept final
+    int32_t WINRT_CALL TransformToDocument(void* inputNode, void** output) noexcept final
     {
         try
         {
             *output = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransformToDocument, WINRT_WRAP(Windows::Data::Xml::Dom::XmlDocument), Windows::Data::Xml::Dom::IXmlNode const&);
             *output = detach_from<Windows::Data::Xml::Dom::XmlDocument>(this->shim().TransformToDocument(*reinterpret_cast<Windows::Data::Xml::Dom::IXmlNode const*>(&inputNode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessorFactory> : produce_base<D, Windows::Data::Xml::Xsl::IXsltProcessorFactory>
 {
-    HRESULT __stdcall CreateInstance(void* document, void** xsltProcessor) noexcept final
+    int32_t WINRT_CALL CreateInstance(void* document, void** xsltProcessor) noexcept final
     {
         try
         {
             *xsltProcessor = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateInstance, WINRT_WRAP(Windows::Data::Xml::Xsl::XsltProcessor), Windows::Data::Xml::Dom::XmlDocument const&);
             *xsltProcessor = detach_from<Windows::Data::Xml::Xsl::XsltProcessor>(this->shim().CreateInstance(*reinterpret_cast<Windows::Data::Xml::Dom::XmlDocument const*>(&document)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -97,7 +91,7 @@ struct produce<D, Windows::Data::Xml::Xsl::IXsltProcessorFactory> : produce_base
 WINRT_EXPORT namespace winrt::Windows::Data::Xml::Xsl {
 
 inline XsltProcessor::XsltProcessor(Windows::Data::Xml::Dom::XmlDocument const& document) :
-    XsltProcessor(get_activation_factory<XsltProcessor, Windows::Data::Xml::Xsl::IXsltProcessorFactory>().CreateInstance(document))
+    XsltProcessor(impl::call_factory<XsltProcessor, Windows::Data::Xml::Xsl::IXsltProcessorFactory>([&](auto&& f) { return f.CreateInstance(document); }))
 {}
 
 }
@@ -110,5 +104,3 @@ template<> struct hash<winrt::Windows::Data::Xml::Xsl::IXsltProcessorFactory> : 
 template<> struct hash<winrt::Windows::Data::Xml::Xsl::XsltProcessor> : winrt::impl::hash_base<winrt::Windows::Data::Xml::Xsl::XsltProcessor> {};
 
 }
-
-WINRT_WARNING_POP

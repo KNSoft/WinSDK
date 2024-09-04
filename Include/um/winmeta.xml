@@ -259,7 +259,7 @@
                 <inType name="win:Binary" value="14" symbol="WINEVENT_TYPE_BINARY">
                     <description>Variable size binary data.</description>
                     <outType default="true" xmlType="xs:hexBinary"/>
-                    <outType xmlType="win:IPv6"/>
+                    <outType xmlType="win:IPv6">Always 16 bytes.</outType>
                     <outType xmlType="win:SocketAddress"/>
                     <outType xmlType="win:Pkcs7WithTypeInfo">A PKCS#7 message with TraceLogging type information optionally appended immediately after the PKCS#7 data.</outType>
                 </inType>
@@ -271,6 +271,8 @@
                     <description> A pointer; sized to the current platform (32-bit or 64-bit). XML spec: hex representation of a pointer</description>
                     <outType default="true" xmlType="win:HexInt64"/>
                     <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
+                    <outType xmlType="xs:long">Pointer-sized signed integer, e.g. intptr_t.</outType>
+                    <outType xmlType="xs:unsignedLong">Pointer-sized unsigned integer, e.g. uintptr_t.</outType>
                 </inType>
                 <inType name="win:FILETIME" value="17" symbol="WINEVENT_TYPE_FILETIME">
                     <description> A Windows FILETIME struct. </description>
@@ -298,6 +300,27 @@
                     <description> A hexidecimal representation of an unsigned 64-bit integer. </description>
                     <outType default="true" xmlType="win:HexInt64"/>
                     <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
+                </inType>
+                <inType name="win:CountedUnicodeString" value="22" symbol="WINEVENT_TYPE_COUNTED_STRING">
+                    <description> A 16-bit bytecount followed by a string of 16-bit characters.  Supported in Windows 2018 Fall Update or later. </description>
+                    <outType default="true" xmlType="xs:string">UTF-16LE string</outType>
+                    <outType xmlType="win:Xml">UTF-16LE XML string</outType>
+                    <outType xmlType="win:Json">UTF-16LE JSON string</outType>
+                </inType>
+                <inType name="win:CountedAnsiString" value="23" symbol="WINEVENT_TYPE_COUNTED_ANSI_STRING">
+                    <description> A 16-bit bytecount followed by a string of 8-bit characters.  Supported in Windows 2018 Fall Update or later. </description>
+                    <outType default="true" xmlType="xs:string">ANSI string</outType>
+                    <outType xmlType="win:Xml">XML string; encoding defaults to UTF-8 but may be overridden by an XML encoding attribute</outType>
+                    <outType xmlType="win:Json">UTF-8 JSON string</outType>
+                    <outType xmlType="win:Utf8">UTF-8 string</outType>
+                </inType>
+                <!-- 24 is reserved (TlgInSTRUCT) -->
+                <inType name="win:CountedBinary" value="25" symbol="WINEVENT_TYPE_COUNTED_BINARY">
+                    <description> A 16-bit bytecount followed by binary data. Supported in Windows 2018 Fall Update or later. </description>
+                    <outType default="true" xmlType="xs:hexBinary"/>
+                    <outType xmlType="win:IPv6">Always 16 bytes.</outType>
+                    <outType xmlType="win:SocketAddress"/>
+                    <outType xmlType="win:Pkcs7WithTypeInfo">A PKCS#7 message with TraceLogging type information optionally appended immediately after the PKCS#7 data.</outType>
                 </inType>
             </inTypes>
         </types>

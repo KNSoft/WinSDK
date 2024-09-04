@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.system.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -518,6 +530,66 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupStateReport_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppUriHandlerHost;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost ABI::Windows::System::IAppUriHandlerHost
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppUriHandlerHostFactory;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory ABI::Windows::System::IAppUriHandlerHostFactory
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppUriHandlerRegistration;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration ABI::Windows::System::IAppUriHandlerRegistration
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppUriHandlerRegistrationManager;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager ABI::Windows::System::IAppUriHandlerRegistrationManager
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IAppUriHandlerRegistrationManagerStatics;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics ABI::Windows::System::IAppUriHandlerRegistrationManagerStatics
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics_FWD_DEFINED__
 namespace ABI {
@@ -733,6 +805,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CILauncherStatics4 ABI::Windows::System::ILauncherStatics4
 
 #endif // ____x_ABI_CWindows_CSystem_CILauncherStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface ILauncherStatics5;
+        } /* Windows */
+    } /* System */} /* ABI */
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5 ABI::Windows::System::ILauncherStatics5
+
+#endif // ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherUIOptions_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherUIOptions_FWD_DEFINED__
@@ -1277,6 +1361,77 @@ typedef IIterable<ABI::Windows::System::AppResourceGroupInfo*> __FIIterable_1_Wi
 namespace ABI {
     namespace Windows {
         namespace System {
+            class AppUriHandlerHost;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIIterator_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIIterator_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("66078237-a994-50de-b1ea-338d7cf89a2c"))
+IIterator<ABI::Windows::System::AppUriHandlerHost*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppUriHandlerHost*, ABI::Windows::System::IAppUriHandlerHost*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.System.AppUriHandlerHost>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<ABI::Windows::System::AppUriHandlerHost*> __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::System::IAppUriHandlerHost*>
+//#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::System::IAppUriHandlerHost*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIIterable_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIIterable_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("f6e575bd-eab7-5981-ba01-49ff976ca186"))
+IIterable<ABI::Windows::System::AppUriHandlerHost*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppUriHandlerHost*, ABI::Windows::System::IAppUriHandlerHost*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.System.AppUriHandlerHost>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<ABI::Windows::System::AppUriHandlerHost*> __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::System::IAppUriHandlerHost*>
+//#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::System::IAppUriHandlerHost*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
             class User;
         } /* Windows */
     } /* System */} /* ABI */
@@ -1442,6 +1597,38 @@ typedef IVectorView<ABI::Windows::System::AppResourceGroupInfo*> __FIVectorView_
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("b5b07811-1c9e-5f97-bb56-17c80b1b1a45"))
+IVectorView<ABI::Windows::System::AppUriHandlerHost*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppUriHandlerHost*, ABI::Windows::System::IAppUriHandlerHost*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.System.AppUriHandlerHost>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<ABI::Windows::System::AppUriHandlerHost*> __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::System::IAppUriHandlerHost*>
+//#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::System::IAppUriHandlerHost*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CSystem__CUser_USE
@@ -1568,6 +1755,38 @@ typedef IVector<ABI::Windows::System::AppResourceGroupInfo*> __FIVector_1_Window
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("4a226614-2197-526a-a9ff-03025d18e322"))
+IVector<ABI::Windows::System::AppUriHandlerHost*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::System::AppUriHandlerHost*, ABI::Windows::System::IAppUriHandlerHost*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.System.AppUriHandlerHost>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVector<ABI::Windows::System::AppUriHandlerHost*> __FIVector_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>
+//#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 namespace ABI {
     namespace Windows {
@@ -1774,6 +1993,70 @@ typedef IAsyncOperation<__FIVector_1_Windows__CSystem__CAppDiagnosticInfo*> __FI
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("d725228c-1dcd-5748-a84a-e5b03c41e397"))
+IAsyncOperationCompletedHandler<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> : IAsyncOperationCompletedHandler_impl<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVector`1<Windows.System.AppUriHandlerHost>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>*>
+//#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#define DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("a87e4877-f690-5883-b2bd-9e3c2ab66413"))
+IAsyncOperation<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> : IAsyncOperation_impl<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVector`1<Windows.System.AppUriHandlerHost>>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<__FIVector_1_Windows__CSystem__CAppUriHandlerHost*> __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t;
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>*>
+//#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::System::IAppUriHandlerHost*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 namespace ABI {
     namespace Windows {
@@ -4432,6 +4715,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -4701,6 +4985,12 @@ namespace ABI {
 
 
 
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace System {
@@ -4727,6 +5017,23 @@ namespace ABI {
     namespace Windows {
         namespace System {
             class AppResourceGroupStateReport;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class AppUriHandlerRegistration;
+        } /* Windows */
+    } /* System */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            class AppUriHandlerRegistrationManager;
         } /* Windows */
     } /* System */} /* ABI */
 
@@ -4827,6 +5134,7 @@ namespace ABI {
             class UserPicker;
         } /* Windows */
     } /* System */} /* ABI */
+
 
 
 
@@ -6726,6 +7034,223 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupStateReport;
 
 /*
  *
+ * Interface Windows.System.IAppUriHandlerHost
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerHost
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerHost[] = L"Windows.System.IAppUriHandlerHost";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("5D50CAC5-92D2-5409-B56F-7F73E10EA4C3"), exclusiveto, contract] */
+            MIDL_INTERFACE("5D50CAC5-92D2-5409-B56F-7F73E10EA4C3")
+            IAppUriHandlerHost : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
+                    /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                    ) = 0;
+                /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Name(
+                    /* [in] */__RPC__in HSTRING value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppUriHandlerHost=_uuidof(IAppUriHandlerHost);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerHost;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerHostFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerHost
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerHostFactory[] = L"Windows.System.IAppUriHandlerHostFactory";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("257C3C96-CE04-5F98-96BB-3EBD3E9275BB"), exclusiveto, contract] */
+            MIDL_INTERFACE("257C3C96-CE04-5F98-96BB-3EBD3E9275BB")
+            IAppUriHandlerHostFactory : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                    /* [in] */__RPC__in HSTRING name,
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppUriHandlerHost * * value
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppUriHandlerHostFactory=_uuidof(IAppUriHandlerHostFactory);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistration[] = L"Windows.System.IAppUriHandlerRegistration";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("6F73AEB1-4569-5C3F-9BA0-99123EEA32C3"), exclusiveto, contract] */
+            MIDL_INTERFACE("6F73AEB1-4569-5C3F-9BA0-99123EEA32C3")
+            IAppUriHandlerRegistration : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
+                    /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE GetAppAddedHostsAsync(
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * * operation
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE SetAppAddedHostsAsync(
+                    /* [in] */__RPC__in_opt __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * hosts,
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppUriHandlerRegistration=_uuidof(IAppUriHandlerRegistration);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistrationManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistrationManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistrationManager[] = L"Windows.System.IAppUriHandlerRegistrationManager";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("E62C9A52-AC94-5750-AC1B-6CFB6F250263"), exclusiveto, contract] */
+            MIDL_INTERFACE("E62C9A52-AC94-5750-AC1B-6CFB6F250263")
+            IAppUriHandlerRegistrationManager : public IInspectable
+            {
+            public:
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_User(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IUser * * value
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE TryGetRegistration(
+                    /* [in] */__RPC__in HSTRING name,
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppUriHandlerRegistration * * result
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppUriHandlerRegistrationManager=_uuidof(IAppUriHandlerRegistrationManager);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistrationManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistrationManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistrationManagerStatics[] = L"Windows.System.IAppUriHandlerRegistrationManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("D5CEDD9F-5729-5B76-A1D4-0285F295C124"), exclusiveto, contract] */
+            MIDL_INTERFACE("D5CEDD9F-5729-5B76-A1D4-0285F295C124")
+            IAppUriHandlerRegistrationManagerStatics : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE GetDefault(
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppUriHandlerRegistrationManager * * result
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE GetForUser(
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                    /* [retval, out] */__RPC__deref_out_opt ABI::Windows::System::IAppUriHandlerRegistrationManager * * result
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IAppUriHandlerRegistrationManagerStatics=_uuidof(IAppUriHandlerRegistrationManagerStatics);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.System.IDateTimeSettingsStatics
  *
  * Introduced to Windows.System.SystemManagementContract in version 4.0
@@ -7658,6 +8183,62 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics4;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.System.ILauncherStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Launcher
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ILauncherStatics5[] = L"Windows.System.ILauncherStatics5";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            /* [object, uuid("5B24EF84-D895-5FEA-9153-1AC49AED9BA9"), exclusiveto, contract] */
+            MIDL_INTERFACE("5B24EF84-D895-5FEA-9153-1AC49AED9BA9")
+            ILauncherStatics5 : public IInspectable
+            {
+            public:
+                /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFolderPathAsync(
+                    /* [in] */__RPC__in HSTRING path,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                    ) = 0;
+                /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFolderPathWithOptionsAsync(
+                    /* [in] */__RPC__in HSTRING path,
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IFolderLauncherOptions * options,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                    ) = 0;
+                /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFolderPathForUserAsync(
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                    /* [in] */__RPC__in HSTRING path,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                    ) = 0;
+                /* [overload] */virtual HRESULT STDMETHODCALLTYPE LaunchFolderPathWithOptionsForUserAsync(
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IUser * user,
+                    /* [in] */__RPC__in HSTRING path,
+                    /* [in] */__RPC__in_opt ABI::Windows::System::IFolderLauncherOptions * options,
+                    /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_ILauncherStatics5=_uuidof(ILauncherStatics5);
+            
+        } /* Windows */
+    } /* System */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics5;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -9296,6 +9877,83 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.AppUriHandlerHost
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerHost ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerHost_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerHost_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerHost[] = L"Windows.System.AppUriHandlerHost";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.AppUriHandlerRegistration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerRegistration ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerRegistration_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerRegistration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerRegistration[] = L"Windows.System.AppUriHandlerRegistration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.AppUriHandlerRegistrationManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.IAppUriHandlerRegistrationManagerStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerRegistrationManager ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerRegistrationManager_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerRegistrationManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerRegistrationManager[] = L"Windows.System.AppUriHandlerRegistrationManager";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.DateTimeSettings
  *
  * Introduced to Windows.System.SystemManagementContract in version 4.0
@@ -9433,6 +10091,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.System.IFolderLauncherOptions ** Default Interface **
  *    Windows.System.ILauncherViewOptions
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -9476,6 +10136,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.System.ILaunchUriResult ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -9494,10 +10156,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -9521,11 +10186,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
- *    Windows.System.ILauncherOptions ** Default Interface **
- *    Windows.System.ILauncherViewOptions
  *    Windows.System.ILauncherOptions2
+ *    Windows.System.ILauncherOptions ** Default Interface **
  *    Windows.System.ILauncherOptions3
  *    Windows.System.ILauncherOptions4
+ *    Windows.System.ILauncherViewOptions
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -9711,6 +10378,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.System.IRemoteLauncherStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
  */
@@ -9734,6 +10403,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.IRemoteLauncherOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -10108,6 +10779,36 @@ typedef interface __x_ABI_CWindows_CSystem_CIAppResourceGroupStateReport __x_ABI
 
 #endif // ____x_ABI_CWindows_CSystem_CIAppResourceGroupStateReport_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppUriHandlerHost __x_ABI_CWindows_CSystem_CIAppUriHandlerHost;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics;
+
+#endif // ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics __x_ABI_CWindows_CSystem_CIDateTimeSettingsStatics;
@@ -10215,6 +10916,12 @@ typedef interface __x_ABI_CWindows_CSystem_CILauncherStatics3 __x_ABI_CWindows_C
 typedef interface __x_ABI_CWindows_CSystem_CILauncherStatics4 __x_ABI_CWindows_CSystem_CILauncherStatics4;
 
 #endif // ____x_ABI_CWindows_CSystem_CILauncherStatics4_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CILauncherStatics5 __x_ABI_CWindows_CSystem_CILauncherStatics5;
+
+#endif // ____x_ABI_CWindows_CSystem_CILauncherStatics5_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CILauncherUIOptions_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CILauncherUIOptions_FWD_DEFINED__
@@ -10868,6 +11575,168 @@ interface __FIIterable_1_Windows__CSystem__CAppResourceGroupInfo
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIIterator_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIIterator_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_Windows__CSystem__CAppUriHandlerHost __FIIterator_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef struct __FIIterator_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIIterator_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_Windows__CSystem__CAppUriHandlerHost_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIIterable_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIIterable_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_Windows__CSystem__CAppUriHandlerHost __FIIterable_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef  struct __FIIterable_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CSystem__CAppUriHandlerHost **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIIterable_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_Windows__CSystem__CAppUriHandlerHost_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIIterator_1_Windows__CSystem__CUser_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CSystem__CUser_INTERFACE_DEFINED__
@@ -11361,6 +12230,117 @@ interface __FIVectorView_1_Windows__CSystem__CAppResourceGroupInfo
 #endif // ____FIVectorView_1_Windows__CSystem__CAppResourceGroupInfo_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef struct __FIVectorView_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [in] */ __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -11903,6 +12883,149 @@ interface __FIVector_1_Windows__CSystem__CAppResourceGroupInfo
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x50000
 
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIVector_1_Windows__CSystem__CAppUriHandlerHost __FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef struct __FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CSystem__CAppUriHandlerHost **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [in] */ __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIVector_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetView(This,view)	\
+    ( (This)->lpVtbl -> GetView(This,view) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_SetAt(This,index,item)	\
+    ( (This)->lpVtbl -> SetAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_InsertAt(This,index,item)	\
+    ( (This)->lpVtbl -> InsertAt(This,index,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_RemoveAt(This,index)	\
+    ( (This)->lpVtbl -> RemoveAt(This,index) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_Append(This,item)	\
+    ( (This)->lpVtbl -> Append(This,item) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_RemoveAtEnd(This)	\
+    ( (This)->lpVtbl -> RemoveAtEnd(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_Clear(This)	\
+    ( (This)->lpVtbl -> Clear(This) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#define __FIVector_1_Windows__CSystem__CAppUriHandlerHost_ReplaceAll(This,count,value)	\
+    ( (This)->lpVtbl -> ReplaceAll(This,count,value) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__)
 #define ____FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_INTERFACE_DEFINED__
@@ -12223,6 +13346,121 @@ interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo
 #endif // ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef struct __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost;
+
+typedef struct __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * This, /* [retval][out] */ __RPC__out __FIVector_1_Windows__CSystem__CAppUriHandlerHost * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl;
+
+interface __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost
+{
+    CONST_VTBL struct __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHostVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x60000
@@ -16941,6 +18179,7 @@ typedef enum __x_ABI_CWindows_CUI_CViewManagement_CViewSizePreference __x_ABI_CW
 
 
 
+
 typedef enum __x_ABI_CWindows_CSystem_CAppDiagnosticInfoWatcherStatus __x_ABI_CWindows_CSystem_CAppDiagnosticInfoWatcherStatus;
 
 
@@ -17005,6 +18244,16 @@ typedef enum __x_ABI_CWindows_CSystem_CVirtualKey __x_ABI_CWindows_CSystem_CVirt
 
 
 typedef enum __x_ABI_CWindows_CSystem_CVirtualKeyModifiers __x_ABI_CWindows_CSystem_CVirtualKeyModifiers;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -20180,6 +21429,517 @@ EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppResourceGroupStateReport;
 
 /*
  *
+ * Interface Windows.System.IAppUriHandlerHost
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerHost
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerHost[] = L"Windows.System.IAppUriHandlerHost";
+/* [object, uuid("5D50CAC5-92D2-5409-B56F-7F73E10EA4C3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppUriHandlerHostVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Name )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppUriHandlerHostVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppUriHandlerHost
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppUriHandlerHostVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_get_Name(This,value) \
+    ( (This)->lpVtbl->get_Name(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHost_put_Name(This,value) \
+    ( (This)->lpVtbl->put_Name(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerHost;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHost_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerHostFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerHost
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerHostFactory[] = L"Windows.System.IAppUriHandlerHostFactory";
+/* [object, uuid("257C3C96-CE04-5F98-96BB-3EBD3E9275BB"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory * This,
+        /* [in] */__RPC__in HSTRING name,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerHost * * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactoryVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactoryVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_CreateInstance(This,name,value) \
+    ( (This)->lpVtbl->CreateInstance(This,name,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerHostFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistration
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistration[] = L"Windows.System.IAppUriHandlerRegistration";
+/* [object, uuid("6F73AEB1-4569-5C3F-9BA0-99123EEA32C3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetAppAddedHostsAsync )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *SetAppAddedHostsAsync )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_Windows__CSystem__CAppUriHandlerHost * hosts,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_get_Name(This,value) \
+    ( (This)->lpVtbl->get_Name(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_get_User(This,value) \
+    ( (This)->lpVtbl->get_User(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_GetAppAddedHostsAsync(This,operation) \
+    ( (This)->lpVtbl->GetAppAddedHostsAsync(This,operation) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_SetAppAddedHostsAsync(This,hosts,operation) \
+    ( (This)->lpVtbl->SetAppAddedHostsAsync(This,hosts,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistrationManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistrationManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistrationManager[] = L"Windows.System.IAppUriHandlerRegistrationManager";
+/* [object, uuid("E62C9A52-AC94-5750-AC1B-6CFB6F250263"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_User )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIUser * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryGetRegistration )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * This,
+        /* [in] */__RPC__in HSTRING name,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistration * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_get_User(This,value) \
+    ( (This)->lpVtbl->get_User(This,value) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_TryGetRegistration(This,name,result) \
+    ( (This)->lpVtbl->TryGetRegistration(This,name,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.System.IAppUriHandlerRegistrationManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.AppUriHandlerRegistrationManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IAppUriHandlerRegistrationManagerStatics[] = L"Windows.System.IAppUriHandlerRegistrationManagerStatics";
+/* [object, uuid("D5CEDD9F-5729-5B76-A1D4-0285F295C124"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDefault )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetForUser )(
+        __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManager * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_GetDefault(This,result) \
+    ( (This)->lpVtbl->GetDefault(This,result) )
+
+#define __x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_GetForUser(This,user,result) \
+    ( (This)->lpVtbl->GetForUser(This,user,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIAppUriHandlerRegistrationManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.System.IDateTimeSettingsStatics
  *
  * Introduced to Windows.System.SystemManagementContract in version 4.0
@@ -22330,6 +24090,128 @@ interface __x_ABI_CWindows_CSystem_CILauncherStatics4
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics4;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics4_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.System.ILauncherStatics5
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.System.Launcher
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_ILauncherStatics5[] = L"Windows.System.ILauncherStatics5";
+/* [object, uuid("5B24EF84-D895-5FEA-9153-1AC49AED9BA9"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CSystem_CILauncherStatics5Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [overload] */HRESULT ( STDMETHODCALLTYPE *LaunchFolderPathAsync )(
+        __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+        /* [in] */__RPC__in HSTRING path,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *LaunchFolderPathWithOptionsAsync )(
+        __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+        /* [in] */__RPC__in HSTRING path,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIFolderLauncherOptions * options,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *LaunchFolderPathForUserAsync )(
+        __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING path,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    /* [overload] */HRESULT ( STDMETHODCALLTYPE *LaunchFolderPathWithOptionsForUserAsync )(
+        __x_ABI_CWindows_CSystem_CILauncherStatics5 * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIUser * user,
+        /* [in] */__RPC__in HSTRING path,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSystem_CIFolderLauncherOptions * options,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CSystem_CILauncherStatics5Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CILauncherStatics5
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CILauncherStatics5Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_LaunchFolderPathAsync(This,path,operation) \
+    ( (This)->lpVtbl->LaunchFolderPathAsync(This,path,operation) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_LaunchFolderPathWithOptionsAsync(This,path,options,operation) \
+    ( (This)->lpVtbl->LaunchFolderPathWithOptionsAsync(This,path,options,operation) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_LaunchFolderPathForUserAsync(This,user,path,operation) \
+    ( (This)->lpVtbl->LaunchFolderPathForUserAsync(This,user,path,operation) )
+
+#define __x_ABI_CWindows_CSystem_CILauncherStatics5_LaunchFolderPathWithOptionsForUserAsync(This,user,path,options,operation) \
+    ( (This)->lpVtbl->LaunchFolderPathWithOptionsForUserAsync(This,user,path,options,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CILauncherStatics5;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CILauncherStatics5_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -25710,6 +27592,83 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.System.AppUriHandlerHost
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerHost ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerHost_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerHost_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerHost[] = L"Windows.System.AppUriHandlerHost";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.AppUriHandlerRegistration
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerRegistration ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerRegistration_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerRegistration_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerRegistration[] = L"Windows.System.AppUriHandlerRegistration";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.System.AppUriHandlerRegistrationManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.IAppUriHandlerRegistrationManagerStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.System.IAppUriHandlerRegistrationManager ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_System_AppUriHandlerRegistrationManager_DEFINED
+#define RUNTIMECLASS_Windows_System_AppUriHandlerRegistrationManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_System_AppUriHandlerRegistrationManager[] = L"Windows.System.AppUriHandlerRegistrationManager";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.System.DateTimeSettings
  *
  * Introduced to Windows.System.SystemManagementContract in version 4.0
@@ -25847,6 +27806,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.System.IFolderLauncherOptions ** Default Interface **
  *    Windows.System.ILauncherViewOptions
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
  */
@@ -25890,6 +27851,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.System.ILaunchUriResult ** Default Interface **
  *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
  */
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -25908,10 +27871,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
@@ -25935,11 +27901,13 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
- *    Windows.System.ILauncherOptions ** Default Interface **
- *    Windows.System.ILauncherViewOptions
  *    Windows.System.ILauncherOptions2
+ *    Windows.System.ILauncherOptions ** Default Interface **
  *    Windows.System.ILauncherOptions3
  *    Windows.System.ILauncherOptions4
+ *    Windows.System.ILauncherViewOptions
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -26125,6 +28093,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.System.IRemoteLauncherStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
  * Class Marshaling Behavior:  Standard - Class marshals using the standard marshaler
  *
  */
@@ -26148,6 +28118,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.System.IRemoteLauncherOptions ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

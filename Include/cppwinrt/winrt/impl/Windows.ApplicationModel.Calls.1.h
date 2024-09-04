@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -245,6 +245,16 @@ struct WINRT_EBO IVoipCallCoordinator3 :
     IVoipCallCoordinator3(std::nullptr_t = nullptr) noexcept {}
     using impl::consume_t<IVoipCallCoordinator3, Windows::ApplicationModel::Calls::IVoipCallCoordinator>::RequestNewIncomingCall;
     using impl::consume_t<IVoipCallCoordinator3, Windows::ApplicationModel::Calls::IVoipCallCoordinator3>::RequestNewIncomingCall;
+};
+
+struct WINRT_EBO IVoipCallCoordinator4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IVoipCallCoordinator4>,
+    impl::require<IVoipCallCoordinator4, Windows::ApplicationModel::Calls::IVoipCallCoordinator>
+{
+    IVoipCallCoordinator4(std::nullptr_t = nullptr) noexcept {}
+    using impl::consume_t<IVoipCallCoordinator4, Windows::ApplicationModel::Calls::IVoipCallCoordinator>::ReserveCallResourcesAsync;
+    using impl::consume_t<IVoipCallCoordinator4, Windows::ApplicationModel::Calls::IVoipCallCoordinator4>::ReserveCallResourcesAsync;
 };
 
 struct WINRT_EBO IVoipCallCoordinatorStatics :

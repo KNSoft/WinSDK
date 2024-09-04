@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -158,6 +158,41 @@ struct WINRT_EBO IAppResourceGroupStateReport :
     IAppResourceGroupStateReport(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IAppUriHandlerHost :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUriHandlerHost>
+{
+    IAppUriHandlerHost(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppUriHandlerHostFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUriHandlerHostFactory>
+{
+    IAppUriHandlerHostFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppUriHandlerRegistration :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUriHandlerRegistration>
+{
+    IAppUriHandlerRegistration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppUriHandlerRegistrationManager :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUriHandlerRegistrationManager>
+{
+    IAppUriHandlerRegistrationManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppUriHandlerRegistrationManagerStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUriHandlerRegistrationManagerStatics>
+{
+    IAppUriHandlerRegistrationManagerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IDateTimeSettingsStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<IDateTimeSettingsStatics>
@@ -282,6 +317,13 @@ struct WINRT_EBO ILauncherStatics4 :
     impl::consume_t<ILauncherStatics4>
 {
     ILauncherStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO ILauncherStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ILauncherStatics5>
+{
+    ILauncherStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO ILauncherUIOptions :

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -254,34 +254,34 @@ template <> struct name<Windows::Media::SpeechRecognition::SpeechRecognitionCons
 template <> struct name<Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus>{ static constexpr auto & value{ L"Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus" }; };
 template <> struct name<Windows::Media::SpeechRecognition::SpeechRecognitionScenario>{ static constexpr auto & value{ L"Windows.Media.SpeechRecognition.SpeechRecognitionScenario" }; };
 template <> struct name<Windows::Media::SpeechRecognition::SpeechRecognizerState>{ static constexpr auto & value{ L"Windows.Media.SpeechRecognition.SpeechRecognizerState" }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs>{ static constexpr GUID value{ 0xE3D069BB,0xE30C,0x5E18,{ 0x42,0x4B,0x7F,0xBE,0x81,0xF8,0xFB,0xD0 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs>{ static constexpr GUID value{ 0x19091E1E,0x6E7E,0x5A46,{ 0x40,0xFB,0x76,0x59,0x4F,0x78,0x65,0x04 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>{ static constexpr GUID value{ 0x6A213C04,0x6614,0x49F8,{ 0x99,0xA2,0xB5,0xE9,0xB3,0xA0,0x85,0xC8 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult>{ static constexpr GUID value{ 0x407E6C5D,0x6AC7,0x4DA4,{ 0x9C,0xC1,0x2F,0xCE,0x32,0xCF,0x74,0x89 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>{ static constexpr GUID value{ 0x79AC1628,0x4D68,0x43C4,{ 0x89,0x11,0x40,0xDC,0x41,0x01,0xB5,0x5B } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint>{ static constexpr GUID value{ 0xB5031A8F,0x85CA,0x4FA4,{ 0xB1,0x1A,0x47,0x4F,0xC4,0x1B,0x38,0x35 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory>{ static constexpr GUID value{ 0x3DA770EB,0xC479,0x4C27,{ 0x9F,0x19,0x89,0x97,0x4E,0xF3,0x92,0xD1 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis>{ static constexpr GUID value{ 0x7A7B25B0,0x99C5,0x4F7D,{ 0xBF,0x84,0x10,0xAA,0x13,0x02,0xB6,0x34 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs>{ static constexpr GUID value{ 0x55161A7A,0x8023,0x5866,{ 0x41,0x1D,0x12,0x13,0xBB,0x27,0x14,0x76 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint>{ static constexpr GUID value{ 0x09C487E9,0xE4AD,0x4526,{ 0x81,0xF2,0x49,0x46,0xFB,0x48,0x1D,0x98 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory>{ static constexpr GUID value{ 0x40F3CDC7,0x562A,0x426A,{ 0x9F,0x3B,0x3B,0x4E,0x28,0x2B,0xE1,0xD5 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs>{ static constexpr GUID value{ 0x4FE24105,0x8C3A,0x4C7E,{ 0x8D,0x0A,0x5B,0xD4,0xF5,0xB1,0x4A,0xD8 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionResult>{ static constexpr GUID value{ 0x4E303157,0x034E,0x4652,{ 0x85,0x7E,0xD0,0x45,0x4C,0xC4,0xBE,0xEC } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionResult2>{ static constexpr GUID value{ 0xAF7ED1BA,0x451B,0x4166,{ 0xA0,0xC1,0x1F,0xFE,0x84,0x03,0x2D,0x03 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation>{ static constexpr GUID value{ 0xAAE1DA9B,0x7E32,0x4C1F,{ 0x89,0xFE,0x0C,0x65,0xF4,0x86,0xF5,0x2E } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint>{ static constexpr GUID value{ 0xBF6FDF19,0x825D,0x4E69,{ 0xA6,0x81,0x36,0xE4,0x8C,0xF1,0xC9,0x3E } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory>{ static constexpr GUID value{ 0x6E6863DF,0xEC05,0x47D7,{ 0xA5,0xDF,0x56,0xA3,0x43,0x1E,0x58,0xD2 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint>{ static constexpr GUID value{ 0xF2791C2B,0x1EF4,0x4AE7,{ 0x9D,0x77,0xB6,0xFF,0x10,0xB8,0xA3,0xC2 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizer>{ static constexpr GUID value{ 0x0BC3C9CB,0xC26A,0x40F2,{ 0xAE,0xB5,0x80,0x96,0xB2,0xE4,0x80,0x73 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizer2>{ static constexpr GUID value{ 0x63C9BAF1,0x91E3,0x4EA4,{ 0x86,0xA1,0x7C,0x38,0x67,0xD0,0x84,0xA6 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerFactory>{ static constexpr GUID value{ 0x60C488DD,0x7FB8,0x4033,{ 0xAC,0x70,0xD0,0x46,0xF6,0x48,0x18,0xE1 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs>{ static constexpr GUID value{ 0x563D4F09,0xBA03,0x4BAD,{ 0xAD,0x81,0xDD,0xC6,0xC4,0xDA,0xB0,0xC3 } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics>{ static constexpr GUID value{ 0x87A35EAC,0xA7DC,0x4B0B,{ 0xBC,0xC9,0x24,0xF4,0x7C,0x0B,0x7E,0xBF } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics2>{ static constexpr GUID value{ 0x1D1B0D95,0x7565,0x4EF9,{ 0xA2,0xF3,0xBA,0x15,0x16,0x2A,0x96,0xCF } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts>{ static constexpr GUID value{ 0x2EF76FCA,0x6A3C,0x4DCA,{ 0xA1,0x53,0xDF,0x1B,0xC8,0x8A,0x79,0xAF } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>{ static constexpr GUID value{ 0x7888D641,0xB92B,0x44BA,{ 0xA2,0x5F,0xD1,0x86,0x46,0x30,0x64,0x1F } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::IVoiceCommandManager>{ static constexpr GUID value{ 0xAA3A8DD5,0xB6E7,0x4EE2,{ 0xBA,0xA9,0xDD,0x6B,0xAC,0xED,0x0A,0x2B } }; };
-template <> struct guid<Windows::Media::SpeechRecognition::IVoiceCommandSet>{ static constexpr GUID value{ 0x0BEDDA75,0x46E6,0x4B11,{ 0xA0,0x88,0x5C,0x68,0x63,0x28,0x99,0xB5 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs>{ static constexpr guid value{ 0xE3D069BB,0xE30C,0x5E18,{ 0x42,0x4B,0x7F,0xBE,0x81,0xF8,0xFB,0xD0 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs>{ static constexpr guid value{ 0x19091E1E,0x6E7E,0x5A46,{ 0x40,0xFB,0x76,0x59,0x4F,0x78,0x65,0x04 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>{ static constexpr guid value{ 0x6A213C04,0x6614,0x49F8,{ 0x99,0xA2,0xB5,0xE9,0xB3,0xA0,0x85,0xC8 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult>{ static constexpr guid value{ 0x407E6C5D,0x6AC7,0x4DA4,{ 0x9C,0xC1,0x2F,0xCE,0x32,0xCF,0x74,0x89 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>{ static constexpr guid value{ 0x79AC1628,0x4D68,0x43C4,{ 0x89,0x11,0x40,0xDC,0x41,0x01,0xB5,0x5B } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint>{ static constexpr guid value{ 0xB5031A8F,0x85CA,0x4FA4,{ 0xB1,0x1A,0x47,0x4F,0xC4,0x1B,0x38,0x35 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory>{ static constexpr guid value{ 0x3DA770EB,0xC479,0x4C27,{ 0x9F,0x19,0x89,0x97,0x4E,0xF3,0x92,0xD1 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis>{ static constexpr guid value{ 0x7A7B25B0,0x99C5,0x4F7D,{ 0xBF,0x84,0x10,0xAA,0x13,0x02,0xB6,0x34 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs>{ static constexpr guid value{ 0x55161A7A,0x8023,0x5866,{ 0x41,0x1D,0x12,0x13,0xBB,0x27,0x14,0x76 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint>{ static constexpr guid value{ 0x09C487E9,0xE4AD,0x4526,{ 0x81,0xF2,0x49,0x46,0xFB,0x48,0x1D,0x98 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory>{ static constexpr guid value{ 0x40F3CDC7,0x562A,0x426A,{ 0x9F,0x3B,0x3B,0x4E,0x28,0x2B,0xE1,0xD5 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs>{ static constexpr guid value{ 0x4FE24105,0x8C3A,0x4C7E,{ 0x8D,0x0A,0x5B,0xD4,0xF5,0xB1,0x4A,0xD8 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionResult>{ static constexpr guid value{ 0x4E303157,0x034E,0x4652,{ 0x85,0x7E,0xD0,0x45,0x4C,0xC4,0xBE,0xEC } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionResult2>{ static constexpr guid value{ 0xAF7ED1BA,0x451B,0x4166,{ 0xA0,0xC1,0x1F,0xFE,0x84,0x03,0x2D,0x03 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation>{ static constexpr guid value{ 0xAAE1DA9B,0x7E32,0x4C1F,{ 0x89,0xFE,0x0C,0x65,0xF4,0x86,0xF5,0x2E } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint>{ static constexpr guid value{ 0xBF6FDF19,0x825D,0x4E69,{ 0xA6,0x81,0x36,0xE4,0x8C,0xF1,0xC9,0x3E } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory>{ static constexpr guid value{ 0x6E6863DF,0xEC05,0x47D7,{ 0xA5,0xDF,0x56,0xA3,0x43,0x1E,0x58,0xD2 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint>{ static constexpr guid value{ 0xF2791C2B,0x1EF4,0x4AE7,{ 0x9D,0x77,0xB6,0xFF,0x10,0xB8,0xA3,0xC2 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizer>{ static constexpr guid value{ 0x0BC3C9CB,0xC26A,0x40F2,{ 0xAE,0xB5,0x80,0x96,0xB2,0xE4,0x80,0x73 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizer2>{ static constexpr guid value{ 0x63C9BAF1,0x91E3,0x4EA4,{ 0x86,0xA1,0x7C,0x38,0x67,0xD0,0x84,0xA6 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerFactory>{ static constexpr guid value{ 0x60C488DD,0x7FB8,0x4033,{ 0xAC,0x70,0xD0,0x46,0xF6,0x48,0x18,0xE1 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs>{ static constexpr guid value{ 0x563D4F09,0xBA03,0x4BAD,{ 0xAD,0x81,0xDD,0xC6,0xC4,0xDA,0xB0,0xC3 } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics>{ static constexpr guid value{ 0x87A35EAC,0xA7DC,0x4B0B,{ 0xBC,0xC9,0x24,0xF4,0x7C,0x0B,0x7E,0xBF } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics2>{ static constexpr guid value{ 0x1D1B0D95,0x7565,0x4EF9,{ 0xA2,0xF3,0xBA,0x15,0x16,0x2A,0x96,0xCF } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts>{ static constexpr guid value{ 0x2EF76FCA,0x6A3C,0x4DCA,{ 0xA1,0x53,0xDF,0x1B,0xC8,0x8A,0x79,0xAF } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>{ static constexpr guid value{ 0x7888D641,0xB92B,0x44BA,{ 0xA2,0x5F,0xD1,0x86,0x46,0x30,0x64,0x1F } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::IVoiceCommandManager>{ static constexpr guid value{ 0xAA3A8DD5,0xB6E7,0x4EE2,{ 0xBA,0xA9,0xDD,0x6B,0xAC,0xED,0x0A,0x2B } }; };
+template <> struct guid_storage<Windows::Media::SpeechRecognition::IVoiceCommandSet>{ static constexpr guid value{ 0x0BEDDA75,0x46E6,0x4B11,{ 0xA0,0x88,0x5C,0x68,0x63,0x28,0x99,0xB5 } }; };
 template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs>{ using type = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs; };
 template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs>{ using type = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs; };
 template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession>{ using type = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession; };
@@ -300,6 +300,205 @@ template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechRe
 template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts>{ using type = Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts; };
 template <> struct default_interface<Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions>{ using type = Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions; };
 template <> struct default_interface<Windows::Media::SpeechRecognition::VoiceCommandSet>{ using type = Windows::Media::SpeechRecognition::IVoiceCommandSet; };
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Result(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartWithModeAsync(Windows::Media::SpeechRecognition::SpeechContinuousRecognitionMode mode, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CancelAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL PauseAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Resume() noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* value, winrt::event_token* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ResultGenerated(void* value, winrt::event_token* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ResultGenerated(winrt::event_token value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Type(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GrammarFile(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* file, void** constraint) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTag(void* file, void* tag, void** constraint) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Hypothesis(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Commands(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* commands, void** constraint) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTag(void* commands, void* tag, void** constraint) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Problem(Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Confidence(Windows::Media::SpeechRecognition::SpeechRecognitionConfidence* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SemanticInterpretation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAlternates(uint32_t maxAlternates, void** alternates) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Constraint(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RulePath(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RawConfidence(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PhraseStartTime(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhraseDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Scenario(Windows::Media::SpeechRecognition::SpeechRecognitionScenario* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TopicHint(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, void* topicHint, void** constraint) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, void* topicHint, void* tag, void** constraint) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentLanguage(void** language) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Constraints(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timeouts(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UIOptions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CompileConstraintsAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RecognizeAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RecognizeWithUIAsync(void** asyncOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RecognitionQualityDegrading(void* speechRecognitionQualityDegradingHandler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RecognitionQualityDegrading(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StateChanged(void* stateChangedHandler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StateChanged(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizer2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContinuousRecognitionSession(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::Media::SpeechRecognition::SpeechRecognizerState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StopRecognitionAsync(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_HypothesisGenerated(void* value, winrt::event_token* returnValue) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_HypothesisGenerated(winrt::event_token value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* language, void** recognizer) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_State(Windows::Media::SpeechRecognition::SpeechRecognizerState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SystemSpeechLanguage(void** language) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedTopicLanguages(void** languages) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedGrammarLanguages(void** languages) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TrySetSystemSpeechLanguageAsync(void* speechLanguage, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InitialSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EndSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BabbleTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BabbleTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExampleText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExampleText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AudiblePrompt(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AudiblePrompt(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsReadBackEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsReadBackEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShowConfirmation(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ShowConfirmation(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::IVoiceCommandManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InstallCommandSetsFromStorageFileAsync(void* file, void** installAction) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstalledCommandSets(void** voiceCommandSets) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Media::SpeechRecognition::IVoiceCommandSet>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPhraseListAsync(void* phraseListName, void* phraseList, void** updateAction) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_SpeechRecognition_ISpeechContinuousRecognitionCompletedEventArgs
@@ -326,14 +525,14 @@ struct consume_Windows_Media_SpeechRecognition_ISpeechContinuousRecognitionSessi
     Windows::Foundation::IAsyncAction CancelAsync() const;
     Windows::Foundation::IAsyncAction PauseAsync() const;
     void Resume() const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> const& value) const;
-    using Completed_revoker = event_revoker<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> const& value) const;
+    using Completed_revoker = impl::event_revoker<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession, &impl::abi_t<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> const& value) const;
-    void Completed(event_token const& value) const;
-    event_token ResultGenerated(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> const& value) const;
-    using ResultGenerated_revoker = event_revoker<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>;
+    void Completed(winrt::event_token const& value) const noexcept;
+    winrt::event_token ResultGenerated(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> const& value) const;
+    using ResultGenerated_revoker = impl::event_revoker<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession, &impl::abi_t<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>::remove_ResultGenerated>;
     ResultGenerated_revoker ResultGenerated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> const& value) const;
-    void ResultGenerated(event_token const& value) const;
+    void ResultGenerated(winrt::event_token const& value) const noexcept;
 };
 template <> struct consume<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession> { template <typename D> using type = consume_Windows_Media_SpeechRecognition_ISpeechContinuousRecognitionSession<D>; };
 
@@ -469,14 +668,14 @@ struct consume_Windows_Media_SpeechRecognition_ISpeechRecognizer
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult> CompileConstraintsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionResult> RecognizeAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionResult> RecognizeWithUIAsync() const;
-    event_token RecognitionQualityDegrading(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> const& speechRecognitionQualityDegradingHandler) const;
-    using RecognitionQualityDegrading_revoker = event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer>;
+    winrt::event_token RecognitionQualityDegrading(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> const& speechRecognitionQualityDegradingHandler) const;
+    using RecognitionQualityDegrading_revoker = impl::event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer, &impl::abi_t<Windows::Media::SpeechRecognition::ISpeechRecognizer>::remove_RecognitionQualityDegrading>;
     RecognitionQualityDegrading_revoker RecognitionQualityDegrading(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> const& speechRecognitionQualityDegradingHandler) const;
-    void RecognitionQualityDegrading(event_token const& cookie) const;
-    event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> const& stateChangedHandler) const;
-    using StateChanged_revoker = event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer>;
+    void RecognitionQualityDegrading(winrt::event_token const& cookie) const noexcept;
+    winrt::event_token StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> const& stateChangedHandler) const;
+    using StateChanged_revoker = impl::event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer, &impl::abi_t<Windows::Media::SpeechRecognition::ISpeechRecognizer>::remove_StateChanged>;
     StateChanged_revoker StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> const& stateChangedHandler) const;
-    void StateChanged(event_token const& cookie) const;
+    void StateChanged(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::Media::SpeechRecognition::ISpeechRecognizer> { template <typename D> using type = consume_Windows_Media_SpeechRecognition_ISpeechRecognizer<D>; };
 
@@ -486,10 +685,10 @@ struct consume_Windows_Media_SpeechRecognition_ISpeechRecognizer2
     Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession ContinuousRecognitionSession() const;
     Windows::Media::SpeechRecognition::SpeechRecognizerState State() const;
     Windows::Foundation::IAsyncAction StopRecognitionAsync() const;
-    event_token HypothesisGenerated(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> const& value) const;
-    using HypothesisGenerated_revoker = event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer2>;
+    winrt::event_token HypothesisGenerated(Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> const& value) const;
+    using HypothesisGenerated_revoker = impl::event_revoker<Windows::Media::SpeechRecognition::ISpeechRecognizer2, &impl::abi_t<Windows::Media::SpeechRecognition::ISpeechRecognizer2>::remove_HypothesisGenerated>;
     HypothesisGenerated_revoker HypothesisGenerated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> const& value) const;
-    void HypothesisGenerated(event_token const& value) const;
+    void HypothesisGenerated(winrt::event_token const& value) const noexcept;
 };
 template <> struct consume<Windows::Media::SpeechRecognition::ISpeechRecognizer2> { template <typename D> using type = consume_Windows_Media_SpeechRecognition_ISpeechRecognizer2<D>; };
 
@@ -552,217 +751,18 @@ template <> struct consume<Windows::Media::SpeechRecognition::ISpeechRecognizerU
 template <typename D>
 struct consume_Windows_Media_SpeechRecognition_IVoiceCommandManager
 {
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction InstallCommandSetsFromStorageFileAsync(Windows::Storage::StorageFile const& file) const;
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]] Windows::Foundation::Collections::IMapView<hstring, Windows::Media::SpeechRecognition::VoiceCommandSet> InstalledCommandSets() const;
+    Windows::Foundation::IAsyncAction InstallCommandSetsFromStorageFileAsync(Windows::Storage::StorageFile const& file) const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Media::SpeechRecognition::VoiceCommandSet> InstalledCommandSets() const;
 };
 template <> struct consume<Windows::Media::SpeechRecognition::IVoiceCommandManager> { template <typename D> using type = consume_Windows_Media_SpeechRecognition_IVoiceCommandManager<D>; };
 
 template <typename D>
 struct consume_Windows_Media_SpeechRecognition_IVoiceCommandSet
 {
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]] hstring Language() const;
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]] hstring Name() const;
-    [[deprecated("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction SetPhraseListAsync(param::hstring const& phraseListName, param::async_iterable<hstring> const& phraseList) const;
+    hstring Language() const;
+    hstring Name() const;
+    Windows::Foundation::IAsyncAction SetPhraseListAsync(param::hstring const& phraseListName, param::async_iterable<hstring> const& phraseList) const;
 };
 template <> struct consume<Windows::Media::SpeechRecognition::IVoiceCommandSet> { template <typename D> using type = consume_Windows_Media_SpeechRecognition_IVoiceCommandSet<D>; };
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Result(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoStopSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall StartAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall StartWithModeAsync(Windows::Media::SpeechRecognition::SpeechContinuousRecognitionMode mode, void** value) noexcept = 0;
-    virtual HRESULT __stdcall StopAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CancelAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall PauseAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Resume() noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* value, event_token* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token value) noexcept = 0;
-    virtual HRESULT __stdcall add_ResultGenerated(void* value, event_token* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall remove_ResultGenerated(event_token value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Tag(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Type(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GrammarFile(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* file, void** constraint) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTag(void* file, HSTRING tag, void** constraint) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Hypothesis(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Commands(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* commands, void** constraint) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTag(void* commands, HSTRING tag, void** constraint) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Problem(Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Confidence(Windows::Media::SpeechRecognition::SpeechRecognitionConfidence* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SemanticInterpretation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAlternates(uint32_t maxAlternates, void** alternates) noexcept = 0;
-    virtual HRESULT __stdcall get_Constraint(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RulePath(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RawConfidence(double* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PhraseStartTime(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhraseDuration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Scenario(Windows::Media::SpeechRecognition::SpeechRecognitionScenario* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TopicHint(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, HSTRING topicHint, void** constraint) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag, void** constraint) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentLanguage(void** language) noexcept = 0;
-    virtual HRESULT __stdcall get_Constraints(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timeouts(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UIOptions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CompileConstraintsAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall RecognizeAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall RecognizeWithUIAsync(void** asyncOperation) noexcept = 0;
-    virtual HRESULT __stdcall add_RecognitionQualityDegrading(void* speechRecognitionQualityDegradingHandler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_RecognitionQualityDegrading(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall add_StateChanged(void* stateChangedHandler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_StateChanged(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizer2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContinuousRecognitionSession(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::Media::SpeechRecognition::SpeechRecognizerState* value) noexcept = 0;
-    virtual HRESULT __stdcall StopRecognitionAsync(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_HypothesisGenerated(void* value, event_token* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall remove_HypothesisGenerated(event_token value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* language, void** recognizer) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_State(Windows::Media::SpeechRecognition::SpeechRecognizerState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SystemSpeechLanguage(void** language) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedTopicLanguages(void** languages) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedGrammarLanguages(void** languages) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TrySetSystemSpeechLanguageAsync(void* speechLanguage, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InitialSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndSilenceTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EndSilenceTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_BabbleTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BabbleTimeout(Windows::Foundation::TimeSpan value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExampleText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExampleText(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AudiblePrompt(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AudiblePrompt(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsReadBackEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsReadBackEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShowConfirmation(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ShowConfirmation(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::IVoiceCommandManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InstallCommandSetsFromStorageFileAsync(void* file, void** installAction) noexcept = 0;
-    virtual HRESULT __stdcall get_InstalledCommandSets(void** voiceCommandSets) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Media::SpeechRecognition::IVoiceCommandSet>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall SetPhraseListAsync(HSTRING phraseListName, void* phraseList, void** updateAction) noexcept = 0;
-};};
 
 }

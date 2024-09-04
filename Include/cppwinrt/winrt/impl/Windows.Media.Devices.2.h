@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,6 +18,8 @@ struct CallControlEventHandler : Windows::Foundation::IUnknown
     template <typename L> CallControlEventHandler(L lambda);
     template <typename F> CallControlEventHandler(F* function);
     template <typename O, typename M> CallControlEventHandler(O* object, M method);
+    template <typename O, typename M> CallControlEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> CallControlEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Devices::CallControl const& sender) const;
 };
 
@@ -27,6 +29,8 @@ struct DialRequestedEventHandler : Windows::Foundation::IUnknown
     template <typename L> DialRequestedEventHandler(L lambda);
     template <typename F> DialRequestedEventHandler(F* function);
     template <typename O, typename M> DialRequestedEventHandler(O* object, M method);
+    template <typename O, typename M> DialRequestedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> DialRequestedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::DialRequestedEventArgs const& e) const;
 };
 
@@ -36,6 +40,8 @@ struct KeypadPressedEventHandler : Windows::Foundation::IUnknown
     template <typename L> KeypadPressedEventHandler(L lambda);
     template <typename F> KeypadPressedEventHandler(F* function);
     template <typename O, typename M> KeypadPressedEventHandler(O* object, M method);
+    template <typename O, typename M> KeypadPressedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> KeypadPressedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::KeypadPressedEventArgs const& e) const;
 };
 
@@ -45,6 +51,8 @@ struct RedialRequestedEventHandler : Windows::Foundation::IUnknown
     template <typename L> RedialRequestedEventHandler(L lambda);
     template <typename F> RedialRequestedEventHandler(F* function);
     template <typename O, typename M> RedialRequestedEventHandler(O* object, M method);
+    template <typename O, typename M> RedialRequestedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> RedialRequestedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Media::Devices::CallControl const& sender, Windows::Media::Devices::RedialRequestedEventArgs const& e) const;
 };
 
@@ -198,14 +206,14 @@ struct MediaDevice
     static hstring GetVideoCaptureSelector();
     static hstring GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole const& role);
     static hstring GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole const& role);
-    static event_token DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler);
-    using DefaultAudioCaptureDeviceChanged_revoker = factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics>;
+    static winrt::event_token DefaultAudioCaptureDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler);
+    using DefaultAudioCaptureDeviceChanged_revoker = impl::factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics, &impl::abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioCaptureDeviceChanged>;
     static DefaultAudioCaptureDeviceChanged_revoker DefaultAudioCaptureDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> const& handler);
-    static void DefaultAudioCaptureDeviceChanged(event_token const& cookie);
-    static event_token DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler);
-    using DefaultAudioRenderDeviceChanged_revoker = factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics>;
+    static void DefaultAudioCaptureDeviceChanged(winrt::event_token const& cookie);
+    static winrt::event_token DefaultAudioRenderDeviceChanged(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler);
+    using DefaultAudioRenderDeviceChanged_revoker = impl::factory_event_revoker<Windows::Media::Devices::IMediaDeviceStatics, &impl::abi_t<Windows::Media::Devices::IMediaDeviceStatics>::remove_DefaultAudioRenderDeviceChanged>;
     static DefaultAudioRenderDeviceChanged_revoker DefaultAudioRenderDeviceChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> const& handler);
-    static void DefaultAudioRenderDeviceChanged(event_token const& cookie);
+    static void DefaultAudioRenderDeviceChanged(winrt::event_token const& cookie);
 };
 
 struct WINRT_EBO MediaDeviceControl :

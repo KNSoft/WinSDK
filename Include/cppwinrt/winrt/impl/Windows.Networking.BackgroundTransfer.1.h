@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -58,7 +58,7 @@ struct WINRT_EBO IBackgroundDownloaderStaticMethods2 :
     IBackgroundDownloaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundDownloaderUserConsent :
+struct WINRT_EBO IBackgroundDownloaderUserConsent :
     Windows::Foundation::IInspectable,
     impl::consume_t<IBackgroundDownloaderUserConsent>
 {
@@ -185,7 +185,7 @@ struct WINRT_EBO IBackgroundUploaderStaticMethods2 :
     IBackgroundUploaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundUploaderUserConsent :
+struct WINRT_EBO IBackgroundUploaderUserConsent :
     Windows::Foundation::IInspectable,
     impl::consume_t<IBackgroundUploaderUserConsent>
 {
@@ -242,7 +242,7 @@ struct WINRT_EBO IResponseInformation :
     IResponseInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]] IUnconstrainedTransferRequestResult :
+struct WINRT_EBO IUnconstrainedTransferRequestResult :
     Windows::Foundation::IInspectable,
     impl::consume_t<IUnconstrainedTransferRequestResult>
 {

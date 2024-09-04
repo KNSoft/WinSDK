@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -60,9 +60,17 @@ struct SoftwareBitmap;
 
 }
 
+WINRT_EXPORT namespace winrt::Windows::UI {
+
+struct Color;
+
+}
+
 WINRT_EXPORT namespace winrt::Windows::UI::Composition {
 
+struct AnimationPropertyInfo;
 struct Compositor;
+struct ICompositionAnimationBase;
 
 }
 
@@ -436,7 +444,7 @@ enum class TextLineBounds : int32_t
 
 enum class TextReadingOrder : int32_t
 {
-    Default [[deprecated("Consider using UseFlowDirection, which is an improved version of Default. For more info, see MSDN.")]] = 0,
+    Default = 0,
     UseFlowDirection = 0,
     DetectFromContent = 1,
 };
@@ -454,6 +462,13 @@ enum class TextWrapping : int32_t
     NoWrap = 1,
     Wrap = 2,
     WrapWholeWords = 3,
+};
+
+enum class Vector3TransitionComponents : uint32_t
+{
+    X = 0x1,
+    Y = 0x2,
+    Z = 0x4,
 };
 
 enum class VerticalAlignment : int32_t
@@ -485,6 +500,10 @@ struct IBindingFailedEventArgs;
 struct IBringIntoViewOptions;
 struct IBringIntoViewOptions2;
 struct IBringIntoViewRequestedEventArgs;
+struct IBrushTransition;
+struct IBrushTransitionFactory;
+struct IColorPaletteResources;
+struct IColorPaletteResourcesFactory;
 struct ICornerRadiusHelper;
 struct ICornerRadiusHelperStatics;
 struct IDataContextChangedEventArgs;
@@ -497,6 +516,7 @@ struct IDataTemplateStatics2;
 struct IDebugSettings;
 struct IDebugSettings2;
 struct IDebugSettings3;
+struct IDebugSettings4;
 struct IDependencyObject;
 struct IDependencyObject2;
 struct IDependencyObjectCollectionFactory;
@@ -517,6 +537,12 @@ struct IDragUIOverride;
 struct IDropCompletedEventArgs;
 struct IDurationHelper;
 struct IDurationHelperStatics;
+struct IEffectiveViewportChangedEventArgs;
+struct IElementFactory;
+struct IElementFactoryGetArgs;
+struct IElementFactoryGetArgsFactory;
+struct IElementFactoryRecycleArgs;
+struct IElementFactoryRecycleArgsFactory;
 struct IElementSoundPlayer;
 struct IElementSoundPlayerStatics;
 struct IElementSoundPlayerStatics2;
@@ -528,9 +554,11 @@ struct IFrameworkElement2;
 struct IFrameworkElement3;
 struct IFrameworkElement4;
 struct IFrameworkElement6;
+struct IFrameworkElement7;
 struct IFrameworkElementFactory;
 struct IFrameworkElementOverrides;
 struct IFrameworkElementOverrides2;
+struct IFrameworkElementProtected7;
 struct IFrameworkElementStatics;
 struct IFrameworkElementStatics2;
 struct IFrameworkElementStatics4;
@@ -557,6 +585,8 @@ struct IResourceDictionaryFactory;
 struct IRoutedEvent;
 struct IRoutedEventArgs;
 struct IRoutedEventArgsFactory;
+struct IScalarTransition;
+struct IScalarTransitionFactory;
 struct ISetter;
 struct ISetter2;
 struct ISetterBase;
@@ -588,10 +618,12 @@ struct IUIElement4;
 struct IUIElement5;
 struct IUIElement7;
 struct IUIElement8;
+struct IUIElement9;
 struct IUIElementFactory;
 struct IUIElementOverrides;
 struct IUIElementOverrides7;
 struct IUIElementOverrides8;
+struct IUIElementOverrides9;
 struct IUIElementStatics;
 struct IUIElementStatics2;
 struct IUIElementStatics3;
@@ -600,7 +632,10 @@ struct IUIElementStatics5;
 struct IUIElementStatics6;
 struct IUIElementStatics7;
 struct IUIElementStatics8;
+struct IUIElementStatics9;
 struct IUnhandledExceptionEventArgs;
+struct IVector3Transition;
+struct IVector3TransitionFactory;
 struct IVisualState;
 struct IVisualState2;
 struct IVisualStateChangedEventArgs;
@@ -623,6 +658,8 @@ struct ApplicationInitializationCallbackParams;
 struct BindingFailedEventArgs;
 struct BringIntoViewOptions;
 struct BringIntoViewRequestedEventArgs;
+struct BrushTransition;
+struct ColorPaletteResources;
 struct CornerRadiusHelper;
 struct DataContextChangedEventArgs;
 struct DataTemplate;
@@ -640,6 +677,9 @@ struct DragUI;
 struct DragUIOverride;
 struct DropCompletedEventArgs;
 struct DurationHelper;
+struct EffectiveViewportChangedEventArgs;
+struct ElementFactoryGetArgs;
+struct ElementFactoryRecycleArgs;
 struct ElementSoundPlayer;
 struct EventTrigger;
 struct ExceptionRoutedEventArgs;
@@ -656,6 +696,7 @@ struct RectHelper;
 struct ResourceDictionary;
 struct RoutedEvent;
 struct RoutedEventArgs;
+struct ScalarTransition;
 struct Setter;
 struct SetterBase;
 struct SetterBaseCollection;
@@ -672,6 +713,7 @@ struct TriggerBase;
 struct TriggerCollection;
 struct UIElement;
 struct UnhandledExceptionEventArgs;
+struct Vector3Transition;
 struct VisualState;
 struct VisualStateChangedEventArgs;
 struct VisualStateGroup;
@@ -709,6 +751,7 @@ namespace winrt::impl {
 
 template<> struct is_enum_flag<Windows::UI::Xaml::ApplicationHighContrastAdjustment> : std::true_type {};
 template<> struct is_enum_flag<Windows::UI::Xaml::ElementHighContrastAdjustment> : std::true_type {};
+template<> struct is_enum_flag<Windows::UI::Xaml::Vector3TransitionComponents> : std::true_type {};
 template <> struct category<Windows::UI::Xaml::IAdaptiveTrigger>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IAdaptiveTriggerFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IAdaptiveTriggerStatics>{ using type = interface_category; };
@@ -724,6 +767,10 @@ template <> struct category<Windows::UI::Xaml::IBindingFailedEventArgs>{ using t
 template <> struct category<Windows::UI::Xaml::IBringIntoViewOptions>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IBringIntoViewOptions2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IBrushTransition>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IBrushTransitionFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IColorPaletteResources>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IColorPaletteResourcesFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::ICornerRadiusHelper>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDataContextChangedEventArgs>{ using type = interface_category; };
@@ -736,6 +783,7 @@ template <> struct category<Windows::UI::Xaml::IDataTemplateStatics2>{ using typ
 template <> struct category<Windows::UI::Xaml::IDebugSettings>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDebugSettings2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDebugSettings3>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IDebugSettings4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDependencyObject>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDependencyObject2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ using type = interface_category; };
@@ -756,6 +804,12 @@ template <> struct category<Windows::UI::Xaml::IDragUIOverride>{ using type = in
 template <> struct category<Windows::UI::Xaml::IDropCompletedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDurationHelper>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IDurationHelperStatics>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IEffectiveViewportChangedEventArgs>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IElementFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IElementFactoryGetArgs>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IElementFactoryGetArgsFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IElementFactoryRecycleArgs>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IElementFactoryRecycleArgsFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IElementSoundPlayer>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IElementSoundPlayerStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ using type = interface_category; };
@@ -767,9 +821,11 @@ template <> struct category<Windows::UI::Xaml::IFrameworkElement2>{ using type =
 template <> struct category<Windows::UI::Xaml::IFrameworkElement3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElement4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElement6>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IFrameworkElement7>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementOverrides>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementOverrides2>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IFrameworkElementProtected7>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementStatics2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IFrameworkElementStatics4>{ using type = interface_category; };
@@ -796,6 +852,8 @@ template <> struct category<Windows::UI::Xaml::IResourceDictionaryFactory>{ usin
 template <> struct category<Windows::UI::Xaml::IRoutedEvent>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IRoutedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IRoutedEventArgsFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IScalarTransition>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IScalarTransitionFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::ISetter>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::ISetter2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::ISetterBase>{ using type = interface_category; };
@@ -827,10 +885,12 @@ template <> struct category<Windows::UI::Xaml::IUIElement4>{ using type = interf
 template <> struct category<Windows::UI::Xaml::IUIElement5>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElement7>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElement8>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IUIElement9>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementOverrides>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementOverrides7>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementOverrides8>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IUIElementOverrides9>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementStatics2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementStatics3>{ using type = interface_category; };
@@ -839,7 +899,10 @@ template <> struct category<Windows::UI::Xaml::IUIElementStatics5>{ using type =
 template <> struct category<Windows::UI::Xaml::IUIElementStatics6>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementStatics7>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUIElementStatics8>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IUIElementStatics9>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IVector3Transition>{ using type = interface_category; };
+template <> struct category<Windows::UI::Xaml::IVector3TransitionFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IVisualState>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IVisualState2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ using type = interface_category; };
@@ -862,6 +925,8 @@ template <> struct category<Windows::UI::Xaml::ApplicationInitializationCallback
 template <> struct category<Windows::UI::Xaml::BindingFailedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::BringIntoViewOptions>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::BringIntoViewRequestedEventArgs>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::BrushTransition>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::ColorPaletteResources>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::CornerRadiusHelper>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::DataContextChangedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::DataTemplate>{ using type = class_category; };
@@ -879,6 +944,9 @@ template <> struct category<Windows::UI::Xaml::DragUI>{ using type = class_categ
 template <> struct category<Windows::UI::Xaml::DragUIOverride>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::DropCompletedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::DurationHelper>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::EffectiveViewportChangedEventArgs>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::ElementFactoryGetArgs>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::ElementFactoryRecycleArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::ElementSoundPlayer>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::EventTrigger>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::ExceptionRoutedEventArgs>{ using type = class_category; };
@@ -895,6 +963,7 @@ template <> struct category<Windows::UI::Xaml::RectHelper>{ using type = class_c
 template <> struct category<Windows::UI::Xaml::ResourceDictionary>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::RoutedEvent>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::RoutedEventArgs>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::ScalarTransition>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::Setter>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::SetterBase>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::SetterBaseCollection>{ using type = class_category; };
@@ -911,6 +980,7 @@ template <> struct category<Windows::UI::Xaml::TriggerBase>{ using type = class_
 template <> struct category<Windows::UI::Xaml::TriggerCollection>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::UIElement>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::UnhandledExceptionEventArgs>{ using type = class_category; };
+template <> struct category<Windows::UI::Xaml::Vector3Transition>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::VisualState>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::VisualStateChangedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Xaml::VisualStateGroup>{ using type = class_category; };
@@ -948,6 +1018,7 @@ template <> struct category<Windows::UI::Xaml::TextLineBounds>{ using type = enu
 template <> struct category<Windows::UI::Xaml::TextReadingOrder>{ using type = enum_category; };
 template <> struct category<Windows::UI::Xaml::TextTrimming>{ using type = enum_category; };
 template <> struct category<Windows::UI::Xaml::TextWrapping>{ using type = enum_category; };
+template <> struct category<Windows::UI::Xaml::Vector3TransitionComponents>{ using type = enum_category; };
 template <> struct category<Windows::UI::Xaml::VerticalAlignment>{ using type = enum_category; };
 template <> struct category<Windows::UI::Xaml::Visibility>{ using type = enum_category; };
 template <> struct category<Windows::UI::Xaml::CornerRadius>{ using type = struct_category<double,double,double,double>; };
@@ -988,6 +1059,10 @@ template <> struct name<Windows::UI::Xaml::IBindingFailedEventArgs>{ static cons
 template <> struct name<Windows::UI::Xaml::IBringIntoViewOptions>{ static constexpr auto & value{ L"Windows.UI.Xaml.IBringIntoViewOptions" }; };
 template <> struct name<Windows::UI::Xaml::IBringIntoViewOptions2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IBringIntoViewOptions2" }; };
 template <> struct name<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IBringIntoViewRequestedEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::IBrushTransition>{ static constexpr auto & value{ L"Windows.UI.Xaml.IBrushTransition" }; };
+template <> struct name<Windows::UI::Xaml::IBrushTransitionFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IBrushTransitionFactory" }; };
+template <> struct name<Windows::UI::Xaml::IColorPaletteResources>{ static constexpr auto & value{ L"Windows.UI.Xaml.IColorPaletteResources" }; };
+template <> struct name<Windows::UI::Xaml::IColorPaletteResourcesFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IColorPaletteResourcesFactory" }; };
 template <> struct name<Windows::UI::Xaml::ICornerRadiusHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.ICornerRadiusHelper" }; };
 template <> struct name<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.ICornerRadiusHelperStatics" }; };
 template <> struct name<Windows::UI::Xaml::IDataContextChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDataContextChangedEventArgs" }; };
@@ -1000,6 +1075,7 @@ template <> struct name<Windows::UI::Xaml::IDataTemplateStatics2>{ static conste
 template <> struct name<Windows::UI::Xaml::IDebugSettings>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDebugSettings" }; };
 template <> struct name<Windows::UI::Xaml::IDebugSettings2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDebugSettings2" }; };
 template <> struct name<Windows::UI::Xaml::IDebugSettings3>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDebugSettings3" }; };
+template <> struct name<Windows::UI::Xaml::IDebugSettings4>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDebugSettings4" }; };
 template <> struct name<Windows::UI::Xaml::IDependencyObject>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDependencyObject" }; };
 template <> struct name<Windows::UI::Xaml::IDependencyObject2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDependencyObject2" }; };
 template <> struct name<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDependencyObjectCollectionFactory" }; };
@@ -1020,6 +1096,12 @@ template <> struct name<Windows::UI::Xaml::IDragUIOverride>{ static constexpr au
 template <> struct name<Windows::UI::Xaml::IDropCompletedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDropCompletedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::IDurationHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDurationHelper" }; };
 template <> struct name<Windows::UI::Xaml::IDurationHelperStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.IDurationHelperStatics" }; };
+template <> struct name<Windows::UI::Xaml::IEffectiveViewportChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IEffectiveViewportChangedEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::IElementFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementFactory" }; };
+template <> struct name<Windows::UI::Xaml::IElementFactoryGetArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementFactoryGetArgs" }; };
+template <> struct name<Windows::UI::Xaml::IElementFactoryGetArgsFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementFactoryGetArgsFactory" }; };
+template <> struct name<Windows::UI::Xaml::IElementFactoryRecycleArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementFactoryRecycleArgs" }; };
+template <> struct name<Windows::UI::Xaml::IElementFactoryRecycleArgsFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementFactoryRecycleArgsFactory" }; };
 template <> struct name<Windows::UI::Xaml::IElementSoundPlayer>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementSoundPlayer" }; };
 template <> struct name<Windows::UI::Xaml::IElementSoundPlayerStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementSoundPlayerStatics" }; };
 template <> struct name<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IElementSoundPlayerStatics2" }; };
@@ -1031,9 +1113,11 @@ template <> struct name<Windows::UI::Xaml::IFrameworkElement2>{ static constexpr
 template <> struct name<Windows::UI::Xaml::IFrameworkElement3>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElement3" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElement4>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElement4" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElement6>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElement6" }; };
+template <> struct name<Windows::UI::Xaml::IFrameworkElement7>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElement7" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementFactory" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementOverrides>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementOverrides" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementOverrides2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementOverrides2" }; };
+template <> struct name<Windows::UI::Xaml::IFrameworkElementProtected7>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementProtected7" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementStatics" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementStatics2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementStatics2" }; };
 template <> struct name<Windows::UI::Xaml::IFrameworkElementStatics4>{ static constexpr auto & value{ L"Windows.UI.Xaml.IFrameworkElementStatics4" }; };
@@ -1060,6 +1144,8 @@ template <> struct name<Windows::UI::Xaml::IResourceDictionaryFactory>{ static c
 template <> struct name<Windows::UI::Xaml::IRoutedEvent>{ static constexpr auto & value{ L"Windows.UI.Xaml.IRoutedEvent" }; };
 template <> struct name<Windows::UI::Xaml::IRoutedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IRoutedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::IRoutedEventArgsFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IRoutedEventArgsFactory" }; };
+template <> struct name<Windows::UI::Xaml::IScalarTransition>{ static constexpr auto & value{ L"Windows.UI.Xaml.IScalarTransition" }; };
+template <> struct name<Windows::UI::Xaml::IScalarTransitionFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IScalarTransitionFactory" }; };
 template <> struct name<Windows::UI::Xaml::ISetter>{ static constexpr auto & value{ L"Windows.UI.Xaml.ISetter" }; };
 template <> struct name<Windows::UI::Xaml::ISetter2>{ static constexpr auto & value{ L"Windows.UI.Xaml.ISetter2" }; };
 template <> struct name<Windows::UI::Xaml::ISetterBase>{ static constexpr auto & value{ L"Windows.UI.Xaml.ISetterBase" }; };
@@ -1091,10 +1177,12 @@ template <> struct name<Windows::UI::Xaml::IUIElement4>{ static constexpr auto &
 template <> struct name<Windows::UI::Xaml::IUIElement5>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElement5" }; };
 template <> struct name<Windows::UI::Xaml::IUIElement7>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElement7" }; };
 template <> struct name<Windows::UI::Xaml::IUIElement8>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElement8" }; };
+template <> struct name<Windows::UI::Xaml::IUIElement9>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElement9" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementFactory" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementOverrides>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementOverrides" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementOverrides7>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementOverrides7" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementOverrides8>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementOverrides8" }; };
+template <> struct name<Windows::UI::Xaml::IUIElementOverrides9>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementOverrides9" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementStatics>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementStatics2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics2" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementStatics3>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics3" }; };
@@ -1103,7 +1191,10 @@ template <> struct name<Windows::UI::Xaml::IUIElementStatics5>{ static constexpr
 template <> struct name<Windows::UI::Xaml::IUIElementStatics6>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics6" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementStatics7>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics7" }; };
 template <> struct name<Windows::UI::Xaml::IUIElementStatics8>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics8" }; };
+template <> struct name<Windows::UI::Xaml::IUIElementStatics9>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUIElementStatics9" }; };
 template <> struct name<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IUnhandledExceptionEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::IVector3Transition>{ static constexpr auto & value{ L"Windows.UI.Xaml.IVector3Transition" }; };
+template <> struct name<Windows::UI::Xaml::IVector3TransitionFactory>{ static constexpr auto & value{ L"Windows.UI.Xaml.IVector3TransitionFactory" }; };
 template <> struct name<Windows::UI::Xaml::IVisualState>{ static constexpr auto & value{ L"Windows.UI.Xaml.IVisualState" }; };
 template <> struct name<Windows::UI::Xaml::IVisualState2>{ static constexpr auto & value{ L"Windows.UI.Xaml.IVisualState2" }; };
 template <> struct name<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.IVisualStateChangedEventArgs" }; };
@@ -1126,6 +1217,8 @@ template <> struct name<Windows::UI::Xaml::ApplicationInitializationCallbackPara
 template <> struct name<Windows::UI::Xaml::BindingFailedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.BindingFailedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::BringIntoViewOptions>{ static constexpr auto & value{ L"Windows.UI.Xaml.BringIntoViewOptions" }; };
 template <> struct name<Windows::UI::Xaml::BringIntoViewRequestedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.BringIntoViewRequestedEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::BrushTransition>{ static constexpr auto & value{ L"Windows.UI.Xaml.BrushTransition" }; };
+template <> struct name<Windows::UI::Xaml::ColorPaletteResources>{ static constexpr auto & value{ L"Windows.UI.Xaml.ColorPaletteResources" }; };
 template <> struct name<Windows::UI::Xaml::CornerRadiusHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.CornerRadiusHelper" }; };
 template <> struct name<Windows::UI::Xaml::DataContextChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.DataContextChangedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::DataTemplate>{ static constexpr auto & value{ L"Windows.UI.Xaml.DataTemplate" }; };
@@ -1143,6 +1236,9 @@ template <> struct name<Windows::UI::Xaml::DragUI>{ static constexpr auto & valu
 template <> struct name<Windows::UI::Xaml::DragUIOverride>{ static constexpr auto & value{ L"Windows.UI.Xaml.DragUIOverride" }; };
 template <> struct name<Windows::UI::Xaml::DropCompletedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.DropCompletedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::DurationHelper>{ static constexpr auto & value{ L"Windows.UI.Xaml.DurationHelper" }; };
+template <> struct name<Windows::UI::Xaml::EffectiveViewportChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.EffectiveViewportChangedEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::ElementFactoryGetArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.ElementFactoryGetArgs" }; };
+template <> struct name<Windows::UI::Xaml::ElementFactoryRecycleArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.ElementFactoryRecycleArgs" }; };
 template <> struct name<Windows::UI::Xaml::ElementSoundPlayer>{ static constexpr auto & value{ L"Windows.UI.Xaml.ElementSoundPlayer" }; };
 template <> struct name<Windows::UI::Xaml::EventTrigger>{ static constexpr auto & value{ L"Windows.UI.Xaml.EventTrigger" }; };
 template <> struct name<Windows::UI::Xaml::ExceptionRoutedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.ExceptionRoutedEventArgs" }; };
@@ -1159,6 +1255,7 @@ template <> struct name<Windows::UI::Xaml::RectHelper>{ static constexpr auto & 
 template <> struct name<Windows::UI::Xaml::ResourceDictionary>{ static constexpr auto & value{ L"Windows.UI.Xaml.ResourceDictionary" }; };
 template <> struct name<Windows::UI::Xaml::RoutedEvent>{ static constexpr auto & value{ L"Windows.UI.Xaml.RoutedEvent" }; };
 template <> struct name<Windows::UI::Xaml::RoutedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.RoutedEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::ScalarTransition>{ static constexpr auto & value{ L"Windows.UI.Xaml.ScalarTransition" }; };
 template <> struct name<Windows::UI::Xaml::Setter>{ static constexpr auto & value{ L"Windows.UI.Xaml.Setter" }; };
 template <> struct name<Windows::UI::Xaml::SetterBase>{ static constexpr auto & value{ L"Windows.UI.Xaml.SetterBase" }; };
 template <> struct name<Windows::UI::Xaml::SetterBaseCollection>{ static constexpr auto & value{ L"Windows.UI.Xaml.SetterBaseCollection" }; };
@@ -1175,6 +1272,7 @@ template <> struct name<Windows::UI::Xaml::TriggerBase>{ static constexpr auto &
 template <> struct name<Windows::UI::Xaml::TriggerCollection>{ static constexpr auto & value{ L"Windows.UI.Xaml.TriggerCollection" }; };
 template <> struct name<Windows::UI::Xaml::UIElement>{ static constexpr auto & value{ L"Windows.UI.Xaml.UIElement" }; };
 template <> struct name<Windows::UI::Xaml::UnhandledExceptionEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.UnhandledExceptionEventArgs" }; };
+template <> struct name<Windows::UI::Xaml::Vector3Transition>{ static constexpr auto & value{ L"Windows.UI.Xaml.Vector3Transition" }; };
 template <> struct name<Windows::UI::Xaml::VisualState>{ static constexpr auto & value{ L"Windows.UI.Xaml.VisualState" }; };
 template <> struct name<Windows::UI::Xaml::VisualStateChangedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Xaml.VisualStateChangedEventArgs" }; };
 template <> struct name<Windows::UI::Xaml::VisualStateGroup>{ static constexpr auto & value{ L"Windows.UI.Xaml.VisualStateGroup" }; };
@@ -1212,6 +1310,7 @@ template <> struct name<Windows::UI::Xaml::TextLineBounds>{ static constexpr aut
 template <> struct name<Windows::UI::Xaml::TextReadingOrder>{ static constexpr auto & value{ L"Windows.UI.Xaml.TextReadingOrder" }; };
 template <> struct name<Windows::UI::Xaml::TextTrimming>{ static constexpr auto & value{ L"Windows.UI.Xaml.TextTrimming" }; };
 template <> struct name<Windows::UI::Xaml::TextWrapping>{ static constexpr auto & value{ L"Windows.UI.Xaml.TextWrapping" }; };
+template <> struct name<Windows::UI::Xaml::Vector3TransitionComponents>{ static constexpr auto & value{ L"Windows.UI.Xaml.Vector3TransitionComponents" }; };
 template <> struct name<Windows::UI::Xaml::VerticalAlignment>{ static constexpr auto & value{ L"Windows.UI.Xaml.VerticalAlignment" }; };
 template <> struct name<Windows::UI::Xaml::Visibility>{ static constexpr auto & value{ L"Windows.UI.Xaml.Visibility" }; };
 template <> struct name<Windows::UI::Xaml::CornerRadius>{ static constexpr auto & value{ L"Windows.UI.Xaml.CornerRadius" }; };
@@ -1237,178 +1336,200 @@ template <> struct name<Windows::UI::Xaml::WindowActivatedEventHandler>{ static 
 template <> struct name<Windows::UI::Xaml::WindowClosedEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.WindowClosedEventHandler" }; };
 template <> struct name<Windows::UI::Xaml::WindowSizeChangedEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.WindowSizeChangedEventHandler" }; };
 template <> struct name<Windows::UI::Xaml::WindowVisibilityChangedEventHandler>{ static constexpr auto & value{ L"Windows.UI.Xaml.WindowVisibilityChangedEventHandler" }; };
-template <> struct guid<Windows::UI::Xaml::IAdaptiveTrigger>{ static constexpr GUID value{ 0xA5F04119,0x0CD9,0x49F1,{ 0xA2,0x3F,0x44,0xE5,0x47,0xAB,0x9F,0x1A } }; };
-template <> struct guid<Windows::UI::Xaml::IAdaptiveTriggerFactory>{ static constexpr GUID value{ 0xC966D482,0x5AEB,0x4841,{ 0x92,0x47,0xC1,0xA0,0xBD,0xD6,0xF5,0x9F } }; };
-template <> struct guid<Windows::UI::Xaml::IAdaptiveTriggerStatics>{ static constexpr GUID value{ 0xB92E29EA,0x1615,0x4350,{ 0x9C,0x3B,0x92,0xB2,0x98,0x6B,0xF4,0x44 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplication>{ static constexpr GUID value{ 0x74B861A1,0x7487,0x46A9,{ 0x9A,0x6E,0xC7,0x8B,0x51,0x27,0x26,0xC5 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplication2>{ static constexpr GUID value{ 0x019104BE,0x522A,0x5904,{ 0xF5,0x2F,0xDE,0x72,0x01,0x04,0x29,0xE0 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplication3>{ static constexpr GUID value{ 0xB775AD7C,0x18B8,0x45CA,{ 0xA1,0xB0,0xDC,0x48,0x3E,0x4B,0x10,0x28 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplicationFactory>{ static constexpr GUID value{ 0x93BBE361,0xBE5A,0x4EE3,{ 0xB4,0xA3,0x95,0x11,0x8D,0xC9,0x7A,0x89 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplicationInitializationCallbackParams>{ static constexpr GUID value{ 0x751B792E,0x5772,0x4488,{ 0x8B,0x87,0xF5,0x47,0xFA,0xA6,0x44,0x74 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplicationOverrides>{ static constexpr GUID value{ 0x25F99FF7,0x9347,0x459A,{ 0x9F,0xAC,0xB2,0xD0,0xE1,0x1C,0x1A,0x0F } }; };
-template <> struct guid<Windows::UI::Xaml::IApplicationOverrides2>{ static constexpr GUID value{ 0xDB5CD2B9,0xD3B4,0x558C,{ 0xC6,0x4E,0x04,0x34,0xFD,0x1B,0xD8,0x89 } }; };
-template <> struct guid<Windows::UI::Xaml::IApplicationStatics>{ static constexpr GUID value{ 0x06499997,0xF7B4,0x45FE,{ 0xB7,0x63,0x75,0x77,0xD1,0xD3,0xCB,0x4A } }; };
-template <> struct guid<Windows::UI::Xaml::IBindingFailedEventArgs>{ static constexpr GUID value{ 0x32C1D013,0x4DBD,0x446D,{ 0xBB,0xB8,0x0D,0xE3,0x50,0x48,0xA4,0x49 } }; };
-template <> struct guid<Windows::UI::Xaml::IBringIntoViewOptions>{ static constexpr GUID value{ 0x19BDD1B5,0xC7CB,0x46D9,{ 0xA4,0xDD,0xA1,0xBB,0xE8,0x3E,0xF2,0xFB } }; };
-template <> struct guid<Windows::UI::Xaml::IBringIntoViewOptions2>{ static constexpr GUID value{ 0xE855E08E,0x64B6,0x1211,{ 0xBD,0xDB,0x1F,0xDD,0xBB,0x6E,0x82,0x31 } }; };
-template <> struct guid<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ static constexpr GUID value{ 0x0E629EC4,0x2206,0x4C8B,{ 0x94,0xAE,0xBD,0xB6,0x6A,0x4E,0xBF,0xD1 } }; };
-template <> struct guid<Windows::UI::Xaml::ICornerRadiusHelper>{ static constexpr GUID value{ 0xFD7BE182,0x1CDB,0x4288,{ 0xB8,0xC8,0x85,0xEE,0x79,0x29,0x7B,0xFC } }; };
-template <> struct guid<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ static constexpr GUID value{ 0xF4A1F659,0xD4D4,0x451F,{ 0xA3,0x87,0xD6,0xBF,0x4B,0x24,0x51,0xD4 } }; };
-template <> struct guid<Windows::UI::Xaml::IDataContextChangedEventArgs>{ static constexpr GUID value{ 0x7DA68E21,0x0B8F,0x4F9F,{ 0xA1,0x43,0xF8,0xE7,0x78,0x01,0x36,0xA2 } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplate>{ static constexpr GUID value{ 0x9910AEC7,0x8AB5,0x4118,{ 0x9B,0xC6,0x09,0xF4,0x5A,0x35,0x07,0x3D } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplateExtension>{ static constexpr GUID value{ 0x595E9547,0xCDFF,0x4B92,{ 0xB7,0x73,0xAB,0x39,0x68,0x78,0xF3,0x53 } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplateFactory>{ static constexpr GUID value{ 0x51ED9D7E,0x2B53,0x475B,{ 0x9C,0x88,0x0C,0x18,0x32,0xC8,0x35,0x1A } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplateKey>{ static constexpr GUID value{ 0x873B6C28,0xCCEB,0x4B61,{ 0x86,0xFA,0xB2,0xCE,0xC3,0x9C,0xC2,0xFA } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplateKeyFactory>{ static constexpr GUID value{ 0xE96B2959,0xD982,0x4152,{ 0x91,0xCB,0xDE,0x0E,0x4D,0xFD,0x76,0x93 } }; };
-template <> struct guid<Windows::UI::Xaml::IDataTemplateStatics2>{ static constexpr GUID value{ 0x8AF77D73,0xAA01,0x471E,{ 0xBE,0xDD,0x8B,0xAD,0x86,0x21,0x9B,0x77 } }; };
-template <> struct guid<Windows::UI::Xaml::IDebugSettings>{ static constexpr GUID value{ 0x3D451F98,0xC6A7,0x4D17,{ 0x83,0x98,0xD8,0x3A,0x06,0x71,0x83,0xD8 } }; };
-template <> struct guid<Windows::UI::Xaml::IDebugSettings2>{ static constexpr GUID value{ 0x48D37585,0xE1A6,0x469B,{ 0x83,0xC8,0x30,0x82,0x50,0x37,0x11,0x9E } }; };
-template <> struct guid<Windows::UI::Xaml::IDebugSettings3>{ static constexpr GUID value{ 0xE6BB5022,0x0625,0x479F,{ 0x8E,0x32,0x4B,0x58,0x3D,0x73,0xB7,0xAC } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyObject>{ static constexpr GUID value{ 0x5C526665,0xF60E,0x4912,{ 0xAF,0x59,0x5F,0xE0,0x68,0x0F,0x08,0x9D } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyObject2>{ static constexpr GUID value{ 0x29FED85D,0x3D22,0x43A1,{ 0xAD,0xD0,0x17,0x02,0x7C,0x08,0xB2,0x12 } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ static constexpr GUID value{ 0x051E79FF,0xB3A8,0x49EE,{ 0xB5,0xAF,0xAC,0x8F,0x68,0xB6,0x49,0xE4 } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyObjectFactory>{ static constexpr GUID value{ 0x9A03AF92,0x7D8A,0x4937,{ 0x88,0x4F,0xEC,0xF3,0x4F,0xE0,0x2A,0xCB } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyProperty>{ static constexpr GUID value{ 0x85B13970,0x9BC4,0x4E96,{ 0xAC,0xF1,0x30,0xC8,0xFD,0x3D,0x55,0xC8 } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs>{ static constexpr GUID value{ 0x81212C2B,0x24D0,0x4957,{ 0xAB,0xC3,0x22,0x44,0x70,0xA9,0x3A,0x4E } }; };
-template <> struct guid<Windows::UI::Xaml::IDependencyPropertyStatics>{ static constexpr GUID value{ 0x49E5F28F,0x8259,0x4D5C,{ 0xAA,0xE0,0x83,0xD5,0x6D,0xBB,0x68,0xD9 } }; };
-template <> struct guid<Windows::UI::Xaml::IDispatcherTimer>{ static constexpr GUID value{ 0xD160CE46,0xCD22,0x4F5F,{ 0x8C,0x97,0x40,0xE6,0x1D,0xA3,0xE2,0xDC } }; };
-template <> struct guid<Windows::UI::Xaml::IDispatcherTimerFactory>{ static constexpr GUID value{ 0xE9961E6E,0x3626,0x403A,{ 0xAF,0xE0,0x04,0x0D,0x58,0x16,0x56,0x32 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragEventArgs>{ static constexpr GUID value{ 0xB440C7C3,0x02B4,0x4980,{ 0x93,0x42,0x25,0xDA,0xE1,0xC0,0xF1,0x88 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragEventArgs2>{ static constexpr GUID value{ 0x26336658,0x2917,0x411D,{ 0xBF,0xC3,0x2F,0x22,0x47,0x1C,0xBB,0xE7 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragEventArgs3>{ static constexpr GUID value{ 0xD04FC3C6,0x8119,0x427A,{ 0x81,0x52,0x5F,0x95,0x50,0xCC,0x04,0x16 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragOperationDeferral>{ static constexpr GUID value{ 0xBA73ECBA,0x1B73,0x4086,{ 0xB3,0xD3,0xC2,0x23,0xBE,0xEA,0x16,0x33 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragStartingEventArgs>{ static constexpr GUID value{ 0x6800D3FA,0x90B8,0x46F9,{ 0x8E,0x30,0x5A,0xC2,0x5F,0x73,0xF0,0xF9 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragStartingEventArgs2>{ static constexpr GUID value{ 0xD855E08E,0x44B6,0x4211,{ 0xBD,0x0B,0x7F,0xDD,0xBB,0x6E,0x82,0x31 } }; };
-template <> struct guid<Windows::UI::Xaml::IDragUI>{ static constexpr GUID value{ 0x2D9BD838,0x7C60,0x4842,{ 0x91,0x70,0x34,0x6F,0xE1,0x0A,0x22,0x6A } }; };
-template <> struct guid<Windows::UI::Xaml::IDragUIOverride>{ static constexpr GUID value{ 0xBD6C9DFA,0xC961,0x4861,{ 0xB7,0xA5,0xBF,0x4F,0xE4,0xA8,0xA6,0xEF } }; };
-template <> struct guid<Windows::UI::Xaml::IDropCompletedEventArgs>{ static constexpr GUID value{ 0x6C4FC188,0x95BC,0x4261,{ 0x9E,0xC5,0x21,0xCA,0xB6,0x77,0xB7,0x34 } }; };
-template <> struct guid<Windows::UI::Xaml::IDurationHelper>{ static constexpr GUID value{ 0x25C1659F,0x4497,0x4135,{ 0x94,0x0F,0xEE,0x96,0xF4,0xD6,0xE9,0x34 } }; };
-template <> struct guid<Windows::UI::Xaml::IDurationHelperStatics>{ static constexpr GUID value{ 0xBC88093E,0x3547,0x4EC0,{ 0xB5,0x19,0xFF,0xA8,0xF9,0xC4,0x83,0x8C } }; };
-template <> struct guid<Windows::UI::Xaml::IElementSoundPlayer>{ static constexpr GUID value{ 0x387773A5,0xF036,0x460C,{ 0x9B,0x81,0xF3,0xD6,0xEA,0x43,0xF6,0xF2 } }; };
-template <> struct guid<Windows::UI::Xaml::IElementSoundPlayerStatics>{ static constexpr GUID value{ 0x217A9004,0x981D,0x41C9,{ 0xB1,0x52,0xAD,0xA9,0x11,0xA4,0xB1,0x3A } }; };
-template <> struct guid<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ static constexpr GUID value{ 0xF2505956,0xED41,0x48D7,{ 0xAA,0xE8,0xF2,0xAB,0xCB,0x44,0x49,0x29 } }; };
-template <> struct guid<Windows::UI::Xaml::IEventTrigger>{ static constexpr GUID value{ 0xDEF8F855,0x0B49,0x4087,{ 0xB1,0xA9,0xB8,0xB3,0x84,0x88,0xF7,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::IExceptionRoutedEventArgs>{ static constexpr GUID value{ 0xDD9FF16A,0x4B62,0x4A6C,{ 0xA4,0x9D,0x06,0x71,0xEF,0x61,0x36,0xBE } }; };
-template <> struct guid<Windows::UI::Xaml::IExceptionRoutedEventArgsFactory>{ static constexpr GUID value{ 0xBBA9826D,0x5D7A,0x44E7,{ 0xB8,0x93,0xB2,0xAE,0x0D,0xD2,0x42,0x73 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElement>{ static constexpr GUID value{ 0xA391D09B,0x4A99,0x4B7C,{ 0x9D,0x8D,0x6F,0xA5,0xD0,0x1F,0x6F,0xBF } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElement2>{ static constexpr GUID value{ 0xF19104BE,0x422A,0x4904,{ 0xA5,0x2F,0xEE,0x72,0x01,0x04,0x29,0xE5 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElement3>{ static constexpr GUID value{ 0xC81C2720,0x5C52,0x4BBE,{ 0xA1,0x99,0x2B,0x1E,0x34,0xF0,0x0F,0x70 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElement4>{ static constexpr GUID value{ 0x6B765BB3,0xFBA3,0x4404,{ 0xBD,0xEE,0x1A,0x45,0xD1,0xCA,0x5F,0x21 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElement6>{ static constexpr GUID value{ 0x792A5D91,0x62A1,0x40BF,{ 0xA0,0xCE,0xF9,0xC1,0x31,0xFC,0xB7,0xA7 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementFactory>{ static constexpr GUID value{ 0xDEAEE126,0x03CA,0x4966,{ 0xB5,0x76,0x60,0x4C,0xCE,0x93,0xB5,0xE8 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementOverrides>{ static constexpr GUID value{ 0xDA007E54,0xB3C2,0x4B9A,{ 0xAA,0x8E,0xD3,0xF0,0x71,0x26,0x2B,0x97 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementOverrides2>{ static constexpr GUID value{ 0xCB5CD2B9,0xE3B4,0x458C,{ 0xB6,0x4E,0x14,0x34,0xFD,0x1B,0xD8,0x8A } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementStatics>{ static constexpr GUID value{ 0x48383032,0xFBEB,0x4F8A,{ 0xAE,0xD2,0xEE,0x21,0xFB,0x27,0xA5,0x7B } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementStatics2>{ static constexpr GUID value{ 0x9695DB02,0xC0D8,0x4FA2,{ 0xB1,0x00,0x3F,0xA2,0xDF,0x8B,0x95,0x38 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementStatics4>{ static constexpr GUID value{ 0x9C41B155,0xC5D8,0x4663,{ 0xBF,0xF2,0xD8,0xD5,0x4F,0xB5,0xDB,0xB3 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementStatics5>{ static constexpr GUID value{ 0x525D3941,0x0B3C,0x4BE6,{ 0x99,0x78,0x19,0xA8,0x02,0x5C,0x09,0xD8 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkElementStatics6>{ static constexpr GUID value{ 0xFCC1529A,0x69DB,0x4582,{ 0xA7,0xBE,0xCF,0x6A,0x1C,0xFD,0xAC,0xD0 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkTemplate>{ static constexpr GUID value{ 0xA1E254D8,0xA446,0x4A27,{ 0x9A,0x9D,0xA0,0xF5,0x9E,0x12,0x58,0xA5 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkTemplateFactory>{ static constexpr GUID value{ 0x1A78A0A5,0x937D,0x46D4,{ 0x83,0x2B,0x94,0xFF,0x14,0xDA,0xB0,0x61 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkView>{ static constexpr GUID value{ 0xDDBA664B,0xB603,0x47AA,{ 0x94,0x2D,0x38,0x33,0x17,0x4F,0x0D,0x80 } }; };
-template <> struct guid<Windows::UI::Xaml::IFrameworkViewSource>{ static constexpr GUID value{ 0xE3B077DA,0x35AD,0x4B09,{ 0xB5,0xB2,0x27,0x42,0x00,0x41,0xBA,0x9F } }; };
-template <> struct guid<Windows::UI::Xaml::IGridLengthHelper>{ static constexpr GUID value{ 0x7A826CE1,0x07A0,0x4083,{ 0xB6,0xD1,0xB1,0xD9,0x17,0xB9,0x76,0xAC } }; };
-template <> struct guid<Windows::UI::Xaml::IGridLengthHelperStatics>{ static constexpr GUID value{ 0x9D457B9B,0x019F,0x4266,{ 0x88,0x72,0x21,0x5F,0x19,0x8F,0x6A,0x9D } }; };
-template <> struct guid<Windows::UI::Xaml::IMediaFailedRoutedEventArgs>{ static constexpr GUID value{ 0x46D1FA8D,0x5149,0x4153,{ 0xBA,0x3C,0xB0,0x3E,0x64,0xEE,0x53,0x1E } }; };
-template <> struct guid<Windows::UI::Xaml::IPointHelper>{ static constexpr GUID value{ 0x727BDD92,0x64B0,0x49CF,{ 0xA3,0x21,0xA9,0x79,0x3E,0x73,0xE2,0xE7 } }; };
-template <> struct guid<Windows::UI::Xaml::IPointHelperStatics>{ static constexpr GUID value{ 0x015ACA75,0x76D8,0x4B7E,{ 0x8A,0x33,0x7D,0x79,0x20,0x46,0x91,0xEE } }; };
-template <> struct guid<Windows::UI::Xaml::IPropertyMetadata>{ static constexpr GUID value{ 0x814EF30D,0x8D18,0x448A,{ 0x86,0x44,0xF2,0xCB,0x51,0xE7,0x03,0x80 } }; };
-template <> struct guid<Windows::UI::Xaml::IPropertyMetadataFactory>{ static constexpr GUID value{ 0xC1B81CC0,0x57CD,0x4F2F,{ 0xB0,0xA9,0xE1,0x80,0x1B,0x28,0xF7,0x6B } }; };
-template <> struct guid<Windows::UI::Xaml::IPropertyMetadataStatics>{ static constexpr GUID value{ 0x3B01077A,0x6E06,0x45E9,{ 0x8B,0x5C,0xAF,0x24,0x34,0x58,0xC0,0x62 } }; };
-template <> struct guid<Windows::UI::Xaml::IPropertyPath>{ static constexpr GUID value{ 0x300E5D8A,0x1FF3,0x4D2C,{ 0x95,0xEC,0x27,0xF8,0x1D,0xEB,0xAC,0xB8 } }; };
-template <> struct guid<Windows::UI::Xaml::IPropertyPathFactory>{ static constexpr GUID value{ 0x4E4CDF99,0x9826,0x4E56,{ 0x84,0x7C,0xCA,0x05,0x5F,0x16,0x29,0x05 } }; };
-template <> struct guid<Windows::UI::Xaml::IRectHelper>{ static constexpr GUID value{ 0xA38781E2,0x4BFB,0x4EE2,{ 0xAF,0xE5,0x89,0xF3,0x1B,0x37,0x47,0x8D } }; };
-template <> struct guid<Windows::UI::Xaml::IRectHelperStatics>{ static constexpr GUID value{ 0x5EE163E4,0xC17E,0x494F,{ 0xB5,0x80,0x2F,0x05,0x74,0xFC,0x3A,0x15 } }; };
-template <> struct guid<Windows::UI::Xaml::IResourceDictionary>{ static constexpr GUID value{ 0xC1EA4F24,0xD6DE,0x4191,{ 0x8E,0x3A,0xF4,0x86,0x01,0xF7,0x48,0x9C } }; };
-template <> struct guid<Windows::UI::Xaml::IResourceDictionaryFactory>{ static constexpr GUID value{ 0xEA3639B5,0x31B7,0x4271,{ 0x92,0xC9,0x7C,0x95,0x84,0xA9,0x1C,0x22 } }; };
-template <> struct guid<Windows::UI::Xaml::IRoutedEvent>{ static constexpr GUID value{ 0xA6B25818,0x43C1,0x4C70,{ 0x86,0x5C,0x7B,0xDD,0x5A,0x32,0xE3,0x27 } }; };
-template <> struct guid<Windows::UI::Xaml::IRoutedEventArgs>{ static constexpr GUID value{ 0x5C985AC6,0xD802,0x4B38,{ 0xA2,0x23,0xBF,0x07,0x0C,0x43,0xFE,0xDF } }; };
-template <> struct guid<Windows::UI::Xaml::IRoutedEventArgsFactory>{ static constexpr GUID value{ 0xB61C4D87,0x70E5,0x412E,{ 0xB5,0x20,0x1A,0x41,0xEE,0x76,0xBB,0xF4 } }; };
-template <> struct guid<Windows::UI::Xaml::ISetter>{ static constexpr GUID value{ 0xA73DED29,0xB4AE,0x4A81,{ 0xBE,0x85,0xE6,0x90,0xBA,0x0D,0x3B,0x6E } }; };
-template <> struct guid<Windows::UI::Xaml::ISetter2>{ static constexpr GUID value{ 0x70169561,0x05B1,0x4FA3,{ 0x9D,0x53,0x8E,0x0C,0x8C,0x74,0x7A,0xFC } }; };
-template <> struct guid<Windows::UI::Xaml::ISetterBase>{ static constexpr GUID value{ 0x418BE27C,0x2AC4,0x4F22,{ 0x80,0x97,0xDE,0xA3,0xAE,0xEB,0x2F,0xB3 } }; };
-template <> struct guid<Windows::UI::Xaml::ISetterBaseCollection>{ static constexpr GUID value{ 0x03C40CA8,0x909E,0x4117,{ 0x81,0x1C,0xA4,0x52,0x94,0x96,0xBD,0xF1 } }; };
-template <> struct guid<Windows::UI::Xaml::ISetterBaseFactory>{ static constexpr GUID value{ 0x81F8AD60,0x1CE8,0x469D,{ 0xA6,0x67,0x16,0xE3,0x7C,0xEF,0x8B,0xA9 } }; };
-template <> struct guid<Windows::UI::Xaml::ISetterFactory>{ static constexpr GUID value{ 0xD3CA3D42,0x09B1,0x49D5,{ 0x88,0x91,0xE7,0xB5,0x64,0x8E,0x02,0xA2 } }; };
-template <> struct guid<Windows::UI::Xaml::ISizeChangedEventArgs>{ static constexpr GUID value{ 0xD5312E60,0x5CC1,0x42A1,{ 0x92,0x0C,0x1A,0xF4,0x6B,0xE2,0xF9,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::ISizeHelper>{ static constexpr GUID value{ 0xE7225A94,0x5D03,0x4A03,{ 0xBA,0x94,0x96,0x7F,0xC6,0x8F,0xCE,0xFE } }; };
-template <> struct guid<Windows::UI::Xaml::ISizeHelperStatics>{ static constexpr GUID value{ 0x6286C5B2,0xCF78,0x4915,{ 0xAA,0x40,0x76,0x00,0x4A,0x16,0x5F,0x5E } }; };
-template <> struct guid<Windows::UI::Xaml::IStateTrigger>{ static constexpr GUID value{ 0x67ADEF2E,0xD8D9,0x49F7,{ 0xA1,0xFD,0x2E,0x35,0xEE,0xDD,0x23,0xCD } }; };
-template <> struct guid<Windows::UI::Xaml::IStateTriggerBase>{ static constexpr GUID value{ 0x48B20698,0xAF06,0x466C,{ 0x80,0x52,0x93,0x66,0x6D,0xDE,0x0E,0x49 } }; };
-template <> struct guid<Windows::UI::Xaml::IStateTriggerBaseFactory>{ static constexpr GUID value{ 0x970E2C4B,0xBFAF,0x47B0,{ 0xBE,0x42,0xC1,0xD7,0x11,0xBB,0x2E,0x9F } }; };
-template <> struct guid<Windows::UI::Xaml::IStateTriggerBaseProtected>{ static constexpr GUID value{ 0x3C41E253,0x8D14,0x4216,{ 0x99,0x4C,0xF9,0x93,0x04,0x29,0xF6,0xE5 } }; };
-template <> struct guid<Windows::UI::Xaml::IStateTriggerStatics>{ static constexpr GUID value{ 0x71E95C90,0xB3FE,0x4DD3,{ 0xA8,0xA8,0x44,0xA2,0xCE,0x25,0xE0,0xB8 } }; };
-template <> struct guid<Windows::UI::Xaml::IStyle>{ static constexpr GUID value{ 0xC4A9F225,0x9DB7,0x4A7D,{ 0xB6,0xD1,0xF7,0x4E,0xDB,0x92,0x93,0xC2 } }; };
-template <> struct guid<Windows::UI::Xaml::IStyleFactory>{ static constexpr GUID value{ 0xA36824E3,0x3D81,0x4CE5,{ 0xAA,0x51,0x8B,0x41,0x0F,0x60,0x2F,0xCD } }; };
-template <> struct guid<Windows::UI::Xaml::ITargetPropertyPath>{ static constexpr GUID value{ 0x40740F8E,0x085F,0x4CED,{ 0xBE,0x70,0x6F,0x47,0xAC,0xF1,0x5A,0xD0 } }; };
-template <> struct guid<Windows::UI::Xaml::ITargetPropertyPathFactory>{ static constexpr GUID value{ 0x88EECCC8,0x99E2,0x4A44,{ 0x99,0x07,0xB4,0x4B,0xC8,0x6E,0x2B,0xBE } }; };
-template <> struct guid<Windows::UI::Xaml::IThicknessHelper>{ static constexpr GUID value{ 0xA86BAE4B,0x1E8F,0x4EEB,{ 0x90,0x13,0x0B,0x28,0x38,0xA9,0x7B,0x34 } }; };
-template <> struct guid<Windows::UI::Xaml::IThicknessHelperStatics>{ static constexpr GUID value{ 0xC0991A7C,0x070C,0x4DA6,{ 0x87,0x84,0x01,0xCA,0x80,0x0E,0xB7,0x3A } }; };
-template <> struct guid<Windows::UI::Xaml::ITriggerAction>{ static constexpr GUID value{ 0xA2C0DF02,0x63D5,0x4B46,{ 0x9B,0x83,0x08,0x68,0xD3,0x07,0x96,0x21 } }; };
-template <> struct guid<Windows::UI::Xaml::ITriggerActionFactory>{ static constexpr GUID value{ 0x68D2C0B9,0x3289,0x414F,{ 0x8F,0x6E,0xC6,0xB9,0x7A,0xED,0xDA,0x03 } }; };
-template <> struct guid<Windows::UI::Xaml::ITriggerBase>{ static constexpr GUID value{ 0xE7EA222F,0xDEE6,0x4393,{ 0xA8,0xB2,0x89,0x23,0xD6,0x41,0xF3,0x95 } }; };
-template <> struct guid<Windows::UI::Xaml::ITriggerBaseFactory>{ static constexpr GUID value{ 0x6A3B9E57,0xFC5D,0x42D0,{ 0x8C,0xB9,0xCA,0x50,0x66,0x7A,0xF7,0x46 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement>{ static constexpr GUID value{ 0x676D0BE9,0xB65C,0x41C6,{ 0xBA,0x40,0x58,0xCF,0x87,0xF2,0x01,0xC1 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement2>{ static constexpr GUID value{ 0x676D0BF9,0xB66C,0x41D6,{ 0xBA,0x50,0x58,0xCF,0x87,0xF2,0x01,0xD1 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement3>{ static constexpr GUID value{ 0xBC2B28F1,0x26F2,0x4AAB,{ 0xB2,0x56,0x3B,0x53,0x50,0x88,0x1E,0x37 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement4>{ static constexpr GUID value{ 0x69145CD4,0x199A,0x4657,{ 0x9E,0x57,0xE9,0x9E,0x8F,0x13,0x67,0x12 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement5>{ static constexpr GUID value{ 0x8EED9BC2,0xA58C,0x4453,{ 0xAF,0x0F,0xA9,0x2E,0xE0,0x6D,0x03,0x17 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement7>{ static constexpr GUID value{ 0xCAFC4968,0x6369,0x4249,{ 0x80,0xF9,0x3D,0x65,0x63,0x19,0xE8,0x11 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElement8>{ static constexpr GUID value{ 0x3AB70E85,0xD508,0x4477,{ 0xB6,0xF8,0x0E,0x43,0x57,0x01,0xC8,0x36 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementFactory>{ static constexpr GUID value{ 0xB9EE93FE,0xA338,0x419F,{ 0xAC,0x32,0x91,0xDC,0xAA,0xDF,0x5D,0x08 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementOverrides>{ static constexpr GUID value{ 0x608D2F1D,0x7858,0x4AEB,{ 0x89,0xE4,0xB5,0x4E,0x2C,0x7E,0xD3,0xD3 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementOverrides7>{ static constexpr GUID value{ 0xB97F7F68,0xC29B,0x4C99,{ 0xA1,0xC3,0x95,0x26,0x19,0xD6,0xE7,0x20 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementOverrides8>{ static constexpr GUID value{ 0x4A5A645C,0x548D,0x48CF,{ 0xB9,0x98,0x78,0x44,0xD6,0xE2,0x35,0xA1 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics>{ static constexpr GUID value{ 0x58D3573B,0xF52C,0x45BE,{ 0x98,0x8B,0xA5,0x86,0x95,0x64,0x87,0x3C } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics2>{ static constexpr GUID value{ 0x58D3574B,0xF53C,0x45BE,{ 0x98,0x9B,0xA5,0x86,0x95,0x64,0x87,0x4C } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics3>{ static constexpr GUID value{ 0xD1F87ADE,0xECA1,0x4561,{ 0xA3,0x2B,0x64,0x60,0x1B,0x4E,0x05,0x97 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics4>{ static constexpr GUID value{ 0x1D157D61,0x16AF,0x411F,{ 0xB7,0x74,0x27,0x23,0x75,0xA4,0xAC,0x2C } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics5>{ static constexpr GUID value{ 0x59BD7D91,0x8FA3,0x4C65,{ 0xBA,0x1B,0x40,0xDF,0x38,0x55,0x6C,0xBB } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics6>{ static constexpr GUID value{ 0x647E03B7,0x036A,0x4DEA,{ 0x95,0x40,0x1D,0xD7,0xFD,0x12,0x66,0xF1 } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics7>{ static constexpr GUID value{ 0xDA9B4493,0xA695,0x4145,{ 0xAE,0x93,0x88,0x80,0x24,0x39,0x6A,0x0F } }; };
-template <> struct guid<Windows::UI::Xaml::IUIElementStatics8>{ static constexpr GUID value{ 0x17BE3487,0x4875,0x4915,{ 0xB0,0xB1,0xA4,0xC0,0xF8,0x51,0xDF,0x3F } }; };
-template <> struct guid<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ static constexpr GUID value{ 0x7230269C,0x054E,0x4CF3,{ 0x86,0xC5,0xBE,0x90,0xEB,0x68,0x63,0xD5 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualState>{ static constexpr GUID value{ 0x6320AFFC,0xC31A,0x4450,{ 0xAF,0xDE,0xF6,0xEA,0x7B,0xD1,0xF5,0x86 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualState2>{ static constexpr GUID value{ 0x0FA0F896,0x64C0,0x45FB,{ 0x8D,0x24,0xFB,0x83,0x29,0x8C,0x0D,0x93 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ static constexpr GUID value{ 0xFE216AB1,0xF31F,0x4791,{ 0x89,0x89,0xC7,0x0E,0x1D,0x9B,0x59,0xFF } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateGroup>{ static constexpr GUID value{ 0xE4F9D9A4,0xE028,0x44DE,{ 0x9B,0x15,0x49,0x29,0xAE,0x0A,0x26,0xC2 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateManager>{ static constexpr GUID value{ 0x6FDA9F9A,0x6FAB,0x4112,{ 0x92,0x58,0x10,0x06,0xA3,0xC3,0x47,0x6E } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateManagerFactory>{ static constexpr GUID value{ 0x85E598FD,0xA575,0x47B6,{ 0x9E,0x30,0x38,0x3C,0xD0,0x85,0x85,0xF2 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateManagerOverrides>{ static constexpr GUID value{ 0x4A66910E,0x7979,0x43C8,{ 0x8F,0xF4,0xEC,0x61,0x22,0x75,0x00,0x06 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateManagerProtected>{ static constexpr GUID value{ 0x4B3B8640,0xB0B7,0x404C,{ 0x9E,0xF4,0xD9,0x49,0x64,0x0E,0x24,0x5D } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualStateManagerStatics>{ static constexpr GUID value{ 0x01D0E9E0,0xD713,0x414E,{ 0xA7,0x4E,0xE6,0x3E,0xC7,0xAC,0x8C,0x3D } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualTransition>{ static constexpr GUID value{ 0x55C5905E,0x2BC7,0x400D,{ 0xAA,0xA4,0x1A,0x29,0x81,0x49,0x1E,0xE0 } }; };
-template <> struct guid<Windows::UI::Xaml::IVisualTransitionFactory>{ static constexpr GUID value{ 0xEA75864F,0xD1E0,0x4DAE,{ 0xB4,0x29,0x89,0xFC,0x32,0x27,0x24,0xF4 } }; };
-template <> struct guid<Windows::UI::Xaml::IWindow>{ static constexpr GUID value{ 0x3276167D,0xC9F6,0x462D,{ 0x9D,0xE2,0xAE,0x4C,0x1F,0xD8,0xC2,0xE5 } }; };
-template <> struct guid<Windows::UI::Xaml::IWindow2>{ static constexpr GUID value{ 0xD384759F,0x34F6,0x4482,{ 0x84,0x35,0xF5,0x52,0xF9,0xB2,0x4C,0xC8 } }; };
-template <> struct guid<Windows::UI::Xaml::IWindow3>{ static constexpr GUID value{ 0xB70BDC9D,0x1C35,0x462A,{ 0x9B,0x97,0x80,0x8D,0x5A,0xF9,0xF2,0x8E } }; };
-template <> struct guid<Windows::UI::Xaml::IWindowCreatedEventArgs>{ static constexpr GUID value{ 0x31B71470,0xFEFF,0x4654,{ 0xAF,0x48,0x9B,0x39,0x8A,0xB5,0x77,0x2B } }; };
-template <> struct guid<Windows::UI::Xaml::IWindowStatics>{ static constexpr GUID value{ 0x93328409,0x4EA1,0x4AFA,{ 0x83,0xDC,0x0C,0x4E,0x73,0xE8,0x8B,0xB1 } }; };
-template <> struct guid<Windows::UI::Xaml::ApplicationInitializationCallback>{ static constexpr GUID value{ 0xB6351C55,0xC284,0x46E4,{ 0x83,0x10,0xFB,0x09,0x67,0xFA,0xB7,0x6F } }; };
-template <> struct guid<Windows::UI::Xaml::BindingFailedEventHandler>{ static constexpr GUID value{ 0x136B1782,0x54BA,0x420D,{ 0xA1,0xAA,0x82,0x82,0x87,0x21,0xCD,0xE6 } }; };
-template <> struct guid<Windows::UI::Xaml::CreateDefaultValueCallback>{ static constexpr GUID value{ 0xD6ECB12C,0x15B5,0x4EC8,{ 0xB9,0x5C,0xCD,0xD2,0x08,0xF0,0x81,0x53 } }; };
-template <> struct guid<Windows::UI::Xaml::DependencyPropertyChangedCallback>{ static constexpr GUID value{ 0x45883D16,0x27BF,0x4BC1,{ 0xAC,0x26,0x94,0xC1,0x60,0x1F,0x3A,0x49 } }; };
-template <> struct guid<Windows::UI::Xaml::DependencyPropertyChangedEventHandler>{ static constexpr GUID value{ 0x09223E5A,0x75BE,0x4499,{ 0x81,0x80,0x1D,0xDC,0x00,0x54,0x21,0xC0 } }; };
-template <> struct guid<Windows::UI::Xaml::DragEventHandler>{ static constexpr GUID value{ 0x2AB1A205,0x1E73,0x4BCF,{ 0xAA,0xBC,0x57,0xB9,0x7E,0x21,0x96,0x1D } }; };
-template <> struct guid<Windows::UI::Xaml::EnteredBackgroundEventHandler>{ static constexpr GUID value{ 0x93A956AE,0x1D7F,0x438B,{ 0xB7,0xB8,0x22,0x7D,0x96,0xB6,0x09,0xC0 } }; };
-template <> struct guid<Windows::UI::Xaml::ExceptionRoutedEventHandler>{ static constexpr GUID value{ 0x68E0E810,0xF6EA,0x42BC,{ 0x85,0x5B,0x5D,0x9B,0x67,0xE6,0xA2,0x62 } }; };
-template <> struct guid<Windows::UI::Xaml::LeavingBackgroundEventHandler>{ static constexpr GUID value{ 0xAAAD5DAD,0x4FC6,0x4AA4,{ 0xB7,0xCF,0x87,0x7E,0x36,0xAD,0xA4,0xF6 } }; };
-template <> struct guid<Windows::UI::Xaml::PropertyChangedCallback>{ static constexpr GUID value{ 0x5A9F8A25,0xD142,0x44A4,{ 0x82,0x31,0xFD,0x67,0x67,0x24,0xF2,0x9B } }; };
-template <> struct guid<Windows::UI::Xaml::RoutedEventHandler>{ static constexpr GUID value{ 0xA856E674,0xB0B6,0x4BC3,{ 0xBB,0xA8,0x1B,0xA0,0x6E,0x40,0xD4,0xB5 } }; };
-template <> struct guid<Windows::UI::Xaml::SizeChangedEventHandler>{ static constexpr GUID value{ 0x1115B13C,0x25D2,0x480B,{ 0x89,0xDC,0xEB,0x3D,0xCB,0xD6,0xB7,0xFA } }; };
-template <> struct guid<Windows::UI::Xaml::SuspendingEventHandler>{ static constexpr GUID value{ 0x23429465,0xE36A,0x40E2,{ 0xB1,0x39,0xA4,0x70,0x46,0x02,0xA6,0xE1 } }; };
-template <> struct guid<Windows::UI::Xaml::UnhandledExceptionEventHandler>{ static constexpr GUID value{ 0x9274E6BD,0x49A1,0x4958,{ 0xBE,0xEE,0xD0,0xE1,0x95,0x87,0xB6,0xE3 } }; };
-template <> struct guid<Windows::UI::Xaml::VisualStateChangedEventHandler>{ static constexpr GUID value{ 0xE6D5BBD5,0xE029,0x43A6,{ 0xB3,0x6D,0x84,0xA8,0x10,0x42,0xD7,0x74 } }; };
-template <> struct guid<Windows::UI::Xaml::WindowActivatedEventHandler>{ static constexpr GUID value{ 0x18026348,0x8619,0x4C7B,{ 0xB5,0x34,0xCE,0xD4,0x5D,0x9D,0xE2,0x19 } }; };
-template <> struct guid<Windows::UI::Xaml::WindowClosedEventHandler>{ static constexpr GUID value{ 0x0DB89161,0x20D7,0x45DF,{ 0x91,0x22,0xBA,0x89,0x57,0x67,0x03,0xBA } }; };
-template <> struct guid<Windows::UI::Xaml::WindowSizeChangedEventHandler>{ static constexpr GUID value{ 0x5C21C742,0x2CED,0x4FD9,{ 0xBA,0x38,0x71,0x18,0xD4,0x0E,0x96,0x6B } }; };
-template <> struct guid<Windows::UI::Xaml::WindowVisibilityChangedEventHandler>{ static constexpr GUID value{ 0x10406AD6,0xB090,0x4A4A,{ 0xB2,0xAD,0xD6,0x82,0xDF,0x27,0x13,0x0F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IAdaptiveTrigger>{ static constexpr guid value{ 0xA5F04119,0x0CD9,0x49F1,{ 0xA2,0x3F,0x44,0xE5,0x47,0xAB,0x9F,0x1A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IAdaptiveTriggerFactory>{ static constexpr guid value{ 0xC966D482,0x5AEB,0x4841,{ 0x92,0x47,0xC1,0xA0,0xBD,0xD6,0xF5,0x9F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IAdaptiveTriggerStatics>{ static constexpr guid value{ 0xB92E29EA,0x1615,0x4350,{ 0x9C,0x3B,0x92,0xB2,0x98,0x6B,0xF4,0x44 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplication>{ static constexpr guid value{ 0x74B861A1,0x7487,0x46A9,{ 0x9A,0x6E,0xC7,0x8B,0x51,0x27,0x26,0xC5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplication2>{ static constexpr guid value{ 0x019104BE,0x522A,0x5904,{ 0xF5,0x2F,0xDE,0x72,0x01,0x04,0x29,0xE0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplication3>{ static constexpr guid value{ 0xB775AD7C,0x18B8,0x45CA,{ 0xA1,0xB0,0xDC,0x48,0x3E,0x4B,0x10,0x28 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplicationFactory>{ static constexpr guid value{ 0x93BBE361,0xBE5A,0x4EE3,{ 0xB4,0xA3,0x95,0x11,0x8D,0xC9,0x7A,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplicationInitializationCallbackParams>{ static constexpr guid value{ 0x751B792E,0x5772,0x4488,{ 0x8B,0x87,0xF5,0x47,0xFA,0xA6,0x44,0x74 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplicationOverrides>{ static constexpr guid value{ 0x25F99FF7,0x9347,0x459A,{ 0x9F,0xAC,0xB2,0xD0,0xE1,0x1C,0x1A,0x0F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplicationOverrides2>{ static constexpr guid value{ 0xDB5CD2B9,0xD3B4,0x558C,{ 0xC6,0x4E,0x04,0x34,0xFD,0x1B,0xD8,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IApplicationStatics>{ static constexpr guid value{ 0x06499997,0xF7B4,0x45FE,{ 0xB7,0x63,0x75,0x77,0xD1,0xD3,0xCB,0x4A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBindingFailedEventArgs>{ static constexpr guid value{ 0x32C1D013,0x4DBD,0x446D,{ 0xBB,0xB8,0x0D,0xE3,0x50,0x48,0xA4,0x49 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBringIntoViewOptions>{ static constexpr guid value{ 0x19BDD1B5,0xC7CB,0x46D9,{ 0xA4,0xDD,0xA1,0xBB,0xE8,0x3E,0xF2,0xFB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBringIntoViewOptions2>{ static constexpr guid value{ 0xE855E08E,0x64B6,0x1211,{ 0xBD,0xDB,0x1F,0xDD,0xBB,0x6E,0x82,0x31 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ static constexpr guid value{ 0x0E629EC4,0x2206,0x4C8B,{ 0x94,0xAE,0xBD,0xB6,0x6A,0x4E,0xBF,0xD1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBrushTransition>{ static constexpr guid value{ 0x1116972C,0x9DAD,0x5429,{ 0xA7,0xDD,0xB2,0xB7,0xD0,0x61,0xAB,0x8E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IBrushTransitionFactory>{ static constexpr guid value{ 0x3DBE7368,0x13D4,0x510C,{ 0xA2,0x15,0x75,0x39,0xF4,0x78,0x7B,0x52 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IColorPaletteResources>{ static constexpr guid value{ 0x258088C4,0xAEF2,0x5D3F,{ 0x83,0x3B,0xC3,0x6D,0xB6,0x27,0x8E,0xD9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IColorPaletteResourcesFactory>{ static constexpr guid value{ 0xA57F0783,0x1876,0x5CC0,{ 0x8E,0xA5,0xBC,0x77,0xB1,0x7E,0x0F,0x7E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ICornerRadiusHelper>{ static constexpr guid value{ 0xFD7BE182,0x1CDB,0x4288,{ 0xB8,0xC8,0x85,0xEE,0x79,0x29,0x7B,0xFC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ static constexpr guid value{ 0xF4A1F659,0xD4D4,0x451F,{ 0xA3,0x87,0xD6,0xBF,0x4B,0x24,0x51,0xD4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataContextChangedEventArgs>{ static constexpr guid value{ 0x7DA68E21,0x0B8F,0x4F9F,{ 0xA1,0x43,0xF8,0xE7,0x78,0x01,0x36,0xA2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplate>{ static constexpr guid value{ 0x9910AEC7,0x8AB5,0x4118,{ 0x9B,0xC6,0x09,0xF4,0x5A,0x35,0x07,0x3D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplateExtension>{ static constexpr guid value{ 0x595E9547,0xCDFF,0x4B92,{ 0xB7,0x73,0xAB,0x39,0x68,0x78,0xF3,0x53 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplateFactory>{ static constexpr guid value{ 0x51ED9D7E,0x2B53,0x475B,{ 0x9C,0x88,0x0C,0x18,0x32,0xC8,0x35,0x1A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplateKey>{ static constexpr guid value{ 0x873B6C28,0xCCEB,0x4B61,{ 0x86,0xFA,0xB2,0xCE,0xC3,0x9C,0xC2,0xFA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplateKeyFactory>{ static constexpr guid value{ 0xE96B2959,0xD982,0x4152,{ 0x91,0xCB,0xDE,0x0E,0x4D,0xFD,0x76,0x93 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDataTemplateStatics2>{ static constexpr guid value{ 0x8AF77D73,0xAA01,0x471E,{ 0xBE,0xDD,0x8B,0xAD,0x86,0x21,0x9B,0x77 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDebugSettings>{ static constexpr guid value{ 0x3D451F98,0xC6A7,0x4D17,{ 0x83,0x98,0xD8,0x3A,0x06,0x71,0x83,0xD8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDebugSettings2>{ static constexpr guid value{ 0x48D37585,0xE1A6,0x469B,{ 0x83,0xC8,0x30,0x82,0x50,0x37,0x11,0x9E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDebugSettings3>{ static constexpr guid value{ 0xE6BB5022,0x0625,0x479F,{ 0x8E,0x32,0x4B,0x58,0x3D,0x73,0xB7,0xAC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDebugSettings4>{ static constexpr guid value{ 0xC9001E45,0xE824,0x5A5F,{ 0x86,0x6C,0xE2,0x0C,0xEC,0x88,0xA8,0xFC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyObject>{ static constexpr guid value{ 0x5C526665,0xF60E,0x4912,{ 0xAF,0x59,0x5F,0xE0,0x68,0x0F,0x08,0x9D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyObject2>{ static constexpr guid value{ 0x29FED85D,0x3D22,0x43A1,{ 0xAD,0xD0,0x17,0x02,0x7C,0x08,0xB2,0x12 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ static constexpr guid value{ 0x051E79FF,0xB3A8,0x49EE,{ 0xB5,0xAF,0xAC,0x8F,0x68,0xB6,0x49,0xE4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyObjectFactory>{ static constexpr guid value{ 0x9A03AF92,0x7D8A,0x4937,{ 0x88,0x4F,0xEC,0xF3,0x4F,0xE0,0x2A,0xCB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyProperty>{ static constexpr guid value{ 0x85B13970,0x9BC4,0x4E96,{ 0xAC,0xF1,0x30,0xC8,0xFD,0x3D,0x55,0xC8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs>{ static constexpr guid value{ 0x81212C2B,0x24D0,0x4957,{ 0xAB,0xC3,0x22,0x44,0x70,0xA9,0x3A,0x4E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDependencyPropertyStatics>{ static constexpr guid value{ 0x49E5F28F,0x8259,0x4D5C,{ 0xAA,0xE0,0x83,0xD5,0x6D,0xBB,0x68,0xD9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDispatcherTimer>{ static constexpr guid value{ 0xD160CE46,0xCD22,0x4F5F,{ 0x8C,0x97,0x40,0xE6,0x1D,0xA3,0xE2,0xDC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDispatcherTimerFactory>{ static constexpr guid value{ 0xE9961E6E,0x3626,0x403A,{ 0xAF,0xE0,0x04,0x0D,0x58,0x16,0x56,0x32 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragEventArgs>{ static constexpr guid value{ 0xB440C7C3,0x02B4,0x4980,{ 0x93,0x42,0x25,0xDA,0xE1,0xC0,0xF1,0x88 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragEventArgs2>{ static constexpr guid value{ 0x26336658,0x2917,0x411D,{ 0xBF,0xC3,0x2F,0x22,0x47,0x1C,0xBB,0xE7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragEventArgs3>{ static constexpr guid value{ 0xD04FC3C6,0x8119,0x427A,{ 0x81,0x52,0x5F,0x95,0x50,0xCC,0x04,0x16 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragOperationDeferral>{ static constexpr guid value{ 0xBA73ECBA,0x1B73,0x4086,{ 0xB3,0xD3,0xC2,0x23,0xBE,0xEA,0x16,0x33 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragStartingEventArgs>{ static constexpr guid value{ 0x6800D3FA,0x90B8,0x46F9,{ 0x8E,0x30,0x5A,0xC2,0x5F,0x73,0xF0,0xF9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragStartingEventArgs2>{ static constexpr guid value{ 0xD855E08E,0x44B6,0x4211,{ 0xBD,0x0B,0x7F,0xDD,0xBB,0x6E,0x82,0x31 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragUI>{ static constexpr guid value{ 0x2D9BD838,0x7C60,0x4842,{ 0x91,0x70,0x34,0x6F,0xE1,0x0A,0x22,0x6A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDragUIOverride>{ static constexpr guid value{ 0xBD6C9DFA,0xC961,0x4861,{ 0xB7,0xA5,0xBF,0x4F,0xE4,0xA8,0xA6,0xEF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDropCompletedEventArgs>{ static constexpr guid value{ 0x6C4FC188,0x95BC,0x4261,{ 0x9E,0xC5,0x21,0xCA,0xB6,0x77,0xB7,0x34 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDurationHelper>{ static constexpr guid value{ 0x25C1659F,0x4497,0x4135,{ 0x94,0x0F,0xEE,0x96,0xF4,0xD6,0xE9,0x34 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IDurationHelperStatics>{ static constexpr guid value{ 0xBC88093E,0x3547,0x4EC0,{ 0xB5,0x19,0xFF,0xA8,0xF9,0xC4,0x83,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IEffectiveViewportChangedEventArgs>{ static constexpr guid value{ 0x55EE2E81,0x1C18,0x59ED,{ 0xBD,0x3D,0xC4,0xCA,0x8F,0xA7,0xD1,0x90 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementFactory>{ static constexpr guid value{ 0x17D2AD90,0x1370,0x55C8,{ 0x80,0xE1,0x78,0xB4,0x90,0x04,0xA9,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementFactoryGetArgs>{ static constexpr guid value{ 0xFB508774,0x41A3,0x5829,{ 0x92,0x55,0xCF,0x45,0x2D,0x04,0x1D,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementFactoryGetArgsFactory>{ static constexpr guid value{ 0xC3B6DAE7,0x883B,0x5FD7,{ 0xBE,0x80,0x20,0x59,0xD8,0x77,0xE7,0x83 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementFactoryRecycleArgs>{ static constexpr guid value{ 0x86F16B14,0x37E8,0x5DD8,{ 0xA9,0x0C,0x25,0xD3,0x71,0x03,0x18,0xB0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementFactoryRecycleArgsFactory>{ static constexpr guid value{ 0x8D926509,0xEA0D,0x541B,{ 0x82,0x71,0xF9,0xE9,0x11,0x8F,0x5E,0x7C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementSoundPlayer>{ static constexpr guid value{ 0x387773A5,0xF036,0x460C,{ 0x9B,0x81,0xF3,0xD6,0xEA,0x43,0xF6,0xF2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementSoundPlayerStatics>{ static constexpr guid value{ 0x217A9004,0x981D,0x41C9,{ 0xB1,0x52,0xAD,0xA9,0x11,0xA4,0xB1,0x3A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ static constexpr guid value{ 0xF2505956,0xED41,0x48D7,{ 0xAA,0xE8,0xF2,0xAB,0xCB,0x44,0x49,0x29 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IEventTrigger>{ static constexpr guid value{ 0xDEF8F855,0x0B49,0x4087,{ 0xB1,0xA9,0xB8,0xB3,0x84,0x88,0xF7,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IExceptionRoutedEventArgs>{ static constexpr guid value{ 0xDD9FF16A,0x4B62,0x4A6C,{ 0xA4,0x9D,0x06,0x71,0xEF,0x61,0x36,0xBE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IExceptionRoutedEventArgsFactory>{ static constexpr guid value{ 0xBBA9826D,0x5D7A,0x44E7,{ 0xB8,0x93,0xB2,0xAE,0x0D,0xD2,0x42,0x73 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement>{ static constexpr guid value{ 0xA391D09B,0x4A99,0x4B7C,{ 0x9D,0x8D,0x6F,0xA5,0xD0,0x1F,0x6F,0xBF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement2>{ static constexpr guid value{ 0xF19104BE,0x422A,0x4904,{ 0xA5,0x2F,0xEE,0x72,0x01,0x04,0x29,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement3>{ static constexpr guid value{ 0xC81C2720,0x5C52,0x4BBE,{ 0xA1,0x99,0x2B,0x1E,0x34,0xF0,0x0F,0x70 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement4>{ static constexpr guid value{ 0x6B765BB3,0xFBA3,0x4404,{ 0xBD,0xEE,0x1A,0x45,0xD1,0xCA,0x5F,0x21 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement6>{ static constexpr guid value{ 0x792A5D91,0x62A1,0x40BF,{ 0xA0,0xCE,0xF9,0xC1,0x31,0xFC,0xB7,0xA7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElement7>{ static constexpr guid value{ 0x2263886C,0xC069,0x570F,{ 0xB9,0xCC,0x9E,0x21,0xDD,0x02,0x8D,0x8E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementFactory>{ static constexpr guid value{ 0xDEAEE126,0x03CA,0x4966,{ 0xB5,0x76,0x60,0x4C,0xCE,0x93,0xB5,0xE8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementOverrides>{ static constexpr guid value{ 0xDA007E54,0xB3C2,0x4B9A,{ 0xAA,0x8E,0xD3,0xF0,0x71,0x26,0x2B,0x97 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementOverrides2>{ static constexpr guid value{ 0xCB5CD2B9,0xE3B4,0x458C,{ 0xB6,0x4E,0x14,0x34,0xFD,0x1B,0xD8,0x8A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementProtected7>{ static constexpr guid value{ 0x65AA0480,0x22E3,0x5103,{ 0xAD,0x2A,0xB6,0x26,0xF8,0x8C,0xA5,0xAE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementStatics>{ static constexpr guid value{ 0x48383032,0xFBEB,0x4F8A,{ 0xAE,0xD2,0xEE,0x21,0xFB,0x27,0xA5,0x7B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementStatics2>{ static constexpr guid value{ 0x9695DB02,0xC0D8,0x4FA2,{ 0xB1,0x00,0x3F,0xA2,0xDF,0x8B,0x95,0x38 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementStatics4>{ static constexpr guid value{ 0x9C41B155,0xC5D8,0x4663,{ 0xBF,0xF2,0xD8,0xD5,0x4F,0xB5,0xDB,0xB3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementStatics5>{ static constexpr guid value{ 0x525D3941,0x0B3C,0x4BE6,{ 0x99,0x78,0x19,0xA8,0x02,0x5C,0x09,0xD8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkElementStatics6>{ static constexpr guid value{ 0xFCC1529A,0x69DB,0x4582,{ 0xA7,0xBE,0xCF,0x6A,0x1C,0xFD,0xAC,0xD0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkTemplate>{ static constexpr guid value{ 0xA1E254D8,0xA446,0x4A27,{ 0x9A,0x9D,0xA0,0xF5,0x9E,0x12,0x58,0xA5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkTemplateFactory>{ static constexpr guid value{ 0x1A78A0A5,0x937D,0x46D4,{ 0x83,0x2B,0x94,0xFF,0x14,0xDA,0xB0,0x61 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkView>{ static constexpr guid value{ 0xDDBA664B,0xB603,0x47AA,{ 0x94,0x2D,0x38,0x33,0x17,0x4F,0x0D,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IFrameworkViewSource>{ static constexpr guid value{ 0xE3B077DA,0x35AD,0x4B09,{ 0xB5,0xB2,0x27,0x42,0x00,0x41,0xBA,0x9F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IGridLengthHelper>{ static constexpr guid value{ 0x7A826CE1,0x07A0,0x4083,{ 0xB6,0xD1,0xB1,0xD9,0x17,0xB9,0x76,0xAC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IGridLengthHelperStatics>{ static constexpr guid value{ 0x9D457B9B,0x019F,0x4266,{ 0x88,0x72,0x21,0x5F,0x19,0x8F,0x6A,0x9D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IMediaFailedRoutedEventArgs>{ static constexpr guid value{ 0x46D1FA8D,0x5149,0x4153,{ 0xBA,0x3C,0xB0,0x3E,0x64,0xEE,0x53,0x1E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPointHelper>{ static constexpr guid value{ 0x727BDD92,0x64B0,0x49CF,{ 0xA3,0x21,0xA9,0x79,0x3E,0x73,0xE2,0xE7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPointHelperStatics>{ static constexpr guid value{ 0x015ACA75,0x76D8,0x4B7E,{ 0x8A,0x33,0x7D,0x79,0x20,0x46,0x91,0xEE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPropertyMetadata>{ static constexpr guid value{ 0x814EF30D,0x8D18,0x448A,{ 0x86,0x44,0xF2,0xCB,0x51,0xE7,0x03,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPropertyMetadataFactory>{ static constexpr guid value{ 0xC1B81CC0,0x57CD,0x4F2F,{ 0xB0,0xA9,0xE1,0x80,0x1B,0x28,0xF7,0x6B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPropertyMetadataStatics>{ static constexpr guid value{ 0x3B01077A,0x6E06,0x45E9,{ 0x8B,0x5C,0xAF,0x24,0x34,0x58,0xC0,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPropertyPath>{ static constexpr guid value{ 0x300E5D8A,0x1FF3,0x4D2C,{ 0x95,0xEC,0x27,0xF8,0x1D,0xEB,0xAC,0xB8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IPropertyPathFactory>{ static constexpr guid value{ 0x4E4CDF99,0x9826,0x4E56,{ 0x84,0x7C,0xCA,0x05,0x5F,0x16,0x29,0x05 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IRectHelper>{ static constexpr guid value{ 0xA38781E2,0x4BFB,0x4EE2,{ 0xAF,0xE5,0x89,0xF3,0x1B,0x37,0x47,0x8D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IRectHelperStatics>{ static constexpr guid value{ 0x5EE163E4,0xC17E,0x494F,{ 0xB5,0x80,0x2F,0x05,0x74,0xFC,0x3A,0x15 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IResourceDictionary>{ static constexpr guid value{ 0xC1EA4F24,0xD6DE,0x4191,{ 0x8E,0x3A,0xF4,0x86,0x01,0xF7,0x48,0x9C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IResourceDictionaryFactory>{ static constexpr guid value{ 0xEA3639B5,0x31B7,0x4271,{ 0x92,0xC9,0x7C,0x95,0x84,0xA9,0x1C,0x22 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IRoutedEvent>{ static constexpr guid value{ 0xA6B25818,0x43C1,0x4C70,{ 0x86,0x5C,0x7B,0xDD,0x5A,0x32,0xE3,0x27 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IRoutedEventArgs>{ static constexpr guid value{ 0x5C985AC6,0xD802,0x4B38,{ 0xA2,0x23,0xBF,0x07,0x0C,0x43,0xFE,0xDF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IRoutedEventArgsFactory>{ static constexpr guid value{ 0xB61C4D87,0x70E5,0x412E,{ 0xB5,0x20,0x1A,0x41,0xEE,0x76,0xBB,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IScalarTransition>{ static constexpr guid value{ 0x4CB68238,0xE15D,0x524E,{ 0xA7,0x3C,0x9D,0x4D,0xCF,0xBE,0xA2,0x26 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IScalarTransitionFactory>{ static constexpr guid value{ 0xC9B1E9EE,0x90DA,0x5DDD,{ 0xBE,0x64,0x3E,0x47,0x97,0x7E,0xA2,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetter>{ static constexpr guid value{ 0xA73DED29,0xB4AE,0x4A81,{ 0xBE,0x85,0xE6,0x90,0xBA,0x0D,0x3B,0x6E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetter2>{ static constexpr guid value{ 0x70169561,0x05B1,0x4FA3,{ 0x9D,0x53,0x8E,0x0C,0x8C,0x74,0x7A,0xFC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetterBase>{ static constexpr guid value{ 0x418BE27C,0x2AC4,0x4F22,{ 0x80,0x97,0xDE,0xA3,0xAE,0xEB,0x2F,0xB3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetterBaseCollection>{ static constexpr guid value{ 0x03C40CA8,0x909E,0x4117,{ 0x81,0x1C,0xA4,0x52,0x94,0x96,0xBD,0xF1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetterBaseFactory>{ static constexpr guid value{ 0x81F8AD60,0x1CE8,0x469D,{ 0xA6,0x67,0x16,0xE3,0x7C,0xEF,0x8B,0xA9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISetterFactory>{ static constexpr guid value{ 0xD3CA3D42,0x09B1,0x49D5,{ 0x88,0x91,0xE7,0xB5,0x64,0x8E,0x02,0xA2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISizeChangedEventArgs>{ static constexpr guid value{ 0xD5312E60,0x5CC1,0x42A1,{ 0x92,0x0C,0x1A,0xF4,0x6B,0xE2,0xF9,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISizeHelper>{ static constexpr guid value{ 0xE7225A94,0x5D03,0x4A03,{ 0xBA,0x94,0x96,0x7F,0xC6,0x8F,0xCE,0xFE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ISizeHelperStatics>{ static constexpr guid value{ 0x6286C5B2,0xCF78,0x4915,{ 0xAA,0x40,0x76,0x00,0x4A,0x16,0x5F,0x5E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStateTrigger>{ static constexpr guid value{ 0x67ADEF2E,0xD8D9,0x49F7,{ 0xA1,0xFD,0x2E,0x35,0xEE,0xDD,0x23,0xCD } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStateTriggerBase>{ static constexpr guid value{ 0x48B20698,0xAF06,0x466C,{ 0x80,0x52,0x93,0x66,0x6D,0xDE,0x0E,0x49 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStateTriggerBaseFactory>{ static constexpr guid value{ 0x970E2C4B,0xBFAF,0x47B0,{ 0xBE,0x42,0xC1,0xD7,0x11,0xBB,0x2E,0x9F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStateTriggerBaseProtected>{ static constexpr guid value{ 0x3C41E253,0x8D14,0x4216,{ 0x99,0x4C,0xF9,0x93,0x04,0x29,0xF6,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStateTriggerStatics>{ static constexpr guid value{ 0x71E95C90,0xB3FE,0x4DD3,{ 0xA8,0xA8,0x44,0xA2,0xCE,0x25,0xE0,0xB8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStyle>{ static constexpr guid value{ 0xC4A9F225,0x9DB7,0x4A7D,{ 0xB6,0xD1,0xF7,0x4E,0xDB,0x92,0x93,0xC2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IStyleFactory>{ static constexpr guid value{ 0xA36824E3,0x3D81,0x4CE5,{ 0xAA,0x51,0x8B,0x41,0x0F,0x60,0x2F,0xCD } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITargetPropertyPath>{ static constexpr guid value{ 0x40740F8E,0x085F,0x4CED,{ 0xBE,0x70,0x6F,0x47,0xAC,0xF1,0x5A,0xD0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITargetPropertyPathFactory>{ static constexpr guid value{ 0x88EECCC8,0x99E2,0x4A44,{ 0x99,0x07,0xB4,0x4B,0xC8,0x6E,0x2B,0xBE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IThicknessHelper>{ static constexpr guid value{ 0xA86BAE4B,0x1E8F,0x4EEB,{ 0x90,0x13,0x0B,0x28,0x38,0xA9,0x7B,0x34 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IThicknessHelperStatics>{ static constexpr guid value{ 0xC0991A7C,0x070C,0x4DA6,{ 0x87,0x84,0x01,0xCA,0x80,0x0E,0xB7,0x3A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITriggerAction>{ static constexpr guid value{ 0xA2C0DF02,0x63D5,0x4B46,{ 0x9B,0x83,0x08,0x68,0xD3,0x07,0x96,0x21 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITriggerActionFactory>{ static constexpr guid value{ 0x68D2C0B9,0x3289,0x414F,{ 0x8F,0x6E,0xC6,0xB9,0x7A,0xED,0xDA,0x03 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITriggerBase>{ static constexpr guid value{ 0xE7EA222F,0xDEE6,0x4393,{ 0xA8,0xB2,0x89,0x23,0xD6,0x41,0xF3,0x95 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ITriggerBaseFactory>{ static constexpr guid value{ 0x6A3B9E57,0xFC5D,0x42D0,{ 0x8C,0xB9,0xCA,0x50,0x66,0x7A,0xF7,0x46 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement>{ static constexpr guid value{ 0x676D0BE9,0xB65C,0x41C6,{ 0xBA,0x40,0x58,0xCF,0x87,0xF2,0x01,0xC1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement2>{ static constexpr guid value{ 0x676D0BF9,0xB66C,0x41D6,{ 0xBA,0x50,0x58,0xCF,0x87,0xF2,0x01,0xD1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement3>{ static constexpr guid value{ 0xBC2B28F1,0x26F2,0x4AAB,{ 0xB2,0x56,0x3B,0x53,0x50,0x88,0x1E,0x37 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement4>{ static constexpr guid value{ 0x69145CD4,0x199A,0x4657,{ 0x9E,0x57,0xE9,0x9E,0x8F,0x13,0x67,0x12 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement5>{ static constexpr guid value{ 0x8EED9BC2,0xA58C,0x4453,{ 0xAF,0x0F,0xA9,0x2E,0xE0,0x6D,0x03,0x17 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement7>{ static constexpr guid value{ 0xCAFC4968,0x6369,0x4249,{ 0x80,0xF9,0x3D,0x65,0x63,0x19,0xE8,0x11 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement8>{ static constexpr guid value{ 0x3AB70E85,0xD508,0x4477,{ 0xB6,0xF8,0x0E,0x43,0x57,0x01,0xC8,0x36 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElement9>{ static constexpr guid value{ 0xB4A04776,0x4E88,0x50CA,{ 0x8F,0x2B,0x08,0x94,0x0D,0x6C,0x5F,0x94 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementFactory>{ static constexpr guid value{ 0xB9EE93FE,0xA338,0x419F,{ 0xAC,0x32,0x91,0xDC,0xAA,0xDF,0x5D,0x08 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementOverrides>{ static constexpr guid value{ 0x608D2F1D,0x7858,0x4AEB,{ 0x89,0xE4,0xB5,0x4E,0x2C,0x7E,0xD3,0xD3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementOverrides7>{ static constexpr guid value{ 0xB97F7F68,0xC29B,0x4C99,{ 0xA1,0xC3,0x95,0x26,0x19,0xD6,0xE7,0x20 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementOverrides8>{ static constexpr guid value{ 0x4A5A645C,0x548D,0x48CF,{ 0xB9,0x98,0x78,0x44,0xD6,0xE2,0x35,0xA1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementOverrides9>{ static constexpr guid value{ 0x9A6E5973,0x6D63,0x54F2,{ 0x90,0xFA,0x62,0x81,0x3B,0x20,0xB7,0xB9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics>{ static constexpr guid value{ 0x58D3573B,0xF52C,0x45BE,{ 0x98,0x8B,0xA5,0x86,0x95,0x64,0x87,0x3C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics2>{ static constexpr guid value{ 0x58D3574B,0xF53C,0x45BE,{ 0x98,0x9B,0xA5,0x86,0x95,0x64,0x87,0x4C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics3>{ static constexpr guid value{ 0xD1F87ADE,0xECA1,0x4561,{ 0xA3,0x2B,0x64,0x60,0x1B,0x4E,0x05,0x97 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics4>{ static constexpr guid value{ 0x1D157D61,0x16AF,0x411F,{ 0xB7,0x74,0x27,0x23,0x75,0xA4,0xAC,0x2C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics5>{ static constexpr guid value{ 0x59BD7D91,0x8FA3,0x4C65,{ 0xBA,0x1B,0x40,0xDF,0x38,0x55,0x6C,0xBB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics6>{ static constexpr guid value{ 0x647E03B7,0x036A,0x4DEA,{ 0x95,0x40,0x1D,0xD7,0xFD,0x12,0x66,0xF1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics7>{ static constexpr guid value{ 0xDA9B4493,0xA695,0x4145,{ 0xAE,0x93,0x88,0x80,0x24,0x39,0x6A,0x0F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics8>{ static constexpr guid value{ 0x17BE3487,0x4875,0x4915,{ 0xB0,0xB1,0xA4,0xC0,0xF8,0x51,0xDF,0x3F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUIElementStatics9>{ static constexpr guid value{ 0x71467E77,0x8CA3,0x5ED7,{ 0x95,0xDB,0xD5,0x1C,0xDA,0xD7,0x7F,0x81 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ static constexpr guid value{ 0x7230269C,0x054E,0x4CF3,{ 0x86,0xC5,0xBE,0x90,0xEB,0x68,0x63,0xD5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVector3Transition>{ static constexpr guid value{ 0xD2E209DC,0xC4A2,0x5101,{ 0x9A,0x68,0xFA,0x01,0x50,0x50,0x55,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVector3TransitionFactory>{ static constexpr guid value{ 0xC3706699,0xEE9B,0x50DC,{ 0x88,0x07,0xF5,0x1D,0x5A,0x75,0x94,0x95 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualState>{ static constexpr guid value{ 0x6320AFFC,0xC31A,0x4450,{ 0xAF,0xDE,0xF6,0xEA,0x7B,0xD1,0xF5,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualState2>{ static constexpr guid value{ 0x0FA0F896,0x64C0,0x45FB,{ 0x8D,0x24,0xFB,0x83,0x29,0x8C,0x0D,0x93 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ static constexpr guid value{ 0xFE216AB1,0xF31F,0x4791,{ 0x89,0x89,0xC7,0x0E,0x1D,0x9B,0x59,0xFF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateGroup>{ static constexpr guid value{ 0xE4F9D9A4,0xE028,0x44DE,{ 0x9B,0x15,0x49,0x29,0xAE,0x0A,0x26,0xC2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateManager>{ static constexpr guid value{ 0x6FDA9F9A,0x6FAB,0x4112,{ 0x92,0x58,0x10,0x06,0xA3,0xC3,0x47,0x6E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateManagerFactory>{ static constexpr guid value{ 0x85E598FD,0xA575,0x47B6,{ 0x9E,0x30,0x38,0x3C,0xD0,0x85,0x85,0xF2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateManagerOverrides>{ static constexpr guid value{ 0x4A66910E,0x7979,0x43C8,{ 0x8F,0xF4,0xEC,0x61,0x22,0x75,0x00,0x06 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateManagerProtected>{ static constexpr guid value{ 0x4B3B8640,0xB0B7,0x404C,{ 0x9E,0xF4,0xD9,0x49,0x64,0x0E,0x24,0x5D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualStateManagerStatics>{ static constexpr guid value{ 0x01D0E9E0,0xD713,0x414E,{ 0xA7,0x4E,0xE6,0x3E,0xC7,0xAC,0x8C,0x3D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualTransition>{ static constexpr guid value{ 0x55C5905E,0x2BC7,0x400D,{ 0xAA,0xA4,0x1A,0x29,0x81,0x49,0x1E,0xE0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IVisualTransitionFactory>{ static constexpr guid value{ 0xEA75864F,0xD1E0,0x4DAE,{ 0xB4,0x29,0x89,0xFC,0x32,0x27,0x24,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IWindow>{ static constexpr guid value{ 0x3276167D,0xC9F6,0x462D,{ 0x9D,0xE2,0xAE,0x4C,0x1F,0xD8,0xC2,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IWindow2>{ static constexpr guid value{ 0xD384759F,0x34F6,0x4482,{ 0x84,0x35,0xF5,0x52,0xF9,0xB2,0x4C,0xC8 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IWindow3>{ static constexpr guid value{ 0xB70BDC9D,0x1C35,0x462A,{ 0x9B,0x97,0x80,0x8D,0x5A,0xF9,0xF2,0x8E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IWindowCreatedEventArgs>{ static constexpr guid value{ 0x31B71470,0xFEFF,0x4654,{ 0xAF,0x48,0x9B,0x39,0x8A,0xB5,0x77,0x2B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::IWindowStatics>{ static constexpr guid value{ 0x93328409,0x4EA1,0x4AFA,{ 0x83,0xDC,0x0C,0x4E,0x73,0xE8,0x8B,0xB1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ApplicationInitializationCallback>{ static constexpr guid value{ 0xB6351C55,0xC284,0x46E4,{ 0x83,0x10,0xFB,0x09,0x67,0xFA,0xB7,0x6F } }; };
+template <> struct guid_storage<Windows::UI::Xaml::BindingFailedEventHandler>{ static constexpr guid value{ 0x136B1782,0x54BA,0x420D,{ 0xA1,0xAA,0x82,0x82,0x87,0x21,0xCD,0xE6 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::CreateDefaultValueCallback>{ static constexpr guid value{ 0xD6ECB12C,0x15B5,0x4EC8,{ 0xB9,0x5C,0xCD,0xD2,0x08,0xF0,0x81,0x53 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::DependencyPropertyChangedCallback>{ static constexpr guid value{ 0x45883D16,0x27BF,0x4BC1,{ 0xAC,0x26,0x94,0xC1,0x60,0x1F,0x3A,0x49 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::DependencyPropertyChangedEventHandler>{ static constexpr guid value{ 0x09223E5A,0x75BE,0x4499,{ 0x81,0x80,0x1D,0xDC,0x00,0x54,0x21,0xC0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::DragEventHandler>{ static constexpr guid value{ 0x2AB1A205,0x1E73,0x4BCF,{ 0xAA,0xBC,0x57,0xB9,0x7E,0x21,0x96,0x1D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::EnteredBackgroundEventHandler>{ static constexpr guid value{ 0x93A956AE,0x1D7F,0x438B,{ 0xB7,0xB8,0x22,0x7D,0x96,0xB6,0x09,0xC0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::ExceptionRoutedEventHandler>{ static constexpr guid value{ 0x68E0E810,0xF6EA,0x42BC,{ 0x85,0x5B,0x5D,0x9B,0x67,0xE6,0xA2,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::LeavingBackgroundEventHandler>{ static constexpr guid value{ 0xAAAD5DAD,0x4FC6,0x4AA4,{ 0xB7,0xCF,0x87,0x7E,0x36,0xAD,0xA4,0xF6 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::PropertyChangedCallback>{ static constexpr guid value{ 0x5A9F8A25,0xD142,0x44A4,{ 0x82,0x31,0xFD,0x67,0x67,0x24,0xF2,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::RoutedEventHandler>{ static constexpr guid value{ 0xA856E674,0xB0B6,0x4BC3,{ 0xBB,0xA8,0x1B,0xA0,0x6E,0x40,0xD4,0xB5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::SizeChangedEventHandler>{ static constexpr guid value{ 0x1115B13C,0x25D2,0x480B,{ 0x89,0xDC,0xEB,0x3D,0xCB,0xD6,0xB7,0xFA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::SuspendingEventHandler>{ static constexpr guid value{ 0x23429465,0xE36A,0x40E2,{ 0xB1,0x39,0xA4,0x70,0x46,0x02,0xA6,0xE1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::UnhandledExceptionEventHandler>{ static constexpr guid value{ 0x9274E6BD,0x49A1,0x4958,{ 0xBE,0xEE,0xD0,0xE1,0x95,0x87,0xB6,0xE3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::VisualStateChangedEventHandler>{ static constexpr guid value{ 0xE6D5BBD5,0xE029,0x43A6,{ 0xB3,0x6D,0x84,0xA8,0x10,0x42,0xD7,0x74 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::WindowActivatedEventHandler>{ static constexpr guid value{ 0x18026348,0x8619,0x4C7B,{ 0xB5,0x34,0xCE,0xD4,0x5D,0x9D,0xE2,0x19 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::WindowClosedEventHandler>{ static constexpr guid value{ 0x0DB89161,0x20D7,0x45DF,{ 0x91,0x22,0xBA,0x89,0x57,0x67,0x03,0xBA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::WindowSizeChangedEventHandler>{ static constexpr guid value{ 0x5C21C742,0x2CED,0x4FD9,{ 0xBA,0x38,0x71,0x18,0xD4,0x0E,0x96,0x6B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::WindowVisibilityChangedEventHandler>{ static constexpr guid value{ 0x10406AD6,0xB090,0x4A4A,{ 0xB2,0xAD,0xD6,0x82,0xDF,0x27,0x13,0x0F } }; };
 template <> struct default_interface<Windows::UI::Xaml::AdaptiveTrigger>{ using type = Windows::UI::Xaml::IAdaptiveTrigger; };
 template <> struct default_interface<Windows::UI::Xaml::Application>{ using type = Windows::UI::Xaml::IApplication; };
 template <> struct default_interface<Windows::UI::Xaml::ApplicationInitializationCallbackParams>{ using type = Windows::UI::Xaml::IApplicationInitializationCallbackParams; };
 template <> struct default_interface<Windows::UI::Xaml::BindingFailedEventArgs>{ using type = Windows::UI::Xaml::IBindingFailedEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::BringIntoViewOptions>{ using type = Windows::UI::Xaml::IBringIntoViewOptions; };
 template <> struct default_interface<Windows::UI::Xaml::BringIntoViewRequestedEventArgs>{ using type = Windows::UI::Xaml::IBringIntoViewRequestedEventArgs; };
+template <> struct default_interface<Windows::UI::Xaml::BrushTransition>{ using type = Windows::UI::Xaml::IBrushTransition; };
+template <> struct default_interface<Windows::UI::Xaml::ColorPaletteResources>{ using type = Windows::UI::Xaml::IColorPaletteResources; };
 template <> struct default_interface<Windows::UI::Xaml::CornerRadiusHelper>{ using type = Windows::UI::Xaml::ICornerRadiusHelper; };
 template <> struct default_interface<Windows::UI::Xaml::DataContextChangedEventArgs>{ using type = Windows::UI::Xaml::IDataContextChangedEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::DataTemplate>{ using type = Windows::UI::Xaml::IDataTemplate; };
@@ -1426,6 +1547,9 @@ template <> struct default_interface<Windows::UI::Xaml::DragUI>{ using type = Wi
 template <> struct default_interface<Windows::UI::Xaml::DragUIOverride>{ using type = Windows::UI::Xaml::IDragUIOverride; };
 template <> struct default_interface<Windows::UI::Xaml::DropCompletedEventArgs>{ using type = Windows::UI::Xaml::IDropCompletedEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::DurationHelper>{ using type = Windows::UI::Xaml::IDurationHelper; };
+template <> struct default_interface<Windows::UI::Xaml::EffectiveViewportChangedEventArgs>{ using type = Windows::UI::Xaml::IEffectiveViewportChangedEventArgs; };
+template <> struct default_interface<Windows::UI::Xaml::ElementFactoryGetArgs>{ using type = Windows::UI::Xaml::IElementFactoryGetArgs; };
+template <> struct default_interface<Windows::UI::Xaml::ElementFactoryRecycleArgs>{ using type = Windows::UI::Xaml::IElementFactoryRecycleArgs; };
 template <> struct default_interface<Windows::UI::Xaml::ElementSoundPlayer>{ using type = Windows::UI::Xaml::IElementSoundPlayer; };
 template <> struct default_interface<Windows::UI::Xaml::EventTrigger>{ using type = Windows::UI::Xaml::IEventTrigger; };
 template <> struct default_interface<Windows::UI::Xaml::ExceptionRoutedEventArgs>{ using type = Windows::UI::Xaml::IExceptionRoutedEventArgs; };
@@ -1442,6 +1566,7 @@ template <> struct default_interface<Windows::UI::Xaml::RectHelper>{ using type 
 template <> struct default_interface<Windows::UI::Xaml::ResourceDictionary>{ using type = Windows::UI::Xaml::IResourceDictionary; };
 template <> struct default_interface<Windows::UI::Xaml::RoutedEvent>{ using type = Windows::UI::Xaml::IRoutedEvent; };
 template <> struct default_interface<Windows::UI::Xaml::RoutedEventArgs>{ using type = Windows::UI::Xaml::IRoutedEventArgs; };
+template <> struct default_interface<Windows::UI::Xaml::ScalarTransition>{ using type = Windows::UI::Xaml::IScalarTransition; };
 template <> struct default_interface<Windows::UI::Xaml::Setter>{ using type = Windows::UI::Xaml::ISetter; };
 template <> struct default_interface<Windows::UI::Xaml::SetterBase>{ using type = Windows::UI::Xaml::ISetterBase; };
 template <> struct default_interface<Windows::UI::Xaml::SetterBaseCollection>{ using type = Windows::UI::Xaml::ISetterBaseCollection; };
@@ -1458,6 +1583,7 @@ template <> struct default_interface<Windows::UI::Xaml::TriggerBase>{ using type
 template <> struct default_interface<Windows::UI::Xaml::TriggerCollection>{ using type = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerBase>; };
 template <> struct default_interface<Windows::UI::Xaml::UIElement>{ using type = Windows::UI::Xaml::IUIElement; };
 template <> struct default_interface<Windows::UI::Xaml::UnhandledExceptionEventArgs>{ using type = Windows::UI::Xaml::IUnhandledExceptionEventArgs; };
+template <> struct default_interface<Windows::UI::Xaml::Vector3Transition>{ using type = Windows::UI::Xaml::IVector3Transition; };
 template <> struct default_interface<Windows::UI::Xaml::VisualState>{ using type = Windows::UI::Xaml::IVisualState; };
 template <> struct default_interface<Windows::UI::Xaml::VisualStateChangedEventArgs>{ using type = Windows::UI::Xaml::IVisualStateChangedEventArgs; };
 template <> struct default_interface<Windows::UI::Xaml::VisualStateGroup>{ using type = Windows::UI::Xaml::IVisualStateGroup; };
@@ -1465,6 +1591,1563 @@ template <> struct default_interface<Windows::UI::Xaml::VisualStateManager>{ usi
 template <> struct default_interface<Windows::UI::Xaml::VisualTransition>{ using type = Windows::UI::Xaml::IVisualTransition; };
 template <> struct default_interface<Windows::UI::Xaml::Window>{ using type = Windows::UI::Xaml::IWindow; };
 template <> struct default_interface<Windows::UI::Xaml::WindowCreatedEventArgs>{ using type = Windows::UI::Xaml::IWindowCreatedEventArgs; };
+
+template <> struct abi<Windows::UI::Xaml::IAdaptiveTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinWindowWidth(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinWindowWidth(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinWindowHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinWindowHeight(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IAdaptiveTriggerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IAdaptiveTriggerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinWindowWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinWindowHeightProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplication>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Resources(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Resources(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DebugSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestedTheme(Windows::UI::Xaml::ApplicationTheme* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestedTheme(Windows::UI::Xaml::ApplicationTheme value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_UnhandledException(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_UnhandledException(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Suspending(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Suspending(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Resuming(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Resuming(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Exit() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplication2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FocusVisualKind(Windows::UI::Xaml::FocusVisualKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualKind(Windows::UI::Xaml::FocusVisualKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LeavingBackground(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LeavingBackground(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnteredBackground(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnteredBackground(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplication3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplicationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplicationInitializationCallbackParams>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplicationOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnLaunched(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnFileActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnSearchActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnShareTargetActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnFileOpenPickerActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnFileSavePickerActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnCachedFileUpdaterActivated(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnWindowCreated(void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplicationOverrides2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnBackgroundActivated(void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IApplicationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start(void* callback) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadComponent(void* component, void* resourceLocator) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadComponentWithResourceLocation(void* component, void* resourceLocator, Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation componentResourceLocation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBindingFailedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBringIntoViewOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnimationDesired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnimationDesired(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetRect(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetRect(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBringIntoViewOptions2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontalAlignmentRatio(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalAlignmentRatio(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignmentRatio(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalAlignmentRatio(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalOffset(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TargetElement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetElement(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AnimationDesired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnimationDesired(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetRect(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetRect(Windows::Foundation::Rect value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalAlignmentRatio(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignmentRatio(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBrushTransition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IBrushTransitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IColorPaletteResources>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AltHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AltHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AltLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltMedium(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AltMedium(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltMediumHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AltMediumHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AltMediumLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AltMediumLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseMedium(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseMedium(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseMediumHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseMediumHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseMediumLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BaseMediumLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeAltLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeAltLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeBlackHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeBlackHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeBlackLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeBlackLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeBlackMediumLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeBlackMediumLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeBlackMedium(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeBlackMedium(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeDisabledHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeDisabledHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeDisabledLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeDisabledLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeHigh(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeHigh(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeMedium(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeMedium(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeMediumLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeMediumLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeWhite(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeWhite(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChromeGray(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ChromeGray(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListLow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListLow(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ListMedium(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ListMedium(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ErrorText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ErrorText(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Accent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Accent(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IColorPaletteResourcesFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ICornerRadiusHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft, struct struct_Windows_UI_Xaml_CornerRadius* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromUniformRadius(double uniformRadius, struct struct_Windows_UI_Xaml_CornerRadius* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataContextChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NewValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadContent(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplateExtension>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ResetTemplate() noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessBinding(uint32_t phase, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ProcessBindings(void* arg, int32_t* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplateFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplateKey>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataType(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataType(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplateKeyFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstanceWithType(void* dataType, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDataTemplateStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtensionInstanceProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetExtensionInstance(void* element, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetExtensionInstance(void* element, void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDebugSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EnableFrameRateCounter(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EnableFrameRateCounter(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsBindingTracingEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsBindingTracingEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOverdrawHeatMapEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsOverdrawHeatMapEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_BindingFailed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_BindingFailed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDebugSettings2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EnableRedrawRegions(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EnableRedrawRegions(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDebugSettings3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTextPerformanceVisualizationEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTextPerformanceVisualizationEnabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDebugSettings4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FailFastOnErrors(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FailFastOnErrors(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyObject>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetValue(void* dp, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetValue(void* dp, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearValue(void* dp) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadLocalValue(void* dp, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAnimationBaseValue(void* dp, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Dispatcher(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyObject2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RegisterPropertyChangedCallback(void* dp, void* callback, int64_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnregisterPropertyChangedCallback(void* dp, int64_t token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyObjectFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyProperty>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetMetadata(struct struct_Windows_UI_Xaml_Interop_TypeName forType, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OldValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewValue(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDependencyPropertyStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnsetValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Register(void* name, struct struct_Windows_UI_Xaml_Interop_TypeName propertyType, struct struct_Windows_UI_Xaml_Interop_TypeName ownerType, void* typeMetadata, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterAttached(void* name, struct struct_Windows_UI_Xaml_Interop_TypeName propertyType, struct struct_Windows_UI_Xaml_Interop_TypeName ownerType, void* defaultMetadata, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDispatcherTimer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Interval(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Tick(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Tick(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDispatcherTimerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPosition(void* relativeTo, Windows::Foundation::Point* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragEventArgs2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataView(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DragUIOverride(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Modifiers(Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragEventArgs3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragOperationDeferral>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Complete() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragStartingEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Cancel(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Cancel(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DragUI(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPosition(void* relativeTo, Windows::Foundation::Point* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragStartingEventArgs2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragUI>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetContentFromBitmapImage(void* bitmapImage) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromBitmapImageWithAnchorPoint(void* bitmapImage, Windows::Foundation::Point anchorPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromSoftwareBitmap(void* softwareBitmap) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromSoftwareBitmapWithAnchorPoint(void* softwareBitmap, Windows::Foundation::Point anchorPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromDataPackage() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDragUIOverride>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Caption(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Caption(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsContentVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsContentVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCaptionVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsCaptionVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsGlyphVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsGlyphVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL Clear() noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromBitmapImage(void* bitmapImage) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromBitmapImageWithAnchorPoint(void* bitmapImage, Windows::Foundation::Point anchorPoint) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromSoftwareBitmap(void* softwareBitmap) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentFromSoftwareBitmapWithAnchorPoint(void* softwareBitmap, Windows::Foundation::Point anchorPoint) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDropCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DropResult(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDurationHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IDurationHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Automatic(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Forever(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Compare(struct struct_Windows_UI_Xaml_Duration duration1, struct struct_Windows_UI_Xaml_Duration duration2, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromTimeSpan(Windows::Foundation::TimeSpan timeSpan, struct struct_Windows_UI_Xaml_Duration* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHasTimeSpan(struct struct_Windows_UI_Xaml_Duration target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Add(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration duration, struct struct_Windows_UI_Xaml_Duration* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Equals(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Subtract(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration duration, struct struct_Windows_UI_Xaml_Duration* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IEffectiveViewportChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EffectiveViewport(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxViewport(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BringIntoViewDistanceX(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BringIntoViewDistanceY(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetElement(void* args, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RecycleElement(void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementFactoryGetArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Parent(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementFactoryGetArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementFactoryRecycleArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Element(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Element(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Parent(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementFactoryRecycleArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementSoundPlayer>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementSoundPlayerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Volume(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Volume(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_State(Windows::UI::Xaml::ElementSoundPlayerState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_State(Windows::UI::Xaml::ElementSoundPlayerState value) noexcept = 0;
+    virtual int32_t WINRT_CALL Play(Windows::UI::Xaml::ElementSoundKind sound) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SpatialAudioMode(Windows::UI::Xaml::ElementSpatialAudioMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SpatialAudioMode(Windows::UI::Xaml::ElementSpatialAudioMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IEventTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RoutedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RoutedEvent(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Actions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IExceptionRoutedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorMessage(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IExceptionRoutedEventArgsFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Triggers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Resources(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Resources(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Tag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Tag(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualWidth(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Width(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Height(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinWidth(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinWidth(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWidth(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxWidth(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinHeight(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxHeight(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignment(Windows::UI::Xaml::VerticalAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalAlignment(Windows::UI::Xaml::VerticalAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Margin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Margin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BaseUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataContext(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataContext(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Style(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Style(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowDirection(Windows::UI::Xaml::FlowDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FlowDirection(Windows::UI::Xaml::FlowDirection value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Loaded(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Loaded(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Unloaded(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Unloaded(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SizeChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SizeChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LayoutUpdated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LayoutUpdated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL FindName(void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetBinding(void* dp, void* binding) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequestedTheme(Windows::UI::Xaml::ElementTheme* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestedTheme(Windows::UI::Xaml::ElementTheme value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DataContextChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DataContextChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBindingExpression(void* dp, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_Loading(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Loading(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowFocusOnInteraction(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowFocusOnInteraction(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualMargin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualMargin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualSecondaryThickness(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualSecondaryThickness(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualPrimaryThickness(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualPrimaryThickness(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualSecondaryBrush(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualSecondaryBrush(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualPrimaryBrush(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FocusVisualPrimaryBrush(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowFocusWhenDisabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowFocusWhenDisabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActualTheme(Windows::UI::Xaml::ElementTheme* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ActualThemeChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ActualThemeChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElement7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsLoaded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EffectiveViewportChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EffectiveViewportChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size* result) noexcept = 0;
+    virtual int32_t WINRT_CALL OnApplyTemplate() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementOverrides2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GoToElementStateCore(void* stateName, bool useTransitions, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementProtected7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InvalidateViewport() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TagProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LanguageProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActualHeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxWidthProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinHeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxHeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalAlignmentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignmentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MarginProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NameProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataContextProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StyleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowDirectionProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RequestedThemeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowFocusOnInteractionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualMarginProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualSecondaryThicknessProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualPrimaryThicknessProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualSecondaryBrushProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusVisualPrimaryBrushProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowFocusWhenDisabledProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DeferTree(void* element) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActualThemeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkTemplate>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkTemplateFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkView>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IFrameworkViewSource>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IGridLengthHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IGridLengthHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Auto(struct struct_Windows_UI_Xaml_GridLength* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromPixels(double pixels, struct struct_Windows_UI_Xaml_GridLength* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type, struct struct_Windows_UI_Xaml_GridLength* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsAbsolute(struct struct_Windows_UI_Xaml_GridLength target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsAuto(struct struct_Windows_UI_Xaml_GridLength target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsStar(struct struct_Windows_UI_Xaml_GridLength target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Equals(struct struct_Windows_UI_Xaml_GridLength target, struct struct_Windows_UI_Xaml_GridLength value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IMediaFailedRoutedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorTrace(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPointHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPointHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromCoordinates(float x, float y, Windows::Foundation::Point* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPropertyMetadata>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DefaultValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CreateDefaultValueCallback(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPropertyMetadataFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstanceWithDefaultValue(void* defaultValue, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInstanceWithDefaultValueAndCallback(void* defaultValue, void* propertyChangedCallback, void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPropertyMetadataStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithDefaultValue(void* defaultValue, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithDefaultValueAndCallback(void* defaultValue, void* propertyChangedCallback, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithFactory(void* createDefaultValueCallback, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithFactoryAndCallback(void* createDefaultValueCallback, void* propertyChangedCallback, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPropertyPath>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IPropertyPathFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* path, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IRectHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IRectHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Empty(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromCoordinatesAndDimensions(float x, float y, float width, float height, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromPoints(Windows::Foundation::Point point1, Windows::Foundation::Point point2, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromLocationAndSize(Windows::Foundation::Point location, Windows::Foundation::Size size, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsEmpty(Windows::Foundation::Rect target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBottom(Windows::Foundation::Rect target, float* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLeft(Windows::Foundation::Rect target, float* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetRight(Windows::Foundation::Rect target, float* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetTop(Windows::Foundation::Rect target, float* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Contains(Windows::Foundation::Rect target, Windows::Foundation::Point point, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Equals(Windows::Foundation::Rect target, Windows::Foundation::Rect value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Intersect(Windows::Foundation::Rect target, Windows::Foundation::Rect rect, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnionWithPoint(Windows::Foundation::Rect target, Windows::Foundation::Point point, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnionWithRect(Windows::Foundation::Rect target, Windows::Foundation::Rect rect, Windows::Foundation::Rect* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IResourceDictionary>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MergedDictionaries(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ThemeDictionaries(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IResourceDictionaryFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IRoutedEvent>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IRoutedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OriginalSource(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IRoutedEventArgsFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IScalarTransition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IScalarTransitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Property(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetter2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Target(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Target(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetterBase>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSealed(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetterBaseCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSealed(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetterBaseFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISetterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* targetProperty, void* value, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISizeChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PreviousSize(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewSize(Windows::Foundation::Size* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISizeHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ISizeHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Empty(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FromDimensions(float width, float height, Windows::Foundation::Size* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsEmpty(Windows::Foundation::Size target, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL Equals(Windows::Foundation::Size target, Windows::Foundation::Size value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStateTrigger>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsActive(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStateTriggerBase>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStateTriggerBaseFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStateTriggerBaseProtected>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetActive(bool IsActive) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStateTriggerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsActiveProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStyle>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSealed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Setters(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TargetType(struct struct_Windows_UI_Xaml_Interop_TypeName* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TargetType(struct struct_Windows_UI_Xaml_Interop_TypeName value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BasedOn(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BasedOn(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Seal() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IStyleFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(struct struct_Windows_UI_Xaml_Interop_TypeName targetType, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITargetPropertyPath>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Path(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Target(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Target(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITargetPropertyPathFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* targetProperty, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IThicknessHelper>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IThicknessHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FromLengths(double left, double top, double right, double bottom, struct struct_Windows_UI_Xaml_Thickness* result) noexcept = 0;
+    virtual int32_t WINRT_CALL FromUniformLength(double uniformLength, struct struct_Windows_UI_Xaml_Thickness* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITriggerAction>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITriggerActionFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITriggerBase>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::ITriggerBaseFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredSize(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowDrop(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowDrop(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opacity(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clip(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Clip(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RenderTransform(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RenderTransform(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Projection(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Projection(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RenderTransformOrigin(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RenderTransformOrigin(Windows::Foundation::Point value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsHitTestVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsHitTestVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Visibility(Windows::UI::Xaml::Visibility* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Visibility(Windows::UI::Xaml::Visibility value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RenderSize(Windows::Foundation::Size* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UseLayoutRounding(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UseLayoutRounding(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Transitions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Transitions(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CacheMode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CacheMode(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTapEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTapEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDoubleTapEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsDoubleTapEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRightTapEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsRightTapEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsHoldingEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsHoldingEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerCaptures(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_KeyUp(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_KeyUp(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_KeyDown(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_KeyDown(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GotFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GotFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LostFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LostFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DragEnter(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DragEnter(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DragLeave(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DragLeave(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DragOver(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DragOver(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Drop(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Drop(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerPressed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerPressed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerMoved(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerMoved(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerReleased(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerReleased(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerEntered(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerEntered(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerExited(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerExited(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerCaptureLost(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerCaptureLost(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerCanceled(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerCanceled(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PointerWheelChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PointerWheelChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Tapped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Tapped(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DoubleTapped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DoubleTapped(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Holding(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Holding(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RightTapped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RightTapped(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ManipulationStarting(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ManipulationStarting(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ManipulationInertiaStarting(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ManipulationInertiaStarting(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ManipulationStarted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ManipulationStarted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ManipulationDelta(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ManipulationDelta(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ManipulationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ManipulationCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Measure(Windows::Foundation::Size availableSize) noexcept = 0;
+    virtual int32_t WINRT_CALL Arrange(Windows::Foundation::Rect finalRect) noexcept = 0;
+    virtual int32_t WINRT_CALL CapturePointer(void* value, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL ReleasePointerCapture(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReleasePointerCaptures() noexcept = 0;
+    virtual int32_t WINRT_CALL AddHandler(void* routedEvent, void* handler, bool handledEventsToo) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveHandler(void* routedEvent, void* handler) noexcept = 0;
+    virtual int32_t WINRT_CALL TransformToVisual(void* visual, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL InvalidateMeasure() noexcept = 0;
+    virtual int32_t WINRT_CALL InvalidateArrange() noexcept = 0;
+    virtual int32_t WINRT_CALL UpdateLayout() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL CancelDirectManipulations(bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Transform3D(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Transform3D(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanDrag(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanDrag(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DragStarting(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DragStarting(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DropCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DropCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL StartDragAsync(void* pointerPoint, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContextFlyout(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContextFlyout(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExitDisplayModeOnAccessKeyInvoked(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExitDisplayModeOnAccessKeyInvoked(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAccessKeyScope(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAccessKeyScope(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyScopeOwner(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccessKeyScopeOwner(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKey(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccessKey(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ContextRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ContextRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ContextCanceled(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ContextCanceled(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyDisplayRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyDisplayRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyDisplayDismissed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyDisplayDismissed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyInvoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyInvoked(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Lights(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipHorizontalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipHorizontalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipVerticalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipVerticalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GettingFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GettingFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LosingFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LosingFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_NoFocusCandidateFound(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_NoFocusCandidateFound(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL StartBringIntoView() noexcept = 0;
+    virtual int32_t WINRT_CALL StartBringIntoViewWithOptions(void* options) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_KeyboardAccelerators(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CharacterReceived(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CharacterReceived(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ProcessKeyboardAccelerators(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ProcessKeyboardAccelerators(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PreviewKeyDown(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PreviewKeyDown(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PreviewKeyUp(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PreviewKeyUp(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL TryInvokeKeyboardAccelerator(void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_KeyTipTarget(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipTarget(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyboardAcceleratorPlacementTarget(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyboardAcceleratorPlacementTarget(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyboardAcceleratorPlacementMode(Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyboardAcceleratorPlacementMode(Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_BringIntoViewRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_BringIntoViewRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElement9>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanBeScrollAnchor(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CanBeScrollAnchor(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OpacityTransition(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OpacityTransition(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Translation(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Translation(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TranslationTransition(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TranslationTransition(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Rotation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Rotation(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationTransition(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationTransition(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScaleTransition(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScaleTransition(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAxis(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAxis(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAnimation(void* animation) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAnimation(void* animation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnCreateAutomationPeer(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL OnDisconnectVisualChildren() noexcept = 0;
+    virtual int32_t WINRT_CALL FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementOverrides7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetChildrenInTabFocusOrder(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL OnProcessKeyboardAccelerators(void* args) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementOverrides8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnKeyboardAcceleratorInvoked(void* args) noexcept = 0;
+    virtual int32_t WINRT_CALL OnBringIntoViewRequested(void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementOverrides9>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL PopulatePropertyInfoOverride(void* propertyName, void* animationPropertyInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_KeyDownEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyUpEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerEnteredEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerPressedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerMovedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerReleasedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerExitedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerCaptureLostEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerCanceledEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerWheelChangedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TappedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DoubleTappedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HoldingEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightTappedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationStartingEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationInertiaStartingEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationStartedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationDeltaEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationCompletedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DragEnterEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DragLeaveEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DragOverEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DropEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AllowDropProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OpacityProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ClipProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RenderTransformProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProjectionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RenderTransformOriginProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsHitTestVisibleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VisibilityProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UseLayoutRoundingProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransitionsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CacheModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTapEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDoubleTapEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsRightTapEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsHoldingEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManipulationModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PointerCapturesProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompositeModeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Transform3DProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanDragProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryStartDirectManipulation(void* value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContextFlyoutProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExitDisplayModeOnAccessKeyInvokedProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAccessKeyScopeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyScopeOwnerProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_LightsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipPlacementModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipHorizontalOffsetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipVerticalOffsetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusKeyboardNavigationProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HighContrastAdjustmentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabFocusNavigationProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GettingFocusEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LosingFocusEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NoFocusCandidateFoundEvent(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PreviewKeyDownEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CharacterReceivedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviewKeyUpEvent(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BringIntoViewRequestedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContextRequestedEvent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipTargetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyboardAcceleratorPlacementTargetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyboardAcceleratorPlacementModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterAsScrollPort(void* element) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUIElementStatics9>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanBeScrollAnchorProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Exception(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Message(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVector3Transition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Components(Windows::UI::Xaml::Vector3TransitionComponents* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Components(Windows::UI::Xaml::Vector3TransitionComponents value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVector3TransitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualState>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Storyboard(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Storyboard(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualState2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Setters(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StateTriggers(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OldState(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OldState(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NewState(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NewState(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Control(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Control(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Transitions(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_States(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentState(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CurrentStateChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CurrentStateChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_CurrentStateChanging(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CurrentStateChanging(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateManager>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateManagerFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateManagerOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GoToStateCore(void* control, void* templateRoot, void* stateName, void* group, void* state, bool useTransitions, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateManagerProtected>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RaiseCurrentStateChanging(void* stateGroup, void* oldState, void* newState, void* control) noexcept = 0;
+    virtual int32_t WINRT_CALL RaiseCurrentStateChanged(void* stateGroup, void* oldState, void* newState, void* control) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualStateManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetVisualStateGroups(void* obj, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomVisualStateManagerProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCustomVisualStateManager(void* obj, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCustomVisualStateManager(void* obj, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GoToState(void* control, void* stateName, bool useTransitions, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualTransition>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GeneratedDuration(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_GeneratedDuration(struct struct_Windows_UI_Xaml_Duration value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GeneratedEasingFunction(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_GeneratedEasingFunction(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_To(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_To(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_From(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_From(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Storyboard(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Storyboard(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IVisualTransitionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IWindow>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Bounds(Windows::Foundation::Rect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Visible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Content(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoreWindow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Dispatcher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Activated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Activated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Closed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Closed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_SizeChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_SizeChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_VisibilityChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_VisibilityChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Activate() noexcept = 0;
+    virtual int32_t WINRT_CALL Close() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IWindow2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetTitleBar(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IWindow3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Compositor(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IWindowCreatedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Window(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::IWindowStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Current(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ApplicationInitializationCallback>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* p) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::BindingFailedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::CreateDefaultValueCallback>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::DependencyPropertyChangedCallback>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* dp) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::DependencyPropertyChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::DragEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::EnteredBackgroundEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::ExceptionRoutedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::LeavingBackgroundEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::PropertyChangedCallback>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* d, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::RoutedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::SizeChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::SuspendingEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::UnhandledExceptionEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::VisualStateChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::WindowActivatedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::WindowClosedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::WindowSizeChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::WindowVisibilityChangedEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender, void* e) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IAdaptiveTrigger
@@ -1479,7 +3162,7 @@ template <> struct consume<Windows::UI::Xaml::IAdaptiveTrigger> { template <type
 template <typename D>
 struct consume_Windows_UI_Xaml_IAdaptiveTriggerFactory
 {
-    Windows::UI::Xaml::AdaptiveTrigger CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::AdaptiveTrigger CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IAdaptiveTriggerFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IAdaptiveTriggerFactory<D>; };
 
@@ -1499,18 +3182,18 @@ struct consume_Windows_UI_Xaml_IApplication
     Windows::UI::Xaml::DebugSettings DebugSettings() const;
     Windows::UI::Xaml::ApplicationTheme RequestedTheme() const;
     void RequestedTheme(Windows::UI::Xaml::ApplicationTheme const& value) const;
-    event_token UnhandledException(Windows::UI::Xaml::UnhandledExceptionEventHandler const& value) const;
-    using UnhandledException_revoker = event_revoker<Windows::UI::Xaml::IApplication>;
-    UnhandledException_revoker UnhandledException(auto_revoke_t, Windows::UI::Xaml::UnhandledExceptionEventHandler const& value) const;
-    void UnhandledException(event_token const& token) const;
-    event_token Suspending(Windows::UI::Xaml::SuspendingEventHandler const& value) const;
-    using Suspending_revoker = event_revoker<Windows::UI::Xaml::IApplication>;
-    Suspending_revoker Suspending(auto_revoke_t, Windows::UI::Xaml::SuspendingEventHandler const& value) const;
-    void Suspending(event_token const& token) const;
-    event_token Resuming(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    using Resuming_revoker = event_revoker<Windows::UI::Xaml::IApplication>;
-    Resuming_revoker Resuming(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    void Resuming(event_token const& token) const;
+    winrt::event_token UnhandledException(Windows::UI::Xaml::UnhandledExceptionEventHandler const& handler) const;
+    using UnhandledException_revoker = impl::event_revoker<Windows::UI::Xaml::IApplication, &impl::abi_t<Windows::UI::Xaml::IApplication>::remove_UnhandledException>;
+    UnhandledException_revoker UnhandledException(auto_revoke_t, Windows::UI::Xaml::UnhandledExceptionEventHandler const& handler) const;
+    void UnhandledException(winrt::event_token const& token) const noexcept;
+    winrt::event_token Suspending(Windows::UI::Xaml::SuspendingEventHandler const& handler) const;
+    using Suspending_revoker = impl::event_revoker<Windows::UI::Xaml::IApplication, &impl::abi_t<Windows::UI::Xaml::IApplication>::remove_Suspending>;
+    Suspending_revoker Suspending(auto_revoke_t, Windows::UI::Xaml::SuspendingEventHandler const& handler) const;
+    void Suspending(winrt::event_token const& token) const noexcept;
+    winrt::event_token Resuming(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using Resuming_revoker = impl::event_revoker<Windows::UI::Xaml::IApplication, &impl::abi_t<Windows::UI::Xaml::IApplication>::remove_Resuming>;
+    Resuming_revoker Resuming(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    void Resuming(winrt::event_token const& token) const noexcept;
     void Exit() const;
 };
 template <> struct consume<Windows::UI::Xaml::IApplication> { template <typename D> using type = consume_Windows_UI_Xaml_IApplication<D>; };
@@ -1522,14 +3205,14 @@ struct consume_Windows_UI_Xaml_IApplication2
     void FocusVisualKind(Windows::UI::Xaml::FocusVisualKind const& value) const;
     Windows::UI::Xaml::ApplicationRequiresPointerMode RequiresPointerMode() const;
     void RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode const& value) const;
-    event_token LeavingBackground(Windows::UI::Xaml::LeavingBackgroundEventHandler const& value) const;
-    using LeavingBackground_revoker = event_revoker<Windows::UI::Xaml::IApplication2>;
-    LeavingBackground_revoker LeavingBackground(auto_revoke_t, Windows::UI::Xaml::LeavingBackgroundEventHandler const& value) const;
-    void LeavingBackground(event_token const& token) const;
-    event_token EnteredBackground(Windows::UI::Xaml::EnteredBackgroundEventHandler const& value) const;
-    using EnteredBackground_revoker = event_revoker<Windows::UI::Xaml::IApplication2>;
-    EnteredBackground_revoker EnteredBackground(auto_revoke_t, Windows::UI::Xaml::EnteredBackgroundEventHandler const& value) const;
-    void EnteredBackground(event_token const& token) const;
+    winrt::event_token LeavingBackground(Windows::UI::Xaml::LeavingBackgroundEventHandler const& handler) const;
+    using LeavingBackground_revoker = impl::event_revoker<Windows::UI::Xaml::IApplication2, &impl::abi_t<Windows::UI::Xaml::IApplication2>::remove_LeavingBackground>;
+    LeavingBackground_revoker LeavingBackground(auto_revoke_t, Windows::UI::Xaml::LeavingBackgroundEventHandler const& handler) const;
+    void LeavingBackground(winrt::event_token const& token) const noexcept;
+    winrt::event_token EnteredBackground(Windows::UI::Xaml::EnteredBackgroundEventHandler const& handler) const;
+    using EnteredBackground_revoker = impl::event_revoker<Windows::UI::Xaml::IApplication2, &impl::abi_t<Windows::UI::Xaml::IApplication2>::remove_EnteredBackground>;
+    EnteredBackground_revoker EnteredBackground(auto_revoke_t, Windows::UI::Xaml::EnteredBackgroundEventHandler const& handler) const;
+    void EnteredBackground(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IApplication2> { template <typename D> using type = consume_Windows_UI_Xaml_IApplication2<D>; };
 
@@ -1544,7 +3227,7 @@ template <> struct consume<Windows::UI::Xaml::IApplication3> { template <typenam
 template <typename D>
 struct consume_Windows_UI_Xaml_IApplicationFactory
 {
-    Windows::UI::Xaml::Application CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Application CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IApplicationFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IApplicationFactory<D>; };
 
@@ -1638,6 +3321,88 @@ struct consume_Windows_UI_Xaml_IBringIntoViewRequestedEventArgs
 template <> struct consume<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs> { template <typename D> using type = consume_Windows_UI_Xaml_IBringIntoViewRequestedEventArgs<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Xaml_IBrushTransition
+{
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(Windows::Foundation::TimeSpan const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IBrushTransition> { template <typename D> using type = consume_Windows_UI_Xaml_IBrushTransition<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IBrushTransitionFactory
+{
+    Windows::UI::Xaml::BrushTransition CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IBrushTransitionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IBrushTransitionFactory<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IColorPaletteResources
+{
+    Windows::Foundation::IReference<Windows::UI::Color> AltHigh() const;
+    void AltHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> AltLow() const;
+    void AltLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> AltMedium() const;
+    void AltMedium(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> AltMediumHigh() const;
+    void AltMediumHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> AltMediumLow() const;
+    void AltMediumLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BaseHigh() const;
+    void BaseHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BaseLow() const;
+    void BaseLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BaseMedium() const;
+    void BaseMedium(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BaseMediumHigh() const;
+    void BaseMediumHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BaseMediumLow() const;
+    void BaseMediumLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeAltLow() const;
+    void ChromeAltLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeBlackHigh() const;
+    void ChromeBlackHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeBlackLow() const;
+    void ChromeBlackLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeBlackMediumLow() const;
+    void ChromeBlackMediumLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeBlackMedium() const;
+    void ChromeBlackMedium(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeDisabledHigh() const;
+    void ChromeDisabledHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeDisabledLow() const;
+    void ChromeDisabledLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeHigh() const;
+    void ChromeHigh(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeLow() const;
+    void ChromeLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeMedium() const;
+    void ChromeMedium(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeMediumLow() const;
+    void ChromeMediumLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeWhite() const;
+    void ChromeWhite(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ChromeGray() const;
+    void ChromeGray(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ListLow() const;
+    void ListLow(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ListMedium() const;
+    void ListMedium(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ErrorText() const;
+    void ErrorText(optional<Windows::UI::Color> const& value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> Accent() const;
+    void Accent(optional<Windows::UI::Color> const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IColorPaletteResources> { template <typename D> using type = consume_Windows_UI_Xaml_IColorPaletteResources<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IColorPaletteResourcesFactory
+{
+    Windows::UI::Xaml::ColorPaletteResources CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IColorPaletteResourcesFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IColorPaletteResourcesFactory<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Xaml_ICornerRadiusHelper
 {
 };
@@ -1679,7 +3444,7 @@ template <> struct consume<Windows::UI::Xaml::IDataTemplateExtension> { template
 template <typename D>
 struct consume_Windows_UI_Xaml_IDataTemplateFactory
 {
-    Windows::UI::Xaml::DataTemplate CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::DataTemplate CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDataTemplateFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IDataTemplateFactory<D>; };
 
@@ -1694,8 +3459,8 @@ template <> struct consume<Windows::UI::Xaml::IDataTemplateKey> { template <type
 template <typename D>
 struct consume_Windows_UI_Xaml_IDataTemplateKeyFactory
 {
-    Windows::UI::Xaml::DataTemplateKey CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
-    Windows::UI::Xaml::DataTemplateKey CreateInstanceWithType(Windows::Foundation::IInspectable const& dataType, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::DataTemplateKey CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+    Windows::UI::Xaml::DataTemplateKey CreateInstanceWithType(Windows::Foundation::IInspectable const& dataType, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDataTemplateKeyFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IDataTemplateKeyFactory<D>; };
 
@@ -1717,10 +3482,10 @@ struct consume_Windows_UI_Xaml_IDebugSettings
     void IsBindingTracingEnabled(bool value) const;
     bool IsOverdrawHeatMapEnabled() const;
     void IsOverdrawHeatMapEnabled(bool value) const;
-    event_token BindingFailed(Windows::UI::Xaml::BindingFailedEventHandler const& value) const;
-    using BindingFailed_revoker = event_revoker<Windows::UI::Xaml::IDebugSettings>;
-    BindingFailed_revoker BindingFailed(auto_revoke_t, Windows::UI::Xaml::BindingFailedEventHandler const& value) const;
-    void BindingFailed(event_token const& token) const;
+    winrt::event_token BindingFailed(Windows::UI::Xaml::BindingFailedEventHandler const& handler) const;
+    using BindingFailed_revoker = impl::event_revoker<Windows::UI::Xaml::IDebugSettings, &impl::abi_t<Windows::UI::Xaml::IDebugSettings>::remove_BindingFailed>;
+    BindingFailed_revoker BindingFailed(auto_revoke_t, Windows::UI::Xaml::BindingFailedEventHandler const& handler) const;
+    void BindingFailed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IDebugSettings> { template <typename D> using type = consume_Windows_UI_Xaml_IDebugSettings<D>; };
 
@@ -1739,6 +3504,14 @@ struct consume_Windows_UI_Xaml_IDebugSettings3
     void IsTextPerformanceVisualizationEnabled(bool value) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDebugSettings3> { template <typename D> using type = consume_Windows_UI_Xaml_IDebugSettings3<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IDebugSettings4
+{
+    bool FailFastOnErrors() const;
+    void FailFastOnErrors(bool value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IDebugSettings4> { template <typename D> using type = consume_Windows_UI_Xaml_IDebugSettings4<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IDependencyObject
@@ -1763,14 +3536,14 @@ template <> struct consume<Windows::UI::Xaml::IDependencyObject2> { template <ty
 template <typename D>
 struct consume_Windows_UI_Xaml_IDependencyObjectCollectionFactory
 {
-    Windows::UI::Xaml::DependencyObjectCollection CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::DependencyObjectCollection CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDependencyObjectCollectionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IDependencyObjectCollectionFactory<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IDependencyObjectFactory
 {
-    Windows::UI::Xaml::DependencyObject CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::DependencyObject CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDependencyObjectFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IDependencyObjectFactory<D>; };
 
@@ -1805,10 +3578,10 @@ struct consume_Windows_UI_Xaml_IDispatcherTimer
     Windows::Foundation::TimeSpan Interval() const;
     void Interval(Windows::Foundation::TimeSpan const& value) const;
     bool IsEnabled() const;
-    event_token Tick(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    using Tick_revoker = event_revoker<Windows::UI::Xaml::IDispatcherTimer>;
-    Tick_revoker Tick(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    void Tick(event_token const& token) const;
+    winrt::event_token Tick(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using Tick_revoker = impl::event_revoker<Windows::UI::Xaml::IDispatcherTimer, &impl::abi_t<Windows::UI::Xaml::IDispatcherTimer>::remove_Tick>;
+    Tick_revoker Tick(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    void Tick(winrt::event_token const& token) const noexcept;
     void Start() const;
     void Stop() const;
 };
@@ -1817,7 +3590,7 @@ template <> struct consume<Windows::UI::Xaml::IDispatcherTimer> { template <type
 template <typename D>
 struct consume_Windows_UI_Xaml_IDispatcherTimerFactory
 {
-    Windows::UI::Xaml::DispatcherTimer CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::DispatcherTimer CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IDispatcherTimerFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IDispatcherTimerFactory<D>; };
 
@@ -1936,6 +3709,58 @@ struct consume_Windows_UI_Xaml_IDurationHelperStatics
 template <> struct consume<Windows::UI::Xaml::IDurationHelperStatics> { template <typename D> using type = consume_Windows_UI_Xaml_IDurationHelperStatics<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Xaml_IEffectiveViewportChangedEventArgs
+{
+    Windows::Foundation::Rect EffectiveViewport() const;
+    Windows::Foundation::Rect MaxViewport() const;
+    double BringIntoViewDistanceX() const;
+    double BringIntoViewDistanceY() const;
+};
+template <> struct consume<Windows::UI::Xaml::IEffectiveViewportChangedEventArgs> { template <typename D> using type = consume_Windows_UI_Xaml_IEffectiveViewportChangedEventArgs<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IElementFactory
+{
+    Windows::UI::Xaml::UIElement GetElement(Windows::UI::Xaml::ElementFactoryGetArgs const& args) const;
+    void RecycleElement(Windows::UI::Xaml::ElementFactoryRecycleArgs const& args) const;
+};
+template <> struct consume<Windows::UI::Xaml::IElementFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IElementFactory<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IElementFactoryGetArgs
+{
+    Windows::Foundation::IInspectable Data() const;
+    void Data(Windows::Foundation::IInspectable const& value) const;
+    Windows::UI::Xaml::UIElement Parent() const;
+    void Parent(Windows::UI::Xaml::UIElement const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IElementFactoryGetArgs> { template <typename D> using type = consume_Windows_UI_Xaml_IElementFactoryGetArgs<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IElementFactoryGetArgsFactory
+{
+    Windows::UI::Xaml::ElementFactoryGetArgs CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IElementFactoryGetArgsFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IElementFactoryGetArgsFactory<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IElementFactoryRecycleArgs
+{
+    Windows::UI::Xaml::UIElement Element() const;
+    void Element(Windows::UI::Xaml::UIElement const& value) const;
+    Windows::UI::Xaml::UIElement Parent() const;
+    void Parent(Windows::UI::Xaml::UIElement const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IElementFactoryRecycleArgs> { template <typename D> using type = consume_Windows_UI_Xaml_IElementFactoryRecycleArgs<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IElementFactoryRecycleArgsFactory
+{
+    Windows::UI::Xaml::ElementFactoryRecycleArgs CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IElementFactoryRecycleArgsFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IElementFactoryRecycleArgsFactory<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Xaml_IElementSoundPlayer
 {
 };
@@ -2022,22 +3847,22 @@ struct consume_Windows_UI_Xaml_IFrameworkElement
     Windows::UI::Xaml::DependencyObject Parent() const;
     Windows::UI::Xaml::FlowDirection FlowDirection() const;
     void FlowDirection(Windows::UI::Xaml::FlowDirection const& value) const;
-    event_token Loaded(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using Loaded_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement>;
-    Loaded_revoker Loaded(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void Loaded(event_token const& token) const;
-    event_token Unloaded(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using Unloaded_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement>;
-    Unloaded_revoker Unloaded(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void Unloaded(event_token const& token) const;
-    event_token SizeChanged(Windows::UI::Xaml::SizeChangedEventHandler const& value) const;
-    using SizeChanged_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement>;
-    SizeChanged_revoker SizeChanged(auto_revoke_t, Windows::UI::Xaml::SizeChangedEventHandler const& value) const;
-    void SizeChanged(event_token const& token) const;
-    event_token LayoutUpdated(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    using LayoutUpdated_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement>;
-    LayoutUpdated_revoker LayoutUpdated(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& value) const;
-    void LayoutUpdated(event_token const& token) const;
+    winrt::event_token Loaded(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using Loaded_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement>::remove_Loaded>;
+    Loaded_revoker Loaded(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void Loaded(winrt::event_token const& token) const noexcept;
+    winrt::event_token Unloaded(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using Unloaded_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement>::remove_Unloaded>;
+    Unloaded_revoker Unloaded(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void Unloaded(winrt::event_token const& token) const noexcept;
+    winrt::event_token SizeChanged(Windows::UI::Xaml::SizeChangedEventHandler const& handler) const;
+    using SizeChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement>::remove_SizeChanged>;
+    SizeChanged_revoker SizeChanged(auto_revoke_t, Windows::UI::Xaml::SizeChangedEventHandler const& handler) const;
+    void SizeChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token LayoutUpdated(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    using LayoutUpdated_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement>::remove_LayoutUpdated>;
+    LayoutUpdated_revoker LayoutUpdated(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler) const;
+    void LayoutUpdated(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IInspectable FindName(param::hstring const& name) const;
     void SetBinding(Windows::UI::Xaml::DependencyProperty const& dp, Windows::UI::Xaml::Data::BindingBase const& binding) const;
 };
@@ -2048,10 +3873,10 @@ struct consume_Windows_UI_Xaml_IFrameworkElement2
 {
     Windows::UI::Xaml::ElementTheme RequestedTheme() const;
     void RequestedTheme(Windows::UI::Xaml::ElementTheme const& value) const;
-    event_token DataContextChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> const& value) const;
-    using DataContextChanged_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement2>;
-    DataContextChanged_revoker DataContextChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> const& value) const;
-    void DataContextChanged(event_token const& token) const;
+    winrt::event_token DataContextChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> const& handler) const;
+    using DataContextChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement2, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement2>::remove_DataContextChanged>;
+    DataContextChanged_revoker DataContextChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> const& handler) const;
+    void DataContextChanged(winrt::event_token const& token) const noexcept;
     Windows::UI::Xaml::Data::BindingExpression GetBindingExpression(Windows::UI::Xaml::DependencyProperty const& dp) const;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkElement2> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElement2<D>; };
@@ -2059,10 +3884,10 @@ template <> struct consume<Windows::UI::Xaml::IFrameworkElement2> { template <ty
 template <typename D>
 struct consume_Windows_UI_Xaml_IFrameworkElement3
 {
-    event_token Loading(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& value) const;
-    using Loading_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement3>;
-    Loading_revoker Loading(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& value) const;
-    void Loading(event_token const& token) const;
+    winrt::event_token Loading(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& handler) const;
+    using Loading_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement3, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement3>::remove_Loading>;
+    Loading_revoker Loading(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& handler) const;
+    void Loading(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkElement3> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElement3<D>; };
 
@@ -2090,17 +3915,28 @@ template <typename D>
 struct consume_Windows_UI_Xaml_IFrameworkElement6
 {
     Windows::UI::Xaml::ElementTheme ActualTheme() const;
-    event_token ActualThemeChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& value) const;
-    using ActualThemeChanged_revoker = event_revoker<Windows::UI::Xaml::IFrameworkElement6>;
-    ActualThemeChanged_revoker ActualThemeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& value) const;
-    void ActualThemeChanged(event_token const& token) const;
+    winrt::event_token ActualThemeChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& handler) const;
+    using ActualThemeChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement6, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement6>::remove_ActualThemeChanged>;
+    ActualThemeChanged_revoker ActualThemeChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::Foundation::IInspectable> const& handler) const;
+    void ActualThemeChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkElement6> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElement6<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Xaml_IFrameworkElement7
+{
+    bool IsLoaded() const;
+    winrt::event_token EffectiveViewportChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::EffectiveViewportChangedEventArgs> const& handler) const;
+    using EffectiveViewportChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IFrameworkElement7, &impl::abi_t<Windows::UI::Xaml::IFrameworkElement7>::remove_EffectiveViewportChanged>;
+    EffectiveViewportChanged_revoker EffectiveViewportChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::EffectiveViewportChangedEventArgs> const& handler) const;
+    void EffectiveViewportChanged(winrt::event_token const& token) const noexcept;
+};
+template <> struct consume<Windows::UI::Xaml::IFrameworkElement7> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElement7<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Xaml_IFrameworkElementFactory
 {
-    Windows::UI::Xaml::FrameworkElement CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::FrameworkElement CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkElementFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElementFactory<D>; };
 
@@ -2119,6 +3955,13 @@ struct consume_Windows_UI_Xaml_IFrameworkElementOverrides2
     bool GoToElementStateCore(param::hstring const& stateName, bool useTransitions) const;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkElementOverrides2> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElementOverrides2<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IFrameworkElementProtected7
+{
+    void InvalidateViewport() const;
+};
+template <> struct consume<Windows::UI::Xaml::IFrameworkElementProtected7> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkElementProtected7<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IFrameworkElementStatics
@@ -2186,7 +4029,7 @@ template <> struct consume<Windows::UI::Xaml::IFrameworkTemplate> { template <ty
 template <typename D>
 struct consume_Windows_UI_Xaml_IFrameworkTemplateFactory
 {
-    Windows::UI::Xaml::FrameworkTemplate CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::FrameworkTemplate CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IFrameworkTemplateFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IFrameworkTemplateFactory<D>; };
 
@@ -2252,8 +4095,8 @@ template <> struct consume<Windows::UI::Xaml::IPropertyMetadata> { template <typ
 template <typename D>
 struct consume_Windows_UI_Xaml_IPropertyMetadataFactory
 {
-    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValue(Windows::Foundation::IInspectable const& defaultValue, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
-    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValueAndCallback(Windows::Foundation::IInspectable const& defaultValue, Windows::UI::Xaml::PropertyChangedCallback const& propertyChangedCallback, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValue(Windows::Foundation::IInspectable const& defaultValue, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValueAndCallback(Windows::Foundation::IInspectable const& defaultValue, Windows::UI::Xaml::PropertyChangedCallback const& propertyChangedCallback, Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IPropertyMetadataFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IPropertyMetadataFactory<D>; };
 
@@ -2320,7 +4163,7 @@ template <> struct consume<Windows::UI::Xaml::IResourceDictionary> { template <t
 template <typename D>
 struct consume_Windows_UI_Xaml_IResourceDictionaryFactory
 {
-    Windows::UI::Xaml::ResourceDictionary CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::ResourceDictionary CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IResourceDictionaryFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IResourceDictionaryFactory<D>; };
 
@@ -2340,9 +4183,24 @@ template <> struct consume<Windows::UI::Xaml::IRoutedEventArgs> { template <type
 template <typename D>
 struct consume_Windows_UI_Xaml_IRoutedEventArgsFactory
 {
-    Windows::UI::Xaml::RoutedEventArgs CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::RoutedEventArgs CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IRoutedEventArgsFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IRoutedEventArgsFactory<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IScalarTransition
+{
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(Windows::Foundation::TimeSpan const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IScalarTransition> { template <typename D> using type = consume_Windows_UI_Xaml_IScalarTransition<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IScalarTransitionFactory
+{
+    Windows::UI::Xaml::ScalarTransition CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IScalarTransitionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IScalarTransitionFactory<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_ISetter
@@ -2430,7 +4288,7 @@ template <> struct consume<Windows::UI::Xaml::IStateTriggerBase> { template <typ
 template <typename D>
 struct consume_Windows_UI_Xaml_IStateTriggerBaseFactory
 {
-    Windows::UI::Xaml::StateTriggerBase CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::StateTriggerBase CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IStateTriggerBaseFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IStateTriggerBaseFactory<D>; };
 
@@ -2561,106 +4419,106 @@ struct consume_Windows_UI_Xaml_IUIElement
     Windows::UI::Xaml::Input::ManipulationModes ManipulationMode() const;
     void ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes const& value) const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Input::Pointer> PointerCaptures() const;
-    event_token KeyUp(Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    using KeyUp_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    KeyUp_revoker KeyUp(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    void KeyUp(event_token const& token) const;
-    event_token KeyDown(Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    using KeyDown_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    KeyDown_revoker KeyDown(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    void KeyDown(event_token const& token) const;
-    event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using GotFocus_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void GotFocus(event_token const& token) const;
-    event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using LostFocus_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void LostFocus(event_token const& token) const;
-    event_token DragEnter(Windows::UI::Xaml::DragEventHandler const& value) const;
-    using DragEnter_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    DragEnter_revoker DragEnter(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& value) const;
-    void DragEnter(event_token const& token) const;
-    event_token DragLeave(Windows::UI::Xaml::DragEventHandler const& value) const;
-    using DragLeave_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    DragLeave_revoker DragLeave(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& value) const;
-    void DragLeave(event_token const& token) const;
-    event_token DragOver(Windows::UI::Xaml::DragEventHandler const& value) const;
-    using DragOver_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    DragOver_revoker DragOver(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& value) const;
-    void DragOver(event_token const& token) const;
-    event_token Drop(Windows::UI::Xaml::DragEventHandler const& value) const;
-    using Drop_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    Drop_revoker Drop(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& value) const;
-    void Drop(event_token const& token) const;
-    event_token PointerPressed(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerPressed_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerPressed_revoker PointerPressed(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerPressed(event_token const& token) const;
-    event_token PointerMoved(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerMoved_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerMoved_revoker PointerMoved(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerMoved(event_token const& token) const;
-    event_token PointerReleased(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerReleased_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerReleased_revoker PointerReleased(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerReleased(event_token const& token) const;
-    event_token PointerEntered(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerEntered_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerEntered_revoker PointerEntered(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerEntered(event_token const& token) const;
-    event_token PointerExited(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerExited_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerExited_revoker PointerExited(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerExited(event_token const& token) const;
-    event_token PointerCaptureLost(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerCaptureLost_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerCaptureLost_revoker PointerCaptureLost(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerCaptureLost(event_token const& token) const;
-    event_token PointerCanceled(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerCanceled_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerCanceled_revoker PointerCanceled(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerCanceled(event_token const& token) const;
-    event_token PointerWheelChanged(Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    using PointerWheelChanged_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    PointerWheelChanged_revoker PointerWheelChanged(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& value) const;
-    void PointerWheelChanged(event_token const& token) const;
-    event_token Tapped(Windows::UI::Xaml::Input::TappedEventHandler const& value) const;
-    using Tapped_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    Tapped_revoker Tapped(auto_revoke_t, Windows::UI::Xaml::Input::TappedEventHandler const& value) const;
-    void Tapped(event_token const& token) const;
-    event_token DoubleTapped(Windows::UI::Xaml::Input::DoubleTappedEventHandler const& value) const;
-    using DoubleTapped_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    DoubleTapped_revoker DoubleTapped(auto_revoke_t, Windows::UI::Xaml::Input::DoubleTappedEventHandler const& value) const;
-    void DoubleTapped(event_token const& token) const;
-    event_token Holding(Windows::UI::Xaml::Input::HoldingEventHandler const& value) const;
-    using Holding_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    Holding_revoker Holding(auto_revoke_t, Windows::UI::Xaml::Input::HoldingEventHandler const& value) const;
-    void Holding(event_token const& token) const;
-    event_token RightTapped(Windows::UI::Xaml::Input::RightTappedEventHandler const& value) const;
-    using RightTapped_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    RightTapped_revoker RightTapped(auto_revoke_t, Windows::UI::Xaml::Input::RightTappedEventHandler const& value) const;
-    void RightTapped(event_token const& token) const;
-    event_token ManipulationStarting(Windows::UI::Xaml::Input::ManipulationStartingEventHandler const& value) const;
-    using ManipulationStarting_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    ManipulationStarting_revoker ManipulationStarting(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationStartingEventHandler const& value) const;
-    void ManipulationStarting(event_token const& token) const;
-    event_token ManipulationInertiaStarting(Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler const& value) const;
-    using ManipulationInertiaStarting_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    ManipulationInertiaStarting_revoker ManipulationInertiaStarting(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler const& value) const;
-    void ManipulationInertiaStarting(event_token const& token) const;
-    event_token ManipulationStarted(Windows::UI::Xaml::Input::ManipulationStartedEventHandler const& value) const;
-    using ManipulationStarted_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    ManipulationStarted_revoker ManipulationStarted(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationStartedEventHandler const& value) const;
-    void ManipulationStarted(event_token const& token) const;
-    event_token ManipulationDelta(Windows::UI::Xaml::Input::ManipulationDeltaEventHandler const& value) const;
-    using ManipulationDelta_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    ManipulationDelta_revoker ManipulationDelta(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationDeltaEventHandler const& value) const;
-    void ManipulationDelta(event_token const& token) const;
-    event_token ManipulationCompleted(Windows::UI::Xaml::Input::ManipulationCompletedEventHandler const& value) const;
-    using ManipulationCompleted_revoker = event_revoker<Windows::UI::Xaml::IUIElement>;
-    ManipulationCompleted_revoker ManipulationCompleted(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationCompletedEventHandler const& value) const;
-    void ManipulationCompleted(event_token const& token) const;
+    winrt::event_token KeyUp(Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    using KeyUp_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_KeyUp>;
+    KeyUp_revoker KeyUp(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    void KeyUp(winrt::event_token const& token) const noexcept;
+    winrt::event_token KeyDown(Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    using KeyDown_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_KeyDown>;
+    KeyDown_revoker KeyDown(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    void KeyDown(winrt::event_token const& token) const noexcept;
+    winrt::event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using GotFocus_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_GotFocus>;
+    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void GotFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using LostFocus_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_LostFocus>;
+    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void LostFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token DragEnter(Windows::UI::Xaml::DragEventHandler const& handler) const;
+    using DragEnter_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_DragEnter>;
+    DragEnter_revoker DragEnter(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& handler) const;
+    void DragEnter(winrt::event_token const& token) const noexcept;
+    winrt::event_token DragLeave(Windows::UI::Xaml::DragEventHandler const& handler) const;
+    using DragLeave_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_DragLeave>;
+    DragLeave_revoker DragLeave(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& handler) const;
+    void DragLeave(winrt::event_token const& token) const noexcept;
+    winrt::event_token DragOver(Windows::UI::Xaml::DragEventHandler const& handler) const;
+    using DragOver_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_DragOver>;
+    DragOver_revoker DragOver(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& handler) const;
+    void DragOver(winrt::event_token const& token) const noexcept;
+    winrt::event_token Drop(Windows::UI::Xaml::DragEventHandler const& handler) const;
+    using Drop_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_Drop>;
+    Drop_revoker Drop(auto_revoke_t, Windows::UI::Xaml::DragEventHandler const& handler) const;
+    void Drop(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerPressed(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerPressed_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerPressed>;
+    PointerPressed_revoker PointerPressed(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerPressed(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerMoved(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerMoved_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerMoved>;
+    PointerMoved_revoker PointerMoved(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerMoved(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerReleased(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerReleased_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerReleased>;
+    PointerReleased_revoker PointerReleased(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerReleased(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerEntered(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerEntered_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerEntered>;
+    PointerEntered_revoker PointerEntered(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerEntered(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerExited(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerExited_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerExited>;
+    PointerExited_revoker PointerExited(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerExited(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerCaptureLost(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerCaptureLost_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerCaptureLost>;
+    PointerCaptureLost_revoker PointerCaptureLost(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerCaptureLost(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerCanceled(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerCanceled_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerCanceled>;
+    PointerCanceled_revoker PointerCanceled(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerCanceled(winrt::event_token const& token) const noexcept;
+    winrt::event_token PointerWheelChanged(Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    using PointerWheelChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_PointerWheelChanged>;
+    PointerWheelChanged_revoker PointerWheelChanged(auto_revoke_t, Windows::UI::Xaml::Input::PointerEventHandler const& handler) const;
+    void PointerWheelChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token Tapped(Windows::UI::Xaml::Input::TappedEventHandler const& handler) const;
+    using Tapped_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_Tapped>;
+    Tapped_revoker Tapped(auto_revoke_t, Windows::UI::Xaml::Input::TappedEventHandler const& handler) const;
+    void Tapped(winrt::event_token const& token) const noexcept;
+    winrt::event_token DoubleTapped(Windows::UI::Xaml::Input::DoubleTappedEventHandler const& handler) const;
+    using DoubleTapped_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_DoubleTapped>;
+    DoubleTapped_revoker DoubleTapped(auto_revoke_t, Windows::UI::Xaml::Input::DoubleTappedEventHandler const& handler) const;
+    void DoubleTapped(winrt::event_token const& token) const noexcept;
+    winrt::event_token Holding(Windows::UI::Xaml::Input::HoldingEventHandler const& handler) const;
+    using Holding_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_Holding>;
+    Holding_revoker Holding(auto_revoke_t, Windows::UI::Xaml::Input::HoldingEventHandler const& handler) const;
+    void Holding(winrt::event_token const& token) const noexcept;
+    winrt::event_token RightTapped(Windows::UI::Xaml::Input::RightTappedEventHandler const& handler) const;
+    using RightTapped_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_RightTapped>;
+    RightTapped_revoker RightTapped(auto_revoke_t, Windows::UI::Xaml::Input::RightTappedEventHandler const& handler) const;
+    void RightTapped(winrt::event_token const& token) const noexcept;
+    winrt::event_token ManipulationStarting(Windows::UI::Xaml::Input::ManipulationStartingEventHandler const& handler) const;
+    using ManipulationStarting_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_ManipulationStarting>;
+    ManipulationStarting_revoker ManipulationStarting(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationStartingEventHandler const& handler) const;
+    void ManipulationStarting(winrt::event_token const& token) const noexcept;
+    winrt::event_token ManipulationInertiaStarting(Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler const& handler) const;
+    using ManipulationInertiaStarting_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_ManipulationInertiaStarting>;
+    ManipulationInertiaStarting_revoker ManipulationInertiaStarting(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler const& handler) const;
+    void ManipulationInertiaStarting(winrt::event_token const& token) const noexcept;
+    winrt::event_token ManipulationStarted(Windows::UI::Xaml::Input::ManipulationStartedEventHandler const& handler) const;
+    using ManipulationStarted_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_ManipulationStarted>;
+    ManipulationStarted_revoker ManipulationStarted(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationStartedEventHandler const& handler) const;
+    void ManipulationStarted(winrt::event_token const& token) const noexcept;
+    winrt::event_token ManipulationDelta(Windows::UI::Xaml::Input::ManipulationDeltaEventHandler const& handler) const;
+    using ManipulationDelta_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_ManipulationDelta>;
+    ManipulationDelta_revoker ManipulationDelta(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationDeltaEventHandler const& handler) const;
+    void ManipulationDelta(winrt::event_token const& token) const noexcept;
+    winrt::event_token ManipulationCompleted(Windows::UI::Xaml::Input::ManipulationCompletedEventHandler const& handler) const;
+    using ManipulationCompleted_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement, &impl::abi_t<Windows::UI::Xaml::IUIElement>::remove_ManipulationCompleted>;
+    ManipulationCompleted_revoker ManipulationCompleted(auto_revoke_t, Windows::UI::Xaml::Input::ManipulationCompletedEventHandler const& handler) const;
+    void ManipulationCompleted(winrt::event_token const& token) const noexcept;
     void Measure(Windows::Foundation::Size const& availableSize) const;
     void Arrange(Windows::Foundation::Rect const& finalRect) const;
     bool CapturePointer(Windows::UI::Xaml::Input::Pointer const& value) const;
@@ -2691,14 +4549,14 @@ struct consume_Windows_UI_Xaml_IUIElement3
     void Transform3D(Windows::UI::Xaml::Media::Media3D::Transform3D const& value) const;
     bool CanDrag() const;
     void CanDrag(bool value) const;
-    event_token DragStarting(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> const& value) const;
-    using DragStarting_revoker = event_revoker<Windows::UI::Xaml::IUIElement3>;
-    DragStarting_revoker DragStarting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> const& value) const;
-    void DragStarting(event_token const& token) const;
-    event_token DropCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> const& value) const;
-    using DropCompleted_revoker = event_revoker<Windows::UI::Xaml::IUIElement3>;
-    DropCompleted_revoker DropCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> const& value) const;
-    void DropCompleted(event_token const& token) const;
+    winrt::event_token DragStarting(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> const& handler) const;
+    using DragStarting_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement3, &impl::abi_t<Windows::UI::Xaml::IUIElement3>::remove_DragStarting>;
+    DragStarting_revoker DragStarting(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> const& handler) const;
+    void DragStarting(winrt::event_token const& token) const noexcept;
+    winrt::event_token DropCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> const& handler) const;
+    using DropCompleted_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement3, &impl::abi_t<Windows::UI::Xaml::IUIElement3>::remove_DropCompleted>;
+    DropCompleted_revoker DropCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> const& handler) const;
+    void DropCompleted(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::DataPackageOperation> StartDragAsync(Windows::UI::Input::PointerPoint const& pointerPoint) const;
 };
 template <> struct consume<Windows::UI::Xaml::IUIElement3> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElement3<D>; };
@@ -2716,26 +4574,26 @@ struct consume_Windows_UI_Xaml_IUIElement4
     void AccessKeyScopeOwner(Windows::UI::Xaml::DependencyObject const& value) const;
     hstring AccessKey() const;
     void AccessKey(param::hstring const& value) const;
-    event_token ContextRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> const& value) const;
-    using ContextRequested_revoker = event_revoker<Windows::UI::Xaml::IUIElement4>;
-    ContextRequested_revoker ContextRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> const& value) const;
-    void ContextRequested(event_token const& token) const;
-    event_token ContextCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> const& value) const;
-    using ContextCanceled_revoker = event_revoker<Windows::UI::Xaml::IUIElement4>;
-    ContextCanceled_revoker ContextCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> const& value) const;
-    void ContextCanceled(event_token const& token) const;
-    event_token AccessKeyDisplayRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& value) const;
-    using AccessKeyDisplayRequested_revoker = event_revoker<Windows::UI::Xaml::IUIElement4>;
-    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& value) const;
-    void AccessKeyDisplayRequested(event_token const& token) const;
-    event_token AccessKeyDisplayDismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& value) const;
-    using AccessKeyDisplayDismissed_revoker = event_revoker<Windows::UI::Xaml::IUIElement4>;
-    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& value) const;
-    void AccessKeyDisplayDismissed(event_token const& token) const;
-    event_token AccessKeyInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& value) const;
-    using AccessKeyInvoked_revoker = event_revoker<Windows::UI::Xaml::IUIElement4>;
-    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& value) const;
-    void AccessKeyInvoked(event_token const& token) const;
+    winrt::event_token ContextRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> const& handler) const;
+    using ContextRequested_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement4, &impl::abi_t<Windows::UI::Xaml::IUIElement4>::remove_ContextRequested>;
+    ContextRequested_revoker ContextRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> const& handler) const;
+    void ContextRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token ContextCanceled(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> const& handler) const;
+    using ContextCanceled_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement4, &impl::abi_t<Windows::UI::Xaml::IUIElement4>::remove_ContextCanceled>;
+    ContextCanceled_revoker ContextCanceled(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> const& handler) const;
+    void ContextCanceled(winrt::event_token const& token) const noexcept;
+    winrt::event_token AccessKeyDisplayRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& handler) const;
+    using AccessKeyDisplayRequested_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement4, &impl::abi_t<Windows::UI::Xaml::IUIElement4>::remove_AccessKeyDisplayRequested>;
+    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& handler) const;
+    void AccessKeyDisplayRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token AccessKeyDisplayDismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& handler) const;
+    using AccessKeyDisplayDismissed_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement4, &impl::abi_t<Windows::UI::Xaml::IUIElement4>::remove_AccessKeyDisplayDismissed>;
+    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& handler) const;
+    void AccessKeyDisplayDismissed(winrt::event_token const& token) const noexcept;
+    winrt::event_token AccessKeyInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& handler) const;
+    using AccessKeyInvoked_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement4, &impl::abi_t<Windows::UI::Xaml::IUIElement4>::remove_AccessKeyInvoked>;
+    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& handler) const;
+    void AccessKeyInvoked(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IUIElement4> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElement4<D>; };
 
@@ -2763,18 +4621,18 @@ struct consume_Windows_UI_Xaml_IUIElement5
     void HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment const& value) const;
     Windows::UI::Xaml::Input::KeyboardNavigationMode TabFocusNavigation() const;
     void TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode const& value) const;
-    event_token GettingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> const& value) const;
-    using GettingFocus_revoker = event_revoker<Windows::UI::Xaml::IUIElement5>;
-    GettingFocus_revoker GettingFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> const& value) const;
-    void GettingFocus(event_token const& token) const;
-    event_token LosingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> const& value) const;
-    using LosingFocus_revoker = event_revoker<Windows::UI::Xaml::IUIElement5>;
-    LosingFocus_revoker LosingFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> const& value) const;
-    void LosingFocus(event_token const& token) const;
-    event_token NoFocusCandidateFound(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> const& value) const;
-    using NoFocusCandidateFound_revoker = event_revoker<Windows::UI::Xaml::IUIElement5>;
-    NoFocusCandidateFound_revoker NoFocusCandidateFound(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> const& value) const;
-    void NoFocusCandidateFound(event_token const& token) const;
+    winrt::event_token GettingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> const& handler) const;
+    using GettingFocus_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement5, &impl::abi_t<Windows::UI::Xaml::IUIElement5>::remove_GettingFocus>;
+    GettingFocus_revoker GettingFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> const& handler) const;
+    void GettingFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token LosingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> const& handler) const;
+    using LosingFocus_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement5, &impl::abi_t<Windows::UI::Xaml::IUIElement5>::remove_LosingFocus>;
+    LosingFocus_revoker LosingFocus(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> const& handler) const;
+    void LosingFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token NoFocusCandidateFound(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> const& handler) const;
+    using NoFocusCandidateFound_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement5, &impl::abi_t<Windows::UI::Xaml::IUIElement5>::remove_NoFocusCandidateFound>;
+    NoFocusCandidateFound_revoker NoFocusCandidateFound(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> const& handler) const;
+    void NoFocusCandidateFound(winrt::event_token const& token) const noexcept;
     void StartBringIntoView() const;
     void StartBringIntoView(Windows::UI::Xaml::BringIntoViewOptions const& options) const;
 };
@@ -2784,22 +4642,22 @@ template <typename D>
 struct consume_Windows_UI_Xaml_IUIElement7
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Input::KeyboardAccelerator> KeyboardAccelerators() const;
-    event_token CharacterReceived(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::CharacterReceivedRoutedEventArgs> const& value) const;
-    using CharacterReceived_revoker = event_revoker<Windows::UI::Xaml::IUIElement7>;
-    CharacterReceived_revoker CharacterReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::CharacterReceivedRoutedEventArgs> const& value) const;
-    void CharacterReceived(event_token const& token) const;
-    event_token ProcessKeyboardAccelerators(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ProcessKeyboardAcceleratorEventArgs> const& value) const;
-    using ProcessKeyboardAccelerators_revoker = event_revoker<Windows::UI::Xaml::IUIElement7>;
-    ProcessKeyboardAccelerators_revoker ProcessKeyboardAccelerators(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ProcessKeyboardAcceleratorEventArgs> const& value) const;
-    void ProcessKeyboardAccelerators(event_token const& token) const;
-    event_token PreviewKeyDown(Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    using PreviewKeyDown_revoker = event_revoker<Windows::UI::Xaml::IUIElement7>;
-    PreviewKeyDown_revoker PreviewKeyDown(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    void PreviewKeyDown(event_token const& token) const;
-    event_token PreviewKeyUp(Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    using PreviewKeyUp_revoker = event_revoker<Windows::UI::Xaml::IUIElement7>;
-    PreviewKeyUp_revoker PreviewKeyUp(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& value) const;
-    void PreviewKeyUp(event_token const& token) const;
+    winrt::event_token CharacterReceived(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::CharacterReceivedRoutedEventArgs> const& handler) const;
+    using CharacterReceived_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement7, &impl::abi_t<Windows::UI::Xaml::IUIElement7>::remove_CharacterReceived>;
+    CharacterReceived_revoker CharacterReceived(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::CharacterReceivedRoutedEventArgs> const& handler) const;
+    void CharacterReceived(winrt::event_token const& token) const noexcept;
+    winrt::event_token ProcessKeyboardAccelerators(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ProcessKeyboardAcceleratorEventArgs> const& handler) const;
+    using ProcessKeyboardAccelerators_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement7, &impl::abi_t<Windows::UI::Xaml::IUIElement7>::remove_ProcessKeyboardAccelerators>;
+    ProcessKeyboardAccelerators_revoker ProcessKeyboardAccelerators(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ProcessKeyboardAcceleratorEventArgs> const& handler) const;
+    void ProcessKeyboardAccelerators(winrt::event_token const& token) const noexcept;
+    winrt::event_token PreviewKeyDown(Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    using PreviewKeyDown_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement7, &impl::abi_t<Windows::UI::Xaml::IUIElement7>::remove_PreviewKeyDown>;
+    PreviewKeyDown_revoker PreviewKeyDown(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    void PreviewKeyDown(winrt::event_token const& token) const noexcept;
+    winrt::event_token PreviewKeyUp(Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    using PreviewKeyUp_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement7, &impl::abi_t<Windows::UI::Xaml::IUIElement7>::remove_PreviewKeyUp>;
+    PreviewKeyUp_revoker PreviewKeyUp(auto_revoke_t, Windows::UI::Xaml::Input::KeyEventHandler const& handler) const;
+    void PreviewKeyUp(winrt::event_token const& token) const noexcept;
     void TryInvokeKeyboardAccelerator(Windows::UI::Xaml::Input::ProcessKeyboardAcceleratorEventArgs const& args) const;
 };
 template <> struct consume<Windows::UI::Xaml::IUIElement7> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElement7<D>; };
@@ -2813,12 +4671,42 @@ struct consume_Windows_UI_Xaml_IUIElement8
     void KeyboardAcceleratorPlacementTarget(Windows::UI::Xaml::DependencyObject const& value) const;
     Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode KeyboardAcceleratorPlacementMode() const;
     void KeyboardAcceleratorPlacementMode(Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode const& value) const;
-    event_token BringIntoViewRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::BringIntoViewRequestedEventArgs> const& value) const;
-    using BringIntoViewRequested_revoker = event_revoker<Windows::UI::Xaml::IUIElement8>;
-    BringIntoViewRequested_revoker BringIntoViewRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::BringIntoViewRequestedEventArgs> const& value) const;
-    void BringIntoViewRequested(event_token const& token) const;
+    winrt::event_token BringIntoViewRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::BringIntoViewRequestedEventArgs> const& handler) const;
+    using BringIntoViewRequested_revoker = impl::event_revoker<Windows::UI::Xaml::IUIElement8, &impl::abi_t<Windows::UI::Xaml::IUIElement8>::remove_BringIntoViewRequested>;
+    BringIntoViewRequested_revoker BringIntoViewRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::BringIntoViewRequestedEventArgs> const& handler) const;
+    void BringIntoViewRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IUIElement8> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElement8<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IUIElement9
+{
+    bool CanBeScrollAnchor() const;
+    void CanBeScrollAnchor(bool value) const;
+    Windows::UI::Xaml::ScalarTransition OpacityTransition() const;
+    void OpacityTransition(Windows::UI::Xaml::ScalarTransition const& value) const;
+    Windows::Foundation::Numerics::float3 Translation() const;
+    void Translation(Windows::Foundation::Numerics::float3 const& value) const;
+    Windows::UI::Xaml::Vector3Transition TranslationTransition() const;
+    void TranslationTransition(Windows::UI::Xaml::Vector3Transition const& value) const;
+    float Rotation() const;
+    void Rotation(float value) const;
+    Windows::UI::Xaml::ScalarTransition RotationTransition() const;
+    void RotationTransition(Windows::UI::Xaml::ScalarTransition const& value) const;
+    Windows::Foundation::Numerics::float3 Scale() const;
+    void Scale(Windows::Foundation::Numerics::float3 const& value) const;
+    Windows::UI::Xaml::Vector3Transition ScaleTransition() const;
+    void ScaleTransition(Windows::UI::Xaml::Vector3Transition const& value) const;
+    Windows::Foundation::Numerics::float4x4 TransformMatrix() const;
+    void TransformMatrix(Windows::Foundation::Numerics::float4x4 const& value) const;
+    Windows::Foundation::Numerics::float3 CenterPoint() const;
+    void CenterPoint(Windows::Foundation::Numerics::float3 const& value) const;
+    Windows::Foundation::Numerics::float3 RotationAxis() const;
+    void RotationAxis(Windows::Foundation::Numerics::float3 const& value) const;
+    void StartAnimation(Windows::UI::Composition::ICompositionAnimationBase const& animation) const;
+    void StopAnimation(Windows::UI::Composition::ICompositionAnimationBase const& animation) const;
+};
+template <> struct consume<Windows::UI::Xaml::IUIElement9> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElement9<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IUIElementFactory
@@ -2850,6 +4738,13 @@ struct consume_Windows_UI_Xaml_IUIElementOverrides8
     void OnBringIntoViewRequested(Windows::UI::Xaml::BringIntoViewRequestedEventArgs const& e) const;
 };
 template <> struct consume<Windows::UI::Xaml::IUIElementOverrides8> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElementOverrides8<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IUIElementOverrides9
+{
+    void PopulatePropertyInfoOverride(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& animationPropertyInfo) const;
+};
+template <> struct consume<Windows::UI::Xaml::IUIElementOverrides9> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElementOverrides9<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IUIElementStatics
@@ -2972,14 +4867,38 @@ struct consume_Windows_UI_Xaml_IUIElementStatics8
 template <> struct consume<Windows::UI::Xaml::IUIElementStatics8> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElementStatics8<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Xaml_IUIElementStatics9
+{
+    Windows::UI::Xaml::DependencyProperty CanBeScrollAnchorProperty() const;
+};
+template <> struct consume<Windows::UI::Xaml::IUIElementStatics9> { template <typename D> using type = consume_Windows_UI_Xaml_IUIElementStatics9<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Xaml_IUnhandledExceptionEventArgs
 {
-    HRESULT Exception() const;
+    winrt::hresult Exception() const;
     hstring Message() const;
     bool Handled() const;
     void Handled(bool value) const;
 };
 template <> struct consume<Windows::UI::Xaml::IUnhandledExceptionEventArgs> { template <typename D> using type = consume_Windows_UI_Xaml_IUnhandledExceptionEventArgs<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IVector3Transition
+{
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(Windows::Foundation::TimeSpan const& value) const;
+    Windows::UI::Xaml::Vector3TransitionComponents Components() const;
+    void Components(Windows::UI::Xaml::Vector3TransitionComponents const& value) const;
+};
+template <> struct consume<Windows::UI::Xaml::IVector3Transition> { template <typename D> using type = consume_Windows_UI_Xaml_IVector3Transition<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Xaml_IVector3TransitionFactory
+{
+    Windows::UI::Xaml::Vector3Transition CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
+};
+template <> struct consume<Windows::UI::Xaml::IVector3TransitionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IVector3TransitionFactory<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Xaml_IVisualState
@@ -3017,14 +4936,14 @@ struct consume_Windows_UI_Xaml_IVisualStateGroup
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualTransition> Transitions() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualState> States() const;
     Windows::UI::Xaml::VisualState CurrentState() const;
-    event_token CurrentStateChanged(Windows::UI::Xaml::VisualStateChangedEventHandler const& value) const;
-    using CurrentStateChanged_revoker = event_revoker<Windows::UI::Xaml::IVisualStateGroup>;
-    CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, Windows::UI::Xaml::VisualStateChangedEventHandler const& value) const;
-    void CurrentStateChanged(event_token const& token) const;
-    event_token CurrentStateChanging(Windows::UI::Xaml::VisualStateChangedEventHandler const& value) const;
-    using CurrentStateChanging_revoker = event_revoker<Windows::UI::Xaml::IVisualStateGroup>;
-    CurrentStateChanging_revoker CurrentStateChanging(auto_revoke_t, Windows::UI::Xaml::VisualStateChangedEventHandler const& value) const;
-    void CurrentStateChanging(event_token const& token) const;
+    winrt::event_token CurrentStateChanged(Windows::UI::Xaml::VisualStateChangedEventHandler const& handler) const;
+    using CurrentStateChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IVisualStateGroup, &impl::abi_t<Windows::UI::Xaml::IVisualStateGroup>::remove_CurrentStateChanged>;
+    CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, Windows::UI::Xaml::VisualStateChangedEventHandler const& handler) const;
+    void CurrentStateChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token CurrentStateChanging(Windows::UI::Xaml::VisualStateChangedEventHandler const& handler) const;
+    using CurrentStateChanging_revoker = impl::event_revoker<Windows::UI::Xaml::IVisualStateGroup, &impl::abi_t<Windows::UI::Xaml::IVisualStateGroup>::remove_CurrentStateChanging>;
+    CurrentStateChanging_revoker CurrentStateChanging(auto_revoke_t, Windows::UI::Xaml::VisualStateChangedEventHandler const& handler) const;
+    void CurrentStateChanging(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::IVisualStateGroup> { template <typename D> using type = consume_Windows_UI_Xaml_IVisualStateGroup<D>; };
 
@@ -3037,7 +4956,7 @@ template <> struct consume<Windows::UI::Xaml::IVisualStateManager> { template <t
 template <typename D>
 struct consume_Windows_UI_Xaml_IVisualStateManagerFactory
 {
-    Windows::UI::Xaml::VisualStateManager CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::VisualStateManager CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IVisualStateManagerFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IVisualStateManagerFactory<D>; };
 
@@ -3086,7 +5005,7 @@ template <> struct consume<Windows::UI::Xaml::IVisualTransition> { template <typ
 template <typename D>
 struct consume_Windows_UI_Xaml_IVisualTransitionFactory
 {
-    Windows::UI::Xaml::VisualTransition CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::VisualTransition CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::IVisualTransitionFactory> { template <typename D> using type = consume_Windows_UI_Xaml_IVisualTransitionFactory<D>; };
 
@@ -3099,22 +5018,22 @@ struct consume_Windows_UI_Xaml_IWindow
     void Content(Windows::UI::Xaml::UIElement const& value) const;
     Windows::UI::Core::CoreWindow CoreWindow() const;
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
-    event_token Activated(Windows::UI::Xaml::WindowActivatedEventHandler const& value) const;
-    using Activated_revoker = event_revoker<Windows::UI::Xaml::IWindow>;
-    Activated_revoker Activated(auto_revoke_t, Windows::UI::Xaml::WindowActivatedEventHandler const& value) const;
-    void Activated(event_token const& token) const;
-    event_token Closed(Windows::UI::Xaml::WindowClosedEventHandler const& value) const;
-    using Closed_revoker = event_revoker<Windows::UI::Xaml::IWindow>;
-    Closed_revoker Closed(auto_revoke_t, Windows::UI::Xaml::WindowClosedEventHandler const& value) const;
-    void Closed(event_token const& token) const;
-    event_token SizeChanged(Windows::UI::Xaml::WindowSizeChangedEventHandler const& value) const;
-    using SizeChanged_revoker = event_revoker<Windows::UI::Xaml::IWindow>;
-    SizeChanged_revoker SizeChanged(auto_revoke_t, Windows::UI::Xaml::WindowSizeChangedEventHandler const& value) const;
-    void SizeChanged(event_token const& token) const;
-    event_token VisibilityChanged(Windows::UI::Xaml::WindowVisibilityChangedEventHandler const& value) const;
-    using VisibilityChanged_revoker = event_revoker<Windows::UI::Xaml::IWindow>;
-    VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, Windows::UI::Xaml::WindowVisibilityChangedEventHandler const& value) const;
-    void VisibilityChanged(event_token const& token) const;
+    winrt::event_token Activated(Windows::UI::Xaml::WindowActivatedEventHandler const& handler) const;
+    using Activated_revoker = impl::event_revoker<Windows::UI::Xaml::IWindow, &impl::abi_t<Windows::UI::Xaml::IWindow>::remove_Activated>;
+    Activated_revoker Activated(auto_revoke_t, Windows::UI::Xaml::WindowActivatedEventHandler const& handler) const;
+    void Activated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Closed(Windows::UI::Xaml::WindowClosedEventHandler const& handler) const;
+    using Closed_revoker = impl::event_revoker<Windows::UI::Xaml::IWindow, &impl::abi_t<Windows::UI::Xaml::IWindow>::remove_Closed>;
+    Closed_revoker Closed(auto_revoke_t, Windows::UI::Xaml::WindowClosedEventHandler const& handler) const;
+    void Closed(winrt::event_token const& token) const noexcept;
+    winrt::event_token SizeChanged(Windows::UI::Xaml::WindowSizeChangedEventHandler const& handler) const;
+    using SizeChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IWindow, &impl::abi_t<Windows::UI::Xaml::IWindow>::remove_SizeChanged>;
+    SizeChanged_revoker SizeChanged(auto_revoke_t, Windows::UI::Xaml::WindowSizeChangedEventHandler const& handler) const;
+    void SizeChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token VisibilityChanged(Windows::UI::Xaml::WindowVisibilityChangedEventHandler const& handler) const;
+    using VisibilityChanged_revoker = impl::event_revoker<Windows::UI::Xaml::IWindow, &impl::abi_t<Windows::UI::Xaml::IWindow>::remove_VisibilityChanged>;
+    VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, Windows::UI::Xaml::WindowVisibilityChangedEventHandler const& handler) const;
+    void VisibilityChanged(winrt::event_token const& token) const noexcept;
     void Activate() const;
     void Close() const;
 };
@@ -3183,1368 +5102,5 @@ struct struct_Windows_UI_Xaml_Thickness
 };
 template <> struct abi<Windows::UI::Xaml::Thickness>{ using type = struct_Windows_UI_Xaml_Thickness; };
 
-
-template <> struct abi<Windows::UI::Xaml::IAdaptiveTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinWindowWidth(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinWindowWidth(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinWindowHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinWindowHeight(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IAdaptiveTriggerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IAdaptiveTriggerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinWindowWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinWindowHeightProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplication>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Resources(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Resources(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DebugSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestedTheme(Windows::UI::Xaml::ApplicationTheme* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestedTheme(Windows::UI::Xaml::ApplicationTheme value) noexcept = 0;
-    virtual HRESULT __stdcall add_UnhandledException(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_UnhandledException(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Suspending(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Suspending(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Resuming(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Resuming(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Exit() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplication2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FocusVisualKind(Windows::UI::Xaml::FocusVisualKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualKind(Windows::UI::Xaml::FocusVisualKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode value) noexcept = 0;
-    virtual HRESULT __stdcall add_LeavingBackground(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LeavingBackground(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_EnteredBackground(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnteredBackground(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplication3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplicationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplicationInitializationCallbackParams>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplicationOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnLaunched(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnFileActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnSearchActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnShareTargetActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnFileOpenPickerActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnFileSavePickerActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnCachedFileUpdaterActivated(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnWindowCreated(void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplicationOverrides2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnBackgroundActivated(void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IApplicationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Start(void* callback) noexcept = 0;
-    virtual HRESULT __stdcall LoadComponent(void* component, void* resourceLocator) noexcept = 0;
-    virtual HRESULT __stdcall LoadComponentWithResourceLocation(void* component, void* resourceLocator, Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation componentResourceLocation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IBindingFailedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IBringIntoViewOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnimationDesired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnimationDesired(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetRect(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetRect(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IBringIntoViewOptions2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontalAlignmentRatio(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalAlignmentRatio(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignmentRatio(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalAlignmentRatio(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalOffset(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IBringIntoViewRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TargetElement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetElement(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AnimationDesired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnimationDesired(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetRect(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetRect(Windows::Foundation::Rect value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalAlignmentRatio(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignmentRatio(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ICornerRadiusHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ICornerRadiusHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft, struct struct_Windows_UI_Xaml_CornerRadius* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromUniformRadius(double uniformRadius, struct struct_Windows_UI_Xaml_CornerRadius* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataContextChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NewValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadContent(void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplateExtension>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ResetTemplate() noexcept = 0;
-    virtual HRESULT __stdcall ProcessBinding(uint32_t phase, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall ProcessBindings(void* arg, int32_t* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplateFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplateKey>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataType(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataType(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplateKeyFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstanceWithType(void* dataType, void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDataTemplateStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExtensionInstanceProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetExtensionInstance(void* element, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetExtensionInstance(void* element, void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDebugSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EnableFrameRateCounter(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EnableFrameRateCounter(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsBindingTracingEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsBindingTracingEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOverdrawHeatMapEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsOverdrawHeatMapEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall add_BindingFailed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_BindingFailed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDebugSettings2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EnableRedrawRegions(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EnableRedrawRegions(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDebugSettings3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTextPerformanceVisualizationEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTextPerformanceVisualizationEnabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyObject>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetValue(void* dp, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall SetValue(void* dp, void* value) noexcept = 0;
-    virtual HRESULT __stdcall ClearValue(void* dp) noexcept = 0;
-    virtual HRESULT __stdcall ReadLocalValue(void* dp, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetAnimationBaseValue(void* dp, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall get_Dispatcher(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyObject2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RegisterPropertyChangedCallback(void* dp, void* callback, int64_t* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall UnregisterPropertyChangedCallback(void* dp, int64_t token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyObjectCollectionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyObjectFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyProperty>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetMetadata(struct struct_Windows_UI_Xaml_Interop_TypeName forType, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyPropertyChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OldValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewValue(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDependencyPropertyStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnsetValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Register(HSTRING name, struct struct_Windows_UI_Xaml_Interop_TypeName propertyType, struct struct_Windows_UI_Xaml_Interop_TypeName ownerType, void* typeMetadata, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall RegisterAttached(HSTRING name, struct struct_Windows_UI_Xaml_Interop_TypeName propertyType, struct struct_Windows_UI_Xaml_Interop_TypeName ownerType, void* defaultMetadata, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDispatcherTimer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Interval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Interval(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Tick(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Tick(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDispatcherTimerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-    virtual HRESULT __stdcall GetPosition(void* relativeTo, Windows::Foundation::Point* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragEventArgs2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataView(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DragUIOverride(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Modifiers(Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragEventArgs3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragOperationDeferral>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Complete() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragStartingEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Cancel(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Cancel(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DragUI(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetPosition(void* relativeTo, Windows::Foundation::Point* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragStartingEventArgs2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragUI>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetContentFromBitmapImage(void* bitmapImage) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromBitmapImageWithAnchorPoint(void* bitmapImage, Windows::Foundation::Point anchorPoint) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromSoftwareBitmap(void* softwareBitmap) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromSoftwareBitmapWithAnchorPoint(void* softwareBitmap, Windows::Foundation::Point anchorPoint) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromDataPackage() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDragUIOverride>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Caption(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Caption(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsContentVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsContentVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCaptionVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsCaptionVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsGlyphVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsGlyphVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall Clear() noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromBitmapImage(void* bitmapImage) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromBitmapImageWithAnchorPoint(void* bitmapImage, Windows::Foundation::Point anchorPoint) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromSoftwareBitmap(void* softwareBitmap) noexcept = 0;
-    virtual HRESULT __stdcall SetContentFromSoftwareBitmapWithAnchorPoint(void* softwareBitmap, Windows::Foundation::Point anchorPoint) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDropCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DropResult(Windows::ApplicationModel::DataTransfer::DataPackageOperation* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDurationHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IDurationHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Automatic(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Forever(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
-    virtual HRESULT __stdcall Compare(struct struct_Windows_UI_Xaml_Duration duration1, struct struct_Windows_UI_Xaml_Duration duration2, int32_t* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromTimeSpan(Windows::Foundation::TimeSpan timeSpan, struct struct_Windows_UI_Xaml_Duration* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetHasTimeSpan(struct struct_Windows_UI_Xaml_Duration target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Add(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration duration, struct struct_Windows_UI_Xaml_Duration* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall Equals(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration value, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall Subtract(struct struct_Windows_UI_Xaml_Duration target, struct struct_Windows_UI_Xaml_Duration duration, struct struct_Windows_UI_Xaml_Duration* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IElementSoundPlayer>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IElementSoundPlayerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Volume(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Volume(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_State(Windows::UI::Xaml::ElementSoundPlayerState* value) noexcept = 0;
-    virtual HRESULT __stdcall put_State(Windows::UI::Xaml::ElementSoundPlayerState value) noexcept = 0;
-    virtual HRESULT __stdcall Play(Windows::UI::Xaml::ElementSoundKind sound) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IElementSoundPlayerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SpatialAudioMode(Windows::UI::Xaml::ElementSpatialAudioMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SpatialAudioMode(Windows::UI::Xaml::ElementSpatialAudioMode value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IEventTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RoutedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RoutedEvent(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Actions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IExceptionRoutedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorMessage(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IExceptionRoutedEventArgsFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Triggers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Resources(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Resources(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Tag(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Tag(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualWidth(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Width(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Height(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinWidth(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinWidth(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWidth(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxWidth(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinHeight(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxHeight(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignment(Windows::UI::Xaml::VerticalAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalAlignment(Windows::UI::Xaml::VerticalAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_Margin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Margin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_BaseUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataContext(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataContext(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Style(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Style(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Parent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowDirection(Windows::UI::Xaml::FlowDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FlowDirection(Windows::UI::Xaml::FlowDirection value) noexcept = 0;
-    virtual HRESULT __stdcall add_Loaded(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Loaded(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Unloaded(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Unloaded(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SizeChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SizeChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_LayoutUpdated(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LayoutUpdated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall FindName(HSTRING name, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall SetBinding(void* dp, void* binding) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElement2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequestedTheme(Windows::UI::Xaml::ElementTheme* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestedTheme(Windows::UI::Xaml::ElementTheme value) noexcept = 0;
-    virtual HRESULT __stdcall add_DataContextChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DataContextChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetBindingExpression(void* dp, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElement3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_Loading(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Loading(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElement4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowFocusOnInteraction(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowFocusOnInteraction(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualMargin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualMargin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualSecondaryThickness(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualSecondaryThickness(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualPrimaryThickness(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualPrimaryThickness(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualSecondaryBrush(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualSecondaryBrush(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualPrimaryBrush(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FocusVisualPrimaryBrush(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowFocusWhenDisabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowFocusWhenDisabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElement6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActualTheme(Windows::UI::Xaml::ElementTheme* value) noexcept = 0;
-    virtual HRESULT __stdcall add_ActualThemeChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ActualThemeChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall MeasureOverride(Windows::Foundation::Size availableSize, Windows::Foundation::Size* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall ArrangeOverride(Windows::Foundation::Size finalSize, Windows::Foundation::Size* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall OnApplyTemplate() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementOverrides2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TagProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LanguageProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActualHeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_WidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxWidthProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinHeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxHeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalAlignmentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignmentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MarginProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NameProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataContextProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StyleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowDirectionProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RequestedThemeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowFocusOnInteractionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualMarginProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualSecondaryThicknessProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualPrimaryThicknessProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualSecondaryBrushProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusVisualPrimaryBrushProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowFocusWhenDisabledProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DeferTree(void* element) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkElementStatics6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActualThemeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkTemplate>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkTemplateFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkView>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IFrameworkViewSource>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IGridLengthHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IGridLengthHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Auto(struct struct_Windows_UI_Xaml_GridLength* value) noexcept = 0;
-    virtual HRESULT __stdcall FromPixels(double pixels, struct struct_Windows_UI_Xaml_GridLength* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type, struct struct_Windows_UI_Xaml_GridLength* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetIsAbsolute(struct struct_Windows_UI_Xaml_GridLength target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsAuto(struct struct_Windows_UI_Xaml_GridLength target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsStar(struct struct_Windows_UI_Xaml_GridLength target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Equals(struct struct_Windows_UI_Xaml_GridLength target, struct struct_Windows_UI_Xaml_GridLength value, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IMediaFailedRoutedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorTrace(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPointHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPointHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromCoordinates(float x, float y, Windows::Foundation::Point* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPropertyMetadata>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DefaultValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CreateDefaultValueCallback(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPropertyMetadataFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstanceWithDefaultValue(void* defaultValue, void* outer, void** inner, void** instance) noexcept = 0;
-    virtual HRESULT __stdcall CreateInstanceWithDefaultValueAndCallback(void* defaultValue, void* propertyChangedCallback, void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPropertyMetadataStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithDefaultValue(void* defaultValue, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithDefaultValueAndCallback(void* defaultValue, void* propertyChangedCallback, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithFactory(void* createDefaultValueCallback, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithFactoryAndCallback(void* createDefaultValueCallback, void* propertyChangedCallback, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPropertyPath>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Path(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IPropertyPathFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(HSTRING path, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IRectHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IRectHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Empty(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall FromCoordinatesAndDimensions(float x, float y, float width, float height, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromPoints(Windows::Foundation::Point point1, Windows::Foundation::Point point2, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromLocationAndSize(Windows::Foundation::Point location, Windows::Foundation::Size size, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetIsEmpty(Windows::Foundation::Rect target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetBottom(Windows::Foundation::Rect target, float* value) noexcept = 0;
-    virtual HRESULT __stdcall GetLeft(Windows::Foundation::Rect target, float* value) noexcept = 0;
-    virtual HRESULT __stdcall GetRight(Windows::Foundation::Rect target, float* value) noexcept = 0;
-    virtual HRESULT __stdcall GetTop(Windows::Foundation::Rect target, float* value) noexcept = 0;
-    virtual HRESULT __stdcall Contains(Windows::Foundation::Rect target, Windows::Foundation::Point point, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall Equals(Windows::Foundation::Rect target, Windows::Foundation::Rect value, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall Intersect(Windows::Foundation::Rect target, Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall UnionWithPoint(Windows::Foundation::Rect target, Windows::Foundation::Point point, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall UnionWithRect(Windows::Foundation::Rect target, Windows::Foundation::Rect rect, Windows::Foundation::Rect* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IResourceDictionary>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MergedDictionaries(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ThemeDictionaries(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IResourceDictionaryFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IRoutedEvent>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IRoutedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OriginalSource(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IRoutedEventArgsFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Property(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetter2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Target(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Target(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetterBase>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSealed(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetterBaseCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSealed(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetterBaseFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISetterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* targetProperty, void* value, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISizeChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PreviousSize(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewSize(Windows::Foundation::Size* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISizeHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ISizeHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Empty(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall FromDimensions(float width, float height, Windows::Foundation::Size* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetIsEmpty(Windows::Foundation::Size target, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall Equals(Windows::Foundation::Size target, Windows::Foundation::Size value, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStateTrigger>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsActive(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStateTriggerBase>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStateTriggerBaseFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStateTriggerBaseProtected>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetActive(bool IsActive) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStateTriggerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsActiveProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStyle>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSealed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Setters(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TargetType(struct struct_Windows_UI_Xaml_Interop_TypeName* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TargetType(struct struct_Windows_UI_Xaml_Interop_TypeName value) noexcept = 0;
-    virtual HRESULT __stdcall get_BasedOn(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_BasedOn(void* value) noexcept = 0;
-    virtual HRESULT __stdcall Seal() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IStyleFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(struct struct_Windows_UI_Xaml_Interop_TypeName targetType, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITargetPropertyPath>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Path(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Path(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Target(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Target(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITargetPropertyPathFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* targetProperty, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IThicknessHelper>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IThicknessHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FromLengths(double left, double top, double right, double bottom, struct struct_Windows_UI_Xaml_Thickness* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall FromUniformLength(double uniformLength, struct struct_Windows_UI_Xaml_Thickness* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITriggerAction>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITriggerActionFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITriggerBase>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::ITriggerBaseFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredSize(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowDrop(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowDrop(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opacity(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Clip(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Clip(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RenderTransform(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RenderTransform(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Projection(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Projection(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RenderTransformOrigin(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RenderTransformOrigin(Windows::Foundation::Point value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsHitTestVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsHitTestVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Visibility(Windows::UI::Xaml::Visibility* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Visibility(Windows::UI::Xaml::Visibility value) noexcept = 0;
-    virtual HRESULT __stdcall get_RenderSize(Windows::Foundation::Size* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UseLayoutRounding(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UseLayoutRounding(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Transitions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Transitions(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CacheMode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CacheMode(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTapEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTapEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDoubleTapEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsDoubleTapEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRightTapEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsRightTapEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsHoldingEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsHoldingEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerCaptures(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_KeyUp(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_KeyUp(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_KeyDown(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_KeyDown(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_GotFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GotFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_LostFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LostFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DragEnter(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DragEnter(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DragLeave(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DragLeave(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DragOver(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DragOver(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Drop(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Drop(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerPressed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerPressed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerMoved(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerMoved(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerReleased(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerReleased(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerEntered(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerEntered(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerExited(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerExited(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerCaptureLost(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerCaptureLost(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerCanceled(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerCanceled(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PointerWheelChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PointerWheelChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Tapped(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Tapped(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DoubleTapped(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DoubleTapped(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Holding(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Holding(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_RightTapped(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RightTapped(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ManipulationStarting(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ManipulationStarting(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ManipulationInertiaStarting(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ManipulationInertiaStarting(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ManipulationStarted(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ManipulationStarted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ManipulationDelta(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ManipulationDelta(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ManipulationCompleted(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ManipulationCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Measure(Windows::Foundation::Size availableSize) noexcept = 0;
-    virtual HRESULT __stdcall Arrange(Windows::Foundation::Rect finalRect) noexcept = 0;
-    virtual HRESULT __stdcall CapturePointer(void* value, bool* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall ReleasePointerCapture(void* value) noexcept = 0;
-    virtual HRESULT __stdcall ReleasePointerCaptures() noexcept = 0;
-    virtual HRESULT __stdcall AddHandler(void* routedEvent, void* handler, bool handledEventsToo) noexcept = 0;
-    virtual HRESULT __stdcall RemoveHandler(void* routedEvent, void* handler) noexcept = 0;
-    virtual HRESULT __stdcall TransformToVisual(void* visual, void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall InvalidateMeasure() noexcept = 0;
-    virtual HRESULT __stdcall InvalidateArrange() noexcept = 0;
-    virtual HRESULT __stdcall UpdateLayout() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode value) noexcept = 0;
-    virtual HRESULT __stdcall CancelDirectManipulations(bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Transform3D(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Transform3D(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanDrag(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CanDrag(bool value) noexcept = 0;
-    virtual HRESULT __stdcall add_DragStarting(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DragStarting(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DropCompleted(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DropCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall StartDragAsync(void* pointerPoint, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContextFlyout(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContextFlyout(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvoked(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExitDisplayModeOnAccessKeyInvoked(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAccessKeyScope(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAccessKeyScope(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyScopeOwner(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccessKeyScopeOwner(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKey(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccessKey(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall add_ContextRequested(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ContextRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ContextCanceled(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ContextCanceled(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyDisplayRequested(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyDisplayRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyDisplayDismissed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyDisplayDismissed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyInvoked(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyInvoked(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Lights(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipHorizontalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipHorizontalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipVerticalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipVerticalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) noexcept = 0;
-    virtual HRESULT __stdcall add_GettingFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GettingFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_LosingFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LosingFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_NoFocusCandidateFound(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_NoFocusCandidateFound(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall StartBringIntoView() noexcept = 0;
-    virtual HRESULT __stdcall StartBringIntoViewWithOptions(void* options) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_KeyboardAccelerators(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_CharacterReceived(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CharacterReceived(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_ProcessKeyboardAccelerators(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ProcessKeyboardAccelerators(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PreviewKeyDown(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PreviewKeyDown(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_PreviewKeyUp(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PreviewKeyUp(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall TryInvokeKeyboardAccelerator(void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElement8>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_KeyTipTarget(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipTarget(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyboardAcceleratorPlacementTarget(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyboardAcceleratorPlacementTarget(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyboardAcceleratorPlacementMode(Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyboardAcceleratorPlacementMode(Windows::UI::Xaml::Input::KeyboardAcceleratorPlacementMode value) noexcept = 0;
-    virtual HRESULT __stdcall add_BringIntoViewRequested(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_BringIntoViewRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnCreateAutomationPeer(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall OnDisconnectVisualChildren() noexcept = 0;
-    virtual HRESULT __stdcall FindSubElementsForTouchTargeting(Windows::Foundation::Point point, Windows::Foundation::Rect boundingRect, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementOverrides7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetChildrenInTabFocusOrder(void** returnValue) noexcept = 0;
-    virtual HRESULT __stdcall OnProcessKeyboardAccelerators(void* args) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementOverrides8>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnKeyboardAcceleratorInvoked(void* args) noexcept = 0;
-    virtual HRESULT __stdcall OnBringIntoViewRequested(void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_KeyDownEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyUpEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerEnteredEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerPressedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerMovedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerReleasedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerExitedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerCaptureLostEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerCanceledEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerWheelChangedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TappedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DoubleTappedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HoldingEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightTappedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationStartingEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationInertiaStartingEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationStartedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationDeltaEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationCompletedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DragEnterEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DragLeaveEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DragOverEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DropEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AllowDropProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OpacityProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ClipProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RenderTransformProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProjectionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RenderTransformOriginProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsHitTestVisibleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VisibilityProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_UseLayoutRoundingProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransitionsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CacheModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTapEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDoubleTapEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsRightTapEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsHoldingEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManipulationModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PointerCapturesProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompositeModeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Transform3DProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanDragProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall TryStartDirectManipulation(void* value, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContextFlyoutProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvokedProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAccessKeyScopeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyScopeOwnerProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_LightsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipPlacementModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipVerticalOffsetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusKeyboardNavigationProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HighContrastAdjustmentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabFocusNavigationProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GettingFocusEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LosingFocusEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NoFocusCandidateFoundEvent(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PreviewKeyDownEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CharacterReceivedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviewKeyUpEvent(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUIElementStatics8>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BringIntoViewRequestedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContextRequestedEvent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipTargetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyboardAcceleratorPlacementTargetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyboardAcceleratorPlacementModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RegisterAsScrollPort(void* element) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IUnhandledExceptionEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Exception(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Message(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualState>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Storyboard(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Storyboard(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualState2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Setters(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StateTriggers(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OldState(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_OldState(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NewState(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_NewState(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Control(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Control(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Transitions(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_States(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentState(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_CurrentStateChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CurrentStateChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_CurrentStateChanging(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CurrentStateChanging(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateManager>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateManagerFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateManagerOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GoToStateCore(void* control, void* templateRoot, HSTRING stateName, void* group, void* state, bool useTransitions, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateManagerProtected>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RaiseCurrentStateChanging(void* stateGroup, void* oldState, void* newState, void* control) noexcept = 0;
-    virtual HRESULT __stdcall RaiseCurrentStateChanged(void* stateGroup, void* oldState, void* newState, void* control) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualStateManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetVisualStateGroups(void* obj, void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomVisualStateManagerProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCustomVisualStateManager(void* obj, void** value) noexcept = 0;
-    virtual HRESULT __stdcall SetCustomVisualStateManager(void* obj, void* value) noexcept = 0;
-    virtual HRESULT __stdcall GoToState(void* control, HSTRING stateName, bool useTransitions, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualTransition>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GeneratedDuration(struct struct_Windows_UI_Xaml_Duration* value) noexcept = 0;
-    virtual HRESULT __stdcall put_GeneratedDuration(struct struct_Windows_UI_Xaml_Duration value) noexcept = 0;
-    virtual HRESULT __stdcall get_GeneratedEasingFunction(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_GeneratedEasingFunction(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_To(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_To(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_From(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_From(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Storyboard(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Storyboard(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IVisualTransitionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IWindow>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Bounds(Windows::Foundation::Rect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Visible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Content(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoreWindow(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Dispatcher(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_Activated(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Activated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Closed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Closed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_SizeChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_SizeChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_VisibilityChanged(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_VisibilityChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Activate() noexcept = 0;
-    virtual HRESULT __stdcall Close() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IWindow2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetTitleBar(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IWindow3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Compositor(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IWindowCreatedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Window(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::IWindowStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ApplicationInitializationCallback>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* p) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::BindingFailedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::CreateDefaultValueCallback>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::DependencyPropertyChangedCallback>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* dp) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::DependencyPropertyChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::DragEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::EnteredBackgroundEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::ExceptionRoutedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::LeavingBackgroundEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::PropertyChangedCallback>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* d, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::RoutedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::SizeChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::SuspendingEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::UnhandledExceptionEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::VisualStateChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::WindowActivatedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::WindowClosedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::WindowSizeChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::WindowVisibilityChangedEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender, void* e) noexcept = 0;
-};};
 
 }

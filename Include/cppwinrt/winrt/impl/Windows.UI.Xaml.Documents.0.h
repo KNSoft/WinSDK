@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -349,65 +349,65 @@ template <> struct name<Windows::UI::Xaml::Documents::Underline>{ static constex
 template <> struct name<Windows::UI::Xaml::Documents::LogicalDirection>{ static constexpr auto & value{ L"Windows.UI.Xaml.Documents.LogicalDirection" }; };
 template <> struct name<Windows::UI::Xaml::Documents::UnderlineStyle>{ static constexpr auto & value{ L"Windows.UI.Xaml.Documents.UnderlineStyle" }; };
 template <> struct name<Windows::UI::Xaml::Documents::TextRange>{ static constexpr auto & value{ L"Windows.UI.Xaml.Documents.TextRange" }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBlock>{ static constexpr GUID value{ 0x4BCE0016,0xDD47,0x4350,{ 0x8C,0xB0,0xE1,0x71,0x60,0x0A,0xC8,0x96 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBlock2>{ static constexpr GUID value{ 0x5EC7BDF3,0x1333,0x4A92,{ 0x83,0x18,0x6C,0xAE,0xDC,0x12,0xEF,0x89 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBlockFactory>{ static constexpr GUID value{ 0x07110532,0x4F59,0x4F3B,{ 0x9C,0xE5,0x25,0x78,0x4C,0x43,0x05,0x07 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBlockStatics>{ static constexpr GUID value{ 0xF86A8C34,0x8D18,0x4C53,{ 0xAE,0xBD,0x91,0xE6,0x10,0xA5,0xE0,0x10 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBlockStatics2>{ static constexpr GUID value{ 0xAF01A4D6,0x03E3,0x4CEE,{ 0x9B,0x02,0x2B,0xFC,0x30,0x8B,0x27,0xA9 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IBold>{ static constexpr GUID value{ 0xADE73784,0x1B59,0x4DA4,{ 0xBB,0x23,0x0F,0x20,0xE8,0x85,0xB4,0xBF } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContactContentLinkProvider>{ static constexpr GUID value{ 0xF92FD29B,0x589B,0x4ABD,{ 0x9D,0x37,0x35,0xA1,0x46,0x8F,0x02,0x1E } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLink>{ static constexpr GUID value{ 0x6C60C3E1,0x528C,0x42F8,{ 0x92,0xBE,0x34,0xB8,0xC6,0x8B,0xE3,0x04 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs>{ static constexpr GUID value{ 0x546717C1,0xE8DF,0x4593,{ 0x96,0x39,0x97,0x59,0x5F,0xDF,0x83,0x10 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLinkProvider>{ static constexpr GUID value{ 0x730587FD,0xBFDC,0x4CB3,{ 0x90,0x4D,0xB6,0x5A,0xB3,0x39,0xBB,0xF5 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLinkProviderCollection>{ static constexpr GUID value{ 0xF5B84D0C,0xA9F4,0x4D1A,{ 0xA1,0x3C,0x10,0xDE,0xF1,0x84,0x37,0x34 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLinkProviderFactory>{ static constexpr GUID value{ 0x57D60D3B,0xEF1A,0x4E8E,{ 0x83,0x9B,0xD3,0x6E,0xF3,0xA5,0x03,0xE0 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IContentLinkStatics>{ static constexpr GUID value{ 0xA34E3063,0xEB16,0x484E,{ 0xA3,0xDF,0x52,0x2B,0x9A,0x83,0x2E,0x6E } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IGlyphs>{ static constexpr GUID value{ 0xD079498B,0xF2B1,0x4281,{ 0x99,0xA2,0xE4,0xD0,0x59,0x32,0xB2,0xB5 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IGlyphs2>{ static constexpr GUID value{ 0xAA8BFE5C,0x3754,0x4BEE,{ 0xBB,0xE1,0x44,0x03,0xEE,0x9B,0x86,0xF0 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IGlyphsStatics>{ static constexpr GUID value{ 0x225CF4C5,0xFDF1,0x43ED,{ 0x95,0x8F,0x41,0x4E,0x86,0xF1,0x03,0xF2 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IGlyphsStatics2>{ static constexpr GUID value{ 0x10489AA7,0x1615,0x4A33,{ 0xAA,0x02,0xD7,0xEF,0x2A,0xEF,0xC7,0x39 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlink>{ static constexpr GUID value{ 0x0FE2363B,0x14E9,0x4152,{ 0x9E,0x58,0x5A,0xEA,0x5B,0x21,0xF0,0x8D } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlink2>{ static constexpr GUID value{ 0x4CE9DA5F,0x7CFF,0x4291,{ 0xB7,0x8F,0xDF,0xEC,0x72,0x49,0x05,0x76 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlink3>{ static constexpr GUID value{ 0xC3F157D9,0xE5D3,0x4FB7,{ 0x87,0x02,0x4F,0x6D,0x85,0xDD,0x9E,0x0A } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlink4>{ static constexpr GUID value{ 0xF7D02959,0x82FB,0x400A,{ 0xA4,0x07,0x5A,0x4E,0xE6,0x77,0x98,0x8A } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlink5>{ static constexpr GUID value{ 0x607DD7D2,0x0945,0x4328,{ 0x91,0xEE,0x94,0xCC,0xEC,0x2E,0xA6,0xC3 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>{ static constexpr GUID value{ 0xC755916B,0x7BDC,0x4BE7,{ 0xB3,0x73,0x92,0x40,0xA5,0x03,0xD8,0x70 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkStatics>{ static constexpr GUID value{ 0x3A44D3D4,0xFD41,0x41DB,{ 0x8C,0x72,0x3B,0x79,0x0A,0xCD,0x9F,0xD3 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkStatics2>{ static constexpr GUID value{ 0x5028D8B7,0x7ADF,0x43EE,{ 0xA4,0xAE,0x9C,0x92,0x5F,0x75,0x57,0x16 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkStatics3>{ static constexpr GUID value{ 0x3E15DEA0,0x205E,0x4947,{ 0x99,0xA5,0x74,0xE7,0x57,0xE8,0xE1,0xB4 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkStatics4>{ static constexpr GUID value{ 0x0476B378,0x8FAA,0x4E24,{ 0xB3,0xB6,0xE9,0xDE,0x4D,0x3C,0x70,0x8C } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IHyperlinkStatics5>{ static constexpr GUID value{ 0x59308CEA,0x1E49,0x4921,{ 0xBD,0x88,0xA2,0x87,0x8D,0x07,0xE3,0x0E } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IInline>{ static constexpr GUID value{ 0x0C92712D,0x1BC9,0x4931,{ 0x8C,0xB1,0x1A,0xEA,0xDF,0x1C,0xC6,0x85 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IInlineFactory>{ static constexpr GUID value{ 0x4058ACD1,0x2F90,0x4B8F,{ 0x99,0xDD,0x42,0x18,0xEF,0x5F,0x03,0xDE } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IInlineUIContainer>{ static constexpr GUID value{ 0x1416CE81,0x28EE,0x452E,{ 0xB1,0x21,0x5F,0xC4,0xF6,0x0B,0x86,0xA6 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IItalic>{ static constexpr GUID value{ 0x91F4619C,0xFCBB,0x4157,{ 0x80,0x2C,0x76,0xF6,0x3B,0x5F,0xB6,0x57 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ILineBreak>{ static constexpr GUID value{ 0x645589C4,0xF769,0x41ED,{ 0x89,0x5B,0x8A,0x1B,0x2F,0xB3,0x15,0x62 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IParagraph>{ static constexpr GUID value{ 0xF83EF59A,0xFA61,0x4BEF,{ 0xAE,0x33,0x0B,0x0A,0xD7,0x56,0xA8,0x4D } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IParagraphStatics>{ static constexpr GUID value{ 0xEF08889A,0x535B,0x4E4C,{ 0x8D,0x84,0x28,0x3B,0x33,0xE9,0x8A,0x37 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IPlaceContentLinkProvider>{ static constexpr GUID value{ 0x10348A4C,0x2366,0x41BE,{ 0x90,0xC8,0x32,0x58,0xB5,0x3B,0x54,0x83 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IRun>{ static constexpr GUID value{ 0x59553C83,0x0E14,0x49BD,{ 0xB8,0x4B,0xC5,0x26,0xF3,0x03,0x43,0x49 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IRunStatics>{ static constexpr GUID value{ 0xE9303CEF,0x65A0,0x4B8D,{ 0xA7,0xF7,0x8F,0xDB,0x28,0x7B,0x46,0xF3 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ISpan>{ static constexpr GUID value{ 0x9839D4A9,0x02AF,0x4811,{ 0xAA,0x15,0x6B,0xEF,0x3A,0xCA,0xC9,0x7A } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ISpanFactory>{ static constexpr GUID value{ 0x5B916F5C,0xCD2D,0x40C0,{ 0x95,0x6A,0x38,0x64,0x48,0x32,0x2F,0x79 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElement>{ static constexpr GUID value{ 0xE83B0062,0xD776,0x4F92,{ 0xBA,0xEA,0x40,0xE7,0x7D,0x47,0x91,0xD5 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElement2>{ static constexpr GUID value{ 0xA8076AA8,0xF892,0x49F6,{ 0x8C,0xD2,0x89,0xAD,0xDA,0xF0,0x6D,0x2D } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElement3>{ static constexpr GUID value{ 0xD1DB340F,0x1BC4,0x4CA8,{ 0xBC,0xF7,0x77,0x0B,0xFF,0x9B,0x27,0xAB } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElement4>{ static constexpr GUID value{ 0xB196E222,0xCA0E,0x48A9,{ 0x83,0xBC,0x36,0xCE,0x50,0x56,0x6A,0xC7 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementFactory>{ static constexpr GUID value{ 0x35007285,0xCF47,0x4BFE,{ 0xB1,0xBC,0x39,0xC9,0x3A,0xF4,0xAE,0x80 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementOverrides>{ static constexpr GUID value{ 0x0CE21EE7,0x4F76,0x4DD9,{ 0xBF,0x91,0x16,0x3B,0xEC,0xCF,0x84,0xBC } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementStatics>{ static constexpr GUID value{ 0x0A2F9B98,0x6C03,0x4470,{ 0xA7,0x9B,0x32,0x98,0xA1,0x04,0x82,0xCE } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementStatics2>{ static constexpr GUID value{ 0x164297B2,0x982B,0x49E1,{ 0x8C,0x03,0xCA,0x43,0xBC,0x4D,0x5B,0x6D } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementStatics3>{ static constexpr GUID value{ 0xCFEFCFAF,0x0FA1,0x45EC,{ 0x9A,0x4E,0x9B,0x33,0x66,0x4D,0xC8,0xB1 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextElementStatics4>{ static constexpr GUID value{ 0xFD8F641E,0x6B12,0x40D5,{ 0xB6,0xEF,0xD1,0xBD,0x12,0xAC,0x90,0x66 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextHighlighter>{ static constexpr GUID value{ 0xBA6CB54B,0x7D75,0x4535,{ 0xB3,0x0D,0xA8,0x1A,0x00,0xB6,0x37,0xA4 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextHighlighterBase>{ static constexpr GUID value{ 0xD957601A,0x5F0D,0x4CDF,{ 0x97,0x58,0x97,0xE0,0xEB,0x95,0xC8,0xFA } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextHighlighterBaseFactory>{ static constexpr GUID value{ 0x9592B2D0,0xEADC,0x4C74,{ 0x92,0xC8,0x6E,0x89,0x6E,0x22,0x50,0x6D } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextHighlighterFactory>{ static constexpr GUID value{ 0x70125461,0x9A8F,0x4FA0,{ 0xB2,0x35,0x8F,0xFA,0xA5,0x07,0xBE,0xF2 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextHighlighterStatics>{ static constexpr GUID value{ 0xB3B009C4,0x3A7E,0x49CC,{ 0xAB,0x84,0x29,0xC4,0x05,0x48,0x87,0x65 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITextPointer>{ static constexpr GUID value{ 0xAC687AA1,0x6A41,0x43FF,{ 0x85,0x1E,0x45,0x34,0x8A,0xA2,0xCF,0x7B } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITypography>{ static constexpr GUID value{ 0x866F65D5,0xEA97,0x42AB,{ 0x92,0x88,0x9C,0x01,0xAE,0xBC,0x7A,0x97 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::ITypographyStatics>{ static constexpr GUID value{ 0x67B9EC88,0x6C57,0x4CE0,{ 0x95,0xF1,0xD4,0xB9,0xED,0x63,0x2F,0xB4 } }; };
-template <> struct guid<Windows::UI::Xaml::Documents::IUnderline>{ static constexpr GUID value{ 0xA5FA8202,0x61C0,0x47D7,{ 0x93,0xEF,0xBC,0x0B,0x57,0x7C,0x5F,0x26 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBlock>{ static constexpr guid value{ 0x4BCE0016,0xDD47,0x4350,{ 0x8C,0xB0,0xE1,0x71,0x60,0x0A,0xC8,0x96 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBlock2>{ static constexpr guid value{ 0x5EC7BDF3,0x1333,0x4A92,{ 0x83,0x18,0x6C,0xAE,0xDC,0x12,0xEF,0x89 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBlockFactory>{ static constexpr guid value{ 0x07110532,0x4F59,0x4F3B,{ 0x9C,0xE5,0x25,0x78,0x4C,0x43,0x05,0x07 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBlockStatics>{ static constexpr guid value{ 0xF86A8C34,0x8D18,0x4C53,{ 0xAE,0xBD,0x91,0xE6,0x10,0xA5,0xE0,0x10 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBlockStatics2>{ static constexpr guid value{ 0xAF01A4D6,0x03E3,0x4CEE,{ 0x9B,0x02,0x2B,0xFC,0x30,0x8B,0x27,0xA9 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IBold>{ static constexpr guid value{ 0xADE73784,0x1B59,0x4DA4,{ 0xBB,0x23,0x0F,0x20,0xE8,0x85,0xB4,0xBF } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContactContentLinkProvider>{ static constexpr guid value{ 0xF92FD29B,0x589B,0x4ABD,{ 0x9D,0x37,0x35,0xA1,0x46,0x8F,0x02,0x1E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLink>{ static constexpr guid value{ 0x6C60C3E1,0x528C,0x42F8,{ 0x92,0xBE,0x34,0xB8,0xC6,0x8B,0xE3,0x04 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs>{ static constexpr guid value{ 0x546717C1,0xE8DF,0x4593,{ 0x96,0x39,0x97,0x59,0x5F,0xDF,0x83,0x10 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLinkProvider>{ static constexpr guid value{ 0x730587FD,0xBFDC,0x4CB3,{ 0x90,0x4D,0xB6,0x5A,0xB3,0x39,0xBB,0xF5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLinkProviderCollection>{ static constexpr guid value{ 0xF5B84D0C,0xA9F4,0x4D1A,{ 0xA1,0x3C,0x10,0xDE,0xF1,0x84,0x37,0x34 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLinkProviderFactory>{ static constexpr guid value{ 0x57D60D3B,0xEF1A,0x4E8E,{ 0x83,0x9B,0xD3,0x6E,0xF3,0xA5,0x03,0xE0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IContentLinkStatics>{ static constexpr guid value{ 0xA34E3063,0xEB16,0x484E,{ 0xA3,0xDF,0x52,0x2B,0x9A,0x83,0x2E,0x6E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IGlyphs>{ static constexpr guid value{ 0xD079498B,0xF2B1,0x4281,{ 0x99,0xA2,0xE4,0xD0,0x59,0x32,0xB2,0xB5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IGlyphs2>{ static constexpr guid value{ 0xAA8BFE5C,0x3754,0x4BEE,{ 0xBB,0xE1,0x44,0x03,0xEE,0x9B,0x86,0xF0 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IGlyphsStatics>{ static constexpr guid value{ 0x225CF4C5,0xFDF1,0x43ED,{ 0x95,0x8F,0x41,0x4E,0x86,0xF1,0x03,0xF2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IGlyphsStatics2>{ static constexpr guid value{ 0x10489AA7,0x1615,0x4A33,{ 0xAA,0x02,0xD7,0xEF,0x2A,0xEF,0xC7,0x39 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlink>{ static constexpr guid value{ 0x0FE2363B,0x14E9,0x4152,{ 0x9E,0x58,0x5A,0xEA,0x5B,0x21,0xF0,0x8D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlink2>{ static constexpr guid value{ 0x4CE9DA5F,0x7CFF,0x4291,{ 0xB7,0x8F,0xDF,0xEC,0x72,0x49,0x05,0x76 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlink3>{ static constexpr guid value{ 0xC3F157D9,0xE5D3,0x4FB7,{ 0x87,0x02,0x4F,0x6D,0x85,0xDD,0x9E,0x0A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlink4>{ static constexpr guid value{ 0xF7D02959,0x82FB,0x400A,{ 0xA4,0x07,0x5A,0x4E,0xE6,0x77,0x98,0x8A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlink5>{ static constexpr guid value{ 0x607DD7D2,0x0945,0x4328,{ 0x91,0xEE,0x94,0xCC,0xEC,0x2E,0xA6,0xC3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>{ static constexpr guid value{ 0xC755916B,0x7BDC,0x4BE7,{ 0xB3,0x73,0x92,0x40,0xA5,0x03,0xD8,0x70 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkStatics>{ static constexpr guid value{ 0x3A44D3D4,0xFD41,0x41DB,{ 0x8C,0x72,0x3B,0x79,0x0A,0xCD,0x9F,0xD3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkStatics2>{ static constexpr guid value{ 0x5028D8B7,0x7ADF,0x43EE,{ 0xA4,0xAE,0x9C,0x92,0x5F,0x75,0x57,0x16 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkStatics3>{ static constexpr guid value{ 0x3E15DEA0,0x205E,0x4947,{ 0x99,0xA5,0x74,0xE7,0x57,0xE8,0xE1,0xB4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkStatics4>{ static constexpr guid value{ 0x0476B378,0x8FAA,0x4E24,{ 0xB3,0xB6,0xE9,0xDE,0x4D,0x3C,0x70,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IHyperlinkStatics5>{ static constexpr guid value{ 0x59308CEA,0x1E49,0x4921,{ 0xBD,0x88,0xA2,0x87,0x8D,0x07,0xE3,0x0E } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IInline>{ static constexpr guid value{ 0x0C92712D,0x1BC9,0x4931,{ 0x8C,0xB1,0x1A,0xEA,0xDF,0x1C,0xC6,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IInlineFactory>{ static constexpr guid value{ 0x4058ACD1,0x2F90,0x4B8F,{ 0x99,0xDD,0x42,0x18,0xEF,0x5F,0x03,0xDE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IInlineUIContainer>{ static constexpr guid value{ 0x1416CE81,0x28EE,0x452E,{ 0xB1,0x21,0x5F,0xC4,0xF6,0x0B,0x86,0xA6 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IItalic>{ static constexpr guid value{ 0x91F4619C,0xFCBB,0x4157,{ 0x80,0x2C,0x76,0xF6,0x3B,0x5F,0xB6,0x57 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ILineBreak>{ static constexpr guid value{ 0x645589C4,0xF769,0x41ED,{ 0x89,0x5B,0x8A,0x1B,0x2F,0xB3,0x15,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IParagraph>{ static constexpr guid value{ 0xF83EF59A,0xFA61,0x4BEF,{ 0xAE,0x33,0x0B,0x0A,0xD7,0x56,0xA8,0x4D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IParagraphStatics>{ static constexpr guid value{ 0xEF08889A,0x535B,0x4E4C,{ 0x8D,0x84,0x28,0x3B,0x33,0xE9,0x8A,0x37 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IPlaceContentLinkProvider>{ static constexpr guid value{ 0x10348A4C,0x2366,0x41BE,{ 0x90,0xC8,0x32,0x58,0xB5,0x3B,0x54,0x83 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IRun>{ static constexpr guid value{ 0x59553C83,0x0E14,0x49BD,{ 0xB8,0x4B,0xC5,0x26,0xF3,0x03,0x43,0x49 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IRunStatics>{ static constexpr guid value{ 0xE9303CEF,0x65A0,0x4B8D,{ 0xA7,0xF7,0x8F,0xDB,0x28,0x7B,0x46,0xF3 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ISpan>{ static constexpr guid value{ 0x9839D4A9,0x02AF,0x4811,{ 0xAA,0x15,0x6B,0xEF,0x3A,0xCA,0xC9,0x7A } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ISpanFactory>{ static constexpr guid value{ 0x5B916F5C,0xCD2D,0x40C0,{ 0x95,0x6A,0x38,0x64,0x48,0x32,0x2F,0x79 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElement>{ static constexpr guid value{ 0xE83B0062,0xD776,0x4F92,{ 0xBA,0xEA,0x40,0xE7,0x7D,0x47,0x91,0xD5 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElement2>{ static constexpr guid value{ 0xA8076AA8,0xF892,0x49F6,{ 0x8C,0xD2,0x89,0xAD,0xDA,0xF0,0x6D,0x2D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElement3>{ static constexpr guid value{ 0xD1DB340F,0x1BC4,0x4CA8,{ 0xBC,0xF7,0x77,0x0B,0xFF,0x9B,0x27,0xAB } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElement4>{ static constexpr guid value{ 0xB196E222,0xCA0E,0x48A9,{ 0x83,0xBC,0x36,0xCE,0x50,0x56,0x6A,0xC7 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementFactory>{ static constexpr guid value{ 0x35007285,0xCF47,0x4BFE,{ 0xB1,0xBC,0x39,0xC9,0x3A,0xF4,0xAE,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementOverrides>{ static constexpr guid value{ 0x0CE21EE7,0x4F76,0x4DD9,{ 0xBF,0x91,0x16,0x3B,0xEC,0xCF,0x84,0xBC } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementStatics>{ static constexpr guid value{ 0x0A2F9B98,0x6C03,0x4470,{ 0xA7,0x9B,0x32,0x98,0xA1,0x04,0x82,0xCE } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementStatics2>{ static constexpr guid value{ 0x164297B2,0x982B,0x49E1,{ 0x8C,0x03,0xCA,0x43,0xBC,0x4D,0x5B,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementStatics3>{ static constexpr guid value{ 0xCFEFCFAF,0x0FA1,0x45EC,{ 0x9A,0x4E,0x9B,0x33,0x66,0x4D,0xC8,0xB1 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextElementStatics4>{ static constexpr guid value{ 0xFD8F641E,0x6B12,0x40D5,{ 0xB6,0xEF,0xD1,0xBD,0x12,0xAC,0x90,0x66 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextHighlighter>{ static constexpr guid value{ 0xBA6CB54B,0x7D75,0x4535,{ 0xB3,0x0D,0xA8,0x1A,0x00,0xB6,0x37,0xA4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextHighlighterBase>{ static constexpr guid value{ 0xD957601A,0x5F0D,0x4CDF,{ 0x97,0x58,0x97,0xE0,0xEB,0x95,0xC8,0xFA } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextHighlighterBaseFactory>{ static constexpr guid value{ 0x9592B2D0,0xEADC,0x4C74,{ 0x92,0xC8,0x6E,0x89,0x6E,0x22,0x50,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextHighlighterFactory>{ static constexpr guid value{ 0x70125461,0x9A8F,0x4FA0,{ 0xB2,0x35,0x8F,0xFA,0xA5,0x07,0xBE,0xF2 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextHighlighterStatics>{ static constexpr guid value{ 0xB3B009C4,0x3A7E,0x49CC,{ 0xAB,0x84,0x29,0xC4,0x05,0x48,0x87,0x65 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITextPointer>{ static constexpr guid value{ 0xAC687AA1,0x6A41,0x43FF,{ 0x85,0x1E,0x45,0x34,0x8A,0xA2,0xCF,0x7B } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITypography>{ static constexpr guid value{ 0x866F65D5,0xEA97,0x42AB,{ 0x92,0x88,0x9C,0x01,0xAE,0xBC,0x7A,0x97 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::ITypographyStatics>{ static constexpr guid value{ 0x67B9EC88,0x6C57,0x4CE0,{ 0x95,0xF1,0xD4,0xB9,0xED,0x63,0x2F,0xB4 } }; };
+template <> struct guid_storage<Windows::UI::Xaml::Documents::IUnderline>{ static constexpr guid value{ 0xA5FA8202,0x61C0,0x47D7,{ 0x93,0xEF,0xBC,0x0B,0x57,0x7C,0x5F,0x26 } }; };
 template <> struct default_interface<Windows::UI::Xaml::Documents::Block>{ using type = Windows::UI::Xaml::Documents::IBlock; };
 template <> struct default_interface<Windows::UI::Xaml::Documents::BlockCollection>{ using type = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Documents::Block>; };
 template <> struct default_interface<Windows::UI::Xaml::Documents::Bold>{ using type = Windows::UI::Xaml::Documents::IBold; };
@@ -435,6 +435,615 @@ template <> struct default_interface<Windows::UI::Xaml::Documents::TextPointer>{
 template <> struct default_interface<Windows::UI::Xaml::Documents::Typography>{ using type = Windows::UI::Xaml::Documents::ITypography; };
 template <> struct default_interface<Windows::UI::Xaml::Documents::Underline>{ using type = Windows::UI::Xaml::Documents::IUnderline; };
 
+template <> struct abi<Windows::UI::Xaml::Documents::IBlock>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextAlignment(Windows::UI::Xaml::TextAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextAlignment(Windows::UI::Xaml::TextAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineHeight(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LineHeight(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Margin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Margin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IBlock2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontalTextAlignment(Windows::UI::Xaml::TextAlignment* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalTextAlignment(Windows::UI::Xaml::TextAlignment value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IBlockFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IBlockStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextAlignmentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineHeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LineStackingStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MarginProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IBlockStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontalTextAlignmentProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IBold>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContactContentLinkProvider>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Info(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Info(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Background(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Background(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Cursor(Windows::UI::Core::CoreCursorType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Cursor(Windows::UI::Core::CoreCursorType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeft(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusLeft(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRight(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusRight(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusUp(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDown(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusDown(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusState(Windows::UI::Xaml::FocusState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTabStop(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTabStop(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TabIndex(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Invoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Invoked(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GotFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GotFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LostFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LostFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Focus(Windows::UI::Xaml::FocusState value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ContentLinkInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Handled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Handled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProvider>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProviderCollection>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProviderFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BackgroundProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CursorProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementSoundModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FocusStateProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTabStopProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabIndexProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IGlyphs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnicodeString(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UnicodeString(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Indices(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Indices(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StyleSimulations(Windows::UI::Xaml::Media::StyleSimulations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StyleSimulations(Windows::UI::Xaml::Media::StyleSimulations value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontRenderingEmSize(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontRenderingEmSize(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginX(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OriginX(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginY(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OriginY(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Fill(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Fill(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IGlyphs2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsColorFontEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsColorFontEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorFontPaletteIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ColorFontPaletteIndex(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IGlyphsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnicodeStringProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IndicesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontUriProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StyleSimulationsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontRenderingEmSizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginXProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OriginYProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FillProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IGlyphsStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsColorFontEnabledProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorFontPaletteIndexProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NavigateUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NavigateUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Click(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Click(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_XYFocusLeft(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusLeft(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRight(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusRight(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUp(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusUp(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDown(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusDown(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FocusState(Windows::UI::Xaml::FocusState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_GotFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_GotFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LostFocus(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LostFocus(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Focus(Windows::UI::Xaml::FocusState value, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTabStop(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTabStop(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabIndex(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TabIndex(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NavigateUriProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UnderlineStyleProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_XYFocusLeftProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementSoundModeProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FocusStateProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTabStopProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TabIndexProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IInline>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IInlineFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IInlineUIContainer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Child(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Child(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IItalic>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ILineBreak>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IParagraph>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Inlines(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TextIndent(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextIndent(double value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IParagraphStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextIndentProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IPlaceContentLinkProvider>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IRun>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Text(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Text(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FlowDirection(Windows::UI::Xaml::FlowDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FlowDirection(Windows::UI::Xaml::FlowDirection value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IRunStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FlowDirectionProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ISpan>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Inlines(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Inlines(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ISpanFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontSize(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontSize(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontFamily(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontFamily(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontWeight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontWeight(struct struct_Windows_UI_Text_FontWeight value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontStyle(Windows::UI::Text::FontStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FontStretch(Windows::UI::Text::FontStretch value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CharacterSpacing(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CharacterSpacing(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Foreground(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Foreground(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Language(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentStart(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContentEnd(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementStart(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementEnd(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindName(void* name, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElement2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTextScaleFactorEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsTextScaleFactorEnabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElement3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowFocusOnInteraction(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowFocusOnInteraction(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKey(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccessKey(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExitDisplayModeOnAccessKeyInvoked(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExitDisplayModeOnAccessKeyInvoked(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElement4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextDecorations(Windows::UI::Text::TextDecorations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TextDecorations(Windows::UI::Text::TextDecorations value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAccessKeyScope(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsAccessKeyScope(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyScopeOwner(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccessKeyScopeOwner(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipHorizontalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipHorizontalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipVerticalOffset(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_KeyTipVerticalOffset(double value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyDisplayRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyDisplayRequested(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyDisplayDismissed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyDisplayDismissed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AccessKeyInvoked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessKeyInvoked(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementOverrides>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL OnDisconnectVisualChildren() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FontSizeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontFamilyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontWeightProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStyleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStretchProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CharacterSpacingProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ForegroundProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LanguageProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTextScaleFactorEnabledProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowFocusOnInteractionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExitDisplayModeOnAccessKeyInvokedProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TextDecorationsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAccessKeyScopeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccessKeyScopeOwnerProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipPlacementModeProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipHorizontalOffsetProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyTipVerticalOffsetProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Ranges(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Foreground(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Foreground(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Background(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Background(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterBase>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterBaseFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateInstance(void* baseInterface, void** innerInterface, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ForegroundProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundProperty(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITextPointer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VisualParent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogicalDirection(Windows::UI::Xaml::Documents::LogicalDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCharacterRect(Windows::UI::Xaml::Documents::LogicalDirection direction, Windows::Foundation::Rect* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetPositionAtOffset(int32_t offset, Windows::UI::Xaml::Documents::LogicalDirection direction, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITypography>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::ITypographyStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnnotationAlternatesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAnnotationAlternates(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAnnotationAlternates(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EastAsianExpertFormsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetEastAsianExpertForms(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEastAsianExpertForms(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EastAsianLanguageProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetEastAsianLanguage(void* element, Windows::UI::Xaml::FontEastAsianLanguage* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEastAsianLanguage(void* element, Windows::UI::Xaml::FontEastAsianLanguage value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EastAsianWidthsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetEastAsianWidths(void* element, Windows::UI::Xaml::FontEastAsianWidths* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetEastAsianWidths(void* element, Windows::UI::Xaml::FontEastAsianWidths value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StandardLigaturesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStandardLigatures(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStandardLigatures(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContextualLigaturesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContextualLigatures(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContextualLigatures(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DiscretionaryLigaturesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDiscretionaryLigatures(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDiscretionaryLigatures(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HistoricalLigaturesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHistoricalLigatures(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetHistoricalLigatures(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StandardSwashesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStandardSwashes(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStandardSwashes(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContextualSwashesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContextualSwashes(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContextualSwashes(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContextualAlternatesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetContextualAlternates(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContextualAlternates(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticAlternatesProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticAlternates(void* element, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticAlternates(void* element, int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet1Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet1(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet1(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet2Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet2(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet2(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet3Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet3(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet3(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet4Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet4(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet4(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet5Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet5(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet5(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet6Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet6(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet6(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet7Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet7(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet7(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet8Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet8(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet8(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet9Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet9(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet9(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet10Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet10(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet10(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet11Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet11(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet11(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet12Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet12(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet12(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet13Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet13(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet13(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet14Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet14(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet14(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet15Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet15(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet15(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet16Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet16(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet16(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet17Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet17(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet17(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet18Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet18(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet18(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet19Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet19(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet19(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StylisticSet20Property(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStylisticSet20(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetStylisticSet20(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CapitalsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCapitals(void* element, Windows::UI::Xaml::FontCapitals* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCapitals(void* element, Windows::UI::Xaml::FontCapitals value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CapitalSpacingProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCapitalSpacing(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCapitalSpacing(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KerningProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetKerning(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetKerning(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CaseSensitiveFormsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCaseSensitiveForms(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCaseSensitiveForms(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HistoricalFormsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetHistoricalForms(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetHistoricalForms(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FractionProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFraction(void* element, Windows::UI::Xaml::FontFraction* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetFraction(void* element, Windows::UI::Xaml::FontFraction value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralStyleProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumeralStyle(void* element, Windows::UI::Xaml::FontNumeralStyle* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetNumeralStyle(void* element, Windows::UI::Xaml::FontNumeralStyle value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NumeralAlignmentProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNumeralAlignment(void* element, Windows::UI::Xaml::FontNumeralAlignment* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetNumeralAlignment(void* element, Windows::UI::Xaml::FontNumeralAlignment value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SlashedZeroProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSlashedZero(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSlashedZero(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MathematicalGreekProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetMathematicalGreek(void* element, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetMathematicalGreek(void* element, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VariantsProperty(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVariants(void* element, Windows::UI::Xaml::FontVariants* result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetVariants(void* element, Windows::UI::Xaml::FontVariants value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Xaml::Documents::IUnderline>{ struct type : IInspectable
+{
+};};
+
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_IBlock
 {
@@ -460,7 +1069,7 @@ template <> struct consume<Windows::UI::Xaml::Documents::IBlock2> { template <ty
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_IBlockFactory
 {
-    Windows::UI::Xaml::Documents::Block CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Documents::Block CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IBlockFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IBlockFactory<D>; };
 
@@ -525,18 +1134,18 @@ struct consume_Windows_UI_Xaml_Documents_IContentLink
     void IsTabStop(bool value) const;
     int32_t TabIndex() const;
     void TabIndex(int32_t value) const;
-    event_token Invoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::ContentLink, Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs> const& value) const;
-    using Invoked_revoker = event_revoker<Windows::UI::Xaml::Documents::IContentLink>;
-    Invoked_revoker Invoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::ContentLink, Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs> const& value) const;
-    void Invoked(event_token const& token) const;
-    event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using GotFocus_revoker = event_revoker<Windows::UI::Xaml::Documents::IContentLink>;
-    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void GotFocus(event_token const& token) const;
-    event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using LostFocus_revoker = event_revoker<Windows::UI::Xaml::Documents::IContentLink>;
-    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void LostFocus(event_token const& token) const;
+    winrt::event_token Invoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::ContentLink, Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs> const& handler) const;
+    using Invoked_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IContentLink, &impl::abi_t<Windows::UI::Xaml::Documents::IContentLink>::remove_Invoked>;
+    Invoked_revoker Invoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::ContentLink, Windows::UI::Xaml::Documents::ContentLinkInvokedEventArgs> const& handler) const;
+    void Invoked(winrt::event_token const& token) const noexcept;
+    winrt::event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using GotFocus_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IContentLink, &impl::abi_t<Windows::UI::Xaml::Documents::IContentLink>::remove_GotFocus>;
+    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void GotFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using LostFocus_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IContentLink, &impl::abi_t<Windows::UI::Xaml::Documents::IContentLink>::remove_LostFocus>;
+    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void LostFocus(winrt::event_token const& token) const noexcept;
     bool Focus(Windows::UI::Xaml::FocusState const& value) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IContentLink> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IContentLink<D>; };
@@ -565,7 +1174,7 @@ template <> struct consume<Windows::UI::Xaml::Documents::IContentLinkProviderCol
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_IContentLinkProviderFactory
 {
-    Windows::UI::Xaml::Documents::ContentLinkProvider CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Documents::ContentLinkProvider CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IContentLinkProviderFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IContentLinkProviderFactory<D>; };
 
@@ -648,10 +1257,10 @@ struct consume_Windows_UI_Xaml_Documents_IHyperlink
 {
     Windows::Foundation::Uri NavigateUri() const;
     void NavigateUri(Windows::Foundation::Uri const& value) const;
-    event_token Click(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> const& value) const;
-    using Click_revoker = event_revoker<Windows::UI::Xaml::Documents::IHyperlink>;
-    Click_revoker Click(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> const& value) const;
-    void Click(event_token const& token) const;
+    winrt::event_token Click(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> const& handler) const;
+    using Click_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IHyperlink, &impl::abi_t<Windows::UI::Xaml::Documents::IHyperlink>::remove_Click>;
+    Click_revoker Click(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> const& handler) const;
+    void Click(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IHyperlink> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IHyperlink<D>; };
 
@@ -691,14 +1300,14 @@ struct consume_Windows_UI_Xaml_Documents_IHyperlink4
     void XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy const& value) const;
     Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusRightNavigationStrategy() const;
     void XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy const& value) const;
-    event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using GotFocus_revoker = event_revoker<Windows::UI::Xaml::Documents::IHyperlink4>;
-    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void GotFocus(event_token const& token) const;
-    event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    using LostFocus_revoker = event_revoker<Windows::UI::Xaml::Documents::IHyperlink4>;
-    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& value) const;
-    void LostFocus(event_token const& token) const;
+    winrt::event_token GotFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using GotFocus_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IHyperlink4, &impl::abi_t<Windows::UI::Xaml::Documents::IHyperlink4>::remove_GotFocus>;
+    GotFocus_revoker GotFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void GotFocus(winrt::event_token const& token) const noexcept;
+    winrt::event_token LostFocus(Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    using LostFocus_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::IHyperlink4, &impl::abi_t<Windows::UI::Xaml::Documents::IHyperlink4>::remove_LostFocus>;
+    LostFocus_revoker LostFocus(auto_revoke_t, Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    void LostFocus(winrt::event_token const& token) const noexcept;
     bool Focus(Windows::UI::Xaml::FocusState const& value) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IHyperlink4> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IHyperlink4<D>; };
@@ -772,7 +1381,7 @@ template <> struct consume<Windows::UI::Xaml::Documents::IInline> { template <ty
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_IInlineFactory
 {
-    Windows::UI::Xaml::Documents::Inline CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Documents::Inline CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::IInlineFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_IInlineFactory<D>; };
 
@@ -846,7 +1455,7 @@ template <> struct consume<Windows::UI::Xaml::Documents::ISpan> { template <type
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_ISpanFactory
 {
-    Windows::UI::Xaml::Documents::Span CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Documents::Span CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::ISpanFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_ISpanFactory<D>; };
 
@@ -913,18 +1522,18 @@ struct consume_Windows_UI_Xaml_Documents_ITextElement4
     void KeyTipHorizontalOffset(double value) const;
     double KeyTipVerticalOffset() const;
     void KeyTipVerticalOffset(double value) const;
-    event_token AccessKeyDisplayRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& value) const;
-    using AccessKeyDisplayRequested_revoker = event_revoker<Windows::UI::Xaml::Documents::ITextElement4>;
-    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& value) const;
-    void AccessKeyDisplayRequested(event_token const& token) const;
-    event_token AccessKeyDisplayDismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& value) const;
-    using AccessKeyDisplayDismissed_revoker = event_revoker<Windows::UI::Xaml::Documents::ITextElement4>;
-    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& value) const;
-    void AccessKeyDisplayDismissed(event_token const& token) const;
-    event_token AccessKeyInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& value) const;
-    using AccessKeyInvoked_revoker = event_revoker<Windows::UI::Xaml::Documents::ITextElement4>;
-    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& value) const;
-    void AccessKeyInvoked(event_token const& token) const;
+    winrt::event_token AccessKeyDisplayRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& handler) const;
+    using AccessKeyDisplayRequested_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::ITextElement4, &impl::abi_t<Windows::UI::Xaml::Documents::ITextElement4>::remove_AccessKeyDisplayRequested>;
+    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> const& handler) const;
+    void AccessKeyDisplayRequested(winrt::event_token const& token) const noexcept;
+    winrt::event_token AccessKeyDisplayDismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& handler) const;
+    using AccessKeyDisplayDismissed_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::ITextElement4, &impl::abi_t<Windows::UI::Xaml::Documents::ITextElement4>::remove_AccessKeyDisplayDismissed>;
+    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> const& handler) const;
+    void AccessKeyDisplayDismissed(winrt::event_token const& token) const noexcept;
+    winrt::event_token AccessKeyInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& handler) const;
+    using AccessKeyInvoked_revoker = impl::event_revoker<Windows::UI::Xaml::Documents::ITextElement4, &impl::abi_t<Windows::UI::Xaml::Documents::ITextElement4>::remove_AccessKeyInvoked>;
+    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> const& handler) const;
+    void AccessKeyInvoked(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::ITextElement4> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_ITextElement4<D>; };
 
@@ -1009,7 +1618,7 @@ template <> struct consume<Windows::UI::Xaml::Documents::ITextHighlighterBaseFac
 template <typename D>
 struct consume_Windows_UI_Xaml_Documents_ITextHighlighterFactory
 {
-    Windows::UI::Xaml::Documents::TextHighlighter CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+    Windows::UI::Xaml::Documents::TextHighlighter CreateInstance(Windows::Foundation::IInspectable const& baseInterface, Windows::Foundation::IInspectable& innerInterface) const;
 };
 template <> struct consume<Windows::UI::Xaml::Documents::ITextHighlighterFactory> { template <typename D> using type = consume_Windows_UI_Xaml_Documents_ITextHighlighterFactory<D>; };
 
@@ -1187,614 +1796,5 @@ struct struct_Windows_UI_Xaml_Documents_TextRange
 };
 template <> struct abi<Windows::UI::Xaml::Documents::TextRange>{ using type = struct_Windows_UI_Xaml_Documents_TextRange; };
 
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBlock>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextAlignment(Windows::UI::Xaml::TextAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextAlignment(Windows::UI::Xaml::TextAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineHeight(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LineHeight(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_Margin(struct struct_Windows_UI_Xaml_Thickness* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Margin(struct struct_Windows_UI_Xaml_Thickness value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBlock2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontalTextAlignment(Windows::UI::Xaml::TextAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalTextAlignment(Windows::UI::Xaml::TextAlignment value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBlockFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBlockStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextAlignmentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineHeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LineStackingStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_MarginProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBlockStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontalTextAlignmentProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IBold>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContactContentLinkProvider>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Info(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Info(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Background(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Background(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Cursor(Windows::UI::Core::CoreCursorType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Cursor(Windows::UI::Core::CoreCursorType value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeft(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusLeft(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRight(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusRight(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusUp(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDown(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusDown(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusState(Windows::UI::Xaml::FocusState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTabStop(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTabStop(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TabIndex(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall add_Invoked(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Invoked(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_GotFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GotFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_LostFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LostFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Focus(Windows::UI::Xaml::FocusState value, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkInvokedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ContentLinkInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Handled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Handled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProvider>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProviderCollection>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkProviderFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IContentLinkStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BackgroundProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CursorProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementSoundModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FocusStateProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTabStopProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabIndexProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IGlyphs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnicodeString(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UnicodeString(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Indices(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Indices(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StyleSimulations(Windows::UI::Xaml::Media::StyleSimulations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StyleSimulations(Windows::UI::Xaml::Media::StyleSimulations value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontRenderingEmSize(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontRenderingEmSize(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginX(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OriginX(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginY(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OriginY(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_Fill(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Fill(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IGlyphs2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsColorFontEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsColorFontEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorFontPaletteIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ColorFontPaletteIndex(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IGlyphsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnicodeStringProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IndicesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontUriProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StyleSimulationsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontRenderingEmSizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginXProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_OriginYProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FillProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IGlyphsStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsColorFontEnabledProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorFontPaletteIndexProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NavigateUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_NavigateUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Click(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Click(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_XYFocusLeft(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusLeft(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRight(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusRight(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUp(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusUp(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDown(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusDown(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FocusState(Windows::UI::Xaml::FocusState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept = 0;
-    virtual HRESULT __stdcall add_GotFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_GotFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_LostFocus(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LostFocus(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Focus(Windows::UI::Xaml::FocusState value, bool* returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlink5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTabStop(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTabStop(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabIndex(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TabIndex(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NavigateUriProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UnderlineStyleProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_XYFocusLeftProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementSoundModeProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FocusStateProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IHyperlinkStatics5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTabStopProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TabIndexProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IInline>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IInlineFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IInlineUIContainer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Child(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Child(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IItalic>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ILineBreak>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IParagraph>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Inlines(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TextIndent(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextIndent(double value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IParagraphStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextIndentProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IPlaceContentLinkProvider>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IRun>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Text(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Text(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_FlowDirection(Windows::UI::Xaml::FlowDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FlowDirection(Windows::UI::Xaml::FlowDirection value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IRunStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FlowDirectionProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ISpan>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Inlines(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Inlines(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ISpanFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontSize(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontSize(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontFamily(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontFamily(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontWeight(struct struct_Windows_UI_Text_FontWeight* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontWeight(struct struct_Windows_UI_Text_FontWeight value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStyle(Windows::UI::Text::FontStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontStyle(Windows::UI::Text::FontStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStretch(Windows::UI::Text::FontStretch* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FontStretch(Windows::UI::Text::FontStretch value) noexcept = 0;
-    virtual HRESULT __stdcall get_CharacterSpacing(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CharacterSpacing(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Foreground(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Foreground(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Language(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentStart(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContentEnd(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementStart(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementEnd(void** value) noexcept = 0;
-    virtual HRESULT __stdcall FindName(HSTRING name, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElement2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTextScaleFactorEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElement3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowFocusOnInteraction(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowFocusOnInteraction(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKey(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccessKey(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvoked(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExitDisplayModeOnAccessKeyInvoked(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElement4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextDecorations(Windows::UI::Text::TextDecorations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TextDecorations(Windows::UI::Text::TextDecorations value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAccessKeyScope(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsAccessKeyScope(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyScopeOwner(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccessKeyScopeOwner(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipHorizontalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipHorizontalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipVerticalOffset(double* value) noexcept = 0;
-    virtual HRESULT __stdcall put_KeyTipVerticalOffset(double value) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyDisplayRequested(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyDisplayRequested(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyDisplayDismissed(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyDisplayDismissed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_AccessKeyInvoked(void* value, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessKeyInvoked(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementOverrides>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall OnDisconnectVisualChildren() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FontSizeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontFamilyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontWeightProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStyleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStretchProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CharacterSpacingProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ForegroundProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LanguageProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowFocusOnInteractionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvokedProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextElementStatics4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TextDecorationsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAccessKeyScopeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccessKeyScopeOwnerProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipPlacementModeProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyTipVerticalOffsetProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Ranges(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Foreground(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Foreground(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Background(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Background(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterBase>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterBaseFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateInstance(void* outer, void** inner, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextHighlighterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ForegroundProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundProperty(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITextPointer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Parent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VisualParent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogicalDirection(Windows::UI::Xaml::Documents::LogicalDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCharacterRect(Windows::UI::Xaml::Documents::LogicalDirection direction, Windows::Foundation::Rect* returnValue) noexcept = 0;
-    virtual HRESULT __stdcall GetPositionAtOffset(int32_t offset, Windows::UI::Xaml::Documents::LogicalDirection direction, void** returnValue) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITypography>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::ITypographyStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnnotationAlternatesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetAnnotationAlternates(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetAnnotationAlternates(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_EastAsianExpertFormsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetEastAsianExpertForms(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetEastAsianExpertForms(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_EastAsianLanguageProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetEastAsianLanguage(void* element, Windows::UI::Xaml::FontEastAsianLanguage* value) noexcept = 0;
-    virtual HRESULT __stdcall SetEastAsianLanguage(void* element, Windows::UI::Xaml::FontEastAsianLanguage value) noexcept = 0;
-    virtual HRESULT __stdcall get_EastAsianWidthsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetEastAsianWidths(void* element, Windows::UI::Xaml::FontEastAsianWidths* value) noexcept = 0;
-    virtual HRESULT __stdcall SetEastAsianWidths(void* element, Windows::UI::Xaml::FontEastAsianWidths value) noexcept = 0;
-    virtual HRESULT __stdcall get_StandardLigaturesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStandardLigatures(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStandardLigatures(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContextualLigaturesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContextualLigatures(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetContextualLigatures(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DiscretionaryLigaturesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetDiscretionaryLigatures(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetDiscretionaryLigatures(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_HistoricalLigaturesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetHistoricalLigatures(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetHistoricalLigatures(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StandardSwashesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStandardSwashes(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStandardSwashes(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContextualSwashesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContextualSwashes(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetContextualSwashes(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContextualAlternatesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetContextualAlternates(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetContextualAlternates(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticAlternatesProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticAlternates(void* element, int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticAlternates(void* element, int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet1Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet1(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet1(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet2Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet2(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet2(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet3Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet3(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet3(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet4Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet4(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet4(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet5Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet5(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet5(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet6Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet6(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet6(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet7Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet7(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet7(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet8Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet8(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet8(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet9Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet9(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet9(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet10Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet10(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet10(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet11Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet11(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet11(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet12Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet12(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet12(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet13Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet13(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet13(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet14Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet14(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet14(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet15Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet15(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet15(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet16Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet16(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet16(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet17Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet17(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet17(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet18Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet18(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet18(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet19Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet19(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet19(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StylisticSet20Property(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetStylisticSet20(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetStylisticSet20(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CapitalsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCapitals(void* element, Windows::UI::Xaml::FontCapitals* value) noexcept = 0;
-    virtual HRESULT __stdcall SetCapitals(void* element, Windows::UI::Xaml::FontCapitals value) noexcept = 0;
-    virtual HRESULT __stdcall get_CapitalSpacingProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCapitalSpacing(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetCapitalSpacing(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_KerningProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetKerning(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetKerning(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CaseSensitiveFormsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetCaseSensitiveForms(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetCaseSensitiveForms(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_HistoricalFormsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetHistoricalForms(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetHistoricalForms(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_FractionProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetFraction(void* element, Windows::UI::Xaml::FontFraction* value) noexcept = 0;
-    virtual HRESULT __stdcall SetFraction(void* element, Windows::UI::Xaml::FontFraction value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralStyleProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumeralStyle(void* element, Windows::UI::Xaml::FontNumeralStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall SetNumeralStyle(void* element, Windows::UI::Xaml::FontNumeralStyle value) noexcept = 0;
-    virtual HRESULT __stdcall get_NumeralAlignmentProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetNumeralAlignment(void* element, Windows::UI::Xaml::FontNumeralAlignment* value) noexcept = 0;
-    virtual HRESULT __stdcall SetNumeralAlignment(void* element, Windows::UI::Xaml::FontNumeralAlignment value) noexcept = 0;
-    virtual HRESULT __stdcall get_SlashedZeroProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetSlashedZero(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetSlashedZero(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_MathematicalGreekProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetMathematicalGreek(void* element, bool* value) noexcept = 0;
-    virtual HRESULT __stdcall SetMathematicalGreek(void* element, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_VariantsProperty(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetVariants(void* element, Windows::UI::Xaml::FontVariants* value) noexcept = 0;
-    virtual HRESULT __stdcall SetVariants(void* element, Windows::UI::Xaml::FontVariants value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Xaml::Documents::IUnderline>{ struct type : IInspectable
-{
-};};
 
 }

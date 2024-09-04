@@ -3060,6 +3060,7 @@ LsaLookupSids(
     );
 
 NTSTATUS
+NTAPI
 LsaLookupSids2(
     _In_ LSA_HANDLE PolicyHandle,
     _In_ ULONG LookupOptions,
@@ -4069,6 +4070,12 @@ RtlGenRandom(
 //
 
 #define RTL_ENCRYPT_OPTION_SAME_LOGON       0x02
+
+//
+// Allow callers to encrypt information to be decrypted only by a system process
+//
+
+#define RTL_ENCRYPT_OPTION_FOR_SYSTEM       0x04
 
 NTSTATUS
 __stdcall

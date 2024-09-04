@@ -52,6 +52,8 @@ namespace Windows
 
                     typedef enum AppInstallType AppInstallType;
 
+                    typedef enum AppInstallationToastNotificationMode AppInstallationToastNotificationMode;
+
                     typedef enum AutoUpdateSetting AutoUpdateSetting;
 
                     typedef enum GetEntitlementStatus GetEntitlementStatus;
@@ -63,6 +65,8 @@ namespace Windows
                     interface IAppInstallItem3;
 
                     interface IAppInstallItem4;
+
+                    interface IAppInstallItem5;
 
                     interface IAppInstallManager;
 
@@ -76,9 +80,13 @@ namespace Windows
 
                     interface IAppInstallManager6;
 
+                    interface IAppInstallManager7;
+
                     interface IAppInstallManagerItemEventArgs;
 
                     interface IAppInstallOptions;
+
+                    interface IAppInstallOptions2;
 
                     interface IAppInstallStatus;
 
@@ -87,6 +95,8 @@ namespace Windows
                     interface IAppInstallStatus3;
 
                     interface IAppUpdateOptions;
+
+                    interface IAppUpdateOptions2;
 
                     interface IGetEntitlementResult;
 
@@ -182,6 +192,15 @@ namespace Windows
                         Repair  = 2
                     };
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    enum AppInstallationToastNotificationMode
+                    {
+                        Default           = 0,
+                        Toast             = 1,
+                        ToastWithoutPopup = 2,
+                        NoToast           = 3
+                    };
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     enum AutoUpdateSetting
                     {
@@ -245,6 +264,23 @@ namespace Windows
                     {
                         [propget] HRESULT LaunchAfterInstall([out] [retval] boolean* value);
                         [propput] HRESULT LaunchAfterInstall([in] boolean value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallItem)]
+                    [uuid(5510E7CC-4076-4A0B-9472-C21D9D380E55)]
+                    interface IAppInstallItem5 : IInspectable
+                    {
+                        [propget] HRESULT PinToDesktopAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToDesktopAfterInstall([in] boolean value);
+                        [propget] HRESULT PinToStartAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToStartAfterInstall([in] boolean value);
+                        [propget] HRESULT PinToTaskbarAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToTaskbarAfterInstall([in] boolean value);
+                        [propget] HRESULT CompletedInstallToastNotificationMode([out] [retval] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode* value);
+                        [propput] HRESULT CompletedInstallToastNotificationMode([in] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode value);
+                        [propget] HRESULT InstallInProgressToastNotificationMode([out] [retval] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode* value);
+                        [propput] HRESULT InstallInProgressToastNotificationMode([in] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -336,6 +372,14 @@ namespace Windows
                         HRESULT GetIsPackageIdentityAllowedToInstallForUserAsync([in] Windows.System.User* user, [in] HSTRING correlationVector, [in] HSTRING packageIdentityName, [in] HSTRING publisherCertificateName, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManager)]
+                    [uuid(A5EE7B30-D5E4-49A3-9853-3DB03203321D)]
+                    interface IAppInstallManager7 : IInspectable
+                    {
+                        [propget] HRESULT CanInstallForAllUsers([out] [retval] boolean* value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallManagerItemEventArgs)]
                     [uuid(BC505743-4674-4DD1-957E-C25682086A14)]
@@ -361,6 +405,31 @@ namespace Windows
                         [propput] HRESULT TargetVolume([in] Windows.Management.Deployment.PackageVolume* value);
                         [propget] HRESULT LaunchAfterInstall([out] [retval] boolean* value);
                         [propput] HRESULT LaunchAfterInstall([in] boolean value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallOptions)]
+                    [uuid(8A04C0D7-C94B-425E-95B4-BF27FAEAEE89)]
+                    interface IAppInstallOptions2 : IInspectable
+                    {
+                        [propget] HRESULT PinToDesktopAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToDesktopAfterInstall([in] boolean value);
+                        [propget] HRESULT PinToStartAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToStartAfterInstall([in] boolean value);
+                        [propget] HRESULT PinToTaskbarAfterInstall([out] [retval] boolean* value);
+                        [propput] HRESULT PinToTaskbarAfterInstall([in] boolean value);
+                        [propget] HRESULT CompletedInstallToastNotificationMode([out] [retval] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode* value);
+                        [propput] HRESULT CompletedInstallToastNotificationMode([in] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode value);
+                        [propget] HRESULT InstallInProgressToastNotificationMode([out] [retval] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode* value);
+                        [propput] HRESULT InstallInProgressToastNotificationMode([in] Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallationToastNotificationMode value);
+                        [propget] HRESULT InstallForAllUsers([out] [retval] boolean* value);
+                        [propput] HRESULT InstallForAllUsers([in] boolean value);
+                        [propget] HRESULT StageButDoNotInstall([out] [retval] boolean* value);
+                        [propput] HRESULT StageButDoNotInstall([in] boolean value);
+                        [propget] HRESULT CampaignId([out] [retval] HSTRING* value);
+                        [propput] HRESULT CampaignId([in] HSTRING value);
+                        [propget] HRESULT ExtendedCampaignId([out] [retval] HSTRING* value);
+                        [propput] HRESULT ExtendedCampaignId([in] HSTRING value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -403,6 +472,15 @@ namespace Windows
                         [propput] HRESULT AllowForcedAppRestart([in] boolean value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                    [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.AppUpdateOptions)]
+                    [uuid(F4646E08-ED26-4BF9-9679-48F628E53DF8)]
+                    interface IAppUpdateOptions2 : IInspectable
+                    {
+                        [propget] HRESULT AutomaticallyDownloadAndInstallUpdateIfFound([out] [retval] boolean* value);
+                        [propput] HRESULT AutomaticallyDownloadAndInstallUpdateIfFound([in] boolean value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                     [exclusiveto(Windows.ApplicationModel.Store.Preview.InstallControl.GetEntitlementResult)]
                     [uuid(74FC843F-1A9E-4609-8E4D-819086D08A3D)]
@@ -419,6 +497,7 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem2;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem3;
                         [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem4;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallItem5;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -432,6 +511,7 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager4;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager5;
                         [contract(Windows.Foundation.UniversalApiContract, 6.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager6;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallManager7;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -448,6 +528,7 @@ namespace Windows
                     runtimeclass AppInstallOptions
                     {
                         [default] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppInstallOptions2;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -466,6 +547,7 @@ namespace Windows
                     runtimeclass AppUpdateOptions
                     {
                         [default] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions;
+                        [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.ApplicationModel.Store.Preview.InstallControl.IAppUpdateOptions2;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -73,6 +73,14 @@ enum class AnimationIterationBehavior : int32_t
     Forever = 1,
 };
 
+enum class AnimationPropertyAccessMode : int32_t
+{
+    None = 0,
+    ReadOnly = 1,
+    WriteOnly = 2,
+    ReadWrite = 3,
+};
+
 enum class AnimationStopBehavior : int32_t
 {
     LeaveCurrentValue = 0,
@@ -92,6 +100,8 @@ enum class CompositionBatchTypes : uint32_t
     None = 0x0,
     Animation = 0x1,
     Effect = 0x2,
+    InfiniteAnimation = 0x4,
+    AllAnimations = 0x5,
 };
 
 enum class CompositionBitmapInterpolationMode : int32_t
@@ -152,6 +162,12 @@ enum class CompositionGradientExtendMode : int32_t
     Mirror = 2,
 };
 
+enum class CompositionMappingMode : int32_t
+{
+    Absolute = 0,
+    Relative = 1,
+};
+
 enum class CompositionStretch : int32_t
 {
     None = 0,
@@ -180,6 +196,9 @@ struct IAmbientLight;
 struct IAmbientLight2;
 struct IAnimationController;
 struct IAnimationControllerStatics;
+struct IAnimationObject;
+struct IAnimationPropertyInfo;
+struct IBooleanKeyFrameAnimation;
 struct IBounceScalarNaturalMotionAnimation;
 struct IBounceVector2NaturalMotionAnimation;
 struct IBounceVector3NaturalMotionAnimation;
@@ -187,6 +206,7 @@ struct IColorKeyFrameAnimation;
 struct ICompositionAnimation;
 struct ICompositionAnimation2;
 struct ICompositionAnimation3;
+struct ICompositionAnimation4;
 struct ICompositionAnimationBase;
 struct ICompositionAnimationFactory;
 struct ICompositionAnimationGroup;
@@ -214,9 +234,11 @@ struct ICompositionEffectFactory;
 struct ICompositionEffectSourceParameter;
 struct ICompositionEffectSourceParameterFactory;
 struct ICompositionEllipseGeometry;
+struct ICompositionGeometricClip;
 struct ICompositionGeometry;
 struct ICompositionGeometryFactory;
 struct ICompositionGradientBrush;
+struct ICompositionGradientBrush2;
 struct ICompositionGradientBrushFactory;
 struct ICompositionGraphicsDevice;
 struct ICompositionGraphicsDevice2;
@@ -233,6 +255,7 @@ struct ICompositionObject2;
 struct ICompositionObject3;
 struct ICompositionObject4;
 struct ICompositionObjectFactory;
+struct ICompositionObjectStatics;
 struct ICompositionPath;
 struct ICompositionPathFactory;
 struct ICompositionPathGeometry;
@@ -259,6 +282,7 @@ struct ICompositor2;
 struct ICompositor3;
 struct ICompositor4;
 struct ICompositor5;
+struct ICompositor6;
 struct ICompositorStatics;
 struct IContainerVisual;
 struct IContainerVisualFactory;
@@ -284,6 +308,7 @@ struct IPointLight;
 struct IPointLight2;
 struct IPointLight3;
 struct IQuaternionKeyFrameAnimation;
+struct IRedirectVisual;
 struct IRenderingDeviceReplacedEventArgs;
 struct IScalarKeyFrameAnimation;
 struct IScalarNaturalMotionAnimation;
@@ -312,6 +337,8 @@ struct IVisualFactory;
 struct IVisualUnorderedCollection;
 struct AmbientLight;
 struct AnimationController;
+struct AnimationPropertyInfo;
+struct BooleanKeyFrameAnimation;
 struct BounceScalarNaturalMotionAnimation;
 struct BounceVector2NaturalMotionAnimation;
 struct BounceVector3NaturalMotionAnimation;
@@ -334,6 +361,7 @@ struct CompositionEffectBrush;
 struct CompositionEffectFactory;
 struct CompositionEffectSourceParameter;
 struct CompositionEllipseGeometry;
+struct CompositionGeometricClip;
 struct CompositionGeometry;
 struct CompositionGradientBrush;
 struct CompositionGraphicsDevice;
@@ -374,6 +402,7 @@ struct NaturalMotionAnimation;
 struct PathKeyFrameAnimation;
 struct PointLight;
 struct QuaternionKeyFrameAnimation;
+struct RedirectVisual;
 struct RenderingDeviceReplacedEventArgs;
 struct ScalarKeyFrameAnimation;
 struct ScalarNaturalMotionAnimation;
@@ -402,6 +431,9 @@ template <> struct category<Windows::UI::Composition::IAmbientLight>{ using type
 template <> struct category<Windows::UI::Composition::IAmbientLight2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IAnimationController>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IAnimationControllerStatics>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::IAnimationObject>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::IAnimationPropertyInfo>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::IBooleanKeyFrameAnimation>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ using type = interface_category; };
@@ -409,6 +441,7 @@ template <> struct category<Windows::UI::Composition::IColorKeyFrameAnimation>{ 
 template <> struct category<Windows::UI::Composition::ICompositionAnimation>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionAnimation2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionAnimation3>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::ICompositionAnimation4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionAnimationBase>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionAnimationFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionAnimationGroup>{ using type = interface_category; };
@@ -436,9 +469,11 @@ template <> struct category<Windows::UI::Composition::ICompositionEffectFactory>
 template <> struct category<Windows::UI::Composition::ICompositionEffectSourceParameter>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionEllipseGeometry>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::ICompositionGeometricClip>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGeometry>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGeometryFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGradientBrush>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::ICompositionGradientBrush2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGradientBrushFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGraphicsDevice>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionGraphicsDevice2>{ using type = interface_category; };
@@ -455,6 +490,7 @@ template <> struct category<Windows::UI::Composition::ICompositionObject2>{ usin
 template <> struct category<Windows::UI::Composition::ICompositionObject3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionObject4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionObjectFactory>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::ICompositionObjectStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionPath>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionPathFactory>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositionPathGeometry>{ using type = interface_category; };
@@ -481,6 +517,7 @@ template <> struct category<Windows::UI::Composition::ICompositor2>{ using type 
 template <> struct category<Windows::UI::Composition::ICompositor3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositor4>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositor5>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::ICompositor6>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::ICompositorStatics>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IContainerVisual>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IContainerVisualFactory>{ using type = interface_category; };
@@ -506,6 +543,7 @@ template <> struct category<Windows::UI::Composition::IPointLight>{ using type =
 template <> struct category<Windows::UI::Composition::IPointLight2>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IPointLight3>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ using type = interface_category; };
+template <> struct category<Windows::UI::Composition::IRedirectVisual>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IScalarKeyFrameAnimation>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ using type = interface_category; };
@@ -534,6 +572,8 @@ template <> struct category<Windows::UI::Composition::IVisualFactory>{ using typ
 template <> struct category<Windows::UI::Composition::IVisualUnorderedCollection>{ using type = interface_category; };
 template <> struct category<Windows::UI::Composition::AmbientLight>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::AnimationController>{ using type = class_category; };
+template <> struct category<Windows::UI::Composition::AnimationPropertyInfo>{ using type = class_category; };
+template <> struct category<Windows::UI::Composition::BooleanKeyFrameAnimation>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::BounceScalarNaturalMotionAnimation>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::BounceVector2NaturalMotionAnimation>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::BounceVector3NaturalMotionAnimation>{ using type = class_category; };
@@ -556,6 +596,7 @@ template <> struct category<Windows::UI::Composition::CompositionEffectBrush>{ u
 template <> struct category<Windows::UI::Composition::CompositionEffectFactory>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::CompositionEffectSourceParameter>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::CompositionEllipseGeometry>{ using type = class_category; };
+template <> struct category<Windows::UI::Composition::CompositionGeometricClip>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::CompositionGeometry>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::CompositionGradientBrush>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::CompositionGraphicsDevice>{ using type = class_category; };
@@ -596,6 +637,7 @@ template <> struct category<Windows::UI::Composition::NaturalMotionAnimation>{ u
 template <> struct category<Windows::UI::Composition::PathKeyFrameAnimation>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::PointLight>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::QuaternionKeyFrameAnimation>{ using type = class_category; };
+template <> struct category<Windows::UI::Composition::RedirectVisual>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::RenderingDeviceReplacedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::ScalarKeyFrameAnimation>{ using type = class_category; };
 template <> struct category<Windows::UI::Composition::ScalarNaturalMotionAnimation>{ using type = class_category; };
@@ -618,6 +660,7 @@ template <> struct category<Windows::UI::Composition::AnimationControllerProgres
 template <> struct category<Windows::UI::Composition::AnimationDelayBehavior>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::AnimationDirection>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::AnimationIterationBehavior>{ using type = enum_category; };
+template <> struct category<Windows::UI::Composition::AnimationPropertyAccessMode>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::AnimationStopBehavior>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionBackfaceVisibility>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionBatchTypes>{ using type = enum_category; };
@@ -629,6 +672,7 @@ template <> struct category<Windows::UI::Composition::CompositionDropShadowSourc
 template <> struct category<Windows::UI::Composition::CompositionEffectFactoryLoadStatus>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionGetValueStatus>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionGradientExtendMode>{ using type = enum_category; };
+template <> struct category<Windows::UI::Composition::CompositionMappingMode>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionStretch>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionStrokeCap>{ using type = enum_category; };
 template <> struct category<Windows::UI::Composition::CompositionStrokeLineJoin>{ using type = enum_category; };
@@ -636,6 +680,9 @@ template <> struct name<Windows::UI::Composition::IAmbientLight>{ static constex
 template <> struct name<Windows::UI::Composition::IAmbientLight2>{ static constexpr auto & value{ L"Windows.UI.Composition.IAmbientLight2" }; };
 template <> struct name<Windows::UI::Composition::IAnimationController>{ static constexpr auto & value{ L"Windows.UI.Composition.IAnimationController" }; };
 template <> struct name<Windows::UI::Composition::IAnimationControllerStatics>{ static constexpr auto & value{ L"Windows.UI.Composition.IAnimationControllerStatics" }; };
+template <> struct name<Windows::UI::Composition::IAnimationObject>{ static constexpr auto & value{ L"Windows.UI.Composition.IAnimationObject" }; };
+template <> struct name<Windows::UI::Composition::IAnimationPropertyInfo>{ static constexpr auto & value{ L"Windows.UI.Composition.IAnimationPropertyInfo" }; };
+template <> struct name<Windows::UI::Composition::IBooleanKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IBooleanKeyFrameAnimation" }; };
 template <> struct name<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IBounceScalarNaturalMotionAnimation" }; };
 template <> struct name<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IBounceVector2NaturalMotionAnimation" }; };
 template <> struct name<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IBounceVector3NaturalMotionAnimation" }; };
@@ -643,6 +690,7 @@ template <> struct name<Windows::UI::Composition::IColorKeyFrameAnimation>{ stat
 template <> struct name<Windows::UI::Composition::ICompositionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimation" }; };
 template <> struct name<Windows::UI::Composition::ICompositionAnimation2>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimation2" }; };
 template <> struct name<Windows::UI::Composition::ICompositionAnimation3>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimation3" }; };
+template <> struct name<Windows::UI::Composition::ICompositionAnimation4>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimation4" }; };
 template <> struct name<Windows::UI::Composition::ICompositionAnimationBase>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimationBase" }; };
 template <> struct name<Windows::UI::Composition::ICompositionAnimationFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimationFactory" }; };
 template <> struct name<Windows::UI::Composition::ICompositionAnimationGroup>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionAnimationGroup" }; };
@@ -670,9 +718,11 @@ template <> struct name<Windows::UI::Composition::ICompositionEffectFactory>{ st
 template <> struct name<Windows::UI::Composition::ICompositionEffectSourceParameter>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionEffectSourceParameter" }; };
 template <> struct name<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionEffectSourceParameterFactory" }; };
 template <> struct name<Windows::UI::Composition::ICompositionEllipseGeometry>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionEllipseGeometry" }; };
+template <> struct name<Windows::UI::Composition::ICompositionGeometricClip>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGeometricClip" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGeometry>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGeometry" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGeometryFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGeometryFactory" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGradientBrush>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGradientBrush" }; };
+template <> struct name<Windows::UI::Composition::ICompositionGradientBrush2>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGradientBrush2" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGradientBrushFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGradientBrushFactory" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGraphicsDevice>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGraphicsDevice" }; };
 template <> struct name<Windows::UI::Composition::ICompositionGraphicsDevice2>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionGraphicsDevice2" }; };
@@ -689,6 +739,7 @@ template <> struct name<Windows::UI::Composition::ICompositionObject2>{ static c
 template <> struct name<Windows::UI::Composition::ICompositionObject3>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionObject3" }; };
 template <> struct name<Windows::UI::Composition::ICompositionObject4>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionObject4" }; };
 template <> struct name<Windows::UI::Composition::ICompositionObjectFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionObjectFactory" }; };
+template <> struct name<Windows::UI::Composition::ICompositionObjectStatics>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionObjectStatics" }; };
 template <> struct name<Windows::UI::Composition::ICompositionPath>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionPath" }; };
 template <> struct name<Windows::UI::Composition::ICompositionPathFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionPathFactory" }; };
 template <> struct name<Windows::UI::Composition::ICompositionPathGeometry>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositionPathGeometry" }; };
@@ -715,6 +766,7 @@ template <> struct name<Windows::UI::Composition::ICompositor2>{ static constexp
 template <> struct name<Windows::UI::Composition::ICompositor3>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositor3" }; };
 template <> struct name<Windows::UI::Composition::ICompositor4>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositor4" }; };
 template <> struct name<Windows::UI::Composition::ICompositor5>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositor5" }; };
+template <> struct name<Windows::UI::Composition::ICompositor6>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositor6" }; };
 template <> struct name<Windows::UI::Composition::ICompositorStatics>{ static constexpr auto & value{ L"Windows.UI.Composition.ICompositorStatics" }; };
 template <> struct name<Windows::UI::Composition::IContainerVisual>{ static constexpr auto & value{ L"Windows.UI.Composition.IContainerVisual" }; };
 template <> struct name<Windows::UI::Composition::IContainerVisualFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.IContainerVisualFactory" }; };
@@ -740,6 +792,7 @@ template <> struct name<Windows::UI::Composition::IPointLight>{ static constexpr
 template <> struct name<Windows::UI::Composition::IPointLight2>{ static constexpr auto & value{ L"Windows.UI.Composition.IPointLight2" }; };
 template <> struct name<Windows::UI::Composition::IPointLight3>{ static constexpr auto & value{ L"Windows.UI.Composition.IPointLight3" }; };
 template <> struct name<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IQuaternionKeyFrameAnimation" }; };
+template <> struct name<Windows::UI::Composition::IRedirectVisual>{ static constexpr auto & value{ L"Windows.UI.Composition.IRedirectVisual" }; };
 template <> struct name<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Composition.IRenderingDeviceReplacedEventArgs" }; };
 template <> struct name<Windows::UI::Composition::IScalarKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IScalarKeyFrameAnimation" }; };
 template <> struct name<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.IScalarNaturalMotionAnimation" }; };
@@ -768,6 +821,8 @@ template <> struct name<Windows::UI::Composition::IVisualFactory>{ static conste
 template <> struct name<Windows::UI::Composition::IVisualUnorderedCollection>{ static constexpr auto & value{ L"Windows.UI.Composition.IVisualUnorderedCollection" }; };
 template <> struct name<Windows::UI::Composition::AmbientLight>{ static constexpr auto & value{ L"Windows.UI.Composition.AmbientLight" }; };
 template <> struct name<Windows::UI::Composition::AnimationController>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationController" }; };
+template <> struct name<Windows::UI::Composition::AnimationPropertyInfo>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationPropertyInfo" }; };
+template <> struct name<Windows::UI::Composition::BooleanKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.BooleanKeyFrameAnimation" }; };
 template <> struct name<Windows::UI::Composition::BounceScalarNaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.BounceScalarNaturalMotionAnimation" }; };
 template <> struct name<Windows::UI::Composition::BounceVector2NaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.BounceVector2NaturalMotionAnimation" }; };
 template <> struct name<Windows::UI::Composition::BounceVector3NaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.BounceVector3NaturalMotionAnimation" }; };
@@ -790,6 +845,7 @@ template <> struct name<Windows::UI::Composition::CompositionEffectBrush>{ stati
 template <> struct name<Windows::UI::Composition::CompositionEffectFactory>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionEffectFactory" }; };
 template <> struct name<Windows::UI::Composition::CompositionEffectSourceParameter>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionEffectSourceParameter" }; };
 template <> struct name<Windows::UI::Composition::CompositionEllipseGeometry>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionEllipseGeometry" }; };
+template <> struct name<Windows::UI::Composition::CompositionGeometricClip>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGeometricClip" }; };
 template <> struct name<Windows::UI::Composition::CompositionGeometry>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGeometry" }; };
 template <> struct name<Windows::UI::Composition::CompositionGradientBrush>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGradientBrush" }; };
 template <> struct name<Windows::UI::Composition::CompositionGraphicsDevice>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGraphicsDevice" }; };
@@ -830,6 +886,7 @@ template <> struct name<Windows::UI::Composition::NaturalMotionAnimation>{ stati
 template <> struct name<Windows::UI::Composition::PathKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.PathKeyFrameAnimation" }; };
 template <> struct name<Windows::UI::Composition::PointLight>{ static constexpr auto & value{ L"Windows.UI.Composition.PointLight" }; };
 template <> struct name<Windows::UI::Composition::QuaternionKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.QuaternionKeyFrameAnimation" }; };
+template <> struct name<Windows::UI::Composition::RedirectVisual>{ static constexpr auto & value{ L"Windows.UI.Composition.RedirectVisual" }; };
 template <> struct name<Windows::UI::Composition::RenderingDeviceReplacedEventArgs>{ static constexpr auto & value{ L"Windows.UI.Composition.RenderingDeviceReplacedEventArgs" }; };
 template <> struct name<Windows::UI::Composition::ScalarKeyFrameAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.ScalarKeyFrameAnimation" }; };
 template <> struct name<Windows::UI::Composition::ScalarNaturalMotionAnimation>{ static constexpr auto & value{ L"Windows.UI.Composition.ScalarNaturalMotionAnimation" }; };
@@ -852,6 +909,7 @@ template <> struct name<Windows::UI::Composition::AnimationControllerProgressBeh
 template <> struct name<Windows::UI::Composition::AnimationDelayBehavior>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationDelayBehavior" }; };
 template <> struct name<Windows::UI::Composition::AnimationDirection>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationDirection" }; };
 template <> struct name<Windows::UI::Composition::AnimationIterationBehavior>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationIterationBehavior" }; };
+template <> struct name<Windows::UI::Composition::AnimationPropertyAccessMode>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationPropertyAccessMode" }; };
 template <> struct name<Windows::UI::Composition::AnimationStopBehavior>{ static constexpr auto & value{ L"Windows.UI.Composition.AnimationStopBehavior" }; };
 template <> struct name<Windows::UI::Composition::CompositionBackfaceVisibility>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionBackfaceVisibility" }; };
 template <> struct name<Windows::UI::Composition::CompositionBatchTypes>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionBatchTypes" }; };
@@ -863,145 +921,157 @@ template <> struct name<Windows::UI::Composition::CompositionDropShadowSourcePol
 template <> struct name<Windows::UI::Composition::CompositionEffectFactoryLoadStatus>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionEffectFactoryLoadStatus" }; };
 template <> struct name<Windows::UI::Composition::CompositionGetValueStatus>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGetValueStatus" }; };
 template <> struct name<Windows::UI::Composition::CompositionGradientExtendMode>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionGradientExtendMode" }; };
+template <> struct name<Windows::UI::Composition::CompositionMappingMode>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionMappingMode" }; };
 template <> struct name<Windows::UI::Composition::CompositionStretch>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionStretch" }; };
 template <> struct name<Windows::UI::Composition::CompositionStrokeCap>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionStrokeCap" }; };
 template <> struct name<Windows::UI::Composition::CompositionStrokeLineJoin>{ static constexpr auto & value{ L"Windows.UI.Composition.CompositionStrokeLineJoin" }; };
-template <> struct guid<Windows::UI::Composition::IAmbientLight>{ static constexpr GUID value{ 0xA48130A1,0xB7C4,0x46F7,{ 0xB9,0xBF,0xDA,0xF4,0x3A,0x44,0xE6,0xEE } }; };
-template <> struct guid<Windows::UI::Composition::IAmbientLight2>{ static constexpr GUID value{ 0x3B64A6BF,0x5F97,0x4C94,{ 0x86,0xE5,0x04,0x2D,0xD3,0x86,0xB2,0x7D } }; };
-template <> struct guid<Windows::UI::Composition::IAnimationController>{ static constexpr GUID value{ 0xC934EFD2,0x0722,0x4F5F,{ 0xA4,0xE2,0x95,0x10,0xF3,0xD4,0x3B,0xF7 } }; };
-template <> struct guid<Windows::UI::Composition::IAnimationControllerStatics>{ static constexpr GUID value{ 0xE71164DF,0x651B,0x4800,{ 0xB9,0xE5,0x6A,0x3B,0xCF,0xED,0x33,0x65 } }; };
-template <> struct guid<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ static constexpr GUID value{ 0xBAA30DCC,0xA633,0x4618,{ 0x9B,0x06,0x7F,0x7C,0x72,0xC8,0x7C,0xFF } }; };
-template <> struct guid<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ static constexpr GUID value{ 0xDA344196,0x2154,0x4B3C,{ 0x88,0xAA,0x47,0x36,0x12,0x04,0xEC,0xCD } }; };
-template <> struct guid<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ static constexpr GUID value{ 0x47DABC31,0x10D3,0x4518,{ 0x86,0xF1,0x09,0xCA,0xF7,0x42,0xD1,0x13 } }; };
-template <> struct guid<Windows::UI::Composition::IColorKeyFrameAnimation>{ static constexpr GUID value{ 0x93ADB5E9,0x8E05,0x4593,{ 0x84,0xA3,0xDC,0xA1,0x52,0x78,0x1E,0x56 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimation>{ static constexpr GUID value{ 0x464C4C2C,0x1CAA,0x4061,{ 0x9B,0x40,0xE1,0x3F,0xDE,0x15,0x03,0xCA } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimation2>{ static constexpr GUID value{ 0x369B603E,0xA80F,0x4948,{ 0x93,0xE3,0xED,0x23,0xFB,0x38,0xC6,0xCB } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimation3>{ static constexpr GUID value{ 0xD51E030D,0x7DA4,0x4BD7,{ 0xBC,0x2D,0xF4,0x51,0x75,0x29,0xF4,0x3A } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimationBase>{ static constexpr GUID value{ 0x1C2C2999,0xE818,0x48D3,{ 0xA6,0xDD,0xD7,0x8C,0x82,0xF8,0xAC,0xE9 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimationFactory>{ static constexpr GUID value{ 0x10F6C4FB,0x6E51,0x4C25,{ 0xBB,0xD3,0x58,0x6A,0x9B,0xEC,0x3E,0xF4 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionAnimationGroup>{ static constexpr GUID value{ 0x5E7CC90C,0xCD14,0x4E07,{ 0x8A,0x55,0xC7,0x25,0x27,0xAA,0xBD,0xAC } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionBackdropBrush>{ static constexpr GUID value{ 0xC5ACAE58,0x3898,0x499E,{ 0x8D,0x7F,0x22,0x4E,0x91,0x28,0x6A,0x5D } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionBatchCompletedEventArgs>{ static constexpr GUID value{ 0x0D00DAD0,0x9464,0x450A,{ 0xA5,0x62,0x2E,0x26,0x98,0xB0,0xA8,0x12 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionBrush>{ static constexpr GUID value{ 0xAB0D7608,0x30C0,0x40E9,{ 0xB5,0x68,0xB6,0x0A,0x6B,0xD1,0xFB,0x46 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionBrushFactory>{ static constexpr GUID value{ 0xDA53FB4C,0x4650,0x47C4,{ 0xAD,0x76,0x76,0x53,0x79,0x60,0x7E,0xD6 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionCapabilities>{ static constexpr GUID value{ 0x8253353E,0xB517,0x48BC,{ 0xB1,0xE8,0x4B,0x35,0x61,0xA2,0xE1,0x81 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionCapabilitiesStatics>{ static constexpr GUID value{ 0xF7B7A86E,0x6416,0x49E5,{ 0x8D,0xDF,0xAF,0xE9,0x49,0xE2,0x05,0x62 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionClip>{ static constexpr GUID value{ 0x1CCD2A52,0xCFC7,0x4ACE,{ 0x99,0x83,0x14,0x6B,0xB8,0xEB,0x6A,0x3C } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionClip2>{ static constexpr GUID value{ 0x5893E069,0x3516,0x40E1,{ 0x89,0xE0,0x5B,0xA9,0x24,0x92,0x72,0x35 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionClipFactory>{ static constexpr GUID value{ 0xB9484CAF,0x20C7,0x4AED,{ 0xAC,0x4A,0x9C,0x78,0xBA,0x13,0x02,0xCF } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionColorBrush>{ static constexpr GUID value{ 0x2B264C5E,0xBF35,0x4831,{ 0x86,0x42,0xCF,0x70,0xC2,0x0F,0xFF,0x2F } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionColorGradientStop>{ static constexpr GUID value{ 0x6F00CA92,0xC801,0x4E41,{ 0x9A,0x8F,0xA5,0x3E,0x20,0xF5,0x77,0x78 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionColorGradientStopCollection>{ static constexpr GUID value{ 0x9F1D20EC,0x7B04,0x4B1D,{ 0x90,0xBC,0x9F,0xA3,0x2C,0x0C,0xFD,0x26 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionCommitBatch>{ static constexpr GUID value{ 0x0D00DAD0,0xCA07,0x4400,{ 0x8C,0x8E,0xCB,0x5D,0xB0,0x85,0x59,0xCC } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionContainerShape>{ static constexpr GUID value{ 0x4F5E859B,0x2E5B,0x44A8,{ 0x98,0x2C,0xAA,0x0F,0x69,0xC1,0x60,0x59 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionDrawingSurface>{ static constexpr GUID value{ 0xA166C300,0xFAD0,0x4D11,{ 0x9E,0x67,0xE4,0x33,0x16,0x2F,0xF4,0x9E } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionDrawingSurface2>{ static constexpr GUID value{ 0xFAD0E88B,0xE354,0x44E8,{ 0x8E,0x3D,0xC4,0x88,0x0D,0x5A,0x21,0x3F } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionDrawingSurfaceFactory>{ static constexpr GUID value{ 0x9497B00A,0x312D,0x46B9,{ 0x9D,0xB3,0x41,0x2F,0xD7,0x94,0x64,0xC8 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEasingFunction>{ static constexpr GUID value{ 0x5145E356,0xBF79,0x4EA8,{ 0x8C,0xC2,0x6B,0x5B,0x47,0x2E,0x6C,0x9A } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEasingFunctionFactory>{ static constexpr GUID value{ 0x60840774,0x3DA0,0x4949,{ 0x82,0x00,0x72,0x06,0xC0,0x01,0x90,0xA0 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEffectBrush>{ static constexpr GUID value{ 0xBF7F795E,0x83CC,0x44BF,{ 0xA4,0x47,0x3E,0x3C,0x07,0x17,0x89,0xEC } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEffectFactory>{ static constexpr GUID value{ 0xBE5624AF,0xBA7E,0x4510,{ 0x98,0x50,0x41,0xC0,0xB4,0xFF,0x74,0xDF } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEffectSourceParameter>{ static constexpr GUID value{ 0x858AB13A,0x3292,0x4E4E,{ 0xB3,0xBB,0x2B,0x6C,0x65,0x44,0xA6,0xEE } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ static constexpr GUID value{ 0xB3D9F276,0xABA3,0x4724,{ 0xAC,0xF3,0xD0,0x39,0x74,0x64,0xDB,0x1C } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionEllipseGeometry>{ static constexpr GUID value{ 0x4801F884,0xF6AD,0x4B93,{ 0xAF,0xA9,0x89,0x7B,0x64,0xE5,0x7B,0x1F } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGeometry>{ static constexpr GUID value{ 0xE985217C,0x6A17,0x4207,{ 0xAB,0xD8,0x5F,0xD3,0xDD,0x61,0x2A,0x9D } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGeometryFactory>{ static constexpr GUID value{ 0xBFFEBFE1,0x8C25,0x480B,{ 0x9F,0x56,0xFE,0xD6,0xB2,0x88,0x05,0x5D } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGradientBrush>{ static constexpr GUID value{ 0x1D9709E0,0xFFC6,0x4C0E,{ 0xA9,0xAB,0x34,0x14,0x4D,0x4C,0x90,0x98 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGradientBrushFactory>{ static constexpr GUID value{ 0x56D765D7,0xF189,0x48C9,{ 0x9C,0x8D,0x94,0xDA,0xF1,0xBE,0xC0,0x10 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGraphicsDevice>{ static constexpr GUID value{ 0xFB22C6E1,0x80A2,0x4667,{ 0x99,0x36,0xDB,0xEA,0xF6,0xEE,0xFE,0x95 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionGraphicsDevice2>{ static constexpr GUID value{ 0x0FB8BDF6,0xC0F0,0x4BCC,{ 0x9F,0xB8,0x08,0x49,0x82,0x49,0x0D,0x7D } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLight>{ static constexpr GUID value{ 0x41A6D7C2,0x2E5D,0x4BC1,{ 0xB0,0x9E,0x8F,0x0A,0x03,0xE3,0xD8,0xD3 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLight2>{ static constexpr GUID value{ 0xA7BCDA72,0xF35D,0x425D,{ 0x9B,0x98,0x23,0xF4,0x20,0x5F,0x66,0x69 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLight3>{ static constexpr GUID value{ 0x4B0B00E4,0xDF07,0x4959,{ 0xB7,0xA4,0x4F,0x7E,0x42,0x33,0xF8,0x38 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLightFactory>{ static constexpr GUID value{ 0x069CF306,0xDA3C,0x4B44,{ 0x83,0x8A,0x5E,0x03,0xD5,0x1A,0xCE,0x55 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLineGeometry>{ static constexpr GUID value{ 0xDD7615A4,0x0C9A,0x4B67,{ 0x8D,0xCE,0x44,0x0A,0x5B,0xF9,0xCD,0xEC } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionLinearGradientBrush>{ static constexpr GUID value{ 0x983BC519,0xA9DB,0x413C,{ 0xA2,0xD8,0x2A,0x90,0x56,0xFC,0x52,0x5E } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionMaskBrush>{ static constexpr GUID value{ 0x522CF09E,0xBE6B,0x4F41,{ 0xBE,0x49,0xF9,0x22,0x6D,0x47,0x1B,0x4A } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionNineGridBrush>{ static constexpr GUID value{ 0xF25154E4,0xBC8C,0x4BE7,{ 0xB8,0x0F,0x86,0x85,0xB8,0x3C,0x01,0x86 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionObject>{ static constexpr GUID value{ 0xBCB4AD45,0x7609,0x4550,{ 0x93,0x4F,0x16,0x00,0x2A,0x68,0xFD,0xED } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionObject2>{ static constexpr GUID value{ 0xEF874EA1,0x5CFF,0x4B68,{ 0x9E,0x30,0xA1,0x51,0x9D,0x08,0xBA,0x03 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionObject3>{ static constexpr GUID value{ 0x4BC27925,0xDACD,0x4CF2,{ 0x98,0xB1,0x98,0x6B,0x76,0xE7,0xEB,0xE6 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionObject4>{ static constexpr GUID value{ 0x0BB3784C,0x346B,0x4A7C,{ 0x96,0x6B,0x73,0x10,0x96,0x65,0x53,0xD5 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionObjectFactory>{ static constexpr GUID value{ 0x51205C5E,0x558A,0x4F2A,{ 0x8D,0x39,0x37,0xBF,0xE1,0xE2,0x0D,0xDD } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionPath>{ static constexpr GUID value{ 0x66DA1D5F,0x2E10,0x4F22,{ 0x8A,0x06,0x0A,0x81,0x51,0x91,0x9E,0x60 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionPathFactory>{ static constexpr GUID value{ 0x9C1E8C6A,0x0F33,0x4751,{ 0x94,0x37,0xEB,0x3F,0xB9,0xD3,0xAB,0x07 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionPathGeometry>{ static constexpr GUID value{ 0x0B6A417E,0x2C77,0x4C23,{ 0xAF,0x5E,0x63,0x04,0xC1,0x47,0xBB,0x61 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionPropertySet>{ static constexpr GUID value{ 0xC9D6D202,0x5F67,0x4453,{ 0x91,0x17,0x9E,0xAD,0xD4,0x30,0xD3,0xC2 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionPropertySet2>{ static constexpr GUID value{ 0xDE80731E,0xA211,0x4455,{ 0x88,0x80,0x7D,0x0F,0x3F,0x6A,0x44,0xFD } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionRectangleGeometry>{ static constexpr GUID value{ 0x0CD51428,0x5356,0x4246,{ 0xAE,0xCF,0x7A,0x0B,0x76,0x97,0x54,0x00 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionRoundedRectangleGeometry>{ static constexpr GUID value{ 0x8770C822,0x1D50,0x4B8B,{ 0xB0,0x13,0x7C,0x9A,0x0E,0x46,0x93,0x5F } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionScopedBatch>{ static constexpr GUID value{ 0x0D00DAD0,0xFB07,0x46FD,{ 0x8C,0x72,0x62,0x80,0xD1,0xA3,0xD1,0xDD } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionShadow>{ static constexpr GUID value{ 0x329E52E2,0x4335,0x49CC,{ 0xB1,0x4A,0x37,0x78,0x2D,0x10,0xF0,0xC4 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionShadowFactory>{ static constexpr GUID value{ 0x221F492F,0xDCBA,0x4B91,{ 0x99,0x9E,0x1D,0xC2,0x17,0xA0,0x15,0x30 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionShape>{ static constexpr GUID value{ 0xB47CE2F7,0x9A88,0x42C4,{ 0x9E,0x87,0x2E,0x50,0x0C,0xA8,0x68,0x8C } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionShapeFactory>{ static constexpr GUID value{ 0x1DFC36D0,0xB05A,0x44EF,{ 0x82,0xB0,0x12,0x11,0x8B,0xCD,0x4C,0xD0 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionSpriteShape>{ static constexpr GUID value{ 0x401B61BB,0x0007,0x4363,{ 0xB1,0xF3,0x6B,0xCC,0x00,0x3F,0xB8,0x3E } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionSurface>{ static constexpr GUID value{ 0x1527540D,0x42C7,0x47A6,{ 0xA4,0x08,0x66,0x8F,0x79,0xA9,0x0D,0xFB } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionSurfaceBrush>{ static constexpr GUID value{ 0xAD016D79,0x1E4C,0x4C0D,{ 0x9C,0x29,0x83,0x33,0x8C,0x87,0xC1,0x62 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionSurfaceBrush2>{ static constexpr GUID value{ 0xD27174D5,0x64F5,0x4692,{ 0x9D,0xC7,0x71,0xB6,0x1D,0x7E,0x58,0x80 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionTarget>{ static constexpr GUID value{ 0xA1BEA8BA,0xD726,0x4663,{ 0x81,0x29,0x6B,0x5E,0x79,0x27,0xFF,0xA6 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionTargetFactory>{ static constexpr GUID value{ 0x93CD9D2B,0x8516,0x4B14,{ 0xA8,0xCE,0xF4,0x9E,0x21,0x19,0xEC,0x42 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionViewBox>{ static constexpr GUID value{ 0xB440BF07,0x068F,0x4537,{ 0x84,0xC6,0x4E,0xCB,0xE0,0x19,0xE1,0xF4 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionVirtualDrawingSurface>{ static constexpr GUID value{ 0xA9C384DB,0x8740,0x4F94,{ 0x8B,0x9D,0xB6,0x85,0x21,0xE7,0x86,0x3D } }; };
-template <> struct guid<Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>{ static constexpr GUID value{ 0x6766106C,0xD56B,0x4A49,{ 0xB1,0xDF,0x50,0x76,0xA0,0x62,0x07,0x68 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositor>{ static constexpr GUID value{ 0xB403CA50,0x7F8C,0x4E83,{ 0x98,0x5F,0xCC,0x45,0x06,0x00,0x36,0xD8 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositor2>{ static constexpr GUID value{ 0x735081DC,0x5E24,0x45DA,{ 0xA3,0x8F,0xE3,0x2C,0xC3,0x49,0xA9,0xA0 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositor3>{ static constexpr GUID value{ 0xC9DD8EF0,0x6EB1,0x4E3C,{ 0xA6,0x58,0x67,0x5D,0x9C,0x64,0xD4,0xAB } }; };
-template <> struct guid<Windows::UI::Composition::ICompositor4>{ static constexpr GUID value{ 0xAE47E78A,0x7910,0x4425,{ 0xA4,0x82,0xA0,0x5B,0x75,0x8A,0xDC,0xE9 } }; };
-template <> struct guid<Windows::UI::Composition::ICompositor5>{ static constexpr GUID value{ 0x48EA31AD,0x7FCD,0x4076,{ 0xA7,0x9C,0x90,0xCC,0x4B,0x85,0x2C,0x9B } }; };
-template <> struct guid<Windows::UI::Composition::ICompositorStatics>{ static constexpr GUID value{ 0x080DB93E,0x121E,0x4D97,{ 0x8B,0x74,0x1D,0xFC,0xF9,0x19,0x87,0xEA } }; };
-template <> struct guid<Windows::UI::Composition::IContainerVisual>{ static constexpr GUID value{ 0x02F6BC74,0xED20,0x4773,{ 0xAF,0xE6,0xD4,0x9B,0x4A,0x93,0xDB,0x32 } }; };
-template <> struct guid<Windows::UI::Composition::IContainerVisualFactory>{ static constexpr GUID value{ 0x0363A65B,0xC7DA,0x4D9A,{ 0x95,0xF4,0x69,0xB5,0xC8,0xDF,0x67,0x0B } }; };
-template <> struct guid<Windows::UI::Composition::ICubicBezierEasingFunction>{ static constexpr GUID value{ 0x32350666,0xC1E8,0x44F9,{ 0x96,0xB8,0xC9,0x8A,0xCF,0x0A,0xE6,0x98 } }; };
-template <> struct guid<Windows::UI::Composition::IDistantLight>{ static constexpr GUID value{ 0x318CFAFC,0x5CE3,0x4B55,{ 0xAB,0x5D,0x07,0xA0,0x03,0x53,0xAC,0x99 } }; };
-template <> struct guid<Windows::UI::Composition::IDistantLight2>{ static constexpr GUID value{ 0xDBCDAA1C,0x294B,0x48D7,{ 0xB6,0x0E,0x76,0xDF,0x64,0xAA,0x39,0x2B } }; };
-template <> struct guid<Windows::UI::Composition::IDropShadow>{ static constexpr GUID value{ 0xCB977C07,0xA154,0x4851,{ 0x85,0xE7,0xA8,0x92,0x4C,0x84,0xFA,0xD8 } }; };
-template <> struct guid<Windows::UI::Composition::IDropShadow2>{ static constexpr GUID value{ 0x6C4218BC,0x15B9,0x4C2D,{ 0x8D,0x4A,0x07,0x67,0xDF,0x11,0x97,0x7A } }; };
-template <> struct guid<Windows::UI::Composition::IExpressionAnimation>{ static constexpr GUID value{ 0x6ACC5431,0x7D3D,0x4BF3,{ 0xAB,0xB6,0xF4,0x4B,0xDC,0x48,0x88,0xC1 } }; };
-template <> struct guid<Windows::UI::Composition::IImplicitAnimationCollection>{ static constexpr GUID value{ 0x0598A3FF,0x0A92,0x4C9D,{ 0xA4,0x27,0xB2,0x55,0x19,0x25,0x0D,0xBF } }; };
-template <> struct guid<Windows::UI::Composition::IInsetClip>{ static constexpr GUID value{ 0x1E73E647,0x84C7,0x477A,{ 0xB4,0x74,0x58,0x80,0xE0,0x44,0x2E,0x15 } }; };
-template <> struct guid<Windows::UI::Composition::IKeyFrameAnimation>{ static constexpr GUID value{ 0x126E7F22,0x3AE9,0x4540,{ 0x9A,0x8A,0xDE,0xAE,0x8A,0x4A,0x4A,0x84 } }; };
-template <> struct guid<Windows::UI::Composition::IKeyFrameAnimation2>{ static constexpr GUID value{ 0xF4B488BB,0x2940,0x4EC0,{ 0xA4,0x1A,0xEB,0x6D,0x80,0x1A,0x2F,0x18 } }; };
-template <> struct guid<Windows::UI::Composition::IKeyFrameAnimation3>{ static constexpr GUID value{ 0x845BF0B4,0xD8DE,0x462F,{ 0x87,0x53,0xC8,0x0D,0x43,0xC6,0xFF,0x5A } }; };
-template <> struct guid<Windows::UI::Composition::IKeyFrameAnimationFactory>{ static constexpr GUID value{ 0xBF0803F8,0x712A,0x4FC1,{ 0x8C,0x87,0x97,0x08,0x59,0xED,0x8D,0x2E } }; };
-template <> struct guid<Windows::UI::Composition::ILayerVisual>{ static constexpr GUID value{ 0xAF843985,0x0444,0x4887,{ 0x8E,0x83,0xB4,0x0B,0x25,0x3F,0x82,0x2C } }; };
-template <> struct guid<Windows::UI::Composition::ILayerVisual2>{ static constexpr GUID value{ 0x98F9AEEB,0x6F23,0x49F1,{ 0x90,0xB1,0x1F,0x59,0xA1,0x4F,0xBC,0xE3 } }; };
-template <> struct guid<Windows::UI::Composition::ILinearEasingFunction>{ static constexpr GUID value{ 0x9400975A,0xC7A6,0x46B3,{ 0xAC,0xF7,0x1A,0x26,0x8A,0x0A,0x11,0x7D } }; };
-template <> struct guid<Windows::UI::Composition::INaturalMotionAnimation>{ static constexpr GUID value{ 0x438DE12D,0x769B,0x4821,{ 0xA9,0x49,0x28,0x4A,0x65,0x47,0xE8,0x73 } }; };
-template <> struct guid<Windows::UI::Composition::INaturalMotionAnimationFactory>{ static constexpr GUID value{ 0xF53ACB06,0xCF6A,0x4387,{ 0xA3,0xFE,0x52,0x21,0xF3,0xE7,0xE0,0xE0 } }; };
-template <> struct guid<Windows::UI::Composition::IPathKeyFrameAnimation>{ static constexpr GUID value{ 0x9D0D18C9,0x1576,0x4B3F,{ 0xBE,0x60,0x1D,0x50,0x31,0xF5,0xE7,0x1B } }; };
-template <> struct guid<Windows::UI::Composition::IPointLight>{ static constexpr GUID value{ 0xB18545B3,0x0C5A,0x4AB0,{ 0xBE,0xDC,0x4F,0x35,0x46,0x94,0x82,0x72 } }; };
-template <> struct guid<Windows::UI::Composition::IPointLight2>{ static constexpr GUID value{ 0xEFE98F2C,0x0678,0x4F69,{ 0xB1,0x64,0xA8,0x10,0xD9,0x95,0xBC,0xB7 } }; };
-template <> struct guid<Windows::UI::Composition::IPointLight3>{ static constexpr GUID value{ 0x4C0A8367,0xD4E9,0x468A,{ 0x87,0xAE,0x7B,0xA4,0x3A,0xB2,0x94,0x85 } }; };
-template <> struct guid<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ static constexpr GUID value{ 0x404E5835,0xECF6,0x4240,{ 0x85,0x20,0x67,0x12,0x79,0xCF,0x36,0xBC } }; };
-template <> struct guid<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ static constexpr GUID value{ 0x3A31AC7D,0x28BF,0x4E7A,{ 0x85,0x24,0x71,0x67,0x9D,0x48,0x0F,0x38 } }; };
-template <> struct guid<Windows::UI::Composition::IScalarKeyFrameAnimation>{ static constexpr GUID value{ 0xAE288FA9,0x252C,0x4B95,{ 0xA7,0x25,0xBF,0x85,0xE3,0x80,0x00,0xA1 } }; };
-template <> struct guid<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ static constexpr GUID value{ 0x94A94581,0xBF92,0x495B,{ 0xB5,0xBD,0xD2,0xC6,0x59,0x43,0x07,0x37 } }; };
-template <> struct guid<Windows::UI::Composition::IScalarNaturalMotionAnimationFactory>{ static constexpr GUID value{ 0x835AA4FC,0x671C,0x41DD,{ 0xAF,0x48,0xAE,0x8D,0xEF,0x8B,0x15,0x29 } }; };
-template <> struct guid<Windows::UI::Composition::IShapeVisual>{ static constexpr GUID value{ 0xF2BD13C3,0xBA7E,0x4B0F,{ 0x91,0x26,0xFF,0xB7,0x53,0x6B,0x81,0x76 } }; };
-template <> struct guid<Windows::UI::Composition::ISpotLight>{ static constexpr GUID value{ 0x5A9FE273,0x44A1,0x4F95,{ 0xA4,0x22,0x8F,0xA5,0x11,0x6B,0xDB,0x44 } }; };
-template <> struct guid<Windows::UI::Composition::ISpotLight2>{ static constexpr GUID value{ 0x64EE615E,0x0686,0x4DEA,{ 0xA9,0xE8,0xBC,0x3A,0x8C,0x70,0x14,0x59 } }; };
-template <> struct guid<Windows::UI::Composition::ISpotLight3>{ static constexpr GUID value{ 0xE4D03EEA,0x131F,0x480E,{ 0x85,0x9E,0xB8,0x27,0x05,0xB7,0x43,0x60 } }; };
-template <> struct guid<Windows::UI::Composition::ISpringScalarNaturalMotionAnimation>{ static constexpr GUID value{ 0x0572A95F,0x37F9,0x4FBE,{ 0xB8,0x7B,0x5C,0xD0,0x3A,0x89,0x50,0x1C } }; };
-template <> struct guid<Windows::UI::Composition::ISpringVector2NaturalMotionAnimation>{ static constexpr GUID value{ 0x23F494B5,0xEE73,0x4F0F,{ 0xA4,0x23,0x40,0x2B,0x94,0x6D,0xF4,0xB3 } }; };
-template <> struct guid<Windows::UI::Composition::ISpringVector3NaturalMotionAnimation>{ static constexpr GUID value{ 0x6C8749DF,0xD57B,0x4794,{ 0x8E,0x2D,0xCE,0xCB,0x11,0xE1,0x94,0xE5 } }; };
-template <> struct guid<Windows::UI::Composition::ISpriteVisual>{ static constexpr GUID value{ 0x08E05581,0x1AD1,0x4F97,{ 0x97,0x57,0x40,0x2D,0x76,0xE4,0x23,0x3B } }; };
-template <> struct guid<Windows::UI::Composition::ISpriteVisual2>{ static constexpr GUID value{ 0x588C9664,0x997A,0x4850,{ 0x91,0xFE,0x53,0xCB,0x58,0xF8,0x1C,0xE9 } }; };
-template <> struct guid<Windows::UI::Composition::IStepEasingFunction>{ static constexpr GUID value{ 0xD0CAA74B,0x560C,0x4A0B,{ 0xA5,0xF6,0x20,0x6C,0xA8,0xC3,0xEC,0xD6 } }; };
-template <> struct guid<Windows::UI::Composition::IVector2KeyFrameAnimation>{ static constexpr GUID value{ 0xDF414515,0x4E29,0x4F11,{ 0xB5,0x5E,0xBF,0x2A,0x6E,0xB3,0x62,0x94 } }; };
-template <> struct guid<Windows::UI::Composition::IVector2NaturalMotionAnimation>{ static constexpr GUID value{ 0x0F3E0B7D,0xE512,0x479D,{ 0xA0,0x0C,0x77,0xC9,0x3A,0x30,0xA3,0x95 } }; };
-template <> struct guid<Windows::UI::Composition::IVector2NaturalMotionAnimationFactory>{ static constexpr GUID value{ 0x8C74FF61,0x0761,0x48A2,{ 0xBD,0xDB,0x6A,0xFC,0xC5,0x2B,0x89,0xD8 } }; };
-template <> struct guid<Windows::UI::Composition::IVector3KeyFrameAnimation>{ static constexpr GUID value{ 0xC8039DAA,0xA281,0x43C2,{ 0xA7,0x3D,0xB6,0x8E,0x3C,0x53,0x3C,0x40 } }; };
-template <> struct guid<Windows::UI::Composition::IVector3NaturalMotionAnimation>{ static constexpr GUID value{ 0x9C17042C,0xE2CA,0x45AD,{ 0x96,0x9E,0x4E,0x78,0xB7,0xB9,0xAD,0x41 } }; };
-template <> struct guid<Windows::UI::Composition::IVector3NaturalMotionAnimationFactory>{ static constexpr GUID value{ 0x21A81D2F,0x0880,0x457B,{ 0xAC,0x87,0xB6,0x09,0x01,0x8C,0x87,0x6D } }; };
-template <> struct guid<Windows::UI::Composition::IVector4KeyFrameAnimation>{ static constexpr GUID value{ 0x2457945B,0xADDD,0x4385,{ 0x96,0x06,0xB6,0xA3,0xD5,0xE4,0xE1,0xB9 } }; };
-template <> struct guid<Windows::UI::Composition::IVisual>{ static constexpr GUID value{ 0x117E202D,0xA859,0x4C89,{ 0x87,0x3B,0xC2,0xAA,0x56,0x67,0x88,0xE3 } }; };
-template <> struct guid<Windows::UI::Composition::IVisual2>{ static constexpr GUID value{ 0x3052B611,0x56C3,0x4C3E,{ 0x8B,0xF3,0xF6,0xE1,0xAD,0x47,0x3F,0x06 } }; };
-template <> struct guid<Windows::UI::Composition::IVisualCollection>{ static constexpr GUID value{ 0x8B745505,0xFD3E,0x4A98,{ 0x84,0xA8,0xE9,0x49,0x46,0x8C,0x6B,0xCB } }; };
-template <> struct guid<Windows::UI::Composition::IVisualFactory>{ static constexpr GUID value{ 0xAD0FF93E,0xB502,0x4EB5,{ 0x87,0xB4,0x9A,0x38,0xA7,0x1D,0x01,0x37 } }; };
-template <> struct guid<Windows::UI::Composition::IVisualUnorderedCollection>{ static constexpr GUID value{ 0x338FAA70,0x54C8,0x40A7,{ 0x80,0x29,0xC9,0xCE,0xEB,0x0A,0xA2,0x50 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAmbientLight>{ static constexpr guid value{ 0xA48130A1,0xB7C4,0x46F7,{ 0xB9,0xBF,0xDA,0xF4,0x3A,0x44,0xE6,0xEE } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAmbientLight2>{ static constexpr guid value{ 0x3B64A6BF,0x5F97,0x4C94,{ 0x86,0xE5,0x04,0x2D,0xD3,0x86,0xB2,0x7D } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAnimationController>{ static constexpr guid value{ 0xC934EFD2,0x0722,0x4F5F,{ 0xA4,0xE2,0x95,0x10,0xF3,0xD4,0x3B,0xF7 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAnimationControllerStatics>{ static constexpr guid value{ 0xE71164DF,0x651B,0x4800,{ 0xB9,0xE5,0x6A,0x3B,0xCF,0xED,0x33,0x65 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAnimationObject>{ static constexpr guid value{ 0xE7141E0A,0x04B8,0x4FC5,{ 0xA4,0xDC,0x19,0x53,0x92,0xE5,0x78,0x07 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IAnimationPropertyInfo>{ static constexpr guid value{ 0xF4716F05,0xED77,0x4E3C,{ 0xB3,0x28,0x5C,0x39,0x85,0xB3,0x73,0x8F } }; };
+template <> struct guid_storage<Windows::UI::Composition::IBooleanKeyFrameAnimation>{ static constexpr guid value{ 0x95E23A08,0xD1F4,0x4972,{ 0x97,0x70,0x3E,0xFE,0x68,0xD8,0x2E,0x14 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ static constexpr guid value{ 0xBAA30DCC,0xA633,0x4618,{ 0x9B,0x06,0x7F,0x7C,0x72,0xC8,0x7C,0xFF } }; };
+template <> struct guid_storage<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ static constexpr guid value{ 0xDA344196,0x2154,0x4B3C,{ 0x88,0xAA,0x47,0x36,0x12,0x04,0xEC,0xCD } }; };
+template <> struct guid_storage<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ static constexpr guid value{ 0x47DABC31,0x10D3,0x4518,{ 0x86,0xF1,0x09,0xCA,0xF7,0x42,0xD1,0x13 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IColorKeyFrameAnimation>{ static constexpr guid value{ 0x93ADB5E9,0x8E05,0x4593,{ 0x84,0xA3,0xDC,0xA1,0x52,0x78,0x1E,0x56 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimation>{ static constexpr guid value{ 0x464C4C2C,0x1CAA,0x4061,{ 0x9B,0x40,0xE1,0x3F,0xDE,0x15,0x03,0xCA } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimation2>{ static constexpr guid value{ 0x369B603E,0xA80F,0x4948,{ 0x93,0xE3,0xED,0x23,0xFB,0x38,0xC6,0xCB } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimation3>{ static constexpr guid value{ 0xD51E030D,0x7DA4,0x4BD7,{ 0xBC,0x2D,0xF4,0x51,0x75,0x29,0xF4,0x3A } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimation4>{ static constexpr guid value{ 0x770137BE,0x76BC,0x4E23,{ 0xBF,0xED,0xFE,0x9C,0xC2,0x0F,0x6E,0xC9 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimationBase>{ static constexpr guid value{ 0x1C2C2999,0xE818,0x48D3,{ 0xA6,0xDD,0xD7,0x8C,0x82,0xF8,0xAC,0xE9 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimationFactory>{ static constexpr guid value{ 0x10F6C4FB,0x6E51,0x4C25,{ 0xBB,0xD3,0x58,0x6A,0x9B,0xEC,0x3E,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionAnimationGroup>{ static constexpr guid value{ 0x5E7CC90C,0xCD14,0x4E07,{ 0x8A,0x55,0xC7,0x25,0x27,0xAA,0xBD,0xAC } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionBackdropBrush>{ static constexpr guid value{ 0xC5ACAE58,0x3898,0x499E,{ 0x8D,0x7F,0x22,0x4E,0x91,0x28,0x6A,0x5D } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionBatchCompletedEventArgs>{ static constexpr guid value{ 0x0D00DAD0,0x9464,0x450A,{ 0xA5,0x62,0x2E,0x26,0x98,0xB0,0xA8,0x12 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionBrush>{ static constexpr guid value{ 0xAB0D7608,0x30C0,0x40E9,{ 0xB5,0x68,0xB6,0x0A,0x6B,0xD1,0xFB,0x46 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionBrushFactory>{ static constexpr guid value{ 0xDA53FB4C,0x4650,0x47C4,{ 0xAD,0x76,0x76,0x53,0x79,0x60,0x7E,0xD6 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionCapabilities>{ static constexpr guid value{ 0x8253353E,0xB517,0x48BC,{ 0xB1,0xE8,0x4B,0x35,0x61,0xA2,0xE1,0x81 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionCapabilitiesStatics>{ static constexpr guid value{ 0xF7B7A86E,0x6416,0x49E5,{ 0x8D,0xDF,0xAF,0xE9,0x49,0xE2,0x05,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionClip>{ static constexpr guid value{ 0x1CCD2A52,0xCFC7,0x4ACE,{ 0x99,0x83,0x14,0x6B,0xB8,0xEB,0x6A,0x3C } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionClip2>{ static constexpr guid value{ 0x5893E069,0x3516,0x40E1,{ 0x89,0xE0,0x5B,0xA9,0x24,0x92,0x72,0x35 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionClipFactory>{ static constexpr guid value{ 0xB9484CAF,0x20C7,0x4AED,{ 0xAC,0x4A,0x9C,0x78,0xBA,0x13,0x02,0xCF } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionColorBrush>{ static constexpr guid value{ 0x2B264C5E,0xBF35,0x4831,{ 0x86,0x42,0xCF,0x70,0xC2,0x0F,0xFF,0x2F } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionColorGradientStop>{ static constexpr guid value{ 0x6F00CA92,0xC801,0x4E41,{ 0x9A,0x8F,0xA5,0x3E,0x20,0xF5,0x77,0x78 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionColorGradientStopCollection>{ static constexpr guid value{ 0x9F1D20EC,0x7B04,0x4B1D,{ 0x90,0xBC,0x9F,0xA3,0x2C,0x0C,0xFD,0x26 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionCommitBatch>{ static constexpr guid value{ 0x0D00DAD0,0xCA07,0x4400,{ 0x8C,0x8E,0xCB,0x5D,0xB0,0x85,0x59,0xCC } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionContainerShape>{ static constexpr guid value{ 0x4F5E859B,0x2E5B,0x44A8,{ 0x98,0x2C,0xAA,0x0F,0x69,0xC1,0x60,0x59 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionDrawingSurface>{ static constexpr guid value{ 0xA166C300,0xFAD0,0x4D11,{ 0x9E,0x67,0xE4,0x33,0x16,0x2F,0xF4,0x9E } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionDrawingSurface2>{ static constexpr guid value{ 0xFAD0E88B,0xE354,0x44E8,{ 0x8E,0x3D,0xC4,0x88,0x0D,0x5A,0x21,0x3F } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionDrawingSurfaceFactory>{ static constexpr guid value{ 0x9497B00A,0x312D,0x46B9,{ 0x9D,0xB3,0x41,0x2F,0xD7,0x94,0x64,0xC8 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEasingFunction>{ static constexpr guid value{ 0x5145E356,0xBF79,0x4EA8,{ 0x8C,0xC2,0x6B,0x5B,0x47,0x2E,0x6C,0x9A } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEasingFunctionFactory>{ static constexpr guid value{ 0x60840774,0x3DA0,0x4949,{ 0x82,0x00,0x72,0x06,0xC0,0x01,0x90,0xA0 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEffectBrush>{ static constexpr guid value{ 0xBF7F795E,0x83CC,0x44BF,{ 0xA4,0x47,0x3E,0x3C,0x07,0x17,0x89,0xEC } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEffectFactory>{ static constexpr guid value{ 0xBE5624AF,0xBA7E,0x4510,{ 0x98,0x50,0x41,0xC0,0xB4,0xFF,0x74,0xDF } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEffectSourceParameter>{ static constexpr guid value{ 0x858AB13A,0x3292,0x4E4E,{ 0xB3,0xBB,0x2B,0x6C,0x65,0x44,0xA6,0xEE } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ static constexpr guid value{ 0xB3D9F276,0xABA3,0x4724,{ 0xAC,0xF3,0xD0,0x39,0x74,0x64,0xDB,0x1C } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionEllipseGeometry>{ static constexpr guid value{ 0x4801F884,0xF6AD,0x4B93,{ 0xAF,0xA9,0x89,0x7B,0x64,0xE5,0x7B,0x1F } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGeometricClip>{ static constexpr guid value{ 0xC840B581,0x81C9,0x4444,{ 0xA2,0xC1,0xCC,0xAE,0xCE,0x3A,0x50,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGeometry>{ static constexpr guid value{ 0xE985217C,0x6A17,0x4207,{ 0xAB,0xD8,0x5F,0xD3,0xDD,0x61,0x2A,0x9D } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGeometryFactory>{ static constexpr guid value{ 0xBFFEBFE1,0x8C25,0x480B,{ 0x9F,0x56,0xFE,0xD6,0xB2,0x88,0x05,0x5D } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGradientBrush>{ static constexpr guid value{ 0x1D9709E0,0xFFC6,0x4C0E,{ 0xA9,0xAB,0x34,0x14,0x4D,0x4C,0x90,0x98 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGradientBrush2>{ static constexpr guid value{ 0x899DD5A1,0xB4C7,0x4B33,{ 0xA1,0xB6,0x26,0x4A,0xDD,0xC2,0x6D,0x10 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGradientBrushFactory>{ static constexpr guid value{ 0x56D765D7,0xF189,0x48C9,{ 0x9C,0x8D,0x94,0xDA,0xF1,0xBE,0xC0,0x10 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGraphicsDevice>{ static constexpr guid value{ 0xFB22C6E1,0x80A2,0x4667,{ 0x99,0x36,0xDB,0xEA,0xF6,0xEE,0xFE,0x95 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionGraphicsDevice2>{ static constexpr guid value{ 0x0FB8BDF6,0xC0F0,0x4BCC,{ 0x9F,0xB8,0x08,0x49,0x82,0x49,0x0D,0x7D } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLight>{ static constexpr guid value{ 0x41A6D7C2,0x2E5D,0x4BC1,{ 0xB0,0x9E,0x8F,0x0A,0x03,0xE3,0xD8,0xD3 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLight2>{ static constexpr guid value{ 0xA7BCDA72,0xF35D,0x425D,{ 0x9B,0x98,0x23,0xF4,0x20,0x5F,0x66,0x69 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLight3>{ static constexpr guid value{ 0x4B0B00E4,0xDF07,0x4959,{ 0xB7,0xA4,0x4F,0x7E,0x42,0x33,0xF8,0x38 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLightFactory>{ static constexpr guid value{ 0x069CF306,0xDA3C,0x4B44,{ 0x83,0x8A,0x5E,0x03,0xD5,0x1A,0xCE,0x55 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLineGeometry>{ static constexpr guid value{ 0xDD7615A4,0x0C9A,0x4B67,{ 0x8D,0xCE,0x44,0x0A,0x5B,0xF9,0xCD,0xEC } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionLinearGradientBrush>{ static constexpr guid value{ 0x983BC519,0xA9DB,0x413C,{ 0xA2,0xD8,0x2A,0x90,0x56,0xFC,0x52,0x5E } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionMaskBrush>{ static constexpr guid value{ 0x522CF09E,0xBE6B,0x4F41,{ 0xBE,0x49,0xF9,0x22,0x6D,0x47,0x1B,0x4A } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionNineGridBrush>{ static constexpr guid value{ 0xF25154E4,0xBC8C,0x4BE7,{ 0xB8,0x0F,0x86,0x85,0xB8,0x3C,0x01,0x86 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObject>{ static constexpr guid value{ 0xBCB4AD45,0x7609,0x4550,{ 0x93,0x4F,0x16,0x00,0x2A,0x68,0xFD,0xED } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObject2>{ static constexpr guid value{ 0xEF874EA1,0x5CFF,0x4B68,{ 0x9E,0x30,0xA1,0x51,0x9D,0x08,0xBA,0x03 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObject3>{ static constexpr guid value{ 0x4BC27925,0xDACD,0x4CF2,{ 0x98,0xB1,0x98,0x6B,0x76,0xE7,0xEB,0xE6 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObject4>{ static constexpr guid value{ 0x0BB3784C,0x346B,0x4A7C,{ 0x96,0x6B,0x73,0x10,0x96,0x65,0x53,0xD5 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObjectFactory>{ static constexpr guid value{ 0x51205C5E,0x558A,0x4F2A,{ 0x8D,0x39,0x37,0xBF,0xE1,0xE2,0x0D,0xDD } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionObjectStatics>{ static constexpr guid value{ 0xC1ED052F,0x1BA2,0x44BA,{ 0xA9,0x04,0x6A,0x88,0x2A,0x0A,0x5A,0xDB } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionPath>{ static constexpr guid value{ 0x66DA1D5F,0x2E10,0x4F22,{ 0x8A,0x06,0x0A,0x81,0x51,0x91,0x9E,0x60 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionPathFactory>{ static constexpr guid value{ 0x9C1E8C6A,0x0F33,0x4751,{ 0x94,0x37,0xEB,0x3F,0xB9,0xD3,0xAB,0x07 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionPathGeometry>{ static constexpr guid value{ 0x0B6A417E,0x2C77,0x4C23,{ 0xAF,0x5E,0x63,0x04,0xC1,0x47,0xBB,0x61 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionPropertySet>{ static constexpr guid value{ 0xC9D6D202,0x5F67,0x4453,{ 0x91,0x17,0x9E,0xAD,0xD4,0x30,0xD3,0xC2 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionPropertySet2>{ static constexpr guid value{ 0xDE80731E,0xA211,0x4455,{ 0x88,0x80,0x7D,0x0F,0x3F,0x6A,0x44,0xFD } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionRectangleGeometry>{ static constexpr guid value{ 0x0CD51428,0x5356,0x4246,{ 0xAE,0xCF,0x7A,0x0B,0x76,0x97,0x54,0x00 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionRoundedRectangleGeometry>{ static constexpr guid value{ 0x8770C822,0x1D50,0x4B8B,{ 0xB0,0x13,0x7C,0x9A,0x0E,0x46,0x93,0x5F } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionScopedBatch>{ static constexpr guid value{ 0x0D00DAD0,0xFB07,0x46FD,{ 0x8C,0x72,0x62,0x80,0xD1,0xA3,0xD1,0xDD } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionShadow>{ static constexpr guid value{ 0x329E52E2,0x4335,0x49CC,{ 0xB1,0x4A,0x37,0x78,0x2D,0x10,0xF0,0xC4 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionShadowFactory>{ static constexpr guid value{ 0x221F492F,0xDCBA,0x4B91,{ 0x99,0x9E,0x1D,0xC2,0x17,0xA0,0x15,0x30 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionShape>{ static constexpr guid value{ 0xB47CE2F7,0x9A88,0x42C4,{ 0x9E,0x87,0x2E,0x50,0x0C,0xA8,0x68,0x8C } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionShapeFactory>{ static constexpr guid value{ 0x1DFC36D0,0xB05A,0x44EF,{ 0x82,0xB0,0x12,0x11,0x8B,0xCD,0x4C,0xD0 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionSpriteShape>{ static constexpr guid value{ 0x401B61BB,0x0007,0x4363,{ 0xB1,0xF3,0x6B,0xCC,0x00,0x3F,0xB8,0x3E } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionSurface>{ static constexpr guid value{ 0x1527540D,0x42C7,0x47A6,{ 0xA4,0x08,0x66,0x8F,0x79,0xA9,0x0D,0xFB } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionSurfaceBrush>{ static constexpr guid value{ 0xAD016D79,0x1E4C,0x4C0D,{ 0x9C,0x29,0x83,0x33,0x8C,0x87,0xC1,0x62 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionSurfaceBrush2>{ static constexpr guid value{ 0xD27174D5,0x64F5,0x4692,{ 0x9D,0xC7,0x71,0xB6,0x1D,0x7E,0x58,0x80 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionTarget>{ static constexpr guid value{ 0xA1BEA8BA,0xD726,0x4663,{ 0x81,0x29,0x6B,0x5E,0x79,0x27,0xFF,0xA6 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionTargetFactory>{ static constexpr guid value{ 0x93CD9D2B,0x8516,0x4B14,{ 0xA8,0xCE,0xF4,0x9E,0x21,0x19,0xEC,0x42 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionViewBox>{ static constexpr guid value{ 0xB440BF07,0x068F,0x4537,{ 0x84,0xC6,0x4E,0xCB,0xE0,0x19,0xE1,0xF4 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionVirtualDrawingSurface>{ static constexpr guid value{ 0xA9C384DB,0x8740,0x4F94,{ 0x8B,0x9D,0xB6,0x85,0x21,0xE7,0x86,0x3D } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>{ static constexpr guid value{ 0x6766106C,0xD56B,0x4A49,{ 0xB1,0xDF,0x50,0x76,0xA0,0x62,0x07,0x68 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor>{ static constexpr guid value{ 0xB403CA50,0x7F8C,0x4E83,{ 0x98,0x5F,0xCC,0x45,0x06,0x00,0x36,0xD8 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor2>{ static constexpr guid value{ 0x735081DC,0x5E24,0x45DA,{ 0xA3,0x8F,0xE3,0x2C,0xC3,0x49,0xA9,0xA0 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor3>{ static constexpr guid value{ 0xC9DD8EF0,0x6EB1,0x4E3C,{ 0xA6,0x58,0x67,0x5D,0x9C,0x64,0xD4,0xAB } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor4>{ static constexpr guid value{ 0xAE47E78A,0x7910,0x4425,{ 0xA4,0x82,0xA0,0x5B,0x75,0x8A,0xDC,0xE9 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor5>{ static constexpr guid value{ 0x48EA31AD,0x7FCD,0x4076,{ 0xA7,0x9C,0x90,0xCC,0x4B,0x85,0x2C,0x9B } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositor6>{ static constexpr guid value{ 0x7A38B2BD,0xCEC8,0x4EEB,{ 0x83,0x0F,0xD8,0xD0,0x7A,0xED,0xEB,0xC3 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICompositorStatics>{ static constexpr guid value{ 0x080DB93E,0x121E,0x4D97,{ 0x8B,0x74,0x1D,0xFC,0xF9,0x19,0x87,0xEA } }; };
+template <> struct guid_storage<Windows::UI::Composition::IContainerVisual>{ static constexpr guid value{ 0x02F6BC74,0xED20,0x4773,{ 0xAF,0xE6,0xD4,0x9B,0x4A,0x93,0xDB,0x32 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IContainerVisualFactory>{ static constexpr guid value{ 0x0363A65B,0xC7DA,0x4D9A,{ 0x95,0xF4,0x69,0xB5,0xC8,0xDF,0x67,0x0B } }; };
+template <> struct guid_storage<Windows::UI::Composition::ICubicBezierEasingFunction>{ static constexpr guid value{ 0x32350666,0xC1E8,0x44F9,{ 0x96,0xB8,0xC9,0x8A,0xCF,0x0A,0xE6,0x98 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IDistantLight>{ static constexpr guid value{ 0x318CFAFC,0x5CE3,0x4B55,{ 0xAB,0x5D,0x07,0xA0,0x03,0x53,0xAC,0x99 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IDistantLight2>{ static constexpr guid value{ 0xDBCDAA1C,0x294B,0x48D7,{ 0xB6,0x0E,0x76,0xDF,0x64,0xAA,0x39,0x2B } }; };
+template <> struct guid_storage<Windows::UI::Composition::IDropShadow>{ static constexpr guid value{ 0xCB977C07,0xA154,0x4851,{ 0x85,0xE7,0xA8,0x92,0x4C,0x84,0xFA,0xD8 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IDropShadow2>{ static constexpr guid value{ 0x6C4218BC,0x15B9,0x4C2D,{ 0x8D,0x4A,0x07,0x67,0xDF,0x11,0x97,0x7A } }; };
+template <> struct guid_storage<Windows::UI::Composition::IExpressionAnimation>{ static constexpr guid value{ 0x6ACC5431,0x7D3D,0x4BF3,{ 0xAB,0xB6,0xF4,0x4B,0xDC,0x48,0x88,0xC1 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IImplicitAnimationCollection>{ static constexpr guid value{ 0x0598A3FF,0x0A92,0x4C9D,{ 0xA4,0x27,0xB2,0x55,0x19,0x25,0x0D,0xBF } }; };
+template <> struct guid_storage<Windows::UI::Composition::IInsetClip>{ static constexpr guid value{ 0x1E73E647,0x84C7,0x477A,{ 0xB4,0x74,0x58,0x80,0xE0,0x44,0x2E,0x15 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IKeyFrameAnimation>{ static constexpr guid value{ 0x126E7F22,0x3AE9,0x4540,{ 0x9A,0x8A,0xDE,0xAE,0x8A,0x4A,0x4A,0x84 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IKeyFrameAnimation2>{ static constexpr guid value{ 0xF4B488BB,0x2940,0x4EC0,{ 0xA4,0x1A,0xEB,0x6D,0x80,0x1A,0x2F,0x18 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IKeyFrameAnimation3>{ static constexpr guid value{ 0x845BF0B4,0xD8DE,0x462F,{ 0x87,0x53,0xC8,0x0D,0x43,0xC6,0xFF,0x5A } }; };
+template <> struct guid_storage<Windows::UI::Composition::IKeyFrameAnimationFactory>{ static constexpr guid value{ 0xBF0803F8,0x712A,0x4FC1,{ 0x8C,0x87,0x97,0x08,0x59,0xED,0x8D,0x2E } }; };
+template <> struct guid_storage<Windows::UI::Composition::ILayerVisual>{ static constexpr guid value{ 0xAF843985,0x0444,0x4887,{ 0x8E,0x83,0xB4,0x0B,0x25,0x3F,0x82,0x2C } }; };
+template <> struct guid_storage<Windows::UI::Composition::ILayerVisual2>{ static constexpr guid value{ 0x98F9AEEB,0x6F23,0x49F1,{ 0x90,0xB1,0x1F,0x59,0xA1,0x4F,0xBC,0xE3 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ILinearEasingFunction>{ static constexpr guid value{ 0x9400975A,0xC7A6,0x46B3,{ 0xAC,0xF7,0x1A,0x26,0x8A,0x0A,0x11,0x7D } }; };
+template <> struct guid_storage<Windows::UI::Composition::INaturalMotionAnimation>{ static constexpr guid value{ 0x438DE12D,0x769B,0x4821,{ 0xA9,0x49,0x28,0x4A,0x65,0x47,0xE8,0x73 } }; };
+template <> struct guid_storage<Windows::UI::Composition::INaturalMotionAnimationFactory>{ static constexpr guid value{ 0xF53ACB06,0xCF6A,0x4387,{ 0xA3,0xFE,0x52,0x21,0xF3,0xE7,0xE0,0xE0 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IPathKeyFrameAnimation>{ static constexpr guid value{ 0x9D0D18C9,0x1576,0x4B3F,{ 0xBE,0x60,0x1D,0x50,0x31,0xF5,0xE7,0x1B } }; };
+template <> struct guid_storage<Windows::UI::Composition::IPointLight>{ static constexpr guid value{ 0xB18545B3,0x0C5A,0x4AB0,{ 0xBE,0xDC,0x4F,0x35,0x46,0x94,0x82,0x72 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IPointLight2>{ static constexpr guid value{ 0xEFE98F2C,0x0678,0x4F69,{ 0xB1,0x64,0xA8,0x10,0xD9,0x95,0xBC,0xB7 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IPointLight3>{ static constexpr guid value{ 0x4C0A8367,0xD4E9,0x468A,{ 0x87,0xAE,0x7B,0xA4,0x3A,0xB2,0x94,0x85 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ static constexpr guid value{ 0x404E5835,0xECF6,0x4240,{ 0x85,0x20,0x67,0x12,0x79,0xCF,0x36,0xBC } }; };
+template <> struct guid_storage<Windows::UI::Composition::IRedirectVisual>{ static constexpr guid value{ 0x8CC6E340,0x8B75,0x5422,{ 0xB0,0x6F,0x09,0xFF,0xE9,0xF8,0x61,0x7E } }; };
+template <> struct guid_storage<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ static constexpr guid value{ 0x3A31AC7D,0x28BF,0x4E7A,{ 0x85,0x24,0x71,0x67,0x9D,0x48,0x0F,0x38 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IScalarKeyFrameAnimation>{ static constexpr guid value{ 0xAE288FA9,0x252C,0x4B95,{ 0xA7,0x25,0xBF,0x85,0xE3,0x80,0x00,0xA1 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ static constexpr guid value{ 0x94A94581,0xBF92,0x495B,{ 0xB5,0xBD,0xD2,0xC6,0x59,0x43,0x07,0x37 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IScalarNaturalMotionAnimationFactory>{ static constexpr guid value{ 0x835AA4FC,0x671C,0x41DD,{ 0xAF,0x48,0xAE,0x8D,0xEF,0x8B,0x15,0x29 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IShapeVisual>{ static constexpr guid value{ 0xF2BD13C3,0xBA7E,0x4B0F,{ 0x91,0x26,0xFF,0xB7,0x53,0x6B,0x81,0x76 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpotLight>{ static constexpr guid value{ 0x5A9FE273,0x44A1,0x4F95,{ 0xA4,0x22,0x8F,0xA5,0x11,0x6B,0xDB,0x44 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpotLight2>{ static constexpr guid value{ 0x64EE615E,0x0686,0x4DEA,{ 0xA9,0xE8,0xBC,0x3A,0x8C,0x70,0x14,0x59 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpotLight3>{ static constexpr guid value{ 0xE4D03EEA,0x131F,0x480E,{ 0x85,0x9E,0xB8,0x27,0x05,0xB7,0x43,0x60 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpringScalarNaturalMotionAnimation>{ static constexpr guid value{ 0x0572A95F,0x37F9,0x4FBE,{ 0xB8,0x7B,0x5C,0xD0,0x3A,0x89,0x50,0x1C } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpringVector2NaturalMotionAnimation>{ static constexpr guid value{ 0x23F494B5,0xEE73,0x4F0F,{ 0xA4,0x23,0x40,0x2B,0x94,0x6D,0xF4,0xB3 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpringVector3NaturalMotionAnimation>{ static constexpr guid value{ 0x6C8749DF,0xD57B,0x4794,{ 0x8E,0x2D,0xCE,0xCB,0x11,0xE1,0x94,0xE5 } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpriteVisual>{ static constexpr guid value{ 0x08E05581,0x1AD1,0x4F97,{ 0x97,0x57,0x40,0x2D,0x76,0xE4,0x23,0x3B } }; };
+template <> struct guid_storage<Windows::UI::Composition::ISpriteVisual2>{ static constexpr guid value{ 0x588C9664,0x997A,0x4850,{ 0x91,0xFE,0x53,0xCB,0x58,0xF8,0x1C,0xE9 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IStepEasingFunction>{ static constexpr guid value{ 0xD0CAA74B,0x560C,0x4A0B,{ 0xA5,0xF6,0x20,0x6C,0xA8,0xC3,0xEC,0xD6 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector2KeyFrameAnimation>{ static constexpr guid value{ 0xDF414515,0x4E29,0x4F11,{ 0xB5,0x5E,0xBF,0x2A,0x6E,0xB3,0x62,0x94 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector2NaturalMotionAnimation>{ static constexpr guid value{ 0x0F3E0B7D,0xE512,0x479D,{ 0xA0,0x0C,0x77,0xC9,0x3A,0x30,0xA3,0x95 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector2NaturalMotionAnimationFactory>{ static constexpr guid value{ 0x8C74FF61,0x0761,0x48A2,{ 0xBD,0xDB,0x6A,0xFC,0xC5,0x2B,0x89,0xD8 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector3KeyFrameAnimation>{ static constexpr guid value{ 0xC8039DAA,0xA281,0x43C2,{ 0xA7,0x3D,0xB6,0x8E,0x3C,0x53,0x3C,0x40 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector3NaturalMotionAnimation>{ static constexpr guid value{ 0x9C17042C,0xE2CA,0x45AD,{ 0x96,0x9E,0x4E,0x78,0xB7,0xB9,0xAD,0x41 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector3NaturalMotionAnimationFactory>{ static constexpr guid value{ 0x21A81D2F,0x0880,0x457B,{ 0xAC,0x87,0xB6,0x09,0x01,0x8C,0x87,0x6D } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVector4KeyFrameAnimation>{ static constexpr guid value{ 0x2457945B,0xADDD,0x4385,{ 0x96,0x06,0xB6,0xA3,0xD5,0xE4,0xE1,0xB9 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVisual>{ static constexpr guid value{ 0x117E202D,0xA859,0x4C89,{ 0x87,0x3B,0xC2,0xAA,0x56,0x67,0x88,0xE3 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVisual2>{ static constexpr guid value{ 0x3052B611,0x56C3,0x4C3E,{ 0x8B,0xF3,0xF6,0xE1,0xAD,0x47,0x3F,0x06 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVisualCollection>{ static constexpr guid value{ 0x8B745505,0xFD3E,0x4A98,{ 0x84,0xA8,0xE9,0x49,0x46,0x8C,0x6B,0xCB } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVisualFactory>{ static constexpr guid value{ 0xAD0FF93E,0xB502,0x4EB5,{ 0x87,0xB4,0x9A,0x38,0xA7,0x1D,0x01,0x37 } }; };
+template <> struct guid_storage<Windows::UI::Composition::IVisualUnorderedCollection>{ static constexpr guid value{ 0x338FAA70,0x54C8,0x40A7,{ 0x80,0x29,0xC9,0xCE,0xEB,0x0A,0xA2,0x50 } }; };
 template <> struct default_interface<Windows::UI::Composition::AmbientLight>{ using type = Windows::UI::Composition::IAmbientLight; };
 template <> struct default_interface<Windows::UI::Composition::AnimationController>{ using type = Windows::UI::Composition::IAnimationController; };
+template <> struct default_interface<Windows::UI::Composition::AnimationPropertyInfo>{ using type = Windows::UI::Composition::IAnimationPropertyInfo; };
+template <> struct default_interface<Windows::UI::Composition::BooleanKeyFrameAnimation>{ using type = Windows::UI::Composition::IBooleanKeyFrameAnimation; };
 template <> struct default_interface<Windows::UI::Composition::BounceScalarNaturalMotionAnimation>{ using type = Windows::UI::Composition::IBounceScalarNaturalMotionAnimation; };
 template <> struct default_interface<Windows::UI::Composition::BounceVector2NaturalMotionAnimation>{ using type = Windows::UI::Composition::IBounceVector2NaturalMotionAnimation; };
 template <> struct default_interface<Windows::UI::Composition::BounceVector3NaturalMotionAnimation>{ using type = Windows::UI::Composition::IBounceVector3NaturalMotionAnimation; };
@@ -1024,6 +1094,7 @@ template <> struct default_interface<Windows::UI::Composition::CompositionEffect
 template <> struct default_interface<Windows::UI::Composition::CompositionEffectFactory>{ using type = Windows::UI::Composition::ICompositionEffectFactory; };
 template <> struct default_interface<Windows::UI::Composition::CompositionEffectSourceParameter>{ using type = Windows::UI::Composition::ICompositionEffectSourceParameter; };
 template <> struct default_interface<Windows::UI::Composition::CompositionEllipseGeometry>{ using type = Windows::UI::Composition::ICompositionEllipseGeometry; };
+template <> struct default_interface<Windows::UI::Composition::CompositionGeometricClip>{ using type = Windows::UI::Composition::ICompositionGeometricClip; };
 template <> struct default_interface<Windows::UI::Composition::CompositionGeometry>{ using type = Windows::UI::Composition::ICompositionGeometry; };
 template <> struct default_interface<Windows::UI::Composition::CompositionGradientBrush>{ using type = Windows::UI::Composition::ICompositionGradientBrush; };
 template <> struct default_interface<Windows::UI::Composition::CompositionGraphicsDevice>{ using type = Windows::UI::Composition::ICompositionGraphicsDevice; };
@@ -1064,6 +1135,7 @@ template <> struct default_interface<Windows::UI::Composition::NaturalMotionAnim
 template <> struct default_interface<Windows::UI::Composition::PathKeyFrameAnimation>{ using type = Windows::UI::Composition::IPathKeyFrameAnimation; };
 template <> struct default_interface<Windows::UI::Composition::PointLight>{ using type = Windows::UI::Composition::IPointLight; };
 template <> struct default_interface<Windows::UI::Composition::QuaternionKeyFrameAnimation>{ using type = Windows::UI::Composition::IQuaternionKeyFrameAnimation; };
+template <> struct default_interface<Windows::UI::Composition::RedirectVisual>{ using type = Windows::UI::Composition::IRedirectVisual; };
 template <> struct default_interface<Windows::UI::Composition::RenderingDeviceReplacedEventArgs>{ using type = Windows::UI::Composition::IRenderingDeviceReplacedEventArgs; };
 template <> struct default_interface<Windows::UI::Composition::ScalarKeyFrameAnimation>{ using type = Windows::UI::Composition::IScalarKeyFrameAnimation; };
 template <> struct default_interface<Windows::UI::Composition::ScalarNaturalMotionAnimation>{ using type = Windows::UI::Composition::IScalarNaturalMotionAnimation; };
@@ -1082,6 +1154,1176 @@ template <> struct default_interface<Windows::UI::Composition::Vector4KeyFrameAn
 template <> struct default_interface<Windows::UI::Composition::Visual>{ using type = Windows::UI::Composition::IVisual; };
 template <> struct default_interface<Windows::UI::Composition::VisualCollection>{ using type = Windows::UI::Composition::IVisualCollection; };
 template <> struct default_interface<Windows::UI::Composition::VisualUnorderedCollection>{ using type = Windows::UI::Composition::IVisualUnorderedCollection; };
+
+template <> struct abi<Windows::UI::Composition::IAmbientLight>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IAmbientLight2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Intensity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Intensity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IAnimationController>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PlaybackRate(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_PlaybackRate(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Progress(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Progress(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL Pause() noexcept = 0;
+    virtual int32_t WINRT_CALL Resume() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IAnimationControllerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxPlaybackRate(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinPlaybackRate(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IAnimationObject>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL PopulatePropertyInfo(void* propertyName, void* propertyInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IAnimationPropertyInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IBooleanKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Acceleration(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Acceleration(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Restitution(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Restitution(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Acceleration(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Acceleration(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Restitution(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Restitution(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Acceleration(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Acceleration(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Restitution(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Restitution(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IColorKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, struct struct_Windows_UI_Color value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ClearAllParameters() noexcept = 0;
+    virtual int32_t WINRT_CALL ClearParameter(void* key) noexcept = 0;
+    virtual int32_t WINRT_CALL SetColorParameter(void* key, struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetMatrix3x2Parameter(void* key, Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetMatrix4x4Parameter(void* key, Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetQuaternionParameter(void* key, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetReferenceParameter(void* key, void* compositionObject) noexcept = 0;
+    virtual int32_t WINRT_CALL SetScalarParameter(void* key, float value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetVector2Parameter(void* key, Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetVector3Parameter(void* key, Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetVector4Parameter(void* key, Windows::Foundation::Numerics::float4 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetBooleanParameter(void* key, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Target(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Target(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InitialValueExpressions(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimation4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetExpressionReferenceParameter(void* parameterName, void* source) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimationBase>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionAnimationGroup>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Count(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Add(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAll() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionBackdropBrush>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionBatchCompletedEventArgs>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionBrush>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionBrushFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AreEffectsSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL AreEffectsFast(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Changed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Changed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionCapabilitiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** current) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionClip>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionClip2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionClipFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionColorBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionColorGradientStop>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionColorGradientStopCollection>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionCommitBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionContainerShape>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Shapes(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurface>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AlphaMode(Windows::Graphics::DirectX::DirectXAlphaMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Size* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurface2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SizeInt32(struct struct_Windows_Graphics_SizeInt32* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Resize(struct struct_Windows_Graphics_SizeInt32 sizePixels) noexcept = 0;
+    virtual int32_t WINRT_CALL Scroll(struct struct_Windows_Graphics_PointInt32 offset) noexcept = 0;
+    virtual int32_t WINRT_CALL ScrollRect(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept = 0;
+    virtual int32_t WINRT_CALL ScrollWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect) noexcept = 0;
+    virtual int32_t WINRT_CALL ScrollRectWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurfaceFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEasingFunction>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEasingFunctionFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEffectBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetSourceParameter(void* name, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL SetSourceParameter(void* name, void* source) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEffectFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LoadStatus(Windows::UI::Composition::CompositionEffectFactoryLoadStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEffectSourceParameter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void** instance) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionEllipseGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Center(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Center(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Radius(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Radius(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGeometricClip>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Geometry(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Geometry(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ViewBox(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ViewBox(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TrimEnd(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimEnd(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimOffset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimOffset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrimStart(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TrimStart(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGeometryFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGradientBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ColorStops(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGradientBrush2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MappingMode(Windows::UI::Composition::CompositionMappingMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MappingMode(Windows::UI::Composition::CompositionMappingMode value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGradientBrushFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGraphicsDevice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDrawingSurface(Windows::Foundation::Size sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_RenderingDeviceReplaced(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_RenderingDeviceReplaced(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionGraphicsDevice2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateDrawingSurface2(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVirtualDrawingSurface(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLight>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Targets(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLight2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExclusionsFromTargets(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLight3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsEnabled(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLightFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLineGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Start(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Start(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_End(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_End(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionLinearGradientBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_EndPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EndPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StartPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionMaskBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Mask(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mask(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionNineGridBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BottomInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BottomInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BottomInsetScale(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BottomInsetScale(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsCenterHollow(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsCenterHollow(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftInsetScale(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftInsetScale(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightInsetScale(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightInsetScale(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TopInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TopInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TopInsetScale(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TopInsetScale(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL SetInsets(float inset) noexcept = 0;
+    virtual int32_t WINRT_CALL SetInsetsWithValues(float left, float top, float right, float bottom) noexcept = 0;
+    virtual int32_t WINRT_CALL SetInsetScales(float scale) noexcept = 0;
+    virtual int32_t WINRT_CALL SetInsetScalesWithValues(float left, float top, float right, float bottom) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObject>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Compositor(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Dispatcher(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAnimation(void* propertyName, void* animation) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAnimation(void* propertyName) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObject2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Comment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Comment(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImplicitAnimations(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ImplicitAnimations(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAnimationGroup(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL StopAnimationGroup(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObject3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DispatcherQueue(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObject4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryGetAnimationController(void* propertyName, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObjectFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionObjectStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL StartAnimationWithIAnimationObject(void* target, void* propertyName, void* animation) noexcept = 0;
+    virtual int32_t WINRT_CALL StartAnimationGroupWithIAnimationObject(void* target, void* animation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionPath>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionPathFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* source, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionPathGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Path(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionPropertySet>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertColor(void* propertyName, struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertMatrix3x2(void* propertyName, Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertMatrix4x4(void* propertyName, Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertQuaternion(void* propertyName, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertScalar(void* propertyName, float value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertVector2(void* propertyName, Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertVector3(void* propertyName, Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertVector4(void* propertyName, Windows::Foundation::Numerics::float4 value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetColor(void* propertyName, struct struct_Windows_UI_Color* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetMatrix3x2(void* propertyName, Windows::Foundation::Numerics::float3x2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetMatrix4x4(void* propertyName, Windows::Foundation::Numerics::float4x4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetQuaternion(void* propertyName, Windows::Foundation::Numerics::quaternion* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetScalar(void* propertyName, float* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetVector2(void* propertyName, Windows::Foundation::Numerics::float2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetVector3(void* propertyName, Windows::Foundation::Numerics::float3* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetVector4(void* propertyName, Windows::Foundation::Numerics::float4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionPropertySet2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertBoolean(void* propertyName, bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL TryGetBoolean(void* propertyName, bool* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionRectangleGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionRoundedRectangleGeometry>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CornerRadius(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CornerRadius(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionScopedBatch>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnded(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL End() noexcept = 0;
+    virtual int32_t WINRT_CALL Resume() noexcept = 0;
+    virtual int32_t WINRT_CALL Suspend() noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionShadow>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionShadowFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionShape>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionShapeFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionSpriteShape>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FillBrush(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FillBrush(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Geometry(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Geometry(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsStrokeNonScaling(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsStrokeNonScaling(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeBrush(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeBrush(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeDashArray(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeDashOffset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeDashOffset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeMiterLimit(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeMiterLimit(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StrokeThickness(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StrokeThickness(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionSurface>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionSurfaceBrush>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HorizontalAlignmentRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalAlignmentRatio(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Surface(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Surface(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignmentRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalAlignmentRatio(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionSurfaceBrush2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionTarget>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Root(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Root(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionTargetFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionViewBox>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HorizontalAlignmentRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HorizontalAlignmentRatio(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VerticalAlignmentRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_VerticalAlignmentRatio(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionVirtualDrawingSurface>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Trim(uint32_t __rectsSize, struct struct_Windows_Graphics_RectInt32* rects) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateColorKeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateColorBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateColorBrushWithColor(struct struct_Windows_UI_Color color, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainerVisual(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCubicBezierEasingFunction(Windows::Foundation::Numerics::float2 controlPoint1, Windows::Foundation::Numerics::float2 controlPoint2, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEffectFactory(void* graphicsEffect, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEffectFactoryWithProperties(void* graphicsEffect, void* animatableProperties, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateExpressionAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateExpressionAnimationWithExpression(void* expression, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInsetClip(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLinearEasingFunction(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePropertySet(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateQuaternionKeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateScalarKeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateScopedBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpriteVisual(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSurfaceBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSurfaceBrushWithSurface(void* surface, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTargetForCurrentView(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVector2KeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVector3KeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateVector4KeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCommitBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateAmbientLight(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAnimationGroup(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBackdropBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDistantLight(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDropShadow(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateImplicitAnimationCollection(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLayerVisual(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateMaskBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateNineGridBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePointLight(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpotLight(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStepEasingFunction(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateStepEasingFunctionWithStepCount(int32_t stepCount, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateHostBackdropBrush(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateColorGradientStop(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateColorGradientStopWithOffsetAndColor(float offset, struct struct_Windows_UI_Color color, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLinearGradientBrush(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpringScalarAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpringVector2Animation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpringVector3Animation(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Comment(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Comment(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GlobalPlaybackRate(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_GlobalPlaybackRate(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBounceScalarAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBounceVector2Animation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBounceVector3Animation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateContainerShape(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEllipseGeometry(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateLineGeometry(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePathGeometry(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePathGeometryWithPath(void* path, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreatePathKeyFrameAnimation(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateRectangleGeometry(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateRoundedRectangleGeometry(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateShapeVisual(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpriteShape(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateSpriteShapeWithGeometry(void* geometry, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateViewBox(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestCommitAsync(void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositor6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateGeometricClip(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateGeometricClipWithGeometry(void* geometry, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateRedirectVisual(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateRedirectVisualWithSourceVisual(void* source, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateBooleanKeyFrameAnimation(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ICompositorStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxGlobalPlaybackRate(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinGlobalPlaybackRate(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IContainerVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Children(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IContainerVisualFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ICubicBezierEasingFunction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ControlPoint1(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ControlPoint2(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IDistantLight>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Direction(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Direction(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IDistantLight2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Intensity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Intensity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IDropShadow>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BlurRadius(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BlurRadius(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mask(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Mask(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opacity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IDropShadow2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IExpressionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Expression(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Expression(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IImplicitAnimationCollection>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IInsetClip>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BottomInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BottomInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LeftInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LeftInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RightInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RightInset(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TopInset(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TopInset(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DelayTime(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IterationCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IterationCount(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_KeyFrameCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertExpressionKeyFrame(float normalizedProgressKey, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, void* value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Direction(Windows::UI::Composition::AnimationDirection* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Direction(Windows::UI::Composition::AnimationDirection value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IKeyFrameAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::ILayerVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Effect(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Effect(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ILayerVisual2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Shadow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Shadow(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ILinearEasingFunction>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::INaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DelayTime(Windows::Foundation::TimeSpan value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::INaturalMotionAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IPathKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, void* path) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, void* path, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IPointLight>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ConstantAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ConstantAttenuation(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LinearAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LinearAttenuation(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_QuadraticAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_QuadraticAttenuation(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IPointLight2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Intensity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Intensity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IPointLight3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinAttenuationCutoff(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinAttenuationCutoff(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAttenuationCutoff(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxAttenuationCutoff(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IRedirectVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Source(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_GraphicsDevice(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IScalarKeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, float value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FinalValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FinalValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialVelocity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialVelocity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IScalarNaturalMotionAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IShapeVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Shapes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ViewBox(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ViewBox(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpotLight>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ConstantAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ConstantAttenuation(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CoordinateSpace(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CoordinateSpace(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Direction(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Direction(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InnerConeAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InnerConeAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InnerConeAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InnerConeAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InnerConeColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InnerConeColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LinearAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LinearAttenuation(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OuterConeAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OuterConeAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OuterConeAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OuterConeAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OuterConeColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OuterConeColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_QuadraticAttenuation(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_QuadraticAttenuation(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpotLight2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InnerConeIntensity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InnerConeIntensity(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OuterConeIntensity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OuterConeIntensity(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpotLight3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinAttenuationCutoff(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MinAttenuationCutoff(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAttenuationCutoff(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxAttenuationCutoff(float value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpringScalarNaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DampingRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DampingRatio(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpringVector2NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DampingRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DampingRatio(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpringVector3NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DampingRatio(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DampingRatio(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpriteVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Brush(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Brush(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::ISpriteVisual2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Shadow(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Shadow(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IStepEasingFunction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FinalStep(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FinalStep(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialStep(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialStep(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsFinalStepSingleFrame(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsFinalStepSingleFrame(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsInitialStepSingleFrame(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsInitialStepSingleFrame(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StepCount(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StepCount(int32_t value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector2KeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector2NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FinalValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FinalValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialVelocity(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialVelocity(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector2NaturalMotionAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector3KeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector3NaturalMotionAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FinalValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_FinalValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InitialVelocity(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InitialVelocity(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector3NaturalMotionAnimationFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IVector4KeyFrameAnimation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value, void* easingFunction) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVisual>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BorderMode(Windows::UI::Composition::CompositionBorderMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BorderMode(Windows::UI::Composition::CompositionBorderMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CenterPoint(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CenterPoint(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Clip(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Clip(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompositeMode(Windows::UI::Composition::CompositionCompositeMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompositeMode(Windows::UI::Composition::CompositionCompositeMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsVisible(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsVisible(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Opacity(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Opacity(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Orientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Parent(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngle(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngle(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAngleInDegrees(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAngleInDegrees(float value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RotationAxis(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RotationAxis(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Scale(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Scale(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransformMatrix(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVisual2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ParentForTransform(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ParentForTransform(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVisualCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Count(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertAbove(void* newChild, void* sibling) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertAtBottom(void* newChild) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertAtTop(void* newChild) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertBelow(void* newChild, void* sibling) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* child) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAll() noexcept = 0;
+};};
+
+template <> struct abi<Windows::UI::Composition::IVisualFactory>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::UI::Composition::IVisualUnorderedCollection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Count(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Add(void* newVisual) noexcept = 0;
+    virtual int32_t WINRT_CALL Remove(void* visual) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAll() noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_UI_Composition_IAmbientLight
@@ -1120,6 +2362,28 @@ struct consume_Windows_UI_Composition_IAnimationControllerStatics
     float MinPlaybackRate() const;
 };
 template <> struct consume<Windows::UI::Composition::IAnimationControllerStatics> { template <typename D> using type = consume_Windows_UI_Composition_IAnimationControllerStatics<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Composition_IAnimationObject
+{
+    void PopulatePropertyInfo(param::hstring const& propertyName, Windows::UI::Composition::AnimationPropertyInfo const& propertyInfo) const;
+};
+template <> struct consume<Windows::UI::Composition::IAnimationObject> { template <typename D> using type = consume_Windows_UI_Composition_IAnimationObject<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Composition_IAnimationPropertyInfo
+{
+    Windows::UI::Composition::AnimationPropertyAccessMode AccessMode() const;
+    void AccessMode(Windows::UI::Composition::AnimationPropertyAccessMode const& value) const;
+};
+template <> struct consume<Windows::UI::Composition::IAnimationPropertyInfo> { template <typename D> using type = consume_Windows_UI_Composition_IAnimationPropertyInfo<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Composition_IBooleanKeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, bool value) const;
+};
+template <> struct consume<Windows::UI::Composition::IBooleanKeyFrameAnimation> { template <typename D> using type = consume_Windows_UI_Composition_IBooleanKeyFrameAnimation<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Composition_IBounceScalarNaturalMotionAnimation
@@ -1195,6 +2459,13 @@ struct consume_Windows_UI_Composition_ICompositionAnimation3
 template <> struct consume<Windows::UI::Composition::ICompositionAnimation3> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionAnimation3<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Composition_ICompositionAnimation4
+{
+    void SetExpressionReferenceParameter(param::hstring const& parameterName, Windows::UI::Composition::IAnimationObject const& source) const;
+};
+template <> struct consume<Windows::UI::Composition::ICompositionAnimation4> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionAnimation4<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Composition_ICompositionAnimationBase
 {
 };
@@ -1245,10 +2516,10 @@ struct consume_Windows_UI_Composition_ICompositionCapabilities
 {
     bool AreEffectsSupported() const;
     bool AreEffectsFast() const;
-    event_token Changed(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const;
-    using Changed_revoker = event_revoker<Windows::UI::Composition::ICompositionCapabilities>;
+    winrt::event_token Changed(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const;
+    using Changed_revoker = impl::event_revoker<Windows::UI::Composition::ICompositionCapabilities, &impl::abi_t<Windows::UI::Composition::ICompositionCapabilities>::remove_Changed>;
     Changed_revoker Changed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> const& handler) const;
-    void Changed(event_token const& token) const;
+    void Changed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionCapabilities> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionCapabilities<D>; };
 
@@ -1320,10 +2591,10 @@ struct consume_Windows_UI_Composition_ICompositionCommitBatch
 {
     bool IsActive() const;
     bool IsEnded() const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
-    using Completed_revoker = event_revoker<Windows::UI::Composition::ICompositionCommitBatch>;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
+    using Completed_revoker = impl::event_revoker<Windows::UI::Composition::ICompositionCommitBatch, &impl::abi_t<Windows::UI::Composition::ICompositionCommitBatch>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
-    void Completed(event_token const& token) const;
+    void Completed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionCommitBatch> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionCommitBatch<D>; };
 
@@ -1385,7 +2656,7 @@ template <typename D>
 struct consume_Windows_UI_Composition_ICompositionEffectFactory
 {
     Windows::UI::Composition::CompositionEffectBrush CreateBrush() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     Windows::UI::Composition::CompositionEffectFactoryLoadStatus LoadStatus() const;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionEffectFactory> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionEffectFactory<D>; };
@@ -1413,6 +2684,16 @@ struct consume_Windows_UI_Composition_ICompositionEllipseGeometry
     void Radius(Windows::Foundation::Numerics::float2 const& value) const;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionEllipseGeometry> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionEllipseGeometry<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Composition_ICompositionGeometricClip
+{
+    Windows::UI::Composition::CompositionGeometry Geometry() const;
+    void Geometry(Windows::UI::Composition::CompositionGeometry const& value) const;
+    Windows::UI::Composition::CompositionViewBox ViewBox() const;
+    void ViewBox(Windows::UI::Composition::CompositionViewBox const& value) const;
+};
+template <> struct consume<Windows::UI::Composition::ICompositionGeometricClip> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionGeometricClip<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Composition_ICompositionGeometry
@@ -1458,6 +2739,14 @@ struct consume_Windows_UI_Composition_ICompositionGradientBrush
 template <> struct consume<Windows::UI::Composition::ICompositionGradientBrush> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionGradientBrush<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Composition_ICompositionGradientBrush2
+{
+    Windows::UI::Composition::CompositionMappingMode MappingMode() const;
+    void MappingMode(Windows::UI::Composition::CompositionMappingMode const& value) const;
+};
+template <> struct consume<Windows::UI::Composition::ICompositionGradientBrush2> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionGradientBrush2<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Composition_ICompositionGradientBrushFactory
 {
 };
@@ -1467,10 +2756,10 @@ template <typename D>
 struct consume_Windows_UI_Composition_ICompositionGraphicsDevice
 {
     Windows::UI::Composition::CompositionDrawingSurface CreateDrawingSurface(Windows::Foundation::Size const& sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat const& pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode const& alphaMode) const;
-    event_token RenderingDeviceReplaced(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const;
-    using RenderingDeviceReplaced_revoker = event_revoker<Windows::UI::Composition::ICompositionGraphicsDevice>;
+    winrt::event_token RenderingDeviceReplaced(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const;
+    using RenderingDeviceReplaced_revoker = impl::event_revoker<Windows::UI::Composition::ICompositionGraphicsDevice, &impl::abi_t<Windows::UI::Composition::ICompositionGraphicsDevice>::remove_RenderingDeviceReplaced>;
     RenderingDeviceReplaced_revoker RenderingDeviceReplaced(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> const& handler) const;
-    void RenderingDeviceReplaced(event_token const& token) const;
+    void RenderingDeviceReplaced(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionGraphicsDevice> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionGraphicsDevice<D>; };
 
@@ -1614,6 +2903,14 @@ struct consume_Windows_UI_Composition_ICompositionObjectFactory
 template <> struct consume<Windows::UI::Composition::ICompositionObjectFactory> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionObjectFactory<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Composition_ICompositionObjectStatics
+{
+    void StartAnimationWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, param::hstring const& propertyName, Windows::UI::Composition::CompositionAnimation const& animation) const;
+    void StartAnimationGroupWithIAnimationObject(Windows::UI::Composition::IAnimationObject const& target, Windows::UI::Composition::ICompositionAnimationBase const& animation) const;
+};
+template <> struct consume<Windows::UI::Composition::ICompositionObjectStatics> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionObjectStatics<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Composition_ICompositionPath
 {
 };
@@ -1694,10 +2991,10 @@ struct consume_Windows_UI_Composition_ICompositionScopedBatch
     void End() const;
     void Resume() const;
     void Suspend() const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
-    using Completed_revoker = event_revoker<Windows::UI::Composition::ICompositionScopedBatch>;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
+    using Completed_revoker = impl::event_revoker<Windows::UI::Composition::ICompositionScopedBatch, &impl::abi_t<Windows::UI::Composition::ICompositionScopedBatch>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> const& handler) const;
-    void Completed(event_token const& token) const;
+    void Completed(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::UI::Composition::ICompositionScopedBatch> { template <typename D> using type = consume_Windows_UI_Composition_ICompositionScopedBatch<D>; };
 
@@ -1946,6 +3243,17 @@ struct consume_Windows_UI_Composition_ICompositor5
 template <> struct consume<Windows::UI::Composition::ICompositor5> { template <typename D> using type = consume_Windows_UI_Composition_ICompositor5<D>; };
 
 template <typename D>
+struct consume_Windows_UI_Composition_ICompositor6
+{
+    Windows::UI::Composition::CompositionGeometricClip CreateGeometricClip() const;
+    Windows::UI::Composition::CompositionGeometricClip CreateGeometricClip(Windows::UI::Composition::CompositionGeometry const& geometry) const;
+    Windows::UI::Composition::RedirectVisual CreateRedirectVisual() const;
+    Windows::UI::Composition::RedirectVisual CreateRedirectVisual(Windows::UI::Composition::Visual const& source) const;
+    Windows::UI::Composition::BooleanKeyFrameAnimation CreateBooleanKeyFrameAnimation() const;
+};
+template <> struct consume<Windows::UI::Composition::ICompositor6> { template <typename D> using type = consume_Windows_UI_Composition_ICompositor6<D>; };
+
+template <typename D>
 struct consume_Windows_UI_Composition_ICompositorStatics
 {
     float MaxGlobalPlaybackRate() const;
@@ -2178,6 +3486,14 @@ struct consume_Windows_UI_Composition_IQuaternionKeyFrameAnimation
     void InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion const& value, Windows::UI::Composition::CompositionEasingFunction const& easingFunction) const;
 };
 template <> struct consume<Windows::UI::Composition::IQuaternionKeyFrameAnimation> { template <typename D> using type = consume_Windows_UI_Composition_IQuaternionKeyFrameAnimation<D>; };
+
+template <typename D>
+struct consume_Windows_UI_Composition_IRedirectVisual
+{
+    Windows::UI::Composition::Visual Source() const;
+    void Source(Windows::UI::Composition::Visual const& value) const;
+};
+template <> struct consume<Windows::UI::Composition::IRedirectVisual> { template <typename D> using type = consume_Windows_UI_Composition_IRedirectVisual<D>; };
 
 template <typename D>
 struct consume_Windows_UI_Composition_IRenderingDeviceReplacedEventArgs
@@ -2472,1119 +3788,5 @@ struct consume_Windows_UI_Composition_IVisualUnorderedCollection
     void RemoveAll() const;
 };
 template <> struct consume<Windows::UI::Composition::IVisualUnorderedCollection> { template <typename D> using type = consume_Windows_UI_Composition_IVisualUnorderedCollection<D>; };
-
-template <> struct abi<Windows::UI::Composition::IAmbientLight>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IAmbientLight2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Intensity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Intensity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IAnimationController>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PlaybackRate(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_PlaybackRate(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Progress(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Progress(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProgressBehavior(Windows::UI::Composition::AnimationControllerProgressBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall Pause() noexcept = 0;
-    virtual HRESULT __stdcall Resume() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IAnimationControllerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxPlaybackRate(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinPlaybackRate(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IBounceScalarNaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Acceleration(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Acceleration(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Restitution(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Restitution(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IBounceVector2NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Acceleration(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Acceleration(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Restitution(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Restitution(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IBounceVector3NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Acceleration(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Acceleration(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Restitution(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Restitution(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IColorKeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, struct struct_Windows_UI_Color value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ClearAllParameters() noexcept = 0;
-    virtual HRESULT __stdcall ClearParameter(HSTRING key) noexcept = 0;
-    virtual HRESULT __stdcall SetColorParameter(HSTRING key, struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall SetMatrix3x2Parameter(HSTRING key, Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-    virtual HRESULT __stdcall SetMatrix4x4Parameter(HSTRING key, Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
-    virtual HRESULT __stdcall SetQuaternionParameter(HSTRING key, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-    virtual HRESULT __stdcall SetReferenceParameter(HSTRING key, void* compositionObject) noexcept = 0;
-    virtual HRESULT __stdcall SetScalarParameter(HSTRING key, float value) noexcept = 0;
-    virtual HRESULT __stdcall SetVector2Parameter(HSTRING key, Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall SetVector3Parameter(HSTRING key, Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall SetVector4Parameter(HSTRING key, Windows::Foundation::Numerics::float4 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetBooleanParameter(HSTRING key, bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Target(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Target(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InitialValueExpressions(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimationBase>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionAnimationGroup>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Count(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall Add(void* value) noexcept = 0;
-    virtual HRESULT __stdcall Remove(void* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAll() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionBackdropBrush>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionBatchCompletedEventArgs>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionBrush>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionBrushFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AreEffectsSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall AreEffectsFast(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Changed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Changed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionCapabilitiesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** current) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionClip>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionClip2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionClipFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionColorBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionColorGradientStop>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionColorGradientStopCollection>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionCommitBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnded(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionContainerShape>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Shapes(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurface>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AlphaMode(Windows::Graphics::DirectX::DirectXAlphaMode* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PixelFormat(Windows::Graphics::DirectX::DirectXPixelFormat* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Size* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurface2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SizeInt32(struct struct_Windows_Graphics_SizeInt32* value) noexcept = 0;
-    virtual HRESULT __stdcall Resize(struct struct_Windows_Graphics_SizeInt32 sizePixels) noexcept = 0;
-    virtual HRESULT __stdcall Scroll(struct struct_Windows_Graphics_PointInt32 offset) noexcept = 0;
-    virtual HRESULT __stdcall ScrollRect(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept = 0;
-    virtual HRESULT __stdcall ScrollWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect) noexcept = 0;
-    virtual HRESULT __stdcall ScrollRectWithClip(struct struct_Windows_Graphics_PointInt32 offset, struct struct_Windows_Graphics_RectInt32 clipRect, struct struct_Windows_Graphics_RectInt32 scrollRect) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionDrawingSurfaceFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEasingFunction>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEasingFunctionFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEffectBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetSourceParameter(HSTRING name, void** result) noexcept = 0;
-    virtual HRESULT __stdcall SetSourceParameter(HSTRING name, void* source) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEffectFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LoadStatus(Windows::UI::Composition::CompositionEffectFactoryLoadStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEffectSourceParameter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEffectSourceParameterFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, void** instance) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionEllipseGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Center(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Center(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Radius(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Radius(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TrimEnd(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimEnd(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimOffset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimOffset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrimStart(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TrimStart(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGeometryFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGradientBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_ColorStops(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExtendMode(Windows::UI::Composition::CompositionGradientExtendMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InterpolationSpace(Windows::UI::Composition::CompositionColorSpace value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGradientBrushFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGraphicsDevice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDrawingSurface(Windows::Foundation::Size sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_RenderingDeviceReplaced(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_RenderingDeviceReplaced(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionGraphicsDevice2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateDrawingSurface2(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateVirtualDrawingSurface(struct struct_Windows_Graphics_SizeInt32 sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLight>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Targets(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLight2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExclusionsFromTargets(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLight3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsEnabled(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLightFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLineGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Start(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Start(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_End(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_End(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionLinearGradientBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_EndPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EndPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StartPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionMaskBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Mask(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mask(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionNineGridBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BottomInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BottomInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_BottomInsetScale(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BottomInsetScale(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsCenterHollow(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsCenterHollow(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftInsetScale(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftInsetScale(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightInsetScale(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightInsetScale(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TopInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TopInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_TopInsetScale(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TopInsetScale(float value) noexcept = 0;
-    virtual HRESULT __stdcall SetInsets(float inset) noexcept = 0;
-    virtual HRESULT __stdcall SetInsetsWithValues(float left, float top, float right, float bottom) noexcept = 0;
-    virtual HRESULT __stdcall SetInsetScales(float scale) noexcept = 0;
-    virtual HRESULT __stdcall SetInsetScalesWithValues(float left, float top, float right, float bottom) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionObject>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Compositor(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Dispatcher(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall StartAnimation(HSTRING propertyName, void* animation) noexcept = 0;
-    virtual HRESULT __stdcall StopAnimation(HSTRING propertyName) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionObject2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Comment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Comment(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImplicitAnimations(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ImplicitAnimations(void* value) noexcept = 0;
-    virtual HRESULT __stdcall StartAnimationGroup(void* value) noexcept = 0;
-    virtual HRESULT __stdcall StopAnimationGroup(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionObject3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DispatcherQueue(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionObject4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryGetAnimationController(HSTRING propertyName, void** animationController) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionObjectFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionPath>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionPathFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* source, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionPathGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Path(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Path(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionPropertySet>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertColor(HSTRING propertyName, struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall InsertMatrix3x2(HSTRING propertyName, Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertMatrix4x4(HSTRING propertyName, Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertQuaternion(HSTRING propertyName, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-    virtual HRESULT __stdcall InsertScalar(HSTRING propertyName, float value) noexcept = 0;
-    virtual HRESULT __stdcall InsertVector2(HSTRING propertyName, Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertVector3(HSTRING propertyName, Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertVector4(HSTRING propertyName, Windows::Foundation::Numerics::float4 value) noexcept = 0;
-    virtual HRESULT __stdcall TryGetColor(HSTRING propertyName, struct struct_Windows_UI_Color* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetMatrix3x2(HSTRING propertyName, Windows::Foundation::Numerics::float3x2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetMatrix4x4(HSTRING propertyName, Windows::Foundation::Numerics::float4x4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetQuaternion(HSTRING propertyName, Windows::Foundation::Numerics::quaternion* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetScalar(HSTRING propertyName, float* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetVector2(HSTRING propertyName, Windows::Foundation::Numerics::float2* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetVector3(HSTRING propertyName, Windows::Foundation::Numerics::float3* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-    virtual HRESULT __stdcall TryGetVector4(HSTRING propertyName, Windows::Foundation::Numerics::float4* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionPropertySet2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertBoolean(HSTRING propertyName, bool value) noexcept = 0;
-    virtual HRESULT __stdcall TryGetBoolean(HSTRING propertyName, bool* value, Windows::UI::Composition::CompositionGetValueStatus* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionRectangleGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionRoundedRectangleGeometry>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CornerRadius(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CornerRadius(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionScopedBatch>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnded(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall End() noexcept = 0;
-    virtual HRESULT __stdcall Resume() noexcept = 0;
-    virtual HRESULT __stdcall Suspend() noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionShadow>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionShadowFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionShape>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionShapeFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionSpriteShape>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FillBrush(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FillBrush(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Geometry(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Geometry(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsStrokeNonScaling(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsStrokeNonScaling(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeBrush(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeBrush(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeDashArray(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeDashCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeDashOffset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeDashOffset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeEndCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeLineJoin(Windows::UI::Composition::CompositionStrokeLineJoin value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeMiterLimit(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeMiterLimit(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeStartCap(Windows::UI::Composition::CompositionStrokeCap value) noexcept = 0;
-    virtual HRESULT __stdcall get_StrokeThickness(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StrokeThickness(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionSurface>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionSurfaceBrush>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_HorizontalAlignmentRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalAlignmentRatio(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept = 0;
-    virtual HRESULT __stdcall get_Surface(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Surface(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignmentRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalAlignmentRatio(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionSurfaceBrush2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float3x2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float3x2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionTarget>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Root(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Root(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionTargetFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionViewBox>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HorizontalAlignmentRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HorizontalAlignmentRatio(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Stretch(Windows::UI::Composition::CompositionStretch* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Stretch(Windows::UI::Composition::CompositionStretch value) noexcept = 0;
-    virtual HRESULT __stdcall get_VerticalAlignmentRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_VerticalAlignmentRatio(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionVirtualDrawingSurface>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Trim(uint32_t __rectsSize, struct struct_Windows_Graphics_RectInt32* rects) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositor>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateColorKeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateColorBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateColorBrushWithColor(struct struct_Windows_UI_Color color, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainerVisual(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateCubicBezierEasingFunction(Windows::Foundation::Numerics::float2 controlPoint1, Windows::Foundation::Numerics::float2 controlPoint2, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateEffectFactory(void* graphicsEffect, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateEffectFactoryWithProperties(void* graphicsEffect, void* animatableProperties, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateExpressionAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateExpressionAnimationWithExpression(HSTRING expression, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateInsetClip(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateInsetClipWithInsets(float leftInset, float topInset, float rightInset, float bottomInset, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateLinearEasingFunction(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreatePropertySet(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateQuaternionKeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateScalarKeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateScopedBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpriteVisual(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSurfaceBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSurfaceBrushWithSurface(void* surface, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateTargetForCurrentView(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateVector2KeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateVector3KeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateVector4KeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetCommitBatch(Windows::UI::Composition::CompositionBatchTypes batchType, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositor2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateAmbientLight(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateAnimationGroup(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateBackdropBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDistantLight(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDropShadow(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateImplicitAnimationCollection(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateLayerVisual(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateMaskBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateNineGridBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreatePointLight(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpotLight(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateStepEasingFunction(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateStepEasingFunctionWithStepCount(int32_t stepCount, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositor3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateHostBackdropBrush(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositor4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateColorGradientStop(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateColorGradientStopWithOffsetAndColor(float offset, struct struct_Windows_UI_Color color, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateLinearGradientBrush(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpringScalarAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpringVector2Animation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpringVector3Animation(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositor5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Comment(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Comment(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_GlobalPlaybackRate(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_GlobalPlaybackRate(float value) noexcept = 0;
-    virtual HRESULT __stdcall CreateBounceScalarAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateBounceVector2Animation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateBounceVector3Animation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateContainerShape(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateEllipseGeometry(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateLineGeometry(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreatePathGeometry(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreatePathGeometryWithPath(void* path, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreatePathKeyFrameAnimation(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateRectangleGeometry(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateRoundedRectangleGeometry(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateShapeVisual(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpriteShape(void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateSpriteShapeWithGeometry(void* geometry, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateViewBox(void** result) noexcept = 0;
-    virtual HRESULT __stdcall RequestCommitAsync(void** action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ICompositorStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxGlobalPlaybackRate(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinGlobalPlaybackRate(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IContainerVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Children(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IContainerVisualFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ICubicBezierEasingFunction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ControlPoint1(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ControlPoint2(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IDistantLight>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoordinateSpace(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CoordinateSpace(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Direction(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Direction(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IDistantLight2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Intensity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Intensity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IDropShadow>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BlurRadius(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BlurRadius(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mask(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Mask(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opacity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IDropShadow2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SourcePolicy(Windows::UI::Composition::CompositionDropShadowSourcePolicy value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IExpressionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Expression(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Expression(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IImplicitAnimationCollection>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IInsetClip>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BottomInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BottomInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_LeftInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LeftInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RightInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RightInset(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_TopInset(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TopInset(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DelayTime(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Duration(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall get_IterationCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IterationCount(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_KeyFrameCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Direction(Windows::UI::Composition::AnimationDirection* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Direction(Windows::UI::Composition::AnimationDirection value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IKeyFrameAnimation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IKeyFrameAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::ILayerVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Effect(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Effect(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ILayerVisual2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Shadow(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Shadow(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ILinearEasingFunction>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::INaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept = 0;
-    virtual HRESULT __stdcall get_DelayTime(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DelayTime(Windows::Foundation::TimeSpan value) noexcept = 0;
-    virtual HRESULT __stdcall get_StopBehavior(Windows::UI::Composition::AnimationStopBehavior* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::INaturalMotionAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IPathKeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, void* path) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, void* path, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IPointLight>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Color(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Color(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_ConstantAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ConstantAttenuation(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoordinateSpace(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CoordinateSpace(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LinearAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LinearAttenuation(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_QuadraticAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_QuadraticAttenuation(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IPointLight2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Intensity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Intensity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IPointLight3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinAttenuationCutoff(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinAttenuationCutoff(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAttenuationCutoff(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxAttenuationCutoff(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IQuaternionKeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::quaternion value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_GraphicsDevice(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IScalarKeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, float value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, float value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IScalarNaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FinalValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FinalValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialVelocity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialVelocity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IScalarNaturalMotionAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IShapeVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Shapes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ViewBox(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ViewBox(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpotLight>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ConstantAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ConstantAttenuation(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_CoordinateSpace(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CoordinateSpace(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Direction(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Direction(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_InnerConeAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InnerConeAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_InnerConeAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InnerConeAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_InnerConeColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InnerConeColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_LinearAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LinearAttenuation(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_OuterConeAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OuterConeAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_OuterConeAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OuterConeAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_OuterConeColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OuterConeColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_QuadraticAttenuation(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_QuadraticAttenuation(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpotLight2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InnerConeIntensity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InnerConeIntensity(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_OuterConeIntensity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OuterConeIntensity(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpotLight3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinAttenuationCutoff(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MinAttenuationCutoff(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAttenuationCutoff(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxAttenuationCutoff(float value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpringScalarNaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DampingRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DampingRatio(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpringVector2NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DampingRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DampingRatio(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpringVector3NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DampingRatio(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DampingRatio(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Period(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Period(Windows::Foundation::TimeSpan value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpriteVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Brush(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Brush(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::ISpriteVisual2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Shadow(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Shadow(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IStepEasingFunction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FinalStep(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_FinalStep(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialStep(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialStep(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsFinalStepSingleFrame(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsFinalStepSingleFrame(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsInitialStepSingleFrame(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsInitialStepSingleFrame(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_StepCount(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StepCount(int32_t value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector2KeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float2 value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector2NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FinalValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FinalValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialVelocity(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialVelocity(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector2NaturalMotionAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector3KeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float3 value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector3NaturalMotionAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FinalValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_FinalValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InitialVelocity(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InitialVelocity(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector3NaturalMotionAnimationFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IVector4KeyFrameAnimation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall InsertKeyFrame(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value) noexcept = 0;
-    virtual HRESULT __stdcall InsertKeyFrameWithEasingFunction(float normalizedProgressKey, Windows::Foundation::Numerics::float4 value, void* easingFunction) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVisual>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AnchorPoint(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AnchorPoint(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility value) noexcept = 0;
-    virtual HRESULT __stdcall get_BorderMode(Windows::UI::Composition::CompositionBorderMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BorderMode(Windows::UI::Composition::CompositionBorderMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_CenterPoint(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CenterPoint(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Clip(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Clip(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompositeMode(Windows::UI::Composition::CompositionCompositeMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompositeMode(Windows::UI::Composition::CompositionCompositeMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsVisible(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsVisible(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Opacity(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Opacity(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_Orientation(Windows::Foundation::Numerics::quaternion* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Orientation(Windows::Foundation::Numerics::quaternion value) noexcept = 0;
-    virtual HRESULT __stdcall get_Parent(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngle(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngle(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAngleInDegrees(float* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAngleInDegrees(float value) noexcept = 0;
-    virtual HRESULT __stdcall get_RotationAxis(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RotationAxis(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Scale(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Scale(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_Size(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Size(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransformMatrix(Windows::Foundation::Numerics::float4x4* value) noexcept = 0;
-    virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVisual2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ParentForTransform(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ParentForTransform(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 value) noexcept = 0;
-    virtual HRESULT __stdcall get_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2* value) noexcept = 0;
-    virtual HRESULT __stdcall put_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVisualCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Count(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall InsertAbove(void* newChild, void* sibling) noexcept = 0;
-    virtual HRESULT __stdcall InsertAtBottom(void* newChild) noexcept = 0;
-    virtual HRESULT __stdcall InsertAtTop(void* newChild) noexcept = 0;
-    virtual HRESULT __stdcall InsertBelow(void* newChild, void* sibling) noexcept = 0;
-    virtual HRESULT __stdcall Remove(void* child) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAll() noexcept = 0;
-};};
-
-template <> struct abi<Windows::UI::Composition::IVisualFactory>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::UI::Composition::IVisualUnorderedCollection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Count(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall Add(void* newVisual) noexcept = 0;
-    virtual HRESULT __stdcall Remove(void* visual) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAll() noexcept = 0;
-};};
 
 }

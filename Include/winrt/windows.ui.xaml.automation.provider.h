@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ui.xaml.automation.provider.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1305,7 +1317,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE NavigateCustom(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             
                         };
@@ -1402,8 +1414,8 @@ namespace ABI {
                                 /* [size_is(, *(__valueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__valueSize)) HSTRING * * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetGrabbedItems(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             
                         };
@@ -1597,7 +1609,7 @@ namespace ABI {
                             virtual HRESULT STDMETHODCALLTYPE GetItem(
                                 /* [in] */INT32 row,
                                 /* [in] */INT32 column,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * result
                                 ) = 0;
                             
                         };
@@ -1724,7 +1736,7 @@ namespace ABI {
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * startAfter,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::IAutomationProperty * automationProperty,
                                 /* [in] */__RPC__in_opt IInspectable * value,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * result
                                 ) = 0;
                             
                         };
@@ -1769,12 +1781,12 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out INT32 * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetSupportedViews(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) INT32 * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) INT32 * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetViewName(
                                 /* [in] */INT32 viewId,
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE SetCurrentView(
                                 /* [in] */INT32 viewId
@@ -1819,7 +1831,7 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetUnderlyingObjectModel(
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             
                         };
@@ -2080,8 +2092,8 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out boolean * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetSelection(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             
                         };
@@ -2126,12 +2138,12 @@ namespace ABI {
                                 /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAnnotationObjects(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAnnotationTypes(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::AnnotationType * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::AnnotationType * * result
                                 ) = 0;
                             
                         };
@@ -2174,7 +2186,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetItemByName(
                                 /* [in] */__RPC__in HSTRING name,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * result
                                 ) = 0;
                             
                         };
@@ -2319,12 +2331,12 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetColumnHeaderItems(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetRowHeaderItems(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             
                         };
@@ -2369,12 +2381,12 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::RowOrColumnMajor * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetColumnHeaders(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetRowHeaders(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             
                         };
@@ -2465,10 +2477,10 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE GetActiveComposition(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetConversionTarget(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             
                         };
@@ -2516,20 +2528,20 @@ namespace ABI {
                                 /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Automation::SupportedTextSelection * value
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetSelection(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetVisibleRanges(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RangeFromChild(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * childElement,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE RangeFromPoint(
                                 /* [in] */ABI::Windows::Foundation::Point screenLocation,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             
                         };
@@ -2576,7 +2588,7 @@ namespace ABI {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE RangeFromAnnotation(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * annotationElement,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetCaretRange(
                                 /* [out] */__RPC__out boolean * isActive,
@@ -2622,17 +2634,17 @@ namespace ABI {
                         {
                         public:
                             virtual HRESULT STDMETHODCALLTYPE Clone(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Compare(
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * textRangeProvider,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE CompareEndpoints(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint,
                                 /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * textRangeProvider,
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint targetEndpoint,
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE ExpandToEnclosingUnit(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextUnit unit
@@ -2641,39 +2653,39 @@ namespace ABI {
                                 /* [in] */INT32 attributeId,
                                 /* [in] */__RPC__in_opt IInspectable * value,
                                 /* [in] */boolean backward,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE FindText(
                                 /* [in] */__RPC__in HSTRING text,
                                 /* [in] */boolean backward,
                                 /* [in] */boolean ignoreCase,
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetAttributeValue(
                                 /* [in] */INT32 attributeId,
-                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetBoundingRectangles(
                                 /* [out] */__RPC__out UINT32 * __returnValueSize,
                                 /* [size_is(, *(__returnValueSize)), out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) DOUBLE * * returnValue
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetEnclosingElement(
-                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetText(
                                 /* [in] */INT32 maxLength,
-                                /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+                                /* [retval, out] */__RPC__deref_out_opt HSTRING * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE Move(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextUnit unit,
                                 /* [in] */INT32 count,
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE MoveEndpointByUnit(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint,
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextUnit unit,
                                 /* [in] */INT32 count,
-                                /* [retval, out] */__RPC__out INT32 * returnValue
+                                /* [retval, out] */__RPC__out INT32 * result
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE MoveEndpointByRange(
                                 /* [in] */ABI::Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint,
@@ -2687,8 +2699,8 @@ namespace ABI {
                                 /* [in] */boolean alignToTop
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE GetChildren(
-                                /* [out] */__RPC__out UINT32 * __returnValueSize,
-                                /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * returnValue
+                                /* [out] */__RPC__out UINT32 * __resultSize,
+                                /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) ABI::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple * * * result
                                 ) = 0;
                             
                         };
@@ -3048,7 +3060,7 @@ namespace ABI {
                                 ) = 0;
                             virtual HRESULT STDMETHODCALLTYPE WaitForInputIdle(
                                 /* [in] */INT32 milliseconds,
-                                /* [retval, out] */__RPC__out boolean * returnValue
+                                /* [retval, out] */__RPC__out boolean * result
                                 ) = 0;
                             
                         };
@@ -3604,7 +3616,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *NavigateCustom )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CICustomNavigationProvider * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CPeers_CAutomationNavigationDirection direction,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -3634,8 +3646,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CICustomNavigationPro
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CICustomNavigationProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CICustomNavigationProvider_NavigateCustom(This,direction,returnValue) \
-    ( (This)->lpVtbl->NavigateCustom(This,direction,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CICustomNavigationProvider_NavigateCustom(This,direction,result) \
+    ( (This)->lpVtbl->NavigateCustom(This,direction,result) )
 
 
 #endif /* COBJMACROS */
@@ -3804,8 +3816,8 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetGrabbedItems )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIDragProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     END_INTERFACE
     
@@ -3844,8 +3856,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIDragProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIDragProvider_get_DropEffects(This,__valueSize,value) \
     ( (This)->lpVtbl->get_DropEffects(This,__valueSize,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIDragProvider_GetGrabbedItems(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetGrabbedItems(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIDragProvider_GetGrabbedItems(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetGrabbedItems(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -4232,7 +4244,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIGridProvider * This,
         /* [in] */INT32 row,
         /* [in] */INT32 column,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * result
         );
     END_INTERFACE
     
@@ -4268,8 +4280,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIGridProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIGridProvider_get_RowCount(This,value) \
     ( (This)->lpVtbl->get_RowCount(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIGridProvider_GetItem(This,row,column,returnValue) \
-    ( (This)->lpVtbl->GetItem(This,row,column,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIGridProvider_GetItem(This,row,column,result) \
+    ( (This)->lpVtbl->GetItem(This,row,column,result) )
 
 
 #endif /* COBJMACROS */
@@ -4506,7 +4518,7 @@ HRESULT ( STDMETHODCALLTYPE *FindItemByProperty )(
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * startAfter,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CIAutomationProperty * automationProperty,
         /* [in] */__RPC__in_opt IInspectable * value,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * result
         );
     END_INTERFACE
     
@@ -4536,8 +4548,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIItemContainerProvid
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIItemContainerProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIItemContainerProvider_FindItemByProperty(This,startAfter,automationProperty,value,returnValue) \
-    ( (This)->lpVtbl->FindItemByProperty(This,startAfter,automationProperty,value,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIItemContainerProvider_FindItemByProperty(This,startAfter,automationProperty,value,result) \
+    ( (This)->lpVtbl->FindItemByProperty(This,startAfter,automationProperty,value,result) )
 
 
 #endif /* COBJMACROS */
@@ -4600,13 +4612,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetSupportedViews )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) INT32 * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) INT32 * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetViewName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider * This,
         /* [in] */INT32 viewId,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *SetCurrentView )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider * This,
@@ -4643,11 +4655,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvide
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_get_CurrentView(This,value) \
     ( (This)->lpVtbl->get_CurrentView(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_GetSupportedViews(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetSupportedViews(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_GetSupportedViews(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetSupportedViews(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_GetViewName(This,viewId,returnValue) \
-    ( (This)->lpVtbl->GetViewName(This,viewId,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_GetViewName(This,viewId,result) \
+    ( (This)->lpVtbl->GetViewName(This,viewId,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIMultipleViewProvider_SetCurrentView(This,viewId) \
     ( (This)->lpVtbl->SetCurrentView(This,viewId) )
@@ -4709,7 +4721,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetUnderlyingObjectModel )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIObjectModelProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     END_INTERFACE
     
@@ -4739,8 +4751,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIObjectModelProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIObjectModelProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIObjectModelProvider_GetUnderlyingObjectModel(This,returnValue) \
-    ( (This)->lpVtbl->GetUnderlyingObjectModel(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIObjectModelProvider_GetUnderlyingObjectModel(This,result) \
+    ( (This)->lpVtbl->GetUnderlyingObjectModel(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -5284,8 +5296,8 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetSelection )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISelectionProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     END_INTERFACE
     
@@ -5321,8 +5333,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISelectionProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISelectionProvider_get_IsSelectionRequired(This,value) \
     ( (This)->lpVtbl->get_IsSelectionRequired(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISelectionProvider_GetSelection(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetSelection(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISelectionProvider_GetSelection(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetSelection(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -5385,13 +5397,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetAnnotationObjects )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAnnotationTypes )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CAnnotationType * * result
         );
     END_INTERFACE
     
@@ -5424,11 +5436,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProv
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider_get_Formula(This,value) \
     ( (This)->lpVtbl->get_Formula(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider_GetAnnotationObjects(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetAnnotationObjects(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider_GetAnnotationObjects(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetAnnotationObjects(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider_GetAnnotationTypes(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetAnnotationTypes(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetItemProvider_GetAnnotationTypes(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetAnnotationTypes(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -5488,7 +5500,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *GetItemByName )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetProvider * This,
         /* [in] */__RPC__in HSTRING name,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * result
         );
     END_INTERFACE
     
@@ -5518,8 +5530,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetProvider_GetItemByName(This,name,returnValue) \
-    ( (This)->lpVtbl->GetItemByName(This,name,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CISpreadsheetProvider_GetItemByName(This,name,result) \
+    ( (This)->lpVtbl->GetItemByName(This,name,result) )
 
 
 #endif /* COBJMACROS */
@@ -5806,13 +5818,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetColumnHeaderItems )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetRowHeaderItems )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     END_INTERFACE
     
@@ -5842,11 +5854,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider_GetColumnHeaderItems(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetColumnHeaderItems(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider_GetColumnHeaderItems(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetColumnHeaderItems(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider_GetRowHeaderItems(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetRowHeaderItems(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableItemProvider_GetRowHeaderItems(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetRowHeaderItems(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -5909,13 +5921,13 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetColumnHeaders )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetRowHeaders )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     END_INTERFACE
     
@@ -5948,11 +5960,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider_get_RowOrColumnMajor(This,value) \
     ( (This)->lpVtbl->get_RowOrColumnMajor(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider_GetColumnHeaders(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetColumnHeaders(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider_GetColumnHeaders(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetColumnHeaders(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider_GetRowHeaders(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetRowHeaders(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITableProvider_GetRowHeaders(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetRowHeaders(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -6112,11 +6124,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *GetActiveComposition )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetConversionTarget )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     END_INTERFACE
     
@@ -6146,11 +6158,11 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider_GetActiveComposition(This,returnValue) \
-    ( (This)->lpVtbl->GetActiveComposition(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider_GetActiveComposition(This,result) \
+    ( (This)->lpVtbl->GetActiveComposition(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider_GetConversionTarget(This,returnValue) \
-    ( (This)->lpVtbl->GetConversionTarget(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextEditProvider_GetConversionTarget(This,result) \
+    ( (This)->lpVtbl->GetConversionTarget(This,result) )
 
 
 #endif /* COBJMACROS */
@@ -6217,23 +6229,23 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetSelection )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetVisibleRanges )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RangeFromChild )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * childElement,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *RangeFromPoint )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider * This,
         /* [in] */__x_ABI_CWindows_CFoundation_CPoint screenLocation,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     END_INTERFACE
     
@@ -6269,17 +6281,17 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_get_SupportedTextSelection(This,value) \
     ( (This)->lpVtbl->get_SupportedTextSelection(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_GetSelection(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetSelection(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_GetSelection(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetSelection(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_GetVisibleRanges(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetVisibleRanges(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_GetVisibleRanges(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetVisibleRanges(This,__resultSize,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_RangeFromChild(This,childElement,returnValue) \
-    ( (This)->lpVtbl->RangeFromChild(This,childElement,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_RangeFromChild(This,childElement,result) \
+    ( (This)->lpVtbl->RangeFromChild(This,childElement,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_RangeFromPoint(This,screenLocation,returnValue) \
-    ( (This)->lpVtbl->RangeFromPoint(This,screenLocation,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider_RangeFromPoint(This,screenLocation,result) \
+    ( (This)->lpVtbl->RangeFromPoint(This,screenLocation,result) )
 
 
 #endif /* COBJMACROS */
@@ -6343,7 +6355,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
 HRESULT ( STDMETHODCALLTYPE *RangeFromAnnotation )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2 * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * annotationElement,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetCaretRange )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2 * This,
@@ -6378,8 +6390,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2_RangeFromAnnotation(This,annotationElement,returnValue) \
-    ( (This)->lpVtbl->RangeFromAnnotation(This,annotationElement,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2_RangeFromAnnotation(This,annotationElement,result) \
+    ( (This)->lpVtbl->RangeFromAnnotation(This,annotationElement,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextProvider2_GetCaretRange(This,isActive,returnValue) \
     ( (This)->lpVtbl->GetCaretRange(This,isActive,returnValue) )
@@ -6441,19 +6453,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     );
 HRESULT ( STDMETHODCALLTYPE *Clone )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *Compare )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * textRangeProvider,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     HRESULT ( STDMETHODCALLTYPE *CompareEndpoints )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CText_CTextPatternRangeEndpoint endpoint,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * textRangeProvider,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CText_CTextPatternRangeEndpoint targetEndpoint,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *ExpandToEnclosingUnit )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
@@ -6464,19 +6476,19 @@ HRESULT ( STDMETHODCALLTYPE *Clone )(
         /* [in] */INT32 attributeId,
         /* [in] */__RPC__in_opt IInspectable * value,
         /* [in] */boolean backward,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *FindText )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */__RPC__in HSTRING text,
         /* [in] */boolean backward,
         /* [in] */boolean ignoreCase,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetAttributeValue )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */INT32 attributeId,
-        /* [retval, out] */__RPC__deref_out_opt IInspectable * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetBoundingRectangles )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
@@ -6485,25 +6497,25 @@ HRESULT ( STDMETHODCALLTYPE *Clone )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetEnclosingElement )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
-        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * returnValue
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * result
         );
     HRESULT ( STDMETHODCALLTYPE *GetText )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */INT32 maxLength,
-        /* [retval, out] */__RPC__deref_out_opt HSTRING * returnValue
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
         );
     HRESULT ( STDMETHODCALLTYPE *Move )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CText_CTextUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveEndpointByUnit )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CText_CTextPatternRangeEndpoint endpoint,
         /* [in] */__x_ABI_CWindows_CUI_CXaml_CAutomation_CText_CTextUnit unit,
         /* [in] */INT32 count,
-        /* [retval, out] */__RPC__out INT32 * returnValue
+        /* [retval, out] */__RPC__out INT32 * result
         );
     HRESULT ( STDMETHODCALLTYPE *MoveEndpointByRange )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
@@ -6526,8 +6538,8 @@ HRESULT ( STDMETHODCALLTYPE *Clone )(
         );
     HRESULT ( STDMETHODCALLTYPE *GetChildren )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider * This,
-        /* [out] */__RPC__out UINT32 * __returnValueSize,
-        /* [size_is(, *(__returnValueSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__returnValueSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * returnValue
+        /* [out] */__RPC__out UINT32 * __resultSize,
+        /* [size_is(, *(__resultSize)), retval, out] */__RPC__deref_out_ecount_full_opt(*(__resultSize)) __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIIRawElementProviderSimple * * * result
         );
     END_INTERFACE
     
@@ -6557,41 +6569,41 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Clone(This,returnValue) \
-    ( (This)->lpVtbl->Clone(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Clone(This,result) \
+    ( (This)->lpVtbl->Clone(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Compare(This,textRangeProvider,returnValue) \
-    ( (This)->lpVtbl->Compare(This,textRangeProvider,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Compare(This,textRangeProvider,result) \
+    ( (This)->lpVtbl->Compare(This,textRangeProvider,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_CompareEndpoints(This,endpoint,textRangeProvider,targetEndpoint,returnValue) \
-    ( (This)->lpVtbl->CompareEndpoints(This,endpoint,textRangeProvider,targetEndpoint,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_CompareEndpoints(This,endpoint,textRangeProvider,targetEndpoint,result) \
+    ( (This)->lpVtbl->CompareEndpoints(This,endpoint,textRangeProvider,targetEndpoint,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_ExpandToEnclosingUnit(This,unit) \
     ( (This)->lpVtbl->ExpandToEnclosingUnit(This,unit) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_FindAttribute(This,attributeId,value,backward,returnValue) \
-    ( (This)->lpVtbl->FindAttribute(This,attributeId,value,backward,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_FindAttribute(This,attributeId,value,backward,result) \
+    ( (This)->lpVtbl->FindAttribute(This,attributeId,value,backward,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_FindText(This,text,backward,ignoreCase,returnValue) \
-    ( (This)->lpVtbl->FindText(This,text,backward,ignoreCase,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_FindText(This,text,backward,ignoreCase,result) \
+    ( (This)->lpVtbl->FindText(This,text,backward,ignoreCase,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetAttributeValue(This,attributeId,returnValue) \
-    ( (This)->lpVtbl->GetAttributeValue(This,attributeId,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetAttributeValue(This,attributeId,result) \
+    ( (This)->lpVtbl->GetAttributeValue(This,attributeId,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetBoundingRectangles(This,__returnValueSize,returnValue) \
     ( (This)->lpVtbl->GetBoundingRectangles(This,__returnValueSize,returnValue) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetEnclosingElement(This,returnValue) \
-    ( (This)->lpVtbl->GetEnclosingElement(This,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetEnclosingElement(This,result) \
+    ( (This)->lpVtbl->GetEnclosingElement(This,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetText(This,maxLength,returnValue) \
-    ( (This)->lpVtbl->GetText(This,maxLength,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetText(This,maxLength,result) \
+    ( (This)->lpVtbl->GetText(This,maxLength,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Move(This,unit,count,returnValue) \
-    ( (This)->lpVtbl->Move(This,unit,count,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_Move(This,unit,count,result) \
+    ( (This)->lpVtbl->Move(This,unit,count,result) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_MoveEndpointByUnit(This,endpoint,unit,count,returnValue) \
-    ( (This)->lpVtbl->MoveEndpointByUnit(This,endpoint,unit,count,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_MoveEndpointByUnit(This,endpoint,unit,count,result) \
+    ( (This)->lpVtbl->MoveEndpointByUnit(This,endpoint,unit,count,result) )
 
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_MoveEndpointByRange(This,endpoint,textRangeProvider,targetEndpoint) \
     ( (This)->lpVtbl->MoveEndpointByRange(This,endpoint,textRangeProvider,targetEndpoint) )
@@ -6608,8 +6620,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_ScrollIntoView(This,alignToTop) \
     ( (This)->lpVtbl->ScrollIntoView(This,alignToTop) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetChildren(This,__returnValueSize,returnValue) \
-    ( (This)->lpVtbl->GetChildren(This,__returnValueSize,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CITextRangeProvider_GetChildren(This,__resultSize,result) \
+    ( (This)->lpVtbl->GetChildren(This,__resultSize,result) )
 
 
 #endif /* COBJMACROS */
@@ -7338,7 +7350,7 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     HRESULT ( STDMETHODCALLTYPE *WaitForInputIdle )(
         __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIWindowProvider * This,
         /* [in] */INT32 milliseconds,
-        /* [retval, out] */__RPC__out boolean * returnValue
+        /* [retval, out] */__RPC__out boolean * result
         );
     END_INTERFACE
     
@@ -7392,8 +7404,8 @@ interface __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIWindowProvider
 #define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIWindowProvider_SetVisualState(This,state) \
     ( (This)->lpVtbl->SetVisualState(This,state) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIWindowProvider_WaitForInputIdle(This,milliseconds,returnValue) \
-    ( (This)->lpVtbl->WaitForInputIdle(This,milliseconds,returnValue) )
+#define __x_ABI_CWindows_CUI_CXaml_CAutomation_CProvider_CIWindowProvider_WaitForInputIdle(This,milliseconds,result) \
+    ( (This)->lpVtbl->WaitForInputIdle(This,milliseconds,result) )
 
 
 #endif /* COBJMACROS */

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.ApplicationModel.DataTransfer.DragDrop.0.h"
 #include "winrt/impl/Windows.Foundation.0.h"
 #include "winrt/impl/Windows.Graphics.Imaging.0.h"
+#include "winrt/impl/Windows.UI.0.h"
 #include "winrt/impl/Windows.UI.Composition.0.h"
 #include "winrt/impl/Windows.UI.Core.0.h"
 #include "winrt/impl/Windows.UI.Input.0.h"
@@ -134,6 +135,34 @@ struct WINRT_EBO IBringIntoViewRequestedEventArgs :
     IBringIntoViewRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IBrushTransition :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBrushTransition>
+{
+    IBrushTransition(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IBrushTransitionFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBrushTransitionFactory>
+{
+    IBrushTransitionFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IColorPaletteResources :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IColorPaletteResources>
+{
+    IColorPaletteResources(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IColorPaletteResourcesFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IColorPaletteResourcesFactory>
+{
+    IColorPaletteResourcesFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ICornerRadiusHelper :
     Windows::Foundation::IInspectable,
     impl::consume_t<ICornerRadiusHelper>
@@ -216,6 +245,13 @@ struct WINRT_EBO IDebugSettings3 :
     impl::consume_t<IDebugSettings3>
 {
     IDebugSettings3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IDebugSettings4 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDebugSettings4>
+{
+    IDebugSettings4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IDependencyObject :
@@ -358,6 +394,48 @@ struct WINRT_EBO IDurationHelperStatics :
     IDurationHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IEffectiveViewportChangedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IEffectiveViewportChangedEventArgs>
+{
+    IEffectiveViewportChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IElementFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IElementFactory>
+{
+    IElementFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IElementFactoryGetArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IElementFactoryGetArgs>
+{
+    IElementFactoryGetArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IElementFactoryGetArgsFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IElementFactoryGetArgsFactory>
+{
+    IElementFactoryGetArgsFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IElementFactoryRecycleArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IElementFactoryRecycleArgs>
+{
+    IElementFactoryRecycleArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IElementFactoryRecycleArgsFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IElementFactoryRecycleArgsFactory>
+{
+    IElementFactoryRecycleArgsFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IElementSoundPlayer :
     Windows::Foundation::IInspectable,
     impl::consume_t<IElementSoundPlayer>
@@ -435,6 +513,13 @@ struct WINRT_EBO IFrameworkElement6 :
     IFrameworkElement6(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IFrameworkElement7 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFrameworkElement7>
+{
+    IFrameworkElement7(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IFrameworkElementFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IFrameworkElementFactory>
@@ -454,6 +539,13 @@ struct WINRT_EBO IFrameworkElementOverrides2 :
     impl::consume_t<IFrameworkElementOverrides2>
 {
     IFrameworkElementOverrides2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IFrameworkElementProtected7 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IFrameworkElementProtected7>
+{
+    IFrameworkElementProtected7(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IFrameworkElementStatics :
@@ -638,6 +730,20 @@ struct WINRT_EBO IRoutedEventArgsFactory :
     IRoutedEventArgsFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IScalarTransition :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IScalarTransition>
+{
+    IScalarTransition(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IScalarTransitionFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IScalarTransitionFactory>
+{
+    IScalarTransitionFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO ISetter :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISetter>
@@ -661,8 +767,7 @@ struct WINRT_EBO ISetterBase :
 
 struct WINRT_EBO ISetterBaseCollection :
     Windows::Foundation::IInspectable,
-    impl::consume_t<ISetterBaseCollection>,
-    impl::require<ISetterBaseCollection, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::SetterBase>, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::SetterBase>>
+    impl::consume_t<ISetterBaseCollection>
 {
     ISetterBaseCollection(std::nullptr_t = nullptr) noexcept {}
 };
@@ -856,6 +961,13 @@ struct WINRT_EBO IUIElement8 :
     IUIElement8(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IUIElement9 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IUIElement9>
+{
+    IUIElement9(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IUIElementFactory :
     Windows::Foundation::IInspectable,
     impl::consume_t<IUIElementFactory>
@@ -882,6 +994,13 @@ struct WINRT_EBO IUIElementOverrides8 :
     impl::consume_t<IUIElementOverrides8>
 {
     IUIElementOverrides8(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IUIElementOverrides9 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IUIElementOverrides9>
+{
+    IUIElementOverrides9(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IUIElementStatics :
@@ -940,11 +1059,32 @@ struct WINRT_EBO IUIElementStatics8 :
     IUIElementStatics8(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IUIElementStatics9 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IUIElementStatics9>
+{
+    IUIElementStatics9(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IUnhandledExceptionEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IUnhandledExceptionEventArgs>
 {
     IUnhandledExceptionEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IVector3Transition :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IVector3Transition>
+{
+    IVector3Transition(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IVector3TransitionFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IVector3TransitionFactory>
+{
+    IVector3TransitionFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IVisualState :

@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.ApplicationModel.Background.2.h"
@@ -304,9 +304,9 @@ template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransfe
     return value;
 }
 
-template <typename D> GUID consume_Windows_Networking_BackgroundTransfer_IBackgroundTransferOperation<D>::Guid() const
+template <typename D> winrt::guid consume_Windows_Networking_BackgroundTransfer_IBackgroundTransferOperation<D>::Guid() const
 {
-    GUID value{};
+    winrt::guid value{};
     check_hresult(WINRT_SHIM(Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation)->get_Guid(put_abi(value)));
     return value;
 }
@@ -625,21 +625,21 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::Network
     return value;
 }
 
-template <typename D> event_token consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const
+template <typename D> winrt::event_token consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Networking::BackgroundTransfer::IDownloadOperation3)->add_RangesDownloaded(get_abi(eventHandler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Networking::BackgroundTransfer::IDownloadOperation3> consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const
+template <typename D> typename consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded_revoker consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const& eventHandler) const
 {
-    return impl::make_event_revoker<D, Windows::Networking::BackgroundTransfer::IDownloadOperation3>(this, &abi_t<Windows::Networking::BackgroundTransfer::IDownloadOperation3>::remove_RangesDownloaded, RangesDownloaded(eventHandler));
+    return impl::make_event_revoker<D, RangesDownloaded_revoker>(this, RangesDownloaded(eventHandler));
 }
 
-template <typename D> void consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RangesDownloaded(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Networking::BackgroundTransfer::IDownloadOperation3)->remove_RangesDownloaded(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Networking::BackgroundTransfer::IDownloadOperation3)->remove_RangesDownloaded(get_abi(eventCookie)));
 }
 
 template <typename D> void consume_Windows_Networking_BackgroundTransfer_IDownloadOperation3<D>::RequestedUri(Windows::Foundation::Uri const& value) const
@@ -744,1763 +744,1537 @@ template <typename D> void consume_Windows_Networking_BackgroundTransfer_IUpload
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader>
 {
-    HRESULT __stdcall CreateDownload(void* uri, void* resultFile, void** operation) noexcept final
+    int32_t WINRT_CALL CreateDownload(void* uri, void* resultFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDownload, WINRT_WRAP(Windows::Networking::BackgroundTransfer::DownloadOperation), Windows::Foundation::Uri const&, Windows::Storage::IStorageFile const&);
             *operation = detach_from<Windows::Networking::BackgroundTransfer::DownloadOperation>(this->shim().CreateDownload(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&resultFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDownloadFromFile(void* uri, void* resultFile, void* requestBodyFile, void** operation) noexcept final
+    int32_t WINRT_CALL CreateDownloadFromFile(void* uri, void* resultFile, void* requestBodyFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDownload, WINRT_WRAP(Windows::Networking::BackgroundTransfer::DownloadOperation), Windows::Foundation::Uri const&, Windows::Storage::IStorageFile const&, Windows::Storage::IStorageFile const&);
             *operation = detach_from<Windows::Networking::BackgroundTransfer::DownloadOperation>(this->shim().CreateDownload(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&resultFile), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&requestBodyFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateDownloadAsync(void* uri, void* resultFile, void* requestBodyStream, void** operation) noexcept final
+    int32_t WINRT_CALL CreateDownloadAsync(void* uri, void* resultFile, void* requestBodyStream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateDownloadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation>), Windows::Foundation::Uri const, Windows::Storage::IStorageFile const, Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation>>(this->shim().CreateDownloadAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&resultFile), *reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&requestBodyStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader2> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>
 {
-    HRESULT __stdcall get_TransferGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TransferGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>(this->shim().TransferGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransferGroup(void* value) noexcept final
+    int32_t WINRT_CALL put_TransferGroup(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const&);
             this->shim().TransferGroup(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuccessToastNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_SuccessToastNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessToastNotification, WINRT_WRAP(Windows::UI::Notifications::ToastNotification));
             *value = detach_from<Windows::UI::Notifications::ToastNotification>(this->shim().SuccessToastNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuccessToastNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_SuccessToastNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessToastNotification, WINRT_WRAP(void), Windows::UI::Notifications::ToastNotification const&);
             this->shim().SuccessToastNotification(*reinterpret_cast<Windows::UI::Notifications::ToastNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FailureToastNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_FailureToastNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureToastNotification, WINRT_WRAP(Windows::UI::Notifications::ToastNotification));
             *value = detach_from<Windows::UI::Notifications::ToastNotification>(this->shim().FailureToastNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FailureToastNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_FailureToastNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureToastNotification, WINRT_WRAP(void), Windows::UI::Notifications::ToastNotification const&);
             this->shim().FailureToastNotification(*reinterpret_cast<Windows::UI::Notifications::ToastNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuccessTileNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_SuccessTileNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessTileNotification, WINRT_WRAP(Windows::UI::Notifications::TileNotification));
             *value = detach_from<Windows::UI::Notifications::TileNotification>(this->shim().SuccessTileNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuccessTileNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_SuccessTileNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessTileNotification, WINRT_WRAP(void), Windows::UI::Notifications::TileNotification const&);
             this->shim().SuccessTileNotification(*reinterpret_cast<Windows::UI::Notifications::TileNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FailureTileNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_FailureTileNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureTileNotification, WINRT_WRAP(Windows::UI::Notifications::TileNotification));
             *value = detach_from<Windows::UI::Notifications::TileNotification>(this->shim().FailureTileNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FailureTileNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_FailureTileNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureTileNotification, WINRT_WRAP(void), Windows::UI::Notifications::TileNotification const&);
             this->shim().FailureTileNotification(*reinterpret_cast<Windows::UI::Notifications::TileNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader3> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>
 {
-    HRESULT __stdcall get_CompletionGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_CompletionGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletionGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup>(this->shim().CompletionGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>
 {
-    HRESULT __stdcall CreateWithCompletionGroup(void* completionGroup, void** backgroundDownloader) noexcept final
+    int32_t WINRT_CALL CreateWithCompletionGroup(void* completionGroup, void** backgroundDownloader) noexcept final
     {
         try
         {
             *backgroundDownloader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithCompletionGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundDownloader), Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const&);
             *backgroundDownloader = detach_from<Windows::Networking::BackgroundTransfer::BackgroundDownloader>(this->shim().CreateWithCompletionGroup(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const*>(&completionGroup)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>
 {
-    HRESULT __stdcall GetCurrentDownloadsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentDownloadsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentDownloadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>>(this->shim().GetCurrentDownloadsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentDownloadsForGroupAsync(HSTRING group, void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentDownloadsForGroupAsync(void* group, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentDownloadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>>(this->shim().GetCurrentDownloadsAsync(*reinterpret_cast<hstring const*>(&group)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>
 {
-    HRESULT __stdcall GetCurrentDownloadsForTransferGroupAsync(void* group, void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentDownloadsForTransferGroupAsync(void* group, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentDownloadsForTransferGroupAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>), Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>>(this->shim().GetCurrentDownloadsForTransferGroupAsync(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const*>(&group)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>
 {
-    HRESULT __stdcall RequestUnconstrainedDownloadsAsync(void* operations, void** operation) noexcept final
+    int32_t WINRT_CALL RequestUnconstrainedDownloadsAsync(void* operations, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUnconstrainedDownloadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>), Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>>(this->shim().RequestUnconstrainedDownloadsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> const*>(&operations)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
 {
-    HRESULT __stdcall SetRequestHeader(HSTRING headerName, HSTRING headerValue) noexcept final
+    int32_t WINRT_CALL SetRequestHeader(void* headerName, void* headerValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetRequestHeader, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().SetRequestHeader(*reinterpret_cast<hstring const*>(&headerName), *reinterpret_cast<hstring const*>(&headerValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ServerCredential(void** credential) noexcept final
+    int32_t WINRT_CALL get_ServerCredential(void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *credential = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ServerCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ServerCredential(void* credential) noexcept final
+    int32_t WINRT_CALL put_ServerCredential(void* credential) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ServerCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ServerCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&credential));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProxyCredential(void** credential) noexcept final
+    int32_t WINRT_CALL get_ProxyCredential(void** credential) noexcept final
     {
         try
         {
             *credential = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(Windows::Security::Credentials::PasswordCredential));
             *credential = detach_from<Windows::Security::Credentials::PasswordCredential>(this->shim().ProxyCredential());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ProxyCredential(void* credential) noexcept final
+    int32_t WINRT_CALL put_ProxyCredential(void* credential) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProxyCredential, WINRT_WRAP(void), Windows::Security::Credentials::PasswordCredential const&);
             this->shim().ProxyCredential(*reinterpret_cast<Windows::Security::Credentials::PasswordCredential const*>(&credential));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Method(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Method(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Method());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Method(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Method(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(void), hstring const&);
             this->shim().Method(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Group(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Group(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Group, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Group());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Group(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Group(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Group, WINRT_WRAP(void), hstring const&);
             this->shim().Group(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept final
+    int32_t WINRT_CALL get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CostPolicy, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy>(this->shim().CostPolicy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept final
+    int32_t WINRT_CALL put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CostPolicy, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const&);
             this->shim().CostPolicy(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>
 {
-    HRESULT __stdcall get_Trigger(void** value) noexcept final
+    int32_t WINRT_CALL get_Trigger(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Trigger, WINRT_WRAP(Windows::ApplicationModel::Background::IBackgroundTrigger));
             *value = detach_from<Windows::ApplicationModel::Background::IBackgroundTrigger>(this->shim().Trigger());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsEnabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsEnabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsEnabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Enable() noexcept final
+    int32_t WINRT_CALL Enable() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Enable, WINRT_WRAP(void));
             this->shim().Enable();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>
 {
-    HRESULT __stdcall get_Downloads(void** value) noexcept final
+    int32_t WINRT_CALL get_Downloads(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Downloads, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>>(this->shim().Downloads());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Uploads(void** value) noexcept final
+    int32_t WINRT_CALL get_Uploads(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Uploads, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().Uploads());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>
 {
-    HRESULT __stdcall SetHeader(HSTRING headerName, HSTRING headerValue) noexcept final
+    int32_t WINRT_CALL SetHeader(void* headerName, void* headerValue) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetHeader, WINRT_WRAP(void), hstring const&, hstring const&);
             this->shim().SetHeader(*reinterpret_cast<hstring const*>(&headerName), *reinterpret_cast<hstring const*>(&headerValue));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetText(HSTRING value) noexcept final
+    int32_t WINRT_CALL SetText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetText, WINRT_WRAP(void), hstring const&);
             this->shim().SetText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetFile(void* value) noexcept final
+    int32_t WINRT_CALL SetFile(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetFile, WINRT_WRAP(void), Windows::Storage::IStorageFile const&);
             this->shim().SetFile(*reinterpret_cast<Windows::Storage::IStorageFile const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>
 {
-    HRESULT __stdcall CreateWithName(HSTRING name, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithName(void* name, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithName, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart), hstring const&);
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart>(this->shim().CreateWithName(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateWithNameAndFileName(HSTRING name, HSTRING fileName, void** value) noexcept final
+    int32_t WINRT_CALL CreateWithNameAndFileName(void* name, void* fileName, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithNameAndFileName, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart), hstring const&, hstring const&);
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart>(this->shim().CreateWithNameAndFileName(*reinterpret_cast<hstring const*>(&name), *reinterpret_cast<hstring const*>(&fileName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>
 {
-    HRESULT __stdcall GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept final
+    int32_t WINRT_CALL GetStatus(int32_t hresult, Windows::Web::WebErrorStatus* status) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStatus, WINRT_WRAP(Windows::Web::WebErrorStatus), int32_t);
             *status = detach_from<Windows::Web::WebErrorStatus>(this->shim().GetStatus(hresult));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>
 {
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior* value) noexcept final
+    int32_t WINRT_CALL get_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferBehavior, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior>(this->shim().TransferBehavior());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) noexcept final
+    int32_t WINRT_CALL put_TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferBehavior, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior const&);
             this->shim().TransferBehavior(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>
 {
-    HRESULT __stdcall CreateGroup(HSTRING name, void** value) noexcept final
+    int32_t WINRT_CALL CreateGroup(void* name, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup), hstring const&);
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>(this->shim().CreateGroup(*reinterpret_cast<hstring const*>(&name)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
 {
-    HRESULT __stdcall get_Guid(GUID* value) noexcept final
+    int32_t WINRT_CALL get_Guid(winrt::guid* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<GUID>(this->shim().Guid());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(Guid, WINRT_WRAP(winrt::guid));
+            *value = detach_from<winrt::guid>(this->shim().Guid());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RequestedUri(void** value) noexcept final
+    int32_t WINRT_CALL get_RequestedUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().RequestedUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Method(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Method(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Method, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Method());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Group(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Group(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Group, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Group());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept final
+    int32_t WINRT_CALL get_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CostPolicy, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy>(this->shim().CostPolicy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept final
+    int32_t WINRT_CALL put_CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CostPolicy, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const&);
             this->shim().CostPolicy(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetResultStreamAt(uint64_t position, void** value) noexcept final
+    int32_t WINRT_CALL GetResultStreamAt(uint64_t position, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetResultStreamAt, WINRT_WRAP(Windows::Storage::Streams::IInputStream), uint64_t);
             *value = detach_from<Windows::Storage::Streams::IInputStream>(this->shim().GetResultStreamAt(position));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetResponseInformation(void** value) noexcept final
+    int32_t WINRT_CALL GetResponseInformation(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetResponseInformation, WINRT_WRAP(Windows::Networking::BackgroundTransfer::ResponseInformation));
             *value = detach_from<Windows::Networking::BackgroundTransfer::ResponseInformation>(this->shim().GetResponseInformation());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>
 {
-    HRESULT __stdcall get_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority* value) noexcept final
+    int32_t WINRT_CALL get_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Priority, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferPriority>(this->shim().Priority());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) noexcept final
+    int32_t WINRT_CALL put_Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Priority, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferPriority const&);
             this->shim().Priority(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferPriority const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundTransferRangesDownloadedEventArgs>
 {
-    HRESULT __stdcall get_WasDownloadRestarted(bool* value) noexcept final
+    int32_t WINRT_CALL get_WasDownloadRestarted(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WasDownloadRestarted, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().WasDownloadRestarted());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AddedRanges(void** value) noexcept final
+    int32_t WINRT_CALL get_AddedRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddedRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>>(this->shim().AddedRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** result) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *result = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader>
 {
-    HRESULT __stdcall CreateUpload(void* uri, void* sourceFile, void** operation) noexcept final
+    int32_t WINRT_CALL CreateUpload(void* uri, void* sourceFile, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUpload, WINRT_WRAP(Windows::Networking::BackgroundTransfer::UploadOperation), Windows::Foundation::Uri const&, Windows::Storage::IStorageFile const&);
             *operation = detach_from<Windows::Networking::BackgroundTransfer::UploadOperation>(this->shim().CreateUpload(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Storage::IStorageFile const*>(&sourceFile)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUploadFromStreamAsync(void* uri, void* sourceStream, void** operation) noexcept final
+    int32_t WINRT_CALL CreateUploadFromStreamAsync(void* uri, void* sourceStream, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUploadFromStreamAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>), Windows::Foundation::Uri const, Windows::Storage::Streams::IInputStream const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().CreateUploadFromStreamAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Storage::Streams::IInputStream const*>(&sourceStream)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUploadWithFormDataAndAutoBoundaryAsync(void* uri, void* parts, void** operation) noexcept final
+    int32_t WINRT_CALL CreateUploadWithFormDataAndAutoBoundaryAsync(void* uri, void* parts, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUploadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().CreateUploadAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const*>(&parts)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUploadWithSubTypeAsync(void* uri, void* parts, HSTRING subType, void** operation) noexcept final
+    int32_t WINRT_CALL CreateUploadWithSubTypeAsync(void* uri, void* parts, void* subType, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUploadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().CreateUploadAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const*>(&parts), *reinterpret_cast<hstring const*>(&subType)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateUploadWithSubTypeAndBoundaryAsync(void* uri, void* parts, HSTRING subType, HSTRING boundary, void** operation) noexcept final
+    int32_t WINRT_CALL CreateUploadWithSubTypeAndBoundaryAsync(void* uri, void* parts, void* subType, void* boundary, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateUploadAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>), Windows::Foundation::Uri const, Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const, hstring const, hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().CreateUploadAsync(*reinterpret_cast<Windows::Foundation::Uri const*>(&uri), *reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> const*>(&parts), *reinterpret_cast<hstring const*>(&subType), *reinterpret_cast<hstring const*>(&boundary)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
 {
-    HRESULT __stdcall get_TransferGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TransferGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>(this->shim().TransferGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_TransferGroup(void* value) noexcept final
+    int32_t WINRT_CALL put_TransferGroup(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(void), Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const&);
             this->shim().TransferGroup(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuccessToastNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_SuccessToastNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessToastNotification, WINRT_WRAP(Windows::UI::Notifications::ToastNotification));
             *value = detach_from<Windows::UI::Notifications::ToastNotification>(this->shim().SuccessToastNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuccessToastNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_SuccessToastNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessToastNotification, WINRT_WRAP(void), Windows::UI::Notifications::ToastNotification const&);
             this->shim().SuccessToastNotification(*reinterpret_cast<Windows::UI::Notifications::ToastNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FailureToastNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_FailureToastNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureToastNotification, WINRT_WRAP(Windows::UI::Notifications::ToastNotification));
             *value = detach_from<Windows::UI::Notifications::ToastNotification>(this->shim().FailureToastNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FailureToastNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_FailureToastNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureToastNotification, WINRT_WRAP(void), Windows::UI::Notifications::ToastNotification const&);
             this->shim().FailureToastNotification(*reinterpret_cast<Windows::UI::Notifications::ToastNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SuccessTileNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_SuccessTileNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessTileNotification, WINRT_WRAP(Windows::UI::Notifications::TileNotification));
             *value = detach_from<Windows::UI::Notifications::TileNotification>(this->shim().SuccessTileNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SuccessTileNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_SuccessTileNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SuccessTileNotification, WINRT_WRAP(void), Windows::UI::Notifications::TileNotification const&);
             this->shim().SuccessTileNotification(*reinterpret_cast<Windows::UI::Notifications::TileNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FailureTileNotification(void** value) noexcept final
+    int32_t WINRT_CALL get_FailureTileNotification(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureTileNotification, WINRT_WRAP(Windows::UI::Notifications::TileNotification));
             *value = detach_from<Windows::UI::Notifications::TileNotification>(this->shim().FailureTileNotification());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FailureTileNotification(void* value) noexcept final
+    int32_t WINRT_CALL put_FailureTileNotification(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FailureTileNotification, WINRT_WRAP(void), Windows::UI::Notifications::TileNotification const&);
             this->shim().FailureTileNotification(*reinterpret_cast<Windows::UI::Notifications::TileNotification const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader3> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploader3>
 {
-    HRESULT __stdcall get_CompletionGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_CompletionGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompletionGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup>(this->shim().CompletionGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>
 {
-    HRESULT __stdcall CreateWithCompletionGroup(void* completionGroup, void** backgroundUploader) noexcept final
+    int32_t WINRT_CALL CreateWithCompletionGroup(void* completionGroup, void** backgroundUploader) noexcept final
     {
         try
         {
             *backgroundUploader = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateWithCompletionGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundUploader), Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const&);
             *backgroundUploader = detach_from<Windows::Networking::BackgroundTransfer::BackgroundUploader>(this->shim().CreateWithCompletionGroup(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const*>(&completionGroup)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>
 {
-    HRESULT __stdcall GetCurrentUploadsAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentUploadsAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentUploadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>>(this->shim().GetCurrentUploadsAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCurrentUploadsForGroupAsync(HSTRING group, void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentUploadsForGroupAsync(void* group, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentUploadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>>(this->shim().GetCurrentUploadsAsync(*reinterpret_cast<hstring const*>(&group)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>
 {
-    HRESULT __stdcall GetCurrentUploadsForTransferGroupAsync(void* group, void** operation) noexcept final
+    int32_t WINRT_CALL GetCurrentUploadsForTransferGroupAsync(void* group, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentUploadsForTransferGroupAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>), Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>>>(this->shim().GetCurrentUploadsForTransferGroupAsync(*reinterpret_cast<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const*>(&group)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent> : produce_base<D, Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>
 {
-    HRESULT __stdcall RequestUnconstrainedUploadsAsync(void* operations, void** operation) noexcept final
+    int32_t WINRT_CALL RequestUnconstrainedUploadsAsync(void* operations, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestUnconstrainedUploadsAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>), Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>>(this->shim().RequestUnconstrainedUploadsAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> const*>(&operations)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcher> : produce_base<D, Windows::Networking::BackgroundTransfer::IContentPrefetcher>
 {
-    HRESULT __stdcall get_ContentUris(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentUris(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentUris, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Foundation::Uri>>(this->shim().ContentUris());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IndirectContentUri(void* value) noexcept final
+    int32_t WINRT_CALL put_IndirectContentUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndirectContentUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().IndirectContentUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IndirectContentUri(void** value) noexcept final
+    int32_t WINRT_CALL get_IndirectContentUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IndirectContentUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().IndirectContentUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IContentPrefetcherTime> : produce_base<D, Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>
 {
-    HRESULT __stdcall get_LastSuccessfulPrefetchTime(void** value) noexcept final
+    int32_t WINRT_CALL get_LastSuccessfulPrefetchTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSuccessfulPrefetchTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().LastSuccessfulPrefetchTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation> : produce_base<D, Windows::Networking::BackgroundTransfer::IDownloadOperation>
 {
-    HRESULT __stdcall get_ResultFile(void** value) noexcept final
+    int32_t WINRT_CALL get_ResultFile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResultFile, WINRT_WRAP(Windows::Storage::IStorageFile));
             *value = detach_from<Windows::Storage::IStorageFile>(this->shim().ResultFile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundDownloadProgress* value) noexcept final
+    int32_t WINRT_CALL get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundDownloadProgress* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress>(this->shim().Progress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAsync(void** operation) noexcept final
+    int32_t WINRT_CALL StartAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>>(this->shim().StartAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AttachAsync(void** operation) noexcept final
+    int32_t WINRT_CALL AttachAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttachAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation>>(this->shim().AttachAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Pause() noexcept final
+    int32_t WINRT_CALL Pause() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Pause, WINRT_WRAP(void));
             this->shim().Pause();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Resume() noexcept final
+    int32_t WINRT_CALL Resume() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Resume, WINRT_WRAP(void));
             this->shim().Resume();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation2> : produce_base<D, Windows::Networking::BackgroundTransfer::IDownloadOperation2>
 {
-    HRESULT __stdcall get_TransferGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TransferGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>(this->shim().TransferGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation3> : produce_base<D, Windows::Networking::BackgroundTransfer::IDownloadOperation3>
 {
-    HRESULT __stdcall get_IsRandomAccessRequired(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsRandomAccessRequired(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRandomAccessRequired, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsRandomAccessRequired());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IsRandomAccessRequired(bool value) noexcept final
+    int32_t WINRT_CALL put_IsRandomAccessRequired(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRandomAccessRequired, WINRT_WRAP(void), bool);
             this->shim().IsRandomAccessRequired(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetResultRandomAccessStreamReference(void** stream) noexcept final
+    int32_t WINRT_CALL GetResultRandomAccessStreamReference(void** stream) noexcept final
     {
         try
         {
             *stream = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetResultRandomAccessStreamReference, WINRT_WRAP(Windows::Storage::Streams::IRandomAccessStreamReference));
             *stream = detach_from<Windows::Storage::Streams::IRandomAccessStreamReference>(this->shim().GetResultRandomAccessStreamReference());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDownloadedRanges(void** value) noexcept final
+    int32_t WINRT_CALL GetDownloadedRanges(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDownloadedRanges, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>>(this->shim().GetDownloadedRanges());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_RangesDownloaded(void* eventHandler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_RangesDownloaded(void* eventHandler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().RangesDownloaded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const*>(&eventHandler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(RangesDownloaded, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().RangesDownloaded(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs> const*>(&eventHandler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_RangesDownloaded(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_RangesDownloaded(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(RangesDownloaded, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().RangesDownloaded(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL put_RequestedUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().RangesDownloaded(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall put_RequestedUri(void* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestedUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().RequestedUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RecoverableWebErrorStatuses(void** value) noexcept final
+    int32_t WINRT_CALL get_RecoverableWebErrorStatuses(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecoverableWebErrorStatuses, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::Web::WebErrorStatus>));
             *value = detach_from<Windows::Foundation::Collections::IVector<Windows::Web::WebErrorStatus>>(this->shim().RecoverableWebErrorStatuses());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentWebErrorStatus(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrentWebErrorStatus(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentWebErrorStatus, WINRT_WRAP(Windows::Foundation::IReference<Windows::Web::WebErrorStatus>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Web::WebErrorStatus>>(this->shim().CurrentWebErrorStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IDownloadOperation4> : produce_base<D, Windows::Networking::BackgroundTransfer::IDownloadOperation4>
 {
-    HRESULT __stdcall MakeCurrentInTransferGroup() noexcept final
+    int32_t WINRT_CALL MakeCurrentInTransferGroup() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MakeCurrentInTransferGroup, WINRT_WRAP(void));
             this->shim().MakeCurrentInTransferGroup();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IResponseInformation> : produce_base<D, Windows::Networking::BackgroundTransfer::IResponseInformation>
 {
-    HRESULT __stdcall get_IsResumable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsResumable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsResumable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsResumable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActualUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ActualUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActualUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ActualUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StatusCode(uint32_t* value) noexcept final
+    int32_t WINRT_CALL get_StatusCode(uint32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StatusCode, WINRT_WRAP(uint32_t));
             *value = detach_from<uint32_t>(this->shim().StatusCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Headers(void** value) noexcept final
+    int32_t WINRT_CALL get_Headers(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Headers, WINRT_WRAP(Windows::Foundation::Collections::IMapView<hstring, hstring>));
             *value = detach_from<Windows::Foundation::Collections::IMapView<hstring, hstring>>(this->shim().Headers());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult> : produce_base<D, Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>
 {
-    HRESULT __stdcall get_IsUnconstrained(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsUnconstrained(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsUnconstrained, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsUnconstrained());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation> : produce_base<D, Windows::Networking::BackgroundTransfer::IUploadOperation>
 {
-    HRESULT __stdcall get_SourceFile(void** value) noexcept final
+    int32_t WINRT_CALL get_SourceFile(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SourceFile, WINRT_WRAP(Windows::Storage::IStorageFile));
             *value = detach_from<Windows::Storage::IStorageFile>(this->shim().SourceFile());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress* value) noexcept final
+    int32_t WINRT_CALL get_Progress(struct struct_Windows_Networking_BackgroundTransfer_BackgroundUploadProgress* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Progress, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundUploadProgress));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundUploadProgress>(this->shim().Progress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartAsync(void** operation) noexcept final
+    int32_t WINRT_CALL StartAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().StartAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AttachAsync(void** operation) noexcept final
+    int32_t WINRT_CALL AttachAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttachAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation>));
             *operation = detach_from<Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation>>(this->shim().AttachAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation2> : produce_base<D, Windows::Networking::BackgroundTransfer::IUploadOperation2>
 {
-    HRESULT __stdcall get_TransferGroup(void** value) noexcept final
+    int32_t WINRT_CALL get_TransferGroup(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferGroup, WINRT_WRAP(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup));
             *value = detach_from<Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>(this->shim().TransferGroup());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation3> : produce_base<D, Windows::Networking::BackgroundTransfer::IUploadOperation3>
 {
-    HRESULT __stdcall MakeCurrentInTransferGroup() noexcept final
+    int32_t WINRT_CALL MakeCurrentInTransferGroup() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MakeCurrentInTransferGroup, WINRT_WRAP(void));
             this->shim().MakeCurrentInTransferGroup();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -2509,105 +2283,105 @@ struct produce<D, Windows::Networking::BackgroundTransfer::IUploadOperation3> : 
 WINRT_EXPORT namespace winrt::Windows::Networking::BackgroundTransfer {
 
 inline BackgroundDownloader::BackgroundDownloader() :
-    BackgroundDownloader(get_activation_factory<BackgroundDownloader>().ActivateInstance<BackgroundDownloader>())
+    BackgroundDownloader(impl::call_factory<BackgroundDownloader>([](auto&& f) { return f.template ActivateInstance<BackgroundDownloader>(); }))
 {}
 
 inline BackgroundDownloader::BackgroundDownloader(Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const& completionGroup) :
-    BackgroundDownloader(get_activation_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>().CreateWithCompletionGroup(completionGroup))
+    BackgroundDownloader(impl::call_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>([&](auto&& f) { return f.CreateWithCompletionGroup(completionGroup); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync()
 {
-    return get_activation_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync();
+    return impl::call_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>([&](auto&& f) { return f.GetCurrentDownloadsAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsAsync(param::hstring const& group)
 {
-    return get_activation_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>().GetCurrentDownloadsAsync(group);
+    return impl::call_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>([&](auto&& f) { return f.GetCurrentDownloadsAsync(group); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> BackgroundDownloader::GetCurrentDownloadsForTransferGroupAsync(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const& group)
 {
-    return get_activation_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>().GetCurrentDownloadsForTransferGroupAsync(group);
+    return impl::call_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>([&](auto&& f) { return f.GetCurrentDownloadsForTransferGroupAsync(group); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundDownloader::RequestUnconstrainedDownloadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::DownloadOperation> const& operations)
 {
-    return get_activation_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>().RequestUnconstrainedDownloadsAsync(operations);
+    return impl::call_factory<BackgroundDownloader, Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>([&](auto&& f) { return f.RequestUnconstrainedDownloadsAsync(operations); });
 }
 
 inline BackgroundTransferCompletionGroup::BackgroundTransferCompletionGroup() :
-    BackgroundTransferCompletionGroup(get_activation_factory<BackgroundTransferCompletionGroup>().ActivateInstance<BackgroundTransferCompletionGroup>())
+    BackgroundTransferCompletionGroup(impl::call_factory<BackgroundTransferCompletionGroup>([](auto&& f) { return f.template ActivateInstance<BackgroundTransferCompletionGroup>(); }))
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart() :
-    BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart>().ActivateInstance<BackgroundTransferContentPart>())
+    BackgroundTransferContentPart(impl::call_factory<BackgroundTransferContentPart>([](auto&& f) { return f.template ActivateInstance<BackgroundTransferContentPart>(); }))
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart(param::hstring const& name) :
-    BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>().CreateWithName(name))
+    BackgroundTransferContentPart(impl::call_factory<BackgroundTransferContentPart, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>([&](auto&& f) { return f.CreateWithName(name); }))
 {}
 
 inline BackgroundTransferContentPart::BackgroundTransferContentPart(param::hstring const& name, param::hstring const& fileName) :
-    BackgroundTransferContentPart(get_activation_factory<BackgroundTransferContentPart, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>().CreateWithNameAndFileName(name, fileName))
+    BackgroundTransferContentPart(impl::call_factory<BackgroundTransferContentPart, Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>([&](auto&& f) { return f.CreateWithNameAndFileName(name, fileName); }))
 {}
 
 inline Windows::Web::WebErrorStatus BackgroundTransferError::GetStatus(int32_t hresult)
 {
-    return get_activation_factory<BackgroundTransferError, Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>().GetStatus(hresult);
+    return impl::call_factory<BackgroundTransferError, Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>([&](auto&& f) { return f.GetStatus(hresult); });
 }
 
 inline Windows::Networking::BackgroundTransfer::BackgroundTransferGroup BackgroundTransferGroup::CreateGroup(param::hstring const& name)
 {
-    return get_activation_factory<BackgroundTransferGroup, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>().CreateGroup(name);
+    return impl::call_factory<BackgroundTransferGroup, Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>([&](auto&& f) { return f.CreateGroup(name); });
 }
 
 inline BackgroundUploader::BackgroundUploader() :
-    BackgroundUploader(get_activation_factory<BackgroundUploader>().ActivateInstance<BackgroundUploader>())
+    BackgroundUploader(impl::call_factory<BackgroundUploader>([](auto&& f) { return f.template ActivateInstance<BackgroundUploader>(); }))
 {}
 
 inline BackgroundUploader::BackgroundUploader(Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup const& completionGroup) :
-    BackgroundUploader(get_activation_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>().CreateWithCompletionGroup(completionGroup))
+    BackgroundUploader(impl::call_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>([&](auto&& f) { return f.CreateWithCompletionGroup(completionGroup); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync()
 {
-    return get_activation_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync();
+    return impl::call_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>([&](auto&& f) { return f.GetCurrentUploadsAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsAsync(param::hstring const& group)
 {
-    return get_activation_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>().GetCurrentUploadsAsync(group);
+    return impl::call_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>([&](auto&& f) { return f.GetCurrentUploadsAsync(group); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> BackgroundUploader::GetCurrentUploadsForTransferGroupAsync(Windows::Networking::BackgroundTransfer::BackgroundTransferGroup const& group)
 {
-    return get_activation_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>().GetCurrentUploadsForTransferGroupAsync(group);
+    return impl::call_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>([&](auto&& f) { return f.GetCurrentUploadsForTransferGroupAsync(group); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundUploader::RequestUnconstrainedUploadsAsync(param::async_iterable<Windows::Networking::BackgroundTransfer::UploadOperation> const& operations)
 {
-    return get_activation_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>().RequestUnconstrainedUploadsAsync(operations);
+    return impl::call_factory<BackgroundUploader, Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>([&](auto&& f) { return f.RequestUnconstrainedUploadsAsync(operations); });
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ContentPrefetcher::ContentUris()
 {
-    return get_activation_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>().ContentUris();
+    return impl::call_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>([&](auto&& f) { return f.ContentUris(); });
 }
 
 inline void ContentPrefetcher::IndirectContentUri(Windows::Foundation::Uri const& value)
 {
-    get_activation_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>().IndirectContentUri(value);
+    impl::call_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>([&](auto&& f) { return f.IndirectContentUri(value); });
 }
 
 inline Windows::Foundation::Uri ContentPrefetcher::IndirectContentUri()
 {
-    return get_activation_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>().IndirectContentUri();
+    return impl::call_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcher>([&](auto&& f) { return f.IndirectContentUri(); });
 }
 
 inline Windows::Foundation::IReference<Windows::Foundation::DateTime> ContentPrefetcher::LastSuccessfulPrefetchTime()
 {
-    return get_activation_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>().LastSuccessfulPrefetchTime();
+    return impl::call_factory<ContentPrefetcher, Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>([&](auto&& f) { return f.LastSuccessfulPrefetchTime(); });
 }
 
 }
@@ -2665,5 +2439,3 @@ template<> struct hash<winrt::Windows::Networking::BackgroundTransfer::Unconstra
 template<> struct hash<winrt::Windows::Networking::BackgroundTransfer::UploadOperation> : winrt::impl::hash_base<winrt::Windows::Networking::BackgroundTransfer::UploadOperation> {};
 
 }
-
-WINRT_WARNING_POP

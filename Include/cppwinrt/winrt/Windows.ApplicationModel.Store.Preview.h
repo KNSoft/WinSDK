@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Security.Authentication.Web.Core.2.h"
@@ -18,6 +18,27 @@ WINRT_WARNING_PUSH
 #include "winrt/Windows.ApplicationModel.Store.h"
 
 namespace winrt::impl {
+
+template <typename D> Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode consume_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettings<D>::DownloadMode() const
+{
+    Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings)->get_DownloadMode(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource consume_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettings<D>::DownloadModeSource() const
+{
+    Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings)->get_DownloadModeSource(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings consume_Windows_ApplicationModel_Store_Preview_IDeliveryOptimizationSettingsStatics<D>::GetCurrentSettings() const
+{
+    Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics)->GetCurrentSettings(put_abi(result)));
+    return result;
+}
 
 template <typename D> void consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics<D>::SetSystemConfiguration(param::hstring const& catalogHardwareManufacturerId, param::hstring const& catalogStoreContentModifierId, Windows::Foundation::DateTime const& systemConfigurationExpiration, param::hstring const& catalogHardwareDescriptor) const
 {
@@ -162,6 +183,37 @@ template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_IStore
     bool result{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4)->ShouldRestrictToEnterpriseStoreOnlyForUser(get_abi(user), &result));
     return result;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5<D>::IsPinToDesktopSupported() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5)->IsPinToDesktopSupported(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5<D>::IsPinToTaskbarSupported() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5)->IsPinToTaskbarSupported(&value));
+    return value;
+}
+
+template <typename D> bool consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5<D>::IsPinToStartSupported() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5)->IsPinToStartSupported(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5<D>::PinToDesktop(param::hstring const& appPackageFamilyName) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5)->PinToDesktop(get_abi(appPackageFamilyName)));
+}
+
+template <typename D> void consume_Windows_ApplicationModel_Store_Preview_IStoreConfigurationStatics5<D>::PinToDesktopForUser(Windows::System::User const& user, param::hstring const& appPackageFamilyName) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5)->PinToDesktopForUser(get_abi(user), get_abi(appPackageFamilyName)));
 }
 
 template <typename D> hstring consume_Windows_ApplicationModel_Store_Preview_IStoreHardwareManufacturerInfo<D>::HardwareManufacturerId() const
@@ -326,717 +378,734 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Au
 }
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings> : produce_base<D, Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings>
+{
+    int32_t WINRT_CALL get_DownloadMode(Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadMode, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadMode>(this->shim().DownloadMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_DownloadModeSource(Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DownloadModeSource, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource));
+            *value = detach_from<Windows::ApplicationModel::Store::Preview::DeliveryOptimizationDownloadModeSource>(this->shim().DownloadModeSource());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics> : produce_base<D, Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics>
+{
+    int32_t WINRT_CALL GetCurrentSettings(void** result) noexcept final
+    {
+        try
+        {
+            *result = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCurrentSettings, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings));
+            *result = detach_from<Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings>(this->shim().GetCurrentSettings());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>
 {
-    HRESULT __stdcall SetSystemConfiguration(HSTRING catalogHardwareManufacturerId, HSTRING catalogStoreContentModifierId, Windows::Foundation::DateTime systemConfigurationExpiration, HSTRING catalogHardwareDescriptor) noexcept final
+    int32_t WINRT_CALL SetSystemConfiguration(void* catalogHardwareManufacturerId, void* catalogStoreContentModifierId, Windows::Foundation::DateTime systemConfigurationExpiration, void* catalogHardwareDescriptor) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetSystemConfiguration, WINRT_WRAP(void), hstring const&, hstring const&, Windows::Foundation::DateTime const&, hstring const&);
             this->shim().SetSystemConfiguration(*reinterpret_cast<hstring const*>(&catalogHardwareManufacturerId), *reinterpret_cast<hstring const*>(&catalogStoreContentModifierId), *reinterpret_cast<Windows::Foundation::DateTime const*>(&systemConfigurationExpiration), *reinterpret_cast<hstring const*>(&catalogHardwareDescriptor));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetMobileOperatorConfiguration(HSTRING mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) noexcept final
+    int32_t WINRT_CALL SetMobileOperatorConfiguration(void* mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetMobileOperatorConfiguration, WINRT_WRAP(void), hstring const&, uint32_t, uint32_t);
             this->shim().SetMobileOperatorConfiguration(*reinterpret_cast<hstring const*>(&mobileOperatorId), appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetStoreWebAccountId(HSTRING webAccountId) noexcept final
+    int32_t WINRT_CALL SetStoreWebAccountId(void* webAccountId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStoreWebAccountId, WINRT_WRAP(void), hstring const&);
             this->shim().SetStoreWebAccountId(*reinterpret_cast<hstring const*>(&webAccountId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsStoreWebAccountId(HSTRING webAccountId, bool* value) noexcept final
+    int32_t WINRT_CALL IsStoreWebAccountId(void* webAccountId, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStoreWebAccountId, WINRT_WRAP(bool), hstring const&);
             *value = detach_from<bool>(this->shim().IsStoreWebAccountId(*reinterpret_cast<hstring const*>(&webAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HardwareManufacturerInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_HardwareManufacturerInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareManufacturerInfo, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo>(this->shim().HardwareManufacturerInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FilterUnsupportedSystemFeaturesAsync(void* systemFeatures, void** operation) noexcept final
+    int32_t WINRT_CALL FilterUnsupportedSystemFeaturesAsync(void* systemFeatures, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FilterUnsupportedSystemFeaturesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StoreSystemFeature>>), Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Store::Preview::StoreSystemFeature> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StoreSystemFeature>>>(this->shim().FilterUnsupportedSystemFeaturesAsync(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Store::Preview::StoreSystemFeature> const*>(&systemFeatures)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>
 {
-    HRESULT __stdcall get_PurchasePromptingPolicy(void** value) noexcept final
+    int32_t WINRT_CALL get_PurchasePromptingPolicy(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PurchasePromptingPolicy, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>));
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().PurchasePromptingPolicy());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PurchasePromptingPolicy(void* value) noexcept final
+    int32_t WINRT_CALL put_PurchasePromptingPolicy(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PurchasePromptingPolicy, WINRT_WRAP(void), Windows::Foundation::IReference<uint32_t> const&);
             this->shim().PurchasePromptingPolicy(*reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>
 {
-    HRESULT __stdcall HasStoreWebAccount(bool* value) noexcept final
+    int32_t WINRT_CALL HasStoreWebAccount(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasStoreWebAccount, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().HasStoreWebAccount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HasStoreWebAccountForUser(void* user, bool* value) noexcept final
+    int32_t WINRT_CALL HasStoreWebAccountForUser(void* user, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HasStoreWebAccountForUser, WINRT_WRAP(bool), Windows::System::User const&);
             *value = detach_from<bool>(this->shim().HasStoreWebAccountForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options, void** operation) noexcept final
+    int32_t WINRT_CALL GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStoreLogDataAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference>), Windows::ApplicationModel::Store::Preview::StoreLogOptions const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference>>(this->shim().GetStoreLogDataAsync(*reinterpret_cast<Windows::ApplicationModel::Store::Preview::StoreLogOptions const*>(&options)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetStoreWebAccountIdForUser(void* user, HSTRING webAccountId) noexcept final
+    int32_t WINRT_CALL SetStoreWebAccountIdForUser(void* user, void* webAccountId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStoreWebAccountIdForUser, WINRT_WRAP(void), Windows::System::User const&, hstring const&);
             this->shim().SetStoreWebAccountIdForUser(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&webAccountId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall IsStoreWebAccountIdForUser(void* user, HSTRING webAccountId, bool* value) noexcept final
+    int32_t WINRT_CALL IsStoreWebAccountIdForUser(void* user, void* webAccountId, bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsStoreWebAccountIdForUser, WINRT_WRAP(bool), Windows::System::User const&, hstring const&);
             *value = detach_from<bool>(this->shim().IsStoreWebAccountIdForUser(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&webAccountId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetPurchasePromptingPolicyForUser(void* user, void** value) noexcept final
+    int32_t WINRT_CALL GetPurchasePromptingPolicyForUser(void* user, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetPurchasePromptingPolicyForUser, WINRT_WRAP(Windows::Foundation::IReference<uint32_t>), Windows::System::User const&);
             *value = detach_from<Windows::Foundation::IReference<uint32_t>>(this->shim().GetPurchasePromptingPolicyForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetPurchasePromptingPolicyForUser(void* user, void* value) noexcept final
+    int32_t WINRT_CALL SetPurchasePromptingPolicyForUser(void* user, void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetPurchasePromptingPolicyForUser, WINRT_WRAP(void), Windows::System::User const&, Windows::Foundation::IReference<uint32_t> const&);
             this->shim().SetPurchasePromptingPolicyForUser(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<Windows::Foundation::IReference<uint32_t> const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>
 {
-    HRESULT __stdcall GetStoreWebAccountId(HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetStoreWebAccountId(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStoreWebAccountId, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().GetStoreWebAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetStoreWebAccountIdForUser(void* user, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetStoreWebAccountIdForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStoreWebAccountIdForUser, WINRT_WRAP(hstring), Windows::System::User const&);
             *result = detach_from<hstring>(this->shim().GetStoreWebAccountIdForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetEnterpriseStoreWebAccountId(HSTRING webAccountId) noexcept final
+    int32_t WINRT_CALL SetEnterpriseStoreWebAccountId(void* webAccountId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetEnterpriseStoreWebAccountId, WINRT_WRAP(void), hstring const&);
             this->shim().SetEnterpriseStoreWebAccountId(*reinterpret_cast<hstring const*>(&webAccountId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetEnterpriseStoreWebAccountIdForUser(void* user, HSTRING webAccountId) noexcept final
+    int32_t WINRT_CALL SetEnterpriseStoreWebAccountIdForUser(void* user, void* webAccountId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetEnterpriseStoreWebAccountIdForUser, WINRT_WRAP(void), Windows::System::User const&, hstring const&);
             this->shim().SetEnterpriseStoreWebAccountIdForUser(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&webAccountId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEnterpriseStoreWebAccountId(HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetEnterpriseStoreWebAccountId(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEnterpriseStoreWebAccountId, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().GetEnterpriseStoreWebAccountId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetEnterpriseStoreWebAccountIdForUser(void* user, HSTRING* result) noexcept final
+    int32_t WINRT_CALL GetEnterpriseStoreWebAccountIdForUser(void* user, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetEnterpriseStoreWebAccountIdForUser, WINRT_WRAP(hstring), Windows::System::User const&);
             *result = detach_from<hstring>(this->shim().GetEnterpriseStoreWebAccountIdForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShouldRestrictToEnterpriseStoreOnly(bool* result) noexcept final
+    int32_t WINRT_CALL ShouldRestrictToEnterpriseStoreOnly(bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShouldRestrictToEnterpriseStoreOnly, WINRT_WRAP(bool));
             *result = detach_from<bool>(this->shim().ShouldRestrictToEnterpriseStoreOnly());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ShouldRestrictToEnterpriseStoreOnlyForUser(void* user, bool* result) noexcept final
+    int32_t WINRT_CALL ShouldRestrictToEnterpriseStoreOnlyForUser(void* user, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ShouldRestrictToEnterpriseStoreOnlyForUser, WINRT_WRAP(bool), Windows::System::User const&);
             *result = detach_from<bool>(this->shim().ShouldRestrictToEnterpriseStoreOnlyForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>
+{
+    int32_t WINRT_CALL IsPinToDesktopSupported(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPinToDesktopSupported, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsPinToDesktopSupported());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL IsPinToTaskbarSupported(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPinToTaskbarSupported, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsPinToTaskbarSupported());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL IsPinToStartSupported(bool* value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPinToStartSupported, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsPinToStartSupported());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL PinToDesktop(void* appPackageFamilyName) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktop, WINRT_WRAP(void), hstring const&);
+            this->shim().PinToDesktop(*reinterpret_cast<hstring const*>(&appPackageFamilyName));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL PinToDesktopForUser(void* user, void* appPackageFamilyName) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PinToDesktopForUser, WINRT_WRAP(void), Windows::System::User const&, hstring const&);
+            this->shim().PinToDesktopForUser(*reinterpret_cast<Windows::System::User const*>(&user), *reinterpret_cast<hstring const*>(&appPackageFamilyName));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo>
 {
-    HRESULT __stdcall get_HardwareManufacturerId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HardwareManufacturerId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HardwareManufacturerId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HardwareManufacturerId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StoreContentModifierId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_StoreContentModifierId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StoreContentModifierId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().StoreContentModifierId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ModelName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ModelName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ModelName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ModelName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManufacturerName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ManufacturerName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManufacturerName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ManufacturerName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreview> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStorePreview>
 {
-    HRESULT __stdcall RequestProductPurchaseByProductIdAndSkuIdAsync(HSTRING productId, HSTRING skuId, void** requestPurchaseBySkuIdOperation) noexcept final
+    int32_t WINRT_CALL RequestProductPurchaseByProductIdAndSkuIdAsync(void* productId, void* skuId, void** requestPurchaseBySkuIdOperation) noexcept final
     {
         try
         {
             *requestPurchaseBySkuIdOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestProductPurchaseByProductIdAndSkuIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults>), hstring const, hstring const);
             *requestPurchaseBySkuIdOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults>>(this->shim().RequestProductPurchaseByProductIdAndSkuIdAsync(*reinterpret_cast<hstring const*>(&productId), *reinterpret_cast<hstring const*>(&skuId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall LoadAddOnProductInfosAsync(void** loadAddOnProductInfosOperation) noexcept final
+    int32_t WINRT_CALL LoadAddOnProductInfosAsync(void** loadAddOnProductInfosOperation) noexcept final
     {
         try
         {
             *loadAddOnProductInfosOperation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LoadAddOnProductInfosAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>>));
             *loadAddOnProductInfosOperation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>>>(this->shim().LoadAddOnProductInfosAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo>
 {
-    HRESULT __stdcall get_ProductId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ProductType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProductType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProductType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkuInfoList(void** value) noexcept final
+    int32_t WINRT_CALL get_SkuInfoList(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkuInfoList, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo>>(this->shim().SkuInfoList());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults>
 {
-    HRESULT __stdcall get_ProductPurchaseStatus(Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus* value) noexcept final
+    int32_t WINRT_CALL get_ProductPurchaseStatus(Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductPurchaseStatus, WINRT_WRAP(Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus));
             *value = detach_from<Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus>(this->shim().ProductPurchaseStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo> : produce_base<D, Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo>
 {
-    HRESULT __stdcall get_ProductId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ProductId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ProductId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ProductId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkuId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SkuId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkuId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SkuId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SkuType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SkuType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SkuType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SkuType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Title(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Title(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Title, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Title());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CustomDeveloperData(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CustomDeveloperData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CustomDeveloperData, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CustomDeveloperData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrencyCode(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CurrencyCode(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrencyCode, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CurrencyCode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FormattedListPrice(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FormattedListPrice(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FormattedListPrice, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FormattedListPrice());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedData(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedData(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ExtendedData, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ExtendedData());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper> : produce_base<D, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>
 {
-    HRESULT __stdcall RequestTokenWithUIElementHostingAsync(void* request, void* uiElement, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL RequestTokenWithUIElementHostingAsync(void* request, void* uiElement, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestTokenWithUIElementHostingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>), Windows::Security::Authentication::Web::Core::WebTokenRequest const, Windows::UI::Xaml::UIElement const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>>(this->shim().RequestTokenWithUIElementHostingAsync(*reinterpret_cast<Windows::Security::Authentication::Web::Core::WebTokenRequest const*>(&request), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&uiElement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestTokenWithUIElementHostingAndWebAccountAsync(void* request, void* webAccount, void* uiElement, void** asyncInfo) noexcept final
+    int32_t WINRT_CALL RequestTokenWithUIElementHostingAndWebAccountAsync(void* request, void* webAccount, void* uiElement, void** asyncInfo) noexcept final
     {
         try
         {
             *asyncInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestTokenWithUIElementHostingAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>), Windows::Security::Authentication::Web::Core::WebTokenRequest const, Windows::Security::Credentials::WebAccount const, Windows::UI::Xaml::UIElement const);
             *asyncInfo = detach_from<Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult>>(this->shim().RequestTokenWithUIElementHostingAsync(*reinterpret_cast<Windows::Security::Authentication::Web::Core::WebTokenRequest const*>(&request), *reinterpret_cast<Windows::Security::Credentials::WebAccount const*>(&webAccount), *reinterpret_cast<Windows::UI::Xaml::UIElement const*>(&uiElement)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1044,155 +1113,189 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::IWebAuthenticationC
 
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::Store::Preview {
 
+inline Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings DeliveryOptimizationSettings::GetCurrentSettings()
+{
+    return impl::call_factory<DeliveryOptimizationSettings, Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics>([&](auto&& f) { return f.GetCurrentSettings(); });
+}
+
 inline void StoreConfiguration::SetSystemConfiguration(param::hstring const& catalogHardwareManufacturerId, param::hstring const& catalogStoreContentModifierId, Windows::Foundation::DateTime const& systemConfigurationExpiration, param::hstring const& catalogHardwareDescriptor)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor); });
 }
 
 inline void StoreConfiguration::SetMobileOperatorConfiguration(param::hstring const& mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes); });
 }
 
 inline void StoreConfiguration::SetStoreWebAccountId(param::hstring const& webAccountId)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().SetStoreWebAccountId(webAccountId);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.SetStoreWebAccountId(webAccountId); });
 }
 
 inline bool StoreConfiguration::IsStoreWebAccountId(param::hstring const& webAccountId)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().IsStoreWebAccountId(webAccountId);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.IsStoreWebAccountId(webAccountId); });
 }
 
 inline Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo StoreConfiguration::HardwareManufacturerInfo()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().HardwareManufacturerInfo();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.HardwareManufacturerInfo(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> StoreConfiguration::FilterUnsupportedSystemFeaturesAsync(param::async_iterable<Windows::ApplicationModel::Store::Preview::StoreSystemFeature> const& systemFeatures)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>().FilterUnsupportedSystemFeaturesAsync(systemFeatures);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>([&](auto&& f) { return f.FilterUnsupportedSystemFeaturesAsync(systemFeatures); });
 }
 
 inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::PurchasePromptingPolicy()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>().PurchasePromptingPolicy();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>([&](auto&& f) { return f.PurchasePromptingPolicy(); });
 }
 
 inline void StoreConfiguration::PurchasePromptingPolicy(optional<uint32_t> const& value)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>().PurchasePromptingPolicy(value);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>([&](auto&& f) { return f.PurchasePromptingPolicy(value); });
 }
 
 inline bool StoreConfiguration::HasStoreWebAccount()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().HasStoreWebAccount();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.HasStoreWebAccount(); });
 }
 
 inline bool StoreConfiguration::HasStoreWebAccountForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().HasStoreWebAccountForUser(user);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.HasStoreWebAccountForUser(user); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> StoreConfiguration::GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions const& options)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().GetStoreLogDataAsync(options);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.GetStoreLogDataAsync(options); });
 }
 
 inline void StoreConfiguration::SetStoreWebAccountIdForUser(Windows::System::User const& user, param::hstring const& webAccountId)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().SetStoreWebAccountIdForUser(user, webAccountId);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.SetStoreWebAccountIdForUser(user, webAccountId); });
 }
 
 inline bool StoreConfiguration::IsStoreWebAccountIdForUser(Windows::System::User const& user, param::hstring const& webAccountId)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().IsStoreWebAccountIdForUser(user, webAccountId);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.IsStoreWebAccountIdForUser(user, webAccountId); });
 }
 
 inline Windows::Foundation::IReference<uint32_t> StoreConfiguration::GetPurchasePromptingPolicyForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().GetPurchasePromptingPolicyForUser(user);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.GetPurchasePromptingPolicyForUser(user); });
 }
 
 inline void StoreConfiguration::SetPurchasePromptingPolicyForUser(Windows::System::User const& user, optional<uint32_t> const& value)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>().SetPurchasePromptingPolicyForUser(user, value);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>([&](auto&& f) { return f.SetPurchasePromptingPolicyForUser(user, value); });
 }
 
 inline hstring StoreConfiguration::GetStoreWebAccountId()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().GetStoreWebAccountId();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.GetStoreWebAccountId(); });
 }
 
 inline hstring StoreConfiguration::GetStoreWebAccountIdForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().GetStoreWebAccountIdForUser(user);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.GetStoreWebAccountIdForUser(user); });
 }
 
 inline void StoreConfiguration::SetEnterpriseStoreWebAccountId(param::hstring const& webAccountId)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().SetEnterpriseStoreWebAccountId(webAccountId);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.SetEnterpriseStoreWebAccountId(webAccountId); });
 }
 
 inline void StoreConfiguration::SetEnterpriseStoreWebAccountIdForUser(Windows::System::User const& user, param::hstring const& webAccountId)
 {
-    get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().SetEnterpriseStoreWebAccountIdForUser(user, webAccountId);
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.SetEnterpriseStoreWebAccountIdForUser(user, webAccountId); });
 }
 
 inline hstring StoreConfiguration::GetEnterpriseStoreWebAccountId()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().GetEnterpriseStoreWebAccountId();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.GetEnterpriseStoreWebAccountId(); });
 }
 
 inline hstring StoreConfiguration::GetEnterpriseStoreWebAccountIdForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().GetEnterpriseStoreWebAccountIdForUser(user);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.GetEnterpriseStoreWebAccountIdForUser(user); });
 }
 
 inline bool StoreConfiguration::ShouldRestrictToEnterpriseStoreOnly()
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().ShouldRestrictToEnterpriseStoreOnly();
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.ShouldRestrictToEnterpriseStoreOnly(); });
 }
 
 inline bool StoreConfiguration::ShouldRestrictToEnterpriseStoreOnlyForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>().ShouldRestrictToEnterpriseStoreOnlyForUser(user);
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>([&](auto&& f) { return f.ShouldRestrictToEnterpriseStoreOnlyForUser(user); });
+}
+
+inline bool StoreConfiguration::IsPinToDesktopSupported()
+{
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>([&](auto&& f) { return f.IsPinToDesktopSupported(); });
+}
+
+inline bool StoreConfiguration::IsPinToTaskbarSupported()
+{
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>([&](auto&& f) { return f.IsPinToTaskbarSupported(); });
+}
+
+inline bool StoreConfiguration::IsPinToStartSupported()
+{
+    return impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>([&](auto&& f) { return f.IsPinToStartSupported(); });
+}
+
+inline void StoreConfiguration::PinToDesktop(param::hstring const& appPackageFamilyName)
+{
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>([&](auto&& f) { return f.PinToDesktop(appPackageFamilyName); });
+}
+
+inline void StoreConfiguration::PinToDesktopForUser(Windows::System::User const& user, param::hstring const& appPackageFamilyName)
+{
+    impl::call_factory<StoreConfiguration, Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5>([&](auto&& f) { return f.PinToDesktopForUser(user, appPackageFamilyName); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> StorePreview::RequestProductPurchaseByProductIdAndSkuIdAsync(param::hstring const& productId, param::hstring const& skuId)
 {
-    return get_activation_factory<StorePreview, Windows::ApplicationModel::Store::Preview::IStorePreview>().RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId);
+    return impl::call_factory<StorePreview, Windows::ApplicationModel::Store::Preview::IStorePreview>([&](auto&& f) { return f.RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> StorePreview::LoadAddOnProductInfosAsync()
 {
-    return get_activation_factory<StorePreview, Windows::ApplicationModel::Store::Preview::IStorePreview>().LoadAddOnProductInfosAsync();
+    return impl::call_factory<StorePreview, Windows::ApplicationModel::Store::Preview::IStorePreview>([&](auto&& f) { return f.LoadAddOnProductInfosAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManagerHelper::RequestTokenWithUIElementHostingAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const& request, Windows::UI::Xaml::UIElement const& uiElement)
 {
-    return get_activation_factory<WebAuthenticationCoreManagerHelper, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>().RequestTokenWithUIElementHostingAsync(request, uiElement);
+    return impl::call_factory<WebAuthenticationCoreManagerHelper, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>([&](auto&& f) { return f.RequestTokenWithUIElementHostingAsync(request, uiElement); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> WebAuthenticationCoreManagerHelper::RequestTokenWithUIElementHostingAsync(Windows::Security::Authentication::Web::Core::WebTokenRequest const& request, Windows::Security::Credentials::WebAccount const& webAccount, Windows::UI::Xaml::UIElement const& uiElement)
 {
-    return get_activation_factory<WebAuthenticationCoreManagerHelper, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>().RequestTokenWithUIElementHostingAsync(request, webAccount, uiElement);
+    return impl::call_factory<WebAuthenticationCoreManagerHelper, Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>([&](auto&& f) { return f.RequestTokenWithUIElementHostingAsync(request, webAccount, uiElement); });
 }
 
 }
 
 WINRT_EXPORT namespace std {
 
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettings> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IDeliveryOptimizationSettingsStatics> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics5> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreview> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStorePreview> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper> {};
+template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::DeliveryOptimizationSettings> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::StoreConfiguration> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::StoreConfiguration> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo> {};
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::StorePreview> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::StorePreview> {};
@@ -1202,5 +1305,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::StorePr
 template<> struct hash<winrt::Windows::ApplicationModel::Store::Preview::WebAuthenticationCoreManagerHelper> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::Store::Preview::WebAuthenticationCoreManagerHelper> {};
 
 }
-
-WINRT_WARNING_POP

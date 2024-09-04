@@ -32,6 +32,7 @@ import "Windows.Storage.Search.idl";
 import "Windows.System.idl";
 import "Windows.UI.Notifications.idl";
 import "Windows.UI.ViewManagement.idl";
+import "Windows.UI.WebUI.idl";
 
 // Forward Declare
 namespace Windows
@@ -331,6 +332,16 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace UI
+    {
+        namespace WebUI
+        {
+            runtimeclass WebUIView;
+        }
+    }
+}
+namespace Windows
+{
     namespace ApplicationModel
     {
         namespace Activation
@@ -588,6 +599,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup*, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Core.CoreApplicationView*, Windows.ApplicationModel.Activation.IActivatedEventArgs*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.UI.WebUI.WebUIView*, Windows.ApplicationModel.Activation.IActivatedEventArgs*>;
             }
         }
     }

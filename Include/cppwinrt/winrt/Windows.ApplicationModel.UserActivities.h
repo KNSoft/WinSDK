@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Foundation.2.h"
@@ -120,6 +120,18 @@ template <typename D> hstring consume_Windows_ApplicationModel_UserActivities_IU
     return result;
 }
 
+template <typename D> bool consume_Windows_ApplicationModel_UserActivities_IUserActivity3<D>::IsRoamable() const
+{
+    bool value{};
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivity3)->get_IsRoamable(&value));
+    return value;
+}
+
+template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUserActivity3<D>::IsRoamable(bool value) const
+{
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivity3)->put_IsRoamable(value));
+}
+
 template <typename D> Windows::Foundation::Uri consume_Windows_ApplicationModel_UserActivities_IUserActivityAttribution<D>::IconUri() const
 {
     Windows::Foundation::Uri value{ nullptr };
@@ -158,9 +170,9 @@ template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUser
 
 template <typename D> Windows::ApplicationModel::UserActivities::UserActivityAttribution consume_Windows_ApplicationModel_UserActivities_IUserActivityAttributionFactory<D>::CreateWithUri(Windows::Foundation::Uri const& iconUri) const
 {
-    Windows::ApplicationModel::UserActivities::UserActivityAttribution result{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory)->CreateWithUri(get_abi(iconUri), put_abi(result)));
-    return result;
+    Windows::ApplicationModel::UserActivities::UserActivityAttribution value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory)->CreateWithUri(get_abi(iconUri), put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserActivities::UserActivity> consume_Windows_ApplicationModel_UserActivities_IUserActivityChannel<D>::GetOrCreateUserActivityAsync(param::hstring const& activityId) const
@@ -200,9 +212,9 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
 
 template <typename D> Windows::ApplicationModel::UserActivities::UserActivityChannel consume_Windows_ApplicationModel_UserActivities_IUserActivityChannelStatics<D>::GetDefault() const
 {
-    Windows::ApplicationModel::UserActivities::UserActivityChannel value{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics)->GetDefault(put_abi(value)));
-    return value;
+    Windows::ApplicationModel::UserActivities::UserActivityChannel result{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics)->GetDefault(put_abi(result)));
+    return result;
 }
 
 template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUserActivityChannelStatics2<D>::DisableAutoSessionCreation() const
@@ -233,9 +245,9 @@ template <typename D> Windows::ApplicationModel::UserActivities::UserActivityCon
 
 template <typename D> Windows::ApplicationModel::UserActivities::UserActivity consume_Windows_ApplicationModel_UserActivities_IUserActivityFactory<D>::CreateWithActivityId(param::hstring const& activityId) const
 {
-    Windows::ApplicationModel::UserActivities::UserActivity result{ nullptr };
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityFactory)->CreateWithActivityId(get_abi(activityId), put_abi(result)));
-    return result;
+    Windows::ApplicationModel::UserActivities::UserActivity value{ nullptr };
+    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityFactory)->CreateWithActivityId(get_abi(activityId), put_abi(value)));
+    return value;
 }
 
 template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUserActivityRequest<D>::SetUserActivity(Windows::ApplicationModel::UserActivities::UserActivity const& activity) const
@@ -243,21 +255,21 @@ template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUser
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityRequest)->SetUserActivity(get_abi(activity)));
 }
 
-template <typename D> event_token consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const
+template <typename D> winrt::event_token consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const
 {
-    event_token token{};
+    winrt::event_token token{};
     check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityRequestManager)->add_UserActivityRequested(get_abi(handler), put_abi(token)));
     return token;
 }
 
-template <typename D> event_revoker<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager> consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const
+template <typename D> typename consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested_revoker consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>(this, &abi_t<Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>::remove_UserActivityRequested, UserActivityRequested(handler));
+    return impl::make_event_revoker<D, UserActivityRequested_revoker>(this, UserActivityRequested(handler));
 }
 
-template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(event_token const& token) const
+template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManager<D>::UserActivityRequested(winrt::event_token const& token) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityRequestManager)->remove_UserActivityRequested(get_abi(token)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::ApplicationModel::UserActivities::IUserActivityRequestManager)->remove_UserActivityRequested(get_abi(token)));
 }
 
 template <typename D> Windows::ApplicationModel::UserActivities::UserActivityRequestManager consume_Windows_ApplicationModel_UserActivities_IUserActivityRequestManagerStatics<D>::GetForCurrentView() const
@@ -405,943 +417,849 @@ template <typename D> void consume_Windows_ApplicationModel_UserActivities_IUser
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivity> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivity>
 {
-    HRESULT __stdcall get_State(Windows::ApplicationModel::UserActivities::UserActivityState* value) noexcept final
+    int32_t WINRT_CALL get_State(Windows::ApplicationModel::UserActivities::UserActivityState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityState));
             *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivityId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActivityId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivityId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActivityId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VisualElements(void** value) noexcept final
+    int32_t WINRT_CALL get_VisualElements(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VisualElements, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityVisualElements));
             *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityVisualElements>(this->shim().VisualElements());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ContentUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ContentUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentType(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ContentType(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentType, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ContentType());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentType(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_ContentType(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentType, WINRT_WRAP(void), hstring const&);
             this->shim().ContentType(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FallbackUri(void** value) noexcept final
+    int32_t WINRT_CALL get_FallbackUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FallbackUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().FallbackUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_FallbackUri(void* value) noexcept final
+    int32_t WINRT_CALL put_FallbackUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FallbackUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().FallbackUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ActivationUri(void** value) noexcept final
+    int32_t WINRT_CALL get_ActivationUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivationUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().ActivationUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ActivationUri(void* value) noexcept final
+    int32_t WINRT_CALL put_ActivationUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivationUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().ActivationUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ContentInfo(void** value) noexcept final
+    int32_t WINRT_CALL get_ContentInfo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentInfo, WINRT_WRAP(Windows::ApplicationModel::UserActivities::IUserActivityContentInfo));
             *value = detach_from<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>(this->shim().ContentInfo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ContentInfo(void* value) noexcept final
+    int32_t WINRT_CALL put_ContentInfo(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ContentInfo, WINRT_WRAP(void), Windows::ApplicationModel::UserActivities::IUserActivityContentInfo const&);
             this->shim().ContentInfo(*reinterpret_cast<Windows::ApplicationModel::UserActivities::IUserActivityContentInfo const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveAsync(void** operation) noexcept final
+    int32_t WINRT_CALL SaveAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().SaveAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateSession(void** result) noexcept final
+    int32_t WINRT_CALL CreateSession(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateSession, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivitySession));
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivitySession>(this->shim().CreateSession());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivity2> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivity2>
 {
-    HRESULT __stdcall ToJson(HSTRING* result) noexcept final
+    int32_t WINRT_CALL ToJson(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToJson, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().ToJson());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivity3> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivity3>
+{
+    int32_t WINRT_CALL get_IsRoamable(bool* value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRoamable, WINRT_WRAP(bool));
+            *value = detach_from<bool>(this->shim().IsRoamable());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL put_IsRoamable(bool value) noexcept final
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsRoamable, WINRT_WRAP(void), bool);
+            this->shim().IsRoamable(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityAttribution> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityAttribution>
 {
-    HRESULT __stdcall get_IconUri(void** value) noexcept final
+    int32_t WINRT_CALL get_IconUri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IconUri, WINRT_WRAP(Windows::Foundation::Uri));
             *value = detach_from<Windows::Foundation::Uri>(this->shim().IconUri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_IconUri(void* value) noexcept final
+    int32_t WINRT_CALL put_IconUri(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IconUri, WINRT_WRAP(void), Windows::Foundation::Uri const&);
             this->shim().IconUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AlternateText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AlternateText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AlternateText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AlternateText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AlternateText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AlternateText, WINRT_WRAP(void), hstring const&);
             this->shim().AlternateText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AddImageQuery(bool* value) noexcept final
+    int32_t WINRT_CALL get_AddImageQuery(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddImageQuery, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().AddImageQuery());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AddImageQuery(bool value) noexcept final
+    int32_t WINRT_CALL put_AddImageQuery(bool value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddImageQuery, WINRT_WRAP(void), bool);
             this->shim().AddImageQuery(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>
 {
-    HRESULT __stdcall CreateWithUri(void* iconUri, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithUri(void* iconUri, void** value) noexcept final
     {
         try
         {
-            *result = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivityAttribution>(this->shim().CreateWithUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&iconUri)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateWithUri, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityAttribution), Windows::Foundation::Uri const&);
+            *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityAttribution>(this->shim().CreateWithUri(*reinterpret_cast<Windows::Foundation::Uri const*>(&iconUri)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityChannel> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityChannel>
 {
-    HRESULT __stdcall GetOrCreateUserActivityAsync(HSTRING activityId, void** operation) noexcept final
+    int32_t WINRT_CALL GetOrCreateUserActivityAsync(void* activityId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetOrCreateUserActivityAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserActivities::UserActivity>), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserActivities::UserActivity>>(this->shim().GetOrCreateUserActivityAsync(*reinterpret_cast<hstring const*>(&activityId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteActivityAsync(HSTRING activityId, void** operation) noexcept final
+    int32_t WINRT_CALL DeleteActivityAsync(void* activityId, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteActivityAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction), hstring const);
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteActivityAsync(*reinterpret_cast<hstring const*>(&activityId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DeleteAllActivitiesAsync(void** operation) noexcept final
+    int32_t WINRT_CALL DeleteAllActivitiesAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeleteAllActivitiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncAction));
             *operation = detach_from<Windows::Foundation::IAsyncAction>(this->shim().DeleteAllActivitiesAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityChannel2> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityChannel2>
 {
-    HRESULT __stdcall GetRecentUserActivitiesAsync(int32_t maxUniqueActivities, void** operation) noexcept final
+    int32_t WINRT_CALL GetRecentUserActivitiesAsync(int32_t maxUniqueActivities, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRecentUserActivitiesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>>), int32_t);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>>>(this->shim().GetRecentUserActivitiesAsync(maxUniqueActivities));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetSessionHistoryItemsForUserActivityAsync(HSTRING activityId, Windows::Foundation::DateTime startTime, void** operation) noexcept final
+    int32_t WINRT_CALL GetSessionHistoryItemsForUserActivityAsync(void* activityId, Windows::Foundation::DateTime startTime, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetSessionHistoryItemsForUserActivityAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>>), hstring const, Windows::Foundation::DateTime const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivitySessionHistoryItem>>>(this->shim().GetSessionHistoryItemsForUserActivityAsync(*reinterpret_cast<hstring const*>(&activityId), *reinterpret_cast<Windows::Foundation::DateTime const*>(&startTime)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>
 {
-    HRESULT __stdcall GetDefault(void** value) noexcept final
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
     {
         try
         {
-            *value = nullptr;
+            *result = nullptr;
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityChannel>(this->shim().GetDefault());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityChannel));
+            *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivityChannel>(this->shim().GetDefault());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>
 {
-    HRESULT __stdcall DisableAutoSessionCreation() noexcept final
+    int32_t WINRT_CALL DisableAutoSessionCreation() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisableAutoSessionCreation, WINRT_WRAP(void));
             this->shim().DisableAutoSessionCreation();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryGetForWebAccount(void* account, void** result) noexcept final
+    int32_t WINRT_CALL TryGetForWebAccount(void* account, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryGetForWebAccount, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityChannel), Windows::Security::Credentials::WebAccount const&);
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivityChannel>(this->shim().TryGetForWebAccount(*reinterpret_cast<Windows::Security::Credentials::WebAccount const*>(&account)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityContentInfo> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityContentInfo>
 {
-    HRESULT __stdcall ToJson(HSTRING* result) noexcept final
+    int32_t WINRT_CALL ToJson(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToJson, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().ToJson());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>
 {
-    HRESULT __stdcall FromJson(HSTRING value, void** result) noexcept final
+    int32_t WINRT_CALL FromJson(void* value, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromJson, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityContentInfo), hstring const&);
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivityContentInfo>(this->shim().FromJson(*reinterpret_cast<hstring const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityFactory> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityFactory>
 {
-    HRESULT __stdcall CreateWithActivityId(HSTRING activityId, void** result) noexcept final
+    int32_t WINRT_CALL CreateWithActivityId(void* activityId, void** value) noexcept final
     {
         try
         {
-            *result = nullptr;
+            *value = nullptr;
             typename D::abi_guard guard(this->shim());
-            *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivity>(this->shim().CreateWithActivityId(*reinterpret_cast<hstring const*>(&activityId)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(CreateWithActivityId, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivity), hstring const&);
+            *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivity>(this->shim().CreateWithActivityId(*reinterpret_cast<hstring const*>(&activityId)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityRequest> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityRequest>
 {
-    HRESULT __stdcall SetUserActivity(void* activity) noexcept final
+    int32_t WINRT_CALL SetUserActivity(void* activity) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetUserActivity, WINRT_WRAP(void), Windows::ApplicationModel::UserActivities::UserActivity const&);
             this->shim().SetUserActivity(*reinterpret_cast<Windows::ApplicationModel::UserActivities::UserActivity const*>(&activity));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestManager> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestManager>
 {
-    HRESULT __stdcall add_UserActivityRequested(void* handler, event_token* token) noexcept final
+    int32_t WINRT_CALL add_UserActivityRequested(void* handler, winrt::event_token* token) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *token = detach_from<event_token>(this->shim().UserActivityRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(UserActivityRequested, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const&);
+            *token = detach_from<winrt::event_token>(this->shim().UserActivityRequested(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserActivities::UserActivityRequestManager, Windows::ApplicationModel::UserActivities::UserActivityRequestedEventArgs> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_UserActivityRequested(event_token token) noexcept final
+    int32_t WINRT_CALL remove_UserActivityRequested(winrt::event_token token) noexcept final
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().UserActivityRequested(*reinterpret_cast<event_token const*>(&token));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(UserActivityRequested, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().UserActivityRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+        return 0;
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>
 {
-    HRESULT __stdcall GetForCurrentView(void** result) noexcept final
+    int32_t WINRT_CALL GetForCurrentView(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetForCurrentView, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityRequestManager));
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivityRequestManager>(this->shim().GetForCurrentView());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityRequestedEventArgs>
 {
-    HRESULT __stdcall get_Request(void** value) noexcept final
+    int32_t WINRT_CALL get_Request(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Request, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityRequest));
             *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityRequest>(this->shim().Request());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeferral(void** value) noexcept final
+    int32_t WINRT_CALL GetDeferral(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeferral, WINRT_WRAP(Windows::Foundation::Deferral));
             *value = detach_from<Windows::Foundation::Deferral>(this->shim().GetDeferral());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivitySession> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivitySession>
 {
-    HRESULT __stdcall get_ActivityId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ActivityId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ActivityId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ActivityId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivitySessionHistoryItem>
 {
-    HRESULT __stdcall get_UserActivity(void** value) noexcept final
+    int32_t WINRT_CALL get_UserActivity(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UserActivity, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivity));
             *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivity>(this->shim().UserActivity());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_StartTime(Windows::Foundation::DateTime* value) noexcept final
+    int32_t WINRT_CALL get_StartTime(Windows::Foundation::DateTime* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *value = detach_from<Windows::Foundation::DateTime>(this->shim().StartTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EndTime(void** value) noexcept final
+    int32_t WINRT_CALL get_EndTime(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EndTime, WINRT_WRAP(Windows::Foundation::IReference<Windows::Foundation::DateTime>));
             *value = detach_from<Windows::Foundation::IReference<Windows::Foundation::DateTime>>(this->shim().EndTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityStatics> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityStatics>
 {
-    HRESULT __stdcall TryParseFromJson(HSTRING json, void** result) noexcept final
+    int32_t WINRT_CALL TryParseFromJson(void* json, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParseFromJson, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivity), hstring const&);
             *result = detach_from<Windows::ApplicationModel::UserActivities::UserActivity>(this->shim().TryParseFromJson(*reinterpret_cast<hstring const*>(&json)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TryParseFromJsonArray(HSTRING json, void** result) noexcept final
+    int32_t WINRT_CALL TryParseFromJsonArray(void* json, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TryParseFromJsonArray, WINRT_WRAP(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivity>), hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivity>>(this->shim().TryParseFromJsonArray(*reinterpret_cast<hstring const*>(&json)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ToJsonArray(void* activities, HSTRING* result) noexcept final
+    int32_t WINRT_CALL ToJsonArray(void* activities, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ToJsonArray, WINRT_WRAP(hstring), Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserActivities::UserActivity> const&);
             *result = detach_from<hstring>(this->shim().ToJsonArray(*reinterpret_cast<Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserActivities::UserActivity> const*>(&activities)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityVisualElements> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityVisualElements>
 {
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DisplayText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_DisplayText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(void), hstring const&);
             this->shim().DisplayText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Description(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Description(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Description());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Description(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_Description(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Description, WINRT_WRAP(void), hstring const&);
             this->shim().Description(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
+    int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(Windows::UI::Color));
             *value = detach_from<Windows::UI::Color>(this->shim().BackgroundColor());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
+    int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BackgroundColor, WINRT_WRAP(void), Windows::UI::Color const&);
             this->shim().BackgroundColor(*reinterpret_cast<Windows::UI::Color const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Attribution(void** value) noexcept final
+    int32_t WINRT_CALL get_Attribution(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Attribution, WINRT_WRAP(Windows::ApplicationModel::UserActivities::UserActivityAttribution));
             *value = detach_from<Windows::ApplicationModel::UserActivities::UserActivityAttribution>(this->shim().Attribution());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Attribution(void* value) noexcept final
+    int32_t WINRT_CALL put_Attribution(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Attribution, WINRT_WRAP(void), Windows::ApplicationModel::UserActivities::UserActivityAttribution const&);
             this->shim().Attribution(*reinterpret_cast<Windows::ApplicationModel::UserActivities::UserActivityAttribution const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Content(void* value) noexcept final
+    int32_t WINRT_CALL put_Content(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(void), Windows::UI::Shell::IAdaptiveCard const&);
             this->shim().Content(*reinterpret_cast<Windows::UI::Shell::IAdaptiveCard const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Content(void** value) noexcept final
+    int32_t WINRT_CALL get_Content(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Content, WINRT_WRAP(Windows::UI::Shell::IAdaptiveCard));
             *value = detach_from<Windows::UI::Shell::IAdaptiveCard>(this->shim().Content());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2> : produce_base<D, Windows::ApplicationModel::UserActivities::IUserActivityVisualElements2>
 {
-    HRESULT __stdcall get_AttributionDisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AttributionDisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributionDisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AttributionDisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_AttributionDisplayText(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_AttributionDisplayText(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AttributionDisplayText, WINRT_WRAP(void), hstring const&);
             this->shim().AttributionDisplayText(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -1350,55 +1268,55 @@ struct produce<D, Windows::ApplicationModel::UserActivities::IUserActivityVisual
 WINRT_EXPORT namespace winrt::Windows::ApplicationModel::UserActivities {
 
 inline UserActivity::UserActivity(param::hstring const& activityId) :
-    UserActivity(get_activation_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityFactory>().CreateWithActivityId(activityId))
+    UserActivity(impl::call_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityFactory>([&](auto&& f) { return f.CreateWithActivityId(activityId); }))
 {}
 
 inline Windows::ApplicationModel::UserActivities::UserActivity UserActivity::TryParseFromJson(param::hstring const& json)
 {
-    return get_activation_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>().TryParseFromJson(json);
+    return impl::call_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>([&](auto&& f) { return f.TryParseFromJson(json); });
 }
 
 inline Windows::Foundation::Collections::IVector<Windows::ApplicationModel::UserActivities::UserActivity> UserActivity::TryParseFromJsonArray(param::hstring const& json)
 {
-    return get_activation_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>().TryParseFromJsonArray(json);
+    return impl::call_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>([&](auto&& f) { return f.TryParseFromJsonArray(json); });
 }
 
 inline hstring UserActivity::ToJsonArray(param::iterable<Windows::ApplicationModel::UserActivities::UserActivity> const& activities)
 {
-    return get_activation_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>().ToJsonArray(activities);
+    return impl::call_factory<UserActivity, Windows::ApplicationModel::UserActivities::IUserActivityStatics>([&](auto&& f) { return f.ToJsonArray(activities); });
 }
 
 inline UserActivityAttribution::UserActivityAttribution() :
-    UserActivityAttribution(get_activation_factory<UserActivityAttribution>().ActivateInstance<UserActivityAttribution>())
+    UserActivityAttribution(impl::call_factory<UserActivityAttribution>([](auto&& f) { return f.template ActivateInstance<UserActivityAttribution>(); }))
 {}
 
 inline UserActivityAttribution::UserActivityAttribution(Windows::Foundation::Uri const& iconUri) :
-    UserActivityAttribution(get_activation_factory<UserActivityAttribution, Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>().CreateWithUri(iconUri))
+    UserActivityAttribution(impl::call_factory<UserActivityAttribution, Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory>([&](auto&& f) { return f.CreateWithUri(iconUri); }))
 {}
 
 inline Windows::ApplicationModel::UserActivities::UserActivityChannel UserActivityChannel::GetDefault()
 {
-    return get_activation_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>().GetDefault();
+    return impl::call_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 inline void UserActivityChannel::DisableAutoSessionCreation()
 {
-    get_activation_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>().DisableAutoSessionCreation();
+    impl::call_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>([&](auto&& f) { return f.DisableAutoSessionCreation(); });
 }
 
 inline Windows::ApplicationModel::UserActivities::UserActivityChannel UserActivityChannel::TryGetForWebAccount(Windows::Security::Credentials::WebAccount const& account)
 {
-    return get_activation_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>().TryGetForWebAccount(account);
+    return impl::call_factory<UserActivityChannel, Windows::ApplicationModel::UserActivities::IUserActivityChannelStatics2>([&](auto&& f) { return f.TryGetForWebAccount(account); });
 }
 
 inline Windows::ApplicationModel::UserActivities::UserActivityContentInfo UserActivityContentInfo::FromJson(param::hstring const& value)
 {
-    return get_activation_factory<UserActivityContentInfo, Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>().FromJson(value);
+    return impl::call_factory<UserActivityContentInfo, Windows::ApplicationModel::UserActivities::IUserActivityContentInfoStatics>([&](auto&& f) { return f.FromJson(value); });
 }
 
 inline Windows::ApplicationModel::UserActivities::UserActivityRequestManager UserActivityRequestManager::GetForCurrentView()
 {
-    return get_activation_factory<UserActivityRequestManager, Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>().GetForCurrentView();
+    return impl::call_factory<UserActivityRequestManager, Windows::ApplicationModel::UserActivities::IUserActivityRequestManagerStatics>([&](auto&& f) { return f.GetForCurrentView(); });
 }
 
 }
@@ -1407,6 +1325,7 @@ WINRT_EXPORT namespace std {
 
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivity> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivity> {};
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivity2> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivity2> {};
+template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivity3> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivity3> {};
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivityAttribution> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivityAttribution> {};
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivityAttributionFactory> {};
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::IUserActivityChannel> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::IUserActivityChannel> {};
@@ -1437,5 +1356,3 @@ template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::UserAct
 template<> struct hash<winrt::Windows::ApplicationModel::UserActivities::UserActivityVisualElements> : winrt::impl::hash_base<winrt::Windows::ApplicationModel::UserActivities::UserActivityVisualElements> {};
 
 }
-
-WINRT_WARNING_POP

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -272,28 +272,28 @@ template <> struct name<Windows::Web::Http::HttpResponseMessageSource>{ static c
 template <> struct name<Windows::Web::Http::HttpStatusCode>{ static constexpr auto & value{ L"Windows.Web.Http.HttpStatusCode" }; };
 template <> struct name<Windows::Web::Http::HttpVersion>{ static constexpr auto & value{ L"Windows.Web.Http.HttpVersion" }; };
 template <> struct name<Windows::Web::Http::HttpProgress>{ static constexpr auto & value{ L"Windows.Web.Http.HttpProgress" }; };
-template <> struct guid<Windows::Web::Http::IHttpBufferContentFactory>{ static constexpr GUID value{ 0xBC20C193,0xC41F,0x4FF7,{ 0x91,0x23,0x64,0x35,0x73,0x6E,0xAD,0xC2 } }; };
-template <> struct guid<Windows::Web::Http::IHttpClient>{ static constexpr GUID value{ 0x7FDA1151,0x3574,0x4880,{ 0xA8,0xBA,0xE6,0xB1,0xE0,0x06,0x1F,0x3D } }; };
-template <> struct guid<Windows::Web::Http::IHttpClientFactory>{ static constexpr GUID value{ 0xC30C4ECA,0xE3FA,0x4F99,{ 0xAF,0xB4,0x63,0xCC,0x65,0x00,0x94,0x62 } }; };
-template <> struct guid<Windows::Web::Http::IHttpContent>{ static constexpr GUID value{ 0x6B14A441,0xFBA7,0x4BD2,{ 0xAF,0x0A,0x83,0x9D,0xE7,0xC2,0x95,0xDA } }; };
-template <> struct guid<Windows::Web::Http::IHttpCookie>{ static constexpr GUID value{ 0x1F5488E2,0xCC2D,0x4779,{ 0x86,0xA7,0x88,0xF1,0x06,0x87,0xD2,0x49 } }; };
-template <> struct guid<Windows::Web::Http::IHttpCookieFactory>{ static constexpr GUID value{ 0x6A0585A9,0x931C,0x4CD1,{ 0xA9,0x6D,0xC2,0x17,0x01,0x78,0x5C,0x5F } }; };
-template <> struct guid<Windows::Web::Http::IHttpCookieManager>{ static constexpr GUID value{ 0x7A431780,0xCD4F,0x4E57,{ 0xA8,0x4A,0x5B,0x0A,0x53,0xD6,0xBB,0x96 } }; };
-template <> struct guid<Windows::Web::Http::IHttpFormUrlEncodedContentFactory>{ static constexpr GUID value{ 0x43F0138C,0x2F73,0x4302,{ 0xB5,0xF3,0xEA,0xE9,0x23,0x8A,0x5E,0x01 } }; };
-template <> struct guid<Windows::Web::Http::IHttpMethod>{ static constexpr GUID value{ 0x728D4022,0x700D,0x4FE0,{ 0xAF,0xA5,0x40,0x29,0x9C,0x58,0xDB,0xFD } }; };
-template <> struct guid<Windows::Web::Http::IHttpMethodFactory>{ static constexpr GUID value{ 0x3C51D10D,0x36D7,0x40F8,{ 0xA8,0x6D,0xE7,0x59,0xCA,0xF2,0xF8,0x3F } }; };
-template <> struct guid<Windows::Web::Http::IHttpMethodStatics>{ static constexpr GUID value{ 0x64D171F0,0xD99A,0x4153,{ 0x8D,0xC6,0xD6,0x8C,0xC4,0xCC,0xE3,0x17 } }; };
-template <> struct guid<Windows::Web::Http::IHttpMultipartContent>{ static constexpr GUID value{ 0xDF916AFF,0x9926,0x4AC9,{ 0xAA,0xF1,0xE0,0xD0,0x4E,0xF0,0x9B,0xB9 } }; };
-template <> struct guid<Windows::Web::Http::IHttpMultipartContentFactory>{ static constexpr GUID value{ 0x7EB42E62,0x0222,0x4F20,{ 0xB3,0x72,0x47,0xD5,0xDB,0x5D,0x33,0xB4 } }; };
-template <> struct guid<Windows::Web::Http::IHttpMultipartFormDataContent>{ static constexpr GUID value{ 0x64D337E2,0xE967,0x4624,{ 0xB6,0xD1,0xCF,0x74,0x60,0x4A,0x4A,0x42 } }; };
-template <> struct guid<Windows::Web::Http::IHttpMultipartFormDataContentFactory>{ static constexpr GUID value{ 0xA04D7311,0x5017,0x4622,{ 0x93,0xA8,0x49,0xB2,0x4A,0x4F,0xCB,0xFC } }; };
-template <> struct guid<Windows::Web::Http::IHttpRequestMessage>{ static constexpr GUID value{ 0xF5762B3C,0x74D4,0x4811,{ 0xB5,0xDC,0x9F,0x8B,0x4E,0x2F,0x9A,0xBF } }; };
-template <> struct guid<Windows::Web::Http::IHttpRequestMessageFactory>{ static constexpr GUID value{ 0x5BAC994E,0x3886,0x412E,{ 0xAE,0xC3,0x52,0xEC,0x7F,0x25,0x61,0x6F } }; };
-template <> struct guid<Windows::Web::Http::IHttpResponseMessage>{ static constexpr GUID value{ 0xFEE200FB,0x8664,0x44E0,{ 0x95,0xD9,0x42,0x69,0x61,0x99,0xBF,0xFC } }; };
-template <> struct guid<Windows::Web::Http::IHttpResponseMessageFactory>{ static constexpr GUID value{ 0x52A8AF99,0xF095,0x43DA,{ 0xB6,0x0F,0x7C,0xFC,0x2B,0xC7,0xEA,0x2F } }; };
-template <> struct guid<Windows::Web::Http::IHttpStreamContentFactory>{ static constexpr GUID value{ 0xF3E64D9D,0xF725,0x407E,{ 0x94,0x2F,0x0E,0xDA,0x18,0x98,0x09,0xF4 } }; };
-template <> struct guid<Windows::Web::Http::IHttpStringContentFactory>{ static constexpr GUID value{ 0x46649D5B,0x2E93,0x48EB,{ 0x8E,0x61,0x19,0x67,0x78,0x78,0xE5,0x7F } }; };
-template <> struct guid<Windows::Web::Http::IHttpTransportInformation>{ static constexpr GUID value{ 0x70127198,0xC6A7,0x4ED0,{ 0x83,0x3A,0x83,0xFD,0x8B,0x8F,0x17,0x8D } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpBufferContentFactory>{ static constexpr guid value{ 0xBC20C193,0xC41F,0x4FF7,{ 0x91,0x23,0x64,0x35,0x73,0x6E,0xAD,0xC2 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpClient>{ static constexpr guid value{ 0x7FDA1151,0x3574,0x4880,{ 0xA8,0xBA,0xE6,0xB1,0xE0,0x06,0x1F,0x3D } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpClientFactory>{ static constexpr guid value{ 0xC30C4ECA,0xE3FA,0x4F99,{ 0xAF,0xB4,0x63,0xCC,0x65,0x00,0x94,0x62 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpContent>{ static constexpr guid value{ 0x6B14A441,0xFBA7,0x4BD2,{ 0xAF,0x0A,0x83,0x9D,0xE7,0xC2,0x95,0xDA } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpCookie>{ static constexpr guid value{ 0x1F5488E2,0xCC2D,0x4779,{ 0x86,0xA7,0x88,0xF1,0x06,0x87,0xD2,0x49 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpCookieFactory>{ static constexpr guid value{ 0x6A0585A9,0x931C,0x4CD1,{ 0xA9,0x6D,0xC2,0x17,0x01,0x78,0x5C,0x5F } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpCookieManager>{ static constexpr guid value{ 0x7A431780,0xCD4F,0x4E57,{ 0xA8,0x4A,0x5B,0x0A,0x53,0xD6,0xBB,0x96 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpFormUrlEncodedContentFactory>{ static constexpr guid value{ 0x43F0138C,0x2F73,0x4302,{ 0xB5,0xF3,0xEA,0xE9,0x23,0x8A,0x5E,0x01 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMethod>{ static constexpr guid value{ 0x728D4022,0x700D,0x4FE0,{ 0xAF,0xA5,0x40,0x29,0x9C,0x58,0xDB,0xFD } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMethodFactory>{ static constexpr guid value{ 0x3C51D10D,0x36D7,0x40F8,{ 0xA8,0x6D,0xE7,0x59,0xCA,0xF2,0xF8,0x3F } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMethodStatics>{ static constexpr guid value{ 0x64D171F0,0xD99A,0x4153,{ 0x8D,0xC6,0xD6,0x8C,0xC4,0xCC,0xE3,0x17 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMultipartContent>{ static constexpr guid value{ 0xDF916AFF,0x9926,0x4AC9,{ 0xAA,0xF1,0xE0,0xD0,0x4E,0xF0,0x9B,0xB9 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMultipartContentFactory>{ static constexpr guid value{ 0x7EB42E62,0x0222,0x4F20,{ 0xB3,0x72,0x47,0xD5,0xDB,0x5D,0x33,0xB4 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMultipartFormDataContent>{ static constexpr guid value{ 0x64D337E2,0xE967,0x4624,{ 0xB6,0xD1,0xCF,0x74,0x60,0x4A,0x4A,0x42 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpMultipartFormDataContentFactory>{ static constexpr guid value{ 0xA04D7311,0x5017,0x4622,{ 0x93,0xA8,0x49,0xB2,0x4A,0x4F,0xCB,0xFC } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpRequestMessage>{ static constexpr guid value{ 0xF5762B3C,0x74D4,0x4811,{ 0xB5,0xDC,0x9F,0x8B,0x4E,0x2F,0x9A,0xBF } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpRequestMessageFactory>{ static constexpr guid value{ 0x5BAC994E,0x3886,0x412E,{ 0xAE,0xC3,0x52,0xEC,0x7F,0x25,0x61,0x6F } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpResponseMessage>{ static constexpr guid value{ 0xFEE200FB,0x8664,0x44E0,{ 0x95,0xD9,0x42,0x69,0x61,0x99,0xBF,0xFC } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpResponseMessageFactory>{ static constexpr guid value{ 0x52A8AF99,0xF095,0x43DA,{ 0xB6,0x0F,0x7C,0xFC,0x2B,0xC7,0xEA,0x2F } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpStreamContentFactory>{ static constexpr guid value{ 0xF3E64D9D,0xF725,0x407E,{ 0x94,0x2F,0x0E,0xDA,0x18,0x98,0x09,0xF4 } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpStringContentFactory>{ static constexpr guid value{ 0x46649D5B,0x2E93,0x48EB,{ 0x8E,0x61,0x19,0x67,0x78,0x78,0xE5,0x7F } }; };
+template <> struct guid_storage<Windows::Web::Http::IHttpTransportInformation>{ static constexpr guid value{ 0x70127198,0xC6A7,0x4ED0,{ 0x83,0x3A,0x83,0xFD,0x8B,0x8F,0x17,0x8D } }; };
 template <> struct default_interface<Windows::Web::Http::HttpBufferContent>{ using type = Windows::Web::Http::IHttpContent; };
 template <> struct default_interface<Windows::Web::Http::HttpClient>{ using type = Windows::Web::Http::IHttpClient; };
 template <> struct default_interface<Windows::Web::Http::HttpCookie>{ using type = Windows::Web::Http::IHttpCookie; };
@@ -308,6 +308,182 @@ template <> struct default_interface<Windows::Web::Http::HttpResponseMessage>{ u
 template <> struct default_interface<Windows::Web::Http::HttpStreamContent>{ using type = Windows::Web::Http::IHttpContent; };
 template <> struct default_interface<Windows::Web::Http::HttpStringContent>{ using type = Windows::Web::Http::IHttpContent; };
 template <> struct default_interface<Windows::Web::Http::HttpTransportInformation>{ using type = Windows::Web::Http::IHttpTransportInformation; };
+
+template <> struct abi<Windows::Web::Http::IHttpBufferContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromBuffer(void* content, void** bufferContent) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromBufferWithOffset(void* content, uint32_t offset, uint32_t count, void** bufferContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpClient>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DeleteAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetWithOptionAsync(void* uri, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetBufferAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetInputStreamAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStringAsync(void* uri, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PostAsync(void* uri, void* content, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PutAsync(void* uri, void* content, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendRequestAsync(void* request, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SendRequestWithOptionAsync(void* request, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DefaultRequestHeaders(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpClientFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* filter, void** client) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Headers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL BufferAllAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadAsBufferAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadAsInputStreamAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReadAsStringAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TryComputeLength(uint64_t* length, bool* succeeded) noexcept = 0;
+    virtual int32_t WINRT_CALL WriteToStreamAsync(void* outputStream, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpCookie>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Domain(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Path(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Expires(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Expires(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HttpOnly(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_HttpOnly(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Secure(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Secure(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpCookieFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void* domain, void* path, void** cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpCookieManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetCookie(void* cookie, bool* replaced) noexcept = 0;
+    virtual int32_t WINRT_CALL SetCookieWithThirdParty(void* cookie, bool thirdParty, bool* replaced) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteCookie(void* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCookies(void* uri, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpFormUrlEncodedContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* content, void** formUrlEncodedContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMethod>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Method(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMethodFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* method, void** httpMethod) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMethodStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Delete(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Get(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Head(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Options(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Patch(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Post(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Put(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMultipartContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Add(void* content) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMultipartContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithSubtype(void* subtype, void** multipartContent) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithSubtypeAndBoundary(void* subtype, void* boundary, void** multipartContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMultipartFormDataContent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Add(void* content) noexcept = 0;
+    virtual int32_t WINRT_CALL AddWithName(void* content, void* name) noexcept = 0;
+    virtual int32_t WINRT_CALL AddWithNameAndFileName(void* content, void* name, void* fileName) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpMultipartFormDataContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithBoundary(void* boundary, void** multipartFormDataContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpRequestMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Content(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Headers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Method(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Method(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestUri(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TransportInformation(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpRequestMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* method, void* uri, void** httpRequestMessage) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpResponseMessage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Content(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Content(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Headers(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSuccessStatusCode(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ReasonPhrase(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ReasonPhrase(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestMessage(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_RequestMessage(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Source(Windows::Web::Http::HttpResponseMessageSource* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Source(Windows::Web::Http::HttpResponseMessageSource value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_StatusCode(Windows::Web::Http::HttpStatusCode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Version(Windows::Web::Http::HttpVersion* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Version(Windows::Web::Http::HttpVersion value) noexcept = 0;
+    virtual int32_t WINRT_CALL EnsureSuccessStatusCode(void** httpResponseMessage) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpResponseMessageFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(Windows::Web::Http::HttpStatusCode statusCode, void** httpResponseMessage) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpStreamContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromInputStream(void* content, void** streamContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpStringContentFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromString(void* content, void** stringContent) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromStringWithEncoding(void* content, Windows::Storage::Streams::UnicodeEncoding encoding, void** stringContent) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromStringWithEncodingAndMediaType(void* content, Windows::Storage::Streams::UnicodeEncoding encoding, void* mediaType, void** stringContent) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Web::Http::IHttpTransportInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ServerCertificate(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerCertificateErrors(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerIntermediateCertificates(void** value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Web_Http_IHttpBufferContentFactory
@@ -540,181 +716,5 @@ struct struct_Windows_Web_Http_HttpProgress
 };
 template <> struct abi<Windows::Web::Http::HttpProgress>{ using type = struct_Windows_Web_Http_HttpProgress; };
 
-
-template <> struct abi<Windows::Web::Http::IHttpBufferContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromBuffer(void* content, void** bufferContent) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromBufferWithOffset(void* content, uint32_t offset, uint32_t count, void** bufferContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpClient>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall DeleteAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetWithOptionAsync(void* uri, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetBufferAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetInputStreamAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetStringAsync(void* uri, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PostAsync(void* uri, void* content, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PutAsync(void* uri, void* content, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendRequestAsync(void* request, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall SendRequestWithOptionAsync(void* request, Windows::Web::Http::HttpCompletionOption completionOption, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_DefaultRequestHeaders(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpClientFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* filter, void** client) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Headers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall BufferAllAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadAsBufferAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadAsInputStreamAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReadAsStringAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TryComputeLength(uint64_t* length, bool* succeeded) noexcept = 0;
-    virtual HRESULT __stdcall WriteToStreamAsync(void* outputStream, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpCookie>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Domain(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Path(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Expires(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Expires(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HttpOnly(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_HttpOnly(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Secure(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Secure(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpCookieFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, HSTRING domain, HSTRING path, void** cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpCookieManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetCookie(void* cookie, bool* replaced) noexcept = 0;
-    virtual HRESULT __stdcall SetCookieWithThirdParty(void* cookie, bool thirdParty, bool* replaced) noexcept = 0;
-    virtual HRESULT __stdcall DeleteCookie(void* cookie) noexcept = 0;
-    virtual HRESULT __stdcall GetCookies(void* uri, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpFormUrlEncodedContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* content, void** formUrlEncodedContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMethod>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Method(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMethodFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING method, void** httpMethod) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMethodStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Delete(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Get(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Head(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Options(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Patch(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Post(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Put(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMultipartContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Add(void* content) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMultipartContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithSubtype(HSTRING subtype, void** multipartContent) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithSubtypeAndBoundary(HSTRING subtype, HSTRING boundary, void** multipartContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMultipartFormDataContent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Add(void* content) noexcept = 0;
-    virtual HRESULT __stdcall AddWithName(void* content, HSTRING name) noexcept = 0;
-    virtual HRESULT __stdcall AddWithNameAndFileName(void* content, HSTRING name, HSTRING fileName) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpMultipartFormDataContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithBoundary(HSTRING boundary, void** multipartFormDataContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpRequestMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Content(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Headers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Method(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Method(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestUri(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TransportInformation(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpRequestMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* method, void* uri, void** httpRequestMessage) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpResponseMessage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Content(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Content(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Headers(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSuccessStatusCode(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ReasonPhrase(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ReasonPhrase(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestMessage(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_RequestMessage(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Source(Windows::Web::Http::HttpResponseMessageSource* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Source(Windows::Web::Http::HttpResponseMessageSource value) noexcept = 0;
-    virtual HRESULT __stdcall get_StatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_StatusCode(Windows::Web::Http::HttpStatusCode value) noexcept = 0;
-    virtual HRESULT __stdcall get_Version(Windows::Web::Http::HttpVersion* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Version(Windows::Web::Http::HttpVersion value) noexcept = 0;
-    virtual HRESULT __stdcall EnsureSuccessStatusCode(void** httpResponseMessage) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpResponseMessageFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(Windows::Web::Http::HttpStatusCode statusCode, void** httpResponseMessage) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpStreamContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromInputStream(void* content, void** streamContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpStringContentFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromString(HSTRING content, void** stringContent) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromStringWithEncoding(HSTRING content, Windows::Storage::Streams::UnicodeEncoding encoding, void** stringContent) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromStringWithEncodingAndMediaType(HSTRING content, Windows::Storage::Streams::UnicodeEncoding encoding, HSTRING mediaType, void** stringContent) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Web::Http::IHttpTransportInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ServerCertificate(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCertificateErrorSeverity(Windows::Networking::Sockets::SocketSslErrorSeverity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerCertificateErrors(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerIntermediateCertificates(void** value) noexcept = 0;
-};};
 
 }

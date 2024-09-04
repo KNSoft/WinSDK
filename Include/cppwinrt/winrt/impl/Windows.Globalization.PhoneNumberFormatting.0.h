@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -82,13 +82,53 @@ template <> struct name<Windows::Globalization::PhoneNumberFormatting::PhoneNumb
 template <> struct name<Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult>{ static constexpr auto & value{ L"Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult" }; };
 template <> struct name<Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult>{ static constexpr auto & value{ L"Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult" }; };
 template <> struct name<Windows::Globalization::PhoneNumberFormatting::PredictedPhoneNumberKind>{ static constexpr auto & value{ L"Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind" }; };
-template <> struct guid<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter>{ static constexpr GUID value{ 0x1556B49E,0xBAD4,0x4B4A,{ 0x90,0x0D,0x44,0x07,0xAD,0xB7,0xC9,0x81 } }; };
-template <> struct guid<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics>{ static constexpr GUID value{ 0x5CA6F931,0x84D9,0x414B,{ 0xAB,0x4E,0xA0,0x55,0x2C,0x87,0x86,0x02 } }; };
-template <> struct guid<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo>{ static constexpr GUID value{ 0x1C7CE4DD,0xC8B4,0x4EA3,{ 0x9A,0xEF,0xB3,0x42,0xE2,0xC5,0xB4,0x17 } }; };
-template <> struct guid<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory>{ static constexpr GUID value{ 0x8202B964,0xADAA,0x4CFF,{ 0x8F,0xCF,0x17,0xE7,0x51,0x6A,0x28,0xFF } }; };
-template <> struct guid<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics>{ static constexpr GUID value{ 0x5B3F4F6A,0x86A9,0x40E9,{ 0x86,0x49,0x6D,0x61,0x16,0x19,0x28,0xD4 } }; };
+template <> struct guid_storage<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter>{ static constexpr guid value{ 0x1556B49E,0xBAD4,0x4B4A,{ 0x90,0x0D,0x44,0x07,0xAD,0xB7,0xC9,0x81 } }; };
+template <> struct guid_storage<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics>{ static constexpr guid value{ 0x5CA6F931,0x84D9,0x414B,{ 0xAB,0x4E,0xA0,0x55,0x2C,0x87,0x86,0x02 } }; };
+template <> struct guid_storage<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo>{ static constexpr guid value{ 0x1C7CE4DD,0xC8B4,0x4EA3,{ 0x9A,0xEF,0xB3,0x42,0xE2,0xC5,0xB4,0x17 } }; };
+template <> struct guid_storage<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory>{ static constexpr guid value{ 0x8202B964,0xADAA,0x4CFF,{ 0x8F,0xCF,0x17,0xE7,0x51,0x6A,0x28,0xFF } }; };
+template <> struct guid_storage<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics>{ static constexpr guid value{ 0x5B3F4F6A,0x86A9,0x40E9,{ 0x86,0x49,0x6D,0x61,0x16,0x19,0x28,0xD4 } }; };
 template <> struct default_interface<Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter>{ using type = Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter; };
 template <> struct default_interface<Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo>{ using type = Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo; };
+
+template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Format(void* number, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatWithOutputFormat(void* number, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatPartialString(void* number, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatString(void* number, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL FormatStringWithLeftToRightMarkers(void* number, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryCreate(void* regionCode, void** phoneNumber) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCountryCodeForRegion(void* regionCode, int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNationalDirectDialingPrefixForRegion(void* regionCode, bool stripNonDigit, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL WrapWithLeftToRightMarkers(void* number, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CountryCode(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PhoneNumber(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLengthOfGeographicalAreaCode(int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNationalSignificantNumber(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLengthOfNationalDestinationCode(int32_t* result) noexcept = 0;
+    virtual int32_t WINRT_CALL PredictNumberKind(Windows::Globalization::PhoneNumberFormatting::PredictedPhoneNumberKind* result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGeographicRegionCode(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CheckNumberMatch(void* otherNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* number, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryParse(void* input, void** phoneNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult* result) noexcept = 0;
+    virtual int32_t WINRT_CALL TryParseWithRegion(void* input, void* regionCode, void** phoneNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult* result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Globalization_PhoneNumberFormatting_IPhoneNumberFormatter
@@ -139,45 +179,5 @@ struct consume_Windows_Globalization_PhoneNumberFormatting_IPhoneNumberInfoStati
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(param::hstring const& input, param::hstring const& regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo& phoneNumber) const;
 };
 template <> struct consume<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics> { template <typename D> using type = consume_Windows_Globalization_PhoneNumberFormatting_IPhoneNumberInfoStatics<D>; };
-
-template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Format(void* number, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatWithOutputFormat(void* number, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatPartialString(HSTRING number, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatString(HSTRING number, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall FormatStringWithLeftToRightMarkers(HSTRING number, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryCreate(HSTRING regionCode, void** phoneNumber) noexcept = 0;
-    virtual HRESULT __stdcall GetCountryCodeForRegion(HSTRING regionCode, int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall GetNationalDirectDialingPrefixForRegion(HSTRING regionCode, bool stripNonDigit, HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall WrapWithLeftToRightMarkers(HSTRING number, HSTRING* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CountryCode(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PhoneNumber(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetLengthOfGeographicalAreaCode(int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall GetNationalSignificantNumber(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall GetLengthOfNationalDestinationCode(int32_t* result) noexcept = 0;
-    virtual HRESULT __stdcall PredictNumberKind(Windows::Globalization::PhoneNumberFormatting::PredictedPhoneNumberKind* result) noexcept = 0;
-    virtual HRESULT __stdcall GetGeographicRegionCode(HSTRING* result) noexcept = 0;
-    virtual HRESULT __stdcall CheckNumberMatch(void* otherNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING number, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryParse(HSTRING input, void** phoneNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult* result) noexcept = 0;
-    virtual HRESULT __stdcall TryParseWithRegion(HSTRING input, HSTRING regionCode, void** phoneNumber, Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult* result) noexcept = 0;
-};};
 
 }

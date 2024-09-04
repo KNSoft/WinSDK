@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.ai.machinelearning.preview.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -84,7 +92,7 @@
 //  API Contract Inclusion Definitions
 #if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 #if !defined(WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION)
-#define WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION 0x10000
+#define WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION 0x20000
 #endif // defined(WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
@@ -116,7 +124,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -152,7 +160,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -164,7 +172,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -228,11 +236,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -1300,8 +1312,12 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [v1_enum, contract] */
-                    enum FeatureElementKindPreview : int
+                    /* [v1_enum, deprecated, contract] */
+                    enum 
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use TensorKind instead of FeatureElementKindPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    FeatureElementKindPreview : int
                     {
                         FeatureElementKindPreview_Undefined = 0,
                         FeatureElementKindPreview_Float = 1,
@@ -1343,8 +1359,12 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [v1_enum, contract] */
-                    enum LearningModelDeviceKindPreview : int
+                    /* [v1_enum, deprecated, contract] */
+                    enum 
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use LearningModelDeviceKind instead of LearningModelDeviceKindPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    LearningModelDeviceKindPreview : int
                     {
                         LearningModelDeviceKindPreview_LearningDeviceAny = 0,
                         LearningModelDeviceKindPreview_LearningDeviceCpu = 1,
@@ -1376,8 +1396,12 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [v1_enum, contract] */
-                    enum LearningModelFeatureKindPreview : int
+                    /* [v1_enum, deprecated, contract] */
+                    enum 
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use LearningModelFeatureKind instead of LearningModelFeatureKindPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    LearningModelFeatureKindPreview : int
                     {
                         LearningModelFeatureKindPreview_Undefined = 0,
                         LearningModelFeatureKindPreview_Tensor = 1,
@@ -1417,18 +1441,34 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("7AE1FA72-029E-4DC5-A2F8-5FB763154150"), exclusiveto, contract] */
+                    /* [object, uuid("7AE1FA72-029E-4DC5-A2F8-5FB763154150"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("7AE1FA72-029E-4DC5-A2F8-5FB763154150")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     IImageVariableDescriptorPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_BitmapPixelFormat(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_BitmapPixelFormat(
                             /* [retval, out] */__RPC__out ABI::Windows::Graphics::Imaging::BitmapPixelFormat * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Width(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Width(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Height(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Height(
                             /* [retval, out] */__RPC__out UINT32 * value
                             ) = 0;
                         
@@ -1466,39 +1506,83 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("47BC8205-4D36-47A9-8F68-FFCB339DD0FC"), exclusiveto, contract] */
+                    /* [object, uuid("47BC8205-4D36-47A9-8F68-FFCB339DD0FC"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("47BC8205-4D36-47A9-8F68-FFCB339DD0FC")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     IInferencingOptionsPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PreferredDeviceKind(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_PreferredDeviceKind(
                             /* [retval, out] */__RPC__out ABI::Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_PreferredDeviceKind(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_PreferredDeviceKind(
                             /* [in] */ABI::Windows::AI::MachineLearning::Preview::LearningModelDeviceKindPreview value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsTracingEnabled(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_IsTracingEnabled(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_IsTracingEnabled(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_IsTracingEnabled(
                             /* [in] */boolean value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxBatchSize(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_MaxBatchSize(
                             /* [retval, out] */__RPC__out INT32 * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MaxBatchSize(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_MaxBatchSize(
                             /* [in] */INT32 value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinimizeMemoryAllocation(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_MinimizeMemoryAllocation(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_MinimizeMemoryAllocation(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_MinimizeMemoryAllocation(
                             /* [in] */boolean value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ReclaimMemoryAfterEvaluation(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ReclaimMemoryAfterEvaluation(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ReclaimMemoryAfterEvaluation(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_ReclaimMemoryAfterEvaluation(
                             /* [in] */boolean value
                             ) = 0;
                         
@@ -1541,21 +1625,37 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("93C901E8-6C78-4B4F-AEC1-A6BB9E691624"), exclusiveto, contract] */
+                    /* [object, uuid("93C901E8-6C78-4B4F-AEC1-A6BB9E691624"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("93C901E8-6C78-4B4F-AEC1-A6BB9E691624")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelBindingPreview : public IInspectable
                     {
                     public:
-                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE Bind(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE Bind(
                             /* [in] */__RPC__in HSTRING name,
                             /* [in] */__RPC__in_opt IInspectable * value
                             ) = 0;
-                        /* [overload] */virtual HRESULT STDMETHODCALLTYPE BindWithProperties(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [overload, deprecated] */virtual HRESULT STDMETHODCALLTYPE BindWithProperties(
                             /* [in] */__RPC__in HSTRING name,
                             /* [in] */__RPC__in_opt IInspectable * value,
                             /* [in] */__RPC__in_opt ABI::Windows::Foundation::Collections::IPropertySet * metadata
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE Clear(void) = 0;
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE Clear(void) = 0;
                         
                     };
 
@@ -1591,12 +1691,20 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("48B8219F-1E51-4D77-AE50-3EC164AD3480"), exclusiveto, contract] */
+                    /* [object, uuid("48B8219F-1E51-4D77-AE50-3EC164AD3480"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("48B8219F-1E51-4D77-AE50-3EC164AD3480")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModelBindingFactory instead of ILearningModelBindingPreviewFactory. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelBindingPreviewFactory : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateFromModel(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelBindingFactory instead of ILearningModelBindingPreviewFactory. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE CreateFromModel(
                             /* [in] */__RPC__in_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelPreview * model,
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelBindingPreview * * value
                             ) = 0;
@@ -1635,33 +1743,69 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("F52C09C6-8611-40AD-8E59-DE3FD7030A40"), exclusiveto, contract] */
+                    /* [object, uuid("F52C09C6-8611-40AD-8E59-DE3FD7030A40"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("F52C09C6-8611-40AD-8E59-DE3FD7030A40")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelDescriptionPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Author(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Author(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Domain(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Domain(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Version(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Version(
                             /* [retval, out] */__RPC__out INT64 * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Metadata(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Metadata(
                             /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_HSTRING * * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InputFeatures(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_InputFeatures(
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CAI__CMachineLearning__CPreview__CILearningModelVariableDescriptorPreview * * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_OutputFeatures(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_OutputFeatures(
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CAI__CMachineLearning__CPreview__CILearningModelVariableDescriptorPreview * * value
                             ) = 0;
                         
@@ -1699,15 +1843,27 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("DF25EA9F-9863-4088-8498-87A1F4686F92"), exclusiveto, contract] */
+                    /* [object, uuid("DF25EA9F-9863-4088-8498-87A1F4686F92"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("DF25EA9F-9863-4088-8498-87A1F4686F92")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelEvaluationResultPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_CorrelationId(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * correlationId
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Outputs(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Outputs(
                             /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
                             ) = 0;
                         
@@ -1745,28 +1901,52 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("049C266A-93B4-478C-AEB8-70157BF0FF94"), exclusiveto, contract] */
+                    /* [object, uuid("049C266A-93B4-478C-AEB8-70157BF0FF94"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("049C266A-93B4-478C-AEB8-70157BF0FF94")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelPreview : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE EvaluateAsync(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE EvaluateAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelBindingPreview * binding,
                             /* [in] */__RPC__in HSTRING correlationId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelEvaluationResultPreview * * evalOperation
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE EvaluateFeaturesAsync(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE EvaluateFeaturesAsync(
                             /* [in] */__RPC__in_opt __FIMap_2_HSTRING_IInspectable * features,
                             /* [in] */__RPC__in HSTRING correlationId,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelEvaluationResultPreview * * evalOperation
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelDescriptionPreview * * returnValue
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_InferencingOptions(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_InferencingOptions(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::AI::MachineLearning::Preview::IInferencingOptionsPreview * * value
                             ) = 0;
-                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_InferencingOptions(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propput, deprecated] */virtual HRESULT STDMETHODCALLTYPE put_InferencingOptions(
                             /* [in] */__RPC__in_opt ABI::Windows::AI::MachineLearning::Preview::IInferencingOptionsPreview * value
                             ) = 0;
                         
@@ -1804,16 +1984,28 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("164BBB60-8465-4786-8B93-2C16A89289D7"), exclusiveto, contract] */
+                    /* [object, uuid("164BBB60-8465-4786-8B93-2C16A89289D7"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("164BBB60-8465-4786-8B93-2C16A89289D7")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelPreviewStatics : public IInspectable
                     {
                     public:
-                        virtual HRESULT STDMETHODCALLTYPE LoadModelFromStorageFileAsync(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE LoadModelFromStorageFileAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::IStorageFile * modelFile,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelPreview * * modelCreationOperation
                             ) = 0;
-                        virtual HRESULT STDMETHODCALLTYPE LoadModelFromStreamAsync(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE LoadModelFromStreamAsync(
                             /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IRandomAccessStreamReference * modelStream,
                             /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelPreview * * modelCreationOperation
                             ) = 0;
@@ -1849,21 +2041,41 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("B13DF682-FC30-492B-8EA0-ED1F53C0B038"), contract] */
+                    /* [object, uuid("B13DF682-FC30-492B-8EA0-ED1F53C0B038"), deprecated, contract] */
                     MIDL_INTERFACE("B13DF682-FC30-492B-8EA0-ED1F53C0B038")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ILearningModelVariableDescriptorPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Name(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Name(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Description(
                             /* [retval, out] */__RPC__deref_out_opt HSTRING * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ModelFeatureKind(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ModelFeatureKind(
                             /* [retval, out] */__RPC__out ABI::Windows::AI::MachineLearning::Preview::LearningModelFeatureKindPreview * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsRequired(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_IsRequired(
                             /* [retval, out] */__RPC__out boolean * value
                             ) = 0;
                         
@@ -1905,21 +2117,41 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("3CB38370-C02B-4236-B3E8-6BDCA49C3129"), exclusiveto, contract] */
+                    /* [object, uuid("3CB38370-C02B-4236-B3E8-6BDCA49C3129"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("3CB38370-C02B-4236-B3E8-6BDCA49C3129")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     IMapVariableDescriptorPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_KeyKind(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_KeyKind(
                             /* [retval, out] */__RPC__out ABI::Windows::AI::MachineLearning::Preview::FeatureElementKindPreview * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValidStringKeys(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ValidStringKeys(
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_HSTRING * * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ValidIntegerKeys(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ValidIntegerKeys(
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1___z__zint64 * * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Fields(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Fields(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview * * value
                             ) = 0;
                         
@@ -1961,12 +2193,20 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("9CD8F292-98B2-4530-A1B6-2DED5FECBC26"), exclusiveto, contract] */
+                    /* [object, uuid("9CD8F292-98B2-4530-A1B6-2DED5FECBC26"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("9CD8F292-98B2-4530-A1B6-2DED5FECBC26")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ISequenceFeatureDescriptor instead of ISequenceVariableDescriptorPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ISequenceVariableDescriptorPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ElementType(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ISequenceFeatureDescriptor instead of ISequenceVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ElementType(
                             /* [retval, out] */__RPC__deref_out_opt ABI::Windows::AI::MachineLearning::Preview::ILearningModelVariableDescriptorPreview * * value
                             ) = 0;
                         
@@ -2008,15 +2248,27 @@ namespace ABI {
         namespace AI {
             namespace MachineLearning {
                 namespace Preview {
-                    /* [object, uuid("A80F501A-9AAC-4233-9784-ACEAF92510B5"), exclusiveto, contract] */
+                    /* [object, uuid("A80F501A-9AAC-4233-9784-ACEAF92510B5"), exclusiveto, deprecated, contract] */
                     MIDL_INTERFACE("A80F501A-9AAC-4233-9784-ACEAF92510B5")
+                    
+                    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                    DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+                    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
                     ITensorVariableDescriptorPreview : public IInspectable
                     {
                     public:
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataType(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_DataType(
                             /* [retval, out] */__RPC__out ABI::Windows::AI::MachineLearning::Preview::FeatureElementKindPreview * value
                             ) = 0;
-                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Shape(
+                        
+                        #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+                        #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+                        /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Shape(
                             /* [retval, out] */__RPC__deref_out_opt __FIIterable_1___z__zint64 * * value
                             ) = 0;
                         
@@ -2050,6 +2302,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVa
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ImageFeatureDescriptor instead of ImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.ImageVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2070,6 +2326,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelSession instead of InferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview[] = L"Windows.AI.MachineLearning.Preview.InferencingOptionsPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2095,6 +2355,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelBinding instead of LearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelBindingPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2115,6 +2379,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of LearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelDescriptionPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2135,6 +2403,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelEvaluationResult instead of LearningModelEvaluationResultPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelEvaluationResultPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2158,6 +2430,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of LearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2178,6 +2454,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of LearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2199,6 +2479,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use MapFeatureDescriptor instead of MapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.MapVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2220,6 +2504,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use SequenceFeatureDescriptor instead of SequenceVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.SequenceVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -2241,6 +2529,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use TensorFeatureDescriptor instead of TensorVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.TensorVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -3804,8 +4096,12 @@ typedef enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelFeatur
  */
 
 #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CFeatureElementKindPreview
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use TensorKind instead of FeatureElementKindPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CFeatureElementKindPreview
 {
     FeatureElementKindPreview_Undefined = 0,
     FeatureElementKindPreview_Float = 1,
@@ -3837,8 +4133,12 @@ enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CFeatureElementKindPreview
  */
 
 #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelDeviceKindPreview
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelDeviceKind instead of LearningModelDeviceKindPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelDeviceKindPreview
 {
     LearningModelDeviceKindPreview_LearningDeviceAny = 0,
     LearningModelDeviceKindPreview_LearningDeviceCpu = 1,
@@ -3860,8 +4160,12 @@ enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelDeviceKindPrev
  */
 
 #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
-/* [v1_enum, contract] */
-enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelFeatureKindPreview
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelFeatureKind instead of LearningModelFeatureKindPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelFeatureKindPreview
 {
     LearningModelFeatureKindPreview_Undefined = 0,
     LearningModelFeatureKindPreview_Tensor = 1,
@@ -3891,8 +4195,12 @@ enum __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelFeatureKindPre
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_IImageVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.IImageVariableDescriptorPreview";
-/* [object, uuid("7AE1FA72-029E-4DC5-A2F8-5FB763154150"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreviewVtbl
+/* [object, uuid("7AE1FA72-029E-4DC5-A2F8-5FB763154150"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -3925,15 +4233,27 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_BitmapPixelFormat )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_BitmapPixelFormat )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CGraphics_CImaging_CBitmapPixelFormat * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Width )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Width )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out UINT32 * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Height )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Height )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out UINT32 * value
         );
@@ -3965,12 +4285,24 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescript
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_get_BitmapPixelFormat(This,value) \
     ( (This)->lpVtbl->get_BitmapPixelFormat(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_get_Width(This,value) \
     ( (This)->lpVtbl->get_Width(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IImageFeatureDescriptor instead of IImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVariableDescriptorPreview_get_Height(This,value) \
     ( (This)->lpVtbl->get_Height(This,value) )
 
@@ -3998,8 +4330,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIImageVar
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_IInferencingOptionsPreview[] = L"Windows.AI.MachineLearning.Preview.IInferencingOptionsPreview";
-/* [object, uuid("47BC8205-4D36-47A9-8F68-FFCB339DD0FC"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreviewVtbl
+/* [object, uuid("47BC8205-4D36-47A9-8F68-FFCB339DD0FC"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4032,43 +4368,83 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PreferredDeviceKind )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_PreferredDeviceKind )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelDeviceKindPreview * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_PreferredDeviceKind )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_PreferredDeviceKind )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [in] */__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelDeviceKindPreview value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsTracingEnabled )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_IsTracingEnabled )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [retval, out] */__RPC__out boolean * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_IsTracingEnabled )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_IsTracingEnabled )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [in] */boolean value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxBatchSize )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_MaxBatchSize )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [retval, out] */__RPC__out INT32 * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MaxBatchSize )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_MaxBatchSize )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [in] */INT32 value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinimizeMemoryAllocation )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_MinimizeMemoryAllocation )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [retval, out] */__RPC__out boolean * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_MinimizeMemoryAllocation )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_MinimizeMemoryAllocation )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [in] */boolean value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ReclaimMemoryAfterEvaluation )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ReclaimMemoryAfterEvaluation )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [retval, out] */__RPC__out boolean * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ReclaimMemoryAfterEvaluation )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_ReclaimMemoryAfterEvaluation )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * This,
         /* [in] */boolean value
         );
@@ -4100,33 +4476,73 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPre
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_get_PreferredDeviceKind(This,value) \
     ( (This)->lpVtbl->get_PreferredDeviceKind(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_put_PreferredDeviceKind(This,value) \
     ( (This)->lpVtbl->put_PreferredDeviceKind(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_get_IsTracingEnabled(This,value) \
     ( (This)->lpVtbl->get_IsTracingEnabled(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_put_IsTracingEnabled(This,value) \
     ( (This)->lpVtbl->put_IsTracingEnabled(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_get_MaxBatchSize(This,value) \
     ( (This)->lpVtbl->get_MaxBatchSize(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_put_MaxBatchSize(This,value) \
     ( (This)->lpVtbl->put_MaxBatchSize(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_get_MinimizeMemoryAllocation(This,value) \
     ( (This)->lpVtbl->get_MinimizeMemoryAllocation(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_put_MinimizeMemoryAllocation(This,value) \
     ( (This)->lpVtbl->put_MinimizeMemoryAllocation(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_get_ReclaimMemoryAfterEvaluation(This,value) \
     ( (This)->lpVtbl->get_ReclaimMemoryAfterEvaluation(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of IInferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview_put_ReclaimMemoryAfterEvaluation(This,value) \
     ( (This)->lpVtbl->put_ReclaimMemoryAfterEvaluation(This,value) )
 
@@ -4159,8 +4575,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferenc
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelBindingPreview[] = L"Windows.AI.MachineLearning.Preview.ILearningModelBindingPreview";
-/* [object, uuid("93C901E8-6C78-4B4F-AEC1-A6BB9E691624"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewVtbl
+/* [object, uuid("93C901E8-6C78-4B4F-AEC1-A6BB9E691624"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4193,18 +4613,30 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [overload] */HRESULT ( STDMETHODCALLTYPE *Bind )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *Bind )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * This,
         /* [in] */__RPC__in HSTRING name,
         /* [in] */__RPC__in_opt IInspectable * value
         );
-    /* [overload] */HRESULT ( STDMETHODCALLTYPE *BindWithProperties )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [overload, deprecated] */HRESULT ( STDMETHODCALLTYPE *BindWithProperties )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * This,
         /* [in] */__RPC__in HSTRING name,
         /* [in] */__RPC__in_opt IInspectable * value,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet * metadata
         );
-    HRESULT ( STDMETHODCALLTYPE *Clear )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *Clear )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * This
         );
     END_INTERFACE
@@ -4235,12 +4667,24 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingP
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_Bind(This,name,value) \
     ( (This)->lpVtbl->Bind(This,name,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_BindWithProperties(This,name,value,metadata) \
     ( (This)->lpVtbl->BindWithProperties(This,name,value,metadata) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBinding instead of ILearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview_Clear(This) \
     ( (This)->lpVtbl->Clear(This) )
 
@@ -4268,8 +4712,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelBindingPreviewFactory[] = L"Windows.AI.MachineLearning.Preview.ILearningModelBindingPreviewFactory";
-/* [object, uuid("48B8219F-1E51-4D77-AE50-3EC164AD3480"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactoryVtbl
+/* [object, uuid("48B8219F-1E51-4D77-AE50-3EC164AD3480"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBindingFactory instead of ILearningModelBindingPreviewFactory. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactoryVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4302,7 +4750,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *CreateFromModel )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelBindingFactory instead of ILearningModelBindingPreviewFactory. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *CreateFromModel )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * model,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * * value
@@ -4335,6 +4787,10 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingP
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelBindingFactory instead of ILearningModelBindingPreviewFactory. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreviewFactory_CreateFromModel(This,model,value) \
     ( (This)->lpVtbl->CreateFromModel(This,model,value) )
 
@@ -4362,8 +4818,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelDescriptionPreview[] = L"Windows.AI.MachineLearning.Preview.ILearningModelDescriptionPreview";
-/* [object, uuid("F52C09C6-8611-40AD-8E59-DE3FD7030A40"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreviewVtbl
+/* [object, uuid("F52C09C6-8611-40AD-8E59-DE3FD7030A40"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4396,35 +4856,67 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Author )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Author )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Domain )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Domain )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Version )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Version )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__out INT64 * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Metadata )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Metadata )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_HSTRING * * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InputFeatures )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_InputFeatures )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CAI__CMachineLearning__CPreview__CILearningModelVariableDescriptorPreview * * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_OutputFeatures )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_OutputFeatures )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_Windows__CAI__CMachineLearning__CPreview__CILearningModelVariableDescriptorPreview * * value
         );
@@ -4456,27 +4948,59 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescript
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Author(This,value) \
     ( (This)->lpVtbl->get_Author(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Name(This,value) \
     ( (This)->lpVtbl->get_Name(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Domain(This,value) \
     ( (This)->lpVtbl->get_Domain(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Description(This,value) \
     ( (This)->lpVtbl->get_Description(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Version(This,value) \
     ( (This)->lpVtbl->get_Version(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_Metadata(This,value) \
     ( (This)->lpVtbl->get_Metadata(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_InputFeatures(This,value) \
     ( (This)->lpVtbl->get_InputFeatures(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview_get_OutputFeatures(This,value) \
     ( (This)->lpVtbl->get_OutputFeatures(This,value) )
 
@@ -4504,8 +5028,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelEvaluationResultPreview[] = L"Windows.AI.MachineLearning.Preview.ILearningModelEvaluationResultPreview";
-/* [object, uuid("DF25EA9F-9863-4088-8498-87A1F4686F92"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreviewVtbl
+/* [object, uuid("DF25EA9F-9863-4088-8498-87A1F4686F92"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4538,11 +5066,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_CorrelationId )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * correlationId
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Outputs )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Outputs )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_IInspectable * * value
         );
@@ -4574,9 +5110,17 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluati
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview_get_CorrelationId(This,correlationId) \
     ( (This)->lpVtbl->get_CorrelationId(This,correlationId) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelEvaluationResult instead of ILearningModelEvaluationResultPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelEvaluationResultPreview_get_Outputs(This,value) \
     ( (This)->lpVtbl->get_Outputs(This,value) )
 
@@ -4604,8 +5148,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelPreview[] = L"Windows.AI.MachineLearning.Preview.ILearningModelPreview";
-/* [object, uuid("049C266A-93B4-478C-AEB8-70157BF0FF94"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewVtbl
+/* [object, uuid("049C266A-93B4-478C-AEB8-70157BF0FF94"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4638,27 +5186,47 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *EvaluateAsync )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *EvaluateAsync )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelBindingPreview * binding,
         /* [in] */__RPC__in HSTRING correlationId,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelEvaluationResultPreview * * evalOperation
         );
-    HRESULT ( STDMETHODCALLTYPE *EvaluateFeaturesAsync )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *EvaluateFeaturesAsync )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
         /* [in] */__RPC__in_opt __FIMap_2_HSTRING_IInspectable * features,
         /* [in] */__RPC__in HSTRING correlationId,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelEvaluationResultPreview * * evalOperation
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelDescriptionPreview * * returnValue
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_InferencingOptions )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_InferencingOptions )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * * value
         );
-    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_InferencingOptions )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propput, deprecated] */HRESULT ( STDMETHODCALLTYPE *put_InferencingOptions )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIInferencingOptionsPreview * value
         );
@@ -4690,18 +5258,38 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_EvaluateAsync(This,binding,correlationId,evalOperation) \
     ( (This)->lpVtbl->EvaluateAsync(This,binding,correlationId,evalOperation) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_EvaluateFeaturesAsync(This,features,correlationId,evalOperation) \
     ( (This)->lpVtbl->EvaluateFeaturesAsync(This,features,correlationId,evalOperation) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_get_Description(This,returnValue) \
     ( (This)->lpVtbl->get_Description(This,returnValue) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_get_InferencingOptions(This,value) \
     ( (This)->lpVtbl->get_InferencingOptions(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModel instead of ILearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreview_put_InferencingOptions(This,value) \
     ( (This)->lpVtbl->put_InferencingOptions(This,value) )
 
@@ -4729,8 +5317,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelPreviewStatics[] = L"Windows.AI.MachineLearning.Preview.ILearningModelPreviewStatics";
-/* [object, uuid("164BBB60-8465-4786-8B93-2C16A89289D7"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStaticsVtbl
+/* [object, uuid("164BBB60-8465-4786-8B93-2C16A89289D7"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStaticsVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4763,12 +5355,20 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-HRESULT ( STDMETHODCALLTYPE *LoadModelFromStorageFileAsync )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *LoadModelFromStorageFileAsync )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CIStorageFile * modelFile,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelPreview * * modelCreationOperation
         );
-    HRESULT ( STDMETHODCALLTYPE *LoadModelFromStreamAsync )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *LoadModelFromStreamAsync )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics * This,
         /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamReference * modelStream,
         /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CAI__CMachineLearning__CPreview__CLearningModelPreview * * modelCreationOperation
@@ -4801,9 +5401,17 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewS
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics_LoadModelFromStorageFileAsync(This,modelFile,modelCreationOperation) \
     ( (This)->lpVtbl->LoadModelFromStorageFileAsync(This,modelFile,modelCreationOperation) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelStatics instead of ILearningModelPreviewStatics. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelPreviewStatics_LoadModelFromStreamAsync(This,modelStream,modelCreationOperation) \
     ( (This)->lpVtbl->LoadModelFromStreamAsync(This,modelStream,modelCreationOperation) )
 
@@ -4828,8 +5436,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ILearningModelVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.ILearningModelVariableDescriptorPreview";
-/* [object, uuid("B13DF682-FC30-492B-8EA0-ED1F53C0B038"), contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreviewVtbl
+/* [object, uuid("B13DF682-FC30-492B-8EA0-ED1F53C0B038"), deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4862,19 +5474,35 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Name )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt HSTRING * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ModelFeatureKind )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ModelFeatureKind )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CLearningModelFeatureKindPreview * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsRequired )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_IsRequired )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out boolean * value
         );
@@ -4906,15 +5534,31 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariable
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_get_Name(This,value) \
     ( (This)->lpVtbl->get_Name(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_get_Description(This,value) \
     ( (This)->lpVtbl->get_Description(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_get_ModelFeatureKind(This,value) \
     ( (This)->lpVtbl->get_ModelFeatureKind(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of ILearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview_get_IsRequired(This,value) \
     ( (This)->lpVtbl->get_IsRequired(This,value) )
 
@@ -4946,8 +5590,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearning
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_IMapVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.IMapVariableDescriptorPreview";
-/* [object, uuid("3CB38370-C02B-4236-B3E8-6BDCA49C3129"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreviewVtbl
+/* [object, uuid("3CB38370-C02B-4236-B3E8-6BDCA49C3129"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -4980,19 +5628,35 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_KeyKind )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_KeyKind )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CFeatureElementKindPreview * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ValidStringKeys )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ValidStringKeys )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1_HSTRING * * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ValidIntegerKeys )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ValidIntegerKeys )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1___z__zint64 * * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Fields )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Fields )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * * value
         );
@@ -5024,15 +5688,31 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptor
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_get_KeyKind(This,value) \
     ( (This)->lpVtbl->get_KeyKind(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_get_ValidStringKeys(This,value) \
     ( (This)->lpVtbl->get_ValidStringKeys(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_get_ValidIntegerKeys(This,value) \
     ( (This)->lpVtbl->get_ValidIntegerKeys(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use IMapFeatureDescriptor instead of IMapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVariableDescriptorPreview_get_Fields(This,value) \
     ( (This)->lpVtbl->get_Fields(This,value) )
 
@@ -5064,8 +5744,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CIMapVaria
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ISequenceVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.ISequenceVariableDescriptorPreview";
-/* [object, uuid("9CD8F292-98B2-4530-A1B6-2DED5FECBC26"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreviewVtbl
+/* [object, uuid("9CD8F292-98B2-4530-A1B6-2DED5FECBC26"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ISequenceFeatureDescriptor instead of ISequenceVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -5098,7 +5782,11 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ElementType )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ISequenceFeatureDescriptor instead of ISequenceVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ElementType )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CILearningModelVariableDescriptorPreview * * value
         );
@@ -5130,6 +5818,10 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescr
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ISequenceFeatureDescriptor instead of ISequenceVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequenceVariableDescriptorPreview_get_ElementType(This,value) \
     ( (This)->lpVtbl->get_ElementType(This,value) )
 
@@ -5161,8 +5853,12 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CISequence
 #if !defined(____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_AI_MachineLearning_Preview_ITensorVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.ITensorVariableDescriptorPreview";
-/* [object, uuid("A80F501A-9AAC-4233-9784-ACEAF92510B5"), exclusiveto, contract] */
-typedef struct __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreviewVtbl
+/* [object, uuid("A80F501A-9AAC-4233-9784-ACEAF92510B5"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+__x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreviewVtbl
 {
     BEGIN_INTERFACE
     HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
@@ -5195,11 +5891,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
     __RPC__in __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview * This,
     /* [OUT ] */ __RPC__out TrustLevel *trustLevel
     );
-/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DataType )(
+
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_DataType )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CFeatureElementKindPreview * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Shape )(
+    
+    #if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+    #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Shape )(
         __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview * This,
         /* [retval, out] */__RPC__deref_out_opt __FIIterable_1___z__zint64 * * value
         );
@@ -5231,9 +5935,17 @@ interface __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescrip
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview_GetTrustLevel(This,trustLevel) \
         ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview_get_DataType(This,value) \
     ( (This)->lpVtbl->get_DataType(This,value) )
 
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ITensorFeatureDescriptor instead of ITensorVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 #define __x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVariableDescriptorPreview_get_Shape(This,value) \
     ( (This)->lpVtbl->get_Shape(This,value) )
 
@@ -5262,6 +5974,10 @@ EXTERN_C const IID IID___x_ABI_CWindows_CAI_CMachineLearning_CPreview_CITensorVa
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ImageFeatureDescriptor instead of ImageVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_ImageVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.ImageVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5282,6 +5998,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelSession instead of InferencingOptionsPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_InferencingOptionsPreview[] = L"Windows.AI.MachineLearning.Preview.InferencingOptionsPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5307,6 +6027,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelBinding instead of LearningModelBindingPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelBindingPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelBindingPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5327,6 +6051,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of LearningModelDescriptionPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelDescriptionPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelDescriptionPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5347,6 +6075,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModelEvaluationResult instead of LearningModelEvaluationResultPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelEvaluationResultPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelEvaluationResultPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5370,6 +6102,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use LearningModel instead of LearningModelPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5390,6 +6126,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use ILearningModelFeatureDescriptor instead of LearningModelVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_LearningModelVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.LearningModelVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5411,6 +6151,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use MapFeatureDescriptor instead of MapVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_MapVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.MapVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5432,6 +6176,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use SequenceFeatureDescriptor instead of SequenceVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_SequenceVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.SequenceVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000
@@ -5453,6 +6201,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 #ifndef RUNTIMECLASS_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview_DEFINED
 #define RUNTIMECLASS_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview_DEFINED
+
+#if WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
+DEPRECATED("Use TensorFeatureDescriptor instead of TensorVariableDescriptorPreview. For more info, see MSDN.")
+#endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x20000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_AI_MachineLearning_Preview_TensorVariableDescriptorPreview[] = L"Windows.AI.MachineLearning.Preview.TensorVariableDescriptorPreview";
 #endif
 #endif // WINDOWS_AI_MACHINELEARNING_PREVIEW_MACHINELEARNINGPREVIEWCONTRACT_VERSION >= 0x10000

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -161,22 +161,22 @@ template <> struct name<Windows::Devices::Bluetooth::Advertisement::BluetoothLEA
 template <> struct name<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementType" }; };
 template <> struct name<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStatus" }; };
 template <> struct name<Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode>{ static constexpr auto & value{ L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEScanningMode" }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement>{ static constexpr GUID value{ 0x066FB2B7,0x33D1,0x4E7D,{ 0x83,0x67,0xCF,0x81,0xD0,0xF7,0x96,0x53 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern>{ static constexpr GUID value{ 0xFBFAD7F2,0xB9C5,0x4A08,{ 0xBC,0x51,0x50,0x2F,0x8E,0xF6,0x8A,0x79 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePatternFactory>{ static constexpr GUID value{ 0xC2E24D73,0xFD5C,0x4EC3,{ 0xBE,0x2A,0x9C,0xA6,0xFA,0x11,0xB7,0xBD } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection>{ static constexpr GUID value{ 0xD7213314,0x3A43,0x40F9,{ 0xB6,0xF0,0x92,0xBF,0xEF,0xC3,0x4A,0xE3 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSectionFactory>{ static constexpr GUID value{ 0xE7A40942,0xA845,0x4045,{ 0xBF,0x7E,0x3E,0x99,0x71,0xDB,0x8A,0x6B } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataTypesStatics>{ static constexpr GUID value{ 0x3BB6472F,0x0606,0x434B,{ 0xA7,0x6E,0x74,0x15,0x9F,0x06,0x84,0xD3 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter>{ static constexpr GUID value{ 0x131EB0D3,0xD04E,0x47B1,{ 0x83,0x7E,0x49,0x40,0x5B,0xF6,0xF8,0x0F } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>{ static constexpr GUID value{ 0xCDE820F9,0xD9FA,0x43D6,{ 0xA2,0x64,0xDD,0xD8,0xB7,0xDA,0x8B,0x78 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherFactory>{ static constexpr GUID value{ 0x5C5F065E,0xB863,0x4981,{ 0xA1,0xAF,0x1C,0x54,0x4D,0x8B,0x0C,0x0D } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>{ static constexpr GUID value{ 0x09C2BD9F,0x2DFF,0x4B23,{ 0x86,0xEE,0x0D,0x14,0xFB,0x94,0xAE,0xAE } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementReceivedEventArgs>{ static constexpr GUID value{ 0x27987DDF,0xE596,0x41BE,{ 0x8D,0x43,0x9E,0x67,0x31,0xD4,0xA9,0x13 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>{ static constexpr GUID value{ 0xA6AC336F,0xF3D3,0x4297,{ 0x8D,0x6C,0xC8,0x1E,0xA6,0x62,0x3F,0x40 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherFactory>{ static constexpr GUID value{ 0x9AAF2D56,0x39AC,0x453E,{ 0xB3,0x2A,0x85,0xC6,0x57,0xE0,0x17,0xF1 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs>{ static constexpr GUID value{ 0xDD40F84D,0xE7B9,0x43E3,{ 0x9C,0x04,0x06,0x85,0xD0,0x85,0xFD,0x8C } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData>{ static constexpr GUID value{ 0x912DBA18,0x6963,0x4533,{ 0xB0,0x61,0x46,0x94,0xDA,0xFB,0x34,0xE5 } }; };
-template <> struct guid<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerDataFactory>{ static constexpr GUID value{ 0xC09B39F8,0x319A,0x441E,{ 0x8D,0xE5,0x66,0xA8,0x1E,0x87,0x7A,0x6C } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement>{ static constexpr guid value{ 0x066FB2B7,0x33D1,0x4E7D,{ 0x83,0x67,0xCF,0x81,0xD0,0xF7,0x96,0x53 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern>{ static constexpr guid value{ 0xFBFAD7F2,0xB9C5,0x4A08,{ 0xBC,0x51,0x50,0x2F,0x8E,0xF6,0x8A,0x79 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePatternFactory>{ static constexpr guid value{ 0xC2E24D73,0xFD5C,0x4EC3,{ 0xBE,0x2A,0x9C,0xA6,0xFA,0x11,0xB7,0xBD } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection>{ static constexpr guid value{ 0xD7213314,0x3A43,0x40F9,{ 0xB6,0xF0,0x92,0xBF,0xEF,0xC3,0x4A,0xE3 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSectionFactory>{ static constexpr guid value{ 0xE7A40942,0xA845,0x4045,{ 0xBF,0x7E,0x3E,0x99,0x71,0xDB,0x8A,0x6B } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataTypesStatics>{ static constexpr guid value{ 0x3BB6472F,0x0606,0x434B,{ 0xA7,0x6E,0x74,0x15,0x9F,0x06,0x84,0xD3 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter>{ static constexpr guid value{ 0x131EB0D3,0xD04E,0x47B1,{ 0x83,0x7E,0x49,0x40,0x5B,0xF6,0xF8,0x0F } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>{ static constexpr guid value{ 0xCDE820F9,0xD9FA,0x43D6,{ 0xA2,0x64,0xDD,0xD8,0xB7,0xDA,0x8B,0x78 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherFactory>{ static constexpr guid value{ 0x5C5F065E,0xB863,0x4981,{ 0xA1,0xAF,0x1C,0x54,0x4D,0x8B,0x0C,0x0D } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>{ static constexpr guid value{ 0x09C2BD9F,0x2DFF,0x4B23,{ 0x86,0xEE,0x0D,0x14,0xFB,0x94,0xAE,0xAE } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementReceivedEventArgs>{ static constexpr guid value{ 0x27987DDF,0xE596,0x41BE,{ 0x8D,0x43,0x9E,0x67,0x31,0xD4,0xA9,0x13 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>{ static constexpr guid value{ 0xA6AC336F,0xF3D3,0x4297,{ 0x8D,0x6C,0xC8,0x1E,0xA6,0x62,0x3F,0x40 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherFactory>{ static constexpr guid value{ 0x9AAF2D56,0x39AC,0x453E,{ 0xB3,0x2A,0x85,0xC6,0x57,0xE0,0x17,0xF1 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs>{ static constexpr guid value{ 0xDD40F84D,0xE7B9,0x43E3,{ 0x9C,0x04,0x06,0x85,0xD0,0x85,0xFD,0x8C } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData>{ static constexpr guid value{ 0x912DBA18,0x6963,0x4533,{ 0xB0,0x61,0x46,0x94,0xDA,0xFB,0x34,0xE5 } }; };
+template <> struct guid_storage<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerDataFactory>{ static constexpr guid value{ 0xC09B39F8,0x319A,0x441E,{ 0x8D,0xE5,0x66,0xA8,0x1E,0x87,0x7A,0x6C } }; };
 template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement>{ using type = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement; };
 template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern>{ using type = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern; };
 template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection>{ using type = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection; };
@@ -188,6 +188,154 @@ template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement:
 template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs>{ using type = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs; };
 template <> struct default_interface<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData>{ using type = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData; };
 
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Flags(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Flags(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_LocalName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceUuids(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManufacturerData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DataSections(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetManufacturerDataByCompanyId(uint16_t companyId, void** dataList) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSectionsByType(uint8_t type, void** sectionList) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataType(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Offset(int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Offset(int16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePatternFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint8_t dataType, int16_t offset, void* data, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DataType(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DataType(uint8_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSectionFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint8_t dataType, void* data, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataTypesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Flags(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncompleteService16BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompleteService16BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncompleteService32BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompleteService32BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncompleteService128BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompleteService128BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ShortenedLocalName(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CompleteLocalName(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TxPowerLevel(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SlaveConnectionIntervalRange(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceSolicitation16BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceSolicitation32BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceSolicitation128BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceData16BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceData32BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServiceData128BitUuids(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PublicTargetAddress(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RandomTargetAddress(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Appearance(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdvertisingInterval(uint8_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ManufacturerSpecificData(uint8_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Advertisement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Advertisement(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BytePatterns(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Advertisement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_StatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* advertisement, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementReceivedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RawSignalStrengthInDBm(int16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluetoothAddress(uint64_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdvertisementType(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Advertisement(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SignalStrengthFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SignalStrengthFilter(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AdvertisementFilter(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AdvertisementFilter(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+    virtual int32_t WINRT_CALL add_Received(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Received(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* advertisementFilter, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CompanyId(uint16_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CompanyId(uint16_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerDataFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(uint16_t companyId, void* data, void** value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisement
 {
@@ -195,7 +343,7 @@ struct consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisement
     void Flags(optional<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> const& value) const;
     hstring LocalName() const;
     void LocalName(param::hstring const& value) const;
-    Windows::Foundation::Collections::IVector<GUID> ServiceUuids() const;
+    Windows::Foundation::Collections::IVector<winrt::guid> ServiceUuids() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> ManufacturerData() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> DataSections() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> GetManufacturerDataByCompanyId(uint16_t companyId) const;
@@ -283,10 +431,10 @@ struct consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisement
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
     void Start() const;
     void Stop() const;
-    event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
-    using StatusChanged_revoker = event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>;
+    winrt::event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
+    using StatusChanged_revoker = impl::event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher, &impl::abi_t<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>::remove_StatusChanged>;
     StatusChanged_revoker StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> const& handler) const;
-    void StatusChanged(event_token const& token) const;
+    void StatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher> { template <typename D> using type = consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementPublisher<D>; };
 
@@ -332,14 +480,14 @@ struct consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisement
     void AdvertisementFilter(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter const& value) const;
     void Start() const;
     void Stop() const;
-    event_token Received(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> const& handler) const;
-    using Received_revoker = event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>;
+    winrt::event_token Received(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> const& handler) const;
+    using Received_revoker = impl::event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher, &impl::abi_t<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>::remove_Received>;
     Received_revoker Received(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> const& handler) const;
-    void Received(event_token const& token) const;
-    event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> const& handler) const;
-    using Stopped_revoker = event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>;
+    void Received(winrt::event_token const& token) const noexcept;
+    winrt::event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> const& handler) const;
+    using Stopped_revoker = impl::event_revoker<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher, &impl::abi_t<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>::remove_Stopped>;
     Stopped_revoker Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> const& handler) const;
-    void Stopped(event_token const& token) const;
+    void Stopped(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher> { template <typename D> using type = consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementWatcher<D>; };
 
@@ -373,153 +521,5 @@ struct consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEManufacturerD
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData Create(uint16_t companyId, Windows::Storage::Streams::IBuffer const& data) const;
 };
 template <> struct consume<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerDataFactory> { template <typename D> using type = consume_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEManufacturerDataFactory<D>; };
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Flags(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Flags(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_LocalName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceUuids(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManufacturerData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DataSections(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetManufacturerDataByCompanyId(uint16_t companyId, void** dataList) noexcept = 0;
-    virtual HRESULT __stdcall GetSectionsByType(uint8_t type, void** sectionList) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataType(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Offset(int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Offset(int16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePatternFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint8_t dataType, int16_t offset, void* data, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DataType(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DataType(uint8_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSectionFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint8_t dataType, void* data, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataTypesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Flags(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncompleteService16BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompleteService16BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncompleteService32BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompleteService32BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncompleteService128BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompleteService128BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ShortenedLocalName(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CompleteLocalName(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TxPowerLevel(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SlaveConnectionIntervalRange(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceSolicitation16BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceSolicitation32BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceSolicitation128BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceData16BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceData32BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServiceData128BitUuids(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PublicTargetAddress(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RandomTargetAddress(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Appearance(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdvertisingInterval(uint8_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ManufacturerSpecificData(uint8_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Advertisement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Advertisement(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BytePatterns(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Advertisement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_StatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* advertisement, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementReceivedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RawSignalStrengthInDBm(int16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluetoothAddress(uint64_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdvertisementType(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Timestamp(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Advertisement(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MinSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxSamplingInterval(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxOutOfRangeTimeout(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode value) noexcept = 0;
-    virtual HRESULT __stdcall get_SignalStrengthFilter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_SignalStrengthFilter(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AdvertisementFilter(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_AdvertisementFilter(void* value) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-    virtual HRESULT __stdcall add_Received(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Received(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Stopped(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(void* advertisementFilter, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CompanyId(uint16_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CompanyId(uint16_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerDataFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(uint16_t companyId, void* data, void** value) noexcept = 0;
-};};
 
 }

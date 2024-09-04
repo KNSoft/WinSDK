@@ -37,6 +37,8 @@ namespace Windows
 {
     namespace Foundation
     {
+        interface IAsyncAction;
+
         interface IClosable;
     }
 }
@@ -180,7 +182,11 @@ namespace Windows
 
             typedef enum MediaSourceAudioInputNodeCreationStatus MediaSourceAudioInputNodeCreationStatus;
 
+            typedef enum MixedRealitySpatialAudioFormatPolicy MixedRealitySpatialAudioFormatPolicy;
+
             typedef enum QuantumSizeSelectionMode QuantumSizeSelectionMode;
+
+            typedef enum SetDefaultSpatialAudioFormatStatus SetDefaultSpatialAudioFormatStatus;
 
             typedef enum SpatialAudioModel SpatialAudioModel;
 
@@ -250,15 +256,27 @@ namespace Windows
 
             interface ICreateAudioDeviceInputNodeResult;
 
+            interface ICreateAudioDeviceInputNodeResult2;
+
             interface ICreateAudioDeviceOutputNodeResult;
+
+            interface ICreateAudioDeviceOutputNodeResult2;
 
             interface ICreateAudioFileInputNodeResult;
 
+            interface ICreateAudioFileInputNodeResult2;
+
             interface ICreateAudioFileOutputNodeResult;
+
+            interface ICreateAudioFileOutputNodeResult2;
 
             interface ICreateAudioGraphResult;
 
+            interface ICreateAudioGraphResult2;
+
             interface ICreateMediaSourceAudioInputNodeResult;
+
+            interface ICreateMediaSourceAudioInputNodeResult2;
 
             interface IEchoEffectDefinition;
 
@@ -281,6 +299,18 @@ namespace Windows
             interface IReverbEffectDefinition;
 
             interface IReverbEffectDefinitionFactory;
+
+            interface ISetDefaultSpatialAudioFormatResult;
+
+            interface ISpatialAudioDeviceConfiguration;
+
+            interface ISpatialAudioDeviceConfigurationStatics;
+
+            interface ISpatialAudioFormatConfiguration;
+
+            interface ISpatialAudioFormatConfigurationStatics;
+
+            interface ISpatialAudioFormatSubtypeStatics;
 
             runtimeclass AudioDeviceInputNode;
 
@@ -347,6 +377,14 @@ namespace Windows
             runtimeclass MediaSourceAudioInputNode;
 
             runtimeclass ReverbEffectDefinition;
+
+            runtimeclass SetDefaultSpatialAudioFormatResult;
+
+            runtimeclass SpatialAudioDeviceConfiguration;
+
+            runtimeclass SpatialAudioFormatConfiguration;
+
+            runtimeclass SpatialAudioFormatSubtype;
         }
     }
 }
@@ -384,6 +422,8 @@ namespace Windows
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Media.Audio.SetDefaultSpatialAudioFormatResult*>;
+
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Audio.AudioFileInputNode*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Audio.AudioFrameInputNode*, Windows.Media.Audio.AudioFrameCompletedEventArgs*>;
@@ -397,6 +437,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Audio.AudioStateMonitor*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Audio.MediaSourceAudioInputNode*, IInspectable*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Media.Audio.SpatialAudioDeviceConfiguration*, IInspectable*>;
             }
         }
     }
@@ -478,12 +520,30 @@ namespace Windows
                 UnknownFailure     = 3
             };
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum MixedRealitySpatialAudioFormatPolicy
+            {
+                UseMixedRealityDefaultSpatialAudioFormat        = 0,
+                UseDeviceConfigurationDefaultSpatialAudioFormat = 1
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum QuantumSizeSelectionMode
             {
                 SystemDefault    = 0,
                 LowestLatency    = 1,
                 ClosestToDesired = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            enum SetDefaultSpatialAudioFormatStatus
+            {
+                Succeeded                       = 0,
+                AccessDenied                    = 1,
+                LicenseExpired                  = 2,
+                LicenseNotValidForAudioEndpoint = 3,
+                NotSupportedOnAudioEndpoint     = 4,
+                UnknownError                    = 5
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -915,6 +975,14 @@ namespace Windows
                 [propget] HRESULT DeviceInputNode([out] [retval] Windows.Media.Audio.AudioDeviceInputNode** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)]
+            [uuid(921C69CE-3F35-41C7-9622-79F608BAEDC2)]
+            interface ICreateAudioDeviceInputNodeResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult)]
             [uuid(F7776D27-1D9A-47F7-9CD4-2859CC1B7BFF)]
@@ -922,6 +990,14 @@ namespace Windows
             {
                 [propget] HRESULT Status([out] [retval] Windows.Media.Audio.AudioDeviceNodeCreationStatus* value);
                 [propget] HRESULT DeviceOutputNode([out] [retval] Windows.Media.Audio.AudioDeviceOutputNode** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult)]
+            [uuid(4864269F-BDCE-4AB1-BD38-FBAE93AEDACA)]
+            interface ICreateAudioDeviceOutputNodeResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -933,6 +1009,14 @@ namespace Windows
                 [propget] HRESULT FileInputNode([out] [retval] Windows.Media.Audio.AudioFileInputNode** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateAudioFileInputNodeResult)]
+            [uuid(F9082020-3D80-4FE0-81C1-768FEA7CA7E0)]
+            interface ICreateAudioFileInputNodeResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Audio.CreateAudioFileOutputNodeResult)]
             [uuid(47D6BA7B-E909-453F-866E-5540CDA734FF)]
@@ -940,6 +1024,14 @@ namespace Windows
             {
                 [propget] HRESULT Status([out] [retval] Windows.Media.Audio.AudioFileNodeCreationStatus* value);
                 [propget] HRESULT FileOutputNode([out] [retval] Windows.Media.Audio.AudioFileOutputNode** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateAudioFileOutputNodeResult)]
+            [uuid(9F01B50D-3318-47B3-A60A-1B492BE7FC0D)]
+            interface ICreateAudioFileOutputNodeResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -951,6 +1043,14 @@ namespace Windows
                 [propget] HRESULT Graph([out] [retval] Windows.Media.Audio.AudioGraph** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateAudioGraphResult)]
+            [uuid(6D738DFC-88C6-4FCB-A534-85CEDD4050A1)]
+            interface ICreateAudioGraphResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
             [exclusiveto(Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult)]
             [uuid(46A658A3-53C0-4D59-9E51-CC1D1044A4C4)]
@@ -958,6 +1058,14 @@ namespace Windows
             {
                 [propget] HRESULT Status([out] [retval] Windows.Media.Audio.MediaSourceAudioInputNodeCreationStatus* value);
                 [propget] HRESULT Node([out] [retval] Windows.Media.Audio.MediaSourceAudioInputNode** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.CreateMediaSourceAudioInputNodeResult)]
+            [uuid(63514CE8-6A1A-49E3-97EC-28FD5BE114E5)]
+            interface ICreateMediaSourceAudioInputNodeResult2 : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1130,6 +1238,69 @@ namespace Windows
             interface IReverbEffectDefinitionFactory : IInspectable
             {
                 HRESULT Create([in] Windows.Media.Audio.AudioGraph* audioGraph, [out] [retval] Windows.Media.Audio.ReverbEffectDefinition** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SetDefaultSpatialAudioFormatResult)]
+            [uuid(1C2AA511-1400-5E70-9EA9-AE151241E8EA)]
+            interface ISetDefaultSpatialAudioFormatResult : IInspectable
+            {
+                [propget] HRESULT Status([out] [retval] Windows.Media.Audio.SetDefaultSpatialAudioFormatStatus* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SpatialAudioDeviceConfiguration)]
+            [uuid(EE830034-61CF-5749-9DA4-10F0FE028199)]
+            interface ISpatialAudioDeviceConfiguration : IInspectable
+            {
+                [propget] HRESULT DeviceId([out] [retval] HSTRING* value);
+                [propget] HRESULT IsSpatialAudioSupported([out] [retval] boolean* value);
+                HRESULT IsSpatialAudioFormatSupported([in] HSTRING subtype, [out] [retval] boolean* result);
+                [propget] HRESULT ActiveSpatialAudioFormat([out] [retval] HSTRING* value);
+                [propget] HRESULT DefaultSpatialAudioFormat([out] [retval] HSTRING* value);
+                HRESULT SetDefaultSpatialAudioFormatAsync([in] HSTRING subtype, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Media.Audio.SetDefaultSpatialAudioFormatResult*>** operation);
+                [eventadd] HRESULT ConfigurationChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Audio.SpatialAudioDeviceConfiguration*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT ConfigurationChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SpatialAudioDeviceConfiguration)]
+            [uuid(3EC37F7B-936D-4E04-9728-2827D9F758C4)]
+            interface ISpatialAudioDeviceConfigurationStatics : IInspectable
+            {
+                HRESULT GetForDeviceId([in] HSTRING deviceId, [out] [retval] Windows.Media.Audio.SpatialAudioDeviceConfiguration** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SpatialAudioFormatConfiguration)]
+            [uuid(32DF09A8-50F0-5395-9923-7D44CA71ED6D)]
+            interface ISpatialAudioFormatConfiguration : IInspectable
+            {
+                HRESULT ReportLicenseChangedAsync([in] HSTRING subtype, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                HRESULT ReportConfigurationChangedAsync([in] HSTRING subtype, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+                [propget] HRESULT MixedRealityExclusiveModePolicy([out] [retval] Windows.Media.Audio.MixedRealitySpatialAudioFormatPolicy* value);
+                [propput] HRESULT MixedRealityExclusiveModePolicy([in] Windows.Media.Audio.MixedRealitySpatialAudioFormatPolicy value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SpatialAudioFormatConfiguration)]
+            [uuid(2B5FEF71-67C9-4E5F-A35B-41680711F8C7)]
+            interface ISpatialAudioFormatConfigurationStatics : IInspectable
+            {
+                HRESULT GetDefault([out] [retval] Windows.Media.Audio.SpatialAudioFormatConfiguration** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [exclusiveto(Windows.Media.Audio.SpatialAudioFormatSubtype)]
+            [uuid(B3DE8A47-83EE-4266-A945-BEDF507AFEED)]
+            interface ISpatialAudioFormatSubtypeStatics : IInspectable
+            {
+                [propget] HRESULT WindowsSonic([out] [retval] HSTRING* value);
+                [propget] HRESULT DolbyAtmosForHeadphones([out] [retval] HSTRING* value);
+                [propget] HRESULT DolbyAtmosForHomeTheater([out] [retval] HSTRING* value);
+                [propget] HRESULT DolbyAtmosForSpeakers([out] [retval] HSTRING* value);
+                [propget] HRESULT DTSHeadphoneX([out] [retval] HSTRING* value);
+                [propget] HRESULT DTSXUltra([out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1332,6 +1503,7 @@ namespace Windows
             runtimeclass CreateAudioDeviceInputNodeResult
             {
                 [default] interface Windows.Media.Audio.ICreateAudioDeviceInputNodeResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateAudioDeviceInputNodeResult2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1340,6 +1512,7 @@ namespace Windows
             runtimeclass CreateAudioDeviceOutputNodeResult
             {
                 [default] interface Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1348,6 +1521,7 @@ namespace Windows
             runtimeclass CreateAudioFileInputNodeResult
             {
                 [default] interface Windows.Media.Audio.ICreateAudioFileInputNodeResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateAudioFileInputNodeResult2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1356,6 +1530,7 @@ namespace Windows
             runtimeclass CreateAudioFileOutputNodeResult
             {
                 [default] interface Windows.Media.Audio.ICreateAudioFileOutputNodeResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateAudioFileOutputNodeResult2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1364,6 +1539,7 @@ namespace Windows
             runtimeclass CreateAudioGraphResult
             {
                 [default] interface Windows.Media.Audio.ICreateAudioGraphResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateAudioGraphResult2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 6.0)]
@@ -1372,6 +1548,7 @@ namespace Windows
             runtimeclass CreateMediaSourceAudioInputNodeResult
             {
                 [default] interface Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult;
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Media.Audio.ICreateMediaSourceAudioInputNodeResult2;
             }
 
             [activatable(Windows.Media.Audio.IEchoEffectDefinitionFactory, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1440,6 +1617,39 @@ namespace Windows
             {
                 [default] interface Windows.Media.Audio.IReverbEffectDefinition;
                 interface Windows.Media.Effects.IAudioEffectDefinition;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass SetDefaultSpatialAudioFormatResult
+            {
+                [default] interface Windows.Media.Audio.ISetDefaultSpatialAudioFormatResult;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Media.Audio.ISpatialAudioDeviceConfigurationStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass SpatialAudioDeviceConfiguration
+            {
+                [default] interface Windows.Media.Audio.ISpatialAudioDeviceConfiguration;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Media.Audio.ISpatialAudioFormatConfigurationStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass SpatialAudioFormatConfiguration
+            {
+                [default] interface Windows.Media.Audio.ISpatialAudioFormatConfiguration;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Media.Audio.ISpatialAudioFormatSubtypeStatics, Windows.Foundation.UniversalApiContract, 7.0)]
+            [threading(both)]
+            runtimeclass SpatialAudioFormatSubtype
+            {
             }
         }
     }

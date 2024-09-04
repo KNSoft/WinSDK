@@ -1,4 +1,4 @@
-/*++ BUILD Version: 0184    // Increment this if a change has global effects
+/*++ BUILD Version: 0185    // Increment this if a change has global effects
 
 Copyright (c) Microsoft Corporation. All rights reserved.
 
@@ -886,7 +886,9 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 
 #if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
 
+
 #if defined(_ARM64_)
+
 //
 // Size of kernel mode stack.
 //
@@ -912,7 +914,7 @@ typedef struct DECLSPEC_ALIGN(8) _CONTEXT {
 
 #define KERNEL_MCA_EXCEPTION_STACK_SIZE 0x2000
 
-#endif
+#endif // defined(_ARM64_)
 
 //
 // The following values specify the type of access in the first parameter
@@ -1302,6 +1304,7 @@ typedef UCHAR SE_SIGNING_LEVEL, *PSE_SIGNING_LEVEL;
 #define SE_SIGNING_LEVEL_UNSIGNED          0x00000001
 #define SE_SIGNING_LEVEL_ENTERPRISE        0x00000002
 #define SE_SIGNING_LEVEL_CUSTOM_1          0x00000003
+#define SE_SIGNING_LEVEL_DEVELOPER         SE_SIGNING_LEVEL_CUSTOM_1
 #define SE_SIGNING_LEVEL_AUTHENTICODE      0x00000004
 #define SE_SIGNING_LEVEL_CUSTOM_2          0x00000005
 #define SE_SIGNING_LEVEL_STORE             0x00000006
@@ -3671,6 +3674,7 @@ RtlGetCallersAddress(
 
 #define RTL_STACK_WALKING_MODE_FRAMES_TO_SKIP_SHIFT     8
 
+////@[comment("MVI_tracked")]
 NTSYSAPI
 ULONG
 NTAPI
@@ -3690,33 +3694,6 @@ ULONG64
 NTAPI
 RtlGetEnabledExtendedFeatures(
     _In_ ULONG64 FeatureMask
-    );
-#endif
-#endif
-
-#if !defined(MIDL_PASS)
-//
-// TODO: Replace this with NTDDI_WIN10_RS4 when it gets defined.
-//
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
-_IRQL_requires_max_(PASSIVE_LEVEL)
-NTSYSAPI
-ULONG64
-NTAPI
-RtlGetEnabledExtendedAndSupervisorFeatures(
-    _In_ ULONG64 FeatureMask
-    );
-
-_IRQL_requires_same_
-_Ret_maybenull_
-_Success_(return != NULL)
-NTSYSAPI
-PVOID
-NTAPI
-RtlLocateSupervisorFeature(
-    _In_ PXSAVE_AREA_HEADER XStateHeader,
-    _In_range_(XSTATE_AVX, MAXIMUM_XSTATE_FEATURES - 1) ULONG FeatureId,
-    _Out_opt_ PULONG Length
     );
 #endif
 #endif
@@ -3883,6 +3860,23 @@ RtlLargeIntegerDivide (
 
 #endif // defined(_AMD64_) || defined(_ARM_) || defined(_ARM64_) || defined(_IA64_)
 #endif // !defined(MIDL_PASS)
+
+#if (NTDDI_VERSION >= NTDDI_RS4)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlQueryRegistryValueWithFallback(
+    _In_opt_                             HANDLE PrimaryHandle,
+    _In_opt_                             HANDLE FallbackHandle,
+    _In_                                 PUNICODE_STRING ValueName,
+    _In_                                 ULONG ValueLength,
+    _Out_opt_                            PULONG ValueType,
+    _Out_writes_bytes_to_(ValueLength, *ResultLength) PVOID ValueData,
+	_Out_range_(<= , ValueLength)  PULONG ResultLength
+   );
+#endif
+
 
 
 //
@@ -4120,7 +4114,8 @@ RtlGetNtSystemRoot (
 // Flush routines for DAX mapped files
 //
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) && defined(_AMD64_)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 typedef struct _NV_MEMORY_RANGE {
     VOID *BaseAddress;
     SIZE_T Length;
@@ -4139,6 +4134,46 @@ typedef struct _NV_MEMORY_RANGE {
 //
 
 #define FLUSH_NV_MEMORY_DEFAULT_TOKEN       (ULONG_PTR)(-1)
+
+//
+// Flags for RtlWriteNonVolatileMemory
+//
+// WRITE_NV_MEMORY_FLAG_FLUSH - The destination range is flushed
+// after writing the data from the source.  By default the flush
+// is followed by a drain, unless WRITE_NV_MEMORY_FLAG_NO_DRAIN
+// is passed. This flag makes sure that the data is durable even
+// in case of system powerloss.
+//
+// WRITE_NV_MEMORY_FLAG_NON_TEMPORAL - Performs a non-temporal
+// copy when available.  Non-temporal means that data caching
+// is not required.  Few notes:
+//   - Some processors do not support non-temporal copy for range
+//     smaller than address bus size, and issues regular copy. In
+//     such case RtlWriteNonVolatileMemory peforms regular copy
+//     followed by flush and drain.
+//   - Some processors may ignore non-temporal copy altogether.
+//     RtlWriteNonVolatileMemory doesn't replace it with flush
+//     and drain in that case.
+//
+// WRITE_NV_MEMORY_FLAG_PERSIST - Makes sure that the write are
+// persisted either by flushing or using non-temporal writes.
+// The caller can make no assumptions on what's used.  Typically
+// the approach that's less costly to persist the write is used.
+// This flag makes sure that the data is durable even in case of
+// system powerloss.  WRITE_NV_MEMORY_FLAG_NO_DRAIN is ignored
+// when WRITE_NV_MEMORY_FLAG_PERSIST is used.
+//
+// WRITE_NV_MEMORY_FLAG_NO_DRAIN - Tells the routine to not wait
+// for the flush to complete.
+//
+
+#define WRITE_NV_MEMORY_FLAG_FLUSH          (0x00000001)
+#define WRITE_NV_MEMORY_FLAG_NON_TEMPORAL   (0x00000002)
+#define WRITE_NV_MEMORY_FLAG_PERSIST        (WRITE_NV_MEMORY_FLAG_FLUSH \
+                                              | WRITE_NV_MEMORY_FLAG_NON_TEMPORAL)
+#define WRITE_NV_MEMORY_FLAG_NO_DRAIN       (0x00000100)
+
+#if defined(_WIN64)
 
 _IRQL_requires_max_(APC_LEVEL)
 NTSYSAPI
@@ -4184,7 +4219,7 @@ NTAPI
 RtlWriteNonVolatileMemory (
     _In_ PVOID NvToken,
     _Out_writes_bytes_(Size) VOID UNALIGNED *NvDestination,
-    _In_reads_bytes_(Size) VOID UNALIGNED *Source,
+    _In_reads_bytes_(Size) CONST VOID UNALIGNED *Source,
     _In_ SIZE_T Size,
     _In_ ULONG Flags
     );
@@ -4199,7 +4234,30 @@ RtlFlushNonVolatileMemoryRanges (
     _In_ SIZE_T NumRanges,
     _In_ ULONG Flags
     );
-#endif // (NTDDI_VERSION >= NTDDI_RS2) && defined(_AMD64_)
+
+#else // defined(_WIN64)
+
+#define RtlGetNonVolatileToken() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#define RtlFreeNonVolatileToken() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#define RtlFlushNonVolatileMemory() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#define RtlDrainNonVolatileFlush() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#define RtlWriteNonVolatileMemory() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#define RtlFlushNonVolatileMemoryRanges() \
+    (ASSERT(!"Call not expected in 32-bit architecture"), STATUS_NOT_IMPLEMENTED)
+
+#endif // defined(_WIN64)
+
+#endif // (NTDDI_VERSION >= NTDDI_RS2)
 
 
 //
@@ -4395,6 +4453,7 @@ RtlRaiseCustomSystemEventTrigger(
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 #define FILE_DEVICE_SDFXHCI             0x0000005c
+#define FILE_DEVICE_UCMUCSI             0x0000005d
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -4519,6 +4578,9 @@ typedef struct _FILE_DISPOSITION_INFORMATION {
 #define FILE_DISPOSITION_POSIX_SEMANTICS            0x00000002
 #define FILE_DISPOSITION_FORCE_IMAGE_SECTION_CHECK  0x00000004
 #define FILE_DISPOSITION_ON_CLOSE                   0x00000008
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#define FILE_DISPOSITION_IGNORE_READONLY_ATTRIBUTE  0x00000010
+#endif
 
 typedef struct _FILE_DISPOSITION_INFORMATION_EX {
     ULONG Flags;
@@ -4547,6 +4609,9 @@ typedef struct _FILE_VALID_DATA_LENGTH_INFORMATION {
 //  FILE_FS_DRIVER_PATH_INFORMATION
 //  FILE_FS_VOLUME_FLAGS_INFORMATION
 //  FILE_FS_CONTROL_INFORMATION
+//  FILE_FS_DATA_COPY_INFORMATION
+//  FILE_FS_METADATA_SIZE_INFORMATION
+//  FILE_FS_FULL_SIZE_INFORMATION_EX
 //
 
 typedef struct _FILE_FS_LABEL_INFORMATION {
@@ -4562,6 +4627,11 @@ typedef struct _FILE_FS_VOLUME_INFORMATION {
     WCHAR VolumeLabel[1];
 } FILE_FS_VOLUME_INFORMATION, *PFILE_FS_VOLUME_INFORMATION;
 
+//
+//  The following three are structures describing volume size info.
+//  The allocaiton units refer to file system clusters.
+//
+
 typedef struct _FILE_FS_SIZE_INFORMATION {
     LARGE_INTEGER TotalAllocationUnits;
     LARGE_INTEGER AvailableAllocationUnits;
@@ -4576,6 +4646,94 @@ typedef struct _FILE_FS_FULL_SIZE_INFORMATION {
     ULONG SectorsPerAllocationUnit;
     ULONG BytesPerSector;
 } FILE_FS_FULL_SIZE_INFORMATION, *PFILE_FS_FULL_SIZE_INFORMATION;
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+typedef struct _FILE_FS_FULL_SIZE_INFORMATION_EX {
+
+    //
+    //  AllocationUnits are actually file system clusters.
+    //  AllocationUnits * SectorsPerAllocationUnit * BytesPerSector
+    //  will get you the sizes in bytes.
+    //
+
+    //
+    //  The Actual*AllocationUnits are volume sizes without considering Quota
+    //  setting.
+    //  ActualPoolUnavailableAllocationUnits is the unavailable space for the
+    //  volume due to insufficient free pool space (PoolAvailableAllocationUnits).
+    //  Be aware AllocationUnits are mesured in clusters, see comments at the beginning.
+    //
+    //  ActualTotalAllocationUnits = ActualAvailableAllocationUnits +
+    //                               ActualPoolUnavailableAllocationUnits +
+    //                               UsedAllocationUnits +
+    //                               TotalReservedAllocationUnits
+    //
+
+    ULONGLONG ActualTotalAllocationUnits;
+    ULONGLONG ActualAvailableAllocationUnits;
+    ULONGLONG ActualPoolUnavailableAllocationUnits;
+
+    //
+    //  The Caller*AllocationUnits are limited by Quota setting.
+    //  CallerAvailableAllocationUnits is the unavailable space for the
+    //  volume due to insufficient free pool space (PoolAvailableAllocationUnits).
+    //  Be aware AllocationUnits are mesured in clusters, see comments at the beginning.
+    //
+    //  CallerTotalAllocationUnits = CallerAvailableAllocationUnits +
+    //                               CallerPoolUnavailableAllocationUnits +
+    //                               UsedAllocationUnits +
+    //                               TotalReservedAllocationUnits
+    //
+
+    ULONGLONG CallerTotalAllocationUnits;
+    ULONGLONG CallerAvailableAllocationUnits;
+    ULONGLONG CallerPoolUnavailableAllocationUnits;
+
+    //
+    //  The used space (in clusters) of the volume.
+    //
+
+    ULONGLONG UsedAllocationUnits;
+
+    //
+    //  Total reserved space (in clusters).
+    //
+
+    ULONGLONG TotalReservedAllocationUnits;
+
+    //
+    //  A special type of reserved space (in clusters) for per-volume storage
+    //  reserve and this is included in the above TotalReservedAllocationUnits.
+    //
+
+    ULONGLONG VolumeStorageReserveAllocationUnits;
+
+    //
+    //  This refers to the space (in clusters) that has been committed by
+    //  storage pool but has not been allocated by file system.
+    //
+    //  s1 = (ActualTotalAllocationUnits - UsedAllocationUnits - TotalReservedAllocationUnits)
+    //  s2 = (AvailableCommittedAllocationUnits + PoolAvailableAllocationUnits)
+    //  ActualAvailableAllocationUnits = min( s1, s2 )
+    //
+    //  When s1 >= s2, ActualPoolUnavailableAllocationUnits = 0
+    //  When s1 < s2, ActualPoolUnavailableAllocationUnits = s2 - s1.
+    //
+
+    ULONGLONG AvailableCommittedAllocationUnits;
+
+    //
+    //  Available space (in clusters) in corresponding storage pool. If the volume
+    //  is not a spaces volume, the PoolAvailableAllocationUnits is set to zero.
+    //
+
+    ULONGLONG PoolAvailableAllocationUnits;
+
+    ULONG SectorsPerAllocationUnit;
+    ULONG BytesPerSector;
+
+} FILE_FS_FULL_SIZE_INFORMATION_EX, *PFILE_FS_FULL_SIZE_INFORMATION_EX;
+#endif
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 typedef struct _FILE_FS_METADATA_SIZE_INFORMATION {
@@ -4885,7 +5043,7 @@ typedef enum _PROCESSINFOCLASS {
     ProcessSubsystemInformation                  = 75,
     ProcessWin32kSyscallFilterInformation        = 79,
     ProcessEnergyTrackingState                   = 82,
-    MaxProcessInfoClass                                // MaxProcessInfoClass should always be the last enum
+    MaxProcessInfoClass                             // MaxProcessInfoClass should always be the last enum
 } PROCESSINFOCLASS;
 
 //
@@ -4934,7 +5092,7 @@ typedef enum _THREADINFOCLASS {
     ThreadDynamicCodePolicyInfo     = 42,
     ThreadSubsystemInformation      = 45,
 
-    MaxThreadInfoClass              = 50,
+    MaxThreadInfoClass              = 51,
 } THREADINFOCLASS;
 
 #define THREAD_CSWITCH_PMU_DISABLE  FALSE
@@ -5235,6 +5393,7 @@ typedef enum _PROCESS_MITIGATION_POLICY {
     ProcessSystemCallFilterPolicy,
     ProcessPayloadRestrictionPolicy,
     ProcessChildProcessPolicy,
+    ProcessSideChannelIsolationPolicy,
     MaxProcessMitigationPolicy
 } PROCESS_MITIGATION_POLICY, *PPROCESS_MITIGATION_POLICY;
 
@@ -5413,6 +5572,52 @@ typedef struct _PROCESS_MITIGATION_CHILD_PROCESS_POLICY {
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_CHILD_PROCESS_POLICY, *PPROCESS_MITIGATION_CHILD_PROCESS_POLICY;
 
+typedef struct _PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY {
+    union {
+        ULONG Flags;
+        struct {
+
+            //
+            // Prevent branch target pollution cross-SMT-thread in user mode.
+            //
+
+            ULONG SmtBranchTargetIsolation : 1;
+
+            //
+            // Isolate this process into a distinct security domain, even from
+            // other processes running as the same security context.  This
+            // prevents branch target injection cross-process (normally such
+            // branch target injection is only inhibited across different
+            // security contexts).
+            //
+            // Page combining is limited to processes within the same security
+            // domain.  This flag thus also effectively limits the process to
+            // only being able to combine internally to the process itself,
+            // except for common pages (unless further restricted by the
+            // DisablePageCombine policy).
+            //
+
+            ULONG IsolateSecurityDomain : 1;
+
+            //
+            // Disable all page combining for this process, even internally to
+            // the process itself, except for common pages (zeroes or ones).
+            //
+
+            ULONG DisablePageCombine : 1;
+
+            //
+            // Memory Disambiguation Disable.
+            //
+
+            ULONG SpeculativeStoreBypassDisable : 1;
+
+            ULONG ReservedFlags : 28;
+
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY, *PPROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY;
+
 
 
 //
@@ -5432,23 +5637,6 @@ typedef struct _PROCESS_REVOKE_FILE_HANDLES_INFORMATION {
     UNICODE_STRING TargetDevicePath;
 } PROCESS_REVOKE_FILE_HANDLES_INFORMATION, *PPROCESS_REVOKE_FILE_HANDLES_INFORMATION;
 
-//
-// Process Read/WriteVm Logging
-// NtQueryInformationProcess using ProcessEnableReadWriteVmLogging
-//
-#define PROCESS_READWRITEVM_LOGGING_ENABLE_READVM       0x01
-#define PROCESS_READWRITEVM_LOGGING_ENABLE_READVM_V     1UL
-#define PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM      0x02L
-#define PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM_V    2UL
-
-typedef union _PROCESS_READWRITEVM_LOGGING_INFORMATION {
-    UCHAR Flags;
-    struct {
-        UCHAR EnableReadVmLogging : 1;
-        UCHAR EnableWriteVmLogging : 1;
-        UCHAR Unused : 6;
-    };
-} PROCESS_READWRITEVM_LOGGING_INFORMATION, *PPROCESS_READWRITEVM_LOGGING_INFORMATION;
 
 //
 // Process Pooled Quota Usage and Limits
@@ -5579,6 +5767,7 @@ typedef struct _POWER_THROTTLING_THREAD_STATE {
     ULONG ControlMask;
     ULONG StateMask;
 } POWER_THROTTLING_THREAD_STATE, *PPOWER_THROTTLING_THREAD_STATE;
+
 
 //@[comment("MVI_tracked")]
 __kernel_entry NTSYSCALLAPI
@@ -5747,7 +5936,11 @@ typedef struct _KPCR {
 //
 
 extern NTKERNELAPI PVOID MmHighestUserAddress;
+
+//@[comment("MVI_tracked")]
 extern NTKERNELAPI PVOID MmSystemRangeStart;
+
+//@[comment("MVI_tracked")]
 extern NTKERNELAPI ULONG MmUserProbeAddress;
 
 #define MM_HIGHEST_USER_ADDRESS MmHighestUserAddress
@@ -6029,6 +6222,7 @@ typedef struct _KEXCEPTION_FRAME {
 // registers.
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _KTRAP_FRAME {
 
 //
@@ -6046,7 +6240,8 @@ typedef struct _KTRAP_FRAME {
 // (interrupts only).
 //
 
-    KPROCESSOR_MODE PreviousMode;
+        KPROCESSOR_MODE PreviousMode;
+
     KIRQL PreviousIrql;
 
 //
@@ -6238,7 +6433,11 @@ extern NTKERNELAPI ULONG KeLastBranchMSR;
 //
 
 extern const NTKERNELAPI PVOID MmHighestUserAddress;
+
+//@[comment("MVI_tracked")]
 extern const NTKERNELAPI PVOID MmSystemRangeStart;
+
+//@[comment("MVI_tracked")]
 extern const NTKERNELAPI ULONG64 MmUserProbeAddress;
 
 #define MM_HIGHEST_USER_ADDRESS MmHighestUserAddress
@@ -6654,6 +6853,7 @@ typedef struct _KARM_VFP_STATE
 
 #define KTRAP_FRAME_ARGUMENTS (14 * 4)       // up to 14 in-memory syscall args
 
+//@[comment("MVI_tracked")]
 typedef struct _KTRAP_FRAME {
 
 //
@@ -6738,6 +6938,36 @@ typedef struct _KTRAP_FRAME {
 
 
 //
+// By default, the ARM architecture uses 2-level paging.
+//
+
+#if !defined(NT_PAGING_LEVELS)
+
+#define NT_PAGING_LEVELS        2
+
+#endif
+
+//
+// Only 2-level paging is supported on ARM
+//
+
+#if (NT_PAGING_LEVELS != 2)
+
+#error Only 2-level paging is supported on ARM
+
+#endif
+
+//
+// Multi paging level support is not present for ARM
+//
+
+#if defined (NT_MULTI_PAGING_LEVEL_SUPPORT)
+
+#error Multi paging levels is not supported for ARM.
+
+#endif
+
+//
 // ARM Specific portions of Mm component.
 //
 
@@ -6773,7 +7003,11 @@ typedef struct _KTRAP_FRAME {
 //
 
 extern NTKERNELAPI PVOID MmHighestUserAddress;
+
+//@[comment("MVI_tracked")]
 extern NTKERNELAPI PVOID MmSystemRangeStart;
+
+//@[comment("MVI_tracked")]
 extern NTKERNELAPI ULONG MmUserProbeAddress;
 
 #define MM_HIGHEST_USER_ADDRESS MmHighestUserAddress
@@ -7046,6 +7280,28 @@ Return Value:
 #define PCR_MINOR_VERSION 1
 #define PCR_MAJOR_VERSION 1
 
+//
+// BTI (branch target injection) mitigation flags.
+//
+// Each flag is a pair (HVC/SVC) indication which mechanism is to be
+// used to call PSCI.
+//
+// The TRAP flags are set to cause a PSCI call on every EL0->EL1
+// transition.
+//
+// The CSWAP flags are set to cause a PSCI call on any user context
+// swap only, plus on any access fault into kernel space from user
+// mode.
+//
+// The TRAP and CSWAP flags are never both set; only one or the other.
+//
+
+#define PCR_BTI_MITIGATION_NONE        0
+#define PCR_BTI_MITIGATION_TRAP_HVC    1
+#define PCR_BTI_MITIGATION_TRAP_SMC    2
+#define PCR_BTI_MITIGATION_CSWAP_HVC   4
+#define PCR_BTI_MITIGATION_CSWAP_SMC   8
+
 typedef struct _KPCR {
 
 //
@@ -7089,7 +7345,8 @@ typedef struct _KPCR {
         };
     };
     USHORT InterruptPad;                // +04A
-
+    UCHAR BtiMitigation;                // +04C -- Keep near panic storage (BTI = branch target injection)
+    UCHAR Pad2[3];                      // +04D
     ULONG64 PanicStorage[6];            // +050 -- Must be 16-byte aligned
     PVOID KdVersionBlock;               // +080
     PVOID HalReserved[15];              // +088
@@ -7160,6 +7417,7 @@ typedef struct _KARM64_VFP_STATE
 
 #define KTRAP_FRAME_SIGNATURE ('prTK')       // KTrap Frame signature
 
+//@[comment("MVI_tracked")]
 typedef struct _KTRAP_FRAME {
 
 //
@@ -7262,7 +7520,11 @@ typedef struct _KTRAP_FRAME {
 //
 
 extern const NTKERNELAPI PVOID MmHighestUserAddress;
+
+//@[comment("MVI_tracked")]
 extern const NTKERNELAPI PVOID MmSystemRangeStart;
+
+//@[comment("MVI_tracked")]
 extern const NTKERNELAPI ULONG64 MmUserProbeAddress;
 
 #define MM_HIGHEST_USER_ADDRESS MmHighestUserAddress
@@ -7631,6 +7893,8 @@ typedef struct _DRIVER_VERIFIER_THUNK_PAIRS {
 // 7    ZMM     (ZMM[511:0][16-31])
 // 8    IPT                                 Supervisor
 //
+// 11   CET_U                               Supervisor
+//
 // 62   LWP                                 Persistent
 //
 // 63   RZ0                                 Reserved
@@ -7646,6 +7910,7 @@ typedef struct _DRIVER_VERIFIER_THUNK_PAIRS {
 #define XSTATE_AVX512_ZMM_H                 (6)
 #define XSTATE_AVX512_ZMM                   (7)
 #define XSTATE_IPT                          (8)
+#define XSTATE_CET_U                        (11)
 #define XSTATE_LWP                          (62)
 #define MAXIMUM_XSTATE_FEATURES             (64)
 
@@ -7668,6 +7933,7 @@ typedef struct _DRIVER_VERIFIER_THUNK_PAIRS {
                                              (1ui64 << (XSTATE_AVX512_ZMM)))
 
 #define XSTATE_MASK_IPT                     (1ui64 << (XSTATE_IPT))
+#define XSTATE_MASK_CET_U                   (1ui64 << (XSTATE_CET_U))
 #define XSTATE_MASK_LWP                     (1ui64 << (XSTATE_LWP))
 
 #define XSTATE_MASK_ALLOWED                 (XSTATE_MASK_LEGACY | \
@@ -7675,10 +7941,13 @@ typedef struct _DRIVER_VERIFIER_THUNK_PAIRS {
                                              XSTATE_MASK_MPX | \
                                              XSTATE_MASK_AVX512 | \
                                              XSTATE_MASK_IPT | \
+                                             XSTATE_MASK_CET_U | \
                                              XSTATE_MASK_LWP)
 
 #define XSTATE_MASK_PERSISTENT              ((1ui64 << (XSTATE_MPX_BNDCSR)) | \
                                              XSTATE_MASK_LWP)
+
+#define XSTATE_MASK_USER_VISIBLE_SUPERVISOR (XSTATE_MASK_CET_U)
 
 //
 // Flags associated with compaction mask
@@ -7736,8 +8005,11 @@ typedef struct _XSTATE_CONFIGURATION {
     // Total size of the save area for user and supervisor states
     ULONG AllFeatureSize;
 
-    // List which holds size of each user and supervisor state supported by CPU        
+    // List which holds size of each user and supervisor state supported by CPU
     ULONG AllFeatures[MAXIMUM_XSTATE_FEATURES];
+
+    // Mask of all supervisor features that are exposed to user-mode
+    ULONG64 EnabledUserVisibleSupervisorFeatures;
 
 } XSTATE_CONFIGURATION, *PXSTATE_CONFIGURATION;
 
@@ -7857,6 +8129,7 @@ typedef struct _XSTATE_CONFIGURATION {
 
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_ENABLED (0x01)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_HV_PAGE (0x02)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_DISABLE_32BIT (0x04)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_MFENCE (0x10)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_LFENCE (0x20)
 #define SHARED_GLOBAL_FLAGS_QPC_BYPASS_A73_ERRATA (0x40)
@@ -8468,7 +8741,7 @@ C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, QpcShift) == 0x3c7);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, TimeZoneBiasEffectiveStart) == 0x3c8);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, TimeZoneBiasEffectiveEnd) == 0x3d0);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, XState) == 0x3d8);
-C_ASSERT(sizeof(KUSER_SHARED_DATA) == 0x708);
+C_ASSERT(sizeof(KUSER_SHARED_DATA) == 0x710);
 
 #endif /* __midl | MIDL_PASS */
 
@@ -9411,6 +9684,7 @@ MmIsThisAnNtAsSystem (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -9434,6 +9708,7 @@ typedef struct _PHYSICAL_MEMORY_RANGE {
 #define MM_ADD_PHYSICAL_MEMORY_ALREADY_ZEROED       0x1
 #endif
 
+//@[public, SystemReserved]
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9458,6 +9733,7 @@ typedef enum _MM_ROTATE_DIRECTION {
 } MM_ROTATE_DIRECTION, *PMM_ROTATE_DIRECTION;
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
+//@[public, SystemReserved]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTSTATUS
@@ -9473,6 +9749,12 @@ MmRotatePhysicalView (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define MM_REMOVE_PHYSICAL_MEMORY_BAD_ONLY       0x1
+#endif
+
+//@[public, SystemReserved]
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9496,6 +9778,7 @@ MmGetPhysicalMemoryRanges (
 #define MM_SYSTEM_PARTITION_OBJECT                  NULL
 #define MM_CURRENT_PROCESS_PARTITION_OBJECT         ((PVOID) MAXULONG_PTR)
 
+//@[public, SystemReserved]
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
 PPHYSICAL_MEMORY_RANGE
@@ -9507,6 +9790,7 @@ MmGetPhysicalMemoryRangesEx (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -9519,6 +9803,7 @@ MmMapVideoDisplay (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 VOID
@@ -9569,6 +9854,7 @@ MmCopyMemory (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 NTKERNELAPI
 PVOID
 MmGetVirtualForPhysical (
@@ -9764,7 +10050,7 @@ MmMapViewInSystemSpaceEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-//@[comment("MVI_tracked")]
+//@[public, SystemReserved, comment("MVI_tracked")]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -9777,7 +10063,7 @@ MmMapViewInSystemSpace (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-//@[comment("MVI_tracked")]
+//@[public, SystemReserved, comment("MVI_tracked")]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9801,6 +10087,7 @@ MmMapViewInSessionSpaceEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 _Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
@@ -9814,6 +10101,7 @@ MmMapViewInSessionSpace (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[public, SystemReserved]
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9824,6 +10112,7 @@ MmUnmapViewInSessionSpace (
 
 
 #if (NTDDI_VERSION >= NTDDI_WS03)
+//@[public, SystemReserved]
 _Must_inspect_result_
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
@@ -10142,6 +10431,7 @@ PsGetThreadExitStatus(
     );
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 HANDLE
@@ -10486,6 +10776,23 @@ PsGetParentSilo(
     );
 
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+PESILO
+PsGetThreadServerSilo(
+    _In_ PETHREAD Thread
+    );
+
+NTKERNELAPI
+GUID*
+PsGetSiloContainerId(
+    _In_ PESILO Silo
+    );
+
+#endif
 //
 // Directory control minor function codes
 //
@@ -10643,6 +10950,7 @@ typedef struct _CONTROLLER_OBJECT {
 #define DO_DEVICE_TO_BE_RESET               0x04000000      
 #define DO_DEVICE_IRP_REQUIRES_EXTENSION    0x08000000      
 #define DO_DAX_VOLUME                       0x10000000      
+#define DO_BOOT_CRITICAL                    0x20000000      
 #define DRVO_REINIT_REGISTERED          0x00000008
 #define DRVO_INITIALIZED                0x00000010
 #define DRVO_BOOTREINIT_REGISTERED      0x00000020
@@ -12471,6 +12779,7 @@ typedef enum _HAL_QUERY_INFORMATION_CLASS {
     HalHardwareWatchdogInformation,
     HalDmaRemappingInformation,
     HalQueryRuntimeServicesBlockInformation,
+    HalHeterogeneousMemoryAttributesInterface,
     // information levels >= 0x8000000 reserved for OEM use
 } HAL_QUERY_INFORMATION_CLASS, *PHAL_QUERY_INFORMATION_CLASS;
 
@@ -12497,7 +12806,8 @@ typedef enum _HAL_SET_INFORMATION_CLASS {
     HalSetHvciEnabled,
     HalSetProcessorTraceInterruptHandler, // Register performance monitor interrupt callback for Intel Processor Trace
     HalProfileSourceAdd,
-    HalProfileSourceRemove
+    HalProfileSourceRemove,
+    HalSetSwInterruptHandler,
 } HAL_SET_INFORMATION_CLASS, *PHAL_SET_INFORMATION_CLASS;
 
 
@@ -12757,6 +13067,8 @@ typedef enum {
 typedef struct _DEBUG_TRANSPORT_DATA {
     ULONG HwContextSize;
     BOOLEAN UseSerialFraming;
+    BOOLEAN ValidUSBCoreId;
+    UCHAR USBCoreId;
 } DEBUG_TRANSPORT_DATA, *PDEBUG_TRANSPORT_DATA;
 
 #define MAXIMUM_DEBUG_BARS 6
@@ -14046,6 +14358,161 @@ typedef struct _PCI_ROOT_BUS_HARDWARE_CAPABILITY {
     PCI_ROOT_BUS_OSC_CONTROL_FIELD OscControlGranted;
 
 } PCI_ROOT_BUS_HARDWARE_CAPABILITY, *PPCI_ROOT_BUS_HARDWARE_CAPABILITY;
+
+typedef struct _PCI_FPB_CAPABILITY_HEADER {
+    PCI_CAPABILITIES_HEADER Header;
+    USHORT Reserved;
+} PCI_FPB_CAPABILITY_HEADER, *PPCI_FPB_CAPABILITY_HEADER;
+
+typedef union _PCI_FPB_CAPABILITIES_REGISTER {
+
+    struct {
+        ULONG RidDecodeMechanismSupported:1;
+        ULONG MemLowDecodeMechanismSupported:1;
+        ULONG MemHighDecodeMechanismSupported:1;
+        ULONG NumSecDev:5;
+        ULONG RidVectorSizeSupported:3;
+        ULONG Rsvd0:5;
+        ULONG MemLowVectorSizeSupported:3;
+        ULONG Rsvd1:5;
+        ULONG MemHighVectorSizeSupported:3;
+        ULONG Rsvd2:5;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_CAPABILITIES_REGISTER, *PPCI_FPB_CAPABILITIES_REGISTER;
+
+typedef union _PCI_FPB_RID_VECTOR_CONTROL1_REGISTER {
+
+    struct {
+        ULONG RidDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG RidVectorGranularity:4;
+        ULONG Rsvd1:11;
+        ULONG RidVectorStart:13;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_RID_VECTOR_CONTROL1_REGISTER, *PPCI_FPB_RID_VECTOR_CONTROL1_REGISTER;
+
+typedef union _PCI_FPB_RID_VECTOR_CONTROL2_REGISTER {
+
+    struct {
+        ULONG Rsvd0:3;
+        ULONG RidSecondaryStart:13;
+        ULONG Rsvd1:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_RID_VECTOR_CONTROL2_REGISTER, *PPCI_FPB_RID_VECTOR_CONTROL2_REGISTER;
+
+typedef union _PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER {
+
+    struct {
+        ULONG MemLowDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG MemLowVectorGranularity:4;
+        ULONG Rsvd1:12;
+        ULONG MemLowVectorStart:12;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER, *PPCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER;
+
+typedef union _PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER {
+
+    struct {
+        ULONG MemHighDecodeMechanismEnable:1;
+        ULONG Rsvd0:3;
+        ULONG MemHighVectorGranularity:4;
+        ULONG Rsvd1:20;
+        ULONG MemHighVectorStartLower:4;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER, *PPCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER;
+
+typedef struct _PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER {
+    ULONG MemHighVectorStartUpper;
+} PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER, *PPCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER;
+
+typedef union _PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER {
+
+    struct {
+        ULONG VectorAccessOffset:8;
+        ULONG Rsvd0:6;
+        ULONG VectorSelect:2;
+        ULONG Rsvd1:16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+
+} PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER, *PPCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER;
+
+typedef struct _PCI_FPB_VECTOR_ACCESS_DATA_REGISTER {
+    ULONG VectorAccessData;
+} PCI_FPB_VECTOR_ACCESS_DATA_REGISTER, *PPCI_FPB_VECTOR_ACCESS_DATA_REGISTER;
+
+typedef struct _PCI_FPB_CAPABILITY {
+    PCI_FPB_CAPABILITY_HEADER Header;
+    PCI_FPB_CAPABILITIES_REGISTER CapabilitiesRegister;
+    PCI_FPB_RID_VECTOR_CONTROL1_REGISTER RidVectorControl1Register;
+    PCI_FPB_RID_VECTOR_CONTROL2_REGISTER RidVectorControl2Register;
+    PCI_FPB_MEM_LOW_VECTOR_CONTROL_REGISTER MemLowVectorControlRegister;
+    PCI_FPB_MEM_HIGH_VECTOR_CONTROL1_REGISTER MemHighVectorControl1Register;
+    PCI_FPB_MEM_HIGH_VECTOR_CONTROL2_REGISTER MemHighVectorControl2Register;
+    PCI_FPB_VECTOR_ACCESS_CONTROL_REGISTER VectorAccessControlRegister;
+    PCI_FPB_VECTOR_ACCESS_DATA_REGISTER VectorAccessDataRegister;
+} PCI_FPB_CAPABILITY, *PPCI_FPB_CAPABILITY;
+
+#define FPB_VECTOR_SIZE_SUPPORTED_256BITS   0x0
+#define FPB_VECTOR_SIZE_SUPPORTED_512BITS   0x1
+#define FPB_VECTOR_SIZE_SUPPORTED_1KBITS    0x2
+#define FPB_VECTOR_SIZE_SUPPORTED_2KBITS    0x3
+#define FPB_VECTOR_SIZE_SUPPORTED_4KBITS    0x4
+#define FPB_VECTOR_SIZE_SUPPORTED_8KBITS    0x5
+
+#define FPB_RID_VECTOR_GRANULARITY_8RIDS    0x0
+#define FPB_RID_VECTOR_GRANULARITY_64RIDS   0x3
+#define FPB_RID_VECTOR_GRANULARITY_256RIDS  0x5
+
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_1MB      0x0
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_2MB      0x1
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_4MB      0x2
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_8MB      0x3
+#define FPB_MEM_LOW_VECTOR_GRANULARITY_16MB     0x4
+
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_256MB   0x0
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_512MB   0x1
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_1GB     0x2
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_2GB     0x3
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_4GB     0x4
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_8GB     0x5
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_16GB    0x6
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_32GB    0x7
+
+//
+// A special value that is not defined in the FPB spec. This is used to identify
+// byte granularity.
+//
+
+#define FPB_MEM_VECTOR_GRANULARITY_1B           0x8
+
+//
+// A special value that is not defined in the FPB spec. This is used to identify
+// 1 MB granularity for memory high vector.
+//
+
+#define FPB_MEM_HIGH_VECTOR_GRANULARITY_1MB     0x9
+
+#define FPB_VECTOR_SELECT_RID       0x0
+#define FPB_VECTOR_SELECT_MEM_LOW   0x1
+#define FPB_VECTOR_SELECT_MEM_HIGH  0x2
 
 //
 // PCI Express Capability
@@ -16922,7 +17389,8 @@ typedef union _MCG_STATUS {
         ULONG RestartIpValid:1;
         ULONG ErrorIpValid:1;
         ULONG MachineCheckInProgress:1;
-        ULONG Reserved1:29;
+        ULONG LocalMceValid:1;
+        ULONG Reserved1:28;
         ULONG Reserved2;
     } DUMMYSTRUCTNAME;
     ULONGLONG QuadPart;
@@ -17547,7 +18015,7 @@ typedef enum _WHEA_ERROR_TYPE {
     WheaErrTypeNMI,
     WheaErrTypePCIXBus,
     WheaErrTypePCIXDevice,
-    WheaErrTypeGeneric
+    WheaErrTypeGeneric,
 } WHEA_ERROR_TYPE, *PWHEA_ERROR_TYPE;
 
 typedef union _WHEA_ERROR_PACKET_FLAGS {
@@ -17676,6 +18144,77 @@ typedef struct _WHEA_ERROR_PACKET_V2    WHEA_ERROR_PACKET, *PWHEA_ERROR_PACKET;
 typedef struct _WHEA_ERROR_PACKET_V1    WHEA_ERROR_PACKET, *PWHEA_ERROR_PACKET;
 
 #endif
+
+#define WHEA_ERROR_LOG_ENTRY_KERNEL 'LNRK'
+#define WHEA_ERROR_LOG_ENTRY_HYPERV 'PVYH'
+#define WHEA_ERROR_LOG_ENTRY_HAL    ' LAH'
+#define WHEA_ERROR_LOG_ENTRY_PCI    ' ICP'
+#define WHEA_ERROR_LOG_ENTRY_ACPI   'IPCA'
+#define WHEA_ERROR_LOG_ENTRY_PSHED  'DHSP'
+
+typedef enum _WHEA_EVENT_LOG_ENTRY_TYPE {
+    WheaEventLogEntryTypeInformational = 0,
+    WheaEventLogEntryTypeWarning,
+    WheaEventLogEntryTypeError
+} WHEA_EVENT_LOG_ENTRY_TYPE, *PWHEA_EVENT_LOG_ENTRY_TYPE;
+
+typedef enum _WHEA_EVENT_LOG_ENTRY_ID {
+    WheaEventLogEntryIdCmcPollingTimeout = 0x80000001,
+    WheaEventLogEntryIdWheaInit = 0x80000002,
+    WheaEventLogEntryIdMax
+} WHEA_EVENT_LOG_ENTRY_ID, *PWHEA_EVENT_LOG_ENTRY_ID;
+
+typedef union _WHEA_EVENT_LOG_ENTRY_FLAGS {
+    struct {
+        ULONG Reserved:32;
+    } DUMMYSTRUCTNAME;
+    ULONG AsULONG;
+} WHEA_EVENT_LOG_ENTRY_FLAGS, *PWHEA_EVENT_LOG_ENTRY_FLAGS;
+
+typedef struct _WHEA_EVENT_LOG_ENTRY_HEADER {
+    ULONG Signature;
+    ULONG Version;
+    ULONG Length;
+    WHEA_EVENT_LOG_ENTRY_TYPE Type;
+    ULONG OwnerTag;
+    WHEA_EVENT_LOG_ENTRY_ID Id;
+    WHEA_EVENT_LOG_ENTRY_FLAGS Flags;
+    ULONG PayloadLength;
+} WHEA_EVENT_LOG_ENTRY_HEADER, *PWHEA_EVENT_LOG_ENTRY_HEADER;
+
+typedef struct _WHEA_EVENT_LOG_ENTRY {
+    WHEA_EVENT_LOG_ENTRY_HEADER Header;
+    // UCHAR Data[ANYSIZE_ARRAY];
+} WHEA_EVENT_LOG_ENTRY, *PWHEA_EVENT_LOG_ENTRY;
+
+#define WHEA_ERROR_LOG_ENTRY_SIGNATURE  'gLhW'
+#define WHEA_ERROR_LOG_ENTRY_VERSION    1
+
+__inline
+VOID
+WheaInitEventLogEntry (
+    _In_ PWHEA_EVENT_LOG_ENTRY LogEntry,
+    _In_ WHEA_EVENT_LOG_ENTRY_TYPE Type,
+    _In_ WHEA_EVENT_LOG_ENTRY_ID Id,
+    _In_ WHEA_EVENT_LOG_ENTRY_FLAGS Flags,
+    _In_ ULONG OwnerTag,
+    _In_ ULONG PayloadLength
+    )
+{
+
+    PUCHAR PayloadData;
+
+    PayloadData = (PUCHAR)LogEntry + sizeof(WHEA_EVENT_LOG_ENTRY);
+    LogEntry->Header.Signature = WHEA_ERROR_LOG_ENTRY_SIGNATURE;
+    LogEntry->Header.Version = WHEA_ERROR_LOG_ENTRY_VERSION;
+    LogEntry->Header.Length = sizeof(WHEA_EVENT_LOG_ENTRY) + PayloadLength;
+    LogEntry->Header.Type = Type;
+    LogEntry->Header.Id = Id;
+    LogEntry->Header.OwnerTag = OwnerTag;
+    LogEntry->Header.Flags = Flags;
+    LogEntry->Header.PayloadLength = PayloadLength;
+    return; 
+}
 
 //---------------------------------------------------------- WHEA_GENERIC_ERROR
 
@@ -18470,6 +19009,7 @@ typedef enum _SOC_SUBSYSTEM_TYPE {
     SOC_SUBSYS_WIRELSS_CONNECTIVITY = 2,
     SOC_SUBSYS_SENSORS = 3,
     SOC_SUBSYS_COMPUTE_DSP = 4,
+    SOC_SUBSYS_SECURE_PROC = 5,
 
 
     //

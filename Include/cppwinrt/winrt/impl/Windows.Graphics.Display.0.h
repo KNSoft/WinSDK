@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -192,25 +192,25 @@ template <> struct name<Windows::Graphics::Display::HdrMetadataFormat>{ static c
 template <> struct name<Windows::Graphics::Display::ResolutionScale>{ static constexpr auto & value{ L"Windows.Graphics.Display.ResolutionScale" }; };
 template <> struct name<Windows::Graphics::Display::NitRange>{ static constexpr auto & value{ L"Windows.Graphics.Display.NitRange" }; };
 template <> struct name<Windows::Graphics::Display::DisplayPropertiesEventHandler>{ static constexpr auto & value{ L"Windows.Graphics.Display.DisplayPropertiesEventHandler" }; };
-template <> struct guid<Windows::Graphics::Display::IAdvancedColorInfo>{ static constexpr GUID value{ 0x8797DCFB,0xB229,0x4081,{ 0xAE,0x9A,0x2C,0xC8,0x5E,0x34,0xAD,0x6A } }; };
-template <> struct guid<Windows::Graphics::Display::IBrightnessOverride>{ static constexpr GUID value{ 0x96C9621A,0xC143,0x4392,{ 0xBE,0xDD,0x4A,0x7E,0x95,0x74,0xC8,0xFD } }; };
-template <> struct guid<Windows::Graphics::Display::IBrightnessOverrideSettings>{ static constexpr GUID value{ 0xD112AB2A,0x7604,0x4DBA,{ 0xBC,0xF8,0x4B,0x6F,0x49,0x50,0x2C,0xB0 } }; };
-template <> struct guid<Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>{ static constexpr GUID value{ 0xD487DC90,0x6F74,0x440B,{ 0xB3,0x83,0x5F,0xE9,0x6C,0xF0,0x0B,0x0F } }; };
-template <> struct guid<Windows::Graphics::Display::IBrightnessOverrideStatics>{ static constexpr GUID value{ 0x03A7B9ED,0xE1F1,0x4A68,{ 0xA1,0x1F,0x94,0x6A,0xD8,0xCE,0x53,0x93 } }; };
-template <> struct guid<Windows::Graphics::Display::IColorOverrideSettings>{ static constexpr GUID value{ 0xFBEFA134,0x4A81,0x4C4D,{ 0xA5,0xB6,0x7D,0x1B,0x5C,0x4B,0xD0,0x0B } }; };
-template <> struct guid<Windows::Graphics::Display::IColorOverrideSettingsStatics>{ static constexpr GUID value{ 0xB068E05F,0xC41F,0x4AC9,{ 0xAF,0xAB,0x82,0x7A,0xB6,0x24,0x8F,0x9A } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayEnhancementOverride>{ static constexpr GUID value{ 0x429594CF,0xD97A,0x4B02,{ 0xA4,0x28,0x5C,0x42,0x92,0xF7,0xF5,0x22 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities>{ static constexpr GUID value{ 0x457060DE,0xEE5A,0x47B7,{ 0x99,0x18,0x1E,0x51,0xE8,0x12,0xCC,0xC8 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>{ static constexpr GUID value{ 0xDB61E664,0x15FA,0x49DA,{ 0x8B,0x77,0x07,0xDB,0xD2,0xAF,0x58,0x5D } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>{ static constexpr GUID value{ 0xCF5B7EC1,0x9791,0x4453,{ 0xB0,0x13,0x29,0xB6,0xF7,0x78,0xE5,0x19 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformation>{ static constexpr GUID value{ 0xBED112AE,0xADC3,0x4DC9,{ 0xAE,0x65,0x85,0x1F,0x4D,0x7D,0x47,0x99 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformation2>{ static constexpr GUID value{ 0x4DCD0021,0xFAD1,0x4B8E,{ 0x8E,0xDF,0x77,0x58,0x87,0xB8,0xBF,0x19 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformation3>{ static constexpr GUID value{ 0xDB15011D,0x0F09,0x4466,{ 0x8F,0xF3,0x11,0xDE,0x9A,0x3C,0x92,0x9A } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformation4>{ static constexpr GUID value{ 0xC972CE2F,0x1242,0x46BE,{ 0xB5,0x36,0xE1,0xAA,0xFE,0x9E,0x7A,0xCF } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformation5>{ static constexpr GUID value{ 0x3A5442DC,0x2CDE,0x4A8D,{ 0x80,0xD1,0x21,0xDC,0x5A,0xDC,0xC1,0xAA } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayInformationStatics>{ static constexpr GUID value{ 0xC6A02A6C,0xD452,0x44DC,{ 0xBA,0x07,0x96,0xF3,0xC6,0xAD,0xF9,0xD1 } }; };
-template <> struct guid<Windows::Graphics::Display::IDisplayPropertiesStatics>{ static constexpr GUID value{ 0x6937ED8D,0x30EA,0x4DED,{ 0x82,0x71,0x45,0x53,0xFF,0x02,0xF6,0x8A } }; };
-template <> struct guid<Windows::Graphics::Display::DisplayPropertiesEventHandler>{ static constexpr GUID value{ 0xDBDD8B01,0xF1A1,0x46D1,{ 0x9E,0xE3,0x54,0x3B,0xCC,0x99,0x59,0x80 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IAdvancedColorInfo>{ static constexpr guid value{ 0x8797DCFB,0xB229,0x4081,{ 0xAE,0x9A,0x2C,0xC8,0x5E,0x34,0xAD,0x6A } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IBrightnessOverride>{ static constexpr guid value{ 0x96C9621A,0xC143,0x4392,{ 0xBE,0xDD,0x4A,0x7E,0x95,0x74,0xC8,0xFD } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IBrightnessOverrideSettings>{ static constexpr guid value{ 0xD112AB2A,0x7604,0x4DBA,{ 0xBC,0xF8,0x4B,0x6F,0x49,0x50,0x2C,0xB0 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>{ static constexpr guid value{ 0xD487DC90,0x6F74,0x440B,{ 0xB3,0x83,0x5F,0xE9,0x6C,0xF0,0x0B,0x0F } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IBrightnessOverrideStatics>{ static constexpr guid value{ 0x03A7B9ED,0xE1F1,0x4A68,{ 0xA1,0x1F,0x94,0x6A,0xD8,0xCE,0x53,0x93 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IColorOverrideSettings>{ static constexpr guid value{ 0xFBEFA134,0x4A81,0x4C4D,{ 0xA5,0xB6,0x7D,0x1B,0x5C,0x4B,0xD0,0x0B } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IColorOverrideSettingsStatics>{ static constexpr guid value{ 0xB068E05F,0xC41F,0x4AC9,{ 0xAF,0xAB,0x82,0x7A,0xB6,0x24,0x8F,0x9A } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayEnhancementOverride>{ static constexpr guid value{ 0x429594CF,0xD97A,0x4B02,{ 0xA4,0x28,0x5C,0x42,0x92,0xF7,0xF5,0x22 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities>{ static constexpr guid value{ 0x457060DE,0xEE5A,0x47B7,{ 0x99,0x18,0x1E,0x51,0xE8,0x12,0xCC,0xC8 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>{ static constexpr guid value{ 0xDB61E664,0x15FA,0x49DA,{ 0x8B,0x77,0x07,0xDB,0xD2,0xAF,0x58,0x5D } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>{ static constexpr guid value{ 0xCF5B7EC1,0x9791,0x4453,{ 0xB0,0x13,0x29,0xB6,0xF7,0x78,0xE5,0x19 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformation>{ static constexpr guid value{ 0xBED112AE,0xADC3,0x4DC9,{ 0xAE,0x65,0x85,0x1F,0x4D,0x7D,0x47,0x99 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformation2>{ static constexpr guid value{ 0x4DCD0021,0xFAD1,0x4B8E,{ 0x8E,0xDF,0x77,0x58,0x87,0xB8,0xBF,0x19 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformation3>{ static constexpr guid value{ 0xDB15011D,0x0F09,0x4466,{ 0x8F,0xF3,0x11,0xDE,0x9A,0x3C,0x92,0x9A } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformation4>{ static constexpr guid value{ 0xC972CE2F,0x1242,0x46BE,{ 0xB5,0x36,0xE1,0xAA,0xFE,0x9E,0x7A,0xCF } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformation5>{ static constexpr guid value{ 0x3A5442DC,0x2CDE,0x4A8D,{ 0x80,0xD1,0x21,0xDC,0x5A,0xDC,0xC1,0xAA } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayInformationStatics>{ static constexpr guid value{ 0xC6A02A6C,0xD452,0x44DC,{ 0xBA,0x07,0x96,0xF3,0xC6,0xAD,0xF9,0xD1 } }; };
+template <> struct guid_storage<Windows::Graphics::Display::IDisplayPropertiesStatics>{ static constexpr guid value{ 0x6937ED8D,0x30EA,0x4DED,{ 0x82,0x71,0x45,0x53,0xFF,0x02,0xF6,0x8A } }; };
+template <> struct guid_storage<Windows::Graphics::Display::DisplayPropertiesEventHandler>{ static constexpr guid value{ 0xDBDD8B01,0xF1A1,0x46D1,{ 0x9E,0xE3,0x54,0x3B,0xCC,0x99,0x59,0x80 } }; };
 template <> struct default_interface<Windows::Graphics::Display::AdvancedColorInfo>{ using type = Windows::Graphics::Display::IAdvancedColorInfo; };
 template <> struct default_interface<Windows::Graphics::Display::BrightnessOverride>{ using type = Windows::Graphics::Display::IBrightnessOverride; };
 template <> struct default_interface<Windows::Graphics::Display::BrightnessOverrideSettings>{ using type = Windows::Graphics::Display::IBrightnessOverrideSettings; };
@@ -219,6 +219,184 @@ template <> struct default_interface<Windows::Graphics::Display::DisplayEnhancem
 template <> struct default_interface<Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities>{ using type = Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities; };
 template <> struct default_interface<Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs>{ using type = Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs; };
 template <> struct default_interface<Windows::Graphics::Display::DisplayInformation>{ using type = Windows::Graphics::Display::IDisplayInformation; };
+
+template <> struct abi<Windows::Graphics::Display::IAdvancedColorInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentAdvancedColorKind(Windows::Graphics::Display::AdvancedColorKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RedPrimary(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_GreenPrimary(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BluePrimary(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WhitePoint(Windows::Foundation::Point* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxLuminanceInNits(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MinLuminanceInNits(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MaxAverageFullFrameLuminanceInNits(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SdrWhiteLevelInNits(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL IsHdrMetadataFormatCurrentlySupported(Windows::Graphics::Display::HdrMetadataFormat format, bool* result) noexcept = 0;
+    virtual int32_t WINRT_CALL IsAdvancedColorKindAvailable(Windows::Graphics::Display::AdvancedColorKind kind, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IBrightnessOverride>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOverrideActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BrightnessLevel(double* level) noexcept = 0;
+    virtual int32_t WINRT_CALL SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept = 0;
+    virtual int32_t WINRT_CALL SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept = 0;
+    virtual int32_t WINRT_CALL GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, double* brightnessLevel) noexcept = 0;
+    virtual int32_t WINRT_CALL StartOverride() noexcept = 0;
+    virtual int32_t WINRT_CALL StopOverride() noexcept = 0;
+    virtual int32_t WINRT_CALL add_IsSupportedChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_IsSupportedChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_IsOverrideActiveChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_IsOverrideActiveChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_BrightnessLevelChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_BrightnessLevelChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredLevel(double* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DesiredNits(float* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromLevel(double level, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromNits(float nits, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromDisplayBrightnessOverrideScenario(Windows::Graphics::Display::DisplayBrightnessOverrideScenario overrideScenario, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefaultForSystem(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForCurrentView(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveForSystemAsync(void* value, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IColorOverrideSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DesiredDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IColorOverrideSettingsStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario overrideScenario, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverride>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ColorOverrideSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ColorOverrideSettings(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BrightnessOverrideSettings(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BrightnessOverrideSettings(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanOverride(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOverrideActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentDisplayEnhancementOverrideCapabilities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestOverride() noexcept = 0;
+    virtual int32_t WINRT_CALL StopOverride() noexcept = 0;
+    virtual int32_t WINRT_CALL add_CanOverrideChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_CanOverrideChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_IsOverrideActiveChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_IsOverrideActiveChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DisplayEnhancementOverrideCapabilitiesChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DisplayEnhancementOverrideCapabilitiesChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsBrightnessControlSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsBrightnessNitsControlSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetSupportedNitRanges(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Capabilities(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OrientationChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OrientationChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogicalDpi(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RawDpiX(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RawDpiY(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DpiChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DpiChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StereoEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StereoEnabledChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StereoEnabledChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetColorProfileAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ColorProfileChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ColorProfileChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RawPixelsPerViewPixel(double* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformation3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DiagonalSizeInInches(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformation4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ScreenWidthInRawPixels(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ScreenHeightInRawPixels(uint32_t* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformation5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAdvancedColorInfo(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_AdvancedColorInfoChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AdvancedColorInfoChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayInformationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetForCurrentView(void** current) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DisplayContentsInvalidated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DisplayContentsInvalidated(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::IDisplayPropertiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OrientationChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OrientationChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LogicalDpi(float* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_LogicalDpiChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LogicalDpiChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StereoEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StereoEnabledChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StereoEnabledChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetColorProfileAsync(void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ColorProfileChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ColorProfileChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DisplayContentsInvalidated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DisplayContentsInvalidated(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Graphics::Display::DisplayPropertiesEventHandler>{ struct type : IUnknown
+{
+    virtual int32_t WINRT_CALL Invoke(void* sender) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Graphics_Display_IAdvancedColorInfo
@@ -248,18 +426,18 @@ struct consume_Windows_Graphics_Display_IBrightnessOverride
     double GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario const& scenario) const;
     void StartOverride() const;
     void StopOverride() const;
-    event_token IsSupportedChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    using IsSupportedChanged_revoker = event_revoker<Windows::Graphics::Display::IBrightnessOverride>;
+    winrt::event_token IsSupportedChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
+    using IsSupportedChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IBrightnessOverride, &impl::abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_IsSupportedChanged>;
     IsSupportedChanged_revoker IsSupportedChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    void IsSupportedChanged(event_token const& token) const;
-    event_token IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    using IsOverrideActiveChanged_revoker = event_revoker<Windows::Graphics::Display::IBrightnessOverride>;
+    void IsSupportedChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
+    using IsOverrideActiveChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IBrightnessOverride, &impl::abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_IsOverrideActiveChanged>;
     IsOverrideActiveChanged_revoker IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    void IsOverrideActiveChanged(event_token const& token) const;
-    event_token BrightnessLevelChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    using BrightnessLevelChanged_revoker = event_revoker<Windows::Graphics::Display::IBrightnessOverride>;
+    void IsOverrideActiveChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token BrightnessLevelChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
+    using BrightnessLevelChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IBrightnessOverride, &impl::abi_t<Windows::Graphics::Display::IBrightnessOverride>::remove_BrightnessLevelChanged>;
     BrightnessLevelChanged_revoker BrightnessLevelChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> const& handler) const;
-    void BrightnessLevelChanged(event_token const& token) const;
+    void BrightnessLevelChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IBrightnessOverride> { template <typename D> using type = consume_Windows_Graphics_Display_IBrightnessOverride<D>; };
 
@@ -315,18 +493,18 @@ struct consume_Windows_Graphics_Display_IDisplayEnhancementOverride
     Windows::Graphics::Display::DisplayEnhancementOverrideCapabilities GetCurrentDisplayEnhancementOverrideCapabilities() const;
     void RequestOverride() const;
     void StopOverride() const;
-    event_token CanOverrideChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
-    using CanOverrideChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride>;
+    winrt::event_token CanOverrideChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
+    using CanOverrideChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride, &impl::abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_CanOverrideChanged>;
     CanOverrideChanged_revoker CanOverrideChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
-    void CanOverrideChanged(event_token const& token) const;
-    event_token IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
-    using IsOverrideActiveChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride>;
+    void CanOverrideChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
+    using IsOverrideActiveChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride, &impl::abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_IsOverrideActiveChanged>;
     IsOverrideActiveChanged_revoker IsOverrideActiveChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Foundation::IInspectable> const& handler) const;
-    void IsOverrideActiveChanged(event_token const& token) const;
-    event_token DisplayEnhancementOverrideCapabilitiesChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const;
-    using DisplayEnhancementOverrideCapabilitiesChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride>;
+    void IsOverrideActiveChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token DisplayEnhancementOverrideCapabilitiesChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const;
+    using DisplayEnhancementOverrideCapabilitiesChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayEnhancementOverride, &impl::abi_t<Windows::Graphics::Display::IDisplayEnhancementOverride>::remove_DisplayEnhancementOverrideCapabilitiesChanged>;
     DisplayEnhancementOverrideCapabilitiesChanged_revoker DisplayEnhancementOverrideCapabilitiesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayEnhancementOverride, Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs> const& handler) const;
-    void DisplayEnhancementOverrideCapabilitiesChanged(event_token const& token) const;
+    void DisplayEnhancementOverrideCapabilitiesChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IDisplayEnhancementOverride> { template <typename D> using type = consume_Windows_Graphics_Display_IDisplayEnhancementOverride<D>; };
 
@@ -358,28 +536,28 @@ struct consume_Windows_Graphics_Display_IDisplayInformation
 {
     Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
     Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
-    event_token OrientationChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using OrientationChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformation>;
+    winrt::event_token OrientationChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using OrientationChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformation, &impl::abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_OrientationChanged>;
     OrientationChanged_revoker OrientationChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void OrientationChanged(event_token const& token) const;
+    void OrientationChanged(winrt::event_token const& token) const noexcept;
     Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
     float LogicalDpi() const;
     float RawDpiX() const;
     float RawDpiY() const;
-    event_token DpiChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using DpiChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformation>;
+    winrt::event_token DpiChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using DpiChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformation, &impl::abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_DpiChanged>;
     DpiChanged_revoker DpiChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void DpiChanged(event_token const& token) const;
+    void DpiChanged(winrt::event_token const& token) const noexcept;
     bool StereoEnabled() const;
-    event_token StereoEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using StereoEnabledChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformation>;
+    winrt::event_token StereoEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using StereoEnabledChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformation, &impl::abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_StereoEnabledChanged>;
     StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void StereoEnabledChanged(event_token const& token) const;
+    void StereoEnabledChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
-    event_token ColorProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using ColorProfileChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformation>;
+    winrt::event_token ColorProfileChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using ColorProfileChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformation, &impl::abi_t<Windows::Graphics::Display::IDisplayInformation>::remove_ColorProfileChanged>;
     ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void ColorProfileChanged(event_token const& token) const;
+    void ColorProfileChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IDisplayInformation> { template <typename D> using type = consume_Windows_Graphics_Display_IDisplayInformation<D>; };
 
@@ -409,10 +587,10 @@ template <typename D>
 struct consume_Windows_Graphics_Display_IDisplayInformation5
 {
     Windows::Graphics::Display::AdvancedColorInfo GetAdvancedColorInfo() const;
-    event_token AdvancedColorInfoChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using AdvancedColorInfoChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformation5>;
+    winrt::event_token AdvancedColorInfoChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using AdvancedColorInfoChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformation5, &impl::abi_t<Windows::Graphics::Display::IDisplayInformation5>::remove_AdvancedColorInfoChanged>;
     AdvancedColorInfoChanged_revoker AdvancedColorInfoChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void AdvancedColorInfoChanged(event_token const& token) const;
+    void AdvancedColorInfoChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IDisplayInformation5> { template <typename D> using type = consume_Windows_Graphics_Display_IDisplayInformation5<D>; };
 
@@ -422,44 +600,44 @@ struct consume_Windows_Graphics_Display_IDisplayInformationStatics
     Windows::Graphics::Display::DisplayInformation GetForCurrentView() const;
     Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
     void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value) const;
-    event_token DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    using DisplayContentsInvalidated_revoker = event_revoker<Windows::Graphics::Display::IDisplayInformationStatics>;
+    winrt::event_token DisplayContentsInvalidated(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
+    using DisplayContentsInvalidated_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayInformationStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayInformationStatics>::remove_DisplayContentsInvalidated>;
     DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::Foundation::IInspectable> const& handler) const;
-    void DisplayContentsInvalidated(event_token const& token) const;
+    void DisplayContentsInvalidated(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IDisplayInformationStatics> { template <typename D> using type = consume_Windows_Graphics_Display_IDisplayInformationStatics<D>; };
 
 template <typename D>
 struct consume_Windows_Graphics_Display_IDisplayPropertiesStatics
 {
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    using OrientationChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] OrientationChanged_revoker OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void OrientationChanged(event_token const& token) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] float LogicalDpi() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    using LogicalDpiChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void LogicalDpiChanged(event_token const& token) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] bool StereoEnabled() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    using StereoEnabledChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void StereoEnabledChanged(event_token const& token) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    using ColorProfileChanged_revoker = event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void ColorProfileChanged(event_token const& token) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] event_token DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    using DisplayContentsInvalidated_revoker = event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics>;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
-    [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] void DisplayContentsInvalidated(event_token const& token) const;
+    Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
+    Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
+    Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
+    void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations const& value) const;
+    winrt::event_token OrientationChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    using OrientationChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_OrientationChanged>;
+    OrientationChanged_revoker OrientationChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    void OrientationChanged(winrt::event_token const& token) const noexcept;
+    Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
+    float LogicalDpi() const;
+    winrt::event_token LogicalDpiChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    using LogicalDpiChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_LogicalDpiChanged>;
+    LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    void LogicalDpiChanged(winrt::event_token const& token) const noexcept;
+    bool StereoEnabled() const;
+    winrt::event_token StereoEnabledChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    using StereoEnabledChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_StereoEnabledChanged>;
+    StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    void StereoEnabledChanged(winrt::event_token const& token) const noexcept;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
+    winrt::event_token ColorProfileChanged(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    using ColorProfileChanged_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_ColorProfileChanged>;
+    ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    void ColorProfileChanged(winrt::event_token const& token) const noexcept;
+    winrt::event_token DisplayContentsInvalidated(Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    using DisplayContentsInvalidated_revoker = impl::event_revoker<Windows::Graphics::Display::IDisplayPropertiesStatics, &impl::abi_t<Windows::Graphics::Display::IDisplayPropertiesStatics>::remove_DisplayContentsInvalidated>;
+    DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, Windows::Graphics::Display::DisplayPropertiesEventHandler const& handler) const;
+    void DisplayContentsInvalidated(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Graphics::Display::IDisplayPropertiesStatics> { template <typename D> using type = consume_Windows_Graphics_Display_IDisplayPropertiesStatics<D>; };
 
@@ -471,183 +649,5 @@ struct struct_Windows_Graphics_Display_NitRange
 };
 template <> struct abi<Windows::Graphics::Display::NitRange>{ using type = struct_Windows_Graphics_Display_NitRange; };
 
-
-template <> struct abi<Windows::Graphics::Display::IAdvancedColorInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentAdvancedColorKind(Windows::Graphics::Display::AdvancedColorKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RedPrimary(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_GreenPrimary(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BluePrimary(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_WhitePoint(Windows::Foundation::Point* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxLuminanceInNits(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MinLuminanceInNits(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MaxAverageFullFrameLuminanceInNits(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SdrWhiteLevelInNits(float* value) noexcept = 0;
-    virtual HRESULT __stdcall IsHdrMetadataFormatCurrentlySupported(Windows::Graphics::Display::HdrMetadataFormat format, bool* result) noexcept = 0;
-    virtual HRESULT __stdcall IsAdvancedColorKindAvailable(Windows::Graphics::Display::AdvancedColorKind kind, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IBrightnessOverride>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOverrideActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BrightnessLevel(double* level) noexcept = 0;
-    virtual HRESULT __stdcall SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept = 0;
-    virtual HRESULT __stdcall SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept = 0;
-    virtual HRESULT __stdcall GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, double* brightnessLevel) noexcept = 0;
-    virtual HRESULT __stdcall StartOverride() noexcept = 0;
-    virtual HRESULT __stdcall StopOverride() noexcept = 0;
-    virtual HRESULT __stdcall add_IsSupportedChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_IsSupportedChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_IsOverrideActiveChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_BrightnessLevelChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_BrightnessLevelChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredLevel(double* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DesiredNits(float* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromLevel(double level, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromNits(float nits, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromDisplayBrightnessOverrideScenario(Windows::Graphics::Display::DisplayBrightnessOverrideScenario overrideScenario, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IBrightnessOverrideStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefaultForSystem(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetForCurrentView(void** value) noexcept = 0;
-    virtual HRESULT __stdcall SaveForSystemAsync(void* value, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IColorOverrideSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DesiredDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IColorOverrideSettingsStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromDisplayColorOverrideScenario(Windows::Graphics::Display::DisplayColorOverrideScenario overrideScenario, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverride>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ColorOverrideSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_ColorOverrideSettings(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BrightnessOverrideSettings(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_BrightnessOverrideSettings(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanOverride(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOverrideActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentDisplayEnhancementOverrideCapabilities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall RequestOverride() noexcept = 0;
-    virtual HRESULT __stdcall StopOverride() noexcept = 0;
-    virtual HRESULT __stdcall add_CanOverrideChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_CanOverrideChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_IsOverrideActiveChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DisplayEnhancementOverrideCapabilitiesChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DisplayEnhancementOverrideCapabilitiesChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilities>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsBrightnessControlSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsBrightnessNitsControlSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetSupportedNitRanges(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Capabilities(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayEnhancementOverrideStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall add_OrientationChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_OrientationChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogicalDpi(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RawDpiX(float* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RawDpiY(float* value) noexcept = 0;
-    virtual HRESULT __stdcall add_DpiChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DpiChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_StereoEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_StereoEnabledChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StereoEnabledChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetColorProfileAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall add_ColorProfileChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ColorProfileChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RawPixelsPerViewPixel(double* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformation3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DiagonalSizeInInches(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformation4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ScreenWidthInRawPixels(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ScreenHeightInRawPixels(uint32_t* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformation5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAdvancedColorInfo(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_AdvancedColorInfoChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_AdvancedColorInfoChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayInformationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetForCurrentView(void** current) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept = 0;
-    virtual HRESULT __stdcall add_DisplayContentsInvalidated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DisplayContentsInvalidated(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::IDisplayPropertiesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CurrentOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NativeOrientation(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) noexcept = 0;
-    virtual HRESULT __stdcall add_OrientationChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_OrientationChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolutionScale(Windows::Graphics::Display::ResolutionScale* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LogicalDpi(float* value) noexcept = 0;
-    virtual HRESULT __stdcall add_LogicalDpiChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LogicalDpiChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_StereoEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall add_StereoEnabledChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StereoEnabledChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetColorProfileAsync(void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall add_ColorProfileChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_ColorProfileChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DisplayContentsInvalidated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DisplayContentsInvalidated(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Graphics::Display::DisplayPropertiesEventHandler>{ struct type : IUnknown
-{
-    virtual HRESULT __stdcall Invoke(void* sender) noexcept = 0;
-};};
 
 }

@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.foundation.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -222,6 +230,18 @@ namespace ABI {
 #define __x_ABI_CWindows_CFoundation_CIGetActivationFactory ABI::Windows::Foundation::IGetActivationFactory
 
 #endif // ____x_ABI_CWindows_CFoundation_CIGetActivationFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IGuidHelperStatics;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics ABI::Windows::Foundation::IGuidHelperStatics
+
+#endif // ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_FWD_DEFINED__
@@ -733,6 +753,64 @@ typedef IIterable<IInspectable*> __FIIterable_1_IInspectable_t;
 
 
 
+#ifndef DEF___FIIterator_1_short_USE
+#define DEF___FIIterator_1_short_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5409069f-e7c1-5732-bb69-e5736f03f9a9"))
+IIterator<short> : IIterator_impl<short> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Int16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<short> __FIIterator_1_short_t;
+#define __FIIterator_1_short ABI::Windows::Foundation::Collections::__FIIterator_1_short_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_short ABI::Windows::Foundation::Collections::IIterator<INT16>
+//#define __FIIterator_1_short_t ABI::Windows::Foundation::Collections::IIterator<INT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_short_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_short_USE
+#define DEF___FIIterable_1_short_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("72ff2923-4b4e-53bb-8feb-41ec5f2bb734"))
+IIterable<short> : IIterable_impl<short> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Int16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<short> __FIIterable_1_short_t;
+#define __FIIterable_1_short ABI::Windows::Foundation::Collections::__FIIterable_1_short_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_short ABI::Windows::Foundation::Collections::IIterable<INT16>
+//#define __FIIterable_1_short_t ABI::Windows::Foundation::Collections::IIterable<INT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_short_USE */
+
+
+
+
 #ifndef DEF___FIIterator_1_int_USE
 #define DEF___FIIterator_1_int_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -849,6 +927,64 @@ typedef IIterable<__int64> __FIIterable_1___z__zint64_t;
 
 
 
+#ifndef DEF___FIIterator_1_UINT16_USE
+#define DEF___FIIterator_1_UINT16_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("5738fc25-402b-5fc1-b1e4-0aa24ef652f1"))
+IIterator<UINT16> : IIterator_impl<UINT16> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<UInt16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<UINT16> __FIIterator_1_UINT16_t;
+#define __FIIterator_1_UINT16 ABI::Windows::Foundation::Collections::__FIIterator_1_UINT16_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_UINT16 ABI::Windows::Foundation::Collections::IIterator<UINT16>
+//#define __FIIterator_1_UINT16_t ABI::Windows::Foundation::Collections::IIterator<UINT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_UINT16_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_UINT16_USE
+#define DEF___FIIterable_1_UINT16_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("ecfa9a6f-fa2e-5345-b297-efb4e8c6be87"))
+IIterable<UINT16> : IIterable_impl<UINT16> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<UInt16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<UINT16> __FIIterable_1_UINT16_t;
+#define __FIIterable_1_UINT16 ABI::Windows::Foundation::Collections::__FIIterable_1_UINT16_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_UINT16 ABI::Windows::Foundation::Collections::IIterable<UINT16>
+//#define __FIIterable_1_UINT16_t ABI::Windows::Foundation::Collections::IIterable<UINT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_UINT16_USE */
+
+
+
+
 #ifndef DEF___FIIterator_1_UINT32_USE
 #define DEF___FIIterator_1_UINT32_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -903,6 +1039,64 @@ typedef IIterable<UINT32> __FIIterable_1_UINT32_t;
 //#define __FIIterable_1_UINT32_t ABI::Windows::Foundation::Collections::IIterable<UINT32>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_UINT32_USE */
+
+
+
+
+#ifndef DEF___FIIterator_1_UINT64_USE
+#define DEF___FIIterator_1_UINT64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("c473ed96-76e3-5ff2-9435-47feebfe9539"))
+IIterator<UINT64> : IIterator_impl<UINT64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<UInt64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterator<UINT64> __FIIterator_1_UINT64_t;
+#define __FIIterator_1_UINT64 ABI::Windows::Foundation::Collections::__FIIterator_1_UINT64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_UINT64 ABI::Windows::Foundation::Collections::IIterator<UINT64>
+//#define __FIIterator_1_UINT64_t ABI::Windows::Foundation::Collections::IIterator<UINT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterator_1_UINT64_USE */
+
+
+
+
+#ifndef DEF___FIIterable_1_UINT64_USE
+#define DEF___FIIterable_1_UINT64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("4b3a3229-7995-5f3c-b248-6c1f7e664f01"))
+IIterable<UINT64> : IIterable_impl<UINT64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<UInt64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IIterable<UINT64> __FIIterable_1_UINT64_t;
+#define __FIIterable_1_UINT64 ABI::Windows::Foundation::Collections::__FIIterable_1_UINT64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_UINT64 ABI::Windows::Foundation::Collections::IIterable<UINT64>
+//#define __FIIterable_1_UINT64_t ABI::Windows::Foundation::Collections::IIterable<UINT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIIterable_1_UINT64_USE */
 
 
 
@@ -2799,6 +2993,35 @@ typedef IVectorView<GUID> __FIVectorView_1_GUID_t;
 
 
 
+#ifndef DEF___FIVectorView_1_short_USE
+#define DEF___FIVectorView_1_short_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("e53056ad-8a0e-5c41-a62d-c92e3ac2de58"))
+IVectorView<short> : IVectorView_impl<short> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Int16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<short> __FIVectorView_1_short_t;
+#define __FIVectorView_1_short ABI::Windows::Foundation::Collections::__FIVectorView_1_short_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_short ABI::Windows::Foundation::Collections::IVectorView<INT16>
+//#define __FIVectorView_1_short_t ABI::Windows::Foundation::Collections::IVectorView<INT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_short_USE */
+
+
+
+
 #ifndef DEF___FIVectorView_1_int_USE
 #define DEF___FIVectorView_1_int_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -2828,6 +3051,64 @@ typedef IVectorView<int> __FIVectorView_1_int_t;
 
 
 
+#ifndef DEF___FIVectorView_1___z__zint64_USE
+#define DEF___FIVectorView_1___z__zint64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("8221aa0e-d1d2-5b22-a918-05672812d12f"))
+IVectorView<__int64> : IVectorView_impl<__int64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Int64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<__int64> __FIVectorView_1___z__zint64_t;
+#define __FIVectorView_1___z__zint64 ABI::Windows::Foundation::Collections::__FIVectorView_1___z__zint64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1___z__zint64 ABI::Windows::Foundation::Collections::IVectorView<INT64>
+//#define __FIVectorView_1___z__zint64_t ABI::Windows::Foundation::Collections::IVectorView<INT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1___z__zint64_USE */
+
+
+
+
+#ifndef DEF___FIVectorView_1_UINT16_USE
+#define DEF___FIVectorView_1_UINT16_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("9d0d0d9f-6a82-55a3-98c5-228499df38f9"))
+IVectorView<UINT16> : IVectorView_impl<UINT16> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<UInt16>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<UINT16> __FIVectorView_1_UINT16_t;
+#define __FIVectorView_1_UINT16 ABI::Windows::Foundation::Collections::__FIVectorView_1_UINT16_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_UINT16 ABI::Windows::Foundation::Collections::IVectorView<UINT16>
+//#define __FIVectorView_1_UINT16_t ABI::Windows::Foundation::Collections::IVectorView<UINT16>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_UINT16_USE */
+
+
+
+
 #ifndef DEF___FIVectorView_1_UINT32_USE
 #define DEF___FIVectorView_1_UINT32_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
@@ -2853,6 +3134,35 @@ typedef IVectorView<UINT32> __FIVectorView_1_UINT32_t;
 //#define __FIVectorView_1_UINT32_t ABI::Windows::Foundation::Collections::IVectorView<UINT32>
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_UINT32_USE */
+
+
+
+
+#ifndef DEF___FIVectorView_1_UINT64_USE
+#define DEF___FIVectorView_1_UINT64_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
+template <>
+struct __declspec(uuid("23d156c7-7ef9-5096-aaba-1e6c9ab5ceb4"))
+IVectorView<UINT64> : IVectorView_impl<UINT64> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<UInt64>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IVectorView<UINT64> __FIVectorView_1_UINT64_t;
+#define __FIVectorView_1_UINT64 ABI::Windows::Foundation::Collections::__FIVectorView_1_UINT64_t
+/* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_UINT64 ABI::Windows::Foundation::Collections::IVectorView<UINT64>
+//#define __FIVectorView_1_UINT64_t ABI::Windows::Foundation::Collections::IVectorView<UINT64>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIVectorView_1_UINT64_USE */
 
 
 
@@ -5642,6 +5952,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Foundation {
@@ -5681,6 +5992,7 @@ namespace ABI {
             class Deferral;
         } /* Windows */
     } /* Foundation */} /* ABI */
+
 
 
 namespace ABI {
@@ -6209,6 +6521,53 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIGetActivationFactory;
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Foundation.IGuidHelperStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Foundation.GuidHelper
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Foundation_IGuidHelperStatics[] = L"Windows.Foundation.IGuidHelperStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            /* [object, uuid("59C7966B-AE52-5283-AD7F-A1B9E9678ADD"), exclusiveto, contract] */
+            MIDL_INTERFACE("59C7966B-AE52-5283-AD7F-A1B9E9678ADD")
+            IGuidHelperStatics : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE CreateNewGuid(
+                    /* [retval, out] */__RPC__out GUID * result
+                    ) = 0;
+                /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Empty(
+                    /* [retval, out] */__RPC__out GUID * value
+                    ) = 0;
+                virtual HRESULT STDMETHODCALLTYPE Equals(
+                    /* [in] */__RPC__in const GUID * target,
+                    /* [in] */__RPC__in const GUID * value,
+                    /* [retval, out] */__RPC__out boolean * result
+                    ) = 0;
+                
+            };
+
+            extern MIDL_CONST_ID IID & IID_IGuidHelperStatics=_uuidof(IGuidHelperStatics);
+            
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIGuidHelperStatics;
+#endif /* !defined(____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7217,6 +7576,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Foundation.GuidHelper
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Foundation.IGuidHelperStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_Foundation_GuidHelper_DEFINED
+#define RUNTIMECLASS_Windows_Foundation_GuidHelper_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Foundation_GuidHelper[] = L"Windows.Foundation.GuidHelper";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Foundation.MemoryBuffer
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -7401,6 +7783,12 @@ typedef interface __x_ABI_CWindows_CFoundation_CIDeferralFactory __x_ABI_CWindow
 typedef interface __x_ABI_CWindows_CFoundation_CIGetActivationFactory __x_ABI_CWindows_CFoundation_CIGetActivationFactory;
 
 #endif // ____x_ABI_CWindows_CFoundation_CIGetActivationFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIGuidHelperStatics __x_ABI_CWindows_CFoundation_CIGuidHelperStatics;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIMemoryBuffer_FWD_DEFINED__
@@ -8421,6 +8809,162 @@ interface __FIIterable_1_IInspectable
 #endif // ____FIIterable_1_IInspectable_INTERFACE_DEFINED__
 
 
+#if !defined(____FIIterator_1_short_INTERFACE_DEFINED__)
+#define ____FIIterator_1_short_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_short __FIIterator_1_short;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_short;
+
+typedef struct __FIIterator_1_shortVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_short * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_short * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_short * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_short * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_short * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_short * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_short * This, /* [retval][out] */ __RPC__out short *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_short * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_short * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_short * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) short *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_shortVtbl;
+
+interface __FIIterator_1_short
+{
+    CONST_VTBL struct __FIIterator_1_shortVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_short_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_short_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_short_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_short_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_short_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_short_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_short_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_short_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_short_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_short_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_short_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_short_INTERFACE_DEFINED__)
+#define ____FIIterable_1_short_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_short __FIIterable_1_short;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_short;
+
+typedef  struct __FIIterable_1_shortVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_short * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_short * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_short * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_short * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_short * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_short * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_short * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_short **first);
+
+    END_INTERFACE
+} __FIIterable_1_shortVtbl;
+
+interface __FIIterable_1_short
+{
+    CONST_VTBL struct __FIIterable_1_shortVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_short_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_short_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_short_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_short_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_short_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_short_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_short_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_short_INTERFACE_DEFINED__
+
+
 #if !defined(____FIIterator_1_int_INTERFACE_DEFINED__)
 #define ____FIIterator_1_int_INTERFACE_DEFINED__
 
@@ -8733,6 +9277,162 @@ interface __FIIterable_1___z__zint64
 #endif // ____FIIterable_1___z__zint64_INTERFACE_DEFINED__
 
 
+#if !defined(____FIIterator_1_UINT16_INTERFACE_DEFINED__)
+#define ____FIIterator_1_UINT16_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_UINT16 __FIIterator_1_UINT16;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_UINT16;
+
+typedef struct __FIIterator_1_UINT16Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_UINT16 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_UINT16 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_UINT16 * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_UINT16 * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_UINT16 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_UINT16 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_UINT16 * This, /* [retval][out] */ __RPC__out short *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_UINT16 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_UINT16 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_UINT16 * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) short *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_UINT16Vtbl;
+
+interface __FIIterator_1_UINT16
+{
+    CONST_VTBL struct __FIIterator_1_UINT16Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_UINT16_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_UINT16_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_UINT16_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_UINT16_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_UINT16_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_UINT16_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_UINT16_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_UINT16_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_UINT16_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_UINT16_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_UINT16_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_UINT16_INTERFACE_DEFINED__)
+#define ____FIIterable_1_UINT16_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_UINT16 __FIIterable_1_UINT16;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_UINT16;
+
+typedef  struct __FIIterable_1_UINT16Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_UINT16 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_UINT16 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_UINT16 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_UINT16 * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_UINT16 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_UINT16 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_UINT16 * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_UINT16 **first);
+
+    END_INTERFACE
+} __FIIterable_1_UINT16Vtbl;
+
+interface __FIIterable_1_UINT16
+{
+    CONST_VTBL struct __FIIterable_1_UINT16Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_UINT16_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_UINT16_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_UINT16_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_UINT16_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_UINT16_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_UINT16_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_UINT16_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_UINT16_INTERFACE_DEFINED__
+
+
 #if !defined(____FIIterator_1_UINT32_INTERFACE_DEFINED__)
 #define ____FIIterator_1_UINT32_INTERFACE_DEFINED__
 
@@ -8887,6 +9587,162 @@ interface __FIIterable_1_UINT32
 
 
 #endif // ____FIIterable_1_UINT32_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterator_1_UINT64_INTERFACE_DEFINED__)
+#define ____FIIterator_1_UINT64_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_UINT64 __FIIterator_1_UINT64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_UINT64;
+
+typedef struct __FIIterator_1_UINT64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_UINT64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_UINT64 * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_UINT64 * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_UINT64 * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_UINT64 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_UINT64 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_UINT64 * This, /* [retval][out] */ __RPC__out __int64 *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_UINT64 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_UINT64 * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_UINT64 * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __int64 *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_UINT64Vtbl;
+
+interface __FIIterator_1_UINT64
+{
+    CONST_VTBL struct __FIIterator_1_UINT64Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_UINT64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_UINT64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_UINT64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_UINT64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_UINT64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_UINT64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_UINT64_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_UINT64_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_UINT64_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_UINT64_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterator_1_UINT64_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_UINT64_INTERFACE_DEFINED__)
+#define ____FIIterable_1_UINT64_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_UINT64 __FIIterable_1_UINT64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_UINT64;
+
+typedef  struct __FIIterable_1_UINT64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_UINT64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_UINT64 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_UINT64 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_UINT64 * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_UINT64 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_UINT64 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_UINT64 * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_UINT64 **first);
+
+    END_INTERFACE
+} __FIIterable_1_UINT64Vtbl;
+
+interface __FIIterable_1_UINT64
+{
+    CONST_VTBL struct __FIIterable_1_UINT64Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_UINT64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_UINT64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_UINT64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_UINT64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_UINT64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_UINT64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_UINT64_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_UINT64_INTERFACE_DEFINED__
 
 
 struct __x_ABI_CWindows_CFoundation_CPoint;
@@ -13900,6 +14756,114 @@ interface __FIVectorView_1_GUID
 #endif // ____FIVectorView_1_GUID_INTERFACE_DEFINED__
 
 
+#if !defined(____FIVectorView_1_short_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_short_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_short __FIVectorView_1_short;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_short;
+
+typedef struct __FIVectorView_1_shortVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_short * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_short * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_short * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_short * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_short * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_short * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_short * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out short *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_short * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_short * This,
+            /* [in] */ short item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_short * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) short *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_shortVtbl;
+
+interface __FIVectorView_1_short
+{
+    CONST_VTBL struct __FIVectorView_1_shortVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_short_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_short_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_short_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_short_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_short_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_short_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_short_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_short_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_short_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_short_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_short_INTERFACE_DEFINED__
+
+
 #if !defined(____FIVectorView_1_int_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_int_INTERFACE_DEFINED__
 
@@ -14008,6 +14972,222 @@ interface __FIVectorView_1_int
 #endif // ____FIVectorView_1_int_INTERFACE_DEFINED__
 
 
+#if !defined(____FIVectorView_1___z__zint64_INTERFACE_DEFINED__)
+#define ____FIVectorView_1___z__zint64_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1___z__zint64 __FIVectorView_1___z__zint64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1___z__zint64;
+
+typedef struct __FIVectorView_1___z__zint64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1___z__zint64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1___z__zint64 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1___z__zint64 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1___z__zint64 * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1___z__zint64 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1___z__zint64 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1___z__zint64 * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __int64 *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1___z__zint64 * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1___z__zint64 * This,
+            /* [in] */ __int64 item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1___z__zint64 * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __int64 *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1___z__zint64Vtbl;
+
+interface __FIVectorView_1___z__zint64
+{
+    CONST_VTBL struct __FIVectorView_1___z__zint64Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1___z__zint64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1___z__zint64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1___z__zint64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1___z__zint64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1___z__zint64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1___z__zint64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1___z__zint64_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1___z__zint64_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1___z__zint64_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1___z__zint64_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1___z__zint64_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVectorView_1_UINT16_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_UINT16_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_UINT16 __FIVectorView_1_UINT16;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_UINT16;
+
+typedef struct __FIVectorView_1_UINT16Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_UINT16 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_UINT16 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_UINT16 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_UINT16 * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_UINT16 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_UINT16 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_UINT16 * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out short *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_UINT16 * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_UINT16 * This,
+            /* [in] */ short item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_UINT16 * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) short *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_UINT16Vtbl;
+
+interface __FIVectorView_1_UINT16
+{
+    CONST_VTBL struct __FIVectorView_1_UINT16Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_UINT16_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_UINT16_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_UINT16_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_UINT16_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_UINT16_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_UINT16_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_UINT16_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_UINT16_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_UINT16_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_UINT16_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_UINT16_INTERFACE_DEFINED__
+
+
 #if !defined(____FIVectorView_1_UINT32_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_UINT32_INTERFACE_DEFINED__
 
@@ -14114,6 +15294,114 @@ interface __FIVectorView_1_UINT32
 
 
 #endif // ____FIVectorView_1_UINT32_INTERFACE_DEFINED__
+
+
+#if !defined(____FIVectorView_1_UINT64_INTERFACE_DEFINED__)
+#define ____FIVectorView_1_UINT64_INTERFACE_DEFINED__
+
+typedef interface __FIVectorView_1_UINT64 __FIVectorView_1_UINT64;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIVectorView_1_UINT64;
+
+typedef struct __FIVectorView_1_UINT64Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_UINT64 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_UINT64 * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_UINT64 * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_UINT64 * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_UINT64 * This,
+            /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_UINT64 * This,
+            /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_UINT64 * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __int64 *item);
+
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+            __RPC__in __FIVectorView_1_UINT64 * This,
+            /* [retval][out] */ __RPC__out unsigned int *size);
+
+        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
+                                               __RPC__in __FIVectorView_1_UINT64 * This,
+            /* [in] */ __int64 item,
+            /* [out] */ __RPC__out unsigned int *index,
+            /* [retval][out] */ __RPC__out boolean *found);
+
+        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
+                                               __RPC__in __FIVectorView_1_UINT64 * This,
+            /* [in] */ unsigned int startIndex,
+            /* [in] */ unsigned int capacity,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __int64 *items,
+            /* [retval][out] */ __RPC__out unsigned int *actual);
+
+        END_INTERFACE
+} __FIVectorView_1_UINT64Vtbl;
+
+interface __FIVectorView_1_UINT64
+{
+    CONST_VTBL struct __FIVectorView_1_UINT64Vtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIVectorView_1_UINT64_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIVectorView_1_UINT64_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIVectorView_1_UINT64_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIVectorView_1_UINT64_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIVectorView_1_UINT64_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIVectorView_1_UINT64_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIVectorView_1_UINT64_GetAt(This,index,item)	\
+    ( (This)->lpVtbl -> GetAt(This,index,item) ) 
+
+#define __FIVectorView_1_UINT64_get_Size(This,size)	\
+    ( (This)->lpVtbl -> get_Size(This,size) ) 
+
+#define __FIVectorView_1_UINT64_IndexOf(This,item,index,found)	\
+    ( (This)->lpVtbl -> IndexOf(This,item,index,found) ) 
+
+#define __FIVectorView_1_UINT64_GetMany(This,startIndex,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,startIndex,capacity,items,actual) ) 
+
+#endif /* COBJMACROS */
+
+
+
+#endif // ____FIVectorView_1_UINT64_INTERFACE_DEFINED__
 
 
 
@@ -20243,6 +21531,8 @@ typedef struct __x_ABI_CWindows_CFoundation_CTimeSpan __x_ABI_CWindows_CFoundati
 
 
 
+
+
 /*
  *
  * Struct Windows.Foundation.PropertyType
@@ -21083,6 +22373,115 @@ interface __x_ABI_CWindows_CFoundation_CIGetActivationFactory
 EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIGetActivationFactory;
 #endif /* !defined(____x_ABI_CWindows_CFoundation_CIGetActivationFactory_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Foundation.IGuidHelperStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Foundation.GuidHelper
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Foundation_IGuidHelperStatics[] = L"Windows.Foundation.IGuidHelperStatics";
+/* [object, uuid("59C7966B-AE52-5283-AD7F-A1B9E9678ADD"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CFoundation_CIGuidHelperStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateNewGuid )(
+        __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+        /* [retval, out] */__RPC__out GUID * result
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Empty )(
+        __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+        /* [retval, out] */__RPC__out GUID * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Equals )(
+        __x_ABI_CWindows_CFoundation_CIGuidHelperStatics * This,
+        /* [in] */__RPC__in const GUID * target,
+        /* [in] */__RPC__in const GUID * value,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CFoundation_CIGuidHelperStaticsVtbl;
+
+interface __x_ABI_CWindows_CFoundation_CIGuidHelperStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CFoundation_CIGuidHelperStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_CreateNewGuid(This,result) \
+    ( (This)->lpVtbl->CreateNewGuid(This,result) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_get_Empty(This,value) \
+    ( (This)->lpVtbl->get_Empty(This,value) )
+
+#define __x_ABI_CWindows_CFoundation_CIGuidHelperStatics_Equals(This,target,value,result) \
+    ( (This)->lpVtbl->Equals(This,target,value,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CIGuidHelperStatics;
+#endif /* !defined(____x_ABI_CWindows_CFoundation_CIGuidHelperStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -23181,6 +24580,29 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Foundation_Deferral[] = L"Windows.Foundation.Deferral";
 #endif
 #endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Foundation.GuidHelper
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Foundation.IGuidHelperStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#ifndef RUNTIMECLASS_Windows_Foundation_GuidHelper_DEFINED
+#define RUNTIMECLASS_Windows_Foundation_GuidHelper_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Foundation_GuidHelper[] = L"Windows.Foundation.GuidHelper";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*

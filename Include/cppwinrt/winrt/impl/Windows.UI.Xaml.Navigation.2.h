@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -18,6 +18,8 @@ struct LoadCompletedEventHandler : Windows::Foundation::IUnknown
     template <typename L> LoadCompletedEventHandler(L lambda);
     template <typename F> LoadCompletedEventHandler(F* function);
     template <typename O, typename M> LoadCompletedEventHandler(O* object, M method);
+    template <typename O, typename M> LoadCompletedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> LoadCompletedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Navigation::NavigationEventArgs const& e) const;
 };
 
@@ -27,6 +29,8 @@ struct NavigatedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NavigatedEventHandler(L lambda);
     template <typename F> NavigatedEventHandler(F* function);
     template <typename O, typename M> NavigatedEventHandler(O* object, M method);
+    template <typename O, typename M> NavigatedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NavigatedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Navigation::NavigationEventArgs const& e) const;
 };
 
@@ -36,6 +40,8 @@ struct NavigatingCancelEventHandler : Windows::Foundation::IUnknown
     template <typename L> NavigatingCancelEventHandler(L lambda);
     template <typename F> NavigatingCancelEventHandler(F* function);
     template <typename O, typename M> NavigatingCancelEventHandler(O* object, M method);
+    template <typename O, typename M> NavigatingCancelEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NavigatingCancelEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs const& e) const;
 };
 
@@ -45,6 +51,8 @@ struct NavigationFailedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NavigationFailedEventHandler(L lambda);
     template <typename F> NavigationFailedEventHandler(F* function);
     template <typename O, typename M> NavigationFailedEventHandler(O* object, M method);
+    template <typename O, typename M> NavigationFailedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NavigationFailedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs const& e) const;
 };
 
@@ -54,6 +62,8 @@ struct NavigationStoppedEventHandler : Windows::Foundation::IUnknown
     template <typename L> NavigationStoppedEventHandler(L lambda);
     template <typename F> NavigationStoppedEventHandler(F* function);
     template <typename O, typename M> NavigationStoppedEventHandler(O* object, M method);
+    template <typename O, typename M> NavigationStoppedEventHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> NavigationStoppedEventHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::Navigation::NavigationEventArgs const& e) const;
 };
 
@@ -64,6 +74,13 @@ namespace winrt::impl {
 }
 
 WINRT_EXPORT namespace winrt::Windows::UI::Xaml::Navigation {
+
+struct WINRT_EBO FrameNavigationOptions :
+    Windows::UI::Xaml::Navigation::IFrameNavigationOptions
+{
+    FrameNavigationOptions(std::nullptr_t) noexcept {}
+    FrameNavigationOptions();
+};
 
 struct WINRT_EBO NavigatingCancelEventArgs :
     Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs,

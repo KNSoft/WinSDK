@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.management.deployment.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -383,6 +395,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 ABI::Windows::Management::Deployment::IPackageManager7
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IPackageManager8;
+            } /* Windows */
+        } /* Management */
+    } /* Deployment */} /* ABI */
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 ABI::Windows::Management::Deployment::IPackageManager8
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
@@ -1356,6 +1382,7 @@ namespace ABI {
 
 
 
+
 namespace ABI {
     namespace Windows {
         namespace Management {
@@ -1451,6 +1478,11 @@ namespace ABI {
                     
                     DeploymentOptions_RequiredContentGroupOnly = 0x100,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+                    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
+                    DeploymentOptions_ForceUpdateFromAnyVersion = 0x40000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
                     
                 };
                 
@@ -1644,6 +1676,11 @@ namespace ABI {
                 {
                     RemovalOptions_None = 0,
                     RemovalOptions_PreserveApplicationData = 0x1000,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
+                    RemovalOptions_RemoveForAllUsers = 0x80000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    
                 };
                 
                 DEFINE_ENUM_FLAG_OPERATORS(RemovalOptions)
@@ -2323,6 +2360,48 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager8[] = L"Windows.Management.Deployment.IPackageManager8";
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                /* [object, uuid("B8575330-1298-4EE2-80EE-7F659C5D2782"), exclusiveto, contract] */
+                MIDL_INTERFACE("B8575330-1298-4EE2-80EE-7F659C5D2782")
+                IPackageManager8 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE DeprovisionPackageForAllUsersAsync(
+                        /* [in] */__RPC__in HSTRING packageFamilyName,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IPackageManager8=_uuidof(IPackageManager8);
+                
+            } /* Windows */
+        } /* Management */
+    } /* Deployment */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManagerDebugSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -2629,6 +2708,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager5
  *    Windows.Management.Deployment.IPackageManager6
  *    Windows.Management.Deployment.IPackageManager7
+ *    Windows.Management.Deployment.IPackageManager8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -2772,6 +2852,12 @@ typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager6 __x
 typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7;
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager7_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8;
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManagerDebugSettings_FWD_DEFINED__
@@ -4568,6 +4654,7 @@ typedef struct __x_ABI_CWindows_CManagement_CDeployment_CDeploymentProgress __x_
 
 
 
+
 /*
  *
  * Struct Windows.Management.Deployment.AddPackageByAppInstallerOptions
@@ -4619,6 +4706,11 @@ enum __x_ABI_CWindows_CManagement_CDeployment_CDeploymentOptions
     
     DeploymentOptions_RequiredContentGroupOnly = 0x100,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+    
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    DeploymentOptions_ForceUpdateFromAnyVersion = 0x40000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
     
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
@@ -4758,6 +4850,11 @@ enum __x_ABI_CWindows_CManagement_CDeployment_CRemovalOptions
 {
     RemovalOptions_None = 0,
     RemovalOptions_PreserveApplicationData = 0x1000,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
+    RemovalOptions_RemoveForAllUsers = 0x80000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -6083,6 +6180,100 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager8
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager8[] = L"Windows.Management.Deployment.IPackageManager8";
+/* [object, uuid("B8575330-1298-4EE2-80EE-7F659C5D2782"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *DeprovisionPackageForAllUsersAsync )(
+        __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8 * This,
+        /* [in] */__RPC__in HSTRING packageFamilyName,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperationWithProgress_2_Windows__CManagement__CDeployment__CDeploymentResult_Windows__CManagement__CDeployment__CDeploymentProgress * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8Vtbl;
+
+interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8
+{
+    CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_DeprovisionPackageForAllUsersAsync(This,packageFamilyName,operation) \
+    ( (This)->lpVtbl->DeprovisionPackageForAllUsersAsync(This,packageFamilyName,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager8_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManagerDebugSettings
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -6689,6 +6880,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager5
  *    Windows.Management.Deployment.IPackageManager6
  *    Windows.Management.Deployment.IPackageManager7
+ *    Windows.Management.Deployment.IPackageManager8
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

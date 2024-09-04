@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Spi.Provider.2.h"
@@ -197,431 +197,375 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Spi
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiBusInfo> : produce_base<D, Windows::Devices::Spi::ISpiBusInfo>
 {
-    HRESULT __stdcall get_ChipSelectLineCount(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ChipSelectLineCount(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChipSelectLineCount, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ChipSelectLineCount());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MinClockFrequency(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MinClockFrequency(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinClockFrequency, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MinClockFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MaxClockFrequency(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_MaxClockFrequency(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MaxClockFrequency, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().MaxClockFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedDataBitLengths(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedDataBitLengths(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedDataBitLengths, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<int32_t>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<int32_t>>(this->shim().SupportedDataBitLengths());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiConnectionSettings> : produce_base<D, Windows::Devices::Spi::ISpiConnectionSettings>
 {
-    HRESULT __stdcall get_ChipSelectLine(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ChipSelectLine(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChipSelectLine, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ChipSelectLine());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ChipSelectLine(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ChipSelectLine(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChipSelectLine, WINRT_WRAP(void), int32_t);
             this->shim().ChipSelectLine(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mode(Windows::Devices::Spi::SpiMode* value) noexcept final
+    int32_t WINRT_CALL get_Mode(Windows::Devices::Spi::SpiMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(Windows::Devices::Spi::SpiMode));
             *value = detach_from<Windows::Devices::Spi::SpiMode>(this->shim().Mode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Mode(Windows::Devices::Spi::SpiMode value) noexcept final
+    int32_t WINRT_CALL put_Mode(Windows::Devices::Spi::SpiMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mode, WINRT_WRAP(void), Windows::Devices::Spi::SpiMode const&);
             this->shim().Mode(*reinterpret_cast<Windows::Devices::Spi::SpiMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DataBitLength(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_DataBitLength(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataBitLength, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().DataBitLength());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_DataBitLength(int32_t value) noexcept final
+    int32_t WINRT_CALL put_DataBitLength(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DataBitLength, WINRT_WRAP(void), int32_t);
             this->shim().DataBitLength(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ClockFrequency(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_ClockFrequency(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClockFrequency, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().ClockFrequency());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_ClockFrequency(int32_t value) noexcept final
+    int32_t WINRT_CALL put_ClockFrequency(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ClockFrequency, WINRT_WRAP(void), int32_t);
             this->shim().ClockFrequency(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SharingMode(Windows::Devices::Spi::SpiSharingMode* value) noexcept final
+    int32_t WINRT_CALL get_SharingMode(Windows::Devices::Spi::SpiSharingMode* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharingMode, WINRT_WRAP(Windows::Devices::Spi::SpiSharingMode));
             *value = detach_from<Windows::Devices::Spi::SpiSharingMode>(this->shim().SharingMode());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_SharingMode(Windows::Devices::Spi::SpiSharingMode value) noexcept final
+    int32_t WINRT_CALL put_SharingMode(Windows::Devices::Spi::SpiSharingMode value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SharingMode, WINRT_WRAP(void), Windows::Devices::Spi::SpiSharingMode const&);
             this->shim().SharingMode(*reinterpret_cast<Windows::Devices::Spi::SpiSharingMode const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiConnectionSettingsFactory> : produce_base<D, Windows::Devices::Spi::ISpiConnectionSettingsFactory>
 {
-    HRESULT __stdcall Create(int32_t chipSelectLine, void** value) noexcept final
+    int32_t WINRT_CALL Create(int32_t chipSelectLine, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Create, WINRT_WRAP(Windows::Devices::Spi::SpiConnectionSettings), int32_t);
             *value = detach_from<Windows::Devices::Spi::SpiConnectionSettings>(this->shim().Create(chipSelectLine));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiController> : produce_base<D, Windows::Devices::Spi::ISpiController>
 {
-    HRESULT __stdcall GetDevice(void* settings, void** device) noexcept final
+    int32_t WINRT_CALL GetDevice(void* settings, void** device) noexcept final
     {
         try
         {
             *device = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDevice, WINRT_WRAP(Windows::Devices::Spi::SpiDevice), Windows::Devices::Spi::SpiConnectionSettings const&);
             *device = detach_from<Windows::Devices::Spi::SpiDevice>(this->shim().GetDevice(*reinterpret_cast<Windows::Devices::Spi::SpiConnectionSettings const*>(&settings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiControllerStatics> : produce_base<D, Windows::Devices::Spi::ISpiControllerStatics>
 {
-    HRESULT __stdcall GetDefaultAsync(void** operation) noexcept final
+    int32_t WINRT_CALL GetDefaultAsync(void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefaultAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController>));
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController>>(this->shim().GetDefaultAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetControllersAsync(void* provider, void** operation) noexcept final
+    int32_t WINRT_CALL GetControllersAsync(void* provider, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetControllersAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>>), Windows::Devices::Spi::Provider::ISpiProvider const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>>>(this->shim().GetControllersAsync(*reinterpret_cast<Windows::Devices::Spi::Provider::ISpiProvider const*>(&provider)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiDevice> : produce_base<D, Windows::Devices::Spi::ISpiDevice>
 {
-    HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DeviceId(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DeviceId, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DeviceId());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ConnectionSettings(void** value) noexcept final
+    int32_t WINRT_CALL get_ConnectionSettings(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ConnectionSettings, WINRT_WRAP(Windows::Devices::Spi::SpiConnectionSettings));
             *value = detach_from<Windows::Devices::Spi::SpiConnectionSettings>(this->shim().ConnectionSettings());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Write(uint32_t __bufferSize, uint8_t* buffer) noexcept final
+    int32_t WINRT_CALL Write(uint32_t __bufferSize, uint8_t* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Write, WINRT_WRAP(void), array_view<uint8_t const>);
             this->shim().Write(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(buffer), reinterpret_cast<uint8_t const *>(buffer) + __bufferSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Read(uint32_t __bufferSize, uint8_t* buffer) noexcept final
+    int32_t WINRT_CALL Read(uint32_t __bufferSize, uint8_t* buffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Read, WINRT_WRAP(void), array_view<uint8_t>);
             this->shim().Read(array_view<uint8_t>(reinterpret_cast<uint8_t*>(buffer), reinterpret_cast<uint8_t*>(buffer) + __bufferSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferSequential(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept final
+    int32_t WINRT_CALL TransferSequential(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferSequential, WINRT_WRAP(void), array_view<uint8_t const>, array_view<uint8_t>);
             this->shim().TransferSequential(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(writeBuffer), reinterpret_cast<uint8_t const *>(writeBuffer) + __writeBufferSize), array_view<uint8_t>(reinterpret_cast<uint8_t*>(readBuffer), reinterpret_cast<uint8_t*>(readBuffer) + __readBufferSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TransferFullDuplex(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept final
+    int32_t WINRT_CALL TransferFullDuplex(uint32_t __writeBufferSize, uint8_t* writeBuffer, uint32_t __readBufferSize, uint8_t* readBuffer) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TransferFullDuplex, WINRT_WRAP(void), array_view<uint8_t const>, array_view<uint8_t>);
             this->shim().TransferFullDuplex(array_view<uint8_t const>(reinterpret_cast<uint8_t const *>(writeBuffer), reinterpret_cast<uint8_t const *>(writeBuffer) + __writeBufferSize), array_view<uint8_t>(reinterpret_cast<uint8_t*>(readBuffer), reinterpret_cast<uint8_t*>(readBuffer) + __readBufferSize));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Windows::Devices::Spi::ISpiDeviceStatics>
 {
-    HRESULT __stdcall GetDeviceSelector(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetDeviceSelectorFromFriendlyName(void* friendlyName, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring), hstring const&);
             *value = detach_from<hstring>(this->shim().GetDeviceSelector(*reinterpret_cast<hstring const*>(&friendlyName)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetBusInfo(HSTRING busId, void** busInfo) noexcept final
+    int32_t WINRT_CALL GetBusInfo(void* busId, void** busInfo) noexcept final
     {
         try
         {
             *busInfo = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetBusInfo, WINRT_WRAP(Windows::Devices::Spi::SpiBusInfo), hstring const&);
             *busInfo = detach_from<Windows::Devices::Spi::SpiBusInfo>(this->shim().GetBusInfo(*reinterpret_cast<hstring const*>(&busId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING busId, void* settings, void** operation) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* busId, void* settings, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice>), hstring const, Windows::Devices::Spi::SpiConnectionSettings const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&busId), *reinterpret_cast<Windows::Devices::Spi::SpiConnectionSettings const*>(&settings)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -630,37 +574,37 @@ struct produce<D, Windows::Devices::Spi::ISpiDeviceStatics> : produce_base<D, Wi
 WINRT_EXPORT namespace winrt::Windows::Devices::Spi {
 
 inline SpiConnectionSettings::SpiConnectionSettings(int32_t chipSelectLine) :
-    SpiConnectionSettings(get_activation_factory<SpiConnectionSettings, Windows::Devices::Spi::ISpiConnectionSettingsFactory>().Create(chipSelectLine))
+    SpiConnectionSettings(impl::call_factory<SpiConnectionSettings, Windows::Devices::Spi::ISpiConnectionSettingsFactory>([&](auto&& f) { return f.Create(chipSelectLine); }))
 {}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController> SpiController::GetDefaultAsync()
 {
-    return get_activation_factory<SpiController, Windows::Devices::Spi::ISpiControllerStatics>().GetDefaultAsync();
+    return impl::call_factory<SpiController, Windows::Devices::Spi::ISpiControllerStatics>([&](auto&& f) { return f.GetDefaultAsync(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> SpiController::GetControllersAsync(Windows::Devices::Spi::Provider::ISpiProvider const& provider)
 {
-    return get_activation_factory<SpiController, Windows::Devices::Spi::ISpiControllerStatics>().GetControllersAsync(provider);
+    return impl::call_factory<SpiController, Windows::Devices::Spi::ISpiControllerStatics>([&](auto&& f) { return f.GetControllersAsync(provider); });
 }
 
 inline hstring SpiDevice::GetDeviceSelector()
 {
-    return get_activation_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>().GetDeviceSelector();
+    return impl::call_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline hstring SpiDevice::GetDeviceSelector(param::hstring const& friendlyName)
 {
-    return get_activation_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>().GetDeviceSelector(friendlyName);
+    return impl::call_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>([&](auto&& f) { return f.GetDeviceSelector(friendlyName); });
 }
 
 inline Windows::Devices::Spi::SpiBusInfo SpiDevice::GetBusInfo(param::hstring const& busId)
 {
-    return get_activation_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>().GetBusInfo(busId);
+    return impl::call_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>([&](auto&& f) { return f.GetBusInfo(busId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> SpiDevice::FromIdAsync(param::hstring const& busId, Windows::Devices::Spi::SpiConnectionSettings const& settings)
 {
-    return get_activation_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>().FromIdAsync(busId, settings);
+    return impl::call_factory<SpiDevice, Windows::Devices::Spi::ISpiDeviceStatics>([&](auto&& f) { return f.FromIdAsync(busId, settings); });
 }
 
 }
@@ -680,5 +624,3 @@ template<> struct hash<winrt::Windows::Devices::Spi::SpiController> : winrt::imp
 template<> struct hash<winrt::Windows::Devices::Spi::SpiDevice> : winrt::impl::hash_base<winrt::Windows::Devices::Spi::SpiDevice> {};
 
 }
-
-WINRT_WARNING_POP

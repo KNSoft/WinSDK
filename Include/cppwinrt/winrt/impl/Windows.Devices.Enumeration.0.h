@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -76,6 +76,7 @@ enum class DeviceInformationKind : int32_t
     AssociationEndpoint = 5,
     AssociationEndpointContainer = 6,
     AssociationEndpointService = 7,
+    DevicePanel = 8,
 };
 
 enum class DevicePairingKinds : uint32_t
@@ -176,6 +177,7 @@ struct IDeviceInformationCustomPairing;
 struct IDeviceInformationPairing;
 struct IDeviceInformationPairing2;
 struct IDeviceInformationPairingStatics;
+struct IDeviceInformationPairingStatics2;
 struct IDeviceInformationStatics;
 struct IDeviceInformationStatics2;
 struct IDeviceInformationUpdate;
@@ -234,6 +236,7 @@ template <> struct category<Windows::Devices::Enumeration::IDeviceInformationCus
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationPairing>{ using type = interface_category; };
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ using type = interface_category; };
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ using type = interface_category; };
+template <> struct category<Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>{ using type = interface_category; };
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationStatics>{ using type = interface_category; };
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ using type = interface_category; };
 template <> struct category<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ using type = interface_category; };
@@ -296,6 +299,7 @@ template <> struct name<Windows::Devices::Enumeration::IDeviceInformationCustomP
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationPairing>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationPairing" }; };
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationPairing2" }; };
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationPairingStatics" }; };
+template <> struct name<Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationPairingStatics2" }; };
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationStatics>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationStatics" }; };
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationStatics2" }; };
 template <> struct name<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.IDeviceInformationUpdate" }; };
@@ -346,36 +350,37 @@ template <> struct name<Windows::Devices::Enumeration::DeviceUnpairingResultStat
 template <> struct name<Windows::Devices::Enumeration::DeviceWatcherEventKind>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.DeviceWatcherEventKind" }; };
 template <> struct name<Windows::Devices::Enumeration::DeviceWatcherStatus>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.DeviceWatcherStatus" }; };
 template <> struct name<Windows::Devices::Enumeration::Panel>{ static constexpr auto & value{ L"Windows.Devices.Enumeration.Panel" }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>{ static constexpr GUID value{ 0xDEDA0BCC,0x4F9D,0x4F58,{ 0x9D,0xBA,0xA9,0xBC,0x80,0x04,0x08,0xD5 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>{ static constexpr GUID value{ 0x82523262,0x934B,0x4B30,{ 0xA1,0x78,0xAD,0xC3,0x9F,0x2F,0x2B,0xE3 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceAccessInformation>{ static constexpr GUID value{ 0x0BAA9A73,0x6DE5,0x4915,{ 0x8D,0xDD,0x9A,0x05,0x54,0xA6,0xF5,0x45 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceAccessInformationStatics>{ static constexpr GUID value{ 0x574BD3D3,0x5F30,0x45CD,{ 0x8A,0x94,0x72,0x4F,0xE5,0x97,0x30,0x84 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>{ static constexpr GUID value{ 0xB8578C0C,0xBBC1,0x484B,{ 0xBF,0xFA,0x7B,0x31,0xDC,0xC2,0x00,0xB2 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>{ static constexpr GUID value{ 0x8E44B56D,0xF902,0x4A00,{ 0xB5,0x36,0xF3,0x79,0x92,0xE6,0xA2,0xA7 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformation>{ static constexpr GUID value{ 0xABA0FB95,0x4398,0x489D,{ 0x8E,0x44,0xE6,0x13,0x09,0x27,0x01,0x1F } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformation2>{ static constexpr GUID value{ 0xF156A638,0x7997,0x48D9,{ 0xA1,0x0C,0x26,0x9D,0x46,0x53,0x3F,0x48 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>{ static constexpr GUID value{ 0x85138C02,0x4EE6,0x4914,{ 0x83,0x70,0x10,0x7A,0x39,0x14,0x4C,0x0E } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationPairing>{ static constexpr GUID value{ 0x2C4769F5,0xF684,0x40D5,{ 0x84,0x69,0xE8,0xDB,0xAA,0xB7,0x04,0x85 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ static constexpr GUID value{ 0xF68612FD,0x0AEE,0x4328,{ 0x85,0xCC,0x1C,0x74,0x2B,0xB1,0x79,0x0D } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ static constexpr GUID value{ 0xE915C408,0x36D4,0x49A1,{ 0xBF,0x13,0x51,0x41,0x73,0x79,0x9B,0x6B } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationStatics>{ static constexpr GUID value{ 0xC17F100E,0x3A46,0x4A78,{ 0x80,0x13,0x76,0x9D,0xC9,0xB9,0x73,0x90 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ static constexpr GUID value{ 0x493B4F34,0xA84F,0x45FD,{ 0x91,0x67,0x15,0xD1,0xCB,0x1B,0xD1,0xF9 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ static constexpr GUID value{ 0x8F315305,0xD972,0x44B7,{ 0xA3,0x7E,0x9E,0x82,0x2C,0x78,0x21,0x3B } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceInformationUpdate2>{ static constexpr GUID value{ 0x5D9D148C,0xA873,0x485E,{ 0xBA,0xA6,0xAA,0x62,0x07,0x88,0xE3,0xCC } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>{ static constexpr GUID value{ 0xF717FC56,0xDE6B,0x487F,{ 0x83,0x76,0x01,0x80,0xAC,0xA6,0x99,0x63 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePairingResult>{ static constexpr GUID value{ 0x072B02BF,0xDD95,0x4025,{ 0x9B,0x37,0xDE,0x51,0xAD,0xBA,0x37,0xB7 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePairingSettings>{ static constexpr GUID value{ 0x482CB27C,0x83BB,0x420E,{ 0xBE,0x51,0x66,0x02,0xB2,0x22,0xDE,0x54 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePicker>{ static constexpr GUID value{ 0x84997AA2,0x034A,0x4440,{ 0x88,0x13,0x7D,0x0B,0xD4,0x79,0xBF,0x5A } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePickerAppearance>{ static constexpr GUID value{ 0xE69A12C6,0xE627,0x4ED8,{ 0x9B,0x6C,0x46,0x0A,0xF4,0x45,0xE5,0x6D } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDevicePickerFilter>{ static constexpr GUID value{ 0x91DB92A2,0x57CB,0x48F1,{ 0x9B,0x59,0xA5,0x9B,0x7A,0x1F,0x02,0xA2 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceSelectedEventArgs>{ static constexpr GUID value{ 0x269EDADE,0x1D2F,0x4940,{ 0x84,0x02,0x41,0x56,0xB8,0x1D,0x3C,0x77 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceUnpairingResult>{ static constexpr GUID value{ 0x66F44AD3,0x79D9,0x444B,{ 0x92,0xCF,0xA9,0x2E,0xF7,0x25,0x71,0xC7 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceWatcher>{ static constexpr GUID value{ 0xC9EAB97D,0x8F6B,0x4F96,{ 0xA9,0xF4,0xAB,0xC8,0x14,0xE2,0x22,0x71 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceWatcher2>{ static constexpr GUID value{ 0xFF08456E,0xED14,0x49E9,{ 0x9A,0x69,0x81,0x17,0xC5,0x4A,0xE9,0x71 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceWatcherEvent>{ static constexpr GUID value{ 0x74AA9C0B,0x1DBD,0x47FD,{ 0xB6,0x35,0x3C,0xC5,0x56,0xD0,0xFF,0x8B } }; };
-template <> struct guid<Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>{ static constexpr GUID value{ 0x38808119,0x4CB7,0x4E57,{ 0xA5,0x6D,0x77,0x6D,0x07,0xCB,0xFE,0xF9 } }; };
-template <> struct guid<Windows::Devices::Enumeration::IEnclosureLocation>{ static constexpr GUID value{ 0x42340A27,0x5810,0x459C,{ 0xAA,0xBB,0xC6,0x5E,0x1F,0x81,0x3E,0xCF } }; };
-template <> struct guid<Windows::Devices::Enumeration::IEnclosureLocation2>{ static constexpr GUID value{ 0x2885995B,0xE07D,0x485D,{ 0x8A,0x9E,0xBD,0xF2,0x9A,0xEF,0x4F,0x66 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>{ static constexpr guid value{ 0xDEDA0BCC,0x4F9D,0x4F58,{ 0x9D,0xBA,0xA9,0xBC,0x80,0x04,0x08,0xD5 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>{ static constexpr guid value{ 0x82523262,0x934B,0x4B30,{ 0xA1,0x78,0xAD,0xC3,0x9F,0x2F,0x2B,0xE3 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceAccessInformation>{ static constexpr guid value{ 0x0BAA9A73,0x6DE5,0x4915,{ 0x8D,0xDD,0x9A,0x05,0x54,0xA6,0xF5,0x45 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceAccessInformationStatics>{ static constexpr guid value{ 0x574BD3D3,0x5F30,0x45CD,{ 0x8A,0x94,0x72,0x4F,0xE5,0x97,0x30,0x84 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>{ static constexpr guid value{ 0xB8578C0C,0xBBC1,0x484B,{ 0xBF,0xFA,0x7B,0x31,0xDC,0xC2,0x00,0xB2 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>{ static constexpr guid value{ 0x8E44B56D,0xF902,0x4A00,{ 0xB5,0x36,0xF3,0x79,0x92,0xE6,0xA2,0xA7 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformation>{ static constexpr guid value{ 0xABA0FB95,0x4398,0x489D,{ 0x8E,0x44,0xE6,0x13,0x09,0x27,0x01,0x1F } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformation2>{ static constexpr guid value{ 0xF156A638,0x7997,0x48D9,{ 0xA1,0x0C,0x26,0x9D,0x46,0x53,0x3F,0x48 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>{ static constexpr guid value{ 0x85138C02,0x4EE6,0x4914,{ 0x83,0x70,0x10,0x7A,0x39,0x14,0x4C,0x0E } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationPairing>{ static constexpr guid value{ 0x2C4769F5,0xF684,0x40D5,{ 0x84,0x69,0xE8,0xDB,0xAA,0xB7,0x04,0x85 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ static constexpr guid value{ 0xF68612FD,0x0AEE,0x4328,{ 0x85,0xCC,0x1C,0x74,0x2B,0xB1,0x79,0x0D } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ static constexpr guid value{ 0xE915C408,0x36D4,0x49A1,{ 0xBF,0x13,0x51,0x41,0x73,0x79,0x9B,0x6B } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>{ static constexpr guid value{ 0x04DE5372,0xB7B7,0x476B,{ 0xA7,0x4F,0xC5,0x83,0x6A,0x70,0x4D,0x98 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationStatics>{ static constexpr guid value{ 0xC17F100E,0x3A46,0x4A78,{ 0x80,0x13,0x76,0x9D,0xC9,0xB9,0x73,0x90 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ static constexpr guid value{ 0x493B4F34,0xA84F,0x45FD,{ 0x91,0x67,0x15,0xD1,0xCB,0x1B,0xD1,0xF9 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ static constexpr guid value{ 0x8F315305,0xD972,0x44B7,{ 0xA3,0x7E,0x9E,0x82,0x2C,0x78,0x21,0x3B } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceInformationUpdate2>{ static constexpr guid value{ 0x5D9D148C,0xA873,0x485E,{ 0xBA,0xA6,0xAA,0x62,0x07,0x88,0xE3,0xCC } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>{ static constexpr guid value{ 0xF717FC56,0xDE6B,0x487F,{ 0x83,0x76,0x01,0x80,0xAC,0xA6,0x99,0x63 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePairingResult>{ static constexpr guid value{ 0x072B02BF,0xDD95,0x4025,{ 0x9B,0x37,0xDE,0x51,0xAD,0xBA,0x37,0xB7 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePairingSettings>{ static constexpr guid value{ 0x482CB27C,0x83BB,0x420E,{ 0xBE,0x51,0x66,0x02,0xB2,0x22,0xDE,0x54 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePicker>{ static constexpr guid value{ 0x84997AA2,0x034A,0x4440,{ 0x88,0x13,0x7D,0x0B,0xD4,0x79,0xBF,0x5A } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePickerAppearance>{ static constexpr guid value{ 0xE69A12C6,0xE627,0x4ED8,{ 0x9B,0x6C,0x46,0x0A,0xF4,0x45,0xE5,0x6D } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDevicePickerFilter>{ static constexpr guid value{ 0x91DB92A2,0x57CB,0x48F1,{ 0x9B,0x59,0xA5,0x9B,0x7A,0x1F,0x02,0xA2 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceSelectedEventArgs>{ static constexpr guid value{ 0x269EDADE,0x1D2F,0x4940,{ 0x84,0x02,0x41,0x56,0xB8,0x1D,0x3C,0x77 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceUnpairingResult>{ static constexpr guid value{ 0x66F44AD3,0x79D9,0x444B,{ 0x92,0xCF,0xA9,0x2E,0xF7,0x25,0x71,0xC7 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceWatcher>{ static constexpr guid value{ 0xC9EAB97D,0x8F6B,0x4F96,{ 0xA9,0xF4,0xAB,0xC8,0x14,0xE2,0x22,0x71 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceWatcher2>{ static constexpr guid value{ 0xFF08456E,0xED14,0x49E9,{ 0x9A,0x69,0x81,0x17,0xC5,0x4A,0xE9,0x71 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceWatcherEvent>{ static constexpr guid value{ 0x74AA9C0B,0x1DBD,0x47FD,{ 0xB6,0x35,0x3C,0xC5,0x56,0xD0,0xFF,0x8B } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>{ static constexpr guid value{ 0x38808119,0x4CB7,0x4E57,{ 0xA5,0x6D,0x77,0x6D,0x07,0xCB,0xFE,0xF9 } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IEnclosureLocation>{ static constexpr guid value{ 0x42340A27,0x5810,0x459C,{ 0xAA,0xBB,0xC6,0x5E,0x1F,0x81,0x3E,0xCF } }; };
+template <> struct guid_storage<Windows::Devices::Enumeration::IEnclosureLocation2>{ static constexpr guid value{ 0x2885995B,0xE07D,0x485D,{ 0x8A,0x9E,0xBD,0xF2,0x9A,0xEF,0x4F,0x66 } }; };
 template <> struct default_interface<Windows::Devices::Enumeration::DeviceAccessChangedEventArgs>{ using type = Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs; };
 template <> struct default_interface<Windows::Devices::Enumeration::DeviceAccessInformation>{ using type = Windows::Devices::Enumeration::IDeviceAccessInformation; };
 template <> struct default_interface<Windows::Devices::Enumeration::DeviceConnectionChangeTriggerDetails>{ using type = Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails; };
@@ -398,6 +403,246 @@ template <> struct default_interface<Windows::Devices::Enumeration::DeviceWatche
 template <> struct default_interface<Windows::Devices::Enumeration::DeviceWatcherTriggerDetails>{ using type = Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails; };
 template <> struct default_interface<Windows::Devices::Enumeration::EnclosureLocation>{ using type = Windows::Devices::Enumeration::IEnclosureLocation; };
 
+template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceAccessStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_AccessChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_AccessChanged(winrt::event_token cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrentStatus(Windows::Devices::Enumeration::DeviceAccessStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessInformationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromId(void* deviceId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromDeviceClassId(winrt::guid deviceClassId, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Device(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsDefault(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EnclosureLocation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Update(void* updateInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL GetThumbnailAsync(void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL GetGlyphThumbnailAsync(void** asyncOp) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pairing(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PairingRequested(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PairingRequested(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairing>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsPaired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CanPair(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL PairAsync(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ProtectionLevel(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Custom(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL UnpairAsync(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairingStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, bool* result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateFromIdAsync(void* deviceId, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromIdAsyncAdditionalProperties(void* deviceId, void* additionalProperties, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAsync(void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAsyncDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAsyncAqsFilter(void* aqsFilter, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAsyncAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcher(void** watcher) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcherDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** watcher) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcherAqsFilter(void* aqsFilter, void** watcher) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcherAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, void** watcher) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** aqsFilter) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateFromIdAsyncWithKindAndAdditionalProperties(void* deviceId, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL FindAllAsyncWithKindAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWatcherWithKindAqsFilterAndAdditionalProperties(void* aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** watcher) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Id(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Properties(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationUpdate2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PairingKind(Windows::Devices::Enumeration::DevicePairingKinds* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Pin(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Accept() noexcept = 0;
+    virtual int32_t WINRT_CALL AcceptWithPin(void* pin) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeferral(void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePairingResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DevicePairingResultStatus* status) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProtectionLevelUsed(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePairingSettings>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePicker>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Filter(void** filter) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Appearance(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RequestedProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DeviceSelected(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DeviceSelected(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DisconnectButtonClicked(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DisconnectButtonClicked(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_DevicePickerDismissed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_DevicePickerDismissed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL Show(Windows::Foundation::Rect selection) noexcept = 0;
+    virtual int32_t WINRT_CALL ShowWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement) noexcept = 0;
+    virtual int32_t WINRT_CALL PickSingleDeviceAsync(Windows::Foundation::Rect selection, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL PickSingleDeviceAsyncWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL Hide() noexcept = 0;
+    virtual int32_t WINRT_CALL SetDisplayStatus(void* device, void* status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePickerAppearance>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Title(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectedForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectedBackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SelectedAccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SelectedAccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDevicePickerFilter>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SupportedDeviceClasses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportedDeviceSelectors(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceSelectedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SelectedDevice(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceUnpairingResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceUnpairingResultStatus* status) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcher>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_Added(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Added(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Updated(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Updated(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Removed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Removed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_EnumerationCompleted(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_EnumerationCompleted(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Stopped(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Stopped(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Devices::Enumeration::DeviceWatcherStatus* status) noexcept = 0;
+    virtual int32_t WINRT_CALL Start() noexcept = 0;
+    virtual int32_t WINRT_CALL Stop() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcher2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetBackgroundTrigger(void* requestedEventKinds, void** trigger) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcherEvent>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Kind(Windows::Devices::Enumeration::DeviceWatcherEventKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceInformation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceInformationUpdate(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_DeviceWatcherEvents(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IEnclosureLocation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_InDock(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InLid(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Panel(Windows::Devices::Enumeration::Panel* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Devices::Enumeration::IEnclosureLocation2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_RotationAngleInDegreesClockwise(uint32_t* value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Devices_Enumeration_IDeviceAccessChangedEventArgs
 {
@@ -415,10 +660,10 @@ template <> struct consume<Windows::Devices::Enumeration::IDeviceAccessChangedEv
 template <typename D>
 struct consume_Windows_Devices_Enumeration_IDeviceAccessInformation
 {
-    event_token AccessChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const;
-    using AccessChanged_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceAccessInformation>;
+    winrt::event_token AccessChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const;
+    using AccessChanged_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceAccessInformation, &impl::abi_t<Windows::Devices::Enumeration::IDeviceAccessInformation>::remove_AccessChanged>;
     AccessChanged_revoker AccessChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> const& handler) const;
-    void AccessChanged(event_token const& cookie) const;
+    void AccessChanged(winrt::event_token const& cookie) const noexcept;
     Windows::Devices::Enumeration::DeviceAccessStatus CurrentStatus() const;
 };
 template <> struct consume<Windows::Devices::Enumeration::IDeviceAccessInformation> { template <typename D> using type = consume_Windows_Devices_Enumeration_IDeviceAccessInformation<D>; };
@@ -427,7 +672,7 @@ template <typename D>
 struct consume_Windows_Devices_Enumeration_IDeviceAccessInformationStatics
 {
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(param::hstring const& deviceId) const;
-    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID const& deviceClassId) const;
+    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(winrt::guid const& deviceClassId) const;
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass const& deviceClass) const;
 };
 template <> struct consume<Windows::Devices::Enumeration::IDeviceAccessInformationStatics> { template <typename D> using type = consume_Windows_Devices_Enumeration_IDeviceAccessInformationStatics<D>; };
@@ -475,10 +720,10 @@ struct consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel, Windows::Devices::Enumeration::IDevicePairingSettings const& devicePairingSettings) const;
-    event_token PairingRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const;
-    using PairingRequested_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>;
+    winrt::event_token PairingRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const;
+    using PairingRequested_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceInformationCustomPairing, &impl::abi_t<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>::remove_PairingRequested>;
     PairingRequested_revoker PairingRequested(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> const& handler) const;
-    void PairingRequested(event_token const& token) const;
+    void PairingRequested(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Devices::Enumeration::IDeviceInformationCustomPairing> { template <typename D> using type = consume_Windows_Devices_Enumeration_IDeviceInformationCustomPairing<D>; };
 
@@ -508,6 +753,13 @@ struct consume_Windows_Devices_Enumeration_IDeviceInformationPairingStatics
     bool TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported) const;
 };
 template <> struct consume<Windows::Devices::Enumeration::IDeviceInformationPairingStatics> { template <typename D> using type = consume_Windows_Devices_Enumeration_IDeviceInformationPairingStatics<D>; };
+
+template <typename D>
+struct consume_Windows_Devices_Enumeration_IDeviceInformationPairingStatics2
+{
+    bool TryRegisterForAllInboundPairingRequestsWithProtectionLevel(Windows::Devices::Enumeration::DevicePairingKinds const& pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel const& minProtectionLevel) const;
+};
+template <> struct consume<Windows::Devices::Enumeration::IDeviceInformationPairingStatics2> { template <typename D> using type = consume_Windows_Devices_Enumeration_IDeviceInformationPairingStatics2<D>; };
 
 template <typename D>
 struct consume_Windows_Devices_Enumeration_IDeviceInformationStatics
@@ -582,18 +834,18 @@ struct consume_Windows_Devices_Enumeration_IDevicePicker
     Windows::Devices::Enumeration::DevicePickerFilter Filter() const;
     Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
     Windows::Foundation::Collections::IVector<hstring> RequestedProperties() const;
-    event_token DeviceSelected(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const;
-    using DeviceSelected_revoker = event_revoker<Windows::Devices::Enumeration::IDevicePicker>;
+    winrt::event_token DeviceSelected(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const;
+    using DeviceSelected_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDevicePicker, &impl::abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DeviceSelected>;
     DeviceSelected_revoker DeviceSelected(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> const& handler) const;
-    void DeviceSelected(event_token const& token) const;
-    event_token DisconnectButtonClicked(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const;
-    using DisconnectButtonClicked_revoker = event_revoker<Windows::Devices::Enumeration::IDevicePicker>;
+    void DeviceSelected(winrt::event_token const& token) const noexcept;
+    winrt::event_token DisconnectButtonClicked(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const;
+    using DisconnectButtonClicked_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDevicePicker, &impl::abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DisconnectButtonClicked>;
     DisconnectButtonClicked_revoker DisconnectButtonClicked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> const& handler) const;
-    void DisconnectButtonClicked(event_token const& token) const;
-    event_token DevicePickerDismissed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const;
-    using DevicePickerDismissed_revoker = event_revoker<Windows::Devices::Enumeration::IDevicePicker>;
+    void DisconnectButtonClicked(winrt::event_token const& token) const noexcept;
+    winrt::event_token DevicePickerDismissed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const;
+    using DevicePickerDismissed_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDevicePicker, &impl::abi_t<Windows::Devices::Enumeration::IDevicePicker>::remove_DevicePickerDismissed>;
     DevicePickerDismissed_revoker DevicePickerDismissed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Foundation::IInspectable> const& handler) const;
-    void DevicePickerDismissed(event_token const& token) const;
+    void DevicePickerDismissed(winrt::event_token const& token) const noexcept;
     void Show(Windows::Foundation::Rect const& selection) const;
     void Show(Windows::Foundation::Rect const& selection, Windows::UI::Popups::Placement const& placement) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(Windows::Foundation::Rect const& selection) const;
@@ -648,26 +900,26 @@ template <> struct consume<Windows::Devices::Enumeration::IDeviceUnpairingResult
 template <typename D>
 struct consume_Windows_Devices_Enumeration_IDeviceWatcher
 {
-    event_token Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const;
-    using Added_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceWatcher>;
+    winrt::event_token Added(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const;
+    using Added_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceWatcher, &impl::abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Added>;
     Added_revoker Added(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> const& handler) const;
-    void Added(event_token const& token) const;
-    event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
-    using Updated_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceWatcher>;
+    void Added(winrt::event_token const& token) const noexcept;
+    winrt::event_token Updated(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
+    using Updated_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceWatcher, &impl::abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Updated>;
     Updated_revoker Updated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
-    void Updated(event_token const& token) const;
-    event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
-    using Removed_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceWatcher>;
+    void Updated(winrt::event_token const& token) const noexcept;
+    winrt::event_token Removed(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
+    using Removed_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceWatcher, &impl::abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Removed>;
     Removed_revoker Removed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> const& handler) const;
-    void Removed(event_token const& token) const;
-    event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using EnumerationCompleted_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceWatcher>;
+    void Removed(winrt::event_token const& token) const noexcept;
+    winrt::event_token EnumerationCompleted(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using EnumerationCompleted_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceWatcher, &impl::abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_EnumerationCompleted>;
     EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void EnumerationCompleted(event_token const& token) const;
-    event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    using Stopped_revoker = event_revoker<Windows::Devices::Enumeration::IDeviceWatcher>;
+    void EnumerationCompleted(winrt::event_token const& token) const noexcept;
+    winrt::event_token Stopped(Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
+    using Stopped_revoker = impl::event_revoker<Windows::Devices::Enumeration::IDeviceWatcher, &impl::abi_t<Windows::Devices::Enumeration::IDeviceWatcher>::remove_Stopped>;
     Stopped_revoker Stopped(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Foundation::IInspectable> const& handler) const;
-    void Stopped(event_token const& token) const;
+    void Stopped(winrt::event_token const& token) const noexcept;
     Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
     void Start() const;
     void Stop() const;
@@ -712,240 +964,5 @@ struct consume_Windows_Devices_Enumeration_IEnclosureLocation2
     uint32_t RotationAngleInDegreesClockwise() const;
 };
 template <> struct consume<Windows::Devices::Enumeration::IEnclosureLocation2> { template <typename D> using type = consume_Windows_Devices_Enumeration_IEnclosureLocation2<D>; };
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceAccessStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_AccessChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_AccessChanged(event_token cookie) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrentStatus(Windows::Devices::Enumeration::DeviceAccessStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceAccessInformationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromId(HSTRING deviceId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromDeviceClassId(GUID deviceClassId, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Device(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsDefault(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EnclosureLocation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Update(void* updateInfo) noexcept = 0;
-    virtual HRESULT __stdcall GetThumbnailAsync(void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall GetGlyphThumbnailAsync(void** asyncOp) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pairing(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationCustomPairing>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, void** result) noexcept = 0;
-    virtual HRESULT __stdcall PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept = 0;
-    virtual HRESULT __stdcall PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_PairingRequested(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_PairingRequested(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairing>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsPaired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CanPair(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall PairAsync(void** result) noexcept = 0;
-    virtual HRESULT __stdcall PairWithProtectionLevelAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairing2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ProtectionLevel(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Custom(void** value) noexcept = 0;
-    virtual HRESULT __stdcall PairWithProtectionLevelAndSettingsAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, void* devicePairingSettings, void** result) noexcept = 0;
-    virtual HRESULT __stdcall UnpairAsync(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationPairingStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, bool* result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateFromIdAsync(HSTRING deviceId, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, void* additionalProperties, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAsync(void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAsyncDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAsyncAqsFilter(HSTRING aqsFilter, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcher(void** watcher) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcherDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, void** watcher) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcherAqsFilter(HSTRING aqsFilter, void** watcher) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, void** watcher) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass, HSTRING* aqsFilter) noexcept = 0;
-    virtual HRESULT __stdcall CreateFromIdAsyncWithKindAndAdditionalProperties(HSTRING deviceId, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall FindAllAsyncWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** asyncOp) noexcept = 0;
-    virtual HRESULT __stdcall CreateWatcherWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, void* additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind, void** watcher) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationUpdate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Properties(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceInformationUpdate2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceInformationKind* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PairingKind(Windows::Devices::Enumeration::DevicePairingKinds* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Pin(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall Accept() noexcept = 0;
-    virtual HRESULT __stdcall AcceptWithPin(HSTRING pin) noexcept = 0;
-    virtual HRESULT __stdcall GetDeferral(void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePairingResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DevicePairingResultStatus* status) noexcept = 0;
-    virtual HRESULT __stdcall get_ProtectionLevelUsed(Windows::Devices::Enumeration::DevicePairingProtectionLevel* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePairingSettings>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePicker>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Filter(void** filter) noexcept = 0;
-    virtual HRESULT __stdcall get_Appearance(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_RequestedProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_DeviceSelected(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DeviceSelected(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DisconnectButtonClicked(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DisconnectButtonClicked(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_DevicePickerDismissed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_DevicePickerDismissed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall Show(Windows::Foundation::Rect selection) noexcept = 0;
-    virtual HRESULT __stdcall ShowWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement) noexcept = 0;
-    virtual HRESULT __stdcall PickSingleDeviceAsync(Windows::Foundation::Rect selection, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall PickSingleDeviceAsyncWithPlacement(Windows::Foundation::Rect selection, Windows::UI::Popups::Placement placement, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall Hide() noexcept = 0;
-    virtual HRESULT __stdcall SetDisplayStatus(void* device, HSTRING status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePickerAppearance>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Title(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_BackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedForegroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectedForegroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectedBackgroundColor(struct struct_Windows_UI_Color value) noexcept = 0;
-    virtual HRESULT __stdcall get_SelectedAccentColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SelectedAccentColor(struct struct_Windows_UI_Color value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDevicePickerFilter>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SupportedDeviceClasses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportedDeviceSelectors(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceSelectedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SelectedDevice(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceUnpairingResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceUnpairingResultStatus* status) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcher>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_Added(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Added(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Updated(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Updated(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Removed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Removed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_EnumerationCompleted(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_Stopped(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Stopped(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Devices::Enumeration::DeviceWatcherStatus* status) noexcept = 0;
-    virtual HRESULT __stdcall Start() noexcept = 0;
-    virtual HRESULT __stdcall Stop() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcher2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetBackgroundTrigger(void* requestedEventKinds, void** trigger) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcherEvent>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Kind(Windows::Devices::Enumeration::DeviceWatcherEventKind* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceInformation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceInformationUpdate(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_DeviceWatcherEvents(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IEnclosureLocation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_InDock(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InLid(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Panel(Windows::Devices::Enumeration::Panel* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Devices::Enumeration::IEnclosureLocation2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_RotationAngleInDegreesClockwise(uint32_t* value) noexcept = 0;
-};};
 
 }

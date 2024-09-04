@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -89,28 +89,28 @@ struct WINRT_EBO ISettingsCommandStatics :
     ISettingsCommandStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISettingsPane :
+struct WINRT_EBO ISettingsPane :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISettingsPane>
 {
     ISettingsPane(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISettingsPaneCommandsRequest :
+struct WINRT_EBO ISettingsPaneCommandsRequest :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISettingsPaneCommandsRequest>
 {
     ISettingsPaneCommandsRequest(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISettingsPaneCommandsRequestedEventArgs :
+struct WINRT_EBO ISettingsPaneCommandsRequestedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISettingsPaneCommandsRequestedEventArgs>
 {
     ISettingsPaneCommandsRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct WINRT_EBO [[deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISettingsPaneStatics :
+struct WINRT_EBO ISettingsPaneStatics :
     Windows::Foundation::IInspectable,
     impl::consume_t<ISettingsPaneStatics>
 {

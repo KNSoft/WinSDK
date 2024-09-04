@@ -725,15 +725,11 @@ protected:
             Details::InterfaceTraits<I9>::CanCastTo(ptr, riid, ppv)) ? S_OK : E_NOINTERFACE;
     }
 
-    IUnknown* CastToUnknown() throw()
-    {
-        // It's not possible to cast to IUnknown when Base interface inherit more interfaces
-        // The RuntimeClass is taking always the first interface as IUnknown thus it's required to
-        // define your class as follows:
-        // struct MyRuntimeClass : RuntimeClass<IInspectable, ChainInterfaces<MixIn<MyRuntimeClass,MyIndependentImplementation>, IFoo, IBar>, MyIndependentImplementation  {}
-        static_assert(false, "Cannot cast 'MixInType' to IUnknown interface. Define IInspectable or IUnknown class before MixIn<Derived, MixInType> parameter.");        
-        return nullptr;
-    }
+    // It's not possible to cast to IUnknown when Base interface inherit more interfaces
+    // The RuntimeClass is taking always the first interface as IUnknown thus it's required to
+    // list IInspectable or IUnknown class before MixIn<Derived, MixInType> parameter, such as:
+    // struct MyRuntimeClass : RuntimeClass<IInspectable, ChainInterfaces<MixIn<MyRuntimeClass,MyIndependentImplementation>, IFoo, IBar>, MyIndependentImplementation  {}
+    IUnknown* CastToUnknown() throw() = delete;
 
     static const unsigned long IidCount = 
         Details::InterfaceTraits<I1>::IidCount +
@@ -2053,164 +2049,20 @@ public:
     }
 #endif // !defined(__WRL_STRICT__) || !defined(__WRL_FORCE_INSPECTABLE_CLASS_MACRO__)
 
-    STDMETHOD(GetWeakReference)(_Outptr_ IWeakReference **weakReference)
-    {
-        WeakReferenceImpl* weakRef = nullptr;
-        INT_PTR encodedWeakRef = 0;
-        ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+    STDMETHOD(GetWeakReference)(_Outptr_ IWeakReference **weakReference);
 
-        *weakReference = nullptr;
-
-        if (IsValueAPointerToWeakReference(currentValue.rawValue))
-        {
-            weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
-
-            weakRef->AddRef();
-            *weakReference = weakRef;
-            return S_OK;
-        }
-
-        // WeakReferenceImpl is created with ref count 2 to avoid interlocked increment
-        weakRef = CreateWeakReference(ImplementsHelper::CastToUnknown());
-        if (weakRef == nullptr)
-        {
-            return E_OUTOFMEMORY;
-        }
-        
-        encodedWeakRef = EncodeWeakReferencePointer(weakRef);
-
-        for (;;)
-        {
-            INT_PTR previousValue = 0;
-
-            weakRef->SetStrongReference(static_cast<unsigned long>(currentValue.refCount));
-
-#ifdef __WRL_UNITTEST__
-            OnBeforeGetWeakReferenceSwap();
-#endif
-
-            previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointer(reinterpret_cast<PVOID*>(&(this->refCount_.ifHighBitIsSetThenShiftLeftToYieldPointerToWeakReference)), reinterpret_cast<PVOID>(encodedWeakRef), currentValue.ifHighBitIsSetThenShiftLeftToYieldPointerToWeakReference));
-            if (previousValue == currentValue.rawValue)
-            {
-                // No need to call AddRef in this case, WeakReferenceImpl is created with ref count 2 to avoid interlocked increment
-                *weakReference = weakRef;
-                return S_OK;
-            }
-            else if (IsValueAPointerToWeakReference(previousValue))
-            {
-                // Another thread beat this call to create the weak reference. 
-
-                delete weakRef;
-
-                weakRef = DecodeWeakReferencePointer(previousValue);
-                weakRef->AddRef();
-                *weakReference = weakRef;
-                return S_OK;
-            }
-
-            // Another thread won via an AddRef or Release.
-            // Let's try again
-            currentValue.rawValue = previousValue;
-        }
-    }
-
-    virtual ~RuntimeClassImpl() throw()
-    {
-        if (IsValueAPointerToWeakReference(refCount_.rawValue))
-        {
-            WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(refCount_.rawValue);
-            weakRef->Release();
-            weakRef = nullptr;
-        }
-    }
+    virtual ~RuntimeClassImpl() throw();
 
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
     using ImplementsHelper = typename Details::AdjustImplements<RuntimeClassFlagsT, false, typename IInspectableInjector<I0>::InspectableIfNeeded, I0, IWeakReferenceSource, TInterfaces...>::Type;
     using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
 
-    unsigned long InternalAddRef() throw()
-    {
-#ifdef _PERF_COUNTERS
-        IncrementAddRefCount();
-#endif
+    unsigned long InternalAddRef() throw();
 
-        ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+    unsigned long InternalRelease() throw();
 
-        for (;;)
-        {
-            if (!IsValueAPointerToWeakReference(currentValue.rawValue))
-            {
-                UINT_PTR updateValue = currentValue.refCount + 1;
-
-#ifdef __WRL_UNITTEST__
-                OnBeforeInternalAddRefIncrement();
-#endif
-
-                INT_PTR previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointerForIncrement(reinterpret_cast<PVOID*>(&(refCount_.refCount)), reinterpret_cast<PVOID>(updateValue), reinterpret_cast<PVOID>(currentValue.refCount)));
-                if (previousValue == currentValue.rawValue)
-                {
-                    return static_cast<unsigned long>(updateValue);
-                }
-
-                currentValue.rawValue = previousValue;
-            }
-            else
-            {
-                WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
-                return weakRef->IncrementStrongReference();
-            }
-        }
-    }
-
-    unsigned long InternalRelease() throw()
-    {
-#ifdef _PERF_COUNTERS
-        IncrementReleaseCount();
-#endif
-
-        ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
-
-        for (;;)
-        {
-            if (!IsValueAPointerToWeakReference(currentValue.rawValue))
-            {
-                UINT_PTR updateValue = currentValue.refCount - 1;
-
-#ifdef __WRL_UNITTEST__
-                OnBeforeInternalReleaseDecrement();
-#endif
-
-                INT_PTR previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointerForIncrement(reinterpret_cast<PVOID*>(&(refCount_.refCount)), reinterpret_cast<PVOID>(updateValue), reinterpret_cast<PVOID>(currentValue.refCount)));
-                if (previousValue == currentValue.rawValue)
-                {
-                    return static_cast<unsigned long>(updateValue);
-                }
-
-                currentValue.rawValue = previousValue;
-            }
-            else
-            {
-                WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
-                return weakRef->DecrementStrongReference();
-            }
-        }
-    }
-
-    unsigned long GetRefCount() const throw()
-    {
-        ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
-
-        if (IsValueAPointerToWeakReference(currentValue.rawValue))
-        {
-            WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
-            return weakRef->GetStrongReferenceCount();
-        }
-        else
-        {
-            return static_cast<unsigned long>(currentValue.refCount);
-        }
-    }
+    unsigned long GetRefCount() const throw();
 
     friend class WeakReferenceImpl;
 
@@ -2389,6 +2241,165 @@ private:
     IUnknown *unknown_;
 };
 
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...>::~RuntimeClassImpl() throw()
+{
+    if (IsValueAPointerToWeakReference(refCount_.rawValue))
+    {
+        WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(refCount_.rawValue);
+        weakRef->Release();
+        weakRef = nullptr;
+    }
+}
+
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+unsigned long RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...>::GetRefCount() const throw()
+{
+    ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+
+    if (IsValueAPointerToWeakReference(currentValue.rawValue))
+    {
+        WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
+        return weakRef->GetStrongReferenceCount();
+    }
+    else
+    {
+        return static_cast<unsigned long>(currentValue.refCount);
+    }
+}
+
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+unsigned long RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...>::InternalAddRef() throw()
+{
+#ifdef _PERF_COUNTERS
+    IncrementAddRefCount();
+#endif
+
+    ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+
+    for (;;)
+    {
+        if (!IsValueAPointerToWeakReference(currentValue.rawValue))
+        {
+            UINT_PTR updateValue = currentValue.refCount + 1;
+
+#ifdef __WRL_UNITTEST__
+            OnBeforeInternalAddRefIncrement();
+#endif
+
+            INT_PTR previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointerForIncrement(reinterpret_cast<PVOID*>(&(refCount_.refCount)), reinterpret_cast<PVOID>(updateValue), reinterpret_cast<PVOID>(currentValue.refCount)));
+            if (previousValue == currentValue.rawValue)
+            {
+                return static_cast<unsigned long>(updateValue);
+            }
+
+            currentValue.rawValue = previousValue;
+        }
+        else
+        {
+            WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
+            return weakRef->IncrementStrongReference();
+        }
+    }
+}
+
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+unsigned long RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...>::InternalRelease() throw()
+{
+#ifdef _PERF_COUNTERS
+    IncrementReleaseCount();
+#endif
+
+    ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+
+    for (;;)
+    {
+        if (!IsValueAPointerToWeakReference(currentValue.rawValue))
+        {
+            UINT_PTR updateValue = currentValue.refCount - 1;
+
+#ifdef __WRL_UNITTEST__
+            OnBeforeInternalReleaseDecrement();
+#endif
+
+            INT_PTR previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointerForIncrement(reinterpret_cast<PVOID*>(&(refCount_.refCount)), reinterpret_cast<PVOID>(updateValue), reinterpret_cast<PVOID>(currentValue.refCount)));
+            if (previousValue == currentValue.rawValue)
+            {
+                return static_cast<unsigned long>(updateValue);
+            }
+
+            currentValue.rawValue = previousValue;
+        }
+        else
+        {
+            WeakReferenceImpl* weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
+            return weakRef->DecrementStrongReference();
+        }
+    }
+}
+
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+HRESULT RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...>::GetWeakReference(_Outptr_ IWeakReference **weakReference)
+{
+    WeakReferenceImpl* weakRef = nullptr;
+    INT_PTR encodedWeakRef = 0;
+    ReferenceCountOrWeakReferencePointer currentValue = ReadValueFromPointerNoFence<ReferenceCountOrWeakReferencePointer>(&refCount_);
+
+    *weakReference = nullptr;
+
+    if (IsValueAPointerToWeakReference(currentValue.rawValue))
+    {
+        weakRef = DecodeWeakReferencePointer(currentValue.rawValue);
+
+        weakRef->AddRef();
+        *weakReference = weakRef;
+        return S_OK;
+    }
+
+    // WeakReferenceImpl is created with ref count 2 to avoid interlocked increment
+    weakRef = CreateWeakReference(ImplementsHelper::CastToUnknown());
+    if (weakRef == nullptr)
+    {
+        return E_OUTOFMEMORY;
+    }
+    
+    encodedWeakRef = EncodeWeakReferencePointer(weakRef);
+
+    for (;;)
+    {
+        INT_PTR previousValue = 0;
+
+        weakRef->SetStrongReference(static_cast<unsigned long>(currentValue.refCount));
+
+#ifdef __WRL_UNITTEST__
+        OnBeforeGetWeakReferenceSwap();
+#endif
+
+        previousValue = reinterpret_cast<INT_PTR>(UnknownInterlockedCompareExchangePointer(reinterpret_cast<PVOID*>(&(this->refCount_.ifHighBitIsSetThenShiftLeftToYieldPointerToWeakReference)), reinterpret_cast<PVOID>(encodedWeakRef), currentValue.ifHighBitIsSetThenShiftLeftToYieldPointerToWeakReference));
+        if (previousValue == currentValue.rawValue)
+        {
+            // No need to call AddRef in this case, WeakReferenceImpl is created with ref count 2 to avoid interlocked increment
+            *weakReference = weakRef;
+            return S_OK;
+        }
+        else if (IsValueAPointerToWeakReference(previousValue))
+        {
+            // Another thread beat this call to create the weak reference. 
+
+            delete weakRef;
+
+            weakRef = DecodeWeakReferencePointer(previousValue);
+            weakRef->AddRef();
+            *weakReference = weakRef;
+            return S_OK;
+        }
+
+        // Another thread won via an AddRef or Release.
+        // Let's try again
+        currentValue.rawValue = previousValue;
+    }
+}
+
 // Memory allocation for object that doesn't support weak references
 // It only allocates memory
 template<typename T>
@@ -2494,7 +2505,7 @@ namespace Details
 
 #define InspectableClass(runtimeClassName, trustLevel) \
     public: \
-        static const wchar_t* STDMETHODCALLTYPE InternalGetRuntimeClassName() throw() \
+        static _Null_terminated_ const wchar_t* STDMETHODCALLTYPE InternalGetRuntimeClassName() throw() \
         { \
             static_assert((RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRt || \
                 (RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRtClassicComMix, \
@@ -2511,7 +2522,7 @@ namespace Details
         { \
             *runtimeName = nullptr; \
             HRESULT hr = S_OK; \
-            const wchar_t *name = InternalGetRuntimeClassName(); \
+            auto name = InternalGetRuntimeClassName(); \
             if (name != nullptr) \
             { \
                 hr = ::WindowsCreateString(name, static_cast<UINT32>(::wcslen(name)), runtimeName); \

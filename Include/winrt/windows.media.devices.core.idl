@@ -407,6 +407,7 @@ namespace Windows
                     [propget] HRESULT DesiredFrameControllers([out] [retval] Windows.Foundation.Collections.IVector<Windows.Media.Devices.Core.FrameController*>** items);
                 }
 
+                [activatable(Windows.Media.Devices.Core.ICameraIntrinsicsFactory, Windows.Foundation.UniversalApiContract, 7.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
                 [threading(both)]

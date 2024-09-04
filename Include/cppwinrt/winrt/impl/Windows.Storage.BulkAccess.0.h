@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -84,12 +84,47 @@ template <> struct name<Windows::Storage::BulkAccess::IStorageItemInformation>{ 
 template <> struct name<Windows::Storage::BulkAccess::FileInformation>{ static constexpr auto & value{ L"Windows.Storage.BulkAccess.FileInformation" }; };
 template <> struct name<Windows::Storage::BulkAccess::FileInformationFactory>{ static constexpr auto & value{ L"Windows.Storage.BulkAccess.FileInformationFactory" }; };
 template <> struct name<Windows::Storage::BulkAccess::FolderInformation>{ static constexpr auto & value{ L"Windows.Storage.BulkAccess.FolderInformation" }; };
-template <> struct guid<Windows::Storage::BulkAccess::IFileInformationFactory>{ static constexpr GUID value{ 0x401D88BE,0x960F,0x4D6D,{ 0xA7,0xD0,0x1A,0x38,0x61,0xE7,0x6C,0x83 } }; };
-template <> struct guid<Windows::Storage::BulkAccess::IFileInformationFactoryFactory>{ static constexpr GUID value{ 0x84EA0E7D,0xE4A2,0x4F00,{ 0x8A,0xFA,0xAF,0x5E,0x0F,0x82,0x6B,0xD5 } }; };
-template <> struct guid<Windows::Storage::BulkAccess::IStorageItemInformation>{ static constexpr GUID value{ 0x87A5CB8B,0x8972,0x4F40,{ 0x8D,0xE0,0xD8,0x6F,0xB1,0x79,0xD8,0xFA } }; };
+template <> struct guid_storage<Windows::Storage::BulkAccess::IFileInformationFactory>{ static constexpr guid value{ 0x401D88BE,0x960F,0x4D6D,{ 0xA7,0xD0,0x1A,0x38,0x61,0xE7,0x6C,0x83 } }; };
+template <> struct guid_storage<Windows::Storage::BulkAccess::IFileInformationFactoryFactory>{ static constexpr guid value{ 0x84EA0E7D,0xE4A2,0x4F00,{ 0x8A,0xFA,0xAF,0x5E,0x0F,0x82,0x6B,0xD5 } }; };
+template <> struct guid_storage<Windows::Storage::BulkAccess::IStorageItemInformation>{ static constexpr guid value{ 0x87A5CB8B,0x8972,0x4F40,{ 0x8D,0xE0,0xD8,0x6F,0xB1,0x79,0xD8,0xFA } }; };
 template <> struct default_interface<Windows::Storage::BulkAccess::FileInformation>{ using type = Windows::Storage::BulkAccess::IStorageItemInformation; };
 template <> struct default_interface<Windows::Storage::BulkAccess::FileInformationFactory>{ using type = Windows::Storage::BulkAccess::IFileInformationFactory; };
 template <> struct default_interface<Windows::Storage::BulkAccess::FolderInformation>{ using type = Windows::Storage::BulkAccess::IStorageItemInformation; };
+
+template <> struct abi<Windows::Storage::BulkAccess::IFileInformationFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetItemsAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFilesAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetFoldersAsyncDefaultStartAndCount(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVirtualizedItemsVector(void** vector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVirtualizedFilesVector(void** vector) noexcept = 0;
+    virtual int32_t WINRT_CALL GetVirtualizedFoldersVector(void** vector) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::BulkAccess::IFileInformationFactoryFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CreateWithMode(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithModeAndSize(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithModeAndSizeAndOptions(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateWithModeAndSizeAndOptionsAndFlags(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, bool delayLoad, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Storage::BulkAccess::IStorageItemInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MusicProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImageProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DocumentProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BasicProperties(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Thumbnail(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_ThumbnailUpdated(void* changedHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ThumbnailUpdated(winrt::event_token eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL add_PropertiesUpdated(void* changedHandler, winrt::event_token* eventCookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_PropertiesUpdated(winrt::event_token eventCookie) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Storage_BulkAccess_IFileInformationFactory
@@ -125,50 +160,15 @@ struct consume_Windows_Storage_BulkAccess_IStorageItemInformation
     Windows::Storage::FileProperties::DocumentProperties DocumentProperties() const;
     Windows::Storage::FileProperties::BasicProperties BasicProperties() const;
     Windows::Storage::FileProperties::StorageItemThumbnail Thumbnail() const;
-    event_token ThumbnailUpdated(Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
-    using ThumbnailUpdated_revoker = event_revoker<Windows::Storage::BulkAccess::IStorageItemInformation>;
+    winrt::event_token ThumbnailUpdated(Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
+    using ThumbnailUpdated_revoker = impl::event_revoker<Windows::Storage::BulkAccess::IStorageItemInformation, &impl::abi_t<Windows::Storage::BulkAccess::IStorageItemInformation>::remove_ThumbnailUpdated>;
     ThumbnailUpdated_revoker ThumbnailUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
-    void ThumbnailUpdated(event_token const& eventCookie) const;
-    event_token PropertiesUpdated(Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
-    using PropertiesUpdated_revoker = event_revoker<Windows::Storage::BulkAccess::IStorageItemInformation>;
+    void ThumbnailUpdated(winrt::event_token const& eventCookie) const noexcept;
+    winrt::event_token PropertiesUpdated(Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
+    using PropertiesUpdated_revoker = impl::event_revoker<Windows::Storage::BulkAccess::IStorageItemInformation, &impl::abi_t<Windows::Storage::BulkAccess::IStorageItemInformation>::remove_PropertiesUpdated>;
     PropertiesUpdated_revoker PropertiesUpdated(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::Foundation::IInspectable> const& changedHandler) const;
-    void PropertiesUpdated(event_token const& eventCookie) const;
+    void PropertiesUpdated(winrt::event_token const& eventCookie) const noexcept;
 };
 template <> struct consume<Windows::Storage::BulkAccess::IStorageItemInformation> { template <typename D> using type = consume_Windows_Storage_BulkAccess_IStorageItemInformation<D>; };
-
-template <> struct abi<Windows::Storage::BulkAccess::IFileInformationFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetItemsAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFilesAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetFoldersAsyncDefaultStartAndCount(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetVirtualizedItemsVector(void** vector) noexcept = 0;
-    virtual HRESULT __stdcall GetVirtualizedFilesVector(void** vector) noexcept = 0;
-    virtual HRESULT __stdcall GetVirtualizedFoldersVector(void** vector) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::BulkAccess::IFileInformationFactoryFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall CreateWithMode(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithModeAndSize(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithModeAndSizeAndOptions(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateWithModeAndSizeAndOptionsAndFlags(void* queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, bool delayLoad, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Storage::BulkAccess::IStorageItemInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MusicProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImageProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DocumentProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_BasicProperties(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Thumbnail(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_ThumbnailUpdated(void* changedHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ThumbnailUpdated(event_token eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall add_PropertiesUpdated(void* changedHandler, event_token* eventCookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_PropertiesUpdated(event_token eventCookie) noexcept = 0;
-};};
 
 }

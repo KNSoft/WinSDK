@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -87,7 +87,23 @@ template <> struct name<Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffec
 template <> struct name<Windows::Media::ClosedCaptioning::ClosedCaptionOpacity>{ static constexpr auto & value{ L"Windows.Media.ClosedCaptioning.ClosedCaptionOpacity" }; };
 template <> struct name<Windows::Media::ClosedCaptioning::ClosedCaptionSize>{ static constexpr auto & value{ L"Windows.Media.ClosedCaptioning.ClosedCaptionSize" }; };
 template <> struct name<Windows::Media::ClosedCaptioning::ClosedCaptionStyle>{ static constexpr auto & value{ L"Windows.Media.ClosedCaptioning.ClosedCaptionStyle" }; };
-template <> struct guid<Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>{ static constexpr GUID value{ 0x10AA1F84,0xCC30,0x4141,{ 0xB5,0x03,0x52,0x72,0x28,0x9E,0x0C,0x20 } }; };
+template <> struct guid_storage<Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>{ static constexpr guid value{ 0x10AA1F84,0xCC30,0x4141,{ 0xB5,0x03,0x52,0x72,0x28,0x9E,0x0C,0x20 } }; };
+
+template <> struct abi<Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FontColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ComputedFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontSize(Windows::Media::ClosedCaptioning::ClosedCaptionSize* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontStyle(Windows::Media::ClosedCaptioning::ClosedCaptionStyle* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FontEffect(Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ComputedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BackgroundOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegionColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ComputedRegionColor(struct struct_Windows_UI_Color* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_RegionOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics
@@ -106,21 +122,5 @@ struct consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics
     Windows::Media::ClosedCaptioning::ClosedCaptionOpacity RegionOpacity() const;
 };
 template <> struct consume<Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics> { template <typename D> using type = consume_Windows_Media_ClosedCaptioning_IClosedCaptionPropertiesStatics<D>; };
-
-template <> struct abi<Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FontColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ComputedFontColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontSize(Windows::Media::ClosedCaptioning::ClosedCaptionSize* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontStyle(Windows::Media::ClosedCaptioning::ClosedCaptionStyle* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FontEffect(Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ComputedBackgroundColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BackgroundOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegionColor(Windows::Media::ClosedCaptioning::ClosedCaptionColor* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ComputedRegionColor(struct struct_Windows_UI_Color* value) noexcept = 0;
-    virtual HRESULT __stdcall get_RegionOpacity(Windows::Media::ClosedCaptioning::ClosedCaptionOpacity* value) noexcept = 0;
-};};
 
 }

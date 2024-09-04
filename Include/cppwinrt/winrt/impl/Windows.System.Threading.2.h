@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -14,6 +14,8 @@ struct TimerDestroyedHandler : Windows::Foundation::IUnknown
     template <typename L> TimerDestroyedHandler(L lambda);
     template <typename F> TimerDestroyedHandler(F* function);
     template <typename O, typename M> TimerDestroyedHandler(O* object, M method);
+    template <typename O, typename M> TimerDestroyedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> TimerDestroyedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::System::Threading::ThreadPoolTimer const& timer) const;
 };
 
@@ -23,6 +25,8 @@ struct TimerElapsedHandler : Windows::Foundation::IUnknown
     template <typename L> TimerElapsedHandler(L lambda);
     template <typename F> TimerElapsedHandler(F* function);
     template <typename O, typename M> TimerElapsedHandler(O* object, M method);
+    template <typename O, typename M> TimerElapsedHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> TimerElapsedHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::System::Threading::ThreadPoolTimer const& timer) const;
 };
 
@@ -32,6 +36,8 @@ struct WorkItemHandler : Windows::Foundation::IUnknown
     template <typename L> WorkItemHandler(L lambda);
     template <typename F> WorkItemHandler(F* function);
     template <typename O, typename M> WorkItemHandler(O* object, M method);
+    template <typename O, typename M> WorkItemHandler(com_ptr<O>&& object, M method);
+    template <typename O, typename M> WorkItemHandler(weak_ref<O>&& object, M method);
     void operator()(Windows::Foundation::IAsyncAction const& operation) const;
 };
 

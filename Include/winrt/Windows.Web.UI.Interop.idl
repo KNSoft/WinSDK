@@ -50,6 +50,8 @@ namespace Windows
         namespace UI
         {
             interface IWebViewControl;
+
+            interface IWebViewControl2;
         }
     }
 }
@@ -78,6 +80,8 @@ namespace Windows
                 interface IWebViewControlProcessOptions;
 
                 interface IWebViewControlSite;
+
+                interface IWebViewControlSite2;
 
                 runtimeclass WebViewControl;
 
@@ -111,6 +115,8 @@ namespace Windows
                     interface Windows.Foundation.Collections.IVectorView<Windows.Web.UI.Interop.WebViewControl*>;
 
                     interface Windows.Foundation.IAsyncOperation<Windows.Web.UI.Interop.WebViewControl*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.Web.UI.Interop.WebViewControl*, IInspectable*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.Web.UI.Interop.WebViewControl*, Windows.Web.UI.Interop.WebViewControlAcceleratorKeyPressedEventArgs*>;
 
@@ -230,12 +236,25 @@ namespace Windows
                     [eventremove] HRESULT AcceleratorKeyPressed([in] EventRegistrationToken token);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 7.0)]
+                [exclusiveto(Windows.Web.UI.Interop.WebViewControl)]
+                [uuid(D13B2E3F-48EE-4730-8243-D2ED0C05606A)]
+                interface IWebViewControlSite2 : IInspectable
+                {
+                    [eventadd] HRESULT GotFocus([in] Windows.Foundation.TypedEventHandler<Windows.Web.UI.Interop.WebViewControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT GotFocus([in] EventRegistrationToken token);
+                    [eventadd] HRESULT LostFocus([in] Windows.Foundation.TypedEventHandler<Windows.Web.UI.Interop.WebViewControl*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT LostFocus([in] EventRegistrationToken token);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]
                 [marshaling_behavior(standard)]
                 runtimeclass WebViewControl
                 {
                     [default] interface Windows.Web.UI.IWebViewControl;
                     interface Windows.Web.UI.Interop.IWebViewControlSite;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Web.UI.IWebViewControl2;
+                    [contract(Windows.Foundation.UniversalApiContract, 7.0)] interface Windows.Web.UI.Interop.IWebViewControlSite2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 6.0)]

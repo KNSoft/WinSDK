@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -36,6 +36,13 @@ struct WINRT_EBO IAppInstallItem4 :
     impl::consume_t<IAppInstallItem4>
 {
     IAppInstallItem4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppInstallItem5 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppInstallItem5>
+{
+    IAppInstallItem5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IAppInstallManager :
@@ -80,6 +87,13 @@ struct WINRT_EBO IAppInstallManager6 :
     IAppInstallManager6(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IAppInstallManager7 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppInstallManager7>
+{
+    IAppInstallManager7(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IAppInstallManagerItemEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume_t<IAppInstallManagerItemEventArgs>
@@ -92,6 +106,13 @@ struct WINRT_EBO IAppInstallOptions :
     impl::consume_t<IAppInstallOptions>
 {
     IAppInstallOptions(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppInstallOptions2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppInstallOptions2>
+{
+    IAppInstallOptions2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IAppInstallStatus :
@@ -120,6 +141,13 @@ struct WINRT_EBO IAppUpdateOptions :
     impl::consume_t<IAppUpdateOptions>
 {
     IAppUpdateOptions(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAppUpdateOptions2 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAppUpdateOptions2>
+{
+    IAppUpdateOptions2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IGetEntitlementResult :

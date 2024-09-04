@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -166,29 +166,29 @@ template <> struct name<Windows::Data::Xml::Dom::XmlNodeList>{ static constexpr 
 template <> struct name<Windows::Data::Xml::Dom::XmlProcessingInstruction>{ static constexpr auto & value{ L"Windows.Data.Xml.Dom.XmlProcessingInstruction" }; };
 template <> struct name<Windows::Data::Xml::Dom::XmlText>{ static constexpr auto & value{ L"Windows.Data.Xml.Dom.XmlText" }; };
 template <> struct name<Windows::Data::Xml::Dom::NodeType>{ static constexpr auto & value{ L"Windows.Data.Xml.Dom.NodeType" }; };
-template <> struct guid<Windows::Data::Xml::Dom::IDtdEntity>{ static constexpr GUID value{ 0x6A0B5FFC,0x63B4,0x480F,{ 0x9E,0x6A,0x8A,0x92,0x81,0x6A,0xAD,0xE4 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IDtdNotation>{ static constexpr GUID value{ 0x8CB4E04D,0x6D46,0x4EDB,{ 0xAB,0x73,0xDF,0x83,0xC5,0x1A,0xD3,0x97 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlAttribute>{ static constexpr GUID value{ 0xAC144AA4,0xB4F1,0x4DB6,{ 0xB2,0x06,0x8A,0x22,0xC3,0x08,0xDB,0x0A } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlCDataSection>{ static constexpr GUID value{ 0x4D04B46F,0xC8BD,0x45B4,{ 0x88,0x99,0x04,0x00,0xD7,0xC2,0xC6,0x0F } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlCharacterData>{ static constexpr GUID value{ 0x132E42AB,0x4E36,0x4DF6,{ 0xB1,0xC8,0x0C,0xE6,0x2F,0xD8,0x8B,0x26 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlComment>{ static constexpr GUID value{ 0xBCA474D5,0xB61F,0x4611,{ 0x9C,0xAC,0x2E,0x92,0xE3,0x47,0x6D,0x47 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocument>{ static constexpr GUID value{ 0xF7F3A506,0x1E87,0x42D6,{ 0xBC,0xFB,0xB8,0xC8,0x09,0xFA,0x54,0x94 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocumentFragment>{ static constexpr GUID value{ 0xE2EA6A96,0x0C21,0x44A5,{ 0x8B,0xC9,0x9E,0x4A,0x26,0x27,0x08,0xEC } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocumentIO>{ static constexpr GUID value{ 0x6CD0E74E,0xEE65,0x4489,{ 0x9E,0xBF,0xCA,0x43,0xE8,0x7B,0xA6,0x37 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocumentIO2>{ static constexpr GUID value{ 0x5D034661,0x7BD8,0x4AD5,{ 0x9E,0xBF,0x81,0xE6,0x34,0x72,0x63,0xB1 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocumentStatics>{ static constexpr GUID value{ 0x5543D254,0xD757,0x4B79,{ 0x95,0x39,0x23,0x2B,0x18,0xF5,0x0B,0xF1 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDocumentType>{ static constexpr GUID value{ 0xF7342425,0x9781,0x4964,{ 0x8E,0x94,0x9B,0x1C,0x6D,0xFC,0x9B,0xC7 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlDomImplementation>{ static constexpr GUID value{ 0x6DE58132,0xF11D,0x4FBB,{ 0x8C,0xC6,0x58,0x3C,0xBA,0x93,0x11,0x2F } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlElement>{ static constexpr GUID value{ 0x2DFB8A1F,0x6B10,0x4EF8,{ 0x9F,0x83,0xEF,0xCC,0xE8,0xFA,0xEC,0x37 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlEntityReference>{ static constexpr GUID value{ 0x2E2F47BC,0xC3D0,0x4CCF,{ 0xBB,0x86,0x0A,0xB8,0xC3,0x6A,0x61,0xCF } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlLoadSettings>{ static constexpr GUID value{ 0x58AA07A8,0xFED6,0x46F7,{ 0xB4,0xC5,0xFB,0x1B,0xA7,0x21,0x08,0xD6 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlNamedNodeMap>{ static constexpr GUID value{ 0xB3A69EB0,0xAAB0,0x4B82,{ 0xA6,0xFA,0xB1,0x45,0x3F,0x7C,0x02,0x1B } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlNode>{ static constexpr GUID value{ 0x1C741D59,0x2122,0x47D5,{ 0xA8,0x56,0x83,0xF3,0xD4,0x21,0x48,0x75 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlNodeList>{ static constexpr GUID value{ 0x8C60AD77,0x83A4,0x4EC1,{ 0x9C,0x54,0x7B,0xA4,0x29,0xE1,0x3D,0xA6 } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlNodeSelector>{ static constexpr GUID value{ 0x63DBBA8B,0xD0DB,0x4FE1,{ 0xB7,0x45,0xF9,0x43,0x3A,0xFD,0xC2,0x5B } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlNodeSerializer>{ static constexpr GUID value{ 0x5CC5B382,0xE6DD,0x4991,{ 0xAB,0xEF,0x06,0xD8,0xD2,0xE7,0xBD,0x0C } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlProcessingInstruction>{ static constexpr GUID value{ 0x2707FD1E,0x1E92,0x4ECE,{ 0xB6,0xF4,0x26,0xF0,0x69,0x07,0x8D,0xDC } }; };
-template <> struct guid<Windows::Data::Xml::Dom::IXmlText>{ static constexpr GUID value{ 0xF931A4CB,0x308D,0x4760,{ 0xA1,0xD5,0x43,0xB6,0x74,0x50,0xAC,0x7E } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IDtdEntity>{ static constexpr guid value{ 0x6A0B5FFC,0x63B4,0x480F,{ 0x9E,0x6A,0x8A,0x92,0x81,0x6A,0xAD,0xE4 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IDtdNotation>{ static constexpr guid value{ 0x8CB4E04D,0x6D46,0x4EDB,{ 0xAB,0x73,0xDF,0x83,0xC5,0x1A,0xD3,0x97 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlAttribute>{ static constexpr guid value{ 0xAC144AA4,0xB4F1,0x4DB6,{ 0xB2,0x06,0x8A,0x22,0xC3,0x08,0xDB,0x0A } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlCDataSection>{ static constexpr guid value{ 0x4D04B46F,0xC8BD,0x45B4,{ 0x88,0x99,0x04,0x00,0xD7,0xC2,0xC6,0x0F } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlCharacterData>{ static constexpr guid value{ 0x132E42AB,0x4E36,0x4DF6,{ 0xB1,0xC8,0x0C,0xE6,0x2F,0xD8,0x8B,0x26 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlComment>{ static constexpr guid value{ 0xBCA474D5,0xB61F,0x4611,{ 0x9C,0xAC,0x2E,0x92,0xE3,0x47,0x6D,0x47 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocument>{ static constexpr guid value{ 0xF7F3A506,0x1E87,0x42D6,{ 0xBC,0xFB,0xB8,0xC8,0x09,0xFA,0x54,0x94 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocumentFragment>{ static constexpr guid value{ 0xE2EA6A96,0x0C21,0x44A5,{ 0x8B,0xC9,0x9E,0x4A,0x26,0x27,0x08,0xEC } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocumentIO>{ static constexpr guid value{ 0x6CD0E74E,0xEE65,0x4489,{ 0x9E,0xBF,0xCA,0x43,0xE8,0x7B,0xA6,0x37 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocumentIO2>{ static constexpr guid value{ 0x5D034661,0x7BD8,0x4AD5,{ 0x9E,0xBF,0x81,0xE6,0x34,0x72,0x63,0xB1 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocumentStatics>{ static constexpr guid value{ 0x5543D254,0xD757,0x4B79,{ 0x95,0x39,0x23,0x2B,0x18,0xF5,0x0B,0xF1 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDocumentType>{ static constexpr guid value{ 0xF7342425,0x9781,0x4964,{ 0x8E,0x94,0x9B,0x1C,0x6D,0xFC,0x9B,0xC7 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlDomImplementation>{ static constexpr guid value{ 0x6DE58132,0xF11D,0x4FBB,{ 0x8C,0xC6,0x58,0x3C,0xBA,0x93,0x11,0x2F } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlElement>{ static constexpr guid value{ 0x2DFB8A1F,0x6B10,0x4EF8,{ 0x9F,0x83,0xEF,0xCC,0xE8,0xFA,0xEC,0x37 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlEntityReference>{ static constexpr guid value{ 0x2E2F47BC,0xC3D0,0x4CCF,{ 0xBB,0x86,0x0A,0xB8,0xC3,0x6A,0x61,0xCF } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlLoadSettings>{ static constexpr guid value{ 0x58AA07A8,0xFED6,0x46F7,{ 0xB4,0xC5,0xFB,0x1B,0xA7,0x21,0x08,0xD6 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlNamedNodeMap>{ static constexpr guid value{ 0xB3A69EB0,0xAAB0,0x4B82,{ 0xA6,0xFA,0xB1,0x45,0x3F,0x7C,0x02,0x1B } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlNode>{ static constexpr guid value{ 0x1C741D59,0x2122,0x47D5,{ 0xA8,0x56,0x83,0xF3,0xD4,0x21,0x48,0x75 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlNodeList>{ static constexpr guid value{ 0x8C60AD77,0x83A4,0x4EC1,{ 0x9C,0x54,0x7B,0xA4,0x29,0xE1,0x3D,0xA6 } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlNodeSelector>{ static constexpr guid value{ 0x63DBBA8B,0xD0DB,0x4FE1,{ 0xB7,0x45,0xF9,0x43,0x3A,0xFD,0xC2,0x5B } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlNodeSerializer>{ static constexpr guid value{ 0x5CC5B382,0xE6DD,0x4991,{ 0xAB,0xEF,0x06,0xD8,0xD2,0xE7,0xBD,0x0C } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlProcessingInstruction>{ static constexpr guid value{ 0x2707FD1E,0x1E92,0x4ECE,{ 0xB6,0xF4,0x26,0xF0,0x69,0x07,0x8D,0xDC } }; };
+template <> struct guid_storage<Windows::Data::Xml::Dom::IXmlText>{ static constexpr guid value{ 0xF931A4CB,0x308D,0x4760,{ 0xA1,0xD5,0x43,0xB6,0x74,0x50,0xAC,0x7E } }; };
 template <> struct default_interface<Windows::Data::Xml::Dom::DtdEntity>{ using type = Windows::Data::Xml::Dom::IDtdEntity; };
 template <> struct default_interface<Windows::Data::Xml::Dom::DtdNotation>{ using type = Windows::Data::Xml::Dom::IDtdNotation; };
 template <> struct default_interface<Windows::Data::Xml::Dom::XmlAttribute>{ using type = Windows::Data::Xml::Dom::IXmlAttribute; };
@@ -205,6 +205,212 @@ template <> struct default_interface<Windows::Data::Xml::Dom::XmlNamedNodeMap>{ 
 template <> struct default_interface<Windows::Data::Xml::Dom::XmlNodeList>{ using type = Windows::Data::Xml::Dom::IXmlNodeList; };
 template <> struct default_interface<Windows::Data::Xml::Dom::XmlProcessingInstruction>{ using type = Windows::Data::Xml::Dom::IXmlProcessingInstruction; };
 template <> struct default_interface<Windows::Data::Xml::Dom::XmlText>{ using type = Windows::Data::Xml::Dom::IXmlText; };
+
+template <> struct abi<Windows::Data::Xml::Dom::IDtdEntity>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PublicId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NotationName(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IDtdNotation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PublicId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SystemId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlAttribute>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Specified(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Value(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Value(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlCDataSection>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlCharacterData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL SubstringData(uint32_t offset, uint32_t count, void** data) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendData(void* data) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertData(uint32_t offset, void* data) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteData(uint32_t offset, uint32_t count) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceData(uint32_t offset, uint32_t count, void* data) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlComment>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocument>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Doctype(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Implementation(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DocumentElement(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateElement(void* tagName, void** newElement) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDocumentFragment(void** newDocumentFragment) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateTextNode(void* data, void** newTextNode) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateComment(void* data, void** newComment) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateProcessingInstruction(void* target, void* data, void** newProcessingInstruction) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttribute(void* name, void** newAttribute) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateEntityReference(void* name, void** newEntityReference) noexcept = 0;
+    virtual int32_t WINRT_CALL GetElementsByTagName(void* tagName, void** elements) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateCDataSection(void* data, void** newCDataSection) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DocumentUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateAttributeNS(void* namespaceUri, void* qualifiedName, void** newAttribute) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateElementNS(void* namespaceUri, void* qualifiedName, void** newElement) noexcept = 0;
+    virtual int32_t WINRT_CALL GetElementById(void* elementId, void** element) noexcept = 0;
+    virtual int32_t WINRT_CALL ImportNode(void* node, bool deep, void** newNode) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentFragment>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentIO>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadXml(void* xml) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadXmlWithSettings(void* xml, void* loadSettings) noexcept = 0;
+    virtual int32_t WINRT_CALL SaveToFileAsync(void* file, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentIO2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadXmlFromBuffer(void* buffer) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadXmlFromBufferWithSettings(void* buffer, void* loadSettings) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL LoadFromUriAsync(void* uri, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromUriWithSettingsAsync(void* uri, void* loadSettings, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromFileAsync(void* file, void** asyncInfo) noexcept = 0;
+    virtual int32_t WINRT_CALL LoadFromFileWithSettingsAsync(void* file, void* loadSettings, void** asyncInfo) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentType>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Entities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Notations(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlDomImplementation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL HasFeature(void* feature, void* version, bool* featureSupported) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlElement>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_TagName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAttribute(void* attributeName, void** attributeValue) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAttribute(void* attributeName, void* attributeValue) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAttribute(void* attributeName) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAttributeNode(void* attributeName, void** attributeNode) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAttributeNode(void* newAttribute, void** previousAttribute) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAttributeNode(void* attributeNode, void** removedAttribute) noexcept = 0;
+    virtual int32_t WINRT_CALL GetElementsByTagName(void* tagName, void** elements) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAttributeNS(void* namespaceUri, void* qualifiedName, void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAttributeNS(void* namespaceUri, void* localName, void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveAttributeNS(void* namespaceUri, void* localName) noexcept = 0;
+    virtual int32_t WINRT_CALL SetAttributeNodeNS(void* newAttribute, void** previousAttribute) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAttributeNodeNS(void* namespaceUri, void* localName, void** previousAttribute) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlEntityReference>{ struct type : IInspectable
+{
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlLoadSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_MaxElementDepth(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MaxElementDepth(uint32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProhibitDtd(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ProhibitDtd(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ResolveExternals(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ResolveExternals(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ValidateOnParse(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ValidateOnParse(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ElementContentWhiteSpace(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ElementContentWhiteSpace(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlNamedNodeMap>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Item(uint32_t index, void** node) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNamedItem(void* name, void** node) noexcept = 0;
+    virtual int32_t WINRT_CALL SetNamedItem(void* node, void** previousNode) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveNamedItem(void* name, void** previousNode) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNamedItemNS(void* namespaceUri, void* name, void** node) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveNamedItemNS(void* namespaceUri, void* name, void** previousNode) noexcept = 0;
+    virtual int32_t WINRT_CALL SetNamedItemNS(void* node, void** previousNode) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlNode>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_NodeValue(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_NodeValue(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NodeType(Windows::Data::Xml::Dom::NodeType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NodeName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ParentNode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ChildNodes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FirstChild(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LastChild(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviousSibling(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NextSibling(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Attributes(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL HasChildNodes(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OwnerDocument(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL InsertBefore(void* newChild, void* referenceChild, void** insertedChild) noexcept = 0;
+    virtual int32_t WINRT_CALL ReplaceChild(void* newChild, void* referenceChild, void** previousChild) noexcept = 0;
+    virtual int32_t WINRT_CALL RemoveChild(void* childNode, void** removedChild) noexcept = 0;
+    virtual int32_t WINRT_CALL AppendChild(void* newChild, void** appendedChild) noexcept = 0;
+    virtual int32_t WINRT_CALL CloneNode(bool deep, void** newNode) noexcept = 0;
+    virtual int32_t WINRT_CALL get_NamespaceUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LocalName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Prefix(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL Normalize() noexcept = 0;
+    virtual int32_t WINRT_CALL put_Prefix(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeList>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Length(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL Item(uint32_t index, void** node) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeSelector>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SelectSingleNode(void* xpath, void** node) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectNodes(void* xpath, void** nodelist) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectSingleNodeNS(void* xpath, void* namespaces, void** node) noexcept = 0;
+    virtual int32_t WINRT_CALL SelectNodesNS(void* xpath, void* namespaces, void** nodelist) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeSerializer>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetXml(void** outerXml) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InnerText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_InnerText(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlProcessingInstruction>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Target(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Data(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Data(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Data::Xml::Dom::IXmlText>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SplitText(uint32_t offset, void** secondPart) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_Data_Xml_Dom_IDtdEntity
@@ -457,211 +663,5 @@ struct consume_Windows_Data_Xml_Dom_IXmlText
     Windows::Data::Xml::Dom::IXmlText SplitText(uint32_t offset) const;
 };
 template <> struct consume<Windows::Data::Xml::Dom::IXmlText> { template <typename D> using type = consume_Windows_Data_Xml_Dom_IXmlText<D>; };
-
-template <> struct abi<Windows::Data::Xml::Dom::IDtdEntity>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PublicId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NotationName(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IDtdNotation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PublicId(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_SystemId(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlAttribute>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Specified(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Value(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Value(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlCDataSection>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlCharacterData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Data(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall SubstringData(uint32_t offset, uint32_t count, HSTRING* data) noexcept = 0;
-    virtual HRESULT __stdcall AppendData(HSTRING data) noexcept = 0;
-    virtual HRESULT __stdcall InsertData(uint32_t offset, HSTRING data) noexcept = 0;
-    virtual HRESULT __stdcall DeleteData(uint32_t offset, uint32_t count) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceData(uint32_t offset, uint32_t count, HSTRING data) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlComment>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocument>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Doctype(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Implementation(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_DocumentElement(void** value) noexcept = 0;
-    virtual HRESULT __stdcall CreateElement(HSTRING tagName, void** newElement) noexcept = 0;
-    virtual HRESULT __stdcall CreateDocumentFragment(void** newDocumentFragment) noexcept = 0;
-    virtual HRESULT __stdcall CreateTextNode(HSTRING data, void** newTextNode) noexcept = 0;
-    virtual HRESULT __stdcall CreateComment(HSTRING data, void** newComment) noexcept = 0;
-    virtual HRESULT __stdcall CreateProcessingInstruction(HSTRING target, HSTRING data, void** newProcessingInstruction) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttribute(HSTRING name, void** newAttribute) noexcept = 0;
-    virtual HRESULT __stdcall CreateEntityReference(HSTRING name, void** newEntityReference) noexcept = 0;
-    virtual HRESULT __stdcall GetElementsByTagName(HSTRING tagName, void** elements) noexcept = 0;
-    virtual HRESULT __stdcall CreateCDataSection(HSTRING data, void** newCDataSection) noexcept = 0;
-    virtual HRESULT __stdcall get_DocumentUri(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall CreateAttributeNS(void* namespaceUri, HSTRING qualifiedName, void** newAttribute) noexcept = 0;
-    virtual HRESULT __stdcall CreateElementNS(void* namespaceUri, HSTRING qualifiedName, void** newElement) noexcept = 0;
-    virtual HRESULT __stdcall GetElementById(HSTRING elementId, void** element) noexcept = 0;
-    virtual HRESULT __stdcall ImportNode(void* node, bool deep, void** newNode) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentFragment>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentIO>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadXml(HSTRING xml) noexcept = 0;
-    virtual HRESULT __stdcall LoadXmlWithSettings(HSTRING xml, void* loadSettings) noexcept = 0;
-    virtual HRESULT __stdcall SaveToFileAsync(void* file, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentIO2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadXmlFromBuffer(void* buffer) noexcept = 0;
-    virtual HRESULT __stdcall LoadXmlFromBufferWithSettings(void* buffer, void* loadSettings) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall LoadFromUriAsync(void* uri, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromUriWithSettingsAsync(void* uri, void* loadSettings, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromFileAsync(void* file, void** asyncInfo) noexcept = 0;
-    virtual HRESULT __stdcall LoadFromFileWithSettingsAsync(void* file, void* loadSettings, void** asyncInfo) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDocumentType>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Entities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Notations(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlDomImplementation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall HasFeature(HSTRING feature, void* version, bool* featureSupported) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlElement>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_TagName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall GetAttribute(HSTRING attributeName, HSTRING* attributeValue) noexcept = 0;
-    virtual HRESULT __stdcall SetAttribute(HSTRING attributeName, HSTRING attributeValue) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAttribute(HSTRING attributeName) noexcept = 0;
-    virtual HRESULT __stdcall GetAttributeNode(HSTRING attributeName, void** attributeNode) noexcept = 0;
-    virtual HRESULT __stdcall SetAttributeNode(void* newAttribute, void** previousAttribute) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAttributeNode(void* attributeNode, void** removedAttribute) noexcept = 0;
-    virtual HRESULT __stdcall GetElementsByTagName(HSTRING tagName, void** elements) noexcept = 0;
-    virtual HRESULT __stdcall SetAttributeNS(void* namespaceUri, HSTRING qualifiedName, HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall GetAttributeNS(void* namespaceUri, HSTRING localName, HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall RemoveAttributeNS(void* namespaceUri, HSTRING localName) noexcept = 0;
-    virtual HRESULT __stdcall SetAttributeNodeNS(void* newAttribute, void** previousAttribute) noexcept = 0;
-    virtual HRESULT __stdcall GetAttributeNodeNS(void* namespaceUri, HSTRING localName, void** previousAttribute) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlEntityReference>{ struct type : IInspectable
-{
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlLoadSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_MaxElementDepth(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MaxElementDepth(uint32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProhibitDtd(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ProhibitDtd(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ResolveExternals(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ResolveExternals(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ValidateOnParse(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ValidateOnParse(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ElementContentWhiteSpace(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ElementContentWhiteSpace(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlNamedNodeMap>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall Item(uint32_t index, void** node) noexcept = 0;
-    virtual HRESULT __stdcall GetNamedItem(HSTRING name, void** node) noexcept = 0;
-    virtual HRESULT __stdcall SetNamedItem(void* node, void** previousNode) noexcept = 0;
-    virtual HRESULT __stdcall RemoveNamedItem(HSTRING name, void** previousNode) noexcept = 0;
-    virtual HRESULT __stdcall GetNamedItemNS(void* namespaceUri, HSTRING name, void** node) noexcept = 0;
-    virtual HRESULT __stdcall RemoveNamedItemNS(void* namespaceUri, HSTRING name, void** previousNode) noexcept = 0;
-    virtual HRESULT __stdcall SetNamedItemNS(void* node, void** previousNode) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlNode>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_NodeValue(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_NodeValue(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NodeType(Windows::Data::Xml::Dom::NodeType* value) noexcept = 0;
-    virtual HRESULT __stdcall get_NodeName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ParentNode(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ChildNodes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_FirstChild(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LastChild(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviousSibling(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_NextSibling(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Attributes(void** value) noexcept = 0;
-    virtual HRESULT __stdcall HasChildNodes(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OwnerDocument(void** value) noexcept = 0;
-    virtual HRESULT __stdcall InsertBefore(void* newChild, void* referenceChild, void** insertedChild) noexcept = 0;
-    virtual HRESULT __stdcall ReplaceChild(void* newChild, void* referenceChild, void** previousChild) noexcept = 0;
-    virtual HRESULT __stdcall RemoveChild(void* childNode, void** removedChild) noexcept = 0;
-    virtual HRESULT __stdcall AppendChild(void* newChild, void** appendedChild) noexcept = 0;
-    virtual HRESULT __stdcall CloneNode(bool deep, void** newNode) noexcept = 0;
-    virtual HRESULT __stdcall get_NamespaceUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_LocalName(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Prefix(void** value) noexcept = 0;
-    virtual HRESULT __stdcall Normalize() noexcept = 0;
-    virtual HRESULT __stdcall put_Prefix(void* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeList>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Length(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall Item(uint32_t index, void** node) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeSelector>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SelectSingleNode(HSTRING xpath, void** node) noexcept = 0;
-    virtual HRESULT __stdcall SelectNodes(HSTRING xpath, void** nodelist) noexcept = 0;
-    virtual HRESULT __stdcall SelectSingleNodeNS(HSTRING xpath, void* namespaces, void** node) noexcept = 0;
-    virtual HRESULT __stdcall SelectNodesNS(HSTRING xpath, void* namespaces, void** nodelist) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlNodeSerializer>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetXml(HSTRING* outerXml) noexcept = 0;
-    virtual HRESULT __stdcall get_InnerText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_InnerText(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlProcessingInstruction>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Target(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Data(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Data(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Data::Xml::Dom::IXmlText>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SplitText(uint32_t offset, void** secondPart) noexcept = 0;
-};};
 
 }

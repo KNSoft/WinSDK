@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Storage.2.h"
@@ -64,9 +64,9 @@ template <typename D> bool consume_Windows_Media_AppRecording_IAppRecordingResul
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_Media_AppRecording_IAppRecordingResult<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_Media_AppRecording_IAppRecordingResult<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::Media::AppRecording::IAppRecordingResult)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -92,9 +92,9 @@ template <typename D> bool consume_Windows_Media_AppRecording_IAppRecordingSaveS
     return value;
 }
 
-template <typename D> HRESULT consume_Windows_Media_AppRecording_IAppRecordingSaveScreenshotResult<D>::ExtendedError() const
+template <typename D> winrt::hresult consume_Windows_Media_AppRecording_IAppRecordingSaveScreenshotResult<D>::ExtendedError() const
 {
-    HRESULT value{};
+    winrt::hresult value{};
     check_hresult(WINRT_SHIM(Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult)->get_ExtendedError(put_abi(value)));
     return value;
 }
@@ -214,430 +214,374 @@ template <typename D> bool consume_Windows_Media_AppRecording_IAppRecordingStatu
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingManager> : produce_base<D, Windows::Media::AppRecording::IAppRecordingManager>
 {
-    HRESULT __stdcall GetStatus(void** result) noexcept final
+    int32_t WINRT_CALL GetStatus(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetStatus, WINRT_WRAP(Windows::Media::AppRecording::AppRecordingStatus));
             *result = detach_from<Windows::Media::AppRecording::AppRecordingStatus>(this->shim().GetStatus());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall StartRecordingToFileAsync(void* file, void** operation) noexcept final
+    int32_t WINRT_CALL StartRecordingToFileAsync(void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(StartRecordingToFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingResult>), Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingResult>>(this->shim().StartRecordingToFileAsync(*reinterpret_cast<Windows::Storage::StorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RecordTimeSpanToFileAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void* file, void** operation) noexcept final
+    int32_t WINRT_CALL RecordTimeSpanToFileAsync(Windows::Foundation::DateTime startTime, Windows::Foundation::TimeSpan duration, void* file, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RecordTimeSpanToFileAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingResult>), Windows::Foundation::DateTime const, Windows::Foundation::TimeSpan const, Windows::Storage::StorageFile const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingResult>>(this->shim().RecordTimeSpanToFileAsync(*reinterpret_cast<Windows::Foundation::DateTime const*>(&startTime), *reinterpret_cast<Windows::Foundation::TimeSpan const*>(&duration), *reinterpret_cast<Windows::Storage::StorageFile const*>(&file)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SupportedScreenshotMediaEncodingSubtypes(void** value) noexcept final
+    int32_t WINRT_CALL get_SupportedScreenshotMediaEncodingSubtypes(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SupportedScreenshotMediaEncodingSubtypes, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().SupportedScreenshotMediaEncodingSubtypes());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SaveScreenshotToFilesAsync(void* folder, HSTRING filenamePrefix, Windows::Media::AppRecording::AppRecordingSaveScreenshotOption option, void* requestedFormats, void** operation) noexcept final
+    int32_t WINRT_CALL SaveScreenshotToFilesAsync(void* folder, void* filenamePrefix, Windows::Media::AppRecording::AppRecordingSaveScreenshotOption option, void* requestedFormats, void** operation) noexcept final
     {
         try
         {
             *operation = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SaveScreenshotToFilesAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingSaveScreenshotResult>), Windows::Storage::StorageFolder const, hstring const, Windows::Media::AppRecording::AppRecordingSaveScreenshotOption const, Windows::Foundation::Collections::IIterable<hstring> const);
             *operation = detach_from<Windows::Foundation::IAsyncOperation<Windows::Media::AppRecording::AppRecordingSaveScreenshotResult>>(this->shim().SaveScreenshotToFilesAsync(*reinterpret_cast<Windows::Storage::StorageFolder const*>(&folder), *reinterpret_cast<hstring const*>(&filenamePrefix), *reinterpret_cast<Windows::Media::AppRecording::AppRecordingSaveScreenshotOption const*>(&option), *reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&requestedFormats)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingManagerStatics> : produce_base<D, Windows::Media::AppRecording::IAppRecordingManagerStatics>
 {
-    HRESULT __stdcall GetDefault(void** result) noexcept final
+    int32_t WINRT_CALL GetDefault(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDefault, WINRT_WRAP(Windows::Media::AppRecording::AppRecordingManager));
             *result = detach_from<Windows::Media::AppRecording::AppRecordingManager>(this->shim().GetDefault());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingResult> : produce_base<D, Windows::Media::AppRecording::IAppRecordingResult>
 {
-    HRESULT __stdcall get_Succeeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_Succeeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Succeeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Succeeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_Duration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Duration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().Duration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsFileTruncated(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsFileTruncated(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsFileTruncated, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsFileTruncated());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult> : produce_base<D, Windows::Media::AppRecording::IAppRecordingSaveScreenshotResult>
 {
-    HRESULT __stdcall get_Succeeded(bool* value) noexcept final
+    int32_t WINRT_CALL get_Succeeded(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Succeeded, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().Succeeded());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept final
+    int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_from<HRESULT>(this->shim().ExtendedError());
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(ExtendedError, WINRT_WRAP(winrt::hresult));
+            *value = detach_from<winrt::hresult>(this->shim().ExtendedError());
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SavedScreenshotInfos(void** value) noexcept final
+    int32_t WINRT_CALL get_SavedScreenshotInfos(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SavedScreenshotInfos, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Media::AppRecording::AppRecordingSavedScreenshotInfo>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Media::AppRecording::AppRecordingSavedScreenshotInfo>>(this->shim().SavedScreenshotInfos());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo> : produce_base<D, Windows::Media::AppRecording::IAppRecordingSavedScreenshotInfo>
 {
-    HRESULT __stdcall get_File(void** value) noexcept final
+    int32_t WINRT_CALL get_File(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(File, WINRT_WRAP(Windows::Storage::StorageFile));
             *value = detach_from<Windows::Storage::StorageFile>(this->shim().File());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MediaEncodingSubtype(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MediaEncodingSubtype(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MediaEncodingSubtype, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MediaEncodingSubtype());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingStatus> : produce_base<D, Windows::Media::AppRecording::IAppRecordingStatus>
 {
-    HRESULT __stdcall get_CanRecord(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanRecord(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRecord, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanRecord());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CanRecordTimeSpan(bool* value) noexcept final
+    int32_t WINRT_CALL get_CanRecordTimeSpan(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CanRecordTimeSpan, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().CanRecordTimeSpan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HistoricalBufferDuration(Windows::Foundation::TimeSpan* value) noexcept final
+    int32_t WINRT_CALL get_HistoricalBufferDuration(Windows::Foundation::TimeSpan* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HistoricalBufferDuration, WINRT_WRAP(Windows::Foundation::TimeSpan));
             *value = detach_from<Windows::Foundation::TimeSpan>(this->shim().HistoricalBufferDuration());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Details(void** value) noexcept final
+    int32_t WINRT_CALL get_Details(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Details, WINRT_WRAP(Windows::Media::AppRecording::AppRecordingStatusDetails));
             *value = detach_from<Windows::Media::AppRecording::AppRecordingStatusDetails>(this->shim().Details());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Media::AppRecording::IAppRecordingStatusDetails> : produce_base<D, Windows::Media::AppRecording::IAppRecordingStatusDetails>
 {
-    HRESULT __stdcall get_IsAnyAppBroadcasting(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAnyAppBroadcasting(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAnyAppBroadcasting, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAnyAppBroadcasting());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsCaptureResourceUnavailable(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsCaptureResourceUnavailable(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsCaptureResourceUnavailable, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsCaptureResourceUnavailable());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGameStreamInProgress(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGameStreamInProgress(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGameStreamInProgress, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGameStreamInProgress());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsTimeSpanRecordingDisabled(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsTimeSpanRecordingDisabled(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsTimeSpanRecordingDisabled, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsTimeSpanRecordingDisabled());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsGpuConstrained(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsGpuConstrained(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsGpuConstrained, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsGpuConstrained());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsAppInactive(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsAppInactive(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsAppInactive, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsAppInactive());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsBlockedForApp(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsBlockedForApp(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsBlockedForApp, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsBlockedForApp());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDisabledByUser(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDisabledByUser(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDisabledByUser, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDisabledByUser());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDisabledBySystem(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDisabledBySystem(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDisabledBySystem, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDisabledBySystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -647,7 +591,7 @@ WINRT_EXPORT namespace winrt::Windows::Media::AppRecording {
 
 inline Windows::Media::AppRecording::AppRecordingManager AppRecordingManager::GetDefault()
 {
-    return get_activation_factory<AppRecordingManager, Windows::Media::AppRecording::IAppRecordingManagerStatics>().GetDefault();
+    return impl::call_factory<AppRecordingManager, Windows::Media::AppRecording::IAppRecordingManagerStatics>([&](auto&& f) { return f.GetDefault(); });
 }
 
 }
@@ -669,5 +613,3 @@ template<> struct hash<winrt::Windows::Media::AppRecording::AppRecordingStatus> 
 template<> struct hash<winrt::Windows::Media::AppRecording::AppRecordingStatusDetails> : winrt::impl::hash_base<winrt::Windows::Media::AppRecording::AppRecordingStatusDetails> {};
 
 }
-
-WINRT_WARNING_POP

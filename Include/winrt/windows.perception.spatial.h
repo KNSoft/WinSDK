@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.perception.spatial.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -112,7 +120,7 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
-#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x30000
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
 
 #if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
@@ -148,7 +156,7 @@
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
-#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
 
 #if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
@@ -160,7 +168,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -224,11 +232,15 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x20000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
+#if !defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_SYSTEM_ANDROMEDAPLACEHOLDERCONTRACT_VERSION)
+
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x50000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
@@ -288,6 +300,48 @@ namespace ABI {
 #define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2 ABI::Windows::Perception::Spatial::ISpatialAnchor2
 
 #endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialAnchorExportSufficiency;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialAnchorExporter;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter ABI::Windows::Perception::Spatial::ISpatialAnchorExporter
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialAnchorExporterStatics;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics ABI::Windows::Perception::Spatial::ISpatialAnchorExporterStatics
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_FWD_DEFINED__
@@ -526,6 +580,20 @@ namespace ABI {
 #define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation ABI::Windows::Perception::Spatial::ISpatialLocation
 
 #endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                interface ISpatialLocation2;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 ABI::Windows::Perception::Spatial::ISpatialLocation2
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_FWD_DEFINED__
@@ -901,6 +969,79 @@ typedef IAsyncOperation<__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CS
 
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                class SpatialAnchorExportSufficiency;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE
+#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("4b6593d2-11a8-513e-838d-4226fb1e3c1f"))
+IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*, ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Perception.Spatial.SpatialAnchorExportSufficiency>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*> __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t;
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE
+#define DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("260957b8-5b76-5159-8dc5-e03d74aa5f3d"))
+IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*, ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Perception.Spatial.SpatialAnchorExportSufficiency>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency*> __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t;
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>
+//#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::ISpatialAnchorExportSufficiency*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_USE */
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 namespace ABI {
     namespace Windows {
@@ -2113,6 +2254,17 @@ namespace ABI {
         namespace Perception {
             namespace Spatial {
                 
+                typedef enum SpatialAnchorExportPurpose : int SpatialAnchorExportPurpose;
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                
                 typedef enum SpatialEntityWatcherStatus : int SpatialEntityWatcherStatus;
                 
             } /* Windows */
@@ -2243,6 +2395,21 @@ namespace ABI {
     namespace Windows {
         namespace Perception {
             namespace Spatial {
+                class SpatialAnchorExporter;
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
                 class SpatialCoordinateSystem;
             } /* Windows */
         } /* Perception */
@@ -2312,6 +2479,33 @@ namespace ABI {
 
 
 
+
+
+/*
+ *
+ * Struct Windows.Perception.Spatial.SpatialAnchorExportPurpose
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                /* [v1_enum, contract] */
+                enum SpatialAnchorExportPurpose : int
+                {
+                    SpatialAnchorExportPurpose_Relocalization = 0,
+                    SpatialAnchorExportPurpose_Sharing = 1,
+                };
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -2661,6 +2855,146 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2;
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExportSufficiency
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExportSufficiency
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency[] = L"Windows.Perception.Spatial.ISpatialAnchorExportSufficiency";
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                /* [object, uuid("77C25B2B-3409-4088-B91B-FDFD05D1648F"), exclusiveto, contract] */
+                MIDL_INTERFACE("77C25B2B-3409-4088-B91B-FDFD05D1648F")
+                ISpatialAnchorExportSufficiency : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsMinimallySufficient(
+                        /* [retval, out] */__RPC__out boolean * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SufficiencyLevel(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_RecommendedSufficiencyLevel(
+                        /* [retval, out] */__RPC__out DOUBLE * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpatialAnchorExportSufficiency=_uuidof(ISpatialAnchorExportSufficiency);
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExporter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExporter[] = L"Windows.Perception.Spatial.ISpatialAnchorExporter";
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                /* [object, uuid("9A2A4338-24FB-4269-89C5-88304AEEF20F"), exclusiveto, contract] */
+                MIDL_INTERFACE("9A2A4338-24FB-4269-89C5-88304AEEF20F")
+                ISpatialAnchorExporter : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetAnchorExportSufficiencyAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialAnchor * anchor,
+                        /* [in] */ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * * operation
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE TryExportAnchorAsync(
+                        /* [in] */__RPC__in_opt ABI::Windows::Perception::Spatial::ISpatialAnchor * anchor,
+                        /* [in] */ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose purpose,
+                        /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IOutputStream * stream,
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpatialAnchorExporter=_uuidof(ISpatialAnchorExporter);
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExporterStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExporterStatics[] = L"Windows.Perception.Spatial.ISpatialAnchorExporterStatics";
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                /* [object, uuid("ED2507B8-2475-439C-85FF-7FED341FDC88"), exclusiveto, contract] */
+                MIDL_INTERFACE("ED2507B8-2475-439C-85FF-7FED341FDC88")
+                ISpatialAnchorExporterStatics : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE GetDefault(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Perception::Spatial::ISpatialAnchorExporter * * value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE RequestAccessAsync(
+                        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpatialAnchorExporterStatics=_uuidof(ISpatialAnchorExporterStatics);
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3470,10 +3804,18 @@ namespace ABI {
                     /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteLinearAcceleration(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
                         ) = 0;
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularVelocity(
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    DEPRECATED("Use AbsoluteAngularVelocityAxisAngle instead of AbsoluteAngularVelocity. For more info, see MSDN.")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularVelocity(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Quaternion * value
                         ) = 0;
-                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularAcceleration(
+                    
+                    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    DEPRECATED("Use AbsoluteAngularAccelerationAxisAngle instead of AbsoluteAngularAcceleration. For more info, see MSDN.")
+                    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularAcceleration(
                         /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Quaternion * value
                         ) = 0;
                     
@@ -3488,6 +3830,50 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation;
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialLocation2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialLocation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialLocation2[] = L"Windows.Perception.Spatial.ISpatialLocation2";
+namespace ABI {
+    namespace Windows {
+        namespace Perception {
+            namespace Spatial {
+                /* [object, uuid("117F2416-38A7-4A18-B404-AB8FABE1D78B"), exclusiveto, contract] */
+                MIDL_INTERFACE("117F2416-38A7-4A18-B404-AB8FABE1D78B")
+                ISpatialLocation2 : public IInspectable
+                {
+                public:
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularVelocityAxisAngle(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AbsoluteAngularAccelerationAxisAngle(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Numerics::Vector3 * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISpatialLocation2=_uuidof(ISpatialLocation2);
+                
+            } /* Windows */
+        } /* Perception */
+    } /* Spatial */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -3910,6 +4296,57 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Perception.Spatial.SpatialAnchorExportSufficiency
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Perception.Spatial.ISpatialAnchorExportSufficiency ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExportSufficiency_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExportSufficiency_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialAnchorExportSufficiency[] = L"Windows.Perception.Spatial.SpatialAnchorExportSufficiency";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Perception.Spatial.ISpatialAnchorExporterStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Perception.Spatial.ISpatialAnchorExporter ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExporter_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExporter_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialAnchorExporter[] = L"Windows.Perception.Spatial.SpatialAnchorExporter";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Perception.Spatial.SpatialAnchorManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -4216,6 +4653,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Perception.Spatial.ISpatialLocation ** Default Interface **
+ *    Windows.Perception.Spatial.ISpatialLocation2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -4373,6 +4811,24 @@ typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2 __x_ABI
 
 #endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency;
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter;
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics;
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorManagerStatics;
@@ -4474,6 +4930,12 @@ typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialEntityWatcher _
 typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation;
 
 #endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2;
+
+#endif // ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_FWD_DEFINED__
 #define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocator_FWD_DEFINED__
@@ -5101,6 +5563,121 @@ interface __FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpat
 #endif // ____FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_INTERFACE_DEFINED__
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__)
+#define ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency;
+
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency;
+
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This);
+
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_Invoke(This,asyncInfo,status)	\
+    ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__)
+#define ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+
+typedef interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency;
+
+typedef struct __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl;
+
+interface __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiencyVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_put_Completed(This,handler)	\
+    ( (This)->lpVtbl -> put_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_get_Completed(This,handler)	\
+    ( (This)->lpVtbl -> get_Completed(This,handler) ) 
+#define __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_GetResults(This,results)	\
+    ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
@@ -6892,6 +7469,9 @@ typedef interface __x_ABI_CWindows_CSystem_CRemoteSystems_CIRemoteSystemSession 
 
 
 
+typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialAnchorExportPurpose __x_ABI_CWindows_CPerception_CSpatial_CSpatialAnchorExportPurpose;
+
+
 typedef enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus __x_ABI_CWindows_CPerception_CSpatial_CSpatialEntityWatcherStatus;
 
 
@@ -6969,6 +7549,31 @@ typedef struct __x_ABI_CWindows_CPerception_CSpatial_CSpatialBoundingSphere __x_
 
 
 
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Perception.Spatial.SpatialAnchorExportPurpose
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+/* [v1_enum, contract] */
+enum __x_ABI_CWindows_CPerception_CSpatial_CSpatialAnchorExportPurpose
+{
+    SpatialAnchorExportPurpose_Relocalization = 0,
+    SpatialAnchorExportPurpose_Sharing = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -7362,6 +7967,318 @@ interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2
 EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2;
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExportSufficiency
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExportSufficiency
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExportSufficiency[] = L"Windows.Perception.Spatial.ISpatialAnchorExportSufficiency";
+/* [object, uuid("77C25B2B-3409-4088-B91B-FDFD05D1648F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiencyVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsMinimallySufficient )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SufficiencyLevel )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_RecommendedSufficiencyLevel )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency * This,
+        /* [retval, out] */__RPC__out DOUBLE * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiencyVtbl;
+
+interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency
+{
+    CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiencyVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_get_IsMinimallySufficient(This,value) \
+    ( (This)->lpVtbl->get_IsMinimallySufficient(This,value) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_get_SufficiencyLevel(This,value) \
+    ( (This)->lpVtbl->get_SufficiencyLevel(This,value) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_get_RecommendedSufficiencyLevel(This,value) \
+    ( (This)->lpVtbl->get_RecommendedSufficiencyLevel(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExportSufficiency_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExporter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExporter[] = L"Windows.Perception.Spatial.ISpatialAnchorExporter";
+/* [object, uuid("9A2A4338-24FB-4269-89C5-88304AEEF20F"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetAnchorExportSufficiencyAsync )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor * anchor,
+        /* [in] */__x_ABI_CWindows_CPerception_CSpatial_CSpatialAnchorExportPurpose purpose,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency * * operation
+        );
+    HRESULT ( STDMETHODCALLTYPE *TryExportAnchorAsync )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchor * anchor,
+        /* [in] */__x_ABI_CWindows_CPerception_CSpatial_CSpatialAnchorExportPurpose purpose,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIOutputStream * stream,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_boolean * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterVtbl;
+
+interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter
+{
+    CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_GetAnchorExportSufficiencyAsync(This,anchor,purpose,operation) \
+    ( (This)->lpVtbl->GetAnchorExportSufficiencyAsync(This,anchor,purpose,operation) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_TryExportAnchorAsync(This,anchor,purpose,stream,operation) \
+    ( (This)->lpVtbl->TryExportAnchorAsync(This,anchor,purpose,stream,operation) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialAnchorExporterStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialAnchorExporterStatics[] = L"Windows.Perception.Spatial.ISpatialAnchorExporterStatics";
+/* [object, uuid("ED2507B8-2475-439C-85FF-7FED341FDC88"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDefault )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporter * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *RequestAccessAsync )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus * * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStaticsVtbl;
+
+interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_GetDefault(This,value) \
+    ( (This)->lpVtbl->GetDefault(This,value) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_RequestAccessAsync(This,result) \
+    ( (This)->lpVtbl->RequestAccessAsync(This,result) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialAnchorExporterStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -9147,11 +10064,19 @@ HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
         __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularVelocity )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("Use AbsoluteAngularVelocityAxisAngle instead of AbsoluteAngularVelocity. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularVelocity )(
         __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion * value
         );
-    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularAcceleration )(
+    
+    #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    DEPRECATED("Use AbsoluteAngularAccelerationAxisAngle instead of AbsoluteAngularAcceleration. For more info, see MSDN.")
+    #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularAcceleration )(
         __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation * This,
         /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CQuaternion * value
         );
@@ -9195,9 +10120,17 @@ interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation
 #define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_get_AbsoluteLinearAcceleration(This,value) \
     ( (This)->lpVtbl->get_AbsoluteLinearAcceleration(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("Use AbsoluteAngularVelocityAxisAngle instead of AbsoluteAngularVelocity. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_get_AbsoluteAngularVelocity(This,value) \
     ( (This)->lpVtbl->get_AbsoluteAngularVelocity(This,value) )
 
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+DEPRECATED("Use AbsoluteAngularAccelerationAxisAngle instead of AbsoluteAngularAcceleration. For more info, see MSDN.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 #define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_get_AbsoluteAngularAcceleration(This,value) \
     ( (This)->lpVtbl->get_AbsoluteAngularAcceleration(This,value) )
 
@@ -9208,6 +10141,106 @@ interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation
 EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation;
 #endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Perception.Spatial.ISpatialLocation2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Perception.Spatial.SpatialLocation
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+#if !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Perception_Spatial_ISpatialLocation2[] = L"Windows.Perception.Spatial.ISpatialLocation2";
+/* [object, uuid("117F2416-38A7-4A18-B404-AB8FABE1D78B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularVelocityAxisAngle )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AbsoluteAngularAccelerationAxisAngle )(
+        __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2 * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CNumerics_CVector3 * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2Vtbl;
+
+interface __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_get_AbsoluteAngularVelocityAxisAngle(This,value) \
+    ( (This)->lpVtbl->get_AbsoluteAngularVelocityAxisAngle(This,value) )
+
+#define __x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_get_AbsoluteAngularAccelerationAxisAngle(This,value) \
+    ( (This)->lpVtbl->get_AbsoluteAngularAccelerationAxisAngle(This,value) )
+
+
+#endif /* COBJMACROS */
+
+
+EXTERN_C const IID IID___x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2;
+#endif /* !defined(____x_ABI_CWindows_CPerception_CSpatial_CISpatialLocation2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
 
 
 /*
@@ -10102,6 +11135,57 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Perception.Spatial.SpatialAnchorExportSufficiency
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Perception.Spatial.ISpatialAnchorExportSufficiency ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExportSufficiency_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExportSufficiency_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialAnchorExportSufficiency[] = L"Windows.Perception.Spatial.SpatialAnchorExportSufficiency";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
+ * Class Windows.Perception.Spatial.SpatialAnchorExporter
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Perception.Spatial.ISpatialAnchorExporterStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Perception.Spatial.ISpatialAnchorExporter ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+#ifndef RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExporter_DEFINED
+#define RUNTIMECLASS_Windows_Perception_Spatial_SpatialAnchorExporter_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Perception_Spatial_SpatialAnchorExporter[] = L"Windows.Perception.Spatial.SpatialAnchorExporter";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
+
+
+/*
+ *
  * Class Windows.Perception.Spatial.SpatialAnchorManager
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 2.0
@@ -10408,6 +11492,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Perception.Spatial.ISpatialLocation ** Default Interface **
+ *    Windows.Perception.Spatial.ISpatialLocation2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

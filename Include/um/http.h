@@ -2413,25 +2413,25 @@ HTTPAPI_LINKAGE
 ULONG
 WINAPI
 HttpSetRequestQueueProperty(
-    IN HANDLE RequestQueueHandle,
-    IN HTTP_SERVER_PROPERTY Property,
+    _In_ HANDLE RequestQueueHandle,
+    _In_ HTTP_SERVER_PROPERTY Property,
     _In_reads_bytes_(PropertyInformationLength) PVOID PropertyInformation,
-    IN ULONG PropertyInformationLength,
-    _Reserved_ IN ULONG Reserved1,
-    _Reserved_ IN PVOID Reserved2
+    _In_ ULONG PropertyInformationLength,
+    _Reserved_ _In_ ULONG Reserved1,
+    _Reserved_ _In_ PVOID Reserved2
     );
 
 HTTPAPI_LINKAGE
 ULONG
 WINAPI
 HttpQueryRequestQueueProperty(
-    IN HANDLE RequestQueueProperty,
-    IN HTTP_SERVER_PROPERTY Property,
+    _In_ HANDLE RequestQueueProperty,
+    _In_ HTTP_SERVER_PROPERTY Property,
     _Out_writes_bytes_to_opt_(PropertyInformationLength, *ReturnLength) PVOID PropertyInformation,
-    IN ULONG PropertyInformationLength,
-    _Reserved_ IN ULONG Reserved1,
+    _In_ ULONG PropertyInformationLength,
+    _Reserved_ _In_ ULONG Reserved1,
     _Out_opt_ PULONG ReturnLength OPTIONAL,
-    _Reserved_ IN PVOID Reserved2
+    _Reserved_ _In_ PVOID Reserved2
     );
 
 HTTPAPI_LINKAGE
@@ -2845,15 +2845,14 @@ HTTPAPI_LINKAGE
 ULONG
 WINAPI
 HttpQueryServiceConfiguration(
-    _Reserved_ IN HANDLE ServiceHandle,
-    IN HTTP_SERVICE_CONFIG_ID ConfigId,
-    _In_reads_bytes_opt_(InputLength) IN PVOID pInput OPTIONAL,
-    IN ULONG InputLength OPTIONAL,
-    _Out_writes_bytes_to_opt_(OutputLength, *pReturnLength)
-    OUT PVOID pOutput OPTIONAL,
-    IN ULONG OutputLength OPTIONAL,
-    _Out_opt_ OUT PULONG pReturnLength OPTIONAL,
-    _Reserved_ IN LPOVERLAPPED pOverlapped
+    _Reserved_ _In_ HANDLE ServiceHandle,
+    _In_ HTTP_SERVICE_CONFIG_ID ConfigId,
+    _In_reads_bytes_opt_(InputLength) PVOID pInput,
+    _In_ ULONG InputLength,
+    _Out_writes_bytes_to_opt_(OutputLength, *pReturnLength) PVOID pOutput,
+    _In_ ULONG OutputLength,
+    _Out_opt_ PULONG pReturnLength,
+    _Reserved_ _In_ LPOVERLAPPED pOverlapped
     );
 
 ULONG

@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -11,6 +11,7 @@
 #include "winrt/impl/Windows.Storage.Streams.1.h"
 #include "winrt/impl/Windows.UI.1.h"
 #include "winrt/impl/Windows.UI.Xaml.1.h"
+#include "winrt/impl/Windows.UI.Composition.1.h"
 #include "winrt/impl/Windows.UI.Xaml.Controls.1.h"
 #include "winrt/impl/Windows.UI.Xaml.Controls.Maps.1.h"
 
@@ -119,7 +120,7 @@ struct WINRT_EBO MapContextRequestedEventArgs :
 struct WINRT_EBO MapControl :
     Windows::UI::Xaml::Controls::Maps::IMapControl,
     impl::base<MapControl, Windows::UI::Xaml::Controls::Control, Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DependencyObject>,
-    impl::require<MapControl, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IControl5, Windows::UI::Xaml::Controls::IControlOverrides, Windows::UI::Xaml::Controls::IControlOverrides6, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::Maps::IMapControl2, Windows::UI::Xaml::Controls::Maps::IMapControl3, Windows::UI::Xaml::Controls::Maps::IMapControl4, Windows::UI::Xaml::Controls::Maps::IMapControl5, Windows::UI::Xaml::Controls::Maps::IMapControl6, Windows::UI::Xaml::Controls::Maps::IMapControl7, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8>
+    impl::require<MapControl, Windows::UI::Composition::IAnimationObject, Windows::UI::Xaml::Controls::IControl, Windows::UI::Xaml::Controls::IControl2, Windows::UI::Xaml::Controls::IControl3, Windows::UI::Xaml::Controls::IControl4, Windows::UI::Xaml::Controls::IControl5, Windows::UI::Xaml::Controls::IControl7, Windows::UI::Xaml::Controls::IControlOverrides, Windows::UI::Xaml::Controls::IControlOverrides6, Windows::UI::Xaml::Controls::IControlProtected, Windows::UI::Xaml::Controls::Maps::IMapControl2, Windows::UI::Xaml::Controls::Maps::IMapControl3, Windows::UI::Xaml::Controls::Maps::IMapControl4, Windows::UI::Xaml::Controls::Maps::IMapControl5, Windows::UI::Xaml::Controls::Maps::IMapControl6, Windows::UI::Xaml::Controls::Maps::IMapControl7, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IFrameworkElement, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4, Windows::UI::Xaml::IFrameworkElement6, Windows::UI::Xaml::IFrameworkElement7, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IFrameworkElementProtected7, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IUIElement7, Windows::UI::Xaml::IUIElement8, Windows::UI::Xaml::IUIElement9, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElementOverrides7, Windows::UI::Xaml::IUIElementOverrides8, Windows::UI::Xaml::IUIElementOverrides9>
 {
     MapControl(std::nullptr_t) noexcept {}
     MapControl();
@@ -572,7 +573,8 @@ struct WINRT_EBO MapTileBitmapRequestDeferral :
 };
 
 struct WINRT_EBO MapTileBitmapRequestedEventArgs :
-    Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs
+    Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs,
+    impl::require<MapTileBitmapRequestedEventArgs, Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs2>
 {
     MapTileBitmapRequestedEventArgs(std::nullptr_t) noexcept {}
     MapTileBitmapRequestedEventArgs();
@@ -590,7 +592,7 @@ struct WINRT_EBO MapTileDataSource :
 struct WINRT_EBO MapTileSource :
     Windows::UI::Xaml::Controls::Maps::IMapTileSource,
     impl::base<MapTileSource, Windows::UI::Xaml::DependencyObject>,
-    impl::require<MapTileSource, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<MapTileSource, Windows::UI::Xaml::Controls::Maps::IMapTileSource2, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
     MapTileSource(std::nullptr_t) noexcept {}
     MapTileSource();
@@ -609,6 +611,10 @@ struct WINRT_EBO MapTileSource :
     static Windows::UI::Xaml::DependencyProperty ZIndexProperty();
     static Windows::UI::Xaml::DependencyProperty TilePixelSizeProperty();
     static Windows::UI::Xaml::DependencyProperty VisibleProperty();
+    static Windows::UI::Xaml::DependencyProperty AnimationStateProperty();
+    static Windows::UI::Xaml::DependencyProperty AutoPlayProperty();
+    static Windows::UI::Xaml::DependencyProperty FrameCountProperty();
+    static Windows::UI::Xaml::DependencyProperty FrameDurationProperty();
 };
 
 struct WINRT_EBO MapTileUriRequest :
@@ -626,7 +632,8 @@ struct WINRT_EBO MapTileUriRequestDeferral :
 };
 
 struct WINRT_EBO MapTileUriRequestedEventArgs :
-    Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs
+    Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs,
+    impl::require<MapTileUriRequestedEventArgs, Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs2>
 {
     MapTileUriRequestedEventArgs(std::nullptr_t) noexcept {}
     MapTileUriRequestedEventArgs();

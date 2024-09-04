@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.graphics.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0215 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0223 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -76,6 +76,14 @@
 #pragma warning(disable: 4996)
 #endif
 
+// Ensure that the setting of the /ns_prefix command line switch is consistent for all headers.
+// If you get an error from the compiler indicating "warning C4005: 'CHECK_NS_PREFIX_STATE': macro redefinition", this
+// indicates that you have included two different headers with different settings for the /ns_prefix MIDL command line switch
+#if !defined(DISABLE_NS_PREFIX_CHECKS)
+#define CHECK_NS_PREFIX_STATE "always"
+#endif // !defined(DISABLE_NS_PREFIX_CHECKS)
+
+
 #pragma push_macro("MIDL_CONST_ID")
 #undef MIDL_CONST_ID
 #define MIDL_CONST_ID const __declspec(selectany)
@@ -92,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x60000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -120,6 +128,8 @@
 #include "EventToken.h"
 #include "windowscontracts.h"
 #include "Windows.Foundation.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
 /* Forward Declarations */
@@ -134,6 +144,47 @@ namespace ABI {
 #define __x_ABI_CWindows_CGraphics_CIGeometrySource2D ABI::Windows::Graphics::IGeometrySource2D
 
 #endif // ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
+
+// Parameterized interface forward declarations (C++)
+
+// Collection interface definitions
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            struct SizeInt32;
+            
+        } /* Windows */
+    } /* Graphics */} /* ABI */
+
+
+#ifndef DEF___FIReference_1_Windows__CGraphics__CSizeInt32_USE
+#define DEF___FIReference_1_Windows__CGraphics__CSizeInt32_USE
+#if !defined(RO_NO_TEMPLATE_NAME)
+namespace ABI { namespace Windows { namespace Foundation {
+template <>
+struct __declspec(uuid("b77aa86d-2d6e-55f1-8f99-64ac5c05328b"))
+IReference<struct ABI::Windows::Graphics::SizeInt32> : IReference_impl<struct ABI::Windows::Graphics::SizeInt32> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IReference`1<Windows.Graphics.SizeInt32>"; 
+    }
+};
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
+typedef IReference<struct ABI::Windows::Graphics::SizeInt32> __FIReference_1_Windows__CGraphics__CSizeInt32_t;
+#define __FIReference_1_Windows__CGraphics__CSizeInt32 ABI::Windows::Foundation::__FIReference_1_Windows__CGraphics__CSizeInt32_t
+/* ABI */ } /* Windows */ } /* Foundation */ }
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIReference_1_Windows__CGraphics__CSizeInt32 ABI::Windows::Foundation::IReference<ABI::Windows::Graphics::SizeInt32>
+//#define __FIReference_1_Windows__CGraphics__CSizeInt32_t ABI::Windows::Foundation::IReference<ABI::Windows::Graphics::SizeInt32>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
+#endif /* DEF___FIReference_1_Windows__CGraphics__CSizeInt32_USE */
+
+
+
 
 
 
@@ -174,6 +225,9 @@ namespace ABI {
             
         } /* Windows */
     } /* Graphics */} /* ABI */
+
+
+
 
 
 
@@ -323,6 +377,68 @@ typedef interface __x_ABI_CWindows_CGraphics_CIGeometrySource2D __x_ABI_CWindows
 
 #endif // ____x_ABI_CWindows_CGraphics_CIGeometrySource2D_FWD_DEFINED__
 
+// Parameterized interface forward declarations (C)
+
+// Collection interface definitions
+struct __x_ABI_CWindows_CGraphics_CSizeInt32;
+
+#if !defined(____FIReference_1_Windows__CGraphics__CSizeInt32_INTERFACE_DEFINED__)
+#define ____FIReference_1_Windows__CGraphics__CSizeInt32_INTERFACE_DEFINED__
+
+typedef interface __FIReference_1_Windows__CGraphics__CSizeInt32 __FIReference_1_Windows__CGraphics__CSizeInt32;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIReference_1_Windows__CGraphics__CSizeInt32;
+
+typedef struct __FIReference_1_Windows__CGraphics__CSizeInt32Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This );
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This );
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This, 
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( __RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( __RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIReference_1_Windows__CGraphics__CSizeInt32 * This, /* [retval][out] */ __RPC__out struct __x_ABI_CWindows_CGraphics_CSizeInt32 *value);
+    END_INTERFACE
+} __FIReference_1_Windows__CGraphics__CSizeInt32Vtbl;
+
+interface __FIReference_1_Windows__CGraphics__CSizeInt32
+{
+    CONST_VTBL struct __FIReference_1_Windows__CGraphics__CSizeInt32Vtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+#define __FIReference_1_Windows__CGraphics__CSizeInt32_get_Value(This,value)	\
+    ( (This)->lpVtbl -> get_Value(This,value) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIReference_1_Windows__CGraphics__CSizeInt32_INTERFACE_DEFINED__
+
+
+
 
 
 
@@ -337,6 +453,9 @@ typedef struct __x_ABI_CWindows_CGraphics_CRectInt32 __x_ABI_CWindows_CGraphics_
 
 
 typedef struct __x_ABI_CWindows_CGraphics_CSizeInt32 __x_ABI_CWindows_CGraphics_CSizeInt32;
+
+
+
 
 
 

@@ -2437,7 +2437,6 @@ typedef struct _D3DAES_CTR_IV
 } D3DAES_CTR_IV;
 
 
-
 #endif // !D3D_DISABLE_9EX
 /* -- D3D9Ex only */
 

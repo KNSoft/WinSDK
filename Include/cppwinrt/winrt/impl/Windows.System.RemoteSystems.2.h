@@ -1,12 +1,15 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+#include "winrt/impl/Windows.ApplicationModel.AppService.1.h"
 #include "winrt/impl/Windows.Foundation.1.h"
 #include "winrt/impl/Windows.Foundation.Collections.1.h"
 #include "winrt/impl/Windows.Networking.1.h"
+#include "winrt/impl/Windows.Security.Credentials.1.h"
+#include "winrt/impl/Windows.System.1.h"
 #include "winrt/impl/Windows.System.RemoteSystems.1.h"
 
 WINRT_EXPORT namespace winrt::Windows::System::RemoteSystems {
@@ -30,7 +33,7 @@ struct KnownRemoteSystemCapabilities
 
 struct WINRT_EBO RemoteSystem :
     Windows::System::RemoteSystems::IRemoteSystem,
-    impl::require<RemoteSystem, Windows::System::RemoteSystems::IRemoteSystem2, Windows::System::RemoteSystems::IRemoteSystem3, Windows::System::RemoteSystems::IRemoteSystem4>
+    impl::require<RemoteSystem, Windows::System::RemoteSystems::IRemoteSystem2, Windows::System::RemoteSystems::IRemoteSystem3, Windows::System::RemoteSystems::IRemoteSystem4, Windows::System::RemoteSystems::IRemoteSystem5>
 {
     RemoteSystem(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> FindByHostNameAsync(Windows::Networking::HostName const& hostName);
@@ -46,6 +49,20 @@ struct WINRT_EBO RemoteSystemAddedEventArgs :
     RemoteSystemAddedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO RemoteSystemApp :
+    Windows::System::RemoteSystems::IRemoteSystemApp
+{
+    RemoteSystemApp(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO RemoteSystemAppRegistration :
+    Windows::System::RemoteSystems::IRemoteSystemAppRegistration
+{
+    RemoteSystemAppRegistration(std::nullptr_t) noexcept {}
+    static Windows::System::RemoteSystems::RemoteSystemAppRegistration GetDefault();
+    static Windows::System::RemoteSystems::RemoteSystemAppRegistration GetForUser(Windows::System::User const& user);
+};
+
 struct WINRT_EBO RemoteSystemAuthorizationKindFilter :
     Windows::System::RemoteSystems::IRemoteSystemAuthorizationKindFilter,
     impl::require<RemoteSystemAuthorizationKindFilter, Windows::System::RemoteSystems::IRemoteSystemFilter>
@@ -54,11 +71,20 @@ struct WINRT_EBO RemoteSystemAuthorizationKindFilter :
     RemoteSystemAuthorizationKindFilter(Windows::System::RemoteSystems::RemoteSystemAuthorizationKind const& remoteSystemAuthorizationKind);
 };
 
+struct WINRT_EBO RemoteSystemConnectionInfo :
+    Windows::System::RemoteSystems::IRemoteSystemConnectionInfo
+{
+    RemoteSystemConnectionInfo(std::nullptr_t) noexcept {}
+    static Windows::System::RemoteSystems::RemoteSystemConnectionInfo TryCreateFromAppServiceConnection(Windows::ApplicationModel::AppService::AppServiceConnection const& connection);
+};
+
 struct WINRT_EBO RemoteSystemConnectionRequest :
-    Windows::System::RemoteSystems::IRemoteSystemConnectionRequest
+    Windows::System::RemoteSystems::IRemoteSystemConnectionRequest,
+    impl::require<RemoteSystemConnectionRequest, Windows::System::RemoteSystems::IRemoteSystemConnectionRequest2>
 {
     RemoteSystemConnectionRequest(std::nullptr_t) noexcept {}
     RemoteSystemConnectionRequest(Windows::System::RemoteSystems::RemoteSystem const& remoteSystem);
+    static Windows::System::RemoteSystems::RemoteSystemConnectionRequest CreateForApp(Windows::System::RemoteSystems::RemoteSystemApp const& remoteSystemApp);
 };
 
 struct WINRT_EBO RemoteSystemDiscoveryTypeFilter :
@@ -103,7 +129,8 @@ struct WINRT_EBO RemoteSystemRemovedEventArgs :
 };
 
 struct WINRT_EBO RemoteSystemSession :
-    Windows::System::RemoteSystems::IRemoteSystemSession
+    Windows::System::RemoteSystems::IRemoteSystemSession,
+    impl::require<RemoteSystemSession, Windows::Foundation::IClosable>
 {
     RemoteSystemSession(std::nullptr_t) noexcept {}
     static Windows::System::RemoteSystems::RemoteSystemSessionWatcher CreateWatcher();
@@ -266,6 +293,14 @@ struct WINRT_EBO RemoteSystemWatcherErrorOccurredEventArgs :
     Windows::System::RemoteSystems::IRemoteSystemWatcherErrorOccurredEventArgs
 {
     RemoteSystemWatcherErrorOccurredEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO RemoteSystemWebAccountFilter :
+    Windows::System::RemoteSystems::IRemoteSystemWebAccountFilter,
+    impl::require<RemoteSystemWebAccountFilter, Windows::System::RemoteSystems::IRemoteSystemFilter>
+{
+    RemoteSystemWebAccountFilter(std::nullptr_t) noexcept {}
+    RemoteSystemWebAccountFilter(Windows::Security::Credentials::WebAccount const& account);
 };
 
 }

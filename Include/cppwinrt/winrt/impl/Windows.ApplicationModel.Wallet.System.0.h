@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -48,10 +48,30 @@ template <> struct name<Windows::ApplicationModel::Wallet::System::IWalletManage
 template <> struct name<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.System.WalletItemSystemStore" }; };
 template <> struct name<Windows::ApplicationModel::Wallet::System::WalletManagerSystem>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.System.WalletManagerSystem" }; };
 template <> struct name<Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation>{ static constexpr auto & value{ L"Windows.ApplicationModel.Wallet.System.WalletItemAppAssociation" }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>{ static constexpr GUID value{ 0x522E2BFF,0x96A2,0x4A17,{ 0x8D,0x19,0xFE,0x1D,0x9F,0x83,0x75,0x61 } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>{ static constexpr GUID value{ 0xF98D3A4E,0xBE00,0x4FDD,{ 0x97,0x34,0x6C,0x11,0x3C,0x1A,0xC1,0xCB } }; };
-template <> struct guid<Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>{ static constexpr GUID value{ 0xBEE8EB89,0x2634,0x4B9A,{ 0x8B,0x23,0xEE,0x89,0x03,0xC9,0x1F,0xE0 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>{ static constexpr guid value{ 0x522E2BFF,0x96A2,0x4A17,{ 0x8D,0x19,0xFE,0x1D,0x9F,0x83,0x75,0x61 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>{ static constexpr guid value{ 0xF98D3A4E,0xBE00,0x4FDD,{ 0x97,0x34,0x6C,0x11,0x3C,0x1A,0xC1,0xCB } }; };
+template <> struct guid_storage<Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>{ static constexpr guid value{ 0xBEE8EB89,0x2634,0x4B9A,{ 0x8B,0x23,0xEE,0x89,0x03,0xC9,0x1F,0xE0 } }; };
 template <> struct default_interface<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>{ using type = Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore; };
+
+template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetItemsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteAsync(void* item, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ImportItemAsync(void* stream, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAppStatusForItem(void* item, Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation* result) noexcept = 0;
+    virtual int32_t WINRT_CALL LaunchAppForItemAsync(void* item, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_ItemsChanged(void* handler, winrt::event_token* cookie) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_ItemsChanged(winrt::event_token cookie) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestStoreAsync(void** operation) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_Wallet_System_IWalletItemSystemStore
@@ -67,10 +87,10 @@ template <> struct consume<Windows::ApplicationModel::Wallet::System::IWalletIte
 template <typename D>
 struct consume_Windows_ApplicationModel_Wallet_System_IWalletItemSystemStore2
 {
-    event_token ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> const& handler) const;
-    using ItemsChanged_revoker = event_revoker<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>;
+    winrt::event_token ItemsChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> const& handler) const;
+    using ItemsChanged_revoker = impl::event_revoker<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2, &impl::abi_t<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>::remove_ItemsChanged>;
     ItemsChanged_revoker ItemsChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::Foundation::IInspectable> const& handler) const;
-    void ItemsChanged(event_token const& cookie) const;
+    void ItemsChanged(winrt::event_token const& cookie) const noexcept;
 };
 template <> struct consume<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2> { template <typename D> using type = consume_Windows_ApplicationModel_Wallet_System_IWalletItemSystemStore2<D>; };
 
@@ -80,25 +100,5 @@ struct consume_Windows_ApplicationModel_Wallet_System_IWalletManagerSystemStatic
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> RequestStoreAsync() const;
 };
 template <> struct consume<Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics> { template <typename D> using type = consume_Windows_ApplicationModel_Wallet_System_IWalletManagerSystemStatics<D>; };
-
-template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetItemsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DeleteAsync(void* item, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ImportItemAsync(void* stream, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAppStatusForItem(void* item, Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation* result) noexcept = 0;
-    virtual HRESULT __stdcall LaunchAppForItemAsync(void* item, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_ItemsChanged(void* handler, event_token* cookie) noexcept = 0;
-    virtual HRESULT __stdcall remove_ItemsChanged(event_token cookie) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestStoreAsync(void** operation) noexcept = 0;
-};};
 
 }
